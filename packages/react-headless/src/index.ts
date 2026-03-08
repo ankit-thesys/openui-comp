@@ -1,5 +1,5 @@
-export { ChatProvider } from "./v2/ChatProvider";
-export { useThread, useThreadList } from "./v2/hooks";
+export { ChatProvider } from "./store/ChatProvider";
+export { useThread, useThreadList } from "./store/hooks";
 
 export { MessageContext, MessageProvider, useMessage } from "./hooks/useMessage";
 export {
@@ -21,7 +21,7 @@ export type {
   ThreadListActions,
   ThreadListState,
   ThreadState,
-} from "./v2/types";
+} from "./store/types";
 
 export type {
   ActivityMessage,
