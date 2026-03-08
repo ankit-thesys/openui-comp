@@ -12,19 +12,19 @@ pnpm --filter @openuidev/react-headless run ci       # lint:check + format:check
 pnpm build && pnpm test
 ```
 
-Build order: **`react-headless`** → `lang-react` → `react-ui`. This package has no upstream workspace deps (only `@ag-ui/core` and `zod` from npm), so it can always build independently.
+Build order: **`react-headless`** → `lang-react` → `react-ui`. This package has no upstream workspace deps (only `@ag-ui/core` from npm), so it can always build independently.
 
 ## File Map
 
 | Path                                                        | Purpose                                                                                                                                     |
 | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | `src/index.ts`                                              | Public API surface — every export consumers see. Check here first when adding/removing exports.                                             |
-| `src/v2/createChatStore.ts`                                 | Zustand store factory. All state + actions live here. This is the most critical file.                                                       |
-| `src/v2/ChatProvider.tsx`                                   | React provider — thin wrapper that creates the store once via `useState`.                                                                   |
-| `src/v2/ChatContext.ts`                                     | React context + `useChatStore()` internal hook.                                                                                             |
-| `src/v2/hooks.ts`                                           | `useThread()` / `useThreadList()` — selector hooks over the store.                                                                          |
-| `src/v2/types.ts`                                           | All v2 types: `ChatStore`, `ChatProviderProps`, `Thread`, state/action slices.                                                              |
-| `src/v2/__tests__/createChatStore.test.ts`                  | Comprehensive test suite for the store (thread CRUD, message CRUD, streaming, cancellation, URL-based defaults, messageFormat round-trips). |
+| `src/store/createChatStore.ts`                              | Zustand store factory. All state + actions live here. This is the most critical file.                                                       |
+| `src/store/ChatProvider.tsx`                                | React provider — thin wrapper that creates the store once via `useState`.                                                                   |
+| `src/store/ChatContext.ts`                                  | React context + `useChatStore()` internal hook.                                                                                             |
+| `src/store/hooks.ts`                                        | `useThread()` / `useThreadList()` — selector hooks over the store.                                                                          |
+| `src/store/types.ts`                                        | All store types: `ChatStore`, `ChatProviderProps`, `Thread`, state/action slices.                                                           |
+| `src/store/__tests__/createChatStore.test.ts`               | Comprehensive test suite for the store (thread CRUD, message CRUD, streaming, cancellation, URL-based defaults, messageFormat round-trips). |
 | `src/stream/processStreamedMessage.ts`                      | Consumes `AsyncIterable<AGUIEvent>` and drives message create/update/delete callbacks.                                                      |
 | `src/stream/adapters/ag-ui.ts`                              | Default SSE adapter — parses `data: {json}\n` lines.                                                                                        |
 | `src/stream/adapters/openai-completions.ts`                 | Adapter for OpenAI Chat Completions streaming (`ChatCompletionChunk`).                                                                      |
@@ -32,17 +32,17 @@ Build order: **`react-headless`** → `lang-react` → `react-ui`. This package 
 | `src/stream/adapters/openai-readable-stream.ts`             | Adapter for OpenAI SDK's `Stream.toReadableStream()` — parses NDJSON (no SSE prefix) `ChatCompletionChunk` objects.                         |
 | `src/stream/adapters/openai-message-format.ts`              | `MessageFormat` for OpenAI Completions (`ChatCompletionMessageParam[]` ↔ AG-UI).                                                           |
 | `src/stream/adapters/openai-conversation-message-format.ts` | `MessageFormat` for OpenAI Responses/Conversations API (`ResponseInputItem[]` ↔ AG-UI).                                                    |
-| `src/types/`                                                | Shared types: `message.ts` (re-exports from `@ag-ui/core`), `messageFormat.ts`, `stream.ts`, `chatManager.ts` (legacy v1 types).            |
+| `src/types/`                                                | Shared types: `message.ts` (re-exports from `@ag-ui/core`), `messageFormat.ts`, `stream.ts`.                                                |
 | `src/hooks/useMessage.tsx`                                  | `MessageContext` / `MessageProvider` / `useMessage` — per-message React context used by `react-ui`.                                         |
 
 ## Key Patterns
 
 ### Adding a new store action
 
-1. Add the type to the appropriate slice in `src/v2/types.ts` (`ThreadActions` or `ThreadListActions`).
+1. Add the type to the appropriate slice in `src/store/types.ts` (`ThreadActions` or `ThreadListActions`).
 2. Implement it in `createChatStore.ts` inside the `createStore<ChatStore>(...)` call.
-3. Add it to the selector in `src/v2/hooks.ts` (`threadSelector` or `threadListSelector`).
-4. Add tests in `src/v2/__tests__/createChatStore.test.ts`.
+3. Add it to the selector in `src/store/hooks.ts` (`threadSelector` or `threadListSelector`).
+4. Add tests in `src/store/__tests__/createChatStore.test.ts`.
 5. If it should be public, export the type from `src/index.ts`.
 
 ### Adding a new stream adapter

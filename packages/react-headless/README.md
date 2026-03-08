@@ -288,7 +288,6 @@ Key behaviors:
 | `message.ts`       | Re-exports all message types from `@ag-ui/core`: `Message`, `UserMessage`, `AssistantMessage`, `ToolMessage`, `SystemMessage`, `DeveloperMessage`, `ReasoningMessage`, `ActivityMessage`, `ToolCall`, `FunctionCall`, `InputContent`, `TextInputContent`, `BinaryInputContent`. Also defines `CreateMessage = Omit<UserMessage, "id">`. |
 | `messageFormat.ts` | Defines the `MessageFormat` interface (`toApi`/`fromApi`) and the default `identityMessageFormat` (pass-through).                                                                                                                                                                                                                       |
 | `stream.ts`        | Defines the `StreamProtocolAdapter` interface (a `parse(response) → AsyncIterable<AGUIEvent>` contract). Re-exports `EventType` enum and `AGUIEvent` type from `@ag-ui/core`.                                                                                                                                                           |
-| `chatManager.ts`   | Legacy type definitions from the v1 API: `ChatManager`, `ThreadManager`, `ThreadListManager`, etc. These are still exported for backward compatibility but the v2 store-based API is preferred.                                                                                                                                         |
 
 ### `hooks/` — Message Context
 
