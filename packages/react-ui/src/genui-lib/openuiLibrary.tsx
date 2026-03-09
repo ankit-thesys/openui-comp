@@ -64,7 +64,7 @@ import { TagBlock } from "./TagBlock";
 
 // ── Component Groups ──
 
-export const defaultComponentGroups: ComponentGroup[] = [
+export const openuiComponentGroups: ComponentGroup[] = [
   {
     name: "Layout",
     components: [
@@ -162,7 +162,7 @@ export const defaultComponentGroups: ComponentGroup[] = [
 
 // ── Examples ──
 
-export const defaultExamples: string[] = [
+export const openuiExamples: string[] = [
   `Example 1 — Table:
 root = Stack([title, tbl])
 title = TextContent("Top Languages", "large-heavy")
@@ -181,13 +181,13 @@ s2 = Series("Product B", [90, 110, 140])`,
   `Example 3 — Form with validation:
 root = Stack([title, form])
 title = TextContent("Contact Us", "large-heavy")
-form = Form("contact", [nameField, emailField, countryField, msgField], btns)
-nameField = FormControl("Name", Input("name", "Your name", "text", ["required", "minLength:2"]))
-emailField = FormControl("Email", Input("email", "you@example.com", "email", ["required", "email"]))
-countryField = FormControl("Country", Select("country", countryOpts, "Select...", ["required"]))
-msgField = FormControl("Message", TextArea("message", "Tell us more...", 4, ["required", "minLength:10"]))
+form = Form("contact", btns, [nameField, emailField, countryField, msgField])
+nameField = FormControl("Name", Input("name", "Your name", "text", { required: true, minLength: 2 }))
+emailField = FormControl("Email", Input("email", "you@example.com", "email", { required: true, email: true }))
+countryField = FormControl("Country", Select("country", countryOpts, "Select...", { required: true }))
+msgField = FormControl("Message", TextArea("message", "Tell us more...", 4, { required: true, minLength: 10 }))
 countryOpts = [SelectItem("us", "United States"), SelectItem("uk", "United Kingdom"), SelectItem("de", "Germany")]
-btns = Buttons([Button("Submit", "submit:contact", "primary"), Button("Cancel", "action:cancel_contact", "secondary")])`,
+btns = Buttons([Button("Submit", { type: "continue_conversation" }, "primary"), Button("Cancel", { type: "continue_conversation" }, "secondary")])`,
 
   `Example 4 — Tabs with mixed content:
 root = Stack([title, tabs])
@@ -199,23 +199,23 @@ reactContent = [TextContent("React is a library by Meta for building UIs."), Cal
 vueContent = [TextContent("Vue is a progressive framework by Evan You."), Callout("success", "Tip", "Vue has a gentle learning curve.")]`,
 ];
 
-export const defaultAdditionalRules: string[] = [
+export const openuiAdditionalRules: string[] = [
   'For grid-like layouts, use Stack with direction "row" and wrap=true. Avoid justify="between" unless you specifically want large gutters.',
   "For forms, define one FormControl reference per field so controls can stream progressively.",
-  "For forms, always provide the third Form argument with Buttons(...) actions.",
+  "For forms, always provide the second Form argument with Buttons(...) actions: Form(name, buttons, fields).",
   "Never nest Form inside Form.",
 ];
 
-export const defaultPromptOptions: PromptOptions = {
-  examples: defaultExamples,
-  additionalRules: defaultAdditionalRules,
+export const openuiPromptOptions: PromptOptions = {
+  examples: openuiExamples,
+  additionalRules: openuiAdditionalRules,
 };
 
 // ── Library ──
 
-export const defaultLibrary = createLibrary({
+export const openuiLibrary = createLibrary({
   root: "Stack",
-  componentGroups: defaultComponentGroups,
+  componentGroups: openuiComponentGroups,
   components: [
     // Content
     Card,

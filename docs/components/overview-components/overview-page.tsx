@@ -222,11 +222,11 @@ export function AssistantMessage({ content, isStreaming }) {
             title="Quick example"
             code={`import "@openuidev/react-ui/components.css";
 import "@openuidev/react-ui/styles/index.css";
-import { FullScreen, defaultLibrary } from "@openuidev/react-ui";
+import { FullScreen, openuiLibrary } from "@openuidev/react-ui";
 
 <FullScreen
   apiUrl="/api/chat"
-  componentLibrary={defaultLibrary}
+  componentLibrary={openuiLibrary}
 />
 `}
           />
@@ -291,10 +291,10 @@ import { FullScreen, defaultLibrary } from "@openuidev/react-ui";
               <CodeBlock
                 title="Quick example"
                 code={`import { createLibrary, defineComponent } from '@openuidev/lang-react';
-import { defaultLibrary, defaultPromptOptions } from '@openuidev/react-ui';
+import { openuiLibrary, openuiPromptOptions } from '@openuidev/react-ui';
 import { z } from 'zod';
 
-const prompt = defaultLibrary.prompt(defaultPromptOptions);
+const prompt = openuiLibrary.prompt(openuiPromptOptions);
 
 const CustomWidget = defineComponent({
   name: 'CustomWidget',
@@ -306,9 +306,9 @@ const CustomWidget = defineComponent({
 });
 
 const customLibrary = createLibrary({
-  root: defaultLibrary.root ?? 'Stack',
-  componentGroups: defaultLibrary.componentGroups,
-  components: [...Object.values(defaultLibrary.components), CustomWidget],
+  root: openuiLibrary.root ?? 'Stack',
+  componentGroups: openuiLibrary.componentGroups,
+  components: [...Object.values(openuiLibrary.components), CustomWidget],
 });`}
               />
             </TabsContent>
@@ -316,13 +316,13 @@ const customLibrary = createLibrary({
             <TabsContent value="usage-with-chat" className="mt-4">
               <CodeBlock
                 title="Using with Chat UI"
-                code={`import { Copilot, defaultLibrary } from '@openuidev/react-ui';
+                code={`import { Copilot, openuiLibrary } from '@openuidev/react-ui';
 
 function App() {
   return (
     <Copilot
       apiUrl="/api/chat"
-      componentLibrary={defaultLibrary}
+      componentLibrary={openuiLibrary}
     />
   );
 }`}

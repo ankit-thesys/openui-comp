@@ -2,7 +2,7 @@
 
 import {
   defineComponent,
-  parseRules,
+  parseStructuredRules,
   useFormName,
   useFormValidation,
   useGetFieldValue,
@@ -19,7 +19,7 @@ export { SliderSchema } from "./schema";
 export const Slider = defineComponent({
   name: "Slider",
   props: SliderSchema,
-  description: "",
+  description: "Numeric slider input; supports continuous and discrete (stepped) variants",
   component: ({ props }) => {
     const formName = useFormName();
     const getFieldValue = useGetFieldValue();
@@ -28,9 +28,9 @@ export const Slider = defineComponent({
     const formValidation = useFormValidation();
 
     const fieldName = props.name as string;
-    const rules = React.useMemo(() => parseRules(props.rules), [props.rules]);
+    const rules = React.useMemo(() => parseStructuredRules(props.rules), [props.rules]);
     const existingValue = getFieldValue(formName, fieldName);
-    const defaultVal = props.defaultValue as number | undefined;
+    const defaultVal = props.defaultValue;
 
     useSetDefaultValue({
       formName,
@@ -57,7 +57,7 @@ export const Slider = defineComponent({
         min={props.min as number}
         max={props.max as number}
         step={props.step as number | undefined}
-        value={value != null ? [value as number] : undefined}
+        defaultValue={value != null ? value : undefined}
         onValueCommit={(vals: number[]) => {
           setFieldValue(formName, "Slider", fieldName, vals[0], true);
           if (rules.length > 0) {
