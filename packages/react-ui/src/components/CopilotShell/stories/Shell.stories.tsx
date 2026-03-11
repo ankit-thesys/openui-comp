@@ -1,6 +1,5 @@
 import { ChatProvider, Message } from "@openuidev/react-headless";
-import { Paperclip, Sparkles } from "lucide-react";
-import { IconButton } from "../../IconButton";
+import { Sparkles } from "lucide-react";
 import {
   Composer,
   Container,
@@ -112,16 +111,7 @@ export const Default = {
               <Messages loader={<MessageLoading />} />
             </ScrollArea>
             <ConversationStarter starters={SAMPLE_STARTERS} variant={variant} />
-            <Composer
-              attachment={
-                <IconButton
-                  icon={<Paperclip size="1em" />}
-                  onClick={() => console.log("attach")}
-                  size="medium"
-                  variant="tertiary"
-                />
-              }
-            />
+            <Composer />
           </ThreadContainer>
         </Container>
       </ChatProvider>
@@ -159,16 +149,7 @@ export const LongVariant = {
               <Messages loader={<MessageLoading />} />
             </ScrollArea>
             <ConversationStarter starters={SAMPLE_STARTERS} variant={variant} />
-            <Composer
-              attachment={
-                <IconButton
-                  icon={<Paperclip size="1em" />}
-                  onClick={() => console.log("attach")}
-                  size="medium"
-                  variant="tertiary"
-                />
-              }
-            />
+            <Composer />
           </ThreadContainer>
         </Container>
       </ChatProvider>
@@ -212,16 +193,7 @@ export const WithWelcomeScreen = {
               <Messages loader={<MessageLoading />} />
             </ScrollArea>
             <ConversationStarter starters={SAMPLE_STARTERS} variant={variant} />
-            <Composer
-              attachment={
-                <IconButton
-                  icon={<Paperclip size="1em" />}
-                  onClick={() => console.log("attach")}
-                  size="medium"
-                  variant="tertiary"
-                />
-              }
-            />
+            <Composer />
           </ThreadContainer>
         </Container>
       </ChatProvider>
@@ -284,16 +256,7 @@ export const WithCustomWelcomeScreen = {
               <Messages loader={<MessageLoading />} />
             </ScrollArea>
             <ConversationStarter starters={SAMPLE_STARTERS} variant={variant} />
-            <Composer
-              attachment={
-                <IconButton
-                  icon={<Paperclip size="1em" />}
-                  onClick={() => console.log("attach")}
-                  size="medium"
-                  variant="tertiary"
-                />
-              }
-            />
+            <Composer />
           </ThreadContainer>
         </Container>
       </ChatProvider>

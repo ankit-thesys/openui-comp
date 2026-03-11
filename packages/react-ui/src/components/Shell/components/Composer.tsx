@@ -4,20 +4,13 @@ import { ArrowUp, Square } from "lucide-react";
 import { useLayoutEffect, useRef } from "react";
 import { useComposerState } from "../../../hooks/useComposerState";
 import { IconButton } from "../../IconButton";
-import type { AttachmentConfig } from "../utils/checks";
-import { isAttachmentConfig } from "../utils/checks";
 
 export interface ComposerProps {
   className?: string;
   placeholder?: string;
-  attachment?: React.ReactNode | AttachmentConfig;
 }
 
-export const Composer = ({
-  className,
-  placeholder = "Type your query here",
-  attachment,
-}: ComposerProps) => {
+export const Composer = ({ className, placeholder = "Type your query here" }: ComposerProps) => {
   const { textContent, setTextContent } = useComposerState();
   const processMessage = useThread((s) => s.processMessage);
   const cancelMessage = useThread((s) => s.cancelMessage);
@@ -46,22 +39,6 @@ export const Composer = ({
     input.style.height = `${input.scrollHeight}px`;
   }, [textContent]);
 
-  const renderAttachment = () => {
-    if (!attachment) return null;
-    if (isAttachmentConfig(attachment)) {
-      return (
-        <IconButton
-          icon={attachment.icon}
-          onClick={attachment.onClick}
-          size="medium"
-          variant="tertiary"
-          className="openui-shell-thread-composer__attach-button"
-        />
-      );
-    }
-    return attachment;
-  };
-
   return (
     <div className={clsx("openui-shell-thread-composer", className)}>
       <div className="openui-shell-thread-composer__input-wrapper">
@@ -80,7 +57,6 @@ export const Composer = ({
           }}
         />
         <div className="openui-shell-thread-composer__action-bar">
-          {renderAttachment()}
           <IconButton
             onClick={isRunning ? cancelMessage : handleSubmit}
             icon={isRunning ? <Square size="1em" fill="currentColor" /> : <ArrowUp size="1em" />}
