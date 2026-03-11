@@ -1,49 +1,28 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import svgPaths from "@/imports/svg-urruvoh2be";
-import { BUTTON_SHADOW } from "./shared";
 import {
-  ThesysLogo,
-  OpenUILogo,
-  GitHubStarButton,
   GitHubIcon,
+  GitHubStarButton,
+  OpenUILogo,
   StarCountBadge,
+  ThesysLogo,
   useGitHubStarCount,
 } from "@/components/brand-logo";
+import { AnimatePresence, motion } from "motion/react";
+import { useCallback, useEffect, useState } from "react";
+import { BUTTON_SHADOW } from "./shared";
 
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
 
-const NAV_TABS = ["Introduction", "OpenUI Lang", "Chat", "Playground", "API Reference"] as const;
+const NAV_TABS = ["OpenUI Lang", "Playground", "API Reference"] as const;
 const TAB_URLS: Record<string, string> = {
-  Introduction: "/docs/introduction",
   "OpenUI Lang": "/docs/openui-lang",
-  Chat: "/docs/chat",
   Playground: "/playground",
   "API Reference": "/docs/api-reference",
 };
 const NAVBAR_BORDER_COLOR = "rgba(0,0,0,0.1)";
-
-// ---------------------------------------------------------------------------
-// Shared SVG icons
-// ---------------------------------------------------------------------------
-
-function ChevronDownIcon() {
-  return (
-    <svg className="size-5" fill="none" viewBox="0 0 20 20">
-      <path
-        d={svgPaths.p2709b200}
-        stroke="black"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.25"
-      />
-    </svg>
-  );
-}
 
 // ---------------------------------------------------------------------------
 // Sub-components
@@ -67,7 +46,15 @@ function DesktopNavTabs() {
 
 function HamburgerIcon({ isOpen }: { isOpen: boolean }) {
   return (
-    <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      className="size-5"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       {isOpen ? (
         <>
           <path d="M18 6L6 18" />
@@ -108,7 +95,7 @@ function MobileMenu({ starCount, onClose }: { starCount: number; onClose: () => 
         {/* Tray */}
         <div className="bg-white border-t border-black/5 rounded-b-[18px] shadow-lg pointer-events-auto">
           <div className="flex flex-col px-7 pt-3 pb-5 gap-0 max-w-[1200px] mx-auto">
-            {[...NAV_TABS, "Components"].map((tab, index) => (
+            {NAV_TABS.map((tab, index) => (
               <div key={tab}>
                 {index > 0 && <div className="h-px bg-black/5 mx-3" />}
                 <a
@@ -116,7 +103,6 @@ function MobileMenu({ starCount, onClose }: { starCount: number; onClose: () => 
                   className="h-14 px-3 rounded-md font-['Inter',sans-serif] text-black leading-6 hover:bg-black/5 transition-colors text-left w-full text-[18px] flex items-center gap-1 no-underline"
                 >
                   {tab}
-                  {tab === "Components" && <ChevronDownIcon />}
                 </a>
               </div>
             ))}
@@ -125,7 +111,12 @@ function MobileMenu({ starCount, onClose }: { starCount: number; onClose: () => 
 
         {/* GitHub button — centered, 80px below tray, scaled up 140% */}
         <div className="flex justify-center pt-[80px] pointer-events-auto">
-          <button className="bg-white flex items-center gap-1.5 h-[38px] pl-3 pr-2 rounded-full relative cursor-pointer scale-[1.17]">
+          <a
+            href="https://github.com/thesysdev/openui"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white flex items-center gap-1.5 h-[38px] pl-3 pr-2 rounded-full relative cursor-pointer scale-[1.17] no-underline"
+          >
             <div
               aria-hidden="true"
               className="absolute inset-0 pointer-events-none rounded-full border border-black/10"
@@ -133,7 +124,7 @@ function MobileMenu({ starCount, onClose }: { starCount: number; onClose: () => 
             />
             <GitHubIcon />
             <StarCountBadge count={starCount} isHighlighted={false} />
-          </button>
+          </a>
         </div>
       </motion.div>
     </>
