@@ -331,28 +331,28 @@ interface ConversationStartersConfig {
 
 These props only apply to the `standalone` (FullScreen) layout:
 
-| Prop                  | Type             | Description                                                        |
-| --------------------- | ---------------- | ------------------------------------------------------------------ |
-| `threadHeader`        | `ReactNode`      | Custom content for the desktop thread header (hidden on mobile)    |
-| `mobileHeaderActions` | `ReactNode`      | Custom content for the right side of the mobile header             |
+| Prop                  | Type        | Description                                                     |
+| --------------------- | ----------- | --------------------------------------------------------------- |
+| `threadHeader`        | `ReactNode` | Custom content for the desktop thread header (hidden on mobile) |
+| `mobileHeaderActions` | `ReactNode` | Custom content for the right side of the mobile header          |
 
 ### Copilot Props
 
 These props only apply to the `copilot` layout:
 
-| Prop            | Type        | Description                                          |
-| --------------- | ----------- | ---------------------------------------------------- |
-| `headerActions` | `ReactNode` | Custom content for the right side of the header      |
+| Prop            | Type        | Description                                     |
+| --------------- | ----------- | ----------------------------------------------- |
+| `headerActions` | `ReactNode` | Custom content for the right side of the header |
 
 ### Bottom Tray Props
 
 These props only apply when `type="bottom-tray"`. The tray includes a built-in trigger button, so these are optional for controlled mode:
 
-| Prop            | Type                        | Description                                                          |
-| --------------- | --------------------------- | -------------------------------------------------------------------- |
-| `isOpen`        | `boolean`                   | Controlled open state (optional)                                     |
-| `onOpenChange`  | `(isOpen: boolean) => void` | Callback when open state changes (optional)                          |
-| `defaultOpen`   | `boolean`                   | Initial open state, default: `false` (optional)                      |
+| Prop            | Type                        | Description                                                               |
+| --------------- | --------------------------- | ------------------------------------------------------------------------- |
+| `isOpen`        | `boolean`                   | Controlled open state (optional)                                          |
+| `onOpenChange`  | `(isOpen: boolean) => void` | Callback when open state changes (optional)                               |
+| `defaultOpen`   | `boolean`                   | Initial open state, default: `false` (optional)                           |
 | `headerActions` | `ReactNode`                 | Custom content for the right side of the header (before built-in buttons) |
 
 ### Advanced Props
