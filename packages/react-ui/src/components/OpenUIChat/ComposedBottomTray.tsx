@@ -21,6 +21,7 @@ interface BottomTraySpecificProps extends SharedChatUIProps {
   isOpen?: boolean;
   onOpenChange?: (isOpen: boolean) => void;
   defaultOpen?: boolean;
+  headerActions?: React.ReactNode;
 }
 
 const WelcomeMessageRenderer = ({ welcomeMessage }: Pick<SharedChatUIProps, "welcomeMessage">) => {
@@ -68,7 +69,7 @@ const ConversationStartersRenderer = ({
 };
 
 const BottomTrayInner = ({
-  logoUrl = "https://crayonai.org/img/logo.png",
+  logoUrl = "https://www.openui.com/favicon.svg",
   agentName = "My Agent",
   messageLoading: MessageLoadingComponent = MessageLoading,
   scrollVariant = "user-message-anchor",
@@ -80,6 +81,7 @@ const BottomTrayInner = ({
   assistantMessage,
   userMessage,
   composer: ComposerComponent,
+  headerActions,
 }: BottomTraySpecificProps) => {
   const [uncontrolledIsOpen, setUncontrolledIsOpen] = useState(defaultOpen);
 
@@ -102,7 +104,7 @@ const BottomTrayInner = ({
 
       <Container logoUrl={logoUrl} agentName={agentName} isOpen={isOpen}>
         <ThreadContainer>
-          <Header onMinimize={() => handleOpenChange(false)} />
+          <Header onMinimize={() => handleOpenChange(false)} rightChildren={headerActions} />
           <WelcomeMessageRenderer welcomeMessage={welcomeMessage} />
           <ScrollArea scrollVariant={scrollVariant}>
             <Messages
@@ -127,4 +129,5 @@ export const BottomTray = withChatProvider<{
   isOpen?: boolean;
   onOpenChange?: (isOpen: boolean) => void;
   defaultOpen?: boolean;
+  headerActions?: React.ReactNode;
 }>(BottomTrayInner);

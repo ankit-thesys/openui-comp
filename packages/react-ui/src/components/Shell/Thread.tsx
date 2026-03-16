@@ -7,6 +7,7 @@ import { ScrollVariant, useScrollToBottom } from "../../hooks/useScrollToBottom"
 import { ArtifactOverlay, ArtifactPortalTarget } from "../_shared/artifact";
 import { useShellStore } from "../_shared/store";
 import type { AssistantMessageComponent, UserMessageComponent } from "../_shared/types";
+import { Callout } from "../Callout";
 import { MarkDownRenderer } from "../MarkDownRenderer";
 import { MessageLoading as MessageLoadingComponent } from "../MessageLoading";
 import { ToolCallComponent } from "../ToolCall";
@@ -302,6 +303,21 @@ export const MessageLoading = () => {
   );
 };
 
+export const ThreadError = () => {
+  const threadError = useThread((s) => s.threadError);
+  if (!threadError) return null;
+
+  return (
+    <div className="openui-shell-thread-error">
+      <Callout
+        variant="danger"
+        title="Something went wrong"
+        description={threadError.message || "An unexpected error occurred. Please try again."}
+      />
+    </div>
+  );
+};
+
 export const Messages = ({
   className,
   loader,
@@ -315,6 +331,7 @@ export const Messages = ({
 }) => {
   const messages = useThread((s) => s.messages);
   const isRunning = useThread((s) => s.isRunning);
+  const threadError = useThread((s) => s.threadError);
 
   return (
     <div className={clsx("openui-shell-thread-messages", className)}>
@@ -331,6 +348,7 @@ export const Messages = ({
         );
       })}
       {isRunning && <div>{loader}</div>}
+      {!isRunning && threadError && <ThreadError />}
     </div>
   );
 };
