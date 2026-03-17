@@ -21,10 +21,10 @@
 .cursor/plans
 .cursor/agents
 
-#Claude
-.claude/
+# Claude
 Claude.md
-Claude.local.md
+.claude/
+CLAUDE.local.md
 
 # Dependencies
 node_modules
