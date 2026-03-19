@@ -2,7 +2,7 @@ import { flip, offset, shift, useFloating } from "@floating-ui/react-dom";
 import clsx from "clsx";
 import React, { memo, useMemo } from "react";
 import { createPortal } from "react-dom";
-import { useTheme } from "../../../ThemeProvider";
+import { useTheme } from "../../../../ThemeProvider";
 import { tooltipNumberFormatter } from "./utils";
 
 export interface TooltipItem {

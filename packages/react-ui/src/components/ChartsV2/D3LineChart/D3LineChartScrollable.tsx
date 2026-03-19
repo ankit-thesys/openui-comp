@@ -1,10 +1,10 @@
 import { useCallback } from "react";
 
 import { useChartScrollableOrchestrator, usePrintContext, useXScale, useYScale } from "../hooks";
-import { ClipDefs } from "../shared/ClipDefs";
-import { LineDotCrosshair } from "../shared/LineDotCrosshair";
-import { ScrollableChartLayout } from "../shared/ScrollableChartLayout";
-import { XAxis } from "../shared/XAxis";
+import { ClipDefs } from "../shared/cartesian/ClipDefs";
+import { LineDotCrosshair } from "../shared/cartesian/LineDotCrosshair";
+import { XAxis } from "../shared/cartesian/axes/XAxis";
+import { ScrollableChartLayout } from "../shared/cartesian/layouts/ScrollableChartLayout";
 import { findNearestDataIndex } from "../utils/mouseUtils";
 import { LineSeries } from "./parts/LineSeries";
 

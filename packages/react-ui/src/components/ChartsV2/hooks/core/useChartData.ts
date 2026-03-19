@@ -1,7 +1,8 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useMemo } from "react";
 
 import { get2dChartConfig, getDataKeys, getLegendItems } from "../../utils/dataUtils";
 import { useChartPalette } from "../../utils/paletteUtils";
+import { useSeriesVisibility } from "./useSeriesVisibility";
 import { useTransformedKeys } from "./useTransformedKeys";
 
 import type { ChartData } from "../../types";
@@ -25,7 +26,7 @@ export function useChartData<T extends ChartData>({
   const catKey = String(categoryKey);
   const allDataKeys = useMemo(() => getDataKeys(data, catKey), [data, catKey]);
 
-  const [hiddenSeries, setHiddenSeries] = useState<Set<string>>(new Set());
+  const { hiddenSeries, toggleSeries } = useSeriesVisibility(allDataKeys);
   const dataKeys = useMemo(
     () => allDataKeys.filter((k) => !hiddenSeries.has(k)),
     [allDataKeys, hiddenSeries],
@@ -72,23 +73,6 @@ export function useChartData<T extends ChartData>({
   const legendItems = useMemo(
     () => getLegendItems(allDataKeys, colors, icons),
     [allDataKeys, colors, icons],
-  );
-
-  const toggleSeries = useCallback(
-    (key: string) => {
-      setHiddenSeries((prev) => {
-        const next = new Set(prev);
-        if (next.has(key)) {
-          next.delete(key);
-        } else {
-          if (next.size < allDataKeys.length - 1) {
-            next.add(key);
-          }
-        }
-        return next;
-      });
-    },
-    [allDataKeys.length],
   );
 
   return {

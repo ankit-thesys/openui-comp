@@ -3,9 +3,9 @@ import { arc, pie, type PieArcDatum } from "d3-shape";
 import { useMemo } from "react";
 
 import { type CategoricalSlice, useCategoricalChartOrchestrator } from "../hooks";
-import { DefaultLegend } from "../shared/DefaultLegend/DefaultLegend";
-import { LabelTooltipProvider } from "../shared/LabelTooltip/LabelTooltip";
-import { ChartTooltip } from "../shared/PortalTooltip/ChartTooltip";
+import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
+import { LabelTooltipProvider } from "../shared/core/LabelTooltip/LabelTooltip";
+import { ChartTooltip } from "../shared/core/PortalTooltip/ChartTooltip";
 import { PieSlices } from "./parts/PieSlices";
 import type { D3PieChartData, D3PieChartProps } from "./types";
 

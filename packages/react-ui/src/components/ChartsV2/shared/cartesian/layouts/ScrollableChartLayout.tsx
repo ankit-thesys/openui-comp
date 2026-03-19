@@ -2,13 +2,13 @@ import clsx from "clsx";
 import type { ScaleLinear } from "d3-scale";
 import React from "react";
 
-import type { useChartScrollableOrchestrator } from "../hooks";
-import { DefaultLegend } from "./DefaultLegend/DefaultLegend";
-import { Grid } from "./Grid";
-import { LabelTooltipProvider } from "./LabelTooltip/LabelTooltip";
-import { ChartTooltip } from "./PortalTooltip/ChartTooltip";
-import { ScrollButtonsHorizontal } from "./ScrollButtonsHorizontal/ScrollButtonsHorizontal";
-import { YAxis } from "./YAxis";
+import type { useChartScrollableOrchestrator } from "../../../hooks";
+import { DefaultLegend } from "../../core/DefaultLegend/DefaultLegend";
+import { LabelTooltipProvider } from "../../core/LabelTooltip/LabelTooltip";
+import { ChartTooltip } from "../../core/PortalTooltip/ChartTooltip";
+import { Grid } from "../Grid";
+import { ScrollButtonsHorizontal } from "../ScrollButtonsHorizontal/ScrollButtonsHorizontal";
+import { YAxis } from "../axes/YAxis";
 
 interface MouseHandlers {
   handleMouseMove: React.MouseEventHandler<SVGSVGElement>;

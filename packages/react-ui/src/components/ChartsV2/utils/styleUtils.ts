@@ -20,4 +20,26 @@ const numberTickFormatter = (value: number) => {
   return String(value);
 };
 
-export { numberTickFormatter };
+const DEFAULT_MIN_Y_AXIS_WIDTH = 20;
+const DEFAULT_MAX_Y_AXIS_WIDTH = 200;
+const DEFAULT_Y_AXIS_PADDING = 10;
+
+const measureYAxisWidth = (
+  ticks: number[],
+  context: CanvasRenderingContext2D,
+  options?: { minWidth?: number; maxWidth?: number; padding?: number },
+): number => {
+  const minWidth = options?.minWidth ?? DEFAULT_MIN_Y_AXIS_WIDTH;
+  const maxWidth = options?.maxWidth ?? DEFAULT_MAX_Y_AXIS_WIDTH;
+  const padding = options?.padding ?? DEFAULT_Y_AXIS_PADDING;
+
+  let maxTextWidth = 0;
+  for (const tick of ticks) {
+    const w = context.measureText(numberTickFormatter(tick)).width;
+    if (w > maxTextWidth) maxTextWidth = w;
+  }
+
+  return Math.max(minWidth, Math.min(maxWidth, Math.ceil(maxTextWidth) + padding));
+};
+
+export { measureYAxisWidth, numberTickFormatter };

@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React from "react";
-import { IconButton } from "../../../IconButton";
+import { IconButton } from "../../../../IconButton";
 
 interface ScrollButtonsHorizontalProps {
   dataWidth: number;

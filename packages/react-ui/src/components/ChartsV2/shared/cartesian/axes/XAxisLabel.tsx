@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import type { XAxisTickVariant } from "../types";
-import { LabelTooltip } from "./LabelTooltip/LabelTooltip";
-import { useIsTruncated } from "./useIsTruncated";
+import type { XAxisTickVariant } from "../../../types";
+import { LabelTooltip } from "../../core/LabelTooltip/LabelTooltip";
+import { useIsTruncated } from "../../core/useIsTruncated";
 
 interface XAxisLabelProps {
   label: string;

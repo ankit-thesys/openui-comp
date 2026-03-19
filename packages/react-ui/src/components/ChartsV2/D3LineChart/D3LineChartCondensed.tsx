@@ -1,10 +1,10 @@
 import { useCallback } from "react";
 
 import { useChartCondensedOrchestrator, usePrintContext, useXScale, useYScale } from "../hooks";
-import { AngledXAxis } from "../shared/AngledXAxis";
-import { ClipDefs } from "../shared/ClipDefs";
-import { CondensedChartLayout } from "../shared/CondensedChartLayout";
-import { LineDotCrosshair } from "../shared/LineDotCrosshair";
+import { AngledXAxis } from "../shared/cartesian/axes/AngledXAxis";
+import { ClipDefs } from "../shared/cartesian/ClipDefs";
+import { CondensedChartLayout } from "../shared/cartesian/layouts/CondensedChartLayout";
+import { LineDotCrosshair } from "../shared/cartesian/LineDotCrosshair";
 import { findNearestDataIndex } from "../utils/mouseUtils";
 import { LineSeries } from "./parts/LineSeries";
 

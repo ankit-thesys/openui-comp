@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import type { TooltipItem } from "../../shared/PortalTooltip/ChartTooltip";
+import type { TooltipItem } from "../../shared/core/PortalTooltip/ChartTooltip";
 import type { ChartData } from "../../types";
 
 export interface TooltipPayload {

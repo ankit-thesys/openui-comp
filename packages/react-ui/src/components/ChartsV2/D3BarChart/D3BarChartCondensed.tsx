@@ -7,9 +7,9 @@ import {
   useXBandScale,
   useYScale,
 } from "../hooks";
-import { AngledXAxis } from "../shared/AngledXAxis";
-import { ClipDefs } from "../shared/ClipDefs";
-import { CondensedChartLayout } from "../shared/CondensedChartLayout";
+import { AngledXAxis } from "../shared/cartesian/axes/AngledXAxis";
+import { ClipDefs } from "../shared/cartesian/ClipDefs";
+import { CondensedChartLayout } from "../shared/cartesian/layouts/CondensedChartLayout";
 import { findBandIndex } from "../utils/mouseUtils";
 import { BarSeries } from "./parts/BarSeries";
 import { Crosshair } from "./parts/Crosshair";

@@ -5,5 +5,6 @@ export * from "./useChartHover";
 export * from "./useContainerSize";
 export * from "./useLegendHeight";
 export * from "./usePrintContext";
+export * from "./useSeriesVisibility";
 export * from "./useTooltipPayload";
 export * from "./useTransformedKeys";

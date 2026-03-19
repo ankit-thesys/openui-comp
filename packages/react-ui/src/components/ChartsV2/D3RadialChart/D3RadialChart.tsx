@@ -2,9 +2,9 @@ import clsx from "clsx";
 import { useMemo } from "react";
 
 import { useCategoricalChartOrchestrator } from "../hooks";
-import { DefaultLegend } from "../shared/DefaultLegend/DefaultLegend";
-import { LabelTooltipProvider } from "../shared/LabelTooltip/LabelTooltip";
-import { ChartTooltip } from "../shared/PortalTooltip/ChartTooltip";
+import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
+import { LabelTooltipProvider } from "../shared/core/LabelTooltip/LabelTooltip";
+import { ChartTooltip } from "../shared/core/PortalTooltip/ChartTooltip";
 import { RadialBars } from "./parts/RadialBars";
 import { RadialGrid } from "./parts/RadialGrid";
 import type { D3RadialChartData, D3RadialChartProps } from "./types";

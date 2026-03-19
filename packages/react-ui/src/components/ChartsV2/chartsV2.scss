@@ -5,6 +5,6 @@
 @forward "./D3RadialChart/d3RadialChart";
 @forward "./D3RadarChart/d3RadarChart";
 @forward "./D3ScatterChart/d3ScatterChart";
-@forward "./shared/PortalTooltip/portalTooltip";
-@forward "./shared/DefaultLegend/defaultLegend";
-@forward "./shared/ScrollButtonsHorizontal/scrollButtonsHorizontal";
+@forward "./shared/core/PortalTooltip/portalTooltip";
+@forward "./shared/core/DefaultLegend/defaultLegend";
+@forward "./shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal";

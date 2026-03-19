@@ -10,15 +10,21 @@ import type {
 import type { LegendItem } from "../../types";
 import { buildContainerStyle } from "../../utils/buildContainerStyle";
 import { CHART_MARGIN_TOP, DEFAULT_CHART_HEIGHT } from "../../utils/constants";
-import { getDistributedColors, getPalette, type PaletteName } from "../../utils/paletteUtils";
-import { numberTickFormatter } from "../../utils/styleUtils";
+import { useChartPalette, type PaletteName } from "../../utils/paletteUtils";
+import { measureYAxisWidth } from "../../utils/styleUtils";
 import { useCanvasContextForLabelSize } from "../core/useCanvasContextForLabelSize";
 import { useContainerSize } from "../core/useContainerSize";
 import { useLegendHeight } from "../core/useLegendHeight";
 import { usePrintContext } from "../core/usePrintContext";
+import { useSeriesVisibility } from "../core/useSeriesVisibility";
 
 const SNAP_RADIUS = 30;
 const X_AXIS_HEIGHT = 28;
+
+export interface VisibleDataset {
+  dataset: D3ScatterChartData[number];
+  originalIndex: number;
+}
 
 export interface UseScatterChartOrchestratorParams {
   data: D3ScatterChartData;
@@ -29,6 +35,8 @@ export interface UseScatterChartOrchestratorParams {
   height?: number | string;
   width?: number | string;
   fitLegendInHeight?: boolean;
+  xAxisLabel?: string;
+  yAxisLabel?: string;
   onClick?: (
     point: ScatterPoint,
     datasetName: string,
@@ -46,12 +54,13 @@ export function useScatterChartOrchestrator({
   height,
   width,
   fitLegendInHeight,
+  xAxisLabel,
+  yAxisLabel,
   onClick,
 }: UseScatterChartOrchestratorParams) {
   const containerRef = useRef<HTMLDivElement>(null);
   const legendRef = useRef<HTMLDivElement>(null);
   const [isLegendExpanded, setIsLegendExpanded] = useState(false);
-  const [hiddenSeries, setHiddenSeries] = useState<Set<string>>(new Set());
   const [hoveredPoint, setHoveredPoint] = useState<HoveredScatterPoint | null>(null);
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
 
@@ -66,17 +75,15 @@ export function useScatterChartOrchestrator({
 
   const shouldFitLegend = fitLegendInHeight ?? height !== undefined;
 
-  // --- Colors ---
+  // --- Colors (via shared useChartPalette — respects ThemeProvider overrides) ---
   const datasetNames = useMemo(() => data.map((ds) => ds.name), [data]);
-  const palette = useMemo(() => {
-    if (customPalette) return customPalette;
-    return getPalette(chartThemeName).colors;
-  }, [chartThemeName, customPalette]);
 
-  const distributedColors = useMemo(
-    () => getDistributedColors(palette, datasetNames.length),
-    [palette, datasetNames.length],
-  );
+  const distributedColors = useChartPalette({
+    chartThemeName,
+    customPalette,
+    themePaletteName: "defaultChartPalette",
+    dataLength: datasetNames.length,
+  });
 
   const colorMap = useMemo(() => {
     const map: Record<string, string> = {};
@@ -86,25 +93,14 @@ export function useScatterChartOrchestrator({
     return map;
   }, [datasetNames, distributedColors]);
 
-  // --- Hidden series ---
-  const toggleSeries = useCallback(
-    (name: string) => {
-      setHiddenSeries((prev) => {
-        const next = new Set(prev);
-        if (next.has(name)) {
-          next.delete(name);
-        } else {
-          if (next.size >= datasetNames.length - 1) return prev;
-          next.add(name);
-        }
-        return next;
-      });
-    },
-    [datasetNames.length],
-  );
+  // --- Hidden series (via shared useSeriesVisibility) ---
+  const { hiddenSeries, toggleSeries } = useSeriesVisibility(datasetNames);
 
-  const visibleDatasets = useMemo(
-    () => data.filter((ds) => !hiddenSeries.has(ds.name)),
+  const visibleDatasets: VisibleDataset[] = useMemo(
+    () =>
+      data
+        .map((dataset, originalIndex) => ({ dataset, originalIndex }))
+        .filter(({ dataset }) => !hiddenSeries.has(dataset.name)),
     [data, hiddenSeries],
   );
 
@@ -131,17 +127,12 @@ export function useScatterChartOrchestrator({
     return { xMin, xMax, yMin, yMax };
   }, [data]);
 
-  // --- Y-axis width ---
+  // --- Y-axis width (via shared measureYAxisWidth utility) ---
   const yAxisWidth = useMemo(() => {
     if (!showYAxis) return 0;
     const tempScale = scaleLinear().domain([yMin, yMax]).nice();
     const ticks = tempScale.ticks();
-    let maxWidth = 0;
-    for (const tick of ticks) {
-      const w = context.measureText(numberTickFormatter(tick)).width;
-      if (w > maxWidth) maxWidth = w;
-    }
-    return Math.max(20, Math.min(200, Math.ceil(maxWidth) + 10));
+    return measureYAxisWidth(ticks, context);
   }, [showYAxis, yMin, yMax, context]);
 
   // --- Dimensions ---
@@ -166,15 +157,13 @@ export function useScatterChartOrchestrator({
   );
 
   // --- Hover (2D nearest-point) ---
-  const handleMouseMove = useCallback(
-    (event: React.MouseEvent<SVGGElement>) => {
-      const [mx, my] = pointer(event.nativeEvent, event.currentTarget);
+  const findNearestPoint = useCallback(
+    (clientX: number, clientY: number, currentTarget: SVGGElement) => {
+      const [mx, my] = pointer({ clientX, clientY }, currentTarget);
       let minDist = Infinity;
       let closest: HoveredScatterPoint | null = null;
 
-      for (let dsIdx = 0; dsIdx < visibleDatasets.length; dsIdx++) {
-        const ds = visibleDatasets[dsIdx]!;
-        const originalIdx = data.indexOf(ds);
+      for (const { dataset: ds, originalIndex } of visibleDatasets) {
         for (let ptIdx = 0; ptIdx < ds.data.length; ptIdx++) {
           const pt = ds.data[ptIdx]!;
           const px = xScale(pt.x);
@@ -183,7 +172,7 @@ export function useScatterChartOrchestrator({
           if (dist < minDist) {
             minDist = dist;
             closest = {
-              datasetIndex: originalIdx,
+              datasetIndex: originalIndex,
               pointIndex: ptIdx,
               point: pt,
               datasetName: ds.name,
@@ -198,15 +187,16 @@ export function useScatterChartOrchestrator({
         setHoveredPoint(null);
       }
 
-      const rect = containerRef.current?.getBoundingClientRect();
-      if (rect) {
-        setMousePos({
-          x: event.clientX,
-          y: event.clientY,
-        });
-      }
+      setMousePos({ x: clientX, y: clientY });
     },
-    [visibleDatasets, data, xScale, yScale],
+    [visibleDatasets, xScale, yScale],
+  );
+
+  const handleMouseMove = useCallback(
+    (event: React.MouseEvent<SVGGElement>) => {
+      findNearestPoint(event.clientX, event.clientY, event.currentTarget);
+    },
+    [findNearestPoint],
   );
 
   const handleMouseLeave = useCallback(() => {
@@ -218,15 +208,9 @@ export function useScatterChartOrchestrator({
     (event: React.TouchEvent<SVGGElement>) => {
       const touch = event.touches[0];
       if (!touch) return;
-      const syntheticEvent = {
-        nativeEvent: touch,
-        currentTarget: event.currentTarget,
-        clientX: touch.clientX,
-        clientY: touch.clientY,
-      } as unknown as React.MouseEvent<SVGGElement>;
-      handleMouseMove(syntheticEvent);
+      findNearestPoint(touch.clientX, touch.clientY, event.currentTarget);
     },
-    [handleMouseMove],
+    [findNearestPoint],
   );
 
   const handleTouchEnd = useCallback(() => {
@@ -248,18 +232,18 @@ export function useScatterChartOrchestrator({
     [onClick, hoveredPoint],
   );
 
-  // --- Tooltip ---
+  // --- Tooltip (uses xAxisLabel/yAxisLabel for item names) ---
   const tooltipPayload = useMemo(() => {
     if (!hoveredPoint) return null;
     const color = colorMap[hoveredPoint.datasetName] ?? "#000";
     return {
       label: hoveredPoint.datasetName,
       items: [
-        { name: "X", value: hoveredPoint.point.x, color },
-        { name: "Y", value: hoveredPoint.point.y, color },
+        { name: xAxisLabel ?? "X", value: hoveredPoint.point.x, color },
+        { name: yAxisLabel ?? "Y", value: hoveredPoint.point.y, color },
       ],
     };
-  }, [hoveredPoint, colorMap]);
+  }, [hoveredPoint, colorMap, xAxisLabel, yAxisLabel]);
 
   // --- Legend ---
   const legendItems: LegendItem[] = useMemo(

@@ -1,17 +1,25 @@
-import type { ScaleBand } from "d3-scale";
+import type { ScaleBand, ScalePoint } from "d3-scale";
 import React from "react";
-import { XAxisLabel } from "../../shared/XAxisLabel";
-import { XAxisTickVariant } from "../../types";
+import type { XAxisTickVariant } from "../../../types";
+import { XAxisLabel } from "./XAxisLabel";
 
 const X_AXIS_TOP_GAP = 4;
 
+type XAxisScale = ScalePoint<string> | ScaleBand<string>;
+
 interface XAxisProps {
-  scale: ScaleBand<string>;
+  scale: XAxisScale;
   data: Array<Record<string, string | number>>;
   categoryKey: string;
   tickVariant: XAxisTickVariant;
+  widthOfGroup?: number;
   labelHeight: number;
   labelInterval?: number;
+  classPrefix: string;
+}
+
+function isBandScale(scale: XAxisScale): scale is ScaleBand<string> {
+  return typeof (scale as ScaleBand<string>).paddingInner === "function";
 }
 
 export const XAxis: React.FC<XAxisProps> = ({
@@ -19,16 +27,20 @@ export const XAxis: React.FC<XAxisProps> = ({
   data: _data,
   categoryKey: _categoryKey,
   tickVariant,
+  widthOfGroup,
   labelHeight,
   labelInterval = 1,
+  classPrefix,
 }) => {
   const domain = scale.domain();
-  const bandWidth = scale.bandwidth();
+  const band = isBandScale(scale);
+  const labelWidth = band ? (scale as ScaleBand<string>).bandwidth() : (widthOfGroup ?? 0);
 
   return (
-    <g className="openui-d3-bar-chart-x-axis">
+    <g className={`${classPrefix}-x-axis`}>
       {domain.map((category, i) => {
-        const x = scale(category) ?? 0;
+        const rawX = scale(category) ?? 0;
+        const x = band ? rawX : rawX - labelWidth / 2;
         const label = String(category);
         const showLabel = labelInterval <= 1 || i % labelInterval === 0 || i === domain.length - 1;
 
@@ -37,16 +49,16 @@ export const XAxis: React.FC<XAxisProps> = ({
             key={category}
             x={x}
             y={X_AXIS_TOP_GAP}
-            width={bandWidth}
+            width={labelWidth}
             height={labelHeight}
           >
             {showLabel && (
               <XAxisLabel
                 label={label}
                 tickVariant={tickVariant}
-                width={bandWidth}
-                multiLineClassName="openui-d3-bar-chart-x-tick-multi-line"
-                singleLineClassName="openui-d3-bar-chart-x-tick-single-line"
+                width={labelWidth}
+                multiLineClassName={`${classPrefix}-x-tick-multi-line`}
+                singleLineClassName={`${classPrefix}-x-tick-single-line`}
               />
             )}
           </foreignObject>

@@ -1,4 +1,4 @@
-@use "../shared/chartBase" as base;
+@use "../shared/cartesian/chartBase" as base;
 
 @include base.chart-base("area-chart");
 @include base.crosshair-styles("area-chart");

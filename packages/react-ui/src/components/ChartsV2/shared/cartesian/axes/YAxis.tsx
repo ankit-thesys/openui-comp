@@ -1,6 +1,6 @@
 import type { ScaleLinear } from "d3-scale";
 import React from "react";
-import { numberTickFormatter } from "../utils/styleUtils";
+import { numberTickFormatter } from "../../../utils/styleUtils";
 
 interface YAxisProps {
   scale: ScaleLinear<number, number>;

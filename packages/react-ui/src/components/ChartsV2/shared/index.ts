@@ -1,13 +1,17 @@
-export { AngledXAxis } from "./AngledXAxis";
-export { ClipDefs } from "./ClipDefs";
-export { DefaultLegend } from "./DefaultLegend/DefaultLegend";
-export { Grid } from "./Grid";
-export { LabelTooltip, LabelTooltipProvider } from "./LabelTooltip/LabelTooltip";
-export { LineDotCrosshair } from "./LineDotCrosshair";
-export { ChartTooltip } from "./PortalTooltip/ChartTooltip";
-export type { TooltipItem } from "./PortalTooltip/ChartTooltip";
-export { ScrollButtonsHorizontal } from "./ScrollButtonsHorizontal/ScrollButtonsHorizontal";
-export { useIsTruncated } from "./useIsTruncated";
-export { XAxis } from "./XAxis";
-export { XAxisLabel } from "./XAxisLabel";
-export { YAxis } from "./YAxis";
+// Core — used by all chart types
+export { DefaultLegend } from "./core/DefaultLegend/DefaultLegend";
+export { LabelTooltip, LabelTooltipProvider } from "./core/LabelTooltip/LabelTooltip";
+export { ChartTooltip } from "./core/PortalTooltip/ChartTooltip";
+export type { TooltipItem } from "./core/PortalTooltip/ChartTooltip";
+export { useIsTruncated } from "./core/useIsTruncated";
+
+// Cartesian — used by Area, Bar, Line (+ Scatter for Grid/YAxis)
+export { AngledXAxis } from "./cartesian/axes/AngledXAxis";
+export { XAxis } from "./cartesian/axes/XAxis";
+export { XAxisLabel } from "./cartesian/axes/XAxisLabel";
+export { YAxis } from "./cartesian/axes/YAxis";
+export { ClipDefs } from "./cartesian/ClipDefs";
+export { Grid } from "./cartesian/Grid";
+export { LineDotCrosshair } from "./cartesian/LineDotCrosshair";
+export { ScrollButtonsHorizontal } from "./cartesian/ScrollButtonsHorizontal/ScrollButtonsHorizontal";
+export { VerticalGrid } from "./cartesian/VerticalGrid";

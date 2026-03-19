@@ -1,5 +1,5 @@
 import React from "react";
-import { ClipDefs } from "../../shared/ClipDefs";
+import { ClipDefs } from "../../shared/cartesian/ClipDefs";
 
 const GRADIENT_TOP_OPACITY = 0.6;
 const GRADIENT_BOTTOM_OPACITY = 0;

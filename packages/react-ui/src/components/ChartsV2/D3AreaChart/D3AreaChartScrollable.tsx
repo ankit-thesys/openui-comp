@@ -7,9 +7,9 @@ import {
   useXScale,
   useYScale,
 } from "../hooks";
-import { LineDotCrosshair } from "../shared/LineDotCrosshair";
-import { ScrollableChartLayout } from "../shared/ScrollableChartLayout";
-import { XAxis } from "../shared/XAxis";
+import { LineDotCrosshair } from "../shared/cartesian/LineDotCrosshair";
+import { XAxis } from "../shared/cartesian/axes/XAxis";
+import { ScrollableChartLayout } from "../shared/cartesian/layouts/ScrollableChartLayout";
 import { findNearestDataIndex } from "../utils/mouseUtils";
 import { AreaSeries } from "./parts/AreaSeries";
 import { GradientDefs } from "./parts/GradientDefs";

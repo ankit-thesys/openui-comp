@@ -1,43 +1,15 @@
 import clsx from "clsx";
-import type { ScaleLinear } from "d3-scale";
-import React from "react";
 
 import { useScatterChartOrchestrator } from "../hooks";
-import { DefaultLegend } from "../shared/DefaultLegend/DefaultLegend";
-import { Grid } from "../shared/Grid";
-import { LabelTooltipProvider } from "../shared/LabelTooltip/LabelTooltip";
-import { ChartTooltip } from "../shared/PortalTooltip/ChartTooltip";
-import { YAxis } from "../shared/YAxis";
+import { YAxis } from "../shared/cartesian/axes/YAxis";
+import { Grid } from "../shared/cartesian/Grid";
+import { VerticalGrid } from "../shared/cartesian/VerticalGrid";
+import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
+import { LabelTooltipProvider } from "../shared/core/LabelTooltip/LabelTooltip";
+import { ChartTooltip } from "../shared/core/PortalTooltip/ChartTooltip";
 import { NumericXAxis } from "./parts/NumericXAxis";
 import { ScatterDots } from "./parts/ScatterDots";
 import type { D3ScatterChartProps } from "./types";
-
-const MIN_TICK_SPACING = 60;
-
-interface VerticalGridProps {
-  xScale: ScaleLinear<number, number>;
-  chartWidth: number;
-  chartHeight: number;
-  className?: string;
-}
-
-const VerticalGrid: React.FC<VerticalGridProps> = ({
-  xScale,
-  chartWidth,
-  chartHeight,
-  className,
-}) => {
-  const tickCount = Math.max(2, Math.floor(chartWidth / MIN_TICK_SPACING));
-  const ticks = xScale.ticks(tickCount);
-
-  return (
-    <g className={className}>
-      {ticks.map((t) => (
-        <line key={t} x1={xScale(t)} x2={xScale(t)} y1={0} y2={chartHeight} />
-      ))}
-    </g>
-  );
-};
 
 export function D3ScatterChart(props: D3ScatterChartProps) {
   const {
@@ -68,6 +40,8 @@ export function D3ScatterChart(props: D3ScatterChartProps) {
     height,
     width,
     fitLegendInHeight,
+    xAxisLabel: typeof xAxisLabel === "string" ? xAxisLabel : undefined,
+    yAxisLabel: typeof yAxisLabel === "string" ? yAxisLabel : undefined,
     onClick,
   });
 
@@ -148,7 +122,6 @@ export function D3ScatterChart(props: D3ScatterChartProps) {
 
             <ScatterDots
               datasets={orch.data.visibleDatasets}
-              allDatasets={data}
               xScale={xScale}
               yScale={yScale}
               colorMap={orch.data.colorMap}

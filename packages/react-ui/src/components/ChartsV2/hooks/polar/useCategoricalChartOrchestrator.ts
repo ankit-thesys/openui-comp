@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useRef, useState } from "react";
 
-import type { TooltipItem } from "../../shared/PortalTooltip/ChartTooltip";
+import type { TooltipItem } from "../../shared/core/PortalTooltip/ChartTooltip";
 import type { ChartData } from "../../types";
 import { buildContainerStyle } from "../../utils/buildContainerStyle";
 import type { PaletteName } from "../../utils/paletteUtils";

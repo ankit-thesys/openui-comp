@@ -7,9 +7,9 @@ import {
   useXBandScale,
   useYScale,
 } from "../hooks";
-import { ClipDefs } from "../shared/ClipDefs";
-import { ScrollableChartLayout } from "../shared/ScrollableChartLayout";
-import { XAxis } from "../shared/XAxis";
+import { XAxis } from "../shared/cartesian/axes/XAxis";
+import { ClipDefs } from "../shared/cartesian/ClipDefs";
+import { ScrollableChartLayout } from "../shared/cartesian/layouts/ScrollableChartLayout";
 import { findBandIndex } from "../utils/mouseUtils";
 import { BarSeries } from "./parts/BarSeries";
 import { Crosshair } from "./parts/Crosshair";
