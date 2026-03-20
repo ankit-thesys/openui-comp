@@ -1,6 +1,21 @@
 "use client";
 
 export * from "./components/Accordion";
+
+// Artifact exports (ArtifactPanel/ArtifactPortalTarget also available as Shell.*)
+export { useActiveArtifact, useArtifact } from "@openuidev/react-headless";
+export type { ArtifactMeta, ArtifactMetaInput } from "@openuidev/react-headless";
+export {
+  ArtifactOverlay,
+  ArtifactPanel,
+  ArtifactPortalTarget,
+} from "./components/_shared/artifact";
+export type {
+  ArtifactOverlayProps,
+  ArtifactPanelProps,
+  ArtifactPortalTargetProps,
+} from "./components/_shared/artifact";
+
 export * from "./components/Button";
 export * from "./components/Buttons";
 export * from "./components/Calendar";
@@ -29,6 +44,7 @@ export * from "./components/ListItem";
 export * from "./components/MarkDownRenderer";
 export * from "./components/MessageLoading";
 export * from "./components/OpenUIChat";
+export * from "./components/Portal";
 export * from "./components/RadioGroup";
 export * from "./components/RadioItem";
 export * from "./components/SectionBlock";
