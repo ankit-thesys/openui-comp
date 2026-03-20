@@ -3,6 +3,8 @@
 // To regenerate, run from packages/react-ui:
 //   node src/scripts/scss-import.js
 
+@use "../openui-defaults.scss";
+
 @forward "./Accordion/accordion.scss";
 @forward "./BottomTray/bottomTray.scss";
 @forward "./Button/button.scss";
