@@ -25,6 +25,10 @@
 Claude.md
 .claude/
 CLAUDE.local.md
+draft/
+docs/adr
+ARCHITECTURE.md
+TECH-DEBT.md
 
 # Dependencies
 node_modules
