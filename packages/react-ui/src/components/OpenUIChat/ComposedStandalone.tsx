@@ -13,10 +13,12 @@ import {
   SidebarHeader,
   SidebarSeparator,
   ThreadContainer,
+  ThreadHeader,
   ThreadList,
   WelcomeScreen,
 } from "../Shell";
 import { CustomComposerAdapter } from "./CustomComposerAdapter";
+import { ShareThread } from "./ShareThread";
 import type { SharedChatUIProps } from "./types";
 import { isChatEmpty, isWelcomeComponent } from "./utils";
 import { withChatProvider } from "./withChatProvider";
@@ -70,19 +72,29 @@ const ConversationStartersRenderer = ({
   );
 };
 
+interface FullScreenSpecificProps extends SharedChatUIProps {
+  threadHeader?: React.ReactNode;
+  mobileHeaderActions?: React.ReactNode;
+}
+
 const FullScreenInner = ({
   logoUrl = "https://www.openui.com/favicon.svg",
   agentName = "My Agent",
   messageLoading: MessageLoadingComponent = MessageLoading,
   scrollVariant = "user-message-anchor",
-  isArtifactActive,
-  renderArtifact,
   welcomeMessage,
   conversationStarters,
   assistantMessage,
   userMessage,
   composer: ComposerComponent,
-}: SharedChatUIProps) => {
+  threadHeader,
+  mobileHeaderActions,
+  generateShareLink,
+}: FullScreenSpecificProps) => {
+  const shareButton = generateShareLink ? (
+    <ShareThread generateShareLink={generateShareLink} />
+  ) : null;
+
   return (
     <Container logoUrl={logoUrl} agentName={agentName}>
       <SidebarContainer>
@@ -93,8 +105,21 @@ const FullScreenInner = ({
           <ThreadList />
         </SidebarContent>
       </SidebarContainer>
-      <ThreadContainer isArtifactActive={isArtifactActive} renderArtifact={renderArtifact}>
-        <MobileHeader />
+      <ThreadContainer>
+        <MobileHeader
+          rightChildren={
+            <>
+              {shareButton}
+              {mobileHeaderActions}
+            </>
+          }
+        />
+        {(threadHeader || shareButton) && (
+          <ThreadHeader>
+            {threadHeader}
+            {shareButton}
+          </ThreadHeader>
+        )}
         <WelcomeMessageRenderer
           welcomeMessage={welcomeMessage}
           conversationStarters={conversationStarters}
@@ -117,4 +142,7 @@ const FullScreenInner = ({
   );
 };
 
-export const FullScreen = withChatProvider(FullScreenInner);
+export const FullScreen = withChatProvider<{
+  threadHeader?: React.ReactNode;
+  mobileHeaderActions?: React.ReactNode;
+}>(FullScreenInner);

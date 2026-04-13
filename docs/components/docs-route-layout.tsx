@@ -3,6 +3,7 @@
 import { DocsNavbar } from "@/components/docs-navbar";
 import { baseOptions, siteConfig } from "@/lib/layout.shared";
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
+import { Play, Plug } from "lucide-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -49,23 +50,7 @@ export function DocsRouteLayout({ tree, children }: DocsRouteLayoutProps) {
         collapsible: false,
         banner: (
           <div className="flex flex-col mb-2">
-            <SidebarBannerLink
-              href="/playground"
-              label="Playground"
-              external
-              icon={
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <polygon points="5 3 19 12 5 21 5 3" />
-                </svg>
-              }
-            />
+            <SidebarBannerLink href="/playground" label="Playground" external icon={<Play />} />
             <SidebarBannerLink
               href={siteConfig.discordUrl}
               label="Discord"
@@ -76,6 +61,7 @@ export function DocsRouteLayout({ tree, children }: DocsRouteLayoutProps) {
                 </svg>
               }
             />
+            <SidebarBannerLink href="/docs/mcp" label="Docs MCP" icon={<Plug />} />
           </div>
         ),
       }}

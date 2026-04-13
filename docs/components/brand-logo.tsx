@@ -6,15 +6,19 @@ import svgPaths from "@/imports/svg-urruvoh2be";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import styles from "./brand-logo.module.css";
 
-const COUNT_UP_DURATION = 3000;
-const BUTTON_SHADOW = "0px 1px 3px 0px rgba(22,34,51,0.08), 0px 12px 24px 0px rgba(22,34,51,0.04)";
+const COUNT_UP_DURATION = 1500;
 
 const LOGO_SPRING = { type: "spring", stiffness: 400, damping: 15 } as const;
 const LOGO_COLOR_TRANSITION = { duration: 0.25 } as const;
 const GLOW_TRANSITION = { duration: 0.2 } as const;
 
 export type LogoVariant = "light" | "dark";
+
+function cx(...classNames: Array<string | false | null | undefined>) {
+  return classNames.filter(Boolean).join(" ");
+}
 
 export function ThesysLogo({
   isHovered,
@@ -162,32 +166,47 @@ export function OpenUILogo({ variant = "light" }: { variant?: LogoVariant }) {
 // ---------------------------------------------------------------------------
 
 export function useGitHubStarCount(repo: string) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
+    let cancelled = false;
+
     fetch(`https://api.github.com/repos/${repo}`)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`GitHub star count fetch failed: ${res.status}`);
+        }
+        return res.json();
+      })
       .then((data) => {
         const target: unknown = data.stargazers_count;
         if (typeof target !== "number") return;
+        if (!cancelled) {
+          const startCount = Math.max(target - 50, 0);
+          const startTime = performance.now();
 
-        let cancelled = false;
-        const startTime = performance.now();
+          setCount(startCount);
 
-        const tick = () => {
-          if (cancelled) return;
-          const progress = Math.min((performance.now() - startTime) / COUNT_UP_DURATION, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          setCount(Math.round(eased * target));
-          if (progress < 1) requestAnimationFrame(tick);
-        };
+          const tick = () => {
+            if (cancelled) return;
 
-        requestAnimationFrame(tick);
-        return () => {
-          cancelled = true;
-        };
+            const progress = Math.min((performance.now() - startTime) / COUNT_UP_DURATION, 1);
+            const nextCount = Math.round(startCount + (target - startCount) * progress);
+            setCount(nextCount);
+
+            if (progress < 1) {
+              requestAnimationFrame(tick);
+            }
+          };
+
+          requestAnimationFrame(tick);
+        }
       })
       .catch(() => {});
+
+    return () => {
+      cancelled = true;
+    };
   }, [repo]);
 
   return count;
@@ -195,15 +214,15 @@ export function useGitHubStarCount(repo: string) {
 
 export function GitHubIcon() {
   return (
-    <div className="overflow-clip relative shrink-0 size-5">
-      <div className="absolute inset-[1.67%_1.67%_4.05%_1.67%]">
+    <div className={styles.githubIcon}>
+      <div className={styles.githubIconInner}>
         <svg
           className="absolute block size-full"
           fill="none"
           preserveAspectRatio="none"
           viewBox="0 0 19.3333 18.8561"
         >
-          <path d={svgPaths.p294daf00} fill="black" stroke="black" />
+          <path d={svgPaths.p294daf00} fill="currentColor" stroke="currentColor" />
         </svg>
       </div>
     </div>
@@ -214,19 +233,23 @@ export function StarCountBadge({
   count,
   isHighlighted,
 }: {
-  count: number;
+  count: number | null;
   isHighlighted: boolean;
 }) {
   return (
-    <div
-      className="rounded-full h-7 flex items-center justify-center px-2 transition-colors duration-200"
-      style={{ backgroundColor: isHighlighted ? "black" : "rgba(0,0,0,0.06)" }}
-    >
+    <div className={cx(styles.starBadge, isHighlighted && styles.starBadgeHighlighted)}>
       <span
-        className="font-['Inter',sans-serif] font-medium text-[15px] leading-6 tabular-nums transition-colors duration-200"
-        style={{ color: isHighlighted ? "white" : "black" }}
+        className={cx(styles.starCount, isHighlighted && styles.starCountHighlighted)}
+        aria-hidden={count === null}
       >
-        {count}
+        <span
+          className={cx(
+            styles.starCountValue,
+            count === null ? styles.starCountHidden : styles.starCountVisible,
+          )}
+        >
+          {count ?? "0000"}
+        </span>
       </span>
     </div>
   );
@@ -251,14 +274,16 @@ export function GitHubStarButton({
       href={`https://github.com/${repo}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="bg-white flex items-center gap-1.5 h-10 pl-2.5 pr-1.5 rounded-full relative cursor-pointer transition-all duration-200 hover:scale-[0.995] no-underline"
+      className={styles.githubButton}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none rounded-full border border-black/6"
-        style={{ boxShadow: isScrolled || isHovered ? "none" : BUTTON_SHADOW }}
+        className={cx(
+          styles.githubButtonOverlay,
+          (isScrolled || isHovered) && styles.githubButtonOverlayFlat,
+        )}
       />
       <GitHubIcon />
       <StarCountBadge count={starCount} isHighlighted={isHovered} />

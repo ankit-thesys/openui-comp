@@ -5,7 +5,7 @@ description: stream LLM-generated UI to an Expo app that renders real native com
 
 OpenUI Lang runs on React Native. This example streams LLM-generated UI to an Expo app, where `<Renderer />` turns it into real native components — not a webview, not markdown, native `Text`, `View`, and SVG charts. The stack is an Expo app paired with a Next.js backend that handles the OpenAI call.
 
-[View source on GitHub →](https://github.com/thesysdev/crayon/tree/main/examples/openui-react-native)
+[View source on GitHub →](https://github.com/thesysdev/openui/tree/main/examples/openui-react-native)
 
 <div className="bg-[rgba(0,0,0,0.05)] dark:bg-gray-900 rounded-2xl p-2">
   <video
@@ -29,18 +29,16 @@ Three things differ from a web OpenUI Lang integration:
 There is no DOM, no HTML, no CSS. Components use `Text`, `View`, `StyleSheet` from `react-native`, and `react-native-svg` for charts:
 
 ```tsx
-component: ({ props }) => (
-  <RNText style={styles.textBody}>{props.content}</RNText>
-)
+component: ({ props }) => <RNText style={styles.textBody}>{props.content}</RNText>;
 ```
 
 ### 2. Two mirror libraries
 
 `@openuidev/cli` runs in Node.js to generate the system prompt, but it can't import React Native. This will be fixed in future versions of the CLI. The solution is two files with identical schemas — one with real renderers for the app, one with null renderers for the backend:
 
-| File | Purpose |
-| ---- | ------- |
-| `chat-app/library.tsx` | Real React Native renderers — what runs on device |
+| File                     | Purpose                                                                   |
+| ------------------------ | ------------------------------------------------------------------------- |
+| `chat-app/library.tsx`   | Real React Native renderers — what runs on device                         |
 | `backend/src/library.ts` | Null renderers (`() => null`) — used only to generate `system-prompt.txt` |
 
 Keep these in sync: same component names, same prop schemas, same root component.

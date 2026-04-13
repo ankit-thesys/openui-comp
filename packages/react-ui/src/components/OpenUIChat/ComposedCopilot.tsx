@@ -11,6 +11,7 @@ import {
   WelcomeScreen,
 } from "../CopilotShell";
 import { CustomComposerAdapter } from "./CustomComposerAdapter";
+import { ShareThread } from "./ShareThread";
 import type { SharedChatUIProps } from "./types";
 import { isChatEmpty, isWelcomeComponent } from "./utils";
 import { withChatProvider } from "./withChatProvider";
@@ -59,23 +60,38 @@ const ConversationStartersRenderer = ({
   );
 };
 
+interface CopilotSpecificProps extends SharedChatUIProps {
+  headerActions?: React.ReactNode;
+}
+
 const CopilotInner = ({
   logoUrl = "https://www.openui.com/favicon.svg",
   agentName = "My Agent",
   messageLoading: MessageLoadingComponent = MessageLoading,
   scrollVariant = "user-message-anchor",
-  isArtifactActive,
-  renderArtifact,
   welcomeMessage,
   conversationStarters,
   assistantMessage,
   userMessage,
   composer: ComposerComponent,
-}: SharedChatUIProps) => {
+  headerActions,
+  generateShareLink,
+}: CopilotSpecificProps) => {
+  const shareButton = generateShareLink ? (
+    <ShareThread generateShareLink={generateShareLink} />
+  ) : null;
+
   return (
     <Container logoUrl={logoUrl} agentName={agentName}>
-      <ThreadContainer isArtifactActive={isArtifactActive} renderArtifact={renderArtifact}>
-        <Header />
+      <ThreadContainer>
+        <Header
+          rightChildren={
+            <>
+              {shareButton}
+              {headerActions}
+            </>
+          }
+        />
         <WelcomeMessageRenderer welcomeMessage={welcomeMessage} />
         <ScrollArea scrollVariant={scrollVariant}>
           <Messages
@@ -95,4 +111,6 @@ const CopilotInner = ({
   );
 };
 
-export const Copilot = withChatProvider(CopilotInner);
+export const Copilot = withChatProvider<{
+  headerActions?: React.ReactNode;
+}>(CopilotInner);

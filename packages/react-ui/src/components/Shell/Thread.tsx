@@ -1,44 +1,35 @@
 import type { AssistantMessage, Message, ToolMessage } from "@openuidev/react-headless";
-import { MessageProvider, useThread } from "@openuidev/react-headless";
+import { MessageProvider, useActiveArtifact, useThread } from "@openuidev/react-headless";
 import clsx from "clsx";
-import React, { memo, useEffect, useRef } from "react";
+import React, { memo, useRef } from "react";
 import { useLayoutContext } from "../../context/LayoutContext";
 import { ScrollVariant, useScrollToBottom } from "../../hooks/useScrollToBottom";
+import { separateContentAndContext } from "../../utils/contentParser";
+import { ArtifactOverlay, ArtifactPortalTarget } from "../_shared/artifact";
+import { useShellStore } from "../_shared/store";
+import type { AssistantMessageComponent, UserMessageComponent } from "../_shared/types";
 import { Callout } from "../Callout";
 import { MarkDownRenderer } from "../MarkDownRenderer";
 import { MessageLoading as MessageLoadingComponent } from "../MessageLoading";
-import type { AssistantMessageComponent, UserMessageComponent } from "../OpenUIChat/types";
 import { ToolCallComponent } from "../ToolCall";
 import { ToolResult } from "../ToolResult";
 import { ResizableSeparator } from "./ResizableSeparator";
-import { useShellStore } from "./store";
 import { useArtifactResize } from "./useArtifactResize";
 
 export const ThreadContainer = ({
   children,
   className,
-  isArtifactActive = false,
-  renderArtifact = () => null,
 }: {
   children?: React.ReactNode;
   className?: string;
-  isArtifactActive?: boolean;
-  renderArtifact?: () => React.ReactNode;
 }) => {
   const { layout } = useLayoutContext();
   const isMobile = layout === "mobile";
+  const { isArtifactActive } = useActiveArtifact();
 
-  const { setIsSidebarOpen, setIsArtifactActive, setArtifactRenderer } = useShellStore((state) => ({
+  const { setIsSidebarOpen } = useShellStore((state) => ({
     setIsSidebarOpen: state.setIsSidebarOpen,
-    setIsArtifactActive: state.setIsArtifactActive,
-    setArtifactRenderer: state.setArtifactRenderer,
   }));
-
-  // Sync artifact state and renderer with store
-  useEffect(() => {
-    setIsArtifactActive(isArtifactActive);
-    setArtifactRenderer(renderArtifact);
-  }, [isArtifactActive, renderArtifact, setIsArtifactActive, setArtifactRenderer]);
 
   const isLoadingMessages = useThread((s) => s.isLoadingMessages);
 
@@ -74,6 +65,7 @@ export const ThreadContainer = ({
           })}
         >
           {children}
+          {isMobile && <ArtifactOverlay />}
         </div>
 
         {/* Desktop only: Resizable separator and artifact panel */}
@@ -90,7 +82,7 @@ export const ThreadContainer = ({
                 "openui-shell-thread-artifact-panel--animating": !isDragging,
               })}
             >
-              {renderArtifact?.()}
+              <ArtifactPortalTarget />
             </div>
           </>
         )}
@@ -117,16 +109,10 @@ export const ScrollArea = ({
   userMessageSelector?: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { layout } = useLayoutContext();
-  const isMobile = layout === "mobile";
 
   const messages = useThread((s) => s.messages);
   const isRunning = useThread((s) => s.isRunning);
   const isLoadingMessages = useThread((s) => s.isLoadingMessages);
-  const { isArtifactActive, artifactRenderer } = useShellStore((store) => ({
-    isArtifactActive: store.isArtifactActive,
-    artifactRenderer: store.artifactRenderer,
-  }));
 
   useScrollToBottom({
     ref,
@@ -152,9 +138,6 @@ export const ScrollArea = ({
       >
         {children}
       </div>
-      {isMobile && isArtifactActive && (
-        <div className="openui-shell-thread-artifact-panel--mobile">{artifactRenderer()}</div>
-      )}
     </div>
   );
 };
@@ -241,7 +224,9 @@ const UserMessageContent = ({ message }: { message: Message }) => {
   if (message.role !== "user") return null;
   const content = message.content;
   if (typeof content === "string") {
-    return <>{content}</>;
+    // Strip XML wrapper tags (<content>, <context>) so the bubble shows clean text
+    const { content: humanText } = separateContentAndContext(content);
+    return <>{humanText}</>;
   }
   // InputContent[] — render text parts
   return (
@@ -274,12 +259,14 @@ export const RenderMessage = memo(
     allMessages,
     assistantMessage: CustomAssistantMessage,
     userMessage: CustomUserMessage,
+    isStreaming,
   }: {
     message: Message;
     className?: string;
     allMessages: Message[];
     assistantMessage?: AssistantMessageComponent;
     userMessage?: UserMessageComponent;
+    isStreaming: boolean;
   }) => {
     if (message.role === "tool") {
       // Tool messages are rendered inline with their parent assistant message
@@ -288,7 +275,7 @@ export const RenderMessage = memo(
 
     if (message.role === "assistant") {
       if (CustomAssistantMessage) {
-        return <CustomAssistantMessage message={message} />;
+        return <CustomAssistantMessage message={message} isStreaming={isStreaming} />;
       }
       return (
         <AssistantMessageContainer className={className}>
@@ -353,7 +340,7 @@ export const Messages = ({
 
   return (
     <div className={clsx("openui-shell-thread-messages", className)}>
-      {messages.map((message) => {
+      {messages.map((message, i) => {
         return (
           <MessageProvider key={message.id} message={message}>
             <RenderMessage
@@ -361,6 +348,7 @@ export const Messages = ({
               allMessages={messages}
               assistantMessage={assistantMessage}
               userMessage={userMessage}
+              isStreaming={isRunning && i === messages.length - 1}
             />
           </MessageProvider>
         );
@@ -369,6 +357,16 @@ export const Messages = ({
       {!isRunning && threadError && <ThreadError />}
     </div>
   );
+};
+
+export const ThreadHeader = ({
+  children,
+  className,
+}: {
+  children?: React.ReactNode;
+  className?: string;
+}) => {
+  return <div className={clsx("openui-shell-thread-header", className)}>{children}</div>;
 };
 
 // Re-export Composer from components

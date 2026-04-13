@@ -25,16 +25,21 @@
 Claude.md
 .claude/
 CLAUDE.local.md
-ARCHITECTURE.md
-TECH-DEBT.md
+.workspace/
 
 # Dependencies
 node_modules
 .pnpm-store/
 
+# Environment
+.env
+.env.local
+.env*.local
+
 # Build output
 dist
 .next
+.svelte-kit
 *.tsbuildinfo
 typings
 
@@ -46,3 +51,4 @@ clean-install.sh
 lint-fix.sh
 
 draft/
+.venv/

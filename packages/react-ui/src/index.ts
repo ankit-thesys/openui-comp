@@ -1,6 +1,24 @@
 "use client";
 
 export * from "./components/Accordion";
+
+// Artifact() factory — generates a ComponentRenderer with artifact wiring
+export { Artifact } from "./artifact";
+export type { ArtifactConfig, ArtifactControls } from "./artifact";
+
+// Artifact exports (ArtifactPanel/ArtifactPortalTarget also available as Shell.*)
+export { useActiveArtifact, useArtifact } from "@openuidev/react-headless";
+export {
+  ArtifactOverlay,
+  ArtifactPanel,
+  ArtifactPortalTarget,
+} from "./components/_shared/artifact";
+export type {
+  ArtifactOverlayProps,
+  ArtifactPanelProps,
+  ArtifactPortalTargetProps,
+} from "./components/_shared/artifact";
+
 export * from "./components/Button";
 export * from "./components/Buttons";
 export * from "./components/Calendar";
@@ -48,13 +66,15 @@ export * from "./components/TextArea";
 export * from "./components/TextCallout";
 export * from "./components/TextContent";
 export {
-  Theme,
   ThemeProvider,
   createTheme,
   defaultDarkTheme,
   defaultLightTheme,
   swatchTokens,
+  type Theme,
 } from "./components/ThemeProvider";
+export type { ThemeProps } from "./components/ThemeProvider/ThemeProvider";
+export type { ThemeMode } from "./components/ThemeProvider/types";
 export * from "./components/ToolCall";
 export * from "./components/ToolResult";
 

@@ -13,6 +13,7 @@ import {
   WelcomeScreen,
 } from "../BottomTray";
 import { CustomComposerAdapter } from "./CustomComposerAdapter";
+import { ShareThread } from "./ShareThread";
 import type { SharedChatUIProps } from "./types";
 import { isChatEmpty, isWelcomeComponent } from "./utils";
 import { withChatProvider } from "./withChatProvider";
@@ -21,6 +22,7 @@ interface BottomTraySpecificProps extends SharedChatUIProps {
   isOpen?: boolean;
   onOpenChange?: (isOpen: boolean) => void;
   defaultOpen?: boolean;
+  headerActions?: React.ReactNode;
 }
 
 const WelcomeMessageRenderer = ({ welcomeMessage }: Pick<SharedChatUIProps, "welcomeMessage">) => {
@@ -72,8 +74,6 @@ const BottomTrayInner = ({
   agentName = "My Agent",
   messageLoading: MessageLoadingComponent = MessageLoading,
   scrollVariant = "user-message-anchor",
-  isArtifactActive,
-  renderArtifact,
   isOpen: controlledIsOpen,
   onOpenChange,
   defaultOpen = false,
@@ -82,6 +82,8 @@ const BottomTrayInner = ({
   assistantMessage,
   userMessage,
   composer: ComposerComponent,
+  headerActions,
+  generateShareLink,
 }: BottomTraySpecificProps) => {
   const [uncontrolledIsOpen, setUncontrolledIsOpen] = useState(defaultOpen);
 
@@ -94,6 +96,10 @@ const BottomTrayInner = ({
     onOpenChange?.(newIsOpen);
   };
 
+  const shareButton = generateShareLink ? (
+    <ShareThread generateShareLink={generateShareLink} />
+  ) : null;
+
   return (
     <>
       <Trigger onClick={() => handleOpenChange(!isOpen)} isOpen={isOpen}>
@@ -103,8 +109,16 @@ const BottomTrayInner = ({
       </Trigger>
 
       <Container logoUrl={logoUrl} agentName={agentName} isOpen={isOpen}>
-        <ThreadContainer isArtifactActive={isArtifactActive} renderArtifact={renderArtifact}>
-          <Header onMinimize={() => handleOpenChange(false)} />
+        <ThreadContainer>
+          <Header
+            onMinimize={() => handleOpenChange(false)}
+            rightChildren={
+              <>
+                {shareButton}
+                {headerActions}
+              </>
+            }
+          />
           <WelcomeMessageRenderer welcomeMessage={welcomeMessage} />
           <ScrollArea scrollVariant={scrollVariant}>
             <Messages
@@ -129,4 +143,5 @@ export const BottomTray = withChatProvider<{
   isOpen?: boolean;
   onOpenChange?: (isOpen: boolean) => void;
   defaultOpen?: boolean;
+  headerActions?: React.ReactNode;
 }>(BottomTrayInner);
