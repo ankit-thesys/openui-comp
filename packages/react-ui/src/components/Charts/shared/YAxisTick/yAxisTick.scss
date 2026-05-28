@@ -1,6 +1,8 @@
 @use "../../../../cssUtils" as cssUtils;
 
-.openui-chart-y-axis-tick {
-  @include cssUtils.typography(label, extra-small);
-  fill: cssUtils.$text-neutral-secondary;
+@layer openui {
+  .openui-chart-y-axis-tick {
+    @include cssUtils.typography(label, extra-small);
+    fill: cssUtils.$text-neutral-secondary;
+  }
 }

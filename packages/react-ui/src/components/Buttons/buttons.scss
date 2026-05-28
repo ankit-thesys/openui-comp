@@ -1,17 +1,19 @@
 @use "../../cssUtils" as cssUtils;
 
-.openui-buttons {
-  display: flex;
-  width: 100%;
-  gap: cssUtils.$space-m;
-  box-sizing: border-box;
+@layer openui {
+  .openui-buttons {
+    display: flex;
+    width: 100%;
+    gap: cssUtils.$space-m;
+    box-sizing: border-box;
 
-  &-horizontal {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+    &-horizontal {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
 
-  &-vertical {
-    flex-direction: column;
+    &-vertical {
+      flex-direction: column;
+    }
   }
 }

@@ -1,14 +1,16 @@
 @use "../../../cssUtils.scss" as cssUtils;
 
-.openui-hint {
-  box-sizing: border-box;
-  @include cssUtils.typography(body, small);
-  color: cssUtils.$text-neutral-secondary;
-  display: flex;
-  align-items: center;
-  gap: cssUtils.$space-xs;
+@layer openui {
+  .openui-hint {
+    box-sizing: border-box;
+    @include cssUtils.typography(body, small);
+    color: cssUtils.$text-neutral-secondary;
+    display: flex;
+    align-items: center;
+    gap: cssUtils.$space-xs;
 
-  &-error {
-    color: cssUtils.$text-danger-primary;
+    &-error {
+      color: cssUtils.$text-danger-primary;
+    }
   }
 }

@@ -1,40 +1,42 @@
 @use "../../../../cssUtils.scss" as cssUtils;
 
-.openui-chart-horizontal-scroll {
-  &-buttons-container {
-    position: relative;
-  }
+@layer openui {
+  .openui-chart-horizontal-scroll {
+    &-buttons-container {
+      position: relative;
+    }
 
-  &-button {
-    position: absolute;
-    background-color: cssUtils.$foreground;
-
-    &:hover {
+    &-button {
+      position: absolute;
       background-color: cssUtils.$foreground;
-    }
 
-    &--left {
-      top: -23px;
-      transform: translateY(-50%);
-      left: 20px;
-    }
+      &:hover {
+        background-color: cssUtils.$foreground;
+      }
 
-    &--right {
-      top: -23px;
-      transform: translateY(-50%);
-      right: 0px;
-    }
+      &--left {
+        top: -23px;
+        transform: translateY(-50%);
+        left: 20px;
+      }
 
-    &--disabled {
-      visibility: hidden;
-      cursor: not-allowed;
-      transition: visibility 0.1s linear;
-    }
+      &--right {
+        top: -23px;
+        transform: translateY(-50%);
+        right: 0px;
+      }
 
-    &--SideBarTooltip {
-      top: -23px;
-      transform: translateY(-50%);
-      right: 185px;
+      &--disabled {
+        visibility: hidden;
+        cursor: not-allowed;
+        transition: visibility 0.1s linear;
+      }
+
+      &--SideBarTooltip {
+        top: -23px;
+        transform: translateY(-50%);
+        right: 185px;
+      }
     }
   }
 }

@@ -44,50 +44,52 @@
 // side bar tooltip css
 @forward "./shared/SideBarTooltip/sideBarTooltip.scss";
 
-.openui-chart {
-  // Container styles
-  &-container {
-    display: flex;
-    aspect-ratio: 1/1;
-    justify-content: center;
-    font-size: 12px;
-    line-height: 16px;
+@layer openui {
+  .openui-chart {
+    // Container styles
+    &-container {
+      display: flex;
+      aspect-ratio: 1/1;
+      justify-content: center;
+      font-size: 12px;
+      line-height: 16px;
 
-    .recharts-radial-bar-background-sector {
-      fill: cssUtils.$background;
-    }
+      .recharts-radial-bar-background-sector {
+        fill: cssUtils.$background;
+      }
 
-    // Strokes and borders
-    .recharts-cartesian-grid line[stroke="#ccc"],
-    .recharts-curve.recharts-tooltip-cursor,
-    .recharts-polar-grid[stroke="#ccc"],
-    .recharts-reference-line[stroke="#ccc"] {
-      stroke: cssUtils.$border-default;
-    }
+      // Strokes and borders
+      .recharts-cartesian-grid line[stroke="#ccc"],
+      .recharts-curve.recharts-tooltip-cursor,
+      .recharts-polar-grid[stroke="#ccc"],
+      .recharts-reference-line[stroke="#ccc"] {
+        stroke: cssUtils.$border-default;
+      }
 
-    // Transparency settings
-    .recharts-dot[stroke="#fff"],
-    .recharts-sector[stroke="#fff"] {
-      stroke: transparent;
-    }
+      // Transparency settings
+      .recharts-dot[stroke="#fff"],
+      .recharts-sector[stroke="#fff"] {
+        stroke: transparent;
+      }
 
-    // Outline resets
-    .recharts-layer,
-    .recharts-sector,
-    .recharts-surface {
-      outline: none;
+      // Outline resets
+      .recharts-layer,
+      .recharts-sector,
+      .recharts-surface {
+        outline: none;
+      }
     }
   }
-}
 
-.openui-chart-cartesian-grid {
-  stroke: cssUtils.$border-default;
-}
+  .openui-chart-cartesian-grid {
+    stroke: cssUtils.$border-default;
+  }
 
-.openui-chart-polar-grid {
-  stroke: cssUtils.$border-default;
-}
+  .openui-chart-polar-grid {
+    stroke: cssUtils.$border-default;
+  }
 
-.openui-chart-label-list {
-  fill: cssUtils.$text-neutral-secondary;
+  .openui-chart-label-list {
+    fill: cssUtils.$text-neutral-secondary;
+  }
 }

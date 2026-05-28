@@ -1,11 +1,13 @@
 @use "../../../../cssUtils" as cssUtils;
 
-.openui-chart-svg-x-axis-tick {
-  @include cssUtils.typography(label, extra-small);
-  fill: cssUtils.$text-neutral-secondary;
-}
+@layer openui {
+  .openui-chart-svg-x-axis-tick {
+    @include cssUtils.typography(label, extra-small);
+    fill: cssUtils.$text-neutral-secondary;
+  }
 
-.openui-chart-svg-x-axis-tick-angled {
-  @include cssUtils.typography(label, extra-small);
-  fill: cssUtils.$text-neutral-secondary;
+  .openui-chart-svg-x-axis-tick-angled {
+    @include cssUtils.typography(label, extra-small);
+    fill: cssUtils.$text-neutral-secondary;
+  }
 }
