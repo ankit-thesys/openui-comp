@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
 import { themes } from "@storybook/theming";
-// Load order matters: preflight first so @layer reset is declared before @layer openui.
-// Reset establishes the baseline; OpenUI components apply on top via higher layer order.
+// CSS cascade layer order is locked in preview-head.html (@layer reset, openui;)
+// before Vite injects any styles. Import order here is informational only.
 import "../src/components/index.scss";
 import { ThemeProvider } from "../src/components/ThemeProvider";
 import "./preflight.css";
