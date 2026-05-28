@@ -1,11 +1,10 @@
 import type { Preview } from "@storybook/react";
 import { themes } from "@storybook/theming";
+// Load order matters: preflight first so @layer reset is declared before @layer openui.
+// Reset establishes the baseline; OpenUI components apply on top via higher layer order.
 import "../src/components/index.scss";
-import {
-  ThemeProvider,
-} from "../src/components/ThemeProvider";
+import { ThemeProvider } from "../src/components/ThemeProvider";
 import "./preflight.css";
-import React from "react";
 
 const preview: Preview = {
   parameters: {
@@ -102,18 +101,17 @@ const preview: Preview = {
           `}
           </style>
           {/* {selectedThemePreset ? ( */}
-            {/* <ThemeProvider
+          {/* <ThemeProvider
               mode={selectedMode}
               theme={selectedThemePreset.theme}
               darkTheme={selectedThemePreset.darkTheme}
             >
               <Story />
             </ThemeProvider> */}
-        
-            <ThemeProvider mode={selectedMode}>
-              <Story />
-            </ThemeProvider>
-        
+
+          <ThemeProvider mode={selectedMode}>
+            <Story />
+          </ThemeProvider>
         </>
       );
     },

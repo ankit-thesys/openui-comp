@@ -1,0 +1,7 @@
+<!--
+  Lock CSS cascade layer order before any other stylesheet is injected.
+  The browser uses the first-declared order as the cascade-layer priority,
+  so this must run before Vite injects OpenUI's component styles or preflight.
+  reset (lowest) → openui → unlayered consumer/runtime (highest).
+-->
+<style>@layer reset, openui;</style>
