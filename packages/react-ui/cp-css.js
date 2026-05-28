@@ -45,7 +45,8 @@ function assertLayerWrap() {
       else if (entry.name.endsWith(".css") && !entry.name.endsWith(".module.css")) {
         // *.module.css are Storybook CSS Modules — locally scoped, not shipped, not layered.
         const content = fs.readFileSync(full, "utf8");
-        if (!content.includes("@layer openui{")) offenders.push(full);
+
+        if (!/@layer\s+openui\s*\{/.test(content)) offenders.push(full);
       }
     }
   })(root);
