@@ -1,7 +1,7 @@
 import fs from "fs";
 import { camelCase } from "lodash-es";
 import path from "path";
-import {fileURLToPath} from "url"
+import { fileURLToPath } from "url";
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -30,6 +30,30 @@ function fixScssImportsInJs(dir) {
       }
     }
   });
+}
+
+// Assert every emitted dist/components/**/*.css participates in @layer openui.
+// Fails the build if any component CSS is missing the wrap — typically because
+// a new component's .scss was authored without the @layer openui { ... } block.
+function assertLayerWrap() {
+  const root = path.join(dirname, "dist", "components");
+  const offenders = [];
+  (function walk(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else if (entry.name.endsWith(".css") && !entry.name.endsWith(".module.css")) {
+        // *.module.css are Storybook CSS Modules — locally scoped, not shipped, not layered.
+        const content = fs.readFileSync(full, "utf8");
+        if (!content.includes("@layer openui{")) offenders.push(full);
+      }
+    }
+  })(root);
+  if (offenders.length) {
+    console.error("Missing @layer openui wrap in:");
+    offenders.forEach((f) => console.error("  " + f));
+    process.exit(1);
+  }
 }
 
 // Copy CSS files from src to dist
@@ -74,6 +98,9 @@ function copyCssFiles() {
 
   // Fix .scss imports in compiled JS to point to .css files instead
   fixScssImportsInJs(path.join(dirname, "dist"));
+
+  // Enforce the cascade-layer contract on every emitted component CSS file.
+  assertLayerWrap();
 }
 
 try {
