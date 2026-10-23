@@ -1,0 +1,61 @@
+{
+  "candidate": "nested-object-specificity-neutral",
+  "generatedAt": "2026-10-23T16:18:14.491Z",
+  "units": [
+    {
+      "name": "Card",
+      "originalSelectors": 6,
+      "generatedSelectors": 6,
+      "failures": []
+    },
+    {
+      "name": "Button",
+      "originalSelectors": 30,
+      "generatedSelectors": 30,
+      "failures": []
+    },
+    {
+      "name": "Input",
+      "originalSelectors": 11,
+      "generatedSelectors": 11,
+      "failures": []
+    },
+    {
+      "name": "CardHeader",
+      "originalSelectors": 6,
+      "generatedSelectors": 6,
+      "failures": []
+    },
+    {
+      "name": "Buttons",
+      "originalSelectors": 3,
+      "generatedSelectors": 3,
+      "failures": []
+    },
+    {
+      "name": "FormControl",
+      "originalSelectors": 8,
+      "generatedSelectors": 8,
+      "failures": []
+    },
+    {
+      "name": "TextContent",
+      "originalSelectors": 108,
+      "generatedSelectors": 108,
+      "failures": []
+    },
+    {
+      "name": "Table",
+      "originalSelectors": 26,
+      "generatedSelectors": 26,
+      "failures": []
+    },
+    {
+      "name": "BarChart",
+      "originalSelectors": 95,
+      "generatedSelectors": 95,
+      "failures": []
+    }
+  ],
+  "failures": []
+}

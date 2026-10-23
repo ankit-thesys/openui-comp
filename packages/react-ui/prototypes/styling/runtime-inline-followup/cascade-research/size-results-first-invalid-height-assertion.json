@@ -1,0 +1,774 @@
+{
+  "scope": "Refined root-owned rollback metadata excludes production SVG descendant width/height. Unrelated unlayered host button width180px height60px must survive. Actual noJS SSR realButtons, full actualframework preflight, bothdocumentorders andnone/button/submit/reset forms.",
+  "runs": [
+    {
+      "framework": "plain",
+      "order": "host-first",
+      "type": "none",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "plain",
+      "order": "host-first",
+      "type": "button",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "plain",
+      "order": "host-first",
+      "type": "submit",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "plain",
+      "order": "host-first",
+      "type": "reset",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "plain",
+      "order": "host-late",
+      "type": "none",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "plain",
+      "order": "host-late",
+      "type": "button",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "plain",
+      "order": "host-late",
+      "type": "submit",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "plain",
+      "order": "host-late",
+      "type": "reset",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-first",
+      "type": "none",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-first",
+      "type": "button",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-first",
+      "type": "submit",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-first",
+      "type": "reset",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-late",
+      "type": "none",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-late",
+      "type": "button",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-late",
+      "type": "submit",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-late",
+      "type": "reset",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "rgb(239, 68, 68)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-first",
+      "type": "none",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "oklch(0.637 0.237 25.331)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-first",
+      "type": "button",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "oklch(0.637 0.237 25.331)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-first",
+      "type": "submit",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "oklch(0.637 0.237 25.331)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-first",
+      "type": "reset",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "oklch(0.637 0.237 25.331)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-late",
+      "type": "none",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "oklch(0.637 0.237 25.331)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-late",
+      "type": "button",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "oklch(0.637 0.237 25.331)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-late",
+      "type": "submit",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "oklch(0.637 0.237 25.331)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-late",
+      "type": "reset",
+      "values": [
+        {
+          "probe": "default",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "pointer",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881)"
+        },
+        {
+          "probe": "override",
+          "width": "180px",
+          "height": "64px",
+          "cursor": "pointer",
+          "padding": "32px",
+          "bg": "oklch(0.637 0.237 25.331)"
+        },
+        {
+          "probe": "disabled",
+          "width": "180px",
+          "height": "60px",
+          "cursor": "not-allowed",
+          "padding": "7px 10px",
+          "bg": "oklch(0.546 0.215 262.881 / 0.4)"
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "errors": []
+}

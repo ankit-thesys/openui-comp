@@ -1,0 +1,5731 @@
+{
+  "scope": "Bounded Chrome no-JS initial SSR with actual unchanged OpenUI Button and render-time Goober objects. Actual full Tailwind3/4 assets include preflight. Resource/host link document order varied. Not hydration, full-library proof, or acceptance.",
+  "runs": [
+    {
+      "candidate": "unlayered",
+      "framework": "plain",
+      "order": "host-first",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": false,
+        "overrideBg": false,
+        "overrideRadius": false,
+        "overrideColor": false,
+        "overrideHover": false
+      },
+      "passed": false
+    },
+    {
+      "candidate": "unlayered",
+      "framework": "plain",
+      "order": "host-late",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": false
+      },
+      "passed": false
+    },
+    {
+      "candidate": "unlayered",
+      "framework": "tailwind3",
+      "order": "host-first",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": false,
+        "overrideBg": false,
+        "overrideRadius": false,
+        "overrideColor": false,
+        "overrideHover": false
+      },
+      "passed": false
+    },
+    {
+      "candidate": "unlayered",
+      "framework": "tailwind3",
+      "order": "host-late",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": false
+      },
+      "passed": false
+    },
+    {
+      "candidate": "unlayered",
+      "framework": "tailwind4",
+      "order": "host-first",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": false,
+        "overrideBg": false,
+        "overrideRadius": false,
+        "overrideColor": false,
+        "overrideHover": false
+      },
+      "passed": false
+    },
+    {
+      "candidate": "unlayered",
+      "framework": "tailwind4",
+      "order": "host-late",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": false,
+        "overrideBg": false,
+        "overrideRadius": false,
+        "overrideColor": false,
+        "overrideHover": false
+      },
+      "passed": false
+    },
+    {
+      "candidate": "layered",
+      "framework": "plain",
+      "order": "host-first",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "layered",
+      "framework": "plain",
+      "order": "host-late",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "layered",
+      "framework": "tailwind3",
+      "order": "host-first",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "padding": "0px",
+            "color": "rgb(0, 0, 0)",
+            "radius": "8px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+          },
+          "disabled": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "padding": "0px",
+            "color": "rgb(0, 0, 0)",
+            "radius": "8px",
+            "border": "0px",
+            "cursor": "default",
+            "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+          }
+        },
+        "hoverDefault": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "color": "rgb(0, 0, 0)",
+          "radius": "8px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": false,
+        "defaultColor": false,
+        "defaultBg": false,
+        "defaultRadius": true,
+        "defaultHover": false,
+        "disabledBg": false,
+        "disabledCursor": false,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": false
+    },
+    {
+      "candidate": "layered",
+      "framework": "tailwind3",
+      "order": "host-late",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "padding": "0px",
+            "color": "rgb(0, 0, 0)",
+            "radius": "8px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+          },
+          "disabled": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "padding": "0px",
+            "color": "rgb(0, 0, 0)",
+            "radius": "8px",
+            "border": "0px",
+            "cursor": "default",
+            "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+          }
+        },
+        "hoverDefault": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "color": "rgb(0, 0, 0)",
+          "radius": "8px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": false,
+        "defaultColor": false,
+        "defaultBg": false,
+        "defaultRadius": true,
+        "defaultHover": false,
+        "disabledBg": false,
+        "disabledCursor": false,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": false
+    },
+    {
+      "candidate": "layered",
+      "framework": "tailwind4",
+      "order": "host-first",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "layered",
+      "framework": "tailwind4",
+      "order": "host-late",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-class",
+      "framework": "plain",
+      "order": "host-first",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": false,
+        "overrideBg": false,
+        "overrideRadius": false,
+        "overrideColor": false,
+        "overrideHover": true
+      },
+      "passed": false
+    },
+    {
+      "candidate": "rollback-class",
+      "framework": "plain",
+      "order": "host-late",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-class",
+      "framework": "tailwind3",
+      "order": "host-first",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": false,
+        "overrideBg": false,
+        "overrideRadius": false,
+        "overrideColor": false,
+        "overrideHover": true
+      },
+      "passed": false
+    },
+    {
+      "candidate": "rollback-class",
+      "framework": "tailwind3",
+      "order": "host-late",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "default",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": false,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": false
+    },
+    {
+      "candidate": "rollback-class",
+      "framework": "tailwind4",
+      "order": "host-first",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-class",
+      "framework": "tailwind4",
+      "order": "host-late",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "plain",
+      "order": "host-first",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "plain",
+      "order": "host-late",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind3",
+      "order": "host-first",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "default",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": false,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": false
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind3",
+      "order": "host-late",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "default",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": false,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": false
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind4",
+      "order": "host-first",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind4",
+      "order": "host-late",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "plain",
+      "order": "host-first",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "plain",
+      "order": "host-late",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind3",
+      "order": "host-first",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind3",
+      "order": "host-late",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind4",
+      "order": "host-first",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind4",
+      "order": "host-late",
+      "type": "none",
+      "inForm": "no",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "plain",
+      "order": "host-first",
+      "type": "button",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "plain",
+      "order": "host-first",
+      "type": "submit",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "plain",
+      "order": "host-first",
+      "type": "reset",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "plain",
+      "order": "host-late",
+      "type": "button",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "plain",
+      "order": "host-late",
+      "type": "submit",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "plain",
+      "order": "host-late",
+      "type": "reset",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind3",
+      "order": "host-first",
+      "type": "button",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "default",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": false,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": false
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind3",
+      "order": "host-first",
+      "type": "submit",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "default",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": false,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": false
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind3",
+      "order": "host-first",
+      "type": "reset",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "default",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": false,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": false
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind3",
+      "order": "host-late",
+      "type": "button",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "default",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": false,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": false
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind3",
+      "order": "host-late",
+      "type": "submit",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "default",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": false,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": false
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind3",
+      "order": "host-late",
+      "type": "reset",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "default",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": false,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": false
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind4",
+      "order": "host-first",
+      "type": "button",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind4",
+      "order": "host-first",
+      "type": "submit",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind4",
+      "order": "host-first",
+      "type": "reset",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind4",
+      "order": "host-late",
+      "type": "button",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind4",
+      "order": "host-late",
+      "type": "submit",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type",
+      "framework": "tailwind4",
+      "order": "host-late",
+      "type": "reset",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "plain",
+      "order": "host-first",
+      "type": "button",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "plain",
+      "order": "host-first",
+      "type": "submit",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "plain",
+      "order": "host-first",
+      "type": "reset",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "plain",
+      "order": "host-late",
+      "type": "button",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "plain",
+      "order": "host-late",
+      "type": "submit",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "plain",
+      "order": "host-late",
+      "type": "reset",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/plain.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind3",
+      "order": "host-first",
+      "type": "button",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind3",
+      "order": "host-first",
+      "type": "submit",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind3",
+      "order": "host-first",
+      "type": "reset",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind3",
+      "order": "host-late",
+      "type": "button",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind3",
+      "order": "host-late",
+      "type": "submit",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind3",
+      "order": "host-late",
+      "type": "reset",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind3.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind4",
+      "order": "host-first",
+      "type": "button",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind4",
+      "order": "host-first",
+      "type": "submit",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind4",
+      "order": "host-first",
+      "type": "reset",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          },
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind4",
+      "order": "host-late",
+      "type": "button",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind4",
+      "order": "host-late",
+      "type": "submit",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    },
+    {
+      "candidate": "rollback-type-disabled",
+      "framework": "tailwind4",
+      "order": "host-late",
+      "type": "reset",
+      "inForm": "yes",
+      "values": {
+        "initial": {
+          "default": {
+            "bg": "oklch(0.546 0.215 262.881)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "override": {
+            "bg": "oklch(0.637 0.237 25.331)",
+            "padding": "32px",
+            "color": "rgb(255, 255, 255)",
+            "radius": "0px",
+            "border": "0px",
+            "cursor": "pointer",
+            "font": ""
+          },
+          "disabled": {
+            "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+            "padding": "7px 10px",
+            "color": "oklch(0.994 0 89.876)",
+            "radius": "8px",
+            "border": "1px",
+            "cursor": "not-allowed",
+            "font": ""
+          }
+        },
+        "hoverDefault": {
+          "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "radius": "8px",
+          "border": "1px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "hoverOverride": {
+          "bg": "oklch(0.723 0.219 149.579)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": ""
+        },
+        "actualStyleOrder": [
+          {
+            "tag": "STYLE",
+            "href": null,
+            "precedence": "openui"
+          },
+          {
+            "tag": "LINK",
+            "href": "/framework/tailwind4.css",
+            "precedence": null
+          }
+        ]
+      },
+      "assertions": {
+        "defaultPadding": true,
+        "defaultColor": true,
+        "defaultBg": true,
+        "defaultRadius": true,
+        "defaultHover": true,
+        "disabledBg": true,
+        "disabledCursor": true,
+        "overridePadding": true,
+        "overrideBg": true,
+        "overrideRadius": true,
+        "overrideColor": true,
+        "overrideHover": true
+      },
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "browser": "156.0.8078.47",
+  "reference": {
+    "initial": {
+      "default": {
+        "bg": "oklch(0.546 0.215 262.881)",
+        "padding": "7px 10px",
+        "color": "oklch(0.994 0 89.876)",
+        "radius": "8px",
+        "border": "1px",
+        "cursor": "pointer",
+        "font": ""
+      },
+      "override": {
+        "bg": "oklch(0.546 0.215 262.881)",
+        "padding": "7px 10px",
+        "color": "oklch(0.994 0 89.876)",
+        "radius": "8px",
+        "border": "1px",
+        "cursor": "pointer",
+        "font": ""
+      },
+      "disabled": {
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px",
+        "color": "oklch(0.994 0 89.876)",
+        "radius": "8px",
+        "border": "1px",
+        "cursor": "not-allowed",
+        "font": ""
+      }
+    },
+    "hoverDefault": {
+      "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+      "padding": "7px 10px",
+      "color": "oklch(0.994 0 89.876)",
+      "radius": "8px",
+      "border": "1px",
+      "cursor": "pointer",
+      "font": ""
+    },
+    "hoverOverride": {
+      "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+      "padding": "7px 10px",
+      "color": "oklch(0.994 0 89.876)",
+      "radius": "8px",
+      "border": "1px",
+      "cursor": "pointer",
+      "font": ""
+    },
+    "actualStyleOrder": [
+      {
+        "tag": "LINK",
+        "href": "/framework/plain.css",
+        "precedence": null
+      },
+      {
+        "tag": "STYLE",
+        "href": null,
+        "precedence": "openui"
+      }
+    ]
+  },
+  "overrideReferences": {
+    "plain": {
+      "initial": {
+        "default": {
+          "bg": "rgb(239, 239, 239)",
+          "padding": "1px 6px",
+          "color": "rgb(0, 0, 0)",
+          "radius": "0px",
+          "border": "2px",
+          "cursor": "default",
+          "font": "13.3333px Arial"
+        },
+        "override": {
+          "bg": "rgb(239, 68, 68)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "default",
+          "font": "13.3333px Arial"
+        },
+        "disabled": {
+          "bg": "rgba(239, 239, 239, 0.3)",
+          "padding": "1px 6px",
+          "color": "rgba(16, 16, 16, 0.3)",
+          "radius": "0px",
+          "border": "2px",
+          "cursor": "default",
+          "font": "13.3333px Arial"
+        }
+      },
+      "hoverDefault": {
+        "bg": "rgb(239, 239, 239)",
+        "padding": "1px 6px",
+        "color": "rgb(0, 0, 0)",
+        "radius": "0px",
+        "border": "2px",
+        "cursor": "default",
+        "font": "13.3333px Arial"
+      },
+      "hoverOverride": {
+        "bg": "rgb(34, 197, 94)",
+        "padding": "32px",
+        "color": "rgb(255, 255, 255)",
+        "radius": "0px",
+        "border": "0px",
+        "cursor": "default",
+        "font": "13.3333px Arial"
+      },
+      "actualStyleOrder": [
+        {
+          "tag": "LINK",
+          "href": "/framework/plain.css",
+          "precedence": null
+        },
+        {
+          "tag": "STYLE",
+          "href": null,
+          "precedence": "openui"
+        }
+      ]
+    },
+    "tailwind3": {
+      "initial": {
+        "default": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "color": "rgb(0, 0, 0)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+        },
+        "override": {
+          "bg": "rgb(239, 68, 68)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "pointer",
+          "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+        },
+        "disabled": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "color": "rgb(0, 0, 0)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "default",
+          "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+        }
+      },
+      "hoverDefault": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "color": "rgb(0, 0, 0)",
+        "radius": "0px",
+        "border": "0px",
+        "cursor": "pointer",
+        "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      },
+      "hoverOverride": {
+        "bg": "rgb(34, 197, 94)",
+        "padding": "32px",
+        "color": "rgb(255, 255, 255)",
+        "radius": "0px",
+        "border": "0px",
+        "cursor": "pointer",
+        "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      },
+      "actualStyleOrder": [
+        {
+          "tag": "LINK",
+          "href": "/framework/tailwind3.css",
+          "precedence": null
+        },
+        {
+          "tag": "STYLE",
+          "href": null,
+          "precedence": "openui"
+        }
+      ]
+    },
+    "tailwind4": {
+      "initial": {
+        "default": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "color": "rgb(0, 0, 0)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "default",
+          "font": "16px / 24px -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+        },
+        "override": {
+          "bg": "oklch(0.637 0.237 25.331)",
+          "padding": "32px",
+          "color": "rgb(255, 255, 255)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "default",
+          "font": "16px / 24px -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+        },
+        "disabled": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "color": "rgb(0, 0, 0)",
+          "radius": "0px",
+          "border": "0px",
+          "cursor": "default",
+          "font": "16px / 24px -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+        }
+      },
+      "hoverDefault": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "color": "rgb(0, 0, 0)",
+        "radius": "0px",
+        "border": "0px",
+        "cursor": "default",
+        "font": "16px / 24px -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      },
+      "hoverOverride": {
+        "bg": "oklch(0.723 0.219 149.579)",
+        "padding": "32px",
+        "color": "rgb(255, 255, 255)",
+        "radius": "0px",
+        "border": "0px",
+        "cursor": "default",
+        "font": "16px / 24px -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      },
+      "actualStyleOrder": [
+        {
+          "tag": "LINK",
+          "href": "/framework/tailwind4.css",
+          "precedence": null
+        },
+        {
+          "tag": "STYLE",
+          "href": null,
+          "precedence": "openui"
+        }
+      ]
+    }
+  }
+}

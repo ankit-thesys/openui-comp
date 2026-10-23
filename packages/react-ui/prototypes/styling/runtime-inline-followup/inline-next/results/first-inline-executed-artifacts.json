@@ -1,0 +1,15 @@
+{
+  "note": "First candidate frozen. Original next-build manifest retains first checker hash. Executed checker corrected test expectations to exact production initialism conversion, waits CSS transition for final color, and adds scope probes; app never rebuilt after initial compilation.",
+  "hashes": {
+    "runtime/Fixture.tsx": "966855ba679f3fbcb93876be423fdf95f5b736cd2c07a14e272b427b9915e75e",
+    "runtime/OriginalFixture.tsx": "8c38b1a3573352410fc916fe052bedaedbd42c083a4e7890574edfcac8819522",
+    "runtime/adapter.tsx": "9d19b3be177f5e65d3eebe0c82e3c4281285d9ddc31ff0352961a6b842b9cfef",
+    "runtime/descriptors.json": "f32c62b898191c55a65c5916def97f6b47474d745f8a80c63b9dc5c65383cf95",
+    "next/entry.tsx": "3e118a16b1098d67a8ccdf8d5b9fa708e15101c9945477e68f04c5583914a939",
+    "next/app/page.jsx": "f363232abfd93844608f07701ec380829777917a6eddb50a579c9046d93f34e2",
+    "next/.next/server/app/page.js": "ca6bcbab43087d508d0acfbdc22f8f059765307dca0dbaa8f794ed8c1965a08f",
+    "next/.next/BUILD_ID": "03743060800928b3f3617534021e1eefe9a128c189a49aa0db8cf71515269318",
+    "next/generated.jsx": "7e7d1a5e2d83c740b61481adfeddba35cc7e408bc70aa3530103c982c26e8b45",
+    "next-check.mjs": "b4a135b17082b3a2ddd499c04af7ea2821d718e140deca66601b67902a6cf22f"
+  }
+}

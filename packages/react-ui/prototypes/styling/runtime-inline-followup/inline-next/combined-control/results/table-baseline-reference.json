@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "generatedAt": "2026-10-23T18:40:56.269Z",
+  "source": "Independent original baseline route and full original CSS, same framework/lateOnly source, sampled after actual React reveal. Reference is not inferred from candidate. All saved first-reveal Table fields compared.",
+  "rows": [
+    {
+      "framework": "none",
+      "reference": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.097 0 0)",
+        "padding": "12px",
+        "borderRadius": "0px",
+        "fontSize": "14px",
+        "lineHeight": "21px"
+      },
+      "observedFirstRevealCount": 12,
+      "allRecordedPropertiesMatch": true
+    },
+    {
+      "framework": "plain",
+      "reference": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.097 0 0)",
+        "padding": "12px",
+        "borderRadius": "0px",
+        "fontSize": "14px",
+        "lineHeight": "21px"
+      },
+      "observedFirstRevealCount": 12,
+      "allRecordedPropertiesMatch": true
+    },
+    {
+      "framework": "tailwind3",
+      "reference": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.097 0 0)",
+        "padding": "12px",
+        "borderRadius": "0px",
+        "fontSize": "14px",
+        "lineHeight": "21px"
+      },
+      "observedFirstRevealCount": 12,
+      "allRecordedPropertiesMatch": true
+    },
+    {
+      "framework": "tailwind4",
+      "reference": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.097 0 0)",
+        "padding": "12px",
+        "borderRadius": "0px",
+        "fontSize": "14px",
+        "lineHeight": "21px"
+      },
+      "observedFirstRevealCount": 15,
+      "allRecordedPropertiesMatch": true
+    }
+  ],
+  "hashes": {
+    "/Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/../../src/components/Table/table.scss": "ed621c90fe6384f45520b75df748d9580eca428fd4db9d3f709a1b235f0adbb9",
+    "/Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/../../src/components/ThemeProvider/defaultTheme.ts": "820ef8dd31e33395a4e63049f55baf683d67ae02cc7c1d2daf642a9382c626bf",
+    "/private/tmp/openui-runtime-inline-next/combined-control/next/public/baseline.css": "982ff6f2a4d1666a560901621226f417cf6df853a950006cb26e33287b0c918f",
+    "/private/tmp/openui-runtime-inline-next/combined-control/runtime/OriginalFixture.tsx": "8c38b1a3573352410fc916fe052bedaedbd42c083a4e7890574edfcac8819522",
+    "/private/tmp/openui-runtime-inline-next/combined-control/table-baseline-reference.mjs": "7c5e67a1a24d4f4f4de5c875cc670e0e9781ba3561cc319e1cb94b2334c08c82"
+  }
+}

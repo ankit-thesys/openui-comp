@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-10-23T18:42:40.215Z",
+  "note": "Original next-build checker hash retained; corrected executed checker adds hidden-noJS classification, independently referenced Table properties, shell-noJS gates and actual focus outline recording. No candidate app rebuild after test-only corrections. First observations preserved.",
+  "originalManifestCheckerHash": "3678b3762cb8a12f3ebe839210b666ec23e97b82e18b944b38d2f92b09ef96f2",
+  "executedCheckerHash": "9d7a5db68b569fd9b010805208b09681f5dc5c05e31a5e6712d5e8752c992655",
+  "hashes": {
+    "runtime/Fixture.tsx": "22ebd50fba44aa339b068f75f23cdfd74aaf6bc89232a8a31048214387ec79d6",
+    "runtime/OriginalFixture.tsx": "8c38b1a3573352410fc916fe052bedaedbd42c083a4e7890574edfcac8819522",
+    "runtime/adapter.tsx": "705de414c817b6b6ec3438300891d30c56b581dc2de37ddb6504fc8c32a53906",
+    "runtime/descriptors.json": "f32c62b898191c55a65c5916def97f6b47474d745f8a80c63b9dc5c65383cf95",
+    "next/entry.tsx": "9c1cc460c0908f08bbb6e0e3784c67c85aa041958f5f3bb8179993ae234c7c7a",
+    "next/app/page.jsx": "ab4f761dcd231f2f71965bd8a764bcde77b5252ee36565b41fe60b8d2108d34a",
+    "next/.next/server/app/page.js": "90e68a8dea551c4fe6ad6d1661b9120e3c7d14b78418781ebde9119ca23e6a40",
+    "next/.next/BUILD_ID": "8b795b9c014d6e2d76e7123fdfb21c5d0176253306fdf0a92f96bd97bd16cf5a",
+    "next/generated.jsx": "af250dd8ae9b913750286a62cc4f9856e256ec29c5046d5c1add4886bef50720",
+    "next-check.mjs": "9d7a5db68b569fd9b010805208b09681f5dc5c05e31a5e6712d5e8752c992655",
+    "runtime/button-root-metadata.json": "b6382df21a207a7effca843b3d41bf4afb275f2db657c8eb91da026e87ede6d3",
+    "table-baseline-reference.mjs": "7c5e67a1a24d4f4f4de5c875cc670e0e9781ba3561cc319e1cb94b2334c08c82",
+    "next/.next/static/chunks/app/_global-error/page-9b0625ac4653fcce.js": "cf950af50f820aefe1f1b9b2427c73a62ccd0d30ccdf54f2b4f2343442a3d37f",
+    "next/.next/static/chunks/app/_not-found/page-bd5ee78109a23eb5.js": "181e6fc52b43a9f5f8dc6d18c5b1fd68aa6264947ec10e9cff9667b089cda3fa",
+    "next/.next/static/chunks/app/layout-9b0625ac4653fcce.js": "cf950af50f820aefe1f1b9b2427c73a62ccd0d30ccdf54f2b4f2343442a3d37f",
+    "next/.next/static/chunks/app/page-0f9c06f4232341de.js": "a594467d9af3b6cb33c8dd15a7e014002fcae0e19db1d2f229d4a03a2b082839"
+  }
+}

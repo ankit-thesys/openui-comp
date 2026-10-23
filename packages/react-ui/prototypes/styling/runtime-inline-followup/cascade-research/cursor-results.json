@@ -1,0 +1,294 @@
+{
+  "scope": "NoJS SSR realButton targeteddisabledcursor guard. Ordinarycursorclass mustretain baseline disablednotallowed; explicit disabled:cursor-wait mustoverride. Fresh actualTailwind3+4 generation includespreflight and cursorutilities. This is explicitstateprioritycontract, notallnormalclassoverrideswin.",
+  "runs": [
+    {
+      "framework": "plain",
+      "order": "host-first",
+      "cursor": "none",
+      "values": {
+        "cursor": "not-allowed",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": true
+    },
+    {
+      "framework": "plain",
+      "order": "host-first",
+      "cursor": "cursor-pointer",
+      "values": {
+        "cursor": "not-allowed",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": true
+    },
+    {
+      "framework": "plain",
+      "order": "host-first",
+      "cursor": "cursor-wait",
+      "values": {
+        "cursor": "not-allowed",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": true
+    },
+    {
+      "framework": "plain",
+      "order": "host-first",
+      "cursor": "disabled:cursor-wait",
+      "values": {
+        "cursor": "wait",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "wait",
+      "passed": true
+    },
+    {
+      "framework": "plain",
+      "order": "host-late",
+      "cursor": "none",
+      "values": {
+        "cursor": "not-allowed",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": true
+    },
+    {
+      "framework": "plain",
+      "order": "host-late",
+      "cursor": "cursor-pointer",
+      "values": {
+        "cursor": "not-allowed",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": true
+    },
+    {
+      "framework": "plain",
+      "order": "host-late",
+      "cursor": "cursor-wait",
+      "values": {
+        "cursor": "not-allowed",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": true
+    },
+    {
+      "framework": "plain",
+      "order": "host-late",
+      "cursor": "disabled:cursor-wait",
+      "values": {
+        "cursor": "wait",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "wait",
+      "passed": true
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-first",
+      "cursor": "none",
+      "values": {
+        "cursor": "not-allowed",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": true
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-first",
+      "cursor": "cursor-pointer",
+      "values": {
+        "cursor": "not-allowed",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": true
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-first",
+      "cursor": "cursor-wait",
+      "values": {
+        "cursor": "not-allowed",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": true
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-first",
+      "cursor": "disabled:cursor-wait",
+      "values": {
+        "cursor": "wait",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "wait",
+      "passed": true
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-late",
+      "cursor": "none",
+      "values": {
+        "cursor": "not-allowed",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": true
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-late",
+      "cursor": "cursor-pointer",
+      "values": {
+        "cursor": "not-allowed",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": true
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-late",
+      "cursor": "cursor-wait",
+      "values": {
+        "cursor": "not-allowed",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": true
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-late",
+      "cursor": "disabled:cursor-wait",
+      "values": {
+        "cursor": "wait",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "wait",
+      "passed": true
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-first",
+      "cursor": "none",
+      "values": {
+        "cursor": "not-allowed",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": true
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-first",
+      "cursor": "cursor-pointer",
+      "values": {
+        "cursor": "pointer",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": false
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-first",
+      "cursor": "cursor-wait",
+      "values": {
+        "cursor": "wait",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": false
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-first",
+      "cursor": "disabled:cursor-wait",
+      "values": {
+        "cursor": "wait",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "wait",
+      "passed": true
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-late",
+      "cursor": "none",
+      "values": {
+        "cursor": "not-allowed",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": true
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-late",
+      "cursor": "cursor-pointer",
+      "values": {
+        "cursor": "pointer",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": false
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-late",
+      "cursor": "cursor-wait",
+      "values": {
+        "cursor": "wait",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "not-allowed",
+      "passed": false
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-late",
+      "cursor": "disabled:cursor-wait",
+      "values": {
+        "cursor": "wait",
+        "bg": "oklch(0.546 0.215 262.881 / 0.4)",
+        "padding": "7px 10px"
+      },
+      "expected": "wait",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

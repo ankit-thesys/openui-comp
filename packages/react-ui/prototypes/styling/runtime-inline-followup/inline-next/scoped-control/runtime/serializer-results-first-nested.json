@@ -1,0 +1,143 @@
+{
+  "candidate": "nested-object-specificity-neutral",
+  "generatedAt": "2026-10-23T16:05:07.772Z",
+  "units": [
+    {
+      "name": "Card",
+      "originalSelectors": 6,
+      "generatedSelectors": 6,
+      "failures": []
+    },
+    {
+      "name": "Button",
+      "originalSelectors": 30,
+      "generatedSelectors": 30,
+      "failures": []
+    },
+    {
+      "name": "Input",
+      "originalSelectors": 11,
+      "generatedSelectors": 11,
+      "failures": []
+    },
+    {
+      "name": "CardHeader",
+      "originalSelectors": 6,
+      "generatedSelectors": 6,
+      "failures": []
+    },
+    {
+      "name": "Buttons",
+      "originalSelectors": 3,
+      "generatedSelectors": 3,
+      "failures": []
+    },
+    {
+      "name": "FormControl",
+      "originalSelectors": 8,
+      "generatedSelectors": 8,
+      "failures": []
+    },
+    {
+      "name": "TextContent",
+      "originalSelectors": 108,
+      "generatedSelectors": 108,
+      "failures": [
+        {
+          "reason": "specificity",
+          "index": 56,
+          "original": ".openui-markdown-renderer-code",
+          "generated": ".go2763859390 ﻿:where(.openui-markdown-renderer-code)",
+          "a": [
+            0,
+            1,
+            0
+          ],
+          "b": [
+            0,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Table",
+      "originalSelectors": 26,
+      "generatedSelectors": 26,
+      "failures": []
+    },
+    {
+      "name": "BarChart",
+      "originalSelectors": 95,
+      "generatedSelectors": 95,
+      "failures": [
+        {
+          "reason": "specificity",
+          "index": 18,
+          "original": ".openui-bar-chart-bar--animated.openui-bar-chart-bar--negative",
+          "generated": ".go1605551665 :where(.openui-bar-chart-bar--animated).go1605551665 .openui-bar-chart-bar--negative",
+          "a": [
+            0,
+            2,
+            0
+          ],
+          "b": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 18,
+          "original": ".openui-bar-chart-bar--animated.openui-bar-chart-bar--negative",
+          "generated": ".go1605551665 :where(.openui-bar-chart-bar--animated).go1605551665 .openui-bar-chart-bar--negative"
+        }
+      ]
+    }
+  ],
+  "failures": [
+    {
+      "unit": "TextContent",
+      "reason": "specificity",
+      "index": 56,
+      "original": ".openui-markdown-renderer-code",
+      "generated": ".go2763859390 ﻿:where(.openui-markdown-renderer-code)",
+      "a": [
+        0,
+        1,
+        0
+      ],
+      "b": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "unit": "BarChart",
+      "reason": "specificity",
+      "index": 18,
+      "original": ".openui-bar-chart-bar--animated.openui-bar-chart-bar--negative",
+      "generated": ".go1605551665 :where(.openui-bar-chart-bar--animated).go1605551665 .openui-bar-chart-bar--negative",
+      "a": [
+        0,
+        2,
+        0
+      ],
+      "b": [
+        0,
+        3,
+        0
+      ]
+    },
+    {
+      "unit": "BarChart",
+      "reason": "duplicated-scope",
+      "index": 18,
+      "original": ".openui-bar-chart-bar--animated.openui-bar-chart-bar--negative",
+      "generated": ".go1605551665 :where(.openui-bar-chart-bar--animated).go1605551665 .openui-bar-chart-bar--negative"
+    }
+  ]
+}

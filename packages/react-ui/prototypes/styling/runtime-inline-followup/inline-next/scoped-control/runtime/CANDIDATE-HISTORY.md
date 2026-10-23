@@ -1,0 +1,14 @@
+# Throwaway runtime selector investigation
+
+Production components and prior evidence remain unchanged. Current candidate: **nested-object-specificity-neutral**, unlayered. It remains experimental until browser/SSR/cascade/soak checks finish.
+
+1. Prior flat `:where(&).source-class` descriptors failed: stock Goober's regex selector serializer emitted duplicated scope classes/descendant selectors. Thus their framework override passes were vacuous because controls were unstyled.
+2. Prior flat `&.source-class` restored resting styling but increased specificity and still mangled `:not(...):hover` chains. It failed hover parity and consumer class overrides.
+3. This investigation first tried flat `&:where(.source-class):hover:not(:disabled)`. It emits a correct Button selector, but pseudo reordering alone does not cover arbitrary compounds/descendants or duplicate-selector comments.
+4. Current source-level AST normalization creates **nested Goober objects**: the generated scope class offsets exactly one original class changed to `:where(original-class)`; every additional simple selector/pseudo/combinator is a separate nested object step. The unique duplicate-rule comment is placed on the initial `&` key, away from functional pseudo tails. No generated CSS rewriting, blanket important flags, framework detection, or style import is used.
+5. First nested attempt caught two additional cases in serializer checks: BOM preceding a concatenated component selector and a second class following a `:where()` function. Evidence is `serializer-results-first-nested.json`. Trimmed source selector whitespace and nested each additional simple selector fixed both.
+6. `serializer-results.json` checks all 293 selected source selectors against emitted Goober selectors: equal selector counts, equal specificity vectors, and exactly one generated scope class per selector. This proves structural properties, not browser semantic/cascade equivalence. The full production selector language and chart portals remain outside this focused slice.
+
+Runtime descriptors retain one-time generation provenance from selected production Sass. Consumers run Goober on object descriptors during rendering; they receive React19 style resources and never execute Sass. All component token references retain actual default-theme fallbacks; explicit Fixture themes still emit request-scoped resolved tokens through the library-owned adapter. Fixture additionally accepts optional `accent` for high-cardinality theme investigations.
+
+Unlayered styles intentionally remain the current candidate. An automatic blanket layer could allow Tailwind v4 utilities to win but also let unlayered Tailwind v3 preflight override library defaults. Equal specificity alone does not guarantee consumer class wins if resource order is later; browser tests must retain that result rather than hide it behind a fixture policy.

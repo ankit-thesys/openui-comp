@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-10-23T18:42:40.205Z",
+  "note": "Pure scoped theme control frozen after focused29 checks; component adapter unchanged.",
+  "originalManifestCheckerHash": "82dda89d707b98049f11ea4e3f916a425b4a4a34ccbc72c2345b99ff0f8e9dd2",
+  "executedCheckerHash": "82dda89d707b98049f11ea4e3f916a425b4a4a34ccbc72c2345b99ff0f8e9dd2",
+  "hashes": {
+    "runtime/Fixture.tsx": "22ebd50fba44aa339b068f75f23cdfd74aaf6bc89232a8a31048214387ec79d6",
+    "runtime/OriginalFixture.tsx": "8c38b1a3573352410fc916fe052bedaedbd42c083a4e7890574edfcac8819522",
+    "runtime/adapter.tsx": "9d19b3be177f5e65d3eebe0c82e3c4281285d9ddc31ff0352961a6b842b9cfef",
+    "runtime/descriptors.json": "f32c62b898191c55a65c5916def97f6b47474d745f8a80c63b9dc5c65383cf95",
+    "next/entry.tsx": "2f43ea40fd86731273d64cf2b81c5822adae1464847d6e33ff53149ed38d0c7a",
+    "next/app/page.jsx": "f363232abfd93844608f07701ec380829777917a6eddb50a579c9046d93f34e2",
+    "next/.next/server/app/page.js": "f1c0ada66f3486a1ac41750232831ad2b8f2ee47d0857695e5fc6a2b225ad678",
+    "next/.next/BUILD_ID": "9ba55adea0f237c045be711ac57d97cc9a8129314a14fbbc1dd080fa2744602b",
+    "next/generated.jsx": "ef5d7d01e80b7b9410c6e3155859d736a06cc5f8a00c254a52f6e61fac3b0b01",
+    "next-check.mjs": "82dda89d707b98049f11ea4e3f916a425b4a4a34ccbc72c2345b99ff0f8e9dd2",
+    "next/.next/static/chunks/app/_global-error/page-9b0625ac4653fcce.js": "cf950af50f820aefe1f1b9b2427c73a62ccd0d30ccdf54f2b4f2343442a3d37f",
+    "next/.next/static/chunks/app/_not-found/page-bd5ee78109a23eb5.js": "181e6fc52b43a9f5f8dc6d18c5b1fd68aa6264947ec10e9cff9667b089cda3fa",
+    "next/.next/static/chunks/app/layout-9b0625ac4653fcce.js": "cf950af50f820aefe1f1b9b2427c73a62ccd0d30ccdf54f2b4f2343442a3d37f",
+    "next/.next/static/chunks/app/page-83671b4bf375c17e.js": "15043a035ef606e51cf798b98e3a3fd9160b091ffb75aab547b75536cea7a4c0"
+  }
+}

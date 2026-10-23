@@ -1,0 +1,59 @@
+{
+  "method": "Actual production Button Sass compiled once; CSS selector AST root subject only (no top-level combinator, source Button namespace). Runtime adapter imports property list only; does not run Sass.",
+  "rootProperties": [
+    "box-sizing",
+    "font",
+    "letter-spacing",
+    "font-variation-settings",
+    "border-radius",
+    "border",
+    "cursor",
+    "transition",
+    "display",
+    "gap",
+    "align-items",
+    "background-color",
+    "color",
+    "border-color",
+    "box-shadow",
+    "padding"
+  ],
+  "excludedDescendantOnlyProperties": [
+    "height",
+    "width"
+  ],
+  "rootSelectors": [
+    ".openui-button-base",
+    ".openui-button-base-primary",
+    ".openui-button-base-primary:not(:disabled):hover",
+    ".openui-button-base-primary:disabled",
+    ".openui-button-base-primary:not(:disabled):active",
+    ".openui-button-base-secondary",
+    ".openui-button-base-secondary:not(:disabled):hover",
+    ".openui-button-base-secondary:disabled",
+    ".openui-button-base-secondary:not(:disabled):active",
+    ".openui-button-base-tertiary",
+    ".openui-button-base-tertiary:not(:disabled):hover",
+    ".openui-button-base-tertiary:disabled",
+    ".openui-button-base-tertiary:not(:disabled):active",
+    ".openui-button-base-destructive-primary",
+    ".openui-button-base-destructive-primary:not(:disabled):hover",
+    ".openui-button-base-destructive-primary:disabled",
+    ".openui-button-base-destructive-primary:not(:disabled):active",
+    ".openui-button-base-destructive-secondary",
+    ".openui-button-base-destructive-secondary:not(:disabled):hover",
+    ".openui-button-base-destructive-secondary:disabled",
+    ".openui-button-base-destructive-secondary:not(:disabled):active",
+    ".openui-button-base-destructive-tertiary",
+    ".openui-button-base-destructive-tertiary:not(:disabled):hover",
+    ".openui-button-base-destructive-tertiary:disabled",
+    ".openui-button-base-destructive-tertiary:not(:disabled):active",
+    ".openui-button-base-extra-small",
+    ".openui-button-base-small",
+    ".openui-button-base-medium",
+    ".openui-button-base-large"
+  ],
+  "descendantSelectors": [
+    ".openui-button-base svg"
+  ]
+}
