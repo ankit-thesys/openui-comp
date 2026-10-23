@@ -1,0 +1,1 @@
+[{"selector":"__SCOPE__.openui-agent-thread-scroll-area--user-message-anchor .openui-agent-thread-messages>*:last-child","properties":{"min-height":"calc(-200px + 100dvh)"},"conditions":[],"disabledCursor":false}]

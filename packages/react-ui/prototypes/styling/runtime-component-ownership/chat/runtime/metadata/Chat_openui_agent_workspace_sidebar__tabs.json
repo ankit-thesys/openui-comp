@@ -1,0 +1,1 @@
+[{"selector":"__SCOPE__ .openui-agent-workspace-sidebar__tabs","properties":{"position":"relative","display":"flex","align-items":"center","gap":"var(--openui-space-3xs, 2px)","flex":"1","min-width":"0","height":"40px","opacity":"1","transition":"opacity 160ms ease-out 220ms"},"conditions":[],"disabledCursor":false}]

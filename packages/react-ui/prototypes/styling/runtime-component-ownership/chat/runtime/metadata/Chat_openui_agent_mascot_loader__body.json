@@ -1,0 +1,1 @@
+[{"selector":"__SCOPE__.openui-agent-mascot-loader__body","properties":{"opacity":".4","animation":"openui-agent-mascot-pulse 1.6s ease-in-out infinite"},"conditions":[],"disabledCursor":false},{"selector":"__SCOPE__.openui-agent-mascot-loader__body","properties":{"animation":"none"},"conditions":["@media (prefers-reduced-motion: reduce)"],"disabledCursor":false}]

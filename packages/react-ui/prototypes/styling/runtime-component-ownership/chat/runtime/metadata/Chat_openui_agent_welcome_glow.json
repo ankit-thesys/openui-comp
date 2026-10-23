@@ -1,0 +1,1 @@
+[{"selector":"__SCOPE__.openui-agent-welcome-glow","properties":{"position":"relative","isolation":"isolate","width":"100%","max-width":"768px"},"conditions":[],"disabledCursor":false},{"selector":"__SCOPE__.openui-agent-welcome-glow>.openui-agent-desktop-welcome-composer","properties":{"position":"relative","z-index":"1"},"conditions":[],"disabledCursor":false}]

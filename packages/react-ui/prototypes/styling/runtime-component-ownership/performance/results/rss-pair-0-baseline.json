@@ -1,0 +1,4263 @@
+{
+  "startedAt": "2026-10-23T21:30:37.197Z",
+  "kind": "actual-fullchat-browser-memory",
+  "durationPerArmMs": 60000,
+  "smoke": false,
+  "mode": "replicated-short-RSS",
+  "pair": "0",
+  "armOrder": [
+    "baseline"
+  ],
+  "checkpointIntervalMs": 15000,
+  "finalComparablePhase": false,
+  "arms": [
+    {
+      "arm": "baseline",
+      "completed": 158,
+      "completedByScenario": {
+        "chat": 79,
+        "dashboard": 79
+      },
+      "pendingCancels": 9,
+      "partialCancels": 8,
+      "checkpoints": [
+        {
+          "label": "warm-idle-unmounted-gc",
+          "elapsedMs": 7181,
+          "at": "2026-10-23T21:30:46.859Z",
+          "gc": true,
+          "samples": [
+            {
+              "scenario": "chat",
+              "heap": {
+                "usedSize": 24495304,
+                "totalSize": 27213824,
+                "embedderHeapUsedSize": 2062192,
+                "backingStorageSize": 4447058
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 533,
+                "jsEventListeners": 335
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 9,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            },
+            {
+              "scenario": "dashboard",
+              "heap": {
+                "usedSize": 24534144,
+                "totalSize": 27475968,
+                "embedderHeapUsedSize": 2387888,
+                "backingStorageSize": 4447074
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 916,
+                "jsEventListeners": 339
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 9,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            }
+          ],
+          "backend": {
+            "active": 0,
+            "requests": [
+              {
+                "messages": 1,
+                "threadId": "a1926aed-e6af-4db6-9358-28b26799b472"
+              },
+              {
+                "messages": 1,
+                "threadId": "6df3ab37-ad7c-4a8a-9af4-f2d11132199c"
+              },
+              {
+                "messages": 1,
+                "threadId": "362eb1df-0350-4230-8e2b-10186ecae242"
+              },
+              {
+                "messages": 1,
+                "threadId": "3c7102f9-69ea-47bc-b119-e41578c1f909"
+              },
+              {
+                "messages": 1,
+                "threadId": "2caeb88a-9455-410c-8b99-24d74ab0a035"
+              },
+              {
+                "messages": 1,
+                "threadId": "17af0a02-886a-414e-83df-ab6a5de74d68"
+              },
+              {
+                "messages": 1,
+                "threadId": "be51905d-96f1-40cf-a4b3-44ad49ba98fd"
+              },
+              {
+                "messages": 1,
+                "threadId": "1b1c1ed8-8354-4fc5-9678-613fb94ae077"
+              },
+              {
+                "messages": 1,
+                "threadId": "f1aecb66-8221-497e-adc3-7d8a7c2861d4"
+              },
+              {
+                "messages": 1,
+                "threadId": "0eda46cf-5c7f-4249-be9c-669d5b27639d"
+              },
+              {
+                "messages": 1,
+                "threadId": "de19bf3a-2088-441c-9740-8624a7d91afe"
+              },
+              {
+                "messages": 1,
+                "threadId": "a63dfb36-6236-4bf3-a3aa-af1cf366850c"
+              }
+            ],
+            "memory": {
+              "rss": 284393472,
+              "heapTotal": 162693120,
+              "heapUsed": 156506400,
+              "external": 2154860,
+              "arrayBuffers": 20800
+            },
+            "pid": 14562,
+            "gcApplied": false
+          },
+          "chromeProcessRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 14563,
+                "cpuTime": 0.984688,
+                "rssBytes": 229933056
+              },
+              {
+                "type": "renderer",
+                "id": 14578,
+                "cpuTime": 0.054854,
+                "rssBytes": 104693760
+              },
+              {
+                "type": "renderer",
+                "id": 14576,
+                "cpuTime": 1.664313,
+                "rssBytes": 304824320
+              },
+              {
+                "type": "renderer",
+                "id": 14577,
+                "cpuTime": 2.43353,
+                "rssBytes": 294780928
+              },
+              {
+                "type": "renderer",
+                "id": 14574,
+                "cpuTime": 0.179255,
+                "rssBytes": 193773568
+              },
+              {
+                "type": "GPU",
+                "id": 14569,
+                "cpuTime": 0.927384,
+                "rssBytes": 138379264
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 14570,
+                "cpuTime": 0.130856,
+                "rssBytes": 98172928
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 14571,
+                "cpuTime": 0.037873,
+                "rssBytes": 68730880
+              }
+            ],
+            "grossSummedRSSBytes": 1433288704,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 229933056
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 898072576
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 138379264
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 98172928
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 68730880
+              }
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-15000",
+          "elapsedMs": 15271,
+          "at": "2026-10-23T21:31:02.131Z",
+          "gc": false,
+          "samples": [
+            {
+              "scenario": "chat",
+              "heap": {
+                "usedSize": 46940472,
+                "totalSize": 94584832,
+                "embedderHeapUsedSize": 34143784,
+                "backingStorageSize": 4532972
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 6443,
+                "jsEventListeners": 3592
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 30,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            },
+            {
+              "scenario": "dashboard",
+              "heap": {
+                "usedSize": 47572824,
+                "totalSize": 89079808,
+                "embedderHeapUsedSize": 14985200,
+                "backingStorageSize": 4479482
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 4028,
+                "jsEventListeners": 1575
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 30,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            }
+          ],
+          "backend": {
+            "active": 0,
+            "requests": [
+              {
+                "messages": 1,
+                "threadId": "a1926aed-e6af-4db6-9358-28b26799b472"
+              },
+              {
+                "messages": 1,
+                "threadId": "6df3ab37-ad7c-4a8a-9af4-f2d11132199c"
+              },
+              {
+                "messages": 1,
+                "threadId": "362eb1df-0350-4230-8e2b-10186ecae242"
+              },
+              {
+                "messages": 1,
+                "threadId": "3c7102f9-69ea-47bc-b119-e41578c1f909"
+              },
+              {
+                "messages": 1,
+                "threadId": "2caeb88a-9455-410c-8b99-24d74ab0a035"
+              },
+              {
+                "messages": 1,
+                "threadId": "17af0a02-886a-414e-83df-ab6a5de74d68"
+              },
+              {
+                "messages": 1,
+                "threadId": "be51905d-96f1-40cf-a4b3-44ad49ba98fd"
+              },
+              {
+                "messages": 1,
+                "threadId": "1b1c1ed8-8354-4fc5-9678-613fb94ae077"
+              },
+              {
+                "messages": 1,
+                "threadId": "f1aecb66-8221-497e-adc3-7d8a7c2861d4"
+              },
+              {
+                "messages": 1,
+                "threadId": "0eda46cf-5c7f-4249-be9c-669d5b27639d"
+              },
+              {
+                "messages": 1,
+                "threadId": "de19bf3a-2088-441c-9740-8624a7d91afe"
+              },
+              {
+                "messages": 1,
+                "threadId": "a63dfb36-6236-4bf3-a3aa-af1cf366850c"
+              },
+              {
+                "messages": 1,
+                "threadId": "0732086f-6acc-4958-b7ba-dcecba9b94cb"
+              },
+              {
+                "messages": 1,
+                "threadId": "dda00245-9722-4fdd-a8d7-4dac3b5e52ad"
+              },
+              {
+                "messages": 1,
+                "threadId": "4c6641e4-cd75-4812-b120-fad2e0516b48"
+              },
+              {
+                "messages": 1,
+                "threadId": "81ec74f7-5061-468f-a1b7-afda001f9b9e"
+              },
+              {
+                "messages": 1,
+                "threadId": "5ef663b6-774b-407f-ab3b-f4682751b31d"
+              },
+              {
+                "messages": 1,
+                "threadId": "133c847b-e472-4725-9c37-82d56998c90a"
+              },
+              {
+                "messages": 1,
+                "threadId": "98c0216a-a8f8-463c-ada6-725d0f56dce3"
+              },
+              {
+                "messages": 1,
+                "threadId": "e81afb1e-8e71-49c1-a130-9fa44bf7018d"
+              },
+              {
+                "messages": 1,
+                "threadId": "2e39fc67-9862-4fee-a6d1-a4840b051ee3"
+              },
+              {
+                "messages": 1,
+                "threadId": "e1671d51-f506-4031-9737-3097bfab781b"
+              },
+              {
+                "messages": 1,
+                "threadId": "25cd2240-1fc7-4a87-b0c3-66481f5984a2"
+              },
+              {
+                "messages": 1,
+                "threadId": "42b0552b-32e1-4863-b259-071bf73fa7c9"
+              },
+              {
+                "messages": 1,
+                "threadId": "c9e09841-f62f-4fb2-b7cd-a38301ed57d5"
+              },
+              {
+                "messages": 1,
+                "threadId": "f39e4ca9-a904-4c14-a0c9-b72748c652fc"
+              },
+              {
+                "messages": 1,
+                "threadId": "c3d588aa-4c73-4a86-9c00-fa89e97c859e"
+              },
+              {
+                "messages": 1,
+                "threadId": "a5b43259-a4b2-4849-bd49-74192e39974b"
+              },
+              {
+                "messages": 1,
+                "threadId": "3787c62e-d94c-454c-af29-60a76282e1b7"
+              },
+              {
+                "messages": 1,
+                "threadId": "f18da00d-5313-4cc4-9c61-fa5d343fdcf3"
+              },
+              {
+                "messages": 1,
+                "threadId": "00c7388f-488d-4b60-879e-538882228475"
+              },
+              {
+                "messages": 1,
+                "threadId": "95989a5e-bba2-4c42-8fca-483264cf2d62"
+              },
+              {
+                "messages": 1,
+                "threadId": "5e7979b6-51ee-427e-a8be-7882b76656aa"
+              },
+              {
+                "messages": 1,
+                "threadId": "3b42c5d9-5482-4354-aec2-15bd7265c2f3"
+              },
+              {
+                "messages": 1,
+                "threadId": "24ff3ecc-7414-45fe-8387-2337d735068d"
+              },
+              {
+                "messages": 1,
+                "threadId": "aeb4026d-cfa9-4378-b055-9ddb2b1af50c"
+              },
+              {
+                "messages": 1,
+                "threadId": "d03915dc-7bce-46d5-b9b0-017717c35939"
+              },
+              {
+                "messages": 1,
+                "threadId": "90702c59-4840-4494-a2e2-6947127adef9"
+              },
+              {
+                "messages": 1,
+                "threadId": "20d01b08-fb7b-471a-b9fe-a93fb92b5290"
+              },
+              {
+                "messages": 1,
+                "threadId": "b4c35098-3909-4e06-95c9-fc25c30f89c4"
+              },
+              {
+                "messages": 1,
+                "threadId": "41cf95db-8e77-432d-a0cc-4ee9e4f71400"
+              },
+              {
+                "messages": 1,
+                "threadId": "74acfc1b-12ad-4cb2-aef5-0af3df1fad71"
+              },
+              {
+                "messages": 1,
+                "threadId": "f5e0d7d6-640d-483a-8cce-5440af1be16a"
+              },
+              {
+                "messages": 1,
+                "threadId": "5614d537-495f-4030-80af-26300e0bf456"
+              },
+              {
+                "messages": 1,
+                "threadId": "fad4db1b-a857-4daf-ba27-471193ffefd5"
+              },
+              {
+                "messages": 1,
+                "threadId": "d6885753-ce54-4235-9d6e-a9f73119654f"
+              },
+              {
+                "messages": 1,
+                "threadId": "5d2565cb-b6e4-435f-8ac6-b100475a1d64"
+              },
+              {
+                "messages": 1,
+                "threadId": "7c40c446-da82-471e-98ca-7c97e67f69b5"
+              },
+              {
+                "messages": 1,
+                "threadId": "3d6db117-a07e-4eb0-b739-8d0fd3a6cdbe"
+              },
+              {
+                "messages": 1,
+                "threadId": "2083a2cf-0909-496f-9d60-79b844d90c6c"
+              },
+              {
+                "messages": 1,
+                "threadId": "7b1a95e3-52fc-4c31-b0ff-0197eeba33b3"
+              },
+              {
+                "messages": 1,
+                "threadId": "1eabd23e-5422-472a-89f4-9bef3e7bfd03"
+              },
+              {
+                "messages": 1,
+                "threadId": "b0f16556-1f0b-441b-860d-2b8e5b392b09"
+              },
+              {
+                "messages": 1,
+                "threadId": "11c4c5a3-c077-40ec-9dd8-cb22ca72235a"
+              }
+            ],
+            "memory": {
+              "rss": 256114688,
+              "heapTotal": 162430976,
+              "heapUsed": 156862760,
+              "external": 2156470,
+              "arrayBuffers": 20800
+            },
+            "pid": 14562,
+            "gcApplied": false
+          },
+          "chromeProcessRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 14563,
+                "cpuTime": 1.462752,
+                "rssBytes": 224428032
+              },
+              {
+                "type": "renderer",
+                "id": 14578,
+                "cpuTime": 0.057869,
+                "rssBytes": 106332160
+              },
+              {
+                "type": "renderer",
+                "id": 14576,
+                "cpuTime": 5.566669,
+                "rssBytes": 401932288
+              },
+              {
+                "type": "renderer",
+                "id": 14577,
+                "cpuTime": 8.442115,
+                "rssBytes": 402358272
+              },
+              {
+                "type": "renderer",
+                "id": 14574,
+                "cpuTime": 0.182801,
+                "rssBytes": 158547968
+              },
+              {
+                "type": "GPU",
+                "id": 14569,
+                "cpuTime": 3.346413,
+                "rssBytes": 137723904
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 14570,
+                "cpuTime": 0.259127,
+                "rssBytes": 98566144
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 14571,
+                "cpuTime": 0.044147,
+                "rssBytes": 69795840
+              }
+            ],
+            "grossSummedRSSBytes": 1599684608,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 224428032
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 1069170688
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 137723904
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 98566144
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 69795840
+              }
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-30000",
+          "elapsedMs": 30016,
+          "at": "2026-10-23T21:31:16.876Z",
+          "gc": false,
+          "samples": [
+            {
+              "scenario": "chat",
+              "heap": {
+                "usedSize": 49079648,
+                "totalSize": 109264896,
+                "embedderHeapUsedSize": 23210800,
+                "backingStorageSize": 4481411
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 7439,
+                "jsEventListeners": 1743
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 51,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            },
+            {
+              "scenario": "dashboard",
+              "heap": {
+                "usedSize": 59855800,
+                "totalSize": 99565568,
+                "embedderHeapUsedSize": 36083952,
+                "backingStorageSize": 4530776
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 9393,
+                "jsEventListeners": 3147
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 50,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            }
+          ],
+          "backend": {
+            "active": 0,
+            "requests": [
+              {
+                "messages": 1,
+                "threadId": "a1926aed-e6af-4db6-9358-28b26799b472"
+              },
+              {
+                "messages": 1,
+                "threadId": "6df3ab37-ad7c-4a8a-9af4-f2d11132199c"
+              },
+              {
+                "messages": 1,
+                "threadId": "362eb1df-0350-4230-8e2b-10186ecae242"
+              },
+              {
+                "messages": 1,
+                "threadId": "3c7102f9-69ea-47bc-b119-e41578c1f909"
+              },
+              {
+                "messages": 1,
+                "threadId": "2caeb88a-9455-410c-8b99-24d74ab0a035"
+              },
+              {
+                "messages": 1,
+                "threadId": "17af0a02-886a-414e-83df-ab6a5de74d68"
+              },
+              {
+                "messages": 1,
+                "threadId": "be51905d-96f1-40cf-a4b3-44ad49ba98fd"
+              },
+              {
+                "messages": 1,
+                "threadId": "1b1c1ed8-8354-4fc5-9678-613fb94ae077"
+              },
+              {
+                "messages": 1,
+                "threadId": "f1aecb66-8221-497e-adc3-7d8a7c2861d4"
+              },
+              {
+                "messages": 1,
+                "threadId": "0eda46cf-5c7f-4249-be9c-669d5b27639d"
+              },
+              {
+                "messages": 1,
+                "threadId": "de19bf3a-2088-441c-9740-8624a7d91afe"
+              },
+              {
+                "messages": 1,
+                "threadId": "a63dfb36-6236-4bf3-a3aa-af1cf366850c"
+              },
+              {
+                "messages": 1,
+                "threadId": "0732086f-6acc-4958-b7ba-dcecba9b94cb"
+              },
+              {
+                "messages": 1,
+                "threadId": "dda00245-9722-4fdd-a8d7-4dac3b5e52ad"
+              },
+              {
+                "messages": 1,
+                "threadId": "4c6641e4-cd75-4812-b120-fad2e0516b48"
+              },
+              {
+                "messages": 1,
+                "threadId": "81ec74f7-5061-468f-a1b7-afda001f9b9e"
+              },
+              {
+                "messages": 1,
+                "threadId": "5ef663b6-774b-407f-ab3b-f4682751b31d"
+              },
+              {
+                "messages": 1,
+                "threadId": "133c847b-e472-4725-9c37-82d56998c90a"
+              },
+              {
+                "messages": 1,
+                "threadId": "98c0216a-a8f8-463c-ada6-725d0f56dce3"
+              },
+              {
+                "messages": 1,
+                "threadId": "e81afb1e-8e71-49c1-a130-9fa44bf7018d"
+              },
+              {
+                "messages": 1,
+                "threadId": "2e39fc67-9862-4fee-a6d1-a4840b051ee3"
+              },
+              {
+                "messages": 1,
+                "threadId": "e1671d51-f506-4031-9737-3097bfab781b"
+              },
+              {
+                "messages": 1,
+                "threadId": "25cd2240-1fc7-4a87-b0c3-66481f5984a2"
+              },
+              {
+                "messages": 1,
+                "threadId": "42b0552b-32e1-4863-b259-071bf73fa7c9"
+              },
+              {
+                "messages": 1,
+                "threadId": "c9e09841-f62f-4fb2-b7cd-a38301ed57d5"
+              },
+              {
+                "messages": 1,
+                "threadId": "f39e4ca9-a904-4c14-a0c9-b72748c652fc"
+              },
+              {
+                "messages": 1,
+                "threadId": "c3d588aa-4c73-4a86-9c00-fa89e97c859e"
+              },
+              {
+                "messages": 1,
+                "threadId": "a5b43259-a4b2-4849-bd49-74192e39974b"
+              },
+              {
+                "messages": 1,
+                "threadId": "3787c62e-d94c-454c-af29-60a76282e1b7"
+              },
+              {
+                "messages": 1,
+                "threadId": "f18da00d-5313-4cc4-9c61-fa5d343fdcf3"
+              },
+              {
+                "messages": 1,
+                "threadId": "00c7388f-488d-4b60-879e-538882228475"
+              },
+              {
+                "messages": 1,
+                "threadId": "95989a5e-bba2-4c42-8fca-483264cf2d62"
+              },
+              {
+                "messages": 1,
+                "threadId": "5e7979b6-51ee-427e-a8be-7882b76656aa"
+              },
+              {
+                "messages": 1,
+                "threadId": "3b42c5d9-5482-4354-aec2-15bd7265c2f3"
+              },
+              {
+                "messages": 1,
+                "threadId": "24ff3ecc-7414-45fe-8387-2337d735068d"
+              },
+              {
+                "messages": 1,
+                "threadId": "aeb4026d-cfa9-4378-b055-9ddb2b1af50c"
+              },
+              {
+                "messages": 1,
+                "threadId": "d03915dc-7bce-46d5-b9b0-017717c35939"
+              },
+              {
+                "messages": 1,
+                "threadId": "90702c59-4840-4494-a2e2-6947127adef9"
+              },
+              {
+                "messages": 1,
+                "threadId": "20d01b08-fb7b-471a-b9fe-a93fb92b5290"
+              },
+              {
+                "messages": 1,
+                "threadId": "b4c35098-3909-4e06-95c9-fc25c30f89c4"
+              },
+              {
+                "messages": 1,
+                "threadId": "41cf95db-8e77-432d-a0cc-4ee9e4f71400"
+              },
+              {
+                "messages": 1,
+                "threadId": "74acfc1b-12ad-4cb2-aef5-0af3df1fad71"
+              },
+              {
+                "messages": 1,
+                "threadId": "f5e0d7d6-640d-483a-8cce-5440af1be16a"
+              },
+              {
+                "messages": 1,
+                "threadId": "5614d537-495f-4030-80af-26300e0bf456"
+              },
+              {
+                "messages": 1,
+                "threadId": "fad4db1b-a857-4daf-ba27-471193ffefd5"
+              },
+              {
+                "messages": 1,
+                "threadId": "d6885753-ce54-4235-9d6e-a9f73119654f"
+              },
+              {
+                "messages": 1,
+                "threadId": "5d2565cb-b6e4-435f-8ac6-b100475a1d64"
+              },
+              {
+                "messages": 1,
+                "threadId": "7c40c446-da82-471e-98ca-7c97e67f69b5"
+              },
+              {
+                "messages": 1,
+                "threadId": "3d6db117-a07e-4eb0-b739-8d0fd3a6cdbe"
+              },
+              {
+                "messages": 1,
+                "threadId": "2083a2cf-0909-496f-9d60-79b844d90c6c"
+              },
+              {
+                "messages": 1,
+                "threadId": "7b1a95e3-52fc-4c31-b0ff-0197eeba33b3"
+              },
+              {
+                "messages": 1,
+                "threadId": "1eabd23e-5422-472a-89f4-9bef3e7bfd03"
+              },
+              {
+                "messages": 1,
+                "threadId": "b0f16556-1f0b-441b-860d-2b8e5b392b09"
+              },
+              {
+                "messages": 1,
+                "threadId": "11c4c5a3-c077-40ec-9dd8-cb22ca72235a"
+              },
+              {
+                "messages": 1,
+                "threadId": "a926b99d-c5a9-4146-b145-bda0c11321bc"
+              },
+              {
+                "messages": 1,
+                "threadId": "bc00ac9e-8e78-4543-ad53-835964b7b2a1"
+              },
+              {
+                "messages": 1,
+                "threadId": "a924c36c-0d46-47ef-aff4-da80847e35b9"
+              },
+              {
+                "messages": 1,
+                "threadId": "1bf0a474-3ce5-4883-bc6c-7cb4523cf55a"
+              },
+              {
+                "messages": 1,
+                "threadId": "425f0487-870e-4e4d-9146-ec4ab0b86835"
+              },
+              {
+                "messages": 1,
+                "threadId": "af119473-92cb-4a23-b3b2-b27c1e814568"
+              },
+              {
+                "messages": 1,
+                "threadId": "3d4a8584-d432-4a17-95e9-c1c04706a0bb"
+              },
+              {
+                "messages": 1,
+                "threadId": "c69ea412-a284-4573-ae88-18c56a50c5c5"
+              },
+              {
+                "messages": 1,
+                "threadId": "b52910de-bfa2-420e-9491-e45eceaf78e0"
+              },
+              {
+                "messages": 1,
+                "threadId": "79c72131-e494-4e88-a967-7f9830bf1aa1"
+              },
+              {
+                "messages": 1,
+                "threadId": "4173f0cf-c027-4e52-82da-6d586babf8fc"
+              },
+              {
+                "messages": 1,
+                "threadId": "cbc24171-6d41-429b-83a3-623a086f3410"
+              },
+              {
+                "messages": 1,
+                "threadId": "0a32d205-ff40-4e5e-8a6e-bd0a0edb6147"
+              },
+              {
+                "messages": 1,
+                "threadId": "679a9504-89e3-490e-8061-1ff7c88d7e49"
+              },
+              {
+                "messages": 1,
+                "threadId": "046a300b-f007-441b-aeb0-d063417f6779"
+              },
+              {
+                "messages": 1,
+                "threadId": "052a161b-49c1-43b1-85e4-a06809143da3"
+              },
+              {
+                "messages": 1,
+                "threadId": "90431d2c-4a04-4487-a87c-7988005fb0be"
+              },
+              {
+                "messages": 1,
+                "threadId": "4ade02f9-0a0d-4251-8872-38cc632018a5"
+              },
+              {
+                "messages": 1,
+                "threadId": "3e0d6783-a165-49c4-8d27-033e0897a521"
+              },
+              {
+                "messages": 1,
+                "threadId": "8b626845-4eec-42a0-b935-f315527d83c5"
+              },
+              {
+                "messages": 1,
+                "threadId": "8e1cd434-4e13-47e4-ac45-c265956f01e1"
+              },
+              {
+                "messages": 1,
+                "threadId": "68fac63c-6483-4eec-a625-c9d0582e330f"
+              },
+              {
+                "messages": 1,
+                "threadId": "c2ca3812-6334-4b71-901f-1f56f5a51b3c"
+              },
+              {
+                "messages": 1,
+                "threadId": "7e0e171f-8d2f-49f0-b04f-9209519ade6b"
+              },
+              {
+                "messages": 1,
+                "threadId": "d360020d-d649-48f2-9252-3e8e16cbee4a"
+              },
+              {
+                "messages": 1,
+                "threadId": "d0f90f3c-cdbd-4566-a970-2155af229f32"
+              },
+              {
+                "messages": 1,
+                "threadId": "337d6d97-d13a-402a-b9ea-7146c0ed787f"
+              },
+              {
+                "messages": 1,
+                "threadId": "c120d3f1-0be5-4878-9092-28df4353ae0f"
+              },
+              {
+                "messages": 1,
+                "threadId": "b8ff8169-6700-49f1-a88d-3099cd42220e"
+              },
+              {
+                "messages": 1,
+                "threadId": "9f6ce7ff-2932-4a30-9c37-02748a814915"
+              },
+              {
+                "messages": 1,
+                "threadId": "d91564ab-2a69-4dd9-a030-21597937de03"
+              },
+              {
+                "messages": 1,
+                "threadId": "5c85fcf3-6f82-4d01-838e-0c3879850723"
+              },
+              {
+                "messages": 1,
+                "threadId": "ef9094cd-16d0-48fc-9d76-bc2ee8acee57"
+              },
+              {
+                "messages": 1,
+                "threadId": "482d7c97-5fc5-4977-be8a-f5d4e7f9bdba"
+              },
+              {
+                "messages": 1,
+                "threadId": "6f6017b7-6ba4-4667-abf8-8a4af4f378fe"
+              },
+              {
+                "messages": 1,
+                "threadId": "3c1e8a9f-1292-4b1d-bdf4-09113febc365"
+              },
+              {
+                "messages": 1,
+                "threadId": "4269b41f-6f1f-444f-9c04-2ac0c4acced1"
+              },
+              {
+                "messages": 1,
+                "threadId": "780b9455-d9ff-4fb2-a2fb-ccdbeeed42bd"
+              },
+              {
+                "messages": 1,
+                "threadId": "3d3ce881-b11b-4f3a-a890-30663c48c330"
+              },
+              {
+                "messages": 1,
+                "threadId": "0ccfe263-6f70-4ff9-9a65-f594725a48db"
+              },
+              {
+                "messages": 1,
+                "threadId": "31c4d294-07cc-4391-b6bd-58969ccb8029"
+              }
+            ],
+            "memory": {
+              "rss": 257015808,
+              "heapTotal": 162693120,
+              "heapUsed": 157227856,
+              "external": 2155090,
+              "arrayBuffers": 21030
+            },
+            "pid": 14562,
+            "gcApplied": false
+          },
+          "chromeProcessRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 14563,
+                "cpuTime": 1.9129,
+                "rssBytes": 225492992
+              },
+              {
+                "type": "renderer",
+                "id": 14578,
+                "cpuTime": 0.057895,
+                "rssBytes": 106332160
+              },
+              {
+                "type": "renderer",
+                "id": 14576,
+                "cpuTime": 8.996289,
+                "rssBytes": 404652032
+              },
+              {
+                "type": "renderer",
+                "id": 14577,
+                "cpuTime": 13.97789,
+                "rssBytes": 455917568
+              },
+              {
+                "type": "renderer",
+                "id": 14574,
+                "cpuTime": 0.215281,
+                "rssBytes": 157564928
+              },
+              {
+                "type": "GPU",
+                "id": 14569,
+                "cpuTime": 5.642653,
+                "rssBytes": 138166272
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 14570,
+                "cpuTime": 0.376481,
+                "rssBytes": 98713600
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 14571,
+                "cpuTime": 0.048062,
+                "rssBytes": 69812224
+              }
+            ],
+            "grossSummedRSSBytes": 1656651776,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 225492992
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 1124466688
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 138166272
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 98713600
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 69812224
+              }
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-45000",
+          "elapsedMs": 45185,
+          "at": "2026-10-23T21:31:32.045Z",
+          "gc": false,
+          "samples": [
+            {
+              "scenario": "chat",
+              "heap": {
+                "usedSize": 66026912,
+                "totalSize": 114245632,
+                "embedderHeapUsedSize": 77560048,
+                "backingStorageSize": 4636551
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 15207,
+                "jsEventListeners": 7914
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 72,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            },
+            {
+              "scenario": "dashboard",
+              "heap": {
+                "usedSize": 47235464,
+                "totalSize": 91439104,
+                "embedderHeapUsedSize": 13933352,
+                "backingStorageSize": 4477583
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 3279,
+                "jsEventListeners": 1464
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 71,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            }
+          ],
+          "backend": {
+            "active": 0,
+            "requests": [
+              {
+                "messages": 1,
+                "threadId": "90702c59-4840-4494-a2e2-6947127adef9"
+              },
+              {
+                "messages": 1,
+                "threadId": "20d01b08-fb7b-471a-b9fe-a93fb92b5290"
+              },
+              {
+                "messages": 1,
+                "threadId": "b4c35098-3909-4e06-95c9-fc25c30f89c4"
+              },
+              {
+                "messages": 1,
+                "threadId": "41cf95db-8e77-432d-a0cc-4ee9e4f71400"
+              },
+              {
+                "messages": 1,
+                "threadId": "74acfc1b-12ad-4cb2-aef5-0af3df1fad71"
+              },
+              {
+                "messages": 1,
+                "threadId": "f5e0d7d6-640d-483a-8cce-5440af1be16a"
+              },
+              {
+                "messages": 1,
+                "threadId": "5614d537-495f-4030-80af-26300e0bf456"
+              },
+              {
+                "messages": 1,
+                "threadId": "fad4db1b-a857-4daf-ba27-471193ffefd5"
+              },
+              {
+                "messages": 1,
+                "threadId": "d6885753-ce54-4235-9d6e-a9f73119654f"
+              },
+              {
+                "messages": 1,
+                "threadId": "5d2565cb-b6e4-435f-8ac6-b100475a1d64"
+              },
+              {
+                "messages": 1,
+                "threadId": "7c40c446-da82-471e-98ca-7c97e67f69b5"
+              },
+              {
+                "messages": 1,
+                "threadId": "3d6db117-a07e-4eb0-b739-8d0fd3a6cdbe"
+              },
+              {
+                "messages": 1,
+                "threadId": "2083a2cf-0909-496f-9d60-79b844d90c6c"
+              },
+              {
+                "messages": 1,
+                "threadId": "7b1a95e3-52fc-4c31-b0ff-0197eeba33b3"
+              },
+              {
+                "messages": 1,
+                "threadId": "1eabd23e-5422-472a-89f4-9bef3e7bfd03"
+              },
+              {
+                "messages": 1,
+                "threadId": "b0f16556-1f0b-441b-860d-2b8e5b392b09"
+              },
+              {
+                "messages": 1,
+                "threadId": "11c4c5a3-c077-40ec-9dd8-cb22ca72235a"
+              },
+              {
+                "messages": 1,
+                "threadId": "a926b99d-c5a9-4146-b145-bda0c11321bc"
+              },
+              {
+                "messages": 1,
+                "threadId": "bc00ac9e-8e78-4543-ad53-835964b7b2a1"
+              },
+              {
+                "messages": 1,
+                "threadId": "a924c36c-0d46-47ef-aff4-da80847e35b9"
+              },
+              {
+                "messages": 1,
+                "threadId": "1bf0a474-3ce5-4883-bc6c-7cb4523cf55a"
+              },
+              {
+                "messages": 1,
+                "threadId": "425f0487-870e-4e4d-9146-ec4ab0b86835"
+              },
+              {
+                "messages": 1,
+                "threadId": "af119473-92cb-4a23-b3b2-b27c1e814568"
+              },
+              {
+                "messages": 1,
+                "threadId": "3d4a8584-d432-4a17-95e9-c1c04706a0bb"
+              },
+              {
+                "messages": 1,
+                "threadId": "c69ea412-a284-4573-ae88-18c56a50c5c5"
+              },
+              {
+                "messages": 1,
+                "threadId": "b52910de-bfa2-420e-9491-e45eceaf78e0"
+              },
+              {
+                "messages": 1,
+                "threadId": "79c72131-e494-4e88-a967-7f9830bf1aa1"
+              },
+              {
+                "messages": 1,
+                "threadId": "4173f0cf-c027-4e52-82da-6d586babf8fc"
+              },
+              {
+                "messages": 1,
+                "threadId": "cbc24171-6d41-429b-83a3-623a086f3410"
+              },
+              {
+                "messages": 1,
+                "threadId": "0a32d205-ff40-4e5e-8a6e-bd0a0edb6147"
+              },
+              {
+                "messages": 1,
+                "threadId": "679a9504-89e3-490e-8061-1ff7c88d7e49"
+              },
+              {
+                "messages": 1,
+                "threadId": "046a300b-f007-441b-aeb0-d063417f6779"
+              },
+              {
+                "messages": 1,
+                "threadId": "052a161b-49c1-43b1-85e4-a06809143da3"
+              },
+              {
+                "messages": 1,
+                "threadId": "90431d2c-4a04-4487-a87c-7988005fb0be"
+              },
+              {
+                "messages": 1,
+                "threadId": "4ade02f9-0a0d-4251-8872-38cc632018a5"
+              },
+              {
+                "messages": 1,
+                "threadId": "3e0d6783-a165-49c4-8d27-033e0897a521"
+              },
+              {
+                "messages": 1,
+                "threadId": "8b626845-4eec-42a0-b935-f315527d83c5"
+              },
+              {
+                "messages": 1,
+                "threadId": "8e1cd434-4e13-47e4-ac45-c265956f01e1"
+              },
+              {
+                "messages": 1,
+                "threadId": "68fac63c-6483-4eec-a625-c9d0582e330f"
+              },
+              {
+                "messages": 1,
+                "threadId": "c2ca3812-6334-4b71-901f-1f56f5a51b3c"
+              },
+              {
+                "messages": 1,
+                "threadId": "7e0e171f-8d2f-49f0-b04f-9209519ade6b"
+              },
+              {
+                "messages": 1,
+                "threadId": "d360020d-d649-48f2-9252-3e8e16cbee4a"
+              },
+              {
+                "messages": 1,
+                "threadId": "d0f90f3c-cdbd-4566-a970-2155af229f32"
+              },
+              {
+                "messages": 1,
+                "threadId": "337d6d97-d13a-402a-b9ea-7146c0ed787f"
+              },
+              {
+                "messages": 1,
+                "threadId": "c120d3f1-0be5-4878-9092-28df4353ae0f"
+              },
+              {
+                "messages": 1,
+                "threadId": "b8ff8169-6700-49f1-a88d-3099cd42220e"
+              },
+              {
+                "messages": 1,
+                "threadId": "9f6ce7ff-2932-4a30-9c37-02748a814915"
+              },
+              {
+                "messages": 1,
+                "threadId": "d91564ab-2a69-4dd9-a030-21597937de03"
+              },
+              {
+                "messages": 1,
+                "threadId": "5c85fcf3-6f82-4d01-838e-0c3879850723"
+              },
+              {
+                "messages": 1,
+                "threadId": "ef9094cd-16d0-48fc-9d76-bc2ee8acee57"
+              },
+              {
+                "messages": 1,
+                "threadId": "482d7c97-5fc5-4977-be8a-f5d4e7f9bdba"
+              },
+              {
+                "messages": 1,
+                "threadId": "6f6017b7-6ba4-4667-abf8-8a4af4f378fe"
+              },
+              {
+                "messages": 1,
+                "threadId": "3c1e8a9f-1292-4b1d-bdf4-09113febc365"
+              },
+              {
+                "messages": 1,
+                "threadId": "4269b41f-6f1f-444f-9c04-2ac0c4acced1"
+              },
+              {
+                "messages": 1,
+                "threadId": "780b9455-d9ff-4fb2-a2fb-ccdbeeed42bd"
+              },
+              {
+                "messages": 1,
+                "threadId": "3d3ce881-b11b-4f3a-a890-30663c48c330"
+              },
+              {
+                "messages": 1,
+                "threadId": "0ccfe263-6f70-4ff9-9a65-f594725a48db"
+              },
+              {
+                "messages": 1,
+                "threadId": "31c4d294-07cc-4391-b6bd-58969ccb8029"
+              },
+              {
+                "messages": 1,
+                "threadId": "f4f10d1b-a9e3-43e9-9dfb-ec8b3032a211"
+              },
+              {
+                "messages": 1,
+                "threadId": "aaeca0ef-11df-487d-b619-6cb6e599f5a5"
+              },
+              {
+                "messages": 1,
+                "threadId": "1bf1949a-6f6a-47ef-a0f9-f05bcfa40101"
+              },
+              {
+                "messages": 1,
+                "threadId": "2ae9a3ca-959b-4abd-8e9b-8bda2cdf03f5"
+              },
+              {
+                "messages": 1,
+                "threadId": "9e59f055-3266-4040-b6c6-37b8ef128d64"
+              },
+              {
+                "messages": 1,
+                "threadId": "f9fc8a37-98b7-4e97-ab2a-8818094b76ac"
+              },
+              {
+                "messages": 1,
+                "threadId": "324fca5e-eb2c-4358-a5da-6bd1a06fed81"
+              },
+              {
+                "messages": 1,
+                "threadId": "3a6d0b05-4047-4eca-8680-457995d68283"
+              },
+              {
+                "messages": 1,
+                "threadId": "f32fb028-fe14-4466-9eb4-f0de88fddaab"
+              },
+              {
+                "messages": 1,
+                "threadId": "1b8729ab-af0f-4cfb-ae2f-f9e5ee3f217a"
+              },
+              {
+                "messages": 1,
+                "threadId": "68c39a66-08f9-43fc-8560-0279a4eeb6f7"
+              },
+              {
+                "messages": 1,
+                "threadId": "06103889-666d-47a7-86a9-3550e68eb98d"
+              },
+              {
+                "messages": 1,
+                "threadId": "28438b38-a646-405e-9245-954c1dc2aaed"
+              },
+              {
+                "messages": 1,
+                "threadId": "0da67bcd-5f7d-4729-90bb-c92e447c6969"
+              },
+              {
+                "messages": 1,
+                "threadId": "b1e581a2-bfce-4631-a6a9-18e07763236b"
+              },
+              {
+                "messages": 1,
+                "threadId": "8813aafd-6000-4f01-a5ef-e377af14c098"
+              },
+              {
+                "messages": 1,
+                "threadId": "52d94a47-23ad-48d4-aad1-56fff078bc65"
+              },
+              {
+                "messages": 1,
+                "threadId": "2d6aa001-6e9c-4804-9159-b4a5575baeb6"
+              },
+              {
+                "messages": 1,
+                "threadId": "14bac27c-d3b3-45ce-aca1-ac06f6ebbfc0"
+              },
+              {
+                "messages": 1,
+                "threadId": "8ad59c32-a2b8-426d-aa5a-455f76a64cb7"
+              },
+              {
+                "messages": 1,
+                "threadId": "cc4de1cf-e681-43ad-b778-4912a1f0df92"
+              },
+              {
+                "messages": 1,
+                "threadId": "7d1c1fbe-b45b-49a7-9544-4fd6322e6aa8"
+              },
+              {
+                "messages": 1,
+                "threadId": "f5bb2613-9bfa-434b-ac45-cfd52a4eb559"
+              },
+              {
+                "messages": 1,
+                "threadId": "7dd09aa7-1602-4e38-a6a2-2a5c9c7aa159"
+              },
+              {
+                "messages": 1,
+                "threadId": "f464887d-9596-4dae-814e-064eb15a22c3"
+              },
+              {
+                "messages": 1,
+                "threadId": "d0c19e83-772e-4f9a-a79f-cd6636b32c07"
+              },
+              {
+                "messages": 1,
+                "threadId": "7aa86905-b230-481a-b74c-e158c8b2b5d1"
+              },
+              {
+                "messages": 1,
+                "threadId": "c1693ac2-d3e9-4431-a89e-ffa161d80d87"
+              },
+              {
+                "messages": 1,
+                "threadId": "107799cb-47dc-46e5-b567-d857c79fd762"
+              },
+              {
+                "messages": 1,
+                "threadId": "7623b36b-3d73-4c85-a5ad-f1c400e7540b"
+              },
+              {
+                "messages": 1,
+                "threadId": "26ae10d7-40a4-49a0-b097-94ebe0cbd473"
+              },
+              {
+                "messages": 1,
+                "threadId": "76a6e6ff-64d7-45af-aea4-827d5431857c"
+              },
+              {
+                "messages": 1,
+                "threadId": "e2a2243e-6366-43cc-bc72-19032329fac6"
+              },
+              {
+                "messages": 1,
+                "threadId": "f142528b-8315-402d-8039-45b76e0c96a4"
+              },
+              {
+                "messages": 1,
+                "threadId": "bc51678e-c6d4-45e4-90c2-781dc07e5608"
+              },
+              {
+                "messages": 1,
+                "threadId": "8e0a8f53-bbc2-4d3f-8eaf-d67b22b9077c"
+              },
+              {
+                "messages": 1,
+                "threadId": "805a05f3-3187-4167-bcc8-fe07a6a56656"
+              },
+              {
+                "messages": 1,
+                "threadId": "6eb08171-ac1a-4586-8d64-696530b7bd2c"
+              },
+              {
+                "messages": 1,
+                "threadId": "1e8ffe5e-aab1-467c-ae86-4b25597da0da"
+              },
+              {
+                "messages": 1,
+                "threadId": "214951d7-ab72-481c-86a4-6a9354fbf7a1"
+              },
+              {
+                "messages": 1,
+                "threadId": "d2417a5e-307e-4c01-ab40-dfe672b2de27"
+              },
+              {
+                "messages": 1,
+                "threadId": "ef58c1b4-d739-412d-9863-edd865f34c6d"
+              }
+            ],
+            "memory": {
+              "rss": 257081344,
+              "heapTotal": 162955264,
+              "heapUsed": 157687240,
+              "external": 2155320,
+              "arrayBuffers": 21260
+            },
+            "pid": 14562,
+            "gcApplied": false
+          },
+          "chromeProcessRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 14563,
+                "cpuTime": 2.332798,
+                "rssBytes": 225492992
+              },
+              {
+                "type": "renderer",
+                "id": 14578,
+                "cpuTime": 0.05796,
+                "rssBytes": 106332160
+              },
+              {
+                "type": "renderer",
+                "id": 14576,
+                "cpuTime": 12.717386,
+                "rssBytes": 449921024
+              },
+              {
+                "type": "renderer",
+                "id": 14577,
+                "cpuTime": 19.360186,
+                "rssBytes": 461996032
+              },
+              {
+                "type": "renderer",
+                "id": 14574,
+                "cpuTime": 0.215364,
+                "rssBytes": 157515776
+              },
+              {
+                "type": "GPU",
+                "id": 14569,
+                "cpuTime": 8.055722,
+                "rssBytes": 138510336
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 14570,
+                "cpuTime": 0.499118,
+                "rssBytes": 98598912
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 14571,
+                "cpuTime": 0.052577,
+                "rssBytes": 69812224
+              }
+            ],
+            "grossSummedRSSBytes": 1708179456,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 225492992
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 1175764992
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 138510336
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 98598912
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 69812224
+              }
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-60000",
+          "elapsedMs": 60108,
+          "at": "2026-10-23T21:31:46.968Z",
+          "gc": false,
+          "samples": [
+            {
+              "scenario": "chat",
+              "heap": {
+                "usedSize": 43598428,
+                "totalSize": 66797568,
+                "embedderHeapUsedSize": 36331840,
+                "backingStorageSize": 4548512
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 6155,
+                "jsEventListeners": 4059
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 92,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            },
+            {
+              "scenario": "dashboard",
+              "heap": {
+                "usedSize": 41761628,
+                "totalSize": 95371264,
+                "embedderHeapUsedSize": 24115288,
+                "backingStorageSize": 4507374
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 6185,
+                "jsEventListeners": 2385
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 92,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            }
+          ],
+          "backend": {
+            "active": 0,
+            "requests": [
+              {
+                "messages": 1,
+                "threadId": "d360020d-d649-48f2-9252-3e8e16cbee4a"
+              },
+              {
+                "messages": 1,
+                "threadId": "d0f90f3c-cdbd-4566-a970-2155af229f32"
+              },
+              {
+                "messages": 1,
+                "threadId": "337d6d97-d13a-402a-b9ea-7146c0ed787f"
+              },
+              {
+                "messages": 1,
+                "threadId": "c120d3f1-0be5-4878-9092-28df4353ae0f"
+              },
+              {
+                "messages": 1,
+                "threadId": "b8ff8169-6700-49f1-a88d-3099cd42220e"
+              },
+              {
+                "messages": 1,
+                "threadId": "9f6ce7ff-2932-4a30-9c37-02748a814915"
+              },
+              {
+                "messages": 1,
+                "threadId": "d91564ab-2a69-4dd9-a030-21597937de03"
+              },
+              {
+                "messages": 1,
+                "threadId": "5c85fcf3-6f82-4d01-838e-0c3879850723"
+              },
+              {
+                "messages": 1,
+                "threadId": "ef9094cd-16d0-48fc-9d76-bc2ee8acee57"
+              },
+              {
+                "messages": 1,
+                "threadId": "482d7c97-5fc5-4977-be8a-f5d4e7f9bdba"
+              },
+              {
+                "messages": 1,
+                "threadId": "6f6017b7-6ba4-4667-abf8-8a4af4f378fe"
+              },
+              {
+                "messages": 1,
+                "threadId": "3c1e8a9f-1292-4b1d-bdf4-09113febc365"
+              },
+              {
+                "messages": 1,
+                "threadId": "4269b41f-6f1f-444f-9c04-2ac0c4acced1"
+              },
+              {
+                "messages": 1,
+                "threadId": "780b9455-d9ff-4fb2-a2fb-ccdbeeed42bd"
+              },
+              {
+                "messages": 1,
+                "threadId": "3d3ce881-b11b-4f3a-a890-30663c48c330"
+              },
+              {
+                "messages": 1,
+                "threadId": "0ccfe263-6f70-4ff9-9a65-f594725a48db"
+              },
+              {
+                "messages": 1,
+                "threadId": "31c4d294-07cc-4391-b6bd-58969ccb8029"
+              },
+              {
+                "messages": 1,
+                "threadId": "f4f10d1b-a9e3-43e9-9dfb-ec8b3032a211"
+              },
+              {
+                "messages": 1,
+                "threadId": "aaeca0ef-11df-487d-b619-6cb6e599f5a5"
+              },
+              {
+                "messages": 1,
+                "threadId": "1bf1949a-6f6a-47ef-a0f9-f05bcfa40101"
+              },
+              {
+                "messages": 1,
+                "threadId": "2ae9a3ca-959b-4abd-8e9b-8bda2cdf03f5"
+              },
+              {
+                "messages": 1,
+                "threadId": "9e59f055-3266-4040-b6c6-37b8ef128d64"
+              },
+              {
+                "messages": 1,
+                "threadId": "f9fc8a37-98b7-4e97-ab2a-8818094b76ac"
+              },
+              {
+                "messages": 1,
+                "threadId": "324fca5e-eb2c-4358-a5da-6bd1a06fed81"
+              },
+              {
+                "messages": 1,
+                "threadId": "3a6d0b05-4047-4eca-8680-457995d68283"
+              },
+              {
+                "messages": 1,
+                "threadId": "f32fb028-fe14-4466-9eb4-f0de88fddaab"
+              },
+              {
+                "messages": 1,
+                "threadId": "1b8729ab-af0f-4cfb-ae2f-f9e5ee3f217a"
+              },
+              {
+                "messages": 1,
+                "threadId": "68c39a66-08f9-43fc-8560-0279a4eeb6f7"
+              },
+              {
+                "messages": 1,
+                "threadId": "06103889-666d-47a7-86a9-3550e68eb98d"
+              },
+              {
+                "messages": 1,
+                "threadId": "28438b38-a646-405e-9245-954c1dc2aaed"
+              },
+              {
+                "messages": 1,
+                "threadId": "0da67bcd-5f7d-4729-90bb-c92e447c6969"
+              },
+              {
+                "messages": 1,
+                "threadId": "b1e581a2-bfce-4631-a6a9-18e07763236b"
+              },
+              {
+                "messages": 1,
+                "threadId": "8813aafd-6000-4f01-a5ef-e377af14c098"
+              },
+              {
+                "messages": 1,
+                "threadId": "52d94a47-23ad-48d4-aad1-56fff078bc65"
+              },
+              {
+                "messages": 1,
+                "threadId": "2d6aa001-6e9c-4804-9159-b4a5575baeb6"
+              },
+              {
+                "messages": 1,
+                "threadId": "14bac27c-d3b3-45ce-aca1-ac06f6ebbfc0"
+              },
+              {
+                "messages": 1,
+                "threadId": "8ad59c32-a2b8-426d-aa5a-455f76a64cb7"
+              },
+              {
+                "messages": 1,
+                "threadId": "cc4de1cf-e681-43ad-b778-4912a1f0df92"
+              },
+              {
+                "messages": 1,
+                "threadId": "7d1c1fbe-b45b-49a7-9544-4fd6322e6aa8"
+              },
+              {
+                "messages": 1,
+                "threadId": "f5bb2613-9bfa-434b-ac45-cfd52a4eb559"
+              },
+              {
+                "messages": 1,
+                "threadId": "7dd09aa7-1602-4e38-a6a2-2a5c9c7aa159"
+              },
+              {
+                "messages": 1,
+                "threadId": "f464887d-9596-4dae-814e-064eb15a22c3"
+              },
+              {
+                "messages": 1,
+                "threadId": "d0c19e83-772e-4f9a-a79f-cd6636b32c07"
+              },
+              {
+                "messages": 1,
+                "threadId": "7aa86905-b230-481a-b74c-e158c8b2b5d1"
+              },
+              {
+                "messages": 1,
+                "threadId": "c1693ac2-d3e9-4431-a89e-ffa161d80d87"
+              },
+              {
+                "messages": 1,
+                "threadId": "107799cb-47dc-46e5-b567-d857c79fd762"
+              },
+              {
+                "messages": 1,
+                "threadId": "7623b36b-3d73-4c85-a5ad-f1c400e7540b"
+              },
+              {
+                "messages": 1,
+                "threadId": "26ae10d7-40a4-49a0-b097-94ebe0cbd473"
+              },
+              {
+                "messages": 1,
+                "threadId": "76a6e6ff-64d7-45af-aea4-827d5431857c"
+              },
+              {
+                "messages": 1,
+                "threadId": "e2a2243e-6366-43cc-bc72-19032329fac6"
+              },
+              {
+                "messages": 1,
+                "threadId": "f142528b-8315-402d-8039-45b76e0c96a4"
+              },
+              {
+                "messages": 1,
+                "threadId": "bc51678e-c6d4-45e4-90c2-781dc07e5608"
+              },
+              {
+                "messages": 1,
+                "threadId": "8e0a8f53-bbc2-4d3f-8eaf-d67b22b9077c"
+              },
+              {
+                "messages": 1,
+                "threadId": "805a05f3-3187-4167-bcc8-fe07a6a56656"
+              },
+              {
+                "messages": 1,
+                "threadId": "6eb08171-ac1a-4586-8d64-696530b7bd2c"
+              },
+              {
+                "messages": 1,
+                "threadId": "1e8ffe5e-aab1-467c-ae86-4b25597da0da"
+              },
+              {
+                "messages": 1,
+                "threadId": "214951d7-ab72-481c-86a4-6a9354fbf7a1"
+              },
+              {
+                "messages": 1,
+                "threadId": "d2417a5e-307e-4c01-ab40-dfe672b2de27"
+              },
+              {
+                "messages": 1,
+                "threadId": "ef58c1b4-d739-412d-9863-edd865f34c6d"
+              },
+              {
+                "messages": 1,
+                "threadId": "31c8b7d3-6eba-413a-8e7e-952d008e52a7"
+              },
+              {
+                "messages": 1,
+                "threadId": "9e2c788c-acb2-48d7-88ba-2eb9ba81cef9"
+              },
+              {
+                "messages": 1,
+                "threadId": "a814d32c-8434-4882-9bfd-e1a6fa5857d5"
+              },
+              {
+                "messages": 1,
+                "threadId": "2f6968aa-adc1-4e79-9641-c34cd2e25d66"
+              },
+              {
+                "messages": 1,
+                "threadId": "866b81ed-83c3-4a12-ad2f-bc5568eef412"
+              },
+              {
+                "messages": 1,
+                "threadId": "86e25563-3b94-40a2-947c-4ba15a94895a"
+              },
+              {
+                "messages": 1,
+                "threadId": "85777e2d-647d-4314-a724-229be400a22c"
+              },
+              {
+                "messages": 1,
+                "threadId": "83ee35cc-e952-4aad-8406-7bf88792e08d"
+              },
+              {
+                "messages": 1,
+                "threadId": "b9055d35-14c1-4431-9964-ee6908f6ae22"
+              },
+              {
+                "messages": 1,
+                "threadId": "7bd76afd-c57a-4379-937c-370c2f632e23"
+              },
+              {
+                "messages": 1,
+                "threadId": "4116591a-a179-48e0-ac3b-63e204258ae9"
+              },
+              {
+                "messages": 1,
+                "threadId": "8220e09c-02d6-40df-88ef-0c993fe956d5"
+              },
+              {
+                "messages": 1,
+                "threadId": "1562ebc7-448d-434f-819d-91667cd7c012"
+              },
+              {
+                "messages": 1,
+                "threadId": "1f1ecfdd-74a4-45fb-8d10-ebb2f88affee"
+              },
+              {
+                "messages": 1,
+                "threadId": "493c5004-887e-4f01-870d-0bcce6b8e62d"
+              },
+              {
+                "messages": 1,
+                "threadId": "a6925202-cfbe-4101-9b9b-3a83b8c3a148"
+              },
+              {
+                "messages": 1,
+                "threadId": "d5a3bafb-8477-4731-bd08-d9de91e2a571"
+              },
+              {
+                "messages": 1,
+                "threadId": "a0cd165a-5cd8-4a65-8933-432a8c09df1d"
+              },
+              {
+                "messages": 1,
+                "threadId": "9e9e5da5-6c1b-4497-807f-b12ecb929406"
+              },
+              {
+                "messages": 1,
+                "threadId": "3e54862a-39a5-4f79-8de7-a41aa7b83ea9"
+              },
+              {
+                "messages": 1,
+                "threadId": "4e7cf15f-0426-457e-a6a5-37f330675fd8"
+              },
+              {
+                "messages": 1,
+                "threadId": "cb6ec1ce-8737-46cf-a1e9-198425738794"
+              },
+              {
+                "messages": 1,
+                "threadId": "afad972e-845b-4682-9ff0-c97bf3d89f3c"
+              },
+              {
+                "messages": 1,
+                "threadId": "59d92e4d-e3b3-4597-9bb3-b08daf92f9e4"
+              },
+              {
+                "messages": 1,
+                "threadId": "967d4142-69cc-4e82-bbf4-ad6169f11ae3"
+              },
+              {
+                "messages": 1,
+                "threadId": "2e3c69c3-3b86-4ea8-8df5-0c2bf3b8709e"
+              },
+              {
+                "messages": 1,
+                "threadId": "3478013d-1bbf-4807-b745-a7af5bdbbcbb"
+              },
+              {
+                "messages": 1,
+                "threadId": "15d48755-e6de-4d20-8cfc-34bbb694ee71"
+              },
+              {
+                "messages": 1,
+                "threadId": "c37ce23a-adbc-48da-9a8d-ab07641c915a"
+              },
+              {
+                "messages": 1,
+                "threadId": "d6a363a1-8210-42fc-afc6-e1b9281334f1"
+              },
+              {
+                "messages": 1,
+                "threadId": "3aec3e85-9243-493d-be26-ae65c316e7ea"
+              },
+              {
+                "messages": 1,
+                "threadId": "23e22066-1439-4624-91e7-74fd5d79dcd1"
+              },
+              {
+                "messages": 1,
+                "threadId": "23bd401e-2420-4eeb-b791-5c5a58878890"
+              },
+              {
+                "messages": 1,
+                "threadId": "c7eac131-7fa6-4541-99b1-f4539c6e7162"
+              },
+              {
+                "messages": 1,
+                "threadId": "990366b1-ac74-423d-843c-5da239cfe41e"
+              },
+              {
+                "messages": 1,
+                "threadId": "cb04b187-a32f-442c-aad3-f8ef61c01b94"
+              },
+              {
+                "messages": 1,
+                "threadId": "ce1f8dcb-97b2-46c9-8c36-2e8621e8a356"
+              },
+              {
+                "messages": 1,
+                "threadId": "b36e315d-b5bb-4385-bde3-51f3ee619b9c"
+              },
+              {
+                "messages": 1,
+                "threadId": "f0ea3b8b-e5ec-4117-9ae3-f4a229900f23"
+              },
+              {
+                "messages": 1,
+                "threadId": "452064a3-4a03-4a77-8b68-093960f37275"
+              },
+              {
+                "messages": 1,
+                "threadId": "a3a97ade-be3b-4707-86ae-8e249798ecec"
+              }
+            ],
+            "memory": {
+              "rss": 250413056,
+              "heapTotal": 162955264,
+              "heapUsed": 157866448,
+              "external": 2155320,
+              "arrayBuffers": 21260
+            },
+            "pid": 14562,
+            "gcApplied": false
+          },
+          "chromeProcessRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 14563,
+                "cpuTime": 2.780176,
+                "rssBytes": 226164736
+              },
+              {
+                "type": "renderer",
+                "id": 14578,
+                "cpuTime": 0.059205,
+                "rssBytes": 106364928
+              },
+              {
+                "type": "renderer",
+                "id": 14576,
+                "cpuTime": 16.834346,
+                "rssBytes": 455245824
+              },
+              {
+                "type": "renderer",
+                "id": 14577,
+                "cpuTime": 25.68442,
+                "rssBytes": 403324928
+              },
+              {
+                "type": "renderer",
+                "id": 14574,
+                "cpuTime": 0.216655,
+                "rssBytes": 157532160
+              },
+              {
+                "type": "GPU",
+                "id": 14569,
+                "cpuTime": 10.56486,
+                "rssBytes": 139149312
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 14570,
+                "cpuTime": 0.620715,
+                "rssBytes": 99254272
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 14571,
+                "cpuTime": 0.058525,
+                "rssBytes": 70303744
+              }
+            ],
+            "grossSummedRSSBytes": 1657339904,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 226164736
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 1122467840
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 139149312
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 99254272
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 70303744
+              }
+            }
+          }
+        },
+        {
+          "label": "terminal-unmounted-natural",
+          "elapsedMs": 60121,
+          "at": "2026-10-23T21:31:46.981Z",
+          "gc": false,
+          "samples": [
+            {
+              "scenario": "chat",
+              "heap": {
+                "usedSize": 43620236,
+                "totalSize": 66797568,
+                "embedderHeapUsedSize": 36331840,
+                "backingStorageSize": 4548650
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 6155,
+                "jsEventListeners": 4059
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 92,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            },
+            {
+              "scenario": "dashboard",
+              "heap": {
+                "usedSize": 41780884,
+                "totalSize": 95371264,
+                "embedderHeapUsedSize": 24115288,
+                "backingStorageSize": 4507487
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 6185,
+                "jsEventListeners": 2385
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 92,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            }
+          ],
+          "backend": {
+            "active": 0,
+            "requests": [
+              {
+                "messages": 1,
+                "threadId": "d360020d-d649-48f2-9252-3e8e16cbee4a"
+              },
+              {
+                "messages": 1,
+                "threadId": "d0f90f3c-cdbd-4566-a970-2155af229f32"
+              },
+              {
+                "messages": 1,
+                "threadId": "337d6d97-d13a-402a-b9ea-7146c0ed787f"
+              },
+              {
+                "messages": 1,
+                "threadId": "c120d3f1-0be5-4878-9092-28df4353ae0f"
+              },
+              {
+                "messages": 1,
+                "threadId": "b8ff8169-6700-49f1-a88d-3099cd42220e"
+              },
+              {
+                "messages": 1,
+                "threadId": "9f6ce7ff-2932-4a30-9c37-02748a814915"
+              },
+              {
+                "messages": 1,
+                "threadId": "d91564ab-2a69-4dd9-a030-21597937de03"
+              },
+              {
+                "messages": 1,
+                "threadId": "5c85fcf3-6f82-4d01-838e-0c3879850723"
+              },
+              {
+                "messages": 1,
+                "threadId": "ef9094cd-16d0-48fc-9d76-bc2ee8acee57"
+              },
+              {
+                "messages": 1,
+                "threadId": "482d7c97-5fc5-4977-be8a-f5d4e7f9bdba"
+              },
+              {
+                "messages": 1,
+                "threadId": "6f6017b7-6ba4-4667-abf8-8a4af4f378fe"
+              },
+              {
+                "messages": 1,
+                "threadId": "3c1e8a9f-1292-4b1d-bdf4-09113febc365"
+              },
+              {
+                "messages": 1,
+                "threadId": "4269b41f-6f1f-444f-9c04-2ac0c4acced1"
+              },
+              {
+                "messages": 1,
+                "threadId": "780b9455-d9ff-4fb2-a2fb-ccdbeeed42bd"
+              },
+              {
+                "messages": 1,
+                "threadId": "3d3ce881-b11b-4f3a-a890-30663c48c330"
+              },
+              {
+                "messages": 1,
+                "threadId": "0ccfe263-6f70-4ff9-9a65-f594725a48db"
+              },
+              {
+                "messages": 1,
+                "threadId": "31c4d294-07cc-4391-b6bd-58969ccb8029"
+              },
+              {
+                "messages": 1,
+                "threadId": "f4f10d1b-a9e3-43e9-9dfb-ec8b3032a211"
+              },
+              {
+                "messages": 1,
+                "threadId": "aaeca0ef-11df-487d-b619-6cb6e599f5a5"
+              },
+              {
+                "messages": 1,
+                "threadId": "1bf1949a-6f6a-47ef-a0f9-f05bcfa40101"
+              },
+              {
+                "messages": 1,
+                "threadId": "2ae9a3ca-959b-4abd-8e9b-8bda2cdf03f5"
+              },
+              {
+                "messages": 1,
+                "threadId": "9e59f055-3266-4040-b6c6-37b8ef128d64"
+              },
+              {
+                "messages": 1,
+                "threadId": "f9fc8a37-98b7-4e97-ab2a-8818094b76ac"
+              },
+              {
+                "messages": 1,
+                "threadId": "324fca5e-eb2c-4358-a5da-6bd1a06fed81"
+              },
+              {
+                "messages": 1,
+                "threadId": "3a6d0b05-4047-4eca-8680-457995d68283"
+              },
+              {
+                "messages": 1,
+                "threadId": "f32fb028-fe14-4466-9eb4-f0de88fddaab"
+              },
+              {
+                "messages": 1,
+                "threadId": "1b8729ab-af0f-4cfb-ae2f-f9e5ee3f217a"
+              },
+              {
+                "messages": 1,
+                "threadId": "68c39a66-08f9-43fc-8560-0279a4eeb6f7"
+              },
+              {
+                "messages": 1,
+                "threadId": "06103889-666d-47a7-86a9-3550e68eb98d"
+              },
+              {
+                "messages": 1,
+                "threadId": "28438b38-a646-405e-9245-954c1dc2aaed"
+              },
+              {
+                "messages": 1,
+                "threadId": "0da67bcd-5f7d-4729-90bb-c92e447c6969"
+              },
+              {
+                "messages": 1,
+                "threadId": "b1e581a2-bfce-4631-a6a9-18e07763236b"
+              },
+              {
+                "messages": 1,
+                "threadId": "8813aafd-6000-4f01-a5ef-e377af14c098"
+              },
+              {
+                "messages": 1,
+                "threadId": "52d94a47-23ad-48d4-aad1-56fff078bc65"
+              },
+              {
+                "messages": 1,
+                "threadId": "2d6aa001-6e9c-4804-9159-b4a5575baeb6"
+              },
+              {
+                "messages": 1,
+                "threadId": "14bac27c-d3b3-45ce-aca1-ac06f6ebbfc0"
+              },
+              {
+                "messages": 1,
+                "threadId": "8ad59c32-a2b8-426d-aa5a-455f76a64cb7"
+              },
+              {
+                "messages": 1,
+                "threadId": "cc4de1cf-e681-43ad-b778-4912a1f0df92"
+              },
+              {
+                "messages": 1,
+                "threadId": "7d1c1fbe-b45b-49a7-9544-4fd6322e6aa8"
+              },
+              {
+                "messages": 1,
+                "threadId": "f5bb2613-9bfa-434b-ac45-cfd52a4eb559"
+              },
+              {
+                "messages": 1,
+                "threadId": "7dd09aa7-1602-4e38-a6a2-2a5c9c7aa159"
+              },
+              {
+                "messages": 1,
+                "threadId": "f464887d-9596-4dae-814e-064eb15a22c3"
+              },
+              {
+                "messages": 1,
+                "threadId": "d0c19e83-772e-4f9a-a79f-cd6636b32c07"
+              },
+              {
+                "messages": 1,
+                "threadId": "7aa86905-b230-481a-b74c-e158c8b2b5d1"
+              },
+              {
+                "messages": 1,
+                "threadId": "c1693ac2-d3e9-4431-a89e-ffa161d80d87"
+              },
+              {
+                "messages": 1,
+                "threadId": "107799cb-47dc-46e5-b567-d857c79fd762"
+              },
+              {
+                "messages": 1,
+                "threadId": "7623b36b-3d73-4c85-a5ad-f1c400e7540b"
+              },
+              {
+                "messages": 1,
+                "threadId": "26ae10d7-40a4-49a0-b097-94ebe0cbd473"
+              },
+              {
+                "messages": 1,
+                "threadId": "76a6e6ff-64d7-45af-aea4-827d5431857c"
+              },
+              {
+                "messages": 1,
+                "threadId": "e2a2243e-6366-43cc-bc72-19032329fac6"
+              },
+              {
+                "messages": 1,
+                "threadId": "f142528b-8315-402d-8039-45b76e0c96a4"
+              },
+              {
+                "messages": 1,
+                "threadId": "bc51678e-c6d4-45e4-90c2-781dc07e5608"
+              },
+              {
+                "messages": 1,
+                "threadId": "8e0a8f53-bbc2-4d3f-8eaf-d67b22b9077c"
+              },
+              {
+                "messages": 1,
+                "threadId": "805a05f3-3187-4167-bcc8-fe07a6a56656"
+              },
+              {
+                "messages": 1,
+                "threadId": "6eb08171-ac1a-4586-8d64-696530b7bd2c"
+              },
+              {
+                "messages": 1,
+                "threadId": "1e8ffe5e-aab1-467c-ae86-4b25597da0da"
+              },
+              {
+                "messages": 1,
+                "threadId": "214951d7-ab72-481c-86a4-6a9354fbf7a1"
+              },
+              {
+                "messages": 1,
+                "threadId": "d2417a5e-307e-4c01-ab40-dfe672b2de27"
+              },
+              {
+                "messages": 1,
+                "threadId": "ef58c1b4-d739-412d-9863-edd865f34c6d"
+              },
+              {
+                "messages": 1,
+                "threadId": "31c8b7d3-6eba-413a-8e7e-952d008e52a7"
+              },
+              {
+                "messages": 1,
+                "threadId": "9e2c788c-acb2-48d7-88ba-2eb9ba81cef9"
+              },
+              {
+                "messages": 1,
+                "threadId": "a814d32c-8434-4882-9bfd-e1a6fa5857d5"
+              },
+              {
+                "messages": 1,
+                "threadId": "2f6968aa-adc1-4e79-9641-c34cd2e25d66"
+              },
+              {
+                "messages": 1,
+                "threadId": "866b81ed-83c3-4a12-ad2f-bc5568eef412"
+              },
+              {
+                "messages": 1,
+                "threadId": "86e25563-3b94-40a2-947c-4ba15a94895a"
+              },
+              {
+                "messages": 1,
+                "threadId": "85777e2d-647d-4314-a724-229be400a22c"
+              },
+              {
+                "messages": 1,
+                "threadId": "83ee35cc-e952-4aad-8406-7bf88792e08d"
+              },
+              {
+                "messages": 1,
+                "threadId": "b9055d35-14c1-4431-9964-ee6908f6ae22"
+              },
+              {
+                "messages": 1,
+                "threadId": "7bd76afd-c57a-4379-937c-370c2f632e23"
+              },
+              {
+                "messages": 1,
+                "threadId": "4116591a-a179-48e0-ac3b-63e204258ae9"
+              },
+              {
+                "messages": 1,
+                "threadId": "8220e09c-02d6-40df-88ef-0c993fe956d5"
+              },
+              {
+                "messages": 1,
+                "threadId": "1562ebc7-448d-434f-819d-91667cd7c012"
+              },
+              {
+                "messages": 1,
+                "threadId": "1f1ecfdd-74a4-45fb-8d10-ebb2f88affee"
+              },
+              {
+                "messages": 1,
+                "threadId": "493c5004-887e-4f01-870d-0bcce6b8e62d"
+              },
+              {
+                "messages": 1,
+                "threadId": "a6925202-cfbe-4101-9b9b-3a83b8c3a148"
+              },
+              {
+                "messages": 1,
+                "threadId": "d5a3bafb-8477-4731-bd08-d9de91e2a571"
+              },
+              {
+                "messages": 1,
+                "threadId": "a0cd165a-5cd8-4a65-8933-432a8c09df1d"
+              },
+              {
+                "messages": 1,
+                "threadId": "9e9e5da5-6c1b-4497-807f-b12ecb929406"
+              },
+              {
+                "messages": 1,
+                "threadId": "3e54862a-39a5-4f79-8de7-a41aa7b83ea9"
+              },
+              {
+                "messages": 1,
+                "threadId": "4e7cf15f-0426-457e-a6a5-37f330675fd8"
+              },
+              {
+                "messages": 1,
+                "threadId": "cb6ec1ce-8737-46cf-a1e9-198425738794"
+              },
+              {
+                "messages": 1,
+                "threadId": "afad972e-845b-4682-9ff0-c97bf3d89f3c"
+              },
+              {
+                "messages": 1,
+                "threadId": "59d92e4d-e3b3-4597-9bb3-b08daf92f9e4"
+              },
+              {
+                "messages": 1,
+                "threadId": "967d4142-69cc-4e82-bbf4-ad6169f11ae3"
+              },
+              {
+                "messages": 1,
+                "threadId": "2e3c69c3-3b86-4ea8-8df5-0c2bf3b8709e"
+              },
+              {
+                "messages": 1,
+                "threadId": "3478013d-1bbf-4807-b745-a7af5bdbbcbb"
+              },
+              {
+                "messages": 1,
+                "threadId": "15d48755-e6de-4d20-8cfc-34bbb694ee71"
+              },
+              {
+                "messages": 1,
+                "threadId": "c37ce23a-adbc-48da-9a8d-ab07641c915a"
+              },
+              {
+                "messages": 1,
+                "threadId": "d6a363a1-8210-42fc-afc6-e1b9281334f1"
+              },
+              {
+                "messages": 1,
+                "threadId": "3aec3e85-9243-493d-be26-ae65c316e7ea"
+              },
+              {
+                "messages": 1,
+                "threadId": "23e22066-1439-4624-91e7-74fd5d79dcd1"
+              },
+              {
+                "messages": 1,
+                "threadId": "23bd401e-2420-4eeb-b791-5c5a58878890"
+              },
+              {
+                "messages": 1,
+                "threadId": "c7eac131-7fa6-4541-99b1-f4539c6e7162"
+              },
+              {
+                "messages": 1,
+                "threadId": "990366b1-ac74-423d-843c-5da239cfe41e"
+              },
+              {
+                "messages": 1,
+                "threadId": "cb04b187-a32f-442c-aad3-f8ef61c01b94"
+              },
+              {
+                "messages": 1,
+                "threadId": "ce1f8dcb-97b2-46c9-8c36-2e8621e8a356"
+              },
+              {
+                "messages": 1,
+                "threadId": "b36e315d-b5bb-4385-bde3-51f3ee619b9c"
+              },
+              {
+                "messages": 1,
+                "threadId": "f0ea3b8b-e5ec-4117-9ae3-f4a229900f23"
+              },
+              {
+                "messages": 1,
+                "threadId": "452064a3-4a03-4a77-8b68-093960f37275"
+              },
+              {
+                "messages": 1,
+                "threadId": "a3a97ade-be3b-4707-86ae-8e249798ecec"
+              }
+            ],
+            "memory": {
+              "rss": 250413056,
+              "heapTotal": 162955264,
+              "heapUsed": 157890008,
+              "external": 2155320,
+              "arrayBuffers": 21260
+            },
+            "pid": 14562,
+            "gcApplied": false
+          },
+          "chromeProcessRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 14563,
+                "cpuTime": 2.781079,
+                "rssBytes": 226164736
+              },
+              {
+                "type": "renderer",
+                "id": 14578,
+                "cpuTime": 0.059205,
+                "rssBytes": 106364928
+              },
+              {
+                "type": "renderer",
+                "id": 14576,
+                "cpuTime": 16.835044,
+                "rssBytes": 455245824
+              },
+              {
+                "type": "renderer",
+                "id": 14577,
+                "cpuTime": 25.685619,
+                "rssBytes": 403324928
+              },
+              {
+                "type": "renderer",
+                "id": 14574,
+                "cpuTime": 0.216655,
+                "rssBytes": 157532160
+              },
+              {
+                "type": "GPU",
+                "id": 14569,
+                "cpuTime": 10.56503,
+                "rssBytes": 139149312
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 14570,
+                "cpuTime": 0.620715,
+                "rssBytes": 99254272
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 14571,
+                "cpuTime": 0.058525,
+                "rssBytes": 70303744
+              }
+            ],
+            "grossSummedRSSBytes": 1657339904,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 226164736
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 1122467840
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 139149312
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 99254272
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 70303744
+              }
+            }
+          }
+        },
+        {
+          "label": "terminal-canonical-unmounted-natural",
+          "elapsedMs": 60904,
+          "at": "2026-10-23T21:31:47.764Z",
+          "gc": false,
+          "samples": [
+            {
+              "scenario": "chat",
+              "heap": {
+                "usedSize": 53951760,
+                "totalSize": 70467584,
+                "embedderHeapUsedSize": 40842032,
+                "backingStorageSize": 4561524
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 6916,
+                "jsEventListeners": 4597
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 93,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            },
+            {
+              "scenario": "dashboard",
+              "heap": {
+                "usedSize": 37286572,
+                "totalSize": 95109120,
+                "embedderHeapUsedSize": 10084520,
+                "backingStorageSize": 4470005
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 3826,
+                "jsEventListeners": 1048
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 93,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            }
+          ],
+          "backend": {
+            "active": 0,
+            "requests": [
+              {
+                "messages": 1,
+                "threadId": "337d6d97-d13a-402a-b9ea-7146c0ed787f"
+              },
+              {
+                "messages": 1,
+                "threadId": "c120d3f1-0be5-4878-9092-28df4353ae0f"
+              },
+              {
+                "messages": 1,
+                "threadId": "b8ff8169-6700-49f1-a88d-3099cd42220e"
+              },
+              {
+                "messages": 1,
+                "threadId": "9f6ce7ff-2932-4a30-9c37-02748a814915"
+              },
+              {
+                "messages": 1,
+                "threadId": "d91564ab-2a69-4dd9-a030-21597937de03"
+              },
+              {
+                "messages": 1,
+                "threadId": "5c85fcf3-6f82-4d01-838e-0c3879850723"
+              },
+              {
+                "messages": 1,
+                "threadId": "ef9094cd-16d0-48fc-9d76-bc2ee8acee57"
+              },
+              {
+                "messages": 1,
+                "threadId": "482d7c97-5fc5-4977-be8a-f5d4e7f9bdba"
+              },
+              {
+                "messages": 1,
+                "threadId": "6f6017b7-6ba4-4667-abf8-8a4af4f378fe"
+              },
+              {
+                "messages": 1,
+                "threadId": "3c1e8a9f-1292-4b1d-bdf4-09113febc365"
+              },
+              {
+                "messages": 1,
+                "threadId": "4269b41f-6f1f-444f-9c04-2ac0c4acced1"
+              },
+              {
+                "messages": 1,
+                "threadId": "780b9455-d9ff-4fb2-a2fb-ccdbeeed42bd"
+              },
+              {
+                "messages": 1,
+                "threadId": "3d3ce881-b11b-4f3a-a890-30663c48c330"
+              },
+              {
+                "messages": 1,
+                "threadId": "0ccfe263-6f70-4ff9-9a65-f594725a48db"
+              },
+              {
+                "messages": 1,
+                "threadId": "31c4d294-07cc-4391-b6bd-58969ccb8029"
+              },
+              {
+                "messages": 1,
+                "threadId": "f4f10d1b-a9e3-43e9-9dfb-ec8b3032a211"
+              },
+              {
+                "messages": 1,
+                "threadId": "aaeca0ef-11df-487d-b619-6cb6e599f5a5"
+              },
+              {
+                "messages": 1,
+                "threadId": "1bf1949a-6f6a-47ef-a0f9-f05bcfa40101"
+              },
+              {
+                "messages": 1,
+                "threadId": "2ae9a3ca-959b-4abd-8e9b-8bda2cdf03f5"
+              },
+              {
+                "messages": 1,
+                "threadId": "9e59f055-3266-4040-b6c6-37b8ef128d64"
+              },
+              {
+                "messages": 1,
+                "threadId": "f9fc8a37-98b7-4e97-ab2a-8818094b76ac"
+              },
+              {
+                "messages": 1,
+                "threadId": "324fca5e-eb2c-4358-a5da-6bd1a06fed81"
+              },
+              {
+                "messages": 1,
+                "threadId": "3a6d0b05-4047-4eca-8680-457995d68283"
+              },
+              {
+                "messages": 1,
+                "threadId": "f32fb028-fe14-4466-9eb4-f0de88fddaab"
+              },
+              {
+                "messages": 1,
+                "threadId": "1b8729ab-af0f-4cfb-ae2f-f9e5ee3f217a"
+              },
+              {
+                "messages": 1,
+                "threadId": "68c39a66-08f9-43fc-8560-0279a4eeb6f7"
+              },
+              {
+                "messages": 1,
+                "threadId": "06103889-666d-47a7-86a9-3550e68eb98d"
+              },
+              {
+                "messages": 1,
+                "threadId": "28438b38-a646-405e-9245-954c1dc2aaed"
+              },
+              {
+                "messages": 1,
+                "threadId": "0da67bcd-5f7d-4729-90bb-c92e447c6969"
+              },
+              {
+                "messages": 1,
+                "threadId": "b1e581a2-bfce-4631-a6a9-18e07763236b"
+              },
+              {
+                "messages": 1,
+                "threadId": "8813aafd-6000-4f01-a5ef-e377af14c098"
+              },
+              {
+                "messages": 1,
+                "threadId": "52d94a47-23ad-48d4-aad1-56fff078bc65"
+              },
+              {
+                "messages": 1,
+                "threadId": "2d6aa001-6e9c-4804-9159-b4a5575baeb6"
+              },
+              {
+                "messages": 1,
+                "threadId": "14bac27c-d3b3-45ce-aca1-ac06f6ebbfc0"
+              },
+              {
+                "messages": 1,
+                "threadId": "8ad59c32-a2b8-426d-aa5a-455f76a64cb7"
+              },
+              {
+                "messages": 1,
+                "threadId": "cc4de1cf-e681-43ad-b778-4912a1f0df92"
+              },
+              {
+                "messages": 1,
+                "threadId": "7d1c1fbe-b45b-49a7-9544-4fd6322e6aa8"
+              },
+              {
+                "messages": 1,
+                "threadId": "f5bb2613-9bfa-434b-ac45-cfd52a4eb559"
+              },
+              {
+                "messages": 1,
+                "threadId": "7dd09aa7-1602-4e38-a6a2-2a5c9c7aa159"
+              },
+              {
+                "messages": 1,
+                "threadId": "f464887d-9596-4dae-814e-064eb15a22c3"
+              },
+              {
+                "messages": 1,
+                "threadId": "d0c19e83-772e-4f9a-a79f-cd6636b32c07"
+              },
+              {
+                "messages": 1,
+                "threadId": "7aa86905-b230-481a-b74c-e158c8b2b5d1"
+              },
+              {
+                "messages": 1,
+                "threadId": "c1693ac2-d3e9-4431-a89e-ffa161d80d87"
+              },
+              {
+                "messages": 1,
+                "threadId": "107799cb-47dc-46e5-b567-d857c79fd762"
+              },
+              {
+                "messages": 1,
+                "threadId": "7623b36b-3d73-4c85-a5ad-f1c400e7540b"
+              },
+              {
+                "messages": 1,
+                "threadId": "26ae10d7-40a4-49a0-b097-94ebe0cbd473"
+              },
+              {
+                "messages": 1,
+                "threadId": "76a6e6ff-64d7-45af-aea4-827d5431857c"
+              },
+              {
+                "messages": 1,
+                "threadId": "e2a2243e-6366-43cc-bc72-19032329fac6"
+              },
+              {
+                "messages": 1,
+                "threadId": "f142528b-8315-402d-8039-45b76e0c96a4"
+              },
+              {
+                "messages": 1,
+                "threadId": "bc51678e-c6d4-45e4-90c2-781dc07e5608"
+              },
+              {
+                "messages": 1,
+                "threadId": "8e0a8f53-bbc2-4d3f-8eaf-d67b22b9077c"
+              },
+              {
+                "messages": 1,
+                "threadId": "805a05f3-3187-4167-bcc8-fe07a6a56656"
+              },
+              {
+                "messages": 1,
+                "threadId": "6eb08171-ac1a-4586-8d64-696530b7bd2c"
+              },
+              {
+                "messages": 1,
+                "threadId": "1e8ffe5e-aab1-467c-ae86-4b25597da0da"
+              },
+              {
+                "messages": 1,
+                "threadId": "214951d7-ab72-481c-86a4-6a9354fbf7a1"
+              },
+              {
+                "messages": 1,
+                "threadId": "d2417a5e-307e-4c01-ab40-dfe672b2de27"
+              },
+              {
+                "messages": 1,
+                "threadId": "ef58c1b4-d739-412d-9863-edd865f34c6d"
+              },
+              {
+                "messages": 1,
+                "threadId": "31c8b7d3-6eba-413a-8e7e-952d008e52a7"
+              },
+              {
+                "messages": 1,
+                "threadId": "9e2c788c-acb2-48d7-88ba-2eb9ba81cef9"
+              },
+              {
+                "messages": 1,
+                "threadId": "a814d32c-8434-4882-9bfd-e1a6fa5857d5"
+              },
+              {
+                "messages": 1,
+                "threadId": "2f6968aa-adc1-4e79-9641-c34cd2e25d66"
+              },
+              {
+                "messages": 1,
+                "threadId": "866b81ed-83c3-4a12-ad2f-bc5568eef412"
+              },
+              {
+                "messages": 1,
+                "threadId": "86e25563-3b94-40a2-947c-4ba15a94895a"
+              },
+              {
+                "messages": 1,
+                "threadId": "85777e2d-647d-4314-a724-229be400a22c"
+              },
+              {
+                "messages": 1,
+                "threadId": "83ee35cc-e952-4aad-8406-7bf88792e08d"
+              },
+              {
+                "messages": 1,
+                "threadId": "b9055d35-14c1-4431-9964-ee6908f6ae22"
+              },
+              {
+                "messages": 1,
+                "threadId": "7bd76afd-c57a-4379-937c-370c2f632e23"
+              },
+              {
+                "messages": 1,
+                "threadId": "4116591a-a179-48e0-ac3b-63e204258ae9"
+              },
+              {
+                "messages": 1,
+                "threadId": "8220e09c-02d6-40df-88ef-0c993fe956d5"
+              },
+              {
+                "messages": 1,
+                "threadId": "1562ebc7-448d-434f-819d-91667cd7c012"
+              },
+              {
+                "messages": 1,
+                "threadId": "1f1ecfdd-74a4-45fb-8d10-ebb2f88affee"
+              },
+              {
+                "messages": 1,
+                "threadId": "493c5004-887e-4f01-870d-0bcce6b8e62d"
+              },
+              {
+                "messages": 1,
+                "threadId": "a6925202-cfbe-4101-9b9b-3a83b8c3a148"
+              },
+              {
+                "messages": 1,
+                "threadId": "d5a3bafb-8477-4731-bd08-d9de91e2a571"
+              },
+              {
+                "messages": 1,
+                "threadId": "a0cd165a-5cd8-4a65-8933-432a8c09df1d"
+              },
+              {
+                "messages": 1,
+                "threadId": "9e9e5da5-6c1b-4497-807f-b12ecb929406"
+              },
+              {
+                "messages": 1,
+                "threadId": "3e54862a-39a5-4f79-8de7-a41aa7b83ea9"
+              },
+              {
+                "messages": 1,
+                "threadId": "4e7cf15f-0426-457e-a6a5-37f330675fd8"
+              },
+              {
+                "messages": 1,
+                "threadId": "cb6ec1ce-8737-46cf-a1e9-198425738794"
+              },
+              {
+                "messages": 1,
+                "threadId": "afad972e-845b-4682-9ff0-c97bf3d89f3c"
+              },
+              {
+                "messages": 1,
+                "threadId": "59d92e4d-e3b3-4597-9bb3-b08daf92f9e4"
+              },
+              {
+                "messages": 1,
+                "threadId": "967d4142-69cc-4e82-bbf4-ad6169f11ae3"
+              },
+              {
+                "messages": 1,
+                "threadId": "2e3c69c3-3b86-4ea8-8df5-0c2bf3b8709e"
+              },
+              {
+                "messages": 1,
+                "threadId": "3478013d-1bbf-4807-b745-a7af5bdbbcbb"
+              },
+              {
+                "messages": 1,
+                "threadId": "15d48755-e6de-4d20-8cfc-34bbb694ee71"
+              },
+              {
+                "messages": 1,
+                "threadId": "c37ce23a-adbc-48da-9a8d-ab07641c915a"
+              },
+              {
+                "messages": 1,
+                "threadId": "d6a363a1-8210-42fc-afc6-e1b9281334f1"
+              },
+              {
+                "messages": 1,
+                "threadId": "3aec3e85-9243-493d-be26-ae65c316e7ea"
+              },
+              {
+                "messages": 1,
+                "threadId": "23e22066-1439-4624-91e7-74fd5d79dcd1"
+              },
+              {
+                "messages": 1,
+                "threadId": "23bd401e-2420-4eeb-b791-5c5a58878890"
+              },
+              {
+                "messages": 1,
+                "threadId": "c7eac131-7fa6-4541-99b1-f4539c6e7162"
+              },
+              {
+                "messages": 1,
+                "threadId": "990366b1-ac74-423d-843c-5da239cfe41e"
+              },
+              {
+                "messages": 1,
+                "threadId": "cb04b187-a32f-442c-aad3-f8ef61c01b94"
+              },
+              {
+                "messages": 1,
+                "threadId": "ce1f8dcb-97b2-46c9-8c36-2e8621e8a356"
+              },
+              {
+                "messages": 1,
+                "threadId": "b36e315d-b5bb-4385-bde3-51f3ee619b9c"
+              },
+              {
+                "messages": 1,
+                "threadId": "f0ea3b8b-e5ec-4117-9ae3-f4a229900f23"
+              },
+              {
+                "messages": 1,
+                "threadId": "452064a3-4a03-4a77-8b68-093960f37275"
+              },
+              {
+                "messages": 1,
+                "threadId": "a3a97ade-be3b-4707-86ae-8e249798ecec"
+              },
+              {
+                "messages": 1,
+                "threadId": "afa6813f-5c3f-423d-bc17-cd35c2fefc28"
+              },
+              {
+                "messages": 1,
+                "threadId": "23b8312a-15ea-4c0c-ad30-8f80156bae97"
+              }
+            ],
+            "memory": {
+              "rss": 250413056,
+              "heapTotal": 162955264,
+              "heapUsed": 158180736,
+              "external": 2155780,
+              "arrayBuffers": 21720
+            },
+            "pid": 14562,
+            "gcApplied": false
+          },
+          "chromeProcessRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 14563,
+                "cpuTime": 2.805488,
+                "rssBytes": 226213888
+              },
+              {
+                "type": "renderer",
+                "id": 14578,
+                "cpuTime": 0.059205,
+                "rssBytes": 106364928
+              },
+              {
+                "type": "renderer",
+                "id": 14576,
+                "cpuTime": 17.047456,
+                "rssBytes": 455311360
+              },
+              {
+                "type": "renderer",
+                "id": 14577,
+                "cpuTime": 25.932365,
+                "rssBytes": 407994368
+              },
+              {
+                "type": "renderer",
+                "id": 14574,
+                "cpuTime": 0.216655,
+                "rssBytes": 157532160
+              },
+              {
+                "type": "GPU",
+                "id": 14569,
+                "cpuTime": 10.69018,
+                "rssBytes": 139132928
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 14570,
+                "cpuTime": 0.627184,
+                "rssBytes": 99254272
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 14571,
+                "cpuTime": 0.058784,
+                "rssBytes": 70303744
+              }
+            ],
+            "grossSummedRSSBytes": 1662107648,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 226213888
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 1127202816
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 139132928
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 99254272
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 70303744
+              }
+            }
+          }
+        },
+        {
+          "label": "terminal-idle-unmounted-gc",
+          "elapsedMs": 64132,
+          "at": "2026-10-23T21:31:50.992Z",
+          "gc": true,
+          "samples": [
+            {
+              "scenario": "chat",
+              "heap": {
+                "usedSize": 26017844,
+                "totalSize": 28000256,
+                "embedderHeapUsedSize": 2228248,
+                "backingStorageSize": 4450946
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 533,
+                "jsEventListeners": 335
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 93,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            },
+            {
+              "scenario": "dashboard",
+              "heap": {
+                "usedSize": 25995080,
+                "totalSize": 27213824,
+                "embedderHeapUsedSize": 2366760,
+                "backingStorageSize": 4451589
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 916,
+                "jsEventListeners": 339
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54,
+                  "characters": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 93,
+              "legacyMetricsEnabled": false,
+              "styleCounters": {
+                "compileCount": 0,
+                "lookupCalls": 0,
+                "compiledCSSBytes": 0,
+                "resourceDefinitions": 0,
+                "renderCalls": 0,
+                "resourceEmits": 0,
+                "compileMs": 0
+              },
+              "charset": "UTF-8"
+            }
+          ],
+          "backend": {
+            "active": 0,
+            "requests": [
+              {
+                "messages": 1,
+                "threadId": "337d6d97-d13a-402a-b9ea-7146c0ed787f"
+              },
+              {
+                "messages": 1,
+                "threadId": "c120d3f1-0be5-4878-9092-28df4353ae0f"
+              },
+              {
+                "messages": 1,
+                "threadId": "b8ff8169-6700-49f1-a88d-3099cd42220e"
+              },
+              {
+                "messages": 1,
+                "threadId": "9f6ce7ff-2932-4a30-9c37-02748a814915"
+              },
+              {
+                "messages": 1,
+                "threadId": "d91564ab-2a69-4dd9-a030-21597937de03"
+              },
+              {
+                "messages": 1,
+                "threadId": "5c85fcf3-6f82-4d01-838e-0c3879850723"
+              },
+              {
+                "messages": 1,
+                "threadId": "ef9094cd-16d0-48fc-9d76-bc2ee8acee57"
+              },
+              {
+                "messages": 1,
+                "threadId": "482d7c97-5fc5-4977-be8a-f5d4e7f9bdba"
+              },
+              {
+                "messages": 1,
+                "threadId": "6f6017b7-6ba4-4667-abf8-8a4af4f378fe"
+              },
+              {
+                "messages": 1,
+                "threadId": "3c1e8a9f-1292-4b1d-bdf4-09113febc365"
+              },
+              {
+                "messages": 1,
+                "threadId": "4269b41f-6f1f-444f-9c04-2ac0c4acced1"
+              },
+              {
+                "messages": 1,
+                "threadId": "780b9455-d9ff-4fb2-a2fb-ccdbeeed42bd"
+              },
+              {
+                "messages": 1,
+                "threadId": "3d3ce881-b11b-4f3a-a890-30663c48c330"
+              },
+              {
+                "messages": 1,
+                "threadId": "0ccfe263-6f70-4ff9-9a65-f594725a48db"
+              },
+              {
+                "messages": 1,
+                "threadId": "31c4d294-07cc-4391-b6bd-58969ccb8029"
+              },
+              {
+                "messages": 1,
+                "threadId": "f4f10d1b-a9e3-43e9-9dfb-ec8b3032a211"
+              },
+              {
+                "messages": 1,
+                "threadId": "aaeca0ef-11df-487d-b619-6cb6e599f5a5"
+              },
+              {
+                "messages": 1,
+                "threadId": "1bf1949a-6f6a-47ef-a0f9-f05bcfa40101"
+              },
+              {
+                "messages": 1,
+                "threadId": "2ae9a3ca-959b-4abd-8e9b-8bda2cdf03f5"
+              },
+              {
+                "messages": 1,
+                "threadId": "9e59f055-3266-4040-b6c6-37b8ef128d64"
+              },
+              {
+                "messages": 1,
+                "threadId": "f9fc8a37-98b7-4e97-ab2a-8818094b76ac"
+              },
+              {
+                "messages": 1,
+                "threadId": "324fca5e-eb2c-4358-a5da-6bd1a06fed81"
+              },
+              {
+                "messages": 1,
+                "threadId": "3a6d0b05-4047-4eca-8680-457995d68283"
+              },
+              {
+                "messages": 1,
+                "threadId": "f32fb028-fe14-4466-9eb4-f0de88fddaab"
+              },
+              {
+                "messages": 1,
+                "threadId": "1b8729ab-af0f-4cfb-ae2f-f9e5ee3f217a"
+              },
+              {
+                "messages": 1,
+                "threadId": "68c39a66-08f9-43fc-8560-0279a4eeb6f7"
+              },
+              {
+                "messages": 1,
+                "threadId": "06103889-666d-47a7-86a9-3550e68eb98d"
+              },
+              {
+                "messages": 1,
+                "threadId": "28438b38-a646-405e-9245-954c1dc2aaed"
+              },
+              {
+                "messages": 1,
+                "threadId": "0da67bcd-5f7d-4729-90bb-c92e447c6969"
+              },
+              {
+                "messages": 1,
+                "threadId": "b1e581a2-bfce-4631-a6a9-18e07763236b"
+              },
+              {
+                "messages": 1,
+                "threadId": "8813aafd-6000-4f01-a5ef-e377af14c098"
+              },
+              {
+                "messages": 1,
+                "threadId": "52d94a47-23ad-48d4-aad1-56fff078bc65"
+              },
+              {
+                "messages": 1,
+                "threadId": "2d6aa001-6e9c-4804-9159-b4a5575baeb6"
+              },
+              {
+                "messages": 1,
+                "threadId": "14bac27c-d3b3-45ce-aca1-ac06f6ebbfc0"
+              },
+              {
+                "messages": 1,
+                "threadId": "8ad59c32-a2b8-426d-aa5a-455f76a64cb7"
+              },
+              {
+                "messages": 1,
+                "threadId": "cc4de1cf-e681-43ad-b778-4912a1f0df92"
+              },
+              {
+                "messages": 1,
+                "threadId": "7d1c1fbe-b45b-49a7-9544-4fd6322e6aa8"
+              },
+              {
+                "messages": 1,
+                "threadId": "f5bb2613-9bfa-434b-ac45-cfd52a4eb559"
+              },
+              {
+                "messages": 1,
+                "threadId": "7dd09aa7-1602-4e38-a6a2-2a5c9c7aa159"
+              },
+              {
+                "messages": 1,
+                "threadId": "f464887d-9596-4dae-814e-064eb15a22c3"
+              },
+              {
+                "messages": 1,
+                "threadId": "d0c19e83-772e-4f9a-a79f-cd6636b32c07"
+              },
+              {
+                "messages": 1,
+                "threadId": "7aa86905-b230-481a-b74c-e158c8b2b5d1"
+              },
+              {
+                "messages": 1,
+                "threadId": "c1693ac2-d3e9-4431-a89e-ffa161d80d87"
+              },
+              {
+                "messages": 1,
+                "threadId": "107799cb-47dc-46e5-b567-d857c79fd762"
+              },
+              {
+                "messages": 1,
+                "threadId": "7623b36b-3d73-4c85-a5ad-f1c400e7540b"
+              },
+              {
+                "messages": 1,
+                "threadId": "26ae10d7-40a4-49a0-b097-94ebe0cbd473"
+              },
+              {
+                "messages": 1,
+                "threadId": "76a6e6ff-64d7-45af-aea4-827d5431857c"
+              },
+              {
+                "messages": 1,
+                "threadId": "e2a2243e-6366-43cc-bc72-19032329fac6"
+              },
+              {
+                "messages": 1,
+                "threadId": "f142528b-8315-402d-8039-45b76e0c96a4"
+              },
+              {
+                "messages": 1,
+                "threadId": "bc51678e-c6d4-45e4-90c2-781dc07e5608"
+              },
+              {
+                "messages": 1,
+                "threadId": "8e0a8f53-bbc2-4d3f-8eaf-d67b22b9077c"
+              },
+              {
+                "messages": 1,
+                "threadId": "805a05f3-3187-4167-bcc8-fe07a6a56656"
+              },
+              {
+                "messages": 1,
+                "threadId": "6eb08171-ac1a-4586-8d64-696530b7bd2c"
+              },
+              {
+                "messages": 1,
+                "threadId": "1e8ffe5e-aab1-467c-ae86-4b25597da0da"
+              },
+              {
+                "messages": 1,
+                "threadId": "214951d7-ab72-481c-86a4-6a9354fbf7a1"
+              },
+              {
+                "messages": 1,
+                "threadId": "d2417a5e-307e-4c01-ab40-dfe672b2de27"
+              },
+              {
+                "messages": 1,
+                "threadId": "ef58c1b4-d739-412d-9863-edd865f34c6d"
+              },
+              {
+                "messages": 1,
+                "threadId": "31c8b7d3-6eba-413a-8e7e-952d008e52a7"
+              },
+              {
+                "messages": 1,
+                "threadId": "9e2c788c-acb2-48d7-88ba-2eb9ba81cef9"
+              },
+              {
+                "messages": 1,
+                "threadId": "a814d32c-8434-4882-9bfd-e1a6fa5857d5"
+              },
+              {
+                "messages": 1,
+                "threadId": "2f6968aa-adc1-4e79-9641-c34cd2e25d66"
+              },
+              {
+                "messages": 1,
+                "threadId": "866b81ed-83c3-4a12-ad2f-bc5568eef412"
+              },
+              {
+                "messages": 1,
+                "threadId": "86e25563-3b94-40a2-947c-4ba15a94895a"
+              },
+              {
+                "messages": 1,
+                "threadId": "85777e2d-647d-4314-a724-229be400a22c"
+              },
+              {
+                "messages": 1,
+                "threadId": "83ee35cc-e952-4aad-8406-7bf88792e08d"
+              },
+              {
+                "messages": 1,
+                "threadId": "b9055d35-14c1-4431-9964-ee6908f6ae22"
+              },
+              {
+                "messages": 1,
+                "threadId": "7bd76afd-c57a-4379-937c-370c2f632e23"
+              },
+              {
+                "messages": 1,
+                "threadId": "4116591a-a179-48e0-ac3b-63e204258ae9"
+              },
+              {
+                "messages": 1,
+                "threadId": "8220e09c-02d6-40df-88ef-0c993fe956d5"
+              },
+              {
+                "messages": 1,
+                "threadId": "1562ebc7-448d-434f-819d-91667cd7c012"
+              },
+              {
+                "messages": 1,
+                "threadId": "1f1ecfdd-74a4-45fb-8d10-ebb2f88affee"
+              },
+              {
+                "messages": 1,
+                "threadId": "493c5004-887e-4f01-870d-0bcce6b8e62d"
+              },
+              {
+                "messages": 1,
+                "threadId": "a6925202-cfbe-4101-9b9b-3a83b8c3a148"
+              },
+              {
+                "messages": 1,
+                "threadId": "d5a3bafb-8477-4731-bd08-d9de91e2a571"
+              },
+              {
+                "messages": 1,
+                "threadId": "a0cd165a-5cd8-4a65-8933-432a8c09df1d"
+              },
+              {
+                "messages": 1,
+                "threadId": "9e9e5da5-6c1b-4497-807f-b12ecb929406"
+              },
+              {
+                "messages": 1,
+                "threadId": "3e54862a-39a5-4f79-8de7-a41aa7b83ea9"
+              },
+              {
+                "messages": 1,
+                "threadId": "4e7cf15f-0426-457e-a6a5-37f330675fd8"
+              },
+              {
+                "messages": 1,
+                "threadId": "cb6ec1ce-8737-46cf-a1e9-198425738794"
+              },
+              {
+                "messages": 1,
+                "threadId": "afad972e-845b-4682-9ff0-c97bf3d89f3c"
+              },
+              {
+                "messages": 1,
+                "threadId": "59d92e4d-e3b3-4597-9bb3-b08daf92f9e4"
+              },
+              {
+                "messages": 1,
+                "threadId": "967d4142-69cc-4e82-bbf4-ad6169f11ae3"
+              },
+              {
+                "messages": 1,
+                "threadId": "2e3c69c3-3b86-4ea8-8df5-0c2bf3b8709e"
+              },
+              {
+                "messages": 1,
+                "threadId": "3478013d-1bbf-4807-b745-a7af5bdbbcbb"
+              },
+              {
+                "messages": 1,
+                "threadId": "15d48755-e6de-4d20-8cfc-34bbb694ee71"
+              },
+              {
+                "messages": 1,
+                "threadId": "c37ce23a-adbc-48da-9a8d-ab07641c915a"
+              },
+              {
+                "messages": 1,
+                "threadId": "d6a363a1-8210-42fc-afc6-e1b9281334f1"
+              },
+              {
+                "messages": 1,
+                "threadId": "3aec3e85-9243-493d-be26-ae65c316e7ea"
+              },
+              {
+                "messages": 1,
+                "threadId": "23e22066-1439-4624-91e7-74fd5d79dcd1"
+              },
+              {
+                "messages": 1,
+                "threadId": "23bd401e-2420-4eeb-b791-5c5a58878890"
+              },
+              {
+                "messages": 1,
+                "threadId": "c7eac131-7fa6-4541-99b1-f4539c6e7162"
+              },
+              {
+                "messages": 1,
+                "threadId": "990366b1-ac74-423d-843c-5da239cfe41e"
+              },
+              {
+                "messages": 1,
+                "threadId": "cb04b187-a32f-442c-aad3-f8ef61c01b94"
+              },
+              {
+                "messages": 1,
+                "threadId": "ce1f8dcb-97b2-46c9-8c36-2e8621e8a356"
+              },
+              {
+                "messages": 1,
+                "threadId": "b36e315d-b5bb-4385-bde3-51f3ee619b9c"
+              },
+              {
+                "messages": 1,
+                "threadId": "f0ea3b8b-e5ec-4117-9ae3-f4a229900f23"
+              },
+              {
+                "messages": 1,
+                "threadId": "452064a3-4a03-4a77-8b68-093960f37275"
+              },
+              {
+                "messages": 1,
+                "threadId": "a3a97ade-be3b-4707-86ae-8e249798ecec"
+              },
+              {
+                "messages": 1,
+                "threadId": "afa6813f-5c3f-423d-bc17-cd35c2fefc28"
+              },
+              {
+                "messages": 1,
+                "threadId": "23b8312a-15ea-4c0c-ad30-8f80156bae97"
+              }
+            ],
+            "memory": {
+              "rss": 250413056,
+              "heapTotal": 162955264,
+              "heapUsed": 158214888,
+              "external": 2155780,
+              "arrayBuffers": 21720
+            },
+            "pid": 14562,
+            "gcApplied": false
+          },
+          "chromeProcessRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 14563,
+                "cpuTime": 2.815371,
+                "rssBytes": 226213888
+              },
+              {
+                "type": "renderer",
+                "id": 14578,
+                "cpuTime": 0.059244,
+                "rssBytes": 106364928
+              },
+              {
+                "type": "renderer",
+                "id": 14576,
+                "cpuTime": 17.209027,
+                "rssBytes": 343785472
+              },
+              {
+                "type": "renderer",
+                "id": 14577,
+                "cpuTime": 26.44607,
+                "rssBytes": 341590016
+              },
+              {
+                "type": "renderer",
+                "id": 14574,
+                "cpuTime": 0.217315,
+                "rssBytes": 157532160
+              },
+              {
+                "type": "GPU",
+                "id": 14569,
+                "cpuTime": 10.710581,
+                "rssBytes": 133939200
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 14570,
+                "cpuTime": 0.630255,
+                "rssBytes": 99254272
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 14571,
+                "cpuTime": 0.058857,
+                "rssBytes": 70303744
+              }
+            ],
+            "grossSummedRSSBytes": 1478983680,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 226213888
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 949272576
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 133939200
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 99254272
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 70303744
+              }
+            }
+          }
+        }
+      ],
+      "cancellations": [
+        {
+          "i": 9,
+          "scenario": "dashboard",
+          "type": "pending",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 21,
+          "requestsAfter": 21
+        },
+        {
+          "i": 19,
+          "scenario": "chat",
+          "type": "pending",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 30,
+          "requestsAfter": 30
+        },
+        {
+          "i": 29,
+          "scenario": "dashboard",
+          "type": "partial",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 39,
+          "requestsAfter": 40
+        },
+        {
+          "i": 39,
+          "scenario": "chat",
+          "type": "partial",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 49,
+          "requestsAfter": 50
+        },
+        {
+          "i": 49,
+          "scenario": "dashboard",
+          "type": "pending",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 59,
+          "requestsAfter": 59
+        },
+        {
+          "i": 59,
+          "scenario": "chat",
+          "type": "pending",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 68,
+          "requestsAfter": 68
+        },
+        {
+          "i": 69,
+          "scenario": "dashboard",
+          "type": "partial",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 77,
+          "requestsAfter": 78
+        },
+        {
+          "i": 79,
+          "scenario": "chat",
+          "type": "partial",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 87,
+          "requestsAfter": 88
+        },
+        {
+          "i": 89,
+          "scenario": "dashboard",
+          "type": "pending",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 97,
+          "requestsAfter": 97
+        },
+        {
+          "i": 99,
+          "scenario": "chat",
+          "type": "pending",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 100,
+          "requestsAfter": 100
+        },
+        {
+          "i": 109,
+          "scenario": "dashboard",
+          "type": "partial",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 100,
+          "requestsAfter": 100
+        },
+        {
+          "i": 119,
+          "scenario": "chat",
+          "type": "partial",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 100,
+          "requestsAfter": 100
+        },
+        {
+          "i": 129,
+          "scenario": "dashboard",
+          "type": "pending",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 100,
+          "requestsAfter": 100
+        },
+        {
+          "i": 139,
+          "scenario": "chat",
+          "type": "pending",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 100,
+          "requestsAfter": 100
+        },
+        {
+          "i": 149,
+          "scenario": "dashboard",
+          "type": "partial",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 100,
+          "requestsAfter": 100
+        },
+        {
+          "i": 159,
+          "scenario": "chat",
+          "type": "partial",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 100,
+          "requestsAfter": 100
+        },
+        {
+          "i": 169,
+          "scenario": "dashboard",
+          "type": "pending",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 100,
+          "requestsAfter": 100
+        }
+      ],
+      "canonicalReferenceRuns": [
+        {
+          "label": "warm",
+          "scenario": "chat",
+          "i": 100000,
+          "mode": "light",
+          "exactFinalSource": true
+        },
+        {
+          "label": "warm",
+          "scenario": "dashboard",
+          "i": 100001,
+          "mode": "light",
+          "exactFinalSource": true
+        },
+        {
+          "label": "terminal",
+          "scenario": "chat",
+          "i": 100000,
+          "mode": "light",
+          "exactFinalSource": true
+        },
+        {
+          "label": "terminal",
+          "scenario": "dashboard",
+          "i": 100001,
+          "mode": "light",
+          "exactFinalSource": true
+        }
+      ],
+      "excludedNormalizationStreams": 4,
+      "errors": [],
+      "warmupPendingCancels": 2,
+      "warmupPartialCancels": 2,
+      "warmupCancellations": [
+        {
+          "i": 9,
+          "scenario": "chat",
+          "type": "pending",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 8,
+          "requestsAfter": 8
+        },
+        {
+          "i": 19,
+          "scenario": "dashboard",
+          "type": "pending",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 8,
+          "requestsAfter": 8
+        },
+        {
+          "i": 29,
+          "scenario": "chat",
+          "type": "partial",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 8,
+          "requestsAfter": 9
+        },
+        {
+          "i": 39,
+          "scenario": "dashboard",
+          "type": "partial",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 9,
+          "requestsAfter": 10
+        }
+      ],
+      "warmupCompleted": 8,
+      "measuredElapsedMs": 60110,
+      "retained": [
+        {
+          "scenario": "chat",
+          "warm": 24495304,
+          "idle": 26017844,
+          "delta": 1522540,
+          "relativePercent": 6.215640352942751,
+          "budgetBytes": 5242880,
+          "needsInvestigation": false,
+          "domDelta": 0,
+          "listenerDelta": 0,
+          "styleByteDelta": 0,
+          "styleDelta": 0,
+          "ruleDelta": 0
+        },
+        {
+          "scenario": "dashboard",
+          "warm": 24534144,
+          "idle": 25995080,
+          "delta": 1460936,
+          "relativePercent": 5.954705409734287,
+          "budgetBytes": 5242880,
+          "needsInvestigation": false,
+          "domDelta": 0,
+          "listenerDelta": 0,
+          "styleByteDelta": 0,
+          "styleDelta": 0,
+          "ruleDelta": 0
+        }
+      ],
+      "serverLogs": ""
+    }
+  ],
+  "failures": [],
+  "chrome": "156.0.8078.47",
+  "status": "passed",
+  "finishedAt": "2026-10-23T21:31:52.441Z"
+}

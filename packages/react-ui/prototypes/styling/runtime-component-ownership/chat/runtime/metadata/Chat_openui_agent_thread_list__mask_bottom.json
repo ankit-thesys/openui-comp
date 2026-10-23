@@ -1,0 +1,1 @@
+[{"selector":"__SCOPE__.openui-agent-thread-list--mask-bottom:not(.openui-agent-thread-list--mask-top)","properties":{"mask-image":"linear-gradient(to top, transparent, black var(--openui-space-xl, 24px), black)","-webkit-mask-image":"linear-gradient(to top, transparent, black var(--openui-space-xl, 24px), black)"},"conditions":[],"disabledCursor":false}]

@@ -1,0 +1,1 @@
+[{"selector":"__SCOPE__.openui-agent-history-menu__label","properties":{"padding":"var(--openui-space-s, 8px) var(--openui-space-m-l, 16px) var(--openui-space-2xs, 4px)","color":"color-mix(in oklch, var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)) 60%, transparent)","font-size":"12px","line-height":"12px"},"conditions":[],"disabledCursor":false}]

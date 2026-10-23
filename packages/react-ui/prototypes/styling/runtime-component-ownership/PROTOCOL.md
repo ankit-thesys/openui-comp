@@ -1,0 +1,13 @@
+# Component ownership and immutable caching — pre-measurement protocol
+
+Decision OPEN; new work changes prototype only. Preserve prior static/runtime evidence and frozen failed attempts.
+
+Correctness first: real reusable controls/charts, source-owned shell, real parser and fullchat store/HTTP, plain/TW3/TW4 actual before/after order, default/override/hover/disabled states, portals, late first-use resources, full-documentSSR/hydration, themes and concurrent requests. Verify subsequentrequests stillreceiveCSS even though compileddefinitionsarecached. Do not claim fragmentSSR or CSP unless directly tested. Button-only and closed/open portal assertions must distinguish import, invocation, emittedCSS and first compilation. No regex response scanners or eager all-family lists.
+
+Freeze source/dependency/built-output/checker hashes after correctness passes. Then isolate all timing/long-load work; no parallel build/browser runs. Matched10 alternating pairs after warmups for equally weighted chat/dashboard normal/pressure/unpaced; separate broader-controls diagnostic. Record cold readiness, actual compilation versus cached lookup, per-request emittedCSS and HTML bytes, input/frame proxies with while-running sample counts, exact final content and settled styles. Baseline uses unchanged production components; newstylesrunatfirstcomponentuse, not build-time Goober.
+
+NextSSR boundedconcurrency1/10/25/50, threemeasuredrepetitions after excludedwarmup, content/scopedtheme/actualCSSpresent gates; document-onlylatency excludesfetchingbaselineCSS, so notwhole-pagecapacity. Use identicaldelayed-contenttiming.
+
+Memory: firstthree60-secondfresh-browserpairsorderedB/R,R/B,B/R to assess reproducibility of RSSsignal. Then fresh5-minutephases perarm inserverandbrowser (20measuredmin total) for retention. GC only at comparable warmed and terminalidle/unmounted checkpoints, neverduringload. Natural time-series samples; equalchat/dashboard, distinctinline themes, pending/partialcancellation, boundedhistory/instrumentation. Captureper-processRSS withtype, grosssum, JSheap, DOM,listeners, styles/rules and backenddrain. GrossRSScan doublecountsharedpages; do notattributealltoCSS orcalla leakwithout evidence. No predeclaredRSSpassbudget; reportabsolutefootprint andreplicationvariation aswellasgrowth.
+
+Prior diagnosticbudgetsforretainedJSheap/resourcegrowthremainunchanged: max(10%warmheap,5MiB), DOM100,listeners20, warmedstyle/rulegrowth0, errors/live streams0. Gatespassingdoesnot implysmallnative memoryorproductionreadiness. Ifcorrectness fails, fixviaordinarysourceownership orreportlimitation; do not addanothercompatibilitypatch toforcegreen.

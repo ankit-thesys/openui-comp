@@ -1,0 +1,1 @@
+import React from 'react';import {OwnedCatalog}from './owned-catalog';import{BaselineCatalog}from './baseline-catalog';export function Catalog(props:any){return props.arm==='baseline'?<BaselineCatalog {...props}/>:<OwnedCatalog {...props}/>;}

@@ -1,0 +1,206 @@
+{
+  "scope": "Same exact existing CSS/DOM; isolate closure-local immutable caching only. Neither full SSR benchmark nor unused-CSS fix.",
+  "rows": [
+    {
+      "warmup": true,
+      "arm": "cached",
+      "elapsed": 31.023792,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": true,
+      "arm": "original",
+      "elapsed": 6.248000000000005,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": true,
+      "arm": "original",
+      "elapsed": 5.1781250000000085,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": true,
+      "arm": "cached",
+      "elapsed": 0.6207920000000087,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "cached",
+      "elapsed": 0.6313749999999914,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "original",
+      "elapsed": 5.145208000000011,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "original",
+      "elapsed": 5.896958999999981,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "cached",
+      "elapsed": 0.5216250000000002,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "cached",
+      "elapsed": 0.7915419999999926,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "original",
+      "elapsed": 4.318874999999991,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "original",
+      "elapsed": 5.352875000000012,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "cached",
+      "elapsed": 0.4967499999999916,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "cached",
+      "elapsed": 0.45699999999999363,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "original",
+      "elapsed": 4.079000000000008,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "original",
+      "elapsed": 3.680125000000004,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "cached",
+      "elapsed": 0.4485829999999851,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "cached",
+      "elapsed": 0.4266669999999806,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "original",
+      "elapsed": 4.852332999999987,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "original",
+      "elapsed": 4.341332999999992,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "cached",
+      "elapsed": 0.5106670000000122,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "cached",
+      "elapsed": 0.45079099999998107,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "original",
+      "elapsed": 4.104792000000003,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "original",
+      "elapsed": 3.602249999999998,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "cached",
+      "elapsed": 0.42754099999999085,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "cached",
+      "elapsed": 0.39083299999998644,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "original",
+      "elapsed": 4.225916999999981,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "original",
+      "elapsed": 3.598540999999983,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    },
+    {
+      "warmup": false,
+      "arm": "cached",
+      "elapsed": 0.41695799999999394,
+      "htmlBytes": 1504425,
+      "sha256": "ef279b7ecfc33b2e0497242296404bf07ff7f3b003b09af990ce5ce275996a96"
+    }
+  ],
+  "compiledDefinitions": 47,
+  "checks": {
+    "identicalHtml": true,
+    "compiledOncePerDefinition": true
+  }
+}

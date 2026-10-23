@@ -1,0 +1,4 @@
+import {defineStyles} from '../adapter';
+import descriptor from '../descriptors/Chat_openui_agent_sidebar_container__hidden.json';
+import rows from '../metadata/Chat_openui_agent_sidebar_container__hidden.json';
+export const styles=defineStyles("Chat_openui_agent_sidebar_container__hidden",descriptor,rows);

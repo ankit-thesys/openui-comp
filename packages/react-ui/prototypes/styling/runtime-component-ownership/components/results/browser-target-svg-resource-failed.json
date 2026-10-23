@@ -1,0 +1,547 @@
+{
+  "scope": "Real detached browser DOM target/public extractCss vs inherited server sink, exact same immutable Button definition; no performance claim.",
+  "checks": {
+    "exactCSS": true,
+    "exactClass": true,
+    "exactHref": true,
+    "noLiveGooberTarget": true,
+    "headResource": true,
+    "insideAppResources": 38,
+    "insideAppStyleDetails": [
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:RadioItem:go2757945425"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7296,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go2757945425/*r8*/:where(.ope"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:RadioItem:go2757945425"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7296,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go2757945425/*r8*/:where(.ope"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:RadioItem:go2757945425"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7296,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go2757945425/*r8*/:where(.ope"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:RadioItem:go2757945425"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7296,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go2757945425/*r8*/:where(.ope"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:RadioItem:go2757945425"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7296,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go2757945425/*r8*/:where(.ope"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:RadioItem:go2757945425"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7296,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go2757945425/*r8*/:where(.ope"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:RadioItem:go2757945425"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7296,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go2757945425/*r8*/:where(.ope"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:RadioItem:go2757945425"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7296,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go2757945425/*r8*/:where(.ope"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:RadioItem:go2757945425"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7296,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go2757945425/*r8*/:where(.ope"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:RadioItem:go2757945425"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7296,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go2757945425/*r8*/:where(.ope"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:RadioItem:go2757945425"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7296,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go2757945425/*r8*/:where(.ope"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:RadioItem:go2757945425"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7296,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go2757945425/*r8*/:where(.ope"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:BarChart:go4078883118"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7186,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go4078883118/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:LineChart:go2093477646"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7618,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go2093477646/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:LineChart:go2093477646"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7618,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go2093477646/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:PieChart:go3662628194"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 3612,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go3662628194/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:PieChart:go3662628194"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 3612,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go3662628194/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:PieChart:go3662628194"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 3612,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go3662628194/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:PieChart:go3662628194"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 3612,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go3662628194/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:PieChart:go3662628194"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 3612,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go3662628194/*r4*/ :where(.op"
+      },
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:PieChart:go3662628194"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 3612,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go3662628194/*r4*/ :where(.op"
+      }
+    ]
+  },
+  "serverBytes": 13820,
+  "browserBytes": 13820
+}

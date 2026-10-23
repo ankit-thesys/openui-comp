@@ -1,0 +1,127 @@
+{
+  "checks": {
+    "hasButtonCSS": true,
+    "noChart": true,
+    "noShell": true,
+    "oneDefinition": true,
+    "boundedCompile": true,
+    "boundedBytes": true,
+    "hasResource": true,
+    "recordOnlyCSS": true,
+    "frozenRecord": true,
+    "recordReused": true,
+    "independentLateResources": false,
+    "onlyTwoCompiledDefinitions": true
+  },
+  "before": {
+    "compileCount": 0,
+    "lookupCalls": 0,
+    "compiledCSSBytes": 0,
+    "resourceDefinitions": 0,
+    "renderCalls": 0,
+    "resourceEmits": 0,
+    "compileMs": 0
+  },
+  "after": {
+    "compileCount": 1,
+    "lookupCalls": 1,
+    "compiledCSSBytes": 13820,
+    "resourceDefinitions": 1,
+    "renderCalls": 1,
+    "resourceEmits": 1,
+    "compileMs": 1.334457999999998
+  },
+  "repeated": {
+    "compileCount": 1,
+    "lookupCalls": 101,
+    "compiledCSSBytes": 13820,
+    "resourceDefinitions": 1,
+    "renderCalls": 101,
+    "resourceEmits": 101,
+    "compileMs": 1.334457999999998
+  },
+  "final": {
+    "compileCount": 2,
+    "lookupCalls": 119,
+    "compiledCSSBytes": 18136,
+    "resourceDefinitions": 2,
+    "renderCalls": 117,
+    "resourceEmits": 117,
+    "compileMs": 1.4737499999999955
+  },
+  "documents": [
+    {
+      "theme": "rgb(0, 10, 20)",
+      "chunks": 7,
+      "hasOwnTheme": true,
+      "buttonResource": true,
+      "inputResource": true,
+      "lateInput": true,
+      "shellFirst": false
+    },
+    {
+      "theme": "rgb(1, 10, 20)",
+      "chunks": 7,
+      "hasOwnTheme": true,
+      "buttonResource": true,
+      "inputResource": true,
+      "lateInput": true,
+      "shellFirst": false
+    },
+    {
+      "theme": "rgb(2, 10, 20)",
+      "chunks": 7,
+      "hasOwnTheme": true,
+      "buttonResource": true,
+      "inputResource": true,
+      "lateInput": true,
+      "shellFirst": false
+    },
+    {
+      "theme": "rgb(3, 10, 20)",
+      "chunks": 7,
+      "hasOwnTheme": true,
+      "buttonResource": true,
+      "inputResource": true,
+      "lateInput": true,
+      "shellFirst": false
+    },
+    {
+      "theme": "rgb(4, 10, 20)",
+      "chunks": 7,
+      "hasOwnTheme": true,
+      "buttonResource": true,
+      "inputResource": true,
+      "lateInput": true,
+      "shellFirst": false
+    },
+    {
+      "theme": "rgb(5, 10, 20)",
+      "chunks": 7,
+      "hasOwnTheme": true,
+      "buttonResource": true,
+      "inputResource": true,
+      "lateInput": true,
+      "shellFirst": false
+    },
+    {
+      "theme": "rgb(6, 10, 20)",
+      "chunks": 7,
+      "hasOwnTheme": true,
+      "buttonResource": true,
+      "inputResource": true,
+      "lateInput": true,
+      "shellFirst": false
+    },
+    {
+      "theme": "rgb(7, 10, 20)",
+      "chunks": 7,
+      "hasOwnTheme": true,
+      "buttonResource": true,
+      "inputResource": true,
+      "lateInput": true,
+      "shellFirst": false
+    }
+  ],
+  "htmlBytes": 14069
+}

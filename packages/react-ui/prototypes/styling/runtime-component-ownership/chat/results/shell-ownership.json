@@ -1,0 +1,3019 @@
+{
+  "method": "Static source ownership by original first-compound class. Context ancestor rules assigned actual ancestor owner. Each class-root explicitly composed as ordinary forwardRef OwnedElement; no runtime scanning/global mode/eager boundary. Conditional portal roots render their definitions only when the portal content renders.",
+  "units": [
+    {
+      "unit": "Chat_openui_agent_sidebar_container",
+      "rootClass": "openui-agent-sidebar-container",
+      "attachmentClass": "openui-agent-sidebar-container",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 23,
+      "cssBytes": 3911
+    },
+    {
+      "unit": "Chat_openui_agent_container__mobile",
+      "rootClass": "openui-agent-container--mobile",
+      "attachmentClass": "openui-agent-container--mobile",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Container.tsx"
+      ],
+      "selectors": 45,
+      "cssBytes": 6009
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_container__collapsed",
+      "rootClass": "openui-agent-sidebar-container--collapsed",
+      "attachmentClass": "openui-agent-sidebar-container--collapsed",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 19,
+      "cssBytes": 2591
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_container__hidden",
+      "rootClass": "openui-agent-sidebar-container--hidden",
+      "attachmentClass": "openui-agent-sidebar-container--hidden",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 53
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_container__resizing",
+      "rootClass": "openui-agent-sidebar-container--resizing",
+      "attachmentClass": "openui-agent-sidebar-container",
+      "ownership": "state modifier retained on actual base owner",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 58
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_header",
+      "rootClass": "openui-agent-sidebar-header",
+      "attachmentClass": "openui-agent-sidebar-header",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 362
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_header__top_row",
+      "rootClass": "openui-agent-sidebar-header__top-row",
+      "attachmentClass": "openui-agent-sidebar-header__top-row",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 167
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_header__logo",
+      "rootClass": "openui-agent-sidebar-header__logo",
+      "attachmentClass": "openui-agent-sidebar-header__logo",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 308
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_header__agent_name",
+      "rootClass": "openui-agent-sidebar-header__agent-name",
+      "attachmentClass": "openui-agent-sidebar-header__agent-name",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 598
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_header__collapsed",
+      "rootClass": "openui-agent-sidebar-header--collapsed",
+      "attachmentClass": "openui-agent-sidebar-header--collapsed",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 6,
+      "cssBytes": 768
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_content",
+      "rootClass": "openui-agent-sidebar-content",
+      "attachmentClass": "openui-agent-sidebar-content",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 301
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_content__collapsed",
+      "rootClass": "openui-agent-sidebar-content--collapsed",
+      "attachmentClass": "openui-agent-sidebar-content--collapsed",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 105
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_separator",
+      "rootClass": "openui-agent-sidebar-separator",
+      "attachmentClass": "openui-agent-sidebar-separator",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 100
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_header__toggle_button",
+      "rootClass": "openui-agent-sidebar-header__toggle-button",
+      "attachmentClass": "openui-agent-sidebar-header__toggle-button",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 200
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_container__overlay",
+      "rootClass": "openui-agent-sidebar-container__overlay",
+      "attachmentClass": "openui-agent-sidebar-container__overlay",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 201
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_container__overlay__collapsed",
+      "rootClass": "openui-agent-sidebar-container__overlay--collapsed",
+      "attachmentClass": "openui-agent-sidebar-container__overlay--collapsed",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 82
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_item",
+      "rootClass": "openui-agent-sidebar-item",
+      "attachmentClass": "openui-agent-sidebar-item",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "SidebarItem.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 640
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_item__selected",
+      "rootClass": "openui-agent-sidebar-item--selected",
+      "attachmentClass": "openui-agent-sidebar-item--selected",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "SidebarItem.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 177
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_item__icon",
+      "rootClass": "openui-agent-sidebar-item__icon",
+      "attachmentClass": "openui-agent-sidebar-item__icon",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "SidebarItem.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 451
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_item__label",
+      "rootClass": "openui-agent-sidebar-item__label",
+      "attachmentClass": "openui-agent-sidebar-item__label",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "SidebarItem.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 145
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_item__trailing",
+      "rootClass": "openui-agent-sidebar-item__trailing",
+      "attachmentClass": "openui-agent-sidebar-item__trailing",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "SidebarItem.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 523
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_footer",
+      "rootClass": "openui-agent-sidebar-footer",
+      "attachmentClass": "openui-agent-sidebar-footer",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Sidebar.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 171
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_resize_edge",
+      "rootClass": "openui-agent-sidebar-resize-edge",
+      "attachmentClass": "openui-agent-sidebar-resize-edge",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "SidebarResizeEdge.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 134
+    },
+    {
+      "unit": "Chat_openui_agent_container",
+      "rootClass": "openui-agent-container",
+      "attachmentClass": "openui-agent-container",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Container.tsx"
+      ],
+      "selectors": 37,
+      "cssBytes": 13635
+    },
+    {
+      "unit": "Chat_openui_agent_history_menu",
+      "rootClass": "openui-agent-history-menu",
+      "attachmentClass": "openui-agent-history-menu",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "HistoryButton.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 962
+    },
+    {
+      "unit": "Chat_openui_agent_history_menu__label",
+      "rootClass": "openui-agent-history-menu__label",
+      "attachmentClass": "openui-agent-history-menu__label",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "HistoryButton.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 223
+    },
+    {
+      "unit": "Chat_openui_agent_history_menu__item",
+      "rootClass": "openui-agent-history-menu__item",
+      "attachmentClass": "openui-agent-history-menu__item",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "HistoryButton.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 500
+    },
+    {
+      "unit": "Chat_openui_agent_history_menu__item__selected",
+      "rootClass": "openui-agent-history-menu__item--selected",
+      "attachmentClass": "openui-agent-history-menu__item--selected",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "HistoryButton.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 258
+    },
+    {
+      "unit": "Chat_openui_agent_history_menu__title",
+      "rootClass": "openui-agent-history-menu__title",
+      "attachmentClass": "openui-agent-history-menu__title",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "HistoryButton.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 118
+    },
+    {
+      "unit": "Chat_openui_agent_history_menu__empty",
+      "rootClass": "openui-agent-history-menu__empty",
+      "attachmentClass": "openui-agent-history-menu__empty",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "HistoryButton.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 283
+    },
+    {
+      "unit": "Chat_openui_agent_theme_toggle",
+      "rootClass": "openui-agent-theme-toggle",
+      "attachmentClass": "openui-agent-theme-toggle",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThemeModeToggle.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 632
+    },
+    {
+      "unit": "Chat_openui_agent_thread_list",
+      "rootClass": "openui-agent-thread-list",
+      "attachmentClass": "openui-agent-thread-list",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 5,
+      "cssBytes": 592
+    },
+    {
+      "unit": "Chat_openui_agent_thread_list__mask_top",
+      "rootClass": "openui-agent-thread-list--mask-top",
+      "attachmentClass": "openui-agent-thread-list--mask-top",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 620
+    },
+    {
+      "unit": "Chat_openui_agent_thread_list__mask_bottom",
+      "rootClass": "openui-agent-thread-list--mask-bottom",
+      "attachmentClass": "openui-agent-thread-list--mask-bottom",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 258
+    },
+    {
+      "unit": "Chat_openui_agent_thread_list_content",
+      "rootClass": "openui-agent-thread-list-content",
+      "attachmentClass": "openui-agent-thread-list-content",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 370
+    },
+    {
+      "unit": "Chat_openui_agent_thread_list_group",
+      "rootClass": "openui-agent-thread-list-group",
+      "attachmentClass": "openui-agent-thread-list-group",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 399
+    },
+    {
+      "unit": "Chat_openui_agent_thread_list_skeleton",
+      "rootClass": "openui-agent-thread-list-skeleton",
+      "attachmentClass": "openui-agent-thread-list-skeleton",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 109
+    },
+    {
+      "unit": "Chat_openui_agent_thread_list_skeleton__group",
+      "rootClass": "openui-agent-thread-list-skeleton__group",
+      "attachmentClass": "openui-agent-thread-list-skeleton__group",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 100
+    },
+    {
+      "unit": "Chat_openui_agent_thread_list_skeleton__row",
+      "rootClass": "openui-agent-thread-list-skeleton__row",
+      "attachmentClass": "openui-agent-thread-list-skeleton__row",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 82
+    },
+    {
+      "unit": "Chat_openui_agent_thread_button",
+      "rootClass": "openui-agent-thread-button",
+      "attachmentClass": "openui-agent-thread-button",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 9,
+      "cssBytes": 1099
+    },
+    {
+      "unit": "Chat_openui_agent_thread_button__selected",
+      "rootClass": "openui-agent-thread-button--selected",
+      "attachmentClass": "openui-agent-thread-button--selected",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 4,
+      "cssBytes": 397
+    },
+    {
+      "unit": "Chat_openui_agent_thread_button__actions_open",
+      "rootClass": "openui-agent-thread-button--actions-open",
+      "attachmentClass": "openui-agent-thread-button--actions-open",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 4,
+      "cssBytes": 470
+    },
+    {
+      "unit": "Chat_openui_agent_thread_button_title",
+      "rootClass": "openui-agent-thread-button-title",
+      "attachmentClass": "openui-agent-thread-button-title",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 561
+    },
+    {
+      "unit": "Chat_openui_agent_thread_button_icon",
+      "rootClass": "openui-agent-thread-button-icon",
+      "attachmentClass": "openui-agent-thread-button-icon",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 62
+    },
+    {
+      "unit": "Chat_openui_agent_thread_button_label",
+      "rootClass": "openui-agent-thread-button-label",
+      "attachmentClass": "openui-agent-thread-button-label",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 85
+    },
+    {
+      "unit": "Chat_openui_agent_thread_button_dropdown_trigger",
+      "rootClass": "openui-agent-thread-button-dropdown-trigger",
+      "attachmentClass": "openui-agent-thread-button-dropdown-trigger",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 374
+    },
+    {
+      "unit": "Chat_openui_agent_thread_button_dropdown_menu",
+      "rootClass": "openui-agent-thread-button-dropdown-menu",
+      "attachmentClass": "openui-agent-thread-button-dropdown-menu",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 4,
+      "cssBytes": 988
+    },
+    {
+      "unit": "Chat_openui_agent_thread_button_dropdown_menu_item",
+      "rootClass": "openui-agent-thread-button-dropdown-menu-item",
+      "attachmentClass": "openui-agent-thread-button-dropdown-menu-item",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadList.tsx"
+      ],
+      "selectors": 4,
+      "cssBytes": 582
+    },
+    {
+      "unit": "Chat_openui_agent_thread_container",
+      "rootClass": "openui-agent-thread-container",
+      "attachmentClass": "openui-agent-thread-container",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 7,
+      "cssBytes": 878
+    },
+    {
+      "unit": "Chat_openui_agent_thread_container__loading",
+      "rootClass": "openui-agent-thread-container__loading",
+      "attachmentClass": "openui-agent-thread-container__loading",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 131
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_screen",
+      "rootClass": "openui-agent-welcome-screen",
+      "attachmentClass": "openui-agent-welcome-screen",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "WelcomeScreen.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 568
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter",
+      "rootClass": "openui-agent-conversation-starter",
+      "attachmentClass": "openui-agent-conversation-starter",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 411
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_screen__desktop_starters",
+      "rootClass": "openui-agent-welcome-screen__desktop-starters",
+      "attachmentClass": "openui-agent-welcome-screen__desktop-starters",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "WelcomeScreen.tsx",
+        "components/WelcomePrefillChips.tsx"
+      ],
+      "selectors": 6,
+      "cssBytes": 694
+    },
+    {
+      "unit": "Chat_openui_agent_thread_wrapper",
+      "rootClass": "openui-agent-thread-wrapper",
+      "attachmentClass": "openui-agent-thread-wrapper",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 77
+    },
+    {
+      "unit": "Chat_openui_agent_thread_chat_panel",
+      "rootClass": "openui-agent-thread-chat-panel",
+      "attachmentClass": "openui-agent-thread-chat-panel",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 154
+    },
+    {
+      "unit": "Chat_openui_agent_thread_chat_panel__animating",
+      "rootClass": "openui-agent-thread-chat-panel--animating",
+      "attachmentClass": "openui-agent-thread-chat-panel--animating",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 93
+    },
+    {
+      "unit": "Chat_openui_agent_thread_detailed_view_panel",
+      "rootClass": "openui-agent-thread-detailed-view-panel",
+      "attachmentClass": "openui-agent-thread-detailed-view-panel",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 5,
+      "cssBytes": 849
+    },
+    {
+      "unit": "Chat_openui_agent_thread_detailed_view_panel__animating",
+      "rootClass": "openui-agent-thread-detailed-view-panel--animating",
+      "attachmentClass": "openui-agent-thread-detailed-view-panel--animating",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 102
+    },
+    {
+      "unit": "Chat_openui_agent_thread_scroll_container",
+      "rootClass": "openui-agent-thread-scroll-container",
+      "attachmentClass": "openui-agent-thread-scroll-container",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 653
+    },
+    {
+      "unit": "Chat_openui_agent_thread_scroll_area",
+      "rootClass": "openui-agent-thread-scroll-area",
+      "attachmentClass": "openui-agent-thread-scroll-area",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 6,
+      "cssBytes": 926
+    },
+    {
+      "unit": "Chat_openui_agent_thread_container__detailed_view_active",
+      "rootClass": "openui-agent-thread-container--detailed-view-active",
+      "attachmentClass": "openui-agent-thread-container--detailed-view-active",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 9,
+      "cssBytes": 1008
+    },
+    {
+      "unit": "Chat_openui_agent_thread_scroll_area__user_message_anchor",
+      "rootClass": "openui-agent-thread-scroll-area--user-message-anchor",
+      "attachmentClass": "openui-agent-thread-scroll-area--user-message-anchor",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 130
+    },
+    {
+      "unit": "Chat_openui_agent_thread_scroll_latest",
+      "rootClass": "openui-agent-thread-scroll-latest",
+      "attachmentClass": "openui-agent-thread-scroll-latest",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/ScrollToLatest.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 692
+    },
+    {
+      "unit": "Chat_openui_agent_thread_scroll_latest__arrow",
+      "rootClass": "openui-agent-thread-scroll-latest__arrow",
+      "attachmentClass": "openui-agent-thread-scroll-latest__arrow",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/ScrollToLatest.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 56
+    },
+    {
+      "unit": "Chat_openui_agent_thread_messages",
+      "rootClass": "openui-agent-thread-messages",
+      "attachmentClass": "openui-agent-thread-messages",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 479
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_assistant",
+      "rootClass": "openui-agent-thread-message-assistant",
+      "attachmentClass": "openui-agent-thread-message-assistant",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 177
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_assistant__content",
+      "rootClass": "openui-agent-thread-message-assistant__content",
+      "attachmentClass": "openui-agent-thread-message-assistant__content",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 162
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_assistant__text",
+      "rootClass": "openui-agent-thread-message-assistant__text",
+      "attachmentClass": "openui-agent-thread-message-assistant__text",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 337
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_user",
+      "rootClass": "openui-agent-thread-message-user",
+      "attachmentClass": "openui-agent-thread-message-user",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 82
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_user__content",
+      "rootClass": "openui-agent-thread-message-user__content",
+      "attachmentClass": "openui-agent-thread-message-user__content",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 577
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_user__image",
+      "rootClass": "openui-agent-thread-message-user__image",
+      "attachmentClass": "openui-agent-thread-message-user__image",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "UserMessageContent.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 152
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_user__video",
+      "rootClass": "openui-agent-thread-message-user__video",
+      "attachmentClass": "openui-agent-thread-message-user__video",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "UserMessageContent.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 152
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_user__media",
+      "rootClass": "openui-agent-thread-message-user__media",
+      "attachmentClass": "openui-agent-thread-message-user__media",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "UserMessageContent.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 112
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_user__audio",
+      "rootClass": "openui-agent-thread-message-user__audio",
+      "attachmentClass": "openui-agent-thread-message-user__audio",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "UserMessageContent.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 82
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_user__filename",
+      "rootClass": "openui-agent-thread-message-user__filename",
+      "attachmentClass": "openui-agent-thread-message-user__filename",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "UserMessageContent.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 239
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_user__chip",
+      "rootClass": "openui-agent-thread-message-user__chip",
+      "attachmentClass": "openui-agent-thread-message-user__chip",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "UserMessageContent.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 283
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_user__chip__broken",
+      "rootClass": "openui-agent-thread-message-user__chip--broken",
+      "attachmentClass": "openui-agent-thread-message-user__chip--broken",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "UserMessageContent.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 59
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_user__chip_badge",
+      "rootClass": "openui-agent-thread-message-user__chip-badge",
+      "attachmentClass": "openui-agent-thread-message-user__chip-badge",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "UserMessageContent.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 382
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_user__chip_name",
+      "rootClass": "openui-agent-thread-message-user__chip-name",
+      "attachmentClass": "openui-agent-thread-message-user__chip-name",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "UserMessageContent.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 261
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_user__chip_link",
+      "rootClass": "openui-agent-thread-message-user__chip-link",
+      "attachmentClass": "openui-agent-thread-message-user__chip-link",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "UserMessageContent.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 100
+    },
+    {
+      "unit": "Chat_openui_agent_thread_error",
+      "rootClass": "openui-agent-thread-error",
+      "attachmentClass": "openui-agent-thread-error",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 99
+    },
+    {
+      "unit": "Chat_openui_agent_thread_message_loading",
+      "rootClass": "openui-agent-thread-message-loading",
+      "attachmentClass": "openui-agent-thread-message-loading",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Thread.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 234
+    },
+    {
+      "unit": "Chat_openui_genui_user_message",
+      "rootClass": "openui-genui-user-message",
+      "attachmentClass": "openui-genui-user-message",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "../OpenUIChat/GenUIUserMessage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 123
+    },
+    {
+      "unit": "Chat_openui_genui_user_message__form_state",
+      "rootClass": "openui-genui-user-message__form-state",
+      "attachmentClass": "openui-genui-user-message__form-state",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "../OpenUIChat/GenUIUserMessage.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 329
+    },
+    {
+      "unit": "Chat_openui_genui_user_message__form_state_header",
+      "rootClass": "openui-genui-user-message__form-state-header",
+      "attachmentClass": "openui-genui-user-message__form-state-header",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "../OpenUIChat/GenUIUserMessage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 261
+    },
+    {
+      "unit": "Chat_openui_genui_user_message__form_state_label",
+      "rootClass": "openui-genui-user-message__form-state-label",
+      "attachmentClass": "openui-genui-user-message__form-state-label",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "../OpenUIChat/GenUIUserMessage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 240
+    },
+    {
+      "unit": "Chat_openui_genui_user_message__form_state_chevron",
+      "rootClass": "openui-genui-user-message__form-state-chevron",
+      "attachmentClass": "openui-genui-user-message",
+      "ownership": "authored but unreferenced descendant retained under existing module root",
+      "sourceOwners": [
+        "../OpenUIChat/GenUIUserMessage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 134
+    },
+    {
+      "unit": "Chat_openui_genui_user_message__form_state_chevron__expanded",
+      "rootClass": "openui-genui-user-message__form-state-chevron--expanded",
+      "attachmentClass": "openui-genui-user-message__form-state-chevron--expanded",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "../OpenUIChat/GenUIUserMessage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 82
+    },
+    {
+      "unit": "Chat_openui_genui_user_message__form_state_content",
+      "rootClass": "openui-genui-user-message__form-state-content",
+      "attachmentClass": "openui-genui-user-message__form-state-content",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "../OpenUIChat/GenUIUserMessage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 211
+    },
+    {
+      "unit": "Chat_openui_genui_user_message__form_field",
+      "rootClass": "openui-genui-user-message__form-field",
+      "attachmentClass": "openui-genui-user-message__form-field",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "../OpenUIChat/GenUIUserMessage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 100
+    },
+    {
+      "unit": "Chat_openui_genui_user_message__form_field_label",
+      "rootClass": "openui-genui-user-message__form-field-label",
+      "attachmentClass": "openui-genui-user-message__form-field-label",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "../OpenUIChat/GenUIUserMessage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 254
+    },
+    {
+      "unit": "Chat_openui_genui_user_message__form_field_value",
+      "rootClass": "openui-genui-user-message__form-field-value",
+      "attachmentClass": "openui-genui-user-message__form-field-value",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "../OpenUIChat/GenUIUserMessage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 275
+    },
+    {
+      "unit": "Chat_openui_agent_thread_header",
+      "rootClass": "openui-agent-thread-header",
+      "attachmentClass": "openui-agent-thread-header",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadHeader.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 337
+    },
+    {
+      "unit": "Chat_openui_agent_thread_header__start",
+      "rootClass": "openui-agent-thread-header__start",
+      "attachmentClass": "openui-agent-thread-header__start",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadHeader.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 183
+    },
+    {
+      "unit": "Chat_openui_agent_thread_header__center",
+      "rootClass": "openui-agent-thread-header__center",
+      "attachmentClass": "openui-agent-thread-header__center",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadHeader.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 181
+    },
+    {
+      "unit": "Chat_openui_agent_thread_header__end",
+      "rootClass": "openui-agent-thread-header__end",
+      "attachmentClass": "openui-agent-thread-header__end",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadHeader.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 177
+    },
+    {
+      "unit": "Chat_openui_agent_thread_header__title",
+      "rootClass": "openui-agent-thread-header__title",
+      "attachmentClass": "openui-agent-thread-header__title",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadHeader.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 195
+    },
+    {
+      "unit": "Chat_openui_agent_thread_header__title_text",
+      "rootClass": "openui-agent-thread-header__title-text",
+      "attachmentClass": "openui-agent-thread-header__title-text",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadHeader.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 110
+    },
+    {
+      "unit": "Chat_openui_agent_thread_header__actions_trigger",
+      "rootClass": "openui-agent-thread-header__actions-trigger",
+      "attachmentClass": "openui-agent-thread-header__actions-trigger",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadHeader.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 85
+    },
+    {
+      "unit": "Chat_openui_agent_thread_header__actions_menu",
+      "rootClass": "openui-agent-thread-header__actions-menu",
+      "attachmentClass": "openui-agent-thread-header__actions-menu",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadHeader.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 884
+    },
+    {
+      "unit": "Chat_openui_agent_thread_header__actions_item",
+      "rootClass": "openui-agent-thread-header__actions-item",
+      "attachmentClass": "openui-agent-thread-header__actions-item",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadHeader.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 364
+    },
+    {
+      "unit": "Chat_openui_agent_thread_header__actions_item__destructive",
+      "rootClass": "openui-agent-thread-header__actions-item--destructive",
+      "attachmentClass": "openui-agent-thread-header__actions-item--destructive",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ThreadHeader.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 95
+    },
+    {
+      "unit": "Chat_openui_agent_rename_dialog__overlay",
+      "rootClass": "openui-agent-rename-dialog__overlay",
+      "attachmentClass": "openui-agent-rename-dialog__overlay",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "RenameChatDialog.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 145
+    },
+    {
+      "unit": "Chat_openui_agent_rename_dialog",
+      "rootClass": "openui-agent-rename-dialog",
+      "attachmentClass": "openui-agent-rename-dialog",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "RenameChatDialog.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 548
+    },
+    {
+      "unit": "Chat_openui_agent_rename_dialog__form",
+      "rootClass": "openui-agent-rename-dialog__form",
+      "attachmentClass": "openui-agent-rename-dialog__form",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "RenameChatDialog.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 95
+    },
+    {
+      "unit": "Chat_openui_agent_rename_dialog__title",
+      "rootClass": "openui-agent-rename-dialog__title",
+      "attachmentClass": "openui-agent-rename-dialog__title",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "RenameChatDialog.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 123
+    },
+    {
+      "unit": "Chat_openui_agent_rename_dialog__input",
+      "rootClass": "openui-agent-rename-dialog__input",
+      "attachmentClass": "openui-agent-rename-dialog__input",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "RenameChatDialog.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 46
+    },
+    {
+      "unit": "Chat_openui_agent_rename_dialog__actions",
+      "rootClass": "openui-agent-rename-dialog__actions",
+      "attachmentClass": "openui-agent-rename-dialog__actions",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "RenameChatDialog.tsx"
+      ],
+      "selectors": 5,
+      "cssBytes": 712
+    },
+    {
+      "unit": "Chat_openui_agent_mobile_header",
+      "rootClass": "openui-agent-mobile-header",
+      "attachmentClass": "openui-agent-mobile-header",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "MobileHeader.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 41
+    },
+    {
+      "unit": "Chat_openui_agent_mobile_header_logo_container",
+      "rootClass": "openui-agent-mobile-header-logo-container",
+      "attachmentClass": "openui-agent-mobile-header-logo-container",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "MobileHeader.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 120
+    },
+    {
+      "unit": "Chat_openui_agent_mobile_header_logo",
+      "rootClass": "openui-agent-mobile-header-logo",
+      "attachmentClass": "openui-agent-mobile-header",
+      "ownership": "authored but unreferenced descendant retained under existing module root",
+      "sourceOwners": [
+        "MobileHeader.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 93
+    },
+    {
+      "unit": "Chat_openui_agent_mobile_header_agent_name",
+      "rootClass": "openui-agent-mobile-header-agent-name",
+      "attachmentClass": "openui-agent-mobile-header-agent-name",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "AgentInterface.tsx",
+        "MobileHeader.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 290
+    },
+    {
+      "unit": "Chat_openui_agent_mobile_header_actions",
+      "rootClass": "openui-agent-mobile-header-actions",
+      "attachmentClass": "openui-agent-mobile-header-actions",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "MobileHeader.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 94
+    },
+    {
+      "unit": "Chat_openui_agent_resizable_separator",
+      "rootClass": "openui-agent-resizable-separator",
+      "attachmentClass": "openui-agent-resizable-separator",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ResizableSeparator.tsx"
+      ],
+      "selectors": 6,
+      "cssBytes": 797
+    },
+    {
+      "unit": "Chat_openui_agent_resizable_separator__handle",
+      "rootClass": "openui-agent-resizable-separator__handle",
+      "attachmentClass": "openui-agent-resizable-separator__handle",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ResizableSeparator.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 295
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter__short",
+      "rootClass": "openui-agent-conversation-starter--short",
+      "attachmentClass": "openui-agent-conversation-starter--short",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 56
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter__long",
+      "rootClass": "openui-agent-conversation-starter--long",
+      "attachmentClass": "openui-agent-conversation-starter",
+      "ownership": "state modifier retained on actual base owner",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 118
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter__card",
+      "rootClass": "openui-agent-conversation-starter--card",
+      "attachmentClass": "openui-agent-conversation-starter",
+      "ownership": "state modifier retained on actual base owner",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 133
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter__carousel_content",
+      "rootClass": "openui-agent-conversation-starter__carousel-content",
+      "attachmentClass": "openui-agent-conversation-starter__carousel-content",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 80
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter__separator",
+      "rootClass": "openui-agent-conversation-starter__separator",
+      "attachmentClass": "openui-agent-conversation-starter__separator",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 161
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter_item_short",
+      "rootClass": "openui-agent-conversation-starter-item-short",
+      "attachmentClass": "openui-agent-conversation-starter-item-short",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 4,
+      "cssBytes": 972
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter_item_short__icon",
+      "rootClass": "openui-agent-conversation-starter-item-short__icon",
+      "attachmentClass": "openui-agent-conversation-starter-item-short__icon",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 241
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter_item_short__text",
+      "rootClass": "openui-agent-conversation-starter-item-short__text",
+      "attachmentClass": "openui-agent-conversation-starter-item-short__text",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 78
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter_item_long",
+      "rootClass": "openui-agent-conversation-starter-item-long",
+      "attachmentClass": "openui-agent-conversation-starter-item-long",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 5,
+      "cssBytes": 1132
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter_item_long__content",
+      "rootClass": "openui-agent-conversation-starter-item-long__content",
+      "attachmentClass": "openui-agent-conversation-starter-item-long__content",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 135
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter_item_long__icon",
+      "rootClass": "openui-agent-conversation-starter-item-long__icon",
+      "attachmentClass": "openui-agent-conversation-starter-item-long__icon",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 199
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter_item_long__text",
+      "rootClass": "openui-agent-conversation-starter-item-long__text",
+      "attachmentClass": "openui-agent-conversation-starter-item-long__text",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 86
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter_item_long__arrow",
+      "rootClass": "openui-agent-conversation-starter-item-long__arrow",
+      "attachmentClass": "openui-agent-conversation-starter-item-long__arrow",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 261
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter_item_card",
+      "rootClass": "openui-agent-conversation-starter-item-card",
+      "attachmentClass": "openui-agent-conversation-starter-item-card",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 760
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter_item_card__icon",
+      "rootClass": "openui-agent-conversation-starter-item-card__icon",
+      "attachmentClass": "openui-agent-conversation-starter-item-card__icon",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 300
+    },
+    {
+      "unit": "Chat_openui_agent_conversation_starter_item_card__text",
+      "rootClass": "openui-agent-conversation-starter-item-card__text",
+      "attachmentClass": "openui-agent-conversation-starter-item-card__text",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ConversationStarter.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 161
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_screen__header",
+      "rootClass": "openui-agent-welcome-screen__header",
+      "attachmentClass": "openui-agent-welcome-screen__header",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "WelcomeScreen.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 144
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_screen__image_container",
+      "rootClass": "openui-agent-welcome-screen__image-container",
+      "attachmentClass": "openui-agent-welcome-screen__image-container",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "WelcomeScreen.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 115
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_screen__image",
+      "rootClass": "openui-agent-welcome-screen__image",
+      "attachmentClass": "openui-agent-welcome-screen__image",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "WelcomeScreen.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 114
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_screen__content",
+      "rootClass": "openui-agent-welcome-screen__content",
+      "attachmentClass": "openui-agent-welcome-screen__content",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "WelcomeScreen.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 163
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_screen__title",
+      "rootClass": "openui-agent-welcome-screen__title",
+      "attachmentClass": "openui-agent-welcome-screen__title",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "WelcomeScreen.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 301
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_screen__description",
+      "rootClass": "openui-agent-welcome-screen__description",
+      "attachmentClass": "openui-agent-welcome-screen__description",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "WelcomeScreen.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 252
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_screen__composer_starters_container",
+      "rootClass": "openui-agent-welcome-screen__composer-starters-container",
+      "attachmentClass": "openui-agent-welcome-screen__composer-starters-container",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "WelcomeScreen.tsx"
+      ],
+      "selectors": 6,
+      "cssBytes": 779
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_screen__desktop_composer",
+      "rootClass": "openui-agent-welcome-screen__desktop-composer",
+      "attachmentClass": "openui-agent-welcome-screen__desktop-composer",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "WelcomeScreen.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 94
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_screen__with_composer",
+      "rootClass": "openui-agent-welcome-screen--with-composer",
+      "attachmentClass": "openui-agent-welcome-screen--with-composer",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "WelcomeScreen.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 72
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_screen__animated",
+      "rootClass": "openui-agent-welcome-screen--animated",
+      "attachmentClass": "openui-agent-welcome-screen--animated",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "WelcomeScreen.tsx"
+      ],
+      "selectors": 7,
+      "cssBytes": 1246
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_glow",
+      "rootClass": "openui-agent-welcome-glow",
+      "attachmentClass": "openui-agent-welcome-glow",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "WelcomeGlow.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 184
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_glow__dither",
+      "rootClass": "openui-agent-welcome-glow__dither",
+      "attachmentClass": "openui-agent-welcome-glow__dither",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "WelcomeGlow.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 881
+    },
+    {
+      "unit": "Chat_openui_agent_desktop_welcome_composer",
+      "rootClass": "openui-agent-desktop-welcome-composer",
+      "attachmentClass": "openui-agent-desktop-welcome-composer",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/DesktopWelcomeComposer.tsx"
+      ],
+      "selectors": 5,
+      "cssBytes": 1410
+    },
+    {
+      "unit": "Chat_openui_agent_desktop_welcome_composer__input",
+      "rootClass": "openui-agent-desktop-welcome-composer__input",
+      "attachmentClass": "openui-agent-desktop-welcome-composer__input",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/DesktopWelcomeComposer.tsx"
+      ],
+      "selectors": 6,
+      "cssBytes": 967
+    },
+    {
+      "unit": "Chat_openui_agent_desktop_welcome_composer__action_bar",
+      "rootClass": "openui-agent-desktop-welcome-composer__action-bar",
+      "attachmentClass": "openui-agent-desktop-welcome-composer__action-bar",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/DesktopWelcomeComposer.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 97
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_screen__starters_layers",
+      "rootClass": "openui-agent-welcome-screen__starters-layers",
+      "attachmentClass": "openui-agent-welcome-screen__starters-layers",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/WelcomePrefillChips.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 88
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_screen__starters_layer",
+      "rootClass": "openui-agent-welcome-screen__starters-layer",
+      "attachmentClass": "openui-agent-welcome-screen__starters-layer",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/WelcomePrefillChips.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 246
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_screen__chip_row",
+      "rootClass": "openui-agent-welcome-screen__chip-row",
+      "attachmentClass": "openui-agent-welcome-screen__chip-row",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/WelcomePrefillChips.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 129
+    },
+    {
+      "unit": "Chat_openui_agent_prefill_chip",
+      "rootClass": "openui-agent-prefill-chip",
+      "attachmentClass": "openui-agent-prefill-chip",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/WelcomePrefillChips.tsx"
+      ],
+      "selectors": 5,
+      "cssBytes": 944
+    },
+    {
+      "unit": "Chat_openui_agent_prefill_chip__icon",
+      "rootClass": "openui-agent-prefill-chip__icon",
+      "attachmentClass": "openui-agent-prefill-chip__icon",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/WelcomePrefillChips.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 192
+    },
+    {
+      "unit": "Chat_openui_agent_prefill_chip__label",
+      "rootClass": "openui-agent-prefill-chip__label",
+      "attachmentClass": "openui-agent-prefill-chip__label",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/WelcomePrefillChips.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 86
+    },
+    {
+      "unit": "Chat_openui_agent_thread_composer",
+      "rootClass": "openui-agent-thread-composer",
+      "attachmentClass": "openui-agent-thread-composer",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/Composer.tsx"
+      ],
+      "selectors": 4,
+      "cssBytes": 801
+    },
+    {
+      "unit": "Chat_openui_agent_thread_composer__input_wrapper",
+      "rootClass": "openui-agent-thread-composer__input-wrapper",
+      "attachmentClass": "openui-agent-thread-composer__input-wrapper",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/Composer.tsx"
+      ],
+      "selectors": 7,
+      "cssBytes": 2065
+    },
+    {
+      "unit": "Chat_openui_agent_thread_composer__input",
+      "rootClass": "openui-agent-thread-composer__input",
+      "attachmentClass": "openui-agent-thread-composer__input",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/Composer.tsx"
+      ],
+      "selectors": 6,
+      "cssBytes": 897
+    },
+    {
+      "unit": "Chat_openui_agent_thread_composer__action_bar",
+      "rootClass": "openui-agent-thread-composer__action-bar",
+      "attachmentClass": "openui-agent-thread-composer__action-bar",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/Composer.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 88
+    },
+    {
+      "unit": "Chat_openui_agent_ambient_loader",
+      "rootClass": "openui-agent-ambient-loader",
+      "attachmentClass": "openui-agent-ambient-loader",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/AmbientLoader.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 138
+    },
+    {
+      "unit": "Chat_openui_agent_ambient_loader__status",
+      "rootClass": "openui-agent-ambient-loader__status",
+      "attachmentClass": "openui-agent-ambient-loader__status",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/AmbientLoader.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 145
+    },
+    {
+      "unit": "Chat_openui_agent_ambient_loader__label",
+      "rootClass": "openui-agent-ambient-loader__label",
+      "attachmentClass": "openui-agent-ambient-loader__label",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/AmbientLoader.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 129
+    },
+    {
+      "unit": "Chat_openui_agent_mascot",
+      "rootClass": "openui-agent-mascot",
+      "attachmentClass": "openui-agent-mascot",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/Mascot.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 66
+    },
+    {
+      "unit": "Chat_openui_agent_mascot_loader",
+      "rootClass": "openui-agent-mascot-loader",
+      "attachmentClass": "openui-agent-mascot-loader",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/MascotLoader.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 73
+    },
+    {
+      "unit": "Chat_openui_agent_mascot_loader__body",
+      "rootClass": "openui-agent-mascot-loader__body",
+      "attachmentClass": "openui-agent-mascot-loader__body",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/MascotLoader.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 270
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_mascot",
+      "rootClass": "openui-agent-welcome-mascot",
+      "attachmentClass": "openui-agent-welcome-mascot",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/WelcomeMascot.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 140
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_mascot__lid",
+      "rootClass": "openui-agent-welcome-mascot__lid",
+      "attachmentClass": "openui-agent-welcome-mascot__lid",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/WelcomeMascot.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 267
+    },
+    {
+      "unit": "Chat_openui_agent_welcome_mascot__body__squish",
+      "rootClass": "openui-agent-welcome-mascot__body--squish",
+      "attachmentClass": "openui-agent-welcome-mascot__body--squish",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "components/WelcomeMascot.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 421
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser",
+      "rootClass": "openui-agent-artifact-browser",
+      "attachmentClass": "openui-agent-artifact-browser",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 304
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__content",
+      "rootClass": "openui-agent-artifact-browser__content",
+      "attachmentClass": "openui-agent-artifact-browser__content",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 154
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__header",
+      "rootClass": "openui-agent-artifact-browser__header",
+      "attachmentClass": "openui-agent-artifact-browser__header",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 700
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__title",
+      "rootClass": "openui-agent-artifact-browser__title",
+      "attachmentClass": "openui-agent-artifact-browser__title",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 259
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__search",
+      "rootClass": "openui-agent-artifact-browser__search",
+      "attachmentClass": "openui-agent-artifact-browser__search",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 4,
+      "cssBytes": 1084
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__search_input",
+      "rootClass": "openui-agent-artifact-browser__search-input",
+      "attachmentClass": "openui-agent-artifact-browser__search-input",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 427
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__list",
+      "rootClass": "openui-agent-artifact-browser__list",
+      "attachmentClass": "openui-agent-artifact-browser__list",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 121
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__item",
+      "rootClass": "openui-agent-artifact-browser__item",
+      "attachmentClass": "openui-agent-artifact-browser__item",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 758
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__item_icon",
+      "rootClass": "openui-agent-artifact-browser__item-icon",
+      "attachmentClass": "openui-agent-artifact-browser__item-icon",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 361
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__item_meta",
+      "rootClass": "openui-agent-artifact-browser__item-meta",
+      "attachmentClass": "openui-agent-artifact-browser__item-meta",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 186
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__item_title",
+      "rootClass": "openui-agent-artifact-browser__item-title",
+      "attachmentClass": "openui-agent-artifact-browser__item-title",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 321
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__item_updated_at",
+      "rootClass": "openui-agent-artifact-browser__item-updated-at",
+      "attachmentClass": "openui-agent-artifact-browser__item-updated-at",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 243
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__error",
+      "rootClass": "openui-agent-artifact-browser__error",
+      "attachmentClass": "openui-agent-artifact-browser__error",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 273
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__loading",
+      "rootClass": "openui-agent-artifact-browser__loading",
+      "attachmentClass": "openui-agent-artifact-browser__loading",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 92
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__empty",
+      "rootClass": "openui-agent-artifact-browser__empty",
+      "attachmentClass": "openui-agent-artifact-browser__empty",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 210
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__empty_illustration",
+      "rootClass": "openui-agent-artifact-browser__empty-illustration",
+      "attachmentClass": "openui-agent-artifact-browser__empty-illustration",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 212
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__empty_copy",
+      "rootClass": "openui-agent-artifact-browser__empty-copy",
+      "attachmentClass": "openui-agent-artifact-browser__empty-copy",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 105
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__empty_text",
+      "rootClass": "openui-agent-artifact-browser__empty-text",
+      "attachmentClass": "openui-agent-artifact-browser__empty-text",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 255
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__empty_subtitle",
+      "rootClass": "openui-agent-artifact-browser__empty-subtitle",
+      "attachmentClass": "openui-agent-artifact-browser__empty-subtitle",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 250
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_browser__load_more",
+      "rootClass": "openui-agent-artifact-browser__load-more",
+      "attachmentClass": "openui-agent-artifact-browser__load-more",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactBrowserPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 55
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_view",
+      "rootClass": "openui-agent-artifact-view",
+      "attachmentClass": "openui-agent-artifact-view",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactViewPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 91
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_view__header",
+      "rootClass": "openui-agent-artifact-view__header",
+      "attachmentClass": "openui-agent-artifact-view__header",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactViewPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 239
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_view__title",
+      "rootClass": "openui-agent-artifact-view__title",
+      "attachmentClass": "openui-agent-artifact-view__title",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactViewPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 293
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_view__content",
+      "rootClass": "openui-agent-artifact-view__content",
+      "attachmentClass": "openui-agent-artifact-view__content",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactViewPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 60
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_view__error",
+      "rootClass": "openui-agent-artifact-view__error",
+      "attachmentClass": "openui-agent-artifact-view__error",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactViewPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 268
+    },
+    {
+      "unit": "Chat_openui_agent_artifact_view__loading",
+      "rootClass": "openui-agent-artifact-view__loading",
+      "attachmentClass": "openui-agent-artifact-view__loading",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "ArtifactViewPage.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 107
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar",
+      "rootClass": "openui-agent-workspace-sidebar",
+      "attachmentClass": "openui-agent-workspace-sidebar",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 466
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__collapsed",
+      "rootClass": "openui-agent-workspace-sidebar--collapsed",
+      "attachmentClass": "openui-agent-workspace-sidebar--collapsed",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 5,
+      "cssBytes": 767
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__header",
+      "rootClass": "openui-agent-workspace-sidebar__header",
+      "attachmentClass": "openui-agent-workspace-sidebar__header",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 215
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__title",
+      "rootClass": "openui-agent-workspace-sidebar__title",
+      "attachmentClass": "openui-agent-workspace-sidebar__title",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 311
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__tabs",
+      "rootClass": "openui-agent-workspace-sidebar__tabs",
+      "attachmentClass": "openui-agent-workspace-sidebar",
+      "ownership": "authored but unreferenced descendant retained under existing module root",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 197
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__tab_indicator",
+      "rootClass": "openui-agent-workspace-sidebar__tab-indicator",
+      "attachmentClass": "openui-agent-workspace-sidebar",
+      "ownership": "authored but unreferenced descendant retained under existing module root",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 340
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__tab",
+      "rootClass": "openui-agent-workspace-sidebar__tab",
+      "attachmentClass": "openui-agent-workspace-sidebar",
+      "ownership": "authored but unreferenced descendant retained under existing module root",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 521
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__tab__active",
+      "rootClass": "openui-agent-workspace-sidebar__tab--active",
+      "attachmentClass": "openui-agent-workspace-sidebar",
+      "ownership": "authored but unreferenced descendant retained under existing module root",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 86
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__content",
+      "rootClass": "openui-agent-workspace-sidebar__content",
+      "attachmentClass": "openui-agent-workspace-sidebar__content",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 512
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__empty",
+      "rootClass": "openui-agent-workspace-sidebar__empty",
+      "attachmentClass": "openui-agent-workspace-sidebar",
+      "ownership": "authored but unreferenced descendant retained under existing module root",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 287
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__section_empty",
+      "rootClass": "openui-agent-workspace-sidebar__section-empty",
+      "attachmentClass": "openui-agent-workspace-sidebar__section-empty",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 291
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__list",
+      "rootClass": "openui-agent-workspace-sidebar__list",
+      "attachmentClass": "openui-agent-workspace-sidebar__list",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 135
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__item",
+      "rootClass": "openui-agent-workspace-sidebar__item",
+      "attachmentClass": "openui-agent-workspace-sidebar__item",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 548
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__item__active",
+      "rootClass": "openui-agent-workspace-sidebar__item--active",
+      "attachmentClass": "openui-agent-workspace-sidebar__item--active",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 216
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__item_icon",
+      "rootClass": "openui-agent-workspace-sidebar__item-icon",
+      "attachmentClass": "openui-agent-workspace-sidebar__item-icon",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 177
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__item_label",
+      "rootClass": "openui-agent-workspace-sidebar__item-label",
+      "attachmentClass": "openui-agent-workspace-sidebar__item-label",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 252
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__item_body",
+      "rootClass": "openui-agent-workspace-sidebar__item-body",
+      "attachmentClass": "openui-agent-workspace-sidebar__item-body",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 227
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__item_meta",
+      "rootClass": "openui-agent-workspace-sidebar__item-meta",
+      "attachmentClass": "openui-agent-workspace-sidebar__item-meta",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 319
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__overlay",
+      "rootClass": "openui-agent-workspace-sidebar__overlay",
+      "attachmentClass": "openui-agent-workspace-sidebar__overlay",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 201
+    },
+    {
+      "unit": "Chat_openui_agent_workspace_sidebar__overlay__collapsed",
+      "rootClass": "openui-agent-workspace-sidebar__overlay--collapsed",
+      "attachmentClass": "openui-agent-workspace-sidebar__overlay--collapsed",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Workspace.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 82
+    },
+    {
+      "unit": "Chat_openui_detailed_view_overlay",
+      "rootClass": "openui-detailed-view-overlay",
+      "attachmentClass": "openui-detailed-view-overlay",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "_shared/detailed-view/DetailedViewOverlay.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 470
+    },
+    {
+      "unit": "Chat_openui_detailed_view_overlay__exiting",
+      "rootClass": "openui-detailed-view-overlay--exiting",
+      "attachmentClass": "openui-detailed-view-overlay--exiting",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "_shared/detailed-view/DetailedViewOverlay.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 390
+    },
+    {
+      "unit": "Chat_openui_detailed_view_panel",
+      "rootClass": "openui-detailed-view-panel",
+      "attachmentClass": "openui-detailed-view-panel",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "_shared/detailed-view/DetailedViewPanel.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 100
+    },
+    {
+      "unit": "Chat_openui_detailed_view_panel__header",
+      "rootClass": "openui-detailed-view-panel__header",
+      "attachmentClass": "openui-detailed-view-panel__header",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "_shared/detailed-view/DetailedViewPanel.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 347
+    },
+    {
+      "unit": "Chat_openui_detailed_view_panel__title",
+      "rootClass": "openui-detailed-view-panel__title",
+      "attachmentClass": "openui-detailed-view-panel__title",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "_shared/detailed-view/DetailedViewPanel.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 298
+    },
+    {
+      "unit": "Chat_openui_agent_container__restore_loader",
+      "rootClass": "openui-agent-container__restore-loader",
+      "attachmentClass": "openui-agent-container__restore-loader",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Container.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 238
+    },
+    {
+      "unit": "Chat_openui_agent_container__restore_loader__exiting",
+      "rootClass": "openui-agent-container__restore-loader--exiting",
+      "attachmentClass": "openui-agent-container__restore-loader--exiting",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "Container.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 79
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_actions",
+      "rootClass": "openui-agent-sidebar-actions",
+      "attachmentClass": "openui-agent-sidebar-actions",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "AgentInterface.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 93
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_primary_actions",
+      "rootClass": "openui-agent-sidebar-primary-actions",
+      "attachmentClass": "openui-agent-sidebar-primary-actions",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "AgentInterface.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 100
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_artifact_nav",
+      "rootClass": "openui-agent-sidebar-artifact-nav",
+      "attachmentClass": "openui-agent-sidebar-artifact-nav",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "AgentInterface.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 97
+    },
+    {
+      "unit": "Chat_openui_agent_new_chat_button",
+      "rootClass": "openui-agent-new-chat-button",
+      "attachmentClass": "openui-agent-new-chat-button",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "NewChatButton.tsx"
+      ],
+      "selectors": 2,
+      "cssBytes": 632
+    },
+    {
+      "unit": "Chat_openui_agent_new_chat_button__collapsed",
+      "rootClass": "openui-agent-new-chat-button--collapsed",
+      "attachmentClass": "openui-agent-new-chat-button--collapsed",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "NewChatButton.tsx"
+      ],
+      "selectors": 6,
+      "cssBytes": 764
+    },
+    {
+      "unit": "Chat_openui_agent_new_chat_button__icon",
+      "rootClass": "openui-agent-new-chat-button__icon",
+      "attachmentClass": "openui-agent-new-chat-button__icon",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "NewChatButton.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 405
+    },
+    {
+      "unit": "Chat_openui_agent_new_chat_button__label",
+      "rootClass": "openui-agent-new-chat-button__label",
+      "attachmentClass": "openui-agent-new-chat-button__label",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "NewChatButton.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 121
+    },
+    {
+      "unit": "Chat_openui_agent_history_button",
+      "rootClass": "openui-agent-history-button",
+      "attachmentClass": "openui-agent-history-button",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "HistoryButton.tsx"
+      ],
+      "selectors": 3,
+      "cssBytes": 577
+    },
+    {
+      "unit": "Chat_openui_agent_new_chat_floating_button",
+      "rootClass": "openui-agent-new-chat-floating-button",
+      "attachmentClass": "openui-agent-new-chat-floating-button",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "NewChatButton.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 125
+    },
+    {
+      "unit": "Chat_openui_agent_tooltip",
+      "rootClass": "openui-agent-tooltip",
+      "attachmentClass": "openui-agent-tooltip",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "_shared/AgentInterfaceTooltip.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 440
+    },
+    {
+      "unit": "Chat_openui_agent_sidebar_tooltip",
+      "rootClass": "openui-agent-sidebar-tooltip",
+      "attachmentClass": "openui-agent-sidebar-tooltip",
+      "ownership": "exact original JSX class",
+      "sourceOwners": [
+        "SidebarTooltip.tsx"
+      ],
+      "selectors": 1,
+      "cssBytes": 448
+    }
+  ],
+  "attachments": [
+    {
+      "file": "AgentInterface.tsx",
+      "elements": 4,
+      "definitions": [
+        "Chat_openui_agent_mobile_header_agent_name",
+        "Chat_openui_agent_sidebar_actions",
+        "Chat_openui_agent_sidebar_primary_actions",
+        "Chat_openui_agent_sidebar_artifact_nav"
+      ]
+    },
+    {
+      "file": "ArtifactBrowserPage.tsx",
+      "elements": 28,
+      "definitions": [
+        "Chat_openui_agent_artifact_browser__item",
+        "Chat_openui_agent_artifact_browser__item_icon",
+        "Chat_openui_agent_artifact_browser__item_meta",
+        "Chat_openui_agent_artifact_browser__item_title",
+        "Chat_openui_agent_artifact_browser__item_updated_at",
+        "Chat_openui_agent_artifact_browser",
+        "Chat_openui_agent_artifact_browser__content",
+        "Chat_openui_agent_artifact_browser__header",
+        "Chat_openui_agent_artifact_browser__title",
+        "Chat_openui_agent_artifact_browser__list",
+        "Chat_openui_agent_artifact_browser__empty",
+        "Chat_openui_agent_artifact_browser__empty_illustration",
+        "Chat_openui_agent_artifact_browser__empty_text",
+        "Chat_openui_agent_artifact_browser__search",
+        "Chat_openui_agent_artifact_browser__search_input",
+        "Chat_openui_agent_artifact_browser__error",
+        "Chat_openui_agent_artifact_browser__empty_copy",
+        "Chat_openui_agent_artifact_browser__empty_subtitle",
+        "Chat_openui_agent_artifact_browser__loading",
+        "Chat_openui_agent_artifact_browser__load_more"
+      ]
+    },
+    {
+      "file": "ArtifactNav.tsx",
+      "elements": 0,
+      "definitions": []
+    },
+    {
+      "file": "ArtifactViewPage.tsx",
+      "elements": 8,
+      "definitions": [
+        "Chat_openui_agent_artifact_view__error",
+        "Chat_openui_agent_artifact_view__loading",
+        "Chat_openui_agent_artifact_view",
+        "Chat_openui_agent_artifact_view__header",
+        "Chat_openui_agent_artifact_view__title",
+        "Chat_openui_agent_artifact_view__content"
+      ]
+    },
+    {
+      "file": "Composer.tsx",
+      "elements": 0,
+      "definitions": []
+    },
+    {
+      "file": "Container.tsx",
+      "elements": 2,
+      "definitions": [
+        "Chat_openui_agent_container",
+        "Chat_openui_agent_container__mobile",
+        "Chat_openui_agent_container__restore_loader",
+        "Chat_openui_agent_container__restore_loader__exiting"
+      ]
+    },
+    {
+      "file": "ConversationStarter.tsx",
+      "elements": 15,
+      "definitions": [
+        "Chat_openui_agent_conversation_starter_item_short",
+        "Chat_openui_agent_conversation_starter_item_short__icon",
+        "Chat_openui_agent_conversation_starter_item_short__text",
+        "Chat_openui_agent_conversation_starter_item_card",
+        "Chat_openui_agent_conversation_starter_item_card__icon",
+        "Chat_openui_agent_conversation_starter_item_card__text",
+        "Chat_openui_agent_conversation_starter_item_long",
+        "Chat_openui_agent_conversation_starter_item_long__content",
+        "Chat_openui_agent_conversation_starter_item_long__icon",
+        "Chat_openui_agent_conversation_starter_item_long__text",
+        "Chat_openui_agent_conversation_starter_item_long__arrow",
+        "Chat_openui_agent_conversation_starter",
+        "Chat_openui_agent_conversation_starter__long",
+        "Chat_openui_agent_conversation_starter__card",
+        "Chat_openui_agent_conversation_starter__short",
+        "Chat_openui_agent_conversation_starter__carousel_content",
+        "Chat_openui_agent_conversation_starter__separator"
+      ]
+    },
+    {
+      "file": "HistoryButton.tsx",
+      "elements": 6,
+      "definitions": [
+        "Chat_openui_agent_history_button",
+        "Chat_openui_agent_history_menu",
+        "Chat_openui_agent_history_menu__label",
+        "Chat_openui_agent_history_menu__empty",
+        "Chat_openui_agent_history_menu__item",
+        "Chat_openui_agent_history_menu__item__selected",
+        "Chat_openui_agent_history_menu__title"
+      ]
+    },
+    {
+      "file": "MobileHeader.tsx",
+      "elements": 5,
+      "definitions": [
+        "Chat_openui_agent_mobile_header",
+        "Chat_openui_agent_mobile_header_logo",
+        "Chat_openui_agent_mobile_header_agent_name",
+        "Chat_openui_agent_mobile_header_logo_container",
+        "Chat_openui_agent_mobile_header_actions"
+      ]
+    },
+    {
+      "file": "NewChatButton.tsx",
+      "elements": 4,
+      "definitions": [
+        "Chat_openui_agent_new_chat_floating_button",
+        "Chat_openui_agent_new_chat_button",
+        "Chat_openui_agent_new_chat_button__collapsed",
+        "Chat_openui_agent_new_chat_button__icon",
+        "Chat_openui_agent_new_chat_button__label"
+      ]
+    },
+    {
+      "file": "RenameChatDialog.tsx",
+      "elements": 6,
+      "definitions": [
+        "Chat_openui_agent_rename_dialog__overlay",
+        "Chat_openui_agent_rename_dialog",
+        "Chat_openui_agent_rename_dialog__form",
+        "Chat_openui_agent_rename_dialog__title",
+        "Chat_openui_agent_rename_dialog__input",
+        "Chat_openui_agent_rename_dialog__actions"
+      ]
+    },
+    {
+      "file": "ResizableSeparator.tsx",
+      "elements": 2,
+      "definitions": [
+        "Chat_openui_agent_resizable_separator",
+        "Chat_openui_agent_resizable_separator__handle"
+      ]
+    },
+    {
+      "file": "Route.tsx",
+      "elements": 0,
+      "definitions": []
+    },
+    {
+      "file": "Sidebar.tsx",
+      "elements": 11,
+      "definitions": [
+        "Chat_openui_agent_sidebar_container__overlay",
+        "Chat_openui_agent_sidebar_container__overlay__collapsed",
+        "Chat_openui_agent_sidebar_container",
+        "Chat_openui_agent_sidebar_container__resizing",
+        "Chat_openui_agent_sidebar_container__collapsed",
+        "Chat_openui_agent_sidebar_container__hidden",
+        "Chat_openui_agent_sidebar_header",
+        "Chat_openui_agent_sidebar_header__collapsed",
+        "Chat_openui_agent_sidebar_header__logo",
+        "Chat_openui_agent_sidebar_header__agent_name",
+        "Chat_openui_agent_sidebar_header__toggle_button",
+        "Chat_openui_agent_sidebar_header__top_row",
+        "Chat_openui_agent_sidebar_content",
+        "Chat_openui_agent_sidebar_content__collapsed",
+        "Chat_openui_agent_sidebar_footer",
+        "Chat_openui_agent_sidebar_separator"
+      ]
+    },
+    {
+      "file": "SidebarItem.tsx",
+      "elements": 4,
+      "definitions": [
+        "Chat_openui_agent_sidebar_item",
+        "Chat_openui_agent_sidebar_item__selected",
+        "Chat_openui_agent_sidebar_item__icon",
+        "Chat_openui_agent_sidebar_item__label",
+        "Chat_openui_agent_sidebar_item__trailing"
+      ]
+    },
+    {
+      "file": "SidebarResizeEdge.tsx",
+      "elements": 1,
+      "definitions": [
+        "Chat_openui_agent_sidebar_resize_edge"
+      ]
+    },
+    {
+      "file": "SidebarSlot.tsx",
+      "elements": 0,
+      "definitions": []
+    },
+    {
+      "file": "SidebarTooltip.tsx",
+      "elements": 1,
+      "definitions": [
+        "Chat_openui_agent_sidebar_tooltip"
+      ]
+    },
+    {
+      "file": "ThemeModeToggle.tsx",
+      "elements": 1,
+      "definitions": [
+        "Chat_openui_agent_theme_toggle"
+      ]
+    },
+    {
+      "file": "Thread.tsx",
+      "elements": 15,
+      "definitions": [
+        "Chat_openui_agent_thread_container",
+        "Chat_openui_agent_thread_container__detailed_view_active",
+        "Chat_openui_agent_thread_container__loading",
+        "Chat_openui_agent_thread_wrapper",
+        "Chat_openui_agent_thread_chat_panel",
+        "Chat_openui_agent_thread_chat_panel__animating",
+        "Chat_openui_agent_thread_detailed_view_panel",
+        "Chat_openui_agent_thread_detailed_view_panel__animating",
+        "Chat_openui_agent_thread_scroll_container",
+        "Chat_openui_agent_thread_scroll_area",
+        "Chat_openui_agent_thread_scroll_area__user_message_anchor",
+        "Chat_openui_agent_thread_message_assistant",
+        "Chat_openui_agent_thread_message_assistant__content",
+        "Chat_openui_agent_thread_message_user",
+        "Chat_openui_agent_thread_message_user__content",
+        "Chat_openui_agent_thread_message_assistant__text",
+        "Chat_openui_agent_thread_message_loading",
+        "Chat_openui_agent_thread_error",
+        "Chat_openui_agent_thread_messages"
+      ]
+    },
+    {
+      "file": "ThreadHeader.tsx",
+      "elements": 10,
+      "definitions": [
+        "Chat_openui_agent_thread_header__title",
+        "Chat_openui_agent_thread_header__title_text",
+        "Chat_openui_agent_thread_header__actions_trigger",
+        "Chat_openui_agent_thread_header__actions_menu",
+        "Chat_openui_agent_thread_header__actions_item",
+        "Chat_openui_agent_thread_header__actions_item__destructive",
+        "Chat_openui_agent_thread_header",
+        "Chat_openui_agent_thread_header__start",
+        "Chat_openui_agent_thread_header__center",
+        "Chat_openui_agent_thread_header__end"
+      ]
+    },
+    {
+      "file": "ThreadList.tsx",
+      "elements": 14,
+      "definitions": [
+        "Chat_openui_agent_thread_list_skeleton",
+        "Chat_openui_agent_thread_list_skeleton__group",
+        "Chat_openui_agent_thread_list_skeleton__row",
+        "Chat_openui_agent_thread_button",
+        "Chat_openui_agent_thread_button__selected",
+        "Chat_openui_agent_thread_button__actions_open",
+        "Chat_openui_agent_thread_button_title",
+        "Chat_openui_agent_thread_button_icon",
+        "Chat_openui_agent_thread_button_label",
+        "Chat_openui_agent_thread_button_dropdown_trigger",
+        "Chat_openui_agent_thread_button_dropdown_menu",
+        "Chat_openui_agent_thread_button_dropdown_menu_item",
+        "Chat_openui_agent_thread_list",
+        "Chat_openui_agent_thread_list__mask_top",
+        "Chat_openui_agent_thread_list__mask_bottom",
+        "Chat_openui_agent_thread_list_content",
+        "Chat_openui_agent_thread_list_group"
+      ]
+    },
+    {
+      "file": "UserMessageContent.tsx",
+      "elements": 9,
+      "definitions": [
+        "Chat_openui_agent_thread_message_user__chip",
+        "Chat_openui_agent_thread_message_user__chip__broken",
+        "Chat_openui_agent_thread_message_user__chip_badge",
+        "Chat_openui_agent_thread_message_user__chip_name",
+        "Chat_openui_agent_thread_message_user__chip_link",
+        "Chat_openui_agent_thread_message_user__image",
+        "Chat_openui_agent_thread_message_user__media",
+        "Chat_openui_agent_thread_message_user__audio",
+        "Chat_openui_agent_thread_message_user__filename",
+        "Chat_openui_agent_thread_message_user__video"
+      ]
+    },
+    {
+      "file": "WelcomeDither.tsx",
+      "elements": 0,
+      "definitions": []
+    },
+    {
+      "file": "WelcomeGlow.tsx",
+      "elements": 2,
+      "definitions": [
+        "Chat_openui_agent_welcome_glow",
+        "Chat_openui_agent_welcome_glow__dither"
+      ]
+    },
+    {
+      "file": "WelcomeScreen.tsx",
+      "elements": 11,
+      "definitions": [
+        "Chat_openui_agent_welcome_screen",
+        "Chat_openui_agent_welcome_screen__animated",
+        "Chat_openui_agent_welcome_screen__image",
+        "Chat_openui_agent_welcome_screen__with_composer",
+        "Chat_openui_agent_welcome_screen__header",
+        "Chat_openui_agent_welcome_screen__image_container",
+        "Chat_openui_agent_welcome_screen__content",
+        "Chat_openui_agent_welcome_screen__title",
+        "Chat_openui_agent_welcome_screen__description",
+        "Chat_openui_agent_welcome_screen__composer_starters_container",
+        "Chat_openui_agent_welcome_screen__desktop_composer",
+        "Chat_openui_agent_welcome_screen__desktop_starters"
+      ]
+    },
+    {
+      "file": "Workspace.tsx",
+      "elements": 12,
+      "definitions": [
+        "Chat_openui_agent_workspace_sidebar__overlay",
+        "Chat_openui_agent_workspace_sidebar__overlay__collapsed",
+        "Chat_openui_agent_workspace_sidebar",
+        "Chat_openui_agent_workspace_sidebar__tabs",
+        "Chat_openui_agent_workspace_sidebar__tab_indicator",
+        "Chat_openui_agent_workspace_sidebar__tab",
+        "Chat_openui_agent_workspace_sidebar__tab__active",
+        "Chat_openui_agent_workspace_sidebar__empty",
+        "Chat_openui_agent_workspace_sidebar__collapsed",
+        "Chat_openui_agent_workspace_sidebar__header",
+        "Chat_openui_agent_workspace_sidebar__title",
+        "Chat_openui_agent_workspace_sidebar__content",
+        "Chat_openui_agent_workspace_sidebar__section_empty",
+        "Chat_openui_agent_workspace_sidebar__list",
+        "Chat_openui_agent_workspace_sidebar__item",
+        "Chat_openui_agent_workspace_sidebar__item__active",
+        "Chat_openui_agent_workspace_sidebar__item_icon",
+        "Chat_openui_agent_workspace_sidebar__item_body",
+        "Chat_openui_agent_workspace_sidebar__item_label",
+        "Chat_openui_agent_workspace_sidebar__item_meta"
+      ]
+    },
+    {
+      "file": "_shared/AgentInterfaceTooltip.tsx",
+      "elements": 1,
+      "definitions": [
+        "Chat_openui_agent_tooltip"
+      ]
+    },
+    {
+      "file": "_shared/GalleryHorizontalEndIcon.tsx",
+      "elements": 0,
+      "definitions": []
+    },
+    {
+      "file": "_shared/detailed-view/DetailedViewOverlay.tsx",
+      "elements": 1,
+      "definitions": [
+        "Chat_openui_detailed_view_overlay",
+        "Chat_openui_detailed_view_overlay__exiting"
+      ]
+    },
+    {
+      "file": "_shared/detailed-view/DetailedViewPanel.tsx",
+      "elements": 3,
+      "definitions": [
+        "Chat_openui_detailed_view_panel__header",
+        "Chat_openui_detailed_view_panel__title",
+        "Chat_openui_detailed_view_panel"
+      ]
+    },
+    {
+      "file": "_shared/detailed-view/DetailedViewPortalTarget.tsx",
+      "elements": 0,
+      "definitions": []
+    },
+    {
+      "file": "_shared/labelsContext.tsx",
+      "elements": 0,
+      "definitions": []
+    },
+    {
+      "file": "_shared/navContext.tsx",
+      "elements": 0,
+      "definitions": []
+    },
+    {
+      "file": "_shared/startersContext.tsx",
+      "elements": 0,
+      "definitions": []
+    },
+    {
+      "file": "_shared/store/store.tsx",
+      "elements": 0,
+      "definitions": []
+    },
+    {
+      "file": "components/AmbientLoader.tsx",
+      "elements": 3,
+      "definitions": [
+        "Chat_openui_agent_ambient_loader",
+        "Chat_openui_agent_ambient_loader__status",
+        "Chat_openui_agent_ambient_loader__label"
+      ]
+    },
+    {
+      "file": "components/Composer.tsx",
+      "elements": 4,
+      "definitions": [
+        "Chat_openui_agent_thread_composer",
+        "Chat_openui_agent_thread_composer__input_wrapper",
+        "Chat_openui_agent_thread_composer__input",
+        "Chat_openui_agent_thread_composer__action_bar"
+      ]
+    },
+    {
+      "file": "components/DesktopWelcomeComposer.tsx",
+      "elements": 3,
+      "definitions": [
+        "Chat_openui_agent_desktop_welcome_composer",
+        "Chat_openui_agent_desktop_welcome_composer__input",
+        "Chat_openui_agent_desktop_welcome_composer__action_bar"
+      ]
+    },
+    {
+      "file": "components/Mascot.tsx",
+      "elements": 1,
+      "definitions": [
+        "Chat_openui_agent_mascot"
+      ]
+    },
+    {
+      "file": "components/MascotLoader.tsx",
+      "elements": 2,
+      "definitions": [
+        "Chat_openui_agent_mascot_loader",
+        "Chat_openui_agent_mascot_loader__body"
+      ]
+    },
+    {
+      "file": "components/ScrollToLatest.tsx",
+      "elements": 2,
+      "definitions": [
+        "Chat_openui_agent_thread_scroll_latest",
+        "Chat_openui_agent_thread_scroll_latest__arrow"
+      ]
+    },
+    {
+      "file": "components/WelcomeMascot.tsx",
+      "elements": 3,
+      "definitions": [
+        "Chat_openui_agent_welcome_mascot",
+        "Chat_openui_agent_welcome_mascot__body__squish",
+        "Chat_openui_agent_welcome_mascot__lid"
+      ]
+    },
+    {
+      "file": "components/WelcomePrefillChips.tsx",
+      "elements": 6,
+      "definitions": [
+        "Chat_openui_agent_prefill_chip",
+        "Chat_openui_agent_prefill_chip__icon",
+        "Chat_openui_agent_prefill_chip__label",
+        "Chat_openui_agent_welcome_screen__desktop_starters",
+        "Chat_openui_agent_welcome_screen__starters_layers",
+        "Chat_openui_agent_welcome_screen__starters_layer",
+        "Chat_openui_agent_welcome_screen__chip_row"
+      ]
+    },
+    {
+      "file": "../OpenUIChat/GenUIUserMessage.tsx",
+      "elements": 9,
+      "definitions": [
+        "Chat_openui_genui_user_message__form_state",
+        "Chat_openui_genui_user_message__form_state_header",
+        "Chat_openui_genui_user_message__form_state_label",
+        "Chat_openui_genui_user_message__form_state_chevron__expanded",
+        "Chat_openui_genui_user_message__form_state_content",
+        "Chat_openui_genui_user_message__form_field",
+        "Chat_openui_genui_user_message__form_field_label",
+        "Chat_openui_genui_user_message__form_field_value",
+        "Chat_openui_genui_user_message",
+        "Chat_openui_genui_user_message__form_state_chevron"
+      ]
+    }
+  ],
+  "unassigned": []
+}

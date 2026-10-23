@@ -1,0 +1,1 @@
+[{"selector":"__SCOPE__.openui-agent-thread-header__title","properties":{"display":"flex","align-items":"center","gap":"var(--openui-space-xs, 6px)","min-width":"0","max-width":"360px","color":"var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))","font-size":"14px","line-height":"20px"},"conditions":[],"disabledCursor":false}]

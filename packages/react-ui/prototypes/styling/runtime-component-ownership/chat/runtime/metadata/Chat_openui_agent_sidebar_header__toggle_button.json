@@ -1,0 +1,1 @@
+[{"selector":"__SCOPE__.openui-agent-sidebar-header__toggle-button","properties":{"transition":"opacity 140ms cubic-bezier(0.22, 1, 0.36, 1)"},"conditions":[],"disabledCursor":false},{"selector":"__SCOPE__.openui-agent-sidebar-header__toggle-button","properties":{"transition":"none"},"conditions":["@media (prefers-reduced-motion: reduce)"],"disabledCursor":false}]

@@ -1,0 +1,923 @@
+{
+  "method": "Static source-module ownership, no response scanning. One self scope; genuine descendant selectors retained. Each selected family must have actual JSX attachments.",
+  "units": {
+    "Card": {
+      "files": [
+        "Card/card.scss"
+      ],
+      "rootClasses": [
+        "openui-card",
+        "openui-card-card",
+        "openui-card-clear",
+        "openui-card-sunk",
+        "openui-card-standard",
+        "openui-card-full"
+      ],
+      "selectors": 6
+    },
+    "Button": {
+      "files": [
+        "Button/button.scss"
+      ],
+      "rootClasses": [
+        "openui-button-base",
+        "openui-button-base-primary",
+        "openui-button-base-secondary",
+        "openui-button-base-tertiary",
+        "openui-button-base-destructive-primary",
+        "openui-button-base-destructive-secondary",
+        "openui-button-base-destructive-tertiary",
+        "openui-button-base-extra-small",
+        "openui-button-base-small",
+        "openui-button-base-medium",
+        "openui-button-base-large"
+      ],
+      "selectors": 30
+    },
+    "Input": {
+      "files": [
+        "Input/input.scss"
+      ],
+      "rootClasses": [
+        "openui-input",
+        "openui-input-small",
+        "openui-input-medium",
+        "openui-input-large",
+        "openui-input-error"
+      ],
+      "selectors": 11
+    },
+    "CardHeader": {
+      "files": [
+        "CardHeader/cardHeader.scss"
+      ],
+      "rootClasses": [
+        "openui-header",
+        "openui-header-top",
+        "openui-header-top-left",
+        "openui-header-top-left-icon",
+        "openui-header-top-right",
+        "openui-header-bottom"
+      ],
+      "selectors": 6
+    },
+    "Buttons": {
+      "files": [
+        "Buttons/buttons.scss"
+      ],
+      "rootClasses": [
+        "openui-buttons",
+        "openui-buttons-horizontal",
+        "openui-buttons-vertical"
+      ],
+      "selectors": 3
+    },
+    "FormControl": {
+      "files": [
+        "FormControl/formControl.scss"
+      ],
+      "rootClasses": [
+        "openui-form-control"
+      ],
+      "selectors": 1
+    },
+    "Hint": {
+      "files": [
+        "FormControl/Hint/hint.scss"
+      ],
+      "rootClasses": [
+        "openui-hint",
+        "openui-hint-error"
+      ],
+      "selectors": 2
+    },
+    "Label": {
+      "files": [
+        "Label/label.scss"
+      ],
+      "rootClasses": [
+        "openui-label",
+        "openui-label-disabled",
+        "openui-label-required-asterisk"
+      ],
+      "selectors": 3
+    },
+    "TextContent": {
+      "files": [
+        "TextContentWrapper/textContentWrapper.scss"
+      ],
+      "rootClasses": [
+        "openui-text-content-markdown",
+        "openui-text-content-markdown-dark-mode",
+        "openui-text-content"
+      ],
+      "selectors": 56
+    },
+    "Markdown": {
+      "files": [
+        "MarkDownRenderer/markDownRenderer.scss"
+      ],
+      "rootClasses": [
+        "openui-markdown-renderer-code",
+        "openui-markdown-renderer-card",
+        "openui-markdown-renderer-card-sunk",
+        "openui-markdown-renderer-link",
+        "openui-markdown-renderer"
+      ],
+      "selectors": 52
+    },
+    "Table": {
+      "files": [
+        "Table/table.scss"
+      ],
+      "rootClasses": [
+        "openui-table-container",
+        "openui-table",
+        "openui-table-footer",
+        "openui-table-cell",
+        "openui-table-head",
+        "openui-table-row",
+        "openui-table-align-left",
+        "openui-table-align-right",
+        "openui-table-align-center",
+        "openui-scrollable-table-wrapper",
+        "openui-scrollable-table-scroll-container",
+        "openui-scrollable-table-control",
+        "openui-scrollable-table-control-left",
+        "openui-scrollable-table-control-right",
+        "openui-scrollable-table-control-disabled"
+      ],
+      "selectors": 26
+    },
+    "BarChart": {
+      "files": [
+        "Charts/BarChart/barChart.scss"
+      ],
+      "rootClasses": [
+        "openui-chart-empty",
+        "openui-chart-empty-text",
+        "openui-cartesian-y-axis-label",
+        "openui-cartesian-x-axis-label",
+        "openui-bar-chart-container",
+        "openui-bar-chart-container-inner",
+        "openui-bar-chart-y-axis-container",
+        "openui-bar-chart-main-container",
+        "openui-bar-chart-grid",
+        "openui-bar-chart-y-tick",
+        "openui-bar-chart-x-tick",
+        "openui-bar-chart-x-tick-angled",
+        "openui-bar-chart-hover-highlight",
+        "openui-bar-chart-internal-line",
+        "openui-bar-chart-bar--animated"
+      ],
+      "selectors": 19
+    },
+    "LineChart": {
+      "files": [
+        "Charts/LineChart/lineChart.scss"
+      ],
+      "rootClasses": [
+        "openui-chart-empty",
+        "openui-chart-empty-text",
+        "openui-cartesian-y-axis-label",
+        "openui-cartesian-x-axis-label",
+        "openui-line-chart-container",
+        "openui-line-chart-container-inner",
+        "openui-line-chart-y-axis-container",
+        "openui-line-chart-main-container",
+        "openui-line-chart-grid",
+        "openui-line-chart-y-tick",
+        "openui-line-chart-x-tick",
+        "openui-line-chart-x-tick-angled",
+        "openui-line-chart-crosshair-line",
+        "openui-line-chart-active-dot-outer",
+        "openui-line-chart-active-dot-inner",
+        "openui-line-chart-line",
+        "openui-line-chart-dot",
+        "openui-line-chart-line--animated"
+      ],
+      "selectors": 21
+    },
+    "PieChart": {
+      "files": [
+        "Charts/PieChart/pieChart.scss"
+      ],
+      "rootClasses": [
+        "openui-chart-empty",
+        "openui-chart-empty-text",
+        "openui-cartesian-y-axis-label",
+        "openui-cartesian-x-axis-label",
+        "openui-pie-chart-container",
+        "openui-pie-chart-svg-wrapper",
+        "openui-pie-chart-track",
+        "openui-pie-chart-slice--animated"
+      ],
+      "selectors": 8
+    },
+    "DefaultLegend": {
+      "files": [
+        "Charts/shared/core/DefaultLegend/defaultLegend.scss"
+      ],
+      "rootClasses": [
+        "openui-chart-legend-container",
+        "openui-chart-legend-axis-label-container",
+        "openui-chart-legend-axis-label",
+        "openui-chart-legend-axis-label-text",
+        "openui-chart-legend",
+        "openui-chart-legend--bottom",
+        "openui-chart-legend--collapsed",
+        "openui-chart-legend--expanded",
+        "openui-chart-legend-item",
+        "openui-chart-legend-item-indicator",
+        "openui-chart-legend-item-label",
+        "openui-chart-legend-toggle-button",
+        "openui-chart-legend-toggle-button-icon",
+        "openui-chart-legend-item-label-container",
+        "openui-chart-legend-item-percentage"
+      ],
+      "selectors": 16
+    },
+    "StackedLegend": {
+      "files": [
+        "Charts/shared/core/StackedLegend/stackedLegend.scss"
+      ],
+      "rootClasses": [
+        "openui-stacked-legend-container",
+        "openui-stacked-legend-header",
+        "openui-stacked-legend-header-buttons",
+        "openui-stacked-legend-header-title",
+        "openui-stacked-legend-scroll-button",
+        "openui-stacked-legend",
+        "openui-stacked-legend__item",
+        "openui-stacked-legend__item--active",
+        "openui-stacked-legend__item-label",
+        "openui-stacked-legend__item-color-container",
+        "openui-stacked-legend__item-color",
+        "openui-stacked-legend__item-label-text",
+        "openui-stacked-legend__item-value",
+        "openui-stacked-legend-show-more-button",
+        "openui-stacked-legend-separator",
+        "openui-chart-with-stacked-legend",
+        "openui-chart-with-stacked-legend--column",
+        "openui-chart-with-stacked-legend--row",
+        "openui-chart-with-stacked-legend__chart",
+        "openui-chart-with-stacked-legend__legend"
+      ],
+      "selectors": 29
+    },
+    "ScrollButtonsHorizontal": {
+      "files": [
+        "Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.scss"
+      ],
+      "rootClasses": [
+        "openui-chart-horizontal-scroll-buttons-container"
+      ],
+      "selectors": 5
+    },
+    "ScrollButtonsVertical": {
+      "files": [
+        "Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.scss"
+      ],
+      "rootClasses": [
+        "openui-chart-vertical-scroll-buttons-container"
+      ],
+      "selectors": 3
+    },
+    "PortalTooltip": {
+      "files": [
+        "Charts/shared/core/PortalTooltip/portalTooltip.scss"
+      ],
+      "rootClasses": [
+        "openui-portal-tooltip",
+        "openui-chart-tooltip",
+        "openui-chart-tooltip-label",
+        "openui-chart-tooltip-label-heavy",
+        "openui-chart-tooltip-content",
+        "openui-chart-tooltip-content-item",
+        "openui-chart-tooltip-content-item--dot",
+        "openui-chart-tooltip-content-indicator",
+        "openui-chart-tooltip-content-indicator--dot",
+        "openui-chart-tooltip-content-indicator--line",
+        "openui-chart-tooltip-content-indicator--dashed",
+        "openui-chart-tooltip-content-indicator--two-items",
+        "openui-chart-tooltip-content-value-wrapper",
+        "openui-chart-tooltip-content-value-wrapper--nested",
+        "openui-chart-tooltip-content-value-wrapper--standard",
+        "openui-chart-tooltip-content-value-wrapper--vertical",
+        "openui-chart-tooltip-content-label",
+        "openui-chart-tooltip-content-value",
+        "openui-chart-tooltip-content-item-separator",
+        "openui-chart-tooltip-content-view-more"
+      ],
+      "selectors": 23
+    },
+    "IconButton": {
+      "files": [
+        "IconButton/iconButton.scss"
+      ],
+      "rootClasses": [
+        "openui-icon-button",
+        "openui-icon-button-icon",
+        "openui-icon-button-primary",
+        "openui-icon-button-secondary",
+        "openui-icon-button-tertiary",
+        "openui-icon-button-destructive-primary",
+        "openui-icon-button-destructive-secondary",
+        "openui-icon-button-destructive-tertiary",
+        "openui-icon-button-3-extra-small",
+        "openui-icon-button-2-extra-small",
+        "openui-icon-button-extra-small",
+        "openui-icon-button-small",
+        "openui-icon-button-medium",
+        "openui-icon-button-large",
+        "openui-icon-button-square",
+        "openui-icon-button-circle"
+      ],
+      "selectors": 45
+    },
+    "TextArea": {
+      "files": [
+        "TextArea/textArea.scss"
+      ],
+      "rootClasses": [
+        "openui-textarea",
+        "openui-textarea-error"
+      ],
+      "selectors": 7
+    },
+    "CheckBoxGroup": {
+      "files": [
+        "CheckBoxGroup/checkBoxGroup.scss"
+      ],
+      "rootClasses": [
+        "openui-checkbox-group",
+        "openui-checkbox-group-clear",
+        "openui-checkbox-group-card",
+        "openui-checkbox-group-sunk"
+      ],
+      "selectors": 4
+    },
+    "CheckBoxItem": {
+      "files": [
+        "CheckBoxItem/checkBoxItem.scss"
+      ],
+      "rootClasses": [
+        "openui-checkbox-item-container",
+        "openui-checkbox-item-root",
+        "openui-checkbox-item-indicator",
+        "openui-checkbox-item-content",
+        "openui-checkbox-item-label",
+        "openui-checkbox-item-description"
+      ],
+      "selectors": 11
+    },
+    "SwitchGroup": {
+      "files": [
+        "SwitchGroup/switchGroup.scss"
+      ],
+      "rootClasses": [
+        "openui-switch-group",
+        "openui-switch-group-clear",
+        "openui-switch-group-card",
+        "openui-switch-group-sunk"
+      ],
+      "selectors": 4
+    },
+    "SwitchItem": {
+      "files": [
+        "SwitchItem/switchItem.scss"
+      ],
+      "rootClasses": [
+        "openui-switch-item-container",
+        "openui-switch-item-root",
+        "openui-switch-item-thumb",
+        "openui-switch-item-label",
+        "openui-switch-item-description"
+      ],
+      "selectors": 10
+    },
+    "RadioGroup": {
+      "files": [
+        "RadioGroup/radioGroup.scss"
+      ],
+      "rootClasses": [
+        "openui-radio-group",
+        "openui-radio-group-clear",
+        "openui-radio-group-card",
+        "openui-radio-group-sunk"
+      ],
+      "selectors": 4
+    },
+    "RadioItem": {
+      "files": [
+        "RadioItem/radioItem.scss"
+      ],
+      "rootClasses": [
+        "openui-radio-item-container",
+        "openui-radio-item-root",
+        "openui-radio-item-svg",
+        "openui-radio-item-content",
+        "openui-radio-item-label",
+        "openui-radio-item-description"
+      ],
+      "selectors": 18
+    },
+    "Select": {
+      "files": [
+        "Select/select.scss"
+      ],
+      "rootClasses": [
+        "openui-select-trigger",
+        "openui-select-trigger-sm",
+        "openui-select-trigger-md",
+        "openui-select-trigger-lg",
+        "openui-select-trigger-icon",
+        "openui-select-content",
+        "openui-select-content-sm",
+        "openui-select-viewport",
+        "openui-select-group",
+        "openui-select-label",
+        "openui-select-item",
+        "openui-select-item--with-tick",
+        "openui-select-item-check-wrapper",
+        "openui-select-item-check-icon",
+        "openui-select-item-text",
+        "openui-select-item-value",
+        "openui-select-separator"
+      ],
+      "selectors": 36
+    },
+    "Tabs": {
+      "files": [
+        "Tabs/tabs.scss"
+      ],
+      "rootClasses": [
+        "openui-tabs",
+        "openui-tabs-clear",
+        "openui-tabs-list-container",
+        "openui-tabs-indicator",
+        "openui-tabs-scroll-button-container-left",
+        "openui-tabs-scroll-button-container-right",
+        "openui-tabs-scroll-button",
+        "openui-tabs-list",
+        "openui-tabs-trigger",
+        "openui-tabs-trigger-content",
+        "openui-tabs-trigger-text",
+        "openui-tabs-trigger-subtext",
+        "openui-tabs-trigger-icon",
+        "openui-tabs-trigger-image",
+        "openui-tabs-list--title",
+        "openui-tabs-list--icon-title",
+        "openui-tabs-list--image-title",
+        "openui-tabs-list--icon-title-subtext",
+        "openui-tabs-list--image-title-subtext",
+        "openui-tabs-content",
+        "openui-tabs-content-inner"
+      ],
+      "selectors": 46
+    },
+    "Accordion": {
+      "files": [
+        "Accordion/accordion.scss"
+      ],
+      "rootClasses": [
+        "openui-accordion",
+        "openui-accordion-clear",
+        "openui-accordion-card",
+        "openui-accordion-sunk",
+        "openui-accordion-item",
+        "openui-accordion-header",
+        "openui-accordion-trigger",
+        "openui-accordion-trigger-content",
+        "openui-accordion-trigger-content-icon",
+        "openui-accordion-trigger-icon",
+        "openui-accordion-content",
+        "openui-accordion-content-wrapper"
+      ],
+      "selectors": 27
+    },
+    "Separator": {
+      "files": [
+        "Separator/separator.scss"
+      ],
+      "rootClasses": [
+        "openui-separator"
+      ],
+      "selectors": 3
+    },
+    "Modal": {
+      "files": [
+        "Modal/Modal.scss"
+      ],
+      "rootClasses": [
+        "openui-modal-root",
+        "openui-modal-overlay",
+        "openui-modal-content",
+        "openui-modal-sm",
+        "openui-modal-md",
+        "openui-modal-lg",
+        "openui-modal-header",
+        "openui-modal-title",
+        "openui-modal-close",
+        "openui-modal-body",
+        "openui-modal-sr-only"
+      ],
+      "selectors": 13
+    },
+    "Tooltip": {
+      "files": [
+        "TooltipWrapper/tooltipWrapper.scss"
+      ],
+      "rootClasses": [
+        "openui-tooltip-body",
+        "openui-tooltip-heading",
+        "openui-tooltip-text-content",
+        "openui-tooltip-content"
+      ],
+      "selectors": 8
+    },
+    "AssistantMessage": {
+      "files": [
+        "OpenUIChat/assistantMessage.scss"
+      ],
+      "rootClasses": [
+        "openui-shell-thread-message-assistant",
+        "openui-agent-thread-container--detailed-view-active",
+        "openui-shell-thread-message-assistant__content",
+        "openui-shell-thread-message-assistant__text",
+        "openui-shell-thread-message-assistant__logo",
+        "openui-agent-container--mobile",
+        "openui-shell-thread-message-user",
+        "openui-shell-thread-message-user__content"
+      ],
+      "selectors": 11
+    }
+  },
+  "modules": [
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Card/Card.tsx",
+      "attachments": 1,
+      "definitions": [
+        "Card"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Button/Button.tsx",
+      "attachments": 1,
+      "definitions": [
+        "Button"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Input/Input.tsx",
+      "attachments": 1,
+      "definitions": [
+        "Input"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/CardHeader/CardHeader.tsx",
+      "attachments": 6,
+      "definitions": [
+        "CardHeader"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Buttons/Buttons.tsx",
+      "attachments": 1,
+      "definitions": [
+        "Buttons"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/FormControl/FormControl.tsx",
+      "attachments": 1,
+      "definitions": [
+        "FormControl"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/FormControl/Hint/Hint.tsx",
+      "attachments": 1,
+      "definitions": [
+        "Hint"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Label/Label.tsx",
+      "attachments": 2,
+      "definitions": [
+        "Label"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/TextContentWrapper/TextContentWrapper.tsx",
+      "attachments": 2,
+      "definitions": [
+        "TextContent"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/MarkDownRenderer/MarkDownRenderer.tsx",
+      "attachments": 3,
+      "definitions": [
+        "Markdown"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Table/Table.tsx",
+      "attachments": 15,
+      "definitions": [
+        "Table"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/BarChart.tsx",
+      "attachments": 3,
+      "definitions": [
+        "BarChart"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/BarChartCondensed.tsx",
+      "attachments": 0,
+      "definitions": [
+        "BarChart"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/HorizontalBarChart.tsx",
+      "attachments": 0,
+      "definitions": [
+        "BarChart"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/BarSeries.tsx",
+      "attachments": 6,
+      "definitions": [
+        "BarChart"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/Crosshair.tsx",
+      "attachments": 1,
+      "definitions": [
+        "BarChart"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/HorizontalBarChartImpl.tsx",
+      "attachments": 7,
+      "definitions": [
+        "BarChart"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/HorizontalBarSeries.tsx",
+      "attachments": 5,
+      "definitions": [
+        "BarChart"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/HorizontalCrosshair.tsx",
+      "attachments": 1,
+      "definitions": [
+        "BarChart"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/LineChart/LineChart.tsx",
+      "attachments": 3,
+      "definitions": [
+        "LineChart"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/LineChart/LineChartCondensed.tsx",
+      "attachments": 0,
+      "definitions": [
+        "LineChart"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/LineChart/parts/LineSeries.tsx",
+      "attachments": 3,
+      "definitions": [
+        "LineChart"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/PieChart/PieChart.tsx",
+      "attachments": 4,
+      "definitions": [
+        "PieChart"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/PieChart/parts/PieSlices.tsx",
+      "attachments": 3,
+      "definitions": [
+        "PieChart"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/shared/core/DefaultLegend/DefaultLegend.tsx",
+      "attachments": 13,
+      "definitions": [
+        "DefaultLegend"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/shared/core/StackedLegend/ChartWithStackedLegend.tsx",
+      "attachments": 3,
+      "definitions": [
+        "StackedLegend"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/shared/core/StackedLegend/StackedLegend.tsx",
+      "attachments": 0,
+      "definitions": [
+        "StackedLegend"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/shared/core/StackedLegend/StackedLegendView.tsx",
+      "attachments": 15,
+      "definitions": [
+        "StackedLegend"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/shared/cartesian/ScrollButtonsHorizontal/ScrollButtonsHorizontal.tsx",
+      "attachments": 3,
+      "definitions": [
+        "ScrollButtonsHorizontal"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/shared/cartesian/ScrollButtonsVertical/ScrollButtonsVertical.tsx",
+      "attachments": 3,
+      "definitions": [
+        "ScrollButtonsVertical"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/shared/core/PortalTooltip/ChartTooltip.tsx",
+      "attachments": 13,
+      "definitions": [
+        "PortalTooltip"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/IconButton/IconButton.tsx",
+      "attachments": 2,
+      "definitions": [
+        "IconButton"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/TextArea/TextArea.tsx",
+      "attachments": 1,
+      "definitions": [
+        "TextArea"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/CheckBoxGroup/CheckBoxGroup.tsx",
+      "attachments": 1,
+      "definitions": [
+        "CheckBoxGroup"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/CheckBoxItem/CheckBoxItem.tsx",
+      "attachments": 6,
+      "definitions": [
+        "CheckBoxItem"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/SwitchGroup/SwitchGroup.tsx",
+      "attachments": 1,
+      "definitions": [
+        "SwitchGroup"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/SwitchItem/SwitchItem.tsx",
+      "attachments": 6,
+      "definitions": [
+        "SwitchItem"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/RadioGroup/RadioGroup.tsx",
+      "attachments": 1,
+      "definitions": [
+        "RadioGroup"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/RadioItem/RadioItem.tsx",
+      "attachments": 9,
+      "definitions": [
+        "RadioItem"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Select/Select.tsx",
+      "attachments": 12,
+      "definitions": [
+        "Select"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Tabs/Tabs.tsx",
+      "attachments": 16,
+      "definitions": [
+        "Tabs"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Accordion/Accordion.tsx",
+      "attachments": 9,
+      "definitions": [
+        "Accordion"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Separator/Separator.tsx",
+      "attachments": 1,
+      "definitions": [
+        "Separator"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Modal/Modal.tsx",
+      "attachments": 7,
+      "definitions": [
+        "Modal"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/TooltipWrapper/TooltipWrapper.tsx",
+      "attachments": 4,
+      "definitions": [
+        "Tooltip"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/OpenUIChat/AssistantMessageContainer.tsx",
+      "attachments": 3,
+      "definitions": [
+        "AssistantMessage"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/OpenUIChat/CustomComposerAdapter.tsx",
+      "attachments": 0,
+      "definitions": [
+        "AssistantMessage"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/OpenUIChat/GenUIAssistantMessage.tsx",
+      "attachments": 0,
+      "definitions": [
+        "AssistantMessage"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/OpenUIChat/GenUIUserMessage.tsx",
+      "attachments": 11,
+      "definitions": [
+        "AssistantMessage"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/OpenUIChat/ShareThread.tsx",
+      "attachments": 0,
+      "definitions": [
+        "AssistantMessage"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/OpenUIChat/ShareThreadModal.tsx",
+      "attachments": 13,
+      "definitions": [
+        "AssistantMessage"
+      ]
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/OpenUIChat/withChatProvider.tsx",
+      "attachments": 0,
+      "definitions": [
+        "AssistantMessage"
+      ]
+    }
+  ],
+  "unassigned": []
+}

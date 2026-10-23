@@ -1,0 +1,951 @@
+{
+  "note": "Gross RSS sums resident process pages, may double count shared memory; not CSS-only attribution. CDP inventory includes browser/renderers/GPU/services, excludes external Node harness driver.",
+  "arms": [
+    {
+      "arm": "runtime",
+      "completed": 774,
+      "completedByScenario": {
+        "chat": 387,
+        "dashboard": 387
+      },
+      "pendingCancels": 44,
+      "partialCancels": 42,
+      "elapsedMs": 300020,
+      "warmupCompleted": 8,
+      "warmupPending": 2,
+      "warmupPartial": 2,
+      "excludedNormalizationStreams": 4,
+      "retained": [
+        {
+          "scenario": "chat",
+          "warm": 25945432,
+          "idle": 27440436,
+          "delta": 1495004,
+          "relativePercent": 5.7621087211035835,
+          "budgetBytes": 5242880,
+          "needsInvestigation": false,
+          "domDelta": 0,
+          "listenerDelta": 0,
+          "styleByteDelta": 0,
+          "styleDelta": 0,
+          "ruleDelta": 0
+        },
+        {
+          "scenario": "dashboard",
+          "warm": 26008076,
+          "idle": 27391920,
+          "delta": 1383844,
+          "relativePercent": 5.320824193223674,
+          "budgetBytes": 5242880,
+          "needsInvestigation": false,
+          "domDelta": 0,
+          "listenerDelta": 0,
+          "styleByteDelta": 0,
+          "styleDelta": 0,
+          "ruleDelta": 0
+        }
+      ],
+      "rss": [
+        {
+          "label": "warm-idle-unmounted-gc",
+          "elapsedMs": 7293,
+          "gross": 1500807168,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 244678656
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 905822208
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 152289280
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 113197056
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 84819968
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-30000",
+          "elapsedMs": 30036,
+          "gross": 1836138496,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 246087680
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1233780736
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 157958144
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 113459200
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 84852736
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-60000",
+          "elapsedMs": 60259,
+          "gross": 1974026240,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 246824960
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1369374720
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 158760960
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 113999872
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 85065728
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-90000",
+          "elapsedMs": 90070,
+          "gross": 1988820992,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 246988800
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1383170048
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 159498240
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 114098176
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 85065728
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-120000",
+          "elapsedMs": 120183,
+          "gross": 1988214784,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 247545856
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1380712448
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 160661504
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 114229248
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 85065728
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-150000",
+          "elapsedMs": 150074,
+          "gross": 2023440384,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 247545856
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1415233536
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 161349632
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 114245632
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 85065728
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-180000",
+          "elapsedMs": 180028,
+          "gross": 2027913216,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 248676352
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1417756672
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 162136064
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 114278400
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 85065728
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-210000",
+          "elapsedMs": 210221,
+          "gross": 1906999296,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 248676352
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1296089088
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 162889728
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 114278400
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 85065728
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-240000",
+          "elapsedMs": 240310,
+          "gross": 1947713536,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 248889344
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1335721984
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 163561472
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 114475008
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 85065728
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-270000",
+          "elapsedMs": 270183,
+          "gross": 1997520896,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 248905728
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1384742912
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 164265984
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 114540544
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 85065728
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-300000",
+          "elapsedMs": 300017,
+          "gross": 2015297536,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 238338048
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1438973952
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 156319744
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 103038976
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 78626816
+            }
+          }
+        },
+        {
+          "label": "terminal-unmounted-natural",
+          "elapsedMs": 300033,
+          "gross": 2015559680,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 238354432
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1439219712
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 156319744
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 103038976
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 78626816
+            }
+          }
+        },
+        {
+          "label": "terminal-canonical-unmounted-natural",
+          "elapsedMs": 300823,
+          "gross": 2016608256,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 238354432
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1440219136
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 156368896
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 103038976
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 78626816
+            }
+          }
+        },
+        {
+          "label": "terminal-idle-unmounted-gc",
+          "elapsedMs": 304228,
+          "gross": 1754169344,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 238354432
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1182892032
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 151257088
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 103038976
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 78626816
+            }
+          }
+        }
+      ],
+      "styles": [
+        {
+          "scenario": "chat",
+          "warmBytes": 326245,
+          "idleBytes": 326245,
+          "warmCounters": {
+            "compileCount": 109,
+            "lookupCalls": 10975,
+            "compiledCSSBytes": 326876,
+            "resourceDefinitions": 109,
+            "renderCalls": 10391,
+            "resourceEmits": 9982,
+            "compileMs": 11.900000274181366
+          },
+          "idleCounters": {
+            "compileCount": 109,
+            "lookupCalls": 843360,
+            "compiledCSSBytes": 326876,
+            "resourceDefinitions": 109,
+            "renderCalls": 803332,
+            "resourceEmits": 763183,
+            "compileMs": 11.900000274181366
+          }
+        },
+        {
+          "scenario": "dashboard",
+          "warmBytes": 326245,
+          "idleBytes": 326245,
+          "warmCounters": {
+            "compileCount": 109,
+            "lookupCalls": 26842,
+            "compiledCSSBytes": 326876,
+            "resourceDefinitions": 109,
+            "renderCalls": 26212,
+            "resourceEmits": 21017,
+            "compileMs": 7.600000023841858
+          },
+          "idleCounters": {
+            "compileCount": 109,
+            "lookupCalls": 2093771,
+            "compiledCSSBytes": 326876,
+            "resourceDefinitions": 109,
+            "renderCalls": 2050467,
+            "resourceEmits": 1631163,
+            "compileMs": 7.600000023841858
+          }
+        }
+      ]
+    },
+    {
+      "arm": "baseline",
+      "completed": 788,
+      "completedByScenario": {
+        "chat": 394,
+        "dashboard": 394
+      },
+      "pendingCancels": 44,
+      "partialCancels": 43,
+      "elapsedMs": 300094,
+      "warmupCompleted": 8,
+      "warmupPending": 2,
+      "warmupPartial": 2,
+      "excludedNormalizationStreams": 4,
+      "retained": [
+        {
+          "scenario": "chat",
+          "warm": 24490556,
+          "idle": 25893080,
+          "delta": 1402524,
+          "relativePercent": 5.726795259364467,
+          "budgetBytes": 5242880,
+          "needsInvestigation": false,
+          "domDelta": 0,
+          "listenerDelta": 0,
+          "styleByteDelta": 0,
+          "styleDelta": 0,
+          "ruleDelta": 0
+        },
+        {
+          "scenario": "dashboard",
+          "warm": 24533700,
+          "idle": 25881096,
+          "delta": 1347396,
+          "relativePercent": 5.492021179031291,
+          "budgetBytes": 5242880,
+          "needsInvestigation": false,
+          "domDelta": 0,
+          "listenerDelta": 0,
+          "styleByteDelta": 0,
+          "styleDelta": 0,
+          "ruleDelta": 0
+        }
+      ],
+      "rss": [
+        {
+          "label": "warm-idle-unmounted-gc",
+          "elapsedMs": 7219,
+          "gross": 1490747392,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 247283712
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 892665856
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 152698880
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 113344512
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 84754432
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-30000",
+          "elapsedMs": 30155,
+          "gross": 1853489152,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 248709120
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1247428608
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 158859264
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 113704960
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 84787200
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-60000",
+          "elapsedMs": 60260,
+          "gross": 1894727680,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 249348096
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1286373376
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 159793152
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 114212864
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 85000192
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-90000",
+          "elapsedMs": 90300,
+          "gross": 1906819072,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 249462784
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1297727488
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 160366592
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 114262016
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 85000192
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-120000",
+          "elapsedMs": 120077,
+          "gross": 1933492224,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 250134528
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1322287104
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 161611776
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 114458624
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 85000192
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-150000",
+          "elapsedMs": 150164,
+          "gross": 1970356224,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 250085376
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1358397440
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 162414592
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 114458624
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 85000192
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-180000",
+          "elapsedMs": 180275,
+          "gross": 1989296128,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 251150336
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1375666176
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 162988032
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 114491392
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 85000192
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-210000",
+          "elapsedMs": 210303,
+          "gross": 1993375744,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 251101184
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1379041280
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 163708928
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 114524160
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 85000192
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-240000",
+          "elapsedMs": 240105,
+          "gross": 1902788608,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 238600192
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1318535168
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 157450240
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 107790336
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 80412672
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-270000",
+          "elapsedMs": 270276,
+          "gross": 1947467776,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 238616576
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1362591744
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 158056448
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 107790336
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 80412672
+            }
+          }
+        },
+        {
+          "label": "natural-unmounted-300000",
+          "elapsedMs": 300090,
+          "gross": 1776992256,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 211533824
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1270890496
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 131579904
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 95174656
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 67813376
+            }
+          }
+        },
+        {
+          "label": "terminal-unmounted-natural",
+          "elapsedMs": 300105,
+          "gross": 1777025024,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 211533824
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1270923264
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 131579904
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 95174656
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 67813376
+            }
+          }
+        },
+        {
+          "label": "terminal-canonical-unmounted-natural",
+          "elapsedMs": 300893,
+          "gross": 1779793920,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 211533824
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 1273692160
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 131579904
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 95174656
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 67813376
+            }
+          }
+        },
+        {
+          "label": "terminal-idle-unmounted-gc",
+          "elapsedMs": 304040,
+          "gross": 1436532736,
+          "byType": {
+            "browser": {
+              "processes": 1,
+              "rssBytes": 211533824
+            },
+            "renderer": {
+              "processes": 4,
+              "rssBytes": 930545664
+            },
+            "GPU": {
+              "processes": 1,
+              "rssBytes": 131465216
+            },
+            "network.mojom.NetworkService": {
+              "processes": 1,
+              "rssBytes": 95174656
+            },
+            "storage.mojom.StorageService": {
+              "processes": 1,
+              "rssBytes": 67813376
+            }
+          }
+        }
+      ],
+      "styles": [
+        {
+          "scenario": "chat",
+          "warmBytes": 54,
+          "idleBytes": 54,
+          "warmCounters": {
+            "compileCount": 0,
+            "lookupCalls": 0,
+            "compiledCSSBytes": 0,
+            "resourceDefinitions": 0,
+            "renderCalls": 0,
+            "resourceEmits": 0,
+            "compileMs": 0
+          },
+          "idleCounters": {
+            "compileCount": 0,
+            "lookupCalls": 0,
+            "compiledCSSBytes": 0,
+            "resourceDefinitions": 0,
+            "renderCalls": 0,
+            "resourceEmits": 0,
+            "compileMs": 0
+          }
+        },
+        {
+          "scenario": "dashboard",
+          "warmBytes": 54,
+          "idleBytes": 54,
+          "warmCounters": {
+            "compileCount": 0,
+            "lookupCalls": 0,
+            "compiledCSSBytes": 0,
+            "resourceDefinitions": 0,
+            "renderCalls": 0,
+            "resourceEmits": 0,
+            "compileMs": 0
+          },
+          "idleCounters": {
+            "compileCount": 0,
+            "lookupCalls": 0,
+            "compiledCSSBytes": 0,
+            "resourceDefinitions": 0,
+            "renderCalls": 0,
+            "resourceEmits": 0,
+            "compileMs": 0
+          }
+        }
+      ]
+    }
+  ]
+}

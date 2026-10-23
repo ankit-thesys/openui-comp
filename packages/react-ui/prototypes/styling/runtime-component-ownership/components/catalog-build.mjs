@@ -1,0 +1,1 @@
+import{build,buildOptions,probeRoot}from'./build-shared.mjs';await build({...buildOptions,entryPoints:[probeRoot+'/catalog-client.tsx'],outfile:probeRoot+'/catalog.js',platform:'browser',format:'esm'});await build({...buildOptions,entryPoints:[probeRoot+'/catalog-ssr.tsx'],outfile:probeRoot+'/catalog-ssr.cjs',platform:'node',format:'cjs'});

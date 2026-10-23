@@ -1,0 +1,78 @@
+{
+  "startedAt": "2026-10-23T21:20:27.088Z",
+  "phases": [
+    {
+      "name": "renderer",
+      "script": "bench-renderer.mjs",
+      "scriptSHA256": "42c5cc039fd97931b4f02eefa2b0a518ade87e8dbf170cb46ad07207e361e29a",
+      "manifest": "freeze-renderer.json",
+      "manifestSHA256": "273e50916ea47994facd09b97cff5c459930a25d261212cdea817ecfa5a52bbe",
+      "startedAt": "2026-10-23T21:20:27.695Z",
+      "code": 0,
+      "finishedAt": "2026-10-23T21:24:58.033Z"
+    },
+    {
+      "name": "fullchat",
+      "script": "bench-fullchat.mjs",
+      "scriptSHA256": "8c874077d44fde0f3b43d6257f0a578e8f41d1fafc00c404c077fe6a1f8e0abb",
+      "manifest": "freeze-fullchat.json",
+      "manifestSHA256": "273e50916ea47994facd09b97cff5c459930a25d261212cdea817ecfa5a52bbe",
+      "startedAt": "2026-10-23T21:24:58.795Z",
+      "code": 0,
+      "finishedAt": "2026-10-23T21:28:41.301Z"
+    },
+    {
+      "name": "ssr-pressure",
+      "script": "ssr-pressure.mjs",
+      "scriptSHA256": "e737e803efb2b25b36c8f3be05a7b3fb9074ade4298b9e7116892a799d917b50",
+      "manifest": "freeze-ssr-pressure.json",
+      "manifestSHA256": "273e50916ea47994facd09b97cff5c459930a25d261212cdea817ecfa5a52bbe",
+      "startedAt": "2026-10-23T21:28:41.979Z",
+      "code": 0,
+      "finishedAt": "2026-10-23T21:30:35.618Z"
+    },
+    {
+      "name": "replicated-rss",
+      "script": "rss-replicated.mjs",
+      "scriptSHA256": "e8ee3ebf31a26d106194d1157199df610266551f24a5ac83d0145caf280622ae",
+      "manifest": "freeze-replicated-rss.json",
+      "manifestSHA256": "273e50916ea47994facd09b97cff5c459930a25d261212cdea817ecfa5a52bbe",
+      "startedAt": "2026-10-23T21:30:36.242Z",
+      "code": 0,
+      "finishedAt": "2026-10-23T21:38:21.404Z"
+    },
+    {
+      "name": "server-five-minutes-each",
+      "script": "soak-server.mjs",
+      "scriptSHA256": "cff066c6c92eb34268f98d5ce09d6c39a2f93f110b94089e73af4ef61cd6a352",
+      "manifest": "freeze-server-five-minutes-each.json",
+      "manifestSHA256": "273e50916ea47994facd09b97cff5c459930a25d261212cdea817ecfa5a52bbe",
+      "startedAt": "2026-10-23T21:38:22.011Z",
+      "code": 0,
+      "finishedAt": "2026-10-23T21:48:55.047Z"
+    },
+    {
+      "name": "browser-five-minutes-each",
+      "script": "soak-browser-rss.mjs",
+      "scriptSHA256": "16503cf36ed606742f988d585331f54626a1ebff44439f6e7f1cb0d4fec67573",
+      "manifest": "freeze-browser-five-minutes-each.json",
+      "manifestSHA256": "273e50916ea47994facd09b97cff5c459930a25d261212cdea817ecfa5a52bbe",
+      "startedAt": "2026-10-23T21:48:55.739Z",
+      "code": 0,
+      "finishedAt": "2026-10-23T21:59:26.272Z"
+    },
+    {
+      "name": "summary",
+      "script": "summarize.mjs",
+      "scriptSHA256": "19b8d7c993b688d6073d4930bb5c37d2f889d3461ec9dafd908cb26d7e339f18",
+      "manifest": "freeze-summary.json",
+      "manifestSHA256": "273e50916ea47994facd09b97cff5c459930a25d261212cdea817ecfa5a52bbe",
+      "startedAt": "2026-10-23T21:59:26.947Z",
+      "code": 0,
+      "finishedAt": "2026-10-23T21:59:27.034Z"
+    }
+  ],
+  "note": "Preflight outputs are preserved separately and excluded from measured rows. Stop on correctness/pressure/RSS diagnostic failure; memory investigation budgets remain evidence, not an overall pass.",
+  "finishedAt": "2026-10-23T21:59:27.592Z",
+  "status": "completed"
+}

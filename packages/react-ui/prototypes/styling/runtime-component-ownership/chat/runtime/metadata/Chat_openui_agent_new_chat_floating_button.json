@@ -1,0 +1,1 @@
+[{"selector":"__SCOPE__.openui-agent-new-chat-floating-button","properties":{"position":"absolute","left":"var(--openui-space-m-l, 16px)","bottom":"var(--openui-space-l, 18px)","z-index":"1"},"conditions":[],"disabledCursor":false}]

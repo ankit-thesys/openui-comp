@@ -1,0 +1,50 @@
+{
+  "startedAt": "2026-10-23T21:13:44.690Z",
+  "phases": [
+    {
+      "name": "preflight-renderer",
+      "script": "bench-renderer.mjs",
+      "scriptSHA256": "42c5cc039fd97931b4f02eefa2b0a518ade87e8dbf170cb46ad07207e361e29a",
+      "manifest": "freeze-preflight-renderer.json",
+      "manifestSHA256": "9916b8ef3ebea012290b699fbd94a4c5d05ffed81b8d9be4fa5a75e9e6f39c23",
+      "startedAt": "2026-10-23T21:13:45.283Z",
+      "code": 0,
+      "finishedAt": "2026-10-23T21:14:40.141Z",
+      "raw": "results/preflight-renderer.json",
+      "rawSHA256": "2885d637c716ffbe9a07536870c50a206fe84adb5395d25a61b8c630f5c9c33d"
+    },
+    {
+      "name": "preflight-fullchat",
+      "script": "bench-fullchat.mjs",
+      "scriptSHA256": "8c874077d44fde0f3b43d6257f0a578e8f41d1fafc00c404c077fe6a1f8e0abb",
+      "manifest": "freeze-preflight-fullchat.json",
+      "manifestSHA256": "9916b8ef3ebea012290b699fbd94a4c5d05ffed81b8d9be4fa5a75e9e6f39c23",
+      "startedAt": "2026-10-23T21:14:40.803Z",
+      "code": 0,
+      "finishedAt": "2026-10-23T21:15:26.645Z",
+      "raw": "results/preflight-fullchat.json",
+      "rawSHA256": "2488cd974c53385c44e70d37e2cf102c3f7162b51410fbef9d896708120b75bf"
+    },
+    {
+      "name": "preflight-next",
+      "script": "check-short.mjs",
+      "scriptSHA256": "b93247c9cf661bddb2f3445ae314f3c2a02200107e686ae0cfb95d768e7b6116",
+      "manifest": "freeze-preflight-next.json",
+      "manifestSHA256": "9916b8ef3ebea012290b699fbd94a4c5d05ffed81b8d9be4fa5a75e9e6f39c23",
+      "startedAt": "2026-10-23T21:15:27.308Z",
+      "code": 0,
+      "finishedAt": "2026-10-23T21:15:33.918Z"
+    },
+    {
+      "name": "preflight-rss",
+      "script": "soak-browser-rss.mjs",
+      "scriptSHA256": "00b32c1ca50cec1ca2b4a24c922b9dda27ef0027e02ab19dea145a1cfaa44b6b",
+      "manifest": "freeze-preflight-rss.json",
+      "manifestSHA256": "9916b8ef3ebea012290b699fbd94a4c5d05ffed81b8d9be4fa5a75e9e6f39c23",
+      "startedAt": "2026-10-23T21:15:34.583Z",
+      "code": 1,
+      "finishedAt": "2026-10-23T21:16:22.356Z"
+    }
+  ],
+  "note": "Preflight outputs are preserved separately and excluded from measured rows. Stop on correctness/pressure/RSS diagnostic failure; memory investigation budgets remain evidence, not an overall pass."
+}

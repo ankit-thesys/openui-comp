@@ -1,0 +1,211 @@
+{
+  "candidate": "nested-object-specificity-neutral",
+  "generatedAt": "2026-10-23T21:05:39.556Z",
+  "units": [
+    {
+      "name": "Card",
+      "originalSelectors": 6,
+      "generatedSelectors": 6,
+      "failures": []
+    },
+    {
+      "name": "Button",
+      "originalSelectors": 30,
+      "generatedSelectors": 30,
+      "failures": []
+    },
+    {
+      "name": "Input",
+      "originalSelectors": 11,
+      "generatedSelectors": 11,
+      "failures": []
+    },
+    {
+      "name": "CardHeader",
+      "originalSelectors": 6,
+      "generatedSelectors": 6,
+      "failures": []
+    },
+    {
+      "name": "Buttons",
+      "originalSelectors": 3,
+      "generatedSelectors": 3,
+      "failures": []
+    },
+    {
+      "name": "FormControl",
+      "originalSelectors": 1,
+      "generatedSelectors": 1,
+      "failures": []
+    },
+    {
+      "name": "Hint",
+      "originalSelectors": 2,
+      "generatedSelectors": 2,
+      "failures": []
+    },
+    {
+      "name": "Label",
+      "originalSelectors": 3,
+      "generatedSelectors": 3,
+      "failures": []
+    },
+    {
+      "name": "TextContent",
+      "originalSelectors": 56,
+      "generatedSelectors": 56,
+      "failures": []
+    },
+    {
+      "name": "Markdown",
+      "originalSelectors": 52,
+      "generatedSelectors": 52,
+      "failures": []
+    },
+    {
+      "name": "Table",
+      "originalSelectors": 26,
+      "generatedSelectors": 26,
+      "failures": []
+    },
+    {
+      "name": "BarChart",
+      "originalSelectors": 19,
+      "generatedSelectors": 19,
+      "failures": []
+    },
+    {
+      "name": "LineChart",
+      "originalSelectors": 21,
+      "generatedSelectors": 21,
+      "failures": []
+    },
+    {
+      "name": "PieChart",
+      "originalSelectors": 8,
+      "generatedSelectors": 8,
+      "failures": []
+    },
+    {
+      "name": "DefaultLegend",
+      "originalSelectors": 16,
+      "generatedSelectors": 16,
+      "failures": []
+    },
+    {
+      "name": "StackedLegend",
+      "originalSelectors": 29,
+      "generatedSelectors": 29,
+      "failures": []
+    },
+    {
+      "name": "ScrollButtonsHorizontal",
+      "originalSelectors": 5,
+      "generatedSelectors": 5,
+      "failures": []
+    },
+    {
+      "name": "ScrollButtonsVertical",
+      "originalSelectors": 3,
+      "generatedSelectors": 3,
+      "failures": []
+    },
+    {
+      "name": "PortalTooltip",
+      "originalSelectors": 23,
+      "generatedSelectors": 23,
+      "failures": []
+    },
+    {
+      "name": "IconButton",
+      "originalSelectors": 45,
+      "generatedSelectors": 45,
+      "failures": []
+    },
+    {
+      "name": "TextArea",
+      "originalSelectors": 7,
+      "generatedSelectors": 7,
+      "failures": []
+    },
+    {
+      "name": "CheckBoxGroup",
+      "originalSelectors": 4,
+      "generatedSelectors": 4,
+      "failures": []
+    },
+    {
+      "name": "CheckBoxItem",
+      "originalSelectors": 11,
+      "generatedSelectors": 11,
+      "failures": []
+    },
+    {
+      "name": "SwitchGroup",
+      "originalSelectors": 4,
+      "generatedSelectors": 4,
+      "failures": []
+    },
+    {
+      "name": "SwitchItem",
+      "originalSelectors": 10,
+      "generatedSelectors": 10,
+      "failures": []
+    },
+    {
+      "name": "RadioGroup",
+      "originalSelectors": 4,
+      "generatedSelectors": 4,
+      "failures": []
+    },
+    {
+      "name": "RadioItem",
+      "originalSelectors": 18,
+      "generatedSelectors": 18,
+      "failures": []
+    },
+    {
+      "name": "Select",
+      "originalSelectors": 36,
+      "generatedSelectors": 36,
+      "failures": []
+    },
+    {
+      "name": "Tabs",
+      "originalSelectors": 46,
+      "generatedSelectors": 46,
+      "failures": []
+    },
+    {
+      "name": "Accordion",
+      "originalSelectors": 27,
+      "generatedSelectors": 27,
+      "failures": []
+    },
+    {
+      "name": "Separator",
+      "originalSelectors": 3,
+      "generatedSelectors": 3,
+      "failures": []
+    },
+    {
+      "name": "Modal",
+      "originalSelectors": 13,
+      "generatedSelectors": 13,
+      "failures": []
+    },
+    {
+      "name": "Tooltip",
+      "originalSelectors": 8,
+      "generatedSelectors": 8,
+      "failures": []
+    },
+    {
+      "name": "AssistantMessage",
+      "originalSelectors": 11,
+      "generatedSelectors": 11,
+      "failures": []
+    }
+  ],
+  "failures": []
+}

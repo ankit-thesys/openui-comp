@@ -1,0 +1,20 @@
+{
+  "startedAt": "2026-10-23T21:13:16.846Z",
+  "phases": [
+    {
+      "name": "preflight-renderer",
+      "script": "bench-renderer.mjs",
+      "scriptSHA256": "42c5cc039fd97931b4f02eefa2b0a518ade87e8dbf170cb46ad07207e361e29a",
+      "manifest": "freeze-preflight-renderer.json",
+      "manifestSHA256": "9916b8ef3ebea012290b699fbd94a4c5d05ffed81b8d9be4fa5a75e9e6f39c23",
+      "startedAt": "2026-10-23T21:13:17.439Z",
+      "code": 1,
+      "finishedAt": "2026-10-23T21:13:18.284Z",
+      "raw": "results/preflight-renderer.json",
+      "rawSHA256": "33fcf68d076445c0481c21578e481981d446cbc9062debd0845c77c92c14fab7"
+    }
+  ],
+  "note": "Preflight outputs are preserved separately and excluded from measured rows. Stop on correctness/pressure/RSS diagnostic failure; memory investigation budgets remain evidence, not an overall pass.",
+  "status": "stopped",
+  "finishedAt": "2026-10-23T21:13:18.857Z"
+}

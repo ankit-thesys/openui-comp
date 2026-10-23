@@ -1,0 +1,1 @@
+[{"selector":"__SCOPE__.openui-agent-thread-container__loading","properties":{"visibility":"visible","position":"absolute","inset":"0","z-index":"1","background":"var(--openui-foreground, oklch(0.994 0 89.876 / 1))"},"conditions":[],"disabledCursor":false}]

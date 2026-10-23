@@ -1,0 +1,253 @@
+{
+  "sourceStyleUnits": 34,
+  "assignedSourceModules": 52,
+  "jsxAttachments": 223,
+  "staticAuditMeaning": "Every selected style family has one or more assigned actual source modules with className JSX attachments. This is NOT proof that every selector/state matches live DOM. The separate browser gates prove only named fixtures/properties.",
+  "selectedStyleUnits": [
+    "Card",
+    "Button",
+    "Input",
+    "CardHeader",
+    "Buttons",
+    "FormControl",
+    "Hint",
+    "Label",
+    "TextContent",
+    "Markdown",
+    "Table",
+    "BarChart",
+    "LineChart",
+    "PieChart",
+    "DefaultLegend",
+    "StackedLegend",
+    "ScrollButtonsHorizontal",
+    "ScrollButtonsVertical",
+    "PortalTooltip",
+    "IconButton",
+    "TextArea",
+    "CheckBoxGroup",
+    "CheckBoxItem",
+    "SwitchGroup",
+    "SwitchItem",
+    "RadioGroup",
+    "RadioItem",
+    "Select",
+    "Tabs",
+    "Accordion",
+    "Separator",
+    "Modal",
+    "Tooltip",
+    "AssistantMessage"
+  ],
+  "ownedTopLevelComponentDirectories": [
+    "Accordion",
+    "Button",
+    "Buttons",
+    "Card",
+    "CardHeader",
+    "Charts",
+    "CheckBoxGroup",
+    "CheckBoxItem",
+    "FormControl",
+    "IconButton",
+    "Input",
+    "Label",
+    "MarkDownRenderer",
+    "Modal",
+    "OpenUIChat",
+    "RadioGroup",
+    "RadioItem",
+    "Select",
+    "Separator",
+    "SwitchGroup",
+    "SwitchItem",
+    "Table",
+    "Tabs",
+    "TextArea",
+    "TextContentWrapper",
+    "TooltipWrapper"
+  ],
+  "outsideOwnershipComponentDirectories": [
+    "AgentInterface",
+    "Calendar",
+    "Callout",
+    "Carousel",
+    "Chips",
+    "Citation",
+    "CodeBlock",
+    "CompositeCardBlock",
+    "ContextCardBlock",
+    "DatePicker",
+    "DotMatrixLoader",
+    "EditableTable",
+    "EntityList",
+    "FollowUpBlock",
+    "FollowUpItem",
+    "IconTag",
+    "IconText",
+    "Image",
+    "ImageBlock",
+    "ImageGallery",
+    "ImageText",
+    "ImageTextLarge",
+    "InlineHeader",
+    "InlineMarkdownRenderer",
+    "ListBlock",
+    "ListItem",
+    "MetricIndicator",
+    "ModelSwitcher",
+    "OptionCards",
+    "OverviewCardBlock",
+    "SectionBlock",
+    "Skeleton",
+    "Slider",
+    "SnippetCardBlock",
+    "SourceFaviconImage",
+    "Sources",
+    "Steps",
+    "Tag",
+    "TagBlock",
+    "TextBlock",
+    "TextCallout",
+    "TextContent",
+    "ThemeProvider",
+    "ToggleGroup",
+    "ToggleItem",
+    "ToolCall",
+    "ToolResult",
+    "VisualCardBlock",
+    "_shared"
+  ],
+  "svgClassOnlyAttachments": [
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/BarSeries.tsx",
+      "line": 83,
+      "source": "return (<__OwnedElement $emitResources={false} $element=\"g\" $styles={[__styles0]} className={`${CHART_CLASS_PREFIX}-bar-chart-bars`}>"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/BarSeries.tsx",
+      "line": 110,
+      "source": "<__OwnedElement $emitResources={false} $element=\"path\" $styles={[__styles0]} className={`${CHART_CLASS_PREFIX}-bar-chart-bar${isNegative ? ` ${CHART_CLASS_PREFIX}-bar-chart-bar--negative` : \"\"}${animatedSuffix}`} d={roundedBarPath(barX, barY, barWidth, barHeight, verticalBarRadii(barRadius, isNegati"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/BarSeries.tsx",
+      "line": 111,
+      "source": "{internalLine && barHeight >= MIN_BAR_HEIGHT_FOR_LINE && barWidth >= 3 && (<__OwnedElement $emitResources={false} $element=\"line\" $styles={[__styles0]} className={`${CHART_CLASS_PREFIX}-bar-chart-internal-line${isNegative ? ` ${CHART_CLASS_PREFIX}-bar-chart-bar--negative` : \"\"}${animatedSuffix}`} x1"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/BarSeries.tsx",
+      "line": 119,
+      "source": "return (<__OwnedElement $emitResources={false} $element=\"g\" $styles={[__styles0]} className={`${CHART_CLASS_PREFIX}-bar-chart-bars`}>"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/BarSeries.tsx",
+      "line": 140,
+      "source": "<__OwnedElement $emitResources={false} $element=\"path\" $styles={[__styles0]} className={`${CHART_CLASS_PREFIX}-bar-chart-bar${isNegative ? ` ${CHART_CLASS_PREFIX}-bar-chart-bar--negative` : \"\"}${animatedSuffix}`} d={roundedBarPath(barX, barY, barWidth, barHeight, verticalBarRadii(barRadius, isNegati"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/BarSeries.tsx",
+      "line": 141,
+      "source": "{internalLine && barHeight >= MIN_BAR_HEIGHT_FOR_LINE && barWidth >= 3 && (<__OwnedElement $emitResources={false} $element=\"line\" $styles={[__styles0]} className={`${CHART_CLASS_PREFIX}-bar-chart-internal-line${isNegative ? ` ${CHART_CLASS_PREFIX}-bar-chart-bar--negative` : \"\"}${animatedSuffix}`} x1"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/Crosshair.tsx",
+      "line": 27,
+      "source": "<__OwnedElement $emitResources={false} $element=\"rect\" $styles={[__styles0]} className={`${CHART_CLASS_PREFIX}-bar-chart-hover-highlight`} x={0} y={0} width={width} height={chartHeight} rx={4}/>"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/HorizontalBarChartImpl.tsx",
+      "line": 90,
+      "source": "{grid && (<__OwnedElement $emitResources={false} $element={VerticalGrid} $styles={[__styles0]} xScale={valueScale} chartWidth={chartWidth} chartHeight={svgHeight} className={`${CLASS_PREFIX}-grid-vertical`}/>)}"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/HorizontalBarChartImpl.tsx",
+      "line": 104,
+      "source": "<__OwnedElement $emitResources={false} $element={NumericXAxis} $styles={[__styles0]} scale={valueScale} chartWidth={chartWidth} height={X_AXIS_HEIGHT} className={`${CLASS_PREFIX}-x-axis`} tickClassName={`${CLASS_PREFIX}-x-tick`} edgeAlign/>"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/HorizontalBarSeries.tsx",
+      "line": 63,
+      "source": "return (<__OwnedElement $emitResources={false} $element=\"g\" $styles={[__styles0]} className={`${classPrefix}-bars`}>"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/HorizontalBarSeries.tsx",
+      "line": 71,
+      "source": "return (<__OwnedElement $emitResources={false} $element=\"g\" $styles={[__styles0]} key={row.key} className={`${classPrefix}-row`}>"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/HorizontalBarSeries.tsx",
+      "line": 81,
+      "source": "<__OwnedElement $emitResources={false} $element=\"path\" $styles={[__styles0]} className={clsx(`${classPrefix}-bar`, animatedClass, bar.isNegative && `${classPrefix}-bar--negative`)} d={roundedBarPath(bar.x, bar.y, bar.width, bar.height, bar.radii)} fill={bar.color} opacity={opacity} style={animatedSt"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/HorizontalBarSeries.tsx",
+      "line": 82,
+      "source": "{bar.showLine && (<__OwnedElement $emitResources={false} $element=\"line\" $styles={[__styles0]} className={clsx(`${classPrefix}-internal-line`, animatedClass, bar.isNegative && `${classPrefix}-bar--negative`)} x1={bar.x + LINE_PADDING} x2={bar.x + bar.width - LINE_PADDING} y1={bar.y + bar.height / 2}"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/BarChart/parts/HorizontalCrosshair.tsx",
+      "line": 36,
+      "source": "<__OwnedElement $emitResources={false} $element=\"rect\" $styles={[__styles0]} className={`${CHART_CLASS_PREFIX}-horizontal-bar-chart-crosshair`} x={0} y={0} width={Math.max(0, chartWidth)} height={groupHeight} rx={4}/>"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/LineChart/parts/LineSeries.tsx",
+      "line": 38,
+      "source": "return (<__OwnedElement $emitResources={false} $element=\"g\" $styles={[__styles0]} className={`${CHART_CLASS_PREFIX}-line-chart-lines`}>"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/LineChart/parts/LineSeries.tsx",
+      "line": 84,
+      "source": "<__OwnedElement $emitResources={false} $element={AnimatedPath} $styles={[__styles0]} d={linePath} color={color} className={`${CHART_CLASS_PREFIX}-line-chart-line`} isAnimationActive={isAnimationActive} pathRef={pathRef}/>"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/LineChart/parts/LineSeries.tsx",
+      "line": 86,
+      "source": "{Array.from({ length: points.length / LINE_STRIDE }, (_, i) => (<__OwnedElement $emitResources={false} $element=\"circle\" $styles={[__styles0]} key={i} cx={points[i * LINE_STRIDE]} cy={points[i * LINE_STRIDE + 1]} r={dotRadius} fill={color} className={`${CHART_CLASS_PREFIX}-line-chart-dot`}/>))}"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/PieChart/parts/PieSlices.tsx",
+      "line": 73,
+      "source": "{trackD && <__OwnedElement $emitResources={false} $element=\"path\" $styles={[__styles0]} d={trackD} className={TRACK_CLASS} {...staticProps}/>}"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/PieChart/parts/PieSlices.tsx",
+      "line": 133,
+      "source": "{trackD && (<__OwnedElement $emitResources={false} $element=\"path\" $styles={[__styles0]} d={trackD} className={clsx(TRACK_CLASS, entranceClass)} style={{ ...baseStyle, animationDelay: entranceDelay }}/>)}"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/Charts/PieChart/parts/PieSlices.tsx",
+      "line": 134,
+      "source": "<__OwnedElement $emitResources={false} $element=\"path\" $styles={[__styles0]} d={pathD} fill={color} className={entranceClass || undefined} style={{ ...baseStyle, animationDelay: entranceDelay }}/>"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/RadioItem/RadioItem.tsx",
+      "line": 20,
+      "source": "<__OwnedElement $emitResources={false} $element=\"svg\" $styles={[__styles0]} width={16} height={16} fill=\"none\" viewBox=\"0 0 16 16\" className=\"openui-radio-item-svg\">"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/RadioItem/RadioItem.tsx",
+      "line": 21,
+      "source": "<__OwnedElement $emitResources={false} $element=\"path\" $styles={[__styles0]} fill=\"currentColor\" d=\"M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8Z\" className=\"openui-radio-item-svg-path\"/>"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/RadioItem/RadioItem.tsx",
+      "line": 22,
+      "source": "<__OwnedElement $emitResources={false} $element=\"path\" $styles={[__styles0]} stroke=\"currentColor\" d=\"M1.5 8a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0Z\" className=\"openui-radio-item-svg-border\"/>"
+    },
+    {
+      "file": "/private/tmp/openui-runtime-owned-components/source/src/components/RadioItem/RadioItem.tsx",
+      "line": 23,
+      "source": "<__OwnedElement $emitResources={false} $element=\"path\" $styles={[__styles0]} fill=\"currentColor\" d=\"M4 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z\" className=\"openui-radio-item-svg-inner\"/>"
+    }
+  ],
+  "unsupportedAndUnproved": [
+    "Other chart families and horizontal BarChart orientation",
+    "Chart tooltip interactions/legend overflow/animated chart states and export paths",
+    "Markdown code blocks/math/citations/headers using additional component families",
+    "Other registered openuiChatLibrary component families outside this ownership inventory",
+    "Exhaustive active/focus/keyboard and every size/variant combinations",
+    "Complete arbitrary generated-response coverage",
+    "Production framework/package/TypeScript release integration"
+  ],
+  "runtimeGranularity": "One definition per selected reusable stylesheet family; Select initial trigger can include unopened Content CSS. Actual SVG classes use the same finite definition but resource emission belongs to HTML owners. No rule-level lazy delivery claim."
+}

@@ -1,0 +1,1 @@
+[{"selector":"__SCOPE__.openui-agent-sidebar-footer","properties":{"display":"flex","flex-direction":"column","gap":"var(--openui-space-2xs, 4px)","flex-shrink":"0","margin-top":"calc(var(--openui-space-s, 8px) - var(--openui-space-2xl, 36px))"},"conditions":[],"disabledCursor":false}]

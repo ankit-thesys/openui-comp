@@ -1,0 +1,1232 @@
+{
+  "startedAt": "2026-10-23T21:30:36.927Z",
+  "scope": "Three fresh-process paired shortRSS replications. Not partof final20-minute soak; gross RSS doublecounts sharedpages and is not CSS-only attribution or a confidenceinterval.",
+  "durationPerArmMs": 60000,
+  "orders": [
+    [
+      "baseline",
+      "runtime"
+    ],
+    [
+      "runtime",
+      "baseline"
+    ],
+    [
+      "baseline",
+      "runtime"
+    ]
+  ],
+  "pairs": [
+    {
+      "pair": 0,
+      "order": [
+        "baseline",
+        "runtime"
+      ],
+      "arms": {
+        "baseline": {
+          "raw": "rss-pair-0-baseline.json",
+          "status": "passed",
+          "completed": 158,
+          "completedByScenario": {
+            "chat": 79,
+            "dashboard": 79
+          },
+          "pending": 9,
+          "partial": 8,
+          "retained": [
+            {
+              "scenario": "chat",
+              "warm": 24495304,
+              "idle": 26017844,
+              "delta": 1522540,
+              "relativePercent": 6.215640352942751,
+              "budgetBytes": 5242880,
+              "needsInvestigation": false,
+              "domDelta": 0,
+              "listenerDelta": 0,
+              "styleByteDelta": 0,
+              "styleDelta": 0,
+              "ruleDelta": 0
+            },
+            {
+              "scenario": "dashboard",
+              "warm": 24534144,
+              "idle": 25995080,
+              "delta": 1460936,
+              "relativePercent": 5.954705409734287,
+              "budgetBytes": 5242880,
+              "needsInvestigation": false,
+              "domDelta": 0,
+              "listenerDelta": 0,
+              "styleByteDelta": 0,
+              "styleDelta": 0,
+              "ruleDelta": 0
+            }
+          ],
+          "warmRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 14563,
+                "cpuTime": 0.984688,
+                "rssBytes": 229933056
+              },
+              {
+                "type": "renderer",
+                "id": 14578,
+                "cpuTime": 0.054854,
+                "rssBytes": 104693760
+              },
+              {
+                "type": "renderer",
+                "id": 14576,
+                "cpuTime": 1.664313,
+                "rssBytes": 304824320
+              },
+              {
+                "type": "renderer",
+                "id": 14577,
+                "cpuTime": 2.43353,
+                "rssBytes": 294780928
+              },
+              {
+                "type": "renderer",
+                "id": 14574,
+                "cpuTime": 0.179255,
+                "rssBytes": 193773568
+              },
+              {
+                "type": "GPU",
+                "id": 14569,
+                "cpuTime": 0.927384,
+                "rssBytes": 138379264
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 14570,
+                "cpuTime": 0.130856,
+                "rssBytes": 98172928
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 14571,
+                "cpuTime": 0.037873,
+                "rssBytes": 68730880
+              }
+            ],
+            "grossSummedRSSBytes": 1433288704,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 229933056
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 898072576
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 138379264
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 98172928
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 68730880
+              }
+            }
+          },
+          "idleRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 14563,
+                "cpuTime": 2.815371,
+                "rssBytes": 226213888
+              },
+              {
+                "type": "renderer",
+                "id": 14578,
+                "cpuTime": 0.059244,
+                "rssBytes": 106364928
+              },
+              {
+                "type": "renderer",
+                "id": 14576,
+                "cpuTime": 17.209027,
+                "rssBytes": 343785472
+              },
+              {
+                "type": "renderer",
+                "id": 14577,
+                "cpuTime": 26.44607,
+                "rssBytes": 341590016
+              },
+              {
+                "type": "renderer",
+                "id": 14574,
+                "cpuTime": 0.217315,
+                "rssBytes": 157532160
+              },
+              {
+                "type": "GPU",
+                "id": 14569,
+                "cpuTime": 10.710581,
+                "rssBytes": 133939200
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 14570,
+                "cpuTime": 0.630255,
+                "rssBytes": 99254272
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 14571,
+                "cpuTime": 0.058857,
+                "rssBytes": 70303744
+              }
+            ],
+            "grossSummedRSSBytes": 1478983680,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 226213888
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 949272576
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 133939200
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 99254272
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 70303744
+              }
+            }
+          },
+          "peakGrossRSS": 1708179456
+        },
+        "runtime": {
+          "raw": "rss-pair-0-runtime.json",
+          "status": "passed",
+          "completed": 153,
+          "completedByScenario": {
+            "chat": 77,
+            "dashboard": 76
+          },
+          "pending": 8,
+          "partial": 8,
+          "retained": [
+            {
+              "scenario": "chat",
+              "warm": 25946528,
+              "idle": 27559252,
+              "delta": 1612724,
+              "relativePercent": 6.215567647432443,
+              "budgetBytes": 5242880,
+              "needsInvestigation": false,
+              "domDelta": 0,
+              "listenerDelta": 0,
+              "styleByteDelta": 0,
+              "styleDelta": 0,
+              "ruleDelta": 0
+            },
+            {
+              "scenario": "dashboard",
+              "warm": 25981424,
+              "idle": 27538112,
+              "delta": 1556688,
+              "relativePercent": 5.991542264965923,
+              "budgetBytes": 5242880,
+              "needsInvestigation": false,
+              "domDelta": 0,
+              "listenerDelta": 0,
+              "styleByteDelta": 0,
+              "styleDelta": 0,
+              "ruleDelta": 0
+            }
+          ],
+          "warmRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 14787,
+                "cpuTime": 1.013434,
+                "rssBytes": 232374272
+              },
+              {
+                "type": "renderer",
+                "id": 14808,
+                "cpuTime": 0.049134,
+                "rssBytes": 104660992
+              },
+              {
+                "type": "renderer",
+                "id": 14805,
+                "cpuTime": 1.710656,
+                "rssBytes": 299810816
+              },
+              {
+                "type": "renderer",
+                "id": 14806,
+                "cpuTime": 2.645875,
+                "rssBytes": 292077568
+              },
+              {
+                "type": "renderer",
+                "id": 14802,
+                "cpuTime": 0.17072,
+                "rssBytes": 173441024
+              },
+              {
+                "type": "GPU",
+                "id": 14798,
+                "cpuTime": 0.858994,
+                "rssBytes": 145047552
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 14799,
+                "cpuTime": 0.131759,
+                "rssBytes": 108314624
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 14800,
+                "cpuTime": 0.041088,
+                "rssBytes": 81362944
+              }
+            ],
+            "grossSummedRSSBytes": 1437089792,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 232374272
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 869990400
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 145047552
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 108314624
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 81362944
+              }
+            }
+          },
+          "idleRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 14787,
+                "cpuTime": 2.884526,
+                "rssBytes": 211091456
+              },
+              {
+                "type": "renderer",
+                "id": 14808,
+                "cpuTime": 0.052488,
+                "rssBytes": 82853888
+              },
+              {
+                "type": "renderer",
+                "id": 14805,
+                "cpuTime": 17.908513,
+                "rssBytes": 298401792
+              },
+              {
+                "type": "renderer",
+                "id": 14806,
+                "cpuTime": 25.442472,
+                "rssBytes": 326713344
+              },
+              {
+                "type": "renderer",
+                "id": 14802,
+                "cpuTime": 0.227427,
+                "rssBytes": 153812992
+              },
+              {
+                "type": "GPU",
+                "id": 14798,
+                "cpuTime": 10.073062,
+                "rssBytes": 128286720
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 14799,
+                "cpuTime": 0.650452,
+                "rssBytes": 96010240
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 14800,
+                "cpuTime": 0.060472,
+                "rssBytes": 68009984
+              }
+            ],
+            "grossSummedRSSBytes": 1365180416,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 211091456
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 861782016
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 128286720
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 96010240
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 68009984
+              }
+            }
+          },
+          "peakGrossRSS": 1657880576
+        }
+      },
+      "warmGrossRuntimeMinusBaseline": 3801088,
+      "idleGrossRuntimeMinusBaseline": -113803264,
+      "runtimeGrowth": -71909376,
+      "baselineGrowth": 45694976
+    },
+    {
+      "pair": 1,
+      "order": [
+        "runtime",
+        "baseline"
+      ],
+      "arms": {
+        "runtime": {
+          "raw": "rss-pair-1-runtime.json",
+          "status": "passed",
+          "completed": 155,
+          "completedByScenario": {
+            "chat": 78,
+            "dashboard": 77
+          },
+          "pending": 9,
+          "partial": 8,
+          "retained": [
+            {
+              "scenario": "chat",
+              "warm": 25958564,
+              "idle": 27514608,
+              "delta": 1556044,
+              "relativePercent": 5.994337745339072,
+              "budgetBytes": 5242880,
+              "needsInvestigation": false,
+              "domDelta": 0,
+              "listenerDelta": 0,
+              "styleByteDelta": 0,
+              "styleDelta": 0,
+              "ruleDelta": 0
+            },
+            {
+              "scenario": "dashboard",
+              "warm": 26010288,
+              "idle": 27611280,
+              "delta": 1600992,
+              "relativePercent": 6.155225962895913,
+              "budgetBytes": 5242880,
+              "needsInvestigation": false,
+              "domDelta": 0,
+              "listenerDelta": 0,
+              "styleByteDelta": 0,
+              "styleDelta": 0,
+              "ruleDelta": 0
+            }
+          ],
+          "warmRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 14958,
+                "cpuTime": 0.961939,
+                "rssBytes": 242450432
+              },
+              {
+                "type": "renderer",
+                "id": 14973,
+                "cpuTime": 0.051706,
+                "rssBytes": 104628224
+              },
+              {
+                "type": "renderer",
+                "id": 14970,
+                "cpuTime": 1.741833,
+                "rssBytes": 310738944
+              },
+              {
+                "type": "renderer",
+                "id": 14971,
+                "cpuTime": 2.682042,
+                "rssBytes": 297943040
+              },
+              {
+                "type": "renderer",
+                "id": 14968,
+                "cpuTime": 0.168452,
+                "rssBytes": 193347584
+              },
+              {
+                "type": "GPU",
+                "id": 14964,
+                "cpuTime": 0.853249,
+                "rssBytes": 151552000
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 14965,
+                "cpuTime": 0.11625,
+                "rssBytes": 113180672
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 14966,
+                "cpuTime": 0.038375,
+                "rssBytes": 84754432
+              }
+            ],
+            "grossSummedRSSBytes": 1498595328,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 242450432
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 906657792
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 151552000
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 113180672
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 84754432
+              }
+            }
+          },
+          "idleRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 14958,
+                "cpuTime": 2.737694,
+                "rssBytes": 208338944
+              },
+              {
+                "type": "renderer",
+                "id": 14973,
+                "cpuTime": 0.054611,
+                "rssBytes": 84508672
+              },
+              {
+                "type": "renderer",
+                "id": 14970,
+                "cpuTime": 17.33276,
+                "rssBytes": 278265856
+              },
+              {
+                "type": "renderer",
+                "id": 14971,
+                "cpuTime": 24.639048,
+                "rssBytes": 330596352
+              },
+              {
+                "type": "renderer",
+                "id": 14968,
+                "cpuTime": 0.2218,
+                "rssBytes": 143163392
+              },
+              {
+                "type": "GPU",
+                "id": 14964,
+                "cpuTime": 9.247535,
+                "rssBytes": 127303680
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 14965,
+                "cpuTime": 0.604668,
+                "rssBytes": 91553792
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 14966,
+                "cpuTime": 0.056472,
+                "rssBytes": 67960832
+              }
+            ],
+            "grossSummedRSSBytes": 1331691520,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 208338944
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 836534272
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 127303680
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 91553792
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 67960832
+              }
+            }
+          },
+          "peakGrossRSS": 1718009856
+        },
+        "baseline": {
+          "raw": "rss-pair-1-baseline.json",
+          "status": "passed",
+          "completed": 158,
+          "completedByScenario": {
+            "chat": 79,
+            "dashboard": 79
+          },
+          "pending": 9,
+          "partial": 8,
+          "retained": [
+            {
+              "scenario": "chat",
+              "warm": 24504800,
+              "idle": 26005376,
+              "delta": 1500576,
+              "relativePercent": 6.123600274231987,
+              "budgetBytes": 5242880,
+              "needsInvestigation": false,
+              "domDelta": 0,
+              "listenerDelta": 0,
+              "styleByteDelta": 0,
+              "styleDelta": 0,
+              "ruleDelta": 0
+            },
+            {
+              "scenario": "dashboard",
+              "warm": 24547300,
+              "idle": 26058100,
+              "delta": 1510800,
+              "relativePercent": 6.154648372733457,
+              "budgetBytes": 5242880,
+              "needsInvestigation": false,
+              "domDelta": 0,
+              "listenerDelta": 0,
+              "styleByteDelta": 0,
+              "styleDelta": 0,
+              "ruleDelta": 0
+            }
+          ],
+          "warmRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 15403,
+                "cpuTime": 1.044469,
+                "rssBytes": 244072448
+              },
+              {
+                "type": "renderer",
+                "id": 15440,
+                "cpuTime": 0.066262,
+                "rssBytes": 104710144
+              },
+              {
+                "type": "renderer",
+                "id": 15428,
+                "cpuTime": 1.59581,
+                "rssBytes": 303824896
+              },
+              {
+                "type": "renderer",
+                "id": 15429,
+                "cpuTime": 2.467639,
+                "rssBytes": 298385408
+              },
+              {
+                "type": "renderer",
+                "id": 15416,
+                "cpuTime": 0.187118,
+                "rssBytes": 193593344
+              },
+              {
+                "type": "GPU",
+                "id": 15409,
+                "cpuTime": 0.946236,
+                "rssBytes": 155811840
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 15410,
+                "cpuTime": 0.1394,
+                "rssBytes": 113344512
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 15411,
+                "cpuTime": 0.042901,
+                "rssBytes": 84852736
+              }
+            ],
+            "grossSummedRSSBytes": 1498595328,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 244072448
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 900513792
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 155811840
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 113344512
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 84852736
+              }
+            }
+          },
+          "idleRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 15403,
+                "cpuTime": 2.818555,
+                "rssBytes": 243040256
+              },
+              {
+                "type": "renderer",
+                "id": 15440,
+                "cpuTime": 0.068807,
+                "rssBytes": 89341952
+              },
+              {
+                "type": "renderer",
+                "id": 15428,
+                "cpuTime": 16.856365,
+                "rssBytes": 287014912
+              },
+              {
+                "type": "renderer",
+                "id": 15429,
+                "cpuTime": 24.725168,
+                "rssBytes": 316653568
+              },
+              {
+                "type": "renderer",
+                "id": 15416,
+                "cpuTime": 0.229553,
+                "rssBytes": 185401344
+              },
+              {
+                "type": "GPU",
+                "id": 15409,
+                "cpuTime": 10.586696,
+                "rssBytes": 156467200
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 15410,
+                "cpuTime": 0.636043,
+                "rssBytes": 112230400
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 15411,
+                "cpuTime": 0.061156,
+                "rssBytes": 85098496
+              }
+            ],
+            "grossSummedRSSBytes": 1475248128,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 243040256
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 878411776
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 156467200
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 112230400
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 85098496
+              }
+            }
+          },
+          "peakGrossRSS": 1828093952
+        }
+      },
+      "warmGrossRuntimeMinusBaseline": 0,
+      "idleGrossRuntimeMinusBaseline": -143556608,
+      "runtimeGrowth": -166903808,
+      "baselineGrowth": -23347200
+    },
+    {
+      "pair": 2,
+      "order": [
+        "baseline",
+        "runtime"
+      ],
+      "arms": {
+        "baseline": {
+          "raw": "rss-pair-2-baseline.json",
+          "status": "passed",
+          "completed": 156,
+          "completedByScenario": {
+            "chat": 78,
+            "dashboard": 78
+          },
+          "pending": 9,
+          "partial": 8,
+          "retained": [
+            {
+              "scenario": "chat",
+              "warm": 24507348,
+              "idle": 26034340,
+              "delta": 1526992,
+              "relativePercent": 6.23075169128867,
+              "budgetBytes": 5242880,
+              "needsInvestigation": false,
+              "domDelta": 0,
+              "listenerDelta": 0,
+              "styleByteDelta": 0,
+              "styleDelta": 0,
+              "ruleDelta": 0
+            },
+            {
+              "scenario": "dashboard",
+              "warm": 24566496,
+              "idle": 26075840,
+              "delta": 1509344,
+              "relativePercent": 6.143912424466232,
+              "budgetBytes": 5242880,
+              "needsInvestigation": false,
+              "domDelta": 0,
+              "listenerDelta": 0,
+              "styleByteDelta": 0,
+              "styleDelta": 0,
+              "ruleDelta": 0
+            }
+          ],
+          "warmRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 15616,
+                "cpuTime": 1.014777,
+                "rssBytes": 242794496
+              },
+              {
+                "type": "renderer",
+                "id": 15631,
+                "cpuTime": 0.062183,
+                "rssBytes": 104808448
+              },
+              {
+                "type": "renderer",
+                "id": 15629,
+                "cpuTime": 1.592522,
+                "rssBytes": 304037888
+              },
+              {
+                "type": "renderer",
+                "id": 15630,
+                "cpuTime": 2.604022,
+                "rssBytes": 295665664
+              },
+              {
+                "type": "renderer",
+                "id": 15627,
+                "cpuTime": 0.19253,
+                "rssBytes": 193085440
+              },
+              {
+                "type": "GPU",
+                "id": 15622,
+                "cpuTime": 0.902214,
+                "rssBytes": 153010176
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 15623,
+                "cpuTime": 0.131893,
+                "rssBytes": 115032064
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 15624,
+                "cpuTime": 0.037837,
+                "rssBytes": 84721664
+              }
+            ],
+            "grossSummedRSSBytes": 1493155840,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 242794496
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 897597440
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 153010176
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 115032064
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 84721664
+              }
+            }
+          },
+          "idleRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 15616,
+                "cpuTime": 2.87785,
+                "rssBytes": 244858880
+              },
+              {
+                "type": "renderer",
+                "id": 15631,
+                "cpuTime": 0.064869,
+                "rssBytes": 104939520
+              },
+              {
+                "type": "renderer",
+                "id": 15629,
+                "cpuTime": 17.157908,
+                "rssBytes": 361627648
+              },
+              {
+                "type": "renderer",
+                "id": 15630,
+                "cpuTime": 26.700175,
+                "rssBytes": 363429888
+              },
+              {
+                "type": "renderer",
+                "id": 15627,
+                "cpuTime": 0.234826,
+                "rssBytes": 186793984
+              },
+              {
+                "type": "GPU",
+                "id": 15622,
+                "cpuTime": 10.913524,
+                "rssBytes": 154992640
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 15623,
+                "cpuTime": 0.640813,
+                "rssBytes": 115867648
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 15624,
+                "cpuTime": 0.05627,
+                "rssBytes": 84967424
+              }
+            ],
+            "grossSummedRSSBytes": 1617477632,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 244858880
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 1016791040
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 154992640
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 115867648
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 84967424
+              }
+            }
+          },
+          "peakGrossRSS": 1869824000
+        },
+        "runtime": {
+          "raw": "rss-pair-2-runtime.json",
+          "status": "passed",
+          "completed": 152,
+          "completedByScenario": {
+            "chat": 76,
+            "dashboard": 76
+          },
+          "pending": 8,
+          "partial": 8,
+          "retained": [
+            {
+              "scenario": "chat",
+              "warm": 25947516,
+              "idle": 27489992,
+              "delta": 1542476,
+              "relativePercent": 5.944599860734261,
+              "budgetBytes": 5242880,
+              "needsInvestigation": false,
+              "domDelta": 0,
+              "listenerDelta": 0,
+              "styleByteDelta": 0,
+              "styleDelta": 0,
+              "ruleDelta": 0
+            },
+            {
+              "scenario": "dashboard",
+              "warm": 25977056,
+              "idle": 27583416,
+              "delta": 1606360,
+              "relativePercent": 6.183764626753701,
+              "budgetBytes": 5242880,
+              "needsInvestigation": false,
+              "domDelta": 0,
+              "listenerDelta": 0,
+              "styleByteDelta": 0,
+              "styleDelta": 0,
+              "ruleDelta": 0
+            }
+          ],
+          "warmRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 15777,
+                "cpuTime": 1.024808,
+                "rssBytes": 242237440
+              },
+              {
+                "type": "renderer",
+                "id": 15792,
+                "cpuTime": 0.059147,
+                "rssBytes": 104742912
+              },
+              {
+                "type": "renderer",
+                "id": 15789,
+                "cpuTime": 1.868411,
+                "rssBytes": 309182464
+              },
+              {
+                "type": "renderer",
+                "id": 15790,
+                "cpuTime": 2.743769,
+                "rssBytes": 297910272
+              },
+              {
+                "type": "renderer",
+                "id": 15787,
+                "cpuTime": 0.183584,
+                "rssBytes": 193363968
+              },
+              {
+                "type": "GPU",
+                "id": 15783,
+                "cpuTime": 0.92164,
+                "rssBytes": 152322048
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 15784,
+                "cpuTime": 0.127853,
+                "rssBytes": 113147904
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 15785,
+                "cpuTime": 0.039126,
+                "rssBytes": 84885504
+              }
+            ],
+            "grossSummedRSSBytes": 1497792512,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 242237440
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 905199616
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 152322048
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 113147904
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 84885504
+              }
+            }
+          },
+          "idleRSS": {
+            "note": "Passive CDP process inventory plus OS RSS after requested per-page GC (natural checkpoints do not GC). Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 15777,
+                "cpuTime": 2.852579,
+                "rssBytes": 213123072
+              },
+              {
+                "type": "renderer",
+                "id": 15792,
+                "cpuTime": 0.062332,
+                "rssBytes": 82788352
+              },
+              {
+                "type": "renderer",
+                "id": 15789,
+                "cpuTime": 18.093221,
+                "rssBytes": 299859968
+              },
+              {
+                "type": "renderer",
+                "id": 15790,
+                "cpuTime": 27.597011,
+                "rssBytes": 318816256
+              },
+              {
+                "type": "renderer",
+                "id": 15787,
+                "cpuTime": 0.231554,
+                "rssBytes": 148357120
+              },
+              {
+                "type": "GPU",
+                "id": 15783,
+                "cpuTime": 10.427529,
+                "rssBytes": 128598016
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 15784,
+                "cpuTime": 0.612274,
+                "rssBytes": 94486528
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 15785,
+                "cpuTime": 0.058008,
+                "rssBytes": 68222976
+              }
+            ],
+            "grossSummedRSSBytes": 1354252288,
+            "byType": {
+              "browser": {
+                "processes": 1,
+                "rssBytes": 213123072
+              },
+              "renderer": {
+                "processes": 4,
+                "rssBytes": 849821696
+              },
+              "GPU": {
+                "processes": 1,
+                "rssBytes": 128598016
+              },
+              "network.mojom.NetworkService": {
+                "processes": 1,
+                "rssBytes": 94486528
+              },
+              "storage.mojom.StorageService": {
+                "processes": 1,
+                "rssBytes": 68222976
+              }
+            }
+          },
+          "peakGrossRSS": 1822818304
+        }
+      },
+      "warmGrossRuntimeMinusBaseline": 4636672,
+      "idleGrossRuntimeMinusBaseline": -263225344,
+      "runtimeGrowth": -143540224,
+      "baselineGrowth": 124321792
+    }
+  ],
+  "failures": [],
+  "summary": {
+    "medianWarmGrossRuntimeMinusBaseline": 3801088,
+    "medianIdleGrossRuntimeMinusBaseline": -143556608,
+    "note": "Inspect each pair/process inventory. Three pairs do not isolate CSS nativeallocation or establish a production memorybound."
+  },
+  "status": "completed",
+  "finishedAt": "2026-10-23T21:38:21.397Z"
+}

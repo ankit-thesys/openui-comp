@@ -1,0 +1,1 @@
+export {RuntimeButton as Button} from '/private/tmp/openui-runtime-owned-components/runtime/Button';

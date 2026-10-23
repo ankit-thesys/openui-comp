@@ -1,0 +1,32 @@
+{
+  "scope": "Real detached browser DOM target/public extractCss vs inherited server sink, exact same immutable Button definition; no performance claim.",
+  "checks": {
+    "exactCSS": true,
+    "exactClass": true,
+    "exactHref": true,
+    "noLiveGooberTarget": true,
+    "headResource": true,
+    "insideAppResources": 1,
+    "insideAppStyleDetails": [
+      {
+        "attrs": [
+          [
+            "href",
+            "openui-owned-v1:LineChart:go2093477646"
+          ],
+          [
+            "precedence",
+            "openui"
+          ]
+        ],
+        "length": 7618,
+        "prefix": "@layer theme, base, components, utilities;@layer components{.go2093477646/*r4*/ :where(.op",
+        "namespace": "http://www.w3.org/2000/svg",
+        "parent": "g",
+        "parentNamespace": "http://www.w3.org/2000/svg"
+      }
+    ]
+  },
+  "serverBytes": 13820,
+  "browserBytes": 13820
+}

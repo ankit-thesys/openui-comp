@@ -1,0 +1,1 @@
+{"&/*r1*/":{"&:where(.openui-agent-sidebar-item--selected)":{"background-color/*d0*/":"var(--openui-sunk-deep, oklch(0.097 0 0 / 0.08))"}},"&/*r3*/":{"&:where(.openui-agent-sidebar-item--selected)":{"&:not(:disabled)":{"&:hover":{"background-color/*d2*/":"var(--openui-sunk-deep, oklch(0.097 0 0 / 0.08))"}}}}}

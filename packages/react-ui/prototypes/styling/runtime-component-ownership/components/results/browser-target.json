@@ -1,0 +1,14 @@
+{
+  "scope": "Real detached browser DOM target/public extractCss vs inherited server sink, exact same immutable Button definition; no performance claim.",
+  "checks": {
+    "exactCSS": true,
+    "exactClass": true,
+    "exactHref": true,
+    "noLiveGooberTarget": true,
+    "headResource": true,
+    "insideAppResources": 0,
+    "insideAppStyleDetails": []
+  },
+  "serverBytes": 13820,
+  "browserBytes": 13820
+}

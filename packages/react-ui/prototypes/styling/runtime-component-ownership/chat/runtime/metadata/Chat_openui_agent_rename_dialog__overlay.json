@@ -1,0 +1,1 @@
+[{"selector":"__SCOPE__.openui-agent-rename-dialog__overlay","properties":{"position":"fixed","inset":"0","z-index":"10000","background":"color-mix(in oklch, var(--openui-overlay, oklch(0 0 0 / 0.4)) 30%, transparent)"},"conditions":[],"disabledCursor":false}]
