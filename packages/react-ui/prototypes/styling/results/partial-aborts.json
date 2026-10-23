@@ -1,0 +1,1123 @@
+{
+  "scope": "Repeated cancellation after a real HTTP stream has published partial assistant content. Actual AgentInterface/ChatProvider/store and production GenUI; fixed unmounted checkpoints. Warm/terminal explicit CDP GC diagnostics, not a long soak or performance comparison.",
+  "startedAt": "2026-10-23T13:21:30.675Z",
+  "cyclesPerCase": 30,
+  "warmupPerCase": 3,
+  "status": "passed",
+  "cases": [
+    {
+      "arm": "baseline",
+      "scenario": "chat",
+      "completed": 30,
+      "observations": [
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        }
+      ],
+      "errors": [],
+      "before": {
+        "natural": {
+          "usedSize": 20957816,
+          "totalSize": 36093952,
+          "embedderHeapUsedSize": 5305048,
+          "backingStorageSize": 3439607
+        },
+        "forced": {
+          "usedSize": 15777892,
+          "totalSize": 16171008,
+          "embedderHeapUsedSize": 1306224,
+          "backingStorageSize": 3436676
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 272,
+          "jsEventListeners": 178
+        },
+        "styles": {
+          "elements": 0,
+          "mounted": false,
+          "sheets": 2,
+          "rules": 2051
+        },
+        "activeStreams": 0
+      },
+      "after": {
+        "natural": {
+          "usedSize": 18716736,
+          "totalSize": 44220416,
+          "embedderHeapUsedSize": 5611872,
+          "backingStorageSize": 3440672
+        },
+        "forced": {
+          "usedSize": 16590904,
+          "totalSize": 17219584,
+          "embedderHeapUsedSize": 1369600,
+          "backingStorageSize": 3437756
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 272,
+          "jsEventListeners": 178
+        },
+        "styles": {
+          "elements": 0,
+          "mounted": false,
+          "sheets": 2,
+          "rules": 2051
+        },
+        "activeStreams": 0
+      },
+      "retention": {
+        "heapDeltaBytes": 813012,
+        "nodeDelta": 0,
+        "listenerDelta": 0,
+        "sheetDelta": 0,
+        "ruleDelta": 0,
+        "heapInvestigationBudgetBytes": 5242880
+      }
+    },
+    {
+      "arm": "baseline",
+      "scenario": "dashboard",
+      "completed": 30,
+      "observations": [
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        }
+      ],
+      "errors": [],
+      "before": {
+        "natural": {
+          "usedSize": 20948300,
+          "totalSize": 35569664,
+          "embedderHeapUsedSize": 5228912,
+          "backingStorageSize": 3439508
+        },
+        "forced": {
+          "usedSize": 15807952,
+          "totalSize": 16695296,
+          "embedderHeapUsedSize": 1310976,
+          "backingStorageSize": 3436580
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 258,
+          "jsEventListeners": 178
+        },
+        "styles": {
+          "elements": 0,
+          "mounted": false,
+          "sheets": 2,
+          "rules": 2051
+        },
+        "activeStreams": 0
+      },
+      "after": {
+        "natural": {
+          "usedSize": 24402288,
+          "totalSize": 34258944,
+          "embedderHeapUsedSize": 3328592,
+          "backingStorageSize": 3439354
+        },
+        "forced": {
+          "usedSize": 16622656,
+          "totalSize": 17481728,
+          "embedderHeapUsedSize": 1148864,
+          "backingStorageSize": 3437660
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 258,
+          "jsEventListeners": 178
+        },
+        "styles": {
+          "elements": 0,
+          "mounted": false,
+          "sheets": 2,
+          "rules": 2051
+        },
+        "activeStreams": 0
+      },
+      "retention": {
+        "heapDeltaBytes": 814704,
+        "nodeDelta": 0,
+        "listenerDelta": 0,
+        "sheetDelta": 0,
+        "ruleDelta": 0,
+        "heapInvestigationBudgetBytes": 5242880
+      }
+    },
+    {
+      "arm": "generated",
+      "scenario": "chat",
+      "completed": 30,
+      "observations": [
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 1289,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        }
+      ],
+      "errors": [],
+      "before": {
+        "natural": {
+          "usedSize": 20963728,
+          "totalSize": 35831808,
+          "embedderHeapUsedSize": 5322952,
+          "backingStorageSize": 3439608
+        },
+        "forced": {
+          "usedSize": 15779300,
+          "totalSize": 16433152,
+          "embedderHeapUsedSize": 1306096,
+          "backingStorageSize": 3436676
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 272,
+          "jsEventListeners": 178
+        },
+        "styles": {
+          "elements": 0,
+          "mounted": false,
+          "sheets": 2,
+          "rules": 2092
+        },
+        "activeStreams": 0
+      },
+      "after": {
+        "natural": {
+          "usedSize": 18655500,
+          "totalSize": 42385408,
+          "embedderHeapUsedSize": 5293896,
+          "backingStorageSize": 3440672
+        },
+        "forced": {
+          "usedSize": 16591728,
+          "totalSize": 17481728,
+          "embedderHeapUsedSize": 1171256,
+          "backingStorageSize": 3437756
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 272,
+          "jsEventListeners": 178
+        },
+        "styles": {
+          "elements": 0,
+          "mounted": false,
+          "sheets": 2,
+          "rules": 2092
+        },
+        "activeStreams": 0
+      },
+      "retention": {
+        "heapDeltaBytes": 812428,
+        "nodeDelta": 0,
+        "listenerDelta": 0,
+        "sheetDelta": 0,
+        "ruleDelta": 0,
+        "heapInvestigationBudgetBytes": 5242880
+      }
+    },
+    {
+      "arm": "generated",
+      "scenario": "dashboard",
+      "completed": 30,
+      "observations": [
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        },
+        {
+          "partialChars": 128,
+          "expectedChars": 2314,
+          "activeBefore": 1,
+          "activeAfter": 0,
+          "freshStoreEmpty": true
+        }
+      ],
+      "errors": [],
+      "before": {
+        "natural": {
+          "usedSize": 20794956,
+          "totalSize": 35045376,
+          "embedderHeapUsedSize": 5236600,
+          "backingStorageSize": 3439509
+        },
+        "forced": {
+          "usedSize": 15743848,
+          "totalSize": 16433152,
+          "embedderHeapUsedSize": 1291040,
+          "backingStorageSize": 3436580
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 258,
+          "jsEventListeners": 178
+        },
+        "styles": {
+          "elements": 0,
+          "mounted": false,
+          "sheets": 2,
+          "rules": 2092
+        },
+        "activeStreams": 0
+      },
+      "after": {
+        "natural": {
+          "usedSize": 28685904,
+          "totalSize": 38977536,
+          "embedderHeapUsedSize": 4514544,
+          "backingStorageSize": 3440210
+        },
+        "forced": {
+          "usedSize": 16557760,
+          "totalSize": 17481728,
+          "embedderHeapUsedSize": 1157032,
+          "backingStorageSize": 3437660
+        },
+        "dom": {
+          "documents": 1,
+          "nodes": 258,
+          "jsEventListeners": 178
+        },
+        "styles": {
+          "elements": 0,
+          "mounted": false,
+          "sheets": 2,
+          "rules": 2092
+        },
+        "activeStreams": 0
+      },
+      "retention": {
+        "heapDeltaBytes": 813912,
+        "nodeDelta": 0,
+        "listenerDelta": 0,
+        "sheetDelta": 0,
+        "ruleDelta": 0,
+        "heapInvestigationBudgetBytes": 5242880
+      }
+    }
+  ],
+  "failures": [],
+  "finishedAt": "2026-10-23T13:21:47.497Z"
+}

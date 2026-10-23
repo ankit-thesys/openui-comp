@@ -1,0 +1,216 @@
+{
+  "generatedAt": "2026-10-23T12:58:46.486Z",
+  "nextVersion": "16.4.2",
+  "mode": "next build --webpack + next start; actual production components and incremental parser; identical JS both CSS arms",
+  "themeBridge": "Fixture-only library helper renders production useTheme resolved tokens in scoped SSR style, preserving ThemeProvider insertion effect. No Goober browser runtime. Not a production source fix.",
+  "checks": {
+    "chat-baseline-serverStyled": true,
+    "chat-generated-serverStyled": true,
+    "dashboard-baseline-serverStyled": true,
+    "dashboard-generated-serverStyled": true,
+    "upstreamSSRThemeGapReproduced": true,
+    "concurrentThemeIsolation": true,
+    "chat-baseline-hydrated": true,
+    "chat-baseline-form": true,
+    "chat-baseline-firstRevealStyled": true,
+    "chat-baseline-localTheme": true,
+    "chat-baseline-navigation": true,
+    "chat-generated-hydrated": true,
+    "chat-generated-form": true,
+    "chat-generated-firstRevealStyled": true,
+    "chat-generated-localTheme": true,
+    "chat-generated-navigation": true,
+    "dashboard-baseline-hydrated": true,
+    "dashboard-baseline-form": true,
+    "dashboard-baseline-firstRevealStyled": true,
+    "dashboard-baseline-localTheme": true,
+    "dashboard-baseline-navigation": true,
+    "dashboard-generated-hydrated": true,
+    "dashboard-generated-form": true,
+    "dashboard-generated-firstRevealStyled": true,
+    "dashboard-generated-localTheme": true,
+    "dashboard-generated-navigation": true,
+    "allFrameworkOverrides": true,
+    "legacyTailwind4ConflictReproduced": true,
+    "frameworkArmsAgree": true,
+    "streamingTransport": true,
+    "cssBeforeContent": true,
+    "serverHealthyAfterAborts": true,
+    "noHydrationOrBrowserErrors": true
+  },
+  "upstreamWithoutBridge": {
+    "background": "oklch(0.546 0.215 262.881)",
+    "padding": "7px 10px",
+    "token": "oklch(0.546 0.215 262.881 / 1)"
+  },
+  "results": [
+    {
+      "scenario": "chat",
+      "arm": "baseline",
+      "before": {
+        "background": "rgb(51, 71, 176)",
+        "padding": "7px 10px",
+        "token": "#3347b0"
+      },
+      "count": {
+        "inputs": 1,
+        "tables": 0,
+        "svg": 0
+      }
+    },
+    {
+      "scenario": "chat",
+      "arm": "generated",
+      "before": {
+        "background": "rgb(51, 71, 176)",
+        "padding": "7px 10px",
+        "token": "#3347b0"
+      },
+      "count": {
+        "inputs": 1,
+        "tables": 0,
+        "svg": 0
+      }
+    },
+    {
+      "scenario": "dashboard",
+      "arm": "baseline",
+      "before": {
+        "background": "rgb(51, 71, 176)",
+        "padding": "7px 10px",
+        "token": "#3347b0"
+      },
+      "count": {
+        "inputs": 1,
+        "tables": 1,
+        "svg": 1
+      }
+    },
+    {
+      "scenario": "dashboard",
+      "arm": "generated",
+      "before": {
+        "background": "rgb(51, 71, 176)",
+        "padding": "7px 10px",
+        "token": "#3347b0"
+      },
+      "count": {
+        "inputs": 1,
+        "tables": 1,
+        "svg": 1
+      }
+    }
+  ],
+  "framework": [
+    {
+      "arm": "baseline",
+      "framework": "plain",
+      "observed": {
+        "background": "rgb(239, 68, 68)",
+        "padding": "32px",
+        "token": "#3347b0"
+      },
+      "hydrated": {
+        "background": "rgb(239, 68, 68)",
+        "padding": "32px",
+        "token": "#3347b0"
+      },
+      "firstRevealCount": 4,
+      "overrideWorks": true
+    },
+    {
+      "arm": "baseline",
+      "framework": "tailwind3",
+      "observed": {
+        "background": "rgb(239, 68, 68)",
+        "padding": "32px",
+        "token": "#3347b0"
+      },
+      "hydrated": {
+        "background": "rgb(239, 68, 68)",
+        "padding": "32px",
+        "token": "#3347b0"
+      },
+      "firstRevealCount": 4,
+      "overrideWorks": true
+    },
+    {
+      "arm": "baseline",
+      "framework": "tailwind4",
+      "observed": {
+        "background": "oklch(0.637 0.237 25.331)",
+        "padding": "32px",
+        "token": "#3347b0"
+      },
+      "hydrated": {
+        "background": "oklch(0.637 0.237 25.331)",
+        "padding": "32px",
+        "token": "#3347b0"
+      },
+      "firstRevealCount": 4,
+      "overrideWorks": true
+    },
+    {
+      "arm": "generated",
+      "framework": "plain",
+      "observed": {
+        "background": "rgb(239, 68, 68)",
+        "padding": "32px",
+        "token": "#3347b0"
+      },
+      "hydrated": {
+        "background": "rgb(239, 68, 68)",
+        "padding": "32px",
+        "token": "#3347b0"
+      },
+      "firstRevealCount": 4,
+      "overrideWorks": true
+    },
+    {
+      "arm": "generated",
+      "framework": "tailwind3",
+      "observed": {
+        "background": "rgb(239, 68, 68)",
+        "padding": "32px",
+        "token": "#3347b0"
+      },
+      "hydrated": {
+        "background": "rgb(239, 68, 68)",
+        "padding": "32px",
+        "token": "#3347b0"
+      },
+      "firstRevealCount": 4,
+      "overrideWorks": true
+    },
+    {
+      "arm": "generated",
+      "framework": "tailwind4",
+      "observed": {
+        "background": "oklch(0.637 0.237 25.331)",
+        "padding": "32px",
+        "token": "#3347b0"
+      },
+      "hydrated": {
+        "background": "oklch(0.637 0.237 25.331)",
+        "padding": "32px",
+        "token": "#3347b0"
+      },
+      "firstRevealCount": 4,
+      "overrideWorks": true
+    }
+  ],
+  "legacyTW4": {
+    "background": "rgb(51, 71, 176)",
+    "padding": "7px 10px",
+    "token": "#3347b0"
+  },
+  "errors": [],
+  "streamChunks": 7,
+  "limitations": [
+    "SSR ThemeProvider needs demonstrated helper; upstream source still lacks server token styles",
+    "Tailwind4 helper wraps both stylesheet arms in components layer; plain/TW3 use early unlayered assets with explicit theme/base/components/utilities order; legacy failure separately reproduced",
+    "Abort check proves post-abort availability only, not per-request timer/counter cleanup or memory leak absence",
+    "Only Chromium, one chart family; no CSP nonce, throttled CSS or React 18 coverage",
+    "Form editing and local theme button are interactive; chat store/shell tested separately"
+  ]
+}

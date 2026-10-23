@@ -116,3 +116,8 @@ Low per-update styling overhead is plausible because Goober runs at build time. 
 
 - [React Profiler: measurements and production profiling overhead](https://react.dev/reference/react/Profiler)
 - [Long Animation Frames API: metrics and availability limits](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongAnimationFrameTiming)
+
+
+## Subsequent prototype validation
+
+The [follow-up protocol](VALIDATION-FOLLOWUP.md) exercises the actual chat shell/store, production Next SSR/hydration and ten-minute server plus ten-minute browser soak windows across both CSS arms. It records concrete SSR theme-token and framework-layer integration fixes. Its [results](results/INTEGRATION-VALIDATION.md) are separate from the earlier isolated component timing matrix. Cross-browser, all-chart, cold-network and deployment-specific coverage in this broader plan is not implied by those bounded checks.

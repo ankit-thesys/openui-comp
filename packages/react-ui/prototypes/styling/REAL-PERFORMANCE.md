@@ -56,3 +56,8 @@ npm run report:real
 The browser check expects the demo on 4180. The SSR check refuses an occupied 4181, starts its own server and stops it afterward. `REAL_BROWSER_QUICK=1 npm run check:real:browser` is a smoke test and overwrites the browser result; it is not the full measurement matrix. Generated assets and dependencies are ignored. Locks, source fixtures, checkers and JSON results are versioned.
 
 Remaining adoption coverage: completed CSS-in-JS port, full chat store/shell, real Next SSR hydration/theme CSS, slow CSS/network, framework matrix with the real library, other chart families/portals, long-conversation and teardown soak, repeated sessions and deployment-like sustained/open-loop pressure. Do not promote this diagnostic to a full library performance certification.
+
+
+## Follow-up coverage
+
+The later [integration and memory validation](VALIDATION-FOLLOWUP.md) adds full AgentInterface/ChatProvider/store behavior, production Next component SSR/hydration and fixed-teardown memory soaks. See its [separate measured report](results/INTEGRATION-VALIDATION.md). Earlier timings in this document remain the isolated parser/component benchmark; do not relabel them as full-shell timings.

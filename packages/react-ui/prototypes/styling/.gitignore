@@ -11,3 +11,14 @@ public/performance/
 
 .real-dist/
 real/node_modules/
+
+.chat-dist/
+next-real-fixture/node_modules
+next-real-fixture/.next/
+next-real-fixture/generated.jsx
+next-real-fixture/public/
+
+next-chat-fixture/node_modules
+next-chat-fixture/.next/
+next-chat-fixture/generated.jsx
+next-chat-fixture/public/

@@ -1,0 +1,6 @@
+.next/
+node_modules
+generated.jsx
+public/
+next-env.d.ts
+tsconfig.json

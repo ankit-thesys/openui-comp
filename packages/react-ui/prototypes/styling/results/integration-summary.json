@@ -1,0 +1,172 @@
+{
+  "generatedAt": "2026-10-23T13:25:51.863Z",
+  "decision": "Requested prototype checks pass with the demonstrated SSR-theme and framework-delivery adapters. Ready to plan a controlled migration of this static-generation approach; no production migration performed.",
+  "gates": {
+    "combinedNextChat": true,
+    "combinedNextSources": true,
+    "partialResponseCleanup": true,
+    "sourceMatchesMeasuredBuild": true,
+    "perScenarioRetention": true,
+    "fullChat": true,
+    "nextSSRHydration": true,
+    "serverSoak": true,
+    "browserSoak": true
+  },
+  "scope": "Existing unchanged production components; Goober-generated static CSS, not runtime style generation. AgentInterface full chat tested standalone and inside production Next, alongside real-component SSR/custom-theme coverage.",
+  "partialResponseCancellations": 120,
+  "chatCases": 4,
+  "combinedNextChatCases": 4,
+  "nextChatSourceMismatches": [],
+  "nextChecks": 33,
+  "nextVersion": "16.4.2",
+  "soakDurationPerArmSeconds": {
+    "server": 300,
+    "browser": 300
+  },
+  "memory": [
+    {
+      "kind": "next",
+      "arm": "baseline",
+      "completed": 3470,
+      "interrupted": 6,
+      "retainedHeap": {
+        "earlyMedian": 58152816,
+        "lateMedian": 56863616,
+        "delta": -1289200,
+        "relativePercent": -2.216917577989688,
+        "budgetBytes": 5815281.600000001,
+        "needsInvestigation": false
+      },
+      "checkpointCount": 13,
+      "naturalHeapPeak": 76951088,
+      "naturalRssPeak": 229441536,
+      "errors": []
+    },
+    {
+      "kind": "next",
+      "arm": "generated",
+      "completed": 3470,
+      "interrupted": 6,
+      "retainedHeap": {
+        "earlyMedian": 58142496,
+        "lateMedian": 57199328,
+        "delta": -943168,
+        "relativePercent": -1.6221663411216471,
+        "budgetBytes": 5814249.600000001,
+        "needsInvestigation": false
+      },
+      "checkpointCount": 13,
+      "naturalHeapPeak": 77761656,
+      "naturalRssPeak": 229015552,
+      "errors": []
+    },
+    {
+      "kind": "browser",
+      "arm": "baseline",
+      "completed": 550,
+      "interrupted": 60,
+      "retainedHeap": {
+        "earlyMedian": 35667904,
+        "lateMedian": 39483308,
+        "delta": 3815404,
+        "relativePercent": 10.697023295789963,
+        "budgetBytes": 5242880,
+        "needsInvestigation": false
+      },
+      "checkpointCount": 13,
+      "naturalHeapPeak": 84990264,
+      "naturalRssPeak": null,
+      "errors": []
+    },
+    {
+      "kind": "browser",
+      "arm": "generated",
+      "completed": 550,
+      "interrupted": 60,
+      "retainedHeap": {
+        "earlyMedian": 35671416,
+        "lateMedian": 39480664,
+        "delta": 3809248,
+        "relativePercent": 10.678712614043691,
+        "budgetBytes": 5242880,
+        "needsInvestigation": false
+      },
+      "checkpointCount": 13,
+      "naturalHeapPeak": 80916632,
+      "naturalRssPeak": null,
+      "errors": []
+    }
+  ],
+  "failures": {
+    "nextChat": null,
+    "partialAborts": [],
+    "chat": null,
+    "next": [],
+    "server": [],
+    "browser": []
+  },
+  "scenarioRetention": [
+    {
+      "arm": "baseline",
+      "scenario": "chat",
+      "warm": 17528700,
+      "final": 19321428,
+      "delta": 1792728,
+      "budgetBytes": 5242880,
+      "passed": true
+    },
+    {
+      "arm": "baseline",
+      "scenario": "dashboard",
+      "warm": 18139204,
+      "final": 20161880,
+      "delta": 2022676,
+      "budgetBytes": 5242880,
+      "passed": true
+    },
+    {
+      "arm": "generated",
+      "scenario": "chat",
+      "warm": 17534536,
+      "final": 19323424,
+      "delta": 1788888,
+      "budgetBytes": 5242880,
+      "passed": true
+    },
+    {
+      "arm": "generated",
+      "scenario": "dashboard",
+      "warm": 18136880,
+      "final": 20157240,
+      "delta": 2020360,
+      "budgetBytes": 5242880,
+      "passed": true
+    }
+  ],
+  "sourceMismatches": [],
+  "provenance": {
+    "baseCommit": "4092ca6ccab3e25784cf6accd9c6f4ade3a41ec5",
+    "note": "Hashes captured as full memory soak begins; implementation is uncommitted at capture. Performance timing from earlier round stays separately pinned.",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "hashes": {
+      "real/chat.tsx": "d543e5e2ca0c6cb705a6d29376a11e0a435c3bcc0fea558c234322578c2dfc07",
+      "real/chat-client.tsx": "0cf05b6de58411e7ad82ed309a4515c406731a3e5769b5eb3e46b4f48c77dcc2",
+      "real/chat-server.ts": "070b78a45d9775505dc506b369f284c36d4ce0a80fd88f33a9154472eb3a95f4",
+      "scripts/build-chat.mjs": "5633a3c99679c1938570d4dd4ed124a845d39105ccae1cb1800ef6853f7966dc",
+      "scripts/check-full-chat.mjs": "9334f8087163a2917a7af8cc4152ace5d4d125878a2f2ccf4548763b2da8dac3",
+      "scripts/prepare-next-real.mjs": "585d56b97fd501f1ee4e0924a7e387d68f21b5173b69544c2b4da64f23dc0004",
+      "scripts/check-next-real.mjs": "9ef0ab5de20203e500379157b2b20bd224a9d2ec2ab405a49fc65177cebad57d",
+      "scripts/check-memory-soak.mjs": "009c4286e9e07bf934c510708b25e52f98589e9692426ad98398c9664a046c06",
+      "next-real-fixture/entry.tsx": "ae648cca4971f1518aa3594f578f54df62b759a5657b4a1249e396d5a2f40fe3",
+      "next-real-fixture/app/page.jsx": "e0e69d93274863711b22bf1b646335a3bf0a6e97cfff5cc6147ad9a1d5d6c7fb",
+      "next-real-fixture/app/layout.jsx": "58c6442779dc45e35e52ad4a7a272aca5ed0b60de0217f8f0f892d8f8a73d1a7",
+      "next-real-fixture/app/api/diagnostics/route.js": "bf8758108ce799cecff80e12ecbc0bf0594a883714c10ede85eff9f6919797cb",
+      ".chat-dist/client.js": "6aafa854f916ee575c01278d80ce955142db53c4160dd6e2d905164de4fe3f38",
+      ".chat-dist/server.cjs": "3e27375d2ae70a9320945547d831f23a1feb20c94abc6fb48cdc6fb1394bf50f",
+      "next-real-fixture/generated.jsx": "c05fb856f5b7f149a273bd82f32048ebac3ec90169590fdd34000e98c27ca6d7",
+      "next-real-fixture/.next/BUILD_ID": "4db5c015cbe5f881b505cf837a6017d5ffde1e3b68e43715e443e4cb0bc098b3",
+      "real/package-lock.json": "27eeef9b184ab41dab7fee06115ee11de4003deac66664f09b5f18dcd4d67793",
+      "next-fixture/package-lock.json": "d378174516196f4dc19650f3d3ea97d4caf8c2b6c99478b07a280b780b2666ac"
+    }
+  }
+}

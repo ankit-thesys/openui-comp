@@ -1,0 +1,1708 @@
+{
+  "kind": "browser",
+  "startedAt": "2026-10-23T13:10:28.088Z",
+  "secondsPerArm": 300,
+  "scope": "Actual AgentInterface, ChatProvider/store and streaming parser. Two persistent pages per arm (chat and dashboard), sequential sends, cancel/unmount/remount. Fixed two-block/panel payload and fixed teardown checkpoint; no accumulating history. Separate browser process per arm. Natural-GC load interval; explicit CDP forced-GC warm and terminal idle checkpoints only. Bounded harness event buffer500 and server history20.",
+  "arms": [
+    {
+      "arm": "baseline",
+      "completed": 550,
+      "cancelled": 60,
+      "checkpoints": [
+        {
+          "stage": "cold",
+          "elapsedMs": 1258.1975409999723,
+          "heapUsed": 28930216,
+          "naturalHeapUsed": 38330732,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 19214008,
+                "totalSize": 25608192,
+                "embedderHeapUsedSize": 2576872,
+                "backingStorageSize": 3435491
+              },
+              "forced": {
+                "usedSize": 14466288,
+                "totalSize": 15646720,
+                "embedderHeapUsedSize": 890688,
+                "backingStorageSize": 3435224
+              },
+              "domBefore": {
+                "documents": 4,
+                "nodes": 140,
+                "jsEventListeners": 183
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 12,
+                "jsEventListeners": 158
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 19116724,
+                "totalSize": 24035328,
+                "embedderHeapUsedSize": 2571344,
+                "backingStorageSize": 3435506
+              },
+              "forced": {
+                "usedSize": 14463928,
+                "totalSize": 15646720,
+                "embedderHeapUsedSize": 892320,
+                "backingStorageSize": 3435224
+              },
+              "domBefore": {
+                "documents": 4,
+                "nodes": 140,
+                "jsEventListeners": 183
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 12,
+                "jsEventListeners": 158
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "warm",
+          "elapsedMs": 5852.537624999997,
+          "heapUsed": 35667904,
+          "naturalHeapUsed": 43724668,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 21400572,
+                "totalSize": 28229632,
+                "embedderHeapUsedSize": 5908904,
+                "backingStorageSize": 3453650
+              },
+              "forced": {
+                "usedSize": 17528700,
+                "totalSize": 18792448,
+                "embedderHeapUsedSize": 1208736,
+                "backingStorageSize": 3436804
+              },
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1111,
+                "jsEventListeners": 445
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 194,
+                "jsEventListeners": 174
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 22324096,
+                "totalSize": 37142528,
+                "embedderHeapUsedSize": 8105416,
+                "backingStorageSize": 3453733
+              },
+              "forced": {
+                "usedSize": 18139204,
+                "totalSize": 18792448,
+                "embedderHeapUsedSize": 1419520,
+                "backingStorageSize": 3437460
+              },
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2497,
+                "jsEventListeners": 610
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 581,
+                "jsEventListeners": 179
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 36243.78766599996,
+          "heapUsed": null,
+          "naturalHeapUsed": 51751752,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 24685108,
+                "totalSize": 53133312,
+                "embedderHeapUsedSize": 4714840,
+                "backingStorageSize": 3449262
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1542,
+                "jsEventListeners": 417
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 1542,
+                "jsEventListeners": 417
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 27066644,
+                "totalSize": 54181888,
+                "embedderHeapUsedSize": 4574936,
+                "backingStorageSize": 3443263
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1779,
+                "jsEventListeners": 373
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 1779,
+                "jsEventListeners": 373
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 66836.87637499999,
+          "heapUsed": null,
+          "naturalHeapUsed": 66020236,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 37337968,
+                "totalSize": 68861952,
+                "embedderHeapUsedSize": 8120624,
+                "backingStorageSize": 3461464
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2216,
+                "jsEventListeners": 622
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2216,
+                "jsEventListeners": 622
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 28682268,
+                "totalSize": 82755584,
+                "embedderHeapUsedSize": 4954512,
+                "backingStorageSize": 3446127
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1793,
+                "jsEventListeners": 402
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 1793,
+                "jsEventListeners": 402
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 97473.45508300001,
+          "heapUsed": null,
+          "naturalHeapUsed": 77328680,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 32337980,
+                "totalSize": 79347712,
+                "embedderHeapUsedSize": 7413528,
+                "backingStorageSize": 3461718
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2155,
+                "jsEventListeners": 595
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2155,
+                "jsEventListeners": 595
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 44990700,
+                "totalSize": 84328448,
+                "embedderHeapUsedSize": 9618712,
+                "backingStorageSize": 3463237
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2589,
+                "jsEventListeners": 665
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2589,
+                "jsEventListeners": 665
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 127965.56245799991,
+          "heapUsed": null,
+          "naturalHeapUsed": 76871012,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 43224464,
+                "totalSize": 81969152,
+                "embedderHeapUsedSize": 8904376,
+                "backingStorageSize": 3469086
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2486,
+                "jsEventListeners": 691
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2486,
+                "jsEventListeners": 691
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 33646548,
+                "totalSize": 84066304,
+                "embedderHeapUsedSize": 13281648,
+                "backingStorageSize": 3472690
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 3416,
+                "jsEventListeners": 927
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 3416,
+                "jsEventListeners": 927
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 158665.15879100002,
+          "heapUsed": null,
+          "naturalHeapUsed": 69926104,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 42829560,
+                "totalSize": 81182720,
+                "embedderHeapUsedSize": 8898416,
+                "backingStorageSize": 3468952
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2468,
+                "jsEventListeners": 686
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2468,
+                "jsEventListeners": 686
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 27096544,
+                "totalSize": 85377024,
+                "embedderHeapUsedSize": 4509480,
+                "backingStorageSize": 3445127
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2464,
+                "jsEventListeners": 361
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2464,
+                "jsEventListeners": 361
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 189114.657916,
+          "heapUsed": null,
+          "naturalHeapUsed": 78434648,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 48400448,
+                "totalSize": 83804160,
+                "embedderHeapUsedSize": 9276152,
+                "backingStorageSize": 3471282
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2677,
+                "jsEventListeners": 709
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2677,
+                "jsEventListeners": 709
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 30034200,
+                "totalSize": 86163456,
+                "embedderHeapUsedSize": 5209688,
+                "backingStorageSize": 3451985
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1789,
+                "jsEventListeners": 411
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 1789,
+                "jsEventListeners": 411
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 219775.26749999996,
+          "heapUsed": null,
+          "naturalHeapUsed": 84990264,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 43033772,
+                "totalSize": 83804160,
+                "embedderHeapUsedSize": 9004744,
+                "backingStorageSize": 3471593
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2486,
+                "jsEventListeners": 687
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2486,
+                "jsEventListeners": 687
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 41956492,
+                "totalSize": 86687744,
+                "embedderHeapUsedSize": 8184264,
+                "backingStorageSize": 3459226
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2505,
+                "jsEventListeners": 580
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2505,
+                "jsEventListeners": 580
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 250224.33929099992,
+          "heapUsed": null,
+          "naturalHeapUsed": 74313276,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 47023116,
+                "totalSize": 85114880,
+                "embedderHeapUsedSize": 9379752,
+                "backingStorageSize": 3473457
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2679,
+                "jsEventListeners": 709
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2679,
+                "jsEventListeners": 709
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 27290160,
+                "totalSize": 86425600,
+                "embedderHeapUsedSize": 4578368,
+                "backingStorageSize": 3449357
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1771,
+                "jsEventListeners": 353
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 1771,
+                "jsEventListeners": 353
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 280844.231916,
+          "heapUsed": null,
+          "naturalHeapUsed": 73299524,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 25605960,
+                "totalSize": 83542016,
+                "embedderHeapUsedSize": 3227992,
+                "backingStorageSize": 3450316
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1189,
+                "jsEventListeners": 316
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 1189,
+                "jsEventListeners": 316
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 47693564,
+                "totalSize": 86687744,
+                "embedderHeapUsedSize": 10041664,
+                "backingStorageSize": 3467069
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 3385,
+                "jsEventListeners": 720
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 3385,
+                "jsEventListeners": 720
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "after-load",
+          "elapsedMs": 308745.30620799994,
+          "heapUsed": 39483228,
+          "naturalHeapUsed": 72748304,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 25016516,
+                "totalSize": 85377024,
+                "embedderHeapUsedSize": 3054688,
+                "backingStorageSize": 3449798
+              },
+              "forced": {
+                "usedSize": 19321348,
+                "totalSize": 20627456,
+                "embedderHeapUsedSize": 1571104,
+                "backingStorageSize": 3447619
+              },
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1156,
+                "jsEventListeners": 311
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 194,
+                "jsEventListeners": 174
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 47731788,
+                "totalSize": 86425600,
+                "embedderHeapUsedSize": 9797032,
+                "backingStorageSize": 3468005
+              },
+              "forced": {
+                "usedSize": 20161880,
+                "totalSize": 21151744,
+                "embedderHeapUsedSize": 1791728,
+                "backingStorageSize": 3448328
+              },
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2696,
+                "jsEventListeners": 691
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 581,
+                "jsEventListeners": 179
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "idle",
+          "elapsedMs": 314111.044291,
+          "heapUsed": 39483308,
+          "naturalHeapUsed": 39514884,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 19337184,
+                "totalSize": 20889600,
+                "embedderHeapUsedSize": 1606640,
+                "backingStorageSize": 3447625
+              },
+              "forced": {
+                "usedSize": 19321428,
+                "totalSize": 20627456,
+                "embedderHeapUsedSize": 1571104,
+                "backingStorageSize": 3447619
+              },
+              "domBefore": {
+                "documents": 1,
+                "nodes": 194,
+                "jsEventListeners": 174
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 194,
+                "jsEventListeners": 174
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 20177700,
+                "totalSize": 21413888,
+                "embedderHeapUsedSize": 1977832,
+                "backingStorageSize": 3448334
+              },
+              "forced": {
+                "usedSize": 20161880,
+                "totalSize": 21151744,
+                "embedderHeapUsedSize": 1791728,
+                "backingStorageSize": 3448328
+              },
+              "domBefore": {
+                "documents": 1,
+                "nodes": 581,
+                "jsEventListeners": 179
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 581,
+                "jsEventListeners": 179
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2051,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        }
+      ],
+      "errors": [],
+      "retainedHeap": {
+        "earlyMedian": 35667904,
+        "lateMedian": 39483308,
+        "delta": 3815404,
+        "relativePercent": 10.697023295789963,
+        "budgetBytes": 5242880,
+        "needsInvestigation": false
+      }
+    },
+    {
+      "arm": "generated",
+      "completed": 550,
+      "cancelled": 60,
+      "checkpoints": [
+        {
+          "stage": "cold",
+          "elapsedMs": 1107.479416999966,
+          "heapUsed": 28937616,
+          "naturalHeapUsed": 38459844,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 19251660,
+                "totalSize": 24297472,
+                "embedderHeapUsedSize": 2450168,
+                "backingStorageSize": 3435492
+              },
+              "forced": {
+                "usedSize": 14474616,
+                "totalSize": 15646720,
+                "embedderHeapUsedSize": 848552,
+                "backingStorageSize": 3435224
+              },
+              "domBefore": {
+                "documents": 4,
+                "nodes": 138,
+                "jsEventListeners": 183
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 12,
+                "jsEventListeners": 158
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 19208184,
+                "totalSize": 24821760,
+                "embedderHeapUsedSize": 2449832,
+                "backingStorageSize": 3435508
+              },
+              "forced": {
+                "usedSize": 14463000,
+                "totalSize": 15384576,
+                "embedderHeapUsedSize": 848280,
+                "backingStorageSize": 3435225
+              },
+              "domBefore": {
+                "documents": 4,
+                "nodes": 138,
+                "jsEventListeners": 183
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 12,
+                "jsEventListeners": 158
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "warm",
+          "elapsedMs": 5461.3449580000015,
+          "heapUsed": 35671416,
+          "naturalHeapUsed": 42784452,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 20479748,
+                "totalSize": 29278208,
+                "embedderHeapUsedSize": 6053032,
+                "backingStorageSize": 3453650
+              },
+              "forced": {
+                "usedSize": 17534536,
+                "totalSize": 18792448,
+                "embedderHeapUsedSize": 1206016,
+                "backingStorageSize": 3436804
+              },
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1111,
+                "jsEventListeners": 445
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 194,
+                "jsEventListeners": 174
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 22304704,
+                "totalSize": 37666816,
+                "embedderHeapUsedSize": 8140640,
+                "backingStorageSize": 3453691
+              },
+              "forced": {
+                "usedSize": 18136880,
+                "totalSize": 18792448,
+                "embedderHeapUsedSize": 1425904,
+                "backingStorageSize": 3437461
+              },
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2503,
+                "jsEventListeners": 611
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 581,
+                "jsEventListeners": 179
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 35950.262708000024,
+          "heapUsed": null,
+          "naturalHeapUsed": 76218968,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 28875528,
+                "totalSize": 53919744,
+                "embedderHeapUsedSize": 5341760,
+                "backingStorageSize": 3449340
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1752,
+                "jsEventListeners": 454
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 1752,
+                "jsEventListeners": 454
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 47343440,
+                "totalSize": 64667648,
+                "embedderHeapUsedSize": 9572120,
+                "backingStorageSize": 3459064
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2720,
+                "jsEventListeners": 693
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2720,
+                "jsEventListeners": 693
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 66543.87579199998,
+          "heapUsed": null,
+          "naturalHeapUsed": 71911744,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 26767584,
+                "totalSize": 78823424,
+                "embedderHeapUsedSize": 6719688,
+                "backingStorageSize": 3455960
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2071,
+                "jsEventListeners": 546
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2071,
+                "jsEventListeners": 546
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 45144160,
+                "totalSize": 81969152,
+                "embedderHeapUsedSize": 8579552,
+                "backingStorageSize": 3454731
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2664,
+                "jsEventListeners": 637
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2664,
+                "jsEventListeners": 637
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 97211.18449999997,
+          "heapUsed": null,
+          "naturalHeapUsed": 57791168,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 28061316,
+                "totalSize": 80396288,
+                "embedderHeapUsedSize": 6858768,
+                "backingStorageSize": 3457040
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2073,
+                "jsEventListeners": 546
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2073,
+                "jsEventListeners": 546
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 29729852,
+                "totalSize": 83017728,
+                "embedderHeapUsedSize": 5441792,
+                "backingStorageSize": 3449712
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1953,
+                "jsEventListeners": 428
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 1953,
+                "jsEventListeners": 428
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 127718.66387499997,
+          "heapUsed": null,
+          "naturalHeapUsed": 77975116,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 37890684,
+                "totalSize": 82493440,
+                "embedderHeapUsedSize": 8290576,
+                "backingStorageSize": 3463660
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2390,
+                "jsEventListeners": 638
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2390,
+                "jsEventListeners": 638
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 40084432,
+                "totalSize": 85114880,
+                "embedderHeapUsedSize": 7696256,
+                "backingStorageSize": 3454238
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2062,
+                "jsEventListeners": 522
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2062,
+                "jsEventListeners": 522
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 158395.23991699994,
+          "heapUsed": null,
+          "naturalHeapUsed": 76352276,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 36897580,
+                "totalSize": 81444864,
+                "embedderHeapUsedSize": 7781688,
+                "backingStorageSize": 3464662
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2360,
+                "jsEventListeners": 617
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2360,
+                "jsEventListeners": 617
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 39454696,
+                "totalSize": 85114880,
+                "embedderHeapUsedSize": 7382200,
+                "backingStorageSize": 3455155
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1932,
+                "jsEventListeners": 462
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 1932,
+                "jsEventListeners": 462
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 188827.541875,
+          "heapUsed": null,
+          "naturalHeapUsed": 80916632,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 43157284,
+                "totalSize": 84328448,
+                "embedderHeapUsedSize": 8882176,
+                "backingStorageSize": 3470068
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2474,
+                "jsEventListeners": 686
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2474,
+                "jsEventListeners": 686
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 37759348,
+                "totalSize": 86687744,
+                "embedderHeapUsedSize": 7388872,
+                "backingStorageSize": 3456235
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1924,
+                "jsEventListeners": 461
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 1924,
+                "jsEventListeners": 461
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 219518.20533299993,
+          "heapUsed": null,
+          "naturalHeapUsed": 69913652,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 39271320,
+                "totalSize": 85377024,
+                "embedderHeapUsedSize": 8573032,
+                "backingStorageSize": 3467347
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2430,
+                "jsEventListeners": 670
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2430,
+                "jsEventListeners": 670
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 30642332,
+                "totalSize": 86163456,
+                "embedderHeapUsedSize": 5611960,
+                "backingStorageSize": 3454162
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1827,
+                "jsEventListeners": 419
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 1827,
+                "jsEventListeners": 419
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 249907.5574579999,
+          "heapUsed": null,
+          "naturalHeapUsed": 71741812,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 42422992,
+                "totalSize": 85639168,
+                "embedderHeapUsedSize": 9060192,
+                "backingStorageSize": 3472243
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 2476,
+                "jsEventListeners": 686
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 2476,
+                "jsEventListeners": 686
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 29318820,
+                "totalSize": 85639168,
+                "embedderHeapUsedSize": 5137840,
+                "backingStorageSize": 3453669
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1793,
+                "jsEventListeners": 407
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 1793,
+                "jsEventListeners": 407
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "interval",
+          "elapsedMs": 280575.87600000005,
+          "heapUsed": null,
+          "naturalHeapUsed": 49975920,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 24480024,
+                "totalSize": 85901312,
+                "embedderHeapUsedSize": 3225616,
+                "backingStorageSize": 3448424
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1154,
+                "jsEventListeners": 308
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 1154,
+                "jsEventListeners": 308
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 25495896,
+                "totalSize": 85114880,
+                "embedderHeapUsedSize": 4113888,
+                "backingStorageSize": 3457540
+              },
+              "forced": null,
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1319,
+                "jsEventListeners": 260
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 1319,
+                "jsEventListeners": 260
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "after-load",
+          "elapsedMs": 308300.017625,
+          "heapUsed": 39480664,
+          "naturalHeapUsed": 52999132,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 25755280,
+                "totalSize": 86163456,
+                "embedderHeapUsedSize": 3284224,
+                "backingStorageSize": 3451216
+              },
+              "forced": {
+                "usedSize": 19323424,
+                "totalSize": 20627456,
+                "embedderHeapUsedSize": 1578328,
+                "backingStorageSize": 3447619
+              },
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1193,
+                "jsEventListeners": 316
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 194,
+                "jsEventListeners": 174
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 27243852,
+                "totalSize": 85377024,
+                "embedderHeapUsedSize": 4462864,
+                "backingStorageSize": 3450941
+              },
+              "forced": {
+                "usedSize": 20157240,
+                "totalSize": 21151744,
+                "embedderHeapUsedSize": 1768576,
+                "backingStorageSize": 3448329
+              },
+              "domBefore": {
+                "documents": 1,
+                "nodes": 1769,
+                "jsEventListeners": 342
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 581,
+                "jsEventListeners": 179
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        },
+        {
+          "stage": "idle",
+          "elapsedMs": 313661.0058749999,
+          "heapUsed": 39480664,
+          "naturalHeapUsed": 39512240,
+          "values": [
+            {
+              "scenario": "chat",
+              "natural": {
+                "usedSize": 19339180,
+                "totalSize": 20889600,
+                "embedderHeapUsedSize": 1606992,
+                "backingStorageSize": 3447625
+              },
+              "forced": {
+                "usedSize": 19323424,
+                "totalSize": 20627456,
+                "embedderHeapUsedSize": 1578328,
+                "backingStorageSize": 3447619
+              },
+              "domBefore": {
+                "documents": 1,
+                "nodes": 194,
+                "jsEventListeners": 174
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 194,
+                "jsEventListeners": 174
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            },
+            {
+              "scenario": "dashboard",
+              "natural": {
+                "usedSize": 20173060,
+                "totalSize": 21413888,
+                "embedderHeapUsedSize": 1931112,
+                "backingStorageSize": 3448335
+              },
+              "forced": {
+                "usedSize": 20157240,
+                "totalSize": 21151744,
+                "embedderHeapUsedSize": 1768576,
+                "backingStorageSize": 3448329
+              },
+              "domBefore": {
+                "documents": 1,
+                "nodes": 581,
+                "jsEventListeners": 179
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 581,
+                "jsEventListeners": 179
+              },
+              "styles": {
+                "elements": 0,
+                "sheets": 2,
+                "rules": 2092,
+                "mounted": false
+              }
+            }
+          ],
+          "activeStreams": 0
+        }
+      ],
+      "errors": [],
+      "retainedHeap": {
+        "earlyMedian": 35671416,
+        "lateMedian": 39480664,
+        "delta": 3809248,
+        "relativePercent": 10.678712614043691,
+        "budgetBytes": 5242880,
+        "needsInvestigation": false
+      }
+    }
+  ],
+  "failures": [],
+  "finishedAt": "2026-10-23T13:20:57.158Z"
+}

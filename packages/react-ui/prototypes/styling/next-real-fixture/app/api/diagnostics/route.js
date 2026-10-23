@@ -1,0 +1,2 @@
+export const dynamic='force-dynamic';
+export async function GET(request){const gcAvailable=process.env.PROTOTYPE_DIAGNOSTICS==='1'&&typeof global.gc==='function';const gcApplied=gcAvailable&&new URL(request.url).searchParams.get('gc')==='1';if(gcApplied)global.gc();return Response.json({pid:process.pid,uptime:process.uptime(),memory:process.memoryUsage(),gcAvailable,gcApplied},{headers:{'Cache-Control':'no-store'}})}

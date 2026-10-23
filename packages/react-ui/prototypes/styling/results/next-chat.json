@@ -1,0 +1,345 @@
+{
+  "generatedAt": "2026-10-23T13:23:54.486Z",
+  "status": "passed",
+  "failure": null,
+  "scope": "Real Next.js App Router route wraps actual AgentInterface, ChatProvider/store, composer and production parser/library through real/chat.tsx FullChat. Local AG-UI backend proxied through Next route handlers; no live API.",
+  "results": [
+    {
+      "scenario": "chat",
+      "arm": "baseline",
+      "SSRActualComposer": true,
+      "before": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.097 0 0)",
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "after": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.097 0 0)",
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "partialChars": 128,
+      "finalChars": 713,
+      "storeMessages": 2,
+      "pendingObserved": true,
+      "rendered": {
+        "cards": 1,
+        "tables": 0,
+        "rows": 0,
+        "bars": 0,
+        "text": "esponse 1\n\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up question\nEdit when streaming completes\nExplore results\nSave view",
+        "styles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          }
+        ]
+      },
+      "routeUnmountActiveStreams": 0,
+      "errors": []
+    },
+    {
+      "scenario": "chat",
+      "arm": "generated",
+      "SSRActualComposer": true,
+      "before": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.097 0 0)",
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "after": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.097 0 0)",
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "partialChars": 128,
+      "finalChars": 713,
+      "storeMessages": 2,
+      "pendingObserved": true,
+      "rendered": {
+        "cards": 1,
+        "tables": 0,
+        "rows": 0,
+        "bars": 0,
+        "text": "esponse 1\n\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up question\nEdit when streaming completes\nExplore results\nSave view",
+        "styles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          }
+        ]
+      },
+      "routeUnmountActiveStreams": 0,
+      "errors": []
+    },
+    {
+      "scenario": "dashboard",
+      "arm": "baseline",
+      "SSRActualComposer": true,
+      "before": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.097 0 0)",
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "after": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.097 0 0)",
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "partialChars": 128,
+      "finalChars": 1225,
+      "storeMessages": 2,
+      "pendingObserved": true,
+      "rendered": {
+        "cards": 1,
+        "tables": 1,
+        "rows": 10,
+        "bars": 12,
+        "text": "\tActive\nRegion 1 account 4\t1369\tReview\nRegion 1 account 5\t1492\tActive\nRegion 1 account 6\t1615\tActive\nRegion 1 account 7\t1738\tReview\nRegion 1 account 8\t1861\tActive\nRegion 1 account 9\t1984\tActive\nRegion 1 account 10\t2107\tReview\nFollow-up question\nEdit when streaming completes\nExplore results\nSave view",
+        "styles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "TABLE",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          }
+        ]
+      },
+      "routeUnmountActiveStreams": 0,
+      "errors": []
+    },
+    {
+      "scenario": "dashboard",
+      "arm": "generated",
+      "SSRActualComposer": true,
+      "before": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.097 0 0)",
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "after": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "oklch(0.097 0 0)",
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "partialChars": 128,
+      "finalChars": 1225,
+      "storeMessages": 2,
+      "pendingObserved": true,
+      "rendered": {
+        "cards": 1,
+        "tables": 1,
+        "rows": 10,
+        "bars": 12,
+        "text": "\tActive\nRegion 1 account 4\t1369\tReview\nRegion 1 account 5\t1492\tActive\nRegion 1 account 6\t1615\tActive\nRegion 1 account 7\t1738\tReview\nRegion 1 account 8\t1861\tActive\nRegion 1 account 9\t1984\tActive\nRegion 1 account 10\t2107\tReview\nFollow-up question\nEdit when streaming completes\nExplore results\nSave view",
+        "styles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "TABLE",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          }
+        ]
+      },
+      "routeUnmountActiveStreams": 0,
+      "errors": []
+    }
+  ],
+  "limitations": [
+    "Fixture API ref observes the actual store; it does not replace it",
+    "Initial shell SSR only; response components arrive through user-triggered client streaming",
+    "Explicit wrapper cleanup calls real cancelMessage on route unmount; no claim that the unmodified provider cancels automatically",
+    "One message per case plus cancelled second message; full history/retry tested in standalone shell suite",
+    "Chromium only, default light theme; custom SSR token adapter tested separately"
+  ]
+}

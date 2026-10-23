@@ -20,7 +20,17 @@
     "demo:real": "npm run build:real && node .real-dist/server.cjs",
     "check:real:browser": "node scripts/check-real-browser.mjs",
     "check:real:ssr": "REAL_SSR_INCLUDE_50=1 node scripts/check-real-ssr.mjs",
-    "report:real": "node scripts/report-real.mjs"
+    "report:real": "node scripts/report-real.mjs",
+    "build:chat": "node scripts/build-chat.mjs",
+    "demo:chat": "npm run build:chat && node .chat-dist/server.cjs",
+    "check:full-chat": "npm run build:chat && node scripts/check-full-chat.mjs",
+    "build:next-real": "node scripts/prepare-next-real.mjs && npm run build --prefix next-real-fixture",
+    "check:next-real": "npm run build:next-real && node scripts/check-next-real.mjs",
+    "check:memory": "node scripts/check-memory-soak.mjs",
+    "report:integration": "node scripts/report-integration.mjs",
+    "check:partial-aborts": "node scripts/check-partial-aborts.mjs",
+    "build:next-chat": "node scripts/prepare-next-chat.mjs && npm run build --prefix next-chat-fixture",
+    "check:next-chat": "npm run build:next-chat && node scripts/check-next-chat.mjs"
   },
   "dependencies": {
     "goober": "^2.1.16",

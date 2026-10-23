@@ -98,3 +98,20 @@ npm run demo:real
 ```
 
 Open [the real OpenUI lab](http://127.0.0.1:4180). Choose Both to exercise chat and dashboard equally. Exported JSON is separate from the earlier synthetic lab. With that server running, run `npm run check:real:browser`; afterward run `npm run check:real:ssr` (owns a fresh server on 4181), then `npm run report:real`. Do not run browser timing and SSR saturation concurrently.
+
+
+## Full chat, production Next and memory follow-up
+
+[Follow-up protocol](VALIDATION-FOLLOWUP.md) · [generated results](results/INTEGRATION-VALIDATION.md)
+
+```sh
+npm run check:full-chat
+npm run check:next-real
+npm run check:memory
+npm run check:partial-aborts
+npm run report:integration
+```
+
+Use the initial dependency/asset preparation described in the protocol. The memory run takes about twenty minutes plus warmup and cleanup; it tests both CSS arms equally, with normal garbage collection during load and explicit retention checks at idle. Keep other builds and benchmarks stopped during it. `npm run demo:chat` opens the actual current chat shell at port 4182; pass `?scenario=dashboard&arm=generated` to replay chart/table responses through the real store and parser.
+
+The required SSR-theme and Tailwind 4 layer adapters live only in this prototype. Production migration remains a separate action.

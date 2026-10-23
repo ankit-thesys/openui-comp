@@ -1,0 +1,14 @@
+# Real OpenUI in production Next.js
+
+Generated evidence: `next-real.json`. Production Next 16.4.2 (`next build --webpack` then `next start`), Chromium. All 33 required checks passed. This extends the earlier small component fixture to the unchanged production OpenUI library, Renderer and parser.
+
+Both chat and dashboard execute baseline and Goober-generated static CSS with identical JavaScript. JavaScript-disabled documents show the requested accent on actual form buttons before hydration. Dashboard documents contain an actual table and chart SVG. Hydration produced no console or page errors, form input editing worked, local theme updates and client route navigation applied the new accent. Visible delayed components were styled on every MutationObserver observation, including the first. Six concurrent differently themed documents remained isolated. The stream delivered shell and delayed content in different transport chunks, with stylesheet resources before the main content.
+
+Two gaps were reproduced and corrected in prototype adapters:
+
+- The production ThemeProvider injects overrides through `useInsertionEffect`; the unadapted SSR button used the default blue `oklch(0.546 0.215 262.881)` instead of requested `#3347b0`. A fixture-only library helper reads the real resolved theme context and emits a scoped token rule during render, so server and client agree. Pages render the helper automatically, with no manual consumer token extraction or injection order. This does not certify portal theming and does not modify production ThemeProvider.
+- Unlayered component CSS defeats Tailwind 4 layered utilities: the legacy probe retained blue and `7px 10px` padding. Framework selection now uses an early unlayered component asset for plain CSS/Tailwind 3 and a component asset wrapped in `@layer components` with `theme,base,components,utilities` order for Tailwind 4. Actual dashboard override buttons pass before JavaScript, after hydration and on first delayed reveal for both CSS arms. Tailwind 4 reports its real oklch red; the other frameworks report RGB red.
+
+The fixture prebundle selects the universal named-character decoder export because the browser-only export evaluates `document` during SSR. It also rewrites bundled CommonJS React references to the shared ESM React singleton. These are isolated bundle integration choices, not production component fixes. Next emits critical-dependency build warnings for the prebundle require helper; browser execution and hydration still pass.
+
+Six deliberately aborted streams are followed by a successful request. This proves continued availability, not timer cleanup, bounded retained heap or leak absence; process observations are covered separately. No React 18, strict CSP, slow CSS/network or cross-browser claim is made. Goober runs at static build time, never in this browser bundle.

@@ -1,0 +1,536 @@
+{
+  "scope": "Actual AgentInterface, ChatProvider/store, fetchLLM/agUIAdapter, production library; same JS and two static CSS arms. Server-backed consumer history adapter; retry resubmits last user message.",
+  "generatedAt": "2026-10-23T13:21:30.352Z",
+  "status": "passed",
+  "failure": null,
+  "results": [
+    {
+      "scenario": "chat",
+      "arm": "baseline",
+      "partialMessages": 2,
+      "partialChars": 128,
+      "finalChars": 1289,
+      "pendingObserved": true,
+      "runningObserved": true,
+      "multiMessageCount": 4,
+      "historyRestored": true,
+      "cancelledCount": 6,
+      "restartedCount": 8,
+      "composerInputChecked": true,
+      "typingDuringStreaming": true,
+      "themeChanged": true,
+      "scroll": [
+        {
+          "class": "openui-agent-thread-scroll-area",
+          "top": 157,
+          "height": 892,
+          "total": 2974
+        }
+      ],
+      "rendered": {
+        "cards": 4,
+        "tables": 0,
+        "svgs": 10,
+        "barPaths": 0,
+        "tableRows": 0,
+        "styles": [
+          {
+            "tag": "DIV",
+            "class": "openui-card openui-card-card openui-card-full",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "DIV",
+            "class": "openui-card openui-card-card openui-card-full",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "DIV",
+            "class": "openui-card openui-card-card openui-card-full",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "DIV",
+            "class": "openui-card openui-card-card openui-card-full",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          }
+        ],
+        "text": "esponse 2\n\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up question\nEdit when streaming completes\nExplore results\nSave view"
+      },
+      "unmountActiveStreams": 0,
+      "errors": []
+    },
+    {
+      "scenario": "chat",
+      "arm": "generated",
+      "partialMessages": 2,
+      "partialChars": 128,
+      "finalChars": 1289,
+      "pendingObserved": true,
+      "runningObserved": true,
+      "multiMessageCount": 4,
+      "historyRestored": true,
+      "cancelledCount": 6,
+      "restartedCount": 8,
+      "composerInputChecked": true,
+      "typingDuringStreaming": true,
+      "themeChanged": true,
+      "scroll": [
+        {
+          "class": "openui-agent-thread-scroll-area",
+          "top": 69,
+          "height": 892,
+          "total": 2974
+        }
+      ],
+      "rendered": {
+        "cards": 4,
+        "tables": 0,
+        "svgs": 10,
+        "barPaths": 0,
+        "tableRows": 0,
+        "styles": [
+          {
+            "tag": "DIV",
+            "class": "openui-card openui-card-card openui-card-full",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "DIV",
+            "class": "openui-card openui-card-card openui-card-full",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "DIV",
+            "class": "openui-card openui-card-card openui-card-full",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "DIV",
+            "class": "openui-card openui-card-card openui-card-full",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          }
+        ],
+        "text": "esponse 2\n\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up question\nEdit when streaming completes\nExplore results\nSave view"
+      },
+      "unmountActiveStreams": 0,
+      "errors": []
+    },
+    {
+      "scenario": "dashboard",
+      "arm": "baseline",
+      "partialMessages": 2,
+      "partialChars": 128,
+      "finalChars": 2314,
+      "pendingObserved": true,
+      "runningObserved": true,
+      "multiMessageCount": 4,
+      "historyRestored": true,
+      "cancelledCount": 6,
+      "restartedCount": 8,
+      "composerInputChecked": true,
+      "typingDuringStreaming": true,
+      "themeChanged": true,
+      "scroll": [
+        {
+          "class": "openui-agent-thread-scroll-area",
+          "top": 390,
+          "height": 892,
+          "total": 7076
+        }
+      ],
+      "rendered": {
+        "cards": 4,
+        "tables": 6,
+        "svgs": 16,
+        "barPaths": 72,
+        "tableRows": 60,
+        "styles": [
+          {
+            "tag": "DIV",
+            "class": "openui-card openui-card-card openui-card-full",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "TABLE",
+            "class": "openui-table",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          }
+        ],
+        "text": "\tActive\nRegion 2 account 4\t1406\tReview\nRegion 2 account 5\t1529\tActive\nRegion 2 account 6\t1652\tActive\nRegion 2 account 7\t1775\tReview\nRegion 2 account 8\t1898\tActive\nRegion 2 account 9\t2021\tActive\nRegion 2 account 10\t2144\tReview\nFollow-up question\nEdit when streaming completes\nExplore results\nSave view"
+      },
+      "unmountActiveStreams": 0,
+      "errors": []
+    },
+    {
+      "scenario": "dashboard",
+      "arm": "generated",
+      "partialMessages": 2,
+      "partialChars": 128,
+      "finalChars": 2314,
+      "pendingObserved": true,
+      "runningObserved": true,
+      "multiMessageCount": 4,
+      "historyRestored": true,
+      "cancelledCount": 6,
+      "restartedCount": 8,
+      "composerInputChecked": true,
+      "typingDuringStreaming": true,
+      "themeChanged": true,
+      "scroll": [
+        {
+          "class": "openui-agent-thread-scroll-area",
+          "top": 364,
+          "height": 892,
+          "total": 7076
+        }
+      ],
+      "rendered": {
+        "cards": 4,
+        "tables": 6,
+        "svgs": 16,
+        "barPaths": 72,
+        "tableRows": 60,
+        "styles": [
+          {
+            "tag": "DIV",
+            "class": "openui-card openui-card-card openui-card-full",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "TABLE",
+            "class": "openui-table",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(33, 150, 243)"
+          },
+          {
+            "tag": "path",
+            "class": "openui-bar-chart-bar",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.985 0 89.876)",
+            "padding": "0px",
+            "fill": "rgb(100, 181, 246)"
+          }
+        ],
+        "text": "\tActive\nRegion 2 account 4\t1406\tReview\nRegion 2 account 5\t1529\tActive\nRegion 2 account 6\t1652\tActive\nRegion 2 account 7\t1775\tReview\nRegion 2 account 8\t1898\tActive\nRegion 2 account 9\t2021\tActive\nRegion 2 account 10\t2144\tReview\nFollow-up question\nEdit when streaming completes\nExplore results\nSave view"
+      },
+      "unmountActiveStreams": 0,
+      "errors": []
+    }
+  ]
+}

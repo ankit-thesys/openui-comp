@@ -1,0 +1,4 @@
+import {Suspense} from 'react';
+import Fixture from '../generated.jsx';
+async function Delayed({options}){await new Promise(r=>setTimeout(r,650));return <section data-late="true"><Fixture {...options} late/></section>}
+export default async function Page({searchParams}){const q=await searchParams;const options={scenario:q.scenario==='dashboard'?'dashboard':'chat',arm:q.arm==='baseline'?'baseline':'generated',accent:q.theme==='red'?'#b03030':'#3347b0',bridge:q.bridge!=='off'};const framework=['plain','tailwind3','tailwind4'].includes(q.framework)?q.framework:'none';options.framework=framework;return <><link rel="stylesheet" href={'/'+options.arm+(framework==='tailwind4'&&q.policy!=='legacy'?'-layered':'')+'.css'}/><link rel="stylesheet" href={'/frameworks/'+framework+'.css'}/><Fixture {...options}/><Suspense fallback={<p data-pending>Waiting for real components</p>}><Delayed options={options}/></Suspense></>}

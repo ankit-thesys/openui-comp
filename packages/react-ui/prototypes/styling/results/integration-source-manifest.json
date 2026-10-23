@@ -1,0 +1,25 @@
+{
+  "baseCommit": "4092ca6ccab3e25784cf6accd9c6f4ade3a41ec5",
+  "note": "Hashes captured as full memory soak begins; implementation is uncommitted at capture. Performance timing from earlier round stays separately pinned.",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "hashes": {
+    "real/chat.tsx": "d543e5e2ca0c6cb705a6d29376a11e0a435c3bcc0fea558c234322578c2dfc07",
+    "real/chat-client.tsx": "0cf05b6de58411e7ad82ed309a4515c406731a3e5769b5eb3e46b4f48c77dcc2",
+    "real/chat-server.ts": "070b78a45d9775505dc506b369f284c36d4ce0a80fd88f33a9154472eb3a95f4",
+    "scripts/build-chat.mjs": "5633a3c99679c1938570d4dd4ed124a845d39105ccae1cb1800ef6853f7966dc",
+    "scripts/check-full-chat.mjs": "9334f8087163a2917a7af8cc4152ace5d4d125878a2f2ccf4548763b2da8dac3",
+    "scripts/prepare-next-real.mjs": "585d56b97fd501f1ee4e0924a7e387d68f21b5173b69544c2b4da64f23dc0004",
+    "scripts/check-next-real.mjs": "9ef0ab5de20203e500379157b2b20bd224a9d2ec2ab405a49fc65177cebad57d",
+    "scripts/check-memory-soak.mjs": "009c4286e9e07bf934c510708b25e52f98589e9692426ad98398c9664a046c06",
+    "next-real-fixture/entry.tsx": "ae648cca4971f1518aa3594f578f54df62b759a5657b4a1249e396d5a2f40fe3",
+    "next-real-fixture/app/page.jsx": "e0e69d93274863711b22bf1b646335a3bf0a6e97cfff5cc6147ad9a1d5d6c7fb",
+    "next-real-fixture/app/layout.jsx": "58c6442779dc45e35e52ad4a7a272aca5ed0b60de0217f8f0f892d8f8a73d1a7",
+    "next-real-fixture/app/api/diagnostics/route.js": "bf8758108ce799cecff80e12ecbc0bf0594a883714c10ede85eff9f6919797cb",
+    ".chat-dist/client.js": "6aafa854f916ee575c01278d80ce955142db53c4160dd6e2d905164de4fe3f38",
+    ".chat-dist/server.cjs": "3e27375d2ae70a9320945547d831f23a1feb20c94abc6fb48cdc6fb1394bf50f",
+    "next-real-fixture/generated.jsx": "c05fb856f5b7f149a273bd82f32048ebac3ec90169590fdd34000e98c27ca6d7",
+    "next-real-fixture/.next/BUILD_ID": "4db5c015cbe5f881b505cf837a6017d5ffde1e3b68e43715e443e4cb0bc098b3",
+    "real/package-lock.json": "27eeef9b184ab41dab7fee06115ee11de4003deac66664f09b5f18dcd4d67793",
+    "next-fixture/package-lock.json": "d378174516196f4dc19650f3d3ea97d4caf8c2b6c99478b07a280b780b2666ac"
+  }
+}
