@@ -1,21 +1,27 @@
 # Goober requirements — generated decision report
 
-Verdict: Goober is a plausible styling engine, but the requirement set is not met by Goober alone or by this prototype adapter yet. No adoption decision has been made.
+The host-style conflict and SSR setup blockers are resolved in the tested prototype paths. This is Goober-generated static CSS plus OpenUI-owned delivery, not stock runtime Goober. Universal zero-configuration framework support and production OpenUI parity remain unproven.
 
-Goober 2.1.19; Chromium 156.0.8078.47; 30 CSS-policy scenarios, plus theme, shared-host, classic SSR and Next.js smoke probes.
+Goober 2.1.19; React 19.3.1; Chromium 156.0.8078.47; Next.js 16.4.2. 30 CSS-policy scenarios.
+
+## What users do
+
+Import and render the prototype Button. The tested React 19 SSR path requires no component CSS import, registry, provider, extraction call, or styling plugin in the app. The package build generates the CSS once; component code carries it using React stylesheet resources. Dynamic theme values use CSS variables.
+
+The browser compatibility adapter and the automatic SSR component are two delivery paths over the same generated styles. The SSR fixture is framework-free; it does not prove that the explicit Tailwind v3/v4 policy can be selected automatically.
 
 | Requirement | Observed result | Who supplies it |
 | --- | --- | --- |
-| No manual component CSS import | Pass in browser fixtures | Goober runtime |
+| No manual component CSS import | Pass in browser and server fixtures | Generated CSS + OpenUI style delivery |
 | Trace rendered component to source | Prototype metadata works; not native Goober source labels | OpenUI instrumentation / build tooling |
 | No hand-maintained compatibility report | Generated JSON and Markdown from checks | Prototype scripts; not a Goober feature |
 | Agent-friendly workflow | Runnable commands and structured manifest provided; no agent benchmark | Project tooling |
-| Tailwind v3/v4 and other CSS overrides | Conditional: adapter needed in tested load orders | OpenUI cascade/insertion policy |
-| Do not interfere with host styles | Not met by prototype adapter when the host shares Goober sheet | Requires isolated insertion ownership |
-| Light/dark themes and portals | Pass in representative fixtures; token forwarding implemented in fixture | OpenUI theme/portal integration |
+| Tailwind v3/v4 and other CSS overrides | Adapted policy: 10/10 scenarios pass; framework choice still explicit | OpenUI cascade policy; automatic framework configuration remains open |
+| Do not disturb host Goober styles | Pass: host color, sheet contents and relative position preserved in probes | Library-owned styles, no writes to host Goober sheet |
+| Light/dark themes and portals | Pass in representative adapted fixtures; token forwarding implemented in fixture | OpenUI theme/portal integration |
 | Chart updates without CSS rule growth | Pass in representative chart fixture | Stable style rules + data attributes |
-| Classic server render and hydration | Pass with explicit extraction | Goober API + server integration |
-| Next.js App Router without SSR setup | Not met: no initial server styles; styled after hydration | Requires framework SSR/streaming integration |
+| Classic SSR without app extraction setup | Pass, including hydration; client-only path also tested | React 19 stylesheet resources inside library component |
+| Next.js SSR without app styling setup | Pass in production fixture: initial styles, hydration, streaming, navigation, eight concurrent requests | Library build generates Goober CSS; React 19 delivers component resources |
 
 ## Policy results
 
@@ -25,30 +31,47 @@ Goober 2.1.19; Chromium 156.0.8078.47; 30 CSS-policy scenarios, plus theme, shar
 | layered | 8/10 | 10/10 | 8/10 |
 | adapted | 10/10 | 10/10 | 10/10 |
 
-The default-policy failures reproduce stylesheet-order and Tailwind v4 layer conflicts. Layering fixes v4 utility precedence but loses base styling to v3 preflight. The framework-aware adapter handles those fixtures but moves Goober’s shared style tag, changing cascade priority for an existing Goober host component. It is not a production-safe universal adapter.
+Default and layered reference-policy failures remain visible. The adapted policy now injects only its own generated stylesheet and scopes rules to library-marked elements. It never moves or modifies the application’s _goober tag.
+
+## Automatic SSR checks
+
+- serverStyled: PASS
+- hydratedStyled: PASS
+- interactive: PASS
+- streamedStyled: PASS
+- noVisibleUnstyledDelayedContent: PASS
+- resourceDeduplicated: PASS
+- hostPreserved: PASS
+- navigationStyled: PASS
+- concurrentRequestsIsolated: PASS
+- streamObserved: PASS
+- streamedCSSBeforeReveal: PASS
+- noBrowserErrors: PASS
 
 ## Remaining work before adoption
 
-- Design library-owned style insertion that does not reorder an application’s Goober styles.
-- Package and validate a supported SSR/streaming integration for required hosts; passing classic SSR does not certify Next.js App Router.
-- Make the chosen cascade policy part of generated installation/configuration rather than scattered manual documentation.
+- Choose whether React 19 and package-build-generated static styles are acceptable constraints. Runtime arbitrary style generation is not certified by these results.
+- Automate framework-policy selection and test combined SSR + Tailwind v3/v4 before claiming universal no-setup compatibility.
+- Validate actual OpenUI components, supported browsers, strict CSP/nonces, and package distribution.
 - Retain component-to-source metadata and generated checks as OpenUI tooling.
-- Validate actual OpenUI components and supported browsers before migrating the complete library.
 
 ## Sources
 
 - Goober API: https://github.com/cristianbote/goober
-- Tailwind v3 custom styles: https://v3.tailwindcss.com/docs/adding-custom-styles
-- Tailwind v4 custom styles: https://tailwindcss.com/docs/adding-custom-styles
+- React stylesheet resources: https://react.dev/reference/react-dom/components/style
 - Next.js CSS-in-JS: https://nextjs.org/docs/app/guides/css-in-js
 
 ## Limits
 
 - Representative components, not production OpenUI ports
 - Chromium only
-- Classic renderToString/hydration only; no Next.js App Router or streaming certification
+- Production Next.js evidence is recorded separately in results/next.json
 - No universal CSS framework guarantee
 - Adapted is an explicit framework-aware policy, not automatic detection
-- Prototype adapter moves the shared Goober style tag; it is not production-safe for hosts sharing that sheet
+- Adapted policy uses generated static Goober styles in a private tag; arbitrary dynamic runtime CSS is not covered
 - Traceability uses prototype data attributes and source metadata; Goober does not generate the report or source labels itself
-- Next.js probe is a development-mode smoke check, not production or concurrent-request verification.
+- React 19 required; React 18 not covered
+- Static Goober-generated rules and dynamic CSS variables; arbitrary runtime style creation not covered
+- Next.js fixture has no CSS framework: Tailwind matrix is tested separately with an explicit policy
+- Representative components, Chromium only
+- No strict CSP/nonce or cross-version validation

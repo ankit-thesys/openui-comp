@@ -4,6 +4,7 @@
     "browser measurements",
     "installed package manifests"
   ],
+  "verdict": "The host-style conflict and SSR setup blockers are resolved in the tested prototype paths. This is Goober-generated static CSS plus OpenUI-owned delivery, not stock runtime Goober. Universal zero-configuration framework support and production OpenUI parity remain unproven.",
   "componentMetadata": {
     "engine": "goober",
     "source": "lib/goober.js",
@@ -50,40 +51,84 @@
   ],
   "sharedGoober": {
     "before": "rgb(12, 130, 120)",
-    "after": "rgb(239, 68, 68)",
-    "hostCascadePreserved": false,
-    "explanation": "Prototype adapter moves the shared Goober style tag; an application using the same Goober sheet can change priority."
+    "after": "rgb(12, 130, 120)",
+    "hostCascadePreserved": true,
+    "hostSheetTextPreserved": true,
+    "hostSheetPositionPreserved": true,
+    "ownedSheetCount": 1,
+    "pass": true
   },
-  "classicSSR": {
-    "engine": "goober",
-    "pre": {
-      "background": "rgb(51, 71, 176)",
-      "color": "rgb(255, 255, 255)",
-      "padding": "12px 18px",
-      "borderRadius": "10px",
-      "fontSize": "14px",
-      "border": "1px solid rgba(0, 0, 0, 0)",
-      "animation": "none"
+  "classicSSR": [
+    {
+      "engine": "goober",
+      "pre": {
+        "background": "rgb(51, 71, 176)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "12px 18px",
+        "borderRadius": "10px",
+        "fontSize": "14px",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "animation": "none"
+      },
+      "post": {
+        "background": "rgb(51, 71, 176)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "12px 18px",
+        "borderRadius": "10px",
+        "fontSize": "14px",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "animation": "none"
+      },
+      "pass": true,
+      "hydrationErrors": [],
+      "consoleErrors": []
     },
-    "post": {
-      "background": "rgb(51, 71, 176)",
-      "color": "rgb(255, 255, 255)",
-      "padding": "12px 18px",
-      "borderRadius": "10px",
-      "fontSize": "14px",
-      "border": "1px solid rgba(0, 0, 0, 0)",
-      "animation": "none"
+    {
+      "engine": "goober-generated-react19",
+      "pre": {
+        "background": "rgb(51, 71, 176)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "12px 18px",
+        "borderRadius": "10px",
+        "fontSize": "14px",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "animation": "none"
+      },
+      "post": {
+        "background": "rgb(51, 71, 176)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "12px 18px",
+        "borderRadius": "10px",
+        "fontSize": "14px",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "animation": "none"
+      },
+      "styleCount": 1,
+      "hydrationErrors": [],
+      "pass": true
     },
-    "pass": true,
-    "hydrationErrors": [],
-    "consoleErrors": []
-  },
+    {
+      "engine": "goober-generated-react19-client-only",
+      "pass": true,
+      "observed": {
+        "background": "rgb(51, 71, 176)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "12px 18px",
+        "borderRadius": "10px",
+        "fontSize": "14px",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "animation": "none"
+      }
+    }
+  ],
   "nextSSR": {
     "nextVersion": "16.4.2",
-    "mode": "next dev, App Router, Client Component, Suspense, no custom Goober SSR registry",
+    "mode": "next build + next start (production), React 19 component stylesheet resources",
+    "consumerSetup": "Import and render Button only: no component CSS import, registry, provider, extraction call or styling plugin",
+    "libraryWork": "Goober compilation in a library-only build process; generated immutable CSS; component-owned React 19 style resources",
     "beforeJavaScript": {
-      "background": "rgb(239, 239, 239)",
-      "padding": "1px 6px",
+      "background": "rgb(51, 71, 176)",
+      "padding": "12px 18px",
       "text": "Goober button 0"
     },
     "afterHydration": {
@@ -91,27 +136,144 @@
       "padding": "12px 18px",
       "text": "Goober button 0"
     },
-    "serverStyled": false,
+    "serverStyled": true,
     "clientStyled": true,
-    "interactive": true,
-    "streamedClientButtonCount": 2,
+    "checks": {
+      "serverStyled": true,
+      "hydratedStyled": true,
+      "interactive": true,
+      "streamedStyled": true,
+      "noVisibleUnstyledDelayedContent": true,
+      "resourceDeduplicated": true,
+      "hostPreserved": true,
+      "navigationStyled": true,
+      "concurrentRequestsIsolated": true,
+      "streamObserved": true,
+      "streamedCSSBeforeReveal": true,
+      "noBrowserErrors": true
+    },
+    "serverStyleCount": 2,
+    "styleCountBefore": 2,
+    "styleCountAfter": 2,
+    "late": {
+      "background": "rgb(18, 108, 72)",
+      "padding": "12px 18px",
+      "text": "Streamed button 0"
+    },
+    "lateObservations": [
+      {
+        "background": "rgb(18, 108, 72)",
+        "padding": "12px 18px"
+      }
+    ],
+    "hostBefore": {
+      "background": "rgb(12, 130, 120)",
+      "padding": "1px 6px",
+      "text": "Toggle library component"
+    },
+    "hostAfter": {
+      "background": "rgb(12, 130, 120)",
+      "padding": "1px 6px",
+      "text": "Toggle library component"
+    },
+    "navigation": {
+      "background": "rgb(176, 48, 48)",
+      "padding": "12px 18px",
+      "text": "Goober button 1"
+    },
+    "concurrent": [
+      {
+        "theme": "blue",
+        "background": "rgb(51, 71, 176)",
+        "padding": "12px 18px",
+        "text": "Goober button 0",
+        "pass": true
+      },
+      {
+        "theme": "red",
+        "background": "rgb(176, 48, 48)",
+        "padding": "12px 18px",
+        "text": "Goober button 0",
+        "pass": true
+      },
+      {
+        "theme": "blue",
+        "background": "rgb(51, 71, 176)",
+        "padding": "12px 18px",
+        "text": "Goober button 0",
+        "pass": true
+      },
+      {
+        "theme": "red",
+        "background": "rgb(176, 48, 48)",
+        "padding": "12px 18px",
+        "text": "Goober button 0",
+        "pass": true
+      },
+      {
+        "theme": "blue",
+        "background": "rgb(51, 71, 176)",
+        "padding": "12px 18px",
+        "text": "Goober button 0",
+        "pass": true
+      },
+      {
+        "theme": "red",
+        "background": "rgb(176, 48, 48)",
+        "padding": "12px 18px",
+        "text": "Goober button 0",
+        "pass": true
+      },
+      {
+        "theme": "blue",
+        "background": "rgb(51, 71, 176)",
+        "padding": "12px 18px",
+        "text": "Goober button 0",
+        "pass": true
+      },
+      {
+        "theme": "red",
+        "background": "rgb(176, 48, 48)",
+        "padding": "12px 18px",
+        "text": "Goober button 0",
+        "pass": true
+      }
+    ],
+    "stream": {
+      "chunkCount": 5,
+      "shellChunk": 0,
+      "lateChunk": 3,
+      "lateStyleIndex": 7917,
+      "revealIndex": 10714
+    },
     "consoleErrors": [],
-    "limitation": "Development smoke test, not production streaming/concurrency certification. A Goober-specific SSR style registry was deliberately not supplied."
+    "limitations": [
+      "React 19 required; React 18 not covered",
+      "Static Goober-generated rules and dynamic CSS variables; arbitrary runtime style creation not covered",
+      "Next.js fixture has no CSS framework: Tailwind matrix is tested separately with an explicit policy",
+      "Representative components, Chromium only",
+      "No strict CSP/nonce or cross-version validation"
+    ]
   },
   "limitations": [
     "Representative components, not production OpenUI ports",
     "Chromium only",
-    "Classic renderToString/hydration only; no Next.js App Router or streaming certification",
+    "Production Next.js evidence is recorded separately in results/next.json",
     "No universal CSS framework guarantee",
     "Adapted is an explicit framework-aware policy, not automatic detection",
-    "Prototype adapter moves the shared Goober style tag; it is not production-safe for hosts sharing that sheet",
-    "Traceability uses prototype data attributes and source metadata; Goober does not generate the report or source labels itself"
+    "Adapted policy uses generated static Goober styles in a private tag; arbitrary dynamic runtime CSS is not covered",
+    "Traceability uses prototype data attributes and source metadata; Goober does not generate the report or source labels itself",
+    "React 19 required; React 18 not covered",
+    "Static Goober-generated rules and dynamic CSS variables; arbitrary runtime style creation not covered",
+    "Next.js fixture has no CSS framework: Tailwind matrix is tested separately with an explicit policy",
+    "Representative components, Chromium only",
+    "No strict CSP/nonce or cross-version validation"
   ],
   "requirements": [
     {
       "requirement": "No manual component CSS import",
-      "status": "Pass in browser fixtures",
-      "owner": "Goober runtime"
+      "status": "Pass in browser and server fixtures",
+      "owner": "Generated CSS + OpenUI style delivery"
     },
     {
       "requirement": "Trace rendered component to source",
@@ -130,17 +292,17 @@
     },
     {
       "requirement": "Tailwind v3/v4 and other CSS overrides",
-      "status": "Conditional: adapter needed in tested load orders",
-      "owner": "OpenUI cascade/insertion policy"
+      "status": "Adapted policy: 10/10 scenarios pass; framework choice still explicit",
+      "owner": "OpenUI cascade policy; automatic framework configuration remains open"
     },
     {
-      "requirement": "Do not interfere with host styles",
-      "status": "Not met by prototype adapter when the host shares Goober sheet",
-      "owner": "Requires isolated insertion ownership"
+      "requirement": "Do not disturb host Goober styles",
+      "status": "Pass: host color, sheet contents and relative position preserved in probes",
+      "owner": "Library-owned styles, no writes to host Goober sheet"
     },
     {
       "requirement": "Light/dark themes and portals",
-      "status": "Pass in representative fixtures; token forwarding implemented in fixture",
+      "status": "Pass in representative adapted fixtures; token forwarding implemented in fixture",
       "owner": "OpenUI theme/portal integration"
     },
     {
@@ -149,14 +311,14 @@
       "owner": "Stable style rules + data attributes"
     },
     {
-      "requirement": "Classic server render and hydration",
-      "status": "Pass with explicit extraction",
-      "owner": "Goober API + server integration"
+      "requirement": "Classic SSR without app extraction setup",
+      "status": "Pass, including hydration; client-only path also tested",
+      "owner": "React 19 stylesheet resources inside library component"
     },
     {
-      "requirement": "Next.js App Router without SSR setup",
-      "status": "Not met: no initial server styles; styled after hydration",
-      "owner": "Requires framework SSR/streaming integration"
+      "requirement": "Next.js SSR without app styling setup",
+      "status": "Pass in production fixture: initial styles, hydration, streaming, navigation, eight concurrent requests",
+      "owner": "Library build generates Goober CSS; React 19 delivers component resources"
     }
   ]
 }

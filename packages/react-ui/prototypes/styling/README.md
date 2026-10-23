@@ -1,51 +1,59 @@
 # Goober-only styling prototype
 
-Throwaway code answering whether Goober meets the OpenUI extraction requirements. This is **not** a production component migration, a styling decision, or a comparison with other libraries.
-
-The three columns are Goober with its default insertion, Goober using a native cascade layer, and Goober with an explicit framework-aware adapter. They use identical representative Button, portal panel, and SVG chart fixtures. Actual OpenUI components have not been ported.
+Throwaway evidence for the OpenUI extraction. No production components have been migrated and no styling adoption decision has been made.
 
 ## Run
 
-From this directory, install the pinned dependencies once with `npm ci`, then run:
+Install dependencies once:
 
 ```sh
-npm run demo
+npm ci
+npm ci --prefix next-fixture
 ```
 
-Open http://127.0.0.1:4177. Select Tailwind v3/v4, Bootstrap, plain CSS or no framework; switch stylesheet order and theme. No component-CSS import is present in the consumer fixture.
+Then run `npm run demo` and open http://127.0.0.1:4177. The three columns compare default Goober, layered Goober, and the revised library-owned style delivery. Select Tailwind v3/v4, Bootstrap, plain CSS or no framework, stylesheet order, and theme. The fixtures use real compiled framework CSS.
 
-## Generate evidence
-
-The browser checks use an installed Google Chrome. Set `BROWSER_CHANNEL` to another installed Playwright-supported channel if required.
-
-For the additional Next.js smoke fixture, install its dependencies once:
+## Reproduce the checks
 
 ```sh
-npm ci --prefix next-fixture
 npm run check:all
 ```
 
-`check:all` builds the fixtures, starts missing local servers, runs the observations, and generates the report. Stop older prototype servers before rerunning after code changes so server-side imports cannot be stale. It leaves already-running servers alone.
+This builds the prototype and a **production** Next.js fixture, starts fresh servers on 4187/4189, runs the checks, generates reports, then stops those servers. It rejects occupied check ports rather than silently using a stale server. Google Chrome must be installed; `BROWSER_CHANNEL` can select another installed Playwright channel.
+
+The default/layered reference policies intentionally retain their compatibility failures. Adapted-policy, host-isolation, automatic SSR and Next.js checks fail the command on regression. A successful command is not universal compatibility certification.
+
+To explore the production Next.js fixture after a build, run this in a second terminal:
+
+```sh
+node next-fixture/node_modules/next/dist/bin/next start next-fixture --hostname 127.0.0.1 --port 4179
+```
+
+The main dashboard links to that fixture and `/automatic`, the plain React SSR example. Restart an existing demo server after changing server-side code. `check:all` always starts fresh servers.
+
+## What changed after the first experiment
+
+**Host isolation:** the library build runs Goober's `css`, `keyframes` and `extractCss` APIs to generate immutable stylesheet artifacts. The adapted browser policy inserts its own tag and scopes selectors to library-marked elements. It never clears, moves or appends to the host application's `_goober` tag. Repeated calls deduplicate the owned tag.
+
+**Automatic SSR:** the prototype `Button` in `lib/auto-button.js` renders a React 19 `<style href precedence>` resource with generated Goober CSS. React includes and deduplicates the resource during SSR/streaming and hydration. Consumers only import/render the component: no CSS import, registry, provider, extraction call, or styling plugin. The package build—not the consumer—performs compilation. Next.js configuration only establishes the monorepo fixture root; it has no styling configuration.
+
+These are two delivery paths over the same generated styles, not a claim that arbitrary runtime Goober styles automatically support streaming. The browser adapter's framework selection remains explicit. The automatic SSR fixture is framework-free and uses static styles plus CSS variables for per-request theme values. Combining it with automatically selected Tailwind policies is still future work.
+
+## Evidence
 
 - `results/DECISION.md`: generated requirements assessment.
-- `results/manifest.json`: structured version, source, requirement and observation metadata for agents.
-- `results/REPORT.md` and `results/results.json`: complete CSS matrix, including failures.
-- `results/NEXT.md` and `results/next.json`: App Router SSR/hydration smoke observations.
+- `results/manifest.json`: structured metadata and observations for agents.
+- `results/REPORT.md` / `results/results.json`: 30 CSS cases, host-sheet probe, classic extraction reference, automatic plain React SSR/hydration and CSR.
+- `results/NEXT.md` / `results/next.json`: production App Router initial styles without JavaScript, hydration, delayed streamed styles, deduplication, host Goober coexistence, client navigation, eight concurrent differently themed requests, and browser errors.
 
-The experimental checks intentionally record failed compatibility expectations without treating those findings as execution failures. Execution errors still fail the script. Read the generated decision report; a zero exit code does **not** mean Goober meets every requirement.
+Traceability and generated reports are our tooling, not Goober features. The chart is a representative SVG fixture, not an extraction of real charts.
 
-## Important boundaries
+## Limits
 
-- Default Goober styles do not automatically cooperate with every framework's cascade.
-- The adapter is prototype code, not a Goober feature. It moves the shared `_goober` style tag, which can affect applications using that same tag; it is not ready to ship.
-- Classic SSR uses explicit extraction. The Next.js fixture deliberately has no Goober SSR registry, to test the zero-setup claim.
-- Traceability uses data attributes and metadata added by this prototype, plus source maps. Goober does not create our documentation or source inventory itself.
-- The chart uses stable style rules, CSS keyframes/transitions and changing SVG attributes. It does not prove all production chart interactions.
-- No production Next.js streaming, concurrent-request, full OpenUI visual parity, copied-component installer, or cross-browser certification is claimed.
+React 19 is required for automatic resource delivery. React 18, arbitrary runtime CSS generation, strict CSP/nonces, actual OpenUI visual parity, other browsers, and combined automatic framework selection + SSR are not certified. Existing component props and appearance must still be preserved before adopting any new styling approach. Source-copy installation tooling is not implemented here.
 
 ## Sources
 
-- [Goober](https://github.com/cristianbote/goober)
-- [Tailwind v3 custom styles](https://v3.tailwindcss.com/docs/adding-custom-styles)
-- [Tailwind v4 custom styles](https://tailwindcss.com/docs/adding-custom-styles)
-- [Next.js CSS-in-JS](https://nextjs.org/docs/app/guides/css-in-js)
+- [Goober APIs](https://github.com/cristianbote/goober)
+- [React 19 stylesheet resources](https://react.dev/reference/react-dom/components/style)
+- [Next.js CSS-in-JS guidance](https://nextjs.org/docs/app/guides/css-in-js)

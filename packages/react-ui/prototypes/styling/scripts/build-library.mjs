@@ -1,3 +1,4 @@
+import './generate-styles.mjs';
 import {build} from 'esbuild';import fs from 'node:fs/promises';
 await fs.rm('lib-dist',{recursive:true,force:true});await fs.mkdir('lib-dist');
 await fs.rm('ssr-dist',{recursive:true,force:true});await fs.mkdir('ssr-dist');

@@ -24,23 +24,25 @@ Each cell is base styles / consumer override. Failing outcomes remain visible.
 
 ## Shared Goober host check
 
-{"before":"rgb(12, 130, 120)","after":"rgb(239, 68, 68)","hostCascadePreserved":false,"explanation":"Prototype adapter moves the shared Goober style tag; an application using the same Goober sheet can change priority."}
+{"before":"rgb(12, 130, 120)","after":"rgb(12, 130, 120)","hostCascadePreserved":true,"hostSheetTextPreserved":true,"hostSheetPositionPreserved":true,"ownedSheetCount":1,"pass":true}
 
 ## Classic SSR and hydration
 
 - goober: PASS
+- goober-generated-react19: PASS
+- goober-generated-react19-client-only: PASS
 
 ## Built adapter assets
 
-- goober-98IMtOH0.js: 2150 bytes; 1124 gzip bytes. Shared React/fixture code excluded; adapters include prototype policy logic, so these are not official library sizes.
+- goober-CdU582xG.js: 6135 bytes; 1692 gzip bytes. Shared React/fixture code excluded; adapters include prototype policy logic, so these are not official library sizes.
 - goober.modern-CN1HfR1e.js: 1972 bytes; 1154 gzip bytes. Shared React/fixture code excluded; adapters include prototype policy logic, so these are not official library sizes.
 
 ## Limits
 
 - Representative components, not production OpenUI ports
 - Chromium only
-- Classic renderToString/hydration only; no Next.js App Router or streaming certification
+- Production Next.js evidence is recorded separately in results/next.json
 - No universal CSS framework guarantee
 - Adapted is an explicit framework-aware policy, not automatic detection
-- Prototype adapter moves the shared Goober style tag; it is not production-safe for hosts sharing that sheet
+- Adapted policy uses generated static Goober styles in a private tag; arbitrary dynamic runtime CSS is not covered
 - Traceability uses prototype data attributes and source metadata; Goober does not generate the report or source labels itself
