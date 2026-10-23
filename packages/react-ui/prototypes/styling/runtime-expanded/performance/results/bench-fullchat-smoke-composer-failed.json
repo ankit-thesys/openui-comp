@@ -1,0 +1,3468 @@
+{
+  "startedAt": "2026-10-23T19:53:22.869Z",
+  "kind": "actual-fullchat-expanded-response",
+  "protocol": "Actual AgentInterface/store/composer/parser. Same server-controlled chunks per arm. One excluded warmup pair then ten alternating pairs per chat/dashboard/load, fresh contexts; loaded CSS/JS excluded. Input/frame timings are proxies; native completion may precede input. No inherited result.",
+  "smoke": true,
+  "runs": [],
+  "warmups": [
+    {
+      "arm": "runtime",
+      "scenario": "chat",
+      "load": "normal",
+      "pair": -1,
+      "warmup": true,
+      "cold": {
+        "scope": "Shared fixture JavaScript bundle cold navigation/hydration/readiness; not dedicated baseline/runtime network payload comparison",
+        "navigationToReadyMs": 439.89999997615814,
+        "goober": {
+          "calls": 47,
+          "compileMs": 15.699999988079071,
+          "gooberCalls": 47,
+          "gooberMs": [
+            0.40000003576278687,
+            0.5,
+            0.09999996423721313,
+            0.10000002384185791,
+            0,
+            0.09999996423721313,
+            1.2000000476837158,
+            0.19999998807907104,
+            0.5999999642372131,
+            0.40000003576278687,
+            1.899999976158142,
+            0.30000001192092896,
+            0,
+            0.30000001192092896,
+            0,
+            0.19999998807907104,
+            0.19999998807907104,
+            0.30000001192092896,
+            0.19999998807907104,
+            0,
+            0.10000002384185791,
+            0.09999996423721313,
+            0.10000002384185791,
+            4.800000011920929,
+            0.699999988079071,
+            0.6000000238418579,
+            0.19999998807907104,
+            0,
+            0.30000001192092896,
+            0.09999996423721313,
+            0.10000002384185791,
+            0,
+            0.30000001192092896,
+            0.2999999523162842,
+            0.10000002384185791,
+            0.10000002384185791,
+            0.19999998807907104,
+            0.09999996423721313,
+            0.10000002384185791,
+            0,
+            0,
+            0.10000002384185791,
+            0.09999996423721313,
+            0.10000002384185791,
+            0,
+            0.09999996423721313,
+            0
+          ],
+          "units": {
+            "Card": 1,
+            "Button": 1,
+            "Input": 1,
+            "CardHeader": 1,
+            "Buttons": 1,
+            "FormControl": 1,
+            "TextContent": 1,
+            "Table": 1,
+            "BarChart": 1,
+            "LineChart": 1,
+            "PieChart": 1,
+            "IconButton": 1,
+            "TextArea": 1,
+            "CheckBoxGroup": 1,
+            "SwitchGroup": 1,
+            "RadioGroup": 1,
+            "Select": 1,
+            "Tabs": 1,
+            "Accordion": 1,
+            "Separator": 1,
+            "Modal": 1,
+            "Tooltip": 1,
+            "AssistantMessage": 1,
+            "ShellAgentInterface": 1,
+            "ShellSidebar": 1,
+            "ShellThread": 1,
+            "ShellThreadHeader": 1,
+            "ShellMobileHeader": 1,
+            "ShellThreadlist": 1,
+            "ShellHistoryMenu": 1,
+            "ShellRenameChatDialog": 1,
+            "ShellThemeModeToggle": 1,
+            "ShellWelcomeScreen": 1,
+            "ShellConversationStarter": 1,
+            "ShellWorkspaceSidebar": 1,
+            "ShellResizableSeparator": 1,
+            "ShellArtifactBrowser": 1,
+            "ShellWelcomeGlow": 1,
+            "Shell_sharedShared": 1,
+            "Shell_sharedDetailed-viewDetailedViewPanel": 1,
+            "Shell_sharedDetailed-viewDetailedViewOverlay": 1,
+            "ShellComponentsComposer": 1,
+            "ShellComponentsDesktopWelcomeComposer": 1,
+            "ShellComponentsWelcomeMascot": 1,
+            "ShellComponentsMascotLoader": 1,
+            "ShellComponentsWelcomePrefillChips": 1,
+            "ShellComponentsAmbientLoader": 1
+          },
+          "guardInfrastructure": true
+        },
+        "navigation": {
+          "name": "http://127.0.0.1:4245/?scenario=chat&arm=runtime&size=2",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 397.0999999642372,
+          "navigationId": 349,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 0.699999988079071,
+          "domainLookupStart": 0.699999988079071,
+          "domainLookupEnd": 0.699999988079071,
+          "connectStart": 0.699999988079071,
+          "secureConnectionStart": 0,
+          "connectEnd": 0.699999988079071,
+          "requestStart": 2,
+          "responseStart": 69.89999997615814,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 69.89999997615814,
+          "responseEnd": 73.89999997615814,
+          "transferSize": 1535762,
+          "encodedBodySize": 1535462,
+          "decodedBodySize": 1535462,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 108.89999997615814,
+          "domContentLoadedEventStart": 395.80000001192093,
+          "domContentLoadedEventEnd": 395.89999997615814,
+          "domComplete": 396.39999997615814,
+          "loadEventStart": 397.0999999642372,
+          "loadEventEnd": 397.0999999642372,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "low"
+          }
+        },
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4245/client.js",
+            "entryType": "resource",
+            "startTime": 108.69999998807907,
+            "duration": 29.399999976158142,
+            "navigationId": 349,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.1",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 108.69999998807907,
+            "domainLookupStart": 108.69999998807907,
+            "domainLookupEnd": 108.69999998807907,
+            "connectStart": 108.69999998807907,
+            "secureConnectionStart": 0,
+            "connectEnd": 108.69999998807907,
+            "requestStart": 111.09999996423721,
+            "responseStart": 112.80000001192093,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 112.80000001192093,
+            "responseEnd": 138.0999999642372,
+            "transferSize": 5774199,
+            "encodedBodySize": 5773899,
+            "decodedBodySize": 5773899,
+            "responseStatus": 200,
+            "serverTiming": []
+          }
+        ],
+        "styles": [
+          {
+            "href": "openui-expanded-v1:Card:boundary:go1575007177 openui-expanded-v1:Button:boundary:go278159681 openui-expanded-v1:Input:boundary:go1108635726 openui-expanded-v1:CardHeader:boundary:go898436157 openui-expanded-v1:Buttons:boundary:go3261390454 openui-expanded-v1:FormControl:boundary:go3777145176 openui-expanded-v1:TextContent:boundary:go954855282 openui-expanded-v1:Table:boundary:go2912324851 openui-expanded-v1:BarChart:boundary:go1992396001 openui-expanded-v1:LineChart:boundary:go1041195028 openui-expanded-v1:PieChart:boundary:go3756294908 openui-expanded-v1:IconButton:boundary:go2412478652 openui-expanded-v1:TextArea:boundary:go1509541534 openui-expanded-v1:CheckBoxGroup:boundary:go2981431845 openui-expanded-v1:SwitchGroup:boundary:go3441439237 openui-expanded-v1:RadioGroup:boundary:go561285950 openui-expanded-v1:Select:boundary:go1230403601 openui-expanded-v1:Tabs:boundary:go2182908062 openui-expanded-v1:Accordion:boundary:go458929348 openui-expanded-v1:Separator:boundary:go3253786402 openui-expanded-v1:Modal:boundary:go1600517841 openui-expanded-v1:Tooltip:boundary:go764950772 openui-expanded-v1:AssistantMessage:boundary:go650573658 openui-expanded-v1:ShellAgentInterface:boundary:go1796640538 openui-expanded-v1:ShellSidebar:boundary:go2063302110 openui-expanded-v1:ShellThread:boundary:go4165890024 openui-expanded-v1:ShellThreadHeader:boundary:go1226831259 openui-expanded-v1:ShellMobileHeader:boundary:go716447674 openui-expanded-v1:ShellThreadlist:boundary:go1280180826 openui-expanded-v1:ShellHistoryMenu:boundary:go437721326 openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618 openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546 openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602 openui-expanded-v1:ShellConversationStarter:boundary:go1341444952 openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247 openui-expanded-v1:ShellResizableSeparator:boundary:go417178870 openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114 openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982 openui-expanded-v1:Shell_sharedShared:boundary:go3952224658 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204 openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046 openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646 openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038 openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939 openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058 openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+            "bytes": 1500896
+          },
+          {
+            "href": null,
+            "bytes": 54
+          },
+          {
+            "href": null,
+            "bytes": 13450
+          }
+        ],
+        "emittedStyleBytes": 1514400
+      },
+      "durationMs": 532.5,
+      "frames": [
+        14.199999999999989,
+        16.69999999999999,
+        16.700000000000045,
+        16.699999999999932,
+        16.600000000000023,
+        16.600000000000023,
+        16.700000000000045,
+        16.699999999999932,
+        16.700000000000045,
+        16.600000000000023,
+        16.699999999999932,
+        16.700000000000045,
+        16.600000000000023,
+        16.699999999999932,
+        16.700000000000045,
+        16.600000000000023,
+        16.699999999999932,
+        16.600000000000023,
+        16.700000000000045,
+        16.699999999999932,
+        16.700000000000045,
+        16.600000000000023,
+        16.699999999999932,
+        16.600000000000023,
+        16.700000000000045,
+        16.699999999999932,
+        16.600000000000023,
+        16.700000000000045,
+        16.699999999999932,
+        16.600000000000023
+      ],
+      "inputs": [],
+      "longTasks": [],
+      "observedRunning": true,
+      "events": [
+        {
+          "at": 424.89999997615814,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 426.89999997615814,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 427.69999998807907,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 476.69999998807907,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 516.5,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 523.8000000119209,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 547.3999999761581,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 128
+            }
+          ]
+        },
+        {
+          "at": 574.5999999642372,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 256
+            }
+          ]
+        },
+        {
+          "at": 595.0999999642372,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 384
+            }
+          ]
+        },
+        {
+          "at": 609,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 512
+            }
+          ]
+        },
+        {
+          "at": 625.0999999642372,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 640
+            }
+          ]
+        },
+        {
+          "at": 641.6999999880791,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 768
+            }
+          ]
+        },
+        {
+          "at": 658.6999999880791,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 896
+            }
+          ]
+        },
+        {
+          "at": 674.6999999880791,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1024
+            }
+          ]
+        },
+        {
+          "at": 691.1999999880791,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1152
+            }
+          ]
+        },
+        {
+          "at": 706.8000000119209,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1280
+            }
+          ]
+        },
+        {
+          "at": 723.8999999761581,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1408
+            }
+          ]
+        },
+        {
+          "at": 740.8000000119209,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1536
+            }
+          ]
+        },
+        {
+          "at": 757.0999999642372,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1664
+            }
+          ]
+        },
+        {
+          "at": 773.6999999880791,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1792
+            }
+          ]
+        },
+        {
+          "at": 790.5,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1920
+            }
+          ]
+        },
+        {
+          "at": 810.5,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2048
+            }
+          ]
+        },
+        {
+          "at": 825.0999999642372,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2176
+            }
+          ]
+        },
+        {
+          "at": 841.0999999642372,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2304
+            }
+          ]
+        },
+        {
+          "at": 858.6999999880791,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2432
+            }
+          ]
+        },
+        {
+          "at": 876.3999999761581,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2560
+            }
+          ]
+        },
+        {
+          "at": 895.0999999642372,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2688
+            }
+          ]
+        },
+        {
+          "at": 910.5,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2816
+            }
+          ]
+        },
+        {
+          "at": 927.3000000119209,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2944
+            }
+          ]
+        },
+        {
+          "at": 942.6999999880791,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 3072
+            }
+          ]
+        },
+        {
+          "at": 961.3999999761581,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 3184
+            }
+          ]
+        },
+        {
+          "at": 965.0999999642372,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 3184
+            }
+          ]
+        },
+        {
+          "at": 968.8999999761581,
+          "running": false,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 3184
+            }
+          ]
+        }
+      ],
+      "goober": {
+        "calls": 0,
+        "compileMs": 0,
+        "gooberCalls": 0,
+        "gooberMs": [],
+        "units": {}
+      },
+      "rendered": {
+        "cards": 1,
+        "tables": 1,
+        "rows": 3,
+        "bars": 3,
+        "styles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "TABLE",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          }
+        ],
+        "timedStyles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0337394)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0337394)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0337394)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "TABLE",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "href": "openui-expanded-v1:Card:boundary:go1575007177 openui-expanded-v1:Button:boundary:go278159681 openui-expanded-v1:Input:boundary:go1108635726 openui-expanded-v1:CardHeader:boundary:go898436157 openui-expanded-v1:Buttons:boundary:go3261390454 openui-expanded-v1:FormControl:boundary:go3777145176 openui-expanded-v1:TextContent:boundary:go954855282 openui-expanded-v1:Table:boundary:go2912324851 openui-expanded-v1:BarChart:boundary:go1992396001 openui-expanded-v1:LineChart:boundary:go1041195028 openui-expanded-v1:PieChart:boundary:go3756294908 openui-expanded-v1:IconButton:boundary:go2412478652 openui-expanded-v1:TextArea:boundary:go1509541534 openui-expanded-v1:CheckBoxGroup:boundary:go2981431845 openui-expanded-v1:SwitchGroup:boundary:go3441439237 openui-expanded-v1:RadioGroup:boundary:go561285950 openui-expanded-v1:Select:boundary:go1230403601 openui-expanded-v1:Tabs:boundary:go2182908062 openui-expanded-v1:Accordion:boundary:go458929348 openui-expanded-v1:Separator:boundary:go3253786402 openui-expanded-v1:Modal:boundary:go1600517841 openui-expanded-v1:Tooltip:boundary:go764950772 openui-expanded-v1:AssistantMessage:boundary:go650573658 openui-expanded-v1:ShellAgentInterface:boundary:go1796640538 openui-expanded-v1:ShellSidebar:boundary:go2063302110 openui-expanded-v1:ShellThread:boundary:go4165890024 openui-expanded-v1:ShellThreadHeader:boundary:go1226831259 openui-expanded-v1:ShellMobileHeader:boundary:go716447674 openui-expanded-v1:ShellThreadlist:boundary:go1280180826 openui-expanded-v1:ShellHistoryMenu:boundary:go437721326 openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618 openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546 openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602 openui-expanded-v1:ShellConversationStarter:boundary:go1341444952 openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247 openui-expanded-v1:ShellResizableSeparator:boundary:go417178870 openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114 openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982 openui-expanded-v1:Shell_sharedShared:boundary:go3952224658 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204 openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046 openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646 openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038 openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939 openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058 openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+          "bytes": 1500896
+        },
+        {
+          "href": null,
+          "bytes": 54
+        },
+        {
+          "href": null,
+          "bytes": 13450
+        }
+      ],
+      "ruleCount": 3715,
+      "styleSamplePolicy": "Timed snapshot retained; exact settled parity after500ms outside timing cutoff",
+      "pageErrors": [
+        "Typing: locator.pressSequentially: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-benchmark-composer]')\u001b[22m\n"
+      ],
+      "expectedChars": 3184,
+      "expectedSHA256": "26655f21cafd64ca15b9fd32195e9a349b6eecae4bc24185255477ac8a7187f1",
+      "finalMatches": true,
+      "textHash": "e33893e5c0a1220643282503bb2b203a79f8cec93c45081a71ae7ff450a63fc0",
+      "frameP95Ms": 16.700000000000045,
+      "inputP95Ms": null,
+      "inputWhileRunningCount": 0,
+      "longTaskMs": 0,
+      "longTaskCount": 0,
+      "emittedStyleBytes": 1514400,
+      "styleResourceCount": 47
+    },
+    {
+      "arm": "baseline",
+      "scenario": "chat",
+      "load": "normal",
+      "pair": -1,
+      "warmup": true,
+      "cold": {
+        "scope": "Shared fixture JavaScript bundle cold navigation/hydration/readiness; not dedicated baseline/runtime network payload comparison",
+        "navigationToReadyMs": 286.80000001192093,
+        "goober": {
+          "calls": 0,
+          "compileMs": 0,
+          "gooberCalls": 0,
+          "gooberMs": [],
+          "units": {}
+        },
+        "navigation": {
+          "name": "http://127.0.0.1:4245/?scenario=chat&arm=baseline&size=2",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 267.10000002384186,
+          "navigationId": 851,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 0.19999998807907104,
+          "domainLookupStart": 0.19999998807907104,
+          "domainLookupEnd": 0.19999998807907104,
+          "connectStart": 0.19999998807907104,
+          "secureConnectionStart": 0,
+          "connectEnd": 0.19999998807907104,
+          "requestStart": 0.6000000238418579,
+          "responseStart": 5.699999988079071,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 5.699999988079071,
+          "responseEnd": 5.800000011920929,
+          "transferSize": 31490,
+          "encodedBodySize": 31190,
+          "decodedBodySize": 31190,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 10.300000011920929,
+          "domContentLoadedEventStart": 266,
+          "domContentLoadedEventEnd": 266,
+          "domComplete": 266.60000002384186,
+          "loadEventStart": 267.10000002384186,
+          "loadEventEnd": 267.10000002384186,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "low"
+          }
+        },
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4245/baseline.css",
+            "entryType": "resource",
+            "startTime": 8.300000011920929,
+            "duration": 4.600000023841858,
+            "navigationId": 851,
+            "initiatorType": "link",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.1",
+            "renderBlockingStatus": "blocking",
+            "contentType": "text/css",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 8.300000011920929,
+            "domainLookupStart": 8.300000011920929,
+            "domainLookupEnd": 8.300000011920929,
+            "connectStart": 8.300000011920929,
+            "secureConnectionStart": 0,
+            "connectEnd": 8.300000011920929,
+            "requestStart": 10.699999988079071,
+            "responseStart": 12.5,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 12.5,
+            "responseEnd": 12.900000035762787,
+            "transferSize": 363520,
+            "encodedBodySize": 363220,
+            "decodedBodySize": 363220,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "http://127.0.0.1:4245/client.js",
+            "entryType": "resource",
+            "startTime": 8.5,
+            "duration": 31.900000035762787,
+            "navigationId": 851,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.1",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 8.5,
+            "domainLookupStart": 10.5,
+            "domainLookupEnd": 10.5,
+            "connectStart": 10.5,
+            "secureConnectionStart": 0,
+            "connectEnd": 10.800000011920929,
+            "requestStart": 10.800000011920929,
+            "responseStart": 13.699999988079071,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 13.699999988079071,
+            "responseEnd": 40.40000003576279,
+            "transferSize": 5774199,
+            "encodedBodySize": 5773899,
+            "decodedBodySize": 5773899,
+            "responseStatus": 200,
+            "serverTiming": []
+          }
+        ],
+        "styles": [
+          {
+            "href": null,
+            "bytes": 54
+          },
+          {
+            "href": null,
+            "bytes": 13450
+          }
+        ],
+        "emittedStyleBytes": 13504
+      },
+      "durationMs": 529.1000000238419,
+      "frames": [
+        10.700000011920906,
+        16.700000000000045,
+        16.69999999999999,
+        16.69999999999999,
+        16.600000000000023,
+        16.69999999999999,
+        16.69999999999999,
+        16.600000000000023,
+        16.69999999999999,
+        16.599999999999966,
+        16.80000000000001,
+        16.600000000000023,
+        16.599999999999966,
+        16.700000000000045,
+        16.699999999999932,
+        16.700000000000045,
+        16.600000000000023,
+        16.699999999999932,
+        16.700000000000045,
+        16.600000000000023,
+        16.699999999999932,
+        16.700000000000045,
+        16.600000000000023,
+        16.699999999999932,
+        16.600000000000023,
+        16.700000000000045,
+        16.699999999999932,
+        16.600000000000023,
+        16.700000000000045,
+        16.600000000000023
+      ],
+      "inputs": [],
+      "longTasks": [],
+      "observedRunning": true,
+      "events": [
+        {
+          "at": 276.4000000357628,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 278.10000002384186,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 278.60000002384186,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 310,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 350.80000001192093,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 357.19999998807907,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 378.5,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 128
+            }
+          ]
+        },
+        {
+          "at": 404.60000002384186,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 256
+            }
+          ]
+        },
+        {
+          "at": 424.30000001192093,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 384
+            }
+          ]
+        },
+        {
+          "at": 438.60000002384186,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 512
+            }
+          ]
+        },
+        {
+          "at": 455.60000002384186,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 640
+            }
+          ]
+        },
+        {
+          "at": 471.69999998807907,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 768
+            }
+          ]
+        },
+        {
+          "at": 487.4000000357628,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 896
+            }
+          ]
+        },
+        {
+          "at": 504.4000000357628,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1024
+            }
+          ]
+        },
+        {
+          "at": 522.1000000238419,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1152
+            }
+          ]
+        },
+        {
+          "at": 537.3000000119209,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1280
+            }
+          ]
+        },
+        {
+          "at": 553.4000000357628,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1408
+            }
+          ]
+        },
+        {
+          "at": 571.5,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1536
+            }
+          ]
+        },
+        {
+          "at": 587.9000000357628,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1664
+            }
+          ]
+        },
+        {
+          "at": 603.6999999880791,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1792
+            }
+          ]
+        },
+        {
+          "at": 620.3000000119209,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 1920
+            }
+          ]
+        },
+        {
+          "at": 640,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2048
+            }
+          ]
+        },
+        {
+          "at": 654.6000000238419,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2176
+            }
+          ]
+        },
+        {
+          "at": 672,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2304
+            }
+          ]
+        },
+        {
+          "at": 688,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2432
+            }
+          ]
+        },
+        {
+          "at": 706.6999999880791,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2560
+            }
+          ]
+        },
+        {
+          "at": 725.5,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2688
+            }
+          ]
+        },
+        {
+          "at": 740.5,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2816
+            }
+          ]
+        },
+        {
+          "at": 757.1000000238419,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 2944
+            }
+          ]
+        },
+        {
+          "at": 773.1999999880791,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 3072
+            }
+          ]
+        },
+        {
+          "at": 790.8000000119209,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 3184
+            }
+          ]
+        },
+        {
+          "at": 799.8000000119209,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 3184
+            }
+          ]
+        },
+        {
+          "at": 803.1000000238419,
+          "running": false,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 3184
+            }
+          ]
+        }
+      ],
+      "goober": {
+        "calls": 0,
+        "compileMs": 0,
+        "gooberCalls": 0,
+        "gooberMs": [],
+        "units": {}
+      },
+      "rendered": {
+        "cards": 1,
+        "tables": 1,
+        "rows": 3,
+        "bars": 3,
+        "styles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "TABLE",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          }
+        ],
+        "timedStyles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0336897)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0336897)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0336897)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "TABLE",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "href": null,
+          "bytes": 54
+        },
+        {
+          "href": null,
+          "bytes": 13450
+        }
+      ],
+      "ruleCount": 2052,
+      "styleSamplePolicy": "Timed snapshot retained; exact settled parity after500ms outside timing cutoff",
+      "pageErrors": [
+        "Typing: locator.pressSequentially: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-benchmark-composer]')\u001b[22m\n"
+      ],
+      "expectedChars": 3184,
+      "expectedSHA256": "26655f21cafd64ca15b9fd32195e9a349b6eecae4bc24185255477ac8a7187f1",
+      "finalMatches": true,
+      "textHash": "e33893e5c0a1220643282503bb2b203a79f8cec93c45081a71ae7ff450a63fc0",
+      "frameP95Ms": 16.700000000000045,
+      "inputP95Ms": null,
+      "inputWhileRunningCount": 0,
+      "longTaskMs": 0,
+      "longTaskCount": 0,
+      "emittedStyleBytes": 13504,
+      "styleResourceCount": 0
+    }
+  ],
+  "pairs": [
+    {
+      "scenario": "chat",
+      "load": "normal",
+      "pair": -1,
+      "warmup": true,
+      "textParity": true,
+      "styleParity": true
+    }
+  ],
+  "failures": [
+    {
+      "reason": "correctness",
+      "arm": "runtime",
+      "scenario": "chat",
+      "load": {
+        "name": "normal",
+        "size": 2,
+        "rate": 60,
+        "bytes": 128
+      },
+      "pair": -1,
+      "row": {
+        "arm": "runtime",
+        "scenario": "chat",
+        "load": "normal",
+        "pair": -1,
+        "warmup": true,
+        "cold": {
+          "scope": "Shared fixture JavaScript bundle cold navigation/hydration/readiness; not dedicated baseline/runtime network payload comparison",
+          "navigationToReadyMs": 439.89999997615814,
+          "goober": {
+            "calls": 47,
+            "compileMs": 15.699999988079071,
+            "gooberCalls": 47,
+            "gooberMs": [
+              0.40000003576278687,
+              0.5,
+              0.09999996423721313,
+              0.10000002384185791,
+              0,
+              0.09999996423721313,
+              1.2000000476837158,
+              0.19999998807907104,
+              0.5999999642372131,
+              0.40000003576278687,
+              1.899999976158142,
+              0.30000001192092896,
+              0,
+              0.30000001192092896,
+              0,
+              0.19999998807907104,
+              0.19999998807907104,
+              0.30000001192092896,
+              0.19999998807907104,
+              0,
+              0.10000002384185791,
+              0.09999996423721313,
+              0.10000002384185791,
+              4.800000011920929,
+              0.699999988079071,
+              0.6000000238418579,
+              0.19999998807907104,
+              0,
+              0.30000001192092896,
+              0.09999996423721313,
+              0.10000002384185791,
+              0,
+              0.30000001192092896,
+              0.2999999523162842,
+              0.10000002384185791,
+              0.10000002384185791,
+              0.19999998807907104,
+              0.09999996423721313,
+              0.10000002384185791,
+              0,
+              0,
+              0.10000002384185791,
+              0.09999996423721313,
+              0.10000002384185791,
+              0,
+              0.09999996423721313,
+              0
+            ],
+            "units": {
+              "Card": 1,
+              "Button": 1,
+              "Input": 1,
+              "CardHeader": 1,
+              "Buttons": 1,
+              "FormControl": 1,
+              "TextContent": 1,
+              "Table": 1,
+              "BarChart": 1,
+              "LineChart": 1,
+              "PieChart": 1,
+              "IconButton": 1,
+              "TextArea": 1,
+              "CheckBoxGroup": 1,
+              "SwitchGroup": 1,
+              "RadioGroup": 1,
+              "Select": 1,
+              "Tabs": 1,
+              "Accordion": 1,
+              "Separator": 1,
+              "Modal": 1,
+              "Tooltip": 1,
+              "AssistantMessage": 1,
+              "ShellAgentInterface": 1,
+              "ShellSidebar": 1,
+              "ShellThread": 1,
+              "ShellThreadHeader": 1,
+              "ShellMobileHeader": 1,
+              "ShellThreadlist": 1,
+              "ShellHistoryMenu": 1,
+              "ShellRenameChatDialog": 1,
+              "ShellThemeModeToggle": 1,
+              "ShellWelcomeScreen": 1,
+              "ShellConversationStarter": 1,
+              "ShellWorkspaceSidebar": 1,
+              "ShellResizableSeparator": 1,
+              "ShellArtifactBrowser": 1,
+              "ShellWelcomeGlow": 1,
+              "Shell_sharedShared": 1,
+              "Shell_sharedDetailed-viewDetailedViewPanel": 1,
+              "Shell_sharedDetailed-viewDetailedViewOverlay": 1,
+              "ShellComponentsComposer": 1,
+              "ShellComponentsDesktopWelcomeComposer": 1,
+              "ShellComponentsWelcomeMascot": 1,
+              "ShellComponentsMascotLoader": 1,
+              "ShellComponentsWelcomePrefillChips": 1,
+              "ShellComponentsAmbientLoader": 1
+            },
+            "guardInfrastructure": true
+          },
+          "navigation": {
+            "name": "http://127.0.0.1:4245/?scenario=chat&arm=runtime&size=2",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 397.0999999642372,
+            "navigationId": 349,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.1",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 0.699999988079071,
+            "domainLookupStart": 0.699999988079071,
+            "domainLookupEnd": 0.699999988079071,
+            "connectStart": 0.699999988079071,
+            "secureConnectionStart": 0,
+            "connectEnd": 0.699999988079071,
+            "requestStart": 2,
+            "responseStart": 69.89999997615814,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 69.89999997615814,
+            "responseEnd": 73.89999997615814,
+            "transferSize": 1535762,
+            "encodedBodySize": 1535462,
+            "decodedBodySize": 1535462,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 108.89999997615814,
+            "domContentLoadedEventStart": 395.80000001192093,
+            "domContentLoadedEventEnd": 395.89999997615814,
+            "domComplete": 396.39999997615814,
+            "loadEventStart": 397.0999999642372,
+            "loadEventEnd": 397.0999999642372,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "low"
+            }
+          },
+          "resources": [
+            {
+              "name": "http://127.0.0.1:4245/client.js",
+              "entryType": "resource",
+              "startTime": 108.69999998807907,
+              "duration": 29.399999976158142,
+              "navigationId": 349,
+              "initiatorType": "script",
+              "deliveryType": "",
+              "nextHopProtocol": "http/1.1",
+              "renderBlockingStatus": "non-blocking",
+              "contentType": "text/javascript",
+              "contentEncoding": "",
+              "workerStart": 0,
+              "workerRouterEvaluationStart": 0,
+              "workerCacheLookupStart": 0,
+              "workerMatchedSourceType": "",
+              "workerFinalSourceType": "",
+              "redirectStart": 0,
+              "redirectEnd": 0,
+              "fetchStart": 108.69999998807907,
+              "domainLookupStart": 108.69999998807907,
+              "domainLookupEnd": 108.69999998807907,
+              "connectStart": 108.69999998807907,
+              "secureConnectionStart": 0,
+              "connectEnd": 108.69999998807907,
+              "requestStart": 111.09999996423721,
+              "responseStart": 112.80000001192093,
+              "firstInterimResponseStart": 0,
+              "finalResponseHeadersStart": 112.80000001192093,
+              "responseEnd": 138.0999999642372,
+              "transferSize": 5774199,
+              "encodedBodySize": 5773899,
+              "decodedBodySize": 5773899,
+              "responseStatus": 200,
+              "serverTiming": []
+            }
+          ],
+          "styles": [
+            {
+              "href": "openui-expanded-v1:Card:boundary:go1575007177 openui-expanded-v1:Button:boundary:go278159681 openui-expanded-v1:Input:boundary:go1108635726 openui-expanded-v1:CardHeader:boundary:go898436157 openui-expanded-v1:Buttons:boundary:go3261390454 openui-expanded-v1:FormControl:boundary:go3777145176 openui-expanded-v1:TextContent:boundary:go954855282 openui-expanded-v1:Table:boundary:go2912324851 openui-expanded-v1:BarChart:boundary:go1992396001 openui-expanded-v1:LineChart:boundary:go1041195028 openui-expanded-v1:PieChart:boundary:go3756294908 openui-expanded-v1:IconButton:boundary:go2412478652 openui-expanded-v1:TextArea:boundary:go1509541534 openui-expanded-v1:CheckBoxGroup:boundary:go2981431845 openui-expanded-v1:SwitchGroup:boundary:go3441439237 openui-expanded-v1:RadioGroup:boundary:go561285950 openui-expanded-v1:Select:boundary:go1230403601 openui-expanded-v1:Tabs:boundary:go2182908062 openui-expanded-v1:Accordion:boundary:go458929348 openui-expanded-v1:Separator:boundary:go3253786402 openui-expanded-v1:Modal:boundary:go1600517841 openui-expanded-v1:Tooltip:boundary:go764950772 openui-expanded-v1:AssistantMessage:boundary:go650573658 openui-expanded-v1:ShellAgentInterface:boundary:go1796640538 openui-expanded-v1:ShellSidebar:boundary:go2063302110 openui-expanded-v1:ShellThread:boundary:go4165890024 openui-expanded-v1:ShellThreadHeader:boundary:go1226831259 openui-expanded-v1:ShellMobileHeader:boundary:go716447674 openui-expanded-v1:ShellThreadlist:boundary:go1280180826 openui-expanded-v1:ShellHistoryMenu:boundary:go437721326 openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618 openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546 openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602 openui-expanded-v1:ShellConversationStarter:boundary:go1341444952 openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247 openui-expanded-v1:ShellResizableSeparator:boundary:go417178870 openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114 openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982 openui-expanded-v1:Shell_sharedShared:boundary:go3952224658 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204 openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046 openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646 openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038 openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939 openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058 openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+              "bytes": 1500896
+            },
+            {
+              "href": null,
+              "bytes": 54
+            },
+            {
+              "href": null,
+              "bytes": 13450
+            }
+          ],
+          "emittedStyleBytes": 1514400
+        },
+        "durationMs": 532.5,
+        "frames": [
+          14.199999999999989,
+          16.69999999999999,
+          16.700000000000045,
+          16.699999999999932,
+          16.600000000000023,
+          16.600000000000023,
+          16.700000000000045,
+          16.699999999999932,
+          16.700000000000045,
+          16.600000000000023,
+          16.699999999999932,
+          16.700000000000045,
+          16.600000000000023,
+          16.699999999999932,
+          16.700000000000045,
+          16.600000000000023,
+          16.699999999999932,
+          16.600000000000023,
+          16.700000000000045,
+          16.699999999999932,
+          16.700000000000045,
+          16.600000000000023,
+          16.699999999999932,
+          16.600000000000023,
+          16.700000000000045,
+          16.699999999999932,
+          16.600000000000023,
+          16.700000000000045,
+          16.699999999999932,
+          16.600000000000023
+        ],
+        "inputs": [],
+        "longTasks": [],
+        "observedRunning": true,
+        "events": [
+          {
+            "at": 424.89999997615814,
+            "running": false,
+            "pending": false,
+            "messages": []
+          },
+          {
+            "at": 426.89999997615814,
+            "running": false,
+            "pending": false,
+            "messages": []
+          },
+          {
+            "at": 427.69999998807907,
+            "running": false,
+            "pending": false,
+            "messages": []
+          },
+          {
+            "at": 476.69999998807907,
+            "running": true,
+            "pending": true,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              }
+            ]
+          },
+          {
+            "at": 516.5,
+            "running": true,
+            "pending": true,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              }
+            ]
+          },
+          {
+            "at": 523.8000000119209,
+            "running": true,
+            "pending": true,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              }
+            ]
+          },
+          {
+            "at": 547.3999999761581,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 128
+              }
+            ]
+          },
+          {
+            "at": 574.5999999642372,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 256
+              }
+            ]
+          },
+          {
+            "at": 595.0999999642372,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 384
+              }
+            ]
+          },
+          {
+            "at": 609,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 512
+              }
+            ]
+          },
+          {
+            "at": 625.0999999642372,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 640
+              }
+            ]
+          },
+          {
+            "at": 641.6999999880791,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 768
+              }
+            ]
+          },
+          {
+            "at": 658.6999999880791,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 896
+              }
+            ]
+          },
+          {
+            "at": 674.6999999880791,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1024
+              }
+            ]
+          },
+          {
+            "at": 691.1999999880791,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1152
+              }
+            ]
+          },
+          {
+            "at": 706.8000000119209,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1280
+              }
+            ]
+          },
+          {
+            "at": 723.8999999761581,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1408
+              }
+            ]
+          },
+          {
+            "at": 740.8000000119209,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1536
+              }
+            ]
+          },
+          {
+            "at": 757.0999999642372,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1664
+              }
+            ]
+          },
+          {
+            "at": 773.6999999880791,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1792
+              }
+            ]
+          },
+          {
+            "at": 790.5,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1920
+              }
+            ]
+          },
+          {
+            "at": 810.5,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2048
+              }
+            ]
+          },
+          {
+            "at": 825.0999999642372,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2176
+              }
+            ]
+          },
+          {
+            "at": 841.0999999642372,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2304
+              }
+            ]
+          },
+          {
+            "at": 858.6999999880791,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2432
+              }
+            ]
+          },
+          {
+            "at": 876.3999999761581,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2560
+              }
+            ]
+          },
+          {
+            "at": 895.0999999642372,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2688
+              }
+            ]
+          },
+          {
+            "at": 910.5,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2816
+              }
+            ]
+          },
+          {
+            "at": 927.3000000119209,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2944
+              }
+            ]
+          },
+          {
+            "at": 942.6999999880791,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 3072
+              }
+            ]
+          },
+          {
+            "at": 961.3999999761581,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 3184
+              }
+            ]
+          },
+          {
+            "at": 965.0999999642372,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 3184
+              }
+            ]
+          },
+          {
+            "at": 968.8999999761581,
+            "running": false,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 3184
+              }
+            ]
+          }
+        ],
+        "goober": {
+          "calls": 0,
+          "compileMs": 0,
+          "gooberCalls": 0,
+          "gooberMs": [],
+          "units": {}
+        },
+        "rendered": {
+          "cards": 1,
+          "tables": 1,
+          "rows": 3,
+          "bars": 3,
+          "styles": [
+            {
+              "tag": "DIV",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "INPUT",
+              "background": "oklch(0.097 0 0 / 0.02)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "5px 11px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "INPUT",
+              "background": "oklch(0.097 0 0 / 0.02)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "5px 11px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "INPUT",
+              "background": "oklch(0.097 0 0 / 0.02)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "5px 11px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "TABLE",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "14px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "path",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(66, 165, 245)"
+            },
+            {
+              "tag": "path",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(66, 165, 245)"
+            },
+            {
+              "tag": "path",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(66, 165, 245)"
+            }
+          ],
+          "timedStyles": [
+            {
+              "tag": "DIV",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "INPUT",
+              "background": "oklab(0.097 0 0 / 0.0337394)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "5px 11px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "INPUT",
+              "background": "oklab(0.097 0 0 / 0.0337394)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "5px 11px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "INPUT",
+              "background": "oklab(0.097 0 0 / 0.0337394)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "5px 11px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "TABLE",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "14px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "path",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(66, 165, 245)"
+            },
+            {
+              "tag": "path",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(66, 165, 245)"
+            },
+            {
+              "tag": "path",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(66, 165, 245)"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "href": "openui-expanded-v1:Card:boundary:go1575007177 openui-expanded-v1:Button:boundary:go278159681 openui-expanded-v1:Input:boundary:go1108635726 openui-expanded-v1:CardHeader:boundary:go898436157 openui-expanded-v1:Buttons:boundary:go3261390454 openui-expanded-v1:FormControl:boundary:go3777145176 openui-expanded-v1:TextContent:boundary:go954855282 openui-expanded-v1:Table:boundary:go2912324851 openui-expanded-v1:BarChart:boundary:go1992396001 openui-expanded-v1:LineChart:boundary:go1041195028 openui-expanded-v1:PieChart:boundary:go3756294908 openui-expanded-v1:IconButton:boundary:go2412478652 openui-expanded-v1:TextArea:boundary:go1509541534 openui-expanded-v1:CheckBoxGroup:boundary:go2981431845 openui-expanded-v1:SwitchGroup:boundary:go3441439237 openui-expanded-v1:RadioGroup:boundary:go561285950 openui-expanded-v1:Select:boundary:go1230403601 openui-expanded-v1:Tabs:boundary:go2182908062 openui-expanded-v1:Accordion:boundary:go458929348 openui-expanded-v1:Separator:boundary:go3253786402 openui-expanded-v1:Modal:boundary:go1600517841 openui-expanded-v1:Tooltip:boundary:go764950772 openui-expanded-v1:AssistantMessage:boundary:go650573658 openui-expanded-v1:ShellAgentInterface:boundary:go1796640538 openui-expanded-v1:ShellSidebar:boundary:go2063302110 openui-expanded-v1:ShellThread:boundary:go4165890024 openui-expanded-v1:ShellThreadHeader:boundary:go1226831259 openui-expanded-v1:ShellMobileHeader:boundary:go716447674 openui-expanded-v1:ShellThreadlist:boundary:go1280180826 openui-expanded-v1:ShellHistoryMenu:boundary:go437721326 openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618 openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546 openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602 openui-expanded-v1:ShellConversationStarter:boundary:go1341444952 openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247 openui-expanded-v1:ShellResizableSeparator:boundary:go417178870 openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114 openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982 openui-expanded-v1:Shell_sharedShared:boundary:go3952224658 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204 openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046 openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646 openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038 openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939 openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058 openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+            "bytes": 1500896
+          },
+          {
+            "href": null,
+            "bytes": 54
+          },
+          {
+            "href": null,
+            "bytes": 13450
+          }
+        ],
+        "ruleCount": 3715,
+        "styleSamplePolicy": "Timed snapshot retained; exact settled parity after500ms outside timing cutoff",
+        "pageErrors": [
+          "Typing: locator.pressSequentially: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-benchmark-composer]')\u001b[22m\n"
+        ],
+        "expectedChars": 3184,
+        "expectedSHA256": "26655f21cafd64ca15b9fd32195e9a349b6eecae4bc24185255477ac8a7187f1",
+        "finalMatches": true,
+        "textHash": "e33893e5c0a1220643282503bb2b203a79f8cec93c45081a71ae7ff450a63fc0",
+        "frameP95Ms": 16.700000000000045,
+        "inputP95Ms": null,
+        "inputWhileRunningCount": 0,
+        "longTaskMs": 0,
+        "longTaskCount": 0,
+        "emittedStyleBytes": 1514400,
+        "styleResourceCount": 47
+      }
+    },
+    {
+      "reason": "correctness",
+      "arm": "baseline",
+      "scenario": "chat",
+      "load": {
+        "name": "normal",
+        "size": 2,
+        "rate": 60,
+        "bytes": 128
+      },
+      "pair": -1,
+      "row": {
+        "arm": "baseline",
+        "scenario": "chat",
+        "load": "normal",
+        "pair": -1,
+        "warmup": true,
+        "cold": {
+          "scope": "Shared fixture JavaScript bundle cold navigation/hydration/readiness; not dedicated baseline/runtime network payload comparison",
+          "navigationToReadyMs": 286.80000001192093,
+          "goober": {
+            "calls": 0,
+            "compileMs": 0,
+            "gooberCalls": 0,
+            "gooberMs": [],
+            "units": {}
+          },
+          "navigation": {
+            "name": "http://127.0.0.1:4245/?scenario=chat&arm=baseline&size=2",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 267.10000002384186,
+            "navigationId": 851,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.1",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 0.19999998807907104,
+            "domainLookupStart": 0.19999998807907104,
+            "domainLookupEnd": 0.19999998807907104,
+            "connectStart": 0.19999998807907104,
+            "secureConnectionStart": 0,
+            "connectEnd": 0.19999998807907104,
+            "requestStart": 0.6000000238418579,
+            "responseStart": 5.699999988079071,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 5.699999988079071,
+            "responseEnd": 5.800000011920929,
+            "transferSize": 31490,
+            "encodedBodySize": 31190,
+            "decodedBodySize": 31190,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 10.300000011920929,
+            "domContentLoadedEventStart": 266,
+            "domContentLoadedEventEnd": 266,
+            "domComplete": 266.60000002384186,
+            "loadEventStart": 267.10000002384186,
+            "loadEventEnd": 267.10000002384186,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "low"
+            }
+          },
+          "resources": [
+            {
+              "name": "http://127.0.0.1:4245/baseline.css",
+              "entryType": "resource",
+              "startTime": 8.300000011920929,
+              "duration": 4.600000023841858,
+              "navigationId": 851,
+              "initiatorType": "link",
+              "deliveryType": "",
+              "nextHopProtocol": "http/1.1",
+              "renderBlockingStatus": "blocking",
+              "contentType": "text/css",
+              "contentEncoding": "",
+              "workerStart": 0,
+              "workerRouterEvaluationStart": 0,
+              "workerCacheLookupStart": 0,
+              "workerMatchedSourceType": "",
+              "workerFinalSourceType": "",
+              "redirectStart": 0,
+              "redirectEnd": 0,
+              "fetchStart": 8.300000011920929,
+              "domainLookupStart": 8.300000011920929,
+              "domainLookupEnd": 8.300000011920929,
+              "connectStart": 8.300000011920929,
+              "secureConnectionStart": 0,
+              "connectEnd": 8.300000011920929,
+              "requestStart": 10.699999988079071,
+              "responseStart": 12.5,
+              "firstInterimResponseStart": 0,
+              "finalResponseHeadersStart": 12.5,
+              "responseEnd": 12.900000035762787,
+              "transferSize": 363520,
+              "encodedBodySize": 363220,
+              "decodedBodySize": 363220,
+              "responseStatus": 200,
+              "serverTiming": []
+            },
+            {
+              "name": "http://127.0.0.1:4245/client.js",
+              "entryType": "resource",
+              "startTime": 8.5,
+              "duration": 31.900000035762787,
+              "navigationId": 851,
+              "initiatorType": "script",
+              "deliveryType": "",
+              "nextHopProtocol": "http/1.1",
+              "renderBlockingStatus": "non-blocking",
+              "contentType": "text/javascript",
+              "contentEncoding": "",
+              "workerStart": 0,
+              "workerRouterEvaluationStart": 0,
+              "workerCacheLookupStart": 0,
+              "workerMatchedSourceType": "",
+              "workerFinalSourceType": "",
+              "redirectStart": 0,
+              "redirectEnd": 0,
+              "fetchStart": 8.5,
+              "domainLookupStart": 10.5,
+              "domainLookupEnd": 10.5,
+              "connectStart": 10.5,
+              "secureConnectionStart": 0,
+              "connectEnd": 10.800000011920929,
+              "requestStart": 10.800000011920929,
+              "responseStart": 13.699999988079071,
+              "firstInterimResponseStart": 0,
+              "finalResponseHeadersStart": 13.699999988079071,
+              "responseEnd": 40.40000003576279,
+              "transferSize": 5774199,
+              "encodedBodySize": 5773899,
+              "decodedBodySize": 5773899,
+              "responseStatus": 200,
+              "serverTiming": []
+            }
+          ],
+          "styles": [
+            {
+              "href": null,
+              "bytes": 54
+            },
+            {
+              "href": null,
+              "bytes": 13450
+            }
+          ],
+          "emittedStyleBytes": 13504
+        },
+        "durationMs": 529.1000000238419,
+        "frames": [
+          10.700000011920906,
+          16.700000000000045,
+          16.69999999999999,
+          16.69999999999999,
+          16.600000000000023,
+          16.69999999999999,
+          16.69999999999999,
+          16.600000000000023,
+          16.69999999999999,
+          16.599999999999966,
+          16.80000000000001,
+          16.600000000000023,
+          16.599999999999966,
+          16.700000000000045,
+          16.699999999999932,
+          16.700000000000045,
+          16.600000000000023,
+          16.699999999999932,
+          16.700000000000045,
+          16.600000000000023,
+          16.699999999999932,
+          16.700000000000045,
+          16.600000000000023,
+          16.699999999999932,
+          16.600000000000023,
+          16.700000000000045,
+          16.699999999999932,
+          16.600000000000023,
+          16.700000000000045,
+          16.600000000000023
+        ],
+        "inputs": [],
+        "longTasks": [],
+        "observedRunning": true,
+        "events": [
+          {
+            "at": 276.4000000357628,
+            "running": false,
+            "pending": false,
+            "messages": []
+          },
+          {
+            "at": 278.10000002384186,
+            "running": false,
+            "pending": false,
+            "messages": []
+          },
+          {
+            "at": 278.60000002384186,
+            "running": false,
+            "pending": false,
+            "messages": []
+          },
+          {
+            "at": 310,
+            "running": true,
+            "pending": true,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              }
+            ]
+          },
+          {
+            "at": 350.80000001192093,
+            "running": true,
+            "pending": true,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              }
+            ]
+          },
+          {
+            "at": 357.19999998807907,
+            "running": true,
+            "pending": true,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              }
+            ]
+          },
+          {
+            "at": 378.5,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 128
+              }
+            ]
+          },
+          {
+            "at": 404.60000002384186,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 256
+              }
+            ]
+          },
+          {
+            "at": 424.30000001192093,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 384
+              }
+            ]
+          },
+          {
+            "at": 438.60000002384186,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 512
+              }
+            ]
+          },
+          {
+            "at": 455.60000002384186,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 640
+              }
+            ]
+          },
+          {
+            "at": 471.69999998807907,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 768
+              }
+            ]
+          },
+          {
+            "at": 487.4000000357628,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 896
+              }
+            ]
+          },
+          {
+            "at": 504.4000000357628,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1024
+              }
+            ]
+          },
+          {
+            "at": 522.1000000238419,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1152
+              }
+            ]
+          },
+          {
+            "at": 537.3000000119209,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1280
+              }
+            ]
+          },
+          {
+            "at": 553.4000000357628,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1408
+              }
+            ]
+          },
+          {
+            "at": 571.5,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1536
+              }
+            ]
+          },
+          {
+            "at": 587.9000000357628,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1664
+              }
+            ]
+          },
+          {
+            "at": 603.6999999880791,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1792
+              }
+            ]
+          },
+          {
+            "at": 620.3000000119209,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 1920
+              }
+            ]
+          },
+          {
+            "at": 640,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2048
+              }
+            ]
+          },
+          {
+            "at": 654.6000000238419,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2176
+              }
+            ]
+          },
+          {
+            "at": 672,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2304
+              }
+            ]
+          },
+          {
+            "at": 688,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2432
+              }
+            ]
+          },
+          {
+            "at": 706.6999999880791,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2560
+              }
+            ]
+          },
+          {
+            "at": 725.5,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2688
+              }
+            ]
+          },
+          {
+            "at": 740.5,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2816
+              }
+            ]
+          },
+          {
+            "at": 757.1000000238419,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 2944
+              }
+            ]
+          },
+          {
+            "at": 773.1999999880791,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 3072
+              }
+            ]
+          },
+          {
+            "at": 790.8000000119209,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 3184
+              }
+            ]
+          },
+          {
+            "at": 799.8000000119209,
+            "running": true,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 3184
+              }
+            ]
+          },
+          {
+            "at": 803.1000000238419,
+            "running": false,
+            "pending": false,
+            "messages": [
+              {
+                "role": "user",
+                "length": 35
+              },
+              {
+                "role": "assistant",
+                "length": 3184
+              }
+            ]
+          }
+        ],
+        "goober": {
+          "calls": 0,
+          "compileMs": 0,
+          "gooberCalls": 0,
+          "gooberMs": [],
+          "units": {}
+        },
+        "rendered": {
+          "cards": 1,
+          "tables": 1,
+          "rows": 3,
+          "bars": 3,
+          "styles": [
+            {
+              "tag": "DIV",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "INPUT",
+              "background": "oklch(0.097 0 0 / 0.02)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "5px 11px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "INPUT",
+              "background": "oklch(0.097 0 0 / 0.02)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "5px 11px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "INPUT",
+              "background": "oklch(0.097 0 0 / 0.02)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "5px 11px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "TABLE",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "14px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "path",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(66, 165, 245)"
+            },
+            {
+              "tag": "path",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(66, 165, 245)"
+            },
+            {
+              "tag": "path",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(66, 165, 245)"
+            }
+          ],
+          "timedStyles": [
+            {
+              "tag": "DIV",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "INPUT",
+              "background": "oklab(0.097 0 0 / 0.0336897)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "5px 11px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "INPUT",
+              "background": "oklab(0.097 0 0 / 0.0336897)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "5px 11px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "INPUT",
+              "background": "oklab(0.097 0 0 / 0.0336897)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "5px 11px",
+              "fontSize": "16px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "TABLE",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "14px",
+              "fill": "rgb(0, 0, 0)"
+            },
+            {
+              "tag": "path",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(66, 165, 245)"
+            },
+            {
+              "tag": "path",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(66, 165, 245)"
+            },
+            {
+              "tag": "path",
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "oklch(0.097 0 0)",
+              "padding": "0px",
+              "fontSize": "16px",
+              "fill": "rgb(66, 165, 245)"
+            }
+          ]
+        },
+        "resources": [
+          {
+            "href": null,
+            "bytes": 54
+          },
+          {
+            "href": null,
+            "bytes": 13450
+          }
+        ],
+        "ruleCount": 2052,
+        "styleSamplePolicy": "Timed snapshot retained; exact settled parity after500ms outside timing cutoff",
+        "pageErrors": [
+          "Typing: locator.pressSequentially: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-benchmark-composer]')\u001b[22m\n"
+        ],
+        "expectedChars": 3184,
+        "expectedSHA256": "26655f21cafd64ca15b9fd32195e9a349b6eecae4bc24185255477ac8a7187f1",
+        "finalMatches": true,
+        "textHash": "e33893e5c0a1220643282503bb2b203a79f8cec93c45081a71ae7ff450a63fc0",
+        "frameP95Ms": 16.700000000000045,
+        "inputP95Ms": null,
+        "inputWhileRunningCount": 0,
+        "longTaskMs": 0,
+        "longTaskCount": 0,
+        "emittedStyleBytes": 13504,
+        "styleResourceCount": 0
+      }
+    }
+  ],
+  "chrome": "156.0.8078.47"
+}

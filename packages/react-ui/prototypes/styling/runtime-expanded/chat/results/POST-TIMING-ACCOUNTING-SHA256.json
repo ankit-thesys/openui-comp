@@ -1,0 +1,58 @@
+{
+  "frozenAt": "2026-10-23T20:39:08.568Z",
+  "scope": "Post-timing accounting/encoding additions only. Original candidate and measured build files unchanged.",
+  "measuredManifestSha256": "c5b6aea46ce42791fefe761daf2ad31c248b0142f07cb80fec0886a399ee80c4",
+  "measuredFilesVerifiedUnchanged": 235,
+  "files": [
+    {
+      "path": "README-POST-TIMING.md",
+      "bytes": 2187,
+      "sha256": "4e965970a5b006d007a36bec51ae032ba38b1d8a18c25e4355d5229f24acc467"
+    },
+    {
+      "path": "style-inventory-v2.ts",
+      "bytes": 883,
+      "sha256": "305cbb239ad1fee7148c58d75a40c6673315f1d5f78fcd3a1ca735035da34769"
+    },
+    {
+      "path": "inventory-v2-check.mjs",
+      "bytes": 6323,
+      "sha256": "e8230aa12e6778e594cb109181b1644c0c3b39689dd05d470473b9af810daa05"
+    },
+    {
+      "path": "style-inventory-v2.cjs",
+      "bytes": 1882507,
+      "sha256": "5f77c3c057445e33c243e5e559a215a2aabf6346d50fd3dbf2aa292628b65685"
+    },
+    {
+      "path": "encoding-check-v1.mjs",
+      "bytes": 5084,
+      "sha256": "07aeae76677604e1d20030a3a5d9b480876f0e1ec598f61c7e31b24852a81e5d"
+    },
+    {
+      "path": "results/style-inventory-v2.json",
+      "bytes": 84148,
+      "sha256": "dd65eb4b0fc14176fb84f32fcd2d1fc5222c1cad87935222b02f8e73e67fd0d4"
+    },
+    {
+      "path": "results/style-inventory-v2-initial-character-check.json",
+      "bytes": 78741,
+      "sha256": "fdc9a868cdce49699aaea82610e09dc6661d510b4b4f7192a3f4f518a70a2fc5"
+    },
+    {
+      "path": "results/encoding-v1.json",
+      "bytes": 8675,
+      "sha256": "2e2c039a2902dd49aadea2ce08ec3a5af367dee10664c3846aff173764a468eb"
+    },
+    {
+      "path": "results/INVENTORY-CORRECTION.md",
+      "bytes": 4149,
+      "sha256": "c88283a93df9af20adea7dab874dd65d109af7ba1a029b0c153011f83ebd79ae"
+    },
+    {
+      "path": "results/FULLCHAT-COVERAGE.md",
+      "bytes": 6651,
+      "sha256": "1c1a4d8138e0b6bbdddfc566386ae8e02fca2e26cd6d7b9398f3e3ee843ed42f"
+    }
+  ]
+}

@@ -1,0 +1,2244 @@
+{
+  "startedAt": "2026-10-23T19:56:56.593Z",
+  "kind": "actual-fullchat-expanded-response",
+  "protocol": "Actual AgentInterface/store/composer/parser. Same server-controlled chunks per arm. One excluded warmup pair then ten alternating pairs per chat/dashboard/load, fresh contexts; loaded CSS/JS excluded. Input/frame timings are proxies; native completion may precede input. No inherited result.",
+  "smoke": true,
+  "runs": [
+    {
+      "arm": "baseline",
+      "scenario": "chat",
+      "load": "saturated",
+      "pair": 0,
+      "warmup": false,
+      "cold": {
+        "scope": "Shared fixture JavaScript bundle cold navigation/hydration/readiness; not dedicated baseline/runtime network payload comparison",
+        "navigationToReadyMs": 315,
+        "goober": {
+          "calls": 0,
+          "compileMs": 0,
+          "gooberCalls": 0,
+          "gooberMs": [],
+          "units": {}
+        },
+        "navigation": {
+          "name": "http://127.0.0.1:4245/?scenario=chat&arm=baseline&size=6",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 292.5999999642372,
+          "navigationId": 7034,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 0.19999998807907104,
+          "domainLookupStart": 0.19999998807907104,
+          "domainLookupEnd": 0.19999998807907104,
+          "connectStart": 0.19999998807907104,
+          "secureConnectionStart": 0,
+          "connectEnd": 0.19999998807907104,
+          "requestStart": 0.8999999761581421,
+          "responseStart": 4.699999988079071,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 4.699999988079071,
+          "responseEnd": 4.899999976158142,
+          "transferSize": 31490,
+          "encodedBodySize": 31190,
+          "decodedBodySize": 31190,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 10.299999952316284,
+          "domContentLoadedEventStart": 291.39999997615814,
+          "domContentLoadedEventEnd": 291.39999997615814,
+          "domComplete": 292.0999999642372,
+          "loadEventStart": 292.5999999642372,
+          "loadEventEnd": 292.5999999642372,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "low"
+          }
+        },
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4245/baseline.css",
+            "entryType": "resource",
+            "startTime": 8.099999964237213,
+            "duration": 4,
+            "navigationId": 7034,
+            "initiatorType": "link",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.1",
+            "renderBlockingStatus": "blocking",
+            "contentType": "text/css",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 8.099999964237213,
+            "domainLookupStart": 8.099999964237213,
+            "domainLookupEnd": 8.099999964237213,
+            "connectStart": 8.099999964237213,
+            "secureConnectionStart": 0,
+            "connectEnd": 8.099999964237213,
+            "requestStart": 10.799999952316284,
+            "responseStart": 11.699999988079071,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 11.699999988079071,
+            "responseEnd": 12.099999964237213,
+            "transferSize": 363520,
+            "encodedBodySize": 363220,
+            "decodedBodySize": 363220,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "http://127.0.0.1:4245/client.js",
+            "entryType": "resource",
+            "startTime": 8.199999988079071,
+            "duration": 35.89999997615814,
+            "navigationId": 7034,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.1",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 8.199999988079071,
+            "domainLookupStart": 10.799999952316284,
+            "domainLookupEnd": 10.799999952316284,
+            "connectStart": 10.799999952316284,
+            "secureConnectionStart": 0,
+            "connectEnd": 10.899999976158142,
+            "requestStart": 10.899999976158142,
+            "responseStart": 13.799999952316284,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 13.799999952316284,
+            "responseEnd": 44.09999996423721,
+            "transferSize": 5774199,
+            "encodedBodySize": 5773899,
+            "decodedBodySize": 5773899,
+            "responseStatus": 200,
+            "serverTiming": []
+          }
+        ],
+        "styles": [
+          {
+            "href": null,
+            "bytes": 54
+          },
+          {
+            "href": null,
+            "bytes": 13450
+          }
+        ],
+        "emittedStyleBytes": 13504
+      },
+      "durationMs": 131.0999999642372,
+      "frames": [
+        -4.567999988079066,
+        16.567999999999984,
+        16.69999999999999,
+        16.700000000000045,
+        16.599999999999966,
+        16.69999999999999
+      ],
+      "inputs": [
+        {
+          "ms": 27.600000023841858,
+          "whileRunning": true
+        },
+        {
+          "ms": 31.100000023841858,
+          "whileRunning": true
+        },
+        {
+          "ms": 18.5,
+          "whileRunning": true
+        },
+        {
+          "ms": 63.19999998807907,
+          "whileRunning": true
+        }
+      ],
+      "longTasks": [
+        54
+      ],
+      "observedRunning": true,
+      "events": [
+        {
+          "at": 302.69999998807907,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 304.5999999642372,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 305.2999999523163,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 335.19999998807907,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 381.2999999523163,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 387.39999997615814,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 404,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 64
+            }
+          ]
+        },
+        {
+          "at": 432.89999997615814,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 5488
+            }
+          ]
+        },
+        {
+          "at": 443.5,
+          "running": false,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 5488
+            }
+          ]
+        }
+      ],
+      "goober": {
+        "calls": 0,
+        "compileMs": 0,
+        "gooberCalls": 0,
+        "gooberMs": [],
+        "units": {}
+      },
+      "rendered": {
+        "cards": 1,
+        "tables": 1,
+        "rows": 3,
+        "bars": 3,
+        "text": "OpenUI runtime integrationNew ChatThreadsBenchmark: analyze regional resultsOpenUI runtime integrationBenchmark: analyze regional resultsBenchmark: analyze regional resultsOpenUI research conversationProduction components and parser replayResponse 1\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 2\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 3\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 4\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 5\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 6\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewExpanded runtime component investigationControls, stateful layout and real D3 chartsSection 1\nReal markdown, controls and charts with production OpenUI components.AccountProduction inputRegionChoose regionChannelsEmailEmail updatesSMSText updatesAutomationEnabledScheduled automationPlanStarterBasic planProAdvanced planApplySaveNameRevenueA42B55C63Revenue0204060JanFebMarMonthRevenueRevenue0204060JanFebMarMonthRevenueAsia39.4%America34.4%Europe26.3%SummaryDetailsDetailed analysisMethodologyProduction accordion contenttyping probe",
+        "styles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "TABLE",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          }
+        ],
+        "timedStyles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379691)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379691)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379691)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379691)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379691)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379691)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379691)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "TABLE",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          }
+        ],
+        "timedText": "OpenUI runtime integrationNew ChatThreadsBenchmark: analyze regional resultsOpenUI runtime integrationBenchmark: analyze regional resultsBenchmark: analyze regional resultsOpenUI research conversationProduction components and parser replayResponse 1\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 2\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 3\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 4\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 5\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 6\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewExpanded runtime component investigationControls, stateful layout and real D3 chartsSection 1\nReal markdown, controls and charts with production OpenUI components.AccountProduction inputRegionChoose regionChannelsEmailEmail updatesSMSText updatesAutomationEnabledScheduled automationPlanStarterBasic planProAdvanced planApplySaveNameRevenueA42B55C63Revenue0204060JanFebMarMonthRevenueRevenue0204060JanFebMarMonthRevenueAsia39.4%America34.4%Europe26.3%SummaryDetailsDetailed analysisMethodologyProduction accordion contenttypin"
+      },
+      "resources": [
+        {
+          "href": null,
+          "bytes": 54
+        },
+        {
+          "href": null,
+          "bytes": 13450
+        }
+      ],
+      "ruleCount": 2052,
+      "styleSamplePolicy": "Timed snapshot retained; exact settled parity after500ms outside timing cutoff",
+      "pageErrors": [],
+      "expectedChars": 5488,
+      "expectedSHA256": "c30cb69b373a6a51b7e03900c90c9257f42587695ddfbd703a8f04de460ee0ea",
+      "finalMatches": true,
+      "textHash": "2296f87545678c426892d9856edfbf257fdfb83ee3564b5c443f7aa6438ef5c5",
+      "timedTextHash": "6ea5a3d0149a41d2d45eaaa3f7957d7c983738d87afb051ebdd3d0a1c4e687c5",
+      "frameP95Ms": 16.700000000000045,
+      "inputP95Ms": 63.19999998807907,
+      "inputWhileRunningCount": 4,
+      "longTaskMs": 54,
+      "longTaskCount": 1,
+      "emittedStyleBytes": 13504,
+      "styleResourceCount": 0
+    },
+    {
+      "arm": "runtime",
+      "scenario": "chat",
+      "load": "saturated",
+      "pair": 0,
+      "warmup": false,
+      "cold": {
+        "scope": "Shared fixture JavaScript bundle cold navigation/hydration/readiness; not dedicated baseline/runtime network payload comparison",
+        "navigationToReadyMs": 330.9000000357628,
+        "goober": {
+          "calls": 47,
+          "compileMs": 14.100000023841858,
+          "gooberCalls": 47,
+          "gooberMs": [
+            0.2999999523162842,
+            0.5,
+            0.20000004768371582,
+            0,
+            0,
+            0,
+            1.199999988079071,
+            0.10000002384185791,
+            0.699999988079071,
+            0.40000003576278687,
+            1.2999999523162842,
+            0.20000004768371582,
+            0,
+            0.19999998807907104,
+            0.09999996423721313,
+            0.20000004768371582,
+            0.09999996423721313,
+            0.30000001192092896,
+            0.19999998807907104,
+            0,
+            0.10000002384185791,
+            0,
+            0,
+            4.699999988079071,
+            0.6000000238418579,
+            0.5999999642372131,
+            0.10000002384185791,
+            0,
+            0.30000001192092896,
+            0,
+            0.19999998807907104,
+            0,
+            0.3999999761581421,
+            0.10000002384185791,
+            0.30000001192092896,
+            0,
+            0.2999999523162842,
+            0,
+            0.10000002384185791,
+            0,
+            0,
+            0.10000002384185791,
+            0.09999996423721313,
+            0.10000002384185791,
+            0,
+            0,
+            0
+          ],
+          "units": {
+            "Card": 1,
+            "Button": 1,
+            "Input": 1,
+            "CardHeader": 1,
+            "Buttons": 1,
+            "FormControl": 1,
+            "TextContent": 1,
+            "Table": 1,
+            "BarChart": 1,
+            "LineChart": 1,
+            "PieChart": 1,
+            "IconButton": 1,
+            "TextArea": 1,
+            "CheckBoxGroup": 1,
+            "SwitchGroup": 1,
+            "RadioGroup": 1,
+            "Select": 1,
+            "Tabs": 1,
+            "Accordion": 1,
+            "Separator": 1,
+            "Modal": 1,
+            "Tooltip": 1,
+            "AssistantMessage": 1,
+            "ShellAgentInterface": 1,
+            "ShellSidebar": 1,
+            "ShellThread": 1,
+            "ShellThreadHeader": 1,
+            "ShellMobileHeader": 1,
+            "ShellThreadlist": 1,
+            "ShellHistoryMenu": 1,
+            "ShellRenameChatDialog": 1,
+            "ShellThemeModeToggle": 1,
+            "ShellWelcomeScreen": 1,
+            "ShellConversationStarter": 1,
+            "ShellWorkspaceSidebar": 1,
+            "ShellResizableSeparator": 1,
+            "ShellArtifactBrowser": 1,
+            "ShellWelcomeGlow": 1,
+            "Shell_sharedShared": 1,
+            "Shell_sharedDetailed-viewDetailedViewPanel": 1,
+            "Shell_sharedDetailed-viewDetailedViewOverlay": 1,
+            "ShellComponentsComposer": 1,
+            "ShellComponentsDesktopWelcomeComposer": 1,
+            "ShellComponentsWelcomeMascot": 1,
+            "ShellComponentsMascotLoader": 1,
+            "ShellComponentsWelcomePrefillChips": 1,
+            "ShellComponentsAmbientLoader": 1
+          },
+          "guardInfrastructure": true
+        },
+        "navigation": {
+          "name": "http://127.0.0.1:4245/?scenario=chat&arm=runtime&size=6",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 295.30000001192093,
+          "navigationId": 4152,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 0.10000002384185791,
+          "domainLookupStart": 0.10000002384185791,
+          "domainLookupEnd": 0.10000002384185791,
+          "connectStart": 0.10000002384185791,
+          "secureConnectionStart": 0,
+          "connectEnd": 0.10000002384185791,
+          "requestStart": 0.800000011920929,
+          "responseStart": 14,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 14,
+          "responseEnd": 15.400000035762787,
+          "transferSize": 1535762,
+          "encodedBodySize": 1535462,
+          "decodedBodySize": 1535462,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 46,
+          "domContentLoadedEventStart": 294.19999998807907,
+          "domContentLoadedEventEnd": 294.19999998807907,
+          "domComplete": 294.80000001192093,
+          "loadEventStart": 295.30000001192093,
+          "loadEventEnd": 295.30000001192093,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "high"
+          }
+        },
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4245/client.js",
+            "entryType": "resource",
+            "startTime": 45.80000001192093,
+            "duration": 27.399999976158142,
+            "navigationId": 4152,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.1",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 45.80000001192093,
+            "domainLookupStart": 45.80000001192093,
+            "domainLookupEnd": 45.80000001192093,
+            "connectStart": 45.80000001192093,
+            "secureConnectionStart": 0,
+            "connectEnd": 45.80000001192093,
+            "requestStart": 47.80000001192093,
+            "responseStart": 49.40000003576279,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 49.40000003576279,
+            "responseEnd": 73.19999998807907,
+            "transferSize": 5774199,
+            "encodedBodySize": 5773899,
+            "decodedBodySize": 5773899,
+            "responseStatus": 200,
+            "serverTiming": []
+          }
+        ],
+        "styles": [
+          {
+            "href": "openui-expanded-v1:Card:boundary:go1575007177 openui-expanded-v1:Button:boundary:go278159681 openui-expanded-v1:Input:boundary:go1108635726 openui-expanded-v1:CardHeader:boundary:go898436157 openui-expanded-v1:Buttons:boundary:go3261390454 openui-expanded-v1:FormControl:boundary:go3777145176 openui-expanded-v1:TextContent:boundary:go954855282 openui-expanded-v1:Table:boundary:go2912324851 openui-expanded-v1:BarChart:boundary:go1992396001 openui-expanded-v1:LineChart:boundary:go1041195028 openui-expanded-v1:PieChart:boundary:go3756294908 openui-expanded-v1:IconButton:boundary:go2412478652 openui-expanded-v1:TextArea:boundary:go1509541534 openui-expanded-v1:CheckBoxGroup:boundary:go2981431845 openui-expanded-v1:SwitchGroup:boundary:go3441439237 openui-expanded-v1:RadioGroup:boundary:go561285950 openui-expanded-v1:Select:boundary:go1230403601 openui-expanded-v1:Tabs:boundary:go2182908062 openui-expanded-v1:Accordion:boundary:go458929348 openui-expanded-v1:Separator:boundary:go3253786402 openui-expanded-v1:Modal:boundary:go1600517841 openui-expanded-v1:Tooltip:boundary:go764950772 openui-expanded-v1:AssistantMessage:boundary:go650573658 openui-expanded-v1:ShellAgentInterface:boundary:go1796640538 openui-expanded-v1:ShellSidebar:boundary:go2063302110 openui-expanded-v1:ShellThread:boundary:go4165890024 openui-expanded-v1:ShellThreadHeader:boundary:go1226831259 openui-expanded-v1:ShellMobileHeader:boundary:go716447674 openui-expanded-v1:ShellThreadlist:boundary:go1280180826 openui-expanded-v1:ShellHistoryMenu:boundary:go437721326 openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618 openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546 openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602 openui-expanded-v1:ShellConversationStarter:boundary:go1341444952 openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247 openui-expanded-v1:ShellResizableSeparator:boundary:go417178870 openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114 openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982 openui-expanded-v1:Shell_sharedShared:boundary:go3952224658 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204 openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046 openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646 openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038 openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939 openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058 openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+            "bytes": 1500896
+          },
+          {
+            "href": null,
+            "bytes": 54
+          },
+          {
+            "href": null,
+            "bytes": 13450
+          }
+        ],
+        "emittedStyleBytes": 1514400
+      },
+      "durationMs": 124.79999995231628,
+      "frames": [
+        5.099999964237213,
+        16.600000000000023,
+        16.69999999999999,
+        16.599999999999966,
+        16.700000000000045
+      ],
+      "inputs": [
+        {
+          "ms": 18.69999998807907,
+          "whileRunning": true
+        },
+        {
+          "ms": 22.399999976158142,
+          "whileRunning": true
+        },
+        {
+          "ms": 61,
+          "whileRunning": true
+        }
+      ],
+      "longTasks": [
+        51
+      ],
+      "observedRunning": true,
+      "events": [
+        {
+          "at": 319.9000000357628,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 321.60000002384186,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 322.10000002384186,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 346,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 385.60000002384186,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 391.5,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 407,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 64
+            }
+          ]
+        },
+        {
+          "at": 434.5,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 5488
+            }
+          ]
+        },
+        {
+          "at": 445.19999998807907,
+          "running": false,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 5488
+            }
+          ]
+        }
+      ],
+      "goober": {
+        "calls": 0,
+        "compileMs": 0,
+        "gooberCalls": 0,
+        "gooberMs": [],
+        "units": {}
+      },
+      "rendered": {
+        "cards": 1,
+        "tables": 1,
+        "rows": 3,
+        "bars": 3,
+        "text": "OpenUI runtime integrationNew ChatThreadsBenchmark: analyze regional resultsOpenUI runtime integrationBenchmark: analyze regional resultsBenchmark: analyze regional resultsOpenUI research conversationProduction components and parser replayResponse 1\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 2\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 3\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 4\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 5\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 6\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewExpanded runtime component investigationControls, stateful layout and real D3 chartsSection 1\nReal markdown, controls and charts with production OpenUI components.AccountProduction inputRegionChoose regionChannelsEmailEmail updatesSMSText updatesAutomationEnabledScheduled automationPlanStarterBasic planProAdvanced planApplySaveNameRevenueA42B55C63Revenue0204060JanFebMarMonthRevenueRevenue0204060JanFebMarMonthRevenueAsia39.4%America34.4%Europe26.3%SummaryDetailsDetailed analysisMethodologyProduction accordion contenttyping probe",
+        "styles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "TABLE",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          }
+        ],
+        "timedStyles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379724)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379724)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379724)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379724)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379724)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379724)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379724)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "TABLE",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          }
+        ],
+        "timedText": "OpenUI runtime integrationNew ChatThreadsBenchmark: analyze regional resultsOpenUI runtime integrationBenchmark: analyze regional resultsBenchmark: analyze regional resultsOpenUI research conversationProduction components and parser replayResponse 1\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 2\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 3\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 4\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 5\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 6\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewExpanded runtime component investigationControls, stateful layout and real D3 chartsSection 1\nReal markdown, controls and charts with production OpenUI components.AccountProduction inputRegionChoose regionChannelsEmailEmail updatesSMSText updatesAutomationEnabledScheduled automationPlanStarterBasic planProAdvanced planApplySaveNameRevenueA42B55C63Revenue0204060JanFebMarMonthRevenueRevenue0204060JanFebMarMonthRevenueAsia39.4%America34.4%Europe26.3%SummaryDetailsDetailed analysisMethodologyProduction accordion contenttypi"
+      },
+      "resources": [
+        {
+          "href": "openui-expanded-v1:Card:boundary:go1575007177 openui-expanded-v1:Button:boundary:go278159681 openui-expanded-v1:Input:boundary:go1108635726 openui-expanded-v1:CardHeader:boundary:go898436157 openui-expanded-v1:Buttons:boundary:go3261390454 openui-expanded-v1:FormControl:boundary:go3777145176 openui-expanded-v1:TextContent:boundary:go954855282 openui-expanded-v1:Table:boundary:go2912324851 openui-expanded-v1:BarChart:boundary:go1992396001 openui-expanded-v1:LineChart:boundary:go1041195028 openui-expanded-v1:PieChart:boundary:go3756294908 openui-expanded-v1:IconButton:boundary:go2412478652 openui-expanded-v1:TextArea:boundary:go1509541534 openui-expanded-v1:CheckBoxGroup:boundary:go2981431845 openui-expanded-v1:SwitchGroup:boundary:go3441439237 openui-expanded-v1:RadioGroup:boundary:go561285950 openui-expanded-v1:Select:boundary:go1230403601 openui-expanded-v1:Tabs:boundary:go2182908062 openui-expanded-v1:Accordion:boundary:go458929348 openui-expanded-v1:Separator:boundary:go3253786402 openui-expanded-v1:Modal:boundary:go1600517841 openui-expanded-v1:Tooltip:boundary:go764950772 openui-expanded-v1:AssistantMessage:boundary:go650573658 openui-expanded-v1:ShellAgentInterface:boundary:go1796640538 openui-expanded-v1:ShellSidebar:boundary:go2063302110 openui-expanded-v1:ShellThread:boundary:go4165890024 openui-expanded-v1:ShellThreadHeader:boundary:go1226831259 openui-expanded-v1:ShellMobileHeader:boundary:go716447674 openui-expanded-v1:ShellThreadlist:boundary:go1280180826 openui-expanded-v1:ShellHistoryMenu:boundary:go437721326 openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618 openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546 openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602 openui-expanded-v1:ShellConversationStarter:boundary:go1341444952 openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247 openui-expanded-v1:ShellResizableSeparator:boundary:go417178870 openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114 openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982 openui-expanded-v1:Shell_sharedShared:boundary:go3952224658 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204 openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046 openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646 openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038 openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939 openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058 openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+          "bytes": 1500896
+        },
+        {
+          "href": null,
+          "bytes": 54
+        },
+        {
+          "href": null,
+          "bytes": 13450
+        }
+      ],
+      "ruleCount": 3715,
+      "styleSamplePolicy": "Timed snapshot retained; exact settled parity after500ms outside timing cutoff",
+      "pageErrors": [],
+      "expectedChars": 5488,
+      "expectedSHA256": "c30cb69b373a6a51b7e03900c90c9257f42587695ddfbd703a8f04de460ee0ea",
+      "finalMatches": true,
+      "textHash": "2296f87545678c426892d9856edfbf257fdfb83ee3564b5c443f7aa6438ef5c5",
+      "timedTextHash": "8fc3de1857608ed3cc5766e702ce0eb9f6883b6258ce7a9f306319f157a2b0d3",
+      "frameP95Ms": 16.700000000000045,
+      "inputP95Ms": 61,
+      "inputWhileRunningCount": 3,
+      "longTaskMs": 51,
+      "longTaskCount": 1,
+      "emittedStyleBytes": 1514400,
+      "styleResourceCount": 47
+    }
+  ],
+  "warmups": [
+    {
+      "arm": "runtime",
+      "scenario": "chat",
+      "load": "saturated",
+      "pair": -1,
+      "warmup": true,
+      "cold": {
+        "scope": "Shared fixture JavaScript bundle cold navigation/hydration/readiness; not dedicated baseline/runtime network payload comparison",
+        "navigationToReadyMs": 401.5999999642372,
+        "goober": {
+          "calls": 47,
+          "compileMs": 14.800000011920929,
+          "gooberCalls": 47,
+          "gooberMs": [
+            0.3999999761581421,
+            0.3999999761581421,
+            0.10000002384185791,
+            0.10000002384185791,
+            0.09999996423721313,
+            0,
+            1.199999988079071,
+            0.20000004768371582,
+            0.5999999642372131,
+            0.40000003576278687,
+            1.5,
+            0.2999999523162842,
+            0.10000002384185791,
+            0.10000002384185791,
+            0.19999998807907104,
+            0.09999996423721313,
+            0.20000004768371582,
+            0.2999999523162842,
+            0.10000002384185791,
+            0,
+            0.10000002384185791,
+            0.09999996423721313,
+            0,
+            4.800000011920929,
+            0.6000000238418579,
+            0.5,
+            0.10000002384185791,
+            0.09999996423721313,
+            0.30000001192092896,
+            0.10000002384185791,
+            0,
+            0.09999996423721313,
+            0.30000001192092896,
+            0.19999998807907104,
+            0.20000004768371582,
+            0.09999996423721313,
+            0.19999998807907104,
+            0,
+            0.10000002384185791,
+            0.10000002384185791,
+            0,
+            0.09999996423721313,
+            0.10000002384185791,
+            0.09999996423721313,
+            0,
+            0,
+            0.10000002384185791
+          ],
+          "units": {
+            "Card": 1,
+            "Button": 1,
+            "Input": 1,
+            "CardHeader": 1,
+            "Buttons": 1,
+            "FormControl": 1,
+            "TextContent": 1,
+            "Table": 1,
+            "BarChart": 1,
+            "LineChart": 1,
+            "PieChart": 1,
+            "IconButton": 1,
+            "TextArea": 1,
+            "CheckBoxGroup": 1,
+            "SwitchGroup": 1,
+            "RadioGroup": 1,
+            "Select": 1,
+            "Tabs": 1,
+            "Accordion": 1,
+            "Separator": 1,
+            "Modal": 1,
+            "Tooltip": 1,
+            "AssistantMessage": 1,
+            "ShellAgentInterface": 1,
+            "ShellSidebar": 1,
+            "ShellThread": 1,
+            "ShellThreadHeader": 1,
+            "ShellMobileHeader": 1,
+            "ShellThreadlist": 1,
+            "ShellHistoryMenu": 1,
+            "ShellRenameChatDialog": 1,
+            "ShellThemeModeToggle": 1,
+            "ShellWelcomeScreen": 1,
+            "ShellConversationStarter": 1,
+            "ShellWorkspaceSidebar": 1,
+            "ShellResizableSeparator": 1,
+            "ShellArtifactBrowser": 1,
+            "ShellWelcomeGlow": 1,
+            "Shell_sharedShared": 1,
+            "Shell_sharedDetailed-viewDetailedViewPanel": 1,
+            "Shell_sharedDetailed-viewDetailedViewOverlay": 1,
+            "ShellComponentsComposer": 1,
+            "ShellComponentsDesktopWelcomeComposer": 1,
+            "ShellComponentsWelcomeMascot": 1,
+            "ShellComponentsMascotLoader": 1,
+            "ShellComponentsWelcomePrefillChips": 1,
+            "ShellComponentsAmbientLoader": 1
+          },
+          "guardInfrastructure": true
+        },
+        "navigation": {
+          "name": "http://127.0.0.1:4245/?scenario=chat&arm=runtime&size=6",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 362.5,
+          "navigationId": 398,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 0.5,
+          "domainLookupStart": 0.5,
+          "domainLookupEnd": 0.5,
+          "connectStart": 0.5,
+          "secureConnectionStart": 0,
+          "connectEnd": 0.5,
+          "requestStart": 1.199999988079071,
+          "responseStart": 56,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 56,
+          "responseEnd": 57.39999997615814,
+          "transferSize": 1535762,
+          "encodedBodySize": 1535462,
+          "decodedBodySize": 1535462,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 88.89999997615814,
+          "domContentLoadedEventStart": 361.30000001192093,
+          "domContentLoadedEventEnd": 361.39999997615814,
+          "domComplete": 361.89999997615814,
+          "loadEventStart": 362.5,
+          "loadEventEnd": 362.5,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "low"
+          }
+        },
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4245/client.js",
+            "entryType": "resource",
+            "startTime": 88.59999996423721,
+            "duration": 27.100000023841858,
+            "navigationId": 398,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.1",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 88.59999996423721,
+            "domainLookupStart": 88.59999996423721,
+            "domainLookupEnd": 88.59999996423721,
+            "connectStart": 88.59999996423721,
+            "secureConnectionStart": 0,
+            "connectEnd": 88.59999996423721,
+            "requestStart": 91,
+            "responseStart": 93.09999996423721,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 93.09999996423721,
+            "responseEnd": 115.69999998807907,
+            "transferSize": 5774199,
+            "encodedBodySize": 5773899,
+            "decodedBodySize": 5773899,
+            "responseStatus": 200,
+            "serverTiming": []
+          }
+        ],
+        "styles": [
+          {
+            "href": "openui-expanded-v1:Card:boundary:go1575007177 openui-expanded-v1:Button:boundary:go278159681 openui-expanded-v1:Input:boundary:go1108635726 openui-expanded-v1:CardHeader:boundary:go898436157 openui-expanded-v1:Buttons:boundary:go3261390454 openui-expanded-v1:FormControl:boundary:go3777145176 openui-expanded-v1:TextContent:boundary:go954855282 openui-expanded-v1:Table:boundary:go2912324851 openui-expanded-v1:BarChart:boundary:go1992396001 openui-expanded-v1:LineChart:boundary:go1041195028 openui-expanded-v1:PieChart:boundary:go3756294908 openui-expanded-v1:IconButton:boundary:go2412478652 openui-expanded-v1:TextArea:boundary:go1509541534 openui-expanded-v1:CheckBoxGroup:boundary:go2981431845 openui-expanded-v1:SwitchGroup:boundary:go3441439237 openui-expanded-v1:RadioGroup:boundary:go561285950 openui-expanded-v1:Select:boundary:go1230403601 openui-expanded-v1:Tabs:boundary:go2182908062 openui-expanded-v1:Accordion:boundary:go458929348 openui-expanded-v1:Separator:boundary:go3253786402 openui-expanded-v1:Modal:boundary:go1600517841 openui-expanded-v1:Tooltip:boundary:go764950772 openui-expanded-v1:AssistantMessage:boundary:go650573658 openui-expanded-v1:ShellAgentInterface:boundary:go1796640538 openui-expanded-v1:ShellSidebar:boundary:go2063302110 openui-expanded-v1:ShellThread:boundary:go4165890024 openui-expanded-v1:ShellThreadHeader:boundary:go1226831259 openui-expanded-v1:ShellMobileHeader:boundary:go716447674 openui-expanded-v1:ShellThreadlist:boundary:go1280180826 openui-expanded-v1:ShellHistoryMenu:boundary:go437721326 openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618 openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546 openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602 openui-expanded-v1:ShellConversationStarter:boundary:go1341444952 openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247 openui-expanded-v1:ShellResizableSeparator:boundary:go417178870 openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114 openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982 openui-expanded-v1:Shell_sharedShared:boundary:go3952224658 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204 openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046 openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646 openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038 openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939 openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058 openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+            "bytes": 1500896
+          },
+          {
+            "href": null,
+            "bytes": 54
+          },
+          {
+            "href": null,
+            "bytes": 13450
+          }
+        ],
+        "emittedStyleBytes": 1514400
+      },
+      "durationMs": 128.5,
+      "frames": [
+        4.799999988079094,
+        16.69999999999999,
+        16.599999999999966,
+        16.700000000000045,
+        16.69999999999999
+      ],
+      "inputs": [
+        {
+          "ms": 17.299999952316284,
+          "whileRunning": true
+        },
+        {
+          "ms": 21.099999964237213,
+          "whileRunning": true
+        },
+        {
+          "ms": 65.60000002384186,
+          "whileRunning": true
+        }
+      ],
+      "longTasks": [
+        56
+      ],
+      "observedRunning": true,
+      "events": [
+        {
+          "at": 388.5999999642372,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 390.39999997615814,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 391.0999999642372,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 422.5999999642372,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 461.89999997615814,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 468.30000001192093,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 485,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 64
+            }
+          ]
+        },
+        {
+          "at": 513.5999999642372,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 5488
+            }
+          ]
+        },
+        {
+          "at": 525.5999999642372,
+          "running": false,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 5488
+            }
+          ]
+        }
+      ],
+      "goober": {
+        "calls": 0,
+        "compileMs": 0,
+        "gooberCalls": 0,
+        "gooberMs": [],
+        "units": {}
+      },
+      "rendered": {
+        "cards": 1,
+        "tables": 1,
+        "rows": 3,
+        "bars": 3,
+        "text": "OpenUI runtime integrationNew ChatThreadsBenchmark: analyze regional resultsOpenUI runtime integrationBenchmark: analyze regional resultsBenchmark: analyze regional resultsOpenUI research conversationProduction components and parser replayResponse 1\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 2\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 3\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 4\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 5\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 6\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewExpanded runtime component investigationControls, stateful layout and real D3 chartsSection 1\nReal markdown, controls and charts with production OpenUI components.AccountProduction inputRegionChoose regionChannelsEmailEmail updatesSMSText updatesAutomationEnabledScheduled automationPlanStarterBasic planProAdvanced planApplySaveNameRevenueA42B55C63Revenue0204060JanFebMarMonthRevenueRevenue0204060JanFebMarMonthRevenueAsia39.4%America34.4%Europe26.3%SummaryDetailsDetailed analysisMethodologyProduction accordion contenttyping probe",
+        "styles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "TABLE",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          }
+        ],
+        "timedStyles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379653)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379653)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379653)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379653)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379653)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379653)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379653)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "TABLE",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          }
+        ],
+        "timedText": "OpenUI runtime integrationNew ChatThreadsBenchmark: analyze regional resultsOpenUI runtime integrationBenchmark: analyze regional resultsBenchmark: analyze regional resultsOpenUI research conversationProduction components and parser replayResponse 1\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 2\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 3\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 4\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 5\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 6\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewExpanded runtime component investigationControls, stateful layout and real D3 chartsSection 1\nReal markdown, controls and charts with production OpenUI components.AccountProduction inputRegionChoose regionChannelsEmailEmail updatesSMSText updatesAutomationEnabledScheduled automationPlanStarterBasic planProAdvanced planApplySaveNameRevenueA42B55C63Revenue0204060JanFebMarMonthRevenueRevenue0204060JanFebMarMonthRevenueAsia39.4%America34.4%Europe26.3%SummaryDetailsDetailed analysisMethodologyProduction accordion contenttypi"
+      },
+      "resources": [
+        {
+          "href": "openui-expanded-v1:Card:boundary:go1575007177 openui-expanded-v1:Button:boundary:go278159681 openui-expanded-v1:Input:boundary:go1108635726 openui-expanded-v1:CardHeader:boundary:go898436157 openui-expanded-v1:Buttons:boundary:go3261390454 openui-expanded-v1:FormControl:boundary:go3777145176 openui-expanded-v1:TextContent:boundary:go954855282 openui-expanded-v1:Table:boundary:go2912324851 openui-expanded-v1:BarChart:boundary:go1992396001 openui-expanded-v1:LineChart:boundary:go1041195028 openui-expanded-v1:PieChart:boundary:go3756294908 openui-expanded-v1:IconButton:boundary:go2412478652 openui-expanded-v1:TextArea:boundary:go1509541534 openui-expanded-v1:CheckBoxGroup:boundary:go2981431845 openui-expanded-v1:SwitchGroup:boundary:go3441439237 openui-expanded-v1:RadioGroup:boundary:go561285950 openui-expanded-v1:Select:boundary:go1230403601 openui-expanded-v1:Tabs:boundary:go2182908062 openui-expanded-v1:Accordion:boundary:go458929348 openui-expanded-v1:Separator:boundary:go3253786402 openui-expanded-v1:Modal:boundary:go1600517841 openui-expanded-v1:Tooltip:boundary:go764950772 openui-expanded-v1:AssistantMessage:boundary:go650573658 openui-expanded-v1:ShellAgentInterface:boundary:go1796640538 openui-expanded-v1:ShellSidebar:boundary:go2063302110 openui-expanded-v1:ShellThread:boundary:go4165890024 openui-expanded-v1:ShellThreadHeader:boundary:go1226831259 openui-expanded-v1:ShellMobileHeader:boundary:go716447674 openui-expanded-v1:ShellThreadlist:boundary:go1280180826 openui-expanded-v1:ShellHistoryMenu:boundary:go437721326 openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618 openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546 openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602 openui-expanded-v1:ShellConversationStarter:boundary:go1341444952 openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247 openui-expanded-v1:ShellResizableSeparator:boundary:go417178870 openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114 openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982 openui-expanded-v1:Shell_sharedShared:boundary:go3952224658 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204 openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046 openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646 openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038 openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939 openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058 openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+          "bytes": 1500896
+        },
+        {
+          "href": null,
+          "bytes": 54
+        },
+        {
+          "href": null,
+          "bytes": 13450
+        }
+      ],
+      "ruleCount": 3715,
+      "styleSamplePolicy": "Timed snapshot retained; exact settled parity after500ms outside timing cutoff",
+      "pageErrors": [],
+      "expectedChars": 5488,
+      "expectedSHA256": "c30cb69b373a6a51b7e03900c90c9257f42587695ddfbd703a8f04de460ee0ea",
+      "finalMatches": true,
+      "textHash": "2296f87545678c426892d9856edfbf257fdfb83ee3564b5c443f7aa6438ef5c5",
+      "timedTextHash": "8fc3de1857608ed3cc5766e702ce0eb9f6883b6258ce7a9f306319f157a2b0d3",
+      "frameP95Ms": 16.700000000000045,
+      "inputP95Ms": 65.60000002384186,
+      "inputWhileRunningCount": 3,
+      "longTaskMs": 56,
+      "longTaskCount": 1,
+      "emittedStyleBytes": 1514400,
+      "styleResourceCount": 47
+    },
+    {
+      "arm": "baseline",
+      "scenario": "chat",
+      "load": "saturated",
+      "pair": -1,
+      "warmup": true,
+      "cold": {
+        "scope": "Shared fixture JavaScript bundle cold navigation/hydration/readiness; not dedicated baseline/runtime network payload comparison",
+        "navigationToReadyMs": 304.30000001192093,
+        "goober": {
+          "calls": 0,
+          "compileMs": 0,
+          "gooberCalls": 0,
+          "gooberMs": [],
+          "units": {}
+        },
+        "navigation": {
+          "name": "http://127.0.0.1:4245/?scenario=chat&arm=baseline&size=6",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 282.69999998807907,
+          "navigationId": 5917,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 0.19999998807907104,
+          "domainLookupStart": 0.19999998807907104,
+          "domainLookupEnd": 0.19999998807907104,
+          "connectStart": 0.19999998807907104,
+          "secureConnectionStart": 0,
+          "connectEnd": 0.19999998807907104,
+          "requestStart": 0.5999999642372131,
+          "responseStart": 5.399999976158142,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 5.399999976158142,
+          "responseEnd": 5.599999964237213,
+          "transferSize": 31490,
+          "encodedBodySize": 31190,
+          "decodedBodySize": 31190,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 10.800000011920929,
+          "domContentLoadedEventStart": 281.39999997615814,
+          "domContentLoadedEventEnd": 281.39999997615814,
+          "domComplete": 282,
+          "loadEventStart": 282.69999998807907,
+          "loadEventEnd": 282.69999998807907,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "low"
+          }
+        },
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4245/baseline.css",
+            "entryType": "resource",
+            "startTime": 8.599999964237213,
+            "duration": 7.300000011920929,
+            "navigationId": 5917,
+            "initiatorType": "link",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.1",
+            "renderBlockingStatus": "blocking",
+            "contentType": "text/css",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 8.599999964237213,
+            "domainLookupStart": 8.599999964237213,
+            "domainLookupEnd": 8.599999964237213,
+            "connectStart": 8.599999964237213,
+            "secureConnectionStart": 0,
+            "connectEnd": 8.599999964237213,
+            "requestStart": 13.5,
+            "responseStart": 15.300000011920929,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 15.300000011920929,
+            "responseEnd": 15.899999976158142,
+            "transferSize": 363520,
+            "encodedBodySize": 363220,
+            "decodedBodySize": 363220,
+            "responseStatus": 200,
+            "serverTiming": []
+          },
+          {
+            "name": "http://127.0.0.1:4245/client.js",
+            "entryType": "resource",
+            "startTime": 8.699999988079071,
+            "duration": 35,
+            "navigationId": 5917,
+            "initiatorType": "script",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.1",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/javascript",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 8.699999988079071,
+            "domainLookupStart": 13,
+            "domainLookupEnd": 13,
+            "connectStart": 13,
+            "secureConnectionStart": 0,
+            "connectEnd": 13.599999964237213,
+            "requestStart": 13.599999964237213,
+            "responseStart": 17.30000001192093,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 17.30000001192093,
+            "responseEnd": 43.69999998807907,
+            "transferSize": 5774199,
+            "encodedBodySize": 5773899,
+            "decodedBodySize": 5773899,
+            "responseStatus": 200,
+            "serverTiming": []
+          }
+        ],
+        "styles": [
+          {
+            "href": null,
+            "bytes": 54
+          },
+          {
+            "href": null,
+            "bytes": 13450
+          }
+        ],
+        "emittedStyleBytes": 13504
+      },
+      "durationMs": 131.60000002384186,
+      "frames": [
+        -3.0999999880790483,
+        16.599999999999966,
+        16.69999999999999,
+        16.600000000000023,
+        16.80000000000001,
+        16.599999999999966
+      ],
+      "inputs": [
+        {
+          "ms": 30.299999952316284,
+          "whileRunning": true
+        },
+        {
+          "ms": 17,
+          "whileRunning": true
+        },
+        {
+          "ms": 68.69999998807907,
+          "whileRunning": true
+        },
+        {
+          "ms": 55.89999997615814,
+          "whileRunning": true
+        }
+      ],
+      "longTasks": [
+        52
+      ],
+      "observedRunning": true,
+      "events": [
+        {
+          "at": 292.69999998807907,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 294.5999999642372,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 295.30000001192093,
+          "running": false,
+          "pending": false,
+          "messages": []
+        },
+        {
+          "at": 323.89999997615814,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 364.39999997615814,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 370.5999999642372,
+          "running": true,
+          "pending": true,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            }
+          ]
+        },
+        {
+          "at": 393.5,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 64
+            }
+          ]
+        },
+        {
+          "at": 420.80000001192093,
+          "running": true,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 5488
+            }
+          ]
+        },
+        {
+          "at": 431.89999997615814,
+          "running": false,
+          "pending": false,
+          "messages": [
+            {
+              "role": "user",
+              "length": 35
+            },
+            {
+              "role": "assistant",
+              "length": 5488
+            }
+          ]
+        }
+      ],
+      "goober": {
+        "calls": 0,
+        "compileMs": 0,
+        "gooberCalls": 0,
+        "gooberMs": [],
+        "units": {}
+      },
+      "rendered": {
+        "cards": 1,
+        "tables": 1,
+        "rows": 3,
+        "bars": 3,
+        "text": "OpenUI runtime integrationNew ChatThreadsBenchmark: analyze regional resultsOpenUI runtime integrationBenchmark: analyze regional resultsBenchmark: analyze regional resultsOpenUI research conversationProduction components and parser replayResponse 1\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 2\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 3\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 4\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 5\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 6\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewExpanded runtime component investigationControls, stateful layout and real D3 chartsSection 1\nReal markdown, controls and charts with production OpenUI components.AccountProduction inputRegionChoose regionChannelsEmailEmail updatesSMSText updatesAutomationEnabledScheduled automationPlanStarterBasic planProAdvanced planApplySaveNameRevenueA42B55C63Revenue0204060JanFebMarMonthRevenueRevenue0204060JanFebMarMonthRevenueAsia39.4%America34.4%Europe26.3%SummaryDetailsDetailed analysisMethodologyProduction accordion contenttyping probe",
+        "styles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklch(0.097 0 0 / 0.02)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "TABLE",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          }
+        ],
+        "timedStyles": [
+          {
+            "tag": "DIV",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379887)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379887)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379887)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379887)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379887)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379887)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "INPUT",
+            "background": "oklab(0.097 0 0 / 0.0379887)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "5px 11px",
+            "fontSize": "16px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "TABLE",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "14px",
+            "fill": "rgb(0, 0, 0)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          },
+          {
+            "tag": "path",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "oklch(0.097 0 0)",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fill": "rgb(66, 165, 245)"
+          }
+        ],
+        "timedText": "OpenUI runtime integrationNew ChatThreadsBenchmark: analyze regional resultsOpenUI runtime integrationBenchmark: analyze regional resultsBenchmark: analyze regional resultsOpenUI research conversationProduction components and parser replayResponse 1\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 2\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 3\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 4\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 5\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 6\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewExpanded runtime component investigationControls, stateful layout and real D3 chartsSection 1\nReal markdown, controls and charts with production OpenUI components.AccountProduction inputRegionChoose regionChannelsEmailEmail updatesSMSText updatesAutomationEnabledScheduled automationPlanStarterBasic planProAdvanced planApplySaveNameRevenueA42B55C63Revenue0204060JanFebMarMonthRevenueRevenue0204060JanFebMarMonthRevenueAsia39.4%America34.4%Europe26.3%SummaryDetailsDetailed analysisMethodologyProduction accordion contenttypin"
+      },
+      "resources": [
+        {
+          "href": null,
+          "bytes": 54
+        },
+        {
+          "href": null,
+          "bytes": 13450
+        }
+      ],
+      "ruleCount": 2052,
+      "styleSamplePolicy": "Timed snapshot retained; exact settled parity after500ms outside timing cutoff",
+      "pageErrors": [],
+      "expectedChars": 5488,
+      "expectedSHA256": "c30cb69b373a6a51b7e03900c90c9257f42587695ddfbd703a8f04de460ee0ea",
+      "finalMatches": true,
+      "textHash": "2296f87545678c426892d9856edfbf257fdfb83ee3564b5c443f7aa6438ef5c5",
+      "timedTextHash": "6ea5a3d0149a41d2d45eaaa3f7957d7c983738d87afb051ebdd3d0a1c4e687c5",
+      "frameP95Ms": 16.80000000000001,
+      "inputP95Ms": 68.69999998807907,
+      "inputWhileRunningCount": 4,
+      "longTaskMs": 52,
+      "longTaskCount": 1,
+      "emittedStyleBytes": 13504,
+      "styleResourceCount": 0
+    }
+  ],
+  "pairs": [
+    {
+      "scenario": "chat",
+      "load": "saturated",
+      "pair": -1,
+      "warmup": true,
+      "textParity": true,
+      "styleParity": true
+    },
+    {
+      "scenario": "chat",
+      "load": "saturated",
+      "pair": 0,
+      "warmup": false,
+      "textParity": true,
+      "styleParity": true
+    }
+  ],
+  "failures": [],
+  "chrome": "156.0.8078.47",
+  "status": "passed",
+  "finishedAt": "2026-10-23T19:57:03.557Z"
+}

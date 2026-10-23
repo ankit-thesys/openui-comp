@@ -1,0 +1,1246 @@
+{
+  "candidate": "nested-object-specificity-neutral",
+  "generatedAt": "2026-10-23T19:35:42.603Z",
+  "units": [
+    {
+      "name": "Card",
+      "originalSelectors": 6,
+      "generatedSelectors": 6,
+      "failures": []
+    },
+    {
+      "name": "Button",
+      "originalSelectors": 30,
+      "generatedSelectors": 30,
+      "failures": []
+    },
+    {
+      "name": "Input",
+      "originalSelectors": 11,
+      "generatedSelectors": 11,
+      "failures": []
+    },
+    {
+      "name": "CardHeader",
+      "originalSelectors": 6,
+      "generatedSelectors": 6,
+      "failures": []
+    },
+    {
+      "name": "Buttons",
+      "originalSelectors": 3,
+      "generatedSelectors": 3,
+      "failures": []
+    },
+    {
+      "name": "FormControl",
+      "originalSelectors": 8,
+      "generatedSelectors": 8,
+      "failures": []
+    },
+    {
+      "name": "TextContent",
+      "originalSelectors": 108,
+      "generatedSelectors": 108,
+      "failures": []
+    },
+    {
+      "name": "Table",
+      "originalSelectors": 26,
+      "generatedSelectors": 26,
+      "failures": []
+    },
+    {
+      "name": "BarChart",
+      "originalSelectors": 95,
+      "generatedSelectors": 95,
+      "failures": []
+    },
+    {
+      "name": "LineChart",
+      "originalSelectors": 65,
+      "generatedSelectors": 65,
+      "failures": []
+    },
+    {
+      "name": "PieChart",
+      "originalSelectors": 47,
+      "generatedSelectors": 47,
+      "failures": []
+    },
+    {
+      "name": "IconButton",
+      "originalSelectors": 45,
+      "generatedSelectors": 45,
+      "failures": []
+    },
+    {
+      "name": "TextArea",
+      "originalSelectors": 7,
+      "generatedSelectors": 7,
+      "failures": []
+    },
+    {
+      "name": "CheckBoxGroup",
+      "originalSelectors": 15,
+      "generatedSelectors": 15,
+      "failures": []
+    },
+    {
+      "name": "SwitchGroup",
+      "originalSelectors": 14,
+      "generatedSelectors": 14,
+      "failures": [
+        {
+          "reason": "specificity",
+          "index": 6,
+          "original": ".openui-switch-item-root:not([data-disabled],[data-state=checked]):hover",
+          "generated": ".go1360224310 :where(.openui-switch-item-root):not([data-disabled]:hover,[data-state=checked]):hover",
+          "a": [
+            0,
+            3,
+            0
+          ],
+          "b": [
+            0,
+            4,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RadioGroup",
+      "originalSelectors": 4,
+      "generatedSelectors": 4,
+      "failures": []
+    },
+    {
+      "name": "Select",
+      "originalSelectors": 36,
+      "generatedSelectors": 36,
+      "failures": []
+    },
+    {
+      "name": "Tabs",
+      "originalSelectors": 46,
+      "generatedSelectors": 46,
+      "failures": []
+    },
+    {
+      "name": "Accordion",
+      "originalSelectors": 27,
+      "generatedSelectors": 27,
+      "failures": []
+    },
+    {
+      "name": "Separator",
+      "originalSelectors": 3,
+      "generatedSelectors": 3,
+      "failures": []
+    },
+    {
+      "name": "Modal",
+      "originalSelectors": 13,
+      "generatedSelectors": 13,
+      "failures": []
+    },
+    {
+      "name": "Tooltip",
+      "originalSelectors": 8,
+      "generatedSelectors": 8,
+      "failures": []
+    },
+    {
+      "name": "AssistantMessage",
+      "originalSelectors": 11,
+      "generatedSelectors": 11,
+      "failures": []
+    },
+    {
+      "name": "ShellAgentInterface",
+      "originalSelectors": 541,
+      "generatedSelectors": 541,
+      "failures": [
+        {
+          "reason": "specificity",
+          "index": 183,
+          "original": ".openui-agent-thread-container:not(:has(.openui-agent-thread-header)):not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+          "generated": ".go1658882466 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go1658882466 :where(.openui-agent-thread-container) ):not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go1658882466 :where(.openui-agent-thread-container) ) ) .openui-agent-thread-scroll-area",
+          "a": [
+            0,
+            4,
+            0
+          ],
+          "b": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 183,
+          "original": ".openui-agent-thread-container:not(:has(.openui-agent-thread-header)):not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+          "generated": ".go1658882466 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go1658882466 :where(.openui-agent-thread-container) ):not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go1658882466 :where(.openui-agent-thread-container) ) ) .openui-agent-thread-scroll-area"
+        },
+        {
+          "reason": "specificity",
+          "index": 237,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel )",
+          "a": [
+            0,
+            4,
+            0
+          ],
+          "b": [
+            0,
+            7,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 237,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel )"
+        },
+        {
+          "reason": "specificity",
+          "index": 238,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-thread-header",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-thread-header",
+          "a": [
+            0,
+            5,
+            0
+          ],
+          "b": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 238,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-thread-header",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-thread-header"
+        },
+        {
+          "reason": "specificity",
+          "index": 239,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-composer-slot",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-composer-slot",
+          "a": [
+            0,
+            5,
+            0
+          ],
+          "b": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 239,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-composer-slot",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-composer-slot"
+        },
+        {
+          "reason": "specificity",
+          "index": 240,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container",
+          "a": [
+            0,
+            5,
+            0
+          ],
+          "b": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 240,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container"
+        },
+        {
+          "reason": "specificity",
+          "index": 241,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::before",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::before",
+          "a": [
+            0,
+            5,
+            1
+          ],
+          "b": [
+            0,
+            8,
+            1
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 241,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::before",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::before"
+        },
+        {
+          "reason": "specificity",
+          "index": 242,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::after",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::after",
+          "a": [
+            0,
+            5,
+            1
+          ],
+          "b": [
+            0,
+            8,
+            1
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 242,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::after",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::after"
+        },
+        {
+          "reason": "specificity",
+          "index": 243,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-area",
+          "a": [
+            0,
+            5,
+            0
+          ],
+          "b": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 243,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-area"
+        },
+        {
+          "reason": "specificity",
+          "index": 244,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-latest",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-latest",
+          "a": [
+            0,
+            5,
+            0
+          ],
+          "b": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 244,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-latest",
+          "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-latest"
+        },
+        {
+          "reason": "specificity",
+          "index": 245,
+          "original": ".openui-agent-container:not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)):has(>.openui-agent-thread-header)",
+          "generated": ".go1658882466 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel ):has(>.openui-agent-thread-header)",
+          "a": [
+            0,
+            6,
+            0
+          ],
+          "b": [
+            0,
+            10,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 245,
+          "original": ".openui-agent-container:not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)):has(>.openui-agent-thread-header)",
+          "generated": ".go1658882466 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel ):has(>.openui-agent-thread-header)"
+        }
+      ]
+    },
+    {
+      "name": "ShellSidebar",
+      "originalSelectors": 88,
+      "generatedSelectors": 88,
+      "failures": []
+    },
+    {
+      "name": "ShellThread",
+      "originalSelectors": 87,
+      "generatedSelectors": 87,
+      "failures": [
+        {
+          "reason": "specificity",
+          "index": 24,
+          "original": ".openui-agent-thread-container:not(:has(.openui-agent-thread-header)):not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+          "generated": ".go3564246187 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go3564246187 :where(.openui-agent-thread-container) ):not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go3564246187 :where(.openui-agent-thread-container) ) ) .openui-agent-thread-scroll-area",
+          "a": [
+            0,
+            4,
+            0
+          ],
+          "b": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 24,
+          "original": ".openui-agent-thread-container:not(:has(.openui-agent-thread-header)):not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+          "generated": ".go3564246187 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go3564246187 :where(.openui-agent-thread-container) ):not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go3564246187 :where(.openui-agent-thread-container) ) ) .openui-agent-thread-scroll-area"
+        },
+        {
+          "reason": "specificity",
+          "index": 78,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel )",
+          "a": [
+            0,
+            4,
+            0
+          ],
+          "b": [
+            0,
+            7,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 78,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel )"
+        },
+        {
+          "reason": "specificity",
+          "index": 79,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-thread-header",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-thread-header",
+          "a": [
+            0,
+            5,
+            0
+          ],
+          "b": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 79,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-thread-header",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-thread-header"
+        },
+        {
+          "reason": "specificity",
+          "index": 80,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-composer-slot",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-composer-slot",
+          "a": [
+            0,
+            5,
+            0
+          ],
+          "b": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 80,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-composer-slot",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-composer-slot"
+        },
+        {
+          "reason": "specificity",
+          "index": 81,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container",
+          "a": [
+            0,
+            5,
+            0
+          ],
+          "b": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 81,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container"
+        },
+        {
+          "reason": "specificity",
+          "index": 82,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::before",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::before",
+          "a": [
+            0,
+            5,
+            1
+          ],
+          "b": [
+            0,
+            8,
+            1
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 82,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::before",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::before"
+        },
+        {
+          "reason": "specificity",
+          "index": 83,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::after",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::after",
+          "a": [
+            0,
+            5,
+            1
+          ],
+          "b": [
+            0,
+            8,
+            1
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 83,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::after",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::after"
+        },
+        {
+          "reason": "specificity",
+          "index": 84,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-area",
+          "a": [
+            0,
+            5,
+            0
+          ],
+          "b": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 84,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-area"
+        },
+        {
+          "reason": "specificity",
+          "index": 85,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-latest",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-latest",
+          "a": [
+            0,
+            5,
+            0
+          ],
+          "b": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 85,
+          "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-latest",
+          "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-latest"
+        },
+        {
+          "reason": "specificity",
+          "index": 86,
+          "original": ".openui-agent-container:not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)):has(>.openui-agent-thread-header)",
+          "generated": ".go3564246187 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel ):has(>.openui-agent-thread-header)",
+          "a": [
+            0,
+            6,
+            0
+          ],
+          "b": [
+            0,
+            10,
+            0
+          ]
+        },
+        {
+          "reason": "duplicated-scope",
+          "index": 86,
+          "original": ".openui-agent-container:not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)):has(>.openui-agent-thread-header)",
+          "generated": ".go3564246187 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel ):has(>.openui-agent-thread-header)"
+        }
+      ]
+    },
+    {
+      "name": "ShellThreadHeader",
+      "originalSelectors": 18,
+      "generatedSelectors": 18,
+      "failures": []
+    },
+    {
+      "name": "ShellMobileHeader",
+      "originalSelectors": 9,
+      "generatedSelectors": 9,
+      "failures": []
+    },
+    {
+      "name": "ShellThreadlist",
+      "originalSelectors": 56,
+      "generatedSelectors": 56,
+      "failures": []
+    },
+    {
+      "name": "ShellHistoryMenu",
+      "originalSelectors": 10,
+      "generatedSelectors": 10,
+      "failures": []
+    },
+    {
+      "name": "ShellRenameChatDialog",
+      "originalSelectors": 11,
+      "generatedSelectors": 11,
+      "failures": []
+    },
+    {
+      "name": "ShellThemeModeToggle",
+      "originalSelectors": 5,
+      "generatedSelectors": 5,
+      "failures": []
+    },
+    {
+      "name": "ShellWelcomeScreen",
+      "originalSelectors": 56,
+      "generatedSelectors": 56,
+      "failures": []
+    },
+    {
+      "name": "ShellConversationStarter",
+      "originalSelectors": 31,
+      "generatedSelectors": 31,
+      "failures": []
+    },
+    {
+      "name": "ShellWorkspaceSidebar",
+      "originalSelectors": 33,
+      "generatedSelectors": 33,
+      "failures": []
+    },
+    {
+      "name": "ShellResizableSeparator",
+      "originalSelectors": 7,
+      "generatedSelectors": 7,
+      "failures": []
+    },
+    {
+      "name": "ShellArtifactBrowser",
+      "originalSelectors": 37,
+      "generatedSelectors": 37,
+      "failures": []
+    },
+    {
+      "name": "ShellWelcomeGlow",
+      "originalSelectors": 11,
+      "generatedSelectors": 11,
+      "failures": []
+    },
+    {
+      "name": "Shell_sharedShared",
+      "originalSelectors": 5,
+      "generatedSelectors": 5,
+      "failures": []
+    },
+    {
+      "name": "Shell_sharedDetailed-viewDetailedViewPanel",
+      "originalSelectors": 3,
+      "generatedSelectors": 3,
+      "failures": []
+    },
+    {
+      "name": "Shell_sharedDetailed-viewDetailedViewOverlay",
+      "originalSelectors": 2,
+      "generatedSelectors": 2,
+      "failures": []
+    },
+    {
+      "name": "ShellComponentsComposer",
+      "originalSelectors": 20,
+      "generatedSelectors": 20,
+      "failures": []
+    },
+    {
+      "name": "ShellComponentsDesktopWelcomeComposer",
+      "originalSelectors": 12,
+      "generatedSelectors": 12,
+      "failures": []
+    },
+    {
+      "name": "ShellComponentsWelcomeMascot",
+      "originalSelectors": 7,
+      "generatedSelectors": 7,
+      "failures": []
+    },
+    {
+      "name": "ShellComponentsMascotLoader",
+      "originalSelectors": 4,
+      "generatedSelectors": 4,
+      "failures": []
+    },
+    {
+      "name": "ShellComponentsWelcomePrefillChips",
+      "originalSelectors": 12,
+      "generatedSelectors": 12,
+      "failures": []
+    },
+    {
+      "name": "ShellComponentsAmbientLoader",
+      "originalSelectors": 3,
+      "generatedSelectors": 3,
+      "failures": []
+    }
+  ],
+  "failures": [
+    {
+      "unit": "SwitchGroup",
+      "reason": "specificity",
+      "index": 6,
+      "original": ".openui-switch-item-root:not([data-disabled],[data-state=checked]):hover",
+      "generated": ".go1360224310 :where(.openui-switch-item-root):not([data-disabled]:hover,[data-state=checked]):hover",
+      "a": [
+        0,
+        3,
+        0
+      ],
+      "b": [
+        0,
+        4,
+        0
+      ]
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "specificity",
+      "index": 183,
+      "original": ".openui-agent-thread-container:not(:has(.openui-agent-thread-header)):not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+      "generated": ".go1658882466 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go1658882466 :where(.openui-agent-thread-container) ):not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go1658882466 :where(.openui-agent-thread-container) ) ) .openui-agent-thread-scroll-area",
+      "a": [
+        0,
+        4,
+        0
+      ],
+      "b": [
+        0,
+        8,
+        0
+      ]
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "duplicated-scope",
+      "index": 183,
+      "original": ".openui-agent-thread-container:not(:has(.openui-agent-thread-header)):not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+      "generated": ".go1658882466 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go1658882466 :where(.openui-agent-thread-container) ):not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go1658882466 :where(.openui-agent-thread-container) ) ) .openui-agent-thread-scroll-area"
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "specificity",
+      "index": 237,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel )",
+      "a": [
+        0,
+        4,
+        0
+      ],
+      "b": [
+        0,
+        7,
+        0
+      ]
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "duplicated-scope",
+      "index": 237,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel )"
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "specificity",
+      "index": 238,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-thread-header",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-thread-header",
+      "a": [
+        0,
+        5,
+        0
+      ],
+      "b": [
+        0,
+        8,
+        0
+      ]
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "duplicated-scope",
+      "index": 238,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-thread-header",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-thread-header"
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "specificity",
+      "index": 239,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-composer-slot",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-composer-slot",
+      "a": [
+        0,
+        5,
+        0
+      ],
+      "b": [
+        0,
+        8,
+        0
+      ]
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "duplicated-scope",
+      "index": 239,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-composer-slot",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-composer-slot"
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "specificity",
+      "index": 240,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container",
+      "a": [
+        0,
+        5,
+        0
+      ],
+      "b": [
+        0,
+        8,
+        0
+      ]
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "duplicated-scope",
+      "index": 240,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container"
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "specificity",
+      "index": 241,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::before",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::before",
+      "a": [
+        0,
+        5,
+        1
+      ],
+      "b": [
+        0,
+        8,
+        1
+      ]
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "duplicated-scope",
+      "index": 241,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::before",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::before"
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "specificity",
+      "index": 242,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::after",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::after",
+      "a": [
+        0,
+        5,
+        1
+      ],
+      "b": [
+        0,
+        8,
+        1
+      ]
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "duplicated-scope",
+      "index": 242,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::after",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::after"
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "specificity",
+      "index": 243,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-area",
+      "a": [
+        0,
+        5,
+        0
+      ],
+      "b": [
+        0,
+        8,
+        0
+      ]
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "duplicated-scope",
+      "index": 243,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-area"
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "specificity",
+      "index": 244,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-latest",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-latest",
+      "a": [
+        0,
+        5,
+        0
+      ],
+      "b": [
+        0,
+        8,
+        0
+      ]
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "duplicated-scope",
+      "index": 244,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-latest",
+      "generated": ".go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-latest"
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "specificity",
+      "index": 245,
+      "original": ".openui-agent-container:not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)):has(>.openui-agent-thread-header)",
+      "generated": ".go1658882466 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel ):has(>.openui-agent-thread-header)",
+      "a": [
+        0,
+        6,
+        0
+      ],
+      "b": [
+        0,
+        10,
+        0
+      ]
+    },
+    {
+      "unit": "ShellAgentInterface",
+      "reason": "duplicated-scope",
+      "index": 245,
+      "original": ".openui-agent-container:not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)):has(>.openui-agent-thread-header)",
+      "generated": ".go1658882466 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go1658882466 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel ):has(>.openui-agent-thread-header)"
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "specificity",
+      "index": 24,
+      "original": ".openui-agent-thread-container:not(:has(.openui-agent-thread-header)):not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+      "generated": ".go3564246187 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go3564246187 :where(.openui-agent-thread-container) ):not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go3564246187 :where(.openui-agent-thread-container) ) ) .openui-agent-thread-scroll-area",
+      "a": [
+        0,
+        4,
+        0
+      ],
+      "b": [
+        0,
+        8,
+        0
+      ]
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "duplicated-scope",
+      "index": 24,
+      "original": ".openui-agent-thread-container:not(:has(.openui-agent-thread-header)):not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+      "generated": ".go3564246187 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go3564246187 :where(.openui-agent-thread-container) ):not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-thread-container):not(:has(.openui-agent-thread-header).go3564246187 :where(.openui-agent-thread-container) ) ) .openui-agent-thread-scroll-area"
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "specificity",
+      "index": 78,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel )",
+      "a": [
+        0,
+        4,
+        0
+      ],
+      "b": [
+        0,
+        7,
+        0
+      ]
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "duplicated-scope",
+      "index": 78,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel )"
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "specificity",
+      "index": 79,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-thread-header",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-thread-header",
+      "a": [
+        0,
+        5,
+        0
+      ],
+      "b": [
+        0,
+        8,
+        0
+      ]
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "duplicated-scope",
+      "index": 79,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-thread-header",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-thread-header"
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "specificity",
+      "index": 80,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-composer-slot",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-composer-slot",
+      "a": [
+        0,
+        5,
+        0
+      ],
+      "b": [
+        0,
+        8,
+        0
+      ]
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "duplicated-scope",
+      "index": 80,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen))>.openui-agent-composer-slot",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) > .openui-agent-composer-slot"
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "specificity",
+      "index": 81,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container",
+      "a": [
+        0,
+        5,
+        0
+      ],
+      "b": [
+        0,
+        8,
+        0
+      ]
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "duplicated-scope",
+      "index": 81,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container"
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "specificity",
+      "index": 82,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::before",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::before",
+      "a": [
+        0,
+        5,
+        1
+      ],
+      "b": [
+        0,
+        8,
+        1
+      ]
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "duplicated-scope",
+      "index": 82,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::before",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::before"
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "specificity",
+      "index": 83,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::after",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::after",
+      "a": [
+        0,
+        5,
+        1
+      ],
+      "b": [
+        0,
+        8,
+        1
+      ]
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "duplicated-scope",
+      "index": 83,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-container::after",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-container::after"
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "specificity",
+      "index": 84,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-area",
+      "a": [
+        0,
+        5,
+        0
+      ],
+      "b": [
+        0,
+        8,
+        0
+      ]
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "duplicated-scope",
+      "index": 84,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-area",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-area"
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "specificity",
+      "index": 85,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-latest",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-latest",
+      "a": [
+        0,
+        5,
+        0
+      ],
+      "b": [
+        0,
+        8,
+        0
+      ]
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "duplicated-scope",
+      "index": 85,
+      "original": ".openui-agent-container .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)) .openui-agent-thread-scroll-latest",
+      "generated": ".go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container) .openui-agent-thread-container .openui-agent-thread-chat-panel ) .openui-agent-thread-scroll-latest"
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "specificity",
+      "index": 86,
+      "original": ".openui-agent-container:not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)):has(>.openui-agent-thread-header)",
+      "generated": ".go3564246187 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel ):has(>.openui-agent-thread-header)",
+      "a": [
+        0,
+        6,
+        0
+      ],
+      "b": [
+        0,
+        10,
+        0
+      ]
+    },
+    {
+      "unit": "ShellThread",
+      "reason": "duplicated-scope",
+      "index": 86,
+      "original": ".openui-agent-container:not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen)):has(>.openui-agent-thread-header)",
+      "generated": ".go3564246187 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel:not(:has(.openui-agent-welcome-screen).go3564246187 :where(.openui-agent-container):not(.openui-agent-container--mobile) .openui-agent-thread-container .openui-agent-thread-chat-panel ):has(>.openui-agent-thread-header)"
+    }
+  ]
+}

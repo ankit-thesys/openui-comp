@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-23T20:39:45.134Z",
+  "scope": "Documentation and separately versioned post-timing accounting/encoding analysis only. Not substituted into any measured phase.",
+  "fromManifest": "freeze-final-browser-rss.json",
+  "fromManifestSHA256": "b7ceff348654f08f52687e9fbe0de57819624b62b95139b3b6ee533b4b87378b",
+  "candidateOrMeasuredCheckerBuildChanges": [],
+  "changes": [
+    {
+      "path": "/private/tmp/openui-runtime-expanded-performance/README.md",
+      "before": "b25821e73eb04cd8043464340ba73f818daf704400b4988fc6bdabe1679647eb",
+      "after": "dc62d261193569aa15e952b621bbfa5d8f910c8d9e5c192dd10fc82329597265"
+    },
+    {
+      "path": "/private/tmp/openui-runtime-expanded-chat/README-POST-TIMING.md",
+      "before": null,
+      "after": "4e965970a5b006d007a36bec51ae032ba38b1d8a18c25e4355d5229f24acc467"
+    },
+    {
+      "path": "/private/tmp/openui-runtime-expanded-chat/encoding-check-v1.mjs",
+      "before": null,
+      "after": "07aeae76677604e1d20030a3a5d9b480876f0e1ec598f61c7e31b24852a81e5d"
+    },
+    {
+      "path": "/private/tmp/openui-runtime-expanded-chat/inventory-v2-check.mjs",
+      "before": null,
+      "after": "e8230aa12e6778e594cb109181b1644c0c3b39689dd05d470473b9af810daa05"
+    },
+    {
+      "path": "/private/tmp/openui-runtime-expanded-chat/style-inventory-v2.cjs",
+      "before": null,
+      "after": "5f77c3c057445e33c243e5e559a215a2aabf6346d50fd3dbf2aa292628b65685"
+    },
+    {
+      "path": "/private/tmp/openui-runtime-expanded-chat/style-inventory-v2.cjs.map",
+      "before": null,
+      "after": "9db5414c824b443229e0fad2db1c81162717e0134ef8b3b08ad5f6c85033fef9"
+    },
+    {
+      "path": "/private/tmp/openui-runtime-expanded-chat/style-inventory-v2.ts",
+      "before": null,
+      "after": "305cbb239ad1fee7148c58d75a40c6673315f1d5f78fcd3a1ca735035da34769"
+    }
+  ]
+}

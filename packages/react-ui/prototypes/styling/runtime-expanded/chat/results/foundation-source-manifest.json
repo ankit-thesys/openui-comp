@@ -1,0 +1,71 @@
+{
+  "candidate": "private-patched-goober-expanded-cascade-cursor-inline-theme",
+  "frozenAt": "2026-10-23T19:47:05.086Z",
+  "files": [
+    {
+      "path": "build-shared.mjs",
+      "bytes": 10263,
+      "sha256": "c02245e4d37844360f04302c8c88951df00359d771b44bfb6eb031572ebea569"
+    },
+    {
+      "path": "runtime/Fixture.tsx",
+      "bytes": 5021,
+      "sha256": "90ca5c744f416ac6857d571ad1cfe75090c389cb1528b255de2291a7567fd4a0"
+    },
+    {
+      "path": "runtime/OriginalFixture.tsx",
+      "bytes": 3606,
+      "sha256": "8c38b1a3573352410fc916fe052bedaedbd42c083a4e7890574edfcac8819522"
+    },
+    {
+      "path": "runtime/Boundary.tsx",
+      "bytes": 1499,
+      "sha256": "83446ac641a850a68a5563bdef85793e95d1f6c493113fb50587aff6d05d4d46"
+    },
+    {
+      "path": "runtime/adapter.tsx",
+      "bytes": 2740,
+      "sha256": "33f07193e0597f4d7bd5890fdc8789558f6581e73bb841a7ea31b548f86179c2"
+    },
+    {
+      "path": "runtime/Button.tsx",
+      "bytes": 377,
+      "sha256": "fd9f72e2abaae2ce9e1aee07570cecaf5ed5b0f14951cea8fc2cddfa783af588"
+    },
+    {
+      "path": "runtime/workloads.ts",
+      "bytes": 2435,
+      "sha256": "e5d816786b5a71430f65ec56380e4352a9a28a8329c0b4772ce3c260740abf07"
+    },
+    {
+      "path": "runtime/descriptors.json",
+      "bytes": 461856,
+      "sha256": "e400fb0cc9428577ca68f0f9f404cee2cdeced1bf0379f55be2794a0825a2c2e"
+    },
+    {
+      "path": "runtime/boundary-descriptors.json",
+      "bytes": 933219,
+      "sha256": "c3289ca6ad52e5f7e6a3f3ec217c6d690ec0755bc86a8a079bdce4c05fd946a7"
+    },
+    {
+      "path": "runtime/metadata.json",
+      "bytes": 493824,
+      "sha256": "4fed77808d5ded3337baa9f3f4ec39879ddf573261118e63c85b7b2ac039bcf2"
+    },
+    {
+      "path": "runtime/boundary-metadata.json",
+      "bytes": 985134,
+      "sha256": "31859085c59998ea653169a8338485deadd4bd47fd94c4e3e85e7fec6e480277"
+    },
+    {
+      "path": "runtime/shell-units.json",
+      "bytes": 714,
+      "sha256": "10c5ae301a6a5404fa724fbad398b3465404dc7bbf5429a27d5197a6bd54360d"
+    },
+    {
+      "path": "vendor/goober/src/core/parse.js",
+      "bytes": 3330,
+      "sha256": "27086bbd1239ec5e4ec77f361dfc5339ccddbd1077d1155668e89f68e71c3b65"
+    }
+  ]
+}

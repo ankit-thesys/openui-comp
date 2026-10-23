@@ -1,0 +1,579 @@
+{
+  "generatedAt": "2026-10-23T20:22:40.361Z",
+  "note": "Paired laptop observations; frame/input proxies are not production INP. Expanded workload reported separately from equal-weight chat/dashboard. Pacing may conceal CPU cost; saturated results separate.",
+  "benchmarks": {
+    "renderer": {
+      "status": "passed",
+      "smoke": false,
+      "failures": 0,
+      "groups": [
+        {
+          "scenario": "chat",
+          "load": "normal",
+          "arms": {
+            "baseline": {
+              "n": 10,
+              "durationMedianMs": 301.05000001192093,
+              "durationP95Ms": 347.19999998807907,
+              "frameP95MedianMs": 16.75,
+              "inputP95MedianMs": 31.099999994039536,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": null,
+              "parserMedianMs": 3.450000137090683
+            },
+            "runtime": {
+              "n": 10,
+              "durationMedianMs": 313.94999998807907,
+              "durationP95Ms": 347.30000001192093,
+              "frameP95MedianMs": 16.75000000000003,
+              "inputP95MedianMs": 31.250000029802322,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 5.599999964237213,
+              "gooberMedianMs": 5.599999964237213,
+              "coldReadyMedianMs": null,
+              "parserMedianMs": 3.5499999821186066
+            }
+          },
+          "pairedDurationPercentMedian": 0.2347024861924063,
+          "pairedDurationPercent": [
+            15.727699543138062,
+            0.23482052600574121,
+            -0.033444824027373254,
+            0.2345844463790714,
+            0.26755853241502425,
+            14.25272184924986,
+            0.09517766876023792,
+            -8.89976957869213,
+            12.5040492469493,
+            -9.763142695865046
+          ]
+        },
+        {
+          "scenario": "chat",
+          "load": "pressure",
+          "arms": {
+            "baseline": {
+              "n": 10,
+              "durationMedianMs": 1131.4500000178814,
+              "durationP95Ms": 1145.9000000357628,
+              "frameP95MedianMs": 16.700000000000045,
+              "inputP95MedianMs": 30.80000001192093,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": null,
+              "parserMedianMs": 15.099999755620956
+            },
+            "runtime": {
+              "n": 10,
+              "durationMedianMs": 1134.449999988079,
+              "durationP95Ms": 1143.4000000357628,
+              "frameP95MedianMs": 16.700000000000045,
+              "inputP95MedianMs": 32.04999998211861,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 18.499999910593033,
+              "gooberMedianMs": 18.699999928474426,
+              "coldReadyMedianMs": null,
+              "parserMedianMs": 14.5
+            }
+          },
+          "pairedDurationPercentMedian": 0.2604232680722962,
+          "pairedDurationPercent": [
+            -0.737489023367699,
+            0.2112490129247746,
+            -0.964151103569566,
+            0.3095975232198178,
+            -0.9948512117468389,
+            -0.7281122400405349,
+            1.4759817461192926,
+            0.9688888920678096,
+            0.9907120732489227,
+            0.9713882020180753
+          ]
+        },
+        {
+          "scenario": "chat",
+          "load": "saturated",
+          "arms": {
+            "baseline": {
+              "n": 10,
+              "durationMedianMs": 53.69999998807907,
+              "durationP95Ms": 98.19999998807907,
+              "frameP95MedianMs": 16.667,
+              "inputP95MedianMs": 31.950000017881393,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": null,
+              "parserMedianMs": 3
+            },
+            "runtime": {
+              "n": 10,
+              "durationMedianMs": 57.70000001788139,
+              "durationP95Ms": 98.19999998807907,
+              "frameP95MedianMs": 16.700000000000045,
+              "inputP95MedianMs": 32.400000005960464,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 2.7499999701976776,
+              "gooberMedianMs": 2.7499999701976776,
+              "coldReadyMedianMs": null,
+              "parserMedianMs": 3.5999999940395355
+            }
+          },
+          "pairedDurationPercentMedian": 11.267021082474216,
+          "pairedDurationPercent": [
+            9.38123749669144,
+            -42.05702643312614,
+            76.54321003098292,
+            16.350710919217114,
+            -10.650887561964684,
+            13.15280466825699,
+            15.596330315363783,
+            58.06451612903225,
+            -0.8976660684147375,
+            -0.19455257543244953
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "load": "normal",
+          "arms": {
+            "baseline": {
+              "n": 10,
+              "durationMedianMs": 522.8999999761581,
+              "durationP95Ms": 529,
+              "frameP95MedianMs": 16.700000000000045,
+              "inputP95MedianMs": 31.299999982118607,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": null,
+              "parserMedianMs": 7.500000059604645
+            },
+            "runtime": {
+              "n": 10,
+              "durationMedianMs": 527.5,
+              "durationP95Ms": 530,
+              "frameP95MedianMs": 16.75,
+              "inputP95MedianMs": 31,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 13.449999958276749,
+              "gooberMedianMs": 13.449999958276749,
+              "coldReadyMedianMs": null,
+              "parserMedianMs": 6.850000083446503
+            }
+          },
+          "pairedDurationPercentMedian": 0.7261642049553707,
+          "pairedDurationPercent": [
+            0.45705579433426013,
+            0.07590133505934737,
+            -0.5103969844392653,
+            2.3381642558148563,
+            1.2864823441430806,
+            0.8179570119875246,
+            -1.7523809501102994,
+            2.2063092773419335,
+            2.1474173001264862,
+            0.6343713979232168
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "load": "pressure",
+          "arms": {
+            "baseline": {
+              "n": 10,
+              "durationMedianMs": 2092.5499999821186,
+              "durationP95Ms": 2112.7999999523163,
+              "frameP95MedianMs": 16.79999999999984,
+              "inputP95MedianMs": 31.700000017881393,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": null,
+              "parserMedianMs": 39.09999978542328
+            },
+            "runtime": {
+              "n": 10,
+              "durationMedianMs": 2080.850000023842,
+              "durationP95Ms": 2102.800000011921,
+              "frameP95MedianMs": 16.799999999999955,
+              "inputP95MedianMs": 32.64999997615814,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 49.60000002384186,
+              "gooberMedianMs": 49.80000001192093,
+              "coldReadyMedianMs": null,
+              "parserMedianMs": 36.7499997317791
+            }
+          },
+          "pairedDurationPercentMedian": -0.43040851123224977,
+          "pairedDurationPercent": [
+            -0.8734249690922291,
+            0.4496316864021521,
+            -1.3015903039102605,
+            0.22752577761080417,
+            -2.0991003838706113,
+            0.6028131290744199,
+            -0.7271335652231037,
+            -0.13368345724139585,
+            0.7198415399745972,
+            -1.706922783204723
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "load": "saturated",
+          "arms": {
+            "baseline": {
+              "n": 10,
+              "durationMedianMs": 110.65000003576279,
+              "durationP95Ms": 131.89999997615814,
+              "frameP95MedianMs": 33.39999999999998,
+              "inputP95MedianMs": 32.30000001192093,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": null,
+              "parserMedianMs": 4.700000047683716
+            },
+            "runtime": {
+              "n": 10,
+              "durationMedianMs": 115.90000000596046,
+              "durationP95Ms": 127.40000003576279,
+              "frameP95MedianMs": 33.39999999999998,
+              "inputP95MedianMs": 32.05000001192093,
+              "longTaskMedianMs": 54.5,
+              "compileMedianMs": 5,
+              "gooberMedianMs": 5,
+              "coldReadyMedianMs": null,
+              "parserMedianMs": 4.499999970197678
+            }
+          },
+          "pairedDurationPercentMedian": 8.926428525195062,
+          "pairedDurationPercent": [
+            21.698113262952766,
+            -12.433661849221044,
+            8.795900947757328,
+            1.1373578405821094,
+            1.4010507561901475,
+            23.287671186416127,
+            10.330138428524727,
+            9.056956102632796,
+            -0.25884378979982303,
+            21.46596858638743
+          ]
+        },
+        {
+          "scenario": "expanded",
+          "load": "saturated",
+          "arms": {
+            "baseline": {
+              "n": 10,
+              "durationMedianMs": 182.4000000357628,
+              "durationP95Ms": 193.19999998807907,
+              "frameP95MedianMs": 50.099999999999994,
+              "inputP95MedianMs": 32.19999998807907,
+              "longTaskMedianMs": 106,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": null,
+              "parserMedianMs": 6.149999976158142
+            },
+            "runtime": {
+              "n": 10,
+              "durationMedianMs": 207.5499999821186,
+              "durationP95Ms": 233.10000002384186,
+              "frameP95MedianMs": 75,
+              "inputP95MedianMs": 32.14999997615814,
+              "longTaskMedianMs": 135.5,
+              "compileMedianMs": 7.999999970197678,
+              "gooberMedianMs": 8.049999982118607,
+              "coldReadyMedianMs": null,
+              "parserMedianMs": 5.599999964237213
+            }
+          },
+          "pairedDurationPercentMedian": 15.002595832587506,
+          "pairedDurationPercent": [
+            8.562019772152873,
+            30.661434964749823,
+            24.863883824121725,
+            15.899122803900244,
+            2.54988911492533,
+            17.160087722469306,
+            14.106068861274768,
+            11.00217867735207,
+            1.5881708520150584,
+            17.080745373520088
+          ]
+        }
+      ]
+    },
+    "fullchat": {
+      "status": "passed",
+      "smoke": false,
+      "failures": 0,
+      "groups": [
+        {
+          "scenario": "chat",
+          "load": "normal",
+          "arms": {
+            "baseline": {
+              "n": 10,
+              "durationMedianMs": 560.3500000238419,
+              "durationP95Ms": 569.7999999523163,
+              "frameP95MedianMs": 16.700000000000045,
+              "inputP95MedianMs": 31.599999994039536,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": 291.2000000178814,
+              "parserMedianMs": null
+            },
+            "runtime": {
+              "n": 10,
+              "durationMedianMs": 554.6000000238419,
+              "durationP95Ms": 563,
+              "frameP95MedianMs": 16.75,
+              "inputP95MedianMs": 31.30000001192093,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": 337.90000000596046,
+              "parserMedianMs": null
+            }
+          },
+          "pairedDurationPercentMedian": -0.765486244594632,
+          "pairedDurationPercent": [
+            2.1505376366278917,
+            -1.4229811349279586,
+            -1.7777777777777781,
+            -1.8252018107096868,
+            0.2164502143092939,
+            0.5177646805989422,
+            -2.157764402014306,
+            -0.10799135426130535,
+            -1.676774890360866,
+            0.05437738117226587
+          ]
+        },
+        {
+          "scenario": "chat",
+          "load": "pressure",
+          "arms": {
+            "baseline": {
+              "n": 10,
+              "durationMedianMs": 946.9000000059605,
+              "durationP95Ms": 960.1999999880791,
+              "frameP95MedianMs": 16.700000000000045,
+              "inputP95MedianMs": 31.400000005960464,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": 288.89999997615814,
+              "parserMedianMs": null
+            },
+            "runtime": {
+              "n": 10,
+              "durationMedianMs": 949.8500000238419,
+              "durationP95Ms": 961.3000000119209,
+              "frameP95MedianMs": 16.700000000000045,
+              "inputP95MedianMs": 31,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": 330.7999999821186,
+              "parserMedianMs": null
+            }
+          },
+          "pairedDurationPercentMedian": -0.37004155265217276,
+          "pairedDurationPercent": [
+            -0.8973817567680453,
+            -1.3538846011827532,
+            -1.2284754292704703,
+            2.048832273027701,
+            1.9163206579545289,
+            -2.3636171759459645,
+            1.286686512524149,
+            1.780415431485416,
+            -1.0247200557193525,
+            0.1572986514636998
+          ]
+        },
+        {
+          "scenario": "chat",
+          "load": "saturated",
+          "arms": {
+            "baseline": {
+              "n": 10,
+              "durationMedianMs": 126.59999996423721,
+              "durationP95Ms": 140,
+              "frameP95MedianMs": 16.69999999999999,
+              "inputP95MedianMs": 58.35000002384186,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": 283.59999999403954,
+              "parserMedianMs": null
+            },
+            "runtime": {
+              "n": 10,
+              "durationMedianMs": 129.5499999821186,
+              "durationP95Ms": 169.80000001192093,
+              "frameP95MedianMs": 16.700000000000045,
+              "inputP95MedianMs": 62.05000001192093,
+              "longTaskMedianMs": 51,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": 329.7999999821186,
+              "parserMedianMs": null
+            }
+          },
+          "pairedDurationPercentMedian": 3.0739838643139783,
+          "pairedDurationPercent": [
+            2.0714285969734236,
+            4.078431363199275,
+            4.076539131654533,
+            34.123222796119364,
+            -5.6438791917083115,
+            -2.3696682471148978,
+            0.5714286103540633,
+            20.600500351215278,
+            -7.737226294775079,
+            6.646751287364516
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "load": "normal",
+          "arms": {
+            "baseline": {
+              "n": 10,
+              "durationMedianMs": 705.7000000178814,
+              "durationP95Ms": 716.6999999880791,
+              "frameP95MedianMs": 16.799999999999983,
+              "inputP95MedianMs": 31.400000035762787,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": 285.4500000178814,
+              "parserMedianMs": null
+            },
+            "runtime": {
+              "n": 10,
+              "durationMedianMs": 703.5499999523163,
+              "durationP95Ms": 725.5,
+              "frameP95MedianMs": 16.700000000000045,
+              "inputP95MedianMs": 31.599999994039536,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": 335.84999999403954,
+              "parserMedianMs": null
+            }
+          },
+          "pairedDurationPercentMedian": -0.6264511166240272,
+          "pairedDurationPercent": [
+            2.393310268843396,
+            -1.0604157979584583,
+            1.667600893464205,
+            -1.6448755782205837,
+            2.853418306598976,
+            -1.213147141065407,
+            1.2898550776467843,
+            -0.92526690391459,
+            -1.2297372933527617,
+            -0.3276353293334644
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "load": "pressure",
+          "arms": {
+            "baseline": {
+              "n": 10,
+              "durationMedianMs": 1417.9000000059605,
+              "durationP95Ms": 1436.3999999761581,
+              "frameP95MedianMs": 16.700000000000045,
+              "inputP95MedianMs": 30.900000005960464,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": 292.09999999403954,
+              "parserMedianMs": null
+            },
+            "runtime": {
+              "n": 10,
+              "durationMedianMs": 1424.0499999821186,
+              "durationP95Ms": 1438.1000000238419,
+              "frameP95MedianMs": 16.700000000000045,
+              "inputP95MedianMs": 30.400000005960464,
+              "longTaskMedianMs": 0,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": 333.25,
+              "parserMedianMs": null
+            }
+          },
+          "pairedDurationPercentMedian": 0.24975536810681875,
+          "pairedDurationPercent": [
+            -0.8252221743532684,
+            -0.007017048925672675,
+            0.5782792657319513,
+            1.1227172566036003,
+            -2.130940700634709,
+            0.5065277851393102,
+            2.4433807278684716,
+            1.7979755104393869,
+            -0.7866889412770695,
+            -0.1333707648884741
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "load": "saturated",
+          "arms": {
+            "baseline": {
+              "n": 10,
+              "durationMedianMs": 141.84999999403954,
+              "durationP95Ms": 150.69999998807907,
+              "frameP95MedianMs": 16.700000000000045,
+              "inputP95MedianMs": 70.30000001192093,
+              "longTaskMedianMs": 59,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": 281.90000000596046,
+              "parserMedianMs": null
+            },
+            "runtime": {
+              "n": 10,
+              "durationMedianMs": 155.15000000596046,
+              "durationP95Ms": 167.5999999642372,
+              "frameP95MedianMs": 16.69999999999999,
+              "inputP95MedianMs": 79.90000000596046,
+              "longTaskMedianMs": 69,
+              "compileMedianMs": 0,
+              "gooberMedianMs": 0,
+              "coldReadyMedianMs": 336.64999997615814,
+              "parserMedianMs": null
+            }
+          },
+          "pairedDurationPercentMedian": 7.045511278709682,
+          "pairedDurationPercent": [
+            20.80586083206064,
+            11.477761790739294,
+            5.507631063422358,
+            0.9922040934950971,
+            2.870493999718793,
+            10.563882994506436,
+            8.583391493997006,
+            1.7518248001154424,
+            -3.015427737303422,
+            17.36694674386974
+          ]
+        }
+      ]
+    }
+  }
+}

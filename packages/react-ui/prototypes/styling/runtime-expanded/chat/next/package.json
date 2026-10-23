@@ -1,0 +1,1 @@
+{"name": "expanded-chat-next-fixture", "private": true, "scripts": {"build": "next build --webpack", "start": "next start"}, "type": "module"}

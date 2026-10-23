@@ -1,0 +1,53 @@
+--- /Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/goober/src/core/parse.js	2026-10-23 15:14:49
++++ /private/tmp/openui-runtime-expanded-components/vendor/goober/src/core/parse.js	2026-10-24 01:07:04
+@@ -1,3 +1,32 @@
++// PRIVATE EXPERIMENTAL PATCH to Goober 2.1.19. Preserve delimiters inside
++// functional selectors/attributes/quoted strings when expanding nesting.
++function list(value) {
++    const out = []; let start = 0, round = 0, square = 0, quote = '', escape = false;
++    for (let i = 0; i < value.length; i++) {
++        const c = value[i];
++        if (escape) { escape = false; continue; }
++        if (c === '\\') { escape = true; continue; }
++        if (quote) { if (c === quote) quote = ''; continue; }
++        if (c === '"' || c === "'") { quote = c; continue; }
++        if (c === '(') round++; else if (c === ')') round--;
++        else if (c === '[') square++; else if (c === ']') square--;
++        else if (c === ',' && round === 0 && square === 0) { out.push(value.slice(start, i).trim()); start = i + 1; }
++    }
++    out.push(value.slice(start).trim()); return out;
++}
++function nesting(value, parent) {
++    let out = '', quote = '', escape = false, found = false;
++    for (const c of value) {
++        if (escape) { out += c; escape = false; continue; }
++        if (c === '\\') { out += c; escape = true; continue; }
++        if (quote) { out += c; if (c === quote) quote = ''; continue; }
++        if (c === '"' || c === "'") { quote = c; out += c; continue; }
++        if (c === '&') { out += parent; found = true; } else out += c;
++    }
++    return found ? out : parent ? parent + ' ' + out : out;
++}
++function expand(parent, child) { return list(parent).flatMap(p => list(child).map(c => nesting(c, p))).join(','); }
++
+ /**
+  * Parses the object into css, scoped, blocks
+  * @param {Object} obj
+@@ -31,16 +60,7 @@
+                 val,
+                 selector
+                     ? // Go over the selector and replace the matching multiple selectors if any
+-                      selector.replace(/([^,])+/g, (sel) => {
+-                          // Return the current selector with the key matching multiple selectors if any
+-                          return key.replace(/([^,]*:\S+\([^)]*\))|([^,])+/g, (k) => {
+-                              // If the current `k`(key) has a nested selector replace it
+-                              if (/&/.test(k)) return k.replace(/&/g, sel);
+-
+-                              // If there's a current selector concat it
+-                              return sel ? sel + ' ' + k : k;
+-                          });
+-                      })
++                      expand(selector, key)
+                     : key
+             );
+         } else if (val != undefined) {

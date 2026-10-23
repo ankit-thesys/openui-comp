@@ -1,0 +1,122 @@
+{
+  "candidate": "PRIVATE experimentally patched Goober2.1.19",
+  "rows": [
+    {
+      "name": "nested-not-has",
+      "stock": {
+        "name": "go3409888811",
+        "actual": ".go3409888811:not(:has(.header)):not(:has(.welcome).go3409888811 ) .scroll{color:red;}",
+        "expected": ".go3409888811:not(:has(.header)):not(:has(.welcome)) .scroll{color:red;}",
+        "pass": false
+      },
+      "privatePatched": {
+        "name": "go3409888811",
+        "actual": ".go3409888811:not(:has(.header)):not(:has(.welcome)) .scroll{color:red;}",
+        "expected": ".go3409888811:not(:has(.header)):not(:has(.welcome)) .scroll{color:red;}",
+        "pass": true
+      }
+    },
+    {
+      "name": "not-list-followed-hover",
+      "stock": {
+        "name": "go3204244819",
+        "actual": ".go3204244819:not([data-disabled]:hover,[data-state=checked]):hover{color:blue;}",
+        "expected": ".go3204244819:not([data-disabled],[data-state=checked]):hover{color:blue;}",
+        "pass": false
+      },
+      "privatePatched": {
+        "name": "go3204244819",
+        "actual": ".go3204244819:not([data-disabled],[data-state=checked]):hover{color:blue;}",
+        "expected": ".go3204244819:not([data-disabled],[data-state=checked]):hover{color:blue;}",
+        "pass": true
+      }
+    },
+    {
+      "name": "quoted-comma-and-ampersand",
+      "stock": {
+        "name": "go2880955266",
+        "actual": ".go2880955266[data-name=\"a:hover,b.go2880955266c\"]:hover{color:green;}",
+        "expected": ".go2880955266[data-name=\"a,b&c\"]:hover{color:green;}",
+        "pass": false
+      },
+      "privatePatched": {
+        "name": "go2880955266",
+        "actual": ".go2880955266[data-name=\"a,b&c\"]:hover{color:green;}",
+        "expected": ".go2880955266[data-name=\"a,b&c\"]:hover{color:green;}",
+        "pass": true
+      }
+    },
+    {
+      "name": "selector-list-cross-product",
+      "stock": {
+        "name": "go3529505912",
+        "actual": ".go3529505912:not(.a .x,.go3529505912:not(.a .y,.b) .x,.b) .y,.go3529505912:has(.c .x,.go3529505912:has(.c .y,.d) .x,.d) .y{color:purple;}",
+        "expected": ".go3529505912:not(.a,.b) .x,.go3529505912:not(.a,.b) .y,.go3529505912:has(.c,.d) .x,.go3529505912:has(.c,.d) .y{color:purple;}",
+        "pass": false
+      },
+      "privatePatched": {
+        "name": "go3529505912",
+        "actual": ".go3529505912:not(.a,.b) .x,.go3529505912:not(.a,.b) .y,.go3529505912:has(.c,.d) .x,.go3529505912:has(.c,.d) .y{color:purple;}",
+        "expected": ".go3529505912:not(.a,.b) .x,.go3529505912:not(.a,.b) .y,.go3529505912:has(.c,.d) .x,.go3529505912:has(.c,.d) .y{color:purple;}",
+        "pass": true
+      }
+    },
+    {
+      "name": "escaped-comma",
+      "stock": {
+        "name": "go1393128598",
+        "actual": ".go1393128598.escaped\\,.go1393128598 comma{color:teal;}",
+        "expected": ".go1393128598.escaped\\,comma{color:teal;}",
+        "pass": false
+      },
+      "privatePatched": {
+        "name": "go1393128598",
+        "actual": ".go1393128598.escaped\\,comma{color:teal;}",
+        "expected": ".go1393128598.escaped\\,comma{color:teal;}",
+        "pass": true
+      }
+    },
+    {
+      "name": "escaped-ampersand-vs-nesting",
+      "stock": {
+        "name": "go1312581733",
+        "actual": ".go1312581733.escaped\\.go1312581733amp{color:navy;}",
+        "expected": ".go1312581733.escaped\\&amp{color:navy;}",
+        "pass": false
+      },
+      "privatePatched": {
+        "name": "go1312581733",
+        "actual": ".go1312581733.escaped\\&amp{color:navy;}",
+        "expected": ".go1312581733.escaped\\&amp{color:navy;}",
+        "pass": true
+      }
+    },
+    {
+      "name": "escaped-quote-comma-ampersand",
+      "stock": {
+        "name": "go3802659068",
+        "actual": ".go3802659068[data-label=\"a\\\"b,c.go3802659068d\"]{color:pink;}",
+        "expected": ".go3802659068[data-label=\"a\\\"b,c&d\"]{color:pink;}",
+        "pass": false
+      },
+      "privatePatched": {
+        "name": "go3802659068",
+        "actual": ".go3802659068[data-label=\"a\\\"b,c&d\"]{color:pink;}",
+        "expected": ".go3802659068[data-label=\"a\\\"b,c&d\"]{color:pink;}",
+        "pass": true
+      }
+    }
+  ],
+  "publicAPIAlternatives": {
+    "rawScoped": {
+      "name": "go2815399891",
+      "actual": ".go2815399891:not(:has(.header).go2815399891 ){color:orange;}",
+      "expected": ".go2815399891:not(:has(.header)){color:orange;}"
+    },
+    "globalPrivateTargets": {
+      "first": ".probe-red{color:red;}",
+      "second": "",
+      "note": "global cache.g replacement assumes previous global CSS exists in the new target; second independent target is empty. Not a safe request-local alternative."
+    }
+  }
+}

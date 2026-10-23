@@ -1,0 +1,1468 @@
+{
+  "startedAt": "2026-10-23T20:21:30.628Z",
+  "kind": "actual-fullchat-browser-memory",
+  "durationPerArmMs": 10000,
+  "smoke": true,
+  "arms": [
+    {
+      "arm": "baseline",
+      "completed": 25,
+      "pendingCancels": 2,
+      "partialCancels": 0,
+      "checkpoints": [
+        {
+          "label": "warm-idle-unmounted-gc",
+          "elapsedMs": 6426,
+          "at": "2026-10-23T20:21:39.288Z",
+          "gc": true,
+          "samples": [
+            {
+              "scenario": "chat",
+              "heap": {
+                "usedSize": 23272508,
+                "totalSize": 24821760,
+                "embedderHeapUsedSize": 1967896,
+                "backingStorageSize": 5796823
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 532,
+                "jsEventListeners": 335
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 7,
+              "metricsEnabled": false
+            },
+            {
+              "scenario": "dashboard",
+              "heap": {
+                "usedSize": 23313896,
+                "totalSize": 25608192,
+                "embedderHeapUsedSize": 2193688,
+                "backingStorageSize": 5796838
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 915,
+                "jsEventListeners": 339
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 7,
+              "metricsEnabled": false
+            }
+          ],
+          "backend": {
+            "active": 0,
+            "requests": [
+              {
+                "messages": 1,
+                "threadId": "d9ae90c2-dd8d-4891-9d50-e4e44dbe927e"
+              },
+              {
+                "messages": 1,
+                "threadId": "e4e7d362-0ff9-4705-8681-998aa13020c4"
+              },
+              {
+                "messages": 1,
+                "threadId": "11ed3bf7-8259-470f-a800-0b1e222c4b5b"
+              },
+              {
+                "messages": 1,
+                "threadId": "cfc2e1a9-5dc3-40b8-94c6-7e544c42dd83"
+              },
+              {
+                "messages": 1,
+                "threadId": "92d418aa-622f-47c2-a40b-e1610ece49be"
+              },
+              {
+                "messages": 1,
+                "threadId": "2f1f8116-c770-48d2-9098-db4eae81dffc"
+              },
+              {
+                "messages": 1,
+                "threadId": "b4545df3-1967-4fe2-ab90-7b1229f77b8f"
+              },
+              {
+                "messages": 1,
+                "threadId": "f776572d-4d9a-4294-b4b6-6324918e238a"
+              }
+            ],
+            "memory": {
+              "rss": 298450944,
+              "heapTotal": 159006720,
+              "heapUsed": 125720304,
+              "external": 2156700,
+              "arrayBuffers": 22640
+            },
+            "pid": 94893,
+            "gcApplied": false
+          },
+          "chromeProcessRSS": {
+            "note": "Passive CDP process inventory plus OS RSS. Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 94894,
+                "cpuTime": 0.941185,
+                "rssBytes": 242352128
+              },
+              {
+                "type": "renderer",
+                "id": 94911,
+                "cpuTime": 0.052802,
+                "rssBytes": 104742912
+              },
+              {
+                "type": "renderer",
+                "id": 94909,
+                "cpuTime": 1.205698,
+                "rssBytes": 352780288
+              },
+              {
+                "type": "renderer",
+                "id": 94910,
+                "cpuTime": 1.798964,
+                "rssBytes": 333004800
+              },
+              {
+                "type": "renderer",
+                "id": 94906,
+                "cpuTime": 0.174448,
+                "rssBytes": 193527808
+              },
+              {
+                "type": "GPU",
+                "id": 94902,
+                "cpuTime": 0.796304,
+                "rssBytes": 151994368
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 94903,
+                "cpuTime": 0.123991,
+                "rssBytes": 115834880
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 94904,
+                "cpuTime": 0.043442,
+                "rssBytes": 84819968
+              }
+            ],
+            "grossSummedRSSBytes": 1579057152
+          }
+        },
+        {
+          "label": "terminal-unmounted-natural",
+          "elapsedMs": 10159,
+          "at": "2026-10-23T20:21:49.448Z",
+          "gc": false,
+          "samples": [
+            {
+              "scenario": "chat",
+              "heap": {
+                "usedSize": 29594176,
+                "totalSize": 62308352,
+                "embedderHeapUsedSize": 33525312,
+                "backingStorageSize": 5868334
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 7702,
+                "jsEventListeners": 3186
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 20,
+              "metricsEnabled": false
+            },
+            {
+              "scenario": "dashboard",
+              "heap": {
+                "usedSize": 39423976,
+                "totalSize": 61259776,
+                "embedderHeapUsedSize": 16243672,
+                "backingStorageSize": 5837543
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 4099,
+                "jsEventListeners": 1732
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 19,
+              "metricsEnabled": false
+            }
+          ],
+          "backend": {
+            "active": 0,
+            "requests": [
+              {
+                "messages": 1,
+                "threadId": "d9ae90c2-dd8d-4891-9d50-e4e44dbe927e"
+              },
+              {
+                "messages": 1,
+                "threadId": "e4e7d362-0ff9-4705-8681-998aa13020c4"
+              },
+              {
+                "messages": 1,
+                "threadId": "11ed3bf7-8259-470f-a800-0b1e222c4b5b"
+              },
+              {
+                "messages": 1,
+                "threadId": "cfc2e1a9-5dc3-40b8-94c6-7e544c42dd83"
+              },
+              {
+                "messages": 1,
+                "threadId": "92d418aa-622f-47c2-a40b-e1610ece49be"
+              },
+              {
+                "messages": 1,
+                "threadId": "2f1f8116-c770-48d2-9098-db4eae81dffc"
+              },
+              {
+                "messages": 1,
+                "threadId": "b4545df3-1967-4fe2-ab90-7b1229f77b8f"
+              },
+              {
+                "messages": 1,
+                "threadId": "f776572d-4d9a-4294-b4b6-6324918e238a"
+              },
+              {
+                "messages": 1,
+                "threadId": "8e0a8485-4541-4b9b-b72d-626a7a6c3ff2"
+              },
+              {
+                "messages": 1,
+                "threadId": "e5e0f380-f6e6-46cb-acba-30a3808fa3f7"
+              },
+              {
+                "messages": 1,
+                "threadId": "9e2bf940-892b-4855-88dd-99c5b0be336b"
+              },
+              {
+                "messages": 1,
+                "threadId": "f401f660-a872-4369-9ba0-8531ceaf4344"
+              },
+              {
+                "messages": 1,
+                "threadId": "d75e5fab-c139-4886-86b2-611584b6aac6"
+              },
+              {
+                "messages": 1,
+                "threadId": "684510b5-4387-4422-9641-a4caf0b811b5"
+              },
+              {
+                "messages": 1,
+                "threadId": "e9f07175-0a60-46ad-abf1-9c7165bda706"
+              },
+              {
+                "messages": 1,
+                "threadId": "128cad6d-29ba-46d0-b241-aa11c3152cf6"
+              },
+              {
+                "messages": 1,
+                "threadId": "0e86368f-c572-4df1-b959-696d681ed9da"
+              },
+              {
+                "messages": 1,
+                "threadId": "4b065058-0ff6-4ff7-83f4-91755d865bc4"
+              },
+              {
+                "messages": 1,
+                "threadId": "b126e1c3-b162-4262-82ed-bee40cdc30e2"
+              },
+              {
+                "messages": 1,
+                "threadId": "1fa5de0f-98d4-4bef-87d4-e1707a50fff4"
+              },
+              {
+                "messages": 1,
+                "threadId": "fd39f8aa-863e-4696-93b9-6cc407eaff81"
+              },
+              {
+                "messages": 1,
+                "threadId": "ce2e2be3-4a77-4530-9789-1d345dfb8a30"
+              },
+              {
+                "messages": 1,
+                "threadId": "31046e02-8ffc-4a78-ba98-0f95dac6b32b"
+              },
+              {
+                "messages": 1,
+                "threadId": "d8331b0f-a890-47ab-a0a2-de74faeb3669"
+              },
+              {
+                "messages": 1,
+                "threadId": "c772dd3b-d738-4e34-bb12-06269cdba110"
+              },
+              {
+                "messages": 1,
+                "threadId": "3e03dcdc-f918-4b35-8b44-f9bf79d5182a"
+              },
+              {
+                "messages": 1,
+                "threadId": "00b6c7b9-a116-4ca1-a3b9-57124f8a92f1"
+              },
+              {
+                "messages": 1,
+                "threadId": "c8a58b75-a8f4-4a9e-999a-8de8224b8831"
+              },
+              {
+                "messages": 1,
+                "threadId": "f5a31fdb-fd40-4320-9fbb-bbfe755147d7"
+              },
+              {
+                "messages": 1,
+                "threadId": "f5cf743f-a6cc-4428-a5c0-467ae3a8aaaa"
+              },
+              {
+                "messages": 1,
+                "threadId": "8ce587cd-53be-48ee-b2c4-fabb38b9085f"
+              },
+              {
+                "messages": 1,
+                "threadId": "f4445d59-3fcd-454b-8d90-ceba1a0b3231"
+              },
+              {
+                "messages": 1,
+                "threadId": "13ec758e-b944-4dfa-8949-0f47c4509e75"
+              }
+            ],
+            "memory": {
+              "rss": 257884160,
+              "heapTotal": 117194752,
+              "heapUsed": 113224280,
+              "external": 2155320,
+              "arrayBuffers": 21260
+            },
+            "pid": 94893,
+            "gcApplied": false
+          },
+          "chromeProcessRSS": {
+            "note": "Passive CDP process inventory plus OS RSS. Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 94894,
+                "cpuTime": 1.252411,
+                "rssBytes": 242417664
+              },
+              {
+                "type": "renderer",
+                "id": 94911,
+                "cpuTime": 0.053696,
+                "rssBytes": 104841216
+              },
+              {
+                "type": "renderer",
+                "id": 94909,
+                "cpuTime": 3.98988,
+                "rssBytes": 369033216
+              },
+              {
+                "type": "renderer",
+                "id": 94910,
+                "cpuTime": 6.360676,
+                "rssBytes": 371179520
+              },
+              {
+                "type": "renderer",
+                "id": 94906,
+                "cpuTime": 0.176164,
+                "rssBytes": 193576960
+              },
+              {
+                "type": "GPU",
+                "id": 94902,
+                "cpuTime": 2.544696,
+                "rssBytes": 158351360
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 94903,
+                "cpuTime": 0.200686,
+                "rssBytes": 115949568
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 94904,
+                "cpuTime": 0.045959,
+                "rssBytes": 84819968
+              }
+            ],
+            "grossSummedRSSBytes": 1640169472
+          }
+        },
+        {
+          "label": "terminal-idle-unmounted-gc",
+          "elapsedMs": 13302,
+          "at": "2026-10-23T20:21:52.591Z",
+          "gc": true,
+          "samples": [
+            {
+              "scenario": "chat",
+              "heap": {
+                "usedSize": 24102312,
+                "totalSize": 26132480,
+                "embedderHeapUsedSize": 1994232,
+                "backingStorageSize": 5797589
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 532,
+                "jsEventListeners": 335
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 20,
+              "metricsEnabled": false
+            },
+            {
+              "scenario": "dashboard",
+              "heap": {
+                "usedSize": 24273376,
+                "totalSize": 26132480,
+                "embedderHeapUsedSize": 2162240,
+                "backingStorageSize": 5797593
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 923,
+                "jsEventListeners": 339
+              },
+              "style": [
+                {
+                  "href": null,
+                  "bytes": 54
+                }
+              ],
+              "rules": 2051,
+              "resources": 19,
+              "metricsEnabled": false
+            }
+          ],
+          "backend": {
+            "active": 0,
+            "requests": [
+              {
+                "messages": 1,
+                "threadId": "d9ae90c2-dd8d-4891-9d50-e4e44dbe927e"
+              },
+              {
+                "messages": 1,
+                "threadId": "e4e7d362-0ff9-4705-8681-998aa13020c4"
+              },
+              {
+                "messages": 1,
+                "threadId": "11ed3bf7-8259-470f-a800-0b1e222c4b5b"
+              },
+              {
+                "messages": 1,
+                "threadId": "cfc2e1a9-5dc3-40b8-94c6-7e544c42dd83"
+              },
+              {
+                "messages": 1,
+                "threadId": "92d418aa-622f-47c2-a40b-e1610ece49be"
+              },
+              {
+                "messages": 1,
+                "threadId": "2f1f8116-c770-48d2-9098-db4eae81dffc"
+              },
+              {
+                "messages": 1,
+                "threadId": "b4545df3-1967-4fe2-ab90-7b1229f77b8f"
+              },
+              {
+                "messages": 1,
+                "threadId": "f776572d-4d9a-4294-b4b6-6324918e238a"
+              },
+              {
+                "messages": 1,
+                "threadId": "8e0a8485-4541-4b9b-b72d-626a7a6c3ff2"
+              },
+              {
+                "messages": 1,
+                "threadId": "e5e0f380-f6e6-46cb-acba-30a3808fa3f7"
+              },
+              {
+                "messages": 1,
+                "threadId": "9e2bf940-892b-4855-88dd-99c5b0be336b"
+              },
+              {
+                "messages": 1,
+                "threadId": "f401f660-a872-4369-9ba0-8531ceaf4344"
+              },
+              {
+                "messages": 1,
+                "threadId": "d75e5fab-c139-4886-86b2-611584b6aac6"
+              },
+              {
+                "messages": 1,
+                "threadId": "684510b5-4387-4422-9641-a4caf0b811b5"
+              },
+              {
+                "messages": 1,
+                "threadId": "e9f07175-0a60-46ad-abf1-9c7165bda706"
+              },
+              {
+                "messages": 1,
+                "threadId": "128cad6d-29ba-46d0-b241-aa11c3152cf6"
+              },
+              {
+                "messages": 1,
+                "threadId": "0e86368f-c572-4df1-b959-696d681ed9da"
+              },
+              {
+                "messages": 1,
+                "threadId": "4b065058-0ff6-4ff7-83f4-91755d865bc4"
+              },
+              {
+                "messages": 1,
+                "threadId": "b126e1c3-b162-4262-82ed-bee40cdc30e2"
+              },
+              {
+                "messages": 1,
+                "threadId": "1fa5de0f-98d4-4bef-87d4-e1707a50fff4"
+              },
+              {
+                "messages": 1,
+                "threadId": "fd39f8aa-863e-4696-93b9-6cc407eaff81"
+              },
+              {
+                "messages": 1,
+                "threadId": "ce2e2be3-4a77-4530-9789-1d345dfb8a30"
+              },
+              {
+                "messages": 1,
+                "threadId": "31046e02-8ffc-4a78-ba98-0f95dac6b32b"
+              },
+              {
+                "messages": 1,
+                "threadId": "d8331b0f-a890-47ab-a0a2-de74faeb3669"
+              },
+              {
+                "messages": 1,
+                "threadId": "c772dd3b-d738-4e34-bb12-06269cdba110"
+              },
+              {
+                "messages": 1,
+                "threadId": "3e03dcdc-f918-4b35-8b44-f9bf79d5182a"
+              },
+              {
+                "messages": 1,
+                "threadId": "00b6c7b9-a116-4ca1-a3b9-57124f8a92f1"
+              },
+              {
+                "messages": 1,
+                "threadId": "c8a58b75-a8f4-4a9e-999a-8de8224b8831"
+              },
+              {
+                "messages": 1,
+                "threadId": "f5a31fdb-fd40-4320-9fbb-bbfe755147d7"
+              },
+              {
+                "messages": 1,
+                "threadId": "f5cf743f-a6cc-4428-a5c0-467ae3a8aaaa"
+              },
+              {
+                "messages": 1,
+                "threadId": "8ce587cd-53be-48ee-b2c4-fabb38b9085f"
+              },
+              {
+                "messages": 1,
+                "threadId": "f4445d59-3fcd-454b-8d90-ceba1a0b3231"
+              },
+              {
+                "messages": 1,
+                "threadId": "13ec758e-b944-4dfa-8949-0f47c4509e75"
+              }
+            ],
+            "memory": {
+              "rss": 257933312,
+              "heapTotal": 117194752,
+              "heapUsed": 113268472,
+              "external": 2155320,
+              "arrayBuffers": 21260
+            },
+            "pid": 94893,
+            "gcApplied": false
+          },
+          "chromeProcessRSS": {
+            "note": "Passive CDP process inventory plus OS RSS. Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 94894,
+                "cpuTime": 1.256961,
+                "rssBytes": 242417664
+              },
+              {
+                "type": "renderer",
+                "id": 94911,
+                "cpuTime": 0.053696,
+                "rssBytes": 104841216
+              },
+              {
+                "type": "renderer",
+                "id": 94909,
+                "cpuTime": 3.993595,
+                "rssBytes": 368885760
+              },
+              {
+                "type": "renderer",
+                "id": 94910,
+                "cpuTime": 6.367093,
+                "rssBytes": 371048448
+              },
+              {
+                "type": "renderer",
+                "id": 94906,
+                "cpuTime": 0.176579,
+                "rssBytes": 193593344
+              },
+              {
+                "type": "GPU",
+                "id": 94902,
+                "cpuTime": 2.562259,
+                "rssBytes": 153010176
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 94903,
+                "cpuTime": 0.200714,
+                "rssBytes": 115949568
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 94904,
+                "cpuTime": 0.045975,
+                "rssBytes": 84819968
+              }
+            ],
+            "grossSummedRSSBytes": 1634566144
+          }
+        }
+      ],
+      "cancellations": [
+        {
+          "i": 9,
+          "type": "pending",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 17,
+          "requestsAfter": 17
+        },
+        {
+          "i": 19,
+          "type": "pending",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 26,
+          "requestsAfter": 26
+        }
+      ],
+      "errors": [],
+      "warmupCompleted": 8,
+      "measuredElapsedMs": 10137,
+      "retained": [
+        {
+          "scenario": "chat",
+          "warm": 23272508,
+          "idle": 24102312,
+          "delta": 829804,
+          "relativePercent": 3.5655976571154255,
+          "budgetBytes": 5242880,
+          "needsInvestigation": false,
+          "domDelta": 0,
+          "listenerDelta": 0,
+          "styleDelta": 0,
+          "ruleDelta": 0
+        },
+        {
+          "scenario": "dashboard",
+          "warm": 23313896,
+          "idle": 24273376,
+          "delta": 959480,
+          "relativePercent": 4.115485459830481,
+          "budgetBytes": 5242880,
+          "needsInvestigation": false,
+          "domDelta": 8,
+          "listenerDelta": 0,
+          "styleDelta": 0,
+          "ruleDelta": 0
+        }
+      ],
+      "serverLogs": ""
+    },
+    {
+      "arm": "runtime",
+      "completed": 24,
+      "pendingCancels": 2,
+      "partialCancels": 0,
+      "checkpoints": [
+        {
+          "label": "warm-idle-unmounted-gc",
+          "elapsedMs": 6426,
+          "at": "2026-10-23T20:22:00.922Z",
+          "gc": true,
+          "samples": [
+            {
+              "scenario": "chat",
+              "heap": {
+                "usedSize": 28102816,
+                "totalSize": 29556736,
+                "embedderHeapUsedSize": 4766744,
+                "backingStorageSize": 5796906
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 534,
+                "jsEventListeners": 335
+              },
+              "style": [
+                {
+                  "href": "openui-expanded-v1:Card:boundary:go1575007177 openui-expanded-v1:Button:boundary:go278159681 openui-expanded-v1:Input:boundary:go1108635726 openui-expanded-v1:CardHeader:boundary:go898436157 openui-expanded-v1:Buttons:boundary:go3261390454 openui-expanded-v1:FormControl:boundary:go3777145176 openui-expanded-v1:TextContent:boundary:go954855282 openui-expanded-v1:Table:boundary:go2912324851 openui-expanded-v1:BarChart:boundary:go1992396001 openui-expanded-v1:LineChart:boundary:go1041195028 openui-expanded-v1:PieChart:boundary:go3756294908 openui-expanded-v1:IconButton:boundary:go2412478652 openui-expanded-v1:TextArea:boundary:go1509541534 openui-expanded-v1:CheckBoxGroup:boundary:go2981431845 openui-expanded-v1:SwitchGroup:boundary:go3441439237 openui-expanded-v1:RadioGroup:boundary:go561285950 openui-expanded-v1:Select:boundary:go1230403601 openui-expanded-v1:Tabs:boundary:go2182908062 openui-expanded-v1:Accordion:boundary:go458929348 openui-expanded-v1:Separator:boundary:go3253786402 openui-expanded-v1:Modal:boundary:go1600517841 openui-expanded-v1:Tooltip:boundary:go764950772 openui-expanded-v1:AssistantMessage:boundary:go650573658 openui-expanded-v1:ShellAgentInterface:boundary:go1796640538 openui-expanded-v1:ShellSidebar:boundary:go2063302110 openui-expanded-v1:ShellThread:boundary:go4165890024 openui-expanded-v1:ShellThreadHeader:boundary:go1226831259 openui-expanded-v1:ShellMobileHeader:boundary:go716447674 openui-expanded-v1:ShellThreadlist:boundary:go1280180826 openui-expanded-v1:ShellHistoryMenu:boundary:go437721326 openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618 openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546 openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602 openui-expanded-v1:ShellConversationStarter:boundary:go1341444952 openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247 openui-expanded-v1:ShellResizableSeparator:boundary:go417178870 openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114 openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982 openui-expanded-v1:Shell_sharedShared:boundary:go3952224658 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204 openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046 openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646 openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038 openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939 openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058 openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+                  "bytes": 1500896
+                },
+                {
+                  "href": null,
+                  "bytes": 54
+                }
+              ],
+              "rules": 3714,
+              "resources": 6,
+              "metricsEnabled": false
+            },
+            {
+              "scenario": "dashboard",
+              "heap": {
+                "usedSize": 28123172,
+                "totalSize": 30605312,
+                "embedderHeapUsedSize": 5022360,
+                "backingStorageSize": 5796910
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 917,
+                "jsEventListeners": 339
+              },
+              "style": [
+                {
+                  "href": "openui-expanded-v1:Card:boundary:go1575007177 openui-expanded-v1:Button:boundary:go278159681 openui-expanded-v1:Input:boundary:go1108635726 openui-expanded-v1:CardHeader:boundary:go898436157 openui-expanded-v1:Buttons:boundary:go3261390454 openui-expanded-v1:FormControl:boundary:go3777145176 openui-expanded-v1:TextContent:boundary:go954855282 openui-expanded-v1:Table:boundary:go2912324851 openui-expanded-v1:BarChart:boundary:go1992396001 openui-expanded-v1:LineChart:boundary:go1041195028 openui-expanded-v1:PieChart:boundary:go3756294908 openui-expanded-v1:IconButton:boundary:go2412478652 openui-expanded-v1:TextArea:boundary:go1509541534 openui-expanded-v1:CheckBoxGroup:boundary:go2981431845 openui-expanded-v1:SwitchGroup:boundary:go3441439237 openui-expanded-v1:RadioGroup:boundary:go561285950 openui-expanded-v1:Select:boundary:go1230403601 openui-expanded-v1:Tabs:boundary:go2182908062 openui-expanded-v1:Accordion:boundary:go458929348 openui-expanded-v1:Separator:boundary:go3253786402 openui-expanded-v1:Modal:boundary:go1600517841 openui-expanded-v1:Tooltip:boundary:go764950772 openui-expanded-v1:AssistantMessage:boundary:go650573658 openui-expanded-v1:ShellAgentInterface:boundary:go1796640538 openui-expanded-v1:ShellSidebar:boundary:go2063302110 openui-expanded-v1:ShellThread:boundary:go4165890024 openui-expanded-v1:ShellThreadHeader:boundary:go1226831259 openui-expanded-v1:ShellMobileHeader:boundary:go716447674 openui-expanded-v1:ShellThreadlist:boundary:go1280180826 openui-expanded-v1:ShellHistoryMenu:boundary:go437721326 openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618 openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546 openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602 openui-expanded-v1:ShellConversationStarter:boundary:go1341444952 openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247 openui-expanded-v1:ShellResizableSeparator:boundary:go417178870 openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114 openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982 openui-expanded-v1:Shell_sharedShared:boundary:go3952224658 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204 openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046 openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646 openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038 openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939 openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058 openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+                  "bytes": 1500896
+                },
+                {
+                  "href": null,
+                  "bytes": 54
+                }
+              ],
+              "rules": 3714,
+              "resources": 6,
+              "metricsEnabled": false
+            }
+          ],
+          "backend": {
+            "active": 0,
+            "requests": [
+              {
+                "messages": 1,
+                "threadId": "3b0e17f0-3ea0-4d20-8c9b-44d577da9101"
+              },
+              {
+                "messages": 1,
+                "threadId": "484602ef-f775-421a-b0c2-bfb3fc8233fe"
+              },
+              {
+                "messages": 1,
+                "threadId": "6358af2a-5df7-42bc-8f11-1bad3f9b583a"
+              },
+              {
+                "messages": 1,
+                "threadId": "bdf94d75-9d08-4754-817b-6a01270dca0f"
+              },
+              {
+                "messages": 1,
+                "threadId": "07cebb0f-0622-4029-b574-5ffc59009f68"
+              },
+              {
+                "messages": 1,
+                "threadId": "c0a0c937-7261-4904-9bee-9a5489fbeb6a"
+              },
+              {
+                "messages": 1,
+                "threadId": "aa0453d6-1c6e-4347-b607-0b0aeadfc701"
+              },
+              {
+                "messages": 1,
+                "threadId": "907f8ff2-2a34-4b65-ac35-6db955cd51e0"
+              }
+            ],
+            "memory": {
+              "rss": 300548096,
+              "heapTotal": 161005568,
+              "heapUsed": 123644080,
+              "external": 2155090,
+              "arrayBuffers": 21030
+            },
+            "pid": 94961,
+            "gcApplied": false
+          },
+          "chromeProcessRSS": {
+            "note": "Passive CDP process inventory plus OS RSS. Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 94965,
+                "cpuTime": 0.944067,
+                "rssBytes": 242302976
+              },
+              {
+                "type": "renderer",
+                "id": 94981,
+                "cpuTime": 0.051495,
+                "rssBytes": 104677376
+              },
+              {
+                "type": "renderer",
+                "id": 94977,
+                "cpuTime": 1.363838,
+                "rssBytes": 398393344
+              },
+              {
+                "type": "renderer",
+                "id": 94978,
+                "cpuTime": 2.012568,
+                "rssBytes": 352878592
+              },
+              {
+                "type": "renderer",
+                "id": 94975,
+                "cpuTime": 0.176857,
+                "rssBytes": 193413120
+              },
+              {
+                "type": "GPU",
+                "id": 94970,
+                "cpuTime": 0.761452,
+                "rssBytes": 152125440
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 94971,
+                "cpuTime": 0.117096,
+                "rssBytes": 118669312
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 94972,
+                "cpuTime": 0.04024,
+                "rssBytes": 84672512
+              }
+            ],
+            "grossSummedRSSBytes": 1647132672
+          }
+        },
+        {
+          "label": "terminal-unmounted-natural",
+          "elapsedMs": 10014,
+          "at": "2026-10-23T20:22:10.936Z",
+          "gc": false,
+          "samples": [
+            {
+              "scenario": "chat",
+              "heap": {
+                "usedSize": 67325636,
+                "totalSize": 100597760,
+                "embedderHeapUsedSize": 61213104,
+                "backingStorageSize": 5957556
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 9929,
+                "jsEventListeners": 6738
+              },
+              "style": [
+                {
+                  "href": "openui-expanded-v1:Card:boundary:go1575007177 openui-expanded-v1:Button:boundary:go278159681 openui-expanded-v1:Input:boundary:go1108635726 openui-expanded-v1:CardHeader:boundary:go898436157 openui-expanded-v1:Buttons:boundary:go3261390454 openui-expanded-v1:FormControl:boundary:go3777145176 openui-expanded-v1:TextContent:boundary:go954855282 openui-expanded-v1:Table:boundary:go2912324851 openui-expanded-v1:BarChart:boundary:go1992396001 openui-expanded-v1:LineChart:boundary:go1041195028 openui-expanded-v1:PieChart:boundary:go3756294908 openui-expanded-v1:IconButton:boundary:go2412478652 openui-expanded-v1:TextArea:boundary:go1509541534 openui-expanded-v1:CheckBoxGroup:boundary:go2981431845 openui-expanded-v1:SwitchGroup:boundary:go3441439237 openui-expanded-v1:RadioGroup:boundary:go561285950 openui-expanded-v1:Select:boundary:go1230403601 openui-expanded-v1:Tabs:boundary:go2182908062 openui-expanded-v1:Accordion:boundary:go458929348 openui-expanded-v1:Separator:boundary:go3253786402 openui-expanded-v1:Modal:boundary:go1600517841 openui-expanded-v1:Tooltip:boundary:go764950772 openui-expanded-v1:AssistantMessage:boundary:go650573658 openui-expanded-v1:ShellAgentInterface:boundary:go1796640538 openui-expanded-v1:ShellSidebar:boundary:go2063302110 openui-expanded-v1:ShellThread:boundary:go4165890024 openui-expanded-v1:ShellThreadHeader:boundary:go1226831259 openui-expanded-v1:ShellMobileHeader:boundary:go716447674 openui-expanded-v1:ShellThreadlist:boundary:go1280180826 openui-expanded-v1:ShellHistoryMenu:boundary:go437721326 openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618 openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546 openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602 openui-expanded-v1:ShellConversationStarter:boundary:go1341444952 openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247 openui-expanded-v1:ShellResizableSeparator:boundary:go417178870 openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114 openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982 openui-expanded-v1:Shell_sharedShared:boundary:go3952224658 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204 openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046 openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646 openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038 openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939 openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058 openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+                  "bytes": 1500896
+                },
+                {
+                  "href": null,
+                  "bytes": 54
+                }
+              ],
+              "rules": 3714,
+              "resources": 18,
+              "metricsEnabled": false
+            },
+            {
+              "scenario": "dashboard",
+              "heap": {
+                "usedSize": 59849172,
+                "totalSize": 95354880,
+                "embedderHeapUsedSize": 22563088,
+                "backingStorageSize": 5825897
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 5030,
+                "jsEventListeners": 1567
+              },
+              "style": [
+                {
+                  "href": "openui-expanded-v1:Card:boundary:go1575007177 openui-expanded-v1:Button:boundary:go278159681 openui-expanded-v1:Input:boundary:go1108635726 openui-expanded-v1:CardHeader:boundary:go898436157 openui-expanded-v1:Buttons:boundary:go3261390454 openui-expanded-v1:FormControl:boundary:go3777145176 openui-expanded-v1:TextContent:boundary:go954855282 openui-expanded-v1:Table:boundary:go2912324851 openui-expanded-v1:BarChart:boundary:go1992396001 openui-expanded-v1:LineChart:boundary:go1041195028 openui-expanded-v1:PieChart:boundary:go3756294908 openui-expanded-v1:IconButton:boundary:go2412478652 openui-expanded-v1:TextArea:boundary:go1509541534 openui-expanded-v1:CheckBoxGroup:boundary:go2981431845 openui-expanded-v1:SwitchGroup:boundary:go3441439237 openui-expanded-v1:RadioGroup:boundary:go561285950 openui-expanded-v1:Select:boundary:go1230403601 openui-expanded-v1:Tabs:boundary:go2182908062 openui-expanded-v1:Accordion:boundary:go458929348 openui-expanded-v1:Separator:boundary:go3253786402 openui-expanded-v1:Modal:boundary:go1600517841 openui-expanded-v1:Tooltip:boundary:go764950772 openui-expanded-v1:AssistantMessage:boundary:go650573658 openui-expanded-v1:ShellAgentInterface:boundary:go1796640538 openui-expanded-v1:ShellSidebar:boundary:go2063302110 openui-expanded-v1:ShellThread:boundary:go4165890024 openui-expanded-v1:ShellThreadHeader:boundary:go1226831259 openui-expanded-v1:ShellMobileHeader:boundary:go716447674 openui-expanded-v1:ShellThreadlist:boundary:go1280180826 openui-expanded-v1:ShellHistoryMenu:boundary:go437721326 openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618 openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546 openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602 openui-expanded-v1:ShellConversationStarter:boundary:go1341444952 openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247 openui-expanded-v1:ShellResizableSeparator:boundary:go417178870 openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114 openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982 openui-expanded-v1:Shell_sharedShared:boundary:go3952224658 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204 openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046 openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646 openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038 openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939 openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058 openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+                  "bytes": 1500896
+                },
+                {
+                  "href": null,
+                  "bytes": 54
+                }
+              ],
+              "rules": 3714,
+              "resources": 18,
+              "metricsEnabled": false
+            }
+          ],
+          "backend": {
+            "active": 0,
+            "requests": [
+              {
+                "messages": 1,
+                "threadId": "3b0e17f0-3ea0-4d20-8c9b-44d577da9101"
+              },
+              {
+                "messages": 1,
+                "threadId": "484602ef-f775-421a-b0c2-bfb3fc8233fe"
+              },
+              {
+                "messages": 1,
+                "threadId": "6358af2a-5df7-42bc-8f11-1bad3f9b583a"
+              },
+              {
+                "messages": 1,
+                "threadId": "bdf94d75-9d08-4754-817b-6a01270dca0f"
+              },
+              {
+                "messages": 1,
+                "threadId": "07cebb0f-0622-4029-b574-5ffc59009f68"
+              },
+              {
+                "messages": 1,
+                "threadId": "c0a0c937-7261-4904-9bee-9a5489fbeb6a"
+              },
+              {
+                "messages": 1,
+                "threadId": "aa0453d6-1c6e-4347-b607-0b0aeadfc701"
+              },
+              {
+                "messages": 1,
+                "threadId": "907f8ff2-2a34-4b65-ac35-6db955cd51e0"
+              },
+              {
+                "messages": 1,
+                "threadId": "f1d30b80-b28f-4315-a734-9ffb44c1e67f"
+              },
+              {
+                "messages": 1,
+                "threadId": "7c67e312-3ee1-4e1b-879b-c436a870aefd"
+              },
+              {
+                "messages": 1,
+                "threadId": "ad9e597e-aa2e-49b3-b0c8-c546401b8a9d"
+              },
+              {
+                "messages": 1,
+                "threadId": "50928cff-ced0-4e48-b1cc-4e60e7d81d4a"
+              },
+              {
+                "messages": 1,
+                "threadId": "16b97b64-0c1c-470f-bb13-14b47c3bc026"
+              },
+              {
+                "messages": 1,
+                "threadId": "6ded4aea-0e1a-40a7-847b-c9347c0e4a60"
+              },
+              {
+                "messages": 1,
+                "threadId": "7fa736b9-add9-41e7-8ecb-124136b04e7d"
+              },
+              {
+                "messages": 1,
+                "threadId": "7c159b67-2950-4eba-88be-d8d7bad227c0"
+              },
+              {
+                "messages": 1,
+                "threadId": "ee478a03-e0b8-47da-a441-f8ed35713f0b"
+              },
+              {
+                "messages": 1,
+                "threadId": "1730472f-9ac3-46c9-a1bf-5ab3a4dbf982"
+              },
+              {
+                "messages": 1,
+                "threadId": "12234392-2fea-4c09-8caf-e37199afb996"
+              },
+              {
+                "messages": 1,
+                "threadId": "8dc4fd8b-af59-49f3-9407-7b35967e2925"
+              },
+              {
+                "messages": 1,
+                "threadId": "6bcd7dc3-9834-48af-995b-f8daf8905e21"
+              },
+              {
+                "messages": 1,
+                "threadId": "c7f5a575-e235-41dc-a6dc-884e1729f113"
+              },
+              {
+                "messages": 1,
+                "threadId": "7bd20a50-e339-4dd6-865b-769109c97925"
+              },
+              {
+                "messages": 1,
+                "threadId": "15642a34-e364-4e10-9bbd-717967b5720c"
+              },
+              {
+                "messages": 1,
+                "threadId": "1fa51eb2-ef8f-448d-a265-183d38f61198"
+              },
+              {
+                "messages": 1,
+                "threadId": "092a52be-22d1-4da3-9ac4-6524eb654689"
+              },
+              {
+                "messages": 1,
+                "threadId": "e60e7bb5-b86d-40fb-ae17-516d0d67729a"
+              },
+              {
+                "messages": 1,
+                "threadId": "6b0806c4-649d-4bf4-99b5-7785f23980ff"
+              },
+              {
+                "messages": 1,
+                "threadId": "7110cdc5-9559-4d15-8ab9-7a2b67913af7"
+              },
+              {
+                "messages": 1,
+                "threadId": "a59746c7-6fd6-444d-bf4f-b891cb24ac9b"
+              },
+              {
+                "messages": 1,
+                "threadId": "78c15c06-978b-4949-be8a-826208d08281"
+              },
+              {
+                "messages": 1,
+                "threadId": "112f521e-f34f-44e3-9af3-d87f1537c4ae"
+              }
+            ],
+            "memory": {
+              "rss": 259801088,
+              "heapTotal": 116932608,
+              "heapUsed": 113551080,
+              "external": 2155780,
+              "arrayBuffers": 21720
+            },
+            "pid": 94961,
+            "gcApplied": false
+          },
+          "chromeProcessRSS": {
+            "note": "Passive CDP process inventory plus OS RSS. Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 94965,
+                "cpuTime": 1.235198,
+                "rssBytes": 242204672
+              },
+              {
+                "type": "renderer",
+                "id": 94981,
+                "cpuTime": 0.052344,
+                "rssBytes": 104775680
+              },
+              {
+                "type": "renderer",
+                "id": 94977,
+                "cpuTime": 4.502744,
+                "rssBytes": 418316288
+              },
+              {
+                "type": "renderer",
+                "id": 94978,
+                "cpuTime": 6.442139,
+                "rssBytes": 442023936
+              },
+              {
+                "type": "renderer",
+                "id": 94975,
+                "cpuTime": 0.178056,
+                "rssBytes": 193478656
+              },
+              {
+                "type": "GPU",
+                "id": 94970,
+                "cpuTime": 2.300817,
+                "rssBytes": 158187520
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 94971,
+                "cpuTime": 0.185993,
+                "rssBytes": 118751232
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 94972,
+                "cpuTime": 0.042776,
+                "rssBytes": 84672512
+              }
+            ],
+            "grossSummedRSSBytes": 1762410496
+          }
+        },
+        {
+          "label": "terminal-idle-unmounted-gc",
+          "elapsedMs": 13240,
+          "at": "2026-10-23T20:22:14.162Z",
+          "gc": true,
+          "samples": [
+            {
+              "scenario": "chat",
+              "heap": {
+                "usedSize": 28902768,
+                "totalSize": 31653888,
+                "embedderHeapUsedSize": 5005912,
+                "backingStorageSize": 5797466
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 542,
+                "jsEventListeners": 335
+              },
+              "style": [
+                {
+                  "href": "openui-expanded-v1:Card:boundary:go1575007177 openui-expanded-v1:Button:boundary:go278159681 openui-expanded-v1:Input:boundary:go1108635726 openui-expanded-v1:CardHeader:boundary:go898436157 openui-expanded-v1:Buttons:boundary:go3261390454 openui-expanded-v1:FormControl:boundary:go3777145176 openui-expanded-v1:TextContent:boundary:go954855282 openui-expanded-v1:Table:boundary:go2912324851 openui-expanded-v1:BarChart:boundary:go1992396001 openui-expanded-v1:LineChart:boundary:go1041195028 openui-expanded-v1:PieChart:boundary:go3756294908 openui-expanded-v1:IconButton:boundary:go2412478652 openui-expanded-v1:TextArea:boundary:go1509541534 openui-expanded-v1:CheckBoxGroup:boundary:go2981431845 openui-expanded-v1:SwitchGroup:boundary:go3441439237 openui-expanded-v1:RadioGroup:boundary:go561285950 openui-expanded-v1:Select:boundary:go1230403601 openui-expanded-v1:Tabs:boundary:go2182908062 openui-expanded-v1:Accordion:boundary:go458929348 openui-expanded-v1:Separator:boundary:go3253786402 openui-expanded-v1:Modal:boundary:go1600517841 openui-expanded-v1:Tooltip:boundary:go764950772 openui-expanded-v1:AssistantMessage:boundary:go650573658 openui-expanded-v1:ShellAgentInterface:boundary:go1796640538 openui-expanded-v1:ShellSidebar:boundary:go2063302110 openui-expanded-v1:ShellThread:boundary:go4165890024 openui-expanded-v1:ShellThreadHeader:boundary:go1226831259 openui-expanded-v1:ShellMobileHeader:boundary:go716447674 openui-expanded-v1:ShellThreadlist:boundary:go1280180826 openui-expanded-v1:ShellHistoryMenu:boundary:go437721326 openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618 openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546 openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602 openui-expanded-v1:ShellConversationStarter:boundary:go1341444952 openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247 openui-expanded-v1:ShellResizableSeparator:boundary:go417178870 openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114 openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982 openui-expanded-v1:Shell_sharedShared:boundary:go3952224658 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204 openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046 openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646 openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038 openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939 openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058 openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+                  "bytes": 1500896
+                },
+                {
+                  "href": null,
+                  "bytes": 54
+                }
+              ],
+              "rules": 3714,
+              "resources": 18,
+              "metricsEnabled": false
+            },
+            {
+              "scenario": "dashboard",
+              "heap": {
+                "usedSize": 29089980,
+                "totalSize": 30343168,
+                "embedderHeapUsedSize": 4918632,
+                "backingStorageSize": 5797727
+              },
+              "dom": {
+                "documents": 1,
+                "nodes": 925,
+                "jsEventListeners": 339
+              },
+              "style": [
+                {
+                  "href": "openui-expanded-v1:Card:boundary:go1575007177 openui-expanded-v1:Button:boundary:go278159681 openui-expanded-v1:Input:boundary:go1108635726 openui-expanded-v1:CardHeader:boundary:go898436157 openui-expanded-v1:Buttons:boundary:go3261390454 openui-expanded-v1:FormControl:boundary:go3777145176 openui-expanded-v1:TextContent:boundary:go954855282 openui-expanded-v1:Table:boundary:go2912324851 openui-expanded-v1:BarChart:boundary:go1992396001 openui-expanded-v1:LineChart:boundary:go1041195028 openui-expanded-v1:PieChart:boundary:go3756294908 openui-expanded-v1:IconButton:boundary:go2412478652 openui-expanded-v1:TextArea:boundary:go1509541534 openui-expanded-v1:CheckBoxGroup:boundary:go2981431845 openui-expanded-v1:SwitchGroup:boundary:go3441439237 openui-expanded-v1:RadioGroup:boundary:go561285950 openui-expanded-v1:Select:boundary:go1230403601 openui-expanded-v1:Tabs:boundary:go2182908062 openui-expanded-v1:Accordion:boundary:go458929348 openui-expanded-v1:Separator:boundary:go3253786402 openui-expanded-v1:Modal:boundary:go1600517841 openui-expanded-v1:Tooltip:boundary:go764950772 openui-expanded-v1:AssistantMessage:boundary:go650573658 openui-expanded-v1:ShellAgentInterface:boundary:go1796640538 openui-expanded-v1:ShellSidebar:boundary:go2063302110 openui-expanded-v1:ShellThread:boundary:go4165890024 openui-expanded-v1:ShellThreadHeader:boundary:go1226831259 openui-expanded-v1:ShellMobileHeader:boundary:go716447674 openui-expanded-v1:ShellThreadlist:boundary:go1280180826 openui-expanded-v1:ShellHistoryMenu:boundary:go437721326 openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618 openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546 openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602 openui-expanded-v1:ShellConversationStarter:boundary:go1341444952 openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247 openui-expanded-v1:ShellResizableSeparator:boundary:go417178870 openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114 openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982 openui-expanded-v1:Shell_sharedShared:boundary:go3952224658 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750 openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204 openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046 openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646 openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038 openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939 openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058 openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+                  "bytes": 1500896
+                },
+                {
+                  "href": null,
+                  "bytes": 54
+                }
+              ],
+              "rules": 3714,
+              "resources": 18,
+              "metricsEnabled": false
+            }
+          ],
+          "backend": {
+            "active": 0,
+            "requests": [
+              {
+                "messages": 1,
+                "threadId": "3b0e17f0-3ea0-4d20-8c9b-44d577da9101"
+              },
+              {
+                "messages": 1,
+                "threadId": "484602ef-f775-421a-b0c2-bfb3fc8233fe"
+              },
+              {
+                "messages": 1,
+                "threadId": "6358af2a-5df7-42bc-8f11-1bad3f9b583a"
+              },
+              {
+                "messages": 1,
+                "threadId": "bdf94d75-9d08-4754-817b-6a01270dca0f"
+              },
+              {
+                "messages": 1,
+                "threadId": "07cebb0f-0622-4029-b574-5ffc59009f68"
+              },
+              {
+                "messages": 1,
+                "threadId": "c0a0c937-7261-4904-9bee-9a5489fbeb6a"
+              },
+              {
+                "messages": 1,
+                "threadId": "aa0453d6-1c6e-4347-b607-0b0aeadfc701"
+              },
+              {
+                "messages": 1,
+                "threadId": "907f8ff2-2a34-4b65-ac35-6db955cd51e0"
+              },
+              {
+                "messages": 1,
+                "threadId": "f1d30b80-b28f-4315-a734-9ffb44c1e67f"
+              },
+              {
+                "messages": 1,
+                "threadId": "7c67e312-3ee1-4e1b-879b-c436a870aefd"
+              },
+              {
+                "messages": 1,
+                "threadId": "ad9e597e-aa2e-49b3-b0c8-c546401b8a9d"
+              },
+              {
+                "messages": 1,
+                "threadId": "50928cff-ced0-4e48-b1cc-4e60e7d81d4a"
+              },
+              {
+                "messages": 1,
+                "threadId": "16b97b64-0c1c-470f-bb13-14b47c3bc026"
+              },
+              {
+                "messages": 1,
+                "threadId": "6ded4aea-0e1a-40a7-847b-c9347c0e4a60"
+              },
+              {
+                "messages": 1,
+                "threadId": "7fa736b9-add9-41e7-8ecb-124136b04e7d"
+              },
+              {
+                "messages": 1,
+                "threadId": "7c159b67-2950-4eba-88be-d8d7bad227c0"
+              },
+              {
+                "messages": 1,
+                "threadId": "ee478a03-e0b8-47da-a441-f8ed35713f0b"
+              },
+              {
+                "messages": 1,
+                "threadId": "1730472f-9ac3-46c9-a1bf-5ab3a4dbf982"
+              },
+              {
+                "messages": 1,
+                "threadId": "12234392-2fea-4c09-8caf-e37199afb996"
+              },
+              {
+                "messages": 1,
+                "threadId": "8dc4fd8b-af59-49f3-9407-7b35967e2925"
+              },
+              {
+                "messages": 1,
+                "threadId": "6bcd7dc3-9834-48af-995b-f8daf8905e21"
+              },
+              {
+                "messages": 1,
+                "threadId": "c7f5a575-e235-41dc-a6dc-884e1729f113"
+              },
+              {
+                "messages": 1,
+                "threadId": "7bd20a50-e339-4dd6-865b-769109c97925"
+              },
+              {
+                "messages": 1,
+                "threadId": "15642a34-e364-4e10-9bbd-717967b5720c"
+              },
+              {
+                "messages": 1,
+                "threadId": "1fa51eb2-ef8f-448d-a265-183d38f61198"
+              },
+              {
+                "messages": 1,
+                "threadId": "092a52be-22d1-4da3-9ac4-6524eb654689"
+              },
+              {
+                "messages": 1,
+                "threadId": "e60e7bb5-b86d-40fb-ae17-516d0d67729a"
+              },
+              {
+                "messages": 1,
+                "threadId": "6b0806c4-649d-4bf4-99b5-7785f23980ff"
+              },
+              {
+                "messages": 1,
+                "threadId": "7110cdc5-9559-4d15-8ab9-7a2b67913af7"
+              },
+              {
+                "messages": 1,
+                "threadId": "a59746c7-6fd6-444d-bf4f-b891cb24ac9b"
+              },
+              {
+                "messages": 1,
+                "threadId": "78c15c06-978b-4949-be8a-826208d08281"
+              },
+              {
+                "messages": 1,
+                "threadId": "112f521e-f34f-44e3-9af3-d87f1537c4ae"
+              }
+            ],
+            "memory": {
+              "rss": 259801088,
+              "heapTotal": 116932608,
+              "heapUsed": 113575720,
+              "external": 2155780,
+              "arrayBuffers": 21720
+            },
+            "pid": 94961,
+            "gcApplied": false
+          },
+          "chromeProcessRSS": {
+            "note": "Passive CDP process inventory plus OS RSS. Gross summed resident pages may count shared memory multiple times; not CSS-only/native allocation attribution.",
+            "processes": [
+              {
+                "type": "browser",
+                "id": 94965,
+                "cpuTime": 1.239287,
+                "rssBytes": 242204672
+              },
+              {
+                "type": "renderer",
+                "id": 94981,
+                "cpuTime": 0.052344,
+                "rssBytes": 104775680
+              },
+              {
+                "type": "renderer",
+                "id": 94977,
+                "cpuTime": 4.507192,
+                "rssBytes": 418168832
+              },
+              {
+                "type": "renderer",
+                "id": 94978,
+                "cpuTime": 6.444514,
+                "rssBytes": 441909248
+              },
+              {
+                "type": "renderer",
+                "id": 94975,
+                "cpuTime": 0.178445,
+                "rssBytes": 193478656
+              },
+              {
+                "type": "GPU",
+                "id": 94970,
+                "cpuTime": 2.306036,
+                "rssBytes": 152993792
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "id": 94971,
+                "cpuTime": 0.186016,
+                "rssBytes": 118751232
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "id": 94972,
+                "cpuTime": 0.042803,
+                "rssBytes": 84672512
+              }
+            ],
+            "grossSummedRSSBytes": 1756954624
+          }
+        }
+      ],
+      "cancellations": [
+        {
+          "i": 9,
+          "type": "pending",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 17,
+          "requestsAfter": 17
+        },
+        {
+          "i": 19,
+          "type": "pending",
+          "activeBefore": 0,
+          "activeAfter": 0,
+          "requestsBefore": 26,
+          "requestsAfter": 26
+        }
+      ],
+      "errors": [],
+      "warmupCompleted": 8,
+      "measuredElapsedMs": 10000,
+      "retained": [
+        {
+          "scenario": "chat",
+          "warm": 28102816,
+          "idle": 28902768,
+          "delta": 799952,
+          "relativePercent": 2.8465190107639033,
+          "budgetBytes": 5242880,
+          "needsInvestigation": false,
+          "domDelta": 8,
+          "listenerDelta": 0,
+          "styleDelta": 0,
+          "ruleDelta": 0
+        },
+        {
+          "scenario": "dashboard",
+          "warm": 28123172,
+          "idle": 29089980,
+          "delta": 966808,
+          "relativePercent": 3.4377629948712753,
+          "budgetBytes": 5242880,
+          "needsInvestigation": false,
+          "domDelta": 8,
+          "listenerDelta": 0,
+          "styleDelta": 0,
+          "ruleDelta": 0
+        }
+      ],
+      "serverLogs": ""
+    }
+  ],
+  "failures": [],
+  "chrome": "156.0.8078.47",
+  "status": "passed",
+  "finishedAt": "2026-10-23T20:22:15.195Z"
+}

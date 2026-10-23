@@ -1,0 +1,52 @@
+▲ Next.js 16.4.2 (webpack)
+✓ Running next.config.mjs took 8ms
+- Experiments (use with caution):
+  · cpus: 2
+
+  Creating an optimized production build ...
+⚠ Compiled with warnings in 2.7s
+
+./generated.jsx
+Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
+
+Import trace for requested module:
+./generated.jsx
+
+./generated.jsx
+Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
+
+Import trace for requested module:
+./generated.jsx
+
+⚠ Compiled with warnings in 2.5s
+
+./generated.jsx
+Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
+
+Import trace for requested module:
+./generated.jsx
+
+./generated.jsx
+Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
+
+Import trace for requested module:
+./generated.jsx
+
+✓ Compiled successfully in 5.3s
+  Skipping validation of types
+  Finished TypeScript config validation in 1ms ...
+  Collecting page data using 2 workers ...
+  Generating static pages using 2 workers (0/3) ...
+✓ Generating static pages using 2 workers (3/3) in 14.7s
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ƒ /
+├ ○ /_not-found
+└ ƒ /api/diagnostics
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

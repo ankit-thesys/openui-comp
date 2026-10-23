@@ -1,0 +1,680 @@
+{
+  "generatedAt": "2026-10-23T19:49:31.225Z",
+  "inputs": [
+    {
+      "path": "build-shared.mjs",
+      "bytes": 10263,
+      "sha256": "c02245e4d37844360f04302c8c88951df00359d771b44bfb6eb031572ebea569"
+    },
+    {
+      "path": "catalog-build.mjs",
+      "bytes": 343,
+      "sha256": "e85f7d66c98c04774d8c99678e02b3fa6ab4fa583dae3ce0e426a64d081a71cc"
+    },
+    {
+      "path": "catalog-check.mjs",
+      "bytes": 8926,
+      "sha256": "97a62a55e07ff509cdfd74ef438379d48a32f97a0814b11da0900cd82ebc1a26"
+    },
+    {
+      "path": "catalog-client.tsx",
+      "bytes": 295,
+      "sha256": "47626572012ac98469627784ea8c27b4427e86ca8d041630c6d586575dd7c526"
+    },
+    {
+      "path": "catalog-server.mjs",
+      "bytes": 1062,
+      "sha256": "573c622c7263d7e550e061c91d2157b54e534d9f650f238db3f74f9699392418"
+    },
+    {
+      "path": "catalog-ssr.tsx",
+      "bytes": 752,
+      "sha256": "d4713e682793d2f48b2ca55242625f53f5441b4d974c78076fdc0b67bb1bdf78"
+    },
+    {
+      "path": "catalog.tsx",
+      "bytes": 4544,
+      "sha256": "b25bb50a91e249e4522b2346e2692a0e0bb0bbea08a26b8b016c793af4eed128"
+    },
+    {
+      "path": "COVERAGE.json",
+      "bytes": 19960,
+      "sha256": "aa27a5e0f4a1a50edcb87b1f04aec6b17a3083f2d86ee6c4d57718fd149d93c6"
+    },
+    {
+      "path": "expand-generator.py",
+      "bytes": 5551,
+      "sha256": "c257703f1445690d8f0351d453cb0bced26ada7c797e256e2a240f62f024fc4d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7497,
+      "sha256": "82685bf98e4754831153442a430896d2295dd53892394879627d2606a07f6f73"
+    },
+    {
+      "path": "runtime/adapter.tsx",
+      "bytes": 2740,
+      "sha256": "33f07193e0597f4d7bd5890fdc8789558f6581e73bb841a7ea31b548f86179c2"
+    },
+    {
+      "path": "runtime/boundary-descriptors.json",
+      "bytes": 933219,
+      "sha256": "c3289ca6ad52e5f7e6a3f3ec217c6d690ec0755bc86a8a079bdce4c05fd946a7"
+    },
+    {
+      "path": "runtime/boundary-metadata.json",
+      "bytes": 985134,
+      "sha256": "31859085c59998ea653169a8338485deadd4bd47fd94c4e3e85e7fec6e480277"
+    },
+    {
+      "path": "runtime/Boundary.tsx",
+      "bytes": 1499,
+      "sha256": "83446ac641a850a68a5563bdef85793e95d1f6c493113fb50587aff6d05d4d46"
+    },
+    {
+      "path": "runtime/Button.tsx",
+      "bytes": 377,
+      "sha256": "fd9f72e2abaae2ce9e1aee07570cecaf5ed5b0f14951cea8fc2cddfa783af588"
+    },
+    {
+      "path": "runtime/descriptors.json",
+      "bytes": 461856,
+      "sha256": "e400fb0cc9428577ca68f0f9f404cee2cdeced1bf0379f55be2794a0825a2c2e"
+    },
+    {
+      "path": "runtime/descriptors/Accordion.json",
+      "bytes": 6005,
+      "sha256": "a57780adcbeaff7c2cfda759eb15e1a317d4c2a26b866f8f969c3ab7500057e2"
+    },
+    {
+      "path": "runtime/descriptors/AssistantMessage.json",
+      "bytes": 2519,
+      "sha256": "6d610859bd4f1eb9d832031fca381df99b0e2735a2d00c4d6370ba32b2da14df"
+    },
+    {
+      "path": "runtime/descriptors/BarChart.json",
+      "bytes": 22975,
+      "sha256": "dd3bb7fd7be6679f7f14de3f0e29a7c236288574e6937301cebe4908436fdde5"
+    },
+    {
+      "path": "runtime/descriptors/Button.json",
+      "bytes": 7838,
+      "sha256": "cbec4afc6ae99f46bc676ea83011df44e93d3186cc2c019ea7aa0633fcd4a29a"
+    },
+    {
+      "path": "runtime/descriptors/Buttons.json",
+      "bytes": 348,
+      "sha256": "43f1d07a101c92ececeeae077b1fa409fb9bc916ee7c493d800ef0dca33de4a4"
+    },
+    {
+      "path": "runtime/descriptors/Card.json",
+      "bytes": 1374,
+      "sha256": "48c328ac54bbddf3904ee2f14f4b6f79a9b4032adbec2b2c171eab1f33bd12b3"
+    },
+    {
+      "path": "runtime/descriptors/CardHeader.json",
+      "bytes": 1544,
+      "sha256": "2cc9965fc272bc1b7cd94e4bafd60d6101d905dfe8526116f73c5b91a1c45cb5"
+    },
+    {
+      "path": "runtime/descriptors/CheckBoxGroup.json",
+      "bytes": 3963,
+      "sha256": "e6b30ef1621a1ef8cf2721a5898873dfa922398343087b27031b8f384320796a"
+    },
+    {
+      "path": "runtime/descriptors/FormControl.json",
+      "bytes": 2058,
+      "sha256": "a59fbcf62cf776cb72da39653d27dd24254e304989b713fd17137f2e7a542b09"
+    },
+    {
+      "path": "runtime/descriptors/IconButton.json",
+      "bytes": 8816,
+      "sha256": "184f89ec3f626c1d86ba76c92ac8259fbe57b5c9053091f063432403e5e524c7"
+    },
+    {
+      "path": "runtime/descriptors/Input.json",
+      "bytes": 2775,
+      "sha256": "a535bcc6efd1ebb2c98f974b2003581f36f729ca07359053d875e299b132ee97"
+    },
+    {
+      "path": "runtime/descriptors/LineChart.json",
+      "bytes": 16040,
+      "sha256": "9ed4c6f0b1c233080e92014713994191885409cb6fe369b6f7666ee0ad54634f"
+    },
+    {
+      "path": "runtime/descriptors/Modal.json",
+      "bytes": 3204,
+      "sha256": "1d99ab944c27935e36b2f07c220f822f29a4e9ee39ae84fc1621564b21b982fa"
+    },
+    {
+      "path": "runtime/descriptors/PieChart.json",
+      "bytes": 19011,
+      "sha256": "11d41cb9b233340c62b35659c51424e2a82193a2c09015752cff9582c227f1ef"
+    },
+    {
+      "path": "runtime/descriptors/RadioGroup.json",
+      "bytes": 4741,
+      "sha256": "069f2e89b67b775623625e41e658067a2393fd0c34c122d116abb0132298a1bd"
+    },
+    {
+      "path": "runtime/descriptors/Select.json",
+      "bytes": 9908,
+      "sha256": "0bb13364af28c9ce12456033f048005736644071394216fcc0bc88e13db7dd50"
+    },
+    {
+      "path": "runtime/descriptors/Separator.json",
+      "bytes": 360,
+      "sha256": "12d39f1e41f330e33f53430b6d939cff732831d47b3016072dc7127f3aa531fc"
+    },
+    {
+      "path": "runtime/descriptors/Shell_sharedDetailed-viewDetailedViewOverlay.json",
+      "bytes": 920,
+      "sha256": "2d13752b45ad045cfda4937720153dea244b2f2bc75b9c2b9fa01887c241e42f"
+    },
+    {
+      "path": "runtime/descriptors/Shell_sharedDetailed-viewDetailedViewPanel.json",
+      "bytes": 1228,
+      "sha256": "d9d3030c796be7ac46539e3e675a87d74f429a6566cb16da38c51a58849b5ef1"
+    },
+    {
+      "path": "runtime/descriptors/Shell_sharedShared.json",
+      "bytes": 2157,
+      "sha256": "e569356fb595b42a13aeb9c912ad6d465d709452bce63741233555568a341b83"
+    },
+    {
+      "path": "runtime/descriptors/ShellAgentInterface.json",
+      "bytes": 152891,
+      "sha256": "77059d43dfa3317fc3d9cca436f35f0a8b0269214f08d1c5d68d3b14be4469f6"
+    },
+    {
+      "path": "runtime/descriptors/ShellArtifactBrowser.json",
+      "bytes": 12269,
+      "sha256": "552dc31246c40bb24a8b282d11a9958b641d20ccf8b5baff573b7132cf563d8c"
+    },
+    {
+      "path": "runtime/descriptors/ShellComponentsAmbientLoader.json",
+      "bytes": 694,
+      "sha256": "126170776628cfb9b49247e6507d6ef50f7b80a88f8be19312df2bac18973e55"
+    },
+    {
+      "path": "runtime/descriptors/ShellComponentsComposer.json",
+      "bytes": 5834,
+      "sha256": "c896cff7b0f0123a30b43a687f3e174b7e19c28e28611726691a6db5d2b06acf"
+    },
+    {
+      "path": "runtime/descriptors/ShellComponentsDesktopWelcomeComposer.json",
+      "bytes": 3829,
+      "sha256": "04b083e2f1d0c950b7e7758be6ad04a12693dc0e86a92b39a0b60336d87e1c6f"
+    },
+    {
+      "path": "runtime/descriptors/ShellComponentsMascotLoader.json",
+      "bytes": 664,
+      "sha256": "cddbef0563afcf3c32874ce24e6521cbb37afe95eeca02c9a9cbb06c3f88639b"
+    },
+    {
+      "path": "runtime/descriptors/ShellComponentsWelcomeMascot.json",
+      "bytes": 1332,
+      "sha256": "7df550070d872a3414b53508f4256ead8be0e14e080d92f3bc81803b3e69de87"
+    },
+    {
+      "path": "runtime/descriptors/ShellComponentsWelcomePrefillChips.json",
+      "bytes": 2755,
+      "sha256": "de81b94c0868a42916481c648affe2204840733813d1b35c1cc08d1303a85a29"
+    },
+    {
+      "path": "runtime/descriptors/ShellConversationStarter.json",
+      "bytes": 8871,
+      "sha256": "351cc1c86c19cc104c14f88f0a856bb361a32ade47e659f833d79d6c5d4be137"
+    },
+    {
+      "path": "runtime/descriptors/ShellHistoryMenu.json",
+      "bytes": 3643,
+      "sha256": "e0c7687071263e03cfedf0fbd6684eb9862e04b893ce6f54a6784a9f158ff0ba"
+    },
+    {
+      "path": "runtime/descriptors/ShellMobileHeader.json",
+      "bytes": 2349,
+      "sha256": "c82b026c5f43eb39d332f16ed8b7aeac1e2abde35eb9f07be70e4ca9189d12fc"
+    },
+    {
+      "path": "runtime/descriptors/ShellRenameChatDialog.json",
+      "bytes": 2613,
+      "sha256": "7d2bd1b37c02a8b878aa5f7e8e00c1c7651eead64608a772f6666a787dbeceb9"
+    },
+    {
+      "path": "runtime/descriptors/ShellResizableSeparator.json",
+      "bytes": 1787,
+      "sha256": "8a7f0bc68a185ab64cdde520a3ac711a573538e8971a23554f7ce8012c99b33e"
+    },
+    {
+      "path": "runtime/descriptors/ShellSidebar.json",
+      "bytes": 21043,
+      "sha256": "306439c7e178427a5c2fab858dc517194b681019136f49153e04ff0aa022603a"
+    },
+    {
+      "path": "runtime/descriptors/ShellThemeModeToggle.json",
+      "bytes": 1260,
+      "sha256": "926087dbcba2e8fe772b00e163b16b3797807f3b3001f9b8ce13dee4c2b0846f"
+    },
+    {
+      "path": "runtime/descriptors/ShellThread.json",
+      "bytes": 28805,
+      "sha256": "577fffbc8207a0f1cc54eb69afbf2f93d9e07861692fa53a266d1d4a3b08eedc"
+    },
+    {
+      "path": "runtime/descriptors/ShellThreadHeader.json",
+      "bytes": 4315,
+      "sha256": "e5feae69dbc94a52f10ba06effd8430a63ae84824408fac2a83f3e2646ee700c"
+    },
+    {
+      "path": "runtime/descriptors/ShellThreadlist.json",
+      "bytes": 13078,
+      "sha256": "ebb1d04c7e7e76fa67e267afef1e2e42b3841f212fcfdae69d1f937bd76e42ca"
+    },
+    {
+      "path": "runtime/descriptors/ShellWelcomeGlow.json",
+      "bytes": 3046,
+      "sha256": "ddcfb0c1771189d5b7a695a7448fd6710c2e6c814cca2516e442679e4d58a682"
+    },
+    {
+      "path": "runtime/descriptors/ShellWelcomeScreen.json",
+      "bytes": 13274,
+      "sha256": "fcbd29416bb56a9bcfb8a6847e10eea421a763157779c39bc8987e6695b0bc0d"
+    },
+    {
+      "path": "runtime/descriptors/ShellWorkspaceSidebar.json",
+      "bytes": 10831,
+      "sha256": "1b3dfe9078d685f26fa753f77fd3cb67f86652928ae77f9e949243931420be09"
+    },
+    {
+      "path": "runtime/descriptors/SwitchGroup.json",
+      "bytes": 4217,
+      "sha256": "4165c169ddedf77fdd12af9fe7122e0f0760c2e51359b1fc4b37ba2c21543c7e"
+    },
+    {
+      "path": "runtime/descriptors/Table.json",
+      "bytes": 4607,
+      "sha256": "3c23d8fbf4cbb9ebbcaa64e64cb6f22a47898d81ed859dce0c9cc353caa6d5de"
+    },
+    {
+      "path": "runtime/descriptors/Tabs.json",
+      "bytes": 10983,
+      "sha256": "a4fa1cea1481a891feb0facacfeb3cc555e79692f49096350d61ce1e1cf4eb2c"
+    },
+    {
+      "path": "runtime/descriptors/TextArea.json",
+      "bytes": 2029,
+      "sha256": "c8e43d633f971972b9babca5bf1be0a9ba2d6199ef242ead4ee18051faad2494"
+    },
+    {
+      "path": "runtime/descriptors/TextContent.json",
+      "bytes": 23966,
+      "sha256": "8f6edc691b6cbb966fe1c14ac81821632b41cb13af81590a6d9248aa77cf338d"
+    },
+    {
+      "path": "runtime/descriptors/Tooltip.json",
+      "bytes": 2155,
+      "sha256": "05dc48b43d41a9feeb972667745e67b2dc1829b940b0a56f9465fe54c1f30e2b"
+    },
+    {
+      "path": "runtime/Fixture.tsx",
+      "bytes": 5021,
+      "sha256": "90ca5c744f416ac6857d571ad1cfe75090c389cb1528b255de2291a7567fd4a0"
+    },
+    {
+      "path": "runtime/history/adapter-aggregate-metadata-failed.tsx",
+      "bytes": 2759,
+      "sha256": "019f4aa613213f7107db7e752845d4d47f3d039eb9290b271462636259ca78df"
+    },
+    {
+      "path": "runtime/metadata.json",
+      "bytes": 493824,
+      "sha256": "4fed77808d5ded3337baa9f3f4ec39879ddf573261118e63c85b7b2ac039bcf2"
+    },
+    {
+      "path": "runtime/metadata/Accordion.json",
+      "bytes": 6422,
+      "sha256": "98d9f277e3091877fc8c085cc319d9b2861e12e4da52d1bc4e1498c885c58f17"
+    },
+    {
+      "path": "runtime/metadata/AssistantMessage.json",
+      "bytes": 2854,
+      "sha256": "1cc4006c96705906b08a670b67f65acf5b8fae6e834fc6eb6d3a904a523b1455"
+    },
+    {
+      "path": "runtime/metadata/BarChart.json",
+      "bytes": 24887,
+      "sha256": "055508f196a19f666c384bf06b71f3addc63fc6d6004b9f62d89465d914392b1"
+    },
+    {
+      "path": "runtime/metadata/Button.json",
+      "bytes": 8656,
+      "sha256": "9316f52eb5d125dac52f767e3213a91bba6bc04aaf049bb7ac055c0985e4a035"
+    },
+    {
+      "path": "runtime/metadata/Buttons.json",
+      "bytes": 465,
+      "sha256": "006952e200854f25f0eb88286bf80fac0cf15b38e3283e9a29cb93494ab7d03e"
+    },
+    {
+      "path": "runtime/metadata/Card.json",
+      "bytes": 1549,
+      "sha256": "695c17af292adf574092802d404d3a92ce2d3bdeea4370f1a9e7d225098f596f"
+    },
+    {
+      "path": "runtime/metadata/CardHeader.json",
+      "bytes": 1673,
+      "sha256": "83f8b07e4eab736f237f1c9d1aa2137eed144a08a722d3847dd7e2f8d65e58fb"
+    },
+    {
+      "path": "runtime/metadata/CheckBoxGroup.json",
+      "bytes": 4304,
+      "sha256": "b8b609b108c6175938622e8ee05578c01e2dc357af1839b3f36ee082c16dab06"
+    },
+    {
+      "path": "runtime/metadata/FormControl.json",
+      "bytes": 2287,
+      "sha256": "61fc3f71e17369b9c477448ef6ca021cc293720126bcaa42f9853d1a5ddfc42c"
+    },
+    {
+      "path": "runtime/metadata/IconButton.json",
+      "bytes": 10189,
+      "sha256": "7b6e216f9e50cc90a86ab9f6007e9c637aa7c09f64277261725b688798c0298f"
+    },
+    {
+      "path": "runtime/metadata/Input.json",
+      "bytes": 3093,
+      "sha256": "accfc6c0823c5cadd0aea4461e6c2ce8bf10d93ee475452c38e759ed0b4cf783"
+    },
+    {
+      "path": "runtime/metadata/LineChart.json",
+      "bytes": 17470,
+      "sha256": "be9680a313bfbd8fa10abde26a358f49380271e0a8315df79862fc7e322a0892"
+    },
+    {
+      "path": "runtime/metadata/Modal.json",
+      "bytes": 3153,
+      "sha256": "8b3619e16cbd073c703ba525919861d7e7122f6ead7c89a661feacae8ea5d691"
+    },
+    {
+      "path": "runtime/metadata/PieChart.json",
+      "bytes": 20298,
+      "sha256": "c719b0340ca753d4da9feb2af99373838fd231ce4ef62e739035f86a6c33315b"
+    },
+    {
+      "path": "runtime/metadata/RadioGroup.json",
+      "bytes": 5356,
+      "sha256": "2d9eccf95285706c4bfefb47c8c4d3d27426b027964caf998e8070249ef2b936"
+    },
+    {
+      "path": "runtime/metadata/Select.json",
+      "bytes": 10551,
+      "sha256": "1cefbfa89c4bbf8258649382c26d6372fb2e1454039a48abc0f71e39f28d57ed"
+    },
+    {
+      "path": "runtime/metadata/Separator.json",
+      "bytes": 483,
+      "sha256": "2b8cf2db267c76c500eca24401b02c16097e3aeb375ed7267b77ec71d2a9ba0f"
+    },
+    {
+      "path": "runtime/metadata/Shell_sharedDetailed-viewDetailedViewOverlay.json",
+      "bytes": 564,
+      "sha256": "2516428acc93c3de920ca62c13e9ccf49da7cb12ac0e059cfe185cfffb4c8576"
+    },
+    {
+      "path": "runtime/metadata/Shell_sharedDetailed-viewDetailedViewPanel.json",
+      "bytes": 1239,
+      "sha256": "ddbdf0bc14cca866e9dc1aa4b9d9a9c424c079c0543eef5dc9f89c84f7f34333"
+    },
+    {
+      "path": "runtime/metadata/Shell_sharedShared.json",
+      "bytes": 1802,
+      "sha256": "f71a7d03788ad94506b5475ce7e1adcf4bfbf648a587def3f883d0bf00a03a60"
+    },
+    {
+      "path": "runtime/metadata/ShellAgentInterface.json",
+      "bytes": 160062,
+      "sha256": "385a5b4067cc8576025768fc1024f16530452a97f142bde6790c6b83d8db6f7d"
+    },
+    {
+      "path": "runtime/metadata/ShellArtifactBrowser.json",
+      "bytes": 12656,
+      "sha256": "9b4c2c489cb91dc9d1cc8d8a941434765760e3c967edd38670bb152b3b258b2c"
+    },
+    {
+      "path": "runtime/metadata/ShellComponentsAmbientLoader.json",
+      "bytes": 747,
+      "sha256": "7cb81aeb38339d20497a43a42a130f25afc0177955bc6216b2ed0d6b51aaabdf"
+    },
+    {
+      "path": "runtime/metadata/ShellComponentsComposer.json",
+      "bytes": 6360,
+      "sha256": "df7a1c8f39a526c5cc47f22950a0d394b1ff92a55870536783926e7d4c864ac1"
+    },
+    {
+      "path": "runtime/metadata/ShellComponentsDesktopWelcomeComposer.json",
+      "bytes": 4035,
+      "sha256": "900522fa79ed9bbc029d1d884b171d4e941281bd7a182d97e50f1895e7e26e19"
+    },
+    {
+      "path": "runtime/metadata/ShellComponentsMascotLoader.json",
+      "bytes": 689,
+      "sha256": "9e6646c41041cc759f247483097812c50259d334ed41105e9d01b0a5572fd614"
+    },
+    {
+      "path": "runtime/metadata/ShellComponentsWelcomeMascot.json",
+      "bytes": 1367,
+      "sha256": "deaf0e295193afacb6fb4b9adb6c425c09984f4a57aff82243dd1b18e57e3372"
+    },
+    {
+      "path": "runtime/metadata/ShellComponentsWelcomePrefillChips.json",
+      "bytes": 3020,
+      "sha256": "75423c0e845e144c968018f0f9865dd009383624e2adbd9e7da0a661e0a29ff8"
+    },
+    {
+      "path": "runtime/metadata/ShellConversationStarter.json",
+      "bytes": 9365,
+      "sha256": "5074759d22cb2bc7455cd94981b3e3d99edec9b77220baea12fb0c8cd788f35c"
+    },
+    {
+      "path": "runtime/metadata/ShellHistoryMenu.json",
+      "bytes": 3796,
+      "sha256": "6b26187ec1cedc694665798e8e0a880123292c6d4c46c862e1fb5bce8e065558"
+    },
+    {
+      "path": "runtime/metadata/ShellMobileHeader.json",
+      "bytes": 2556,
+      "sha256": "bcb630b499305267df9389218c31f9caa0e079498969c7763c659987f2fe716b"
+    },
+    {
+      "path": "runtime/metadata/ShellRenameChatDialog.json",
+      "bytes": 2907,
+      "sha256": "b373cf8bdbb39556b03af60afb2ccb9fbecffcaa045996f5c55f72be7fe9d1b4"
+    },
+    {
+      "path": "runtime/metadata/ShellResizableSeparator.json",
+      "bytes": 1826,
+      "sha256": "502e2c1d214f324b5013862e623467d00ce818e8a8d27dcaf6483b15a1612312"
+    },
+    {
+      "path": "runtime/metadata/ShellSidebar.json",
+      "bytes": 23195,
+      "sha256": "41d5185908f13670afe0e751279a8b3bd7e4db2051b8a8196c3ff874e8bc57f0"
+    },
+    {
+      "path": "runtime/metadata/ShellThemeModeToggle.json",
+      "bytes": 1373,
+      "sha256": "3e7b04e6844bdc5b07b7666a2144b43952e9a0e6b44549504bcb37cdf4838105"
+    },
+    {
+      "path": "runtime/metadata/ShellThread.json",
+      "bytes": 30499,
+      "sha256": "aa71688e43c08969f434abc9182272a8afa46b49643827de45e37ccec447a72b"
+    },
+    {
+      "path": "runtime/metadata/ShellThreadHeader.json",
+      "bytes": 4790,
+      "sha256": "1c19312f3d139c96e702f03246b62a1e2cabf6c36ffbc8cf9fbeb22aa9c27002"
+    },
+    {
+      "path": "runtime/metadata/ShellThreadlist.json",
+      "bytes": 14448,
+      "sha256": "44fdee947b96e6c5b27b3c86241c98a3e4c8ad4ca5ff52a7fa5cd58783e3ec53"
+    },
+    {
+      "path": "runtime/metadata/ShellWelcomeGlow.json",
+      "bytes": 3134,
+      "sha256": "02a83fbe11a0282d76cb8217fee87457aa0d52d0161e9d55f2c4916be93f7f45"
+    },
+    {
+      "path": "runtime/metadata/ShellWelcomeScreen.json",
+      "bytes": 14680,
+      "sha256": "0d7bab55049844eb80127b1d69767728f0b6e793b77239dc591fd133173c2b06"
+    },
+    {
+      "path": "runtime/metadata/ShellWorkspaceSidebar.json",
+      "bytes": 11182,
+      "sha256": "06a7c8ee65909d0713ccea85d2a59e561ec750ca3e5cfdff9b326ddee186e338"
+    },
+    {
+      "path": "runtime/metadata/SwitchGroup.json",
+      "bytes": 4491,
+      "sha256": "57f3dad5d4af0faa64eeb77ee3145f8265c8ce789ff5d75b456146d8ced44048"
+    },
+    {
+      "path": "runtime/metadata/Table.json",
+      "bytes": 5502,
+      "sha256": "ea80e6c20678ea1e40cd40b6c5db24d2575b01ea67f6f7c8008b89f8dd406d35"
+    },
+    {
+      "path": "runtime/metadata/Tabs.json",
+      "bytes": 11785,
+      "sha256": "5119ffbdb134a669489e60f304f24b219177a00def9a76ac051d7854e5e71124"
+    },
+    {
+      "path": "runtime/metadata/TextArea.json",
+      "bytes": 2187,
+      "sha256": "5f4fdb46dc13784767c80be49c78b982e460a46161e3f83bc3df993248625b14"
+    },
+    {
+      "path": "runtime/metadata/TextContent.json",
+      "bytes": 26599,
+      "sha256": "05ac1c1743ff74b4e6f6ac5ecf18bb8dbdcad160dae3390392607b4807d51a9e"
+    },
+    {
+      "path": "runtime/metadata/Tooltip.json",
+      "bytes": 2346,
+      "sha256": "8b6f1fdef0e7b13382d4fa82a9d6e43cfce40a603d0b54eb96053ee162906b34"
+    },
+    {
+      "path": "runtime/OriginalFixture.tsx",
+      "bytes": 3606,
+      "sha256": "8c38b1a3573352410fc916fe052bedaedbd42c083a4e7890574edfcac8819522"
+    },
+    {
+      "path": "runtime/parser-regressions.mjs",
+      "bytes": 2777,
+      "sha256": "622a5646db0db1f80aacf40eed807c5cc62c95c5053af02b43828b5efdebc398"
+    },
+    {
+      "path": "runtime/provenance.json",
+      "bytes": 8793,
+      "sha256": "60499df3f7f668d67c2d4cb54fade55cd1ee584e4302c08603cd9dcc5cf0c64b"
+    },
+    {
+      "path": "runtime/selector-normalize.mjs",
+      "bytes": 1733,
+      "sha256": "a105bedf11cda1090eb68dee91725bfbb1395b5bde2b0e3789af3093cb360ca6"
+    },
+    {
+      "path": "runtime/serializer-check.mjs",
+      "bytes": 2910,
+      "sha256": "149a8e9351274be0c7410bf1ca28602ea4cf4b12efe741a92c67f4cbef3512cc"
+    },
+    {
+      "path": "runtime/shell-units.json",
+      "bytes": 714,
+      "sha256": "10c5ae301a6a5404fa724fbad398b3465404dc7bbf5429a27d5197a6bd54360d"
+    },
+    {
+      "path": "runtime/workloads.ts",
+      "bytes": 2435,
+      "sha256": "e5d816786b5a71430f65ec56380e4352a9a28a8329c0b4772ce3c260740abf07"
+    },
+    {
+      "path": "vendor/goober/parse.upstream.js",
+      "bytes": 2386,
+      "sha256": "24428aaffe71261e6cec97119d0cf4ec676f43eca163c56f4fc8500fd9816447"
+    },
+    {
+      "path": "vendor/goober/PRIVATE-PATCH.diff",
+      "bytes": 2798,
+      "sha256": "aeaf5f5c4bb8b888f564d49228c3ae499cffadcd69f5c93a83dfab12651305b2"
+    },
+    {
+      "path": "vendor/goober/src/core/astish.js",
+      "bytes": 780,
+      "sha256": "fa9b4d5b6e40b0ab67aefb30250d2b23c0397463c032ed2d2a6e8f396d83b880"
+    },
+    {
+      "path": "vendor/goober/src/core/compile.js",
+      "bytes": 1512,
+      "sha256": "9adb1bbf06e741371b3856c5f5f8b03b3ea6fd3196f44adbf11ce86644bb1091"
+    },
+    {
+      "path": "vendor/goober/src/core/get-sheet.js",
+      "bytes": 839,
+      "sha256": "24a72db1190365080ce46ab1955beb254991526ea0b9e5538b815f922946cc9a"
+    },
+    {
+      "path": "vendor/goober/src/core/hash.js",
+      "bytes": 2064,
+      "sha256": "3881d2eed4cf5ad9afb5a64d8603bb178e5d96028408ca158f990b61a68582fa"
+    },
+    {
+      "path": "vendor/goober/src/core/parse.js",
+      "bytes": 3330,
+      "sha256": "27086bbd1239ec5e4ec77f361dfc5339ccddbd1077d1155668e89f68e71c3b65"
+    },
+    {
+      "path": "vendor/goober/src/core/to-hash.js",
+      "bytes": 440,
+      "sha256": "e2e0e4d15d37a6a9d5b4a35180b60e410265c1768bdef74e108d1b3c706b786c"
+    },
+    {
+      "path": "vendor/goober/src/core/update.js",
+      "bytes": 660,
+      "sha256": "49b731ed26e06fbf8cbc102714a629be73b5db0a32d5d49953b57b4c717000cc"
+    },
+    {
+      "path": "vendor/goober/src/css.js",
+      "bytes": 926,
+      "sha256": "fc410f79d92f34904376decba308769ca575ce4785f6e719de9cf5f6d646cc3e"
+    },
+    {
+      "path": "vendor/goober/src/index.js",
+      "bytes": 132,
+      "sha256": "5b597ec7eeba6fd04f61ccc696d974b1d8d1cbe9ba4cc4c5f446d2a3fa88b079"
+    },
+    {
+      "path": "vendor/goober/src/styled.js",
+      "bytes": 2179,
+      "sha256": "0f567e08162005954114ac3f38fca36a648780f0d819b1c36d941cbdef831ffa"
+    },
+    {
+      "path": "vendor/goober/upstream-package.json",
+      "bytes": 4932,
+      "sha256": "47fd667839f512349bc00304d488ad3811a729883f93c0f74d09d831596b110a"
+    },
+    {
+      "path": "vendor/goober/UPSTREAM.json",
+      "bytes": 685,
+      "sha256": "f5cc6c2aa00512578de3f51908afaf39c2414d50978753d8d50ef8aab83050fa"
+    },
+    {
+      "path": "verify-serializers.mjs",
+      "bytes": 583,
+      "sha256": "5bb2f8d5c7b24ef0b98ee03197d0d1eaab9f40689ff58b5366b530a5688b2824"
+    }
+  ]
+}

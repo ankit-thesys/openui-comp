@@ -1,0 +1,21 @@
+{
+  "version": "2.1.19",
+  "source": "/Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/goober",
+  "license": "MIT",
+  "files": [
+    {
+      "file": "package.json",
+      "sha256": "47fd667839f512349bc00304d488ad3811a729883f93c0f74d09d831596b110a"
+    },
+    {
+      "file": "LICENSE",
+      "sha256": "02b4d13362a16661a88f88bae6168e7a425018148de0fab5e35ff0f6ba2ff27a"
+    },
+    {
+      "file": "src/core/parse.js",
+      "sha256": "24428aaffe71261e6cec97119d0cf4ec676f43eca163c56f4fc8500fd9816447"
+    }
+  ],
+  "patch": "PRIVATE-PATCH.diff",
+  "status": "Private experimental fork; not accepted maintenance fork or upstream change."
+}

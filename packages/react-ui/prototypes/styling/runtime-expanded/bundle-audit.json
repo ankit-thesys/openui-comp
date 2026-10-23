@@ -1,0 +1,146 @@
+{
+  "generatedAt": "2026-10-23T19:47:26.515Z",
+  "scope": "Dedicated minified ESM Button entry, React external; JS excludes CSS/network costs. Not public-package barrel/tarball certification. Explicitly inspect aggregate property metadata retention.",
+  "rows": [
+    {
+      "arm": "baseline",
+      "raw": 10588,
+      "gzip": 3968,
+      "sha256": "ecfac4e9f364b8daf1feddc1188e2a7e4d8664ae31a06852119b8b712d60e271",
+      "goober": false,
+      "chartImplementation": false,
+      "aggregateMetadata": [],
+      "inputs": [
+        {
+          "path": "../openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/cjs/react.production.js",
+          "bytesInOutput": 7857
+        },
+        {
+          "path": "../openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/index.js",
+          "bytesInOutput": 46
+        },
+        {
+          "path": "../openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/cjs/react-jsx-runtime.production.js",
+          "bytesInOutput": 355
+        },
+        {
+          "path": "../openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/jsx-runtime.js",
+          "bytesInOutput": 46
+        },
+        {
+          "path": "../openui-styling-prototype/packages/react-ui/prototypes/styling/real/node_modules/clsx/dist/clsx.mjs",
+          "bytesInOutput": 368
+        },
+        {
+          "path": "../openui-styling-prototype/packages/react-ui/src/components/Button/Button.tsx",
+          "bytesInOutput": 740
+        }
+      ]
+    },
+    {
+      "arm": "runtime",
+      "raw": 30922,
+      "gzip": 7910,
+      "sha256": "c605f395163819975788dd49e6d2ee7cd8587688dea183664af129cd179892f7",
+      "goober": true,
+      "chartImplementation": false,
+      "aggregateMetadata": [],
+      "inputs": [
+        {
+          "path": "../openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/cjs/react.production.js",
+          "bytesInOutput": 7857
+        },
+        {
+          "path": "../openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/index.js",
+          "bytesInOutput": 48
+        },
+        {
+          "path": "../openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/cjs/react-jsx-runtime.production.js",
+          "bytesInOutput": 359
+        },
+        {
+          "path": "../openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/jsx-runtime.js",
+          "bytesInOutput": 49
+        },
+        {
+          "path": "../openui-styling-prototype/packages/react-ui/prototypes/styling/real/node_modules/clsx/dist/clsx.mjs",
+          "bytesInOutput": 368
+        },
+        {
+          "path": "../openui-styling-prototype/packages/react-ui/src/components/Button/Button.tsx",
+          "bytesInOutput": 744
+        },
+        {
+          "path": "../../../../private/tmp/openui-runtime-expanded-components/runtime/metadata/Button.json",
+          "bytesInOutput": 8268
+        },
+        {
+          "path": "../../../../private/tmp/openui-runtime-expanded-components/runtime/descriptors/Button.json",
+          "bytesInOutput": 7832
+        },
+        {
+          "path": "../../../../private/tmp/openui-runtime-expanded-components/runtime/adapter.tsx",
+          "bytesInOutput": 1731
+        },
+        {
+          "path": "../../../../private/tmp/openui-runtime-expanded-components/vendor/goober/src/core/to-hash.js",
+          "bytesInOutput": 85
+        },
+        {
+          "path": "../../../../private/tmp/openui-runtime-expanded-components/vendor/goober/src/core/get-sheet.js",
+          "bytesInOutput": 282
+        },
+        {
+          "path": "../../../../private/tmp/openui-runtime-expanded-components/vendor/goober/src/core/update.js",
+          "bytesInOutput": 102
+        },
+        {
+          "path": "../../../../private/tmp/openui-runtime-expanded-components/vendor/goober/src/core/astish.js",
+          "bytesInOutput": 305
+        },
+        {
+          "path": "../../../../private/tmp/openui-runtime-expanded-components/vendor/goober/src/core/parse.js",
+          "bytesInOutput": 958
+        },
+        {
+          "path": "../../../../private/tmp/openui-runtime-expanded-components/vendor/goober/src/core/hash.js",
+          "bytesInOutput": 278
+        },
+        {
+          "path": "../../../../private/tmp/openui-runtime-expanded-components/vendor/goober/src/core/compile.js",
+          "bytesInOutput": 212
+        },
+        {
+          "path": "../../../../private/tmp/openui-runtime-expanded-components/vendor/goober/src/css.js",
+          "bytesInOutput": 231
+        },
+        {
+          "path": "../../../../private/tmp/openui-runtime-expanded-components/runtime/Button.tsx",
+          "bytesInOutput": 28
+        }
+      ]
+    },
+    {
+      "arm": "unused",
+      "raw": 51,
+      "gzip": 68,
+      "sha256": "9adee2ba859f6fd091a5b83b1d050ebd707da69740f636613dc75ac32a9aa07d",
+      "goober": false,
+      "chartImplementation": false,
+      "aggregateMetadata": [],
+      "inputs": [
+        {
+          "path": "../../../../private/tmp/openui-runtime-expanded-report/bundle/unused.tsx",
+          "bytesInOutput": 30
+        }
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "runtime/adapter.tsx": "33f07193e0597f4d7bd5890fdc8789558f6581e73bb841a7ea31b548f86179c2",
+    "runtime/Button.tsx": "fd9f72e2abaae2ce9e1aee07570cecaf5ed5b0f14951cea8fc2cddfa783af588",
+    "runtime/metadata.json": "4fed77808d5ded3337baa9f3f4ec39879ddf573261118e63c85b7b2ac039bcf2",
+    "runtime/boundary-metadata.json": "31859085c59998ea653169a8338485deadd4bd47fd94c4e3e85e7fec6e480277",
+    "runtime/descriptors/Button.json": "cbec4afc6ae99f46bc676ea83011df44e93d3186cc2c019ea7aa0633fcd4a29a"
+  }
+}

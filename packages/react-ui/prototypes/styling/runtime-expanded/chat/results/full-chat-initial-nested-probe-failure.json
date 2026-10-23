@@ -1,0 +1,10 @@
+{
+  "scope": "Actual AgentInterface, ChatProvider/store, fetchLLM/agUIAdapter; actual runtime Goober candidate versus baseline Sass. Expanded payload combines original scenario with one production controls/layout/three-chart block; not identical to historical chat timings. Candidate full-shell aggregate ownership is diagnostic, not component-on-demand/tree-shaking proof. Server-backed consumer history adapter; retry resubmits last user message.",
+  "generatedAt": "2026-10-23T19:43:50.176Z",
+  "status": "failed",
+  "failure": {
+    "message": "Synthetic no-header nested-not-has selector branch mismatch",
+    "stack": "Error: Synthetic no-header nested-not-has selector branch mismatch\n    at assert (file:///private/tmp/openui-runtime-expanded-chat/check.mjs:2:293)\n    at file:///private/tmp/openui-runtime-expanded-chat/check.mjs:6:1725"
+  },
+  "results": []
+}

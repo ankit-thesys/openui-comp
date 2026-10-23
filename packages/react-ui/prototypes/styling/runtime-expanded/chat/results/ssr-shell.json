@@ -1,0 +1,57 @@
+{
+  "scope": "Actual FullChat unseeded shell ReactDOM SSR/hydration; candidate runtime object CSS resources with inline scoped tokens, no baseline stylesheet. Actual send/stream covered separately. Empty composer SSR does not claim server assistant/parser execution.",
+  "checks": {
+    "baselineSSRComposer": true,
+    "baselineHydratedInput": true,
+    "baselineScopedAccent": true,
+    "baselineBodySentinel": true,
+    "baselineActualThemeToggle": true,
+    "runtimeSSRComposer": true,
+    "RuntimeSSRNoLegacy": true,
+    "runtimeHydratedInput": true,
+    "runtimeScopedAccent": true,
+    "runtimeBodySentinel": true,
+    "runtimeActualThemeToggle": true,
+    "NoHydrationErrors": true
+  },
+  "rows": [
+    {
+      "arm": "baseline",
+      "initial": {
+        "composer": {
+          "padding": "6px 0px",
+          "font": "",
+          "fontSize": "15px",
+          "width": "646px"
+        },
+        "shell": {
+          "display": "flex"
+        },
+        "themeScopes": 1,
+        "stylesheets": 1,
+        "runtimeResources": 0,
+        "html": "OpenUI runtime integrationNew ChatOpenUI runtime integrationOpenUI runtime conversationActual production welcome and composer"
+      }
+    },
+    {
+      "arm": "runtime",
+      "initial": {
+        "composer": {
+          "padding": "6px 0px",
+          "font": "",
+          "fontSize": "15px",
+          "width": "646px"
+        },
+        "shell": {
+          "display": "flex"
+        },
+        "themeScopes": 1,
+        "stylesheets": 0,
+        "runtimeResources": 1,
+        "html": "OpenUI runtime integrationNew ChatOpenUI runtime integrationOpenUI runtime conversationActual production welcome and composer"
+      }
+    }
+  ],
+  "errors": [],
+  "status": "passed"
+}

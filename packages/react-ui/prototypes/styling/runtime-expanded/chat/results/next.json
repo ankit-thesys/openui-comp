@@ -1,0 +1,194 @@
+{
+  "scope": "Production Next actual AgentInterface/ChatProvider SSR/hydration with explicit per-provider preloaded conversation fixture. Public setMessages called once from ThreadHeader start slot before Messages; harness workaround, not an accepted initial-state API. Separate unseeded ReactDOM shell and live-send checks preserved. Candidate runtime objects only; aggregate shell delivery not on-demand proof.",
+  "checks": {
+    "baselinechatSSRRendererCompanion": true,
+    "baselinechatHydratedComposer": true,
+    "baselinechatActualNextStreamFinal": true,
+    "baselinedashboardSSRRendererCompanion": true,
+    "baselinedashboardHydratedComposer": true,
+    "baselinedashboardActualNextStreamFinal": true,
+    "runtimechatSSRRendererCompanion": true,
+    "chatNoLegacyCSS": true,
+    "runtimechatHydratedComposer": true,
+    "runtimechatActualNextStreamFinal": true,
+    "chatNextNavigationStyles": true,
+    "runtimedashboardSSRRendererCompanion": true,
+    "dashboardNoLegacyCSS": true,
+    "runtimedashboardHydratedComposer": true,
+    "runtimedashboardActualNextStreamFinal": true,
+    "dashboardNextNavigationStyles": true,
+    "ConcurrentIndependentThemeScopes": true,
+    "DiagnosticsGC": true,
+    "NoHydrationOrRenderWarnings": true
+  },
+  "rows": [
+    {
+      "arm": "baseline",
+      "scenario": "chat",
+      "raw": {
+        "text": "Navigate actual chat fixtureOpenUI runtime integrationNew ChatOpenUI runtime integrationOpenUI runtime conversationActual production welcome and composerOpenUI research conversationProduction components and parser replayResponse 1\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 2\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewExpanded runtime component investigationControls, stateful layout and real D3 chartsSection 1\nReal markdown, controls and charts with production OpenUI components.AccountProduction inputRegionChoose regionChannelsEmailEmail updatesSMSText updatesAutomationEnabledScheduled automationPlanStarterBasic planProAdvanced planApplySaveNameRevenueA42B55C63Revenue0204060JanFebMarMonthRevenueRevenue0204060JanFebMarMonthRevenueSummaryDetailsMethodologyProduction accordion content",
+        "cards": 1,
+        "tables": 1,
+        "charts": 1,
+        "scopes": [
+          "openui-expanded-chat-_R_aavb_"
+        ]
+      }
+    },
+    {
+      "arm": "baseline",
+      "scenario": "dashboard",
+      "raw": {
+        "text": "Navigate actual chat fixtureOpenUI runtime integrationNew ChatOpenUI runtime integrationOpenUI runtime conversationActual production welcome and composerRegional revenue dashboardProduction components and parser replayRegion 1\nRevenue and forecast across six months. Review the underlying regional data below.Revenue ($K)020406080100120JanFebMarAprMayJunMonthRevenueForecastAccountRevenueStatusRegion 1 account 11000ReviewRegion 1 account 21123ActiveRegion 1 account 31246ActiveRegion 1 account 41369ReviewRegion 1 account 51492ActiveRegion 1 account 61615ActiveRegion 1 account 71738ReviewRegion 1 account 81861ActiveRegion 1 account 91984ActiveRegion 1 account 102107ReviewFollow-up questionEdit when streaming completesExplore resultsSave viewRegion 2\nRevenue and forecast across six months. Review the underlying regional data below.Revenue ($K)020406080100JanFebMarAprMayJunMonthRevenueForecastAccountRevenueStatusRegion 2 account 11037ReviewRegion 2 account 21160ActiveRegion 2 account 31283ActiveRegion 2 account 41406ReviewRegion 2 account 51529ActiveRegion 2 account 61652ActiveRegion 2 account 71775ReviewRegion 2 account 81898ActiveRegion 2 account 92021ActiveRegion 2 account 102144ReviewFollow-up questionEdit when streaming completesExplore resultsSave viewExpanded runtime component investigationControls, stateful layout and real D3 chartsSection 1\nReal markdown, controls and charts with production OpenUI components.AccountProduction inputRegionChoose regionChannelsEmailEmail updatesSMSText updatesAutomationEnabledScheduled automationPlanStarterBasic planProAdvanced planApplySaveNameRevenueA42B55C63Revenue0204060JanFebMarMonthRevenueRevenue0204060JanFebMarMonthRevenueSummaryDetailsMethodologyProduction accordion content",
+        "cards": 1,
+        "tables": 3,
+        "charts": 3,
+        "scopes": [
+          "openui-expanded-chat-_R_aavb_"
+        ]
+      }
+    },
+    {
+      "arm": "runtime",
+      "scenario": "chat",
+      "raw": {
+        "text": "Navigate actual chat fixtureOpenUI runtime integrationNew ChatOpenUI runtime integrationOpenUI runtime conversationActual production welcome and composerOpenUI research conversationProduction components and parser replayResponse 1\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewResponse 2\nOpenUI renders this streamed answer with production markdown. The analysis compares regional revenue, explains the assumptions, and proposes a follow-up.\n\nReview the evidence\nUpdate the question\nExplore the results\nFollow-up questionEdit when streaming completesExplore resultsSave viewExpanded runtime component investigationControls, stateful layout and real D3 chartsSection 1\nReal markdown, controls and charts with production OpenUI components.AccountProduction inputRegionChoose regionChannelsEmailEmail updatesSMSText updatesAutomationEnabledScheduled automationPlanStarterBasic planProAdvanced planApplySaveNameRevenueA42B55C63Revenue0204060JanFebMarMonthRevenueRevenue0204060JanFebMarMonthRevenueSummaryDetailsMethodologyProduction accordion content",
+        "cards": 1,
+        "tables": 1,
+        "charts": 1,
+        "scopes": [
+          "openui-expanded-chat-_R_aavb_"
+        ]
+      }
+    },
+    {
+      "arm": "runtime",
+      "scenario": "dashboard",
+      "raw": {
+        "text": "Navigate actual chat fixtureOpenUI runtime integrationNew ChatOpenUI runtime integrationOpenUI runtime conversationActual production welcome and composerRegional revenue dashboardProduction components and parser replayRegion 1\nRevenue and forecast across six months. Review the underlying regional data below.Revenue ($K)020406080100120JanFebMarAprMayJunMonthRevenueForecastAccountRevenueStatusRegion 1 account 11000ReviewRegion 1 account 21123ActiveRegion 1 account 31246ActiveRegion 1 account 41369ReviewRegion 1 account 51492ActiveRegion 1 account 61615ActiveRegion 1 account 71738ReviewRegion 1 account 81861ActiveRegion 1 account 91984ActiveRegion 1 account 102107ReviewFollow-up questionEdit when streaming completesExplore resultsSave viewRegion 2\nRevenue and forecast across six months. Review the underlying regional data below.Revenue ($K)020406080100JanFebMarAprMayJunMonthRevenueForecastAccountRevenueStatusRegion 2 account 11037ReviewRegion 2 account 21160ActiveRegion 2 account 31283ActiveRegion 2 account 41406ReviewRegion 2 account 51529ActiveRegion 2 account 61652ActiveRegion 2 account 71775ReviewRegion 2 account 81898ActiveRegion 2 account 92021ActiveRegion 2 account 102144ReviewFollow-up questionEdit when streaming completesExplore resultsSave viewExpanded runtime component investigationControls, stateful layout and real D3 chartsSection 1\nReal markdown, controls and charts with production OpenUI components.AccountProduction inputRegionChoose regionChannelsEmailEmail updatesSMSText updatesAutomationEnabledScheduled automationPlanStarterBasic planProAdvanced planApplySaveNameRevenueA42B55C63Revenue0204060JanFebMarMonthRevenueRevenue0204060JanFebMarMonthRevenueSummaryDetailsMethodologyProduction accordion content",
+        "cards": 1,
+        "tables": 3,
+        "charts": 3,
+        "scopes": [
+          "openui-expanded-chat-_R_aavb_"
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "concurrent": [
+    {
+      "seed": 0,
+      "data": [
+        {
+          "scope": "openui-expanded-chat-_R_aavb_",
+          "accent": "oklch(0.6 0.18 0.000000 / 1)"
+        },
+        {
+          "scope": "openui-expanded-chat-_R_bavb_",
+          "accent": "oklch(0.6 0.18 0.000000 / 1)"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "data": [
+        {
+          "scope": "openui-expanded-chat-_R_aavb_",
+          "accent": "oklch(0.6 0.18 137.508000 / 1)"
+        },
+        {
+          "scope": "openui-expanded-chat-_R_bavb_",
+          "accent": "oklch(0.6 0.18 137.508000 / 1)"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "seed": 2,
+      "data": [
+        {
+          "scope": "openui-expanded-chat-_R_aavb_",
+          "accent": "oklch(0.6 0.18 275.016000 / 1)"
+        },
+        {
+          "scope": "openui-expanded-chat-_R_bavb_",
+          "accent": "oklch(0.6 0.18 275.016000 / 1)"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "seed": 3,
+      "data": [
+        {
+          "scope": "openui-expanded-chat-_R_aavb_",
+          "accent": "oklch(0.6 0.18 52.524000 / 1)"
+        },
+        {
+          "scope": "openui-expanded-chat-_R_bavb_",
+          "accent": "oklch(0.6 0.18 52.524000 / 1)"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "seed": 4,
+      "data": [
+        {
+          "scope": "openui-expanded-chat-_R_aavb_",
+          "accent": "oklch(0.6 0.18 190.032000 / 1)"
+        },
+        {
+          "scope": "openui-expanded-chat-_R_bavb_",
+          "accent": "oklch(0.6 0.18 190.032000 / 1)"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "seed": 5,
+      "data": [
+        {
+          "scope": "openui-expanded-chat-_R_aavb_",
+          "accent": "oklch(0.6 0.18 327.540000 / 1)"
+        },
+        {
+          "scope": "openui-expanded-chat-_R_bavb_",
+          "accent": "oklch(0.6 0.18 327.540000 / 1)"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "seed": 6,
+      "data": [
+        {
+          "scope": "openui-expanded-chat-_R_aavb_",
+          "accent": "oklch(0.6 0.18 105.048000 / 1)"
+        },
+        {
+          "scope": "openui-expanded-chat-_R_bavb_",
+          "accent": "oklch(0.6 0.18 105.048000 / 1)"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "seed": 7,
+      "data": [
+        {
+          "scope": "openui-expanded-chat-_R_aavb_",
+          "accent": "oklch(0.6 0.18 242.556000 / 1)"
+        },
+        {
+          "scope": "openui-expanded-chat-_R_bavb_",
+          "accent": "oklch(0.6 0.18 242.556000 / 1)"
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "status": "passed"
+}

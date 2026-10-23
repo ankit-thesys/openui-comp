@@ -1,0 +1,2148 @@
+{
+  "version": 2,
+  "generatedAt": "2026-10-23T20:37:50.194Z",
+  "scope": "Post-timing accounting correction only, no benchmark/browser rerun and no candidate/build modification. Calls exact frozen RuntimeBoundary ownedStyle options including ownership rows. Prior unchanged DOM-selector usage observations are reused by unit. A matched family still contains unused states; no on-demand delivery proof.",
+  "correction": "Version1 passed obsolete boolean true to the StyleOptions API and omitted all ownership guard rows, undercounting actual emitted CSS. Version1 source/results/build/frozen manifest are preserved.",
+  "checks": {
+    "MeasuredSourceAndBuildUnchanged": true,
+    "ExactOriginalBrowserDecodedCodeUnits": true,
+    "OriginalCharsetConfirmed": true,
+    "HeaderOnlyUtf8ControlExact": true,
+    "ExactBrowserResourceHrefs": true,
+    "All47Families": true
+  },
+  "failures": [],
+  "executedManifestSha256": "c5b6aea46ce42791fefe761daf2ad31c248b0142f07cb80fec0886a399ee80c4",
+  "executedFileChanges": [],
+  "totalCssBytes": 1500896,
+  "totalCssCharacters": 1500864,
+  "originalWindows1252DecodedCharacters": 1500896,
+  "priorInventorySha256": "432b3331b02ef3b4b8786bf05f3556a753d7971a86a52e0a3021c7145cac4962",
+  "priorUndercountedCssBytes": 880729,
+  "omittedGuardBytes": 620167,
+  "scenarios": [
+    {
+      "scenario": "chat",
+      "emittedUnits": 47,
+      "matchedUnits": 28,
+      "totalCssBytes": 1500896,
+      "unmatchedCssBytes": 207056,
+      "priorUndercountedUnmatchedCssBytes": 123069,
+      "units": [
+        {
+          "cssBytes": 4307,
+          "cssCharacters": 4307,
+          "windows1252DecodedCharacters": 4307,
+          "cssSha256": "7c7e9ce4640779e15ab0792e3fffe726d3e11ce8786d443278f8d997fb9e7f75",
+          "href": "openui-expanded-v1:Card:boundary:go1575007177",
+          "rowCount": 12,
+          "source": {
+            "sourceFiles": [
+              "Card/card.scss"
+            ],
+            "rawCssBytes": 762,
+            "rules": 81
+          },
+          "unit": "Card",
+          "matchingSelectorRows": 3,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 27727,
+          "cssCharacters": 27727,
+          "windows1252DecodedCharacters": 27727,
+          "cssSha256": "b037f55c91dba7a25b83e702ea6c10bc1b28c9ff1310721a19eb38a5a0cf90ac",
+          "href": "openui-expanded-v1:Button:boundary:go278159681",
+          "rowCount": 60,
+          "source": {
+            "sourceFiles": [
+              "Button/button.scss"
+            ],
+            "rawCssBytes": 4563,
+            "rules": 327
+          },
+          "unit": "Button",
+          "matchingSelectorRows": 4,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 8683,
+          "cssCharacters": 8683,
+          "windows1252DecodedCharacters": 8683,
+          "cssSha256": "4f6f0bcb3a0e0de2297a87dd8c5c12ee8809e5374e5c34af5947e4ff6805be80",
+          "href": "openui-expanded-v1:Input:boundary:go1108635726",
+          "rowCount": 22,
+          "source": {
+            "sourceFiles": [
+              "Input/input.scss"
+            ],
+            "rawCssBytes": 1633,
+            "rules": 120
+          },
+          "unit": "Input",
+          "matchingSelectorRows": 2,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 4986,
+          "cssCharacters": 4986,
+          "windows1252DecodedCharacters": 4986,
+          "cssSha256": "6e2996daf505274a84bc7122355f159ef73d7b0e7f6bbe3f25ff3c3e20a2c2ae",
+          "href": "openui-expanded-v1:CardHeader:boundary:go898436157",
+          "rowCount": 12,
+          "source": {
+            "sourceFiles": [
+              "CardHeader/cardHeader.scss"
+            ],
+            "rawCssBytes": 912,
+            "rules": 105
+          },
+          "unit": "CardHeader",
+          "matchingSelectorRows": 5,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 1391,
+          "cssCharacters": 1391,
+          "windows1252DecodedCharacters": 1391,
+          "cssSha256": "27d2ca02a78ce1cf7aa0c85e9031c8e9ec8b608c62e0efb386c29a6243167a80",
+          "href": "openui-expanded-v1:Buttons:boundary:go3261390454",
+          "rowCount": 6,
+          "source": {
+            "sourceFiles": [
+              "Buttons/buttons.scss"
+            ],
+            "rawCssBytes": 196,
+            "rules": 30
+          },
+          "unit": "Buttons",
+          "matchingSelectorRows": 2,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 6851,
+          "cssCharacters": 6851,
+          "windows1252DecodedCharacters": 6851,
+          "cssSha256": "821b2fa811dd5b393a56d4f95403c43efbfead93f3ba0663a0755d96aaf84e6a",
+          "href": "openui-expanded-v1:FormControl:boundary:go3777145176",
+          "rowCount": 16,
+          "source": {
+            "sourceFiles": [
+              "FormControl/formControl.scss",
+              "FormControl/Hint/hint.scss",
+              "Label/label.scss"
+            ],
+            "rawCssBytes": 1185,
+            "rules": 114
+          },
+          "unit": "FormControl",
+          "matchingSelectorRows": 4,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 74424,
+          "cssCharacters": 74392,
+          "windows1252DecodedCharacters": 74424,
+          "cssSha256": "07ec87cfdbec789b6e581576f1c33eb4a30bfd9d66958e43c7e90ed95bde9855",
+          "href": "openui-expanded-v1:TextContent:boundary:go954855282",
+          "rowCount": 216,
+          "source": {
+            "sourceFiles": [
+              "TextContentWrapper/textContentWrapper.scss",
+              "MarkDownRenderer/markDownRenderer.scss"
+            ],
+            "rawCssBytes": 11010,
+            "rules": 1179
+          },
+          "unit": "TextContent",
+          "matchingSelectorRows": 22,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 15720,
+          "cssCharacters": 15720,
+          "windows1252DecodedCharacters": 15720,
+          "cssSha256": "e5ff182f42d1d5872c736a914c083142678d25c20869c40976e76747fb745688",
+          "href": "openui-expanded-v1:Table:boundary:go2912324851",
+          "rowCount": 52,
+          "source": {
+            "sourceFiles": [
+              "Table/table.scss"
+            ],
+            "rawCssBytes": 2555,
+            "rules": 279
+          },
+          "unit": "Table",
+          "matchingSelectorRows": 13,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 77444,
+          "cssCharacters": 77444,
+          "windows1252DecodedCharacters": 77444,
+          "cssSha256": "ac43802738747bf12cc5bcf393f9ce09f7e66419d9d545d0bc4efd1134caaa61",
+          "href": "openui-expanded-v1:BarChart:boundary:go1992396001",
+          "rowCount": 190,
+          "source": {
+            "sourceFiles": [
+              "Charts/BarChart/barChart.scss",
+              "Charts/shared/core/DefaultLegend/defaultLegend.scss",
+              "Charts/shared/core/StackedLegend/stackedLegend.scss",
+              "Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.scss",
+              "Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.scss",
+              "Charts/shared/core/PortalTooltip/portalTooltip.scss"
+            ],
+            "rawCssBytes": 13884,
+            "rules": 1377
+          },
+          "unit": "BarChart",
+          "matchingSelectorRows": 31,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 52271,
+          "cssCharacters": 52271,
+          "windows1252DecodedCharacters": 52271,
+          "cssSha256": "86a997b5ecf0a300a6d1faad7c6720e61ff7f3d8127ab9918ed17a1728511c7a",
+          "href": "openui-expanded-v1:LineChart:boundary:go1041195028",
+          "rowCount": 130,
+          "source": {
+            "sourceFiles": [
+              "Charts/LineChart/lineChart.scss",
+              "Charts/shared/core/DefaultLegend/defaultLegend.scss",
+              "Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.scss",
+              "Charts/shared/core/PortalTooltip/portalTooltip.scss"
+            ],
+            "rawCssBytes": 9592,
+            "rules": 915
+          },
+          "unit": "LineChart",
+          "matchingSelectorRows": 16,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 61810,
+          "cssCharacters": 61810,
+          "windows1252DecodedCharacters": 61810,
+          "cssSha256": "623840ed6306d93f0d0435d66740d1dbfbae180c0ebf5d8024412aef93e5abcb",
+          "href": "openui-expanded-v1:PieChart:boundary:go3756294908",
+          "rowCount": 152,
+          "source": {
+            "sourceFiles": [
+              "Charts/PieChart/pieChart.scss",
+              "Charts/shared/core/DefaultLegend/defaultLegend.scss",
+              "Charts/shared/core/StackedLegend/stackedLegend.scss",
+              "Charts/shared/core/PortalTooltip/portalTooltip.scss"
+            ],
+            "rawCssBytes": 11409,
+            "rules": 1167
+          },
+          "unit": "PieChart",
+          "matchingSelectorRows": 28,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 32885,
+          "cssCharacters": 32885,
+          "windows1252DecodedCharacters": 32885,
+          "cssSha256": "3350c1fb349bf06aa1d428ae0a3535a89124d4202944c08f133580d1d41b6fee",
+          "href": "openui-expanded-v1:IconButton:boundary:go2412478652",
+          "rowCount": 90,
+          "source": {
+            "sourceFiles": [
+              "IconButton/iconButton.scss"
+            ],
+            "rawCssBytes": 5057,
+            "rules": 432
+          },
+          "unit": "IconButton",
+          "matchingSelectorRows": 14,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 6535,
+          "cssCharacters": 6535,
+          "windows1252DecodedCharacters": 6535,
+          "cssSha256": "b5841ea2822d5085cdc91bc9dadefefa8198c4b75d3c20b807d27c54dcd794b6",
+          "href": "openui-expanded-v1:TextArea:boundary:go1509541534",
+          "rowCount": 14,
+          "source": {
+            "sourceFiles": [
+              "TextArea/textArea.scss"
+            ],
+            "rawCssBytes": 1193,
+            "rules": 90
+          },
+          "unit": "TextArea",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 14630,
+          "cssCharacters": 14630,
+          "windows1252DecodedCharacters": 14630,
+          "cssSha256": "b673629daace20285992ef4c3ba4ae314afd7c26ce15543851070ba3a8bdb47f",
+          "href": "openui-expanded-v1:CheckBoxGroup:boundary:go2981431845",
+          "rowCount": 30,
+          "source": {
+            "sourceFiles": [
+              "CheckBoxGroup/checkBoxGroup.scss",
+              "CheckBoxItem/checkBoxItem.scss"
+            ],
+            "rawCssBytes": 2357,
+            "rules": 231
+          },
+          "unit": "CheckBoxGroup",
+          "matchingSelectorRows": 9,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 13874,
+          "cssCharacters": 13874,
+          "windows1252DecodedCharacters": 13874,
+          "cssSha256": "045cdd835d0d22da98f4bf1e003a4ee6e212e560ef70a2d32d1b8ddddebd1bed",
+          "href": "openui-expanded-v1:SwitchGroup:boundary:go3441439237",
+          "rowCount": 28,
+          "source": {
+            "sourceFiles": [
+              "SwitchGroup/switchGroup.scss",
+              "SwitchItem/switchItem.scss"
+            ],
+            "rawCssBytes": 2531,
+            "rules": 237
+          },
+          "unit": "SwitchGroup",
+          "matchingSelectorRows": 7,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 17423,
+          "cssCharacters": 17423,
+          "windows1252DecodedCharacters": 17423,
+          "cssSha256": "02f8e1debb5e0ef259b4b1f158c00ce76b6a03442fb0e41f8f48ddd424744267",
+          "href": "openui-expanded-v1:RadioGroup:boundary:go561285950",
+          "rowCount": 44,
+          "source": {
+            "sourceFiles": [
+              "RadioGroup/radioGroup.scss",
+              "RadioItem/radioItem.scss"
+            ],
+            "rawCssBytes": 2824,
+            "rules": 258
+          },
+          "unit": "RadioGroup",
+          "matchingSelectorRows": 12,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 30371,
+          "cssCharacters": 30371,
+          "windows1252DecodedCharacters": 30371,
+          "cssSha256": "c03b453f0555b85936e0d8bc5657c448d2f5010c4008cd0777c2a5e81f5a07c8",
+          "href": "openui-expanded-v1:Select:boundary:go1230403601",
+          "rowCount": 72,
+          "source": {
+            "sourceFiles": [
+              "Select/select.scss"
+            ],
+            "rawCssBytes": 5564,
+            "rules": 501
+          },
+          "unit": "Select",
+          "matchingSelectorRows": 5,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 36901,
+          "cssCharacters": 36901,
+          "windows1252DecodedCharacters": 36901,
+          "cssSha256": "734f49610b1aec8e765a13ee01e3004dc7e558f0b99cb00fb0f31c2ebe2c3a54",
+          "href": "openui-expanded-v1:Tabs:boundary:go2182908062",
+          "rowCount": 92,
+          "source": {
+            "sourceFiles": [
+              "Tabs/tabs.scss"
+            ],
+            "rawCssBytes": 6314,
+            "rules": 723
+          },
+          "unit": "Tabs",
+          "matchingSelectorRows": 15,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 20037,
+          "cssCharacters": 20037,
+          "windows1252DecodedCharacters": 20037,
+          "cssSha256": "d737e785cbfb356d6c0280d1df9f5b008869c6d389e5bea33bebc124e67cbb3c",
+          "href": "openui-expanded-v1:Accordion:boundary:go458929348",
+          "rowCount": 54,
+          "source": {
+            "sourceFiles": [
+              "Accordion/accordion.scss"
+            ],
+            "rawCssBytes": 3740,
+            "rules": 378
+          },
+          "unit": "Accordion",
+          "matchingSelectorRows": 18,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 1387,
+          "cssCharacters": 1387,
+          "windows1252DecodedCharacters": 1387,
+          "cssSha256": "ca81cbf54e005550b726d8b572f1b31a02dbe8d32299ade3b8c163d3a6f475e6",
+          "href": "openui-expanded-v1:Separator:boundary:go3253786402",
+          "rowCount": 6,
+          "source": {
+            "sourceFiles": [
+              "Separator/separator.scss"
+            ],
+            "rawCssBytes": 200,
+            "rules": 24
+          },
+          "unit": "Separator",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 10274,
+          "cssCharacters": 10274,
+          "windows1252DecodedCharacters": 10274,
+          "cssSha256": "72973c53f8ed3e3016e21a57ae5e0c43cf439bfa41385c3fddab6e49aa381f24",
+          "href": "openui-expanded-v1:Modal:boundary:go1600517841",
+          "rowCount": 26,
+          "source": {
+            "sourceFiles": [
+              "Modal/Modal.scss"
+            ],
+            "rawCssBytes": 1822,
+            "rules": 261
+          },
+          "unit": "Modal",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 6790,
+          "cssCharacters": 6790,
+          "windows1252DecodedCharacters": 6790,
+          "cssSha256": "398c3284fbd7caea2c41f1c6c8df6164abaf606fff175e124fc9466d2f263667",
+          "href": "openui-expanded-v1:Tooltip:boundary:go764950772",
+          "rowCount": 16,
+          "source": {
+            "sourceFiles": [
+              "TooltipWrapper/tooltipWrapper.scss"
+            ],
+            "rawCssBytes": 1363,
+            "rules": 111
+          },
+          "unit": "Tooltip",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 8487,
+          "cssCharacters": 8487,
+          "windows1252DecodedCharacters": 8487,
+          "cssSha256": "361cdac0a1b01ffd4a56c5bb862885e0577c03647624869a0661707e9c65e16b",
+          "href": "openui-expanded-v1:AssistantMessage:boundary:go650573658",
+          "rowCount": 22,
+          "source": {
+            "sourceFiles": [
+              "OpenUIChat/assistantMessage.scss"
+            ],
+            "rawCssBytes": 1612,
+            "rules": 138
+          },
+          "unit": "AssistantMessage",
+          "matchingSelectorRows": 4,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 490621,
+          "cssCharacters": 490621,
+          "windows1252DecodedCharacters": 490621,
+          "cssSha256": "ce64ab9b5c3b56f54057f5f17473fac38b46290bf759a8e460207816d23c46f3",
+          "href": "openui-expanded-v1:ShellAgentInterface:boundary:go1796640538",
+          "rowCount": 1082,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/agentInterface.scss"
+            ],
+            "rawCssBytes": 95777,
+            "rules": 7803
+          },
+          "unit": "ShellAgentInterface",
+          "matchingSelectorRows": 79,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 72781,
+          "cssCharacters": 72781,
+          "windows1252DecodedCharacters": 72781,
+          "cssSha256": "f6604876ad1ac53b18fa3b511ef73e797a4108afc892f8f0dfbabfaf3c2b4643",
+          "href": "openui-expanded-v1:ShellSidebar:boundary:go2063302110",
+          "rowCount": 176,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/sidebar.scss"
+            ],
+            "rawCssBytes": 13360,
+            "rules": 1104
+          },
+          "unit": "ShellSidebar",
+          "matchingSelectorRows": 17,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 86713,
+          "cssCharacters": 86713,
+          "windows1252DecodedCharacters": 86713,
+          "cssSha256": "dbfabfea6450114a1bd77c8a75cff78cd4029278d6810513f3356309a7567bfd",
+          "href": "openui-expanded-v1:ShellThread:boundary:go4165890024",
+          "rowCount": 174,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/thread.scss"
+            ],
+            "rawCssBytes": 20502,
+            "rules": 1170
+          },
+          "unit": "ShellThread",
+          "matchingSelectorRows": 19,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 14394,
+          "cssCharacters": 14394,
+          "windows1252DecodedCharacters": 14394,
+          "cssSha256": "e035617645aa32efeaa780d53de0a03d0fe704ebdf8047c386907832ec555549",
+          "href": "openui-expanded-v1:ShellThreadHeader:boundary:go1226831259",
+          "rowCount": 36,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/threadHeader.scss"
+            ],
+            "rawCssBytes": 2631,
+            "rules": 249
+          },
+          "unit": "ShellThreadHeader",
+          "matchingSelectorRows": 10,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 7643,
+          "cssCharacters": 7643,
+          "windows1252DecodedCharacters": 7643,
+          "cssSha256": "49c349bbf20958308a3c821430f71b0b7016c1ea4b0c014e685c691d04c35e3c",
+          "href": "openui-expanded-v1:ShellMobileHeader:boundary:go716447674",
+          "rowCount": 18,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/mobileHeader.scss"
+            ],
+            "rawCssBytes": 1399,
+            "rules": 126
+          },
+          "unit": "ShellMobileHeader",
+          "matchingSelectorRows": 5,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 42617,
+          "cssCharacters": 42617,
+          "windows1252DecodedCharacters": 42617,
+          "cssSha256": "040868c6f3ae16fbeb93da303d009b7e70d11292ab6cc9ab3d47d6811e711bf0",
+          "href": "openui-expanded-v1:ShellThreadlist:boundary:go1280180826",
+          "rowCount": 112,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/threadlist.scss"
+            ],
+            "rawCssBytes": 7969,
+            "rules": 648
+          },
+          "unit": "ShellThreadlist",
+          "matchingSelectorRows": 12,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 10766,
+          "cssCharacters": 10766,
+          "windows1252DecodedCharacters": 10766,
+          "cssSha256": "a559fd8ab66d9135f7ae951e9c7ea49cb460726e00fdafc97c8f8573061bfd7f",
+          "href": "openui-expanded-v1:ShellHistoryMenu:boundary:go437721326",
+          "rowCount": 20,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/historyMenu.scss"
+            ],
+            "rawCssBytes": 2267,
+            "rules": 171
+          },
+          "unit": "ShellHistoryMenu",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 8594,
+          "cssCharacters": 8594,
+          "windows1252DecodedCharacters": 8594,
+          "cssSha256": "733161ad87a49928843540a858de27e9cab2f134c7a8b878d115da5abe7577d2",
+          "href": "openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618",
+          "rowCount": 22,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/renameChatDialog.scss"
+            ],
+            "rawCssBytes": 1669,
+            "rules": 141
+          },
+          "unit": "ShellRenameChatDialog",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 4201,
+          "cssCharacters": 4201,
+          "windows1252DecodedCharacters": 4201,
+          "cssSha256": "70f71df79613d08d55ee15f93b984db0d66f433c3118344db0d9599fdd500c8f",
+          "href": "openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546",
+          "rowCount": 10,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/themeModeToggle.scss"
+            ],
+            "rawCssBytes": 775,
+            "rules": 78
+          },
+          "unit": "ShellThemeModeToggle",
+          "matchingSelectorRows": 2,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 45995,
+          "cssCharacters": 45995,
+          "windows1252DecodedCharacters": 45995,
+          "cssSha256": "cafaa68b85926b10456bc6fcb405bfbbbff564a7797945efc1fafdfaeef19662",
+          "href": "openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602",
+          "rowCount": 112,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/welcomeScreen.scss"
+            ],
+            "rawCssBytes": 8744,
+            "rules": 675
+          },
+          "unit": "ShellWelcomeScreen",
+          "matchingSelectorRows": 10,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 29131,
+          "cssCharacters": 29131,
+          "windows1252DecodedCharacters": 29131,
+          "cssSha256": "d6f810273ef4ce52785930ab5d9033ecaa008b34a7454ddad9c8b8918b81a0b1",
+          "href": "openui-expanded-v1:ShellConversationStarter:boundary:go1341444952",
+          "rowCount": 62,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/conversationStarter.scss"
+            ],
+            "rawCssBytes": 5519,
+            "rules": 516
+          },
+          "unit": "ShellConversationStarter",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 34153,
+          "cssCharacters": 34153,
+          "windows1252DecodedCharacters": 34153,
+          "cssSha256": "8f6eb094eaab06e1f46b8a0bb1839052986e8f08555ba24c812532eb37a7a5ed",
+          "href": "openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247",
+          "rowCount": 66,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/workspaceSidebar.scss"
+            ],
+            "rawCssBytes": 6852,
+            "rules": 627
+          },
+          "unit": "ShellWorkspaceSidebar",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 5913,
+          "cssCharacters": 5913,
+          "windows1252DecodedCharacters": 5913,
+          "cssSha256": "4cbbbfb16b446e10155cf5fc6a7c1a8faf4ee0c44499e88cca011e2d1b4b02b2",
+          "href": "openui-expanded-v1:ShellResizableSeparator:boundary:go417178870",
+          "rowCount": 14,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/resizableSeparator.scss"
+            ],
+            "rawCssBytes": 1082,
+            "rules": 126
+          },
+          "unit": "ShellResizableSeparator",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 38367,
+          "cssCharacters": 38367,
+          "windows1252DecodedCharacters": 38367,
+          "cssSha256": "5d8d4ee8143036cecc420943fade31397f797f9ce92363a30928333746e0835c",
+          "href": "openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114",
+          "rowCount": 74,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/artifactBrowser.scss"
+            ],
+            "rawCssBytes": 7457,
+            "rules": 732
+          },
+          "unit": "ShellArtifactBrowser",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 9952,
+          "cssCharacters": 9952,
+          "windows1252DecodedCharacters": 9952,
+          "cssSha256": "fd97604b0a77c97a09eeebf3368739f0cbc5d3a9a08fb422a063dc4bd3153d15",
+          "href": "openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982",
+          "rowCount": 22,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/welcomeGlow.scss"
+            ],
+            "rawCssBytes": 2161,
+            "rules": 177
+          },
+          "unit": "ShellWelcomeGlow",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 6254,
+          "cssCharacters": 6254,
+          "windows1252DecodedCharacters": 6254,
+          "cssSha256": "e2c8fd8a2666336f78520241e03a74ae22c4f38b9996f77f1d4c8f374530564d",
+          "href": "openui-expanded-v1:Shell_sharedShared:boundary:go3952224658",
+          "rowCount": 10,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/_shared/shared.scss"
+            ],
+            "rawCssBytes": 1346,
+            "rules": 153
+          },
+          "unit": "Shell_sharedShared",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 3831,
+          "cssCharacters": 3831,
+          "windows1252DecodedCharacters": 3831,
+          "cssSha256": "87fc0f983184ff8871fcb4fad339e1c8f60ab883920a963b2ff1be7f4e0555d3",
+          "href": "openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750",
+          "rowCount": 6,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/_shared/detailed-view/detailedViewPanel.scss"
+            ],
+            "rawCssBytes": 745,
+            "rules": 78
+          },
+          "unit": "Shell_sharedDetailed-viewDetailedViewPanel",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 2419,
+          "cssCharacters": 2419,
+          "windows1252DecodedCharacters": 2419,
+          "cssSha256": "552e5dce36c04db42467b56175c51192389f4a8de6b0cc41fc71673595580ca0",
+          "href": "openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204",
+          "rowCount": 4,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/_shared/detailed-view/detailedViewOverlay.scss"
+            ],
+            "rawCssBytes": 601,
+            "rules": 75
+          },
+          "unit": "Shell_sharedDetailed-viewDetailedViewOverlay",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 18653,
+          "cssCharacters": 18653,
+          "windows1252DecodedCharacters": 18653,
+          "cssSha256": "0291f957382be9ebf8c1e8c204c6a0142b4b2d813f01b359d13c93ae4035dc62",
+          "href": "openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046",
+          "rowCount": 40,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/composer.scss"
+            ],
+            "rawCssBytes": 3571,
+            "rules": 246
+          },
+          "unit": "ShellComponentsComposer",
+          "matchingSelectorRows": 6,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 13332,
+          "cssCharacters": 13332,
+          "windows1252DecodedCharacters": 13332,
+          "cssSha256": "1556d20c49d790c1173e981851a3f8ddf420488f06d2c6b75057710d95812140",
+          "href": "openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646",
+          "rowCount": 24,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/desktopWelcomeComposer.scss"
+            ],
+            "rawCssBytes": 2411,
+            "rules": 189
+          },
+          "unit": "ShellComponentsDesktopWelcomeComposer",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 4609,
+          "cssCharacters": 4609,
+          "windows1252DecodedCharacters": 4609,
+          "cssSha256": "f8875fd00164f4dcac2f05eed878d9edcbf78873d2b4a2a8e8107c9c06586b0e",
+          "href": "openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038",
+          "rowCount": 14,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/welcomeMascot.scss"
+            ],
+            "rawCssBytes": 829,
+            "rules": 102
+          },
+          "unit": "ShellComponentsWelcomeMascot",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 2313,
+          "cssCharacters": 2313,
+          "windows1252DecodedCharacters": 2313,
+          "cssSha256": "b004b93a1d9449fa62a0968238886b7546a03f1e56ae98e105b661f1486e0883",
+          "href": "openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939",
+          "rowCount": 8,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/mascotLoader.scss"
+            ],
+            "rawCssBytes": 409,
+            "rules": 57
+          },
+          "unit": "ShellComponentsMascotLoader",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 9951,
+          "cssCharacters": 9951,
+          "windows1252DecodedCharacters": 9951,
+          "cssSha256": "0836b32002c2a1c4e7a29fee56034fba343ef6a44bbf2c1400c729689567c8bf",
+          "href": "openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058",
+          "rowCount": 24,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/welcomePrefillChips.scss"
+            ],
+            "rawCssBytes": 1685,
+            "rules": 186
+          },
+          "unit": "ShellComponentsWelcomePrefillChips",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 2485,
+          "cssCharacters": 2485,
+          "windows1252DecodedCharacters": 2485,
+          "cssSha256": "5cb3dad2335e481ed28e2cb1fe6f4dba8459fdc4662b086ed42d8ef71e302608",
+          "href": "openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+          "rowCount": 6,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/ambientLoader.scss"
+            ],
+            "rawCssBytes": 412,
+            "rules": 60
+          },
+          "unit": "ShellComponentsAmbientLoader",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        }
+      ]
+    },
+    {
+      "scenario": "dashboard",
+      "emittedUnits": 47,
+      "matchedUnits": 28,
+      "totalCssBytes": 1500896,
+      "unmatchedCssBytes": 207056,
+      "priorUndercountedUnmatchedCssBytes": 123069,
+      "units": [
+        {
+          "cssBytes": 4307,
+          "cssCharacters": 4307,
+          "windows1252DecodedCharacters": 4307,
+          "cssSha256": "7c7e9ce4640779e15ab0792e3fffe726d3e11ce8786d443278f8d997fb9e7f75",
+          "href": "openui-expanded-v1:Card:boundary:go1575007177",
+          "rowCount": 12,
+          "source": {
+            "sourceFiles": [
+              "Card/card.scss"
+            ],
+            "rawCssBytes": 762,
+            "rules": 81
+          },
+          "unit": "Card",
+          "matchingSelectorRows": 3,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 27727,
+          "cssCharacters": 27727,
+          "windows1252DecodedCharacters": 27727,
+          "cssSha256": "b037f55c91dba7a25b83e702ea6c10bc1b28c9ff1310721a19eb38a5a0cf90ac",
+          "href": "openui-expanded-v1:Button:boundary:go278159681",
+          "rowCount": 60,
+          "source": {
+            "sourceFiles": [
+              "Button/button.scss"
+            ],
+            "rawCssBytes": 4563,
+            "rules": 327
+          },
+          "unit": "Button",
+          "matchingSelectorRows": 4,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 8683,
+          "cssCharacters": 8683,
+          "windows1252DecodedCharacters": 8683,
+          "cssSha256": "4f6f0bcb3a0e0de2297a87dd8c5c12ee8809e5374e5c34af5947e4ff6805be80",
+          "href": "openui-expanded-v1:Input:boundary:go1108635726",
+          "rowCount": 22,
+          "source": {
+            "sourceFiles": [
+              "Input/input.scss"
+            ],
+            "rawCssBytes": 1633,
+            "rules": 120
+          },
+          "unit": "Input",
+          "matchingSelectorRows": 2,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 4986,
+          "cssCharacters": 4986,
+          "windows1252DecodedCharacters": 4986,
+          "cssSha256": "6e2996daf505274a84bc7122355f159ef73d7b0e7f6bbe3f25ff3c3e20a2c2ae",
+          "href": "openui-expanded-v1:CardHeader:boundary:go898436157",
+          "rowCount": 12,
+          "source": {
+            "sourceFiles": [
+              "CardHeader/cardHeader.scss"
+            ],
+            "rawCssBytes": 912,
+            "rules": 105
+          },
+          "unit": "CardHeader",
+          "matchingSelectorRows": 5,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 1391,
+          "cssCharacters": 1391,
+          "windows1252DecodedCharacters": 1391,
+          "cssSha256": "27d2ca02a78ce1cf7aa0c85e9031c8e9ec8b608c62e0efb386c29a6243167a80",
+          "href": "openui-expanded-v1:Buttons:boundary:go3261390454",
+          "rowCount": 6,
+          "source": {
+            "sourceFiles": [
+              "Buttons/buttons.scss"
+            ],
+            "rawCssBytes": 196,
+            "rules": 30
+          },
+          "unit": "Buttons",
+          "matchingSelectorRows": 2,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 6851,
+          "cssCharacters": 6851,
+          "windows1252DecodedCharacters": 6851,
+          "cssSha256": "821b2fa811dd5b393a56d4f95403c43efbfead93f3ba0663a0755d96aaf84e6a",
+          "href": "openui-expanded-v1:FormControl:boundary:go3777145176",
+          "rowCount": 16,
+          "source": {
+            "sourceFiles": [
+              "FormControl/formControl.scss",
+              "FormControl/Hint/hint.scss",
+              "Label/label.scss"
+            ],
+            "rawCssBytes": 1185,
+            "rules": 114
+          },
+          "unit": "FormControl",
+          "matchingSelectorRows": 4,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 74424,
+          "cssCharacters": 74392,
+          "windows1252DecodedCharacters": 74424,
+          "cssSha256": "07ec87cfdbec789b6e581576f1c33eb4a30bfd9d66958e43c7e90ed95bde9855",
+          "href": "openui-expanded-v1:TextContent:boundary:go954855282",
+          "rowCount": 216,
+          "source": {
+            "sourceFiles": [
+              "TextContentWrapper/textContentWrapper.scss",
+              "MarkDownRenderer/markDownRenderer.scss"
+            ],
+            "rawCssBytes": 11010,
+            "rules": 1179
+          },
+          "unit": "TextContent",
+          "matchingSelectorRows": 15,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 15720,
+          "cssCharacters": 15720,
+          "windows1252DecodedCharacters": 15720,
+          "cssSha256": "e5ff182f42d1d5872c736a914c083142678d25c20869c40976e76747fb745688",
+          "href": "openui-expanded-v1:Table:boundary:go2912324851",
+          "rowCount": 52,
+          "source": {
+            "sourceFiles": [
+              "Table/table.scss"
+            ],
+            "rawCssBytes": 2555,
+            "rules": 279
+          },
+          "unit": "Table",
+          "matchingSelectorRows": 13,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 77444,
+          "cssCharacters": 77444,
+          "windows1252DecodedCharacters": 77444,
+          "cssSha256": "ac43802738747bf12cc5bcf393f9ce09f7e66419d9d545d0bc4efd1134caaa61",
+          "href": "openui-expanded-v1:BarChart:boundary:go1992396001",
+          "rowCount": 190,
+          "source": {
+            "sourceFiles": [
+              "Charts/BarChart/barChart.scss",
+              "Charts/shared/core/DefaultLegend/defaultLegend.scss",
+              "Charts/shared/core/StackedLegend/stackedLegend.scss",
+              "Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.scss",
+              "Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.scss",
+              "Charts/shared/core/PortalTooltip/portalTooltip.scss"
+            ],
+            "rawCssBytes": 13884,
+            "rules": 1377
+          },
+          "unit": "BarChart",
+          "matchingSelectorRows": 31,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 52271,
+          "cssCharacters": 52271,
+          "windows1252DecodedCharacters": 52271,
+          "cssSha256": "86a997b5ecf0a300a6d1faad7c6720e61ff7f3d8127ab9918ed17a1728511c7a",
+          "href": "openui-expanded-v1:LineChart:boundary:go1041195028",
+          "rowCount": 130,
+          "source": {
+            "sourceFiles": [
+              "Charts/LineChart/lineChart.scss",
+              "Charts/shared/core/DefaultLegend/defaultLegend.scss",
+              "Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.scss",
+              "Charts/shared/core/PortalTooltip/portalTooltip.scss"
+            ],
+            "rawCssBytes": 9592,
+            "rules": 915
+          },
+          "unit": "LineChart",
+          "matchingSelectorRows": 16,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 61810,
+          "cssCharacters": 61810,
+          "windows1252DecodedCharacters": 61810,
+          "cssSha256": "623840ed6306d93f0d0435d66740d1dbfbae180c0ebf5d8024412aef93e5abcb",
+          "href": "openui-expanded-v1:PieChart:boundary:go3756294908",
+          "rowCount": 152,
+          "source": {
+            "sourceFiles": [
+              "Charts/PieChart/pieChart.scss",
+              "Charts/shared/core/DefaultLegend/defaultLegend.scss",
+              "Charts/shared/core/StackedLegend/stackedLegend.scss",
+              "Charts/shared/core/PortalTooltip/portalTooltip.scss"
+            ],
+            "rawCssBytes": 11409,
+            "rules": 1167
+          },
+          "unit": "PieChart",
+          "matchingSelectorRows": 28,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 32885,
+          "cssCharacters": 32885,
+          "windows1252DecodedCharacters": 32885,
+          "cssSha256": "3350c1fb349bf06aa1d428ae0a3535a89124d4202944c08f133580d1d41b6fee",
+          "href": "openui-expanded-v1:IconButton:boundary:go2412478652",
+          "rowCount": 90,
+          "source": {
+            "sourceFiles": [
+              "IconButton/iconButton.scss"
+            ],
+            "rawCssBytes": 5057,
+            "rules": 432
+          },
+          "unit": "IconButton",
+          "matchingSelectorRows": 14,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 6535,
+          "cssCharacters": 6535,
+          "windows1252DecodedCharacters": 6535,
+          "cssSha256": "b5841ea2822d5085cdc91bc9dadefefa8198c4b75d3c20b807d27c54dcd794b6",
+          "href": "openui-expanded-v1:TextArea:boundary:go1509541534",
+          "rowCount": 14,
+          "source": {
+            "sourceFiles": [
+              "TextArea/textArea.scss"
+            ],
+            "rawCssBytes": 1193,
+            "rules": 90
+          },
+          "unit": "TextArea",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 14630,
+          "cssCharacters": 14630,
+          "windows1252DecodedCharacters": 14630,
+          "cssSha256": "b673629daace20285992ef4c3ba4ae314afd7c26ce15543851070ba3a8bdb47f",
+          "href": "openui-expanded-v1:CheckBoxGroup:boundary:go2981431845",
+          "rowCount": 30,
+          "source": {
+            "sourceFiles": [
+              "CheckBoxGroup/checkBoxGroup.scss",
+              "CheckBoxItem/checkBoxItem.scss"
+            ],
+            "rawCssBytes": 2357,
+            "rules": 231
+          },
+          "unit": "CheckBoxGroup",
+          "matchingSelectorRows": 9,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 13874,
+          "cssCharacters": 13874,
+          "windows1252DecodedCharacters": 13874,
+          "cssSha256": "045cdd835d0d22da98f4bf1e003a4ee6e212e560ef70a2d32d1b8ddddebd1bed",
+          "href": "openui-expanded-v1:SwitchGroup:boundary:go3441439237",
+          "rowCount": 28,
+          "source": {
+            "sourceFiles": [
+              "SwitchGroup/switchGroup.scss",
+              "SwitchItem/switchItem.scss"
+            ],
+            "rawCssBytes": 2531,
+            "rules": 237
+          },
+          "unit": "SwitchGroup",
+          "matchingSelectorRows": 7,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 17423,
+          "cssCharacters": 17423,
+          "windows1252DecodedCharacters": 17423,
+          "cssSha256": "02f8e1debb5e0ef259b4b1f158c00ce76b6a03442fb0e41f8f48ddd424744267",
+          "href": "openui-expanded-v1:RadioGroup:boundary:go561285950",
+          "rowCount": 44,
+          "source": {
+            "sourceFiles": [
+              "RadioGroup/radioGroup.scss",
+              "RadioItem/radioItem.scss"
+            ],
+            "rawCssBytes": 2824,
+            "rules": 258
+          },
+          "unit": "RadioGroup",
+          "matchingSelectorRows": 12,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 30371,
+          "cssCharacters": 30371,
+          "windows1252DecodedCharacters": 30371,
+          "cssSha256": "c03b453f0555b85936e0d8bc5657c448d2f5010c4008cd0777c2a5e81f5a07c8",
+          "href": "openui-expanded-v1:Select:boundary:go1230403601",
+          "rowCount": 72,
+          "source": {
+            "sourceFiles": [
+              "Select/select.scss"
+            ],
+            "rawCssBytes": 5564,
+            "rules": 501
+          },
+          "unit": "Select",
+          "matchingSelectorRows": 5,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 36901,
+          "cssCharacters": 36901,
+          "windows1252DecodedCharacters": 36901,
+          "cssSha256": "734f49610b1aec8e765a13ee01e3004dc7e558f0b99cb00fb0f31c2ebe2c3a54",
+          "href": "openui-expanded-v1:Tabs:boundary:go2182908062",
+          "rowCount": 92,
+          "source": {
+            "sourceFiles": [
+              "Tabs/tabs.scss"
+            ],
+            "rawCssBytes": 6314,
+            "rules": 723
+          },
+          "unit": "Tabs",
+          "matchingSelectorRows": 15,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 20037,
+          "cssCharacters": 20037,
+          "windows1252DecodedCharacters": 20037,
+          "cssSha256": "d737e785cbfb356d6c0280d1df9f5b008869c6d389e5bea33bebc124e67cbb3c",
+          "href": "openui-expanded-v1:Accordion:boundary:go458929348",
+          "rowCount": 54,
+          "source": {
+            "sourceFiles": [
+              "Accordion/accordion.scss"
+            ],
+            "rawCssBytes": 3740,
+            "rules": 378
+          },
+          "unit": "Accordion",
+          "matchingSelectorRows": 18,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 1387,
+          "cssCharacters": 1387,
+          "windows1252DecodedCharacters": 1387,
+          "cssSha256": "ca81cbf54e005550b726d8b572f1b31a02dbe8d32299ade3b8c163d3a6f475e6",
+          "href": "openui-expanded-v1:Separator:boundary:go3253786402",
+          "rowCount": 6,
+          "source": {
+            "sourceFiles": [
+              "Separator/separator.scss"
+            ],
+            "rawCssBytes": 200,
+            "rules": 24
+          },
+          "unit": "Separator",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 10274,
+          "cssCharacters": 10274,
+          "windows1252DecodedCharacters": 10274,
+          "cssSha256": "72973c53f8ed3e3016e21a57ae5e0c43cf439bfa41385c3fddab6e49aa381f24",
+          "href": "openui-expanded-v1:Modal:boundary:go1600517841",
+          "rowCount": 26,
+          "source": {
+            "sourceFiles": [
+              "Modal/Modal.scss"
+            ],
+            "rawCssBytes": 1822,
+            "rules": 261
+          },
+          "unit": "Modal",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 6790,
+          "cssCharacters": 6790,
+          "windows1252DecodedCharacters": 6790,
+          "cssSha256": "398c3284fbd7caea2c41f1c6c8df6164abaf606fff175e124fc9466d2f263667",
+          "href": "openui-expanded-v1:Tooltip:boundary:go764950772",
+          "rowCount": 16,
+          "source": {
+            "sourceFiles": [
+              "TooltipWrapper/tooltipWrapper.scss"
+            ],
+            "rawCssBytes": 1363,
+            "rules": 111
+          },
+          "unit": "Tooltip",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 8487,
+          "cssCharacters": 8487,
+          "windows1252DecodedCharacters": 8487,
+          "cssSha256": "361cdac0a1b01ffd4a56c5bb862885e0577c03647624869a0661707e9c65e16b",
+          "href": "openui-expanded-v1:AssistantMessage:boundary:go650573658",
+          "rowCount": 22,
+          "source": {
+            "sourceFiles": [
+              "OpenUIChat/assistantMessage.scss"
+            ],
+            "rawCssBytes": 1612,
+            "rules": 138
+          },
+          "unit": "AssistantMessage",
+          "matchingSelectorRows": 4,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 490621,
+          "cssCharacters": 490621,
+          "windows1252DecodedCharacters": 490621,
+          "cssSha256": "ce64ab9b5c3b56f54057f5f17473fac38b46290bf759a8e460207816d23c46f3",
+          "href": "openui-expanded-v1:ShellAgentInterface:boundary:go1796640538",
+          "rowCount": 1082,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/agentInterface.scss"
+            ],
+            "rawCssBytes": 95777,
+            "rules": 7803
+          },
+          "unit": "ShellAgentInterface",
+          "matchingSelectorRows": 79,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 72781,
+          "cssCharacters": 72781,
+          "windows1252DecodedCharacters": 72781,
+          "cssSha256": "f6604876ad1ac53b18fa3b511ef73e797a4108afc892f8f0dfbabfaf3c2b4643",
+          "href": "openui-expanded-v1:ShellSidebar:boundary:go2063302110",
+          "rowCount": 176,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/sidebar.scss"
+            ],
+            "rawCssBytes": 13360,
+            "rules": 1104
+          },
+          "unit": "ShellSidebar",
+          "matchingSelectorRows": 17,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 86713,
+          "cssCharacters": 86713,
+          "windows1252DecodedCharacters": 86713,
+          "cssSha256": "dbfabfea6450114a1bd77c8a75cff78cd4029278d6810513f3356309a7567bfd",
+          "href": "openui-expanded-v1:ShellThread:boundary:go4165890024",
+          "rowCount": 174,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/thread.scss"
+            ],
+            "rawCssBytes": 20502,
+            "rules": 1170
+          },
+          "unit": "ShellThread",
+          "matchingSelectorRows": 19,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 14394,
+          "cssCharacters": 14394,
+          "windows1252DecodedCharacters": 14394,
+          "cssSha256": "e035617645aa32efeaa780d53de0a03d0fe704ebdf8047c386907832ec555549",
+          "href": "openui-expanded-v1:ShellThreadHeader:boundary:go1226831259",
+          "rowCount": 36,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/threadHeader.scss"
+            ],
+            "rawCssBytes": 2631,
+            "rules": 249
+          },
+          "unit": "ShellThreadHeader",
+          "matchingSelectorRows": 10,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 7643,
+          "cssCharacters": 7643,
+          "windows1252DecodedCharacters": 7643,
+          "cssSha256": "49c349bbf20958308a3c821430f71b0b7016c1ea4b0c014e685c691d04c35e3c",
+          "href": "openui-expanded-v1:ShellMobileHeader:boundary:go716447674",
+          "rowCount": 18,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/mobileHeader.scss"
+            ],
+            "rawCssBytes": 1399,
+            "rules": 126
+          },
+          "unit": "ShellMobileHeader",
+          "matchingSelectorRows": 5,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 42617,
+          "cssCharacters": 42617,
+          "windows1252DecodedCharacters": 42617,
+          "cssSha256": "040868c6f3ae16fbeb93da303d009b7e70d11292ab6cc9ab3d47d6811e711bf0",
+          "href": "openui-expanded-v1:ShellThreadlist:boundary:go1280180826",
+          "rowCount": 112,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/threadlist.scss"
+            ],
+            "rawCssBytes": 7969,
+            "rules": 648
+          },
+          "unit": "ShellThreadlist",
+          "matchingSelectorRows": 12,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 10766,
+          "cssCharacters": 10766,
+          "windows1252DecodedCharacters": 10766,
+          "cssSha256": "a559fd8ab66d9135f7ae951e9c7ea49cb460726e00fdafc97c8f8573061bfd7f",
+          "href": "openui-expanded-v1:ShellHistoryMenu:boundary:go437721326",
+          "rowCount": 20,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/historyMenu.scss"
+            ],
+            "rawCssBytes": 2267,
+            "rules": 171
+          },
+          "unit": "ShellHistoryMenu",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 8594,
+          "cssCharacters": 8594,
+          "windows1252DecodedCharacters": 8594,
+          "cssSha256": "733161ad87a49928843540a858de27e9cab2f134c7a8b878d115da5abe7577d2",
+          "href": "openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618",
+          "rowCount": 22,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/renameChatDialog.scss"
+            ],
+            "rawCssBytes": 1669,
+            "rules": 141
+          },
+          "unit": "ShellRenameChatDialog",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 4201,
+          "cssCharacters": 4201,
+          "windows1252DecodedCharacters": 4201,
+          "cssSha256": "70f71df79613d08d55ee15f93b984db0d66f433c3118344db0d9599fdd500c8f",
+          "href": "openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546",
+          "rowCount": 10,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/themeModeToggle.scss"
+            ],
+            "rawCssBytes": 775,
+            "rules": 78
+          },
+          "unit": "ShellThemeModeToggle",
+          "matchingSelectorRows": 2,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 45995,
+          "cssCharacters": 45995,
+          "windows1252DecodedCharacters": 45995,
+          "cssSha256": "cafaa68b85926b10456bc6fcb405bfbbbff564a7797945efc1fafdfaeef19662",
+          "href": "openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602",
+          "rowCount": 112,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/welcomeScreen.scss"
+            ],
+            "rawCssBytes": 8744,
+            "rules": 675
+          },
+          "unit": "ShellWelcomeScreen",
+          "matchingSelectorRows": 10,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 29131,
+          "cssCharacters": 29131,
+          "windows1252DecodedCharacters": 29131,
+          "cssSha256": "d6f810273ef4ce52785930ab5d9033ecaa008b34a7454ddad9c8b8918b81a0b1",
+          "href": "openui-expanded-v1:ShellConversationStarter:boundary:go1341444952",
+          "rowCount": 62,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/conversationStarter.scss"
+            ],
+            "rawCssBytes": 5519,
+            "rules": 516
+          },
+          "unit": "ShellConversationStarter",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 34153,
+          "cssCharacters": 34153,
+          "windows1252DecodedCharacters": 34153,
+          "cssSha256": "8f6eb094eaab06e1f46b8a0bb1839052986e8f08555ba24c812532eb37a7a5ed",
+          "href": "openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247",
+          "rowCount": 66,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/workspaceSidebar.scss"
+            ],
+            "rawCssBytes": 6852,
+            "rules": 627
+          },
+          "unit": "ShellWorkspaceSidebar",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 5913,
+          "cssCharacters": 5913,
+          "windows1252DecodedCharacters": 5913,
+          "cssSha256": "4cbbbfb16b446e10155cf5fc6a7c1a8faf4ee0c44499e88cca011e2d1b4b02b2",
+          "href": "openui-expanded-v1:ShellResizableSeparator:boundary:go417178870",
+          "rowCount": 14,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/resizableSeparator.scss"
+            ],
+            "rawCssBytes": 1082,
+            "rules": 126
+          },
+          "unit": "ShellResizableSeparator",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 38367,
+          "cssCharacters": 38367,
+          "windows1252DecodedCharacters": 38367,
+          "cssSha256": "5d8d4ee8143036cecc420943fade31397f797f9ce92363a30928333746e0835c",
+          "href": "openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114",
+          "rowCount": 74,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/artifactBrowser.scss"
+            ],
+            "rawCssBytes": 7457,
+            "rules": 732
+          },
+          "unit": "ShellArtifactBrowser",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 9952,
+          "cssCharacters": 9952,
+          "windows1252DecodedCharacters": 9952,
+          "cssSha256": "fd97604b0a77c97a09eeebf3368739f0cbc5d3a9a08fb422a063dc4bd3153d15",
+          "href": "openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982",
+          "rowCount": 22,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/welcomeGlow.scss"
+            ],
+            "rawCssBytes": 2161,
+            "rules": 177
+          },
+          "unit": "ShellWelcomeGlow",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 6254,
+          "cssCharacters": 6254,
+          "windows1252DecodedCharacters": 6254,
+          "cssSha256": "e2c8fd8a2666336f78520241e03a74ae22c4f38b9996f77f1d4c8f374530564d",
+          "href": "openui-expanded-v1:Shell_sharedShared:boundary:go3952224658",
+          "rowCount": 10,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/_shared/shared.scss"
+            ],
+            "rawCssBytes": 1346,
+            "rules": 153
+          },
+          "unit": "Shell_sharedShared",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 3831,
+          "cssCharacters": 3831,
+          "windows1252DecodedCharacters": 3831,
+          "cssSha256": "87fc0f983184ff8871fcb4fad339e1c8f60ab883920a963b2ff1be7f4e0555d3",
+          "href": "openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750",
+          "rowCount": 6,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/_shared/detailed-view/detailedViewPanel.scss"
+            ],
+            "rawCssBytes": 745,
+            "rules": 78
+          },
+          "unit": "Shell_sharedDetailed-viewDetailedViewPanel",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 2419,
+          "cssCharacters": 2419,
+          "windows1252DecodedCharacters": 2419,
+          "cssSha256": "552e5dce36c04db42467b56175c51192389f4a8de6b0cc41fc71673595580ca0",
+          "href": "openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204",
+          "rowCount": 4,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/_shared/detailed-view/detailedViewOverlay.scss"
+            ],
+            "rawCssBytes": 601,
+            "rules": 75
+          },
+          "unit": "Shell_sharedDetailed-viewDetailedViewOverlay",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 18653,
+          "cssCharacters": 18653,
+          "windows1252DecodedCharacters": 18653,
+          "cssSha256": "0291f957382be9ebf8c1e8c204c6a0142b4b2d813f01b359d13c93ae4035dc62",
+          "href": "openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046",
+          "rowCount": 40,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/composer.scss"
+            ],
+            "rawCssBytes": 3571,
+            "rules": 246
+          },
+          "unit": "ShellComponentsComposer",
+          "matchingSelectorRows": 6,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 13332,
+          "cssCharacters": 13332,
+          "windows1252DecodedCharacters": 13332,
+          "cssSha256": "1556d20c49d790c1173e981851a3f8ddf420488f06d2c6b75057710d95812140",
+          "href": "openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646",
+          "rowCount": 24,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/desktopWelcomeComposer.scss"
+            ],
+            "rawCssBytes": 2411,
+            "rules": 189
+          },
+          "unit": "ShellComponentsDesktopWelcomeComposer",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 4609,
+          "cssCharacters": 4609,
+          "windows1252DecodedCharacters": 4609,
+          "cssSha256": "f8875fd00164f4dcac2f05eed878d9edcbf78873d2b4a2a8e8107c9c06586b0e",
+          "href": "openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038",
+          "rowCount": 14,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/welcomeMascot.scss"
+            ],
+            "rawCssBytes": 829,
+            "rules": 102
+          },
+          "unit": "ShellComponentsWelcomeMascot",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 2313,
+          "cssCharacters": 2313,
+          "windows1252DecodedCharacters": 2313,
+          "cssSha256": "b004b93a1d9449fa62a0968238886b7546a03f1e56ae98e105b661f1486e0883",
+          "href": "openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939",
+          "rowCount": 8,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/mascotLoader.scss"
+            ],
+            "rawCssBytes": 409,
+            "rules": 57
+          },
+          "unit": "ShellComponentsMascotLoader",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 9951,
+          "cssCharacters": 9951,
+          "windows1252DecodedCharacters": 9951,
+          "cssSha256": "0836b32002c2a1c4e7a29fee56034fba343ef6a44bbf2c1400c729689567c8bf",
+          "href": "openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058",
+          "rowCount": 24,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/welcomePrefillChips.scss"
+            ],
+            "rawCssBytes": 1685,
+            "rules": 186
+          },
+          "unit": "ShellComponentsWelcomePrefillChips",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        },
+        {
+          "cssBytes": 2485,
+          "cssCharacters": 2485,
+          "windows1252DecodedCharacters": 2485,
+          "cssSha256": "5cb3dad2335e481ed28e2cb1fe6f4dba8459fdc4662b086ed42d8ef71e302608",
+          "href": "openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860",
+          "rowCount": 6,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/ambientLoader.scss"
+            ],
+            "rawCssBytes": 412,
+            "rules": 60
+          },
+          "unit": "ShellComponentsAmbientLoader",
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0,
+          "usageObservation": "Reused from preserved version1 browser observation against this unchanged candidate/metadata"
+        }
+      ]
+    }
+  ],
+  "browserSoakEvidence": {
+    "path": "/private/tmp/openui-runtime-expanded-performance/results/soak-browser-rss.json",
+    "sha256": "9943f96f640368466a6f777fd1036ac1b99fc19c1f8cc706914d447600f08412"
+  },
+  "browserValidation": [
+    {
+      "checkpoint": "warm-idle-unmounted-gc",
+      "scenario": "chat",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "warm-idle-unmounted-gc",
+      "scenario": "dashboard",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-30000",
+      "scenario": "chat",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-30000",
+      "scenario": "dashboard",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-60000",
+      "scenario": "chat",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-60000",
+      "scenario": "dashboard",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-90000",
+      "scenario": "chat",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-90000",
+      "scenario": "dashboard",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-120000",
+      "scenario": "chat",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-120000",
+      "scenario": "dashboard",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-150000",
+      "scenario": "chat",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-150000",
+      "scenario": "dashboard",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-180000",
+      "scenario": "chat",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-180000",
+      "scenario": "dashboard",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-210000",
+      "scenario": "chat",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-210000",
+      "scenario": "dashboard",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-240000",
+      "scenario": "chat",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-240000",
+      "scenario": "dashboard",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-270000",
+      "scenario": "chat",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-270000",
+      "scenario": "dashboard",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-300000",
+      "scenario": "chat",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "natural-unmounted-300000",
+      "scenario": "dashboard",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "terminal-unmounted-natural",
+      "scenario": "chat",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "terminal-unmounted-natural",
+      "scenario": "dashboard",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "terminal-idle-unmounted-gc",
+      "scenario": "chat",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    },
+    {
+      "checkpoint": "terminal-idle-unmounted-gc",
+      "scenario": "dashboard",
+      "observedRuntimeCssCodeUnits": 1500896,
+      "otherStyleCharacters": 54,
+      "totalStyleCharacters": 1500950,
+      "resources": 47,
+      "exactOriginalDecodedCodeUnits": true,
+      "exactResourceHrefs": true
+    }
+  ],
+  "encodingEvidence": {
+    "path": "/private/tmp/openui-runtime-expanded-chat/results/encoding-v1.json",
+    "sha256": "2e2c039a2902dd49aadea2ce08ec3a5af367dee10664c3846aff173764a468eb",
+    "originalCharset": "windows-1252",
+    "utf8ControlCharset": "UTF-8",
+    "note": "Frozen browser fields named bytes actually measure textContent.length. Original fixture Windows1252 decoding expands UnicodeCSS; header-only post-timing UTF8 proxy restores expected code units and bytes. Candidate bundle unchanged; no benchmark substituted."
+  },
+  "sourceHashes": {
+    "style-inventory.ts": "cac070cc39f67ec72284ecc26233e55361e91c60f822dc4f2ea5c9f2a20563a8",
+    "style-inventory-v2.ts": "305cbb239ad1fee7148c58d75a40c6673315f1d5f78fcd3a1ca735035da34769",
+    "inventory-v2-check.mjs": "e8230aa12e6778e594cb109181b1644c0c3b39689dd05d470473b9af810daa05",
+    "runtime/adapter.tsx": "33f07193e0597f4d7bd5890fdc8789558f6581e73bb841a7ea31b548f86179c2",
+    "runtime/Boundary.tsx": "83446ac641a850a68a5563bdef85793e95d1f6c493113fb50587aff6d05d4d46",
+    "runtime/boundary-descriptors.json": "c3289ca6ad52e5f7e6a3f3ec217c6d690ec0755bc86a8a079bdce4c05fd946a7",
+    "runtime/boundary-metadata.json": "31859085c59998ea653169a8338485deadd4bd47fd94c4e3e85e7fec6e480277"
+  },
+  "status": "corrected-and-validated"
+}

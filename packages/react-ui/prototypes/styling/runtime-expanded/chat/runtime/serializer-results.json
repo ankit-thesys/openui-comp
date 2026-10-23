@@ -1,0 +1,289 @@
+{
+  "candidate": "nested-object-specificity-neutral",
+  "generatedAt": "2026-10-23T19:46:04.165Z",
+  "units": [
+    {
+      "name": "Card",
+      "originalSelectors": 6,
+      "generatedSelectors": 6,
+      "failures": []
+    },
+    {
+      "name": "Button",
+      "originalSelectors": 30,
+      "generatedSelectors": 30,
+      "failures": []
+    },
+    {
+      "name": "Input",
+      "originalSelectors": 11,
+      "generatedSelectors": 11,
+      "failures": []
+    },
+    {
+      "name": "CardHeader",
+      "originalSelectors": 6,
+      "generatedSelectors": 6,
+      "failures": []
+    },
+    {
+      "name": "Buttons",
+      "originalSelectors": 3,
+      "generatedSelectors": 3,
+      "failures": []
+    },
+    {
+      "name": "FormControl",
+      "originalSelectors": 8,
+      "generatedSelectors": 8,
+      "failures": []
+    },
+    {
+      "name": "TextContent",
+      "originalSelectors": 108,
+      "generatedSelectors": 108,
+      "failures": []
+    },
+    {
+      "name": "Table",
+      "originalSelectors": 26,
+      "generatedSelectors": 26,
+      "failures": []
+    },
+    {
+      "name": "BarChart",
+      "originalSelectors": 95,
+      "generatedSelectors": 95,
+      "failures": []
+    },
+    {
+      "name": "LineChart",
+      "originalSelectors": 65,
+      "generatedSelectors": 65,
+      "failures": []
+    },
+    {
+      "name": "PieChart",
+      "originalSelectors": 76,
+      "generatedSelectors": 76,
+      "failures": []
+    },
+    {
+      "name": "IconButton",
+      "originalSelectors": 45,
+      "generatedSelectors": 45,
+      "failures": []
+    },
+    {
+      "name": "TextArea",
+      "originalSelectors": 7,
+      "generatedSelectors": 7,
+      "failures": []
+    },
+    {
+      "name": "CheckBoxGroup",
+      "originalSelectors": 15,
+      "generatedSelectors": 15,
+      "failures": []
+    },
+    {
+      "name": "SwitchGroup",
+      "originalSelectors": 14,
+      "generatedSelectors": 14,
+      "failures": []
+    },
+    {
+      "name": "RadioGroup",
+      "originalSelectors": 22,
+      "generatedSelectors": 22,
+      "failures": []
+    },
+    {
+      "name": "Select",
+      "originalSelectors": 36,
+      "generatedSelectors": 36,
+      "failures": []
+    },
+    {
+      "name": "Tabs",
+      "originalSelectors": 46,
+      "generatedSelectors": 46,
+      "failures": []
+    },
+    {
+      "name": "Accordion",
+      "originalSelectors": 27,
+      "generatedSelectors": 27,
+      "failures": []
+    },
+    {
+      "name": "Separator",
+      "originalSelectors": 3,
+      "generatedSelectors": 3,
+      "failures": []
+    },
+    {
+      "name": "Modal",
+      "originalSelectors": 13,
+      "generatedSelectors": 13,
+      "failures": []
+    },
+    {
+      "name": "Tooltip",
+      "originalSelectors": 8,
+      "generatedSelectors": 8,
+      "failures": []
+    },
+    {
+      "name": "AssistantMessage",
+      "originalSelectors": 11,
+      "generatedSelectors": 11,
+      "failures": []
+    },
+    {
+      "name": "ShellAgentInterface",
+      "originalSelectors": 541,
+      "generatedSelectors": 541,
+      "failures": []
+    },
+    {
+      "name": "ShellSidebar",
+      "originalSelectors": 88,
+      "generatedSelectors": 88,
+      "failures": []
+    },
+    {
+      "name": "ShellThread",
+      "originalSelectors": 87,
+      "generatedSelectors": 87,
+      "failures": []
+    },
+    {
+      "name": "ShellThreadHeader",
+      "originalSelectors": 18,
+      "generatedSelectors": 18,
+      "failures": []
+    },
+    {
+      "name": "ShellMobileHeader",
+      "originalSelectors": 9,
+      "generatedSelectors": 9,
+      "failures": []
+    },
+    {
+      "name": "ShellThreadlist",
+      "originalSelectors": 56,
+      "generatedSelectors": 56,
+      "failures": []
+    },
+    {
+      "name": "ShellHistoryMenu",
+      "originalSelectors": 10,
+      "generatedSelectors": 10,
+      "failures": []
+    },
+    {
+      "name": "ShellRenameChatDialog",
+      "originalSelectors": 11,
+      "generatedSelectors": 11,
+      "failures": []
+    },
+    {
+      "name": "ShellThemeModeToggle",
+      "originalSelectors": 5,
+      "generatedSelectors": 5,
+      "failures": []
+    },
+    {
+      "name": "ShellWelcomeScreen",
+      "originalSelectors": 56,
+      "generatedSelectors": 56,
+      "failures": []
+    },
+    {
+      "name": "ShellConversationStarter",
+      "originalSelectors": 31,
+      "generatedSelectors": 31,
+      "failures": []
+    },
+    {
+      "name": "ShellWorkspaceSidebar",
+      "originalSelectors": 33,
+      "generatedSelectors": 33,
+      "failures": []
+    },
+    {
+      "name": "ShellResizableSeparator",
+      "originalSelectors": 7,
+      "generatedSelectors": 7,
+      "failures": []
+    },
+    {
+      "name": "ShellArtifactBrowser",
+      "originalSelectors": 37,
+      "generatedSelectors": 37,
+      "failures": []
+    },
+    {
+      "name": "ShellWelcomeGlow",
+      "originalSelectors": 11,
+      "generatedSelectors": 11,
+      "failures": []
+    },
+    {
+      "name": "Shell_sharedShared",
+      "originalSelectors": 5,
+      "generatedSelectors": 5,
+      "failures": []
+    },
+    {
+      "name": "Shell_sharedDetailed-viewDetailedViewPanel",
+      "originalSelectors": 3,
+      "generatedSelectors": 3,
+      "failures": []
+    },
+    {
+      "name": "Shell_sharedDetailed-viewDetailedViewOverlay",
+      "originalSelectors": 2,
+      "generatedSelectors": 2,
+      "failures": []
+    },
+    {
+      "name": "ShellComponentsComposer",
+      "originalSelectors": 20,
+      "generatedSelectors": 20,
+      "failures": []
+    },
+    {
+      "name": "ShellComponentsDesktopWelcomeComposer",
+      "originalSelectors": 12,
+      "generatedSelectors": 12,
+      "failures": []
+    },
+    {
+      "name": "ShellComponentsWelcomeMascot",
+      "originalSelectors": 7,
+      "generatedSelectors": 7,
+      "failures": []
+    },
+    {
+      "name": "ShellComponentsMascotLoader",
+      "originalSelectors": 4,
+      "generatedSelectors": 4,
+      "failures": []
+    },
+    {
+      "name": "ShellComponentsWelcomePrefillChips",
+      "originalSelectors": 12,
+      "generatedSelectors": 12,
+      "failures": []
+    },
+    {
+      "name": "ShellComponentsAmbientLoader",
+      "originalSelectors": 3,
+      "generatedSelectors": 3,
+      "failures": []
+    }
+  ],
+  "failures": []
+}

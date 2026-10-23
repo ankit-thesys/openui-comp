@@ -1,0 +1,1194 @@
+{
+  "startedAt": "2026-10-23T20:10:07.658Z",
+  "kind": "production-Next-unseeded-FullChat-shell-plus-separate-Renderer-SSR-memory",
+  "durationPerArmMs": 300000,
+  "concurrency": 10,
+  "smoke": false,
+  "arms": [
+    {
+      "arm": "baseline",
+      "checkpoints": [
+        {
+          "label": "warm-gc",
+          "at": "2026-10-23T20:10:18.986Z",
+          "elapsedMs": 9918,
+          "pid": 93883,
+          "memory": {
+            "rss": 280018944,
+            "heapTotal": 115965952,
+            "heapUsed": 73568792,
+            "external": 3916358,
+            "arrayBuffers": 113684
+          },
+          "gcApplied": true
+        },
+        {
+          "label": "natural-30000",
+          "at": "2026-10-23T20:10:49.046Z",
+          "elapsedMs": 30059,
+          "pid": 93883,
+          "memory": {
+            "rss": 311951360,
+            "heapTotal": 127401984,
+            "heapUsed": 77607176,
+            "external": 8387590,
+            "arrayBuffers": 964396
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-60000",
+          "at": "2026-10-23T20:11:19.165Z",
+          "elapsedMs": 60178,
+          "pid": 93883,
+          "memory": {
+            "rss": 322453504,
+            "heapTotal": 131596288,
+            "heapUsed": 85816776,
+            "external": 5247739,
+            "arrayBuffers": 1456757
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-90000",
+          "at": "2026-10-23T20:11:49.240Z",
+          "elapsedMs": 90253,
+          "pid": 93883,
+          "memory": {
+            "rss": 328056832,
+            "heapTotal": 131858432,
+            "heapUsed": 84576528,
+            "external": 6104071,
+            "arrayBuffers": 2313089
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-120000",
+          "at": "2026-10-23T20:12:19.301Z",
+          "elapsedMs": 120314,
+          "pid": 93883,
+          "memory": {
+            "rss": 332185600,
+            "heapTotal": 133955584,
+            "heapUsed": 84030928,
+            "external": 5688284,
+            "arrayBuffers": 1897302
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-150000",
+          "at": "2026-10-23T20:12:49.382Z",
+          "elapsedMs": 150395,
+          "pid": 93883,
+          "memory": {
+            "rss": 334757888,
+            "heapTotal": 176422912,
+            "heapUsed": 94076288,
+            "external": 5409577,
+            "arrayBuffers": 1409699
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-180000",
+          "at": "2026-10-23T20:13:19.481Z",
+          "elapsedMs": 180494,
+          "pid": 93883,
+          "memory": {
+            "rss": 334970880,
+            "heapTotal": 147587072,
+            "heapUsed": 117351832,
+            "external": 8745228,
+            "arrayBuffers": 4954246
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-210000",
+          "at": "2026-10-23T20:13:49.561Z",
+          "elapsedMs": 210574,
+          "pid": 93883,
+          "memory": {
+            "rss": 336347136,
+            "heapTotal": 133693440,
+            "heapUsed": 87630128,
+            "external": 8308584,
+            "arrayBuffers": 2212762
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-240000",
+          "at": "2026-10-23T20:14:19.628Z",
+          "elapsedMs": 240641,
+          "pid": 93883,
+          "memory": {
+            "rss": 336953344,
+            "heapTotal": 136577024,
+            "heapUsed": 91931024,
+            "external": 7068420,
+            "arrayBuffers": 3277438
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-270000",
+          "at": "2026-10-23T20:14:49.688Z",
+          "elapsedMs": 270701,
+          "pid": 93883,
+          "memory": {
+            "rss": 336986112,
+            "heapTotal": 173015040,
+            "heapUsed": 133350200,
+            "external": 11517635,
+            "arrayBuffers": 7726653
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-300000",
+          "at": "2026-10-23T20:15:18.996Z",
+          "elapsedMs": 300009,
+          "pid": 93883,
+          "memory": {
+            "rss": 337739776,
+            "heapTotal": 147587072,
+            "heapUsed": 78268512,
+            "external": 12629652,
+            "arrayBuffers": 898860
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "drained-natural",
+          "at": "2026-10-23T20:15:19.248Z",
+          "elapsedMs": 300261,
+          "pid": 93883,
+          "memory": {
+            "rss": 337739776,
+            "heapTotal": 148111360,
+            "heapUsed": 90655736,
+            "external": 5710752,
+            "arrayBuffers": 1919770
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "terminal-idle-gc",
+          "at": "2026-10-23T20:15:22.282Z",
+          "elapsedMs": 303295,
+          "pid": 93883,
+          "memory": {
+            "rss": 337526784,
+            "heapTotal": 125829120,
+            "heapUsed": 75780688,
+            "external": 3871882,
+            "arrayBuffers": 80900
+          },
+          "gcApplied": true
+        }
+      ],
+      "requestsTotal": 8775,
+      "measuredRequests": 8745,
+      "warmupCompleted": 30,
+      "completed": 7870,
+      "completedByScenario": {
+        "chat": 3935,
+        "dashboard": 3935
+      },
+      "aborts": 875,
+      "abortsByScenario": {
+        "chat": 437,
+        "dashboard": 438
+      },
+      "errors": [],
+      "responseBytes": [
+        111932,
+        145624,
+        111942,
+        145622,
+        111940,
+        145624,
+        111942,
+        145626,
+        111936,
+        145624,
+        145630,
+        111942,
+        145628,
+        111944,
+        145630,
+        111946,
+        145624,
+        111944,
+        145630,
+        111942,
+        111944,
+        145620,
+        111946,
+        145630,
+        111940,
+        145628,
+        111946,
+        145630,
+        111944,
+        145624,
+        111946,
+        145624,
+        111944,
+        111946,
+        145630,
+        145628,
+        111946,
+        111940,
+        145630,
+        145628,
+        111942,
+        111944,
+        111946,
+        111944,
+        145624,
+        145630,
+        145630,
+        145628,
+        111946,
+        145628,
+        111940,
+        111938,
+        111944,
+        111946,
+        145630,
+        111946,
+        145628,
+        145628,
+        145626,
+        145626,
+        111944,
+        111942,
+        145628,
+        145630,
+        111944,
+        111942,
+        145628,
+        111944,
+        145628,
+        145626,
+        111946,
+        111944,
+        145628,
+        145624,
+        111942,
+        145630,
+        111946,
+        145630,
+        111940,
+        145628,
+        111946,
+        111944,
+        111946,
+        145626,
+        145624,
+        145628,
+        111944,
+        145630,
+        111946,
+        145628,
+        111946,
+        111940,
+        145632,
+        111950,
+        145630,
+        145634,
+        111948,
+        111950,
+        145628,
+        145634
+      ],
+      "themeSamples": [
+        {
+          "scenario": "chat",
+          "theme": "red",
+          "index": 0,
+          "bytes": 111932,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 0.000000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 0.000000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "red",
+          "index": 1,
+          "bytes": 145624,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 137.508000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 137.508000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "chat",
+          "theme": "blue",
+          "index": 2,
+          "bytes": 111942,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 275.016000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 275.016000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "blue",
+          "index": 3,
+          "bytes": 145622,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 52.524000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 52.524000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "chat",
+          "theme": "red",
+          "index": 4,
+          "bytes": 111940,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 190.032000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 190.032000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "red",
+          "index": 5,
+          "bytes": 145624,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 327.540000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 327.540000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "chat",
+          "theme": "blue",
+          "index": 6,
+          "bytes": 111942,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 105.048000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 105.048000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "blue",
+          "index": 7,
+          "bytes": 145626,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 242.556000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 242.556000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "chat",
+          "theme": "red",
+          "index": 8,
+          "bytes": 111936,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 20.064000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 20.064000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "red",
+          "index": 9,
+          "bytes": 145624,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 157.572000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 157.572000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "blue",
+          "index": 10,
+          "bytes": 145630,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 295.080000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 295.080000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "chat",
+          "theme": "blue",
+          "index": 11,
+          "bytes": 111942,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 72.588000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 72.588000 / 1)"
+            }
+          ]
+        }
+      ],
+      "measuredElapsedMs": 300259,
+      "retained": {
+        "warm": 73568792,
+        "idle": 75780688,
+        "delta": 2211896,
+        "relativePercent": 3.006568328592374,
+        "budgetBytes": 7356879.2,
+        "needsInvestigation": false
+      },
+      "serverLogs": "▲ Next.js 16.4.2\n- Local:         http://localhost:4250\n- Network:       http://192.168.1.2:4250\n✓ Ready in 73ms\n✓ Running next.config.mjs took 6ms\n"
+    },
+    {
+      "arm": "runtime",
+      "checkpoints": [
+        {
+          "label": "warm-gc",
+          "at": "2026-10-23T20:15:32.769Z",
+          "elapsedMs": 10150,
+          "pid": 94252,
+          "memory": {
+            "rss": 306364416,
+            "heapTotal": 121487360,
+            "heapUsed": 80992960,
+            "external": 3916358,
+            "arrayBuffers": 113684
+          },
+          "gcApplied": true
+        },
+        {
+          "label": "natural-30000",
+          "at": "2026-10-23T20:16:02.808Z",
+          "elapsedMs": 30038,
+          "pid": 94252,
+          "memory": {
+            "rss": 375406592,
+            "heapTotal": 156942336,
+            "heapUsed": 102700672,
+            "external": 24752329,
+            "arrayBuffers": 19232613
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-60000",
+          "at": "2026-10-23T20:16:32.837Z",
+          "elapsedMs": 60067,
+          "pid": 94252,
+          "memory": {
+            "rss": 367394816,
+            "heapTotal": 159154176,
+            "heapUsed": 111068600,
+            "external": 26361714,
+            "arrayBuffers": 15820511
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-90000",
+          "at": "2026-10-23T20:17:02.868Z",
+          "elapsedMs": 90099,
+          "pid": 94252,
+          "memory": {
+            "rss": 366215168,
+            "heapTotal": 145129472,
+            "heapUsed": 99076688,
+            "external": 6262253,
+            "arrayBuffers": 2471271
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-120000",
+          "at": "2026-10-23T20:17:32.900Z",
+          "elapsedMs": 120130,
+          "pid": 94252,
+          "memory": {
+            "rss": 374243328,
+            "heapTotal": 155107328,
+            "heapUsed": 111347464,
+            "external": 32888082,
+            "arrayBuffers": 25618225
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-150000",
+          "at": "2026-10-23T20:18:02.931Z",
+          "elapsedMs": 150161,
+          "pid": 94252,
+          "memory": {
+            "rss": 374964224,
+            "heapTotal": 163495936,
+            "heapUsed": 112775272,
+            "external": 29501458,
+            "arrayBuffers": 22313521
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-180000",
+          "at": "2026-10-23T20:18:32.964Z",
+          "elapsedMs": 180194,
+          "pid": 94252,
+          "memory": {
+            "rss": 369868800,
+            "heapTotal": 153780224,
+            "heapUsed": 94437584,
+            "external": 10975047,
+            "arrayBuffers": 7184065
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-210000",
+          "at": "2026-10-23T20:19:03.009Z",
+          "elapsedMs": 210239,
+          "pid": 94252,
+          "memory": {
+            "rss": 373456896,
+            "heapTotal": 159236096,
+            "heapUsed": 118472008,
+            "external": 17794182,
+            "arrayBuffers": 14003200
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-240000",
+          "at": "2026-10-23T20:19:33.043Z",
+          "elapsedMs": 240273,
+          "pid": 94252,
+          "memory": {
+            "rss": 374358016,
+            "heapTotal": 162267136,
+            "heapUsed": 110636120,
+            "external": 22985681,
+            "arrayBuffers": 19194699
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-270000",
+          "at": "2026-10-23T20:20:03.083Z",
+          "elapsedMs": 270313,
+          "pid": 94252,
+          "memory": {
+            "rss": 376373248,
+            "heapTotal": 162709504,
+            "heapUsed": 107909184,
+            "external": 25991970,
+            "arrayBuffers": 20488638
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-300000",
+          "at": "2026-10-23T20:20:32.778Z",
+          "elapsedMs": 300008,
+          "pid": 94252,
+          "memory": {
+            "rss": 377749504,
+            "heapTotal": 160907264,
+            "heapUsed": 123406584,
+            "external": 26221490,
+            "arrayBuffers": 22430508
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "drained-natural",
+          "at": "2026-10-23T20:20:33.074Z",
+          "elapsedMs": 300304,
+          "pid": 94252,
+          "memory": {
+            "rss": 377094144,
+            "heapTotal": 162594816,
+            "heapUsed": 126838712,
+            "external": 25068226,
+            "arrayBuffers": 21277244
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "terminal-idle-gc",
+          "at": "2026-10-23T20:20:36.122Z",
+          "elapsedMs": 303352,
+          "pid": 94252,
+          "memory": {
+            "rss": 369573888,
+            "heapTotal": 129253376,
+            "heapUsed": 82733176,
+            "external": 3871882,
+            "arrayBuffers": 80900
+          },
+          "gcApplied": true
+        }
+      ],
+      "requestsTotal": 10415,
+      "measuredRequests": 10385,
+      "warmupCompleted": 30,
+      "completed": 9346,
+      "completedByScenario": {
+        "chat": 4673,
+        "dashboard": 4673
+      },
+      "aborts": 1039,
+      "abortsByScenario": {
+        "chat": 519,
+        "dashboard": 520
+      },
+      "errors": [],
+      "responseBytes": [
+        1639889,
+        1673589,
+        1639903,
+        1673585,
+        1639901,
+        1673589,
+        1639903,
+        1673591,
+        1639895,
+        1673589,
+        1673595,
+        1639901,
+        1673593,
+        1639905,
+        1673595,
+        1639907,
+        1673587,
+        1639905,
+        1673595,
+        1639901,
+        1639905,
+        1673581,
+        1639907,
+        1673595,
+        1639899,
+        1673593,
+        1639907,
+        1673595,
+        1639905,
+        1673587,
+        1639907,
+        1673587,
+        1639905,
+        1673595,
+        1639907,
+        1673593,
+        1639899,
+        1673595,
+        1639907,
+        1673593,
+        1639901,
+        1673595,
+        1639905,
+        1639907,
+        1673587,
+        1673595,
+        1639905,
+        1673593,
+        1639907,
+        1673593,
+        1639899,
+        1673595,
+        1639895,
+        1673593,
+        1639905,
+        1673589,
+        1639907,
+        1673593,
+        1639907,
+        1673589,
+        1639905,
+        1673593,
+        1639901,
+        1673595,
+        1639905,
+        1673593,
+        1639901,
+        1673593,
+        1639905,
+        1673589,
+        1639907,
+        1673587,
+        1639905,
+        1673595,
+        1639901,
+        1673593,
+        1639907,
+        1673595,
+        1639899,
+        1673593,
+        1639907,
+        1673589,
+        1639905,
+        1673593,
+        1639907,
+        1673587,
+        1639905,
+        1673595,
+        1639907,
+        1673593,
+        1639899,
+        1673595,
+        1639907,
+        1673597,
+        1639911,
+        1673599,
+        1639909,
+        1673591,
+        1639911,
+        1673599
+      ],
+      "themeSamples": [
+        {
+          "scenario": "chat",
+          "theme": "red",
+          "index": 0,
+          "bytes": 1639857,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 0.000000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 0.000000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_eavb_",
+              "accent": "oklch(0.6 0.18 0.000000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_favb_",
+              "accent": "oklch(0.6 0.18 0.000000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "red",
+          "index": 1,
+          "bytes": 1673557,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 137.508000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 137.508000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_eavb_",
+              "accent": "oklch(0.6 0.18 137.508000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_favb_",
+              "accent": "oklch(0.6 0.18 137.508000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "chat",
+          "theme": "blue",
+          "index": 2,
+          "bytes": 1639871,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 275.016000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 275.016000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_eavb_",
+              "accent": "oklch(0.6 0.18 275.016000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_favb_",
+              "accent": "oklch(0.6 0.18 275.016000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "blue",
+          "index": 3,
+          "bytes": 1673553,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 52.524000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 52.524000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_eavb_",
+              "accent": "oklch(0.6 0.18 52.524000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_favb_",
+              "accent": "oklch(0.6 0.18 52.524000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "chat",
+          "theme": "red",
+          "index": 4,
+          "bytes": 1639869,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 190.032000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 190.032000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_eavb_",
+              "accent": "oklch(0.6 0.18 190.032000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_favb_",
+              "accent": "oklch(0.6 0.18 190.032000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "red",
+          "index": 5,
+          "bytes": 1673557,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 327.540000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 327.540000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_eavb_",
+              "accent": "oklch(0.6 0.18 327.540000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_favb_",
+              "accent": "oklch(0.6 0.18 327.540000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "chat",
+          "theme": "blue",
+          "index": 6,
+          "bytes": 1639871,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 105.048000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 105.048000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_eavb_",
+              "accent": "oklch(0.6 0.18 105.048000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_favb_",
+              "accent": "oklch(0.6 0.18 105.048000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "blue",
+          "index": 7,
+          "bytes": 1673559,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 242.556000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 242.556000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_eavb_",
+              "accent": "oklch(0.6 0.18 242.556000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_favb_",
+              "accent": "oklch(0.6 0.18 242.556000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "chat",
+          "theme": "red",
+          "index": 8,
+          "bytes": 1639863,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 20.064000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 20.064000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_eavb_",
+              "accent": "oklch(0.6 0.18 20.064000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_favb_",
+              "accent": "oklch(0.6 0.18 20.064000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "red",
+          "index": 9,
+          "bytes": 1673557,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 157.572000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 157.572000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_eavb_",
+              "accent": "oklch(0.6 0.18 157.572000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_favb_",
+              "accent": "oklch(0.6 0.18 157.572000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "blue",
+          "index": 10,
+          "bytes": 1673563,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 295.080000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 295.080000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_eavb_",
+              "accent": "oklch(0.6 0.18 295.080000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_favb_",
+              "accent": "oklch(0.6 0.18 295.080000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "chat",
+          "theme": "blue",
+          "index": 11,
+          "bytes": 1639869,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 72.588000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 72.588000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_eavb_",
+              "accent": "oklch(0.6 0.18 72.588000 / 1)"
+            },
+            {
+              "group": "companion",
+              "scope": "openui-inline-_R_favb_",
+              "accent": "oklch(0.6 0.18 72.588000 / 1)"
+            }
+          ]
+        }
+      ],
+      "measuredElapsedMs": 300302,
+      "retained": {
+        "warm": 80992960,
+        "idle": 82733176,
+        "delta": 1740216,
+        "relativePercent": 2.1486015574686985,
+        "budgetBytes": 8099296,
+        "needsInvestigation": false
+      },
+      "serverLogs": "▲ Next.js 16.4.2\n- Local:         http://localhost:4250\n- Network:       http://192.168.1.2:4250\n✓ Ready in 84ms\n✓ Running next.config.mjs took 7ms\n"
+    }
+  ],
+  "failures": [],
+  "status": "passed",
+  "finishedAt": "2026-10-23T20:20:37.075Z"
+}

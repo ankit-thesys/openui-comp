@@ -1,0 +1,71 @@
+{
+  "phases": [
+    {
+      "phase": "Renderer matched",
+      "raw": "bench-renderer.json",
+      "rawSHA256": "b8bb934236d64bddf8330f79aff5117738a1e797956d1b0001566a8da3723311",
+      "status": "passed",
+      "startedAt": "2026-10-23T19:57:29.632Z",
+      "finishedAt": "2026-10-23T20:02:03.517Z",
+      "checker": "bench-renderer.mjs",
+      "executedCheckerSHA256": "d4f7a41414ba697fcd4cfe60c829538a6cabceb5d837bb6efb500a2338ff4884",
+      "currentCheckerSHA256": "d4f7a41414ba697fcd4cfe60c829538a6cabceb5d837bb6efb500a2338ff4884",
+      "manifest": "freeze-final-measured.json",
+      "manifestSHA256": "ed1f7d6fc8654e6baf8f923363e7900b98318553355f4889a73fd94cbc861f2d"
+    },
+    {
+      "phase": "FullChat matched",
+      "raw": "bench-fullchat.json",
+      "rawSHA256": "521e2874c70777d6b72baff5dc7a2633c0f843bcb7eff9c13b7c4483f7179713",
+      "status": "passed",
+      "startedAt": "2026-10-23T20:02:06.798Z",
+      "finishedAt": "2026-10-23T20:05:52.806Z",
+      "checker": "bench-fullchat.mjs",
+      "executedCheckerSHA256": "1a17b919eb9ee93150429c2092c6f757f9c4661cedb9e1612d663d9c3e0de1e3",
+      "currentCheckerSHA256": "1a17b919eb9ee93150429c2092c6f757f9c4661cedb9e1612d663d9c3e0de1e3",
+      "manifest": "freeze-final-measured.json",
+      "manifestSHA256": "ed1f7d6fc8654e6baf8f923363e7900b98318553355f4889a73fd94cbc861f2d"
+    },
+    {
+      "phase": "SSR pressure",
+      "raw": "ssr-pressure.json",
+      "rawSHA256": "6f1c8d81c426d6c336925d05664ec370217223d533518f29b9fff6973398f3a1",
+      "status": "passed",
+      "startedAt": "2026-10-23T20:05:55.374Z",
+      "finishedAt": "2026-10-23T20:07:51.123Z",
+      "checker": "ssr-pressure.mjs",
+      "executedCheckerSHA256": "2bc18368e366b9cc9961318a55bf6989203926124e5692fcf4c6998c628691c1",
+      "currentCheckerSHA256": "2bc18368e366b9cc9961318a55bf6989203926124e5692fcf4c6998c628691c1",
+      "manifest": "freeze-final-measured.json",
+      "manifestSHA256": "ed1f7d6fc8654e6baf8f923363e7900b98318553355f4889a73fd94cbc861f2d"
+    },
+    {
+      "phase": "Next memory",
+      "raw": "soak-server.json",
+      "rawSHA256": "b481861e928e7e6d55aadb64a980c3b29c220a2fa631da53f5545502a6371d3b",
+      "status": "passed",
+      "startedAt": "2026-10-23T20:10:07.658Z",
+      "finishedAt": "2026-10-23T20:20:37.075Z",
+      "checker": "soak-server.mjs",
+      "executedCheckerSHA256": "cff066c6c92eb34268f98d5ce09d6c39a2f93f110b94089e73af4ef61cd6a352",
+      "currentCheckerSHA256": "cff066c6c92eb34268f98d5ce09d6c39a2f93f110b94089e73af4ef61cd6a352",
+      "manifest": "freeze-final-memory.json",
+      "manifestSHA256": "18234c9a79100794f70b43883f252ae3feb33b91b9aabb21edd3a46df6ded701",
+      "note": "Completed checker passed; orchestration parent was paused then terminated after completion to add versioned passive browser RSS before launch. Earlier imbalance partial run excluded."
+    },
+    {
+      "phase": "Chrome memory with passive RSS",
+      "raw": "soak-browser-rss.json",
+      "rawSHA256": "9943f96f640368466a6f777fd1036ac1b99fc19c1f8cc706914d447600f08412",
+      "status": "passed",
+      "startedAt": "2026-10-23T20:22:40.682Z",
+      "finishedAt": "2026-10-23T20:33:05.842Z",
+      "checker": "soak-browser-rss.mjs",
+      "executedCheckerSHA256": "a8c8d11af6534a776f1c1f476886491470b9cba6031959e8d037ac8be29fdc4e",
+      "currentCheckerSHA256": "a8c8d11af6534a776f1c1f476886491470b9cba6031959e8d037ac8be29fdc4e",
+      "manifest": "freeze-final-browser-rss.json",
+      "manifestSHA256": "b7ceff348654f08f52687e9fbe0de57819624b62b95139b3b6ee533b4b87378b"
+    }
+  ],
+  "note": "Different manifests identify harness revisions; measured candidate/build outputs unchanged. README and post-timing analysis inventory changes are separately recorded, never retrospectively substituted."
+}

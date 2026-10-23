@@ -1,0 +1,1280 @@
+{
+  "scope": "Full-chat aggregate style ownership inventory: runtime compiles all explicit47families at boundary mount. DOM selector matches are a usage heuristic for these observed states, not every pseudo-state, portal or widget coverage. Includes emitted unused families; no component-on-demand or tree-shaking claim.",
+  "scenarios": [
+    {
+      "scenario": "chat",
+      "totalCssBytes": 880729,
+      "emittedUnits": 47,
+      "matchedUnits": 28,
+      "unmatchedCssBytes": 123069,
+      "units": [
+        {
+          "unit": "Card",
+          "cssBytes": 2693,
+          "source": {
+            "sourceFiles": [
+              "Card/card.scss"
+            ],
+            "rawCssBytes": 762,
+            "rules": 81
+          },
+          "matchingSelectorRows": 3,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Button",
+          "cssBytes": 15081,
+          "source": {
+            "sourceFiles": [
+              "Button/button.scss"
+            ],
+            "rawCssBytes": 4563,
+            "rules": 327
+          },
+          "matchingSelectorRows": 4,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Input",
+          "cssBytes": 5366,
+          "source": {
+            "sourceFiles": [
+              "Input/input.scss"
+            ],
+            "rawCssBytes": 1633,
+            "rules": 120
+          },
+          "matchingSelectorRows": 2,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "CardHeader",
+          "cssBytes": 2968,
+          "source": {
+            "sourceFiles": [
+              "CardHeader/cardHeader.scss"
+            ],
+            "rawCssBytes": 912,
+            "rules": 105
+          },
+          "matchingSelectorRows": 5,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Buttons",
+          "cssBytes": 740,
+          "source": {
+            "sourceFiles": [
+              "Buttons/buttons.scss"
+            ],
+            "rawCssBytes": 196,
+            "rules": 30
+          },
+          "matchingSelectorRows": 2,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "FormControl",
+          "cssBytes": 4015,
+          "source": {
+            "sourceFiles": [
+              "FormControl/formControl.scss",
+              "FormControl/Hint/hint.scss",
+              "Label/label.scss"
+            ],
+            "rawCssBytes": 1185,
+            "rules": 114
+          },
+          "matchingSelectorRows": 4,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "TextContent",
+          "cssBytes": 45062,
+          "source": {
+            "sourceFiles": [
+              "TextContentWrapper/textContentWrapper.scss",
+              "MarkDownRenderer/markDownRenderer.scss"
+            ],
+            "rawCssBytes": 11010,
+            "rules": 1179
+          },
+          "matchingSelectorRows": 22,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Table",
+          "cssBytes": 9058,
+          "source": {
+            "sourceFiles": [
+              "Table/table.scss"
+            ],
+            "rawCssBytes": 2555,
+            "rules": 279
+          },
+          "matchingSelectorRows": 13,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "BarChart",
+          "cssBytes": 44153,
+          "source": {
+            "sourceFiles": [
+              "Charts/BarChart/barChart.scss",
+              "Charts/shared/core/DefaultLegend/defaultLegend.scss",
+              "Charts/shared/core/StackedLegend/stackedLegend.scss",
+              "Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.scss",
+              "Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.scss",
+              "Charts/shared/core/PortalTooltip/portalTooltip.scss"
+            ],
+            "rawCssBytes": 13884,
+            "rules": 1377
+          },
+          "matchingSelectorRows": 31,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "LineChart",
+          "cssBytes": 30782,
+          "source": {
+            "sourceFiles": [
+              "Charts/LineChart/lineChart.scss",
+              "Charts/shared/core/DefaultLegend/defaultLegend.scss",
+              "Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.scss",
+              "Charts/shared/core/PortalTooltip/portalTooltip.scss"
+            ],
+            "rawCssBytes": 9592,
+            "rules": 915
+          },
+          "matchingSelectorRows": 16,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "PieChart",
+          "cssBytes": 36376,
+          "source": {
+            "sourceFiles": [
+              "Charts/PieChart/pieChart.scss",
+              "Charts/shared/core/DefaultLegend/defaultLegend.scss",
+              "Charts/shared/core/StackedLegend/stackedLegend.scss",
+              "Charts/shared/core/PortalTooltip/portalTooltip.scss"
+            ],
+            "rawCssBytes": 11409,
+            "rules": 1167
+          },
+          "matchingSelectorRows": 28,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "IconButton",
+          "cssBytes": 16966,
+          "source": {
+            "sourceFiles": [
+              "IconButton/iconButton.scss"
+            ],
+            "rawCssBytes": 5057,
+            "rules": 432
+          },
+          "matchingSelectorRows": 14,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "TextArea",
+          "cssBytes": 3886,
+          "source": {
+            "sourceFiles": [
+              "TextArea/textArea.scss"
+            ],
+            "rawCssBytes": 1193,
+            "rules": 90
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "CheckBoxGroup",
+          "cssBytes": 7675,
+          "source": {
+            "sourceFiles": [
+              "CheckBoxGroup/checkBoxGroup.scss",
+              "CheckBoxItem/checkBoxItem.scss"
+            ],
+            "rawCssBytes": 2357,
+            "rules": 231
+          },
+          "matchingSelectorRows": 9,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "SwitchGroup",
+          "cssBytes": 8168,
+          "source": {
+            "sourceFiles": [
+              "SwitchGroup/switchGroup.scss",
+              "SwitchItem/switchItem.scss"
+            ],
+            "rawCssBytes": 2531,
+            "rules": 237
+          },
+          "matchingSelectorRows": 7,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "RadioGroup",
+          "cssBytes": 9081,
+          "source": {
+            "sourceFiles": [
+              "RadioGroup/radioGroup.scss",
+              "RadioItem/radioItem.scss"
+            ],
+            "rawCssBytes": 2824,
+            "rules": 258
+          },
+          "matchingSelectorRows": 12,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Select",
+          "cssBytes": 19025,
+          "source": {
+            "sourceFiles": [
+              "Select/select.scss"
+            ],
+            "rawCssBytes": 5564,
+            "rules": 501
+          },
+          "matchingSelectorRows": 5,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Tabs",
+          "cssBytes": 20691,
+          "source": {
+            "sourceFiles": [
+              "Tabs/tabs.scss"
+            ],
+            "rawCssBytes": 6314,
+            "rules": 723
+          },
+          "matchingSelectorRows": 15,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Accordion",
+          "cssBytes": 11426,
+          "source": {
+            "sourceFiles": [
+              "Accordion/accordion.scss"
+            ],
+            "rawCssBytes": 3740,
+            "rules": 378
+          },
+          "matchingSelectorRows": 18,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Separator",
+          "cssBytes": 756,
+          "source": {
+            "sourceFiles": [
+              "Separator/separator.scss"
+            ],
+            "rawCssBytes": 200,
+            "rules": 24
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Modal",
+          "cssBytes": 6153,
+          "source": {
+            "sourceFiles": [
+              "Modal/Modal.scss"
+            ],
+            "rawCssBytes": 1822,
+            "rules": 261
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Tooltip",
+          "cssBytes": 4112,
+          "source": {
+            "sourceFiles": [
+              "TooltipWrapper/tooltipWrapper.scss"
+            ],
+            "rawCssBytes": 1363,
+            "rules": 111
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "AssistantMessage",
+          "cssBytes": 4888,
+          "source": {
+            "sourceFiles": [
+              "OpenUIChat/assistantMessage.scss"
+            ],
+            "rawCssBytes": 1612,
+            "rules": 138
+          },
+          "matchingSelectorRows": 4,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellAgentInterface",
+          "cssBytes": 291056,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/agentInterface.scss"
+            ],
+            "rawCssBytes": 95777,
+            "rules": 7803
+          },
+          "matchingSelectorRows": 79,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellSidebar",
+          "cssBytes": 39845,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/sidebar.scss"
+            ],
+            "rawCssBytes": 13360,
+            "rules": 1104
+          },
+          "matchingSelectorRows": 17,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellThread",
+          "cssBytes": 55476,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/thread.scss"
+            ],
+            "rawCssBytes": 20502,
+            "rules": 1170
+          },
+          "matchingSelectorRows": 19,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellThreadHeader",
+          "cssBytes": 8408,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/threadHeader.scss"
+            ],
+            "rawCssBytes": 2631,
+            "rules": 249
+          },
+          "matchingSelectorRows": 10,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellMobileHeader",
+          "cssBytes": 4478,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/mobileHeader.scss"
+            ],
+            "rawCssBytes": 1399,
+            "rules": 126
+          },
+          "matchingSelectorRows": 5,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellThreadlist",
+          "cssBytes": 25095,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/threadlist.scss"
+            ],
+            "rawCssBytes": 7969,
+            "rules": 648
+          },
+          "matchingSelectorRows": 12,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellHistoryMenu",
+          "cssBytes": 7026,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/historyMenu.scss"
+            ],
+            "rawCssBytes": 2267,
+            "rules": 171
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellRenameChatDialog",
+          "cssBytes": 5041,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/renameChatDialog.scss"
+            ],
+            "rawCssBytes": 1669,
+            "rules": 141
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellThemeModeToggle",
+          "cssBytes": 2436,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/themeModeToggle.scss"
+            ],
+            "rawCssBytes": 775,
+            "rules": 78
+          },
+          "matchingSelectorRows": 2,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellWelcomeScreen",
+          "cssBytes": 25343,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/welcomeScreen.scss"
+            ],
+            "rawCssBytes": 8744,
+            "rules": 675
+          },
+          "matchingSelectorRows": 10,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellConversationStarter",
+          "cssBytes": 16910,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/conversationStarter.scss"
+            ],
+            "rawCssBytes": 5519,
+            "rules": 516
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellWorkspaceSidebar",
+          "cssBytes": 20584,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/workspaceSidebar.scss"
+            ],
+            "rawCssBytes": 6852,
+            "rules": 627
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellResizableSeparator",
+          "cssBytes": 3374,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/resizableSeparator.scss"
+            ],
+            "rawCssBytes": 1082,
+            "rules": 126
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellArtifactBrowser",
+          "cssBytes": 23234,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/artifactBrowser.scss"
+            ],
+            "rawCssBytes": 7457,
+            "rules": 732
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellWelcomeGlow",
+          "cssBytes": 5907,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/welcomeGlow.scss"
+            ],
+            "rawCssBytes": 2161,
+            "rules": 177
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Shell_sharedShared",
+          "cssBytes": 4127,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/_shared/shared.scss"
+            ],
+            "rawCssBytes": 1346,
+            "rules": 153
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Shell_sharedDetailed-viewDetailedViewPanel",
+          "cssBytes": 2364,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/_shared/detailed-view/detailedViewPanel.scss"
+            ],
+            "rawCssBytes": 745,
+            "rules": 78
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Shell_sharedDetailed-viewDetailedViewOverlay",
+          "cssBytes": 1765,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/_shared/detailed-view/detailedViewOverlay.scss"
+            ],
+            "rawCssBytes": 601,
+            "rules": 75
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellComponentsComposer",
+          "cssBytes": 11309,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/composer.scss"
+            ],
+            "rawCssBytes": 3571,
+            "rules": 246
+          },
+          "matchingSelectorRows": 6,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellComponentsDesktopWelcomeComposer",
+          "cssBytes": 7282,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/desktopWelcomeComposer.scss"
+            ],
+            "rawCssBytes": 2411,
+            "rules": 189
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellComponentsWelcomeMascot",
+          "cssBytes": 2584,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/welcomeMascot.scss"
+            ],
+            "rawCssBytes": 829,
+            "rules": 102
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellComponentsMascotLoader",
+          "cssBytes": 1331,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/mascotLoader.scss"
+            ],
+            "rawCssBytes": 409,
+            "rules": 57
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellComponentsWelcomePrefillChips",
+          "cssBytes": 5275,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/welcomePrefillChips.scss"
+            ],
+            "rawCssBytes": 1685,
+            "rules": 186
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellComponentsAmbientLoader",
+          "cssBytes": 1358,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/ambientLoader.scss"
+            ],
+            "rawCssBytes": 412,
+            "rules": 60
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        }
+      ]
+    },
+    {
+      "scenario": "dashboard",
+      "totalCssBytes": 880729,
+      "emittedUnits": 47,
+      "matchedUnits": 28,
+      "unmatchedCssBytes": 123069,
+      "units": [
+        {
+          "unit": "Card",
+          "cssBytes": 2693,
+          "source": {
+            "sourceFiles": [
+              "Card/card.scss"
+            ],
+            "rawCssBytes": 762,
+            "rules": 81
+          },
+          "matchingSelectorRows": 3,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Button",
+          "cssBytes": 15081,
+          "source": {
+            "sourceFiles": [
+              "Button/button.scss"
+            ],
+            "rawCssBytes": 4563,
+            "rules": 327
+          },
+          "matchingSelectorRows": 4,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Input",
+          "cssBytes": 5366,
+          "source": {
+            "sourceFiles": [
+              "Input/input.scss"
+            ],
+            "rawCssBytes": 1633,
+            "rules": 120
+          },
+          "matchingSelectorRows": 2,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "CardHeader",
+          "cssBytes": 2968,
+          "source": {
+            "sourceFiles": [
+              "CardHeader/cardHeader.scss"
+            ],
+            "rawCssBytes": 912,
+            "rules": 105
+          },
+          "matchingSelectorRows": 5,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Buttons",
+          "cssBytes": 740,
+          "source": {
+            "sourceFiles": [
+              "Buttons/buttons.scss"
+            ],
+            "rawCssBytes": 196,
+            "rules": 30
+          },
+          "matchingSelectorRows": 2,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "FormControl",
+          "cssBytes": 4015,
+          "source": {
+            "sourceFiles": [
+              "FormControl/formControl.scss",
+              "FormControl/Hint/hint.scss",
+              "Label/label.scss"
+            ],
+            "rawCssBytes": 1185,
+            "rules": 114
+          },
+          "matchingSelectorRows": 4,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "TextContent",
+          "cssBytes": 45062,
+          "source": {
+            "sourceFiles": [
+              "TextContentWrapper/textContentWrapper.scss",
+              "MarkDownRenderer/markDownRenderer.scss"
+            ],
+            "rawCssBytes": 11010,
+            "rules": 1179
+          },
+          "matchingSelectorRows": 15,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Table",
+          "cssBytes": 9058,
+          "source": {
+            "sourceFiles": [
+              "Table/table.scss"
+            ],
+            "rawCssBytes": 2555,
+            "rules": 279
+          },
+          "matchingSelectorRows": 13,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "BarChart",
+          "cssBytes": 44153,
+          "source": {
+            "sourceFiles": [
+              "Charts/BarChart/barChart.scss",
+              "Charts/shared/core/DefaultLegend/defaultLegend.scss",
+              "Charts/shared/core/StackedLegend/stackedLegend.scss",
+              "Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.scss",
+              "Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.scss",
+              "Charts/shared/core/PortalTooltip/portalTooltip.scss"
+            ],
+            "rawCssBytes": 13884,
+            "rules": 1377
+          },
+          "matchingSelectorRows": 31,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "LineChart",
+          "cssBytes": 30782,
+          "source": {
+            "sourceFiles": [
+              "Charts/LineChart/lineChart.scss",
+              "Charts/shared/core/DefaultLegend/defaultLegend.scss",
+              "Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.scss",
+              "Charts/shared/core/PortalTooltip/portalTooltip.scss"
+            ],
+            "rawCssBytes": 9592,
+            "rules": 915
+          },
+          "matchingSelectorRows": 16,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "PieChart",
+          "cssBytes": 36376,
+          "source": {
+            "sourceFiles": [
+              "Charts/PieChart/pieChart.scss",
+              "Charts/shared/core/DefaultLegend/defaultLegend.scss",
+              "Charts/shared/core/StackedLegend/stackedLegend.scss",
+              "Charts/shared/core/PortalTooltip/portalTooltip.scss"
+            ],
+            "rawCssBytes": 11409,
+            "rules": 1167
+          },
+          "matchingSelectorRows": 28,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "IconButton",
+          "cssBytes": 16966,
+          "source": {
+            "sourceFiles": [
+              "IconButton/iconButton.scss"
+            ],
+            "rawCssBytes": 5057,
+            "rules": 432
+          },
+          "matchingSelectorRows": 14,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "TextArea",
+          "cssBytes": 3886,
+          "source": {
+            "sourceFiles": [
+              "TextArea/textArea.scss"
+            ],
+            "rawCssBytes": 1193,
+            "rules": 90
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "CheckBoxGroup",
+          "cssBytes": 7675,
+          "source": {
+            "sourceFiles": [
+              "CheckBoxGroup/checkBoxGroup.scss",
+              "CheckBoxItem/checkBoxItem.scss"
+            ],
+            "rawCssBytes": 2357,
+            "rules": 231
+          },
+          "matchingSelectorRows": 9,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "SwitchGroup",
+          "cssBytes": 8168,
+          "source": {
+            "sourceFiles": [
+              "SwitchGroup/switchGroup.scss",
+              "SwitchItem/switchItem.scss"
+            ],
+            "rawCssBytes": 2531,
+            "rules": 237
+          },
+          "matchingSelectorRows": 7,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "RadioGroup",
+          "cssBytes": 9081,
+          "source": {
+            "sourceFiles": [
+              "RadioGroup/radioGroup.scss",
+              "RadioItem/radioItem.scss"
+            ],
+            "rawCssBytes": 2824,
+            "rules": 258
+          },
+          "matchingSelectorRows": 12,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Select",
+          "cssBytes": 19025,
+          "source": {
+            "sourceFiles": [
+              "Select/select.scss"
+            ],
+            "rawCssBytes": 5564,
+            "rules": 501
+          },
+          "matchingSelectorRows": 5,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Tabs",
+          "cssBytes": 20691,
+          "source": {
+            "sourceFiles": [
+              "Tabs/tabs.scss"
+            ],
+            "rawCssBytes": 6314,
+            "rules": 723
+          },
+          "matchingSelectorRows": 15,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Accordion",
+          "cssBytes": 11426,
+          "source": {
+            "sourceFiles": [
+              "Accordion/accordion.scss"
+            ],
+            "rawCssBytes": 3740,
+            "rules": 378
+          },
+          "matchingSelectorRows": 18,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Separator",
+          "cssBytes": 756,
+          "source": {
+            "sourceFiles": [
+              "Separator/separator.scss"
+            ],
+            "rawCssBytes": 200,
+            "rules": 24
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Modal",
+          "cssBytes": 6153,
+          "source": {
+            "sourceFiles": [
+              "Modal/Modal.scss"
+            ],
+            "rawCssBytes": 1822,
+            "rules": 261
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Tooltip",
+          "cssBytes": 4112,
+          "source": {
+            "sourceFiles": [
+              "TooltipWrapper/tooltipWrapper.scss"
+            ],
+            "rawCssBytes": 1363,
+            "rules": 111
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "AssistantMessage",
+          "cssBytes": 4888,
+          "source": {
+            "sourceFiles": [
+              "OpenUIChat/assistantMessage.scss"
+            ],
+            "rawCssBytes": 1612,
+            "rules": 138
+          },
+          "matchingSelectorRows": 4,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellAgentInterface",
+          "cssBytes": 291056,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/agentInterface.scss"
+            ],
+            "rawCssBytes": 95777,
+            "rules": 7803
+          },
+          "matchingSelectorRows": 79,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellSidebar",
+          "cssBytes": 39845,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/sidebar.scss"
+            ],
+            "rawCssBytes": 13360,
+            "rules": 1104
+          },
+          "matchingSelectorRows": 17,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellThread",
+          "cssBytes": 55476,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/thread.scss"
+            ],
+            "rawCssBytes": 20502,
+            "rules": 1170
+          },
+          "matchingSelectorRows": 19,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellThreadHeader",
+          "cssBytes": 8408,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/threadHeader.scss"
+            ],
+            "rawCssBytes": 2631,
+            "rules": 249
+          },
+          "matchingSelectorRows": 10,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellMobileHeader",
+          "cssBytes": 4478,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/mobileHeader.scss"
+            ],
+            "rawCssBytes": 1399,
+            "rules": 126
+          },
+          "matchingSelectorRows": 5,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellThreadlist",
+          "cssBytes": 25095,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/threadlist.scss"
+            ],
+            "rawCssBytes": 7969,
+            "rules": 648
+          },
+          "matchingSelectorRows": 12,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellHistoryMenu",
+          "cssBytes": 7026,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/historyMenu.scss"
+            ],
+            "rawCssBytes": 2267,
+            "rules": 171
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellRenameChatDialog",
+          "cssBytes": 5041,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/renameChatDialog.scss"
+            ],
+            "rawCssBytes": 1669,
+            "rules": 141
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellThemeModeToggle",
+          "cssBytes": 2436,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/themeModeToggle.scss"
+            ],
+            "rawCssBytes": 775,
+            "rules": 78
+          },
+          "matchingSelectorRows": 2,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellWelcomeScreen",
+          "cssBytes": 25343,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/welcomeScreen.scss"
+            ],
+            "rawCssBytes": 8744,
+            "rules": 675
+          },
+          "matchingSelectorRows": 10,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellConversationStarter",
+          "cssBytes": 16910,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/conversationStarter.scss"
+            ],
+            "rawCssBytes": 5519,
+            "rules": 516
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellWorkspaceSidebar",
+          "cssBytes": 20584,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/workspaceSidebar.scss"
+            ],
+            "rawCssBytes": 6852,
+            "rules": 627
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellResizableSeparator",
+          "cssBytes": 3374,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/resizableSeparator.scss"
+            ],
+            "rawCssBytes": 1082,
+            "rules": 126
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellArtifactBrowser",
+          "cssBytes": 23234,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/artifactBrowser.scss"
+            ],
+            "rawCssBytes": 7457,
+            "rules": 732
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellWelcomeGlow",
+          "cssBytes": 5907,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/welcomeGlow.scss"
+            ],
+            "rawCssBytes": 2161,
+            "rules": 177
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Shell_sharedShared",
+          "cssBytes": 4127,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/_shared/shared.scss"
+            ],
+            "rawCssBytes": 1346,
+            "rules": 153
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Shell_sharedDetailed-viewDetailedViewPanel",
+          "cssBytes": 2364,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/_shared/detailed-view/detailedViewPanel.scss"
+            ],
+            "rawCssBytes": 745,
+            "rules": 78
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "Shell_sharedDetailed-viewDetailedViewOverlay",
+          "cssBytes": 1765,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/_shared/detailed-view/detailedViewOverlay.scss"
+            ],
+            "rawCssBytes": 601,
+            "rules": 75
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellComponentsComposer",
+          "cssBytes": 11309,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/composer.scss"
+            ],
+            "rawCssBytes": 3571,
+            "rules": 246
+          },
+          "matchingSelectorRows": 6,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellComponentsDesktopWelcomeComposer",
+          "cssBytes": 7282,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/desktopWelcomeComposer.scss"
+            ],
+            "rawCssBytes": 2411,
+            "rules": 189
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellComponentsWelcomeMascot",
+          "cssBytes": 2584,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/welcomeMascot.scss"
+            ],
+            "rawCssBytes": 829,
+            "rules": 102
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellComponentsMascotLoader",
+          "cssBytes": 1331,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/mascotLoader.scss"
+            ],
+            "rawCssBytes": 409,
+            "rules": 57
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellComponentsWelcomePrefillChips",
+          "cssBytes": 5275,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/welcomePrefillChips.scss"
+            ],
+            "rawCssBytes": 1685,
+            "rules": 186
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        },
+        {
+          "unit": "ShellComponentsAmbientLoader",
+          "cssBytes": 1358,
+          "source": {
+            "sourceFiles": [
+              "AgentInterface/components/ambientLoader.scss"
+            ],
+            "rawCssBytes": 412,
+            "rules": 60
+          },
+          "matchingSelectorRows": 0,
+          "invalidQuerySelectors": 0
+        }
+      ]
+    }
+  ],
+  "failures": []
+}

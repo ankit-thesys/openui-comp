@@ -1,0 +1,365 @@
+{
+  "scope": "Fresh candidate, decision open; JS diagnostic gates passed; adverse SSR/native RSS results remain unresolved",
+  "server": [
+    {
+      "arm": "baseline",
+      "completed": 7870,
+      "completedByScenario": {
+        "chat": 3935,
+        "dashboard": 3935
+      },
+      "aborts": 875,
+      "abortsByScenario": {
+        "chat": 437,
+        "dashboard": 438
+      },
+      "measuredElapsedMs": 300259,
+      "retained": {
+        "warm": 73568792,
+        "idle": 75780688,
+        "delta": 2211896,
+        "relativePercent": 3.006568328592374,
+        "budgetBytes": 7356879.2,
+        "needsInvestigation": false
+      },
+      "decodedHTMLBytes": {
+        "min": 111932,
+        "max": 145634,
+        "median": 128785
+      },
+      "rss": {
+        "warm": 280018944,
+        "idle": 337526784,
+        "peak": 337739776
+      }
+    },
+    {
+      "arm": "runtime",
+      "completed": 9346,
+      "completedByScenario": {
+        "chat": 4673,
+        "dashboard": 4673
+      },
+      "aborts": 1039,
+      "abortsByScenario": {
+        "chat": 519,
+        "dashboard": 520
+      },
+      "measuredElapsedMs": 300302,
+      "retained": {
+        "warm": 80992960,
+        "idle": 82733176,
+        "delta": 1740216,
+        "relativePercent": 2.1486015574686985,
+        "budgetBytes": 8099296,
+        "needsInvestigation": false
+      },
+      "decodedHTMLBytes": {
+        "min": 1639889,
+        "max": 1673599,
+        "median": 1656746
+      },
+      "rss": {
+        "warm": 306364416,
+        "idle": 369573888,
+        "peak": 377749504
+      }
+    }
+  ],
+  "browser": [
+    {
+      "arm": "baseline",
+      "completed": 732,
+      "pending": 41,
+      "partial": 40,
+      "measuredElapsedMs": 300184,
+      "retained": [
+        {
+          "scenario": "chat",
+          "warm": 23273580,
+          "idle": 24809364,
+          "delta": 1535784,
+          "relativePercent": 6.598830089741243,
+          "budgetBytes": 5242880,
+          "needsInvestigation": false,
+          "domDelta": 0,
+          "listenerDelta": 0,
+          "styleDelta": 0,
+          "ruleDelta": 0
+        },
+        {
+          "scenario": "dashboard",
+          "warm": 23300596,
+          "idle": 24800304,
+          "delta": 1499708,
+          "relativePercent": 6.436350383483753,
+          "budgetBytes": 5242880,
+          "needsInvestigation": false,
+          "domDelta": 8,
+          "listenerDelta": 0,
+          "styleDelta": 0,
+          "ruleDelta": 0
+        }
+      ],
+      "rss": {
+        "warm": 1497743360,
+        "idle": 1433698304,
+        "peak": 1944059904
+      },
+      "resources": [
+        {
+          "scenario": "chat",
+          "styleTags": 1,
+          "ruleCount": 2051,
+          "warmInlineStyleBytes": 54,
+          "idleInlineStyleBytes": 54,
+          "distinctInlineByteTotals": [
+            54
+          ],
+          "resourceIDs": []
+        },
+        {
+          "scenario": "dashboard",
+          "styleTags": 1,
+          "ruleCount": 2051,
+          "warmInlineStyleBytes": 54,
+          "idleInlineStyleBytes": 54,
+          "distinctInlineByteTotals": [
+            54
+          ],
+          "resourceIDs": []
+        }
+      ]
+    },
+    {
+      "arm": "runtime",
+      "completed": 720,
+      "pending": 40,
+      "partial": 39,
+      "measuredElapsedMs": 300374,
+      "retained": [
+        {
+          "scenario": "chat",
+          "warm": 28107508,
+          "idle": 29639924,
+          "delta": 1532416,
+          "relativePercent": 5.451981015179289,
+          "budgetBytes": 5242880,
+          "needsInvestigation": false,
+          "domDelta": 8,
+          "listenerDelta": 0,
+          "styleDelta": 0,
+          "ruleDelta": 0
+        },
+        {
+          "scenario": "dashboard",
+          "warm": 28129024,
+          "idle": 29584212,
+          "delta": 1455188,
+          "relativePercent": 5.173261610498821,
+          "budgetBytes": 5242880,
+          "needsInvestigation": false,
+          "domDelta": 0,
+          "listenerDelta": 0,
+          "styleDelta": 0,
+          "ruleDelta": 0
+        }
+      ],
+      "rss": {
+        "warm": 1534394368,
+        "idle": 1815527424,
+        "peak": 2048901120
+      },
+      "resources": [
+        {
+          "scenario": "chat",
+          "styleTags": 2,
+          "ruleCount": 3714,
+          "warmInlineStyleBytes": 1500950,
+          "idleInlineStyleBytes": 1500950,
+          "distinctInlineByteTotals": [
+            1500950
+          ],
+          "resourceIDs": [
+            "openui-expanded-v1:Card:boundary:go1575007177",
+            "openui-expanded-v1:Button:boundary:go278159681",
+            "openui-expanded-v1:Input:boundary:go1108635726",
+            "openui-expanded-v1:CardHeader:boundary:go898436157",
+            "openui-expanded-v1:Buttons:boundary:go3261390454",
+            "openui-expanded-v1:FormControl:boundary:go3777145176",
+            "openui-expanded-v1:TextContent:boundary:go954855282",
+            "openui-expanded-v1:Table:boundary:go2912324851",
+            "openui-expanded-v1:BarChart:boundary:go1992396001",
+            "openui-expanded-v1:LineChart:boundary:go1041195028",
+            "openui-expanded-v1:PieChart:boundary:go3756294908",
+            "openui-expanded-v1:IconButton:boundary:go2412478652",
+            "openui-expanded-v1:TextArea:boundary:go1509541534",
+            "openui-expanded-v1:CheckBoxGroup:boundary:go2981431845",
+            "openui-expanded-v1:SwitchGroup:boundary:go3441439237",
+            "openui-expanded-v1:RadioGroup:boundary:go561285950",
+            "openui-expanded-v1:Select:boundary:go1230403601",
+            "openui-expanded-v1:Tabs:boundary:go2182908062",
+            "openui-expanded-v1:Accordion:boundary:go458929348",
+            "openui-expanded-v1:Separator:boundary:go3253786402",
+            "openui-expanded-v1:Modal:boundary:go1600517841",
+            "openui-expanded-v1:Tooltip:boundary:go764950772",
+            "openui-expanded-v1:AssistantMessage:boundary:go650573658",
+            "openui-expanded-v1:ShellAgentInterface:boundary:go1796640538",
+            "openui-expanded-v1:ShellSidebar:boundary:go2063302110",
+            "openui-expanded-v1:ShellThread:boundary:go4165890024",
+            "openui-expanded-v1:ShellThreadHeader:boundary:go1226831259",
+            "openui-expanded-v1:ShellMobileHeader:boundary:go716447674",
+            "openui-expanded-v1:ShellThreadlist:boundary:go1280180826",
+            "openui-expanded-v1:ShellHistoryMenu:boundary:go437721326",
+            "openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618",
+            "openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546",
+            "openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602",
+            "openui-expanded-v1:ShellConversationStarter:boundary:go1341444952",
+            "openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247",
+            "openui-expanded-v1:ShellResizableSeparator:boundary:go417178870",
+            "openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114",
+            "openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982",
+            "openui-expanded-v1:Shell_sharedShared:boundary:go3952224658",
+            "openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750",
+            "openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204",
+            "openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046",
+            "openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646",
+            "openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038",
+            "openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939",
+            "openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058",
+            "openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860"
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "styleTags": 2,
+          "ruleCount": 3714,
+          "warmInlineStyleBytes": 1500950,
+          "idleInlineStyleBytes": 1500950,
+          "distinctInlineByteTotals": [
+            1500950
+          ],
+          "resourceIDs": [
+            "openui-expanded-v1:Card:boundary:go1575007177",
+            "openui-expanded-v1:Button:boundary:go278159681",
+            "openui-expanded-v1:Input:boundary:go1108635726",
+            "openui-expanded-v1:CardHeader:boundary:go898436157",
+            "openui-expanded-v1:Buttons:boundary:go3261390454",
+            "openui-expanded-v1:FormControl:boundary:go3777145176",
+            "openui-expanded-v1:TextContent:boundary:go954855282",
+            "openui-expanded-v1:Table:boundary:go2912324851",
+            "openui-expanded-v1:BarChart:boundary:go1992396001",
+            "openui-expanded-v1:LineChart:boundary:go1041195028",
+            "openui-expanded-v1:PieChart:boundary:go3756294908",
+            "openui-expanded-v1:IconButton:boundary:go2412478652",
+            "openui-expanded-v1:TextArea:boundary:go1509541534",
+            "openui-expanded-v1:CheckBoxGroup:boundary:go2981431845",
+            "openui-expanded-v1:SwitchGroup:boundary:go3441439237",
+            "openui-expanded-v1:RadioGroup:boundary:go561285950",
+            "openui-expanded-v1:Select:boundary:go1230403601",
+            "openui-expanded-v1:Tabs:boundary:go2182908062",
+            "openui-expanded-v1:Accordion:boundary:go458929348",
+            "openui-expanded-v1:Separator:boundary:go3253786402",
+            "openui-expanded-v1:Modal:boundary:go1600517841",
+            "openui-expanded-v1:Tooltip:boundary:go764950772",
+            "openui-expanded-v1:AssistantMessage:boundary:go650573658",
+            "openui-expanded-v1:ShellAgentInterface:boundary:go1796640538",
+            "openui-expanded-v1:ShellSidebar:boundary:go2063302110",
+            "openui-expanded-v1:ShellThread:boundary:go4165890024",
+            "openui-expanded-v1:ShellThreadHeader:boundary:go1226831259",
+            "openui-expanded-v1:ShellMobileHeader:boundary:go716447674",
+            "openui-expanded-v1:ShellThreadlist:boundary:go1280180826",
+            "openui-expanded-v1:ShellHistoryMenu:boundary:go437721326",
+            "openui-expanded-v1:ShellRenameChatDialog:boundary:go2642697618",
+            "openui-expanded-v1:ShellThemeModeToggle:boundary:go2628440546",
+            "openui-expanded-v1:ShellWelcomeScreen:boundary:go1015839602",
+            "openui-expanded-v1:ShellConversationStarter:boundary:go1341444952",
+            "openui-expanded-v1:ShellWorkspaceSidebar:boundary:go677288247",
+            "openui-expanded-v1:ShellResizableSeparator:boundary:go417178870",
+            "openui-expanded-v1:ShellArtifactBrowser:boundary:go300849114",
+            "openui-expanded-v1:ShellWelcomeGlow:boundary:go2494932982",
+            "openui-expanded-v1:Shell_sharedShared:boundary:go3952224658",
+            "openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewPanel:boundary:go745051750",
+            "openui-expanded-v1:Shell_sharedDetailed-viewDetailedViewOverlay:boundary:go1974173204",
+            "openui-expanded-v1:ShellComponentsComposer:boundary:go1160897046",
+            "openui-expanded-v1:ShellComponentsDesktopWelcomeComposer:boundary:go14649646",
+            "openui-expanded-v1:ShellComponentsWelcomeMascot:boundary:go4099548038",
+            "openui-expanded-v1:ShellComponentsMascotLoader:boundary:go1341950939",
+            "openui-expanded-v1:ShellComponentsWelcomePrefillChips:boundary:go604852058",
+            "openui-expanded-v1:ShellComponentsAmbientLoader:boundary:go3343059860"
+          ]
+        }
+      ]
+    }
+  ],
+  "SSRPressure": [
+    {
+      "concurrency": 1,
+      "baseline": {
+        "p95MedianMs": 329.3333330000023,
+        "responsePerSecondMedian": 3.0729695572369153
+      },
+      "runtime": {
+        "p95MedianMs": 341.5578749999986,
+        "responsePerSecondMedian": 2.9784223478169833
+      }
+    },
+    {
+      "concurrency": 10,
+      "baseline": {
+        "p95MedianMs": 396.44774999999936,
+        "responsePerSecondMedian": 26.447933441130814
+      },
+      "runtime": {
+        "p95MedianMs": 452.64616699999897,
+        "responsePerSecondMedian": 24.352530484795825
+      }
+    },
+    {
+      "concurrency": 25,
+      "baseline": {
+        "p95MedianMs": 517.9223750000019,
+        "responsePerSecondMedian": 56.2240280130592
+      },
+      "runtime": {
+        "p95MedianMs": 625.146041,
+        "responsePerSecondMedian": 43.70004333951794
+      }
+    },
+    {
+      "concurrency": 50,
+      "baseline": {
+        "p95MedianMs": 658.0760840000003,
+        "responsePerSecondMedian": 90.43714949517063
+      },
+      "runtime": {
+        "p95MedianMs": 1406.0880410000027,
+        "responsePerSecondMedian": 42.96352823123951
+      }
+    }
+  ],
+  "limits": [
+    "RSS is gross summed passive OS resident pages and can doublecount shared pages, not CSS-only native allocation attribution",
+    "Node fetch decodes HTML and does not fetch baseline linked stylesheet; document pressure is not complete-page load",
+    "Server soak completioncounts retention-only, not throughput comparison",
+    "Style bytes refer inline STYLE text only; baseline linked CSS excluded",
+    "No GC during measured load; warm/terminal matching idle+GC; no production leak/capacity claim"
+  ],
+  "styleAccounting": {
+    "postTimingOnly": true,
+    "source": "/private/tmp/openui-runtime-expanded-chat/results/style-inventory-v2.json",
+    "cssUTF8Bytes": 1500896,
+    "priorBaseOnlyCssBytes": 880729,
+    "omittedGuardBytes": 620167,
+    "unmatchedFamilies": 19,
+    "unmatchedCssBytes": 207056,
+    "originalDOMResourceCodeUnits": 1500896,
+    "trueUTF8ResourceCodeUnits": 1500864,
+    "otherInlineSTYLECodeUnits": 54,
+    "notes": [
+      "Raw style.bytes is textContent.length, not a UTF8 byte counter",
+      "Original fixture decoded document with Windows1252 because charset omitted; separate header-only control not substituted for measured output",
+      "DOM usage observations reused from same unchanged candidate; no new state coverage"
+    ]
+  }
+}

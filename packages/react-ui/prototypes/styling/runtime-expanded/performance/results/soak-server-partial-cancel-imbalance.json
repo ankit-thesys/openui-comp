@@ -1,0 +1,397 @@
+{
+  "startedAt": "2026-10-23T20:07:54.199Z",
+  "kind": "production-Next-unseeded-FullChat-shell-plus-separate-Renderer-SSR-memory",
+  "durationPerArmMs": 300000,
+  "concurrency": 10,
+  "smoke": false,
+  "arms": [
+    {
+      "arm": "baseline",
+      "checkpoints": [
+        {
+          "label": "warm-gc",
+          "at": "2026-10-23T20:08:05.677Z",
+          "elapsedMs": 9923,
+          "pid": 93601,
+          "memory": {
+            "rss": 279494656,
+            "heapTotal": 115703808,
+            "heapUsed": 73551680,
+            "external": 3899966,
+            "arrayBuffers": 97292
+          },
+          "gcApplied": true
+        },
+        {
+          "label": "natural-30000",
+          "at": "2026-10-23T20:08:35.752Z",
+          "elapsedMs": 30074,
+          "pid": 93601,
+          "memory": {
+            "rss": 324304896,
+            "heapTotal": 144441344,
+            "heapUsed": 91812008,
+            "external": 8280889,
+            "arrayBuffers": 4489907
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-60000",
+          "at": "2026-10-23T20:09:05.816Z",
+          "elapsedMs": 60138,
+          "pid": 93601,
+          "memory": {
+            "rss": 335904768,
+            "heapTotal": 150208512,
+            "heapUsed": 118308232,
+            "external": 11594719,
+            "arrayBuffers": 7803737
+          },
+          "gcApplied": false
+        },
+        {
+          "label": "natural-90000",
+          "at": "2026-10-23T20:09:35.885Z",
+          "elapsedMs": 90207,
+          "pid": 93601,
+          "memory": {
+            "rss": 336330752,
+            "heapTotal": 133431296,
+            "heapUsed": 91287376,
+            "external": 5502830,
+            "arrayBuffers": 1711848
+          },
+          "gcApplied": false
+        }
+      ],
+      "requestsTotal": 2677,
+      "measuredRequests": 2647,
+      "warmupCompleted": 30,
+      "completed": 2372,
+      "aborts": 265,
+      "errors": [],
+      "responseBytes": [
+        111932,
+        145624,
+        111942,
+        145622,
+        111940,
+        145624,
+        111942,
+        145626,
+        111936,
+        145624,
+        111946,
+        145626,
+        111944,
+        145628,
+        111946,
+        145630,
+        111940,
+        145628,
+        111946,
+        145626,
+        111944,
+        145620,
+        111946,
+        145630,
+        111940,
+        145628,
+        111946,
+        145630,
+        111944,
+        145624,
+        145630,
+        111940,
+        145628,
+        111944,
+        111946,
+        145630,
+        145624,
+        111946,
+        145630,
+        145628,
+        111942,
+        145630,
+        145624,
+        145630,
+        145628,
+        111946,
+        111944,
+        145630,
+        111944,
+        111944,
+        145624,
+        111946,
+        111944,
+        111942,
+        145622,
+        145628,
+        111946,
+        145626,
+        145630,
+        145628,
+        111944,
+        111942,
+        111944,
+        111944,
+        145628,
+        145628,
+        145626,
+        145630,
+        145628,
+        111942,
+        111940,
+        145630,
+        111946,
+        111946,
+        145626,
+        145628,
+        111940,
+        145628,
+        145630,
+        145628,
+        111946,
+        111940,
+        111944,
+        111946,
+        145626,
+        145628,
+        145628,
+        145630,
+        145630,
+        111944,
+        111950,
+        111946,
+        145632,
+        145630,
+        145634,
+        111948,
+        111950,
+        145624,
+        145628,
+        145634
+      ],
+      "themeSamples": [
+        {
+          "scenario": "chat",
+          "theme": "red",
+          "index": 0,
+          "bytes": 111932,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 0.000000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 0.000000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "red",
+          "index": 1,
+          "bytes": 145624,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 137.508000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 137.508000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "chat",
+          "theme": "blue",
+          "index": 2,
+          "bytes": 111942,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 275.016000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 275.016000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "blue",
+          "index": 3,
+          "bytes": 145622,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 52.524000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 52.524000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "chat",
+          "theme": "red",
+          "index": 4,
+          "bytes": 111940,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 190.032000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 190.032000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "red",
+          "index": 5,
+          "bytes": 145624,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 327.540000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 327.540000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "chat",
+          "theme": "blue",
+          "index": 6,
+          "bytes": 111942,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 105.048000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 105.048000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "blue",
+          "index": 7,
+          "bytes": 145626,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 242.556000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 242.556000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "chat",
+          "theme": "red",
+          "index": 8,
+          "bytes": 111936,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 20.064000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 20.064000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "red",
+          "index": 9,
+          "bytes": 145624,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 157.572000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 157.572000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "chat",
+          "theme": "blue",
+          "index": 10,
+          "bytes": 111946,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 295.080000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 295.080000 / 1)"
+            }
+          ]
+        },
+        {
+          "scenario": "dashboard",
+          "theme": "blue",
+          "index": 11,
+          "bytes": 145626,
+          "boundaries": [
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_aavb_",
+              "accent": "oklch(0.6 0.18 72.588000 / 1)"
+            },
+            {
+              "group": "chat",
+              "scope": "openui-expanded-chat-_R_bavb_",
+              "accent": "oklch(0.6 0.18 72.588000 / 1)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "failures": []
+}

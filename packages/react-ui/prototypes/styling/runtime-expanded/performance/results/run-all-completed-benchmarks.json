@@ -1,0 +1,22 @@
+{
+  "phases": [
+    {
+      "script": "bench-renderer.mjs",
+      "startedAt": "2026-10-23T19:57:29.397Z",
+      "finishedAt": "2026-10-23T20:02:06.534Z",
+      "code": 0
+    },
+    {
+      "script": "bench-fullchat.mjs",
+      "startedAt": "2026-10-23T20:02:06.536Z",
+      "finishedAt": "2026-10-23T20:05:54.819Z",
+      "code": 0
+    },
+    {
+      "script": "ssr-pressure.mjs",
+      "startedAt": "2026-10-23T20:05:54.821Z",
+      "finishedAt": "2026-10-23T20:07:54.134Z",
+      "code": 0
+    }
+  ]
+}

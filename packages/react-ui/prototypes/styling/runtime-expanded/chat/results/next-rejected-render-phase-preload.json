@@ -1,0 +1,60 @@
+{
+  "scope": "Production Next actual AgentInterface/ChatProvider SSR/hydration with explicit per-provider preloaded conversation fixture. Public setMessages called once from ThreadHeader start slot before Messages; harness workaround, not an accepted initial-state API. Separate unseeded ReactDOM shell and live-send checks preserved. Candidate runtime objects only; aggregate shell delivery not on-demand proof.",
+  "checks": {
+    "baselinechatSSRActualConversation": false,
+    "baselinechatHydratedComposer": true,
+    "baselinechatPreloadPreserved": true,
+    "baselinedashboardSSRActualConversation": false,
+    "baselinedashboardHydratedComposer": true,
+    "baselinedashboardPreloadPreserved": true,
+    "runtimechatSSRActualConversation": false,
+    "chatNoLegacyCSS": true,
+    "runtimechatHydratedComposer": true,
+    "runtimechatPreloadPreserved": true
+  },
+  "rows": [
+    {
+      "arm": "baseline",
+      "scenario": "chat",
+      "raw": {
+        "text": "Navigate actual chat fixtureOpenUI runtime integrationNew ChatOpenUI runtime integration",
+        "cards": 0,
+        "tables": 0,
+        "charts": 0,
+        "scopes": [
+          "openui-expanded-chat-_R_aavb_"
+        ]
+      }
+    },
+    {
+      "arm": "baseline",
+      "scenario": "dashboard",
+      "raw": {
+        "text": "Navigate actual chat fixtureOpenUI runtime integrationNew ChatOpenUI runtime integration",
+        "cards": 0,
+        "tables": 0,
+        "charts": 0,
+        "scopes": [
+          "openui-expanded-chat-_R_aavb_"
+        ]
+      }
+    },
+    {
+      "arm": "runtime",
+      "scenario": "chat",
+      "raw": {
+        "text": "Navigate actual chat fixtureOpenUI runtime integrationNew ChatOpenUI runtime integration",
+        "cards": 0,
+        "tables": 0,
+        "charts": 0,
+        "scopes": [
+          "openui-expanded-chat-_R_aavb_"
+        ]
+      }
+    }
+  ],
+  "errors": [
+    "page.waitForFunction: Timeout 30000ms exceeded.\n    at /private/tmp/openui-runtime-expanded-chat/next-check.mjs:4:1898"
+  ],
+  "status": "failed"
+}
