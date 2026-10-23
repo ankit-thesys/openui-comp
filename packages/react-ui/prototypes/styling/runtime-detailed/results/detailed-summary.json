@@ -1,0 +1,1902 @@
+{
+  "at": "2026-10-23T16:16:56.730Z",
+  "accepted": false,
+  "performance": [
+    {
+      "load": "normal",
+      "scenario": "chat",
+      "pairs": 10,
+      "baselineMedianMs": 299.5,
+      "runtimeMedianMs": 300.25,
+      "pairedMedianDeltaMs": -0.29999998211860657,
+      "pairedMedianPercent": -0.0884495363854908,
+      "pairedRangePercent": [
+        -10.361445775951248,
+        11.21151271708952
+      ],
+      "runtimeGooberMedianMs": 3.1000002920627594,
+      "baselineUpdateP95MedianMs": 36.20000001788139,
+      "runtimeUpdateP95MedianMs": 43.349999994039536,
+      "baselineInputP95MedianMs": 31.200000017881393,
+      "runtimeInputP95MedianMs": 32.19999998807907,
+      "baselineLongTasks": 0,
+      "runtimeLongTasks": 0,
+      "pairedObservations": [
+        {
+          "pair": 0,
+          "baselineMs": 298.2000000476837,
+          "runtimeMs": 300.19999998807907,
+          "deltaMs": 1.9999999403953552,
+          "percent": 0.6706907914404913
+        },
+        {
+          "pair": 1,
+          "baselineMs": 298.4000000357628,
+          "runtimeMs": 288.5,
+          "deltaMs": -9.900000035762787,
+          "percent": -3.317694381560418
+        },
+        {
+          "pair": 2,
+          "baselineMs": 296.19999998807907,
+          "runtimeMs": 286.5999999642372,
+          "deltaMs": -9.600000023841858,
+          "percent": -3.2410533505159425
+        },
+        {
+          "pair": 3,
+          "baselineMs": 331.89999997615814,
+          "runtimeMs": 332.60000002384186,
+          "deltaMs": 0.7000000476837158,
+          "percent": 0.21090691405061765
+        },
+        {
+          "pair": 4,
+          "baselineMs": 333,
+          "runtimeMs": 332.30000001192093,
+          "deltaMs": -0.699999988079071,
+          "percent": -0.21021020663035167
+        },
+        {
+          "pair": 5,
+          "baselineMs": 332.39999997615814,
+          "runtimeMs": 299.4000000357628,
+          "deltaMs": -32.999999940395355,
+          "percent": -9.9277978167155
+        },
+        {
+          "pair": 6,
+          "baselineMs": 298.80000001192093,
+          "runtimeMs": 332.30000001192093,
+          "deltaMs": 33.5,
+          "percent": 11.21151271708952
+        },
+        {
+          "pair": 7,
+          "baselineMs": 300.19999998807907,
+          "runtimeMs": 300.30000001192093,
+          "deltaMs": 0.10000002384185791,
+          "percent": 0.033311133859370054
+        },
+        {
+          "pair": 8,
+          "baselineMs": 332,
+          "runtimeMs": 297.60000002384186,
+          "deltaMs": -34.39999997615814,
+          "percent": -10.361445775951248
+        },
+        {
+          "pair": 9,
+          "baselineMs": 298.80000001192093,
+          "runtimeMs": 330.19999998807907,
+          "deltaMs": 31.399999976158142,
+          "percent": 10.508701464158436
+        }
+      ]
+    },
+    {
+      "load": "normal",
+      "scenario": "dashboard",
+      "pairs": 10,
+      "baselineMedianMs": 499.0000000298023,
+      "runtimeMedianMs": 499.84999999403954,
+      "pairedMedianDeltaMs": 0.800000011920929,
+      "pairedMedianPercent": 0.1603588730803435,
+      "pairedRangePercent": [
+        -5.582798937175167,
+        5.832832223321553
+      ],
+      "runtimeGooberMedianMs": 6.5,
+      "baselineUpdateP95MedianMs": 34.349999994039536,
+      "runtimeUpdateP95MedianMs": 34.30000001192093,
+      "baselineInputP95MedianMs": 31.299999982118607,
+      "runtimeInputP95MedianMs": 31.75,
+      "baselineLongTasks": 0,
+      "runtimeLongTasks": 0,
+      "pairedObservations": [
+        {
+          "pair": 0,
+          "baselineMs": 500.7999999523163,
+          "runtimeMs": 490,
+          "deltaMs": -10.799999952316284,
+          "percent": -2.1565495114506006
+        },
+        {
+          "pair": 1,
+          "baselineMs": 499.9000000357628,
+          "runtimeMs": 499.80000001192093,
+          "deltaMs": -0.10000002384185791,
+          "percent": -0.020004005568054394
+        },
+        {
+          "pair": 2,
+          "baselineMs": 498.60000002384186,
+          "runtimeMs": 499.7999999523163,
+          "deltaMs": 1.1999999284744263,
+          "percent": 0.24067387252648317
+        },
+        {
+          "pair": 3,
+          "baselineMs": 498.39999997615814,
+          "runtimeMs": 498.9000000357628,
+          "deltaMs": 0.5000000596046448,
+          "percent": 0.10032103925131684
+        },
+        {
+          "pair": 4,
+          "baselineMs": 501.19999998807907,
+          "runtimeMs": 527.8999999761581,
+          "deltaMs": 26.69999998807907,
+          "percent": 5.327214682504813
+        },
+        {
+          "pair": 5,
+          "baselineMs": 530.1999999880791,
+          "runtimeMs": 500.60000002384186,
+          "deltaMs": -29.599999964237213,
+          "percent": -5.582798937175167
+        },
+        {
+          "pair": 6,
+          "baselineMs": 496.39999997615814,
+          "runtimeMs": 499.89999997615814,
+          "deltaMs": 3.5,
+          "percent": 0.7050765512022771
+        },
+        {
+          "pair": 7,
+          "baselineMs": 498.9000000357628,
+          "runtimeMs": 528,
+          "deltaMs": 29.099999964237213,
+          "percent": 5.832832223321553
+        },
+        {
+          "pair": 8,
+          "baselineMs": 498.10000002384186,
+          "runtimeMs": 493.30000001192093,
+          "deltaMs": -4.800000011920929,
+          "percent": -0.9636619176252106
+        },
+        {
+          "pair": 9,
+          "baselineMs": 499.10000002384186,
+          "runtimeMs": 500.19999998807907,
+          "deltaMs": 1.0999999642372131,
+          "percent": 0.22039670690937016
+        }
+      ]
+    },
+    {
+      "load": "pressure",
+      "scenario": "chat",
+      "pairs": 10,
+      "baselineMedianMs": 1022.3000000119209,
+      "runtimeMedianMs": 1023.3499999940395,
+      "pairedMedianDeltaMs": -2.75,
+      "pairedMedianPercent": -0.26833021628986903,
+      "pairedRangePercent": [
+        -2.720768220305698,
+        1.5236410105001836
+      ],
+      "runtimeGooberMedianMs": 17.000000476837158,
+      "baselineUpdateP95MedianMs": 35.55000001192093,
+      "runtimeUpdateP95MedianMs": 34.45000001788139,
+      "baselineInputP95MedianMs": 31.549999982118607,
+      "runtimeInputP95MedianMs": 32.650000005960464,
+      "baselineLongTasks": 0,
+      "runtimeLongTasks": 0,
+      "pairedObservations": [
+        {
+          "pair": 0,
+          "baselineMs": 1062.199999988079,
+          "runtimeMs": 1033.2999999523163,
+          "deltaMs": -28.900000035762787,
+          "percent": -2.720768220305698
+        },
+        {
+          "pair": 1,
+          "baselineMs": 1023.5,
+          "runtimeMs": 1018.8000000119209,
+          "deltaMs": -4.699999988079071,
+          "percent": -0.45920859678349496
+        },
+        {
+          "pair": 2,
+          "baselineMs": 1032.8999999761581,
+          "runtimeMs": 1032.0999999642372,
+          "deltaMs": -0.800000011920929,
+          "percent": -0.0774518357962431
+        },
+        {
+          "pair": 3,
+          "baselineMs": 1020.5999999642372,
+          "runtimeMs": 1011.4000000357628,
+          "deltaMs": -9.199999928474426,
+          "percent": -0.901430524083559
+        },
+        {
+          "pair": 4,
+          "baselineMs": 1019.3999999761581,
+          "runtimeMs": 1026.199999988079,
+          "deltaMs": 6.800000011920929,
+          "percent": 0.6670590555307012
+        },
+        {
+          "pair": 5,
+          "baselineMs": 1021.1000000238419,
+          "runtimeMs": 1023.1000000238419,
+          "deltaMs": 2,
+          "percent": 0.19586720203244556
+        },
+        {
+          "pair": 6,
+          "baselineMs": 1017,
+          "runtimeMs": 1023.5999999642372,
+          "deltaMs": 6.599999964237213,
+          "percent": 0.6489675481059206
+        },
+        {
+          "pair": 7,
+          "baselineMs": 1017.3000000119209,
+          "runtimeMs": 1032.800000011921,
+          "deltaMs": 15.5,
+          "percent": 1.5236410105001836
+        },
+        {
+          "pair": 8,
+          "baselineMs": 1036.0999999642372,
+          "runtimeMs": 1020.3000000119209,
+          "deltaMs": -15.799999952316284,
+          "percent": -1.524949324665732
+        },
+        {
+          "pair": 9,
+          "baselineMs": 1029,
+          "runtimeMs": 1010.8999999761581,
+          "deltaMs": -18.100000023841858,
+          "percent": -1.758989312326711
+        }
+      ]
+    },
+    {
+      "load": "pressure",
+      "scenario": "dashboard",
+      "pairs": 10,
+      "baselineMedianMs": 1887.550000011921,
+      "runtimeMedianMs": 1894.2500000298023,
+      "pairedMedianDeltaMs": 4.75,
+      "pairedMedianPercent": 0.25182981618207745,
+      "pairedRangePercent": [
+        -1.384136860947834,
+        1.5429949108985228
+      ],
+      "runtimeGooberMedianMs": 48.04999965429306,
+      "baselineUpdateP95MedianMs": 34.19999998807907,
+      "runtimeUpdateP95MedianMs": 34.19999998807907,
+      "baselineInputP95MedianMs": 30.750000029802322,
+      "runtimeInputP95MedianMs": 32.099999994039536,
+      "baselineLongTasks": 0,
+      "runtimeLongTasks": 0,
+      "pairedObservations": [
+        {
+          "pair": 0,
+          "baselineMs": 1866.5,
+          "runtimeMs": 1895.300000011921,
+          "deltaMs": 28.80000001192093,
+          "percent": 1.5429949108985228
+        },
+        {
+          "pair": 1,
+          "baselineMs": 1885.1000000238419,
+          "runtimeMs": 1888.1000000238419,
+          "deltaMs": 3,
+          "percent": 0.15914275104567702
+        },
+        {
+          "pair": 2,
+          "baselineMs": 1893,
+          "runtimeMs": 1876.5,
+          "deltaMs": -16.5,
+          "percent": -0.8716323296354992
+        },
+        {
+          "pair": 3,
+          "baselineMs": 1886.7000000476837,
+          "runtimeMs": 1893.2000000476837,
+          "deltaMs": 6.5,
+          "percent": 0.34451688131847785
+        },
+        {
+          "pair": 4,
+          "baselineMs": 1874.699999988079,
+          "runtimeMs": 1901.5,
+          "deltaMs": 26.80000001192093,
+          "percent": 1.4295620639084305
+        },
+        {
+          "pair": 5,
+          "baselineMs": 1893.3999999761581,
+          "runtimeMs": 1905.199999988079,
+          "deltaMs": 11.800000011920929,
+          "percent": 0.6232174929792709
+        },
+        {
+          "pair": 6,
+          "baselineMs": 1929,
+          "runtimeMs": 1902.2999999523163,
+          "deltaMs": -26.700000047683716,
+          "percent": -1.384136860947834
+        },
+        {
+          "pair": 7,
+          "baselineMs": 1884.5,
+          "runtimeMs": 1903.3999999761581,
+          "deltaMs": 18.899999976158142,
+          "percent": 1.002918544768275
+        },
+        {
+          "pair": 8,
+          "baselineMs": 1889,
+          "runtimeMs": 1890,
+          "deltaMs": 1,
+          "percent": 0.05293806246691371
+        },
+        {
+          "pair": 9,
+          "baselineMs": 1888.3999999761581,
+          "runtimeMs": 1885.4000000357628,
+          "deltaMs": -2.9999999403953552,
+          "percent": -0.15886464416613172
+        }
+      ]
+    }
+  ],
+  "browser": {
+    "status": "passed",
+    "measuredRuns": 80,
+    "failures": [],
+    "standalone": [
+      {
+        "name": "SSR no JS",
+        "query": "?ssr=1",
+        "js": false,
+        "values": {
+          "buttons": 1,
+          "styles": 1,
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "bg": "oklch(0.546 0.215 262.881)",
+          "radius": "8px"
+        },
+        "errors": [],
+        "pass": true
+      },
+      {
+        "name": "SSR hydrated",
+        "query": "?ssr=1",
+        "js": true,
+        "values": {
+          "buttons": 1,
+          "styles": 1,
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "bg": "oklch(0.546 0.215 262.881)",
+          "radius": "8px",
+          "clicked": true
+        },
+        "errors": [],
+        "pass": true
+      },
+      {
+        "name": "CSR import render",
+        "query": "",
+        "js": true,
+        "values": {
+          "buttons": 1,
+          "styles": 1,
+          "padding": "7px 10px",
+          "color": "oklch(0.994 0 89.876)",
+          "bg": "oklch(0.546 0.215 262.881)",
+          "radius": "8px",
+          "clicked": true
+        },
+        "errors": [],
+        "pass": true
+      },
+      {
+        "name": "import without render",
+        "query": "?unused=1",
+        "js": true,
+        "values": {
+          "buttons": 0,
+          "styles": 0
+        },
+        "errors": [],
+        "pass": true
+      }
+    ],
+    "activeStreams": 0
+  },
+  "next": {
+    "status": "completed-with-failures",
+    "checks": 127,
+    "failed": [
+      "baseline-blue-SSR",
+      "baseline-red-SSR",
+      "baseline-tailwind4-override",
+      "runtime-tailwind4-override",
+      "baseline-plain-ordinaryOverrideHover",
+      "baseline-tailwind3-ordinaryOverrideHover",
+      "baseline-tailwind4-ordinaryOverride",
+      "baseline-tailwind4-firstRevealOrdinaryOverride",
+      "baseline-tailwind4-ordinaryOverrideHover",
+      "runtime-plain-ordinaryOverrideHover",
+      "runtime-tailwind3-ordinaryOverrideHover",
+      "runtime-tailwind4-ordinaryOverride",
+      "runtime-tailwind4-firstRevealOrdinaryOverride",
+      "runtime-tailwind4-ordinaryOverrideHover"
+    ],
+    "errors": [],
+    "pressureResponses": 100
+  },
+  "bundle": {
+    "createdAt": "2026-10-23T16:09:44.662Z",
+    "scope": "Production minified component-only ESM bundles, React external. Actual baseline Button versus wrapped runtime Button. JS bytes exclude external React, baseline CSS and network overhead. This tests a dedicated component entry, not a future public package root barrel.",
+    "results": [
+      {
+        "arm": "baseline",
+        "raw": 10588,
+        "gzip": 3968,
+        "goober": false,
+        "chart": false,
+        "wholeLibrary": false,
+        "inputs": [
+          {
+            "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/cjs/react.production.js",
+            "bytesInOutput": 7857
+          },
+          {
+            "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/index.js",
+            "bytesInOutput": 46
+          },
+          {
+            "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/cjs/react-jsx-runtime.production.js",
+            "bytesInOutput": 355
+          },
+          {
+            "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/jsx-runtime.js",
+            "bytesInOutput": 46
+          },
+          {
+            "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/real/node_modules/clsx/dist/clsx.mjs",
+            "bytesInOutput": 368
+          },
+          {
+            "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/src/components/Button/Button.tsx",
+            "bytesInOutput": 740
+          }
+        ]
+      },
+      {
+        "arm": "runtime",
+        "raw": 21281,
+        "gzip": 6770,
+        "goober": true,
+        "chart": false,
+        "wholeLibrary": false,
+        "inputs": [
+          {
+            "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/cjs/react.production.js",
+            "bytesInOutput": 7857
+          },
+          {
+            "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/index.js",
+            "bytesInOutput": 46
+          },
+          {
+            "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/cjs/react-jsx-runtime.production.js",
+            "bytesInOutput": 356
+          },
+          {
+            "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/jsx-runtime.js",
+            "bytesInOutput": 49
+          },
+          {
+            "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/real/node_modules/clsx/dist/clsx.mjs",
+            "bytesInOutput": 368
+          },
+          {
+            "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/src/components/Button/Button.tsx",
+            "bytesInOutput": 744
+          },
+          {
+            "path": "runtime/descriptors/Button.json",
+            "bytesInOutput": 7832
+          },
+          {
+            "path": "runtime/adapter.tsx",
+            "bytesInOutput": 948
+          },
+          {
+            "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/goober/dist/goober.modern.js",
+            "bytesInOutput": 1871
+          },
+          {
+            "path": "runtime/Button.tsx",
+            "bytesInOutput": 25
+          }
+        ]
+      },
+      {
+        "arm": "unused",
+        "raw": 51,
+        "gzip": 68,
+        "goober": false,
+        "chart": false,
+        "wholeLibrary": false,
+        "inputs": [
+          {
+            "path": "bundle/unused.tsx",
+            "bytesInOutput": 30
+          }
+        ]
+      }
+    ],
+    "checks": {
+      "runtimeHasEngine": true,
+      "buttonExcludesChartAndLibrary": true,
+      "unusedImportDropsRuntime": true
+    }
+  },
+  "soak": {
+    "status": "completed",
+    "scope": "Bounded runtime Goober SSR memory/cardinality diagnostic, separate from prior static-CSS evidence. Fresh process for each arm/theme mode. Alternating actual chat/dashboard; four concurrent streaming SSR drains. Natural snapshots immediately before explicit GC, warm/interval/terminal retained samples after GC. Unique themes deliberately grow input cardinality, separating dynamic cache risk from finite-theme steady-state. Not a production leak-free certification.",
+    "startedAt": "2026-10-23T16:12:42.229Z",
+    "finishedAt": "2026-10-23T16:13:06.835Z",
+    "failures": [],
+    "workers": [
+      {
+        "arm": "baseline",
+        "themeMode": "finite",
+        "counts": {
+          "chat": 1000,
+          "dashboard": 1000
+        },
+        "retainedHeapDelta": -416440,
+        "retainedHeapPercent": -0.5867180689778921,
+        "checkpoints": [
+          {
+            "stage": "cold",
+            "activeStreams": 0,
+            "completedStreams": 0,
+            "timedOutStreams": 0,
+            "completed": 0,
+            "natural": {
+              "rss": 214122496,
+              "heapTotal": 104136704,
+              "heapUsed": 74758456,
+              "external": 1666014,
+              "arrayBuffers": 20544
+            },
+            "forced": {
+              "rss": 213663744,
+              "heapTotal": 106676224,
+              "heapUsed": 67914016,
+              "external": 1666054,
+              "arrayBuffers": 20544
+            }
+          },
+          {
+            "stage": "warm",
+            "activeStreams": 0,
+            "completedStreams": 40,
+            "timedOutStreams": 0,
+            "completed": 0,
+            "natural": {
+              "rss": 221020160,
+              "heapTotal": 110084096,
+              "heapUsed": 85671136,
+              "external": 1735286,
+              "arrayBuffers": 86702
+            },
+            "forced": {
+              "rss": 221085696,
+              "heapTotal": 109559808,
+              "heapUsed": 70977872,
+              "external": 1669510,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 292,
+            "timedOutStreams": 0,
+            "completed": 252,
+            "natural": {
+              "rss": 229621760,
+              "heapTotal": 118472704,
+              "heapUsed": 87395640,
+              "external": 1703790,
+              "arrayBuffers": 55206
+            },
+            "forced": {
+              "rss": 229801984,
+              "heapTotal": 110608384,
+              "heapUsed": 71497056,
+              "external": 1669510,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 540,
+            "timedOutStreams": 0,
+            "completed": 500,
+            "natural": {
+              "rss": 231145472,
+              "heapTotal": 119521280,
+              "heapUsed": 88106432,
+              "external": 1703766,
+              "arrayBuffers": 55182
+            },
+            "forced": {
+              "rss": 231456768,
+              "heapTotal": 110346240,
+              "heapUsed": 71658424,
+              "external": 1669510,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 792,
+            "timedOutStreams": 0,
+            "completed": 752,
+            "natural": {
+              "rss": 232226816,
+              "heapTotal": 120045568,
+              "heapUsed": 84934304,
+              "external": 1695598,
+              "arrayBuffers": 47014
+            },
+            "forced": {
+              "rss": 232259584,
+              "heapTotal": 110608384,
+              "heapUsed": 71859624,
+              "external": 1669510,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1040,
+            "timedOutStreams": 0,
+            "completed": 1000,
+            "natural": {
+              "rss": 232767488,
+              "heapTotal": 119783424,
+              "heapUsed": 85217856,
+              "external": 1695574,
+              "arrayBuffers": 46990
+            },
+            "forced": {
+              "rss": 232783872,
+              "heapTotal": 110870528,
+              "heapUsed": 71928040,
+              "external": 1669510,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1292,
+            "timedOutStreams": 0,
+            "completed": 1252,
+            "natural": {
+              "rss": 232947712,
+              "heapTotal": 120045568,
+              "heapUsed": 84683528,
+              "external": 1695598,
+              "arrayBuffers": 47014
+            },
+            "forced": {
+              "rss": 232800256,
+              "heapTotal": 110346240,
+              "heapUsed": 72017576,
+              "external": 1669510,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1540,
+            "timedOutStreams": 0,
+            "completed": 1500,
+            "natural": {
+              "rss": 233373696,
+              "heapTotal": 119783424,
+              "heapUsed": 83985672,
+              "external": 1695574,
+              "arrayBuffers": 46990
+            },
+            "forced": {
+              "rss": 233111552,
+              "heapTotal": 110870528,
+              "heapUsed": 72132600,
+              "external": 1669510,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1792,
+            "timedOutStreams": 0,
+            "completed": 1752,
+            "natural": {
+              "rss": 234209280,
+              "heapTotal": 120045568,
+              "heapUsed": 83405752,
+              "external": 1757038,
+              "arrayBuffers": 108454
+            },
+            "forced": {
+              "rss": 233603072,
+              "heapTotal": 109412352,
+              "heapUsed": 70531352,
+              "external": 1663516,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 2040,
+            "timedOutStreams": 0,
+            "completed": 2000,
+            "natural": {
+              "rss": 234094592,
+              "heapTotal": 118587392,
+              "heapUsed": 81751776,
+              "external": 1730540,
+              "arrayBuffers": 22414
+            },
+            "forced": {
+              "rss": 233848832,
+              "heapTotal": 109412352,
+              "heapUsed": 70557456,
+              "external": 1663516,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "after-load",
+            "activeStreams": 0,
+            "completedStreams": 2040,
+            "timedOutStreams": 0,
+            "completed": 2000,
+            "natural": {
+              "rss": 233848832,
+              "heapTotal": 109412352,
+              "heapUsed": 70562072,
+              "external": 1663516,
+              "arrayBuffers": 20926
+            },
+            "forced": {
+              "rss": 233848832,
+              "heapTotal": 109674496,
+              "heapUsed": 70557928,
+              "external": 1663516,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "idle",
+            "activeStreams": 0,
+            "completedStreams": 2040,
+            "timedOutStreams": 0,
+            "completed": 2000,
+            "natural": {
+              "rss": 233848832,
+              "heapTotal": 109674496,
+              "heapUsed": 70571768,
+              "external": 1663516,
+              "arrayBuffers": 20926
+            },
+            "forced": {
+              "rss": 233881600,
+              "heapTotal": 109674496,
+              "heapUsed": 70561432,
+              "external": 1663516,
+              "arrayBuffers": 20926
+            }
+          }
+        ],
+        "errors": []
+      },
+      {
+        "arm": "runtime",
+        "themeMode": "finite",
+        "counts": {
+          "chat": 1000,
+          "dashboard": 1000
+        },
+        "retainedHeapDelta": 1407104,
+        "retainedHeapPercent": 1.9665359727336111,
+        "checkpoints": [
+          {
+            "stage": "cold",
+            "activeStreams": 0,
+            "completedStreams": 0,
+            "timedOutStreams": 0,
+            "completed": 0,
+            "natural": {
+              "rss": 211402752,
+              "heapTotal": 101253120,
+              "heapUsed": 78903144,
+              "external": 1666014,
+              "arrayBuffers": 20544
+            },
+            "forced": {
+              "rss": 210239488,
+              "heapTotal": 104316928,
+              "heapUsed": 67916888,
+              "external": 1666054,
+              "arrayBuffers": 20544
+            }
+          },
+          {
+            "stage": "warm",
+            "activeStreams": 0,
+            "completedStreams": 40,
+            "timedOutStreams": 0,
+            "completed": 0,
+            "natural": {
+              "rss": 226279424,
+              "heapTotal": 115064832,
+              "heapUsed": 78964448,
+              "external": 2040370,
+              "arrayBuffers": 29358
+            },
+            "forced": {
+              "rss": 222625792,
+              "heapTotal": 108707840,
+              "heapUsed": 71552416,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 292,
+            "timedOutStreams": 0,
+            "completed": 252,
+            "natural": {
+              "rss": 265895936,
+              "heapTotal": 154189824,
+              "heapUsed": 128536992,
+              "external": 1980474,
+              "arrayBuffers": 331890
+            },
+            "forced": {
+              "rss": 241352704,
+              "heapTotal": 108707840,
+              "heapUsed": 72162864,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 540,
+            "timedOutStreams": 0,
+            "completed": 500,
+            "natural": {
+              "rss": 267550720,
+              "heapTotal": 154320896,
+              "heapUsed": 125977968,
+              "external": 1980450,
+              "arrayBuffers": 331866
+            },
+            "forced": {
+              "rss": 243204096,
+              "heapTotal": 109494272,
+              "heapUsed": 72337768,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 792,
+            "timedOutStreams": 0,
+            "completed": 752,
+            "natural": {
+              "rss": 268419072,
+              "heapTotal": 155238400,
+              "heapUsed": 127529136,
+              "external": 1980474,
+              "arrayBuffers": 331890
+            },
+            "forced": {
+              "rss": 243564544,
+              "heapTotal": 109756416,
+              "heapUsed": 72515552,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1040,
+            "timedOutStreams": 0,
+            "completed": 1000,
+            "natural": {
+              "rss": 268566528,
+              "heapTotal": 155107328,
+              "heapUsed": 122418968,
+              "external": 1868595,
+              "arrayBuffers": 220011
+            },
+            "forced": {
+              "rss": 243859456,
+              "heapTotal": 109756416,
+              "heapUsed": 72600832,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1292,
+            "timedOutStreams": 0,
+            "completed": 1252,
+            "natural": {
+              "rss": 269139968,
+              "heapTotal": 155762688,
+              "heapUsed": 124337200,
+              "external": 1868619,
+              "arrayBuffers": 220035
+            },
+            "forced": {
+              "rss": 244252672,
+              "heapTotal": 110018560,
+              "heapUsed": 72691824,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1540,
+            "timedOutStreams": 0,
+            "completed": 1500,
+            "natural": {
+              "rss": 269287424,
+              "heapTotal": 155107328,
+              "heapUsed": 121130384,
+              "external": 1799236,
+              "arrayBuffers": 150652
+            },
+            "forced": {
+              "rss": 244580352,
+              "heapTotal": 109756416,
+              "heapUsed": 72820992,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1792,
+            "timedOutStreams": 0,
+            "completed": 1752,
+            "natural": {
+              "rss": 269795328,
+              "heapTotal": 155500544,
+              "heapUsed": 122468808,
+              "external": 2161688,
+              "arrayBuffers": 513104
+            },
+            "forced": {
+              "rss": 244776960,
+              "heapTotal": 110280704,
+              "heapUsed": 72933992,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 2040,
+            "timedOutStreams": 0,
+            "completed": 2000,
+            "natural": {
+              "rss": 269746176,
+              "heapTotal": 155893760,
+              "heapUsed": 120247704,
+              "external": 1799236,
+              "arrayBuffers": 150652
+            },
+            "forced": {
+              "rss": 244940800,
+              "heapTotal": 110280704,
+              "heapUsed": 72957488,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "after-load",
+            "activeStreams": 0,
+            "completedStreams": 2040,
+            "timedOutStreams": 0,
+            "completed": 2000,
+            "natural": {
+              "rss": 244940800,
+              "heapTotal": 110280704,
+              "heapUsed": 72962104,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            },
+            "forced": {
+              "rss": 244940800,
+              "heapTotal": 110280704,
+              "heapUsed": 72956016,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "idle",
+            "activeStreams": 0,
+            "completedStreams": 2040,
+            "timedOutStreams": 0,
+            "completed": 2000,
+            "natural": {
+              "rss": 244940800,
+              "heapTotal": 110280704,
+              "heapUsed": 72969856,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            },
+            "forced": {
+              "rss": 244940800,
+              "heapTotal": 110280704,
+              "heapUsed": 72959520,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          }
+        ],
+        "errors": []
+      },
+      {
+        "arm": "runtime",
+        "themeMode": "unique",
+        "counts": {
+          "chat": 1000,
+          "dashboard": 1000
+        },
+        "retainedHeapDelta": 44113912,
+        "retainedHeapPercent": 60.95104938700094,
+        "checkpoints": [
+          {
+            "stage": "cold",
+            "activeStreams": 0,
+            "completedStreams": 0,
+            "timedOutStreams": 0,
+            "completed": 0,
+            "natural": {
+              "rss": 211386368,
+              "heapTotal": 101253120,
+              "heapUsed": 78845312,
+              "external": 1666014,
+              "arrayBuffers": 20544
+            },
+            "forced": {
+              "rss": 210436096,
+              "heapTotal": 104316928,
+              "heapUsed": 67917656,
+              "external": 1666054,
+              "arrayBuffers": 20544
+            }
+          },
+          {
+            "stage": "warm",
+            "activeStreams": 0,
+            "completedStreams": 40,
+            "timedOutStreams": 0,
+            "completed": 0,
+            "natural": {
+              "rss": 227213312,
+              "heapTotal": 115589120,
+              "heapUsed": 81199080,
+              "external": 1789806,
+              "arrayBuffers": 141222
+            },
+            "forced": {
+              "rss": 223756288,
+              "heapTotal": 109494272,
+              "heapUsed": 72375968,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 292,
+            "timedOutStreams": 0,
+            "completed": 252,
+            "natural": {
+              "rss": 273154048,
+              "heapTotal": 162054144,
+              "heapUsed": 123857888,
+              "external": 2049858,
+              "arrayBuffers": 38822
+            },
+            "forced": {
+              "rss": 249233408,
+              "heapTotal": 116572160,
+              "heapUsed": 78360680,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 540,
+            "timedOutStreams": 0,
+            "completed": 500,
+            "natural": {
+              "rss": 278675456,
+              "heapTotal": 166641664,
+              "heapUsed": 139342328,
+              "external": 1980469,
+              "arrayBuffers": 331885
+            },
+            "forced": {
+              "rss": 256409600,
+              "heapTotal": 122601472,
+              "heapUsed": 83826592,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 792,
+            "timedOutStreams": 0,
+            "completed": 752,
+            "natural": {
+              "rss": 285409280,
+              "heapTotal": 173326336,
+              "heapUsed": 145099288,
+              "external": 1980495,
+              "arrayBuffers": 331911
+            },
+            "forced": {
+              "rss": 262389760,
+              "heapTotal": 129155072,
+              "heapUsed": 89425408,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1040,
+            "timedOutStreams": 0,
+            "completed": 1000,
+            "natural": {
+              "rss": 290062336,
+              "heapTotal": 177913856,
+              "heapUsed": 146083736,
+              "external": 1868610,
+              "arrayBuffers": 220026
+            },
+            "forced": {
+              "rss": 266534912,
+              "heapTotal": 134922240,
+              "heapUsed": 94769896,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1292,
+            "timedOutStreams": 0,
+            "completed": 1252,
+            "natural": {
+              "rss": 296550400,
+              "heapTotal": 184336384,
+              "heapUsed": 154465888,
+              "external": 1868634,
+              "arrayBuffers": 220050
+            },
+            "forced": {
+              "rss": 273481728,
+              "heapTotal": 140689408,
+              "heapUsed": 100222208,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1540,
+            "timedOutStreams": 0,
+            "completed": 1500,
+            "natural": {
+              "rss": 302333952,
+              "heapTotal": 189136896,
+              "heapUsed": 158289600,
+              "external": 1868611,
+              "arrayBuffers": 220027
+            },
+            "forced": {
+              "rss": 280739840,
+              "heapTotal": 146669568,
+              "heapUsed": 105714984,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1792,
+            "timedOutStreams": 0,
+            "completed": 1752,
+            "natural": {
+              "rss": 308789248,
+              "heapTotal": 194772992,
+              "heapUsed": 162951888,
+              "external": 1868635,
+              "arrayBuffers": 220051
+            },
+            "forced": {
+              "rss": 286867456,
+              "heapTotal": 152698880,
+              "heapUsed": 111188736,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 2040,
+            "timedOutStreams": 0,
+            "completed": 2000,
+            "natural": {
+              "rss": 314392576,
+              "heapTotal": 200933376,
+              "heapUsed": 169165960,
+              "external": 1868610,
+              "arrayBuffers": 220026
+            },
+            "forced": {
+              "rss": 292700160,
+              "heapTotal": 158466048,
+              "heapUsed": 116487864,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "after-load",
+            "activeStreams": 0,
+            "completedStreams": 2040,
+            "timedOutStreams": 0,
+            "completed": 2000,
+            "natural": {
+              "rss": 292700160,
+              "heapTotal": 158466048,
+              "heapUsed": 116492480,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            },
+            "forced": {
+              "rss": 292765696,
+              "heapTotal": 158728192,
+              "heapUsed": 116486376,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          },
+          {
+            "stage": "idle",
+            "activeStreams": 0,
+            "completedStreams": 2040,
+            "timedOutStreams": 0,
+            "completed": 2000,
+            "natural": {
+              "rss": 292765696,
+              "heapTotal": 158728192,
+              "heapUsed": 116500216,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            },
+            "forced": {
+              "rss": 292765696,
+              "heapTotal": 158728192,
+              "heapUsed": 116489880,
+              "external": 1677702,
+              "arrayBuffers": 29118
+            }
+          }
+        ],
+        "errors": []
+      },
+      {
+        "arm": "baseline",
+        "themeMode": "unique",
+        "counts": {
+          "chat": 1000,
+          "dashboard": 1000
+        },
+        "retainedHeapDelta": -2398904,
+        "retainedHeapPercent": -3.3793750641670255,
+        "checkpoints": [
+          {
+            "stage": "cold",
+            "activeStreams": 0,
+            "completedStreams": 0,
+            "timedOutStreams": 0,
+            "completed": 0,
+            "natural": {
+              "rss": 211369984,
+              "heapTotal": 101515264,
+              "heapUsed": 78924912,
+              "external": 1666014,
+              "arrayBuffers": 20544
+            },
+            "forced": {
+              "rss": 210436096,
+              "heapTotal": 104579072,
+              "heapUsed": 67921824,
+              "external": 1666054,
+              "arrayBuffers": 20544
+            }
+          },
+          {
+            "stage": "warm",
+            "activeStreams": 0,
+            "completedStreams": 40,
+            "timedOutStreams": 0,
+            "completed": 0,
+            "natural": {
+              "rss": 220037120,
+              "heapTotal": 109035520,
+              "heapUsed": 85683568,
+              "external": 1735286,
+              "arrayBuffers": 86702
+            },
+            "forced": {
+              "rss": 220184576,
+              "heapTotal": 107986944,
+              "heapUsed": 70986616,
+              "external": 1669510,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 292,
+            "timedOutStreams": 0,
+            "completed": 252,
+            "natural": {
+              "rss": 229883904,
+              "heapTotal": 118472704,
+              "heapUsed": 86648648,
+              "external": 1703790,
+              "arrayBuffers": 55206
+            },
+            "forced": {
+              "rss": 229834752,
+              "heapTotal": 108511232,
+              "heapUsed": 71506136,
+              "external": 1669510,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 540,
+            "timedOutStreams": 0,
+            "completed": 500,
+            "natural": {
+              "rss": 231211008,
+              "heapTotal": 119259136,
+              "heapUsed": 88136120,
+              "external": 1703766,
+              "arrayBuffers": 55182
+            },
+            "forced": {
+              "rss": 231620608,
+              "heapTotal": 108773376,
+              "heapUsed": 71670040,
+              "external": 1669510,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 792,
+            "timedOutStreams": 0,
+            "completed": 752,
+            "natural": {
+              "rss": 232685568,
+              "heapTotal": 120045568,
+              "heapUsed": 85652880,
+              "external": 1695598,
+              "arrayBuffers": 47014
+            },
+            "forced": {
+              "rss": 232521728,
+              "heapTotal": 109035520,
+              "heapUsed": 71864040,
+              "external": 1669510,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1040,
+            "timedOutStreams": 0,
+            "completed": 1000,
+            "natural": {
+              "rss": 233013248,
+              "heapTotal": 119783424,
+              "heapUsed": 85369456,
+              "external": 1695574,
+              "arrayBuffers": 46990
+            },
+            "forced": {
+              "rss": 232685568,
+              "heapTotal": 109035520,
+              "heapUsed": 71930720,
+              "external": 1669510,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1292,
+            "timedOutStreams": 0,
+            "completed": 1252,
+            "natural": {
+              "rss": 233209856,
+              "heapTotal": 120045568,
+              "heapUsed": 84794880,
+              "external": 1695598,
+              "arrayBuffers": 47014
+            },
+            "forced": {
+              "rss": 232259584,
+              "heapTotal": 107315200,
+              "heapUsed": 70279776,
+              "external": 1663516,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1540,
+            "timedOutStreams": 0,
+            "completed": 1500,
+            "natural": {
+              "rss": 232849408,
+              "heapTotal": 118063104,
+              "heapUsed": 82586896,
+              "external": 1689580,
+              "arrayBuffers": 46990
+            },
+            "forced": {
+              "rss": 231833600,
+              "heapTotal": 107053056,
+              "heapUsed": 68449896,
+              "external": 1662368,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 1792,
+            "timedOutStreams": 0,
+            "completed": 1752,
+            "natural": {
+              "rss": 232177664,
+              "heapTotal": 115965952,
+              "heapUsed": 79721720,
+              "external": 1749896,
+              "arrayBuffers": 108454
+            },
+            "forced": {
+              "rss": 231915520,
+              "heapTotal": 107053056,
+              "heapUsed": 68567808,
+              "external": 1662368,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "interval",
+            "activeStreams": 0,
+            "completedStreams": 2040,
+            "timedOutStreams": 0,
+            "completed": 2000,
+            "natural": {
+              "rss": 232456192,
+              "heapTotal": 116752384,
+              "heapUsed": 80871016,
+              "external": 1688432,
+              "arrayBuffers": 46990
+            },
+            "forced": {
+              "rss": 232062976,
+              "heapTotal": 107315200,
+              "heapUsed": 68585416,
+              "external": 1662368,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "after-load",
+            "activeStreams": 0,
+            "completedStreams": 2040,
+            "timedOutStreams": 0,
+            "completed": 2000,
+            "natural": {
+              "rss": 232062976,
+              "heapTotal": 107315200,
+              "heapUsed": 68590032,
+              "external": 1662368,
+              "arrayBuffers": 20926
+            },
+            "forced": {
+              "rss": 232046592,
+              "heapTotal": 106790912,
+              "heapUsed": 68584208,
+              "external": 1662368,
+              "arrayBuffers": 20926
+            }
+          },
+          {
+            "stage": "idle",
+            "activeStreams": 0,
+            "completedStreams": 2040,
+            "timedOutStreams": 0,
+            "completed": 2000,
+            "natural": {
+              "rss": 232046592,
+              "heapTotal": 106790912,
+              "heapUsed": 68598048,
+              "external": 1662368,
+              "arrayBuffers": 20926
+            },
+            "forced": {
+              "rss": 232046592,
+              "heapTotal": 107053056,
+              "heapUsed": 68587712,
+              "external": 1662368,
+              "arrayBuffers": 20926
+            }
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "cardinalityComparison": {
+      "baseline": {
+        "finiteDeltaBytes": -416440,
+        "uniqueDeltaBytes": -2398904,
+        "uniqueMinusFiniteBytes": -1982464,
+        "interpretation": "Cardinality diagnostic; examine per-checkpoint trend, not an overall leak-free boolean",
+        "finiteTrend": [
+          {
+            "stage": "cold",
+            "renders": 0,
+            "heapUsed": 67914016
+          },
+          {
+            "stage": "warm",
+            "renders": 0,
+            "heapUsed": 70977872
+          },
+          {
+            "stage": "interval",
+            "renders": 252,
+            "heapUsed": 71497056
+          },
+          {
+            "stage": "interval",
+            "renders": 500,
+            "heapUsed": 71658424
+          },
+          {
+            "stage": "interval",
+            "renders": 752,
+            "heapUsed": 71859624
+          },
+          {
+            "stage": "interval",
+            "renders": 1000,
+            "heapUsed": 71928040
+          },
+          {
+            "stage": "interval",
+            "renders": 1252,
+            "heapUsed": 72017576
+          },
+          {
+            "stage": "interval",
+            "renders": 1500,
+            "heapUsed": 72132600
+          },
+          {
+            "stage": "interval",
+            "renders": 1752,
+            "heapUsed": 70531352
+          },
+          {
+            "stage": "interval",
+            "renders": 2000,
+            "heapUsed": 70557456
+          },
+          {
+            "stage": "after-load",
+            "renders": 2000,
+            "heapUsed": 70557928
+          },
+          {
+            "stage": "idle",
+            "renders": 2000,
+            "heapUsed": 70561432
+          }
+        ],
+        "uniqueTrend": [
+          {
+            "stage": "cold",
+            "renders": 0,
+            "heapUsed": 67921824
+          },
+          {
+            "stage": "warm",
+            "renders": 0,
+            "heapUsed": 70986616
+          },
+          {
+            "stage": "interval",
+            "renders": 252,
+            "heapUsed": 71506136
+          },
+          {
+            "stage": "interval",
+            "renders": 500,
+            "heapUsed": 71670040
+          },
+          {
+            "stage": "interval",
+            "renders": 752,
+            "heapUsed": 71864040
+          },
+          {
+            "stage": "interval",
+            "renders": 1000,
+            "heapUsed": 71930720
+          },
+          {
+            "stage": "interval",
+            "renders": 1252,
+            "heapUsed": 70279776
+          },
+          {
+            "stage": "interval",
+            "renders": 1500,
+            "heapUsed": 68449896
+          },
+          {
+            "stage": "interval",
+            "renders": 1752,
+            "heapUsed": 68567808
+          },
+          {
+            "stage": "interval",
+            "renders": 2000,
+            "heapUsed": 68585416
+          },
+          {
+            "stage": "after-load",
+            "renders": 2000,
+            "heapUsed": 68584208
+          },
+          {
+            "stage": "idle",
+            "renders": 2000,
+            "heapUsed": 68587712
+          }
+        ]
+      },
+      "runtime": {
+        "finiteDeltaBytes": 1407104,
+        "uniqueDeltaBytes": 44113912,
+        "uniqueMinusFiniteBytes": 42706808,
+        "interpretation": "Cardinality diagnostic; examine per-checkpoint trend, not an overall leak-free boolean",
+        "finiteTrend": [
+          {
+            "stage": "cold",
+            "renders": 0,
+            "heapUsed": 67916888
+          },
+          {
+            "stage": "warm",
+            "renders": 0,
+            "heapUsed": 71552416
+          },
+          {
+            "stage": "interval",
+            "renders": 252,
+            "heapUsed": 72162864
+          },
+          {
+            "stage": "interval",
+            "renders": 500,
+            "heapUsed": 72337768
+          },
+          {
+            "stage": "interval",
+            "renders": 752,
+            "heapUsed": 72515552
+          },
+          {
+            "stage": "interval",
+            "renders": 1000,
+            "heapUsed": 72600832
+          },
+          {
+            "stage": "interval",
+            "renders": 1252,
+            "heapUsed": 72691824
+          },
+          {
+            "stage": "interval",
+            "renders": 1500,
+            "heapUsed": 72820992
+          },
+          {
+            "stage": "interval",
+            "renders": 1752,
+            "heapUsed": 72933992
+          },
+          {
+            "stage": "interval",
+            "renders": 2000,
+            "heapUsed": 72957488
+          },
+          {
+            "stage": "after-load",
+            "renders": 2000,
+            "heapUsed": 72956016
+          },
+          {
+            "stage": "idle",
+            "renders": 2000,
+            "heapUsed": 72959520
+          }
+        ],
+        "uniqueTrend": [
+          {
+            "stage": "cold",
+            "renders": 0,
+            "heapUsed": 67917656
+          },
+          {
+            "stage": "warm",
+            "renders": 0,
+            "heapUsed": 72375968
+          },
+          {
+            "stage": "interval",
+            "renders": 252,
+            "heapUsed": 78360680
+          },
+          {
+            "stage": "interval",
+            "renders": 500,
+            "heapUsed": 83826592
+          },
+          {
+            "stage": "interval",
+            "renders": 752,
+            "heapUsed": 89425408
+          },
+          {
+            "stage": "interval",
+            "renders": 1000,
+            "heapUsed": 94769896
+          },
+          {
+            "stage": "interval",
+            "renders": 1252,
+            "heapUsed": 100222208
+          },
+          {
+            "stage": "interval",
+            "renders": 1500,
+            "heapUsed": 105714984
+          },
+          {
+            "stage": "interval",
+            "renders": 1752,
+            "heapUsed": 111188736
+          },
+          {
+            "stage": "interval",
+            "renders": 2000,
+            "heapUsed": 116487864
+          },
+          {
+            "stage": "after-load",
+            "renders": 2000,
+            "heapUsed": 116486376
+          },
+          {
+            "stage": "idle",
+            "renders": 2000,
+            "heapUsed": 116489880
+          }
+        ]
+      }
+    }
+  }
+}

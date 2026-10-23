@@ -1,0 +1,109 @@
+{
+  "createdAt": "2026-10-23T16:09:44.662Z",
+  "scope": "Production minified component-only ESM bundles, React external. Actual baseline Button versus wrapped runtime Button. JS bytes exclude external React, baseline CSS and network overhead. This tests a dedicated component entry, not a future public package root barrel.",
+  "results": [
+    {
+      "arm": "baseline",
+      "raw": 10588,
+      "gzip": 3968,
+      "goober": false,
+      "chart": false,
+      "wholeLibrary": false,
+      "inputs": [
+        {
+          "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/cjs/react.production.js",
+          "bytesInOutput": 7857
+        },
+        {
+          "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/index.js",
+          "bytesInOutput": 46
+        },
+        {
+          "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/cjs/react-jsx-runtime.production.js",
+          "bytesInOutput": 355
+        },
+        {
+          "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/jsx-runtime.js",
+          "bytesInOutput": 46
+        },
+        {
+          "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/real/node_modules/clsx/dist/clsx.mjs",
+          "bytesInOutput": 368
+        },
+        {
+          "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/src/components/Button/Button.tsx",
+          "bytesInOutput": 740
+        }
+      ]
+    },
+    {
+      "arm": "runtime",
+      "raw": 21281,
+      "gzip": 6770,
+      "goober": true,
+      "chart": false,
+      "wholeLibrary": false,
+      "inputs": [
+        {
+          "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/cjs/react.production.js",
+          "bytesInOutput": 7857
+        },
+        {
+          "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/index.js",
+          "bytesInOutput": 46
+        },
+        {
+          "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/cjs/react-jsx-runtime.production.js",
+          "bytesInOutput": 356
+        },
+        {
+          "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/react/jsx-runtime.js",
+          "bytesInOutput": 49
+        },
+        {
+          "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/real/node_modules/clsx/dist/clsx.mjs",
+          "bytesInOutput": 368
+        },
+        {
+          "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/src/components/Button/Button.tsx",
+          "bytesInOutput": 744
+        },
+        {
+          "path": "runtime/descriptors/Button.json",
+          "bytesInOutput": 7832
+        },
+        {
+          "path": "runtime/adapter.tsx",
+          "bytesInOutput": 948
+        },
+        {
+          "path": "../../../Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/goober/dist/goober.modern.js",
+          "bytesInOutput": 1871
+        },
+        {
+          "path": "runtime/Button.tsx",
+          "bytesInOutput": 25
+        }
+      ]
+    },
+    {
+      "arm": "unused",
+      "raw": 51,
+      "gzip": 68,
+      "goober": false,
+      "chart": false,
+      "wholeLibrary": false,
+      "inputs": [
+        {
+          "path": "bundle/unused.tsx",
+          "bytesInOutput": 30
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "runtimeHasEngine": true,
+    "buttonExcludesChartAndLibrary": true,
+    "unusedImportDropsRuntime": true
+  }
+}

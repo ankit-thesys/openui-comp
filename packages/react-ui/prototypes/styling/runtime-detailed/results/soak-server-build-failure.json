@@ -1,0 +1,29 @@
+{
+  "startedAt": "2026-10-23T16:12:36.072Z",
+  "scope": "Bounded runtime Goober SSR memory/cardinality diagnostic, separate from prior static-CSS evidence. Fresh process for each arm/theme mode. Alternating actual chat/dashboard; four concurrent streaming SSR drains. Natural snapshots immediately before explicit GC, warm/interval/terminal retained samples after GC. Unique themes deliberately grow input cardinality, separating dynamic cache risk from finite-theme steady-state. Not a production leak-free certification.",
+  "perScenario": 1000,
+  "workers": [],
+  "failures": [
+    {
+      "message": "Build failed with 8 errors:\nsoak-entry.tsx:39:4: ERROR: Top-level await is currently not supported with the \"cjs\" output format\nsoak-entry.tsx:39:55: ERROR: Top-level await is currently not supported with the \"cjs\" output format\nsoak-entry.tsx:39:121: ERROR: Top-level await is currently not supported with the \"cjs\" output format\nsoak-entry.tsx:39:198: ERROR: Top-level await is currently not supported with the \"cjs\" output format\nsoak-entry.tsx:39:292: ERROR: Top-level await is currently not supported with the \"cjs\" output format\n...",
+      "stack": "Error: Build failed with 8 errors:\nsoak-entry.tsx:39:4: ERROR: Top-level await is currently not supported with the \"cjs\" output format\nsoak-entry.tsx:39:55: ERROR: Top-level await is currently not supported with the \"cjs\" output format\nsoak-entry.tsx:39:121: ERROR: Top-level await is currently not supported with the \"cjs\" output format\nsoak-entry.tsx:39:198: ERROR: Top-level await is currently not supported with the \"cjs\" output format\nsoak-entry.tsx:39:292: ERROR: Top-level await is currently not supported with the \"cjs\" output format\n...\n    at failureErrorWithLog (/Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/esbuild/lib/main.js:1467:15)\n    at /Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/esbuild/lib/main.js:926:25\n    at /Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/esbuild/lib/main.js:878:52\n    at buildResponseToResult (/Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/esbuild/lib/main.js:924:7)\n    at /Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/esbuild/lib/main.js:951:16\n    at responseCallbacks.<computed> (/Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/esbuild/lib/main.js:603:9)\n    at handleIncomingPacket (/Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/esbuild/lib/main.js:658:12)\n    at Socket.readFromStdout (/Users/ankitdas/thesys/openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/esbuild/lib/main.js:581:7)\n    at Socket.emit (node:events:519:28)\n    at addChunk (node:internal/streams/readable:561:12)"
+    }
+  ],
+  "status": "failed",
+  "versions": {
+    "node": "v22.22.2",
+    "react": "19.3.1",
+    "goober": "2.1.19"
+  },
+  "sourceHashes": {
+    "soak-entry.tsx": "8c4ce17905e3b86925a3ffce900022922c1d88b263f4f60722d79fd9bc045b87",
+    "soak-check.mjs": "31562594bb0af5ba79a813e91da612a26aee1627f020617aaf4a0ede6fd7249d",
+    "build-shared.mjs": "74b7e40c85272da0b435170e5b094fec31706f44935822fa0a4448ab92df72be",
+    "runtime/Fixture.tsx": "8c38b1a3573352410fc916fe052bedaedbd42c083a4e7890574edfcac8819522",
+    "runtime/adapter.tsx": "9d19b3be177f5e65d3eebe0c82e3c4281285d9ddc31ff0352961a6b842b9cfef",
+    "runtime/descriptors.json": "f32c62b898191c55a65c5916def97f6b47474d745f8a80c63b9dc5c65383cf95",
+    "runtime/selector-normalize.mjs": "8c797c331d5342c036471582b677f7614456209f6e380ae38a0f81a4bbd13b68"
+  },
+  "finishedAt": "2026-10-23T16:12:36.430Z",
+  "elapsedMs": 358.143125
+}

@@ -1,0 +1,26 @@
+{
+  "candidate": "nested-object-specificity-neutral-unlayered",
+  "generatedAt": "2026-10-23T16:09:35.888Z",
+  "note": "next-build.json retains original pre-build checker hash. After initial check, the test-only late observer was narrowed to themed realRenderer to exclude new standalone state probes. No app or foundation code was rebuilt or changed; these hashes identify the actual compiled app and corrected executed checker.",
+  "originalCheckerHash": "283531505fb9186181db08949f46550adb8538a42390804ff127bfe3fb315606",
+  "executedCheckerHash": "e24c708b1f97a41653b6b904c03463902894901d77a81251a9a51976b51b8252",
+  "hashes": {
+    "next/.next/server/app/page.js": "92481da6b11a95f7f931d37999bf2a2e0c313b07fd653d61070034a0d2570f39",
+    "next/.next/BUILD_ID": "ce6169a2d4b153785f406b00aa0e6e68ce436f1746c1911a833dc6f0f060947d",
+    "next/generated.jsx": "394d59fc2ec8556a313c356a08f840cf0e1c84645c84fef8fcbd1c5fdfa11731",
+    "runtime/adapter.tsx": "9d19b3be177f5e65d3eebe0c82e3c4281285d9ddc31ff0352961a6b842b9cfef",
+    "runtime/Fixture.tsx": "8c38b1a3573352410fc916fe052bedaedbd42c083a4e7890574edfcac8819522",
+    "runtime/descriptors.json": "f32c62b898191c55a65c5916def97f6b47474d745f8a80c63b9dc5c65383cf95",
+    "runtime/descriptors/Button.json": "cbec4afc6ae99f46bc676ea83011df44e93d3186cc2c019ea7aa0633fcd4a29a",
+    "next/public/baseline.css": "982ff6f2a4d1666a560901621226f417cf6df853a950006cb26e33287b0c918f",
+    "next-check.mjs": "e24c708b1f97a41653b6b904c03463902894901d77a81251a9a51976b51b8252",
+    "next/.next/static/chunks/app/_global-error/page-dc002cbbc015795c.js": "9ce9b34bd95c7888e37fea63648d42f64e9189a1d5489f0ec370751f86eb5061",
+    "next/.next/static/chunks/app/_not-found/page-d3465e9ed00bd309.js": "1f4e485fd839a659d890e6c4a5f032bcf03b763bb52afaee6eb1ee99c6b132dc",
+    "next/.next/static/chunks/app/layout-dc002cbbc015795c.js": "9ce9b34bd95c7888e37fea63648d42f64e9189a1d5489f0ec370751f86eb5061",
+    "next/.next/static/chunks/app/page-13d2fb6c29537f6b.js": "ec832bc4ca7c77790e5ce0a54e8e75b86696152f10729413c8dbbf7e2d094cb8",
+    "next/entry.tsx": "d2c49b09f518449ea5424b5b7fc0174d1cc8f21d50afe40a621a4bf6d96c84a7",
+    "next/app/page.jsx": "00dfc783ffd8500add5691a9cae027d8f704275d115f5269261ba3d815fe1b11",
+    "next/app/layout.jsx": "58c6442779dc45e35e52ad4a7a272aca5ed0b60de0217f8f0f892d8f8a73d1a7",
+    "next/next.config.mjs": "70f2786d8698b9c3090065d6fb1564f11180556c8f041b6894d60ccfce0428e6"
+  }
+}

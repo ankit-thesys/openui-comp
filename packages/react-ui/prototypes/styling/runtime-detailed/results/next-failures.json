@@ -1,0 +1,106 @@
+{
+  "candidate": "nested-object-specificity-neutral-unlayered",
+  "totalChecks": 127,
+  "failedChecks": [
+    "baseline-blue-SSR",
+    "baseline-red-SSR",
+    "baseline-tailwind4-override",
+    "runtime-tailwind4-override",
+    "baseline-plain-ordinaryOverrideHover",
+    "baseline-tailwind3-ordinaryOverrideHover",
+    "baseline-tailwind4-ordinaryOverride",
+    "baseline-tailwind4-firstRevealOrdinaryOverride",
+    "baseline-tailwind4-ordinaryOverrideHover",
+    "runtime-plain-ordinaryOverrideHover",
+    "runtime-tailwind3-ordinaryOverrideHover",
+    "runtime-tailwind4-ordinaryOverride",
+    "runtime-tailwind4-firstRevealOrdinaryOverride",
+    "runtime-tailwind4-ordinaryOverrideHover"
+  ],
+  "hoverDifferences": [
+    {
+      "arm": "baseline",
+      "framework": "plain",
+      "differences": {
+        "background": {
+          "library": "oklch(0.546 0.215 262.881 / 0.8)",
+          "host": "rgb(34, 197, 94)"
+        }
+      }
+    },
+    {
+      "arm": "baseline",
+      "framework": "tailwind3",
+      "differences": {
+        "background": {
+          "library": "oklch(0.546 0.215 262.881 / 0.8)",
+          "host": "rgb(34, 197, 94)"
+        }
+      }
+    },
+    {
+      "arm": "baseline",
+      "framework": "tailwind4",
+      "differences": {
+        "background": {
+          "library": "oklch(0.546 0.215 262.881 / 0.8)",
+          "host": "oklch(0.723 0.219 149.579)"
+        },
+        "color": {
+          "library": "oklch(0.994 0 89.876)",
+          "host": "rgb(255, 255, 255)"
+        },
+        "padding": {
+          "library": "7px 10px",
+          "host": "32px"
+        },
+        "borderRadius": {
+          "library": "8px",
+          "host": "0px"
+        }
+      }
+    },
+    {
+      "arm": "runtime",
+      "framework": "plain",
+      "differences": {
+        "background": {
+          "library": "oklch(0.546 0.215 262.881 / 0.8)",
+          "host": "rgb(34, 197, 94)"
+        }
+      }
+    },
+    {
+      "arm": "runtime",
+      "framework": "tailwind3",
+      "differences": {
+        "background": {
+          "library": "oklch(0.546 0.215 262.881 / 0.8)",
+          "host": "rgb(34, 197, 94)"
+        }
+      }
+    },
+    {
+      "arm": "runtime",
+      "framework": "tailwind4",
+      "differences": {
+        "background": {
+          "library": "oklch(0.546 0.215 262.881 / 0.8)",
+          "host": "oklch(0.723 0.219 149.579)"
+        },
+        "color": {
+          "library": "oklch(0.994 0 89.876)",
+          "host": "rgb(255, 255, 255)"
+        },
+        "padding": {
+          "library": "7px 10px",
+          "host": "32px"
+        },
+        "borderRadius": {
+          "library": "8px",
+          "host": "0px"
+        }
+      }
+    }
+  ]
+}

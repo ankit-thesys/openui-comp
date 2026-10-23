@@ -1,0 +1,3416 @@
+{
+  "generatedAt": "2026-10-23T16:16:54.734Z",
+  "status": "completed",
+  "label": "DIAGNOSTIC ONLY — browser emitted-CSS rewrite, not consumer path, not a tested or accepted candidate",
+  "policy": "After hydration and delayed content completion, wrap all package runtime React style-resource text in @layer components. Theme rules included when coalesced with component rules. No declaration-order layer statement added. Host frameworks supply their own existing layer order. Original ThemeProvider effect styles, host CSS and host Goober sheets untouched.",
+  "originalNoFrameworkGolden": {
+    "normal": {
+      "base": {
+        "background": "oklch(0.55 0.2 260)",
+        "color": "oklch(0.994 0 89.876)",
+        "padding": "7px 10px",
+        "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+        "borderRadius": "8px",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+        "outline": "oklch(0.994 0 89.876) none 3px"
+      },
+      "override": {
+        "background": "oklch(0.55 0.2 260)",
+        "color": "oklch(0.994 0 89.876)",
+        "padding": "7px 10px",
+        "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+        "borderRadius": "8px",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+        "outline": "oklch(0.994 0 89.876) none 3px"
+      },
+      "nativeHost": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "boxShadow": "none",
+        "outline": "rgb(0, 0, 0) none 3px"
+      }
+    },
+    "hover": {
+      "base": {
+        "background": "oklch(0.546 0.215 262.881 / 0.8)",
+        "color": "oklch(0.994 0 89.876)",
+        "padding": "7px 10px",
+        "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+        "borderRadius": "8px",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "boxShadow": "none",
+        "outline": "oklch(0.994 0 89.876) none 3px"
+      },
+      "override": {
+        "background": "oklch(0.546 0.215 262.881 / 0.8)",
+        "color": "oklch(0.994 0 89.876)",
+        "padding": "7px 10px",
+        "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+        "borderRadius": "8px",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "boxShadow": "none",
+        "outline": "oklch(0.994 0 89.876) none 3px"
+      },
+      "nativeHost": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px",
+        "fontWeight": "400",
+        "lineHeight": "normal",
+        "boxShadow": "none",
+        "outline": "rgb(0, 0, 0) none 3px"
+      }
+    }
+  },
+  "previousBlanketRun": {
+    "generatedAt": "2026-10-23T16:15:22.250Z",
+    "status": "completed",
+    "label": "DIAGNOSTIC ONLY — browser emitted-CSS rewrite, not consumer path, not a tested or accepted candidate",
+    "policy": "After hydration and delayed content completion, wrap all package runtime React style-resource text in @layer components. Theme rules included when coalesced with component rules. No declaration-order layer statement added. Host frameworks supply their own existing layer order. Original ThemeProvider effect styles, host CSS and host Goober sheets untouched.",
+    "originalNoFrameworkGolden": {
+      "normal": {
+        "base": {
+          "background": "oklch(0.55 0.2 260)",
+          "color": "oklch(0.994 0 89.876)",
+          "padding": "7px 10px",
+          "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+          "borderRadius": "8px",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+          "outline": "oklch(0.994 0 89.876) none 3px"
+        },
+        "override": {
+          "background": "oklch(0.55 0.2 260)",
+          "color": "oklch(0.994 0 89.876)",
+          "padding": "7px 10px",
+          "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+          "borderRadius": "8px",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+          "outline": "oklch(0.994 0 89.876) none 3px"
+        },
+        "nativeHost": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "borderRadius": "0px",
+          "fontFamily": "Arial",
+          "fontSize": "13.3333px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "boxShadow": "none",
+          "outline": "rgb(0, 0, 0) none 3px"
+        }
+      },
+      "hover": {
+        "base": {
+          "background": "oklch(0.546 0.215 262.881 / 0.8)",
+          "color": "oklch(0.994 0 89.876)",
+          "padding": "7px 10px",
+          "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+          "borderRadius": "8px",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "boxShadow": "none",
+          "outline": "oklch(0.994 0 89.876) none 3px"
+        },
+        "override": {
+          "background": "oklch(0.546 0.215 262.881 / 0.8)",
+          "color": "oklch(0.994 0 89.876)",
+          "padding": "7px 10px",
+          "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+          "borderRadius": "8px",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "boxShadow": "none",
+          "outline": "oklch(0.994 0 89.876) none 3px"
+        },
+        "nativeHost": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "borderRadius": "0px",
+          "fontFamily": "Arial",
+          "fontSize": "13.3333px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "boxShadow": "none",
+          "outline": "rgb(0, 0, 0) none 3px"
+        }
+      }
+    },
+    "rows": [
+      {
+        "framework": "none",
+        "sourceMarker": "chat",
+        "before": {
+          "normal": {
+            "base": {
+              "background": "oklch(0.55 0.2 260)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "oklch(0.55 0.2 260)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(239, 239, 239)",
+              "color": "rgb(0, 0, 0)",
+              "padding": "1px 6px",
+              "border": "2px outset rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Arial",
+              "fontSize": "13.3333px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 3px"
+            }
+          },
+          "hover": {
+            "base": {
+              "background": "oklch(0.546 0.215 262.881 / 0.8)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "oklch(0.546 0.215 262.881 / 0.8)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(239, 239, 239)",
+              "color": "rgb(0, 0, 0)",
+              "padding": "1px 6px",
+              "border": "2px outset rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Arial",
+              "fontSize": "13.3333px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 3px"
+            }
+          }
+        },
+        "after": {
+          "normal": {
+            "base": {
+              "background": "oklch(0.55 0.2 260)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "oklch(0.55 0.2 260)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(239, 239, 239)",
+              "color": "rgb(0, 0, 0)",
+              "padding": "1px 6px",
+              "border": "2px outset rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Arial",
+              "fontSize": "13.3333px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 3px"
+            }
+          },
+          "hover": {
+            "base": {
+              "background": "oklch(0.546 0.215 262.881 / 0.8)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "oklch(0.546 0.215 262.881 / 0.8)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(239, 239, 239)",
+              "color": "rgb(0, 0, 0)",
+              "padding": "1px 6px",
+              "border": "2px outset rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Arial",
+              "fontSize": "13.3333px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 3px"
+            }
+          }
+        },
+        "comparisons": {
+          "beforeBaseNormalVsOriginal": {},
+          "afterBaseNormalVsOriginal": {},
+          "beforeBaseHoverVsOriginal": {},
+          "afterBaseHoverVsOriginal": {},
+          "beforeOverrideNormalVsNativeHost": {
+            "background": {
+              "observed": "oklch(0.55 0.2 260)",
+              "reference": "rgb(239, 239, 239)"
+            },
+            "color": {
+              "observed": "oklch(0.994 0 89.876)",
+              "reference": "rgb(0, 0, 0)"
+            },
+            "padding": {
+              "observed": "7px 10px",
+              "reference": "1px 6px"
+            },
+            "border": {
+              "observed": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "reference": "2px outset rgb(0, 0, 0)"
+            },
+            "borderRadius": {
+              "observed": "8px",
+              "reference": "0px"
+            },
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "Arial"
+            },
+            "fontSize": {
+              "observed": "16px",
+              "reference": "13.3333px"
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "normal"
+            },
+            "boxShadow": {
+              "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "reference": "none"
+            },
+            "outline": {
+              "observed": "oklch(0.994 0 89.876) none 3px",
+              "reference": "rgb(0, 0, 0) none 3px"
+            }
+          },
+          "afterOverrideNormalVsNativeHost": {
+            "background": {
+              "observed": "oklch(0.55 0.2 260)",
+              "reference": "rgb(239, 239, 239)"
+            },
+            "color": {
+              "observed": "oklch(0.994 0 89.876)",
+              "reference": "rgb(0, 0, 0)"
+            },
+            "padding": {
+              "observed": "7px 10px",
+              "reference": "1px 6px"
+            },
+            "border": {
+              "observed": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "reference": "2px outset rgb(0, 0, 0)"
+            },
+            "borderRadius": {
+              "observed": "8px",
+              "reference": "0px"
+            },
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "Arial"
+            },
+            "fontSize": {
+              "observed": "16px",
+              "reference": "13.3333px"
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "normal"
+            },
+            "boxShadow": {
+              "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "reference": "none"
+            },
+            "outline": {
+              "observed": "oklch(0.994 0 89.876) none 3px",
+              "reference": "rgb(0, 0, 0) none 3px"
+            }
+          },
+          "beforeOverrideHoverVsNativeHost": {
+            "background": {
+              "observed": "oklch(0.546 0.215 262.881 / 0.8)",
+              "reference": "rgb(239, 239, 239)"
+            },
+            "color": {
+              "observed": "oklch(0.994 0 89.876)",
+              "reference": "rgb(0, 0, 0)"
+            },
+            "padding": {
+              "observed": "7px 10px",
+              "reference": "1px 6px"
+            },
+            "border": {
+              "observed": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "reference": "2px outset rgb(0, 0, 0)"
+            },
+            "borderRadius": {
+              "observed": "8px",
+              "reference": "0px"
+            },
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "Arial"
+            },
+            "fontSize": {
+              "observed": "16px",
+              "reference": "13.3333px"
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "normal"
+            },
+            "outline": {
+              "observed": "oklch(0.994 0 89.876) none 3px",
+              "reference": "rgb(0, 0, 0) none 3px"
+            }
+          },
+          "afterOverrideHoverVsNativeHost": {
+            "background": {
+              "observed": "oklch(0.546 0.215 262.881 / 0.8)",
+              "reference": "rgb(239, 239, 239)"
+            },
+            "color": {
+              "observed": "oklch(0.994 0 89.876)",
+              "reference": "rgb(0, 0, 0)"
+            },
+            "padding": {
+              "observed": "7px 10px",
+              "reference": "1px 6px"
+            },
+            "border": {
+              "observed": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "reference": "2px outset rgb(0, 0, 0)"
+            },
+            "borderRadius": {
+              "observed": "8px",
+              "reference": "0px"
+            },
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "Arial"
+            },
+            "fontSize": {
+              "observed": "16px",
+              "reference": "13.3333px"
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "normal"
+            },
+            "outline": {
+              "observed": "oklch(0.994 0 89.876) none 3px",
+              "reference": "rgb(0, 0, 0) none 3px"
+            }
+          }
+        },
+        "sheets": [
+          {
+            "href": "openui-runtime-v1:Button:go4164233448 openui-runtime-v1:Theme:go3345755774 openui-runtime-v1:Card:go3156460867 openui-runtime-v1:CardHeader:go2812757914 openui-runtime-v1:TextContent:go2241212691 openui-runtime-v1:FormControl:go2956124193 openui-runtime-v1:Input:go1055295454 openui-runtime-v1:Buttons:go2558798771",
+            "themeResourceIncluded": true,
+            "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+            "beforeSHA256": "99bc6fa0bcb7a59911b7d772b2d764fc82712e182294115e6c69889b4ca9a7f5",
+            "afterSHA256": "6ac61fe7affadc5462c901947ca89d8629ca19a9298113e7f5ddfeeaa8f1dfda",
+            "beforeBytes": 48358,
+            "afterBytes": 48380
+          },
+          {
+            "href": "openui-runtime-v1:BarChart:go975812685 openui-runtime-v1:Table:go3123637919",
+            "themeResourceIncluded": false,
+            "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+            "beforeSHA256": "987665a73582bbbd27c6040d9cc2ba32ef2a049ac039e47fb24187b859964ac5",
+            "afterSHA256": "967d02c5f192d93863811890256a5c1279958e96d14515aadd609696e7b0ae1c",
+            "beforeBytes": 26111,
+            "afterBytes": 26133
+          }
+        ]
+      },
+      {
+        "framework": "plain",
+        "sourceMarker": "chat",
+        "before": {
+          "normal": {
+            "base": {
+              "background": "oklch(0.55 0.2 260)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "rgb(239, 68, 68)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px none rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(239, 68, 68)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px none rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "Arial",
+              "fontSize": "13.3333px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          },
+          "hover": {
+            "base": {
+              "background": "oklch(0.546 0.215 262.881 / 0.8)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "oklch(0.546 0.215 262.881 / 0.8)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px none rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(34, 197, 94)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px none rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "Arial",
+              "fontSize": "13.3333px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          }
+        },
+        "after": {
+          "normal": {
+            "base": {
+              "background": "oklch(0.55 0.2 260)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "rgb(239, 68, 68)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px none rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(239, 68, 68)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px none rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "Arial",
+              "fontSize": "13.3333px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          },
+          "hover": {
+            "base": {
+              "background": "oklch(0.546 0.215 262.881 / 0.8)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "rgb(34, 197, 94)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px none rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(34, 197, 94)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px none rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "Arial",
+              "fontSize": "13.3333px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          }
+        },
+        "comparisons": {
+          "beforeBaseNormalVsOriginal": {},
+          "afterBaseNormalVsOriginal": {},
+          "beforeBaseHoverVsOriginal": {},
+          "afterBaseHoverVsOriginal": {},
+          "beforeOverrideNormalVsNativeHost": {
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "Arial"
+            },
+            "fontSize": {
+              "observed": "16px",
+              "reference": "13.3333px"
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "normal"
+            },
+            "boxShadow": {
+              "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "reference": "none"
+            }
+          },
+          "afterOverrideNormalVsNativeHost": {
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "Arial"
+            },
+            "fontSize": {
+              "observed": "16px",
+              "reference": "13.3333px"
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "normal"
+            },
+            "boxShadow": {
+              "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "reference": "none"
+            }
+          },
+          "beforeOverrideHoverVsNativeHost": {
+            "background": {
+              "observed": "oklch(0.546 0.215 262.881 / 0.8)",
+              "reference": "rgb(34, 197, 94)"
+            },
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "Arial"
+            },
+            "fontSize": {
+              "observed": "16px",
+              "reference": "13.3333px"
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "normal"
+            }
+          },
+          "afterOverrideHoverVsNativeHost": {
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "Arial"
+            },
+            "fontSize": {
+              "observed": "16px",
+              "reference": "13.3333px"
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "normal"
+            }
+          }
+        },
+        "sheets": [
+          {
+            "href": "openui-runtime-v1:Button:go4164233448 openui-runtime-v1:Theme:go3345755774 openui-runtime-v1:Card:go3156460867 openui-runtime-v1:CardHeader:go2812757914 openui-runtime-v1:TextContent:go2241212691 openui-runtime-v1:FormControl:go2956124193 openui-runtime-v1:Input:go1055295454 openui-runtime-v1:Buttons:go2558798771",
+            "themeResourceIncluded": true,
+            "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+            "beforeSHA256": "99bc6fa0bcb7a59911b7d772b2d764fc82712e182294115e6c69889b4ca9a7f5",
+            "afterSHA256": "6ac61fe7affadc5462c901947ca89d8629ca19a9298113e7f5ddfeeaa8f1dfda",
+            "beforeBytes": 48358,
+            "afterBytes": 48380
+          },
+          {
+            "href": "openui-runtime-v1:BarChart:go975812685 openui-runtime-v1:Table:go3123637919",
+            "themeResourceIncluded": false,
+            "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+            "beforeSHA256": "987665a73582bbbd27c6040d9cc2ba32ef2a049ac039e47fb24187b859964ac5",
+            "afterSHA256": "967d02c5f192d93863811890256a5c1279958e96d14515aadd609696e7b0ae1c",
+            "beforeBytes": 26111,
+            "afterBytes": 26133
+          }
+        ]
+      },
+      {
+        "framework": "tailwind3",
+        "sourceMarker": "chat",
+        "before": {
+          "normal": {
+            "base": {
+              "background": "oklch(0.55 0.2 260)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "rgb(239, 68, 68)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(239, 68, 68)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "0px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          },
+          "hover": {
+            "base": {
+              "background": "oklch(0.546 0.215 262.881 / 0.8)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "oklch(0.546 0.215 262.881 / 0.8)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(34, 197, 94)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "0px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          }
+        },
+        "after": {
+          "normal": {
+            "base": {
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "rgb(0, 0, 0)",
+              "padding": "0px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "8px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "rgb(0, 0, 0) none 3px"
+            },
+            "override": {
+              "background": "rgb(239, 68, 68)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "0px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(239, 68, 68)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "0px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          },
+          "hover": {
+            "base": {
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "rgb(0, 0, 0)",
+              "padding": "0px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "8px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 3px"
+            },
+            "override": {
+              "background": "rgb(34, 197, 94)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "0px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(34, 197, 94)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "0px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          }
+        },
+        "comparisons": {
+          "beforeBaseNormalVsOriginal": {},
+          "afterBaseNormalVsOriginal": {
+            "background": {
+              "observed": "rgba(0, 0, 0, 0)",
+              "reference": "oklch(0.55 0.2 260)"
+            },
+            "color": {
+              "observed": "rgb(0, 0, 0)",
+              "reference": "oklch(0.994 0 89.876)"
+            },
+            "padding": {
+              "observed": "0px",
+              "reference": "7px 10px"
+            },
+            "border": {
+              "observed": "0px solid rgb(229, 231, 235)",
+              "reference": "1px solid oklch(0.546 0.215 262.881 / 0.08)"
+            },
+            "fontFamily": {
+              "observed": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "reference": "Inter, sans-serif"
+            },
+            "lineHeight": {
+              "observed": "24px",
+              "reference": "20px"
+            },
+            "outline": {
+              "observed": "rgb(0, 0, 0) none 3px",
+              "reference": "oklch(0.994 0 89.876) none 3px"
+            }
+          },
+          "beforeBaseHoverVsOriginal": {},
+          "afterBaseHoverVsOriginal": {
+            "background": {
+              "observed": "rgba(0, 0, 0, 0)",
+              "reference": "oklch(0.546 0.215 262.881 / 0.8)"
+            },
+            "color": {
+              "observed": "rgb(0, 0, 0)",
+              "reference": "oklch(0.994 0 89.876)"
+            },
+            "padding": {
+              "observed": "0px",
+              "reference": "7px 10px"
+            },
+            "border": {
+              "observed": "0px solid rgb(229, 231, 235)",
+              "reference": "1px solid oklch(0.546 0.215 262.881 / 0.08)"
+            },
+            "fontFamily": {
+              "observed": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "reference": "Inter, sans-serif"
+            },
+            "lineHeight": {
+              "observed": "24px",
+              "reference": "20px"
+            },
+            "outline": {
+              "observed": "rgb(0, 0, 0) none 3px",
+              "reference": "oklch(0.994 0 89.876) none 3px"
+            }
+          },
+          "beforeOverrideNormalVsNativeHost": {
+            "border": {
+              "observed": "0px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "reference": "0px solid rgb(229, 231, 235)"
+            },
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "24px"
+            },
+            "boxShadow": {
+              "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "reference": "none"
+            }
+          },
+          "afterOverrideNormalVsNativeHost": {
+            "boxShadow": {
+              "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "reference": "none"
+            }
+          },
+          "beforeOverrideHoverVsNativeHost": {
+            "background": {
+              "observed": "oklch(0.546 0.215 262.881 / 0.8)",
+              "reference": "rgb(34, 197, 94)"
+            },
+            "border": {
+              "observed": "0px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "reference": "0px solid rgb(229, 231, 235)"
+            },
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "24px"
+            }
+          },
+          "afterOverrideHoverVsNativeHost": {}
+        },
+        "sheets": [
+          {
+            "href": "openui-runtime-v1:Button:go4164233448 openui-runtime-v1:Theme:go3345755774 openui-runtime-v1:Card:go3156460867 openui-runtime-v1:CardHeader:go2812757914 openui-runtime-v1:TextContent:go2241212691 openui-runtime-v1:FormControl:go2956124193 openui-runtime-v1:Input:go1055295454 openui-runtime-v1:Buttons:go2558798771",
+            "themeResourceIncluded": true,
+            "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+            "beforeSHA256": "99bc6fa0bcb7a59911b7d772b2d764fc82712e182294115e6c69889b4ca9a7f5",
+            "afterSHA256": "6ac61fe7affadc5462c901947ca89d8629ca19a9298113e7f5ddfeeaa8f1dfda",
+            "beforeBytes": 48358,
+            "afterBytes": 48380
+          },
+          {
+            "href": "openui-runtime-v1:BarChart:go975812685 openui-runtime-v1:Table:go3123637919",
+            "themeResourceIncluded": false,
+            "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+            "beforeSHA256": "987665a73582bbbd27c6040d9cc2ba32ef2a049ac039e47fb24187b859964ac5",
+            "afterSHA256": "967d02c5f192d93863811890256a5c1279958e96d14515aadd609696e7b0ae1c",
+            "beforeBytes": 26111,
+            "afterBytes": 26133
+          }
+        ]
+      },
+      {
+        "framework": "tailwind4",
+        "sourceMarker": "chat",
+        "before": {
+          "normal": {
+            "base": {
+              "background": "oklch(0.55 0.2 260)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "oklch(0.55 0.2 260)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "nativeHost": {
+              "background": "oklch(0.637 0.237 25.331)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          },
+          "hover": {
+            "base": {
+              "background": "oklch(0.546 0.215 262.881 / 0.8)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "oklch(0.546 0.215 262.881 / 0.8)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "nativeHost": {
+              "background": "oklch(0.723 0.219 149.579)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          }
+        },
+        "after": {
+          "normal": {
+            "base": {
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "rgb(0, 0, 0)",
+              "padding": "0px",
+              "border": "0px solid rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "rgb(0, 0, 0) none 3px"
+            },
+            "override": {
+              "background": "oklch(0.637 0.237 25.331)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "oklch(0.637 0.237 25.331)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          },
+          "hover": {
+            "base": {
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "rgb(0, 0, 0)",
+              "padding": "0px",
+              "border": "0px solid rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 3px"
+            },
+            "override": {
+              "background": "oklch(0.723 0.219 149.579)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "oklch(0.723 0.219 149.579)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          }
+        },
+        "comparisons": {
+          "beforeBaseNormalVsOriginal": {},
+          "afterBaseNormalVsOriginal": {
+            "background": {
+              "observed": "rgba(0, 0, 0, 0)",
+              "reference": "oklch(0.55 0.2 260)"
+            },
+            "color": {
+              "observed": "rgb(0, 0, 0)",
+              "reference": "oklch(0.994 0 89.876)"
+            },
+            "padding": {
+              "observed": "0px",
+              "reference": "7px 10px"
+            },
+            "border": {
+              "observed": "0px solid rgb(0, 0, 0)",
+              "reference": "1px solid oklch(0.546 0.215 262.881 / 0.08)"
+            },
+            "borderRadius": {
+              "observed": "0px",
+              "reference": "8px"
+            },
+            "fontFamily": {
+              "observed": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "reference": "Inter, sans-serif"
+            },
+            "lineHeight": {
+              "observed": "24px",
+              "reference": "20px"
+            },
+            "outline": {
+              "observed": "rgb(0, 0, 0) none 3px",
+              "reference": "oklch(0.994 0 89.876) none 3px"
+            }
+          },
+          "beforeBaseHoverVsOriginal": {},
+          "afterBaseHoverVsOriginal": {
+            "background": {
+              "observed": "rgba(0, 0, 0, 0)",
+              "reference": "oklch(0.546 0.215 262.881 / 0.8)"
+            },
+            "color": {
+              "observed": "rgb(0, 0, 0)",
+              "reference": "oklch(0.994 0 89.876)"
+            },
+            "padding": {
+              "observed": "0px",
+              "reference": "7px 10px"
+            },
+            "border": {
+              "observed": "0px solid rgb(0, 0, 0)",
+              "reference": "1px solid oklch(0.546 0.215 262.881 / 0.08)"
+            },
+            "borderRadius": {
+              "observed": "0px",
+              "reference": "8px"
+            },
+            "fontFamily": {
+              "observed": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "reference": "Inter, sans-serif"
+            },
+            "lineHeight": {
+              "observed": "24px",
+              "reference": "20px"
+            },
+            "outline": {
+              "observed": "rgb(0, 0, 0) none 3px",
+              "reference": "oklch(0.994 0 89.876) none 3px"
+            }
+          },
+          "beforeOverrideNormalVsNativeHost": {
+            "background": {
+              "observed": "oklch(0.55 0.2 260)",
+              "reference": "oklch(0.637 0.237 25.331)"
+            },
+            "color": {
+              "observed": "oklch(0.994 0 89.876)",
+              "reference": "rgb(255, 255, 255)"
+            },
+            "padding": {
+              "observed": "7px 10px",
+              "reference": "32px"
+            },
+            "border": {
+              "observed": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "reference": "0px solid rgb(255, 255, 255)"
+            },
+            "borderRadius": {
+              "observed": "8px",
+              "reference": "0px"
+            },
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "24px"
+            },
+            "boxShadow": {
+              "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "reference": "none"
+            },
+            "outline": {
+              "observed": "oklch(0.994 0 89.876) none 3px",
+              "reference": "rgb(255, 255, 255) none 3px"
+            }
+          },
+          "afterOverrideNormalVsNativeHost": {
+            "boxShadow": {
+              "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "reference": "none"
+            }
+          },
+          "beforeOverrideHoverVsNativeHost": {
+            "background": {
+              "observed": "oklch(0.546 0.215 262.881 / 0.8)",
+              "reference": "oklch(0.723 0.219 149.579)"
+            },
+            "color": {
+              "observed": "oklch(0.994 0 89.876)",
+              "reference": "rgb(255, 255, 255)"
+            },
+            "padding": {
+              "observed": "7px 10px",
+              "reference": "32px"
+            },
+            "border": {
+              "observed": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "reference": "0px solid rgb(255, 255, 255)"
+            },
+            "borderRadius": {
+              "observed": "8px",
+              "reference": "0px"
+            },
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "24px"
+            },
+            "outline": {
+              "observed": "oklch(0.994 0 89.876) none 3px",
+              "reference": "rgb(255, 255, 255) none 3px"
+            }
+          },
+          "afterOverrideHoverVsNativeHost": {}
+        },
+        "sheets": [
+          {
+            "href": "openui-runtime-v1:Button:go4164233448 openui-runtime-v1:Theme:go3345755774 openui-runtime-v1:Card:go3156460867 openui-runtime-v1:CardHeader:go2812757914 openui-runtime-v1:TextContent:go2241212691 openui-runtime-v1:FormControl:go2956124193 openui-runtime-v1:Input:go1055295454 openui-runtime-v1:Buttons:go2558798771",
+            "themeResourceIncluded": true,
+            "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+            "beforeSHA256": "99bc6fa0bcb7a59911b7d772b2d764fc82712e182294115e6c69889b4ca9a7f5",
+            "afterSHA256": "6ac61fe7affadc5462c901947ca89d8629ca19a9298113e7f5ddfeeaa8f1dfda",
+            "beforeBytes": 48358,
+            "afterBytes": 48380
+          },
+          {
+            "href": "openui-runtime-v1:BarChart:go975812685 openui-runtime-v1:Table:go3123637919",
+            "themeResourceIncluded": false,
+            "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+            "beforeSHA256": "987665a73582bbbd27c6040d9cc2ba32ef2a049ac039e47fb24187b859964ac5",
+            "afterSHA256": "967d02c5f192d93863811890256a5c1279958e96d14515aadd609696e7b0ae1c",
+            "beforeBytes": 26111,
+            "afterBytes": 26133
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "sourceHashes": {
+      "next/.next/server/app/page.js": "92481da6b11a95f7f931d37999bf2a2e0c313b07fd653d61070034a0d2570f39",
+      "next/.next/BUILD_ID": "ce6169a2d4b153785f406b00aa0e6e68ce436f1746c1911a833dc6f0f060947d",
+      "next/generated.jsx": "394d59fc2ec8556a313c356a08f840cf0e1c84645c84fef8fcbd1c5fdfa11731",
+      "runtime/adapter.tsx": "9d19b3be177f5e65d3eebe0c82e3c4281285d9ddc31ff0352961a6b842b9cfef",
+      "runtime/Fixture.tsx": "8c38b1a3573352410fc916fe052bedaedbd42c083a4e7890574edfcac8819522",
+      "runtime/descriptors.json": "f32c62b898191c55a65c5916def97f6b47474d745f8a80c63b9dc5c65383cf95",
+      "layer-diagnostic.mjs": "d2d875ab054373150b1be2e58b22c0c80adbcabd8e9e63ed6ae335ec36bbbf77"
+    },
+    "limitations": [
+      "DOM stylesheet text rewrite is deliberately outside the package API and changes emitted CSS; not a migration fix",
+      "No SSR/no-JS, re-render, streaming-first-reveal, resource-dedup or hydration claim for rewritten rules",
+      "Only one Chrome document per framework; deterministic cascade diagnostic rather than performance test",
+      "Property diffs include native-host font/outline/shadow differences even where host utility classes do not specify those fields; inspect individual fields"
+    ]
+  },
+  "rows": [
+    {
+      "framework": "none",
+      "sourceMarker": "chat",
+      "before": {
+        "normal": {
+          "base": {
+            "background": "oklch(0.55 0.2 260)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "override": {
+            "background": "oklch(0.55 0.2 260)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "nativeHost": {
+            "background": "rgb(239, 239, 239)",
+            "color": "rgb(0, 0, 0)",
+            "padding": "1px 6px",
+            "border": "2px outset rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "fontFamily": "Arial",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          }
+        },
+        "hover": {
+          "base": {
+            "background": "oklch(0.546 0.215 262.881 / 0.8)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "none",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "override": {
+            "background": "oklch(0.546 0.215 262.881 / 0.8)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "none",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "nativeHost": {
+            "background": "rgb(239, 239, 239)",
+            "color": "rgb(0, 0, 0)",
+            "padding": "1px 6px",
+            "border": "2px outset rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "fontFamily": "Arial",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          }
+        }
+      },
+      "after": {
+        "normal": {
+          "base": {
+            "background": "oklch(0.55 0.2 260)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "override": {
+            "background": "oklch(0.55 0.2 260)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "nativeHost": {
+            "background": "rgb(239, 239, 239)",
+            "color": "rgb(0, 0, 0)",
+            "padding": "1px 6px",
+            "border": "2px outset rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "fontFamily": "Arial",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          }
+        },
+        "hover": {
+          "base": {
+            "background": "oklch(0.546 0.215 262.881 / 0.8)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "none",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "override": {
+            "background": "oklch(0.546 0.215 262.881 / 0.8)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "none",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "nativeHost": {
+            "background": "rgb(239, 239, 239)",
+            "color": "rgb(0, 0, 0)",
+            "padding": "1px 6px",
+            "border": "2px outset rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "fontFamily": "Arial",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          }
+        }
+      },
+      "comparisons": {
+        "beforeBaseNormalVsOriginal": {},
+        "afterBaseNormalVsOriginal": {},
+        "beforeBaseHoverVsOriginal": {},
+        "afterBaseHoverVsOriginal": {},
+        "beforeOverrideNormalVsNativeHost": {
+          "background": {
+            "observed": "oklch(0.55 0.2 260)",
+            "reference": "rgb(239, 239, 239)"
+          },
+          "color": {
+            "observed": "oklch(0.994 0 89.876)",
+            "reference": "rgb(0, 0, 0)"
+          },
+          "padding": {
+            "observed": "7px 10px",
+            "reference": "1px 6px"
+          },
+          "border": {
+            "observed": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "reference": "2px outset rgb(0, 0, 0)"
+          },
+          "borderRadius": {
+            "observed": "8px",
+            "reference": "0px"
+          },
+          "fontFamily": {
+            "observed": "Inter, sans-serif",
+            "reference": "Arial"
+          },
+          "fontSize": {
+            "observed": "16px",
+            "reference": "13.3333px"
+          },
+          "lineHeight": {
+            "observed": "20px",
+            "reference": "normal"
+          },
+          "boxShadow": {
+            "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "reference": "none"
+          },
+          "outline": {
+            "observed": "oklch(0.994 0 89.876) none 3px",
+            "reference": "rgb(0, 0, 0) none 3px"
+          }
+        },
+        "afterOverrideNormalVsNativeHost": {
+          "background": {
+            "observed": "oklch(0.55 0.2 260)",
+            "reference": "rgb(239, 239, 239)"
+          },
+          "color": {
+            "observed": "oklch(0.994 0 89.876)",
+            "reference": "rgb(0, 0, 0)"
+          },
+          "padding": {
+            "observed": "7px 10px",
+            "reference": "1px 6px"
+          },
+          "border": {
+            "observed": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "reference": "2px outset rgb(0, 0, 0)"
+          },
+          "borderRadius": {
+            "observed": "8px",
+            "reference": "0px"
+          },
+          "fontFamily": {
+            "observed": "Inter, sans-serif",
+            "reference": "Arial"
+          },
+          "fontSize": {
+            "observed": "16px",
+            "reference": "13.3333px"
+          },
+          "lineHeight": {
+            "observed": "20px",
+            "reference": "normal"
+          },
+          "boxShadow": {
+            "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "reference": "none"
+          },
+          "outline": {
+            "observed": "oklch(0.994 0 89.876) none 3px",
+            "reference": "rgb(0, 0, 0) none 3px"
+          }
+        },
+        "beforeOverrideHoverVsNativeHost": {
+          "background": {
+            "observed": "oklch(0.546 0.215 262.881 / 0.8)",
+            "reference": "rgb(239, 239, 239)"
+          },
+          "color": {
+            "observed": "oklch(0.994 0 89.876)",
+            "reference": "rgb(0, 0, 0)"
+          },
+          "padding": {
+            "observed": "7px 10px",
+            "reference": "1px 6px"
+          },
+          "border": {
+            "observed": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "reference": "2px outset rgb(0, 0, 0)"
+          },
+          "borderRadius": {
+            "observed": "8px",
+            "reference": "0px"
+          },
+          "fontFamily": {
+            "observed": "Inter, sans-serif",
+            "reference": "Arial"
+          },
+          "fontSize": {
+            "observed": "16px",
+            "reference": "13.3333px"
+          },
+          "lineHeight": {
+            "observed": "20px",
+            "reference": "normal"
+          },
+          "outline": {
+            "observed": "oklch(0.994 0 89.876) none 3px",
+            "reference": "rgb(0, 0, 0) none 3px"
+          }
+        },
+        "afterOverrideHoverVsNativeHost": {
+          "background": {
+            "observed": "oklch(0.546 0.215 262.881 / 0.8)",
+            "reference": "rgb(239, 239, 239)"
+          },
+          "color": {
+            "observed": "oklch(0.994 0 89.876)",
+            "reference": "rgb(0, 0, 0)"
+          },
+          "padding": {
+            "observed": "7px 10px",
+            "reference": "1px 6px"
+          },
+          "border": {
+            "observed": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "reference": "2px outset rgb(0, 0, 0)"
+          },
+          "borderRadius": {
+            "observed": "8px",
+            "reference": "0px"
+          },
+          "fontFamily": {
+            "observed": "Inter, sans-serif",
+            "reference": "Arial"
+          },
+          "fontSize": {
+            "observed": "16px",
+            "reference": "13.3333px"
+          },
+          "lineHeight": {
+            "observed": "20px",
+            "reference": "normal"
+          },
+          "outline": {
+            "observed": "oklch(0.994 0 89.876) none 3px",
+            "reference": "rgb(0, 0, 0) none 3px"
+          }
+        }
+      },
+      "orderedLayerFreshDocument": {
+        "policy": "DIAGNOSTIC second phase only: fresh document; prepend @layer theme,base,components,utilities before wrapping all runtime rules in components",
+        "after": {
+          "normal": {
+            "base": {
+              "background": "oklch(0.55 0.2 260)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "oklch(0.55 0.2 260)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(239, 239, 239)",
+              "color": "rgb(0, 0, 0)",
+              "padding": "1px 6px",
+              "border": "2px outset rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Arial",
+              "fontSize": "13.3333px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 3px"
+            }
+          },
+          "hover": {
+            "base": {
+              "background": "oklch(0.546 0.215 262.881 / 0.8)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "oklch(0.546 0.215 262.881 / 0.8)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(239, 239, 239)",
+              "color": "rgb(0, 0, 0)",
+              "padding": "1px 6px",
+              "border": "2px outset rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Arial",
+              "fontSize": "13.3333px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 3px"
+            }
+          }
+        },
+        "comparisons": {
+          "baseNormalVsOriginal": {},
+          "baseHoverVsOriginal": {},
+          "overrideNormalVsNativeHost": {
+            "background": {
+              "observed": "oklch(0.55 0.2 260)",
+              "reference": "rgb(239, 239, 239)"
+            },
+            "color": {
+              "observed": "oklch(0.994 0 89.876)",
+              "reference": "rgb(0, 0, 0)"
+            },
+            "padding": {
+              "observed": "7px 10px",
+              "reference": "1px 6px"
+            },
+            "border": {
+              "observed": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "reference": "2px outset rgb(0, 0, 0)"
+            },
+            "borderRadius": {
+              "observed": "8px",
+              "reference": "0px"
+            },
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "Arial"
+            },
+            "fontSize": {
+              "observed": "16px",
+              "reference": "13.3333px"
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "normal"
+            },
+            "boxShadow": {
+              "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "reference": "none"
+            },
+            "outline": {
+              "observed": "oklch(0.994 0 89.876) none 3px",
+              "reference": "rgb(0, 0, 0) none 3px"
+            }
+          },
+          "overrideHoverVsNativeHost": {
+            "background": {
+              "observed": "oklch(0.546 0.215 262.881 / 0.8)",
+              "reference": "rgb(239, 239, 239)"
+            },
+            "color": {
+              "observed": "oklch(0.994 0 89.876)",
+              "reference": "rgb(0, 0, 0)"
+            },
+            "padding": {
+              "observed": "7px 10px",
+              "reference": "1px 6px"
+            },
+            "border": {
+              "observed": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "reference": "2px outset rgb(0, 0, 0)"
+            },
+            "borderRadius": {
+              "observed": "8px",
+              "reference": "0px"
+            },
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "Arial"
+            },
+            "fontSize": {
+              "observed": "16px",
+              "reference": "13.3333px"
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "normal"
+            },
+            "outline": {
+              "observed": "oklch(0.994 0 89.876) none 3px",
+              "reference": "rgb(0, 0, 0) none 3px"
+            }
+          }
+        },
+        "sheets": [
+          {
+            "href": "openui-runtime-v1:Button:go4164233448 openui-runtime-v1:Theme:go3345755774 openui-runtime-v1:Card:go3156460867 openui-runtime-v1:CardHeader:go2812757914 openui-runtime-v1:TextContent:go2241212691 openui-runtime-v1:FormControl:go2956124193 openui-runtime-v1:Input:go1055295454 openui-runtime-v1:Buttons:go2558798771",
+            "themeResourceIncluded": true,
+            "beforeSHA256": "99bc6fa0bcb7a59911b7d772b2d764fc82712e182294115e6c69889b4ca9a7f5",
+            "afterSHA256": "94b59512981d14128b17f5630b565adaecc164c14d8a090e8f5ba12238dff20b"
+          },
+          {
+            "href": "openui-runtime-v1:BarChart:go975812685 openui-runtime-v1:Table:go3123637919",
+            "themeResourceIncluded": false,
+            "beforeSHA256": "987665a73582bbbd27c6040d9cc2ba32ef2a049ac039e47fb24187b859964ac5",
+            "afterSHA256": "6e83bebd4489e87068e492a8f0ab653e19d6e473f8bd97b464e2fbb4c11bb2c2"
+          }
+        ]
+      },
+      "sheets": [
+        {
+          "href": "openui-runtime-v1:Button:go4164233448 openui-runtime-v1:Theme:go3345755774 openui-runtime-v1:Card:go3156460867 openui-runtime-v1:CardHeader:go2812757914 openui-runtime-v1:TextContent:go2241212691 openui-runtime-v1:FormControl:go2956124193 openui-runtime-v1:Input:go1055295454 openui-runtime-v1:Buttons:go2558798771",
+          "themeResourceIncluded": true,
+          "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+          "beforeSHA256": "99bc6fa0bcb7a59911b7d772b2d764fc82712e182294115e6c69889b4ca9a7f5",
+          "afterSHA256": "6ac61fe7affadc5462c901947ca89d8629ca19a9298113e7f5ddfeeaa8f1dfda",
+          "beforeBytes": 48358,
+          "afterBytes": 48380
+        },
+        {
+          "href": "openui-runtime-v1:BarChart:go975812685 openui-runtime-v1:Table:go3123637919",
+          "themeResourceIncluded": false,
+          "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+          "beforeSHA256": "987665a73582bbbd27c6040d9cc2ba32ef2a049ac039e47fb24187b859964ac5",
+          "afterSHA256": "967d02c5f192d93863811890256a5c1279958e96d14515aadd609696e7b0ae1c",
+          "beforeBytes": 26111,
+          "afterBytes": 26133
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "sourceMarker": "chat",
+      "before": {
+        "normal": {
+          "base": {
+            "background": "oklch(0.55 0.2 260)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "override": {
+            "background": "rgb(239, 68, 68)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px none rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "nativeHost": {
+            "background": "rgb(239, 68, 68)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px none rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "fontFamily": "Arial",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          }
+        },
+        "hover": {
+          "base": {
+            "background": "oklch(0.546 0.215 262.881 / 0.8)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "none",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "override": {
+            "background": "oklch(0.546 0.215 262.881 / 0.8)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px none rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "nativeHost": {
+            "background": "rgb(34, 197, 94)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px none rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "fontFamily": "Arial",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          }
+        }
+      },
+      "after": {
+        "normal": {
+          "base": {
+            "background": "oklch(0.55 0.2 260)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "override": {
+            "background": "rgb(239, 68, 68)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px none rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "nativeHost": {
+            "background": "rgb(239, 68, 68)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px none rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "fontFamily": "Arial",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          }
+        },
+        "hover": {
+          "base": {
+            "background": "oklch(0.546 0.215 262.881 / 0.8)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "none",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "override": {
+            "background": "rgb(34, 197, 94)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px none rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "nativeHost": {
+            "background": "rgb(34, 197, 94)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px none rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "fontFamily": "Arial",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          }
+        }
+      },
+      "comparisons": {
+        "beforeBaseNormalVsOriginal": {},
+        "afterBaseNormalVsOriginal": {},
+        "beforeBaseHoverVsOriginal": {},
+        "afterBaseHoverVsOriginal": {},
+        "beforeOverrideNormalVsNativeHost": {
+          "fontFamily": {
+            "observed": "Inter, sans-serif",
+            "reference": "Arial"
+          },
+          "fontSize": {
+            "observed": "16px",
+            "reference": "13.3333px"
+          },
+          "lineHeight": {
+            "observed": "20px",
+            "reference": "normal"
+          },
+          "boxShadow": {
+            "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "reference": "none"
+          }
+        },
+        "afterOverrideNormalVsNativeHost": {
+          "fontFamily": {
+            "observed": "Inter, sans-serif",
+            "reference": "Arial"
+          },
+          "fontSize": {
+            "observed": "16px",
+            "reference": "13.3333px"
+          },
+          "lineHeight": {
+            "observed": "20px",
+            "reference": "normal"
+          },
+          "boxShadow": {
+            "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "reference": "none"
+          }
+        },
+        "beforeOverrideHoverVsNativeHost": {
+          "background": {
+            "observed": "oklch(0.546 0.215 262.881 / 0.8)",
+            "reference": "rgb(34, 197, 94)"
+          },
+          "fontFamily": {
+            "observed": "Inter, sans-serif",
+            "reference": "Arial"
+          },
+          "fontSize": {
+            "observed": "16px",
+            "reference": "13.3333px"
+          },
+          "lineHeight": {
+            "observed": "20px",
+            "reference": "normal"
+          }
+        },
+        "afterOverrideHoverVsNativeHost": {
+          "fontFamily": {
+            "observed": "Inter, sans-serif",
+            "reference": "Arial"
+          },
+          "fontSize": {
+            "observed": "16px",
+            "reference": "13.3333px"
+          },
+          "lineHeight": {
+            "observed": "20px",
+            "reference": "normal"
+          }
+        }
+      },
+      "orderedLayerFreshDocument": {
+        "policy": "DIAGNOSTIC second phase only: fresh document; prepend @layer theme,base,components,utilities before wrapping all runtime rules in components",
+        "after": {
+          "normal": {
+            "base": {
+              "background": "oklch(0.55 0.2 260)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "rgb(239, 68, 68)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px none rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(239, 68, 68)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px none rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "Arial",
+              "fontSize": "13.3333px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          },
+          "hover": {
+            "base": {
+              "background": "oklch(0.546 0.215 262.881 / 0.8)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "rgb(34, 197, 94)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px none rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(34, 197, 94)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px none rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "Arial",
+              "fontSize": "13.3333px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          }
+        },
+        "comparisons": {
+          "baseNormalVsOriginal": {},
+          "baseHoverVsOriginal": {},
+          "overrideNormalVsNativeHost": {
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "Arial"
+            },
+            "fontSize": {
+              "observed": "16px",
+              "reference": "13.3333px"
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "normal"
+            },
+            "boxShadow": {
+              "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "reference": "none"
+            }
+          },
+          "overrideHoverVsNativeHost": {
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "Arial"
+            },
+            "fontSize": {
+              "observed": "16px",
+              "reference": "13.3333px"
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "normal"
+            }
+          }
+        },
+        "sheets": [
+          {
+            "href": "openui-runtime-v1:Button:go4164233448 openui-runtime-v1:Theme:go3345755774 openui-runtime-v1:Card:go3156460867 openui-runtime-v1:CardHeader:go2812757914 openui-runtime-v1:TextContent:go2241212691 openui-runtime-v1:FormControl:go2956124193 openui-runtime-v1:Input:go1055295454 openui-runtime-v1:Buttons:go2558798771",
+            "themeResourceIncluded": true,
+            "beforeSHA256": "99bc6fa0bcb7a59911b7d772b2d764fc82712e182294115e6c69889b4ca9a7f5",
+            "afterSHA256": "94b59512981d14128b17f5630b565adaecc164c14d8a090e8f5ba12238dff20b"
+          },
+          {
+            "href": "openui-runtime-v1:BarChart:go975812685 openui-runtime-v1:Table:go3123637919",
+            "themeResourceIncluded": false,
+            "beforeSHA256": "987665a73582bbbd27c6040d9cc2ba32ef2a049ac039e47fb24187b859964ac5",
+            "afterSHA256": "6e83bebd4489e87068e492a8f0ab653e19d6e473f8bd97b464e2fbb4c11bb2c2"
+          }
+        ]
+      },
+      "sheets": [
+        {
+          "href": "openui-runtime-v1:Button:go4164233448 openui-runtime-v1:Theme:go3345755774 openui-runtime-v1:Card:go3156460867 openui-runtime-v1:CardHeader:go2812757914 openui-runtime-v1:TextContent:go2241212691 openui-runtime-v1:FormControl:go2956124193 openui-runtime-v1:Input:go1055295454 openui-runtime-v1:Buttons:go2558798771",
+          "themeResourceIncluded": true,
+          "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+          "beforeSHA256": "99bc6fa0bcb7a59911b7d772b2d764fc82712e182294115e6c69889b4ca9a7f5",
+          "afterSHA256": "6ac61fe7affadc5462c901947ca89d8629ca19a9298113e7f5ddfeeaa8f1dfda",
+          "beforeBytes": 48358,
+          "afterBytes": 48380
+        },
+        {
+          "href": "openui-runtime-v1:BarChart:go975812685 openui-runtime-v1:Table:go3123637919",
+          "themeResourceIncluded": false,
+          "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+          "beforeSHA256": "987665a73582bbbd27c6040d9cc2ba32ef2a049ac039e47fb24187b859964ac5",
+          "afterSHA256": "967d02c5f192d93863811890256a5c1279958e96d14515aadd609696e7b0ae1c",
+          "beforeBytes": 26111,
+          "afterBytes": 26133
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "sourceMarker": "chat",
+      "before": {
+        "normal": {
+          "base": {
+            "background": "oklch(0.55 0.2 260)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "override": {
+            "background": "rgb(239, 68, 68)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "0px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "nativeHost": {
+            "background": "rgb(239, 68, 68)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px solid rgb(229, 231, 235)",
+            "borderRadius": "0px",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          }
+        },
+        "hover": {
+          "base": {
+            "background": "oklch(0.546 0.215 262.881 / 0.8)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "none",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "override": {
+            "background": "oklch(0.546 0.215 262.881 / 0.8)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "0px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "nativeHost": {
+            "background": "rgb(34, 197, 94)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px solid rgb(229, 231, 235)",
+            "borderRadius": "0px",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          }
+        }
+      },
+      "after": {
+        "normal": {
+          "base": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "padding": "0px",
+            "border": "0px solid rgb(229, 231, 235)",
+            "borderRadius": "8px",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "override": {
+            "background": "rgb(239, 68, 68)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px solid rgb(229, 231, 235)",
+            "borderRadius": "0px",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "nativeHost": {
+            "background": "rgb(239, 68, 68)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px solid rgb(229, 231, 235)",
+            "borderRadius": "0px",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          }
+        },
+        "hover": {
+          "base": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "padding": "0px",
+            "border": "0px solid rgb(229, 231, 235)",
+            "borderRadius": "8px",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "override": {
+            "background": "rgb(34, 197, 94)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px solid rgb(229, 231, 235)",
+            "borderRadius": "0px",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "nativeHost": {
+            "background": "rgb(34, 197, 94)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px solid rgb(229, 231, 235)",
+            "borderRadius": "0px",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          }
+        }
+      },
+      "comparisons": {
+        "beforeBaseNormalVsOriginal": {},
+        "afterBaseNormalVsOriginal": {
+          "background": {
+            "observed": "rgba(0, 0, 0, 0)",
+            "reference": "oklch(0.55 0.2 260)"
+          },
+          "color": {
+            "observed": "rgb(0, 0, 0)",
+            "reference": "oklch(0.994 0 89.876)"
+          },
+          "padding": {
+            "observed": "0px",
+            "reference": "7px 10px"
+          },
+          "border": {
+            "observed": "0px solid rgb(229, 231, 235)",
+            "reference": "1px solid oklch(0.546 0.215 262.881 / 0.08)"
+          },
+          "fontFamily": {
+            "observed": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "reference": "Inter, sans-serif"
+          },
+          "lineHeight": {
+            "observed": "24px",
+            "reference": "20px"
+          },
+          "outline": {
+            "observed": "rgb(0, 0, 0) none 3px",
+            "reference": "oklch(0.994 0 89.876) none 3px"
+          }
+        },
+        "beforeBaseHoverVsOriginal": {},
+        "afterBaseHoverVsOriginal": {
+          "background": {
+            "observed": "rgba(0, 0, 0, 0)",
+            "reference": "oklch(0.546 0.215 262.881 / 0.8)"
+          },
+          "color": {
+            "observed": "rgb(0, 0, 0)",
+            "reference": "oklch(0.994 0 89.876)"
+          },
+          "padding": {
+            "observed": "0px",
+            "reference": "7px 10px"
+          },
+          "border": {
+            "observed": "0px solid rgb(229, 231, 235)",
+            "reference": "1px solid oklch(0.546 0.215 262.881 / 0.08)"
+          },
+          "fontFamily": {
+            "observed": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "reference": "Inter, sans-serif"
+          },
+          "lineHeight": {
+            "observed": "24px",
+            "reference": "20px"
+          },
+          "outline": {
+            "observed": "rgb(0, 0, 0) none 3px",
+            "reference": "oklch(0.994 0 89.876) none 3px"
+          }
+        },
+        "beforeOverrideNormalVsNativeHost": {
+          "border": {
+            "observed": "0px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "reference": "0px solid rgb(229, 231, 235)"
+          },
+          "fontFamily": {
+            "observed": "Inter, sans-serif",
+            "reference": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+          },
+          "lineHeight": {
+            "observed": "20px",
+            "reference": "24px"
+          },
+          "boxShadow": {
+            "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "reference": "none"
+          }
+        },
+        "afterOverrideNormalVsNativeHost": {
+          "boxShadow": {
+            "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "reference": "none"
+          }
+        },
+        "beforeOverrideHoverVsNativeHost": {
+          "background": {
+            "observed": "oklch(0.546 0.215 262.881 / 0.8)",
+            "reference": "rgb(34, 197, 94)"
+          },
+          "border": {
+            "observed": "0px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "reference": "0px solid rgb(229, 231, 235)"
+          },
+          "fontFamily": {
+            "observed": "Inter, sans-serif",
+            "reference": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+          },
+          "lineHeight": {
+            "observed": "20px",
+            "reference": "24px"
+          }
+        },
+        "afterOverrideHoverVsNativeHost": {}
+      },
+      "orderedLayerFreshDocument": {
+        "policy": "DIAGNOSTIC second phase only: fresh document; prepend @layer theme,base,components,utilities before wrapping all runtime rules in components",
+        "after": {
+          "normal": {
+            "base": {
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "rgb(0, 0, 0)",
+              "padding": "0px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "8px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "rgb(0, 0, 0) none 3px"
+            },
+            "override": {
+              "background": "rgb(239, 68, 68)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "0px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(239, 68, 68)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "0px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          },
+          "hover": {
+            "base": {
+              "background": "rgba(0, 0, 0, 0)",
+              "color": "rgb(0, 0, 0)",
+              "padding": "0px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "8px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(0, 0, 0) none 3px"
+            },
+            "override": {
+              "background": "rgb(34, 197, 94)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "0px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "rgb(34, 197, 94)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "0px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          }
+        },
+        "comparisons": {
+          "baseNormalVsOriginal": {
+            "background": {
+              "observed": "rgba(0, 0, 0, 0)",
+              "reference": "oklch(0.55 0.2 260)"
+            },
+            "color": {
+              "observed": "rgb(0, 0, 0)",
+              "reference": "oklch(0.994 0 89.876)"
+            },
+            "padding": {
+              "observed": "0px",
+              "reference": "7px 10px"
+            },
+            "border": {
+              "observed": "0px solid rgb(229, 231, 235)",
+              "reference": "1px solid oklch(0.546 0.215 262.881 / 0.08)"
+            },
+            "fontFamily": {
+              "observed": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "reference": "Inter, sans-serif"
+            },
+            "lineHeight": {
+              "observed": "24px",
+              "reference": "20px"
+            },
+            "outline": {
+              "observed": "rgb(0, 0, 0) none 3px",
+              "reference": "oklch(0.994 0 89.876) none 3px"
+            }
+          },
+          "baseHoverVsOriginal": {
+            "background": {
+              "observed": "rgba(0, 0, 0, 0)",
+              "reference": "oklch(0.546 0.215 262.881 / 0.8)"
+            },
+            "color": {
+              "observed": "rgb(0, 0, 0)",
+              "reference": "oklch(0.994 0 89.876)"
+            },
+            "padding": {
+              "observed": "0px",
+              "reference": "7px 10px"
+            },
+            "border": {
+              "observed": "0px solid rgb(229, 231, 235)",
+              "reference": "1px solid oklch(0.546 0.215 262.881 / 0.08)"
+            },
+            "fontFamily": {
+              "observed": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "reference": "Inter, sans-serif"
+            },
+            "lineHeight": {
+              "observed": "24px",
+              "reference": "20px"
+            },
+            "outline": {
+              "observed": "rgb(0, 0, 0) none 3px",
+              "reference": "oklch(0.994 0 89.876) none 3px"
+            }
+          },
+          "overrideNormalVsNativeHost": {
+            "boxShadow": {
+              "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "reference": "none"
+            }
+          },
+          "overrideHoverVsNativeHost": {}
+        },
+        "sheets": [
+          {
+            "href": "openui-runtime-v1:Button:go4164233448 openui-runtime-v1:Theme:go3345755774 openui-runtime-v1:Card:go3156460867 openui-runtime-v1:CardHeader:go2812757914 openui-runtime-v1:TextContent:go2241212691 openui-runtime-v1:FormControl:go2956124193 openui-runtime-v1:Input:go1055295454 openui-runtime-v1:Buttons:go2558798771",
+            "themeResourceIncluded": true,
+            "beforeSHA256": "99bc6fa0bcb7a59911b7d772b2d764fc82712e182294115e6c69889b4ca9a7f5",
+            "afterSHA256": "94b59512981d14128b17f5630b565adaecc164c14d8a090e8f5ba12238dff20b"
+          },
+          {
+            "href": "openui-runtime-v1:BarChart:go975812685 openui-runtime-v1:Table:go3123637919",
+            "themeResourceIncluded": false,
+            "beforeSHA256": "987665a73582bbbd27c6040d9cc2ba32ef2a049ac039e47fb24187b859964ac5",
+            "afterSHA256": "6e83bebd4489e87068e492a8f0ab653e19d6e473f8bd97b464e2fbb4c11bb2c2"
+          }
+        ]
+      },
+      "sheets": [
+        {
+          "href": "openui-runtime-v1:Button:go4164233448 openui-runtime-v1:Theme:go3345755774 openui-runtime-v1:Card:go3156460867 openui-runtime-v1:CardHeader:go2812757914 openui-runtime-v1:TextContent:go2241212691 openui-runtime-v1:FormControl:go2956124193 openui-runtime-v1:Input:go1055295454 openui-runtime-v1:Buttons:go2558798771",
+          "themeResourceIncluded": true,
+          "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+          "beforeSHA256": "99bc6fa0bcb7a59911b7d772b2d764fc82712e182294115e6c69889b4ca9a7f5",
+          "afterSHA256": "6ac61fe7affadc5462c901947ca89d8629ca19a9298113e7f5ddfeeaa8f1dfda",
+          "beforeBytes": 48358,
+          "afterBytes": 48380
+        },
+        {
+          "href": "openui-runtime-v1:BarChart:go975812685 openui-runtime-v1:Table:go3123637919",
+          "themeResourceIncluded": false,
+          "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+          "beforeSHA256": "987665a73582bbbd27c6040d9cc2ba32ef2a049ac039e47fb24187b859964ac5",
+          "afterSHA256": "967d02c5f192d93863811890256a5c1279958e96d14515aadd609696e7b0ae1c",
+          "beforeBytes": 26111,
+          "afterBytes": 26133
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "sourceMarker": "chat",
+      "before": {
+        "normal": {
+          "base": {
+            "background": "oklch(0.55 0.2 260)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "override": {
+            "background": "oklch(0.55 0.2 260)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "nativeHost": {
+            "background": "oklch(0.637 0.237 25.331)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px solid rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          }
+        },
+        "hover": {
+          "base": {
+            "background": "oklch(0.546 0.215 262.881 / 0.8)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "none",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "override": {
+            "background": "oklch(0.546 0.215 262.881 / 0.8)",
+            "color": "oklch(0.994 0 89.876)",
+            "padding": "7px 10px",
+            "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "borderRadius": "8px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "boxShadow": "none",
+            "outline": "oklch(0.994 0 89.876) none 3px"
+          },
+          "nativeHost": {
+            "background": "oklch(0.723 0.219 149.579)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px solid rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          }
+        }
+      },
+      "after": {
+        "normal": {
+          "base": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "padding": "0px",
+            "border": "0px solid rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "override": {
+            "background": "oklch(0.637 0.237 25.331)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px solid rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "nativeHost": {
+            "background": "oklch(0.637 0.237 25.331)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px solid rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          }
+        },
+        "hover": {
+          "base": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "padding": "0px",
+            "border": "0px solid rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px"
+          },
+          "override": {
+            "background": "oklch(0.723 0.219 149.579)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px solid rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          },
+          "nativeHost": {
+            "background": "oklch(0.723 0.219 149.579)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "32px",
+            "border": "0px solid rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px"
+          }
+        }
+      },
+      "comparisons": {
+        "beforeBaseNormalVsOriginal": {},
+        "afterBaseNormalVsOriginal": {
+          "background": {
+            "observed": "rgba(0, 0, 0, 0)",
+            "reference": "oklch(0.55 0.2 260)"
+          },
+          "color": {
+            "observed": "rgb(0, 0, 0)",
+            "reference": "oklch(0.994 0 89.876)"
+          },
+          "padding": {
+            "observed": "0px",
+            "reference": "7px 10px"
+          },
+          "border": {
+            "observed": "0px solid rgb(0, 0, 0)",
+            "reference": "1px solid oklch(0.546 0.215 262.881 / 0.08)"
+          },
+          "borderRadius": {
+            "observed": "0px",
+            "reference": "8px"
+          },
+          "fontFamily": {
+            "observed": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "reference": "Inter, sans-serif"
+          },
+          "lineHeight": {
+            "observed": "24px",
+            "reference": "20px"
+          },
+          "outline": {
+            "observed": "rgb(0, 0, 0) none 3px",
+            "reference": "oklch(0.994 0 89.876) none 3px"
+          }
+        },
+        "beforeBaseHoverVsOriginal": {},
+        "afterBaseHoverVsOriginal": {
+          "background": {
+            "observed": "rgba(0, 0, 0, 0)",
+            "reference": "oklch(0.546 0.215 262.881 / 0.8)"
+          },
+          "color": {
+            "observed": "rgb(0, 0, 0)",
+            "reference": "oklch(0.994 0 89.876)"
+          },
+          "padding": {
+            "observed": "0px",
+            "reference": "7px 10px"
+          },
+          "border": {
+            "observed": "0px solid rgb(0, 0, 0)",
+            "reference": "1px solid oklch(0.546 0.215 262.881 / 0.08)"
+          },
+          "borderRadius": {
+            "observed": "0px",
+            "reference": "8px"
+          },
+          "fontFamily": {
+            "observed": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "reference": "Inter, sans-serif"
+          },
+          "lineHeight": {
+            "observed": "24px",
+            "reference": "20px"
+          },
+          "outline": {
+            "observed": "rgb(0, 0, 0) none 3px",
+            "reference": "oklch(0.994 0 89.876) none 3px"
+          }
+        },
+        "beforeOverrideNormalVsNativeHost": {
+          "background": {
+            "observed": "oklch(0.55 0.2 260)",
+            "reference": "oklch(0.637 0.237 25.331)"
+          },
+          "color": {
+            "observed": "oklch(0.994 0 89.876)",
+            "reference": "rgb(255, 255, 255)"
+          },
+          "padding": {
+            "observed": "7px 10px",
+            "reference": "32px"
+          },
+          "border": {
+            "observed": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "reference": "0px solid rgb(255, 255, 255)"
+          },
+          "borderRadius": {
+            "observed": "8px",
+            "reference": "0px"
+          },
+          "fontFamily": {
+            "observed": "Inter, sans-serif",
+            "reference": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+          },
+          "lineHeight": {
+            "observed": "20px",
+            "reference": "24px"
+          },
+          "boxShadow": {
+            "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "reference": "none"
+          },
+          "outline": {
+            "observed": "oklch(0.994 0 89.876) none 3px",
+            "reference": "rgb(255, 255, 255) none 3px"
+          }
+        },
+        "afterOverrideNormalVsNativeHost": {
+          "boxShadow": {
+            "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+            "reference": "none"
+          }
+        },
+        "beforeOverrideHoverVsNativeHost": {
+          "background": {
+            "observed": "oklch(0.546 0.215 262.881 / 0.8)",
+            "reference": "oklch(0.723 0.219 149.579)"
+          },
+          "color": {
+            "observed": "oklch(0.994 0 89.876)",
+            "reference": "rgb(255, 255, 255)"
+          },
+          "padding": {
+            "observed": "7px 10px",
+            "reference": "32px"
+          },
+          "border": {
+            "observed": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+            "reference": "0px solid rgb(255, 255, 255)"
+          },
+          "borderRadius": {
+            "observed": "8px",
+            "reference": "0px"
+          },
+          "fontFamily": {
+            "observed": "Inter, sans-serif",
+            "reference": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+          },
+          "lineHeight": {
+            "observed": "20px",
+            "reference": "24px"
+          },
+          "outline": {
+            "observed": "oklch(0.994 0 89.876) none 3px",
+            "reference": "rgb(255, 255, 255) none 3px"
+          }
+        },
+        "afterOverrideHoverVsNativeHost": {}
+      },
+      "orderedLayerFreshDocument": {
+        "policy": "DIAGNOSTIC second phase only: fresh document; prepend @layer theme,base,components,utilities before wrapping all runtime rules in components",
+        "after": {
+          "normal": {
+            "base": {
+              "background": "oklch(0.55 0.2 260)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "oklch(0.637 0.237 25.331)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "oklch(0.637 0.237 25.331)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          },
+          "hover": {
+            "base": {
+              "background": "oklch(0.546 0.215 262.881 / 0.8)",
+              "color": "oklch(0.994 0 89.876)",
+              "padding": "7px 10px",
+              "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "oklch(0.994 0 89.876) none 3px"
+            },
+            "override": {
+              "background": "oklch(0.723 0.219 149.579)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            },
+            "nativeHost": {
+              "background": "oklch(0.723 0.219 149.579)",
+              "color": "rgb(255, 255, 255)",
+              "padding": "32px",
+              "border": "0px solid rgb(255, 255, 255)",
+              "borderRadius": "0px",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "boxShadow": "none",
+              "outline": "rgb(255, 255, 255) none 3px"
+            }
+          }
+        },
+        "comparisons": {
+          "baseNormalVsOriginal": {},
+          "baseHoverVsOriginal": {},
+          "overrideNormalVsNativeHost": {
+            "border": {
+              "observed": "0px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "reference": "0px solid rgb(255, 255, 255)"
+            },
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "24px"
+            },
+            "boxShadow": {
+              "observed": "oklch(0 0 0 / 0.025) 0px 4px 6px -2px, oklch(0 0 0 / 0.05) 0px 2px 2px -2px",
+              "reference": "none"
+            }
+          },
+          "overrideHoverVsNativeHost": {
+            "border": {
+              "observed": "0px solid oklch(0.546 0.215 262.881 / 0.08)",
+              "reference": "0px solid rgb(255, 255, 255)"
+            },
+            "fontFamily": {
+              "observed": "Inter, sans-serif",
+              "reference": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+            },
+            "lineHeight": {
+              "observed": "20px",
+              "reference": "24px"
+            }
+          }
+        },
+        "sheets": [
+          {
+            "href": "openui-runtime-v1:Button:go4164233448 openui-runtime-v1:Theme:go3345755774 openui-runtime-v1:Card:go3156460867 openui-runtime-v1:CardHeader:go2812757914 openui-runtime-v1:TextContent:go2241212691 openui-runtime-v1:FormControl:go2956124193 openui-runtime-v1:Input:go1055295454 openui-runtime-v1:Buttons:go2558798771",
+            "themeResourceIncluded": true,
+            "beforeSHA256": "99bc6fa0bcb7a59911b7d772b2d764fc82712e182294115e6c69889b4ca9a7f5",
+            "afterSHA256": "94b59512981d14128b17f5630b565adaecc164c14d8a090e8f5ba12238dff20b"
+          },
+          {
+            "href": "openui-runtime-v1:BarChart:go975812685 openui-runtime-v1:Table:go3123637919",
+            "themeResourceIncluded": false,
+            "beforeSHA256": "987665a73582bbbd27c6040d9cc2ba32ef2a049ac039e47fb24187b859964ac5",
+            "afterSHA256": "6e83bebd4489e87068e492a8f0ab653e19d6e473f8bd97b464e2fbb4c11bb2c2"
+          }
+        ]
+      },
+      "sheets": [
+        {
+          "href": "openui-runtime-v1:Button:go4164233448 openui-runtime-v1:Theme:go3345755774 openui-runtime-v1:Card:go3156460867 openui-runtime-v1:CardHeader:go2812757914 openui-runtime-v1:TextContent:go2241212691 openui-runtime-v1:FormControl:go2956124193 openui-runtime-v1:Input:go1055295454 openui-runtime-v1:Buttons:go2558798771",
+          "themeResourceIncluded": true,
+          "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+          "beforeSHA256": "99bc6fa0bcb7a59911b7d772b2d764fc82712e182294115e6c69889b4ca9a7f5",
+          "afterSHA256": "6ac61fe7affadc5462c901947ca89d8629ca19a9298113e7f5ddfeeaa8f1dfda",
+          "beforeBytes": 48358,
+          "afterBytes": 48380
+        },
+        {
+          "href": "openui-runtime-v1:BarChart:go975812685 openui-runtime-v1:Table:go3123637919",
+          "themeResourceIncluded": false,
+          "policy": "Every runtime resource rule wrapped, including scoped Theme tokens when React combined them; original ThemeProvider insertion-effect and host Goober sheets untouched",
+          "beforeSHA256": "987665a73582bbbd27c6040d9cc2ba32ef2a049ac039e47fb24187b859964ac5",
+          "afterSHA256": "967d02c5f192d93863811890256a5c1279958e96d14515aadd609696e7b0ae1c",
+          "beforeBytes": 26111,
+          "afterBytes": 26133
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "sourceHashes": {
+    "next/.next/server/app/page.js": "92481da6b11a95f7f931d37999bf2a2e0c313b07fd653d61070034a0d2570f39",
+    "next/.next/BUILD_ID": "ce6169a2d4b153785f406b00aa0e6e68ce436f1746c1911a833dc6f0f060947d",
+    "next/generated.jsx": "394d59fc2ec8556a313c356a08f840cf0e1c84645c84fef8fcbd1c5fdfa11731",
+    "runtime/adapter.tsx": "9d19b3be177f5e65d3eebe0c82e3c4281285d9ddc31ff0352961a6b842b9cfef",
+    "runtime/Fixture.tsx": "8c38b1a3573352410fc916fe052bedaedbd42c083a4e7890574edfcac8819522",
+    "runtime/descriptors.json": "f32c62b898191c55a65c5916def97f6b47474d745f8a80c63b9dc5c65383cf95",
+    "layer-diagnostic.mjs": "029038c320da5cd7303e8c33ef270df546be4e5b1529539500c940ae7ea353c6"
+  },
+  "limitations": [
+    "DOM stylesheet text rewrite is deliberately outside the package API and changes emitted CSS; not a migration fix",
+    "No SSR/no-JS, re-render, streaming-first-reveal, resource-dedup or hydration claim for rewritten rules",
+    "Only one Chrome document per framework; deterministic cascade diagnostic rather than performance test",
+    "Property diffs include native-host font/outline/shadow differences even where host utility classes do not specify those fields; inspect individual fields"
+  ],
+  "phasePolicyClarification": "The top-level policy describes the first blanket-wrap phase. Each orderedLayerFreshDocument records a separate fresh document with an explicit theme/base/components/utilities declaration before wrapping; this is also emitted-CSS diagnostic only.",
+  "derivedSummary": [
+    {
+      "framework": "none",
+      "blanketBasePreserved": true,
+      "orderedBasePreserved": true,
+      "blanketHostSpecifiedNormalMatches": false,
+      "blanketHostSpecifiedHoverMatches": false,
+      "orderedHostSpecifiedNormalMatches": false,
+      "orderedHostSpecifiedHoverMatches": false
+    },
+    {
+      "framework": "plain",
+      "blanketBasePreserved": true,
+      "orderedBasePreserved": true,
+      "blanketHostSpecifiedNormalMatches": true,
+      "blanketHostSpecifiedHoverMatches": true,
+      "orderedHostSpecifiedNormalMatches": true,
+      "orderedHostSpecifiedHoverMatches": true
+    },
+    {
+      "framework": "tailwind3",
+      "blanketBasePreserved": false,
+      "orderedBasePreserved": false,
+      "blanketHostSpecifiedNormalMatches": true,
+      "blanketHostSpecifiedHoverMatches": true,
+      "orderedHostSpecifiedNormalMatches": true,
+      "orderedHostSpecifiedHoverMatches": true
+    },
+    {
+      "framework": "tailwind4",
+      "blanketBasePreserved": false,
+      "orderedBasePreserved": true,
+      "blanketHostSpecifiedNormalMatches": true,
+      "blanketHostSpecifiedHoverMatches": true,
+      "orderedHostSpecifiedNormalMatches": true,
+      "orderedHostSpecifiedHoverMatches": true
+    }
+  ]
+}

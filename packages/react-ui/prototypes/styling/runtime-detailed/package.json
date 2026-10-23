@@ -1,0 +1,15 @@
+{
+  "name": "openui-runtime-goober-detailed-prototype",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node run-checks.mjs",
+    "check:selectors": "node runtime/serializer-check.mjs",
+    "check:browser": "node browser-build.mjs && node bundle-check.mjs && node browser-check.mjs",
+    "check:next": "node next-build.mjs && npm run build --prefix next && node next-check.mjs",
+    "check:soak": "node soak-check.mjs",
+    "demo": "node browser-build.mjs && node browser-server.mjs",
+    "check:theme-control": "node theme-inline-control/check.mjs",
+    "report": "node summarize.mjs"
+  }
+}
