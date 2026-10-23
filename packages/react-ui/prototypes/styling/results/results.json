@@ -1,0 +1,2582 @@
+{
+  "generatedAt": "2026-10-23T10:04:15.534Z",
+  "browser": "156.0.8078.47",
+  "versions": {
+    "goober": "2.1.19",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "vite": "7.3.7",
+    "tailwindcss-v3": "3.4.19",
+    "tailwindcss": "4.3.3",
+    "bootstrap": "5.3.8"
+  },
+  "sharedGoober": {
+    "before": "rgb(12, 130, 120)",
+    "after": "rgb(239, 68, 68)",
+    "hostCascadePreserved": false,
+    "explanation": "Prototype adapter moves the shared Goober style tag; an application using the same Goober sheet can change priority."
+  },
+  "cases": [
+    {
+      "engine": "goober",
+      "framework": "bootstrap",
+      "policy": "adapted",
+      "order": "early",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(255, 193, 7)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "6px 12px",
+          "borderRadius": "6px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(255, 193, 7)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(255, 193, 7)",
+          "padding": "6px 12px",
+          "borderRadius": "6px"
+        },
+        "hover": {
+          "background": "rgb(255, 202, 44)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "6px 12px",
+          "borderRadius": "6px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(255, 199, 32)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 2668,
+        "countAfter": 2668,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "bootstrap",
+      "policy": "adapted",
+      "order": "late",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(255, 193, 7)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "6px 12px",
+          "borderRadius": "6px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(255, 193, 7)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(255, 193, 7)",
+          "padding": "6px 12px",
+          "borderRadius": "6px"
+        },
+        "hover": {
+          "background": "rgb(255, 202, 44)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "6px 12px",
+          "borderRadius": "6px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(255, 199, 32)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 2668,
+        "countAfter": 2668,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "bootstrap",
+      "policy": "default",
+      "order": "early",
+      "checks": {
+        "base": true,
+        "override": false,
+        "hover": false,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(255, 193, 7)",
+          "padding": "6px 12px",
+          "borderRadius": "6px"
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgb(255, 199, 32)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 2668,
+        "countAfter": 2668,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "bootstrap",
+      "policy": "default",
+      "order": "late",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(255, 193, 7)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "6px 12px",
+          "borderRadius": "6px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(255, 193, 7)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(255, 193, 7)",
+          "padding": "6px 12px",
+          "borderRadius": "6px"
+        },
+        "hover": {
+          "background": "rgb(255, 202, 44)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "6px 12px",
+          "borderRadius": "6px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(255, 199, 32)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 2668,
+        "countAfter": 2668,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "bootstrap",
+      "policy": "layered",
+      "order": "early",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(255, 193, 7)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "6px 12px",
+          "borderRadius": "6px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(255, 193, 7)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(255, 193, 7)",
+          "padding": "6px 12px",
+          "borderRadius": "6px"
+        },
+        "hover": {
+          "background": "rgb(255, 202, 44)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "6px 12px",
+          "borderRadius": "6px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(255, 199, 32)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 2672,
+        "countAfter": 2672,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go2939789233"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "bootstrap",
+      "policy": "layered",
+      "order": "late",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(255, 193, 7)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "6px 12px",
+          "borderRadius": "6px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(255, 193, 7)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(255, 193, 7)",
+          "padding": "6px 12px",
+          "borderRadius": "6px"
+        },
+        "hover": {
+          "background": "rgb(255, 202, 44)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "6px 12px",
+          "borderRadius": "6px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(255, 199, 32)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 2672,
+        "countAfter": 2672,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go2939789233"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "none",
+      "policy": "adapted",
+      "order": "early",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 239, 239)",
+          "padding": "1px 6px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "13.3333px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 8,
+        "countAfter": 8,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "none",
+      "policy": "adapted",
+      "order": "late",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 239, 239)",
+          "padding": "1px 6px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "13.3333px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 8,
+        "countAfter": 8,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "none",
+      "policy": "default",
+      "order": "early",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 239, 239)",
+          "padding": "1px 6px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "13.3333px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 8,
+        "countAfter": 8,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "none",
+      "policy": "default",
+      "order": "late",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 239, 239)",
+          "padding": "1px 6px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "13.3333px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 8,
+        "countAfter": 8,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "none",
+      "policy": "layered",
+      "order": "early",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 239, 239)",
+          "padding": "1px 6px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "13.3333px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 12,
+        "countAfter": 12,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go2939789233"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "none",
+      "policy": "layered",
+      "order": "late",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 239, 239)",
+          "padding": "1px 6px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "13.3333px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 12,
+        "countAfter": 12,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go2939789233"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "plain",
+      "policy": "adapted",
+      "order": "early",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(239, 68, 68)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px none rgb(255, 255, 255)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 68, 68)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(34, 197, 94)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px none rgb(255, 255, 255)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "13.3333px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 10,
+        "countAfter": 10,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "plain",
+      "policy": "adapted",
+      "order": "late",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(239, 68, 68)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px none rgb(255, 255, 255)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 68, 68)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(34, 197, 94)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px none rgb(255, 255, 255)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "13.3333px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 10,
+        "countAfter": 10,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "plain",
+      "policy": "default",
+      "order": "early",
+      "checks": {
+        "base": true,
+        "override": false,
+        "hover": false,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 68, 68)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "13.3333px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 10,
+        "countAfter": 10,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "plain",
+      "policy": "default",
+      "order": "late",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(239, 68, 68)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px none rgb(255, 255, 255)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 68, 68)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(34, 197, 94)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px none rgb(255, 255, 255)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "13.3333px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 10,
+        "countAfter": 10,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "plain",
+      "policy": "layered",
+      "order": "early",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(239, 68, 68)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px none rgb(255, 255, 255)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 68, 68)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(34, 197, 94)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px none rgb(255, 255, 255)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "13.3333px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 14,
+        "countAfter": 14,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go2939789233"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "plain",
+      "policy": "layered",
+      "order": "late",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(239, 68, 68)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px none rgb(255, 255, 255)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 68, 68)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(34, 197, 94)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px none rgb(255, 255, 255)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgb(239, 239, 239)",
+          "color": "rgb(0, 0, 0)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "fontSize": "13.3333px",
+          "border": "2px outset rgb(0, 0, 0)",
+          "animation": "none"
+        },
+        "countBefore": 14,
+        "countAfter": 14,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go2939789233"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "tailwind3",
+      "policy": "adapted",
+      "order": "early",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(239, 68, 68)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 68, 68)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(34, 197, 94)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(229, 231, 235)",
+          "animation": "none"
+        },
+        "countBefore": 52,
+        "countAfter": 52,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "tailwind3",
+      "policy": "adapted",
+      "order": "late",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(239, 68, 68)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 68, 68)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(34, 197, 94)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(229, 231, 235)",
+          "animation": "none"
+        },
+        "countBefore": 52,
+        "countAfter": 52,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "tailwind3",
+      "policy": "default",
+      "order": "early",
+      "checks": {
+        "base": true,
+        "override": false,
+        "hover": false,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 68, 68)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(229, 231, 235)",
+          "animation": "none"
+        },
+        "countBefore": 52,
+        "countAfter": 52,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "tailwind3",
+      "policy": "default",
+      "order": "late",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(239, 68, 68)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 68, 68)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(34, 197, 94)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(229, 231, 235)",
+          "animation": "none"
+        },
+        "countBefore": 52,
+        "countAfter": 52,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "tailwind3",
+      "policy": "layered",
+      "order": "early",
+      "checks": {
+        "base": false,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "0px",
+          "borderRadius": "10px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(229, 231, 235)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(239, 68, 68)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(229, 231, 235)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 68, 68)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(34, 197, 94)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(229, 231, 235)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(229, 231, 235)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(229, 231, 235)",
+          "animation": "none"
+        },
+        "countBefore": 56,
+        "countAfter": 56,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go2939789233"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "tailwind3",
+      "policy": "layered",
+      "order": "late",
+      "checks": {
+        "base": false,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "0px",
+          "borderRadius": "10px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(229, 231, 235)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(239, 68, 68)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(229, 231, 235)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "rgb(239, 68, 68)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(34, 197, 94)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(229, 231, 235)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(229, 231, 235)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(229, 231, 235)",
+          "animation": "none"
+        },
+        "countBefore": 56,
+        "countAfter": 56,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go2939789233"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "tailwind4",
+      "policy": "adapted",
+      "order": "early",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "oklch(0.637 0.237 25.331)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "oklch(0.637 0.237 25.331)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "oklch(0.723 0.219 149.579)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(23, 35, 68)",
+          "animation": "none"
+        },
+        "countBefore": 66,
+        "countAfter": 66,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go2939789233"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "tailwind4",
+      "policy": "adapted",
+      "order": "late",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "oklch(0.637 0.237 25.331)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "oklch(0.637 0.237 25.331)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "oklch(0.723 0.219 149.579)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(23, 35, 68)",
+          "animation": "none"
+        },
+        "countBefore": 66,
+        "countAfter": 66,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go2939789233"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "tailwind4",
+      "policy": "default",
+      "order": "early",
+      "checks": {
+        "base": true,
+        "override": false,
+        "hover": false,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "oklch(0.637 0.237 25.331)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(23, 35, 68)",
+          "animation": "none"
+        },
+        "countBefore": 62,
+        "countAfter": 62,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "tailwind4",
+      "policy": "default",
+      "order": "late",
+      "checks": {
+        "base": true,
+        "override": false,
+        "hover": false,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "oklch(0.637 0.237 25.331)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(23, 35, 68)",
+          "animation": "none"
+        },
+        "countBefore": 62,
+        "countAfter": 62,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go3683590730"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "tailwind4",
+      "policy": "layered",
+      "order": "early",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "oklch(0.637 0.237 25.331)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "oklch(0.637 0.237 25.331)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "oklch(0.723 0.219 149.579)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(23, 35, 68)",
+          "animation": "none"
+        },
+        "countBefore": 66,
+        "countAfter": 66,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go2939789233"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    },
+    {
+      "engine": "goober",
+      "framework": "tailwind4",
+      "policy": "layered",
+      "order": "late",
+      "checks": {
+        "base": true,
+        "override": true,
+        "hover": true,
+        "portal": true,
+        "stableRules": true,
+        "chartAnimation": true,
+        "chartDataUpdated": true,
+        "hostUnchanged": true,
+        "traceability": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "base": {
+          "background": "rgb(51, 71, 176)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "fontSize": "14px",
+          "border": "1px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "override": {
+          "background": "oklch(0.637 0.237 25.331)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "expected": {
+          "background": "oklch(0.637 0.237 25.331)",
+          "padding": "32px",
+          "borderRadius": "0px"
+        },
+        "hover": {
+          "background": "oklch(0.723 0.219 149.579)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "fontSize": "14px",
+          "border": "0px solid rgba(0, 0, 0, 0)",
+          "animation": "none"
+        },
+        "portal": {
+          "background": "rgb(255, 255, 255)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "16px",
+          "borderRadius": "12px",
+          "fontSize": "16px",
+          "border": "1px solid rgb(217, 222, 236)",
+          "animation": "none"
+        },
+        "host": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(23, 35, 68)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "border": "0px solid rgb(23, 35, 68)",
+          "animation": "none"
+        },
+        "countBefore": 66,
+        "countAfter": 66,
+        "trace": {
+          "component": "Button",
+          "source": "lib/goober.js",
+          "className": "go2939789233"
+        },
+        "chart": {
+          "height": "44",
+          "animation": "go3999340121",
+          "fill": "rgb(51, 71, 176)"
+        },
+        "consoleErrors": []
+      }
+    }
+  ],
+  "themes": [
+    {
+      "engine": "goober",
+      "button": {
+        "background": "rgb(163, 181, 255)",
+        "color": "rgb(23, 35, 68)",
+        "padding": "12px 18px",
+        "borderRadius": "10px",
+        "fontSize": "14px",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "animation": "none"
+      },
+      "portal": {
+        "background": "rgb(32, 43, 69)",
+        "color": "rgb(237, 242, 255)",
+        "padding": "16px",
+        "borderRadius": "12px",
+        "fontSize": "16px",
+        "border": "1px solid rgb(72, 85, 113)",
+        "animation": "none"
+      }
+    }
+  ],
+  "ssr": [
+    {
+      "engine": "goober",
+      "pre": {
+        "background": "rgb(51, 71, 176)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "12px 18px",
+        "borderRadius": "10px",
+        "fontSize": "14px",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "animation": "none"
+      },
+      "post": {
+        "background": "rgb(51, 71, 176)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "12px 18px",
+        "borderRadius": "10px",
+        "fontSize": "14px",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "animation": "none"
+      },
+      "pass": true,
+      "hydrationErrors": [],
+      "consoleErrors": []
+    }
+  ],
+  "assets": [
+    {
+      "name": "goober-98IMtOH0.js",
+      "bytes": 2150,
+      "gzipBytes": 1124
+    },
+    {
+      "name": "goober.modern-CN1HfR1e.js",
+      "bytes": 1972,
+      "gzipBytes": 1154
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Representative components, not production OpenUI ports",
+    "Chromium only",
+    "Classic renderToString/hydration only; no Next.js App Router or streaming certification",
+    "No universal CSS framework guarantee",
+    "Adapted is an explicit framework-aware policy, not automatic detection",
+    "Prototype adapter moves the shared Goober style tag; it is not production-safe for hosts sharing that sheet",
+    "Traceability uses prototype data attributes and source metadata; Goober does not generate the report or source labels itself"
+  ]
+}

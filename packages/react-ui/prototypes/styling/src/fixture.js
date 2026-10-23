@@ -1,0 +1,11 @@
+import React from 'react';import {css as gooberCSS} from 'goober';import {createRoot,hydrateRoot} from 'react-dom/client';import {Sample} from './sample.js';
+const q=new URLSearchParams(location.search);const engine=q.get('engine')||'goober';const framework=q.get('framework')||'none';const policy=q.get('policy')||'default';const theme=q.get('theme')||'light';
+const adapters={none:async()=>({getClasses:()=>({button:'',panel:'',bar:''}),metadata:{engine:'none',source:'host baseline'}}),goober:()=>import('../lib-dist/goober.js')};
+const adapter=await adapters[engine]();
+window.__adapter=adapter;window.__gooberCSS=gooberCSS;
+if(window.__SSR)adapter.hydrate(window.__SSR.ids);
+const node=React.createElement(Sample,{adapter,framework,policy,theme});
+if(window.__SSR)hydrateRoot(document.querySelector('#root'),node,{onRecoverableError:e=>{(window.__hydrationErrors||=[]).push(e.message);}});else createRoot(document.querySelector('#root')).render(node);
+while(!window.__rendered)await new Promise(r=>setTimeout(r,10));
+if(q.get('order')==='late')await new Promise((resolve,reject)=>{const link=document.createElement('link');link.id='framework-styles';link.rel='stylesheet';link.href=`/frameworks/${framework}.css`;link.onload=resolve;link.onerror=reject;document.head.append(link);});
+window.__ready=true;

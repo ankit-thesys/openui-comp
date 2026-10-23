@@ -1,0 +1,16 @@
+import fs from 'node:fs/promises';
+import postcss from 'postcss';
+import tw3 from 'tailwindcss-v3';
+import tw4 from '@tailwindcss/postcss';
+const output='public/frameworks'; await fs.mkdir(output,{recursive:true});
+const classes='bg-red-500 text-white p-8 rounded-none border-0 hover:bg-green-500';
+const v3=await postcss([tw3({content:[{raw:`<button class="${classes}"></button>`,extension:'html'}],theme:{extend:{}},plugins:[]})]).process('@tailwind base;@tailwind components;@tailwind utilities;',{from:'framework-v3.css'});
+await fs.writeFile(`${output}/tailwind3.css`,v3.css);
+const v4=await postcss([tw4({base:process.cwd(),optimize:false})]).process(`@import "tailwindcss" source(none);\n@source inline("${classes}");`,{from:`${process.cwd()}/framework-v4.css`});
+await fs.writeFile(`${output}/tailwind4.css`,v4.css);
+await fs.copyFile('node_modules/bootstrap/dist/css/bootstrap.css',`${output}/bootstrap.css`);
+await fs.writeFile(`${output}/plain.css`,'.consumer-override {background-color:rgb(239,68,68);color:white;padding:32px;border-radius:0;border:0}.consumer-override:hover{background-color:rgb(34,197,94)}');
+await fs.writeFile(`${output}/none.css`,'/* No consumer framework. */');
+const versions={};for(const p of ['goober','react','react-dom','vite','tailwindcss-v3','tailwindcss','bootstrap'])versions[p]=JSON.parse(await fs.readFile(`node_modules/${p}/package.json`)).version;
+await fs.writeFile('results/versions.json',JSON.stringify(versions,null,2));
+console.log('Built real Tailwind v3/v4 and Bootstrap fixtures',versions);

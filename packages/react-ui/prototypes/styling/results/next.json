@@ -1,0 +1,20 @@
+{
+  "nextVersion": "16.4.2",
+  "mode": "next dev, App Router, Client Component, Suspense, no custom Goober SSR registry",
+  "beforeJavaScript": {
+    "background": "rgb(239, 239, 239)",
+    "padding": "1px 6px",
+    "text": "Goober button 0"
+  },
+  "afterHydration": {
+    "background": "rgb(51, 71, 176)",
+    "padding": "12px 18px",
+    "text": "Goober button 0"
+  },
+  "serverStyled": false,
+  "clientStyled": true,
+  "interactive": true,
+  "streamedClientButtonCount": 2,
+  "consoleErrors": [],
+  "limitation": "Development smoke test, not production streaming/concurrency certification. A Goober-specific SSR style registry was deliberately not supplied."
+}

@@ -1,0 +1,162 @@
+{
+  "generatedFrom": [
+    "library exports",
+    "browser measurements",
+    "installed package manifests"
+  ],
+  "componentMetadata": {
+    "engine": "goober",
+    "source": "lib/goober.js",
+    "styleSource": "lib/styles.js",
+    "components": [
+      "Button",
+      "PortalPanel",
+      "AnimatedBarChart"
+    ],
+    "note": "Representative fixtures; production components have not been migrated."
+  },
+  "versions": {
+    "goober": "2.1.19",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "vite": "7.3.7",
+    "tailwindcss-v3": "3.4.19",
+    "tailwindcss": "4.3.3",
+    "bootstrap": "5.3.8"
+  },
+  "browser": "156.0.8078.47",
+  "policyResults": [
+    {
+      "policy": "default",
+      "base": 10,
+      "overrides": 5,
+      "total": 10,
+      "complete": 5
+    },
+    {
+      "policy": "layered",
+      "base": 8,
+      "overrides": 10,
+      "total": 10,
+      "complete": 8
+    },
+    {
+      "policy": "adapted",
+      "base": 10,
+      "overrides": 10,
+      "total": 10,
+      "complete": 10
+    }
+  ],
+  "sharedGoober": {
+    "before": "rgb(12, 130, 120)",
+    "after": "rgb(239, 68, 68)",
+    "hostCascadePreserved": false,
+    "explanation": "Prototype adapter moves the shared Goober style tag; an application using the same Goober sheet can change priority."
+  },
+  "classicSSR": {
+    "engine": "goober",
+    "pre": {
+      "background": "rgb(51, 71, 176)",
+      "color": "rgb(255, 255, 255)",
+      "padding": "12px 18px",
+      "borderRadius": "10px",
+      "fontSize": "14px",
+      "border": "1px solid rgba(0, 0, 0, 0)",
+      "animation": "none"
+    },
+    "post": {
+      "background": "rgb(51, 71, 176)",
+      "color": "rgb(255, 255, 255)",
+      "padding": "12px 18px",
+      "borderRadius": "10px",
+      "fontSize": "14px",
+      "border": "1px solid rgba(0, 0, 0, 0)",
+      "animation": "none"
+    },
+    "pass": true,
+    "hydrationErrors": [],
+    "consoleErrors": []
+  },
+  "nextSSR": {
+    "nextVersion": "16.4.2",
+    "mode": "next dev, App Router, Client Component, Suspense, no custom Goober SSR registry",
+    "beforeJavaScript": {
+      "background": "rgb(239, 239, 239)",
+      "padding": "1px 6px",
+      "text": "Goober button 0"
+    },
+    "afterHydration": {
+      "background": "rgb(51, 71, 176)",
+      "padding": "12px 18px",
+      "text": "Goober button 0"
+    },
+    "serverStyled": false,
+    "clientStyled": true,
+    "interactive": true,
+    "streamedClientButtonCount": 2,
+    "consoleErrors": [],
+    "limitation": "Development smoke test, not production streaming/concurrency certification. A Goober-specific SSR style registry was deliberately not supplied."
+  },
+  "limitations": [
+    "Representative components, not production OpenUI ports",
+    "Chromium only",
+    "Classic renderToString/hydration only; no Next.js App Router or streaming certification",
+    "No universal CSS framework guarantee",
+    "Adapted is an explicit framework-aware policy, not automatic detection",
+    "Prototype adapter moves the shared Goober style tag; it is not production-safe for hosts sharing that sheet",
+    "Traceability uses prototype data attributes and source metadata; Goober does not generate the report or source labels itself"
+  ],
+  "requirements": [
+    {
+      "requirement": "No manual component CSS import",
+      "status": "Pass in browser fixtures",
+      "owner": "Goober runtime"
+    },
+    {
+      "requirement": "Trace rendered component to source",
+      "status": "Prototype metadata works; not native Goober source labels",
+      "owner": "OpenUI instrumentation / build tooling"
+    },
+    {
+      "requirement": "No hand-maintained compatibility report",
+      "status": "Generated JSON and Markdown from checks",
+      "owner": "Prototype scripts; not a Goober feature"
+    },
+    {
+      "requirement": "Agent-friendly workflow",
+      "status": "Runnable commands and structured manifest provided; no agent benchmark",
+      "owner": "Project tooling"
+    },
+    {
+      "requirement": "Tailwind v3/v4 and other CSS overrides",
+      "status": "Conditional: adapter needed in tested load orders",
+      "owner": "OpenUI cascade/insertion policy"
+    },
+    {
+      "requirement": "Do not interfere with host styles",
+      "status": "Not met by prototype adapter when the host shares Goober sheet",
+      "owner": "Requires isolated insertion ownership"
+    },
+    {
+      "requirement": "Light/dark themes and portals",
+      "status": "Pass in representative fixtures; token forwarding implemented in fixture",
+      "owner": "OpenUI theme/portal integration"
+    },
+    {
+      "requirement": "Chart updates without CSS rule growth",
+      "status": "Pass in representative chart fixture",
+      "owner": "Stable style rules + data attributes"
+    },
+    {
+      "requirement": "Classic server render and hydration",
+      "status": "Pass with explicit extraction",
+      "owner": "Goober API + server integration"
+    },
+    {
+      "requirement": "Next.js App Router without SSR setup",
+      "status": "Not met: no initial server styles; styled after hydration",
+      "owner": "Requires framework SSR/streaming integration"
+    }
+  ]
+}
