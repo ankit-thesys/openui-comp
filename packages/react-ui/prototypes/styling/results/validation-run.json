@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-10-23T11:13:55.953Z",
+  "checks": [
+    {
+      "script": "check.mjs",
+      "status": "passed"
+    },
+    {
+      "script": "check-next.mjs",
+      "status": "passed"
+    },
+    {
+      "script": "check-compat.mjs",
+      "status": "failed-or-incomplete",
+      "error": "/opt/homebrew/Cellar/node@22/22.22.2_1/bin/node exited 1"
+    },
+    {
+      "script": "check-csp.mjs",
+      "status": "failed-or-incomplete",
+      "error": "/opt/homebrew/Cellar/node@22/22.22.2_1/bin/node exited 1"
+    }
+  ]
+}

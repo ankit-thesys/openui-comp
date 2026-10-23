@@ -34,7 +34,7 @@ Each cell is base styles / consumer override. Failing outcomes remain visible.
 
 ## Built adapter assets
 
-- goober-CdU582xG.js: 6135 bytes; 1692 gzip bytes. Shared React/fixture code excluded; adapters include prototype policy logic, so these are not official library sizes.
+- goober-g6KYsim0.js: 6150 bytes; 1735 gzip bytes. Shared React/fixture code excluded; adapters include prototype policy logic, so these are not official library sizes.
 - goober.modern-CN1HfR1e.js: 1972 bytes; 1154 gzip bytes. Shared React/fixture code excluded; adapters include prototype policy logic, so these are not official library sizes.
 
 ## Limits

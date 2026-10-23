@@ -1,6 +1,6 @@
 # Goober requirements — generated decision report
 
-The host-style conflict and SSR setup blockers are resolved in the tested prototype paths. This is Goober-generated static CSS plus OpenUI-owned delivery, not stock runtime Goober. Universal zero-configuration framework support and production OpenUI parity remain unproven.
+React 19 is accepted. The installed-package compatibility test is not green: Next.js SSR consumer overrides fail for Tailwind v3, Bootstrap and plain CSS. Tailwind v4 and framework-free cases pass in Chromium and WebKit. Firefox coverage is unavailable because the browser could not launch. Automatic framework detection alone does not solve CSS ordering.
 
 Goober 2.1.19; React 19.3.1; Chromium 156.0.8078.47; Next.js 16.4.2. 30 CSS-policy scenarios.
 
@@ -8,7 +8,7 @@ Goober 2.1.19; React 19.3.1; Chromium 156.0.8078.47; Next.js 16.4.2. 30 CSS-poli
 
 Import and render the prototype Button. The tested React 19 SSR path requires no component CSS import, registry, provider, extraction call, or styling plugin in the app. The package build generates the CSS once; component code carries it using React stylesheet resources. Dynamic theme values use CSS variables.
 
-The browser compatibility adapter and the automatic SSR component are two delivery paths over the same generated styles. The SSR fixture is framework-free; it does not prove that the explicit Tailwind v3/v4 policy can be selected automatically.
+The browser compatibility adapter and the automatic SSR component are two delivery paths over the same generated styles. The original SSR fixture is framework-free. The subsequent installed-package matrix uses an automatic setup command and exposes priority failures that the original isolated fixtures did not cover.
 
 | Requirement | Observed result | Who supplies it |
 | --- | --- | --- |
@@ -16,7 +16,7 @@ The browser compatibility adapter and the automatic SSR component are two delive
 | Trace rendered component to source | Prototype metadata works; not native Goober source labels | OpenUI instrumentation / build tooling |
 | No hand-maintained compatibility report | Generated JSON and Markdown from checks | Prototype scripts; not a Goober feature |
 | Agent-friendly workflow | Runnable commands and structured manifest provided; no agent benchmark | Project tooling |
-| Tailwind v3/v4 and other CSS overrides | Adapted policy: 10/10 scenarios pass; framework choice still explicit | OpenUI cascade policy; automatic framework configuration remains open |
+| Tailwind v3/v4 and other CSS overrides | 4/10 executed installed-package browser/framework combinations pass; 5 unavailable. See COMPATIBILITY.md | Setup detects conventional installed dependencies; SSR style ordering remains unresolved |
 | Do not disturb host Goober styles | Pass: host color, sheet contents and relative position preserved in probes | Library-owned styles, no writes to host Goober sheet |
 | Light/dark themes and portals | Pass in representative adapted fixtures; token forwarding implemented in fixture | OpenUI theme/portal integration |
 | Chart updates without CSS rule growth | Pass in representative chart fixture | Stable style rules + data attributes |
@@ -50,8 +50,8 @@ Default and layered reference-policy failures remain visible. The adapted policy
 
 ## Remaining work before adoption
 
-- Choose whether React 19 and package-build-generated static styles are acceptable constraints. Runtime arbitrary style generation is not certified by these results.
-- Automate framework-policy selection and test combined SSR + Tailwind v3/v4 before claiming universal no-setup compatibility.
+- React 19 is accepted. Final adoption of package-build-generated static styles remains a decision; arbitrary runtime style generation is not certified.
+- Fix unlayered consumer override priority under Next.js SSR for Tailwind v3, Bootstrap and plain CSS. The automatic setup command detects these frameworks but does not fix delivery order.
 - Validate actual OpenUI components, supported browsers, strict CSP/nonces, and package distribution.
 - Retain component-to-source metadata and generated checks as OpenUI tooling.
 
@@ -75,3 +75,15 @@ Default and layered reference-policy failures remain visible. The adapted policy
 - Next.js fixture has no CSS framework: Tailwind matrix is tested separately with an explicit policy
 - Representative components, Chromium only
 - No strict CSP/nonce or cross-version validation
+
+## Installed package + automatic framework setup
+
+Artifact: @openui/goober-compat-prototype@0.0.0-prototype.2. 4/10 executed combinations pass; 5 planned combinations unavailable.
+
+[Full generated matrix](COMPATIBILITY.md) · [Structured evidence](compatibility.json)
+
+The app imports its own framework CSS normally. The setup command reads installed direct dependencies and generates a component entry point without asking the user to choose a CSS policy. All five apps build; repeat setup is idempotent and refuses customized entries. Unlayered library resources arrive after app CSS in Next.js, so equally specific consumer override rules lose. This is a real integration failure, not an execution error.
+
+## Strict CSP observations
+
+[Generated CSP results](CSP.md). The static component works with authorized style hashes and with a matching style nonce supplied to React’s streaming renderer. A nonce prop alone does not authorize SSR resource styles. The app must own its security policy; Next.js CSP and dynamic inline theme values remain unverified.

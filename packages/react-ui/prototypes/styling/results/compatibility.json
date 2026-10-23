@@ -1,0 +1,1035 @@
+{
+  "generatedAt": "2026-10-23T11:13:48.301Z",
+  "mode": "Installed npm tarball in five standalone production Next.js apps; host CSS imported in root layout; automatic setup from installed direct dependencies",
+  "setup": [
+    {
+      "fixture": "none",
+      "framework": "none",
+      "version": null,
+      "mode": "unlayered",
+      "react": "19.3.1",
+      "generated": [
+        "openui.generated.js"
+      ],
+      "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+      "idempotent": true,
+      "editsPreserved": true,
+      "clientDirectivePreserved": true,
+      "reactPeer": ">=19.0.0 <20",
+      "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+    },
+    {
+      "fixture": "tailwind3",
+      "framework": "tailwind3",
+      "version": "3.4.19",
+      "mode": "unlayered",
+      "react": "19.3.1",
+      "generated": [
+        "openui.generated.js"
+      ],
+      "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+      "idempotent": true,
+      "editsPreserved": true,
+      "clientDirectivePreserved": true,
+      "reactPeer": ">=19.0.0 <20",
+      "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+    },
+    {
+      "fixture": "tailwind4",
+      "framework": "tailwind4",
+      "version": "4.3.3",
+      "mode": "layered",
+      "react": "19.3.1",
+      "generated": [
+        "openui.generated.js"
+      ],
+      "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+      "idempotent": true,
+      "editsPreserved": true,
+      "clientDirectivePreserved": true,
+      "reactPeer": ">=19.0.0 <20",
+      "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+    },
+    {
+      "fixture": "bootstrap",
+      "framework": "bootstrap",
+      "version": "5.3.8",
+      "mode": "unlayered",
+      "react": "19.3.1",
+      "generated": [
+        "openui.generated.js"
+      ],
+      "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+      "idempotent": true,
+      "editsPreserved": true,
+      "clientDirectivePreserved": true,
+      "reactPeer": ">=19.0.0 <20",
+      "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+    },
+    {
+      "fixture": "plain",
+      "framework": "none",
+      "version": null,
+      "mode": "unlayered",
+      "react": "19.3.1",
+      "generated": [
+        "openui.generated.js"
+      ],
+      "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+      "idempotent": true,
+      "editsPreserved": true,
+      "clientDirectivePreserved": true,
+      "reactPeer": ">=19.0.0 <20",
+      "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+    }
+  ],
+  "results": [
+    {
+      "browser": "chromium",
+      "version": "156.0.8078.47",
+      "framework": "none",
+      "checks": {
+        "baseSSR": true,
+        "overrideSSR": true,
+        "hydration": true,
+        "overrideClient": true,
+        "hover": true,
+        "streaming": true,
+        "hostPreserved": true,
+        "styleDeduplication": true,
+        "interaction": true,
+        "navigation": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "pre": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(239, 239, 239)",
+            "padding": "1px 6px",
+            "borderRadius": "0px",
+            "color": "rgb(0, 0, 0)"
+          }
+        },
+        "post": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(239, 239, 239)",
+            "padding": "1px 6px",
+            "borderRadius": "0px",
+            "color": "rgb(0, 0, 0)"
+          },
+          "late": {
+            "background": "rgb(18, 108, 72)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "referenceHover": {
+          "background": "rgb(239, 239, 239)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "hostBefore": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "hostAfter": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "countBefore": 2,
+        "countAfter": 2,
+        "errors": []
+      }
+    },
+    {
+      "browser": "chromium",
+      "version": "156.0.8078.47",
+      "framework": "tailwind3",
+      "checks": {
+        "baseSSR": true,
+        "overrideSSR": false,
+        "hydration": true,
+        "overrideClient": false,
+        "hover": false,
+        "streaming": false,
+        "hostPreserved": true,
+        "styleDeduplication": true,
+        "interaction": true,
+        "navigation": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "pre": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "post": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "late": {
+            "background": "rgb(18, 108, 72)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "referenceHover": {
+          "background": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "hostBefore": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "hostAfter": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "countBefore": 2,
+        "countAfter": 2,
+        "errors": []
+      }
+    },
+    {
+      "browser": "chromium",
+      "version": "156.0.8078.47",
+      "framework": "tailwind4",
+      "checks": {
+        "baseSSR": true,
+        "overrideSSR": true,
+        "hydration": true,
+        "overrideClient": true,
+        "hover": true,
+        "streaming": true,
+        "hostPreserved": true,
+        "styleDeduplication": true,
+        "interaction": true,
+        "navigation": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "pre": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "lab(55.4814 75.0732 48.8528)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "lab(55.4814 75.0732 48.8528)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "post": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "lab(55.4814 75.0732 48.8528)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "lab(55.4814 75.0732 48.8528)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "late": {
+            "background": "lab(55.4814 75.0732 48.8528)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "hover": {
+          "background": "lab(70.5521 -66.5147 45.8073)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "referenceHover": {
+          "background": "lab(70.5521 -66.5147 45.8073)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "hostBefore": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "hostAfter": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "countBefore": 2,
+        "countAfter": 2,
+        "errors": []
+      }
+    },
+    {
+      "browser": "chromium",
+      "version": "156.0.8078.47",
+      "framework": "bootstrap",
+      "checks": {
+        "baseSSR": true,
+        "overrideSSR": false,
+        "hydration": true,
+        "overrideClient": false,
+        "hover": false,
+        "streaming": false,
+        "hostPreserved": true,
+        "styleDeduplication": true,
+        "interaction": true,
+        "navigation": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "pre": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(255, 193, 7)",
+            "padding": "6px 12px",
+            "borderRadius": "6px",
+            "color": "rgb(0, 0, 0)"
+          }
+        },
+        "post": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(255, 193, 7)",
+            "padding": "6px 12px",
+            "borderRadius": "6px",
+            "color": "rgb(0, 0, 0)"
+          },
+          "late": {
+            "background": "rgb(18, 108, 72)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "referenceHover": {
+          "background": "rgb(255, 202, 44)",
+          "padding": "6px 12px",
+          "borderRadius": "6px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "hostBefore": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "hostAfter": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "countBefore": 2,
+        "countAfter": 2,
+        "errors": []
+      }
+    },
+    {
+      "browser": "chromium",
+      "version": "156.0.8078.47",
+      "framework": "plain",
+      "checks": {
+        "baseSSR": true,
+        "overrideSSR": false,
+        "hydration": true,
+        "overrideClient": false,
+        "hover": false,
+        "streaming": false,
+        "hostPreserved": true,
+        "styleDeduplication": true,
+        "interaction": true,
+        "navigation": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "pre": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "post": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "late": {
+            "background": "rgb(18, 108, 72)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "referenceHover": {
+          "background": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "hostBefore": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "hostAfter": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "1px 6px",
+          "borderRadius": "0px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "countBefore": 2,
+        "countAfter": 2,
+        "errors": []
+      }
+    },
+    {
+      "browser": "webkit",
+      "version": "27.2",
+      "framework": "none",
+      "checks": {
+        "baseSSR": true,
+        "overrideSSR": true,
+        "hydration": true,
+        "overrideClient": true,
+        "hover": true,
+        "streaming": true,
+        "hostPreserved": true,
+        "styleDeduplication": true,
+        "interaction": true,
+        "navigation": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "pre": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(192, 192, 192)",
+            "padding": "0px 6px 1px",
+            "borderRadius": "0px",
+            "color": "rgba(0, 0, 0, 0.847)"
+          }
+        },
+        "post": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(192, 192, 192)",
+            "padding": "0px 6px 1px",
+            "borderRadius": "0px",
+            "color": "rgba(0, 0, 0, 0.847)"
+          },
+          "late": {
+            "background": "rgb(18, 108, 72)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "referenceHover": {
+          "background": "rgb(192, 192, 192)",
+          "padding": "0px 6px 1px",
+          "borderRadius": "0px",
+          "color": "rgba(0, 0, 0, 0.847)"
+        },
+        "hostBefore": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "2px 6px 3px",
+          "borderRadius": "0px",
+          "color": "rgba(0, 0, 0, 0.847)"
+        },
+        "hostAfter": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "2px 6px 3px",
+          "borderRadius": "0px",
+          "color": "rgba(0, 0, 0, 0.847)"
+        },
+        "countBefore": 2,
+        "countAfter": 2,
+        "errors": []
+      }
+    },
+    {
+      "browser": "webkit",
+      "version": "27.2",
+      "framework": "tailwind3",
+      "checks": {
+        "baseSSR": true,
+        "overrideSSR": false,
+        "hydration": true,
+        "overrideClient": false,
+        "hover": false,
+        "streaming": false,
+        "hostPreserved": true,
+        "styleDeduplication": true,
+        "interaction": true,
+        "navigation": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "pre": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "post": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "late": {
+            "background": "rgb(18, 108, 72)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "referenceHover": {
+          "background": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "hostBefore": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "hostAfter": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "countBefore": 2,
+        "countAfter": 2,
+        "errors": []
+      }
+    },
+    {
+      "browser": "webkit",
+      "version": "27.2",
+      "framework": "tailwind4",
+      "checks": {
+        "baseSSR": true,
+        "overrideSSR": true,
+        "hydration": true,
+        "overrideClient": true,
+        "hover": true,
+        "streaming": true,
+        "hostPreserved": true,
+        "styleDeduplication": true,
+        "interaction": true,
+        "navigation": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "pre": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "lab(55.4814 75.073196 48.852798)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "lab(55.4814 75.073196 48.852798)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "post": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "lab(55.4814 75.073196 48.852798)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "lab(55.4814 75.073196 48.852798)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "late": {
+            "background": "lab(55.4814 75.073196 48.852798)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "hover": {
+          "background": "lab(70.552101 -66.514702 45.807301)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "referenceHover": {
+          "background": "lab(70.552101 -66.514702 45.807301)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "hostBefore": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "hostAfter": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "0px",
+          "borderRadius": "0px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "countBefore": 2,
+        "countAfter": 2,
+        "errors": []
+      }
+    },
+    {
+      "browser": "webkit",
+      "version": "27.2",
+      "framework": "bootstrap",
+      "checks": {
+        "baseSSR": true,
+        "overrideSSR": false,
+        "hydration": true,
+        "overrideClient": false,
+        "hover": false,
+        "streaming": false,
+        "hostPreserved": true,
+        "styleDeduplication": true,
+        "interaction": true,
+        "navigation": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "pre": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(255, 193, 7)",
+            "padding": "6px 12px",
+            "borderRadius": "6px",
+            "color": "rgb(0, 0, 0)"
+          }
+        },
+        "post": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(255, 193, 7)",
+            "padding": "6px 12px",
+            "borderRadius": "6px",
+            "color": "rgb(0, 0, 0)"
+          },
+          "late": {
+            "background": "rgb(18, 108, 72)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "referenceHover": {
+          "background": "rgb(255, 202, 44)",
+          "padding": "6px 12px",
+          "borderRadius": "6px",
+          "color": "rgb(0, 0, 0)"
+        },
+        "hostBefore": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "2px 6px 3px",
+          "borderRadius": "0px",
+          "color": "rgba(0, 0, 0, 0.847)"
+        },
+        "hostAfter": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "2px 6px 3px",
+          "borderRadius": "0px",
+          "color": "rgba(0, 0, 0, 0.847)"
+        },
+        "countBefore": 2,
+        "countAfter": 2,
+        "errors": []
+      }
+    },
+    {
+      "browser": "webkit",
+      "version": "27.2",
+      "framework": "plain",
+      "checks": {
+        "baseSSR": true,
+        "overrideSSR": false,
+        "hydration": true,
+        "overrideClient": false,
+        "hover": false,
+        "streaming": false,
+        "hostPreserved": true,
+        "styleDeduplication": true,
+        "interaction": true,
+        "navigation": true,
+        "noBrowserErrors": true
+      },
+      "observed": {
+        "pre": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "post": {
+          "base": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "override": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "reference": {
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
+            "color": "rgb(255, 255, 255)"
+          },
+          "late": {
+            "background": "rgb(18, 108, 72)",
+            "padding": "12px 18px",
+            "borderRadius": "10px",
+            "color": "rgb(255, 255, 255)"
+          }
+        },
+        "hover": {
+          "background": "rgb(37, 53, 140)",
+          "padding": "12px 18px",
+          "borderRadius": "10px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "referenceHover": {
+          "background": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "borderRadius": "0px",
+          "color": "rgb(255, 255, 255)"
+        },
+        "hostBefore": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "2px 6px 3px",
+          "borderRadius": "0px",
+          "color": "rgba(0, 0, 0, 0.847)"
+        },
+        "hostAfter": {
+          "background": "rgb(12, 130, 120)",
+          "padding": "2px 6px 3px",
+          "borderRadius": "0px",
+          "color": "rgba(0, 0, 0, 0.847)"
+        },
+        "countBefore": 2,
+        "countAfter": 2,
+        "errors": []
+      }
+    }
+  ],
+  "executionErrors": [
+    {
+      "browser": "firefox",
+      "stage": "launch",
+      "error": "browserType.launch: Failed to launch the browser process.\nBrowser logs:\n\n<launching> /Users/ankitdas/Library/Caches/ms-playwright/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/zg/c91r6pzj7ql8z_xxw8rbqqgr0000gn/T/playwright_firefoxdev_profile-VtZdzE -juggler-pipe -silent\n<launched> pid=5092\n[pid=5092][err] *** You are running in headless mode.\n[pid=5092][err] Could not find profile folder.\n[pid=5092] <process did exit: exitCode=1, signal=null>\n[pid=5092] starting temporary directories cleanup\nCall log:\n\u001b[2m  - <launching> /Users/ankitdas/Library/Caches/ms-playwright/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/zg/c91r6pzj7ql8z_xxw8rbqqgr0000gn/T/playwright_firefoxdev_profile-VtZdzE -juggler-pipe -silent\u001b[22m\n\u001b[2m  - <launched> pid=5092\u001b[22m\n\u001b[2m  - [pid=5092][err] *** You are running in headless mode.\u001b[22m\n\u001b[2m  - [pid=5092][err] Could not find profile folder.\u001b[22m\n\u001b[2m  - [pid=5092] <process did exit: exitCode=1, signal=null>\u001b[22m\n\u001b[2m  - [pid=5092] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=5092] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=5092] <kill>\u001b[22m\n\u001b[2m  - [pid=5092] <skipped force kill spawnedProcess.killed=false processClosed=true>\u001b[22m\n\u001b[2m  - [pid=5092] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=5092] <gracefully close end>\u001b[22m\n"
+    }
+  ],
+  "passed": 4,
+  "total": 10,
+  "planned": 15,
+  "unavailable": 5,
+  "limitations": [
+    "Representative Button only; full OpenUI component parity not certified",
+    "WebKit is Playwright WebKit, not a Safari release certification",
+    "Conventional directly declared framework dependencies; CDN-loaded CSS and unusual monorepo layouts need separate handling",
+    "Framework CSS compiled by fixture preparation from pinned real packages; no custom Tailwind config variants yet"
+  ]
+}

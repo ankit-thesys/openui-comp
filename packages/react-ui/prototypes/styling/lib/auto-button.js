@@ -3,12 +3,17 @@
 import React,{useState} from 'react';
 import {artifacts} from './generated-styles.js';
 const h=React.createElement;
-export function Button({late=false,accent,children='Goober button'}){
+export function createComponents(mode='unlayered'){
+function Button({late=false,accent,children='Goober button',className:consumerClass='',nonce,...props}){
  const [count,setCount]=useState(0);
- const bundle=artifacts.unlayered;
+ const bundle=artifacts[mode];
  const sheet=late?bundle.late:bundle;
  const className=late?sheet.className:bundle.classes.button;
  return h(React.Fragment,null,
-  h('style',{href:sheet.href,precedence:'openui'},sheet.css),
-  h('button',{'data-testid':late?'next-late-button':'next-button','data-openui-style':'','data-source':'lib/auto-button.js',className,style:accent?{'--openui-accent':accent}:undefined,onClick:()=>setCount(c=>c+1)},children+' '+count));
+  h('style',{href:sheet.href,precedence:'openui',nonce},sheet.css),
+  h('button',{'data-testid':late?'next-late-button':'next-button','data-openui-style':'','data-source':'lib/auto-button.js',...props,className:className+' '+consumerClass,style:accent?{'--openui-accent':accent}:undefined,onClick:()=>setCount(c=>c+1)},children+' '+count));
 }
+
+return {Button};
+}
+export const {Button}=createComponents();

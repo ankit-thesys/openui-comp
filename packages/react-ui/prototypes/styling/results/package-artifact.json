@@ -1,0 +1,36 @@
+[
+  {
+    "id": "@openui/goober-compat-prototype@0.0.0-prototype.2",
+    "name": "@openui/goober-compat-prototype",
+    "version": "0.0.0-prototype.2",
+    "size": 2461,
+    "unpackedSize": 7417,
+    "shasum": "4d961f4b5e681d38da2a4f8b3aad30a8e73c26f7",
+    "integrity": "sha512-b3oM45SpsSFESQMQTLk3NJLQeY3DyQhyJWjanCygmtxLmd6E9IqVXGOMldUTdN7LPwefl/X/K0I+/CJ8aQ2QtA==",
+    "filename": "openui-goober-compat-prototype-0.0.0-prototype.2.tgz",
+    "files": [
+      {
+        "path": "auto-button.js",
+        "size": 983,
+        "mode": 420
+      },
+      {
+        "path": "configure.mjs",
+        "size": 1857,
+        "mode": 493
+      },
+      {
+        "path": "generated-styles.js",
+        "size": 4167,
+        "mode": 420
+      },
+      {
+        "path": "package.json",
+        "size": 410,
+        "mode": 420
+      }
+    ],
+    "entryCount": 4,
+    "bundled": []
+  }
+]

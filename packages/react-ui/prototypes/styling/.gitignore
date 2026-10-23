@@ -4,3 +4,6 @@ lib-dist/
 ssr-dist/
 public/frameworks/
 results/*.png
+.compat/
+package-prototype/auto-button.js
+package-prototype/generated-styles.js

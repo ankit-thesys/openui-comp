@@ -1,0 +1,82 @@
+[
+  {
+    "fixture": "none",
+    "framework": "none",
+    "version": null,
+    "mode": "unlayered",
+    "react": "19.3.1",
+    "generated": [
+      "openui.generated.js"
+    ],
+    "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+    "idempotent": true,
+    "editsPreserved": true,
+    "clientDirectivePreserved": true,
+    "reactPeer": ">=19.0.0 <20",
+    "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+  },
+  {
+    "fixture": "tailwind3",
+    "framework": "tailwind3",
+    "version": "3.4.19",
+    "mode": "unlayered",
+    "react": "19.3.1",
+    "generated": [
+      "openui.generated.js"
+    ],
+    "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+    "idempotent": true,
+    "editsPreserved": true,
+    "clientDirectivePreserved": true,
+    "reactPeer": ">=19.0.0 <20",
+    "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+  },
+  {
+    "fixture": "tailwind4",
+    "framework": "tailwind4",
+    "version": "4.3.3",
+    "mode": "layered",
+    "react": "19.3.1",
+    "generated": [
+      "openui.generated.js"
+    ],
+    "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+    "idempotent": true,
+    "editsPreserved": true,
+    "clientDirectivePreserved": true,
+    "reactPeer": ">=19.0.0 <20",
+    "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+  },
+  {
+    "fixture": "bootstrap",
+    "framework": "bootstrap",
+    "version": "5.3.8",
+    "mode": "unlayered",
+    "react": "19.3.1",
+    "generated": [
+      "openui.generated.js"
+    ],
+    "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+    "idempotent": true,
+    "editsPreserved": true,
+    "clientDirectivePreserved": true,
+    "reactPeer": ">=19.0.0 <20",
+    "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+  },
+  {
+    "fixture": "plain",
+    "framework": "none",
+    "version": null,
+    "mode": "unlayered",
+    "react": "19.3.1",
+    "generated": [
+      "openui.generated.js"
+    ],
+    "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+    "idempotent": true,
+    "editsPreserved": true,
+    "clientDirectivePreserved": true,
+    "reactPeer": ">=19.0.0 <20",
+    "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+  }
+]

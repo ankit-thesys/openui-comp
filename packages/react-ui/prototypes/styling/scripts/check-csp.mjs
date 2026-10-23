@@ -1,0 +1,29 @@
+import {PassThrough} from 'node:stream';import fs from 'node:fs/promises';import path from 'node:path';import http from 'node:http';import {createRequire} from 'node:module';import {pathToFileURL} from 'node:url';import {createHash,randomBytes} from 'node:crypto';import {build} from 'esbuild';import {chromium,firefox,webkit} from 'playwright';
+const root=path.resolve('.compat/none');const require=createRequire(path.join(root,'package.json'));const React=require('react');const {renderToString,renderToPipeableStream}=require('react-dom/server');
+const {Button}=await import(pathToFileURL(require.resolve('@openui/goober-compat-prototype')));const {artifacts}=await import(pathToFileURL(require.resolve('@openui/goober-compat-prototype/artifacts')));
+const hash=createHash('sha256').update(artifacts.unlayered.css).digest('base64');
+const bundle=await build({stdin:{contents:`import React from 'react';import {hydrateRoot} from 'react-dom/client';import {Button} from '@openui/goober-compat-prototype';const nonce=document.getElementById('entry').nonce;hydrateRoot(document.getElementById('root'),React.createElement(Button,{nonce:nonce||undefined}),{onRecoverableError:e=>{(window.errors||=[]).push(e.message)}});`,resolveDir:root,sourcefile:'csp-client.js'},bundle:true,format:'esm',write:false,define:{'process.env.NODE_ENV':'"production"'}});
+const server=http.createServer(async(req,res)=>{
+ if(req.url==='/client.js'){res.setHeader('content-type','application/javascript');res.end(bundle.outputFiles[0].text);return;}
+ const mode=new URL(req.url,'http://localhost').searchParams.get('mode')||'none';const nonce=mode.startsWith('nonce')?randomBytes(18).toString('base64'):undefined;
+ const policy=mode==='none'?null:`default-src 'self';script-src 'self';style-src 'self'${mode.startsWith('nonce')?" 'nonce-"+nonce+"'":mode==='hash'?" 'sha256-"+hash+"'":''};style-src-attr 'none';object-src 'none'`;
+ if(policy)res.setHeader('Content-Security-Policy',policy);res.setHeader('content-type','text/html');
+ const node=React.createElement(Button,{nonce});
+ let body;
+ if(mode==='nonce-renderer')body=await new Promise((resolve,reject)=>{let html='';const sink=new PassThrough();sink.on('data',d=>html+=d);sink.on('end',()=>resolve(html));sink.on('error',reject);const stream=renderToPipeableStream(node,{nonce:{style:nonce},onAllReady(){stream.pipe(sink)},onError:reject});});
+ else body=renderToString(node);
+ res.end('<!doctype html><html><head><meta charset="utf-8"></head><body><div id="root">'+body+'</div><script id="entry" type="module" src="/client.js"'+(nonce?' nonce="'+nonce+'"':'')+'></script></body></html>');
+});await new Promise(r=>server.listen(0,'127.0.0.1',r));const url='http://127.0.0.1:'+server.address().port;const rows=[];const executionErrors=[];
+try{for(const [name,engine]of Object.entries({chromium,firefox,webkit})){
+ let browser;try{browser=await engine.launch(name==='chromium'?{channel:'chrome',headless:true}:{headless:true});}catch(e){executionErrors.push({browser:name,stage:'launch',error:e.message.slice(0,1400)});continue;}
+ for(const mode of ['none','blocked','nonce','nonce-renderer','hash']){
+  const context=await browser.newContext({javaScriptEnabled:false});const p=await context.newPage();await p.goto(url+'/?mode='+mode);const before=await p.locator('button').evaluate(el=>getComputedStyle(el).backgroundColor);const noncePresent=await p.locator('style').evaluate(el=>Boolean(el.nonce));await context.close();
+  const client=await browser.newPage();const errors=[];client.on('pageerror',e=>errors.push(e.message));await client.goto(url+'/?mode='+mode);await client.locator('button').click();await client.waitForFunction(()=>document.querySelector('button').textContent.endsWith('1'));await client.mouse.move(800,800);await client.waitForTimeout(200);const after=await client.locator('button').evaluate(el=>getComputedStyle(el).backgroundColor);const hydrationErrors=await client.evaluate(()=>window.errors||[]);
+  const styledBefore=before==='rgb(51, 71, 176)',styledAfter=after==='rgb(51, 71, 176)';
+  rows.push({browser:name,version:browser.version(),mode,before,after,noncePresent,styledBefore,styledAfter,policyEnforced:['blocked','nonce'].includes(mode)?!styledBefore&&!styledAfter:null,interactive:true,errors,hydrationErrors});await client.close();
+ }
+ await browser.close();
+}}finally{await new Promise(r=>server.close(r));}
+const result={generatedAt:new Date().toISOString(),executionErrors,setup:'Installed package, React 19 renderToString and hydration. Real response CSP headers. No unsafe-inline. Static button only. nonce = component prop only (negative probe); nonce-renderer = matching style nonce also supplied to React streaming renderer.',rows,limitations:['CSP allowlist is owned by the application; this test does not automate its security policy','Dynamic inline theme attributes are not covered and are prohibited by this policy','Next.js nonce propagation and streaming CSP require a separate integrated test']};
+await fs.writeFile('results/csp.json',JSON.stringify(result,null,2));await fs.writeFile('results/CSP.md','# Strict CSP compatibility — generated observations\n\n'+result.setup+'\n\n| Browser | Policy | Styled before JS | Styled after hydration | Nonce on style |\n| --- | --- | --- | --- | --- |\n'+rows.map(r=>`| ${r.browser} | ${r.mode} | ${r.styledBefore} | ${r.styledAfter} | ${r.noncePresent} |`).join('\n')+'\n\n## Unavailable checks\n\n'+executionErrors.map(x=>'- '+x.browser+': '+x.stage+' failed: '+x.error.split('\n')[0]).join('\n')+'\n\n'+result.limitations.map(x=>'- '+x).join('\n')+'\n');console.log(JSON.stringify(rows,null,2));
+if(executionErrors.length||rows.some(r=>r.errors.length||r.hydrationErrors.length||(['blocked','nonce'].includes(r.mode)?!r.policyEnforced:!r.styledBefore||!r.styledAfter)))process.exitCode=1;

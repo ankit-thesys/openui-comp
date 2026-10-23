@@ -1,0 +1,10 @@
+{
+  "name": "@openui/goober-compat-prototype",
+  "version": "0.0.0-prototype.2",
+  "type": "module",
+  "private": true,
+  "exports": {".": "./auto-button.js", "./artifacts": "./generated-styles.js"},
+  "files": ["auto-button.js", "generated-styles.js", "configure.mjs"],
+  "bin": {"openui-prototype-configure": "./configure.mjs"},
+  "peerDependencies": {"react": ">=19.0.0 <20", "react-dom": ">=19.0.0 <20"}
+}

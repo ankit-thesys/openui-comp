@@ -15,7 +15,8 @@ for(const mode of ['unlayered','layered']){
  }));
  const sheet=extractCss();
  // Separate resource used only by delayed/mounted content, to test streaming insertion.
- const lateClass=css({'&:where([data-openui-style])':{...cssRule(rules.button),backgroundColor:'var(--openui-late, #126c48)'}});
+ const lateRule={'&:where([data-openui-style])':{...cssRule(rules.button),backgroundColor:'var(--openui-late, #126c48)'}};
+ const lateClass=css(mode==='layered'?{'@layer components':lateRule}:lateRule);
  const lateCSS=extractCss();
  artifacts[mode]={classes,css:sheet,href:'openui-prototype-'+createHash('sha256').update(sheet).digest('hex').slice(0,16),late:{className:lateClass,css:lateCSS,href:'openui-prototype-'+createHash('sha256').update(lateCSS).digest('hex').slice(0,16)}};
 }

@@ -57,3 +57,32 @@ React 19 is required for automatic resource delivery. React 18, arbitrary runtim
 - [Goober APIs](https://github.com/cristianbote/goober)
 - [React 19 stylesheet resources](https://react.dev/reference/react-dom/components/style)
 - [Next.js CSS-in-JS guidance](https://nextjs.org/docs/app/guides/css-in-js)
+
+## React 19 acceptance and installed-package compatibility
+
+React 19 is accepted for this proposal. The current measurements use React 19.3.1; accepting the major version does not certify every minor release or approve Goober adoption.
+
+The expanded `npm run check:all` also packs an npm artifact, installs it in five standalone Next.js apps, runs automatic dependency-based configuration, builds every consumer, then runs Chromium, Firefox and WebKit compatibility checks plus CSP probes. All reports are generated even when compatibility checks fail; the overall command returns nonzero for failures or unavailable browser coverage.
+
+To run only this round after `npm run build`:
+
+```sh
+npm run compat:prepare
+npm run check:compat
+npm run check:csp
+npm run report
+```
+
+The last two checks currently return nonzero: the SSR override-order failures are real, and Firefox cannot launch on this machine. This is intentionally visible. No-framework and Tailwind v4 pass in Chromium/WebKit. Tailwind v3, Bootstrap and plain CSS keep the library's base appearance, but their consumer overrides lose priority when Next.js places the component resources after app CSS. The isolated browser adapter's passing results do not cover that ordering.
+
+The setup command is installed from the packed artifact and reads declared, installed dependency versions. It generates an entry point without asking the user to choose a CSS policy, does not modify app styles/layout, is idempotent, and refuses to overwrite a differing/customized entry. It is a bounded prototype, not the planned source registry/update system; CDN styles, unusual workspace layouts and custom cascade configurations need separate handling.
+
+CSP tests use real response headers with no `unsafe-inline`. Authorized static style hashes and matching style nonces passed to React's streaming renderer work in Chromium/WebKit. A component nonce prop alone does not authorize SSR stylesheet resources. Application CSP integration and dynamic inline theme attributes remain open.
+
+- `results/COMPATIBILITY.md` and `compatibility.json`: installed-package browser/framework matrix, failures and unavailable checks.
+- `results/compat-setup.json`: detected versions, idempotence, preservation of customized files, React peer range and client directive checks.
+- `results/package-artifact.json`: npm pack file inventory and integrity.
+- `results/CSP.md` and `csp.json`: CSP positive and negative probes.
+- `results/validation-run.json`: latest full-run command outcomes.
+
+Run `npm run demo:compat` after preparation to inspect all five installed consumers on ports 4210–4214. Stop that demo before rerunning compatibility checks, which use the same ports and refuse stale servers. Fixture files are generated under ignored `.compat/`; the scripts and evidence are committed, not node_modules or build output.
