@@ -1,0 +1,222 @@
+{
+  "scope": "Actual AgentInterface/ChatProvider/fetchLLM/AGUI/Renderer/parser and actual chat/dashboard response fixtures. Stock Goober default css; buffered SSR extraction is explicit server integration, not automatic.",
+  "runs": [
+    {
+      "scenario": "chat",
+      "arm": "baseline",
+      "errors": [],
+      "serverHasGooberCSS": false,
+      "initialServerCSSBytes": 0,
+      "afterHydration": {
+        "tags": 0,
+        "bytes": 0,
+        "links": [
+          "/baseline.css"
+        ]
+      },
+      "partial": 512,
+      "typingWorks": true,
+      "finalChars": 3184,
+      "firstSheet": {
+        "tags": 0,
+        "bytes": 0,
+        "links": [
+          "/baseline.css"
+        ]
+      },
+      "rendered": {
+        "cards": 1,
+        "tables": 1,
+        "bars": 3,
+        "lines": 1,
+        "pies": 9,
+        "headerPosition": "absolute",
+        "composerPosition": "absolute",
+        "floatingTop": "48px",
+        "scrollPadding": "60px",
+        "syntheticNoHeaderPadding": "36px",
+        "expectedNoHeaderPadding": "36px"
+      },
+      "secondSheet": {
+        "tags": 0,
+        "bytes": 0,
+        "links": [
+          "/baseline.css"
+        ]
+      },
+      "portal": {
+        "accent": "oklch(0.546 0.215 262.881 / 1)",
+        "background": "oklch(0.99436 0 89.876)"
+      },
+      "darkModeWorks": true,
+      "afterUnmount": {
+        "tags": 0,
+        "bytes": 0,
+        "links": [
+          "/baseline.css"
+        ]
+      },
+      "activeStreams": 0,
+      "completed": true
+    },
+    {
+      "scenario": "chat",
+      "arm": "runtime",
+      "errors": [],
+      "serverHasGooberCSS": true,
+      "initialServerCSSBytes": 75666,
+      "afterHydration": {
+        "tags": 1,
+        "bytes": 76183,
+        "links": []
+      },
+      "partial": 512,
+      "typingWorks": true,
+      "finalChars": 3184,
+      "firstSheet": {
+        "tags": 1,
+        "bytes": 184997,
+        "links": []
+      },
+      "rendered": {
+        "cards": 1,
+        "tables": 1,
+        "bars": 3,
+        "lines": 1,
+        "pies": 9,
+        "headerPosition": "absolute",
+        "composerPosition": "absolute",
+        "floatingTop": "48px",
+        "scrollPadding": "60px",
+        "syntheticNoHeaderPadding": "36px",
+        "expectedNoHeaderPadding": "36px"
+      },
+      "secondSheet": {
+        "tags": 1,
+        "bytes": 184997,
+        "links": []
+      },
+      "portal": {
+        "accent": "oklch(0.6 0.18 123 / 1)",
+        "background": "oklch(0.99436 0 89.876)"
+      },
+      "darkModeWorks": true,
+      "afterUnmount": {
+        "tags": 1,
+        "bytes": 189315,
+        "links": []
+      },
+      "activeStreams": 0,
+      "completed": true
+    },
+    {
+      "scenario": "dashboard",
+      "arm": "baseline",
+      "errors": [],
+      "serverHasGooberCSS": false,
+      "initialServerCSSBytes": 0,
+      "afterHydration": {
+        "tags": 0,
+        "bytes": 0,
+        "links": [
+          "/baseline.css"
+        ]
+      },
+      "partial": 512,
+      "typingWorks": true,
+      "finalChars": 4209,
+      "firstSheet": {
+        "tags": 0,
+        "bytes": 0,
+        "links": [
+          "/baseline.css"
+        ]
+      },
+      "rendered": {
+        "cards": 1,
+        "tables": 3,
+        "bars": 27,
+        "lines": 1,
+        "pies": 9,
+        "headerPosition": "absolute",
+        "composerPosition": "absolute",
+        "floatingTop": "48px",
+        "scrollPadding": "60px",
+        "syntheticNoHeaderPadding": "36px",
+        "expectedNoHeaderPadding": "36px"
+      },
+      "secondSheet": {
+        "tags": 0,
+        "bytes": 0,
+        "links": [
+          "/baseline.css"
+        ]
+      },
+      "portal": {
+        "accent": "oklch(0.546 0.215 262.881 / 1)",
+        "background": "oklch(0.99436 0 89.876)"
+      },
+      "darkModeWorks": true,
+      "afterUnmount": {
+        "tags": 0,
+        "bytes": 0,
+        "links": [
+          "/baseline.css"
+        ]
+      },
+      "activeStreams": 0,
+      "completed": true
+    },
+    {
+      "scenario": "dashboard",
+      "arm": "runtime",
+      "errors": [],
+      "serverHasGooberCSS": true,
+      "initialServerCSSBytes": 75666,
+      "afterHydration": {
+        "tags": 1,
+        "bytes": 76183,
+        "links": []
+      },
+      "partial": 512,
+      "typingWorks": true,
+      "finalChars": 4209,
+      "firstSheet": {
+        "tags": 1,
+        "bytes": 184997,
+        "links": []
+      },
+      "rendered": {
+        "cards": 1,
+        "tables": 3,
+        "bars": 27,
+        "lines": 1,
+        "pies": 9,
+        "headerPosition": "absolute",
+        "composerPosition": "absolute",
+        "floatingTop": "48px",
+        "scrollPadding": "60px",
+        "syntheticNoHeaderPadding": "36px",
+        "expectedNoHeaderPadding": "36px"
+      },
+      "secondSheet": {
+        "tags": 1,
+        "bytes": 184997,
+        "links": []
+      },
+      "portal": {
+        "accent": "oklch(0.6 0.18 123 / 1)",
+        "background": "oklch(0.99436 0 89.876)"
+      },
+      "darkModeWorks": true,
+      "afterUnmount": {
+        "tags": 1,
+        "bytes": 189315,
+        "links": []
+      },
+      "activeStreams": 0,
+      "completed": true
+    }
+  ],
+  "browser": "156.0.8078.47"
+}

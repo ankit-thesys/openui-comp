@@ -1,0 +1,146 @@
+plain host-first baseline completed
+plain host-first runtime completed
+plain host-late baseline completed
+plain host-late runtime completed
+tailwind3 host-first baseline completed
+tailwind3 host-first runtime completed
+tailwind3 host-late baseline completed
+tailwind3 host-late runtime completed
+tailwind4 host-first baseline completed
+tailwind4 host-first runtime completed
+tailwind4 host-late baseline completed
+tailwind4 host-late runtime completed
+{
+  "runs": 12,
+  "failures": 18,
+  "firstFailures": [
+    {
+      "framework": "plain",
+      "order": "host-first",
+      "reason": "cursor",
+      "values": [
+        {
+          "id": "disabled",
+          "cursor": "not-allowed"
+        },
+        {
+          "id": "cursor-normal",
+          "cursor": "not-allowed"
+        },
+        {
+          "id": "cursor-explicit",
+          "cursor": "not-allowed"
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "host-first",
+      "reason": "cursor",
+      "values": [
+        {
+          "id": "disabled",
+          "cursor": "not-allowed"
+        },
+        {
+          "id": "cursor-normal",
+          "cursor": "not-allowed"
+        },
+        {
+          "id": "cursor-explicit",
+          "cursor": "not-allowed"
+        }
+      ]
+    },
+    {
+      "reason": "intentional-override",
+      "framework": "plain",
+      "order": "host-first",
+      "phase": "noJSOverride",
+      "values": {
+        "bg": "oklch(0.55 0.2 260)",
+        "padding": "7px 10px",
+        "color": "oklch(0.994 0 89.876)",
+        "radius": "8px"
+      },
+      "expectedBg": "rgb(239, 68, 68)"
+    },
+    {
+      "reason": "intentional-override",
+      "framework": "plain",
+      "order": "host-first",
+      "phase": "overrideHover",
+      "values": {
+        "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+        "padding": "7px 10px",
+        "color": "oklch(0.994 0 89.876)",
+        "radius": "8px"
+      },
+      "expectedBg": "rgb(34, 197, 94)"
+    },
+    {
+      "reason": "intentional-override",
+      "framework": "plain",
+      "order": "host-late",
+      "phase": "overrideHover",
+      "values": {
+        "bg": "oklch(0.546 0.215 262.881 / 0.8)",
+        "padding": "32px",
+        "color": "rgb(255, 255, 255)",
+        "radius": "0px"
+      },
+      "expectedBg": "rgb(34, 197, 94)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-first",
+      "reason": "cursor",
+      "values": [
+        {
+          "id": "disabled",
+          "cursor": "not-allowed"
+        },
+        {
+          "id": "cursor-normal",
+          "cursor": "not-allowed"
+        },
+        {
+          "id": "cursor-explicit",
+          "cursor": "not-allowed"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-first",
+      "reason": "cursor",
+      "values": [
+        {
+          "id": "disabled",
+          "cursor": "not-allowed"
+        },
+        {
+          "id": "cursor-normal",
+          "cursor": "not-allowed"
+        },
+        {
+          "id": "cursor-explicit",
+          "cursor": "not-allowed"
+        }
+      ]
+    },
+    {
+      "reason": "intentional-override",
+      "framework": "tailwind3",
+      "order": "host-first",
+      "phase": "noJSOverride",
+      "values": {
+        "bg": "oklch(0.55 0.2 260)",
+        "padding": "7px 10px",
+        "color": "oklch(0.994 0 89.876)",
+        "radius": "8px"
+      },
+      "expectedBg": "rgb(239, 68, 68)"
+    }
+  ]
+}

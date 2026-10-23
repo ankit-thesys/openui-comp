@@ -1,0 +1,170 @@
+plain host-first baseline completed
+plain host-first runtime completed
+plain host-late baseline completed
+plain host-late runtime completed
+tailwind3 host-first baseline completed
+tailwind3 host-first runtime completed
+tailwind3 host-late baseline completed
+tailwind3 host-late runtime completed
+tailwind4 host-first baseline completed
+tailwind4 host-first runtime completed
+tailwind4 host-late baseline completed
+tailwind4 host-late runtime completed
+{
+  "runs": 12,
+  "failures": 260,
+  "firstFailures": [
+    {
+      "framework": "plain",
+      "order": "host-first",
+      "reason": "cursor",
+      "values": [
+        {
+          "id": "disabled",
+          "cursor": "not-allowed"
+        },
+        {
+          "id": "cursor-normal",
+          "cursor": "pointer"
+        },
+        {
+          "id": "cursor-explicit",
+          "cursor": "wait"
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "host-first",
+      "reason": "cursor",
+      "values": [
+        {
+          "id": "disabled",
+          "cursor": "not-allowed"
+        },
+        {
+          "id": "cursor-normal",
+          "cursor": "pointer"
+        },
+        {
+          "id": "cursor-explicit",
+          "cursor": "wait"
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "host-late",
+      "reason": "cursor",
+      "values": [
+        {
+          "id": "disabled",
+          "cursor": "not-allowed"
+        },
+        {
+          "id": "cursor-normal",
+          "cursor": "pointer"
+        },
+        {
+          "id": "cursor-explicit",
+          "cursor": "wait"
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "host-late",
+      "reason": "cursor",
+      "values": [
+        {
+          "id": "disabled",
+          "cursor": "not-allowed"
+        },
+        {
+          "id": "cursor-normal",
+          "cursor": "pointer"
+        },
+        {
+          "id": "cursor-explicit",
+          "cursor": "wait"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-first",
+      "reason": "cursor",
+      "values": [
+        {
+          "id": "disabled",
+          "cursor": "default"
+        },
+        {
+          "id": "cursor-normal",
+          "cursor": "pointer"
+        },
+        {
+          "id": "cursor-explicit",
+          "cursor": "wait"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-first",
+      "reason": "cursor",
+      "values": [
+        {
+          "id": "disabled",
+          "cursor": "default"
+        },
+        {
+          "id": "cursor-normal",
+          "cursor": "pointer"
+        },
+        {
+          "id": "cursor-explicit",
+          "cursor": "wait"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-first",
+      "reason": "cursor",
+      "values": [
+        {
+          "id": "disabled",
+          "cursor": "default"
+        },
+        {
+          "id": "cursor-normal",
+          "cursor": "pointer"
+        },
+        {
+          "id": "cursor-explicit",
+          "cursor": "wait"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-first",
+      "reason": "cursor",
+      "values": [
+        {
+          "id": "disabled",
+          "cursor": "default"
+        },
+        {
+          "id": "cursor-normal",
+          "cursor": "pointer"
+        },
+        {
+          "id": "cursor-explicit",
+          "cursor": "wait"
+        }
+      ]
+    }
+  ]
+}

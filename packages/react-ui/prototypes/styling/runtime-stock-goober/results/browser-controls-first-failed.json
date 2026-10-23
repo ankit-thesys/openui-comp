@@ -1,0 +1,101 @@
+{
+  "catalog": [
+    {
+      "ssr": "integrated",
+      "errors": [],
+      "beforeJS": {
+        "padding": "7px 10px",
+        "color": "oklch(0.994 0 89.876)",
+        "background": "oklch(0.55 0.2 260)",
+        "height": "36px",
+        "cursor": "pointer",
+        "gooberTags": 1,
+        "cssBytes": 100525,
+        "gooberClass": [
+          "go4164233448"
+        ]
+      },
+      "afterHydration": {
+        "padding": "7px 10px",
+        "color": "oklch(0.994 0 89.876)",
+        "background": "oklch(0.55 0.2 260)",
+        "height": "36px",
+        "cursor": "pointer",
+        "gooberTags": 1,
+        "cssBytes": 100525,
+        "gooberClass": [
+          "go4164233448"
+        ]
+      }
+    },
+    {
+      "ssr": "none",
+      "errors": [],
+      "beforeJS": {
+        "padding": "1px 6px",
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(239, 239, 239)",
+        "height": "21px",
+        "cursor": "default",
+        "gooberTags": 0,
+        "cssBytes": 0,
+        "gooberClass": [
+          "go4164233448"
+        ]
+      },
+      "afterHydration": {
+        "padding": "7px 10px",
+        "color": "oklch(0.994 0 89.876)",
+        "background": "oklch(0.55 0.2 260)",
+        "height": "36px",
+        "cursor": "pointer",
+        "gooberTags": 1,
+        "cssBytes": 100526,
+        "gooberClass": [
+          "go4164233448"
+        ]
+      }
+    }
+  ],
+  "next": {
+    "http": {
+      "status": 500,
+      "gooberStyleTag": false,
+      "anyStyleTag": false,
+      "hasButtonHTML": false,
+      "hasLateHTML": false,
+      "chunks": [
+        {
+          "ms": 15.519582999999784,
+          "bytes": 755,
+          "hasButton": false,
+          "hasLateInput": false,
+          "hasStyleTag": false
+        },
+        {
+          "ms": 15.628166999999848,
+          "bytes": 3391,
+          "hasButton": false,
+          "hasLateInput": false,
+          "hasStyleTag": false
+        },
+        {
+          "ms": 162.09529199999997,
+          "bytes": 176,
+          "hasButton": false,
+          "hasLateInput": false,
+          "hasStyleTag": false
+        },
+        {
+          "ms": 162.47066700000005,
+          "bytes": 14,
+          "hasButton": false,
+          "hasLateInput": false,
+          "hasStyleTag": false
+        }
+      ]
+    }
+  },
+  "browser": "156.0.8078.47",
+  "fatal": "Error: page.evaluate: TypeError: Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'.\n    at eval (eval at evaluate (:370:30), <anonymous>:1:87)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+}

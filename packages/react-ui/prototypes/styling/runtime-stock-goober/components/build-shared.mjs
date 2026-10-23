@@ -1,0 +1,10 @@
+import {createRequire} from 'node:module';
+export const repo='/Users/ankitdas/thesys/openui-styling-prototype';
+export const previous=repo+'/packages/react-ui/prototypes/styling';
+export const probeRoot=new URL('.',import.meta.url).pathname.replace(/\/$/,'');
+export const ownershipSourceRoot=probeRoot+'/source/src';
+const require=createRequire(previous+'/package.json');
+export const build=require(previous+'/node_modules/esbuild').build;
+export const alias=Object.fromEntries(['react-lang','react-headless','lang-core','observability','devtools'].map(p=>['@openuidev/'+p,repo+'/packages/'+p+'/src/index.ts']));
+Object.assign(alias,{goober:probeRoot+'/../stock/package/dist/goober.modern.js',react:previous+'/node_modules/react','react-dom':previous+'/node_modules/react-dom'});
+export const buildOptions={bundle:true,minify:false,sourcemap:true,alias,nodePaths:[previous+'/real/node_modules',previous+'/node_modules'],define:{'process.env.NODE_ENV':'"production"'},jsx:'automatic',logLevel:'warning'};

@@ -1,0 +1,1 @@
+{"&/*r4*/":{"&:where(.openui-buttons)":{"display/*d0*/":"flex","width/*d1*/":"100%","gap/*d2*/":"var(--openui-space-m, 12px)","box-sizing/*d3*/":"border-box"}},"&/*r7*/":{"&:where(.openui-buttons-horizontal)":{"flex-direction/*d5*/":"row","flex-wrap/*d6*/":"wrap"}},"&/*r9*/":{"&:where(.openui-buttons-vertical)":{"flex-direction/*d8*/":"column"}}}

@@ -1,0 +1,13 @@
+{
+  "afterImportCSSBytes": 0,
+  "buttonCSSBytes": 7415,
+  "buttonHasChartCSS": false,
+  "buttonHasShellCSS": false,
+  "sameCSSAcross100Themes": true,
+  "html": "<button class=\"openui-button-base openui-button-base-primary openui-button-base-medium go4164233448\">Only Button</button>",
+  "gooberInputs": [
+    "../../../../private/tmp/openui-stock-goober/stock/package/dist/goober.modern.js"
+  ],
+  "hasPrivateVendor": false,
+  "stockDistSHA256": "3708e75d7cebc41beaab527374f9e0b21711437e6cf05cd3f7dff2c532086d43"
+}

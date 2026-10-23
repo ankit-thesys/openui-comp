@@ -1,0 +1,144 @@
+▲ [WARNING] The conditions "umd" and "types" here will never be used as they come after both "import" and "require" [package.json]
+
+    ../stock/package/package.json:40:6:
+      40 │       "umd": "./dist/goober.umd.js",
+         ╵       ~~~~~
+
+  The "import" condition comes earlier and will be used for all "import" statements:
+
+    ../stock/package/package.json:39:6:
+      39 │       "import": "./dist/goober.modern.js",
+         ╵       ~~~~~~~~
+
+  The "require" condition comes earlier and will be used for all "require" calls:
+
+    ../stock/package/package.json:38:6:
+      38 │       "require": "./dist/goober.cjs",
+         ╵       ~~~~~~~~~
+
+▲ [WARNING] The conditions "umd" and "types" here will never be used as they come after both "import" and "require" [package.json]
+
+    ../stock/package/package.json:47:6:
+      47 │       "umd": "./global/dist/goober-global.umd.js",
+         ╵       ~~~~~
+
+  The "import" condition comes earlier and will be used for all "import" statements:
+
+    ../stock/package/package.json:45:6:
+      45 │       "import": "./global/dist/goober-global.modern.js",
+         ╵       ~~~~~~~~
+
+  The "require" condition comes earlier and will be used for all "require" calls:
+
+    ../stock/package/package.json:46:6:
+      46 │       "require": "./global/dist/goober-global.cjs",
+         ╵       ~~~~~~~~~
+
+▲ [WARNING] The conditions "umd" and "types" here will never be used as they come after both "import" and "require" [package.json]
+
+    ../stock/package/package.json:53:6:
+      53 │       "umd": "./prefixer/dist/goober-autoprefixer.umd.js",
+         ╵       ~~~~~
+
+  The "import" condition comes earlier and will be used for all "import" statements:
+
+    ../stock/package/package.json:51:6:
+      51 │       "import": "./prefixer/dist/goober-autoprefixer.modern.js",
+         ╵       ~~~~~~~~
+
+  The "require" condition comes earlier and will be used for all "require" calls:
+
+    ../stock/package/package.json:52:6:
+      52 │       "require": "./prefixer/dist/goober-autoprefixer.cjs",
+         ╵       ~~~~~~~~~
+
+▲ [WARNING] The conditions "umd" and "types" here will never be used as they come after both "import" and "require" [package.json]
+
+    ../stock/package/package.json:59:6:
+      59 │       "umd": "./should-forward-prop/dist/goober-should-forward-pro...
+         ╵       ~~~~~
+
+  The "import" condition comes earlier and will be used for all "import" statements:
+
+    ../stock/package/package.json:57:6:
+      57 │       "import": "./should-forward-prop/dist/goober-should-forward-...
+         ╵       ~~~~~~~~
+
+  The "require" condition comes earlier and will be used for all "require" calls:
+
+    ../stock/package/package.json:58:6:
+      58 │       "require": "./should-forward-prop/dist/goober-should-forward...
+         ╵       ~~~~~~~~~
+
+▲ [WARNING] The conditions "umd" and "types" here will never be used as they come after both "import" and "require" [package.json]
+
+    ../stock/package/package.json:40:6:
+      40 │       "umd": "./dist/goober.umd.js",
+         ╵       ~~~~~
+
+  The "import" condition comes earlier and will be used for all "import" statements:
+
+    ../stock/package/package.json:39:6:
+      39 │       "import": "./dist/goober.modern.js",
+         ╵       ~~~~~~~~
+
+  The "require" condition comes earlier and will be used for all "require" calls:
+
+    ../stock/package/package.json:38:6:
+      38 │       "require": "./dist/goober.cjs",
+         ╵       ~~~~~~~~~
+
+▲ [WARNING] The conditions "umd" and "types" here will never be used as they come after both "import" and "require" [package.json]
+
+    ../stock/package/package.json:47:6:
+      47 │       "umd": "./global/dist/goober-global.umd.js",
+         ╵       ~~~~~
+
+  The "import" condition comes earlier and will be used for all "import" statements:
+
+    ../stock/package/package.json:45:6:
+      45 │       "import": "./global/dist/goober-global.modern.js",
+         ╵       ~~~~~~~~
+
+  The "require" condition comes earlier and will be used for all "require" calls:
+
+    ../stock/package/package.json:46:6:
+      46 │       "require": "./global/dist/goober-global.cjs",
+         ╵       ~~~~~~~~~
+
+▲ [WARNING] The conditions "umd" and "types" here will never be used as they come after both "import" and "require" [package.json]
+
+    ../stock/package/package.json:53:6:
+      53 │       "umd": "./prefixer/dist/goober-autoprefixer.umd.js",
+         ╵       ~~~~~
+
+  The "import" condition comes earlier and will be used for all "import" statements:
+
+    ../stock/package/package.json:51:6:
+      51 │       "import": "./prefixer/dist/goober-autoprefixer.modern.js",
+         ╵       ~~~~~~~~
+
+  The "require" condition comes earlier and will be used for all "require" calls:
+
+    ../stock/package/package.json:52:6:
+      52 │       "require": "./prefixer/dist/goober-autoprefixer.cjs",
+         ╵       ~~~~~~~~~
+
+▲ [WARNING] The conditions "umd" and "types" here will never be used as they come after both "import" and "require" [package.json]
+
+    ../stock/package/package.json:59:6:
+      59 │       "umd": "./should-forward-prop/dist/goober-should-forward-pro...
+         ╵       ~~~~~
+
+  The "import" condition comes earlier and will be used for all "import" statements:
+
+    ../stock/package/package.json:57:6:
+      57 │       "import": "./should-forward-prop/dist/goober-should-forward-...
+         ╵       ~~~~~~~~
+
+  The "require" condition comes earlier and will be used for all "require" calls:
+
+    ../stock/package/package.json:58:6:
+      58 │       "require": "./should-forward-prop/dist/goober-should-forward...
+         ╵       ~~~~~~~~~
+

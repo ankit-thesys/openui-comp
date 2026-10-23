@@ -1,0 +1,13 @@
+{
+  "name": "stock-goober-next-control",
+  "private": true,
+  "scripts": {
+    "build": "next build --webpack",
+    "start": "next start -p 4388"
+  },
+  "dependencies": {
+    "next": "16.4.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  }
+}

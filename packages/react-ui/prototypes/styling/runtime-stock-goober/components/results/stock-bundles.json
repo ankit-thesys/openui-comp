@@ -1,0 +1,64 @@
+[
+  {
+    "name": "button",
+    "bytes": 11386,
+    "gzip": 3214,
+    "inputs": [
+      {
+        "path": "../../../../private/tmp/openui-stock-goober/components/runtime/adapter.tsx",
+        "bytes": 510
+      },
+      {
+        "path": "../../../../private/tmp/openui-stock-goober/stock/package/dist/goober.modern.js",
+        "bytes": 1851
+      },
+      {
+        "path": "../../../../private/tmp/openui-stock-goober/components/runtime/descriptors/Button.json",
+        "bytes": 7831
+      },
+      {
+        "path": "../../../../private/tmp/openui-stock-goober/components/runtime/styles/Button.tsx",
+        "bytes": 20
+      },
+      {
+        "path": "../openui-styling-prototype/packages/react-ui/prototypes/styling/real/node_modules/clsx/dist/clsx.mjs",
+        "bytes": 366
+      },
+      {
+        "path": "../../../../private/tmp/openui-stock-goober/components/source/src/components/Button/Button.tsx",
+        "bytes": 787
+      }
+    ],
+    "hasChartCode": false,
+    "hasPrivateVendor": false,
+    "note": "Direct module import, not proposed public package barrel. React external; excludes separately shipped baseline CSS."
+  },
+  {
+    "name": "unused",
+    "bytes": 41,
+    "gzip": 61,
+    "inputs": [
+      {
+        "path": "<stdin>",
+        "bytes": 20
+      }
+    ],
+    "hasChartCode": false,
+    "hasPrivateVendor": false,
+    "note": "Direct module import, not proposed public package barrel. React external; excludes separately shipped baseline CSS."
+  },
+  {
+    "name": "stockUnused",
+    "bytes": 48,
+    "gzip": 68,
+    "inputs": [
+      {
+        "path": "<stdin>",
+        "bytes": 27
+      }
+    ],
+    "hasChartCode": false,
+    "hasPrivateVendor": false,
+    "note": "Direct module import, not proposed public package barrel. React external; excludes separately shipped baseline CSS."
+  }
+]

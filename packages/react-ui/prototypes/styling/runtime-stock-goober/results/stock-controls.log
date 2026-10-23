@@ -1,0 +1,81 @@
+{
+  "version": "2.1.19",
+  "integrity": "sha512-U7veizMqxyKlM58+Z5j2ngJBH/r9siDmxpvNxSw0PylF6WQvrASJEZrxh1hidRBJc2jqoBVSyOban5u8m+6Rxg==",
+  "checks": [
+    {
+      "name": "nested-not-selector",
+      "pass": false,
+      "className": "go3204244819",
+      "expected": ".go3204244819:not([data-disabled],[data-state=checked]):hover{color:blue;}",
+      "actual": ".go3204244819:not([data-disabled]:hover,[data-state=checked]):hover{color:blue;}"
+    },
+    {
+      "name": "flat-not-selector",
+      "pass": false,
+      "className": "go1880535477",
+      "expected": ".go1880535477:not([data-disabled],[data-state=checked]):hover{color:blue;}",
+      "actual": ".go1880535477:not([data-disabled],[data-state=checked]).go1880535477 :hover{color:blue;}"
+    },
+    {
+      "name": "ordinary-equivalent-selector",
+      "pass": false,
+      "className": "go4067904789",
+      "expected": ".go4067904789:not([data-disabled]):not([data-state=checked]):hover{color:blue;}",
+      "actual": ".go4067904789:not([data-disabled]):not([data-state=checked]).go4067904789 :hover{color:blue;}"
+    },
+    {
+      "name": "ordinary-hover-first-selector",
+      "pass": true,
+      "className": "go3423992933",
+      "expected": ".go3423992933:hover:not([data-disabled]):not([data-state=checked]){color:blue;}",
+      "actual": ".go3423992933:hover:not([data-disabled]):not([data-state=checked]){color:blue;}"
+    },
+    {
+      "name": "quoted-selector-comma",
+      "pass": false,
+      "className": "go961174331",
+      "expected": ".go961174331[data-label=\"a,b\"]{color:blue;}",
+      "actual": ".go961174331[data-label=\"a,.go961174331 b\"]{color:blue;}"
+    },
+    {
+      "name": "no-integration-server-output-has-styles",
+      "pass": false,
+      "html": "<button class=\"go1802954080\">SSR</button>"
+    },
+    {
+      "name": "documented-buffered-SSR-extraction",
+      "pass": true,
+      "html": "<button class=\"go1802954080\">SSR</button>",
+      "extracted": ".go1802954080{color:rgb(1, 2, 3);}"
+    },
+    {
+      "name": "stock-stream-delivers-style-tags-automatically",
+      "pass": false,
+      "shellCSS": ".go1226644932{color:rgb(11, 0, 0);}",
+      "lateCSS": ".go799311052{color:rgb(91, 0, 0);}",
+      "chunkCount": 2,
+      "htmlHasLateContent": true
+    },
+    {
+      "name": "shell-extraction-covers-late-style",
+      "pass": false,
+      "lateCSS": ".go799311052{color:rgb(91, 0, 0);}"
+    },
+    {
+      "name": "default-sheet-isolates-overlapping-SSR-requests",
+      "pass": false,
+      "aShell": ".go1226644932{color:rgb(11, 0, 0);}.go1144026484{color:rgb(0, 0, 11);}",
+      "bShell": "",
+      "aLate": ".go799311052{color:rgb(91, 0, 0);}",
+      "bLate": ".go1144108193{color:rgb(0, 0, 92);}",
+      "note": "Two concurrently rendering streams share module-default stylesheet. A extraction contains B shell CSS; B extraction is empty."
+    },
+    {
+      "name": "theme-variables-keep-generated-class-stable",
+      "pass": true,
+      "iterations": 1000,
+      "uniqueClasses": 1,
+      "note": "Ordinary inline CSS variables, no theme values in Goober rule keys."
+    }
+  ]
+}
