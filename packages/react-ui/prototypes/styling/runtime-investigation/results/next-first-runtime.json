@@ -1,0 +1,603 @@
+{
+  "generatedAt": "2026-10-23T15:22:47.605Z",
+  "status": "completed-with-failures",
+  "checks": {
+    "baseline-blue-SSR": true,
+    "baseline-red-SSR": true,
+    "runtime-blue-SSR": true,
+    "runtime-red-SSR": true,
+    "concurrentThemeIsolation": true,
+    "baseline-hydration": true,
+    "baseline-form": true,
+    "baseline-lateFirstReveal": true,
+    "baseline-hostGooberPreserved": true,
+    "baseline-themeChange": true,
+    "baseline-navigation": true,
+    "runtime-hydration": true,
+    "runtime-form": true,
+    "runtime-lateFirstReveal": true,
+    "runtime-hostGooberPreserved": true,
+    "runtime-themeChange": true,
+    "runtime-navigation": true,
+    "lateNewTableStyledAtFirstReveal": true,
+    "baseline-plain-override": true,
+    "baseline-tailwind3-override": true,
+    "baseline-tailwind4-override": false,
+    "runtime-plain-override": false,
+    "runtime-tailwind3-override": false,
+    "runtime-tailwind4-override": false,
+    "frameworkProbePresent": true,
+    "streamingTransport": true,
+    "runtimeNoBaselineStylesheet": true,
+    "noHydrationErrors": true
+  },
+  "cases": [
+    {
+      "kind": "noJS",
+      "arm": "baseline",
+      "theme": "blue",
+      "main": {
+        "background": "oklch(0.55 0.2 260)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "late": {
+        "background": "oklch(0.55 0.2 260)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "styleResources": 0
+    },
+    {
+      "kind": "noJS",
+      "arm": "baseline",
+      "theme": "red",
+      "main": {
+        "background": "oklch(0.55 0.2 25)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 25 / 1)"
+      },
+      "late": {
+        "background": "oklch(0.55 0.2 25)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 25 / 1)"
+      },
+      "styleResources": 0
+    },
+    {
+      "kind": "noJS",
+      "arm": "runtime",
+      "theme": "blue",
+      "main": {
+        "background": "oklch(0.55 0.2 260)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "late": {
+        "background": "oklch(0.55 0.2 260)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "styleResources": 2
+    },
+    {
+      "kind": "noJS",
+      "arm": "runtime",
+      "theme": "red",
+      "main": {
+        "background": "oklch(0.55 0.2 25)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 25 / 1)"
+      },
+      "late": {
+        "background": "oklch(0.55 0.2 25)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 25 / 1)"
+      },
+      "styleResources": 2
+    },
+    {
+      "kind": "hydration",
+      "arm": "baseline",
+      "before": {
+        "background": "oklch(0.55 0.2 260)",
+        "color": "oklch(0.994 0 89.876)",
+        "padding": "7px 10px",
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "lateObservations": [
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        },
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        },
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        },
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        },
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        },
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        }
+      ],
+      "newComponentFirstReveal": [
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        }
+      ],
+      "hostBefore": {
+        "background": "rgb(12, 130, 120)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "13px",
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "hostAfter": {
+        "background": "rgb(12, 130, 120)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "13px",
+        "token": "oklch(0.55 0.2 260 / 1)"
+      }
+    },
+    {
+      "kind": "hydration",
+      "arm": "runtime",
+      "before": {
+        "background": "oklch(0.55 0.2 260)",
+        "color": "oklch(0.994 0 89.876)",
+        "padding": "7px 10px",
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "lateObservations": [
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        },
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        },
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        },
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        },
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        }
+      ],
+      "newComponentFirstReveal": [
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        }
+      ],
+      "hostBefore": {
+        "background": "rgb(12, 130, 120)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "13px",
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "hostAfter": {
+        "background": "rgb(12, 130, 120)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "13px",
+        "token": "oklch(0.55 0.2 260 / 1)"
+      }
+    }
+  ],
+  "concurrent": [
+    {
+      "theme": "blue",
+      "observed": {
+        "background": "oklch(0.55 0.2 260)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "pass": true
+    },
+    {
+      "theme": "red",
+      "observed": {
+        "background": "oklch(0.55 0.2 25)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 25 / 1)"
+      },
+      "pass": true
+    },
+    {
+      "theme": "blue",
+      "observed": {
+        "background": "oklch(0.55 0.2 260)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "pass": true
+    },
+    {
+      "theme": "red",
+      "observed": {
+        "background": "oklch(0.55 0.2 25)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 25 / 1)"
+      },
+      "pass": true
+    },
+    {
+      "theme": "blue",
+      "observed": {
+        "background": "oklch(0.55 0.2 260)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "pass": true
+    },
+    {
+      "theme": "red",
+      "observed": {
+        "background": "oklch(0.55 0.2 25)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 25 / 1)"
+      },
+      "pass": true
+    },
+    {
+      "theme": "blue",
+      "observed": {
+        "background": "oklch(0.55 0.2 260)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "pass": true
+    },
+    {
+      "theme": "red",
+      "observed": {
+        "background": "oklch(0.55 0.2 25)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": "oklch(0.55 0.2 25 / 1)"
+      },
+      "pass": true
+    }
+  ],
+  "framework": [
+    {
+      "arm": "baseline",
+      "framework": "plain",
+      "main": {
+        "background": "rgb(239, 68, 68)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "32px",
+        "token": ""
+      },
+      "late": {
+        "background": "rgb(239, 68, 68)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "32px",
+        "token": ""
+      },
+      "pass": true
+    },
+    {
+      "arm": "baseline",
+      "framework": "tailwind3",
+      "main": {
+        "background": "rgb(239, 68, 68)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "32px",
+        "token": ""
+      },
+      "late": {
+        "background": "rgb(239, 68, 68)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "32px",
+        "token": ""
+      },
+      "pass": true
+    },
+    {
+      "arm": "baseline",
+      "framework": "tailwind4",
+      "main": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": ""
+      },
+      "late": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": ""
+      },
+      "pass": false
+    },
+    {
+      "arm": "runtime",
+      "framework": "plain",
+      "main": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": ""
+      },
+      "late": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": ""
+      },
+      "pass": false
+    },
+    {
+      "arm": "runtime",
+      "framework": "tailwind3",
+      "main": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": ""
+      },
+      "late": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": ""
+      },
+      "pass": false
+    },
+    {
+      "arm": "runtime",
+      "framework": "tailwind4",
+      "main": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": ""
+      },
+      "late": {
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "0px",
+        "token": ""
+      },
+      "pass": false
+    }
+  ],
+  "errors": [],
+  "stream": {
+    "chunks": 9,
+    "htmlStyleTags": 3
+  },
+  "browserRuntimeEngineIncluded": [
+    "../openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/goober/dist/goober.modern.js"
+  ],
+  "scope": "Actual production OpenUI components and parser through runtime Fixture in production Next. Runtime arm has no consumer CSS import/setup/registry/plugin or per-framework library configuration; host CSS resources are external framework inputs.",
+  "limitations": [
+    "Scoped prototype adapter changes stylesheet delivery; inspect foundation notes for declaration/selector translation",
+    "Chrome only; sampled styles and representative controls, not complete library migration",
+    "Host Goober deliberately uses its own sink; no shared default sink assumptions",
+    "No workaround applied after first compatibility observations"
+  ]
+}

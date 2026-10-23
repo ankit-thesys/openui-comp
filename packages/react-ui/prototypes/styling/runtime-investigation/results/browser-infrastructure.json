@@ -1,0 +1,13 @@
+{
+  "createdAt": "2026-10-23T15:27:50.596Z",
+  "scope": "Focused actual OpenUI Renderer/parser/headless SSE adapter replay, runtime descriptor adapter versus existing compiled styles. Five alternating measured pairs per workload; one warmup pair excluded. Not the complete chat shell or long soak.",
+  "runs": [],
+  "failures": [
+    {
+      "reason": "Error: Port4212 occupied"
+    }
+  ],
+  "comparisons": [],
+  "status": "failed",
+  "finishedAt": "2026-10-23T15:27:50.624Z"
+}

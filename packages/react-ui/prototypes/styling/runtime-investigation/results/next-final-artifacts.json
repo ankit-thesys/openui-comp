@@ -1,0 +1,15 @@
+{
+  "candidate": "scoped-extra-specificity",
+  "note": "Actual compiled artifacts and source hashes for synchronized final Next matrix/100-response SSR run; base styles pass, hover and host overrides fail.",
+  "hashes": {
+    "next/.next/server/app/page.js": "b05a9d3b11c43251b15a689d9c686146751c723cc8fd397561650f11e46a6b3c",
+    "next/.next/BUILD_ID": "ca37abfb0d33cf03134fb7b49231b0968b6ba48476fe805eac305c0c4f0d8a95",
+    "next/generated.jsx": "99b8173578a51303d428436fea07f771f3238a6f40c54d2365edf4bca22b8bec",
+    "runtime/adapter.tsx": "9d19b3be177f5e65d3eebe0c82e3c4281285d9ddc31ff0352961a6b842b9cfef",
+    "runtime/Fixture.tsx": "f144e949a5bf80f36408af41ccc1cbb87a1d863ee5290c28c43d776db548d898",
+    "runtime/descriptors.json": "a6b63f1eabd28bebe88ba9ab05c3b13fce7d53c4d46c4b3b30347bf526b46a27",
+    "runtime/descriptors/Button.json": "6535c346034e5b9ee0fbb1de8f87d402467d6aae241302d0d101cf0a8bc71e26",
+    "next/public/baseline.css": "982ff6f2a4d1666a560901621226f417cf6df853a950006cb26e33287b0c918f",
+    "next-check.mjs": "6a17497bbcc74ee79e869cccfd8084247bada11a50132e21c6cd04278e1acb43"
+  }
+}

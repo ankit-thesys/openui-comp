@@ -1,0 +1,11 @@
+{
+  "note": "Initial compiled Next artifacts before :where specificity correction. Later prepared source manifest was regenerated before this run; these compiled artifact hashes identify actual tested build.",
+  "hashes": {
+    "/private/tmp/openui-runtime-probe/next/.next/server/app/_global-error/page.js": "ae58fcf8aa87457fba871a7448ac9462ad2011b221986a1198fdec2ee6c75be4",
+    "/private/tmp/openui-runtime-probe/next/.next/server/app/_global-error/page_client-reference-manifest.js": "c3a45b1d5483eac45c8bfbf267a267826a42ca57658d9c53262df4bbd77becc1",
+    "/private/tmp/openui-runtime-probe/next/.next/server/app/_not-found/page.js": "3e42aba007cd6b3f4e404c5c52927f84cdbde6f70b21c31fde0007aaad9aa864",
+    "/private/tmp/openui-runtime-probe/next/.next/server/app/_not-found/page_client-reference-manifest.js": "2c976f434e7d1fd22ed7454fdf9261abd1de9d9d719dc661bc22085e4539ddf7",
+    "/private/tmp/openui-runtime-probe/next/.next/server/app/page.js": "381e05d3cbaff6313890d9378bf67e4eea2cc55b0227c82030bb9ffd9ba52d81",
+    "/private/tmp/openui-runtime-probe/next/.next/server/app/page_client-reference-manifest.js": "9f90ac91c58c107be2d667a53acd7271adcff7d63a21860f89a6f1a97e6fc9ce"
+  }
+}

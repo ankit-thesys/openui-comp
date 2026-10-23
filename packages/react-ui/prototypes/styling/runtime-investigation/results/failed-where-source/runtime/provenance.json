@@ -1,0 +1,76 @@
+{
+  "method": "One-time spike generation from selected production component Sass to per-component scoped Goober OBJECT descriptors. Runtime imports only objects; no Sass/compiler or aggregate stylesheet. Comments keep duplicate declarations and selectors in insertion order. Per-declaration var() fallback values come from actual defaultLightTheme, so standalone components respect inherited tokens and need no theme setup.",
+  "units": {
+    "Card": {
+      "sourceFiles": [
+        "Card/card.scss"
+      ],
+      "rawCssBytes": 762,
+      "rules": 27
+    },
+    "Button": {
+      "sourceFiles": [
+        "Button/button.scss"
+      ],
+      "rawCssBytes": 4563,
+      "rules": 109
+    },
+    "Input": {
+      "sourceFiles": [
+        "Input/input.scss"
+      ],
+      "rawCssBytes": 1633,
+      "rules": 40
+    },
+    "CardHeader": {
+      "sourceFiles": [
+        "CardHeader/cardHeader.scss"
+      ],
+      "rawCssBytes": 912,
+      "rules": 35
+    },
+    "Buttons": {
+      "sourceFiles": [
+        "Buttons/buttons.scss"
+      ],
+      "rawCssBytes": 196,
+      "rules": 10
+    },
+    "FormControl": {
+      "sourceFiles": [
+        "FormControl/formControl.scss",
+        "FormControl/Hint/hint.scss",
+        "Label/label.scss"
+      ],
+      "rawCssBytes": 1185,
+      "rules": 38
+    },
+    "TextContent": {
+      "sourceFiles": [
+        "TextContentWrapper/textContentWrapper.scss",
+        "MarkDownRenderer/markDownRenderer.scss"
+      ],
+      "rawCssBytes": 11010,
+      "rules": 281
+    },
+    "Table": {
+      "sourceFiles": [
+        "Table/table.scss"
+      ],
+      "rawCssBytes": 2555,
+      "rules": 87
+    },
+    "BarChart": {
+      "sourceFiles": [
+        "Charts/BarChart/barChart.scss",
+        "Charts/shared/core/DefaultLegend/defaultLegend.scss",
+        "Charts/shared/core/StackedLegend/stackedLegend.scss",
+        "Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.scss",
+        "Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.scss",
+        "Charts/shared/core/PortalTooltip/portalTooltip.scss"
+      ],
+      "rawCssBytes": 13884,
+      "rules": 459
+    }
+  }
+}

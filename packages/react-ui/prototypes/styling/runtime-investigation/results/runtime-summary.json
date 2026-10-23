@@ -1,0 +1,109 @@
+{
+  "createdAt": "2026-10-23T15:35:58.222Z",
+  "decision": "REOPENED: neither runtime nor static accepted. Current runtime adapter fails consumer overrides and hover behavior.",
+  "candidate": "scoped-extra-specificity",
+  "browserStatus": "passed",
+  "nextStatus": "completed-with-failures",
+  "failedNextChecks": [
+    "baseline-blue-SSR",
+    "baseline-red-SSR",
+    "runtime-hoverMatchesTheme",
+    "baseline-tailwind4-override",
+    "runtime-plain-override",
+    "runtime-tailwind3-override",
+    "runtime-tailwind4-override"
+  ],
+  "performance": [
+    {
+      "scenario": "chat",
+      "baseline": {
+        "count": 5,
+        "totalMedian": 299.30000001192093,
+        "updateP95Median": 49.19999998807907,
+        "inputP95Median": 32.59999996423721,
+        "compileMedian": 0
+      },
+      "runtime": {
+        "count": 5,
+        "totalMedian": 331.80000001192093,
+        "updateP95Median": 34.19999998807907,
+        "inputP95Median": 32.10000002384186,
+        "compileMedian": 2.400000035762787
+      },
+      "pairedMedianPercent": 0.2114164868706414,
+      "pairedRange": [
+        -4.477113276053812,
+        11.293565678297647
+      ]
+    },
+    {
+      "scenario": "dashboard",
+      "baseline": {
+        "count": 5,
+        "totalMedian": 498.89999997615814,
+        "updateP95Median": 37.69999998807907,
+        "inputP95Median": 32.30000001192093,
+        "compileMedian": 0
+      },
+      "runtime": {
+        "count": 5,
+        "totalMedian": 500,
+        "updateP95Median": 35.90000003576279,
+        "inputP95Median": 30.100000023841858,
+        "compileMedian": 5.400000095367432
+      },
+      "pairedMedianPercent": 1.194090260245595,
+      "pairedRange": [
+        -5.6781739336895125,
+        7.771915586646605
+      ]
+    }
+  ],
+  "bundle": [
+    {
+      "arm": "baseline",
+      "raw": 10588,
+      "gzip": 3968,
+      "goober": false,
+      "chart": false,
+      "wholeLibrary": false
+    },
+    {
+      "arm": "runtime",
+      "raw": 20675,
+      "gzip": 6728,
+      "goober": true,
+      "chart": false,
+      "wholeLibrary": false
+    },
+    {
+      "arm": "unused",
+      "raw": 51,
+      "gzip": 68,
+      "goober": false,
+      "chart": false,
+      "wholeLibrary": false
+    }
+  ],
+  "sourceHashes": {
+    "build-shared.mjs": "276b5ffdb9670d5b9d3374a609d13546a8c546c20fd2a0fba26e39ebd1e96c18",
+    "browser-client.tsx": "845a462d9b648f8a5f57f8d6b80adbe6acf7696fedb0b48969e7952b39b25fd3",
+    "browser-server.mjs": "06bbe030699e7af8ccc2ecdbeb84e84526bd941a67f012dc114ef463f3024e17",
+    "browser-check.mjs": "dcfb58c7e9501456568d1062bd1311ffeaae4693fba17d5aa5a0e97ca80de83a",
+    "browser-build.mjs": "2e7db390de4574c7742a521d9382ca21a643798880885c37d693db28701cae43",
+    "bundle-check.mjs": "e49fc49af07a73ac8a8dfe2dca7e3804bcb837a5493a7d6e48b6de404673179d",
+    "standalone-client.tsx": "68d51788edb4e387f45bd97ad0f2d68afd9334084e9dafcda34eef579d456857",
+    "standalone-server.tsx": "07c330e4d391ee0315ad4dd759adb8e243be1b40ee1680fe9588ced72ef333c7",
+    "next-build.mjs": "9878148ecef9635a3e262bbe2b51707d69546e27bb60405a7506879e73b54e76",
+    "next-check.mjs": "6a17497bbcc74ee79e869cccfd8084247bada11a50132e21c6cd04278e1acb43",
+    "runtime/Button.tsx": "d77788fbf2f7b896b3f007434c52b88f59351c966f14c2eca9346faa9cca6c8a",
+    "runtime/Fixture.tsx": "f144e949a5bf80f36408af41ccc1cbb87a1d863ee5290c28c43d776db548d898",
+    "runtime/adapter.tsx": "9d19b3be177f5e65d3eebe0c82e3c4281285d9ddc31ff0352961a6b842b9cfef",
+    "runtime/descriptors.json": "a6b63f1eabd28bebe88ba9ab05c3b13fce7d53c4d46c4b3b30347bf526b46a27",
+    "runtime/provenance.json": "619fa0af8584c9f74060cf09eea02444a23cf6c6a45abfde674182106e31ed0e",
+    "runtime/unused.ts": "ba886eab554a53adcf54bf7057239bc24f916d676547d550257d3dc91e785230",
+    "browser.js": "c2f9dbb70140083423a1d3c4567cd832e04584083ab56668dd3a5b9d4103a378",
+    "standalone.js": "1357ab55ef73186fc4a370659dd2085522043f6f63fbf81df564aedbabd7daea",
+    "standalone-server.cjs": "b7267dca73314a6b0bd234855506b65035d57a78ccaa127e8e5bc2f73a923ab1"
+  }
+}

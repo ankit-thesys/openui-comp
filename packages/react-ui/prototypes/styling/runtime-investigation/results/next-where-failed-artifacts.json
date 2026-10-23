@@ -1,0 +1,14 @@
+{
+  "note": "Compiled artifacts and source hashes for synchronized Next matrix/100-response SSR run; result has meaningful styling failures.",
+  "hashes": {
+    "next/.next/server/app/page.js": "e28b421ff3533ba69aa13aa82d39b0957ca64160468195a32e2771e0e92257f7",
+    "next/.next/BUILD_ID": "44ad87a79c9bdbf8a465823fbf462efe232ed5ebcc42554c13070d6e079c3c2f",
+    "next/generated.jsx": "76fa56e720c21c0f91aff1bfc33ca3b1b1f7568144d0e727895256f1c820916c",
+    "runtime/adapter.tsx": "9d19b3be177f5e65d3eebe0c82e3c4281285d9ddc31ff0352961a6b842b9cfef",
+    "runtime/Fixture.tsx": "f144e949a5bf80f36408af41ccc1cbb87a1d863ee5290c28c43d776db548d898",
+    "runtime/descriptors.json": "9c1626d0230215d3e98ab9ef62e38fc1ec2d85f2f5952d3f7ee792857ed42f1a",
+    "runtime/descriptors/Button.json": "bc9718219c985d5690d0b356a2fb30c585c146c706ab368f0091b891e85e1b06",
+    "next/public/baseline.css": "982ff6f2a4d1666a560901621226f417cf6df853a950006cb26e33287b0c918f",
+    "next-check.mjs": "eedc7b25d461f0a386b21f34a3e21a8eef0ebacfcb112094240bda6373f3fd06"
+  }
+}

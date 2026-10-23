@@ -1,0 +1,1892 @@
+{
+  "generatedAt": "2026-10-23T15:27:05.565Z",
+  "status": "completed-with-failures",
+  "checks": {
+    "baseline-blue-SSR": false,
+    "baseline-red-SSR": false,
+    "standaloneRuntimeButtonNoProvider": false,
+    "runtime-blue-SSR": false,
+    "runtime-red-SSR": false,
+    "baseline-blue-SSRCompleteButtonStyles": true,
+    "baseline-red-SSRCompleteButtonStyles": true,
+    "runtime-blue-SSRCompleteButtonStyles": false,
+    "runtime-red-SSRCompleteButtonStyles": false,
+    "concurrentThemeIsolation": false,
+    "baseline-hydration": true,
+    "baseline-form": true,
+    "baseline-lateFirstReveal": true,
+    "baseline-hostGooberPreserved": true,
+    "baseline-themeChange": true,
+    "baseline-navigation": true,
+    "runtime-hydration": false,
+    "runtime-form": true,
+    "runtime-lateFirstReveal": false,
+    "runtime-hostGooberPreserved": true,
+    "runtime-themeChange": false,
+    "runtime-navigation": true,
+    "lateNewTableStyledAtFirstReveal": true,
+    "baseline-plain-override": true,
+    "baseline-tailwind3-override": true,
+    "baseline-tailwind4-override": false,
+    "runtime-plain-override": true,
+    "runtime-tailwind3-override": true,
+    "runtime-tailwind4-override": true,
+    "frameworkProbePresent": true,
+    "boundedSSR100AtConcurrency10": true,
+    "serverHealthyAfter6Aborts": true,
+    "streamingTransport": true,
+    "runtimeNoBaselineStylesheet": true,
+    "noHydrationErrors": true
+  },
+  "cases": [
+    {
+      "kind": "noJS",
+      "arm": "baseline",
+      "theme": "blue",
+      "main": {
+        "background": "oklch(0.546 0.215 262.881)",
+        "color": "oklch(0.994 0 89.876)",
+        "padding": "7px 10px",
+        "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+        "borderRadius": "8px",
+        "font": "",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "late": {
+        "background": "oklch(0.546 0.215 262.881)",
+        "color": "oklch(0.994 0 89.876)",
+        "padding": "7px 10px",
+        "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+        "borderRadius": "8px",
+        "font": "",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "styleResources": 0
+    },
+    {
+      "kind": "noJS",
+      "arm": "baseline",
+      "theme": "red",
+      "main": {
+        "background": "oklch(0.546 0.215 262.881)",
+        "color": "oklch(0.994 0 89.876)",
+        "padding": "7px 10px",
+        "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+        "borderRadius": "8px",
+        "font": "",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "late": {
+        "background": "oklch(0.546 0.215 262.881)",
+        "color": "oklch(0.994 0 89.876)",
+        "padding": "7px 10px",
+        "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+        "borderRadius": "8px",
+        "font": "",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "styleResources": 0
+    },
+    {
+      "kind": "standalone-runtime-button-no-provider",
+      "standalone": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "",
+          "",
+          ""
+        ],
+        "token": ""
+      }
+    },
+    {
+      "kind": "noJS",
+      "arm": "runtime",
+      "theme": "blue",
+      "main": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "late": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "styleResources": 2
+    },
+    {
+      "kind": "noJS",
+      "arm": "runtime",
+      "theme": "red",
+      "main": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 25 / 1)"
+      },
+      "late": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 25 / 1)"
+      },
+      "styleResources": 2
+    },
+    {
+      "kind": "hydration",
+      "arm": "baseline",
+      "before": {
+        "background": "oklch(0.55 0.2 260)",
+        "color": "oklch(0.994 0 89.876)",
+        "padding": "7px 10px",
+        "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+        "borderRadius": "8px",
+        "font": "",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "lateObservations": [
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        },
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        },
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        },
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        },
+        {
+          "background": "oklch(0.55 0.2 260)",
+          "table": true
+        }
+      ],
+      "newComponentFirstReveal": [
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        }
+      ],
+      "hostBefore": {
+        "background": "rgb(12, 130, 120)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "13px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "hostAfter": {
+        "background": "rgb(12, 130, 120)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "13px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 260 / 1)"
+      }
+    },
+    {
+      "kind": "hydration",
+      "arm": "runtime",
+      "before": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "lateObservations": [
+        {
+          "background": "rgb(239, 239, 239)",
+          "table": true
+        },
+        {
+          "background": "rgb(239, 239, 239)",
+          "table": true
+        },
+        {
+          "background": "rgb(239, 239, 239)",
+          "table": true
+        },
+        {
+          "background": "rgb(239, 239, 239)",
+          "table": true
+        },
+        {
+          "background": "rgb(239, 239, 239)",
+          "table": true
+        }
+      ],
+      "newComponentFirstReveal": [
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        },
+        {
+          "padding": "12px",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "oklch(0.097 0 0)",
+          "font": ""
+        }
+      ],
+      "hostBefore": {
+        "background": "rgb(12, 130, 120)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "13px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "hostAfter": {
+        "background": "rgb(12, 130, 120)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "13px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 260 / 1)"
+      }
+    }
+  ],
+  "concurrent": [
+    {
+      "theme": "blue",
+      "marker": "blue",
+      "observed": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "pass": false
+    },
+    {
+      "theme": "red",
+      "marker": "red",
+      "observed": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 25 / 1)"
+      },
+      "pass": false
+    },
+    {
+      "theme": "blue",
+      "marker": "blue",
+      "observed": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "pass": false
+    },
+    {
+      "theme": "red",
+      "marker": "red",
+      "observed": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 25 / 1)"
+      },
+      "pass": false
+    },
+    {
+      "theme": "blue",
+      "marker": "blue",
+      "observed": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "pass": false
+    },
+    {
+      "theme": "red",
+      "marker": "red",
+      "observed": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 25 / 1)"
+      },
+      "pass": false
+    },
+    {
+      "theme": "blue",
+      "marker": "blue",
+      "observed": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 260 / 1)"
+      },
+      "pass": false
+    },
+    {
+      "theme": "red",
+      "marker": "red",
+      "observed": {
+        "background": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)",
+        "padding": "1px 6px",
+        "border": "2px outset rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.55 0.2 25 / 1)"
+      },
+      "pass": false
+    }
+  ],
+  "framework": [
+    {
+      "arm": "baseline",
+      "framework": "plain",
+      "main": {
+        "background": "rgb(239, 68, 68)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "32px",
+        "border": "0px none rgb(255, 255, 255)",
+        "borderRadius": "0px",
+        "font": "",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "late": {
+        "background": "rgb(239, 68, 68)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "32px",
+        "border": "0px none rgb(255, 255, 255)",
+        "borderRadius": "0px",
+        "font": "",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "pass": true
+    },
+    {
+      "arm": "baseline",
+      "framework": "tailwind3",
+      "main": {
+        "background": "rgb(239, 68, 68)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "32px",
+        "border": "0px solid oklch(0.546 0.215 262.881 / 0.08)",
+        "borderRadius": "0px",
+        "font": "",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "late": {
+        "background": "rgb(239, 68, 68)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "32px",
+        "border": "0px solid oklch(0.546 0.215 262.881 / 0.08)",
+        "borderRadius": "0px",
+        "font": "",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "pass": true
+    },
+    {
+      "arm": "baseline",
+      "framework": "tailwind4",
+      "main": {
+        "background": "oklch(0.546 0.215 262.881)",
+        "color": "oklch(0.994 0 89.876)",
+        "padding": "7px 10px",
+        "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+        "borderRadius": "8px",
+        "font": "",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "late": {
+        "background": "oklch(0.546 0.215 262.881)",
+        "color": "oklch(0.994 0 89.876)",
+        "padding": "7px 10px",
+        "border": "1px solid oklch(0.546 0.215 262.881 / 0.08)",
+        "borderRadius": "8px",
+        "font": "",
+        "defaultTokens": [
+          "12px",
+          "oklch(0.994 0 89.876 / 1)",
+          "10px"
+        ],
+        "token": "oklch(0.546 0.215 262.881 / 1)"
+      },
+      "pass": false
+    },
+    {
+      "arm": "runtime",
+      "framework": "plain",
+      "main": {
+        "background": "rgb(239, 68, 68)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "32px",
+        "border": "0px none rgb(255, 255, 255)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "",
+          "",
+          ""
+        ],
+        "token": ""
+      },
+      "late": {
+        "background": "rgb(239, 68, 68)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "32px",
+        "border": "0px none rgb(255, 255, 255)",
+        "borderRadius": "0px",
+        "font": "13.3333px Arial",
+        "defaultTokens": [
+          "",
+          "",
+          ""
+        ],
+        "token": ""
+      },
+      "pass": true
+    },
+    {
+      "arm": "runtime",
+      "framework": "tailwind3",
+      "main": {
+        "background": "rgb(239, 68, 68)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "32px",
+        "border": "0px solid rgb(229, 231, 235)",
+        "borderRadius": "0px",
+        "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "defaultTokens": [
+          "",
+          "",
+          ""
+        ],
+        "token": ""
+      },
+      "late": {
+        "background": "rgb(239, 68, 68)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "32px",
+        "border": "0px solid rgb(229, 231, 235)",
+        "borderRadius": "0px",
+        "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "defaultTokens": [
+          "",
+          "",
+          ""
+        ],
+        "token": ""
+      },
+      "pass": true
+    },
+    {
+      "arm": "runtime",
+      "framework": "tailwind4",
+      "main": {
+        "background": "oklch(0.637 0.237 25.331)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "32px",
+        "border": "0px solid rgb(255, 255, 255)",
+        "borderRadius": "0px",
+        "font": "16px / 24px -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "defaultTokens": [
+          "",
+          "",
+          ""
+        ],
+        "token": ""
+      },
+      "late": {
+        "background": "oklch(0.637 0.237 25.331)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "32px",
+        "border": "0px solid rgb(255, 255, 255)",
+        "borderRadius": "0px",
+        "font": "16px / 24px -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "defaultTokens": [
+          "",
+          "",
+          ""
+        ],
+        "token": ""
+      },
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "pressure": {
+    "protocol": "100 responses, concurrency10 closed-loop,50/arm, alternating themes/scenarios; source markers and runtime token rule checked; not capacity evidence",
+    "responses": [
+      {
+        "i": 0,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 1,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 2,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 3,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 4,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 7,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 5,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 6,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 8,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 9,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 11,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 10,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 12,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 13,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 17,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 19,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 15,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 18,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 14,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 16,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 21,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 23,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 20,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 22,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 25,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 24,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 29,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 27,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 26,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 28,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 30,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 31,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 32,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 33,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 35,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 37,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 39,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 36,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 34,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 38,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 40,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 45,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 41,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 43,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 47,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 42,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 49,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 48,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 44,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 46,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 50,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 57,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 59,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 51,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 53,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 55,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 54,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 52,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 58,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 56,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 60,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 61,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 63,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 67,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 66,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 65,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 69,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 64,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 62,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 68,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 71,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 73,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 75,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 77,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 79,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 72,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 78,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 74,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 70,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 76,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 80,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 89,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 81,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 83,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 87,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 85,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 84,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 82,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 86,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 88,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 90,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 91,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 95,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 93,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 96,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 97,
+        "arm": "baseline",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 99,
+        "arm": "baseline",
+        "theme": "blue",
+        "scenario": "dashboard",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 94,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 92,
+        "arm": "runtime",
+        "theme": "red",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      },
+      {
+        "i": 98,
+        "arm": "runtime",
+        "theme": "blue",
+        "scenario": "chat",
+        "status": 200,
+        "markers": true,
+        "themeRule": true,
+        "pass": true
+      }
+    ],
+    "abortedCanaries": 6
+  },
+  "stream": {
+    "chunks": 11,
+    "htmlStyleTags": 3
+  },
+  "browserRuntimeEngineIncluded": [
+    "../openui-styling-prototype/packages/react-ui/prototypes/styling/node_modules/goober/dist/goober.modern.js"
+  ],
+  "scope": "Actual production OpenUI components and parser through runtime Fixture in production Next. Runtime arm has no consumer CSS import/setup/registry/plugin or per-framework library configuration; host CSS resources are external framework inputs.",
+  "limitations": [
+    "Scoped prototype adapter changes stylesheet delivery; inspect foundation notes for declaration/selector translation",
+    "Chrome only; sampled styles and representative controls, not complete library migration",
+    "Host Goober deliberately uses its own sink; no shared default sink assumptions",
+    "Initial failures retained separately in next-first-runtime.json; final foundation specificity and full SSR theme helpers are documented prototype fixes",
+    "Scoped chart tooltip styles cannot reach portals outside component root; portal path unsupported"
+  ]
+}

@@ -1,0 +1,13 @@
+node_modules/
+browser.js
+browser.js.map
+standalone.js
+standalone.js.map
+standalone-server.cjs
+standalone-server.cjs.map
+bundle/*.js
+next/.next/
+next/node_modules
+next/generated.jsx
+next/public/
+results/*.log
