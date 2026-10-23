@@ -84,4 +84,17 @@ Representative Button and SVG chart fixtures do not certify actual OpenUI appear
 
 ## Interactive performance lab
 
-Open [the local performance lab](http://127.0.0.1:4177/performance.html) after `npm run demo`. Chat and dashboard have equal priority. Run matched synthetic controls, type/scroll during replay, stop, and export JSON. See [the hands-on guide](PERFORMANCE-LAB.md) and [the full prototype test plan](PERFORMANCE-PLAN.md). The first lab isolates styling overhead; real OpenUI replay, SSR pressure, and statistical performance approval remain pending. `npm run check:performance` verifies the lab with the demo running.
+Open [the local performance lab](http://127.0.0.1:4177/performance.html) after `npm run demo`. Chat and dashboard have equal priority. Run matched synthetic controls, type/scroll during replay, stop, and export JSON. See [the hands-on guide](PERFORMANCE-LAB.md) and [the full prototype test plan](PERFORMANCE-PLAN.md). The first lab isolates styling overhead. The real-component lab below adds production parser/renderer replay and standalone SSR pressure; full adoption approval remains pending. `npm run check:performance` verifies the lab with the demo running.
+
+
+## Real OpenUI performance lab
+
+See [the real-component guide](REAL-PERFORMANCE.md) and [measured results](results/REAL-PERFORMANCE.md). This uses actual production Markdown, forms, tables and D3 charts through `openuiChatLibrary`, the headless stream adapter, incremental parser and Renderer. Both arms share the same client bundle; the candidate generates equivalent static CSS through Goober during the build.
+
+```sh
+npm ci
+npm ci --prefix real
+npm run demo:real
+```
+
+Open [the real OpenUI lab](http://127.0.0.1:4180). Choose Both to exercise chat and dashboard equally. Exported JSON is separate from the earlier synthetic lab. With that server running, run `npm run check:real:browser`; afterward run `npm run check:real:ssr` (owns a fresh server on 4181), then `npm run report:real`. Do not run browser timing and SSR saturation concurrently.

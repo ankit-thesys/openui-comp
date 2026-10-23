@@ -1,0 +1,239 @@
+{
+  "source": {
+    "filename": "openui-performance-1792757408577.json",
+    "sha256": "0006265ec4b79ddadd3c8fe8216d601e7cf54f3526df8394e481e8c577047795",
+    "exportedAt": "2026-10-23T12:10:08.573Z",
+    "browserEngine": "Chromium"
+  },
+  "scope": "Synthetic UI-only styling comparison; real OpenUI and SSR pressure remain pending",
+  "counts": {
+    "total": 4,
+    "complete": 4,
+    "stopped": 0,
+    "otherInvalidOrAborted": 0,
+    "matchedScenarioConfigPairs": 2
+  },
+  "pairs": [
+    {
+      "scenario": "chat",
+      "config": {
+        "scenario": "chat",
+        "framework": "none",
+        "count": 500,
+        "rate": 120,
+        "seconds": 10
+      },
+      "completeRunsPerArm": 1,
+      "metrics": {
+        "updateOpportunity": {
+          "baseline": {
+            "samples": 1143,
+            "medianMs": 23.600000023841858,
+            "p95Ms": 30.30000001192093
+          },
+          "generated": {
+            "samples": 1133,
+            "medianMs": 22.799999952316284,
+            "p95Ms": 30.399999976158142
+          },
+          "generatedMinusBaselineMs": {
+            "medianMs": -0.8000000715255737,
+            "p95Ms": 0.09999996423721313
+          }
+        },
+        "deliveryLag": {
+          "baseline": {
+            "samples": 1200,
+            "medianMs": 71.71666664878512,
+            "p95Ms": 498.89999997615814
+          },
+          "generated": {
+            "samples": 1200,
+            "medianMs": 106.80000004172325,
+            "p95Ms": 558.3333333333339
+          },
+          "generatedMinusBaselineMs": {
+            "medianMs": 35.08333339293813,
+            "p95Ms": 59.4333333571758
+          }
+        },
+        "frameGaps": {
+          "baseline": {
+            "samples": 1246,
+            "medianMs": 8.300000000000182,
+            "p95Ms": 9.300000000000182
+          },
+          "generated": {
+            "samples": 1260,
+            "medianMs": 8.300000000000182,
+            "p95Ms": 9.300000000000182
+          },
+          "generatedMinusBaselineMs": {
+            "medianMs": 0.0,
+            "p95Ms": 0.0
+          }
+        },
+        "inputOpportunity": {
+          "baseline": {
+            "samples": 4,
+            "medianMs": 22.400000035762787,
+            "p95Ms": 24.900000035762787
+          },
+          "generated": {
+            "samples": 19,
+            "medianMs": 13.199999988079071,
+            "p95Ms": 19.399999976158142
+          },
+          "generatedMinusBaselineMs": {
+            "medianMs": -9.200000047683716,
+            "p95Ms": -5.500000059604645
+          }
+        }
+      },
+      "runMetrics": {
+        "durationMs": {
+          "baseline": 10660.399999976158,
+          "generated": 10720.700000047684,
+          "generatedMinusBaseline": 60.300000071525574
+        },
+        "commits": {
+          "baseline": 1143,
+          "generated": 1133,
+          "generatedMinusBaseline": -10
+        },
+        "longTaskCount": {
+          "baseline": 0,
+          "generated": 0,
+          "generatedMinusBaseline": 0
+        },
+        "longTaskMs": {
+          "baseline": 0,
+          "generated": 0,
+          "generatedMinusBaseline": 0
+        }
+      }
+    },
+    {
+      "scenario": "dashboard",
+      "config": {
+        "scenario": "dashboard",
+        "framework": "none",
+        "count": 500,
+        "rate": 120,
+        "seconds": 10
+      },
+      "completeRunsPerArm": 1,
+      "metrics": {
+        "updateOpportunity": {
+          "baseline": {
+            "samples": 996,
+            "medianMs": 29.349999994039536,
+            "p95Ms": 90
+          },
+          "generated": {
+            "samples": 1017,
+            "medianMs": 27.5,
+            "p95Ms": 86.60000002384186
+          },
+          "generatedMinusBaselineMs": {
+            "medianMs": -1.8499999940395355,
+            "p95Ms": -3.399999976158142
+          }
+        },
+        "deliveryLag": {
+          "baseline": {
+            "samples": 1200,
+            "medianMs": 6360.533333321413,
+            "p95Ms": 13172.866666654745
+          },
+          "generated": {
+            "samples": 1200,
+            "medianMs": 6760.333333303532,
+            "p95Ms": 13594.466666618982
+          },
+          "generatedMinusBaselineMs": {
+            "medianMs": 399.7999999821186,
+            "p95Ms": 421.5999999642372
+          }
+        },
+        "frameGaps": {
+          "baseline": {
+            "samples": 1716,
+            "medianMs": 8.399999999999636,
+            "p95Ms": 33.30000000000018
+          },
+          "generated": {
+            "samples": 1817,
+            "medianMs": 8.399999999999636,
+            "p95Ms": 25.100000000000364
+          },
+          "generatedMinusBaselineMs": {
+            "medianMs": 0.0,
+            "p95Ms": -8.199999999999818
+          }
+        },
+        "inputOpportunity": {
+          "baseline": {
+            "samples": 0,
+            "medianMs": null,
+            "p95Ms": null
+          },
+          "generated": {
+            "samples": 0,
+            "medianMs": null,
+            "p95Ms": null
+          },
+          "generatedMinusBaselineMs": {
+            "medianMs": null,
+            "p95Ms": null
+          }
+        }
+      },
+      "runMetrics": {
+        "durationMs": {
+          "baseline": 24099,
+          "generated": 24562.399999976158,
+          "generatedMinusBaseline": 463.39999997615814
+        },
+        "commits": {
+          "baseline": 996,
+          "generated": 1017,
+          "generatedMinusBaseline": 21
+        },
+        "longTaskCount": {
+          "baseline": 82,
+          "generated": 84,
+          "generatedMinusBaseline": 2
+        },
+        "longTaskMs": {
+          "baseline": 5714,
+          "generated": 5870,
+          "generatedMinusBaseline": 156
+        }
+      }
+    }
+  ],
+  "validity": {
+    "allFinalContentMatches": true,
+    "allReceivedAndRenderedScheduledChunks": true,
+    "allVisible": true,
+    "cssRulesEachRun": [
+      47,
+      47
+    ],
+    "styleSheetsEachRun": [
+      3,
+      3
+    ]
+  },
+  "limitations": [
+    "Baseline is a static React button with equivalent CSS, not existing react-ui; no OpenUI parser or real OpenUI components were exercised.",
+    "One complete run per arm and scenario. Pairing is by scenario/framework/count/rate/seconds, not randomized repetitions. Within-run samples are correlated; no statistical significance or adoption claim is justified.",
+    "Manual activity is uncontrolled: chat input sample counts differ (4 baseline, 19 generated); dashboard has zero input samples. Scroll activity is not recorded by the input/click listener.",
+    "Input and update opportunity measure elapsed time to two requestAnimationFrame callbacks, not hardware input delay, INP, paint completion, or end-to-end streaming latency.",
+    "Dashboard delivery lag is timer backlog versus scheduled emission time. Both arms take about 24 seconds for a nominal 10-second workload; completion does not mean 120 chunks/second was sustained.",
+    "Framework none only; no framework integration comparison, server/SSR load, cold-start, repeated sessions, or real application data. No exported load configuration is present.",
+    "All four runs report visible, finalContentMatches true, 1200 received and rendered chunks; none are stopped or hidden-tab invalid. No per-event input labels/timestamps or activity schedule are exported.",
+    "All runs retain 47 CSS rules and 3 sheets. Heap samples exist but this short single-session export cannot establish memory leak behavior."
+  ]
+}

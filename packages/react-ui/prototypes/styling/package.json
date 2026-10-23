@@ -15,7 +15,12 @@
     "check:compat": "node scripts/check-compat.mjs",
     "check:csp": "node scripts/check-csp.mjs",
     "demo:compat": "node scripts/demo-compat.mjs",
-    "check:performance": "node scripts/check-performance.mjs"
+    "check:performance": "node scripts/check-performance.mjs",
+    "build:real": "node scripts/build-real.mjs",
+    "demo:real": "npm run build:real && node .real-dist/server.cjs",
+    "check:real:browser": "node scripts/check-real-browser.mjs",
+    "check:real:ssr": "REAL_SSR_INCLUDE_50=1 node scripts/check-real-ssr.mjs",
+    "report:real": "node scripts/report-real.mjs"
   },
   "dependencies": {
     "goober": "^2.1.16",

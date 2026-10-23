@@ -8,3 +8,6 @@ results/*.png
 package-prototype/auto-button.js
 package-prototype/generated-styles.js
 public/performance/
+
+.real-dist/
+real/node_modules/

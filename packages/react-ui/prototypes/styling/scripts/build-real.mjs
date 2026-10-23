@@ -1,0 +1,29 @@
+import fs from 'node:fs/promises';import path from 'node:path';import {createRequire} from 'node:module';import {createHash} from 'node:crypto';import {gzipSync,brotliCompressSync} from 'node:zlib';import {build} from 'esbuild';import postcss from 'postcss';import {css,extractCss} from 'goober';
+const root=process.cwd(),repo=path.resolve(root,'../../../..');const req=createRequire(path.join(root,'real/package.json'));const sass=req('sass');
+await fs.mkdir('.real-dist',{recursive:true});
+const baseline=sass.compile(path.join(repo,'packages/react-ui/src/components/index.scss'),{style:'compressed',silenceDeprecations:['legacy-js-api','import','global-builtin','color-functions','slash-div'],logger:{warn(){},debug(){}}}).css;
+// Adapt the stylesheet AST to ordered Goober objects. Separate duplicate
+// declarations instead of collapsing fallbacks, and preserve condition ancestry.
+const cssTree=postcss.parse(baseline), units=[];
+function emit(node,ancestors=[]){
+ if(node.type==='comment')return;
+ if(node.type==='atrule'&&['media','supports','layer','container','document'].includes(node.name)&&node.nodes){for(const child of node.nodes)emit(child,[...ancestors,'@'+node.name+' '+node.params]);return;}
+ function object(n){if(n.type==='decl')return n.value+(n.important?'!important':'');const key=n.type==='rule'?n.selector:'@'+n.name+(n.params?' '+n.params:'');const value={};for(const c of n.nodes||[])if(c.type==='decl')value[c.prop]=object(c);else if(c.type!=='comment')Object.assign(value,object(c));return {[key]:n.nodes?value:n.params};}
+ const groups=[];let group=[],seen=new Set();for(const child of node.nodes||[]){if(child.type==='decl'&&seen.has(child.prop)){groups.push(group);group=[];seen=new Set();}group.push(child);if(child.type==='decl')seen.add(child.prop);}if(group.length)groups.push(group);if(!groups.length)groups.push([]);
+ for(const nodes of groups){let value=object(node.clone({nodes:node.nodes?nodes:undefined}));for(const a of [...ancestors].reverse())value={[a]:value};units.push(value);}
+}
+for(const n of cssTree.nodes)emit(n);
+const target={data:''};const generated=units.map(value=>{css.call({g:1,target},value);return target.data;}).join('');
+// Declaration order, value, importance and full condition/selector ancestry must match.
+const signature=text=>{const rows=[];postcss.parse(text).walkDecls(n=>{const parents=[];for(let p=n.parent;p&&p.type!=='root';p=p.parent)parents.unshift(p.type==='rule'?['rule',p.selector]:['at',p.name,p.params]);rows.push([parents,n.prop,n.value,!!n.important]);});return rows;};
+const a=signature(baseline),b=signature(generated);let mismatch=a.findIndex((x,i)=>JSON.stringify(x)!==JSON.stringify(b[i]));const cssParity=mismatch===-1&&a.length===b.length;
+await fs.writeFile('.real-dist/baseline.css',baseline);await fs.writeFile('.real-dist/generated.css',generated);
+const alias=Object.fromEntries(['react-lang','react-headless','lang-core','observability','devtools'].map(p=>['@openuidev/'+p,path.join(repo,'packages',p,'src/index.ts')]));
+Object.assign(alias,{react:path.join(root,'node_modules/react'),'react-dom':path.join(root,'node_modules/react-dom')});
+const instrumentation={name:'parser-timing',setup(b){b.onLoad({filter:/useOpenUIState\.ts$/},async args=>{let source=await fs.readFile(args.path,'utf8');const needle='return sp.set(bundle.program, !isStreaming);';if(!source.includes(needle))throw Error('Parser timing point changed');source=source.replace(needle,`const __t=performance.now();try { return sp.set(bundle.program, !isStreaming); } finally { if(typeof window!=='undefined') window.__realMetrics?.parserMs.push(performance.now()-__t); }`);return {contents:source,loader:'ts'};});}};
+const options={bundle:true,minify:true,sourcemap:true,metafile:true,alias,nodePaths:[path.join(root,'real/node_modules'),path.join(root,'node_modules')],define:{'process.env.NODE_ENV':'"production"'},jsx:'automatic',logLevel:'warning'};
+const browser=await build({...options,entryPoints:['real/client.tsx'],outfile:'.real-dist/client.js',format:'esm',platform:'browser',plugins:[instrumentation]});
+await build({...options,entryPoints:['real/server.tsx'],outfile:'.real-dist/server.cjs',format:'cjs',platform:'node'});
+const js=await fs.readFile('.real-dist/client.js');const sizes=x=>({raw:Buffer.byteLength(x),gzip:gzipSync(x).length,brotli:brotliCompressSync(x).length});
+const result={generatedAt:new Date().toISOString(),method:'Real unmodified OpenUI source components and parser. Candidate Goober compiles ordered objects adapted from existing Sass-generated CSS, preserving duplicate declarations and condition ancestry at build time, preserving public selectors. This isolates static compiler/delivery, not a complete hand-rewritten CSS-in-JS component port.',css:{baseline:sizes(baseline),generated:sizes(generated),structuralParity:cssParity,baselineEntries:a.length,generatedEntries:b.length,firstMismatch:mismatch===-1?null:{index:mismatch,baseline:a[mismatch],generated:b[mismatch]},baselineHash:createHash('sha256').update(baseline).digest('hex'),generatedHash:createHash('sha256').update(generated).digest('hex')},js:sizes(js),sameClientBundleBothArms:true,gooberRuntimeBundled:Object.keys(browser.metafile.inputs).some(p=>p.includes('node_modules/goober/')),parserInstrumented:true,inputs:Object.keys(browser.metafile.inputs).filter(x=>x.includes('/packages/')||x.startsWith('../../')),versions:{react:JSON.parse(await fs.readFile('node_modules/react/package.json')).version,goober:JSON.parse(await fs.readFile('node_modules/goober/package.json')).version}};
+await fs.writeFile('results/real-build.json',JSON.stringify(result,null,2));console.log(JSON.stringify({...result,inputs:result.inputs.length},null,2));if(!cssParity)throw Error('CSS structural mismatch: inspect before claiming equivalent workload');

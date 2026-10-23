@@ -1,6 +1,6 @@
 # Goober / OpenUI streaming performance validation
 
-Status: staged prototype test plan, not performance approval. User confirmed chat and dashboard workloads have equal priority. The stylesheet-order compatibility fix is captured at prototype commit `09a336f3`. No pressure-test or full OpenUI performance result is available yet. React 19 is accepted; Goober/static-CSS adoption remains pending.
+Status: staged prototype test plan, not performance approval. User confirmed chat and dashboard workloads have equal priority. The stylesheet-order compatibility fix is captured at prototype commit `09a336f3`. A bounded real-component replay and standalone SSR pressure pass is now implemented; see [scope and reproduction](REAL-PERFORMANCE.md) and [results](results/REAL-PERFORMANCE.md). The complete matrix below remains the adoption-validation plan, not a checklist already completed. React 19 is accepted; Goober/static-CSS adoption remains pending.
 
 ## Decision to make
 
