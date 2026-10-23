@@ -1,0 +1,37 @@
+{
+  "generatedAt": "2026-10-23T11:31:43.367Z",
+  "results": [
+    {
+      "name": "Preserve directives, comments and all original layout source",
+      "pass": true
+    },
+    {
+      "name": "Preserve host stylesheet",
+      "pass": true
+    },
+    {
+      "name": "Repeat setup is idempotent",
+      "pass": true
+    },
+    {
+      "name": "Refuse customized CSS without changing any files",
+      "pass": true
+    },
+    {
+      "name": "Support src/app TypeScript layout",
+      "pass": true
+    },
+    {
+      "name": "Refuse ambiguous root layouts without changes",
+      "pass": true
+    },
+    {
+      "name": "Refuse reordered generated import without changes",
+      "pass": true
+    },
+    {
+      "name": "Validate complete write set before generating entry or editing layout",
+      "pass": true
+    }
+  ]
+}

@@ -17,7 +17,7 @@ try{
  await run(process.execPath,['scripts/pack-prototype.mjs']);
  await run(process.execPath,['scripts/prepare-compat.mjs']);
  const checks=[];
- for(const [script,env] of [['check.mjs',{PROTOTYPE_URL:'http://127.0.0.1:4187'}],['check-next.mjs',{NEXT_URL:'http://127.0.0.1:4189'}],['check-compat.mjs',{}],['check-csp.mjs',{}]]){
+ for(const [script,env] of [['check-setup.mjs',{}],['check.mjs',{PROTOTYPE_URL:'http://127.0.0.1:4187'}],['check-next.mjs',{NEXT_URL:'http://127.0.0.1:4189'}],['check-compat.mjs',{}],['check-csp.mjs',{}]]){
   try{await run(process.execPath,['scripts/'+script],env);checks.push({script,status:'passed'});}
   catch(e){checks.push({script,status:'failed-or-incomplete',error:e.message});}
  }

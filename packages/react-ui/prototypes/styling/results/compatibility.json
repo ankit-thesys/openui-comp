@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T11:13:48.301Z",
+  "generatedAt": "2026-10-23T11:32:31.729Z",
   "mode": "Installed npm tarball in five standalone production Next.js apps; host CSS imported in root layout; automatic setup from installed direct dependencies",
   "setup": [
     {
@@ -8,15 +8,22 @@
       "version": null,
       "mode": "unlayered",
       "react": "19.3.1",
+      "delivery": "external build stylesheet",
       "generated": [
-        "openui.generated.js"
+        "openui.generated.js",
+        "app/openui.generated.css"
       ],
-      "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+      "layout": "app/layout.js",
+      "layoutImportFirst": true,
+      "consumerAction": "Run configure once, then import generated components. The tool adds the CSS import before app imports; no manual stylesheet or provider setup.",
+      "tradeoff": "All installed prototype styles, including delayed variants, are included in the initial stylesheet. Dynamic runtime CSS is not supported by this path.",
       "idempotent": true,
+      "layoutIdempotent": true,
+      "cssIdempotent": true,
       "editsPreserved": true,
       "clientDirectivePreserved": true,
       "reactPeer": ">=19.0.0 <20",
-      "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+      "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.3"
     },
     {
       "fixture": "tailwind3",
@@ -24,15 +31,22 @@
       "version": "3.4.19",
       "mode": "unlayered",
       "react": "19.3.1",
+      "delivery": "external build stylesheet",
       "generated": [
-        "openui.generated.js"
+        "openui.generated.js",
+        "app/openui.generated.css"
       ],
-      "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+      "layout": "app/layout.js",
+      "layoutImportFirst": true,
+      "consumerAction": "Run configure once, then import generated components. The tool adds the CSS import before app imports; no manual stylesheet or provider setup.",
+      "tradeoff": "All installed prototype styles, including delayed variants, are included in the initial stylesheet. Dynamic runtime CSS is not supported by this path.",
       "idempotent": true,
+      "layoutIdempotent": true,
+      "cssIdempotent": true,
       "editsPreserved": true,
       "clientDirectivePreserved": true,
       "reactPeer": ">=19.0.0 <20",
-      "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+      "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.3"
     },
     {
       "fixture": "tailwind4",
@@ -40,15 +54,22 @@
       "version": "4.3.3",
       "mode": "layered",
       "react": "19.3.1",
+      "delivery": "external build stylesheet",
       "generated": [
-        "openui.generated.js"
+        "openui.generated.js",
+        "app/openui.generated.css"
       ],
-      "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+      "layout": "app/layout.js",
+      "layoutImportFirst": true,
+      "consumerAction": "Run configure once, then import generated components. The tool adds the CSS import before app imports; no manual stylesheet or provider setup.",
+      "tradeoff": "All installed prototype styles, including delayed variants, are included in the initial stylesheet. Dynamic runtime CSS is not supported by this path.",
       "idempotent": true,
+      "layoutIdempotent": true,
+      "cssIdempotent": true,
       "editsPreserved": true,
       "clientDirectivePreserved": true,
       "reactPeer": ">=19.0.0 <20",
-      "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+      "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.3"
     },
     {
       "fixture": "bootstrap",
@@ -56,15 +77,22 @@
       "version": "5.3.8",
       "mode": "unlayered",
       "react": "19.3.1",
+      "delivery": "external build stylesheet",
       "generated": [
-        "openui.generated.js"
+        "openui.generated.js",
+        "app/openui.generated.css"
       ],
-      "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+      "layout": "app/layout.js",
+      "layoutImportFirst": true,
+      "consumerAction": "Run configure once, then import generated components. The tool adds the CSS import before app imports; no manual stylesheet or provider setup.",
+      "tradeoff": "All installed prototype styles, including delayed variants, are included in the initial stylesheet. Dynamic runtime CSS is not supported by this path.",
       "idempotent": true,
+      "layoutIdempotent": true,
+      "cssIdempotent": true,
       "editsPreserved": true,
       "clientDirectivePreserved": true,
       "reactPeer": ">=19.0.0 <20",
-      "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+      "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.3"
     },
     {
       "fixture": "plain",
@@ -72,23 +100,73 @@
       "version": null,
       "mode": "unlayered",
       "react": "19.3.1",
+      "delivery": "external build stylesheet",
       "generated": [
-        "openui.generated.js"
+        "openui.generated.js",
+        "app/openui.generated.css"
       ],
-      "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+      "layout": "app/layout.js",
+      "layoutImportFirst": true,
+      "consumerAction": "Run configure once, then import generated components. The tool adds the CSS import before app imports; no manual stylesheet or provider setup.",
+      "tradeoff": "All installed prototype styles, including delayed variants, are included in the initial stylesheet. Dynamic runtime CSS is not supported by this path.",
       "idempotent": true,
+      "layoutIdempotent": true,
+      "cssIdempotent": true,
       "editsPreserved": true,
       "clientDirectivePreserved": true,
       "reactPeer": ">=19.0.0 <20",
-      "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+      "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.3"
     }
   ],
+  "streaming": {
+    "none": {
+      "shellChunk": 0,
+      "lateChunk": 3,
+      "distinctChunks": true,
+      "stylesheetBeforeContent": true,
+      "lateRulesInInitialStylesheet": true,
+      "cssBytes": 1658
+    },
+    "tailwind3": {
+      "shellChunk": 0,
+      "lateChunk": 3,
+      "distinctChunks": true,
+      "stylesheetBeforeContent": true,
+      "lateRulesInInitialStylesheet": true,
+      "cssBytes": 5509
+    },
+    "tailwind4": {
+      "shellChunk": 0,
+      "lateChunk": 3,
+      "distinctChunks": true,
+      "stylesheetBeforeContent": true,
+      "lateRulesInInitialStylesheet": true,
+      "cssBytes": 6589
+    },
+    "bootstrap": {
+      "shellChunk": 0,
+      "lateChunk": 3,
+      "distinctChunks": true,
+      "stylesheetBeforeContent": true,
+      "lateRulesInInitialStylesheet": true,
+      "cssBytes": 232252
+    },
+    "plain": {
+      "shellChunk": 0,
+      "lateChunk": 3,
+      "distinctChunks": true,
+      "stylesheetBeforeContent": true,
+      "lateRulesInInitialStylesheet": true,
+      "cssBytes": 1801
+    }
+  },
   "results": [
     {
       "browser": "chromium",
       "version": "156.0.8078.47",
       "framework": "none",
       "checks": {
+        "streamTransport": true,
         "baseSSR": true,
         "overrideSSR": true,
         "hydration": true,
@@ -97,6 +175,7 @@
         "streaming": true,
         "hostPreserved": true,
         "styleDeduplication": true,
+        "styledAtStreamReveal": true,
         "interaction": true,
         "navigation": true,
         "noBrowserErrors": true
@@ -148,6 +227,15 @@
             "color": "rgb(255, 255, 255)"
           }
         },
+        "firstVisibleStream": [
+          {
+            "background": "rgb(18, 108, 72)",
+            "padding": "12px 18px",
+            "borderRadius": "10px"
+          }
+        ],
+        "sheetCountBefore": 2,
+        "sheetCountAfter": 2,
         "hover": {
           "background": "rgb(37, 53, 140)",
           "padding": "12px 18px",
@@ -172,8 +260,8 @@
           "borderRadius": "0px",
           "color": "rgb(0, 0, 0)"
         },
-        "countBefore": 2,
-        "countAfter": 2,
+        "countBefore": 0,
+        "countAfter": 0,
         "errors": []
       }
     },
@@ -182,14 +270,16 @@
       "version": "156.0.8078.47",
       "framework": "tailwind3",
       "checks": {
+        "streamTransport": true,
         "baseSSR": true,
-        "overrideSSR": false,
+        "overrideSSR": true,
         "hydration": true,
-        "overrideClient": false,
-        "hover": false,
-        "streaming": false,
+        "overrideClient": true,
+        "hover": true,
+        "streaming": true,
         "hostPreserved": true,
         "styleDeduplication": true,
+        "styledAtStreamReveal": true,
         "interaction": true,
         "navigation": true,
         "noBrowserErrors": true
@@ -203,9 +293,9 @@
             "color": "rgb(255, 255, 255)"
           },
           "override": {
-            "background": "rgb(51, 71, 176)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
             "color": "rgb(255, 255, 255)"
           },
           "reference": {
@@ -223,9 +313,9 @@
             "color": "rgb(255, 255, 255)"
           },
           "override": {
-            "background": "rgb(51, 71, 176)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
             "color": "rgb(255, 255, 255)"
           },
           "reference": {
@@ -235,16 +325,25 @@
             "color": "rgb(255, 255, 255)"
           },
           "late": {
-            "background": "rgb(18, 108, 72)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
             "color": "rgb(255, 255, 255)"
           }
         },
+        "firstVisibleStream": [
+          {
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px"
+          }
+        ],
+        "sheetCountBefore": 2,
+        "sheetCountAfter": 2,
         "hover": {
-          "background": "rgb(37, 53, 140)",
-          "padding": "12px 18px",
-          "borderRadius": "10px",
+          "background": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "borderRadius": "0px",
           "color": "rgb(255, 255, 255)"
         },
         "referenceHover": {
@@ -265,8 +364,8 @@
           "borderRadius": "0px",
           "color": "rgb(0, 0, 0)"
         },
-        "countBefore": 2,
-        "countAfter": 2,
+        "countBefore": 0,
+        "countAfter": 0,
         "errors": []
       }
     },
@@ -275,6 +374,7 @@
       "version": "156.0.8078.47",
       "framework": "tailwind4",
       "checks": {
+        "streamTransport": true,
         "baseSSR": true,
         "overrideSSR": true,
         "hydration": true,
@@ -283,6 +383,7 @@
         "streaming": true,
         "hostPreserved": true,
         "styleDeduplication": true,
+        "styledAtStreamReveal": true,
         "interaction": true,
         "navigation": true,
         "noBrowserErrors": true
@@ -334,6 +435,15 @@
             "color": "rgb(255, 255, 255)"
           }
         },
+        "firstVisibleStream": [
+          {
+            "background": "lab(55.4814 75.0732 48.8528)",
+            "padding": "32px",
+            "borderRadius": "0px"
+          }
+        ],
+        "sheetCountBefore": 2,
+        "sheetCountAfter": 2,
         "hover": {
           "background": "lab(70.5521 -66.5147 45.8073)",
           "padding": "32px",
@@ -358,8 +468,8 @@
           "borderRadius": "0px",
           "color": "rgb(0, 0, 0)"
         },
-        "countBefore": 2,
-        "countAfter": 2,
+        "countBefore": 0,
+        "countAfter": 0,
         "errors": []
       }
     },
@@ -368,14 +478,16 @@
       "version": "156.0.8078.47",
       "framework": "bootstrap",
       "checks": {
+        "streamTransport": true,
         "baseSSR": true,
-        "overrideSSR": false,
+        "overrideSSR": true,
         "hydration": true,
-        "overrideClient": false,
-        "hover": false,
-        "streaming": false,
+        "overrideClient": true,
+        "hover": true,
+        "streaming": true,
         "hostPreserved": true,
         "styleDeduplication": true,
+        "styledAtStreamReveal": true,
         "interaction": true,
         "navigation": true,
         "noBrowserErrors": true
@@ -389,10 +501,10 @@
             "color": "rgb(255, 255, 255)"
           },
           "override": {
-            "background": "rgb(51, 71, 176)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
-            "color": "rgb(255, 255, 255)"
+            "background": "rgb(255, 193, 7)",
+            "padding": "6px 12px",
+            "borderRadius": "6px",
+            "color": "rgb(0, 0, 0)"
           },
           "reference": {
             "background": "rgb(255, 193, 7)",
@@ -409,10 +521,10 @@
             "color": "rgb(255, 255, 255)"
           },
           "override": {
-            "background": "rgb(51, 71, 176)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
-            "color": "rgb(255, 255, 255)"
+            "background": "rgb(255, 193, 7)",
+            "padding": "6px 12px",
+            "borderRadius": "6px",
+            "color": "rgb(0, 0, 0)"
           },
           "reference": {
             "background": "rgb(255, 193, 7)",
@@ -421,16 +533,25 @@
             "color": "rgb(0, 0, 0)"
           },
           "late": {
-            "background": "rgb(18, 108, 72)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
-            "color": "rgb(255, 255, 255)"
+            "background": "rgb(255, 193, 7)",
+            "padding": "6px 12px",
+            "borderRadius": "6px",
+            "color": "rgb(0, 0, 0)"
           }
         },
+        "firstVisibleStream": [
+          {
+            "background": "rgb(255, 193, 7)",
+            "padding": "6px 12px",
+            "borderRadius": "6px"
+          }
+        ],
+        "sheetCountBefore": 3,
+        "sheetCountAfter": 3,
         "hover": {
-          "background": "rgb(37, 53, 140)",
-          "padding": "12px 18px",
-          "borderRadius": "10px",
+          "background": "rgb(255, 202, 44)",
+          "padding": "6px 12px",
+          "borderRadius": "6px",
           "color": "rgb(0, 0, 0)"
         },
         "referenceHover": {
@@ -451,8 +572,8 @@
           "borderRadius": "0px",
           "color": "rgb(0, 0, 0)"
         },
-        "countBefore": 2,
-        "countAfter": 2,
+        "countBefore": 0,
+        "countAfter": 0,
         "errors": []
       }
     },
@@ -461,14 +582,16 @@
       "version": "156.0.8078.47",
       "framework": "plain",
       "checks": {
+        "streamTransport": true,
         "baseSSR": true,
-        "overrideSSR": false,
+        "overrideSSR": true,
         "hydration": true,
-        "overrideClient": false,
-        "hover": false,
-        "streaming": false,
+        "overrideClient": true,
+        "hover": true,
+        "streaming": true,
         "hostPreserved": true,
         "styleDeduplication": true,
+        "styledAtStreamReveal": true,
         "interaction": true,
         "navigation": true,
         "noBrowserErrors": true
@@ -482,9 +605,9 @@
             "color": "rgb(255, 255, 255)"
           },
           "override": {
-            "background": "rgb(51, 71, 176)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
             "color": "rgb(255, 255, 255)"
           },
           "reference": {
@@ -502,9 +625,9 @@
             "color": "rgb(255, 255, 255)"
           },
           "override": {
-            "background": "rgb(51, 71, 176)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
             "color": "rgb(255, 255, 255)"
           },
           "reference": {
@@ -514,16 +637,25 @@
             "color": "rgb(255, 255, 255)"
           },
           "late": {
-            "background": "rgb(18, 108, 72)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
             "color": "rgb(255, 255, 255)"
           }
         },
+        "firstVisibleStream": [
+          {
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px"
+          }
+        ],
+        "sheetCountBefore": 2,
+        "sheetCountAfter": 2,
         "hover": {
-          "background": "rgb(37, 53, 140)",
-          "padding": "12px 18px",
-          "borderRadius": "10px",
+          "background": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "borderRadius": "0px",
           "color": "rgb(255, 255, 255)"
         },
         "referenceHover": {
@@ -544,8 +676,8 @@
           "borderRadius": "0px",
           "color": "rgb(0, 0, 0)"
         },
-        "countBefore": 2,
-        "countAfter": 2,
+        "countBefore": 0,
+        "countAfter": 0,
         "errors": []
       }
     },
@@ -554,6 +686,7 @@
       "version": "27.2",
       "framework": "none",
       "checks": {
+        "streamTransport": true,
         "baseSSR": true,
         "overrideSSR": true,
         "hydration": true,
@@ -562,6 +695,7 @@
         "streaming": true,
         "hostPreserved": true,
         "styleDeduplication": true,
+        "styledAtStreamReveal": true,
         "interaction": true,
         "navigation": true,
         "noBrowserErrors": true
@@ -613,6 +747,25 @@
             "color": "rgb(255, 255, 255)"
           }
         },
+        "firstVisibleStream": [
+          {
+            "background": "rgb(18, 108, 72)",
+            "padding": "12px 18px",
+            "borderRadius": "10px"
+          },
+          {
+            "background": "rgb(18, 108, 72)",
+            "padding": "12px 18px",
+            "borderRadius": "10px"
+          },
+          {
+            "background": "rgb(18, 108, 72)",
+            "padding": "12px 18px",
+            "borderRadius": "10px"
+          }
+        ],
+        "sheetCountBefore": 2,
+        "sheetCountAfter": 2,
         "hover": {
           "background": "rgb(37, 53, 140)",
           "padding": "12px 18px",
@@ -637,8 +790,8 @@
           "borderRadius": "0px",
           "color": "rgba(0, 0, 0, 0.847)"
         },
-        "countBefore": 2,
-        "countAfter": 2,
+        "countBefore": 0,
+        "countAfter": 0,
         "errors": []
       }
     },
@@ -647,14 +800,16 @@
       "version": "27.2",
       "framework": "tailwind3",
       "checks": {
+        "streamTransport": true,
         "baseSSR": true,
-        "overrideSSR": false,
+        "overrideSSR": true,
         "hydration": true,
-        "overrideClient": false,
-        "hover": false,
-        "streaming": false,
+        "overrideClient": true,
+        "hover": true,
+        "streaming": true,
         "hostPreserved": true,
         "styleDeduplication": true,
+        "styledAtStreamReveal": true,
         "interaction": true,
         "navigation": true,
         "noBrowserErrors": true
@@ -668,9 +823,9 @@
             "color": "rgb(255, 255, 255)"
           },
           "override": {
-            "background": "rgb(51, 71, 176)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
             "color": "rgb(255, 255, 255)"
           },
           "reference": {
@@ -688,9 +843,9 @@
             "color": "rgb(255, 255, 255)"
           },
           "override": {
-            "background": "rgb(51, 71, 176)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
             "color": "rgb(255, 255, 255)"
           },
           "reference": {
@@ -700,16 +855,30 @@
             "color": "rgb(255, 255, 255)"
           },
           "late": {
-            "background": "rgb(18, 108, 72)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
             "color": "rgb(255, 255, 255)"
           }
         },
+        "firstVisibleStream": [
+          {
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px"
+          },
+          {
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px"
+          }
+        ],
+        "sheetCountBefore": 2,
+        "sheetCountAfter": 2,
         "hover": {
-          "background": "rgb(37, 53, 140)",
-          "padding": "12px 18px",
-          "borderRadius": "10px",
+          "background": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "borderRadius": "0px",
           "color": "rgb(255, 255, 255)"
         },
         "referenceHover": {
@@ -730,8 +899,8 @@
           "borderRadius": "0px",
           "color": "rgb(0, 0, 0)"
         },
-        "countBefore": 2,
-        "countAfter": 2,
+        "countBefore": 0,
+        "countAfter": 0,
         "errors": []
       }
     },
@@ -740,6 +909,7 @@
       "version": "27.2",
       "framework": "tailwind4",
       "checks": {
+        "streamTransport": true,
         "baseSSR": true,
         "overrideSSR": true,
         "hydration": true,
@@ -748,6 +918,7 @@
         "streaming": true,
         "hostPreserved": true,
         "styleDeduplication": true,
+        "styledAtStreamReveal": true,
         "interaction": true,
         "navigation": true,
         "noBrowserErrors": true
@@ -799,6 +970,20 @@
             "color": "rgb(255, 255, 255)"
           }
         },
+        "firstVisibleStream": [
+          {
+            "background": "lab(55.4814 75.073196 48.852798)",
+            "padding": "32px",
+            "borderRadius": "0px"
+          },
+          {
+            "background": "lab(55.4814 75.073196 48.852798)",
+            "padding": "32px",
+            "borderRadius": "0px"
+          }
+        ],
+        "sheetCountBefore": 2,
+        "sheetCountAfter": 2,
         "hover": {
           "background": "lab(70.552101 -66.514702 45.807301)",
           "padding": "32px",
@@ -823,8 +1008,8 @@
           "borderRadius": "0px",
           "color": "rgb(0, 0, 0)"
         },
-        "countBefore": 2,
-        "countAfter": 2,
+        "countBefore": 0,
+        "countAfter": 0,
         "errors": []
       }
     },
@@ -833,14 +1018,16 @@
       "version": "27.2",
       "framework": "bootstrap",
       "checks": {
+        "streamTransport": true,
         "baseSSR": true,
-        "overrideSSR": false,
+        "overrideSSR": true,
         "hydration": true,
-        "overrideClient": false,
-        "hover": false,
-        "streaming": false,
+        "overrideClient": true,
+        "hover": true,
+        "streaming": true,
         "hostPreserved": true,
         "styleDeduplication": true,
+        "styledAtStreamReveal": true,
         "interaction": true,
         "navigation": true,
         "noBrowserErrors": true
@@ -854,10 +1041,10 @@
             "color": "rgb(255, 255, 255)"
           },
           "override": {
-            "background": "rgb(51, 71, 176)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
-            "color": "rgb(255, 255, 255)"
+            "background": "rgb(255, 193, 7)",
+            "padding": "6px 12px",
+            "borderRadius": "6px",
+            "color": "rgb(0, 0, 0)"
           },
           "reference": {
             "background": "rgb(255, 193, 7)",
@@ -874,10 +1061,10 @@
             "color": "rgb(255, 255, 255)"
           },
           "override": {
-            "background": "rgb(51, 71, 176)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
-            "color": "rgb(255, 255, 255)"
+            "background": "rgb(255, 193, 7)",
+            "padding": "6px 12px",
+            "borderRadius": "6px",
+            "color": "rgb(0, 0, 0)"
           },
           "reference": {
             "background": "rgb(255, 193, 7)",
@@ -886,16 +1073,35 @@
             "color": "rgb(0, 0, 0)"
           },
           "late": {
-            "background": "rgb(18, 108, 72)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
-            "color": "rgb(255, 255, 255)"
+            "background": "rgb(255, 193, 7)",
+            "padding": "6px 12px",
+            "borderRadius": "6px",
+            "color": "rgb(0, 0, 0)"
           }
         },
+        "firstVisibleStream": [
+          {
+            "background": "rgb(255, 193, 7)",
+            "padding": "6px 12px",
+            "borderRadius": "6px"
+          },
+          {
+            "background": "rgb(255, 193, 7)",
+            "padding": "6px 12px",
+            "borderRadius": "6px"
+          },
+          {
+            "background": "rgb(255, 193, 7)",
+            "padding": "6px 12px",
+            "borderRadius": "6px"
+          }
+        ],
+        "sheetCountBefore": 3,
+        "sheetCountAfter": 3,
         "hover": {
-          "background": "rgb(37, 53, 140)",
-          "padding": "12px 18px",
-          "borderRadius": "10px",
+          "background": "rgb(255, 202, 44)",
+          "padding": "6px 12px",
+          "borderRadius": "6px",
           "color": "rgb(0, 0, 0)"
         },
         "referenceHover": {
@@ -916,8 +1122,8 @@
           "borderRadius": "0px",
           "color": "rgba(0, 0, 0, 0.847)"
         },
-        "countBefore": 2,
-        "countAfter": 2,
+        "countBefore": 0,
+        "countAfter": 0,
         "errors": []
       }
     },
@@ -926,14 +1132,16 @@
       "version": "27.2",
       "framework": "plain",
       "checks": {
+        "streamTransport": true,
         "baseSSR": true,
-        "overrideSSR": false,
+        "overrideSSR": true,
         "hydration": true,
-        "overrideClient": false,
-        "hover": false,
-        "streaming": false,
+        "overrideClient": true,
+        "hover": true,
+        "streaming": true,
         "hostPreserved": true,
         "styleDeduplication": true,
+        "styledAtStreamReveal": true,
         "interaction": true,
         "navigation": true,
         "noBrowserErrors": true
@@ -947,9 +1155,9 @@
             "color": "rgb(255, 255, 255)"
           },
           "override": {
-            "background": "rgb(51, 71, 176)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
             "color": "rgb(255, 255, 255)"
           },
           "reference": {
@@ -967,9 +1175,9 @@
             "color": "rgb(255, 255, 255)"
           },
           "override": {
-            "background": "rgb(51, 71, 176)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
             "color": "rgb(255, 255, 255)"
           },
           "reference": {
@@ -979,16 +1187,30 @@
             "color": "rgb(255, 255, 255)"
           },
           "late": {
-            "background": "rgb(18, 108, 72)",
-            "padding": "12px 18px",
-            "borderRadius": "10px",
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px",
             "color": "rgb(255, 255, 255)"
           }
         },
+        "firstVisibleStream": [
+          {
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px"
+          },
+          {
+            "background": "rgb(239, 68, 68)",
+            "padding": "32px",
+            "borderRadius": "0px"
+          }
+        ],
+        "sheetCountBefore": 2,
+        "sheetCountAfter": 2,
         "hover": {
-          "background": "rgb(37, 53, 140)",
-          "padding": "12px 18px",
-          "borderRadius": "10px",
+          "background": "rgb(34, 197, 94)",
+          "padding": "32px",
+          "borderRadius": "0px",
           "color": "rgb(255, 255, 255)"
         },
         "referenceHover": {
@@ -1009,8 +1231,8 @@
           "borderRadius": "0px",
           "color": "rgba(0, 0, 0, 0.847)"
         },
-        "countBefore": 2,
-        "countAfter": 2,
+        "countBefore": 0,
+        "countAfter": 0,
         "errors": []
       }
     }
@@ -1019,10 +1241,10 @@
     {
       "browser": "firefox",
       "stage": "launch",
-      "error": "browserType.launch: Failed to launch the browser process.\nBrowser logs:\n\n<launching> /Users/ankitdas/Library/Caches/ms-playwright/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/zg/c91r6pzj7ql8z_xxw8rbqqgr0000gn/T/playwright_firefoxdev_profile-VtZdzE -juggler-pipe -silent\n<launched> pid=5092\n[pid=5092][err] *** You are running in headless mode.\n[pid=5092][err] Could not find profile folder.\n[pid=5092] <process did exit: exitCode=1, signal=null>\n[pid=5092] starting temporary directories cleanup\nCall log:\n\u001b[2m  - <launching> /Users/ankitdas/Library/Caches/ms-playwright/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/zg/c91r6pzj7ql8z_xxw8rbqqgr0000gn/T/playwright_firefoxdev_profile-VtZdzE -juggler-pipe -silent\u001b[22m\n\u001b[2m  - <launched> pid=5092\u001b[22m\n\u001b[2m  - [pid=5092][err] *** You are running in headless mode.\u001b[22m\n\u001b[2m  - [pid=5092][err] Could not find profile folder.\u001b[22m\n\u001b[2m  - [pid=5092] <process did exit: exitCode=1, signal=null>\u001b[22m\n\u001b[2m  - [pid=5092] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=5092] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=5092] <kill>\u001b[22m\n\u001b[2m  - [pid=5092] <skipped force kill spawnedProcess.killed=false processClosed=true>\u001b[22m\n\u001b[2m  - [pid=5092] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=5092] <gracefully close end>\u001b[22m\n"
+      "error": "browserType.launch: Failed to launch the browser process.\nBrowser logs:\n\n<launching> /Users/ankitdas/Library/Caches/ms-playwright/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/zg/c91r6pzj7ql8z_xxw8rbqqgr0000gn/T/playwright_firefoxdev_profile-793eMr -juggler-pipe -silent\n<launched> pid=8457\n[pid=8457][err] *** You are running in headless mode.\n[pid=8457][err] Could not find profile folder.\n[pid=8457] <process did exit: exitCode=1, signal=null>\n[pid=8457] starting temporary directories cleanup\nCall log:\n\u001b[2m  - <launching> /Users/ankitdas/Library/Caches/ms-playwright/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/zg/c91r6pzj7ql8z_xxw8rbqqgr0000gn/T/playwright_firefoxdev_profile-793eMr -juggler-pipe -silent\u001b[22m\n\u001b[2m  - <launched> pid=8457\u001b[22m\n\u001b[2m  - [pid=8457][err] *** You are running in headless mode.\u001b[22m\n\u001b[2m  - [pid=8457][err] Could not find profile folder.\u001b[22m\n\u001b[2m  - [pid=8457] <process did exit: exitCode=1, signal=null>\u001b[22m\n\u001b[2m  - [pid=8457] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=8457] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=8457] <kill>\u001b[22m\n\u001b[2m  - [pid=8457] <skipped force kill spawnedProcess.killed=false processClosed=true>\u001b[22m\n\u001b[2m  - [pid=8457] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=8457] <gracefully close end>\u001b[22m\n"
     }
   ],
-  "passed": 4,
+  "passed": 10,
   "total": 10,
   "planned": 15,
   "unavailable": 5,
@@ -1030,6 +1252,8 @@
     "Representative Button only; full OpenUI component parity not certified",
     "WebKit is Playwright WebKit, not a Safari release certification",
     "Conventional directly declared framework dependencies; CDN-loaded CSS and unusual monorepo layouts need separate handling",
-    "Framework CSS compiled by fixture preparation from pinned real packages; no custom Tailwind config variants yet"
+    "Framework CSS compiled by fixture preparation from pinned real packages; no custom Tailwind config variants yet",
+    "Installer adds generated stylesheet as the first root-layout import; no hand editing is needed",
+    "Static styles for all installed prototype variants are loaded initially; arbitrary runtime-generated rules are outside this path"
   ]
 }

@@ -1,6 +1,6 @@
 # Strict CSP compatibility — generated observations
 
-Installed package, React 19 renderToString and hydration. Real response CSP headers. No unsafe-inline. Static button only. nonce = component prop only (negative probe); nonce-renderer = matching style nonce also supplied to React streaming renderer.
+Installed package, React 19 renderToString and hydration. Real response CSP headers. No unsafe-inline. Static button only. nonce = component prop only (negative probe); nonce-renderer = matching style nonce also supplied to React streaming renderer. external = generated stylesheet under style-src self, with no inline component styles.
 
 | Browser | Policy | Styled before JS | Styled after hydration | Nonce on style |
 | --- | --- | --- | --- | --- |
@@ -9,11 +9,13 @@ Installed package, React 19 renderToString and hydration. Real response CSP head
 | chromium | nonce | false | false | false |
 | chromium | nonce-renderer | true | true | true |
 | chromium | hash | true | true | false |
+| chromium | external | true | true | false |
 | webkit | none | true | true | false |
 | webkit | blocked | false | false | false |
 | webkit | nonce | false | false | false |
 | webkit | nonce-renderer | true | true | true |
 | webkit | hash | true | true | false |
+| webkit | external | true | true | false |
 
 ## Unavailable checks
 

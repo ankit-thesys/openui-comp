@@ -5,15 +5,22 @@
     "version": null,
     "mode": "unlayered",
     "react": "19.3.1",
+    "delivery": "external build stylesheet",
     "generated": [
-      "openui.generated.js"
+      "openui.generated.js",
+      "app/openui.generated.css"
     ],
-    "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+    "layout": "app/layout.js",
+    "layoutImportFirst": true,
+    "consumerAction": "Run configure once, then import generated components. The tool adds the CSS import before app imports; no manual stylesheet or provider setup.",
+    "tradeoff": "All installed prototype styles, including delayed variants, are included in the initial stylesheet. Dynamic runtime CSS is not supported by this path.",
     "idempotent": true,
+    "layoutIdempotent": true,
+    "cssIdempotent": true,
     "editsPreserved": true,
     "clientDirectivePreserved": true,
     "reactPeer": ">=19.0.0 <20",
-    "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+    "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.3"
   },
   {
     "fixture": "tailwind3",
@@ -21,15 +28,22 @@
     "version": "3.4.19",
     "mode": "unlayered",
     "react": "19.3.1",
+    "delivery": "external build stylesheet",
     "generated": [
-      "openui.generated.js"
+      "openui.generated.js",
+      "app/openui.generated.css"
     ],
-    "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+    "layout": "app/layout.js",
+    "layoutImportFirst": true,
+    "consumerAction": "Run configure once, then import generated components. The tool adds the CSS import before app imports; no manual stylesheet or provider setup.",
+    "tradeoff": "All installed prototype styles, including delayed variants, are included in the initial stylesheet. Dynamic runtime CSS is not supported by this path.",
     "idempotent": true,
+    "layoutIdempotent": true,
+    "cssIdempotent": true,
     "editsPreserved": true,
     "clientDirectivePreserved": true,
     "reactPeer": ">=19.0.0 <20",
-    "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+    "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.3"
   },
   {
     "fixture": "tailwind4",
@@ -37,15 +51,22 @@
     "version": "4.3.3",
     "mode": "layered",
     "react": "19.3.1",
+    "delivery": "external build stylesheet",
     "generated": [
-      "openui.generated.js"
+      "openui.generated.js",
+      "app/openui.generated.css"
     ],
-    "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+    "layout": "app/layout.js",
+    "layoutImportFirst": true,
+    "consumerAction": "Run configure once, then import generated components. The tool adds the CSS import before app imports; no manual stylesheet or provider setup.",
+    "tradeoff": "All installed prototype styles, including delayed variants, are included in the initial stylesheet. Dynamic runtime CSS is not supported by this path.",
     "idempotent": true,
+    "layoutIdempotent": true,
+    "cssIdempotent": true,
     "editsPreserved": true,
     "clientDirectivePreserved": true,
     "reactPeer": ">=19.0.0 <20",
-    "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+    "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.3"
   },
   {
     "fixture": "bootstrap",
@@ -53,15 +74,22 @@
     "version": "5.3.8",
     "mode": "unlayered",
     "react": "19.3.1",
+    "delivery": "external build stylesheet",
     "generated": [
-      "openui.generated.js"
+      "openui.generated.js",
+      "app/openui.generated.css"
     ],
-    "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+    "layout": "app/layout.js",
+    "layoutImportFirst": true,
+    "consumerAction": "Run configure once, then import generated components. The tool adds the CSS import before app imports; no manual stylesheet or provider setup.",
+    "tradeoff": "All installed prototype styles, including delayed variants, are included in the initial stylesheet. Dynamic runtime CSS is not supported by this path.",
     "idempotent": true,
+    "layoutIdempotent": true,
+    "cssIdempotent": true,
     "editsPreserved": true,
     "clientDirectivePreserved": true,
     "reactPeer": ">=19.0.0 <20",
-    "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+    "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.3"
   },
   {
     "fixture": "plain",
@@ -69,14 +97,21 @@
     "version": null,
     "mode": "unlayered",
     "react": "19.3.1",
+    "delivery": "external build stylesheet",
     "generated": [
-      "openui.generated.js"
+      "openui.generated.js",
+      "app/openui.generated.css"
     ],
-    "consumerAction": "Run configure once, then import generated components. No manually selected CSS policy.",
+    "layout": "app/layout.js",
+    "layoutImportFirst": true,
+    "consumerAction": "Run configure once, then import generated components. The tool adds the CSS import before app imports; no manual stylesheet or provider setup.",
+    "tradeoff": "All installed prototype styles, including delayed variants, are included in the initial stylesheet. Dynamic runtime CSS is not supported by this path.",
     "idempotent": true,
+    "layoutIdempotent": true,
+    "cssIdempotent": true,
     "editsPreserved": true,
     "clientDirectivePreserved": true,
     "reactPeer": ">=19.0.0 <20",
-    "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.2"
+    "installedPackage": "@openui/goober-compat-prototype@0.0.0-prototype.3"
   }
 ]

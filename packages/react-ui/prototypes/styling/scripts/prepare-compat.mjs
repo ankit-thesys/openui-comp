@@ -11,6 +11,8 @@ for(const framework of ['none','tailwind3','tailwind4','bootstrap','plain']){
  if(framework.startsWith('tailwind'))dependencies.tailwindcss=framework==='tailwind3'?versions['tailwindcss-v3']:versions.tailwindcss;
  if(framework==='bootstrap')dependencies.bootstrap=versions.bootstrap;
  await fs.writeFile(path.join(root,'package.json'),JSON.stringify({name:'consumer-'+framework,private:true,type:'module',dependencies},null,2));
+ // Reset only generated artifacts in these explicitly throwaway, script-owned fixtures.
+ for(const file of ['openui.generated.js','app/openui.generated.css'])await fs.rm(path.join(root,file),{force:true});
  await fs.writeFile(path.join(root,'next.config.mjs'),"export default {};\n");
  await fs.copyFile('public/frameworks/'+framework+'.css',path.join(root,'app/globals.css'));
  await fs.appendFile(path.join(root,'app/globals.css'),'\n.host-override{background-color:rgb(239,68,68)}\n');
@@ -27,8 +29,12 @@ export default async function Page({searchParams}){const params=await searchPara
  await run('npm',['install','--ignore-scripts','--no-audit','--no-fund'],root);
  await run(process.execPath,['node_modules/@openui/goober-compat-prototype/configure.mjs'],root);
  const before=await fs.readFile(path.join(root,'openui.generated.js'),'utf8');
+ const layoutBefore=await fs.readFile(path.join(root,'app/layout.js'),'utf8');
+ const cssBefore=await fs.readFile(path.join(root,'app/openui.generated.css'),'utf8');
  await run(process.execPath,['node_modules/@openui/goober-compat-prototype/configure.mjs'],root);
  const after=await fs.readFile(path.join(root,'openui.generated.js'),'utf8');
+ const layoutIdempotent=layoutBefore===await fs.readFile(path.join(root,'app/layout.js'),'utf8');
+ const cssIdempotent=cssBefore===await fs.readFile(path.join(root,'app/openui.generated.css'),'utf8');
  const edited=after+'\n// Consumer customization: must be preserved.\n';
  await fs.writeFile(path.join(root,'openui.generated.js'),edited);
  const blocked=spawnSync(process.execPath,['node_modules/@openui/goober-compat-prototype/configure.mjs'],{cwd:root,encoding:'utf8'});
@@ -38,7 +44,7 @@ export default async function Page({searchParams}){const params=await searchPara
  const clientDirectivePreserved=(await fs.readFile(path.join(root,'node_modules/@openui/goober-compat-prototype/auto-button.js'),'utf8')).startsWith("'use client';");
  const installed=JSON.parse(await fs.readFile(path.join(root,'node_modules/@openui/goober-compat-prototype/package.json'),'utf8'));
  const setup=JSON.parse(await fs.readFile(path.join(root,'openui-setup.json'),'utf8'));
- setups.push({fixture:framework,...setup,idempotent:before===after,editsPreserved,clientDirectivePreserved,reactPeer:installed.peerDependencies.react,installedPackage:installed.name+'@'+installed.version});
+ setups.push({fixture:framework,...setup,idempotent:before===after&&layoutIdempotent&&cssIdempotent,layoutIdempotent,cssIdempotent,editsPreserved,clientDirectivePreserved,reactPeer:installed.peerDependencies.react,installedPackage:installed.name+'@'+installed.version});
  await run(process.execPath,['node_modules/next/dist/bin/next','build'],root);
 }
 await fs.writeFile('results/compat-setup.json',JSON.stringify(setups,null,2));
