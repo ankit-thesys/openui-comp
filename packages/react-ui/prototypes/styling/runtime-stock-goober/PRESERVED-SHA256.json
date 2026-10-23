@@ -7,6 +7,7 @@
   "chat/chat.tsx": "d7f5f60752a5d778b65258e257f17747276082ec785c7e2ca4a98ab3b933b4cd",
   "chat/check-stock.mjs": "78fc5464df932db8f4e20e8daa4491e1ee14af092a6626f5a01db602b9efec73",
   "chat/client.tsx": "eeb9610eeb12210682e51f2b2d5e18a136ff11f67fa78452964166d9c25e768b",
+  "chat/response.ts": "3d21dea33622633071870c9dfbf272818e1f83e8cc33c63d80b9e641e4747249",
   "chat/results/build.json": "42d7746439de71bf6de45654a10a4a5be30dc2fffe318684c26abd869519264c",
   "chat/results/stock-chat.json": "fef51a0793e3fda7598004395f5c64f35a7a3435b5bd54af8a9a78aaf8354ee3",
   "chat/runtime/adapter.tsx": "e760a83f7c8098d104765465ce431a289ffa088417fbd40addc244106f2d0327",
@@ -1575,10 +1576,10 @@
   "components/source/src/openui-defaults.scss": "edf53ca20d16a51745120771378bfd56b0eff6f8a9846ceea6dbded1f0e409c9",
   "components/source/src/scripts/generate-css-utils.ts": "d237fead5009aa31bbe8751d03cf57d0c4e3a0fb127c1c460e8dd100309062a2",
   "components/source/src/scripts/scss-import.js": "cc304b710f1a5464de21d221e9f124ed4892b593d5760090534d9aacdc47e744",
+  "components/source/src/types.d.ts": "c3c648906dd83ccaf823161c61a5e6e2b56e6714d8a8ef6aec0cec6d18a14fe6",
   "components/source/src/types/ConversationStarter.ts": "5255ed12fd48b3aef969dd63ba607c36c561ddcc374be285a6e63bf28a7deff8",
   "components/source/src/types/PromptTemplate.ts": "0255544857983ff8982d9848330e8a1967748a9032271aabf816ddbceaed2641",
   "components/source/src/types/postcss-js.d.ts": "d0da80537b35f6b6ad80c2f0dd2d0a73195b8fbdb47674ca8df7b924afb6c705",
-  "components/source/src/types.d.ts": "c3c648906dd83ccaf823161c61a5e6e2b56e6714d8a8ef6aec0cec6d18a14fe6",
   "components/source/src/utils/DatePickerUtils.ts": "80c8f88d5ca5b95422ff428ae0a54d5e4e6692eb4cbf2343c40e5b624b9d3af7",
   "components/source/src/utils/__tests__/messages.test.ts": "ab162cedb3ff44c645c0401e986242d147073185e67d43b38ace27c139d7a03d",
   "components/source/src/utils/index.ts": "c8ede46847afd202330ea6d8ef0016cf6c3fe0fa72a04790894a274935a1f2e3",
@@ -1609,6 +1610,7 @@
   "results/ownership.log": "bcbf539d519085400b9da2a0804751110688c7759ba79fdab837c3032e9411b4",
   "results/stock-controls.json": "dc4240d61ff2fce1b41acbc2684b93b54f0ff0f77fa4ebc2afd13d7f5d202ad8",
   "results/stock-controls.log": "518e606f857f89258b4c547a48fa0a7c08ed18e6f067980e261f7be9374be9e8",
+  "stock-controls.cjs": "02c2ee68a0b098348a633237d60cdbac5a65a4f8b1688a3dedb4962dd5042a83",
   "stock/goober-2.1.19.tgz": "76c7bf1ea180bd5c68f4f2a5b511937a689481e3507c81b2bf36c74bc9e13c9d",
   "stock/package/LICENSE": "02b4d13362a16661a88f88bae6168e7a425018148de0fab5e35ff0f6ba2ff27a",
   "stock/package/README.md": "f450aab661857994d292df4f945aa1473815f8d9499aaab245a88d9b97922dfd",
@@ -1667,6 +1669,5 @@
   "stock/package/src/css.js": "fc410f79d92f34904376decba308769ca575ce4785f6e719de9cf5f6d646cc3e",
   "stock/package/src/index.js": "5b597ec7eeba6fd04f61ccc696d974b1d8d1cbe9ba4cc4c5f446d2a3fa88b079",
   "stock/package/src/styled.js": "0f567e08162005954114ac3f38fca36a648780f0d819b1c36d941cbdef831ffa",
-  "stock/package/typings.json": "99fc0cff7c2fc337d2efa2d3345b013330f9f877bf8b593108c7e04c9007ae3f",
-  "stock-controls.cjs": "02c2ee68a0b098348a633237d60cdbac5a65a4f8b1688a3dedb4962dd5042a83"
+  "stock/package/typings.json": "99fc0cff7c2fc337d2efa2d3345b013330f9f877bf8b593108c7e04c9007ae3f"
 }
