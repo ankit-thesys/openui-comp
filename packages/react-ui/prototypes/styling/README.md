@@ -80,3 +80,8 @@ Representative Button and SVG chart fixtures do not certify actual OpenUI appear
 - [Goober APIs](https://github.com/cristianbote/goober)
 - [React stylesheet resources](https://react.dev/reference/react-dom/components/style)
 - [Next.js CSS ordering](https://nextjs.org/docs/app/getting-started/css)
+
+
+## Interactive performance lab
+
+Open [the local performance lab](http://127.0.0.1:4177/performance.html) after `npm run demo`. Chat and dashboard have equal priority. Run matched synthetic controls, type/scroll during replay, stop, and export JSON. See [the hands-on guide](PERFORMANCE-LAB.md) and [the full prototype test plan](PERFORMANCE-PLAN.md). The first lab isolates styling overhead; real OpenUI replay, SSR pressure, and statistical performance approval remain pending. `npm run check:performance` verifies the lab with the demo running.

@@ -14,7 +14,8 @@
     "compat:prepare": "node scripts/pack-prototype.mjs && node scripts/prepare-compat.mjs",
     "check:compat": "node scripts/check-compat.mjs",
     "check:csp": "node scripts/check-csp.mjs",
-    "demo:compat": "node scripts/demo-compat.mjs"
+    "demo:compat": "node scripts/demo-compat.mjs",
+    "check:performance": "node scripts/check-performance.mjs"
   },
   "dependencies": {
     "goober": "^2.1.16",

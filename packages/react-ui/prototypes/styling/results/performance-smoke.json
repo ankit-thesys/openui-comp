@@ -1,0 +1,826 @@
+{
+  "generatedAt": "2026-10-23T12:02:31.672Z",
+  "scope": "Smoke validation of runnable synthetic lab, not a statistical performance/adoption benchmark",
+  "browser": "156.0.8078.47",
+  "cases": [
+    {
+      "test": {
+        "framework": "plain",
+        "count": "25",
+        "rate": "60"
+      },
+      "pass": true,
+      "styleChecks": [
+        {
+          "url": "http://127.0.0.1:4177/performance-fixture.html?count=25&rate=60&seconds=5&framework=plain&scenario=chat&arm=control&runId=b4b07b3a-8e89-4ff8-8a11-1c6862693314&pair=0",
+          "style": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4177/performance-fixture.html?count=25&rate=60&seconds=5&framework=plain&scenario=chat&arm=generated&runId=e1535c95-ca9b-4952-b7f8-1b7966d8d541&pair=0",
+          "style": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4177/performance-fixture.html?count=25&rate=60&seconds=5&framework=plain&scenario=dashboard&arm=control&runId=1fbd1350-c15c-48b6-b908-86bf6f90a19e&pair=0",
+          "style": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4177/performance-fixture.html?count=25&rate=60&seconds=5&framework=plain&scenario=dashboard&arm=generated&runId=1d80d685-0e6a-4ef0-a58f-64c2057d7e21&pair=0",
+          "style": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px"
+          }
+        }
+      ],
+      "results": [
+        {
+          "config": {
+            "arm": "control",
+            "scenario": "chat",
+            "framework": "plain",
+            "count": 25,
+            "rate": 60,
+            "seconds": 5,
+            "runId": "b4b07b3a-8e89-4ff8-8a11-1c6862693314"
+          },
+          "status": "complete",
+          "scope": "Synthetic React styling comparison; no OpenUI parser, real components or server load",
+          "durationMs": 5107.899999976158,
+          "scheduledChunks": 300,
+          "receivedChunks": 300,
+          "commits": 300,
+          "renderedSequence": 300,
+          "finalContentMatches": true,
+          "updateOpportunityP95Ms": 49.5,
+          "deliveryLagP95Ms": 1.0333333214123286,
+          "frameGapP95Ms": 16.700000000000728,
+          "inputOpportunityP95Ms": 29.69999998807907,
+          "inputSamples": 2,
+          "longTaskCount": 0,
+          "longTaskMs": 0,
+          "rulesBefore": 49,
+          "rulesAfter": 49,
+          "sheetsBefore": 3,
+          "sheetsAfter": 3,
+          "heapSamples": [
+            {
+              "atMs": 0,
+              "bytes": 4151270
+            },
+            {
+              "atMs": 1000.6999999880791,
+              "bytes": 5554586
+            },
+            {
+              "atMs": 2000.8999999761581,
+              "bytes": 6544344
+            },
+            {
+              "atMs": 2999.599999964237,
+              "bytes": 6899776
+            },
+            {
+              "atMs": 4000,
+              "bytes": 7294376
+            },
+            {
+              "atMs": 5000.599999964237,
+              "bytes": 6757944
+            }
+          ],
+          "visibility": "visible",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+        },
+        {
+          "config": {
+            "arm": "generated",
+            "scenario": "chat",
+            "framework": "plain",
+            "count": 25,
+            "rate": 60,
+            "seconds": 5,
+            "runId": "e1535c95-ca9b-4952-b7f8-1b7966d8d541"
+          },
+          "status": "complete",
+          "scope": "Synthetic React styling comparison; no OpenUI parser, real components or server load",
+          "durationMs": 5106.800000011921,
+          "scheduledChunks": 300,
+          "receivedChunks": 300,
+          "commits": 300,
+          "renderedSequence": 300,
+          "finalContentMatches": true,
+          "updateOpportunityP95Ms": 48.39999997615814,
+          "deliveryLagP95Ms": 1.033333321412556,
+          "frameGapP95Ms": 16.799999999999272,
+          "inputOpportunityP95Ms": 27.900000035762787,
+          "inputSamples": 2,
+          "longTaskCount": 0,
+          "longTaskMs": 0,
+          "rulesBefore": 49,
+          "rulesAfter": 49,
+          "sheetsBefore": 3,
+          "sheetsAfter": 3,
+          "heapSamples": [
+            {
+              "atMs": 0,
+              "bytes": 7162228
+            },
+            {
+              "atMs": 1000.5,
+              "bytes": 8163924
+            },
+            {
+              "atMs": 2000.300000011921,
+              "bytes": 7309573
+            },
+            {
+              "atMs": 3000.199999988079,
+              "bytes": 6302592
+            },
+            {
+              "atMs": 4000.900000035763,
+              "bytes": 8259562
+            },
+            {
+              "atMs": 5000.400000035763,
+              "bytes": 7961137
+            }
+          ],
+          "visibility": "visible",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+        },
+        {
+          "config": {
+            "arm": "control",
+            "scenario": "dashboard",
+            "framework": "plain",
+            "count": 25,
+            "rate": 60,
+            "seconds": 5,
+            "runId": "1fbd1350-c15c-48b6-b908-86bf6f90a19e"
+          },
+          "status": "complete",
+          "scope": "Synthetic React styling comparison; no OpenUI parser, real components or server load",
+          "durationMs": 5100.900000035763,
+          "scheduledChunks": 300,
+          "receivedChunks": 300,
+          "commits": 299,
+          "renderedSequence": 300,
+          "finalContentMatches": true,
+          "updateOpportunityP95Ms": 42.09999996423721,
+          "deliveryLagP95Ms": 1.533333321412556,
+          "frameGapP95Ms": 16.799999999999727,
+          "inputOpportunityP95Ms": 25.400000035762787,
+          "inputSamples": 2,
+          "longTaskCount": 0,
+          "longTaskMs": 0,
+          "rulesBefore": 49,
+          "rulesAfter": 49,
+          "sheetsBefore": 3,
+          "sheetsAfter": 3,
+          "heapSamples": [
+            {
+              "atMs": 0,
+              "bytes": 6991486
+            },
+            {
+              "atMs": 1001,
+              "bytes": 8601763
+            },
+            {
+              "atMs": 2000.6000000238419,
+              "bytes": 7780820
+            },
+            {
+              "atMs": 3000.600000023842,
+              "bytes": 8860556
+            },
+            {
+              "atMs": 4001,
+              "bytes": 7923804
+            },
+            {
+              "atMs": 5000.400000035763,
+              "bytes": 7422803
+            }
+          ],
+          "visibility": "visible",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+        },
+        {
+          "config": {
+            "arm": "generated",
+            "scenario": "dashboard",
+            "framework": "plain",
+            "count": 25,
+            "rate": 60,
+            "seconds": 5,
+            "runId": "1d80d685-0e6a-4ef0-a58f-64c2057d7e21"
+          },
+          "status": "complete",
+          "scope": "Synthetic React styling comparison; no OpenUI parser, real components or server load",
+          "durationMs": 5108.800000011921,
+          "scheduledChunks": 300,
+          "receivedChunks": 300,
+          "commits": 300,
+          "renderedSequence": 300,
+          "finalContentMatches": true,
+          "updateOpportunityP95Ms": 49.5,
+          "deliveryLagP95Ms": 2.33333333333303,
+          "frameGapP95Ms": 16.799999999999727,
+          "inputOpportunityP95Ms": 28,
+          "inputSamples": 2,
+          "longTaskCount": 0,
+          "longTaskMs": 0,
+          "rulesBefore": 49,
+          "rulesAfter": 49,
+          "sheetsBefore": 3,
+          "sheetsAfter": 3,
+          "heapSamples": [
+            {
+              "atMs": 0,
+              "bytes": 9510619
+            },
+            {
+              "atMs": 1000.9000000357628,
+              "bytes": 8610637
+            },
+            {
+              "atMs": 2001.2000000476837,
+              "bytes": 10212546
+            },
+            {
+              "atMs": 3001.900000035763,
+              "bytes": 8352217
+            },
+            {
+              "atMs": 4002.2000000476837,
+              "bytes": 9451430
+            },
+            {
+              "atMs": 5001.100000023842,
+              "bytes": 8463801
+            }
+          ],
+          "visibility": "visible",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+        }
+      ]
+    },
+    {
+      "test": {
+        "framework": "tailwind3",
+        "count": "100",
+        "rate": "60"
+      },
+      "pass": true,
+      "styleChecks": [
+        {
+          "url": "http://127.0.0.1:4177/performance-fixture.html?count=100&rate=60&seconds=5&framework=tailwind3&scenario=chat&arm=control&runId=91ee9dc0-bc43-4fe9-a6d0-a7a4b82c2870&pair=0",
+          "style": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4177/performance-fixture.html?count=100&rate=60&seconds=5&framework=tailwind3&scenario=chat&arm=generated&runId=e91f415c-6d08-4c0e-8066-459b16afa270&pair=0",
+          "style": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4177/performance-fixture.html?count=100&rate=60&seconds=5&framework=tailwind3&scenario=dashboard&arm=control&runId=506ebcbc-e8f2-41d1-9315-f6e73a5e3d3c&pair=0",
+          "style": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4177/performance-fixture.html?count=100&rate=60&seconds=5&framework=tailwind3&scenario=dashboard&arm=generated&runId=3f4ff9a8-e333-4543-abd2-69e06f114008&pair=0",
+          "style": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px"
+          }
+        }
+      ],
+      "results": [
+        {
+          "config": {
+            "arm": "control",
+            "scenario": "chat",
+            "framework": "tailwind3",
+            "count": 100,
+            "rate": 60,
+            "seconds": 5,
+            "runId": "91ee9dc0-bc43-4fe9-a6d0-a7a4b82c2870"
+          },
+          "status": "complete",
+          "scope": "Synthetic React styling comparison; no OpenUI parser, real components or server load",
+          "durationMs": 5104.099999964237,
+          "scheduledChunks": 300,
+          "receivedChunks": 300,
+          "commits": 300,
+          "renderedSequence": 300,
+          "finalContentMatches": true,
+          "updateOpportunityP95Ms": 44.39999997615814,
+          "deliveryLagP95Ms": 1.3666666547455861,
+          "frameGapP95Ms": 16.799999999999272,
+          "inputOpportunityP95Ms": 21.099999964237213,
+          "inputSamples": 2,
+          "longTaskCount": 0,
+          "longTaskMs": 0,
+          "rulesBefore": 91,
+          "rulesAfter": 91,
+          "sheetsBefore": 3,
+          "sheetsAfter": 3,
+          "heapSamples": [
+            {
+              "atMs": 0,
+              "bytes": 12643089
+            },
+            {
+              "atMs": 1001.2999999523163,
+              "bytes": 9361797
+            },
+            {
+              "atMs": 2001.5,
+              "bytes": 11416940
+            },
+            {
+              "atMs": 3001.2999999523163,
+              "bytes": 16151450
+            },
+            {
+              "atMs": 4001.399999976158,
+              "bytes": 14975074
+            },
+            {
+              "atMs": 5000,
+              "bytes": 14637442
+            }
+          ],
+          "visibility": "visible",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+        },
+        {
+          "config": {
+            "arm": "generated",
+            "scenario": "chat",
+            "framework": "tailwind3",
+            "count": 100,
+            "rate": 60,
+            "seconds": 5,
+            "runId": "e91f415c-6d08-4c0e-8066-459b16afa270"
+          },
+          "status": "complete",
+          "scope": "Synthetic React styling comparison; no OpenUI parser, real components or server load",
+          "durationMs": 5111,
+          "scheduledChunks": 300,
+          "receivedChunks": 300,
+          "commits": 289,
+          "renderedSequence": 300,
+          "finalContentMatches": true,
+          "updateOpportunityP95Ms": 50.19999998807907,
+          "deliveryLagP95Ms": 4.699999988079071,
+          "frameGapP95Ms": 16.799999999999272,
+          "inputOpportunityP95Ms": 28.100000023841858,
+          "inputSamples": 2,
+          "longTaskCount": 0,
+          "longTaskMs": 0,
+          "rulesBefore": 91,
+          "rulesAfter": 91,
+          "sheetsBefore": 3,
+          "sheetsAfter": 3,
+          "heapSamples": [
+            {
+              "atMs": 0,
+              "bytes": 12311425
+            },
+            {
+              "atMs": 1004.3000000119209,
+              "bytes": 15034863
+            },
+            {
+              "atMs": 2003.1000000238419,
+              "bytes": 12581528
+            },
+            {
+              "atMs": 3004.399999976158,
+              "bytes": 12560645
+            },
+            {
+              "atMs": 4002.800000011921,
+              "bytes": 16718160
+            },
+            {
+              "atMs": 5001.399999976158,
+              "bytes": 15681536
+            }
+          ],
+          "visibility": "visible",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+        },
+        {
+          "config": {
+            "arm": "control",
+            "scenario": "dashboard",
+            "framework": "tailwind3",
+            "count": 100,
+            "rate": 60,
+            "seconds": 5,
+            "runId": "506ebcbc-e8f2-41d1-9315-f6e73a5e3d3c"
+          },
+          "status": "complete",
+          "scope": "Synthetic React styling comparison; no OpenUI parser, real components or server load",
+          "durationMs": 5095.900000035763,
+          "scheduledChunks": 300,
+          "receivedChunks": 300,
+          "commits": 257,
+          "renderedSequence": 300,
+          "finalContentMatches": true,
+          "updateOpportunityP95Ms": 38.59999996423721,
+          "deliveryLagP95Ms": 6.533333381017201,
+          "frameGapP95Ms": 16.799999999999272,
+          "inputOpportunityP95Ms": 28,
+          "inputSamples": 2,
+          "longTaskCount": 0,
+          "longTaskMs": 0,
+          "rulesBefore": 91,
+          "rulesAfter": 91,
+          "sheetsBefore": 3,
+          "sheetsAfter": 3,
+          "heapSamples": [
+            {
+              "atMs": 0,
+              "bytes": 13602632
+            },
+            {
+              "atMs": 1004.3000000119209,
+              "bytes": 12197734
+            },
+            {
+              "atMs": 2000.300000011921,
+              "bytes": 13309994
+            },
+            {
+              "atMs": 3005.5,
+              "bytes": 13527555
+            },
+            {
+              "atMs": 4000,
+              "bytes": 13946287
+            },
+            {
+              "atMs": 5001.200000047684,
+              "bytes": 14514667
+            }
+          ],
+          "visibility": "visible",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+        },
+        {
+          "config": {
+            "arm": "generated",
+            "scenario": "dashboard",
+            "framework": "tailwind3",
+            "count": 100,
+            "rate": 60,
+            "seconds": 5,
+            "runId": "3f4ff9a8-e333-4543-abd2-69e06f114008"
+          },
+          "status": "complete",
+          "scope": "Synthetic React styling comparison; no OpenUI parser, real components or server load",
+          "durationMs": 5109.799999952316,
+          "scheduledChunks": 300,
+          "receivedChunks": 300,
+          "commits": 300,
+          "renderedSequence": 300,
+          "finalContentMatches": true,
+          "updateOpportunityP95Ms": 49.39999997615814,
+          "deliveryLagP95Ms": 5.299999952316284,
+          "frameGapP95Ms": 16.799999999999727,
+          "inputOpportunityP95Ms": 22.30000001192093,
+          "inputSamples": 2,
+          "longTaskCount": 0,
+          "longTaskMs": 0,
+          "rulesBefore": 91,
+          "rulesAfter": 91,
+          "sheetsBefore": 3,
+          "sheetsAfter": 3,
+          "heapSamples": [
+            {
+              "atMs": 0,
+              "bytes": 15180116
+            },
+            {
+              "atMs": 1004,
+              "bytes": 17484344
+            },
+            {
+              "atMs": 2003.7999999523163,
+              "bytes": 14467756
+            },
+            {
+              "atMs": 3004.399999976158,
+              "bytes": 16163577
+            },
+            {
+              "atMs": 4005.5,
+              "bytes": 17784845
+            },
+            {
+              "atMs": 5003.899999976158,
+              "bytes": 14606137
+            }
+          ],
+          "visibility": "visible",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+        }
+      ]
+    },
+    {
+      "test": {
+        "framework": "tailwind4",
+        "count": "500",
+        "rate": "120"
+      },
+      "pass": true,
+      "styleChecks": [
+        {
+          "url": "http://127.0.0.1:4177/performance-fixture.html?count=500&rate=120&seconds=5&framework=tailwind4&scenario=chat&arm=control&runId=da81e874-3da7-497c-8ec5-f3be9994b448&pair=0",
+          "style": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4177/performance-fixture.html?count=500&rate=120&seconds=5&framework=tailwind4&scenario=chat&arm=generated&runId=4d67e06d-63aa-4c45-82e3-90eb389a7fca&pair=0",
+          "style": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4177/performance-fixture.html?count=500&rate=120&seconds=5&framework=tailwind4&scenario=dashboard&arm=control&runId=1f7f771c-aae5-406c-9bdc-5056f71fb7d6&pair=0",
+          "style": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4177/performance-fixture.html?count=500&rate=120&seconds=5&framework=tailwind4&scenario=dashboard&arm=generated&runId=2fcfb495-e89d-4232-930b-a72f384344c0&pair=0",
+          "style": {
+            "background": "rgb(51, 71, 176)",
+            "padding": "12px 18px"
+          }
+        }
+      ],
+      "results": [
+        {
+          "config": {
+            "arm": "control",
+            "scenario": "chat",
+            "framework": "tailwind4",
+            "count": 500,
+            "rate": 120,
+            "seconds": 5,
+            "runId": "da81e874-3da7-497c-8ec5-f3be9994b448"
+          },
+          "status": "complete",
+          "scope": "Synthetic React styling comparison; no OpenUI parser, real components or server load",
+          "durationMs": 5103.099999964237,
+          "scheduledChunks": 600,
+          "receivedChunks": 600,
+          "commits": 300,
+          "renderedSequence": 600,
+          "finalContentMatches": true,
+          "updateOpportunityP95Ms": 45.69999998807907,
+          "deliveryLagP95Ms": 5.966666618982799,
+          "frameGapP95Ms": 16.700000000000728,
+          "inputOpportunityP95Ms": 23.399999976158142,
+          "inputSamples": 2,
+          "longTaskCount": 0,
+          "longTaskMs": 0,
+          "rulesBefore": 106,
+          "rulesAfter": 106,
+          "sheetsBefore": 3,
+          "sheetsAfter": 3,
+          "heapSamples": [
+            {
+              "atMs": 0,
+              "bytes": 18180509
+            },
+            {
+              "atMs": 1000,
+              "bytes": 17569082
+            },
+            {
+              "atMs": 2000,
+              "bytes": 19938155
+            },
+            {
+              "atMs": 3000.2999999523163,
+              "bytes": 28466099
+            },
+            {
+              "atMs": 4002.099999964237,
+              "bytes": 25538083
+            },
+            {
+              "atMs": 5000.5,
+              "bytes": 25030051
+            }
+          ],
+          "visibility": "visible",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+        },
+        {
+          "config": {
+            "arm": "generated",
+            "scenario": "chat",
+            "framework": "tailwind4",
+            "count": 500,
+            "rate": 120,
+            "seconds": 5,
+            "runId": "4d67e06d-63aa-4c45-82e3-90eb389a7fca"
+          },
+          "status": "complete",
+          "scope": "Synthetic React styling comparison; no OpenUI parser, real components or server load",
+          "durationMs": 5109.699999988079,
+          "scheduledChunks": 600,
+          "receivedChunks": 600,
+          "commits": 301,
+          "renderedSequence": 600,
+          "finalContentMatches": true,
+          "updateOpportunityP95Ms": 44.39999997615814,
+          "deliveryLagP95Ms": 5.933333357174888,
+          "frameGapP95Ms": 16.799999999999727,
+          "inputOpportunityP95Ms": 25.399999976158142,
+          "inputSamples": 2,
+          "longTaskCount": 0,
+          "longTaskMs": 0,
+          "rulesBefore": 106,
+          "rulesAfter": 106,
+          "sheetsBefore": 3,
+          "sheetsAfter": 3,
+          "heapSamples": [
+            {
+              "atMs": 0,
+              "bytes": 19147176
+            },
+            {
+              "atMs": 1004.6999999880791,
+              "bytes": 24109148
+            },
+            {
+              "atMs": 2003.8999999761581,
+              "bytes": 17788796
+            },
+            {
+              "atMs": 3006.399999976158,
+              "bytes": 31912985
+            },
+            {
+              "atMs": 4004.100000023842,
+              "bytes": 28148165
+            },
+            {
+              "atMs": 5006.399999976158,
+              "bytes": 25419913
+            }
+          ],
+          "visibility": "visible",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+        },
+        {
+          "config": {
+            "arm": "control",
+            "scenario": "dashboard",
+            "framework": "tailwind4",
+            "count": 500,
+            "rate": 120,
+            "seconds": 5,
+            "runId": "1f7f771c-aae5-406c-9bdc-5056f71fb7d6"
+          },
+          "status": "complete",
+          "scope": "Synthetic React styling comparison; no OpenUI parser, real components or server load",
+          "durationMs": 8029.399999976158,
+          "scheduledChunks": 600,
+          "receivedChunks": 600,
+          "commits": 470,
+          "renderedSequence": 600,
+          "finalContentMatches": true,
+          "updateOpportunityP95Ms": 49.5,
+          "deliveryLagP95Ms": 2708.366666654746,
+          "frameGapP95Ms": 16.700000000000728,
+          "inputOpportunityP95Ms": 27,
+          "inputSamples": 2,
+          "longTaskCount": 0,
+          "longTaskMs": 0,
+          "rulesBefore": 106,
+          "rulesAfter": 106,
+          "sheetsBefore": 3,
+          "sheetsAfter": 3,
+          "heapSamples": [
+            {
+              "atMs": 0,
+              "bytes": 21509051
+            },
+            {
+              "atMs": 1430.8999999761581,
+              "bytes": 29726579
+            },
+            {
+              "atMs": 2881.2999999523163,
+              "bytes": 24564375
+            },
+            {
+              "atMs": 4483.199999988079,
+              "bytes": 23366176
+            },
+            {
+              "atMs": 6181.299999952316,
+              "bytes": 28553199
+            },
+            {
+              "atMs": 7934,
+              "bytes": 28340600
+            }
+          ],
+          "visibility": "visible",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+        },
+        {
+          "config": {
+            "arm": "generated",
+            "scenario": "dashboard",
+            "framework": "tailwind4",
+            "count": 500,
+            "rate": 120,
+            "seconds": 5,
+            "runId": "2fcfb495-e89d-4232-930b-a72f384344c0"
+          },
+          "status": "complete",
+          "scope": "Synthetic React styling comparison; no OpenUI parser, real components or server load",
+          "durationMs": 8515.799999952316,
+          "scheduledChunks": 600,
+          "receivedChunks": 600,
+          "commits": 492,
+          "renderedSequence": 600,
+          "finalContentMatches": true,
+          "updateOpportunityP95Ms": 49.80000001192093,
+          "deliveryLagP95Ms": 3245.866666654746,
+          "frameGapP95Ms": 16.700000000000728,
+          "inputOpportunityP95Ms": 30.80000001192093,
+          "inputSamples": 2,
+          "longTaskCount": 0,
+          "longTaskMs": 0,
+          "rulesBefore": 106,
+          "rulesAfter": 106,
+          "sheetsBefore": 3,
+          "sheetsAfter": 3,
+          "heapSamples": [
+            {
+              "atMs": 0,
+              "bytes": 27045719
+            },
+            {
+              "atMs": 1669.2999999523163,
+              "bytes": 28491249
+            },
+            {
+              "atMs": 3353.399999976158,
+              "bytes": 36143830
+            },
+            {
+              "atMs": 5052.599999964237,
+              "bytes": 31599290
+            },
+            {
+              "atMs": 6753.399999976158,
+              "bytes": 35726652
+            },
+            {
+              "atMs": 8421.199999988079,
+              "bytes": 40231498
+            }
+          ],
+          "visibility": "visible",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+        }
+      ]
+    }
+  ],
+  "stopPass": true,
+  "exportPass": true,
+  "errors": []
+}
