@@ -20,6 +20,7 @@ export * from "./components/IconButton";
 export * from "./components/Image";
 export * from "./components/ImageBlock";
 export * from "./components/ImageGallery";
+export * from "./components/InlineHeader";
 export * from "./components/InlineMarkdownRenderer";
 export * from "./components/Input";
 export * from "./components/Label";
