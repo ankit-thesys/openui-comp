@@ -117,6 +117,46 @@ Three constraints found at this baseline shaped the harness:
 No shared config, dependency or lockfile change was required, so nothing needed
 to be proposed on the issue under #19's "propose before expanding scope" rule.
 
+### Why jsdom is available even though react-ui does not declare it
+
+Worth spelling out, because the obvious check says it should not be:
+
+```console
+$ cd packages/react-ui && node -e "require.resolve('jsdom')"
+MODULE_NOT_FOUND
+```
+
+react-ui genuinely does not declare `jsdom` (nine sibling packages do, and it is
+in the `pnpm-workspace.yaml` catalog). But **vitest does not load its environment
+from the package `--dir` points at — it loads it from its own resolution
+context.** pnpm installs one shared vitest instance whose peer set already
+includes jsdom, which its store path records verbatim:
+
+```
+node_modules/.pnpm/vitest@4.1.10_..._jsdom@26.1.0_vite@6.4.3_.../node_modules/vitest
+                                    ^^^^^^^^^^^^
+```
+
+So `--dir packages/react-ui` supplies the toolchain and the component
+dependencies, while the DOM environment comes from vitest itself.
+
+This was verified empirically before anything was built on it, and the suite
+asserts it rather than trusting it: `setup/vitest.setup.ts` throws if `document`
+is missing, and `tests/_harness.probe.test.tsx` checks the DOM, the
+single-React-instance aliasing, the React 19 `act` wiring, and that a `userEvent`
+click reaches React state. A real DOM is load-bearing for most of the 270
+assertions — focus order, `toHaveFocus`, key handling and portalled popup content
+cannot pass without one.
+
+**If this ever stops holding** (say a future install drops jsdom from vitest's
+peer set) the suite fails loudly on that setup-file error rather than silently
+degrading. The fallback is to run the same config through a package that declares
+jsdom directly — `pnpm --dir packages/react-headless exec vitest run --config
+../../validation/friend-controls-baseline/vitest.config.ts` — which needs no
+change to this directory, because the config resolves React, `@storybook/test`
+and the react-ui sources through `packages/react-ui` by absolute path regardless
+of which package launches it.
+
 ## Results
 
 Full suite, run at the baseline commit:
