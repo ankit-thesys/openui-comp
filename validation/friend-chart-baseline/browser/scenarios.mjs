@@ -91,7 +91,8 @@ const eq = (a, b) => JSON.stringify(a) === JSON.stringify(b);
  */
 export async function legendToggle(b, family, control) {
   const before = await b.run(SNAPSHOT, family);
-  if (!before) return { family, scenario: "legend-toggle", status: "failed", detail: "family card not found" };
+  if (!before)
+    return { family, scenario: "legend-toggle", status: "failed", detail: "family card not found" };
 
   const box = await b.run(BOX_OF, [family, control]);
   if (!box) {
@@ -143,7 +144,8 @@ export async function legendToggle(b, family, control) {
  */
 export async function legendToggleUnsupported(b, family, control, citation) {
   const before = await b.run(SNAPSHOT, family);
-  if (!before) return { family, scenario: "legend-toggle", status: "failed", detail: "family card not found" };
+  if (!before)
+    return { family, scenario: "legend-toggle", status: "failed", detail: "family card not found" };
 
   const box = await b.run(BOX_OF, [family, control]);
   if (!box) {
@@ -182,11 +184,22 @@ export async function legendToggleUnsupported(b, family, control, citation) {
  */
 export async function hoverHighlight(b, family, target) {
   const before = await b.run(SNAPSHOT, family);
-  if (!before) return { family, scenario: "hover-highlight", status: "failed", detail: "family card not found" };
+  if (!before)
+    return {
+      family,
+      scenario: "hover-highlight",
+      status: "failed",
+      detail: "family card not found",
+    };
 
   const box = await b.run(BOX_OF, [family, target]);
   if (!box) {
-    return { family, scenario: "hover-highlight", status: "failed", detail: `no element matched ${target}` };
+    return {
+      family,
+      scenario: "hover-highlight",
+      status: "failed",
+      detail: `no element matched ${target}`,
+    };
   }
 
   await b.mouseMove(box.x, box.y);
@@ -242,6 +255,8 @@ export const CONTAINER_GEOMETRY = `(family) => {
   let right = -Infinity;
   let marks = 0;
   for (const m of slot.querySelectorAll('path,rect,circle,polygon,div.openui-segmented-bar-segment')) {
+    if (m.closest('defs,button,.openui-chart-legend-item,.openui-stacked-legend__item,.openui-calendar-heatmap-legend')) continue;
+    if (/grid|axis|tick|crosshair|hover-highlight|active-dot|pct-pill/.test(m.getAttribute('class') || '')) continue;
     const r = m.getBoundingClientRect();
     if (r.width === 0 && r.height === 0) continue;
     marks++;

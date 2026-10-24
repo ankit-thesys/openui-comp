@@ -48,7 +48,7 @@ toolchain via a config that lives here. **No shared config, root
 ## Commands
 
 ```bash
-# Deterministic assertions — 176 tests, 7 files
+# Deterministic assertions — 175 tests, 7 files
 pnpm --dir packages/react-ui exec vitest run \
   --config ../../validation/friend-chart-baseline/vitest.config.ts
 
@@ -59,7 +59,7 @@ pnpm --dir packages/react-ui exec vite \
 
 ## Results
 
-**176 assertions pass, 0 fail**, across:
+**175 tests pass, 0 fail**, across:
 
 | File | Tests | Covers |
 |---|---|---|
@@ -69,7 +69,7 @@ pnpm --dir packages/react-ui exec vite \
 | `tests/geometry.baseline.test.tsx` | 5 | Pie arc angles, segment shares, scatter spacing, bar counts, y-scale |
 | `tests/theme-responsive.baseline.test.tsx` | 6 | Theme markup identity, custom palette, size responsiveness |
 | `tests/legend.baseline.test.tsx` | 24 | Legend contents, toggle affordance, axis-label coupling, a11y surface |
-| `tests/size-props.baseline.test.tsx` | 38 | Explicit size-prop responsiveness across all 19 families |
+| `tests/size-props.baseline.test.tsx` | 37 | Explicit size-prop responsiveness across all 19 families |
 
 ### Browser runner
 
@@ -78,7 +78,7 @@ node validation/friend-chart-baseline/browser/run.mjs
 ```
 
 One command: spawns the fixture server, launches headless Chrome over the
-DevTools Protocol, drives it with **real** mouse and keyboard input, asserts,
+DevTools Protocol, drives it with **real** mouse input, asserts,
 writes `evidence/browser/browser-run.json` plus 19 dark reference images, and
 exits non-zero with an actionable summary on any failure or missing scenario.
 
@@ -153,8 +153,7 @@ animation durations. No product source was touched.
 diffs them automatically, so they will not catch a subtle visual regression on
 their own. The deterministic, diffable evidence is the recorded markup under
 `evidence/ssr/` and the measurements under `evidence/browser/` — those are what
-a reviewer should compare mechanically. Dark-mode images cover 5 of 19 families;
-any other is one URL away.
+a reviewer should compare mechanically. Dark-mode reference images cover all 19 families.
 
 ## Typechecking
 
@@ -189,6 +188,15 @@ modules on demand, so a fixture entry nobody navigates to is never built, and
 serving the fixture is not evidence that unvisited entries even parse. Neither
 tool typechecks — both strip types. Static correctness comes only from the `tsc`
 command above.
+
+## Review verification
+
+The follow-up review runs on Node v22.22.2 and Google Chrome 156.0.8078.47.
+The container runner now resizes the same mounted chart elements from 360x300
+through 900x760; a DOM identity assertion rejects remounts. Measurements exclude
+SVG definitions, grids, axes, legend icons and controls. MiniBarChart also runs
+at 80px to assert that fewer bars fit. Its SSR check pins the invariant bar span
+while asserting that the canvas and right alignment follow the size prop.
 
 ## Determinism
 
