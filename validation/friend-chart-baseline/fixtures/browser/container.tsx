@@ -23,7 +23,7 @@
  *
  * URL: ?width=<px>&theme=light|dark
  */
-import { StrictMode } from "react";
+import { StrictMode, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
   AreaChart,
@@ -46,6 +46,7 @@ import {
   SegmentedBar,
   SingleStackedBar,
 } from "../../../../packages/react-ui/src/components/Charts";
+import "../../../../packages/react-ui/src/components/index.scss";
 import { ThemeProvider } from "../../../../packages/react-ui/src/components/ThemeProvider";
 import {
   CALENDAR_RANGE,
@@ -55,7 +56,6 @@ import {
   SCATTER_DATASETS,
   SHARE_ROWS,
 } from "../datasets";
-import "../../../../packages/react-ui/src/components/index.scss";
 
 const params = new URLSearchParams(window.location.search);
 const theme = params.get("theme") === "dark" ? "dark" : "light";
@@ -87,10 +87,8 @@ document.body.style.fontFamily = "system-ui, sans-serif";
 document.body.style.background = "var(--openui-background, #ffffff)";
 document.body.style.color = "var(--openui-foreground, #000000)";
 
-const H = height;
-
 /** Height only — width is whatever the container gives. */
-const CASES: Array<[string, React.ReactNode]> = [
+const cases = (H: number): Array<[string, React.ReactNode]> => [
   ["AreaChart", <AreaChart data={rows} categoryKey="month" height={H} />],
   ["AreaChartCondensed", <AreaChartCondensed data={rows} categoryKey="month" height={H} />],
   ["LineChart", <LineChart data={rows} categoryKey="month" height={H} />],
@@ -118,24 +116,47 @@ const CASES: Array<[string, React.ReactNode]> = [
   // all-19-accounted-for check ignores them.
   [
     "PieChart__defaultLegend",
-    <PieChart data={share} categoryKey="browser" dataKey="visitors" legendVariant="default" height={H} />,
+    <PieChart
+      data={share}
+      categoryKey="browser"
+      dataKey="visitors"
+      legendVariant="default"
+      height={H}
+    />,
   ],
   [
     "RadialChart__defaultLegend",
-    <RadialChart data={share} categoryKey="browser" dataKey="visitors" legendVariant="default" height={H} />,
+    <RadialChart
+      data={share}
+      categoryKey="browser"
+      dataKey="visitors"
+      legendVariant="default"
+      height={H}
+    />,
   ],
 ];
 
 function App() {
+  const [dimensions, setDimensions] = useState({ width, height });
+  useEffect(() => {
+    // Harness-only signal: update the same mounted charts, so ResizeObserver
+    // must react to a changed box rather than measuring a newly mounted chart.
+    const resize = (event: Event) => {
+      const next = (event as CustomEvent<{ width: number; height: number }>).detail;
+      setDimensions(next);
+    };
+    window.addEventListener("chart-baseline-resize", resize);
+    return () => window.removeEventListener("chart-baseline-resize", resize);
+  }, []);
   return (
     <ThemeProvider mode={theme}>
       <main
         data-container-ready="true"
-        data-container-width={width}
-        data-container-height={height}
+        data-container-width={dimensions.width}
+        data-container-height={dimensions.height}
         style={{ padding: 8 }}
       >
-        {CASES.map(([name, node]) => (
+        {cases(dimensions.height).map(([name, node]) => (
           <section key={name} data-family={name} style={{ marginBottom: 16 }}>
             <h2 style={{ font: "600 12px system-ui", margin: "0 0 4px" }}>{name}</h2>
             {/* The box under test. Width is the independent variable; the
@@ -143,10 +164,10 @@ function App() {
             <div
               data-container
               style={{
-                width,
+                width: dimensions.width,
                 // The families with no height prop (mini charts, segmented
                 // bars) take their height from this box instead.
-                height,
+                height: dimensions.height,
                 outline: "1px solid rgba(128,128,128,0.5)",
                 overflow: "visible",
               }}

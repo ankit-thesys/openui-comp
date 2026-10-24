@@ -1,9 +1,9 @@
 {
-  "_about": "Raw results from browser/run.mjs. Captured with real CDP mouse/keyboard input (event.isTrusted === true), not synthetic MouseEvent dispatch.",
+  "_about": "Raw results from browser/run.mjs. Captured with real CDP mouse input (event.isTrusted === true), not synthetic MouseEvent dispatch.",
   "baselineSha": "9d73d17d2bbac565672a85e78f6eb7740cb0d9ca",
   "generatedBy": "validation/friend-chart-baseline/browser/run.mjs",
   "command": "node validation/friend-chart-baseline/browser/run.mjs",
-  "node": "v24.17.0",
+  "node": "v22.22.2",
   "chrome": "Google Chrome 156.0.8078.47",
   "viewport": {
     "width": 1280,
@@ -14,7 +14,7 @@
     "container",
     "dark"
   ],
-  "durationMs": 21388,
+  "durationMs": 23431,
   "counts": {
     "verified": 40,
     "unsupported": 5
@@ -428,21 +428,22 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 432,
-        "drawnWidth": 400,
+        "drawnWidth": 360,
         "drawnRight": 434,
         "overflowRightPx": 66,
-        "markCount": 14
+        "markCount": 6
       },
       "large": {
         "containerWidth": 900,
         "widestSvgWidth": 870,
-        "drawnWidth": 838,
+        "drawnWidth": 798,
         "drawnRight": 872,
         "overflowRightPx": -36,
-        "markCount": 12
+        "markCount": 6
       },
       "overflowAtSmall": 66,
       "overflowAtLarge": -36,
@@ -462,21 +463,22 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 360,
-        "drawnWidth": 334,
+        "drawnWidth": 330,
         "drawnRight": 368,
         "overflowRightPx": 0,
-        "markCount": 13
+        "markCount": 7
       },
       "large": {
         "containerWidth": 900,
         "widestSvgWidth": 900,
-        "drawnWidth": 874,
+        "drawnWidth": 870,
         "drawnRight": 908,
         "overflowRightPx": 0,
-        "markCount": 13
+        "markCount": 7
       },
       "overflowAtSmall": 0,
       "overflowAtLarge": 0,
@@ -496,21 +498,22 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 432,
-        "drawnWidth": 400,
+        "drawnWidth": 360,
         "drawnRight": 434,
         "overflowRightPx": 66,
-        "markCount": 11
+        "markCount": 3
       },
       "large": {
         "containerWidth": 900,
         "widestSvgWidth": 870,
-        "drawnWidth": 838,
+        "drawnWidth": 798,
         "drawnRight": 872,
         "overflowRightPx": -36,
-        "markCount": 9
+        "markCount": 3
       },
       "overflowAtSmall": 66,
       "overflowAtLarge": -36,
@@ -530,21 +533,22 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 360,
-        "drawnWidth": 334,
+        "drawnWidth": 330,
         "drawnRight": 368,
         "overflowRightPx": 0,
-        "markCount": 10
+        "markCount": 4
       },
       "large": {
         "containerWidth": 900,
         "widestSvgWidth": 900,
-        "drawnWidth": 874,
+        "drawnWidth": 870,
         "drawnRight": 908,
         "overflowRightPx": 0,
-        "markCount": 10
+        "markCount": 4
       },
       "overflowAtSmall": 0,
       "overflowAtLarge": 0,
@@ -564,21 +568,22 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 432,
-        "drawnWidth": 423,
+        "drawnWidth": 414,
         "drawnRight": 461,
         "overflowRightPx": 93,
-        "markCount": 21
+        "markCount": 18
       },
       "large": {
         "containerWidth": 900,
         "widestSvgWidth": 870,
-        "drawnWidth": 844,
+        "drawnWidth": 817,
         "drawnRight": 882,
         "overflowRightPx": -26,
-        "markCount": 19
+        "markCount": 18
       },
       "overflowAtSmall": 93,
       "overflowAtLarge": -26,
@@ -598,13 +603,14 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 360,
         "drawnWidth": 330,
         "drawnRight": 368,
         "overflowRightPx": 0,
-        "markCount": 20
+        "markCount": 19
       },
       "large": {
         "containerWidth": 900,
@@ -612,7 +618,7 @@
         "drawnWidth": 870,
         "drawnRight": 908,
         "overflowRightPx": 0,
-        "markCount": 20
+        "markCount": 19
       },
       "overflowAtSmall": 0,
       "overflowAtLarge": 0,
@@ -632,24 +638,25 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 320,
-        "drawnWidth": 346,
-        "drawnRight": 354,
-        "overflowRightPx": -14,
-        "markCount": 21
+        "drawnWidth": 275,
+        "drawnRight": 285,
+        "overflowRightPx": -83,
+        "markCount": 18
       },
       "large": {
         "containerWidth": 900,
         "widestSvgWidth": 900,
-        "drawnWidth": 900,
-        "drawnRight": 908,
-        "overflowRightPx": 0,
-        "markCount": 19
+        "drawnWidth": 781,
+        "drawnRight": 791,
+        "overflowRightPx": -117,
+        "markCount": 18
       },
-      "overflowAtSmall": -14,
-      "overflowAtLarge": 0,
+      "overflowAtSmall": -83,
+      "overflowAtLarge": -117,
       "kind": "width-responsive",
       "status": "verified"
     },
@@ -666,6 +673,7 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 300,
@@ -722,6 +730,7 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 300,
@@ -778,21 +787,22 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 285,
-        "drawnWidth": 173,
+        "drawnWidth": 147,
         "drawnRight": 274,
         "overflowRightPx": -94,
-        "markCount": 17
+        "markCount": 6
       },
       "large": {
         "containerWidth": 900,
         "widestSvgWidth": 500,
-        "drawnWidth": 303,
+        "drawnWidth": 258,
         "drawnRight": 610,
         "overflowRightPx": -298,
-        "markCount": 17
+        "markCount": 6
       },
       "overflowAtSmall": -94,
       "overflowAtLarge": -298,
@@ -812,13 +822,14 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 360,
         "drawnWidth": 360,
         "drawnRight": 368,
         "overflowRightPx": 0,
-        "markCount": 20
+        "markCount": 16
       },
       "large": {
         "containerWidth": 900,
@@ -826,7 +837,7 @@
         "drawnWidth": 900,
         "drawnRight": 908,
         "overflowRightPx": 0,
-        "markCount": 20
+        "markCount": 16
       },
       "overflowAtSmall": 0,
       "overflowAtLarge": 0,
@@ -846,6 +857,7 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 360,
@@ -880,6 +892,7 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 360,
@@ -914,13 +927,14 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 12,
         "drawnWidth": 352,
         "drawnRight": 364,
         "overflowRightPx": -4,
-        "markCount": 5
+        "markCount": 4
       },
       "large": {
         "containerWidth": 900,
@@ -948,13 +962,14 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 12,
         "drawnWidth": 352,
         "drawnRight": 364,
         "overflowRightPx": -4,
-        "markCount": 5
+        "markCount": 4
       },
       "large": {
         "containerWidth": 900,
@@ -982,6 +997,7 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 360,
@@ -1016,6 +1032,7 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 360,
@@ -1050,6 +1067,7 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 360,
@@ -1078,6 +1096,14 @@
         "large": 8
       },
       "fewerWhenNarrow": true,
+      "constrained": {
+        "containerWidth": 80,
+        "widestSvgWidth": 100,
+        "drawnWidth": 78,
+        "drawnRight": 97,
+        "overflowRightPx": 9,
+        "markCount": 5
+      },
       "detail": "svg follows the container (360 -> 900) but the bars are a fixed 8px at 10px spacing, so drawn width stays 132px"
     },
     {
@@ -1093,6 +1119,7 @@
           "height": 760
         }
       ],
+      "liveResize": true,
       "small": {
         "containerWidth": 360,
         "widestSvgWidth": 360,
