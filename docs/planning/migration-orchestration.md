@@ -1,3 +1,17 @@
+# Browser handoff — Worker2 window released, 2026-10-25
+
+Worker1 has finished its measured ScrollableTable probe and is doing source-only markdown work. **Worker2 may run the prepared foundation/media matrix now** against this frozen normal npm consumer. Do not point it at Worker1's changing dist or repack its artifact.
+
+- Consumer: `/private/tmp/core-source-media-npm-consumer` (actual npm-installed directory, package-lock.json present).
+- Exact tarball: `/private/tmp/core-source-media-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`,353244 bytes, SHA256 `eefb647a4128f0b8754cb906fbccd6d0aecb41ab526d61494d32929412d95f3f`.
+- CORE_ARTIFACT_REVISION: `680118396504e39cff1534c9de191aac38832f02` (Table/source/media/CodeBlock production; Markdown not included).
+- Normal npm focused consumer tests:17/17 passed; frozen install/logs in `/private/tmp/core-source-media-artifact`.
+- CORE_BROWSER_TOOLS: `/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core`.
+- CORE_SASS_TOOLS: `/private/tmp/openui-controls2-tools`; CORE_HOST_STYLES: `/private/tmp/core-forms-host`.
+- CORE_PLAYWRIGHT: `/private/tmp/claude-501/-Users-ankitdas-thesys-composition/f7cd0fa2-b747-4784-9f8b-62c79464ba26/scratchpad/pr1744/node_modules/playwright/index.mjs`.
+
+Browser harness commits5ff35640a/8a9e4d3fa/06bc3f11a integrated as532753c85/3cb260662/ef0d48b9f. No matrix pass is claimed yet. Worker1 will not run Chrome until Worker2 releases the window back. Worker2 must preserve first failures and report any product mismatch without silent baseline repairs or runtime patches.
+
 # Active slice #12 — 2026-10-25
 
 Parent draft PR #33 is GREEN at217a662d4: build/package CI passed (run40142522614), changeset passed (run40142522609). The correction from21819f19d is diagnostic formatting/evidence only; no product behavior or measured browser assertions changed. Slice12 branch `codex/react-ui-core-text-media` starts from corrected head217a662d4, keeping slice12 off PR33.
