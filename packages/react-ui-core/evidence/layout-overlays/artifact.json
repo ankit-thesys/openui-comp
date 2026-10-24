@@ -857,5 +857,11 @@
     "packages/react-ui-core/dist/hooks/useMultipleRefs.cjs": "1e66726a7651abc504817a9b5cb0c92a350a68d475df784e6a0ca00549b67ebd",
     "packages/react-ui-core/dist/hooks/useMultipleRefs.mjs.map": "a3c931b0945fe8055c80052701630359cf4e966a73a55c4f4a347394b5dc34da"
   },
-  "gooberResolvedEntrySha256": "0681e36d9d08a14cc2ebd138c0ec01c9141db46ce37d8ea72d75075caaec1176"
+  "gooberResolvedEntrySha256": "0681e36d9d08a14cc2ebd138c0ec01c9141db46ce37d8ea72d75075caaec1176",
+  "postValidationFormatting": {
+    "revision": "72545980ed6da1d9cc7e49310204e9470ed02721",
+    "runnerSha256": "52fc87693935f8f187a60aaa84690c67e246a286db9772507d3c94b3deb3ad9f",
+    "formatCheckLogSha256": "0d1fb572fec985cffb7801f1dbe6de766eb547ed799582964f52af93ae11cee8",
+    "change": "Whitespace-only line wrapping in failure diagnostics; measured runner/source hashes above remain the exact executed135da0d8f evidence. Product source and tarball unchanged."
+  }
 }
