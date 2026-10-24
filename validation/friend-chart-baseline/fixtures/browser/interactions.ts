@@ -275,7 +275,7 @@ async function run(): Promise<ProbeReport> {
   const hover: HoverResult[] = [];
   const legend: LegendToggleResult[] = [];
   for (const card of document.querySelectorAll<HTMLElement>("[data-family]")) {
-    const family = card.dataset.family!;
+    const family = card.dataset["family"]!;
     const slot = card.querySelector("[data-chart-slot]")!;
     // Bring the card into the viewport: hit-testing is viewport-relative, and
     // a real pointer can only hover what is on screen.
@@ -286,7 +286,8 @@ async function run(): Promise<ProbeReport> {
     if (l) legend.push(l);
   }
   return {
-    theme: document.querySelector<HTMLElement>("[data-theme-mode]")?.dataset.themeMode ?? "unknown",
+    theme:
+      document.querySelector<HTMLElement>("[data-theme-mode]")?.dataset["themeMode"] ?? "unknown",
     viewport: { width: window.innerWidth, height: window.innerHeight },
     hover,
     legend,

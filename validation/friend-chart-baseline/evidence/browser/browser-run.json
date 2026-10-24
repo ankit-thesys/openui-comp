@@ -1,0 +1,1289 @@
+{
+  "_about": "Raw results from browser/run.mjs. Captured with real CDP mouse/keyboard input (event.isTrusted === true), not synthetic MouseEvent dispatch.",
+  "baselineSha": "9d73d17d2bbac565672a85e78f6eb7740cb0d9ca",
+  "generatedBy": "validation/friend-chart-baseline/browser/run.mjs",
+  "command": "node validation/friend-chart-baseline/browser/run.mjs",
+  "node": "v24.17.0",
+  "chrome": "Google Chrome 156.0.8078.47",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "groupsRun": [
+    "legend",
+    "container",
+    "dark"
+  ],
+  "durationMs": 21388,
+  "counts": {
+    "verified": 40,
+    "unsupported": 5
+  },
+  "missingScenarios": [],
+  "screenshotsAreReferenceOnly": true,
+  "results": [
+    {
+      "family": null,
+      "scenario": "trusted-input",
+      "status": "verified",
+      "isTrusted": true,
+      "detail": "Input.dispatchMouseEvent produced event.isTrusted === true"
+    },
+    {
+      "family": "PieChart",
+      "scenario": "legend-toggle",
+      "status": "verified",
+      "control": ".openui-stacked-legend__item",
+      "clickedAt": {
+        "x": 334,
+        "y": 207
+      },
+      "controlText": "Chrome40.0%",
+      "changedOnToggle": true,
+      "restoredExactly": true,
+      "before": {
+        "stackedLegendItems": 4,
+        "defaultLegendItems": 0,
+        "visibleFilledPaths": 4,
+        "seriesMarks": 8,
+        "stackedItemOpacity": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "defaultItemOpacity": [],
+        "segmentWidths": [],
+        "segmentOpacity": []
+      },
+      "after": {
+        "stackedLegendItems": 4,
+        "defaultLegendItems": 0,
+        "visibleFilledPaths": 3,
+        "seriesMarks": 6,
+        "stackedItemOpacity": [
+          "0.3",
+          "1",
+          "1",
+          "1"
+        ],
+        "defaultItemOpacity": [],
+        "segmentWidths": [],
+        "segmentOpacity": []
+      },
+      "restored": {
+        "stackedLegendItems": 4,
+        "defaultLegendItems": 0,
+        "visibleFilledPaths": 4,
+        "seriesMarks": 8,
+        "stackedItemOpacity": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "defaultItemOpacity": [],
+        "segmentWidths": [],
+        "segmentOpacity": []
+      }
+    },
+    {
+      "family": "RadialChart",
+      "scenario": "legend-toggle",
+      "status": "verified",
+      "control": ".openui-stacked-legend__item",
+      "clickedAt": {
+        "x": 776,
+        "y": 207
+      },
+      "controlText": "Chrome40.0%",
+      "changedOnToggle": true,
+      "restoredExactly": true,
+      "before": {
+        "stackedLegendItems": 4,
+        "defaultLegendItems": 0,
+        "visibleFilledPaths": 4,
+        "seriesMarks": 4,
+        "stackedItemOpacity": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "defaultItemOpacity": [],
+        "segmentWidths": [],
+        "segmentOpacity": []
+      },
+      "after": {
+        "stackedLegendItems": 4,
+        "defaultLegendItems": 0,
+        "visibleFilledPaths": 3,
+        "seriesMarks": 3,
+        "stackedItemOpacity": [
+          "0.3",
+          "1",
+          "1",
+          "1"
+        ],
+        "defaultItemOpacity": [],
+        "segmentWidths": [],
+        "segmentOpacity": []
+      },
+      "restored": {
+        "stackedLegendItems": 4,
+        "defaultLegendItems": 0,
+        "visibleFilledPaths": 4,
+        "seriesMarks": 4,
+        "stackedItemOpacity": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "defaultItemOpacity": [],
+        "segmentWidths": [],
+        "segmentOpacity": []
+      }
+    },
+    {
+      "family": "SegmentedBar",
+      "scenario": "legend-toggle",
+      "status": "unsupported",
+      "control": ".openui-chart-legend-item",
+      "clickedAt": {
+        "x": 961,
+        "y": 115
+      },
+      "controlText": "Chrome40.0%",
+      "citation": "packages/react-ui/src/components/Charts/SegmentedBar/SegmentedBar.tsx:28 — \"no legend visibility toggle (openui only hover-highlights)\". DefaultLegend is rendered without onItemClick/hiddenSeries (0 occurrences in that file), so no toggle handler exists to fire.",
+      "before": {
+        "stackedLegendItems": 0,
+        "defaultLegendItems": 1,
+        "visibleFilledPaths": 0,
+        "seriesMarks": 1,
+        "stackedItemOpacity": [],
+        "defaultItemOpacity": [
+          "1"
+        ],
+        "segmentWidths": [
+          "40%",
+          "30%",
+          "20%",
+          "10%"
+        ],
+        "segmentOpacity": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      "after": {
+        "stackedLegendItems": 0,
+        "defaultLegendItems": 1,
+        "visibleFilledPaths": 0,
+        "seriesMarks": 1,
+        "stackedItemOpacity": [],
+        "defaultItemOpacity": [
+          "1"
+        ],
+        "segmentWidths": [
+          "40%",
+          "30%",
+          "20%",
+          "10%"
+        ],
+        "segmentOpacity": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      "detail": "clicking a real legend row changes nothing — matches the source comment"
+    },
+    {
+      "family": "SegmentedBar",
+      "scenario": "hover-highlight",
+      "status": "verified",
+      "target": ".openui-segmented-bar-segment",
+      "hoveredAt": {
+        "x": 948,
+        "y": 65
+      },
+      "highlightedOnHover": true,
+      "restoredOnLeave": true,
+      "before": {
+        "stackedLegendItems": 0,
+        "defaultLegendItems": 1,
+        "visibleFilledPaths": 0,
+        "seriesMarks": 1,
+        "stackedItemOpacity": [],
+        "defaultItemOpacity": [
+          "1"
+        ],
+        "segmentWidths": [
+          "40%",
+          "30%",
+          "20%",
+          "10%"
+        ],
+        "segmentOpacity": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      "during": {
+        "stackedLegendItems": 0,
+        "defaultLegendItems": 1,
+        "visibleFilledPaths": 0,
+        "seriesMarks": 1,
+        "stackedItemOpacity": [],
+        "defaultItemOpacity": [
+          "1"
+        ],
+        "segmentWidths": [
+          "40%",
+          "30%",
+          "20%",
+          "10%"
+        ],
+        "segmentOpacity": [
+          "1",
+          "0.5",
+          "0.5",
+          "0.5"
+        ]
+      },
+      "after": {
+        "stackedLegendItems": 0,
+        "defaultLegendItems": 1,
+        "visibleFilledPaths": 0,
+        "seriesMarks": 1,
+        "stackedItemOpacity": [],
+        "defaultItemOpacity": [
+          "1"
+        ],
+        "segmentWidths": [
+          "40%",
+          "30%",
+          "20%",
+          "10%"
+        ],
+        "segmentOpacity": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ]
+      }
+    },
+    {
+      "family": "SingleStackedBar",
+      "scenario": "legend-toggle",
+      "status": "unsupported",
+      "control": ".openui-chart-legend-item",
+      "clickedAt": {
+        "x": 77,
+        "y": 583
+      },
+      "controlText": "Chrome40.0%",
+      "citation": "Same component as SegmentedBar (SegmentedBar/SingleStackedBar.tsx wraps it); see SegmentedBar.tsx:28.",
+      "before": {
+        "stackedLegendItems": 0,
+        "defaultLegendItems": 1,
+        "visibleFilledPaths": 0,
+        "seriesMarks": 1,
+        "stackedItemOpacity": [],
+        "defaultItemOpacity": [
+          "1"
+        ],
+        "segmentWidths": [
+          "40%",
+          "30%",
+          "20%",
+          "10%"
+        ],
+        "segmentOpacity": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      "after": {
+        "stackedLegendItems": 0,
+        "defaultLegendItems": 1,
+        "visibleFilledPaths": 0,
+        "seriesMarks": 1,
+        "stackedItemOpacity": [],
+        "defaultItemOpacity": [
+          "1"
+        ],
+        "segmentWidths": [
+          "40%",
+          "30%",
+          "20%",
+          "10%"
+        ],
+        "segmentOpacity": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      "detail": "clicking a real legend row changes nothing — matches the source comment"
+    },
+    {
+      "family": "SingleStackedBar",
+      "scenario": "hover-highlight",
+      "status": "verified",
+      "target": ".openui-segmented-bar-segment",
+      "hoveredAt": {
+        "x": 64,
+        "y": 533
+      },
+      "highlightedOnHover": true,
+      "restoredOnLeave": true,
+      "before": {
+        "stackedLegendItems": 0,
+        "defaultLegendItems": 1,
+        "visibleFilledPaths": 0,
+        "seriesMarks": 1,
+        "stackedItemOpacity": [],
+        "defaultItemOpacity": [
+          "1"
+        ],
+        "segmentWidths": [
+          "40%",
+          "30%",
+          "20%",
+          "10%"
+        ],
+        "segmentOpacity": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      "during": {
+        "stackedLegendItems": 0,
+        "defaultLegendItems": 1,
+        "visibleFilledPaths": 0,
+        "seriesMarks": 1,
+        "stackedItemOpacity": [],
+        "defaultItemOpacity": [
+          "1"
+        ],
+        "segmentWidths": [
+          "40%",
+          "30%",
+          "20%",
+          "10%"
+        ],
+        "segmentOpacity": [
+          "1",
+          "0.5",
+          "0.5",
+          "0.5"
+        ]
+      },
+      "after": {
+        "stackedLegendItems": 0,
+        "defaultLegendItems": 1,
+        "visibleFilledPaths": 0,
+        "seriesMarks": 1,
+        "stackedItemOpacity": [],
+        "defaultItemOpacity": [
+          "1"
+        ],
+        "segmentWidths": [
+          "40%",
+          "30%",
+          "20%",
+          "10%"
+        ],
+        "segmentOpacity": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ]
+      }
+    },
+    {
+      "family": "AreaChart",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 432,
+        "drawnWidth": 400,
+        "drawnRight": 434,
+        "overflowRightPx": 66,
+        "markCount": 14
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 870,
+        "drawnWidth": 838,
+        "drawnRight": 872,
+        "overflowRightPx": -36,
+        "markCount": 12
+      },
+      "overflowAtSmall": 66,
+      "overflowAtLarge": -36,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "AreaChartCondensed",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 360,
+        "drawnWidth": 334,
+        "drawnRight": 368,
+        "overflowRightPx": 0,
+        "markCount": 13
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 900,
+        "drawnWidth": 874,
+        "drawnRight": 908,
+        "overflowRightPx": 0,
+        "markCount": 13
+      },
+      "overflowAtSmall": 0,
+      "overflowAtLarge": 0,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "LineChart",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 432,
+        "drawnWidth": 400,
+        "drawnRight": 434,
+        "overflowRightPx": 66,
+        "markCount": 11
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 870,
+        "drawnWidth": 838,
+        "drawnRight": 872,
+        "overflowRightPx": -36,
+        "markCount": 9
+      },
+      "overflowAtSmall": 66,
+      "overflowAtLarge": -36,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "LineChartCondensed",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 360,
+        "drawnWidth": 334,
+        "drawnRight": 368,
+        "overflowRightPx": 0,
+        "markCount": 10
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 900,
+        "drawnWidth": 874,
+        "drawnRight": 908,
+        "overflowRightPx": 0,
+        "markCount": 10
+      },
+      "overflowAtSmall": 0,
+      "overflowAtLarge": 0,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "BarChart",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 432,
+        "drawnWidth": 423,
+        "drawnRight": 461,
+        "overflowRightPx": 93,
+        "markCount": 21
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 870,
+        "drawnWidth": 844,
+        "drawnRight": 882,
+        "overflowRightPx": -26,
+        "markCount": 19
+      },
+      "overflowAtSmall": 93,
+      "overflowAtLarge": -26,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "BarChartCondensed",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 360,
+        "drawnWidth": 330,
+        "drawnRight": 368,
+        "overflowRightPx": 0,
+        "markCount": 20
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 900,
+        "drawnWidth": 870,
+        "drawnRight": 908,
+        "overflowRightPx": 0,
+        "markCount": 20
+      },
+      "overflowAtSmall": 0,
+      "overflowAtLarge": 0,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "HorizontalBarChart",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 320,
+        "drawnWidth": 346,
+        "drawnRight": 354,
+        "overflowRightPx": -14,
+        "markCount": 21
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 900,
+        "drawnWidth": 900,
+        "drawnRight": 908,
+        "overflowRightPx": 0,
+        "markCount": 19
+      },
+      "overflowAtSmall": -14,
+      "overflowAtLarge": 0,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "PieChart",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 300,
+        "drawnWidth": 270,
+        "drawnRight": 323,
+        "overflowRightPx": -45,
+        "markCount": 8
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 300,
+        "drawnWidth": 270,
+        "drawnRight": 363,
+        "overflowRightPx": -545,
+        "markCount": 8
+      },
+      "overflowAtSmall": -45,
+      "overflowAtLarge": -545,
+      "kind": "capped-by-default-legend",
+      "status": "unsupported",
+      "citation": "Pie/Radial default to legendVariant=\"stacked\" (PieChart/types.ts). That wrapper caps the chart column's height, so chartSize in hooks/polar/useCategoricalChartOrchestrator.ts:89-91 stops growing. The same family with legendVariant=\"default\" does scale — see the diagnostic case.",
+      "diagnostic": {
+        "case": "PieChart__defaultLegend",
+        "small": {
+          "containerWidth": 360,
+          "widestSvgWidth": 285,
+          "drawnWidth": 256,
+          "drawnRight": 316,
+          "overflowRightPx": -52,
+          "markCount": 8
+        },
+        "large": {
+          "containerWidth": 900,
+          "widestSvgWidth": 500,
+          "drawnWidth": 450,
+          "drawnRight": 683,
+          "overflowRightPx": -225,
+          "markCount": 8
+        },
+        "grew": true
+      },
+      "detail": "does not scale with its default stacked legend (270px at both sizes); the same chart with legendVariant=\"default\" scales 256 -> 450"
+    },
+    {
+      "family": "RadialChart",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 300,
+        "drawnWidth": 218,
+        "drawnRight": 323,
+        "overflowRightPx": -45,
+        "markCount": 4
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 300,
+        "drawnWidth": 218,
+        "drawnRight": 363,
+        "overflowRightPx": -545,
+        "markCount": 4
+      },
+      "overflowAtSmall": -45,
+      "overflowAtLarge": -545,
+      "kind": "capped-by-default-legend",
+      "status": "unsupported",
+      "citation": "As PieChart; both go through useCategoricalChartOrchestrator.",
+      "diagnostic": {
+        "case": "RadialChart__defaultLegend",
+        "small": {
+          "containerWidth": 360,
+          "widestSvgWidth": 285,
+          "drawnWidth": 207,
+          "drawnRight": 316,
+          "overflowRightPx": -52,
+          "markCount": 4
+        },
+        "large": {
+          "containerWidth": 900,
+          "widestSvgWidth": 500,
+          "drawnWidth": 365,
+          "drawnRight": 683,
+          "overflowRightPx": -225,
+          "markCount": 4
+        },
+        "grew": true
+      },
+      "detail": "does not scale with its default stacked legend (218px at both sizes); the same chart with legendVariant=\"default\" scales 207 -> 365"
+    },
+    {
+      "family": "RadarChart",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 285,
+        "drawnWidth": 173,
+        "drawnRight": 274,
+        "overflowRightPx": -94,
+        "markCount": 17
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 500,
+        "drawnWidth": 303,
+        "drawnRight": 610,
+        "overflowRightPx": -298,
+        "markCount": 17
+      },
+      "overflowAtSmall": -94,
+      "overflowAtLarge": -298,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "FunnelChart",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 360,
+        "drawnWidth": 360,
+        "drawnRight": 368,
+        "overflowRightPx": 0,
+        "markCount": 20
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 900,
+        "drawnWidth": 900,
+        "drawnRight": 908,
+        "overflowRightPx": 0,
+        "markCount": 20
+      },
+      "overflowAtSmall": 0,
+      "overflowAtLarge": 0,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "HeatmapChart",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 360,
+        "drawnWidth": 308,
+        "drawnRight": 368,
+        "overflowRightPx": 0,
+        "markCount": 19
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 900,
+        "drawnWidth": 848,
+        "drawnRight": 908,
+        "overflowRightPx": 0,
+        "markCount": 19
+      },
+      "overflowAtSmall": 0,
+      "overflowAtLarge": 0,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "ScatterChart",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 360,
+        "drawnWidth": 344,
+        "drawnRight": 372,
+        "overflowRightPx": 4,
+        "markCount": 9
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 900,
+        "drawnWidth": 884,
+        "drawnRight": 912,
+        "overflowRightPx": 4,
+        "markCount": 9
+      },
+      "overflowAtSmall": 4,
+      "overflowAtLarge": 4,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "SegmentedBar",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 12,
+        "drawnWidth": 352,
+        "drawnRight": 364,
+        "overflowRightPx": -4,
+        "markCount": 5
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 0,
+        "drawnWidth": 892,
+        "drawnRight": 904,
+        "overflowRightPx": -4,
+        "markCount": 4
+      },
+      "overflowAtSmall": -4,
+      "overflowAtLarge": -4,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "SingleStackedBar",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 12,
+        "drawnWidth": 352,
+        "drawnRight": 364,
+        "overflowRightPx": -4,
+        "markCount": 5
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 0,
+        "drawnWidth": 892,
+        "drawnRight": 904,
+        "overflowRightPx": -4,
+        "markCount": 4
+      },
+      "overflowAtSmall": -4,
+      "overflowAtLarge": -4,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "CalendarHeatmap",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 360,
+        "drawnWidth": 320,
+        "drawnRight": 367,
+        "overflowRightPx": -1,
+        "markCount": 90
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 900,
+        "drawnWidth": 860,
+        "drawnRight": 907,
+        "overflowRightPx": -1,
+        "markCount": 90
+      },
+      "overflowAtSmall": -1,
+      "overflowAtLarge": -1,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "MiniAreaChart",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 360,
+        "drawnWidth": 360,
+        "drawnRight": 368,
+        "overflowRightPx": 0,
+        "markCount": 2
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 900,
+        "drawnWidth": 900,
+        "drawnRight": 908,
+        "overflowRightPx": 0,
+        "markCount": 2
+      },
+      "overflowAtSmall": 0,
+      "overflowAtLarge": 0,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "MiniBarChart",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 360,
+        "drawnWidth": 132,
+        "drawnRight": 357,
+        "overflowRightPx": -11,
+        "markCount": 8
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 900,
+        "drawnWidth": 132,
+        "drawnRight": 897,
+        "overflowRightPx": -11,
+        "markCount": 8
+      },
+      "overflowAtSmall": -11,
+      "overflowAtLarge": -11,
+      "kind": "fixed-marks",
+      "status": "unsupported",
+      "citation": "MINI_BAR_WIDTH = 8 and MINI_BAR_SPACING = 10 are fixed pixels (shared/mini/miniChartUtils.ts:35-36), and miniBarsLeftPadding right-aligns the bars (:50-51). The svg follows the container; extra width becomes empty space rather than wider bars. recentBarsThatFit (:41-47) instead drops the oldest bars as the box narrows, which is asserted below.",
+      "svgGrew": true,
+      "marksFixed": true,
+      "markCounts": {
+        "small": 8,
+        "large": 8
+      },
+      "fewerWhenNarrow": true,
+      "detail": "svg follows the container (360 -> 900) but the bars are a fixed 8px at 10px spacing, so drawn width stays 132px"
+    },
+    {
+      "family": "MiniLineChart",
+      "scenario": "container-resize",
+      "sizes": [
+        {
+          "width": 360,
+          "height": 300
+        },
+        {
+          "width": 900,
+          "height": 760
+        }
+      ],
+      "small": {
+        "containerWidth": 360,
+        "widestSvgWidth": 360,
+        "drawnWidth": 360,
+        "drawnRight": 368,
+        "overflowRightPx": 0,
+        "markCount": 1
+      },
+      "large": {
+        "containerWidth": 900,
+        "widestSvgWidth": 900,
+        "drawnWidth": 900,
+        "drawnRight": 908,
+        "overflowRightPx": 0,
+        "markCount": 1
+      },
+      "overflowAtSmall": 0,
+      "overflowAtLarge": 0,
+      "kind": "width-responsive",
+      "status": "verified"
+    },
+    {
+      "family": "AreaChart",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/AreaChart.png",
+      "bytes": 35684,
+      "markCount": 13,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "AreaChartCondensed",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/AreaChartCondensed.png",
+      "bytes": 36401,
+      "markCount": 14,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "LineChart",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/LineChart.png",
+      "bytes": 23731,
+      "markCount": 10,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "LineChartCondensed",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/LineChartCondensed.png",
+      "bytes": 24634,
+      "markCount": 11,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "BarChart",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/BarChart.png",
+      "bytes": 18232,
+      "markCount": 20,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "BarChartCondensed",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/BarChartCondensed.png",
+      "bytes": 18802,
+      "markCount": 21,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "HorizontalBarChart",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/HorizontalBarChart.png",
+      "bytes": 13775,
+      "markCount": 21,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "PieChart",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/PieChart.png",
+      "bytes": 16893,
+      "markCount": 8,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "RadialChart",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/RadialChart.png",
+      "bytes": 19382,
+      "markCount": 4,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "RadarChart",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/RadarChart.png",
+      "bytes": 24545,
+      "markCount": 17,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "FunnelChart",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/FunnelChart.png",
+      "bytes": 21516,
+      "markCount": 20,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "HeatmapChart",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/HeatmapChart.png",
+      "bytes": 15718,
+      "markCount": 19,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "ScatterChart",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/ScatterChart.png",
+      "bytes": 17183,
+      "markCount": 9,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "SegmentedBar",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/SegmentedBar.png",
+      "bytes": 9394,
+      "markCount": 5,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "SingleStackedBar",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/SingleStackedBar.png",
+      "bytes": 9633,
+      "markCount": 5,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "CalendarHeatmap",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/CalendarHeatmap.png",
+      "bytes": 17892,
+      "markCount": 90,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "MiniAreaChart",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/MiniAreaChart.png",
+      "bytes": 10630,
+      "markCount": 2,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "MiniBarChart",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/MiniBarChart.png",
+      "bytes": 7164,
+      "markCount": 8,
+      "note": "reference image only — no automated comparison is performed"
+    },
+    {
+      "family": "MiniLineChart",
+      "scenario": "dark-reference",
+      "status": "verified",
+      "image": "evidence/screenshots/dark/MiniLineChart.png",
+      "bytes": 8412,
+      "markCount": 1,
+      "note": "reference image only — no automated comparison is performed"
+    }
+  ]
+}
