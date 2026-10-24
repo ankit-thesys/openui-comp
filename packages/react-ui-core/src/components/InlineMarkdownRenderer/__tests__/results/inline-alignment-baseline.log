@@ -1,0 +1,80 @@
+legacy [
+  {
+    "tag": "TH",
+    "text": "Name",
+    "align": null,
+    "textAlign": "left",
+    "classes": [
+      "openui-table-head"
+    ],
+    "inner": "openui-table-head-content"
+  },
+  {
+    "tag": "TH",
+    "text": "Score",
+    "align": null,
+    "textAlign": "right",
+    "classes": [
+      "openui-table-head"
+    ],
+    "inner": "openui-table-head-content"
+  },
+  {
+    "tag": "TD",
+    "text": "Ada",
+    "align": null,
+    "textAlign": "left",
+    "classes": [
+      "openui-table-cell"
+    ]
+  },
+  {
+    "tag": "TD",
+    "text": "42",
+    "align": null,
+    "textAlign": "right",
+    "classes": [
+      "openui-table-cell"
+    ]
+  }
+]
+candidate [
+  {
+    "tag": "TH",
+    "text": "Name",
+    "align": null,
+    "textAlign": "left",
+    "classes": [
+      "openui-table-head"
+    ],
+    "inner": "go1902728872 openui-table-head-content"
+  },
+  {
+    "tag": "TH",
+    "text": "Score",
+    "align": null,
+    "textAlign": "right",
+    "classes": [
+      "openui-table-head"
+    ],
+    "inner": "go1902728872 openui-table-head-content"
+  },
+  {
+    "tag": "TD",
+    "text": "Ada",
+    "align": null,
+    "textAlign": "left",
+    "classes": [
+      "openui-table-cell"
+    ]
+  },
+  {
+    "tag": "TD",
+    "text": "42",
+    "align": null,
+    "textAlign": "right",
+    "classes": [
+      "openui-table-cell"
+    ]
+  }
+]

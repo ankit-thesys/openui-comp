@@ -24,6 +24,12 @@ Compatibility probe: Node rejects the legacy syntax-theme directory import; expl
 
 No custom runtime patches, stock Goober only, legacy read-only, neither preview modified, no merges/releases/upstream writes. Continuous authorization and root heartbeat from prior handoff remain in force; unresolved product/contract decisions go to user review. Optional friend tickets31/32 remain unassigned.
 
+## Markdown prerequisite update
+
+MarkDownRenderer committed16f89371d; InlineMarkdownRenderer is now source-green through public GFM tables/citations, flattening, empty/default/theme updates, configured strict types and native ESM/CJS. The copied legacy remarkCitations helper is unchanged. A test's alignment-class assumption was corrected only after independent legacy/candidate rendering proved matching inline textAlign output; raw failed/comparison logs are preserved. Final visual/framework acceptance remains pending. No baseline adapter bug was silently repaired.
+
+Remaining leaf composers (InlineHeader, TextBlockView, TextContentWrapper, IconTag, IconText, ImageText, ImageTextLarge) still await explicit root ownership. Math CSS/font automatic delivery remains a risk to validate. Worker2 has the released browser window; Worker1 continues source-only checks.
+
 ## Current slice12 source checkpoint
 
 Table primitives committed443595a3f; ScrollableTable committedd35642508. Public React test and actual Chrome scrolling/resize/children checks pass, producer build/types pass, both review axes have zero actionable findings. Final installed/framework parity remains pending.

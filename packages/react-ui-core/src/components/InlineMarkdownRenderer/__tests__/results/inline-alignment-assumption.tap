@@ -1,0 +1,32 @@
+TAP version 13
+# Subtest: InlineMarkdownRenderer preserves empty output, flattened text, aligned GFM tables and citations
+not ok 1 - InlineMarkdownRenderer preserves empty output, flattened text, aligned GFM tables and citations
+  ---
+  duration_ms: 87.275541
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/InlineMarkdownRenderer/__tests__/InlineMarkdownRenderer.test.mjs:5:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert(
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/InlineMarkdownRenderer/__tests__/InlineMarkdownRenderer.test.mjs:39:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1769.442208
