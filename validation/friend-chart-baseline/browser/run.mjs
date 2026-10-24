@@ -433,7 +433,11 @@ async function main() {
       chrome: version,
       viewport: VIEWPORT,
       groupsRun: groups,
-      durationMs: Date.now() - started,
+      // Deliberately no wall-clock duration. This file is committed evidence,
+      // and a timing field changes on every run, so `git status` would be
+      // dirty after each one and a diff of two runs would always show noise —
+      // which defeats re-running and diffing to see whether anything REAL
+      // moved. The elapsed time is printed to the console instead.
       counts,
       missingScenarios: missing,
       screenshotsAreReferenceOnly: true,
@@ -442,7 +446,8 @@ async function main() {
     writeFileSync(resolve(EVIDENCE, "browser-run.json"), `${JSON.stringify(report, null, 2)}\n`);
 
     console.log(
-      `\n• ${counts.verified ?? 0} verified, ${counts.unsupported ?? 0} unsupported, ${failures.length} failed`,
+      `\n• ${counts.verified ?? 0} verified, ${counts.unsupported ?? 0} unsupported, ` +
+        `${failures.length} failed in ${Math.round((Date.now() - started) / 1000)}s`,
     );
     console.log(`• raw results → validation/friend-chart-baseline/evidence/browser/browser-run.json`);
 
