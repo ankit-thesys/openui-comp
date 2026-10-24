@@ -1,0 +1,19 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: plain/before/modal/tooltip-inside-modal: node count
+
+13 !== 16
+
+    at compare (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Modal/__tests__/compatibility.browser.mjs:289:20)
+    at async file:///Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Modal/__tests__/compatibility.browser.mjs:637:13 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 13,
+  expected: 16,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

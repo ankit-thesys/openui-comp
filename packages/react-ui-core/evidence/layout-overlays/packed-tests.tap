@@ -1,0 +1,328 @@
+TAP version 13
+# Subtest: Accordion expands and collapses through its public trigger, preserving refs and disabled state
+ok 1 - Accordion expands and collapses through its public trigger, preserving refs and disabled state
+  ---
+  duration_ms: 275.148042
+  type: 'test'
+  ...
+# Subtest: Carousel preserves composed public content, native attributes, noSnap wrapper and hidden-button option
+ok 2 - Carousel preserves composed public content, native attributes, noSnap wrapper and hidden-button option
+  ---
+  duration_ms: 164.418917
+  type: 'test'
+  ...
+# Subtest: Steps numbers children by position, honors explicit integers and follows prop updates
+ok 3 - Steps numbers children by position, honors explicit integers and follows prop updates
+  ---
+  duration_ms: 128.784333
+  type: 'test'
+  ...
+# Subtest: a standalone StepsItem retains its default number and own layout styles
+ok 4 - a standalone StepsItem retains its default number and own layout styles
+  ---
+  duration_ms: 283.425375
+  type: 'test'
+  ...
+# Subtest: Tabs exposes its selected panel, disabled trigger and original rich trigger content
+ok 5 - Tabs exposes its selected panel, disabled trigger and original rich trigger content
+  ---
+  duration_ms: 115.072875
+  type: 'test'
+  ...
+# Subtest: Button-only root import excludes unrelated layout modules and styles
+ok 6 - Button-only root import excludes unrelated layout modules and styles
+  ---
+  duration_ms: 818.235875
+  type: 'test'
+  ...
+# Subtest: Accordion-only root import excludes unrelated layout modules and styles
+ok 7 - Accordion-only root import excludes unrelated layout modules and styles
+  ---
+  duration_ms: 318.613667
+  type: 'test'
+  ...
+# Subtest: Carousel-only root import excludes unrelated layout modules and styles
+ok 8 - Carousel-only root import excludes unrelated layout modules and styles
+  ---
+  duration_ms: 474.231459
+  type: 'test'
+  ...
+# Subtest: Steps-only root import excludes unrelated layout modules and styles
+ok 9 - Steps-only root import excludes unrelated layout modules and styles
+  ---
+  duration_ms: 313.51175
+  type: 'test'
+  ...
+# Subtest: Tabs-only root import excludes unrelated layout modules and styles
+ok 10 - Tabs-only root import excludes unrelated layout modules and styles
+  ---
+  duration_ms: 358.993625
+  type: 'test'
+  ...
+# Subtest: native Node module resolves all layout public parts from the installed root
+ok 11 - native Node module resolves all layout public parts from the installed root
+  ---
+  duration_ms: 3834.835125
+  type: 'test'
+  ...
+# Subtest: native Node commonjs resolves all layout public parts from the installed root
+ok 12 - native Node commonjs resolves all layout public parts from the installed root
+  ---
+  duration_ms: 711.75675
+  type: 'test'
+  ...
+# Subtest: Button preserves refs, icon order, native events and disabled semantics through the root import
+ok 13 - Button preserves refs, icon order, native events and disabled semantics through the root import
+  ---
+  duration_ms: 21.991792
+  type: 'test'
+  ...
+# Subtest: a retained Button excludes theme tables and unrelated controls from an ESM consumer bundle
+ok 14 - a retained Button excludes theme tables and unrelated controls from an ESM consumer bundle
+  ---
+  duration_ms: 830.409125
+  type: 'test'
+  ...
+# Subtest: unused root imports do not retain components or the styling runtime
+ok 15 - unused root imports do not retain components or the styling runtime
+  ---
+  duration_ms: 334.059708
+  type: 'test'
+  ...
+# Subtest: Buttons preserves layout, native attributes and child interactions
+ok 16 - Buttons preserves layout, native attributes and child interactions
+  ---
+  duration_ms: 34.700292
+  type: 'test'
+  ...
+# Subtest: Card preserves native props, ref, children and variant/width updates
+ok 17 - Card preserves native props, ref, children and variant/width updates
+  ---
+  duration_ms: 72.342542
+  type: 'test'
+  ...
+# Subtest: Card root import prunes unrelated layout implementations and styles
+ok 18 - Card root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 377.963208
+  type: 'test'
+  ...
+# Subtest: CardHeader root import prunes unrelated layout implementations and styles
+ok 19 - CardHeader root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 472.645
+  type: 'test'
+  ...
+# Subtest: Skeleton root import prunes unrelated layout implementations and styles
+ok 20 - Skeleton root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 359.490834
+  type: 'test'
+  ...
+# Subtest: TableSkeleton root import prunes unrelated layout implementations and styles
+ok 21 - TableSkeleton root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 462.3
+  type: 'test'
+  ...
+# Subtest: PieChartSkeleton root import prunes unrelated layout implementations and styles
+ok 22 - PieChartSkeleton root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 402.147583
+  type: 'test'
+  ...
+# Subtest: DotMatrixLoader root import prunes unrelated layout implementations and styles
+ok 23 - DotMatrixLoader root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 352.261791
+  type: 'test'
+  ...
+# Subtest: layout root imports expose all public parts in native ESM and CommonJS
+ok 24 - layout root imports expose all public parts in native ESM and CommonJS
+  ---
+  duration_ms: 5731.534416
+  type: 'test'
+  ...
+# Subtest: CardHeader preserves content, actions, ref and native style precedence
+ok 25 - CardHeader preserves content, actions, ref and native style precedence
+  ---
+  duration_ms: 128.606042
+  type: 'test'
+  ...
+# Subtest: Checkbox group preserves ref, labels, state changes and disabled behavior
+ok 26 - Checkbox group preserves ref, labels, state changes and disabled behavior
+  ---
+  duration_ms: 286.89125
+  type: 'test'
+  ...
+# Subtest: Chips preserves controlled selection, refs, filtering and native disabled behavior
+ok 27 - Chips preserves controlled selection, refs, filtering and native disabled behavior
+  ---
+  duration_ms: 102.571458
+  type: 'test'
+  ...
+# Subtest: Button-only root import excludes unrelated control modules and styles
+ok 28 - Button-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 420.3975
+  type: 'test'
+  ...
+# Subtest: IconButton-only root import excludes unrelated control modules and styles
+ok 29 - IconButton-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 465.500917
+  type: 'test'
+  ...
+# Subtest: CheckBoxItem-only root import excludes unrelated control modules and styles
+ok 30 - CheckBoxItem-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 406.630542
+  type: 'test'
+  ...
+# Subtest: Chips-only root import excludes unrelated control modules and styles
+ok 31 - Chips-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 377.369167
+  type: 'test'
+  ...
+# Subtest: Slider-only root import excludes unrelated control modules and styles
+ok 32 - Slider-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 325.323833
+  type: 'test'
+  ...
+# Subtest: control root imports work in native Node ESM and CommonJS
+ok 33 - control root imports work in native Node ESM and CommonJS
+  ---
+  duration_ms: 5569.442916
+  type: 'test'
+  ...
+# Subtest: DotMatrixLoader preserves accessible loading, animated dots, compact grid and custom size
+ok 34 - DotMatrixLoader preserves accessible loading, animated dots, compact grid and custom size
+  ---
+  duration_ms: 150.606667
+  type: 'test'
+  ...
+# Subtest: FormControl propagates errors and Hint allows an explicit override
+ok 35 - FormControl propagates errors and Hint allows an explicit override
+  ---
+  duration_ms: 53.517167
+  type: 'test'
+  ...
+# Subtest: IconButton preserves native refs, icon, state updates and asChild interaction
+ok 36 - IconButton preserves native refs, icon, state updates and asChild interaction
+  ---
+  duration_ms: 93.262542
+  type: 'test'
+  ...
+# Subtest: Input retains native input/ref, size, error and styles APIs
+ok 37 - Input retains native input/ref, size, error and styles APIs
+  ---
+  duration_ms: 109.890875
+  type: 'test'
+  ...
+# Subtest: Label preserves association, required marker, disabled class and native ref
+ok 38 - Label preserves association, required marker, disabled class and native ref
+  ---
+  duration_ms: 42.695084
+  type: 'test'
+  ...
+# Subtest: Modal opens in a body portal, focuses its dialog and reports dismissal through the controlled callback
+ok 39 - Modal opens in a body portal, focuses its dialog and reports dismissal through the controlled callback
+  ---
+  duration_ms: 80.791625
+  type: 'test'
+  ...
+# Subtest: TooltipWrapper leaves an empty tooltip's child interactive and preserves its ref and native props
+ok 40 - TooltipWrapper leaves an empty tooltip's child interactive and preserves its ref and native props
+  ---
+  duration_ms: 84.841167
+  type: 'test'
+  ...
+# Subtest: Button-only root import excludes unrelated overlay/layout modules and styles
+ok 41 - Button-only root import excludes unrelated overlay/layout modules and styles
+  ---
+  duration_ms: 514.260084
+  type: 'test'
+  ...
+# Subtest: Modal-only root import excludes unrelated overlay/layout modules and styles
+ok 42 - Modal-only root import excludes unrelated overlay/layout modules and styles
+  ---
+  duration_ms: 454.561
+  type: 'test'
+  ...
+# Subtest: TooltipWrapper-only root import excludes unrelated overlay/layout modules and styles
+ok 43 - TooltipWrapper-only root import excludes unrelated overlay/layout modules and styles
+  ---
+  duration_ms: 599.578208
+  type: 'test'
+  ...
+# Subtest: native Node module resolves both overlay public components from the installed root
+ok 44 - native Node module resolves both overlay public components from the installed root
+  ---
+  duration_ms: 3809.893291
+  type: 'test'
+  ...
+# Subtest: native Node commonjs resolves both overlay public components from the installed root
+ok 45 - native Node commonjs resolves both overlay public components from the installed root
+  ---
+  duration_ms: 295.8825
+  type: 'test'
+  ...
+# Subtest: Radio group preserves controlled selection, native refs and disabled options
+ok 46 - Radio group preserves controlled selection, native refs and disabled options
+  ---
+  duration_ms: 170.672375
+  type: 'test'
+  ...
+# Subtest: Foldable sections preserve public parts, refs, controlled expansion and native trigger behavior
+ok 47 - Foldable sections preserve public parts, refs, controlled expansion and native trigger behavior
+  ---
+  duration_ms: 141.010708
+  type: 'test'
+  ...
+# Subtest: Select retains public parts, trigger refs, size updates, native attributes and disabled state
+ok 48 - Select retains public parts, trigger refs, size updates, native attributes and disabled state
+  ---
+  duration_ms: 56.441917
+  type: 'test'
+  ...
+# Subtest: Separator preserves orientation, semantics, native attributes and overrides
+ok 49 - Separator preserves orientation, semantics, native attributes and overrides
+  ---
+  duration_ms: 28.909375
+  type: 'test'
+  ...
+# Subtest: Skeleton preserves bar dimensions, table grids and pie/donut variants
+ok 50 - Skeleton preserves bar dimensions, table grids and pie/donut variants
+  ---
+  duration_ms: 28.300125
+  type: 'test'
+  ...
+# Subtest: Switch group preserves controlled values, labels, refs and disabled behavior
+ok 51 - Switch group preserves controlled values, labels, refs and disabled behavior
+  ---
+  duration_ms: 50.807792
+  type: 'test'
+  ...
+# Subtest: TextArea retains rows, ref, native props, error state and text entry
+ok 52 - TextArea retains rows, ref, native props, error state and text entry
+  ---
+  duration_ms: 23.331625
+  type: 'test'
+  ...
+# Subtest: Toggle group preserves multiple selection and disabled items
+ok 53 - Toggle group preserves multiple selection and disabled items
+  ---
+  duration_ms: 47.472834
+  type: 'test'
+  ...
+1..53
+# tests 53
+# suites 0
+# pass 53
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8919.002917

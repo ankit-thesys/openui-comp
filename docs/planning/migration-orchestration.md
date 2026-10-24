@@ -1,10 +1,20 @@
 # Current migration handoff — 2026-10-25
 
-Container checkpoint **PASSED** at d88873401. Final evidence and exact artifact are archived in packages/react-ui-core/evidence/layout-containers; see README.md and artifact.json. CI 57/57, installed tests 46/46, strict types in three modes, 30 Chrome configurations /132,051 paired snapshots and loading animation checks passed. Failed Accordion settling run is preserved separately with its test-only endpoint correction. Independent Standards and Spec reviews: zero actionable findings.
+## Slice #11 ready for review
 
-Phase 2 is authorized after this checkpoint: Worker 2 owns Modal/TooltipWrapper in its own checkout; Worker 1 owns root exports/dependencies/integration and final packed/portal/theme acceptance. Integrate committed batches only. Browser window is now released to Worker 2; no competing browser runs. No actual container blocker remains. Whole issue #11 is not complete until overlay integration passes.
+Final production integration `66547405c`; test-only dependency alignment `135da0d8f`. Worker2 overlay commits fb46c2103/1234eb902 integrated as d0bccb9b9/d179585bf. Full combined CI **64/64**, normal installed public tests **53/53**, strict types in three module modes passed. Final overlay Chrome matrix **12 cases /4,674 snapshots** passed; earlier container checkpoint **30 cases /132,051 snapshots** plus loading animations remains archived without an unnecessary rerun. Independent Standards and Spec reviews: zero actionable extraction findings.
 
-Workers must touch neither preview checkout: /Users/ankitdas/thesys/openui nor /Users/ankitdas/thesys/openui-comp (preview at433a). Work only in each worker's isolated checkout. Legacy source is read-only; stock Goober only; no merge/publication/upstream writes. SSR remains deferred.
+Final exact tarball SHA256 `784a951ebf8cf974b6a275b72a7c58fa8ed8abc0c400266efc8808a4fa9f09ea`, 246,462 bytes. Artifact, raw logs, failed-run diagnosis, reviews and limitations: `packages/react-ui-core/evidence/layout-overlays/README.md`. The first integrated browser mismatch was different Radix accessibility subtrees from unmatched dependencies; a reviewed test-only alias aligns both arms to candidate Tooltip1.4.1. Assertions and product code are unchanged. Full corrected matrix passed.
+
+No extraction-only blocker remains in scoped checks. **Inherited limitations require review:** Modal has no focus trap/return, nested title IDs collide, Tooltip truncation replaces the child ref, and composed pointer dismissal has a preserved baseline observation. Do not claim accessible-modal certification, complete ref preservation, SSR or performance/soak acceptance. No whole migration completion or issue closure is implied. Root orchestrator arranges stacked draft and next-ticket ownership.
+
+Worker1 browser window is released/available. Worker2 is idle after a read-only slice12 plan; no slice12 production work is dispatched here. Proposed prerequisite order: Worker2 source context/schema/safe URLs/icons/favicon/citations/Sources; Worker1 Table/CodeBlock/markdown renderers; leaf media/text batches afterward. Table has one owner; OptionCards remains deferred until prerequisites pass. Next ownership comes from orchestrator.
+
+## Durable authorization and boundaries
+
+User explicitly authorized continuous migration-ticket work on2026-10-25. Root heartbeat `finish-openui-migration-tickets` is active every five minutes, coordinating existing workers and stacked review-only PRs. No merges, publication or upstream writes. Optional friend tickets31/32 remain unassigned. Unresolved product/contract decisions require user review.
+
+Main preview is `/Users/ankitdas/thesys/openui-comp` (preview at433a). `/Users/ankitdas/thesys/openui` is off limits for modifications. Workers must touch neither preview and must work only their own isolated checkouts. Legacy source stays read-only; stock Goober only; preserve unrelated untracked crates. No custom runtime patches. SSR remains deferred.
 
 ## Historical handoff records
 

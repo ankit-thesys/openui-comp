@@ -1,0 +1,12 @@
+plain/before/modal: 481 paired snapshots passed
+plain/before/tooltip: 298 paired snapshots passed
+plain/after/modal: 481 paired snapshots passed
+plain/after/tooltip: 298 paired snapshots passed
+tailwind3/before/modal: 481 paired snapshots passed
+tailwind3/before/tooltip: 298 paired snapshots passed
+tailwind3/after/modal: 481 paired snapshots passed
+tailwind3/after/tooltip: 298 paired snapshots passed
+tailwind4/before/modal: 481 paired snapshots passed
+tailwind4/before/tooltip: 298 paired snapshots passed
+tailwind4/after/modal: 481 paired snapshots passed
+tailwind4/after/tooltip: 298 paired snapshots passed

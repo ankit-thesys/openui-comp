@@ -1,3 +1,15 @@
+# Layout, containers and overlays — slice #11
+
+**Ready for review.** Production integration `66547405c`; final browser runner `135da0d8f`. Cards, sections, separators, Accordion, Carousel, Steps, Tabs, loading components, Modal and TooltipWrapper are exposed through the package root with existing public parts/types.
+
+Final combined CI passed 64 tests; normally installed public tests passed 53; strict types passed all three module modes. The final overlay matrix passed 12 cases /4,674 snapshots. The earlier container matrix passed 30 cases /132,051 snapshots and loading animations. See [final overlay evidence](evidence/layout-overlays/README.md) and [container checkpoint](evidence/layout-containers/README.md) for exact artifacts, versions and scope.
+
+Inherited Modal focus/label behavior and Tooltip ref/composed-dismissal observations require explicit review. They are not repaired or presented as successful accessibility behavior. SSR and runtime performance/memory certification remain deferred. Old package source remains unchanged; stock Goober only.
+
+## Historical implementation notes
+
+The following notes describe the earlier container checkpoint; final combined results above supersede earlier counts.
+
 # Layout slice (#11)
 
 Base: `bd4c4270e` (reviewed #30 plus orchestration record). Branch:
