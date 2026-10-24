@@ -64,3 +64,31 @@ closed all their contexts/browser/server. Worker1 can integrate the two correcti
 commits and repack/install a new fixed artifact. The fixed media matrix remains pending;
 no final slice acceptance, SSR, performance or memory certification is implied. Existing
 Escape/onClick limitations are recorded separately in INHERITED_LIMITATIONS.md.
+
+## Fixed media result — browser window released
+
+New normal npm consumer: /private/tmp/core-source-media-fixed-consumer.
+Production revision:96221894aa2273dc85059fe94efa155ef1f1210a.
+Exact375293-byte tarball SHA256:
+cb6306b9646be0dad2654542156e5e11623600bfe321abe2a9d5496cf21f8b45.
+
+All six affected media cases pass:8292 paired snapshots, plain CSS/Tailwind3/4,
+both component/host orders, five themes and all added mobile gallery counts.
+The unchanged strict comparison now matches legacy grid geometry and styles.
+No additional source or test correction was needed in this retest. Images, actual
+network loading/error/recovery, spinner phase, GalleryModal/thumbnail selection,
+portals, overrides, independent/nested themes and cleanup pass. Raw report, log,
+normal consumer lock and exact tarball live under results/browser-media-fixed.
+The report includes its exact runner/fixture hashes and full installed dist manifest.
+
+Earlier source/presentation12-case22056-snapshot evidence remains attached to original
+production680118396 and was not relabeled as this fixed artifact. Together the scoped
+runs cover18 cases /30348 snapshots across two explicitly identified artifacts; this
+is not a claim that all18 were rerun on one final combined package.
+
+**Browser window released to Worker1 after the successful media run.** All contexts,
+browser and local server are closed. No active measurement remains. Independent review
+confirmed the canonical whitespace source fix after9214cc528. Remaining final installed,
+combined-package, whole-slice and composer acceptance belongs to integration. Inherited
+Gallery focus/body and citation Escape/onClick limitations remain explicit. SSR and
+performance/memory are not certified by these style/behavior matrices.
