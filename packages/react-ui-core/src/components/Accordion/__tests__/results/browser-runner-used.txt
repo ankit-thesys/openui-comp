@@ -1,0 +1,585 @@
+import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
+import fs from "node:fs/promises";
+import http from "node:http";
+import { createRequire } from "node:module";
+import path from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
+
+const repository = fileURLToPath(new URL("../../../../../../", import.meta.url));
+const consumer = path.resolve(process.env.CORE_CONSUMER),
+  tools = createRequire(path.resolve(process.env.CORE_BROWSER_TOOLS || consumer, "package.json"));
+const { build } = tools("esbuild"),
+  { chromium } = await import(pathToFileURL(process.env.CORE_PLAYWRIGHT).href);
+const sass = createRequire(path.resolve(process.env.CORE_SASS_TOOLS, "package.json"))("sass");
+const baseline = path.join(repository, "packages/react-ui/src/components");
+const source = await fs.readFile(new URL("layout.fixture.tsx", import.meta.url), "utf8");
+const oldNames = {
+  Accordion: ["Accordion", "AccordionItem", "AccordionTrigger", "AccordionContent"],
+  Carousel: ["Carousel", "CarouselContent", "CarouselItem", "CarouselPrevious", "CarouselNext"],
+  Steps: ["Steps", "StepsItem"],
+  Tabs: ["Tabs", "TabsList", "TabsTrigger", "TabsContent"],
+  ThemeProvider: ["ThemeProvider"],
+};
+const oldPrefix =
+  Object.entries(oldNames)
+    .map(
+      ([folder, names]) =>
+        `import {${names.join(",")}} from ${JSON.stringify(path.join(baseline, folder))};`,
+    )
+    .join("\n") + `\nconst Core={${Object.values(oldNames).flat().join(",")}};`;
+// Resolve legacy comparison dependencies from the same installed package graph.
+const installedDependencies = path.resolve(
+  await fs.realpath(path.join(consumer, "node_modules/@openuidev/react-ui-core")),
+  "../..",
+);
+const scripts = {},
+  graphs = {};
+const hash = (data) => createHash("sha256").update(data).digest("hex");
+for (const arm of ["baseline", "runtime"]) {
+  const contents =
+    arm === "baseline"
+      ? source.replace('import * as Core from "@openuidev/react-ui-core";', oldPrefix)
+      : source;
+  const result = await build({
+    stdin: { contents, resolveDir: consumer, loader: "tsx" },
+    bundle: true,
+    write: false,
+    format: "esm",
+    platform: "browser",
+    jsx: "automatic",
+    metafile: true,
+    define: { "process.env.NODE_ENV": '"production"' },
+    ...(arm === "baseline"
+      ? {
+          nodePaths: [consumer + "/node_modules", installedDependencies],
+          alias: {
+            react: consumer + "/node_modules/react",
+            "react-dom": consumer + "/node_modules/react-dom",
+          },
+        }
+      : {}),
+  });
+  if (arm === "runtime")
+    assert(
+      !Object.keys(result.metafile.inputs).some((file) => file.includes("packages/react-ui/src")),
+      "runtime must not import old source",
+    );
+  scripts[arm] = result.outputFiles[0].text;
+  graphs[arm] = hash(scripts[arm]);
+}
+// Legacy CSS is an explicit comparison input; it is never used by the candidate package build or runtime arm.
+const legacyCss = sass.compile(path.join(baseline, "index.scss"), {
+  style: "expanded",
+  logger: sass.Logger.silent,
+}).css;
+const hostRoot = path.resolve(process.env.CORE_HOST_STYLES),
+  hosts = {};
+for (const framework of ["plain", "tailwind3", "tailwind4"])
+  hosts[framework] = await fs.readFile(
+    path.join(hostRoot, "frameworks", framework + ".css"),
+    "utf8",
+  );
+const layout =
+  "body{margin:0}#zone{width:100%;max-width:900px;padding:16px;box-sizing:border-box}#unrelated{font:17px/23px serif;color:rgb(11,22,33);padding:7px;background:rgb(240,241,242)}";
+const server = http.createServer((req, res) => {
+  const u = new URL(req.url, "http://localhost");
+  if (u.pathname === "/baseline.js" || u.pathname === "/runtime.js") {
+    res.setHeader("content-type", "text/javascript");
+    return res.end(scripts[u.pathname.slice(1, -3)]);
+  }
+  if (u.pathname === "/baseline.css") {
+    res.setHeader("content-type", "text/css");
+    return res.end(legacyCss);
+  }
+  const framework = u.searchParams.get("framework"),
+    arm = u.searchParams.get("arm");
+  if (u.pathname.startsWith("/host/")) {
+    res.setHeader("content-type", "text/css");
+    return res.end(hosts[u.pathname.slice(6, -4)]);
+  }
+  if (!["baseline", "runtime"].includes(arm) || !hosts[framework]) {
+    res.writeHead(404);
+    return res.end();
+  }
+  res.setHeader("content-type", "text/html");
+  res.end(
+    `<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1">${arm === "baseline" ? '<link id="component-style" rel="stylesheet" href="/baseline.css">' : ""}<link id="host-style" rel="stylesheet" href="/host/${framework}.css"><style>${layout}</style></head><body><div id="app"></div><script type="module" src="/${arm}.js"></script></body></html>`,
+  );
+});
+await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+const browser = await chromium.launch({ channel: "chrome", headless: true });
+const result = {
+  browser: browser.version(),
+  graphs,
+  legacyCssSha256: hash(legacyCss),
+  hostHashes: Object.fromEntries(Object.entries(hosts).map(([k, v]) => [k, hash(v)])),
+  fixtureSha256: hash(source),
+  runnerSha256: hash(await fs.readFile(fileURLToPath(import.meta.url))),
+  clock: "advancing Playwright clock initialized at 2026-10-25T12:00:00Z",
+  cases: [],
+  snapshots: 0,
+  pending: ["Overlays gated on integrated container checkpoint; SSR deferred"],
+};
+const properties = [
+  "fontFamily",
+  "fontSize",
+  "fontWeight",
+  "lineHeight",
+  "letterSpacing",
+  "fontVariationSettings",
+  "backgroundColor",
+  "color",
+  "border",
+  "borderRadius",
+  "boxShadow",
+  "padding",
+  "margin",
+  "gap",
+  "display",
+  "alignItems",
+  "justifyContent",
+  "boxSizing",
+  "cursor",
+  "resize",
+  "outline",
+  "outlineOffset",
+  "opacity",
+  "pointerEvents",
+  "width",
+  "height",
+  "fill",
+  "transform",
+  "overflowX",
+  "scrollSnapType",
+  "maskImage",
+  "minWidth",
+  "borderBottom",
+  "borderTop",
+  "flexShrink",
+  "flexGrow",
+  "position",
+  "zIndex",
+  "animationDuration",
+];
+const selector = '#zone [class*="openui-"]:not([class*="openui-theme-"])';
+const settle = async (page) => {
+  await page.waitForTimeout(150);
+  await page.evaluate(async () => {
+    document.querySelectorAll('[class*="openui-"]').forEach((node) => getComputedStyle(node).color);
+    for (const animation of document.getAnimations())
+      if (Number.isFinite(animation.effect.getComputedTiming().iterations)) animation.finish();
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  });
+};
+const snapshot = async (page) => {
+  await settle(page);
+  return page.locator(selector).evaluateAll(
+    (nodes, props) =>
+      nodes.map((node) => ({
+        tag: node.tagName,
+        classes: [...node.classList]
+          .filter((name) => name.startsWith("openui-") && !name.startsWith("openui-theme-"))
+          .sort(),
+        style: Object.fromEntries(props.map((key) => [key, getComputedStyle(node)[key]])),
+        disabled: node.hasAttribute("disabled") || node.hasAttribute("data-disabled"),
+        state: node.getAttribute("data-state"),
+      })),
+    properties,
+  );
+};
+const roots = {
+  accordion: ".openui-accordion",
+  carousel: ".openui-carousel",
+  steps: ".openui-steps-container",
+  tabs: ".openui-tabs",
+};
+const configure = async (pages, next) => {
+  for (const page of pages) await page.evaluate((next) => window.configure(next), next);
+};
+const selection = async (pages, value) => {
+  for (const page of pages) await page.evaluate((value) => window.setSelection(value), value);
+};
+const neutral = async (pages) => {
+  for (const page of pages) await page.mouse.move(0, 0);
+};
+try {
+  for (const framework of (process.env.CORE_MATRIX_FRAMEWORKS || "plain,tailwind3,tailwind4").split(
+    ",",
+  ))
+    for (const order of ["before", "after"])
+      for (const kind of (process.env.CORE_MATRIX_CASES || "accordion,carousel,steps,tabs").split(
+        ",",
+      )) {
+        const contexts = [],
+          pages = [],
+          errors = [];
+        let comparisons = 0;
+        try {
+          for (const arm of ["baseline", "runtime"]) {
+            const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+            contexts.push(context);
+            const page = await context.newPage();
+            pages.push(page);
+            page.setDefaultTimeout(7000);
+            page.on("pageerror", (e) => errors.push(e.message));
+            await page.clock.install({ time: new Date("2026-10-25T12:00:00Z") });
+            await page.goto(
+              `http://127.0.0.1:${server.address().port}/?arm=${arm}&framework=${framework}&case=${kind}`,
+            );
+            await page.locator(roots[kind]).waitFor();
+            await page.evaluate(
+              ({ arm, order }) => {
+                const host = document.querySelector("#host-style"),
+                  component = document.querySelector(
+                    arm === "baseline" ? "#component-style" : "#_goober",
+                  );
+                if (order === "before") component.before(host);
+                else component.after(host);
+              },
+              { arm, order },
+            );
+          }
+          const compare = async (label) => {
+            const [expected, actual] = await Promise.all(pages.map(snapshot));
+            assert.equal(
+              actual.length,
+              expected.length,
+              `${framework}/${order}/${kind}/${label}: count`,
+            );
+            for (let i = 0; i < expected.length; i++)
+              assert.deepEqual(
+                actual[i],
+                expected[i],
+                `${framework}/${order}/${kind}/${label}/${i}/${expected[i].classes}`,
+              );
+            comparisons += expected.length;
+          };
+          for (const theme of ["none", "light", "dark", "custom-light", "custom-dark"]) {
+            await configure(pages, { theme, overrides: false, disabled: false });
+            await neutral(pages);
+            const variants =
+              kind === "accordion"
+                ? ["clear", "card", "sunk"]
+                : kind === "tabs"
+                  ? ["title", "iconTitle", "iconTitleSubtext", "imageTitle", "imageTitleSubtext"]
+                  : kind === "carousel"
+                    ? ["card", "sunk"]
+                    : ["default"];
+            for (const variant of variants) {
+              await configure(pages, { variant });
+              await compare(`${theme}/${variant}/normal`);
+              if (kind === "accordion" || kind === "tabs") {
+                const target =
+                  kind === "accordion" ? ".openui-accordion-trigger" : ".openui-tabs-trigger";
+                // Inactive hover catches functional-pseudo selector and cascade regressions.
+                for (const page of pages) await page.locator(target).nth(2).hover();
+                await compare(`${theme}/${variant}/inactive-hover`);
+                for (const page of pages) await page.locator(target).first().focus();
+                await neutral(pages);
+                await compare(`${theme}/${variant}/keyboard-focus`);
+              }
+            }
+            await configure(pages, { variant: variants[0] });
+            await neutral(pages);
+            if (theme.startsWith("custom"))
+              for (const page of pages) {
+                const target =
+                  kind === "steps"
+                    ? ".openui-step-title"
+                    : kind === "carousel"
+                      ? ".openui-carousel-item"
+                      : kind === "tabs"
+                        ? '.openui-tabs-trigger[data-state="active"]'
+                        : ".openui-accordion-trigger";
+                if (kind !== "carousel")
+                  assert.equal(
+                    await page
+                      .locator(target)
+                      .first()
+                      .evaluate((el) => getComputedStyle(el).color),
+                    kind === "steps" ? "rgb(60, 80, 100)" : "rgb(40, 70, 90)",
+                    "independent custom-theme token",
+                  );
+              }
+            if (kind !== "steps") {
+              const target =
+                kind === "accordion"
+                  ? ".openui-accordion-trigger"
+                  : kind === "tabs"
+                    ? ".openui-tabs-trigger"
+                    : ".openui-carousel-item";
+              await configure(pages, { overrides: true });
+              await compare(`${theme}/override`);
+              for (const page of pages) {
+                const node = page.locator(target).first();
+                const style = await node.evaluate((el) => ({
+                  padding: getComputedStyle(el).padding,
+                  background: getComputedStyle(el).backgroundColor,
+                }));
+                assert.equal(style.padding, "32px", "independent important padding override");
+                assert(style.background !== "rgba(0, 0, 0, 0)", "override background");
+                await node.hover();
+              }
+              await compare(`${theme}/override-hover`);
+              if (kind === "accordion" || kind === "tabs") {
+                await configure(pages, { disabled: true });
+                await neutral(pages);
+                await compare(`${theme}/override-disabled`);
+                for (const page of pages)
+                  assert.equal(await page.locator(target).first().isDisabled(), true);
+              }
+              await configure(pages, { overrides: false, disabled: false });
+              await neutral(pages);
+            }
+            for (const width of [360, 1280]) {
+              for (const page of pages) await page.setViewportSize({ width, height: 900 });
+              await compare(`${theme}/width-${width}`);
+            }
+          }
+          await configure(pages, {
+            theme: "light",
+            variant: kind === "accordion" ? "clear" : kind === "tabs" ? "title" : "card",
+          });
+          if (kind === "accordion") {
+            for (const page of pages) {
+              const trigger = page.locator(".openui-accordion-trigger");
+              await trigger.nth(2).click();
+              assert.equal(await trigger.nth(2).getAttribute("aria-expanded"), "true");
+              assert.equal(await trigger.first().getAttribute("aria-expanded"), "false");
+              await trigger.first().focus();
+              await page.keyboard.press("ArrowDown");
+              await page.waitForFunction(() =>
+                document.activeElement.textContent.includes("Gamma"),
+              );
+              assert.equal(
+                await page.evaluate(() =>
+                  window.refs().root.classList.contains("openui-accordion"),
+                ),
+                true,
+              );
+              assert.equal(
+                await page.evaluate(
+                  () =>
+                    window.refs().trigger === document.querySelector(".openui-accordion-trigger"),
+                ),
+                true,
+              );
+            }
+            await compare("single-selection-keyboard");
+            await selection(pages, "a");
+            await configure(pages, { controlled: true });
+            for (const page of pages) {
+              await page.locator(".openui-accordion-trigger").nth(2).click();
+              assert.equal(
+                await page
+                  .locator(".openui-accordion-trigger")
+                  .first()
+                  .getAttribute("aria-expanded"),
+                "true",
+              );
+            }
+            await compare("controlled-pinned");
+            await configure(pages, { controlled: false, multiple: true });
+            await selection(pages, ["a"]);
+            for (const page of pages) {
+              await page.locator(".openui-accordion-trigger").nth(2).click();
+              assert.equal(
+                await page.locator('.openui-accordion-trigger[aria-expanded="true"]').count(),
+                2,
+              );
+            }
+            await compare("multiple-expanded");
+            await selection(pages, "a");
+            await configure(pages, { multiple: false, uncontrolled: true });
+            for (const page of pages) {
+              await page.locator(".openui-accordion-trigger").nth(2).click();
+              assert.equal(
+                await page
+                  .locator(".openui-accordion-trigger")
+                  .nth(2)
+                  .getAttribute("aria-expanded"),
+                "true",
+              );
+            }
+            await compare("uncontrolled-selection");
+          }
+          if (kind === "tabs") {
+            for (const page of pages) {
+              const triggers = page.getByRole("tab");
+              await triggers.first().focus();
+              await page.keyboard.press("ArrowRight");
+              await page.waitForFunction(() =>
+                document.activeElement.textContent.includes("Gamma"),
+              );
+              await page.waitForFunction(() =>
+                document
+                  .querySelector('[role="tab"][aria-selected="true"]')
+                  .textContent.includes("Gamma"),
+              );
+              assert.equal(await page.getByRole("tabpanel").textContent(), "Panel cPanel action c");
+              assert.equal(
+                await page.evaluate(
+                  () => window.refs().part === document.querySelector('[role="tablist"]'),
+                ),
+                true,
+              );
+            }
+            await compare("keyboard-selection-skip-disabled");
+            await selection(pages, "a");
+            await compare("controlled-update");
+            await configure(pages, { controlled: true });
+            for (const page of pages) {
+              await page.getByRole("tab").nth(2).click();
+              assert.equal(
+                await page.getByRole("tab").first().getAttribute("aria-selected"),
+                "true",
+              );
+            }
+            await compare("controlled-pinned");
+            await configure(pages, { controlled: false, uncontrolled: true });
+            for (const page of pages) {
+              await page.getByRole("tab").nth(2).click();
+              assert.equal(
+                await page.getByRole("tab").nth(2).getAttribute("aria-selected"),
+                "true",
+              );
+            }
+            await compare("uncontrolled-selection");
+            for (const page of pages) await page.setViewportSize({ width: 360, height: 900 });
+            for (const page of pages) {
+              const list = page.getByRole("tablist");
+              await page.waitForFunction(
+                () =>
+                  document.querySelector('[role="tablist"]').scrollWidth >
+                  document.querySelector('[role="tablist"]').clientWidth,
+              );
+              await list.evaluate((el) => el.scrollTo({ left: 0, behavior: "instant" }));
+              const next = page.getByRole("button", { name: "Scroll tabs right" });
+              await next.waitFor();
+              await next.click();
+              await page.waitForFunction(() => {
+                const el = document.querySelector('[role="tablist"]');
+                return Math.abs(el.scrollLeft - Math.min(120, el.scrollWidth - el.clientWidth)) < 1;
+              });
+            }
+            await compare("overflow-scroll");
+          }
+          if (kind === "carousel") {
+            for (const page of pages) {
+              assert.equal(await page.evaluate(() => typeof window.refs().root.scroll), "function");
+              assert.equal(
+                await page.evaluate(() => window.refs().part),
+                null,
+                "inherited CarouselContent ignored ref",
+              );
+              const target = await page
+                .locator(".openui-carousel-item")
+                .nth(1)
+                .evaluate((el) => el.offsetLeft);
+              await page.getByRole("button", { name: "Next cards" }).focus();
+              await page.keyboard.press("Enter");
+              await page.waitForFunction(
+                (target) =>
+                  Math.abs(document.querySelector(".openui-carousel-content").scrollLeft - target) <
+                  1,
+                target,
+              );
+              assert.equal(await page.getByRole("button", { name: "Previous cards" }).count(), 1);
+            }
+            await compare("scroll-next-mask");
+            for (const page of pages) {
+              await page.evaluate(() => window.scrollCarousel("left"));
+              await page.waitForFunction(
+                () => document.querySelector(".openui-carousel-content").scrollLeft === 0,
+              );
+            }
+            await compare("imperative-scroll-left");
+            await configure(pages, { showButtons: false });
+            for (const page of pages)
+              assert.equal(await page.getByRole("button", { name: "Next cards" }).count(), 0);
+            await compare("buttons-hidden");
+            await configure(pages, { noSnap: true, showButtons: true, itemsToScroll: 2 });
+            for (const page of pages) {
+              assert.equal(await page.locator(".openui-carousel-content-wrapper").count(), 1);
+              const geometry = await page
+                .locator(".openui-carousel-content")
+                .evaluate((el) => ({
+                  target: el.querySelectorAll(".openui-carousel-item")[2].offsetLeft,
+                  one: el.querySelectorAll(".openui-carousel-item")[1].offsetLeft,
+                  max: el.scrollWidth - el.clientWidth,
+                }));
+              assert(
+                geometry.target > geometry.one && geometry.target < geometry.max,
+                "two-item destination must differ from one and remain unclamped",
+              );
+              await page.evaluate(() => window.scrollCarousel("right"));
+              await page.waitForFunction(
+                (target) =>
+                  Math.abs(document.querySelector(".openui-carousel-content").scrollLeft - target) <
+                  1,
+                geometry.target,
+              );
+            }
+            await compare("noSnap-itemsToScroll-two");
+          }
+          await configure(pages, { isolation: true });
+          for (const page of pages) {
+            await page.locator("#independent .openui-accordion-trigger").waitFor();
+            assert.equal(
+              await page
+                .locator("#independent .openui-accordion-trigger")
+                .evaluate((el) => getComputedStyle(el).color),
+              "rgb(40, 70, 90)",
+              "independent theme token",
+            );
+            const scoped = await page.evaluate(() => ({
+              outer: getComputedStyle(document.querySelector("#outer .openui-step-title")).color,
+              nested: getComputedStyle(document.querySelector("#nested .openui-step-title")).color,
+            }));
+            assert.notEqual(
+              scoped.outer,
+              scoped.nested,
+              "nested dark scope does not replace outer light scope",
+            );
+          }
+          await compare("independent-and-nested-scopes");
+          await configure(pages, { isolation: false });
+          const host = await Promise.all(
+            pages.map((p) =>
+              p.locator("#unrelated").evaluate((el) => {
+                const c = getComputedStyle(el);
+                return {
+                  font: c.font,
+                  color: c.color,
+                  padding: c.padding,
+                  background: c.backgroundColor,
+                };
+              }),
+            ),
+          );
+          assert.deepEqual(host[0], host[1], "unrelated host content");
+          const sheet = await pages[1].locator("#_goober").textContent();
+          await configure(pages, { visible: false });
+          for (const page of pages) assert.equal(await page.locator(roots[kind]).count(), 0);
+          await configure(pages, { visible: true });
+          await compare("remount");
+          assert.equal(
+            await pages[1].locator("#_goober").textContent(),
+            sheet,
+            "no duplicate styles on remount",
+          );
+          assert.deepEqual(errors, [], "no uncaught browser errors");
+          result.cases.push({ framework, order, kind, comparisons, status: "passed" });
+          result.snapshots += comparisons;
+          console.log(`${framework}/${order}/${kind}: ${comparisons} paired snapshots passed`);
+        } finally {
+          for (const context of contexts) await context.close();
+        }
+      }
+} finally {
+  await browser.close();
+  await new Promise((resolve) => server.close(resolve));
+  if (process.env.CORE_BROWSER_RESULTS)
+    await fs.writeFile(process.env.CORE_BROWSER_RESULTS, JSON.stringify(result, null, 2) + "\n");
+}

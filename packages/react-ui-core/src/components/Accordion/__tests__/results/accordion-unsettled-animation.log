@@ -1,0 +1,133 @@
+plain/before/accordion: 1751 paired snapshots passed
+plain/before/carousel: 324 paired snapshots passed
+plain/before/steps: 442 paired snapshots passed
+plain/before/tabs: 3757 paired snapshots passed
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: plain/after/accordion/uncontrolled-selection/0/openui-accordion,openui-accordion-clear
++ actual - expected
+... Skipped lines
+
+  {
+    classes: [
+      'openui-accordion',
+      'openui-accordion-clear'
+    ],
+...
+      gap: 'normal',
++     height: '381px',
+-     height: '274px',
+      justifyContent: 'normal',
+      letterSpacing: 'normal',
+      lineHeight: 'normal',
+      margin: '0px',
+      maskImage: 'none',
+
+    at compare (file:///Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Accordion/__tests__/compatibility.browser.mjs:250:22)
+    at runNextTicks (node:internal/process/task_queues:64:5)
+    at process.processImmediate (node:internal/timers:452:9)
+    at process.callbackTrampoline (node:internal/async_hooks:130:17)
+    at async file:///Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Accordion/__tests__/compatibility.browser.mjs:404:13 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: {
+    tag: 'DIV',
+    classes: [ 'openui-accordion', 'openui-accordion-clear' ],
+    style: {
+      fontFamily: 'Times',
+      fontSize: '16px',
+      fontWeight: '400',
+      lineHeight: 'normal',
+      letterSpacing: 'normal',
+      fontVariationSettings: 'normal',
+      backgroundColor: 'rgba(0, 0, 0, 0)',
+      color: 'rgb(0, 0, 0)',
+      border: '1px solid rgba(0, 0, 0, 0)',
+      borderRadius: '14px',
+      boxShadow: 'none',
+      padding: '0px',
+      margin: '0px',
+      gap: 'normal',
+      display: 'block',
+      alignItems: 'normal',
+      justifyContent: 'normal',
+      boxSizing: 'border-box',
+      cursor: 'auto',
+      resize: 'none',
+      outline: 'rgb(0, 0, 0) none 3px',
+      outlineOffset: '0px',
+      opacity: '1',
+      pointerEvents: 'auto',
+      width: '868px',
+      height: '381px',
+      fill: 'rgb(0, 0, 0)',
+      transform: 'none',
+      overflowX: 'visible',
+      scrollSnapType: 'none',
+      maskImage: 'none',
+      minWidth: '0px',
+      borderBottom: '1px solid rgba(0, 0, 0, 0)',
+      borderTop: '1px solid rgba(0, 0, 0, 0)',
+      flexShrink: '1',
+      flexGrow: '0',
+      position: 'static',
+      zIndex: 'auto',
+      animationDuration: '0s'
+    },
+    disabled: false,
+    state: null
+  },
+  expected: {
+    tag: 'DIV',
+    classes: [ 'openui-accordion', 'openui-accordion-clear' ],
+    style: {
+      fontFamily: 'Times',
+      fontSize: '16px',
+      fontWeight: '400',
+      lineHeight: 'normal',
+      letterSpacing: 'normal',
+      fontVariationSettings: 'normal',
+      backgroundColor: 'rgba(0, 0, 0, 0)',
+      color: 'rgb(0, 0, 0)',
+      border: '1px solid rgba(0, 0, 0, 0)',
+      borderRadius: '14px',
+      boxShadow: 'none',
+      padding: '0px',
+      margin: '0px',
+      gap: 'normal',
+      display: 'block',
+      alignItems: 'normal',
+      justifyContent: 'normal',
+      boxSizing: 'border-box',
+      cursor: 'auto',
+      resize: 'none',
+      outline: 'rgb(0, 0, 0) none 3px',
+      outlineOffset: '0px',
+      opacity: '1',
+      pointerEvents: 'auto',
+      width: '868px',
+      height: '274px',
+      fill: 'rgb(0, 0, 0)',
+      transform: 'none',
+      overflowX: 'visible',
+      scrollSnapType: 'none',
+      maskImage: 'none',
+      minWidth: '0px',
+      borderBottom: '1px solid rgba(0, 0, 0, 0)',
+      borderTop: '1px solid rgba(0, 0, 0, 0)',
+      flexShrink: '1',
+      flexGrow: '0',
+      position: 'static',
+      zIndex: 'auto',
+      animationDuration: '0s'
+    },
+    disabled: false,
+    state: null
+  },
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2
