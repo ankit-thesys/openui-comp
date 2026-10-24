@@ -1,17 +1,19 @@
-# Scaffold and theme review
+# First-slice review
 
-Fixed point: `c5699fdb4`. Two GPT-6.1 Sol reviewers inspected the new package, scoped lockfile additions and changeset independently. This review covers package/theme work only; the separately owned component integration is pending. No reviewer ran tests, builds or browsers.
+Fixed point: `c5699fdb4`. Two GPT-6.1 Sol reviewers independently inspected the scaffold/theme work, scoped lockfile/changeset, root integration, public consumer tests and final recorded evidence. Component implementation and its matrix also have the separate review in `src/components/Button/__tests__/REVIEW.md`. Reviewers ran no tests, builds or browsers.
 
 ## Standards
 
-No material findings. The copied theme implementation preserves existing behavior. Module-preserving tsdown output, matching conditional declarations, root-only exports and external dependencies use conventional tooling. No dependency patches or custom style machinery appears. Lockfile additions are confined to the new importer and Goober records. No baseline smell warranted a change.
+No remaining material findings. Module-preserving tsdown output, conditional ESM/CJS declarations, root-only exports, external dependencies and sideEffects metadata use conventional tooling. The test command uses the repository working directory expected by the component helper. Source-only isolation reuses installed tooling explicitly and does not copy the legacy package. No dependency patch, private style machinery or new styling API appears. The old package is unchanged; lockfile additions are limited to the new importer and Goober records.
+
+The two inherited ThemeProvider memo warnings remain disclosed. No baseline smell warranted a change in this bounded slice.
 
 ## Spec
 
-No remaining theme/scaffold correctness findings. The first review identified missing regression checks for explicit nested selectors and deprecated-theme alias/precedence/warnings. Both are now covered by passing tests without runtime changes. The packed-consumer checks use strict declaration checking in three module modes; skipLibCheck was removed. Test-count documentation was updated to six DOM behavior tests. Existing source is read-only; SSR and component integration remain explicitly outside this increment's certification.
+No remaining material findings. Initial verification gaps for explicit nested selectors and deprecated-theme alias/precedence/warnings were covered without changing copied behavior. Strict consumer checks run without skipLibCheck and cover controls/themes/ref types in three module modes, private subpath rejection and unsupported-prop rejection.
 
-Summary: Standards—0 material findings; Spec—2 verification gaps addressed, 0 remaining correctness findings. This review does not certify the combined component slice or publication.
+The integrated artifact checks automatic styling, light/dark public theme updates, unused root removal, retained Button independence, native interactions and build independence from legacy styles. Final Chrome results are for the integrated tarball, not borrowed scratch evidence: six passed cases with 5,600 comparisons each, totaling 33,600, across five theme scenarios. Setup-only legacy clsx resolution is clearly separated from the independently passing minimal consumer.
 
-## Integrated root follow-up
+Final artifact read-back verified the tarball SHA256 and 82,255-byte size, all 142 source/build records plus the separately recorded tarball (143 files), 16 full-suite passes, 5 installed-component passes, strict-consumer success, and clean Publint/ATTW results. Documentation distinguishes JSDOM coupling from computed-style comparisons, preserves the accepted eager runtime cost, and leaves SSR and broader certification deferred. It does not claim publication, merge or issue closure.
 
-The same reviewers checked the root wiring, copied internal FormControl context, updated test command and stronger packed-consumer checks. Both reported no remaining integration correctness or Standards findings. The package test command runs from the repository root to match the component test helper's existing path convention. Packed tests verify root controls/types/refs, rejected unsupported props, unused runtime removal and retained automatic Button styling. Subsequent acceptance coverage adds public light/dark control coupling and an isolated-source build; those checks passed. Corrected Chrome evidence remains a separate owned test run until its final commit is integrated.
+Summary: Standards—0 remaining material findings; Spec—2 earlier verification gaps addressed, 0 remaining material findings. Human review is still required before accepting/merging the slice.

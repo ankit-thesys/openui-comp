@@ -1,58 +1,70 @@
-# First-slice implementation evidence
+# First core slice — ready for review
 
-Issue: https://github.com/ankit-thesys/openui-comp/issues/9 (parent #7). User acceptance of the eager runtime styling cost is recorded in #8/#9 comments. This is a bounded browser-only migration, not whole-project completion or publication approval.
+Issue [#9](https://github.com/ankit-thesys/openui-comp/issues/9), under parent #7. The user accepted eager runtime Goober styling for this bounded browser migration. **Implementation and scoped validation are complete; no issue closure, merge or publication has been performed.**
 
-## Scope and provenance
+## Delivered scope
 
-Worker 1 owns package/build/root exports and existing themes. Worker 2 owns Button, Input, TextArea and their component tests in a separate worktree. The scaffold is committed as `f015d11ca`; Worker 2's component commit `321c624b6` is integrated here as `5802dcf4b`. Root exports, the minimal context and combined-package validation complete the owned integration work; the corrected browser matrix is reported passed and awaits its final evidence commit. Friend baseline paths and old production sources are untouched.
+`@openuidev/react-ui-core` exposes Button, Input, TextArea, their existing public prop types and existing theme APIs through the root only. The package produces module-preserving ESM/CJS and matching declarations. Runtime dependencies are stock Goober 2.1.19 and clsx, with React/ReactDOM 19 peers. The provisional package version is `0.0.0-beta.0`.
 
-Starting revision: `c5699fdb4`. Theme data, algorithms and hooks originate from the read-only `packages/react-ui/src/components/ThemeProvider` directory at that revision. `preferences.ts` and the shared isomorphic layout effect are copied locally so the new package has no chart-folder or old-package build dependency. Runtime theme behavior remains unchanged. Contexts are excluded from the public root, as specified. No old SCSS/generated CSS input is required.
+Existing theme data, swatches, types, algorithms, hooks and preference constants are preserved. Theme contexts and the minimal FormControl context remain internal. The full FormControl component, remaining families, charts and kits are not migrated in this slice. The copied preference/layout-effect helpers remove dependencies on old package or chart folders.
 
-The public legacy theme contract includes top-level `body` targeting unless `cssSelector` is supplied, automatic nested scope, portal class selectors, light/dark and deprecated theme props, JSON preference persistence and document mode attributes. This extraction preserves those behaviors; it does not promise isolation between multiple default-body providers or cross-tab preference synchronization.
+Worker 1 owns scaffold, themes, shared context, root wiring and final integration. Worker 2 owns the controls and their tests. Starting revision is `c5699fdb4`. Scaffold commit: `f015d11ca`; integrated component commit: `5802dcf4b` (original `321c624b6`); root wiring/tests: `5bc1487eb`; final component evidence: `4ebbae480` and `feb1c5940` (originals `add27e8fa`, `110ce1810`). The final evidence commit follows these revisions without changing runtime code.
 
-## TDD and checks
+## Results on the integrated artifact
 
-The first public-root test was executed before implementation and failed with `ERR_MODULE_NOT_FOUND` for the absent built entry. This is the new-package red checkpoint, not a bug in existing React UI. Copying the existing theme implementation and adding the build/root exports made the two root API/format tests pass. Six additional behavioral regression tests then passed without changing copied behavior. They are parity checks, not claimed as separate test-first bug fixes.
+| Check | Result |
+| --- | --- |
+| Full package suite | 16 tests passed |
+| Component/bundle tests against an installed tarball | 5 tests passed |
+| Strict TypeScript consumer modes | NodeNext ESM, NodeNext CJS and Bundler passed; no skipLibCheck |
+| Runtime formats and declarations | ESM/CJS, root exports and private-subpath rejection passed |
+| Browser matrix on the final integrated tarball | All 6 cases passed; 33,600 paired computed-style snapshots |
+| CSS hosts and order | Plain CSS, Tailwind v3/v4; host stylesheet before and after component styles |
+| Theme coverage | No provider, light, dark, explicit custom light and custom dark |
+| States and customization | Variants/sizes, hover, active, focus, error/disabled combinations, important hover overrides, native keyboard/text interactions and host isolation passed |
+| Unused code/styles | Unused root imports remove core/Goober runtime; retained Button excludes other controls and theme tables |
+| Automatic styling and theme integration | Installed browser bundle renders controls with no CSS import/link; light/dark public theme updates and cleanup passed |
+| Build without legacy source/styles | Isolated new-package ESM/CJS/declaration build passed with no old react-ui directory or CSS/SCSS output |
+| Typecheck / formatting / package checks | Passed; Publint and all ATTW modes report no problems |
+| Lint | 0 errors; 2 disclosed inherited theme-memo warnings |
 
-Node 22.22.2, pnpm 10.33.0, TypeScript 6.0.3, tsdown 0.21.10 and React/ReactDOM 19.2.4 were used. Goober is pinned to the evaluated 2.1.19 runtime. The exact dependency graph is in the workspace lockfile. React 19 is the declared major peer boundary; these checks do not certify every released minor or browser.
+The final browser run uses the **integrated tarball**, rather than borrowing Worker 2's earlier scratch-artifact result. Its runtime is React/ReactDOM 19.2.4, stock Goober 2.1.19 and Chrome 156.0.8078.47. Node 22.22.2, pnpm 10.33.0, TypeScript 6.0.3 and tsdown 0.21.10 were used. Exact artifact and source/build hashes are in [evidence/final-artifact.json](evidence/final-artifact.json). The 82,255-byte tarball SHA256 is `76a48b1e439e02a0d5641edfb177334c6419237c142dd700496a1ef4c0b52796`.
 
-Executed commands:
+The default/nested/explicit selector behavior, portal class mechanism, deprecated `theme` alias/precedence, system mode, preference persistence/reset and blocked-storage handling are also covered through built public APIs. A packed consumer checks forwarded ref types and existing size/style props, rejects `sx` and numeric Input size, and exercises controls with public ThemeProvider updates. JSDOM checks are distinct from the Chrome computed-style matrix; neither is a pixel comparison or universal proof of defect absence.
+
+## Integrity and implementation boundaries
+
+`git diff c5699fdb4 -- packages/react-ui` is empty. The pre-existing lockfile bytes remain unchanged; only the new importer and Goober records were added. The installed Goober module is byte-identical to preserved stock 2.1.19, SHA256 `3708e75d7cebc41beaab527374f9e0b21711437e6cf05cd3f7dff2c532086d43`. All 143 recorded source/build/artifact files remained unchanged during final verification. Browser results also record compiled-script, fixture and runner hashes.
+
+There are no dependency patches, private targets, custom caches, parser forks, generated guards, stylesheet bridges, new styling APIs or consumer setup/build plugins. Equivalent standard CSS selector ordering and `:where` specificity preserve the old results; the component test notes document the issues caught. Production builds do not read old SCSS/generated CSS. Captured legacy and host CSS are **test-only reference inputs**, excluded from the published tarball.
+
+## Reproduction
+
+From the repository root after normal workspace dependency installation:
 
 ```sh
-pnpm --filter @openuidev/react-ui-core build
+pnpm --filter @openuidev/react-ui-core test
 pnpm --filter @openuidev/react-ui-core typecheck
-node --test packages/react-ui-core/tests/theme-exports.test.mjs
-node --test packages/react-ui-core/tests/theme-behavior.test.mjs
-node --test packages/react-ui-core/tests/packed-consumer.test.mjs
+pnpm --filter @openuidev/react-ui-core lint:check
+pnpm --filter @openuidev/react-ui-core format:check
 pnpm --filter @openuidev/react-ui-core check:publint
-npm_config_cache=/private/tmp/openui-core-npm-cache pnpm --filter @openuidev/react-ui-core check:attw
-pnpm install --filter @openuidev/react-ui-core --frozen-lockfile --ignore-scripts --offline
+pnpm --filter @openuidev/react-ui-core check:attw
 ```
 
-Theme increment results: ESM/CJS and declarations build; typecheck passes; two export tests, six DOM behavior tests and one packed-consumer test pass. Packed consumer checks run outside the workspace with normal offline dependency installation, root ESM/CJS imports and three TypeScript modes (NodeNext ESM/CJS and bundler). Its unused ThemeProvider import retains no package runtime in a normal production browser bundle. Publint and all declaration-analysis modes pass.
+The full suite builds the package, tests public exports and renders, packs and installs a temporary consumer, checks three strict TypeScript modes, and builds an isolated source copy without the legacy package. It reuses normal installed tooling/dependencies; it does not claim a dependency-free build. The source package test command includes the nested component tests.
 
-DOM behavior checks cover default hook values, light/dark updates and overrides, nested/independent selector scopes, a portal consumer, explicit nested selectors, deprecated alias/precedence warnings, preference persistence/reset/system changes, blocked storage, and teardown cleanup. They inspect public rendered outputs and stylesheet selectors in JSDOM; they are not Chrome visual/CSS framework certification. The integrated package additionally verifies root control exports/types/refs, native component interactions, automatic styling, unused-root pruning, Button-only independence and light/dark theme updates through a packed consumer. Chrome appearance/state/override certification is recorded separately by Worker 2.
+[evidence/README.md](evidence/README.md) gives the exact final-tarball browser setup. It includes an archived host/reference stylesheet fixture so reproduction does not depend on another worker's checkout. [Component test instructions](src/components/Button/__tests__/README.md) describe the matrix and supported environment variables. Evidence artifacts and logs are hashed in `evidence/SHA256.json`.
 
-The sandbox initially blocked npm's default user cache and pnpm's consumer store access. npm checks use a temporary cache without changing the user's cache ownership; the consumer test passed with normal local store permissions. Those initial failures were environment failures, not package defects. pnpm's resolver proposed unrelated graph churn, which was removed: only the new importer (including test-only esbuild) and Goober package/snapshot were retained and the narrowed lockfile passed a frozen offline install.
+## TDD and setup failures
 
-## Remaining boundaries
+The public-root import test was run before implementation and failed because the new built entry did not exist. After copying the preserved theme implementation and adding build/root exports, it passed. Further theme checks are regression/parity tests, not claimed as separate test-first behavior changes. The root control export and packed-control assertions separately failed on missing Button before integration, then passed after the component commit and root wiring. Worker 2 records the individual control red/green checkpoints.
 
-No SSR/hydration/streaming-server support, release, deprecation, merge, old-package edits, dependency patches, new styling API or custom cache/guard/bridge is introduced. Package version `0.0.0-beta.0` is provisional until release review. The existing local full-library cold cost remains documented in README.md; these theme checks do not erase or remeasure it. Final first-slice acceptance also requires review of the corrected component-browser evidence and the combined artifact.
+Setup failures were kept separate from package defects: npm's default cache was unwritable in the sandbox; temporary cache configuration avoided changing ownership. The isolated-source fixture initially could not find repository-level tsdown from a temporary non-workspace folder, then used the existing CLI directly. The final Chrome run initially stopped before launching because legacy reference imports could not resolve clsx under strict pnpm layout. Only that comparison fixture received a test-only direct clsx 2.1.1 dependency; the minimal production consumer had already passed independently. The setup failure log is preserved, and the subsequent complete six-case run passed.
 
-## Component integration preparation
+The custom-dark review statement was corrected: the existing provider falls back from darkTheme to lightTheme. The useful improvement was explicit dark overrides and independent expected-value assertions, not a theme behavior fix.
 
-After the scaffold commit, the root-component export test and packed-consumer control assertions were run and failed specifically because `Button` was not yet exported. Those are the integration red checkpoints; the component files are independently owned and not replaced with stubs. The unchanged 22-line FormControl context is copied as internal support at `src/components/FormControl/context.tsx`; it defines its required interface locally and needs no additional types file or public export. Full FormControl migration is not included.
+## Residual limits
 
-A production-source lint check reports zero errors and two inherited `react-hooks/exhaustive-deps` warnings about the legacy `userLightTheme` fallback object. They are disclosed rather than silently changing provider memoization in this extraction. Existing package lockfile bytes were verified unchanged after removing the new importer and Goober records.
+Two existing `react-hooks/exhaustive-deps` warnings concern the copied ThemeProvider's empty light-theme fallback object. No runtime memoization change was introduced during extraction. Existing top-level body targeting, preference-global attributes and lack of cross-tab hook synchronization are preserved; independent top-level themes still need the existing explicit cssSelector API.
 
-## Integrated package results
-
-The specific missing-Button public export checks became green after the component commit and four root re-exports were integrated. No component source files were edited by Worker 1. The packed consumer checks strict NodeNext ESM/CJS and bundler declarations for controls and themes, forwarded ref types, existing size and styling props, and rejection of `sx` and numeric Input size. It checks root-only ESM/CJS exports outside the workspace.
-
-A production Button-only browser bundle excludes Input, TextArea and ThemeProvider data while retaining stock Goober styles. An unused root import retains no core/Goober runtime. The installed bundle renders a styled native Button without a CSS link. A separate packed-bundle consumer renders all three controls with ThemeProvider, changes light/dark mode with explicit custom token values, verifies public outputs/document variables and removes theme styles on unmount. These JSDOM checks establish packaging/runtime coupling; they do not replace Chrome state/visual checks.
-
-An isolated build fixture copies only the new package source/configuration and the shared compiler config, reuses installed tooling/dependencies, and contains no `packages/react-ui` directory. Its ESM/CJS/declarations build and no CSS/SCSS artifact is emitted. The initial fixture invocation could not find the repository-level tsdown binary from a temporary non-workspace folder; it now invokes that existing CLI directly. This was test setup, not a legacy-style dependency.
-
-The initial combined suite passed all 15 cases. The additional isolated-build check passed separately; the final full suite passed all 16 cases after adding the isolated-build and integrated theme-consumer checks. Lint has zero errors and two disclosed inherited warnings; formatting, Publint and all declaration-analysis modes pass. The unchanged stock Goober binary hashes to `3708e75d7cebc41beaab527374f9e0b21711437e6cf05cd3f7dff2c532086d43`. `git diff c5699fdb4 -- packages/react-ui` is empty. There are no stock-library modifications or global environment changes.
-
-The five independent component/bundle tests also passed against `/private/tmp/openui-core-first-slice-consumer`, a normal offline installation of the integrated tarball, with React/ReactDOM 19.2.4. This consumer is separate from the workspace and imports the public root normally. Worker 2 reports 33,600 passing paired Chrome snapshots plus explicit expected custom-theme and hover-color assertions; its final evidence commit is still being integrated. The initial custom-dark review claim was corrected: the existing provider falls back from `darkTheme` to `lightTheme`, so the useful improvement was explicit overrides and independent expected-value checks, not a theme runtime fix.
+SSR, hydration, streaming SSR and concurrent server style isolation remain deferred. The accepted import-time CSS cost remains documented; this slice does not remeasure full-library performance or memory. React/browser versions and bundlers beyond the recorded checks are not certified. Release metadata/version remains subject to review. No later migration slice, friend baseline path, publication, deprecation or merge was included.
