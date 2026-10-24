@@ -1,0 +1,6 @@
+{
+  "tarballSha256": "fae423c3822f8884aa1e2ea7b1e47becc0e875bc56653484b563cd0102828b5a",
+  "sourceRevision": "ee911e3c5",
+  "failure": "tailwind3/after/accordion/uncontrolled-selection node count 24 vs 23; investigate closed-panel animation cleanup",
+  "productSourceChanged": false
+}

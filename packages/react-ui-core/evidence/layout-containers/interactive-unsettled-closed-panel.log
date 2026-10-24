@@ -1,0 +1,34 @@
+plain/before/accordion: 1749 paired snapshots passed
+plain/before/carousel: 405 paired snapshots passed
+plain/before/steps: 442 paired snapshots passed
+plain/before/tabs: 3757 paired snapshots passed
+plain/after/accordion: 1749 paired snapshots passed
+plain/after/carousel: 405 paired snapshots passed
+plain/after/steps: 442 paired snapshots passed
+plain/after/tabs: 3757 paired snapshots passed
+tailwind3/before/accordion: 1749 paired snapshots passed
+tailwind3/before/carousel: 405 paired snapshots passed
+tailwind3/before/steps: 442 paired snapshots passed
+tailwind3/before/tabs: 3757 paired snapshots passed
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: tailwind3/after/accordion/uncontrolled-selection: count
+
+24 !== 23
+
+    at compare (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Accordion/__tests__/compatibility.browser.mjs:245:20)
+    at runNextTicks (node:internal/process/task_queues:64:5)
+    at process.processImmediate (node:internal/timers:452:9)
+    at process.callbackTrampoline (node:internal/async_hooks:130:17)
+    at async file:///Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Accordion/__tests__/compatibility.browser.mjs:405:13 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 24,
+  expected: 23,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

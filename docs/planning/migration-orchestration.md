@@ -1,3 +1,15 @@
+# Current migration handoff — 2026-10-25
+
+Container checkpoint **PASSED** at d88873401. Final evidence and exact artifact are archived in packages/react-ui-core/evidence/layout-containers; see README.md and artifact.json. CI 57/57, installed tests 46/46, strict types in three modes, 30 Chrome configurations /132,051 paired snapshots and loading animation checks passed. Failed Accordion settling run is preserved separately with its test-only endpoint correction. Independent Standards and Spec reviews: zero actionable findings.
+
+Phase 2 is authorized after this checkpoint: Worker 2 owns Modal/TooltipWrapper in its own checkout; Worker 1 owns root exports/dependencies/integration and final packed/portal/theme acceptance. Integrate committed batches only. Browser window is now released to Worker 2; no competing browser runs. No actual container blocker remains. Whole issue #11 is not complete until overlay integration passes.
+
+Workers must touch neither preview checkout: /Users/ankitdas/thesys/openui nor /Users/ankitdas/thesys/openui-comp (preview at433a). Work only in each worker's isolated checkout. Legacy source is read-only; stock Goober only; no merge/publication/upstream writes. SSR remains deferred.
+
+## Historical handoff records
+
+The following records describe earlier checkpoints and are superseded by the current status above.
+
 # Migration orchestration
 
 Last updated: 2026-10-25 (Asia/Kolkata).
