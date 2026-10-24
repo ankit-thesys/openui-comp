@@ -40,7 +40,7 @@ describe("default render", () => {
     "%s draws no degenerate zero-area paths",
     (name, family) => {
       const html = renderAndRecord(name, family.render());
-      const ds = [...html.matchAll(/ d="([^"]*)"/g)].map((m) => m[1]);
+      const ds = [...html.matchAll(/ d="([^"]*)"/g)].map((m) => m[1] ?? "");
       // A share-of-total family emits `M0,-rL0,0Z` stubs when every value
       // resolves to 0 — the signature of a mis-wired `dataKey`. Real default
       // cases must not contain them.

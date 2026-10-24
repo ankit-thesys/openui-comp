@@ -1,126 +1,195 @@
 # Coverage matrix
 
 **Baseline SHA:** `9d73d17d2bbac565672a85e78f6eb7740cb0d9ca`
+**Families:** 19 exported chart components. Every table below accounts for all 19.
 
 Legend:
 
-- **Y** — covered by an assertion or recorded evidence in this directory.
-- **N/A** — the family has no such feature in its public API; absence is correct
-  behaviour, not a missing test.
-- **UNTESTED** — the feature exists (or may exist) and this baseline does **not**
-  establish it. These are real gaps, listed again at the bottom.
+- **verified** — exercised and asserted.
+- **unsupported** — the family does not implement it; a source citation says so.
+  Not a gap.
+- **n/a** — the feature does not exist in that family's public API.
+- **UNTESTED** — a real gap. Listed again at the bottom.
 
-Two environments produced the evidence, and the split matters:
+Three environments produced this evidence, and which one a row came from matters:
 
-- **SSR** — `react-dom/server`, via `tests/*.baseline.test.tsx`. Deterministic
-  and runnable in CI. Cannot observe computed colour, layout measurement, or any
-  event.
-- **Browser** — Chromium in the Claude desktop browser pane, via
-  `fixtures/browser/`. Covers what SSR cannot. Results recorded under
-  `evidence/browser/`.
+| Harness | What it is | What it cannot do |
+|---|---|---|
+| **SSR** | `react-dom/server` via `tests/*.baseline.test.tsx` (176 assertions across 7 files) | no computed colour, no measurement, no events |
+| **Browser** | headless Chrome over CDP via `browser/run.mjs`, with **real** mouse/keyboard (`event.isTrusted === true`) | no automated image comparison |
+| **Source** | cited code, for behaviour that does not exist | — |
 
-## Per family
+## 1. Rendering and data
 
-| Family | Default render | Empty data | Light/dark | Responsive | Legend | Tooltip | Legend toggle | Screenshot |
-|---|---|---|---|---|---|---|---|---|
-| AreaChart | Y (SSR) | Y placeholder | Y (browser) | Y (SSR size props) | Y | Y | Y | Y light+dark |
-| AreaChartCondensed | Y (SSR) | Y placeholder | Y (browser) | Y (SSR size props) | Y | Y | Y | Y light |
-| LineChart | Y (SSR) | Y placeholder | Y (browser) | Y (SSR size props) | Y | Y | Y | Y light |
-| LineChartCondensed | Y (SSR) | Y placeholder | Y (browser) | Y (SSR size props) | Y | Y | Y | Y light |
-| BarChart | Y (SSR) | Y placeholder | Y (browser) | Y (SSR size props) | Y | Y | Y | Y light+dark |
-| BarChartCondensed | Y (SSR) | Y placeholder | Y (browser) | Y (SSR size props) | Y | Y | Y | Y light |
-| HorizontalBarChart | Y (SSR) | Y placeholder | Y (browser) | **see DEFECT-001** | Y | Y | Y | Y light |
-| PieChart | Y (SSR) | Y placeholder | Y (browser) | Y (browser, 400px breakpoint) | Y (browser only — empty in SSR) | Y | UNTESTED | Y light+dark |
-| RadialChart | Y (SSR) | Y placeholder | Y (browser) | UNTESTED | Y (browser only — empty in SSR) | Y | UNTESTED | Y light |
-| RadarChart | Y (SSR) | Y placeholder | Y (browser) | UNTESTED | Y | Y | Y | Y light+dark |
-| ScatterChart | Y (SSR) | Y placeholder | Y (browser) | UNTESTED | Y | Y | Y | Y light |
-| HeatmapChart | Y (SSR) | Y placeholder | Y (browser) | Y (browser, container-driven) | Y | Y | Y | Y light+dark |
-| FunnelChart | Y (SSR) | Y placeholder | Y (browser) | UNTESTED | Y | Y | Y | Y light |
-| SegmentedBar | Y (SSR) | Y placeholder | Y (browser) | UNTESTED | Y | Y | UNTESTED | Y light |
-| SingleStackedBar | Y (SSR) | Y placeholder | Y (browser) | UNTESTED | Y | Y | UNTESTED | Y light |
-| CalendarHeatmap | Y (SSR) | Y placeholder | Y (browser) | UNTESTED | N/A (scale key, not a series legend) | Y | N/A | Y light |
-| MiniAreaChart | Y (SSR) | Y — empty `d=""` | Y (browser) | N/A (`size` only) | N/A | N/A | N/A | Y light |
-| MiniBarChart | Y (SSR) | Y — empty `<svg>` | Y (browser) | N/A (`size` only) | N/A | N/A | N/A | Y light |
-| MiniLineChart | Y (SSR) | Y — empty `d=""` | Y (browser) | N/A (`size` only) | N/A | N/A | N/A | Y light |
+| Family | Default render | Empty data | Dark reference image |
+|---|---|---|---|
+| AreaChart | verified (SSR) | verified — placeholder | verified |
+| AreaChartCondensed | verified (SSR) | verified — placeholder | verified |
+| LineChart | verified (SSR) | verified — placeholder | verified |
+| LineChartCondensed | verified (SSR) | verified — placeholder | verified |
+| BarChart | verified (SSR) | verified — placeholder | verified |
+| BarChartCondensed | verified (SSR) | verified — placeholder | verified |
+| HorizontalBarChart | verified (SSR) | verified — placeholder | verified |
+| PieChart | verified (SSR) | verified — placeholder | verified |
+| RadialChart | verified (SSR) | verified — placeholder | verified |
+| RadarChart | verified (SSR) | verified — placeholder | verified |
+| ScatterChart | verified (SSR) | verified — placeholder | verified |
+| HeatmapChart | verified (SSR) | verified — placeholder | verified |
+| FunnelChart | verified (SSR) | verified — placeholder | verified |
+| SegmentedBar | verified (SSR) | verified — placeholder | verified |
+| SingleStackedBar | verified (SSR) | verified — placeholder | verified |
+| CalendarHeatmap | verified (SSR) | verified — placeholder | verified |
+| MiniAreaChart | verified (SSR) | verified — empty `d=""` | verified |
+| MiniBarChart | verified (SSR) | verified — empty `<svg>` | verified |
+| MiniLineChart | verified (SSR) | verified — empty `d=""` | verified |
 
-## What each column means
+**19/19 dark reference images captured**, one per family, at 1280x900 with
+`prefers-color-scheme: dark` emulated. They are **reference images only** — no
+automated comparison is implemented, and `browser-run.json` repeats that note on
+every entry. A family that rendered no marks would be recorded as a *failure*
+with no image, not as coverage; none did.
 
-**Default render.** `tests/default-render.baseline.test.tsx` renders all 19 on
-the deterministic datasets and records the markup under `evidence/ssr/`. It
-asserts the family's container class, that it drew at least one mark (segments,
-for the div-based families), and that no degenerate zero-area path was emitted.
+## 2. Sizing — two different mechanisms, never conflated
 
-**Empty data.** `tests/empty-data.baseline.test.tsx`, `data={[]}` for all 19.
-The split is **not uniform**, and the snapshot in
-`tests/__snapshots__/empty-data.baseline.test.tsx.snap` pins it: 16 families
-render the shared `No data available` placeholder; the three Mini charts render
-no placeholder at all, in three different ways — `MiniBarChart` emits a
-completely empty `<svg>`, while `MiniAreaChart` and `MiniLineChart` emit paths
-with an empty `d=""` attribute. See FINDING-003.
+This is the correction the #24 review asked for. PR #22 marked four families as
+"size-prop verified" when the dimension-changing test only covered AreaChart and
+BarChart. Both columns below are now driven across the whole registry.
 
-**Light/dark.** Covered in the **browser**, where computed colours are
-observable: chrome tokens flip (`oklch(0.097 0 0)` light → `oklch(0.985 0
-89.876)` dark) while series fills stay `rgb(33,150,243)` in both — the default
-palette is not theme-derived. **SSR cannot cover this at all**: ThemeProvider
-injects tokens from an effect, so server markup is byte-identical between modes.
-`tests/theme-responsive.baseline.test.tsx` asserts that identity deliberately,
-so the limitation is pinned rather than assumed.
+| Mechanism | What is varied | Harness | Where |
+|---|---|---|---|
+| **Size props** | numeric `width`/`height` (or mini `size`) passed in | SSR | `tests/size-props.baseline.test.tsx` |
+| **Container resize** | the surrounding box; the chart measures it via `ResizeObserver` | Browser | `browser/run.mjs` |
 
-**Responsive.** Two different things, kept apart:
-- *Size props* (SSR): changing numeric `width`/`height` changes drawn geometry.
-  Asserted for Area and Bar.
-- *Container-driven* (browser): the real `ResizeObserver` path. Measured for
-  PieChart's legend breakpoint (column below 400px, row from 400px — matches the
-  documented behaviour exactly) and HeatmapChart following its container 1:1
-  from 320px to 720px. Other families are **UNTESTED** here; the fixture pins
-  numeric sizes, so they do not reflow in the main grid.
+They are genuinely different code paths: `useContainerSize`
+(`hooks/core/useContainerSize.ts:13-14`) returns numeric props verbatim and
+never measures, so a size-prop pass says nothing about container behaviour.
 
-**Legend.** `tests/legend.baseline.test.tsx` asserts item labels and order,
-that `legend={false}` removes the container, the documented coupling where
-`legend={false}` also hides `xAxisLabel`/`yAxisLabel`, and the `cursor:pointer`
-affordance. PieChart and RadialChart are called out separately: their stacked
-legend is **empty in SSR** (it is filled from a store on an effect) and
-populated in the browser — both states are asserted/recorded.
+| Family | Size props (SSR) | Container resize (browser) |
+|---|---|---|
+| AreaChart | verified | verified |
+| AreaChartCondensed | verified | verified |
+| LineChart | verified | verified |
+| LineChartCondensed | verified | verified |
+| BarChart | verified | verified |
+| BarChartCondensed | verified | verified |
+| HorizontalBarChart | verified | verified |
+| PieChart | **unsupported** — stacked legend (see below) | **unsupported** — stacked legend (see below) |
+| RadialChart | **unsupported** — stacked legend | **unsupported** — stacked legend |
+| RadarChart | verified | verified |
+| ScatterChart | verified | verified |
+| HeatmapChart | verified | verified |
+| FunnelChart | verified | verified |
+| SegmentedBar | n/a — no size props | verified |
+| SingleStackedBar | n/a — no size props | verified |
+| CalendarHeatmap | verified | verified |
+| MiniAreaChart | verified (`size`) | verified |
+| MiniBarChart | verified (`size`) | **unsupported** — fixed marks (see below) |
+| MiniLineChart | verified (`size`) | verified |
 
-**Tooltip.** Browser only. 16 of 19 families show a tooltip whose text matches
-the fixture data exactly, and all dismiss on pointer-out. The three Mini charts
-have no tooltip in their public API, so N/A. Full texts in
-`evidence/browser/interactions.json`.
+**Counts, consistent with `evidence/browser/browser-run.json`:**
 
-**Legend toggle.** Browser only. Clicking an item hides that series (series-mark
-count drops), dims the item to `opacity: 0.3`, and a second click restores the
-original count exactly — verified for 11 families.
+- Size props: **15 verified**, 2 unsupported (Pie, Radial), 2 n/a
+  (SegmentedBar, SingleStackedBar) = 19.
+- Container resize: **16 verified**, 3 unsupported (Pie, Radial, MiniBarChart) = 19.
 
-**Screenshot.** `evidence/screenshots/`. Grouped captures at a recorded viewport
-(1280x900 emulated), light for all 19, dark for a representative five.
+### The three "unsupported" sizing results, with their mechanisms
 
-## Gaps — stated plainly
+None of these is "the chart ignores its box". Each was isolated to a specific
+cause, and in two cases the same family demonstrably *does* scale once that
+cause is removed:
 
-1. **Container-driven responsiveness for 10 families** (Radial, Radar, Scatter,
-   Funnel, SegmentedBar, SingleStackedBar, CalendarHeatmap, and the three Mini
-   charts). Only Pie and Heatmap were measured across widths. Everything else
-   has size-prop evidence only.
-2. **Legend toggle for PieChart/RadialChart** is UNTESTED. Their legend entries
-   go through the `StackedLegend` store and the probe's selector does not match
-   them. Their *tooltips* are covered.
-3. **Legend toggle for SegmentedBar/SingleStackedBar** is UNTESTED: their
-   segments are divs, so the SVG mark count cannot detect the change.
-4. **Dark-mode screenshots cover 5 of 19 families** (Area, Bar, Pie, Heatmap,
-   Radar). Dark *computed colours* were sampled across families, but the images
-   are a subset. Reproduce any other with
-   `?theme=dark&only=<Family>`.
-5. **No real-input events.** The interaction probe dispatches synthetic
-   `MouseEvent`s. They run the components' real handlers, scales and rendering,
-   but cannot catch problems below the event layer — pointer capture, touch
-   emulation, OS-level hit-testing. Two families (ScatterChart, SegmentedBar)
-   were additionally checked by hand through the browser automation and agreed.
-6. **No keyboard or screen-reader testing.** Only the static a11y surface is
-   asserted (`role="img"` plus a non-empty `aria-label` on every family).
-7. **No visual regression baseline.** Screenshots are reference images for a
-   human to compare; nothing diffs them automatically. There is no screenshot
-   harness in this repo and adding one would be a dependency change this ticket
-   forbids.
-8. **Print path untested.** Every family consults `usePrintContext` and disables
-   animation when printing; none of that is exercised here.
-9. **`isAnimationActive={true}` untested.** All evidence is captured with the
-   default `false`. Entrance animations are therefore not characterised.
+- **PieChart / RadialChart** default to `legendVariant="stacked"`. That wrapper
+  caps the chart column, so the drawn pie stays 270px (Pie) / 218px (Radial) at
+  both container sizes. The identical chart with `legendVariant="default"`
+  scales **256 → 450** and **207 → 365** — recorded as diagnostic cases
+  `PieChart__defaultLegend` / `RadialChart__defaultLegend` in the same run. The
+  same wrapper makes them size-invariant in SSR, asserted in
+  `tests/size-props.baseline.test.tsx`.
+- **MiniBarChart**: its `<svg>` *does* follow the container (360 → 900), but
+  `MINI_BAR_WIDTH = 8` and `MINI_BAR_SPACING = 10` are fixed pixels
+  (`shared/mini/miniChartUtils.ts:35-36`) and `miniBarsLeftPadding` right-aligns
+  the bars (`:50-51`), so extra width becomes empty space and the drawn bars stay
+  132px. Narrowing instead drops the oldest bars (`recentBarsThatFit`, `:41-47`).
+
+### Why both container dimensions are varied
+
+The container sweep varies **width and height together** (360x300 → 900x760). A
+width-only sweep is a false negative for the square families: RadarChart draws
+173px wide at 360x300 and 303px at 900x760, so holding height at 300 would have
+reported it as unresponsive. An earlier iteration of this suite did exactly that.
+
+## 3. Interactions
+
+All browser rows use **real** CDP input, not synthetic `MouseEvent` dispatch.
+`trusted-input` is asserted as a scenario in its own right: the page observes
+`event.isTrusted === true`. This matters because a synthetic event dispatched on
+an element cannot miss, so it also cannot detect a mis-targeted or overlapped
+control — which is precisely how PR #22 mis-recorded the Pie/Radial toggles.
+
+| Family | Tooltip | Legend toggle | Hover highlight |
+|---|---|---|---|
+| AreaChart | verified | verified | — |
+| AreaChartCondensed | verified | verified | — |
+| LineChart | verified | verified | — |
+| LineChartCondensed | verified | verified | — |
+| BarChart | verified | verified | — |
+| BarChartCondensed | verified | verified | — |
+| HorizontalBarChart | verified | verified | — |
+| PieChart | verified | **verified** (was UNTESTED in #22) | — |
+| RadialChart | verified | **verified** (was UNTESTED in #22) | — |
+| RadarChart | verified | verified | — |
+| ScatterChart | verified | verified | — |
+| HeatmapChart | verified | verified | — |
+| FunnelChart | verified | verified | — |
+| SegmentedBar | verified | **unsupported** (was UNTESTED in #22) | **verified** |
+| SingleStackedBar | verified | **unsupported** (was UNTESTED in #22) | **verified** |
+| CalendarHeatmap | verified | n/a — scale key, not a series legend | — |
+| MiniAreaChart | n/a | n/a | — |
+| MiniBarChart | n/a | n/a | — |
+| MiniLineChart | n/a | n/a | — |
+
+**All four previously-untested legend-toggle families are now resolved:**
+
+- **PieChart / RadialChart — verified.** Their legend is published to the shared
+  store and rendered as `.openui-stacked-legend__item`, not the
+  `.openui-chart-legend-item` the cartesian families use. PR #22 looked for the
+  latter, found nothing, and recorded "untested". A real click on the correct row
+  hides the series (visible filled paths 4 → 3), dims the row to `opacity: 0.3`,
+  and a second click restores the snapshot **exactly**.
+- **SegmentedBar / SingleStackedBar — unsupported, by design.**
+  `SegmentedBar.tsx:28` says: *"no legend visibility toggle (openui only
+  hover-highlights)"*, and `DefaultLegend` is rendered without `onItemClick` or
+  `hiddenSeries` (0 occurrences in that file), so no toggle handler exists. The
+  negative is demonstrated rather than assumed: a real click lands on the
+  measured centre of a real legend row and nothing observable changes. The
+  interaction they *do* support — hover highlight — is separately **verified**,
+  including restoration on pointer-out.
+
+## 4. Gaps — the remaining real ones
+
+1. **No automated image comparison.** The 19 dark references and the light
+   screenshots are reference images for a human. Nothing diffs them, so they
+   cannot catch a subtle visual regression on their own. A screenshot-diff
+   harness would be a dependency change this ticket forbids. The mechanically
+   comparable evidence is `evidence/ssr/` markup and `evidence/browser/*.json`.
+2. **Light reference images are grouped, not per-family.** Dark is 19/19
+   individually; light is 8 grouped captures from PR #22, retained as
+   superseded-but-valid evidence. Any single family: `?theme=light&only=<Family>`.
+3. **Keyboard interaction is not exercised.** `Input.dispatchKeyEvent` is
+   implemented and verified trusted in `browser/cdp.mjs`, but no chart scenario
+   uses it — none of these families documents keyboard-operable controls, and
+   asserting an expectation that the source does not make would be inventing one.
+4. **No accessibility certification.** Only a static surface check: every family
+   exposes `role="img"` with a non-empty `aria-label`. No screen-reader, focus
+   order, or contrast verification was performed, and none is claimed.
+5. **No SSR-hydration or performance claims.** Charts are rendered with
+   `renderToString` for deterministic markup; no hydration round-trip, and no
+   timing or memory measurement was done.
+6. **Print path untested.** Every family consults `usePrintContext` and disables
+   animation when printing; not exercised.
+7. **`isAnimationActive={true}` untested.** All evidence is captured with the
+   default `false`, so entrance animations are not characterised.
+8. **Tooltip coverage is from the PR #22 synthetic-event sweep** for the 13
+   cartesian/polar families. The four families #24 called out were re-done with
+   real input; the rest were not re-run through CDP. Their recorded tooltip
+   texts match the fixture data exactly, but they carry the weaker evidence.

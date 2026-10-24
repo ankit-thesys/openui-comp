@@ -65,6 +65,13 @@ export interface FamilyCase {
   render: () => React.ReactElement;
   /** Same family, with `data={[]}` — drives the empty-data column. */
   renderEmpty?: () => React.ReactElement;
+  /**
+   * The family rendered at an explicit size, for the size-prop responsiveness
+   * check. Absent for the two container-only families, which have no size
+   * props at all — that absence is what marks them N/A in the matrix rather
+   * than untested.
+   */
+  renderAtSize?: (size: { width: number; height: number }) => React.ReactElement;
   sizing: SizingMode;
   /** Source file the family's implementation lives in, for the inventory. */
   source: string;
@@ -269,5 +276,43 @@ export const FAMILIES: FamilyCase[] = [
     renderEmpty: () => <MiniLineChart data={[]} size={160} />,
   },
 ];
+
+/**
+ * How each family is driven at an explicit size, for the size-prop
+ * responsiveness check.
+ *
+ * Kept as one map rather than a `renderAtSize` on all nineteen entries so the
+ * props stay in one place and cannot drift from `render` above.
+ *
+ * The two container-only families are deliberately ABSENT: `SegmentedBar` and
+ * `SingleStackedBar` accept no size props at all, so there is nothing to vary.
+ * That absence is what marks them "n/a" in the size-prop matrix rather than
+ * "untested" — see tests/size-props.baseline.test.tsx.
+ */
+type SizeArg = { width: number; height: number };
+const SIZE_VARIANTS: Record<string, (s: SizeArg) => React.ReactElement> = {
+  AreaChart: (s) => <AreaChart data={rows} categoryKey="month" {...s} />,
+  AreaChartCondensed: (s) => <AreaChartCondensed data={rows} categoryKey="month" {...s} />,
+  LineChart: (s) => <LineChart data={rows} categoryKey="month" {...s} />,
+  LineChartCondensed: (s) => <LineChartCondensed data={rows} categoryKey="month" {...s} />,
+  BarChart: (s) => <BarChart data={rows} categoryKey="month" {...s} />,
+  BarChartCondensed: (s) => <BarChartCondensed data={rows} categoryKey="month" {...s} />,
+  HorizontalBarChart: (s) => <HorizontalBarChart data={rows} categoryKey="month" {...s} />,
+  PieChart: (s) => <PieChart data={share} categoryKey="browser" dataKey="visitors" {...s} />,
+  RadialChart: (s) => <RadialChart data={share} categoryKey="browser" dataKey="visitors" {...s} />,
+  RadarChart: (s) => <RadarChart data={rows} categoryKey="month" {...s} />,
+  FunnelChart: (s) => <FunnelChart data={share} categoryKey="browser" dataKey="visitors" {...s} />,
+  HeatmapChart: (s) => <HeatmapChart data={rows} categoryKey="month" {...s} />,
+  ScatterChart: (s) => <ScatterChart data={scatter} {...s} />,
+  CalendarHeatmap: (s) => <CalendarHeatmap data={calendar} range={CALENDAR_RANGE} {...s} />,
+  // The mini charts take a single square `size` instead of width/height.
+  MiniAreaChart: (s) => <MiniAreaChart data={mini} size={s.width} />,
+  MiniBarChart: (s) => <MiniBarChart data={mini} size={s.width} />,
+  MiniLineChart: (s) => <MiniLineChart data={mini} size={s.width} />,
+};
+
+for (const family of FAMILIES) {
+  family.renderAtSize = SIZE_VARIANTS[family.name];
+}
 
 export const FAMILY_NAMES = FAMILIES.map((f) => f.name);

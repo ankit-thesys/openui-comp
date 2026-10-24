@@ -22,7 +22,7 @@ function declaredValueExports(): string[] {
   const names: string[] = [];
   // `export { A, B } from "./X";` — but NOT `export type { ... }`.
   for (const m of src.matchAll(/export\s+(?!type\b)\{([^}]*)\}\s+from/g)) {
-    for (const part of m[1].split(",")) {
+    for (const part of (m[1] ?? "").split(",")) {
       const name = part.trim().split(/\s+as\s+/).pop()?.trim();
       if (name) names.push(name);
     }

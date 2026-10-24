@@ -2,6 +2,12 @@
 
 **Baseline SHA:** `9d73d17d2bbac565672a85e78f6eb7740cb0d9ca`
 
+> **Provenance.** DEFECT-001, DEFECT-002, FINDING-003 and OBSERVATION-004/005/006
+> were established in PR #22 against the same baseline SHA and are **unchanged**
+> here. FINDING-007 onwards were added by the #24 follow-up. Nothing earlier was
+> re-litigated, softened or deleted: where #24 produced better evidence for an
+> existing entry, it is appended to that entry rather than replacing it.
+
 These are **recorded, not fixed**. `packages/react-ui` is read-only for this
 ticket, and a failing legacy behaviour is evidence for the migration reviewer,
 not a bug to patch here. Nothing in `packages/react-ui` was modified — see
@@ -190,3 +196,128 @@ tree, so merely wrapping a chart in one more provider shifts every id — wrappi
 byte-identical SSR renders. Any diff of recorded markup must normalise them or
 it drowns in meaningless churn. `fixtures/ssr.tsx` normalises them to `_R_ID_`
 before recording.
+
+---
+
+## FINDING-007 — Pie and Radial do not scale while their default stacked legend is in place
+
+**Severity:** low–medium — affects every default-configuration Pie/Radial in a
+resizable layout.
+**Affects:** `PieChart`, `RadialChart`.
+**Found:** #24 follow-up. Independently reproduced in two harnesses.
+
+### What happens
+
+Both families default to `legendVariant="stacked"` (`PieChart/types.ts`). With
+that default, the drawn chart does not grow when its space grows — in **either**
+sizing mechanism:
+
+| Case | Small | Large | Grew? |
+|---|---|---|---|
+| Container resize, `legendVariant="stacked"` (default) — Pie | 270px @ 360x300 | 270px @ 900x760 | no |
+| Container resize, `legendVariant="default"` — Pie | 256px | **450px** | yes |
+| Container resize, `legendVariant="stacked"` (default) — Radial | 218px | 218px | no |
+| Container resize, `legendVariant="default"` — Radial | 207px | **365px** | yes |
+| Size props in SSR, stacked (default) — Pie/Radial | identical at 320x280 and 960x420 | | no |
+| Size props in SSR, `legendVariant="default"` — Pie | 126 | **189** | yes |
+
+The `legendVariant="default"` rows are what make this a finding about the
+**wrapper** rather than about the chart: the identical component, on identical
+data, in an identical box, scales correctly once the stacked legend is not in
+the way.
+
+### Mechanism
+
+`hooks/polar/useCategoricalChartOrchestrator.ts:85-91` sizes the chart from
+`Math.min(maxChartSize, availableWidth, availableHeight)`. Under the stacked
+legend the chart column's height stops tracking the container, so
+`availableHeight` plateaus and the whole expression plateaus with it. Measured
+directly: at a 900x760 container the wrapper is 900x760 while the chart column
+is 440x**300** and the svg 300x300.
+
+### Evidence
+
+`evidence/browser/browser-run.json` → `container-resize/PieChart` and
+`/RadialChart`, each carrying its `diagnostic` block with the
+`legendVariant="default"` comparison. SSR side:
+`tests/size-props.baseline.test.tsx`, which asserts both the invariance and the
+default-legend scaling as separate facts.
+
+### Note for the migration
+
+Recorded as **behaviour**, not as a demand. Whether a new implementation should
+let the stacked legend cap the chart is a design decision; this only ensures it
+is made deliberately.
+
+---
+
+## FINDING-008 — MiniBarChart's canvas is responsive but its bars are fixed-size
+
+**Severity:** low — by design, and documented in source.
+**Affects:** `MiniBarChart`.
+
+The `<svg>` follows its container exactly (360 → 900 px), but the drawn bars
+stay 132px wide at both sizes. `MINI_BAR_WIDTH = 8` and `MINI_BAR_SPACING = 10`
+are fixed pixels (`shared/mini/miniChartUtils.ts:35-36`) and `miniBarsLeftPadding`
+right-aligns the row (`:50-51`), so extra width becomes empty space rather than
+wider bars. Narrowing does not shrink them either — `recentBarsThatFit`
+(`:41-47`) drops the oldest bars instead.
+
+`MiniAreaChart` and `MiniLineChart` do **not** behave this way: both draw a
+continuous path across the full width and scale normally (360 → 900). So this is
+specific to the bar variant, and worth knowing before a migration "fixes" it
+into inconsistency with its own siblings.
+
+Recorded as `container-resize/MiniBarChart` with `kind: "fixed-marks"`.
+
+---
+
+## FINDING-009 — SegmentedBar and SingleStackedBar have no legend visibility toggle
+
+**Severity:** none — this is correct, documented behaviour. Recorded because
+PR #22 listed it as an untested gap, which implied a feature that does not exist.
+
+`SegmentedBar.tsx:28` states plainly: *"no legend visibility toggle (openui only
+hover-highlights)"*. `DefaultLegend` accepts `onItemClick` and `hiddenSeries`,
+but SegmentedBar renders it without either — 0 occurrences of both identifiers
+in the whole file — so there is no handler for a click to reach.
+
+Demonstrated rather than assumed: the runner performs a **real** click at the
+measured centre of a real legend row and records that nothing observable
+changes. The behaviour that *is* supported — hover highlight, including
+restoration on pointer-out — is separately verified for both families.
+
+This is the distinction the #24 ticket asked for: documented-unsupported, with
+source evidence, instead of an invented expectation.
+
+---
+
+## OBSERVATION-010 — PR #22's "a local tsconfig is not possible here" was wrong
+
+**Not a product finding.** A correction to this directory's own earlier claim,
+kept because the reasoning is a trap worth not repeating.
+
+PR #22 reported that a directory-local `tsconfig.json` could not work, having
+observed hundreds of `implicitly has an 'any' type` errors inside
+`packages/react-ui` whenever `paths` redirected `react` at
+`packages/react-ui/node_modules/react`.
+
+The diagnosis was wrong. The runtime `react` package ships **no declarations**,
+so pointing `paths` at it makes every importer — including the legacy sources —
+fail to find types. Mapping to **`@types/react`** instead resolves cleanly:
+
+```bash
+pnpm --dir packages/react-ui exec tsc --noEmit \
+  -p ../../validation/friend-chart-baseline/tsconfig.json   # exits 0
+```
+
+The config now typechecks every fixture and test in this directory, with the
+legacy sources in the program and **zero** errors from them. The 32 errors it
+did surface were all genuine issues in this directory's own code (unchecked
+index access, regex captures typed `string | undefined`) and have been fixed —
+see `fixtures/ssr.tsx`'s `required()` helper, which fails loudly at the missing
+value instead of propagating a `NaN`.
+
+The related claim that "vite/vitest transpile and execute every fixture" is also
+softened in `reports/REPORT.md`: a dev server only compiles what is actually
+requested, so serving a page is not a typecheck of the files it never loads.

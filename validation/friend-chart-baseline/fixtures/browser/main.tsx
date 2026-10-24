@@ -38,7 +38,7 @@ const motion = params.get("motion") === "on";
  */
 if (!motion) {
   const style = document.createElement("style");
-  style.dataset.harness = "freeze-motion";
+  style.dataset["harness"] = "freeze-motion";
   style.textContent = `*, *::before, *::after {
     transition-duration: 0s !important;
     animation-duration: 0s !important;
@@ -48,7 +48,7 @@ if (!motion) {
   document.head.appendChild(style);
 }
 
-document.documentElement.dataset.fixtureTheme = theme;
+document.documentElement.dataset["fixtureTheme"] = theme;
 document.body.style.margin = "0";
 document.body.style.fontFamily = "system-ui, sans-serif";
 /**

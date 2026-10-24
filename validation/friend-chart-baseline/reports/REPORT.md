@@ -48,7 +48,7 @@ toolchain via a config that lives here. **No shared config, root
 ## Commands
 
 ```bash
-# Deterministic assertions — 138 tests, 6 files
+# Deterministic assertions — 176 tests, 7 files
 pnpm --dir packages/react-ui exec vitest run \
   --config ../../validation/friend-chart-baseline/vitest.config.ts
 
@@ -59,7 +59,7 @@ pnpm --dir packages/react-ui exec vite \
 
 ## Results
 
-**138 assertions pass, 0 fail**, across:
+**176 assertions pass, 0 fail**, across:
 
 | File | Tests | Covers |
 |---|---|---|
@@ -69,11 +69,45 @@ pnpm --dir packages/react-ui exec vite \
 | `tests/geometry.baseline.test.tsx` | 5 | Pie arc angles, segment shares, scatter spacing, bar counts, y-scale |
 | `tests/theme-responsive.baseline.test.tsx` | 6 | Theme markup identity, custom palette, size responsiveness |
 | `tests/legend.baseline.test.tsx` | 24 | Legend contents, toggle affordance, axis-label coupling, a11y surface |
+| `tests/size-props.baseline.test.tsx` | 38 | Explicit size-prop responsiveness across all 19 families |
 
-Browser evidence: 16 of 19 families show a tooltip carrying the exact fixture
-values; 11 families' legend toggles hide and restore their series exactly;
-Pie's legend breakpoint and Heatmap's container tracking measured across five
-widths. Recorded in `evidence/browser/`.
+### Browser runner
+
+```bash
+node validation/friend-chart-baseline/browser/run.mjs
+```
+
+One command: spawns the fixture server, launches headless Chrome over the
+DevTools Protocol, drives it with **real** mouse and keyboard input, asserts,
+writes `evidence/browser/browser-run.json` plus 19 dark reference images, and
+exits non-zero with an actionable summary on any failure or missing scenario.
+
+Latest run — **40 verified, 5 unsupported, 0 failed**:
+
+| Group | Result |
+|---|---|
+| `trusted-input` | verified — `event.isTrusted === true` |
+| `legend-toggle` | Pie + Radial **verified**; SegmentedBar + SingleStackedBar **unsupported** (source-cited) |
+| `hover-highlight` | verified for both segmented-bar families |
+| `container-resize` | 19/19 accounted for — 16 verified, 3 unsupported with cited mechanisms |
+| `dark-reference` | 19/19 images captured |
+
+Zero new dependencies. There is no Playwright, Puppeteer, `@vitest/browser` or
+webdriverio in this workspace's lockfile and this ticket forbids unproposed
+dependency changes; Node 24's global `WebSocket` plus CDP's JSON-RPC is enough
+(`browser/cdp.mjs`, ~200 lines).
+
+**Why real input matters.** PR #22 dispatched synthetic `MouseEvent`s from
+inside the page. A synthetic event dispatched on an element Claude selected
+cannot miss — which means it also cannot *detect* a wrong or overlapped target.
+That is exactly how PR #22 mis-recorded the Pie/Radial legend toggles as
+untested: it searched for `.openui-chart-legend-item`, which those families do
+not render. CDP input goes through the browser's own hit-testing, so a
+mis-targeted click fails visibly instead of silently.
+
+**Failure behaviour is itself verified.** With an unreachable fixture server the
+runner prints `RUNNER ERROR` and exits 1; with per-family failures it lists each
+one and exits 1. Both were exercised during development.
 
 ### No baseline test failures
 
@@ -122,25 +156,39 @@ their own. The deterministic, diffable evidence is the recorded markup under
 a reviewer should compare mechanically. Dark-mode images cover 5 of 19 families;
 any other is one URL away.
 
-## No standalone typecheck for the fixtures
+## Typechecking
 
-There is no `tsconfig.json` here, and that is a deliberate omission rather than
-an oversight.
+A directory-local `tsconfig.json` **does** work, and is the supported way to
+typecheck this directory:
 
-Because `validation/` is not a workspace member, a tsconfig in this directory
-has to redirect `react`, `react-dom` and `vitest` at
-`packages/react-ui/node_modules` via `paths`. Those same overrides then apply to
-the legacy sources the fixtures import, and bypass the normal resolution that
-finds `@types/react` for them — so a full typecheck reports hundreds of
-`implicitly has an 'any' type` errors inside `packages/react-ui/src`, none of
-which are real. Making it work properly needs either a workspace entry or a
-`node_modules` link here, and both are out of scope for this ticket.
+```bash
+pnpm --dir packages/react-ui exec tsc --noEmit \
+  -p ../../validation/friend-chart-baseline/tsconfig.json
+```
 
-The fixtures are still type-annotated throughout, and vitest/vite transpile and
-execute every one of them on each run, so syntax and runtime behaviour are
-exercised by the 138 passing assertions. What is *not* mechanically enforced is
-static type correctness of the fixture code itself. If this directory is ever
-promoted to a workspace package, add a tsconfig then.
+It exits 0, with the legacy `packages/react-ui` sources in the program and zero
+errors from them.
+
+PR #22 claimed this was impossible. That was wrong, and the error is worth
+recording: its `paths` pointed `react` at the **runtime** package, which ships
+no declarations, so every importer — the legacy sources included — failed to
+find types, producing hundreds of spurious `implicitly has an 'any' type`
+errors. Mapping to **`@types/react`** resolves cleanly for both this
+directory's files and theirs. See OBSERVATION-010 in `reports/DEFECTS.md`.
+
+The 32 errors the working config did surface were all genuine issues in this
+directory's own code — unchecked index access and regex captures typed
+`string | undefined` under the repo's strict settings — and are fixed. The
+`required()` helper in `fixtures/ssr.tsx` narrows those cases while failing
+loudly at the missing value, rather than `!`-asserting and surfacing a confusing
+`NaN` three lines later.
+
+**What "it runs" does and does not prove.** Vitest executes every test file, so
+those are genuinely exercised. A Vite dev server does **not**: it compiles
+modules on demand, so a fixture entry nobody navigates to is never built, and
+serving the fixture is not evidence that unvisited entries even parse. Neither
+tool typechecks — both strip types. Static correctness comes only from the `tsc`
+command above.
 
 ## Determinism
 
