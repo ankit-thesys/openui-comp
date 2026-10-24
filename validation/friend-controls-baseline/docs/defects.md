@@ -2,7 +2,9 @@
 
 Baseline commit: **`9d73d17d2bbac565672a85e78f6eb7740cb0d9ca`**
 
-> **Updated by issue #23.** Every finding below was re-examined in real Chrome.
+> **Updated by issue #23.** SE-1, SE-2, DP-1, DP-2, DP-3 and CB-1/R-1
+> were re-examined in real Chrome; CA-2 was corrected with controlled and
+> uncontrolled Calendar tests in jsdom.
 > One was **withdrawn** (CA-2 — it was a test-authoring error, not a defect) and
 > two were **narrowed** (SE-2, CB-1/R-1). The classified results, with raw run
 > output, are in [verification-ledger.md](./verification-ledger.md); that ledger
@@ -312,7 +314,7 @@ ones without a wrapper element. See the matrix's
 
 <a id="cb-1"></a>
 
-## CB-1 — CheckBoxItem nests a `<label>` inside a `<label>` · medium
+## CB-1 — CheckBoxItem nests a `<label>` inside a `<label>` · low
 
 **Source:** `packages/react-ui/src/components/CheckBoxItem/CheckBoxItem.tsx:23` and `:53`
 **Test:** `tests/CheckBox.baseline.test.tsx` → "nests a `<label>` inside a `<label>`, both pointing at the same control"
@@ -342,7 +344,7 @@ that asymmetry is [S-1](#s-1).
 
 <a id="r-1"></a>
 
-## R-1 — RadioItem nests a `<label>` inside a `<label>` · medium
+## R-1 — RadioItem nests a `<label>` inside a `<label>` · low
 
 **Source:** `packages/react-ui/src/components/RadioItem/RadioItem.tsx:19` and `:55`
 **Test:** `tests/Radio.baseline.test.tsx` → "nests a `<label>` inside a `<label>`, both targeting the same id"

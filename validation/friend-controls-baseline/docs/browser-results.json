@@ -149,17 +149,17 @@
         {
           "name": "popup exists after opening",
           "pass": true,
-          "detail": "{\"x\":43.498008728027344,\"y\":107,\"width\":135.06646728515625,\"height\":100.29032897949219,\"top\":107,\"left\":43.498008728027344,\"bottom\":207.2903289794922,\"right\":178.5644760131836}"
+          "detail": "{\"x\":43.495994567871094,\"y\":107,\"width\":135.07049560546875,\"height\":100.29331970214844,\"top\":107,\"left\":43.495994567871094,\"bottom\":207.29331970214844,\"right\":178.56649017333984}"
         },
         {
           "name": "popup has non-zero size",
           "pass": true,
-          "detail": "135.06646728515625x100.29032897949219"
+          "detail": "135.07049560546875x100.29331970214844"
         },
         {
           "name": "popup is inside the viewport",
           "pass": true,
-          "detail": "popup={\"x\":43.498008728027344,\"y\":107,\"width\":135.06646728515625,\"height\":100.29032897949219,\"top\":107,\"left\":43.498008728027344,\"bottom\":207.2903289794922,\"right\":178.5644760131836} viewport={\"w\":1280,\"h\":813}"
+          "detail": "popup={\"x\":43.495994567871094,\"y\":107,\"width\":135.07049560546875,\"height\":100.29331970214844,\"top\":107,\"left\":43.495994567871094,\"bottom\":207.29331970214844,\"right\":178.56649017333984} viewport={\"w\":1280,\"h\":813}"
         },
         {
           "name": "popup is anchored below the trigger (sideOffset 2)",
@@ -169,7 +169,7 @@
         {
           "name": "popup is horizontally aligned with the trigger",
           "pass": true,
-          "detail": "trigger.left=41 popup.left=43.498008728027344"
+          "detail": "trigger.left=41 popup.left=43.495994567871094"
         },
         {
           "name": "choosing an option reports its value",
