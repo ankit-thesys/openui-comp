@@ -80,7 +80,7 @@ export const layoutClasses = {
       & .openui-gallery__grid {
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        grid-template-areas: "img1 img1 img1 img2 img2img2" "img3 img3 img4 img4 img5 img5";
+        grid-template-areas: "img1 img1 img1 img2 img2 img2" "img3 img3 img4 img4 img5 img5";
         .openui-gallery__image:nth-child(1) {
           grid-area: img1;
         }
