@@ -92,3 +92,14 @@ fixture, not unused-component pruning; final package pruning checks remain with 
 
 Both preview checkouts, legacy source, production components, root metadata and optional
 friend-baseline directories are untouched by this harness work.
+
+## Review checkpoint
+
+Harness commits: `5ff35640a`, then `8a9e4d3fa`. Independent GPT-6.1 Sol Standards
+and Spec reviews found two actionable harness gaps, both corrected: full installed
+implementation provenance and actual citation pin retention/hover/Escape coverage.
+Both reviewers confirmed no remaining scoped findings after the correction. All
+reviews were static/read-only; no Chrome, browser measurements or compatibility
+acceptance is implied. Node syntax and fixture TSX transformation pass; formatting
+passes. The prepared harness is ready for Worker 1's integrated artifact and explicit
+browser-window release. No further composer ownership is assumed.
