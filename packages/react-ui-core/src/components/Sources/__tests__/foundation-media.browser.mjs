@@ -68,7 +68,12 @@ const aliases = Object.fromEntries(
     "zod",
     "@radix-ui/react-tooltip",
     "@radix-ui/react-aspect-ratio",
-  ].map((name) => [name, path.dirname(candidate.resolve(name + "/package.json"))]),
+  ].map((name) => [
+    name,
+    name.startsWith("@radix-ui/")
+      ? candidate.resolve(name)
+      : path.dirname(candidate.resolve(name + "/package.json")),
+  ]),
 );
 const scripts = {},
   graphs = {};
@@ -763,6 +768,13 @@ try {
             await waitImages(page);
           }
           await compare("responsive-mobile");
+          if (kind === "media") {
+            for (const count of [1, 2, 3, 4, 5, 6]) {
+              await configure(pages, { count });
+              for (const page of pages) await waitImages(page);
+              await compare(`responsive-mobile/count-${count}`);
+            }
+          }
           const sheet = await pages[1].locator("#_goober").textContent();
           if (kind === "media") for (const page of pages) await openGallery(page);
           await configure(pages, { visible: false });
