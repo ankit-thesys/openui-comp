@@ -30,6 +30,7 @@ for (const name of [
 globalThis.getComputedStyle = dom.window.getComputedStyle.bind(dom.window);
 globalThis.requestAnimationFrame = dom.window.requestAnimationFrame.bind(dom.window);
 globalThis.cancelAnimationFrame = dom.window.cancelAnimationFrame.bind(dom.window);
+globalThis.MutationObserver = dom.window.MutationObserver;
 globalThis.HTMLFormElement = dom.window.HTMLFormElement;
 globalThis.CustomEvent = dom.window.CustomEvent;
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;

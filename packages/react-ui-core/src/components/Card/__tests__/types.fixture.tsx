@@ -76,3 +76,86 @@ export const layout = (
 export const noSx = <Card sx={{ padding: 12 }} />;
 // @ts-expect-error SectionV2 retains its existing string trigger.
 export const noNewTrigger = <SectionV2 trigger={<span>New</span>} />;
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  Steps,
+  StepsItem,
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+  type AccordionContentProps,
+  type AccordionItemProps,
+  type AccordionProps,
+  type AccordionTriggerProps,
+  type CarouselProps,
+  type CarouselRef,
+  type StepsItemProps,
+  type StepsProps,
+  type TabsContentProps,
+  type TabsListProps,
+  type TabsProps,
+  type TabsTriggerProps,
+} from "@openuidev/react-ui-core";
+const accordion: AccordionProps = {
+  type: "single",
+  value: "a",
+  collapsible: true,
+  variant: "card",
+  onValueChange: (value) => value.toUpperCase(),
+};
+const accordionItem: AccordionItemProps = { value: "a", disabled: false };
+const accordionTrigger: AccordionTriggerProps = { text: "Details" };
+const accordionContent: AccordionContentProps = { children: "Body", forceMount: true };
+const carousel: CarouselProps = {
+  itemsToScroll: 2,
+  noSnap: true,
+  showButtons: true,
+  variant: "sunk",
+  onScrollLeftEnabled: (enabled) => enabled.valueOf(),
+};
+const carouselRef = createRef<CarouselRef>();
+const stepsItem: StepsItemProps = { title: "Step", details: "Details", number: 3 };
+const steps: StepsProps = { children: <StepsItem {...stepsItem} /> };
+const tabs: TabsProps = {
+  defaultValue: "a",
+  variant: "clear",
+  orientation: "horizontal",
+  onValueChange: (value) => value.toUpperCase(),
+};
+const list: TabsListProps = { variant: "iconTitleSubtext" };
+const tab: TabsTriggerProps = { value: "a", text: "First", subtext: "Details", icon: <svg /> };
+const tabContent: TabsContentProps = { value: "a", children: "Panel" };
+export const interactions = (
+  <>
+    <Accordion {...accordion} ref={div}>
+      <AccordionItem {...accordionItem} ref={div}>
+        <AccordionTrigger {...accordionTrigger} ref={button} />
+        <AccordionContent {...accordionContent} ref={div} />
+      </AccordionItem>
+    </Accordion>
+    <Carousel {...carousel} ref={carouselRef}>
+      <CarouselContent ref={div}>
+        <CarouselItem ref={div}>Item</CarouselItem>
+      </CarouselContent>
+      <CarouselPrevious icon={<svg />} ref={button} />
+      <CarouselNext icon={<svg />} ref={button} />
+    </Carousel>
+    <Steps {...steps} />
+    <Tabs {...tabs} ref={div}>
+      <TabsList {...list} ref={div}>
+        <TabsTrigger {...tab} ref={button} />
+      </TabsList>
+      <TabsContent {...tabContent} ref={div} />
+    </Tabs>
+  </>
+);

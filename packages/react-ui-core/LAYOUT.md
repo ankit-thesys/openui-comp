@@ -48,3 +48,19 @@ committed source batch `2b7398668` is integrated as `86c83e6ea`; 17 combined
 focused public tests and integrated types/build pass. Its interactive browser
 validation remains pending. The browser window is released to Worker 2.
 No integrated container checkpoint or overlay start is certified.
+
+## Integrated non-browser checks
+
+The initial integrated package CI passed 49 tests plus formatting/lint/types,
+old-source-independent build, normally installed packed consumer, publint and
+attw. The separate installed layout consumer passed all 17 layout behavior and
+pruning tests after exposing JSDOM's real MutationObserver (not a stub).
+Strict root consumers passed with skipLibCheck false in Bundler, NodeNext ESM
+and NodeNext CommonJS, covering all ten container/loading families and parts.
+The example uses AccordionTrigger's existing required text prop.
+
+The workspace lock resolves Radix Accordion 1.2.20 and Tabs 1.1.21; the fresh
+consumer resolves compatible Accordion 1.3.1 and Tabs 1.2.1 from the published
+ranges. Both dependency sets pass their scoped checks. Record the final
+installed versions in the checkpoint artifact; do not imply every version in a
+range is exhaustively tested.
