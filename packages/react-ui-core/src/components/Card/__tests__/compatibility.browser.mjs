@@ -27,6 +27,10 @@ const oldNames = {
   ],
   Skeleton: ["Skeleton", "TableSkeleton", "PieChartSkeleton"],
   DotMatrixLoader: ["DotMatrixLoader"],
+  Accordion: ["Accordion", "AccordionItem", "AccordionTrigger", "AccordionContent"],
+  Carousel: ["Carousel", "CarouselContent", "CarouselItem", "CarouselPrevious", "CarouselNext"],
+  Steps: ["Steps", "StepsItem"],
+  Tabs: ["Tabs", "TabsList", "TabsTrigger", "TabsContent"],
   ThemeProvider: ["ThemeProvider"],
   Button: ["Button"],
   IconButton: ["IconButton"],
@@ -330,6 +334,16 @@ try {
               window.setControlled(true);
               window.setOpen([]);
             });
+          for (const page of pages) {
+            await page.locator("#combined-layout").getByRole("tab", { name: "Combined B" }).click();
+            await page.getByText("Second panel", { exact: true }).waitFor();
+          }
+          await compare(mode + "/composed-other-tab");
+          for (const page of pages) {
+            await page.locator("#combined-layout").getByRole("tab", { name: "Combined A" }).click();
+            await page.getByRole("button", { name: "Combined details" }).waitFor();
+          }
+          await compare(mode + "/composed-restored");
         }
         for (const page of pages) {
           assert.deepEqual(

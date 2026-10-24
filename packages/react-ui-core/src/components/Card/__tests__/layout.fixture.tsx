@@ -77,6 +77,41 @@ function App() {
       <Core.DotMatrixLoader className={className} />
       <Core.DotMatrixLoader variant="compact" />
       <Core.DotMatrixLoader variant="compact" size={48} />
+      <Core.Card width="full" id="combined-layout">
+        <Core.Tabs defaultValue="combined-a" variant="clear">
+          <Core.TabsList>
+            <Core.TabsTrigger value="combined-a" text="Combined A" />
+            <Core.TabsTrigger value="combined-b" text="Combined B" />
+          </Core.TabsList>
+          <Core.TabsContent value="combined-a">
+            <Core.Accordion type="single" defaultValue="combined-item" collapsible variant="card">
+              <Core.AccordionItem value="combined-item">
+                <Core.AccordionTrigger text="Combined details" />
+                <Core.AccordionContent>
+                  <Core.Carousel>
+                    <Core.CarouselContent>
+                      {[1, 2, 3, 4].map((item) => (
+                        <Core.CarouselItem key={item} style={{ flex: "0 0 180px" }}>
+                          <Core.Card variant="sunk" width="full">
+                            Item {item}
+                          </Core.Card>
+                        </Core.CarouselItem>
+                      ))}
+                    </Core.CarouselContent>
+                    <Core.CarouselPrevious icon={<svg />} aria-label="Combined previous" />
+                    <Core.CarouselNext icon={<svg />} aria-label="Combined next" />
+                  </Core.Carousel>
+                  <Core.Steps>
+                    <Core.StepsItem title="First" details="Details" />
+                    <Core.StepsItem title="Second" details="More details" />
+                  </Core.Steps>
+                </Core.AccordionContent>
+              </Core.AccordionItem>
+            </Core.Accordion>
+          </Core.TabsContent>
+          <Core.TabsContent value="combined-b">Second panel</Core.TabsContent>
+        </Core.Tabs>
+      </Core.Card>
       <Core.ThemeProvider
         mode="dark"
         cssSelector="#nested-theme"
