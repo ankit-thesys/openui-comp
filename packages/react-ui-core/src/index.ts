@@ -22,6 +22,7 @@ export * from "./components/ImageBlock";
 export * from "./components/ImageGallery";
 export * from "./components/Input";
 export * from "./components/Label";
+export * from "./components/MarkDownRenderer";
 export * from "./components/Modal";
 export * from "./components/RadioGroup";
 export * from "./components/RadioItem";
