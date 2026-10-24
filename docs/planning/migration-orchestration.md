@@ -87,3 +87,30 @@ Shared dependency additions: existing-version ranges for Radix Accordion,
 Separator and Tabs. Skeleton variants use separate modules to preserve root
 import pruning. Component behavior is copied unchanged; generated Goober class
 names attach existing one-to-one styles. No private Goober APIs or patches.
+
+## Stage 1 handoff — 2026-10-25
+
+Worker 1 source batch: `50c51fb40`. Worker 2 phase-one source batch
+`2b7398668` is integrated as `86c83e6ea`; shared root exports and all three
+Radix dependencies (Accordion, Separator, Tabs) are present on this branch.
+Integrated source typecheck/build and 17 focused public behavior/pruning tests
+passed. No source outside the new package was changed except dependency
+importer records, changeset and this orchestration document.
+
+Worker 1's normally installed owned-component tarball passed six Chrome cases:
+plain CSS/Tailwind v3/v4, both stylesheet orders, five theme states, controlled
+and uncontrolled foldable sections, keyboard/disabled/override/responsive/theme
+checks and remount cleanup. 63,360 paired snapshots passed. Loading animations
+also passed three matched RAF phases for each grid and Skeleton pulse phases
+through standard Playwright clock/Web Animations APIs. These are owned-batch
+results; they are not final combined certification.
+
+**Browser window released to Worker 2 now.** Worker 1 will do source/type/packed
+checks while Worker 2 validates Accordion/Carousel/Steps/Tabs, including its
+reported possible inactive Tabs hover selector issue. Worker 2 must commit its
+browser tests and any justified conventional fixes before integration. Worker 1
+will then rerun the committed matrix on the final integrated tarball in its next
+browser window. No competing browser runs.
+
+Container checkpoint: **not yet passed**. Overlays remain gated. Neither worker
+may infer overlay authorization from the owned/component-only results.

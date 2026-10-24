@@ -41,5 +41,10 @@ separately rather than silently redesigned.
 
 ## Current checkpoint
 
-Owned behavior tests and typechecking pass. Owned browser validation and Worker 2
-integration are pending. No container checkpoint or overlay start is certified.
+Owned behavior tests and typechecking pass. The owned normally installed tarball
+passed all six Chrome framework/order cases (63,360 paired style snapshots),
+matched loader RAF phases, Skeleton pulse phases and unmount checks. Worker 2's
+committed source batch `2b7398668` is integrated as `86c83e6ea`; 17 combined
+focused public tests and integrated types/build pass. Its interactive browser
+validation remains pending. The browser window is released to Worker 2.
+No integrated container checkpoint or overlay start is certified.
