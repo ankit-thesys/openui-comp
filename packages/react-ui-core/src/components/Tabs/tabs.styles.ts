@@ -42,7 +42,7 @@ export const tabsClass = css({
         letterSpacing: "var(--openui-text-label-default-heavy-letter-spacing, -0.01em)",
         fontVariationSettings: 'var(--openui-font-variation-medium, "wght" 560)',
       },
-      '&:not([data-state="active"]):hover': {
+      '&:hover:not([data-state="active"])': {
         color: "var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
         border: "0px",
         backgroundColor: "transparent",
@@ -177,7 +177,7 @@ export const triggerClass = css({
     boxShadow:
       "var(--openui-shadow-s, 0 1px 3px -2px oklch(0 0 0 / 0.02), 0 2px 5px -2px oklch(0 0 0 / 0.04))",
   },
-  '&:not([data-state="active"]):hover': {
+  '&:hover:not([data-state="active"])': {
     backgroundColor: "var(--openui-sunk, oklch(0.097 0 0 / 0.04))",
     border: "1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
     color: "var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",

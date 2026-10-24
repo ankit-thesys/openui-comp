@@ -1,0 +1,5 @@
+{
+  "sha256": "c7775b56da4e1a4e038f0494937bd608e71721bb9a57b69c86943b765ab9b574",
+  "observation": "Tailwind v3 after component styles: disabled trigger cursor pointer vs baseline default",
+  "correctiveChange": "Lower base trigger selector specificity with ordinary & :where(.openui-accordion-trigger); preserves host stylesheet-order behavior without framework detection or Goober modification"
+}

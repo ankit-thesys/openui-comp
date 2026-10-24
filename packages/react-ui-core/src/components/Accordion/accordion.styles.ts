@@ -88,7 +88,8 @@ export const accordionStyles = {
     marginInlineStart: 0,
     marginInlineEnd: 0,
   },
-  "& .openui-accordion-trigger": {
+  // Preserve the legacy trigger specificity against host disabled-button rules.
+  "& :where(.openui-accordion-trigger)": {
     border: "none",
     boxSizing: "border-box",
     ...body,
