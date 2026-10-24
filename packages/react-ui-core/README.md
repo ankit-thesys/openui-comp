@@ -2,6 +2,26 @@
 
 The first migration slice of OpenUI's reusable React UI. The existing `@openuidev/react-ui` package remains unchanged. This package is under development; its beta version is provisional and no release is authorized by these changes.
 
+## Controls
+
+The first control slice exposes `Button`, `Input`, `TextArea` and their existing public prop types from the root. Preserve existing variants, sizes, native props, refs, error state and supported customization:
+
+```tsx
+import { Button, Input, TextArea, ThemeProvider } from "@openuidev/react-ui-core";
+
+function Form() {
+  return (
+    <ThemeProvider>
+      <Input aria-label="Name" size="medium" />
+      <TextArea aria-label="Message" rows={3} />
+      <Button variant="primary" type="submit">Send</Button>
+    </ThemeProvider>
+  );
+}
+```
+
+Input retains its existing `styles` alias as well as native `style` forwarding. The minimal FormControl context is internal support for the existing inherited error-state path; the full FormControl component belongs to a later slice.
+
 ## Themes
 
 Import public APIs from the package root:

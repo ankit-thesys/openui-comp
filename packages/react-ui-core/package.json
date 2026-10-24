@@ -27,11 +27,12 @@
   "scripts": {
     "build": "tsdown",
     "typecheck": "tsc --noEmit",
-    "test": "pnpm build && node --test tests/*.test.mjs",
+    "test": "pnpm build && cd ../.. && node --test packages/react-ui-core/tests/*.test.mjs packages/react-ui-core/src/components/*/__tests__/*.test.mjs",
     "format:check": "prettier --check src tests *.json *.ts",
     "check:publint": "publint",
     "check:attw": "attw --pack .",
-    "prepublishOnly": "pnpm run typecheck && pnpm run test && pnpm run check:publint && pnpm run check:attw"
+    "prepublishOnly": "pnpm run typecheck && pnpm run test && pnpm run check:publint && pnpm run check:attw",
+    "lint:check": "eslint src --ignore-pattern \"**/__tests__/**\""
   },
   "peerDependencies": {
     "react": "^19.0.0",
