@@ -36,6 +36,7 @@ const browser = await chromium.launch({ channel: "chrome", headless: true });
 try {
   const page = await browser.newPage();
   const errors = [];
+  await page.clock.install({ time: new Date("2026-10-24T12:00:00Z") });
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto(`http://127.0.0.1:${server.address().port}/?case=${kind}`);
   try {
@@ -77,6 +78,42 @@ try {
     await page.evaluate(() => window.setDisabled(true));
     await page.waitForFunction(() => document.querySelector("input").disabled);
     assert.equal(await input.isDisabled(), true);
+  }
+  if (kind === "calendar") {
+    const day = page.locator('[data-day="2026-10-20"] button');
+    await day.click();
+    assert((await page.locator("#events").textContent()).includes("Oct 20 2026"));
+    assert.equal(
+      await page.evaluate(() => window.getRef().classList.contains("openui-calendar-container")),
+      true,
+    );
+    await day.focus();
+    await page.keyboard.press("ArrowRight");
+    assert(
+      (await page.evaluate(() => document.activeElement.getAttribute("aria-label"))).includes("21"),
+    );
+    await page.evaluate(() => window.setDisabled(true));
+    await page.waitForFunction(
+      () => document.querySelector('[data-day="2026-10-20"] button').disabled,
+    );
+    assert.equal(await day.isDisabled(), true);
+  }
+  if (kind === "datePicker") {
+    const trigger = page.locator(".openui-date-picker-renderer-floating-input-container");
+    await trigger.click();
+    await page.locator(".openui-date-picker-renderer-floating-content").waitFor();
+    assert.equal(
+      await page.locator("#zone .openui-date-picker-renderer-floating-content").count(),
+      0,
+      "calendar is in a portal",
+    );
+    await page.locator('[data-day="2026-10-20"] button').click();
+    assert((await page.locator("#events").textContent()).includes("Oct 20 2026"));
+    await page.locator("#unrelated").click();
+    await page
+      .locator(".openui-date-picker-renderer-floating-content")
+      .waitFor({ state: "detached" });
+    assert((await trigger.textContent()).includes("20"));
   }
   assert.deepEqual(errors, []);
   console.log(`${kind}: browser interactions passed (${browser.version()})`);

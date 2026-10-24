@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { css } from "goober";
-import debounce from "lodash-es/debounce";
+import debounce from "lodash-es/debounce.js";
 import { AlertCircle } from "lucide-react";
 import { ChangeEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Input } from "../Input";
