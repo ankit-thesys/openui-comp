@@ -1,0 +1,243 @@
+
+> @openuidev/react-ui-core@0.0.0-beta.0 test /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core
+> pnpm build && cd ../.. && node --test packages/react-ui-core/tests/*.test.mjs packages/react-ui-core/src/components/*/__tests__/*.test.mjs
+
+
+> @openuidev/react-ui-core@0.0.0-beta.0 build /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core
+> tsdown
+
+ℹ tsdown v0.21.10 powered by rolldown v1.0.0-rc.17
+ℹ config file: /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/tsdown.config.ts 
+ℹ entry: src/index.ts
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 126 files
+ℹ [CJS] dist/index.cjs                                                 1.96 kB │ gzip: 0.48 kB
+ℹ [CJS] dist/components/ThemeProvider/defaultTheme.cjs.map            29.67 kB │ gzip: 6.45 kB
+ℹ [CJS] dist/components/ThemeProvider/swatches.cjs.map                21.78 kB │ gzip: 5.04 kB
+ℹ [CJS] dist/components/ThemeProvider/defaultTheme.cjs                18.21 kB │ gzip: 3.76 kB
+ℹ [CJS] dist/components/ThemeProvider/swatches.cjs                    14.57 kB │ gzip: 4.03 kB
+ℹ [CJS] dist/components/ThemeProvider/ThemeProvider.cjs.map           12.14 kB │ gzip: 3.95 kB
+ℹ [CJS] dist/components/ThemeProvider/types.cjs.map                    9.76 kB │ gzip: 2.27 kB
+ℹ [CJS] dist/components/Button/button.styles.cjs.map                   8.40 kB │ gzip: 1.64 kB
+ℹ [CJS] dist/components/Button/button.styles.cjs                       6.06 kB │ gzip: 1.12 kB
+ℹ [CJS] dist/components/ThemeProvider/ThemeProvider.cjs                5.96 kB │ gzip: 2.23 kB
+ℹ [CJS] dist/components/ThemeProvider/utils.cjs.map                    5.25 kB │ gzip: 2.17 kB
+ℹ [CJS] dist/components/ThemeProvider/utils.cjs                        3.44 kB │ gzip: 1.58 kB
+ℹ [CJS] dist/components/Input/input.styles.cjs.map                     3.42 kB │ gzip: 1.19 kB
+ℹ [CJS] dist/components/ThemeProvider/useThemeModePreference.cjs.map   3.42 kB │ gzip: 1.40 kB
+ℹ [CJS] dist/components/Button/Button.cjs.map                          2.72 kB │ gzip: 1.00 kB
+ℹ [CJS] dist/components/TextArea/textArea.styles.cjs.map               2.48 kB │ gzip: 1.00 kB
+ℹ [CJS] dist/components/Input/input.styles.cjs                         2.46 kB │ gzip: 0.78 kB
+ℹ [CJS] dist/components/ThemeProvider/useThemeModePreference.cjs       2.35 kB │ gzip: 0.92 kB
+ℹ [CJS] dist/components/Input/Input.cjs.map                            1.81 kB │ gzip: 0.84 kB
+ℹ [CJS] dist/components/TextArea/textArea.styles.cjs                   1.80 kB │ gzip: 0.69 kB
+ℹ [CJS] dist/components/TextArea/TextArea.cjs.map                      1.57 kB │ gzip: 0.75 kB
+ℹ [CJS] dist/components/Button/Button.cjs                              1.57 kB │ gzip: 0.62 kB
+ℹ [CJS] dist/components/Input/Input.cjs                                1.23 kB │ gzip: 0.56 kB
+ℹ [CJS] dist/utils/preferences.cjs.map                                 1.21 kB │ gzip: 0.64 kB
+ℹ [CJS] dist/components/ThemeProvider/useSystemThemeMode.cjs.map       1.14 kB │ gzip: 0.56 kB
+ℹ [CJS] dist/components/TextArea/TextArea.cjs                          1.08 kB │ gzip: 0.49 kB
+ℹ [CJS] dist/_virtual/_rolldown/runtime.cjs                            1.01 kB │ gzip: 0.50 kB
+ℹ [CJS] dist/utils/useIsomorphicLayoutEffect.cjs.map                   0.85 kB │ gzip: 0.50 kB
+ℹ [CJS] dist/components/FormControl/context.cjs.map                    0.83 kB │ gzip: 0.41 kB
+ℹ [CJS] dist/components/ThemeProvider/useSystemThemeMode.cjs           0.76 kB │ gzip: 0.39 kB
+ℹ [CJS] dist/components/ThemeProvider/types.cjs                        0.68 kB │ gzip: 0.38 kB
+ℹ [CJS] dist/utils/preferences.cjs                                     0.57 kB │ gzip: 0.31 kB
+ℹ [CJS] dist/components/FormControl/context.cjs                        0.47 kB │ gzip: 0.26 kB
+ℹ [CJS] dist/utils/useIsomorphicLayoutEffect.cjs                       0.36 kB │ gzip: 0.21 kB
+ℹ [CJS] 34 files, total: 171.00 kB
+ℹ [CJS] dist/components/ThemeProvider/types.d.cts.map                    2.64 kB │ gzip: 0.54 kB
+ℹ [CJS] dist/components/ThemeProvider/swatches.d.cts.map                 0.93 kB │ gzip: 0.31 kB
+ℹ [CJS] dist/components/ThemeProvider/ThemeProvider.d.cts.map            0.59 kB │ gzip: 0.31 kB
+ℹ [CJS] dist/components/Button/Button.d.cts.map                          0.39 kB │ gzip: 0.24 kB
+ℹ [CJS] dist/components/ThemeProvider/useThemeModePreference.d.cts.map   0.33 kB │ gzip: 0.23 kB
+ℹ [CJS] dist/components/Input/Input.d.cts.map                            0.31 kB │ gzip: 0.20 kB
+ℹ [CJS] dist/components/TextArea/TextArea.d.cts.map                      0.30 kB │ gzip: 0.20 kB
+ℹ [CJS] dist/components/ThemeProvider/defaultTheme.d.cts.map             0.21 kB │ gzip: 0.17 kB
+ℹ [CJS] dist/components/ThemeProvider/utils.d.cts.map                    0.18 kB │ gzip: 0.15 kB
+ℹ [CJS] dist/components/ThemeProvider/useSystemThemeMode.d.cts.map       0.18 kB │ gzip: 0.15 kB
+ℹ [CJS] dist/index.d.cts                                                 1.57 kB │ gzip: 0.43 kB
+ℹ [CJS] dist/components/ThemeProvider/swatches.d.cts                    17.04 kB │ gzip: 3.93 kB
+ℹ [CJS] dist/components/ThemeProvider/types.d.cts                        8.63 kB │ gzip: 1.99 kB
+ℹ [CJS] dist/components/ThemeProvider/ThemeProvider.d.cts                2.97 kB │ gzip: 1.30 kB
+ℹ [CJS] dist/components/ThemeProvider/useThemeModePreference.d.cts       1.18 kB │ gzip: 0.59 kB
+ℹ [CJS] dist/components/ThemeProvider/utils.d.cts                        0.94 kB │ gzip: 0.54 kB
+ℹ [CJS] dist/components/ThemeProvider/defaultTheme.d.cts                 0.77 kB │ gzip: 0.37 kB
+ℹ [CJS] dist/components/Button/Button.d.cts                              0.68 kB │ gzip: 0.36 kB
+ℹ [CJS] dist/components/ThemeProvider/index.d.cts                        0.68 kB │ gzip: 0.31 kB
+ℹ [CJS] dist/components/TextArea/TextArea.d.cts                          0.46 kB │ gzip: 0.29 kB
+ℹ [CJS] dist/components/Input/Input.d.cts                                0.46 kB │ gzip: 0.30 kB
+ℹ [CJS] dist/components/ThemeProvider/useSystemThemeMode.d.cts           0.25 kB │ gzip: 0.17 kB
+ℹ [CJS] dist/components/TextArea/index.d.cts                             0.06 kB │ gzip: 0.06 kB
+ℹ [CJS] dist/components/Button/index.d.cts                               0.05 kB │ gzip: 0.06 kB
+ℹ [CJS] dist/components/Input/index.d.cts                                0.05 kB │ gzip: 0.06 kB
+ℹ [CJS] 25 files, total: 41.84 kB
+✔ Build complete in 718ms
+ℹ [ESM] dist/index.mjs                                                   1.13 kB │ gzip: 0.33 kB
+ℹ [ESM] dist/components/ThemeProvider/defaultTheme.mjs.map              28.73 kB │ gzip: 6.36 kB
+ℹ [ESM] dist/components/ThemeProvider/swatches.mjs.map                  21.78 kB │ gzip: 5.04 kB
+ℹ [ESM] dist/components/ThemeProvider/defaultTheme.mjs                  16.26 kB │ gzip: 3.70 kB
+ℹ [ESM] dist/components/ThemeProvider/swatches.mjs                      14.47 kB │ gzip: 4.01 kB
+ℹ [ESM] dist/components/ThemeProvider/ThemeProvider.mjs.map             11.86 kB │ gzip: 3.89 kB
+ℹ [ESM] dist/components/ThemeProvider/types.mjs.map                      9.76 kB │ gzip: 2.27 kB
+ℹ [ESM] dist/components/Button/button.styles.mjs.map                     8.40 kB │ gzip: 1.64 kB
+ℹ [ESM] dist/components/Button/button.styles.mjs                         6.05 kB │ gzip: 1.12 kB
+ℹ [ESM] dist/components/ThemeProvider/ThemeProvider.mjs                  5.61 kB │ gzip: 2.17 kB
+ℹ [ESM] dist/components/ThemeProvider/utils.mjs.map                      5.20 kB │ gzip: 2.15 kB
+ℹ [ESM] dist/components/Input/input.styles.mjs.map                       3.42 kB │ gzip: 1.19 kB
+ℹ [ESM] dist/components/ThemeProvider/utils.mjs                          3.34 kB │ gzip: 1.56 kB
+ℹ [ESM] dist/components/ThemeProvider/useThemeModePreference.mjs.map     3.33 kB │ gzip: 1.36 kB
+ℹ [ESM] dist/components/Button/Button.mjs.map                            2.65 kB │ gzip: 0.98 kB
+ℹ [ESM] dist/components/ThemeProvider/types.d.mts.map                    2.64 kB │ gzip: 0.54 kB
+ℹ [ESM] dist/components/TextArea/textArea.styles.mjs.map                 2.48 kB │ gzip: 1.00 kB
+ℹ [ESM] dist/components/Input/input.styles.mjs                           2.45 kB │ gzip: 0.77 kB
+ℹ [ESM] dist/components/ThemeProvider/useThemeModePreference.mjs         2.07 kB │ gzip: 0.86 kB
+ℹ [ESM] dist/components/TextArea/textArea.styles.mjs                     1.79 kB │ gzip: 0.68 kB
+ℹ [ESM] dist/components/Input/Input.mjs.map                              1.71 kB │ gzip: 0.81 kB
+ℹ [ESM] dist/components/TextArea/TextArea.mjs.map                        1.46 kB │ gzip: 0.73 kB
+ℹ [ESM] dist/components/Button/Button.mjs                                1.35 kB │ gzip: 0.55 kB
+ℹ [ESM] dist/utils/preferences.mjs.map                                   1.21 kB │ gzip: 0.64 kB
+ℹ [ESM] dist/components/ThemeProvider/useSystemThemeMode.mjs.map         1.12 kB │ gzip: 0.55 kB
+ℹ [ESM] dist/components/Input/Input.mjs                                  0.95 kB │ gzip: 0.48 kB
+ℹ [ESM] dist/components/ThemeProvider/swatches.d.mts.map                 0.93 kB │ gzip: 0.31 kB
+ℹ [ESM] dist/utils/useIsomorphicLayoutEffect.mjs.map                     0.81 kB │ gzip: 0.49 kB
+ℹ [ESM] dist/components/FormControl/context.mjs.map                      0.80 kB │ gzip: 0.41 kB
+ℹ [ESM] dist/components/TextArea/TextArea.mjs                            0.80 kB │ gzip: 0.41 kB
+ℹ [ESM] dist/components/ThemeProvider/useSystemThemeMode.mjs             0.70 kB │ gzip: 0.35 kB
+ℹ [ESM] dist/components/ThemeProvider/types.mjs                          0.66 kB │ gzip: 0.39 kB
+ℹ [ESM] dist/components/ThemeProvider/ThemeProvider.d.mts.map            0.59 kB │ gzip: 0.31 kB
+ℹ [ESM] dist/utils/preferences.mjs                                       0.53 kB │ gzip: 0.30 kB
+ℹ [ESM] dist/components/Button/Button.d.mts.map                          0.39 kB │ gzip: 0.24 kB
+ℹ [ESM] dist/components/FormControl/context.mjs                          0.34 kB │ gzip: 0.21 kB
+ℹ [ESM] dist/components/ThemeProvider/useThemeModePreference.d.mts.map   0.33 kB │ gzip: 0.23 kB
+ℹ [ESM] dist/components/Input/Input.d.mts.map                            0.31 kB │ gzip: 0.20 kB
+ℹ [ESM] dist/components/TextArea/TextArea.d.mts.map                      0.30 kB │ gzip: 0.20 kB
+ℹ [ESM] dist/utils/useIsomorphicLayoutEffect.mjs                         0.30 kB │ gzip: 0.18 kB
+ℹ [ESM] dist/components/ThemeProvider/defaultTheme.d.mts.map             0.21 kB │ gzip: 0.17 kB
+ℹ [ESM] dist/components/ThemeProvider/utils.d.mts.map                    0.18 kB │ gzip: 0.15 kB
+ℹ [ESM] dist/components/ThemeProvider/useSystemThemeMode.d.mts.map       0.18 kB │ gzip: 0.15 kB
+ℹ [ESM] dist/index.d.mts                                                 1.57 kB │ gzip: 0.43 kB
+ℹ [ESM] dist/components/ThemeProvider/swatches.d.mts                    17.04 kB │ gzip: 3.93 kB
+ℹ [ESM] dist/components/ThemeProvider/types.d.mts                        8.63 kB │ gzip: 1.99 kB
+ℹ [ESM] dist/components/ThemeProvider/ThemeProvider.d.mts                2.97 kB │ gzip: 1.30 kB
+ℹ [ESM] dist/components/ThemeProvider/useThemeModePreference.d.mts       1.18 kB │ gzip: 0.59 kB
+ℹ [ESM] dist/components/ThemeProvider/utils.d.mts                        0.94 kB │ gzip: 0.54 kB
+ℹ [ESM] dist/components/ThemeProvider/defaultTheme.d.mts                 0.77 kB │ gzip: 0.37 kB
+ℹ [ESM] dist/components/Button/Button.d.mts                              0.68 kB │ gzip: 0.36 kB
+ℹ [ESM] dist/components/ThemeProvider/index.d.mts                        0.68 kB │ gzip: 0.31 kB
+ℹ [ESM] dist/components/TextArea/TextArea.d.mts                          0.46 kB │ gzip: 0.29 kB
+ℹ [ESM] dist/components/Input/Input.d.mts                                0.46 kB │ gzip: 0.30 kB
+ℹ [ESM] dist/components/ThemeProvider/useSystemThemeMode.d.mts           0.25 kB │ gzip: 0.17 kB
+ℹ [ESM] dist/components/TextArea/index.d.mts                             0.06 kB │ gzip: 0.06 kB
+ℹ [ESM] dist/components/Button/index.d.mts                               0.05 kB │ gzip: 0.06 kB
+ℹ [ESM] dist/components/Input/index.d.mts                                0.05 kB │ gzip: 0.06 kB
+ℹ [ESM] 58 files, total: 205.38 kB
+✔ Build complete in 725ms
+TAP version 13
+# Subtest: Button preserves refs, icon order, native events and disabled semantics through the root import
+ok 1 - Button preserves refs, icon order, native events and disabled semantics through the root import
+  ---
+  duration_ms: 14.35325
+  type: 'test'
+  ...
+# Subtest: a retained Button excludes theme tables and unrelated controls from an ESM consumer bundle
+ok 2 - a retained Button excludes theme tables and unrelated controls from an ESM consumer bundle
+  ---
+  duration_ms: 50.535583
+  type: 'test'
+  ...
+# Subtest: unused root imports do not retain components or the styling runtime
+ok 3 - unused root imports do not retain components or the styling runtime
+  ---
+  duration_ms: 7.510125
+  type: 'test'
+  ...
+# Subtest: Input retains native input/ref, size, error and styles APIs
+ok 4 - Input retains native input/ref, size, error and styles APIs
+  ---
+  duration_ms: 14.966792
+  type: 'test'
+  ...
+# Subtest: TextArea retains rows, ref, native props, error state and text entry
+ok 5 - TextArea retains rows, ref, native props, error state and text entry
+  ---
+  duration_ms: 16.74075
+  type: 'test'
+  ...
+# Subtest: core builds in isolation with no legacy React UI source or style inputs
+ok 6 - core builds in isolation with no legacy React UI source or style inputs
+  ---
+  duration_ms: 1024.005375
+  type: 'test'
+  ...
+# Subtest: the first slice exposes its three controls only through the public root
+ok 7 - the first slice exposes its three controls only through the public root
+  ---
+  duration_ms: 2.288
+  type: 'test'
+  ...
+# Subtest: packed controls and themes retain only used code and style themselves without CSS imports
+ok 8 - packed controls and themes retain only used code and style themselves without CSS imports
+  ---
+  duration_ms: 5030.078708
+  type: 'test'
+  ...
+# Subtest: default hook, mode changes and partial light/dark overrides retain the existing contract
+ok 9 - default hook, mode changes and partial light/dark overrides retain the existing contract
+  ---
+  duration_ms: 62.231
+  type: 'test'
+  ...
+# Subtest: nested and explicitly independent providers retain their selectors and portal scope
+ok 10 - nested and explicitly independent providers retain their selectors and portal scope
+  ---
+  duration_ms: 15.529375
+  type: 'test'
+  ...
+# Subtest: saved preference, OS changes and system reset preserve storage and document attributes
+ok 11 - saved preference, OS changes and system reset preserve storage and document attributes
+  ---
+  duration_ms: 7.776
+  type: 'test'
+  ...
+# Subtest: unavailable preference storage does not prevent rendering or mode changes
+ok 12 - unavailable preference storage does not prevent rendering or mode changes
+  ---
+  duration_ms: 6.606291
+  type: 'test'
+  ...
+# Subtest: an explicit selector on a nested provider bypasses automatic wrappers
+ok 13 - an explicit selector on a nested provider bypasses automatic wrappers
+  ---
+  duration_ms: 9.658041
+  type: 'test'
+  ...
+# Subtest: deprecated theme remains an alias and lightTheme takes precedence with warnings
+ok 14 - deprecated theme remains an alias and lightTheme takes precedence with warnings
+  ---
+  duration_ms: 6.815708
+  type: 'test'
+  ...
+# Subtest: root exports retain theme helpers and immutable defaults without public contexts
+ok 15 - root exports retain theme helpers and immutable defaults without public contexts
+  ---
+  duration_ms: 1.835625
+  type: 'test'
+  ...
+# Subtest: CommonJS root exposes the same public names
+ok 16 - CommonJS root exposes the same public names
+  ---
+  duration_ms: 14.866125
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5460.560584
