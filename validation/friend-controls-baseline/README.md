@@ -24,7 +24,7 @@ Prerequisite, from the repository root (the lockfile must not change):
 pnpm install --frozen-lockfile
 ```
 
-Full suite — **270 tests across 15 files, all passing** at the baseline commit:
+Full suite — **275 tests across 15 files, all passing** at the baseline commit:
 
 ```bash
 pnpm --dir packages/react-ui exec vitest run --config ../../validation/friend-controls-baseline/vitest.config.ts
@@ -41,6 +41,23 @@ Typecheck (0 errors; inherits the repo's strict settings):
 ```bash
 pnpm --dir packages/react-ui exec tsc --noEmit -p ../../validation/friend-controls-baseline/tsconfig.json
 ```
+
+### Real-Chrome verification (#23)
+
+One command, from the repository root — it builds the fixture itself:
+
+```bash
+node validation/friend-controls-baseline/browser/run.mjs
+```
+
+**61 checks across 10 scenarios, all passing** against Chrome/156.0.8078.47, with
+no browser-automation dependency: `browser/cdp.mjs` speaks the DevTools Protocol
+over Node's global `WebSocket`. Input is genuinely trusted, which is what closed
+six of the gaps jsdom left open.
+
+Options: `--only <scenario>`, `--json <path>`, `--no-build`. Exit 0 only if every
+scenario completed and every check passed; 1 for check failures, 2 for a setup
+problem.
 
 ### Running the consumer
 
@@ -87,8 +104,13 @@ validation/friend-controls-baseline/
 │   ├── data.ts               every fixture input, all literals
 │   └── LegacyConsumerApp.tsx the runnable consumer
 ├── consumer/                 browser entry for the consumer (index.html, main.tsx, vite.config.ts)
+├── browser/                  real-Chrome verification (#23)
+│   ├── cdp.mjs               minimal DevTools Protocol client, no dependencies
+│   ├── serve.mjs             tiny static server + free-port helper
+│   ├── run.mjs               the 10 scenarios and the runner
+│   └── fixture/              the scenario page (real component SCSS included)
 ├── tests/                    14 family suites + 1 harness self-check
-└── docs/                     the four documents above
+└── docs/                     the five documents above
 ```
 
 ## Reading the tests
@@ -102,7 +124,14 @@ role instead of inventing interaction requirements.
 
 Where a behavior could not be verified honestly, it is a gap in
 [docs/observed-baseline.md](./docs/observed-baseline.md#coverage-gaps), not a
-weaker assertion. Two findings are attributed **upstream** rather than to openui
-by rendering the underlying primitive as a control group in the same test — see
+weaker assertion. Control groups matter here: several suites render the underlying primitive
+alongside the openui component in the same test, so a finding can be attributed
+to the wrapper or to the dependency rather than guessed at — see
 `tests/Radio.baseline.test.tsx` (raw Radix) and `tests/Calendar.baseline.test.tsx`
 (raw `react-day-picker`).
+
+A caution learned the hard way, recorded in
+[docs/verification-ledger.md#ca-2](./docs/verification-ledger.md#ca-2): a control
+group is only as good as the inputs it shares. #19's CA-2 finding omitted
+`onSelect` on **both** arms, so the comparison corroborated a mistaken reading
+instead of catching it. That finding is now withdrawn.

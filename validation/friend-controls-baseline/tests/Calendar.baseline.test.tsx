@@ -164,30 +164,106 @@ describe("Calendar — single mode selection", () => {
     expect(container.querySelector('[aria-selected="true"]')).toHaveTextContent("14");
   });
 
-  it("does NOT re-read `selected` on re-render — and raw DayPicker does the same", async () => {
-    // OBSERVED DEFECT CA-2, attributed UPSTREAM rather than to openui.
-    //
-    // Pushing a new `selected` into an already-mounted Calendar leaves the
-    // highlight on the original day. A fresh mount with the same prop is
-    // correct, so this is an update path only.
-    //
-    // react-day-picker 9.14.0 is rendered directly below as a control group and
-    // behaves identically, which establishes that Calendar.tsx is not the
-    // cause. It is recorded here because it is high-impact for the migration:
-    // a consumer holding the selection in its own state cannot drive this
-    // component through `selected` alone.
-    const openui = await render(
+  // ---------------------------------------------------------------------------
+  // CA-2, CORRECTED under issue #23.
+  //
+  // The original #19 test supplied `selected` but NO `onSelect`, and concluded
+  // "Calendar does not re-read `selected` on re-render" — filed high severity
+  // and attributed upstream to react-day-picker. That conclusion was wrong, and
+  // the raw-DayPicker control group shared the same omission, so it could not
+  // catch the mistake.
+  //
+  // In react-day-picker 9.14.0, `onSelect` IS the controlled/uncontrolled
+  // switch. From selection/useSingle.js:13-14 (identical in useRange.js:15-16
+  // and useMulti.js:13-14):
+  //
+  //   const [internallySelected, setSelected] =
+  //     useControlledValue(initiallySelected, onSelect ? initiallySelected : undefined);
+  //   const selected = !onSelect ? internallySelected : initiallySelected;
+  //
+  // With `onSelect`, `selected` is read from the prop on every render →
+  // controlled, and prop changes ARE reflected. Without `onSelect`, it comes
+  // from `useState(initiallySelected)` captured once → uncontrolled, and later
+  // prop changes are correctly ignored.
+  //
+  // So the behavior originally reported is the documented uncontrolled
+  // contract, NOT a defect. The four tests below pin both paths explicitly, on
+  // both the OpenUI Calendar and the pinned DayPicker.
+  // ---------------------------------------------------------------------------
+
+  it("CONTROLLED (selected + onSelect): re-reads `selected` on re-render", async () => {
+    const onSelect = fn();
+    const { container, rerender } = await render(
+      <Calendar mode="single" month={FIXED_DATE} selected={FIXED_DATE} onSelect={onSelect} />,
+    );
+    expect(container.querySelector('[aria-selected="true"]')).toHaveTextContent("14");
+
+    await rerender(
+      <Calendar mode="single" month={FIXED_DATE} selected={FIXED_RANGE_END} onSelect={onSelect} />,
+    );
+
+    // The corrected expectation: a controlled Calendar DOES follow the prop.
+    expect(container.querySelector('[aria-selected="true"]')).toHaveTextContent("20");
+  });
+
+  it("CONTROLLED: raw DayPicker behaves identically (control group)", async () => {
+    const onSelect = fn();
+    const { container, rerender } = await render(
+      <DayPicker mode="single" month={FIXED_DATE} selected={FIXED_DATE} onSelect={onSelect} />,
+    );
+    expect(container.querySelector('[aria-selected="true"]')).toHaveTextContent("14");
+
+    await rerender(
+      <DayPicker mode="single" month={FIXED_DATE} selected={FIXED_RANGE_END} onSelect={onSelect} />,
+    );
+    expect(container.querySelector('[aria-selected="true"]')).toHaveTextContent("20");
+  });
+
+  it("CONTROLLED: the DOM does not move on its own — the consumer owns the value", async () => {
+    // The flip side of being controlled: clicking reports intent but changes
+    // nothing until the consumer pushes a new `selected`.
+    const onSelect = fn();
+    const { container } = await render(
+      <Calendar mode="single" month={FIXED_DATE} selected={FIXED_DATE} onSelect={onSelect} />,
+    );
+
+    await userEvent.click(dayButton(container, "20")!);
+
+    expect(onSelect).toHaveBeenCalledTimes(1);
+    expect(container.querySelector('[aria-selected="true"]')).toHaveTextContent("14");
+  });
+
+  it("UNCONTROLLED (selected, no onSelect): ignores later `selected` changes, by design", async () => {
+    // This is the path the original #19 test actually exercised. The behavior is
+    // correct for an uncontrolled component: `selected` seeds internal state
+    // once (useState) and later prop changes are deliberately ignored.
+    const { container, rerender } = await render(
       <Calendar mode="single" month={FIXED_DATE} selected={FIXED_DATE} />,
     );
-    expect(openui.container.querySelector('[aria-selected="true"]')).toHaveTextContent("14");
+    expect(container.querySelector('[aria-selected="true"]')).toHaveTextContent("14");
 
-    await openui.rerender(<Calendar mode="single" month={FIXED_DATE} selected={FIXED_RANGE_END} />);
-    expect(openui.container.querySelector('[aria-selected="true"]')).toHaveTextContent("14");
-    openui.unmount();
+    await rerender(<Calendar mode="single" month={FIXED_DATE} selected={FIXED_RANGE_END} />);
+    expect(container.querySelector('[aria-selected="true"]')).toHaveTextContent("14");
+  });
 
-    const raw = await render(<DayPicker mode="single" month={FIXED_DATE} selected={FIXED_DATE} />);
-    await raw.rerender(<DayPicker mode="single" month={FIXED_DATE} selected={FIXED_RANGE_END} />);
-    expect(raw.container.querySelector('[aria-selected="true"]')).toHaveTextContent("14");
+  it("UNCONTROLLED: raw DayPicker behaves identically (control group)", async () => {
+    const { container, rerender } = await render(
+      <DayPicker mode="single" month={FIXED_DATE} selected={FIXED_DATE} />,
+    );
+    await rerender(<DayPicker mode="single" month={FIXED_DATE} selected={FIXED_RANGE_END} />);
+    expect(container.querySelector('[aria-selected="true"]')).toHaveTextContent("14");
+  });
+
+  it("UNCONTROLLED: internal selection DOES advance on click", async () => {
+    // Proves the uncontrolled path is genuinely functional rather than frozen —
+    // which is what a real defect would look like.
+    const { container } = await render(
+      <Calendar mode="single" month={FIXED_DATE} selected={FIXED_DATE} />,
+    );
+    expect(container.querySelector('[aria-selected="true"]')).toHaveTextContent("14");
+
+    await userEvent.click(dayButton(container, "20")!);
+    expect(container.querySelector('[aria-selected="true"]')).toHaveTextContent("20");
   });
 
   it("DOES honor `selected` on a fresh mount", async () => {
