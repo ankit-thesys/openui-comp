@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: citation items open safe sources and still notify consumers when a source URL is rejected
+ok 1 - citation items open safe sources and still notify consumers when a source URL is rejected
+  ---
+  duration_ms: 23.768667
+  type: 'test'
+  ...
+# Subtest: markdown citation spans resolve one-based sources and preserve ordinary span content
+ok 2 - markdown citation spans resolve one-based sources and preserve ordinary span content
+  ---
+  duration_ms: 13.503083
+  type: 'test'
+  ...
+# Subtest: favicons retain image attributes, fall back on failure and retry when their URL changes
+ok 3 - favicons retain image attributes, fall back on failure and retry when their URL changes
+  ---
+  duration_ms: 29.866583
+  type: 'test'
+  ...
+# Subtest: source providers enrich valid URLs, isolate nested consumers and update without stale sources
+ok 4 - source providers enrich valid URLs, isolate nested consumers and update without stale sources
+  ---
+  duration_ms: 14.572333
+  type: 'test'
+  ...
+# Subtest: opening a source rejects executable URL schemes and preserves safe opening defaults
+ok 5 - opening a source rejects executable URL schemes and preserves safe opening defaults
+  ---
+  duration_ms: 0.26525
+  type: 'test'
+  ...
+# Subtest: listed source items support Enter and Space navigation with consumer callbacks
+ok 6 - listed source items support Enter and Space navigation with consumer callbacks
+  ---
+  duration_ms: 24.98525
+  type: 'test'
+  ...
+# Subtest: empty source lists do not render a misleading sources heading
+ok 7 - empty source lists do not render a misleading sources heading
+  ---
+  duration_ms: 1.911458
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 718.382459
