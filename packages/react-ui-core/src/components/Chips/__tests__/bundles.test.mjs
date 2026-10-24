@@ -31,6 +31,27 @@ async function bundle(name) {
 }
 for (const [name, excluded] of Object.entries({
   Button: ["Calendar", "Chips", "DatePicker", "Select", "Slider"],
+  IconButton: [
+    "Button",
+    "Calendar",
+    "DatePicker",
+    "Select",
+    "Slider",
+    "CheckBoxGroup",
+    "RadioGroup",
+    "SwitchGroup",
+    "ThemeProvider",
+  ],
+  CheckBoxItem: [
+    "Button",
+    "Calendar",
+    "DatePicker",
+    "Select",
+    "Slider",
+    "RadioGroup",
+    "SwitchGroup",
+    "ThemeProvider",
+  ],
   Chips: ["Calendar", "DatePicker", "Select", "Slider", "ThemeProvider"],
   Slider: ["Calendar", "DatePicker", "Select", "SliderBlock", "ThemeProvider"],
 })) {

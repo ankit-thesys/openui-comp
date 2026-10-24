@@ -162,6 +162,13 @@ const properties = [
   "width",
   "height",
   "fill",
+  "stroke",
+  "strokeWidth",
+  "flexDirection",
+  "flexWrap",
+  "overflowWrap",
+  "minWidth",
+  "maxWidth",
   "transform",
 ];
 const selector = '[class*="openui-"]:not([class*="openui-theme-"])';

@@ -30,6 +30,19 @@ Each primitive family had a public-root missing-feature failure before extractio
 
 Production styles use module-level stock Goober css calls and native/Radix JSX. The Chrome reference caught and corrected a secondary-text fallback alpha (0.6). Radio descendant hover uses native :enabled:hover instead of :hover:not(:disabled), whose descendant form Goober misserializes; the button state is equivalent. No Goober internals were changed. Baseline dependency resolution uses the installed candidate package’s dependency graph only in the comparison arm; the candidate imports no legacy source or styles.
 
-Preserved legacy limitations are investigated separately rather than silently redesigned here. Friend PR21’s Calendar controlled-state claim is not accepted evidence because its test omitted onSelect; a controlled check must include it. Friend reports about Select hideDropdownIcon and DatePicker require independent reproduction. IconButton retains its native default button type, including form submission when no type is supplied. SSR remains deferred.
+Preserved legacy limitations are investigated separately rather than silently redesigned here. Friend PR21’s Calendar controlled-state claim is not accepted evidence because its test omitted onSelect; a controlled check must include it. The independent legacy/extracted Chrome comparison confirms matching Select hideDropdownIcon crashes and textValue visible-text behavior, DatePicker controlled clearing restoring a stale date, isOpen=true staying open without its setter, and a non-keyboard-operable div trigger. The isOpen case is a controlled-prop usage constraint, not inherently a defect. These inherited cases are disclosed for separate scope review; this extraction does not silently fix them. IconButton retains its native default button type, including form submission when no type is supplied. SSR remains deferred.
 
-Final combined-artifact evidence is recorded below after validation. Worker 2’s source-scoped results under Chips/**tests**/results are historical input evidence, not certification of this combined package.
+Final combined-artifact evidence lives in `evidence/form-controls`. Worker 2’s source-scoped results under `Chips/__tests__/results` are historical input evidence, not certification of this combined package.
+
+## Final combined results
+
+Exact installed tarball SHA256: `1bbac01d3961dc9bf8d075070149a62328072133fa9dcdedec78df71b4bfde66` (175,523 bytes). Producer production revision: `6839fbd9d`; subsequent edits add validation/evidence only.
+
+- Complete scoped CI passed: 32 Node tests, formatting, lint, typecheck, isolated build, normal packed-consumer installation, publint and attw.
+- The normally installed tarball passed 21 public component/import/tree-shaking tests and strict Bundler, NodeNext ESM and NodeNext CommonJS consumers with skipLibCheck false.
+- Chrome 156 passed all 42 combined framework/order cases: 45,912 primitive and 45,690 composite paired element/style snapshots (91,602 total). Each matrix covers five theme states, default/interaction/disabled styles, explicit important overrides and narrow/wide layouts. Actual SVG stroke properties are included for primitive controls.
+- Six composite interaction scenarios and Calendar controlled rerender/layout parity in mobile, fullscreen, tray and copilot passed.
+- The final tarball separately reproduces the disclosed inherited risks. These diagnostic matches are not desired-behavior passes. No universal error-free or SSR/performance certification is implied.
+- Independent standards review: 0 findings. Independent spec review: 0 findings. OptionCards remains explicitly deferred; issue #10 is not closed.
+
+Evidence and reproduction: `evidence/form-controls/README.md`. Legacy production and friend-baseline directories are unchanged. This branch is ready for a stacked draft review targeting `codex/react-ui-core-first-slice-pr`, with inherited limitations disclosed; no merge or publication is authorized.
