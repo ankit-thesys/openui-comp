@@ -114,3 +114,18 @@ browser window. No competing browser runs.
 
 Container checkpoint: **not yet passed**. Overlays remain gated. Neither worker
 may infer overlay authorization from the owned/component-only results.
+
+### Integrated non-browser update
+
+At `9f7cac621`, the combined container source passes complete scoped CI: 49
+tests, formatting/lint/types, isolated old-source-free build, packed consumer,
+publint and attw. A separate normal installed consumer passes 17 focused
+layout/pruning tests and strict Bundler/NodeNext ESM/NodeNext CJS declarations
+with skipLibCheck false. The shared JSDOM helper exposes its actual
+MutationObserver because newer compatible Radix uses it; no production shim.
+
+Worker 2 retains the browser window. Its targeted Chrome checks found and
+conventionally corrected inactive Tabs hover selector ordering, and corrected
+the Carousel measurement to sample settled scrolling. Those source/test changes
+are not integrated until committed. Its full matrix and final combined tarball
+checks remain pending. The container gate is still closed; no overlay work yet.
