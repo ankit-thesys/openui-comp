@@ -1,10 +1,10 @@
 # @openuidev/react-ui-core
 
-The first migration slice of OpenUI's reusable React UI. The existing `@openuidev/react-ui` package remains unchanged. This package is under development; its beta version is provisional and no release is authorized by these changes.
+OpenUI's reusable React UI, extracted in additive migration slices. The existing `@openuidev/react-ui` package remains unchanged. This package is under development; its beta version is provisional and no release is authorized by these changes.
 
 ## Controls
 
-The first control slice exposes `Button`, `Input`, `TextArea` and their existing public prop types from the root. Preserve existing variants, sizes, native props, refs, error state and supported customization:
+The root exposes Button, Input, TextArea, Buttons, IconButton, Label, FormControl/Hint, checkbox/radio/switch/toggle groups and items, Calendar, DatePicker, Select parts, Slider/SliderBlock and Chips, with their existing public types. OptionCards is deferred until its markdown, table and citation prerequisites are extracted. Preserve existing variants, sizes, native props, refs, error state and supported customization:
 
 ```tsx
 import { Button, Input, TextArea, ThemeProvider } from "@openuidev/react-ui-core";
@@ -14,13 +14,15 @@ function Form() {
     <ThemeProvider>
       <Input aria-label="Name" size="medium" />
       <TextArea aria-label="Message" rows={3} />
-      <Button variant="primary" type="submit">Send</Button>
+      <Button variant="primary" type="submit">
+        Send
+      </Button>
     </ThemeProvider>
   );
 }
 ```
 
-Input retains its existing `styles` alias as well as native `style` forwarding. The minimal FormControl context is internal support for the existing inherited error-state path; the full FormControl component belongs to a later slice.
+Input retains its existing `styles` alias as well as native `style` forwarding. FormControl and Hint preserve inherited error state and explicit overrides. Their context stays internal.
 
 ## Themes
 
@@ -36,7 +38,7 @@ function App() {
 }
 ```
 
-Existing `lightTheme`, `darkTheme`, `mode`, deprecated `theme` and `cssSelector` props are preserved. `useTheme`, default themes, swatches, theme types, system-mode/preference hooks and preference constants are available from the root. Context objects stay internal. There are no component subpath exports or new styling props.
+Existing `lightTheme`, `darkTheme`, `mode`, deprecated `theme` and `cssSelector` props are preserved. `useTheme`, default themes, swatches, theme types, system-mode/preference hooks and preference constants are available from the root. Theme context objects stay internal. The existing LayoutContext, LayoutContextProvider and useLayoutContext APIs remain public for date-control layouts. There are no component subpath exports or new styling props.
 
 A top-level provider still targets `body` by default. Nested providers automatically scope their tokens. For independent top-level themes, use separate existing `cssSelector` targets. The class returned by `useTheme().portalThemeClassName` preserves the existing portal theme mechanism. The extraction does not change legacy scoping or preference behavior.
 
@@ -59,4 +61,4 @@ pnpm --filter @openuidev/react-ui-core check:publint
 pnpm --filter @openuidev/react-ui-core check:attw
 ```
 
-The build preserves modules in ESM/CJS with matching declarations. Goober and React stay external dependencies. There are no old SCSS or generated CSS build inputs. Package metadata marks modules as removable when unused; class values referenced by rendered components must retain their Goober calls. Tests use built public exports. Remaining families, charts and chat kits are later slices.
+The build preserves modules in ESM/CJS with matching declarations. Goober and React stay external dependencies. There are no old SCSS or generated CSS build inputs. Package metadata marks modules as removable when unused; class values referenced by rendered components must retain their Goober calls. Tests use built public exports. Remaining families, charts and chat kits are later slices. See FORM_CONTROLS.md for this slice’s validation and inherited limitations.

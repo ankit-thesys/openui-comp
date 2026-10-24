@@ -38,6 +38,11 @@ const oldPrefix =
         `import {${names.join(",")}} from ${JSON.stringify(path.join(baseline, folder))};`,
     )
     .join("\n") + `\nconst Core={${Object.values(oldNames).flat().join(",")}};`;
+// Resolve legacy comparison dependencies from the same installed package graph.
+const installedDependencies = path.resolve(
+  await fs.realpath(path.join(consumer, "node_modules/@openuidev/react-ui-core")),
+  "../..",
+);
 const scripts = {},
   graphs = {};
 const hash = (data) => createHash("sha256").update(data).digest("hex");
@@ -57,7 +62,7 @@ for (const arm of ["baseline", "runtime"]) {
     define: { "process.env.NODE_ENV": '"production"' },
     ...(arm === "baseline"
       ? {
-          nodePaths: [consumer + "/node_modules"],
+          nodePaths: [consumer + "/node_modules", installedDependencies],
           alias: {
             react: consumer + "/node_modules/react",
             "react-dom": consumer + "/node_modules/react-dom",
