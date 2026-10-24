@@ -17,3 +17,11 @@ The integrated artifact checks automatic styling, light/dark public theme update
 Final artifact read-back verified the tarball SHA256 and 82,255-byte size, all 142 source/build records plus the separately recorded tarball (143 files), 16 full-suite passes, 5 installed-component passes, strict-consumer success, and clean Publint/ATTW results. Documentation distinguishes JSDOM coupling from computed-style comparisons, preserves the accepted eager runtime cost, and leaves SSR and broader certification deferred. It does not claim publication, merge or issue closure.
 
 Summary: Standards—0 remaining material findings; Spec—2 earlier verification gaps addressed, 0 remaining material findings. Human review is still required before accepting/merging the slice.
+
+## Draft PR #20 independent review follow-up
+
+Reviewed fork base `9d73d17d2` through draft head `6cbffc32b` with two independent GPT-6.1 Sol agents. Standards found no actionable issues. Spec found that the package omitted a `ci` script, so the existing recursive workflow would skip its validation. Added the conventional package `ci` entry to run formatting, lint, typecheck, tests, Publint and ATTW.
+
+Running that entry from the clean PR checkout exposed a packed-consumer harness assumption: `pnpm install --offline` required cached dependency metadata/tarballs. Changed it to standard `--prefer-offline`, retaining `--ignore-scripts` and showing install output. The initial 15/16 run is not a pass. After formatting the fix, the complete CI sequence passed, including all 16 tests, strict consumer modes and package analysis. The two inherited theme lint warnings remain unchanged. The Spec reviewer confirmed both fixes.
+
+No runtime, stylesheet or Goober dependency changes were made, so the recorded browser evidence remains applicable to the unchanged runtime; no new browser run is claimed. The historical hashed artifact records remain preserved rather than rewritten. Legacy `packages/react-ui` still has no diff against the fork base. Remote checks on the pre-fix head passed; the follow-up push must receive its own CI results.

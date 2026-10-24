@@ -32,7 +32,8 @@
     "check:publint": "publint",
     "check:attw": "attw --pack .",
     "prepublishOnly": "pnpm run typecheck && pnpm run test && pnpm run check:publint && pnpm run check:attw",
-    "lint:check": "eslint src --ignore-pattern \"**/__tests__/**\""
+    "lint:check": "eslint src --ignore-pattern \"**/__tests__/**\"",
+    "ci": "pnpm run format:check && pnpm run lint:check && pnpm run typecheck && pnpm run test && pnpm run check:publint && pnpm run check:attw"
   },
   "peerDependencies": {
     "react": "^19.0.0",

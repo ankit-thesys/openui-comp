@@ -47,7 +47,11 @@ test(
           devDependencies: { "@types/react": "19.2.17", "@types/react-dom": "19.2.3" },
         }),
       );
-      command("pnpm", ["install", "--offline", "--ignore-scripts", "--reporter=silent"], consumer);
+      command(
+        "pnpm",
+        ["install", "--prefer-offline", "--ignore-scripts", "--reporter=append-only"],
+        consumer,
+      );
       const runtime = `import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 import * as core from '@openuidev/react-ui-core';
