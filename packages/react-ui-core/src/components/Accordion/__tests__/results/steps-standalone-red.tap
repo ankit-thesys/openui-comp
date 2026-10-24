@@ -1,0 +1,38 @@
+TAP version 13
+# Subtest: Steps numbers children by position, honors explicit integers and follows prop updates
+ok 1 - Steps numbers children by position, honors explicit integers and follows prop updates
+  ---
+  duration_ms: 19.507
+  type: 'test'
+  ...
+# Subtest: a standalone StepsItem retains its default number and own layout styles
+not ok 2 - a standalone StepsItem retains its default number and own layout styles
+  ---
+  duration_ms: 39.708917
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Accordion/__tests__/Steps.test.mjs:33:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    'block' !== 'flex'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'flex'
+  actual: 'block'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Accordion/__tests__/Steps.test.mjs:37:12)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 1
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 836.547042
