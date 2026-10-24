@@ -15,8 +15,8 @@ Three environments produced this evidence, and which one a row came from matters
 
 | Harness | What it is | What it cannot do |
 |---|---|---|
-| **SSR** | `react-dom/server` via `tests/*.baseline.test.tsx` (176 assertions across 7 files) | no computed colour, no measurement, no events |
-| **Browser** | headless Chrome over CDP via `browser/run.mjs`, with **real** mouse/keyboard (`event.isTrusted === true`) | no automated image comparison |
+| **SSR** | `react-dom/server` via `tests/*.baseline.test.tsx` (175 tests across 7 files) | no computed colour, no measurement, no events |
+| **Browser** | headless Chrome over CDP via `browser/run.mjs`, with **real** mouse input (`event.isTrusted === true`) | no automated image comparison |
 | **Source** | cited code, for behaviour that does not exist | — |
 
 ## 1. Rendering and data
@@ -83,7 +83,7 @@ never measures, so a size-prop pass says nothing about container behaviour.
 | SingleStackedBar | n/a — no size props | verified |
 | CalendarHeatmap | verified | verified |
 | MiniAreaChart | verified (`size`) | verified |
-| MiniBarChart | verified (`size`) | **unsupported** — fixed marks (see below) |
+| MiniBarChart | verified canvas resize; fixed bar span | **unsupported** — fixed marks (see below) |
 | MiniLineChart | verified (`size`) | verified |
 
 **Counts, consistent with `evidence/browser/browser-run.json`:**
@@ -109,7 +109,8 @@ cause is removed:
   `MINI_BAR_WIDTH = 8` and `MINI_BAR_SPACING = 10` are fixed pixels
   (`shared/mini/miniChartUtils.ts:35-36`) and `miniBarsLeftPadding` right-aligns
   the bars (`:50-51`), so extra width becomes empty space and the drawn bars stay
-  132px. Narrowing instead drops the oldest bars (`recentBarsThatFit`, `:41-47`).
+  132px. A third 80px-wide case asserts strictly fewer bars than at 360px
+  (`recentBarsThatFit`, `:41-47`).
 
 ### Why both container dimensions are varied
 

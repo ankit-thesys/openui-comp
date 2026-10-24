@@ -41,7 +41,9 @@ const STACKED_LEGEND_FAMILIES = ["PieChart", "RadialChart"];
 
 const sizable = FAMILIES.filter((f) => f.renderAtSize);
 const unsizable = FAMILIES.filter((f) => !f.renderAtSize);
-const sweepable = sizable.filter((f) => !STACKED_LEGEND_FAMILIES.includes(f.name));
+const sweepable = sizable.filter(
+  (f) => !STACKED_LEGEND_FAMILIES.includes(f.name) && f.name !== "MiniBarChart",
+);
 
 const NARROW = { width: 320, height: 280 };
 const WIDE = { width: 960, height: 420 };
@@ -52,8 +54,8 @@ describe("size-prop responsiveness", () => {
     expect(unsizable.map((f) => f.name).sort()).toEqual([...NO_SIZE_PROPS].sort());
     // 17 of 19 take explicit sizes (14 width/height + 3 mini `size`).
     expect(sizable).toHaveLength(17);
-    // 15 of those are swept generically; Pie and Radial are handled separately.
-    expect(sweepable).toHaveLength(15);
+    // 14 are swept generically; Pie, Radial and fixed-width MiniBar are separate.
+    expect(sweepable).toHaveLength(14);
   });
 
   it.each(sweepable.map((f) => [f.name, f] as const))(
@@ -89,6 +91,29 @@ describe("size-prop responsiveness", () => {
       );
     },
   );
+
+  it("MiniBarChart resizes its canvas while keeping its bars fixed and right-aligned", () => {
+    const family = FAMILIES.find((f) => f.name === "MiniBarChart")!;
+    const span = (html: string) => {
+      const xs = [
+        ...html.matchAll(/<path[^>]*class="openui-mini-bar-chart-bar"[^>]*d="([^"]*)"/g),
+      ].flatMap((match) =>
+        [...(match[1] ?? "").matchAll(/[ML]\s*([-\d.]+),[-\d.]+/g)].map((point) =>
+          Number(point[1]),
+        ),
+      );
+      expect(xs.length).toBeGreaterThan(0);
+      return Math.max(...xs) - Math.min(...xs);
+    };
+    const narrow = renderAndRecord("size.MiniBarChart.narrow", family.renderAtSize!(NARROW));
+    const wide = renderAndRecord("size.MiniBarChart.wide", family.renderAtSize!(WIDE));
+    expect(narrow).toContain(`width:${NARROW.width}px`);
+    expect(wide).toContain(`width:${WIDE.width}px`);
+    expect(span(narrow)).toBeGreaterThan(0);
+    expect(span(wide)).toBe(span(narrow));
+    // Its right edge moves because the fixed-width row is right-aligned.
+    expect(maxDrawnX(wide)).toBeGreaterThan(maxDrawnX(narrow));
+  });
 
   it("records that the two container-only families have no size props", () => {
     // Not a gap: SegmentedBarProps / SingleStackedBarProps declare no width,

@@ -40,7 +40,7 @@ From the repository root:
 pnpm --dir packages/react-ui exec vitest run --config ../../validation/friend-chart-baseline/vitest.config.ts
 ```
 
-176 assertions across 7 files. Re-records the markup evidence under
+175 tests across 7 files. Re-records the markup evidence under
 `evidence/ssr/` as a side effect, so a clean run leaves that directory
 unchanged if behaviour has not moved.
 
@@ -83,8 +83,8 @@ node validation/friend-chart-baseline/browser/run.mjs
 ```
 
 Spawns the fixture server, launches headless Chrome over the DevTools Protocol,
-drives it with **real** mouse/keyboard input (`event.isTrusted === true`),
-asserts, and writes `evidence/browser/browser-run.json` plus 19 dark reference
+drives it with **real** mouse input input (`event.isTrusted === true`),
+asserts live container resizing without remounting, and writes `evidence/browser/browser-run.json` plus 19 dark reference
 images. Exits non-zero with an actionable summary if anything fails or a
 scenario never runs.
 
@@ -97,7 +97,7 @@ Flags:
 | Flag | Effect |
 |---|---|
 | `--base-url <url>` | use an already-running fixture server instead of spawning one |
-| `--only legend,container,dark` | run a subset of scenario groups |
+| `--only legend,container,dark` | run a subset of scenario groups (writes only that subset to browser-run.json) |
 | `--keep-open` | leave Chrome running for inspection |
 
 Scenario statuses are explicit: `verified` (asserted), `unsupported` (the family

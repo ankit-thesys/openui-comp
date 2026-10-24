@@ -5,7 +5,7 @@
  *   node validation/friend-chart-baseline/browser/run.mjs
  *
  * One command: launches headless Chrome over the DevTools Protocol, drives the
- * Vite fixture with REAL mouse and keyboard input, asserts the results, writes
+ * Vite fixture with REAL mouse input, asserts the results, writes
  * evidence, and exits non-zero with an actionable summary if any scenario
  * failed, errored, or did not run.
  *
@@ -45,6 +45,12 @@ const flag = (name) => {
 };
 const groups = String(flag("--only") ?? "legend,container,dark").split(",");
 
+const validGroups = new Set(["legend", "container", "dark"]);
+if (groups.some((group) => !validGroups.has(group)) || new Set(groups).size !== groups.length) {
+  console.error("--only must contain unique groups from: legend,container,dark");
+  process.exit(1);
+}
+
 const PORT = 5199;
 const BASE_URL = flag("--base-url") ?? `http://localhost:${PORT}`;
 const VIEWPORT = { width: 1280, height: 900 };
@@ -65,7 +71,7 @@ const TOGGLE_UNSUPPORTED = {
     control: ".openui-chart-legend-item",
     citation:
       "packages/react-ui/src/components/Charts/SegmentedBar/SegmentedBar.tsx:28 — " +
-      "\"no legend visibility toggle (openui only hover-highlights)\". DefaultLegend " +
+      '"no legend visibility toggle (openui only hover-highlights)". DefaultLegend ' +
       "is rendered without onItemClick/hiddenSeries (0 occurrences in that file), " +
       "so no toggle handler exists to fire.",
   },
@@ -142,10 +148,10 @@ const CONTAINER_EXPECTATIONS = {
     kind: "capped-by-default-legend",
     diagnostic: "PieChart__defaultLegend",
     citation:
-      "Pie/Radial default to legendVariant=\"stacked\" (PieChart/types.ts). That wrapper " +
+      'Pie/Radial default to legendVariant="stacked" (PieChart/types.ts). That wrapper ' +
       "caps the chart column's height, so chartSize in " +
       "hooks/polar/useCategoricalChartOrchestrator.ts:89-91 stops growing. The same " +
-      "family with legendVariant=\"default\" does scale — see the diagnostic case.",
+      'family with legendVariant="default" does scale — see the diagnostic case.',
   },
   RadialChart: {
     kind: "capped-by-default-legend",
@@ -186,16 +192,55 @@ async function runContainerScenarios(b) {
   const measured = {};
   const probes = [...ALL_FAMILIES, "PieChart__defaultLegend", "RadialChart__defaultLegend"];
 
+  const first = SIZES[0];
+  await b.goto(
+    `${BASE_URL}/container.html?theme=light&width=${first.width}&height=${first.height}`,
+  );
+  await waitFor(async () => b.evaluate("!!document.querySelector('[data-container-ready]')"), {
+    what: "the container fixture to mount",
+  });
+  await sleep(900);
+  // Keep a DOM identity sentinel: a navigation/remount would invalidate the
+  // evidence that the ResizeObserver update path was exercised.
+  await b.evaluate(
+    "window.__resizeSentinel = document.querySelector('[data-chart-slot] svg'); true",
+  );
   for (const size of SIZES) {
-    await b.goto(`${BASE_URL}/container.html?theme=light&width=${size.width}&height=${size.height}`);
-    await waitFor(async () => b.evaluate("!!document.querySelector('[data-container-ready]')"), {
-      what: `the container fixture at ${key(size)}`,
-    });
+    await b.run(
+      `(size) => window.dispatchEvent(new CustomEvent('chart-baseline-resize', { detail: size }))`,
+      size,
+    );
+    await waitFor(
+      async () =>
+        b.evaluate(
+          `document.querySelector('[data-container-ready]').dataset.containerWidth === '${size.width}'`,
+        ),
+      {
+        what: `the mounted container to resize to ${key(size)}`,
+      },
+    );
     await sleep(900);
+    if (
+      !(await b.evaluate(
+        "window.__resizeSentinel === document.querySelector('[data-chart-slot] svg')",
+      ))
+    ) {
+      throw new Error(
+        "Container resize remounted a chart; live ResizeObserver evidence is invalid",
+      );
+    }
     for (const family of probes) {
       (measured[family] ??= {})[key(size)] = await b.run(CONTAINER_GEOMETRY, family);
     }
   }
+
+  // Eight bars fit at 360px and 900px. A genuinely constrained third size is
+  // required to observe the documented drop-oldest behavior.
+  await b.run(
+    `() => window.dispatchEvent(new CustomEvent('chart-baseline-resize', { detail: { width: 80, height: 300 } }))`,
+  );
+  await sleep(900);
+  const miniConstrained = await b.run(CONTAINER_GEOMETRY, "MiniBarChart");
 
   const small = (f) => measured[f]?.[key(SIZES[0])];
   const large = (f) => measured[f]?.[key(SIZES[1])];
@@ -230,6 +275,7 @@ async function runContainerScenarios(b) {
       family,
       scenario: "container-resize",
       sizes: SIZES,
+      liveResize: true,
       small: s,
       large: l,
       // Reported for every family, not only failures: DEFECT-001 is an
@@ -270,7 +316,7 @@ async function runContainerScenarios(b) {
             `the same chart with legendVariant="default" scales ${ds.drawnWidth} -> ${dl.drawnWidth}`
           : grew
             ? "expected the stacked-legend wrapper to cap this, but it grew"
-            : "neither the default nor the legendVariant=\"default\" case grew",
+            : 'neither the default nor the legendVariant="default" case grew',
       });
       continue;
     }
@@ -280,8 +326,10 @@ async function runContainerScenarios(b) {
       // narrower box must show FEWER bars.
       const svgGrew = l.widestSvgWidth > s.widestSvgWidth;
       const marksFixed = l.drawnWidth === s.drawnWidth;
-      const fewerWhenNarrow = s.markCount < l.markCount || s.markCount === l.markCount;
-      const asExpected = svgGrew && marksFixed;
+      const fewerWhenNarrow = Boolean(
+        miniConstrained && miniConstrained.markCount > 0 && miniConstrained.markCount < s.markCount,
+      );
+      const asExpected = svgGrew && marksFixed && fewerWhenNarrow;
       record({
         ...base,
         kind: expectation.kind,
@@ -291,10 +339,11 @@ async function runContainerScenarios(b) {
         marksFixed,
         markCounts: { small: s.markCount, large: l.markCount },
         fewerWhenNarrow,
+        constrained: miniConstrained,
         detail: asExpected
           ? `svg follows the container (${s.widestSvgWidth} -> ${l.widestSvgWidth}) but the ` +
             `bars are a fixed 8px at 10px spacing, so drawn width stays ${s.drawnWidth}px`
-          : `expected a responsive svg with fixed marks, got svgGrew=${svgGrew} marksFixed=${marksFixed}`,
+          : `expected a responsive svg with fixed marks, got svgGrew=${svgGrew} marksFixed=${marksFixed} fewerWhenNarrow=${fewerWhenNarrow}`,
       });
       continue;
     }
@@ -419,12 +468,15 @@ async function main() {
     if (groups.includes("container")) expect("container-resize", ALL_FAMILIES);
     if (groups.includes("dark")) expect("dark-reference", ALL_FAMILIES);
     if (groups.includes("legend"))
-      expect("legend-toggle", [...Object.keys(TOGGLE_SUPPORTED), ...Object.keys(TOGGLE_UNSUPPORTED)]);
+      expect("legend-toggle", [
+        ...Object.keys(TOGGLE_SUPPORTED),
+        ...Object.keys(TOGGLE_UNSUPPORTED),
+      ]);
 
     mkdirSync(EVIDENCE, { recursive: true });
     const report = {
       _about:
-        "Raw results from browser/run.mjs. Captured with real CDP mouse/keyboard input " +
+        "Raw results from browser/run.mjs. Captured with real CDP mouse input " +
         "(event.isTrusted === true), not synthetic MouseEvent dispatch.",
       baselineSha: "9d73d17d2bbac565672a85e78f6eb7740cb0d9ca",
       generatedBy: "validation/friend-chart-baseline/browser/run.mjs",
@@ -444,7 +496,9 @@ async function main() {
     console.log(
       `\n• ${counts.verified ?? 0} verified, ${counts.unsupported ?? 0} unsupported, ${failures.length} failed`,
     );
-    console.log(`• raw results → validation/friend-chart-baseline/evidence/browser/browser-run.json`);
+    console.log(
+      `• raw results → validation/friend-chart-baseline/evidence/browser/browser-run.json`,
+    );
 
     if (missing.length) {
       console.error(`\nINCOMPLETE RUN — ${missing.length} scenario(s) never produced a result:`);
