@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: TooltipWrapper leaves an empty tooltip's child interactive and preserves its ref and native props
+ok 1 - TooltipWrapper leaves an empty tooltip's child interactive and preserves its ref and native props
+  ---
+  duration_ms: 17.792208
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 734.113875

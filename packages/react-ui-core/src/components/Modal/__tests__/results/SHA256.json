@@ -1,0 +1,18 @@
+{
+  "SAMPLER_NOTES.md": "40c44fe8df4df799094205acb80b02804a276fc06717a9d7dfdeb59486739c4c",
+  "artifact.json": "ef3d09110c9e8a938f6e82396eb9c178d12e3579d9342ef6cc6d050231654e51",
+  "browser-final.json": "f6e68701cb6a1c5a08f81be1ddfa2771a230125771b6bfa7783f7f948582c65b",
+  "browser-final.log": "59e343f13e81733ae98ced5c1d710748b90e5f8b41d0f31f6efe3d02f89b006f",
+  "consumer-lock.json": "7b643dfa5ccbcf016d6fdb3565be621fcea2feba378ae5ba7ec4a19885c82d47",
+  "consumer-tests.tap": "ee9fa3523926427018304b02e7094d30fdac5800e4f53db4805c3f5ee00bf666",
+  "modal-green.tap": "187da469985f05c43d634ec068fa4ebfbae116881e90917706d6c5cb85a63644",
+  "modal-red.tap": "514f6540a5ba98210f8e1fbb93ea771fb496058c7f6ce2c89a40f1013b96cd2e",
+  "overlays.tgz": "f29d8955f775c97c4771e1cbccd2b49e37a29014384130eb91c8d9899e5c5d86",
+  "review.md": "94d4976acca86714ea83c2784673c1eb0252b936fdb3eda8ee69790b1b448395",
+  "semantic-lint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "superseded-composed-pointer-wait.log": "ad8810bd4603f49d104b1173156441d0218959e7599961c2ab0cd8fea607d059",
+  "superseded-nested-assumption.log": "70f7a20d1a00bbd18a33d8b968e9cbd82b2ed0c78605960688c1c74b7624b3f1",
+  "superseded-react-update-timing.log": "55c29199f8b420f40d9d457053b8dcfae92536bafe76578470c8501362f7894a",
+  "tooltip-green.tap": "682b85a09feedaf3f5eda5caa239ae3a391b031bd5a50c0e6b1bbebe7d359208",
+  "tooltip-red.tap": "f939e9b9dcd0ccf872ec8e3056421fd89c57908f82b4c2b7d5dece5502316e26"
+}

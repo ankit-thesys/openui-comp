@@ -1,0 +1,310 @@
+{
+  "browser": "156.0.8078.47",
+  "graphs": {
+    "baseline": "4907f599cd9b09768f509bae6846667bb94c650d4a04297f0834aff56cf32c30",
+    "runtime": "3bdb833eb08cf1f43e9d6b69bc2c3893d3c917ccd4b7b6560f76f3354dd0688c"
+  },
+  "legacyCssSha256": "662edbb3223154771f0cf7091e2ea70a67c8a4a9e9c9b3b00637a6aab43a9669",
+  "hostHashes": {
+    "plain": "d4a1d5dcf591b093b35a4b9bebf48406a70ccf0504b60b11e27f4002f3ddcb00",
+    "tailwind3": "584ed8b229b2a8df96f9ddc478e94a07249e8905bdf068afdef8981d969ae150",
+    "tailwind4": "e05a054044718b3c9ac536e5fe41ddde475f1a06ca68f57674a90db0a3c1b36e"
+  },
+  "fixtureSha256": "29d615ad47e69b96acd2defccef53fc9ff748596ad050c3eca38e27baf3151df",
+  "runnerSha256": "17e244bb033720238dd45514442300c51a8402c7cbd579d2fe8a1080725cbbc0",
+  "clock": "advancing Playwright clock initialized at 2026-10-25T12:00:00Z",
+  "cases": [
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "kind": "modal",
+      "comparisons": 481,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "kind": "tooltip",
+      "comparisons": 298,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "kind": "modal",
+      "comparisons": 481,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "kind": "tooltip",
+      "comparisons": 298,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "kind": "modal",
+      "comparisons": 481,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "kind": "tooltip",
+      "comparisons": 298,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "kind": "modal",
+      "comparisons": 481,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "kind": "tooltip",
+      "comparisons": 298,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "modal",
+      "comparisons": 481,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "tooltip",
+      "comparisons": 298,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "kind": "modal",
+      "comparisons": 481,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "kind": "tooltip",
+      "comparisons": 298,
+      "status": "passed"
+    }
+  ],
+  "snapshots": 4674,
+  "pending": ["SSR deferred; inherited Modal focus/label behavior reported separately"],
+  "inheritedObservations": [
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "kind": "modal",
+      "observations": {
+        "focusEscapesDialog": true,
+        "returnsFocusToOpener": false,
+        "nestedLabels": [
+          {
+            "title": "Review",
+            "label": "Review"
+          },
+          {
+            "title": "Nested review",
+            "label": "Review"
+          }
+        ],
+        "nestedEscapeRemainingTitles": ["Review"]
+      }
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "kind": "modal-tooltip-composition",
+      "observation": {
+        "tooltipCountAfterPointerLeaveAndDialogFocus": 1
+      }
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "kind": "tooltip",
+      "childRefReplacedWhenTruncated": true
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "kind": "modal",
+      "observations": {
+        "focusEscapesDialog": true,
+        "returnsFocusToOpener": false,
+        "nestedLabels": [
+          {
+            "title": "Review",
+            "label": "Review"
+          },
+          {
+            "title": "Nested review",
+            "label": "Review"
+          }
+        ],
+        "nestedEscapeRemainingTitles": ["Review"]
+      }
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "kind": "modal-tooltip-composition",
+      "observation": {
+        "tooltipCountAfterPointerLeaveAndDialogFocus": 1
+      }
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "kind": "tooltip",
+      "childRefReplacedWhenTruncated": true
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "kind": "modal",
+      "observations": {
+        "focusEscapesDialog": true,
+        "returnsFocusToOpener": false,
+        "nestedLabels": [
+          {
+            "title": "Review",
+            "label": "Review"
+          },
+          {
+            "title": "Nested review",
+            "label": "Review"
+          }
+        ],
+        "nestedEscapeRemainingTitles": ["Review"]
+      }
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "kind": "modal-tooltip-composition",
+      "observation": {
+        "tooltipCountAfterPointerLeaveAndDialogFocus": 1
+      }
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "kind": "tooltip",
+      "childRefReplacedWhenTruncated": true
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "kind": "modal",
+      "observations": {
+        "focusEscapesDialog": true,
+        "returnsFocusToOpener": false,
+        "nestedLabels": [
+          {
+            "title": "Review",
+            "label": "Review"
+          },
+          {
+            "title": "Nested review",
+            "label": "Review"
+          }
+        ],
+        "nestedEscapeRemainingTitles": ["Review"]
+      }
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "kind": "modal-tooltip-composition",
+      "observation": {
+        "tooltipCountAfterPointerLeaveAndDialogFocus": 1
+      }
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "kind": "tooltip",
+      "childRefReplacedWhenTruncated": true
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "modal",
+      "observations": {
+        "focusEscapesDialog": true,
+        "returnsFocusToOpener": false,
+        "nestedLabels": [
+          {
+            "title": "Review",
+            "label": "Review"
+          },
+          {
+            "title": "Nested review",
+            "label": "Review"
+          }
+        ],
+        "nestedEscapeRemainingTitles": ["Review"]
+      }
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "modal-tooltip-composition",
+      "observation": {
+        "tooltipCountAfterPointerLeaveAndDialogFocus": 1
+      }
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "tooltip",
+      "childRefReplacedWhenTruncated": true
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "kind": "modal",
+      "observations": {
+        "focusEscapesDialog": true,
+        "returnsFocusToOpener": false,
+        "nestedLabels": [
+          {
+            "title": "Review",
+            "label": "Review"
+          },
+          {
+            "title": "Nested review",
+            "label": "Review"
+          }
+        ],
+        "nestedEscapeRemainingTitles": ["Review"]
+      }
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "kind": "modal-tooltip-composition",
+      "observation": {
+        "tooltipCountAfterPointerLeaveAndDialogFocus": 1
+      }
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "kind": "tooltip",
+      "childRefReplacedWhenTruncated": true
+    }
+  ]
+}

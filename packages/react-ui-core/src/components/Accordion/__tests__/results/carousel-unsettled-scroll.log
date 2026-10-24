@@ -1,0 +1,23 @@
+plain/before/accordion: 1705 paired snapshots passed
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: plain/before/carousel/noSnap-itemsToScroll-two: count
+
+13 !== 10
+
+    at compare (file:///Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Accordion/__tests__/compatibility.browser.mjs:244:20)
+    at runNextTicks (node:internal/process/task_queues:64:5)
+    at process.processImmediate (node:internal/timers:452:9)
+    at process.callbackTrampoline (node:internal/async_hooks:130:17)
+    at async file:///Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Accordion/__tests__/compatibility.browser.mjs:478:13 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 13,
+  expected: 10,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

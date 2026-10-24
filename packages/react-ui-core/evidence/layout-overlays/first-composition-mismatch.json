@@ -1,0 +1,45 @@
+{
+  "browser": "156.0.8078.47",
+  "graphs": {
+    "baseline": "0f5ed12ae4da044a8cda629a7ae7da3472bb15a17ec230231e037ec98291be6a",
+    "runtime": "38060066950a92fcb5d5405c1705bf742ca50fd16ee288d3a93d105a764dd414"
+  },
+  "legacyCssSha256": "662edbb3223154771f0cf7091e2ea70a67c8a4a9e9c9b3b00637a6aab43a9669",
+  "hostHashes": {
+    "plain": "d4a1d5dcf591b093b35a4b9bebf48406a70ccf0504b60b11e27f4002f3ddcb00",
+    "tailwind3": "584ed8b229b2a8df96f9ddc478e94a07249e8905bdf068afdef8981d969ae150",
+    "tailwind4": "e05a054044718b3c9ac536e5fe41ddde475f1a06ca68f57674a90db0a3c1b36e"
+  },
+  "fixtureSha256": "29d615ad47e69b96acd2defccef53fc9ff748596ad050c3eca38e27baf3151df",
+  "runnerSha256": "17e244bb033720238dd45514442300c51a8402c7cbd579d2fe8a1080725cbbc0",
+  "clock": "advancing Playwright clock initialized at 2026-10-25T12:00:00Z",
+  "cases": [],
+  "snapshots": 0,
+  "pending": [
+    "SSR deferred; inherited Modal focus/label behavior reported separately"
+  ],
+  "inheritedObservations": [
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "modal",
+      "observations": {
+        "focusEscapesDialog": true,
+        "returnsFocusToOpener": false,
+        "nestedLabels": [
+          {
+            "title": "Review",
+            "label": "Review"
+          },
+          {
+            "title": "Nested review",
+            "label": "Review"
+          }
+        ],
+        "nestedEscapeRemainingTitles": [
+          "Review"
+        ]
+      }
+    }
+  ]
+}

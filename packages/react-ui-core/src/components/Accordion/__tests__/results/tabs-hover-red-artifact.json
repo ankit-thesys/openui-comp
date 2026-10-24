@@ -1,0 +1,6 @@
+{
+  "sha256": "4a983a49431c5e6748c584a5b160090db4926eaeb6bc0b6d434fb79345cc8913",
+  "sourceRevision": "2b7398668",
+  "observation": "plain/before/tabs none/title inactive hover increases root height to157px instead of153px; fails paired comparison",
+  "correctiveChange": "Equivalent standard CSS ordering :hover:not(...) rather than :not(...):hover; stock Goober unchanged"
+}

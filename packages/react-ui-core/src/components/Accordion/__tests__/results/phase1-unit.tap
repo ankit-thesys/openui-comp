@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: Accordion expands and collapses through its public trigger, preserving refs and disabled state
+ok 1 - Accordion expands and collapses through its public trigger, preserving refs and disabled state
+  ---
+  duration_ms: 93.305875
+  type: 'test'
+  ...
+# Subtest: Carousel preserves composed public content, native attributes, noSnap wrapper and hidden-button option
+ok 2 - Carousel preserves composed public content, native attributes, noSnap wrapper and hidden-button option
+  ---
+  duration_ms: 14.642541
+  type: 'test'
+  ...
+# Subtest: Steps numbers children by position, honors explicit integers and follows prop updates
+ok 3 - Steps numbers children by position, honors explicit integers and follows prop updates
+  ---
+  duration_ms: 21.592375
+  type: 'test'
+  ...
+# Subtest: a standalone StepsItem retains its default number and own layout styles
+ok 4 - a standalone StepsItem retains its default number and own layout styles
+  ---
+  duration_ms: 46.223167
+  type: 'test'
+  ...
+# Subtest: Tabs exposes its selected panel, disabled trigger and original rich trigger content
+ok 5 - Tabs exposes its selected panel, disabled trigger and original rich trigger content
+  ---
+  duration_ms: 24.477541
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 673.78

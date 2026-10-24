@@ -1,0 +1,201 @@
+build	Run Packages CI	﻿2026-10-24T23:20:33.7833344Z ##[group]Run pnpm --filter "./packages/**" --workspace-concurrency=1 run ci
+build	Run Packages CI	2026-10-24T23:20:33.7834257Z [36;1mpnpm --filter "./packages/**" --workspace-concurrency=1 run ci[0m
+build	Run Packages CI	2026-10-24T23:20:33.7898989Z shell: /usr/bin/bash -e {0}
+build	Run Packages CI	2026-10-24T23:20:33.7899246Z env:
+build	Run Packages CI	2026-10-24T23:20:33.7899495Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+build	Run Packages CI	2026-10-24T23:20:33.7899805Z ##[endgroup]
+build	Run Packages CI	2026-10-24T23:20:34.1277279Z Scope: 18 of 20 workspace projects
+build	Run Packages CI	2026-10-24T23:20:34.1302506Z ##[group]@openuidev/angular-lang@0.4.2 : ci packages/angular-lang
+build	Run Packages CI	2026-10-24T23:20:34.1323482Z 
+build	Run Packages CI	2026-10-24T23:20:34.1324482Z > @openuidev/angular-lang@0.4.2 ci /home/runner/work/openui-comp/openui-comp/packages/angular-lang
+build	Run Packages CI	2026-10-24T23:20:34.1325634Z > pnpm run typecheck && tsc -p tsconfig.test.json --noEmit && pnpm run test && pnpm run lint:check && pnpm run format:check
+build	Run Packages CI	2026-10-24T23:20:34.1326170Z 
+build	Run Packages CI	2026-10-24T23:20:34.4622740Z 
+build	Run Packages CI	2026-10-24T23:20:34.4624540Z > @openuidev/angular-lang@0.4.2 typecheck /home/runner/work/openui-comp/openui-comp/packages/angular-lang
+build	Run Packages CI	2026-10-24T23:20:34.4626040Z > tsc --project tsconfig.lib.json --noEmit
+build	Run Packages CI	2026-10-24T23:20:34.4626321Z 
+build	Run Packages CI	2026-10-24T23:20:37.3980247Z 
+build	Run Packages CI	2026-10-24T23:20:37.3981500Z > @openuidev/angular-lang@0.4.2 test /home/runner/work/openui-comp/openui-comp/packages/angular-lang
+build	Run Packages CI	2026-10-24T23:20:37.3982291Z > vitest run --passWithNoTests
+build	Run Packages CI	2026-10-24T23:20:37.3982523Z 
+build	Run Packages CI	2026-10-24T23:20:37.6850173Z 
+build	Run Packages CI	2026-10-24T23:20:37.6852863Z [1m[30m[46m RUN [49m[39m[22m [36mv4.1.10 [39m[90m/home/runner/work/openui-comp/openui-comp/packages/angular-lang[39m
+build	Run Packages CI	2026-10-24T23:20:37.6854188Z 
+build	Run Packages CI	2026-10-24T23:20:39.0479900Z  [32m✓[39m src/lib/state.spec.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 177[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:39.1175495Z  [32m✓[39m src/lib/reconciliation.spec.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 247[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:39.1562958Z [90mstderr[2m | src/lib/reactivity.spec.ts[2m > [22m[2mreactive Angular context[2m > [22m[2mupdates both loading APIs when a query and refetch reject
+build	Run Packages CI	2026-10-24T23:20:39.1565487Z [22m[39mQuery "slow" failed: Error: Request failed
+build	Run Packages CI	2026-10-24T23:20:39.1568426Z     at settle [90m(/home/runner/work/openui-comp/openui-comp/packages/angular-lang/[39msrc/lib/reactivity.spec.ts:147:64[90m)[39m
+build	Run Packages CI	2026-10-24T23:20:39.1570799Z     at [90m/home/runner/work/openui-comp/openui-comp/packages/angular-lang/[39msrc/lib/reactivity.spec.ts:157:9
+build	Run Packages CI	2026-10-24T23:20:39.1572047Z 
+build	Run Packages CI	2026-10-24T23:20:39.1617525Z [90mstderr[2m | src/lib/reactivity.spec.ts[2m > [22m[2mreactive Angular context[2m > [22m[2mupdates both loading APIs when a query and refetch reject
+build	Run Packages CI	2026-10-24T23:20:39.1619216Z [22m[39mQuery "slow" failed: Error: Request failed
+build	Run Packages CI	2026-10-24T23:20:39.1621860Z     at settle [90m(/home/runner/work/openui-comp/openui-comp/packages/angular-lang/[39msrc/lib/reactivity.spec.ts:147:64[90m)[39m
+build	Run Packages CI	2026-10-24T23:20:39.1624137Z     at [90m/home/runner/work/openui-comp/openui-comp/packages/angular-lang/[39msrc/lib/reactivity.spec.ts:157:9
+build	Run Packages CI	2026-10-24T23:20:39.1626551Z     at file:///home/runner/work/openui-comp/openui-comp/node_modules/[4m.pnpm[24m/@vitest+runner@4.1.10/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:20
+build	Run Packages CI	2026-10-24T23:20:39.1628787Z 
+build	Run Packages CI	2026-10-24T23:20:39.1645320Z  [32m✓[39m src/lib/reactivity.spec.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 292[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:40.3105494Z  [32m✓[39m src/lib/renderer.spec.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 147[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:40.3776232Z  [32m✓[39m src/lib/query.spec.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 211[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:40.4245816Z  [32m✓[39m src/lib/render-error.spec.ts [2m([22m[2m1 test[22m[2m)[22m[32m 167[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:41.3226200Z  [32m✓[39m src/lib/context.spec.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:41.4103754Z  [32m✓[39m src/lib/validation.spec.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:41.5061385Z  [32m✓[39m src/lib/library.spec.ts [2m([22m[2m1 test[22m[2m)[22m[32m 10[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:41.5091166Z 
+build	Run Packages CI	2026-10-24T23:20:41.5097579Z [2m Test Files [22m [1m[32m9 passed[39m[22m[90m (9)[39m
+build	Run Packages CI	2026-10-24T23:20:41.5098884Z [2m      Tests [22m [1m[32m29 passed[39m[22m[90m (29)[39m
+build	Run Packages CI	2026-10-24T23:20:41.5099923Z [2m   Start at [22m 23:20:37
+build	Run Packages CI	2026-10-24T23:20:41.5101304Z [2m   Duration [22m 3.82s[2m (transform 299ms, setup 2.86s, import 865ms, tests 1.27s, environment 4.53s)[22m
+build	Run Packages CI	2026-10-24T23:20:41.5104544Z 
+build	Run Packages CI	2026-10-24T23:20:41.8627611Z 
+build	Run Packages CI	2026-10-24T23:20:41.8629103Z > @openuidev/angular-lang@0.4.2 lint:check /home/runner/work/openui-comp/openui-comp/packages/angular-lang
+build	Run Packages CI	2026-10-24T23:20:41.8630115Z > eslint ./src
+build	Run Packages CI	2026-10-24T23:20:41.8630429Z 
+build	Run Packages CI	2026-10-24T23:20:46.9873983Z 
+build	Run Packages CI	2026-10-24T23:20:46.9875030Z > @openuidev/angular-lang@0.4.2 format:check /home/runner/work/openui-comp/openui-comp/packages/angular-lang
+build	Run Packages CI	2026-10-24T23:20:46.9875737Z > prettier --check ./src
+build	Run Packages CI	2026-10-24T23:20:46.9875946Z 
+build	Run Packages CI	2026-10-24T23:20:47.0760247Z Checking formatting...
+build	Run Packages CI	2026-10-24T23:20:48.0775136Z All matched files use Prettier code style!
+build	Run Packages CI	2026-10-24T23:20:48.1067678Z ##[endgroup]
+build	Run Packages CI	2026-10-24T23:20:48.1070120Z ##[group]@openuidev/lang-core@1.0.1 : ci packages/lang-core
+build	Run Packages CI	2026-10-24T23:20:48.1076916Z 
+build	Run Packages CI	2026-10-24T23:20:48.1077634Z > @openuidev/lang-core@1.0.1 ci /home/runner/work/openui-comp/openui-comp/packages/lang-core
+build	Run Packages CI	2026-10-24T23:20:48.1078966Z > pnpm run lint:check && pnpm run format:check && pnpm run test && tsc -p tsconfig.test.json --noEmit
+build	Run Packages CI	2026-10-24T23:20:48.1079494Z 
+build	Run Packages CI	2026-10-24T23:20:48.4132332Z 
+build	Run Packages CI	2026-10-24T23:20:48.4133964Z > @openuidev/lang-core@1.0.1 lint:check /home/runner/work/openui-comp/openui-comp/packages/lang-core
+build	Run Packages CI	2026-10-24T23:20:48.4135001Z > eslint ./src
+build	Run Packages CI	2026-10-24T23:20:48.4135249Z 
+build	Run Packages CI	2026-10-24T23:20:53.6524313Z 
+build	Run Packages CI	2026-10-24T23:20:53.6525675Z > @openuidev/lang-core@1.0.1 format:check /home/runner/work/openui-comp/openui-comp/packages/lang-core
+build	Run Packages CI	2026-10-24T23:20:53.6526609Z > prettier --check ./src
+build	Run Packages CI	2026-10-24T23:20:53.6526828Z 
+build	Run Packages CI	2026-10-24T23:20:53.7423084Z Checking formatting...
+build	Run Packages CI	2026-10-24T23:20:55.9103376Z All matched files use Prettier code style!
+build	Run Packages CI	2026-10-24T23:20:56.2692107Z 
+build	Run Packages CI	2026-10-24T23:20:56.2693218Z > @openuidev/lang-core@1.0.1 test /home/runner/work/openui-comp/openui-comp/packages/lang-core
+build	Run Packages CI	2026-10-24T23:20:56.2694152Z > vitest run
+build	Run Packages CI	2026-10-24T23:20:56.2694297Z 
+build	Run Packages CI	2026-10-24T23:20:56.5114073Z 
+build	Run Packages CI	2026-10-24T23:20:56.5135550Z [1m[30m[46m RUN [49m[39m[22m [36mv4.1.10 [39m[90m/home/runner/work/openui-comp/openui-comp/packages/lang-core[39m
+build	Run Packages CI	2026-10-24T23:20:56.5136436Z 
+build	Run Packages CI	2026-10-24T23:20:57.1260141Z  [32m✓[39m src/parser/__tests__/materialize.validation.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 29[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:57.1360937Z  [32m✓[39m src/parser/__tests__/parser.test.ts [2m([22m[2m37 tests[22m[2m)[22m[32m 39[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:57.1555149Z  [32m✓[39m src/parser/__tests__/serialize.test.ts [2m([22m[2m31 tests[22m[2m)[22m[32m 38[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:57.5157957Z  [32m✓[39m src/__tests__/library.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 34[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:57.5275986Z  [32m✓[39m src/runtime/__tests__/actions.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 42[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:57.6025029Z [90mstderr[2m | src/__tests__/conformance.test.ts[2m > [22m[2mOpenUI conformance fixtures[2m > [22m[2mevaluation/001-kind-classify
+build	Run Packages CI	2026-10-24T23:20:57.6026813Z [22m[39m[openui] Unexpected unmapped Comp node: Query
+build	Run Packages CI	2026-10-24T23:20:57.6027538Z 
+build	Run Packages CI	2026-10-24T23:20:57.6558509Z  [32m✓[39m src/__tests__/conformance.test.ts [2m([22m[2m59 tests[22m[2m)[22m[32m 103[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:57.8478900Z  [32m✓[39m src/__tests__/extend.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 37[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:57.8727633Z  [32m✓[39m src/parser/__tests__/prompt.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:57.9851435Z  [32m✓[39m src/runtime/__tests__/functions.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 21[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:58.1009567Z  [32m✓[39m src/runtime/__tests__/queryManager.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:58.1883936Z  [32m✓[39m src/__tests__/cloud.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:58.2125399Z  [32m✓[39m src/runtime/__tests__/store.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 39[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:58.2937063Z  [32m✓[39m src/__tests__/message.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:58.4217412Z  [32m✓[39m src/parser/__tests__/entry.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:20:58.4247610Z 
+build	Run Packages CI	2026-10-24T23:20:58.4254044Z [2m Test Files [22m [1m[32m14 passed[39m[22m[90m (14)[39m
+build	Run Packages CI	2026-10-24T23:20:58.4255375Z [2m      Tests [22m [1m[32m226 passed[39m[22m[90m (226)[39m
+build	Run Packages CI	2026-10-24T23:20:58.4256403Z [2m   Start at [22m 23:20:56
+build	Run Packages CI	2026-10-24T23:20:58.4257747Z [2m   Duration [22m 1.90s[2m (transform 934ms, setup 0ms, import 2.39s, tests 443ms, environment 2ms)[22m
+build	Run Packages CI	2026-10-24T23:20:58.4259493Z 
+build	Run Packages CI	2026-10-24T23:21:00.9941939Z ##[endgroup]
+build	Run Packages CI	2026-10-24T23:21:00.9944502Z ##[group]@openuidev/langchain@0.0.3 : ci packages/langchain
+build	Run Packages CI	2026-10-24T23:21:00.9952020Z 
+build	Run Packages CI	2026-10-24T23:21:00.9952915Z > @openuidev/langchain@0.0.3 ci /home/runner/work/openui-comp/openui-comp/packages/langchain
+build	Run Packages CI	2026-10-24T23:21:00.9954479Z > pnpm run typecheck && pnpm run test && pnpm run lint:check && pnpm run format:check
+build	Run Packages CI	2026-10-24T23:21:00.9955093Z 
+build	Run Packages CI	2026-10-24T23:21:01.3026601Z 
+build	Run Packages CI	2026-10-24T23:21:01.3028046Z > @openuidev/langchain@0.0.3 typecheck /home/runner/work/openui-comp/openui-comp/packages/langchain
+build	Run Packages CI	2026-10-24T23:21:01.3028991Z > tsc --noEmit
+build	Run Packages CI	2026-10-24T23:21:01.3029213Z 
+build	Run Packages CI	2026-10-24T23:21:02.9837295Z 
+build	Run Packages CI	2026-10-24T23:21:02.9838444Z > @openuidev/langchain@0.0.3 test /home/runner/work/openui-comp/openui-comp/packages/langchain
+build	Run Packages CI	2026-10-24T23:21:02.9839081Z > vitest run
+build	Run Packages CI	2026-10-24T23:21:02.9839216Z 
+build	Run Packages CI	2026-10-24T23:21:03.2264281Z 
+build	Run Packages CI	2026-10-24T23:21:03.2283727Z [1m[30m[46m RUN [49m[39m[22m [36mv4.1.10 [39m[90m/home/runner/work/openui-comp/openui-comp/packages/langchain[39m
+build	Run Packages CI	2026-10-24T23:21:03.2284939Z 
+build	Run Packages CI	2026-10-24T23:21:03.6661114Z  [32m✓[39m src/__tests__/request-handler.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 60[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:21:03.7979115Z  [32m✓[39m src/__tests__/stream-relay.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 195[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:21:04.0608454Z  [32m✓[39m src/__tests__/transformer.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:21:04.2767099Z  [32m✓[39m src/__tests__/langchain-integration.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 37[2mms[22m[39m
+build	Run Packages CI	2026-10-24T23:21:04.2818695Z 
+build	Run Packages CI	2026-10-24T23:21:04.2842692Z [2m Test Files [22m [1m[32m4 passed[39m[22m[90m (4)[39m
+build	Run Packages CI	2026-10-24T23:21:04.2848611Z [2m      Tests [22m [1m[32m31 passed[39m[22m[90m (31)[39m
+build	Run Packages CI	2026-10-24T23:21:04.2855877Z [2m   Start at [22m 23:21:03
+build	Run Packages CI	2026-10-24T23:21:04.2866560Z [2m   Duration [22m 1.04s[2m (transform 335ms, setup 0ms, import 1.32s, tests 311ms, environment 1ms)[22m
+build	Run Packages CI	2026-10-24T23:21:04.2867529Z 
+build	Run Packages CI	2026-10-24T23:21:04.6207387Z 
+build	Run Packages CI	2026-10-24T23:21:04.6208560Z > @openuidev/langchain@0.0.3 lint:check /home/runner/work/openui-comp/openui-comp/packages/langchain
+build	Run Packages CI	2026-10-24T23:21:04.6209458Z > eslint ./src
+build	Run Packages CI	2026-10-24T23:21:04.6209605Z 
+build	Run Packages CI	2026-10-24T23:21:08.3675658Z 
+build	Run Packages CI	2026-10-24T23:21:08.3676676Z > @openuidev/langchain@0.0.3 format:check /home/runner/work/openui-comp/openui-comp/packages/langchain
+build	Run Packages CI	2026-10-24T23:21:08.3677687Z > prettier --check ./src README.md
+build	Run Packages CI	2026-10-24T23:21:08.3677890Z 
+build	Run Packages CI	2026-10-24T23:21:08.4394800Z Checking formatting...
+build	Run Packages CI	2026-10-24T23:21:09.3096566Z All matched files use Prettier code style!
+build	Run Packages CI	2026-10-24T23:21:09.3378057Z ##[endgroup]
+build	Run Packages CI	2026-10-24T23:21:09.3380212Z ##[group]@openuidev/observability@0.0.4 : ci packages/observability
+build	Run Packages CI	2026-10-24T23:21:09.3386753Z 
+build	Run Packages CI	2026-10-24T23:21:09.3387566Z > @openuidev/observability@0.0.4 ci /home/runner/work/openui-comp/openui-comp/packages/observability
+build	Run Packages CI	2026-10-24T23:21:09.3388608Z > pnpm run lint:check && pnpm run format:check
+build	Run Packages CI	2026-10-24T23:21:09.3388971Z 
+build	Run Packages CI	2026-10-24T23:21:09.6423886Z 
+build	Run Packages CI	2026-10-24T23:21:09.6425214Z > @openuidev/observability@0.0.4 lint:check /home/runner/work/openui-comp/openui-comp/packages/observability
+build	Run Packages CI	2026-10-24T23:21:09.6426259Z > eslint ./src
+build	Run Packages CI	2026-10-24T23:21:09.6426497Z 
+build	Run Packages CI	2026-10-24T23:21:12.2127941Z 
+build	Run Packages CI	2026-10-24T23:21:12.2129383Z > @openuidev/observability@0.0.4 format:check /home/runner/work/openui-comp/openui-comp/packages/observability
+build	Run Packages CI	2026-10-24T23:21:12.2130403Z > prettier --check ./src
+build	Run Packages CI	2026-10-24T23:21:12.2130682Z 
+build	Run Packages CI	2026-10-24T23:21:12.2862151Z Checking formatting...
+build	Run Packages CI	2026-10-24T23:21:12.6588029Z All matched files use Prettier code style!
+build	Run Packages CI	2026-10-24T23:21:12.6792468Z ##[endgroup]
+build	Run Packages CI	2026-10-24T23:21:12.6795477Z ##[group]@openuidev/cli@0.6.0 : ci packages/openui-cli
+build	Run Packages CI	2026-10-24T23:21:12.6801627Z 
+build	Run Packages CI	2026-10-24T23:21:12.6802410Z > @openuidev/cli@0.6.0 ci /home/runner/work/openui-comp/openui-comp/packages/openui-cli
+build	Run Packages CI	2026-10-24T23:21:12.6803031Z > pnpm run lint:check && pnpm run format:check
+build	Run Packages CI	2026-10-24T23:21:12.6803267Z 
+build	Run Packages CI	2026-10-24T23:21:12.9844614Z 
+build	Run Packages CI	2026-10-24T23:21:12.9845792Z > @openuidev/cli@0.6.0 lint:check /home/runner/work/openui-comp/openui-comp/packages/openui-cli
+build	Run Packages CI	2026-10-24T23:21:12.9846598Z > eslint ./src
+build	Run Packages CI	2026-10-24T23:21:12.9846756Z 
+build	Run Packages CI	2026-10-24T23:21:17.3283007Z 
+build	Run Packages CI	2026-10-24T23:21:17.3284331Z > @openuidev/cli@0.6.0 format:check /home/runner/work/openui-comp/openui-comp/packages/openui-cli
+build	Run Packages CI	2026-10-24T23:21:17.3285258Z > prettier --check './src/**'
+build	Run Packages CI	2026-10-24T23:21:17.3285466Z 
+build	Run Packages CI	2026-10-24T23:21:17.4045716Z Checking formatting...
+build	Run Packages CI	2026-10-24T23:21:18.9844722Z All matched files use Prettier code style!
+build	Run Packages CI	2026-10-24T23:21:19.0249091Z ##[endgroup]
+build	Run Packages CI	2026-10-24T23:21:19.0251639Z ##[group]@openuidev/react-ui-core@0.0.0-beta.0 : ci packages/react-ui-core
+build	Run Packages CI	2026-10-24T23:21:19.0258193Z 
+build	Run Packages CI	2026-10-24T23:21:19.0258883Z > @openuidev/react-ui-core@0.0.0-beta.0 ci /home/runner/work/openui-comp/openui-comp/packages/react-ui-core
+build	Run Packages CI	2026-10-24T23:21:19.0260167Z > pnpm run format:check && pnpm run lint:check && pnpm run typecheck && pnpm run test && pnpm run check:publint && pnpm run check:attw
+build	Run Packages CI	2026-10-24T23:21:19.0260802Z 
+build	Run Packages CI	2026-10-24T23:21:19.3301338Z 
+build	Run Packages CI	2026-10-24T23:21:19.3302592Z > @openuidev/react-ui-core@0.0.0-beta.0 format:check /home/runner/work/openui-comp/openui-comp/packages/react-ui-core
+build	Run Packages CI	2026-10-24T23:21:19.3303301Z > prettier --check src tests *.json *.ts
+build	Run Packages CI	2026-10-24T23:21:19.3303708Z 
+build	Run Packages CI	2026-10-24T23:21:19.4031492Z Checking formatting...
+build	Run Packages CI	2026-10-24T23:21:21.6569088Z [[33mwarn[39m] src/components/Modal/__tests__/compatibility.browser.mjs
+build	Run Packages CI	2026-10-24T23:21:22.7400145Z [[33mwarn[39m] Code style issues found in the above file. Run Prettier with --write to fix.
+build	Run Packages CI	2026-10-24T23:21:22.7958714Z  ELIFECYCLE  Command failed with exit code 1.
+build	Run Packages CI	2026-10-24T23:21:22.8409958Z /home/runner/work/openui-comp/openui-comp/packages/react-ui-core:
+build	Run Packages CI	2026-10-24T23:21:22.8412664Z  ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @openuidev/react-ui-core@0.0.0-beta.0 ci: `pnpm run format:check && pnpm run lint:check && pnpm run typecheck && pnpm run test && pnpm run check:publint && pnpm run check:attw`
+build	Run Packages CI	2026-10-24T23:21:22.8414470Z Exit status 1
+build	Run Packages CI	2026-10-24T23:21:22.8425149Z ##[group]@openuidev/svelte-lang@0.4.2 : ci packages/svelte-lang
+build	Run Packages CI	2026-10-24T23:21:22.8446107Z 
+build	Run Packages CI	2026-10-24T23:21:22.8447045Z > @openuidev/svelte-lang@0.4.2 ci /home/runner/work/openui-comp/openui-comp/packages/svelte-lang
+build	Run Packages CI	2026-10-24T23:21:22.8448444Z > pnpm run lint:check && pnpm run format:check && pnpm run test && tsc -p tsconfig.test.json --noEmit
+build	Run Packages CI	2026-10-24T23:21:22.8449515Z 
+build	Run Packages CI	2026-10-24T23:21:23.1536227Z 
+build	Run Packages CI	2026-10-24T23:21:23.1537698Z > @openuidev/svelte-lang@0.4.2 lint:check /home/runner/work/openui-comp/openui-comp/packages/svelte-lang
+build	Run Packages CI	2026-10-24T23:21:23.1538747Z > eslint ./src
+build	Run Packages CI	2026-10-24T23:21:23.1538942Z 
+build	Run Packages CI	2026-10-24T23:21:25.9112641Z ##[error]Process completed with exit code 1.

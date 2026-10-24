@@ -1,0 +1,188 @@
+{
+  "browser": "156.0.8078.47",
+  "graphs": {
+    "baseline": "4056da90261a3e998aafab733a9651f2dcc623e72d4ae2026b8dcea31cfb0cdb",
+    "runtime": "05872ef3ad9c37e9a3f4e1abc8c0302c8baab459728f16436b0c3747e99766ad"
+  },
+  "legacyCssSha256": "662edbb3223154771f0cf7091e2ea70a67c8a4a9e9c9b3b00637a6aab43a9669",
+  "hostHashes": {
+    "plain": "d4a1d5dcf591b093b35a4b9bebf48406a70ccf0504b60b11e27f4002f3ddcb00",
+    "tailwind3": "584ed8b229b2a8df96f9ddc478e94a07249e8905bdf068afdef8981d969ae150",
+    "tailwind4": "e05a054044718b3c9ac536e5fe41ddde475f1a06ca68f57674a90db0a3c1b36e"
+  },
+  "fixtureSha256": "0181b1f9e3290ce2faaeba752860b5db82d00bcb77866658804bf48c0f43e95b",
+  "runnerSha256": "f3cde4a51b1e133c70b861c97d17651b1595adcafa178af34ecfbea8f012528b",
+  "clock": "advancing Playwright clock initialized at 2026-10-25T12:00:00Z",
+  "cases": [
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "kind": "accordion",
+      "comparisons": 1749,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "kind": "carousel",
+      "comparisons": 405,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "kind": "steps",
+      "comparisons": 442,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "kind": "tabs",
+      "comparisons": 3757,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "kind": "accordion",
+      "comparisons": 1749,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "kind": "carousel",
+      "comparisons": 405,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "kind": "steps",
+      "comparisons": 442,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "kind": "tabs",
+      "comparisons": 3757,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "kind": "accordion",
+      "comparisons": 1749,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "kind": "carousel",
+      "comparisons": 405,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "kind": "steps",
+      "comparisons": 442,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "kind": "tabs",
+      "comparisons": 3757,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "kind": "accordion",
+      "comparisons": 1749,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "kind": "carousel",
+      "comparisons": 405,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "kind": "steps",
+      "comparisons": 442,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "kind": "tabs",
+      "comparisons": 3757,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "accordion",
+      "comparisons": 1749,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "carousel",
+      "comparisons": 405,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "steps",
+      "comparisons": 442,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "tabs",
+      "comparisons": 3757,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "kind": "accordion",
+      "comparisons": 1749,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "kind": "carousel",
+      "comparisons": 405,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "kind": "steps",
+      "comparisons": 442,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "kind": "tabs",
+      "comparisons": 3757,
+      "status": "passed"
+    }
+  ],
+  "snapshots": 38118,
+  "pending": ["Overlays gated on integrated container checkpoint; SSR deferred"]
+}

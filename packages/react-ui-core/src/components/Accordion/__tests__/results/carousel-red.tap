@@ -1,0 +1,36 @@
+TAP version 13
+# Subtest: Carousel preserves composed public content, native attributes, noSnap wrapper and hidden-button option
+not ok 1 - Carousel preserves composed public content, native attributes, noSnap wrapper and hidden-button option
+  ---
+  duration_ms: 1.156083
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Accordion/__tests__/Carousel.test.mjs:6:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    public Carousel export
+    + actual - expected
+    
+    + 'undefined'
+    - 'object'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'object'
+  actual: 'undefined'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Accordion/__tests__/Carousel.test.mjs:7:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 758.334959
