@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: Button preserves refs, icon order, native events and disabled semantics through the root import
+ok 1 - Button preserves refs, icon order, native events and disabled semantics through the root import
+  ---
+  duration_ms: 31.760333
+  type: 'test'
+  ...
+# Subtest: a retained Button excludes theme tables and unrelated controls from an ESM consumer bundle
+ok 2 - a retained Button excludes theme tables and unrelated controls from an ESM consumer bundle
+  ---
+  duration_ms: 341.054709
+  type: 'test'
+  ...
+# Subtest: unused root imports do not retain components or the styling runtime
+ok 3 - unused root imports do not retain components or the styling runtime
+  ---
+  duration_ms: 288.635375
+  type: 'test'
+  ...
+# Subtest: Chips preserves controlled selection, refs, filtering and native disabled behavior
+ok 4 - Chips preserves controlled selection, refs, filtering and native disabled behavior
+  ---
+  duration_ms: 27.675917
+  type: 'test'
+  ...
+# Subtest: Button-only root import excludes unrelated control modules and styles
+ok 5 - Button-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 333.887375
+  type: 'test'
+  ...
+# Subtest: Chips-only root import excludes unrelated control modules and styles
+ok 6 - Chips-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 270.740125
+  type: 'test'
+  ...
+# Subtest: Slider-only root import excludes unrelated control modules and styles
+ok 7 - Slider-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 241.234
+  type: 'test'
+  ...
+# Subtest: control root imports work in native Node ESM and CommonJS
+ok 8 - control root imports work in native Node ESM and CommonJS
+  ---
+  duration_ms: 2048.206167
+  type: 'test'
+  ...
+# Subtest: Input retains native input/ref, size, error and styles APIs
+ok 9 - Input retains native input/ref, size, error and styles APIs
+  ---
+  duration_ms: 20.533083
+  type: 'test'
+  ...
+# Subtest: Select retains public parts, trigger refs, size updates, native attributes and disabled state
+ok 10 - Select retains public parts, trigger refs, size updates, native attributes and disabled state
+  ---
+  duration_ms: 45.429292
+  type: 'test'
+  ...
+# Subtest: TextArea retains rows, ref, native props, error state and text entry
+ok 11 - TextArea retains rows, ref, native props, error state and text entry
+  ---
+  duration_ms: 24.786125
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2146.675041

@@ -3,6 +3,13 @@ import { useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 
 const defaultSliderValue = [20];
+const defaultRangeValue = [20, 80];
+const customTheme = {
+  interactiveAccentDefault: "rgb(150,50,100)",
+  spaceM: "18px",
+  borderInteractiveSelected: "rgb(8,90,130)",
+  textNeutralPrimary: "rgb(40,70,90)",
+};
 function App() {
   const kind = new URLSearchParams(location.search).get("case");
   const [disabled, setDisabled] = useState(false),
@@ -16,6 +23,20 @@ function App() {
     [open, setOpen] = useState(false),
     [mode, setMode] = useState("light");
   const [events, setEvents] = useState([]);
+  const [streaming, setStreaming] = useState(false),
+    [blockRange, setBlockRange] = useState(false);
+  const [visible, setVisible] = useState(true),
+    [overrides, setOverrides] = useState(false),
+    [calendarMode, setCalendarMode] = useState("single"),
+    [calendarSelection, setCalendarSelection] = useState(new Date(2026, 9, 15)),
+    [pickerMode, setPickerMode] = useState("single");
+  const framework = new URLSearchParams(location.search).get("framework");
+  const overrideClass =
+    framework === "tailwind3"
+      ? "!bg-red-500 !text-white !p-8 !rounded-none !border-0 hover:!bg-green-500 disabled:!bg-gray-500 disabled:!cursor-wait"
+      : framework === "tailwind4"
+        ? "bg-red-500! text-white! p-8! rounded-none! border-0! hover:bg-green-500! disabled:bg-gray-500! disabled:cursor-wait!"
+        : "explicit";
   const ref = useRef(null);
   const record = (value) => setEvents((previous) => [...previous, value]);
   Object.assign(window, {
@@ -27,10 +48,27 @@ function App() {
     setChoice,
     setMode,
     setOpen,
+    setVisible,
+    setOverrides,
+    setCalendarMode,
+    setCalendarSelection,
+    setPickerMode,
+    setStreaming,
+    setBlockRange,
     getRef: () => ref.current,
   });
   const items = [
-    { value: "a", label: "Alpha", title: "**Alpha**", subtitle: "First _choice_" },
+    {
+      value: "a",
+      label: "Alpha",
+      title: "**Alpha**",
+      subtitle: "First _choice_",
+      icon: (
+        <svg viewBox="0 0 10 10">
+          <path d="M0 0h10v10H0z" />
+        </svg>
+      ),
+    },
     { value: "b", label: "Beta", title: "Beta", disabled: true },
     { value: "c", label: "Gamma", title: "Gamma" },
   ];
@@ -40,6 +78,7 @@ function App() {
       <>
         <Core.Slider
           ref={ref}
+          className={overrides ? overrideClass : undefined}
           aria-label="Volume"
           variant={variant}
           min={0}
@@ -61,12 +100,14 @@ function App() {
   if (kind === "sliderBlock")
     control = (
       <Core.SliderBlock
+        className={overrides ? overrideClass : undefined}
         label="Volume"
-        variant="continuous"
+        variant={variant}
         min={0}
         max={100}
         step={5}
-        defaultValue={defaultSliderValue}
+        defaultValue={blockRange ? defaultRangeValue : defaultSliderValue}
+        isStreaming={streaming}
         disabled={disabled}
         onValueCommit={(value) => record(value)}
       />
@@ -83,7 +124,12 @@ function App() {
           }}
           disabled={disabled}
         >
-          <Core.SelectTrigger ref={ref} id="trigger" aria-label="Plan">
+          <Core.SelectTrigger
+            ref={ref}
+            id="trigger"
+            aria-label="Plan"
+            className={overrides ? overrideClass : undefined}
+          >
             <Core.SelectValue placeholder="Choose" />
           </Core.SelectTrigger>
           <Core.SelectContent>
@@ -107,19 +153,7 @@ function App() {
     control = (
       <Core.Chips
         ref={ref}
-        items={items}
-        selected={selected}
-        disabled={disabled}
-        onToggle={(value) => {
-          setSelected([value]);
-          record(value);
-        }}
-      />
-    );
-  if (kind === "optionCards")
-    control = (
-      <Core.OptionCards
-        ref={ref}
+        className={overrides ? overrideClass : undefined}
         items={items}
         selected={selected}
         disabled={disabled}
@@ -133,14 +167,15 @@ function App() {
     control = (
       <Core.Calendar
         ref={ref}
-        mode="single"
+        className={overrides ? overrideClass : undefined}
+        mode={calendarMode}
         defaultMonth={new Date(2026, 9, 1)}
         startMonth={new Date(2020, 0, 1)}
         endMonth={new Date(2030, 11, 31)}
-        selected={date}
+        selected={calendarSelection}
         onSelect={(value) => {
-          setDate(value);
-          record(value?.toDateString());
+          setCalendarSelection(value);
+          record(value instanceof Date ? value.toDateString() : value);
         }}
         disabled={disabled}
       />
@@ -148,6 +183,13 @@ function App() {
   if (kind === "datePicker")
     control = (
       <Core.DatePicker
+        className={overrides ? overrideClass : undefined}
+        mode={pickerMode}
+        selectedRangeDates={range}
+        setSelectedRangeDates={(value) => {
+          setRange(value);
+          record(value);
+        }}
         selectedSingleDate={date}
         setSelectedSingleDate={(value) => {
           setDate(value);
@@ -162,17 +204,23 @@ function App() {
       <div id="unrelated">Host content</div>
       <button id="start">Start</button>
       <section id="zone" data-ready>
-        <Core.ThemeProvider
-          mode={mode}
-          cssSelector="#zone"
-          lightTheme={{ interactiveAccentDefault: "rgb(150,50,100)", spaceM: "18px" }}
-          darkTheme={{ interactiveAccentDefault: "rgb(150,50,100)", spaceM: "18px" }}
-        >
-          {control}
-        </Core.ThemeProvider>
+        {visible &&
+          (mode === "none" ? (
+            control
+          ) : (
+            <Core.ThemeProvider
+              mode={mode.includes("dark") ? "dark" : "light"}
+              cssSelector="#zone"
+              lightTheme={mode.startsWith("custom") ? customTheme : undefined}
+              darkTheme={mode.startsWith("custom") ? customTheme : undefined}
+            >
+              {control}
+            </Core.ThemeProvider>
+          ))}
       </section>
       <button id="end">End</button>
       <output id="events">{JSON.stringify(events)}</output>
+      <output id="calendar-selection">{JSON.stringify(calendarSelection)}</output>
     </>
   );
 }

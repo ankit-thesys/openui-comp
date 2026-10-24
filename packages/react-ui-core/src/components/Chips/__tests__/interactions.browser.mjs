@@ -45,6 +45,23 @@ try {
     assert.deepEqual(errors, [], "consumer rendering errors");
     throw error;
   }
+  if (kind === "chips") {
+    const gamma = page.getByRole("option", { name: "Gamma" });
+    assert.equal(await page.getByRole("option", { name: "Beta" }).isDisabled(), true);
+    await gamma.focus();
+    await page.keyboard.press("Space");
+    await page.waitForFunction(
+      () => document.querySelector('[role="option"][aria-selected="true"]').textContent === "Gamma",
+    );
+    assert.equal(await gamma.getAttribute("aria-selected"), "true");
+    await page.evaluate(() => window.setDisabled(true));
+    await page.waitForFunction(
+      () => document.querySelectorAll('[role="option"]:disabled').length === 3,
+    );
+    await page.locator("#start").focus();
+    await page.keyboard.press("Tab");
+    assert.equal(await page.evaluate(() => document.activeElement.id), "end");
+  }
   if (kind === "slider") {
     const thumb = page.getByRole("slider");
     await thumb.focus();
@@ -68,6 +85,9 @@ try {
     assert.equal(await page.evaluate(() => document.activeElement.id), "end");
   }
   if (kind === "sliderBlock") {
+    const before = await page.evaluate(() => Date.now());
+    await page.waitForTimeout(30);
+    assert((await page.evaluate(() => Date.now())) > before, "Date.now must advance for debounce");
     const input = page.locator("input");
     assert.equal(await input.inputValue(), "20");
     await input.fill("140");
@@ -78,6 +98,38 @@ try {
     await page.evaluate(() => window.setDisabled(true));
     await page.waitForFunction(() => document.querySelector("input").disabled);
     assert.equal(await input.isDisabled(), true);
+    await page.evaluate(() => {
+      window.setDisabled(false);
+      window.setBlockRange(true);
+    });
+    await page.waitForFunction(() => document.querySelectorAll("#zone input").length === 2);
+    assert.deepEqual(
+      await page.locator("#zone input").evaluateAll((nodes) => nodes.map((node) => node.value)),
+      ["20", "80"],
+    );
+    await page.evaluate(() => window.setVariant("discrete"));
+    await page.getByRole("combobox").nth(1).waitFor();
+    assert.equal(await page.getByRole("combobox").count(), 2);
+    await page.evaluate(() => window.setStreaming(true));
+    await page.waitForFunction(() => document.querySelectorAll('[role="combobox"]').length === 0);
+    assert.equal(await page.locator(".openui-slider-dots-dot").count(), 0);
+  }
+  if (kind === "select") {
+    const trigger = page.getByRole("combobox");
+    await trigger.focus();
+    await page.keyboard.press("ArrowDown");
+    await page.getByRole("listbox").waitFor();
+    await page.waitForFunction(() => document.activeElement?.getAttribute("role") === "option");
+    await page.keyboard.press("ArrowDown");
+    await page.waitForFunction(() => document.activeElement?.textContent.includes("Gamma"));
+    await page.keyboard.press("Enter");
+    await page.waitForFunction(() => document.querySelector("#value").textContent === "c");
+    assert.equal(await trigger.textContent(), "Gamma");
+    await page.evaluate(() => window.setDisabled(true));
+    await page.waitForFunction(() => document.querySelector("#trigger").disabled);
+    await page.locator("#start").focus();
+    await page.keyboard.press("Tab");
+    assert.equal(await page.evaluate(() => document.activeElement.id), "end");
   }
   if (kind === "calendar") {
     const day = page.locator('[data-day="2026-10-20"] button');
@@ -97,6 +149,22 @@ try {
       () => document.querySelector('[data-day="2026-10-20"] button').disabled,
     );
     assert.equal(await day.isDisabled(), true);
+    await page.evaluate(() => {
+      window.setDisabled(false);
+      window.setCalendarMode("multiple");
+      window.setCalendarSelection([]);
+    });
+    await page.locator('[data-day="2026-10-20"] button').click();
+    await page.locator('[data-day="2026-10-22"] button').click();
+    assert.equal(await page.locator(".openui-calendar-single-day-selected").count(), 2);
+    await page.evaluate(() => {
+      window.setCalendarMode("range");
+      window.setCalendarSelection(undefined);
+    });
+    await page.locator('[data-day="2026-10-20"] button').click();
+    await page.locator('[data-day="2026-10-22"] button').click();
+    assert.equal(await page.locator(".openui-calendar-range-start").count(), 1);
+    assert.equal(await page.locator(".openui-calendar-range-end").count(), 1);
   }
   if (kind === "datePicker") {
     const trigger = page.locator(".openui-date-picker-renderer-floating-input-container");
@@ -114,6 +182,14 @@ try {
       .locator(".openui-date-picker-renderer-floating-content")
       .waitFor({ state: "detached" });
     assert((await trigger.textContent()).includes("20"));
+    await page.evaluate(() => window.setPickerMode("range"));
+    await trigger.click();
+    await page.locator('[data-day="2026-10-20"] button').click();
+    await page.locator('[data-day="2026-10-22"] button').click();
+    assert.equal(await page.locator(".openui-calendar-range-start").count(), 1);
+    assert.equal(await page.locator(".openui-calendar-range-end").count(), 1);
+    await page.locator("#unrelated").click();
+    assert((await trigger.textContent()).includes("22"));
   }
   assert.deepEqual(errors, []);
   console.log(`${kind}: browser interactions passed (${browser.version()})`);

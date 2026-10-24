@@ -144,7 +144,8 @@ export const calendarStyles = {
     ...body,
     color: "var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
   },
-  "& .openui-calendar-select-trigger": {
+  // Let Select's state rules outrank this base regardless of injection order.
+  "& :where(.openui-calendar-select-trigger)": {
     ...label,
     minHeight: "calc(var(--openui-space-l, 18px) + var(--openui-space-s, 8px))",
     padding: "var(--openui-space-xs, 6px) var(--openui-space-s, 8px)",
@@ -153,11 +154,15 @@ export const calendarStyles = {
     backgroundColor: "transparent",
     color: "var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
     gap: "var(--openui-space-2xs, 4px)",
-    "&:hover": { backgroundColor: "var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))" },
-    "&:focus-visible": { outlineOffset: "var(--openui-space-3xs, 2px)" },
-    '&[data-state="open"]': {
-      backgroundColor: "var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
-    },
+  },
+  "& .openui-calendar-select-trigger:hover": {
+    backgroundColor: "var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+  },
+  "& .openui-calendar-select-trigger:focus-visible": {
+    outlineOffset: "var(--openui-space-3xs, 2px)",
+  },
+  '& .openui-calendar-select-trigger[data-state="open"]': {
+    backgroundColor: "var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
   },
   "& .openui-calendar-select-content-months": dropdown,
   "& .openui-calendar-select-content-years": {
