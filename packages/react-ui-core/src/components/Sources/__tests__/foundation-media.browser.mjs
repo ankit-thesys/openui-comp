@@ -112,9 +112,31 @@ for (const framework of ["plain", "tailwind3", "tailwind4"])
   );
 const image = await fs.readFile(path.join(here, "image.svg"));
 const placeholder = await fs.readFile(path.join(here, "favicon-placeholder.svg"));
+const artifactRevision = process.env.CORE_ARTIFACT_REVISION;
+assert(
+  /^[a-f0-9]{40}$/i.test(artifactRevision || ""),
+  "CORE_ARTIFACT_REVISION must identify the full integrated commit",
+);
+const implementationFiles = {};
+async function recordFiles(relative) {
+  const full = path.join(candidatePath, relative);
+  const stat = await fs.lstat(full);
+  if (stat.isDirectory()) {
+    for (const name of (await fs.readdir(full)).sort())
+      await recordFiles(path.join(relative, name));
+  } else {
+    assert(stat.isFile(), `installed implementation must be a regular file: ${relative}`);
+    const bytes = await fs.readFile(full);
+    implementationFiles[relative] = { sha256: hash(bytes), bytes: bytes.length };
+  }
+}
+await recordFiles("package.json");
+await recordFiles("dist");
 const report = {
   status: "prepared",
-  artifactRevision: process.env.CORE_ARTIFACT_REVISION || "unspecified",
+  artifactRevision,
+  implementationFiles,
+  implementationManifestSha256: hash(JSON.stringify(implementationFiles)),
   fixtureSha256: hash(source),
   runnerSha256: hash(await fs.readFile(fileURLToPath(import.meta.url))),
   packageSha256: hash(await fs.readFile(path.join(candidatePath, "package.json"))),
@@ -491,10 +513,27 @@ try {
                 await page.locator('#inline-citation [aria-label="Citations"]').click();
                 await page.locator(".openui-citation-tooltip").waitFor();
                 await waitImages(page);
+                await page.mouse.move(0, 0);
+                await page.waitForTimeout(300); // Beyond the existing 200ms hover-close delay.
+                assert(
+                  await page.locator(".openui-citation-tooltip").isVisible(),
+                  "clicked citation remains pinned after pointer leave",
+                );
               }
-              await compare(`${theme}/citation-portal`);
+              await compare(`${theme}/citation-portal-pinned`);
+              for (const page of pages) {
+                await page.keyboard.press("Escape");
+                await settle(page);
+              }
+              await observe(pages, `${framework}/${order}/${theme}/citation-escape`, (page) =>
+                page.locator(".openui-citation-tooltip").count(),
+              );
               for (const page of pages) {
                 await page.locator("#outside").click();
+                await page.locator(".openui-citation-tooltip").waitFor({ state: "detached" });
+                await page.locator('#inline-citation [aria-label="Citations"]').hover();
+                await page.locator(".openui-citation-tooltip").waitFor();
+                await page.mouse.move(0, 0);
                 await page.locator(".openui-citation-tooltip").waitFor({ state: "detached" });
               }
             }

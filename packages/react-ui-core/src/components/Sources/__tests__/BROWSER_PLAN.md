@@ -26,7 +26,7 @@ Set these environment variables to actual local paths/revision:
 | CORE_SASS_TOOLS        | Existing package with Sass installed, for baseline comparison only                             |
 | CORE_HOST_STYLES       | Directory with frameworks/plain.css, tailwind3.css and tailwind4.css                           |
 | CORE_PLAYWRIGHT        | Absolute Playwright module entry used by the prior matrices                                    |
-| CORE_ARTIFACT_REVISION | Exact integrated production revision                                                           |
+| CORE_ARTIFACT_REVISION | Full 40-character integrated production commit                                                 |
 | CORE_BROWSER_RESULTS   | Output JSON path outside production files                                                      |
 
 ```sh
@@ -59,7 +59,8 @@ bundle is checked to exclude legacy production source.
   dismissal, inherited focus/body-overflow observations and unmount cleanup.
 - Sources: real Carousel overflow/navigation and native disabled previous-control state;
   direct/keyboard source selection, safe popup URL/no opener, blocked executable URL;
-  inline citations, pinning, source-item selection, empty/single lists, favicon fallback
+  inline citations, pin retention beyond pointer-leave delay, hover dismissal,
+  baseline-compared Escape observations, source-item selection, empty/single lists, favicon fallback
   and dynamic category fallback. No new disabled prop is invented for these families.
 - Exact paired computed styles, pseudo-element styles, visible geometry and SVG contents.
   Finite animations settle at endpoints; scrolling waits for native scrollend. React
@@ -69,7 +70,9 @@ bundle is checked to exclude legacy production source.
 
 ## Evidence and boundaries
 
-The JSON includes candidate metadata/entry/consumer-lock hashes, baseline/runtime bundle
+The runner requires a full integrated commit and records a path/size/SHA256 manifest
+for every installed dist file plus package.json (and a manifest hash). The JSON also
+includes metadata/entry/consumer-lock hashes, baseline/runtime bundle
 hashes and byte counts, host and baseline-CSS hashes, exact fixture/runner hashes, Chrome
 version, comparisons, status and first failing expected/actual snapshot. Save the actual
 packed tarball and complete dependency/tool versions with Worker 1's integration evidence.
@@ -79,7 +82,9 @@ assertions to make inherited bugs look like desired semantics.
 
 Known legacy behavior is recorded separately and compared between arms: GalleryModal's
 initial focus and body overflow restoration, image error/source reset observations and
-Citation's unused onClick prop. These comparisons are not accessibility certification.
+Citation's unused onClick prop and Escape dismissal. A baseline-equivalent Escape
+result is an observation, not a claim of successful dismissal: the current controlled
+Tooltip root has no onOpenChange handler, so this must not be silently redesigned. These comparisons are not accessibility certification.
 The harness intentionally does not repair legacy behavior, test SSR/hydration/streaming
 or certify performance/memory. Dynamic icon cancellation races and exhaustive keyboard
 focus audits remain outside this prepared matrix. Bundle byte counts describe the complete
