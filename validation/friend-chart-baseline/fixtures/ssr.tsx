@@ -66,13 +66,16 @@ export function countMarks(html: string): number {
 
 /** Numbers pulled from an attribute, for geometry assertions. */
 export function attrValues(html: string, attr: string): string[] {
-  return [...html.matchAll(new RegExp(`${attr}="([^"]*)"`, "g"))].map((m) => m[1]);
+  // A capture group is `string | undefined` to the type system even when the
+  // pattern guarantees it matched, so the fallback is for the compiler, not a
+  // real case.
+  return [...html.matchAll(new RegExp(`${attr}="([^"]*)"`, "g"))].map((m) => m[1] ?? "");
 }
 
 /** Visible text content of every <text> node, in document order. */
 export function textNodes(html: string): string[] {
   return [...html.matchAll(/<text[^>]*>(.*?)<\/text>/g)].map((m) =>
-    m[1].replace(/<[^>]*>/g, "").replace(/<!--\s*-->/g, "").trim(),
+    (m[1] ?? "").replace(/<[^>]*>/g, "").replace(/<!--\s*-->/g, "").trim(),
   );
 }
 
@@ -84,4 +87,60 @@ export function textNodes(html: string): string[] {
  */
 export function isDegeneratePath(d: string): boolean {
   return /^M0,-?[\d.]+L0,0Z$/.test(d.trim());
+}
+
+/**
+ * Narrow `T | undefined` to `T`, throwing with a useful message if absent.
+ *
+ * Under the repo's strict settings every indexed access and regex capture is
+ * `| undefined`. Silencing that with `!` would hide a genuinely missing match
+ * behind a confusing `NaN` comparison further down; this fails at the point of
+ * the missing value and says what was being looked for.
+ */
+export function required<T>(value: T | undefined | null, what: string): T {
+  if (value === undefined || value === null) {
+    throw new Error(`Expected ${what}, got ${value === null ? "null" : "undefined"}`);
+  }
+  return value;
+}
+
+/**
+ * The right-most drawn x coordinate in recorded markup.
+ *
+ * Families draw with different primitives, so a single regex over `d="..."`
+ * only works for the path-based ones and silently reports 0 for Radar
+ * (polygon), Heatmap/Calendar (rect) and Scatter (circle). This spans all of
+ * them, which is what makes it usable as a size-responsiveness probe across
+ * the whole registry rather than just the cartesian families.
+ */
+export function maxDrawnX(html: string): number {
+  const xs: number[] = [];
+  const push = (v: string | undefined) => {
+    const n = Number(v);
+    if (Number.isFinite(n)) xs.push(n);
+  };
+
+  // <path d="M36,228C71.2,199 ..."> — every coordinate pair's x component.
+  for (const m of html.matchAll(/ d="([^"]*)"/g)) {
+    for (const p of (m[1] ?? "").matchAll(/[-\d.]+,[-\d.]+/g)) {
+      push(p[0]?.split(",")[0]);
+    }
+  }
+  // <rect x= width=> — the right edge.
+  for (const m of html.matchAll(/<rect([^>]*)>/g)) {
+    const attrs = m[1] ?? "";
+    const x = Number(/\sx="([-\d.]+)"/.exec(attrs)?.[1] ?? 0);
+    const w = Number(/\swidth="([-\d.]+)"/.exec(attrs)?.[1] ?? 0);
+    if (Number.isFinite(x) && Number.isFinite(w)) xs.push(x + w);
+  }
+  // <circle cx=>
+  for (const m of html.matchAll(/<circle[^>]*\scx="([-\d.]+)"/g)) push(m[1]);
+  // <polygon points="x,y x,y ...">
+  for (const m of html.matchAll(/<polygon[^>]*\spoints="([^"]*)"/g)) {
+    for (const p of (m[1] ?? "").matchAll(/([-\d.eE+]+),[-\d.eE+]+/g)) push(p[1]);
+  }
+  // <line x1= x2=>
+  for (const m of html.matchAll(/<line[^>]*\sx2="([-\d.]+)"/g)) push(m[1]);
+
+  return xs.length ? Math.max(...xs) : 0;
 }

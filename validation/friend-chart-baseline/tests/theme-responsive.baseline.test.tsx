@@ -12,7 +12,7 @@ import { describe, expect, it } from "vitest";
 import { AreaChart, BarChart, PieChart } from "../../../packages/react-ui/src/components/Charts";
 import { ThemeProvider } from "../../../packages/react-ui/src/components/ThemeProvider";
 import { FIXED_PALETTE, MULTI_SERIES_ROWS, SHARE_ROWS, SIZES } from "../fixtures/datasets";
-import { attrValues, renderAndRecord } from "../fixtures/ssr";
+import { attrValues, renderAndRecord, required } from "../fixtures/ssr";
 
 const rows = MULTI_SERIES_ROWS as unknown as Array<Record<string, string | number>>;
 const share = SHARE_ROWS as unknown as Array<Record<string, string | number>>;
@@ -92,9 +92,12 @@ describe("size responsiveness (numeric width/height props)", () => {
       );
       const ticks = [
         ...html.matchAll(/class="openui-bar-chart-y-tick" x="[^"]*" y="([^"]*)"[^>]*>([^<]*)</g),
-      ].map((m) => ({ y: Number(m[1]), value: Number(m[2]) }));
+      ].map((m) => ({
+        y: Number(required(m[1], "tick y")),
+        value: Number(required(m[2], "tick label")),
+      }));
       expect(ticks.length).toBeGreaterThan(1);
-      return ticks[0].y;
+      return required(ticks[0], "the lowest y tick").y;
     };
     expect(zeroTickY(560)).toBeGreaterThan(zeroTickY(280));
   });
