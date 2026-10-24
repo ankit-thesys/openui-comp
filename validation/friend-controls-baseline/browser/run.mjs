@@ -521,7 +521,10 @@ const SCENARIOS = [
       const viewport = await s.json("return { w: innerWidth, h: innerHeight }");
       c.ok(
         "popup is inside the viewport",
-        popup.left >= 0 && popup.top >= 0 && popup.right <= viewport.w + 1,
+        popup.left >= 0 &&
+          popup.top >= 0 &&
+          popup.right <= viewport.w + 1 &&
+          popup.bottom <= viewport.h + 1,
         `popup=${JSON.stringify(popup)} viewport=${JSON.stringify(viewport)}`,
       );
       c.ok(

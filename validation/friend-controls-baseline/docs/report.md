@@ -263,6 +263,12 @@ Verified deterministic: three consecutive runs produced identical results
 (61/61) with no leaked browser processes. Full per-check output, including the
 measured geometry, is in [browser-results.json](./browser-results.json).
 
+Review verification re-ran the corrected Calendar suite (26/26 tests), rebuilt
+the browser fixture, and re-ran all ten Chrome scenarios (61/61 checks). The
+DatePicker viewport check now bounds all four edges, including the bottom; the
+measured popup bottom was 436px within an 813px viewport. The linked JSON records
+this review run.
+
 ### Known failures
 
 **None**, in either suite. That is deliberate: each one asserts the
@@ -286,14 +292,15 @@ host-locale independent. The suite runs with `sequence.shuffle: false` and
 
 ## Findings summary
 
-24 findings, all with minimal reproductions in
+23 active findings and one withdrawn finding, all with minimal reproductions in
 [defects.md](./defects.md). Severity is this harness's read, for triage only.
 
 | Severity | Count | IDs                                                                 |
 | -------- | ----- | ------------------------------------------------------------------- |
-| high     | 5     | SE-1, DP-1, DP-2, DP-3, CA-2 (upstream)                             |
-| medium   | 12    | SE-2, SE-3, IB-1, FC-1, CB-1, R-1, C-3, OC-2, CB-2, CA-1, SL-1, T-1 |
-| low      | 7     | DP-4, S-1, C-2, OC-1, T-2, R-2, L-1                                 |
+| high     | 4     | SE-1, DP-1, DP-2, DP-3                                             |
+| medium   | 10    | SE-2, SE-3, IB-1, FC-1, C-3, OC-2, CB-2, CA-1, SL-1, T-1             |
+| low      | 9     | CB-1, R-1, DP-4, S-1, C-2, OC-1, T-2, R-2, L-1                       |
+| withdrawn | 1     | CA-2                                                               |
 
 Most consequential for the planned migration:
 
