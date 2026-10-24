@@ -19,5 +19,19 @@
   "browserEvidence": "browser-final.json",
   "oldReactUiEdits": false,
   "integrationBoundary": "Combined scratch scaffold snapshot plus exact component source; final owner-integrated artifact must rerun these consumer tests.",
-  "SSR": "deferred"
+  "SSR": "deferred",
+  "scratchProducerTsconfig": {
+    "compilerOptions": {
+      "module": "Preserve",
+      "moduleResolution": "Bundler",
+      "jsx": "react-jsx",
+      "target": "ES2022",
+      "strict": true,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "declaration": true
+    },
+    "include": ["src"],
+    "exclude": ["src/**/__tests__"]
+  }
 }
