@@ -13,6 +13,7 @@ const testTools = process.env.CORE_TEST_TOOLS
 const { JSDOM } = testTools("jsdom");
 const dom = new JSDOM("<!doctype html><html><head></head><body></body></html>", {
   url: "http://localhost",
+  pretendToBeVisual: true,
 });
 for (const name of [
   "window",
@@ -25,6 +26,12 @@ for (const name of [
 ]) {
   globalThis[name] = name === "window" ? dom.window : dom.window[name];
 }
+// Expose actual JSDOM browser APIs for Radix and animated public components.
+globalThis.getComputedStyle = dom.window.getComputedStyle.bind(dom.window);
+globalThis.requestAnimationFrame = dom.window.requestAnimationFrame.bind(dom.window);
+globalThis.cancelAnimationFrame = dom.window.cancelAnimationFrame.bind(dom.window);
+globalThis.HTMLFormElement = dom.window.HTMLFormElement;
+globalThis.CustomEvent = dom.window.CustomEvent;
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 export const React = require("react");
 export const { createRoot } = require("react-dom/client");
