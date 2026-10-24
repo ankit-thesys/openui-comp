@@ -41,7 +41,6 @@ export const inputStyles = {
   "&:hover:not(:focus):not(:disabled):not(.openui-input-error)": {
     borderColor: "var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
   },
-  // Match the original error-class specificity so disabled borders retain priority.
   "&:where(.openui-input-error)": {
     borderColor: "var(--openui-border-danger-emphasis, oklch(0.577 0.215 27.325 / 1))",
     boxShadow: "0 0 0 2.5px var(--openui-border-danger, oklch(0.577 0.215 27.325 / 0.08))",

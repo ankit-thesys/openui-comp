@@ -95,6 +95,7 @@ function App() {
               mode={mode.includes("dark") ? "dark" : "light"}
               cssSelector="#zone"
               lightTheme={mode.startsWith("custom") ? customTheme : undefined}
+              darkTheme={mode.startsWith("custom") ? customTheme : undefined}
             >
               {controls}
             </ThemeProvider>

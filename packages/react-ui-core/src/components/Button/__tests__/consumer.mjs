@@ -3,7 +3,9 @@ import path from "node:path";
 
 // Point at the packed consumer when running outside the package workspace.
 export const require = createRequire(
-  path.resolve(process.env.CORE_CONSUMER || "packages/react-ui-core", "package.json"),
+  process.env.CORE_CONSUMER
+    ? path.resolve(process.env.CORE_CONSUMER, "package.json")
+    : new URL("../../../../package.json", import.meta.url),
 );
 const testTools = process.env.CORE_TEST_TOOLS
   ? createRequire(path.resolve(process.env.CORE_TEST_TOOLS, "package.json"))

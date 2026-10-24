@@ -1,20 +1,31 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import http from "node:http";
 import { createRequire } from "node:module";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
-const consumer = path.resolve(process.env.CORE_CONSUMER || "packages/react-ui-core");
-const tools = createRequire(path.resolve(process.env.CORE_BROWSER_TOOLS, "package.json"));
+const consumer = process.env.CORE_CONSUMER
+  ? path.resolve(process.env.CORE_CONSUMER)
+  : fileURLToPath(new URL("../../../../", import.meta.url));
+const repository = fileURLToPath(new URL("../../../../../../", import.meta.url));
+const tools = createRequire(
+  path.resolve(process.env.CORE_BROWSER_TOOLS || consumer, "package.json"),
+);
 const { build } = tools("esbuild");
 const { chromium } = await import(pathToFileURL(process.env.CORE_PLAYWRIGHT).href);
-const baseline = path.resolve(process.env.CORE_BASELINE || "packages/react-ui/src/components");
+const baseline = path.resolve(
+  process.env.CORE_BASELINE || path.join(repository, "packages/react-ui/src/components"),
+);
 const evidence = path.resolve(
-  process.env.CORE_STYLE_EVIDENCE || "validation/stock-goober-followup/artifacts/browser",
+  process.env.CORE_STYLE_EVIDENCE ||
+    path.join(repository, "validation/stock-goober-followup/artifacts/browser"),
 );
 const fixture = await fs.readFile(new URL("browser.fixture.tsx", import.meta.url), "utf8");
 const scripts = {};
+const buildHashes = {};
+const sha256 = (value) => createHash("sha256").update(value).digest("hex");
 for (const arm of ["baseline", "runtime"]) {
   const prefix =
     arm === "runtime"
@@ -52,6 +63,7 @@ for (const arm of ["baseline", "runtime"]) {
       "runtime graph must not contain legacy source",
     );
   scripts[arm] = built.outputFiles[0].text;
+  buildHashes[arm] = sha256(scripts[arm]);
 }
 const server = http.createServer(async (req, res) => {
   try {
@@ -87,7 +99,15 @@ const server = http.createServer(async (req, res) => {
 await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
 const url = `http://127.0.0.1:${server.address().port}`;
 const browser = await chromium.launch({ channel: "chrome", headless: true });
-const result = { browser: browser.version(), cases: [], samples: 0 };
+const result = {
+  browser: browser.version(),
+  cases: [],
+  samples: 0,
+  buildHashes,
+  fixtureSha256: sha256(fixture),
+  runnerSha256: sha256(await fs.readFile(fileURLToPath(import.meta.url))),
+  themes: ["none", "light", "dark", "custom-light", "custom-dark"],
+};
 const properties = [
   "font",
   "letterSpacing",
@@ -173,7 +193,7 @@ try {
             );
           compared += actual[0].length;
         };
-        for (const theme of ["none", "light", "dark", "custom-light", "custom-dark"]) {
+        for (const theme of result.themes) {
           for (const page of pages) await page.mouse.move(0, 0);
           for (const page of pages) {
             await page.evaluate((theme) => window.setMode(theme), theme);
@@ -181,6 +201,19 @@ try {
           }
           console.log(`${framework}/${order}/${theme}`);
           await equal(theme + "/normal");
+          if (theme.startsWith("custom"))
+            for (const page of pages) {
+              const button = page.locator("[data-sample=button-normal-primary-medium]");
+              assert.equal(
+                await button.evaluate((node) => getComputedStyle(node).backgroundColor),
+                "rgb(150, 50, 100)",
+                "custom token applies in both light and dark",
+              );
+              assert.equal(
+                await button.evaluate((node) => getComputedStyle(node).paddingRight),
+                "15px",
+              );
+            }
           for (const selector of [
             "[data-sample^=button][data-sample$=medium]",
             "[data-sample^=input]",
@@ -232,6 +265,23 @@ try {
                 .evaluate((node) => getComputedStyle(node).padding),
               "32px",
             );
+          for (const selector of [
+            "[data-sample=button-normal-primary-medium]",
+            "[data-sample=input-medium-false]",
+            "[data-sample=textarea-false]",
+          ]) {
+            for (const page of pages) await page.locator(selector).hover();
+            await equal(theme + "/override-hover/" + selector);
+            for (const page of pages) {
+              const color = await page
+                .locator(selector)
+                .evaluate((node) => getComputedStyle(node).backgroundColor);
+              assert.equal(
+                color,
+                framework === "tailwind4" ? "oklch(0.723 0.219 149.579)" : "rgb(34, 197, 94)",
+              );
+            }
+          }
           for (const page of pages) {
             await page.mouse.move(0, 0);
             await page.evaluate(() => window.setDisabled(true));

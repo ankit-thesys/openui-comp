@@ -2,8 +2,11 @@ import assert from "node:assert/strict";
 import { createRequire } from "node:module";
 import path from "node:path";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
 
-const consumer = path.resolve(process.env.CORE_CONSUMER || "packages/react-ui-core");
+const consumer = process.env.CORE_CONSUMER
+  ? path.resolve(process.env.CORE_CONSUMER)
+  : fileURLToPath(new URL("../../../../", import.meta.url));
 const requireTools = createRequire(
   path.resolve(process.env.CORE_BROWSER_TOOLS || consumer, "package.json"),
 );

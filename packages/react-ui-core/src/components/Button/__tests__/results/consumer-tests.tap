@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: Button preserves refs, icon order, native events and disabled semantics through the root import
+ok 1 - Button preserves refs, icon order, native events and disabled semantics through the root import
+  ---
+  duration_ms: 13.4115
+  type: 'test'
+  ...
+# Subtest: a retained Button excludes theme tables and unrelated controls from an ESM consumer bundle
+ok 2 - a retained Button excludes theme tables and unrelated controls from an ESM consumer bundle
+  ---
+  duration_ms: 37.058083
+  type: 'test'
+  ...
+# Subtest: unused root imports do not retain components or the styling runtime
+ok 3 - unused root imports do not retain components or the styling runtime
+  ---
+  duration_ms: 5.345208
+  type: 'test'
+  ...
+# Subtest: Input retains native input/ref, size, error and styles APIs
+ok 4 - Input retains native input/ref, size, error and styles APIs
+  ---
+  duration_ms: 14.172459
+  type: 'test'
+  ...
+# Subtest: TextArea retains rows, ref, native props, error state and text entry
+ok 5 - TextArea retains rows, ref, native props, error state and text entry
+  ---
+  duration_ms: 13.706666
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 419.9035

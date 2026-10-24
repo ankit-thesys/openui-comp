@@ -56,3 +56,15 @@ The matrix covers three hosts, each with host styles before and after component 
 - Comparing intermediate native color transitions produced inconsistent snapshots; transition endpoint sampling and neutral pointer positions distinguish normal from hover snapshots. Component transitions remain unchanged.
 
 This slice does not assert SSR support, full chart/chat migration, every browser, every bundler, release readiness or any new performance approval. Eager styles for retained modules are the accepted execution model; unused imports still depend on the consumer bundler's tree shaking.
+
+## Recorded result
+
+The final installed-artifact run passed all six plain CSS/Tailwind 3/Tailwind 4 × before/after cases: **33,600 paired style snapshots**, across five theme modes. The final runner additionally checks explicit expected custom primary color/spacing and important hover colors for Button, Input and TextArea. Native tab/disabled exclusion, Button Space activation, Input/TextArea edits, unmount/remount and captured browser-error checks passed. Chrome was 156.0.8078.47.
+
+Five Node consumer tests passed. Strict TypeScript 6.0.3 passed Bundler/ESNext, NodeNext ESM and NodeNext CommonJS with `skipLibCheck: false`. Producer typecheck and ESM/CJS declaration build passed. The installed consumer used React 19.3.1 and stock Goober 2.1.19. Component-only esbuild output (React external) was Button 2,465 gzip bytes, Input 2,117 and TextArea 1,978; the unused-import entry retained only its 23-byte marker. These are scoped bundle observations, not a performance acceptance threshold or a guarantee for every bundler.
+
+Machine evidence is in `results/`. The packed artifact SHA256 is recorded in `checks.json`. `component-source-integrity.json` verifies every production file in this component slice is byte-identical to the source used to build that artifact. Browser evidence records hashes of the fixture, runner and independently built baseline/runtime scripts.
+
+Earlier observations are preserved separately. `browser-before-independent-theme-assertions.json` had no independent expected custom-token assertions. The initial review claimed it tested default dark, but checking the complete existing provider showed `userDarkTheme ?? userLightTheme`; that factual claim was withdrawn. `browser-explicit-theme-assertions.json` adds explicit dark overrides and expected-value checks. `browser-final.json` also includes explicit hover-override checks for all three controls and is the final matrix evidence. No earlier run is presented as a substitute for the final run.
+
+The evidence uses a scratch copy of Worker1's scaffold/theme snapshot plus this exact component source, packed and installed through npm normally. It does not claim validation of a later, independently changed scaffold. The package owner should run these same public consumer tests on the final integrated tarball before accepting #9. No later migration slice, publication or deprecation was performed.
