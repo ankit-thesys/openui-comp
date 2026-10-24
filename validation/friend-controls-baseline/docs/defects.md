@@ -2,6 +2,12 @@
 
 Baseline commit: **`9d73d17d2bbac565672a85e78f6eb7740cb0d9ca`**
 
+> **Updated by issue #23.** Every finding below was re-examined in real Chrome.
+> One was **withdrawn** (CA-2 — it was a test-authoring error, not a defect) and
+> two were **narrowed** (SE-2, CB-1/R-1). The classified results, with raw run
+> output, are in [verification-ledger.md](./verification-ledger.md); that ledger
+> is authoritative where it and this file disagree.
+
 Per issue #19, these are **findings, not work items for this ticket**. Nothing in
 `packages/react-ui` was changed, and no test was written to assert a desired
 behavior that the baseline does not have. Every entry below is reproduced by a
@@ -10,34 +16,35 @@ passing test that asserts the behavior **as it actually is**.
 Severity is this harness's own read, for triage only:
 **high** = broken or inaccessible for a supported use of the documented API ·
 **medium** = silently wrong or inconsistent, with a consumer-side workaround ·
-**low** = cosmetic, naming, or packaging.
+**low** = cosmetic, naming, or packaging ·
+**WITHDRAWN** = re-examined under #23 and found not to be a defect.
 
-| ID            | Family                     | Severity            | One line                                                               |
-| ------------- | -------------------------- | ------------------- | ---------------------------------------------------------------------- |
-| [SE-1](#se-1) | Select                     | **high**            | `hideDropdownIcon` crashes the render                                  |
-| [DP-1](#dp-1) | DatePicker                 | **high**            | Trigger is a bare `<div>` — keyboard-unreachable                       |
-| [DP-2](#dp-2) | DatePicker                 | **high**            | A controlled value cannot be cleared                                   |
-| [DP-3](#dp-3) | DatePicker                 | **high**            | `isOpen` without `setIsOpen` is stuck open                             |
-| [CA-2](#ca-2) | Calendar                   | **high** (upstream) | `selected` is not re-read on re-render                                 |
-| [SE-2](#se-2) | Select                     | medium              | `textValue` renders as visible text and breaks typeahead               |
-| [SE-3](#se-3) | Select                     | medium              | Trigger and popup disagree when both set `size`                        |
-| [IB-1](#ib-1) | IconButton                 | medium              | No default `type`, so it submits forms                                 |
-| [FC-1](#fc-1) | FormControl, groups, items | medium              | Closed props drop native/ARIA attributes                               |
-| [CB-1](#cb-1) | CheckBoxItem               | medium              | Nested `<label>` elements (invalid HTML)                               |
-| [R-1](#r-1)   | RadioItem                  | medium              | Nested `<label>` elements (invalid HTML)                               |
-| [C-3](#c-3)   | Chips                      | medium              | `listbox`/`option` roles without listbox keyboard semantics            |
-| [OC-2](#oc-2) | OptionCards                | medium              | `radiogroup`/`radio` roles without radio keyboard semantics            |
-| [CB-2](#cb-2) | CheckBoxItem, SwitchItem   | medium              | `name`/`value` do nothing outside a `<form>`                           |
-| [CA-1](#ca-1) | Calendar                   | medium              | A consumer `components` object silently replaces the caption dropdowns |
-| [SL-1](#sl-1) | Slider                     | medium              | `variant="discrete"` without `step` renders no dots                    |
-| [T-1](#t-1)   | ToggleGroup, ToggleItem    | medium              | Not exported from the package root                                     |
-| [DP-4](#dp-4) | DatePicker                 | low                 | Popup does not close after a date is chosen                            |
-| [S-1](#s-1)   | SwitchItem                 | low                 | Description is not a click target (differs from siblings)              |
-| [C-2](#c-2)   | Chips                      | low                 | `type="single"` does not enforce single selection                      |
-| [OC-1](#oc-1) | OptionCards                | low                 | Default `type` differs from `Chips`                                    |
-| [T-2](#t-2)   | ToggleGroup, ToggleItem    | low                 | Not `forwardRef`; `ref` works only on React 19                         |
-| [R-2](#r-2)   | RadioItem                  | low                 | `style` lands on the control, not the row                              |
-| [L-1](#l-1)   | Label                      | low                 | `disabled` is presentation only                                        |
+| ID            | Family                     | Severity               | One line                                                                         |
+| ------------- | -------------------------- | ---------------------- | -------------------------------------------------------------------------------- |
+| [SE-1](#se-1) | Select                     | **high**               | `hideDropdownIcon` crashes the render                                            |
+| [DP-1](#dp-1) | DatePicker                 | **high**               | Trigger is a bare `<div>` — keyboard-unreachable                                 |
+| [DP-2](#dp-2) | DatePicker                 | **high**               | A controlled value cannot be cleared                                             |
+| [DP-3](#dp-3) | DatePicker                 | **high**               | `isOpen` without `setIsOpen` is stuck open                                       |
+| [SE-2](#se-2) | Select                     | medium                 | `textValue` renders as visible text (typeahead verified working)                 |
+| [SE-3](#se-3) | Select                     | medium                 | Trigger and popup disagree when both set `size`                                  |
+| [IB-1](#ib-1) | IconButton                 | medium                 | No default `type`, so it submits forms                                           |
+| [FC-1](#fc-1) | FormControl, groups, items | medium                 | Closed props drop native/ARIA attributes                                         |
+| [CB-1](#cb-1) | CheckBoxItem               | low                    | Nested `<label>` elements — invalid HTML, no behavioral consequence in Chrome    |
+| [R-1](#r-1)   | RadioItem                  | low                    | Nested `<label>` elements — invalid HTML, no behavioral consequence in Chrome    |
+| [C-3](#c-3)   | Chips                      | medium                 | `listbox`/`option` roles without listbox keyboard semantics                      |
+| [OC-2](#oc-2) | OptionCards                | medium                 | `radiogroup`/`radio` roles without radio keyboard semantics                      |
+| [CB-2](#cb-2) | CheckBoxItem, SwitchItem   | medium                 | `name`/`value` do nothing outside a `<form>`                                     |
+| [CA-1](#ca-1) | Calendar                   | medium                 | A consumer `components` object silently replaces the caption dropdowns           |
+| [SL-1](#sl-1) | Slider                     | medium                 | `variant="discrete"` without `step` renders no dots                              |
+| [T-1](#t-1)   | ToggleGroup, ToggleItem    | medium                 | Not exported from the package root                                               |
+| [DP-4](#dp-4) | DatePicker                 | low                    | Popup does not close after a date is chosen                                      |
+| [S-1](#s-1)   | SwitchItem                 | low                    | Description is not a click target (differs from siblings)                        |
+| [C-2](#c-2)   | Chips                      | low                    | `type="single"` does not enforce single selection                                |
+| [OC-1](#oc-1) | OptionCards                | low                    | Default `type` differs from `Chips`                                              |
+| [T-2](#t-2)   | ToggleGroup, ToggleItem    | low                    | Not `forwardRef`; `ref` works only on React 19                                   |
+| [R-2](#r-2)   | RadioItem                  | low                    | `style` lands on the control, not the row                                        |
+| [L-1](#l-1)   | Label                      | low                    | `disabled` is presentation only                                                  |
+| [CA-2](#ca-2) | Calendar                   | ~~high~~ **WITHDRAWN** | Not a defect — test-authoring error, see [ledger](./verification-ledger.md#ca-2) |
 
 ---
 
@@ -167,28 +174,28 @@ optional in `DatePickerProps` (`:13-14`), so this combination is type-legal.
 
 <a id="ca-2"></a>
 
-## CA-2 — Calendar does not re-read `selected` on re-render · **high** (upstream)
+## CA-2 — WITHDRAWN · not a defect
 
-**Source:** `packages/react-ui/src/components/Calendar/Calendar.tsx` (wrapper) over react-day-picker **9.14.0**
-**Test:** `tests/Calendar.baseline.test.tsx` → "does NOT re-read `selected` on re-render — and raw DayPicker does the same"
+**This finding was wrong and is withdrawn.** It was filed as high severity and
+attributed upstream to react-day-picker. Both the severity and the attribution
+were unsupported.
 
-Pushing a new `selected` into an already-mounted `Calendar` leaves the highlight
-on the original day. A fresh mount with the same prop is correct, so this affects
-the update path only.
+The #19 test supplied `selected` but omitted `onSelect`, which in
+react-day-picker 9.14.0 selects the **uncontrolled** code path — and the
+raw-DayPicker control group shared the same omission, so it corroborated the
+mistake instead of catching it. `onSelect` is the controlled/uncontrolled switch
+(`selection/useSingle.js:13-14`): with it, `selected` is read from the prop on
+every render and updates ARE reflected; without it, the prop seeds `useState`
+once and later changes are correctly ignored.
 
-```tsx
-const { rerender } = render(<Calendar mode="single" month={MAR_2024} selected={mar14} />);
-rerender(<Calendar mode="single" month={MAR_2024} selected={mar20} />);
-```
+Controlled Calendar re-render works correctly. Verified both ways on the OpenUI
+Calendar and the pinned DayPicker in `tests/Calendar.baseline.test.tsx`.
 
-Observed: `aria-selected="true"` stays on **14**.
+Full correction, evidence and the lesson:
+[verification-ledger.md#ca-2](./verification-ledger.md#ca-2).
 
-**Attribution:** the same test renders `react-day-picker`'s `DayPicker` directly
-as a control group, and it behaves identically. `Calendar.tsx` is therefore not
-the cause. Recorded here anyway because it is high-impact for the migration: a
-consumer holding the selection in its own state cannot drive this component
-through `selected` alone. Any fix belongs upstream or in a deliberate wrapper
-decision, not in this ticket.
+The original observation survives only as the **uncontrolled** test, which is
+expected behavior. It must not be cited as proof of a controlled bug.
 
 ---
 
@@ -211,8 +218,13 @@ meant to render.
 ```
 
 Observed: the option's text content is `"EuroEuro currency"`, and Radix's real
-`textValue` is left unset, so typeahead falls back to the rendered children. The
-prop name collides with a Radix prop of the same name but different meaning.
+`textValue` is left unset. The prop name collides with a Radix prop of the same
+name but different meaning.
+
+**Narrowed by #23:** typeahead was verified in Chrome and still **works**,
+because Radix falls back to the rendered text content. The defect is the visible
+duplication and the prop-name collision, not broken typeahead — see
+[the ledger](./verification-ledger.md#se-2).
 
 ---
 
@@ -314,10 +326,14 @@ ones without a wrapper element. See the matrix's
 
 Nested `<label>` elements are invalid HTML, and here both carry the same `for`.
 Observed in jsdom: a single activation per click (the outer label makes the whole
-row — description included — a click target). Real-browser label activation for
-nested labels is **not** verified by this harness; see gap
-[G-3](./observed-baseline.md#g-3). The invalid nesting is the finding regardless
-of the activation count.
+row — description included — a click target).
+
+**Narrowed by #23:** verified in real Chrome, activation is **single** for the
+inner label, the description and the control alike — no double-toggle. A
+framework-independent check also confirmed programmatic `.click()` is unaffected
+by the nesting. So this is a **spec violation with no reproduced behavioral
+consequence**: severity lowered from medium to low, and gap G-3 is closed. See
+[the ledger](./verification-ledger.md#g-3).
 
 `RadioItem` has the identical shape — see [R-1](#r-1). `SwitchItem` does not, and
 that asymmetry is [S-1](#s-1).
