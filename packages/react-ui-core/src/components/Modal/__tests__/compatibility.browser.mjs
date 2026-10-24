@@ -303,12 +303,10 @@ try {
                       tooltips: [...document.querySelectorAll(".openui-tooltip-content")].map(
                         (node) => node.outerHTML,
                       ),
-                      animations: document
-                        .getAnimations()
-                        .map((animation) => ({
-                          playState: animation.playState,
-                          currentTime: animation.currentTime,
-                        })),
+                      animations: document.getAnimations().map((animation) => ({
+                        playState: animation.playState,
+                        currentTime: animation.currentTime,
+                      })),
                     })),
                   ),
                 ),

@@ -34,3 +34,7 @@ Raw logs, strict type logs (empty on success), consumer lock, artifact/source/bu
 Run the package's `pnpm --filter @openuidev/react-ui-core run ci`; run public `src/components/*/__tests__/*.test.mjs` against CORE_CONSUMER; run Modal/__tests__/compatibility.browser.mjs with the documented normal browser/Sass/host-style tooling environment. The container and overlay test READMEs describe the seams. Temporary paths in logs are maintainer tooling, not consumer setup requirements.
 
 No merge, publication, upstream write or issue closure is authorized by this archive. Neither preview checkout was modified. Slice #11 is ready for orchestrator review and a stacked draft; inherited product decisions remain for review.
+
+## PR33 formatting follow-up
+
+Remote CI at21819f19d built packages successfully, then stopped on formatting in the browser failure-diagnostic block. A subsequent formatter pass changes only line wrapping of document.getAnimations().map; no assertions or runtime behavior change. Full core format:check passes after correction. The raw remote failure and passing formatting log are retained. The recorded browser runner hash and results remain the exact executed validation revision135da0d8f; this later whitespace-only correction does not replace or rewrite that evidence. Remote CI must pass on the corrected PR head before slice12 is certified.

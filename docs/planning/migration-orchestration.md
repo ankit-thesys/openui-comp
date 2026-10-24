@@ -1,6 +1,8 @@
 # Current migration handoff — 2026-10-25
 
-## Slice #11 ready for review
+## Slice #11 ready for review — PR #33 CI correction
+
+Draft PR #33 on the fork targets codex/integrated-baseline-corrections. Remote build succeeded at21819f19d, but package CI stopped on browser-diagnostic formatting. A whitespace-only formatter correction is being submitted; full local core format:check passes. Wait for corrected remote CI before creating the separate codex/react-ui-core-text-media branch. Do not add slice12 to PR33.
 
 Final production integration `66547405c`; test-only dependency alignment `135da0d8f`. Worker2 overlay commits fb46c2103/1234eb902 integrated as d0bccb9b9/d179585bf. Full combined CI **64/64**, normal installed public tests **53/53**, strict types in three module modes passed. Final overlay Chrome matrix **12 cases /4,674 snapshots** passed; earlier container checkpoint **30 cases /132,051 snapshots** plus loading animations remains archived without an unnecessary rerun. Independent Standards and Spec reviews: zero actionable extraction findings.
 
