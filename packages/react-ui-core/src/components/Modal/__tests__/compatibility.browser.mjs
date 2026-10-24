@@ -52,6 +52,13 @@ for (const arm of ["baseline", "runtime"]) {
       ? {
           nodePaths: [consumer + "/node_modules", installedDependencies],
           alias: {
+            // Legacy source must use the same Tooltip version as the packed consumer.
+            "@radix-ui/react-tooltip": createRequire(
+              path.join(
+                await fs.realpath(path.join(consumer, "node_modules/@openuidev/react-ui-core")),
+                "package.json",
+              ),
+            ).resolve("@radix-ui/react-tooltip"),
             react: consumer + "/node_modules/react",
             "react-dom": consumer + "/node_modules/react-dom",
           },
@@ -274,6 +281,39 @@ try {
           }
           const compare = async (label) => {
             const [expected, actual] = await Promise.all(pages.map(snapshot));
+            if (actual.length !== expected.length) {
+              result.failedComparison = {
+                framework,
+                order,
+                kind,
+                label,
+                expected,
+                actual,
+                interaction: await Promise.all(
+                  pages.map((page) =>
+                    page.evaluate(() => ({
+                      focused: document.activeElement?.outerHTML,
+                      hovered: [...document.querySelectorAll(":hover")].map(
+                        (node) => node.id || node.tagName,
+                      ),
+                      trigger: document
+                        .querySelector("#tip-trigger")
+                        ?.getBoundingClientRect()
+                        .toJSON(),
+                      tooltips: [...document.querySelectorAll(".openui-tooltip-content")].map(
+                        (node) => node.outerHTML,
+                      ),
+                      animations: document
+                        .getAnimations()
+                        .map((animation) => ({
+                          playState: animation.playState,
+                          currentTime: animation.currentTime,
+                        })),
+                    })),
+                  ),
+                ),
+              };
+            }
             assert.equal(
               actual.length,
               expected.length,
