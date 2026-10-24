@@ -171,6 +171,12 @@ const settle = async (page) => {
       if (Number.isFinite(animation.effect.getComputedTiming().iterations)) animation.finish();
     await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
   });
+  // Closed panels must finish hiding, not merely finish their CSS animation.
+  await page.waitForFunction(() =>
+    [...document.querySelectorAll('#zone .openui-accordion-content[data-state="closed"]')].every(
+      (node) => node.hidden,
+    ),
+  );
 };
 const snapshot = async (page) => {
   await settle(page);
