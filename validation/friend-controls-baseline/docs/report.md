@@ -1,4 +1,12 @@
-# Baseline report — remaining form controls (issue #19)
+# Baseline report — remaining form controls (issues #19, #23)
+
+> **Issue #23 update.** A real-Chrome verification run now accompanies the jsdom
+> suite. It **withdrew one high-severity finding** (CA-2 — a test-authoring error
+> on my part, not a defect), **narrowed two** (SE-2, CB-1/R-1), **confirmed the
+> other four high-severity findings** (SE-1, DP-1, DP-2, DP-3) and **closed six
+> coverage gaps**. The classified results are in
+> [verification-ledger.md](./verification-ledger.md), with raw output in
+> [browser-results.json](./browser-results.json).
 
 ## Baseline
 
@@ -47,10 +55,28 @@ Component dependencies exercised:
 | `date-fns`                     | 4.4.0   |
 | `@floating-ui/react-dom`       | 2.1.3   |
 
-**No browser engine was used.** There is no Playwright in this repository, and no
-browser automation or timed performance run was performed — so no execution
-window needed coordinating with the workers' performance runs (#19's coordination
-note).
+### Browser (added under #23)
+
+| Item         | Value                                                                             |
+| ------------ | --------------------------------------------------------------------------------- |
+| Engine       | **Chrome/156.0.8078.47**, `--headless=new`                                        |
+| CDP protocol | 1.3                                                                               |
+| Driver       | `browser/cdp.mjs` — a ~250-line DevTools Protocol client, **no dependency added** |
+| Viewport     | 1280×900                                                                          |
+
+There is still **no browser-automation package in this repository**. Playwright,
+Puppeteer, `@vitest/browser` and webdriverio appear in `pnpm-lock.yaml` only as
+optional `peerDependencies` declarations (vitest's `@vitest/browser-*`,
+`@chromatic-com/playwright`); none is resolved and none is in the pnpm store.
+Adding one would be a shared dependency change, which both tickets forbid without
+prior proposal, so the harness speaks CDP over Node 24's global `WebSocket`.
+
+Input is genuinely trusted: `Input.dispatchMouseEvent` and
+`Input.dispatchKeyEvent` produce events with `isTrusted === true`, which is what
+makes the closed gaps meaningful.
+
+No timed performance run was made, so there was no benchmark contention to
+coordinate with the migration workers.
 
 ## Exact commands
 
@@ -69,6 +95,19 @@ Single family (any substring of the file name):
 ```bash
 pnpm --dir packages/react-ui exec vitest run --config ../../validation/friend-controls-baseline/vitest.config.ts tests/Select
 ```
+
+Real-Chrome verification (#23) — one command; it builds the fixture itself:
+
+```bash
+node validation/friend-controls-baseline/browser/run.mjs
+```
+
+Options: `--only <scenario>` for one scenario, `--json <path>` to write the
+machine-readable result, `--no-build` to reuse an existing `browser/dist`. It
+exits **0** only when every scenario completed AND every check passed; a scenario
+that fails to load or errors is reported as a failure, never as passing coverage.
+Exit **1** means check failures, exit **2** means the run could not be set up
+(build failure, no Chrome, unknown scenario name).
 
 Typecheck this directory (`tsconfig.json` is local to it and maps types to
 react-ui's install, for the same reason the vitest config does):
@@ -200,9 +239,33 @@ icon. It also verifies every `@ts-expect-error` in the suite, which is how the
 closed-props finding ([FC-1](./defects.md#fc-1)) is shown to be a _type-level_
 rejection as well as a runtime drop.
 
+### Browser results (#23)
+
+```
+browser : Chrome/156.0.8078.47
+ALL GREEN: 61 passed, 0 failed, 10/10 scenarios completed
+```
+
+| Scenario              | Gaps / findings | Outcome                                       |
+| --------------------- | --------------- | --------------------------------------------- |
+| `radio-arrows`        | G-1             | arrow keys select; openui matches raw Radix   |
+| `nested-label`        | G-3, CB-1, R-1  | single activation; no double-toggle           |
+| `slider`              | G-4             | real drag `[200]→[800]`; track click `→[300]` |
+| `select-geometry`     | G-8, N-1        | popup 2.0px below trigger; dismissal 3 ways   |
+| `select-hide-icon`    | SE-1            | **throws** — confirmed                        |
+| `select-textvalue`    | SE-2, G-6       | duplication confirmed; typeahead works        |
+| `datepicker-geometry` | G-8, DP-1       | popup 5.0px below trigger; Tab skips trigger  |
+| `datepicker-clear`    | DP-2            | **cannot clear** — confirmed                  |
+| `datepicker-stuck`    | DP-3            | **stuck open** — confirmed                    |
+| `calendar-caption`    | G-7             | caption menus and `multiple` mode work        |
+
+Verified deterministic: three consecutive runs produced identical results
+(61/61) with no leaked browser processes. Full per-check output, including the
+measured geometry, is in [browser-results.json](./browser-results.json).
+
 ### Known failures
 
-**None.** Every test passes, and that is deliberate: each one asserts the
+**None**, in either suite. That is deliberate: each one asserts the
 baseline **as it actually is**, including the broken behavior. Issue #19 is
 explicit that baseline defects are findings, not a requirement to make every
 legacy test green — so a defect like `SelectTrigger hideDropdownIcon` is pinned
@@ -238,19 +301,18 @@ Most consequential for the planned migration:
    cannot be used at all.
 2. **DatePicker is keyboard-inaccessible** (DP-1) and its controlled-state
    handling is broken in two distinct ways (DP-2, DP-3).
-3. **`Calendar` does not re-read `selected` on re-render** (CA-2) — reproduced
-   identically with raw `react-day-picker`, so it is upstream, but it means a
-   consumer cannot drive the component through `selected` alone.
-4. **Closed props interfaces** (FC-1) make six components unable to accept
+3. **Closed props interfaces** (FC-1) make six components unable to accept
    `id`/`aria-*`/`data-*`, while their siblings can — the main API-consistency
    decision the migration will have to make.
-5. **ARIA roles that promise keyboard semantics the components do not implement**
+4. **ARIA roles that promise keyboard semantics the components do not implement**
    (C-3, OC-2) — a listbox and a radiogroup built from plain buttons.
 
-Ten coverage gaps are recorded in
-[observed-baseline.md](./observed-baseline.md#coverage-gaps); the ones needing a
-real browser are G-1 (arrow-key selection), G-3 (nested-label activation),
-G-4 (slider drag) and G-8 (popup geometry).
+Of the ten coverage gaps #19 recorded in
+[observed-baseline.md](./observed-baseline.md#coverage-gaps), **six are now
+closed** by the browser run (G-1, G-3, G-4, G-6, G-7, G-8) and G-10 is
+superseded. Three remain: G-2 (React 18 `ref`, needs an install at the peer
+floor), G-5 (`SliderBlock`, composes `Input` which #9 owns) and G-9
+(visual/theming/SSR/RTL, out of scope per #23).
 
 ## Scope confirmation
 

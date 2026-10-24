@@ -16,8 +16,14 @@ defects in [defects.md](./defects.md).
 ## Harness capabilities and limits
 
 `vitest 4.1.10` + `jsdom 26.1.0`, driving real user-style interactions through
-`@storybook/test`'s bundled `@testing-library/user-event`. **There is no
-Playwright in this repository and no browser run was performed.**
+`@storybook/test`'s bundled `@testing-library/user-event`.
+
+> **Updated by issue #23.** A real-Chrome run now exists alongside this jsdom
+> suite — see [verification-ledger.md](./verification-ledger.md) and
+> `../browser/run.mjs`. It closed six of the ten gaps below (G-1, G-3, G-4, G-6,
+> G-7, G-8) and withdrew one finding (CA-2). Still no Playwright in the
+> repository: the browser harness speaks the DevTools Protocol directly and adds
+> no dependency.
 
 Verified to work in this harness:
 
@@ -259,14 +265,14 @@ therefore ambiguous, and the consumer tests scope every query to a section.
 
 <a id="g-1"></a>
 
-### G-1 — RadioGroup arrow-key _selection_ (not focus)
+### G-1 — CLOSED by the #23 browser run
 
-In a browser, Radix `RadioGroup` selects the item that arrow-key focus lands on.
-Under jsdom the focus move happens (asserted) but the auto-select does not fire.
-`tests/Radio.baseline.test.tsx` renders the raw `@radix-ui/react-radio-group`
-primitive as a **control group** and gets the identical result, which establishes
-that the openui wrapper is not the cause. Arrow-key _selection_ is therefore
-unverified at this baseline. Needs a real browser.
+**Arrow-key selection works.** In Chrome, ArrowDown both moves roving focus and
+selects, and the openui `RadioGroup` matches raw Radix exactly. jsdom simply does
+not run the `onFocus`→`click()` path Radix relies on.
+Evidence: [ledger G-1](./verification-ledger.md#g-1). One caveat recorded there
+as [N-2](./verification-ledger.md#n-2): the behavior depends on key dwell time,
+and a zero-dwell synthetic key press mis-measures it.
 
 <a id="g-2"></a>
 
@@ -278,20 +284,21 @@ unverified. Needs an install against the lower bound of the peer range.
 
 <a id="g-3"></a>
 
-### G-3 — Real-browser activation of the nested labels
+### G-3 — CLOSED by the #23 browser run
 
-`CB-1`/`R-1` nest `<label>` elements with the same `for`. jsdom produces a single
-activation per click. Browsers may double-activate (check then immediately
-uncheck) for nested labels; that is **not** verified here, and no claim is made
-either way. Needs a real browser.
+**Activation is single.** Clicking the inner label, the description or the
+control each fires exactly one change in Chrome; there is no double-toggle, and
+programmatic `.click()` is unaffected by the nesting. CB-1/R-1 are therefore a
+spec violation with no reproduced behavioral consequence (severity lowered to
+low). Evidence: [ledger G-3](./verification-ledger.md#g-3).
 
 <a id="g-4"></a>
 
-### G-4 — Slider pointer drag
+### G-4 — CLOSED by the #23 browser run
 
-Only keyboard value changes are exercised. Dragging a thumb needs pointer
-capture and real layout, both absent in jsdom (pointer capture is stubbed purely
-so the component mounts). Track-click-to-jump is likewise unverified.
+**Drag and track click both work.** A real press-move-release to 80% of the
+track yields `[800]`, and a 30% track click yields `[300]`, both snapped to
+`step`. Evidence: [ledger G-4](./verification-ledger.md#g-4).
 
 <a id="g-5"></a>
 
@@ -304,31 +311,34 @@ validation error path) is documented but unverified.
 
 <a id="g-6"></a>
 
-### G-6 — Select typeahead
+### G-6 — CLOSED by the #23 browser run
 
-Type-to-select depends on Radix's `textValue`, which `SE-2` prevents from ever
-being set. Rather than assert the broken behavior and call it covered, typeahead
-is left unverified and flagged. Re-test once `SE-2` is addressed.
+**Typeahead works.** Despite SE-2 preventing Radix's real `textValue` from being
+set, typeahead still matches on the rendered text content. SE-2's consequence is
+narrowed to the visible duplication.
+Evidence: [ledger SE-2](./verification-ledger.md#se-2).
 
 <a id="g-7"></a>
 
-### G-7 — Calendar caption dropdown interaction
+### G-7 — CLOSED by the #23 browser run
 
-Opening the month/year dropdowns and choosing a value is not exercised. They are
-openui `Select`s whose behavior is covered directly in the Select suite, and
-their container-aware sizing depends on `ResizeObserver` plus real layout (both
-stubbed/absent). Also unverified: `layout` context values other than
-`"fullscreen"`, and `mode="multiple"`.
+**Caption menus and `multiple` mode work.** The month menu opens with 12
+options, choosing one updates the caption, and `multiple` mode accumulates
+selections. Note the caption needs `defaultMonth` rather than the controlled
+`month` prop to navigate at all.
+Evidence: [ledger G-7](./verification-ledger.md#g-7).
 
 <a id="g-8"></a>
 
-### G-8 — Popup positioning for DatePicker and Select
+### G-8 — CLOSED by the #23 browser run
 
-`@floating-ui/react-dom` placement, `flip()`, `offset()` and `autoUpdate` for the
-DatePicker, and Radix's `position`/`sideOffset`/collision handling for Select, are
-all verified only as props and classes reaching the DOM. No geometry is asserted,
-because jsdom has no layout. `touchstart`-based dismissal of the DatePicker is
-also unexercised.
+**Geometry verified to the pixel.** The Select popup sits 2.0px below its
+trigger (matching `sideOffset={2}`) and the DatePicker popup 5.0px below its
+trigger (matching floating-ui's `offset(5)`); both are inside the viewport and
+both dismiss on an outside click. Also newly recorded: Select shields the page
+with `pointer-events: none` while open and the DatePicker does not
+([ledger N-1](./verification-ledger.md#n-1)).
+Evidence: [ledger G-8](./verification-ledger.md#g-8).
 
 <a id="g-9"></a>
 
