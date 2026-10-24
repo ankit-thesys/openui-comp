@@ -1,0 +1,6 @@
+plain/before: 7652 comparisons passed
+plain/after: 7652 comparisons passed
+tailwind3/before: 7652 comparisons passed
+tailwind3/after: 7652 comparisons passed
+tailwind4/before: 7652 comparisons passed
+tailwind4/after: 7652 comparisons passed

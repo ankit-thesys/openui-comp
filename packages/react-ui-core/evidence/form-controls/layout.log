@@ -1,0 +1,5 @@
+mobile: controlled rerender, onSelect and layout parity passed
+fullscreen: controlled rerender, onSelect and layout parity passed
+tray: controlled rerender, onSelect and layout parity passed
+copilot: controlled rerender, onSelect and layout parity passed
+Calendar layout/controlled checks passed (156.0.8078.47)

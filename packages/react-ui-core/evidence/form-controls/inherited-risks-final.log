@@ -1,0 +1,30 @@
+{
+  "baseline": {
+    "plainCalendarSelectedAfterPropUpdate": "14",
+    "calendarWithOnSelectSelected": "20",
+    "textValueOptionText": "AlphaSearch Alpha",
+    "datePickerAfterClear": "Mar 14, 2024",
+    "datePickerIsOpenTrueRemainsOpen": true,
+    "triggerSemantics": {
+      "tag": "DIV",
+      "tabindex": null,
+      "role": null,
+      "onKey": null
+    },
+    "hideError": "Primitive.span failed to slot onto its children. Expected a single React element child or `Slottable`."
+  },
+  "runtime": {
+    "plainCalendarSelectedAfterPropUpdate": "14",
+    "calendarWithOnSelectSelected": "20",
+    "textValueOptionText": "AlphaSearch Alpha",
+    "datePickerAfterClear": "Mar 14, 2024",
+    "datePickerIsOpenTrueRemainsOpen": true,
+    "triggerSemantics": {
+      "tag": "DIV",
+      "tabindex": null,
+      "role": null,
+      "onKey": null
+    },
+    "hideError": "Primitive.span failed to slot onto its children. Expected a single React element child or `Slottable`."
+  }
+}

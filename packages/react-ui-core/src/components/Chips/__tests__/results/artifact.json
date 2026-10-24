@@ -1,0 +1,160 @@
+{
+  "baseline": "48a877064e0a2039c2c6949959168dea077a5d49",
+  "tarballSha256": "63e54797fccc88ff8f3c3a2b48ec731d6f04f299638e715c53fba7822cb9a27c",
+  "ownedSourceSha256": {
+    "src/components/Calendar/Calendar.tsx": "0edaf8b4756c5fd391a2e1088891ca78aca29920473c895c7bd49df0385fd9d5",
+    "src/components/Calendar/calendar.styles.ts": "413ffbfe96d3182824bb7d8ff22c99134c224a97d06225f49ef001b5ce44a2ad",
+    "src/components/Calendar/components/helperComponents.tsx": "b86df9a93d71867216aff252332fc5105171783d7b6a0ec9a50d42b4d9025d23",
+    "src/components/Calendar/index.ts": "fbcab61b890224dbea60d3cfaa8ec9f4e9ebc32b93cdee499f270c9feba0b995",
+    "src/components/Calendar/utils/helperFn.tsx": "aa2bc9486cd16d6cb33c5a8f06db099845a2dd5b1281dacb4e4b5d671cb37f72",
+    "src/components/Calendar/utils/styles.tsx": "56986028c82a9d1aea9556c17fec7e2a0a366adb2bbd0895ca620de59a5576bd",
+    "src/components/DatePicker/DatePicker.tsx": "ec58d1af8832a26e5c50ca17d2e27261427aa20cce4cb431d83578aa326f3222",
+    "src/components/DatePicker/datePicker.styles.ts": "9a3fa5bf932c8ffad3586a359bf21a4e62da8daff1cde449b127cae47612c66a",
+    "src/components/DatePicker/helpers/components/DatePickerRenderer.tsx": "854dd08b8285998105a3c46283119feadf2a5178cd4f3b486059405488c5e353",
+    "src/components/DatePicker/helpers/components/FloatingDatePickerRenderer.tsx": "4f3e27790f4764a4096007d5969c4ba07abb32ed8ffd50bee7bacd99e7bcaec2",
+    "src/components/DatePicker/helpers/context/DatePickerContext.tsx": "b37c84aa21dbd152a52a5a230e217b3374a15a4485dca27cd44733f3a91ae9da",
+    "src/components/DatePicker/helpers/utils/helperFn.tsx": "2ab00b09396d723e8043913755c20d4aa5852ac2a776afd7633fb2273c45f7f7",
+    "src/components/DatePicker/index.ts": "c3e4ba8d8f78afda17999e91b0e7bcd3beb9e21d71a82d71e3ab45007e15d87a",
+    "src/components/Select/Select.tsx": "e3a3d9c27f38916fc34023359c0b33eb0538c334f1ab1bcb5443879bebe95e86",
+    "src/components/Select/index.ts": "ac3aab6e16c59b08f2eea4daf910e84d61afe434c32e0f4ccc71b972b30d3ad8",
+    "src/components/Select/select.styles.ts": "e88b0016d15486357d671c7004263378ec5dc12b39ddba0c3f3e623cc443691c",
+    "src/components/Slider/Slider.tsx": "3bd1abc55e21f0a0f549c0cab0b4139bac5870f46513ed96675306b3c454b835",
+    "src/components/Slider/SliderBlock.tsx": "e432293b3055f42c61bf2e14308b1e7dc5b028a238ae0a1762e1de0dd6e8a51a",
+    "src/components/Slider/index.ts": "0d7f10a10c2adaedaa7af02f33814827191a6784ad43407dd89aac87c78e0da3",
+    "src/components/Slider/slider.styles.ts": "896b3767924e51a89dcfbef244603eae7a3b2870bda9b50086d9435fe4b81e27",
+    "src/components/Slider/sliderBlock.styles.ts": "a3fc2bfc030c85125bd37023cc7e991261cc9412883d3e6b7e8e37595df51d7c",
+    "src/components/Chips/Chips.tsx": "30d26eaee95922478d1d7ecaffa7295c30d75c49493843a020e3e9ffec9c2814",
+    "src/components/Chips/chips.styles.ts": "12a29c3ab0056f9141c6afd097ebc1310ed4ed79fa7bd38d2c3313abf6641df0",
+    "src/components/Chips/index.ts": "aec2356961edd484037e7a6e19b39f531478734ed0420adbd0d123c1031102b3"
+  },
+  "producerPackage": {
+    "name": "@openuidev/react-ui-core",
+    "version": "0.0.0-beta.0",
+    "description": "Reusable OpenUI React components and themes",
+    "license": "MIT",
+    "type": "module",
+    "main": "dist/index.cjs",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.cts",
+    "exports": {
+      ".": {
+        "import": {
+          "types": "./dist/index.d.mts",
+          "default": "./dist/index.mjs"
+        },
+        "require": {
+          "types": "./dist/index.d.cts",
+          "default": "./dist/index.cjs"
+        }
+      }
+    },
+    "sideEffects": false,
+    "files": ["dist", "README.md"],
+    "scripts": {
+      "build": "tsdown",
+      "typecheck": "tsc --noEmit",
+      "test": "pnpm build && cd ../.. && node --test packages/react-ui-core/tests/*.test.mjs packages/react-ui-core/src/components/*/__tests__/*.test.mjs",
+      "format:check": "prettier --check src tests *.json *.ts",
+      "check:publint": "publint",
+      "check:attw": "attw --pack .",
+      "prepublishOnly": "pnpm run typecheck && pnpm run test && pnpm run check:publint && pnpm run check:attw",
+      "lint:check": "eslint src --ignore-pattern \"**/__tests__/**\"",
+      "ci": "pnpm run format:check && pnpm run lint:check && pnpm run typecheck && pnpm run test && pnpm run check:publint && pnpm run check:attw"
+    },
+    "peerDependencies": {
+      "react": "^19.0.0",
+      "react-dom": "^19.0.0"
+    },
+    "dependencies": {
+      "clsx": "^2.1.1",
+      "goober": "2.1.19",
+      "@radix-ui/react-select": "2.4.1",
+      "@radix-ui/react-slider": "1.6.1",
+      "react-day-picker": "9.14.0",
+      "@floating-ui/react-dom": "2.1.9",
+      "date-fns": "4.4.0",
+      "lodash-es": "4.18.1",
+      "lucide-react": "0.562.0"
+    },
+    "devDependencies": {
+      "@types/node": "catalog:",
+      "@types/react": "catalog:",
+      "@types/react-dom": "catalog:",
+      "jsdom": "catalog:",
+      "react": "^19.0.0",
+      "react-dom": "^19.0.0",
+      "esbuild": "^0.25.12"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/thesysdev/openui.git",
+      "directory": "packages/react-ui-core"
+    },
+    "engines": {
+      "node": "^20.19.0 || >=22.12.0"
+    }
+  },
+  "producerTsconfig": {
+    "compilerOptions": {
+      "module": "Preserve",
+      "moduleResolution": "Bundler",
+      "jsx": "react-jsx",
+      "target": "ES2022",
+      "strict": true,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "declaration": true
+    },
+    "include": ["src"],
+    "exclude": ["src/**/__tests__"]
+  },
+  "consumerTsconfig": {
+    "compilerOptions": {
+      "target": "ES2022",
+      "module": "ESNext",
+      "moduleResolution": "Bundler",
+      "jsx": "react-jsx",
+      "strict": true,
+      "skipLibCheck": false,
+      "esModuleInterop": true,
+      "noEmit": true
+    },
+    "include": ["types.fixture.tsx"]
+  },
+  "installedVersions": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "@openuidev/react-ui-core": "0.0.0-beta.0",
+    "clsx": "2.1.1",
+    "goober": "2.1.19",
+    "@radix-ui/react-select": "2.4.1",
+    "@radix-ui/react-slider": "1.6.1",
+    "react-day-picker": "9.14.0",
+    "@floating-ui/react-dom": "2.1.9",
+    "date-fns": "4.4.0",
+    "lodash-es": "4.18.1",
+    "lucide-react": "0.562.0"
+  },
+  "types": {
+    "typescript": "6.0.3",
+    "skipLibCheck": false,
+    "passed": ["ESNext/Bundler", "NodeNext ESM", "NodeNext CommonJS"]
+  },
+  "nodeTests": {
+    "passed": 11,
+    "failed": 0
+  },
+  "browser": {
+    "cases": 36,
+    "pairedSnapshots": 45690,
+    "clock": "advancing",
+    "report": "browser-final.json"
+  },
+  "limits": [
+    "OptionCards held",
+    "shared support and root integration external to this scope",
+    "SSR deferred",
+    "no performance or memory-soak claim",
+    "nondefault LayoutContext public contract pending"
+  ]
+}

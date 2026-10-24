@@ -1,0 +1,272 @@
+{
+  "browser": "156.0.8078.47",
+  "graphs": {
+    "baseline": "67b16cc94c4c24385e9d326cdc38e8602d3d9555eec16ad9c9e1096ccf0f92ff",
+    "runtime": "7b821dd8217cb2481f569d2e8c499b7a536003fd50e61e11d69aa220b897f34f"
+  },
+  "legacyCssSha256": "662edbb3223154771f0cf7091e2ea70a67c8a4a9e9c9b3b00637a6aab43a9669",
+  "hostHashes": {
+    "plain": "d4a1d5dcf591b093b35a4b9bebf48406a70ccf0504b60b11e27f4002f3ddcb00",
+    "tailwind3": "584ed8b229b2a8df96f9ddc478e94a07249e8905bdf068afdef8981d969ae150",
+    "tailwind4": "e05a054044718b3c9ac536e5fe41ddde475f1a06ca68f57674a90db0a3c1b36e"
+  },
+  "fixtureSha256": "34375e25813b690a0c1f74427e3348600e9cc03bd4ed6034decbc4e114a3756d",
+  "runnerSha256": "acbb6b4cfea730dbebcfdce38bcbfd18d3bf6bf0fbd581d021becc53032c9d4f",
+  "clock": "advancing Playwright clock initialized at 2026-10-24T12:00:00Z",
+  "cases": [
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "chips",
+      "comparisons": 320,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "select",
+      "comparisons": 185,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "slider",
+      "comparisons": 750,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "sliderBlock",
+      "comparisons": 1105,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "calendar",
+      "comparisons": 4650,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "kind": "datePicker",
+      "comparisons": 605,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "kind": "chips",
+      "comparisons": 320,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "kind": "select",
+      "comparisons": 185,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "kind": "slider",
+      "comparisons": 750,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "kind": "sliderBlock",
+      "comparisons": 1105,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "kind": "calendar",
+      "comparisons": 4650,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "kind": "datePicker",
+      "comparisons": 605,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "kind": "chips",
+      "comparisons": 320,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "kind": "select",
+      "comparisons": 185,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "kind": "slider",
+      "comparisons": 750,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "kind": "sliderBlock",
+      "comparisons": 1105,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "kind": "calendar",
+      "comparisons": 4650,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "kind": "datePicker",
+      "comparisons": 605,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "kind": "chips",
+      "comparisons": 320,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "kind": "select",
+      "comparisons": 185,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "kind": "slider",
+      "comparisons": 750,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "kind": "sliderBlock",
+      "comparisons": 1105,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "kind": "calendar",
+      "comparisons": 4650,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "kind": "datePicker",
+      "comparisons": 605,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "kind": "chips",
+      "comparisons": 320,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "kind": "select",
+      "comparisons": 185,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "kind": "slider",
+      "comparisons": 750,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "kind": "sliderBlock",
+      "comparisons": 1105,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "kind": "calendar",
+      "comparisons": 4650,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "kind": "datePicker",
+      "comparisons": 605,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "kind": "chips",
+      "comparisons": 320,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "kind": "select",
+      "comparisons": 185,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "kind": "slider",
+      "comparisons": 750,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "kind": "sliderBlock",
+      "comparisons": 1105,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "kind": "calendar",
+      "comparisons": 4650,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "kind": "datePicker",
+      "comparisons": 605,
+      "status": "passed"
+    }
+  ],
+  "snapshots": 45690,
+  "pending": ["OptionCards: shared markdown prerequisites require an ownership/scope decision"]
+}
