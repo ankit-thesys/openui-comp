@@ -1,3 +1,13 @@
+# Updated browser handoff — fixed media artifact,2026-10-25
+
+Worker2's prior browser window is complete/released; Worker1 releases the next window back to Worker2 for media retesting now. Old source/presentation12 cases/22,056 snapshots passed on production680118396; media failed and has a reviewed canonical grid-row whitespace correction, now integrated as2de26659c+1f876a4a3 (both9bb31d238/9214cc528). Evidence b536b6a29 integrated as96221894a. No parser/runtime patch or legacy source change.
+
+New immutable normal npm consumer: `/private/tmp/core-source-media-fixed-consumer`.
+New tarball: `/private/tmp/core-source-media-fixed-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`, 375293 bytes, SHA256 `cb6306b9646be0dad2654542156e5e11623600bfe321abe2a9d5496cf21f8b45`.
+CORE_ARTIFACT_REVISION=`96221894aa2273dc85059fe94efa155ef1f1210a`. Same browser/Sass/host tools as prior handoff. Normally installed media tests3/3 passed. Old consumers/artifacts remain untouched; do not overwrite running cases. Worker2 should retest affected media cases and explicitly record old-source/presentation evidence scope; final combined retest decisions depend on actual source changes.
+
+Worker1 owns InlineHeader, TextBlockView and TextContentWrapper plus shared exports/deps/integration. Worker2 owns IconTag/IconText/ImageText/ImageTextLarge after matrix/fixes, requiring committed TextBlockView. Worker1 is doing source-only composer and package checks; no Chrome until Worker2 returns the window. Math/style automatic delivery remains an unaccepted validation risk. Native/strict/pruning prerequisites are now normally installed-green (11 tests,3 strict modes); archive under evidence/text-media-prerequisites, not whole-slice acceptance.
+
 # Browser handoff — Worker2 window released, 2026-10-25
 
 Worker1 has finished its measured ScrollableTable probe and is doing source-only markdown work. **Worker2 may run the prepared foundation/media matrix now** against this frozen normal npm consumer. Do not point it at Worker1's changing dist or repack its artifact.
