@@ -10,6 +10,14 @@ Compatibility probe: Node rejects the legacy syntax-theme directory import; expl
 
 No custom runtime patches, stock Goober only, legacy read-only, neither preview modified, no merges/releases/upstream writes. Continuous authorization and root heartbeat from prior handoff remain in force; unresolved product/contract decisions go to user review. Optional friend tickets31/32 remain unassigned.
 
+## Current slice12 source checkpoint
+
+Table primitives committed443595a3f; ScrollableTable committedd35642508. Public React test and actual Chrome scrolling/resize/children checks pass, producer build/types pass, both review axes have zero actionable findings. Final installed/framework parity remains pending.
+
+Worker2 source batches integrated: 5e8d8c78c→458cf6aa4, bdf10d239→6e167c166, da6bb9656→03324527f; handoff305099ceb→db23ab68a. Parent correction copies were not reapplied. Public exports/dependencies are integrated locally; foundation/Table focused16 tests pass. Zod preserves legacy peer classification; aspect-ratio uses legacy runtime range. No final source/media browser acceptance yet.
+
+CodeBlock vertical is green through public behavior/default+custom themes, native root ESM/CJS and producer strict types. Supported tsdown theme-data bundling resolves the legacy extensionless entry/DefinitelyTyped mismatch without shims or patches; React/Goober remain external. Markdown and InlineMarkdownRenderer are next, and remaining leaf ownership is still explicit/orchestrator-controlled. Worker1 retains the browser window; Worker2 prepares harnesses only.
+
 ## Prior slice #11 record
 
 # Current migration handoff — 2026-10-25
