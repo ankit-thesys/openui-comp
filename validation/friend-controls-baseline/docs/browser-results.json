@@ -1,0 +1,458 @@
+{
+  "browser": "Chrome/156.0.8078.47",
+  "protocol": "1.3",
+  "scenarios": 10,
+  "scenariosCompleted": 10,
+  "checksPassed": 61,
+  "checksFailed": 0,
+  "results": [
+    {
+      "name": "radio-arrows",
+      "gaps": [
+        "G-1"
+      ],
+      "title": "RadioGroup arrow-key focus AND selection, vs raw Radix",
+      "ran": true,
+      "checks": [
+        {
+          "name": "openui: focus starts on first radio",
+          "pass": true,
+          "detail": "= \"standard\""
+        },
+        {
+          "name": "openui: ArrowDown moves focus to 2nd radio",
+          "pass": true,
+          "detail": "= \"express\""
+        },
+        {
+          "name": "G-1 RESOLVED — openui: ArrowDown SELECTS the focused radio",
+          "pass": true,
+          "detail": "selected=[\"express\"] onValueChange=[\"express\"]"
+        },
+        {
+          "name": "radix control group: ArrowDown SELECTS too",
+          "pass": true,
+          "detail": "selected=[\"express\"] onValueChange=[\"express\"]"
+        },
+        {
+          "name": "openui matches raw Radix (wrapper adds no deviation)",
+          "pass": true,
+          "detail": "openui=[\"express\"] radix=[\"express\"]"
+        },
+        {
+          "name": "openui: states after Space on first radio",
+          "pass": true,
+          "note": true,
+          "detail": "[{\"value\":\"standard\",\"state\":\"checked\"},{\"value\":\"express\",\"state\":\"unchecked\"},{\"value\":\"overnight\",\"state\":\"unchecked\"}]"
+        }
+      ]
+    },
+    {
+      "name": "nested-label",
+      "gaps": [
+        "G-3"
+      ],
+      "title": "Nested <label> activation: once, twice, or not at all",
+      "ran": true,
+      "checks": [
+        {
+          "name": "checkbox: clicking the inner label fires onChange exactly once",
+          "pass": true,
+          "detail": "= 1"
+        },
+        {
+          "name": "checkbox: ends up checked (no double-toggle)",
+          "pass": true,
+          "detail": "= \"checked\""
+        },
+        {
+          "name": "checkbox: inner-label payloads",
+          "pass": true,
+          "note": true,
+          "detail": "[true]"
+        },
+        {
+          "name": "checkbox: clicking the description also toggles once",
+          "pass": true,
+          "detail": "= 1"
+        },
+        {
+          "name": "checkbox: clicking the control toggles once",
+          "pass": true,
+          "detail": "= 1"
+        },
+        {
+          "name": "radio: clicking the inner label fires onValueChange once",
+          "pass": true,
+          "detail": "= 1"
+        },
+        {
+          "name": "radio: ends up checked",
+          "pass": true,
+          "detail": "= \"checked\""
+        },
+        {
+          "name": "nested <label> with identical `for` is present in the DOM",
+          "pass": true,
+          "detail": "{\"hasOuterLabel\":true,\"hasInnerLabel\":true,\"sameFor\":true}"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "gaps": [
+        "G-4"
+      ],
+      "title": "Slider real pointer drag and track click",
+      "ran": true,
+      "checks": [
+        {
+          "name": "initial value",
+          "pass": true,
+          "detail": "= [200]"
+        },
+        {
+          "name": "thumb has real layout geometry (non-zero size)",
+          "pass": true,
+          "detail": "{\"x\":145,\"y\":64,\"width\":20,\"height\":20,\"top\":64,\"left\":145,\"bottom\":84,\"right\":165}"
+        },
+        {
+          "name": "dragging the thumb changes the value (real pointer capture)",
+          "pass": true,
+          "detail": "from [200] to [800] (dragged to 80% of track)"
+        },
+        {
+          "name": "dragged value lands on a step multiple of 100",
+          "pass": true,
+          "detail": "[800]"
+        },
+        {
+          "name": "clicking the track jumps the value",
+          "pass": true,
+          "detail": "from [200] to [300] (clicked 30% of track)"
+        }
+      ]
+    },
+    {
+      "name": "select-geometry",
+      "gaps": [
+        "G-8"
+      ],
+      "title": "Select popup geometry and dismissal",
+      "ran": true,
+      "checks": [
+        {
+          "name": "trigger has real geometry",
+          "pass": true,
+          "detail": "{\"x\":41,\"y\":69,\"width\":108.09375,\"height\":36,\"top\":69,\"left\":41,\"bottom\":105,\"right\":149.09375}"
+        },
+        {
+          "name": "popup exists after opening",
+          "pass": true,
+          "detail": "{\"x\":43.495994567871094,\"y\":107,\"width\":135.07049560546875,\"height\":100.29331970214844,\"top\":107,\"left\":43.495994567871094,\"bottom\":207.29331970214844,\"right\":178.56649017333984}"
+        },
+        {
+          "name": "popup has non-zero size",
+          "pass": true,
+          "detail": "135.07049560546875x100.29331970214844"
+        },
+        {
+          "name": "popup is inside the viewport",
+          "pass": true,
+          "detail": "popup={\"x\":43.495994567871094,\"y\":107,\"width\":135.07049560546875,\"height\":100.29331970214844,\"top\":107,\"left\":43.495994567871094,\"bottom\":207.29331970214844,\"right\":178.56649017333984} viewport={\"w\":1280,\"h\":813}"
+        },
+        {
+          "name": "popup is anchored below the trigger (sideOffset 2)",
+          "pass": true,
+          "detail": "trigger.bottom=105 popup.top=107 gap=2.0"
+        },
+        {
+          "name": "popup is horizontally aligned with the trigger",
+          "pass": true,
+          "detail": "trigger.left=41 popup.left=43.495994567871094"
+        },
+        {
+          "name": "choosing an option reports its value",
+          "pass": true,
+          "detail": "= [\"gbp\"]"
+        },
+        {
+          "name": "choosing closes the popup",
+          "pass": true,
+          "detail": "= false"
+        },
+        {
+          "name": "reopens",
+          "pass": true,
+          "detail": "= true"
+        },
+        {
+          "name": "while open, Radix sets pointer-events:none on the body (page is shielded)",
+          "pass": true,
+          "detail": "= \"none\""
+        },
+        {
+          "name": "so the outside button is not hit-testable",
+          "pass": true,
+          "detail": "elementFromPoint at the button is <HTML>"
+        },
+        {
+          "name": "outside click dismisses the popup",
+          "pass": true,
+          "detail": "= false"
+        },
+        {
+          "name": "and the click never reached the underlying button",
+          "pass": true,
+          "detail": "= 0"
+        },
+        {
+          "name": "Escape dismisses the popup",
+          "pass": true,
+          "detail": "= false"
+        },
+        {
+          "name": "focus returns to the trigger after Escape",
+          "pass": true,
+          "detail": "= true"
+        }
+      ]
+    },
+    {
+      "name": "select-hide-icon",
+      "gaps": [
+        "SE-1"
+      ],
+      "title": "SE-1 — SelectTrigger hideDropdownIcon in a real engine",
+      "ran": true,
+      "checks": [
+        {
+          "name": "render throws with Radix's Slot message",
+          "pass": true,
+          "detail": "\"Primitive.span failed to slot onto its children. Expected a single React element child or `Slottable`.\""
+        },
+        {
+          "name": "no trigger renders at all",
+          "pass": true,
+          "detail": "= false"
+        }
+      ]
+    },
+    {
+      "name": "select-textvalue",
+      "gaps": [
+        "SE-2"
+      ],
+      "title": "SE-2 — SelectItem textValue rendering and typeahead",
+      "ran": true,
+      "checks": [
+        {
+          "name": "option text is duplicated (children + textValue)",
+          "pass": true,
+          "detail": "= [\"EuroEuro currency\",\"Pound sterlingPound currency\"]"
+        },
+        {
+          "name": "typeahead 'p' lands on",
+          "pass": true,
+          "note": true,
+          "detail": "{\"activeText\":\"Pound sterlingPound currency\",\"activeValue\":null,\"role\":\"option\"}"
+        },
+        {
+          "name": "typeahead still matches on the rendered children",
+          "pass": true,
+          "detail": "{\"activeText\":\"Pound sterlingPound currency\",\"activeValue\":null,\"role\":\"option\"}"
+        }
+      ]
+    },
+    {
+      "name": "datepicker-geometry",
+      "gaps": [
+        "G-8",
+        "DP-1"
+      ],
+      "title": "DatePicker popup geometry, dismissal and keyboard reachability",
+      "ran": true,
+      "checks": [
+        {
+          "name": "trigger has real geometry",
+          "pass": true,
+          "detail": "{\"x\":41,\"y\":69,\"width\":320,\"height\":42,\"top\":69,\"left\":41,\"bottom\":111,\"right\":361}"
+        },
+        {
+          "name": "DP-1: Tab does NOT reach the DatePicker trigger",
+          "pass": true,
+          "detail": "= false"
+        },
+        {
+          "name": "DP-1: first Tab lands on",
+          "pass": true,
+          "note": true,
+          "detail": "{\"tag\":\"BUTTON\",\"id\":\"outside\",\"isTrigger\":false}"
+        },
+        {
+          "name": "popup opens on click",
+          "pass": true,
+          "detail": "{\"x\":41,\"y\":116,\"width\":318,\"height\":320,\"top\":116,\"left\":41,\"bottom\":436,\"right\":359}"
+        },
+        {
+          "name": "popup has non-zero size",
+          "pass": true,
+          "detail": "318x320"
+        },
+        {
+          "name": "popup is inside the viewport",
+          "pass": true,
+          "detail": "popup={\"x\":41,\"y\":116,\"width\":318,\"height\":320,\"top\":116,\"left\":41,\"bottom\":436,\"right\":359} viewport={\"w\":1280,\"h\":813}"
+        },
+        {
+          "name": "popup is placed below the trigger (floating-ui bottom-start, offset 5)",
+          "pass": true,
+          "detail": "trigger.bottom=111 popup.top=116 gap=5.0"
+        },
+        {
+          "name": "Escape does NOT dismiss (no key handling)",
+          "pass": true,
+          "detail": "= true"
+        },
+        {
+          "name": "element at the outside-click point",
+          "pass": true,
+          "note": true,
+          "detail": "{\"hit\":\"BUTTON\",\"isOutsideButton\":true}"
+        },
+        {
+          "name": "unlike Select, the DatePicker does NOT shield the page",
+          "pass": true,
+          "detail": "= \"auto\""
+        },
+        {
+          "name": "outside click dismisses",
+          "pass": true,
+          "detail": "= false"
+        },
+        {
+          "name": "and the click DID reach the underlying button (no shield)",
+          "pass": true,
+          "detail": "= 1"
+        }
+      ]
+    },
+    {
+      "name": "datepicker-clear",
+      "gaps": [
+        "DP-2"
+      ],
+      "title": "DP-2 — controlled DatePicker cannot be cleared",
+      "ran": true,
+      "checks": [
+        {
+          "name": "starts on the placeholder",
+          "pass": true,
+          "detail": "= \"Select a date\""
+        },
+        {
+          "name": "picking a day updates the trigger",
+          "pass": true,
+          "detail": "\"Oct 14, 2026\""
+        },
+        {
+          "name": "controlled value after pick",
+          "pass": true,
+          "note": true,
+          "detail": "\"Wed Oct 14 2026\""
+        },
+        {
+          "name": "consumer state really is cleared",
+          "pass": true,
+          "detail": "= null"
+        },
+        {
+          "name": "DP-2 confirmed: trigger still shows the old date after clearing",
+          "pass": true,
+          "detail": "controlledDate=null but trigger shows \"Oct 14, 2026\""
+        }
+      ]
+    },
+    {
+      "name": "datepicker-stuck",
+      "gaps": [
+        "DP-3"
+      ],
+      "title": "DP-3 — isOpen without setIsOpen is stuck open",
+      "ran": true,
+      "checks": [
+        {
+          "name": "opens from isOpen={true}",
+          "pass": true,
+          "detail": "= true"
+        },
+        {
+          "name": "DP-3: a trigger click does not close it",
+          "pass": true,
+          "detail": "= true"
+        },
+        {
+          "name": "DP-3: an outside click does not close it either",
+          "pass": true,
+          "detail": "= true"
+        },
+        {
+          "name": "DP-3: Escape does not close it",
+          "pass": true,
+          "detail": "= true"
+        }
+      ]
+    },
+    {
+      "name": "calendar-caption",
+      "gaps": [
+        "G-7"
+      ],
+      "title": "Calendar caption menus and multiple mode",
+      "ran": true,
+      "checks": [
+        {
+          "name": "caption renders two openui Select comboboxes, not native <select>",
+          "pass": true,
+          "detail": "= 2"
+        },
+        {
+          "name": "no native <select> in the caption",
+          "pass": true,
+          "detail": "= 0"
+        },
+        {
+          "name": "caption combobox labels",
+          "pass": true,
+          "note": true,
+          "detail": "[\"March\",\"2024\"]"
+        },
+        {
+          "name": "month menu opens with month options",
+          "pass": true,
+          "detail": "12 options: [\"January\",\"February\",\"March\"]"
+        },
+        {
+          "name": "month menu has real geometry inside the viewport",
+          "pass": true,
+          "detail": "{\"x\":63.17070388793945,\"y\":126,\"width\":120.48672485351562,\"height\":353.3999938964844,\"top\":126,\"left\":63.17070388793945,\"bottom\":479.3999938964844,\"right\":183.65742874145508}"
+        },
+        {
+          "name": "choosing a month updates the caption",
+          "pass": true,
+          "detail": "= \"May\""
+        },
+        {
+          "name": "multiple mode accumulates two selected dates",
+          "pass": true,
+          "detail": "= 2"
+        },
+        {
+          "name": "both days are marked selected in the DOM",
+          "pass": true,
+          "detail": "= 2"
+        }
+      ]
+    }
+  ]
+}

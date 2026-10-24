@@ -1,0 +1,9 @@
+# Vite's dep-optimizer cache for the browser fixture. vite.config.ts points
+# `cacheDir` here so nothing is written outside this directory.
+.vite-cache/
+
+# Belt and braces: the repository root already ignores node_modules, and this
+# directory is deliberately NOT a pnpm workspace member, so nothing should ever
+# install here. Vite will create one for its cache if `cacheDir` is ever
+# dropped.
+node_modules/

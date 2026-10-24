@@ -1,0 +1,6 @@
+# Build output from `vite build` on the runnable consumer (see README.md).
+# Per issue #19: keep large generated artifacts out of git.
+dist/
+# A node_modules here is never created by this harness (it resolves everything
+# through packages/react-ui's install) but is ignored defensively.
+node_modules/

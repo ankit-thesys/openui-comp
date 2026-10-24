@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    // DOM for the browser fixtures (document, Element, MouseEvent, SVG*);
+    // DOM.Iterable so spreading a NodeList yields Element, not unknown.
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["node"],
+    // `validation/` is deliberately not a pnpm workspace member, so it has no
+    // node_modules. Point type resolution at the install packages/react-ui
+    // already has — the same trick vitest.config.ts / vite.config.ts use at
+    // runtime. Nothing shared is edited.
+    "baseUrl": ".",
+    "typeRoots": ["../../packages/react-ui/node_modules/@types", "../../node_modules/@types"],
+    "paths": {
+      // The crucial detail: map `react` to @TYPES/react, not to the runtime
+      // package. The runtime package ships no declarations, so mapping to it
+      // makes every importer — including the legacy sources these fixtures
+      // import — fail with "Could not find a declaration file for module
+      // 'react'". Mapping to the types package resolves both.
+      "react": ["../../packages/react-ui/node_modules/@types/react"],
+      "react/*": ["../../packages/react-ui/node_modules/@types/react/*"],
+      "react-dom": ["../../packages/react-ui/node_modules/@types/react-dom"],
+      "react-dom/*": ["../../packages/react-ui/node_modules/@types/react-dom/*"],
+      "vitest": ["../../packages/react-ui/node_modules/vitest"],
+      "vitest/*": ["../../packages/react-ui/node_modules/vitest/*"],
+      "vite": ["../../packages/react-ui/node_modules/vite"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", ".vite-cache"]
+}

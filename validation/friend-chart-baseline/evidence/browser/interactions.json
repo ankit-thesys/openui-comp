@@ -1,0 +1,254 @@
+{
+  "_about": "Interaction evidence captured in a real browser via fixtures/browser/interactions.ts (window.__chartProbe). Reproduce with the commands in README.md. Values in `tooltipText` are the tooltip's textContent with no separators, so e.g. 'Mardesktop237mobile120tablet150' is the Mar column reading desktop=237, mobile=120, tablet=150 \u2014 which matches fixtures/datasets.ts exactly.",
+  "baselineSha": "9d73d17d2bbac565672a85e78f6eb7740cb0d9ca",
+  "browser": "Chromium (Claude desktop built-in browser pane)",
+  "viewport": {
+    "width": 1024,
+    "height": 768
+  },
+  "theme": "light",
+  "deterministic": "Two consecutive runs produced byte-identical hover results.",
+  "hover": [
+    {
+      "family": "AreaChart",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "Aprdesktop73mobile190tablet60"
+    },
+    {
+      "family": "AreaChartCondensed",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "Mardesktop237mobile120tablet150"
+    },
+    {
+      "family": "LineChart",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "Mardesktop237mobile120tablet150"
+    },
+    {
+      "family": "LineChartCondensed",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "Mardesktop237mobile120tablet150"
+    },
+    {
+      "family": "BarChart",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "Mardesktop237mobile120tablet150"
+    },
+    {
+      "family": "BarChartCondensed",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "Mardesktop237mobile120tablet150"
+    },
+    {
+      "family": "HorizontalBarChart",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "Febdesktop305mobile200tablet100"
+    },
+    {
+      "family": "PieChart",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "ChromeChrome400"
+    },
+    {
+      "family": "RadialChart",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "FirefoxFirefox200"
+    },
+    {
+      "family": "RadarChart",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "Mardesktop237mobile120tablet150"
+    },
+    {
+      "family": "FunnelChart",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "SafariValue300Of first stage75%"
+    },
+    {
+      "family": "HeatmapChart",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "Marmobile120Row avg143.3Column avg169"
+    },
+    {
+      "family": "ScatterChart",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "Group AX30Y25"
+    },
+    {
+      "family": "SegmentedBar",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "SafariValue300Percentage30.0%"
+    },
+    {
+      "family": "SingleStackedBar",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "SafariValue300Percentage30.0%"
+    },
+    {
+      "family": "CalendarHeatmap",
+      "tooltipShown": true,
+      "dismissedOnLeave": true,
+      "tooltipText": "February 11th 2026 \u00b7 WednesdayContributions0"
+    },
+    {
+      "family": "MiniAreaChart",
+      "tooltipShown": false,
+      "dismissedOnLeave": true,
+      "tooltipText": "",
+      "note": "No tooltip in this family's public API (MiniAreaChart/types.ts) \u2014 absence is correct, not a failure."
+    },
+    {
+      "family": "MiniBarChart",
+      "tooltipShown": false,
+      "dismissedOnLeave": true,
+      "tooltipText": "",
+      "note": "No tooltip in this family's public API (MiniBarChart/types.ts)."
+    },
+    {
+      "family": "MiniLineChart",
+      "tooltipShown": false,
+      "dismissedOnLeave": true,
+      "tooltipText": "",
+      "note": "No tooltip in this family's public API (MiniLineChart/types.ts)."
+    }
+  ],
+  "_legendAbout": "Clicking the first legend item hides that series, then clicking again restores it. `marks` counts SERIES marks only \u2014 grid and axis chrome is excluded, because hiding a series rescales the axis and changes the gridline count (on LineChart the two effects cancelled exactly and a naive count read 18 both times).",
+  "legendToggle": [
+    {
+      "family": "AreaChart",
+      "legendItems": 3,
+      "marksBefore": 7,
+      "marksAfter": 5,
+      "hiddenOpacity": "0.3",
+      "restored": true
+    },
+    {
+      "family": "AreaChartCondensed",
+      "legendItems": 3,
+      "marksBefore": 8,
+      "marksAfter": 6,
+      "hiddenOpacity": "0.3",
+      "restored": true
+    },
+    {
+      "family": "LineChart",
+      "legendItems": 3,
+      "marksBefore": 4,
+      "marksAfter": 3,
+      "hiddenOpacity": "0.3",
+      "restored": true
+    },
+    {
+      "family": "LineChartCondensed",
+      "legendItems": 3,
+      "marksBefore": 5,
+      "marksAfter": 4,
+      "hiddenOpacity": "0.3",
+      "restored": true
+    },
+    {
+      "family": "BarChart",
+      "legendItems": 3,
+      "marksBefore": 37,
+      "marksAfter": 25,
+      "hiddenOpacity": "0.3",
+      "restored": true
+    },
+    {
+      "family": "BarChartCondensed",
+      "legendItems": 3,
+      "marksBefore": 38,
+      "marksAfter": 26,
+      "hiddenOpacity": "0.3",
+      "restored": true
+    },
+    {
+      "family": "HorizontalBarChart",
+      "legendItems": 3,
+      "marksBefore": 36,
+      "marksAfter": 24,
+      "hiddenOpacity": "0.3",
+      "restored": true
+    },
+    {
+      "family": "RadarChart",
+      "legendItems": 3,
+      "marksBefore": 12,
+      "marksAfter": 8,
+      "hiddenOpacity": "0.3",
+      "restored": true
+    },
+    {
+      "family": "FunnelChart",
+      "legendItems": 4,
+      "marksBefore": 20,
+      "marksAfter": 15,
+      "hiddenOpacity": "0.3",
+      "restored": true
+    },
+    {
+      "family": "HeatmapChart",
+      "legendItems": 3,
+      "marksBefore": 19,
+      "marksAfter": 13,
+      "hiddenOpacity": "0.3",
+      "restored": true
+    },
+    {
+      "family": "ScatterChart",
+      "legendItems": 2,
+      "marksBefore": 9,
+      "marksAfter": 5,
+      "hiddenOpacity": "0.3",
+      "restored": true
+    },
+    {
+      "family": "SegmentedBar",
+      "legendItems": 2,
+      "marksBefore": 1,
+      "marksAfter": 1,
+      "hiddenOpacity": "1",
+      "note": "Segments are divs, not SVG marks, so the SVG mark count does not move; the segment itself dims instead. Toggle behaviour not asserted here \u2014 recorded as untested.",
+      "restored": true
+    },
+    {
+      "family": "SingleStackedBar",
+      "legendItems": 2,
+      "marksBefore": 1,
+      "marksAfter": 1,
+      "hiddenOpacity": "1",
+      "note": "As SegmentedBar.",
+      "restored": true
+    }
+  ],
+  "notCovered": {
+    "PieChart": "Pie/Radial publish their legend to a store rendered by StackedLegend; the probe's legend-item selector does not match those entries, so their toggle is UNTESTED here.",
+    "RadialChart": "As PieChart.",
+    "CalendarHeatmap": "No series legend (it has a Less->More scale key instead).",
+    "MiniAreaChart": "No legend.",
+    "MiniBarChart": "No legend.",
+    "MiniLineChart": "No legend."
+  },
+  "_supersededBy": "browser/run.mjs (added in the #24 follow-up) supersedes this file for every scenario it covers. This run dispatched SYNTHETIC MouseEvents from inside the page; the runner uses real CDP input (event.isTrusted === true). Retained unchanged for provenance: it is still the evidence behind the tooltip readings for the 13 families the runner does not re-cover, and it is the record of how the Pie/Radial legend toggles came to be mis-reported as untested.",
+  "_supersededCorrections": {
+    "PieChart.legendToggle": "Recorded 'untested' here. ACTUALLY SUPPORTED \u2014 the probe searched for .openui-chart-legend-item, but these families render .openui-stacked-legend__item. Verified with a real click in browser-run.json.",
+    "RadialChart.legendToggle": "As PieChart.",
+    "SegmentedBar.legendToggle": "Recorded 'untested' here. ACTUALLY UNSUPPORTED BY DESIGN \u2014 SegmentedBar.tsx:28. See browser-run.json and reports/DEFECTS.md FINDING-009.",
+    "SingleStackedBar.legendToggle": "As SegmentedBar."
+  }
+}
