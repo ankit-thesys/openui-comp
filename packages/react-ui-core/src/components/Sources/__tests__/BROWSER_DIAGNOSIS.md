@@ -35,3 +35,32 @@ build/repack/install normally, and supply the new immutable artifact before the 
 media browser result can be green. No fixed-artifact pass is claimed here. Independent
 sources and presentation checks can continue against the old frozen artifact, with their
 revision clearly recorded. No old production file or preview checkout is changed.
+
+## Bounded completed results and handoff
+
+Chrome156.0.8078.47, frozen production680118396504e39cff1534c9de191aac38832f02:
+
+- Sources/citations: six cases,12336 paired computed/visible/SVG snapshots passed.
+- Presentation: six cases,9720 paired snapshots passed.
+- Total unaffected passing coverage:12 cases /22056 paired snapshots across plain CSS,
+  Tailwind3/4, both style orders, five themes, overrides, interactions and cleanup.
+- Media: first plain/before case failed on the mobile gallery grid. Earlier media
+  checkpoints are diagnostic partial coverage; no complete media pass is claimed.
+
+Raw successful family reports/logs and the normal npm lock are retained in results/.
+They use identical runner SHA256546802dddc33ee6da7f2033d41c5dc5313c98e75abc3f6ca98cd3f3f755e9480.
+The first failed full run records its own exact runner hash. The original353244-byte
+frozen tarball is archived under browser-initial/source-media.tgz with the supplied
+SHA256; all results retain the full installed dist manifest and artifact revision.
+
+Required integration commits:9bb31d238 then9214cc528. The first normalizes the grid
+strings, adds all mobile-count regression comparisons and fixes test-only Radix alias
+resolution. Independent review caught a typo in that normalization before repacking;
+9214cc528 restores the exact six-token row. Both reviewers then confirmed no remaining
+scoped findings. Do not repack from9bb31d238 alone. Frozen installed files were untouched.
+
+**Browser window released to Worker1.** Both completed runners exited successfully and
+closed all their contexts/browser/server. Worker1 can integrate the two correction
+commits and repack/install a new fixed artifact. The fixed media matrix remains pending;
+no final slice acceptance, SSR, performance or memory certification is implied. Existing
+Escape/onClick limitations are recorded separately in INHERITED_LIMITATIONS.md.
