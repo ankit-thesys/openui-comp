@@ -332,9 +332,25 @@ try {
             });
         }
         for (const page of pages) {
-          assert.equal(
-            await page.locator("#unrelated").evaluate((n) => getComputedStyle(n).color),
-            "rgb(11, 22, 33)",
+          assert.deepEqual(
+            await page.locator("#unrelated").evaluate((node) => {
+              const style = getComputedStyle(node);
+              return {
+                fontFamily: style.fontFamily,
+                fontSize: style.fontSize,
+                lineHeight: style.lineHeight,
+                color: style.color,
+                padding: style.padding,
+              };
+            }),
+            {
+              fontFamily: "serif",
+              fontSize: "17px",
+              lineHeight: "23px",
+              color: "rgb(11, 22, 33)",
+              padding: "7px",
+            },
+            "host typography, color and padding remain unchanged",
           );
           const sheet = (await page.locator("#_goober").count())
             ? await page.locator("#_goober").textContent()
