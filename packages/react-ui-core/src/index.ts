@@ -25,6 +25,7 @@ export * from "./components/Slider";
 export * from "./components/Steps";
 export * from "./components/SwitchGroup";
 export * from "./components/SwitchItem";
+export * from "./components/Table";
 export * from "./components/Tabs";
 export * from "./components/TextArea";
 export * from "./components/ThemeProvider";

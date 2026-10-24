@@ -1,3 +1,17 @@
+# Active slice #12 — 2026-10-25
+
+Parent draft PR #33 is GREEN at217a662d4: build/package CI passed (run40142522614), changeset passed (run40142522609). The correction from21819f19d is diagnostic formatting/evidence only; no product behavior or measured browser assertions changed. Slice12 branch `codex/react-ui-core-text-media` starts from corrected head217a662d4, keeping slice12 off PR33.
+
+Worker1 owns Table and all public parts, CodeBlock, MarkDownRenderer, InlineMarkdownRenderer, shared root exports/dependencies/lockfile and final integration. Worker2 owns shared icons, source context/schema/safeURL, favicon/citations/Sources first, then assigned leaf text/media. Table and InlineMarkdownRenderer stay in this slice. Do not duplicate Table or edit another worker's files. Source/citation foundation must be committed before markdown integration; no importing legacy implementation into the new package. Remaining leaf ownership will be assigned explicitly. OptionCards remains deferred. Worker1 gets the first browser window once source batches are ready.
+
+Agreed TDD seam: built and normal packed package root, public React DOM behavior and real Chrome; strict types/native ESM/CJS/pruning accompany it. First staged Table test fails because the root export is missing, before implementation. Scroll behavior uses actual browser ResizeObserver/geometry, no mocks. CodeBlock clipboard uses real browser APIs. Preserve source security/rendering defaults and options; report inherited bugs separately.
+
+Compatibility probe: Node rejects the legacy syntax-theme directory import; explicit `react-syntax-highlighter/dist/cjs/styles/prism/index.js` works through the same public themes. Use only necessary supported entry changes. Math source has dynamic rehype-katex but no KaTeX CSS import found; this is a validation risk, not a proven blocker. Verify actual automatic CSS/font delivery before accepting that component. Stop affected requirements if supported tooling cannot meet the contract without patchwork.
+
+No custom runtime patches, stock Goober only, legacy read-only, neither preview modified, no merges/releases/upstream writes. Continuous authorization and root heartbeat from prior handoff remain in force; unresolved product/contract decisions go to user review. Optional friend tickets31/32 remain unassigned.
+
+## Prior slice #11 record
+
 # Current migration handoff — 2026-10-25
 
 ## Slice #11 ready for review — PR #33 CI correction

@@ -1,0 +1,5 @@
+# Table foundation — slice #12
+
+Base217a662d4: corrected draft PR33 passes build/package CI and changeset checks. Agreed seam is built/packed public core root through React DOM and real Chrome. The first focused test failed because Table was missing, then passed after copying only the table primitives and converting their styles with stock Goober. Public refs, native props, table semantics/content, alignment, icons, container customization and rerendering are checked. Build and strict producer types pass. Red/green TAP records are preserved; the initial staged red test used the same public helper through an absolute temporary path before the branch opened.
+
+ScrollableTable is a subsequent vertical batch, not implemented or certified by this first test. It will use real browser geometry and ResizeObserver. No Table duplication across slices, no old source imports or old CSS runtime inputs. No SSR or performance certification. Full packed/native import/type/pruning/browser/CI acceptance waits for the complete slice, including InlineMarkdownRenderer and committed citation prerequisites.
