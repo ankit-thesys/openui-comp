@@ -35,3 +35,8 @@ src/components/OptionCards/__tests__/results/browser/final.json
 
 # Preserve exact first installed-chart comparison failure.
 evidence/charts-owned-source/browser-first.json
+
+# Preserve exact owned chart browser evidence, executed harness and lock.
+evidence/charts-owned-browser/*.json
+evidence/charts-owned-browser/*.mjs
+evidence/charts-owned-browser/*.tsx

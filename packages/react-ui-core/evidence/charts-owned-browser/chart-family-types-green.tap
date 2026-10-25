@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: public shared chart types preserve data, axis, legend and export contracts
+ok 1 - public shared chart types preserve data, axis, legend and export contracts
+  ---
+  duration_ms: 1534.824417
+  type: 'test'
+  ...
+# Subtest: public chart family props preserve callbacks, variants and existing styling boundaries
+ok 2 - public chart family props preserve callbacks, variants and existing styling boundaries
+  ---
+  duration_ms: 1545.656667
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3158.069167

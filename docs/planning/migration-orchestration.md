@@ -1,3 +1,29 @@
+# CURRENT — all chart source integrated/reviewed; owned matrix6/6 GREEN — 2026-10-25
+
+W2 Line/Bar/Scatter5d6ca7dba integrated87837b1e9 and Minis c2c8358d3 integrated
+6582dba01. Area e99b52dc6 already present. Charts barrel exactly matches legacy:
+all19entries/helpers/types. Focused integrated nested/pruning13/13 and public
+typecontracts2/2 pass; producer build/types pass. Both final combined source
+review axes clear. HorizontalBar declared-but-unwired onClick remains inherited;
+Worker2 must verify/disclose it rather than silently change behavior.
+
+Corrected owned source a5cdaa0fa immutable normal consumer passes Chrome6cases /
+40,242 paired observations (plain/TW3/TW4 both initial orders,7ownedfamilies,
+5themes/variants/resize/scopes/actualoverrides/emptyrecovery/print/export/remount).
+Every installedfilematchesarchive; package/lockunchanged; nativeESM/CJS pass.
+Exact report/runner/fixture/lock: evidence/charts-owned-browser/. Original failures
+preserved. This is reduced-motion/settled owned evidence, not animation/tooltip/
+full19/performance/SSR/memory certification.
+
+W1 retains FIRST browser window and prepares final combined immutable artifact,
+then finishes owned hover/animation validation before explicit release to W2.
+No concurrent browser runs. Shared/root/depsW1; W2 family paths read-only toW1.
+No custom runtime patches or legacy/previews/friend/crates changes. No merge,
+issueclosure/release/upstream/main writes. Final combined packagechecks/reviews
+and attached fork-only stacked draft/CI remain pending.
+
+---
+
 # CURRENT — owned charts committed; installed Calendar fallback corrected — 2026-10-25
 
 Owned source `df52427f0d4d05393229ea4812f8fec5d3c7a864` follows foundation cf0301e5

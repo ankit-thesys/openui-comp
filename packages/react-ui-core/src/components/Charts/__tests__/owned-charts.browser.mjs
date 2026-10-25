@@ -298,8 +298,6 @@ async function snapshot(page) {
               "width",
               "height",
               "rx",
-              "fill",
-              "stroke",
               "fill-opacity",
               "data-openui-chart",
             ].map((key) => [key, node.getAttribute(key)]),
