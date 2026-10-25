@@ -1,3 +1,15 @@
+# CURRENT — slice13 local/independent gates PASS; authorized stacked draft preparing — 2026-10-25
+
+Worker2 corrected A/C evidence82953d0ef integrated86860a77a:12 cases /56,268 paired snapshots PASS on exact4119cddbed813f81e37b949ce00421a7e65173a3 artifact492247 bytes, SHA2562c29042765ee120d7f85dd4da7176152ee54cfa7dcaff794ee3990473ea59e02. All installed files match tar, consumer/lock unchanged. W1 corrected D responsive6/10,656 passes on same artifact. Browser/server closed and released back to W1; no more Chrome required.
+
+Final scoped Spec and Standards reviews: no source/harness findings; both identified stale pending A/C wording in draft, now corrected. Raw evidence hashes verified and narrowly excluded from formatting. Historical whole107/107 suite and broader B/D48,494 remain tied tobaa3; targeted corrected source/build/format/native/strict/pruning/browser checks pass. Remote full CI next, no redundant unchanged local matrices.
+
+User/root authorized push ONLY ankit-thesys/openui-comp branch codex/react-ui-core-data-cards and open stacked DRAFT targeting codex/react-ui-core-text-media (#34), attach and check/fix CI. Prepared body docs/planning/slice13-pr-draft.md. No unresolved local gate remains. No merge/release/ticket closure/upstream/main writes. Following publication/CI, next ticket dependency/ownership PROPOSAL is read-only, including deferred OptionCards; no #14/helper/TL-gated implementation before root dispatch.
+
+Inherited Enter/blur duplicate callback, metric sign formatting, ListItem activation and native tooltip DIV/tabIndex-1 retained. Simultaneous very long Snippet slots remain unvalidated after legacy target was not hoverable; separate LHS/RHS portal cases pass. Dynamic stylesheet insertion/reordering recovery and SSR/performance/memory unvalidated. Old legacy/previews/crates unchanged. This section supersedes historical gate statuses below.
+
+---
+
 # CURRENT — corrected slice13 artifact / D responsive PASS / browser RELEASED to Worker2 — 2026-10-25
 
 Worker2 fix64a7f36ef integrated as `4119cddbed813f81e37b949ce00421a7e65173a3`. Conventional base-before-container rule order; no custom runtime/specificity workaround. Original failed A/C evidence8cc96c7be integrated9cad937ee, with prerequisite fixture preserved. Production ownership respected, W1 did not edit shared source.

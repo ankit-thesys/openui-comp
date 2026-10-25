@@ -23,3 +23,7 @@ src/components/OverviewCardBlock/__tests__/results/BROWSER_SHA256.json
 evidence/data-cards/corrected-carousel/consumer-lock.json
 evidence/data-cards/corrected-carousel/*-browser.json
 evidence/data-cards/corrected-carousel/*-responsive.json
+# Preserve Worker2's corrected measurements and exact executed fixtures/runners.
+src/components/OverviewCardBlock/__tests__/results/browser-corrected/**
+src/components/OverviewCardBlock/__tests__/results/corrected-tooltip-fixture/**
+src/components/OverviewCardBlock/__tests__/results/CORRECTED_SHA256.json
