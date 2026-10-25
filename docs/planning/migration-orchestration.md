@@ -1,3 +1,9 @@
+# Selector correction / browser returned to Worker1 — 2026-10-25
+
+Worker2 composer matrix stopped at first default plain/before case: TextBlockView candidate typography/gap differs from legacy. W2 preserved raw evidence252b984e1 (integrated efdcf191c) and explicitly released browser to Worker1. No active W2 browser/server remains. Prior release instructions below are superseded.
+
+Stock Goober public css/extractCss diagnostic shows mid-selector :where serializes incorrectly. Worker1 authored selector correction moves :where to selector ends, preserving legacy matching/specificity (020/030/040), declaration values and rule order. No runtime transform/helper/parser patch. Both reviewers report zero actionable findings; focused public TextBlock test, build and types pass. New frozen artifact and actual browser green remain required. Do not treat old e4e artifact as validating correction. Root math decision remains open and unaffected.
+
 # Final package checkpoint / browser ownership — 2026-10-25
 
 Worker2 STILL owns the released browser window for composer matrix on frozen e4e245bcb consumer described below. Worker1 has NOT launched its text/media matrix. Table/Markdown/InlineHeader/TextBlock/Wrapper non-math runner and fixture are prepared, strict-typechecked and reviewed by both axes with zero remaining static findings. New tests cover plain/TW3/TW4 both actual stylesheet orders, all text variants/sizes/types, themes, custom token13px, class overrides, copy hover/clipboard/reset and Scrollable control initial geometry. Run after explicit browser return; do not infer a pass from preparation.

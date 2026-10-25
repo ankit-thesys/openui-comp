@@ -83,7 +83,7 @@ const numberTitle = {
   font: 'var(--openui-text-numbers-heading-lg, 600 28px/1.1 "Inter", sans-serif)',
   letterSpacing: "var(--openui-text-numbers-heading-lg-letter-spacing, -0.01em)",
 };
-// :where preserves legacy specificity while keeping rules scoped to this component.
+// Keep :where at the selector end: stock Goober preserves its matching and specificity there.
 export const rootClass = css({
   display: "flex",
   flexDirection: "column",
@@ -103,182 +103,182 @@ export const rootClass = css({
     color: "var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1))",
   },
   "& :where(.openui-text-block__tertiary)": { display: "none" },
-  "&:where(.openui-text-block--title-text) .openui-text-block__primary": { ...headingMedium },
-  "&:where(.openui-text-block--title-text) .openui-text-block__secondary": { ...body },
-  "&:where(.openui-text-block--number-title-text) .openui-text-block__primary": {
+  "&.openui-text-block--title-text :where(.openui-text-block__primary)": { ...headingMedium },
+  "&.openui-text-block--title-text :where(.openui-text-block__secondary)": { ...body },
+  "&.openui-text-block--number-title-text :where(.openui-text-block__primary)": {
     ...numberTitleMedium,
   },
-  "&:where(.openui-text-block--number-title-text) .openui-text-block__secondary": { ...body },
-  "&:where(.openui-text-block--text-subtext) .openui-text-block__primary": { ...body },
-  "&:where(.openui-text-block--text-subtext) .openui-text-block__secondary": { ...bodySmall },
+  "&.openui-text-block--number-title-text :where(.openui-text-block__secondary)": { ...body },
+  "&.openui-text-block--text-subtext :where(.openui-text-block__primary)": { ...body },
+  "&.openui-text-block--text-subtext :where(.openui-text-block__secondary)": { ...bodySmall },
   "&:where(.openui-text-block--highlight-text-number-subtext)": { gap: 0 },
-  "&:where(.openui-text-block--highlight-text-number-subtext) .openui-text-block__primary": {
+  "&.openui-text-block--highlight-text-number-subtext :where(.openui-text-block__primary)": {
     ...bodyHeavy,
   },
-  "&:where(.openui-text-block--highlight-text-number-subtext) .openui-text-block__secondary": {
+  "&.openui-text-block--highlight-text-number-subtext :where(.openui-text-block__secondary)": {
     ...bodySmall,
   },
-  "&:where(.openui-text-block--text) .openui-text-block__primary": { ...body },
-  "&:where(.openui-text-block--highlight-text) .openui-text-block__primary": { ...bodyHeavy },
-  "&:where(.openui-text-block--number) .openui-text-block__primary": { ...numberHeavy },
-  "&:where(.openui-text-block--highlight-number) .openui-text-block__primary": {
+  "&.openui-text-block--text :where(.openui-text-block__primary)": { ...body },
+  "&.openui-text-block--highlight-text :where(.openui-text-block__primary)": { ...bodyHeavy },
+  "&.openui-text-block--number :where(.openui-text-block__primary)": { ...numberHeavy },
+  "&.openui-text-block--highlight-number :where(.openui-text-block__primary)": {
     ...numberLargeHeavy,
   },
 
-  "&:where(.openui-text-block--size-xs).openui-text-block--title-text, &:where(.openui-text-block--size-xs).openui-text-block--number-title-text":
+  "&.openui-text-block--title-text:where(.openui-text-block--size-xs), &.openui-text-block--number-title-text:where(.openui-text-block--size-xs)":
     { gap: 0 },
-  "&:where(.openui-text-block--size-xs).openui-text-block--title-text .openui-text-block__primary":
+  "&.openui-text-block--size-xs.openui-text-block--title-text :where(.openui-text-block__primary)":
     { ...headingXs },
-  "&:where(.openui-text-block--size-xs).openui-text-block--title-text .openui-text-block__secondary":
+  "&.openui-text-block--size-xs.openui-text-block--title-text :where(.openui-text-block__secondary)":
     { ...bodySmall },
-  "&:where(.openui-text-block--size-xs).openui-text-block--number-title-text .openui-text-block__primary":
+  "&.openui-text-block--size-xs.openui-text-block--number-title-text :where(.openui-text-block__primary)":
     { ...numberHeavy },
-  "&:where(.openui-text-block--size-xs).openui-text-block--number-title-text .openui-text-block__secondary":
+  "&.openui-text-block--size-xs.openui-text-block--number-title-text :where(.openui-text-block__secondary)":
     { ...bodySmall },
-  "&:where(.openui-text-block--size-xs).openui-text-block--text .openui-text-block__primary": {
+  "&.openui-text-block--size-xs.openui-text-block--text :where(.openui-text-block__primary)": {
     ...bodySmall,
   },
-  "&:where(.openui-text-block--size-xs).openui-text-block--text.openui-text-block--type-number .openui-text-block__primary":
+  "&.openui-text-block--size-xs.openui-text-block--text.openui-text-block--type-number :where(.openui-text-block__primary)":
     { ...numberSmall },
-  "&:where(.openui-text-block--size-xs).openui-text-block--text-subtext, &:where(.openui-text-block--size-xs).openui-text-block--highlight-text-number-subtext":
+  "&.openui-text-block--text-subtext:where(.openui-text-block--size-xs), &.openui-text-block--highlight-text-number-subtext:where(.openui-text-block--size-xs)":
     { gap: 0 },
-  "&:where(.openui-text-block--size-xs).openui-text-block--text-subtext .openui-text-block__primary":
+  "&.openui-text-block--size-xs.openui-text-block--text-subtext :where(.openui-text-block__primary)":
     { ...bodySmall },
-  "&:where(.openui-text-block--size-xs).openui-text-block--text-subtext.openui-text-block--type-number .openui-text-block__primary":
+  "&.openui-text-block--size-xs.openui-text-block--text-subtext.openui-text-block--type-number :where(.openui-text-block__primary)":
     { ...numberSmall },
-  "&:where(.openui-text-block--size-xs).openui-text-block--highlight-text-number-subtext .openui-text-block__primary":
+  "&.openui-text-block--size-xs.openui-text-block--highlight-text-number-subtext :where(.openui-text-block__primary)":
     { ...bodySmallHeavy },
-  "&:where(.openui-text-block--size-xs).openui-text-block--highlight-text-number-subtext.openui-text-block--type-number .openui-text-block__primary":
+  "&.openui-text-block--size-xs.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number :where(.openui-text-block__primary)":
     { ...numberSmallHeavy },
-  "&:where(.openui-text-block--size-xs).openui-text-block--text-subtext .openui-text-block__secondary, &:where(.openui-text-block--size-xs).openui-text-block--highlight-text-number-subtext .openui-text-block__secondary":
+  "&.openui-text-block--size-xs.openui-text-block--text-subtext :where(.openui-text-block__secondary), &.openui-text-block--size-xs.openui-text-block--highlight-text-number-subtext :where(.openui-text-block__secondary)":
     { ...bodySmall },
-  "&:where(.openui-text-block--size-xs).openui-text-block--highlight-text-number-subtext.openui-text-block--type-number .openui-text-block__secondary":
+  "&.openui-text-block--size-xs.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number :where(.openui-text-block__secondary)":
     { ...numberSmall },
-  "&:where(.openui-text-block--size-xs).openui-text-block--number .openui-text-block__primary": {
+  "&.openui-text-block--size-xs.openui-text-block--number :where(.openui-text-block__primary)": {
     ...numberSmall,
   },
-  "&:where(.openui-text-block--size-xs).openui-text-block--highlight-number .openui-text-block__primary":
+  "&.openui-text-block--size-xs.openui-text-block--highlight-number :where(.openui-text-block__primary)":
     { ...numberSmallHeavy },
-  "&:where(.openui-text-block--size-xs).openui-text-block--highlight-text .openui-text-block__primary":
+  "&.openui-text-block--size-xs.openui-text-block--highlight-text :where(.openui-text-block__primary)":
     { ...bodySmallHeavy },
 
-  "&:where(.openui-text-block--size-sm).openui-text-block--title-text, &:where(.openui-text-block--size-sm).openui-text-block--number-title-text":
+  "&.openui-text-block--title-text:where(.openui-text-block--size-sm), &.openui-text-block--number-title-text:where(.openui-text-block--size-sm)":
     { gap: "var(--openui-space-3xs, 2px)" },
-  "&:where(.openui-text-block--size-sm).openui-text-block--title-text .openui-text-block__primary":
+  "&.openui-text-block--size-sm.openui-text-block--title-text :where(.openui-text-block__primary)":
     { ...headingSmall },
-  "&:where(.openui-text-block--size-sm).openui-text-block--title-text .openui-text-block__secondary":
+  "&.openui-text-block--size-sm.openui-text-block--title-text :where(.openui-text-block__secondary)":
     { ...body },
-  "&:where(.openui-text-block--size-sm).openui-text-block--number-title-text .openui-text-block__primary":
+  "&.openui-text-block--size-sm.openui-text-block--number-title-text :where(.openui-text-block__primary)":
     { ...numberLargeHeavy },
-  "&:where(.openui-text-block--size-sm).openui-text-block--number-title-text .openui-text-block__secondary":
+  "&.openui-text-block--size-sm.openui-text-block--number-title-text :where(.openui-text-block__secondary)":
     { ...body },
-  "&:where(.openui-text-block--size-sm).openui-text-block--text .openui-text-block__primary": {
+  "&.openui-text-block--size-sm.openui-text-block--text :where(.openui-text-block__primary)": {
     ...body,
   },
-  "&:where(.openui-text-block--size-sm).openui-text-block--text.openui-text-block--type-number .openui-text-block__primary":
+  "&.openui-text-block--size-sm.openui-text-block--text.openui-text-block--type-number :where(.openui-text-block__primary)":
     { ...number },
-  "&:where(.openui-text-block--size-sm).openui-text-block--text-subtext, &:where(.openui-text-block--size-sm).openui-text-block--highlight-text-number-subtext":
+  "&.openui-text-block--text-subtext:where(.openui-text-block--size-sm), &.openui-text-block--highlight-text-number-subtext:where(.openui-text-block--size-sm)":
     { gap: 0 },
-  "&:where(.openui-text-block--size-sm).openui-text-block--text-subtext .openui-text-block__primary":
+  "&.openui-text-block--size-sm.openui-text-block--text-subtext :where(.openui-text-block__primary)":
     { ...body },
-  "&:where(.openui-text-block--size-sm).openui-text-block--text-subtext.openui-text-block--type-number .openui-text-block__primary":
+  "&.openui-text-block--size-sm.openui-text-block--text-subtext.openui-text-block--type-number :where(.openui-text-block__primary)":
     { ...number },
-  "&:where(.openui-text-block--size-sm).openui-text-block--highlight-text-number-subtext .openui-text-block__primary":
+  "&.openui-text-block--size-sm.openui-text-block--highlight-text-number-subtext :where(.openui-text-block__primary)":
     { ...bodyHeavy },
-  "&:where(.openui-text-block--size-sm).openui-text-block--highlight-text-number-subtext.openui-text-block--type-number .openui-text-block__primary":
+  "&.openui-text-block--size-sm.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number :where(.openui-text-block__primary)":
     { ...numberHeavy },
-  "&:where(.openui-text-block--size-sm).openui-text-block--text-subtext .openui-text-block__secondary, &:where(.openui-text-block--size-sm).openui-text-block--highlight-text-number-subtext .openui-text-block__secondary":
+  "&.openui-text-block--size-sm.openui-text-block--text-subtext :where(.openui-text-block__secondary), &.openui-text-block--size-sm.openui-text-block--highlight-text-number-subtext :where(.openui-text-block__secondary)":
     { ...bodySmall },
-  "&:where(.openui-text-block--size-sm).openui-text-block--highlight-text-number-subtext.openui-text-block--type-number .openui-text-block__secondary":
+  "&.openui-text-block--size-sm.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number :where(.openui-text-block__secondary)":
     { ...numberSmall },
-  "&:where(.openui-text-block--size-sm).openui-text-block--number .openui-text-block__primary": {
+  "&.openui-text-block--size-sm.openui-text-block--number :where(.openui-text-block__primary)": {
     ...numberSmall,
   },
-  "&:where(.openui-text-block--size-sm).openui-text-block--highlight-number .openui-text-block__primary":
+  "&.openui-text-block--size-sm.openui-text-block--highlight-number :where(.openui-text-block__primary)":
     { ...numberHeavy },
-  "&:where(.openui-text-block--size-sm).openui-text-block--highlight-text": { gap: 0 },
-  "&:where(.openui-text-block--size-sm).openui-text-block--highlight-text .openui-text-block__secondary":
+  "&.openui-text-block--highlight-text:where(.openui-text-block--size-sm)": { gap: 0 },
+  "&.openui-text-block--size-sm.openui-text-block--highlight-text :where(.openui-text-block__secondary)":
     { ...bodySmall },
-  "&:where(.openui-text-block--size-sm).openui-text-block--highlight-text .openui-text-block__primary":
+  "&.openui-text-block--size-sm.openui-text-block--highlight-text :where(.openui-text-block__primary)":
     { ...bodyHeavy },
 
-  "&:where(.openui-text-block--size-md).openui-text-block--title-text, &:where(.openui-text-block--size-md).openui-text-block--number-title-text":
+  "&.openui-text-block--title-text:where(.openui-text-block--size-md), &.openui-text-block--number-title-text:where(.openui-text-block--size-md)":
     { gap: "var(--openui-space-xs, 6px)" },
-  "&:where(.openui-text-block--size-md).openui-text-block--title-text .openui-text-block__primary":
+  "&.openui-text-block--size-md.openui-text-block--title-text :where(.openui-text-block__primary)":
     { ...headingMedium },
-  "&:where(.openui-text-block--size-md).openui-text-block--title-text .openui-text-block__secondary":
+  "&.openui-text-block--size-md.openui-text-block--title-text :where(.openui-text-block__secondary)":
     { ...body },
-  "&:where(.openui-text-block--size-md).openui-text-block--number-title-text .openui-text-block__primary":
+  "&.openui-text-block--size-md.openui-text-block--number-title-text :where(.openui-text-block__primary)":
     { ...numberTitleMedium },
-  "&:where(.openui-text-block--size-md).openui-text-block--number-title-text .openui-text-block__secondary":
+  "&.openui-text-block--size-md.openui-text-block--number-title-text :where(.openui-text-block__secondary)":
     { ...body },
-  "&:where(.openui-text-block--size-md).openui-text-block--text-subtext, &:where(.openui-text-block--size-md).openui-text-block--highlight-text, &:where(.openui-text-block--size-md).openui-text-block--highlight-text-number-subtext":
+  "&.openui-text-block--text-subtext:where(.openui-text-block--size-md), &.openui-text-block--highlight-text:where(.openui-text-block--size-md), &.openui-text-block--highlight-text-number-subtext:where(.openui-text-block--size-md)":
     { gap: 0 },
-  "&:where(.openui-text-block--size-md).openui-text-block--highlight-text .openui-text-block__secondary":
+  "&.openui-text-block--size-md.openui-text-block--highlight-text :where(.openui-text-block__secondary)":
     { ...body },
-  "&:where(.openui-text-block--size-md).openui-text-block--highlight-text .openui-text-block__primary":
+  "&.openui-text-block--size-md.openui-text-block--highlight-text :where(.openui-text-block__primary)":
     { ...bodyHeavy },
-  "&:where(.openui-text-block--size-md).openui-text-block--text-subtext .openui-text-block__primary":
+  "&.openui-text-block--size-md.openui-text-block--text-subtext :where(.openui-text-block__primary)":
     { ...body },
-  "&:where(.openui-text-block--size-md).openui-text-block--text-subtext.openui-text-block--type-number .openui-text-block__primary":
+  "&.openui-text-block--size-md.openui-text-block--text-subtext.openui-text-block--type-number :where(.openui-text-block__primary)":
     { ...number },
-  "&:where(.openui-text-block--size-md).openui-text-block--highlight-text-number-subtext .openui-text-block__primary":
+  "&.openui-text-block--size-md.openui-text-block--highlight-text-number-subtext :where(.openui-text-block__primary)":
     { ...bodyHeavy },
-  "&:where(.openui-text-block--size-md).openui-text-block--highlight-text-number-subtext.openui-text-block--type-number .openui-text-block__primary":
+  "&.openui-text-block--size-md.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number :where(.openui-text-block__primary)":
     { ...numberHeavy },
-  "&:where(.openui-text-block--size-md).openui-text-block--text-subtext .openui-text-block__secondary, &:where(.openui-text-block--size-md).openui-text-block--highlight-text-number-subtext .openui-text-block__secondary":
+  "&.openui-text-block--size-md.openui-text-block--text-subtext :where(.openui-text-block__secondary), &.openui-text-block--size-md.openui-text-block--highlight-text-number-subtext :where(.openui-text-block__secondary)":
     { ...body },
-  "&:where(.openui-text-block--size-md).openui-text-block--text-subtext.openui-text-block--type-number .openui-text-block__secondary":
+  "&.openui-text-block--size-md.openui-text-block--text-subtext.openui-text-block--type-number :where(.openui-text-block__secondary)":
     { ...number },
-  "&:where(.openui-text-block--size-md).openui-text-block--highlight-text-number-subtext.openui-text-block--type-number .openui-text-block__secondary":
+  "&.openui-text-block--size-md.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number :where(.openui-text-block__secondary)":
     { ...number },
-  "&:where(.openui-text-block--size-md).openui-text-block--text.openui-text-block--type-number .openui-text-block__primary":
+  "&.openui-text-block--size-md.openui-text-block--text.openui-text-block--type-number :where(.openui-text-block__primary)":
     { ...number },
-  "&:where(.openui-text-block--size-md).openui-text-block--number .openui-text-block__primary": {
+  "&.openui-text-block--size-md.openui-text-block--number :where(.openui-text-block__primary)": {
     ...number,
   },
-  "&:where(.openui-text-block--size-md).openui-text-block--highlight-number .openui-text-block__primary":
+  "&.openui-text-block--size-md.openui-text-block--highlight-number :where(.openui-text-block__primary)":
     { ...numberHeavy },
 
-  "&:where(.openui-text-block--size-lg).openui-text-block--text .openui-text-block__primary": {
+  "&.openui-text-block--size-lg.openui-text-block--text :where(.openui-text-block__primary)": {
     ...bodyLarge,
   },
-  "&:where(.openui-text-block--size-lg).openui-text-block--text.openui-text-block--type-number .openui-text-block__primary":
+  "&.openui-text-block--size-lg.openui-text-block--text.openui-text-block--type-number :where(.openui-text-block__primary)":
     { ...numberLarge },
-  "&:where(.openui-text-block--size-lg).openui-text-block--text-subtext, &:where(.openui-text-block--size-lg).openui-text-block--highlight-text, &:where(.openui-text-block--size-lg).openui-text-block--highlight-text-number-subtext":
+  "&.openui-text-block--text-subtext:where(.openui-text-block--size-lg), &.openui-text-block--highlight-text:where(.openui-text-block--size-lg), &.openui-text-block--highlight-text-number-subtext:where(.openui-text-block--size-lg)":
     { gap: 0 },
-  "&:where(.openui-text-block--size-lg).openui-text-block--highlight-text .openui-text-block__secondary":
+  "&.openui-text-block--size-lg.openui-text-block--highlight-text :where(.openui-text-block__secondary)":
     { ...body },
-  "&:where(.openui-text-block--size-lg).openui-text-block--highlight-text .openui-text-block__primary":
+  "&.openui-text-block--size-lg.openui-text-block--highlight-text :where(.openui-text-block__primary)":
     { ...bodyLargeHeavy },
-  "&:where(.openui-text-block--size-lg).openui-text-block--text-subtext .openui-text-block__primary":
+  "&.openui-text-block--size-lg.openui-text-block--text-subtext :where(.openui-text-block__primary)":
     { ...bodyLarge },
-  "&:where(.openui-text-block--size-lg).openui-text-block--text-subtext.openui-text-block--type-number .openui-text-block__primary":
+  "&.openui-text-block--size-lg.openui-text-block--text-subtext.openui-text-block--type-number :where(.openui-text-block__primary)":
     { ...numberLarge },
-  "&:where(.openui-text-block--size-lg).openui-text-block--highlight-text-number-subtext .openui-text-block__primary":
+  "&.openui-text-block--size-lg.openui-text-block--highlight-text-number-subtext :where(.openui-text-block__primary)":
     { ...bodyLargeHeavy },
-  "&:where(.openui-text-block--size-lg).openui-text-block--highlight-text-number-subtext.openui-text-block--type-number .openui-text-block__primary":
+  "&.openui-text-block--size-lg.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number :where(.openui-text-block__primary)":
     { ...numberLargeHeavy },
-  "&:where(.openui-text-block--size-lg).openui-text-block--text-subtext .openui-text-block__secondary, &:where(.openui-text-block--size-lg).openui-text-block--highlight-text-number-subtext .openui-text-block__secondary":
+  "&.openui-text-block--size-lg.openui-text-block--text-subtext :where(.openui-text-block__secondary), &.openui-text-block--size-lg.openui-text-block--highlight-text-number-subtext :where(.openui-text-block__secondary)":
     { ...body },
-  "&:where(.openui-text-block--size-lg).openui-text-block--text-subtext.openui-text-block--type-number .openui-text-block__secondary":
+  "&.openui-text-block--size-lg.openui-text-block--text-subtext.openui-text-block--type-number :where(.openui-text-block__secondary)":
     { ...number },
-  "&:where(.openui-text-block--size-lg).openui-text-block--highlight-text-number-subtext.openui-text-block--type-number .openui-text-block__secondary":
+  "&.openui-text-block--size-lg.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number :where(.openui-text-block__secondary)":
     { ...number },
-  "&:where(.openui-text-block--size-lg).openui-text-block--number .openui-text-block__primary": {
+  "&.openui-text-block--size-lg.openui-text-block--number :where(.openui-text-block__primary)": {
     ...numberLarge,
   },
-  "&:where(.openui-text-block--size-lg).openui-text-block--highlight-number .openui-text-block__primary":
+  "&.openui-text-block--size-lg.openui-text-block--highlight-number :where(.openui-text-block__primary)":
     { ...numberLargeHeavy },
-  "&:where(.openui-text-block--size-lg).openui-text-block--title-text, &:where(.openui-text-block--size-lg).openui-text-block--number-title-text":
+  "&.openui-text-block--title-text:where(.openui-text-block--size-lg), &.openui-text-block--number-title-text:where(.openui-text-block--size-lg)":
     { gap: "var(--openui-space-xs, 6px)" },
-  "&:where(.openui-text-block--size-lg).openui-text-block--title-text .openui-text-block__primary":
+  "&.openui-text-block--size-lg.openui-text-block--title-text :where(.openui-text-block__primary)":
     { ...headingLarge },
-  "&:where(.openui-text-block--size-lg).openui-text-block--title-text .openui-text-block__secondary":
+  "&.openui-text-block--size-lg.openui-text-block--title-text :where(.openui-text-block__secondary)":
     { ...bodyLarge },
-  "&:where(.openui-text-block--size-lg).openui-text-block--number-title-text .openui-text-block__primary":
+  "&.openui-text-block--size-lg.openui-text-block--number-title-text :where(.openui-text-block__primary)":
     { ...numberTitle },
-  "&:where(.openui-text-block--size-lg).openui-text-block--number-title-text .openui-text-block__secondary":
+  "&.openui-text-block--size-lg.openui-text-block--number-title-text :where(.openui-text-block__secondary)":
     { ...bodyLarge },
   "&:where(.openui-text-block--align-left)": { alignItems: "flex-start", textAlign: "left" },
   "&:where(.openui-text-block--align-center)": { alignItems: "center", textAlign: "center" },
