@@ -1,0 +1,21 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'rgba(0, 0, 0, 0)'
+- 'rgb(239, 68, 68)'
+      ^
+
+    at file:///Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/tests/browser/run.mjs:65:12 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'rgba(0, 0, 0, 0)',
+  expected: 'rgb(239, 68, 68)',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

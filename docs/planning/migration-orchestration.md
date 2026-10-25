@@ -1,3 +1,382 @@
+# CURRENT — isolated corrected model matrix GREEN; final review/draft preparing — 2026-10-25
+
+W2fixture4cbf35b76 integratedbd2388162; standardprivatefixturepackageidentity
+andcompiledmoduleorigin guards removeworkspace-selfreference. Onfrozen9ee057613
+/9fc archive+normalconsumer, strictfocusedmatrixPASS36framework/order/theme
+cases,192pairedstyle-statecomparisons,0failures/console/pageerrors. Arm-labelled
+darklogos unchangedexpectedD; exposed/open/nested/winningoverrideborderchecks
+allpass. All566kits+2202corefiles stillbyte-matcharchives; manifest/lockunchanged.
+Rawgzip, exactrunner/fixture+manifests/servedCSS/origins/proofs in
+ModelSwitcher/__tests__/results/browser-model-border-9ee057613-isolated/.
+AllW1Chrome/serverclosed; browserreleased/available, no further browser needed.
+
+Independentverifier9fc6/6framework/ordercases+360observationsPASS. Other verifier
+metadata/native/types/Zod/parser/actions/active-cancelcleanup/theme/math/assets
+checks retain7adprovenance; only4modelstyleJS/maps differ in9fc. Exactindependent
+reports/results/inputs snapshottedunderkits/evidence/chat-library/independent-verifier
+withoriginalpaths+hashes. Costs1.90MBraw/572KBgzipJS+218KBCSS; unusedbuilds1.07MB
+fontsemit/zero unuseddownloads. Measurements only, not#17performanceacceptance.
+
+W2historicalrun5 provenanceprovedinstalled8405(onecontext);36semanticcompletions
+remainboundedTHATartifact,42strictstylefailures preserved. W1c674splitfixture
+attempt remainsinvalid/no passclaim. New36focusedrun isnotfullbehaviorrerun.
+FullproductpackageCI7/7+allchecks GREEN; finalaggregateSpec/Standards review
+andauthorizedfork-onlystackedDRAFTatopPR37next, thenremoteCI. No merge/closure/
+release/deprecation/upstream/main/legacy/preview/sharedSelect writes. SSR/#17
+separate; untrackedcratespreserved. Rootretainsacceptanceauthority.
+
+---
+
+# CURRENT — isolated focused matrix running on9fc; W1 owns browser — 2026-10-25
+
+W2harness4cbf35b76 integratedbd2388162. Conventionalprivatefixturemanifest
+preventsparentpackageSelfreference; buildguardsrequirekits/coremoduleorigins
+insideinventoriedconsumer, waitsfixturetheme andlabelslogoassertions byarm.
+No productchange/refreeze. W1 nowrunsfocused36framework/order/themecases on
+9ee057613/9fc consumer withsame strictproperties/expectations andneworiginproof.
+Output browser-model-border-9ee057613-isolated is separate frominvalidattempt.
+
+W2historicalmoduleaudit provesold8405runs usedinstalledkits/core+onecontext;
+run5's36behaviorcompletions/42stylefailures remainvalidforTHAT artifact only.
+W1's priorc674mixedgraphnone/lightpasses+darkfailure cannotcertifyinstalled9fc.
+Rawrecords retained. Independentverifier9fc6/6+360observationsPASS; exactreports/
+fixtures copiedbyte-for-byteunderkits/evidence/chat-library/independent-verifier
+withoriginal /private/tmp paths+hashes. No sourceequality-only acceptance.
+
+Waitcurrentstrictfocusedrun; no competingbrowser. PackageCI7/7+source reviewclear.
+No fullcore/unchangedlibrarymatrix repeats, SSR/#17/perf/memoryclaim, review-ready
+PR, merge/release/closure/upstream/main/legacy/preview edits. Cratespreserved.
+
+---
+
+# CURRENT — focused attempt incomplete; browser RELEASED to verifier — 2026-10-25
+
+W1rancommittedfocusedharnessaae711ad3 onfrozen9ee057613 / kit9fc227a88...
+consumer /private/tmp/chat16-model-border-consumer. None+light cells eachpassed
+5strictcomparisons; darknormalstylecomparisonmatched, thenlogoassertionrunner428
+readLexpectedD. Assertiondoesnotlabelarm; W2mustdiagnosefixturestateobservation
+versusproductbehavior. Fullaffectedmatrix remainsUNPASSED; donotweaken/filter
+assertionorclaimCSSfailurecausewithoutproof. Remainingcellsnotrun.
+
+Preservedrawgzip/exactrunner+fixture/servedCSS/log/summary under
+ModelSwitcher/__tests__/results/browser-model-border-9ee057613/. Installed
+inventoriesunchanged. Original42/330red remains separate. AllW1Chrome/server
+closed byrunnerfinally. **Browser explicitly RELEASED to verifier now** for its
+targetedcorrectedborderconfirmationon9ee/9fc whileW2source-onlydiagnosesharness.
+Rootrelaysfinding/release; W1willnotlaunchChromeagainuntilcoordination.
+
+Productcodeunchangedfrom9ee. FullpackageCI7/7+allchecks/source reviewsclear,
+but no combinedstyleacceptance orreview-readyPR. No runtimepatch/sourcefixon
+speculation, sharedSelect/legacy/preview changes, SSR/#17claim, merge/release/
+closure. Preserveuntrackedcrates. Newartifactpaths/hashes inpriorhandoffs.
+
+---
+
+# CURRENT — verifier released; W1 running strict focused border regression — 2026-10-25
+
+Verifier completed independent metadata/native/type/transport/theme/asset checks
+on7ad and explicitlyclosed/releasedallChrome/serverresources. W1 nowowns the
+boundedaffectedbrowserwindow underrootauthorization. RunningcommittedW2harness
+KIT_BORDER_ONLY=1 onimmutable9ee057613 / kitSHA9fc227a88... consumer
+/private/tmp/chat16-model-border-consumer. Rawoutput uniqueownedresults directory
+browser-model-border-9ee057613; preserveoldfailures. No competingbrowser.
+
+Correctionruntimeonly4ModelSwitcherstyleJS/maps; allother562filesandcoreidentical.
+CombinedpackageCI7/7 andbothsource+harnessreviewaxesGREEN. Thisdoesnotcountas
+browsercorrectionpassuntilrunfinishes. OncompletionW1willrecordexactresultsand
+explicitlyreleaseforverifier's focusedcorrectionconfirmation. No fullcorematrix
+repeats, SSR/#17/perf/memoryacceptance, review-readyPR, merge/release/closure.
+Alllegacy/sharedSelect/previewfilesread-only; untrackedcratespreserved.
+
+---
+
+# CURRENT — corrected model package CI GREEN; await verifier browser release — 2026-10-25
+
+Frozen source9ee057613 / kitSHA9fc227a88cbf6d949247aee90e729efa58d669ba738674880396903db98785bb
+at /private/tmp/chat16-model-border-artifacts/openuidev-kits-0.0.0-beta.0.tgz,
+consumer /private/tmp/chat16-model-border-consumer. Corea5d002... unchanged.
+All566kits+2202corefilesverified; only4modelstyleJS/mapfiles differ from7ad.
+Complete package CI7/7 plusformat/lint/types/build/Publint/ATTW GREEN (six
+inheritedhookwarnings/zeroerrors). BothindependentSpec/Standards correction
+source+harnessreviews clear. RawCIlog in model-border-correction/.
+
+Committed W2 focusedharnessaae711ad3 ready, KIT_BORDER_ONLY=1. Verifier still
+holds browser bylastrootdispatch; W1 has not launched Chrome. Awaitexplicit
+release/rootcoordination, then runstrictaffectedstates onTHIS immutableconsumer
+(openTrigger/nestedhover/exposed1pxsolidborder/winningconsumercolor). Preserve
+old42/330failedred evidence; no source-review conversiontopass. No review-ready
+PR untilaffectedverification; #17acceptance separate. Alllegacy/sharedSelect/
+previewfilesread-only, untrackedcratespreserved. No merges/releases/closures.
+
+---
+
+# CURRENT — model-only correction integrated/refrozen; verifier still owns Chrome — 2026-10-25
+
+W2source1a41c2c33 integrated9ee057613: ordinaryborderColor:currentColor inexisting
+modelhover/openrule. W2harnessaeacb5bde integratedaae711ad3: strictfocusedborder
+regression includesopenTrigger, nestedstate, exposed1pxsolidborder andwinning
+consumercolor; pointersequencingfixed byW2reviews. No sharedSelect/legacy/API/
+token/runtimepatch changes. Old42/330failedcomparisons remain preserved.
+
+NEWfrozenproduct9ee057613, kitsarchive
+/private/tmp/chat16-model-border-artifacts/openuidev-kits-0.0.0-beta.0.tgz
+237948bytes SHA256
+9fc227a88cbf6d949247aee90e729efa58d669ba738674880396903db98785bb.
+Consumer /private/tmp/chat16-model-border-consumer. Corearchivea5d002... unchanged
+at /private/tmp/chat16-final-artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz.
+Only4modelstyleJS/sourceMapfiles differ frommetadata-corrected7adarchive; all
+other562files identical. All566kits+2202coreinstalledfiles matcharchives.
+Manifest/lock anddelta proof underkits/evidence/chat-library/model-border-correction.
+Build/types pass; combinedpackageCI/currentreviews running.
+
+Verifier currentlyownsChrome; W1has not launchedbrowser. Awaitexplicitrelease,
+then rootcoordinates KIT_BORDER_ONLY=1 affectedmatrix onTHIS artifact, preserves
+strictred evidence and validatesopen/nested/exposed/overriddenborderstates.
+Verifier should independentlyvalidatecorrectionafteraffectedrun. No needrepeat
+unaffectedcore/chart/librarymatrices solelyformodelCSSdelta. No review-readyPR
+untilcorrectionverified; no #17/perf/memory/SSRclaim, merge/release/closure/main/
+upstream/legacy/preview edits. Untrackedcrates preserved. Rootrelaysnewartifact.
+
+---
+
+# CURRENT — W2 diagnostic/diagnosis integrated; verifier owns browser — 2026-10-25
+
+Committed W2 harness fccf63f39/0c3d59271 and evidence35eaa68f3/diagnosisb9db53373
+integrated as7e0b25d6a/34fbbc172/7f0b4e9cc/ee051ffc6, respectively.
+No product changes from that integration. All36 behavior cases completed, but
+42of330 paired style-state comparisons FAILED (36hover+6nestedhover; four border
+colors each=168propertydifferences). Botharms0pxnone; do notnormalize/dismiss.
+Source diagnosis explains equal specificity and reversed registration order.
+Root authorized W2's conventional model-only explicit currentColor hover/open
+reset, with shared Select/legacy untouched. Await its committed source batch.
+
+Verifier NOW owns browser, independently confirmed metadata-only Zod correction.
+W1 does source/static preparation only; no Chrome/heavy competing workloads.
+After committed W2 correction: integrate, build/refreeze through W1, preserve
+old failed8405+metadata-onlyd9cc96898 artifacts/evidence, provide exact newhash/
+consumer and coordinate affected model states/open trigger/nested/consumer
+border-width+style overrides after verifier's explicit release. Then verifier
+validates correction. No review-ready PR before that gate.
+
+Package scoped .prettierignore protects rawexecuted W2 results/evidence from
+formatting; current live source/test formatting passes. No rawfiles rewritten.
+#17/SSR/perf/memory remains separate. No merges/releases/closures/upstream/main/
+legacy/sharedSelect/preview writes. Untrackedcrates preserved.
+
+---
+
+# CURRENT — corrected W1 library browser gate GREEN; RELEASED to verifier — 2026-10-25
+
+After explicit W2 release/root dispatch, W1 ran the corrected production-Vite
+library matrix on metadata-corrected d9cc96898 archive/consumer (hash below).
+All6 plain/TW3/TW4 bothinitialorders pass actual host CSS readiness+DOMorder,
+settled/distinct host-vs-kit hover, cancellation after observed live partial
+HTTPstream with ERR_ABORTED, resubmission/clear, no-providergap, text/table/
+2paintedbars/forms/validation/actions/history/scopedtheme+portalselection.
+Zero pageerrors/liveendstreams. Installed566kits+2202corefiles stillbyte-match
+archives; manifest/lock unchanged. Rawlog+exactexecutedfixtures+proof in
+packages/kits/evidence/chat-library/reviewed-browser/. Earlierprovisionalruns
+remain separate; no retroactive recertification.
+
+**All W1 Chrome/server closed. Browser explicitly RELEASED to verifier now.**
+Verifier thread01a17359-1780-7d12-94d4-2591f99aecf2 may perform its bounded
+independent browser/transport/asset-cost checks when root relays this release.
+W1 will not launch another browser until coordination. Metadata-only corrected
+kitSHA7ad36554f9a619b6ea0da7feb9280570078e2451051e8ac3d5d09abb30225880
+at /private/tmp/chat16-zod-metadata-artifacts/openuidev-kits-0.0.0-beta.0.tgz;
+consumer /private/tmp/chat16-zod-metadata-consumer; corea5d002... unchanged.
+
+W2 completed36diagnosticcases, semanticchecks pass, but strict hover/nested
+ModelSwitcher border-color comparisons remainUNPASSED (zero-widthnone).
+Do notnormalize/weakenassertions orclaimfullparity. AwaitW2committedevidence
+and source-cascade diagnosis/conventional correction proposal. W1 owns no
+component-source edits. No draft until remaining acceptance gates; no #17/
+SSR/perf/memoryclaim, merge/release/closure/upstream/legacy/preview writes.
+Untrackedcrates preserved. Root relays sequencing and artifact details.
+
+---
+
+# CURRENT — Zod minimum corrected; new metadata-only artifact ready — 2026-10-25
+
+Root authorized verifier finding correction in NEW kits only. `d9cc96898`
+requires Zod `^3.25.76 || ^4.0.0`; README agrees. No old package edits.
+Public npm peer regression genuinely failed on8405 (accepted broken3.25.0),
+then passes under corrected metadata (strict install rejects3.25.0/ERESOLVE).
+Full corrected package CI7/7 +format/lint/types/build/Publint/ATTW GREEN;
+six inherited hook warnings, zero errors. Both correction reviews clear.
+New minimum3.25.76 actual normal consumer passes nativeESM/CJS, strict3modes,
+parser chunks and Renderer streaming/form/actions/history/clear checks.
+
+NEW kits archive (preserve old8405 archive/consumer):
+`/private/tmp/chat16-zod-metadata-artifacts/openuidev-kits-0.0.0-beta.0.tgz`
+237869bytes, SHA256
+`7ad36554f9a619b6ea0da7feb9280570078e2451051e8ac3d5d09abb30225880`.
+Only README+package.json differ among566 archive files; all dist bytes identical.
+Core remains `/private/tmp/chat16-final-artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz`
+SHA256 `a5d002d20a6fbed1cdb61cddc255f1619dc945d08cf9406eb3ce94e135988fe2`.
+New normal consumers `/private/tmp/chat16-zod-metadata-consumer` (4.4.3) and
+`/private/tmp/chat16-zod3-minimum-consumer` (3.25.76). All installed kit/core
+files byte-match archives. Complete delta/proof/manifests/locks/raw logs under
+`packages/kits/evidence/chat-library/zod-minimum/`.
+
+Browser remains W2's; its oldartifact component observations are unaffected by
+metadata-only correction, but exact provenance stays distinct. W2 currently
+collects strict hover border diagnostic; do not weaken/reclassify as a pass.
+After W2's explicit release W1 gets bounded rerun of corrected library runner
+(verified ready CSS/order, settled distinct hover and cancellation after live
+partial response), then verifier. No competing browser. Source fixes to W2
+components only through its committed batches. Preview remains8405/read-only.
+No draft PR until remaining gates; no merge/release/closure/oldpackage changes.
+Preserve untracked crates. Root relays artifact updates to W2/verifier.
+
+---
+
+# CURRENT — chat-kit package CI GREEN; reviewed browser assertions need rerun — 2026-10-25
+
+Product remains frozen `8405f44e0`. Full kits CI passes 7/7 tests plus format,
+lint/types/build/Publint/ATTW; six inherited hook warnings, zero errors.
+Raw green log: packages/kits/evidence/chat-library/package-ci-green.log.
+Independent Standards review has zero findings. Spec review identified two
+harness gaps: settled hover sampling and direct stylesheet-order assertion.
+The runner is now corrected and syntax/format checked; its new assertions have
+NOT yet run. Previous browser log stays provisional, not recertified.
+
+Browser release to W2 still stands; W1 will not reclaim it without coordination.
+W2 should use the exact source8405 artifact/consumer listed below. Root can
+sequence the corrected W1 library matrix after W2's release, then the independent
+verifier. No new product patch is needed for these test-only corrections.
+W2 and verifier evidence remain pending; no draft PR or acceptance yet.
+Untracked crates untouched. No merge/release/closure/upstream/legacy changes.
+
+---
+
+# CURRENT — chat-kit production frozen; W1 browser RELEASED to W2 — 2026-10-25
+
+W1 integrated W2 commits 41af2765d and b2f3ad6fb as 6aa26ed94/04fc264d9.
+Product frozen at `8405f44e0`; no subsequent product changes. Public entries
+build/types/native ESM+CJS/three strict resolution modes/pruning pass.
+Corrected only the chat Card's missing no-provider spacing fallback to the
+existing 12px default, demonstrated by preserved Chrome red/green.
+W1 production-Vite/Chrome matrix passes all six plainCSS/TW3/TW4 initial orders:
+actual HTTP chunks -> parser -> text/table/two painted chart bars/forms/actions,
+validation/history/cancel/resubmit/clear, scoped theme/logo/portal selection,
+explicit normal/hover/disabled overrides. Zero page errors/live streams at end.
+This is bounded integration evidence, not full parity/performance/SSR acceptance.
+Full package CI is being finalized; initial pack lifecycle test race preserved
+and fixed with standard ignore-scripts setting in the test only.
+
+**All W1 Chrome/server closed. Browser explicitly released to W2 now; W1 will
+not use it until W2 releases. Verifier waits for W2, then explicit release.**
+Verifier thread `01a17359-1780-7d12-94d4-2591f99aecf2` has read-only #16 review
+ownership, GPT6.1-sol. Its evidence remains independent/read-only.
+
+Installed immutable consumer: `/private/tmp/chat16-final-consumer`.
+Kits tar `/private/tmp/chat16-final-artifacts/openuidev-kits-0.0.0-beta.0.tgz`
+SHA256 `3f70b06104ac8112f5146ee2aa85747c0bb582865defeb0f06d4523779c90831`.
+Core tar `/private/tmp/chat16-final-artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz`
+SHA256 `a5d002d20a6fbed1cdb61cddc255f1619dc945d08cf9406eb3ce94e135988fe2`.
+Both archives' every installed file matches byte-for-byte; complete digest/
+manifest, consumer lock and executed fixtures in kits/evidence/chat-library.
+Do not replace/reinstall this consumer. W2 should validate its owned portal/
+keyboard/theme/followup styles on this installed artifact and commit evidence.
+Root relays this handoff. No source edits to W2 ownership by W1.
+
+No release/merge/closure/upstream/main/legacy/friend writes. Previous chart
+HorizontalBar gap stays disclosed; #17 streaming performance/soak and SSR
+remain unclaimed. Untracked crates preserved.
+
+---
+
+# CURRENT — approved chat-kit slice #16 in progress — 2026-10-25
+
+Branch `codex/react-chat-kit` starts at reviewed PR37 head
+`ddd9f9a5e13a61a865cee76212b13a6230fc67d3`, carrying local chart handoff docs.
+The user approved implementation of #16 and TL-approved `@openuidev/kits`
+with component entry `/react/chat` and AI library entry `/react/chat/libs`.
+This supersedes the earlier publication-only/wait-for-dispatch language.
+Standalone chat helpers remain deferred; AgentInterface and the assembled
+`openuiLibrary` remain excluded. Existing code stays read-only.
+
+Ownership (agreed before edits):
+- W1: package metadata/build/dependencies/lock/export maps, chat entry barrel,
+  `src/react/chat/libs/**`, parser/renderer integration and packed evidence.
+- W2: `packages/kits/src/react/chat/components/ModelSwitcher/**`,
+  `components/FollowUpBlock/**`, `components/FollowUpItem/**`, including local
+  styles, utilities, types and tests. W1 integrates only committed W2 batches.
+- W1 holds the first browser window. W2 works on source/unit tests until release.
+
+Read-only transitive import audit of the existing chat library found 126 genui
+files. Its external imports are React, Zod, lucide-react and react-lang; no
+OpenUIChat, AgentInterface, ToolCall, ToolResult or headless helper dependency.
+UI imports will use public core exports, with FollowUp components owned by the
+kit. Icon AI schema belongs to the kit; rendering uses public core IconWrapper.
+This is an authoring audit, not a shipped resolver or runtime patch.
+
+Public-import TDD, native ESM/CJS/types, component-only pruning, actual parser/
+renderer/actions and scoped browser checks are required before a stacked draft.
+No #17 performance/soak or SSR certification is implied. Stock Goober and the
+accepted math vendor CSS exception remain unchanged. No legacy/main/upstream/
+friend/previews writes, merge, release, publication or issue closure. Preserve
+unrelated untracked `crates/`.
+
+---
+
+# CURRENT — charts DRAFT PR37 OPEN/attached; remoteCI GREEN — 2026-10-25
+
+Fork-only https://github.com/ankit-thesys/openui-comp/pull/37 OPEN/DRAFT attached,
+basecodex/react-ui-core-option-cards(PR36), headcodex/react-ui-core-charts.
+Reviewed/pushedproducthead ddd9f9a5e13a61a865cee76212b13a6230fc67d3.
+Remote BuildJS40195759345 PASS8m16s; changeset40195759293 PASS13s. Remotecore
+136/136 plus format/lint/types/build/Publint/ATTW pass, matching local136/136.
+2existingThemehookwarnings/0errors. Bothfinalreviewaxes0remainingfindings.
+PRbodydocs/planning/slice14-pr-draft.md now records greenremotechecks throughREST.
+
+Corrected production1d31a4b63 artifact1062926bytes SHA
+638a8336a60800ae40fa4e46a7130ca41141393382652dd5cf9e73626a8de806, normalconsumer
+/private/tmp/core-chart-tracking-consumer. W1affected6/46,440 and W2committed
+2323d977e packet85,122boundedobservations acrossseparate3batches/same6combos
+plus6inheritedinstabilityrecords. Nativeall19/strict3/pruning pass; allinstalled
+filesmatcharchive/lockunchanged. Post-CI all2,198producerdistfilesbyte-identical
+tocorrectedartifact. ExactremoteCIlogs/status andproof under evidence/charts-measurement/.
+
+**HorizontalBar defaultstringheight+fitLegend strictcomparison remainsUNPASSED**
+withbaseline-confirmedfeedback. Notunsupported, no publicpropremoved, no blanket
+19parity/SSR/parserperformance/memory/errorfreedomclaim. Inheritedclick/widthbox/
+Scatterprint/domainlimits disclosed, notfixed. Old7eanimationevidencehistorical.
+Draftcheckpointonly, rootretainsacceptance/nextdispatch. No merge, release,
+publication/deprecation, issueclosure, upstream/main/legacy/friend/previewswrites.
+
+Allproductchangesandtests/evidenceupthroughreviewedheadpushed. Post-CI status/docs/
+logcommits LOCALONLY deliberatelyavoidrepeatinggreenCIonunchangedproduct; rootmay
+carryforward. Untrackedcratespreserved. AllChrome/serverclosed; browseravailable.
+No nextslice/helper/TLgatedworkstarted. Awaitexplicitrootdispatch.
+
+---
+
+# CURRENT — charts DRAFT PR37 OPEN/attached; remoteCI running — 2026-10-25
+
+Fork-only https://github.com/ankit-thesys/openui-comp/pull/37 OPEN/DRAFT attached.
+Basecodex/react-ui-core-option-cards(PR36), headcodex/react-ui-core-charts,
+reviewedpushedhead ddd9f9a5e13a61a865cee76212b13a6230fc67d3.
+Remote BuildJS40195759345 / changeset40195759293 running; monitor/fix authorized.
+No merge/closure/publication/deprecation/release/upstream/main changes.
+
+Local correctedsource1d31a4b63 packageCI136/136 +format/lint/types/build/Publint/
+ATTW pass. Bothfinalreviewaxesclear. Sameimmutable1062926byteartifact SHA
+638a8336a60800ae40fa4e46a7130ca41141393382652dd5cf9e73626a8de806:
+W1affected6/46,440; W2committed2323d977e packet85,122boundedobservations across
+Line/Horizontal/remaining9separatebatches and6inheritedinstabilityrecords.
+StrictHorizontaldefaultstringheight+fitLegendcomparisonUNPASSED and disclosed
+inPR/README/report; notunsupported/noAPIremoved/notunconditionalall19parity.
+
+No productionchangeafter1d; laterharness/docs/evidence scopes explicit. No duplicate
+completedbrowsermatrices. Old7eanimationevidencehistorical. AllChrome/serverclosed.
+Onlyunrelatedcratesuntracked,preserved. RemoteCIlog/statusrecordpending; postPR
+orchestrationupdateslocalonlyavoidrestartingCIonunchangedproduct. No nextslice
+untilrootdispatch; existingSSR/parserperformance/memorydeferrals remain.
+
+---
+
 # CURRENT — charts local/review checkpoint complete; fork-only stacked draft preparing — 2026-10-25
 
 FinalpackageCI136/136 +format/lint/types/build/Publint/ATTW PASS; 2existingTheme

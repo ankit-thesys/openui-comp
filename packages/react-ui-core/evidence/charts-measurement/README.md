@@ -46,3 +46,19 @@ tied to7e; measurement mode does not repeat unchanged metadata checks or certify
 phase-matched motion. Full integrated package CI waits until Worker2's remaining
 matrix and explicit browser release. W1 Chrome/server are closed; browser is
 explicitly released to Worker2 on this exact corrected artifact.
+
+## Reviewed draft and remote checks
+
+Draft37:https://github.com/ankit-thesys/openui-comp/pull/37, stacked on PR36.
+Reviewed pushed source:ddd9f9a5e13a61a865cee76212b13a6230fc67d3.
+Remote BuildJS40195759345 PASS8m16s; changeset40195759293 PASS13s.
+Remote core136/136 plus package checks pass, matching local136/136. Two existing
+ThemeProvider lint warnings remain; no lint errors. Post-CI all2,198 producer
+dist files match the corrected frozen artifact byte-for-byte; proof is archived.
+
+The inherited HorizontalBar default string-height/fitting-legend strict comparison
+remains UNPASSED with baseline-confirmed feedback. Raw failed comparisons and
+classified traces remain in Worker2's committed packet. Passing CI does not
+convert that gap into a pass or authorize merge, release, deprecation or issue
+closure. Final PR body discloses it. Post-CI docs/evidence are local-only to avoid
+restarting green CI on unchanged product; root may carry them forward.

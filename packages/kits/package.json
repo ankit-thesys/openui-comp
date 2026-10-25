@@ -1,0 +1,85 @@
+{
+  "name": "@openuidev/kits",
+  "version": "0.0.0-beta.0",
+  "description": "OpenUI React kits and their AI component libraries",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./react/chat": {
+      "import": {
+        "types": "./dist/react/chat/index.d.mts",
+        "default": "./dist/react/chat/index.mjs"
+      },
+      "require": {
+        "types": "./dist/react/chat/index.d.cts",
+        "default": "./dist/react/chat/index.cjs"
+      }
+    },
+    "./react/chat/libs": {
+      "import": {
+        "types": "./dist/react/chat/libs/index.d.mts",
+        "default": "./dist/react/chat/libs/index.mjs"
+      },
+      "require": {
+        "types": "./dist/react/chat/libs/index.d.cts",
+        "default": "./dist/react/chat/libs/index.cjs"
+      }
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit",
+    "test": "pnpm build && node --test tests/*.test.mjs src/react/chat/components/*/__tests__/*.test.mjs",
+    "format:check": "prettier --check src tests *.json *.ts",
+    "lint:check": "eslint src --ignore-pattern \"**/__tests__/**\"",
+    "check:publint": "publint",
+    "check:attw": "attw --pack .",
+    "ci": "pnpm run format:check && pnpm run lint:check && pnpm run typecheck && pnpm run test && pnpm run check:publint && pnpm run check:attw"
+  },
+  "dependencies": {
+    "@openuidev/react-ui-core": "workspace:^",
+    "clsx": "^2.1.1",
+    "goober": "2.1.19",
+    "lucide-react": "^0.562.0"
+  },
+  "peerDependencies": {
+    "@openuidev/react-lang": ">=1.0.1 <2.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^3.25.76 || ^4.0.0"
+  },
+  "devDependencies": {
+    "@openuidev/react-lang": "workspace:^",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "catalog:",
+    "jsdom": "catalog:",
+    "esbuild": "^0.25.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesysdev/openui.git",
+    "directory": "packages/kits"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "typesVersions": {
+    "*": {
+      "react/chat": [
+        "dist/react/chat/index.d.cts"
+      ],
+      "react/chat/libs": [
+        "dist/react/chat/libs/index.d.cts"
+      ]
+    }
+  }
+}

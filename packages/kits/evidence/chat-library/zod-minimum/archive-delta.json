@@ -1,0 +1,14 @@
+{
+  "source": "d9cc96898",
+  "oldArchive": "/private/tmp/chat16-final-artifacts/openuidev-kits-0.0.0-beta.0.tgz",
+  "oldSHA256": "3f70b06104ac8112f5146ee2aa85747c0bb582865defeb0f06d4523779c90831",
+  "newArchive": "/private/tmp/chat16-zod-metadata-artifacts/openuidev-kits-0.0.0-beta.0.tgz",
+  "newSHA256": "7ad36554f9a619b6ea0da7feb9280570078e2451051e8ac3d5d09abb30225880",
+  "newBytes": 237869,
+  "totalFiles": 566,
+  "changedFiles": [
+    "package/package.json",
+    "package/README.md"
+  ],
+  "allDistFilesByteIdentical": true
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "path": "consumer-zod4/browser-run.mjs",
+    "sha256": "bfc06c400fb6039ab0c94b7f167c8915644b03f7496bd1d11165a5cd96b9ad73"
+  },
+  {
+    "path": "consumer-zod4/browser-app/app.tsx",
+    "sha256": "6d076ae8f015f0cc0193aaf95fbdd3c81c38d98470e6cd76f879394a959fd4d8"
+  },
+  {
+    "path": "consumer-zod4/browser-app/index.html",
+    "sha256": "ade49ba8d6d6735a043da6426f3d7a4c9b3c1bf14627ba19d543f5743a039d63"
+  },
+  {
+    "path": "consumer-zod4/asset-run.mjs",
+    "sha256": "561a98e8e44f25f34787b4dfbeb24dcb5d0571773848b9bfb81bea331f555ab7"
+  },
+  {
+    "path": "consumer-zod4/browser-app/public/plain.css",
+    "sha256": "d4a1d5dcf591b093b35a4b9bebf48406a70ccf0504b60b11e27f4002f3ddcb00"
+  },
+  {
+    "path": "consumer-zod4/browser-app/public/tailwind3.css",
+    "sha256": "584ed8b229b2a8df96f9ddc478e94a07249e8905bdf068afdef8981d969ae150"
+  },
+  {
+    "path": "consumer-zod4/browser-app/public/tailwind4.css",
+    "sha256": "e05a054044718b3c9ac536e5fe41ddde475f1a06ca68f57674a90db0a3c1b36e"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "productMetadataCommit": "d9cc96898",
+  "harnessCommit": "4a3fcffdd",
+  "consumer": "/private/tmp/chat16-zod-metadata-consumer",
+  "kitsArchiveSHA256": "7ad36554f9a619b6ea0da7feb9280570078e2451051e8ac3d5d09abb30225880",
+  "coreArchiveSHA256": "a5d002d20a6fbed1cdb61cddc255f1619dc945d08cf9406eb3ce94e135988fe2",
+  "installedFilesStillMatchArchives": {
+    "kits": 566,
+    "react-ui-core": 2202
+  },
+  "manifestAndLockUnchanged": true,
+  "executedFixtures": {
+    "app.tsx": "db707755a1d4909686495477a48d6475a6d588cc3c4fe92ca0495486ac7638d9",
+    "index.html": "50852460a242ee5c3d7d4530be2c4e2943be05726509bb99e520fd18e23d7831",
+    "run.mjs": "96f65462ba38a54ccb5ebdc1a1a6eea66bb2a1587ed4b972bf74c24bd1408bb9"
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "consumer": "consumer-zod3",
+    "filesMatched": 566,
+    "mismatches": []
+  },
+  {
+    "consumer": "consumer-zod4",
+    "filesMatched": 566,
+    "mismatches": []
+  }
+]

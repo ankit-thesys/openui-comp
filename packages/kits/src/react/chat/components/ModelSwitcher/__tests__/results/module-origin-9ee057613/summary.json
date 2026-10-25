@@ -1,0 +1,27 @@
+{
+  "status": "prepared-not-browser-tested",
+  "failedRunCommit": "c6741fe98",
+  "productCommit": "9ee057613",
+  "consumer": "/private/tmp/chat16-model-border-consumer",
+  "oldRawFailureArm": "not recorded in old assertion",
+  "staticRuntimeCause": "ModelSwitcher workspace ThemeContext$1 differs from installed fixture ThemeContext",
+  "originalNodeResolution": {
+    "kits": "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/dist/react/chat/index.cjs",
+    "core": "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/index.cjs"
+  },
+  "standaloneNodeResolution": {
+    "kits": "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/kits/dist/react/chat/index.cjs",
+    "core": "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/index.cjs"
+  },
+  "newKitsModuleCount": 7,
+  "newCoreModuleCount": 9,
+  "newThemeProviderModules": [
+    "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/ThemeProvider.mjs"
+  ],
+  "rawPreparedSha256": "9426d5a3021e92cb9c618283d7395622806ce0637c5c8079245efb97706f600e",
+  "archivedRunnerMatches": true,
+  "archivedFixtureMatches": true,
+  "installedArtifactsUnchanged": true,
+  "browserStarted": false,
+  "productChanged": false
+}

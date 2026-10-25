@@ -1,0 +1,221 @@
+{
+  "browser": "156.0.8078.47",
+  "results": [
+    {
+      "framework": "plain",
+      "order": "before",
+      "css": {
+        "rules": 3,
+        "order": "before"
+      },
+      "normal": "rgb(239, 68, 68)",
+      "hover": "rgb(34, 197, 94)",
+      "cancellation": {
+        "id": 1,
+        "writes": 5,
+        "ended": false,
+        "closed": true,
+        "error": "net::ERR_ABORTED"
+      },
+      "downloads": 9,
+      "pageErrors": []
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "css": {
+        "rules": 3,
+        "order": "after"
+      },
+      "normal": "rgb(239, 68, 68)",
+      "hover": "rgb(34, 197, 94)",
+      "cancellation": {
+        "id": 3,
+        "writes": 5,
+        "ended": false,
+        "closed": true,
+        "error": "net::ERR_ABORTED"
+      },
+      "downloads": 7,
+      "pageErrors": []
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "css": {
+        "rules": 55,
+        "order": "before"
+      },
+      "normal": "rgb(239, 68, 68)",
+      "hover": "rgb(34, 197, 94)",
+      "cancellation": {
+        "id": 5,
+        "writes": 5,
+        "ended": false,
+        "closed": true,
+        "error": "net::ERR_ABORTED"
+      },
+      "downloads": 7,
+      "pageErrors": []
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "css": {
+        "rules": 55,
+        "order": "after"
+      },
+      "normal": "rgb(239, 68, 68)",
+      "hover": "rgb(34, 197, 94)",
+      "cancellation": {
+        "id": 7,
+        "writes": 5,
+        "ended": false,
+        "closed": true,
+        "error": "net::ERR_ABORTED"
+      },
+      "downloads": 7,
+      "pageErrors": []
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "css": {
+        "rules": 7,
+        "order": "before"
+      },
+      "normal": "oklch(0.637 0.237 25.331)",
+      "hover": "oklch(0.723 0.219 149.579)",
+      "cancellation": {
+        "id": 9,
+        "writes": 4,
+        "ended": false,
+        "closed": true,
+        "error": "net::ERR_ABORTED"
+      },
+      "downloads": 7,
+      "pageErrors": []
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "css": {
+        "rules": 7,
+        "order": "after"
+      },
+      "normal": "oklch(0.637 0.237 25.331)",
+      "hover": "oklch(0.723 0.219 149.579)",
+      "cancellation": {
+        "id": 11,
+        "writes": 4,
+        "ended": false,
+        "closed": true,
+        "error": "net::ERR_ABORTED"
+      },
+      "downloads": 7,
+      "pageErrors": []
+    }
+  ],
+  "mathRequests": [
+    "/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+    "/assets/KaTeX_Main-Regular-B22Nviop.woff2"
+  ],
+  "streams": [
+    {
+      "id": 1,
+      "active": false,
+      "writes": 5,
+      "bytes": 80,
+      "closed": true,
+      "ended": false
+    },
+    {
+      "id": 2,
+      "active": false,
+      "writes": 17,
+      "bytes": 262,
+      "closed": true,
+      "ended": true
+    },
+    {
+      "id": 3,
+      "active": false,
+      "writes": 5,
+      "bytes": 80,
+      "closed": true,
+      "ended": false
+    },
+    {
+      "id": 4,
+      "active": false,
+      "writes": 17,
+      "bytes": 262,
+      "closed": true,
+      "ended": true
+    },
+    {
+      "id": 5,
+      "active": false,
+      "writes": 5,
+      "bytes": 80,
+      "closed": true,
+      "ended": false
+    },
+    {
+      "id": 6,
+      "active": false,
+      "writes": 17,
+      "bytes": 262,
+      "closed": true,
+      "ended": true
+    },
+    {
+      "id": 7,
+      "active": false,
+      "writes": 5,
+      "bytes": 80,
+      "closed": true,
+      "ended": false
+    },
+    {
+      "id": 8,
+      "active": false,
+      "writes": 17,
+      "bytes": 262,
+      "closed": true,
+      "ended": true
+    },
+    {
+      "id": 9,
+      "active": false,
+      "writes": 4,
+      "bytes": 64,
+      "closed": true,
+      "ended": false
+    },
+    {
+      "id": 10,
+      "active": false,
+      "writes": 17,
+      "bytes": 262,
+      "closed": true,
+      "ended": true
+    },
+    {
+      "id": 11,
+      "active": false,
+      "writes": 4,
+      "bytes": 64,
+      "closed": true,
+      "ended": false
+    },
+    {
+      "id": 12,
+      "active": false,
+      "writes": 17,
+      "bytes": 262,
+      "closed": true,
+      "ended": true
+    }
+  ]
+}

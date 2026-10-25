@@ -1,0 +1,16 @@
+{
+  "sha256": "7ad36554f9a619b6ea0da7feb9280570078e2451051e8ac3d5d09abb30225880",
+  "bytes": 237869,
+  "oldFiles": 566,
+  "newFiles": 566,
+  "changed": [
+    "package/README.md",
+    "package/package.json"
+  ],
+  "peerDependencies": {
+    "@openuidev/react-lang": ">=1.0.1 <2.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^3.25.76 || ^4.0.0"
+  }
+}

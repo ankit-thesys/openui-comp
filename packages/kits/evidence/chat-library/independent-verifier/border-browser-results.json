@@ -1,0 +1,3545 @@
+{
+  "browser": "156.0.8078.47",
+  "results": [
+    {
+      "framework": "plain",
+      "order": "before",
+      "actualOrder": "before",
+      "observations": [
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "state": "logo",
+          "expected": "UL",
+          "actual": "ULU Alpha"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "state": "logo",
+          "expected": "OL",
+          "actual": "OLO Alpha"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "state": "logo",
+          "expected": "IL",
+          "actual": "ILI Alpha"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "UL",
+          "actual": "ULU Alpha"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "OD",
+          "actual": "ODO Alpha"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "ID",
+          "actual": "IDI Alpha"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "actualOrder": "after",
+      "observations": [
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "state": "logo",
+          "expected": "UL",
+          "actual": "ULU Alpha"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "state": "logo",
+          "expected": "OL",
+          "actual": "OLO Alpha"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "state": "logo",
+          "expected": "IL",
+          "actual": "ILI Alpha"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "UL",
+          "actual": "ULU Alpha"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "OD",
+          "actual": "ODO Alpha"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "ID",
+          "actual": "IDI Alpha"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "actualOrder": "before",
+      "observations": [
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "state": "logo",
+          "expected": "UL",
+          "actual": "ULU Alpha"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "state": "logo",
+          "expected": "OL",
+          "actual": "OLO Alpha"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "state": "logo",
+          "expected": "IL",
+          "actual": "ILI Alpha"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "UL",
+          "actual": "ULU Alpha"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "OD",
+          "actual": "ODO Alpha"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "ID",
+          "actual": "IDI Alpha"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "actualOrder": "after",
+      "observations": [
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "state": "logo",
+          "expected": "UL",
+          "actual": "ULU Alpha"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "state": "logo",
+          "expected": "OL",
+          "actual": "OLO Alpha"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "state": "logo",
+          "expected": "IL",
+          "actual": "ILI Alpha"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "UL",
+          "actual": "ULU Alpha"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "OD",
+          "actual": "ODO Alpha"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "ID",
+          "actual": "IDI Alpha"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "actualOrder": "before",
+      "observations": [
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "state": "logo",
+          "expected": "UL",
+          "actual": "ULU Alpha"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "state": "logo",
+          "expected": "OL",
+          "actual": "OLO Alpha"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "state": "logo",
+          "expected": "IL",
+          "actual": "ILI Alpha"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "UL",
+          "actual": "ULU Alpha"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "OD",
+          "actual": "ODO Alpha"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "ID",
+          "actual": "IDI Alpha"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "actualOrder": "after",
+      "observations": [
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "state": "logo",
+          "expected": "UL",
+          "actual": "ULU Alpha"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "state": "logo",
+          "expected": "OL",
+          "actual": "OLO Alpha"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "state": "logo",
+          "expected": "IL",
+          "actual": "ILI Alpha"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(31, 70, 99)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(140, 44, 88)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(31, 70, 99)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "light",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(140, 44, 88)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "UL",
+          "actual": "ULU Alpha"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "OD",
+          "actual": "ODO Alpha"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "state": "logo",
+          "expected": "ID",
+          "actual": "IDI Alpha"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "normal",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "0px",
+          "borderStyle": "none"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "oklch(0.097 0 0)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(201, 190, 120)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "exposed",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(150, 211, 225)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "unthemed",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "oklch(0.097 0 0)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "outer-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(201, 190, 120)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "open",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        {
+          "id": "inner-arm",
+          "mode": "dark",
+          "variant": "override",
+          "state": "closed",
+          "color": "rgb(150, 211, 225)",
+          "borderColor": "rgb(1, 99, 180)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        }
+      ],
+      "pageErrors": []
+    }
+  ]
+}

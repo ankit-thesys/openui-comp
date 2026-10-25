@@ -1,0 +1,179 @@
+{
+  "scope": "Retained component reports only; unrelated library/performance/package reports not audited.",
+  "runs": [
+    {
+      "run": "browser-8405f44e0-run2",
+      "archiveSha256": "ed0f3b6ebd0337add3509f3406ecdea49a8572de9d9743684610a955e26d1f8e",
+      "consumer": "/private/tmp/chat16-final-consumer",
+      "kitsModules": [
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpBlock/followUpBlock.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpBlock/FollowUpBlock.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpItem/followUpItem.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpItem/FollowUpItem.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/utils.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/ModelSwitcher.mjs"
+      ],
+      "coreModules": [
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/swatches.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/defaultTheme.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/types.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/utils.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/ThemeProvider.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Select/select.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Select/Select.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Tag/tag.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Tag/Tag.mjs"
+      ],
+      "nonConsumerProductModules": [],
+      "providerModules": [
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/ThemeProvider.mjs"
+      ],
+      "status": "failed",
+      "recordedCases": 1
+    },
+    {
+      "run": "browser-8405f44e0-run3-diagnostic",
+      "archiveSha256": "58d8e029b1d88d1d3f7379b0d4fd7d7308c8e49832c3887ab1a20f3980ecc510",
+      "consumer": "/private/tmp/chat16-final-consumer",
+      "kitsModules": [
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpBlock/followUpBlock.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpBlock/FollowUpBlock.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpItem/followUpItem.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpItem/FollowUpItem.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/utils.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/ModelSwitcher.mjs"
+      ],
+      "coreModules": [
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/swatches.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/defaultTheme.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/types.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/utils.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/ThemeProvider.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Select/select.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Select/Select.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Tag/tag.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Tag/Tag.mjs"
+      ],
+      "nonConsumerProductModules": [],
+      "providerModules": [
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/ThemeProvider.mjs"
+      ],
+      "status": "failed",
+      "recordedCases": 36
+    },
+    {
+      "run": "browser-8405f44e0-run4-diagnostic",
+      "archiveSha256": "94c76309329472fd4bb14622f219a7403af1f84987104b7ef850649a98462e8a",
+      "consumer": "/private/tmp/chat16-final-consumer",
+      "kitsModules": [
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpBlock/followUpBlock.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpBlock/FollowUpBlock.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpItem/followUpItem.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpItem/FollowUpItem.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/utils.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/ModelSwitcher.mjs"
+      ],
+      "coreModules": [
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/swatches.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/defaultTheme.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/types.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/utils.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/ThemeProvider.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Select/select.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Select/Select.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Tag/tag.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Tag/Tag.mjs"
+      ],
+      "nonConsumerProductModules": [],
+      "providerModules": [
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/ThemeProvider.mjs"
+      ],
+      "status": "failed",
+      "recordedCases": 36
+    },
+    {
+      "run": "browser-8405f44e0-run5-diagnostic",
+      "archiveSha256": "1223c43dabf56467738269a53df9f19991d595e935667985dee2a37a11300792",
+      "consumer": "/private/tmp/chat16-final-consumer",
+      "kitsModules": [
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpBlock/followUpBlock.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpBlock/FollowUpBlock.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpItem/followUpItem.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpItem/FollowUpItem.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/utils.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/ModelSwitcher.mjs"
+      ],
+      "coreModules": [
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/swatches.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/defaultTheme.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/types.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/utils.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/ThemeProvider.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Select/select.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Select/Select.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Tag/tag.styles.mjs",
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Tag/Tag.mjs"
+      ],
+      "nonConsumerProductModules": [],
+      "providerModules": [
+        "/private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/ThemeProvider.mjs"
+      ],
+      "status": "failed",
+      "recordedCases": 36
+    },
+    {
+      "run": "browser-model-border-9ee057613",
+      "archiveSha256": "bf86ae19482d18333229f5af4dca989731c672f21339fbc97b7c23d8cce59201",
+      "consumer": "/private/tmp/chat16-model-border-consumer",
+      "kitsModules": [
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/dist/react/chat/components/FollowUpBlock/followUpBlock.styles.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/dist/react/chat/components/FollowUpBlock/FollowUpBlock.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/dist/react/chat/components/FollowUpItem/followUpItem.styles.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/dist/react/chat/components/FollowUpItem/FollowUpItem.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/dist/react/chat/components/ModelSwitcher/utils.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/dist/react/chat/components/ModelSwitcher/ModelSwitcher.mjs"
+      ],
+      "coreModules": [
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/dist/components/ThemeProvider/swatches.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/dist/components/ThemeProvider/defaultTheme.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/dist/components/ThemeProvider/ThemeProvider.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/dist/components/Select/select.styles.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/dist/components/Select/Select.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/dist/components/Tag/tag.styles.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/dist/components/Tag/Tag.mjs",
+        "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/swatches.mjs",
+        "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/defaultTheme.mjs",
+        "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/types.mjs",
+        "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/utils.mjs",
+        "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/ThemeProvider.mjs"
+      ],
+      "nonConsumerProductModules": [
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/dist/react/chat/components/FollowUpBlock/followUpBlock.styles.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/dist/react/chat/components/FollowUpBlock/FollowUpBlock.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/dist/react/chat/components/FollowUpItem/followUpItem.styles.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/dist/react/chat/components/FollowUpItem/FollowUpItem.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/dist/react/chat/components/ModelSwitcher/utils.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/dist/react/chat/components/ModelSwitcher/ModelSwitcher.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/dist/components/ThemeProvider/swatches.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/dist/components/ThemeProvider/defaultTheme.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/dist/components/ThemeProvider/ThemeProvider.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/dist/components/Select/select.styles.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/dist/components/Select/Select.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/dist/components/Tag/tag.styles.mjs",
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/dist/components/Tag/Tag.mjs"
+      ],
+      "providerModules": [
+        "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/dist/components/ThemeProvider/ThemeProvider.mjs",
+        "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/ThemeProvider.mjs"
+      ],
+      "status": "failed",
+      "recordedCases": 3
+    }
+  ]
+}

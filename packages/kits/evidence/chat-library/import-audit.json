@@ -1,0 +1,538 @@
+{
+  "files": [
+    "Accordion/index.tsx",
+    "Accordion/schema.ts",
+    "Action/schema.ts",
+    "BoldText/index.tsx",
+    "BoldText/schema.ts",
+    "Button/index.tsx",
+    "Button/schema.ts",
+    "Buttons/index.tsx",
+    "Buttons/schema.ts",
+    "Callout/index.tsx",
+    "Callout/schema.ts",
+    "CardHeader/index.tsx",
+    "CardHeader/schema.ts",
+    "Carousel/index.tsx",
+    "Charts/AreaChartCondensed.ts",
+    "Charts/BarChartCondensed.ts",
+    "Charts/HorizontalBarChart.ts",
+    "Charts/LineChartCondensed.ts",
+    "Charts/PieChart.ts",
+    "Charts/Point.ts",
+    "Charts/RadarChart.ts",
+    "Charts/RadialChart.ts",
+    "Charts/ScatterChart.ts",
+    "Charts/ScatterSeries.ts",
+    "Charts/Series.ts",
+    "Charts/SingleStackedBarChart.ts",
+    "Charts/Slice.ts",
+    "Charts/index.ts",
+    "CheckBoxGroup/index.tsx",
+    "CheckBoxGroup/schema.ts",
+    "Chips/index.tsx",
+    "Chips/schema.ts",
+    "CodeBlock/index.tsx",
+    "CodeBlock/schema.ts",
+    "CompositeCardBlock/index.tsx",
+    "CompositeCardBlock/schema.ts",
+    "ContextCardBlock/index.tsx",
+    "ContextCardBlock/schema.ts",
+    "DatePicker/index.tsx",
+    "DatePicker/schema.ts",
+    "EditableTable/index.tsx",
+    "EditableTable/schema.ts",
+    "EntityList/index.tsx",
+    "EntityList/schema.ts",
+    "FollowUpBlock/index.tsx",
+    "FollowUpItem/index.tsx",
+    "Form/index.tsx",
+    "Form/schema.ts",
+    "FormControl/index.tsx",
+    "FormControl/schema.ts",
+    "Icon/index.tsx",
+    "Icon/schema.ts",
+    "IconButton/index.tsx",
+    "IconButton/schema.ts",
+    "IconText/index.tsx",
+    "IconText/schema.ts",
+    "Image/index.tsx",
+    "Image/schema.ts",
+    "ImageBlock/index.tsx",
+    "ImageBlock/schema.ts",
+    "ImageGallery/index.tsx",
+    "ImageGallery/schema.ts",
+    "ImageText/index.tsx",
+    "ImageText/schema.ts",
+    "ImageTextLarge/index.tsx",
+    "ImageTextLarge/schema.ts",
+    "InlineHeader/index.tsx",
+    "InlineHeader/schema.ts",
+    "Input/index.tsx",
+    "Input/schema.ts",
+    "Label/index.tsx",
+    "Label/schema.ts",
+    "ListBlock/index.tsx",
+    "ListItem/index.tsx",
+    "MarkDownRenderer/index.tsx",
+    "MarkDownRenderer/schema.ts",
+    "MetricIndicator/index.tsx",
+    "MetricIndicator/schema.ts",
+    "OptionCards/index.tsx",
+    "OptionCards/schema.ts",
+    "OverviewCardBlock/index.tsx",
+    "OverviewCardBlock/schema.ts",
+    "RadioGroup/index.tsx",
+    "RadioGroup/schema.ts",
+    "SectionBlock/index.tsx",
+    "SectionItem/index.tsx",
+    "Select/index.tsx",
+    "Select/schema.ts",
+    "Separator/index.tsx",
+    "Separator/schema.ts",
+    "Slider/index.tsx",
+    "Slider/schema.ts",
+    "SnippetCardBlock/index.tsx",
+    "SnippetCardBlock/schema.ts",
+    "Steps/index.tsx",
+    "Steps/schema.ts",
+    "SwitchGroup/index.tsx",
+    "SwitchGroup/schema.ts",
+    "Table/index.tsx",
+    "Table/schema.ts",
+    "Tabs/index.tsx",
+    "Tabs/schema.ts",
+    "Tag/index.tsx",
+    "Tag/schema.ts",
+    "TagBlock/index.tsx",
+    "TagBlock/schema.ts",
+    "Text/index.tsx",
+    "Text/schema.ts",
+    "TextArea/index.tsx",
+    "TextArea/schema.ts",
+    "TextCallout/index.tsx",
+    "TextCallout/schema.ts",
+    "TextContent/index.tsx",
+    "TextContent/schema.ts",
+    "VisualCardBlock/index.tsx",
+    "VisualCardBlock/schema.ts",
+    "cardActionUtils.ts",
+    "cardTagUtils.tsx",
+    "formDefaultValueUtils.ts",
+    "helpers.ts",
+    "openuiChatLibrary.tsx",
+    "prompt-options/index.ts",
+    "rules.ts",
+    "sectionContentUnion.ts",
+    "selectionFieldUtils.ts",
+    "unions.ts"
+  ],
+  "external": [
+    "@openuidev/react-lang",
+    "lucide-react",
+    "react",
+    "zod/v4"
+  ],
+  "outside": [
+    {
+      "file": "openuiChatLibrary.tsx",
+      "import": "../components/Card",
+      "target": "packages/react-ui/src/components/Card/index.ts"
+    },
+    {
+      "file": "openuiChatLibrary.tsx",
+      "import": "../components/Sources",
+      "target": "packages/react-ui/src/components/Sources/index.ts"
+    },
+    {
+      "file": "Callout/index.tsx",
+      "import": "../../components/Callout",
+      "target": "packages/react-ui/src/components/Callout/index.ts"
+    },
+    {
+      "file": "Callout/index.tsx",
+      "import": "../../components/MarkDownRenderer",
+      "target": "packages/react-ui/src/components/MarkDownRenderer/index.ts"
+    },
+    {
+      "file": "CardHeader/index.tsx",
+      "import": "../../components/CardHeader",
+      "target": "packages/react-ui/src/components/CardHeader/index.ts"
+    },
+    {
+      "file": "CodeBlock/index.tsx",
+      "import": "../../components/CodeBlock",
+      "target": "packages/react-ui/src/components/CodeBlock/index.ts"
+    },
+    {
+      "file": "Image/index.tsx",
+      "import": "../../components/Image",
+      "target": "packages/react-ui/src/components/Image/index.ts"
+    },
+    {
+      "file": "ImageBlock/index.tsx",
+      "import": "../../components/ImageBlock",
+      "target": "packages/react-ui/src/components/ImageBlock/index.ts"
+    },
+    {
+      "file": "ImageGallery/index.tsx",
+      "import": "../../components/ImageGallery",
+      "target": "packages/react-ui/src/components/ImageGallery/index.ts"
+    },
+    {
+      "file": "MarkDownRenderer/index.tsx",
+      "import": "../../components/MarkDownRenderer",
+      "target": "packages/react-ui/src/components/MarkDownRenderer/index.ts"
+    },
+    {
+      "file": "Separator/index.tsx",
+      "import": "../../components/Separator",
+      "target": "packages/react-ui/src/components/Separator/index.ts"
+    },
+    {
+      "file": "TextCallout/index.tsx",
+      "import": "../../components/TextCallout",
+      "target": "packages/react-ui/src/components/TextCallout/index.ts"
+    },
+    {
+      "file": "TextContent/index.tsx",
+      "import": "../../components/TextContentWrapper",
+      "target": "packages/react-ui/src/components/TextContentWrapper/index.ts"
+    },
+    {
+      "file": "CheckBoxGroup/index.tsx",
+      "import": "../../components/CheckBoxGroup",
+      "target": "packages/react-ui/src/components/CheckBoxGroup/index.ts"
+    },
+    {
+      "file": "CheckBoxGroup/index.tsx",
+      "import": "../../components/CheckBoxItem",
+      "target": "packages/react-ui/src/components/CheckBoxItem/index.ts"
+    },
+    {
+      "file": "DatePicker/index.tsx",
+      "import": "../../components/DatePicker",
+      "target": "packages/react-ui/src/components/DatePicker/index.ts"
+    },
+    {
+      "file": "FormControl/index.tsx",
+      "import": "../../components/FormControl",
+      "target": "packages/react-ui/src/components/FormControl/index.ts"
+    },
+    {
+      "file": "FormControl/index.tsx",
+      "import": "../../components/FormControl/Hint",
+      "target": "packages/react-ui/src/components/FormControl/Hint/index.ts"
+    },
+    {
+      "file": "FormControl/index.tsx",
+      "import": "../../components/Label",
+      "target": "packages/react-ui/src/components/Label/index.ts"
+    },
+    {
+      "file": "Input/index.tsx",
+      "import": "../../components/Input",
+      "target": "packages/react-ui/src/components/Input/index.ts"
+    },
+    {
+      "file": "Label/index.tsx",
+      "import": "../../components/Label",
+      "target": "packages/react-ui/src/components/Label/index.ts"
+    },
+    {
+      "file": "RadioGroup/index.tsx",
+      "import": "../../components/RadioGroup",
+      "target": "packages/react-ui/src/components/RadioGroup/index.ts"
+    },
+    {
+      "file": "RadioGroup/index.tsx",
+      "import": "../../components/RadioItem",
+      "target": "packages/react-ui/src/components/RadioItem/index.ts"
+    },
+    {
+      "file": "Select/index.tsx",
+      "import": "../../components/Select",
+      "target": "packages/react-ui/src/components/Select/index.ts"
+    },
+    {
+      "file": "Slider/index.tsx",
+      "import": "../../components/Slider",
+      "target": "packages/react-ui/src/components/Slider/index.ts"
+    },
+    {
+      "file": "SwitchGroup/index.tsx",
+      "import": "../../components/SwitchGroup",
+      "target": "packages/react-ui/src/components/SwitchGroup/index.ts"
+    },
+    {
+      "file": "SwitchGroup/index.tsx",
+      "import": "../../components/SwitchItem",
+      "target": "packages/react-ui/src/components/SwitchItem/index.ts"
+    },
+    {
+      "file": "TextArea/index.tsx",
+      "import": "../../components/TextArea",
+      "target": "packages/react-ui/src/components/TextArea/index.ts"
+    },
+    {
+      "file": "Button/index.tsx",
+      "import": "../../components/Button",
+      "target": "packages/react-ui/src/components/Button/index.ts"
+    },
+    {
+      "file": "Buttons/index.tsx",
+      "import": "../../components/Buttons",
+      "target": "packages/react-ui/src/components/Buttons/index.ts"
+    },
+    {
+      "file": "Accordion/index.tsx",
+      "import": "../../components/Accordion",
+      "target": "packages/react-ui/src/components/Accordion/index.ts"
+    },
+    {
+      "file": "Carousel/index.tsx",
+      "import": "../../components/Carousel",
+      "target": "packages/react-ui/src/components/Carousel/index.ts"
+    },
+    {
+      "file": "Steps/index.tsx",
+      "import": "../../components/MarkDownRenderer",
+      "target": "packages/react-ui/src/components/MarkDownRenderer/index.ts"
+    },
+    {
+      "file": "Steps/index.tsx",
+      "import": "../../components/Steps",
+      "target": "packages/react-ui/src/components/Steps/index.ts"
+    },
+    {
+      "file": "Tabs/index.tsx",
+      "import": "../../components/Tabs",
+      "target": "packages/react-ui/src/components/Tabs/index.ts"
+    },
+    {
+      "file": "Table/index.tsx",
+      "import": "../../components/IconButton",
+      "target": "packages/react-ui/src/components/IconButton/index.ts"
+    },
+    {
+      "file": "Table/index.tsx",
+      "import": "../../components/Skeleton",
+      "target": "packages/react-ui/src/components/Skeleton/index.ts"
+    },
+    {
+      "file": "Table/index.tsx",
+      "import": "../../components/Table",
+      "target": "packages/react-ui/src/components/Table/index.ts"
+    },
+    {
+      "file": "Tag/index.tsx",
+      "import": "../../components/_shared/icons",
+      "target": "packages/react-ui/src/components/_shared/icons/index.ts"
+    },
+    {
+      "file": "Tag/index.tsx",
+      "import": "../../components/Tag",
+      "target": "packages/react-ui/src/components/Tag/index.ts"
+    },
+    {
+      "file": "TagBlock/index.tsx",
+      "import": "../../components/Tag",
+      "target": "packages/react-ui/src/components/Tag/index.ts"
+    },
+    {
+      "file": "TagBlock/index.tsx",
+      "import": "../../components/TagBlock",
+      "target": "packages/react-ui/src/components/TagBlock/index.ts"
+    },
+    {
+      "file": "FollowUpBlock/index.tsx",
+      "import": "../../components/FollowUpBlock",
+      "target": "packages/react-ui/src/components/FollowUpBlock/index.ts"
+    },
+    {
+      "file": "FollowUpBlock/index.tsx",
+      "import": "../../components/FollowUpItem",
+      "target": "packages/react-ui/src/components/FollowUpItem/index.ts"
+    },
+    {
+      "file": "ListBlock/index.tsx",
+      "import": "../../components/ListBlock",
+      "target": "packages/react-ui/src/components/ListBlock/index.ts"
+    },
+    {
+      "file": "ListBlock/index.tsx",
+      "import": "../../components/ListItem",
+      "target": "packages/react-ui/src/components/ListItem/index.ts"
+    },
+    {
+      "file": "SectionBlock/index.tsx",
+      "import": "../../components/SectionBlock/FoldableSection",
+      "target": "packages/react-ui/src/components/SectionBlock/FoldableSection.tsx"
+    },
+    {
+      "file": "SectionBlock/index.tsx",
+      "import": "../../components/SectionBlock/SectionV2",
+      "target": "packages/react-ui/src/components/SectionBlock/SectionV2.tsx"
+    },
+    {
+      "file": "BoldText/index.tsx",
+      "import": "../../components/TextBlock",
+      "target": "packages/react-ui/src/components/TextBlock/index.ts"
+    },
+    {
+      "file": "EntityList/index.tsx",
+      "import": "../../components/EntityList",
+      "target": "packages/react-ui/src/components/EntityList/index.ts"
+    },
+    {
+      "file": "Icon/index.tsx",
+      "import": "../../components/_shared/icons",
+      "target": "packages/react-ui/src/components/_shared/icons/index.ts"
+    },
+    {
+      "file": "IconButton/index.tsx",
+      "import": "../../components/IconButton",
+      "target": "packages/react-ui/src/components/IconButton/index.ts"
+    },
+    {
+      "file": "IconButton/index.tsx",
+      "import": "../../components/_shared/icons",
+      "target": "packages/react-ui/src/components/_shared/icons/index.ts"
+    },
+    {
+      "file": "IconText/index.tsx",
+      "import": "../../components/IconText",
+      "target": "packages/react-ui/src/components/IconText/index.ts"
+    },
+    {
+      "file": "ImageText/index.tsx",
+      "import": "../../components/ImageText",
+      "target": "packages/react-ui/src/components/ImageText/index.ts"
+    },
+    {
+      "file": "ImageTextLarge/index.tsx",
+      "import": "../../components/ImageTextLarge",
+      "target": "packages/react-ui/src/components/ImageTextLarge/index.ts"
+    },
+    {
+      "file": "InlineHeader/index.tsx",
+      "import": "../../components/InlineHeader",
+      "target": "packages/react-ui/src/components/InlineHeader/index.ts"
+    },
+    {
+      "file": "MetricIndicator/index.tsx",
+      "import": "../../components/MetricIndicator",
+      "target": "packages/react-ui/src/components/MetricIndicator/index.ts"
+    },
+    {
+      "file": "Text/index.tsx",
+      "import": "../../components/TextBlock",
+      "target": "packages/react-ui/src/components/TextBlock/index.ts"
+    },
+    {
+      "file": "EditableTable/index.tsx",
+      "import": "../../components/EditableTable",
+      "target": "packages/react-ui/src/components/EditableTable/index.ts"
+    },
+    {
+      "file": "Chips/index.tsx",
+      "import": "../../components/Chips",
+      "target": "packages/react-ui/src/components/Chips/index.ts"
+    },
+    {
+      "file": "OptionCards/index.tsx",
+      "import": "../../components/OptionCards",
+      "target": "packages/react-ui/src/components/OptionCards/index.ts"
+    },
+    {
+      "file": "CompositeCardBlock/index.tsx",
+      "import": "../../components/CompositeCardBlock",
+      "target": "packages/react-ui/src/components/CompositeCardBlock/index.ts"
+    },
+    {
+      "file": "ContextCardBlock/index.tsx",
+      "import": "../../components/ContextCardBlock",
+      "target": "packages/react-ui/src/components/ContextCardBlock/index.ts"
+    },
+    {
+      "file": "OverviewCardBlock/index.tsx",
+      "import": "../../components/OverviewCardBlock",
+      "target": "packages/react-ui/src/components/OverviewCardBlock/index.ts"
+    },
+    {
+      "file": "SnippetCardBlock/index.tsx",
+      "import": "../../components/SnippetCardBlock",
+      "target": "packages/react-ui/src/components/SnippetCardBlock/index.ts"
+    },
+    {
+      "file": "VisualCardBlock/index.tsx",
+      "import": "../../components/VisualCardBlock",
+      "target": "packages/react-ui/src/components/VisualCardBlock/index.ts"
+    },
+    {
+      "file": "Charts/HorizontalBarChart.ts",
+      "import": "../../components/Charts",
+      "target": "packages/react-ui/src/components/Charts/index.ts"
+    },
+    {
+      "file": "Charts/RadarChart.ts",
+      "import": "../../components/Charts",
+      "target": "packages/react-ui/src/components/Charts/index.ts"
+    },
+    {
+      "file": "Charts/PieChart.ts",
+      "import": "../../components/Charts",
+      "target": "packages/react-ui/src/components/Charts/index.ts"
+    },
+    {
+      "file": "Charts/PieChart.ts",
+      "import": "../../components/Skeleton",
+      "target": "packages/react-ui/src/components/Skeleton/index.ts"
+    },
+    {
+      "file": "Charts/RadialChart.ts",
+      "import": "../../components/Charts",
+      "target": "packages/react-ui/src/components/Charts/index.ts"
+    },
+    {
+      "file": "Charts/SingleStackedBarChart.ts",
+      "import": "../../components/Charts",
+      "target": "packages/react-ui/src/components/Charts/index.ts"
+    },
+    {
+      "file": "Charts/ScatterChart.ts",
+      "import": "../../components/Charts",
+      "target": "packages/react-ui/src/components/Charts/index.ts"
+    },
+    {
+      "file": "Charts/AreaChartCondensed.ts",
+      "import": "../../components/Charts",
+      "target": "packages/react-ui/src/components/Charts/index.ts"
+    },
+    {
+      "file": "Charts/BarChartCondensed.ts",
+      "import": "../../components/Charts",
+      "target": "packages/react-ui/src/components/Charts/index.ts"
+    },
+    {
+      "file": "Charts/LineChartCondensed.ts",
+      "import": "../../components/Charts",
+      "target": "packages/react-ui/src/components/Charts/index.ts"
+    },
+    {
+      "file": "Icon/schema.ts",
+      "import": "../../components/_shared/icons",
+      "target": "packages/react-ui/src/components/_shared/icons/index.ts"
+    },
+    {
+      "file": "cardTagUtils.tsx",
+      "import": "../components/Tag",
+      "target": "packages/react-ui/src/components/Tag/index.ts"
+    },
+    {
+      "file": "cardTagUtils.tsx",
+      "import": "../components/_shared/icons",
+      "target": "packages/react-ui/src/components/_shared/icons/index.ts"
+    }
+  ]
+}

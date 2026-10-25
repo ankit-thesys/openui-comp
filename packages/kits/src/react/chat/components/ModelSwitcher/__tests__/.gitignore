@@ -1,0 +1,11 @@
+results/browser-*/vite-inputs/
+results/browser-*/vite-builds/
+results/browser-*/report.json
+results/browser-*/baseline.css
+results/browser-*/plain.css
+results/browser-*/tailwind3.css
+results/browser-*/tailwind4.css
+results/module-origin-*/vite-inputs/
+results/module-origin-*/vite-builds/
+results/module-origin-*/prepared.json
+results/module-origin-*/*.css

@@ -29,8 +29,8 @@ Installed comparisons found two dependencies on legacy global defaults: Calendar
 - [x] Owned corrected-source matrix:6 plain/Tailwind3/Tailwind4 initial-order cases,40,242 paired style/geometry observations on a5cdaa0fa. Exact archive/consumer/lock retained.
 - [x] Corrected integrated artifact frozen at1d31a4b63ee66f03c21688d96cee28bcad8380ac,1,062,926bytes, SHA256638a8336a60800ae40fa4e46a7130ca41141393382652dd5cf9e73626a8de806. Normal-installed Line default/zero/precedence regression, native all19 ESM/CJS, strict consumer3modes and focused pruning pass. Affected owned comparison passes6cases/46,440paired observations; Worker2 remaining matrix follows on this artifact. Earlier7e broad6/46,656 and portal-rest interaction6/12,408 are historical evidence, not recertification of the corrected source.
 - [x] Worker2 committed independent evidence4bcd0c13b integrated2323d977e on the same corrected artifact: Line6/11,664; HorizontalBar6/10,728 bounded observations plus6 inherited-instability records; remaining9 entries6/62,730. Total85,122 paired observations across separate batches sharing the same6 framework/order combinations. **Default HorizontalBar string-height/legend-fit strict comparison remains unpassed.**
-- [x] Final integrated package CI136/136, format/lint/types/build/Publint/ATTW pass. Two existing ThemeProvider hook warnings remain; no lint errors. Final source review has no new technical findings; Worker2 evidence is committed and integrated. Remote checks remain pending.
-- [ ] Fork remote build and changeset checks.
+- [x] Final integrated package CI136/136, format/lint/types/build/Publint/ATTW pass. Two existing ThemeProvider hook warnings remain; no lint errors. Final source review has no new technical findings; Worker2 evidence is committed and integrated. Remote build/changeset checks pass.
+- [x] Fork remote CI on ddd9f9a5e13a61a865cee76212b13a6230fc67d3: [BuildJS40195759345](https://github.com/ankit-thesys/openui-comp/actions/runs/40195759345) PASS8m16s; [changeset40195759293](https://github.com/ankit-thesys/openui-comp/actions/runs/40195759293) PASS13s. Remote core136/136 and package checks pass.
 
 ## Compatibility and limits
 
@@ -44,4 +44,4 @@ Browser target: Chrome, plain CSS and Tailwind v3/v4, both initial stylesheet or
 
 ## Merge danger
 
-**Door:** two-way. **Blast Radius:** components. Draft only; depends on PR36. Local package checks pass and independent browser evidence is integrated with the explicit inherited HorizontalBar gap. Remote checks are pending; the unresolved default-fit strict comparison remains visible for review. Do not merge, publish or close migration tickets from this checkpoint.
+**Door:** two-way. **Blast Radius:** components. Draft only; depends on PR36. Local package checks pass and independent browser evidence is integrated with the explicit inherited HorizontalBar gap. Remote checks pass; the unresolved default-fit strict comparison remains visible for review. Do not merge, publish or close migration tickets from this checkpoint.

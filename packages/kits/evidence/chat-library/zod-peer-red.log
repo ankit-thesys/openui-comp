@@ -1,0 +1,25 @@
+TAP version 13
+# Subtest: normal packed consumer resolves both public entries and prunes unused library and components
+not ok 1 - normal packed consumer resolves both public entries and prunes unused library and components
+  ---
+  duration_ms: 18708.647667
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/tests/packed.test.mjs:33:1'
+  failureType: 'testCodeFailure'
+  error: "Missing expected exception: npm must reject Zod 3.25.0 under the kit's tested-minimum peer contract"
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/tests/packed.test.mjs:172:16)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 18810.066792

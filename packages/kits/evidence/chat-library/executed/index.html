@@ -1,0 +1,4 @@
+<!doctype html><html><head><script>
+const q=new URLSearchParams(location.search);const link=document.createElement('link');link.rel='stylesheet';link.href='/'+q.get('framework')+'.css';
+if(q.get('order')==='before') document.head.append(link);else window.addEventListener('load',()=>document.head.append(link));
+</script></head><body><div id="root"></div><script type="module" src="/app.tsx"></script></body></html>

@@ -1,0 +1,85 @@
+packages/react-ui/src/components/ThemeProvider/useSystemThemeMode.ts (1:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+packages/react-ui/src/components/ThemeProvider/useSystemThemeMode.ts (1:0): Module level directives cause errors when bundled, "use client" in "packages/react-ui/src/components/ThemeProvider/useSystemThemeMode.ts" was ignored.
+packages/react-ui/src/components/ModelSwitcher/ModelSwitcher.tsx (1:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+packages/react-ui/src/components/ModelSwitcher/ModelSwitcher.tsx (1:0): Module level directives cause errors when bundled, "use client" in "packages/react-ui/src/components/ModelSwitcher/ModelSwitcher.tsx" was ignored.
+packages/react-ui/src/components/ThemeProvider/useThemeModePreference.ts (1:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+packages/react-ui/src/components/ThemeProvider/useThemeModePreference.ts (1:0): Module level directives cause errors when bundled, "use client" in "packages/react-ui/src/components/ThemeProvider/useThemeModePreference.ts" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-select/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-select/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-collection/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-collection/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-direction/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-direction/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-focus-guards/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-focus-guards/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-dismissable-layer/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-dismissable-layer/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-portal/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-portal/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-primitive/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-primitive/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-focus-scope/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-focus-scope/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-popper/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-popper/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-visually-hidden/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-visually-hidden/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-presence/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-presence/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-arrow/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-arrow/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@openuidev/kits/dist/react/chat/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@openuidev/kits/dist/react/chat/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/ModelSwitcher.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/ModelSwitcher.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/useThemeModePreference.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/useThemeModePreference.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/useSystemThemeMode.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/useSystemThemeMode.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/Modal/Modal.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/Modal/Modal.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-select/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-select/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-accordion/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-accordion/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-separator/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-separator/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-checkbox/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-checkbox/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-tooltip/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-tooltip/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-aspect-ratio/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-aspect-ratio/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-label/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-label/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-radio-group/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-radio-group/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-switch/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-switch/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-slider/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-slider/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-tabs/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-tabs/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-toggle-group/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-toggle-group/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-direction/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-direction/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-focus-scope/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-focus-scope/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-collection/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-collection/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-focus-guards/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-focus-guards/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-dismissable-layer/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-dismissable-layer/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-portal/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-portal/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-primitive/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-primitive/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-popper/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-popper/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-presence/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-presence/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-visually-hidden/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-visually-hidden/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-collapsible/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-collapsible/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-roving-focus/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-roving-focus/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-arrow/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-arrow/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-toggle/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-model-border-consumer/node_modules/@radix-ui/react-toggle/dist/index.mjs" was ignored.
+plain/host-before/none: passed
+plain/host-before/light: passed
+plain/host-before/dark: passed
+plain/host-before/custom-light: passed
+plain/host-before/custom-dark: passed
+plain/host-before/nested: passed
+plain/host-after/none: passed
+plain/host-after/light: passed
+plain/host-after/dark: passed
+plain/host-after/custom-light: passed
+plain/host-after/custom-dark: passed
+plain/host-after/nested: passed
+tailwind3/host-before/none: passed
+tailwind3/host-before/light: passed
+tailwind3/host-before/dark: passed
+tailwind3/host-before/custom-light: passed
+tailwind3/host-before/custom-dark: passed
+tailwind3/host-before/nested: passed
+tailwind3/host-after/none: passed
+tailwind3/host-after/light: passed
+tailwind3/host-after/dark: passed
+tailwind3/host-after/custom-light: passed
+tailwind3/host-after/custom-dark: passed
+tailwind3/host-after/nested: passed
+tailwind4/host-before/none: passed
+tailwind4/host-before/light: passed
+tailwind4/host-before/dark: passed
+tailwind4/host-before/custom-light: passed
+tailwind4/host-before/custom-dark: passed
+tailwind4/host-before/nested: passed
+tailwind4/host-after/none: passed
+tailwind4/host-after/light: passed
+tailwind4/host-after/dark: passed
+tailwind4/host-after/custom-light: passed
+tailwind4/host-after/custom-dark: passed
+tailwind4/host-after/nested: passed

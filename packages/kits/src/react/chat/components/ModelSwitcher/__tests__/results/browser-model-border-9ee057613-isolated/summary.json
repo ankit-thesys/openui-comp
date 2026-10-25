@@ -1,0 +1,721 @@
+{
+  "status": "passed",
+  "mode": "model-border-regression",
+  "productCommit": "9ee057613",
+  "consumer": "/private/tmp/chat16-model-border-consumer",
+  "browser": "156.0.8078.47",
+  "cases": 36,
+  "pairedComparisons": 192,
+  "failedComparisons": 0,
+  "artifactUnchanged": true,
+  "productModuleOrigins": {
+    "kits": [
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpBlock/followUpBlock.styles.mjs",
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpBlock/FollowUpBlock.mjs",
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpItem/followUpItem.styles.mjs",
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/kits/dist/react/chat/components/FollowUpItem/FollowUpItem.mjs",
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.mjs",
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/utils.mjs",
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/ModelSwitcher.mjs"
+    ],
+    "core": [
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/swatches.mjs",
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/defaultTheme.mjs",
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/types.mjs",
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/utils.mjs",
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/ThemeProvider.mjs",
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/Select/select.styles.mjs",
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/Select/Select.mjs",
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/Tag/tag.styles.mjs",
+      "/private/tmp/chat16-model-border-consumer/node_modules/@openuidev/react-ui-core/dist/components/Tag/Tag.mjs"
+    ]
+  },
+  "casesSummary": [
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "none",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "none",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "none",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "light",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "light",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "light",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "dark",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "dark",
+          "logo": "D"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "dark",
+          "logo": "D"
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "custom-light",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "custom-light",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "custom-light",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "custom-dark",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "custom-dark",
+          "logo": "D"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "custom-dark",
+          "logo": "D"
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "nested",
+      "status": "passed",
+      "comparisons": 7,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "nested",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "nested",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "none",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "none",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "none",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "light",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "light",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "light",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "dark",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "dark",
+          "logo": "D"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "dark",
+          "logo": "D"
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "custom-light",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "custom-light",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "custom-light",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "custom-dark",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "custom-dark",
+          "logo": "D"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "custom-dark",
+          "logo": "D"
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "nested",
+      "status": "passed",
+      "comparisons": 7,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "nested",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "nested",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "none",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "none",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "none",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "light",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "light",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "light",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "dark",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "dark",
+          "logo": "D"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "dark",
+          "logo": "D"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "custom-light",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "custom-light",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "custom-light",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "custom-dark",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "custom-dark",
+          "logo": "D"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "custom-dark",
+          "logo": "D"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "nested",
+      "status": "passed",
+      "comparisons": 7,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "nested",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "nested",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "none",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "none",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "none",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "light",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "light",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "light",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "dark",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "dark",
+          "logo": "D"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "dark",
+          "logo": "D"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "custom-light",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "custom-light",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "custom-light",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "custom-dark",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "custom-dark",
+          "logo": "D"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "custom-dark",
+          "logo": "D"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "nested",
+      "status": "passed",
+      "comparisons": 7,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "nested",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "nested",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "none",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "none",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "none",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "light",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "light",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "light",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "dark",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "dark",
+          "logo": "D"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "dark",
+          "logo": "D"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "custom-light",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "custom-light",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "custom-light",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "custom-dark",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "custom-dark",
+          "logo": "D"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "custom-dark",
+          "logo": "D"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "nested",
+      "status": "passed",
+      "comparisons": 7,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "nested",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "nested",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "none",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "none",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "none",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "light",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "light",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "light",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "dark",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "dark",
+          "logo": "D"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "dark",
+          "logo": "D"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "custom-light",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "custom-light",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "custom-light",
+          "logo": "L"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "custom-dark",
+      "status": "passed",
+      "comparisons": 5,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "custom-dark",
+          "logo": "D"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "custom-dark",
+          "logo": "D"
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "nested",
+      "status": "passed",
+      "comparisons": 7,
+      "logoObservations": [
+        {
+          "arm": "baseline",
+          "fixtureTheme": "nested",
+          "logo": "L"
+        },
+        {
+          "arm": "runtime",
+          "fixtureTheme": "nested",
+          "logo": "L"
+        }
+      ]
+    }
+  ],
+  "rawReportSHA256": "4f0b9a09cc042c5a271bbffdb63c7ec7995b2efae9d9980087f95daa92608ca1",
+  "browserReleased": true
+}

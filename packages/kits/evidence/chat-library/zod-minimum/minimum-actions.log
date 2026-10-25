@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: chat parser preserves positional form, chart and table contracts across arbitrary chunks
+ok 1 - chat parser preserves positional form, chart and table contracts across arbitrary chunks
+  ---
+  duration_ms: 8.729417
+  type: 'test'
+  ...
+# Subtest: streaming renderer disables forms, restores history, validates and emits existing actions
+ok 2 - streaming renderer disables forms, restores history, validates and emits existing actions
+  ---
+  duration_ms: 45.531625
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2158.769209

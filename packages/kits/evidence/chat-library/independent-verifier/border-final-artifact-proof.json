@@ -1,0 +1,16 @@
+[
+  {
+    "name": "kits",
+    "archive": "/private/tmp/chat16-model-border-artifacts/openuidev-kits-0.0.0-beta.0.tgz",
+    "sha256": "9fc227a88cbf6d949247aee90e729efa58d669ba738674880396903db98785bb",
+    "installedFilesMatched": 566,
+    "mismatches": []
+  },
+  {
+    "name": "react-ui-core",
+    "archive": "/private/tmp/chat16-final-artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz",
+    "sha256": "a5d002d20a6fbed1cdb61cddc255f1619dc945d08cf9406eb3ce94e135988fe2",
+    "installedFilesMatched": 2202,
+    "mismatches": []
+  }
+]

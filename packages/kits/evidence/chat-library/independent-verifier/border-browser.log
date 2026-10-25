@@ -1,0 +1,7 @@
+BORDER_PASS plain before 60
+BORDER_PASS plain after 60
+BORDER_PASS tailwind3 before 60
+BORDER_PASS tailwind3 after 60
+BORDER_PASS tailwind4 before 60
+BORDER_PASS tailwind4 after 60
+BORDER_BROWSER_RELEASED
