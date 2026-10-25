@@ -1,0 +1,86 @@
+{
+  "browser": "156.0.8078.47",
+  "results": [
+    {
+      "mode": "used",
+      "computed": {
+        "math": true,
+        "font": "KaTeX_Main, \"Times New Roman\", serif",
+        "fonts": [
+          "KaTeX_Main",
+          "KaTeX_Math"
+        ],
+        "resources": [
+          {
+            "name": "http://127.0.0.1:56451/assets/index-BWJou2S4.js",
+            "bytes": 261948
+          },
+          {
+            "name": "http://127.0.0.1:56451/assets/styles-E9JuhVjd.css",
+            "bytes": 29243
+          },
+          {
+            "name": "http://127.0.0.1:56451/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+            "bytes": 26572
+          },
+          {
+            "name": "http://127.0.0.1:56451/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+            "bytes": 16740
+          },
+          {
+            "name": "http://127.0.0.1:56451/favicon.ico",
+            "bytes": 300
+          }
+        ]
+      },
+      "responses": [
+        {
+          "url": "http://127.0.0.1:56451/index.html",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:56451/assets/index-BWJou2S4.js",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:56451/assets/styles-E9JuhVjd.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:56451/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:56451/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+          "status": 200
+        }
+      ],
+      "failures": []
+    },
+    {
+      "mode": "unused",
+      "computed": {
+        "math": false,
+        "font": null,
+        "fonts": [],
+        "resources": [
+          {
+            "name": "http://127.0.0.1:56451/assets/index-N5WBaTtV.js",
+            "bytes": 1076
+          }
+        ]
+      },
+      "responses": [
+        {
+          "url": "http://127.0.0.1:56451/index.html",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:56451/assets/index-N5WBaTtV.js",
+          "status": 200
+        }
+      ],
+      "failures": []
+    }
+  ]
+}

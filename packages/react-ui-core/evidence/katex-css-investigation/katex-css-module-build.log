@@ -1,0 +1,25 @@
+ℹ tsdown v0.21.10 powered by rolldown v1.0.0-rc.17
+ℹ config file: /private/tmp/core-katex-css-probe/tsdown.config.ts 
+ℹ entry: src/index.ts
+ℹ Build start
+ℹ Cleaning 69 files
+ℹ Hint: consider adding deps.onlyBundle option to avoid unintended bundling of dependencies, or set deps.onlyBundle: false to disable this hint.
+See more at https://tsdown.dev/options/dependencies#deps-onlybundle
+Detected dependencies in bundle:
+- katex
+ℹ Hint: consider adding deps.onlyBundle option to avoid unintended bundling of dependencies, or set deps.onlyBundle: false to disable this hint.
+See more at https://tsdown.dev/options/dependencies#deps-onlybundle
+Detected dependencies in bundle:
+- katex
+ℹ [CJS] dist/index.cjs                            0.45 kB │ gzip:   0.28 kB
+ℹ [CJS] dist/node_modules/katex/dist/katex.cjs  493.21 kB │ gzip: 108.59 kB
+ℹ [CJS] dist/katex.css                           26.94 kB │ gzip:   3.55 kB
+ℹ [CJS] dist/styles.cjs                           0.07 kB │ gzip:   0.08 kB
+ℹ [CJS] 4 files, total: 520.68 kB
+✔ Build complete in 80ms
+ℹ [ESM] dist/index.mjs                            0.20 kB │ gzip:   0.16 kB
+ℹ [ESM] dist/node_modules/katex/dist/katex.mjs  493.13 kB │ gzip: 108.56 kB
+ℹ [ESM] dist/katex.css                           26.94 kB │ gzip:   3.55 kB
+ℹ [ESM] dist/styles.mjs                           0.08 kB │ gzip:   0.07 kB
+ℹ [ESM] 4 files, total: 520.35 kB
+✔ Build complete in 81ms

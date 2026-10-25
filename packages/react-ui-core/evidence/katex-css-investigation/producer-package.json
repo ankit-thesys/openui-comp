@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "tsdown": "0.21.10",
+    "@tsdown/css": "0.21.10",
+    "katex": "^0.16.0"
+  },
+  "name": "@openui-prototype/katex-css",
+  "version": "0.0.0",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ]
+}

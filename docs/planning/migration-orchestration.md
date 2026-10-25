@@ -1,3 +1,11 @@
+# Composer browser handoff — window released to Worker2, 2026-10-25
+
+Worker1 explicitly releases Chrome to Worker2 for the NEW four-composer matrix only. No Worker1 browser runs until returned. Frozen normal npm consumer: `/private/tmp/core-combined12-consumer`. Tarball `/private/tmp/core-combined12-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`,401147 bytes, SHA256 `f0fe45fde1e9eb22a674558fafddfe9a0269ff7a6f29e2bbe6214648eb6ad43e`. CORE_ARTIFACT_REVISION=`e4e245bcb32781f757f367711f25107261e72d63`. Source includes all four composer public exports and TextContentWrapper (math CSS remains unresolved). Same browser/Sass/host tools as historical handoffs. Consumer is normal npm installed with lockfile; do not alter it or overwrite artifact. Composer browser acceptance pending; no repeated unchanged media matrix required.
+
+Source415471d00/review1ba667281 and wrapper/export integratione4e245bcb committed. Both independent integration reviews report zero actionable source findings. Full package CI is running; final consumer/native/types/pruning results follow. Raw initial browser evidence preserved through a narrow package Prettier exclusion, not reserialized.
+
+Math probe: browser sample CSS/two fonts delivered; unused browser import loads neither CSS/fonts, but unused build still emits59 font files totaling1,072,948 bytes. Actual component automatic styling unproven. Explicit exception options and preserved probe sources/results: `packages/react-ui-core/evidence/katex-css-investigation/README.md`. No production plugin/CSS integration adopted. Root can ask for scoped exception approval using this concrete evidence; other validation continues.
+
 # Current slice12 checkpoint — 2026-10-25
 
 Worker2 fixed media retest PASSED: 6 cases / 8,292 snapshots on the frozen normal npm artifact at production96221894a, SHA256 cb6306b9646be0dad2654542156e5e11623600bfe321abe2a9d5496cf21f8b45. Evidence4a82625a6 integrated ase1c2f55c7. Source/presentation12 cases /22,056 snapshots remain tied to the earlier680118396 artifact. Worker1 now retains the browser window for math validation; older handoffs below are historical.
