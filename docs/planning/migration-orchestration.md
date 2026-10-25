@@ -1,3 +1,17 @@
+# CURRENT — slice13 authorized / EditableTable focused checks green — 2026-10-25
+
+Branch: `codex/react-ui-core-data-cards`, based on PR34 head `c7d85dad3b356cd5de9d5e21fadd5a4cddc52fd7`. Documentation-only `49ea769c8` carried as `560b08950`; PR34 product head remains unchanged. This section supersedes historical “slice13 undispatched” notes below.
+
+Worker1 owns Batch B: EditableTable and its private cells, hooks, registry, styles and tests; later Batch D: CompositeCardBlock, ContextCardBlock and VisualCardBlock after Worker2's committed shared card layout. Worker1 also owns root exports, dependencies, lockfile and integration. Worker2 owns Batch A: MetricIndicator, EntityList, ListItem and ListBlock, then Batch C: shared cards layout, OverviewCardBlock and SnippetCardBlock. Integrate committed batches only; do not edit the other worker's paths. Awaiting Worker2's bounded A/C handoffs. Friend31/32 remain outside ownership.
+
+EditableTable implementation is currently uncommitted: unchanged legacy logic/native table/TanStack structure, three conventional stock-Goober style files, existing public exports and only the existing TanStack dependency range. Focused real Chrome public-root test passes (1/1); producer types and build pass. Independent GPT6.1-sol specification and standards reviewers report no actionable source findings. Normal-installed artifact checks and affected framework/theme/geometry parity remain pending; this is not slice acceptance. No broad or unrelated reruns are required.
+
+Inherited limitation: saving a text cell with Enter invokes `onDataChange` twice in both untouched legacy and extracted components (keyboard save followed by blur). The extraction preserves this behavior; no redesign or custom patch. The test now records the baseline-confirmed count. Original failed expectation and legacy confirmation logs remain in `/private/tmp/editable13-callback-assumption.tap` and `/private/tmp/editable13-legacy-callback.tap`, pending evidence archival.
+
+Browser window: Worker1 retains FIRST window for affected EditableTable checks. Last focused browser/server closed; no active browser measurement. Worker2 remains source-only until explicit release. Shared lock diff is limited to the new core TanStack importer; old react-ui, previews and unrelated crates remain untouched. No merge, release, upstream/main writes or ticket closure. Integrated normal-packed checks, independent final review and CI precede the next stacked draft.
+
+---
+
 # CURRENT — slice12 COMPLETE as reviewed DRAFT PR34; CI GREEN — 2026-10-25
 
 Draft PR https://github.com/ankit-thesys/openui-comp/pull/34 is OPEN/DRAFT, attached, stacked on codex/react-ui-core-layout (#33). Reviewed/pushed source head `c7d85dad3b356cd5de9d5e21fadd5a4cddc52fd7`. Remote Build JS40180403689 PASSED9m5s and changeset40180403680 PASSED14s. Local integrated package CI97/97, native/strict3 modes, public normal-packed Vite/Chrome test and Worker2 independent6 cases /3,444 paired math snapshots all pass. Exact measured production package remainsa28833480 (401873 bytes, SHA2568709be66bc8b6b5ffd859b3df4fda1507ee63f9b7a75506c149a2aaf56012537); historical non-math matrices keep their own source revisions. Evidence under katex-integration and katex-independent-integration.
