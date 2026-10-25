@@ -67,7 +67,7 @@ function Content({ config }: { config: any }) {
           onReset={() => setChanges(0)}
         />
       </div>
-      <div id="cards-zone">
+      <div id="cards-zone" style={{ width: config.width }}>
         <Core.CompositeCardBlock
           {...common}
           items={

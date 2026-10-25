@@ -14,3 +14,8 @@ evidence/data-cards/browser-failures/*.json
 evidence/data-cards/consumer-lock.json
 # Preserve the exact passing slice13 browser measurement.
 evidence/data-cards/browser-results/*.json
+# Preserve Worker2's original slice13 failed reports and executed fixtures/runners.
+src/components/OverviewCardBlock/__tests__/results/browser-first/**
+src/components/OverviewCardBlock/__tests__/results/browser-focus-attempt/**
+src/components/OverviewCardBlock/__tests__/results/browser-carousel-failure/**
+src/components/OverviewCardBlock/__tests__/results/BROWSER_SHA256.json

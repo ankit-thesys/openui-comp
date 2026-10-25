@@ -1,3 +1,13 @@
+# CURRENT — slice13 responsive correction gate OPEN — 2026-10-25
+
+Worker2 found a genuine shared Overview carousel regression at450px: candidate cards240px versus legacy200px. Public Goober grouping emitted the narrow override before the later base rule. Root assigned conventional rule-order fix + regression test to source owner Worker2. Worker1 WILL NOT edit `_shared/cards` concurrently. Failed evidence8cc96c7be integrated as9cad937ee; its earlier prerequisite runner/fixture files retained exactly to resolve a modify/delete integration conflict. No production changes in that evidence commit.
+
+Prior107/107 local CI and6/48,494 owned browser matrix remain tied to artifactbaa3c1d93, not acceptance of this correction. PR gate remains OPEN. Await Worker2's committed fix, then Worker1 builds/packs a NEW immutable normal consumer. Worker1 affected D responsive check is prepared/reviewed: table fixture omitted, actual450/650/950px card containers, grid/carousel plus responsive disabled, plain/TW3/TW4 both initial stylesheet orders. No unrelated EditableTable or broad suite rerun planned for this shared card CSS correction.
+
+Browser window returned to Worker1; no Chrome/server currently active. After corrected artifact and owned affected run, explicitly release new exact revision/hash/consumer to Worker2 for A/C retest. Original failures/raw report/runner/fixture bytes preserved via narrow formatter exclusions. Source ownership and other guardrails unchanged; no merge/release/upstream/main/legacy/previews/crates changes or ticket closure.
+
+---
+
 # CURRENT — slice13 local integrated GREEN / browser RELEASED to Worker2 — 2026-10-25
 
 Branch `codex/react-ui-core-data-cards`; production `baa3c1d935d06e923ab9aa43ae3a97f3d3fd0ff5`, current source unchanged after measured correction. W1 Batch B455743987, W2 A670b14b70→28553bf25, W2 Ca3908845a→b4640259b, W1 D1175ae2f9, select effective-cascade fixbaa3c1d93. Shared layout reused; root/deps/lock W1-owned, only new TanStack importer3lines. No cross-owner source edits.

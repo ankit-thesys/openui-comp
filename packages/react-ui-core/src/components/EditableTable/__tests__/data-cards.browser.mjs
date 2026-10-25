@@ -19,6 +19,7 @@ assert(
   "use a normally installed packed package, not a workspace/scratch symlink",
 );
 const candidate = createRequire(path.join(candidatePath, "package.json"));
+const cardsOnly = process.env.CORE_BROWSER_SCOPE === "responsive-cards";
 const required = [
   "ThemeProvider",
   "InlineMarkdownRenderer",
@@ -38,7 +39,13 @@ const exports = candidate("@openuidev/react-ui-core");
 for (const name of required)
   assert(exports[name], `integrated public root export required: ${name}`);
 const hash = (value) => createHash("sha256").update(value).digest("hex");
-const source = await fs.readFile(path.join(here, "data-cards.fixture.tsx"), "utf8");
+let source = await fs.readFile(path.join(here, "data-cards.fixture.tsx"), "utf8");
+if (cardsOnly) {
+  const start = source.indexOf('<div id="table-zone"');
+  const end = source.indexOf('<div id="cards-zone"', start);
+  assert(start >= 0 && end > start, "bounded table fixture section");
+  source = source.slice(0, start) + source.slice(end);
+}
 const baseline = path.join(repository, "packages/react-ui/src/components");
 const legacyPrefix =
   required
@@ -357,6 +364,26 @@ try {
             .evaluate((n) => getComputedStyle(n).zIndex),
           "2",
         );
+      }
+      if (cardsOnly) {
+        for (const page of pages) assert.equal(await page.locator("#table-zone").count(), 0);
+        for (const width of [450, 650, 950])
+          for (const layout of ["grid", "carousel"]) {
+            await configure({ width, layout, responsive: true, clickable: true });
+            for (const page of pages)
+              assert.equal(
+                await page.locator("#cards-zone").evaluate((n) => n.getBoundingClientRect().width),
+                width,
+              );
+            await compare(`responsive/${width}/${layout}`);
+          }
+        await configure({ width: 450, layout: "grid", responsive: false });
+        await compare("responsive-disabled/450/grid");
+        assert.deepEqual(errors, []);
+        report.cases.push({ framework, order, status: "passed", scope: "responsive-cards" });
+        for (const page of pages) await page.close();
+        await save();
+        continue;
       }
       await compare("default");
       for (const config of [
