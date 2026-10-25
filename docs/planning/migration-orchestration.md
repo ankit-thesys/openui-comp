@@ -1,3 +1,26 @@
+# CURRENT — focused attempt incomplete; browser RELEASED to verifier — 2026-10-25
+
+W1rancommittedfocusedharnessaae711ad3 onfrozen9ee057613 / kit9fc227a88...
+consumer /private/tmp/chat16-model-border-consumer. None+light cells eachpassed
+5strictcomparisons; darknormalstylecomparisonmatched, thenlogoassertionrunner428
+readLexpectedD. Assertiondoesnotlabelarm; W2mustdiagnosefixturestateobservation
+versusproductbehavior. Fullaffectedmatrix remainsUNPASSED; donotweaken/filter
+assertionorclaimCSSfailurecausewithoutproof. Remainingcellsnotrun.
+
+Preservedrawgzip/exactrunner+fixture/servedCSS/log/summary under
+ModelSwitcher/__tests__/results/browser-model-border-9ee057613/. Installed
+inventoriesunchanged. Original42/330red remains separate. AllW1Chrome/server
+closed byrunnerfinally. **Browser explicitly RELEASED to verifier now** for its
+targetedcorrectedborderconfirmationon9ee/9fc whileW2source-onlydiagnosesharness.
+Rootrelaysfinding/release; W1willnotlaunchChromeagainuntilcoordination.
+
+Productcodeunchangedfrom9ee. FullpackageCI7/7+allchecks/source reviewsclear,
+but no combinedstyleacceptance orreview-readyPR. No runtimepatch/sourcefixon
+speculation, sharedSelect/legacy/preview changes, SSR/#17claim, merge/release/
+closure. Preserveuntrackedcrates. Newartifactpaths/hashes inpriorhandoffs.
+
+---
+
 # CURRENT — verifier released; W1 running strict focused border regression — 2026-10-25
 
 Verifier completed independent metadata/native/type/transport/theme/asset checks

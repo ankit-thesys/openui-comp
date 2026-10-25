@@ -1,0 +1,38 @@
+{
+  "status": "failed",
+  "productCommit": "9ee057613",
+  "consumer": "/private/tmp/chat16-model-border-consumer",
+  "artifactUnchanged": true,
+  "cases": [
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "none",
+      "status": "passed",
+      "comparisons": 5,
+      "comparisonFailures": 0,
+      "error": null
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "light",
+      "status": "passed",
+      "comparisons": 5,
+      "comparisonFailures": 0,
+      "error": null
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "dark",
+      "status": "failed",
+      "comparisons": 1,
+      "comparisonFailures": 0,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'L' !== 'D'\n"
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'L' !== 'D'\n",
+  "rawReportSHA256": "be8f6d7686a46152cf7f36b7fb305e614a231f0e13a5d85ecf95f771cd94cf5f",
+  "browserReleased": true
+}
