@@ -1,0 +1,34 @@
+TAP version 13
+# Subtest: option cards preserve controlled selection, native roots, markdown and callback values
+ok 1 - option cards preserve controlled selection, native roots, markdown and callback values
+  ---
+  duration_ms: 44.0895
+  type: 'test'
+  ...
+# Subtest: option cards filter missing identities and preserve native disabled actions and top slots
+ok 2 - option cards filter missing identities and preserve native disabled actions and top slots
+  ---
+  duration_ms: 10.069333
+  type: 'test'
+  ...
+# Subtest: core exposes extracted controls through the public root
+ok 3 - core exposes extracted controls through the public root
+  ---
+  duration_ms: 0.672333
+  type: 'test'
+  ...
+# Subtest: OptionCards root import retains its markdown and row helper without unrelated card implementations
+ok 4 - OptionCards root import retains its markdown and row helper without unrelated card implementations
+  ---
+  duration_ms: 852.089083
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1801.215417

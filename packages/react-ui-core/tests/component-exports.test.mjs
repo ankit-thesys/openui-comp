@@ -33,6 +33,7 @@ test("core exposes extracted controls through the public root", () => {
     "Slider",
     "SliderBlock",
     "Chips",
+    "OptionCards",
     "LayoutContext",
     "LayoutContextProvider",
     "useLayoutContext",

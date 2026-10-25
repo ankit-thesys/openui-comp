@@ -1,3 +1,63 @@
+# CURRENT — OptionCards local/independent GREEN; authorized stacked draft preparing — 2026-10-25
+
+W2 harness03927d88a and evidence6db4d26e7 integrated08f36c99c/8f09f299f. Independent Chrome6cases /15,732 image-inclusive paired snapshots PASS on exact4911a82f825ce518f073fd995637d853a38a6620 artifact498447 bytes SHA0a66152ad19a6c7e0a732a652175723e8bd1bcde1b5159a10e3966d835b67821. Package/lock unchanged; installedDOM2pass; native public-root/strict3modes/pruning pass. W2 browser released, all contexts/server closed.
+
+Final local package CI110/110, format/lint/types/build/Publint/ATTW PASS; two existing ThemeProvider warnings, zero lint errors. Both independent GPT6.1-Sol source/harness review axes clear after stale pending README wording updated. No source correction/new dependencies or shared helper changes. Raw reports preserved with narrow exclusions. Source behavior/native controlled semantics preserved; no custom runtime machinery.
+
+Authorized next: push only fork ankit-thesys/openui-comp branch codex/react-ui-core-option-cards, open attached stacked DRAFT targeting codex/react-ui-core-data-cards (#35), monitor/fix remoteCI. Prepared body docs/planning/option-cards-pr-draft.md. No local gate remains. No merge/release/closure/upstream/main/legacy/previews/crates changes. No chart production; root dispatch afterward with established bootstraporder. SSR/parser streaming/performance/memory and dynamicCSSrecovery unvalidated. Native Tab/Enter/Space preserved, custom arrows/roving absent in both implementations.
+
+---
+
+# CURRENT — OptionCards frozen artifact ready / Worker2 FIRST browser window — 2026-10-25
+
+Branch codex/react-ui-core-option-cards based PR35 reviewed838d78ec2. W2 sourceea6311ba0 integratede7dbede07; W1 root/export integration `4911a82f825ce518f073fd995637d853a38a6620`. Existing controlled/native behavior, markdown and private row helper preserved. No new dependency/package-lock changes. Focused public integration4/4 passes after genuine missing-export/pruning RED; producer build/strict types and affected formatting pass. Both GPT6.1-Sol review axes zero actionable findings.
+
+EXACT frozen consumer `/private/tmp/core-option-cards-consumer`; tar `/private/tmp/core-option-cards-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`;498447 bytes; SHA256 `0a66152ad19a6c7e0a732a652175723e8bd1bcde1b5159a10e3966d835b67821`; source4911a82f825ce518f073fd995637d853a38a6620. All tar files match installed bytes. Fixed tools/types installed before freeze; package/lock immutable. Installed native public-root ESM/CJS, strict TS5.9.3 skipLibCheckfalse3 modes and focused JS/Goober pruning pass. Manifest/exact lock/logs under evidence/option-cards.
+
+Worker2 owns FIRST Chrome window and may now validate this exact normal artifact against legacy with plain/TW3/TW4 initial orders, themes, responsive boundaries, controlled selection/native keyboard/disabled/slots/overrides. Worker1 remains NON-BROWSER; no Chrome launched. CORE_BROWSER_TOOLS=this checkout/packages/react-ui-core; existing Sass/host tools unchanged. Worker2 must preserve package/lock and explicitly release browser after bounded matrix. Full integrated package CI waits for release; no unchanged unrelated local matrices.
+
+Authorized next after browser/review gate: attached fork-only stacked DRAFT targeting codex/react-ui-core-data-cards (#35), check/fixCI; no merge/closure/release/upstream/main writes. Prepared body docs/planning/option-cards-pr-draft.md, accurately pending browser/CI. No charts production; root dispatch later uses sharedtypes→W2Bar/Scatterprereqs→W1foundation. Legacy/previews/crates untouched. SSR/performance/memory unvalidated. This current section supersedes older OptionCards red/pending-source statuses below.
+
+---
+
+# CURRENT — deferred OptionCards dispatched / integration TDD red — 2026-10-25
+
+Root accepted PR35 green checkpoint and dispatched bounded OptionCards completion only. Branch `codex/react-ui-core-option-cards` based exactly reviewed838d78ec23f3c4e31c84873b9926d518cd5c2776; local docs99f1b131e/092f55a19/89301a837 carried safely asa03a116ad/ee3e7d3eb/27e201553. PR35 remains unchanged/green.
+
+Worker2 owns only OptionCards source/styles/tests. Worker1 owns root exports, integration/metadata/artifact and independent review. Both use committed handoffs, no cross-owner edits. Public root export check now genuinely RED: Missing root component OptionCards; preserved under evidence/option-cards. No export added until committed source exists. Existing InlineMarkdownRenderer and private shared getRowConfiguration must be reused, no helper duplication.
+
+Worker2 owns FIRST OptionCards Chrome window after exact artifact agreement. Worker1 stays NON-BROWSER until release; Node/build/type/pruning preparation may proceed. Preserve controlled selection/native buttons/callbacks/roles/markdown/ref/forwarding and styles; no redesign/new APIs. Stock Goober/accepted math vendor exception, legacy/previews/crates untouched. No charts source begun; chart bootstrap order remains future root dispatch after this checkpoint. Authorized attached fork-only stacked draft atop PR35 once scoped tests/review pass; no merge/closure/release/upstream/main writes.
+
+---
+
+# CURRENT — slice13 COMPLETE as reviewed DRAFT PR35; CI GREEN — 2026-10-25
+
+Fork draft https://github.com/ankit-thesys/openui-comp/pull/35 OPEN/DRAFT, attached, stacked on codex/react-ui-core-text-media (#34). Reviewed/pushed product head `838d78ec23f3c4e31c84873b9926d518cd5c2776`. Remote BuildJS40184784878 PASS9m5s and changeset40184784860 PASS14s. Corrected-source core107/107 tests, format/lint/types/build/Publint/ATTW pass remotely; no source correction needed after opening. Full raw job log/status archived under evidence/data-cards/remote-ci. PR description updated to green.
+
+Exact browser/installed artifact remains production `4119cddbed813f81e37b949ce00421a7e65173a3`,492247 bytes, SHA256 `2c29042765ee120d7f85dd4da7176152ee54cfa7dcaff794ee3990473ea59e02`, consumer `/private/tmp/core-data13c-consumer`. W2 A/C12cases /56,268 +W1 affectedD6cases /10,656 paired snapshots pass on it. Native public ESM/CJS, strict3modes/pruning pass. Earlier broader B/D48,494 onbaa3 remains historical. Final Spec/Standards clear; all original failures/known limitations preserved. No custom runtime patches.
+
+Final post-CI handoff/proposal commits are LOCAL DOCS/EVIDENCE ONLY, deliberately not pushed to avoid repeating green CI on unchanged production. PR35 product head above includes all source/tests/lock/release notes and independent evidence. Root may carry local docs into following orchestration. No merge, publication, ticket closure or deprecation.
+
+Read-only next dispatch proposal: docs/planning/slice14-readonly-proposal.md, verified against source and updated per root/W2 bootstrap review. Recommend deferred OptionCards first, then full19chart inventory. Chart bootstrap: W1sharedtypes → W2 Bar geometry/types+Scattertypes → W1foundation → dependentfamilies. Distinct PrintContext mechanisms preserved; PR30 chart evidence reused read-only, friendpaths reserved. No next production started; wait for root dispatch. Browser/server closed and available.
+
+Inherited callback/sign/keyboard/tooltip limits and unvalidated simultaneous long Snippet slots remain disclosed. Dynamic host stylesheet recovery and SSR/hydration/performance/memory remain uncertified. Legacy, previews and unrelatedcrates untouched. This current section supersedes all historical statuses below.
+
+---
+
+# Next-plan bootstrap clarification — 2026-10-25
+
+Root/W2 review identified shared hooks' direct Bar geometry/types and Scatter types imports. Read-only slice14 proposal now orders W1 shared Charts/types → W2 BarChart/types.ts + BarChart/parts/horizontalBarGeometry.ts + ScatterChart/types.ts → W1 remaining foundation → family implementations. No duplicate helpers/legacy imports/custom resolver. Distinct React PrintContext vs print-media hook retained; corrected PR30 chart references reusable read-only, friend baseline paths reserved. OptionCards still recommended first. PR35 CI remains checkpoint; no next implementation dispatched or begun.
+
+# CURRENT — slice13 DRAFT PR35 OPEN; fork CI running — 2026-10-25
+
+Fork-only draft https://github.com/ankit-thesys/openui-comp/pull/35 OPEN/DRAFT and attached. Pushed head `838d78ec23f3c4e31c84873b9926d518cd5c2776`, branch codex/react-ui-core-data-cards, base codex/react-ui-core-text-media (#34). BuildJS40184784878 running; changeset40184784860 PASS14s. No merge/release/ticket closure/upstream writes.
+
+All corrected-artifact local gates pass: W2 A/C12/56,268 and W1 affected D6/10,656 on4119cddbe artifact492247bytes SHA2c29042765ee120d7f85dd4da7176152ee54cfa7dcaff794ee3990473ea59e02; native/strict/pruning pass. Final scoped Spec/Standards reviews clear after stale draft wording fixed. Historical whole107/107 and broader B/D48,494 retain oldartifact scope. Original failures and exact manifests preserved. No further unchanged browser matrices needed; browser/server closed.
+
+Next-work read-only proposal prepared: docs/planning/slice14-readonly-proposal.md. Recommends bounded deferred OptionCards completion first (now markdown + shared row helper exist), then full19chart-family/variant inventory with exclusive foundation/family ownership and packed/browser gates. Includes required distinct PrintContext support and existing D3/zustand imports. External chart baseline issues18/24 remain reserved; no helper/TL-gated work or next production started. CI final outcome remains pending.
+
+---
+
 # CURRENT — slice13 local/independent gates PASS; authorized stacked draft preparing — 2026-10-25
 
 Worker2 corrected A/C evidence82953d0ef integrated86860a77a:12 cases /56,268 paired snapshots PASS on exact4119cddbed813f81e37b949ce00421a7e65173a3 artifact492247 bytes, SHA2562c29042765ee120d7f85dd4da7176152ee54cfa7dcaff794ee3990473ea59e02. All installed files match tar, consumer/lock unchanged. W1 corrected D responsive6/10,656 passes on same artifact. Browser/server closed and released back to W1; no more Chrome required.

@@ -27,3 +27,8 @@ evidence/data-cards/corrected-carousel/*-responsive.json
 src/components/OverviewCardBlock/__tests__/results/browser-corrected/**
 src/components/OverviewCardBlock/__tests__/results/corrected-tooltip-fixture/**
 src/components/OverviewCardBlock/__tests__/results/CORRECTED_SHA256.json
+# Preserve the exact frozen OptionCards consumer lock.
+evidence/option-cards/consumer-lock.json
+# Preserve exact OptionCards browser measurements.
+src/components/OptionCards/__tests__/results/browser/attempt-1.json
+src/components/OptionCards/__tests__/results/browser/final.json

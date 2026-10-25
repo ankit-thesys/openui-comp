@@ -64,6 +64,29 @@ Root imports now include `EditableTable`, `EditableTableChangesBar`, `EntityList
 
 Extraction retains inherited behavior, including two `onDataChange` notifications when Enter-save is followed by blur in EditableTable. See [slice13 validation evidence](./evidence/data-cards/README.md) for exact coverage and remaining independent checks. Browser comparisons cover initial stylesheet orders; dynamically replacing or reordering host styles after mount is not certified.
 
+## OptionCards
+
+Import `OptionCards` and its existing types from the package root. Selection stays controlled: `onToggle` reports the item value, and the parent updates `selected`.
+
+```tsx
+import { useState } from "react";
+import { OptionCards } from "@openuidev/react-ui-core";
+
+function PlanChoice() {
+  const [selected, setSelected] = useState<string[]>([]);
+  return (
+    <OptionCards
+      items={[{ value: "basic", title: "**Basic**", subtitle: "Start here" }]}
+      selected={selected}
+      onToggle={(value) => setSelected([value])}
+      aria-label="Choose a plan"
+    />
+  );
+}
+```
+
+The existing `type="multiple"`, item/global `disabled`, icon/image top slots, root `className`/`style` and native attributes remain available. Native buttons retain Tab/Enter/Space behavior. The extraction adds no custom arrow-key navigation or new styling API. See [validation evidence](./evidence/option-cards/README.md) for the exact installed artifact and browser scope.
+
 ## Development
 
 ```sh

@@ -1,0 +1,13 @@
+# Deferred OptionCards integration
+
+Worker2 sourceea6311ba0 integrated ase7dbede07. Existing logic and public types are preserved, with only a generated root class attachment for owned stock-Goober styles. Existing markdown and row grouping are reused unchanged; no new dependency or runtime machinery.
+
+Both public-root integration checks first fail missing OptionCards; raw red logs are retained. After root integration, all4 focused checks pass: two owned behavior tests, public exports and focused import pruning. Producer build and strict types pass. Independent GPT6.1-Sol Spec and Standards integration reviews report zero actionable findings.
+
+Normal installed native imports/strict consumer types/pruning and real browser framework/theme/selection/keyboard/override checks now pass. Worker2 completed the first Chrome window and released it to Worker1. No SSR/hydration/performance/memory certification, legacy changes, publication, merge or issue closure.
+
+Frozen source4911a82f825ce518f073fd995637d853a38a6620: normal consumer `/private/tmp/core-option-cards-consumer`, tar `/private/tmp/core-option-cards-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`,498447 bytes, SHA256 `0a66152ad19a6c7e0a732a652175723e8bd1bcde1b5159a10e3966d835b67821`. Every tar file matches installed bytes. Exact manifest/package/lock retained. Consumer tools/types installed before freezing; no package/lock mutations during checks.
+
+Installed public-root native ESM/CJS, strict TS5.9.3 skipLibCheckfalse Bundler/NodeNext ESM/NodeNext CJS and Button/OptionCards pruning pass. Required markdown/row helper retained; unrelated card implementations/layout excluded. CSS externalization is explicitly JS/Goober-only evidence. Affected formatting passes. Worker2 browser acceptance passes6 cases /15,732 image-inclusive paired snapshots on this exact artifact; installed DOM tests2/2 pass with existing tools. Every installed file/lock remains unchanged. The earlier6/15,246 run without direct image-node sampling is preserved separately. Worker1 did not repeat the matrix. Final integrated CI passes110/110 tests, format/lint/types/build/Publint/ATTW (two existing ThemeProvider warnings, zero lint errors). Authorized stacked draft atop35 and remote checks follow.
+
+Final scoped Spec/Standards review finds no source/harness issues after stale status wording is corrected. Native buttons retain Tab/Enter/Space; no custom arrow navigation/roving focus is introduced. Only settled states and initial stylesheet orders are covered; no transport/parser streaming, dynamic CSS recovery, SSR or performance/memory certification follows. See the owned BROWSER_REPORT.md for exact coverage, attempts and limitations.
