@@ -1,3 +1,15 @@
+# CURRENT — deferred OptionCards COMPLETE as reviewed DRAFT PR36; CI GREEN — 2026-10-25
+
+Fork-only https://github.com/ankit-thesys/openui-comp/pull/36 OPEN/DRAFT, attached, stacked on codex/react-ui-core-data-cards (#35). Reviewed/pushed product head `d9d6c78f085bfb92d475d76bead2c73dbb428131`. BuildJS40186855402 PASS8m55s and changeset40186855341 PASS15s. Remote core110/110 tests plus format/lint/types/build/Publint/ATTW pass. Final body docs/planning/option-cards-pr-draft.md updated to green; no source correction required after opening.
+
+Source4911a82f825ce518f073fd995637d853a38a6620 exact frozen normal consumer `/private/tmp/core-option-cards-consumer`;498447-byte tar SHA256 `0a66152ad19a6c7e0a732a652175723e8bd1bcde1b5159a10e3966d835b67821`. W2Chrome6cases /15,732 image-inclusive paired snapshots, installedDOM2/2, native public ESM/CJS, strict TS5.9.3 skipLibCheckfalse3modes, focused pruning all pass. Everyinstalledfilematchesarchive, package/lockunchanged. Both final GPT6.1-Sol reviewaxesclear. Source no newdependencies/sharedhelperchanges/customruntime. Rawattempts/provenance and remoteCIlog/status preserved under evidence/option-cards.
+
+Post-CI handoff commits are LOCAL DOCS/EVIDENCE ONLY, deliberately not pushed to avoid repeating green CI on unchanged product. All component/export/test/browser evidence/release note changes are pushed at green producthead above. Root may carry localdocs forward. No merge, issueclosure, release/publication/deprecation/upstream/main writes. Legacy/previews/unrelatedcrates untouched. Browser/serverclosedandavailable.
+
+No chart production started. READY for explicit root chart dispatch, using docs/planning/slice14-readonly-proposal.md. Order: W1sharedCharts/types → W2 BarChart/types + BarChart/parts/horizontalBarGeometry + ScatterChart/types → W1 remaining foundation → family implementations. Distinct PrintContext mechanisms preserved; correctedPR30baseline reusable read-only, friendpathsreserved. Rootownsdispatch. Existing SSR/parserstreaming/performance/memory/dynamicCSSrecovery deferrals remain; nativeTab/Enter/Space preserved without customarrow/roving redesign. This current section supersedes earlier pendingstatuses below.
+
+---
+
 # CURRENT — OptionCards DRAFT PR36 OPEN; fork CI running — 2026-10-25
 
 Fork-only draft https://github.com/ankit-thesys/openui-comp/pull/36 OPEN/DRAFT and attached. Pushed reviewed head `d9d6c78f085bfb92d475d76bead2c73dbb428131`, branch codex/react-ui-core-option-cards, base codex/react-ui-core-data-cards (#35). Remote BuildJS40186855402 and changeset40186855341 running. No merge/closure/release/upstream/main writes.
