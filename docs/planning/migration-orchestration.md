@@ -1,3 +1,38 @@
+# CURRENT — Zod minimum corrected; new metadata-only artifact ready — 2026-10-25
+
+Root authorized verifier finding correction in NEW kits only. `d9cc96898`
+requires Zod `^3.25.76 || ^4.0.0`; README agrees. No old package edits.
+Public npm peer regression genuinely failed on8405 (accepted broken3.25.0),
+then passes under corrected metadata (strict install rejects3.25.0/ERESOLVE).
+Full corrected package CI7/7 +format/lint/types/build/Publint/ATTW GREEN;
+six inherited hook warnings, zero errors. Both correction reviews clear.
+New minimum3.25.76 actual normal consumer passes nativeESM/CJS, strict3modes,
+parser chunks and Renderer streaming/form/actions/history/clear checks.
+
+NEW kits archive (preserve old8405 archive/consumer):
+`/private/tmp/chat16-zod-metadata-artifacts/openuidev-kits-0.0.0-beta.0.tgz`
+237869bytes, SHA256
+`7ad36554f9a619b6ea0da7feb9280570078e2451051e8ac3d5d09abb30225880`.
+Only README+package.json differ among566 archive files; all dist bytes identical.
+Core remains `/private/tmp/chat16-final-artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz`
+SHA256 `a5d002d20a6fbed1cdb61cddc255f1619dc945d08cf9406eb3ce94e135988fe2`.
+New normal consumers `/private/tmp/chat16-zod-metadata-consumer` (4.4.3) and
+`/private/tmp/chat16-zod3-minimum-consumer` (3.25.76). All installed kit/core
+files byte-match archives. Complete delta/proof/manifests/locks/raw logs under
+`packages/kits/evidence/chat-library/zod-minimum/`.
+
+Browser remains W2's; its oldartifact component observations are unaffected by
+metadata-only correction, but exact provenance stays distinct. W2 currently
+collects strict hover border diagnostic; do not weaken/reclassify as a pass.
+After W2's explicit release W1 gets bounded rerun of corrected library runner
+(verified ready CSS/order, settled distinct hover and cancellation after live
+partial response), then verifier. No competing browser. Source fixes to W2
+components only through its committed batches. Preview remains8405/read-only.
+No draft PR until remaining gates; no merge/release/closure/oldpackage changes.
+Preserve untracked crates. Root relays artifact updates to W2/verifier.
+
+---
+
 # CURRENT — chat-kit package CI GREEN; reviewed browser assertions need rerun — 2026-10-25
 
 Product remains frozen `8405f44e0`. Full kits CI passes 7/7 tests plus format,

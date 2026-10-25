@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "zod": "3.25.76",
+    "zustand": "4.5.7",
+    "@openuidev/react-ui-core": "file:/private/tmp/chat16-final-artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz",
+    "@openuidev/kits": "file:/private/tmp/chat16-zod-metadata-artifacts/openuidev-kits-0.0.0-beta.0.tgz",
+    "@openuidev/react-lang": "file:/private/tmp/chat16-artifacts/openuidev-react-lang-1.0.1.tgz",
+    "@openuidev/lang-core": "file:/private/tmp/chat16-artifacts/openuidev-lang-core-1.0.1.tgz",
+    "@openuidev/observability": "file:/private/tmp/chat16-artifacts/openuidev-observability-0.0.4.tgz",
+    "@openuidev/devtools": "file:/private/tmp/chat16-artifacts/openuidev-devtools-0.3.0.tgz"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3"
+  }
+}
