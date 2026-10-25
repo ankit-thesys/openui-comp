@@ -15,6 +15,7 @@ export * from "./components/Citation";
 export * from "./components/CodeBlock";
 export * from "./components/DatePicker";
 export * from "./components/DotMatrixLoader";
+export * from "./components/EditableTable";
 export * from "./components/FormControl";
 export * from "./components/IconButton";
 export * from "./components/IconTag";
