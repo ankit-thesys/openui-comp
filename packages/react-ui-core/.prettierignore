@@ -1,2 +1,6 @@
 # Preserve the original failed browser measurement byte-for-byte.
 src/components/Sources/__tests__/results/browser-initial/text12-browser-first-allowed.json
+# Preserve the composer first-failure report and exact consumer lock.
+src/components/IconTag/__tests__/results/browser-first/composers12-browser-first.json
+src/components/IconTag/__tests__/results/browser-first/composers12-browser-prepared.json
+src/components/IconTag/__tests__/results/browser-first/consumer-lock.json

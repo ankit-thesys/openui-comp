@@ -1,3 +1,9 @@
+# Final corrected package CI GREEN — 2026-10-25
+
+Corrected production88fdccf94 passes whole package CI97/97 tests plus format/lint/types/build/Publint/ATTW. Raw composer JSON remains byte-for-byte unchanged through narrow formatter exclusions; first formatting failure and final green logs archived under evidence/text-media-selectors. No additional production change since corrected artifact88fd. Owned non-math settled browser matrix remains6 cases /22,296 snapshots on that artifact; affected installed12 checks + strict3 modes pass. Independent source and fixture reviews zero actionable findings.
+
+Worker2 owns released browser for corrected composer retest; precise normal consumer/revision/hash immediately below. Worker1 has no active Chrome/server. Composer retest and user math-delivery decision remain outstanding. Do not close slice12 or claim math/SSR/performance certification. No merge/publish/upstream/legacy/preview edits. Unrelated untracked crates preserved.
+
 # Corrected composer browser handoff — Worker2 window released, 2026-10-25
 
 Worker1's owned text/media browser completed and closed browser/server. Explicitly release Chrome to Worker2 for composer-only RETEST on corrected immutable artifact. Consumer `/private/tmp/core-selectors12-consumer`; tarball `/private/tmp/core-selectors12-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`;401238 bytes; SHA256 `bee4bc79ccac342cbdc433d16538b86be213aedd4da79a1ea325f6ea22002b6f`; CORE_ARTIFACT_REVISION=`88fdccf94e39a5c58e5a2a80cdf7f755eb5f7326`. Normal npm install/lock present. Same browser/Sass/host tooling. No Worker1 Chrome while W2 owns this window. Run composers only, retain prior failed evidence, do not repeat unaffected foundation/media matrices.
