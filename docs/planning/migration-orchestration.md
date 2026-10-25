@@ -1,3 +1,15 @@
+# CURRENT — OptionCards frozen artifact ready / Worker2 FIRST browser window — 2026-10-25
+
+Branch codex/react-ui-core-option-cards based PR35 reviewed838d78ec2. W2 sourceea6311ba0 integratede7dbede07; W1 root/export integration `4911a82f825ce518f073fd995637d853a38a6620`. Existing controlled/native behavior, markdown and private row helper preserved. No new dependency/package-lock changes. Focused public integration4/4 passes after genuine missing-export/pruning RED; producer build/strict types and affected formatting pass. Both GPT6.1-Sol review axes zero actionable findings.
+
+EXACT frozen consumer `/private/tmp/core-option-cards-consumer`; tar `/private/tmp/core-option-cards-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`;498447 bytes; SHA256 `0a66152ad19a6c7e0a732a652175723e8bd1bcde1b5159a10e3966d835b67821`; source4911a82f825ce518f073fd995637d853a38a6620. All tar files match installed bytes. Fixed tools/types installed before freeze; package/lock immutable. Installed native public-root ESM/CJS, strict TS5.9.3 skipLibCheckfalse3 modes and focused JS/Goober pruning pass. Manifest/exact lock/logs under evidence/option-cards.
+
+Worker2 owns FIRST Chrome window and may now validate this exact normal artifact against legacy with plain/TW3/TW4 initial orders, themes, responsive boundaries, controlled selection/native keyboard/disabled/slots/overrides. Worker1 remains NON-BROWSER; no Chrome launched. CORE_BROWSER_TOOLS=this checkout/packages/react-ui-core; existing Sass/host tools unchanged. Worker2 must preserve package/lock and explicitly release browser after bounded matrix. Full integrated package CI waits for release; no unchanged unrelated local matrices.
+
+Authorized next after browser/review gate: attached fork-only stacked DRAFT targeting codex/react-ui-core-data-cards (#35), check/fixCI; no merge/closure/release/upstream/main writes. Prepared body docs/planning/option-cards-pr-draft.md, accurately pending browser/CI. No charts production; root dispatch later uses sharedtypes→W2Bar/Scatterprereqs→W1foundation. Legacy/previews/crates untouched. SSR/performance/memory unvalidated. This current section supersedes older OptionCards red/pending-source statuses below.
+
+---
+
 # CURRENT — deferred OptionCards dispatched / integration TDD red — 2026-10-25
 
 Root accepted PR35 green checkpoint and dispatched bounded OptionCards completion only. Branch `codex/react-ui-core-option-cards` based exactly reviewed838d78ec23f3c4e31c84873b9926d518cd5c2776; local docs99f1b131e/092f55a19/89301a837 carried safely asa03a116ad/ee3e7d3eb/27e201553. PR35 remains unchanged/green.

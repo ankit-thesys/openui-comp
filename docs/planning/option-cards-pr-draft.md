@@ -16,10 +16,10 @@ Preserve controlled selected values/onToggle, native button selection and disabl
 ## Evidence / Test Plan
 
 - Before: public root and focused import checks fail because OptionCards is missing; original red logs retained.
-- [ ] Source behavior, build, types and affected format/lint checks.
-- [ ] Normally installed frozen artifact: native public-root ESM/CJS, strict three-mode types, Button-only exclusion and OptionCards dependency pruning.
+- [x] Four focused integrated public checks, build/types and affected formatting pass; owned semantic lint/source reviews clear.
+- [x] Frozen4911a82f8 artifact498447 bytes, SHA2560a66152ad19a6c7e0a732a652175723e8bd1bcde1b5159a10e3966d835b67821: native public-root ESM/CJS, strict three-mode types, Button-only exclusion and OptionCards dependency pruning pass; all installed files match tar.
 - [ ] Independent real Chrome parity: plain CSS/Tailwind3/Tailwind4 both initial orders, themes, actual responsive widths/boundaries, controlled selection, native keyboard/focus, disabled states, markdown/top slots and explicit overrides.
-- [ ] Independent Spec and Standards reviews.
+- [x] Independent Spec and Standards source/integration reviews: zero actionable findings; browser evidence still pending.
 - [ ] Integrated package CI and fork remote checks.
 
 ## Checklist
