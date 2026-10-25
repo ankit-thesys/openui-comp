@@ -1,0 +1,17 @@
+{
+  "verificationArtifacts": {
+    "openuidev-devtools-0.3.0.tgz": "4d08f13509403e53f4dfd1e1bb2f5df5094117b256880a65bd8cbdf83bdddb9d",
+    "openuidev-kits-0.0.0-beta.0.tgz": "9fc227a88cbf6d949247aee90e729efa58d669ba738674880396903db98785bb",
+    "openuidev-lang-core-1.0.1.tgz": "003f152663b913b0d757c76de86e453c9b1acb1fb1ebc6b0898d3ac74da0e4c6",
+    "openuidev-observability-0.0.4.tgz": "979f635703f7f9702c704a74901706c38a497a2ea108449fdfad99cf1245a4b1",
+    "openuidev-react-lang-1.0.1.tgz": "9151c6cefd2cd0e5a88f1b38bbc6017e1e7d9f5ba60297f52166399e46da8f80",
+    "openuidev-react-ui-0.18.1.tgz": "f38b45035706e9151a57d3328d2c23ec448483b73c5f0d5c64ba7420652b6fd9",
+    "openuidev-react-ui-core-0.0.0-beta.0.tgz": "a5d002d20a6fbed1cdb61cddc255f1619dc945d08cf9406eb3ce94e135988fe2"
+  },
+  "generatedSchemas": {
+    "legacy.json": "43747562c435324941427388505b78b0a49822265f0b071642a0bccc4ebe5b38",
+    "migrated.json": "43747562c435324941427388505b78b0a49822265f0b071642a0bccc4ebe5b38"
+  },
+  "sourceAliases": false,
+  "liveVendorCalls": 0
+}

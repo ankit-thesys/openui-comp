@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.artifacts/
+.generated/
+.env*
+!.env.example
+.test-results/
