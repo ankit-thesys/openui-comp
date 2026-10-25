@@ -25,6 +25,8 @@ Stacked on draft PR37; legacy packages remain unchanged.
   prompts/examples and action semantics, using public core components.
 - Kit-owned Icon wire schema, preserving name/category order. No general
   assembled openuiLibrary, AgentInterface or deferred standalone chat helpers.
+- Zod 3 peer minimum is narrowed to validated 3.25.76, preserving the accepted
+  Zod 4 range; the originally advertised 3.25.0 lacks its zod/v4 files.
 - Ordinary 12px CSS-variable fallback restores the chat Card's legacy default
   spacing when no ThemeProvider supplies variables.
 
@@ -40,6 +42,11 @@ executed its prepare build while another test imported it. The pack test now
 uses standard ignore-scripts configuration to test built artifacts. No runtime
 or dependency implementation was patched.
 
+The peer-range regression first failed because npm accepted unsupported exact
+Zod3.25.0 with the original artifact. Corrected metadata rejects it through
+normal strict peer resolution. The new artifact changes only package.json and
+README; all runtime/declaration bytes remain identical to source8405.
+
 ## Test Plan
 
 - [x] Package CI: 7/7 public tests, formatting, semantic lint, types, build,
@@ -49,6 +56,9 @@ or dependency implementation was patched.
 - [x] Actual public streaming parser: arbitrary chunks preserve table/chart
   positional contracts. Renderer checks streaming-disabled forms, validation,
   submission/follow-up actions, saved form restoration and clear/unmount.
+- [x] Corrected minimum Zod3.25.76: native imports, strict three-mode declarations
+  and actual parser/Renderer form/action/history checks. Corrected package CI
+  includes the npm peer-rejection regression.
 - [ ] Final browser acceptance: previous production-Vite six-case matrix passed
   actual HTTP streaming, markdown, table/two painted bars, forms/actions,
   themes/portal selection, explicit overrides, cancel/resubmit and cleanup.
