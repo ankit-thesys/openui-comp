@@ -1,3 +1,15 @@
+# CURRENT — production a28833480 GREEN; independent Worker2 handoff / browser RELEASED — 2026-10-25
+
+SOURCE COMMIT `a288334807643bdc63acb75c08af3e7aef7d759e` implements the USER-ACCEPTED exact stable KaTeX candidate. Final integrated package CI97/97 including normal-packed Vite/Chrome delivery test, format/lint/types/build/Publint/ATTW GREEN. Native ESM/CJS + strict TS5.9.3 Bundler/NodeNext ESM/CJS pass. Both direct CSS vendor and renderer resolve KaTeX0.16.47. Both local independent source/test reviewers zero actionable findings.
+
+EXPLICIT browser release to Worker2: Worker1 Chrome test finished and all browser/server processes closed. Worker2 may independently review production commit and validate this immutable normal npm consumer: `/private/tmp/core-math-final-consumer`. Exact tarball `/private/tmp/core-math-final-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`;401873 bytes; SHA256 `8709be66bc8b6b5ffd859b3df4fda1507ee63f9b7a75506c149a2aaf56012537`. Full source revision is a288334807643bdc63acb75c08af3e7aef7d759e. Tools/types installed before freeze; do not mutate package or lock. Per-file manifest/exact artifact/check logs under evidence/katex-integration. Worker1 will run NO Chrome until returned.
+
+Worker2 can run the executable public test directly from Worker1 source with CORE_CONSUMER set to that normal install; Vite/Playwright DEV tool imports resolve from Worker1 package. Review math source/private module, preserved public behavior and native/asset/pruning limits; independent Vite/framework/theme/late update/unused-network checks follow its plan. Do NOT repeat unrelated old foundation/media/composer matrices. Preserve original failures and record own runner/build hashes. Acceptance is resolved, integrated independent check is pending; open stacked DRAFT forkPR targeting codex/react-ui-core-layout only after it passes. No merge/close/release.
+
+Accepted authoritative spec exception: `docs/specs/react-ui-extraction-styling.md`. Owned styles remain stock Goober; official vendor CSS/fonts only exception. Vite6.4.2 zero-additional-styling-setup, about1MB unused emitted fonts but zero unused downloads, bare-esbuild asset/CSS setup explicitly accepted. tsdown config unchanged; no experimental plugin/injector/parser/pruner/CDN. Prior “math user decision pending” entries below are HISTORICAL, not controlling. Slice13 remains undispatched, with preserve-native/TanStack structure resolved. Both previews/legacy/crates untouched.
+
+---
+
 # CURRENT — USER ACCEPTED stable vendor CSS; production integration handoff preparing — 2026-10-25
 
 The math DECISION GATE IS RESOLVED. User explicitly accepted the exact stable lazy vendor CSS candidate, default Vite6.4.2 automatic styling contract, about1MB unused emitted fonts with zero unused downloads and bare-esbuild asset/CSS setup. Normative accepted exception: `docs/specs/react-ui-extraction-styling.md`. Other owned SCSS remains one-to-one stock Goober. Experimental plugin/custom injector/parser/pruner/CDN remain unadopted.
