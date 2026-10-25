@@ -1,0 +1,88 @@
+Progress: resolved 1, reused 0, downloaded 0, added 0
+.                                        |  WARN  deprecated eslint@9.39.5
+packages/react-email                     |  WARN  deprecated @react-email/components@0.0.41
+Progress: resolved 369, reused 0, downloaded 0, added 0
+Progress: resolved 2053, reused 0, downloaded 0, added 0
+Progress: resolved 2058, reused 0, downloaded 0, added 0
+packages/langchain                       |  WARN  deprecated @opentelemetry/sdk-trace-base@2.10.0
+Progress: resolved 2110, reused 0, downloaded 0, added 0
+Progress: resolved 2152, reused 0, downloaded 0, added 0
+ WARN  25 deprecated subdependencies found: @aws-sdk/core@3.977.1, @react-email/body@0.0.11, @react-email/button@0.0.19, @react-email/code-block@0.0.13, @react-email/code-inline@0.0.5, @react-email/column@0.0.13, @react-email/container@0.0.15, @react-email/font@0.0.9, @react-email/head@0.0.12, @react-email/heading@0.0.15, @react-email/hr@0.0.11, @react-email/html@0.0.11, @react-email/img@0.0.11, @react-email/link@0.0.12, @react-email/markdown@0.0.15, @react-email/preview@0.0.13, @react-email/row@0.0.12, @react-email/section@0.0.16, @react-email/tailwind@1.0.5, @react-email/text@0.1.4, glob@10.5.0, glob@7.2.3, inflight@1.0.6, rimraf@3.0.2, whatwg-encoding@3.1.1
+Progress: resolved 2164, reused 0, downloaded 0, added 0, done
+ WARN  Issues with peer dependencies found
+.
+├─┬ rolldown 1.0.0-rc.17
+│ └─┬ @rolldown/binding-wasm32-wasi 1.0.0-rc.17
+│   └─┬ @napi-rs/wasm-runtime 1.2.0
+│     ├── ✕ unmet peer @emnapi/core@^2.0.0-alpha.3: found 1.10.0
+│     └── ✕ unmet peer @emnapi/runtime@^2.0.0-alpha.3: found 1.10.0
+└─┬ storybook 10.5.5
+  ├─┬ oxc-resolver 11.24.2
+  │ └─┬ @oxc-resolver/binding-wasm32-wasi 11.24.2
+  │   └─┬ @napi-rs/wasm-runtime 1.2.0
+  │     ├── ✕ unmet peer @emnapi/core@^2.0.0-alpha.3: found 1.11.2 in @oxc-resolver/binding-wasm32-wasi
+  │     └── ✕ unmet peer @emnapi/runtime@^2.0.0-alpha.3: found 1.11.2 in @oxc-resolver/binding-wasm32-wasi
+  └─┬ oxc-parser 0.127.0
+    └─┬ @oxc-parser/binding-wasm32-wasi 0.127.0
+      └─┬ @napi-rs/wasm-runtime 1.2.0
+        ├── ✕ unmet peer @emnapi/core@^2.0.0-alpha.3: found 1.9.2 in @oxc-parser/binding-wasm32-wasi
+        └── ✕ unmet peer @emnapi/runtime@^2.0.0-alpha.3: found 1.9.2 in @oxc-parser/binding-wasm32-wasi
+
+docs
+└─┬ @openuidev/thesys 0.3.2
+  ├── ✕ unmet peer @openuidev/react-headless@^0.9.7: found 0.18.1
+  ├── ✕ unmet peer @openuidev/lang-core@^0.2.11: found 1.0.1
+  ├── ✕ unmet peer @openuidev/react-lang@^0.2.11: found 1.0.1
+  └── ✕ unmet peer @openuidev/react-ui@^0.13.6: found 0.18.1
+
+packages/react-headless
+└─┬ eve 0.11.10
+  ├── ✕ unmet peer ai@7.0.0-beta.178: found 6.0.236
+  └── ✕ unmet peer vite@^8.0.0: found 7.3.6
+
+packages/react-lang
+└─┬ react-native 0.83.10
+  └─┬ babel-jest 29.7.0
+    ├── ✕ unmet peer @babel/core@^7.8.0: found 8.0.1
+    └─┬ babel-preset-jest 29.6.3
+      ├── ✕ unmet peer @babel/core@^7.0.0: found 8.0.1
+      └─┬ babel-preset-current-node-syntax 1.2.0
+        ├─┬ @babel/plugin-syntax-async-generators 7.8.4
+        │ └── ✕ unmet peer @babel/core@^7.0.0-0: found 8.0.1
+        ├─┬ @babel/plugin-syntax-bigint 7.8.3
+        │ └── ✕ unmet peer @babel/core@^7.0.0-0: found 8.0.1
+        ├─┬ @babel/plugin-syntax-class-properties 7.12.13
+        │ └── ✕ unmet peer @babel/core@^7.0.0-0: found 8.0.1
+        ├─┬ @babel/plugin-syntax-class-static-block 7.14.5
+        │ └── ✕ unmet peer @babel/core@^7.0.0-0: found 8.0.1
+        ├─┬ @babel/plugin-syntax-import-meta 7.10.4
+        │ └── ✕ unmet peer @babel/core@^7.0.0-0: found 8.0.1
+        ├─┬ @babel/plugin-syntax-import-attributes 7.29.7
+        │ └── ✕ unmet peer @babel/core@^7.0.0-0: found 8.0.1
+        ├─┬ @babel/plugin-syntax-json-strings 7.8.3
+        │ └── ✕ unmet peer @babel/core@^7.0.0-0: found 8.0.1
+        ├─┬ @babel/plugin-syntax-logical-assignment-operators 7.10.4
+        │ └── ✕ unmet peer @babel/core@^7.0.0-0: found 8.0.1
+        ├─┬ @babel/plugin-syntax-object-rest-spread 7.8.3
+        │ └── ✕ unmet peer @babel/core@^7.0.0-0: found 8.0.1
+        ├─┬ @babel/plugin-syntax-nullish-coalescing-operator 7.8.3
+        │ └── ✕ unmet peer @babel/core@^7.0.0-0: found 8.0.1
+        ├─┬ @babel/plugin-syntax-numeric-separator 7.10.4
+        │ └── ✕ unmet peer @babel/core@^7.0.0-0: found 8.0.1
+        ├─┬ @babel/plugin-syntax-optional-catch-binding 7.8.3
+        │ └── ✕ unmet peer @babel/core@^7.0.0-0: found 8.0.1
+        ├─┬ @babel/plugin-syntax-private-property-in-object 7.14.5
+        │ └── ✕ unmet peer @babel/core@^7.0.0-0: found 8.0.1
+        ├─┬ @babel/plugin-syntax-top-level-await 7.14.5
+        │ └── ✕ unmet peer @babel/core@^7.0.0-0: found 8.0.1
+        └─┬ @babel/plugin-syntax-optional-chaining 7.8.3
+          └── ✕ unmet peer @babel/core@^7.0.0-0: found 8.0.1
+
+packages/react-ui
+├─┬ @storybook/react 8.6.18
+│ └── ✕ unmet peer @storybook/test@8.6.18: found 8.6.15
+├─┬ @storybook/react-vite 8.6.18
+│ └── ✕ unmet peer @storybook/test@8.6.18: found 8.6.15
+└─┬ eslint-plugin-storybook 10.5.5
+  └── ✕ unmet peer storybook@^10.5.5: found 8.6.18
+Done in 6.4s using pnpm v10.33.0

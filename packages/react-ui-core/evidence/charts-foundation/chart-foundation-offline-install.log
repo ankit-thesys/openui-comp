@@ -1,0 +1,7 @@
+Progress: resolved 1, reused 0, downloaded 0, added 0
+.                                        |  WARN  deprecated eslint@9.39.5
+packages/react-email                     |  WARN  deprecated @react-email/components@0.0.41
+/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/angular-lang:
+ ERR_PNPM_NO_OFFLINE_NODEJS_RESOLUTION  Offline Node.js resolution is not supported
+
+This error happened while installing a direct dependency of /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/angular-lang
