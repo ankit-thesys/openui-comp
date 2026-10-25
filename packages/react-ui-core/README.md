@@ -58,6 +58,12 @@ Vite may emit about1.07MB of unused font assets even when math is unused. This a
 
 React and ReactDOM 19 are the peer boundary. Chrome with plain CSS and Tailwind v3/v4 is the current browser target. **SSR, hydration, streaming SSR and concurrent server style isolation are deferred.** Do not infer server support from Node import or declaration checks.
 
+## Data views and composed cards
+
+Root imports now include `EditableTable`, `EditableTableChangesBar`, `EntityList`, `ListItem`, `ListBlock`, `MetricIndicatorInline`, `MetricIndicatorWithStrikethrough`, and the existing Composite/Context/Overview/Snippet/Visual card families and types. Their existing customization APIs are preserved; the shared card layout remains private.
+
+Extraction retains inherited behavior, including two `onDataChange` notifications when Enter-save is followed by blur in EditableTable. See [slice13 validation evidence](./evidence/data-cards/README.md) for exact coverage and remaining independent checks. Browser comparisons cover initial stylesheet orders; dynamically replacing or reordering host styles after mount is not certified.
+
 ## Development
 
 ```sh
