@@ -1,3 +1,41 @@
+# CURRENT — final chart artifact READY; W1 browser RELEASED to W2 — 2026-10-25
+
+**Explicit browser release: Worker2 may now run its independent Cartesian/Mini
+matrix. All W1 Chrome contexts and HTTP servers are closed. W1 remains source/
+package work only until Worker2 releases.** W2 harness0ab5ef6b0 integrated3962e079f.
+
+Frozen production source7e425b5b7261b47dc28e331e7afc223179990237. Exact normal
+consumer `/private/tmp/core-chart-final-consumer`; tar
+`/private/tmp/core-chart-final-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`,
+1,062,310bytes, SHA256
+`546f680f12516b0702cfb7c07bd092a781b4a402e8d9ee4e79b17eb9149424eb`.
+All installedfilesmatcharchive; consumer package/lock unchanged. No production
+source changed after7e; later commits only harness/docs/metadata/evidence.
+
+Final artifact owned broad matrix6cases/46,656observations passes. Corrected
+portal-rest interaction matrix6cases/12,408observations passes with clean teardown
+and fileproof; keep these scopes separate. Actual painted-point pointer hover,
+tooltips, CSSkeyframes/timing and settledendpoints, themes/frameworks/initialorders,
+resize/scopes/overrides/empty/print/export/remount covered. No phase-matched
+intermediate-motion claim. HTTP fixture teardown corrected using standard Node
+closeAllConnections; stalled raw report preserved, no product patch.
+
+Normalinstalled nativeESM/CJS all19entries, strictTS3modes, selectedpruning pass.
+Format/Publint/ATTW pass (temporary npmcache for ATTW). First installedbehavior
+run21/22 plus corrected detachedlegend focused1/1: categoryidentityexpectation
+fixed, not production. Independent source/harness reviewaxesclear after fixes.
+Evidence: packages/react-ui-core/evidence/charts-final-installed/.
+
+W2 must validate all11ownedentries on THIS artifact, preserve package/lock,
+verify/disclose inherited HorizontalBar declared-but-unwired onClick, commit its
+raw results/corrections and explicitly release browser. Full integrated package
+CI waits until then; do not run concurrent browser tests. Draftbody prepared
+at docs/planning/slice14-pr-draft.md, not published. No full19browser/SSR/parser/
+performance/memory certification yet. No merge/release/closure/upstream/main or
+legacy/preview/friend/crates edits. Shared/root/deps remain W1-owned.
+
+---
+
 # CURRENT — all chart source integrated/reviewed; owned matrix6/6 GREEN — 2026-10-25
 
 W2 Line/Bar/Scatter5d6ca7dba integrated87837b1e9 and Minis c2c8358d3 integrated

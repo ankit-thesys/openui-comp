@@ -147,7 +147,9 @@ for (const framework of ["plain", "tailwind3", "tailwind4"])
     "utf8",
   );
 
+const interactionsOnly = process.argv.includes("--interactions-only");
 const report = {
+  scope: interactionsOnly ? "owned hover/tooltips/animation/print/remount" : "full owned matrix",
   status: "prepared",
   artifactRevision: revision,
   tarballSha256: expectedHash,
@@ -260,7 +262,9 @@ const properties = [
 ];
 const settle = async (page) => {
   await page.evaluate(async () => {
-    document.querySelectorAll("#zone *").forEach((node) => getComputedStyle(node).color);
+    document
+      .querySelectorAll("#zone *, .openui-portal-tooltip, .openui-portal-tooltip *")
+      .forEach((node) => getComputedStyle(node).color);
     for (const animation of document.getAnimations())
       if (Number.isFinite(animation.effect.getComputedTiming().iterations)) animation.finish();
     await document.fonts.ready;
@@ -326,6 +330,50 @@ async function configure(pages, next) {
     );
     await settle(page);
   }
+}
+async function hoverPaintedMark(page, selector) {
+  const point = await page
+    .locator(selector)
+    .first()
+    .evaluate((node) => {
+      if (node instanceof SVGGeometryElement) {
+        const box = node.getBBox(),
+          matrix = node.getScreenCTM();
+        for (let row = 1; row < 10; row++)
+          for (let column = 1; column < 10; column++) {
+            const local = new DOMPoint(
+              box.x + (box.width * column) / 10,
+              box.y + (box.height * row) / 10,
+            );
+            if (!node.isPointInFill(local)) continue;
+            const screen = local.matrixTransform(matrix);
+            if (document.elementFromPoint(screen.x, screen.y) === node)
+              return { x: screen.x, y: screen.y };
+          }
+        throw Error("No painted hover point for " + node.outerHTML.slice(0, 200));
+      }
+      const box = node.getBoundingClientRect();
+      return { x: box.x + box.width / 2, y: box.y + box.height / 2 };
+    });
+  await page.mouse.move(point.x, point.y);
+}
+async function waitForMotionRest(page) {
+  await page.evaluate(async () => {
+    let previous = "",
+      stable = 0;
+    for (let frame = 0; frame < 240; frame++) {
+      await new Promise((resolve) => requestAnimationFrame(resolve));
+      const current = JSON.stringify(
+        [
+          ...document.querySelectorAll("#zone *, .openui-portal-tooltip, .openui-portal-tooltip *"),
+        ].map((node) => [node.getAttribute("style"), node.getAttribute("transform")]),
+      );
+      stable = current === previous ? stable + 1 : 0;
+      previous = current;
+      if (stable >= 5) return;
+    }
+    throw Error("Chart motion did not settle within240real frames");
+  });
 }
 let browser;
 try {
@@ -406,65 +454,139 @@ try {
           "CalendarHeatmap",
           "SegmentedBar",
         ]) {
-          for (const theme of ["none", "light", "dark", "custom-light", "custom-dark"]) {
-            await configure(pages, {
-              family,
-              theme,
-              variant: false,
-              empty: false,
-              width: 520,
-              height: 340,
-              print: false,
-              nested: false,
-              overrides: false,
-              animate: false,
-            });
-            for (const page of pages) await page.mouse.move(1100, 1000);
-            await compare(`${family}/${theme}/default`);
-            await configure(pages, { variant: true });
-            await compare(`${family}/${theme}/variant`);
-          }
-          for (const width of [320, 399, 400, 650]) {
-            await configure(pages, { theme: "light", width });
-            await compare(`${family}/resize-${width}`);
-          }
-          await configure(pages, { width: 520, nested: true, theme: "custom-light" });
-          await compare(`${family}/nested-theme`);
-          await configure(pages, { nested: false, overrides: true });
-          for (const page of pages) {
-            assert.equal(
-              await page
-                .locator(".consumer-chart")
-                .evaluate((n) => getComputedStyle(n).outlineColor),
-              "rgb(200, 20, 30)",
-              "explicit consumer root outline applies",
-            );
-            assert.equal(
-              await page
-                .locator(".consumer-chart")
-                .evaluate((n) => getComputedStyle(n).outlineWidth),
-              "3px",
-            );
-            const grid = page
-              .locator('#zone [class*="-chart-grid"], #zone .openui-calendar-heatmap-separator')
-              .first();
-            if (await grid.count())
+          await configure(pages, {
+            family,
+            theme: "light",
+            variant: false,
+            empty: false,
+            width: 520,
+            height: 340,
+            print: false,
+            nested: false,
+            overrides: false,
+            animate: false,
+          });
+          if (!interactionsOnly) {
+            for (const theme of ["none", "light", "dark", "custom-light", "custom-dark"]) {
+              await configure(pages, {
+                family,
+                theme,
+                variant: false,
+                empty: false,
+                width: 520,
+                height: 340,
+                print: false,
+                nested: false,
+                overrides: false,
+                animate: false,
+              });
+              for (const page of pages) await page.mouse.move(1100, 1000);
+              await compare(`${family}/${theme}/default`);
+              await configure(pages, { variant: true });
+              await compare(`${family}/${theme}/variant`);
+            }
+            for (const width of [320, 399, 400, 650]) {
+              await configure(pages, { theme: "light", width });
+              await compare(`${family}/resize-${width}`);
+            }
+            await configure(pages, { width: 520, nested: true, theme: "custom-light" });
+            await compare(`${family}/nested-theme`);
+            await configure(pages, { nested: false, overrides: true });
+            for (const page of pages) {
               assert.equal(
-                await grid.evaluate((n) => getComputedStyle(n).stroke),
-                "rgb(170, 20, 80)",
-                "explicit descendant stroke applies",
+                await page
+                  .locator(".consumer-chart")
+                  .evaluate((n) => getComputedStyle(n).outlineColor),
+                "rgb(200, 20, 30)",
+                "explicit consumer root outline applies",
               );
+              assert.equal(
+                await page
+                  .locator(".consumer-chart")
+                  .evaluate((n) => getComputedStyle(n).outlineWidth),
+                "3px",
+              );
+              const grid = page
+                .locator('#zone [class*="-chart-grid"], #zone .openui-calendar-heatmap-separator')
+                .first();
+              if (await grid.count())
+                assert.equal(
+                  await grid.evaluate((n) => getComputedStyle(n).stroke),
+                  "rgb(170, 20, 80)",
+                  "explicit descendant stroke applies",
+                );
+            }
+            await compare(`${family}/explicit-overrides`);
+            await configure(pages, { overrides: false, empty: true });
+            await compare(`${family}/empty`);
+            await configure(pages, { empty: false });
+            await compare(`${family}/empty-recovery`);
           }
-          await compare(`${family}/explicit-overrides`);
-          await configure(pages, { overrides: false, empty: true });
-          await compare(`${family}/empty`);
-          await configure(pages, { empty: false });
-          await compare(`${family}/empty-recovery`);
+          await configure(pages, { variant: false, theme: "light", width: 520 });
+          const hoverSelector = {
+            PieChart: 'path[fill="transparent"]',
+            RadialChart: '.openui-radial-chart-svg-wrapper path:not([fill="none"])',
+            RadarChart: ".openui-radar-chart-svg-wrapper svg",
+            HeatmapChart: ".openui-heatmap-chart-cell",
+            FunnelChart: 'rect[fill="transparent"]',
+            CalendarHeatmap: ".openui-calendar-heatmap-cell--level-1",
+            SegmentedBar: ".openui-segmented-bar-segment",
+          }[family];
+          for (const page of pages) {
+            await hoverPaintedMark(page, hoverSelector);
+            await page.locator(".openui-chart-tooltip").waitFor({ state: "visible" });
+          }
+          for (const page of pages) await waitForMotionRest(page);
+          await compare(`${family}/actual-hover-tooltip`);
+          for (const page of pages) await page.mouse.move(1100, 1000);
+          for (const page of pages)
+            await page.locator(".openui-chart-tooltip").waitFor({ state: "hidden" });
+          for (const page of pages) await waitForMotionRest(page);
+          await compare(`${family}/hover-leave`);
           await configure(pages, { print: true });
           await compare(`${family}/export-provider`);
           for (const page of pages) await page.emulateMedia({ media: "print" });
           await compare(`${family}/print-media`);
           for (const page of pages) await page.emulateMedia({ media: "screen" });
+          await configure(pages, { print: false, visible: false, animate: true });
+          for (const page of pages) await page.emulateMedia({ reducedMotion: "no-preference" });
+          await configure(pages, { visible: true });
+          const animations = [];
+          for (const page of pages) {
+            animations.push(
+              await page.evaluate(() =>
+                document
+                  .getAnimations()
+                  .filter((animation) => animation instanceof CSSAnimation)
+                  .map((animation) => ({
+                    classes: [...animation.effect.target.classList]
+                      .filter((name) => name.startsWith("openui-"))
+                      .sort(),
+                    frames: animation.effect
+                      .getKeyframes()
+                      .map(({ computedOffset, easing, offset, ...frame }) => ({
+                        offset: computedOffset,
+                        easing,
+                        ...frame,
+                      })),
+                    duration: animation.effect.getTiming().duration,
+                    delay: animation.effect.getTiming().delay,
+                    fill: animation.effect.getTiming().fill,
+                    easing: animation.effect.getTiming().easing,
+                  })),
+              ),
+            );
+          }
+          assert.deepEqual(
+            animations[1],
+            animations[0],
+            `${framework}/${order}/${family} CSS animation keyframes/timing`,
+          );
+          if (family !== "SegmentedBar")
+            assert(animations[0].length > 0, "entrance animation actually present");
+          await compare(`${family}/entrance-settled`);
+          for (const page of pages) await page.emulateMedia({ reducedMotion: "reduce" });
+          await configure(pages, { animate: false });
           await configure(pages, { print: false, visible: false });
           await compare(`${family}/unmount`);
           await configure(pages, { visible: true });
@@ -485,7 +607,10 @@ try {
   throw error;
 } finally {
   await browser?.close();
-  await new Promise((resolve) => server.close(resolve));
+  await new Promise((resolve) => {
+    server.close(resolve);
+    server.closeAllConnections();
+  });
   assert.equal(
     hash(await fs.readFile(path.join(consumer, "package.json"))),
     packageHash,

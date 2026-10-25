@@ -40,3 +40,9 @@ evidence/charts-owned-source/browser-first.json
 evidence/charts-owned-browser/*.json
 evidence/charts-owned-browser/*.mjs
 evidence/charts-owned-browser/*.tsx
+
+# Preserve final installed-chart reports, locks, fixtures and executed runner.
+evidence/charts-final-installed/*.json
+evidence/charts-final-installed/*.mjs
+evidence/charts-final-installed/*.mts
+evidence/charts-final-installed/*.cts

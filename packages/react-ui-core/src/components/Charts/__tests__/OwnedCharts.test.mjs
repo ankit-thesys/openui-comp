@@ -15,7 +15,7 @@ before(async () => {
       contents: `import React from 'react';
 import {createRoot} from 'react-dom/client';
 import {flushSync} from 'react-dom';
-import {PieChart, RadialChart, RadarChart, HeatmapChart, FunnelChart, CalendarHeatmap, SegmentedBar, SingleStackedBar, PrintContextProvider} from '@openuidev/react-ui-core';
+import {PieChart, RadialChart, RadarChart, HeatmapChart, FunnelChart, CalendarHeatmap, SegmentedBar, SingleStackedBar, LegendStoreProvider, StackedLegend, useLegendEntry, PrintContextProvider} from '@openuidev/react-ui-core';
 const root=createRoot(document.getElementById('root'));
 window.calls=[];
 window.renderChart=(props,print=false)=>flushSync(()=>root.render(
@@ -32,6 +32,10 @@ window.funnel=(data,extra={})=>flushSync(()=>root.render(React.createElement(Fun
 window.calendar=(data,extra={})=>flushSync(()=>root.render(React.createElement(CalendarHeatmap,{data,range:['2026-01-04','2026-01-10'],width:500,height:300,isAnimationActive:false,onClick:(date,value)=>window.calls.push({date:[date.getFullYear(),date.getMonth()+1,date.getDate()],value}),...extra})));
 window.segmented=(data,extra={},alias=false)=>flushSync(()=>root.render(React.createElement(alias?SingleStackedBar:SegmentedBar,{data,categoryKey:'name',dataKey:'value',legend:false,style:{width:500},...extra})));
 window.sameSegmentedAlias=SingleStackedBar===SegmentedBar;
+function ReadEntry(){const entry=useLegendEntry('detached');return React.createElement('output',{id:'legend-entry'},entry?JSON.stringify(entry.hiddenKeys):'none');}
+window.remotePie=(data,show=true)=>flushSync(()=>root.render(React.createElement(LegendStoreProvider,null,
+ show?React.createElement(PieChart,{data,categoryKey:'name',dataKey:'value',width:320,height:300,legendKey:'detached'}):null,
+ React.createElement(StackedLegend,{legendKey:'detached',layout:'showMore'}),React.createElement(ReadEntry))));
 window.ready=true;`,
       resolveDir: consumer,
       loader: "tsx",
@@ -349,4 +353,40 @@ test("public SegmentedBar preserves shares, hover feedback, empty recovery and S
   assert.equal(await page.locator(".openui-chart-empty-text").textContent(), "No data available");
   await page.evaluate((rows) => window.segmented(rows, {}, true), rows);
   assert.equal(await page.locator(".openui-segmented-bar-segment").count(), 3);
+});
+
+test("public detached legend toggles the publishing chart, prevents hiding every slice and removes entries on unmount", async () => {
+  const rows = [
+    { name: "Alpha", value: 30 },
+    { name: "Beta", value: 70 },
+  ];
+  await page.evaluate((rows) => window.remotePie(rows), rows);
+  const legendRows = page.locator(".openui-stacked-legend__item");
+  await page.waitForFunction(
+    () => document.querySelectorAll(".openui-stacked-legend__item").length === 2,
+  );
+  assert.equal(await page.locator('path[fill="transparent"]').count(), 2);
+  assert.equal(
+    await page.locator(".openui-chart-legend-container").count(),
+    0,
+    "remote legend suppresses inline legend",
+  );
+  await legendRows.first().click();
+  await page.waitForFunction(
+    () => document.querySelectorAll('path[fill="transparent"]').length === 1,
+  );
+  assert.equal(await page.locator("#legend-entry").textContent(), '["Beta"]');
+  await legendRows.nth(1).click();
+  assert.equal(
+    await page.locator('path[fill="transparent"]').count(),
+    1,
+    "last visible slice is preserved",
+  );
+  await legendRows.first().click();
+  await page.waitForFunction(
+    () => document.querySelectorAll('path[fill="transparent"]').length === 2,
+  );
+  await page.evaluate((rows) => window.remotePie(rows, false), rows);
+  await page.waitForFunction(() => document.querySelector("#legend-entry").textContent === "none");
+  assert.equal(await legendRows.count(), 0, "unpublished detached legend clears its rows");
 });
