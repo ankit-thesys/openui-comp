@@ -20,7 +20,8 @@ await fs.copyFile(
 for (const name of ["plain", "tailwind3", "tailwind4"])
   await fs.copyFile(
     path.join(
-      process.env.CORE_HOST_STYLES ?? "/private/tmp/core-forms-host",
+      process.env.CORE_HOST_STYLES ??
+        fileURLToPath(new URL("../../evidence/chat-library/host", import.meta.url)),
       "frameworks",
       `${name}.css`,
     ),
@@ -184,9 +185,22 @@ try {
         () => document.querySelector('input[name="name"]').value === "Grace",
       );
       await button("Start stream").click();
+      await page.waitForFunction(
+        () =>
+          document.querySelector("#status").textContent === "streaming" &&
+          document.querySelector("main").textContent.includes("Sales overview"),
+      );
+      assert(liveStreams > 0, "cancellation starts after an observed live partial response");
+      const aborted = page.waitForEvent("requestfailed", {
+        predicate: (request) => request.url().endsWith("/stream"),
+      });
       await button("Cancel stream").click();
+      assert.match((await aborted).failure().errorText, /ERR_ABORTED/);
       await page.waitForFunction(() => document.querySelector("#status").textContent === "idle");
       await button("Start stream").click();
+      await page.waitForFunction(
+        () => document.querySelector("#status").textContent === "streaming",
+      );
       await page.waitForFunction(() => document.querySelector("#status").textContent === "idle");
       assert.match(await page.locator("main").textContent(), /Sales overview/);
       await button("Clear response").click();
