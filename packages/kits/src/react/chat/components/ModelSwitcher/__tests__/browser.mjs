@@ -14,7 +14,7 @@ const consumer = required("KIT_CONSUMER");
 const hostCss = required("KIT_HOST_CSS");
 const browserTools = createRequire(path.join(required("KIT_BROWSER_TOOLS"), "package.json"));
 const sass = createRequire(path.join(required("KIT_SASS_TOOLS"), "package.json"))("sass");
-const { build } = browserTools("esbuild");
+const { build } = browserTools("vite");
 const directory = path.dirname(fileURLToPath(import.meta.url));
 const repository = path.resolve(directory, "../../../../../../../..");
 const legacy = path.join(repository, "packages/react-ui/src");
@@ -23,6 +23,7 @@ const output = process.env.KIT_BROWSER_OUT
   : path.join(directory, "results/browser");
 assert(output.startsWith(directory + path.sep), "evidence must remain in the owned test directory");
 const prepareOnly = process.argv.includes("--prepare");
+const diagnostic = process.env.KIT_DIAGNOSTIC_CONTINUE === "1";
 if (!prepareOnly)
   assert.equal(
     process.env.KIT_BROWSER_RELEASE,
@@ -59,10 +60,17 @@ async function inventory() {
 
 const before = await inventory();
 const fixture = await fs.readFile(path.join(directory, "browser.fixture.tsx"), "utf8");
-const scripts = {};
+const documents = {};
+const assets = {};
+await fs.mkdir(output, { recursive: true });
+await fs.copyFile(fileURLToPath(import.meta.url), path.join(output, "runner.mjs"));
+await fs.writeFile(path.join(output, "browser.fixture.tsx"), fixture);
 const report = {
   status: "prepared",
   consumer,
+  diagnosticContinuation: diagnostic,
+  productCommit: "8405f44e0",
+  bundler: "Vite " + browserTools("vite/package.json").version,
   manifestBefore: before,
   runnerSha256: await hashFile(fileURLToPath(import.meta.url)),
   fixtureSha256: sha256(fixture),
@@ -86,38 +94,54 @@ for (const arm of ["baseline", "runtime"]) {
           .map((name) => `import {${name}} from ${JSON.stringify(`${legacy}/components/${name}`)};`)
           .join("\n") +
         `import {ThemeProvider,createTheme} from ${JSON.stringify(`${legacy}/components/ThemeProvider`)};`;
-  const built = await build({
-    absWorkingDir: consumer,
-    stdin: { contents: prefix + "\n" + fixture, resolveDir: consumer, loader: "tsx" },
-    bundle: true,
-    write: false,
-    format: "esm",
-    platform: "browser",
-    jsx: "automatic",
-    metafile: true,
-    define: { "process.env.NODE_ENV": '"production"' },
-    ...(arm === "baseline"
-      ? {
-          nodePaths: [path.join(consumer, "node_modules")],
-          alias: {
-            react: path.join(consumer, "node_modules/react"),
-            "react-dom": path.join(consumer, "node_modules/react-dom"),
-          },
-        }
-      : {}),
-  });
-  assert.equal(built.outputFiles.length, 1, "the component consumer must not require a CSS bundle");
-  scripts[arm] = built.outputFiles[0].text;
-  report.bundles[arm] = { sha256: sha256(scripts[arm]), bytes: Buffer.byteLength(scripts[arm]) };
-  report.bundles[arm].metafile = built.metafile;
-  if (arm === "runtime") {
-    assert(
-      !Object.keys(built.metafile.inputs).some((file) => file.includes("packages/react-ui/src/")),
+  const project = path.join(output, "vite-inputs", arm);
+  const destination = path.join(output, "vite-builds", arm);
+  await fs.mkdir(project, { recursive: true });
+  const modules = path.join(project, "node_modules");
+  try {
+    assert((await fs.lstat(modules)).isSymbolicLink(), "fixture dependencies must be a symlink");
+    assert.equal(
+      await fs.realpath(modules),
+      await fs.realpath(path.join(consumer, "node_modules")),
+      "fixture dependency symlink must target the inventoried consumer",
     );
-    assert(!Object.keys(built.metafile.inputs).some((file) => file.includes("/react/chat/libs/")));
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+    await fs.symlink(path.join(consumer, "node_modules"), modules, "dir");
+  }
+  await fs.writeFile(path.join(project, "entry.tsx"), prefix + "\n" + fixture);
+  await fs.writeFile(
+    path.join(project, "index.html"),
+    '<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><div id="app"></div><script type="module" src="/entry.tsx"></script></body></html>',
+  );
+  const built = await build({
+    root: project,
+    configFile: false,
+    base: `/${arm}/`,
+    logLevel: "warn",
+    esbuild: { jsx: "automatic" },
+    resolve: { dedupe: ["react", "react-dom", "clsx", "@radix-ui/react-select", "lucide-react"] },
+    build: { outDir: destination, emptyOutDir: true, minify: false, sourcemap: false },
+  });
+  const modulesUsed = new Set();
+  report.bundles[arm] = { assets: {}, modules: {} };
+  for (const item of built.output) {
+    const buffer = await fs.readFile(path.join(destination, item.fileName));
+    assets[`/${arm}/${item.fileName}`] = buffer;
+    report.bundles[arm].assets[item.fileName] = { sha256: sha256(buffer), bytes: buffer.length };
+    if (item.type === "chunk") {
+      for (const [name, details] of Object.entries(item.modules)) {
+        modulesUsed.add(name);
+        report.bundles[arm].modules[name] = details.renderedLength;
+      }
+    }
+  }
+  documents[arm] = await fs.readFile(path.join(destination, "index.html"), "utf8");
+  if (arm === "runtime") {
+    assert(![...modulesUsed].some((file) => file.includes("packages/react-ui/src/")));
+    assert(![...modulesUsed].some((file) => file.includes("/react/chat/libs/")));
   } else {
-    for (const file of Object.keys(built.metafile.inputs)) {
-      const absolute = path.resolve(consumer, file);
+    for (const absolute of modulesUsed) {
       if (absolute.startsWith(legacy + "/"))
         report.baselineInputs[absolute] = await hashFile(absolute);
     }
@@ -157,8 +181,7 @@ await fs.mkdir(output, { recursive: true });
 await fs.writeFile(path.join(output, "baseline.css"), baselineCss.css);
 for (const framework of report.coverage.frameworks)
   await fs.writeFile(path.join(output, `${framework}.css`), stylesheets[`/${framework}.css`]);
-for (const arm of ["baseline", "runtime"])
-  await fs.writeFile(path.join(output, `${arm}.js`), scripts[arm]);
+
 if (prepareOnly) {
   report.manifestAfter = await inventory();
   assert.deepEqual(report.manifestAfter, before);
@@ -270,6 +293,10 @@ async function expectStyle(page, selector, property, expected) {
   );
 }
 
+async function waitForTriggerFocus(page) {
+  await page.waitForFunction(() => document.activeElement?.matches("#model-zone [role=combobox]"));
+}
+
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, "http://localhost");
   if (url.pathname === "/favicon.ico") {
@@ -280,9 +307,17 @@ const server = http.createServer((req, res) => {
     res.setHeader("content-type", "text/css");
     return res.end(stylesheets[url.pathname]);
   }
-  if (url.pathname === "/baseline.js" || url.pathname === "/runtime.js") {
-    res.setHeader("content-type", "text/javascript");
-    return res.end(scripts[url.pathname.slice(1, -3)]);
+  if (assets[url.pathname] !== undefined) {
+    const extension = path.extname(url.pathname);
+    const types = {
+      ".js": "text/javascript",
+      ".css": "text/css",
+      ".woff2": "font/woff2",
+      ".woff": "font/woff",
+      ".ttf": "font/ttf",
+    };
+    res.setHeader("content-type", types[extension] || "application/octet-stream");
+    return res.end(assets[url.pathname]);
   }
   const arm = url.searchParams.get("arm"),
     framework = url.searchParams.get("framework");
@@ -291,11 +326,14 @@ const server = http.createServer((req, res) => {
     return res.end();
   }
   res.setHeader("content-type", "text/html");
-  res.end(`<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1">
-${arm === "baseline" ? '<link id="component-style" rel="stylesheet" href="/baseline.css">' : ""}
-<link id="host-style" rel="stylesheet" href="/${framework}.css">
-<style>body{margin:0;font:16px/24px Arial,sans-serif}#zone{width:600px;padding:24px}#queries{width:360px}#host-content{font:17px/23px serif;color:rgb(11,22,33);padding:7px}</style>
-</head><body><div id="app"></div><script type="module" src="/${arm}.js"></script></body></html>`);
+  const host = `<link id="host-style" rel="stylesheet" href="/${framework}.css"><style>body{margin:0;font:16px/24px Arial,sans-serif}#zone{width:600px;padding:24px}#queries{width:360px}#host-content{font:17px/23px serif;color:rgb(11,22,33);padding:7px}</style>`;
+  let html = documents[arm].replace("</head>", host + "</head>");
+  if (arm === "baseline")
+    html = html.replace(
+      "<head>",
+      '<head><link id="component-style" rel="stylesheet" href="/baseline.css">',
+    );
+  res.end(html);
 });
 await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
 const { chromium } = browserTools("playwright");
@@ -350,16 +388,23 @@ try {
             const [baseline, runtime] = await Promise.all(
               pages.map((page) => snapshot(page, probes)),
             );
-            record.comparisons.push({ label, baseline, runtime });
-            for (const [index, sample] of [baseline, runtime].entries()) {
-              for (const [name, value] of Object.entries(sample)) {
-                if (value === null) {
-                  assert.equal(name, "triggerLogo", `required ${name} probe is missing`);
-                  assert.equal(await text(pages[index], "#selected"), "plain");
+            const comparison = { label, baseline, runtime, status: "passed" };
+            record.comparisons.push(comparison);
+            try {
+              for (const [index, sample] of [baseline, runtime].entries()) {
+                for (const [name, value] of Object.entries(sample)) {
+                  if (value === null) {
+                    assert.equal(name, "triggerLogo", `required ${name} probe is missing`);
+                    assert.equal(await text(pages[index], "#selected"), "plain");
+                  }
                 }
               }
+              assert.deepEqual(runtime, baseline, `${framework}/${order}/${theme}/${label}`);
+            } catch (error) {
+              comparison.status = "failed";
+              comparison.error = error.message.slice(0, 1500);
+              if (!diagnostic) throw error;
             }
-            assert.deepEqual(runtime, baseline, `${framework}/${order}/${theme}/${label}`);
           };
           await compare("normal");
           const nestedPortals = [];
@@ -430,12 +475,31 @@ try {
             item: ".openui-select-item",
           });
           for (const page of pages) {
+            await page.waitForFunction(
+              () =>
+                document.activeElement?.getAttribute("role") === "option" &&
+                document.activeElement.textContent.includes("Fast model"),
+            );
             await page.keyboard.press("Home");
+            await page.waitForFunction(
+              () =>
+                document.activeElement?.getAttribute("role") === "option" &&
+                document.activeElement.textContent.includes("Fast model"),
+            );
             await page.keyboard.press("ArrowDown");
+            await page.waitForFunction(
+              () =>
+                document.activeElement?.getAttribute("role") === "option" &&
+                document.activeElement.textContent.includes("Deep model"),
+            );
             await page.keyboard.press("Enter");
             await page.getByRole("listbox").waitFor({ state: "hidden" });
+            await page.waitForFunction(
+              () => document.querySelector("#selected")?.textContent === "deep",
+            );
             assert.equal(await text(page, "#selected"), "deep");
             assert.deepEqual(JSON.parse(await text(page, "#selections")), ["deep"]);
+            await waitForTriggerFocus(page);
             assert(
               await page
                 .locator(selectors.trigger)
@@ -448,6 +512,7 @@ try {
             await page.locator(selectors.trigger).focus();
             await page.keyboard.press("Enter");
             await page.keyboard.press("Escape");
+            await waitForTriggerFocus(page);
             assert(
               await page
                 .locator(selectors.trigger)
@@ -581,18 +646,28 @@ try {
             );
           }
           assert.deepEqual(errors, [], "no console or page errors");
-          record.status = "passed";
+          record.status = record.comparisons.some((item) => item.status === "failed")
+            ? "failed"
+            : "passed";
+          console.log(`${framework}/${order}/${theme}: ${record.status}`);
         } catch (error) {
           record.status = "failed";
           record.error = String(error);
-          throw error;
+          record.errorStack = error.stack;
+          console.log(`${framework}/${order}/${theme}: failed (${error.message.slice(0, 150)})`);
+          if (!diagnostic) throw error;
         } finally {
           for (const context of contexts) await context.close();
         }
       }
     }
   }
-  report.status = "passed";
+  report.status = report.cases.some((item) => item.status === "failed") ? "failed" : "passed";
+  assert.equal(
+    report.status,
+    "passed",
+    "strict component matrix contains failures; see report.json",
+  );
 } catch (error) {
   report.status = "failed";
   report.error = String(error);

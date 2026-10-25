@@ -1,0 +1,11 @@
+{
+  "productCommit": "8405f44e0",
+  "kitsTarSha256": "3f70b06104ac8112f5146ee2aa85747c0bb582865defeb0f06d4523779c90831",
+  "coreTarSha256": "a5d002d20a6fbed1cdb61cddc255f1619dc945d08cf9406eb3ce94e135988fe2",
+  "status": "failed-before-browser",
+  "stage": "runtime bundling with prepared bare-esbuild harness",
+  "error": "KaTeX CSS has no output path and .woff2/.woff/.ttf font asset loaders are not configured.",
+  "classification": "Harness did not match the accepted default Vite 6.4.2 contract. Bare esbuild support is explicitly not promised by the accepted vendor styling exception.",
+  "action": "Use stock Vite HTML builds for both arms. No package or installed-consumer changes.",
+  "browserStarted": false
+}

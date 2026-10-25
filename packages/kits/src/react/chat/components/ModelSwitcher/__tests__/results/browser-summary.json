@@ -1,0 +1,1742 @@
+{
+  "productCommit": "8405f44e0",
+  "status": "failed-strict-style-parity",
+  "browser": "156.0.8078.47",
+  "bundler": "Vite 6.4.2",
+  "cases": 36,
+  "behaviorCompleted": 36,
+  "caseExceptions": [],
+  "pairedStateComparisons": 330,
+  "failedStateComparisons": 42,
+  "propertyDifferences": 168,
+  "strictPropertyDifferences": [
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "plain",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-before",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "none",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "custom-light",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "custom-dark",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none rgb(40, 70, 90)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "trigger-hover",
+      "node": "trigger",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.097 0 0)",
+      "runtime": "0px none oklch(0.097 0 0 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderTop",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderRight",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderBottom",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "host-after",
+      "theme": "nested",
+      "state": "nested-isolation",
+      "node": "inner",
+      "property": "borderLeft",
+      "baseline": "0px none oklch(0.985 0 89.876)",
+      "runtime": "0px none oklch(0.994 0 89.876 / 0.12)"
+    }
+  ],
+  "installedArtifactsUnchanged": true,
+  "finalRunnerSha256": "a1099ff907087df3aeec436bf432295c35d80fc9a61f3c6c4074050233900ac2",
+  "archivedRunnerMatches": true,
+  "fixtureMatches": true,
+  "browserReleased": true,
+  "publicConsumerTests": {
+    "passed": 3,
+    "failed": 0
+  },
+  "publicBundlerTypes": "passed on final installed consumer",
+  "archives": [
+    {
+      "run": "browser-8405f44e0-run2",
+      "rawReportSha256": "091f9cf88979b0ea16751865081d27c8257aecf2fb4493682a51935ed5af8421",
+      "archiveSha256": "ed0f3b6ebd0337add3509f3406ecdea49a8572de9d9743684610a955e26d1f8e",
+      "cases": 1,
+      "status": "failed",
+      "artifactUnchanged": true,
+      "exactRunnerArchived": false
+    },
+    {
+      "run": "browser-8405f44e0-run3-diagnostic",
+      "rawReportSha256": "abb3f715fd7698f9b00db143ee5a0bcc71b1b1185a97e1d5a301febe5c8c08fa",
+      "archiveSha256": "58d8e029b1d88d1d3f7379b0d4fd7d7308c8e49832c3887ab1a20f3980ecc510",
+      "cases": 36,
+      "status": "failed",
+      "artifactUnchanged": true,
+      "exactRunnerArchived": true
+    },
+    {
+      "run": "browser-8405f44e0-run4-diagnostic",
+      "rawReportSha256": "b77f61e6996fc1b7de6d9291ace44f005c8f896ff0000443b778bbaab454c632",
+      "archiveSha256": "94c76309329472fd4bb14622f219a7403af1f84987104b7ef850649a98462e8a",
+      "cases": 36,
+      "status": "failed",
+      "artifactUnchanged": true,
+      "exactRunnerArchived": true
+    },
+    {
+      "run": "browser-8405f44e0-run5-diagnostic",
+      "rawReportSha256": "8dff2a9434c58fe62608579dd108251899ed89b3cddb8a4a1166f7516b5c2f79",
+      "archiveSha256": "1223c43dabf56467738269a53df9f19991d595e935667985dee2a37a11300792",
+      "cases": 36,
+      "status": "failed",
+      "artifactUnchanged": true,
+      "exactRunnerArchived": true
+    }
+  ]
+}

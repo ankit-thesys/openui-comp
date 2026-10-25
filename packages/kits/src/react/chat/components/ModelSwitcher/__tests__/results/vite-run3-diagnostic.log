@@ -1,0 +1,211 @@
+packages/react-ui/src/components/ThemeProvider/useSystemThemeMode.ts (1:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+packages/react-ui/src/components/ThemeProvider/useSystemThemeMode.ts (1:0): Module level directives cause errors when bundled, "use client" in "packages/react-ui/src/components/ThemeProvider/useSystemThemeMode.ts" was ignored.
+packages/react-ui/src/components/ModelSwitcher/ModelSwitcher.tsx (1:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+packages/react-ui/src/components/ModelSwitcher/ModelSwitcher.tsx (1:0): Module level directives cause errors when bundled, "use client" in "packages/react-ui/src/components/ModelSwitcher/ModelSwitcher.tsx" was ignored.
+packages/react-ui/src/components/ThemeProvider/useThemeModePreference.ts (1:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+packages/react-ui/src/components/ThemeProvider/useThemeModePreference.ts (1:0): Module level directives cause errors when bundled, "use client" in "packages/react-ui/src/components/ThemeProvider/useThemeModePreference.ts" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-select/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-select/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-focus-guards/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-focus-guards/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-portal/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-portal/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-focus-scope/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-focus-scope/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-popper/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-popper/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-direction/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-direction/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-dismissable-layer/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-dismissable-layer/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-primitive/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-primitive/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-collection/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-collection/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-visually-hidden/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-visually-hidden/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-presence/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-presence/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-arrow/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-arrow/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/ModelSwitcher.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@openuidev/kits/dist/react/chat/components/ModelSwitcher/ModelSwitcher.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/useSystemThemeMode.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/useSystemThemeMode.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/useThemeModePreference.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/ThemeProvider/useThemeModePreference.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Modal/Modal.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@openuidev/react-ui-core/dist/components/Modal/Modal.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-accordion/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-accordion/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-select/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-select/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-separator/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-separator/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-checkbox/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-checkbox/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-tooltip/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-tooltip/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-aspect-ratio/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-aspect-ratio/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-slider/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-slider/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-switch/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-switch/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-radio-group/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-radio-group/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-label/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-label/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-toggle-group/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-toggle-group/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-tabs/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-tabs/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-primitive/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-primitive/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-direction/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-direction/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-collection/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-collection/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-collapsible/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-collapsible/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-focus-guards/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-focus-guards/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-portal/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-portal/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-dismissable-layer/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-dismissable-layer/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-focus-scope/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-focus-scope/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-visually-hidden/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-visually-hidden/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-popper/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-popper/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-presence/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-presence/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-toggle/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-toggle/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-roving-focus/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-roving-focus/dist/index.mjs" was ignored.
+../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-arrow/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "../../../../../../private/tmp/chat16-final-consumer/node_modules/@radix-ui/react-arrow/dist/index.mjs" was ignored.
+plain/host-before/none: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+plain/host-before/light: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+plain/host-before/dark: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+plain/host-before/custom-light: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+plain/host-before/custom-dark: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+plain/host-before/nested: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+plain/host-after/none: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+plain/host-after/light: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+plain/host-after/dark: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+plain/host-after/custom-light: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+plain/host-after/custom-dark: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+plain/host-after/nested: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind3/host-before/none: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind3/host-before/light: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind3/host-before/dark: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind3/host-before/custom-light: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind3/host-before/custom-dark: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind3/host-before/nested: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind3/host-after/none: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind3/host-after/light: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind3/host-after/dark: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind3/host-after/custom-light: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind3/host-after/custom-dark: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind3/host-after/nested: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind4/host-before/none: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind4/host-before/light: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind4/host-before/dark: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind4/host-before/custom-light: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind4/host-before/custom-dark: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind4/host-before/nested: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind4/host-after/none: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind4/host-after/light: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind4/host-after/dark: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind4/host-after/custom-light: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind4/host-after/custom-dark: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+tailwind4/host-after/nested: failed (Expected values to be strictly equal:
+
+'fast' !== 'deep'
+)
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: strict component matrix contains failures; see report.json
+
+'failed' !== 'passed'
+
+    at file:///Users/ankitdas/.codex/worktrees/63b2/openui/packages/kits/src/react/chat/components/ModelSwitcher/__tests__/browser.mjs:634:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

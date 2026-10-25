@@ -1,5 +1,11 @@
 # Chat component extraction (#16)
 
+Latest installed-artifact validation: [BROWSER_REPORT.md](./BROWSER_REPORT.md).
+All 36 cases complete behavioral checks, but strict style parity fails on the
+zero-width hover border color. Browser/server are closed and released. The three
+component consumer tests and public Bundler type fixture pass against frozen
+product `8405f44e0`. The initial scratch evidence below remains historical.
+
 Owned source: `components/ModelSwitcher`, `components/FollowUpBlock`, and
 `components/FollowUpItem` under `packages/kits/src/react/chat`.
 Worker1 owns the package configuration, public barrels and library integration.

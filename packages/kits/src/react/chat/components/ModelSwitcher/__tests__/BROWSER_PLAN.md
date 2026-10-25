@@ -1,8 +1,10 @@
 # Chat component Chrome matrix (#16)
 
-Status: harness prepared only. No Chrome matrix has run for this batch.
-Worker1 retains the browser until explicit release and identification of the
-immutable installed kits/core artifacts. This harness does not certify the
+Status: completed on frozen product `8405f44e0`; strict style parity failed.
+All 36 cases completed behavior checks; 42 of 330 paired style-state comparisons
+failed on the color of a zero-width `none` trigger border. See
+[BROWSER_REPORT.md](./BROWSER_REPORT.md). Browser and server are closed and
+released to Worker1, then the verifier. This harness does not certify the
 combined chat library, parser, transport, SSR or unaffected core components.
 
 ## Matrix and observations
@@ -10,13 +12,16 @@ combined chat library, parser, transport, SSR or unaffected core components.
 36 cells: plain CSS, Tailwind v3 and Tailwind v4; host stylesheet before and after
 component styles; no provider, light, dark, custom light, custom dark and nested
 dark inside light. Every cell uses independent legacy and installed-package
-pages, real Chrome, production React and identical fixtures/host CSS.
+pages, real Chrome, production React, Vite 6.4.2 and identical fixtures/host CSS.
 
 The baseline uses the unchanged legacy components and their owned SCSS plus
 Select, Tag and default variables. The runtime imports only
 `@openuidev/kits/react/chat` and `@openuidev/react-ui-core`. It must not pull
 legacy source or the chat-library entry. No CSS import is supplied to runtime.
 The consumer must be a normal installed artifact, not a workspace source link.
+Each isolated Vite fixture resolves its dependencies through a validated symlink
+to that consumer's node_modules. No styling plugin, injector or custom loader
+is added. Vite handles official vendor assets under the accepted KaTeX exception.
 
 - Compare computed styles for trigger, name, logo, chevron, hidden badge,
   follow-up block/header/items/text/icon and unrelated host content.
@@ -46,7 +51,7 @@ No test shim modifies component behavior, themes or Goober.
 
 ```sh
 KIT_CONSUMER=/absolute/normal-installed-consumer \
-KIT_BROWSER_TOOLS=/absolute/package-containing-esbuild-and-playwright \
+KIT_BROWSER_TOOLS=/absolute/package-containing-vite-and-playwright \
 KIT_SASS_TOOLS=/absolute/package-containing-sass \
 KIT_HOST_CSS=/absolute/frozen-framework-css-directory \
 KIT_BROWSER_RELEASE=1 \
@@ -67,11 +72,15 @@ Neither mode installs dependencies or changes package contents.
 
 Outputs stay inside this owned test directory (`results/browser` by default).
 The report records every sampled state, behavior sequence, failure, runner and
-fixture hashes, bundle hashes/metafiles, baseline input hashes and framework
-hashes. Both bundles and served CSS are archived. Installed kits/core manifests
+fixture hashes, emitted asset hashes/rendered module lengths, baseline input
+hashes and framework hashes. Vite builds and served CSS are retained locally;
+raw reports are committed as lossless gzip archives with exact runner/fixture
+copies. Installed kits/core manifests
 and complete dist trees plus consumer manifest/lock are hashed before and after;
-any mutation fails acceptance. Failure is retained and stops the run; inherited
-differences require explicit triage, not broad ignored-property filters.
+any mutation fails acceptance. Default mode stops at the first failure.
+`KIT_DIAGNOSTIC_CONTINUE=1` records failed comparisons and continues collecting
+cases; any failure still produces failed status and a nonzero exit. Differences
+require explicit triage, not broad ignored-property filters.
 
 ## Preparation checks
 
@@ -79,5 +88,8 @@ Runner JavaScript syntax, fixture TSX transformation and the independent legacy
 Sass compilation pass. Baseline compilation produces 48,362 bytes from eight
 SCSS inputs. These are preparation checks, not package or browser results.
 Formatting checks pass. Independent Spec and Standards reviews found no
-actionable scoped harness findings; runtime locator/timing behavior still
-requires the queued Chrome execution.
+actionable scoped harness findings in preparation. Runtime execution found two
+test timing races; normal waits for Radix's public focused-option/focus-return
+state corrected them. A later Standards review found a stale fixture dependency
+symlink risk; current code validates its target, and all measured fixture links
+were independently checked against the inventoried frozen consumer.

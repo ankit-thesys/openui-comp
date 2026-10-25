@@ -1,0 +1,16 @@
+{
+  "productCommit": "8405f44e0",
+  "consumer": "/private/tmp/chat16-final-consumer",
+  "tarballs": {
+    "openuidev-kits-0.0.0-beta.0.tgz": {
+      "path": "/private/tmp/chat16-final-artifacts/openuidev-kits-0.0.0-beta.0.tgz",
+      "sha256": "3f70b06104ac8112f5146ee2aa85747c0bb582865defeb0f06d4523779c90831"
+    },
+    "openuidev-react-ui-core-0.0.0-beta.0.tgz": {
+      "path": "/private/tmp/chat16-final-artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz",
+      "sha256": "a5d002d20a6fbed1cdb61cddc255f1619dc945d08cf9406eb3ce94e135988fe2"
+    }
+  },
+  "fixtureDependencyLinks": "All run1\u20135 links were independently checked to be symlinks resolving to inventoried consumer node_modules. A guard now enforces this on future runs.",
+  "metadataRefreeze": "Peer minimum correction is owned by Worker1 and is not included in these artifact hashes."
+}
