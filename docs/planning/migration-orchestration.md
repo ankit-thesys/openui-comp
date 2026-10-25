@@ -1,3 +1,23 @@
+# CURRENT — fork stacked DRAFT PR39 OPEN/attached; remote CI running — 2026-10-25
+
+https://github.com/ankit-thesys/openui-comp/pull/39 OPEN/DRAFT attached.
+Headcodex/react-chat-kit at89cdd43d8d43aae8ac3265606476d017e6392a7f;
+basecodex/react-ui-core-charts(PR37). PushedONLYankit-thesys userfork.
+Remotechangeset40203948795 PASS13s. BuildJS40203948794 inprogress.
+LocalfullproductCI7/7allgates andfinalSpec/StandardsreviewsGREEN.
+Correctedisolatedinstalled36focusedcases/192strictcomparisonsPASS; independent
+6framework/ordercases/360observationsPASS. Exactartifact9fc/source9ee, old
+failures/provenance/assetcosts/deferredSSR+#17 andparentHorizontalgap disclosed
+inPRbody. No blanket old/currentfullparity claim orrawfailure normalization.
+
+AllChrome/serverclosed. Onlyunrelatedcratesuntracked,preserved. Thisstatusdoc
+commitLOCALONLYtoavoidrestartofunchangedproductCI. Monitor/fixremoteCIunder
+existingauthorization; afterchecksupdatePRbodyviaRESTandrecordrawlogs/proof.
+No merge/closure/publication/deprecation/upstream/main/legacy/preview writes.
+Rootretainsacceptanceauthority; #17decision/work notstartedbythisdraft.
+
+---
+
 # CURRENT — isolated corrected model matrix GREEN; final review/draft preparing — 2026-10-25
 
 W2fixture4cbf35b76 integratedbd2388162; standardprivatefixturepackageidentity
