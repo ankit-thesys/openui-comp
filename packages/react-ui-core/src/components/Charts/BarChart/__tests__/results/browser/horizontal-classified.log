@@ -1,0 +1,50 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: same inherited height-cycle states, not a settled parity pass
++ actual - expected
+... Skipped lines
+
+  [
+    '{"inline":"0px","measured":0}',
+    '{"inline":"116px","measured":116}',
+    '{"inline":"12px","measured":12}',
+    '{"inline":"154px","measured":154}',
+...
+    '{"inline":"40px","measured":40}',
++   '{"inline":"50px","measured":50}',
+    '{"inline":"78px","measured":78}'
+  ]
+
+    at file:///Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Charts/BarChart/__tests__/charts.browser.mjs:594:24 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    '{"inline":"0px","measured":0}',
+    '{"inline":"116px","measured":116}',
+    '{"inline":"12px","measured":12}',
+    '{"inline":"154px","measured":154}',
+    '{"inline":"192px","measured":192}',
+    '{"inline":"258px","measured":230}',
+    '{"inline":"2px","measured":2}',
+    '{"inline":"40px","measured":40}',
+    '{"inline":"50px","measured":50}',
+    '{"inline":"78px","measured":78}'
+  ],
+  expected: [
+    '{"inline":"0px","measured":0}',
+    '{"inline":"116px","measured":116}',
+    '{"inline":"12px","measured":12}',
+    '{"inline":"154px","measured":154}',
+    '{"inline":"192px","measured":192}',
+    '{"inline":"258px","measured":230}',
+    '{"inline":"2px","measured":2}',
+    '{"inline":"40px","measured":40}',
+    '{"inline":"78px","measured":78}'
+  ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

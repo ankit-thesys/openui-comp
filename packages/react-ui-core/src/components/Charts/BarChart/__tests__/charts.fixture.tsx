@@ -33,6 +33,7 @@ type Configuration = {
   miniSize: number | string;
   print: boolean;
   longLabels: boolean;
+  fitLegend: boolean;
 };
 type RecordedEvent = { kind: string; args: unknown[] };
 declare global {
@@ -70,6 +71,7 @@ function App() {
     miniSize: 120,
     print: false,
     longLabels: false,
+    fitLegend: true,
   });
   const [events, setEvents] = useState<RecordedEvent[]>([]);
   Object.assign(window, {
@@ -101,6 +103,7 @@ function App() {
     className,
     height: config.height,
     width: config.sizeMode === "number" ? 480 : config.sizeMode === "string" ? "480px" : undefined,
+    fitLegendInHeight: config.fitLegend,
     legend: config.legend,
     grid: config.grid,
     isAnimationActive: config.animation,

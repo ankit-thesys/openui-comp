@@ -1,5 +1,7 @@
 # Installed chart comparison: shared measurement mismatch
 
+Historical red evidence. Worker1 corrected tracking in1d31a4b63ee66f03c21688d96cee28bcad8380ac and the corrected Line matrix passes6/11664. See BROWSER_REPORT.md for current results and the separate inherited HorizontalBar height instability. The original diagnosis and retest gate below are preserved as history.
+
 Status: **FAIL, full Cartesian/mini browser matrix incomplete**. No production correction by Worker2. All Chrome contexts and local servers closed; browser explicitly released to Worker1 for its owned shared fix and a new immutable artifact. Do not report all11 entries or six framework/order cases passing.
 
 ## Exact measured artifact

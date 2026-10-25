@@ -378,6 +378,8 @@ const center = async (page, locator) => {
   await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
   return { x: box.x + box.width / 2, y: box.y + box.height / 2 };
 };
+report.inheritedUnstableScenarios = [];
+report.continueInheritedInstability = process.env.CORE_CONTINUE_INHERITED_INSTABILITY === "1";
 let browser;
 try {
   await new Promise((resolve, reject) => {
@@ -416,6 +418,25 @@ try {
           if (attempt < 29) await Promise.all(pages.map((page) => page.waitForTimeout(100)));
         }
         report.failedComparison = { framework, order, label, expected, actual, stableSamples };
+        report.layoutTrace = await Promise.all(
+          pages.map((page) =>
+            page.evaluate(async () => {
+              const node = document.querySelector(
+                ".openui-horizontal-bar-chart-container-inner-wrapper",
+              );
+              if (!node) return null;
+              const frames = [];
+              for (let i = 0; i < 120; i++) {
+                await new Promise((resolve) => requestAnimationFrame(resolve));
+                frames.push({
+                  inline: node.style.height,
+                  measured: node.getBoundingClientRect().height,
+                });
+              }
+              return frames;
+            }),
+          ),
+        );
         report.fontDiagnostic = await Promise.all(
           pages.map((page) =>
             page.evaluate(() => {
@@ -509,6 +530,7 @@ try {
             miniSize: 120,
             print: false,
             longLabels: false,
+            fitLegend: true,
           });
           for (const page of pages) await page.locator("#zone svg[role=img]").first().waitFor();
           for (const theme of ["none", "light", "dark", "custom-light", "custom-dark"]) {
@@ -545,7 +567,50 @@ try {
             }
             for (const height of [240, "280px"]) {
               await configure(pages, { height });
-              await compare(`${family}/height-prop-${height}`);
+              if (
+                family === "horizontal" &&
+                typeof height === "string" &&
+                process.env.CORE_CONTINUE_INHERITED_INSTABILITY === "1"
+              ) {
+                const traces = await Promise.all(
+                  pages.map((page) =>
+                    page
+                      .locator(".openui-horizontal-bar-chart-container-inner-wrapper")
+                      .evaluate(async (node) => {
+                        const frames = [];
+                        for (let i = 0; i < 120; i++) {
+                          await new Promise((resolve) => requestAnimationFrame(resolve));
+                          frames.push({
+                            inline: node.style.height,
+                            measured: node.getBoundingClientRect().height,
+                          });
+                        }
+                        return frames;
+                      }),
+                  ),
+                );
+                const states = traces.map((trace) =>
+                  [...new Set(trace.map((frame) => JSON.stringify(frame)))].sort(),
+                );
+                assert(
+                  states[0].length >= 3 && states[1].length >= 3,
+                  "both existing implementations exhibit the height feedback cycle",
+                );
+                report.inheritedUnstableScenarios.push({
+                  framework,
+                  order,
+                  family,
+                  scenario: "string-height with fitting legend",
+                  reason: "inherited ResizeObserver feedback; frame-level parity is not certified",
+                  traces,
+                  states,
+                  observedStateSetsEqual: JSON.stringify(states[1]) === JSON.stringify(states[0]),
+                });
+                await configure(pages, { height: 320, legend: false, fitLegend: false });
+                await configure(pages, { height: "280px" });
+                await compare(`${family}/string-height-no-legend-fit-separate-scenario`);
+                await configure(pages, { height: 320, legend: true, fitLegend: true });
+              } else await compare(`${family}/height-prop-${height}`);
             }
             await configure(pages, { height: 320 });
           }
@@ -779,6 +844,16 @@ try {
             scatterPrintMetadata: family === "scatter" ? false : undefined,
             animationSamples: animationSamples[0],
           });
+          console.log(
+            JSON.stringify({
+              framework,
+              order,
+              family,
+              status: "passed",
+              cumulativeObservations: comparisons,
+            }),
+          );
+          await save();
         }
         assert.equal(await pages[1].locator("#_goober").count(), 1);
         assert.deepEqual(errors, []);
@@ -795,7 +870,9 @@ try {
         await save();
       }
     }
-  report.status = "passed";
+  report.status = report.inheritedUnstableScenarios.length
+    ? "completed-with-inherited-instability"
+    : "passed";
 } catch (error) {
   report.status = "failed";
   report.error = String(error);

@@ -1,0 +1,7 @@
+{"framework":"plain","order":"before","family":"horizontal","status":"passed","cumulativeObservations":1788}
+{"framework":"plain","order":"after","family":"horizontal","status":"passed","cumulativeObservations":1788}
+{"framework":"tailwind3","order":"before","family":"horizontal","status":"passed","cumulativeObservations":1788}
+{"framework":"tailwind3","order":"after","family":"horizontal","status":"passed","cumulativeObservations":1788}
+{"framework":"tailwind4","order":"before","family":"horizontal","status":"passed","cumulativeObservations":1788}
+{"framework":"tailwind4","order":"after","family":"horizontal","status":"passed","cumulativeObservations":1788}
+{"status":"completed-with-unsupported","cases":6,"snapshots":10728}

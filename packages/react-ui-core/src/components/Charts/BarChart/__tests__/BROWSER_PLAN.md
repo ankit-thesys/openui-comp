@@ -1,6 +1,6 @@
 # Cartesian and mini installed-browser plan
 
-Status: first installed runs found a shared no-provider measurement mismatch; the full matrix is incomplete. See BROWSER_FAILURE.md for preserved evidence and the Worker1-owned correction gate. All Chrome/server processes are closed; browser released to Worker1. The following plan remains the retest scope.
+Status: measured validation complete with an inherited HorizontalBar default string-height/legend-fit limitation. BROWSER_REPORT.md and results/browser/SUMMARY.json are current. Original strict failures and the plan below are retained; no default-fit parity pass is claimed. Browser released to Worker1.
 
 ## Source checkpoints
 
@@ -22,7 +22,7 @@ All11 owned public entries: Area/AreaCondensed, Line/LineCondensed, Bar/BarConde
 
 For each family: no/default/custom light/dark theme, nested/independent scopes and explicit palette; actual container widths280/480/768; numeric/string width and height separately (mini80/160/100% size); empty/live-populated updates; grid/legend/stacked options; real pointer tooltip and callback values; supported legend hide/restore with actual mark-count changes; explicit root utilities checked independently; real CSS entrance existence and matched timings, then settled parity; reduced-motion decorative gates; print media and separate React PrintContext export metadata; cleanup/remount and host sentinel. Condensed long labels and scrolling families get a constrained live update; native Enter activates enabled scroll buttons and viewport position must actually change and stabilize.
 
-Paired computed styles, SVG geometry/attributes/text and element rects must match and remain unchanged for three consecutive100ms-spaced samples after config readiness/font/two-frame settling, bounded to30 attempts. Actual scroll movement must stabilize for200ms within6s, not a fixed delay. The runner does not use mocked observers, forced clicks or synthetic geometry. Emitted scrollbar selectors from stock object serialization are valid in source diagnostics; actual pseudo/scroll behavior stays pending here.
+Paired computed styles, SVG geometry/attributes/text and element rects must match and remain unchanged for three consecutive100ms-spaced samples after config readiness/font/two-frame settling, bounded to30 attempts. Actual scroll movement must stabilize for200ms within6s, not a fixed delay. The runner does not use mocked observers, forced clicks or synthetic geometry. Emitted scrollbar selectors from stock object serialization are valid in source diagnostics; actual native scrolling and scrollbar-related settled styles are covered in the measured supported comparisons.
 
 ## Inherited behavior and limits
 
@@ -30,4 +30,4 @@ Horizontal numeric width affects scales without setting its CSS box; compare rat
 
 Static markup tests validate initial output only, not SSR/hydration styling. This matrix does not certify SSR, transport/parser streaming, performance/memory, all19 families (Worker1 owns others), arbitrary dynamic host stylesheet recovery or frame-by-frame animation timing. Corrected PR30 friend baseline is read-only reference; no writer runs in reserved validation/friend-chart-baseline and no unsupported baseline scenarios are counted as passing.
 
-Harness syntax and strict fixture types pass. Both independent reviews are clear after requiring stable comparisons and replacing a fixed scroll delay with actual stable-position observation. Reviews were read-only and did not run Chrome. Installed bundle preparation succeeded after a test-only baseline path correction; actual comparisons failed at Line no-provider tracking, so full browser acceptance remains pending. Preserve raw JSON/log bytes and original failed attempts; owner fixes only, report shared issues to Worker1.
+Harness syntax and strict fixture types pass. Both independent reviews are clear after requiring stable comparisons and replacing a fixed scroll delay with actual stable-position observation. Reviews were read-only and did not run Chrome. Installed bundle preparation succeeded after a test-only baseline path correction. The original Line tracking failure was corrected by Worker1 and retested successfully. Current measured supported results and the inherited HorizontalBar default-fit limitation are in BROWSER_REPORT.md; that original string-height comparison is not a pass. Preserve raw JSON/log bytes and original failed attempts; owner fixes only, report shared issues to Worker1.
