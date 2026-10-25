@@ -517,6 +517,27 @@ try {
             }
             for (const page of pages) await page.locator("#outside").focus();
             await configure(pages, { layout: "carousel", width: 450, gap: 0 });
+            for (const [width, expected] of [
+              [450, 200],
+              [480, 200],
+              [481, 240],
+              [700, 240],
+              [900, 240],
+            ]) {
+              await configure(pages, { width });
+              for (const page of pages) {
+                const widths = await page
+                  .locator("#overview-case .openui-small-card-block__carousel-item")
+                  .evaluateAll((nodes) => nodes.map((node) => node.getBoundingClientRect().width));
+                assert.deepEqual(
+                  widths,
+                  Array(5).fill(expected),
+                  `legacy carousel width at ${width}px container`,
+                );
+              }
+              await compare(`carousel-width-${width}`);
+            }
+            await configure(pages, { width: 450 });
             for (const page of pages)
               await page.waitForFunction(() => {
                 const n = document.querySelector(

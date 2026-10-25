@@ -41,3 +41,11 @@ After Worker1 commits the conventional ordering fix and issues a new normal-pack
 Evidence JSON/diagnostic files are raw. Integration format checks should exclude these narrowly rather than rewrite raw report bytes. Package metadata/formatter config belongs Worker1. Current runner source changes are only deterministic test-state corrections described above.
 
 SSR/hydration/streaming, performance/memory, full accessibility and the accepted separate math/Vite contract remain outside this matrix. No merge/release/ticket closure.
+
+## Authored correction prepared — browser green still pending
+
+Root explicitly reassigned Worker2 the shared-card style correction. The exact existing15rem base rule now precedes the first container block;12.5rem, selectors, specificity and all other declarations remain unchanged. One concise comment explains the ordering. No runtime transformation, dependency update or new API.
+
+The browser regression now asserts all five actual carousel item widths at containers450/480px →200px and481/700/900px →240px in both arms, with the strict full-style/geometry comparisons retained. The existing failed real-browser report above is the red regression evidence; the strengthened assertions await the new frozen package. Chrome remained idle throughout this source correction.
+
+Scratch build, strict source types, six owned behavior tests and semantic lint pass. Public extractCss diagnostic now emits15rem before12.5rem, recorded under results/order-correction. This diagnostic establishes emitted order, not computed browser geometry. Both independent Spec and Standards reviews report zero actionable findings. Worker1 must integrate/repack and provide exact corrected artifact/revision/hash plus browser release before retesting. Original failures remain untouched.

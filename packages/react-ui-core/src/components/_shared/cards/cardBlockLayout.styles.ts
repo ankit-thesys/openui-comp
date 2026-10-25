@@ -96,6 +96,11 @@ export const layoutClasses = {
       flex-shrink: 0;
       width: 17.5rem;
     }
+    /* Base sizing precedes grouped container-query overrides. */
+    &.openui-small-card-block--overview-card.openui-small-card-block--carousel
+      :where(.openui-small-card-block__carousel-item) {
+      width: 15rem;
+    }
     @container (max-width: 48rem) {
       & :where(.openui-small-card-block__grid--responsive) {
         display: grid;
@@ -125,10 +130,6 @@ export const layoutClasses = {
         :where(.openui-small-card-block__carousel-item) {
         width: 15rem;
       }
-    }
-    &.openui-small-card-block--overview-card.openui-small-card-block--carousel
-      :where(.openui-small-card-block__carousel-item) {
-      width: 15rem;
     }
     @container (max-width: 30rem) {
       &.openui-small-card-block--overview-card.openui-small-card-block--carousel
