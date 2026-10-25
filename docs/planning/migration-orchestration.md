@@ -1,3 +1,27 @@
+# CURRENT — charts DRAFT PR37 OPEN/attached; remoteCI running — 2026-10-25
+
+Fork-only https://github.com/ankit-thesys/openui-comp/pull/37 OPEN/DRAFT attached.
+Basecodex/react-ui-core-option-cards(PR36), headcodex/react-ui-core-charts,
+reviewedpushedhead ddd9f9a5e13a61a865cee76212b13a6230fc67d3.
+Remote BuildJS40195759345 / changeset40195759293 running; monitor/fix authorized.
+No merge/closure/publication/deprecation/release/upstream/main changes.
+
+Local correctedsource1d31a4b63 packageCI136/136 +format/lint/types/build/Publint/
+ATTW pass. Bothfinalreviewaxesclear. Sameimmutable1062926byteartifact SHA
+638a8336a60800ae40fa4e46a7130ca41141393382652dd5cf9e73626a8de806:
+W1affected6/46,440; W2committed2323d977e packet85,122boundedobservations across
+Line/Horizontal/remaining9separatebatches and6inheritedinstabilityrecords.
+StrictHorizontaldefaultstringheight+fitLegendcomparisonUNPASSED and disclosed
+inPR/README/report; notunsupported/noAPIremoved/notunconditionalall19parity.
+
+No productionchangeafter1d; laterharness/docs/evidence scopes explicit. No duplicate
+completedbrowsermatrices. Old7eanimationevidencehistorical. AllChrome/serverclosed.
+Onlyunrelatedcratesuntracked,preserved. RemoteCIlog/statusrecordpending; postPR
+orchestrationupdateslocalonlyavoidrestartingCIonunchangedproduct. No nextslice
+untilrootdispatch; existingSSR/parserperformance/memorydeferrals remain.
+
+---
+
 # CURRENT — charts local/review checkpoint complete; fork-only stacked draft preparing — 2026-10-25
 
 FinalpackageCI136/136 +format/lint/types/build/Publint/ATTW PASS; 2existingTheme
