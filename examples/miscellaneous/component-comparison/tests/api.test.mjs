@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { createServer } from "node:http";
+import { createServer, request } from "node:http";
 import { once } from "node:events";
 import { createApiHandler } from "../api.mjs";
 test("one prompt streams one upstream response and abort closes upstream", async () => {
@@ -91,5 +91,55 @@ test("missing live setup never calls upstream", async () => {
   } finally {
     server.closeAllConnections();
     await new Promise((r) => server.close(r));
+  }
+});
+
+test("split UTF-8 request bytes preserve Unicode conversation content", async () => {
+  const content = "Café 🧭 中文";
+  let received;
+  let releaseFirstChunk;
+  const firstChunk = new Promise((resolve) => {
+    releaseFirstChunk = resolve;
+  });
+  const handler = createApiHandler({
+    generate: async function* ({ messages }) {
+      received = messages;
+      yield "root = Card([])";
+    },
+  });
+  const server = createServer((req, res) => {
+    req.once("data", releaseFirstChunk);
+    handler(req, res);
+  });
+  server.listen(0, "127.0.0.1");
+  await once(server, "listening");
+  try {
+    const messages = [{ role: "user", content }];
+    const body = Buffer.from(JSON.stringify({ messages }));
+    const split = body.indexOf(Buffer.from("🧭")) + 1;
+    const response = new Promise((resolve, reject) => {
+      const req = request(
+        {
+          hostname: "127.0.0.1",
+          port: server.address().port,
+          path: "/api/generate",
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+        },
+        (res) => {
+          res.resume();
+          res.once("end", () => resolve(res.statusCode));
+          res.once("error", reject);
+        },
+      );
+      req.once("error", reject);
+      req.write(body.subarray(0, split));
+      firstChunk.then(() => req.end(body.subarray(split)));
+    });
+    assert.equal(await response, 200);
+    assert.deepEqual(received, messages);
+  } finally {
+    server.closeAllConnections();
+    await new Promise((resolve) => server.close(resolve));
   }
 });

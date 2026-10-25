@@ -40,12 +40,14 @@ export function createApiHandler({
         );
         return;
       }
-      let body = "";
+      const chunks = [];
+      let bodyBytes = 0;
       for await (const chunk of req) {
-        body += chunk;
-        if (Buffer.byteLength(body) > 256_000) throw Error("Request too large");
+        bodyBytes += chunk.length;
+        if (bodyBytes > 256_000) throw Error("Request too large");
+        chunks.push(chunk);
       }
-      const parsed = JSON.parse(body);
+      const parsed = JSON.parse(Buffer.concat(chunks).toString("utf8"));
       if (
         !Array.isArray(parsed.messages) ||
         !parsed.messages.length ||
