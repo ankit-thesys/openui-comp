@@ -1,0 +1,64 @@
+TAP version 13
+# Subtest: CompositeCardBlock preserves slots, refs, keyboard callbacks and empty updates
+ok 1 - CompositeCardBlock preserves slots, refs, keyboard callbacks and empty updates
+  ---
+  duration_ms: 28.566833
+  type: 'test'
+  ...
+# Subtest: ContextCardBlock preserves slots, refs, keyboard callbacks and empty updates
+ok 2 - ContextCardBlock preserves slots, refs, keyboard callbacks and empty updates
+  ---
+  duration_ms: 46.154083
+  type: 'test'
+  ...
+# Subtest: entity rows preserve markdown, numeric variants, compact omission and live updates
+ok 3 - entity rows preserve markdown, numeric variants, compact omission and live updates
+  ---
+  duration_ms: 35.238
+  type: 'test'
+  ...
+# Subtest: list blocks share subtitle spacing and override child index, size and variant without replacing actions
+ok 4 - list blocks share subtitle spacing and override child index, size and variant without replacing actions
+  ---
+  duration_ms: 20.29925
+  type: 'test'
+  ...
+# Subtest: list items preserve slots, action callback, root ref and inherited keyboard behavior
+ok 5 - list items preserve slots, action callback, root ref and inherited keyboard behavior
+  ---
+  duration_ms: 22.517334
+  type: 'test'
+  ...
+# Subtest: metric variants preserve previous values, trend signs, subtext placement and refs
+ok 6 - metric variants preserve previous values, trend signs, subtext placement and refs
+  ---
+  duration_ms: 17.272667
+  type: 'test'
+  ...
+# Subtest: overview cards preserve grid grouping, original item callbacks, refs and gap overrides
+ok 7 - overview cards preserve grid grouping, original item callbacks, refs and gap overrides
+  ---
+  duration_ms: 35.862
+  type: 'test'
+  ...
+# Subtest: snippet cards preserve slots, chevron fallback, item grouping and consumer attributes
+ok 8 - snippet cards preserve slots, chevron fallback, item grouping and consumer attributes
+  ---
+  duration_ms: 20.509917
+  type: 'test'
+  ...
+# Subtest: VisualCardBlock preserves slots, refs, keyboard callbacks and empty updates
+ok 9 - VisualCardBlock preserves slots, refs, keyboard callbacks and empty updates
+  ---
+  duration_ms: 26.094458
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2537.479208

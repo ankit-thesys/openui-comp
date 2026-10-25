@@ -1,8 +1,8 @@
-# Slice12 stacked draft preparation
+# Slice12 stacked draft — PR34
 
 Title: Extract text, media, sources and tables into React UI core
 
-Base: `codex/react-ui-core-layout` ([fork PR33](https://github.com/ankit-thesys/openui-comp/pull/33)); head: `codex/react-ui-core-text-media`. The user authorized opening/pushing a stacked DRAFT after integrated checks and independent review pass. No merge or ticket closure. Sourcea28833480 and local CI are green. Worker2 validation passed; its unrelated lock finding is fixed with a frozen-lock check. The body below is ready for the authorized stacked draft.
+Base: `codex/react-ui-core-layout` ([fork PR33](https://github.com/ankit-thesys/openui-comp/pull/33)); head: `codex/react-ui-core-text-media`. The user authorized opening/pushing a stacked DRAFT after integrated checks and independent review pass. No merge or ticket closure. Opened as [draft PR34](https://github.com/ankit-thesys/openui-comp/pull/34). Sourcea28833480, independent verification and lock correction are complete; remote build and changeset checks pass at c7d85dad3b356cd5de9d5e21fadd5a4cddc52fd7. The body below records that reviewed source head.
 
 ## What
 
@@ -31,6 +31,7 @@ Add the approved text, media, source/citation and table families to the new core
 
 **Current integrated artifact:** production `a288334807643bdc63acb75c08af3e7aef7d759e`,401873 bytes, SHA256 `8709be66bc8b6b5ffd859b3df4fda1507ee63f9b7a75506c149a2aaf56012537`. Exact normal npm artifact/lock/file manifest and logs: `packages/react-ui-core/evidence/katex-integration/`.
 
+- [x] Remote [Build JS](https://github.com/ankit-thesys/openui-comp/actions/runs/40180403689) and [changeset check](https://github.com/ankit-thesys/openui-comp/actions/runs/40180403680) pass at `c7d85dad3b356cd5de9d5e21fadd5a4cddc52fd7`.
 - [x] Full local package CI97/97, including executable packed Vite/Chrome math styling and existing behavior checks; format/lint/types/build/Publint/ATTW.
 - [x] Native ESM/CJS and strict TS5.9.3 skipLibCheck:false consumer declarations in Bundler/NodeNext ESM/NodeNext CJS. Direct CSS vendor and renderer both0.16.47.
 - [x] TDD: previous88fd artifact fails automatic math typography; the minimal integration passes without weakening the assertion. Both independent local source/test review axes report zero actionable findings.

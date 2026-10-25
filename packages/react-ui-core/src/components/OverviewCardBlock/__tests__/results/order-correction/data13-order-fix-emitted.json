@@ -1,0 +1,14 @@
+{
+  "diagnosticOnly": true,
+  "status": "expected emitted order",
+  "rules": [
+    {
+      "offset": 160905,
+      "rule": ".go4112051006.openui-small-card-block--overview-card.openui-small-card-block--carousel :where(.openui-small-card-block__carousel-item){width:15rem;}"
+    },
+    {
+      "offset": 161770,
+      "rule": ".go4112051006.openui-small-card-block--overview-card.openui-small-card-block--carousel :where(.openui-small-card-block__carousel-item){width:12.5rem;}"
+    }
+  ]
+}

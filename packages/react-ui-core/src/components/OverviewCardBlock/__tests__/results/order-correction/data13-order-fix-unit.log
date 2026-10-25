@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: entity rows preserve markdown, numeric variants, compact omission and live updates
+ok 1 - entity rows preserve markdown, numeric variants, compact omission and live updates
+  ---
+  duration_ms: 27.03
+  type: 'test'
+  ...
+# Subtest: list blocks share subtitle spacing and override child index, size and variant without replacing actions
+ok 2 - list blocks share subtitle spacing and override child index, size and variant without replacing actions
+  ---
+  duration_ms: 25.790209
+  type: 'test'
+  ...
+# Subtest: list items preserve slots, action callback, root ref and inherited keyboard behavior
+ok 3 - list items preserve slots, action callback, root ref and inherited keyboard behavior
+  ---
+  duration_ms: 18.798041
+  type: 'test'
+  ...
+# Subtest: metric variants preserve previous values, trend signs, subtext placement and refs
+ok 4 - metric variants preserve previous values, trend signs, subtext placement and refs
+  ---
+  duration_ms: 21.081583
+  type: 'test'
+  ...
+# Subtest: overview cards preserve grid grouping, original item callbacks, refs and gap overrides
+ok 5 - overview cards preserve grid grouping, original item callbacks, refs and gap overrides
+  ---
+  duration_ms: 29.435083
+  type: 'test'
+  ...
+# Subtest: snippet cards preserve slots, chevron fallback, item grouping and consumer attributes
+ok 6 - snippet cards preserve slots, chevron fallback, item grouping and consumer attributes
+  ---
+  duration_ms: 16.05
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1882.351833

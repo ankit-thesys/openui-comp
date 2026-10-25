@@ -1,0 +1,33 @@
+TAP version 13
+# Text save callback count 2
+# Subtest: EditableTable preserves controlled edits, keyboard cancellation, portal cells and changes actions
+not ok 1 - EditableTable preserves controlled edits, keyboard cancellation, portal cells and changes actions
+  ---
+  duration_ms: 906.318875
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/EditableTable/__tests__/EditableTable.test.mjs:14:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/EditableTable/__tests__/EditableTable.test.mjs:75:14)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1953.125375

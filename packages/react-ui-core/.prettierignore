@@ -8,3 +8,22 @@ src/components/IconTag/__tests__/results/browser-first/consumer-lock.json
 src/components/IconTag/__tests__/results/browser-corrected/composers12-selectors-first.json
 src/components/IconTag/__tests__/results/browser-corrected/composers12-selectors-prepared.json
 src/components/IconTag/__tests__/results/browser-corrected/consumer-lock.json
+
+# Preserve exact slice13 browser evidence and frozen consumer lock.
+evidence/data-cards/browser-failures/*.json
+evidence/data-cards/consumer-lock.json
+# Preserve the exact passing slice13 browser measurement.
+evidence/data-cards/browser-results/*.json
+# Preserve Worker2's original slice13 failed reports and executed fixtures/runners.
+src/components/OverviewCardBlock/__tests__/results/browser-first/**
+src/components/OverviewCardBlock/__tests__/results/browser-focus-attempt/**
+src/components/OverviewCardBlock/__tests__/results/browser-carousel-failure/**
+src/components/OverviewCardBlock/__tests__/results/BROWSER_SHA256.json
+# Exact corrected carousel consumer lock and measured reports.
+evidence/data-cards/corrected-carousel/consumer-lock.json
+evidence/data-cards/corrected-carousel/*-browser.json
+evidence/data-cards/corrected-carousel/*-responsive.json
+# Preserve Worker2's corrected measurements and exact executed fixtures/runners.
+src/components/OverviewCardBlock/__tests__/results/browser-corrected/**
+src/components/OverviewCardBlock/__tests__/results/corrected-tooltip-fixture/**
+src/components/OverviewCardBlock/__tests__/results/CORRECTED_SHA256.json

@@ -1,0 +1,36 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.hover: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('#overview-case [role="button"]').first()[22m
+[2m    - locator resolved to <div tabindex="0" role="button" class="openui-overview-card openui-overview-card--clickable">…</div>[22m
+[2m  - attempting hover action[22m
+[2m    2 × waiting for element to be visible and stable[22m
+[2m      - element is visible and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div class="openui-small-card-block__item">…</div> intercepts pointer events[22m
+[2m    - retrying hover action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible and stable[22m
+[2m      - element is visible and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div class="openui-small-card-block__item">…</div> intercepts pointer events[22m
+[2m    - retrying hover action[22m
+[2m      - waiting 100ms[22m
+[2m    19 × waiting for element to be visible and stable[22m
+[2m       - element is visible and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <div class="openui-small-card-block__item">…</div> intercepts pointer events[22m
+[2m     - retrying hover action[22m
+[2m       - waiting 500ms[22m
+
+    at /Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/OverviewCardBlock/__tests__/data-cards.browser.mjs:503:20 {
+  name: 'TimeoutError'
+}
+
+Node.js v22.22.2

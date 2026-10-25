@@ -1,3 +1,65 @@
+# CURRENT — slice13 local/independent gates PASS; authorized stacked draft preparing — 2026-10-25
+
+Worker2 corrected A/C evidence82953d0ef integrated86860a77a:12 cases /56,268 paired snapshots PASS on exact4119cddbed813f81e37b949ce00421a7e65173a3 artifact492247 bytes, SHA2562c29042765ee120d7f85dd4da7176152ee54cfa7dcaff794ee3990473ea59e02. All installed files match tar, consumer/lock unchanged. W1 corrected D responsive6/10,656 passes on same artifact. Browser/server closed and released back to W1; no more Chrome required.
+
+Final scoped Spec and Standards reviews: no source/harness findings; both identified stale pending A/C wording in draft, now corrected. Raw evidence hashes verified and narrowly excluded from formatting. Historical whole107/107 suite and broader B/D48,494 remain tied tobaa3; targeted corrected source/build/format/native/strict/pruning/browser checks pass. Remote full CI next, no redundant unchanged local matrices.
+
+User/root authorized push ONLY ankit-thesys/openui-comp branch codex/react-ui-core-data-cards and open stacked DRAFT targeting codex/react-ui-core-text-media (#34), attach and check/fix CI. Prepared body docs/planning/slice13-pr-draft.md. No unresolved local gate remains. No merge/release/ticket closure/upstream/main writes. Following publication/CI, next ticket dependency/ownership PROPOSAL is read-only, including deferred OptionCards; no #14/helper/TL-gated implementation before root dispatch.
+
+Inherited Enter/blur duplicate callback, metric sign formatting, ListItem activation and native tooltip DIV/tabIndex-1 retained. Simultaneous very long Snippet slots remain unvalidated after legacy target was not hoverable; separate LHS/RHS portal cases pass. Dynamic stylesheet insertion/reordering recovery and SSR/performance/memory unvalidated. Old legacy/previews/crates unchanged. This section supersedes historical gate statuses below.
+
+---
+
+# CURRENT — corrected slice13 artifact / D responsive PASS / browser RELEASED to Worker2 — 2026-10-25
+
+Worker2 fix64a7f36ef integrated as `4119cddbed813f81e37b949ce00421a7e65173a3`. Conventional base-before-container rule order; no custom runtime/specificity workaround. Original failed A/C evidence8cc96c7be integrated9cad937ee, with prerequisite fixture preserved. Production ownership respected, W1 did not edit shared source.
+
+NEW exact normal consumer `/private/tmp/core-data13c-consumer`; tar `/private/tmp/core-data13c-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`;492247 bytes; SHA256 `2c29042765ee120d7f85dd4da7176152ee54cfa7dcaff794ee3990473ea59e02`. All tar files match installed bytes. Tools/types preinstalled before freeze; package/lock immutable. Exact artifact/consumer/manifest/targeted results under packages/react-ui-core/evidence/data-cards/corrected-carousel. Older artifacts preserved.
+
+W1 affected D responsive Chrome PASS6 cases /10,656 paired snapshots: actual450/650/950px containers, grid/carousel, responsivefalse control, Composite/Context/Visual, plain/TW3/TW4 both initial orders. No EditableTable DOM in targeted mode. Corrected artifact native ESM/CJS, strict TS5.9.3 three modes and focused JS/Goober pruning PASS; build/affected format PASS. Prior full107/107 localCI and48,494 broader B/D snapshots remain historical onbaa3c1d93; no unrelated broad/EditableTable reruns for this CSS correction.
+
+EXPLICIT browser RELEASE to Worker2: owned targeted Chrome/server closed; W1 will run NO Chrome while W2 validates corrected A/C. Use NEW exact consumer/revision/hash above; no package/lock changes. W2 harness already integrated, sourceowner added narrow/boundary/wide regression assertions. PR gate remains OPEN until corrected independent A/C passes and final review. Local stacked draft description exists; no PR opened yet.
+
+No merge/release/upstream/main/legacy/previews/crates changes or ticket closure. Inherited callback/sign/keyboard limits and deferred SSR/performance/memory unchanged. This section supersedes older browser/gate/artifact statuses below.
+
+---
+
+# CURRENT — slice13 responsive correction gate OPEN — 2026-10-25
+
+Worker2 found a genuine shared Overview carousel regression at450px: candidate cards240px versus legacy200px. Public Goober grouping emitted the narrow override before the later base rule. Root assigned conventional rule-order fix + regression test to source owner Worker2. Worker1 WILL NOT edit `_shared/cards` concurrently. Failed evidence8cc96c7be integrated as9cad937ee; its earlier prerequisite runner/fixture files retained exactly to resolve a modify/delete integration conflict. No production changes in that evidence commit.
+
+Prior107/107 local CI and6/48,494 owned browser matrix remain tied to artifactbaa3c1d93, not acceptance of this correction. PR gate remains OPEN. Await Worker2's committed fix, then Worker1 builds/packs a NEW immutable normal consumer. Worker1 affected D responsive check is prepared/reviewed: table fixture omitted, actual450/650/950px card containers, grid/carousel plus responsive disabled, plain/TW3/TW4 both initial stylesheet orders. No unrelated EditableTable or broad suite rerun planned for this shared card CSS correction.
+
+Browser window returned to Worker1; no Chrome/server currently active. After corrected artifact and owned affected run, explicitly release new exact revision/hash/consumer to Worker2 for A/C retest. Original failures/raw report/runner/fixture bytes preserved via narrow formatter exclusions. Source ownership and other guardrails unchanged; no merge/release/upstream/main/legacy/previews/crates changes or ticket closure.
+
+---
+
+# CURRENT — slice13 local integrated GREEN / browser RELEASED to Worker2 — 2026-10-25
+
+Branch `codex/react-ui-core-data-cards`; production `baa3c1d935d06e923ab9aa43ae3a97f3d3fd0ff5`, current source unchanged after measured correction. W1 Batch B455743987, W2 A670b14b70→28553bf25, W2 Ca3908845a→b4640259b, W1 D1175ae2f9, select effective-cascade fixbaa3c1d93. Shared layout reused; root/deps/lock W1-owned, only new TanStack importer3lines. No cross-owner source edits.
+
+Local integrated package CI PASS107/107, format/lint/types/build/Publint/ATTW. Two pre-existing ThemeProvider hook warnings, no lint errors. Native public-root ESM/CJS, strict TS5.9.3 skipLibCheckfalse three modes, and affected JS/Goober pruning pass. Initial ESM-file-only check preserved; revised verification additionally imports package name in a native consumer subprocess. Final source reviews clear, final validation harness follow-up recorded. No unchanged broad reruns.
+
+W1 owned B/D Chrome PASS6 initial CSS-order cases /48,494 paired snapshots, plain/TW3/TW4, themes/nested/overrides/grid/carousel/narrow, hover/focus/image pseudos, real table edits/Select/DatePicker portals/empty. Frozen consumer `/private/tmp/core-data13b-consumer`; tar `/private/tmp/core-data13b-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`;491804 bytes; SHA256 `f64973409f551181976cafa76b85a5915262f11e1bc2e2fe48a17c9103e069f4`. Every tar file matches installed bytes; package/lock and exact manifest retained under evidence/data-cards. Tools/types installed before freeze. DO NOT mutate consumer/package/lock.
+
+EXPLICIT browser RELEASE to Worker2: all Worker1 Chrome checks and full CI finished; browser/server closed. Worker2 can run prepared independent A/C matrix against this exact normal-installed artifact. W1 will run NO Chrome until released back. CORE_BROWSER_TOOLS points to this checkout's packages/react-ui-core; Sass/host tools unchanged. Only bounded A/C checks remain before integrated review/authorized stacked fork DRAFT atop PR34; do not repeat unrelated prior matrices. No slice acceptance yet.
+
+Inherited limitations: Enter-save plus blur sends two callbacks (legacy confirmed); existing metric sign formatting and ListItem keyboard behavior retained. Initial CSS orders pass; recovery after dynamic stylesheet insertion/reordering was not certified (original fixture failure retained). No custom runtime machinery, SSR/performance/memory claims, legacy/previews/crates edits, merge/release/upstream/main writes or ticket closure. This section supersedes older in-progress/undispatched/browser-owner notes below.
+
+---
+
+# CURRENT — slice12 COMPLETE as reviewed DRAFT PR34; CI GREEN — 2026-10-25
+
+Draft PR https://github.com/ankit-thesys/openui-comp/pull/34 is OPEN/DRAFT, attached, stacked on codex/react-ui-core-layout (#33). Reviewed/pushed source head `c7d85dad3b356cd5de9d5e21fadd5a4cddc52fd7`. Remote Build JS40180403689 PASSED9m5s and changeset40180403680 PASSED14s. Local integrated package CI97/97, native/strict3 modes, public normal-packed Vite/Chrome test and Worker2 independent6 cases /3,444 paired math snapshots all pass. Exact measured production package remainsa28833480 (401873 bytes, SHA2568709be66bc8b6b5ffd859b3df4fda1507ee63f9b7a75506c149a2aaf56012537); historical non-math matrices keep their own source revisions. Evidence under katex-integration and katex-independent-integration.
+
+P2 lock finding fully RESOLVED: existing entire Thesys snapshot and KaTeX0.16.44 package/snapshot match pre-integration originals; core/renderer0.16.47 aligned. Frozen install passed. Worker2 separately confirmed exact restoration; no outstanding review finding. No global overrides, custom runtime code, experimental CSS plugin or unchanged broad/local/browser reruns. User accepted vendor CSS, Vite contract, emitted unused fonts and bare-esbuild setup; authoritative spec addendum and fork issue7 amended. No math decision gate remains for this bounded slice. SSR/performance and wider bundlers remain deferred.
+
+Final handoff commit is LOCAL DOCS/EVIDENCE ONLY, deliberately not pushed to avoid repeating the green suite on unchanged product code. All production/source/test/lock/release-note changes are already pushed at the green PR head above. This section and docs/planning/slice12-pr-draft.md record the finalized PR body; root can carry documentation into subsequent orchestration work. No active browser/server remains; browser available. No merge, issue closure, publication or deprecation performed. Legacy, both previews and unrelated crates unchanged.
+
+READY for root's slice13 dispatch using docs/planning/slice13-readonly-plan.md; no slice13 implementation started here. Preserve native EditableTable/TanStack structure as resolved. Do not treat this as whole-migration completion. This top section supersedes all historical pending math/PR/CI statuses below.
+
+---
+
 # CURRENT — slice12 independent validation PASS; ready for authorized stacked DRAFT — 2026-10-25
 
 Worker2 evidence90bcae6b1 integrated asf14775ab7. Final independent productiona28833480 run PASSED6 cases /3,444 paired math snapshots, themes/orders, late updates and /review/ asset URLs. Verified every installed file against exact tarball; package/lock unchanged; no unused math downloads, accepted59 emitted fonts remain. Browser/server closed and released to Worker1. Local integrated package CI97/97 and native/strict3 modes already green. Other non-math matrices retain their historical artifact scope.

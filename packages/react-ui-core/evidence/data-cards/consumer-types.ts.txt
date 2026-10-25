@@ -1,0 +1,14 @@
+import {createElement,createRef} from 'react';
+import {EditableTable,EditableTableChangesBar,CompositeCard,CompositeCardBlock,ContextCard,ContextCardBlock,VisualCard,VisualCardBlock,OverviewCardBlock,SnippetCardBlock,EntityList,ListItem,ListBlock,MetricIndicatorInline,MetricIndicatorWithStrikethrough} from '@openuidev/react-ui-core';
+import type {EditableCellType,EditableTableRow,EditableTableColumn,EditableTableProps,EditableTableChangesBarProps,CompositeCardBlockItem,CompositeCardProps,CompositeCardBlockProps,ContextCardBgColor,ContextCardBlockItem,ContextCardProps,ContextCardBlockProps,VisualCardBlockItem,VisualCardProps,VisualCardBlockProps} from '@openuidev/react-ui-core';
+const kind:EditableCellType='select';const row:EditableTableRow={id:'one',value:1};const column:EditableTableColumn={key:'value',header:'Value',type:kind,options:[{value:'a',label:'A'}]};
+const table:EditableTableProps={data:[row],columns:[column],onDataChange:next=>next[0]?.id};const bar:EditableTableChangesBarProps={changedCellCount:1,onReset(){},onSave(){}};
+const composite:CompositeCardBlockItem={id:'c',header:'Header',body:['Body'],footer:{price:0,button:'Buy'}};const cp:CompositeCardProps={item:composite,clickable:true,onClick(){},className:'custom'};const cb:CompositeCardBlockProps={items:[composite],layout:'carousel',responsive:true,gap:'1rem',onItemClick:i=>i};
+const color:ContextCardBgColor='warning';const context:ContextCardBlockItem={title:'Title',body:'**Body**',bgColor:color,bgImageSrc:'https://example.com/image.png',bgImageAlt:'Image'};const xp:ContextCardProps={item:context};const xb:ContextCardBlockProps={items:[context]};
+const visual:VisualCardBlockItem={tag:'Tag',body:'Body'};const vp:VisualCardProps={item:visual};const vb:VisualCardBlockProps={items:[visual],gap:0};
+createElement(EditableTable,{...table,ref:createRef<HTMLDivElement>()});createElement(EditableTableChangesBar,bar);createElement(CompositeCard,cp);createElement(CompositeCardBlock,cb);createElement(ContextCard,xp);createElement(ContextCardBlock,xb);createElement(VisualCard,vp);createElement(VisualCardBlock,vb);
+// @ts-expect-error No new sx styling API.
+const unsupported:CompositeCardProps={item:composite,sx:{color:'red'}};
+// @ts-expect-error Existing root-only public contract.
+import {CardBlockLayout} from '@openuidev/react-ui-core';
+void [unsupported,CardBlockLayout,OverviewCardBlock,SnippetCardBlock,EntityList,ListItem,ListBlock,MetricIndicatorInline,MetricIndicatorWithStrikethrough];

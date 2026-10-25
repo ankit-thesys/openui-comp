@@ -1,0 +1,10 @@
+[
+  {
+    "offset": 52830,
+    "rule": ".go2437725739.openui-small-card-block--overview-card.openui-small-card-block--carousel :where(.openui-small-card-block__carousel-item){width:12.5rem;}"
+  },
+  {
+    "offset": 52981,
+    "rule": ".go2437725739.openui-small-card-block--overview-card.openui-small-card-block--carousel :where(.openui-small-card-block__carousel-item){width:15rem;}"
+  }
+]
