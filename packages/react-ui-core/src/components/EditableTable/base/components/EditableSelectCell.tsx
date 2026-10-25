@@ -5,7 +5,7 @@ import { useEditableCellKeyboard } from "../hooks/useEditableCellKeyboard";
 import { CellOutline } from "./CellOutline";
 import type { CellRendererProps, EditableColumnMeta, EditableTableMeta } from "./CellTypes";
 import { cellClass } from "./editableCell.styles";
-import { itemClass, triggerClass } from "./editableSelectCell.styles";
+import { triggerClass } from "./editableSelectCell.styles";
 
 export const EditableSelectCell: React.FC<CellRendererProps> = (props) => {
   const {
@@ -129,7 +129,7 @@ export const EditableSelectCell: React.FC<CellRendererProps> = (props) => {
             <SelectItem
               key={option.value}
               value={option.value}
-              className={clsx(itemClass, "openui-editable-table-select-item")}
+              className="openui-editable-table-select-item"
             >
               {option.label}
             </SelectItem>

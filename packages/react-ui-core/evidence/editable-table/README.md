@@ -5,3 +5,5 @@ The public-root real Chrome behavior test passed after the missing-export red. P
 The first callback assertion expected one save notification. The same interaction against untouched legacy also produces two notifications (Enter save followed by blur). The extraction preserves that behavior; both failed assertions are retained as baseline evidence, not hidden or patched.
 
 Logs retain their original bytes. These focused results do not certify visual parity, SSR, performance or the entire slice.
+
+The first matched browser matrix reached the Select portal and found 14px extracted menu items versus 16px legacy items. Legacy index.scss loads Select after EditableTable, overriding the cell's small-font rule. The extraction now relies on SelectItem's existing default typography, preserving the effective legacy appearance without a runtime ordering patch. Raw failed comparison is retained under data-cards/browser-failures. Revised artifact validation follows separately.

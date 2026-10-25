@@ -1,8 +1,7 @@
 import * as Core from "@openuidev/react-ui-core";
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
-const image =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' fill='%23345678'/%3E%3C/svg%3E";
+const image = new URL("/image.svg", location.href).href;
 const columns = [
   { key: "text", header: "Name", type: "text", width: 180 },
   { key: "number", header: "Amount", type: "number", width: 180 },
