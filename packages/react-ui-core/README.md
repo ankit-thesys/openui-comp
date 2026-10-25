@@ -130,6 +130,15 @@ presence does not enable deferred server rendering. Chart animation, interaction
 and performance claims require the corresponding recorded validation; settled
 style comparisons alone do not establish them.
 
+HorizontalBar retains existing limitations: `onClick` is unwired, numeric width
+affects scales without setting the CSS box, and string height with a fitting
+legend can produce sizing feedback in both legacy and core. The strict
+comparison for that last combination remains unpassed; it is not removed from
+the public API or declared unsupported. Scatter retains no print-export metadata
+and its public domain helper clamps negative lower bounds. See the
+[Cartesian/Mini validation report](./src/components/Charts/BarChart/__tests__/BROWSER_REPORT.md)
+for exact evidence and limits.
+
 ## Development
 
 ```sh

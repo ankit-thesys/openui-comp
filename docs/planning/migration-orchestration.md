@@ -1,3 +1,70 @@
+# CURRENT — charts local/review checkpoint complete; fork-only stacked draft preparing — 2026-10-25
+
+FinalpackageCI136/136 +format/lint/types/build/Publint/ATTW PASS; 2existingTheme
+warnings/0errors. W2packet4bcd0c13b integrated2323d977e, sourceunchanged1d31a4b63.
+Bothfinalsource/evidenceclaimreviewaxes0remainingfindings afterexplicitPR/README
+HorizontalBarlimitdisclosure. Finalreviewrecord:evidence/charts-measurement/
+FINAL_REVIEW.md. NewW2harnessformatcheckPASS; no duplicateCI/browsermatrices after
+harness/evidence-onlyintegration. AllChrome/serverclosed; preservecrates/.
+
+Authorizednext: pushONLYankit-thesys/openui-comp codex/react-ui-core-charts,
+openattachedDRAFT targetingcodex/react-ui-core-option-cards(PR36),monitor/fixremoteCI.
+NoexistingchartPRfound. Preparedbodydocs/planning/slice14-pr-draft.md. No merge,
+release/publication/deprecation/closure/upstream/main/legacy/friend/previewswrites.
+
+Acceptanceexplicitlybounded: HorizontalBardefaultstringheight+fitLegendstrict
+comparisonUNPASSED/baselinefeedback; nounsupportedreclassification/publicprop
+removal. W2separatebatches85,122observations+6instabilityrecords on samecorrected
+artifact; W1affected6/46,440. Old7eanimationevidence remains tiedtooldsource.
+No fullunconditional19parity/SSR/parserperformance/memory/errorfreedomclaim.
+
+---
+
+# CURRENT — chart evidence committed/integrated; local CI136/136 GREEN — 2026-10-25
+
+W2 finalpacket4bcd0c13b integrated2323d977e after committedhandoff, no production
+change. Same corrected1d31a4b63 artifact638a833... validates separateW2batches:
+Line6/11,664; HorizontalBar6/10,728boundedobservations plus6instabilityrecords;
+remaining9entries6/62,730. Total85,122 observations acrossseparatebatches/same6
+framework/ordercombos, not18distinctcombos. Exact report at Charts/BarChart/
+**tests**/BROWSER_REPORT.md. Allsource/artifact/manifest/lockprovenance preserved.
+
+**HorizontalBar default stringheight+fitLegend strictcomparison remainsUNPASSED**
+and baseline-confirmedunstable. Do not reclassifyunsupported, replaceoriginal
+scenario withlegenddisabledpass, orclaimfullunconditional19parity. Originalstrict
+failure and120realframecyclingdiagnostic retained; sizingredesignseparatedecision.
+Otherverifiedinheritedlimits: unwiredclick/numericwidthCSSbox, Scatter missing
+printmetadata/domainnegativeclamp, legendkeyboardcontract. Preservednotfixed.
+
+W1finalpackageCI136/136 +format/lint/types/build/Publint/ATTW PASS (2existingTheme
+warnings,0errors). W1correctedaffectedmatrix6/46,440, nativeall19/strict3/pruning
+pass. No sourcechangedafter1d. W2packet onlyharness/evidence so no productretst;
+affectedformat/harnessclaims finalreview pending, then authorizedforkonlystacked
+DRAFT atopPR36/remoteCI. AllChrome/serverclosed; no duplicatecompletedmatrices.
+No full19unconditionalparity/perf/SSR/memoryclaim; no merge/closure/release/upstream/
+main/legacy/previews/friend/crates changes. Rootretainsacceptanceauthority.
+
+---
+
+# CURRENT — corrected chart packageCI136/136 GREEN; await W2 evidence commit — 2026-10-25
+
+Worker2 explicitly released browser after its remaining matrix; W1 finalpackageCI
+passes136/136 plus format/lint/types/build/Publint/ATTW on unchanged corrected
+production1d31a4b63ee66f03c21688d96cee28bcad8380ac. Rawlog recorded under
+evidence/charts-measurement/chart-final-package-ci.log. No fullmatrix repeats.
+All W1Chrome/server closed after CI. Source/head68d97b3edbeforethisdocupdate.
+
+Root snapshot reports W2's separate Line/HorizontalBar/remaining9 evidence on
+same correctedartifact, but W2is stillfinalizingcommit. DO NOTintegrateuncommitted
+files or report finalacceptance untilcommittedpacketarrives. Baseline-confirmed
+HorizontalBar default stringheight+fitLegend strictcomparison remainsunpassed;
+keepit explicit, not reclassifiedunsupported or silentlyfixed. No production
+correction is authorized for inheritedsizingfeedback. Finalscopedreview + fork
+stackedDRAFT/remoteCI followcommittedhandoff. Full19unconditionalparitynotclaimed.
+No merge/release/closure/upstream/main/legacy/friend/previews/crates changes.
+
+---
+
 # CURRENT — corrected tracking artifact GREEN owned scope; browser RELEASED to W2 — 2026-10-25
 
 **W1 explicitly releases browser to Worker2 now. All W1 Chrome/server closed;
