@@ -1,50 +1,53 @@
-# Local PR draft — not opened or pushed
+# Slice12 stacked draft preparation
 
-Proposed title: Extract text, media, sources and tables into React UI core
+Title: Extract text, media, sources and tables into React UI core
 
-Proposed base: `codex/react-ui-core-layout` ([fork PR33](https://github.com/ankit-thesys/openui-comp/pull/33)). Head: `codex/react-ui-core-text-media`. Stack above PR33; do not include parent layout work in this slice's description. Relates to fork issue12; do not close it while acceptance remains blocked.
+Base: `codex/react-ui-core-layout` ([fork PR33](https://github.com/ankit-thesys/openui-comp/pull/33)); head: `codex/react-ui-core-text-media`. The user authorized opening/pushing a stacked DRAFT after integrated checks and independent review pass. No merge or ticket closure. Current sourcea28833480 and local CI are green; Worker2 review is pending. Copy the body below after updating its independent result.
 
-**User acceptance recorded:** the stable lazy vendor-CSS exception and its Vite/emitted-asset/bare-esbuild limits are approved. Production integration and final independent/CI validation are in progress; open the stacked draft only after those checks pass. No experimental plugin or custom runtime patch is adopted.
+## What
 
-## Summary
+Add the approved text, media, source/citation and table families to the new core root import, preserving their public APIs and intended behavior. Existing react-ui remains read-only. Relates to [issue12](https://github.com/ankit-thesys/openui-comp/issues/12); stacked on #33.
 
-Move the approved text, media, source/citation and table families into the new core root entry, preserving existing props, behavior and class hooks. Owned styles use stock Goober; no legacy SCSS dependency or custom runtime compatibility patch.
+### Summary
 
 ```text
 @openuidev/react-ui-core
 ├── Table / ScrollableTable / CodeBlock
-├── Markdown / headers / TextBlockView / text wrapper
+├── Markdown / headers / TextBlockView / math text wrapper
 ├── images / gallery / tags / callouts / icon-image text
 └── source context / citations / URL helpers
 ```
 
-Keep legacy react-ui read-only. Preserve source quirks as disclosed below. A conventional authored-selector correction fixes Goober serialization while retaining legacy specificity; no parser modification or runtime selector transformation is introduced.
+## Changes
 
-## Evidence
+- Convert owned styles to stock runtime Goober without legacy SCSS. Preserve existing selectors, props and customization. Authored terminal `:where` selectors retain legacy specificity without modifying Goober's parser.
+- Deliver the user-accepted unmodified KaTeX CSS/fonts through the existing lazy math pipeline and ordinary dependency imports. Stable tsdown config is unchanged; no experimental CSS plugin, CDN, injector or custom pruning.
+- Validate automatic styling in default Vite6.4.2. Accept about1.07MB unused emitted fonts with zero unused network downloads; bare esbuild needs asset loaders/CSS linking. Keep other owned styles in Goober. See `docs/specs/react-ui-extraction-styling.md`.
+- Use supported SyntaxHighlighter theme-data bundling and include its MIT notice. Move the wrapper's preserved behavior assertions into a real normal-installed Vite/Chrome test, with CSS/font checks; esbuild JS/Goober pruning tests explicitly externalize vendor CSS.
 
-- **Before:** public tests fail on missing exports. The initial installed composer browser comparison found incorrect TextBlockView typography/gaps from mid-selector `:where` serialization; raw reports and the original artifact remain archived.
-  **After:** terminal `:where` selector forms preserve matching/specificity and pass the unchanged composer matrix. Native SyntaxHighlighter theme imports use supported build-time theme-data bundling with the vendor MIT notice, not resolver shims.
+## Test Plan
 
-**Current corrected production artifact:** `88fdccf94e39a5c58e5a2a80cdf7f755eb5f7326`; normal npm installation; tarball401238 bytes; SHA256 `bee4bc79ccac342cbdc433d16538b86be213aedd4da79a1ea325f6ea22002b6f`.
+### Evidence
 
-- Full package CI: **97/97**, plus formatting/lint/strict producer types/build/Publint/ATTW. Final run has required install access; earlier sandbox cancellation and formatting failures remain documented.
-- Affected installed component/native/pruning checks: **12/12**; strict TS5.9.3 consumer declarations with `skipLibCheck:false` pass Bundler, NodeNext ESM and NodeNext CJS.
-- Owned Table/ScrollableTable/CodeBlock/Markdown/header/text/non-math wrapper browser group: **6 cases /22,296 element snapshots**, plain CSS/Tailwind3/4, both actual stylesheet orders, theme variants, clipboard/copy states, overrides and host preservation.
-- Composer browser group: **6 cases /30,012 paired snapshots** on the same corrected artifact. No assertions changed between the preserved failure and corrected retest.
-- Comparisons finish finite animations before measuring settled endpoints; intermediate animation frames/timing are not certified. Both source and test reviews have zero outstanding scoped findings.
+**Current integrated artifact:** production `a288334807643bdc63acb75c08af3e7aef7d759e`,401873 bytes, SHA256 `8709be66bc8b6b5ffd859b3df4fda1507ee63f9b7a75506c149a2aaf56012537`. Exact normal npm artifact/lock/file manifest and logs: `packages/react-ui-core/evidence/katex-integration/`.
 
-**Historical evidence—different artifacts, not a combined final run:** source/presentation12 cases /22,056 snapshots at `680118396`; fixed media6 cases /8,292 snapshots at `96221894a`. The earlier normally installed package's86 consumer checks and strict modes remain archived at `e4e245bcb`. Do not relabel those results as current-artifact measurements. Unchanged foundation/media matrices were not repeated.
+- [x] Full local package CI97/97, including executable packed Vite/Chrome math styling and existing behavior checks; format/lint/types/build/Publint/ATTW.
+- [x] Native ESM/CJS and strict TS5.9.3 skipLibCheck:false consumer declarations in Bundler/NodeNext ESM/NodeNext CJS. Direct CSS vendor and renderer both0.16.47.
+- [x] TDD: previous88fd artifact fails automatic math typography; the minimal integration passes without weakening the assertion. Both independent local source/test review axes report zero actionable findings.
+- [ ] Worker2 independent integrated delivery review/result — update before opening.
 
-Evidence: `packages/react-ui-core/evidence/text-media-selectors/`, `evidence/text-media-combined/`, and source/media/composer family `__tests__/results/` directories. Exact artifacts, locks, implementation manifests, fixture/runner hashes and first failures are retained.
+**Earlier artifacts, not a combined final run:** non-math Table/text6 cases /22,296 snapshots and composers6 /30,012 at88fdccf94; source/presentation12 /22,056 at680118396; fixed media6 /8,292 at96221894a. Their exact artifacts and first failures remain archived. Unchanged matrices were not repeated or relabeled. Comparisons establish settled endpoints, not intermediate animation timing.
 
 ## Merge Danger
 
-**Door:** two-way. The new-package additions are reversible; no old-package migration, publication or deprecation occurs in this slice.
+**Door:** two-way. **Blast Radius:** core. New-package additions are reversible; no legacy migration, publication or deprecation occurs here.
 
-**Blast Radius:** core. New consumers and dependent kits may render these components; review visual cascade, package contents and preserved behavior before accepting.
+Inherited limitations remain disclosed: pinned Citation Escape dismissal/public trigger onClick; Gallery focus remains on BODY and overflow cleanup sets auto; inline GFM alignment uses legacy inline textAlign; CodeBlock retains clipboard-rejection/timeout cleanup behavior. Parent Tooltip truncation/ref and Modal accessibility limitations are unchanged. See family evidence for baseline comparisons; these are not accessibility certification or new fixes.
 
-**Accepted styling contract:** owned component styles remain stock Goober; only unmodified KaTeX vendor CSS/fonts use the private lazy import. Default Vite6.4.2 production builds provide automatic CSS/font delivery with ordinary component imports. About1.07MB of unused font files may be emitted, with no unused math CSS/font downloads; that cost is explicitly accepted. Bare esbuild requires asset loaders and CSS linking, so arbitrary-bundler zero setup is not promised. No experimental tsdown CSS plugin, font-copy configuration, CDN, custom injector or pruning patch. Normative decision: `docs/specs/react-ui-extraction-styling.md`. Final integrated artifact and independent validation results will replace the earlier investigation-only status before opening the draft.
+SSR/hydration/streaming SSR/concurrent server isolation, final migration performance/memory, arbitrary bundler zero setup and universal accessibility are outside this evidence. The vendor-style exception and output costs are explicitly accepted. No custom runtime patch, merge, release, ticket closure or upstream write.
 
-**Inherited limitations:** pinned Citation does not dismiss on Escape and its trigger does not invoke the public onClick callback in either arm; source-item callbacks/outside dismissal work. Gallery opening leaves focus on BODY; cleanup resets body overflow to auto rather than restoring a custom previous value. Inline GFM alignment follows legacy inline textAlign rather than the anticipated alignment classes. CodeBlock retains its existing unhandled clipboard rejection and timeout cleanup behavior. Tooltip truncation/ref and parent Modal accessibility limitations remain inherited from PR33. These are disclosed baseline behaviors, not accessibility certification or approved redesigns.
+## Checklist
 
-SSR/hydration/streaming delivery, concurrent server isolation, final migration performance/memory and universal accessibility are outside this evidence. The scoped vendor-style exception is accepted; final integrated validation is still pending. No upstream writes, merge, release, legacy edit or preview change is authorized here.
+- [x] Related issue linked without an auto-close keyword.
+- [x] README and accepted styling spec updated.
+- [x] Backwards compatibility considered; legacy/read-only and inherited limitations preserved.
