@@ -1,0 +1,190 @@
+changeset-check	Set up job	﻿2026-10-25T14:48:21.5397612Z Current runner version: '2.338.0'
+changeset-check	Set up job	2026-10-25T14:48:21.5423525Z ##[group]Runner Image Provisioner
+changeset-check	Set up job	2026-10-25T14:48:21.5424450Z Hosted Compute Agent
+changeset-check	Set up job	2026-10-25T14:48:21.5425058Z Version: 20261021.618
+changeset-check	Set up job	2026-10-25T14:48:21.5425986Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+changeset-check	Set up job	2026-10-25T14:48:21.5426798Z Build Date: 2026-10-21T00:45:21Z
+changeset-check	Set up job	2026-10-25T14:48:21.5427619Z Worker ID: {e73bdccd-a259-44c1-a409-41874d2dd8cc}
+changeset-check	Set up job	2026-10-25T14:48:21.5428359Z Region: eastus
+changeset-check	Set up job	2026-10-25T14:48:21.5428905Z Cloud: Azure
+changeset-check	Set up job	2026-10-25T14:48:21.5429621Z ##[endgroup]
+changeset-check	Set up job	2026-10-25T14:48:21.5431128Z ##[group]Operating System
+changeset-check	Set up job	2026-10-25T14:48:21.5431878Z Ubuntu
+changeset-check	Set up job	2026-10-25T14:48:21.5432415Z 24.04.5
+changeset-check	Set up job	2026-10-25T14:48:21.5432928Z LTS
+changeset-check	Set up job	2026-10-25T14:48:21.5433486Z ##[endgroup]
+changeset-check	Set up job	2026-10-25T14:48:21.5434054Z ##[group]Runner Image
+changeset-check	Set up job	2026-10-25T14:48:21.5434814Z Image: ubuntu-24.04
+changeset-check	Set up job	2026-10-25T14:48:21.5435718Z Version: 20261012.334.1
+changeset-check	Set up job	2026-10-25T14:48:21.5436822Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+changeset-check	Set up job	2026-10-25T14:48:21.5438665Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+changeset-check	Set up job	2026-10-25T14:48:21.5439745Z ##[endgroup]
+changeset-check	Set up job	2026-10-25T14:48:21.5440947Z ##[group]GITHUB_TOKEN Permissions
+changeset-check	Set up job	2026-10-25T14:48:21.5443114Z Contents: read
+changeset-check	Set up job	2026-10-25T14:48:21.5443787Z Metadata: read
+changeset-check	Set up job	2026-10-25T14:48:21.5444457Z ##[endgroup]
+changeset-check	Set up job	2026-10-25T14:48:21.5447000Z Secret source: Actions
+changeset-check	Set up job	2026-10-25T14:48:21.5447960Z Cache mode: write
+changeset-check	Set up job	2026-10-25T14:48:21.5449069Z Prepare workflow directory
+changeset-check	Set up job	2026-10-25T14:48:21.5776038Z Prepare all required actions
+changeset-check	Set up job	2026-10-25T14:48:21.5823229Z Getting action download info
+changeset-check	Set up job	2026-10-25T14:48:21.7994289Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+changeset-check	Set up job	2026-10-25T14:48:21.9886720Z Complete job name: changeset-check
+changeset-check	Run actions/checkout@v4	﻿2026-10-25T14:48:22.0803771Z ##[group]Run actions/checkout@v4
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0804673Z with:
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0805115Z   fetch-depth: 0
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0805968Z   repository: ankit-thesys/openui-comp
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0809642Z   token: ***
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0810081Z   ssh-strict: true
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0810523Z   ssh-user: git
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0810978Z   persist-credentials: true
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0811473Z   clean: true
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0811924Z   sparse-checkout-cone-mode: true
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0812449Z   fetch-tags: false
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0812895Z   show-progress: true
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0813353Z   lfs: false
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0813768Z   submodules: false
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0814237Z   set-safe-directory: true
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0814748Z   allow-unsafe-pr-checkout: false
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.0815752Z ##[endgroup]
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.1837150Z Syncing repository: ankit-thesys/openui-comp
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.1839522Z ##[group]Getting Git version info
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.1840408Z Working directory is '/home/runner/work/openui-comp/openui-comp'
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.1842082Z [command]/usr/bin/git version
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.1882636Z git version 2.55.0
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.1908038Z ##[endgroup]
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.1925590Z Temporarily overriding HOME='/home/runner/work/_temp/f649e7dd-9d3a-49f4-8c77-af0501e0968c' before making global git config changes
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.1928280Z Adding repository directory to the temporary git global config as a safe directory
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.1931762Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openui-comp/openui-comp
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.1984254Z Deleting the contents of '/home/runner/work/openui-comp/openui-comp'
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.1988558Z ##[group]Initializing the repository
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.1995751Z [command]/usr/bin/git init /home/runner/work/openui-comp/openui-comp
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2104620Z hint: Using 'master' as the name for the initial branch. This default branch name
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2107062Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2108115Z hint: to use in all of your new repositories, which will suppress this warning,
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2109709Z hint: call:
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2110679Z hint:
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2111508Z hint: 	git config --global init.defaultBranch <name>
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2112518Z hint:
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2113483Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2115005Z hint: 'development'. The just-created branch can be renamed via this command:
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2116426Z hint:
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2117130Z hint: 	git branch -m <name>
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2117927Z hint:
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2118968Z hint: Disable this message with "git config set advice.defaultBranchName false"
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2133032Z Initialized empty Git repository in /home/runner/work/openui-comp/openui-comp/.git/
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2138708Z [command]/usr/bin/git remote add origin https://github.com/ankit-thesys/openui-comp
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2217814Z ##[endgroup]
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2218846Z ##[group]Disabling automatic garbage collection
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2219590Z [command]/usr/bin/git config --local gc.auto 0
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2246222Z ##[endgroup]
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2247549Z ##[group]Setting up auth
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2254699Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2306315Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2661801Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2698189Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2955700Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.2994078Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.3223553Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.3464265Z ##[endgroup]
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.3465760Z ##[group]Fetching the repository
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:22.3479414Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +47432ac5b740b9b1a686f9d33142915fab12130e:refs/remotes/pull/39/merge
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.4963070Z From https://github.com/ankit-thesys/openui-comp
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.4965036Z  * [new branch]        ankit-c-cloud-env-setup-a2bc             -> origin/ankit-c-cloud-env-setup-a2bc
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.4967942Z  * [new branch]        ankit-c-cloud-rust-tui-poc-a2bc          -> origin/ankit-c-cloud-rust-tui-poc-a2bc
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.4970322Z  * [new branch]        ankit-c-cloud-tui-poc-a2bc               -> origin/ankit-c-cloud-tui-poc-a2bc
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.4972909Z  * [new branch]        claude/friend-text-media-baseline        -> origin/claude/friend-text-media-baseline
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.4975557Z  * [new branch]        claude/interesting-clarke-d5d4dd         -> origin/claude/interesting-clarke-d5d4dd
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.4978181Z  * [new branch]        claude/quirky-morse-4357b9               -> origin/claude/quirky-morse-4357b9
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.4981858Z  * [new branch]        codex/integrated-baseline-corrections    -> origin/codex/integrated-baseline-corrections
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.4985711Z  * [new branch]        codex/pr26-review-base                   -> origin/codex/pr26-review-base
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.4988587Z  * [new branch]        codex/pr26-review-fixes                  -> origin/codex/pr26-review-fixes
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.4990909Z  * [new branch]        codex/pr27-review-base                   -> origin/codex/pr27-review-base
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.4993196Z  * [new branch]        codex/pr27-review-fixes                  -> origin/codex/pr27-review-fixes
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.4996469Z  * [new branch]        codex/prototype-styling                  -> origin/codex/prototype-styling
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.4999136Z  * [new branch]        codex/react-chat-kit                     -> origin/codex/react-chat-kit
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5001774Z  * [new branch]        codex/react-ui-core-charts               -> origin/codex/react-ui-core-charts
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5004849Z  * [new branch]        codex/react-ui-core-data-cards           -> origin/codex/react-ui-core-data-cards
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5008351Z  * [new branch]        codex/react-ui-core-first-slice-pr       -> origin/codex/react-ui-core-first-slice-pr
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5011730Z  * [new branch]        codex/react-ui-core-form-controls        -> origin/codex/react-ui-core-form-controls
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5014761Z  * [new branch]        codex/react-ui-core-layout               -> origin/codex/react-ui-core-layout
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5017834Z  * [new branch]        codex/react-ui-core-option-cards         -> origin/codex/react-ui-core-option-cards
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5021062Z  * [new branch]        codex/react-ui-core-text-media           -> origin/codex/react-ui-core-text-media
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5023968Z  * [new branch]        codex/research-goober-viability          -> origin/codex/research-goober-viability
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5026945Z  * [new branch]        example/artifact                         -> origin/example/artifact
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5029450Z  * [new branch]        feat/css-cascade-layers                  -> origin/feat/css-cascade-layers
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5032378Z  * [new branch]        feat/css-cascade-layers-postprocess      -> origin/feat/css-cascade-layers-postprocess
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5035141Z  * [new branch]        feature/Artifact                         -> origin/feature/Artifact
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5038197Z  * [new branch]        feature/Theme-resilance                  -> origin/feature/Theme-resilance
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5040741Z  * [new branch]        feature/d3charts                         -> origin/feature/d3charts
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5043651Z  * [new branch]        feature/shell-sidebar-composer-redesign  -> origin/feature/shell-sidebar-composer-redesign
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5047560Z  * [new branch]        feature/versel-sdk-adaptor               -> origin/feature/versel-sdk-adaptor
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5050238Z  * [new branch]        fix/cli-module-cjs                       -> origin/fix/cli-module-cjs
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5053158Z  * [new branch]        fix/components-style                     -> origin/fix/components-style
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5055848Z  * [new branch]        fix/imageBlock                           -> origin/fix/imageBlock
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5059033Z  * [new branch]        fix/react-ui-theme-provider-export-context -> origin/fix/react-ui-theme-provider-export-context
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5062455Z  * [new branch]        fix/storybook-import-package-name        -> origin/fix/storybook-import-package-name
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5065883Z  * [new branch]        fix/theme-provider-process-guard         -> origin/fix/theme-provider-process-guard
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5068462Z  * [new branch]        main                                     -> origin/main
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5070654Z  * [new branch]        nit/react-headless                       -> origin/nit/react-headless
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5072975Z  * [new branch]        nit/react-ui                             -> origin/nit/react-ui
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5075444Z  * [new branch]        update/doc-images                        -> origin/update/doc-images
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5077782Z  * [new ref]           47432ac5b740b9b1a686f9d33142915fab12130e -> pull/39/merge
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5081902Z ##[endgroup]
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5084156Z ##[group]Determining the checkout info
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5086696Z ##[endgroup]
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5088162Z [command]/usr/bin/git sparse-checkout disable
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5091580Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5095703Z ##[group]Checking out the ref
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:30.5097331Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/39/merge
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5246481Z Updating files:  96% (5566/5791)
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5274742Z Updating files:  97% (5618/5791)
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5307928Z Updating files:  98% (5676/5791)
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5353235Z Updating files:  99% (5734/5791)
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5353962Z Updating files: 100% (5791/5791)
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5354444Z Updating files: 100% (5791/5791), done.
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5431733Z Note: switching to 'refs/remotes/pull/39/merge'.
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5432124Z 
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5433339Z You are in 'detached HEAD' state. You can look around, make experimental
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5434428Z changes and commit them, and you can discard any commits you make in this
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5435792Z state without impacting any branches by switching back to a branch.
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5436409Z 
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5436813Z If you want to create a new branch to retain commits you create, you may
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5437783Z do so (now or later) by using -c with the switch command. Example:
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5438274Z 
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5438578Z   git switch -c <new-branch-name>
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5438938Z 
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5439162Z Or undo this operation with:
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5439497Z 
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5439752Z   git switch -
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5440037Z 
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5440469Z Turn off this advice by setting config variable advice.detachedHead to false
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5441118Z 
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5441821Z HEAD is now at 47432ac5 Merge 89cdd43d8d43aae8ac3265606476d017e6392a7f into ddd9f9a5e13a61a865cee76212b13a6230fc67d3
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5506165Z ##[endgroup]
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5562099Z [command]/usr/bin/git log -1 --format=%H
+changeset-check	Run actions/checkout@v4	2026-10-25T14:48:31.5588773Z 47432ac5b740b9b1a686f9d33142915fab12130e
+changeset-check	Analyze changesets	﻿2026-10-25T14:48:31.5832277Z ##[group]Run node scripts/changeset-check.mjs "origin/codex/react-ui-core-charts"
+changeset-check	Analyze changesets	2026-10-25T14:48:31.5833063Z [36;1mnode scripts/changeset-check.mjs "origin/codex/react-ui-core-charts"[0m
+changeset-check	Analyze changesets	2026-10-25T14:48:31.6082716Z shell: /usr/bin/bash -e {0}
+changeset-check	Analyze changesets	2026-10-25T14:48:31.6083098Z ##[endgroup]
+changeset-check	Analyze changesets	2026-10-25T14:48:31.7884750Z ### Changeset check
+changeset-check	Analyze changesets	2026-10-25T14:48:31.7885102Z 
+changeset-check	Analyze changesets	2026-10-25T14:48:31.7886454Z - ⚠️ Changed but not released by any changeset in this PR: `@openuidev/react-ui-core`. If this PR changes their published behavior, run `pnpm changeset`. Docs/CI-only changes can ignore this.
+changeset-check	Analyze changesets	2026-10-25T14:48:31.7888118Z - ⚠️ `@openuidev/kits` declares **minor** — breaking for a 0.0.0-beta.0 package (escapes consumers' `^` ranges).
+changeset-check	Post Run actions/checkout@v4	﻿2026-10-25T14:48:31.8146866Z Post job cleanup.
+changeset-check	Post Run actions/checkout@v4	2026-10-25T14:48:31.8988294Z [command]/usr/bin/git version
+changeset-check	Post Run actions/checkout@v4	2026-10-25T14:48:31.9032992Z git version 2.55.0
+changeset-check	Post Run actions/checkout@v4	2026-10-25T14:48:31.9078210Z Temporarily overriding HOME='/home/runner/work/_temp/306ea906-7e30-44e3-b8c4-4be6f0077ef2' before making global git config changes
+changeset-check	Post Run actions/checkout@v4	2026-10-25T14:48:31.9079477Z Adding repository directory to the temporary git global config as a safe directory
+changeset-check	Post Run actions/checkout@v4	2026-10-25T14:48:31.9084177Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openui-comp/openui-comp
+changeset-check	Post Run actions/checkout@v4	2026-10-25T14:48:31.9126264Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+changeset-check	Post Run actions/checkout@v4	2026-10-25T14:48:31.9162266Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+changeset-check	Post Run actions/checkout@v4	2026-10-25T14:48:31.9458650Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+changeset-check	Post Run actions/checkout@v4	2026-10-25T14:48:31.9507738Z http.https://github.com/.extraheader
+changeset-check	Post Run actions/checkout@v4	2026-10-25T14:48:31.9520437Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+changeset-check	Post Run actions/checkout@v4	2026-10-25T14:48:31.9560927Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+changeset-check	Post Run actions/checkout@v4	2026-10-25T14:48:31.9854726Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+changeset-check	Post Run actions/checkout@v4	2026-10-25T14:48:31.9899872Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+changeset-check	Complete job	﻿2026-10-25T14:48:32.0316770Z Cleaning up orphan processes
+changeset-check	Complete job	2026-10-25T14:48:32.0843385Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,0 +1,26 @@
+{
+  "status": "preparation; baseline and functional verification pending",
+  "productSource": "9ee0576133fbb1c444d03c169a81893ebf7631fd",
+  "reviewedPRHead": "89cdd43d8d43aae8ac3265606476d017e6392a7f",
+  "protocolCommit": "a67bd0695f37ff0d6800de564562c152807f4e4e",
+  "artifacts": [
+    {
+      "name": "kits",
+      "path": "/private/tmp/chat16-model-border-artifacts/openuidev-kits-0.0.0-beta.0.tgz",
+      "bytes": 237948,
+      "sha256": "9fc227a88cbf6d949247aee90e729efa58d669ba738674880396903db98785bb"
+    },
+    {
+      "name": "core",
+      "path": "/private/tmp/chat16-final-artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz",
+      "bytes": 1076416,
+      "sha256": "a5d002d20a6fbed1cdb61cddc255f1619dc945d08cf9406eb3ce94e135988fe2"
+    },
+    {
+      "name": "react-lang",
+      "path": "/private/tmp/chat16-artifacts/openuidev-react-lang-1.0.1.tgz",
+      "bytes": 170663,
+      "sha256": "9151c6cefd2cd0e5a88f1b38bbc6017e1e7d9f5ba60297f52166399e46da8f80"
+    }
+  ]
+}

@@ -1,3 +1,23 @@
+# CURRENT — PR39 checks green; #17 validation preparation — 2026-10-25
+
+Draft PR39 remains open, stacked on PR37. Build 40203948794 and changeset
+40203948795 passed at 89cdd43d8d43aae8ac3265606476d017e6392a7f.
+Exact remote logs/status are retained under kits/evidence/chat-library/pr39-ci.
+
+Validation branch: codex/react-ui-beta-validation. W1 owns beta17 fixtures,
+functional verification, shared provenance, integration and documentation. W2
+owns beta17/performance. Independent verifier remains read-only/private temp.
+W1 holds the first functional browser window; formal timing/soaks must wait for
+an explicit frozen-fixture handoff. No concurrent browser or build activity
+while formal measurements run. No #17 acceptance follows from PR39 CI.
+
+No legacy, preview, upstream or main writes; no merge/release/closure.
+SSR and helper #15 remain deferred. Inherited HorizontalBar gap stays disclosed.
+Unrelated untracked crates/ is preserved. This evidence/status stays local until
+review; unchanged product checks have not been repeated.
+
+---
+
 # CURRENT — fork stacked DRAFT PR39 OPEN/attached; remote CI running — 2026-10-25
 
 https://github.com/ankit-thesys/openui-comp/pull/39 OPEN/DRAFT attached.
