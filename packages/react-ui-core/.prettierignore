@@ -46,3 +46,6 @@ evidence/charts-final-installed/*.json
 evidence/charts-final-installed/*.mjs
 evidence/charts-final-installed/*.mts
 evidence/charts-final-installed/*.cts
+
+# Preserve Worker2 exact failed chart measurements and executed diagnostics.
+src/components/Charts/BarChart/__tests__/results/browser/**

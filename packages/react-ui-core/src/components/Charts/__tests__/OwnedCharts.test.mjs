@@ -15,7 +15,7 @@ before(async () => {
       contents: `import React from 'react';
 import {createRoot} from 'react-dom/client';
 import {flushSync} from 'react-dom';
-import {PieChart, RadialChart, RadarChart, HeatmapChart, FunnelChart, CalendarHeatmap, SegmentedBar, SingleStackedBar, LegendStoreProvider, StackedLegend, useLegendEntry, PrintContextProvider} from '@openuidev/react-ui-core';
+import {PieChart, RadialChart, RadarChart, HeatmapChart, FunnelChart, CalendarHeatmap, SegmentedBar, SingleStackedBar, LegendStoreProvider, StackedLegend, useLegendEntry, ThemeProvider, LineChart, PrintContextProvider} from '@openuidev/react-ui-core';
 const root=createRoot(document.getElementById('root'));
 window.calls=[];
 window.renderChart=(props,print=false)=>flushSync(()=>root.render(
@@ -36,6 +36,11 @@ function ReadEntry(){const entry=useLegendEntry('detached');return React.createE
 window.remotePie=(data,show=true)=>flushSync(()=>root.render(React.createElement(LegendStoreProvider,null,
  show?React.createElement(PieChart,{data,categoryKey:'name',dataKey:'value',width:320,height:300,legendKey:'detached'}):null,
  React.createElement(StackedLegend,{legendKey:'detached',layout:'showMore'}),React.createElement(ReadEntry))));
+window.measureLine=(tracking=null,themeTracking=undefined)=>{
+flushSync(()=>root.render(null));
+const chart=React.createElement('div',{style:tracking===null?{}:{'--openui-text-label-xs-letter-spacing':tracking}},React.createElement(LineChart,{data:[{name:'Q1',Alpha:10,Beta:15},{name:'Q2',Alpha:20,Beta:-8},{name:'Q3',Alpha:30,Beta:15}],categoryKey:'name',height:320,width:640,legend:false}));
+flushSync(()=>root.render(themeTracking===undefined?chart:React.createElement(ThemeProvider,{cssSelector:'#root',lightTheme:{textLabelXsLetterSpacing:themeTracking}},chart)));
+};
 window.ready=true;`,
       resolveDir: consumer,
       loader: "tsx",
@@ -389,4 +394,17 @@ test("public detached legend toggles the publishing chart, prevents hiding every
   await page.evaluate((rows) => window.remotePie(rows, false), rows);
   await page.waitForFunction(() => document.querySelector("#legend-entry").textContent === "none");
   assert.equal(await legendRows.count(), 0, "unpublished detached legend clears its rows");
+});
+
+test("public Line measurement matches rendered default tracking and preserves zero and CSS-token precedence", async () => {
+  const width = () => page.locator(".openui-line-chart-y-axis-container svg").getAttribute("width");
+  await page.evaluate(() => window.measureLine());
+  await page.waitForFunction(() => document.querySelector(".openui-line-chart-y-tick") !== null);
+  assert.equal(await width(), "27", "legacy no-provider Y-axis budget");
+  await page.evaluate(() => window.measureLine("0"));
+  assert.equal(await width(), "28", "explicit CSS zero tracking is retained");
+  await page.evaluate(() => window.measureLine(null, "0"));
+  assert.equal(await width(), "28", "explicit theme zero tracking is retained");
+  await page.evaluate(() => window.measureLine("1px", "0"));
+  assert.equal(await width(), "31", "render-scope CSS tracking wins over theme zero");
 });

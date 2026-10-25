@@ -85,7 +85,10 @@ export const useCanvasContextForLabelSize = (scopeRef?: React.RefObject<HTMLElem
     // fallback — see measureFontScope.ts for why the CSS channel must win.
     const scopeStyle = scopeEl ? getComputedStyle(scopeEl) : null;
     const font = resolveMeasureFont(scopeStyle?.getPropertyValue(TICK_FONT_CSS_VAR), themeFont);
-    const letterSpacing = scopeStyle?.getPropertyValue(TICK_LETTER_SPACING_CSS_VAR).trim();
+    const letterSpacing =
+      scopeStyle?.getPropertyValue(TICK_LETTER_SPACING_CSS_VAR).trim() ||
+      userTheme.textLabelXsLetterSpacing?.trim() ||
+      "-0.01em";
 
     const canvas = document.createElement("canvas");
     const context = canvas.getContext("2d")!;
@@ -108,5 +111,5 @@ export const useCanvasContextForLabelSize = (scopeRef?: React.RefObject<HTMLElem
       font,
     } as unknown as CanvasRenderingContext2D;
     // eslint-disable-next-line react-hooks/exhaustive-deps -- `fontsReady` is a deliberate re-key trigger: its value isn't read in the body, but flipping false→true must rebuild the context so budgets re-measure with real webfont metrics
-  }, [userTheme.textLabelXs, hydrated, scopeEl, fontsReady]);
+  }, [userTheme.textLabelXs, userTheme.textLabelXsLetterSpacing, hydrated, scopeEl, fontsReady]);
 };

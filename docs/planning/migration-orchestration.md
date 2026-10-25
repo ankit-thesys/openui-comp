@@ -1,3 +1,24 @@
+# CURRENT — shared measurement fix reviewed; W1 browser window — 2026-10-25
+
+W2 diagnostic36a2a4fd4 integratedadbb356fc confirms no-provider Line Y-axis28vs
+legacy27 from missing canvas tracking fallback. W2 explicitly released browser
+toW1. Bounded sharedhook correction keeps CSS→theme→existingdefault(-0.01em),
+preserves explicitzero, adds memo trackingdependency; no custommeasurementengine.
+PublicrealChrome regression RED28vs27→GREEN, CSSzero/themezero/priority pass.
+Producerbuild/types/scopedlint pass; bothreviewaxesclear. Rawfailed7eartifact and
+W2diagnosticpreserved, not recertified. Evidence/charts-measurement/.
+
+W1 now commits/refreezes corrected normalartifact, reruns only affected shared
+chart geometry/labels/legends plus public regression/native/types/pruning. Own
+Radar/Heatmap/Funnel/Calendar and compact DefaultLegend configurations across
+Pie/Radial/SegmentedBar may be affected. Unrelatedcomponentmatrices not repeated.
+Then explicitlyrelease exactartifact/browser toW2 for remaining11entrymatrix.
+FullintegratedpackageCI waits until W2release. No acceptance inferred, no source
+outsidecore, no custompatches/legacywrites or merge/release/closure/upstream/main.
+Preservecrates/friend/previews. Sharedhook ownership remainsW1.
+
+---
+
 # CURRENT — final chart artifact READY; W1 browser RELEASED to W2 — 2026-10-25
 
 **Explicit browser release: Worker2 may now run its independent Cartesian/Mini
