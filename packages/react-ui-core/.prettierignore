@@ -49,3 +49,8 @@ evidence/charts-final-installed/*.cts
 
 # Preserve Worker2 exact failed chart measurements and executed diagnostics.
 src/components/Charts/BarChart/__tests__/results/browser/**
+
+# Preserve corrected measurement artifact proof and exact executed harness.
+evidence/charts-measurement/*.json
+evidence/charts-measurement/*.mjs
+evidence/charts-measurement/*.tsx

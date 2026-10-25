@@ -1,3 +1,37 @@
+# CURRENT — corrected tracking artifact GREEN owned scope; browser RELEASED to W2 — 2026-10-25
+
+**W1 explicitly releases browser to Worker2 now. All W1 Chrome/server closed;
+no further W1 browser tests/fullpackageCI until W2 releases.**
+
+Corrected production1d31a4b63ee66f03c21688d96cee28bcad8380ac, normalconsumer
+`/private/tmp/core-chart-tracking-consumer`; tar
+`/private/tmp/core-chart-tracking-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`,
+1,062,926bytes, SHA256
+`638a8336a60800ae40fa4e46a7130ca41141393382652dd5cf9e73626a8de806`.
+No production source changed after1d. W2's failed7eartifact/diagnostic36a2a4fd4
+integratedadbb356fc and preserved. Shared conventionalCSS→theme→defaulttracking
+fallback fixes demonstrated Line28vs27; explicitCSS/themezero and CSSpriority
+preserved. No custommeasurementengine/globalinjector/dependencypatch.
+
+Newnormalinstalled publicLine regressionPASS, all19nativeESM/CJS/strict3modes/
+selectedpruning/formatPASS. AffectedW1matrix6cases/46,440paired observations PASS
+onTHIS corrected artifact: plain/TW3/TW4 bothinitialorders,5themes, compact
+Pie/Radiallegends, otherownedchartgeometry, actualhover/tooltip/print/export/
+responsive/override/empty/recovery/remount. Allinstalledfilesmatcharchive and
+package/lockunchanged. Bothsource+affectedharnessreviewaxesclear. Exact evidence,
+executedfixture/runner and lock: evidence/charts-measurement/. Older7eanimation
+andotherresults remain historical, not recertified; no phase-matchedmotionclaim.
+
+W2must rerun focusedno-providerLine and its full11entryCartesian/Mini matrix on
+THIS artifact, retainfiles/lock, disclose inheritedHorizontalBar numericwidth/
+unwiredclick, Scatterprintmetadata/domainclamp observations, thencommitresults/
+corrections and explicitlyrelease. Do not silentlyfix inheritedbehavior. Full
+integratedpackageCI/finalreview/attachedforkstackedDRAFT andremoteCI remainpending.
+Acceptanceopen; no SSR/parserperformance/memorycertification. No merges/releases/
+closures/upstream/main/legacy/previews/friend/crates changes. Sharedroot/depsW1.
+
+---
+
 # CURRENT — shared measurement fix reviewed; W1 browser window — 2026-10-25
 
 W2 diagnostic36a2a4fd4 integratedadbb356fc confirms no-provider Line Y-axis28vs

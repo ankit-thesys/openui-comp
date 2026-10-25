@@ -21,6 +21,7 @@ const custom = {
 function App() {
   const [config, setConfig] = useState({
     family: "PieChart",
+    compactLegend: false,
     theme: "light",
     variant: false,
     width: 520,
@@ -46,12 +47,18 @@ function App() {
   const chart =
     config.family === "PieChart" ? (
       <Core.PieChart
+        legendVariant={config.compactLegend ? "default" : "stacked"}
         {...props}
         variant={config.variant ? "donut" : "pie"}
         appearance={config.variant ? "semiCircular" : "circular"}
       />
     ) : config.family === "RadialChart" ? (
-      <Core.RadialChart {...props} grid variant={config.variant ? "semiCircular" : "circular"} />
+      <Core.RadialChart
+        {...props}
+        legendVariant={config.compactLegend ? "default" : "stacked"}
+        grid
+        variant={config.variant ? "semiCircular" : "circular"}
+      />
     ) : config.family === "RadarChart" ? (
       <Core.RadarChart
         {...props}

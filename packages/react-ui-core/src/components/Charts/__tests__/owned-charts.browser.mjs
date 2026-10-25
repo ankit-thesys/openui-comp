@@ -148,8 +148,13 @@ for (const framework of ["plain", "tailwind3", "tailwind4"])
   );
 
 const interactionsOnly = process.argv.includes("--interactions-only");
+const measurementOnly = process.argv.includes("--measurement-only");
 const report = {
-  scope: interactionsOnly ? "owned hover/tooltips/animation/print/remount" : "full owned matrix",
+  scope: measurementOnly
+    ? "affected chart measurements/legends/geometry"
+    : interactionsOnly
+      ? "owned hover/tooltips/animation/print/remount"
+      : "full owned matrix",
   status: "prepared",
   artifactRevision: revision,
   tarballSha256: expectedHash,
@@ -456,6 +461,7 @@ try {
         ]) {
           await configure(pages, {
             family,
+            compactLegend: false,
             theme: "light",
             variant: false,
             empty: false,
@@ -484,6 +490,11 @@ try {
               await compare(`${family}/${theme}/default`);
               await configure(pages, { variant: true });
               await compare(`${family}/${theme}/variant`);
+              if (["PieChart", "RadialChart"].includes(family)) {
+                await configure(pages, { compactLegend: true, variant: false });
+                await compare(`${family}/${theme}/compact-legend`);
+                await configure(pages, { compactLegend: false });
+              }
             }
             for (const width of [320, 399, 400, 650]) {
               await configure(pages, { theme: "light", width });
@@ -548,45 +559,48 @@ try {
           for (const page of pages) await page.emulateMedia({ media: "print" });
           await compare(`${family}/print-media`);
           for (const page of pages) await page.emulateMedia({ media: "screen" });
-          await configure(pages, { print: false, visible: false, animate: true });
-          for (const page of pages) await page.emulateMedia({ reducedMotion: "no-preference" });
-          await configure(pages, { visible: true });
-          const animations = [];
-          for (const page of pages) {
-            animations.push(
-              await page.evaluate(() =>
-                document
-                  .getAnimations()
-                  .filter((animation) => animation instanceof CSSAnimation)
-                  .map((animation) => ({
-                    classes: [...animation.effect.target.classList]
-                      .filter((name) => name.startsWith("openui-"))
-                      .sort(),
-                    frames: animation.effect
-                      .getKeyframes()
-                      .map(({ computedOffset, easing, offset, ...frame }) => ({
-                        offset: computedOffset,
-                        easing,
-                        ...frame,
-                      })),
-                    duration: animation.effect.getTiming().duration,
-                    delay: animation.effect.getTiming().delay,
-                    fill: animation.effect.getTiming().fill,
-                    easing: animation.effect.getTiming().easing,
-                  })),
-              ),
+          if (!measurementOnly) {
+            await configure(pages, { print: false, visible: false, animate: true });
+            for (const page of pages) await page.emulateMedia({ reducedMotion: "no-preference" });
+            await configure(pages, { visible: true });
+            const animations = [];
+            for (const page of pages) {
+              animations.push(
+                await page.evaluate(() =>
+                  document
+                    .getAnimations()
+                    .filter((animation) => animation instanceof CSSAnimation)
+                    .map((animation) => ({
+                      classes: [...animation.effect.target.classList]
+                        .filter((name) => name.startsWith("openui-"))
+                        .sort(),
+                      frames: animation.effect
+                        .getKeyframes()
+                        .map(({ computedOffset, easing, offset, ...frame }) => ({
+                          offset: computedOffset,
+                          easing,
+                          ...frame,
+                        })),
+                      duration: animation.effect.getTiming().duration,
+                      delay: animation.effect.getTiming().delay,
+                      fill: animation.effect.getTiming().fill,
+                      easing: animation.effect.getTiming().easing,
+                    })),
+                ),
+              );
+            }
+            assert.deepEqual(
+              animations[1],
+              animations[0],
+              `${framework}/${order}/${family} CSS animation keyframes/timing`,
             );
+            if (family !== "SegmentedBar")
+              assert(animations[0].length > 0, "entrance animation actually present");
+            await compare(`${family}/entrance-settled`);
+            for (const page of pages) await page.emulateMedia({ reducedMotion: "reduce" });
+            await configure(pages, { animate: false });
           }
-          assert.deepEqual(
-            animations[1],
-            animations[0],
-            `${framework}/${order}/${family} CSS animation keyframes/timing`,
-          );
-          if (family !== "SegmentedBar")
-            assert(animations[0].length > 0, "entrance animation actually present");
-          await compare(`${family}/entrance-settled`);
-          for (const page of pages) await page.emulateMedia({ reducedMotion: "reduce" });
-          await configure(pages, { animate: false });
+
           await configure(pages, { print: false, visible: false });
           await compare(`${family}/unmount`);
           await configure(pages, { visible: true });

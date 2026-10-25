@@ -18,6 +18,31 @@ Affected shared consumers include Cartesian axes and legends, Scatter budgets,
 Radar labels, Heatmap axes/cell labels, Funnel labels and Calendar labels. The
 DefaultLegend means Pie/Radial/SegmentedBar can also be affected in their compact
 legend configurations. Only chart-related checks need repeating; unrelated
-controls/data/media suites do not. New immutable normal package and affected
-owned framework/theme/geometry checks remain pending, followed by Worker2's
-remaining Cartesian/Mini browser matrix. SSR/performance/memory remain deferred.
+controls/data/media suites do not. The corrected artifact below passes affected owned framework/theme/geometry
+checks. Worker2's remaining Cartesian/Mini browser matrix is still pending.
+SSR/performance/memory remain deferred.
+
+## Corrected immutable package and handoff
+
+Production source:1d31a4b63ee66f03c21688d96cee28bcad8380ac.
+Consumer:/private/tmp/core-chart-tracking-consumer.
+Tar:/private/tmp/core-chart-tracking-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz.
+Bytes:1,062,926. SHA256:
+`638a8336a60800ae40fa4e46a7130ca41141393382652dd5cf9e73626a8de806`.
+
+Normally installed public Line regression passes. All19 native ESM/CJS entries,
+strict TS5.9.3 skipLibCheckfalse Bundler/NodeNext ESM/CJS contracts, selected
+Button/chart pruning and formatting pass. Actual Chrome affected-owned matrix
+passes6cases/46,440paired observations: plain/TW3/TW4, both initial stylesheet
+orders, five themes, existing compact Pie/Radial legends, other owned chart
+measurement/geometry, real hover/tooltips, responsive widths, actual overrides,
+print/export endpoints, empty recovery and remount. Every installedfile matches
+the tar archive; package/lock hashes stay unchanged. Exact executed harness,
+fixture, report and consumer manifests are preserved separately from7e evidence.
+
+Both independent source and affected-harness review axes have no findings.
+No production source changed after1d. Existing animation-keyframe evidence stays
+tied to7e; measurement mode does not repeat unchanged metadata checks or certify
+phase-matched motion. Full integrated package CI waits until Worker2's remaining
+matrix and explicit browser release. W1 Chrome/server are closed; browser is
+explicitly released to Worker2 on this exact corrected artifact.

@@ -21,13 +21,13 @@ Extract the complete existing chart set into `@openuidev/react-ui-core`, preserv
 
 ## Evidence
 
-The first installed comparison found Calendar pattern fill differed without a provider because its inline token depended on legacy global defaults. A matching CSS-variable fallback restores the existing default; genuine focused red/green and the original comparison failure are preserved. Radar overflow uses a supported terminal-:where selector after its computed-style regression failed.
+Installed comparisons found two dependencies on legacy global defaults: Calendar's inline pattern color and the shared canvas tracking token. Matching CSS-variable/theme fallbacks restore the existing defaults while preserving explicit zero and CSS precedence. Public Line geometry has a genuine28-vs27red→green regression. Original failed artifacts and diagnostic reports are preserved. Radar overflow uses a supported terminal-:where selector after its computed-style regression failed.
 
 ## Test Plan
 
 - [x] Reviewed combined source build/types and focused public support/family behavior/type/pruning checks pass. All19 public entries import natively through normal installed ESM/CJS; strict consumer Bundler/NodeNext ESM/NodeNext CJS declarations pass.
 - [x] Owned corrected-source matrix:6 plain/Tailwind3/Tailwind4 initial-order cases,40,242 paired style/geometry observations on a5cdaa0fa. Exact archive/consumer/lock retained.
-- [x] Final integrated artifact frozen at7e425b5b7261b47dc28e331e7afc223179990237,1,062,310bytes, SHA256546f680f12516b0702cfb7c07bd092a781b4a402e8d9ee4e79b17eb9149424eb. Normal-installed bytes match archive, package/lock unchanged. Final owned broad6/46,656 and corrected portal-rest interaction6/12,408 comparisons pass, with exact installed-file and package/lock proofs recorded separately.
+- [x] Corrected integrated artifact frozen at1d31a4b63ee66f03c21688d96cee28bcad8380ac,1,062,926bytes, SHA256638a8336a60800ae40fa4e46a7130ca41141393382652dd5cf9e73626a8de806. Normal-installed Line default/zero/precedence regression, native all19 ESM/CJS, strict consumer3modes and focused pruning pass. Affected owned comparison passes6cases/46,440paired observations; Worker2 remaining matrix follows on this artifact. Earlier7e broad6/46,656 and portal-rest interaction6/12,408 are historical evidence, not recertification of the corrected source.
 - [ ] Worker2 independent Cartesian/Mini browser matrix on the same final artifact, including inherited HorizontalBar click verification.
 - [ ] Final integrated package CI and affected independent review checkpoint.
 - [ ] Fork remote build and changeset checks.
