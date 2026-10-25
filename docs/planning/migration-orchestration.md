@@ -1,3 +1,29 @@
+# CURRENT — W2 diagnostic/diagnosis integrated; verifier owns browser — 2026-10-25
+
+Committed W2 harness fccf63f39/0c3d59271 and evidence35eaa68f3/diagnosisb9db53373
+integrated as7e0b25d6a/34fbbc172/7f0b4e9cc/ee051ffc6, respectively.
+No product changes from that integration. All36 behavior cases completed, but
+42of330 paired style-state comparisons FAILED (36hover+6nestedhover; four border
+colors each=168propertydifferences). Botharms0pxnone; do notnormalize/dismiss.
+Source diagnosis explains equal specificity and reversed registration order.
+Root authorized W2's conventional model-only explicit currentColor hover/open
+reset, with shared Select/legacy untouched. Await its committed source batch.
+
+Verifier NOW owns browser, independently confirmed metadata-only Zod correction.
+W1 does source/static preparation only; no Chrome/heavy competing workloads.
+After committed W2 correction: integrate, build/refreeze through W1, preserve
+old failed8405+metadata-onlyd9cc96898 artifacts/evidence, provide exact newhash/
+consumer and coordinate affected model states/open trigger/nested/consumer
+border-width+style overrides after verifier's explicit release. Then verifier
+validates correction. No review-ready PR before that gate.
+
+Package scoped .prettierignore protects rawexecuted W2 results/evidence from
+formatting; current live source/test formatting passes. No rawfiles rewritten.
+#17/SSR/perf/memory remains separate. No merges/releases/closures/upstream/main/
+legacy/sharedSelect/preview writes. Untrackedcrates preserved.
+
+---
+
 # CURRENT — corrected W1 library browser gate GREEN; RELEASED to verifier — 2026-10-25
 
 After explicit W2 release/root dispatch, W1 ran the corrected production-Vite

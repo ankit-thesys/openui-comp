@@ -1,0 +1,3 @@
+# Preserve executed fixtures and raw measurement evidence byte-for-byte.
+src/react/chat/components/ModelSwitcher/__tests__/results/
+evidence/
