@@ -48,3 +48,7 @@ At source revisiona28833480, `pnpm-lock.yaml` changes the pre-existing `@openuid
 No unrelated historical matrices or full suite were repeated. Worker1 already records integrated CI97/97, strict three-mode consumers and original public behavior; this document does not turn those into independently rerun results. SSR/hydration/streaming, concurrency, failures/offline/CSP and performance/memory remain outside this check. Bare-esbuild extra setup and unused emitted font cost are accepted limits, not patched away.
 
 **Browser released to Worker1.** Final runner exited successfully and closed its browser/server in finally cleanup. No active measurement remains. No production/legacy/previews/crates changes, ticket closure, merge, publication or slice13 work.
+
+## Integration resolution by Worker1
+
+The unrelated lock drift above is corrected conventionally: restore the old thesys KaTeX0.16.44 value and its original package/snapshot entries, preserving new-core/renderer0.16.47. Frozen core install passes and alignment is verified. See `../katex-integration/lock-correction.md` and its raw logs. No production component or frozen npm artifact changed, so the six-case independent delivery result remains applicable; no global override or unchanged matrix rerun.

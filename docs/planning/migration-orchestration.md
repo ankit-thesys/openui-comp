@@ -1,3 +1,13 @@
+# CURRENT — slice12 independent validation PASS; ready for authorized stacked DRAFT — 2026-10-25
+
+Worker2 evidence90bcae6b1 integrated asf14775ab7. Final independent productiona28833480 run PASSED6 cases /3,444 paired math snapshots, themes/orders, late updates and /review/ asset URLs. Verified every installed file against exact tarball; package/lock unchanged; no unused math downloads, accepted59 emitted fonts remain. Browser/server closed and released to Worker1. Local integrated package CI97/97 and native/strict3 modes already green. Other non-math matrices retain their historical artifact scope.
+
+One P2 lock finding RESOLVED: restore pre-existing @openuidev/thesys KaTeX0.16.44 dependency and its exact original package/snapshot entries. Core/renderer remain0.16.47. Frozen core install passes (resolution skipped), actual alignment verified; no global override/legacy source change. See evidence/katex-integration/lock-correction.md/logs. Shared-lock metadata correction does not change the measured npm artifact. No unchanged browser or broad suite rerun; fresh remote CI next. No outstanding source/test findings remain after this correction.
+
+User math exception/support contract remains ACCEPTED, normative docs/specs/react-ui-extraction-styling.md. .changeset/core-text-media-components.md records this slice. Local PR body finalized in docs/planning/slice12-pr-draft.md. Authorized next: push ONLY fork branch codex/react-ui-core-text-media; create stacked DRAFT targeting codex/react-ui-core-layout (#33), attach and monitor/fix CI. DO NOT merge/close tickets/release or start slice13 without root dispatch. Old react-ui and previews/crates untouched. This top status supersedes historical gates below.
+
+---
+
 # CURRENT — production a28833480 GREEN; independent Worker2 handoff / browser RELEASED — 2026-10-25
 
 SOURCE COMMIT `a288334807643bdc63acb75c08af3e7aef7d759e` implements the USER-ACCEPTED exact stable KaTeX candidate. Final integrated package CI97/97 including normal-packed Vite/Chrome delivery test, format/lint/types/build/Publint/ATTW GREEN. Native ESM/CJS + strict TS5.9.3 Bundler/NodeNext ESM/CJS pass. Both direct CSS vendor and renderer resolve KaTeX0.16.47. Both local independent source/test reviewers zero actionable findings.

@@ -2,7 +2,7 @@
 
 Title: Extract text, media, sources and tables into React UI core
 
-Base: `codex/react-ui-core-layout` ([fork PR33](https://github.com/ankit-thesys/openui-comp/pull/33)); head: `codex/react-ui-core-text-media`. The user authorized opening/pushing a stacked DRAFT after integrated checks and independent review pass. No merge or ticket closure. Current sourcea28833480 and local CI are green; Worker2 review is pending. Copy the body below after updating its independent result.
+Base: `codex/react-ui-core-layout` ([fork PR33](https://github.com/ankit-thesys/openui-comp/pull/33)); head: `codex/react-ui-core-text-media`. The user authorized opening/pushing a stacked DRAFT after integrated checks and independent review pass. No merge or ticket closure. Sourcea28833480 and local CI are green. Worker2 validation passed; its unrelated lock finding is fixed with a frozen-lock check. The body below is ready for the authorized stacked draft.
 
 ## What
 
@@ -34,7 +34,7 @@ Add the approved text, media, source/citation and table families to the new core
 - [x] Full local package CI97/97, including executable packed Vite/Chrome math styling and existing behavior checks; format/lint/types/build/Publint/ATTW.
 - [x] Native ESM/CJS and strict TS5.9.3 skipLibCheck:false consumer declarations in Bundler/NodeNext ESM/NodeNext CJS. Direct CSS vendor and renderer both0.16.47.
 - [x] TDD: previous88fd artifact fails automatic math typography; the minimal integration passes without weakening the assertion. Both independent local source/test review axes report zero actionable findings.
-- [ ] Worker2 independent integrated delivery review/result — update before opening.
+- [x] Worker2 independent integrated delivery:6 cases /3,444 paired snapshots, plain/TW3/TW4 both orders, themes, late text-to-math and `/review/` asset URLs. Installed files verified against the tarball; unused page downloads no math assets. Its unrelated Thesys KaTeX lock drift was restored to0.16.44 while core stays0.16.47; frozen install passes. Independent evidence is under `evidence/katex-independent-integration/`.
 
 **Earlier artifacts, not a combined final run:** non-math Table/text6 cases /22,296 snapshots and composers6 /30,012 at88fdccf94; source/presentation12 /22,056 at680118396; fixed media6 /8,292 at96221894a. Their exact artifacts and first failures remain archived. Unchanged matrices were not repeated or relabeled. Comparisons establish settled endpoints, not intermediate animation timing.
 
