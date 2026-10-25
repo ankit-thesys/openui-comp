@@ -1,0 +1,529 @@
+{
+  "revision": "433a0e31d7c54d1181a5bbf899faaa5be883077b",
+  "chrome": "Chrome/156.0.8078.47",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "generatedBy": "validation/friend-text-media-baseline/browser/run.mjs",
+  "scenariosRun": 16,
+  "scenariosKnown": 16,
+  "completedAllScenarios": true,
+  "passed": 45,
+  "failed": 0,
+  "externalRequestsBlocked": [
+    {
+      "url": "https://www.google.com/s2/favicons?sz=128&domain=example.com",
+      "reason": "inspector"
+    },
+    {
+      "url": "https://www.google.com/s2/favicons?sz=128&domain=docs.example.org",
+      "reason": "inspector"
+    }
+  ],
+  "externalRequestsEscaped": [],
+  "noExternalFetchGuarantee": "Non-local requests are blocked via Network.setBlockedURLs and every attempt is recorded. `externalRequestsBlocked` is evidence that a component tried to reach the network (see SRC-1); `externalRequestsEscaped` must be empty and fails the run.",
+  "referenceImages": [
+    {
+      "scenario": "ref-text",
+      "mode": "light",
+      "file": "ref-text.light.png",
+      "bytes": 45311,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      }
+    },
+    {
+      "scenario": "ref-text",
+      "mode": "dark",
+      "file": "ref-text.dark.png",
+      "bytes": 48065,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      }
+    },
+    {
+      "scenario": "ref-inline-markdown",
+      "mode": "light",
+      "file": "ref-inline-markdown.light.png",
+      "bytes": 10867,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      }
+    },
+    {
+      "scenario": "ref-inline-markdown",
+      "mode": "dark",
+      "file": "ref-inline-markdown.dark.png",
+      "bytes": 11421,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      }
+    },
+    {
+      "scenario": "ref-table",
+      "mode": "light",
+      "file": "ref-table.light.png",
+      "bytes": 24848,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      }
+    },
+    {
+      "scenario": "ref-table",
+      "mode": "dark",
+      "file": "ref-table.dark.png",
+      "bytes": 26547,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      }
+    },
+    {
+      "scenario": "ref-images",
+      "mode": "light",
+      "file": "ref-images.light.png",
+      "bytes": 19040,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      }
+    },
+    {
+      "scenario": "ref-images",
+      "mode": "dark",
+      "file": "ref-images.dark.png",
+      "bytes": 20179,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      }
+    },
+    {
+      "scenario": "ref-citations",
+      "mode": "light",
+      "file": "ref-citations.light.png",
+      "bytes": 17641,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      }
+    },
+    {
+      "scenario": "ref-citations",
+      "mode": "dark",
+      "file": "ref-citations.dark.png",
+      "bytes": 18671,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      }
+    },
+    {
+      "scenario": "ref-code",
+      "mode": "light",
+      "file": "ref-code.light.png",
+      "bytes": 12171,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      }
+    },
+    {
+      "scenario": "ref-code",
+      "mode": "dark",
+      "file": "ref-code.dark.png",
+      "bytes": 12201,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      }
+    }
+  ],
+  "referenceImageCaveat": "Reference evidence only: captured for human comparison with recorded viewport, colour scheme and revision. Nothing diffs these images, so they are NOT asserted visual parity.",
+  "results": [
+    {
+      "name": "ref-text",
+      "title": "text / presentation reference",
+      "status": "ok",
+      "checks": [
+        {
+          "pass": true,
+          "label": "captured light reference",
+          "detail": "ref-text.light.png (45311 bytes)"
+        },
+        {
+          "pass": true,
+          "label": "captured dark reference",
+          "detail": "ref-text.dark.png (48065 bytes)"
+        }
+      ]
+    },
+    {
+      "name": "ref-inline-markdown",
+      "title": "inline markdown reference",
+      "status": "ok",
+      "checks": [
+        {
+          "pass": true,
+          "label": "captured light reference",
+          "detail": "ref-inline-markdown.light.png (10867 bytes)"
+        },
+        {
+          "pass": true,
+          "label": "captured dark reference",
+          "detail": "ref-inline-markdown.dark.png (11421 bytes)"
+        }
+      ]
+    },
+    {
+      "name": "ref-table",
+      "title": "table reference",
+      "status": "ok",
+      "checks": [
+        {
+          "pass": true,
+          "label": "captured light reference",
+          "detail": "ref-table.light.png (24848 bytes)"
+        },
+        {
+          "pass": true,
+          "label": "captured dark reference",
+          "detail": "ref-table.dark.png (26547 bytes)"
+        }
+      ]
+    },
+    {
+      "name": "ref-images",
+      "title": "images reference",
+      "status": "ok",
+      "checks": [
+        {
+          "pass": true,
+          "label": "captured light reference",
+          "detail": "ref-images.light.png (19040 bytes)"
+        },
+        {
+          "pass": true,
+          "label": "captured dark reference",
+          "detail": "ref-images.dark.png (20179 bytes)"
+        }
+      ]
+    },
+    {
+      "name": "ref-citations",
+      "title": "citations / sources reference",
+      "status": "ok",
+      "checks": [
+        {
+          "pass": true,
+          "label": "captured light reference",
+          "detail": "ref-citations.light.png (17641 bytes)"
+        },
+        {
+          "pass": true,
+          "label": "captured dark reference",
+          "detail": "ref-citations.dark.png (18671 bytes)"
+        }
+      ]
+    },
+    {
+      "name": "ref-code",
+      "title": "code block reference",
+      "status": "ok",
+      "checks": [
+        {
+          "pass": true,
+          "label": "captured light reference",
+          "detail": "ref-code.light.png (12171 bytes)"
+        },
+        {
+          "pass": true,
+          "label": "captured dark reference",
+          "detail": "ref-code.dark.png (12201 bytes)"
+        }
+      ]
+    },
+    {
+      "name": "md-3-node-leak",
+      "title": "MD-3 the react-markdown `node` prop leaks into the DOM",
+      "status": "ok",
+      "checks": [
+        {
+          "pass": true,
+          "label": "MD-3 confirmed in Chrome: 11 elements carry [node]",
+          "detail": "TABLE,TBODY,TD,TH,THEAD,TR"
+        },
+        {
+          "pass": true,
+          "label": "the leaked value is a stringified object",
+          "detail": "= \"[object Object]\""
+        },
+        {
+          "pass": true,
+          "label": "only table elements leak",
+          "detail": "= []"
+        }
+      ]
+    },
+    {
+      "name": "md-2-inline-table",
+      "title": "MD-2 the inline renderer emits block content inside a <span>",
+      "status": "ok",
+      "checks": [
+        {
+          "pass": true,
+          "label": "the inline renderer rendered its span",
+          "detail": "= true"
+        },
+        {
+          "pass": true,
+          "label": "a block-level table was produced",
+          "detail": "= true"
+        },
+        {
+          "pass": true,
+          "label": "the table is nested inside the span",
+          "detail": "= true"
+        },
+        {
+          "note": true,
+          "label": "DOM ancestry",
+          "detail": "TABLE < DIV < DIV < SPAN < DIV < DIV"
+        }
+      ]
+    },
+    {
+      "name": "md-4-alignment",
+      "title": "MD-4 markdown alignment never reaches the openui classes",
+      "status": "ok",
+      "checks": [
+        {
+          "pass": true,
+          "label": "no openui alignment class is applied",
+          "detail": "= []"
+        },
+        {
+          "pass": true,
+          "label": "alignment arrives as an inline style on headers",
+          "detail": "= [\"left\",\"center\",\"right\"]"
+        },
+        {
+          "pass": true,
+          "label": "alignment arrives as an inline style on cells",
+          "detail": "= [\"left\",\"center\",\"right\"]"
+        }
+      ]
+    },
+    {
+      "name": "link-attributes",
+      "title": "markdown link attributes and scheme neutralisation",
+      "status": "ok",
+      "checks": [
+        {
+          "pass": true,
+          "label": "the safe link keeps its href",
+          "detail": "= \"https://example.com\""
+        },
+        {
+          "pass": true,
+          "label": "the safe link opens in a new tab",
+          "detail": "= \"_blank\""
+        },
+        {
+          "pass": true,
+          "label": "the safe link blocks reverse tabnabbing",
+          "detail": "= \"noopener noreferrer\""
+        },
+        {
+          "pass": true,
+          "label": "the javascript: destination was neutralised",
+          "detail": "\"\""
+        }
+      ]
+    },
+    {
+      "name": "su-2-nbsp",
+      "title": "SU-2 decided: does Chrome coerce a NBSP scheme to javascript:",
+      "status": "ok",
+      "checks": [
+        {
+          "note": true,
+          "label": "href React rendered for a javascript: URL",
+          "detail": "\"javascript:throw new Error('React has blocked a javascript: URL as a security precaution.')\""
+        },
+        {
+          "pass": true,
+          "label": "React blocks a javascript: href before the browser ever sees it",
+          "detail": "= true"
+        },
+        {
+          "note": true,
+          "label": "NBSP href as installed",
+          "detail": "\"java script:window.__nbspExecuted = true\""
+        },
+        {
+          "note": true,
+          "label": "protocol Chrome resolved the NBSP href to",
+          "detail": "http:"
+        },
+        {
+          "pass": true,
+          "label": "the control really is a javascript: URL now",
+          "detail": "= \"javascript:\""
+        },
+        {
+          "pass": true,
+          "label": "CONTROL: a real javascript: href does execute when clicked",
+          "detail": "= true"
+        },
+        {
+          "pass": true,
+          "label": "SU-2 is theoretical: Chrome does not treat NBSP as scheme whitespace",
+          "detail": "resolved to http:; payload did not run with a working control"
+        }
+      ]
+    },
+    {
+      "name": "img-error",
+      "title": "Image error state from a real decode failure",
+      "status": "ok",
+      "checks": [
+        {
+          "pass": true,
+          "label": "Image applied openui-image--error after a real load failure",
+          "detail": "openui-image openui-image-fill openui-image--error"
+        },
+        {
+          "pass": true,
+          "label": "the failed image decoded nothing",
+          "detail": "= 0"
+        }
+      ]
+    },
+    {
+      "name": "favicon-threshold",
+      "title": "SourceFaviconImage globe fallback from real decoded dimensions",
+      "status": "ok",
+      "checks": [
+        {
+          "pass": true,
+          "label": "a 64x64 favicon is kept as an image",
+          "detail": "= true"
+        },
+        {
+          "pass": true,
+          "label": "its real decoded size is 64x64",
+          "detail": "= [64,64]"
+        },
+        {
+          "pass": true,
+          "label": "a 16x16 favicon is replaced by the globe icon",
+          "detail": "= true"
+        },
+        {
+          "pass": true,
+          "label": "and its <img> is gone",
+          "detail": "= false"
+        }
+      ]
+    },
+    {
+      "name": "code-copy",
+      "title": "CB-1 CodeBlock reports copy success unconditionally",
+      "status": "ok",
+      "checks": [
+        {
+          "pass": true,
+          "label": "the copy button starts in the idle state",
+          "detail": "= \"Copy code\""
+        },
+        {
+          "pass": true,
+          "label": "the click did reach the clipboard API",
+          "detail": "= 1"
+        },
+        {
+          "pass": true,
+          "label": "CB-1 confirmed: the button reports success although the copy rejected",
+          "detail": "aria-label=\"Copied to clipboard\" copiedClass=true"
+        },
+        {
+          "note": true,
+          "label": "unhandled rejections observed",
+          "detail": "1"
+        }
+      ]
+    },
+    {
+      "name": "table-scroll",
+      "title": "ScrollableTable overflow affordances with real mouse input",
+      "status": "ok",
+      "checks": [
+        {
+          "pass": true,
+          "label": "the fixture container genuinely overflows",
+          "detail": "= true"
+        },
+        {
+          "note": true,
+          "label": "overflow",
+          "detail": "scrollWidth 663 > clientWidth 280"
+        },
+        {
+          "note": true,
+          "label": "buttons present",
+          "detail": "[\"Scroll left\",\"Scroll right\"]"
+        },
+        {
+          "pass": true,
+          "label": "a real click on the forward affordance scrolled the container",
+          "detail": "0 -> 84"
+        }
+      ]
+    },
+    {
+      "name": "raw-html-inert",
+      "title": "raw HTML stays inert in a real HTML parser",
+      "status": "ok",
+      "checks": [
+        {
+          "pass": true,
+          "label": "no <script> element was created",
+          "detail": "= 0"
+        },
+        {
+          "pass": true,
+          "label": "no <iframe> element was created",
+          "detail": "= 0"
+        },
+        {
+          "pass": true,
+          "label": "no <img> element was created",
+          "detail": "= 0"
+        },
+        {
+          "pass": true,
+          "label": "no inline script executed",
+          "detail": "= false"
+        },
+        {
+          "pass": true,
+          "label": "no onerror handler executed",
+          "detail": "= false"
+        },
+        {
+          "note": true,
+          "label": "rendered text",
+          "detail": "\"text <script>window.__rawHtmlExecuted = true;</script> <img src=\\\"x\\\" onerror=\\\"window.__onerrorExecuted = true\\\"> <iframe s\""
+        }
+      ]
+    }
+  ]
+}
