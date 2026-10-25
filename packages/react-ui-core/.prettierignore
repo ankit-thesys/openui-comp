@@ -1,0 +1,2 @@
+# Preserve the original failed browser measurement byte-for-byte.
+src/components/Sources/__tests__/results/browser-initial/text12-browser-first-allowed.json

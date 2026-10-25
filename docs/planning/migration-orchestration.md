@@ -1,3 +1,11 @@
+# Current slice12 checkpoint — 2026-10-25
+
+Worker2 fixed media retest PASSED: 6 cases / 8,292 snapshots on the frozen normal npm artifact at production96221894a, SHA256 cb6306b9646be0dad2654542156e5e11623600bfe321abe2a9d5496cf21f8b45. Evidence4a82625a6 integrated ase1c2f55c7. Source/presentation12 cases /22,056 snapshots remain tied to the earlier680118396 artifact. Worker1 now retains the browser window for math validation; older handoffs below are historical.
+
+Worker2 composers412b24dc8 and review2a162b17b integrated as415471d00 and1ba667281. IconTag/IconText/ImageText/ImageTextLarge public exports added locally; final integrated artifact and composer browser validation remain pending. Worker2 reported85/85 scratch tests, native imports, three strict consumer modes and two clean reviews; these are not a substitute for the final integrated installed artifact.
+
+Worker1 TextBlockView9d72fb860 is committed. TextContentWrapper implementation is locally focused-test/type/build green, with source review pending. Automatic KaTeX CSS/font delivery is an unaccepted third-party static CSS exception prototype. No custom injector or runtime patch is implemented; do not claim automatic math styling or whole-slice acceptance. The isolated Vite asset probe built successfully, but unused bundle pruning and browser asset delivery still require measurement and architecture review.
+
 # Updated browser handoff — fixed media artifact,2026-10-25
 
 Worker2's prior browser window is complete/released; Worker1 releases the next window back to Worker2 for media retesting now. Old source/presentation12 cases/22,056 snapshots passed on production680118396; media failed and has a reviewed canonical grid-row whitespace correction, now integrated as2de26659c+1f876a4a3 (both9bb31d238/9214cc528). Evidence b536b6a29 integrated as96221894a. No parser/runtime patch or legacy source change.
