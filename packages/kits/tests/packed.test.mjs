@@ -16,7 +16,12 @@ const command = (file, args, cwd) => {
       cwd,
       encoding: "utf8",
       stdio: "pipe",
-      env: { ...process.env, npm_config_cache: path.join(os.tmpdir(), "chat-kit-test-cache") },
+      env: {
+        ...process.env,
+        npm_config_cache: path.join(os.tmpdir(), "chat-kit-test-cache"),
+        // Pack built artifacts without racing consumers through lifecycle rebuilds.
+        npm_config_ignore_scripts: "true",
+      },
     });
   } catch (error) {
     throw new Error(`${file} failed:\n${error.stdout ?? ""}${error.stderr ?? ""}`, {

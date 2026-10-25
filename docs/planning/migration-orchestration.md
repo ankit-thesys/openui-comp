@@ -1,3 +1,40 @@
+# CURRENT — chat-kit production frozen; W1 browser RELEASED to W2 — 2026-10-25
+
+W1 integrated W2 commits 41af2765d and b2f3ad6fb as 6aa26ed94/04fc264d9.
+Product frozen at `8405f44e0`; no subsequent product changes. Public entries
+build/types/native ESM+CJS/three strict resolution modes/pruning pass.
+Corrected only the chat Card's missing no-provider spacing fallback to the
+existing 12px default, demonstrated by preserved Chrome red/green.
+W1 production-Vite/Chrome matrix passes all six plainCSS/TW3/TW4 initial orders:
+actual HTTP chunks -> parser -> text/table/two painted chart bars/forms/actions,
+validation/history/cancel/resubmit/clear, scoped theme/logo/portal selection,
+explicit normal/hover/disabled overrides. Zero page errors/live streams at end.
+This is bounded integration evidence, not full parity/performance/SSR acceptance.
+Full package CI is being finalized; initial pack lifecycle test race preserved
+and fixed with standard ignore-scripts setting in the test only.
+
+**All W1 Chrome/server closed. Browser explicitly released to W2 now; W1 will
+not use it until W2 releases. Verifier waits for W2, then explicit release.**
+Verifier thread `01a17359-1780-7d12-94d4-2591f99aecf2` has read-only #16 review
+ownership, GPT6.1-sol. Its evidence remains independent/read-only.
+
+Installed immutable consumer: `/private/tmp/chat16-final-consumer`.
+Kits tar `/private/tmp/chat16-final-artifacts/openuidev-kits-0.0.0-beta.0.tgz`
+SHA256 `3f70b06104ac8112f5146ee2aa85747c0bb582865defeb0f06d4523779c90831`.
+Core tar `/private/tmp/chat16-final-artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz`
+SHA256 `a5d002d20a6fbed1cdb61cddc255f1619dc945d08cf9406eb3ce94e135988fe2`.
+Both archives' every installed file matches byte-for-byte; complete digest/
+manifest, consumer lock and executed fixtures in kits/evidence/chat-library.
+Do not replace/reinstall this consumer. W2 should validate its owned portal/
+keyboard/theme/followup styles on this installed artifact and commit evidence.
+Root relays this handoff. No source edits to W2 ownership by W1.
+
+No release/merge/closure/upstream/main/legacy/friend writes. Previous chart
+HorizontalBar gap stays disclosed; #17 streaming performance/soak and SSR
+remain unclaimed. Untracked crates preserved.
+
+---
+
 # CURRENT — approved chat-kit slice #16 in progress — 2026-10-25
 
 Branch `codex/react-chat-kit` starts at reviewed PR37 head
