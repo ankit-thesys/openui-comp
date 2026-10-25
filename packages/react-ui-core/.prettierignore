@@ -19,3 +19,7 @@ src/components/OverviewCardBlock/__tests__/results/browser-first/**
 src/components/OverviewCardBlock/__tests__/results/browser-focus-attempt/**
 src/components/OverviewCardBlock/__tests__/results/browser-carousel-failure/**
 src/components/OverviewCardBlock/__tests__/results/BROWSER_SHA256.json
+# Exact corrected carousel consumer lock and measured reports.
+evidence/data-cards/corrected-carousel/consumer-lock.json
+evidence/data-cards/corrected-carousel/*-browser.json
+evidence/data-cards/corrected-carousel/*-responsive.json

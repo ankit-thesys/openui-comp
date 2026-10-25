@@ -1,3 +1,17 @@
+# CURRENT — corrected slice13 artifact / D responsive PASS / browser RELEASED to Worker2 — 2026-10-25
+
+Worker2 fix64a7f36ef integrated as `4119cddbed813f81e37b949ce00421a7e65173a3`. Conventional base-before-container rule order; no custom runtime/specificity workaround. Original failed A/C evidence8cc96c7be integrated9cad937ee, with prerequisite fixture preserved. Production ownership respected, W1 did not edit shared source.
+
+NEW exact normal consumer `/private/tmp/core-data13c-consumer`; tar `/private/tmp/core-data13c-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`;492247 bytes; SHA256 `2c29042765ee120d7f85dd4da7176152ee54cfa7dcaff794ee3990473ea59e02`. All tar files match installed bytes. Tools/types preinstalled before freeze; package/lock immutable. Exact artifact/consumer/manifest/targeted results under packages/react-ui-core/evidence/data-cards/corrected-carousel. Older artifacts preserved.
+
+W1 affected D responsive Chrome PASS6 cases /10,656 paired snapshots: actual450/650/950px containers, grid/carousel, responsivefalse control, Composite/Context/Visual, plain/TW3/TW4 both initial orders. No EditableTable DOM in targeted mode. Corrected artifact native ESM/CJS, strict TS5.9.3 three modes and focused JS/Goober pruning PASS; build/affected format PASS. Prior full107/107 localCI and48,494 broader B/D snapshots remain historical onbaa3c1d93; no unrelated broad/EditableTable reruns for this CSS correction.
+
+EXPLICIT browser RELEASE to Worker2: owned targeted Chrome/server closed; W1 will run NO Chrome while W2 validates corrected A/C. Use NEW exact consumer/revision/hash above; no package/lock changes. W2 harness already integrated, sourceowner added narrow/boundary/wide regression assertions. PR gate remains OPEN until corrected independent A/C passes and final review. Local stacked draft description exists; no PR opened yet.
+
+No merge/release/upstream/main/legacy/previews/crates changes or ticket closure. Inherited callback/sign/keyboard limits and deferred SSR/performance/memory unchanged. This section supersedes older browser/gate/artifact statuses below.
+
+---
+
 # CURRENT — slice13 responsive correction gate OPEN — 2026-10-25
 
 Worker2 found a genuine shared Overview carousel regression at450px: candidate cards240px versus legacy200px. Public Goober grouping emitted the narrow override before the later base rule. Root assigned conventional rule-order fix + regression test to source owner Worker2. Worker1 WILL NOT edit `_shared/cards` concurrently. Failed evidence8cc96c7be integrated as9cad937ee; its earlier prerequisite runner/fixture files retained exactly to resolve a modify/delete integration conflict. No production changes in that evidence commit.
