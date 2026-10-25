@@ -32,7 +32,7 @@ if(q.get('order')==='after')window.addEventListener('load',()=>document.head.app
 await fs.mkdir(path.join(out,'host'),{recursive:true});
 for(const framework of ['plain','tailwind3','tailwind4'])await fs.copyFile(path.resolve('packages/kits/evidence/chat-library/host/frameworks',framework+'.css'),path.join(out,'host',framework+'.css'));
 const cells={};for(const workload of ['chat','dashboard'])for(const load of ['paced','stress']){
- const c=makeCell(workload,load);cells[`${workload}/${load}`]={urls:Object.fromEntries(['baseline','runtime'].map(a=>[a,`/${a}/?workload=${workload}&load=${load}&framework=plain&order=before`])),expectedText:c.payload,requiredText:[`${workload} section 0`,'Show the next quarter'],renderedRoot:'main',expectedDom:{tables:{selector:'main table',count:c.tables},forms:{selector:'main form',count:1},...(workload==='dashboard'?{bars:{selector:'main .openui-bar-chart-bar',count:c.bars}}:{})},payloadSha256:c.payloadSha256,scheduleSha256:c.scheduleSha256};
+ const c=makeCell(workload,load);cells[`${workload}/${load}`]={urls:Object.fromEntries(['baseline','runtime'].map(a=>[a,`/${a}/?workload=${workload}&load=${load}&framework=plain&order=before`])),expectedText:c.payload,requiredText:[`${workload} section 0`,'Show the next quarter'],renderedRoot:'main',expectedDom:{tables:{selector:'main table',count:c.tables},forms:{selector:'main [role="form"]',count:1},...(workload==='dashboard'?{bars:{selector:'main .openui-bar-chart-bar',count:c.bars}}:{})},payloadSha256:c.payloadSha256,scheduleSha256:c.scheduleSha256};
 }
 const hash=async p=>createHash('sha256').update(await fs.readFile(p)).digest('hex');
 const inputs={};

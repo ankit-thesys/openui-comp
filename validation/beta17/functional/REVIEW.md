@@ -23,3 +23,12 @@ certification. No legacy code was modified to conceal either finding.
 These reviews certify only readiness of this replay handoff for measurement.
 They do not certify SSR, full AgentInterface/OpenUIChat-shell integration,
 performance, ten-minute memory behavior, publication or migration readiness.
+
+## Form-contract correction review
+
+W2 preflight exposed a missing all-manifest assertion in the original gate.
+Both review axes accept the semantic-wrapper correction and preserved v1/v2
+provenance. Spec requested the stale release status be superseded until the new
+gate passed; HANDOFF.md now explicitly releases v2 after48/48 and exact W2
+preflight8/8. Required validation and successful submission remain mandatory;
+no native wrapper was fabricated and no assertion was weakened.

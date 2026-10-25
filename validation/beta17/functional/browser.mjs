@@ -5,17 +5,18 @@ import {createRequire} from 'node:module';
 import {spawn} from 'node:child_process';
 import {once} from 'node:events';
 import {makeCell} from '../fixtures/payloads.mjs';
+import {assertManifestDom} from './assert-dom.mjs';
 const consumer=path.resolve(process.env.BETA17_CONSUMER ?? '/private/tmp/beta17-consumer');
 const manifest=JSON.parse(await fs.readFile(path.join(consumer,'handoff.json'),'utf8'));
 const require=createRequire(path.resolve('packages/react-ui-core/package.json'));
 const {chromium}=require('playwright');
-const server=spawn(process.execPath,['validation/beta17/fixtures/server.mjs'],{env:{...process.env,BETA17_DIST:manifest.dist},stdio:['ignore','pipe','pipe']});
-const results=[];let browser;
+const server=process.env.BETA17_EXTERNAL_SERVER==='yes'?null:spawn(process.execPath,['validation/beta17/fixtures/server.mjs'],{env:{...process.env,BETA17_DIST:manifest.dist},stdio:['ignore','pipe','pipe']});
+const results=[];let browser;const runId=Date.now().toString();
 try{
- await Promise.race([once(server.stdout,'data'),once(server,'exit').then(()=>{throw Error('Fixture server exited');})]);
+ if(server)await Promise.race([once(server.stdout,'data'),once(server,'exit').then(()=>{throw Error('Fixture server exited');})]);
  browser=await chromium.launch({channel:"chrome",headless:true});
  for(const framework of ['plain','tailwind3','tailwind4'])for(const order of ['before','after'])for(const workload of ['chat','dashboard'])for(const load of ['paced','stress'])for(const arm of ['baseline','runtime']){
-  const session=`functional-${framework}-${order}-${workload}-${load}-${arm}`,cell=makeCell(workload,load);
+  const session=`functional-${runId}-${framework}-${order}-${workload}-${load}-${arm}`,cell=makeCell(workload,load);
   console.error('CASE',framework,order,workload,load,arm);
   const page=await browser.newPage({viewport:{width:1280,height:900}});page.setDefaultTimeout(10000);const errors=[];
   page.on('pageerror',e=>errors.push(String(e)));
@@ -46,12 +47,16 @@ try{
   }
   await page.locator('#start-stream').click();
   await page.waitForFunction(expected=>document.querySelector('#status').textContent==='idle'&&document.querySelector('#message-source').textContent===expected,cell.payload,{timeout:30000});
+  await assertManifestDom(page,manifest.cells[`${workload}/${load}`]);
   assert.equal(await page.locator('main table').count(),cell.tables);
   const text=await page.locator('main').innerText();assert(text.includes(`${workload} section 0`));
   assert(!text.includes('Unknown component'));assert(text.includes('Show the next quarter'));
   if(workload==='dashboard'){
    await page.waitForFunction(expected=>[...document.querySelectorAll('main .openui-bar-chart-bar')].filter(r=>{const b=r.getBoundingClientRect();return b.width>0&&b.height>0;}).length===expected,cell.bars);
   }
+  await page.getByText('Send details',{exact:true}).click();
+  await page.getByRole('form').getByText(/required/i).waitFor();
+  assert.equal(await page.locator('#action').textContent(),'','Empty required input must prevent action');
   await page.getByPlaceholder('Your name').fill('Ada');
   await page.getByText('Send details',{exact:true}).click();
   await page.waitForFunction(()=>document.querySelector('#action').textContent.includes('Send details'));
@@ -78,4 +83,4 @@ try{
  }
  console.log(JSON.stringify({status:'pass',browser:browser.version(),cases:results.length,results},null,2));
 }catch(error){console.error(JSON.stringify({status:'failed',completed:results,error:String(error)},null,2));process.exitCode=1;}
-finally{await browser?.close();server.kill();if(server.exitCode===null)await once(server,'exit');}
+finally{await browser?.close();if(server){server.kill();if(server.exitCode===null)await once(server,'exit');}}

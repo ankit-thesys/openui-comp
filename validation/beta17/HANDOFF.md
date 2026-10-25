@@ -1,11 +1,14 @@
 # Worker1 → Worker2 fixture contract
 
-Status: RELEASED TO WORKER2 FOR FORMAL MEASUREMENT. Run5 passed 48/48.
-Worker1 browser is closed; no builds or competing browsers remain. This is
-fixture readiness, not performance/memory acceptance.
+Status: V2 RELEASED TO WORKER2 FOR FORMAL MEASUREMENT.
+Correction functional gate passes48/48; exact W2 preflight passes8/8 with no
+errors. W1 browser is closed. Server48419 remains unchanged and live on4197.
+No formal timing/soak or performance acceptance follows from these checks.
 
 Consumer: `/private/tmp/beta17-consumer` (standalone npm installation).
-Manifest: `/private/tmp/beta17-consumer/handoff.json`.
+Manifest: `/private/tmp/beta17-consumer/handoff-v2.json`.
+SHA256: `d222d61713a8854a93144dc870d514a536015ba40be5735e3fd72e213f1f1895`.
+Proof: `/private/tmp/beta17-consumer/installed-proof.json` (v2).
 Fixture server: `BETA17_DIST=/private/tmp/beta17-consumer/replay-dist node validation/beta17/fixtures/server.mjs`.
 Origin: `http://127.0.0.1:4197`.
 Worker1 owns server start/stop and the first functional browser window.
@@ -51,3 +54,25 @@ build:tsc command, which permits diagnostics. Missing headless declaration
 diagnostics in that private build are preserved in baseline-build.log.gz; it is
 not represented as a clean legacy typecheck. Frozen server is now running in
 owned exec session 48419 at port4197; W1 will stop it after W2 releases it.
+
+## V2 contract correction — verified and released
+
+Both public FormRenderer implementations render `div role="form"`. V1 expected
+`main form`; Worker2 correctly observed zero native forms. The new shared
+assertion reproduced that mismatch before correcting metadata to
+`main [role="form"]`. Every manifest count and required text is now asserted on
+both arms/all cells. Empty required submission must show validation and emit no
+action before valid Ada submission can pass. No wrapper is fabricated.
+
+Original handoff-v1.json and installed-proof-v1.json are preserved in the normal
+consumer. Corrected handoff-v2.json records the original hash and correction.
+Only test metadata/helpers changed; served assets, client, server, replay
+payloads and installed packages remain unchanged. No formal timings/soaks ran.
+
+The final correction gate passes48/48 and directly verifies EVERY manifest DOM
+probe and required text. Exact W2 preflight completes8/8 with errors=[]; source
+snapshots, raw results, original/v2 metadata and integrity proof are retained
+under functional/evidence/form-contract-v2. The only changed v1 input is the
+build script's metadata selector; all previously hashed served output, replay
+and installed-product modules are unchanged. W1 releases its browser window.
+Root coordinates W2's formal timing/soak start. Do not use v1 for measurement.

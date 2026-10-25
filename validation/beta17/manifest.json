@@ -1,5 +1,5 @@
 {
-  "status": "functional gate passed48/48; released to W2 formal measurement, not performance acceptance",
+  "status": "v2 functional48 and W2 preflight8 pass; released for formal measurement, no performance acceptance",
   "productSource": "9ee0576133fbb1c444d03c169a81893ebf7631fd",
   "reviewedPRHead": "89cdd43d8d43aae8ac3265606476d017e6392a7f",
   "protocolCommit": "a67bd0695f37ff0d6800de564562c152807f4e4e",
@@ -37,9 +37,10 @@
     "legacySourceModified": false
   },
   "consumer": "/private/tmp/beta17-consumer",
-  "handoff": "/private/tmp/beta17-consumer/handoff.json",
-  "handoffSha256": "ebb0bb3090b1ca475920c6a172789e307f1d12fb2b6721b021800bd0574d97e7",
+  "handoff": "/private/tmp/beta17-consumer/handoff-v2.json",
+  "handoffSha256": "d222d61713a8854a93144dc870d514a536015ba40be5735e3fd72e213f1f1895",
   "installedProof": "/private/tmp/beta17-consumer/installed-proof.json",
   "browser": "Chrome156.0.8078.47",
-  "node": "22.22.2"
+  "node": "22.22.2",
+  "contractVersion": 2
 }

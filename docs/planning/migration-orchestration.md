@@ -1,3 +1,39 @@
+# CURRENT — #17 V2 correction verified, window RELEASED to W2
+
+Use /private/tmp/beta17-consumer/handoff-v2.json, SHA256
+ d222d61713a8854a93144dc870d514a536015ba40be5735e3fd72e213f1f1895.
+Installed proof /private/tmp/beta17-consumer/installed-proof.json now inventories
+v2, helpers/runner, all4packages/6664files and frozen replay/output inputs.
+
+V1 native-form expectation reproduced RED; both public FormRenderers use
+existing div role=form. Metadata-only correction preserves v1/proof and fixes
+semantic selector. Every manifest probe is now asserted across48cells, plus
+empty-required validation blocks action before valid Ada submit. Corrected
+functional48/48 PASS. Exact W2 preflight8/8 PASS errors=[]; raw results/executed
+sources in functional/evidence/form-contract-v2. Both scoped reviewers found no
+remaining source blockers; requested status correction is now explicit.
+
+All originally hashed served output/client/server/payloads and installed product
+origins unchanged; only original build metadata input differs. No product/legacy
+patch. W1 browser CLOSED; unchanged server48419 live4197. Root may now dispatch
+W2's exclusive timing+soak window using V2. No timings or soaks have yet run.
+Existing legacy type, shell, HorizontalBar and SSR boundaries remain disclosed.
+No merge/release/publication/closure or upstream/preview/legacy writes.
+
+---
+
+# CURRENT — #17 v1 release superseded; W1 correction gate running
+
+W2 preflight b5d8198c9 stopped before timing/soaks: native main form count1 was
+wrong; both products use div role=form. Root released correction window to W1.
+New shared all-manifest assertion reproduced red. Metadata-only v2 corrects the
+semantic selector, preserves v1/proof, and adds blocked-required/valid-submit
+checks. Full48 correction matrix running; no formal release until final pass.
+Product, served assets, payloads and original baseline remain unchanged.
+Server48419 remains live. No #17 performance/memory acceptance exists.
+
+---
+
 # CURRENT — #17 frozen functional handoff RELEASED to W2 — 2026-10-25
 
 Branch codex/react-ui-beta-validation. Product code unchanged from reviewed PR39.
