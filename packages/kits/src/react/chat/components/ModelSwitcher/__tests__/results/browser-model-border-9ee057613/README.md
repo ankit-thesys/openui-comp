@@ -18,3 +18,13 @@ hashes. Original42/330 failures and this incomplete attempt remain separate.
 Browser explicitly released to the independent verifier for targeted corrected
 border confirmation while W2 (harness owner) diagnoses the logo observation.
 Do not change product source or assert blanket parity from this attempt.
+
+## Subsequent source/build diagnosis
+
+W2 commit4cbf35b76 proves this specific run used workspace kits with workspace
+and installed core contexts. Its none/light comparisons and dark-logo failure
+therefore do not certify the installed artifact. See FIXTURE_IDENTITY_DIAGNOSIS
+and historical-component-origins.json in the live test directory. No product
+change was needed. A normal standalone fixture package manifest corrects the
+package self-reference; new guards enforce installed module origins. Raw files
+above remain unchanged, and the isolated rerun has a separate output directory.

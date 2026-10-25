@@ -1,3 +1,54 @@
+# CURRENT — isolated corrected model matrix GREEN; final review/draft preparing — 2026-10-25
+
+W2fixture4cbf35b76 integratedbd2388162; standardprivatefixturepackageidentity
+andcompiledmoduleorigin guards removeworkspace-selfreference. Onfrozen9ee057613
+/9fc archive+normalconsumer, strictfocusedmatrixPASS36framework/order/theme
+cases,192pairedstyle-statecomparisons,0failures/console/pageerrors. Arm-labelled
+darklogos unchangedexpectedD; exposed/open/nested/winningoverrideborderchecks
+allpass. All566kits+2202corefiles stillbyte-matcharchives; manifest/lockunchanged.
+Rawgzip, exactrunner/fixture+manifests/servedCSS/origins/proofs in
+ModelSwitcher/__tests__/results/browser-model-border-9ee057613-isolated/.
+AllW1Chrome/serverclosed; browserreleased/available, no further browser needed.
+
+Independentverifier9fc6/6framework/ordercases+360observationsPASS. Other verifier
+metadata/native/types/Zod/parser/actions/active-cancelcleanup/theme/math/assets
+checks retain7adprovenance; only4modelstyleJS/maps differ in9fc. Exactindependent
+reports/results/inputs snapshottedunderkits/evidence/chat-library/independent-verifier
+withoriginalpaths+hashes. Costs1.90MBraw/572KBgzipJS+218KBCSS; unusedbuilds1.07MB
+fontsemit/zero unuseddownloads. Measurements only, not#17performanceacceptance.
+
+W2historicalrun5 provenanceprovedinstalled8405(onecontext);36semanticcompletions
+remainboundedTHATartifact,42strictstylefailures preserved. W1c674splitfixture
+attempt remainsinvalid/no passclaim. New36focusedrun isnotfullbehaviorrerun.
+FullproductpackageCI7/7+allchecks GREEN; finalaggregateSpec/Standards review
+andauthorizedfork-onlystackedDRAFTatopPR37next, thenremoteCI. No merge/closure/
+release/deprecation/upstream/main/legacy/preview/sharedSelect writes. SSR/#17
+separate; untrackedcratespreserved. Rootretainsacceptanceauthority.
+
+---
+
+# CURRENT — isolated focused matrix running on9fc; W1 owns browser — 2026-10-25
+
+W2harness4cbf35b76 integratedbd2388162. Conventionalprivatefixturemanifest
+preventsparentpackageSelfreference; buildguardsrequirekits/coremoduleorigins
+insideinventoriedconsumer, waitsfixturetheme andlabelslogoassertions byarm.
+No productchange/refreeze. W1 nowrunsfocused36framework/order/themecases on
+9ee057613/9fc consumer withsame strictproperties/expectations andneworiginproof.
+Output browser-model-border-9ee057613-isolated is separate frominvalidattempt.
+
+W2historicalmoduleaudit provesold8405runs usedinstalledkits/core+onecontext;
+run5's36behaviorcompletions/42stylefailures remainvalidforTHAT artifact only.
+W1's priorc674mixedgraphnone/lightpasses+darkfailure cannotcertifyinstalled9fc.
+Rawrecords retained. Independentverifier9fc6/6+360observationsPASS; exactreports/
+fixtures copiedbyte-for-byteunderkits/evidence/chat-library/independent-verifier
+withoriginal /private/tmp paths+hashes. No sourceequality-only acceptance.
+
+Waitcurrentstrictfocusedrun; no competingbrowser. PackageCI7/7+source reviewclear.
+No fullcore/unchangedlibrarymatrix repeats, SSR/#17/perf/memoryclaim, review-ready
+PR, merge/release/closure/upstream/main/legacy/preview edits. Cratespreserved.
+
+---
+
 # CURRENT — focused attempt incomplete; browser RELEASED to verifier — 2026-10-25
 
 W1rancommittedfocusedharnessaae711ad3 onfrozen9ee057613 / kit9fc227a88...
