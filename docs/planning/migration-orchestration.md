@@ -1,3 +1,15 @@
+# CURRENT — slice12 COMPLETE as reviewed DRAFT PR34; CI GREEN — 2026-10-25
+
+Draft PR https://github.com/ankit-thesys/openui-comp/pull/34 is OPEN/DRAFT, attached, stacked on codex/react-ui-core-layout (#33). Reviewed/pushed source head `c7d85dad3b356cd5de9d5e21fadd5a4cddc52fd7`. Remote Build JS40180403689 PASSED9m5s and changeset40180403680 PASSED14s. Local integrated package CI97/97, native/strict3 modes, public normal-packed Vite/Chrome test and Worker2 independent6 cases /3,444 paired math snapshots all pass. Exact measured production package remainsa28833480 (401873 bytes, SHA2568709be66bc8b6b5ffd859b3df4fda1507ee63f9b7a75506c149a2aaf56012537); historical non-math matrices keep their own source revisions. Evidence under katex-integration and katex-independent-integration.
+
+P2 lock finding fully RESOLVED: existing entire Thesys snapshot and KaTeX0.16.44 package/snapshot match pre-integration originals; core/renderer0.16.47 aligned. Frozen install passed. Worker2 separately confirmed exact restoration; no outstanding review finding. No global overrides, custom runtime code, experimental CSS plugin or unchanged broad/local/browser reruns. User accepted vendor CSS, Vite contract, emitted unused fonts and bare-esbuild setup; authoritative spec addendum and fork issue7 amended. No math decision gate remains for this bounded slice. SSR/performance and wider bundlers remain deferred.
+
+Final handoff commit is LOCAL DOCS/EVIDENCE ONLY, deliberately not pushed to avoid repeating the green suite on unchanged product code. All production/source/test/lock/release-note changes are already pushed at the green PR head above. This section and docs/planning/slice12-pr-draft.md record the finalized PR body; root can carry documentation into subsequent orchestration work. No active browser/server remains; browser available. No merge, issue closure, publication or deprecation performed. Legacy, both previews and unrelated crates unchanged.
+
+READY for root's slice13 dispatch using docs/planning/slice13-readonly-plan.md; no slice13 implementation started here. Preserve native EditableTable/TanStack structure as resolved. Do not treat this as whole-migration completion. This top section supersedes all historical pending math/PR/CI statuses below.
+
+---
+
 # CURRENT — slice12 independent validation PASS; ready for authorized stacked DRAFT — 2026-10-25
 
 Worker2 evidence90bcae6b1 integrated asf14775ab7. Final independent productiona28833480 run PASSED6 cases /3,444 paired math snapshots, themes/orders, late updates and /review/ asset URLs. Verified every installed file against exact tarball; package/lock unchanged; no unused math downloads, accepted59 emitted fonts remain. Browser/server closed and released to Worker1. Local integrated package CI97/97 and native/strict3 modes already green. Other non-math matrices retain their historical artifact scope.
