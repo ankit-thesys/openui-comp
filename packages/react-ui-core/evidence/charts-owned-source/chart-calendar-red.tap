@@ -1,0 +1,152 @@
+TAP version 13
+# ✘ [ERROR] No matching export in "packages/react-ui-core/dist/index.mjs" for import "CalendarHeatmap"
+#     <stdin>:4:70:
+#       4 │ ...atmapChart, FunnelChart, CalendarHeatmap, PrintContextProvider} ...
+#         ╵                             ~~~~~~~~~~~~~~~
+# Subtest: public Pie chart preserves streaming empty transitions, click rows, donut tracks and print JSON
+not ok 1 - public Pie chart preserves streaming empty transitions, click rows, donut tracks and print JSON
+  ---
+  duration_ms: 338.469333
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:58:1'
+  failureType: 'hookFailed'
+  error: |-
+    Build failed with 1 error:
+    <stdin>:4:70: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "CalendarHeatmap"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    failureErrorWithLog (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    buildResponseToResult (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    responseCallbacks.<computed> (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    handleIncomingPacket (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    Socket.readFromStdout (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    Socket.emit (node:events:519:28)
+    addChunk (node:internal/streams/readable:561:12)
+  ...
+# Subtest: public Radial chart preserves semi-circular grid, click data, empty recovery and export shape
+not ok 2 - public Radial chart preserves semi-circular grid, click data, empty recovery and export shape
+  ---
+  duration_ms: 0.634875
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:79:1'
+  failureType: 'hookFailed'
+  error: |-
+    Build failed with 1 error:
+    <stdin>:4:70: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "CalendarHeatmap"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    failureErrorWithLog (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    buildResponseToResult (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    responseCallbacks.<computed> (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    handleIncomingPacket (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    Socket.readFromStdout (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    Socket.emit (node:events:519:28)
+    addChunk (node:internal/streams/readable:561:12)
+  ...
+# Subtest: public Radar chart preserves series polygons, dots, grid variants and empty streaming recovery
+not ok 3 - public Radar chart preserves series polygons, dots, grid variants and empty streaming recovery
+  ---
+  duration_ms: 0.030375
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:95:1'
+  failureType: 'hookFailed'
+  error: |-
+    Build failed with 1 error:
+    <stdin>:4:70: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "CalendarHeatmap"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    failureErrorWithLog (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    buildResponseToResult (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    responseCallbacks.<computed> (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    handleIncomingPacket (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    Socket.readFromStdout (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    Socket.emit (node:events:519:28)
+    addChunk (node:internal/streams/readable:561:12)
+  ...
+# Subtest: public Heatmap preserves missing cells, signed ramp, click identity and streaming row updates
+not ok 4 - public Heatmap preserves missing cells, signed ramp, click identity and streaming row updates
+  ---
+  duration_ms: 0.023125
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:117:1'
+  failureType: 'hookFailed'
+  error: |-
+    Build failed with 1 error:
+    <stdin>:4:70: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "CalendarHeatmap"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    failureErrorWithLog (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    buildResponseToResult (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    responseCallbacks.<computed> (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    handleIncomingPacket (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    Socket.readFromStdout (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    Socket.emit (node:events:519:28)
+    addChunk (node:internal/streams/readable:561:12)
+  ...
+# Subtest: public Funnel preserves layers, retention values, orientation and click identity during stream updates
+not ok 5 - public Funnel preserves layers, retention values, orientation and click identity during stream updates
+  ---
+  duration_ms: 0.067625
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:138:1'
+  failureType: 'hookFailed'
+  error: |-
+    Build failed with 1 error:
+    <stdin>:4:70: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "CalendarHeatmap"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    failureErrorWithLog (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    buildResponseToResult (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    responseCallbacks.<computed> (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    handleIncomingPacket (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    Socket.readFromStdout (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    Socket.emit (node:events:519:28)
+    addChunk (node:internal/streams/readable:561:12)
+  ...
+# Subtest: public Calendar heatmap sums duplicate days, preserves level-hover dimming and switches legend variants
+not ok 6 - public Calendar heatmap sums duplicate days, preserves level-hover dimming and switches legend variants
+  ---
+  duration_ms: 0.020709
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:158:1'
+  failureType: 'hookFailed'
+  error: |-
+    Build failed with 1 error:
+    <stdin>:4:70: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "CalendarHeatmap"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    failureErrorWithLog (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    buildResponseToResult (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    responseCallbacks.<computed> (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    handleIncomingPacket (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    Socket.readFromStdout (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    Socket.emit (node:events:519:28)
+    addChunk (node:internal/streams/readable:561:12)
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 0
+# fail 6
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 438.180417

@@ -1,3 +1,288 @@
+# CURRENT — charts local/review checkpoint complete; fork-only stacked draft preparing — 2026-10-25
+
+FinalpackageCI136/136 +format/lint/types/build/Publint/ATTW PASS; 2existingTheme
+warnings/0errors. W2packet4bcd0c13b integrated2323d977e, sourceunchanged1d31a4b63.
+Bothfinalsource/evidenceclaimreviewaxes0remainingfindings afterexplicitPR/README
+HorizontalBarlimitdisclosure. Finalreviewrecord:evidence/charts-measurement/
+FINAL_REVIEW.md. NewW2harnessformatcheckPASS; no duplicateCI/browsermatrices after
+harness/evidence-onlyintegration. AllChrome/serverclosed; preservecrates/.
+
+Authorizednext: pushONLYankit-thesys/openui-comp codex/react-ui-core-charts,
+openattachedDRAFT targetingcodex/react-ui-core-option-cards(PR36),monitor/fixremoteCI.
+NoexistingchartPRfound. Preparedbodydocs/planning/slice14-pr-draft.md. No merge,
+release/publication/deprecation/closure/upstream/main/legacy/friend/previewswrites.
+
+Acceptanceexplicitlybounded: HorizontalBardefaultstringheight+fitLegendstrict
+comparisonUNPASSED/baselinefeedback; nounsupportedreclassification/publicprop
+removal. W2separatebatches85,122observations+6instabilityrecords on samecorrected
+artifact; W1affected6/46,440. Old7eanimationevidence remains tiedtooldsource.
+No fullunconditional19parity/SSR/parserperformance/memory/errorfreedomclaim.
+
+---
+
+# CURRENT — chart evidence committed/integrated; local CI136/136 GREEN — 2026-10-25
+
+W2 finalpacket4bcd0c13b integrated2323d977e after committedhandoff, no production
+change. Same corrected1d31a4b63 artifact638a833... validates separateW2batches:
+Line6/11,664; HorizontalBar6/10,728boundedobservations plus6instabilityrecords;
+remaining9entries6/62,730. Total85,122 observations acrossseparatebatches/same6
+framework/ordercombos, not18distinctcombos. Exact report at Charts/BarChart/
+**tests**/BROWSER_REPORT.md. Allsource/artifact/manifest/lockprovenance preserved.
+
+**HorizontalBar default stringheight+fitLegend strictcomparison remainsUNPASSED**
+and baseline-confirmedunstable. Do not reclassifyunsupported, replaceoriginal
+scenario withlegenddisabledpass, orclaimfullunconditional19parity. Originalstrict
+failure and120realframecyclingdiagnostic retained; sizingredesignseparatedecision.
+Otherverifiedinheritedlimits: unwiredclick/numericwidthCSSbox, Scatter missing
+printmetadata/domainnegativeclamp, legendkeyboardcontract. Preservednotfixed.
+
+W1finalpackageCI136/136 +format/lint/types/build/Publint/ATTW PASS (2existingTheme
+warnings,0errors). W1correctedaffectedmatrix6/46,440, nativeall19/strict3/pruning
+pass. No sourcechangedafter1d. W2packet onlyharness/evidence so no productretst;
+affectedformat/harnessclaims finalreview pending, then authorizedforkonlystacked
+DRAFT atopPR36/remoteCI. AllChrome/serverclosed; no duplicatecompletedmatrices.
+No full19unconditionalparity/perf/SSR/memoryclaim; no merge/closure/release/upstream/
+main/legacy/previews/friend/crates changes. Rootretainsacceptanceauthority.
+
+---
+
+# CURRENT — corrected chart packageCI136/136 GREEN; await W2 evidence commit — 2026-10-25
+
+Worker2 explicitly released browser after its remaining matrix; W1 finalpackageCI
+passes136/136 plus format/lint/types/build/Publint/ATTW on unchanged corrected
+production1d31a4b63ee66f03c21688d96cee28bcad8380ac. Rawlog recorded under
+evidence/charts-measurement/chart-final-package-ci.log. No fullmatrix repeats.
+All W1Chrome/server closed after CI. Source/head68d97b3edbeforethisdocupdate.
+
+Root snapshot reports W2's separate Line/HorizontalBar/remaining9 evidence on
+same correctedartifact, but W2is stillfinalizingcommit. DO NOTintegrateuncommitted
+files or report finalacceptance untilcommittedpacketarrives. Baseline-confirmed
+HorizontalBar default stringheight+fitLegend strictcomparison remainsunpassed;
+keepit explicit, not reclassifiedunsupported or silentlyfixed. No production
+correction is authorized for inheritedsizingfeedback. Finalscopedreview + fork
+stackedDRAFT/remoteCI followcommittedhandoff. Full19unconditionalparitynotclaimed.
+No merge/release/closure/upstream/main/legacy/friend/previews/crates changes.
+
+---
+
+# CURRENT — corrected tracking artifact GREEN owned scope; browser RELEASED to W2 — 2026-10-25
+
+**W1 explicitly releases browser to Worker2 now. All W1 Chrome/server closed;
+no further W1 browser tests/fullpackageCI until W2 releases.**
+
+Corrected production1d31a4b63ee66f03c21688d96cee28bcad8380ac, normalconsumer
+`/private/tmp/core-chart-tracking-consumer`; tar
+`/private/tmp/core-chart-tracking-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`,
+1,062,926bytes, SHA256
+`638a8336a60800ae40fa4e46a7130ca41141393382652dd5cf9e73626a8de806`.
+No production source changed after1d. W2's failed7eartifact/diagnostic36a2a4fd4
+integratedadbb356fc and preserved. Shared conventionalCSS→theme→defaulttracking
+fallback fixes demonstrated Line28vs27; explicitCSS/themezero and CSSpriority
+preserved. No custommeasurementengine/globalinjector/dependencypatch.
+
+Newnormalinstalled publicLine regressionPASS, all19nativeESM/CJS/strict3modes/
+selectedpruning/formatPASS. AffectedW1matrix6cases/46,440paired observations PASS
+onTHIS corrected artifact: plain/TW3/TW4 bothinitialorders,5themes, compact
+Pie/Radiallegends, otherownedchartgeometry, actualhover/tooltip/print/export/
+responsive/override/empty/recovery/remount. Allinstalledfilesmatcharchive and
+package/lockunchanged. Bothsource+affectedharnessreviewaxesclear. Exact evidence,
+executedfixture/runner and lock: evidence/charts-measurement/. Older7eanimation
+andotherresults remain historical, not recertified; no phase-matchedmotionclaim.
+
+W2must rerun focusedno-providerLine and its full11entryCartesian/Mini matrix on
+THIS artifact, retainfiles/lock, disclose inheritedHorizontalBar numericwidth/
+unwiredclick, Scatterprintmetadata/domainclamp observations, thencommitresults/
+corrections and explicitlyrelease. Do not silentlyfix inheritedbehavior. Full
+integratedpackageCI/finalreview/attachedforkstackedDRAFT andremoteCI remainpending.
+Acceptanceopen; no SSR/parserperformance/memorycertification. No merges/releases/
+closures/upstream/main/legacy/previews/friend/crates changes. Sharedroot/depsW1.
+
+---
+
+# CURRENT — shared measurement fix reviewed; W1 browser window — 2026-10-25
+
+W2 diagnostic36a2a4fd4 integratedadbb356fc confirms no-provider Line Y-axis28vs
+legacy27 from missing canvas tracking fallback. W2 explicitly released browser
+toW1. Bounded sharedhook correction keeps CSS→theme→existingdefault(-0.01em),
+preserves explicitzero, adds memo trackingdependency; no custommeasurementengine.
+PublicrealChrome regression RED28vs27→GREEN, CSSzero/themezero/priority pass.
+Producerbuild/types/scopedlint pass; bothreviewaxesclear. Rawfailed7eartifact and
+W2diagnosticpreserved, not recertified. Evidence/charts-measurement/.
+
+W1 now commits/refreezes corrected normalartifact, reruns only affected shared
+chart geometry/labels/legends plus public regression/native/types/pruning. Own
+Radar/Heatmap/Funnel/Calendar and compact DefaultLegend configurations across
+Pie/Radial/SegmentedBar may be affected. Unrelatedcomponentmatrices not repeated.
+Then explicitlyrelease exactartifact/browser toW2 for remaining11entrymatrix.
+FullintegratedpackageCI waits until W2release. No acceptance inferred, no source
+outsidecore, no custompatches/legacywrites or merge/release/closure/upstream/main.
+Preservecrates/friend/previews. Sharedhook ownership remainsW1.
+
+---
+
+# CURRENT — final chart artifact READY; W1 browser RELEASED to W2 — 2026-10-25
+
+**Explicit browser release: Worker2 may now run its independent Cartesian/Mini
+matrix. All W1 Chrome contexts and HTTP servers are closed. W1 remains source/
+package work only until Worker2 releases.** W2 harness0ab5ef6b0 integrated3962e079f.
+
+Frozen production source7e425b5b7261b47dc28e331e7afc223179990237. Exact normal
+consumer `/private/tmp/core-chart-final-consumer`; tar
+`/private/tmp/core-chart-final-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`,
+1,062,310bytes, SHA256
+`546f680f12516b0702cfb7c07bd092a781b4a402e8d9ee4e79b17eb9149424eb`.
+All installedfilesmatcharchive; consumer package/lock unchanged. No production
+source changed after7e; later commits only harness/docs/metadata/evidence.
+
+Final artifact owned broad matrix6cases/46,656observations passes. Corrected
+portal-rest interaction matrix6cases/12,408observations passes with clean teardown
+and fileproof; keep these scopes separate. Actual painted-point pointer hover,
+tooltips, CSSkeyframes/timing and settledendpoints, themes/frameworks/initialorders,
+resize/scopes/overrides/empty/print/export/remount covered. No phase-matched
+intermediate-motion claim. HTTP fixture teardown corrected using standard Node
+closeAllConnections; stalled raw report preserved, no product patch.
+
+Normalinstalled nativeESM/CJS all19entries, strictTS3modes, selectedpruning pass.
+Format/Publint/ATTW pass (temporary npmcache for ATTW). First installedbehavior
+run21/22 plus corrected detachedlegend focused1/1: categoryidentityexpectation
+fixed, not production. Independent source/harness reviewaxesclear after fixes.
+Evidence: packages/react-ui-core/evidence/charts-final-installed/.
+
+W2 must validate all11ownedentries on THIS artifact, preserve package/lock,
+verify/disclose inherited HorizontalBar declared-but-unwired onClick, commit its
+raw results/corrections and explicitly release browser. Full integrated package
+CI waits until then; do not run concurrent browser tests. Draftbody prepared
+at docs/planning/slice14-pr-draft.md, not published. No full19browser/SSR/parser/
+performance/memory certification yet. No merge/release/closure/upstream/main or
+legacy/preview/friend/crates edits. Shared/root/deps remain W1-owned.
+
+---
+
+# CURRENT — all chart source integrated/reviewed; owned matrix6/6 GREEN — 2026-10-25
+
+W2 Line/Bar/Scatter5d6ca7dba integrated87837b1e9 and Minis c2c8358d3 integrated
+6582dba01. Area e99b52dc6 already present. Charts barrel exactly matches legacy:
+all19entries/helpers/types. Focused integrated nested/pruning13/13 and public
+typecontracts2/2 pass; producer build/types pass. Both final combined source
+review axes clear. HorizontalBar declared-but-unwired onClick remains inherited;
+Worker2 must verify/disclose it rather than silently change behavior.
+
+Corrected owned source a5cdaa0fa immutable normal consumer passes Chrome6cases /
+40,242 paired observations (plain/TW3/TW4 both initial orders,7ownedfamilies,
+5themes/variants/resize/scopes/actualoverrides/emptyrecovery/print/export/remount).
+Every installedfilematchesarchive; package/lockunchanged; nativeESM/CJS pass.
+Exact report/runner/fixture/lock: evidence/charts-owned-browser/. Original failures
+preserved. This is reduced-motion/settled owned evidence, not animation/tooltip/
+full19/performance/SSR/memory certification.
+
+W1 retains FIRST browser window and prepares final combined immutable artifact,
+then finishes owned hover/animation validation before explicit release to W2.
+No concurrent browser runs. Shared/root/depsW1; W2 family paths read-only toW1.
+No custom runtime patches or legacy/previews/friend/crates changes. No merge,
+issueclosure/release/upstream/main writes. Final combined packagechecks/reviews
+and attached fork-only stacked draft/CI remain pending.
+
+---
+
+# CURRENT — owned charts committed; installed Calendar fallback corrected — 2026-10-25
+
+Owned source `df52427f0d4d05393229ea4812f8fec5d3c7a864` follows foundation cf0301e5
+and integrated W2 Area e99b52dc6. First normal-installed matched matrix found
+Calendar no-provider pattern fill depended on old global defaults. Conventional
+inline CSS-var fallback now has focused realChrome RED→GREEN and build/types;
+both reviewers accept it. No Goober patch/custom runtime. Original failed matrix
+preserved. Harness review gaps for actual override application and host/scope
+sentinels fixed before refreezing. Focused installed pruning passes: Button keeps
+no Charts/D3, individual selected charts keep no other chart families.
+
+W1 retains FIRST browser window; W2 source-only and continuing remaining families.
+Next: committed corrected-source artifact, matched6framework/order matrix and
+normal-installed native/strict/public tests. Not whole19/performance/SSR/memory
+acceptance. No merges/closures/releases/upstream/main/legacy/friend/preview edits;
+preserve crates/. Shared/root/deps remain W1-owned.
+
+---
+
+# CURRENT — owned chart source reviewed; packed validation next — 2026-10-25
+
+Foundation cf0301e5 is relayed to Worker2. W2 Area/helpers5851f0624 integrated as
+`e99b52dc6`; its Scatter helper test was retained across an ancestry-only
+modify/delete conflict. Area exports integrated by W1. W2 continues remaining
+Cartesian/Mini families; W1 does not edit their owned source.
+
+W1 Pie/Radial/Radar/Heatmap/Funnel/CalendarHeatmap/SegmentedBar (SingleStackedBar
+alias) source is implemented with unchanged logic and stock-Goober styles.
+Focused public-root run11/11 passes (7actualChrome family tests + foundation2 +
+Area1 + strict types1), build/types/scoped lint pass. Both independent reviews
+clear after conventional Radar selector fix and computed-style regression test.
+Raw attempts and boundary: packages/react-ui-core/evidence/charts-owned-source/.
+
+W1 retains FIRST browser window and now prepares immutable normal installed
+artifact for matched legacy/browser/style-order/theme/resize/print/export checks.
+No full19-family, performance, SSR or memory acceptance yet. Worker2 source-only
+until explicit release. Existing styling/ownership/dependency boundaries remain;
+no custom runtime patches, legacy/previews/friend/crates edits, release, merges,
+closure or upstream/main writes. Root barrel/shared/deps remain W1-owned.
+
+---
+
+# CURRENT — chart foundation committed; owned polar tests GREEN — 2026-10-25
+
+Shared foundation `cf0301e530cea0168d36f4c40b9b9d44af6f2110` is committed and
+root relayed it to Worker2. It includes W2 prerequisites `edf662fb9`, shared
+source/styles, distinct PrintContext, existing D3/Zustand dependency contracts,
+and root support exports. Focused tests 3/3, producer build/types/scoped lint and
+native support imports pass. Independent Spec/Standards foundation reviews clear.
+Detailed consumer contract: docs/planning/slice14-foundation-handoff.md.
+
+Worker2 now owns Cartesian/Mini family implementation. Worker1 retains shared
+foundation/root/deps and Polar/Other families, and FIRST browser window. Public
+Pie/Radial/Radar real-Chrome behavior tests pass 3/3 after genuine missing-export
+red tests; producer build/types pass. Polar source/style review is running.
+These are intermediate source tests, not normal-installed final parity or
+performance acceptance. Worker1 continues Heatmap/Funnel/Calendar/SegmentedBar.
+No family handoff or whole chart slice completion inferred from foundation.
+
+Preserve old props/behavior and stock Goober styles; no legacy writes/custom
+runtime patches. Existing SSR/parser/performance/memory deferrals remain. Root
+barrel integration, immutable installed artifact, family/browser/export/print/
+resize checks and two-axis final review remain before fork-only stacked draft.
+No merge, closure, release, upstream/main writes. Preserve unrelated crates/.
+
+---
+
+# CURRENT — chart slice14 dispatched / shared-type bootstrap GREEN — 2026-10-25
+
+Root explicitly dispatched full chart slice14 after PR36 green. Branch codex/react-ui-core-charts based reviewed d9d6c78f085bfb92d475d76bead2c73dbb428131; local docsfe60de390/b8c69cd5c carried asdb552aab6/6811a31f2, PR36unchanged. W1 FIRST owns Charts/types bootstrap; three files copied byte-for-byte, rootexports only existing5types. Genuine public typeTS2305RED → minimalcopy/export → focusedstrictconsumer1/1GREEN, producerbuild/typesPASS. Formatting-induced fixtureerror preserved/corrected with conventionaltypequery. BothGPT6.1-Solreviewaxesclear. Evidence/charts-bootstrap.
+
+PROMPT committed bootstrap handoff enables W2 prerequisite files: BarChart/types.ts, BarChart/parts/horizontalBarGeometry.ts, ScatterChart/types.ts (exclusiveW2ownership). W1 waits for committedprereqs before declaring remainingfoundation buildable. Then W1owns Charts/utils/hooks/shared/styles/PrintContext/deps/rootbarrels; W2owns all Cartesian+Mini family paths. W1laterowns Pie/Radial/Radar, Heatmap/Funnel/CalendarHeatmap/SegmentedBarfamilies. No cross-owner edits/reverts; integrate committedbatches only. Preserve ReactPrintContext separately from printmediahook.
+
+Bootstrap is NOT complete chartfoundation/slice: no runtimecharts/style/dependencies or installed/browseracceptance yet. Inventory19variants/parts/types and plan docs/planning/slice14-readonly-proposal.md remains executionreference with this explicitdispatch superseding its oldreadonlyheading. W1 owns FIRST chartbrowserwindow; W2 source-only until release. No activeChrome/server. StockGoober1:1/no legacyproductionimports/customresolver/dependencypatches, preserve unrelatedlockgraph. PR30baseline read-only, frienddirsreserved; legacy/previews/crates untouched. No helper/TLgated work, merge/main/upstream/release/ticketclosure. Finalboundedbatches+packedchecks/review → stackedDRAFT atop36/CI; not atbootstrap alone.
+
+---
+
+# CURRENT — deferred OptionCards COMPLETE as reviewed DRAFT PR36; CI GREEN — 2026-10-25
+
+Fork-only https://github.com/ankit-thesys/openui-comp/pull/36 OPEN/DRAFT, attached, stacked on codex/react-ui-core-data-cards (#35). Reviewed/pushed product head `d9d6c78f085bfb92d475d76bead2c73dbb428131`. BuildJS40186855402 PASS8m55s and changeset40186855341 PASS15s. Remote core110/110 tests plus format/lint/types/build/Publint/ATTW pass. Final body docs/planning/option-cards-pr-draft.md updated to green; no source correction required after opening.
+
+Source4911a82f825ce518f073fd995637d853a38a6620 exact frozen normal consumer `/private/tmp/core-option-cards-consumer`;498447-byte tar SHA256 `0a66152ad19a6c7e0a732a652175723e8bd1bcde1b5159a10e3966d835b67821`. W2Chrome6cases /15,732 image-inclusive paired snapshots, installedDOM2/2, native public ESM/CJS, strict TS5.9.3 skipLibCheckfalse3modes, focused pruning all pass. Everyinstalledfilematchesarchive, package/lockunchanged. Both final GPT6.1-Sol reviewaxesclear. Source no newdependencies/sharedhelperchanges/customruntime. Rawattempts/provenance and remoteCIlog/status preserved under evidence/option-cards.
+
+Post-CI handoff commits are LOCAL DOCS/EVIDENCE ONLY, deliberately not pushed to avoid repeating green CI on unchanged product. All component/export/test/browser evidence/release note changes are pushed at green producthead above. Root may carry localdocs forward. No merge, issueclosure, release/publication/deprecation/upstream/main writes. Legacy/previews/unrelatedcrates untouched. Browser/serverclosedandavailable.
+
+No chart production started. READY for explicit root chart dispatch, using docs/planning/slice14-readonly-proposal.md. Order: W1sharedCharts/types → W2 BarChart/types + BarChart/parts/horizontalBarGeometry + ScatterChart/types → W1 remaining foundation → family implementations. Distinct PrintContext mechanisms preserved; correctedPR30baseline reusable read-only, friendpathsreserved. Rootownsdispatch. Existing SSR/parserstreaming/performance/memory/dynamicCSSrecovery deferrals remain; nativeTab/Enter/Space preserved without customarrow/roving redesign. This current section supersedes earlier pendingstatuses below.
+
+---
+
+# CURRENT — OptionCards DRAFT PR36 OPEN; fork CI running — 2026-10-25
+
+Fork-only draft https://github.com/ankit-thesys/openui-comp/pull/36 OPEN/DRAFT and attached. Pushed reviewed head `d9d6c78f085bfb92d475d76bead2c73dbb428131`, branch codex/react-ui-core-option-cards, base codex/react-ui-core-data-cards (#35). Remote BuildJS40186855402 and changeset40186855341 running. No merge/closure/release/upstream/main writes.
+
+All local gates pass: integrated packageCI110/110 plus format/lint/types/build/Publint/ATTW; owned installedDOM2pass; nativepublicroot/strict3modes/pruning pass; W2independentChrome6cases /15,732 image-inclusive snapshots on exact4911a82f8 artifact498447bytes SHA0a66152ad19a6c7e0a732a652175723e8bd1bcde1b5159a10e3966d835b67821. Source/harness reviewaxesclear. Everyinstalledfile/lock preserved, originalattemptsretained. Nativecontrolledselection and existingkeyboardlimits documented.
+
+CI monitoring continues; no unchanged matrices to repeat and no charts production. Next chartplan remains read-only, with W1sharedtypes→W2Bar/Scatterprereqs→W1foundation. Read-only bootstrap check confirms Charts/types index only reexports common/exportChartData, so sharedtypebootstrap does not import family implementations. WaitforPR36CIcheckpoint and explicitrootdispatch. Browser/serverclosed. Legacy/previews/crates untouched; SSR/parserstreaming/performance/memory remain uncertified by OptionCards.
+
+---
+
 # CURRENT — OptionCards local/independent GREEN; authorized stacked draft preparing — 2026-10-25
 
 W2 harness03927d88a and evidence6db4d26e7 integrated08f36c99c/8f09f299f. Independent Chrome6cases /15,732 image-inclusive paired snapshots PASS on exact4911a82f825ce518f073fd995637d853a38a6620 artifact498447 bytes SHA0a66152ad19a6c7e0a732a652175723e8bd1bcde1b5159a10e3966d835b67821. Package/lock unchanged; installedDOM2pass; native public-root/strict3modes/pruning pass. W2 browser released, all contexts/server closed.

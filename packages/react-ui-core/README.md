@@ -4,7 +4,7 @@ OpenUI's reusable React UI, extracted in additive migration slices. The existing
 
 ## Controls
 
-The root exposes Button, Input, TextArea, Buttons, IconButton, Label, FormControl/Hint, checkbox/radio/switch/toggle groups and items, Calendar, DatePicker, Select parts, Slider/SliderBlock and Chips, with their existing public types. OptionCards is deferred until its markdown, table and citation prerequisites are extracted. Preserve existing variants, sizes, native props, refs, error state and supported customization:
+The root exposes Button, Input, TextArea, Buttons, IconButton, Label, FormControl/Hint, checkbox/radio/switch/toggle groups and items, Calendar, DatePicker, Select parts, Slider/SliderBlock and Chips, with their existing public types. Preserve existing variants, sizes, native props, refs, error state and supported customization:
 
 ```tsx
 import { Button, Input, TextArea, ThemeProvider } from "@openuidev/react-ui-core";
@@ -87,6 +87,58 @@ function PlanChoice() {
 
 The existing `type="multiple"`, item/global `disabled`, icon/image top slots, root `className`/`style` and native attributes remain available. Native buttons retain Tab/Enter/Space behavior. The extraction adds no custom arrow-key navigation or new styling API. See [validation evidence](./evidence/option-cards/README.md) for the exact installed artifact and browser scope.
 
+## Charts
+
+All chart imports come from the package root. Existing props, class hooks, theme
+palettes and supported customization are preserved. Chart styles register
+automatically through stock Goober; no legacy SCSS import is needed.
+
+```tsx
+import { PieChart, ThemeProvider } from "@openuidev/react-ui-core";
+
+function RevenueShare() {
+  return (
+    <ThemeProvider>
+      <PieChart
+        data={[
+          { name: "Subscriptions", revenue: 80 },
+          { name: "Services", revenue: 20 },
+        ]}
+        categoryKey="name"
+        dataKey="revenue"
+        variant="donut"
+        height={320}
+      />
+    </ThemeProvider>
+  );
+}
+```
+
+Available entries: AreaChart/AreaChartCondensed, LineChart/LineChartCondensed,
+BarChart/BarChartCondensed/HorizontalBarChart, PieChart, RadialChart, RadarChart,
+ScatterChart, HeatmapChart, FunnelChart, CalendarHeatmap, SegmentedBar,
+SingleStackedBar (the existing alias), MiniAreaChart, MiniBarChart and MiniLineChart.
+Existing data/prop types, Scatter helpers, LegendStoreProvider/useLegendEntry,
+StackedLegend and CHART_CLASS_PREFIX are also public. Shared geometry, spring,
+measurement and styling implementations remain private. D3 dependencies use the
+existing ranges; Zustand remains a peer dependency as in react-ui.
+
+PrintContext/PrintContextProvider/usePrintContext preserve the existing chart
+export integration. This React context is distinct from the private print-media
+hook; browser print mode and export-provider JSON have separate behavior. Their
+presence does not enable deferred server rendering. Chart animation, interaction
+and performance claims require the corresponding recorded validation; settled
+style comparisons alone do not establish them.
+
+HorizontalBar retains existing limitations: `onClick` is unwired, numeric width
+affects scales without setting the CSS box, and string height with a fitting
+legend can produce sizing feedback in both legacy and core. The strict
+comparison for that last combination remains unpassed; it is not removed from
+the public API or declared unsupported. Scatter retains no print-export metadata
+and its public domain helper clamps negative lower bounds. See the
+[Cartesian/Mini validation report](./src/components/Charts/BarChart/__tests__/BROWSER_REPORT.md)
+for exact evidence and limits.
+
 ## Development
 
 ```sh
@@ -96,4 +148,4 @@ pnpm --filter @openuidev/react-ui-core check:publint
 pnpm --filter @openuidev/react-ui-core check:attw
 ```
 
-The build preserves modules in ESM/CJS with matching declarations. Goober and React stay external dependencies. There are no old SCSS or generated CSS build inputs. Package metadata marks modules as removable when unused; class values referenced by rendered components must retain their Goober calls. Tests use built public exports. Layout containers, cards, sections and loading components are also exposed through the root, including their existing parts and types. Modal and TooltipWrapper are also exposed through the root. Their inherited focus, labeling and child-ref limitations are recorded in src/components/Modal/__tests__/INHERITED_LIMITATIONS.md; extraction does not redesign these APIs. Remaining families, charts and chat kits are later slices. See FORM_CONTROLS.md for this slice’s validation and inherited limitations.
+The build preserves modules in ESM/CJS with matching declarations. Goober and React stay external dependencies. There are no old SCSS or generated CSS build inputs. Package metadata marks modules as removable when unused; class values referenced by rendered components must retain their Goober calls. Tests use built public exports. Layout containers, cards, sections and loading components are also exposed through the root, including their existing parts and types. Modal and TooltipWrapper are also exposed through the root. Their inherited focus, labeling and child-ref limitations are recorded in [Modal inherited limitations](./src/components/Modal/__tests__/INHERITED_LIMITATIONS.md); extraction does not redesign these APIs. Chat kits remain later slices. See FORM_CONTROLS.md for this slice’s validation and inherited limitations.

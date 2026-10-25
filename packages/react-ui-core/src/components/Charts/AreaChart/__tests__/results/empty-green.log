@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: area empty data preserves its public empty state, class hook and live empty updates
+ok 1 - area empty data preserves its public empty state, class hook and live empty updates
+  ---
+  duration_ms: 11.324041
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1662.174959

@@ -21,7 +21,7 @@ Preserve controlled selected values/onToggle, native button selection and disabl
 - [x] Independent Chrome156 parity:6 cases /15,732 image-inclusive paired snapshots on exact4911a82f8 artifact. Plain CSS/Tailwind3/Tailwind4 both initial orders, themes, actual450/480/481/700/768/769/900px containers, controlled selection, native keyboard/focus/disabled, markdown/top slots and explicit overrides; package/lock unchanged.
 - [x] Independent Spec and Standards source/integration reviews: zero actionable findings, including final browser harness/evidence.
 - [x] Local integrated package CI110/110; format/lint/types/build/Publint/ATTW pass (two existing ThemeProvider hook warnings, zero lint errors).
-- [ ] Fork remote build and changeset checks.
+- [x] Fork remote head d9d6c78f085bfb92d475d76bead2c73dbb428131: Build JS40186855402 PASS8m55s; changeset40186855341 PASS15s. Core110/110 tests, format/lint/types/build/Publint/ATTW pass in the integrated remote run.
 
 ## Checklist
 

@@ -32,3 +32,25 @@ evidence/option-cards/consumer-lock.json
 # Preserve exact OptionCards browser measurements.
 src/components/OptionCards/__tests__/results/browser/attempt-1.json
 src/components/OptionCards/__tests__/results/browser/final.json
+
+# Preserve exact first installed-chart comparison failure.
+evidence/charts-owned-source/browser-first.json
+
+# Preserve exact owned chart browser evidence, executed harness and lock.
+evidence/charts-owned-browser/*.json
+evidence/charts-owned-browser/*.mjs
+evidence/charts-owned-browser/*.tsx
+
+# Preserve final installed-chart reports, locks, fixtures and executed runner.
+evidence/charts-final-installed/*.json
+evidence/charts-final-installed/*.mjs
+evidence/charts-final-installed/*.mts
+evidence/charts-final-installed/*.cts
+
+# Preserve Worker2 exact failed chart measurements and executed diagnostics.
+src/components/Charts/BarChart/__tests__/results/browser/**
+
+# Preserve corrected measurement artifact proof and exact executed harness.
+evidence/charts-measurement/*.json
+evidence/charts-measurement/*.mjs
+evidence/charts-measurement/*.tsx

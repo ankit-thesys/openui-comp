@@ -1,0 +1,68 @@
+{
+  "status": "completed-with-inherited-instability",
+  "artifactRevision": "1d31a4b63ee66f03c21688d96cee28bcad8380ac",
+  "tarballSha256": "638a8336a60800ae40fa4e46a7130ca41141393382652dd5cf9e73626a8de806",
+  "tarballBytes": 1062926,
+  "groups": [
+    {
+      "report": "corrected-line.json",
+      "status": "passed",
+      "families": [
+        "line"
+      ],
+      "cases": 6,
+      "pairedObservations": 11664
+    },
+    {
+      "report": "horizontal-supported.json",
+      "status": "completed-with-unsupported",
+      "families": [
+        "horizontal"
+      ],
+      "cases": 6,
+      "pairedObservations": 10728
+    },
+    {
+      "report": "corrected-nine.json",
+      "status": "passed",
+      "families": [
+        "area",
+        "area-condensed",
+        "line-condensed",
+        "bar",
+        "bar-condensed",
+        "scatter",
+        "mini-area",
+        "mini-bar",
+        "mini-line"
+      ],
+      "cases": 6,
+      "pairedObservations": 62730
+    }
+  ],
+  "families": [
+    "line",
+    "horizontal",
+    "area",
+    "area-condensed",
+    "line-condensed",
+    "bar",
+    "bar-condensed",
+    "scatter",
+    "mini-area",
+    "mini-bar",
+    "mini-line"
+  ],
+  "supportedPairedObservations": 85122,
+  "sameInstalledManifestAndLock": true,
+  "allInstalledFilesMatchArchive": true,
+  "allConsumerBytesUnchanged": true,
+  "defaultHorizontalStringHeightFittingLegendPassed": false,
+  "inheritedInstabilityRecords": 6,
+  "strictFailureReports": [
+    "corrected-remaining.json",
+    "horizontal-height-diagnostic.json"
+  ],
+  "acceptanceLimitation": "Default string-height plus fitting legend remains baseline-confirmed unstable; no settled or frame parity is claimed for that combination, and the public prop remains preserved.",
+  "browserReleased": true
+}

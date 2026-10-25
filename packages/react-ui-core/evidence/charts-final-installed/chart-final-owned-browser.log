@@ -1,0 +1,36 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.hover: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('.openui-radial-chart-svg-wrapper path:not([fill="none"])').first()[22m
+[2m    - locator resolved to <path fill="#2196F3" d="M0,-56.25A56.25,56.25,0,1,1,0,56.25A56.25,56.25,0,1,1,0,-56.25M0,-30.125A30.125,30.125,0,1,0,0,30.125A30.125,30.125,0,1,0,0,-30.125Z"></path>[22m
+[2m  - attempting hover action[22m
+[2m    2 × waiting for element to be visible and stable[22m
+[2m      - element is visible and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <svg role="img" width="250" height="250" viewBox="0 0 250 250" aria-label="Radial chart">…</svg> intercepts pointer events[22m
+[2m    - retrying hover action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible and stable[22m
+[2m      - element is visible and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <svg role="img" width="250" height="250" viewBox="0 0 250 250" aria-label="Radial chart">…</svg> intercepts pointer events[22m
+[2m    - retrying hover action[22m
+[2m      - waiting 100ms[22m
+[2m    19 × waiting for element to be visible and stable[22m
+[2m       - element is visible and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <svg role="img" width="250" height="250" viewBox="0 0 250 250" aria-label="Radial chart">…</svg> intercepts pointer events[22m
+[2m     - retrying hover action[22m
+[2m       - waiting 500ms[22m
+
+    at /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/owned-charts.browser.mjs:493:55 {
+  name: 'TimeoutError'
+}
+
+Node.js v22.22.2

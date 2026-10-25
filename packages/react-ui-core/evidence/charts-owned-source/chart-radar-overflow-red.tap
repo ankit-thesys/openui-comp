@@ -1,0 +1,55 @@
+TAP version 13
+# Subtest: public Pie chart preserves streaming empty transitions, click rows, donut tracks and print JSON
+ok 1 - public Pie chart preserves streaming empty transitions, click rows, donut tracks and print JSON
+  ---
+  duration_ms: 1127.459458
+  type: 'test'
+  ...
+# Subtest: public Radial chart preserves semi-circular grid, click data, empty recovery and export shape
+ok 2 - public Radial chart preserves semi-circular grid, click data, empty recovery and export shape
+  ---
+  duration_ms: 11.598583
+  type: 'test'
+  ...
+# Subtest: public Radar chart preserves series polygons, dots, grid variants and empty streaming recovery
+not ok 3 - public Radar chart preserves series polygons, dots, grid variants and empty streaming recovery
+  ---
+  duration_ms: 11.874833
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:92:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'hidden'
+    - 'visible'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'visible'
+  actual: 'hidden'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:98:9)
+    runNextTicks (node:internal/process/task_queues:64:5)
+    process.processImmediate (node:internal/timers:452:9)
+    process.callbackTrampoline (node:internal/async_hooks:130:17)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: public Heatmap preserves missing cells, signed ramp, click identity and streaming row updates
+ok 4 - public Heatmap preserves missing cells, signed ramp, click identity and streaming row updates
+  ---
+  duration_ms: 16.757
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 3
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1325.351583

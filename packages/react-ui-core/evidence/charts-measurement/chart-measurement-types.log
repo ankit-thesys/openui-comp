@@ -1,0 +1,4 @@
+
+> @openuidev/react-ui-core@0.0.0-beta.0 typecheck /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core
+> tsc --noEmit
+

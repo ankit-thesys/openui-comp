@@ -1,0 +1,18 @@
+
+> @openuidev/react-ui-core@0.0.0-beta.0 typecheck /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core
+> tsc --noEmit
+
+src/components/Charts/hooks/cartesian/useCalendarHeatmapOrchestrator.ts(11,8): error TS2307: Cannot find module '../../CalendarHeatmap/parts/calendarMath' or its corresponding type declarations.
+src/components/Charts/hooks/cartesian/useCalendarHeatmapOrchestrator.ts(12,35): error TS2307: Cannot find module '../../CalendarHeatmap/parts/levelScale' or its corresponding type declarations.
+src/components/Charts/hooks/cartesian/useCalendarHeatmapOrchestrator.ts(16,8): error TS2307: Cannot find module '../../CalendarHeatmap/parts/separatorLayout' or its corresponding type declarations.
+src/components/Charts/hooks/cartesian/useCalendarHeatmapOrchestrator.ts(17,67): error TS2307: Cannot find module '../../CalendarHeatmap/types' or its corresponding type declarations.
+src/components/Charts/hooks/cartesian/useCalendarHeatmapOrchestrator.ts(187,23): error TS7006: Parameter 'cell' implicitly has an 'any' type.
+src/components/Charts/hooks/cartesian/useCalendarHeatmapOrchestrator.ts(270,52): error TS2339: Property 'date' does not exist on type 'CalendarLeveledCell'.
+src/components/Charts/hooks/cartesian/useCalendarHeatmapOrchestrator.ts(275,46): error TS2339: Property 'value' does not exist on type 'CalendarLeveledCell'.
+src/components/Charts/hooks/cartesian/useCalendarHeatmapOrchestrator.ts(275,65): error TS2339: Property 'date' does not exist on type 'CalendarLeveledCell'.
+src/components/Charts/hooks/cartesian/useCalendarHeatmapOrchestrator.ts(276,27): error TS2339: Property 'value' does not exist on type 'CalendarLeveledCell'.
+src/components/Charts/hooks/cartesian/useFunnelChartOrchestrator.ts(5,40): error TS2307: Cannot find module '../../FunnelChart/parts/funnelGeometry' or its corresponding type declarations.
+src/components/Charts/hooks/cartesian/useFunnelChartOrchestrator.ts(6,58): error TS2307: Cannot find module '../../FunnelChart/parts/funnelGeometry' or its corresponding type declarations.
+/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @openuidev/react-ui-core@0.0.0-beta.0 typecheck: `tsc --noEmit`
+Exit status 2

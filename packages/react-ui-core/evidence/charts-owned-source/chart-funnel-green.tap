@@ -1,0 +1,42 @@
+TAP version 13
+# Subtest: public Pie chart preserves streaming empty transitions, click rows, donut tracks and print JSON
+ok 1 - public Pie chart preserves streaming empty transitions, click rows, donut tracks and print JSON
+  ---
+  duration_ms: 1217.743541
+  type: 'test'
+  ...
+# Subtest: public Radial chart preserves semi-circular grid, click data, empty recovery and export shape
+ok 2 - public Radial chart preserves semi-circular grid, click data, empty recovery and export shape
+  ---
+  duration_ms: 11.361333
+  type: 'test'
+  ...
+# Subtest: public Radar chart preserves series polygons, dots, grid variants and empty streaming recovery
+ok 3 - public Radar chart preserves series polygons, dots, grid variants and empty streaming recovery
+  ---
+  duration_ms: 21.416291
+  type: 'test'
+  ...
+# Subtest: public Heatmap preserves missing cells, signed ramp, click identity and streaming row updates
+ok 4 - public Heatmap preserves missing cells, signed ramp, click identity and streaming row updates
+  ---
+  duration_ms: 20.447708
+  type: 'test'
+  ...
+# Subtest: public Funnel preserves layers, retention values, orientation and click identity during stream updates
+not ok 5 - public Funnel preserves layers, retention values, orientation and click identity during stream updates
+  ---
+  duration_ms: 30011.205708
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:136:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    locator.dispatchEvent: Timeout 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('path[fill="transparent"]').nth(1)[22m
+    
+  code: 'ERR_TEST_FAILURE'
+  name: 'TimeoutError'
+  stack: |-
+    TestContext.<anonymous> (/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:144:56)
+  ...

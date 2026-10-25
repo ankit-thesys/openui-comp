@@ -1,0 +1,161 @@
+TAP version 13
+# Subtest: area empty data preserves its public empty state, class hook and live empty updates
+ok 1 - area empty data preserves its public empty state, class hook and live empty updates
+  ---
+  duration_ms: 11.516209
+  type: 'test'
+  ...
+# Subtest: bar empty data preserves its public empty state, class hook and live empty updates
+ok 2 - bar empty data preserves its public empty state, class hook and live empty updates
+  ---
+  duration_ms: 11.106083
+  type: 'test'
+  ...
+# Subtest: bar condensed and horizontal wrappers retain the common hook-free empty boundary
+ok 3 - bar condensed and horizontal wrappers retain the common hook-free empty boundary
+  ---
+  duration_ms: 3.646625
+  type: 'test'
+  ...
+# Subtest: line empty data preserves its public empty state, class hook and live empty updates
+ok 4 - line empty data preserves its public empty state, class hook and live empty updates
+  ---
+  duration_ms: 11.899625
+  type: 'test'
+  ...
+# Subtest: line condensed wrapper preserves the same empty-state forwarding
+ok 5 - line condensed wrapper preserves the same empty-state forwarding
+  ---
+  duration_ms: 2.393458
+  type: 'test'
+  ...
+# Subtest: mini area initial output keeps minimum square and single-value marker with palette precedence
+ok 6 - mini area initial output keeps minimum square and single-value marker with palette precedence
+  ---
+  duration_ms: 9.439167
+  type: 'test'
+  ...
+# Subtest: mini bar initial output retains signed nonzero bars and explicit color
+ok 7 - mini bar initial output retains signed nonzero bars and explicit color
+  ---
+  duration_ms: 53.757875
+  type: 'test'
+  ...
+# Subtest: mini line initial output keeps a single-point marker, custom stroke and click hook
+ok 8 - mini line initial output keeps a single-point marker, custom stroke and click hook
+  ---
+  duration_ms: 25.886292
+  type: 'test'
+  ...
+# Subtest: scatter initial empty markup preserves message and consumer class
+ok 9 - scatter initial empty markup preserves message and consumer class
+  ---
+  duration_ms: 5.8775
+  type: 'test'
+  ...
+# Subtest: scatter dataset names preserve input ordering and handle missing data
+ok 10 - scatter dataset names preserve input ordering and handle missing data
+  ---
+  duration_ms: 1.337791
+  type: 'test'
+  ...
+# Subtest: scatter flattening preserves metadata and existing palette/coercion behavior
+ok 11 - scatter flattening preserves metadata and existing palette/coercion behavior
+  ---
+  duration_ms: 0.136792
+  type: 'test'
+  ...
+# Subtest: scatter domain and tooltip formatting retain existing edge cases
+ok 12 - scatter domain and tooltip formatting retain existing edge cases
+  ---
+  duration_ms: 2.343125
+  type: 'test'
+  ...
+# Subtest: public standalone stacked legend preserves rows, callbacks, formatting and show-more updates
+ok 13 - public standalone stacked legend preserves rows, callbacks, formatting and show-more updates
+  ---
+  duration_ms: 28.178334
+  type: 'test'
+  ...
+# Subtest: public print context stays distinct from legend state and absent-provider fallback
+ok 14 - public print context stays distinct from legend state and absent-provider fallback
+  ---
+  duration_ms: 2.715417
+  type: 'test'
+  ...
+# Subtest: public Pie chart preserves streaming empty transitions, click rows, donut tracks and print JSON
+ok 15 - public Pie chart preserves streaming empty transitions, click rows, donut tracks and print JSON
+  ---
+  duration_ms: 1984.67825
+  type: 'test'
+  ...
+# Subtest: public Radial chart preserves semi-circular grid, click data, empty recovery and export shape
+ok 16 - public Radial chart preserves semi-circular grid, click data, empty recovery and export shape
+  ---
+  duration_ms: 18.415125
+  type: 'test'
+  ...
+# Subtest: public Radar chart preserves series polygons, dots, grid variants and empty streaming recovery
+ok 17 - public Radar chart preserves series polygons, dots, grid variants and empty streaming recovery
+  ---
+  duration_ms: 37.962458
+  type: 'test'
+  ...
+# Subtest: public Heatmap preserves missing cells, signed ramp, click identity and streaming row updates
+ok 18 - public Heatmap preserves missing cells, signed ramp, click identity and streaming row updates
+  ---
+  duration_ms: 45.622667
+  type: 'test'
+  ...
+# Subtest: public Funnel preserves layers, retention values, orientation and click identity during stream updates
+ok 19 - public Funnel preserves layers, retention values, orientation and click identity during stream updates
+  ---
+  duration_ms: 34.719625
+  type: 'test'
+  ...
+# Subtest: public Calendar heatmap sums duplicate days, preserves level-hover dimming and switches legend variants
+ok 20 - public Calendar heatmap sums duplicate days, preserves level-hover dimming and switches legend variants
+  ---
+  duration_ms: 329.829542
+  type: 'test'
+  ...
+# Subtest: public SegmentedBar preserves shares, hover feedback, empty recovery and SingleStackedBar alias
+ok 21 - public SegmentedBar preserves shares, hover feedback, empty recovery and SingleStackedBar alias
+  ---
+  duration_ms: 295.238292
+  type: 'test'
+  ...
+# Subtest: public detached legend toggles the publishing chart, prevents hiding every slice and removes entries on unmount
+not ok 22 - public detached legend toggles the publishing chart, prevents hiding every slice and removes entries on unmount
+  ---
+  duration_ms: 51.136792
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/OwnedCharts.test.mjs:358:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + '["Beta"]'
+    - '["0"]'
+         ^
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '["0"]'
+  actual: '["Beta"]'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/OwnedCharts.test.mjs:378:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 21
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3488.583208
