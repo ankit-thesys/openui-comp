@@ -1,0 +1,4 @@
+
+> @openuidev/kits@0.0.0-beta.0 typecheck /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits
+> tsc --noEmit
+

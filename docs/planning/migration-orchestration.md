@@ -1,3 +1,32 @@
+# CURRENT — model-only correction integrated/refrozen; verifier still owns Chrome — 2026-10-25
+
+W2source1a41c2c33 integrated9ee057613: ordinaryborderColor:currentColor inexisting
+modelhover/openrule. W2harnessaeacb5bde integratedaae711ad3: strictfocusedborder
+regression includesopenTrigger, nestedstate, exposed1pxsolidborder andwinning
+consumercolor; pointersequencingfixed byW2reviews. No sharedSelect/legacy/API/
+token/runtimepatch changes. Old42/330failedcomparisons remain preserved.
+
+NEWfrozenproduct9ee057613, kitsarchive
+/private/tmp/chat16-model-border-artifacts/openuidev-kits-0.0.0-beta.0.tgz
+237948bytes SHA256
+9fc227a88cbf6d949247aee90e729efa58d669ba738674880396903db98785bb.
+Consumer /private/tmp/chat16-model-border-consumer. Corearchivea5d002... unchanged
+at /private/tmp/chat16-final-artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz.
+Only4modelstyleJS/sourceMapfiles differ frommetadata-corrected7adarchive; all
+other562files identical. All566kits+2202coreinstalledfiles matcharchives.
+Manifest/lock anddelta proof underkits/evidence/chat-library/model-border-correction.
+Build/types pass; combinedpackageCI/currentreviews running.
+
+Verifier currentlyownsChrome; W1has not launchedbrowser. Awaitexplicitrelease,
+then rootcoordinates KIT_BORDER_ONLY=1 affectedmatrix onTHIS artifact, preserves
+strictred evidence and validatesopen/nested/exposed/overriddenborderstates.
+Verifier should independentlyvalidatecorrectionafteraffectedrun. No needrepeat
+unaffectedcore/chart/librarymatrices solelyformodelCSSdelta. No review-readyPR
+untilcorrectionverified; no #17/perf/memory/SSRclaim, merge/release/closure/main/
+upstream/legacy/preview edits. Untrackedcrates preserved. Rootrelaysnewartifact.
+
+---
+
 # CURRENT — W2 diagnostic/diagnosis integrated; verifier owns browser — 2026-10-25
 
 Committed W2 harness fccf63f39/0c3d59271 and evidence35eaa68f3/diagnosisb9db53373

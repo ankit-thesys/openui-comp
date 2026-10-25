@@ -1,0 +1,24 @@
+{
+  "source": "9ee057613",
+  "oldArchive": "/private/tmp/chat16-zod-metadata-artifacts/openuidev-kits-0.0.0-beta.0.tgz",
+  "oldSHA256": "7ad36554f9a619b6ea0da7feb9280570078e2451051e8ac3d5d09abb30225880",
+  "newArchive": "/private/tmp/chat16-model-border-artifacts/openuidev-kits-0.0.0-beta.0.tgz",
+  "newSHA256": "9fc227a88cbf6d949247aee90e729efa58d669ba738674880396903db98785bb",
+  "newBytes": 237948,
+  "totalFiles": 566,
+  "changedFiles": [
+    "package/dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.cjs",
+    "package/dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.cjs.map",
+    "package/dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.mjs.map",
+    "package/dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.mjs"
+  ],
+  "allOtherFilesByteIdentical": true,
+  "sourceFull": "9ee0576133fbb1c444d03c169a81893ebf7631fd",
+  "consumer": "/private/tmp/chat16-model-border-consumer",
+  "installedFilesMatchArchives": {
+    "kits": 566,
+    "react-ui-core": 2202
+  },
+  "manifestSHA256": "de6e40f18f82428471b498db2379bee0979e827eb21be80ccc14856f8b049dfd",
+  "lockSHA256": "38d313200541351671ed0fb96934963cfc567d89657038185e560cdf19187b2a"
+}
