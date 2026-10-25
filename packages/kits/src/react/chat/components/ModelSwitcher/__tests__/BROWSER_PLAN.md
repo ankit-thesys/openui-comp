@@ -78,3 +78,6 @@ differences require explicit triage, not broad ignored-property filters.
 Runner JavaScript syntax, fixture TSX transformation and the independent legacy
 Sass compilation pass. Baseline compilation produces 48,362 bytes from eight
 SCSS inputs. These are preparation checks, not package or browser results.
+Formatting checks pass. Independent Spec and Standards reviews found no
+actionable scoped harness findings; runtime locator/timing behavior still
+requires the queued Chrome execution.

@@ -383,9 +383,16 @@ try {
             if (theme.startsWith("custom"))
               await expectStyle(page, selectors.trigger, "backgroundColor", "rgb(190, 210, 230)");
             await page.mouse.move(0, 0);
-            await page.locator(selectors.defaultItem).focus();
+            await page.locator("#before-item").focus();
+            await page.keyboard.press("Tab");
+            assert(
+              await page
+                .locator(selectors.defaultItem)
+                .evaluate((node) => node === document.activeElement),
+              "keyboard navigation focuses the enabled follow-up",
+            );
           }
-          await compare("follow-up-focus");
+          await compare("follow-up-keyboard-focus");
           for (const page of pages) {
             await page.locator(selectors.defaultItem).hover();
           }
