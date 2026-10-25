@@ -1,3 +1,4 @@
+// JavaScript/Goober pruning only; vendor CSS delivery is tested in the Vite/Chrome consumer.
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
 import path from "node:path";
@@ -56,7 +57,7 @@ for (const [name, excluded] of Object.entries({
       metafile: true,
       format: "esm",
       platform: "browser",
-      external: ["react", "react-dom", "react/jsx-runtime"],
+      external: ["*.css", "react", "react-dom", "react/jsx-runtime"],
     });
     const inputs = Object.values(result.metafile.outputs).flatMap((o) =>
       Object.entries(o.inputs)

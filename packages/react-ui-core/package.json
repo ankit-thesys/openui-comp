@@ -68,7 +68,8 @@
     "remark-gfm": "^4.0.1",
     "unist-util-visit": "^5.1.0",
     "rehype-katex": "^7.0.1",
-    "remark-math": "^6.0.0"
+    "remark-math": "^6.0.0",
+    "katex": "^0.16.0"
   },
   "devDependencies": {
     "@types/node": "catalog:",
@@ -80,7 +81,9 @@
     "esbuild": "^0.25.12",
     "@types/lodash-es": "^4.17.12",
     "zod": "catalog:",
-    "@types/react-syntax-highlighter": "^15.5.13"
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "vite": "6.4.2",
+    "playwright": "1.59.1"
   },
   "repository": {
     "type": "git",

@@ -1,3 +1,5 @@
+> Historical investigation. The user subsequently accepted this stable candidate and its disclosed limits. Current normative decision: docs/specs/react-ui-extraction-styling.md; integrated results: evidence/katex-integration. The original investigation below retains its at-the-time status and scope.
+
 # Stable vendor CSS delivery — actual-component prototype, decision OPEN
 
 User chose **investigate a stable standard delivery path**. This authorizes isolated validation, not adoption of vendor CSS or a styling-contract exception. Production stays at88fdccf94; old react-ui and both previews are untouched. No experimental CSS plugin, custom injector/parser/cache, URL rewrite or font-copy mechanism is used in this candidate.

@@ -48,7 +48,13 @@ A top-level provider still targets `body` by default. Nested providers automatic
 
 Component styling uses unmodified Goober through public module-scope `css` calls and ordinary React elements. A referenced component's styles register when its module evaluates, even before it renders. The user accepted this eager cost for the bounded first migration slice. The full-library prototype added about 225–235 ms of median local cold startup; that measurement is not a production-device guarantee. Import pruning and rendered automatic styling must both pass package-consumer checks.
 
-Browser users need no component CSS import, setup command or styling build plugin. Existing customization uses component props, `className`, `style` and theme tokens where supported. Intentional overrides may require scoped important CSS or per-utility important modifiers (Tailwind v3 `!bg-red-500`; Tailwind v4 `bg-red-500!`). Ordinary utility classes are not guaranteed to beat component defaults. Host preflight remains enabled.
+Owned Goober component styles need no CSS import, setup command or styling build plugin. Existing customization uses component props, `className`, `style` and theme tokens where supported. Intentional overrides may require scoped important CSS or per-utility important modifiers (Tailwind v3 `!bg-red-500`; Tailwind v4 `bg-red-500!`). Ordinary utility classes are not guaranteed to beat component defaults. Host preflight remains enabled.
+
+### Math vendor styles
+
+TextContentWrapper keeps its existing lazy math renderer and automatically imports official KaTeX CSS/fonts through a private module. This is the accepted exception to Goober-owned component styles; legacy SCSS is not used. Ordinary component imports work without additional styling setup in the validated default Vite6.4.2 production build. Other bundlers need validation; bare esbuild requires font asset loaders and application CSS linking.
+
+Vite may emit about1.07MB of unused font assets even when math is unused. This accepted output cost does not mean the browser downloads them: Button-only pages load no math CSS/fonts, and unused math JavaScript/CSS are pruned. The wrapper loads its math module whenever mounted, including non-math text. See the accepted [styling spec addendum](../../docs/specs/react-ui-extraction-styling.md).
 
 React and ReactDOM 19 are the peer boundary. Chrome with plain CSS and Tailwind v3/v4 is the current browser target. **SSR, hydration, streaming SSR and concurrent server style isolation are deferred.** Do not infer server support from Node import or declaration checks.
 

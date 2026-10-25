@@ -1,9 +1,7 @@
-# TextContentWrapper extraction checkpoint
+# TextContentWrapper integrated browser test
 
-Public-root React DOM test fails before export, then verifies existing header composition, GFM table, literal single-dollar handling, asynchronous KaTeX markup and rerender cleanup. DOMParser is the real JSDOM API, not a mock. Source types and declaration build pass.
+The agreed public seam is a normally installed package root in a real Vite/Chrome consumer. The old package fails the automatic math-style assertion; the accepted lazy vendor-CSS module makes it pass. Existing header/GFM/literal-dollar/variant/update checks move from JSDOM into that same browser test. It verifies actual computed KaTeX typography, loaded font faces, successful CSS/font requests, one stylesheet, updates and unmounting. No consumer CSS import or setup/plugin is supplied. No mocked renderer, fonts, observers or geometry.
 
-Component logic and existing plugin configuration are preserved. MarkDownRenderer supplies the shared rich-text rules formerly duplicated in the wrapper SCSS; wrapper-specific list spacing and dark-mode rules use stock Goober. No legacy stylesheet is imported.
+Vite6.4.2 and Playwright1.59.1 are development test tools. Chrome is the supported browser and CI installs it with Playwright. Tests can use CORE_CONSUMER for a separately frozen normal install, otherwise they pack/install the package into a temporary consumer. Native imports/types and JavaScript pruning remain separate checks. CSS is external only in explicitly scoped esbuild JS/Goober checks; real Vite/browser tests own vendor asset delivery.
 
-## Unresolved acceptance requirement
-
-The inherited dynamic rehype-katex import generates math markup but does not deliver KaTeX CSS/fonts. This test proves markup only. Automatic math stylesheet delivery, real browser parity and final installed-package validation remain pending. A separate temporary official-tooling asset prototype is not part of this implementation and has not been accepted. No custom injector, URL rewriting, plugin patch or new styling API is introduced.
+The accepted vendor CSS/font exception and limits are normative in docs/specs/react-ui-extraction-styling.md: Vite zero-additional-styling-setup, about1.07MB emitted unused fonts but zero unused network downloads, bare-esbuild asset/CSS setup, SSR deferred. No custom patch/injector or experimental build plugin is used.

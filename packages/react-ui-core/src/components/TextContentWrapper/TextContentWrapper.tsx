@@ -41,7 +41,7 @@ export const TextContentWrapper = memo((props: TextContentWrapperProps) => {
 
   useEffect(() => {
     let cancelled = false;
-    import("rehype-katex").then((m) => {
+    import("./mathRenderer").then((m) => {
       if (!cancelled) setRehypeKatex(() => m.default as RehypePlugin);
     });
     return () => {

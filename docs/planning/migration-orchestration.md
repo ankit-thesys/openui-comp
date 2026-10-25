@@ -1,3 +1,13 @@
+# CURRENT — USER ACCEPTED stable vendor CSS; production integration handoff preparing — 2026-10-25
+
+The math DECISION GATE IS RESOLVED. User explicitly accepted the exact stable lazy vendor CSS candidate, default Vite6.4.2 automatic styling contract, about1MB unused emitted fonts with zero unused downloads and bare-esbuild asset/CSS setup. Normative accepted exception: `docs/specs/react-ui-extraction-styling.md`. Other owned SCSS remains one-to-one stock Goober. Experimental plugin/custom injector/parser/pruner/CDN remain unadopted.
+
+Production integration retargets TextContentWrapper's lazy import to tiny private mathRenderer (official CSS import + rehype plugin re-export), adds direct aligned katex dependency; tsdown config unchanged. Public real normal-packed Vite/Chrome TDD red on old88fd typography then green; all previous wrapper behavior assertions preserved in executable browser test. Build/types and26 JS/Goober pruning checks pass; CSS externalization there is explicitly JS-only, not vendor delivery validation. Both independent local review axes zero actionable findings. New stable Vite/Playwright DEV tools and CI Chrome install support browser tests. Full CI/frozen artifact/independent Worker2 validation still pending.
+
+Worker1 RETAINS browser for full package CI (which includes a Chrome test). Worker2 may review committed source after commit, but NO Chrome until explicit release. Root should use this section, not historical pending-decision/open-PR blockers below. Once integrated checks and independent review pass, user authorized stacked DRAFT PR on fork targeting codex/react-ui-core-layout (#33), attach it and fix CI; no merge/close/release. Slice13 remains undispatched. Old react-ui, previews and crates untouched.
+
+---
+
 # CURRENT — stable math delivery investigation complete; decision still OPEN — 2026-10-25
 
 User chose investigate a stable standard path, not adopt an exception. Isolated actual-component candidate now builds with UNCHANGED tsdown0.21.10 config: a private lazy module imports unmodified katex/dist/katex.min.css and re-exports rehype-katex; wrapper lazy import targets it; direct katex^0.16.0 dependency aligns CSS/renderer0.16.47. No experimental plugin, custom injector/parser/URL rewrite/font copy. PRODUCTION SOURCE IS UNCHANGED.

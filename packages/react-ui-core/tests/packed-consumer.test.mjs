@@ -1,3 +1,4 @@
+// JavaScript/Goober pruning only; vendor CSS delivery is tested in the Vite/Chrome consumer.
 import { build } from "esbuild";
 import { JSDOM } from "jsdom";
 import assert from "node:assert/strict";
@@ -109,6 +110,7 @@ void [ThemeProvider,useTheme,useSystemThemeMode,useThemeModePreference,THEME_MOD
         absWorkingDir: consumer,
         entryPoints: ["unused.mjs"],
         bundle: true,
+        external: ["*.css"],
         platform: "browser",
         format: "esm",
         minify: true,
@@ -135,6 +137,7 @@ window.mountButton=()=>{const root=createRoot(document.getElementById('app'));fl
         absWorkingDir: consumer,
         entryPoints: ["button.mjs"],
         bundle: true,
+        external: ["*.css"],
         platform: "browser",
         format: "iife",
         minify: true,
@@ -191,6 +194,7 @@ window.unmountAll=()=>flushSync(()=>root.unmount());`,
         absWorkingDir: consumer,
         entryPoints: ["themed-controls.mjs"],
         bundle: true,
+        external: ["*.css"],
         platform: "browser",
         format: "iife",
         minify: true,
