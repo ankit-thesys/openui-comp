@@ -12,6 +12,7 @@ assert.equal(process.env.BETA17_QUIET_WINDOW_RELEASED,'yes');
 assert(path.isAbsolute(manifestPath)&&path.isAbsolute(out));
 const worker=path.resolve(process.env.BETA17_PERFORMANCE_ROOT??'/Users/ankitdas/.codex/worktrees/63b2/openui/validation/beta17/performance');
 const {installedInventory}=await import(pathToFileURL(path.join(worker,'provenance.mjs')));
+const {browserLaunchOptions}=await import(pathToFileURL(path.join(worker,'browser-config.mjs')));
 const bytes=await fs.readFile(manifestPath),m=JSON.parse(bytes);
 const hash=b=>createHash('sha256').update(b).digest('hex');
 assert.equal(m.schemaVersion,1);assert(path.isAbsolute(m.consumer));assert(m.productCommit);
@@ -32,6 +33,7 @@ for(const workload of ['chat','dashboard'])for(const load of ['paced','stress'])
 }
 for(const key of ['ready','mounted','mount','unmount','start','cancel','status','message','input','theme'])assert(m.selectors[key]);
 const before=await inventory(),installedBefore=await installedInventory(m.consumer);
+await browserLaunchOptions(m);
 const require=createRequire(path.join(m.consumer,'package.json'));
 assert(path.isAbsolute(process.env.BETA17_PLAYWRIGHT_MODULE));assert(require(process.env.BETA17_PLAYWRIGHT_MODULE).chromium);
 assert(import.meta.dirname);await fs.mkdir(out); // Existing evidence must never be overwritten.
@@ -59,7 +61,8 @@ for(const run of report.runs){
  }
 }
 const after=await inventory(),installedAfter=await installedInventory(m.consumer);
+await browserLaunchOptions(m);
 assert.deepEqual(after,before);assert.deepEqual(installedAfter,installedBefore);
-const result={kind:'complete-readiness-only',status:'pass',manifestSha256:hash(bytes),runtimeModuleCount:m.runtimeModules.length,inputCount:Object.keys(before).length,installedCount:Object.keys(installedBefore).length,browserCells:8,inventory:{before,after},installed:{before:installedBefore,after:installedAfter},node:process.version};
+const result={kind:'complete-readiness-only',status:'pass',browser:m.browser,manifestSha256:hash(bytes),runtimeModuleCount:m.runtimeModules.length,inputCount:Object.keys(before).length,installedCount:Object.keys(installedBefore).length,browserCells:8,inventory:{before,after},installed:{before:installedBefore,after:installedAfter},node:process.version};
 await fs.writeFile(path.join(out,'readiness.json'),JSON.stringify(result,null,2)+'\n');
 console.log(JSON.stringify({status:'pass',manifestSha256:result.manifestSha256,browserCells:8,inputs:result.inputCount,runtimeModules:m.runtimeModules.length}));

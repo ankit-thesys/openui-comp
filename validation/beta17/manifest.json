@@ -1,5 +1,5 @@
 {
-  "status": "v4 complete readiness and two-cell cleanup transition pass; released for fresh80 plus soaks, no performance acceptance",
+  "status": "v5 pinnedbrowser complete readiness passes; released freshformal80+bothsoaks, no performance acceptance",
   "productSource": "9ee0576133fbb1c444d03c169a81893ebf7631fd",
   "reviewedPRHead": "89cdd43d8d43aae8ac3265606476d017e6392a7f",
   "protocolCommit": "a67bd0695f37ff0d6800de564562c152807f4e4e",
@@ -37,10 +37,16 @@
     "legacySourceModified": false
   },
   "consumer": "/private/tmp/beta17-consumer",
-  "handoff": "/private/tmp/beta17-consumer/handoff-v4.json",
-  "handoffSha256": "7de0f135e2d41b5f715c1c00e775fa507291baf1c5df41f3b36bc2342b7c1581",
+  "handoff": "/private/tmp/beta17-consumer/handoff-v5.json",
+  "handoffSha256": "58f29005e395f360e521bc8f01992d5dc5ef2c8989861010b37802e5ebdda856",
   "installedProof": "/private/tmp/beta17-consumer/installed-proof.json",
-  "browser": "Chrome156.0.8078.47",
+  "browser": {
+    "name": "chrome-for-testing",
+    "version": "156.0.8078.47",
+    "provenanceCommit": "819385b55",
+    "bundleFiles": 340,
+    "bundleSymlinks": 5
+  },
   "node": "22.22.2",
-  "contractVersion": 4
+  "contractVersion": 5
 }

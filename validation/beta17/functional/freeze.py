@@ -24,7 +24,7 @@ inputs={}
 for root in [consumer/'replay-apps',consumer/'replay-dist',repo/'validation/beta17/fixtures']:
     for p in sorted(root.rglob('*')):
         if p.is_file():inputs[str(p)]=hashlib.sha256(p.read_bytes()).hexdigest()
-for p in [consumer/'package.json',consumer/'package-lock.json',consumer/'handoff.json',consumer/'handoff-v4.json',*(Path(__file__).resolve().parent.glob('*.mjs')),Path(__file__).resolve()]:
+for p in [consumer/'package.json',consumer/'package-lock.json',consumer/'handoff.json',consumer/'handoff-v5.json',*(Path(__file__).resolve().parent.glob('*.mjs')),Path(__file__).resolve()]:
     inputs[str(p)]=hashlib.sha256(p.read_bytes()).hexdigest()
 result={'status':'bytes verified; functional acceptance is separate','environment':{'node':subprocess.check_output(['node','--version'],text=True).strip(),'platform':platform.platform()},'packages':proof,'inputs':inputs}
 (consumer/'installed-proof.json').write_text(json.dumps(result,indent=2)+'\n')

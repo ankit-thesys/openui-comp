@@ -1,16 +1,15 @@
 # Worker1 → Worker2 fixture contract
 
-Status: V4 RELEASED FOR A FRESH FORMAL RUN.
-Complete readiness passes8 browsercells/10516inputs/2128declared modules.
-Bounded transition passes: opened4, closed4, nextCellReached=true; frozen input
-and installed inventories unchanged after it. W1 browser CLOSED.
-Keep server48419 unchanged/live4197. V3's20 samples are interrupted evidence,
-excluded from fresh80 measurements and both soaks. No performance verdict yet.
+Status: V5 RELEASED FOR FRESH FORMAL80 AND BOTH SOAKS.
+Complete pinned-browser readiness passes8cells/10866inputs/2128declared modules
+and whole-bundle files/symlinks before+after. Both arms use one frozen official
+Chrome for Testing156.0.8078.47. W1 browser CLOSED; server48419 live/unchanged4197.
+All diagnostic and prior incomplete samples remain excluded. No verdict yet.
 
 Consumer: `/private/tmp/beta17-consumer` (standalone npm installation).
-Manifest: `/private/tmp/beta17-consumer/handoff-v4.json`.
-SHA256: `7de0f135e2d41b5f715c1c00e775fa507291baf1c5df41f3b36bc2342b7c1581`.
-Proof: `/private/tmp/beta17-consumer/installed-proof.json` (v4).
+Manifest: `/private/tmp/beta17-consumer/handoff-v5.json`.
+SHA256: `58f29005e395f360e521bc8f01992d5dc5ef2c8989861010b37802e5ebdda856`.
+Proof: `/private/tmp/beta17-consumer/installed-proof.json` (v5).
 Fixture server: `BETA17_DIST=/private/tmp/beta17-consumer/replay-dist node validation/beta17/fixtures/server.mjs`.
 Origin: `http://127.0.0.1:4197`.
 Worker1 owns server start/stop and the first functional browser window.
@@ -116,3 +115,29 @@ Both review axes report no blockers. Exact scripts, raw results and interrupted
 V3 evidence are retained under functional/evidence/cleanup-contract-v4. The
 unchanged48 functional matrix was not repeated. Root may now restart a FRESH80
 benchmark followed by both ten-minute soaks; V3's20 samples cannot be reused.
+
+## V5 pinned browser environment — verified/released
+
+W2 commit819385b55 validates isolated official Chrome for Testing156.0.8078.47,
+mac-arm64, via standard Playwright executablePath/headless launch and context
+then browser closure. System Chrome/updater/settings are unchanged. The browser
+ZIP is retained in /private/tmp/beta17-cft; the exact official source URL,
+measured archive/executable/metadata hashes, all340regularfilehashes and5confined
+symlink targets are frozen. Hashes are measured, not vendor-published checksums.
+V5 freezes the complete browser bundle, rawZIP, official metadata snapshot,
+provenance/inventory/archiveproof and reviewed browser-config/browser/run code.
+
+Only previously frozen inputs changed: W2 browser.mjs/run.mjs and W1 readiness
+(to invoke the actual whole-bundle guard before+after). Product archives,
+installed modules, client/server, payloads, schedules and thresholds stay fixed.
+Complete readiness passes10866hashes and8actualW2preflightcells with identical
+binary/version both arms, painted bars, live input, cancellation/CDP/RSS and
+unchanged before/after inputs/installed maps. Both reviews no blockers.
+
+W2's full80diagnostic/fourcell/eightclean-shutdown proof,8preflight/34tests and
+source/browser identity remain READINESS ONLY. Exact guarded diagnostic and raw
+provenance are retained in functional/evidence/browser-contract-v5, linked to
+W2's committed evidence. Prior partialattempts remain preserved/excluded. The
+old48functional matrix stays labeled systemChrome156; it was not relabeled CfT
+or unnecessarily repeated. Root may now start freshformal80 and both10minsoaks
+onV5. No diagnostic/partial sample reuse and no performance acceptance yet.

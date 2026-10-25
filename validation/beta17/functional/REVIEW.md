@@ -50,3 +50,12 @@ handoff. It uses actual W2 APIs, awaits every cleanup result, reaches a new
 workload cell and records correctness-only outcomes. Readiness passes8cells,
 transition passes4opened/4closed and post-input/installed maps are unchanged.
 V3's20 interrupted samples remain excluded. No performance acceptance follows.
+
+## V5 pinned-browser review
+
+Both existing axes found no blocker in the narrowly allowed operator input
+changes, complete bundle/source-chain freeze and actual launch guard before+
+after readiness. Final recorded result passes8browsercells/10866inputs. No
+product/replay/threshold changes. W2 lifecycle80diagnostic/8shutdowns/8preflight/
+34tests remains readiness-only; original48matrix retains its systemChrome label.
+Fresh formal benchmark and both memory soaks remain required for a verdict.

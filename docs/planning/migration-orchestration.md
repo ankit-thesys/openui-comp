@@ -1,3 +1,25 @@
+# CURRENT — #17 V5 PINNED-BROWSER readiness PASS, RELEASED to W2
+
+Use /private/tmp/beta17-consumer/handoff-v5.json SHA256
+58f29005e395f360e521bc8f01992d5dc5ef2c8989861010b37802e5ebdda856.
+W2reviewed819385b55 uses officialisolatedCfT156.0.8078.47 via stockPlaywright
+executablePath; whole340file/5linkbundle, ZIP, metadata and provenance guarded.
+No installedapp/updater/settings/product/legacy/preview changes.
+
+W2's full80/fourcell/eightclean-shutdown diagnostic+8preflight/34tests are
+READINESS ONLY, preserved under functional/evidence/browser-contract-v5.
+V5 complete provenance/readiness passes8actualbrowsercells/10866inputhashes/
+2128declaredmodules with before+after bundle+input+installed identity checks.
+Only oldinputdeltas reviewedW2browser/run and W1readiness guard invocation.
+Bothreviewaxes no blockers. Product/replay/thresholds unchanged. Earlier48
+functional evidence remains systemChrome-labeled; no redundantmatrix rerun.
+
+W1browser CLOSED; unchangedserver48419 live4197. Root may now start FRESHformal
+80 and both10minsoaks onV5. All diagnostic/partialobservations excluded. No
+performance/memory verdict yet, no merge/release/publication/issueclosure.
+
+---
+
 # CURRENT — #17 V4 readiness+cleanup transition PASS, RELEASED to W2
 
 Use /private/tmp/beta17-consumer/handoff-v4.json SHA256

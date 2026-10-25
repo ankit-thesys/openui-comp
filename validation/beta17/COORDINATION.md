@@ -1,9 +1,11 @@
-# V4 readiness coordination — complete
+# V5 pinned-browser readiness — complete
 
-Use /private/tmp/beta17-consumer/handoff-v4.json SHA256
-7de0f135e2d41b5f715c1c00e775fa507291baf1c5df41f3b36bc2342b7c1581.
-Only existingV3input change is reviewed W2browser cleanup SHA331708aff3da94f867e2798cb87fb4a577ee14a815616a378cc2796debe242b7.
-Complete readiness8cells/10516inputs passes. Bounded two-cell smoke4opened/
-4closed/nextcell reached passes; after-input+installed inventories unchanged.
-Both reviews no blockers. W1browserclosed, server48419 remains live/unchanged.
-Root may dispatch fresh80 plus bothsoaks; no prior20sample reuse. No verdict yet.
+Use /private/tmp/beta17-consumer/handoff-v5.json SHA256
+58f29005e395f360e521bc8f01992d5dc5ef2c8989861010b37802e5ebdda856.
+Actual browser is frozen official Chrome for Testing156.0.8078.47 mac-arm64;
+all340files/5links/archive/metadata/provenance are guarded. W2delta819385b55;
+complete W1readiness passes8cells/10866inputs/2128declaredmodules, with bundle,
+input and installed-file checks before+after. Both review axes no blockers.
+W1 browser CLOSED, unchangedserver48419 live4197. Root may now dispatch FRESH80
+and both10minute soaks. W2's80diagnostic/eightshutdowns and allpartialattempts
+remain excluded from acceptance. No product/replay/threshold change or verdict.
