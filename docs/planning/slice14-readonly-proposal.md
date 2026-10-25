@@ -33,11 +33,15 @@ Charts use both a private media-query usePrintContext hook and a distinct React 
 
 | Batch | Owner | Files/responsibility | Depends on |
 | --- | --- | --- | --- |
-| Foundation | Worker1 | Charts/types, utils, hooks, shared/, shared chart styles, required PrintContext, root exports/deps/lock | Dispatch after PR35 checkpoint; current core theme/controls/layout |
+| Shared type bootstrap | Worker1 | Charts/types and required existing theme type dependencies only | Explicit dispatch after PR35 CI checkpoint |
+| Family prerequisites | Worker2 | BarChart/types.ts, BarChart/parts/horizontalBarGeometry.ts, ScatterChart/types.ts; existing owned tests as relevant | Committed shared types; not the full foundation |
+| Foundation | Worker1 | Charts/utils, hooks, shared/, shared chart styles, required PrintContext, root exports/deps/lock | Committed shared types AND Worker2 family prerequisites |
 | Cartesian + mini | Worker2 | AreaChart/, LineChart/, BarChart/, ScatterChart/, MiniAreaChart/, MiniBarChart/, MiniLineChart/ and their local tests/styles | Committed foundation; no edits to shared hooks/layout |
 | Polar | Worker1 | PieChart/, RadialChart/, RadarChart/ and local tests/styles | Committed foundation |
 | Remaining families | Worker1 after polar, or bounded reassignment by root | HeatmapChart/, FunnelChart/, CalendarHeatmap/, SegmentedBar/ and local tests/styles | Committed foundation; explicit owner before edits |
 | Integration | Worker1 | Charts barrel/root exports, package metadata, artifact freezing, combined pruning/type/build checks | All committed family batches |
+
+The prerequisite split is necessary: useHorizontalBarChartOrchestrator directly imports BarChart/parts/horizontalBarGeometry and BarChart/types, while useScatterChartOrchestrator imports ScatterChart/types. Bar geometry and Bar types in turn import shared Charts/types. Therefore the dependency order is **Worker1 shared types → Worker2 family prerequisite files → Worker1 remaining foundation → dependent family implementation**. Do not declare the foundation buildable before those prerequisite commits, temporarily import legacy files, duplicate geometry or add a custom resolver. Worker2 retains ownership of those family paths throughout.
 
 Both workers are not alone in the repository. Integrate committed batches only, preserve other edits and never modify the other owner's paths concurrently. Request a bounded shared change from its owner rather than adding a local patch. One shared implementation, no public Carousel substitution or custom runtime styling machinery.
 
@@ -51,7 +55,7 @@ Both workers are not alone in the repository. Integrate committed batches only, 
 
 ## Baseline evidence and reserved work
 
-Issues18/24 and `validation/friend-chart-baseline/` belong to the external contributor. Inspect their committed reference evidence read-only; do not edit it or count marked-untested scenarios as passing. Issue24 explicitly calls out missing legend toggles, size-prop versus container-resize distinctions and dark-mode coverage. The migration workers must cover their own actual extraction checks and disclose any inherited HorizontalBar width or other baseline defects.
+Corrected chart baseline evidence from PR30 is reusable read-only; retain its exact revision and disclosed limits. Issues18/24 and `validation/friend-chart-baseline/` belong to the external contributor. Inspect their committed reference evidence read-only; do not edit it or count marked-untested scenarios as passing. Issue24 explicitly calls out missing legend toggles, size-prop versus container-resize distinctions and dark-mode coverage. The migration workers must cover their own actual extraction checks and disclose any inherited HorizontalBar width or other baseline defects.
 
 ## Excluded pending work
 

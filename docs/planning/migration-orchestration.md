@@ -1,3 +1,7 @@
+# Next-plan bootstrap clarification — 2026-10-25
+
+Root/W2 review identified shared hooks' direct Bar geometry/types and Scatter types imports. Read-only slice14 proposal now orders W1 shared Charts/types → W2 BarChart/types.ts + BarChart/parts/horizontalBarGeometry.ts + ScatterChart/types.ts → W1 remaining foundation → family implementations. No duplicate helpers/legacy imports/custom resolver. Distinct React PrintContext vs print-media hook retained; corrected PR30 chart references reusable read-only, friend baseline paths reserved. OptionCards still recommended first. PR35 CI remains checkpoint; no next implementation dispatched or begun.
+
 # CURRENT — slice13 DRAFT PR35 OPEN; fork CI running — 2026-10-25
 
 Fork-only draft https://github.com/ankit-thesys/openui-comp/pull/35 OPEN/DRAFT and attached. Pushed head `838d78ec23f3c4e31c84873b9926d518cd5c2776`, branch codex/react-ui-core-data-cards, base codex/react-ui-core-text-media (#34). BuildJS40184784878 running; changeset40184784860 PASS14s. No merge/release/ticket closure/upstream writes.
