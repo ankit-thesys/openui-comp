@@ -37,6 +37,7 @@ export * from "./components/ListItem";
 export * from "./components/MarkDownRenderer";
 export * from "./components/MetricIndicator";
 export * from "./components/Modal";
+export * from "./components/OptionCards";
 export * from "./components/OverviewCardBlock";
 export * from "./components/RadioGroup";
 export * from "./components/RadioItem";
