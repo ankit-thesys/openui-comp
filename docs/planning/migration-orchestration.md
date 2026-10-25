@@ -1,3 +1,21 @@
+# CURRENT — verifier released; W1 running strict focused border regression — 2026-10-25
+
+Verifier completed independent metadata/native/type/transport/theme/asset checks
+on7ad and explicitlyclosed/releasedallChrome/serverresources. W1 nowowns the
+boundedaffectedbrowserwindow underrootauthorization. RunningcommittedW2harness
+KIT_BORDER_ONLY=1 onimmutable9ee057613 / kitSHA9fc227a88... consumer
+/private/tmp/chat16-model-border-consumer. Rawoutput uniqueownedresults directory
+browser-model-border-9ee057613; preserveoldfailures. No competingbrowser.
+
+Correctionruntimeonly4ModelSwitcherstyleJS/maps; allother562filesandcoreidentical.
+CombinedpackageCI7/7 andbothsource+harnessreviewaxesGREEN. Thisdoesnotcountas
+browsercorrectionpassuntilrunfinishes. OncompletionW1willrecordexactresultsand
+explicitlyreleaseforverifier's focusedcorrectionconfirmation. No fullcorematrix
+repeats, SSR/#17/perf/memoryacceptance, review-readyPR, merge/release/closure.
+Alllegacy/sharedSelect/previewfilesread-only; untrackedcratespreserved.
+
+---
+
 # CURRENT — corrected model package CI GREEN; await verifier browser release — 2026-10-25
 
 Frozen source9ee057613 / kitSHA9fc227a88cbf6d949247aee90e729efa58d669ba738674880396903db98785bb
