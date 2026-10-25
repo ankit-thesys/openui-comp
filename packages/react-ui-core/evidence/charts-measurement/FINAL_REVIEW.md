@@ -26,5 +26,5 @@ UNPASSED, with baseline-confirmed sizing feedback and six recorded instability
 cases. It remains a public prop combination and is not reclassified unsupported.
 Other bounded comparisons pass; do not infer unconditional all19 parity, SSR,
 transport/parser streaming, performance, memory or migration-wide error freedom.
-This checkpoint supports a fork-only stacked draft for review. Remote checks
-remain pending. No merge, release/publication, deprecation or issue closure.
+This checkpoint supports a fork-only stacked draft for review. Remote build40195759345 and changeset40195759293 pass on draft37 source
+ddd9f9a5e13a61a865cee76212b13a6230fc67d3; remote core136/136 pass. No merge, release/publication, deprecation or issue closure.

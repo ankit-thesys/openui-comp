@@ -1,3 +1,35 @@
+# CURRENT — charts DRAFT PR37 OPEN/attached; remoteCI GREEN — 2026-10-25
+
+Fork-only https://github.com/ankit-thesys/openui-comp/pull/37 OPEN/DRAFT attached,
+basecodex/react-ui-core-option-cards(PR36), headcodex/react-ui-core-charts.
+Reviewed/pushedproducthead ddd9f9a5e13a61a865cee76212b13a6230fc67d3.
+Remote BuildJS40195759345 PASS8m16s; changeset40195759293 PASS13s. Remotecore
+136/136 plus format/lint/types/build/Publint/ATTW pass, matching local136/136.
+2existingThemehookwarnings/0errors. Bothfinalreviewaxes0remainingfindings.
+PRbodydocs/planning/slice14-pr-draft.md now records greenremotechecks throughREST.
+
+Corrected production1d31a4b63 artifact1062926bytes SHA
+638a8336a60800ae40fa4e46a7130ca41141393382652dd5cf9e73626a8de806, normalconsumer
+/private/tmp/core-chart-tracking-consumer. W1affected6/46,440 and W2committed
+2323d977e packet85,122boundedobservations acrossseparate3batches/same6combos
+plus6inheritedinstabilityrecords. Nativeall19/strict3/pruning pass; allinstalled
+filesmatcharchive/lockunchanged. Post-CI all2,198producerdistfilesbyte-identical
+tocorrectedartifact. ExactremoteCIlogs/status andproof under evidence/charts-measurement/.
+
+**HorizontalBar defaultstringheight+fitLegend strictcomparison remainsUNPASSED**
+withbaseline-confirmedfeedback. Notunsupported, no publicpropremoved, no blanket
+19parity/SSR/parserperformance/memory/errorfreedomclaim. Inheritedclick/widthbox/
+Scatterprint/domainlimits disclosed, notfixed. Old7eanimationevidencehistorical.
+Draftcheckpointonly, rootretainsacceptance/nextdispatch. No merge, release,
+publication/deprecation, issueclosure, upstream/main/legacy/friend/previewswrites.
+
+Allproductchangesandtests/evidenceupthroughreviewedheadpushed. Post-CI status/docs/
+logcommits LOCALONLY deliberatelyavoidrepeatinggreenCIonunchangedproduct; rootmay
+carryforward. Untrackedcratespreserved. AllChrome/serverclosed; browseravailable.
+No nextslice/helper/TLgatedworkstarted. Awaitexplicitrootdispatch.
+
+---
+
 # CURRENT — charts DRAFT PR37 OPEN/attached; remoteCI running — 2026-10-25
 
 Fork-only https://github.com/ankit-thesys/openui-comp/pull/37 OPEN/DRAFT attached.
