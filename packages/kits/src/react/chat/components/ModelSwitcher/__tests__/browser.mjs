@@ -103,6 +103,19 @@ for (const arm of ["baseline", "runtime"]) {
   const project = path.join(output, "vite-inputs", arm);
   const destination = path.join(output, "vite-builds", arm);
   await fs.mkdir(project, { recursive: true });
+  // Isolate this app from the enclosing @openuidev/kits package's self-reference.
+  await fs.writeFile(
+    path.join(project, "package.json"),
+    JSON.stringify(
+      {
+        name: `openui-chat-${arm}-browser-fixture`,
+        private: true,
+        type: "module",
+      },
+      null,
+      2,
+    ) + "\n",
+  );
   const modules = path.join(project, "node_modules");
   try {
     assert((await fs.lstat(modules)).isSymbolicLink(), "fixture dependencies must be a symlink");
@@ -144,6 +157,27 @@ for (const arm of ["baseline", "runtime"]) {
   }
   documents[arm] = await fs.readFile(path.join(destination, "index.html"), "utf8");
   if (arm === "runtime") {
+    const installedKits = await fs.realpath(path.join(consumer, "node_modules/@openuidev/kits"));
+    const installedCore = await fs.realpath(
+      path.join(consumer, "node_modules/@openuidev/react-ui-core"),
+    );
+    const kitsModules = [...modulesUsed].filter((file) => file.includes("/dist/react/chat/"));
+    const coreModules = [...modulesUsed].filter((file) => file.includes("/react-ui-core/"));
+    assert(
+      kitsModules.length > 0 && coreModules.length > 0,
+      "both installed product graphs must be present",
+    );
+    for (const file of kitsModules)
+      assert(
+        file.startsWith(installedKits + "/"),
+        `kits module outside inventoried artifact: ${file}`,
+      );
+    for (const file of coreModules)
+      assert(
+        file.startsWith(installedCore + "/"),
+        `core module outside inventoried artifact: ${file}`,
+      );
+    report.productModuleOrigins = { kits: kitsModules, core: coreModules };
     assert(![...modulesUsed].some((file) => file.includes("packages/react-ui/src/")));
     assert(![...modulesUsed].some((file) => file.includes("/react/chat/libs/")));
   } else {
@@ -373,6 +407,10 @@ try {
             );
             await page.locator(selectors.trigger).waitFor();
             await state(page, { setTheme: theme });
+            await page.waitForFunction(
+              (expected) => document.querySelector("#fixture-theme")?.textContent === expected,
+              theme,
+            );
             await page.evaluate(
               ({ arm, order }) => {
                 const host = document.querySelector("#host-style");
@@ -416,7 +454,7 @@ try {
           };
           await compare("normal");
           const nestedPortals = [];
-          for (const page of pages) {
+          for (const [index, page] of pages.entries()) {
             await expectStyle(page, selectors.trigger, "height", "32px");
             await expectStyle(page, selectors.triggerBadge, "display", "none");
             await expectStyle(page, selectors.lastItem, "borderBottomWidth", "0px");
@@ -425,9 +463,16 @@ try {
               await expectStyle(page, selectors.trigger, "backgroundColor", "rgb(220, 230, 240)");
               await expectStyle(page, selectors.defaultItem, "paddingTop", "15px");
             }
+            const logo = await text(page, selectors.triggerLogo);
+            (record.logoObservations ??= []).push({
+              arm: index === 0 ? "baseline" : "runtime",
+              fixtureTheme: await text(page, "#fixture-theme"),
+              logo,
+            });
             assert.equal(
-              await text(page, selectors.triggerLogo),
+              logo,
               theme.includes("dark") ? "D" : "L",
+              `${index === 0 ? "baseline" : "runtime"}/${framework}/${order}/${theme}: model logo`,
             );
             await page.locator(selectors.trigger).hover();
           }
