@@ -208,7 +208,7 @@ const ChatCard = defineComponent({
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: "var(--openui-space-m)",
+          gap: "var(--openui-space-m, 12px)",
         }}
       >
         {renderNode(props.children)}

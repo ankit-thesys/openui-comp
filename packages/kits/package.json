@@ -71,5 +71,15 @@
   },
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
+  },
+  "typesVersions": {
+    "*": {
+      "react/chat": [
+        "dist/react/chat/index.d.cts"
+      ],
+      "react/chat/libs": [
+        "dist/react/chat/libs/index.d.cts"
+      ]
+    }
   }
 }
