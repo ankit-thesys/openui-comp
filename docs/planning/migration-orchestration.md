@@ -1,3 +1,13 @@
+# CURRENT — OptionCards DRAFT PR36 OPEN; fork CI running — 2026-10-25
+
+Fork-only draft https://github.com/ankit-thesys/openui-comp/pull/36 OPEN/DRAFT and attached. Pushed reviewed head `d9d6c78f085bfb92d475d76bead2c73dbb428131`, branch codex/react-ui-core-option-cards, base codex/react-ui-core-data-cards (#35). Remote BuildJS40186855402 and changeset40186855341 running. No merge/closure/release/upstream/main writes.
+
+All local gates pass: integrated packageCI110/110 plus format/lint/types/build/Publint/ATTW; owned installedDOM2pass; nativepublicroot/strict3modes/pruning pass; W2independentChrome6cases /15,732 image-inclusive snapshots on exact4911a82f8 artifact498447bytes SHA0a66152ad19a6c7e0a732a652175723e8bd1bcde1b5159a10e3966d835b67821. Source/harness reviewaxesclear. Everyinstalledfile/lock preserved, originalattemptsretained. Nativecontrolledselection and existingkeyboardlimits documented.
+
+CI monitoring continues; no unchanged matrices to repeat and no charts production. Next chartplan remains read-only, with W1sharedtypes→W2Bar/Scatterprereqs→W1foundation. Read-only bootstrap check confirms Charts/types index only reexports common/exportChartData, so sharedtypebootstrap does not import family implementations. WaitforPR36CIcheckpoint and explicitrootdispatch. Browser/serverclosed. Legacy/previews/crates untouched; SSR/parserstreaming/performance/memory remain uncertified by OptionCards.
+
+---
+
 # CURRENT — OptionCards local/independent GREEN; authorized stacked draft preparing — 2026-10-25
 
 W2 harness03927d88a and evidence6db4d26e7 integrated08f36c99c/8f09f299f. Independent Chrome6cases /15,732 image-inclusive paired snapshots PASS on exact4911a82f825ce518f073fd995637d853a38a6620 artifact498447 bytes SHA0a66152ad19a6c7e0a732a652175723e8bd1bcde1b5159a10e3966d835b67821. Package/lock unchanged; installedDOM2pass; native public-root/strict3modes/pruning pass. W2 browser released, all contexts/server closed.
