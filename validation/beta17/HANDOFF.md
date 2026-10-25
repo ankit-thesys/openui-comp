@@ -1,14 +1,15 @@
 # Worker1 → Worker2 fixture contract
 
-Status: V2 RELEASED TO WORKER2 FOR FORMAL MEASUREMENT.
-Correction functional gate passes48/48; exact W2 preflight passes8/8 with no
-errors. W1 browser is closed. Server48419 remains unchanged and live on4197.
-No formal timing/soak or performance acceptance follows from these checks.
+Status: V3 RELEASED TO WORKER2 FOR FORMAL MEASUREMENT.
+Complete startup/inventory readiness and exact W2 browser8 preflight pass.
+The prior48 functional gate is unchanged; no served/product/replay changes.
+W1 browser is closed; server48419 remains unchanged/live4197.
+V1/V2 releases are superseded. No timing, soak or performance acceptance yet.
 
 Consumer: `/private/tmp/beta17-consumer` (standalone npm installation).
-Manifest: `/private/tmp/beta17-consumer/handoff-v2.json`.
-SHA256: `d222d61713a8854a93144dc870d514a536015ba40be5735e3fd72e213f1f1895`.
-Proof: `/private/tmp/beta17-consumer/installed-proof.json` (v2).
+Manifest: `/private/tmp/beta17-consumer/handoff-v3.json`.
+SHA256: `8d3f583e17dd4b5e12d24b5aacb7d5dabdd4dd7c09a1de8299a08195059e0b14`.
+Proof: `/private/tmp/beta17-consumer/installed-proof.json` (v3).
 Fixture server: `BETA17_DIST=/private/tmp/beta17-consumer/replay-dist node validation/beta17/fixtures/server.mjs`.
 Origin: `http://127.0.0.1:4197`.
 Worker1 owns server start/stop and the first functional browser window.
@@ -76,3 +77,23 @@ under functional/evidence/form-contract-v2. The only changed v1 input is the
 build script's metadata selector; all previously hashed served output, replay
 and installed-product modules are unchanged. W1 releases its browser window.
 Root coordinates W2's formal timing/soak start. Do not use v1 for measurement.
+
+## V3 complete provenance readiness
+
+V2 passed browser preflight but formal startup stopped before Chrome because
+2128 declared module paths lacked exact keys in inputs. Preserve that stopped
+attempt and v2 metadata. V3 includes every declared path and canonical file hash,
+package owner/lock identity (3801 records across both arms), raw product archives,
+archive verification proof and prior manifest/proof. Paths escaping the consumer
+or mismatching lock versions are rejected. Canonical alias and rejection tests
+pass2/2; initial alias failure remains recorded.
+
+Complete readiness follows W2 checklist f8b961043: schema/all four cells/exact
+payload schedules, exact module input keys and10513 real file hashes, actual W2
+installedInventory, one lockfile, tools/output writability, then actual W2
+preflight8cells with painted bars, streaming input changes, cancellation, CSSOM,
+CDP/RSS and unchanged before/after inventories. All pass; both reviews report no
+blockers. Raw results, executed runner snapshots and exact four archives are
+retained in functional/evidence/module-contract-v3. No unchanged48 rerun or
+formal timing was substituted for this check. Root may restart W2 exclusively
+using V3. Keep server48419 unchanged; no competing build/browser/heavy tests.

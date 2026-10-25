@@ -32,3 +32,13 @@ provenance. Spec requested the stale release status be superseded until the new
 gate passed; HANDOFF.md now explicitly releases v2 after48/48 and exact W2
 preflight8/8. Required validation and successful submission remain mandatory;
 no native wrapper was fabricated and no assertion was weakened.
+
+## Module-contract correction review
+
+Both existing review axes found no blockers in the v3 correction. Exact and
+canonical module paths are hashed, confined to consumer node_modules and tied
+to nearest owning package/lock identities. Readiness covers actual W2 startup
+prerequisites plus browser preflight and before/after inventories. Recorded
+result is pass8browsercells/10513inputs/2128declaredruntime modules. This closes
+the gap between earlier browser-only preflight and formal startup validation.
+No timing/soak result or product patch follows from this correction.

@@ -1,3 +1,26 @@
+# CURRENT — #17 V3 COMPLETE readiness PASS, window RELEASED to W2
+
+Use /private/tmp/beta17-consumer/handoff-v3.json SHA256
+8d3f583e17dd4b5e12d24b5aacb7d5dabdd4dd7c09a1de8299a08195059e0b14.
+V2 formalstartup stopped before Chrome/timing on2128 missing exactinputkeys;
+V3 inventories all declared modules/canonicalfile hashes and3801 packageowner
+records. Raw archives and archive/v2proofchain are hashed/preserved.
+
+Complete readiness per W2audit f8b961043 passes schema/cells/payload schedules,
+10513 inputhashes, actual W2installedInventory, tooling/output prerequisites,
+then actual W2 browser8preflight with bars, liveinput, realcancel/CDP/RSS and
+unchanged before/after input+installed inventories.2focusedcanonical/escape/lock
+regressions pass. Both reviewers no blockers. Served/product/payload/client/
+server unchanged, so original48functional evidence retained without repetition.
+Exact v2/draftv3/stoppedattempt provenance preserved, no assertions bypassed.
+
+W1 browser CLOSED; server48419 unchanged/live4197. Root may now restart W2
+exclusive formal timing+soaks on V3. No actual formal timing/soaks have run yet.
+Do not infer performance/memory pass. Legacy type/shell/SSR/HorizontalBar limits
+remain. No merge/release/publication/issue closure or upstream/legacy edits.
+
+---
+
 # CURRENT — #17 V2 correction verified, window RELEASED to W2
 
 Use /private/tmp/beta17-consumer/handoff-v2.json, SHA256

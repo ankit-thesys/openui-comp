@@ -4,6 +4,7 @@ import {createRequire} from 'node:module';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {makeCell} from './payloads.mjs';
+import {inventoryModules} from '../functional/module-inventory.mjs';
 const consumer=path.resolve(process.env.BETA17_CONSUMER ?? '/private/tmp/beta17-consumer');
 const tools=createRequire(path.resolve('packages/react-ui-core/package.json'));
 const {build}=await import(tools.resolve('vite'));
@@ -40,6 +41,7 @@ for(const p of ['client.tsx','server.mjs','build.mjs','payloads.mjs'])inputs[pat
 for(const p of ['package.json','package-lock.json'])inputs[path.join(consumer,p)]=await hash(path.join(consumer,p));
 async function inventory(dir){for(const entry of await fs.readdir(dir,{withFileTypes:true})){const p=path.join(dir,entry.name);if(entry.isDirectory())await inventory(p);else inputs[p]=await hash(p);}}
 await inventory(out);await inventory(path.join(consumer,'replay-apps'));
-const manifest={schemaVersion:1,productCommit:'9ee0576133fbb1c444d03c169a81893ebf7631fd',origin:'http://127.0.0.1:4197',consumer,dist:out,inputs,runtimeModules:origins.runtime,moduleOrigins:origins,streamPath:'/stream',statsPath:'/stats',selectors:{ready:'#ready',mounted:'#mounted',mount:'#mount',unmount:'#unmount',start:'#start-stream',cancel:'#cancel-stream',status:'#status',message:'#message-source',input:'#prompt',theme:'#theme-hue'},cells};
+const moduleInventory=await inventoryModules(consumer,[...origins.runtime,...origins.baseline]);Object.assign(inputs,moduleInventory.inputs);
+const manifest={moduleInventory:moduleInventory.records,schemaVersion:1,productCommit:'9ee0576133fbb1c444d03c169a81893ebf7631fd',origin:'http://127.0.0.1:4197',consumer,dist:out,inputs,runtimeModules:origins.runtime,moduleOrigins:origins,streamPath:'/stream',statsPath:'/stats',selectors:{ready:'#ready',mounted:'#mounted',mount:'#mount',unmount:'#unmount',start:'#start-stream',cancel:'#cancel-stream',status:'#status',message:'#message-source',input:'#prompt',theme:'#theme-hue'},cells};
 await fs.writeFile(path.join(consumer,'handoff.json'),JSON.stringify(manifest,null,2)+'\n');
 console.log('Built fixture; not yet functionally validated:',path.join(consumer,'handoff.json'));
