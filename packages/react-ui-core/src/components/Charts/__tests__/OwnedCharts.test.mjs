@@ -302,6 +302,10 @@ test("public Calendar heatmap sums duplicate days, preserves level-hover dimming
   );
   assert.equal(await page.locator(".openui-calendar-heatmap-legend-gradient").count(), 1);
   assert((await page.locator("pattern").count()) > 0);
+  assert.equal(
+    await page.locator("pattern circle").evaluate((n) => getComputedStyle(n).fill),
+    "oklch(0.994 0 89.876)",
+  );
   await page.evaluate(() => window.calendar([]));
   assert.equal(await page.locator(".openui-chart-empty-text").textContent(), "No data available");
   await page.evaluate((rows) => window.calendar(rows), rows);

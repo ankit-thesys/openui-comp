@@ -1,3 +1,22 @@
+# CURRENT — owned charts committed; installed Calendar fallback corrected — 2026-10-25
+
+Owned source `df52427f0d4d05393229ea4812f8fec5d3c7a864` follows foundation cf0301e5
+and integrated W2 Area e99b52dc6. First normal-installed matched matrix found
+Calendar no-provider pattern fill depended on old global defaults. Conventional
+inline CSS-var fallback now has focused realChrome RED→GREEN and build/types;
+both reviewers accept it. No Goober patch/custom runtime. Original failed matrix
+preserved. Harness review gaps for actual override application and host/scope
+sentinels fixed before refreezing. Focused installed pruning passes: Button keeps
+no Charts/D3, individual selected charts keep no other chart families.
+
+W1 retains FIRST browser window; W2 source-only and continuing remaining families.
+Next: committed corrected-source artifact, matched6framework/order matrix and
+normal-installed native/strict/public tests. Not whole19/performance/SSR/memory
+acceptance. No merges/closures/releases/upstream/main/legacy/friend/preview edits;
+preserve crates/. Shared/root/deps remain W1-owned.
+
+---
+
 # CURRENT — owned chart source reviewed; packed validation next — 2026-10-25
 
 Foundation cf0301e5 is relayed to Worker2. W2 Area/helpers5851f0624 integrated as

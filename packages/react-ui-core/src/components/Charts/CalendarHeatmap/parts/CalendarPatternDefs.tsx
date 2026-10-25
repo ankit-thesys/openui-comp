@@ -1,7 +1,7 @@
 import type { CalendarLevelPattern } from "../types";
 
 /** Default pattern stroke — a theme-adaptive contrast token over the tile. */
-const DEFAULT_PATTERN_STROKE = "var(--openui-foreground)";
+const DEFAULT_PATTERN_STROKE = "var(--openui-foreground, oklch(0.994 0 89.876 / 1))";
 
 /** The SVG `<pattern>` id for a level, namespaced by the chart's `useId` base. */
 export function calendarPatternId(baseId: string, level: number): string {

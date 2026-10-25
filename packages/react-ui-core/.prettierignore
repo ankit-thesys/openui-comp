@@ -32,3 +32,6 @@ evidence/option-cards/consumer-lock.json
 # Preserve exact OptionCards browser measurements.
 src/components/OptionCards/__tests__/results/browser/attempt-1.json
 src/components/OptionCards/__tests__/results/browser/final.json
+
+# Preserve exact first installed-chart comparison failure.
+evidence/charts-owned-source/browser-first.json
