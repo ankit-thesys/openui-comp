@@ -6,13 +6,13 @@ Extract data views and composed cards into `@openuidev/react-ui-core` so consume
 
 - EditableTable and changes bar, EntityList, ListItem/ListBlock, both existing metric indicator variants, and all five approved composed card families.
 - One private shared card layout; existing props, slots, refs, keyboard behavior and theme APIs preserved. Existing TanStack range added; lock change limited to three new core importer lines.
-- Legacy's effective16px Select menu typography retained using existing SelectItem styles; no runtime patch or new styling API.
+- Legacy's effective16px Select menu typography retained using existing SelectItem styles; shared carousel base width precedes container overrides to preserve narrow widths. No runtime patch or new styling API.
 
 ## Test Plan
 
-- [x] Verified locally: integrated package CI107/107; format/lint/types/build/Publint/ATTW pass (two existing ThemeProvider lint warnings).
+- [x] Historical integrated package CI107/107 onbaa3c1d93; format/lint/types/build/Publint/ATTW pass (two existing ThemeProvider lint warnings). After the shared-card CSS correction, targeted installed/native/types/pruning/build/format checks pass; unrelated suites were not repeated.
 - [x] Frozen normal npm consumer: native public-root ESM/CJS, strict TS5.9.3 Bundler/NodeNext ESM/CJS and affected JS/Goober pruning pass.
-- [x] Worker1 owned EditableTable/Composite/Context/Visual Chrome parity: six plain/Tailwind3/Tailwind4 initial-order cases,48,494 paired element snapshots, themes/nested/overrides, real edits and portals, hover/focus and image layers. Exact artifact491804 bytes, SHA256 f64973409f551181976cafa76b85a5915262f11e1bc2e2fe48a17c9103e069f4; evidence under packages/react-ui-core/evidence/data-cards.
+- [x] Historical broader B/D Chrome parity: six initial-order cases /48,494 paired snapshots onbaa3c1d93. Corrected shared-layout production4119cddbe passes affected D responsive checks: six plain/Tailwind3/Tailwind4 order cases /10,656 paired snapshots at450/650/950px, grid/carousel and responsive-disabled control. Exact corrected artifact492247 bytes, SHA2562c29042765ee120d7f85dd4da7176152ee54cfa7dcaff794ee3990473ea59e02; evidence under packages/react-ui-core/evidence/data-cards/corrected-carousel.
 - [ ] Worker2 independent metric/entity/list/Overview/Snippet browser checks against that same artifact.
 - [ ] Fork remote CI after opening draft.
 
