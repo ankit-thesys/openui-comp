@@ -28,7 +28,7 @@ Extract data views and composed cards into `@openuidev/react-ui-core` so consume
 - [x] Frozen normal npm consumer: native public-root ESM/CJS, strict TS5.9.3 Bundler/NodeNext ESM/CJS and affected JS/Goober pruning pass.
 - [x] Historical broader B/D Chrome parity: six initial-order cases /48,494 paired snapshots onbaa3c1d93. Corrected shared-layout production4119cddbe passes affected D responsive checks: six plain/Tailwind3/Tailwind4 order cases /10,656 paired snapshots at450/650/950px, grid/carousel and responsive-disabled control. Exact corrected artifact492247 bytes, SHA2562c29042765ee120d7f85dd4da7176152ee54cfa7dcaff794ee3990473ea59e02; evidence under packages/react-ui-core/evidence/data-cards/corrected-carousel.
 - [x] Worker2 independent metric/entity/list/Overview/Snippet Chrome matrix:12 cases /56,268 paired snapshots on the same corrected4119cddbe artifact; exact package and lock unchanged. Includes narrow/boundary/wide carousel widths, masks, separate real LHS/RHS tooltip portal cases, themes and overrides.
-- [ ] Fork remote CI after opening draft.
+- [x] Fork remote CI on838d78ec23f3c4e31c84873b9926d518cd5c2776: Build JS40184784878 PASS9m5s; changeset40184784860 PASS14s. Corrected-source core107/107 tests, format/lint/types/build/Publint/ATTW pass in the remote integrated package run.
 
 ## Compatibility and limits
 
@@ -42,4 +42,4 @@ Preserve inherited Enter-save duplicate callback, metric sign formatting and Lis
 
 ## Merge danger
 
-**Door:** two-way. **Blast Radius:** components. Draft only; depends on PR34. Local independent gates pass; remote CI remains pending. Do not merge, publish or close migration tickets from this checkpoint.
+**Door:** two-way. **Blast Radius:** components. Draft only; depends on PR34. Local independent gates and remote build/changeset checks pass. Do not merge, publish or close migration tickets from this checkpoint.

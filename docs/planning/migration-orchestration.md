@@ -1,3 +1,17 @@
+# CURRENT — slice13 COMPLETE as reviewed DRAFT PR35; CI GREEN — 2026-10-25
+
+Fork draft https://github.com/ankit-thesys/openui-comp/pull/35 OPEN/DRAFT, attached, stacked on codex/react-ui-core-text-media (#34). Reviewed/pushed product head `838d78ec23f3c4e31c84873b9926d518cd5c2776`. Remote BuildJS40184784878 PASS9m5s and changeset40184784860 PASS14s. Corrected-source core107/107 tests, format/lint/types/build/Publint/ATTW pass remotely; no source correction needed after opening. Full raw job log/status archived under evidence/data-cards/remote-ci. PR description updated to green.
+
+Exact browser/installed artifact remains production `4119cddbed813f81e37b949ce00421a7e65173a3`,492247 bytes, SHA256 `2c29042765ee120d7f85dd4da7176152ee54cfa7dcaff794ee3990473ea59e02`, consumer `/private/tmp/core-data13c-consumer`. W2 A/C12cases /56,268 +W1 affectedD6cases /10,656 paired snapshots pass on it. Native public ESM/CJS, strict3modes/pruning pass. Earlier broader B/D48,494 onbaa3 remains historical. Final Spec/Standards clear; all original failures/known limitations preserved. No custom runtime patches.
+
+Final post-CI handoff/proposal commits are LOCAL DOCS/EVIDENCE ONLY, deliberately not pushed to avoid repeating green CI on unchanged production. PR35 product head above includes all source/tests/lock/release notes and independent evidence. Root may carry local docs into following orchestration. No merge, publication, ticket closure or deprecation.
+
+Read-only next dispatch proposal: docs/planning/slice14-readonly-proposal.md, verified against source and updated per root/W2 bootstrap review. Recommend deferred OptionCards first, then full19chart inventory. Chart bootstrap: W1sharedtypes → W2 Bar geometry/types+Scattertypes → W1foundation → dependentfamilies. Distinct PrintContext mechanisms preserved; PR30 chart evidence reused read-only, friendpaths reserved. No next production started; wait for root dispatch. Browser/server closed and available.
+
+Inherited callback/sign/keyboard/tooltip limits and unvalidated simultaneous long Snippet slots remain disclosed. Dynamic host stylesheet recovery and SSR/hydration/performance/memory remain uncertified. Legacy, previews and unrelatedcrates untouched. This current section supersedes all historical statuses below.
+
+---
+
 # Next-plan bootstrap clarification — 2026-10-25
 
 Root/W2 review identified shared hooks' direct Bar geometry/types and Scatter types imports. Read-only slice14 proposal now orders W1 shared Charts/types → W2 BarChart/types.ts + BarChart/parts/horizontalBarGeometry.ts + ScatterChart/types.ts → W1 remaining foundation → family implementations. No duplicate helpers/legacy imports/custom resolver. Distinct React PrintContext vs print-media hook retained; corrected PR30 chart references reusable read-only, friend baseline paths reserved. OptionCards still recommended first. PR35 CI remains checkpoint; no next implementation dispatched or begun.
