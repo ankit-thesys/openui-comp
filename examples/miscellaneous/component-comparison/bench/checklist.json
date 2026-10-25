@@ -934,6 +934,18 @@
         "assertions": [
           "ImageGallery.closed"
         ]
+      },
+      {
+        "id": "ImageGallery.open-overlay",
+        "kind": "portal",
+        "applicable": true,
+        "cases": [
+          "image-gallery-open-modal"
+        ],
+        "assertions": [
+          "ImageGallery.open-modal"
+        ],
+        "reason": "Actual open overlay behavior and visual/style capture."
       }
     ]
   },
@@ -3004,6 +3016,18 @@
         "reason": "This registry entry exposes no independent actions state; parent interactions are listed separately.",
         "cases": [],
         "assertions": []
+      },
+      {
+        "id": "Select.open-overlay",
+        "kind": "portal",
+        "applicable": true,
+        "cases": [
+          "select-open-portal"
+        ],
+        "assertions": [
+          "Select.open-portal"
+        ],
+        "reason": "Actual open overlay behavior and visual/style capture."
       }
     ]
   },
@@ -3190,6 +3214,18 @@
         "reason": "This registry entry exposes no independent actions state; parent interactions are listed separately.",
         "cases": [],
         "assertions": []
+      },
+      {
+        "id": "DatePicker.open-overlay",
+        "kind": "portal",
+        "applicable": true,
+        "cases": [
+          "date-picker-open-calendar"
+        ],
+        "assertions": [
+          "DatePicker.open-calendar"
+        ],
+        "reason": "Actual open overlay behavior and visual/style capture."
       }
     ]
   },

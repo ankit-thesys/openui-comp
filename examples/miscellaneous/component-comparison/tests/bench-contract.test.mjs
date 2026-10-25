@@ -191,3 +191,13 @@ test("Slider invalid-value fixture follows the installed optional-min validation
   assert.equal(invalid.steps[0].key, "ArrowRight");
   assert.equal(invalid.steps[1].op, "click");
 });
+
+test("Carousel keyboard fixture requires native activation and real overflow at every approved width", async () => {
+  const cases = await json("bench/cases.json");
+  const c = cases.find((c) => c.id === "carousel-scroll");
+  assert.equal(c.steps[0].op, "key");
+  assert.equal(c.steps[0].key, "Enter");
+  assert.equal(c.assertions[0].kind, "scrollLeft");
+  assert.equal((c.source.match(/TextContent\(/g) ?? []).length, 8);
+  assert(!c.steps.some((s) => s.op === "scroll"));
+});

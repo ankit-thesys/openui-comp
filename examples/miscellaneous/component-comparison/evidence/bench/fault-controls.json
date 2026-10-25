@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "semanticFaultDetected": true,
+  "styleAndPixelFaultDetected": true,
+  "prohibitedRequestsBlockedAndFailed": true,
+  "cancelledCellsNeverPass": true,
+  "coverageInputFrozenBeforeExecution": true,
+  "immutableInputsRetained": true,
+  "upstreamCalls": 0,
+  "networkControlRun": "2026-10-25T23-24-39-574Z-788d8439",
+  "cancellationControlRun": "2026-10-25T23-24-43-286Z-a9911d44"
+}

@@ -265,6 +265,7 @@ export function createBenchApi() {
       }
       if (req.method === "GET" && parts[3] === "bundle") {
         await fs.access(path.join(dir, "run.json"));
+        await fs.access(path.join(dir, "manifest.json"));
         res.writeHead(200, {
           "Content-Type": "application/gzip",
           "Content-Disposition": `attachment; filename="openui-bench-${id}.tar.gz"`,

@@ -66,7 +66,7 @@ try {
     presetId: args.preset ?? historical?.themePreset.id ?? "default",
     themeDefinitionOverride: historical?.themePreset,
     casesOverride: historical?.cases,
-    checklistOverride: historical?.coverage,
+    checklistOverride: historical?.checklist ?? historical?.coverage,
     frozenProvenance: historical?.provenance,
     reproducesRunId: historical?.id,
     caseIds: args.case?.split(","),

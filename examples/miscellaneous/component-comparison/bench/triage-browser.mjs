@@ -10,6 +10,15 @@ import { createApp } from "../server.mjs";
 import { DEFAULT_CHROME } from "./model.mjs";
 import { measureDocument } from "./probes.mjs";
 import { getThemePreset } from "../src/theme-presets.mjs";
+const args = Object.fromEntries(
+  process.argv
+    .slice(3)
+    .filter((a) => a.startsWith("--"))
+    .map((a) => a.slice(2).split("=")),
+);
+const width = Number(args.width ?? 390),
+  environment = args.environment ?? "plain",
+  theme = args.theme ?? "light";
 const runId = process.argv[2];
 if (!runId || !/^[a-zA-Z0-9-]+$/.test(runId)) throw Error("Run ID required");
 const root = path.resolve(import.meta.dirname, "..");
@@ -31,14 +40,16 @@ const browser = await chromium.launch({
 });
 const summaries = [];
 try {
-  for (const caseId of process.argv.slice(3)) {
+  for (const caseId of process.argv
+    .slice(3)
+    .filter((a) => !a.startsWith("--"))) {
     const c = run.cases.find((c) => c.id === caseId);
     if (!c) throw Error("Unknown case " + caseId);
     const captures = [];
     const arms = [];
     for (const arm of ["legacy", "migrated"]) {
       const context = await browser.newContext({
-        viewport: { width: 390, height: 720 },
+        viewport: { width, height: 720 },
         deviceScaleFactor: 1,
         locale: "en-US",
         timezoneId: "UTC",
@@ -58,19 +69,27 @@ try {
         content:
           "*,*::before,*::after{animation:none!important;transition:none!important;caret-color:transparent!important}",
       });
-      await page.evaluate(async () => {
+      await page.evaluate(async (environment) => {
         const link = document.createElement("link");
         link.rel = "stylesheet";
-        link.href = "/bench-host/plain.css";
+        link.href =
+          "/bench-host/" +
+          (environment.startsWith("tailwind3")
+            ? "tailwind3"
+            : environment.startsWith("tailwind4")
+              ? "tailwind4"
+              : "plain") +
+          ".css";
         const loaded = new Promise((r, j) => {
           link.onload = r;
           link.onerror = j;
         });
-        document.head.prepend(link);
+        if (environment.endsWith("-after")) document.head.append(link);
+        else document.head.prepend(link);
         await loaded;
-      });
+      }, environment);
       await page.evaluate(
-        ({ c, preset }) =>
+        ({ c, preset, theme }) =>
           window.postMessage(
             {
               channel: "openui-component-comparison/v1",
@@ -81,7 +100,7 @@ try {
                 ],
                 status: "idle",
                 error: "",
-                theme: "light",
+                theme,
                 viewId: "isolated",
                 revision: 1,
                 allowActions: true,
@@ -91,7 +110,7 @@ try {
             },
             location.origin,
           ),
-        { c, preset: getThemePreset("default") },
+        { c, preset: run.themePreset ?? getThemePreset("default"), theme },
       );
       await page.waitForFunction(
         () => document.querySelector("#pane-revision")?.textContent === "1",
@@ -103,6 +122,12 @@ try {
         );
       });
       await page.waitForTimeout(500);
+      if (caseId === "select-open-portal") {
+        await page.getByRole("combobox").focus();
+        await page.getByRole("combobox").press("Enter", { delay: 50 });
+        await page.getByRole("listbox").waitFor();
+        await page.waitForTimeout(300);
+      }
       let keyboardTrace;
       if (caseId === "radio-keyboard") {
         keyboardTrace = [];
@@ -113,16 +138,14 @@ try {
           await page.waitForTimeout(150);
           keyboardTrace.push({
             key,
-            items: await page
-              .getByRole("radio")
-              .evaluateAll((es) =>
-                es.map((e) => ({
-                  label: e.textContent,
-                  checked: e.getAttribute("aria-checked"),
-                  focused: e === document.activeElement,
-                  outer: e.outerHTML,
-                })),
-              ),
+            items: await page.getByRole("radio").evaluateAll((es) =>
+              es.map((e) => ({
+                label: e.textContent,
+                checked: e.getAttribute("aria-checked"),
+                focused: e === document.activeElement,
+                outer: e.outerHTML,
+              })),
+            ),
           });
         }
       }
@@ -136,12 +159,10 @@ try {
             weight: f.weight,
           })),
         },
-        resources: performance
-          .getEntriesByType("resource")
-          .map((e) => ({
-            name: new URL(e.name).pathname,
-            type: e.initiatorType,
-          })),
+        resources: performance.getEntriesByType("resource").map((e) => ({
+          name: new URL(e.name).pathname,
+          type: e.initiatorType,
+        })),
         stylesheets: [...document.styleSheets].map((s) => ({
           href: s.href ? new URL(s.href).pathname : null,
           id: s.ownerNode?.id,
@@ -206,6 +227,7 @@ try {
         "#comparison-pane button",
         "#comparison-pane input",
         ".openui-image-block-wrapper",
+        "[role=listbox]",
       ]) {
         const { nodeId } = await cdp.send("DOM.querySelector", {
           nodeId: doc.root.nodeId,
@@ -266,6 +288,10 @@ try {
     }
     const evidence = {
       caseId,
+      width,
+      environment,
+      theme,
+      themePreset: run.themePreset,
       source: c.source,
       artifactIdentity: run.provenance.artifacts,
       comparisons,

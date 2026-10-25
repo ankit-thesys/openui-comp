@@ -16,7 +16,10 @@
     "generate:offline-inventory": "node scripts/offline-inventory.mjs",
     "bench": "node bench/cli.mjs",
     "bench:hosts": "node bench/build-hosts.mjs",
-    "bench:cases": "node bench/generate-cases.mjs"
+    "bench:cases": "node bench/generate-cases.mjs",
+    "test:bench-ui": "node tests/bench-ui.browser.mjs",
+    "test:bench-controls": "node tests/bench-browser-controls.mjs",
+    "test:bench-themes": "node tests/bench-themes.browser.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "3.0.41",

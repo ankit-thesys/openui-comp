@@ -807,17 +807,29 @@ behavior(
 behavior(
   {
     id: "carousel-scroll",
-    name: "Carousel · reveal second slide",
-    source: serialize(base("Carousel")),
+    name: "Carousel · keyboard activates next and scrolls",
+    source:
+      "root = Card([Carousel([" +
+      Array.from(
+        { length: 8 },
+        (_, i) => '[TextContent("Carousel slide ' + (i + 1) + '")]',
+      ).join(",") +
+      '], "card")])',
     coverage: ["Carousel"],
     deliveries: ["instant", "stream"],
-    steps: [{ op: "scroll", text: "Carousel slide two" }],
+    steps: [
+      {
+        op: "key",
+        selector: ".openui-carousel-button-right button",
+        key: "Enter",
+      },
+    ],
     assertions: [
       {
         id: "carousel-second",
-        kind: "text",
-        value: "Carousel slide two",
-        expected: true,
+        kind: "scrollLeft",
+        selector: ".openui-carousel-content",
+        minimum: 1,
       },
     ],
   },
@@ -1931,6 +1943,64 @@ add({
     "stale-action-rejected",
   ].map((id) => ({ id: "session." + id, kind: "session", expected: true })),
 });
+// Capture open UI, not only the closed trigger after a transient assertion.
+for (const recipe of [
+  {
+    component: "Select",
+    id: "select-open-portal",
+    step: { op: "key", role: "combobox", key: "Enter" },
+    assertion: {
+      id: "Select.open-portal",
+      kind: "count",
+      role: "listbox",
+      expected: 1,
+    },
+  },
+  {
+    component: "DatePicker",
+    id: "date-picker-open-calendar",
+    step: {
+      op: "click",
+      selector: ".openui-date-picker-renderer-floating-input-container",
+    },
+    assertion: {
+      id: "DatePicker.open-calendar",
+      kind: "count",
+      role: "grid",
+      minimum: 1,
+    },
+  },
+  {
+    component: "ImageGallery",
+    id: "image-gallery-open-modal",
+    step: { op: "click", selector: ".openui-gallery__image" },
+    assertion: {
+      id: "ImageGallery.open-modal",
+      kind: "count",
+      role: "dialog",
+      expected: 1,
+    },
+  },
+]) {
+  const c = add({
+    id: recipe.id,
+    name: recipe.component + " · open overlay",
+    source: serialize(base(recipe.component)),
+    coverage: [recipe.component],
+    deliveries: ["instant", "stream"],
+    steps: [recipe.step],
+    assertions: [recipe.assertion],
+  });
+  const l = ledger.find((l) => l.component === recipe.component);
+  l.checks.push({
+    id: recipe.component + ".open-overlay",
+    kind: "portal",
+    applicable: true,
+    cases: [c.id],
+    assertions: [recipe.assertion.id],
+    reason: "Actual open overlay behavior and visual/style capture.",
+  });
+}
 // Streaming-disabled assertions are independent of visual parity and run while a complete valid source is still streaming.
 for (const l of ledger)
   if (
@@ -2074,7 +2144,7 @@ const inheritedUnnamed = {
       "Both CarouselNext implementations render IconButton without children or aria-label; the two variant parents supply neither.",
   },
   "carousel-scroll": {
-    actual: ["BUTTON:"],
+    actual: ["BUTTON:", "BUTTON:"],
     proof:
       "Both Carousel next/previous buttons receive no accessible name from the default chat composition.",
   },

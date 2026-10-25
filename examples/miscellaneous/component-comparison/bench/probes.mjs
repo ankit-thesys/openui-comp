@@ -60,7 +60,7 @@ export function measureDocument() {
   ];
   const elements = [
     ...document.querySelectorAll(
-      "#comparison-pane, #comparison-pane *, body > [data-radix-popper-content-wrapper], body > [data-radix-popper-content-wrapper] *",
+      "#comparison-pane, #comparison-pane *, body > [data-radix-popper-content-wrapper], body > [data-radix-popper-content-wrapper] *, [role=dialog], [role=dialog] *, [role=alertdialog], [role=alertdialog] *, [role=tooltip], [role=tooltip] *",
     ),
   ].filter((e) => !["SCRIPT", "STYLE"].includes(e.tagName));
   const geometry = [],

@@ -10357,8 +10357,8 @@
   },
   {
     "id": "carousel-scroll",
-    "name": "Carousel · reveal second slide",
-    "source": "root = Card([carousel])\nimage = Image(\"Local landscape image\", \"/assets/landscape.svg\")\nimageBlock = ImageBlock(\"/assets/landscape.svg\", \"Local image block\")\ncarousel = Carousel([[TextContent(\"Carousel slide one\"), image], [TextContent(\"Carousel slide two\"), imageBlock]], \"card\")",
+    "name": "Carousel · keyboard activates next and scrolls",
+    "source": "root = Card([Carousel([[TextContent(\"Carousel slide 1\")],[TextContent(\"Carousel slide 2\")],[TextContent(\"Carousel slide 3\")],[TextContent(\"Carousel slide 4\")],[TextContent(\"Carousel slide 5\")],[TextContent(\"Carousel slide 6\")],[TextContent(\"Carousel slide 7\")],[TextContent(\"Carousel slide 8\")]], \"card\")])",
     "coverage": [
       "Carousel"
     ],
@@ -10368,16 +10368,17 @@
     ],
     "steps": [
       {
-        "op": "scroll",
-        "text": "Carousel slide two"
+        "op": "key",
+        "selector": ".openui-carousel-button-right button",
+        "key": "Enter"
       }
     ],
     "assertions": [
       {
         "id": "carousel-second",
-        "kind": "text",
-        "value": "Carousel slide two",
-        "expected": true
+        "kind": "scrollLeft",
+        "selector": ".openui-carousel-content",
+        "minimum": 1
       }
     ],
     "themePreset": {
@@ -10396,9 +10397,11 @@
         ],
         "actual": [
           [
+            "BUTTON:",
             "BUTTON:"
           ],
           [
+            "BUTTON:",
             "BUTTON:"
           ]
         ],
@@ -10433,7 +10436,7 @@
       ],
       "delayMs": 10
     },
-    "version": "db5d3821d1332714e1d13e0837bb343fb5df033d30ca2bdda53692f9d95459a9"
+    "version": "d18c2d1ff6984911c6ad1a6b1b27ae3e612026870f70cfccc9c2279cef0ff93b"
   },
   {
     "id": "followup-keyboard-action",
@@ -16334,5 +16337,235 @@
       "delayMs": 10
     },
     "version": "d99ddecb21935b6b07a3e4a8ff7a96a28c696997639bf30aba46bd5692429487"
+  },
+  {
+    "id": "select-open-portal",
+    "name": "Select · open overlay",
+    "source": "root = Card([form])\nfcSelect = FormControl(\"Project\", Select(\"project\", [SelectItem(\"chat\", \"Chat\"), SelectItem(\"dashboard\", \"Dashboard\")], \"Choose project\"))\nform = Form(\"offline-form\", Buttons([Button(\"Log form values\", @ToAssistant(\"Submitted offline form\"), \"primary\"), Button(\"Log secondary action\", @ToAssistant(\"Secondary offline action\"), \"secondary\")]), [fcSelect])",
+    "coverage": [
+      "Select"
+    ],
+    "deliveries": [
+      "instant",
+      "stream"
+    ],
+    "steps": [
+      {
+        "op": "key",
+        "role": "combobox",
+        "key": "Enter"
+      }
+    ],
+    "assertions": [
+      {
+        "id": "Select.open-portal",
+        "kind": "count",
+        "role": "listbox",
+        "expected": 1
+      }
+    ],
+    "themePreset": {
+      "id": "default",
+      "label": "Default",
+      "lightTheme": {},
+      "darkTheme": {},
+      "definitionHash": "720dd4f2ff9f5b19411d482c97132f081f6d7160c9737ad9310354d0a7c1439f",
+      "mode": "matrix"
+    },
+    "knownIssues": [
+      {
+        "id": "inherited-form-control-label-target",
+        "assertionIds": [
+          "aria-references-resolve"
+        ],
+        "actual": [
+          [
+            {
+              "tag": "LABEL",
+              "attribute": "for",
+              "target": "project"
+            }
+          ],
+          [
+            {
+              "tag": "LABEL",
+              "attribute": "for",
+              "target": "project"
+            }
+          ]
+        ],
+        "sourceProof": "Both FormControl implementations set htmlFor=input.name; these registry adapters do not pass that id to their rendered control/group.",
+        "affectedCases": [
+          "select-open-portal"
+        ],
+        "environments": [
+          "plain",
+          "tailwind3-before",
+          "tailwind3-after",
+          "tailwind4-before",
+          "tailwind4-after"
+        ],
+        "reproduction": "Run select-open-portal; inspect label[for] and document.getElementById(for). No production fix applied."
+      }
+    ],
+    "setup": {},
+    "environments": [
+      "plain",
+      "tailwind3-before",
+      "tailwind3-after",
+      "tailwind4-before",
+      "tailwind4-after"
+    ],
+    "chunkSchedule": {
+      "seed": 0,
+      "characters": 180,
+      "checkpoints": [
+        0.5,
+        1
+      ],
+      "delayMs": 10
+    },
+    "version": "58c97f6fa42760ed8576a6786be71a74ea656d60b69066acb35f56c2f43c65ab"
+  },
+  {
+    "id": "date-picker-open-calendar",
+    "name": "DatePicker · open overlay",
+    "source": "root = Card([form])\nfcDate = FormControl(\"Date\", DatePicker(\"date\", \"single\"))\nform = Form(\"offline-form\", Buttons([Button(\"Log form values\", @ToAssistant(\"Submitted offline form\"), \"primary\"), Button(\"Log secondary action\", @ToAssistant(\"Secondary offline action\"), \"secondary\")]), [fcDate])",
+    "coverage": [
+      "DatePicker"
+    ],
+    "deliveries": [
+      "instant",
+      "stream"
+    ],
+    "steps": [
+      {
+        "op": "click",
+        "selector": ".openui-date-picker-renderer-floating-input-container"
+      }
+    ],
+    "assertions": [
+      {
+        "id": "DatePicker.open-calendar",
+        "kind": "count",
+        "role": "grid",
+        "minimum": 1
+      }
+    ],
+    "themePreset": {
+      "id": "default",
+      "label": "Default",
+      "lightTheme": {},
+      "darkTheme": {},
+      "definitionHash": "720dd4f2ff9f5b19411d482c97132f081f6d7160c9737ad9310354d0a7c1439f",
+      "mode": "matrix"
+    },
+    "knownIssues": [
+      {
+        "id": "inherited-form-control-label-target",
+        "assertionIds": [
+          "aria-references-resolve"
+        ],
+        "actual": [
+          [
+            {
+              "tag": "LABEL",
+              "attribute": "for",
+              "target": "date"
+            }
+          ],
+          [
+            {
+              "tag": "LABEL",
+              "attribute": "for",
+              "target": "date"
+            }
+          ]
+        ],
+        "sourceProof": "Both FormControl implementations set htmlFor=input.name; these registry adapters do not pass that id to their rendered control/group.",
+        "affectedCases": [
+          "date-picker-open-calendar"
+        ],
+        "environments": [
+          "plain",
+          "tailwind3-before",
+          "tailwind3-after",
+          "tailwind4-before",
+          "tailwind4-after"
+        ],
+        "reproduction": "Run date-picker-open-calendar; inspect label[for] and document.getElementById(for). No production fix applied."
+      }
+    ],
+    "setup": {},
+    "environments": [
+      "plain",
+      "tailwind3-before",
+      "tailwind3-after",
+      "tailwind4-before",
+      "tailwind4-after"
+    ],
+    "chunkSchedule": {
+      "seed": 0,
+      "characters": 180,
+      "checkpoints": [
+        0.5,
+        1
+      ],
+      "delayMs": 10
+    },
+    "version": "b6f65d4629a91371aaea223b5e976ae7bbc1e807916d00109207445e92bcc117"
+  },
+  {
+    "id": "image-gallery-open-modal",
+    "name": "ImageGallery · open overlay",
+    "source": "root = Card([gallery])\ngallery = ImageGallery([{src: \"/assets/landscape.svg\", alt: \"Local gallery one\", details: \"Local SVG\"}, {src: \"/assets/landscape.svg\", alt: \"Local gallery two\"}])",
+    "coverage": [
+      "ImageGallery"
+    ],
+    "deliveries": [
+      "instant",
+      "stream"
+    ],
+    "steps": [
+      {
+        "op": "click",
+        "selector": ".openui-gallery__image"
+      }
+    ],
+    "assertions": [
+      {
+        "id": "ImageGallery.open-modal",
+        "kind": "count",
+        "role": "dialog",
+        "expected": 1
+      }
+    ],
+    "themePreset": {
+      "id": "default",
+      "label": "Default",
+      "lightTheme": {},
+      "darkTheme": {},
+      "definitionHash": "720dd4f2ff9f5b19411d482c97132f081f6d7160c9737ad9310354d0a7c1439f",
+      "mode": "matrix"
+    },
+    "knownIssues": [],
+    "setup": {},
+    "environments": [
+      "plain",
+      "tailwind3-before",
+      "tailwind3-after",
+      "tailwind4-before",
+      "tailwind4-after"
+    ],
+    "chunkSchedule": {
+      "seed": 0,
+      "characters": 180,
+      "checkpoints": [
+        0.5,
+        1
+      ],
+      "delayMs": 10
+    },
+    "version": "36982906cfbaa48010515c1592146b5cfd06fa9de32ec321dad35ad1ea694e6b"
   }
 ]

@@ -114,7 +114,7 @@ try {
       .querySelector('[data-testid="activity-log"]')
       .textContent.includes("migrated"),
   );
-  await page.getByLabel("Shared theme").selectOption("dark");
+  await page.getByLabel("Shared theme", { exact: true }).selectOption("dark");
   for (const pane of panes)
     await pane.locator('html[data-theme="dark"]').waitFor();
   await page.getByRole("button", { name: "Stream demo", exact: true }).click();
@@ -157,7 +157,7 @@ try {
     .getByText("Offline component atlas", { exact: true })
     .waitFor();
   await settled();
-  await page.getByLabel("Shared theme").selectOption("light");
+  await page.getByLabel("Shared theme", { exact: true }).selectOption("light");
   await page.setViewportSize({ width: 390, height: 844 });
   assert.equal(
     await page.locator("body").evaluate((el) => el.scrollWidth > innerWidth),

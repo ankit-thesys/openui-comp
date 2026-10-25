@@ -135,3 +135,64 @@ form values and pane logging, independent drafts, themes, tabs, accordion and
 switches. Its mode-switch cancellation check uses only the server's local mock.
 This is bounded functional coverage, not exhaustive variants, visual parity,
 performance or accessibility certification.
+
+## Component parity bench
+
+Open `/bench.html` for searchable deterministic cases, separate manual renderer
+panes, per-layer results, coverage and local history. Manual exploration is not
+credited as an automated pass. Choose **Quick** (plain CSS) or **Full** (plain CSS,
+Tailwind 3 and Tailwind 4, with each framework before and after component styles),
+then run selected cases or the complete inventory.
+
+The current inventory has 218 cases covering 84 registry entries and 775 explicit
+state/variant checks. The Default full matrix requests 12,450 cells: each supported
+case at 390/768/1280px, light/dark and instant/local-stream delivery. Data helpers
+are exercised through valid parents; the original direct examples remain
+non-streamed. No test calls the generation API or a vendor service.
+
+```sh
+npm run bench:cases                 # regenerate cases from the public libraries
+npm run build                       # schemas, genuine host fixtures, types, assets
+npm run bench -- --mode=full --concurrency=8
+npm run bench -- --case=button-keyboard-action --width=390 --theme=light
+npm run bench -- --preset=cyberpunk --case=form-default
+npm run bench -- --from-run=YOUR_RUN_ID --case=YOUR_CASE_ID
+```
+
+Use Chrome for Testing **156.0.8078.47**. The runner records and verifies the exact
+binary version and SHA-256. Set `COMPARISON_CHROME` or pass `--chrome=/absolute/path`
+when that binary is installed elsewhere. It never silently switches browsers.
+Each CLI run starts its own local mock server and freezes built assets in its run
+folder, so rebuilding the manual preview cannot change an active test. Historical
+reproduction verifies the frozen bundle hashes and keeps its original case,
+package, registry and theme identities. Reusing an existing run ID is rejected.
+
+Default, Cyberpunk and Crimson Desert are one shared, versioned JSON definition
+used by both pane providers. Switching presets preserves source, playback and
+independent drafts. Saved cases and runs record the preset definition hash;
+changing the preview does not give an unexecuted preset coverage credit. Theme
+consumer/portal checks are separate from the Default full-suite result.
+
+A run distinguishes **Pass**, **Fail**, **Known issue**, **Review**, **Not covered**
+and **Not applicable**. Layout/styles compare exactly. Screenshot tolerance is
+zero: differing pixels require review. Both iframe screenshots use the same screen
+origin to avoid position-dependent Chromium raster differences. Real media decode,
+font readiness and stable SVG markup are awaited; intentionally held-loading
+fixtures retain their pending state. Keyboard tests use normal 50ms held keys so
+Radix's deferred focus occurs before keyup. These are test-harness controls, not
+component fixes. They do not change production styles or event handlers.
+
+An inherited bug is Known issue only when its exact recorded assertion signature
+matches. An extra failure, changed signature or new layout/style difference stays
+Fail. Known issues never produce an unqualified green result. This bench does not
+certify performance, SSR or comprehensive accessibility.
+
+History lives in ignored `.bench-runs/`; explicit saved cases in `.bench-cases/`;
+child process logs in `.bench-logs/`. The UI can export JSON or an offline HTML +
+evidence tarball. Keep the HTML beside its relative evidence paths after unpacking.
+Runs contain source, assertions, raw compressed measurements, screenshots/diffs,
+artifact/browser/CSS identities and a file-hash manifest. Operational progress and
+cancellation files are excluded from new manifests. Missing artifacts are reported
+as missing, never accepted as passes. Save a live response only through its explicit
+selection control: it starts Not covered until independent assertions are supplied.
+No environment files or credentials are included in exports.

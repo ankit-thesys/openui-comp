@@ -95,11 +95,7 @@ try {
     .getByRole("button")
     .filter({ has: page.locator("code", { hasText: job.id }) })
     .click();
-  assert(
-    (await page.locator(".detail-body").innerText()).includes(
-      "Tested preset: Default",
-    ),
-  );
+  await page.getByText(/^Tested preset: Default/).waitFor();
   await page
     .getByLabel("Search component cases")
     .fill("Form · default composition");

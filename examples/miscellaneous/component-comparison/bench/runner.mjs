@@ -188,6 +188,8 @@ async function assertion(frame, a, events, pane) {
       actual = await locator(frame, a).getAttribute(a.attribute, {
         timeout: 800,
       });
+    else if (a.kind === "scrollLeft")
+      actual = await locator(frame, a).evaluate((e) => e.scrollLeft);
     else if (a.kind === "stableHeight") {
       details = await frame.locator(a.selector).evaluate(async (e) => {
         const values = [];
@@ -658,6 +660,23 @@ async function executeCell(browser, origin, c, cell, dir, themePreset, slot) {
           throw Error("SVG geometry did not settle");
         }, !!c.setup.holdAssets);
       await page.waitForTimeout(120);
+      for (const frame of frames)
+        await frame.evaluate(async () => {
+          let previous = "",
+            stable = 0;
+          for (let n = 0; n < 60; n++) {
+            const current = [
+              ...document.querySelectorAll(".openui-carousel-content"),
+            ]
+              .map((e) => e.scrollLeft)
+              .join(",");
+            stable = current === previous ? stable + 1 : 0;
+            if (stable >= 3) return;
+            previous = current;
+            await new Promise((r) => setTimeout(r, 30));
+          }
+          throw Error("Carousel scroll did not settle");
+        });
       for (const f of frames)
         await f.evaluate(async ({ environment }) => {
           const host = document.querySelector("link[data-bench-host]");
@@ -1208,6 +1227,10 @@ export async function runBench(options = {}) {
     chrome = DEFAULT_CHROME,
     onProgress = () => {},
   } = options;
+  const requestedLedger = structuredClone(
+    options.checklistOverride ??
+      (await readJson(path.join(root, "bench/checklist.json"))),
+  );
   const all = structuredClone(options.casesOverride ?? (await loadCases()));
   if (new Set(all.map((c) => c.id)).size !== all.length)
     throw Error("Duplicate deterministic case IDs; run refused");
@@ -1378,9 +1401,8 @@ export async function runBench(options = {}) {
       });
   run.completedAt = new Date().toISOString();
   run.summary = summarize(run.results, cells.length);
-  const ledger =
-    options.checklistOverride ??
-    (await readJson(path.join(root, "bench/checklist.json")));
+  const ledger = requestedLedger;
+  run.checklist = requestedLedger;
   run.coverage = ledger.map((l) => ({
     ...l,
     checks: l.checks.map((check) => {
@@ -1422,19 +1444,14 @@ export async function runBench(options = {}) {
     run.summary.verdict = "Not covered";
   await writeJson(path.join(dir, "run.json"), run);
   await fs.writeFile(path.join(dir, "report.html"), htmlReport(run));
-  await writeJson(path.join(dir, "progress.json"), {
-    id,
-    status: run.status,
-    total: cells.length,
-    completed: run.summary.executed,
-    summary: run.summary,
-  });
   const files = [];
   async function evidenceHashes(d) {
     for (const e of await fs.readdir(d, { withFileTypes: true })) {
       const p = path.join(d, e.name);
       if (e.isDirectory()) await evidenceHashes(p);
-      else if (e.name !== "manifest.json")
+      else if (
+        !["manifest.json", "progress.json", "cancel.requested"].includes(e.name)
+      )
         files.push({
           path: path.relative(dir, p),
           sha256: sha(await fs.readFile(p)),
@@ -1443,5 +1460,12 @@ export async function runBench(options = {}) {
   }
   await evidenceHashes(dir);
   await writeJson(path.join(dir, "manifest.json"), { id, files });
+  await writeJson(path.join(dir, "progress.json"), {
+    id,
+    status: run.status,
+    total: cells.length,
+    completed: run.summary.executed,
+    summary: run.summary,
+  });
   return run;
 }

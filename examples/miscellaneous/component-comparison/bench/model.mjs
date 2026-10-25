@@ -1,5 +1,5 @@
 import { isDeepStrictEqual } from "node:util";
-export const RUNNER_VERSION = "1.0.0";
+export const RUNNER_VERSION = "1.0.1";
 export const CHROME_VERSION = "156.0.8078.47";
 export const DEFAULT_CHROME =
   "/private/tmp/beta17-cft/156.0.8078.47/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing";
@@ -150,6 +150,7 @@ export function validateCase(c) {
     "allDisabled",
     "clipboardText",
     "stableHeight",
+    "scrollLeft",
     "actionCount",
     "session",
   ];

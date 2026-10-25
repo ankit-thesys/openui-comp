@@ -138,7 +138,7 @@ try {
     await left.locator("#pane-source").textContent(),
     await right.locator("#pane-source").textContent(),
   );
-  await page.getByLabel("Shared theme").selectOption("dark");
+  await page.getByLabel("Shared theme", { exact: true }).selectOption("dark");
   await right.locator('html[data-theme="dark"]').waitFor();
   await left.locator('html[data-theme="dark"]').waitFor();
   const sheets = await right
@@ -229,7 +229,7 @@ try {
   await page.getByRole("button", { name: "Clear", exact: true }).click();
   await left.getByRole("alert").waitFor({ state: "hidden" });
   assert.deepEqual(errors, []);
-  await page.getByLabel("Shared theme").selectOption("light");
+  await page.getByLabel("Shared theme", { exact: true }).selectOption("light");
   await page.screenshot({
     path: ".test-results/comparison-desktop.png",
     fullPage: true,

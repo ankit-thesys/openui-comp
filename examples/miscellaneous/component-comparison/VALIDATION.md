@@ -81,3 +81,28 @@ The first browser chart-count assertion used an incorrect Recharts selector;
 these components expose their own accessible SVG labels. The test selector was
 corrected, with the failed control retained in offline evidence. No chart
 implementation or production styling was changed to make that check pass.
+
+## Bench validation (in progress)
+
+The automated bench is example-local. Production packages and their historical
+SCSS remain unchanged. The full approved Default matrix is executing; do not infer
+its outcome from the earlier diagnostics or from case inventory presence.
+
+Focused checks completed before the full run:
+
+- Build/schema generation and TypeScript pass.
+- Native public validation API confirms optional unset Slider values are valid for
+  a `min` rule; the invalid-value case explicitly changes the value before submit.
+- Shared instant/stream Stop, Replay, mode cancellation, stale fencing and exact
+  form action checks pass. Radio selection works with a 50ms held arrow key.
+- Real UI test passes child-runner execution, historical identity, JSON and complete
+  evidence export, draft isolation, preset-aware saving and cancellation; no
+  generation requests or page errors.
+- Seeded text, style and pixel mutations fail, prohibited requests fail, and
+  cancelled cells remain Not covered. Exact known signatures do not hide an extra
+  assertion failure.
+
+Original diagnostic evidence is preserved. See the bench triage report for the
+versioned inventory changes, font/cascade investigation and raster reproductions.
+The full matrix and refreshed original live/offline/theme tests are reported below
+once finalized; this section is not a full-suite pass claim.

@@ -432,10 +432,10 @@ function App() {
                 : undefined;
               const status = results?.some((r) => r.verdict === "Fail")
                 ? "Fail"
-                : results?.some((r) => r.verdict === "Known issue")
-                  ? "Known issue"
-                  : results?.some((r) => r.verdict === "Review")
-                    ? "Review"
+                : results?.some((r) => r.verdict === "Review")
+                  ? "Review"
+                  : results?.some((r) => r.verdict === "Known issue")
+                    ? "Known issue"
                     : results?.length &&
                         results.every((r) => r.verdict === "Pass")
                       ? "Pass"

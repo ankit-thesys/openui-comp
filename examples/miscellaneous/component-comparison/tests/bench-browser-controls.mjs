@@ -127,9 +127,23 @@ try {
   assert(blocked.results[0].layers.network.violations.length >= 2);
   assert.equal(upstreamCalls, 0);
   controls.prohibitedRequestsBlockedAndFailed = true;
+  const ledger = [
+    {
+      component: "Control",
+      checks: [
+        {
+          id: "frozen-control",
+          applicable: true,
+          cases: ["control-cancel"],
+          assertions: ["visible"],
+        },
+      ],
+    },
+  ];
   const cancelled = await runBench({
     origin,
     caseIds: ["control-cancel"],
+    checklistOverride: ledger,
     casesOverride: [
       {
         ...common,
@@ -147,6 +161,7 @@ try {
     ],
     concurrency: 1,
     onProgress: (p) => {
+      if (p.completed === 1) ledger[0].checks[0].id = "changed-after-start";
       if (p.completed === 1)
         writeFileSync(
           path.join(".bench-runs", p.id, "cancel.requested"),
@@ -159,6 +174,8 @@ try {
   assert.equal(cancelled.summary.executed, 1);
   assert(cancelled.results.some((r) => !r.executed));
   controls.cancelledCellsNeverPass = true;
+  assert.equal(cancelled.checklist[0].checks[0].id, "frozen-control");
+  controls.coverageInputFrozenBeforeExecution = true;
   const persisted = JSON.parse(
     await fs.readFile(path.join(".bench-runs", blocked.id, "run.json"), "utf8"),
   );
