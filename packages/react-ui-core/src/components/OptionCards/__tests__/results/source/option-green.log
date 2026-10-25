@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: option cards preserve controlled selection, native roots, markdown and callback values
+ok 1 - option cards preserve controlled selection, native roots, markdown and callback values
+  ---
+  duration_ms: 22.716791
+  type: 'test'
+  ...
+# Subtest: option cards filter missing identities and preserve native disabled actions and top slots
+ok 2 - option cards filter missing identities and preserve native disabled actions and top slots
+  ---
+  duration_ms: 6.240209
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1358.346292
