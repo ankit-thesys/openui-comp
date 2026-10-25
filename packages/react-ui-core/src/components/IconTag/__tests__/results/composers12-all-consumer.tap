@@ -1,0 +1,524 @@
+TAP version 13
+# Subtest: Accordion expands and collapses through its public trigger, preserving refs and disabled state
+ok 1 - Accordion expands and collapses through its public trigger, preserving refs and disabled state
+  ---
+  duration_ms: 443.134042
+  type: 'test'
+  ...
+# Subtest: Carousel preserves composed public content, native attributes, noSnap wrapper and hidden-button option
+ok 2 - Carousel preserves composed public content, native attributes, noSnap wrapper and hidden-button option
+  ---
+  duration_ms: 12.314584
+  type: 'test'
+  ...
+# Subtest: Steps numbers children by position, honors explicit integers and follows prop updates
+ok 3 - Steps numbers children by position, honors explicit integers and follows prop updates
+  ---
+  duration_ms: 20.194583
+  type: 'test'
+  ...
+# Subtest: a standalone StepsItem retains its default number and own layout styles
+ok 4 - a standalone StepsItem retains its default number and own layout styles
+  ---
+  duration_ms: 102.326542
+  type: 'test'
+  ...
+# Subtest: Tabs exposes its selected panel, disabled trigger and original rich trigger content
+ok 5 - Tabs exposes its selected panel, disabled trigger and original rich trigger content
+  ---
+  duration_ms: 59.799458
+  type: 'test'
+  ...
+# Subtest: Button-only root import excludes unrelated layout modules and styles
+ok 6 - Button-only root import excludes unrelated layout modules and styles
+  ---
+  duration_ms: 747.466958
+  type: 'test'
+  ...
+# Subtest: Accordion-only root import excludes unrelated layout modules and styles
+ok 7 - Accordion-only root import excludes unrelated layout modules and styles
+  ---
+  duration_ms: 588.855792
+  type: 'test'
+  ...
+# Subtest: Carousel-only root import excludes unrelated layout modules and styles
+ok 8 - Carousel-only root import excludes unrelated layout modules and styles
+  ---
+  duration_ms: 351.849416
+  type: 'test'
+  ...
+# Subtest: Steps-only root import excludes unrelated layout modules and styles
+ok 9 - Steps-only root import excludes unrelated layout modules and styles
+  ---
+  duration_ms: 502.258417
+  type: 'test'
+  ...
+# Subtest: Tabs-only root import excludes unrelated layout modules and styles
+ok 10 - Tabs-only root import excludes unrelated layout modules and styles
+  ---
+  duration_ms: 476.1455
+  type: 'test'
+  ...
+# Subtest: native Node module resolves all layout public parts from the installed root
+ok 11 - native Node module resolves all layout public parts from the installed root
+  ---
+  duration_ms: 4424.495625
+  type: 'test'
+  ...
+# Subtest: native Node commonjs resolves all layout public parts from the installed root
+ok 12 - native Node commonjs resolves all layout public parts from the installed root
+  ---
+  duration_ms: 1315.596709
+  type: 'test'
+  ...
+# Subtest: Button preserves refs, icon order, native events and disabled semantics through the root import
+ok 13 - Button preserves refs, icon order, native events and disabled semantics through the root import
+  ---
+  duration_ms: 21.279291
+  type: 'test'
+  ...
+# Subtest: a retained Button excludes theme tables and unrelated controls from an ESM consumer bundle
+ok 14 - a retained Button excludes theme tables and unrelated controls from an ESM consumer bundle
+  ---
+  duration_ms: 742.805708
+  type: 'test'
+  ...
+# Subtest: unused root imports do not retain components or the styling runtime
+ok 15 - unused root imports do not retain components or the styling runtime
+  ---
+  duration_ms: 538.04725
+  type: 'test'
+  ...
+# Subtest: Buttons preserves layout, native attributes and child interactions
+ok 16 - Buttons preserves layout, native attributes and child interactions
+  ---
+  duration_ms: 24.675584
+  type: 'test'
+  ...
+# Subtest: callouts preserve content, forwarded attributes, refs and the CSS dismissal duration
+ok 17 - callouts preserve content, forwarded attributes, refs and the CSS dismissal duration
+  ---
+  duration_ms: 15.4435
+  type: 'test'
+  ...
+# Subtest: Card preserves native props, ref, children and variant/width updates
+ok 18 - Card preserves native props, ref, children and variant/width updates
+  ---
+  duration_ms: 44.608458
+  type: 'test'
+  ...
+# Subtest: Card root import prunes unrelated layout implementations and styles
+ok 19 - Card root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 414.871209
+  type: 'test'
+  ...
+# Subtest: CardHeader root import prunes unrelated layout implementations and styles
+ok 20 - CardHeader root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 366.309833
+  type: 'test'
+  ...
+# Subtest: Skeleton root import prunes unrelated layout implementations and styles
+ok 21 - Skeleton root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 376.939083
+  type: 'test'
+  ...
+# Subtest: TableSkeleton root import prunes unrelated layout implementations and styles
+ok 22 - TableSkeleton root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 401.285333
+  type: 'test'
+  ...
+# Subtest: PieChartSkeleton root import prunes unrelated layout implementations and styles
+ok 23 - PieChartSkeleton root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 410.007792
+  type: 'test'
+  ...
+# Subtest: DotMatrixLoader root import prunes unrelated layout implementations and styles
+ok 24 - DotMatrixLoader root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 440.856041
+  type: 'test'
+  ...
+# Subtest: layout root imports expose all public parts in native ESM and CommonJS
+ok 25 - layout root imports expose all public parts in native ESM and CommonJS
+  ---
+  duration_ms: 4404.639209
+  type: 'test'
+  ...
+# Subtest: CardHeader preserves content, actions, ref and native style precedence
+ok 26 - CardHeader preserves content, actions, ref and native style precedence
+  ---
+  duration_ms: 29.306375
+  type: 'test'
+  ...
+# Subtest: Checkbox group preserves ref, labels, state changes and disabled behavior
+ok 27 - Checkbox group preserves ref, labels, state changes and disabled behavior
+  ---
+  duration_ms: 144.1905
+  type: 'test'
+  ...
+# Subtest: Chips preserves controlled selection, refs, filtering and native disabled behavior
+ok 28 - Chips preserves controlled selection, refs, filtering and native disabled behavior
+  ---
+  duration_ms: 32.656792
+  type: 'test'
+  ...
+# Subtest: Button-only root import excludes unrelated control modules and styles
+ok 29 - Button-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 444.424042
+  type: 'test'
+  ...
+# Subtest: IconButton-only root import excludes unrelated control modules and styles
+ok 30 - IconButton-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 382.416375
+  type: 'test'
+  ...
+# Subtest: CheckBoxItem-only root import excludes unrelated control modules and styles
+ok 31 - CheckBoxItem-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 389.983375
+  type: 'test'
+  ...
+# Subtest: Chips-only root import excludes unrelated control modules and styles
+ok 32 - Chips-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 426.628833
+  type: 'test'
+  ...
+# Subtest: Slider-only root import excludes unrelated control modules and styles
+ok 33 - Slider-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 352.720458
+  type: 'test'
+  ...
+# Subtest: control root imports work in native Node ESM and CommonJS
+ok 34 - control root imports work in native Node ESM and CommonJS
+  ---
+  duration_ms: 4177.701459
+  type: 'test'
+  ...
+# Subtest: citation items open safe sources and still notify consumers when a source URL is rejected
+ok 35 - citation items open safe sources and still notify consumers when a source URL is rejected
+  ---
+  duration_ms: 39.988625
+  type: 'test'
+  ...
+# Subtest: markdown citation spans resolve one-based sources and preserve ordinary span content
+ok 36 - markdown citation spans resolve one-based sources and preserve ordinary span content
+  ---
+  duration_ms: 23.137459
+  type: 'test'
+  ...
+# Subtest: CodeBlock preserves code, language, custom theme and updates through the public root
+ok 37 - CodeBlock preserves code, language, custom theme and updates through the public root
+  ---
+  duration_ms: 87.16975
+  type: 'test'
+  ...
+# Subtest: DotMatrixLoader preserves accessible loading, animated dots, compact grid and custom size
+ok 38 - DotMatrixLoader preserves accessible loading, animated dots, compact grid and custom size
+  ---
+  duration_ms: 94.766917
+  type: 'test'
+  ...
+# Subtest: FormControl propagates errors and Hint allows an explicit override
+ok 39 - FormControl propagates errors and Hint allows an explicit override
+  ---
+  duration_ms: 20.515375
+  type: 'test'
+  ...
+# Subtest: IconButton preserves native refs, icon, state updates and asChild interaction
+ok 40 - IconButton preserves native refs, icon, state updates and asChild interaction
+  ---
+  duration_ms: 43.929125
+  type: 'test'
+  ...
+# Subtest: icon tags retain their native root ref and consumer class, and omit a missing icon
+ok 41 - icon tags retain their native root ref and consumer class, and omit a missing icon
+  ---
+  duration_ms: 24.249291
+  type: 'test'
+  ...
+# Subtest: icon text composes real markdown labels, retains its root ref and updates optional content
+ok 42 - icon text composes real markdown labels, retains its root ref and updates optional content
+  ---
+  duration_ms: 42.086958
+  type: 'test'
+  ...
+# Subtest: images preserve native attributes and refs, and load/error transitions stay consumer-overridable
+ok 43 - images preserve native attributes and refs, and load/error transitions stay consumer-overridable
+  ---
+  duration_ms: 39.8445
+  type: 'test'
+  ...
+# Subtest: image blocks preserve initial loading choices, image attributes and empty-source behavior
+ok 44 - image blocks preserve initial loading choices, image attributes and empty-source behavior
+  ---
+  duration_ms: 8.157167
+  type: 'test'
+  ...
+# Subtest: image galleries retain input order, accessible image labels and a five-image preview limit
+ok 45 - image galleries retain input order, accessible image labels and a five-image preview limit
+  ---
+  duration_ms: 36.901792
+  type: 'test'
+  ...
+# Subtest: image text preserves markdown, accessible image labels, imageSize and root customization
+ok 46 - image text preserves markdown, accessible image labels, imageSize and root customization
+  ---
+  duration_ms: 42.354417
+  type: 'test'
+  ...
+# Subtest: large image text preserves image alt fallback, markdown content, updates and root refs
+ok 47 - large image text preserves image alt fallback, markdown content, updates and root refs
+  ---
+  duration_ms: 46.549791
+  type: 'test'
+  ...
+# Subtest: InlineHeader preserves empty, heading and description markdown with class customization
+ok 48 - InlineHeader preserves empty, heading and description markdown with class customization
+  ---
+  duration_ms: 39.383667
+  type: 'test'
+  ...
+# Subtest: InlineMarkdownRenderer preserves empty output, flattened text, aligned GFM tables and citations
+ok 49 - InlineMarkdownRenderer preserves empty output, flattened text, aligned GFM tables and citations
+  ---
+  duration_ms: 180.822792
+  type: 'test'
+  ...
+# Subtest: Input retains native input/ref, size, error and styles APIs
+ok 50 - Input retains native input/ref, size, error and styles APIs
+  ---
+  duration_ms: 33.264625
+  type: 'test'
+  ...
+# Subtest: Label preserves association, required marker, disabled class and native ref
+ok 51 - Label preserves association, required marker, disabled class and native ref
+  ---
+  duration_ms: 10.950583
+  type: 'test'
+  ...
+# Subtest: MarkDownRenderer preserves rich content, safe defaults, variants and updates
+ok 52 - MarkDownRenderer preserves rich content, safe defaults, variants and updates
+  ---
+  duration_ms: 86.203084
+  type: 'test'
+  ...
+# Subtest: Modal opens in a body portal, focuses its dialog and reports dismissal through the controlled callback
+ok 53 - Modal opens in a body portal, focuses its dialog and reports dismissal through the controlled callback
+  ---
+  duration_ms: 42.156166
+  type: 'test'
+  ...
+# Subtest: TooltipWrapper leaves an empty tooltip's child interactive and preserves its ref and native props
+ok 54 - TooltipWrapper leaves an empty tooltip's child interactive and preserves its ref and native props
+  ---
+  duration_ms: 28.19675
+  type: 'test'
+  ...
+# Subtest: Button-only root import excludes unrelated overlay/layout modules and styles
+ok 55 - Button-only root import excludes unrelated overlay/layout modules and styles
+  ---
+  duration_ms: 458.016917
+  type: 'test'
+  ...
+# Subtest: Modal-only root import excludes unrelated overlay/layout modules and styles
+ok 56 - Modal-only root import excludes unrelated overlay/layout modules and styles
+  ---
+  duration_ms: 349.922333
+  type: 'test'
+  ...
+# Subtest: TooltipWrapper-only root import excludes unrelated overlay/layout modules and styles
+ok 57 - TooltipWrapper-only root import excludes unrelated overlay/layout modules and styles
+  ---
+  duration_ms: 413.469125
+  type: 'test'
+  ...
+# Subtest: native Node module resolves both overlay public components from the installed root
+ok 58 - native Node module resolves both overlay public components from the installed root
+  ---
+  duration_ms: 3146.470084
+  type: 'test'
+  ...
+# Subtest: native Node commonjs resolves both overlay public components from the installed root
+ok 59 - native Node commonjs resolves both overlay public components from the installed root
+  ---
+  duration_ms: 993.9585
+  type: 'test'
+  ...
+# Subtest: Radio group preserves controlled selection, native refs and disabled options
+ok 60 - Radio group preserves controlled selection, native refs and disabled options
+  ---
+  duration_ms: 59.646292
+  type: 'test'
+  ...
+# Subtest: Foldable sections preserve public parts, refs, controlled expansion and native trigger behavior
+ok 61 - Foldable sections preserve public parts, refs, controlled expansion and native trigger behavior
+  ---
+  duration_ms: 217.279
+  type: 'test'
+  ...
+# Subtest: Select retains public parts, trigger refs, size updates, native attributes and disabled state
+ok 62 - Select retains public parts, trigger refs, size updates, native attributes and disabled state
+  ---
+  duration_ms: 45.678042
+  type: 'test'
+  ...
+# Subtest: Separator preserves orientation, semantics, native attributes and overrides
+ok 63 - Separator preserves orientation, semantics, native attributes and overrides
+  ---
+  duration_ms: 30.6055
+  type: 'test'
+  ...
+# Subtest: Skeleton preserves bar dimensions, table grids and pie/donut variants
+ok 64 - Skeleton preserves bar dimensions, table grids and pie/donut variants
+  ---
+  duration_ms: 31.601167
+  type: 'test'
+  ...
+# Subtest: favicons retain image attributes, fall back on failure and retry when their URL changes
+ok 65 - favicons retain image attributes, fall back on failure and retry when their URL changes
+  ---
+  duration_ms: 49.319792
+  type: 'test'
+  ...
+# Subtest: source providers enrich valid URLs, isolate nested consumers and update without stale sources
+ok 66 - source providers enrich valid URLs, isolate nested consumers and update without stale sources
+  ---
+  duration_ms: 17.754459
+  type: 'test'
+  ...
+# Subtest: opening a source rejects executable URL schemes and preserves safe opening defaults
+ok 67 - opening a source rejects executable URL schemes and preserves safe opening defaults
+  ---
+  duration_ms: 0.397083
+  type: 'test'
+  ...
+# Subtest: listed source items support Enter and Space navigation with consumer callbacks
+ok 68 - listed source items support Enter and Space navigation with consumer callbacks
+  ---
+  duration_ms: 53.546417
+  type: 'test'
+  ...
+# Subtest: empty source lists do not render a misleading sources heading
+ok 69 - empty source lists do not render a misleading sources heading
+  ---
+  duration_ms: 5.326459
+  type: 'test'
+  ...
+# Subtest: Switch group preserves controlled values, labels, refs and disabled behavior
+ok 70 - Switch group preserves controlled values, labels, refs and disabled behavior
+  ---
+  duration_ms: 56.557042
+  type: 'test'
+  ...
+# Subtest: Table parts preserve refs, native props, alignment, icon content and container customization
+ok 71 - Table parts preserve refs, native props, alignment, icon content and container customization
+  ---
+  duration_ms: 29.554042
+  type: 'test'
+  ...
+# node:internal/modules/cjs/loader:1383
+#   const err = new Error(message);
+#               ^
+# Error: Cannot find module 'esbuild'
+# Require stack:
+# - /Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/package.json
+#     at Module._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+#     at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+#     at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+#     at Module._load (node:internal/modules/cjs/loader:1192:37)
+#     at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+#     at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+#     at Module.require (node:internal/modules/cjs/loader:1463:12)
+#     at require (node:internal/modules/helpers:147:16)
+#     at file:///Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Table/__tests__/bundles.test.mjs:10:2
+#     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+#   code: 'MODULE_NOT_FOUND',
+#   requireStack: [
+#     '/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/package.json'
+#   ]
+# }
+# Node.js v22.22.2
+# Subtest: packages/react-ui-core/src/components/Table/__tests__/bundles.test.mjs
+not ok 50 - packages/react-ui-core/src/components/Table/__tests__/bundles.test.mjs
+  ---
+  duration_ms: 111.192167
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Table/__tests__/bundles.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: native module resolves Table, markdown and source prerequisite root APIs
+ok 73 - native module resolves Table, markdown and source prerequisite root APIs
+  ---
+  duration_ms: 2229.122875
+  type: 'test'
+  ...
+# Subtest: native commonjs resolves Table, markdown and source prerequisite root APIs
+ok 74 - native commonjs resolves Table, markdown and source prerequisite root APIs
+  ---
+  duration_ms: 500.08775
+  type: 'test'
+  ...
+# Subtest: tags preserve rich labels, optional icons, styles and forwarded refs
+ok 75 - tags preserve rich labels, optional icons, styles and forwarded refs
+  ---
+  duration_ms: 23.19225
+  type: 'test'
+  ...
+# Subtest: tag blocks preserve child order, consumer styles and refs
+ok 76 - tag blocks preserve child order, consumer styles and refs
+  ---
+  duration_ms: 11.649334
+  type: 'test'
+  ...
+# Subtest: TextArea retains rows, ref, native props, error state and text entry
+ok 77 - TextArea retains rows, ref, native props, error state and text entry
+  ---
+  duration_ms: 17.650584
+  type: 'test'
+  ...
+# Subtest: TextBlockView preserves ref, defaults, rich text and tone/clamp/variant updates
+ok 78 - TextBlockView preserves ref, defaults, rich text and tone/clamp/variant updates
+  ---
+  duration_ms: 24.542208
+  type: 'test'
+  ...
+# Subtest: text callouts preserve rich text, refs, consumer styles and DOM callbacks
+ok 79 - text callouts preserve rich text, refs, consumer styles and DOM callbacks
+  ---
+  duration_ms: 12.597167
+  type: 'test'
+  ...
+# Subtest: text content preserves nested children and consumer customization across variants
+ok 80 - text content preserves nested children and consumer customization across variants
+  ---
+  duration_ms: 14.020875
+  type: 'test'
+  ...
+# Subtest: Toggle group preserves multiple selection and disabled items
+ok 81 - Toggle group preserves multiple selection and disabled items
+  ---
+  duration_ms: 22.388916
+  type: 'test'
+  ...
+1..81
+# tests 81
+# suites 0
+# pass 80
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 15472.486709
