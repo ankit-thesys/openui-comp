@@ -250,7 +250,7 @@ const properties = [
   "webkitMaskImage",
 ];
 const selector =
-  '#zone [class*="openui-"],#zone svg,.openui-tooltip-content,.openui-tooltip-content [class*="openui-"]';
+  '#zone [class*="openui-"],#zone svg,#zone img,.openui-tooltip-content,.openui-tooltip-content [class*="openui-"]';
 const settle = (page) =>
   page.evaluate(async () => {
     document.querySelectorAll('[class*="openui-"]').forEach((node) => getComputedStyle(node).color);
