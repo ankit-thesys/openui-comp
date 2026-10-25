@@ -1,3 +1,34 @@
+# CURRENT — corrected W1 library browser gate GREEN; RELEASED to verifier — 2026-10-25
+
+After explicit W2 release/root dispatch, W1 ran the corrected production-Vite
+library matrix on metadata-corrected d9cc96898 archive/consumer (hash below).
+All6 plain/TW3/TW4 bothinitialorders pass actual host CSS readiness+DOMorder,
+settled/distinct host-vs-kit hover, cancellation after observed live partial
+HTTPstream with ERR_ABORTED, resubmission/clear, no-providergap, text/table/
+2paintedbars/forms/validation/actions/history/scopedtheme+portalselection.
+Zero pageerrors/liveendstreams. Installed566kits+2202corefiles stillbyte-match
+archives; manifest/lock unchanged. Rawlog+exactexecutedfixtures+proof in
+packages/kits/evidence/chat-library/reviewed-browser/. Earlierprovisionalruns
+remain separate; no retroactive recertification.
+
+**All W1 Chrome/server closed. Browser explicitly RELEASED to verifier now.**
+Verifier thread01a17359-1780-7d12-94d4-2591f99aecf2 may perform its bounded
+independent browser/transport/asset-cost checks when root relays this release.
+W1 will not launch another browser until coordination. Metadata-only corrected
+kitSHA7ad36554f9a619b6ea0da7feb9280570078e2451051e8ac3d5d09abb30225880
+at /private/tmp/chat16-zod-metadata-artifacts/openuidev-kits-0.0.0-beta.0.tgz;
+consumer /private/tmp/chat16-zod-metadata-consumer; corea5d002... unchanged.
+
+W2 completed36diagnosticcases, semanticchecks pass, but strict hover/nested
+ModelSwitcher border-color comparisons remainUNPASSED (zero-widthnone).
+Do notnormalize/weakenassertions orclaimfullparity. AwaitW2committedevidence
+and source-cascade diagnosis/conventional correction proposal. W1 owns no
+component-source edits. No draft until remaining acceptance gates; no #17/
+SSR/perf/memoryclaim, merge/release/closure/upstream/legacy/preview writes.
+Untrackedcrates preserved. Root relays sequencing and artifact details.
+
+---
+
 # CURRENT — Zod minimum corrected; new metadata-only artifact ready — 2026-10-25
 
 Root authorized verifier finding correction in NEW kits only. `d9cc96898`

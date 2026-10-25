@@ -59,11 +59,12 @@ README; all runtime/declaration bytes remain identical to source8405.
 - [x] Corrected minimum Zod3.25.76: native imports, strict three-mode declarations
   and actual parser/Renderer form/action/history checks. Corrected package CI
   includes the npm peer-rejection regression.
-- [ ] Final browser acceptance: previous production-Vite six-case matrix passed
-  actual HTTP streaming, markdown, table/two painted bars, forms/actions,
-  themes/portal selection, explicit overrides, cancel/resubmit and cleanup.
-  Final review requires rerunning stricter settled-hover, verified stylesheet
-  order and observed-live-cancellation assertions before counting this gate.
+- [x] Corrected W1 library browser matrix: six production-Vite/Chrome framework/
+  order cases verify actual CSS readiness/placement, settled distinct hover,
+  observed-live-stream cancellation, resubmission, markdown/table/two painted
+  chart bars, validation/actions/history, scoped themes and portal selection.
+  Exact metadata-corrected archive/consumer remains unchanged; zero page errors
+  or live streams at the end. Earlier provisional runs remain separate.
 - [ ] Independent Worker2 component browser evidence, then verifier evidence.
 - [ ] Final review of integrated evidence and fork remote checks.
 
