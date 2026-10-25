@@ -1,3 +1,22 @@
+# CURRENT — chat-kit package CI GREEN; reviewed browser assertions need rerun — 2026-10-25
+
+Product remains frozen `8405f44e0`. Full kits CI passes 7/7 tests plus format,
+lint/types/build/Publint/ATTW; six inherited hook warnings, zero errors.
+Raw green log: packages/kits/evidence/chat-library/package-ci-green.log.
+Independent Standards review has zero findings. Spec review identified two
+harness gaps: settled hover sampling and direct stylesheet-order assertion.
+The runner is now corrected and syntax/format checked; its new assertions have
+NOT yet run. Previous browser log stays provisional, not recertified.
+
+Browser release to W2 still stands; W1 will not reclaim it without coordination.
+W2 should use the exact source8405 artifact/consumer listed below. Root can
+sequence the corrected W1 library matrix after W2's release, then the independent
+verifier. No new product patch is needed for these test-only corrections.
+W2 and verifier evidence remain pending; no draft PR or acceptance yet.
+Untracked crates untouched. No merge/release/closure/upstream/legacy changes.
+
+---
+
 # CURRENT — chat-kit production frozen; W1 browser RELEASED to W2 — 2026-10-25
 
 W1 integrated W2 commits 41af2765d and b2f3ad6fb as 6aa26ed94/04fc264d9.

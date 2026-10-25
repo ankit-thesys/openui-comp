@@ -1,0 +1,702 @@
+
+> @openuidev/kits@0.0.0-beta.0 ci /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits
+> pnpm run format:check && pnpm run lint:check && pnpm run typecheck && pnpm run test && pnpm run check:publint && pnpm run check:attw
+
+
+> @openuidev/kits@0.0.0-beta.0 format:check /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits
+> prettier --check src tests *.json *.ts
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> @openuidev/kits@0.0.0-beta.0 lint:check /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits
+> eslint src --ignore-pattern "**/__tests__/**"
+
+
+/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/src/react/chat/libs/openuiChatLibrary/CheckBoxGroup/index.tsx
+  45:11  warning  The 'items' logical expression could make the dependencies of useCallback Hook (at line 55) change on every render. To fix this, wrap the initialization of 'items' in its own useMemo() Hook  react-hooks/exhaustive-deps
+
+/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/src/react/chat/libs/openuiChatLibrary/SectionBlock/index.tsx
+  45:6  warning  React Hook React.useEffect has a missing dependency: 'items'. Either include it or remove the dependency array                                react-hooks/exhaustive-deps
+  53:6  warning  React Hook React.useEffect has missing dependencies: 'firstItemValue' and 'items.length'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/src/react/chat/libs/openuiChatLibrary/SwitchGroup/index.tsx
+  40:11  warning  The 'items' logical expression could make the dependencies of useCallback Hook (at line 50) change on every render. To fix this, wrap the initialization of 'items' in its own useMemo() Hook  react-hooks/exhaustive-deps
+
+/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/src/react/chat/libs/openuiChatLibrary/Tabs/index.tsx
+  39:6  warning  React Hook React.useEffect has a missing dependency: 'items'. Either include it or remove the dependency array                                                                                                          react-hooks/exhaustive-deps
+  41:3  warning  React Hook useEffect contains a call to 'setActiveTab'. Without a list of dependencies, this can lead to an infinite chain of updates. To fix this, pass [activeTab, items] as a second argument to the useEffect Hook  react-hooks/exhaustive-deps
+
+✖ 6 problems (0 errors, 6 warnings)
+
+
+> @openuidev/kits@0.0.0-beta.0 typecheck /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits
+> tsc --noEmit
+
+
+> @openuidev/kits@0.0.0-beta.0 test /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits
+> pnpm build && node --test tests/*.test.mjs src/react/chat/components/*/__tests__/*.test.mjs
+
+
+> @openuidev/kits@0.0.0-beta.0 build /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits
+> tsdown
+
+ℹ tsdown v0.21.10 powered by rolldown v1.0.0-rc.17
+ℹ config file: /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits/tsdown.config.ts 
+ℹ entry: src/react/chat/index.ts, src/react/chat/libs/index.ts
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 630 files
+ℹ [CJS] dist/react/chat/components/ModelSwitcher/ModelSwitcher.d.cts.map       0.54 kB │ gzip: 0.30 kB
+ℹ [CJS] dist/react/chat/components/FollowUpBlock/FollowUpBlock.d.cts.map       0.37 kB │ gzip: 0.23 kB
+ℹ [CJS] dist/react/chat/components/FollowUpItem/FollowUpItem.d.cts.map         0.32 kB │ gzip: 0.21 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/openuiChatLibrary.d.cts.map     0.24 kB │ gzip: 0.18 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/prompt-options/index.d.cts.map  0.21 kB │ gzip: 0.17 kB
+ℹ [CJS] dist/react/chat/index.d.cts                                            0.45 kB │ gzip: 0.15 kB
+ℹ [CJS] dist/react/chat/libs/index.d.cts                                       0.37 kB │ gzip: 0.16 kB
+ℹ [CJS] dist/react/chat/components/ModelSwitcher/ModelSwitcher.d.cts           1.30 kB │ gzip: 0.63 kB
+ℹ [CJS] dist/react/chat/components/FollowUpBlock/FollowUpBlock.d.cts           0.66 kB │ gzip: 0.33 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/openuiChatLibrary.d.cts         0.57 kB │ gzip: 0.28 kB
+ℹ [CJS] dist/react/chat/components/FollowUpItem/FollowUpItem.d.cts             0.53 kB │ gzip: 0.29 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/prompt-options/index.d.cts      0.41 kB │ gzip: 0.22 kB
+ℹ [CJS] dist/react/chat/components/ModelSwitcher/index.d.cts                   0.10 kB │ gzip: 0.08 kB
+ℹ [CJS] dist/react/chat/components/FollowUpBlock/index.d.cts                   0.07 kB │ gzip: 0.07 kB
+ℹ [CJS] dist/react/chat/components/FollowUpItem/index.d.cts                    0.07 kB │ gzip: 0.07 kB
+ℹ [CJS] 15 files, total: 6.20 kB
+ℹ [CJS] dist/react/chat/libs/index.cjs                                                0.61 kB │ gzip:  0.24 kB
+ℹ [CJS] dist/react/chat/index.cjs                                                     0.53 kB │ gzip:  0.21 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/prompt-options/index.cjs.map          29.49 kB │ gzip: 11.09 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/prompt-options/index.cjs              27.34 kB │ gzip: 10.79 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/openuiChatLibrary.cjs.map             22.59 kB │ gzip:  6.04 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/openuiChatLibrary.cjs                 17.87 kB │ gzip:  4.67 kB
+ℹ [CJS] dist/react/chat/components/ModelSwitcher/ModelSwitcher.cjs.map                9.88 kB │ gzip:  3.13 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CompositeCardBlock/index.cjs.map       9.87 kB │ gzip:  3.13 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Table/index.cjs.map                    7.08 kB │ gzip:  2.32 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/EditableTable/index.cjs.map            7.06 kB │ gzip:  2.34 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/OptionCards/index.cjs.map              6.52 kB │ gzip:  2.19 kB
+ℹ [CJS] dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.cjs.map         6.01 kB │ gzip:  1.88 kB
+ℹ [CJS] dist/react/chat/components/ModelSwitcher/ModelSwitcher.cjs                    5.97 kB │ gzip:  1.45 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CompositeCardBlock/index.cjs           5.79 kB │ gzip:  1.88 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Chips/index.cjs.map                    5.61 kB │ gzip:  1.90 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/SectionBlock/index.cjs.map             5.46 kB │ gzip:  1.97 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/OverviewCardBlock/index.cjs.map        4.68 kB │ gzip:  1.75 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Tabs/index.cjs.map                     4.63 kB │ gzip:  1.73 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CheckBoxGroup/index.cjs.map            4.55 kB │ gzip:  1.57 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/SnippetCardBlock/index.cjs.map         4.53 kB │ gzip:  1.67 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/unions.cjs.map                         4.47 kB │ gzip:  1.35 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Table/index.cjs                        4.41 kB │ gzip:  1.45 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Select/index.cjs.map                   4.36 kB │ gzip:  1.52 kB
+ℹ [CJS] dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.cjs             4.21 kB │ gzip:  1.31 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/cardActionUtils.cjs.map                4.20 kB │ gzip:  1.64 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/OptionCards/index.cjs                  4.15 kB │ gzip:  1.37 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ContextCardBlock/index.cjs.map         4.08 kB │ gzip:  1.50 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/EditableTable/index.cjs                4.06 kB │ gzip:  1.31 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/unions.cjs                             4.04 kB │ gzip:  0.84 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CompositeCardBlock/schema.cjs.map      3.97 kB │ gzip:  1.30 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/RadioGroup/index.cjs.map               3.96 kB │ gzip:  1.41 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/selectionFieldUtils.cjs.map            3.87 kB │ gzip:  1.09 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/VisualCardBlock/index.cjs.map          3.86 kB │ gzip:  1.49 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Accordion/index.cjs.map                3.68 kB │ gzip:  1.43 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ListBlock/index.cjs.map                3.67 kB │ gzip:  1.35 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Chips/index.cjs                        3.63 kB │ gzip:  1.21 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/SwitchGroup/index.cjs.map              3.52 kB │ gzip:  1.32 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/SectionBlock/index.cjs                 3.48 kB │ gzip:  1.18 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/helpers.cjs.map                        3.47 kB │ gzip:  1.41 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/PieChart.cjs.map                3.37 kB │ gzip:  1.25 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Button/index.cjs.map                   3.35 kB │ gzip:  1.29 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CompositeCardBlock/schema.cjs          3.31 kB │ gzip:  0.94 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Slider/index.cjs.map                   3.04 kB │ gzip:  1.20 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/FormControl/index.cjs.map              3.04 kB │ gzip:  1.25 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Input/index.cjs.map                    3.04 kB │ gzip:  1.14 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TextArea/index.cjs.map                 3.03 kB │ gzip:  1.14 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/sectionContentUnion.cjs                2.91 kB │ gzip:  0.65 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/DatePicker/index.cjs.map               2.91 kB │ gzip:  1.09 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Tabs/index.cjs                         2.83 kB │ gzip:  1.06 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/sectionContentUnion.cjs.map            2.81 kB │ gzip:  0.91 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Select/index.cjs                       2.79 kB │ gzip:  0.95 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/ScatterChart.cjs.map            2.76 kB │ gzip:  1.14 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CheckBoxGroup/index.cjs                2.73 kB │ gzip:  0.96 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/OverviewCardBlock/index.cjs            2.73 kB │ gzip:  1.10 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/SnippetCardBlock/index.cjs             2.69 kB │ gzip:  1.06 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Carousel/index.cjs.map                 2.63 kB │ gzip:  1.06 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Callout/index.cjs.map                  2.61 kB │ gzip:  1.14 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/RadioGroup/index.cjs                   2.58 kB │ gzip:  0.92 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ContextCardBlock/index.cjs             2.54 kB │ gzip:  0.98 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/MetricIndicator/index.cjs.map          2.52 kB │ gzip:  0.79 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/SingleStackedBarChart.cjs.map   2.51 kB │ gzip:  0.97 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/RadialChart.cjs.map             2.47 kB │ gzip:  0.97 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/VisualCardBlock/index.cjs              2.45 kB │ gzip:  1.00 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/cardActionUtils.cjs                    2.45 kB │ gzip:  1.04 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/AreaChartCondensed.cjs.map      2.41 kB │ gzip:  1.00 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/LineChartCondensed.cjs.map      2.40 kB │ gzip:  0.99 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/BarChartCondensed.cjs.map       2.38 kB │ gzip:  0.98 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Accordion/index.cjs                    2.35 kB │ gzip:  0.91 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/OverviewCardBlock/schema.cjs.map       2.27 kB │ gzip:  0.89 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ContextCardBlock/schema.cjs.map        2.27 kB │ gzip:  0.87 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Steps/index.cjs.map                    2.27 kB │ gzip:  0.92 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/HorizontalBarChart.cjs.map      2.25 kB │ gzip:  0.95 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/SnippetCardBlock/schema.cjs.map        2.22 kB │ gzip:  0.85 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ListBlock/index.cjs                    2.22 kB │ gzip:  0.87 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/SwitchGroup/index.cjs                  2.16 kB │ gzip:  0.82 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/selectionFieldUtils.cjs                2.15 kB │ gzip:  0.62 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/PieChart.cjs                    2.12 kB │ gzip:  0.81 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TextContent/index.cjs.map              2.11 kB │ gzip:  0.90 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/OptionCards/schema.cjs.map             2.10 kB │ gzip:  0.82 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/VisualCardBlock/schema.cjs.map         2.10 kB │ gzip:  0.87 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/IconButton/index.cjs.map               2.08 kB │ gzip:  0.90 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Slider/index.cjs                       2.02 kB │ gzip:  0.82 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/formDefaultValueUtils.cjs.map          2.02 kB │ gzip:  0.80 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/DatePicker/index.cjs                   2.01 kB │ gzip:  0.75 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Input/index.cjs                        1.99 kB │ gzip:  0.77 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TextArea/index.cjs                     1.98 kB │ gzip:  0.76 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/EditableTable/schema.cjs.map           1.98 kB │ gzip:  0.77 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Text/index.cjs.map                     1.96 kB │ gzip:  0.89 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Form/index.cjs.map                     1.93 kB │ gzip:  0.88 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/FormControl/index.cjs                  1.88 kB │ gzip:  0.74 kB
+ℹ [CJS] dist/react/chat/components/FollowUpItem/followUpItem.styles.cjs.map           1.83 kB │ gzip:  0.86 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Button/index.cjs                       1.83 kB │ gzip:  0.74 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/ScatterChart.cjs                1.81 kB │ gzip:  0.78 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Callout/index.cjs                      1.79 kB │ gzip:  0.78 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Carousel/index.cjs                     1.79 kB │ gzip:  0.70 kB
+ℹ [CJS] dist/react/chat/components/ModelSwitcher/utils.cjs.map                        1.78 kB │ gzip:  0.88 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/MetricIndicator/index.cjs              1.77 kB │ gzip:  0.57 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/SingleStackedBarChart.cjs       1.76 kB │ gzip:  0.69 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/BoldText/index.cjs.map                 1.75 kB │ gzip:  0.81 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Chips/schema.cjs.map                   1.75 kB │ gzip:  0.73 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/RadarChart.cjs.map              1.73 kB │ gzip:  0.81 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/FollowUpBlock/index.cjs.map            1.71 kB │ gzip:  0.77 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/RadialChart.cjs                 1.70 kB │ gzip:  0.69 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/AreaChartCondensed.cjs          1.67 kB │ gzip:  0.72 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/LineChartCondensed.cjs          1.66 kB │ gzip:  0.71 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/BarChartCondensed.cjs           1.65 kB │ gzip:  0.72 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/OverviewCardBlock/schema.cjs           1.65 kB │ gzip:  0.64 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TextContent/index.cjs                  1.60 kB │ gzip:  0.69 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/SnippetCardBlock/schema.cjs            1.60 kB │ gzip:  0.61 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/HorizontalBarChart.cjs          1.59 kB │ gzip:  0.69 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Steps/index.cjs                        1.58 kB │ gzip:  0.65 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ContextCardBlock/schema.cjs            1.57 kB │ gzip:  0.62 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/VisualCardBlock/schema.cjs             1.52 kB │ gzip:  0.64 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/helpers.cjs                            1.52 kB │ gzip:  0.67 kB
+ℹ [CJS] dist/react/chat/components/FollowUpItem/FollowUpItem.cjs.map                  1.51 kB │ gzip:  0.67 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Tag/index.cjs.map                      1.50 kB │ gzip:  0.71 kB
+ℹ [CJS] dist/react/chat/components/FollowUpBlock/FollowUpBlock.cjs.map                1.50 kB │ gzip:  0.70 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/IconButton/index.cjs                   1.47 kB │ gzip:  0.63 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/EntityList/schema.cjs.map              1.44 kB │ gzip:  0.63 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/MetricIndicator/schema.cjs.map         1.44 kB │ gzip:  0.51 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/OptionCards/schema.cjs                 1.43 kB │ gzip:  0.59 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/EntityList/index.cjs.map               1.41 kB │ gzip:  0.68 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Text/index.cjs                         1.38 kB │ gzip:  0.65 kB
+ℹ [CJS] dist/react/chat/components/FollowUpItem/followUpItem.styles.cjs               1.37 kB │ gzip:  0.66 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageText/index.cjs.map                1.36 kB │ gzip:  0.64 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TagBlock/index.cjs.map                 1.35 kB │ gzip:  0.66 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Form/index.cjs                         1.34 kB │ gzip:  0.64 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/IconText/index.cjs.map                 1.34 kB │ gzip:  0.64 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/FollowUpBlock/index.cjs                1.34 kB │ gzip:  0.58 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/FormControl/schema.cjs.map             1.32 kB │ gzip:  0.54 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/rules.cjs.map                          1.32 kB │ gzip:  0.54 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/cardTagUtils.cjs.map                   1.31 kB │ gzip:  0.70 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/RadarChart.cjs                  1.31 kB │ gzip:  0.62 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/BoldText/index.cjs                     1.30 kB │ gzip:  0.61 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/formDefaultValueUtils.cjs              1.30 kB │ gzip:  0.52 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageTextLarge/index.cjs.map           1.29 kB │ gzip:  0.60 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/SwitchGroup/schema.cjs.map             1.27 kB │ gzip:  0.60 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Buttons/index.cjs.map                  1.26 kB │ gzip:  0.64 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ListItem/index.cjs.map                 1.25 kB │ gzip:  0.59 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/IconText/schema.cjs.map                1.23 kB │ gzip:  0.59 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Chips/schema.cjs                       1.21 kB │ gzip:  0.54 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/FormControl/schema.cjs                 1.21 kB │ gzip:  0.43 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Icon/schema.cjs.map                    1.21 kB │ gzip:  0.72 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CheckBoxGroup/schema.cjs.map           1.21 kB │ gzip:  0.56 kB
+ℹ [CJS] dist/react/chat/components/FollowUpItem/FollowUpItem.cjs                      1.20 kB │ gzip:  0.48 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Select/schema.cjs.map                  1.19 kB │ gzip:  0.57 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageGallery/index.cjs.map             1.17 kB │ gzip:  0.59 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/InlineHeader/index.cjs.map             1.15 kB │ gzip:  0.56 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/EditableTable/schema.cjs               1.13 kB │ gzip:  0.51 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Icon/index.cjs.map                     1.13 kB │ gzip:  0.60 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TextCallout/index.cjs.map              1.09 kB │ gzip:  0.53 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/MarkDownRenderer/index.cjs.map         1.09 kB │ gzip:  0.52 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/EntityList/index.cjs                   1.09 kB │ gzip:  0.53 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Slider/schema.cjs.map                  1.07 kB │ gzip:  0.48 kB
+ℹ [CJS] dist/react/chat/components/FollowUpBlock/FollowUpBlock.cjs                    1.06 kB │ gzip:  0.47 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/IconButton/schema.cjs.map              1.05 kB │ gzip:  0.50 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/IconText/index.cjs                     1.03 kB │ gzip:  0.50 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageText/index.cjs                    1.03 kB │ gzip:  0.51 kB
+ℹ [CJS] dist/_virtual/_rolldown/runtime.cjs                                           1.01 kB │ gzip:  0.50 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Separator/index.cjs.map                0.99 kB │ gzip:  0.52 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageTextLarge/index.cjs               0.99 kB │ gzip:  0.48 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TagBlock/index.cjs                     0.99 kB │ gzip:  0.49 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Icon/schema.cjs                        0.97 kB │ gzip:  0.59 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Tag/index.cjs                          0.96 kB │ gzip:  0.50 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/MetricIndicator/schema.cjs             0.96 kB │ gzip:  0.35 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Buttons/index.cjs                      0.95 kB │ gzip:  0.49 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/InlineHeader/index.cjs                 0.93 kB │ gzip:  0.45 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Icon/index.cjs                         0.93 kB │ gzip:  0.50 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CodeBlock/index.cjs.map                0.93 kB │ gzip:  0.48 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageBlock/index.cjs.map               0.93 kB │ gzip:  0.48 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/SectionItem/index.cjs.map              0.93 kB │ gzip:  0.49 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ListItem/index.cjs                     0.92 kB │ gzip:  0.47 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CheckBoxGroup/schema.cjs               0.92 kB │ gzip:  0.41 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/SwitchGroup/schema.cjs                 0.91 kB │ gzip:  0.43 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CardHeader/index.cjs.map               0.91 kB │ gzip:  0.46 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/rules.cjs                              0.91 kB │ gzip:  0.41 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/BoldText/schema.cjs.map                0.90 kB │ gzip:  0.44 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageText/schema.cjs.map               0.90 kB │ gzip:  0.45 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/EntityList/schema.cjs                  0.89 kB │ gzip:  0.44 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Button/schema.cjs.map                  0.89 kB │ gzip:  0.45 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Image/index.cjs.map                    0.88 kB │ gzip:  0.48 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Select/schema.cjs                      0.88 kB │ gzip:  0.42 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Text/schema.cjs.map                    0.88 kB │ gzip:  0.44 kB
+ℹ [CJS] dist/react/chat/components/FollowUpBlock/followUpBlock.styles.cjs.map         0.86 kB │ gzip:  0.46 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/cardTagUtils.cjs                       0.86 kB │ gzip:  0.47 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageGallery/index.cjs                 0.84 kB │ gzip:  0.45 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Input/schema.cjs.map                   0.83 kB │ gzip:  0.44 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/MarkDownRenderer/index.cjs             0.82 kB │ gzip:  0.42 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/ScatterSeries.cjs.map           0.82 kB │ gzip:  0.43 kB
+ℹ [CJS] dist/react/chat/components/ModelSwitcher/utils.cjs                            0.81 kB │ gzip:  0.46 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/IconText/schema.cjs                    0.81 kB │ gzip:  0.41 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TextCallout/index.cjs                  0.80 kB │ gzip:  0.41 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Label/index.cjs.map                    0.80 kB │ gzip:  0.43 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Slider/schema.cjs                      0.78 kB │ gzip:  0.38 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/SectionItem/index.cjs                  0.77 kB │ gzip:  0.42 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/Point.cjs.map                   0.77 kB │ gzip:  0.42 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Separator/index.cjs                    0.76 kB │ gzip:  0.41 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CardHeader/index.cjs                   0.75 kB │ gzip:  0.40 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TextArea/schema.cjs.map                0.75 kB │ gzip:  0.39 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CodeBlock/index.cjs                    0.74 kB │ gzip:  0.40 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/IconButton/schema.cjs                  0.74 kB │ gzip:  0.37 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Tag/schema.cjs.map                     0.74 kB │ gzip:  0.41 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/Series.cjs.map                  0.73 kB │ gzip:  0.42 kB
+ℹ [CJS] dist/react/chat/components/FollowUpBlock/followUpBlock.styles.cjs             0.73 kB │ gzip:  0.40 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageBlock/index.cjs                   0.73 kB │ gzip:  0.40 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/ScatterSeries.cjs               0.72 kB │ gzip:  0.37 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/DatePicker/schema.cjs.map              0.72 kB │ gzip:  0.41 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/Slice.cjs.map                   0.72 kB │ gzip:  0.42 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Table/schema.cjs.map                   0.71 kB │ gzip:  0.45 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Callout/schema.cjs.map                 0.71 kB │ gzip:  0.42 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Image/index.cjs                        0.71 kB │ gzip:  0.39 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageTextLarge/schema.cjs.map          0.70 kB │ gzip:  0.38 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/FollowUpItem/index.cjs.map             0.69 kB │ gzip:  0.43 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Input/schema.cjs                       0.66 kB │ gzip:  0.35 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Label/index.cjs                        0.66 kB │ gzip:  0.37 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageGallery/schema.cjs.map            0.66 kB │ gzip:  0.36 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Button/schema.cjs                      0.65 kB │ gzip:  0.35 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TextCallout/schema.cjs.map             0.62 kB │ gzip:  0.36 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/Point.cjs                       0.62 kB │ gzip:  0.35 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TextArea/schema.cjs                    0.62 kB │ gzip:  0.33 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Form/schema.cjs.map                    0.62 kB │ gzip:  0.36 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/Series.cjs                      0.60 kB │ gzip:  0.35 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/DatePicker/schema.cjs                  0.60 kB │ gzip:  0.34 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Table/schema.cjs                       0.59 kB │ gzip:  0.39 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/FollowUpItem/index.cjs                 0.58 kB │ gzip:  0.37 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageText/schema.cjs                   0.58 kB │ gzip:  0.32 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/BoldText/schema.cjs                    0.58 kB │ gzip:  0.32 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Callout/schema.cjs                     0.58 kB │ gzip:  0.34 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Charts/Slice.cjs                       0.56 kB │ gzip:  0.35 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Tag/schema.cjs                         0.56 kB │ gzip:  0.33 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Text/schema.cjs                        0.56 kB │ gzip:  0.32 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Accordion/schema.cjs.map               0.56 kB │ gzip:  0.33 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Tabs/schema.cjs.map                    0.55 kB │ gzip:  0.32 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Buttons/schema.cjs.map                 0.54 kB │ gzip:  0.35 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TextContent/schema.cjs.map             0.53 kB │ gzip:  0.34 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Form/schema.cjs                        0.52 kB │ gzip:  0.30 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/InlineHeader/schema.cjs.map            0.51 kB │ gzip:  0.32 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Separator/schema.cjs.map               0.50 kB │ gzip:  0.33 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/MarkDownRenderer/schema.cjs.map        0.50 kB │ gzip:  0.34 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TagBlock/schema.cjs.map                0.50 kB │ gzip:  0.33 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageGallery/schema.cjs                0.49 kB │ gzip:  0.28 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TextCallout/schema.cjs                 0.49 kB │ gzip:  0.29 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageTextLarge/schema.cjs              0.49 kB │ gzip:  0.28 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Accordion/schema.cjs                   0.47 kB │ gzip:  0.28 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/RadioGroup/schema.cjs.map              0.46 kB │ gzip:  0.29 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Buttons/schema.cjs                     0.45 kB │ gzip:  0.28 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Tabs/schema.cjs                        0.45 kB │ gzip:  0.27 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CardHeader/schema.cjs.map              0.45 kB │ gzip:  0.29 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TextContent/schema.cjs                 0.44 kB │ gzip:  0.28 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/MarkDownRenderer/schema.cjs            0.43 kB │ gzip:  0.28 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageBlock/schema.cjs.map              0.42 kB │ gzip:  0.29 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CodeBlock/schema.cjs.map               0.41 kB │ gzip:  0.28 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Separator/schema.cjs                   0.41 kB │ gzip:  0.27 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Image/schema.cjs.map                   0.41 kB │ gzip:  0.28 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Steps/schema.cjs.map                   0.40 kB │ gzip:  0.28 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/TagBlock/schema.cjs                    0.40 kB │ gzip:  0.27 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Action/schema.cjs.map                  0.39 kB │ gzip:  0.27 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/RadioGroup/schema.cjs                  0.38 kB │ gzip:  0.25 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/InlineHeader/schema.cjs                0.38 kB │ gzip:  0.25 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CardHeader/schema.cjs                  0.38 kB │ gzip:  0.24 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Action/schema.cjs                      0.38 kB │ gzip:  0.26 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/ImageBlock/schema.cjs                  0.36 kB │ gzip:  0.24 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/CodeBlock/schema.cjs                   0.36 kB │ gzip:  0.24 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Steps/schema.cjs                       0.35 kB │ gzip:  0.24 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Image/schema.cjs                       0.34 kB │ gzip:  0.24 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Label/schema.cjs.map                   0.34 kB │ gzip:  0.26 kB
+ℹ [CJS] dist/react/chat/libs/openuiChatLibrary/Label/schema.cjs                       0.30 kB │ gzip:  0.22 kB
+ℹ [CJS] 267 files, total: 555.92 kB
+✔ Build complete in 1406ms
+ℹ [ESM] dist/react/chat/libs/index.mjs                                                0.37 kB │ gzip:  0.16 kB
+ℹ [ESM] dist/react/chat/index.mjs                                                     0.30 kB │ gzip:  0.13 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/prompt-options/index.mjs.map          29.49 kB │ gzip: 11.09 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/prompt-options/index.mjs              27.25 kB │ gzip: 10.77 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/openuiChatLibrary.mjs.map             21.15 kB │ gzip:  5.81 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/openuiChatLibrary.mjs                 16.39 kB │ gzip:  4.67 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CompositeCardBlock/index.mjs.map       9.64 kB │ gzip:  3.08 kB
+ℹ [ESM] dist/react/chat/components/ModelSwitcher/ModelSwitcher.mjs.map                8.83 kB │ gzip:  2.98 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/EditableTable/index.mjs.map            6.77 kB │ gzip:  2.30 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Table/index.mjs.map                    6.59 kB │ gzip:  2.23 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/OptionCards/index.mjs.map              6.29 kB │ gzip:  2.13 kB
+ℹ [ESM] dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.mjs.map         5.87 kB │ gzip:  1.86 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CompositeCardBlock/index.mjs           5.51 kB │ gzip:  1.84 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Chips/index.mjs.map                    5.38 kB │ gzip:  1.83 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/SectionBlock/index.mjs.map             5.09 kB │ gzip:  1.89 kB
+ℹ [ESM] dist/react/chat/components/ModelSwitcher/ModelSwitcher.mjs                    4.62 kB │ gzip:  1.39 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/OverviewCardBlock/index.mjs.map        4.58 kB │ gzip:  1.72 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Tabs/index.mjs.map                     4.44 kB │ gzip:  1.68 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/SnippetCardBlock/index.mjs.map         4.42 kB │ gzip:  1.64 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CheckBoxGroup/index.mjs.map            4.38 kB │ gzip:  1.53 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/cardActionUtils.mjs.map                4.14 kB │ gzip:  1.63 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Select/index.mjs.map                   4.12 kB │ gzip:  1.48 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ContextCardBlock/index.mjs.map         3.96 kB │ gzip:  1.47 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/selectionFieldUtils.mjs.map            3.87 kB │ gzip:  1.09 kB
+ℹ [ESM] dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.mjs             3.77 kB │ gzip:  1.25 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/RadioGroup/index.mjs.map               3.76 kB │ gzip:  1.36 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/OptionCards/index.mjs                  3.75 kB │ gzip:  1.31 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/EditableTable/index.mjs                3.74 kB │ gzip:  1.28 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/VisualCardBlock/index.mjs.map          3.73 kB │ gzip:  1.46 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/unions.mjs.map                         3.63 kB │ gzip:  1.16 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Table/index.mjs                        3.59 kB │ gzip:  1.38 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ListBlock/index.mjs.map                3.54 kB │ gzip:  1.32 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Accordion/index.mjs.map                3.52 kB │ gzip:  1.39 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/helpers.mjs.map                        3.47 kB │ gzip:  1.41 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CompositeCardBlock/schema.mjs.map      3.44 kB │ gzip:  1.19 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/SwitchGroup/index.mjs.map              3.39 kB │ gzip:  1.28 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Button/index.mjs.map                   3.23 kB │ gzip:  1.26 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Chips/index.mjs                        3.21 kB │ gzip:  1.15 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/PieChart.mjs.map                3.17 kB │ gzip:  1.20 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/unions.mjs                             3.02 kB │ gzip:  0.74 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/SectionBlock/index.mjs                 2.99 kB │ gzip:  1.11 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Input/index.mjs.map                    2.93 kB │ gzip:  1.10 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Slider/index.mjs.map                   2.92 kB │ gzip:  1.16 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TextArea/index.mjs.map                 2.92 kB │ gzip:  1.11 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/FormControl/index.mjs.map              2.88 kB │ gzip:  1.22 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/DatePicker/index.mjs.map               2.77 kB │ gzip:  1.05 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/ScatterChart.mjs.map            2.63 kB │ gzip:  1.09 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CompositeCardBlock/schema.mjs          2.54 kB │ gzip:  0.84 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/OverviewCardBlock/index.mjs            2.50 kB │ gzip:  1.04 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Callout/index.mjs.map                  2.50 kB │ gzip:  1.11 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/SnippetCardBlock/index.mjs             2.46 kB │ gzip:  1.01 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/MetricIndicator/index.mjs.map          2.43 kB │ gzip:  0.76 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CheckBoxGroup/index.mjs                2.39 kB │ gzip:  0.89 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Tabs/index.mjs                         2.38 kB │ gzip:  0.98 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Carousel/index.mjs.map                 2.38 kB │ gzip:  1.01 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/SingleStackedBarChart.mjs.map   2.36 kB │ gzip:  0.92 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Select/index.mjs                       2.33 kB │ gzip:  0.90 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/RadialChart.mjs.map             2.33 kB │ gzip:  0.93 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/cardActionUtils.mjs                    2.32 kB │ gzip:  1.00 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ContextCardBlock/index.mjs             2.29 kB │ gzip:  0.93 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/AreaChartCondensed.mjs.map      2.25 kB │ gzip:  0.96 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/LineChartCondensed.mjs.map      2.24 kB │ gzip:  0.94 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/sectionContentUnion.mjs.map            2.24 kB │ gzip:  0.77 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/BarChartCondensed.mjs.map       2.22 kB │ gzip:  0.94 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/VisualCardBlock/index.mjs              2.19 kB │ gzip:  0.94 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/RadioGroup/index.mjs                   2.15 kB │ gzip:  0.85 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/sectionContentUnion.mjs                2.15 kB │ gzip:  0.57 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Steps/index.mjs.map                    2.14 kB │ gzip:  0.89 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ContextCardBlock/schema.mjs.map        2.11 kB │ gzip:  0.84 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/HorizontalBarChart.mjs.map      2.10 kB │ gzip:  0.91 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/selectionFieldUtils.mjs                2.07 kB │ gzip:  0.61 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/OverviewCardBlock/schema.mjs.map       2.07 kB │ gzip:  0.84 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/SnippetCardBlock/schema.mjs.map        2.03 kB │ gzip:  0.80 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TextContent/index.mjs.map              2.01 kB │ gzip:  0.88 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/formDefaultValueUtils.mjs.map          1.98 kB │ gzip:  0.78 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/IconButton/index.mjs.map               1.96 kB │ gzip:  0.87 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ListBlock/index.mjs                    1.94 kB │ gzip:  0.81 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/VisualCardBlock/schema.mjs.map         1.94 kB │ gzip:  0.83 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/OptionCards/schema.mjs.map             1.94 kB │ gzip:  0.78 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Accordion/index.mjs                    1.93 kB │ gzip:  0.82 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Text/index.mjs.map                     1.89 kB │ gzip:  0.86 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/SwitchGroup/index.mjs                  1.84 kB │ gzip:  0.76 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/EditableTable/schema.mjs.map           1.84 kB │ gzip:  0.76 kB
+ℹ [ESM] dist/react/chat/components/FollowUpItem/followUpItem.styles.mjs.map           1.80 kB │ gzip:  0.85 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Form/index.mjs.map                     1.78 kB │ gzip:  0.85 kB
+ℹ [ESM] dist/react/chat/components/ModelSwitcher/utils.mjs.map                        1.77 kB │ gzip:  0.88 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Slider/index.mjs                       1.72 kB │ gzip:  0.75 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TextArea/index.mjs                     1.69 kB │ gzip:  0.70 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Input/index.mjs                        1.69 kB │ gzip:  0.70 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/DatePicker/index.mjs                   1.68 kB │ gzip:  0.68 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/PieChart.mjs                    1.67 kB │ gzip:  0.69 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/BoldText/index.mjs.map                 1.65 kB │ gzip:  0.77 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/FollowUpBlock/index.mjs.map            1.62 kB │ gzip:  0.75 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Chips/schema.mjs.map                   1.61 kB │ gzip:  0.70 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/MetricIndicator/index.mjs              1.60 kB │ gzip:  0.52 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/RadarChart.mjs.map              1.59 kB │ gzip:  0.77 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Button/index.mjs                       1.58 kB │ gzip:  0.70 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/FormControl/index.mjs                  1.54 kB │ gzip:  0.69 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/ScatterChart.mjs                1.51 kB │ gzip:  0.69 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Callout/index.mjs                      1.50 kB │ gzip:  0.71 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/helpers.mjs                            1.44 kB │ gzip:  0.65 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Tag/index.mjs.map                      1.42 kB │ gzip:  0.69 kB
+ℹ [ESM] dist/react/chat/components/FollowUpBlock/FollowUpBlock.mjs.map                1.39 kB │ gzip:  0.67 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/EntityList/schema.mjs.map              1.39 kB │ gzip:  0.62 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Carousel/index.mjs                     1.38 kB │ gzip:  0.64 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/MetricIndicator/schema.mjs.map         1.36 kB │ gzip:  0.50 kB
+ℹ [ESM] dist/react/chat/components/FollowUpItem/FollowUpItem.mjs.map                  1.36 kB │ gzip:  0.64 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/EntityList/index.mjs.map               1.34 kB │ gzip:  0.65 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TextContent/index.mjs                  1.32 kB │ gzip:  0.61 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageText/index.mjs.map                1.32 kB │ gzip:  0.62 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/IconText/index.mjs.map                 1.30 kB │ gzip:  0.62 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/OverviewCardBlock/schema.mjs           1.30 kB │ gzip:  0.56 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/SingleStackedBarChart.mjs       1.28 kB │ gzip:  0.56 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/RadialChart.mjs                 1.28 kB │ gzip:  0.57 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TagBlock/index.mjs.map                 1.26 kB │ gzip:  0.63 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ContextCardBlock/schema.mjs            1.26 kB │ gzip:  0.56 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/AreaChartCondensed.mjs          1.25 kB │ gzip:  0.60 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/rules.mjs.map                          1.25 kB │ gzip:  0.53 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/cardTagUtils.mjs.map                   1.25 kB │ gzip:  0.69 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageTextLarge/index.mjs.map           1.25 kB │ gzip:  0.58 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/LineChartCondensed.mjs          1.24 kB │ gzip:  0.58 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/SnippetCardBlock/schema.mjs            1.24 kB │ gzip:  0.54 kB
+ℹ [ESM] dist/react/chat/components/FollowUpItem/followUpItem.styles.mjs               1.23 kB │ gzip:  0.61 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/BarChartCondensed.mjs           1.23 kB │ gzip:  0.59 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/IconButton/index.mjs                   1.23 kB │ gzip:  0.58 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Buttons/index.mjs.map                  1.21 kB │ gzip:  0.62 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Steps/index.mjs                        1.21 kB │ gzip:  0.57 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/VisualCardBlock/schema.mjs             1.21 kB │ gzip:  0.57 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/HorizontalBarChart.mjs          1.18 kB │ gzip:  0.56 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Icon/schema.mjs.map                    1.18 kB │ gzip:  0.71 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Text/index.mjs                         1.17 kB │ gzip:  0.58 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/SwitchGroup/schema.mjs.map             1.17 kB │ gzip:  0.58 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ListItem/index.mjs.map                 1.16 kB │ gzip:  0.58 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/IconText/schema.mjs.map                1.16 kB │ gzip:  0.58 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Form/index.mjs                         1.15 kB │ gzip:  0.58 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageGallery/index.mjs.map             1.13 kB │ gzip:  0.57 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/FormControl/schema.mjs.map             1.12 kB │ gzip:  0.49 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/FollowUpBlock/index.mjs                1.12 kB │ gzip:  0.53 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/OptionCards/schema.mjs                 1.11 kB │ gzip:  0.51 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/BoldText/index.mjs                     1.11 kB │ gzip:  0.55 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/InlineHeader/index.mjs.map             1.11 kB │ gzip:  0.54 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CheckBoxGroup/schema.mjs.map           1.09 kB │ gzip:  0.54 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Select/schema.mjs.map                  1.09 kB │ gzip:  0.55 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/formDefaultValueUtils.mjs              1.09 kB │ gzip:  0.45 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Icon/index.mjs.map                     1.06 kB │ gzip:  0.58 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TextCallout/index.mjs.map              1.04 kB │ gzip:  0.51 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/MarkDownRenderer/index.mjs.map         1.04 kB │ gzip:  0.51 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/IconButton/schema.mjs.map              0.97 kB │ gzip:  0.48 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Slider/schema.mjs.map                  0.96 kB │ gzip:  0.46 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Separator/index.mjs.map                0.95 kB │ gzip:  0.49 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/RadarChart.mjs                  0.93 kB │ gzip:  0.49 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Chips/schema.mjs                       0.93 kB │ gzip:  0.47 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/EditableTable/schema.mjs               0.92 kB │ gzip:  0.47 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/EntityList/index.mjs                   0.89 kB │ gzip:  0.47 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/FormControl/schema.mjs                 0.89 kB │ gzip:  0.37 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CodeBlock/index.mjs.map                0.89 kB │ gzip:  0.46 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageBlock/index.mjs.map               0.88 kB │ gzip:  0.46 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Icon/schema.mjs                        0.88 kB │ gzip:  0.55 kB
+ℹ [ESM] dist/react/chat/components/FollowUpItem/FollowUpItem.mjs                      0.87 kB │ gzip:  0.41 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CardHeader/index.mjs.map               0.86 kB │ gzip:  0.44 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageText/index.mjs                    0.85 kB │ gzip:  0.45 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/BoldText/schema.mjs.map                0.85 kB │ gzip:  0.44 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/IconText/index.mjs                     0.85 kB │ gzip:  0.45 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/SectionItem/index.mjs.map              0.85 kB │ gzip:  0.48 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Image/index.mjs.map                    0.84 kB │ gzip:  0.46 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageText/schema.mjs.map               0.84 kB │ gzip:  0.44 kB
+ℹ [ESM] dist/react/chat/components/FollowUpBlock/followUpBlock.styles.mjs.map         0.83 kB │ gzip:  0.46 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Text/schema.mjs.map                    0.83 kB │ gzip:  0.43 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Button/schema.mjs.map                  0.83 kB │ gzip:  0.43 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageTextLarge/index.mjs               0.83 kB │ gzip:  0.42 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Tag/index.mjs                          0.80 kB │ gzip:  0.45 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TagBlock/index.mjs                     0.80 kB │ gzip:  0.43 kB
+ℹ [ESM] dist/react/chat/components/FollowUpBlock/FollowUpBlock.mjs                    0.78 kB │ gzip:  0.40 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Buttons/index.mjs                      0.77 kB │ gzip:  0.43 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/InlineHeader/index.mjs                 0.77 kB │ gzip:  0.39 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/rules.mjs                              0.77 kB │ gzip:  0.37 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/ScatterSeries.mjs.map           0.76 kB │ gzip:  0.42 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Input/schema.mjs.map                   0.76 kB │ gzip:  0.41 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ListItem/index.mjs                     0.75 kB │ gzip:  0.42 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Label/index.mjs.map                    0.75 kB │ gzip:  0.41 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Icon/index.mjs                         0.74 kB │ gzip:  0.44 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/EntityList/schema.mjs                  0.74 kB │ gzip:  0.39 kB
+ℹ [ESM] dist/react/chat/components/ModelSwitcher/utils.mjs                            0.73 kB │ gzip:  0.42 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageGallery/index.mjs                 0.73 kB │ gzip:  0.40 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/Point.mjs.map                   0.72 kB │ gzip:  0.41 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/MetricIndicator/schema.mjs             0.71 kB │ gzip:  0.31 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/MarkDownRenderer/index.mjs             0.71 kB │ gzip:  0.37 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/Series.mjs.map                  0.69 kB │ gzip:  0.41 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Tag/schema.mjs.map                     0.69 kB │ gzip:  0.40 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TextCallout/index.mjs                  0.68 kB │ gzip:  0.36 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Table/schema.mjs.map                   0.68 kB │ gzip:  0.44 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/SwitchGroup/schema.mjs                 0.68 kB │ gzip:  0.37 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TextArea/schema.mjs.map                0.68 kB │ gzip:  0.37 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/cardTagUtils.mjs                       0.67 kB │ gzip:  0.41 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CheckBoxGroup/schema.mjs               0.67 kB │ gzip:  0.35 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/Slice.mjs.map                   0.67 kB │ gzip:  0.41 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/IconText/schema.mjs                    0.66 kB │ gzip:  0.37 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageTextLarge/schema.mjs.map          0.66 kB │ gzip:  0.37 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Select/schema.mjs                      0.66 kB │ gzip:  0.36 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Callout/schema.mjs.map                 0.66 kB │ gzip:  0.40 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/FollowUpItem/index.mjs.map             0.66 kB │ gzip:  0.42 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/DatePicker/schema.mjs.map              0.65 kB │ gzip:  0.39 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Separator/index.mjs                    0.64 kB │ gzip:  0.36 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CardHeader/index.mjs                   0.63 kB │ gzip:  0.35 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CodeBlock/index.mjs                    0.62 kB │ gzip:  0.35 kB
+ℹ [ESM] dist/react/chat/components/FollowUpBlock/followUpBlock.styles.mjs             0.62 kB │ gzip:  0.35 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageBlock/index.mjs                   0.61 kB │ gzip:  0.35 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageGallery/schema.mjs.map            0.61 kB │ gzip:  0.35 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/SectionItem/index.mjs                  0.60 kB │ gzip:  0.36 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/IconButton/schema.mjs                  0.59 kB │ gzip:  0.33 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TextCallout/schema.mjs.map             0.59 kB │ gzip:  0.36 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Image/index.mjs                        0.58 kB │ gzip:  0.35 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Slider/schema.mjs                      0.58 kB │ gzip:  0.32 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Form/schema.mjs.map                    0.55 kB │ gzip:  0.34 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/ScatterSeries.mjs               0.55 kB │ gzip:  0.31 kB
+ℹ [ESM] dist/react/chat/components/ModelSwitcher/ModelSwitcher.d.mts.map              0.54 kB │ gzip:  0.30 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Label/index.mjs                        0.53 kB │ gzip:  0.32 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Button/schema.mjs                      0.53 kB │ gzip:  0.31 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Accordion/schema.mjs.map               0.50 kB │ gzip:  0.32 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TextContent/schema.mjs.map             0.50 kB │ gzip:  0.33 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Input/schema.mjs                       0.50 kB │ gzip:  0.30 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Buttons/schema.mjs.map                 0.50 kB │ gzip:  0.34 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Table/schema.mjs                       0.49 kB │ gzip:  0.35 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Tabs/schema.mjs.map                    0.49 kB │ gzip:  0.31 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/InlineHeader/schema.mjs.map            0.48 kB │ gzip:  0.32 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Separator/schema.mjs.map               0.48 kB │ gzip:  0.33 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/MarkDownRenderer/schema.mjs.map        0.47 kB │ gzip:  0.33 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/Point.mjs                       0.47 kB │ gzip:  0.30 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/FollowUpItem/index.mjs                 0.47 kB │ gzip:  0.32 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TagBlock/schema.mjs.map                0.46 kB │ gzip:  0.32 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/BoldText/schema.mjs                    0.46 kB │ gzip:  0.28 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/Series.mjs                      0.45 kB │ gzip:  0.30 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TextArea/schema.mjs                    0.45 kB │ gzip:  0.27 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageText/schema.mjs                   0.45 kB │ gzip:  0.28 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Text/schema.mjs                        0.45 kB │ gzip:  0.28 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/DatePicker/schema.mjs                  0.44 kB │ gzip:  0.28 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Tag/schema.mjs                         0.43 kB │ gzip:  0.29 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Callout/schema.mjs                     0.43 kB │ gzip:  0.29 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/RadioGroup/schema.mjs.map              0.43 kB │ gzip:  0.29 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CardHeader/schema.mjs.map              0.42 kB │ gzip:  0.28 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageBlock/schema.mjs.map              0.39 kB │ gzip:  0.28 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Form/schema.mjs                        0.39 kB │ gzip:  0.26 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CodeBlock/schema.mjs.map               0.38 kB │ gzip:  0.28 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Image/schema.mjs.map                   0.38 kB │ gzip:  0.27 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TextCallout/schema.mjs                 0.38 kB │ gzip:  0.26 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Action/schema.mjs.map                  0.37 kB │ gzip:  0.27 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Steps/schema.mjs.map                   0.37 kB │ gzip:  0.27 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageGallery/schema.mjs                0.37 kB │ gzip:  0.24 kB
+ℹ [ESM] dist/react/chat/components/FollowUpBlock/FollowUpBlock.d.mts.map              0.37 kB │ gzip:  0.23 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageTextLarge/schema.mjs              0.36 kB │ gzip:  0.24 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Accordion/schema.mjs                   0.35 kB │ gzip:  0.24 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Charts/Slice.mjs                       0.35 kB │ gzip:  0.26 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TextContent/schema.mjs                 0.34 kB │ gzip:  0.24 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Tabs/schema.mjs                        0.33 kB │ gzip:  0.24 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Buttons/schema.mjs                     0.33 kB │ gzip:  0.24 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/MarkDownRenderer/schema.mjs            0.32 kB │ gzip:  0.24 kB
+ℹ [ESM] dist/react/chat/components/FollowUpItem/FollowUpItem.d.mts.map                0.32 kB │ gzip:  0.21 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Label/schema.mjs.map                   0.32 kB │ gzip:  0.25 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Action/schema.mjs                      0.31 kB │ gzip:  0.22 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Separator/schema.mjs                   0.31 kB │ gzip:  0.24 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/TagBlock/schema.mjs                    0.29 kB │ gzip:  0.23 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CardHeader/schema.mjs                  0.28 kB │ gzip:  0.21 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/InlineHeader/schema.mjs                0.28 kB │ gzip:  0.21 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/RadioGroup/schema.mjs                  0.28 kB │ gzip:  0.21 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/ImageBlock/schema.mjs                  0.26 kB │ gzip:  0.21 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/CodeBlock/schema.mjs                   0.26 kB │ gzip:  0.20 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Steps/schema.mjs                       0.25 kB │ gzip:  0.20 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Image/schema.mjs                       0.25 kB │ gzip:  0.20 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/openuiChatLibrary.d.mts.map            0.24 kB │ gzip:  0.18 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/Label/schema.mjs                       0.22 kB │ gzip:  0.18 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/prompt-options/index.d.mts.map         0.21 kB │ gzip:  0.17 kB
+ℹ [ESM] dist/react/chat/index.d.mts                                                   0.45 kB │ gzip:  0.15 kB
+ℹ [ESM] dist/react/chat/libs/index.d.mts                                              0.37 kB │ gzip:  0.16 kB
+ℹ [ESM] dist/react/chat/components/ModelSwitcher/ModelSwitcher.d.mts                  1.30 kB │ gzip:  0.63 kB
+ℹ [ESM] dist/react/chat/components/FollowUpBlock/FollowUpBlock.d.mts                  0.66 kB │ gzip:  0.33 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/openuiChatLibrary.d.mts                0.57 kB │ gzip:  0.28 kB
+ℹ [ESM] dist/react/chat/components/FollowUpItem/FollowUpItem.d.mts                    0.53 kB │ gzip:  0.29 kB
+ℹ [ESM] dist/react/chat/libs/openuiChatLibrary/prompt-options/index.d.mts             0.41 kB │ gzip:  0.22 kB
+ℹ [ESM] dist/react/chat/components/ModelSwitcher/index.d.mts                          0.10 kB │ gzip:  0.08 kB
+ℹ [ESM] dist/react/chat/components/FollowUpBlock/index.d.mts                          0.07 kB │ gzip:  0.07 kB
+ℹ [ESM] dist/react/chat/components/FollowUpItem/index.d.mts                           0.07 kB │ gzip:  0.07 kB
+ℹ [ESM] 281 files, total: 510.39 kB
+✔ Build complete in 1422ms
+TAP version 13
+# Subtest: FollowUpBlock forwards container props and renders related queries in order
+ok 1 - FollowUpBlock forwards container props and renders related queries in order
+  ---
+  duration_ms: 19.729542
+  type: 'test'
+  ...
+# Subtest: FollowUpItem preserves native props, refs, text/icon order and disabled clicks through the chat import
+ok 2 - FollowUpItem preserves native props, refs, text/icon order and disabled clicks through the chat import
+  ---
+  duration_ms: 17.079292
+  type: 'test'
+  ...
+# Subtest: ModelSwitcher uses the selected model, controlled updates and core theme logos through the chat import
+ok 3 - ModelSwitcher uses the selected model, controlled updates and core theme logos through the chat import
+  ---
+  duration_ms: 114.850458
+  type: 'test'
+  ...
+# Subtest: chat library generates a prompt containing its existing Card and FollowUp contracts
+ok 4 - chat library generates a prompt containing its existing Card and FollowUp contracts
+  ---
+  duration_ms: 2.355334
+  type: 'test'
+  ...
+# Subtest: normal packed consumer resolves both public entries and prunes unused library and components
+ok 5 - normal packed consumer resolves both public entries and prunes unused library and components
+  ---
+  duration_ms: 13554.335542
+  type: 'test'
+  ...
+# Subtest: chat parser preserves positional form, chart and table contracts across arbitrary chunks
+ok 6 - chat parser preserves positional form, chart and table contracts across arbitrary chunks
+  ---
+  duration_ms: 9.331292
+  type: 'test'
+  ...
+# Subtest: streaming renderer disables forms, restores history, validates and emits existing actions
+ok 7 - streaming renderer disables forms, restores history, validates and emits existing actions
+  ---
+  duration_ms: 47.375
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 13660.553583
+
+> @openuidev/kits@0.0.0-beta.0 check:publint /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits
+> publint
+
+Running publint v0.3.22 for @openuidev/kits...
+Packing files with `pnpm pack`...
+Linting...
+All good!
+
+> @openuidev/kits@0.0.0-beta.0 check:attw /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/kits
+> attw --pack .
+
+
+@openuidev/kits v0.0.0-beta.0
+
+Build tools:
+- esbuild@^0.25.12
+
+ No problems found 🌟
+
+
+[90m┌───────────────────[39m[90m┬──────────────────────────────[39m[90m┬───────────────────────────────────┐[39m
+[90m│[39m[31m                   [39m[90m│[39m[31m "@openuidev/kits/react/chat" [39m[90m│[39m[31m "@openuidev/kits/react/chat/libs" [39m[90m│[39m
+[90m├───────────────────[39m[90m┼──────────────────────────────[39m[90m┼───────────────────────────────────┤[39m
+[90m│[39m node10            [90m│[39m 🟢                           [90m│[39m 🟢                                [90m│[39m
+[90m├───────────────────[39m[90m┼──────────────────────────────[39m[90m┼───────────────────────────────────┤[39m
+[90m│[39m node16 (from CJS) [90m│[39m 🟢 (CJS)                     [90m│[39m 🟢 (CJS)                          [90m│[39m
+[90m├───────────────────[39m[90m┼──────────────────────────────[39m[90m┼───────────────────────────────────┤[39m
+[90m│[39m node16 (from ESM) [90m│[39m 🟢 (ESM)                     [90m│[39m 🟢 (ESM)                          [90m│[39m
+[90m├───────────────────[39m[90m┼──────────────────────────────[39m[90m┼───────────────────────────────────┤[39m
+[90m│[39m bundler           [90m│[39m 🟢                           [90m│[39m 🟢                                [90m│[39m
+[90m└───────────────────[39m[90m┴──────────────────────────────[39m[90m┴───────────────────────────────────┘[39m

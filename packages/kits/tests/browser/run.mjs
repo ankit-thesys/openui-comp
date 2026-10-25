@@ -93,6 +93,22 @@ try {
       await page.goto(`http://127.0.0.1:4191/?framework=${framework}&order=${order}`);
       const button = (name) => page.getByRole("button", { name, exact: true });
       await page.getByRole("combobox").waitFor();
+      await page.waitForFunction(() => {
+        const host = [...document.querySelectorAll('link[rel="stylesheet"]')].find((el) =>
+          /\/(plain|tailwind3|tailwind4)\.css$/.test(el.getAttribute("href")),
+        );
+        return Boolean(host?.sheet?.cssRules.length && document.getElementById("_goober"));
+      });
+      const actualOrder = await page.evaluate(() => {
+        const host = [...document.querySelectorAll('link[rel="stylesheet"]')].find((el) =>
+          /\/(plain|tailwind3|tailwind4)\.css$/.test(el.getAttribute("href")),
+        );
+        return host.compareDocumentPosition(document.getElementById("_goober")) &
+          Node.DOCUMENT_POSITION_FOLLOWING
+          ? "before"
+          : "after";
+      });
+      assert.equal(actualOrder, order, "actual host stylesheet order relative to Goober");
       assert.equal(
         await page.locator("#unthemed .openui-card").evaluate((el) => getComputedStyle(el).gap),
         "12px",
@@ -131,10 +147,23 @@ try {
       assert.notEqual(hostNormal, "rgba(0, 0, 0, 0)");
       assert.equal(normal, hostNormal, `${framework}/${order}`);
       await button("Host override").hover();
+      await button("Host override").evaluate(async (el) => {
+        await Promise.all(el.getAnimations().map((animation) => animation.finished));
+      });
       const hostHover = await button("Host override").evaluate(
         (el) => getComputedStyle(el).backgroundColor,
       );
+      assert.notEqual(hostHover, hostNormal, "host hover must visibly change the background");
       await button("Explicit override").hover();
+      await button("Explicit override").evaluate(async (el) => {
+        await Promise.all(el.getAnimations().map((animation) => animation.finished));
+      });
+      await page.waitForFunction((expected) => {
+        const el = [...document.querySelectorAll("button")].find(
+          (el) => el.textContent === "Explicit override",
+        );
+        return el && getComputedStyle(el).backgroundColor === expected;
+      }, hostHover);
       assert.equal(
         await button("Explicit override").evaluate((el) => getComputedStyle(el).backgroundColor),
         hostHover,
@@ -163,7 +192,7 @@ try {
       await button("Clear response").click();
       assert.equal(await page.locator("main input").count(), 0);
       assert.deepEqual(errors, []);
-      results.push({ framework, order, pass: true });
+      results.push({ framework, order, actualOrder, hostNormal, hostHover, pass: true });
       await page.close();
     }
   assert.equal(liveStreams, 0);
