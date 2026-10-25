@@ -1,0 +1,74 @@
+{
+  "assert-dom.mjs": {
+    "sha256": "c35892ca688e3466b7fb9dbec684211ec17259568487d481c6f2cbbd3ae1fc03",
+    "bytes": 492
+  },
+  "browser.mjs": {
+    "sha256": "1f1f11b45cf3adcc7536560294f12cc8f2473809c93d275e3856548417bf6149",
+    "bytes": 7091
+  },
+  "correction-integrity.json.gz": {
+    "sha256": "619ad7c3d8febde1322904e084141c7b4dff84ebc02d7b1217b45ab1f6b6043a",
+    "bytes": 290
+  },
+  "freeze.py": {
+    "sha256": "a917d220e0609c9562fa0da11c69612b176ab8d18161f50037bb4e545c6f0553",
+    "bytes": 2127
+  },
+  "functional48-green.log.gz": {
+    "sha256": "3512555924d5ace1fb59caa9fc845d408f1a18b5d9ca8a07031ad1a74bb1f734",
+    "bytes": 685
+  },
+  "handoff-v1.json.gz": {
+    "sha256": "13619752eec68f2d7a427bcd4544a34057f8070ec093fc1512fe4c0646eec98d",
+    "bytes": 368508
+  },
+  "handoff-v2.json.gz": {
+    "sha256": "b47fc2a2c040b71572aac4246960683f2993b1afcda3432a27759a29b6d03090",
+    "bytes": 368833
+  },
+  "installed-proof-v1.json.gz": {
+    "sha256": "fc872f909872eb463b8dce1109b13b429c58db1e1a372772f35ff563ba686ff1",
+    "bytes": 673790
+  },
+  "installed-proof-v2.json.gz": {
+    "sha256": "dc887807331783deaab85f21b3e723323684cb2458329d0803bf1e858d9a7291",
+    "bytes": 674013
+  },
+  "manifest-red.log.gz": {
+    "sha256": "4a10354bee6168d8136ebd873367858c5b3bf8a2c1e7396fbe4cb5899b65674b",
+    "bytes": 171
+  },
+  "refreeze-form-contract.mjs": {
+    "sha256": "6f3e186eac83e64c5a55114824ce0ab3e584e2ddaf26c55897e435407737510f",
+    "bytes": 1651
+  },
+  "w2-analysis.mjs": {
+    "sha256": "e0d36891a9b615dbb7fbc0a48a2a72a46291252b200f406fc962404634f9548a",
+    "bytes": 12257
+  },
+  "w2-browser.mjs": {
+    "sha256": "ad863d1d23b77d0c3804b8f48b6522892b69e88111b1841fa9d9779d7e9cd1b2",
+    "bytes": 9713
+  },
+  "w2-preflight.mjs": {
+    "sha256": "c8d9a75c86550a39b66c4fc62afdacfb0913e2ada4e6aedcd985f7bad298296b",
+    "bytes": 1971
+  },
+  "w2-preflight8.json.gz": {
+    "sha256": "c58a444bb0698285be6b23bbf6181f98661d6ed55bd12e995f21d81df07df91a",
+    "bytes": 2753
+  },
+  "w2-preflight8.log.gz": {
+    "sha256": "ef31086d960456ab2da1df027338793664379e72ab26c57bd93ef99c61bb0555",
+    "bytes": 48
+  },
+  "w2-protocol.mjs": {
+    "sha256": "f2a0ee33c60bdf6c84bcd1f49ef4fdc2912dbe70c524d1b0c52d3ffad707feaa",
+    "bytes": 520
+  },
+  "w2-source-hashes.json": {
+    "sha256": "e1cf029d3e66f6de23e1cf9639ab4665ba8522f6ce31802f0a65f8cd17aa0f52",
+    "bytes": 647
+  }
+}

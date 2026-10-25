@@ -1,0 +1,1007 @@
+{
+  "manifestSha256": "58f29005e395f360e521bc8f01992d5dc5ef2c8989861010b37802e5ebdda856",
+  "rows": [
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "baseline",
+      "kind": "excluded-first-stream",
+      "elapsedMs": 241.13341700000012,
+      "renderedElapsedMs": 269.74304199999995,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+      "sourceBytes": 2423,
+      "stats": {
+        "started": 1,
+        "completed": 1,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "runtime",
+      "kind": "excluded-first-stream",
+      "elapsedMs": 250.2344579999999,
+      "renderedElapsedMs": 281.8615420000001,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+      "sourceBytes": 2423,
+      "stats": {
+        "started": 1,
+        "completed": 1,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "baseline",
+      "pair": 0,
+      "kind": "bounded-measurement",
+      "elapsedMs": 244.30929200000037,
+      "renderedElapsedMs": 273.83062500000005,
+      "inputMs": 2.6828749999999673,
+      "inputObservation": {
+        "before": "",
+        "after": "Independent e000fd4b-e138-4ca3-93bd-e18b116778da",
+        "activeBefore": 1,
+        "activeAfter": 1
+      },
+      "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+      "sourceBytes": 2423,
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "runtime",
+      "pair": 0,
+      "kind": "bounded-measurement",
+      "elapsedMs": 240.39620800000012,
+      "renderedElapsedMs": 273.74416699999983,
+      "inputMs": 2.149959000000308,
+      "inputObservation": {
+        "before": "",
+        "after": "Independent 1a9cf2ec-cddd-428e-a9fb-f00587871e15",
+        "activeBefore": 1,
+        "activeAfter": 1
+      },
+      "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+      "sourceBytes": 2423,
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "runtime",
+      "pair": 1,
+      "kind": "bounded-measurement",
+      "elapsedMs": 258.0707910000001,
+      "renderedElapsedMs": 284.92562500000076,
+      "inputMs": 3.599083000000064,
+      "inputObservation": {
+        "before": "Independent 1a9cf2ec-cddd-428e-a9fb-f00587871e15",
+        "after": "Independent 4ecdf8a9-b6af-4c05-bcbc-b08fdf7dcff2",
+        "activeBefore": 1,
+        "activeAfter": 1
+      },
+      "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+      "sourceBytes": 2423,
+      "stats": {
+        "started": 3,
+        "completed": 3,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "baseline",
+      "pair": 1,
+      "kind": "bounded-measurement",
+      "elapsedMs": 246.15612500000043,
+      "renderedElapsedMs": 278.8845419999998,
+      "inputMs": 3.5011249999997744,
+      "inputObservation": {
+        "before": "Independent e000fd4b-e138-4ca3-93bd-e18b116778da",
+        "after": "Independent 36e3fa95-47e4-46b1-ab63-313990ee145b",
+        "activeBefore": 1,
+        "activeAfter": 1
+      },
+      "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+      "sourceBytes": 2423,
+      "stats": {
+        "started": 3,
+        "completed": 3,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "baseline",
+      "kind": "bounded-resource-and-cancel",
+      "warm": {
+        "heap": 12301436,
+        "dom": {
+          "documents": 1,
+          "nodes": 51,
+          "jsEventListeners": 175
+        },
+        "styles": {
+          "styleTags": 0,
+          "rules": 2010,
+          "cssBytes": 0
+        },
+        "stats": {
+          "started": 1,
+          "completed": 1,
+          "cancelled": 0,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "terminal": {
+        "heap": 12792380,
+        "dom": {
+          "documents": 1,
+          "nodes": 58,
+          "jsEventListeners": 175
+        },
+        "styles": {
+          "styleTags": 0,
+          "rules": 2010,
+          "cssBytes": 0
+        },
+        "stats": {
+          "started": 5,
+          "completed": 4,
+          "cancelled": 1,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "cancellation": {
+        "partialLength": 512,
+        "expectedLength": 2423,
+        "activeBefore": 1,
+        "after": {
+          "started": 4,
+          "completed": 3,
+          "cancelled": 1,
+          "active": 0,
+          "activeTimers": 0
+        },
+        "abort": "net::ERR_ABORTED"
+      },
+      "retry": {
+        "elapsedMs": 242.11533400000008,
+        "renderedElapsedMs": 270.93174999999974,
+        "inputMs": null,
+        "inputObservation": null,
+        "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+        "sourceBytes": 2423,
+        "stats": {
+          "started": 5,
+          "completed": 4,
+          "cancelled": 1,
+          "active": 0,
+          "activeTimers": 0
+        }
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "runtime",
+      "kind": "bounded-resource-and-cancel",
+      "warm": {
+        "heap": 12371776,
+        "dom": {
+          "documents": 1,
+          "nodes": 53,
+          "jsEventListeners": 177
+        },
+        "styles": {
+          "styleTags": 1,
+          "rules": 1428,
+          "cssBytes": 217642
+        },
+        "stats": {
+          "started": 1,
+          "completed": 1,
+          "cancelled": 0,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "terminal": {
+        "heap": 12876480,
+        "dom": {
+          "documents": 1,
+          "nodes": 60,
+          "jsEventListeners": 177
+        },
+        "styles": {
+          "styleTags": 1,
+          "rules": 1428,
+          "cssBytes": 217642
+        },
+        "stats": {
+          "started": 5,
+          "completed": 4,
+          "cancelled": 1,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "cancellation": {
+        "partialLength": 512,
+        "expectedLength": 2423,
+        "activeBefore": 1,
+        "after": {
+          "started": 4,
+          "completed": 3,
+          "cancelled": 1,
+          "active": 0,
+          "activeTimers": 0
+        },
+        "abort": "net::ERR_ABORTED"
+      },
+      "retry": {
+        "elapsedMs": 245.07516600000054,
+        "renderedElapsedMs": 275.0146249999998,
+        "inputMs": null,
+        "inputObservation": null,
+        "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+        "sourceBytes": 2423,
+        "stats": {
+          "started": 5,
+          "completed": 4,
+          "cancelled": 1,
+          "active": 0,
+          "activeTimers": 0
+        }
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "stress",
+      "arm": "baseline",
+      "kind": "excluded-first-stream",
+      "elapsedMs": 168.87408400000095,
+      "renderedElapsedMs": 201.1502500000006,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "e2d7e276c7b70961257ba6ad21d375affc31962ba2425794756993ff9729084c",
+      "sourceBytes": 6655,
+      "stats": {
+        "started": 1,
+        "completed": 1,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "stress",
+      "arm": "runtime",
+      "kind": "excluded-first-stream",
+      "elapsedMs": 174.08500000000276,
+      "renderedElapsedMs": 206.52241700000013,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "e2d7e276c7b70961257ba6ad21d375affc31962ba2425794756993ff9729084c",
+      "sourceBytes": 6655,
+      "stats": {
+        "started": 1,
+        "completed": 1,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "stress",
+      "arm": "baseline",
+      "pair": 0,
+      "kind": "bounded-measurement",
+      "elapsedMs": 159.56733299999905,
+      "renderedElapsedMs": 190.45558299999902,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "e2d7e276c7b70961257ba6ad21d375affc31962ba2425794756993ff9729084c",
+      "sourceBytes": 6655,
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "stress",
+      "arm": "runtime",
+      "pair": 0,
+      "kind": "bounded-measurement",
+      "elapsedMs": 185.0712080000012,
+      "renderedElapsedMs": 219.1470420000005,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "e2d7e276c7b70961257ba6ad21d375affc31962ba2425794756993ff9729084c",
+      "sourceBytes": 6655,
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "stress",
+      "arm": "runtime",
+      "pair": 1,
+      "kind": "bounded-measurement",
+      "elapsedMs": 185.5947500000002,
+      "renderedElapsedMs": 218.4112079999977,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "e2d7e276c7b70961257ba6ad21d375affc31962ba2425794756993ff9729084c",
+      "sourceBytes": 6655,
+      "stats": {
+        "started": 3,
+        "completed": 3,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "stress",
+      "arm": "baseline",
+      "pair": 1,
+      "kind": "bounded-measurement",
+      "elapsedMs": 159.07254199999807,
+      "renderedElapsedMs": 190.18149999999878,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "e2d7e276c7b70961257ba6ad21d375affc31962ba2425794756993ff9729084c",
+      "sourceBytes": 6655,
+      "stats": {
+        "started": 3,
+        "completed": 3,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "stress",
+      "arm": "baseline",
+      "kind": "bounded-resource-and-cancel",
+      "warm": {
+        "heap": 12720336,
+        "dom": {
+          "documents": 1,
+          "nodes": 51,
+          "jsEventListeners": 175
+        },
+        "styles": {
+          "styleTags": 0,
+          "rules": 2010,
+          "cssBytes": 0
+        },
+        "stats": {
+          "started": 1,
+          "completed": 1,
+          "cancelled": 0,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "terminal": {
+        "heap": 13229108,
+        "dom": {
+          "documents": 1,
+          "nodes": 52,
+          "jsEventListeners": 175
+        },
+        "styles": {
+          "styleTags": 0,
+          "rules": 2010,
+          "cssBytes": 0
+        },
+        "stats": {
+          "started": 3,
+          "completed": 3,
+          "cancelled": 0,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "cancellation": null,
+      "retry": null
+    },
+    {
+      "workload": "chat",
+      "load": "stress",
+      "arm": "runtime",
+      "kind": "bounded-resource-and-cancel",
+      "warm": {
+        "heap": 12793624,
+        "dom": {
+          "documents": 1,
+          "nodes": 53,
+          "jsEventListeners": 177
+        },
+        "styles": {
+          "styleTags": 1,
+          "rules": 1428,
+          "cssBytes": 217642
+        },
+        "stats": {
+          "started": 1,
+          "completed": 1,
+          "cancelled": 0,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "terminal": {
+        "heap": 13260328,
+        "dom": {
+          "documents": 1,
+          "nodes": 54,
+          "jsEventListeners": 177
+        },
+        "styles": {
+          "styleTags": 1,
+          "rules": 1428,
+          "cssBytes": 217642
+        },
+        "stats": {
+          "started": 3,
+          "completed": 3,
+          "cancelled": 0,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "cancellation": null,
+      "retry": null
+    },
+    {
+      "workload": "dashboard",
+      "load": "paced",
+      "arm": "baseline",
+      "kind": "excluded-first-stream",
+      "elapsedMs": 290.4105000000018,
+      "renderedElapsedMs": 321.3524580000012,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "67bf2f42148fda43900b7c13cc32f8c145439ec66d5de8579822b1b3e65989d2",
+      "sourceBytes": 2619,
+      "stats": {
+        "started": 1,
+        "completed": 1,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "paced",
+      "arm": "runtime",
+      "kind": "excluded-first-stream",
+      "elapsedMs": 296.6701659999999,
+      "renderedElapsedMs": 328.73983299999963,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "67bf2f42148fda43900b7c13cc32f8c145439ec66d5de8579822b1b3e65989d2",
+      "sourceBytes": 2619,
+      "stats": {
+        "started": 1,
+        "completed": 1,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "paced",
+      "arm": "baseline",
+      "pair": 0,
+      "kind": "bounded-measurement",
+      "elapsedMs": 292.36724999999933,
+      "renderedElapsedMs": 324.9898749999993,
+      "inputMs": 2.940374999998312,
+      "inputObservation": {
+        "before": "",
+        "after": "Independent 6672b5ef-0c00-4a70-a045-c4ccf965e70d",
+        "activeBefore": 1,
+        "activeAfter": 1
+      },
+      "actualTextSha256": "67bf2f42148fda43900b7c13cc32f8c145439ec66d5de8579822b1b3e65989d2",
+      "sourceBytes": 2619,
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "paced",
+      "arm": "runtime",
+      "pair": 0,
+      "kind": "bounded-measurement",
+      "elapsedMs": 300.8782080000019,
+      "renderedElapsedMs": 335.14791700000205,
+      "inputMs": 3.4464590000025055,
+      "inputObservation": {
+        "before": "",
+        "after": "Independent 8b8f94c5-0591-421c-8cf0-6310336f5085",
+        "activeBefore": 1,
+        "activeAfter": 1
+      },
+      "actualTextSha256": "67bf2f42148fda43900b7c13cc32f8c145439ec66d5de8579822b1b3e65989d2",
+      "sourceBytes": 2619,
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "paced",
+      "arm": "runtime",
+      "pair": 1,
+      "kind": "bounded-measurement",
+      "elapsedMs": 289.1679579999982,
+      "renderedElapsedMs": 321.17925000000105,
+      "inputMs": 3.3512080000000424,
+      "inputObservation": {
+        "before": "Independent 8b8f94c5-0591-421c-8cf0-6310336f5085",
+        "after": "Independent 09524577-6d7a-4514-b9b4-b4814907f2b1",
+        "activeBefore": 1,
+        "activeAfter": 1
+      },
+      "actualTextSha256": "67bf2f42148fda43900b7c13cc32f8c145439ec66d5de8579822b1b3e65989d2",
+      "sourceBytes": 2619,
+      "stats": {
+        "started": 3,
+        "completed": 3,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "paced",
+      "arm": "baseline",
+      "pair": 1,
+      "kind": "bounded-measurement",
+      "elapsedMs": 289.72650000000067,
+      "renderedElapsedMs": 321.4098750000012,
+      "inputMs": 2.9915000000000873,
+      "inputObservation": {
+        "before": "Independent 6672b5ef-0c00-4a70-a045-c4ccf965e70d",
+        "after": "Independent 996887de-01a4-4c05-80bb-2c19b54e3481",
+        "activeBefore": 1,
+        "activeAfter": 1
+      },
+      "actualTextSha256": "67bf2f42148fda43900b7c13cc32f8c145439ec66d5de8579822b1b3e65989d2",
+      "sourceBytes": 2619,
+      "stats": {
+        "started": 3,
+        "completed": 3,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "paced",
+      "arm": "baseline",
+      "kind": "bounded-resource-and-cancel",
+      "warm": {
+        "heap": 12922848,
+        "dom": {
+          "documents": 1,
+          "nodes": 51,
+          "jsEventListeners": 175
+        },
+        "styles": {
+          "styleTags": 0,
+          "rules": 2010,
+          "cssBytes": 0
+        },
+        "stats": {
+          "started": 1,
+          "completed": 1,
+          "cancelled": 0,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "terminal": {
+        "heap": 13473684,
+        "dom": {
+          "documents": 1,
+          "nodes": 58,
+          "jsEventListeners": 175
+        },
+        "styles": {
+          "styleTags": 0,
+          "rules": 2010,
+          "cssBytes": 0
+        },
+        "stats": {
+          "started": 5,
+          "completed": 4,
+          "cancelled": 1,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "cancellation": {
+        "partialLength": 512,
+        "expectedLength": 2619,
+        "activeBefore": 1,
+        "after": {
+          "started": 4,
+          "completed": 3,
+          "cancelled": 1,
+          "active": 0,
+          "activeTimers": 0
+        },
+        "abort": "net::ERR_ABORTED"
+      },
+      "retry": {
+        "elapsedMs": 286.7638749999969,
+        "renderedElapsedMs": 318.0319579999996,
+        "inputMs": null,
+        "inputObservation": null,
+        "actualTextSha256": "67bf2f42148fda43900b7c13cc32f8c145439ec66d5de8579822b1b3e65989d2",
+        "sourceBytes": 2619,
+        "stats": {
+          "started": 5,
+          "completed": 4,
+          "cancelled": 1,
+          "active": 0,
+          "activeTimers": 0
+        }
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "paced",
+      "arm": "runtime",
+      "kind": "bounded-resource-and-cancel",
+      "warm": {
+        "heap": 12995320,
+        "dom": {
+          "documents": 1,
+          "nodes": 53,
+          "jsEventListeners": 177
+        },
+        "styles": {
+          "styleTags": 1,
+          "rules": 1428,
+          "cssBytes": 217642
+        },
+        "stats": {
+          "started": 1,
+          "completed": 1,
+          "cancelled": 0,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "terminal": {
+        "heap": 13550592,
+        "dom": {
+          "documents": 1,
+          "nodes": 60,
+          "jsEventListeners": 177
+        },
+        "styles": {
+          "styleTags": 1,
+          "rules": 1428,
+          "cssBytes": 217642
+        },
+        "stats": {
+          "started": 5,
+          "completed": 4,
+          "cancelled": 1,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "cancellation": {
+        "partialLength": 512,
+        "expectedLength": 2619,
+        "activeBefore": 1,
+        "after": {
+          "started": 4,
+          "completed": 3,
+          "cancelled": 1,
+          "active": 0,
+          "activeTimers": 0
+        },
+        "abort": "net::ERR_ABORTED"
+      },
+      "retry": {
+        "elapsedMs": 286.15954200000124,
+        "renderedElapsedMs": 320.08166699999856,
+        "inputMs": null,
+        "inputObservation": null,
+        "actualTextSha256": "67bf2f42148fda43900b7c13cc32f8c145439ec66d5de8579822b1b3e65989d2",
+        "sourceBytes": 2619,
+        "stats": {
+          "started": 5,
+          "completed": 4,
+          "cancelled": 1,
+          "active": 0,
+          "activeTimers": 0
+        }
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "stress",
+      "arm": "baseline",
+      "kind": "excluded-first-stream",
+      "elapsedMs": 169.87370799999917,
+      "renderedElapsedMs": 202.14079199999833,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "e4582a740287bf685104b3f1a1f26441198de60501c689c586d0307bf4eb65b5",
+      "sourceBytes": 7243,
+      "stats": {
+        "started": 1,
+        "completed": 1,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "stress",
+      "arm": "runtime",
+      "kind": "excluded-first-stream",
+      "elapsedMs": 170.3417499999996,
+      "renderedElapsedMs": 202.54299999999785,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "e4582a740287bf685104b3f1a1f26441198de60501c689c586d0307bf4eb65b5",
+      "sourceBytes": 7243,
+      "stats": {
+        "started": 1,
+        "completed": 1,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "stress",
+      "arm": "baseline",
+      "pair": 0,
+      "kind": "bounded-measurement",
+      "elapsedMs": 178.96670799999993,
+      "renderedElapsedMs": 209.73812499999622,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "e4582a740287bf685104b3f1a1f26441198de60501c689c586d0307bf4eb65b5",
+      "sourceBytes": 7243,
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "stress",
+      "arm": "runtime",
+      "pair": 0,
+      "kind": "bounded-measurement",
+      "elapsedMs": 185.29470800000126,
+      "renderedElapsedMs": 219.1869580000057,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "e4582a740287bf685104b3f1a1f26441198de60501c689c586d0307bf4eb65b5",
+      "sourceBytes": 7243,
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "stress",
+      "arm": "runtime",
+      "pair": 1,
+      "kind": "bounded-measurement",
+      "elapsedMs": 170.90004100000078,
+      "renderedElapsedMs": 202.98170799999934,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "e4582a740287bf685104b3f1a1f26441198de60501c689c586d0307bf4eb65b5",
+      "sourceBytes": 7243,
+      "stats": {
+        "started": 3,
+        "completed": 3,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "stress",
+      "arm": "baseline",
+      "pair": 1,
+      "kind": "bounded-measurement",
+      "elapsedMs": 179.30491699999402,
+      "renderedElapsedMs": 211.92562499999622,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "e4582a740287bf685104b3f1a1f26441198de60501c689c586d0307bf4eb65b5",
+      "sourceBytes": 7243,
+      "stats": {
+        "started": 3,
+        "completed": 3,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "stress",
+      "arm": "baseline",
+      "kind": "bounded-resource-and-cancel",
+      "warm": {
+        "heap": 13358912,
+        "dom": {
+          "documents": 1,
+          "nodes": 51,
+          "jsEventListeners": 175
+        },
+        "styles": {
+          "styleTags": 0,
+          "rules": 2010,
+          "cssBytes": 0
+        },
+        "stats": {
+          "started": 1,
+          "completed": 1,
+          "cancelled": 0,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "terminal": {
+        "heap": 14070396,
+        "dom": {
+          "documents": 1,
+          "nodes": 52,
+          "jsEventListeners": 175
+        },
+        "styles": {
+          "styleTags": 0,
+          "rules": 2010,
+          "cssBytes": 0
+        },
+        "stats": {
+          "started": 3,
+          "completed": 3,
+          "cancelled": 0,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "cancellation": null,
+      "retry": null
+    },
+    {
+      "workload": "dashboard",
+      "load": "stress",
+      "arm": "runtime",
+      "kind": "bounded-resource-and-cancel",
+      "warm": {
+        "heap": 13392496,
+        "dom": {
+          "documents": 1,
+          "nodes": 53,
+          "jsEventListeners": 177
+        },
+        "styles": {
+          "styleTags": 1,
+          "rules": 1428,
+          "cssBytes": 217642
+        },
+        "stats": {
+          "started": 1,
+          "completed": 1,
+          "cancelled": 0,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "terminal": {
+        "heap": 14103352,
+        "dom": {
+          "documents": 1,
+          "nodes": 54,
+          "jsEventListeners": 177
+        },
+        "styles": {
+          "styleTags": 1,
+          "rules": 1428,
+          "cssBytes": 217642
+        },
+        "stats": {
+          "started": 3,
+          "completed": 3,
+          "cancelled": 0,
+          "active": 0,
+          "activeTimers": 0
+        }
+      },
+      "cancellation": null,
+      "retry": null
+    }
+  ],
+  "errors": [],
+  "browserReleased": true
+}

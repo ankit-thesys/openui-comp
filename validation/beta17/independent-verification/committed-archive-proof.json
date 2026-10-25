@@ -1,0 +1,68 @@
+[
+  {
+    "commit": "8b32d559888b5c59ff4814973253a93e94f0e77b",
+    "path": "validation/beta17/performance/evidence/v5-benchmark.tgz",
+    "sha256": "fd0445769fe69b2a4cebef7eeb3f52b4e448b44afe415f622bb42c1203f98382",
+    "bytes": 2141114,
+    "auditedReportSummaryManifestMatch": true,
+    "auditedRunnerFilesMatch": [
+      "diagnose-transition.mjs",
+      "run.mjs",
+      "summarize.mjs",
+      "browser.mjs",
+      "analysis.mjs",
+      "provenance.mjs",
+      "preflight.mjs",
+      "protocol.mjs",
+      "browser-config.mjs"
+    ],
+    "memberHashes": {
+      "benchmark-v5/summary.json": "6d8fb83ff2331f9679fd9af4c59b2153963c10a74432c306e6feb279900978ee",
+      "benchmark-v5/summary-reproduced.json": "ac3a962e74dd2be45a59af2df4f6e421106b53657fbf64efc24c4b0dbb5ff960",
+      "benchmark-v5/report.json": "274626ee089e25b1fd3f736aa8469cd009f924d7fb1d40d613f95cbbf0b4ab40",
+      "benchmark-v5/manifest.json": "58f29005e395f360e521bc8f01992d5dc5ef2c8989861010b37802e5ebdda856",
+      "benchmark-v5/runner/diagnose-transition.mjs": "101969f2b6fc64b05f03571989b3d18193b5ee0ea2d38f02372cf40f374fa21f",
+      "benchmark-v5/runner/run.mjs": "05f66efcfab3dc48df81f62918dead200f4978ba526aed3fdb0ce2425b54bdeb",
+      "benchmark-v5/runner/summarize.mjs": "3c958dad0742fa5b88a6964b091c41c5329884a71498de4b29d1204847b57db7",
+      "benchmark-v5/runner/browser.mjs": "e90f00f393801f37db27e5c118d9dbcdbb1110b38269a04d3beffef6486a7e95",
+      "benchmark-v5/runner/analysis.mjs": "dbb27ca7d946ab4c0004f465c5f823d5e85a5dabcde2ed6cd2219e1b5cd388d0",
+      "benchmark-v5/runner/provenance.mjs": "db291150cb25f7f619e9db7a9aecdeb1dafa29340620035848dfd7124cafca9d",
+      "benchmark-v5/runner/preflight.mjs": "c8d9a75c86550a39b66c4fc62afdacfb0913e2ada4e6aedcd985f7bad298296b",
+      "benchmark-v5/runner/protocol.mjs": "f2a0ee33c60bdf6c84bcd1f49ef4fdc2912dbe70c524d1b0c52d3ffad707feaa",
+      "benchmark-v5/runner/browser-config.mjs": "959c50d2759ac9806445e2f9652f68eedf04b99f2cba3563714f3db61a6790f5"
+    }
+  },
+  {
+    "commit": "8b32d559888b5c59ff4814973253a93e94f0e77b",
+    "path": "validation/beta17/performance/evidence/v5-soak.tgz",
+    "sha256": "c0ca2a9ba53c7f81af2110315ecb06c4e052fbac7ef92e3f9c01f52b0a6d01fc",
+    "bytes": 2144410,
+    "auditedReportSummaryManifestMatch": true,
+    "auditedRunnerFilesMatch": [
+      "diagnose-transition.mjs",
+      "run.mjs",
+      "summarize.mjs",
+      "browser.mjs",
+      "analysis.mjs",
+      "provenance.mjs",
+      "preflight.mjs",
+      "protocol.mjs",
+      "browser-config.mjs"
+    ],
+    "memberHashes": {
+      "soak-v5/summary.json": "d1eb9941c21616a4a3da3d2b3573f9acf6286113db99456e66e3f18e77287c67",
+      "soak-v5/summary-reproduced.json": "fc0dd8d1fb14151efc6d6b78dda54f2ef2439d77fb0c9f3a497d775faff70d16",
+      "soak-v5/report.json": "0088dd8fbbfac7b52ea440797ce2bab79b2659c4023ea15765292ca9bd8d1064",
+      "soak-v5/manifest.json": "58f29005e395f360e521bc8f01992d5dc5ef2c8989861010b37802e5ebdda856",
+      "soak-v5/runner/diagnose-transition.mjs": "101969f2b6fc64b05f03571989b3d18193b5ee0ea2d38f02372cf40f374fa21f",
+      "soak-v5/runner/run.mjs": "05f66efcfab3dc48df81f62918dead200f4978ba526aed3fdb0ce2425b54bdeb",
+      "soak-v5/runner/summarize.mjs": "3c958dad0742fa5b88a6964b091c41c5329884a71498de4b29d1204847b57db7",
+      "soak-v5/runner/browser.mjs": "e90f00f393801f37db27e5c118d9dbcdbb1110b38269a04d3beffef6486a7e95",
+      "soak-v5/runner/analysis.mjs": "dbb27ca7d946ab4c0004f465c5f823d5e85a5dabcde2ed6cd2219e1b5cd388d0",
+      "soak-v5/runner/provenance.mjs": "db291150cb25f7f619e9db7a9aecdeb1dafa29340620035848dfd7124cafca9d",
+      "soak-v5/runner/preflight.mjs": "c8d9a75c86550a39b66c4fc62afdacfb0913e2ada4e6aedcd985f7bad298296b",
+      "soak-v5/runner/protocol.mjs": "f2a0ee33c60bdf6c84bcd1f49ef4fdc2912dbe70c524d1b0c52d3ffad707feaa",
+      "soak-v5/runner/browser-config.mjs": "959c50d2759ac9806445e2f9652f68eedf04b99f2cba3563714f3db61a6790f5"
+    }
+  }
+]

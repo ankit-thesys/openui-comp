@@ -1,0 +1,150 @@
+{
+  "manifestSha256": "58f29005e395f360e521bc8f01992d5dc5ef2c8989861010b37802e5ebdda856",
+  "rows": [
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "baseline",
+      "kind": "excluded-first-stream",
+      "elapsedMs": 229.02174999999988,
+      "renderedElapsedMs": 261.74591599999985,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+      "sourceBytes": 2423,
+      "stats": {
+        "started": 1,
+        "completed": 1,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "runtime",
+      "kind": "excluded-first-stream",
+      "elapsedMs": 250.85154199999988,
+      "renderedElapsedMs": 282.88937499999975,
+      "inputMs": null,
+      "inputObservation": null,
+      "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+      "sourceBytes": 2423,
+      "stats": {
+        "started": 1,
+        "completed": 1,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "baseline",
+      "pair": 0,
+      "kind": "bounded-measurement",
+      "elapsedMs": 247.15858300000036,
+      "renderedElapsedMs": 272.9612500000003,
+      "inputMs": 3.2802920000003724,
+      "inputObservation": {
+        "before": "",
+        "after": "Independent 4f2de371-e9e5-401a-8e49-3fe6f575a263",
+        "activeBefore": 1,
+        "activeAfter": 1
+      },
+      "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+      "sourceBytes": 2423,
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "runtime",
+      "pair": 0,
+      "kind": "bounded-measurement",
+      "elapsedMs": 254.4686670000001,
+      "renderedElapsedMs": 284.6315000000004,
+      "inputMs": 3.5910000000003492,
+      "inputObservation": {
+        "before": "",
+        "after": "Independent bb9c48d0-29cd-49e9-ae05-21e2e5b4f719",
+        "activeBefore": 1,
+        "activeAfter": 1
+      },
+      "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+      "sourceBytes": 2423,
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "runtime",
+      "pair": 1,
+      "kind": "bounded-measurement",
+      "elapsedMs": 239.3567919999996,
+      "renderedElapsedMs": 272.3664579999995,
+      "inputMs": 4.126333000000159,
+      "inputObservation": {
+        "before": "Independent bb9c48d0-29cd-49e9-ae05-21e2e5b4f719",
+        "after": "Independent f2b1bdbc-e7de-4b97-bee0-c039baeb4c64",
+        "activeBefore": 1,
+        "activeAfter": 1
+      },
+      "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+      "sourceBytes": 2423,
+      "stats": {
+        "started": 3,
+        "completed": 3,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "baseline",
+      "pair": 1,
+      "kind": "bounded-measurement",
+      "elapsedMs": 241.77741700000024,
+      "renderedElapsedMs": 277.6787089999998,
+      "inputMs": 3.077792000000045,
+      "inputObservation": {
+        "before": "Independent 4f2de371-e9e5-401a-8e49-3fe6f575a263",
+        "after": "Independent 16c09c3c-e793-4fe1-9105-4be21a8035d7",
+        "activeBefore": 1,
+        "activeAfter": 1
+      },
+      "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+      "sourceBytes": 2423,
+      "stats": {
+        "started": 3,
+        "completed": 3,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      }
+    }
+  ],
+  "errors": [
+    {
+      "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    documents: 1,\n    jsEventListeners: 175,\n+   nodes: 58\n-   nodes: 51\n  }\n",
+      "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    documents: 1,\n    jsEventListeners: 175,\n+   nodes: 58\n-   nodes: 51\n  }\n\n    at file:///private/tmp/openui-beta17-independent-verification/bounded-reproduction.mjs:19:325"
+    }
+  ],
+  "browserReleased": true
+}

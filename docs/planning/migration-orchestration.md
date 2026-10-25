@@ -1,3 +1,205 @@
+# CURRENT — #17 aggregate reviews clear; stacked DRAFT preparation
+
+IntegratedW2tree8b32d5598 and independent audit/bounded16 evidence preserved with
+originalhashes. Formal80+bothpacedsoaks pass scoped gates; independent no new
+blocker. Final34harnesschecks pass; Spec/Standards aggregate GPT6.1-sol reviews
+clear for authorized stacked DRAFT atopPR39. RemoteCI pending creation.
+No product/legacy delta; keep inheritedHorizontalBar/legacytyping, deferredSSR/
+shell, sample/bundle/eagerCSS/font and plainCSSformal vsTWcompatibility limits.
+W1server48419 unchanged/live4197. No further heavy localchecks needed. No merge,
+publication/deprecation/closure/upstream/main/preview writes. crates preserved.
+
+---
+
+# CURRENT — #17 formal V5 local gates PASS; independent verifier active
+
+W2 committed8b32d559888b5c59ff4814973253a93e94f0e77b, bothreviewaxes clear.
+Exact performance-owned tree integrated; raw archives unchanged. BenchmarkSHA
+fd0445769fe69b2a4cebef7eeb3f52b4e448b44afe415f622bb42c1203f98382;
+soakSHA c0ca2a9ba53c7f81af2110315ecb06c4e052fbac7ef92e3f9c01f52b0a6d01fc.
+Fresh80formal streams and both10minpacedsoaks pass agreed gates. Worstcompletion
+median/p95 increase1.93%/1.92%; runtimeheapgrowth chat0.367MiB/dashboard0.491MiB.
+Styles plateau; live streams/timers0; RSS investigation threshold notcrossed.
+Exact10,866inputs/2,765installedfiles unchanged before/after both runs.
+
+Independent verifier NOW owns browser. W1server48419 unchanged/live4197; no
+browser/build/heavy work until release. Draft integrated validation/beta17/REPORT.md
+states scoped local findings; finalreport/PR readiness waits audit/reproduction.
+No unconditional beta/migration acceptance. Legacytyping/HorizontalBar/shell/SSR,
+plainCSSformal timing vs separateTWcompatibility and warm/cold/bundle limits
+remain visible. No merge/release/publication/closure or legacy/upstream edits.
+
+---
+
+# CURRENT — #17 V5 PINNED-BROWSER readiness PASS, RELEASED to W2
+
+Use /private/tmp/beta17-consumer/handoff-v5.json SHA256
+58f29005e395f360e521bc8f01992d5dc5ef2c8989861010b37802e5ebdda856.
+W2reviewed819385b55 uses officialisolatedCfT156.0.8078.47 via stockPlaywright
+executablePath; whole340file/5linkbundle, ZIP, metadata and provenance guarded.
+No installedapp/updater/settings/product/legacy/preview changes.
+
+W2's full80/fourcell/eightclean-shutdown diagnostic+8preflight/34tests are
+READINESS ONLY, preserved under functional/evidence/browser-contract-v5.
+V5 complete provenance/readiness passes8actualbrowsercells/10866inputhashes/
+2128declaredmodules with before+after bundle+input+installed identity checks.
+Only oldinputdeltas reviewedW2browser/run and W1readiness guard invocation.
+Bothreviewaxes no blockers. Product/replay/thresholds unchanged. Earlier48
+functional evidence remains systemChrome-labeled; no redundantmatrix rerun.
+
+W1browser CLOSED; unchangedserver48419 live4197. Root may now start FRESHformal
+80 and both10minsoaks onV5. All diagnostic/partialobservations excluded. No
+performance/memory verdict yet, no merge/release/publication/issueclosure.
+
+---
+
+# CURRENT — #17 V4 readiness+cleanup transition PASS, RELEASED to W2
+
+Use /private/tmp/beta17-consumer/handoff-v4.json SHA256
+7de0f135e2d41b5f715c1c00e775fa507291baf1c5df41f3b36bc2342b7c1581.
+V3 stopped20/80 atbrowsercleanup, no soaks/verdict; incomplete evidence retained
+and never reused. W2reviewed739b4af6b sequencesclientthenserver; solechanged
+existingV3input browser.mjs SHA331708aff3da94f867e2798cb87fb4a577ee14a815616a378cc2796debe242b7.
+No product, replay, servedasset or originalbaseline change.
+
+V4complete readiness passes8browsercells/10516inputhashes/2128declaredmodules.
+Bounded actualW2 two-celltransition passes4opened/4closed/nextcellreached, using
+samecross-hostcleanup asformalrunner. Post-input+installed maps unchanged.
+Bothreviewaxes no blockers. Rawproof/scripts/interruptedV3 evidence retained in
+functional/evidence/cleanup-contract-v4. No unchanged48matrix rerun needed.
+
+W1browser CLOSED, unchangedserver48419 live4197. Root may now dispatchfresh80
+benchmark and both10minutesoaks onV4; no20sample reuse. Performance/memory verdict
+PENDING. No merge/release/publication/closure or legacy/upstream/preview edits.
+
+---
+
+# CURRENT — #17 V3 COMPLETE readiness PASS, window RELEASED to W2
+
+Use /private/tmp/beta17-consumer/handoff-v3.json SHA256
+8d3f583e17dd4b5e12d24b5aacb7d5dabdd4dd7c09a1de8299a08195059e0b14.
+V2 formalstartup stopped before Chrome/timing on2128 missing exactinputkeys;
+V3 inventories all declared modules/canonicalfile hashes and3801 packageowner
+records. Raw archives and archive/v2proofchain are hashed/preserved.
+
+Complete readiness per W2audit f8b961043 passes schema/cells/payload schedules,
+10513 inputhashes, actual W2installedInventory, tooling/output prerequisites,
+then actual W2 browser8preflight with bars, liveinput, realcancel/CDP/RSS and
+unchanged before/after input+installed inventories.2focusedcanonical/escape/lock
+regressions pass. Both reviewers no blockers. Served/product/payload/client/
+server unchanged, so original48functional evidence retained without repetition.
+Exact v2/draftv3/stoppedattempt provenance preserved, no assertions bypassed.
+
+W1 browser CLOSED; server48419 unchanged/live4197. Root may now restart W2
+exclusive formal timing+soaks on V3. No actual formal timing/soaks have run yet.
+Do not infer performance/memory pass. Legacy type/shell/SSR/HorizontalBar limits
+remain. No merge/release/publication/issue closure or upstream/legacy edits.
+
+---
+
+# CURRENT — #17 V2 correction verified, window RELEASED to W2
+
+Use /private/tmp/beta17-consumer/handoff-v2.json, SHA256
+ d222d61713a8854a93144dc870d514a536015ba40be5735e3fd72e213f1f1895.
+Installed proof /private/tmp/beta17-consumer/installed-proof.json now inventories
+v2, helpers/runner, all4packages/6664files and frozen replay/output inputs.
+
+V1 native-form expectation reproduced RED; both public FormRenderers use
+existing div role=form. Metadata-only correction preserves v1/proof and fixes
+semantic selector. Every manifest probe is now asserted across48cells, plus
+empty-required validation blocks action before valid Ada submit. Corrected
+functional48/48 PASS. Exact W2 preflight8/8 PASS errors=[]; raw results/executed
+sources in functional/evidence/form-contract-v2. Both scoped reviewers found no
+remaining source blockers; requested status correction is now explicit.
+
+All originally hashed served output/client/server/payloads and installed product
+origins unchanged; only original build metadata input differs. No product/legacy
+patch. W1 browser CLOSED; unchanged server48419 live4197. Root may now dispatch
+W2's exclusive timing+soak window using V2. No timings or soaks have yet run.
+Existing legacy type, shell, HorizontalBar and SSR boundaries remain disclosed.
+No merge/release/publication/closure or upstream/preview/legacy writes.
+
+---
+
+# CURRENT — #17 v1 release superseded; W1 correction gate running
+
+W2 preflight b5d8198c9 stopped before timing/soaks: native main form count1 was
+wrong; both products use div role=form. Root released correction window to W1.
+New shared all-manifest assertion reproduced red. Metadata-only v2 corrects the
+semantic selector, preserves v1/proof, and adds blocked-required/valid-submit
+checks. Full48 correction matrix running; no formal release until final pass.
+Product, served assets, payloads and original baseline remain unchanged.
+Server48419 remains live. No #17 performance/memory acceptance exists.
+
+---
+
+# CURRENT — #17 frozen functional handoff RELEASED to W2 — 2026-10-25
+
+Branch codex/react-ui-beta-validation. Product code unchanged from reviewed PR39.
+Frozen normal consumer /private/tmp/beta17-consumer; handoff.json follows W2
+contract. Core/kits/react-lang/private-built legacy archive verification passes
+4 packages / 6664 files; all replay apps, served output, scripts/lock/runner and
+handoff are hashed. Module guards reject workspace imports and arm mixing.
+
+Final run5 functional matrix passes48/48: both arms, chat/dashboard, paced/stress,
+plain/TW3/TW4 and actual before/after stylesheet order. Includes visible partial
+Renderer output, painted bars, forms/follow-up actions, numeric theme hue,
+live cancellation and active-unmount teardown with exact session counters.
+Runtime strict fixture types pass. Legacy type findings are disclosed separately.
+Both existing Spec/Standards reviewers closed findings; no performance pass claim.
+
+Frozen server is RUNNING port4197, owned exec session48419. W1 browser CLOSED;
+no further builds/browser work during W2 formal timing and ten-minute soaks.
+W2 owns performance runner/measurements only, reads immutable handoff. Root must
+coordinate its explicit start plus independent verifier after the quiet window.
+See validation/beta17/HANDOFF.md and functional/evidence final archived inputs.
+No actual timing or soak result exists from this handoff alone. Existing criteria
+unchanged; HorizontalBar gap and SSR/helper exclusions remain visible. No legacy,
+main/upstream, preview, product patch, merge, release, publication or issue closure.
+Unrelated untracked crates/ preserved.
+
+---
+
+# CURRENT — PR39 checks green; #17 validation preparation — 2026-10-25
+
+Draft PR39 remains open, stacked on PR37. Build 40203948794 and changeset
+40203948795 passed at 89cdd43d8d43aae8ac3265606476d017e6392a7f.
+Exact remote logs/status are retained under kits/evidence/chat-library/pr39-ci.
+
+Validation branch: codex/react-ui-beta-validation. W1 owns beta17 fixtures,
+functional verification, shared provenance, integration and documentation. W2
+owns beta17/performance. Independent verifier remains read-only/private temp.
+W1 holds the first functional browser window; formal timing/soaks must wait for
+an explicit frozen-fixture handoff. No concurrent browser or build activity
+while formal measurements run. No #17 acceptance follows from PR39 CI.
+
+No legacy, preview, upstream or main writes; no merge/release/closure.
+SSR and helper #15 remain deferred. Inherited HorizontalBar gap stays disclosed.
+Unrelated untracked crates/ is preserved. This evidence/status stays local until
+review; unchanged product checks have not been repeated.
+
+---
+
+# CURRENT — fork stacked DRAFT PR39 OPEN/attached; remote CI running — 2026-10-25
+
+https://github.com/ankit-thesys/openui-comp/pull/39 OPEN/DRAFT attached.
+Headcodex/react-chat-kit at89cdd43d8d43aae8ac3265606476d017e6392a7f;
+basecodex/react-ui-core-charts(PR37). PushedONLYankit-thesys userfork.
+Remotechangeset40203948795 PASS13s. BuildJS40203948794 inprogress.
+LocalfullproductCI7/7allgates andfinalSpec/StandardsreviewsGREEN.
+Correctedisolatedinstalled36focusedcases/192strictcomparisonsPASS; independent
+6framework/ordercases/360observationsPASS. Exactartifact9fc/source9ee, old
+failures/provenance/assetcosts/deferredSSR+#17 andparentHorizontalgap disclosed
+inPRbody. No blanket old/currentfullparity claim orrawfailure normalization.
+
+AllChrome/serverclosed. Onlyunrelatedcratesuntracked,preserved. Thisstatusdoc
+commitLOCALONLYtoavoidrestartofunchangedproductCI. Monitor/fixremoteCIunder
+existingauthorization; afterchecksupdatePRbodyviaRESTandrecordrawlogs/proof.
+No merge/closure/publication/deprecation/upstream/main/legacy/preview writes.
+Rootretainsacceptanceauthority; #17decision/work notstartedbythisdraft.
+
+---
+
 # CURRENT — isolated corrected model matrix GREEN; final review/draft preparing — 2026-10-25
 
 W2fixture4cbf35b76 integratedbd2388162; standardprivatefixturepackageidentity

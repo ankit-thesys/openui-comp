@@ -62,7 +62,10 @@ https://github.com/ankit-thesys/openui-comp/issues/16. Stacked on draft PR37.
   model-style JS/map files differ from 7ad; all other 562 kit files and core remain
   byte-identical. Exact archives, installed files, fixtures, locks and raw failures
   are retained under packages/kits/evidence/chat-library and component tests.
-- [ ] Fork remote build/changeset checks after draft creation.
+- [x] Fork remote build and changeset checks passed at reviewed head
+  `89cdd43d8d43aae8ac3265606476d017e6392a7f`: Build 40203948794,
+  changeset 40203948795. Raw logs and status are preserved in
+  `packages/kits/evidence/chat-library/pr39-ci/`.
 
 ## Costs and limits
 

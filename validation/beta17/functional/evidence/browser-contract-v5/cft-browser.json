@@ -1,0 +1,28 @@
+{
+  "name": "chrome-for-testing",
+  "version": "156.0.8078.47",
+  "platform": "mac-arm64",
+  "source": "https://storage.googleapis.com/chrome-for-testing-public/156.0.8078.47/mac-arm64/chrome-mac-arm64.zip",
+  "executablePath": "/private/tmp/beta17-cft/156.0.8078.47/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+  "executableSha256": "34fbfdb52aacee492bbada9972bf323eba663f8d8a069f86e2652e5158d6c580",
+  "archivePath": "/private/tmp/beta17-cft/chrome-mac-arm64-156.0.8078.47.zip",
+  "archiveBytes": 194932023,
+  "archiveSha256": "ad7f2b49a4dc679af286b1b1b386670d93ca7868079f69012d21ba0ac8293df3",
+  "metadataSource": "https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json",
+  "metadataTimestamp": "2026-10-25T09:19:02.351Z",
+  "metadataSha256": "05ce8711a15c281b6e4b88042441827a91773598e8f390d92fc69392d8854155",
+  "revision": "1706539",
+  "versionOutput": "Google Chrome for Testing 156.0.8078.47",
+  "isolationRoot": "/private/tmp/beta17-cft",
+  "bundlePath": "/private/tmp/beta17-cft/156.0.8078.47/chrome-mac-arm64/Google Chrome for Testing.app",
+  "bundleSymlinks": {
+    "Contents/Frameworks/Google Chrome for Testing Framework.framework/Google Chrome for Testing Framework": "Versions/Current/Google Chrome for Testing Framework",
+    "Contents/Frameworks/Google Chrome for Testing Framework.framework/Helpers": "Versions/Current/Helpers",
+    "Contents/Frameworks/Google Chrome for Testing Framework.framework/Libraries": "Versions/Current/Libraries",
+    "Contents/Frameworks/Google Chrome for Testing Framework.framework/Resources": "Versions/Current/Resources",
+    "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/Current": "156.0.8078.47"
+  },
+  "bundleFileCount": 340,
+  "bundleInventoryPath": "/Users/ankitdas/.codex/worktrees/63b2/openui/validation/beta17/performance/evidence/cft-bundle-inventory.json",
+  "bundleInventorySha256": "a6fc8439fd310a9b2f318b0d0e34762882df30984bb6e277f8ae1aeeab6de9cf"
+}

@@ -1,0 +1,366 @@
+{
+  "status": "pass",
+  "cases": 24,
+  "results": [
+    {
+      "framework": "plain",
+      "order": "before",
+      "workload": "chat",
+      "arm": "baseline",
+      "stats": {
+        "started": 2,
+        "completed": 1,
+        "cancelled": 1,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "workload": "chat",
+      "arm": "runtime",
+      "stats": {
+        "started": 2,
+        "completed": 1,
+        "cancelled": 1,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "workload": "dashboard",
+      "arm": "baseline",
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "workload": "dashboard",
+      "arm": "runtime",
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "workload": "chat",
+      "arm": "baseline",
+      "stats": {
+        "started": 2,
+        "completed": 1,
+        "cancelled": 1,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "workload": "chat",
+      "arm": "runtime",
+      "stats": {
+        "started": 2,
+        "completed": 1,
+        "cancelled": 1,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "workload": "dashboard",
+      "arm": "baseline",
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "workload": "dashboard",
+      "arm": "runtime",
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "workload": "chat",
+      "arm": "baseline",
+      "stats": {
+        "started": 2,
+        "completed": 1,
+        "cancelled": 1,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "workload": "chat",
+      "arm": "runtime",
+      "stats": {
+        "started": 2,
+        "completed": 1,
+        "cancelled": 1,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "workload": "dashboard",
+      "arm": "baseline",
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "workload": "dashboard",
+      "arm": "runtime",
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "workload": "chat",
+      "arm": "baseline",
+      "stats": {
+        "started": 2,
+        "completed": 1,
+        "cancelled": 1,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "workload": "chat",
+      "arm": "runtime",
+      "stats": {
+        "started": 2,
+        "completed": 1,
+        "cancelled": 1,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "workload": "dashboard",
+      "arm": "baseline",
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "workload": "dashboard",
+      "arm": "runtime",
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "workload": "chat",
+      "arm": "baseline",
+      "stats": {
+        "started": 2,
+        "completed": 1,
+        "cancelled": 1,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "workload": "chat",
+      "arm": "runtime",
+      "stats": {
+        "started": 2,
+        "completed": 1,
+        "cancelled": 1,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "workload": "dashboard",
+      "arm": "baseline",
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "workload": "dashboard",
+      "arm": "runtime",
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "workload": "chat",
+      "arm": "baseline",
+      "stats": {
+        "started": 2,
+        "completed": 1,
+        "cancelled": 1,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "workload": "chat",
+      "arm": "runtime",
+      "stats": {
+        "started": 2,
+        "completed": 1,
+        "cancelled": 1,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "workload": "dashboard",
+      "arm": "baseline",
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "workload": "dashboard",
+      "arm": "runtime",
+      "stats": {
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "active": 0,
+        "activeTimers": 0
+      },
+      "tables": 2,
+      "errors": []
+    }
+  ]
+}

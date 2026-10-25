@@ -1,0 +1,30 @@
+{
+  "errors": [],
+  "stats": {
+    "started": 1,
+    "completed": 1,
+    "cancelled": 0,
+    "active": 0,
+    "activeTimers": 0
+  },
+  "dom": {
+    "tables": 2,
+    "forms": 0,
+    "text": "chat section 0: OpenUI streaming Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content.MonthSalesJan10Feb20Mar30chat section 1: OpenUI streaming Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content.MonthSalesJan10Feb20Mar30Name*Send detailsRelated QueriesShow the next quarter",
+    "html": "<div aria-busy=\"false\" style=\"position: relative;\"><div style=\"opacity: 1; transition: opacity 0.2s;\"><div class=\"openui-card openui-card-card openui-card-full\" style=\"display: flex; flex-direction: column; gap: var(--openui-space-m);\"><div><div class=\"openui-text-content\"><div class=\"openui-markdown-renderer openui-text-content-markdown\"><p>chat section 0: <strong>OpenUI streaming</strong> Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content.</p></div></div></div><div><div class=\"openui-scrollable-table-wrapper\" tabindex=\"0\"><div class=\"openui-table-container openui-scrollable-table-scroll-container\"><table class=\"openui-table\" style=\"width: 100%;\"><thead class=\"openui-table-header\"><tr class=\"openui-table-row\"><th class=\"openui-table-head\"><div class=\"openui-table-head-content\"><div class=\"openui-table-head-label\">Month</div></div></th><th class=\"openui-table-head\"><div class=\"openui-table-head-content\"><div class=\"openui-table-head-label"
+  },
+  "expected": {
+    "tables": {
+      "selector": "main table",
+      "count": 2
+    },
+    "forms": {
+      "selector": "main form",
+      "count": 1
+    }
+  },
+  "required": [
+    "chat section 0",
+    "Show the next quarter"
+  ]
+}

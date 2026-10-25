@@ -1,0 +1,69 @@
+{
+  "kind": "diagnostic-readiness-only",
+  "formalAcceptance": false,
+  "diagnosticManifestSha256": "cf11ddce0e939e3691d518f48450717719e819a03379d428044dd5d14a36ae52",
+  "chromeVersion": "156.0.8078.47",
+  "measuredDiagnosticStreams": 80,
+  "excludedStreams": 8,
+  "completedCells": [
+    "chat/paced",
+    "chat/stress",
+    "dashboard/paced",
+    "dashboard/stress"
+  ],
+  "browserShutdowns": [
+    {
+      "cell": "chat/paced",
+      "arm": "baseline",
+      "elapsedMs": 97
+    },
+    {
+      "cell": "chat/paced",
+      "arm": "runtime",
+      "elapsedMs": 96
+    },
+    {
+      "cell": "chat/stress",
+      "arm": "runtime",
+      "elapsedMs": 88
+    },
+    {
+      "cell": "chat/stress",
+      "arm": "baseline",
+      "elapsedMs": 87
+    },
+    {
+      "cell": "dashboard/paced",
+      "arm": "baseline",
+      "elapsedMs": 63
+    },
+    {
+      "cell": "dashboard/paced",
+      "arm": "runtime",
+      "elapsedMs": 78
+    },
+    {
+      "cell": "dashboard/stress",
+      "arm": "runtime",
+      "elapsedMs": 114
+    },
+    {
+      "cell": "dashboard/stress",
+      "arm": "baseline",
+      "elapsedMs": 113
+    }
+  ],
+  "updaterLogMentions": 0,
+  "reportValid": true,
+  "diagnosticThresholdChecks": true,
+  "errors": [],
+  "preflightCases": 8,
+  "preflightErrors": [],
+  "cancellationChecks": 4,
+  "terminalResourcesClean": true,
+  "browserProvenanceSha256": "4920afb4aa458998ba29e6e9843db1645d4990f63894dbc1a28d73aa95952c7e",
+  "independentReviews": {
+    "standards": "no remaining actionable findings after whole-bundle fix",
+    "spec": "no remaining actionable findings after whole-bundle fix"
+  }
+}

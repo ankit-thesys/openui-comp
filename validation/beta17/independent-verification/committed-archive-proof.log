@@ -1,0 +1,38 @@
+[
+  {
+    "commit": "8b32d559888b5c59ff4814973253a93e94f0e77b",
+    "path": "validation/beta17/performance/evidence/v5-benchmark.tgz",
+    "sha256": "fd0445769fe69b2a4cebef7eeb3f52b4e448b44afe415f622bb42c1203f98382",
+    "bytes": 2141114,
+    "auditedReportSummaryManifestMatch": true,
+    "auditedRunnerFilesMatch": [
+      "diagnose-transition.mjs",
+      "run.mjs",
+      "summarize.mjs",
+      "browser.mjs",
+      "analysis.mjs",
+      "provenance.mjs",
+      "preflight.mjs",
+      "protocol.mjs",
+      "browser-config.mjs"
+    ]
+  },
+  {
+    "commit": "8b32d559888b5c59ff4814973253a93e94f0e77b",
+    "path": "validation/beta17/performance/evidence/v5-soak.tgz",
+    "sha256": "c0ca2a9ba53c7f81af2110315ecb06c4e052fbac7ef92e3f9c01f52b0a6d01fc",
+    "bytes": 2144410,
+    "auditedReportSummaryManifestMatch": true,
+    "auditedRunnerFilesMatch": [
+      "diagnose-transition.mjs",
+      "run.mjs",
+      "summarize.mjs",
+      "browser.mjs",
+      "analysis.mjs",
+      "provenance.mjs",
+      "preflight.mjs",
+      "protocol.mjs",
+      "browser-config.mjs"
+    ]
+  }
+]

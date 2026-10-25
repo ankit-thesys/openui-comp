@@ -1,0 +1,34 @@
+[
+  {
+    "name": "v4-full-diagnostic",
+    "diagnosticOnly": true,
+    "measured": 20,
+    "cold": 2,
+    "errors": [],
+    "terminalIntegrityPresent": false
+  },
+  {
+    "name": "direct-launch-full-diagnostic",
+    "diagnosticOnly": true,
+    "measured": 40,
+    "cold": 4,
+    "errors": [],
+    "terminalIntegrityPresent": false
+  },
+  {
+    "name": "context-close-full-diagnostic",
+    "diagnosticOnly": true,
+    "measured": 20,
+    "cold": 2,
+    "errors": [],
+    "terminalIntegrityPresent": false
+  },
+  {
+    "name": "context-close-full-diagnostic-2",
+    "diagnosticOnly": true,
+    "measured": 20,
+    "cold": 2,
+    "errors": [],
+    "terminalIntegrityPresent": false
+  }
+]
