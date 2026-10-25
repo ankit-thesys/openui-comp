@@ -1,0 +1,6 @@
+{
+  "src/offline-fixture.mjs": "239a7b3fffe5cfce46ce8571678e4f61d0d8706cd89a333b58af7028954cb3cc",
+  "public/assets/landscape.svg": "033a57e933552a25394b8ef302787b4ada26bf860d05bb8639cafb1ddfeaa291",
+  ".generated/legacy.json": "43747562c435324941427388505b78b0a49822265f0b071642a0bccc4ebe5b38",
+  ".generated/migrated.json": "43747562c435324941427388505b78b0a49822265f0b071642a0bccc4ebe5b38"
+}

@@ -9,6 +9,7 @@ import {
 } from "react";
 import { createRoot } from "react-dom/client";
 import { channel, isSnapshot, type Snapshot } from "./protocol";
+import { directExamples } from "./offline-fixture.mjs";
 import "./frame.css";
 class PaneBoundary extends Component<
   { children: ReactNode; resetKey: string },
@@ -155,6 +156,44 @@ export function mountPane({
                   </PaneBoundary>
                 </section>
               ),
+            )}
+            {snapshot.offline && snapshot.messages.length > 0 && (
+              <section className="direct-examples">
+                <h2>Direct registry examples · outside Card</h2>
+                <p>
+                  These four entries are not reachable from Card. No schemas or
+                  production components were changed.
+                </p>
+                {directExamples.map((example) => (
+                  <section
+                    data-direct-example={example.name}
+                    key={example.name}
+                  >
+                    <h3>{example.name}</h3>
+                    <p>{example.note}</p>
+                    <code>{example.source}</code>
+                    <PaneBoundary resetKey={snapshot.viewId}>
+                      <Renderer
+                        response={example.source}
+                        library={library}
+                        onError={(next) => {
+                          const error = next.map((e) => e.message).join("; ");
+                          setErrors((old) =>
+                            old[example.name] === error
+                              ? old
+                              : { ...old, [example.name]: error },
+                          );
+                        }}
+                      />
+                    </PaneBoundary>
+                    {errors[example.name] && (
+                      <p role="alert" className="pane-error">
+                        Direct example notice: {errors[example.name]}
+                      </p>
+                    )}
+                  </section>
+                ))}
+              </section>
             )}
           </main>
         </ThemeProvider>

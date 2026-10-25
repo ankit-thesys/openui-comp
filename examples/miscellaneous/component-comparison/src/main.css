@@ -418,3 +418,16 @@ footer {
     scroll-behavior: auto !important;
   }
 }
+
+.offline-controls {
+  padding: 24px;
+}
+.offline-controls p {
+  line-height: 1.6;
+}
+.offline-controls .controls {
+  flex-wrap: wrap;
+}
+.header-right {
+  flex-wrap: wrap;
+}

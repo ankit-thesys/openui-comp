@@ -1,10 +1,25 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { createRoot } from "react-dom/client";
 import { ComparisonSession } from "./session.mjs";
+import { OfflineSession } from "./offline-session.mjs";
 import { channel } from "./protocol";
 import "./main.css";
-const session = new ComparisonSession();
+const liveSession = new ComparisonSession();
+const offlineSession = new OfflineSession();
 function App() {
+  const [mode, setMode] = useState<"live" | "offline">(
+    new URLSearchParams(location.search).get("mode") === "offline"
+      ? "offline"
+      : "live",
+  );
+  const session = mode === "offline" ? offlineSession : liveSession;
+  function changeMode(next: "live" | "offline") {
+    session.clear();
+    const target = next === "offline" ? offlineSession : liveSession;
+    target.clear();
+    target.theme(session.getSnapshot().theme);
+    setMode(next);
+  }
   const snapshot = useSyncExternalStore(session.subscribe, session.getSnapshot);
   const [prompt, setPrompt] = useState(
     "Build a sales dashboard with a chart, a table, and a contact form.",
@@ -19,10 +34,15 @@ function App() {
   const legacy = useRef<HTMLIFrameElement>(null),
     migrated = useRef<HTMLIFrameElement>(null);
   const busy = snapshot.status !== "idle";
+  const transportRevision = useRef(0);
   function broadcast() {
+    const packet = {
+      ...session.getSnapshot(),
+      revision: ++transportRevision.current,
+    };
     for (const frame of [legacy.current, migrated.current])
       frame?.contentWindow?.postMessage(
-        { channel, type: "snapshot", snapshot: session.getSnapshot() },
+        { channel, type: "snapshot", snapshot: packet },
         location.origin,
       );
   }
@@ -47,33 +67,43 @@ function App() {
         typeof event.data.viewId === "string" &&
         typeof event.data.responseId === "string"
       )
-        void session.action(
-          event.data.viewId,
-          event.data.responseId,
-          event.data.action,
-        );
+        void (mode === "offline"
+          ? offlineSession.action(
+              event.data.viewId,
+              event.data.responseId,
+              event.data.action,
+              pane,
+            )
+          : liveSession.action(
+              event.data.viewId,
+              event.data.responseId,
+              event.data.action,
+            ));
     };
     window.addEventListener("message", receive);
     const abort = new AbortController();
-    fetch("/api/config", { signal: abort.signal })
-      .then((r) => r.json())
-      .then(setConfig)
-      .catch((error) => {
-        if (error.name !== "AbortError")
-          setConfig({
-            mode: "unavailable",
-            configured: false,
-            missing: ["Start the example server to connect."],
-          });
-      });
+    if (mode === "live")
+      fetch("/api/config", { signal: abort.signal })
+        .then((r) => r.json())
+        .then(setConfig)
+        .catch((error) => {
+          if (error.name !== "AbortError")
+            setConfig({
+              mode: "unavailable",
+              configured: false,
+              missing: ["Start the example server to connect."],
+            });
+        });
+    broadcast();
     return () => {
       unsubscribe();
       window.removeEventListener("message", receive);
       abort.abort();
     };
-  }, []);
+  }, [session, mode]);
   function send() {
     if (
+      mode !== "live" ||
       busy ||
       !prompt.trim() ||
       !config?.configured ||
@@ -94,13 +124,26 @@ function App() {
           <strong>Comparison lab</strong>
         </a>
         <div className="header-right">
+          <label className="theme-label">
+            Mode
+            <select
+              aria-label="Demo mode"
+              value={mode}
+              onChange={(e) => changeMode(e.target.value as "live" | "offline")}
+            >
+              <option value="live">Live AI</option>
+              <option value="offline">Offline demo</option>
+            </select>
+          </label>
           <span className="mode-badge">
             <span />
-            {config?.mode === "live"
-              ? "Live connection"
-              : config?.mode === "mock"
-                ? "Mock · no AI calls"
-                : "Connecting"}
+            {mode === "offline"
+              ? "Offline · zero API calls"
+              : config?.mode === "live"
+                ? "Live connection"
+                : config?.mode === "mock"
+                  ? "Mock · no AI calls"
+                  : "Connecting"}
           </span>
           <label className="theme-label">
             Theme
@@ -125,90 +168,141 @@ function App() {
           </h1>
         </div>
         <p className="intro-note">
-          One server response feeds both libraries.
+          {mode === "offline"
+            ? "One local fixture feeds both libraries."
+            : "One server response feeds both libraries."}
           <br />
           Compare the components as they arrive.
           <br />
           <span>Your draft form inputs stay in their own pane.</span>
         </p>
       </section>
-      <section className="composer" aria-label="Shared conversation controls">
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            void send();
-          }}
+      {mode === "offline" ? (
+        <section
+          className="composer offline-controls"
+          aria-label="Offline demo controls"
         >
-          <label htmlFor="prompt">Ask once, compare both</label>
-          <textarea
-            id="prompt"
-            value={prompt}
-            onChange={(e) => setPrompt(e.target.value)}
-            placeholder="Describe a UI, ask a follow-up, or submit a form below…"
-            onKeyDown={(e) => {
-              if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
-                e.preventDefault();
-                if (!busy) void send();
-              }
+          <h2>Component atlas · local playback</h2>
+          <p>
+            80 entries in one shared response, plus 4 labeled direct examples.
+            Some helpers render through their parent; tabs and accordions reveal
+            more examples.
+          </p>
+          <p>
+            Switching modes clears both sessions and stops active work. Offline
+            actions only enter the local activity log.
+          </p>
+          <div className="controls">
+            <button
+              onClick={() => offlineSession.instant()}
+              disabled={!ready.legacy || !ready.migrated}
+            >
+              Render all instantly
+            </button>
+            <button
+              onClick={() => void offlineSession.stream()}
+              disabled={busy || !ready.legacy || !ready.migrated}
+            >
+              Stream demo
+            </button>
+            <button
+              onClick={() => void offlineSession.replay()}
+              disabled={busy || !snapshot.messages.length}
+            >
+              Replay
+            </button>
+            <button onClick={() => offlineSession.stop()} disabled={!busy}>
+              Stop
+            </button>
+            <button onClick={() => offlineSession.clear()}>Clear</button>
+          </div>
+          <p role="status">
+            {busy
+              ? "Playing locally…"
+              : snapshot.messages.length
+                ? "Local response ready"
+                : "Choose instant or streamed playback"}
+          </p>
+        </section>
+      ) : (
+        <section className="composer" aria-label="Shared conversation controls">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              void send();
             }}
-          />
-          <div className="composer-bottom">
-            <span className="status" role="status">
-              {snapshot.status === "streaming"
-                ? "Streaming one shared response…"
-                : snapshot.status === "replaying"
-                  ? "Replaying retained chunks · no AI request"
-                  : snapshot.messages.length
-                    ? "Shared response ready"
-                    : "Ready when you are"}
-            </span>
-            <div className="controls">
-              <button
-                type="button"
-                onClick={() => session.clear()}
-                disabled={!snapshot.messages.length && !busy}
-              >
-                Clear
-              </button>
-              <button
-                type="button"
-                onClick={() => void session.replay()}
-                disabled={
-                  busy ||
-                  !snapshot.messages.some(
-                    (m) => m.role === "assistant" && m.content,
-                  )
+          >
+            <label htmlFor="prompt">Ask once, compare both</label>
+            <textarea
+              id="prompt"
+              value={prompt}
+              onChange={(e) => setPrompt(e.target.value)}
+              placeholder="Describe a UI, ask a follow-up, or submit a form below…"
+              onKeyDown={(e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+                  e.preventDefault();
+                  if (!busy) void send();
                 }
-              >
-                Replay
-              </button>
-              {busy ? (
+              }}
+            />
+            <div className="composer-bottom">
+              <span className="status" role="status">
+                {snapshot.status === "streaming"
+                  ? "Streaming one shared response…"
+                  : snapshot.status === "replaying"
+                    ? "Replaying retained chunks · no AI request"
+                    : snapshot.messages.length
+                      ? "Shared response ready"
+                      : "Ready when you are"}
+              </span>
+              <div className="controls">
                 <button
                   type="button"
-                  className="primary"
-                  onClick={() => session.stop()}
+                  onClick={() => session.clear()}
+                  disabled={!snapshot.messages.length && !busy}
                 >
-                  Stop
+                  Clear
                 </button>
-              ) : (
                 <button
-                  type="submit"
-                  className="primary"
+                  type="button"
+                  onClick={() => void session.replay()}
                   disabled={
-                    !prompt.trim() ||
-                    !config?.configured ||
-                    !ready.legacy ||
-                    !ready.migrated
+                    busy ||
+                    !snapshot.messages.some(
+                      (m) => m.role === "assistant" && m.content,
+                    )
                   }
                 >
-                  Send prompt <span>↗</span>
+                  Replay
                 </button>
-              )}
+                {busy ? (
+                  <button
+                    type="button"
+                    className="primary"
+                    onClick={() => session.stop()}
+                  >
+                    Stop
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    className="primary"
+                    disabled={
+                      !prompt.trim() ||
+                      !config?.configured ||
+                      !ready.legacy ||
+                      !ready.migrated
+                    }
+                  >
+                    Send prompt <span>↗</span>
+                  </button>
+                )}
+              </div>
             </div>
-          </div>
-        </form>
-      </section>
-      {config && !config.configured && (
+          </form>
+        </section>
+      )}
+      {mode === "live" && config && !config.configured && (
         <div className="notice" role="alert">
           <strong>Setup needed</strong> {config.missing.join(", ")}. Credentials
           belong in the server’s ignored .env.local file.
@@ -244,6 +338,15 @@ function App() {
               .filter((m) => m.role === "assistant")
               .map((m) => m.chunks?.join("") ?? m.content)
               .join("\n\n") || "No response yet."}
+          </pre>
+        </section>
+      )}
+      {mode === "offline" && (
+        <section className="raw" aria-label="Local activity log">
+          <h2>Local activity log</h2>
+          <p>Originating pane and submitted values. No generation requests.</p>
+          <pre data-testid="activity-log">
+            {JSON.stringify(offlineSession.getSnapshot().activity, null, 2)}
           </pre>
         </section>
       )}
@@ -293,7 +396,9 @@ function App() {
           Visual comparison, not an automated parity or performance certificate.
         </span>
         <span>
-          History clears on refresh · Forms submit into one shared next turn
+          {mode === "offline"
+            ? "Offline actions stay local · history clears on refresh"
+            : "History clears on refresh · Forms submit into one shared next turn"}
         </span>
       </footer>
     </div>

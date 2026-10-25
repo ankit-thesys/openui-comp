@@ -11,7 +11,9 @@
     "start": "NODE_ENV=production node --env-file-if-exists=.env.local server.mjs",
     "test": "node --test tests/*.test.mjs",
     "test:browser": "node tests/browser.mjs",
-    "predev": "npm run generate"
+    "predev": "npm run generate",
+    "test:offline-browser": "node tests/offline-browser.mjs",
+    "generate:offline-inventory": "node scripts/offline-inventory.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "3.0.41",

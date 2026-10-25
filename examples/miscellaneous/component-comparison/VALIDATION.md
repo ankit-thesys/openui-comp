@@ -49,3 +49,35 @@ single UTF-8 decode, preserving the existing raw-byte request limit. A real HTTP
 regression deliberately splits an emoji between request chunks: it reproduced
 corruption before the fix and passes afterward. Unicode red/green evidence is
 retained alongside the full 13-test run. No production package was changed.
+
+## Offline atlas validation (2026-10-26)
+
+- `npm test`: 16/16 pass, including actual parser verification of all 84 shared
+  registry entries in both schemas: 80 through Card, four direct. No fixture
+  validation errors, unresolved references, or orphaned statements.
+- Unit behavior covers instant content, interrupted playback, immutable replay,
+  exact local action event/pane retention and stale-action rejection after Clear.
+- Production build passes; inherited dependency declaration and large-bundle
+  caveats above still apply. No production package or schema was modified.
+- Chrome for Testing156.0.8078.47 bounded offline browser pass: both packed
+  libraries render the same source; form drafts are independent, submitted values
+  and originating pane appear in the log; tabs/accordion/switches, local media and
+  both themes exercised. Stop retains partial content, Replay completes the saved
+  fixture, and active local-mock live streaming cannot populate offline state
+  after a mode switch. Zero offline API requests, zero external requests, zero
+  page errors and zero completed-response renderer notices in either pane.
+- Data-only Slice and standalone SwitchItem return null; this is explained in
+  their labeled sections. SwitchItem controls are exercised through SwitchGroup.
+  Nested helpers count via their actual valid parent composition. This does not
+  imply every variant or hidden interaction has been exhaustively verified.
+- Evidence: `evidence/offline/` contains test/build/browser logs, browser results
+  and the coverage inventory. No real vendor request or credential was used by
+  this work. Existing ignored live environment configuration was preserved.
+
+Offline URL: http://127.0.0.1:4188/?mode=offline. The running server retains the
+existing environment configuration; entering Offline demo requires no API setup.
+
+The first browser chart-count assertion used an incorrect Recharts selector;
+these components expose their own accessible SVG labels. The test selector was
+corrected, with the failed control retained in offline evidence. No chart
+implementation or production styling was changed to make that check pass.

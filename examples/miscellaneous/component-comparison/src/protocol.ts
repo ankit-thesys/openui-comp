@@ -8,6 +8,8 @@ export type Message = {
   chunks?: string[];
 };
 export type Snapshot = {
+  offline?: boolean;
+  activity?: { pane: string; event: unknown }[];
   messages: Message[];
   status: string;
   error: string;

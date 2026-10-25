@@ -43,9 +43,9 @@ separately to `generateSystemPrompt`, following the Vercel AI SDK example.
 
 ## Live mode (configuration required)
 
-The exact **development API base path and model remain unverified**. Ask your
-team for them; do not derive a path from the production URL. In ignored
-`.env.local`, set:
+For a new setup, obtain the exact development API base path and enabled model
+from your team; do not derive a path from the production URL. Existing ignored
+local configuration is preserved. In `.env.local`, set:
 
 ```dotenv
 COMPARISON_MODE=live
@@ -57,8 +57,8 @@ THESYS_MODEL=CONFIRM_THE_ENABLED_MODEL
 The URL above is a placeholder, not an endpoint recommendation. Base URL and
 model have no defaults. Missing/incomplete settings show a setup-needed message.
 Only the server reads these variables; never use a VITE_ credential variable.
-Restart the server after changing configuration. No paid/live vendor request
-was made during development; tests use a local OpenAI-compatible mock upstream.
+Restart the server after changing configuration. Automated tests use a local OpenAI-compatible mock upstream; offline validation
+makes no vendor requests.
 
 ## Use
 
@@ -97,3 +97,41 @@ No model key is needed. Build artifacts/test screenshots stay ignored.
 This visual playground is not a new parity or performance certificate. Existing
 beta evidence and inherited library limitations remain unchanged. The root chat
 library includes its full component registry, so the browser bundles are large.
+
+## Offline component atlas
+
+Open `http://127.0.0.1:4188/?mode=offline`, or choose **Offline demo** in the Mode
+selector. No credentials are needed. Render all instantly and Stream demo use
+identical curated OpenUI source. Stop retains the partial response; Replay starts
+again from the immutable saved source. Switching modes clears both conversations
+and activity logs and stops active work. Live AI keeps the existing server path.
+
+The shared response includes all **80 entries reachable from Card**. The labeled
+direct section exercises **Label, Slice, SwitchGroup and SwitchItem** through the
+unchanged registry and public Renderer. Slice and standalone SwitchItem return
+null by design; their sections explain this rather than inventing visible output.
+SwitchItem also supplies real controls through the direct SwitchGroup example.
+Helper entries such as Series, Col and card items count through their valid parent
+composition, not because their names appear in prose. Some examples require
+opening the Details tab / accordion, scrolling the carousel or opening a control.
+`offline-inventory.json` maps every entry to its actual parsed path, parent,
+example and delivery mode. Regenerate it with `npm run generate:offline-inventory`
+after changing the fixture. The inventory test validates both generated schemas,
+reachability, no missing/orphaned entries and every curated example.
+
+Offline form submissions and follow-ups log the original event and originating
+pane below the controls. They never call generation. Draft inputs stay independent.
+All demo media use the included local SVG; local fonts/static assets are allowed.
+HorizontalBarChart retains its inherited default-height / legend-fit limitations.
+The demo does not change production schemas, styles or component APIs.
+
+```sh
+COMPARISON_CHROME=/absolute/path/to/chrome npm run test:offline-browser
+```
+
+This browser pass blocks/counts offline `/api/*` requests and external requests,
+checks both real panes and local media, instant/stream identity, Stop/Replay,
+form values and pane logging, independent drafts, themes, tabs, accordion and
+switches. Its mode-switch cancellation check uses only the server's local mock.
+This is bounded functional coverage, not exhaustive variants, visual parity,
+performance or accessibility certification.
