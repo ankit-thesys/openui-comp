@@ -18,6 +18,7 @@ type Configuration = {
   subtitle: boolean;
   updated: boolean;
   truncate: boolean;
+  rhsLong: boolean;
 };
 type RecordedEvent = { kind: string; index: number; id?: string; sameItem?: boolean };
 declare global {
@@ -58,6 +59,7 @@ function App() {
     subtitle: true,
     updated: false,
     truncate: true,
+    rhsLong: false,
   });
   const [events, setEvents] = useState<RecordedEvent[]>([]);
   const refs = {
@@ -122,8 +124,8 @@ function App() {
     id: `snippet-${index}`,
     lhs: (
       <Core.TextBlockView
-        primary={`${title} ${index + 1} ${long}`}
-        secondary={long}
+        primary={config.rhsLong ? "Label" : `${title} ${index + 1} ${long}`}
+        secondary={config.rhsLong ? "Details" : long}
         variant="text-subtext"
         size="xs"
       />
@@ -131,8 +133,8 @@ function App() {
     rhs:
       index % 2 ? undefined : (
         <Core.TextBlockView
-          primary={long}
-          secondary="Value details"
+          primary={config.rhsLong ? long : "42"}
+          secondary={config.rhsLong ? "Value details" : "Value"}
           variant="number"
           size="xs"
           align="left"

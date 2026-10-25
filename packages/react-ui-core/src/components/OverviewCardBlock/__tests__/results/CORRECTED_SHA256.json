@@ -1,0 +1,14 @@
+{
+  "browser-corrected/consumer-lock.json": "592ba67d06572064959f13c52ef42166d805282c6fbac90815157fdd08ddd396",
+  "browser-corrected/data-cards.browser.mjs": "7b4a2716426e8689e5f0278cda4dd900e39b5d3ff33454af5ae7859d7adf5835",
+  "browser-corrected/data-cards.fixture.tsx": "3f91b90d5fea2f75274163dd9f9e732119664a3d172151cfba2e6ad7baa2a863",
+  "browser-corrected/data13-ac-slots.json": "f42967e736e6011b402bded90d86e2eacd9143c45dac7cbd287bffd1436011e6",
+  "browser-corrected/data13-ac-slots.log": "679d011bac76394fce48075cebd062017e345d54865977e09a6697ea1a7a3731",
+  "browser-corrected/fixture-types.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "corrected-tooltip-fixture/data-cards.browser.mjs": "0aa62ba87b701a330925fef779c7f76c45e920b176c6f255c4210df05cfd4697",
+  "corrected-tooltip-fixture/data-cards.fixture.tsx": "962e24fc93da39a7744ecda1c27c0c65d1a62b2d9857589ac8c16bd0cd3762b4",
+  "corrected-tooltip-fixture/data13-ac-corrected-prepared.json": "05bb49ec4ddeebafd339e4bea2fe49287556772231f774a8fdde712498524995",
+  "corrected-tooltip-fixture/data13-ac-corrected-prepared.log": "b4eb2d51cb755beb07d21d38cf57ab49d63b3e071e7cdfb837ec4ef6d8d3d053",
+  "corrected-tooltip-fixture/data13-ac-corrected.json": "39e71011f482588435bf7c776ddf099d0cdd85321639d239339ffe663e76860c",
+  "corrected-tooltip-fixture/data13-ac-corrected.log": "b3809c3ad62f6d4da456c98c35196009e9b66143b4f2dce4e3dc7727e88db9f4"
+}

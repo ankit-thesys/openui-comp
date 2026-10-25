@@ -636,6 +636,13 @@ try {
                   .evaluate((node) => node.scrollWidth > node.clientWidth),
                 "real text truncation",
               );
+              assert(
+                await page
+                  .locator("#snippet-case .openui-value-card__lhs")
+                  .first()
+                  .evaluate((node) => node.getBoundingClientRect().width > 0),
+                "LHS trigger has real visible width",
+              );
               await page.locator("#snippet-case .openui-value-card__lhs").first().hover();
               await page.locator(".openui-tooltip-content").waitFor({ state: "visible" });
               assert.equal(
@@ -655,6 +662,7 @@ try {
               await page.mouse.move(0, 0);
               await page.locator(".openui-tooltip-content").waitFor({ state: "detached" });
             }
+            await configure(pages, { rhsLong: true });
             for (const page of pages) {
               assert(
                 await page
@@ -679,13 +687,20 @@ try {
               await page.mouse.move(0, 0);
               await page.locator(".openui-tooltip-content").waitFor({ state: "detached" });
             }
-            await configure(pages, { truncate: false });
+            await configure(pages, { truncate: false, rhsLong: false });
             for (const page of pages) {
               assert(
                 await page
                   .locator("#snippet-case .openui-text-block__primary")
                   .first()
                   .evaluate((node) => node.scrollWidth <= node.clientWidth),
+              );
+              assert(
+                await page
+                  .locator("#snippet-case .openui-value-card__lhs")
+                  .first()
+                  .evaluate((node) => node.getBoundingClientRect().width > 0),
+                "LHS trigger has real visible width",
               );
               await page.locator("#snippet-case .openui-value-card__lhs").first().hover();
               await page.waitForTimeout(180); // Existing TooltipWrapper delay is100ms.
@@ -738,6 +753,13 @@ try {
           await configure(pages, { overrides: false, truncate: true, width: 450 });
           if (kind === "cards")
             for (const page of pages) {
+              assert(
+                await page
+                  .locator("#snippet-case .openui-value-card__lhs")
+                  .first()
+                  .evaluate((node) => node.getBoundingClientRect().width > 0),
+                "LHS trigger has real visible width",
+              );
               await page.locator("#snippet-case .openui-value-card__lhs").first().hover();
               await page.locator(".openui-tooltip-content").waitFor({ state: "visible" });
             }

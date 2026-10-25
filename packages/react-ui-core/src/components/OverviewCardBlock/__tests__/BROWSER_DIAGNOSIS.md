@@ -1,3 +1,63 @@
+# Current — corrected A/C matrix PASS; browser released
+
+**12 cases /56,268 paired snapshots pass** on corrected production
+`4119cddbed813f81e37b949ce00421a7e65173a3`, Chrome156.0.8078.47.
+Consumer `/private/tmp/core-data13c-consumer`;492247-byte tarball
+SHA256 `2c29042765ee120d7f85dd4da7176152ee54cfa7dcaff794ee3990473ea59e02`.
+Every installed file matches the tarball; consumer package and lock unchanged.
+
+Six leaves cases each2,756 snapshots and six cards cases each6,622 snapshots cover
+plain CSS/Tailwind3/Tailwind4 and both **initial** host stylesheet orders. Source
+fix64a7f36ef is integrated in this artifact; the original width regression below
+remains tied to its older baa3 artifact and has not been relabeled.
+
+## Corrected passing scope
+
+- None/light/dark/custom-light/custom-dark, nested/independent themes, explicit
+  className overrides/hover, public refs, host sentinel and remount cleanup.
+- Both metric variants, EntityList default/compact/header/footer/markdown/numeric
+  rows, list size/indicator/subtitle/action/update/empty states and callbacks.
+- Overview/Snippet static and clickable styles, roles/tab stops, click/Enter/Space
+  callbacks with exact item/index/identity, counts0–5, responsive containers and
+  responsivefalse, gap truthiness and overrides, separate hover/focus states.
+- Actual Overview item widths450/480px containers→200px,481/700/900px→240px in
+  both arms, strict full-style/geometry parity retained. Native carousel scrolling,
+  start/middle/end masks, real resize and mutation clearing pass.
+- Both Snippet LHS/RHS real truncation with visible targets; hover/open/Escape/
+  pointer-dismiss and full themed body-portal comparisons pass. Non-truncated LHS
+  omits tooltip. Unmounting while open removes portal; resize/remount causes no
+  errors or accumulated theme styles.
+
+Passing raw report/log, exact measured runner/fixture and consumer lock are under
+`results/browser-corrected`. Runner SHA256
+`7b4a2716426e8689e5f0278cda4dd900e39b5d3ff33454af5ae7859d7adf5835`;
+fixture SHA256 `3f91b90d5fea2f75274163dd9f9e732119664a3d172151cfba2e6ad7baa2a863`.
+Reports retain complete implementation/build/host/baseline/provenance hashes.
+Final strict fixture types pass. Both independent review axes report no remaining
+scoped findings. No product change after the approved rule-order correction.
+
+## Preserved fixture boundary and inherited behavior
+
+The first corrected-artifact attempt is retained under
+`results/corrected-tooltip-fixture`: with simultaneous very long LHS/RHS content,
+the legacy LHS was not hoverable. The passing fixture uses normal public props to
+separate long-LHS/short-RHS and short-LHS/long-RHS scenarios, asserts positive LHS
+width and retains both full portal comparisons. It does not certify the simultaneous
+long-slot composition; no style/layout workaround or forced pointer action was added.
+
+Each cards case observes a non-focusable native tooltip trigger DIV, tabIndex-1,
+matching legacy. Hover acceptance is not a new keyboard-accessibility guarantee.
+The inherited ListItem keyboard limitation and negative `--2%` trend formatting
+also remain. No source redesign was made for these observations.
+
+**Browser released to Worker1.** Runner exited0 and closed all contexts, browser
+and HTTP server. No active measurement remains. Shared medium-card layout/D-family
+checks and overall slice acceptance belong to integration. Previous B/D and
+slice12 matrices were not repeated. No later-host-stylesheet recovery, SSR,
+hydration, streaming, performance/memory or full accessibility certification.
+
+---
+
 # A/C initial browser run — real carousel width mismatch
 
 Browser and server are closed. **Window released to Worker1.** No active Worker2 measurement remains. Frozen consumer and lock were verified unchanged after every attempt. Worker1 owns production correction/repacking; current Worker2 scope is tests/evidence only.
