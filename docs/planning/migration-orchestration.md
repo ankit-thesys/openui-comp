@@ -1,3 +1,17 @@
+# CURRENT HANDOFF — supersedes all historical statuses below — 2026-10-25
+
+Slice12 production is at corrected88fdccf94. Package CI97/97 and both NEW non-math browser groups pass on its exact artifact: owned text/media6 cases /22,296 snapshots; composers6 /30,012 paired snapshots. Prior foundation/source/media checks retain the historical revisions listed below and in the local PR draft. No production change since88fd; later commits contain evidence/docs/formatter exclusions only.
+
+MATH GATE REMAINS OPEN: no vendor CSS/font exception or experimental plugin integration is approved/adopted. No complete slice12 acceptance, ticket closure or slice13 production start. Browser/server are closed and Worker1 holds the released browser window; no measurement is active. Do not follow older “W2 retest pending” or browser-owner instructions below.
+
+Slice13 Table wording RESOLVED by existing preserve-behavior/no-redesign decision: retain EditableTable native table markup and TanStack implementation; no forced adoption of public Table/ScrollableTable. No new user decision is required to preserve existing structure. Read-only ownership/dependency plan updated in `docs/planning/slice13-readonly-plan.md`; no implementation authorized.
+
+Local unpublished PR description: `docs/planning/slice12-pr-draft.md`, intended to stack on forkPR33 (`codex/react-ui-core-layout`). It explicitly separates current vs historical evidence, inherited limitations and the unapproved math gate. DO NOT OPEN OR PUSH the slice12 PR while acceptance is blocked. Stock Goober only; old react-ui, both previews and unrelated crates untouched. No merge/release/upstream writes.
+
+---
+
+The following is an append-only historical record; this top section controls current status.
+
 # Slice12 non-math readiness / slice13 planning — 2026-10-25
 
 Corrected composer matrix PASSED6 cases /30,012 paired snapshots on production88fdccf94 exact frozen artifact below; W2 evidence2bf604984 integrated as0c07afd62. W2 explicitly closed browser/server and released browser to Worker1; no active measurement remains. Combined with owned text/media6 cases /22,296 snapshots, both NEW non-math groups now pass on corrected88fd artifact. Earlier source/presentation12 cases /22,056 and fixed-media6 /8,292 remain tied to their historical artifacts; no repeated unchanged matrices or claim of one all-family final run. Final corrected package CI97/97 plus affected installed12/native/pruning and strict3 modes remain green. No production code change after88fd.
