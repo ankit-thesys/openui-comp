@@ -3,88 +3,90 @@
 ```text
 @openuidev/kits
 ├── /react/chat       ModelSwitcher, FollowUpBlock, FollowUpItem
-│   └── react-ui-core (components, shared theme)
-└── /react/chat/libs  existing openuiChatLibrary + chat prompt options
-    ├── react-ui-core (all reusable UI and chart rendering)
-    ├── local chat follow-up components
+│   └── react-ui-core (components + shared theme)
+└── /react/chat/libs  openuiChatLibrary + chat prompt options
+    ├── react-ui-core (reusable UI + charts)
+    ├── local follow-up components
     └── react-lang (schemas, parser, renderer, actions)
 ```
 
 ## What
 
-Add the approved React chat kit with separate component and AI-library imports.
-Related fork issue: https://github.com/ankit-thesys/openui-comp/issues/16.
-Stacked on draft PR37; legacy packages remain unchanged.
+Add the approved React chat kit with separate component and AI-library imports,
+preserving existing props, positional schemas and actions. Related fork issue:
+https://github.com/ankit-thesys/openui-comp/issues/16. Stacked on draft PR37.
 
 ## Changes
 
-- Publish-ready `@openuidev/kits` metadata, ESM/CJS declarations, two explicit
-  subpath exports and conventional TypeScript fallback resolution.
-- Existing ModelSwitcher and follow-up component APIs, with stock-Goober styles.
-- Existing chat library definitions, positional schemas, component groups,
-  prompts/examples and action semantics, using public core components.
-- Kit-owned Icon wire schema, preserving name/category order. No general
-  assembled openuiLibrary, AgentInterface or deferred standalone chat helpers.
-- Zod 3 peer minimum is narrowed to validated 3.25.76, preserving the accepted
-  Zod 4 range; the originally advertised 3.25.0 lacks its zod/v4 files.
-- Ordinary 12px CSS-variable fallback restores the chat Card's legacy default
-  spacing when no ThemeProvider supplies variables.
+- Publish-ready ESM/CJS package and declarations for the two approved subpaths.
+  Component-only imports do not assemble the AI library.
+- Existing chat components use stock Goober and public core/theme imports.
+  The existing chat library, groups and prompt data render through core.
+- Restore the legacy Card's 12px unthemed spacing fallback and ModelSwitcher's
+  effective hover/open border reset with ordinary CSS declarations.
+- Require tested Zod3.25.76 or the accepted Zod4 range. Zod3.25.0's published
+  artifact lacks zod/v4 files; no dependency or legacy source was patched.
+- AgentInterface, standalone helpers and assembled general openuiLibrary remain
+  excluded. No new styling API, manual CSS import or consumer setup plugin.
 
 ## Evidence
 
-The public-import test failed before the package existed. A real isolated
-no-provider Chrome check then exposed missing Card spacing (`normal` instead
-of 12px); the conventional fallback restores the existing default. Original
-red logs and exact packed archive/installed consumer manifests are retained.
-
-The first complete package run found a test race: packing the existing runtime
-executed its prepare build while another test imported it. The pack test now
-uses standard ignore-scripts configuration to test built artifacts. No runtime
-or dependency implementation was patched.
-
-The peer-range regression first failed because npm accepted unsupported exact
-Zod3.25.0 with the original artifact. Corrected metadata rejects it through
-normal strict peer resolution. The new artifact changes only package.json and
-README; all runtime/declaration bytes remain identical to source8405.
+- **Before:** missing public kit imports, unthemed Card gap `normal`, and an
+  accepted-but-broken Zod3.25.0 peer. **After:** real public-import, Chrome gap
+  and strict npm peer-resolution regressions pass; minimum3.25.76 consumers pass.
+- **Before:** installed8405 had42/330 strict style-state failures from the model
+  border cascade. **After:** corrected9fc passes36 focused framework/order/theme
+  cases and192 paired strict comparisons. Independent verification separately
+  passes6 framework/order cases and360 observations, including exposed borders,
+  consumer overrides and arm-specific dark logos. These counts are different
+  measurement units and are not summed as distinct scenarios.
+- One intermediate nested fixture self-resolved workspace kits against installed
+  core. Its failure remains invalid-fixture evidence. Conventional standalone
+  manifests and compiled module-origin guards now prove installed-artifact use.
+  The older W2 run5 graph was separately audited as installed; its bounded
+  behavior completion and original style failures retain their old provenance.
 
 ## Test Plan
 
-- [x] Package CI: 7/7 public tests, formatting, semantic lint, types, build,
-  Publint and ATTW. Six inherited library-renderer hook warnings; zero errors.
-- [x] Normal packed consumer: native ESM/CJS imports, strict Bundler/NodeNext
-  ESM/NodeNext CJS declarations and component-only retained-byte pruning.
-- [x] Actual public streaming parser: arbitrary chunks preserve table/chart
-  positional contracts. Renderer checks streaming-disabled forms, validation,
-  submission/follow-up actions, saved form restoration and clear/unmount.
-- [x] Corrected minimum Zod3.25.76: native imports, strict three-mode declarations
-  and actual parser/Renderer form/action/history checks. Corrected package CI
-  includes the npm peer-rejection regression.
-- [x] Corrected W1 library browser matrix: six production-Vite/Chrome framework/
-  order cases verify actual CSS readiness/placement, settled distinct hover,
-  observed-live-stream cancellation, resubmission, markdown/table/two painted
-  chart bars, validation/actions/history, scoped themes and portal selection.
-  Exact metadata-corrected archive/consumer remains unchanged; zero page errors
-  or live streams at the end. Earlier provisional runs remain separate.
-- [ ] Independent Worker2 component browser evidence, then verifier evidence.
-- [ ] Final review of integrated evidence and fork remote checks.
+- [x] Package CI7/7; format/lint/types/build/Publint/ATTW pass. Six inherited
+  renderer hook warnings, zero errors.
+- [x] Normal packed ESM/CJS imports, strict Bundler/NodeNext ESM/NodeNext CJS
+  consumers, component-only retained-byte pruning and unsupported-peer rejection.
+- [x] Actual parser chunks and Renderer forms: streaming disables interactions,
+  validation, submission/follow-up actions, saved history and clear/unmount.
+- [x] Corrected library browser6-case gate verifies actual CSS readiness/order,
+  settled hover, active-stream cancellation, retry, markdown/table/painted charts,
+  actions, scoped themes and portal selection. Independent6-case functional and
+  transport/timer-cleanup/math checks and3 asset consumers also pass on7ad.
+- [x] Final9fc affected-state matrix36/192 and independent6/360 pass. Only four
+  model-style JS/map files differ from7ad; all other562 kit files and core remain
+  byte-identical. Exact archives, installed files, fixtures, locks and raw failures
+  are retained under packages/kits/evidence/chat-library and component tests.
+- [ ] Fork remote build/changeset checks after draft creation.
 
-## Compatibility and limits
+## Costs and limits
 
-Chrome; plain CSS and Tailwind v3/v4. Preserve existing customization APIs;
-explicit important overrides remain available. No new sx/styling API, custom
-Goober runtime, user CSS import or consumer setup plugin was introduced.
-SSR/hydration and #17 performance/memory/soak certification remain deferred.
-Existing core HorizontalBar default string-height/legend-fit strict comparison
-remains unpassed; this PR does not recertify the entire chart set.
+Independent measured assembled-library cost: approximately1.90MB JS raw/572KB
+gzip and218KB injected CSS. Unused/FollowUpItem-only builds emit1.07MB font
+assets but download no CSS/fonts, retaining the accepted KaTeX build-output
+limitation. These are bundle/download measurements, not a comparative performance
+regression result. #17 performance/memory acceptance and SSR remain separate.
+Browser target is Chrome with plain CSS/Tailwind v3/v4. Parent core's inherited
+HorizontalBar default string-height/legend-fit strict comparison remains unpassed;
+this PR does not recertify the whole chart set or claim unconditional parity.
+
+Independent originals: /private/tmp/openui-chat16-independent-verification/
+report.md, model-border-verification.md, border-browser-results.json and
+border-final-artifact-proof.json. Exact snapshots, original paths and hashes are
+committed under packages/kits/evidence/chat-library/independent-verifier/.
 
 ## Checklist
 
 - [x] Fork issue linked without closure instruction
-- [x] Release note and scoped documentation added
-- [x] Existing props, schemas/actions and backwards compatibility considered
-- [ ] Independent browser/verifier acceptance and final integrated review
+- [x] Release note, documentation and independent evidence updated
+- [x] Existing public contracts and backwards compatibility considered
 
-## Merge danger
+## Merge Danger
 
 **Door:** two-way. **Blast Radius:** kits. Draft only, stacked on PR37.
-Do not merge, publish, deprecate or close migration tickets from this checkpoint.
+No merge, publication, deprecation or issue closure is authorized.

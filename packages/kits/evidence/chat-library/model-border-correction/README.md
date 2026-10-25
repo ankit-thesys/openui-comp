@@ -25,3 +25,12 @@ Both independent correction source/harness reviews have zero actionable findings
 Affected Chrome verification must follow verifier's explicit release.
 No whole-core/library matrix repeats solely because a model style changed.
 No final visual parity, #17 performance/memory or SSR claim.
+
+## Completed affected verification
+
+The properly isolated final worker run passes36cases/192strictcomparisons with
+compiled installed-module proof. The independent verifier passes6cases/360
+observations. See the isolated component results and independent-verifier/
+snapshots. The earlier mixed-context attempt remains invalid-fixture evidence;
+no product/logo workaround was introduced. Historical raw statements above
+describe the artifact handoff before these completed checks.
