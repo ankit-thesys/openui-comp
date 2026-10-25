@@ -44,6 +44,14 @@ behavior, container ordering and updates, controlled model values/fallback,
 empty models and light/dark logos using the core ThemeProvider.
 JSDOM exposes its real APIs; no fake geometry or observer implementations.
 
+`types.fixture.tsx` covers existing public component/type imports and ref/native
+props, with negative checks for a new ModelSwitcher style prop and missing item
+text. The preliminary declaration consumer passes Bundler resolution; final
+NodeNext import/require checks belong to the combined package. Results and
+scratch artifact hashes are in `results/source-checks.json`. Source typechecking,
+semantic ESLint, formatting and all three consumer tests pass. Independent Spec
+and Standards reviews of component commit `41af2765d` found no actionable issues.
+
 ## Preserved behavior and limitations
 
 - ModelSwitcher still accepts only models, value and onValueChange. No new

@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-10-25T13:51:08.703698+00:00",
+  "sourceCommit": "41af2765d",
+  "baseCommit": "ddd9f9a5e13a61a865cee76212b13a6230fc67d3",
+  "scope": "Preliminary isolated component-entry validation; final kits package and Chrome acceptance pending with Worker1.",
+  "entryExports": ["FollowUpItem", "FollowUpBlock", "ModelSwitcher"],
+  "scratchProducer": "/private/tmp/chat16-components-producer",
+  "scratchConsumer": "/private/tmp/chat16-components-consumer",
+  "artifactSha256": {
+    "chat.cjs": "de9a92798ecb6a1db720d5d973e70c75ac98b43774ede8845e37b59a64eed43b",
+    "chat.mjs": "3a6e53493fb71ce47e8eb4a2d112a7f9e8a57661f62bc6a68647762d08b5abed",
+    "package.json": "40dde4a4ae1f037391aca4e5a90fd8bf813245b749e129ad18bf4a8cfec115ba"
+  },
+  "checks": {
+    "sourceTypecheck": "passed: tsc -p /private/tmp/chat16-components-producer/tsconfig.json",
+    "publicTypes": "passed: tsc -p /private/tmp/chat16-components-consumer/tsconfig.json (Bundler resolution only)",
+    "consumerSuite": {
+      "passed": 3,
+      "failed": 0,
+      "command": "KIT_CONSUMER=/private/tmp/chat16-components-consumer KIT_TEST_TOOLS=/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core node --test packages/kits/src/react/chat/components/*/__tests__/*.test.mjs"
+    },
+    "semanticEslint": "passed (prettier rule off; formatting checked separately with configured plugin)",
+    "prettier": "passed",
+    "independentSpecReview": "no actionable scoped findings on 41af2765d",
+    "independentStandardsReview": "no actionable scoped findings on 41af2765d"
+  },
+  "notRun": [
+    "Chrome (Worker1 first browser window)",
+    "final packed kits artifact",
+    "NodeNext public types",
+    "combined library streaming",
+    "SSR (deferred)"
+  ],
+  "legacyChanged": false,
+  "untrackedCratesPreserved": true
+}
