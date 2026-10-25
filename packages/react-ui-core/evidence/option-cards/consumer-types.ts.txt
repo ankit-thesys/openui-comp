@@ -1,0 +1,15 @@
+import {createElement,createRef} from 'react';
+import {OptionCards,ThemeProvider} from '@openuidev/react-ui-core';
+import type {OptionCardsProps,OptionCardsItem,OptionCardsSelectionType} from '@openuidev/react-ui-core';
+const type:OptionCardsSelectionType='multiple';
+const item:OptionCardsItem={value:'one',title:'**One**',subtitle:'Details',topContent:createElement('img',{alt:'Example',src:'/image.svg'}),topContentVariant:'image',disabled:false};
+const props:OptionCardsProps={items:[item],selected:['one'],type,disabled:false,onToggle:value=>value.toUpperCase(),className:'consumer',style:{padding:12},'aria-label':'Choose'};
+createElement(OptionCards,{...props,ref:createRef<HTMLDivElement>()});
+createElement(ThemeProvider,null,createElement(OptionCards,{items:[]}));
+// @ts-expect-error No new sx styling API.
+const unsupported:OptionCardsProps={items:[item],sx:{color:'red'}};
+// @ts-expect-error Existing named selection modes only.
+const invalidMode:OptionCardsSelectionType='range';
+// @ts-expect-error Private row grouping is not a new root API.
+import {getRowConfiguration} from '@openuidev/react-ui-core';
+void [unsupported,invalidMode,getRowConfiguration];

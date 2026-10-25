@@ -1,3 +1,13 @@
+# CURRENT — deferred OptionCards dispatched / integration TDD red — 2026-10-25
+
+Root accepted PR35 green checkpoint and dispatched bounded OptionCards completion only. Branch `codex/react-ui-core-option-cards` based exactly reviewed838d78ec23f3c4e31c84873b9926d518cd5c2776; local docs99f1b131e/092f55a19/89301a837 carried safely asa03a116ad/ee3e7d3eb/27e201553. PR35 remains unchanged/green.
+
+Worker2 owns only OptionCards source/styles/tests. Worker1 owns root exports, integration/metadata/artifact and independent review. Both use committed handoffs, no cross-owner edits. Public root export check now genuinely RED: Missing root component OptionCards; preserved under evidence/option-cards. No export added until committed source exists. Existing InlineMarkdownRenderer and private shared getRowConfiguration must be reused, no helper duplication.
+
+Worker2 owns FIRST OptionCards Chrome window after exact artifact agreement. Worker1 stays NON-BROWSER until release; Node/build/type/pruning preparation may proceed. Preserve controlled selection/native buttons/callbacks/roles/markdown/ref/forwarding and styles; no redesign/new APIs. Stock Goober/accepted math vendor exception, legacy/previews/crates untouched. No charts source begun; chart bootstrap order remains future root dispatch after this checkpoint. Authorized attached fork-only stacked draft atop PR35 once scoped tests/review pass; no merge/closure/release/upstream/main writes.
+
+---
+
 # CURRENT — slice13 COMPLETE as reviewed DRAFT PR35; CI GREEN — 2026-10-25
 
 Fork draft https://github.com/ankit-thesys/openui-comp/pull/35 OPEN/DRAFT, attached, stacked on codex/react-ui-core-text-media (#34). Reviewed/pushed product head `838d78ec23f3c4e31c84873b9926d518cd5c2776`. Remote BuildJS40184784878 PASS9m5s and changeset40184784860 PASS14s. Corrected-source core107/107 tests, format/lint/types/build/Publint/ATTW pass remotely; no source correction needed after opening. Full raw job log/status archived under evidence/data-cards/remote-ci. PR description updated to green.
