@@ -1,3 +1,24 @@
+# CURRENT — #17 V4 readiness+cleanup transition PASS, RELEASED to W2
+
+Use /private/tmp/beta17-consumer/handoff-v4.json SHA256
+7de0f135e2d41b5f715c1c00e775fa507291baf1c5df41f3b36bc2342b7c1581.
+V3 stopped20/80 atbrowsercleanup, no soaks/verdict; incomplete evidence retained
+and never reused. W2reviewed739b4af6b sequencesclientthenserver; solechanged
+existingV3input browser.mjs SHA331708aff3da94f867e2798cb87fb4a577ee14a815616a378cc2796debe242b7.
+No product, replay, servedasset or originalbaseline change.
+
+V4complete readiness passes8browsercells/10516inputhashes/2128declaredmodules.
+Bounded actualW2 two-celltransition passes4opened/4closed/nextcellreached, using
+samecross-hostcleanup asformalrunner. Post-input+installed maps unchanged.
+Bothreviewaxes no blockers. Rawproof/scripts/interruptedV3 evidence retained in
+functional/evidence/cleanup-contract-v4. No unchanged48matrix rerun needed.
+
+W1browser CLOSED, unchangedserver48419 live4197. Root may now dispatchfresh80
+benchmark and both10minutesoaks onV4; no20sample reuse. Performance/memory verdict
+PENDING. No merge/release/publication/closure or legacy/upstream/preview edits.
+
+---
+
 # CURRENT — #17 V3 COMPLETE readiness PASS, window RELEASED to W2
 
 Use /private/tmp/beta17-consumer/handoff-v3.json SHA256

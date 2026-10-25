@@ -1,5 +1,5 @@
 {
-  "status": "v3 complete startup/inventory and browser readiness pass; released for formal measurement, no performance acceptance",
+  "status": "v4 complete readiness and two-cell cleanup transition pass; released for fresh80 plus soaks, no performance acceptance",
   "productSource": "9ee0576133fbb1c444d03c169a81893ebf7631fd",
   "reviewedPRHead": "89cdd43d8d43aae8ac3265606476d017e6392a7f",
   "protocolCommit": "a67bd0695f37ff0d6800de564562c152807f4e4e",
@@ -37,10 +37,10 @@
     "legacySourceModified": false
   },
   "consumer": "/private/tmp/beta17-consumer",
-  "handoff": "/private/tmp/beta17-consumer/handoff-v3.json",
-  "handoffSha256": "8d3f583e17dd4b5e12d24b5aacb7d5dabdd4dd7c09a1de8299a08195059e0b14",
+  "handoff": "/private/tmp/beta17-consumer/handoff-v4.json",
+  "handoffSha256": "7de0f135e2d41b5f715c1c00e775fa507291baf1c5df41f3b36bc2342b7c1581",
   "installedProof": "/private/tmp/beta17-consumer/installed-proof.json",
   "browser": "Chrome156.0.8078.47",
   "node": "22.22.2",
-  "contractVersion": 3
+  "contractVersion": 4
 }

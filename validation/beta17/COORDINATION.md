@@ -1,10 +1,9 @@
-# V3 readiness coordination — complete
+# V4 readiness coordination — complete
 
-Use /private/tmp/beta17-consumer/handoff-v3.json SHA256
-8d3f583e17dd4b5e12d24b5aacb7d5dabdd4dd7c09a1de8299a08195059e0b14.
-Complete readiness passes10513inputs/2128declaredruntime modules plus actual W2
-installed inventory and browser8 preflight. W1 consumes W2 prerequisite audit
-f8b961043 and actual W2 provenance/preflight/browser code without editing its
-owned performance directory. No guards removed or bypassed. Both reviewers
-report no blockers. W1 releases window; server48419 remains unchanged/live4197.
-No formal timing/soak results yet. See HANDOFF.md and module-contract-v3 evidence.
+Use /private/tmp/beta17-consumer/handoff-v4.json SHA256
+7de0f135e2d41b5f715c1c00e775fa507291baf1c5df41f3b36bc2342b7c1581.
+Only existingV3input change is reviewed W2browser cleanup SHA331708aff3da94f867e2798cb87fb4a577ee14a815616a378cc2796debe242b7.
+Complete readiness8cells/10516inputs passes. Bounded two-cell smoke4opened/
+4closed/nextcell reached passes; after-input+installed inventories unchanged.
+Both reviews no blockers. W1browserclosed, server48419 remains live/unchanged.
+Root may dispatch fresh80 plus bothsoaks; no prior20sample reuse. No verdict yet.

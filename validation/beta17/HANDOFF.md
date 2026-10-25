@@ -1,15 +1,16 @@
 # Worker1 → Worker2 fixture contract
 
-Status: V3 RELEASED TO WORKER2 FOR FORMAL MEASUREMENT.
-Complete startup/inventory readiness and exact W2 browser8 preflight pass.
-The prior48 functional gate is unchanged; no served/product/replay changes.
-W1 browser is closed; server48419 remains unchanged/live4197.
-V1/V2 releases are superseded. No timing, soak or performance acceptance yet.
+Status: V4 RELEASED FOR A FRESH FORMAL RUN.
+Complete readiness passes8 browsercells/10516inputs/2128declared modules.
+Bounded transition passes: opened4, closed4, nextCellReached=true; frozen input
+and installed inventories unchanged after it. W1 browser CLOSED.
+Keep server48419 unchanged/live4197. V3's20 samples are interrupted evidence,
+excluded from fresh80 measurements and both soaks. No performance verdict yet.
 
 Consumer: `/private/tmp/beta17-consumer` (standalone npm installation).
-Manifest: `/private/tmp/beta17-consumer/handoff-v3.json`.
-SHA256: `8d3f583e17dd4b5e12d24b5aacb7d5dabdd4dd7c09a1de8299a08195059e0b14`.
-Proof: `/private/tmp/beta17-consumer/installed-proof.json` (v3).
+Manifest: `/private/tmp/beta17-consumer/handoff-v4.json`.
+SHA256: `7de0f135e2d41b5f715c1c00e775fa507291baf1c5df41f3b36bc2342b7c1581`.
+Proof: `/private/tmp/beta17-consumer/installed-proof.json` (v4).
 Fixture server: `BETA17_DIST=/private/tmp/beta17-consumer/replay-dist node validation/beta17/fixtures/server.mjs`.
 Origin: `http://127.0.0.1:4197`.
 Worker1 owns server start/stop and the first functional browser window.
@@ -97,3 +98,21 @@ blockers. Raw results, executed runner snapshots and exact four archives are
 retained in functional/evidence/module-contract-v3. No unchanged48 rerun or
 formal timing was substituted for this check. Root may restart W2 exclusively
 using V3. Keep server48419 unchanged; no competing build/browser/heavy tests.
+
+## V4 cleanup-only runner handoff
+
+W2 commit739b4af6b preserves V3's interrupted20/80 report, rejects incomplete
+acceptance and sequences Playwright client closure before its owning server.
+The only changed existing V3 input is performance/browser.mjs, reviewed SHA256
+331708aff3da94f867e2798cb87fb4a577ee14a815616a378cc2796debe242b7.
+V4 adds immutable V3 manifest/proof and a bounded transition correctness script.
+No product, package, client/server, payload, schedule or served asset changed.
+
+Complete readiness passes8cells and all10516 input hashes. Actual W2 APIs open
+both arms, finish/unmount them, close both with the formal runner's cross-host
+cleanup pattern, then reach the next workload cell. Transition passes4opened/
+4closed/nextCellReached=true, with unchanged post-input+installed inventories.
+Both review axes report no blockers. Exact scripts, raw results and interrupted
+V3 evidence are retained under functional/evidence/cleanup-contract-v4. The
+unchanged48 functional matrix was not repeated. Root may now restart a FRESH80
+benchmark followed by both ten-minute soaks; V3's20 samples cannot be reused.

@@ -42,3 +42,11 @@ prerequisites plus browser preflight and before/after inventories. Recorded
 result is pass8browsercells/10513inputs/2128declaredruntime modules. This closes
 the gap between earlier browser-only preflight and formal startup validation.
 No timing/soak result or product patch follows from this correction.
+
+## V4 cleanup transition review
+
+Both scoped axes found no blocker in the bounded two-cell smoke or metadata
+handoff. It uses actual W2 APIs, awaits every cleanup result, reaches a new
+workload cell and records correctness-only outcomes. Readiness passes8cells,
+transition passes4opened/4closed and post-input/installed maps are unchanged.
+V3's20 interrupted samples remain excluded. No performance acceptance follows.
