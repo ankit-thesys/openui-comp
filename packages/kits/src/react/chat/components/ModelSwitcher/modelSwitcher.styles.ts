@@ -23,6 +23,8 @@ export const rootClass = css({
     '&:hover, &[data-state="open"]': {
       backgroundColor: "var(--openui-highlight-strong, oklch(0.097 0 0 / 0.08))",
       color: "var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+      // Preserve the legacy border reset regardless of module registration order.
+      borderColor: "currentColor",
     },
     "& .openui-model-switcher-logo": { width: "14px", height: "14px" },
     "& .openui-model-switcher-badge-trigger": { display: "none" },
