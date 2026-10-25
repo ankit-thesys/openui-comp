@@ -17,7 +17,11 @@
     "VisualCard",
     "VisualCardBlock"
   ],
-  "strictModes": ["Bundler", "NodeNext ESM", "NodeNext CJS"],
+  "strictModes": [
+    "Bundler",
+    "NodeNext ESM",
+    "NodeNext CJS"
+  ],
   "lockSha256": "fa38e99a01fb4b09c5b008ff267a8292f5693f54d16b468772c043f94e0003f6",
   "pruning": [
     {

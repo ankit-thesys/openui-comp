@@ -12,3 +12,5 @@ src/components/IconTag/__tests__/results/browser-corrected/consumer-lock.json
 # Preserve exact slice13 browser evidence and frozen consumer lock.
 evidence/data-cards/browser-failures/*.json
 evidence/data-cards/consumer-lock.json
+# Preserve the exact passing slice13 browser measurement.
+evidence/data-cards/browser-results/*.json

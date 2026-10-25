@@ -29,6 +29,12 @@ const names = [
   "VisualCard",
   "VisualCardBlock",
 ];
+const nativeFile = path.join(consumer, "native-root.mjs");
+await fs.writeFile(
+  nativeFile,
+  `import assert from 'node:assert/strict'; import * as core from '@openuidev/react-ui-core'; for(const name of ${JSON.stringify(names)}) assert(core[name],name);`,
+);
+execFileSync(process.execPath, [nativeFile], { cwd: consumer, stdio: "pipe" });
 const cjs = require("@openuidev/react-ui-core");
 const esm = await import(pathToFileURL(path.join(packagePath, "dist/index.mjs")).href);
 for (const name of names) {
