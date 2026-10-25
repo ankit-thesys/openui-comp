@@ -1,3 +1,37 @@
+# CURRENT — approved chat-kit slice #16 in progress — 2026-10-25
+
+Branch `codex/react-chat-kit` starts at reviewed PR37 head
+`ddd9f9a5e13a61a865cee76212b13a6230fc67d3`, carrying local chart handoff docs.
+The user approved implementation of #16 and TL-approved `@openuidev/kits`
+with component entry `/react/chat` and AI library entry `/react/chat/libs`.
+This supersedes the earlier publication-only/wait-for-dispatch language.
+Standalone chat helpers remain deferred; AgentInterface and the assembled
+`openuiLibrary` remain excluded. Existing code stays read-only.
+
+Ownership (agreed before edits):
+- W1: package metadata/build/dependencies/lock/export maps, chat entry barrel,
+  `src/react/chat/libs/**`, parser/renderer integration and packed evidence.
+- W2: `packages/kits/src/react/chat/components/ModelSwitcher/**`,
+  `components/FollowUpBlock/**`, `components/FollowUpItem/**`, including local
+  styles, utilities, types and tests. W1 integrates only committed W2 batches.
+- W1 holds the first browser window. W2 works on source/unit tests until release.
+
+Read-only transitive import audit of the existing chat library found 126 genui
+files. Its external imports are React, Zod, lucide-react and react-lang; no
+OpenUIChat, AgentInterface, ToolCall, ToolResult or headless helper dependency.
+UI imports will use public core exports, with FollowUp components owned by the
+kit. Icon AI schema belongs to the kit; rendering uses public core IconWrapper.
+This is an authoring audit, not a shipped resolver or runtime patch.
+
+Public-import TDD, native ESM/CJS/types, component-only pruning, actual parser/
+renderer/actions and scoped browser checks are required before a stacked draft.
+No #17 performance/soak or SSR certification is implied. Stock Goober and the
+accepted math vendor CSS exception remain unchanged. No legacy/main/upstream/
+friend/previews writes, merge, release, publication or issue closure. Preserve
+unrelated untracked `crates/`.
+
+---
+
 # CURRENT — charts DRAFT PR37 OPEN/attached; remoteCI GREEN — 2026-10-25
 
 Fork-only https://github.com/ankit-thesys/openui-comp/pull/37 OPEN/DRAFT attached,
