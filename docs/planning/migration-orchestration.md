@@ -1,3 +1,13 @@
+# CURRENT — slice13 DRAFT PR35 OPEN; fork CI running — 2026-10-25
+
+Fork-only draft https://github.com/ankit-thesys/openui-comp/pull/35 OPEN/DRAFT and attached. Pushed head `838d78ec23f3c4e31c84873b9926d518cd5c2776`, branch codex/react-ui-core-data-cards, base codex/react-ui-core-text-media (#34). BuildJS40184784878 running; changeset40184784860 PASS14s. No merge/release/ticket closure/upstream writes.
+
+All corrected-artifact local gates pass: W2 A/C12/56,268 and W1 affected D6/10,656 on4119cddbe artifact492247bytes SHA2c29042765ee120d7f85dd4da7176152ee54cfa7dcaff794ee3990473ea59e02; native/strict/pruning pass. Final scoped Spec/Standards reviews clear after stale draft wording fixed. Historical whole107/107 and broader B/D48,494 retain oldartifact scope. Original failures and exact manifests preserved. No further unchanged browser matrices needed; browser/server closed.
+
+Next-work read-only proposal prepared: docs/planning/slice14-readonly-proposal.md. Recommends bounded deferred OptionCards completion first (now markdown + shared row helper exist), then full19chart-family/variant inventory with exclusive foundation/family ownership and packed/browser gates. Includes required distinct PrintContext support and existing D3/zustand imports. External chart baseline issues18/24 remain reserved; no helper/TL-gated work or next production started. CI final outcome remains pending.
+
+---
+
 # CURRENT — slice13 local/independent gates PASS; authorized stacked draft preparing — 2026-10-25
 
 Worker2 corrected A/C evidence82953d0ef integrated86860a77a:12 cases /56,268 paired snapshots PASS on exact4119cddbed813f81e37b949ce00421a7e65173a3 artifact492247 bytes, SHA2562c29042765ee120d7f85dd4da7176152ee54cfa7dcaff794ee3990473ea59e02. All installed files match tar, consumer/lock unchanged. W1 corrected D responsive6/10,656 passes on same artifact. Browser/server closed and released back to W1; no more Chrome required.
