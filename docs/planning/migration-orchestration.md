@@ -1,3 +1,23 @@
+# CURRENT — corrected model package CI GREEN; await verifier browser release — 2026-10-25
+
+Frozen source9ee057613 / kitSHA9fc227a88cbf6d949247aee90e729efa58d669ba738674880396903db98785bb
+at /private/tmp/chat16-model-border-artifacts/openuidev-kits-0.0.0-beta.0.tgz,
+consumer /private/tmp/chat16-model-border-consumer. Corea5d002... unchanged.
+All566kits+2202corefilesverified; only4modelstyleJS/mapfiles differ from7ad.
+Complete package CI7/7 plusformat/lint/types/build/Publint/ATTW GREEN (six
+inheritedhookwarnings/zeroerrors). BothindependentSpec/Standards correction
+source+harnessreviews clear. RawCIlog in model-border-correction/.
+
+Committed W2 focusedharnessaae711ad3 ready, KIT_BORDER_ONLY=1. Verifier still
+holds browser bylastrootdispatch; W1 has not launched Chrome. Awaitexplicit
+release/rootcoordination, then runstrictaffectedstates onTHIS immutableconsumer
+(openTrigger/nestedhover/exposed1pxsolidborder/winningconsumercolor). Preserve
+old42/330failedred evidence; no source-review conversiontopass. No review-ready
+PR untilaffectedverification; #17acceptance separate. Alllegacy/sharedSelect/
+previewfilesread-only, untrackedcratespreserved. No merges/releases/closures.
+
+---
+
 # CURRENT — model-only correction integrated/refrozen; verifier still owns Chrome — 2026-10-25
 
 W2source1a41c2c33 integrated9ee057613: ordinaryborderColor:currentColor inexisting

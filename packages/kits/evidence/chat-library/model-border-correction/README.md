@@ -19,7 +19,9 @@ Installed566kits+2202corefiles match archives; exact paths, source40-character
 commit, consumer manifest/lock and hashes are retained in artifact-proof.json.
 The core archive remains a5d002d20a6fbed1cdb61cddc255f1619dc945d08cf9406eb3ce94e135988fe2.
 
-Build and TypeScript checks pass. Combined package CI/reviews are being
-finalized; affected Chrome verification must follow verifier's explicit release.
+Build/types and complete combined package CI pass: 7/7 tests, formatting,
+semantic lint, build, Publint and ATTW. Six inherited hook warnings, zero errors.
+Both independent correction source/harness reviews have zero actionable findings.
+Affected Chrome verification must follow verifier's explicit release.
 No whole-core/library matrix repeats solely because a model style changed.
 No final visual parity, #17 performance/memory or SSR claim.
