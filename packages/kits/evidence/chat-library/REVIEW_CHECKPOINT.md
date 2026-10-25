@@ -1,34 +1,43 @@
-# Independent review checkpoint
+# Final scoped review — supports stacked draft only
 
-Base: reviewed PR37 `ddd9f9a5e13a61a865cee76212b13a6230fc67d3`.
-Product runtime source: `8405f44e0`. Metadata correction: `d9cc96898`.
-Reviewers: existing independent GPT6.1-Sol Spec and Standards agents.
-
-## Standards
-
-Source extraction and the follow-up metadata/test correction have zero
-remaining actionable standards findings. Conventional public Goober APIs,
-public core/runtime imports, separate entries and ordinary CSS fallbacks.
-The pack test uses standard ignore-scripts configuration to avoid lifecycle
-rebuild races. Its unsupported-peer check uses npm in a separate temporary
-consumer and cleans up without changing frozen installations.
+Base: reviewed PR37 ddd9f9a5e13a61a865cee76212b13a6230fc67d3.
+Final runtime source:9ee057613; Zod minimum metadata:d9cc96898.
+Both independent GPT6.1-Sol Spec and Standards agents reviewed source,
+corrections, final fixture boundaries, evidence provenance and draft claims.
 
 ## Spec
 
-Intermediate source review found no missing source contract or scope creep.
-Final browser-harness review identified two gaps: unsettled hover sampling and
-unverified actual stylesheet placement. Both are fixed at source level, with
-CSS readiness/order checks, completed animations and distinct host hover color.
-A further cancellation assertion now observes partial response and live server
-stream before AbortController cancellation. The corrected runner is NOT yet
-executed and remains a required acceptance gate after W2's browser release.
+Zero remaining actionable findings. Two approved public entries preserve the
+component/library boundary, existing schemas/props/actions and shared theme.
+Stock Goober, ordinary CSS fallbacks/resets and the corrected Zod peer minimum
+satisfy the authorized bounded extraction. AgentInterface, standalone helpers,
+general assembledlibrary and legacy/sharedSelect remain unchanged.
 
-Independent verifier found broken support advertisement for Zod3.25.0. Root
-approved narrowing only NEW kits to3.25.76 while retaining4 support. Both axes
-found zero actionable findings in that correction. New artifact/installed
-minimum validation and full corrected package CI pass; exact evidence is in
-zod-minimum/. This does not certify every version in the advertised ranges.
+Final36focusedcases/192strictcomparisons and independent6cases/360observations
+verify affected border states on the exact installed9fc artifact. Compiled
+module-origin checks prove standalone fixture resolution. Original42/330 style
+failures remain historical failures, and the invalid mixed-context attempt
+certifies no installed-artifact cells. W2's old run5 module graph was separately
+audited; its bounded36behavior completion retains old8405 provenance.
 
-Worker2's component browser diagnostic and the verifier's remaining browser/
-transport/asset-cost checks are pending. No final combined acceptance or
-unconditional visual parity, SSR, performance, memory or error-free claim.
+## Standards
+
+Zero remaining actionable standards/evidence-readiness findings. No custom
+runtime/resolver/dependency patch, styling API redesign or legacy edit. The
+fixture correction is an ordinary private package manifest plus test-only origin
+assertions. Raw executed evidence stays unchanged; scoped formatter exclusions
+protect it. Unlike case/comparison/observation counts are not summed or conflated.
+
+## Validation and limits
+
+Local package CI7/7 plus format/lint/types/build/Publint/ATTW pass. Six inherited
+hook warnings, zero errors. Public installed native/types/pruning/peer tests,
+parser/Renderer actions/history, active transport cancellation/cleanup, themes,
+math and asset consumers have separately recorded artifact provenance. Exact
+independent reports/results/fixture snapshots retain original paths and hashes.
+Remote build/changeset checks are pending draft creation.
+
+Measured library JS/CSS and unused emitted-font costs remain disclosed; no #17
+performance/memory, SSR, unconditional parity or error-free promise. Parent
+HorizontalBar comparison gap remains open. Reviews support the authorized
+fork-only stacked DRAFT, not merge, publication, deprecation or issue closure.
