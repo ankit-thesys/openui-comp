@@ -278,9 +278,13 @@ try {
       const compare = async (label) => {
         await Promise.all(
           pages.map((p) =>
-            p.evaluate(
-              () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))),
-            ),
+            p.evaluate(async () => {
+              document.querySelectorAll("#zone *").forEach((n) => getComputedStyle(n).color);
+              for (const animation of document.getAnimations())
+                if (Number.isFinite(animation.effect.getComputedTiming().iterations))
+                  animation.finish();
+              await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+            }),
           ),
         );
         const actual = await Promise.all(pages.map(snapshot));

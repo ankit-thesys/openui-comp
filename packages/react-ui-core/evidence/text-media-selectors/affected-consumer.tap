@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: icon tags retain their native root ref and consumer class, and omit a missing icon
+ok 1 - icon tags retain their native root ref and consumer class, and omit a missing icon
+  ---
+  duration_ms: 26.097833
+  type: 'test'
+  ...
+# Subtest: icon text composes real markdown labels, retains its root ref and updates optional content
+ok 2 - icon text composes real markdown labels, retains its root ref and updates optional content
+  ---
+  duration_ms: 34.589667
+  type: 'test'
+  ...
+# Subtest: image text preserves markdown, accessible image labels, imageSize and root customization
+ok 3 - image text preserves markdown, accessible image labels, imageSize and root customization
+  ---
+  duration_ms: 41.20475
+  type: 'test'
+  ...
+# Subtest: large image text preserves image alt fallback, markdown content, updates and root refs
+ok 4 - large image text preserves image alt fallback, markdown content, updates and root refs
+  ---
+  duration_ms: 29.629375
+  type: 'test'
+  ...
+# Subtest: Button-only import excludes unrelated text, table and media code/styles
+ok 5 - Button-only import excludes unrelated text, table and media code/styles
+  ---
+  duration_ms: 508.390167
+  type: 'test'
+  ...
+# Subtest: Table-only import excludes unrelated text, table and media code/styles
+ok 6 - Table-only import excludes unrelated text, table and media code/styles
+  ---
+  duration_ms: 437.418958
+  type: 'test'
+  ...
+# Subtest: ScrollableTable-only import excludes unrelated text, table and media code/styles
+ok 7 - ScrollableTable-only import excludes unrelated text, table and media code/styles
+  ---
+  duration_ms: 435.083125
+  type: 'test'
+  ...
+# Subtest: CodeBlock-only import excludes unrelated text, table and media code/styles
+ok 8 - CodeBlock-only import excludes unrelated text, table and media code/styles
+  ---
+  duration_ms: 342.87075
+  type: 'test'
+  ...
+# Subtest: MarkDownRenderer-only import excludes unrelated text, table and media code/styles
+ok 9 - MarkDownRenderer-only import excludes unrelated text, table and media code/styles
+  ---
+  duration_ms: 388.09925
+  type: 'test'
+  ...
+# Subtest: native module resolves Table, markdown and source prerequisite root APIs
+ok 10 - native module resolves Table, markdown and source prerequisite root APIs
+  ---
+  duration_ms: 3130.127041
+  type: 'test'
+  ...
+# Subtest: native commonjs resolves Table, markdown and source prerequisite root APIs
+ok 11 - native commonjs resolves Table, markdown and source prerequisite root APIs
+  ---
+  duration_ms: 628.46325
+  type: 'test'
+  ...
+# Subtest: TextBlockView preserves ref, defaults, rich text and tone/clamp/variant updates
+ok 12 - TextBlockView preserves ref, defaults, rich text and tone/clamp/variant updates
+  ---
+  duration_ms: 37.868542
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3852.887125

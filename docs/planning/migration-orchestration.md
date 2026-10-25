@@ -1,3 +1,9 @@
+# Corrected composer browser handoff — Worker2 window released, 2026-10-25
+
+Worker1's owned text/media browser completed and closed browser/server. Explicitly release Chrome to Worker2 for composer-only RETEST on corrected immutable artifact. Consumer `/private/tmp/core-selectors12-consumer`; tarball `/private/tmp/core-selectors12-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`;401238 bytes; SHA256 `bee4bc79ccac342cbdc433d16538b86be213aedd4da79a1ea325f6ea22002b6f`; CORE_ARTIFACT_REVISION=`88fdccf94e39a5c58e5a2a80cdf7f755eb5f7326`. Normal npm install/lock present. Same browser/Sass/host tooling. No Worker1 Chrome while W2 owns this window. Run composers only, retain prior failed evidence, do not repeat unaffected foundation/media matrices.
+
+Owned non-math Table/ScrollableTable/CodeBlock/Markdown/Header/TextBlock/Wrapper settled-state comparison PASSED6 cases /22,296 snapshots on corrected artifact. Both framework orders plain/TW3/TW4, text variants/types/sizes/themes, real clipboard/hover/reset/overrides/host checks. Raw first transition-timing mismatch preserved; reviewed standard finite-animation settling resolves endpoint synchronization, not transition-frame certification. Affected installed12 tests + strict3 modes pass. Exact artifact/results under evidence/text-media-selectors. Final full CI started with required install access after actual production selector correction; pending log. Math delivery remains unapproved and excluded.
+
 # Selector correction / browser returned to Worker1 — 2026-10-25
 
 Worker2 composer matrix stopped at first default plain/before case: TextBlockView candidate typography/gap differs from legacy. W2 preserved raw evidence252b984e1 (integrated efdcf191c) and explicitly released browser to Worker1. No active W2 browser/server remains. Prior release instructions below are superseded.
