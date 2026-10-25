@@ -1,0 +1,718 @@
+{
+  "kind": "preflight-only",
+  "runs": [
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "baseline",
+      "elapsedMs": 239.70737500000007,
+      "renderedElapsedMs": 270.67779099999996,
+      "inputMs": 2.628750000000082,
+      "actualText": "root = Card([text0, table0, text1, table1, form, followups])\ntext0 = TextContent(\"chat section 0: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable0 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\ntext1 = TextContent(\"chat section 1: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable1 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nform = Form(\"contact\", buttons, [field])\nfield = FormControl(\"Name\", Input(\"name\", \"Your name\", \"text\", { required: true }))\nbuttons = Buttons([Button(\"Send details\", @ToAssistant(\"Send details\"), \"primary\")])\nfollowups = FollowUpBlock([FollowUpItem(\"Show the next quarter\")])",
+      "inputObservation": {
+        "activeBefore": 1,
+        "statusBefore": "streaming",
+        "valueBefore": "",
+        "valueAfter": "Measured input during streaming 1",
+        "statusAfter": "streaming",
+        "activeAfter": 1
+      },
+      "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+      "domCounts": {
+        "tables": 2,
+        "forms": 1
+      },
+      "visibleBarCount": null,
+      "requiredTextFound": [
+        true,
+        true
+      ],
+      "status": "idle",
+      "activeAfter": 0,
+      "timersAfter": 0,
+      "cancellation": {
+        "arm": "baseline",
+        "workload": "chat",
+        "load": "paced",
+        "activeBefore": 1,
+        "partialBefore": "root = Card([text0, table0, text1, table1, form, followups])\ntext0 = TextContent(\"chat section 0: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Det",
+        "abortError": "net::ERR_ABORTED",
+        "activeAfter": 0,
+        "timersAfter": 0,
+        "cancelledBefore": 0,
+        "cancelledAfter": 1
+      },
+      "memory": {
+        "heapUsedBytes": 12489984,
+        "heapTotalBytes": 13107200,
+        "dom": {
+          "documents": 1,
+          "nodes": 59,
+          "jsEventListeners": 175
+        },
+        "styles": {
+          "styleTags": 0,
+          "cssBytes": 0,
+          "rules": 2010
+        },
+        "activeStreams": 0,
+        "activeTimers": 0,
+        "rss": {
+          "totalBytes": 1095303168,
+          "processes": [
+            {
+              "pid": 60391,
+              "type": "browser",
+              "bytes": 240828416
+            },
+            {
+              "pid": 60409,
+              "type": "renderer",
+              "bytes": 104759296
+            },
+            {
+              "pid": 60410,
+              "type": "renderer",
+              "bytes": 213647360
+            },
+            {
+              "pid": 60405,
+              "type": "renderer",
+              "bytes": 193888256
+            },
+            {
+              "pid": 60398,
+              "type": "GPU",
+              "bytes": 146833408
+            },
+            {
+              "pid": 60399,
+              "type": "network.mojom.NetworkService",
+              "bytes": 111280128
+            },
+            {
+              "pid": 60401,
+              "type": "storage.mojom.StorageService",
+              "bytes": 84066304
+            }
+          ]
+        }
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "paced",
+      "arm": "runtime",
+      "elapsedMs": 239.51258400000006,
+      "renderedElapsedMs": 269.9554170000001,
+      "inputMs": 2.658957999999984,
+      "actualText": "root = Card([text0, table0, text1, table1, form, followups])\ntext0 = TextContent(\"chat section 0: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable0 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\ntext1 = TextContent(\"chat section 1: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable1 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nform = Form(\"contact\", buttons, [field])\nfield = FormControl(\"Name\", Input(\"name\", \"Your name\", \"text\", { required: true }))\nbuttons = Buttons([Button(\"Send details\", @ToAssistant(\"Send details\"), \"primary\")])\nfollowups = FollowUpBlock([FollowUpItem(\"Show the next quarter\")])",
+      "inputObservation": {
+        "activeBefore": 1,
+        "statusBefore": "streaming",
+        "valueBefore": "",
+        "valueAfter": "Measured input during streaming 1",
+        "statusAfter": "streaming",
+        "activeAfter": 1
+      },
+      "actualTextSha256": "180d512806041600634df9afcac68b1efa5326fd06efe2181a85ae5b1453110e",
+      "domCounts": {
+        "tables": 2,
+        "forms": 1
+      },
+      "visibleBarCount": null,
+      "requiredTextFound": [
+        true,
+        true
+      ],
+      "status": "idle",
+      "activeAfter": 0,
+      "timersAfter": 0,
+      "cancellation": {
+        "arm": "runtime",
+        "workload": "chat",
+        "load": "paced",
+        "activeBefore": 1,
+        "partialBefore": "root = Card([text0, table0, text1, table1, form, followups])\ntext0 = TextContent(\"chat section 0: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Det",
+        "abortError": "net::ERR_ABORTED",
+        "activeAfter": 0,
+        "timersAfter": 0,
+        "cancelledBefore": 0,
+        "cancelledAfter": 1
+      },
+      "memory": {
+        "heapUsedBytes": 12557196,
+        "heapTotalBytes": 13090816,
+        "dom": {
+          "documents": 1,
+          "nodes": 61,
+          "jsEventListeners": 177
+        },
+        "styles": {
+          "styleTags": 1,
+          "cssBytes": 217642,
+          "rules": 1428
+        },
+        "activeStreams": 0,
+        "activeTimers": 0,
+        "rss": {
+          "totalBytes": 1153875968,
+          "processes": [
+            {
+              "pid": 60490,
+              "type": "browser",
+              "bytes": 242155520
+            },
+            {
+              "pid": 60500,
+              "type": "renderer",
+              "bytes": 104792064
+            },
+            {
+              "pid": 60501,
+              "type": "renderer",
+              "bytes": 271613952
+            },
+            {
+              "pid": 60498,
+              "type": "renderer",
+              "bytes": 192839680
+            },
+            {
+              "pid": 60494,
+              "type": "GPU",
+              "bytes": 147488768
+            },
+            {
+              "pid": 60495,
+              "type": "network.mojom.NetworkService",
+              "bytes": 111017984
+            },
+            {
+              "pid": 60496,
+              "type": "storage.mojom.StorageService",
+              "bytes": 83968000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "stress",
+      "arm": "baseline",
+      "elapsedMs": 182.89837499999885,
+      "renderedElapsedMs": 216.1519159999989,
+      "inputMs": null,
+      "actualText": "root = Card([text0, table0, text1, table1, text2, table2, text3, table3, text4, table4, text5, table5, form, followups])\ntext0 = TextContent(\"chat section 0: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable0 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\ntext1 = TextContent(\"chat section 1: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable1 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\ntext2 = TextContent(\"chat section 2: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable2 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\ntext3 = TextContent(\"chat section 3: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable3 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\ntext4 = TextContent(\"chat section 4: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable4 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\ntext5 = TextContent(\"chat section 5: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable5 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nform = Form(\"contact\", buttons, [field])\nfield = FormControl(\"Name\", Input(\"name\", \"Your name\", \"text\", { required: true }))\nbuttons = Buttons([Button(\"Send details\", @ToAssistant(\"Send details\"), \"primary\")])\nfollowups = FollowUpBlock([FollowUpItem(\"Show the next quarter\")])",
+      "inputObservation": null,
+      "actualTextSha256": "e2d7e276c7b70961257ba6ad21d375affc31962ba2425794756993ff9729084c",
+      "domCounts": {
+        "tables": 6,
+        "forms": 1
+      },
+      "visibleBarCount": null,
+      "requiredTextFound": [
+        true,
+        true
+      ],
+      "status": "idle",
+      "activeAfter": 0,
+      "timersAfter": 0,
+      "memory": {
+        "heapUsedBytes": 12776676,
+        "heapTotalBytes": 13369344,
+        "dom": {
+          "documents": 1,
+          "nodes": 54,
+          "jsEventListeners": 175
+        },
+        "styles": {
+          "styleTags": 0,
+          "cssBytes": 0,
+          "rules": 2010
+        },
+        "activeStreams": 0,
+        "activeTimers": 0,
+        "rss": {
+          "totalBytes": 1090174976,
+          "processes": [
+            {
+              "pid": 60644,
+              "type": "browser",
+              "bytes": 233488384
+            },
+            {
+              "pid": 60654,
+              "type": "renderer",
+              "bytes": 104529920
+            },
+            {
+              "pid": 60655,
+              "type": "renderer",
+              "bytes": 217923584
+            },
+            {
+              "pid": 60652,
+              "type": "renderer",
+              "bytes": 193740800
+            },
+            {
+              "pid": 60648,
+              "type": "GPU",
+              "bytes": 145522688
+            },
+            {
+              "pid": 60649,
+              "type": "network.mojom.NetworkService",
+              "bytes": 111034368
+            },
+            {
+              "pid": 60650,
+              "type": "storage.mojom.StorageService",
+              "bytes": 83935232
+            }
+          ]
+        }
+      }
+    },
+    {
+      "workload": "chat",
+      "load": "stress",
+      "arm": "runtime",
+      "elapsedMs": 172.4429999999993,
+      "renderedElapsedMs": 205.14758399999846,
+      "inputMs": null,
+      "actualText": "root = Card([text0, table0, text1, table1, text2, table2, text3, table3, text4, table4, text5, table5, form, followups])\ntext0 = TextContent(\"chat section 0: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable0 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\ntext1 = TextContent(\"chat section 1: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable1 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\ntext2 = TextContent(\"chat section 2: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable2 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\ntext3 = TextContent(\"chat section 3: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable3 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\ntext4 = TextContent(\"chat section 4: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable4 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\ntext5 = TextContent(\"chat section 5: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable5 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nform = Form(\"contact\", buttons, [field])\nfield = FormControl(\"Name\", Input(\"name\", \"Your name\", \"text\", { required: true }))\nbuttons = Buttons([Button(\"Send details\", @ToAssistant(\"Send details\"), \"primary\")])\nfollowups = FollowUpBlock([FollowUpItem(\"Show the next quarter\")])",
+      "inputObservation": null,
+      "actualTextSha256": "e2d7e276c7b70961257ba6ad21d375affc31962ba2425794756993ff9729084c",
+      "domCounts": {
+        "tables": 6,
+        "forms": 1
+      },
+      "visibleBarCount": null,
+      "requiredTextFound": [
+        true,
+        true
+      ],
+      "status": "idle",
+      "activeAfter": 0,
+      "timersAfter": 0,
+      "memory": {
+        "heapUsedBytes": 12813588,
+        "heapTotalBytes": 13877248,
+        "dom": {
+          "documents": 1,
+          "nodes": 56,
+          "jsEventListeners": 177
+        },
+        "styles": {
+          "styleTags": 1,
+          "cssBytes": 217642,
+          "rules": 1428
+        },
+        "activeStreams": 0,
+        "activeTimers": 0,
+        "rss": {
+          "totalBytes": 1149009920,
+          "processes": [
+            {
+              "pid": 60733,
+              "type": "browser",
+              "bytes": 233734144
+            },
+            {
+              "pid": 60777,
+              "type": "renderer",
+              "bytes": 104480768
+            },
+            {
+              "pid": 60778,
+              "type": "renderer",
+              "bytes": 276103168
+            },
+            {
+              "pid": 60741,
+              "type": "renderer",
+              "bytes": 193495040
+            },
+            {
+              "pid": 60737,
+              "type": "GPU",
+              "bytes": 146735104
+            },
+            {
+              "pid": 60738,
+              "type": "network.mojom.NetworkService",
+              "bytes": 110493696
+            },
+            {
+              "pid": 60739,
+              "type": "storage.mojom.StorageService",
+              "bytes": 83968000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "paced",
+      "arm": "baseline",
+      "elapsedMs": 302.21875,
+      "renderedElapsedMs": 333.6922919999997,
+      "inputMs": 2.828125,
+      "actualText": "root = Card([text0, table0, chart0, text1, table1, chart1, form, followups])\ntext0 = TextContent(\"dashboard section 0: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable0 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart0 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\ntext1 = TextContent(\"dashboard section 1: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable1 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart1 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\nform = Form(\"contact\", buttons, [field])\nfield = FormControl(\"Name\", Input(\"name\", \"Your name\", \"text\", { required: true }))\nbuttons = Buttons([Button(\"Send details\", @ToAssistant(\"Send details\"), \"primary\")])\nfollowups = FollowUpBlock([FollowUpItem(\"Show the next quarter\")])",
+      "inputObservation": {
+        "activeBefore": 1,
+        "statusBefore": "streaming",
+        "valueBefore": "",
+        "valueAfter": "Measured input during streaming 1",
+        "statusAfter": "streaming",
+        "activeAfter": 1
+      },
+      "actualTextSha256": "67bf2f42148fda43900b7c13cc32f8c145439ec66d5de8579822b1b3e65989d2",
+      "domCounts": {
+        "tables": 2,
+        "forms": 1,
+        "bars": 6
+      },
+      "visibleBarCount": 6,
+      "requiredTextFound": [
+        true,
+        true
+      ],
+      "status": "idle",
+      "activeAfter": 0,
+      "timersAfter": 0,
+      "cancellation": {
+        "arm": "baseline",
+        "workload": "dashboard",
+        "load": "paced",
+        "activeBefore": 1,
+        "partialBefore": "root = Card([text0, table0, chart0, text1, table1, chart1, form, followups])\ntext0 = TextContent(\"dashboard section 0: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministi",
+        "abortError": "net::ERR_ABORTED",
+        "activeAfter": 0,
+        "timersAfter": 0,
+        "cancelledBefore": 0,
+        "cancelledAfter": 1
+      },
+      "memory": {
+        "heapUsedBytes": 13114784,
+        "heapTotalBytes": 13631488,
+        "dom": {
+          "documents": 1,
+          "nodes": 59,
+          "jsEventListeners": 175
+        },
+        "styles": {
+          "styleTags": 0,
+          "cssBytes": 0,
+          "rules": 2010
+        },
+        "activeStreams": 0,
+        "activeTimers": 0,
+        "rss": {
+          "totalBytes": 1099235328,
+          "processes": [
+            {
+              "pid": 60888,
+              "type": "browser",
+              "bytes": 243548160
+            },
+            {
+              "pid": 60898,
+              "type": "renderer",
+              "bytes": 104611840
+            },
+            {
+              "pid": 60899,
+              "type": "renderer",
+              "bytes": 214728704
+            },
+            {
+              "pid": 60896,
+              "type": "renderer",
+              "bytes": 192512000
+            },
+            {
+              "pid": 60892,
+              "type": "GPU",
+              "bytes": 148357120
+            },
+            {
+              "pid": 60893,
+              "type": "network.mojom.NetworkService",
+              "bytes": 111460352
+            },
+            {
+              "pid": 60894,
+              "type": "storage.mojom.StorageService",
+              "bytes": 84017152
+            }
+          ]
+        }
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "paced",
+      "arm": "runtime",
+      "elapsedMs": 301.52558299999873,
+      "renderedElapsedMs": 334.33845799999835,
+      "inputMs": 2.465916000001016,
+      "actualText": "root = Card([text0, table0, chart0, text1, table1, chart1, form, followups])\ntext0 = TextContent(\"dashboard section 0: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable0 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart0 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\ntext1 = TextContent(\"dashboard section 1: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable1 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart1 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\nform = Form(\"contact\", buttons, [field])\nfield = FormControl(\"Name\", Input(\"name\", \"Your name\", \"text\", { required: true }))\nbuttons = Buttons([Button(\"Send details\", @ToAssistant(\"Send details\"), \"primary\")])\nfollowups = FollowUpBlock([FollowUpItem(\"Show the next quarter\")])",
+      "inputObservation": {
+        "activeBefore": 1,
+        "statusBefore": "streaming",
+        "valueBefore": "",
+        "valueAfter": "Measured input during streaming 1",
+        "statusAfter": "streaming",
+        "activeAfter": 1
+      },
+      "actualTextSha256": "67bf2f42148fda43900b7c13cc32f8c145439ec66d5de8579822b1b3e65989d2",
+      "domCounts": {
+        "tables": 2,
+        "forms": 1,
+        "bars": 6
+      },
+      "visibleBarCount": 6,
+      "requiredTextFound": [
+        true,
+        true
+      ],
+      "status": "idle",
+      "activeAfter": 0,
+      "timersAfter": 0,
+      "cancellation": {
+        "arm": "runtime",
+        "workload": "dashboard",
+        "load": "paced",
+        "activeBefore": 1,
+        "partialBefore": "root = Card([text0, table0, chart0, text1, table1, chart1, form, followups])\ntext0 = TextContent(\"dashboard section 0: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministi",
+        "abortError": "net::ERR_ABORTED",
+        "activeAfter": 0,
+        "timersAfter": 0,
+        "cancelledBefore": 0,
+        "cancelledAfter": 1
+      },
+      "memory": {
+        "heapUsedBytes": 13183944,
+        "heapTotalBytes": 14139392,
+        "dom": {
+          "documents": 1,
+          "nodes": 61,
+          "jsEventListeners": 177
+        },
+        "styles": {
+          "styleTags": 1,
+          "cssBytes": 217642,
+          "rules": 1428
+        },
+        "activeStreams": 0,
+        "activeTimers": 0,
+        "rss": {
+          "totalBytes": 1157758976,
+          "processes": [
+            {
+              "pid": 60980,
+              "type": "browser",
+              "bytes": 241778688
+            },
+            {
+              "pid": 60999,
+              "type": "renderer",
+              "bytes": 104677376
+            },
+            {
+              "pid": 61000,
+              "type": "renderer",
+              "bytes": 275808256
+            },
+            {
+              "pid": 60996,
+              "type": "renderer",
+              "bytes": 193282048
+            },
+            {
+              "pid": 60991,
+              "type": "GPU",
+              "bytes": 147357696
+            },
+            {
+              "pid": 60992,
+              "type": "network.mojom.NetworkService",
+              "bytes": 110886912
+            },
+            {
+              "pid": 60993,
+              "type": "storage.mojom.StorageService",
+              "bytes": 83968000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "stress",
+      "arm": "baseline",
+      "elapsedMs": 182.09320899999875,
+      "renderedElapsedMs": 210.29583399999683,
+      "inputMs": null,
+      "actualText": "root = Card([text0, table0, chart0, text1, table1, chart1, text2, table2, chart2, text3, table3, chart3, text4, table4, chart4, text5, table5, chart5, form, followups])\ntext0 = TextContent(\"dashboard section 0: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable0 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart0 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\ntext1 = TextContent(\"dashboard section 1: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable1 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart1 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\ntext2 = TextContent(\"dashboard section 2: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable2 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart2 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\ntext3 = TextContent(\"dashboard section 3: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable3 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart3 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\ntext4 = TextContent(\"dashboard section 4: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable4 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart4 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\ntext5 = TextContent(\"dashboard section 5: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable5 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart5 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\nform = Form(\"contact\", buttons, [field])\nfield = FormControl(\"Name\", Input(\"name\", \"Your name\", \"text\", { required: true }))\nbuttons = Buttons([Button(\"Send details\", @ToAssistant(\"Send details\"), \"primary\")])\nfollowups = FollowUpBlock([FollowUpItem(\"Show the next quarter\")])",
+      "inputObservation": null,
+      "actualTextSha256": "e4582a740287bf685104b3f1a1f26441198de60501c689c586d0307bf4eb65b5",
+      "domCounts": {
+        "tables": 6,
+        "forms": 1,
+        "bars": 18
+      },
+      "visibleBarCount": 18,
+      "requiredTextFound": [
+        true,
+        true
+      ],
+      "status": "idle",
+      "activeAfter": 0,
+      "timersAfter": 0,
+      "memory": {
+        "heapUsedBytes": 13437352,
+        "heapTotalBytes": 14155776,
+        "dom": {
+          "documents": 1,
+          "nodes": 54,
+          "jsEventListeners": 175
+        },
+        "styles": {
+          "styleTags": 0,
+          "cssBytes": 0,
+          "rules": 2010
+        },
+        "activeStreams": 0,
+        "activeTimers": 0,
+        "rss": {
+          "totalBytes": 1102004224,
+          "processes": [
+            {
+              "pid": 61160,
+              "type": "browser",
+              "bytes": 234422272
+            },
+            {
+              "pid": 61171,
+              "type": "renderer",
+              "bytes": 105234432
+            },
+            {
+              "pid": 61172,
+              "type": "renderer",
+              "bytes": 223019008
+            },
+            {
+              "pid": 61169,
+              "type": "renderer",
+              "bytes": 193101824
+            },
+            {
+              "pid": 61165,
+              "type": "GPU",
+              "bytes": 149798912
+            },
+            {
+              "pid": 61166,
+              "type": "network.mojom.NetworkService",
+              "bytes": 111869952
+            },
+            {
+              "pid": 61167,
+              "type": "storage.mojom.StorageService",
+              "bytes": 84557824
+            }
+          ]
+        }
+      }
+    },
+    {
+      "workload": "dashboard",
+      "load": "stress",
+      "arm": "runtime",
+      "elapsedMs": 180.97479100000055,
+      "renderedElapsedMs": 212.9225409999999,
+      "inputMs": null,
+      "actualText": "root = Card([text0, table0, chart0, text1, table1, chart1, text2, table2, chart2, text3, table3, chart3, text4, table4, chart4, text5, table5, chart5, form, followups])\ntext0 = TextContent(\"dashboard section 0: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable0 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart0 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\ntext1 = TextContent(\"dashboard section 1: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable1 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart1 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\ntext2 = TextContent(\"dashboard section 2: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable2 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart2 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\ntext3 = TextContent(\"dashboard section 3: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable3 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart3 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\ntext4 = TextContent(\"dashboard section 4: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable4 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart4 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\ntext5 = TextContent(\"dashboard section 5: **OpenUI streaming** Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. Deterministic replay content. \")\ntable5 = Table([Col(\"Month\", [\"Jan\", \"Feb\", \"Mar\"]), Col(\"Sales\", [10, 20, 30])])\nchart5 = BarChart([\"Jan\", \"Feb\", \"Mar\"], [Series(\"Sales\", [10, 20, 30])], \"grouped\")\nform = Form(\"contact\", buttons, [field])\nfield = FormControl(\"Name\", Input(\"name\", \"Your name\", \"text\", { required: true }))\nbuttons = Buttons([Button(\"Send details\", @ToAssistant(\"Send details\"), \"primary\")])\nfollowups = FollowUpBlock([FollowUpItem(\"Show the next quarter\")])",
+      "inputObservation": null,
+      "actualTextSha256": "e4582a740287bf685104b3f1a1f26441198de60501c689c586d0307bf4eb65b5",
+      "domCounts": {
+        "tables": 6,
+        "forms": 1,
+        "bars": 18
+      },
+      "visibleBarCount": 18,
+      "requiredTextFound": [
+        true,
+        true
+      ],
+      "status": "idle",
+      "activeAfter": 0,
+      "timersAfter": 0,
+      "memory": {
+        "heapUsedBytes": 13448344,
+        "heapTotalBytes": 14401536,
+        "dom": {
+          "documents": 1,
+          "nodes": 56,
+          "jsEventListeners": 177
+        },
+        "styles": {
+          "styleTags": 1,
+          "cssBytes": 217642,
+          "rules": 1428
+        },
+        "activeStreams": 0,
+        "activeTimers": 0,
+        "rss": {
+          "totalBytes": 1163345920,
+          "processes": [
+            {
+              "pid": 61254,
+              "type": "browser",
+              "bytes": 237977600
+            },
+            {
+              "pid": 61264,
+              "type": "renderer",
+              "bytes": 104546304
+            },
+            {
+              "pid": 61265,
+              "type": "renderer",
+              "bytes": 285655040
+            },
+            {
+              "pid": 61262,
+              "type": "renderer",
+              "bytes": 193069056
+            },
+            {
+              "pid": 61258,
+              "type": "GPU",
+              "bytes": 147521536
+            },
+            {
+              "pid": 61259,
+              "type": "network.mojom.NetworkService",
+              "bytes": 110624768
+            },
+            {
+              "pid": 61260,
+              "type": "storage.mojom.StorageService",
+              "bytes": 83951616
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,174 @@
+{
+  "benchmark": {
+    "valid": true,
+    "pass": true,
+    "summaryReproduced": true,
+    "errors": [],
+    "manifestSha256": "58f29005e395f360e521bc8f01992d5dc5ef2c8989861010b37802e5ebdda856",
+    "startedAt": "2026-10-25T16:44:54.624Z",
+    "endedAt": "2026-10-25T16:46:47.927Z",
+    "browser": {
+      "name": "chrome-for-testing",
+      "version": "156.0.8078.47",
+      "platform": "mac-arm64",
+      "source": "https://storage.googleapis.com/chrome-for-testing-public/156.0.8078.47/mac-arm64/chrome-mac-arm64.zip",
+      "executablePath": "/private/tmp/beta17-cft/156.0.8078.47/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+      "executableSha256": "34fbfdb52aacee492bbada9972bf323eba663f8d8a069f86e2652e5158d6c580",
+      "archivePath": "/private/tmp/beta17-cft/chrome-mac-arm64-156.0.8078.47.zip",
+      "archiveBytes": 194932023,
+      "archiveSha256": "ad7f2b49a4dc679af286b1b1b386670d93ca7868079f69012d21ba0ac8293df3",
+      "metadataSource": "https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json",
+      "metadataTimestamp": "2026-10-25T09:19:02.351Z",
+      "metadataSha256": "05ce8711a15c281b6e4b88042441827a91773598e8f390d92fc69392d8854155",
+      "revision": "1706539",
+      "versionOutput": "Google Chrome for Testing 156.0.8078.47",
+      "isolationRoot": "/private/tmp/beta17-cft",
+      "bundlePath": "/private/tmp/beta17-cft/156.0.8078.47/chrome-mac-arm64/Google Chrome for Testing.app",
+      "bundleSymlinks": {
+        "Contents/Frameworks/Google Chrome for Testing Framework.framework/Google Chrome for Testing Framework": "Versions/Current/Google Chrome for Testing Framework",
+        "Contents/Frameworks/Google Chrome for Testing Framework.framework/Helpers": "Versions/Current/Helpers",
+        "Contents/Frameworks/Google Chrome for Testing Framework.framework/Libraries": "Versions/Current/Libraries",
+        "Contents/Frameworks/Google Chrome for Testing Framework.framework/Resources": "Versions/Current/Resources",
+        "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/Current": "156.0.8078.47"
+      },
+      "bundleFileCount": 340,
+      "bundleInventoryPath": "/Users/ankitdas/.codex/worktrees/63b2/openui/validation/beta17/performance/evidence/cft-bundle-inventory.json",
+      "bundleInventorySha256": "a6fc8439fd310a9b2f318b0d0e34762882df30984bb6e277f8ae1aeeab6de9cf"
+    },
+    "node": "v22.22.2",
+    "chromeVersion": "156.0.8078.47",
+    "inputCount": 10866,
+    "installedFileCount": 2765
+  },
+  "soak": {
+    "valid": true,
+    "pass": true,
+    "summaryReproduced": true,
+    "errors": [],
+    "manifestSha256": "58f29005e395f360e521bc8f01992d5dc5ef2c8989861010b37802e5ebdda856",
+    "startedAt": "2026-10-25T16:47:34.751Z",
+    "endedAt": "2026-10-25T17:08:12.054Z",
+    "browser": {
+      "name": "chrome-for-testing",
+      "version": "156.0.8078.47",
+      "platform": "mac-arm64",
+      "source": "https://storage.googleapis.com/chrome-for-testing-public/156.0.8078.47/mac-arm64/chrome-mac-arm64.zip",
+      "executablePath": "/private/tmp/beta17-cft/156.0.8078.47/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+      "executableSha256": "34fbfdb52aacee492bbada9972bf323eba663f8d8a069f86e2652e5158d6c580",
+      "archivePath": "/private/tmp/beta17-cft/chrome-mac-arm64-156.0.8078.47.zip",
+      "archiveBytes": 194932023,
+      "archiveSha256": "ad7f2b49a4dc679af286b1b1b386670d93ca7868079f69012d21ba0ac8293df3",
+      "metadataSource": "https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json",
+      "metadataTimestamp": "2026-10-25T09:19:02.351Z",
+      "metadataSha256": "05ce8711a15c281b6e4b88042441827a91773598e8f390d92fc69392d8854155",
+      "revision": "1706539",
+      "versionOutput": "Google Chrome for Testing 156.0.8078.47",
+      "isolationRoot": "/private/tmp/beta17-cft",
+      "bundlePath": "/private/tmp/beta17-cft/156.0.8078.47/chrome-mac-arm64/Google Chrome for Testing.app",
+      "bundleSymlinks": {
+        "Contents/Frameworks/Google Chrome for Testing Framework.framework/Google Chrome for Testing Framework": "Versions/Current/Google Chrome for Testing Framework",
+        "Contents/Frameworks/Google Chrome for Testing Framework.framework/Helpers": "Versions/Current/Helpers",
+        "Contents/Frameworks/Google Chrome for Testing Framework.framework/Libraries": "Versions/Current/Libraries",
+        "Contents/Frameworks/Google Chrome for Testing Framework.framework/Resources": "Versions/Current/Resources",
+        "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/Current": "156.0.8078.47"
+      },
+      "bundleFileCount": 340,
+      "bundleInventoryPath": "/Users/ankitdas/.codex/worktrees/63b2/openui/validation/beta17/performance/evidence/cft-bundle-inventory.json",
+      "bundleInventorySha256": "a6fc8439fd310a9b2f318b0d0e34762882df30984bb6e277f8ae1aeeab6de9cf"
+    },
+    "node": "v22.22.2",
+    "chromeVersion": "156.0.8078.47",
+    "inputCount": 10866,
+    "installedFileCount": 2765
+  },
+  "rss": [
+    {
+      "workload": "chat",
+      "durationMs": 600295.784,
+      "cycles": 483,
+      "naturalSamples": 20,
+      "cancellationChecks": 96,
+      "maxSampleLatenessMs": 1731.3549169999314,
+      "arms": {
+        "baseline": {
+          "warmRssMiB": 996.4375,
+          "terminalRssMiB": 817.96875,
+          "peakNaturalGrowthMiB": 16.171875,
+          "byTypeGrowthMiB": {
+            "browser": -33.234375,
+            "renderer": -115.8125,
+            "GPU": -21.453125,
+            "network.mojom.NetworkService": -6.1875,
+            "storage.mojom.StorageService": -1.78125
+          },
+          "styles": {
+            "styleTags": 0,
+            "cssBytes": 0,
+            "rules": 2010
+          }
+        },
+        "runtime": {
+          "warmRssMiB": 1051.734375,
+          "terminalRssMiB": 824.875,
+          "peakNaturalGrowthMiB": 9.578125,
+          "byTypeGrowthMiB": {
+            "browser": -34.359375,
+            "renderer": -161.78125,
+            "GPU": -22.703125,
+            "network.mojom.NetworkService": -5.890625,
+            "storage.mojom.StorageService": -2.125
+          },
+          "styles": {
+            "styleTags": 1,
+            "cssBytes": 217642,
+            "rules": 1428
+          }
+        }
+      }
+    },
+    {
+      "workload": "dashboard",
+      "durationMs": 600232.315583,
+      "cycles": 467,
+      "naturalSamples": 20,
+      "cancellationChecks": 92,
+      "maxSampleLatenessMs": 1289.8397080000723,
+      "arms": {
+        "baseline": {
+          "warmRssMiB": 908.140625,
+          "terminalRssMiB": 854.0625,
+          "peakNaturalGrowthMiB": 74.125,
+          "byTypeGrowthMiB": {
+            "browser": -21.734375,
+            "renderer": -17.5625,
+            "GPU": -13.09375,
+            "network.mojom.NetworkService": -1.25,
+            "storage.mojom.StorageService": -0.4375
+          },
+          "styles": {
+            "styleTags": 0,
+            "cssBytes": 0,
+            "rules": 2010
+          }
+        },
+        "runtime": {
+          "warmRssMiB": 956.265625,
+          "terminalRssMiB": 850.21875,
+          "peakNaturalGrowthMiB": 37.15625,
+          "byTypeGrowthMiB": {
+            "browser": -22.875,
+            "renderer": -68.078125,
+            "GPU": -11.671875,
+            "network.mojom.NetworkService": -1.609375,
+            "storage.mojom.StorageService": -1.8125
+          },
+          "styles": {
+            "styleTags": 1,
+            "cssBytes": 217642,
+            "rules": 1428
+          }
+        }
+      }
+    }
+  ]
+}

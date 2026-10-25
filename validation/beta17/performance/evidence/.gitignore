@@ -1,0 +1,32 @@
+# Raw lifecycle evidence remains local; exact bytes are committed in the named archives.
+benchmark-v4/
+v4-diagnostic-runner/
+v4-full-diagnostic/
+v4-full-diagnostic.log
+v4-lifecycle-diagnostic.log
+direct-launch-diagnostic-runner/
+direct-launch-full-diagnostic/
+direct-launch-full-diagnostic.log
+direct-launch-diagnostic-handoff.json
+context-close-diagnostic-runner/
+context-close-full-diagnostic/
+context-close-full-diagnostic-2/
+context-close-full-diagnostic.log
+context-close-full-diagnostic-2.log
+context-close-process-diagnostic.log
+context-close-diagnostic-handoff.json
+
+# Pinned Chrome for Testing diagnostic sources/data are retained in exact archives.
+cft-diagnostic-handoff.json
+cft-diagnostic-runner/
+cft-full-diagnostic/
+cft-full-diagnostic.log
+cft-bundle-diagnostic-handoff.json
+cft-bundle-diagnostic-runner/
+cft-bundle-full-diagnostic/
+cft-bundle-full-diagnostic.log
+cft-bundle-preflight.json
+
+# Formal V5 exact raw results are committed in v5-benchmark.tgz and v5-soak.tgz.
+benchmark-v5/
+soak-v5/

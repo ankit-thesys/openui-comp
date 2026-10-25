@@ -1,10 +1,11 @@
 # Worker1 → Worker2 fixture contract
 
-Status: V5 RELEASED FOR FRESH FORMAL80 AND BOTH SOAKS.
-Complete pinned-browser readiness passes8cells/10866inputs/2128declared modules
-and whole-bundle files/symlinks before+after. Both arms use one frozen official
-Chrome for Testing156.0.8078.47. W1 browser CLOSED; server48419 live/unchanged4197.
-All diagnostic and prior incomplete samples remain excluded. No verdict yet.
+Status: V5 FORMAL LOCAL GATES PASS — INDEPENDENT VERIFICATION ACTIVE.
+W2 committed8b32d559888b5c59ff4814973253a93e94f0e77b: fresh80formal and both
+10minpacedsoaks pass agreed checks. Detailed scoped findings in REPORT.md.
+Independent verifier owns browser; W1server48419 unchanged/live4197.
+No browser/build/heavy work during audit. Finalreport/PR readiness and root
+acceptance wait verifier findings. No unconditional beta/migration approval.
 
 Consumer: `/private/tmp/beta17-consumer` (standalone npm installation).
 Manifest: `/private/tmp/beta17-consumer/handoff-v5.json`.

@@ -1,3 +1,23 @@
+# CURRENT — #17 formal V5 local gates PASS; independent verifier active
+
+W2 committed8b32d559888b5c59ff4814973253a93e94f0e77b, bothreviewaxes clear.
+Exact performance-owned tree integrated; raw archives unchanged. BenchmarkSHA
+fd0445769fe69b2a4cebef7eeb3f52b4e448b44afe415f622bb42c1203f98382;
+soakSHA c0ca2a9ba53c7f81af2110315ecb06c4e052fbac7ef92e3f9c01f52b0a6d01fc.
+Fresh80formal streams and both10minpacedsoaks pass agreed gates. Worstcompletion
+median/p95 increase1.93%/1.92%; runtimeheapgrowth chat0.367MiB/dashboard0.491MiB.
+Styles plateau; live streams/timers0; RSS investigation threshold notcrossed.
+Exact10,866inputs/2,765installedfiles unchanged before/after both runs.
+
+Independent verifier NOW owns browser. W1server48419 unchanged/live4197; no
+browser/build/heavy work until release. Draft integrated validation/beta17/REPORT.md
+states scoped local findings; finalreport/PR readiness waits audit/reproduction.
+No unconditional beta/migration acceptance. Legacytyping/HorizontalBar/shell/SSR,
+plainCSSformal timing vs separateTWcompatibility and warm/cold/bundle limits
+remain visible. No merge/release/publication/closure or legacy/upstream edits.
+
+---
+
 # CURRENT — #17 V5 PINNED-BROWSER readiness PASS, RELEASED to W2
 
 Use /private/tmp/beta17-consumer/handoff-v5.json SHA256

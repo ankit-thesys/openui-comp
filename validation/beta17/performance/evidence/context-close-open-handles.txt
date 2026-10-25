@@ -1,0 +1,25 @@
+Observed during context-close-full-diagnostic-2 (diagnostic only).
+
+$ ps -p 73502,73517,73558,73568 -o pid,ppid,stat,etime,command
+  PID  PPID STAT ELAPSED COMMAND
+73558     1 S      01:50 .../GoogleUpdater --crash-handler --database=.../GoogleUpdater/157.0.8089.0/Crashpad ... --handshake-fd=6
+73568     1 S      01:48 .../GoogleUpdater --crash-handler --database=.../GoogleUpdater/157.0.8089.0/Crashpad ... --handshake-fd=6
+
+Chrome main PIDs73502/73517 were absent; updater crash handlers remained parented to1.
+Full updater command lines are retained in context-close-full-diagnostic-2.log.
+
+$ lsof -nP -a -p 73558,73568 -d 1,2
+COMMAND     PID     USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+GoogleUpd 73558 ankitdas    1w   CHR                3,2      0t0  339 /dev/null
+GoogleUpd 73558 ankitdas    2u  unix 0x1344a6b45ed2d897      0t0      ->0x58d1f1314da28a06
+GoogleUpd 73568 ankitdas    1w   CHR                3,2      0t0  339 /dev/null
+GoogleUpd 73568 ankitdas    2u  unix  0xbad3e15392fa08f      0t0      ->0xe111116e186a37ff
+
+$ lsof -nP -a -p 73473 -U
+COMMAND   PID     USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+node    73473 ankitdas   14u  unix 0x58d1f1314da28a06      0t0      ->0x1344a6b45ed2d897
+node    73473 ankitdas   21u  unix 0xe111116e186a37ff      0t0      ->0xbad3e15392fa08f
+
+Both updater stderr endpoints have matching peers in the waiting Node runner.
+No updater was killed or global browser/updater setting changed. Only the owned
+Node diagnostic73473 was terminated with SIGTERM after these observations.
