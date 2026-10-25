@@ -19,31 +19,45 @@ assert(
   "use a normally installed packed package, not a workspace/scratch symlink",
 );
 const candidate = createRequire(path.join(candidatePath, "package.json"));
-const required = [
-  "ThemeProvider",
-  "Callout",
-  "TextCallout",
-  "Tag",
-  "TagBlock",
-  "TextContent",
-  "Image",
-  "ImageBlock",
-  "ImageGallery",
-  "GalleryModal",
-  "CardSourceProvider",
-  "Sources",
-  "Citation",
-  "CitationItem",
-  "TextContentCitation",
-  "ListedSourceItem",
-  "SourceFaviconImage",
-  "IconWrapper",
-];
+const matrixCases = (process.env.CORE_MATRIX_CASES || "presentation,media,sources").split(",");
+const composerOnly = matrixCases.length === 1 && matrixCases[0] === "composers";
+assert(
+  !matrixCases.includes("composers") || composerOnly,
+  "run composers separately from completed foundation matrices",
+);
+const required = composerOnly
+  ? ["ThemeProvider", "CardSourceProvider", "IconTag", "IconText", "ImageText", "ImageTextLarge"]
+  : [
+      "ThemeProvider",
+      "Callout",
+      "TextCallout",
+      "Tag",
+      "TagBlock",
+      "TextContent",
+      "Image",
+      "ImageBlock",
+      "ImageGallery",
+      "GalleryModal",
+      "CardSourceProvider",
+      "Sources",
+      "Citation",
+      "CitationItem",
+      "TextContentCitation",
+      "ListedSourceItem",
+      "SourceFaviconImage",
+      "IconWrapper",
+    ];
 const exports = candidate("@openuidev/react-ui-core");
 for (const name of required)
   assert(exports[name], `integrated public root export required: ${name}`);
 const hash = (value) => createHash("sha256").update(value).digest("hex");
-const source = await fs.readFile(path.join(here, "foundation-media.fixture.tsx"), "utf8");
+const source = await fs.readFile(
+  path.join(
+    here,
+    composerOnly ? "../../IconTag/__tests__/composers.fixture.tsx" : "foundation-media.fixture.tsx",
+  ),
+  "utf8",
+);
 const baseline = path.join(repository, "packages/react-ui/src/components");
 const legacyPrefix =
   required
@@ -150,13 +164,16 @@ const report = {
   graphs,
   legacyCssSha256: hash(legacyCss),
   hostHashes: Object.fromEntries(Object.entries(hosts).map(([name, css]) => [name, hash(css)])),
+  requestedCases: matrixCases,
   cases: [],
   snapshots: 0,
   inheritedObservations: [],
   exclusions: [
     "SSR/hydration/streaming delivery and performance/memory are not tested here",
     "No owned public disabled API; existing composition controls retain their native states",
-    "Sources/Citation/Gallery lack className overrides; preserved selectors are used through an ordinary consumer stylesheet",
+    composerOnly
+      ? "Composer overrides use only existing className props; no new styling API"
+      : "Sources/Citation/Gallery lack className overrides; preserved selectors are used through an ordinary consumer stylesheet",
   ],
 };
 const save = async () => {
@@ -358,9 +375,7 @@ try {
     ",",
   ))
     for (const order of ["before", "after"])
-      for (const kind of (process.env.CORE_MATRIX_CASES || "presentation,media,sources").split(
-        ",",
-      )) {
+      for (const kind of matrixCases) {
         const contexts = [],
           pages = [],
           errors = [];
@@ -410,7 +425,46 @@ try {
               await page.mouse.move(0, 0);
               await waitImages(page);
             }
-            if (kind === "presentation") {
+            if (kind === "composers") {
+              for (const page of pages) await page.locator("#badge-case .lucide-globe").waitFor();
+              await compare(`${theme}/composer-defaults`);
+              for (const variant of [
+                "neutral",
+                "info",
+                "warning",
+                "success",
+                "danger",
+                "inverted",
+              ]) {
+                await configure(pages, { variant, iconVariant: variant });
+                await compare(`${theme}/variant-${variant}`);
+              }
+              await configure(pages, { variant: "neutral", iconVariant: "neutral" });
+              for (const iconSize of ["xs", "s", "m", "l", "xl"]) {
+                await configure(pages, { iconSize });
+                await compare(`${theme}/badge-size-${iconSize}`);
+              }
+              await configure(pages, { iconSize: "m" });
+              for (const layout of ["horizontal", "vertical"])
+                for (const bold of [false, true]) {
+                  await configure(pages, { layout, bold });
+                  await compare(`${theme}/${layout}/bold-${bold}`);
+                }
+              for (const imageSize of [-1, 0, 48, 72]) {
+                await configure(pages, { imageSize });
+                await compare(`${theme}/image-size-${imageSize}`);
+              }
+              for (const iconVariant of ["filled", "soft"]) {
+                await configure(pages, { iconVariant });
+                await compare(`${theme}/icon-alias-${iconVariant}`);
+              }
+              await configure(pages, {
+                layout: "horizontal",
+                bold: false,
+                imageSize: -1,
+                iconVariant: "neutral",
+              });
+            } else if (kind === "presentation") {
               for (const variant of ["neutral", "info", "warning", "danger", "success"]) {
                 await configure(pages, { variant });
                 for (const size of ["sm", "md", "lg"]) {
@@ -467,7 +521,7 @@ try {
                 await page.locator('[aria-label="Close gallery"]').click();
                 await page.getByRole("dialog").waitFor({ state: "detached" });
               }
-            } else {
+            } else if (kind === "sources") {
               for (const page of pages) await page.locator("#dynamic-icon svg").waitFor();
               for (const page of pages) {
                 const previous = page
@@ -559,7 +613,22 @@ try {
               "oklch(0.097 0 0)",
               "independent theme unchanged",
             );
-            if (kind === "presentation") {
+            if (kind === "composers") {
+              assert.deepEqual(
+                await page.evaluate(() => window.readRefs()),
+                { badge: true, icon: true, image: true, banner: true },
+                "public refs remain attached to their roots",
+              );
+              for (const id of ["badge", "icon", "image", "banner"])
+                assert.equal(
+                  await page
+                    .locator(`#${id}-case > div`)
+                    .evaluate((node) => getComputedStyle(node).paddingTop),
+                  "32px",
+                  "existing className override applies",
+                );
+              await page.locator("#badge-case > div").hover({ position: { x: 1, y: 1 } });
+            } else if (kind === "presentation") {
               const root = page.locator(".openui-callout");
               assert.equal(
                 await root.evaluate((node) => getComputedStyle(node).paddingTop),
@@ -587,7 +656,7 @@ try {
               );
               await page.keyboard.press("Escape");
               await page.getByRole("dialog").waitFor({ state: "detached" });
-            } else {
+            } else if (kind === "sources") {
               assert.equal(
                 await page
                   .locator(".openui-citation-tooltip")
@@ -601,7 +670,114 @@ try {
                 .hover();
             }
           }
-          if (kind === "presentation") {
+          if (kind === "composers") {
+            for (const id of ["badge", "icon", "image", "banner"]) {
+              for (const page of pages)
+                await page.locator(`#${id}-case > div`).hover({ position: { x: 1, y: 1 } });
+              await compare(`composer-override-hover-${id}`);
+            }
+            await configure(pages, { overrides: false, updated: true, imageSize: 48 });
+            for (const page of pages) {
+              await page.mouse.move(0, 0);
+              for (const id of ["icon", "image", "banner"])
+                assert.equal(
+                  await page.locator(`#${id}-case strong`).first().textContent(),
+                  "Updated revenue",
+                );
+              assert.equal(
+                await page.locator("#image-case img").getAttribute("alt"),
+                "**Updated revenue** [2]",
+              );
+              assert.equal(
+                await page
+                  .locator("#image-case img")
+                  .evaluate((node) => node.getBoundingClientRect().width),
+                48,
+                "imageSize affects the real rendered image",
+              );
+              await page.locator('#icon-case [aria-label="Citations"]').first().click();
+              await page.locator(".openui-citation-tooltip").waitFor();
+              await waitImages(page);
+              assert.match(
+                await page
+                  .locator(".openui-citation-tooltip .openui-citation-item")
+                  .first()
+                  .textContent(),
+                /Second reference/,
+              );
+            }
+            await compare("updated-markdown-citation-portal");
+            for (const page of pages) {
+              const opening = page.waitForEvent("popup");
+              await page.locator(".openui-citation-tooltip .openui-citation-item").first().click();
+              const target = await opening;
+              await target.waitForURL("**/navigation/2");
+              assert(await target.evaluate(() => window.opener === null));
+              await target.close();
+              await page.locator(".openui-citation-tooltip").waitFor({ state: "detached" });
+            }
+            await configure(pages, { subtitle: false, altMode: "decorative" });
+            for (const page of pages) {
+              assert.equal(
+                await page.locator('#composers a[href$="/navigation/details"]').count(),
+                0,
+                "optional subtitles disappear after a real update",
+              );
+              assert.equal(await page.locator("#image-case img").getAttribute("alt"), "");
+              assert.equal(await page.locator("#banner-case img").getAttribute("alt"), "");
+            }
+            await compare("no-subtitles-decorative-images");
+            await configure(pages, { altMode: "explicit", src: "/missing.svg" });
+            for (const page of pages) {
+              await waitImages(page);
+              assert.equal(
+                await page.locator("#image-case img").getAttribute("alt"),
+                "Preview photograph",
+              );
+              assert.equal(
+                await page.locator("#banner-case img").getAttribute("alt"),
+                "Preview photograph",
+              );
+              assert(
+                await page
+                  .locator("#image-case img")
+                  .evaluate((node) => node.complete && node.naturalWidth === 0),
+                "real failed local image request",
+              );
+            }
+            await compare("composer-image-errors");
+            await configure(pages, { src: "/image.svg", icon: "rocket" });
+            for (const page of pages) {
+              await waitImages(page);
+              await page.locator("#badge-case .lucide-rocket").waitFor();
+              for (const id of ["image", "banner"])
+                assert.equal(
+                  await page.locator(`#${id}-case img`).evaluate((node) => node.naturalWidth),
+                  64,
+                  "local image recovers after the source update",
+                );
+            }
+            await compare("composer-real-source-and-icon-update");
+            await configure(pages, { icon: "not-a-real-icon" });
+            for (const page of pages)
+              await page.locator("#badge-case .lucide-dollar-sign").waitFor();
+            await compare("composer-icon-category-fallback");
+            await configure(pages, { icon: "" });
+            for (const page of pages)
+              assert.equal(
+                await page.locator("#badge-case > div").count(),
+                0,
+                "empty icon omits the badge",
+              );
+            await compare("composer-empty-icon");
+            await configure(pages, {
+              icon: "globe",
+              subtitle: true,
+              updated: false,
+              altMode: "fallback",
+            });
+            for (const page of pages) await page.locator("#badge-case .lucide-globe").waitFor();
+          } else if (kind === "presentation") {
             await compare("override-hover");
             await configure(pages, { overrides: false, duration: 120 });
             for (const page of pages)
@@ -684,7 +860,7 @@ try {
             await observe(pages, `${framework}/${order}/gallery-body-overflow`, (page) =>
               page.evaluate(() => document.body.style.overflow),
             );
-          } else {
+          } else if (kind === "sources") {
             await configure(pages, { overrides: false });
             for (const page of pages) {
               await page.mouse.move(0, 0);
