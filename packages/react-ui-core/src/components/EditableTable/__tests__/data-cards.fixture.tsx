@@ -169,4 +169,4 @@ function App() {
     </>
   );
 }
-createRoot(document.getElementById("app")!).render(<App />);
+window.mountApp = () => createRoot(document.getElementById("app")!).render(<App />);

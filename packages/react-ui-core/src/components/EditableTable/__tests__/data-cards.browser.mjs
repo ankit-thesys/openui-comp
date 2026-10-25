@@ -276,7 +276,7 @@ try {
         await page.goto(
           `http://127.0.0.1:${server.address().port}/?arm=${arm}&framework=${framework}`,
         );
-        await page.waitForSelector("[data-ready]");
+        await page.waitForFunction(() => typeof window.mountApp === "function");
         await page.evaluate(
           ({ order, arm }) => {
             const host = document.getElementById("host-style"),
@@ -289,6 +289,8 @@ try {
           },
           { order, arm },
         );
+        await page.evaluate(() => window.mountApp());
+        await page.waitForSelector("[data-ready]");
         pages.push(page);
       }
       const compare = async (label) => {

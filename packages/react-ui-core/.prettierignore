@@ -8,3 +8,7 @@ src/components/IconTag/__tests__/results/browser-first/consumer-lock.json
 src/components/IconTag/__tests__/results/browser-corrected/composers12-selectors-first.json
 src/components/IconTag/__tests__/results/browser-corrected/composers12-selectors-prepared.json
 src/components/IconTag/__tests__/results/browser-corrected/consumer-lock.json
+
+# Preserve exact slice13 browser evidence and frozen consumer lock.
+evidence/data-cards/browser-failures/*.json
+evidence/data-cards/consumer-lock.json
