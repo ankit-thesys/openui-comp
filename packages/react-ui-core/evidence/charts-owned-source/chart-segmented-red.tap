@@ -1,0 +1,186 @@
+TAP version 13
+# ✘ [ERROR] No matching export in "packages/react-ui-core/dist/index.mjs" for import "SegmentedBar"
+#     <stdin>:4:87:
+#       4 │ ...elChart, CalendarHeatmap, SegmentedBar, SingleStackedBar, PrintC...
+#         ╵                              ~~~~~~~~~~~~
+# ✘ [ERROR] No matching export in "packages/react-ui-core/dist/index.mjs" for import "SingleStackedBar"
+#     <stdin>:4:101:
+#       4 │ ...rHeatmap, SegmentedBar, SingleStackedBar, PrintContextProvider} ...
+#         ╵                            ~~~~~~~~~~~~~~~~
+# Subtest: public Pie chart preserves streaming empty transitions, click rows, donut tracks and print JSON
+not ok 1 - public Pie chart preserves streaming empty transitions, click rows, donut tracks and print JSON
+  ---
+  duration_ms: 616.295625
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:60:1'
+  failureType: 'hookFailed'
+  error: |-
+    Build failed with 2 errors:
+    <stdin>:4:87: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "SegmentedBar"
+    <stdin>:4:101: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "SingleStackedBar"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    failureErrorWithLog (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    buildResponseToResult (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    responseCallbacks.<computed> (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    handleIncomingPacket (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    Socket.readFromStdout (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    Socket.emit (node:events:519:28)
+    addChunk (node:internal/streams/readable:561:12)
+  ...
+# Subtest: public Radial chart preserves semi-circular grid, click data, empty recovery and export shape
+not ok 2 - public Radial chart preserves semi-circular grid, click data, empty recovery and export shape
+  ---
+  duration_ms: 0.667625
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:81:1'
+  failureType: 'hookFailed'
+  error: |-
+    Build failed with 2 errors:
+    <stdin>:4:87: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "SegmentedBar"
+    <stdin>:4:101: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "SingleStackedBar"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    failureErrorWithLog (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    buildResponseToResult (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    responseCallbacks.<computed> (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    handleIncomingPacket (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    Socket.readFromStdout (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    Socket.emit (node:events:519:28)
+    addChunk (node:internal/streams/readable:561:12)
+  ...
+# Subtest: public Radar chart preserves series polygons, dots, grid variants and empty streaming recovery
+not ok 3 - public Radar chart preserves series polygons, dots, grid variants and empty streaming recovery
+  ---
+  duration_ms: 0.09975
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:97:1'
+  failureType: 'hookFailed'
+  error: |-
+    Build failed with 2 errors:
+    <stdin>:4:87: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "SegmentedBar"
+    <stdin>:4:101: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "SingleStackedBar"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    failureErrorWithLog (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    buildResponseToResult (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    responseCallbacks.<computed> (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    handleIncomingPacket (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    Socket.readFromStdout (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    Socket.emit (node:events:519:28)
+    addChunk (node:internal/streams/readable:561:12)
+  ...
+# Subtest: public Heatmap preserves missing cells, signed ramp, click identity and streaming row updates
+not ok 4 - public Heatmap preserves missing cells, signed ramp, click identity and streaming row updates
+  ---
+  duration_ms: 0.021959
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:119:1'
+  failureType: 'hookFailed'
+  error: |-
+    Build failed with 2 errors:
+    <stdin>:4:87: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "SegmentedBar"
+    <stdin>:4:101: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "SingleStackedBar"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    failureErrorWithLog (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    buildResponseToResult (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    responseCallbacks.<computed> (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    handleIncomingPacket (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    Socket.readFromStdout (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    Socket.emit (node:events:519:28)
+    addChunk (node:internal/streams/readable:561:12)
+  ...
+# Subtest: public Funnel preserves layers, retention values, orientation and click identity during stream updates
+not ok 5 - public Funnel preserves layers, retention values, orientation and click identity during stream updates
+  ---
+  duration_ms: 0.031542
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:140:1'
+  failureType: 'hookFailed'
+  error: |-
+    Build failed with 2 errors:
+    <stdin>:4:87: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "SegmentedBar"
+    <stdin>:4:101: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "SingleStackedBar"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    failureErrorWithLog (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    buildResponseToResult (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    responseCallbacks.<computed> (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    handleIncomingPacket (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    Socket.readFromStdout (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    Socket.emit (node:events:519:28)
+    addChunk (node:internal/streams/readable:561:12)
+  ...
+# Subtest: public Calendar heatmap sums duplicate days, preserves level-hover dimming and switches legend variants
+not ok 6 - public Calendar heatmap sums duplicate days, preserves level-hover dimming and switches legend variants
+  ---
+  duration_ms: 0.018959
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:160:1'
+  failureType: 'hookFailed'
+  error: |-
+    Build failed with 2 errors:
+    <stdin>:4:87: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "SegmentedBar"
+    <stdin>:4:101: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "SingleStackedBar"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    failureErrorWithLog (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    buildResponseToResult (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    responseCallbacks.<computed> (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    handleIncomingPacket (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    Socket.readFromStdout (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    Socket.emit (node:events:519:28)
+    addChunk (node:internal/streams/readable:561:12)
+  ...
+# Subtest: public SegmentedBar preserves shares, hover feedback, empty recovery and SingleStackedBar alias
+not ok 7 - public SegmentedBar preserves shares, hover feedback, empty recovery and SingleStackedBar alias
+  ---
+  duration_ms: 0.071417
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Charts/__tests__/PolarCharts.test.mjs:182:1'
+  failureType: 'hookFailed'
+  error: |-
+    Build failed with 2 errors:
+    <stdin>:4:87: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "SegmentedBar"
+    <stdin>:4:101: ERROR: No matching export in "packages/react-ui-core/dist/index.mjs" for import "SingleStackedBar"
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    failureErrorWithLog (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    buildResponseToResult (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    responseCallbacks.<computed> (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    handleIncomingPacket (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    Socket.readFromStdout (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    Socket.emit (node:events:519:28)
+    addChunk (node:internal/streams/readable:561:12)
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 0
+# fail 7
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 792.607959

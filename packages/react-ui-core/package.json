@@ -28,7 +28,7 @@
   "scripts": {
     "build": "tsdown",
     "typecheck": "tsc --noEmit",
-    "test": "pnpm build && cd ../.. && node --test packages/react-ui-core/tests/*.test.mjs packages/react-ui-core/src/components/*/__tests__/*.test.mjs",
+    "test": "pnpm build && cd ../.. && node --test packages/react-ui-core/tests/*.test.mjs packages/react-ui-core/src/components/*/__tests__/*.test.mjs packages/react-ui-core/src/components/Charts/*/__tests__/*.test.mjs",
     "format:check": "prettier --check src tests *.json *.ts",
     "check:publint": "publint",
     "check:attw": "attw --pack .",

@@ -1,3 +1,51 @@
+# CURRENT — owned chart source reviewed; packed validation next — 2026-10-25
+
+Foundation cf0301e5 is relayed to Worker2. W2 Area/helpers5851f0624 integrated as
+`e99b52dc6`; its Scatter helper test was retained across an ancestry-only
+modify/delete conflict. Area exports integrated by W1. W2 continues remaining
+Cartesian/Mini families; W1 does not edit their owned source.
+
+W1 Pie/Radial/Radar/Heatmap/Funnel/CalendarHeatmap/SegmentedBar (SingleStackedBar
+alias) source is implemented with unchanged logic and stock-Goober styles.
+Focused public-root run11/11 passes (7actualChrome family tests + foundation2 +
+Area1 + strict types1), build/types/scoped lint pass. Both independent reviews
+clear after conventional Radar selector fix and computed-style regression test.
+Raw attempts and boundary: packages/react-ui-core/evidence/charts-owned-source/.
+
+W1 retains FIRST browser window and now prepares immutable normal installed
+artifact for matched legacy/browser/style-order/theme/resize/print/export checks.
+No full19-family, performance, SSR or memory acceptance yet. Worker2 source-only
+until explicit release. Existing styling/ownership/dependency boundaries remain;
+no custom runtime patches, legacy/previews/friend/crates edits, release, merges,
+closure or upstream/main writes. Root barrel/shared/deps remain W1-owned.
+
+---
+
+# CURRENT — chart foundation committed; owned polar tests GREEN — 2026-10-25
+
+Shared foundation `cf0301e530cea0168d36f4c40b9b9d44af6f2110` is committed and
+root relayed it to Worker2. It includes W2 prerequisites `edf662fb9`, shared
+source/styles, distinct PrintContext, existing D3/Zustand dependency contracts,
+and root support exports. Focused tests 3/3, producer build/types/scoped lint and
+native support imports pass. Independent Spec/Standards foundation reviews clear.
+Detailed consumer contract: docs/planning/slice14-foundation-handoff.md.
+
+Worker2 now owns Cartesian/Mini family implementation. Worker1 retains shared
+foundation/root/deps and Polar/Other families, and FIRST browser window. Public
+Pie/Radial/Radar real-Chrome behavior tests pass 3/3 after genuine missing-export
+red tests; producer build/types pass. Polar source/style review is running.
+These are intermediate source tests, not normal-installed final parity or
+performance acceptance. Worker1 continues Heatmap/Funnel/Calendar/SegmentedBar.
+No family handoff or whole chart slice completion inferred from foundation.
+
+Preserve old props/behavior and stock Goober styles; no legacy writes/custom
+runtime patches. Existing SSR/parser/performance/memory deferrals remain. Root
+barrel integration, immutable installed artifact, family/browser/export/print/
+resize checks and two-axis final review remain before fork-only stacked draft.
+No merge, closure, release, upstream/main writes. Preserve unrelated crates/.
+
+---
+
 # CURRENT — chart slice14 dispatched / shared-type bootstrap GREEN — 2026-10-25
 
 Root explicitly dispatched full chart slice14 after PR36 green. Branch codex/react-ui-core-charts based reviewed d9d6c78f085bfb92d475d76bead2c73dbb428131; local docsfe60de390/b8c69cd5c carried asdb552aab6/6811a31f2, PR36unchanged. W1 FIRST owns Charts/types bootstrap; three files copied byte-for-byte, rootexports only existing5types. Genuine public typeTS2305RED → minimalcopy/export → focusedstrictconsumer1/1GREEN, producerbuild/typesPASS. Formatting-induced fixtureerror preserved/corrected with conventionaltypequery. BothGPT6.1-Solreviewaxesclear. Evidence/charts-bootstrap.

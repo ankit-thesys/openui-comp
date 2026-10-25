@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: public Pie chart preserves streaming empty transitions, click rows, donut tracks and print JSON
+ok 1 - public Pie chart preserves streaming empty transitions, click rows, donut tracks and print JSON
+  ---
+  duration_ms: 1298.527167
+  type: 'test'
+  ...
+# Subtest: public Radial chart preserves semi-circular grid, click data, empty recovery and export shape
+ok 2 - public Radial chart preserves semi-circular grid, click data, empty recovery and export shape
+  ---
+  duration_ms: 10.522167
+  type: 'test'
+  ...
+# Subtest: public Radar chart preserves series polygons, dots, grid variants and empty streaming recovery
+ok 3 - public Radar chart preserves series polygons, dots, grid variants and empty streaming recovery
+  ---
+  duration_ms: 21.642125
+  type: 'test'
+  ...
+# Subtest: public Heatmap preserves missing cells, signed ramp, click identity and streaming row updates
+ok 4 - public Heatmap preserves missing cells, signed ramp, click identity and streaming row updates
+  ---
+  duration_ms: 19.517042
+  type: 'test'
+  ...
+# Subtest: public Funnel preserves layers, retention values, orientation and click identity during stream updates
+ok 5 - public Funnel preserves layers, retention values, orientation and click identity during stream updates
+  ---
+  duration_ms: 17.663292
+  type: 'test'
+  ...
+# Subtest: public Calendar heatmap sums duplicate days, preserves level-hover dimming and switches legend variants
+ok 6 - public Calendar heatmap sums duplicate days, preserves level-hover dimming and switches legend variants
+  ---
+  duration_ms: 312.121792
+  type: 'test'
+  ...
+# Subtest: public SegmentedBar preserves shares, hover feedback, empty recovery and SingleStackedBar alias
+ok 7 - public SegmentedBar preserves shares, hover feedback, empty recovery and SingleStackedBar alias
+  ---
+  duration_ms: 297.241083
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2162.8485

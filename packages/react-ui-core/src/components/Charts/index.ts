@@ -10,3 +10,19 @@ export type {
   XAxisTickVariant,
 } from "./types";
 export { CHART_CLASS_PREFIX } from "./utils/constants";
+
+export * from "./PieChart";
+
+export * from "./RadialChart";
+
+export * from "./RadarChart";
+
+export * from "./HeatmapChart";
+
+export * from "./FunnelChart";
+
+export * from "./AreaChart";
+export type { AreaChartData, AreaChartProps, AreaChartVariant } from "./AreaChart/types";
+export * from "./CalendarHeatmap";
+
+export * from "./SegmentedBar";
