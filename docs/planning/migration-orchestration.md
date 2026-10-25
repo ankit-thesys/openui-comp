@@ -1,3 +1,11 @@
+# Slice12 non-math readiness / slice13 planning — 2026-10-25
+
+Corrected composer matrix PASSED6 cases /30,012 paired snapshots on production88fdccf94 exact frozen artifact below; W2 evidence2bf604984 integrated as0c07afd62. W2 explicitly closed browser/server and released browser to Worker1; no active measurement remains. Combined with owned text/media6 cases /22,296 snapshots, both NEW non-math groups now pass on corrected88fd artifact. Earlier source/presentation12 cases /22,056 and fixed-media6 /8,292 remain tied to their historical artifacts; no repeated unchanged matrices or claim of one all-family final run. Final corrected package CI97/97 plus affected installed12/native/pruning and strict3 modes remain green. No production code change after88fd.
+
+Math CSS/font automatic delivery remains a USER DECISION GATE, with experimental exception unapproved. No whole-slice12 acceptance, issue closure, SSR/hydration, performance/memory certification or advance to slice13 production is authorized by this non-math result. Both independent reviews have zero outstanding source/fixture findings; original failures preserved.
+
+READ-ONLY slice13 dependency/ownership plan: `docs/planning/slice13-readonly-plan.md`. No slice13 production changes/tests. Four disjoint batches plus one integration owner; exact exports and source risks listed. Important clarification: ticket13 says consume Table, but legacy EditableTable uses TanStack Table type + native table markup, not public Table. Root/TL must clarify intent before implementation; no silent structural refactor. None of the slice13 built-in components imports the math wrapper; optional consumer ReactNode math composition remains gated. Both previews/legacy untouched, no merge/release/upstream writes.
+
 # Final corrected package CI GREEN — 2026-10-25
 
 Corrected production88fdccf94 passes whole package CI97/97 tests plus format/lint/types/build/Publint/ATTW. Raw composer JSON remains byte-for-byte unchanged through narrow formatter exclusions; first formatting failure and final green logs archived under evidence/text-media-selectors. No additional production change since corrected artifact88fd. Owned non-math settled browser matrix remains6 cases /22,296 snapshots on that artifact; affected installed12 checks + strict3 modes pass. Independent source and fixture reviews zero actionable findings.
