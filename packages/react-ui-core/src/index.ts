@@ -43,6 +43,7 @@ export * from "./components/Tabs";
 export * from "./components/Tag";
 export * from "./components/TagBlock";
 export * from "./components/TextArea";
+export * from "./components/TextBlock";
 export * from "./components/TextCallout";
 export * from "./components/TextContent";
 export * from "./components/ThemeProvider";
