@@ -1,0 +1,16 @@
+{
+  "browser-carousel-failure/data13-ac-hover-fixed.json": "6a8053a83db5ed2301f9da79de1ae0611308a09ab4bd4d9e2c29bd967e15bac6",
+  "browser-carousel-failure/data13-ac-hover-fixed.log": "be719ad92541efade76404135654ff77aa92ffb3df1416124e50f7e8bc67a016",
+  "browser-carousel-failure/fixture.tsx": "962e24fc93da39a7744ecda1c27c0c65d1a62b2d9857589ac8c16bd0cd3762b4",
+  "browser-carousel-failure/rule-order.json": "c36adee7de2cd459150c72ae9efc77e7155dc5717b7f6cc8d8b6284a52228366",
+  "browser-carousel-failure/runner.mjs": "ddcfdd6ec69d5cae4e235d19f9e42f572297d0e0a53fca54667bcd753fd712ad",
+  "browser-first/data13-ac-first.json": "deeaac9dd27c39e5fe116dfb2f43e37d9772cc554391b5fec406fb2da52c1bb9",
+  "browser-first/data13-ac-first.log": "b81e3fe7b998aedc91b16755e97fcb751d0fdfdf901dab64b09288a9625ad755",
+  "browser-first/data13-ac-prepared.json": "4f9231879d4130f252cba85114ba37f28936151f8e3fd4fa1769599a4522a711",
+  "browser-first/data13-ac-prepared.log": "b4eb2d51cb755beb07d21d38cf57ab49d63b3e071e7cdfb837ec4ef6d8d3d053",
+  "browser-first/fixture.tsx": "962e24fc93da39a7744ecda1c27c0c65d1a62b2d9857589ac8c16bd0cd3762b4",
+  "browser-first/runner.mjs": "582bd3d7c215d8df12d2c5f70bdde00a1c971ba7a5c1b2c03b5b6f8c454a37ca",
+  "browser-focus-attempt/data13-ac-focus-fixed.json": "c45650a6378ea71ce84ef51a15de46b82dd4b393a32082427891dff7c92c85a5",
+  "browser-focus-attempt/data13-ac-focus-fixed.log": "42327bc3f55347eae086264c0499f539dc6992ff27d4c348a3a6d07d73a98ba8",
+  "browser-focus-attempt/runner.mjs": "4df6907a19684f8f903fd73297a50e61141a432a9b8b942820cbdd91323f22f8"
+}
