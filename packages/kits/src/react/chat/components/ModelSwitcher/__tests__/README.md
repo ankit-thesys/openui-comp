@@ -1,5 +1,9 @@
 # Chat component extraction (#16)
 
+Authorized correction: source commit `1a41c2c33` adds the conventional model-only
+border-color reset. See [CORRECTION_HANDOFF.md](./CORRECTION_HANDOFF.md).
+Corrected installed-artifact and browser validation remain pending.
+
 Latest installed-artifact validation: [BROWSER_REPORT.md](./BROWSER_REPORT.md).
 All 36 cases complete behavioral checks, but strict style parity fails on the
 zero-width hover border color. Browser/server are closed and released. The three

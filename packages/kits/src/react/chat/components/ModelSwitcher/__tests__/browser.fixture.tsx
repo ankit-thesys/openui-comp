@@ -44,11 +44,29 @@ function App() {
   const [submits, setSubmits] = useState<string[]>([]);
   const [disabled, setDisabled] = useState(false);
   const [overrides, setOverrides] = useState(false);
-  Object.assign(window, { setTheme, setValue, setDisabled, setOverrides });
+  const [exposedBorder, setExposedBorder] = useState(false);
+  const [borderColorOverride, setBorderColorOverride] = useState(false);
+  Object.assign(window, {
+    setTheme,
+    setValue,
+    setDisabled,
+    setOverrides,
+    setExposedBorder,
+    setBorderColorOverride,
+  });
   const mode = theme.includes("dark") ? "dark" : "light";
   const contents = (
     <>
-      <div id="model-zone" className={overrides ? "model-overrides" : undefined}>
+      <div
+        id="model-zone"
+        className={[
+          overrides ? "model-overrides" : "",
+          exposedBorder ? "exposed-border" : "",
+          borderColorOverride ? "border-color-override" : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+      >
         <ModelSwitcher
           models={models}
           value={value}

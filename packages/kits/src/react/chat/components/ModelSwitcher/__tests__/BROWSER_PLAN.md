@@ -51,6 +51,7 @@ No test shim modifies component behavior, themes or Goober.
 
 ```sh
 KIT_CONSUMER=/absolute/normal-installed-consumer \
+KIT_PRODUCT_COMMIT=<frozen-product-ref> \
 KIT_BROWSER_TOOLS=/absolute/package-containing-vite-and-playwright \
 KIT_SASS_TOOLS=/absolute/package-containing-sass \
 KIT_HOST_CSS=/absolute/frozen-framework-css-directory \

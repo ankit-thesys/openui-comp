@@ -24,6 +24,11 @@ const output = process.env.KIT_BROWSER_OUT
 assert(output.startsWith(directory + path.sep), "evidence must remain in the owned test directory");
 const prepareOnly = process.argv.includes("--prepare");
 const diagnostic = process.env.KIT_DIAGNOSTIC_CONTINUE === "1";
+const borderOnly = process.env.KIT_BORDER_ONLY === "1";
+assert(
+  process.env.KIT_PRODUCT_COMMIT,
+  "KIT_PRODUCT_COMMIT must identify the frozen installed product",
+);
 if (!prepareOnly)
   assert.equal(
     process.env.KIT_BROWSER_RELEASE,
@@ -69,7 +74,7 @@ const report = {
   status: "prepared",
   consumer,
   diagnosticContinuation: diagnostic,
-  productCommit: "8405f44e0",
+  productCommit: process.env.KIT_PRODUCT_COMMIT,
   bundler: "Vite " + browserTools("vite/package.json").version,
   manifestBefore: before,
   runnerSha256: await hashFile(fileURLToPath(import.meta.url)),
@@ -79,6 +84,7 @@ const report = {
   hostCss: {},
   cases: [],
   coverage: {
+    mode: borderOnly ? "model-border-regression" : "components-full",
     frameworks: ["plain", "tailwind3", "tailwind4"],
     hostOrders: ["host-before", "host-after"],
     themes: ["none", "light", "dark", "custom-light", "custom-dark", "nested"],
@@ -174,6 +180,8 @@ for (const framework of report.coverage.frameworks) {
     text +
     `
 .model-overrides .openui-model-switcher-trigger {background-color:rgb(150,50,100)!important;padding-left:27px!important}
+.exposed-border .openui-model-switcher-trigger {border-width:1px!important;border-style:solid!important}
+.border-color-override .openui-model-switcher-trigger {border-color:rgb(1,2,3)!important}
 `;
   report.hostCss[framework].servedSha256 = sha256(stylesheets[`/${framework}.css`]);
 }
@@ -425,6 +433,73 @@ try {
           }
           await compare("trigger-hover");
           for (const page of pages) {
+            await state(page, { setExposedBorder: true });
+            await page.locator(selectors.trigger).hover();
+            await expectStyle(page, selectors.trigger, "borderTopWidth", "1px");
+            await expectStyle(page, selectors.trigger, "borderTopStyle", "solid");
+            assert(
+              await page.locator(selectors.trigger).evaluate((node) => {
+                const style = getComputedStyle(node);
+                return style.borderTopColor === style.color;
+              }),
+              "the exposed model border retains the legacy currentColor reset",
+            );
+          }
+          await compare("exposed-border-hover", { trigger: selectors.trigger });
+          for (const page of pages) {
+            await page.mouse.move(0, 0);
+            await page.locator(selectors.trigger).focus();
+            await page.keyboard.press("Enter");
+            await page.getByRole("listbox").waitFor();
+            assert(
+              await page.locator(selectors.trigger).evaluate((node) => {
+                const style = getComputedStyle(node);
+                return style.borderTopColor === style.color;
+              }),
+              "the open model border retains the legacy currentColor reset",
+            );
+          }
+          await compare("exposed-border-open", { trigger: selectors.trigger });
+          for (const page of pages) {
+            await state(page, { setBorderColorOverride: true });
+            await expectStyle(page, selectors.trigger, "borderTopColor", "rgb(1, 2, 3)");
+          }
+          await compare("consumer-border-color", { trigger: selectors.trigger });
+          for (const page of pages) {
+            await page.keyboard.press("Escape");
+            await waitForTriggerFocus(page);
+            await state(page, { setExposedBorder: false, setBorderColorOverride: false });
+            await page.mouse.move(0, 0);
+          }
+          if (borderOnly) {
+            if (theme === "nested") {
+              for (const page of pages) {
+                await page.locator("#nested-zone [role=combobox]").click();
+                await page.getByRole("listbox").waitFor();
+              }
+              await compare("nested-trigger-open", { inner: "#nested-zone [role=combobox]" });
+              for (const page of pages) {
+                await page.keyboard.press("Escape");
+                await page.waitForFunction(() =>
+                  document.activeElement?.matches("#nested-zone [role=combobox]"),
+                );
+                await page.locator("#nested-zone [role=combobox]").hover();
+              }
+              await compare("nested-isolation", {
+                outer: selectors.trigger,
+                inner: "#nested-zone [role=combobox]",
+              });
+            }
+            assert.deepEqual(errors, [], "no console or page errors");
+            record.status = record.comparisons.some((item) => item.status === "failed")
+              ? "failed"
+              : "passed";
+            console.log(`${framework}/${order}/${theme}: ${record.status}`);
+            continue;
+          }
+          for (const page of pages) {
+            await page.locator(selectors.trigger).hover();
+            await settle(page);
             if (theme.startsWith("custom"))
               await expectStyle(page, selectors.trigger, "backgroundColor", "rgb(190, 210, 230)");
             await page.mouse.move(0, 0);
