@@ -1,0 +1,14 @@
+[
+  {
+    "path": "consumer-border/border-run.mjs",
+    "sha256": "07187d9d91625f462fd4dc1c1dac4fadfd012802ffcce792451cc7aae02fb94d"
+  },
+  {
+    "path": "consumer-border/border-app/app.tsx",
+    "sha256": "c38bcb54677442d04d48c25d18f554af55be18cd5e8c3666fb6d59953dbc0344"
+  },
+  {
+    "path": "consumer-border/border-app/index.html",
+    "sha256": "3b2772341083184d8bf0dc1ebf6c8ef86288cad8b5907f9e6f0c8bde461217fb"
+  }
+]

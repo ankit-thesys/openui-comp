@@ -1,0 +1,134 @@
+{
+  "browser": "156.0.8078.47",
+  "results": [
+    {
+      "name": "unused",
+      "emitted": {
+        ".js": {
+          "count": 1,
+          "bytes": 746,
+          "gzipBytes": 421
+        },
+        ".css": {
+          "count": 0,
+          "bytes": 0,
+          "gzipBytes": 0
+        },
+        ".woff2": {
+          "count": 19,
+          "bytes": 256168,
+          "gzipBytes": 256633
+        },
+        ".woff": {
+          "count": 20,
+          "bytes": 303116,
+          "gzipBytes": 302475
+        },
+        ".ttf": {
+          "count": 20,
+          "bytes": 513664,
+          "gzipBytes": 307370
+        }
+      },
+      "requests": [
+        "/",
+        "/assets/index-DoViGUOC.js"
+      ],
+      "gooberStyleBytes": 0,
+      "pageErrors": [],
+      "requestedJs": [
+        {
+          "url": "/assets/index-DoViGUOC.js",
+          "bytes": 746,
+          "gzipBytes": 421
+        }
+      ]
+    },
+    {
+      "name": "component",
+      "emitted": {
+        ".js": {
+          "count": 1,
+          "bytes": 198017,
+          "gzipBytes": 62642
+        },
+        ".css": {
+          "count": 0,
+          "bytes": 0,
+          "gzipBytes": 0
+        },
+        ".woff2": {
+          "count": 19,
+          "bytes": 256168,
+          "gzipBytes": 256633
+        },
+        ".woff": {
+          "count": 20,
+          "bytes": 303116,
+          "gzipBytes": 302475
+        },
+        ".ttf": {
+          "count": 20,
+          "bytes": 513664,
+          "gzipBytes": 307370
+        }
+      },
+      "requests": [
+        "/",
+        "/assets/index-DdssB3_d.js"
+      ],
+      "gooberStyleBytes": 883,
+      "pageErrors": [],
+      "requestedJs": [
+        {
+          "url": "/assets/index-DdssB3_d.js",
+          "bytes": 198017,
+          "gzipBytes": 62505
+        }
+      ]
+    },
+    {
+      "name": "library",
+      "emitted": {
+        ".js": {
+          "count": 1653,
+          "bytes": 3031325,
+          "gzipBytes": 1230794
+        },
+        ".css": {
+          "count": 1,
+          "bytes": 29288,
+          "gzipBytes": 8066
+        },
+        ".woff2": {
+          "count": 19,
+          "bytes": 256168,
+          "gzipBytes": 256633
+        },
+        ".woff": {
+          "count": 20,
+          "bytes": 303116,
+          "gzipBytes": 302475
+        },
+        ".ttf": {
+          "count": 20,
+          "bytes": 513664,
+          "gzipBytes": 307370
+        }
+      },
+      "requests": [
+        "/",
+        "/assets/index-B0OnTxdF.js"
+      ],
+      "gooberStyleBytes": 217634,
+      "pageErrors": [],
+      "requestedJs": [
+        {
+          "url": "/assets/index-B0OnTxdF.js",
+          "bytes": 1899071,
+          "gzipBytes": 571915
+        }
+      ]
+    }
+  ]
+}

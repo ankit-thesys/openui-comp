@@ -1,0 +1,141 @@
+{
+  "verifierThread": "01a17359-1780-7d12-94d4-2591f99aecf2",
+  "sourceDirectory": "/private/tmp/openui-chat16-independent-verification",
+  "files": [
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/report.md",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/report.md",
+      "sha256": "e93f1c3380db81afe78c19459b4e3ba9279649c4535496d26daaadbde22c0068"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/model-border-verification.md",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/model-border-verification.md",
+      "sha256": "355fa2f486752025f9db2987e7575d700f0f07238e608249ebe4713087bbb056"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/independent-browser-results.json",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/independent-browser-results.json",
+      "sha256": "9f83d34bd55311542554aa70492cbb55cc4f48aa3828d47532e5ce017efead42"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/asset-results.json",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/asset-results.json",
+      "sha256": "430ee9800d07aabc37f8207e09a84fdabcdf5a442ca1f9efffb6e92249a10bcb"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/border-browser-results.json",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/border-browser-results.json",
+      "sha256": "a65919c98290d11c82b8dc5a4c22113897f35d1c393554e60a565713ca6967ac"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/border-final-artifact-proof.json",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/border-final-artifact-proof.json",
+      "sha256": "c89432adc521d7603876d89d0b29d7246193d7568a55a37542ff5d8ec118995a"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/metadata-correction-verification.json",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/metadata-correction-verification.json",
+      "sha256": "4838cba3f94c0a3404ffa3fac9e917af685bc3a09a2175a8a57ad3d28cff950b"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/corrected-installed-files.json",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/corrected-installed-files.json",
+      "sha256": "33337fe1cc0b1bcadf072b3bc3c53bf2efa94c9facc088483048fadbdedcc544"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/model-border-delta.json",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/model-border-delta.json",
+      "sha256": "7ea9c1228440cf8f9e273e6d90a3029be937916be095f94d6bbd465f31f3f79e"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/browser-fixture-hashes.json",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/browser-fixture-hashes.json",
+      "sha256": "ceea09641dbf31a54dccf7925877443fc64f58546b863b1f2a64dce699a197af"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/border-fixture-hashes.json",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/border-fixture-hashes.json",
+      "sha256": "666ce4e201e140275bd79e7600e22eb1ac315138c55d09b20b932a893b304ab0"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/browser-final-run.log",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/browser-final-run.log",
+      "sha256": "a19d74e0a53b0692c5b9e26351def1913342e84bafac6dd42ca5d3850c7618f2"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/asset-run.log",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/asset-run.log",
+      "sha256": "883a83e65d936d7bbd53ec205b8e30c546ef38756a925554223403de876b37fe"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/border-browser.log",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/border-browser.log",
+      "sha256": "eaab82cf3b19d50204a3b2cb2ae6e4475b9e371bc2d8bdd1feb84437928d37d7"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/final-independent-package.json",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/final-independent-package.json",
+      "sha256": "6a2d9c215f3fe74328e5457f72d52b3e186400393f47fbe19eaf88e2a9387f64"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/final-independent-package-lock.json",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/final-independent-package-lock.json",
+      "sha256": "52db5f81d5b1e3d41d9292bf711703e3cc331c8863e2a4bd7f4c2ea9b7ad7f1a"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/math-fixture-correction.md",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/math-fixture-correction.md",
+      "sha256": "7ea0b83e6cc6001328ee325dc9e4de2c7ad07cc0e50cb36dd5c126cdcf1b415e"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/consumer-zod4/browser-run.mjs",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/executed/consumer-zod4/browser-run.mjs",
+      "sha256": "bfc06c400fb6039ab0c94b7f167c8915644b03f7496bd1d11165a5cd96b9ad73"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/consumer-zod4/browser-app/app.tsx",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/executed/consumer-zod4/browser-app/app.tsx",
+      "sha256": "6d076ae8f015f0cc0193aaf95fbdd3c81c38d98470e6cd76f879394a959fd4d8"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/consumer-zod4/browser-app/index.html",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/executed/consumer-zod4/browser-app/index.html",
+      "sha256": "ade49ba8d6d6735a043da6426f3d7a4c9b3c1bf14627ba19d543f5743a039d63"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/consumer-zod4/asset-run.mjs",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/executed/consumer-zod4/asset-run.mjs",
+      "sha256": "561a98e8e44f25f34787b4dfbeb24dcb5d0571773848b9bfb81bea331f555ab7"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/consumer-zod4/browser-app/public/plain.css",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/executed/consumer-zod4/browser-app/public/plain.css",
+      "sha256": "d4a1d5dcf591b093b35a4b9bebf48406a70ccf0504b60b11e27f4002f3ddcb00"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/consumer-zod4/browser-app/public/tailwind3.css",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/executed/consumer-zod4/browser-app/public/tailwind3.css",
+      "sha256": "584ed8b229b2a8df96f9ddc478e94a07249e8905bdf068afdef8981d969ae150"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/consumer-zod4/browser-app/public/tailwind4.css",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/executed/consumer-zod4/browser-app/public/tailwind4.css",
+      "sha256": "e05a054044718b3c9ac536e5fe41ddde475f1a06ca68f57674a90db0a3c1b36e"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/consumer-border/border-run.mjs",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/executed/consumer-border/border-run.mjs",
+      "sha256": "07187d9d91625f462fd4dc1c1dac4fadfd012802ffcce792451cc7aae02fb94d"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/consumer-border/border-app/app.tsx",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/executed/consumer-border/border-app/app.tsx",
+      "sha256": "c38bcb54677442d04d48c25d18f554af55be18cd5e8c3666fb6d59953dbc0344"
+    },
+    {
+      "original": "/private/tmp/openui-chat16-independent-verification/consumer-border/border-app/index.html",
+      "snapshot": "packages/kits/evidence/chat-library/independent-verifier/executed/consumer-border/border-app/index.html",
+      "sha256": "3b2772341083184d8bf0dc1ebf6c8ef86288cad8b5907f9e6f0c8bde461217fb"
+    }
+  ]
+}

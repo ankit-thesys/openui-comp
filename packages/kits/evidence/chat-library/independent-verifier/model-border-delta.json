@@ -1,0 +1,12 @@
+{
+  "sha256": "9fc227a88cbf6d949247aee90e729efa58d669ba738674880396903db98785bb",
+  "bytes": 237948,
+  "oldFiles": 566,
+  "newFiles": 566,
+  "changed": [
+    "package/dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.cjs",
+    "package/dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.cjs.map",
+    "package/dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.mjs",
+    "package/dist/react/chat/components/ModelSwitcher/modelSwitcher.styles.mjs.map"
+  ]
+}
