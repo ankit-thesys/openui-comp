@@ -1,0 +1,12 @@
+{
+  "oldArtifactRevision": "96221894aa2273dc85059fe94efa155ef1f1210a",
+  "newPreparationArtifactRevision": "96221894aa2273dc85059fe94efa155ef1f1210a",
+  "equal": {
+    "fixtureSha256": true,
+    "graphs": true,
+    "legacyCssSha256": true,
+    "hostHashes": true,
+    "implementationManifestSha256": true
+  },
+  "scope": "Prepared input equality only; no repeated browser run"
+}

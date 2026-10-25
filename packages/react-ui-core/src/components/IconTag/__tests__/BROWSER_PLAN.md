@@ -71,3 +71,14 @@ regressions separately from baseline or sampler issues. Do not weaken comparison
 rewrite historical evidence. New composer styles must pass the installed matrix before
 final whole-slice acceptance. SSR/hydration/streaming, icon cancellation races, exhaustive
 focus/accessibility and performance/memory certification remain outside this matrix.
+
+## Reviewed handoff
+
+Prepared harness commit c66fbd526. Independent GPT-6.1 Sol Standards and Spec reviewers
+found no actionable scoped issues. Both reviews were static/read-only; neither executed
+tests or Chrome. Old-artifact preparation preserves the exact prior foundation fixture,
+baseline/runtime bundles, baseline CSS, host hashes and installed implementation manifest;
+results/browser-preparation/unchanged-foundation-inputs.json records that comparison.
+This is evidence that the conditional mode leaves those inputs unchanged, not a new
+browser pass. Composer execution still needs Worker1's frozen integrated artifact and
+explicit browser-window release. Production code/shared metadata and previews are untouched.
