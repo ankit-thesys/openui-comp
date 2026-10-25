@@ -1,0 +1,51 @@
+/* Fixture chrome only. Deliberately minimal and theme-neutral so that what a
+   reference image shows is the COMPONENT's own light/dark rendering, not the
+   fixture's. The body colours follow prefers-color-scheme so dark references
+   are not a light page with dark widgets on it. */
+:root {
+  color-scheme: light dark;
+}
+body {
+  margin: 0;
+  padding: 24px;
+  font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #101010;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #0e0e10;
+    color: #f2f2f2;
+  }
+}
+.scenario {
+  max-width: 720px;
+}
+.scenario > h1 {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.55;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.cell {
+  min-width: 180px;
+}
+.cell > h2 {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.45;
+  margin: 0 0 8px;
+}
+#away {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+}

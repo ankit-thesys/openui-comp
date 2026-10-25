@@ -1,0 +1,1001 @@
+{
+  "revision": "433a0e31d7c54d1181a5bbf899faaa5be883077b",
+  "generatedBy": "validation/friend-text-media-baseline/tools/inventory.mjs",
+  "entryPoint": "packages/react-ui/src/index.ts",
+  "totalRootExports": 560,
+  "typescript": "5.9.3",
+  "scope": {
+    "text/presentation": {
+      "InlineMarkdownRenderer": {
+        "exported": true,
+        "members": [
+          {
+            "name": "InlineMarkdownRenderer",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/InlineMarkdownRenderer/InlineMarkdownRenderer.tsx",
+              "line": 22,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "InlineMarkdownRendererProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/InlineMarkdownRenderer/InlineMarkdownRenderer.tsx",
+              "line": 12,
+              "kind": "InterfaceDeclaration"
+            }
+          }
+        ]
+      },
+      "TextBlock": {
+        "exported": true,
+        "members": [
+          {
+            "name": "TextBlockAlign",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/TextBlock/TextBlock.tsx",
+              "line": 17,
+              "kind": "TypeAliasDeclaration"
+            }
+          },
+          {
+            "name": "TextBlockSecondaryTone",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/TextBlock/TextBlock.tsx",
+              "line": 18,
+              "kind": "TypeAliasDeclaration"
+            }
+          },
+          {
+            "name": "TextBlockSize",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/TextBlock/TextBlock.tsx",
+              "line": 16,
+              "kind": "TypeAliasDeclaration"
+            }
+          },
+          {
+            "name": "TextBlockType",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/TextBlock/TextBlock.tsx",
+              "line": 15,
+              "kind": "TypeAliasDeclaration"
+            }
+          },
+          {
+            "name": "TextBlockVariant",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/TextBlock/TextBlock.tsx",
+              "line": 5,
+              "kind": "TypeAliasDeclaration"
+            }
+          },
+          {
+            "name": "TextBlockView",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/TextBlock/TextBlock.tsx",
+              "line": 38,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "TextBlockViewProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/TextBlock/TextBlock.tsx",
+              "line": 20,
+              "kind": "InterfaceDeclaration"
+            }
+          }
+        ]
+      },
+      "MarkDownRenderer": {
+        "exported": true,
+        "members": [
+          {
+            "name": "MarkDownRenderer",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/MarkDownRenderer/MarkDownRenderer.tsx",
+              "line": 46,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "MarkDownRendererProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/MarkDownRenderer/MarkDownRenderer.tsx",
+              "line": 39,
+              "kind": "InterfaceDeclaration"
+            }
+          }
+        ]
+      },
+      "CodeBlock": {
+        "exported": true,
+        "members": [
+          {
+            "name": "CodeBlock",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/CodeBlock/CodeBlock.tsx",
+              "line": 16,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "CodeBlockProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/CodeBlock/CodeBlock.tsx",
+              "line": 8,
+              "kind": "InterfaceDeclaration"
+            }
+          }
+        ]
+      },
+      "IconText": {
+        "exported": true,
+        "members": [
+          {
+            "name": "IconText",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/IconText/IconText.tsx",
+              "line": 31,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "IconTextIconVariant",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/IconText/IconText.tsx",
+              "line": 7,
+              "kind": "TypeAliasDeclaration"
+            }
+          },
+          {
+            "name": "IconTextLayout",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/IconText/IconText.tsx",
+              "line": 8,
+              "kind": "TypeAliasDeclaration"
+            }
+          },
+          {
+            "name": "IconTextProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/IconText/IconText.tsx",
+              "line": 10,
+              "kind": "InterfaceDeclaration"
+            }
+          }
+        ]
+      },
+      "IconTag": {
+        "exported": true,
+        "members": [
+          {
+            "name": "IconTag",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/IconTag/IconTag.tsx",
+              "line": 16,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "IconTagProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/IconTag/IconTag.tsx",
+              "line": 8,
+              "kind": "InterfaceDeclaration"
+            }
+          },
+          {
+            "name": "IconTagSize",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/IconTag/IconTag.tsx",
+              "line": 5,
+              "kind": "TypeAliasDeclaration"
+            }
+          },
+          {
+            "name": "IconTagVariant",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/IconTag/IconTag.tsx",
+              "line": 6,
+              "kind": "TypeAliasDeclaration"
+            }
+          }
+        ]
+      },
+      "InlineHeader": {
+        "exported": true,
+        "members": [
+          {
+            "name": "InlineHeader",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/InlineHeader/InlineHeader.tsx",
+              "line": 10,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "InlineHeaderProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/InlineHeader/InlineHeader.tsx",
+              "line": 4,
+              "kind": "InterfaceDeclaration"
+            }
+          }
+        ]
+      },
+      "ListBlock": {
+        "exported": true,
+        "members": [
+          {
+            "name": "ListBlock",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/ListBlock/ListBlock.tsx",
+              "line": 22,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "ListBlockProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/ListBlock/ListBlock.tsx",
+              "line": 12,
+              "kind": "InterfaceDeclaration"
+            }
+          }
+        ]
+      },
+      "ListItem": {
+        "exported": true,
+        "members": [
+          {
+            "name": "ListItem",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/ListItem/ListItem.tsx",
+              "line": 23,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "ListItemProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/ListItem/ListItem.tsx",
+              "line": 7,
+              "kind": "InterfaceDeclaration"
+            }
+          },
+          {
+            "name": "ListItemSize",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/ListItem/ListItem.tsx",
+              "line": 5,
+              "kind": "TypeAliasDeclaration"
+            }
+          },
+          {
+            "name": "ListItemVariant",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/ListItem/ListItem.tsx",
+              "line": 4,
+              "kind": "TypeAliasDeclaration"
+            }
+          }
+        ]
+      },
+      "Separator": {
+        "exported": true,
+        "members": [
+          {
+            "name": "Separator",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Separator/Separator.tsx",
+              "line": 4,
+              "kind": "VariableDeclaration"
+            }
+          }
+        ]
+      },
+      "Steps": {
+        "exported": true,
+        "members": [
+          {
+            "name": "Steps",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Steps/Steps.tsx",
+              "line": 15,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "StepsItem",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Steps/Steps.tsx",
+              "line": 27,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "StepsItemProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/Steps/Steps.tsx",
+              "line": 3,
+              "kind": "InterfaceDeclaration"
+            }
+          },
+          {
+            "name": "StepsProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/Steps/Steps.tsx",
+              "line": 9,
+              "kind": "InterfaceDeclaration"
+            }
+          }
+        ]
+      }
+    },
+    "images": {
+      "Image": {
+        "exported": true,
+        "members": [
+          {
+            "name": "Image",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Image/Image.tsx",
+              "line": 30,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "ImageProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/Image/Image.tsx",
+              "line": 8,
+              "kind": "InterfaceDeclaration"
+            }
+          }
+        ]
+      },
+      "ImageBlock": {
+        "exported": true,
+        "members": [
+          {
+            "name": "ImageBlock",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/ImageBlock/ImageBlock.tsx",
+              "line": 11,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "ImageBlockProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/ImageBlock/ImageBlock.tsx",
+              "line": 5,
+              "kind": "InterfaceDeclaration"
+            }
+          }
+        ]
+      },
+      "ImageGallery": {
+        "exported": true,
+        "members": [
+          {
+            "name": "GalleryModal",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/ImageGallery/GalleryModal.tsx",
+              "line": 16,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "GalleryModalProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/ImageGallery/GalleryModal.tsx",
+              "line": 9,
+              "kind": "InterfaceDeclaration"
+            }
+          },
+          {
+            "name": "ImageGallery",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/ImageGallery/ImageGallery.tsx",
+              "line": 32,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "ImageItem",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/ImageGallery/ImageGallery.tsx",
+              "line": 6,
+              "kind": "InterfaceDeclaration"
+            }
+          },
+          {
+            "name": "OpenUIGalleryProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/ImageGallery/ImageGallery.tsx",
+              "line": 12,
+              "kind": "InterfaceDeclaration"
+            }
+          }
+        ]
+      },
+      "ImageText": {
+        "exported": true,
+        "members": [
+          {
+            "name": "ImageText",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/ImageText/ImageText.tsx",
+              "line": 20,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "ImageTextLayout",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/ImageText/ImageText.tsx",
+              "line": 5,
+              "kind": "TypeAliasDeclaration"
+            }
+          },
+          {
+            "name": "ImageTextProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/ImageText/ImageText.tsx",
+              "line": 7,
+              "kind": "InterfaceDeclaration"
+            }
+          }
+        ]
+      },
+      "ImageTextLarge": {
+        "exported": true,
+        "members": [
+          {
+            "name": "ImageTextLarge",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/ImageTextLarge/ImageTextLarge.tsx",
+              "line": 14,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "ImageTextLargeProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/ImageTextLarge/ImageTextLarge.tsx",
+              "line": 5,
+              "kind": "InterfaceDeclaration"
+            }
+          }
+        ]
+      }
+    },
+    "citations/sources": {
+      "Citation": {
+        "exported": true,
+        "members": [
+          {
+            "name": "Citation",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Citation/Citation.tsx",
+              "line": 79,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "CitationItem",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Citation/CitationItem.tsx",
+              "line": 10,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "CitationItemProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/Citation/CitationItem.tsx",
+              "line": 6,
+              "kind": "InterfaceDeclaration"
+            }
+          },
+          {
+            "name": "CitationProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/Citation/Citation.tsx",
+              "line": 10,
+              "kind": "InterfaceDeclaration"
+            }
+          },
+          {
+            "name": "TextContentCitation",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Citation/TextContentCitation.tsx",
+              "line": 26,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "TextContentCitationProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/Citation/TextContentCitation.tsx",
+              "line": 21,
+              "kind": "TypeAliasDeclaration"
+            }
+          }
+        ]
+      },
+      "Sources": {
+        "exported": true,
+        "members": [
+          {
+            "name": "CardSource",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/Sources/SourceContext.tsx",
+              "line": 11,
+              "kind": "TypeAliasDeclaration"
+            }
+          },
+          {
+            "name": "CardSourceContext",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Sources/SourceContext.tsx",
+              "line": 26,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "CardSourceProvider",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Sources/SourceContext.tsx",
+              "line": 52,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "CardSourceSchema",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Sources/SourceContext.tsx",
+              "line": 5,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "getFaviconUrl",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Sources/SourceContext.tsx",
+              "line": 35,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "ListedSourceItem",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Sources/SourcesItem.tsx",
+              "line": 11,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "ListedSources",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Sources/ListedSources.tsx",
+              "line": 13,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "ListedSourcesProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/Sources/ListedSources.tsx",
+              "line": 9,
+              "kind": "InterfaceDeclaration"
+            }
+          },
+          {
+            "name": "openSourceInNewTab",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Sources/SourceContext.tsx",
+              "line": 18,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "Sources",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Sources/Sources.tsx",
+              "line": 9,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "SourcesItemComponentProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/Sources/SourcesItem.tsx",
+              "line": 6,
+              "kind": "InterfaceDeclaration"
+            }
+          },
+          {
+            "name": "SourceWithFavicon",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/Sources/SourceContext.tsx",
+              "line": 13,
+              "kind": "InterfaceDeclaration"
+            }
+          },
+          {
+            "name": "useCardSourceContext",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Sources/SourceContext.tsx",
+              "line": 77,
+              "kind": "VariableDeclaration"
+            }
+          }
+        ]
+      },
+      "SourceFaviconImage": {
+        "exported": true,
+        "members": [
+          {
+            "name": "SourceFaviconImage",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/SourceFaviconImage/SourceFaviconImage.tsx",
+              "line": 15,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "SourceFaviconImageProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/SourceFaviconImage/SourceFaviconImage.tsx",
+              "line": 4,
+              "kind": "InterfaceDeclaration"
+            }
+          }
+        ]
+      }
+    },
+    "table": {
+      "Table": {
+        "exported": true,
+        "members": [
+          {
+            "name": "ScrollableTable",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Table/Table.tsx",
+              "line": 104,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "ScrollableTableProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/Table/Table.tsx",
+              "line": 99,
+              "kind": "InterfaceDeclaration"
+            }
+          },
+          {
+            "name": "Table",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Table/Table.tsx",
+              "line": 16,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "TableBody",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Table/Table.tsx",
+              "line": 42,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "TableCell",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Table/Table.tsx",
+              "line": 86,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "TableCellProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/Table/Table.tsx",
+              "line": 82,
+              "kind": "InterfaceDeclaration"
+            }
+          },
+          {
+            "name": "TableFooter",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Table/Table.tsx",
+              "line": 50,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "TableHead",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Table/Table.tsx",
+              "line": 70,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "TableHeader",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Table/Table.tsx",
+              "line": 34,
+              "kind": "VariableDeclaration"
+            }
+          },
+          {
+            "name": "TableHeadProps",
+            "kind": "type",
+            "at": {
+              "file": "packages/react-ui/src/components/Table/Table.tsx",
+              "line": 65,
+              "kind": "InterfaceDeclaration"
+            }
+          },
+          {
+            "name": "TableRow",
+            "kind": "value",
+            "at": {
+              "file": "packages/react-ui/src/components/Table/Table.tsx",
+              "line": 58,
+              "kind": "VariableDeclaration"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "dependencyOnly": {
+    "Carousel": {
+      "exported": true,
+      "members": [
+        {
+          "name": "Carousel",
+          "kind": "value",
+          "at": {
+            "file": "packages/react-ui/src/components/Carousel/Carousel.tsx",
+            "line": 48,
+            "kind": "VariableDeclaration"
+          }
+        },
+        {
+          "name": "CarouselContent",
+          "kind": "value",
+          "at": {
+            "file": "packages/react-ui/src/components/Carousel/Carousel.tsx",
+            "line": 190,
+            "kind": "VariableDeclaration"
+          }
+        },
+        {
+          "name": "CarouselItem",
+          "kind": "value",
+          "at": {
+            "file": "packages/react-ui/src/components/Carousel/Carousel.tsx",
+            "line": 219,
+            "kind": "VariableDeclaration"
+          }
+        },
+        {
+          "name": "CarouselNext",
+          "kind": "value",
+          "at": {
+            "file": "packages/react-ui/src/components/Carousel/Carousel.tsx",
+            "line": 250,
+            "kind": "VariableDeclaration"
+          }
+        },
+        {
+          "name": "CarouselPrevious",
+          "kind": "value",
+          "at": {
+            "file": "packages/react-ui/src/components/Carousel/Carousel.tsx",
+            "line": 227,
+            "kind": "VariableDeclaration"
+          }
+        },
+        {
+          "name": "CarouselProps",
+          "kind": "type",
+          "at": {
+            "file": "packages/react-ui/src/components/Carousel/Carousel.tsx",
+            "line": 34,
+            "kind": "InterfaceDeclaration"
+          }
+        },
+        {
+          "name": "CarouselRef",
+          "kind": "type",
+          "at": {
+            "file": "packages/react-ui/src/components/Carousel/Carousel.tsx",
+            "line": 43,
+            "kind": "InterfaceDeclaration"
+          }
+        }
+      ]
+    },
+    "IconButton": {
+      "exported": true,
+      "members": [
+        {
+          "name": "IconButton",
+          "kind": "value",
+          "at": {
+            "file": "packages/react-ui/src/components/IconButton/IconButton.tsx",
+            "line": 52,
+            "kind": "VariableDeclaration"
+          }
+        },
+        {
+          "name": "IconButtonProps",
+          "kind": "type",
+          "at": {
+            "file": "packages/react-ui/src/components/IconButton/IconButton.tsx",
+            "line": 11,
+            "kind": "InterfaceDeclaration"
+          }
+        }
+      ]
+    }
+  },
+  "adjacentUnclaimed": {
+    "EditableTable": {
+      "exported": true,
+      "members": [
+        {
+          "name": "EditableCellType",
+          "kind": "type",
+          "at": {
+            "file": "packages/react-ui/src/components/EditableTable/base/components/CellTypes.ts",
+            "line": 3,
+            "kind": "TypeAliasDeclaration"
+          }
+        },
+        {
+          "name": "EditableTable",
+          "kind": "value",
+          "at": {
+            "file": "packages/react-ui/src/components/EditableTable/EditableTable.tsx",
+            "line": 125,
+            "kind": "VariableDeclaration"
+          }
+        },
+        {
+          "name": "EditableTableChangesBar",
+          "kind": "value",
+          "at": {
+            "file": "packages/react-ui/src/components/EditableTable/EditableTable.tsx",
+            "line": 466,
+            "kind": "VariableDeclaration"
+          }
+        },
+        {
+          "name": "EditableTableChangesBarProps",
+          "kind": "type",
+          "at": {
+            "file": "packages/react-ui/src/components/EditableTable/EditableTable.tsx",
+            "line": 452,
+            "kind": "InterfaceDeclaration"
+          }
+        },
+        {
+          "name": "EditableTableColumn",
+          "kind": "type",
+          "at": {
+            "file": "packages/react-ui/src/components/EditableTable/EditableTable.tsx",
+            "line": 40,
+            "kind": "InterfaceDeclaration"
+          }
+        },
+        {
+          "name": "EditableTableProps",
+          "kind": "type",
+          "at": {
+            "file": "packages/react-ui/src/components/EditableTable/EditableTable.tsx",
+            "line": 49,
+            "kind": "InterfaceDeclaration"
+          }
+        },
+        {
+          "name": "EditableTableRow",
+          "kind": "type",
+          "at": {
+            "file": "packages/react-ui/src/components/EditableTable/EditableTable.tsx",
+            "line": 35,
+            "kind": "InterfaceDeclaration"
+          }
+        }
+      ]
+    }
+  },
+  "discrepancies": []
+}

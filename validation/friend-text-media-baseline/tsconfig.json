@@ -1,0 +1,59 @@
+{
+  "//": [
+    "Directory-local tsconfig for #31. It exists because #24's review flagged that",
+    "claiming a shared-config change is unavoidable requires first evaluating a",
+    "local one -- and a local one does work.",
+    "",
+    "Two load-bearing details, both found by measuring rather than assuming:",
+    "",
+    "  1. `react` must map to @types/react, NOT to the runtime package (which ships",
+    "     no declarations). Mapping the runtime package makes every importer --",
+    "     legacy sources included -- lose its types. This is the mistake #24 made",
+    "     and then corrected.",
+    "",
+    "  2. There must be NO `\"*\"` catch-all in `paths`. A catch-all shadows normal",
+    "     node resolution for the legacy sources this program pulls in, and they",
+    "     then fail to find their own @types. `packages/react-ui` typechecks with 0",
+    "     errors under its own config, so any error in those files is this config's",
+    "     fault, not a legacy defect. Only the specifiers OUR files import are",
+    "     mapped; legacy sources resolve their own dependencies by normal walk-up",
+    "     from packages/react-ui.",
+    "",
+    "Run: pnpm --dir packages/react-ui exec tsc --noEmit -p ../../validation/friend-text-media-baseline/tsconfig.json"
+  ],
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node"],
+    "typeRoots": ["../../packages/react-ui/node_modules/@types", "../../node_modules/@types"],
+    "baseUrl": ".",
+    "paths": {
+      "react": ["../../packages/react-ui/node_modules/@types/react"],
+      "react/jsx-runtime": ["../../packages/react-ui/node_modules/@types/react/jsx-runtime"],
+      "react-dom": ["../../packages/react-ui/node_modules/@types/react-dom"],
+      "react-dom/client": ["../../packages/react-ui/node_modules/@types/react-dom/client"],
+      "@storybook/test": ["../../packages/react-ui/node_modules/@storybook/test"],
+      "remark-gfm": ["../../packages/react-ui/node_modules/remark-gfm"],
+      "vitest": ["../../packages/react-ui/node_modules/vitest"],
+      "vitest/config": ["../../packages/react-ui/node_modules/vitest/config"]
+    }
+  },
+  "include": [
+    "tests/**/*.ts",
+    "tests/**/*.tsx",
+    "setup/**/*.ts",
+    "setup/**/*.tsx",
+    "vitest.config.ts",
+    "../../packages/react-ui/src/types.d.ts"
+  ]
+}
