@@ -1,3 +1,13 @@
+# CURRENT — OptionCards local/independent GREEN; authorized stacked draft preparing — 2026-10-25
+
+W2 harness03927d88a and evidence6db4d26e7 integrated08f36c99c/8f09f299f. Independent Chrome6cases /15,732 image-inclusive paired snapshots PASS on exact4911a82f825ce518f073fd995637d853a38a6620 artifact498447 bytes SHA0a66152ad19a6c7e0a732a652175723e8bd1bcde1b5159a10e3966d835b67821. Package/lock unchanged; installedDOM2pass; native public-root/strict3modes/pruning pass. W2 browser released, all contexts/server closed.
+
+Final local package CI110/110, format/lint/types/build/Publint/ATTW PASS; two existing ThemeProvider warnings, zero lint errors. Both independent GPT6.1-Sol source/harness review axes clear after stale pending README wording updated. No source correction/new dependencies or shared helper changes. Raw reports preserved with narrow exclusions. Source behavior/native controlled semantics preserved; no custom runtime machinery.
+
+Authorized next: push only fork ankit-thesys/openui-comp branch codex/react-ui-core-option-cards, open attached stacked DRAFT targeting codex/react-ui-core-data-cards (#35), monitor/fix remoteCI. Prepared body docs/planning/option-cards-pr-draft.md. No local gate remains. No merge/release/closure/upstream/main/legacy/previews/crates changes. No chart production; root dispatch afterward with established bootstraporder. SSR/parser streaming/performance/memory and dynamicCSSrecovery unvalidated. Native Tab/Enter/Space preserved, custom arrows/roving absent in both implementations.
+
+---
+
 # CURRENT — OptionCards frozen artifact ready / Worker2 FIRST browser window — 2026-10-25
 
 Branch codex/react-ui-core-option-cards based PR35 reviewed838d78ec2. W2 sourceea6311ba0 integratede7dbede07; W1 root/export integration `4911a82f825ce518f073fd995637d853a38a6620`. Existing controlled/native behavior, markdown and private row helper preserved. No new dependency/package-lock changes. Focused public integration4/4 passes after genuine missing-export/pruning RED; producer build/strict types and affected formatting pass. Both GPT6.1-Sol review axes zero actionable findings.
