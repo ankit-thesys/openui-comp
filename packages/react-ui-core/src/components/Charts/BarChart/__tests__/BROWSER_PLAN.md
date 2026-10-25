@@ -1,6 +1,6 @@
 # Cartesian and mini installed-browser plan
 
-Status: harness prepared, not run. Worker1 owns FIRST chart browser window. Do not launch Chrome before explicit release and exact frozen normal artifact revision/hash/consumer. No browser acceptance is inferred from source checks.
+Status: first installed runs found a shared no-provider measurement mismatch; the full matrix is incomplete. See BROWSER_FAILURE.md for preserved evidence and the Worker1-owned correction gate. All Chrome/server processes are closed; browser released to Worker1. The following plan remains the retest scope.
 
 ## Source checkpoints
 
@@ -30,4 +30,4 @@ Horizontal numeric width affects scales without setting its CSS box; compare rat
 
 Static markup tests validate initial output only, not SSR/hydration styling. This matrix does not certify SSR, transport/parser streaming, performance/memory, all19 families (Worker1 owns others), arbitrary dynamic host stylesheet recovery or frame-by-frame animation timing. Corrected PR30 friend baseline is read-only reference; no writer runs in reserved validation/friend-chart-baseline and no unsupported baseline scenarios are counted as passing.
 
-Harness syntax and strict fixture types pass. Both independent reviews are clear after requiring stable comparisons and replacing a fixed scroll delay with actual stable-position observation. Reviews were read-only and did not run Chrome. Normally installed bundle preparation and measured browser evidence remain pending. Preserve raw JSON/log bytes and original failed attempts; owner fixes only, report shared issues to Worker1.
+Harness syntax and strict fixture types pass. Both independent reviews are clear after requiring stable comparisons and replacing a fixed scroll delay with actual stable-position observation. Reviews were read-only and did not run Chrome. Installed bundle preparation succeeded after a test-only baseline path correction; actual comparisons failed at Line no-provider tracking, so full browser acceptance remains pending. Preserve raw JSON/log bytes and original failed attempts; owner fixes only, report shared issues to Worker1.

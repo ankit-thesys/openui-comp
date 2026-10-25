@@ -81,7 +81,9 @@ const legacyImports =
       const target =
         name === "PrintContextProvider"
           ? path.join(repository, "packages/react-ui/src/context/PrintContext")
-          : path.join(baseline, family);
+          : name === "ThemeProvider"
+            ? path.join(baseline, family)
+            : path.join(baseline, "Charts", family);
       return `import {${name}} from ${JSON.stringify(target)};`;
     })
     .join("\n") + `\nconst Core={${required.join(",")}};`;
@@ -350,6 +352,14 @@ const families = [
   "mini-bar",
   "mini-line",
 ];
+const selectedFamilies = process.env.CORE_CHART_FAMILIES
+  ? process.env.CORE_CHART_FAMILIES.split(",")
+  : families;
+assert(
+  selectedFamilies.length && selectedFamilies.every((family) => families.includes(family)),
+  "known selected chart families",
+);
+report.selectedFamilies = selectedFamilies;
 const markSelector = (family) =>
   family.startsWith("mini")
     ? `.openui-${family}-chart-container svg`
@@ -406,6 +416,35 @@ try {
           if (attempt < 29) await Promise.all(pages.map((page) => page.waitForTimeout(100)));
         }
         report.failedComparison = { framework, order, label, expected, actual, stableSamples };
+        report.fontDiagnostic = await Promise.all(
+          pages.map((page) =>
+            page.evaluate(() => {
+              const root = document.querySelector(".consumer-chart");
+              const tick = document.querySelector(".openui-line-chart-y-tick");
+              if (!root || !tick) return null;
+              const rootStyle = getComputedStyle(root),
+                tickStyle = getComputedStyle(tick);
+              const canvas = document.createElement("canvas"),
+                context = canvas.getContext("2d");
+              const measurementFont =
+                rootStyle.getPropertyValue("--openui-text-label-xs").trim() ||
+                '400 12px/1.25 "Inter", sans-serif';
+              context.font = measurementFont;
+              const unspaced = context.measureText("-10").width;
+              context.letterSpacing = tickStyle.letterSpacing;
+              return {
+                cssFont: rootStyle.getPropertyValue("--openui-text-label-xs"),
+                cssTracking: rootStyle.getPropertyValue("--openui-text-label-xs-letter-spacing"),
+                renderedFont: tickStyle.font,
+                measurementFont,
+                renderedTracking: tickStyle.letterSpacing,
+                unspaced,
+                renderedSpacingWidth: context.measureText("-10").width,
+              };
+            }),
+          ),
+        );
+
         assert.deepEqual(actual, expected, `${framework}/${order}/${label}`);
         assert.fail(`${label}: paired snapshots did not remain unchanged for three samples`);
       };
@@ -450,7 +489,7 @@ try {
           await page.evaluate(() => window.mountCharts());
           await page.locator("[data-ready]").waitFor();
         }
-        for (const family of families) {
+        for (const family of selectedFamilies) {
           await configure(pages, {
             family,
             theme: "light",
@@ -747,7 +786,7 @@ try {
           framework,
           order,
           status: "passed",
-          families: families.length,
+          families: selectedFamilies.length,
           snapshots: comparisons,
         });
         report.snapshots += comparisons;

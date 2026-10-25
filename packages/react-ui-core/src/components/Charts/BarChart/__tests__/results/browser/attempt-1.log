@@ -1,0 +1,68 @@
+✘ [ERROR] Could not resolve "/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui/src/components/AreaChart"
+
+    <stdin>:3:24:
+      3 │ ...hart} from "/Users/ankitdas/.codex/worktrees/63b2/openui/package...
+        ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui/src/components/LineChart"
+
+    <stdin>:5:24:
+      5 │ ...hart} from "/Users/ankitdas/.codex/worktrees/63b2/openui/package...
+        ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui/src/components/BarChart"
+
+    <stdin>:7:23:
+      7 │ ...hart} from "/Users/ankitdas/.codex/worktrees/63b2/openui/package...
+        ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui/src/components/ScatterChart"
+
+    <stdin>:10:27:
+      10 │ ...art} from "/Users/ankitdas/.codex/worktrees/63b2/openui/package...
+         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui/src/components/MiniAreaChart"
+
+    <stdin>:11:28:
+      11 │ ...art} from "/Users/ankitdas/.codex/worktrees/63b2/openui/package...
+         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui/src/components/MiniBarChart"
+
+    <stdin>:12:27:
+      12 │ ...art} from "/Users/ankitdas/.codex/worktrees/63b2/openui/package...
+         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui/src/components/MiniLineChart"
+
+    <stdin>:13:28:
+      13 │ ...art} from "/Users/ankitdas/.codex/worktrees/63b2/openui/package...
+         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467
+  let error = new Error(text);
+              ^
+
+Error: Build failed with 7 errors:
+<stdin>:3:24: ERROR: Could not resolve "/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui/src/components/AreaChart"
+<stdin>:5:24: ERROR: Could not resolve "/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui/src/components/LineChart"
+<stdin>:7:23: ERROR: Could not resolve "/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui/src/components/BarChart"
+<stdin>:10:27: ERROR: Could not resolve "/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui/src/components/ScatterChart"
+<stdin>:11:28: ERROR: Could not resolve "/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui/src/components/MiniAreaChart"
+...
+    at failureErrorWithLog (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    at /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    at /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    at buildResponseToResult (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    at /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    at responseCallbacks.<computed> (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    at handleIncomingPacket (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    at Socket.readFromStdout (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  errors: [Getter/Setter],
+  warnings: [Getter/Setter]
+}
+
+Node.js v22.22.2
