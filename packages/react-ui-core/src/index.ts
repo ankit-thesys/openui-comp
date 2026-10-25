@@ -8,6 +8,13 @@ export * from "./components/Callout";
 export * from "./components/Card";
 export * from "./components/CardHeader";
 export * from "./components/Carousel";
+export type {
+  BaseChartProps,
+  ChartData,
+  ExportChartData,
+  LegendItem,
+  XAxisTickVariant,
+} from "./components/Charts/types";
 export * from "./components/CheckBoxGroup";
 export * from "./components/CheckBoxItem";
 export * from "./components/Chips";

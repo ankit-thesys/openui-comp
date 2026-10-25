@@ -1,3 +1,13 @@
+# CURRENT — chart slice14 dispatched / shared-type bootstrap GREEN — 2026-10-25
+
+Root explicitly dispatched full chart slice14 after PR36 green. Branch codex/react-ui-core-charts based reviewed d9d6c78f085bfb92d475d76bead2c73dbb428131; local docsfe60de390/b8c69cd5c carried asdb552aab6/6811a31f2, PR36unchanged. W1 FIRST owns Charts/types bootstrap; three files copied byte-for-byte, rootexports only existing5types. Genuine public typeTS2305RED → minimalcopy/export → focusedstrictconsumer1/1GREEN, producerbuild/typesPASS. Formatting-induced fixtureerror preserved/corrected with conventionaltypequery. BothGPT6.1-Solreviewaxesclear. Evidence/charts-bootstrap.
+
+PROMPT committed bootstrap handoff enables W2 prerequisite files: BarChart/types.ts, BarChart/parts/horizontalBarGeometry.ts, ScatterChart/types.ts (exclusiveW2ownership). W1 waits for committedprereqs before declaring remainingfoundation buildable. Then W1owns Charts/utils/hooks/shared/styles/PrintContext/deps/rootbarrels; W2owns all Cartesian+Mini family paths. W1laterowns Pie/Radial/Radar, Heatmap/Funnel/CalendarHeatmap/SegmentedBarfamilies. No cross-owner edits/reverts; integrate committedbatches only. Preserve ReactPrintContext separately from printmediahook.
+
+Bootstrap is NOT complete chartfoundation/slice: no runtimecharts/style/dependencies or installed/browseracceptance yet. Inventory19variants/parts/types and plan docs/planning/slice14-readonly-proposal.md remains executionreference with this explicitdispatch superseding its oldreadonlyheading. W1 owns FIRST chartbrowserwindow; W2 source-only until release. No activeChrome/server. StockGoober1:1/no legacyproductionimports/customresolver/dependencypatches, preserve unrelatedlockgraph. PR30baseline read-only, frienddirsreserved; legacy/previews/crates untouched. No helper/TLgated work, merge/main/upstream/release/ticketclosure. Finalboundedbatches+packedchecks/review → stackedDRAFT atop36/CI; not atbootstrap alone.
+
+---
+
 # CURRENT — deferred OptionCards COMPLETE as reviewed DRAFT PR36; CI GREEN — 2026-10-25
 
 Fork-only https://github.com/ankit-thesys/openui-comp/pull/36 OPEN/DRAFT, attached, stacked on codex/react-ui-core-data-cards (#35). Reviewed/pushed product head `d9d6c78f085bfb92d475d76bead2c73dbb428131`. BuildJS40186855402 PASS8m55s and changeset40186855341 PASS15s. Remote core110/110 tests plus format/lint/types/build/Publint/ATTW pass. Final body docs/planning/option-cards-pr-draft.md updated to green; no source correction required after opening.

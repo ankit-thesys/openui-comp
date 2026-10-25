@@ -1,0 +1,28 @@
+TAP version 13
+# Subtest: public shared chart types preserve data, axis, legend and export contracts
+not ok 1 - public shared chart types preserve data, axis, legend and export contracts
+  ---
+  duration_ms: 1278.102458
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/tests/chart-types.test.mjs:6:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    packages/react-ui-core/tests/fixtures/chart-types.mts(31,1): error TS2578: Unused '@ts-expect-error' directive.
+    
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/tests/chart-types.test.mjs:30:13)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1347.329334
