@@ -152,6 +152,43 @@ void invalid;`;
         }
         if (name === "selected") assert.match(bundle.outputFiles[0].text, /break-spaces/);
       }
+      // Exercise npm's public peer contract in a separate consumer, not the frozen install.
+      const unsupported = await fs.mkdtemp(path.join(os.tmpdir(), "chat-kit-unsupported-zod-"));
+      try {
+        const manifest = JSON.parse(await fs.readFile(path.join(consumer, "package.json"), "utf8"));
+        const dependencies = Object.fromEntries(
+          Object.entries(manifest.dependencies).map(([name, version]) => [
+            name,
+            version.startsWith("file:")
+              ? `file:${path.resolve(consumer, version.slice(5))}`
+              : version,
+          ]),
+        );
+        dependencies.zod = "3.25.0";
+        await fs.writeFile(
+          path.join(unsupported, "package.json"),
+          JSON.stringify({ private: true, dependencies }),
+        );
+        assert.throws(
+          () =>
+            command(
+              "npm",
+              [
+                "install",
+                "--package-lock-only",
+                "--strict-peer-deps",
+                "--ignore-scripts",
+                "--no-audit",
+                "--no-fund",
+              ],
+              unsupported,
+            ),
+          (error) => /ERESOLVE/.test(error.message) && /\^3\.25\.76/.test(error.message),
+          "npm must reject Zod 3.25.0 under the kit's tested-minimum peer contract",
+        );
+      } finally {
+        await fs.rm(unsupported, { recursive: true, force: true });
+      }
     } finally {
       if (!process.env.KIT_CONSUMER) await fs.rm(consumer, { recursive: true, force: true });
     }
