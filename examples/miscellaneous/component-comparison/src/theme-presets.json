@@ -1,5 +1,5 @@
 {
-  "version": "lab-theme-presets-v1",
+  "version": "lab-theme-presets-v2",
   "hashContract": "sha256(JSON.stringify({version:fixture.version,id,label,lightTheme,darkTheme})) in this field order, UTF-8",
   "presets": [
     {
@@ -7,7 +7,7 @@
       "label": "Default",
       "lightTheme": {},
       "darkTheme": {},
-      "definitionHash": "cc8364b28ec0c14754264f5504345914e75ebf8203aa6922b21a606ae26d337d"
+      "definitionHash": "720dd4f2ff9f5b19411d482c97132f081f6d7160c9737ad9310354d0a7c1439f"
     },
     {
       "id": "cyberpunk",
@@ -40,7 +40,6 @@
         "borderInteractiveSelected": "oklch(0.50 0.14 210)",
         "borderAccent": "oklch(0.50 0.14 210)",
         "borderAccentEmphasis": "oklch(0.55 0.24 330)",
-        "borderAccentSelected": "oklch(0.50 0.14 210)",
         "highlight": "oklch(0.90 0.04 235)",
         "highlightSubtle": "oklch(0.90 0.04 235)",
         "highlightStrong": "oklch(0.73 0.08 220)",
@@ -91,7 +90,6 @@
         "borderInteractiveSelected": "oklch(0.82 0.16 195)",
         "borderAccent": "oklch(0.82 0.16 195)",
         "borderAccentEmphasis": "oklch(0.72 0.25 330)",
-        "borderAccentSelected": "oklch(0.82 0.16 195)",
         "highlight": "oklch(0.22 0.06 260)",
         "highlightSubtle": "oklch(0.22 0.06 260)",
         "highlightStrong": "oklch(0.42 0.11 240)",
@@ -114,7 +112,7 @@
         "fontBody": "ui-monospace, monospace",
         "fontLabel": "ui-monospace, monospace"
       },
-      "definitionHash": "ba672d41d2eb27df60bc0bcf157d6cfb0e7c5ce5ffc216d7ac8c2ad50c0b1ec3"
+      "definitionHash": "f8fd65ffcdbd8e32320a94d31ef99d1a877635095cbb0b91bc5413d1f73b528f"
     },
     {
       "id": "crimson-desert",
@@ -147,7 +145,6 @@
         "borderInteractiveSelected": "oklch(0.48 0.18 25)",
         "borderAccent": "oklch(0.48 0.18 25)",
         "borderAccentEmphasis": "oklch(0.57 0.16 48)",
-        "borderAccentSelected": "oklch(0.48 0.18 25)",
         "highlight": "oklch(0.89 0.065 75)",
         "highlightSubtle": "oklch(0.89 0.065 75)",
         "highlightStrong": "oklch(0.73 0.08 60)",
@@ -198,7 +195,6 @@
         "borderInteractiveSelected": "oklch(0.68 0.19 28)",
         "borderAccent": "oklch(0.68 0.19 28)",
         "borderAccentEmphasis": "oklch(0.75 0.16 55)",
-        "borderAccentSelected": "oklch(0.68 0.19 28)",
         "highlight": "oklch(0.27 0.045 42)",
         "highlightSubtle": "oklch(0.27 0.045 42)",
         "highlightStrong": "oklch(0.46 0.08 47)",
@@ -221,7 +217,7 @@
         "fontBody": "Georgia, serif",
         "fontLabel": "Georgia, serif"
       },
-      "definitionHash": "beab2b1b197fbca9c797429315365c35ca74e21721371db3c19771e2a407e766"
+      "definitionHash": "cb90ab4e65c957be2f23f2a2b88f808f6575b9da4491b008153fff9b9e40cad0"
     }
   ]
 }
