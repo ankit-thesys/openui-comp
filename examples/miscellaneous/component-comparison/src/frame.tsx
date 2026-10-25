@@ -1,7 +1,10 @@
+import type { Theme } from "@openuidev/react-ui-core";
+import { getThemePreset } from "./theme-presets.mjs";
 import { Renderer } from "@openuidev/react-lang";
 import {
   Component,
   useEffect,
+  useMemo,
   useState,
   type ComponentProps,
   type ComponentType,
@@ -36,16 +39,21 @@ class PaneBoundary extends Component<
 export function mountPane({
   library,
   ThemeProvider,
+  HorizontalBarChart,
 }: {
+  HorizontalBarChart?: ComponentType<any>;
   library: ComponentProps<typeof Renderer>["library"];
   ThemeProvider: ComponentType<{
     children: ReactNode;
     mode: "light" | "dark";
     cssSelector: string;
+    lightTheme?: Theme;
+    darkTheme?: Theme;
   }>;
 }) {
   function Pane() {
     const [snapshot, setSnapshot] = useState<Snapshot>();
+    const pendingTools = useMemo(() => ({ benchRows: () => new Promise(() => {}) }), []);
     const [errors, setErrors] = useState<Record<string, string>>({});
     useEffect(() => {
       let revision = -1;
@@ -79,6 +87,7 @@ export function mountPane({
         <p className="pane-empty">Connecting to the shared conversation…</p>
       );
     const last = snapshot.messages.at(-1)?.id;
+    const preset = snapshot.themePreset ?? getThemePreset(snapshot.presetId ?? "default");
     return (
       <>
         <output id="pane-source" hidden>
@@ -93,8 +102,9 @@ export function mountPane({
         <output id="pane-revision" hidden>
           {snapshot.revision}
         </output>
-        <ThemeProvider mode={snapshot.theme} cssSelector="#comparison-pane">
-          <main id="comparison-pane">
+        <output id="pane-preset" hidden>{preset.id}:{preset.definitionHash}</output>
+        <ThemeProvider mode={snapshot.theme} cssSelector="#comparison-pane" lightTheme={preset.lightTheme as Theme} darkTheme={preset.darkTheme as Theme}>
+          <main id="comparison-pane" style={{background:"var(--openui-background)",color:"var(--openui-text-neutral-primary)",minHeight:"100vh"}}>
             {!snapshot.messages.length && (
               <div className="pane-empty">
                 <span>One response. Two renderings.</span>
@@ -118,9 +128,10 @@ export function mountPane({
                     </div>
                   )}
                   <PaneBoundary key={message.id} resetKey={snapshot.viewId}>
-                    <Renderer
+                    {snapshot.bench?.directHorizontal && HorizontalBarChart ? <div style={{height:snapshot.bench.directHorizontal.parentHeight}}><HorizontalBarChart data={[{category:"A",value:4},{category:"B",value:7}]} categoryKey="category" dataKeys={["value"]} height={snapshot.bench.directHorizontal.height} fitLegendInHeight={snapshot.bench.directHorizontal.fitLegendInHeight} onClick={(datum:unknown)=>parent.postMessage({channel,type:"action",viewId:snapshot.viewId,responseId:message.id,action:{type:"chart-click",params:{datum},humanFriendlyMessage:"Chart click"}},location.origin)}/></div> : <Renderer
                       response={message.content}
                       library={library}
+                      toolProvider={snapshot.bench?.pendingQuery ? pendingTools : undefined}
                       isStreaming={
                         message.id === last && snapshot.status !== "idle"
                       }
@@ -152,7 +163,7 @@ export function mountPane({
                           );
                         }
                       }}
-                    />
+                    />}
                   </PaneBoundary>
                 </section>
               ),

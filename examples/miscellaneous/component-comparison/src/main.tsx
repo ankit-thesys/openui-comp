@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { createRoot } from "react-dom/client";
 import { ComparisonSession } from "./session.mjs";
+import { getThemePreset, themePresetFixture } from "./theme-presets.mjs";
 import { OfflineSession } from "./offline-session.mjs";
 import { channel } from "./protocol";
 import "./main.css";
@@ -18,6 +19,7 @@ function App() {
     const target = next === "offline" ? offlineSession : liveSession;
     target.clear();
     target.theme(session.getSnapshot().theme);
+    target.update({presetId:session.getSnapshot().presetId ?? "default"});
     setMode(next);
   }
   const snapshot = useSyncExternalStore(session.subscribe, session.getSnapshot);
@@ -31,6 +33,14 @@ function App() {
   }>();
   const [ready, setReady] = useState({ legacy: false, migrated: false });
   const [inspect, setInspect] = useState(false);
+  const [caseName,setCaseName] = useState("");
+  const [saveNotice,setSaveNotice] = useState("");
+  const [responseToSave,setResponseToSave] = useState("");
+  async function saveCase() {
+    const message = snapshot.messages.find(m=>m.id===responseToSave) ?? snapshot.messages.filter(m=>m.role==="assistant").at(-1);
+    if(!message || message.role!=="assistant") return;
+    try { const response=await fetch("/bench-api/cases",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:caseName||"Saved exploratory response",source:message.chunks?.join("")??message.content,coverage:[],assertions:[],steps:[],themePreset:{...getThemePreset(snapshot.presetId ?? "default"),mode:snapshot.theme}})});const result=await response.json();if(!response.ok)throw Error(result.error);setSaveNotice("Saved only the selected response. Not covered until independent assertions are added in the test bench."); } catch(error) {setSaveNotice(error instanceof Error?error.message:"Could not save case");}
+  }
   const legacy = useRef<HTMLIFrameElement>(null),
     migrated = useRef<HTMLIFrameElement>(null);
   const busy = snapshot.status !== "idle";
@@ -82,7 +92,9 @@ function App() {
     };
     window.addEventListener("message", receive);
     const abort = new AbortController();
-    if (mode === "live")
+    const embedded = document.getElementById("comparison-config")?.textContent;
+    if (mode === "live" && embedded) setConfig(JSON.parse(embedded));
+    if (mode === "live" && !embedded)
       fetch("/api/config", { signal: abort.signal })
         .then((r) => r.json())
         .then(setConfig)
@@ -122,8 +134,10 @@ function App() {
           open<span>ui</span>
           <i> / </i>
           <strong>Comparison lab</strong>
+
         </a>
         <div className="header-right">
+          <a href="/bench.html">Test bench ↗</a>
           <label className="theme-label">
             Mode
             <select
@@ -145,6 +159,7 @@ function App() {
                   ? "Mock · no AI calls"
                   : "Connecting"}
           </span>
+          <label className="theme-label">Preset<select aria-label="Shared theme preset" value={snapshot.presetId ?? "default"} onChange={e=>session.update({presetId:e.target.value})}>{themePresetFixture.presets.map(p=><option key={p.id} value={p.id}>{p.label}</option>)}</select></label>
           <label className="theme-label">
             Theme
             <select
@@ -333,6 +348,7 @@ function App() {
             Session memory only. Replay uses these retained chunks without
             another generation.
           </p>
+          {mode === "live" && <div className="save-case"><label>Response to save<select aria-label="Response to save" value={responseToSave} onChange={e=>setResponseToSave(e.target.value)}><option value="">Latest assistant response</option>{snapshot.messages.filter(m=>m.role==="assistant").map((m,i)=><option key={m.id} value={m.id}>Response {i+1}</option>)}</select></label><input aria-label="Saved case name" placeholder="Name this deterministic case" value={caseName} onChange={e=>setCaseName(e.target.value)}/><button onClick={()=>void saveCase()} disabled={!snapshot.messages.some(m=>m.role==="assistant")||busy}>Save selected response as case</button><p role="status">{saveNotice}</p></div>}
           <pre data-testid="raw-response">
             {snapshot.messages
               .filter((m) => m.role === "assistant")

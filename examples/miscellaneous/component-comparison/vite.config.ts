@@ -7,6 +7,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(import.meta.dirname, "index.html"),
+        bench: resolve(import.meta.dirname, "bench.html"),
         legacy: resolve(import.meta.dirname, "legacy.html"),
         migrated: resolve(import.meta.dirname, "migrated.html"),
       },

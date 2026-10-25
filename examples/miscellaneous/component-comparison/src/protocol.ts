@@ -8,6 +8,9 @@ export type Message = {
   chunks?: string[];
 };
 export type Snapshot = {
+  presetId?: string;
+  themePreset?: { id:string; label:string; definitionHash:string; lightTheme:Record<string,string|string[]>; darkTheme:Record<string,string|string[]> };
+  bench?: { pendingQuery?: boolean; directHorizontal?: {height:number|string; fitLegendInHeight:boolean; parentHeight:number} };
   offline?: boolean;
   activity?: { pane: string; event: unknown }[];
   messages: Message[];

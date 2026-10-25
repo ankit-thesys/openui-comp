@@ -4,6 +4,7 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { createApiHandler } from "./api.mjs";
 import { mockResponse } from "./mock.mjs";
+import { createBenchApi } from "./bench/api.mjs";
 export function configuration(env = process.env, registry = true) {
   const mode = env.COMPARISON_MODE ?? "mock";
   const missing = [];
@@ -37,7 +38,7 @@ export function configuration(env = process.env, registry = true) {
   }
   return { mode, configured: missing.length === 0, missing };
 }
-export async function createApp({ env = process.env, generate } = {}) {
+export async function createApp({ env = process.env, generate, distRoot } = {}) {
   const root = import.meta.dirname;
   let spec;
   try {
@@ -101,7 +102,9 @@ export async function createApp({ env = process.env, generate } = {}) {
           appType: "mpa",
         })
       : null;
+  const bench = createBenchApi();
   const server = http.createServer(async (req, res) => {
+    if (await bench(req,res)) return;
     if (req.url?.startsWith("/api/")) {
       await api(req, res);
       return;
@@ -117,13 +120,17 @@ export async function createApp({ env = process.env, generate } = {}) {
       const pathname = decodeURIComponent(
         new URL(req.url, "http://localhost").pathname,
       );
-      const dist = path.join(root, "dist");
+      const dist = distRoot ?? path.join(root, "dist");
       const file = path.resolve(
         dist,
         "." + (pathname === "/" ? "/index.html" : pathname),
       );
       if (!file.startsWith(dist + path.sep)) throw Error("Invalid path");
-      const bytes = await fs.readFile(file);
+      let bytes = await fs.readFile(file);
+      if (pathname === "/" || pathname === "/index.html") {
+        const publicConfig = JSON.stringify(config()).replace(/</g, "\\u003c");
+        bytes = Buffer.from(bytes.toString("utf8").replace("</head>", `<script type="application/json" id="comparison-config">${publicConfig}</script></head>`));
+      }
       const type =
         {
           ".html": "text/html; charset=utf-8",

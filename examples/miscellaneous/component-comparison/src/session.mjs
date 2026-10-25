@@ -13,6 +13,7 @@ export class ComparisonSession {
       status: "idle",
       error: "",
       theme: "light",
+      presetId: "default",
       viewId: crypto.randomUUID(),
       revision: 0,
       allowActions: false,

@@ -1,0 +1,3 @@
+/* Plain application CSS; no framework and no disabled preflight. */
+body { margin:0; font-family:system-ui,sans-serif; }
+button,input,textarea,select { font:inherit; }

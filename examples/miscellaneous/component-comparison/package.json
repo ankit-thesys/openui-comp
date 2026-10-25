@@ -7,13 +7,16 @@
     "setup:artifacts": "node scripts/setup-artifacts.mjs",
     "generate": "openui generate src/legacy-library.ts --spec --out .generated/legacy.json && openui generate src/migrated-library.ts --spec --out .generated/migrated.json && node scripts/check-specs.mjs",
     "dev": "node --env-file-if-exists=.env.local server.mjs",
-    "build": "npm run generate && tsc --noEmit && vite build",
+    "build": "npm run generate && npm run bench:hosts && tsc --noEmit && vite build",
     "start": "NODE_ENV=production node --env-file-if-exists=.env.local server.mjs",
     "test": "node --test tests/*.test.mjs",
     "test:browser": "node tests/browser.mjs",
     "predev": "npm run generate",
     "test:offline-browser": "node tests/offline-browser.mjs",
-    "generate:offline-inventory": "node scripts/offline-inventory.mjs"
+    "generate:offline-inventory": "node scripts/offline-inventory.mjs",
+    "bench": "node bench/cli.mjs",
+    "bench:hosts": "node bench/build-hosts.mjs",
+    "bench:cases": "node bench/generate-cases.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "3.0.41",
@@ -33,11 +36,16 @@
   },
   "devDependencies": {
     "@openuidev/cli": "0.6.0",
+    "@tailwindcss/postcss": "4.1.18",
     "@types/node": "22.15.32",
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "4.7.0",
+    "pixelmatch": "7.1.0",
     "playwright": "1.59.1",
+    "pngjs": "7.0.0",
+    "postcss": "8.5.8",
+    "tailwindcss3": "npm:tailwindcss@3.4.17",
     "typescript": "5.9.3",
     "vite": "6.4.2"
   }
