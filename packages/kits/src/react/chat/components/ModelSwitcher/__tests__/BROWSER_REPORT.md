@@ -25,11 +25,18 @@ No other sampled properties differ. This is not a blanket parity pass or a
 pixel-based proof of identical appearance. Raw comparisons retain the difference
 and the final diagnostic run exits nonzero.
 
+Independent final Spec and Standards reviews found no actionable report or
+diagnosis defects. The Spec audit verified the raw counts, retained source
+hashes and unchanged installed-package inventories. This is evidence review,
+not acceptance of the strict styling failure.
+
 The mismatch is local CSS cascade/reset behavior between the model trigger and
 shared Select, rather than evidence of a Goober parser failure. A conventional
 explicit border-color reset in the model hover/open rule is a possible narrowly
 scoped fix. It has **not** been applied: product changes require coordinated
 refreeze and affected validation. Do not normalize away the raw differences.
+See [BORDER_DIAGNOSIS.md](./BORDER_DIAGNOSIS.md) for the exact cascade cause,
+ordinary one-declaration proposal and consumer override implications.
 
 The three public component consumer tests and public Bundler-resolution type
 fixture also pass against the same actual installed package. NodeNext package
@@ -80,8 +87,8 @@ measurement of network downloads or performance.
 - Diagnostic runs3/4 reached all cells but their behavior checks were incomplete
   because the harness asserted before Radix's asynchronous keyboard/close focus
   changes. They are historical test-timing failures, not accepted product
-  behavior results. Both reports are retained; run3 also retains its exact
-  runner source. Run4 records its runner hash without an exact source archive.
+  behavior results. Both reports and exact runner sources are retained and their
+  hashes match the recorded inputs.
 - Run5 waits for actual public focus state and completes all behavior checks;
   it still fails strict style parity. No filters dismiss properties or make
   failed diagnostic cases green.
