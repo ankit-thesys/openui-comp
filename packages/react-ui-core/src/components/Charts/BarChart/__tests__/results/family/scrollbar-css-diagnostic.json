@@ -1,0 +1,18 @@
+{
+  "scope": "source emission only; actual browser scrollbar behavior pending",
+  "rules": [
+    ".go1476332352::-webkit-scrollbar{display:none;}",
+    ".go2811413688::-webkit-scrollbar{display:none;}",
+    ".go2060594544::-webkit-scrollbar{width:6px;}",
+    ".go2060594544::-webkit-scrollbar-track{background:transparent;}",
+    ".go2060594544::-webkit-scrollbar-thumb{background:var(--openui-border-default, oklch(0.097 0 0 / 0.06));border-radius:var(--openui-radius-full, 9999px);}",
+    ".go2719099161::-webkit-scrollbar{display:none;}",
+    ".go4265974753::-webkit-scrollbar{display:none;}",
+    ".go992717421.openui-tabs-clear .openui-tabs-list::-webkit-scrollbar{display:none;}",
+    ".go2640554272::-webkit-scrollbar{display:none;}",
+    ".go3542887719 :where(.openui-area-chart-main-container)::-webkit-scrollbar{display:none;}",
+    ".go3467368824 :where(.openui-line-chart-main-container)::-webkit-scrollbar{display:none;}",
+    ".go4083344781 :where(.openui-bar-chart-main-container)::-webkit-scrollbar{display:none;}",
+    ".go3015930608 :where(.openui-horizontal-bar-chart-main-container)::-webkit-scrollbar{display:none;}"
+  ]
+}
