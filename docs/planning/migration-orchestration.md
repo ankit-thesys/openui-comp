@@ -1,3 +1,30 @@
+# CURRENT — #17 frozen functional handoff RELEASED to W2 — 2026-10-25
+
+Branch codex/react-ui-beta-validation. Product code unchanged from reviewed PR39.
+Frozen normal consumer /private/tmp/beta17-consumer; handoff.json follows W2
+contract. Core/kits/react-lang/private-built legacy archive verification passes
+4 packages / 6664 files; all replay apps, served output, scripts/lock/runner and
+handoff are hashed. Module guards reject workspace imports and arm mixing.
+
+Final run5 functional matrix passes48/48: both arms, chat/dashboard, paced/stress,
+plain/TW3/TW4 and actual before/after stylesheet order. Includes visible partial
+Renderer output, painted bars, forms/follow-up actions, numeric theme hue,
+live cancellation and active-unmount teardown with exact session counters.
+Runtime strict fixture types pass. Legacy type findings are disclosed separately.
+Both existing Spec/Standards reviewers closed findings; no performance pass claim.
+
+Frozen server is RUNNING port4197, owned exec session48419. W1 browser CLOSED;
+no further builds/browser work during W2 formal timing and ten-minute soaks.
+W2 owns performance runner/measurements only, reads immutable handoff. Root must
+coordinate its explicit start plus independent verifier after the quiet window.
+See validation/beta17/HANDOFF.md and functional/evidence final archived inputs.
+No actual timing or soak result exists from this handoff alone. Existing criteria
+unchanged; HorizontalBar gap and SSR/helper exclusions remain visible. No legacy,
+main/upstream, preview, product patch, merge, release, publication or issue closure.
+Unrelated untracked crates/ preserved.
+
+---
+
 # CURRENT — PR39 checks green; #17 validation preparation — 2026-10-25
 
 Draft PR39 remains open, stacked on PR37. Build 40203948794 and changeset

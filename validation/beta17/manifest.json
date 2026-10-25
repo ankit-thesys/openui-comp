@@ -1,5 +1,5 @@
 {
-  "status": "preparation; baseline and functional verification pending",
+  "status": "functional gate passed48/48; released to W2 formal measurement, not performance acceptance",
   "productSource": "9ee0576133fbb1c444d03c169a81893ebf7631fd",
   "reviewedPRHead": "89cdd43d8d43aae8ac3265606476d017e6392a7f",
   "protocolCommit": "a67bd0695f37ff0d6800de564562c152807f4e4e",
@@ -21,6 +21,25 @@
       "path": "/private/tmp/chat16-artifacts/openuidev-react-lang-1.0.1.tgz",
       "bytes": 170663,
       "sha256": "9151c6cefd2cd0e5a88f1b38bbc6017e1e7d9f5ba60297f52166399e46da8f80"
+    },
+    {
+      "name": "legacy react-ui",
+      "path": "/private/tmp/beta17-artifacts/openuidev-react-ui-0.18.1.tgz",
+      "bytes": 3180175,
+      "sha256": "f38b45035706e9151a57d3328d2c23ec448483b73c5f0d5c64ba7420652b6fd9"
     }
-  ]
+  ],
+  "baseline": {
+    "sourceTree": "8b161e60e4672c1a4b50219397b153b3fd7138a4",
+    "privateBuild": "/private/tmp/beta17-baseline-workspace/packages/react-ui",
+    "standardBuildLog": "/private/tmp/beta17-baseline-full-build.log",
+    "packLog": "/private/tmp/beta17-baseline-pack-final.log",
+    "legacySourceModified": false
+  },
+  "consumer": "/private/tmp/beta17-consumer",
+  "handoff": "/private/tmp/beta17-consumer/handoff.json",
+  "handoffSha256": "ebb0bb3090b1ca475920c6a172789e307f1d12fb2b6721b021800bd0574d97e7",
+  "installedProof": "/private/tmp/beta17-consumer/installed-proof.json",
+  "browser": "Chrome156.0.8078.47",
+  "node": "22.22.2"
 }
