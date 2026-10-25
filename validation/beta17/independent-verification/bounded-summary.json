@@ -1,0 +1,13 @@
+{
+  "measuredStreams": 16,
+  "excludedFirstStreams": 8,
+  "cells": 4,
+  "armsPerCell": 2,
+  "pairsPerCell": 2,
+  "cancellations": 4,
+  "successfulPostCancelRetries": 4,
+  "resourceObservations": 8,
+  "errors": [],
+  "browserReleased": true,
+  "bound": "Independent bounded reproduction; not full80stream or10minute soak rerun."
+}

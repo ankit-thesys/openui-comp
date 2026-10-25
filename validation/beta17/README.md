@@ -1,6 +1,7 @@
 # Installed-package beta validation (#17)
 
-Status: preparation, no performance or memory acceptance yet.
+Status: scoped formal local gates passed and independently audited; see REPORT.md.
+No unconditional beta, migration, merge or publication approval.
 
 Compare the frozen installed kits/core artifacts in manifest.json with an
 independently frozen legacy react-ui baseline. The older source-integration

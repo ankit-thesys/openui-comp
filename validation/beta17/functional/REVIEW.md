@@ -59,3 +59,14 @@ after readiness. Final recorded result passes8browsercells/10866inputs. No
 product/replay/threshold changes. W2 lifecycle80diagnostic/8shutdowns/8preflight/
 34tests remains readiness-only; original48matrix retains its systemChrome label.
 Fresh formal benchmark and both memory soaks remain required for a verdict.
+
+## Final aggregate review before stacked draft
+
+Both existing GPT-6.1-Sol Spec and Standards axes reviewed the aggregate changes
+against PR39's89cdd43d8 base and report no actionable blockers. Clear only for the
+authorized stacked draft, not merge/publication/closure or unconditional beta.
+Final integrated harness34/34 passed after granting local socket access to the
+actual HTTP cancellation test. The sandbox EPERM first attempt is preserved
+separately and not treated as product failure. Exact W2performance tree remains
+byte-identical to8b32d5598; verifier originals and hashes remain unchanged.
+Remote CI is pending draft creation.

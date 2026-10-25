@@ -1,11 +1,10 @@
 # Worker1 → Worker2 fixture contract
 
-Status: V5 FORMAL LOCAL GATES PASS — INDEPENDENT VERIFICATION ACTIVE.
-W2 committed8b32d559888b5c59ff4814973253a93e94f0e77b: fresh80formal and both
-10minpacedsoaks pass agreed checks. Detailed scoped findings in REPORT.md.
-Independent verifier owns browser; W1server48419 unchanged/live4197.
-No browser/build/heavy work during audit. Finalreport/PR readiness and root
-acceptance wait verifier findings. No unconditional beta/migration approval.
+Status: FORMAL V5 LOCAL GATES PASS, INDEPENDENT AUDIT COMPLETE.
+Independent recomputation/full-soak audit and bounded16-stream reproduction found
+no new blocker. Evidence/report stacked draft preparation and aggregate review
+now proceed; no unconditional beta/migration acceptance. W1server48419 remains
+live/unchanged4197. All test/verifier browsers closed. CI pending draft creation.
 
 Consumer: `/private/tmp/beta17-consumer` (standalone npm installation).
 Manifest: `/private/tmp/beta17-consumer/handoff-v5.json`.

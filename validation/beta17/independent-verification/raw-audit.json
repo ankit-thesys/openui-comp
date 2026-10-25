@@ -1,0 +1,290 @@
+{
+  "manifestSha256": "58f29005e395f360e521bc8f01992d5dc5ef2c8989861010b37802e5ebdda856",
+  "reportIdentities": {
+    "/Users/ankitdas/.codex/worktrees/63b2/openui/validation/beta17/performance/evidence/benchmark-v5/report.json": "274626ee089e25b1fd3f736aa8469cd009f924d7fb1d40d613f95cbbf0b4ab40",
+    "/Users/ankitdas/.codex/worktrees/63b2/openui/validation/beta17/performance/evidence/benchmark-v5/summary.json": "6d8fb83ff2331f9679fd9af4c59b2153963c10a74432c306e6feb279900978ee",
+    "/Users/ankitdas/.codex/worktrees/63b2/openui/validation/beta17/performance/evidence/benchmark-v5/manifest.json": "58f29005e395f360e521bc8f01992d5dc5ef2c8989861010b37802e5ebdda856",
+    "/Users/ankitdas/.codex/worktrees/63b2/openui/validation/beta17/performance/evidence/soak-v5/report.json": "0088dd8fbbfac7b52ea440797ce2bab79b2659c4023ea15765292ca9bd8d1064",
+    "/Users/ankitdas/.codex/worktrees/63b2/openui/validation/beta17/performance/evidence/soak-v5/summary.json": "d1eb9941c21616a4a3da3d2b3573f9acf6286113db99456e66e3f18e77287c67",
+    "/Users/ankitdas/.codex/worktrees/63b2/openui/validation/beta17/performance/evidence/soak-v5/manifest.json": "58f29005e395f360e521bc8f01992d5dc5ef2c8989861010b37802e5ebdda856"
+  },
+  "currentFrozenInputs": {
+    "files": 10866,
+    "totalBytes": 648168916,
+    "mismatches": []
+  },
+  "moduleCount": 3801,
+  "moduleErrors": [],
+  "browserBundleFiles": 340,
+  "timing": [
+    {
+      "workload": "chat",
+      "load": "paced",
+      "metric": "elapsedMs",
+      "baseline": {
+        "n": 10,
+        "median": 244.8589379999994,
+        "p95": 248.9628330000014
+      },
+      "runtime": {
+        "n": 10,
+        "median": 244.03412500000013,
+        "p95": 247.8270420000008
+      },
+      "medianChangePercent": -0.3368523145351854,
+      "p95ChangePercent": -0.4562090599284807,
+      "pass": true
+    },
+    {
+      "workload": "chat",
+      "load": "paced",
+      "metric": "renderedElapsedMs",
+      "baseline": {
+        "n": 10,
+        "median": 276.74208349999935,
+        "p95": 283.0504170000022
+      },
+      "runtime": {
+        "n": 10,
+        "median": 274.7232290000002,
+        "p95": 278.0635420000035
+      },
+      "medianChangePercent": -0.7295075886061153,
+      "p95ChangePercent": -1.761832769177174,
+      "pass": true
+    },
+    {
+      "workload": "chat",
+      "load": "stress",
+      "metric": "elapsedMs",
+      "baseline": {
+        "n": 10,
+        "median": 170.0837085000021,
+        "p95": 175.6369160000031
+      },
+      "runtime": {
+        "n": 10,
+        "median": 173.36535399999775,
+        "p95": 176.0584170000002
+      },
+      "medianChangePercent": 1.9294296490457885,
+      "p95ChangePercent": 0.23998428667300065,
+      "pass": true
+    },
+    {
+      "workload": "chat",
+      "load": "stress",
+      "metric": "renderedElapsedMs",
+      "baseline": {
+        "n": 10,
+        "median": 203.42920850000155,
+        "p95": 208.10537499999919
+      },
+      "runtime": {
+        "n": 10,
+        "median": 205.43593749999854,
+        "p95": 208.45270799999707
+      },
+      "medianChangePercent": 0.9864507731184524,
+      "p95ChangePercent": 0.16690246467583325,
+      "pass": true
+    },
+    {
+      "workload": "dashboard",
+      "load": "paced",
+      "metric": "elapsedMs",
+      "baseline": {
+        "n": 10,
+        "median": 292.2221045000042,
+        "p95": 295.5341250000056
+      },
+      "runtime": {
+        "n": 10,
+        "median": 292.04118700000254,
+        "p95": 296.28075000000536
+      },
+      "medianChangePercent": -0.06191095650044387,
+      "p95ChangePercent": 0.2526357996728068,
+      "pass": true
+    },
+    {
+      "workload": "dashboard",
+      "load": "paced",
+      "metric": "renderedElapsedMs",
+      "baseline": {
+        "n": 10,
+        "median": 325.29485399999976,
+        "p95": 328.7653750000027
+      },
+      "runtime": {
+        "n": 10,
+        "median": 325.56858349999675,
+        "p95": 329.39145900000585
+      },
+      "medianChangePercent": 0.08414811873938,
+      "p95ChangePercent": 0.19043489601153762,
+      "pass": true
+    },
+    {
+      "workload": "dashboard",
+      "load": "stress",
+      "metric": "elapsedMs",
+      "baseline": {
+        "n": 10,
+        "median": 176.67683350000152,
+        "p95": 191.85195799999929
+      },
+      "runtime": {
+        "n": 10,
+        "median": 178.29118749999907,
+        "p95": 195.54333299999416
+      },
+      "medianChangePercent": 0.913732699424652,
+      "p95ChangePercent": 1.924074707642487,
+      "pass": true
+    },
+    {
+      "workload": "dashboard",
+      "load": "stress",
+      "metric": "renderedElapsedMs",
+      "baseline": {
+        "n": 10,
+        "median": 209.8013334999996,
+        "p95": 223.67479200000525
+      },
+      "runtime": {
+        "n": 10,
+        "median": 210.09958299999562,
+        "p95": 227.76270799999475
+      },
+      "medianChangePercent": 0.14215805734905107,
+      "p95ChangePercent": 1.8276158718812496,
+      "pass": true
+    }
+  ],
+  "input": [
+    {
+      "workload": "chat",
+      "arm": "baseline",
+      "n": 10,
+      "p95": 5.085708000002342,
+      "pass": true
+    },
+    {
+      "workload": "chat",
+      "arm": "runtime",
+      "n": 10,
+      "p95": 4.834665999998833,
+      "pass": true
+    },
+    {
+      "workload": "dashboard",
+      "arm": "baseline",
+      "n": 10,
+      "p95": 3.880709000004572,
+      "pass": true
+    },
+    {
+      "workload": "dashboard",
+      "arm": "runtime",
+      "n": 10,
+      "p95": 3.408917000007932,
+      "pass": true
+    }
+  ],
+  "resources": [
+    {
+      "workload": "chat",
+      "arm": "baseline",
+      "retainedHeapGrowthMiB": 0.21067428588867188,
+      "heapPass": true,
+      "rssGrowthMiB": -178.46875,
+      "rssInvestigationRequired": false
+    },
+    {
+      "workload": "chat",
+      "arm": "runtime",
+      "retainedHeapGrowthMiB": 0.3665122985839844,
+      "heapPass": true,
+      "rssGrowthMiB": -226.859375,
+      "rssInvestigationRequired": false
+    },
+    {
+      "workload": "dashboard",
+      "arm": "baseline",
+      "retainedHeapGrowthMiB": 0.36234283447265625,
+      "heapPass": true,
+      "rssGrowthMiB": -54.078125,
+      "rssInvestigationRequired": false
+    },
+    {
+      "workload": "dashboard",
+      "arm": "runtime",
+      "retainedHeapGrowthMiB": 0.4907875061035156,
+      "heapPass": true,
+      "rssGrowthMiB": -106.046875,
+      "rssInvestigationRequired": false
+    }
+  ],
+  "soakDetails": [
+    {
+      "workload": "chat",
+      "arm": "baseline",
+      "durationMs": 600295.784,
+      "cycles": 483,
+      "naturalSamples": 20,
+      "cancellations": 48,
+      "stylePlateau": true,
+      "domEndpoints": true,
+      "naturalHeapRangeBytes": [
+        13134032,
+        43254556
+      ]
+    },
+    {
+      "workload": "chat",
+      "arm": "runtime",
+      "durationMs": 600295.784,
+      "cycles": 483,
+      "naturalSamples": 20,
+      "cancellations": 48,
+      "stylePlateau": true,
+      "domEndpoints": true,
+      "naturalHeapRangeBytes": [
+        13177340,
+        43058796
+      ]
+    },
+    {
+      "workload": "dashboard",
+      "arm": "baseline",
+      "durationMs": 600232.315583,
+      "cycles": 467,
+      "naturalSamples": 20,
+      "cancellations": 46,
+      "stylePlateau": true,
+      "domEndpoints": true,
+      "naturalHeapRangeBytes": [
+        13859800,
+        44860712
+      ]
+    },
+    {
+      "workload": "dashboard",
+      "arm": "runtime",
+      "durationMs": 600232.315583,
+      "cycles": 467,
+      "naturalSamples": 20,
+      "cancellations": 46,
+      "stylePlateau": true,
+      "domEndpoints": true,
+      "naturalHeapRangeBytes": [
+        13896764,
+        41470152
+      ]
+    }
+  ],
+  "errors": [],
+  "pass": true,
+  "scope": "Independent raw recomputation/provenance audit; report commit identity still to be confirmed; no new full80/10minute independent run."
+}

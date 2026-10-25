@@ -1,0 +1,97 @@
+{
+  "FINAL-REPORT.md": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/FINAL-REPORT.md",
+    "sha256": "ff74e57937aaa576580b207840b28aa09edb3e73d7e12a38962559b70faf64d1",
+    "bytes": 8015
+  },
+  "audit.py": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/audit.py",
+    "sha256": "6cc808df1a9e63b76608fca62d0b42b10c4bfeeef1203ea94bfed732932ea46c",
+    "bytes": 10752
+  },
+  "bind-archives.py": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/bind-archives.py",
+    "sha256": "e192b6cc1faf6d173219a462a5465b0a744e8e75cd75f13689cad470e94c57a1",
+    "bytes": 1749
+  },
+  "bounded-first-warmup-observation.json": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/bounded-first-warmup-observation.json",
+    "sha256": "2049c0afdf7603dac6f5104806d0081de6523819d57686924bf14b3eb18962f0",
+    "bytes": 4616
+  },
+  "bounded-fixture-corrections.md": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/bounded-fixture-corrections.md",
+    "sha256": "1096b3857481f9ec773791eb98e8d20d2b183001d4a4cc94679dade2a6580f9c",
+    "bytes": 803
+  },
+  "bounded-progress.json": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/bounded-progress.json",
+    "sha256": "92bf300e3dceaa6ff92c1ee1f2fbe434a93302476d5edb754df9b21642102c67",
+    "bytes": 25938
+  },
+  "bounded-reproduction-v2.log": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/bounded-reproduction-v2.log",
+    "sha256": "b37e5f34029fbcdc892e37d7a10919064efd44c2c24f8bb6db48c77c359a266b",
+    "bytes": 624
+  },
+  "bounded-reproduction-v3.log": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/bounded-reproduction-v3.log",
+    "sha256": "b97a083bef0c40d0129e167a5df14ce816b4562da0f70b379728f681b6d067c0",
+    "bytes": 137
+  },
+  "bounded-reproduction.log": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/bounded-reproduction.log",
+    "sha256": "f66420e7a5298701805a55be2e040263e0a993fd716b6713e7b0d9587a59f5b6",
+    "bytes": 926
+  },
+  "bounded-reproduction.mjs": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/bounded-reproduction.mjs",
+    "sha256": "f6191289dcb68f2d08f5a8507f5f7df2ec1d96731ce03423f218592890f60220",
+    "bytes": 8160
+  },
+  "bounded-results.json": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/bounded-results.json",
+    "sha256": "9aff9f25fe2e15d362005fe856325c34e8000658b74c3e8786ac0c7e05a254d5",
+    "bytes": 25838
+  },
+  "bounded-summary.json": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/bounded-summary.json",
+    "sha256": "9c2329ebdd7cbdef53b0964aa9f59b8d944d09a5a7418f8f31f02bd31b27754f",
+    "bytes": 330
+  },
+  "committed-archive-proof.json": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/committed-archive-proof.json",
+    "sha256": "61e23f4dc443213566915338f366051af4a1bf9cbdf7e3221ce94d5bddeae5f3",
+    "bytes": 3925
+  },
+  "committed-archive-proof.log": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/committed-archive-proof.log",
+    "sha256": "68c1c159393e40d177c13f5c4d6ca545c486f55a0a8204ceae04e8f2839e0d5a",
+    "bytes": 1078
+  },
+  "final-raw-audit.log": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/final-raw-audit.log",
+    "sha256": "b83559c56c4c1ab6a3ac6e73403e992a41c5d6ce3bbab408fe680e5749390850",
+    "bytes": 1349
+  },
+  "independent-evidence-sha256.json": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/independent-evidence-sha256.json",
+    "sha256": "6d92ad019f8f33e819f340e4db8b96a445a4f1ad719556208b54b97f6efb9e31",
+    "bytes": 870
+  },
+  "protocol-audit.md": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/protocol-audit.md",
+    "sha256": "84fb204185154da3847d884204dd1a459e094b8ffab0f0b7d23b4754926f7d07",
+    "bytes": 8244
+  },
+  "raw-audit.json": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/raw-audit.json",
+    "sha256": "27941710ee156943478be3a08b23d3830099ddf5fa98c96a4152671c6939f548",
+    "bytes": 7839
+  },
+  "raw-audit.log": {
+    "originalPath": "/private/tmp/openui-beta17-independent-verification/raw-audit.log",
+    "sha256": "b83559c56c4c1ab6a3ac6e73403e992a41c5d6ce3bbab408fe680e5749390850",
+    "bytes": 1349
+  }
+}

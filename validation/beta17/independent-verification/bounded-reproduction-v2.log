@@ -1,0 +1,25 @@
+INDEPENDENT_BROWSER_RELEASED
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
+  {
+    documents: 1,
+    jsEventListeners: 175,
++   nodes: 58
+-   nodes: 51
+  }
+
+    at file:///private/tmp/openui-beta17-independent-verification/bounded-reproduction.mjs:19:325 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: { documents: 1, nodes: 58, jsEventListeners: 175 },
+  expected: { documents: 1, nodes: 51, jsEventListeners: 175 },
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

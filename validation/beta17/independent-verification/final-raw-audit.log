@@ -1,0 +1,65 @@
+{
+  "pass": true,
+  "errors": [],
+  "inputs": 10866,
+  "moduleCount": 3801,
+  "timingRows": 8,
+  "soakDetails": [
+    {
+      "workload": "chat",
+      "arm": "baseline",
+      "durationMs": 600295.784,
+      "cycles": 483,
+      "naturalSamples": 20,
+      "cancellations": 48,
+      "stylePlateau": true,
+      "domEndpoints": true,
+      "naturalHeapRangeBytes": [
+        13134032,
+        43254556
+      ]
+    },
+    {
+      "workload": "chat",
+      "arm": "runtime",
+      "durationMs": 600295.784,
+      "cycles": 483,
+      "naturalSamples": 20,
+      "cancellations": 48,
+      "stylePlateau": true,
+      "domEndpoints": true,
+      "naturalHeapRangeBytes": [
+        13177340,
+        43058796
+      ]
+    },
+    {
+      "workload": "dashboard",
+      "arm": "baseline",
+      "durationMs": 600232.315583,
+      "cycles": 467,
+      "naturalSamples": 20,
+      "cancellations": 46,
+      "stylePlateau": true,
+      "domEndpoints": true,
+      "naturalHeapRangeBytes": [
+        13859800,
+        44860712
+      ]
+    },
+    {
+      "workload": "dashboard",
+      "arm": "runtime",
+      "durationMs": 600232.315583,
+      "cycles": 467,
+      "naturalSamples": 20,
+      "cancellations": 46,
+      "stylePlateau": true,
+      "domEndpoints": true,
+      "naturalHeapRangeBytes": [
+        13896764,
+        41470152
+      ]
+    }
+  ]
+}

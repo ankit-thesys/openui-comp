@@ -1,5 +1,5 @@
 {
-  "status": "formalV5 local80+bothsoaks pass; independent verification active, final acceptance pending",
+  "status": "formalV5 local gates passed; independent audit complete no new blocker; bounded draft review/CI pending",
   "productSource": "9ee0576133fbb1c444d03c169a81893ebf7631fd",
   "reviewedPRHead": "89cdd43d8d43aae8ac3265606476d017e6392a7f",
   "protocolCommit": "a67bd0695f37ff0d6800de564562c152807f4e4e",

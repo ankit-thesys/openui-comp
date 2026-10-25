@@ -1,8 +1,10 @@
-# V5 formal results integrated; independent verification active
+# V5 scoped evidence integrated and independently verified
 
-W2 evidence commit8b32d559888b5c59ff4814973253a93e94f0e77b integrated exactly.
-Formal80+both10minpacedsoaks pass scoped thresholds; see REPORT.md and original
-performance/evidence/V5-REPORT.md for raw identity, metrics and limitations.
-Independent verifier owns browser now; no W1browser/build/heavychecks. Keep
-server48419/4197 unchanged/live. Finalreport/PR readiness waits findings and root
-acceptance. No unconditionalbeta claim, legacy/product patch or publication.
+FormalW2evidence8b32d5598, exactarchives and originalreports are integrated.
+Independent full audit/recomputation plus bounded16streams/cancel/retry completed
+with no new blocking finding. Durable original files/hashes are under independent-
+verification/. Earlier one-warmup DOM assertion failure stays preserved/explained.
+Aggregate reviews and stacked DRAFTPR atop39 next; root retains acceptance. No
+unconditionalbeta, merge, publication, deprecation or issueclosure. Legacytype,
+HorizontalBar, SSR/shell and plainCSSformal vs TWcompatibility limits remain.
+W1server48419 unchanged/live4197; browsers closed, no further heavy tests needed.

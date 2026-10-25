@@ -1,3 +1,16 @@
+# CURRENT — #17 aggregate reviews clear; stacked DRAFT preparation
+
+IntegratedW2tree8b32d5598 and independent audit/bounded16 evidence preserved with
+originalhashes. Formal80+bothpacedsoaks pass scoped gates; independent no new
+blocker. Final34harnesschecks pass; Spec/Standards aggregate GPT6.1-sol reviews
+clear for authorized stacked DRAFT atopPR39. RemoteCI pending creation.
+No product/legacy delta; keep inheritedHorizontalBar/legacytyping, deferredSSR/
+shell, sample/bundle/eagerCSS/font and plainCSSformal vsTWcompatibility limits.
+W1server48419 unchanged/live4197. No further heavy localchecks needed. No merge,
+publication/deprecation/closure/upstream/main/preview writes. crates preserved.
+
+---
+
 # CURRENT — #17 formal V5 local gates PASS; independent verifier active
 
 W2 committed8b32d559888b5c59ff4814973253a93e94f0e77b, bothreviewaxes clear.

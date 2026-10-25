@@ -1,0 +1,5 @@
+BOUNDED_PASS chat paced
+BOUNDED_PASS chat stress
+BOUNDED_PASS dashboard paced
+BOUNDED_PASS dashboard stress
+INDEPENDENT_BROWSER_RELEASED
