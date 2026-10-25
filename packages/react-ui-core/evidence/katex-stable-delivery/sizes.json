@@ -1,0 +1,46 @@
+{
+  "used": {
+    "fonts": {
+      "files": 59,
+      "bytes": 1072948,
+      "gzipBytes": 866377
+    },
+    "css": {
+      "files": 1,
+      "bytes": 29288,
+      "gzipBytes": 7941
+    },
+    "javascript": {
+      "files": 1666,
+      "bytes": 2455825,
+      "gzipBytes": 1082799
+    },
+    "mathJavaScript": {
+      "files": 1,
+      "bytes": 267203,
+      "gzipBytes": 79123
+    }
+  },
+  "unused": {
+    "fonts": {
+      "files": 59,
+      "bytes": 1072948,
+      "gzipBytes": 866377
+    },
+    "css": {
+      "files": 0,
+      "bytes": 0,
+      "gzipBytes": 0
+    },
+    "javascript": {
+      "files": 1,
+      "bytes": 203005,
+      "gzipBytes": 63184
+    },
+    "mathJavaScript": {
+      "files": 0,
+      "bytes": 0,
+      "gzipBytes": 0
+    }
+  }
+}

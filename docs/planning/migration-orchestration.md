@@ -1,3 +1,15 @@
+# CURRENT — stable math delivery investigation complete; decision still OPEN — 2026-10-25
+
+User chose investigate a stable standard path, not adopt an exception. Isolated actual-component candidate now builds with UNCHANGED tsdown0.21.10 config: a private lazy module imports unmodified katex/dist/katex.min.css and re-exports rehype-katex; wrapper lazy import targets it; direct katex^0.16.0 dependency aligns CSS/renderer0.16.47. No experimental plugin, custom injector/parser/URL rewrite/font copy. PRODUCTION SOURCE IS UNCHANGED.
+
+Both independent source/evidence reviews report zero actionable findings. Normal installed prototype passes native ESM/CJS root imports, strict3 modes, Vite6.4.2 default build and Chrome6 cases /2,808 paired math snapshots (plain/TW3/TW4 both orders, themes/nested scopes); automatic CSS/fonts load with ordinary component imports. Button-only browser downloads no math JS/CSS/fonts. BUT unused Vite output still emits59 fonts /1,072,948 bytes. Stock esbuild needs asset loader config and separate CSS linking, so no universal arbitrary-bundler zero-setup claim. Actual base renderer is used via TextContentWrapper's math pipeline, not a new public math API. Evidence + costs/limits + exact source under `packages/react-ui-core/evidence/katex-stable-delivery/README.md`.
+
+Worker2 independent alternatives review preserved there: React19 built-in stylesheet link is standard but requires hosted/version-aligned CSS/fonts URL, with CDN/CSP/offline or self-host deployment tradeoffs. Not adopted/prototyped broadly. Root should review the stable bundled candidate's Vite contract + emitted font cost + vendor CSS exception before proposing acceptance. Browser/server closed; Worker1 holds released window, no active measurement. Prototype lock stage difference is explicitly disclosed; raw output artifacts/hashes archived. SSR/hydration/streaming/performance not certified.
+
+Non-math production remains88fd with97/97 package CI, owned6/22,296 and composer6/30,012 browser evidence. Slice12 acceptance/PR opening or push and slice13 production remain BLOCKED on math contract review; preserve EditableTable native/TanStack structure under existing decision. Local PR draft remains unpublished. This top section supersedes historical statuses below. Both previews/legacy/crates untouched; no merge/release/upstream writes.
+
+---
+
 # CURRENT HANDOFF — supersedes all historical statuses below — 2026-10-25
 
 Slice12 production is at corrected88fdccf94. Package CI97/97 and both NEW non-math browser groups pass on its exact artifact: owned text/media6 cases /22,296 snapshots; composers6 /30,012 paired snapshots. Prior foundation/source/media checks retain the historical revisions listed below and in the local PR draft. No production change since88fd; later commits contain evidence/docs/formatter exclusions only.

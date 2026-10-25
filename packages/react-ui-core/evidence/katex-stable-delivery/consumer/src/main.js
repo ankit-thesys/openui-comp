@@ -1,0 +1,1 @@
+import React from "react";import{createRoot}from"react-dom/client";import{Button}from"@openuidev/react-ui-core";createRoot(document.getElementById("app")).render(React.createElement(Button,null,"Unused math"));

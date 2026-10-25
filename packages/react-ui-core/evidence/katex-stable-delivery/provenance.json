@@ -1,0 +1,16 @@
+{
+  "prototypeBaseProductionRevision": "88fdccf94e39a5c58e5a2a80cdf7f755eb5f7326",
+  "prototypePackageSha256": "8cae8687c7d0a5830b7f863a5f86f2e6e3bf3561c76950d23581170e637d5085",
+  "prototypePackageBytes": 394879,
+  "measuredBrowserLockSha256": "2d6dce0bc5ef7edd8883394b26a38535152a5adda5e006f2ae09f65470b9ad0e",
+  "archivedPostTypeInstallLockSha256": "5ae5d1296ead54cfee3829be70fffa0bbb35dc7a618e88e3b9fa1679ae06243b",
+  "lockNote": "React declaration devDependencies were added after browser/build measurement for strict type checks. Archived consumer lock is the later type-check lock, not the earlier measured browser lock; the original hash is retained in browser.json. Exact pre-types built outputs and per-file manifest are archived, unchanged by installing declaration tooling. Do not claim byte-identical lock provenance across those two stages.",
+  "versions": {
+    "tsdown": "0.21.10",
+    "vite": "6.4.2",
+    "katex": "0.16.47",
+    "rehype-katex": "7.0.1",
+    "react": "19.2.4",
+    "goober": "2.1.19"
+  }
+}

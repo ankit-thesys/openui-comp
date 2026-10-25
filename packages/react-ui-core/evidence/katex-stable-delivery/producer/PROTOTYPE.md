@@ -1,0 +1,1 @@
+Throwaway stable tooling investigation. Actual copied OpenUI component, not accepted production. Only mathRenderer dependency entry and wrapper dynamic import differ; direct katex dependency added. No CSS plugin, asset copy or custom injector.
