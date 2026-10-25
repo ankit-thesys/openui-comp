@@ -1,0 +1,6 @@
+plain/before/composers: 5002 paired snapshots passed
+plain/after/composers: 5002 paired snapshots passed
+tailwind3/before/composers: 5002 paired snapshots passed
+tailwind3/after/composers: 5002 paired snapshots passed
+tailwind4/before/composers: 5002 paired snapshots passed
+tailwind4/after/composers: 5002 paired snapshots passed

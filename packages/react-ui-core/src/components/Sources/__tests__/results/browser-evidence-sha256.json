@@ -1,0 +1,14 @@
+{
+  "foundation-media.browser.mjs": "546802dddc33ee6da7f2033d41c5dc5313c98e75abc3f6ca98cd3f3f755e9480",
+  "foundation-media.fixture.tsx": "c8debe606f69b9c8a4043b9e51681931e28a3de1a6919585d7b8bf8bcad613a0",
+  "image.svg": "9a04cf88bd41f3857a875a12249c4ff363682f0845796711abbe38b8203bb66b",
+  "favicon-placeholder.svg": "6f2d4ca8055a1a4823a0401a704253fef15d6c01bd388e042a2a2bf34077bdc9",
+  "BROWSER_DIAGNOSIS.md": "387cf4a3971854563182f7484f02117f63282285000f3f2fc3d239b11938729a",
+  "INHERITED_LIMITATIONS.md": "20370a71444b26a07267bd393d4d56b32ed7a88d22437dc721a2b6cad2e04148",
+  "results/text12-browser-sources-first.json": "781f55c64510b76da83bc544f61db27f6ad313d14c18fb50faedc640205c4ff3",
+  "results/text12-browser-sources-first.log": "93036fa427cda419f05876aff80542a5ab8103fcf1583ec2b1bf1b8cd808af43",
+  "results/text12-browser-presentation.json": "602c664a072b2f9f4359c9592d67bf957f7d61fde92dffa64dfb23b9583eb14e",
+  "results/text12-browser-presentation.log": "c995b14388988881fbeb33603647a1e9ec5fdc67e71a4939c34627dbe2e089e1",
+  "results/browser-consumer-lock.json": "ff5167aea736410f21627bd6003eb4929d76ebb20fad560ac8731b3052c25250",
+  "results/browser-initial/source-media.tgz": "eefb647a4128f0b8754cb906fbccd6d0aecb41ab526d61494d32929412d95f3f"
+}

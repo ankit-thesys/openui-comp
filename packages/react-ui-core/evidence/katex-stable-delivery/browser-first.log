@@ -1,0 +1,18 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert((await page.locator('.katex').first().evaluate(n=>getComputedStyle(n).fontFamily)).includes('KaTeX_Main'))
+
+    at file:///private/tmp/core-stable-math-browser.mjs:11:590 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

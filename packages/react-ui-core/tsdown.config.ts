@@ -10,5 +10,8 @@ export default defineConfig({
   target: "es2022",
   outDir: "dist",
   clean: true,
-  deps: { neverBundle: [/^(?![./]|[A-Za-z]:[/\\])/] },
+  deps: {
+    // Theme data is bundled so typed extensionless entries need no Node directory resolution.
+    alwaysBundle: [/^react-syntax-highlighter\/dist\/cjs\/styles\/prism(?:\/|$)/],
+  },
 });

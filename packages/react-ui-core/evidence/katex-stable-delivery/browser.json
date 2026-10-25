@@ -1,0 +1,884 @@
+{
+  "status": "passed",
+  "baseProductionRevision": "88fdccf94e39a5c58e5a2a80cdf7f755eb5f7326",
+  "prototypeOnly": true,
+  "tarballSha256": "8cae8687c7d0a5830b7f863a5f86f2e6e3bf3561c76950d23581170e637d5085",
+  "consumerLockSha256": "2d6dce0bc5ef7edd8883394b26a38535152a5adda5e006f2ae09f65470b9ad0e",
+  "runnerSha256": "26125786363c76027ba87ab0e076dfb99264a3a5c9eca5645209f89a72c48c20",
+  "cases": [
+    {
+      "framework": "plain",
+      "order": "before",
+      "status": "passed",
+      "requests": [
+        {
+          "reference": true,
+          "resources": [
+            {
+              "url": "http://127.0.0.1:62273/?framework=plain&reference=true",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/plain.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/__reference/katex.min.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/plain.css",
+              "status": 200
+            }
+          ]
+        },
+        {
+          "reference": false,
+          "resources": [
+            {
+              "url": "http://127.0.0.1:62273/?framework=plain&reference=false",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/plain.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/plain.css",
+              "status": 200
+            }
+          ]
+        }
+      ],
+      "downloads": [
+        {
+          "url": "http://127.0.0.1:62273/host/plain.css",
+          "transferSize": 586,
+          "encodedBodySize": 286
+        },
+        {
+          "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+          "transferSize": 1321150,
+          "encodedBodySize": 1320850
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+          "transferSize": 29588,
+          "encodedBodySize": 29288
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+          "transferSize": 267503,
+          "encodedBodySize": 267203
+        },
+        {
+          "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+          "transferSize": 267503,
+          "encodedBodySize": 267203
+        },
+        {
+          "url": "http://127.0.0.1:62273/favicon.ico",
+          "transferSize": 586,
+          "encodedBodySize": 286
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+          "transferSize": 26572,
+          "encodedBodySize": 26272
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+          "transferSize": 16740,
+          "encodedBodySize": 16440
+        },
+        {
+          "url": "http://127.0.0.1:62273/host/plain.css",
+          "transferSize": 586,
+          "encodedBodySize": 286
+        }
+      ],
+      "loadedFonts": [
+        "KaTeX_Main",
+        "KaTeX_Math"
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "status": "passed",
+      "requests": [
+        {
+          "reference": true,
+          "resources": [
+            {
+              "url": "http://127.0.0.1:62273/?framework=plain&reference=true",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/plain.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/__reference/katex.min.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/plain.css",
+              "status": 200
+            }
+          ]
+        },
+        {
+          "reference": false,
+          "resources": [
+            {
+              "url": "http://127.0.0.1:62273/?framework=plain&reference=false",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/plain.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/plain.css",
+              "status": 200
+            }
+          ]
+        }
+      ],
+      "downloads": [
+        {
+          "url": "http://127.0.0.1:62273/host/plain.css",
+          "transferSize": 586,
+          "encodedBodySize": 286
+        },
+        {
+          "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+          "transferSize": 1321150,
+          "encodedBodySize": 1320850
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+          "transferSize": 267503,
+          "encodedBodySize": 267203
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+          "transferSize": 29588,
+          "encodedBodySize": 29288
+        },
+        {
+          "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+          "transferSize": 267503,
+          "encodedBodySize": 267203
+        },
+        {
+          "url": "http://127.0.0.1:62273/favicon.ico",
+          "transferSize": 586,
+          "encodedBodySize": 286
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+          "transferSize": 16740,
+          "encodedBodySize": 16440
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+          "transferSize": 26572,
+          "encodedBodySize": 26272
+        },
+        {
+          "url": "http://127.0.0.1:62273/host/plain.css",
+          "transferSize": 586,
+          "encodedBodySize": 286
+        }
+      ],
+      "loadedFonts": [
+        "KaTeX_Main",
+        "KaTeX_Math"
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "status": "passed",
+      "requests": [
+        {
+          "reference": true,
+          "resources": [
+            {
+              "url": "http://127.0.0.1:62273/?framework=tailwind3&reference=true",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/__reference/katex.min.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind3.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind3.css",
+              "status": 200
+            }
+          ]
+        },
+        {
+          "reference": false,
+          "resources": [
+            {
+              "url": "http://127.0.0.1:62273/?framework=tailwind3&reference=false",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind3.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind3.css",
+              "status": 200
+            }
+          ]
+        }
+      ],
+      "downloads": [
+        {
+          "url": "http://127.0.0.1:62273/host/tailwind3.css",
+          "transferSize": 11761,
+          "encodedBodySize": 11461
+        },
+        {
+          "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+          "transferSize": 1321150,
+          "encodedBodySize": 1320850
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+          "transferSize": 267503,
+          "encodedBodySize": 267203
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+          "transferSize": 29588,
+          "encodedBodySize": 29288
+        },
+        {
+          "url": "http://127.0.0.1:62273/favicon.ico",
+          "transferSize": 586,
+          "encodedBodySize": 286
+        },
+        {
+          "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+          "transferSize": 267503,
+          "encodedBodySize": 267203
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+          "transferSize": 16740,
+          "encodedBodySize": 16440
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+          "transferSize": 26572,
+          "encodedBodySize": 26272
+        },
+        {
+          "url": "http://127.0.0.1:62273/host/tailwind3.css",
+          "transferSize": 11761,
+          "encodedBodySize": 11461
+        }
+      ],
+      "loadedFonts": [
+        "KaTeX_Main",
+        "KaTeX_Math"
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "status": "passed",
+      "requests": [
+        {
+          "reference": true,
+          "resources": [
+            {
+              "url": "http://127.0.0.1:62273/?framework=tailwind3&reference=true",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind3.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/__reference/katex.min.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind3.css",
+              "status": 200
+            }
+          ]
+        },
+        {
+          "reference": false,
+          "resources": [
+            {
+              "url": "http://127.0.0.1:62273/?framework=tailwind3&reference=false",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind3.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind3.css",
+              "status": 200
+            }
+          ]
+        }
+      ],
+      "downloads": [
+        {
+          "url": "http://127.0.0.1:62273/host/tailwind3.css",
+          "transferSize": 11761,
+          "encodedBodySize": 11461
+        },
+        {
+          "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+          "transferSize": 1321150,
+          "encodedBodySize": 1320850
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+          "transferSize": 267503,
+          "encodedBodySize": 267203
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+          "transferSize": 29588,
+          "encodedBodySize": 29288
+        },
+        {
+          "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+          "transferSize": 267503,
+          "encodedBodySize": 267203
+        },
+        {
+          "url": "http://127.0.0.1:62273/favicon.ico",
+          "transferSize": 586,
+          "encodedBodySize": 286
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+          "transferSize": 16740,
+          "encodedBodySize": 16440
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+          "transferSize": 26572,
+          "encodedBodySize": 26272
+        },
+        {
+          "url": "http://127.0.0.1:62273/host/tailwind3.css",
+          "transferSize": 11761,
+          "encodedBodySize": 11461
+        }
+      ],
+      "loadedFonts": [
+        "KaTeX_Main",
+        "KaTeX_Math"
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "status": "passed",
+      "requests": [
+        {
+          "reference": true,
+          "resources": [
+            {
+              "url": "http://127.0.0.1:62273/?framework=tailwind4&reference=true",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/__reference/katex.min.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind4.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind4.css",
+              "status": 200
+            }
+          ]
+        },
+        {
+          "reference": false,
+          "resources": [
+            {
+              "url": "http://127.0.0.1:62273/?framework=tailwind4&reference=false",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind4.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind4.css",
+              "status": 200
+            }
+          ]
+        }
+      ],
+      "downloads": [
+        {
+          "url": "http://127.0.0.1:62273/host/tailwind4.css",
+          "transferSize": 7294,
+          "encodedBodySize": 6994
+        },
+        {
+          "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+          "transferSize": 1321150,
+          "encodedBodySize": 1320850
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+          "transferSize": 267503,
+          "encodedBodySize": 267203
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+          "transferSize": 29588,
+          "encodedBodySize": 29288
+        },
+        {
+          "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+          "transferSize": 267503,
+          "encodedBodySize": 267203
+        },
+        {
+          "url": "http://127.0.0.1:62273/favicon.ico",
+          "transferSize": 586,
+          "encodedBodySize": 286
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+          "transferSize": 16740,
+          "encodedBodySize": 16440
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+          "transferSize": 26572,
+          "encodedBodySize": 26272
+        },
+        {
+          "url": "http://127.0.0.1:62273/host/tailwind4.css",
+          "transferSize": 7294,
+          "encodedBodySize": 6994
+        }
+      ],
+      "loadedFonts": [
+        "KaTeX_Main",
+        "KaTeX_Math"
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "status": "passed",
+      "requests": [
+        {
+          "reference": true,
+          "resources": [
+            {
+              "url": "http://127.0.0.1:62273/?framework=tailwind4&reference=true",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind4.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/__reference/katex.min.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind4.css",
+              "status": 200
+            }
+          ]
+        },
+        {
+          "reference": false,
+          "resources": [
+            {
+              "url": "http://127.0.0.1:62273/?framework=tailwind4&reference=false",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind4.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+              "status": 200
+            },
+            {
+              "url": "http://127.0.0.1:62273/host/tailwind4.css",
+              "status": 200
+            }
+          ]
+        }
+      ],
+      "downloads": [
+        {
+          "url": "http://127.0.0.1:62273/host/tailwind4.css",
+          "transferSize": 7294,
+          "encodedBodySize": 6994
+        },
+        {
+          "url": "http://127.0.0.1:62273/used/assets/index-CnLgm2Wu.js",
+          "transferSize": 1321150,
+          "encodedBodySize": 1320850
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/mathRenderer-D1rwQIs4.js",
+          "transferSize": 267503,
+          "encodedBodySize": 267203
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/mathRenderer-BYZTj3zW.css",
+          "transferSize": 29588,
+          "encodedBodySize": 29288
+        },
+        {
+          "url": "http://127.0.0.1:62273/used/assets/mathRenderer-D1rwQIs4.js",
+          "transferSize": 267503,
+          "encodedBodySize": 267203
+        },
+        {
+          "url": "http://127.0.0.1:62273/favicon.ico",
+          "transferSize": 586,
+          "encodedBodySize": 286
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+          "transferSize": 16740,
+          "encodedBodySize": 16440
+        },
+        {
+          "url": "http://127.0.0.1:62273/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+          "transferSize": 26572,
+          "encodedBodySize": 26272
+        },
+        {
+          "url": "http://127.0.0.1:62273/host/tailwind4.css",
+          "transferSize": 7294,
+          "encodedBodySize": 6994
+        }
+      ],
+      "loadedFonts": [
+        "KaTeX_Main",
+        "KaTeX_Math"
+      ]
+    }
+  ],
+  "snapshots": 2808,
+  "browser": "156.0.8078.47",
+  "unused": {
+    "downloaded": [
+      "http://127.0.0.1:62273/?mode=unused",
+      "http://127.0.0.1:62273/host/plain.css",
+      "http://127.0.0.1:62273/unused/assets/index-BvPeT81V.js"
+    ],
+    "status": "passed"
+  }
+}

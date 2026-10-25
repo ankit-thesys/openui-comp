@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: InlineHeader preserves empty, heading and description markdown with class customization
+ok 1 - InlineHeader preserves empty, heading and description markdown with class customization
+  ---
+  duration_ms: 20.591958
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1333.453

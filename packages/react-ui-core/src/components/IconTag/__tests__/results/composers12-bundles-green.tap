@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: Button-only import excludes unrelated text, table and media code/styles
+ok 1 - Button-only import excludes unrelated text, table and media code/styles
+  ---
+  duration_ms: 239.835792
+  type: 'test'
+  ...
+# Subtest: Table-only import excludes unrelated text, table and media code/styles
+ok 2 - Table-only import excludes unrelated text, table and media code/styles
+  ---
+  duration_ms: 172.550459
+  type: 'test'
+  ...
+# Subtest: ScrollableTable-only import excludes unrelated text, table and media code/styles
+ok 3 - ScrollableTable-only import excludes unrelated text, table and media code/styles
+  ---
+  duration_ms: 185.030917
+  type: 'test'
+  ...
+# Subtest: CodeBlock-only import excludes unrelated text, table and media code/styles
+ok 4 - CodeBlock-only import excludes unrelated text, table and media code/styles
+  ---
+  duration_ms: 203.111583
+  type: 'test'
+  ...
+# Subtest: MarkDownRenderer-only import excludes unrelated text, table and media code/styles
+ok 5 - MarkDownRenderer-only import excludes unrelated text, table and media code/styles
+  ---
+  duration_ms: 188.841916
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1068.264

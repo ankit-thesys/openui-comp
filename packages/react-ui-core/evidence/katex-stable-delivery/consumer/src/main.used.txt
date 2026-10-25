@@ -1,0 +1,8 @@
+import React,{useState} from 'react';
+import {createRoot} from 'react-dom/client';
+import {TextContentWrapper,ThemeProvider} from '@openuidev/react-ui-core';
+const h=React.createElement;
+const text='## Formula\n\nBefore math.\n\n$$\n\\frac{1}{2}+x^2+\\sqrt{y}\n$$\n\nAfter math.';
+function App(){const [state,setState]=useState({mode:'light',custom:false,text});window.configure=setState;
+return h(React.Fragment,null,h('div',{id:'unrelated',style:{color:'rgb(11, 22, 33)',font:'17px/23px serif'}},'Host unchanged'),h(ThemeProvider,{mode:state.mode,lightTheme:state.custom?{textNeutralPrimary:'#234567'}:undefined},h('div',{id:'zone','data-ready':JSON.stringify(state),style:{maxWidth:760,padding:16}},h(TextContentWrapper,{textMarkdown:state.text,header:{heading:'Actual OpenUI component'},variant:'card'}),h(ThemeProvider,{mode:'dark'},h('section',{id:'nested'},h(TextContentWrapper,{textMarkdown:state.text}))))));}
+createRoot(document.getElementById('app')).render(h(App));

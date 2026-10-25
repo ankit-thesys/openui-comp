@@ -1,0 +1,18 @@
+node:internal/modules/esm/resolve:314
+  return new ERR_PACKAGE_PATH_NOT_EXPORTED(
+         ^
+
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not defined by "exports" in /private/tmp/core-source-media-npm-consumer/node_modules/@radix-ui/react-tooltip/package.json
+    at exportsNotFound (node:internal/modules/esm/resolve:314:10)
+    at packageExportsResolve (node:internal/modules/esm/resolve:661:9)
+    at resolveExports (node:internal/modules/cjs/loader:650:36)
+    at Module._findPath (node:internal/modules/cjs/loader:717:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1369:27)
+    at Function.resolve (node:internal/modules/helpers:157:19)
+    at file:///Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Sources/__tests__/foundation-media.browser.mjs:71:49
+    at Array.map (<anonymous>)
+    at file:///Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Sources/__tests__/foundation-media.browser.mjs:71:5 {
+  code: 'ERR_PACKAGE_PATH_NOT_EXPORTED'
+}
+
+Node.js v22.22.2

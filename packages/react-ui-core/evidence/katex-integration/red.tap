@@ -1,0 +1,31 @@
+TAP version 13
+# Subtest: installed TextContentWrapper preserves markdown and automatically loads math CSS/fonts
+not ok 1 - installed TextContentWrapper preserves markdown and automatically loads math CSS/fonts
+  ---
+  duration_ms: 6030.212292
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/TextContentWrapper/__tests__/TextContentWrapper.test.mjs:22:1'
+  failureType: 'testCodeFailure'
+  error: 'math styles load automatically from ordinary component imports'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/TextContentWrapper/__tests__/TextContentWrapper.test.mjs:123:7)
+    runNextTicks (node:internal/process/task_queues:64:5)
+    process.processImmediate (node:internal/timers:452:9)
+    process.callbackTrampoline (node:internal/async_hooks:130:17)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6965.663291

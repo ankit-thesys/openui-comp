@@ -1,0 +1,29 @@
+TAP version 13
+# Subtest: CodeBlock preserves code, language, custom theme and updates through the public root
+not ok 1 - CodeBlock preserves code, language, custom theme and updates through the public root
+  ---
+  duration_ms: 0.879625
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/CodeBlock/__tests__/CodeBlock.test.mjs:5:1'
+  failureType: 'testCodeFailure'
+  error: 'CodeBlock must be exported'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/CodeBlock/__tests__/CodeBlock.test.mjs:6:3)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1079.42775

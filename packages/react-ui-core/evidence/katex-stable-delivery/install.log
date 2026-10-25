@@ -1,0 +1,10 @@
+npm warn tarball tarball data for @openuidev/react-ui-core@file:../core-stable-math-artifact/openuidev-react-ui-core-0.0.0-prototype.stable-math.tgz (null) seems to be corrupted. Trying again.
+npm warn tarball tarball data for @openuidev/react-ui-core@file:../core-stable-math-artifact/openuidev-react-ui-core-0.0.0-prototype.stable-math.tgz (null) seems to be corrupted. Trying again.
+npm error code ENOENT
+npm error syscall open
+npm error path /private/tmp/core-stable-math-artifact/openuidev-react-ui-core-0.0.0-prototype.stable-math.tgz
+npm error errno -2
+npm error enoent ENOENT: no such file or directory, open '/private/tmp/core-stable-math-artifact/openuidev-react-ui-core-0.0.0-prototype.stable-math.tgz'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/ankitdas/.npm/_logs/2026-10-25T01_00_28_165Z-debug-0.log

@@ -30,5 +30,8 @@ jobs:
         env:
           NODE_OPTIONS: --max-old-space-size=6144
 
+      - name: Install Chrome for core browser checks
+        run: pnpm --filter @openuidev/react-ui-core exec playwright install --with-deps chrome
+
       - name: Run Packages CI
         run: pnpm --filter "./packages/**" --workspace-concurrency=1 run ci

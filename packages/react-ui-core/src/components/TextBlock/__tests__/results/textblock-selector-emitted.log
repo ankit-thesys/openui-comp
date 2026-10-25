@@ -1,0 +1,3 @@
+&:where(.size).variant .primary go2050715379 .go2050715379:where(.size).go2050715379 .variant .primary{color:red;}
+&.size.variant :where(.primary) go2063945275 .go2063945275.size.variant :where(.primary){color:red;}
+&.variant:where(.size) go4229632725 .go4229632725.variant:where(.size){color:red;}

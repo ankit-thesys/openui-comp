@@ -1,0 +1,36 @@
+{
+  "used": {
+    "javascript": {
+      "files": 1,
+      "bytes": 261648,
+      "gzipBytes": 77244
+    },
+    "css": {
+      "files": 1,
+      "bytes": 28943,
+      "gzipBytes": 7832
+    },
+    "fonts": {
+      "files": 59,
+      "bytes": 1072948,
+      "gzipBytes": 866377
+    }
+  },
+  "unused": {
+    "javascript": {
+      "files": 1,
+      "bytes": 776,
+      "gzipBytes": 433
+    },
+    "css": {
+      "files": 0,
+      "bytes": 0,
+      "gzipBytes": 0
+    },
+    "fonts": {
+      "files": 59,
+      "bytes": 1072948,
+      "gzipBytes": 866377
+    }
+  }
+}

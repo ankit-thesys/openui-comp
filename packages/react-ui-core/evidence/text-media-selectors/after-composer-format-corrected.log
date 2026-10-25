@@ -1,0 +1,6 @@
+
+> @openuidev/react-ui-core@0.0.0-beta.0 format:check /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core
+> prettier --check src tests *.json *.ts
+
+Checking formatting...
+All matched files use Prettier code style!

@@ -1,0 +1,16 @@
+TAP version 13
+# Subtest: TextBlockView preserves ref, defaults, rich text and tone/clamp/variant updates
+ok 1 - TextBlockView preserves ref, defaults, rich text and tone/clamp/variant updates
+  ---
+  duration_ms: 22.349916
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1318.921167

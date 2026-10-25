@@ -1,0 +1,108 @@
+✘ [ERROR] Could not resolve "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui/src/components/TableHeader"
+
+    <stdin>:5:26:
+      5 │ ...ader} from "/Users/ankitdas/.codex/worktrees/2d0f/openui/package...
+        ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui/src/components/TableBody"
+
+    <stdin>:6:24:
+      6 │ ...Body} from "/Users/ankitdas/.codex/worktrees/2d0f/openui/package...
+        ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui/src/components/TableFooter"
+
+    <stdin>:7:26:
+      7 │ ...oter} from "/Users/ankitdas/.codex/worktrees/2d0f/openui/package...
+        ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui/src/components/TableRow"
+
+    <stdin>:8:23:
+      8 │ ...eRow} from "/Users/ankitdas/.codex/worktrees/2d0f/openui/package...
+        ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui/src/components/TableHead"
+
+    <stdin>:9:24:
+      9 │ ...Head} from "/Users/ankitdas/.codex/worktrees/2d0f/openui/package...
+        ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui/src/components/TableCell"
+
+    <stdin>:10:24:
+      10 │ ...ell} from "/Users/ankitdas/.codex/worktrees/2d0f/openui/package...
+         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "/private/tmp/core-combined12-consumer/node_modules/react-syntax-highlighter/dist/cjs/index.js/dist/cjs/styles/prism" (originally "react-syntax-highlighter/dist/cjs/styles/prism")
+
+    packages/react-ui/src/components/MarkDownRenderer/MarkDownRenderer.tsx:4:38:
+      4 │ ...scDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
+        ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  The path "react-syntax-highlighter/dist/cjs/styles/prism" was remapped to "/private/tmp/core-combined12-consumer/node_modules/react-syntax-highlighter/dist/cjs/index.js/dist/cjs/styles/prism" using the alias feature, which then couldn't be resolved. Keep in mind that import path aliases are resolved in the current working directory.
+
+✘ [ERROR] Could not resolve "/private/tmp/core-combined12-consumer/node_modules/react-syntax-highlighter/dist/cjs/index.js/dist/cjs/styles/prism" (originally "react-syntax-highlighter/dist/cjs/styles/prism")
+
+    packages/react-ui/src/components/CodeBlock/CodeBlock.tsx:5:28:
+      5 │ ...scDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
+        ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  The path "react-syntax-highlighter/dist/cjs/styles/prism" was remapped to "/private/tmp/core-combined12-consumer/node_modules/react-syntax-highlighter/dist/cjs/index.js/dist/cjs/styles/prism" using the alias feature, which then couldn't be resolved. Keep in mind that import path aliases are resolved in the current working directory.
+
+✘ [ERROR] Cannot read directory "../../../../../../private/tmp/core-combined12-consumer/node_modules/zod/index.cjs": not a directory
+
+✘ [ERROR] Could not resolve "/private/tmp/core-combined12-consumer/node_modules/zod/index.cjs/v4" (originally "zod/v4")
+
+    packages/react-ui/src/components/Sources/SourceContext.tsx:2:18:
+      2 │ import { z } from "zod/v4";
+        ╵                   ~~~~~~~~
+
+  The path "zod/v4" was remapped to "/private/tmp/core-combined12-consumer/node_modules/zod/index.cjs/v4" using the alias feature, which then couldn't be resolved. Keep in mind that import path aliases are resolved in the current working directory.
+
+✘ [ERROR] Cannot read directory "../../../../../../private/tmp/core-combined12-consumer/node_modules/zod/index.cjs": not a directory
+
+✘ [ERROR] Could not resolve "/private/tmp/core-combined12-consumer/node_modules/zod/index.cjs/v4" (originally "zod/v4")
+
+    packages/react-ui/src/components/_shared/icons/schema.ts:1:18:
+      1 │ import { z } from "zod/v4";
+        ╵                   ~~~~~~~~
+
+  The path "zod/v4" was remapped to "/private/tmp/core-combined12-consumer/node_modules/zod/index.cjs/v4" using the alias feature, which then couldn't be resolved. Keep in mind that import path aliases are resolved in the current working directory.
+
+✘ [ERROR] Cannot read directory "../../../../../../private/tmp/core-combined12-consumer/node_modules/lucide-react/dist/cjs/lucide-react.js": not a directory
+
+✘ [ERROR] Could not resolve "/private/tmp/core-combined12-consumer/node_modules/lucide-react/dist/cjs/lucide-react.js/dynamicIconImports.mjs" (originally "lucide-react/dynamicIconImports.mjs")
+
+    packages/react-ui/src/components/_shared/icons/lucide/lucideDynamicImports.mjs:3:31:
+      3 │ import dynamicIconImports from "lucide-react/dynamicIconImports.mjs";
+        ╵                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  The path "lucide-react/dynamicIconImports.mjs" was remapped to "/private/tmp/core-combined12-consumer/node_modules/lucide-react/dist/cjs/lucide-react.js/dynamicIconImports.mjs" using the alias feature, which then couldn't be resolved. Keep in mind that import path aliases are resolved in the current working directory.
+
+/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467
+  let error = new Error(text);
+              ^
+
+Error: Build failed with 14 errors:
+error: Cannot read directory "../../../../../../private/tmp/core-combined12-consumer/node_modules/zod/index.cjs": not a directory
+error: Cannot read directory "../../../../../../private/tmp/core-combined12-consumer/node_modules/zod/index.cjs": not a directory
+error: Cannot read directory "../../../../../../private/tmp/core-combined12-consumer/node_modules/lucide-react/dist/cjs/lucide-react.js": not a directory
+packages/react-ui/src/components/CodeBlock/CodeBlock.tsx:5:28: ERROR: Could not resolve "/private/tmp/core-combined12-consumer/node_modules/react-syntax-highlighter/dist/cjs/index.js/dist/cjs/styles/prism" (originally "react-syntax-highlighter/dist/cjs/styles/prism")
+packages/react-ui/src/components/MarkDownRenderer/MarkDownRenderer.tsx:4:38: ERROR: Could not resolve "/private/tmp/core-combined12-consumer/node_modules/react-syntax-highlighter/dist/cjs/index.js/dist/cjs/styles/prism" (originally "react-syntax-highlighter/dist/cjs/styles/prism")
+...
+    at failureErrorWithLog (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    at /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    at /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    at buildResponseToResult (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    at /Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    at responseCallbacks.<computed> (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    at handleIncomingPacket (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    at Socket.readFromStdout (/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  errors: [Getter/Setter],
+  warnings: [Getter/Setter]
+}
+
+Node.js v22.22.2

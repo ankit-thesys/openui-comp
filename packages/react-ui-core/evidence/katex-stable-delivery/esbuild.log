@@ -1,0 +1,2 @@
+Default asset handling failed: 60 errors
+With explicit built-in font file loaders: 4190 outputs; CSS remains a separate asset, not automatically linked HTML

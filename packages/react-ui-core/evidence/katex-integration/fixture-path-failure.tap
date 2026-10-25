@@ -1,0 +1,32 @@
+TAP version 13
+# Subtest: installed TextContentWrapper preserves markdown and automatically loads math CSS/fonts
+not ok 1 - installed TextContentWrapper preserves markdown and automatically loads math CSS/fonts
+  ---
+  duration_ms: 17112.491083
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/TextContentWrapper/__tests__/TextContentWrapper.test.mjs:22:1'
+  failureType: 'testCodeFailure'
+  error: '[vite:build-html] The "fileName" or "name" properties of emitted chunks and assets must be strings that are neither absolute nor relative paths, received "../../../../../../../private/var/folders/zg/c91r6pzj7ql8z_xxw8rbqqgr0000gn/T/openui-math-consumer-PtqfNo/.math-fixture-4GBwEO/index.html".'
+  code: 'PLUGIN_ERROR'
+  name: 'RollupError'
+  stack: |-
+    getRollupError (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/rollup@4.62.3/node_modules/rollup/dist/es/shared/parseAst.js:317:41)
+    error (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/rollup@4.62.3/node_modules/rollup/dist/es/shared/parseAst.js:313:42)
+    FileEmitter.emitFile (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/rollup@4.62.3/node_modules/rollup/dist/es/shared/node-entry.js:22102:24)
+    Object.generateBundle (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/vite@6.4.2_@types+node@22.20.1_jiti@2.7.0_less@4.9.1_lightningcss@1.33.0_sass@1.102.0_t_b1ab6da7c9761d9bf3ad5c3aed821f3e/node_modules/vite/dist/node/chunks/dep-Dq2t6Dq0.js:36715:14)
+    async Bundle.generate (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/rollup@4.62.3/node_modules/rollup/dist/es/shared/node-entry.js:20846:9)
+    async file:///Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/rollup@4.62.3/node_modules/rollup/dist/es/shared/node-entry.js:23778:27
+    async catchUnfinishedHookActions (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/rollup@4.62.3/node_modules/rollup/dist/es/shared/node-entry.js:23143:16)
+    async buildEnvironment (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/vite@6.4.2_@types+node@22.20.1_jiti@2.7.0_less@4.9.1_lightningcss@1.33.0_sass@1.102.0_t_b1ab6da7c9761d9bf3ad5c3aed821f3e/node_modules/vite/dist/node/chunks/dep-Dq2t6Dq0.js:46266:16)
+    async TestContext.<anonymous> (file:///Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/TextContentWrapper/__tests__/TextContentWrapper.test.mjs:72:7)
+    async Test.run (node:internal/test_runner/test:1054:7)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 17456.51425

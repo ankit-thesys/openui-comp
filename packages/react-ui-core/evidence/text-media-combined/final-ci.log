@@ -1,0 +1,15 @@
+
+> @openuidev/react-ui-core@0.0.0-beta.0 ci /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core
+> pnpm run format:check && pnpm run lint:check && pnpm run typecheck && pnpm run test && pnpm run check:publint && pnpm run check:attw
+
+
+> @openuidev/react-ui-core@0.0.0-beta.0 format:check /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core
+> prettier --check src tests *.json *.ts
+
+Checking formatting...
+[warn] src/components/Sources/__tests__/results/browser-initial/text12-browser-first-allowed.json
+[warn] Code style issues found in the above file. Run Prettier with --write to fix.
+ ELIFECYCLE  Command failed with exit code 1.
+/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @openuidev/react-ui-core@0.0.0-beta.0 ci: `pnpm run format:check && pnpm run lint:check && pnpm run typecheck && pnpm run test && pnpm run check:publint && pnpm run check:attw`
+Exit status 1

@@ -1,0 +1,12 @@
+{
+  "status": "failed",
+  "baseProductionRevision": "88fdccf94e39a5c58e5a2a80cdf7f755eb5f7326",
+  "prototypeOnly": true,
+  "tarballSha256": "8cae8687c7d0a5830b7f863a5f86f2e6e3bf3561c76950d23581170e637d5085",
+  "consumerLockSha256": "2d6dce0bc5ef7edd8883394b26a38535152a5adda5e006f2ae09f65470b9ad0e",
+  "runnerSha256": "a61ef122294b539cafc77d7b378f62a78198bc329938a773de14974938937fa1",
+  "cases": [],
+  "snapshots": 0,
+  "browser": "156.0.8078.47",
+  "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert((await page.locator('.katex').first().evaluate(n=>getComputedStyle(n).fontFamily)).includes('KaTeX_Main'))\n"
+}

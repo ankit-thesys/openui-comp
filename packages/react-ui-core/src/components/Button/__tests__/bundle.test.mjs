@@ -1,3 +1,4 @@
+// JavaScript/Goober pruning only; vendor CSS delivery is tested in the Vite/Chrome consumer.
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
 import path from "node:path";
@@ -20,7 +21,7 @@ const bundle = (contents) =>
     platform: "browser",
     minify: true,
     metafile: true,
-    external: ["react", "react-dom", "react/jsx-runtime"],
+    external: ["*.css", "react", "react-dom", "react/jsx-runtime"],
   });
 const retained = (output) =>
   Object.values(output.metafile.outputs).flatMap((entry) =>

@@ -1,0 +1,12 @@
+
+> @openuidev/react-ui-core@0.0.0-beta.0 format:check /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core
+> prettier --check src tests *.json *.ts
+
+Checking formatting...
+[warn] src/components/IconTag/__tests__/results/browser-corrected/composers12-selectors-first.json
+[warn] src/components/IconTag/__tests__/results/browser-corrected/composers12-selectors-prepared.json
+[warn] src/components/IconTag/__tests__/results/browser-corrected/consumer-lock.json
+[warn] Code style issues found in 3 files. Run Prettier with --write to fix.
+/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @openuidev/react-ui-core@0.0.0-beta.0 format:check: `prettier --check src tests *.json *.ts`
+Exit status 1

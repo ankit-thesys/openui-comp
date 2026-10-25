@@ -1,0 +1,16 @@
+▲ [WARNING] Import "ScrollableTable" will always be undefined because there is no matching export in "packages/react-ui-core/dist/index.mjs" [import-is-undefined]
+
+    <stdin>:3:9:
+      3 │ if(!Core.ScrollableTable)throw Error('ScrollableTable must be expor...
+        ╵          ~~~~~~~~~~~~~~~
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.waitForFunction: Timeout 7000ms exceeded.
+    at /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/Table/__tests__/scroll.browser.mjs:26:12 {
+  name: 'TimeoutError'
+}
+
+Node.js v22.22.2

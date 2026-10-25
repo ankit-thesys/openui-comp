@@ -1,0 +1,9 @@
+
+> @openuidev/react-ui-core@0.0.0-beta.0 typecheck /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core
+> tsc --noEmit
+
+src/components/CodeBlock/CodeBlock.tsx(5,29): error TS7016: Could not find a declaration file for module 'react-syntax-highlighter/dist/cjs/styles/prism/index.js'. '/Users/ankitdas/.codex/worktrees/2d0f/openui/node_modules/.pnpm/react-syntax-highlighter@16.1.1_react@19.2.4/node_modules/react-syntax-highlighter/dist/cjs/styles/prism/index.js' implicitly has an 'any' type.
+  If the 'react-syntax-highlighter' package actually exposes this module, consider sending a pull request to amend 'https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-syntax-highlighter'
+/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @openuidev/react-ui-core@0.0.0-beta.0 typecheck: `tsc --noEmit`
+Exit status 2

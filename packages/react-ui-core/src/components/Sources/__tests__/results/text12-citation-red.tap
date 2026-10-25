@@ -1,0 +1,50 @@
+TAP version 13
+# Subtest: citation items open safe sources and still notify consumers when a source URL is rejected
+not ok 1 - citation items open safe sources and still notify consumers when a source URL is rejected
+  ---
+  duration_ms: 0.924708
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Citation/__tests__/Citation.test.mjs:5:1'
+  failureType: 'testCodeFailure'
+  error: 'public CitationItem export'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Citation/__tests__/Citation.test.mjs:6:3)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: markdown citation spans resolve one-based sources and preserve ordinary span content
+not ok 2 - markdown citation spans resolve one-based sources and preserve ordinary span content
+  ---
+  duration_ms: 0.093541
+  type: 'test'
+  location: '/Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Citation/__tests__/Citation.test.mjs:23:1'
+  failureType: 'testCodeFailure'
+  error: 'public TextContentCitation export'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/ankitdas/.codex/worktrees/63b2/openui/packages/react-ui-core/src/components/Citation/__tests__/Citation.test.mjs:24:3)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 538.383917

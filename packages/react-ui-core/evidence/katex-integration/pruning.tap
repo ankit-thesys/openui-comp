@@ -1,0 +1,166 @@
+TAP version 13
+# Subtest: Button-only root import excludes unrelated layout modules and styles
+ok 1 - Button-only root import excludes unrelated layout modules and styles
+  ---
+  duration_ms: 1085.423125
+  type: 'test'
+  ...
+# Subtest: Accordion-only root import excludes unrelated layout modules and styles
+ok 2 - Accordion-only root import excludes unrelated layout modules and styles
+  ---
+  duration_ms: 874.309417
+  type: 'test'
+  ...
+# Subtest: Carousel-only root import excludes unrelated layout modules and styles
+ok 3 - Carousel-only root import excludes unrelated layout modules and styles
+  ---
+  duration_ms: 746.334584
+  type: 'test'
+  ...
+# Subtest: Steps-only root import excludes unrelated layout modules and styles
+ok 4 - Steps-only root import excludes unrelated layout modules and styles
+  ---
+  duration_ms: 651.452792
+  type: 'test'
+  ...
+# Subtest: Tabs-only root import excludes unrelated layout modules and styles
+ok 5 - Tabs-only root import excludes unrelated layout modules and styles
+  ---
+  duration_ms: 578.435667
+  type: 'test'
+  ...
+# Subtest: a retained Button excludes theme tables and unrelated controls from an ESM consumer bundle
+ok 6 - a retained Button excludes theme tables and unrelated controls from an ESM consumer bundle
+  ---
+  duration_ms: 1102.536834
+  type: 'test'
+  ...
+# Subtest: unused root imports do not retain components or the styling runtime
+ok 7 - unused root imports do not retain components or the styling runtime
+  ---
+  duration_ms: 843.122917
+  type: 'test'
+  ...
+# Subtest: Card root import prunes unrelated layout implementations and styles
+ok 8 - Card root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 1086.367042
+  type: 'test'
+  ...
+# Subtest: CardHeader root import prunes unrelated layout implementations and styles
+ok 9 - CardHeader root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 912.426958
+  type: 'test'
+  ...
+# Subtest: Skeleton root import prunes unrelated layout implementations and styles
+ok 10 - Skeleton root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 773.930417
+  type: 'test'
+  ...
+# Subtest: TableSkeleton root import prunes unrelated layout implementations and styles
+ok 11 - TableSkeleton root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 584.1345
+  type: 'test'
+  ...
+# Subtest: PieChartSkeleton root import prunes unrelated layout implementations and styles
+ok 12 - PieChartSkeleton root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 609.988584
+  type: 'test'
+  ...
+# Subtest: DotMatrixLoader root import prunes unrelated layout implementations and styles
+ok 13 - DotMatrixLoader root import prunes unrelated layout implementations and styles
+  ---
+  duration_ms: 330.880792
+  type: 'test'
+  ...
+# Subtest: Button-only root import excludes unrelated control modules and styles
+ok 14 - Button-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 1113.758333
+  type: 'test'
+  ...
+# Subtest: IconButton-only root import excludes unrelated control modules and styles
+ok 15 - IconButton-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 912.565417
+  type: 'test'
+  ...
+# Subtest: CheckBoxItem-only root import excludes unrelated control modules and styles
+ok 16 - CheckBoxItem-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 743.66725
+  type: 'test'
+  ...
+# Subtest: Chips-only root import excludes unrelated control modules and styles
+ok 17 - Chips-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 616.993417
+  type: 'test'
+  ...
+# Subtest: Slider-only root import excludes unrelated control modules and styles
+ok 18 - Slider-only root import excludes unrelated control modules and styles
+  ---
+  duration_ms: 589.118209
+  type: 'test'
+  ...
+# Subtest: Button-only root import excludes unrelated overlay/layout modules and styles
+ok 19 - Button-only root import excludes unrelated overlay/layout modules and styles
+  ---
+  duration_ms: 1085.671833
+  type: 'test'
+  ...
+# Subtest: Modal-only root import excludes unrelated overlay/layout modules and styles
+ok 20 - Modal-only root import excludes unrelated overlay/layout modules and styles
+  ---
+  duration_ms: 860.969834
+  type: 'test'
+  ...
+# Subtest: TooltipWrapper-only root import excludes unrelated overlay/layout modules and styles
+ok 21 - TooltipWrapper-only root import excludes unrelated overlay/layout modules and styles
+  ---
+  duration_ms: 710.279167
+  type: 'test'
+  ...
+# Subtest: Button-only import excludes unrelated text, table and media code/styles
+ok 22 - Button-only import excludes unrelated text, table and media code/styles
+  ---
+  duration_ms: 1140.099333
+  type: 'test'
+  ...
+# Subtest: Table-only import excludes unrelated text, table and media code/styles
+ok 23 - Table-only import excludes unrelated text, table and media code/styles
+  ---
+  duration_ms: 859.538167
+  type: 'test'
+  ...
+# Subtest: ScrollableTable-only import excludes unrelated text, table and media code/styles
+ok 24 - ScrollableTable-only import excludes unrelated text, table and media code/styles
+  ---
+  duration_ms: 701.170958
+  type: 'test'
+  ...
+# Subtest: CodeBlock-only import excludes unrelated text, table and media code/styles
+ok 25 - CodeBlock-only import excludes unrelated text, table and media code/styles
+  ---
+  duration_ms: 683.637958
+  type: 'test'
+  ...
+# Subtest: MarkDownRenderer-only import excludes unrelated text, table and media code/styles
+ok 26 - MarkDownRenderer-only import excludes unrelated text, table and media code/styles
+  ---
+  duration_ms: 553.704125
+  type: 'test'
+  ...
+1..26
+# tests 26
+# suites 0
+# pass 26
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4397.301125

@@ -1,0 +1,12 @@
+ℹ tsdown v0.21.10 powered by rolldown v1.0.0-rc.17
+ℹ config file: /private/tmp/core-katex-css-probe/tsdown.config.ts 
+ℹ entry: src/index.ts
+ℹ Build start
+ℹ [CJS] dist/index.cjs                           0.20 kB │ gzip: 0.17 kB
+ℹ [CJS] dist/node_modules/katex/dist/katex.css  26.94 kB │ gzip: 3.55 kB
+ℹ [CJS] 2 files, total: 27.14 kB
+ℹ [ESM] dist/index.mjs                           0.12 kB │ gzip: 0.11 kB
+ℹ [ESM] dist/node_modules/katex/dist/katex.css  26.94 kB │ gzip: 3.55 kB
+ℹ [ESM] 2 files, total: 27.06 kB
+✔ Build complete in 285ms
+✔ Build complete in 285ms
