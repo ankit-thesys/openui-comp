@@ -1,7 +1,7 @@
 import { defineConfig } from "tsdown";
 
 export default defineConfig({
-  entry: ["src/react/chat/index.ts", "src/react/chat/libs/index.ts"],
+  entry: ["src/index.ts", "src/libs/index.ts"],
   unbundle: true,
   root: "src",
   format: ["esm", "cjs"],

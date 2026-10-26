@@ -1026,11 +1026,8 @@ importers:
         specifier: ^2.0.0
         version: 2.2.12(typescript@5.9.3)
 
-  packages/kits:
+  packages/kits/chat:
     dependencies:
-      '@openuidev/react-components':
-        specifier: workspace:^
-        version: link:../react-components
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1041,9 +1038,12 @@ importers:
         specifier: ^0.562.0
         version: 0.562.0(react@19.2.4)
     devDependencies:
+      '@openuidev/react-components':
+        specifier: workspace:^
+        version: link:../../react-components
       '@openuidev/react-lang':
         specifier: workspace:^
-        version: link:../react-lang
+        version: link:../../react-lang
       '@types/node':
         specifier: 'catalog:'
         version: 22.20.1
