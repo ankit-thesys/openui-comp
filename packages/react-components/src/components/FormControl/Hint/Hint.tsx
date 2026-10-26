@@ -4,7 +4,9 @@ import React, { forwardRef } from "react";
 import { useFormControlContext } from "../context";
 import { hintStyles } from "./hint.styles";
 
-const componentClass = css(hintStyles);
+const componentClass = css`
+  ${hintStyles}
+`;
 
 export interface HintProps extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;

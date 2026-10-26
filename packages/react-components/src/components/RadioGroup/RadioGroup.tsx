@@ -5,7 +5,9 @@ import { CSSProperties, forwardRef, ReactElement } from "react";
 import { RadioItemProps } from "../RadioItem";
 import { componentStyles } from "./styles";
 
-const componentClass = css(componentStyles);
+const componentClass = css`
+  ${componentStyles}
+`;
 
 type RadioGroupVariant = "clear" | "card" | "sunk";
 interface RadioGroupProps extends Radio.RadioGroupProps {

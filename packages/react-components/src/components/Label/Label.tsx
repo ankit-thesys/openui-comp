@@ -4,7 +4,9 @@ import { css } from "goober";
 import React, { forwardRef } from "react";
 import { labelStyles } from "./label.styles";
 
-const componentClass = css(labelStyles);
+const componentClass = css`
+  ${labelStyles}
+`;
 
 export interface LabelProps extends React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> {
   children: React.ReactNode;

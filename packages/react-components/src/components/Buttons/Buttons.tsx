@@ -5,7 +5,9 @@ import { ButtonProps } from "../Button";
 import { IconButtonProps } from "../IconButton";
 import { buttonsStyles } from "./buttons.styles";
 
-const componentClass = css(buttonsStyles);
+const componentClass = css`
+  ${buttonsStyles}
+`;
 
 type ButtonsVariant = "vertical" | "horizontal";
 

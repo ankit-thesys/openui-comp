@@ -1,8 +1,12 @@
 import { css } from "goober";
 import React, { createContext, useContext } from "react";
 import { stepItemStyles, stepsStyles } from "./steps.styles";
-const componentClass = css(stepsStyles);
-const itemClass = css(stepItemStyles);
+const componentClass = css`
+  ${stepsStyles}
+`;
+const itemClass = css`
+  ${stepItemStyles}
+`;
 
 export interface StepsItemProps {
   title: React.ReactNode;

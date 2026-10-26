@@ -3,7 +3,9 @@ import { css } from "goober";
 import React, { forwardRef, useMemo } from "react";
 import { FormControlProvider } from "./context";
 import { formControlStyles } from "./formControl.styles";
-const componentClass = css(formControlStyles);
+const componentClass = css`
+  ${formControlStyles}
+`;
 
 export interface FormControlProps {
   children: React.ReactNode;

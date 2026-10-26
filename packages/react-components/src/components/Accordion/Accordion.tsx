@@ -4,7 +4,9 @@ import { css } from "goober";
 import { ChevronDownIcon } from "lucide-react";
 import React, { forwardRef } from "react";
 import { accordionStyles } from "./accordion.styles";
-const componentClass = css(accordionStyles);
+const componentClass = css`
+  ${accordionStyles}
+`;
 
 type AccordionVariant = "clear" | "card" | "sunk";
 

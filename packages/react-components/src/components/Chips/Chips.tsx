@@ -3,7 +3,9 @@ import { css } from "goober";
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 import { chipsStyles } from "./chips.styles";
 
-const componentClass = css(chipsStyles);
+const componentClass = css`
+  ${chipsStyles}
+`;
 
 export type ChipsSelectionType = "single" | "multiple";
 

@@ -4,7 +4,9 @@ import { CSSProperties, forwardRef, ReactElement } from "react";
 import { SwitchItemProps } from "../SwitchItem";
 import { componentStyles } from "./styles";
 
-const componentClass = css(componentStyles);
+const componentClass = css`
+  ${componentStyles}
+`;
 
 type SwitchGroupVariant = "clear" | "card" | "sunk";
 export interface SwitchGroupProps {

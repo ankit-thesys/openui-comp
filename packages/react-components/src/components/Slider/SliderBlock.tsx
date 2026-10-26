@@ -8,7 +8,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Slider, SliderProps } from "./Slider";
 import { sliderBlockStyles } from "./sliderBlock.styles";
 
-const componentClass = css(sliderBlockStyles);
+const componentClass = css`
+  ${sliderBlockStyles}
+`;
 
 export interface SliderBlockProps extends Omit<SliderProps, "value" | "defaultValue"> {
   label: string;

@@ -2,7 +2,9 @@ import clsx from "clsx";
 import { css } from "goober";
 import { SkeletonBar } from "./SkeletonBar";
 import { tableStyles } from "./tableSkeleton.styles";
-const componentClass = css(tableStyles);
+const componentClass = css`
+  ${tableStyles}
+`;
 export function TableSkeleton({ rows = 5, columns = 4 }: { rows?: number; columns?: number }) {
   return (
     <div className={clsx(componentClass, "openui-skeleton-table")}>

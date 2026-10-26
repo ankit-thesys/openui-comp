@@ -3,7 +3,9 @@ import { css } from "goober";
 import { forwardRef, ReactNode } from "react";
 import { buttonStyles } from "./button.styles";
 
-const componentClass = css(buttonStyles);
+const componentClass = css`
+  ${buttonStyles}
+`;
 
 type ButtonVariant = "primary" | "secondary" | "tertiary";
 type ButtonSize = "extra-small" | "small" | "medium" | "large";

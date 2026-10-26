@@ -4,7 +4,9 @@ import { css } from "goober";
 import { ReactNode } from "react";
 import { componentStyles } from "./styles";
 
-const componentClass = css(componentStyles);
+const componentClass = css`
+  ${componentStyles}
+`;
 
 export interface ToggleItemProps extends ToggleGroupPrimitive.ToggleGroupItemProps {
   children: ReactNode;

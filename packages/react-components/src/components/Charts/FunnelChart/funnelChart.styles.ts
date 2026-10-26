@@ -1,8 +1,14 @@
 import { css, keyframes } from "goober";
-const appear = keyframes({
-  from: { opacity: 0, transform: "scale(0.85)" },
-  to: { opacity: 1, transform: "scale(1)" },
-});
+const appear = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
 export const rootClass = css`
   & {
     display: flex;

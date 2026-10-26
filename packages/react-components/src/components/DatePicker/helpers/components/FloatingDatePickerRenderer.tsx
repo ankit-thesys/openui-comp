@@ -11,7 +11,9 @@ import { useDatePicker } from "../context/DatePickerContext";
 import { formatDateRange, formatSingleDate } from "../utils/helperFn";
 import { DatepickerRenderer } from "./DatePickerRenderer";
 
-const componentClass = css(datePickerStyles);
+const componentClass = css`
+  ${datePickerStyles}
+`;
 
 const FloatingDateInput = () => {
   const { mode, selectedDate, selectedRange, isOpen, setIsOpen } = useDatePicker();
