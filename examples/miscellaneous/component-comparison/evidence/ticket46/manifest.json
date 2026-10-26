@@ -10,6 +10,16 @@
     "sha256": "23d2d0b786bb9e8107f03457c24dce578aef96352c449170339c4672a822deaf"
   },
   {
+    "file": "executor-final-provenance.log.gz",
+    "bytes": 440,
+    "sha256": "bd93e15adebfe94b66e21535b9267e4595cfcab74088c992f8d0d87e5f0cbc0f"
+  },
+  {
+    "file": "executor-provenance.json",
+    "bytes": 1331,
+    "sha256": "7d79996e9bbc5594d4aa8f0c570c203d951a66dfc3d1463e3884c67779e0bc12"
+  },
+  {
     "file": "retained-tests.log",
     "bytes": 1272,
     "sha256": "7ac71a02ec770dacee60be05756f1accfc77ab125f7892e3407c76411648714d"
