@@ -293,3 +293,30 @@ Handoff `/private/tmp/worker1-bench-handoff.json` preserves exact fixture v2,
 package and621-file implementation source identities. Final durable compressed
 results and source-run hashes are in the example's `evidence/bench/final/`.
 Production packages and frozen artifacts remain unchanged.
+
+
+### Select source trace: build output divergence, not a mistranscribed value
+
+Source-only follow-up found that both legacy `_menu.scss:39-42` (included by
+`Select/select.scss:74`) and core `Select/select.styles.ts:76-77` author the same
+OKLCH shadow colors. The frozen legacy application asset
+`legacy-CDV1cNrX.css` contains `#0000000d` and `#00000014`; runtime Goober retains
+`oklch(0 0 0 / .05)` and `oklch(0 0 0 / .08)`. A tiny stock esbuild CSS minification
+reproduction produces those exact hex values from the authored OKLCH declaration.
+Hex alpha13/255≈0.05098 and20/255≈0.07843 differ from0.05 and0.08.
+
+Thus the confirmed result is a **built-application styling compatibility
+difference**, not proof that the conversion mistranscribed the source. Static
+CSS minification versus runtime color preservation (including alpha quantization)
+is the leading source-level explanation. No browser toggle has isolated which
+part of that representation difference causes every pixel; that causal detail
+remains unverified. Existing captures prove zero within-arm repeat difference and
+1,124 cross-arm pixels. No new browser test was run during verifier ownership.
+The inherited FormControl label-target issue is independent.
+
+Minimal existing-evidence reproduction:
+`npm run bench -- --from-run=2026-10-25T23-22-04-256Z-0e475508 --case=select-open-portal --width=390 --theme=light --delivery=instant`.
+Do not execute during verifier ownership. The fixture renders the Project Select
+inside FormControl and opens the combobox with Enter. Evidence and the exact
+minifier/source/asset trace are preserved in
+`evidence/bench/select-shadow-source-trace.json`. Production code remains unchanged.
