@@ -1,0 +1,7 @@
+# Ticket 48 maintained lab migration
+
+The lab consumes the frozen native chat archive b4cb71c1d378bd4b50c69b0092af55ca55bc4ef0c33771624d367f782d739384 from production source9006a2066, with explicit core peer f62cf7f1d3bf9a6e3cfe57b6e2365ed821978d6d65cb080e0444bc907e94e46f. Versioned candidate archives leave all historical tarballs and frozen runs unchanged. Every installed chat file and lock integrity matched the accepted native archive. Public module resolution gives the same core instance through direct and kit imports; old kit identity is absent.
+
+All34 tests, CLI registry/schema correspondence, strict TypeScript/Vite build, local SDK browser streaming/actions/replay/abort/isolation checks, offline84-entry rendering and six theme combinations pass. Browser tests use Chrome156 and local mock upstream only, without a live API secret. Screenshots and raw JSON/logs are retained beside exact source/archive hashes in validation.json. Actual component-root custom-context, declaration and bundle checks are reused from hash-verified producer evidence under ../ticket47; release-plan/metadata controls are independent evidence under ../ticket49. Those checks were not duplicated here.
+
+No fullmatrix rerun was warranted for package path changes. Existing component failures, screenshot reviews, known issues, Input/Label customization findings and theme/palette coverage gaps remain separate and unchanged. SSR/hydration/runtime-performance and packing/installing the hypothetical0.0.0 release version are not certified.

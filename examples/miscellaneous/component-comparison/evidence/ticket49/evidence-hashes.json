@@ -1,0 +1,21 @@
+{
+  "README.md": "b3e23a213cc4fe9b43c056b4bff8012ed1d3941e02cf80218244ac96c7f72c31",
+  "changesets-config.json": "801376d199d3b629db5fd6886a2c8166a11b179b94f35b2746715a9d0218b5d7",
+  "chat-only-changeset.md": "8e69209329d9ad7d10d327fc11d61521ac308f2b77ae3939a25d61c95af0d093",
+  "commands.json": "a14d4bc04a1c0b280ff43ce0b6dcc57839ea6c477985163f108316172f92756f",
+  "inspect-final.py": "35c44d2c411b76eb73516809912db7169278020b57c1bc67914efef43fc08c5c",
+  "packed-artifact-inspection.json": "0c108d4dbde056fa833488da8e0cfa83988b4ffbe099970b8f3bfd45e10724d5",
+  "peer-controls.json": "d8d5299279ed9e05e9d04ef90c01b94c8ef6a80c300692aab52014e1a2ed9680",
+  "pnpm-workspace.yaml": "275f06c565c4d4b922702c9a9930305666205ebb4ba3b949294d95dd225ff529",
+  "provenance.json": "d6ff5457086cb1e9338d9fd6cfdd4687feb1bb0ec827a024f4b06419f5800db0",
+  "release-plan.json": "5bfb56771969e8ab57dd092afda594cdc74fc68ea9271bd6a6fb093e74e9fb8f",
+  "ticket47-browser-results.json": "063daeee310b76f712e651ed27705098f4e1c7000f55f3d976282d861efb410c",
+  "ticket47-bundle-results.json": "a305b48dd7cef8746fbf099833fd57fc7bc8c62fe7ac76d1429feb776c91e1de",
+  "ticket47-evidence-hashes-verified.json": "bcbf9da3123340850401814cf57b03b5beaab4dc2ff453803439e022ca6fffa9",
+  "ticket47-final-provenance.json": "e13a0c69ca2ab774f35e40ed97d30c229b7e8be017d3bfe156b6073709c0b1d4",
+  "ticket47-packed-types.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "ticket47-registry-schema.json": "516446fb9ec66b6986a78a19903058ab45601e66ce3f11f5901f46ccd86ca9e9",
+  "ticket47-resume-packed.log": "0f3afed62637c6211f73c6598438fea7a194cc713e1a1990204440a734cd7ece",
+  "verify-peer-windows.mjs": "c2483c01388ae93cff22dafb27ce9301b9f7c2de8a472221f3e54fa5ce0ca7ba",
+  "workspace-packages.mjs": "bb644e609aad2e2b392c536c54050f845dd6bd29b33454110e3a66071a3982d4"
+}

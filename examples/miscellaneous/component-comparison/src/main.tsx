@@ -378,7 +378,7 @@ function App() {
             {
               id: "migrated",
               label: "Migrated library",
-              detail: "react-components + kits/react/chat/libs",
+              detail: "react-components + chat-kit/libs",
               ref: migrated,
             },
           ] as const

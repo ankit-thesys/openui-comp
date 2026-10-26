@@ -1,0 +1,17 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 1273,
+    "sha256": "a173e870edbb4717f03d4214fd72b3fc811932d1a348f95563443e2b243eef81"
+  },
+  {
+    "file": "final-provenance.json",
+    "bytes": 2950,
+    "sha256": "e13a0c69ca2ab774f35e40ed97d30c229b7e8be017d3bfe156b6073709c0b1d4"
+  },
+  {
+    "file": "verified-evidence.tar.gz",
+    "bytes": 450247,
+    "sha256": "00fd00734194d170c9f609baa5ca17ef086baaa322d939428905a030c1d4bde2"
+  }
+]

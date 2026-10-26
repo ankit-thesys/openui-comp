@@ -1,0 +1,347 @@
+{
+  "pass": true,
+  "browser": "156.0.8078.47",
+  "fixture": "lab-theme-presets-v2",
+  "combinations": 6,
+  "results": [
+    {
+      "preset": "default",
+      "mode": "light",
+      "definitionHash": "720dd4f2ff9f5b19411d482c97132f081f6d7160c9737ad9310354d0a7c1439f",
+      "arms": [
+        {
+          "button": {
+            "background": "oklch(0.546 0.215 262.881)",
+            "radius": "8px",
+            "fontSize": "16px"
+          },
+          "portal": {
+            "present": true,
+            "background": "oklch(0.99436 0 89.876)",
+            "foregroundToken": "oklch(0.994 0 89.876 / 1)"
+          },
+          "label": {
+            "color": "oklch(0.097 0 0)"
+          },
+          "expected": {
+            "background": "oklch(0.546 0.215 262.881)",
+            "radius": "8px",
+            "fontSize": "16px",
+            "portalBackground": "oklch(0.99436 0 89.876)",
+            "labelColor": "oklch(0.097 0 0)"
+          },
+          "mode": "light"
+        },
+        {
+          "button": {
+            "background": "oklch(0.546 0.215 262.881)",
+            "radius": "8px",
+            "fontSize": "16px"
+          },
+          "portal": {
+            "present": true,
+            "background": "oklch(0.99436 0 89.876)",
+            "foregroundToken": "oklch(0.994 0 89.876 / 1)"
+          },
+          "label": {
+            "color": "oklch(0.097 0 0)"
+          },
+          "expected": {
+            "background": "oklch(0.546 0.215 262.881)",
+            "radius": "8px",
+            "fontSize": "16px",
+            "portalBackground": "oklch(0.99436 0 89.876)",
+            "labelColor": "oklch(0.097 0 0)"
+          },
+          "mode": "light"
+        }
+      ],
+      "independentDraftsPreserved": true,
+      "sourcePreserved": true,
+      "openPortalPreserved": true
+    },
+    {
+      "preset": "default",
+      "mode": "dark",
+      "definitionHash": "720dd4f2ff9f5b19411d482c97132f081f6d7160c9737ad9310354d0a7c1439f",
+      "arms": [
+        {
+          "button": {
+            "background": "oklch(0.546 0.215 262.881)",
+            "radius": "8px",
+            "fontSize": "16px"
+          },
+          "portal": {
+            "present": true,
+            "background": "oklch(0.2527 0 5.39255)",
+            "foregroundToken": "oklch(0.205 0 0 / 1)"
+          },
+          "label": {
+            "color": "oklch(0.985 0 89.876)"
+          },
+          "expected": {
+            "background": "oklch(0.546 0.215 262.881)",
+            "radius": "8px",
+            "fontSize": "16px",
+            "portalBackground": "oklch(0.2527 0 5.39255)",
+            "labelColor": "oklch(0.985 0 89.876)"
+          },
+          "mode": "dark"
+        },
+        {
+          "button": {
+            "background": "oklch(0.546 0.215 262.881)",
+            "radius": "8px",
+            "fontSize": "16px"
+          },
+          "portal": {
+            "present": true,
+            "background": "oklch(0.2527 0 5.39255)",
+            "foregroundToken": "oklch(0.205 0 0 / 1)"
+          },
+          "label": {
+            "color": "oklch(0.985 0 89.876)"
+          },
+          "expected": {
+            "background": "oklch(0.546 0.215 262.881)",
+            "radius": "8px",
+            "fontSize": "16px",
+            "portalBackground": "oklch(0.2527 0 5.39255)",
+            "labelColor": "oklch(0.985 0 89.876)"
+          },
+          "mode": "dark"
+        }
+      ],
+      "independentDraftsPreserved": true,
+      "sourcePreserved": true,
+      "openPortalPreserved": true
+    },
+    {
+      "preset": "cyberpunk",
+      "mode": "light",
+      "definitionHash": "f8fd65ffcdbd8e32320a94d31ef99d1a877635095cbb0b91bc5413d1f73b528f",
+      "arms": [
+        {
+          "button": {
+            "background": "oklch(0.5 0.14 210)",
+            "radius": "2px",
+            "fontSize": "15px"
+          },
+          "portal": {
+            "present": true,
+            "background": "oklch(0.953 0.0235 226.293)",
+            "foregroundToken": "oklch(0.95 0.025 235)"
+          },
+          "label": {
+            "color": "oklch(0.22 0.06 260)"
+          },
+          "expected": {
+            "background": "oklch(0.5 0.14 210)",
+            "radius": "2px",
+            "fontSize": "15px",
+            "portalBackground": "oklch(0.953 0.0235 226.293)",
+            "labelColor": "oklch(0.22 0.06 260)"
+          },
+          "mode": "light"
+        },
+        {
+          "button": {
+            "background": "oklch(0.5 0.14 210)",
+            "radius": "2px",
+            "fontSize": "15px"
+          },
+          "portal": {
+            "present": true,
+            "background": "oklch(0.953 0.0235 226.293)",
+            "foregroundToken": "oklch(0.95 0.025 235)"
+          },
+          "label": {
+            "color": "oklch(0.22 0.06 260)"
+          },
+          "expected": {
+            "background": "oklch(0.5 0.14 210)",
+            "radius": "2px",
+            "fontSize": "15px",
+            "portalBackground": "oklch(0.953 0.0235 226.293)",
+            "labelColor": "oklch(0.22 0.06 260)"
+          },
+          "mode": "light"
+        }
+      ],
+      "independentDraftsPreserved": true,
+      "sourcePreserved": true,
+      "openPortalPreserved": true
+    },
+    {
+      "preset": "cyberpunk",
+      "mode": "dark",
+      "definitionHash": "f8fd65ffcdbd8e32320a94d31ef99d1a877635095cbb0b91bc5413d1f73b528f",
+      "arms": [
+        {
+          "button": {
+            "background": "oklch(0.82 0.16 195)",
+            "radius": "2px",
+            "fontSize": "15px"
+          },
+          "portal": {
+            "present": true,
+            "background": "oklch(0.2104 0.0423 249.793)",
+            "foregroundToken": "oklch(0.16 0.045 260)"
+          },
+          "label": {
+            "color": "oklch(0.94 0.04 200)"
+          },
+          "expected": {
+            "background": "oklch(0.82 0.16 195)",
+            "radius": "2px",
+            "fontSize": "15px",
+            "portalBackground": "oklch(0.2104 0.0423 249.793)",
+            "labelColor": "oklch(0.94 0.04 200)"
+          },
+          "mode": "dark"
+        },
+        {
+          "button": {
+            "background": "oklch(0.82 0.16 195)",
+            "radius": "2px",
+            "fontSize": "15px"
+          },
+          "portal": {
+            "present": true,
+            "background": "oklch(0.2104 0.0423 249.793)",
+            "foregroundToken": "oklch(0.16 0.045 260)"
+          },
+          "label": {
+            "color": "oklch(0.94 0.04 200)"
+          },
+          "expected": {
+            "background": "oklch(0.82 0.16 195)",
+            "radius": "2px",
+            "fontSize": "15px",
+            "portalBackground": "oklch(0.2104 0.0423 249.793)",
+            "labelColor": "oklch(0.94 0.04 200)"
+          },
+          "mode": "dark"
+        }
+      ],
+      "independentDraftsPreserved": true,
+      "sourcePreserved": true,
+      "openPortalPreserved": true
+    },
+    {
+      "preset": "crimson-desert",
+      "mode": "light",
+      "definitionHash": "cb90ab4e65c957be2f23f2a2b88f808f6575b9da4491b008153fff9b9e40cad0",
+      "arms": [
+        {
+          "button": {
+            "background": "oklch(0.48 0.18 25)",
+            "radius": "14px",
+            "fontSize": "17px"
+          },
+          "portal": {
+            "present": true,
+            "background": "oklch(0.9436 0.0376 80.5926)",
+            "foregroundToken": "oklch(0.94 0.04 80)"
+          },
+          "label": {
+            "color": "oklch(0.28 0.06 45)"
+          },
+          "expected": {
+            "background": "oklch(0.48 0.18 25)",
+            "radius": "14px",
+            "fontSize": "17px",
+            "portalBackground": "oklch(0.9436 0.0376 80.5926)",
+            "labelColor": "oklch(0.28 0.06 45)"
+          },
+          "mode": "light"
+        },
+        {
+          "button": {
+            "background": "oklch(0.48 0.18 25)",
+            "radius": "14px",
+            "fontSize": "17px"
+          },
+          "portal": {
+            "present": true,
+            "background": "oklch(0.9436 0.0376 80.5926)",
+            "foregroundToken": "oklch(0.94 0.04 80)"
+          },
+          "label": {
+            "color": "oklch(0.28 0.06 45)"
+          },
+          "expected": {
+            "background": "oklch(0.48 0.18 25)",
+            "radius": "14px",
+            "fontSize": "17px",
+            "portalBackground": "oklch(0.9436 0.0376 80.5926)",
+            "labelColor": "oklch(0.28 0.06 45)"
+          },
+          "mode": "light"
+        }
+      ],
+      "independentDraftsPreserved": true,
+      "sourcePreserved": true,
+      "openPortalPreserved": true
+    },
+    {
+      "preset": "crimson-desert",
+      "mode": "dark",
+      "definitionHash": "cb90ab4e65c957be2f23f2a2b88f808f6575b9da4491b008153fff9b9e40cad0",
+      "arms": [
+        {
+          "button": {
+            "background": "oklch(0.68 0.19 28)",
+            "radius": "14px",
+            "fontSize": "17px"
+          },
+          "portal": {
+            "present": true,
+            "background": "oklch(0.248 0.0329 42.9926)",
+            "foregroundToken": "oklch(0.20 0.035 40)"
+          },
+          "label": {
+            "color": "oklch(0.92 0.055 80)"
+          },
+          "expected": {
+            "background": "oklch(0.68 0.19 28)",
+            "radius": "14px",
+            "fontSize": "17px",
+            "portalBackground": "oklch(0.248 0.0329 42.9926)",
+            "labelColor": "oklch(0.92 0.055 80)"
+          },
+          "mode": "dark"
+        },
+        {
+          "button": {
+            "background": "oklch(0.68 0.19 28)",
+            "radius": "14px",
+            "fontSize": "17px"
+          },
+          "portal": {
+            "present": true,
+            "background": "oklch(0.248 0.0329 42.9926)",
+            "foregroundToken": "oklch(0.20 0.035 40)"
+          },
+          "label": {
+            "color": "oklch(0.92 0.055 80)"
+          },
+          "expected": {
+            "background": "oklch(0.68 0.19 28)",
+            "radius": "14px",
+            "fontSize": "17px",
+            "portalBackground": "oklch(0.248 0.0329 42.9926)",
+            "labelColor": "oklch(0.92 0.055 80)"
+          },
+          "mode": "dark"
+        }
+      ],
+      "independentDraftsPreserved": true,
+      "sourcePreserved": true,
+      "openPortalPreserved": true
+    }
+  ],
+  "switchDuringStreamPreserved": true,
+  "blocked": [],
+  "pageErrors": []
+}

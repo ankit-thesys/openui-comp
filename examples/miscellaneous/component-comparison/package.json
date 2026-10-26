@@ -23,19 +23,19 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "3.0.41",
-    "@openuidev/devtools": "file:.artifacts/templates-cf1a8a881/openuidev-devtools-0.3.0.tgz",
-    "@openuidev/kits": "file:.artifacts/templates-cf1a8a881/openuidev-kits-0.0.0-beta.0.tgz",
-    "@openuidev/lang-core": "file:.artifacts/templates-cf1a8a881/openuidev-lang-core-1.0.1.tgz",
-    "@openuidev/observability": "file:.artifacts/templates-cf1a8a881/openuidev-observability-0.0.4.tgz",
+    "@openuidev/devtools": "file:.artifacts/chat-kit-9006a2066-b4cb71c1/openuidev-devtools-0.3.0.tgz",
+    "@openuidev/lang-core": "file:.artifacts/chat-kit-9006a2066-b4cb71c1/openuidev-lang-core-1.0.1.tgz",
+    "@openuidev/observability": "file:.artifacts/chat-kit-9006a2066-b4cb71c1/openuidev-observability-0.0.4.tgz",
     "@openuidev/react-headless": "0.18.1",
-    "@openuidev/react-lang": "file:.artifacts/templates-cf1a8a881/openuidev-react-lang-1.0.1.tgz",
-    "@openuidev/react-ui": "file:.artifacts/templates-cf1a8a881/openuidev-react-ui-0.18.1.tgz",
+    "@openuidev/react-lang": "file:.artifacts/chat-kit-9006a2066-b4cb71c1/openuidev-react-lang-1.0.1.tgz",
+    "@openuidev/react-ui": "file:.artifacts/chat-kit-9006a2066-b4cb71c1/openuidev-react-ui-0.18.1.tgz",
     "ai": "6.0.116",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "zod": "4.4.3",
     "zustand": "4.5.7",
-    "@openuidev/react-components": "file:.artifacts/templates-cf1a8a881/openuidev-react-components-0.0.0-beta.0.tgz"
+    "@openuidev/react-components": "file:.artifacts/chat-kit-9006a2066-b4cb71c1/openuidev-react-components-0.0.0-beta.0.tgz",
+    "@openuidev/chat-kit": "file:.artifacts/chat-kit-9006a2066-b4cb71c1/openuidev-chat-kit-0.0.0-beta.0.tgz"
   },
   "devDependencies": {
     "@openuidev/cli": "0.6.0",

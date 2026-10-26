@@ -1,0 +1,155 @@
+{
+  "productionCommit": "9006a2066f93359c991eeafcf9d812db3ae78450",
+  "labParentCommit": "b31a3be3e136fe4b6ea3cbddcb60cf03b6665e51",
+  "validatedSource": "Working tree source bound by exact file hashes below; containing commit records these same files.",
+  "archives": [
+    {
+      "name": "@openuidev/devtools",
+      "file": ".artifacts/chat-kit-9006a2066-b4cb71c1/openuidev-devtools-0.3.0.tgz",
+      "sha256": "4d08f13509403e53f4dfd1e1bb2f5df5094117b256880a65bd8cbdf83bdddb9d",
+      "bytes": 265699
+    },
+    {
+      "name": "@openuidev/lang-core",
+      "file": ".artifacts/chat-kit-9006a2066-b4cb71c1/openuidev-lang-core-1.0.1.tgz",
+      "sha256": "003f152663b913b0d757c76de86e453c9b1acb1fb1ebc6b0898d3ac74da0e4c6",
+      "bytes": 363342
+    },
+    {
+      "name": "@openuidev/observability",
+      "file": ".artifacts/chat-kit-9006a2066-b4cb71c1/openuidev-observability-0.0.4.tgz",
+      "sha256": "979f635703f7f9702c704a74901706c38a497a2ea108449fdfad99cf1245a4b1",
+      "bytes": 6001
+    },
+    {
+      "name": "@openuidev/react-lang",
+      "file": ".artifacts/chat-kit-9006a2066-b4cb71c1/openuidev-react-lang-1.0.1.tgz",
+      "sha256": "9151c6cefd2cd0e5a88f1b38bbc6017e1e7d9f5ba60297f52166399e46da8f80",
+      "bytes": 170663
+    },
+    {
+      "name": "@openuidev/react-ui",
+      "file": ".artifacts/chat-kit-9006a2066-b4cb71c1/openuidev-react-ui-0.18.1.tgz",
+      "sha256": "f38b45035706e9151a57d3328d2c23ec448483b73c5f0d5c64ba7420652b6fd9",
+      "bytes": 3180175
+    },
+    {
+      "name": "@openuidev/react-components",
+      "file": ".artifacts/chat-kit-9006a2066-b4cb71c1/openuidev-react-components-0.0.0-beta.0.tgz",
+      "sha256": "f62cf7f1d3bf9a6e3cfe57b6e2365ed821978d6d65cb080e0444bc907e94e46f",
+      "bytes": 1056225
+    },
+    {
+      "name": "@openuidev/chat-kit",
+      "file": ".artifacts/chat-kit-9006a2066-b4cb71c1/openuidev-chat-kit-0.0.0-beta.0.tgz",
+      "sha256": "b4cb71c1d378bd4b50c69b0092af55ca55bc4ef0c33771624d367f782d739384",
+      "bytes": 238151
+    }
+  ],
+  "installedChatFilesMatchNativeArchive": 566,
+  "lockIntegrityMatchesNativeArchive": true,
+  "tests": {
+    "unit": "34/34",
+    "schema": "legacy/migrated CLI equality PASS",
+    "build": "PASS",
+    "browser": "stream/action/fanout/cancel/replay PASS, 4 local upstream calls,0active aftertest",
+    "offline": "84 parsed entries:80sharedresponse+4direct examples; instant/stream/action/themes PASS; no API/external requests",
+    "themes": "6 combinations PASS including switch duringstream",
+    "sharedCoreResolution": "PASS; oldkitidentity absent"
+  },
+  "commands": [
+    {
+      "cwd": "/Users/ankitdas/.codex/worktrees/component-comparison/openui/examples/miscellaneous/component-comparison",
+      "command": "npm install --offline --cache /private/tmp/chat16-npm-cache --ignore-scripts --no-audit --no-fund"
+    },
+    {
+      "cwd": "/Users/ankitdas/.codex/worktrees/component-comparison/openui/examples/miscellaneous/component-comparison",
+      "command": "npm test"
+    },
+    {
+      "cwd": "/Users/ankitdas/.codex/worktrees/component-comparison/openui/examples/miscellaneous/component-comparison",
+      "command": "npm run build"
+    },
+    {
+      "cwd": "/Users/ankitdas/.codex/worktrees/component-comparison/openui/examples/miscellaneous/component-comparison",
+      "command": "COMPARISON_CHROME=<pinned156binary> npm run test:browser"
+    },
+    {
+      "cwd": "/Users/ankitdas/.codex/worktrees/component-comparison/openui/examples/miscellaneous/component-comparison",
+      "command": "COMPARISON_CHROME=<pinned156binary> npm run test:offline-browser"
+    },
+    {
+      "cwd": "/Users/ankitdas/.codex/worktrees/component-comparison/openui/examples/miscellaneous/component-comparison",
+      "command": "npm run test:bench-themes"
+    }
+  ],
+  "browser": "156.0.8078.47",
+  "chromePath": "/private/tmp/beta17-cft/156.0.8078.47/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+  "sourceFiles": [
+    {
+      "file": "GLOSSARY.md",
+      "sha256": "76009b092abd27968dc502b25e6e2e1bdced985063551cba8ba5145efed83296"
+    },
+    {
+      "file": "docs/planning/chat-kit-migration.md",
+      "sha256": "2d85a592af27788cdd7ca941c5850f1033f0e8ed9dafb81b37f84edbb5c98f59"
+    },
+    {
+      "file": "examples/miscellaneous/component-comparison/README.md",
+      "sha256": "0dfbdd385097d7ec907bda109da7c51c725678de4a23559d86bf0414cca9477e"
+    },
+    {
+      "file": "examples/miscellaneous/component-comparison/package.json",
+      "sha256": "86bb1818866db93e3debf2cc54ec7c597e4d0f8453abd2215facc150a0eaa519"
+    },
+    {
+      "file": "examples/miscellaneous/component-comparison/package-lock.json",
+      "sha256": "5498f5b34f7c75f3328fae04df1cfea92d962e6d69c181647bdedff50320118c"
+    },
+    {
+      "file": "examples/miscellaneous/component-comparison/bench/generate-cases.mjs",
+      "sha256": "e23baade373de5f632821ebf49528d2596fc85fa7d7b8fd44dce99fd2f1bd5e4"
+    },
+    {
+      "file": "examples/miscellaneous/component-comparison/src/main.tsx",
+      "sha256": "aae50d3497120048a9b670b4e9ca0e089628bc8dd540ab4215c66d16bf274147"
+    },
+    {
+      "file": "examples/miscellaneous/component-comparison/src/migrated-library.ts",
+      "sha256": "3760db5f50fef427e77b925d286dfb67abaecdd3ccfad9804b89526c8c7faf87"
+    },
+    {
+      "file": "examples/miscellaneous/component-comparison/src/migrated.tsx",
+      "sha256": "b5e713e39b514f42addec726ca373254afdd7bdfeb28d35f940061796da04678"
+    },
+    {
+      "file": "examples/miscellaneous/component-comparison/tests/setup.test.mjs",
+      "sha256": "a0159f4450b6aa77ecde7177dc95e44a59e7ee549c11686478a3909427bb75a1"
+    },
+    {
+      "file": "examples/miscellaneous/component-comparison/tests/browser.mjs",
+      "sha256": "bbac209ea8f1c9bc049970db648758843f039a0b95483f9cf6efd56c27002582"
+    },
+    {
+      "file": "examples/miscellaneous/component-comparison/tests/offline-browser.mjs",
+      "sha256": "479f34ba244c7df2775001cffcdecc3d4e7f6c68e1197f28661a1b2bc01fb302"
+    },
+    {
+      "file": "examples/miscellaneous/component-comparison/tests/bench-themes.browser.mjs",
+      "sha256": "13fa003cf7e8236cd9767280155d0ea898fa7e0be708a227f8af44438eabc230"
+    },
+    {
+      "file": "examples/miscellaneous/component-comparison/scripts/setup-artifacts.mjs",
+      "sha256": "1911926507bed9612bcc5fbb19858af32da2155cb4bc6b73cee0a258199398a9"
+    },
+    {
+      "file": "examples/miscellaneous/component-comparison/scripts/archive-paths.mjs",
+      "sha256": "bc09c5c49c9401299bd9cdf831de827ebe44c9515bcc6634e6d7552717005195"
+    },
+    {
+      "file": "examples/miscellaneous/component-comparison/src/offline-fixture.mjs",
+      "sha256": "239a7b3fffe5cfce46ce8571678e4f61d0d8706cd89a333b58af7028954cb3cc"
+    }
+  ],
+  "limits": "No unchanged fullmatrix rerun. Existing86Fail/30Review/3180Knownissue template matrix preserved; existing Input/Label and theme/palette gaps unchanged. No SSR/hydration or runtimeperformance claim. Native beta0 tested; hypothetical0.0.0 releaseplan not packed/installed."
+}

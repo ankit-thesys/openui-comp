@@ -43,7 +43,7 @@ test("archive setup follows candidate paths and preserves historical packages", 
       "react-lang-1.0.1",
       "react-ui-0.18.1",
       "react-components-0.0.0-beta.0",
-      "kits-0.0.0-beta.0",
+      "chat-kit-0.0.0-beta.0",
     ];
     for (const name of names)
       await fs.writeFile(path.join(source, `openuidev-${name}.tgz`), name);

@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { isDeepStrictEqual } from "node:util";
 import { createParser, jsonToOpenUI } from "@openuidev/lang-core";
-import { openuiChatLibrary as library } from "@openuidev/kits/react/chat/libs";
+import { openuiChatLibrary as library } from "@openuidev/chat-kit/libs";
 import { getThemePreset } from "../src/theme-presets.mjs";
 import { demoSource, directExamples } from "../src/offline-fixture.mjs";
 const legacy = JSON.parse(await fs.readFile(".generated/legacy.json", "utf8"));

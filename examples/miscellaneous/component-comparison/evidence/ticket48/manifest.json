@@ -1,0 +1,97 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 1530,
+    "sha256": "fa8ffb7439cc914c5d18923c68df652db413dba8d24b1141c5a5186fe5b80c25"
+  },
+  {
+    "file": "bench-themes.json",
+    "bytes": 10402,
+    "sha256": "01b9b37ae13dd60987d156e6798b50a2656c71ad2198137042b2060035c13058"
+  },
+  {
+    "file": "browser-release.json",
+    "bytes": 366,
+    "sha256": "9cd1e848d48b64c81b2d0a6b880cf1d19ce1bcddf4ef8b92e58a9c5e2b6c058a"
+  },
+  {
+    "file": "browser.json",
+    "bytes": 349,
+    "sha256": "0f77c7146f5820befbb3a34605695cd4cd2aa456ed6466814850ba55249b8e99"
+  },
+  {
+    "file": "comparison-desktop.png",
+    "bytes": 97887,
+    "sha256": "616be96b72e1ec07201485bcb65bcb881759ba07cc3a9dc0630f7404d9c43268"
+  },
+  {
+    "file": "comparison-populated.png",
+    "bytes": 115212,
+    "sha256": "6bd6aa614899deafa6b12cad2c70e7a6c4638ff6f5a14a922b3c75ccf0f1c94f"
+  },
+  {
+    "file": "offline-browser.json",
+    "bytes": 536,
+    "sha256": "f9c88730b7840589ab418d94a538df9965b46746769088b98daaf6ef12e9dca5"
+  },
+  {
+    "file": "offline-final.png",
+    "bytes": 159322,
+    "sha256": "463d4f5edb5590b1d1d3dfe5b4669656ade6b0bcf7ebadf8279cbd3ee2368202"
+  },
+  {
+    "file": "offline-instant.png",
+    "bytes": 157394,
+    "sha256": "601a0909ad7f3cb8c7bdfe4f829e71ead8dabc4f41f3dfdba3d701d54f20591a"
+  },
+  {
+    "file": "review.md",
+    "bytes": 432,
+    "sha256": "4e5fb61349290faecbb81476d242ed1d15397a6e204613b7abd49c8aa635cd2d"
+  },
+  {
+    "file": "ticket48-browser.log",
+    "bytes": 438,
+    "sha256": "284bf15b597c8f59b92bd61f170fd19c5acd58786d68992e1a733c099eb2337f"
+  },
+  {
+    "file": "ticket48-build.log",
+    "bytes": 311163,
+    "sha256": "c686f7e25350e3b5543bc4a56801ef47fa8073d6f3a456e46c93132b3b04b80b"
+  },
+  {
+    "file": "ticket48-install.log",
+    "bytes": 48,
+    "sha256": "2dd74b16c52d96f3ab67d2a2f54988468d416e7c0f36e8fab5c51d13eff93265"
+  },
+  {
+    "file": "ticket48-module-resolution.json",
+    "bytes": 525,
+    "sha256": "b92a17325e372ee2ca599b24a394a060248cd62ad7ba8b8083675a584c5c5a34"
+  },
+  {
+    "file": "ticket48-offline-browser.log",
+    "bytes": 641,
+    "sha256": "a8c3a2a88aa825d731c5ea44a0d95a54e3f6d70ebce36b3400cec2de9d31dcb5"
+  },
+  {
+    "file": "ticket48-setup-corrected.log",
+    "bytes": 333,
+    "sha256": "715cefe16ff9f7e3f27728a5d2d650e4ec4ad7e0169fab67553540db307c3f58"
+  },
+  {
+    "file": "ticket48-tests.log",
+    "bytes": 7723,
+    "sha256": "9e0bb7968307970ff6403ccd218de885f49fa9b55f8e080e4879c441755f65fc"
+  },
+  {
+    "file": "ticket48-themes.log",
+    "bytes": 495,
+    "sha256": "d0d3a58363d3086f0644b5ecd7dee480c48da19015342a49ba674e5290ac189a"
+  },
+  {
+    "file": "validation.json",
+    "bytes": 7026,
+    "sha256": "d95a66ad369a322ded5890d950b611a6456c419a30473af6839d19a7822943eb"
+  }
+]

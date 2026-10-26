@@ -18,7 +18,7 @@ complete directory of candidate archives when that checkout is separate:
 pnpm install --frozen-lockfile
 pnpm run build:packages
 mkdir -p /absolute/path/to/candidate-archives
-for package in lang-core observability devtools react-lang react-ui react-components kits; do
+for package in lang-core observability devtools react-lang react-ui react-components chat-kit; do
   pnpm --filter "@openuidev/$package" --fail-if-no-match pack \
     --pack-destination /absolute/path/to/candidate-archives
 done
@@ -43,9 +43,9 @@ validating another candidate. It does not modify the repository root lockfile.
 For an existing directory containing exactly one tarball per required package,
 use `node scripts/setup-artifacts.mjs --from=/absolute/path/to/archives` instead.
 Required packages: lang-core, observability, devtools, react-lang, react-ui,
-react-components and kits. Newly extracted packages are unpublished; a plain registry
+react-components and chat-kit. Newly extracted packages are unpublished; a plain registry
 install cannot supply them. Do not substitute source aliases. Source exports are
-`@openuidev/kits/react/chat/libs`, `@openuidev/react-components` and root legacy UI.
+`@openuidev/chat-kit/libs`, `@openuidev/react-components` and root legacy UI.
 
 `npm run generate` uses the stock OpenUI CLI twice and rejects mismatching chat
 registries/schemas. The server passes the matching library and promptOptions

@@ -1,0 +1,20 @@
+
+> @openuidev/example-component-comparison@0.1.0 test:browser
+> node tests/browser.mjs
+
+{
+  "pass": true,
+  "calls": 4,
+  "cancelled": 1,
+  "active": 0,
+  "oneCallFanout": true,
+  "independentDrafts": true,
+  "actionValuesPreserved": true,
+  "replayNoCall": true,
+  "stopAbortsUpstream": true,
+  "promptDraftPreserved": true,
+  "paneErrorIsolated": true,
+  "forgedSourceRejected": true,
+  "browser": "156.0.8078.47",
+  "pageErrors": []
+}
