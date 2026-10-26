@@ -1,0 +1,12 @@
+{
+  "productionPRs": [
+    43,
+    44,
+    50,
+    51
+  ],
+  "result": "BuildJS and Changesetcheck SUCCESS on every exact mapped production head",
+  "rawSnapshot": "production-passed-runs.json",
+  "note": "Raw snapshot also includes then-pending lab runs. Final lab CI is verified separately on its final head; no additional status-only commit is required after it passes.",
+  "sourceChanges": "None; package trees already verified unchanged."
+}
