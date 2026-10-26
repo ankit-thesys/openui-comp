@@ -17,10 +17,10 @@ type-checking evidence.
 - Keep documented chart utilities, legend composition, layout/print context APIs,
   theme customization and existing component parts. Core README:41 and121-127
   explicitly establish several of these contracts.
-- Four helper exports need a specific decision **if removal is desired**:
-  safeUrl,safeOpenUrl,getFaviconUrl,openSourceInNewTab. They are explicitly exported
-  and used internally; this audit lacks evidence of intended external consumption.
-  Retaining them needs no new broad plan confirmation.
+- Independent export audit now confirms safeUrl,safeOpenUrl,getFaviconUrl and
+  openSourceInNewTab were explicitly public in legacy. **Keep all four for parity**;
+  no removal decision is needed. See the preserved audit report under the lab's
+  `evidence/export-contract/`. This supersedes the earlier ambiguous classification.
 - IconWrapper lives under _shared but is directly used at4 kits sites.
   CardSourceProvider/CardSourceSchema are used in library assembly. Their paths or
   helper-like names do not authorize removal or an /internal replacement.
@@ -35,7 +35,7 @@ type-checking evidence.
 | Layout/Print context families | Keep | Explicit existing integration contract; no SSR implication. |
 | IconWrapper and source provider/schema | Keep | Concrete production kits consumers; no replacement or internal escape hatch approved. |
 | Current public types | Keep pending public-signature audit | Props/data/composition types must remain usable in ESM/CJS declarations. Private declaration dependencies may remain privately declared when reachable; do not export every internal type by default. |
-| safeUrl,safeOpenUrl,getFaviconUrl,openSourceInNewTab | Ambiguous; retain pending specific removal decision | Explicit exports/internal consumers, no demonstrated external contract evidence. |
+| safeUrl,safeOpenUrl,getFaviconUrl,openSourceInNewTab | Keep | Explicit legacy root/Source barrel public exports independently confirmed; parity requires preserving them. |
 | ThemeContext/FormControlContext, legend publisher/store implementation, style classes and geometry helpers not root-exported | Keep private | Already outside supported root surface. Do not add export or /internal path merely for kits convenience. |
 | Root export removals proven safe | None | No removal should proceed solely from spelling, folder name or lack of in-repo import. |
 
@@ -198,7 +198,7 @@ proof that every type is transitively required. See JSON for every kits import s
 | `FunnelOrientation` | type | Keep type | 0 | [packages/react-ui-core/src/components/Charts/FunnelChart/parts/funnelGeometry.ts:5](../../../packages/react-ui-core/src/components/Charts/FunnelChart/parts/funnelGeometry.ts#L5) |
 | `GalleryModal` | value | Keep | 0 | [packages/react-ui-core/src/components/ImageGallery/GalleryModal.tsx:30](../../../packages/react-ui-core/src/components/ImageGallery/GalleryModal.tsx#L30) |
 | `GalleryModalProps` | type | Keep type | 0 | [packages/react-ui-core/src/components/ImageGallery/GalleryModal.tsx:23](../../../packages/react-ui-core/src/components/ImageGallery/GalleryModal.tsx#L23) |
-| `getFaviconUrl` | value | Ambiguous; retain | 0 | [packages/react-ui-core/src/components/Sources/SourceContext.tsx:35](../../../packages/react-ui-core/src/components/Sources/SourceContext.tsx#L35) |
+| `getFaviconUrl` | value | Keep (legacy public) | 0 | [packages/react-ui-core/src/components/Sources/SourceContext.tsx:35](../../../packages/react-ui-core/src/components/Sources/SourceContext.tsx#L35) |
 | `getScatterDatasets` | value | Keep | 0 | [packages/react-ui-core/src/components/Charts/ScatterChart/utils/scatterChartUtils.ts:8](../../../packages/react-ui-core/src/components/Charts/ScatterChart/utils/scatterChartUtils.ts#L8) |
 | `HeatmapChart` | value | Keep | 0 | [packages/react-ui-core/src/components/Charts/HeatmapChart/HeatmapChart.tsx:17](../../../packages/react-ui-core/src/components/Charts/HeatmapChart/HeatmapChart.tsx#L17) |
 | `HeatmapChartData` | type | Keep type | 0 | [packages/react-ui-core/src/components/Charts/HeatmapChart/types.ts:4](../../../packages/react-ui-core/src/components/Charts/HeatmapChart/types.ts#L4) |
@@ -280,7 +280,7 @@ proof that every type is transitively required. See JSON for every kits import s
 | `Modal` | value | Keep | 0 | [packages/react-ui-core/src/components/Modal/Modal.tsx:32](../../../packages/react-ui-core/src/components/Modal/Modal.tsx#L32) |
 | `ModalProps` | type | Keep type | 0 | [packages/react-ui-core/src/components/Modal/Modal.tsx:18](../../../packages/react-ui-core/src/components/Modal/Modal.tsx#L18) |
 | `NeutralSwatchName` | type | Keep type | 0 | [packages/react-ui-core/src/components/ThemeProvider/swatches.ts:430](../../../packages/react-ui-core/src/components/ThemeProvider/swatches.ts#L430) |
-| `openSourceInNewTab` | value | Ambiguous; retain | 0 | [packages/react-ui-core/src/components/Sources/SourceContext.tsx:18](../../../packages/react-ui-core/src/components/Sources/SourceContext.tsx#L18) |
+| `openSourceInNewTab` | value | Keep (legacy public) | 0 | [packages/react-ui-core/src/components/Sources/SourceContext.tsx:18](../../../packages/react-ui-core/src/components/Sources/SourceContext.tsx#L18) |
 | `OpenUIGalleryProps` | type | Keep type | 0 | [packages/react-ui-core/src/components/ImageGallery/ImageGallery.tsx:20](../../../packages/react-ui-core/src/components/ImageGallery/ImageGallery.tsx#L20) |
 | `OptionCards` | value | Keep | 1 | [packages/react-ui-core/src/components/OptionCards/OptionCards.tsx:32](../../../packages/react-ui-core/src/components/OptionCards/OptionCards.tsx#L32) |
 | `OptionCardsItem` | type | Keep type | 0 | [packages/react-ui-core/src/components/OptionCards/OptionCards.tsx:9](../../../packages/react-ui-core/src/components/OptionCards/OptionCards.tsx#L9) |
@@ -306,8 +306,8 @@ proof that every type is transitively required. See JSON for every kits import s
 | `RadioGroupProps` | type | Keep type | 0 | [packages/react-ui-core/src/components/RadioGroup/RadioGroup.tsx:11](../../../packages/react-ui-core/src/components/RadioGroup/RadioGroup.tsx#L11) |
 | `RadioItem` | value | Keep | 1 | [packages/react-ui-core/src/components/RadioItem/RadioItem.tsx:19](../../../packages/react-ui-core/src/components/RadioItem/RadioItem.tsx#L19) |
 | `RadioItemProps` | type | Keep type | 0 | [packages/react-ui-core/src/components/RadioItem/RadioItem.tsx:9](../../../packages/react-ui-core/src/components/RadioItem/RadioItem.tsx#L9) |
-| `safeOpenUrl` | value | Ambiguous; retain | 0 | [packages/react-ui-core/src/components/_shared/utils/safeUrl.ts:37](../../../packages/react-ui-core/src/components/_shared/utils/safeUrl.ts#L37) |
-| `safeUrl` | value | Ambiguous; retain | 0 | [packages/react-ui-core/src/components/_shared/utils/safeUrl.ts:16](../../../packages/react-ui-core/src/components/_shared/utils/safeUrl.ts#L16) |
+| `safeOpenUrl` | value | Keep (legacy public) | 0 | [packages/react-ui-core/src/components/_shared/utils/safeUrl.ts:37](../../../packages/react-ui-core/src/components/_shared/utils/safeUrl.ts#L37) |
+| `safeUrl` | value | Keep (legacy public) | 0 | [packages/react-ui-core/src/components/_shared/utils/safeUrl.ts:16](../../../packages/react-ui-core/src/components/_shared/utils/safeUrl.ts#L16) |
 | `ScatterChart` | value | Keep | 1 | [packages/react-ui-core/src/components/Charts/ScatterChart/ScatterChart.tsx:17](../../../packages/react-ui-core/src/components/Charts/ScatterChart/ScatterChart.tsx#L17) |
 | `ScatterChartData` | type | Keep type | 0 | [packages/react-ui-core/src/components/Charts/ScatterChart/types.ts:12](../../../packages/react-ui-core/src/components/Charts/ScatterChart/types.ts#L12) |
 | `ScatterChartProps` | type | Keep type | 0 | [packages/react-ui-core/src/components/Charts/ScatterChart/types.ts:21](../../../packages/react-ui-core/src/components/Charts/ScatterChart/types.ts#L21) |

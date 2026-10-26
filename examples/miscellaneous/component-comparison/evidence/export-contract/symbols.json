@@ -1,0 +1,5895 @@
+{
+  "entries": {
+    "packages/react-ui-core/src/index.ts": [
+      {
+        "name": "Accordion",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AccordionContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AccordionContentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AccordionItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AccordionItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AccordionProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AccordionTrigger",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AccordionTriggerProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AreaChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AreaChartCondensed",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AreaChartCondensedProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AreaChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AreaChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AreaChartVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BarChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "BarChartCondensed",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "BarChartCondensedProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BarChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BarChartOrientation",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BarChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BarChartVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BaseChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "black",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "BrandSwatchName",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Button",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ButtonProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Buttons",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ButtonsProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "calculateScatterDomain",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "Calendar",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CalendarHeatmap",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CalendarHeatmapDatum",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CalendarHeatmapProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CalendarProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Callout",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CalloutProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Card",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CardHeader",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CardHeaderProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CardProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CardSource",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CardSourceContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CardSourceProvider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CardSourceSchema",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "Carousel",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CarouselContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CarouselItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CarouselNext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CarouselPrevious",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CarouselProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CarouselRef",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CHART_CLASS_PREFIX",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CHART_PALETTE_KEYS",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ChartColorPalette",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ChartPaletteKey",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CheckBoxGroup",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CheckBoxGroupProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CheckBoxItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CheckBoxItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Chips",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ChipsItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ChipsProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ChipsSelectionType",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Citation",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CitationItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CitationItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CitationProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CodeBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CodeBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ColorTheme",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CompositeCard",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CompositeCardBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CompositeCardBlockItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CompositeCardBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CompositeCardProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ContextCard",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ContextCardBgColor",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ContextCardBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ContextCardBlockItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ContextCardBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ContextCardProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "createTheme",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "DatePicker",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "DatePickerProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "defaultDarkTheme",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "defaultLightTheme",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "DotMatrixLoader",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "DotMatrixLoaderVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EditableCellType",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EditableTable",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "EditableTableChangesBar",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "EditableTableChangesBarProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EditableTableColumn",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EditableTableProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EditableTableRow",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EffectTheme",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EntityList",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "EntityListProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EntityListRow",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EntityListSize",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ExportChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FoldableSectionContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FoldableSectionContentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FoldableSectionItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FoldableSectionItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FoldableSectionRoot",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FoldableSectionRootProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FoldableSectionTrigger",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FoldableSectionTriggerProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "formatScatterTooltipValue",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FormControl",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FormControlProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FunnelChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FunnelChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FunnelChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FunnelEdges",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FunnelOrientation",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "GalleryModal",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "GalleryModalProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "getFaviconUrl",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "getScatterDatasets",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "HeatmapChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "HeatmapChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "HeatmapChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Hint",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "HintProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "HorizontalBarChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "HorizontalBarChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "HorizontalBarChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "HorizontalBarChartVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconButton",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "IconButtonProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconTag",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "IconTagProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconTagSize",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconTagVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconText",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "IconTextIconVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconTextLayout",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconTextProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconWrapper",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "IconWrapperProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Image",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ImageBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ImageBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ImageGallery",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ImageItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ImageProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ImageText",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ImageTextLarge",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ImageTextLargeProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ImageTextLayout",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ImageTextProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "InlineHeader",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "InlineHeaderProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "InlineMarkdownRenderer",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "InlineMarkdownRendererProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Input",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "InputProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Label",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LabelProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LayoutContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LayoutContextProvider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LayoutTheme",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LegendEntry",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LegendItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LegendStoreProvider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LineChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LineChartCondensed",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LineChartCondensedProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LineChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LineChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LineChartVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ListBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ListBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ListedSourceItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ListedSources",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ListedSourcesProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ListItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ListItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ListItemSize",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ListItemVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MarkDownRenderer",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MarkDownRendererProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MetricIndicatorInline",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MetricIndicatorInlineProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MetricIndicatorTrend",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MetricIndicatorWithStrikethrough",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MetricIndicatorWithStrikethroughProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniAreaChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MiniAreaChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniAreaChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniBarChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MiniBarChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniBarChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniLineChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MiniLineChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniLineChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Modal",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ModalProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "NeutralSwatchName",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "openSourceInNewTab",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "OpenUIGalleryProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OptionCards",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "OptionCardsItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OptionCardsProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OptionCardsSelectionType",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OverviewCardBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "OverviewCardBlockItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OverviewCardBlockLayout",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OverviewCardBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "PieChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "PieChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "PieChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "PieChartSkeleton",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "PrintContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "PrintContextProvider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "RadarChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "RadarChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "RadarChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "RadialChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "RadialChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "RadialChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "RadioGroup",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "RadioGroupProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "RadioItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "RadioItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "safeOpenUrl",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "safeUrl",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ScatterChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ScatterChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ScatterChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ScatterDataset",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ScatterPoint",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ScrollableTable",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ScrollableTableProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SectionV2",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SegmentedBar",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SegmentedBarData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SegmentedBarProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Select",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectContentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectGroup",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectGroupProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectLabel",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectLabelProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectSeparator",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectSeparatorProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectTrigger",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectTriggerProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectValue",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "Separator",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SingleStackedBar",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SingleStackedBarData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SingleStackedBarProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Skeleton",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "Slider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SliderBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SliderBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SliderProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SnippetCardBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SnippetCardBlockItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SnippetCardBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SnippetCardTooltip",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SourceFaviconImage",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SourceFaviconImageProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Sources",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SourcesItemComponentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SourceWithFavicon",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "StackedLegend",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "StackedLegendItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "StackedLegendProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Steps",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "StepsItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "StepsItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "StepsProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "swatch",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "swatchToken",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "swatchTokens",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SwitchGroup",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SwitchGroupProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SwitchItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SwitchItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Table",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableBody",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableCell",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableCellProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TableFooter",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableHead",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableHeader",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableHeadProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TableRow",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableSkeleton",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "Tabs",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TabsContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TabsContentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TabsList",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TabsListProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TabsProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TabsTrigger",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TabsTriggerProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Tag",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TagBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TagBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TagProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TagSize",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TagVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextArea",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextAreaProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockAlign",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockSecondaryTone",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockSize",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockType",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockView",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextBlockViewProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextCallout",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextCalloutProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextContentCitation",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextContentCitationProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextContentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextContentVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextContentWrapper",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextContentWrapperProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Theme",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "THEME_MODE_ATTRIBUTE",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "THEME_MODE_STORAGE_KEY",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ThemeMode",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ThemeModePreference",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ThemeProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ThemeProvider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ToggleGroup",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ToggleGroupProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ToggleItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ToggleItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TooltipWrapper",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TooltipWrapperProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "transformScatterData",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TypographyTheme",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "useCardSourceContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "useLayoutContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "useLegendEntry",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "usePrintContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "useSystemThemeMode",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "useTheme",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "useThemeModePreference",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "VisualCard",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "VisualCardBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "VisualCardBlockItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "VisualCardBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "VisualCardProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "white",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "withAlpha",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "XAxisTickVariant",
+        "value": false,
+        "type": true
+      }
+    ],
+    "packages/react-ui-core/dist/index.d.mts": [
+      {
+        "name": "Accordion",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AccordionContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AccordionContentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AccordionItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AccordionItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AccordionProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AccordionTrigger",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AccordionTriggerProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AreaChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AreaChartCondensed",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AreaChartCondensedProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AreaChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AreaChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AreaChartVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BarChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "BarChartCondensed",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "BarChartCondensedProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BarChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BarChartOrientation",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BarChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BarChartVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BaseChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "black",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "BrandSwatchName",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Button",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ButtonProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Buttons",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ButtonsProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "calculateScatterDomain",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "Calendar",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CalendarHeatmap",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CalendarHeatmapDatum",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CalendarHeatmapProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CalendarProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Callout",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CalloutProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Card",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CardHeader",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CardHeaderProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CardProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CardSource",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CardSourceContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CardSourceProvider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CardSourceSchema",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "Carousel",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CarouselContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CarouselItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CarouselNext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CarouselPrevious",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CarouselProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CarouselRef",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CHART_CLASS_PREFIX",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CHART_PALETTE_KEYS",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ChartColorPalette",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ChartPaletteKey",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CheckBoxGroup",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CheckBoxGroupProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CheckBoxItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CheckBoxItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Chips",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ChipsItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ChipsProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ChipsSelectionType",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Citation",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CitationItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CitationItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CitationProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CodeBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CodeBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ColorTheme",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CompositeCard",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CompositeCardBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CompositeCardBlockItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CompositeCardBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CompositeCardProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ContextCard",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ContextCardBgColor",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ContextCardBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ContextCardBlockItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ContextCardBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ContextCardProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "createTheme",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "DatePicker",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "DatePickerProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "defaultDarkTheme",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "defaultLightTheme",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "DotMatrixLoader",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "DotMatrixLoaderVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EditableCellType",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EditableTable",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "EditableTableChangesBar",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "EditableTableChangesBarProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EditableTableColumn",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EditableTableProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EditableTableRow",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EffectTheme",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EntityList",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "EntityListProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EntityListRow",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EntityListSize",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ExportChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FoldableSectionContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FoldableSectionContentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FoldableSectionItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FoldableSectionItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FoldableSectionRoot",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FoldableSectionRootProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FoldableSectionTrigger",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FoldableSectionTriggerProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "formatScatterTooltipValue",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FormControl",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FormControlProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FunnelChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FunnelChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FunnelChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FunnelEdges",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FunnelOrientation",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "GalleryModal",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "GalleryModalProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "getFaviconUrl",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "getScatterDatasets",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "HeatmapChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "HeatmapChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "HeatmapChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Hint",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "HintProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "HorizontalBarChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "HorizontalBarChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "HorizontalBarChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "HorizontalBarChartVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconButton",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "IconButtonProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconTag",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "IconTagProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconTagSize",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconTagVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconText",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "IconTextIconVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconTextLayout",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconTextProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconWrapper",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "IconWrapperProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Image",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ImageBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ImageBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ImageGallery",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ImageItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ImageProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ImageText",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ImageTextLarge",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ImageTextLargeProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ImageTextLayout",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ImageTextProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "InlineHeader",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "InlineHeaderProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "InlineMarkdownRenderer",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "InlineMarkdownRendererProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Input",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "InputProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Label",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LabelProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LayoutContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LayoutContextProvider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LayoutTheme",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LegendEntry",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LegendItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LegendStoreProvider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LineChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LineChartCondensed",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LineChartCondensedProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LineChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LineChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LineChartVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ListBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ListBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ListedSourceItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ListedSources",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ListedSourcesProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ListItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ListItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ListItemSize",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ListItemVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MarkDownRenderer",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MarkDownRendererProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MetricIndicatorInline",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MetricIndicatorInlineProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MetricIndicatorTrend",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MetricIndicatorWithStrikethrough",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MetricIndicatorWithStrikethroughProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniAreaChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MiniAreaChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniAreaChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniBarChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MiniBarChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniBarChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniLineChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MiniLineChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniLineChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Modal",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ModalProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "NeutralSwatchName",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "openSourceInNewTab",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "OpenUIGalleryProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OptionCards",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "OptionCardsItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OptionCardsProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OptionCardsSelectionType",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OverviewCardBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "OverviewCardBlockItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OverviewCardBlockLayout",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OverviewCardBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "PieChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "PieChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "PieChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "PieChartSkeleton",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "PrintContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "PrintContextProvider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "RadarChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "RadarChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "RadarChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "RadialChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "RadialChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "RadialChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "RadioGroup",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "RadioGroupProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "RadioItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "RadioItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "safeOpenUrl",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "safeUrl",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ScatterChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ScatterChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ScatterChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ScatterDataset",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ScatterPoint",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ScrollableTable",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ScrollableTableProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SectionV2",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SegmentedBar",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SegmentedBarData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SegmentedBarProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Select",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectContentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectGroup",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectGroupProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectLabel",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectLabelProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectSeparator",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectSeparatorProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectTrigger",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectTriggerProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectValue",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "Separator",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SingleStackedBar",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SingleStackedBarData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SingleStackedBarProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Skeleton",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "Slider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SliderBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SliderBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SliderProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SnippetCardBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SnippetCardBlockItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SnippetCardBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SnippetCardTooltip",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SourceFaviconImage",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SourceFaviconImageProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Sources",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SourcesItemComponentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SourceWithFavicon",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "StackedLegend",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "StackedLegendItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "StackedLegendProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Steps",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "StepsItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "StepsItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "StepsProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "swatch",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "swatchToken",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "swatchTokens",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SwitchGroup",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SwitchGroupProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SwitchItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SwitchItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Table",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableBody",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableCell",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableCellProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TableFooter",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableHead",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableHeader",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableHeadProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TableRow",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableSkeleton",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "Tabs",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TabsContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TabsContentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TabsList",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TabsListProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TabsProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TabsTrigger",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TabsTriggerProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Tag",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TagBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TagBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TagProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TagSize",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TagVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextArea",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextAreaProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockAlign",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockSecondaryTone",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockSize",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockType",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockView",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextBlockViewProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextCallout",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextCalloutProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextContentCitation",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextContentCitationProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextContentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextContentVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextContentWrapper",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextContentWrapperProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Theme",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "THEME_MODE_ATTRIBUTE",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "THEME_MODE_STORAGE_KEY",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ThemeMode",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ThemeModePreference",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ThemeProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ThemeProvider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ToggleGroup",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ToggleGroupProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ToggleItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ToggleItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TooltipWrapper",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TooltipWrapperProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "transformScatterData",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TypographyTheme",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "useCardSourceContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "useLayoutContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "useLegendEntry",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "usePrintContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "useSystemThemeMode",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "useTheme",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "useThemeModePreference",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "VisualCard",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "VisualCardBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "VisualCardBlockItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "VisualCardBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "VisualCardProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "white",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "withAlpha",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "XAxisTickVariant",
+        "value": false,
+        "type": true
+      }
+    ],
+    "packages/react-ui-core/dist/index.d.cts": [
+      {
+        "name": "Accordion",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AccordionContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AccordionContentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AccordionItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AccordionItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AccordionProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AccordionTrigger",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AccordionTriggerProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AreaChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AreaChartCondensed",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "AreaChartCondensedProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AreaChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AreaChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "AreaChartVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BarChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "BarChartCondensed",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "BarChartCondensedProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BarChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BarChartOrientation",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BarChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BarChartVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "BaseChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "black",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "BrandSwatchName",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Button",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ButtonProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Buttons",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ButtonsProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "calculateScatterDomain",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "Calendar",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CalendarHeatmap",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CalendarHeatmapDatum",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CalendarHeatmapProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CalendarProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Callout",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CalloutProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Card",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CardHeader",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CardHeaderProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CardProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CardSource",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CardSourceContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CardSourceProvider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CardSourceSchema",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "Carousel",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CarouselContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CarouselItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CarouselNext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CarouselPrevious",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CarouselProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CarouselRef",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CHART_CLASS_PREFIX",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CHART_PALETTE_KEYS",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ChartColorPalette",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ChartPaletteKey",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CheckBoxGroup",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CheckBoxGroupProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CheckBoxItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CheckBoxItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Chips",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ChipsItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ChipsProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ChipsSelectionType",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Citation",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CitationItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CitationItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CitationProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CodeBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CodeBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ColorTheme",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CompositeCard",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CompositeCardBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "CompositeCardBlockItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CompositeCardBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "CompositeCardProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ContextCard",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ContextCardBgColor",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ContextCardBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ContextCardBlockItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ContextCardBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ContextCardProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "createTheme",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "DatePicker",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "DatePickerProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "defaultDarkTheme",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "defaultLightTheme",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "DotMatrixLoader",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "DotMatrixLoaderVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EditableCellType",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EditableTable",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "EditableTableChangesBar",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "EditableTableChangesBarProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EditableTableColumn",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EditableTableProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EditableTableRow",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EffectTheme",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EntityList",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "EntityListProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EntityListRow",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "EntityListSize",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ExportChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FoldableSectionContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FoldableSectionContentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FoldableSectionItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FoldableSectionItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FoldableSectionRoot",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FoldableSectionRootProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FoldableSectionTrigger",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FoldableSectionTriggerProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "formatScatterTooltipValue",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FormControl",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FormControlProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FunnelChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FunnelChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FunnelChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FunnelEdges",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FunnelOrientation",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "GalleryModal",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "GalleryModalProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "getFaviconUrl",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "getScatterDatasets",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "HeatmapChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "HeatmapChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "HeatmapChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Hint",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "HintProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "HorizontalBarChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "HorizontalBarChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "HorizontalBarChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "HorizontalBarChartVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconButton",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "IconButtonProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconTag",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "IconTagProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconTagSize",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconTagVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconText",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "IconTextIconVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconTextLayout",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconTextProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "IconWrapper",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "IconWrapperProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Image",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ImageBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ImageBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ImageGallery",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ImageItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ImageProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ImageText",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ImageTextLarge",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ImageTextLargeProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ImageTextLayout",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ImageTextProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "InlineHeader",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "InlineHeaderProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "InlineMarkdownRenderer",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "InlineMarkdownRendererProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Input",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "InputProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Label",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LabelProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LayoutContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LayoutContextProvider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LayoutTheme",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LegendEntry",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LegendItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LegendStoreProvider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LineChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LineChartCondensed",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "LineChartCondensedProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LineChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LineChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "LineChartVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ListBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ListBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ListedSourceItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ListedSources",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ListedSourcesProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ListItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ListItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ListItemSize",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ListItemVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MarkDownRenderer",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MarkDownRendererProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MetricIndicatorInline",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MetricIndicatorInlineProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MetricIndicatorTrend",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MetricIndicatorWithStrikethrough",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MetricIndicatorWithStrikethroughProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniAreaChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MiniAreaChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniAreaChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniBarChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MiniBarChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniBarChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniLineChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "MiniLineChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "MiniLineChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Modal",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ModalProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "NeutralSwatchName",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "openSourceInNewTab",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "OpenUIGalleryProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OptionCards",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "OptionCardsItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OptionCardsProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OptionCardsSelectionType",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OverviewCardBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "OverviewCardBlockItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OverviewCardBlockLayout",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "OverviewCardBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "PieChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "PieChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "PieChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "PieChartSkeleton",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "PrintContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "PrintContextProvider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "RadarChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "RadarChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "RadarChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "RadialChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "RadialChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "RadialChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "RadioGroup",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "RadioGroupProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "RadioItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "RadioItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "safeOpenUrl",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "safeUrl",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ScatterChart",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ScatterChartData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ScatterChartProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ScatterDataset",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ScatterPoint",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ScrollableTable",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ScrollableTableProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SectionV2",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SegmentedBar",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SegmentedBarData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SegmentedBarProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Select",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectContentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectGroup",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectGroupProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectLabel",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectLabelProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectSeparator",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectSeparatorProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectTrigger",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SelectTriggerProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SelectValue",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "Separator",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SingleStackedBar",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SingleStackedBarData",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SingleStackedBarProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Skeleton",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "Slider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SliderBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SliderBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SliderProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SnippetCardBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SnippetCardBlockItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SnippetCardBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SnippetCardTooltip",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SourceFaviconImage",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SourceFaviconImageProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Sources",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SourcesItemComponentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SourceWithFavicon",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "StackedLegend",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "StackedLegendItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "StackedLegendProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Steps",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "StepsItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "StepsItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "StepsProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "swatch",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "swatchToken",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "swatchTokens",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SwitchGroup",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SwitchGroupProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "SwitchItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "SwitchItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Table",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableBody",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableCell",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableCellProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TableFooter",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableHead",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableHeader",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableHeadProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TableRow",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TableSkeleton",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "Tabs",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TabsContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TabsContentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TabsList",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TabsListProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TabsProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TabsTrigger",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TabsTriggerProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Tag",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TagBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TagBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TagProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TagSize",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TagVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextArea",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextAreaProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockAlign",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockSecondaryTone",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockSize",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockType",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextBlockView",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextBlockViewProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextCallout",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextCalloutProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextContent",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextContentCitation",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextContentCitationProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextContentProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextContentVariant",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TextContentWrapper",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TextContentWrapperProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "Theme",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "THEME_MODE_ATTRIBUTE",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "THEME_MODE_STORAGE_KEY",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ThemeMode",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ThemeModePreference",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ThemeProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ThemeProvider",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ToggleGroup",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ToggleGroupProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ToggleItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ToggleItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "TooltipWrapper",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TooltipWrapperProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "transformScatterData",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "TypographyTheme",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "useCardSourceContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "useLayoutContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "useLegendEntry",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "usePrintContext",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "useSystemThemeMode",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "useTheme",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "useThemeModePreference",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "VisualCard",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "VisualCardBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "VisualCardBlockItem",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "VisualCardBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "VisualCardProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "white",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "withAlpha",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "XAxisTickVariant",
+        "value": false,
+        "type": true
+      }
+    ],
+    "packages/kits/src/react/chat/index.ts": [
+      {
+        "name": "FollowUpBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FollowUpBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FollowUpItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FollowUpItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ModelLogo",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ModelOption",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ModelSwitcher",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ModelSwitcherProps",
+        "value": false,
+        "type": true
+      }
+    ],
+    "packages/kits/src/react/chat/libs/index.ts": [
+      {
+        "name": "openuiChatAdditionalRules",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "openuiChatComponentGroups",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "openuiChatExamples",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "openuiChatLibrary",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "openuiChatPromptOptions",
+        "value": true,
+        "type": false
+      }
+    ],
+    "packages/kits/dist/react/chat/index.d.mts": [
+      {
+        "name": "FollowUpBlock",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FollowUpBlockProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "FollowUpItem",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "FollowUpItemProps",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ModelLogo",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ModelOption",
+        "value": false,
+        "type": true
+      },
+      {
+        "name": "ModelSwitcher",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "ModelSwitcherProps",
+        "value": false,
+        "type": true
+      }
+    ],
+    "packages/kits/dist/react/chat/libs/index.d.mts": [
+      {
+        "name": "openuiChatAdditionalRules",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "openuiChatComponentGroups",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "openuiChatExamples",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "openuiChatLibrary",
+        "value": true,
+        "type": false
+      },
+      {
+        "name": "openuiChatPromptOptions",
+        "value": true,
+        "type": false
+      }
+    ],
+    "packages/react-ui-core/dist/index.mjs": [
+      "Accordion",
+      "AccordionContent",
+      "AccordionItem",
+      "AccordionTrigger",
+      "AreaChart",
+      "AreaChartCondensed",
+      "BarChart",
+      "BarChartCondensed",
+      "Button",
+      "Buttons",
+      "CHART_CLASS_PREFIX",
+      "CHART_PALETTE_KEYS",
+      "Calendar",
+      "CalendarHeatmap",
+      "Callout",
+      "Card",
+      "CardHeader",
+      "CardSourceContext",
+      "CardSourceProvider",
+      "CardSourceSchema",
+      "Carousel",
+      "CarouselContent",
+      "CarouselItem",
+      "CarouselNext",
+      "CarouselPrevious",
+      "CheckBoxGroup",
+      "CheckBoxItem",
+      "Chips",
+      "Citation",
+      "CitationItem",
+      "CodeBlock",
+      "CompositeCard",
+      "CompositeCardBlock",
+      "ContextCard",
+      "ContextCardBlock",
+      "DatePicker",
+      "DotMatrixLoader",
+      "EditableTable",
+      "EditableTableChangesBar",
+      "EntityList",
+      "FoldableSectionContent",
+      "FoldableSectionItem",
+      "FoldableSectionRoot",
+      "FoldableSectionTrigger",
+      "FormControl",
+      "FunnelChart",
+      "GalleryModal",
+      "HeatmapChart",
+      "Hint",
+      "HorizontalBarChart",
+      "IconButton",
+      "IconTag",
+      "IconText",
+      "IconWrapper",
+      "Image",
+      "ImageBlock",
+      "ImageGallery",
+      "ImageText",
+      "ImageTextLarge",
+      "InlineHeader",
+      "InlineMarkdownRenderer",
+      "Input",
+      "Label",
+      "LayoutContext",
+      "LayoutContextProvider",
+      "LegendStoreProvider",
+      "LineChart",
+      "LineChartCondensed",
+      "ListBlock",
+      "ListItem",
+      "ListedSourceItem",
+      "ListedSources",
+      "MarkDownRenderer",
+      "MetricIndicatorInline",
+      "MetricIndicatorWithStrikethrough",
+      "MiniAreaChart",
+      "MiniBarChart",
+      "MiniLineChart",
+      "Modal",
+      "OptionCards",
+      "OverviewCardBlock",
+      "PieChart",
+      "PieChartSkeleton",
+      "PrintContext",
+      "PrintContextProvider",
+      "RadarChart",
+      "RadialChart",
+      "RadioGroup",
+      "RadioItem",
+      "ScatterChart",
+      "ScrollableTable",
+      "SectionV2",
+      "SegmentedBar",
+      "Select",
+      "SelectContent",
+      "SelectGroup",
+      "SelectItem",
+      "SelectLabel",
+      "SelectSeparator",
+      "SelectTrigger",
+      "SelectValue",
+      "Separator",
+      "SingleStackedBar",
+      "Skeleton",
+      "Slider",
+      "SliderBlock",
+      "SnippetCardBlock",
+      "SourceFaviconImage",
+      "Sources",
+      "StackedLegend",
+      "Steps",
+      "StepsItem",
+      "SwitchGroup",
+      "SwitchItem",
+      "THEME_MODE_ATTRIBUTE",
+      "THEME_MODE_STORAGE_KEY",
+      "Table",
+      "TableBody",
+      "TableCell",
+      "TableFooter",
+      "TableHead",
+      "TableHeader",
+      "TableRow",
+      "TableSkeleton",
+      "Tabs",
+      "TabsContent",
+      "TabsList",
+      "TabsTrigger",
+      "Tag",
+      "TagBlock",
+      "TextArea",
+      "TextBlockView",
+      "TextCallout",
+      "TextContent",
+      "TextContentCitation",
+      "TextContentWrapper",
+      "ThemeProvider",
+      "ToggleGroup",
+      "ToggleItem",
+      "TooltipWrapper",
+      "VisualCard",
+      "VisualCardBlock",
+      "black",
+      "calculateScatterDomain",
+      "createTheme",
+      "defaultDarkTheme",
+      "defaultLightTheme",
+      "formatScatterTooltipValue",
+      "getFaviconUrl",
+      "getScatterDatasets",
+      "openSourceInNewTab",
+      "safeOpenUrl",
+      "safeUrl",
+      "swatch",
+      "swatchToken",
+      "swatchTokens",
+      "transformScatterData",
+      "useCardSourceContext",
+      "useLayoutContext",
+      "useLegendEntry",
+      "usePrintContext",
+      "useSystemThemeMode",
+      "useTheme",
+      "useThemeModePreference",
+      "white",
+      "withAlpha"
+    ],
+    "packages/react-ui-core/dist/index.cjs": [
+      "Accordion",
+      "AccordionContent",
+      "AccordionItem",
+      "AccordionTrigger",
+      "AreaChart",
+      "AreaChartCondensed",
+      "BarChart",
+      "BarChartCondensed",
+      "Button",
+      "Buttons",
+      "CHART_CLASS_PREFIX",
+      "CHART_PALETTE_KEYS",
+      "Calendar",
+      "CalendarHeatmap",
+      "Callout",
+      "Card",
+      "CardHeader",
+      "CardSourceContext",
+      "CardSourceProvider",
+      "CardSourceSchema",
+      "Carousel",
+      "CarouselContent",
+      "CarouselItem",
+      "CarouselNext",
+      "CarouselPrevious",
+      "CheckBoxGroup",
+      "CheckBoxItem",
+      "Chips",
+      "Citation",
+      "CitationItem",
+      "CodeBlock",
+      "CompositeCard",
+      "CompositeCardBlock",
+      "ContextCard",
+      "ContextCardBlock",
+      "DatePicker",
+      "DotMatrixLoader",
+      "EditableTable",
+      "EditableTableChangesBar",
+      "EntityList",
+      "FoldableSectionContent",
+      "FoldableSectionItem",
+      "FoldableSectionRoot",
+      "FoldableSectionTrigger",
+      "FormControl",
+      "FunnelChart",
+      "GalleryModal",
+      "HeatmapChart",
+      "Hint",
+      "HorizontalBarChart",
+      "IconButton",
+      "IconTag",
+      "IconText",
+      "IconWrapper",
+      "Image",
+      "ImageBlock",
+      "ImageGallery",
+      "ImageText",
+      "ImageTextLarge",
+      "InlineHeader",
+      "InlineMarkdownRenderer",
+      "Input",
+      "Label",
+      "LayoutContext",
+      "LayoutContextProvider",
+      "LegendStoreProvider",
+      "LineChart",
+      "LineChartCondensed",
+      "ListBlock",
+      "ListItem",
+      "ListedSourceItem",
+      "ListedSources",
+      "MarkDownRenderer",
+      "MetricIndicatorInline",
+      "MetricIndicatorWithStrikethrough",
+      "MiniAreaChart",
+      "MiniBarChart",
+      "MiniLineChart",
+      "Modal",
+      "OptionCards",
+      "OverviewCardBlock",
+      "PieChart",
+      "PieChartSkeleton",
+      "PrintContext",
+      "PrintContextProvider",
+      "RadarChart",
+      "RadialChart",
+      "RadioGroup",
+      "RadioItem",
+      "ScatterChart",
+      "ScrollableTable",
+      "SectionV2",
+      "SegmentedBar",
+      "Select",
+      "SelectContent",
+      "SelectGroup",
+      "SelectItem",
+      "SelectLabel",
+      "SelectSeparator",
+      "SelectTrigger",
+      "SelectValue",
+      "Separator",
+      "SingleStackedBar",
+      "Skeleton",
+      "Slider",
+      "SliderBlock",
+      "SnippetCardBlock",
+      "SourceFaviconImage",
+      "Sources",
+      "StackedLegend",
+      "Steps",
+      "StepsItem",
+      "SwitchGroup",
+      "SwitchItem",
+      "THEME_MODE_ATTRIBUTE",
+      "THEME_MODE_STORAGE_KEY",
+      "Table",
+      "TableBody",
+      "TableCell",
+      "TableFooter",
+      "TableHead",
+      "TableHeader",
+      "TableRow",
+      "TableSkeleton",
+      "Tabs",
+      "TabsContent",
+      "TabsList",
+      "TabsTrigger",
+      "Tag",
+      "TagBlock",
+      "TextArea",
+      "TextBlockView",
+      "TextCallout",
+      "TextContent",
+      "TextContentCitation",
+      "TextContentWrapper",
+      "ThemeProvider",
+      "ToggleGroup",
+      "ToggleItem",
+      "TooltipWrapper",
+      "VisualCard",
+      "VisualCardBlock",
+      "black",
+      "calculateScatterDomain",
+      "createTheme",
+      "defaultDarkTheme",
+      "defaultLightTheme",
+      "formatScatterTooltipValue",
+      "getFaviconUrl",
+      "getScatterDatasets",
+      "openSourceInNewTab",
+      "safeOpenUrl",
+      "safeUrl",
+      "swatch",
+      "swatchToken",
+      "swatchTokens",
+      "transformScatterData",
+      "useCardSourceContext",
+      "useLayoutContext",
+      "useLegendEntry",
+      "usePrintContext",
+      "useSystemThemeMode",
+      "useTheme",
+      "useThemeModePreference",
+      "white",
+      "withAlpha"
+    ]
+  },
+  "hashes": {
+    "packages/react-ui-core/src/index.ts": "f8a1fb2d9ca965e73b7f890f23c55260955ede2eaf78921dfd530a3b1f60922b",
+    "packages/react-ui-core/dist/index.d.mts": "c228c9074e74d05288b16ec7c08d34e118e7fe51c73367f4b6111482a16d51ad",
+    "packages/react-ui-core/dist/index.d.cts": "ab354dc85baf96d8047d002c9bc6b07bc9af15b6c1a15331a591e92cd20f1926",
+    "packages/kits/src/react/chat/index.ts": "1f41044e8578700cf9147ca199cac3124a9a734ee03023d2ca3773fd627c0bb8",
+    "packages/kits/src/react/chat/libs/index.ts": "fd7717f53c32ba635b7a92ede5ca8732a03ead2c18759ca7645a711a613b4a65",
+    "packages/kits/dist/react/chat/index.d.mts": "fdce138d8e96738474edff716e6e844b8040b8985b6f77b6c18e48623f00b499",
+    "packages/kits/dist/react/chat/libs/index.d.mts": "04680d94775c33ab073888d03a85ddc47fca4c216a770383e5853b094a9275ba",
+    "packages/react-ui-core/dist/index.mjs": "b8048d154cd783c8b15d11278fe96f464c9a8b57ae4b3a167ff83dc6c4aaf817",
+    "packages/react-ui-core/dist/index.cjs": "8463ee5763e626b31ca331722376d1ac78777b8229dd4fa77fa1c814b43fccd3"
+  }
+}

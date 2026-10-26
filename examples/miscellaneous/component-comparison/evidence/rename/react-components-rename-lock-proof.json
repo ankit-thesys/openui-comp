@@ -1,0 +1,12 @@
+{
+  "baseline": "7aaf25d4079c465992a2d8edc1f5fe7df87c8d4b",
+  "packages": 2160,
+  "snapshots": 2197,
+  "unchangedDependencyGraph": true,
+  "changes": [
+    "core importer path",
+    "kits dependency key",
+    "kits relative link target"
+  ],
+  "tooling": "Offline lockfile re-resolution required unrelated Node metadata; exact three identity replacements preserve the existing locked graph; frozen offline install then passes."
+}

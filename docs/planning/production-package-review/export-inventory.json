@@ -1962,8 +1962,8 @@
         "packages/react-ui-core/src/components/Sources/index.ts"
       ],
       "kitsConsumers": [],
-      "proposedDisposition": "Ambiguous: retain unless removal is explicitly reviewed",
-      "evidence": "Root explicitly exports helper; internal uses exist, but external consumer intent not established"
+      "proposedDisposition": "Keep: independently confirmed legacy-public contract",
+      "evidence": "Independent export audit REPORT.md: explicit legacy root/index.ts:137-139 and Sources/index.ts:3-10. Retain for parity; no removal decision needed."
     },
     {
       "name": "getScatterDatasets",
@@ -3303,8 +3303,8 @@
         "packages/react-ui-core/src/components/Sources/index.ts"
       ],
       "kitsConsumers": [],
-      "proposedDisposition": "Ambiguous: retain unless removal is explicitly reviewed",
-      "evidence": "Root explicitly exports helper; internal uses exist, but external consumer intent not established"
+      "proposedDisposition": "Keep: independently confirmed legacy-public contract",
+      "evidence": "Independent export audit REPORT.md: explicit legacy root/index.ts:137-139 and Sources/index.ts:3-10. Retain for parity; no removal decision needed."
     },
     {
       "name": "OpenUIGalleryProps",
@@ -3728,8 +3728,8 @@
         "packages/react-ui-core/src/index.ts"
       ],
       "kitsConsumers": [],
-      "proposedDisposition": "Ambiguous: retain unless removal is explicitly reviewed",
-      "evidence": "Root explicitly exports helper; internal uses exist, but external consumer intent not established"
+      "proposedDisposition": "Keep: independently confirmed legacy-public contract",
+      "evidence": "Independent export audit REPORT.md: explicit legacy root/index.ts:137-139 and Sources/index.ts:3-10. Retain for parity; no removal decision needed."
     },
     {
       "name": "safeUrl",
@@ -3741,8 +3741,8 @@
         "packages/react-ui-core/src/index.ts"
       ],
       "kitsConsumers": [],
-      "proposedDisposition": "Ambiguous: retain unless removal is explicitly reviewed",
-      "evidence": "Root explicitly exports helper; internal uses exist, but external consumer intent not established"
+      "proposedDisposition": "Keep: independently confirmed legacy-public contract",
+      "evidence": "Independent export audit REPORT.md: explicit legacy root/index.ts:137-139 and Sources/index.ts:3-10. Retain for parity; no removal decision needed."
     },
     {
       "name": "ScatterChart",
@@ -6061,12 +6061,7 @@
   "warnings": [],
   "notes": {
     "approvedRemovals": [],
-    "ambiguous": [
-      "safeUrl",
-      "safeOpenUrl",
-      "getFaviconUrl",
-      "openSourceInNewTab"
-    ],
+    "ambiguous": [],
     "privateImplementationSymbolsRemainPrivate": [
       "ThemeContext",
       "FormControlContext",
@@ -6075,6 +6070,7 @@
       "rootClass and other generated class exports"
     ],
     "subpaths": "Core exports map has only root. Physical dist files are not supported subpath APIs; test package resolution rather than deleting every implementation file.",
-    "typePolicy": "Do not equate every implementation type with a required root export. Preserve current public types until a public-signature/declaration audit proves a proposed removal safe."
+    "typePolicy": "Do not equate every implementation type with a required root export. Preserve current public types until a public-signature/declaration audit proves a proposed removal safe.",
+    "supersedingAudit": "examples/miscellaneous/component-comparison/evidence/export-contract/REPORT.md; all166 runtime values and194 types retained; no deletion patch."
   }
 }

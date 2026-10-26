@@ -1,4 +1,4 @@
-import type { Theme } from "@openuidev/react-ui-core";
+import type { Theme } from "@openuidev/react-components";
 import { getThemePreset } from "./theme-presets.mjs";
 import { Renderer } from "@openuidev/react-lang";
 import {

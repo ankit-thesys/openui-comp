@@ -1,0 +1,399 @@
+{
+  "boundaries": [
+    {
+      "specifier": "@openuidev/react-ui-core",
+      "resolved": "/Users/ankitdas/.codex/worktrees/production-core-kits/openui/packages/react-ui-core/dist/index.cjs"
+    },
+    {
+      "specifier": "@openuidev/react-ui-core/dist/index.mjs",
+      "error": "ERR_PACKAGE_PATH_NOT_EXPORTED"
+    },
+    {
+      "specifier": "@openuidev/react-ui-core/src/index.ts",
+      "error": "ERR_PACKAGE_PATH_NOT_EXPORTED"
+    },
+    {
+      "specifier": "@openuidev/react-ui-core/internal",
+      "error": "ERR_PACKAGE_PATH_NOT_EXPORTED"
+    },
+    {
+      "specifier": "@openuidev/react-ui-core/components/Button",
+      "error": "ERR_PACKAGE_PATH_NOT_EXPORTED"
+    },
+    {
+      "specifier": "@openuidev/kits",
+      "error": "ERR_PACKAGE_PATH_NOT_EXPORTED"
+    },
+    {
+      "specifier": "@openuidev/kits/react/chat",
+      "resolved": "/Users/ankitdas/.codex/worktrees/production-core-kits/openui/packages/kits/dist/react/chat/index.cjs"
+    },
+    {
+      "specifier": "@openuidev/kits/react/chat/libs",
+      "resolved": "/Users/ankitdas/.codex/worktrees/production-core-kits/openui/packages/kits/dist/react/chat/libs/index.cjs"
+    },
+    {
+      "specifier": "@openuidev/kits/dist/react/chat/index.mjs",
+      "error": "ERR_PACKAGE_PATH_NOT_EXPORTED"
+    },
+    {
+      "specifier": "@openuidev/kits/src/react/chat/index.ts",
+      "error": "ERR_PACKAGE_PATH_NOT_EXPORTED"
+    },
+    {
+      "specifier": "@openuidev/kits/internal",
+      "error": "ERR_PACKAGE_PATH_NOT_EXPORTED"
+    }
+  ],
+  "localDeclarationEdges": 722,
+  "unresolvedLocalDeclarationEdges": [],
+  "kitsImports": [
+    {
+      "file": "packages/kits/src/react/chat/components/ModelSwitcher/ModelSwitcher.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Accordion/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/BoldText/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Button/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Buttons/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Callout/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/CardHeader/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Carousel/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/AreaChartCondensed.ts",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/BarChartCondensed.ts",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/HorizontalBarChart.ts",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/LineChartCondensed.ts",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/PieChart.ts",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/RadarChart.ts",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/RadialChart.ts",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/ScatterChart.ts",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/SingleStackedBarChart.ts",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/CheckBoxGroup/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Chips/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/CodeBlock/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/CompositeCardBlock/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/ContextCardBlock/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/DatePicker/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/EditableTable/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/EntityList/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/FormControl/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Icon/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/IconButton/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/IconText/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Image/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/ImageBlock/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/ImageGallery/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/ImageText/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/ImageTextLarge/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/InlineHeader/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Input/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Label/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/ListBlock/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/MarkDownRenderer/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/MetricIndicator/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/OptionCards/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/OverviewCardBlock/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/RadioGroup/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/SectionBlock/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Select/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Separator/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Slider/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/SnippetCardBlock/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Steps/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/SwitchGroup/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Table/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Tabs/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Tag/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/TagBlock/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/Text/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/TextArea/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/TextCallout/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/TextContent/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/VisualCardBlock/index.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/cardTagUtils.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    },
+    {
+      "file": "packages/kits/src/react/chat/libs/openuiChatLibrary/openuiChatLibrary.tsx",
+      "specifier": "@openuidev/react-ui-core"
+    }
+  ],
+  "kitsDistinctSymbols": [
+    "Accordion",
+    "AccordionContent",
+    "AccordionItem",
+    "AccordionTrigger",
+    "AreaChartCondensed",
+    "BarChartCondensed",
+    "Button",
+    "Buttons",
+    "ButtonsProps",
+    "Callout",
+    "Card",
+    "CardHeader",
+    "CardSourceProvider",
+    "CardSourceSchema",
+    "Carousel",
+    "CarouselContent",
+    "CarouselItem",
+    "CarouselNext",
+    "CarouselPrevious",
+    "CheckBoxGroup",
+    "CheckBoxItem",
+    "Chips",
+    "CodeBlock",
+    "CompositeCardBlock",
+    "ContextCardBlock",
+    "DatePicker",
+    "EditableTable",
+    "EditableTableChangesBar",
+    "EditableTableRow",
+    "EntityList",
+    "FoldableSectionContent",
+    "FoldableSectionItem",
+    "FoldableSectionRoot",
+    "FoldableSectionTrigger",
+    "FormControl",
+    "Hint",
+    "HorizontalBarChart",
+    "IconButton",
+    "IconText",
+    "IconWrapper",
+    "Image",
+    "ImageBlock",
+    "ImageGallery",
+    "ImageText",
+    "ImageTextLarge",
+    "InlineHeader",
+    "Input",
+    "Label",
+    "LineChartCondensed",
+    "ListBlock",
+    "ListItem",
+    "MarkDownRenderer",
+    "MetricIndicatorInline",
+    "MetricIndicatorWithStrikethrough",
+    "OptionCards",
+    "OverviewCardBlock",
+    "PieChart",
+    "PieChartSkeleton",
+    "RadarChart",
+    "RadialChart",
+    "RadioGroup",
+    "RadioItem",
+    "ScatterChart",
+    "ScrollableTable",
+    "SectionV2",
+    "Select",
+    "SelectContent",
+    "SelectGroup",
+    "SelectItem",
+    "SelectLabel",
+    "SelectSeparator",
+    "SelectTrigger",
+    "SelectValue",
+    "Separator",
+    "SingleStackedBar",
+    "SliderBlock",
+    "SnippetCardBlock",
+    "Sources",
+    "Steps",
+    "StepsItem",
+    "SwitchGroup",
+    "SwitchItem",
+    "TableBody",
+    "TableCell",
+    "TableHead",
+    "TableHeader",
+    "TableRow",
+    "TableSkeleton",
+    "Tabs",
+    "TabsContent",
+    "TabsList",
+    "TabsTrigger",
+    "Tag",
+    "TagBlock",
+    "TextArea",
+    "TextBlockView",
+    "TextCallout",
+    "TextContentWrapper",
+    "ThemeMode",
+    "VisualCardBlock",
+    "useTheme"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "head": "f9c28c6c2b4e26969dc7be0bcd0eb78e46306c21",
+  "pr": "https://github.com/ankit-thesys/openui-comp/pull/43",
+  "artifacts": [
+    {
+      "file": "openuidev-react-components-0.0.0-beta.0.tgz",
+      "sha256": "687762eba81d777734299855bcc3c7fa4f59ab7afbf08495de75200837592991",
+      "bytes": 1075062
+    },
+    {
+      "file": "openuidev-kits-0.0.0-beta.0.tgz",
+      "sha256": "abe851ab782edb3ea49350a26dcbedb4a62e8a992ce26abe12abf8569b30637b",
+      "bytes": 238631
+    }
+  ],
+  "browser": "68guards +24actualchatstreamcells PASS",
+  "remoteCI": "Not scheduled for stacked base; localCI PASS"
+}

@@ -12,7 +12,7 @@ import {
 import {
   defaultLightTheme,
   CHART_PALETTE_KEYS,
-} from "@openuidev/react-ui-core";
+} from "@openuidev/react-components";
 import { themePresetFixture } from "../src/theme-presets.mjs";
 import { validateCase } from "../bench/model.mjs";
 import { createApp } from "../server.mjs";

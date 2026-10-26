@@ -1,3 +1,4 @@
+import { localArchives } from "../scripts/archive-paths.mjs";
 import fs from "node:fs/promises";
 import path from "node:path";
 import os from "node:os";
@@ -49,17 +50,15 @@ async function provenance(executable, browser, bundleDir, frozen) {
   const binary = await fs.readFile(executable);
   const artifacts = frozen?.artifacts ?? [];
   if (!frozen)
-    for (const name of (await fs.readdir(path.join(root, ".artifacts")))
-      .filter((n) => n.endsWith(".tgz"))
-      .sort()) {
-      const p = path.join(root, ".artifacts", name);
+    for (const archive of localArchives(await readJson(path.join(root, "package.json")))) {
+      const p = path.resolve(root, archive.path);
       const manifest = JSON.parse(
         execFileSync("tar", ["-xOf", p, "package/package.json"], {
           encoding: "utf8",
         }),
       );
       artifacts.push({
-        file: name,
+        file: path.relative(path.join(root, ".artifacts"), p),
         name: manifest.name,
         version: manifest.version,
         sha256: sha(await fs.readFile(p)),
@@ -94,6 +93,7 @@ async function provenance(executable, browser, bundleDir, frozen) {
         "probes.mjs",
         "model.mjs",
         "chart-variant-oracles.mjs",
+        "../scripts/archive-paths.mjs",
       ].map(async (n) => ({
         file: n,
         sha256: sha(await fs.readFile(path.join(root, "bench", n))),

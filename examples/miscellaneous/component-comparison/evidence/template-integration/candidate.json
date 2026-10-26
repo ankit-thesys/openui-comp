@@ -1,0 +1,18 @@
+{
+  "head": "cf1a8a88123b9a577c9cb43ae69d857ea6242f11",
+  "pr": "https://github.com/ankit-thesys/openui-comp/pull/44",
+  "artifacts": [
+    {
+      "file": "openuidev-kits-0.0.0-beta.0.tgz",
+      "sha256": "543dad17a09b6914b25790afc103397f9f91c90b1687caa86a778934fac4bf32",
+      "bytes": 238216
+    },
+    {
+      "file": "openuidev-react-components-0.0.0-beta.0.tgz",
+      "sha256": "f62cf7f1d3bf9a6e3cfe57b6e2365ed821978d6d65cb080e0444bc907e94e46f",
+      "bytes": 1056225
+    }
+  ],
+  "ci": "Local package CI passes; remote workflows not scheduled for stacked base.",
+  "browserMatrix": "in progress"
+}

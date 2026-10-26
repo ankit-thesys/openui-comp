@@ -17,7 +17,7 @@ pnpm install --frozen-lockfile
 pnpm run build:packages
 cd examples/miscellaneous/component-comparison
 node scripts/setup-artifacts.mjs
-npm install .artifacts/*.tgz
+npm install
 npm run generate
 cp .env.example .env.local
 npm run dev
@@ -27,15 +27,16 @@ Open **http://127.0.0.1:4188**. Default mock mode is deterministic and makes no
 AI requests. `setup-artifacts` uses ordinary pnpm pack on already-built packages;
 no source aliases, linked workspace runtimes or custom styling adapters are used.
 The example's own lock records its dependencies and local archive integrity.
-Explicitly installing the newly packed tarballs refreshes those integrity entries
-when rebuilding artifacts. It does not modify the repository root lockfile.
+The manifest points at a versioned candidate archive directory. Keep historical
+archives in place so saved runs remain reproducible; use a new directory when
+validating another candidate. It does not modify the repository root lockfile.
 
 For an existing directory containing exactly one tarball per required package,
 use `node scripts/setup-artifacts.mjs --from=/absolute/path/to/archives` instead.
 Required packages: lang-core, observability, devtools, react-lang, react-ui,
-react-ui-core and kits. Newly extracted packages are unpublished; a plain registry
+react-components and kits. Newly extracted packages are unpublished; a plain registry
 install cannot supply them. Do not substitute source aliases. Source exports are
-`@openuidev/kits/react/chat/libs`, root core and root legacy UI.
+`@openuidev/kits/react/chat/libs`, `@openuidev/react-components` and root legacy UI.
 
 `npm run generate` uses the stock OpenUI CLI twice and rejects mismatching chat
 registries/schemas. The server passes the matching library and promptOptions
@@ -214,7 +215,6 @@ separate versioned audit and never rewrites a run. Known unstable HorizontalBar
 rendering is measured over120 inner-height frames. Its behavior may be Known issue
 while raw visual comparisons still fail/review; no special geometry normalization
 or production resize workaround makes those results green.
-
 
 Final Default matrix results are preserved under `evidence/bench/final/`:
 12,450 current-version cells executed, zero missing;9,151 Pass,86 Fail,

@@ -4,7 +4,7 @@ import { once } from "node:events";
 import { chromium } from "playwright";
 import { createApp } from "../server.mjs";
 import { themePresetFixture, getThemePreset } from "../src/theme-presets.mjs";
-import { defaultLightTheme, defaultDarkTheme } from "@openuidev/react-ui-core";
+import { defaultLightTheme, defaultDarkTheme } from "@openuidev/react-components";
 import { DEFAULT_CHROME, CHROME_VERSION } from "../bench/model.mjs";
 const app = await createApp({
   env: { NODE_ENV: "production", COMPARISON_MODE: "mock" },

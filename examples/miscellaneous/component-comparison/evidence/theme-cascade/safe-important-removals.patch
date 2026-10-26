@@ -1,0 +1,33 @@
+--- a/packages/react-ui-core/src/components/Slider/sliderBlock.styles.ts
++++ b/packages/react-ui-core/src/components/Slider/sliderBlock.styles.ts
+@@ -44,9 +44,9 @@
+     },
+   },
+   "& .openui-slider-block__input": {
+-    "text-align": "right !important",
+-    paddingLeft: "var(--openui-space-s, 8px) !important",
+-    paddingRight: "var(--openui-space-s, 8px) !important",
++    "text-align": "right",
++    paddingLeft: "var(--openui-space-s, 8px)",
++    paddingRight: "var(--openui-space-s, 8px)",
+   },
+   "& .openui-slider-block__error-message": {
+     display: "flex",
+--- a/packages/react-ui-core/src/components/Sources/listedSources.styles.ts
++++ b/packages/react-ui-core/src/components/Sources/listedSources.styles.ts
+@@ -24,12 +24,12 @@
+ });
+ export const containerClass = css({
+   width: "180px !important",
+-  padding: "var(--openui-space-000, 0) !important",
+-  borderRadius: "var(--openui-radius-l, 10px) !important",
++  padding: "var(--openui-space-000, 0)",
++  borderRadius: "var(--openui-radius-l, 10px)",
+   overflow: "hidden",
+   backgroundColor: "transparent !important",
+   "&.openui-listed-sources-item-container--has-url:hover": {
+     backgroundColor: "var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02)) !important",
+-    borderColor: "var(--openui-border-interactive, oklch(0.097 0 0 / 0.12)) !important",
++    borderColor: "var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+   },
+ } satisfies CSSAttribute);

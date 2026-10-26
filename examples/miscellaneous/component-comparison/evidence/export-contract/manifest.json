@@ -1,0 +1,36 @@
+{
+  "source": "/private/tmp/openui-export-contract-audit",
+  "files": [
+    {
+      "path": "REPORT.md",
+      "bytes": 7951,
+      "sha256": "3b8f312ff9e7b7c63ae16a83bb56bbc5065a0757627b3077eba6fc18ab4f49de"
+    },
+    {
+      "path": "audit.cjs",
+      "bytes": 2528,
+      "sha256": "6cccc3e459c1da5891169e53ac1acb1a16e902e0a4cbc7420c9c51af50043fa7"
+    },
+    {
+      "path": "boundaries.cjs",
+      "bytes": 2327,
+      "sha256": "2637cb13baa67ad9723320ba4bb02ec0f3485a583a2a995d094e3624720558f9"
+    },
+    {
+      "path": "symbols.json",
+      "bytes": 115807,
+      "sha256": "23ce7f1b7c4d330ee720223145aa62c905cd14893946afbce070a64fb69ab0a2"
+    },
+    {
+      "path": "boundaries.json",
+      "bytes": 12747,
+      "sha256": "54f8506d69f5d16114f3c5e4111579c22012a22373769822b89f36ded019ed0f"
+    },
+    {
+      "path": "template-static.cjs",
+      "bytes": 2111,
+      "sha256": "40d812c18d46038b762554f9e2d059f0ca8ef61747b369b57674d73527ed0f80"
+    }
+  ],
+  "scope": "Independent static public-contract audit; not strict packed-consumer or runtime behavior certification. No export deletion proposed."
+}

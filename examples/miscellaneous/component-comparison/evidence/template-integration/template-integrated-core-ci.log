@@ -1,0 +1,54 @@
+
+> @openuidev/react-components@0.0.0-beta.0 ci /Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/react-components
+> pnpm run format:check && pnpm run lint:check && pnpm run typecheck && pnpm run check:publint && pnpm run check:attw
+
+
+> @openuidev/react-components@0.0.0-beta.0 format:check /Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/react-components
+> prettier --check src *.json *.ts
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> @openuidev/react-components@0.0.0-beta.0 lint:check /Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/react-components
+> eslint src
+
+
+/Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/react-components/src/components/ThemeProvider/ThemeProvider.tsx
+  164:9  warning  The 'userLightTheme' logical expression could make the dependencies of useMemo Hook (at line 203) change on every render. To fix this, wrap the initialization of 'userLightTheme' in its own useMemo() Hook  react-hooks/exhaustive-deps
+  164:9  warning  The 'userLightTheme' logical expression could make the dependencies of useMemo Hook (at line 209) change on every render. To fix this, wrap the initialization of 'userLightTheme' in its own useMemo() Hook  react-hooks/exhaustive-deps
+
+✖ 2 problems (0 errors, 2 warnings)
+
+
+> @openuidev/react-components@0.0.0-beta.0 typecheck /Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/react-components
+> tsc --noEmit
+
+
+> @openuidev/react-components@0.0.0-beta.0 check:publint /Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/react-components
+> publint
+
+Running publint v0.3.22 for @openuidev/react-components...
+Packing files with `pnpm pack`...
+Linting...
+All good!
+
+> @openuidev/react-components@0.0.0-beta.0 check:attw /Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/react-components
+> attw --pack .
+
+
+@openuidev/react-components v0.0.0-beta.0
+
+ No problems found 🌟
+
+
+[90m┌───────────────────[39m[90m┬───────────────────────────────┐[39m
+[90m│[39m[31m                   [39m[90m│[39m[31m "@openuidev/react-components" [39m[90m│[39m
+[90m├───────────────────[39m[90m┼───────────────────────────────┤[39m
+[90m│[39m node10            [90m│[39m 🟢                            [90m│[39m
+[90m├───────────────────[39m[90m┼───────────────────────────────┤[39m
+[90m│[39m node16 (from CJS) [90m│[39m 🟢 (CJS)                      [90m│[39m
+[90m├───────────────────[39m[90m┼───────────────────────────────┤[39m
+[90m│[39m node16 (from ESM) [90m│[39m 🟢 (ESM)                      [90m│[39m
+[90m├───────────────────[39m[90m┼───────────────────────────────┤[39m
+[90m│[39m bundler           [90m│[39m 🟢                            [90m│[39m
+[90m└───────────────────[39m[90m┴───────────────────────────────┘[39m
