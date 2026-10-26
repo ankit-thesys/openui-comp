@@ -1,11 +1,11 @@
 "use client";
 
-import { defineComponent } from "@openuidev/react-lang";
 import {
   MarkDownRenderer,
   Steps as OpenUISteps,
   StepsItem as OpenUIStepsItem,
-} from "@openuidev/react-ui-core";
+} from "@openuidev/react-components";
+import { defineComponent } from "@openuidev/react-lang";
 import React from "react";
 import { z } from "zod/v4";
 import { StepsItemSchema } from "./schema";

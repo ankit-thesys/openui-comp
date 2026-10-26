@@ -1,5 +1,6 @@
 "use client";
 
+import { VisualCardBlock as OpenUIVisualCardBlock } from "@openuidev/react-components";
 import type { SubComponentOf } from "@openuidev/react-lang";
 import {
   ComponentRenderProps,
@@ -8,7 +9,6 @@ import {
   useIsStreaming,
   useTriggerAction,
 } from "@openuidev/react-lang";
-import { VisualCardBlock as OpenUIVisualCardBlock } from "@openuidev/react-ui-core";
 import { withItemContext } from "../cardActionUtils";
 import { renderCardTag } from "../cardTagUtils";
 import {

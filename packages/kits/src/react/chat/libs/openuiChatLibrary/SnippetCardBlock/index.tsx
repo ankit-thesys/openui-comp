@@ -1,5 +1,6 @@
 "use client";
 
+import { SnippetCardBlock as OpenUISnippetCardBlock } from "@openuidev/react-components";
 import {
   ComponentRenderProps,
   defineComponent,
@@ -7,7 +8,6 @@ import {
   useIsStreaming,
   useTriggerAction,
 } from "@openuidev/react-lang";
-import { SnippetCardBlock as OpenUISnippetCardBlock } from "@openuidev/react-ui-core";
 import { withItemContext } from "../cardActionUtils";
 import {
   SnippetCardBlockSchema,

@@ -1,7 +1,7 @@
 "use client";
 
+import { HorizontalBarChart as HorizontalBarChartComponent } from "@openuidev/react-components";
 import { defineComponent } from "@openuidev/react-lang";
-import { HorizontalBarChart as HorizontalBarChartComponent } from "@openuidev/react-ui-core";
 import React from "react";
 import { z } from "zod/v4";
 import { buildChartData, hasAllProps } from "../helpers";

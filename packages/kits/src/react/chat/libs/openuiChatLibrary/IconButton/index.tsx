@@ -1,5 +1,6 @@
 "use client";
 
+import { IconWrapper, IconButton as OpenUIIconButton } from "@openuidev/react-components";
 import type { ActionPlan } from "@openuidev/react-lang";
 import {
   ComponentRenderProps,
@@ -8,7 +9,6 @@ import {
   useIsStreaming,
   useTriggerAction,
 } from "@openuidev/react-lang";
-import { IconWrapper, IconButton as OpenUIIconButton } from "@openuidev/react-ui-core";
 import { IconButtonSchema, type IconButtonProps } from "./schema";
 
 export * from "./schema";

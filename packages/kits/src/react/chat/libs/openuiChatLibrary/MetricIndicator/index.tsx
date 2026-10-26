@@ -1,10 +1,10 @@
 "use client";
 
-import { ComponentRenderProps, defineComponent } from "@openuidev/react-lang";
 import {
   MetricIndicatorInline as OpenUIMetricIndicatorInline,
   MetricIndicatorWithStrikethrough as OpenUIMetricIndicatorWithStrikethrough,
-} from "@openuidev/react-ui-core";
+} from "@openuidev/react-components";
+import { ComponentRenderProps, defineComponent } from "@openuidev/react-lang";
 import {
   MetricIndicatorInlineSchema,
   MetricIndicatorWithStrikethroughSchema,

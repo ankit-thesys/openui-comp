@@ -1,5 +1,6 @@
 "use client";
 
+import { Button as OpenUIButton } from "@openuidev/react-components";
 import type { ActionPlan } from "@openuidev/react-lang";
 import {
   ACTION_STEPS,
@@ -9,7 +10,6 @@ import {
   useIsStreaming,
   useTriggerAction,
 } from "@openuidev/react-lang";
-import { Button as OpenUIButton } from "@openuidev/react-ui-core";
 import { ButtonSchema } from "./schema";
 
 export { ButtonSchema } from "./schema";

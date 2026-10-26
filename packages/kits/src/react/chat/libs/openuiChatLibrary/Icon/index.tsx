@@ -1,7 +1,7 @@
 "use client";
 
+import { IconWrapper } from "@openuidev/react-components";
 import { ComponentRenderProps, defineComponent } from "@openuidev/react-lang";
-import { IconWrapper } from "@openuidev/react-ui-core";
 import { IconSchema, type IconProps } from "./schema";
 
 export * from "./schema";

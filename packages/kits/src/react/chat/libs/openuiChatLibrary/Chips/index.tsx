@@ -1,5 +1,6 @@
 "use client";
 
+import { Chips as OpenUIChips } from "@openuidev/react-components";
 import {
   ComponentRenderProps,
   defineComponent,
@@ -11,7 +12,6 @@ import {
   useSetFieldValue,
   type SubComponentOf,
 } from "@openuidev/react-lang";
-import { Chips as OpenUIChips } from "@openuidev/react-ui-core";
 import React from "react";
 import { useHydrateDefaultFieldValue } from "../formDefaultValueUtils";
 import { getStoredDefaultValue, normalizeSelection, toggleSelection } from "../selectionFieldUtils";

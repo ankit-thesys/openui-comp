@@ -1,5 +1,6 @@
 "use client";
 
+import { TextArea as OpenUITextArea } from "@openuidev/react-components";
 import {
   defineComponent,
   parseStructuredRules,
@@ -7,7 +8,6 @@ import {
   useIsStreaming,
   useStateField,
 } from "@openuidev/react-lang";
-import { TextArea as OpenUITextArea } from "@openuidev/react-ui-core";
 import React from "react";
 import { TextAreaSchema } from "./schema";
 

@@ -1,7 +1,7 @@
 "use client";
 
+import { Buttons as OpenUIButtons, type ButtonsProps } from "@openuidev/react-components";
 import { defineComponent } from "@openuidev/react-lang";
-import { Buttons as OpenUIButtons, type ButtonsProps } from "@openuidev/react-ui-core";
 import { ButtonsSchema } from "./schema";
 
 export { ButtonsSchema } from "./schema";

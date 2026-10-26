@@ -1,8 +1,11 @@
 "use client";
 
+import {
+  ListBlock as OpenUIListBlock,
+  ListItem as OpenUIListItem,
+} from "@openuidev/react-components";
 import type { ActionPlan } from "@openuidev/react-lang";
 import { defineComponent, useTriggerAction } from "@openuidev/react-lang";
-import { ListBlock as OpenUIListBlock, ListItem as OpenUIListItem } from "@openuidev/react-ui-core";
 import { ChevronRight } from "lucide-react";
 import { z } from "zod/v4";
 import { ListItem } from "../ListItem";

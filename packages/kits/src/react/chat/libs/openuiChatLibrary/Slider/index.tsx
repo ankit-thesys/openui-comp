@@ -1,5 +1,6 @@
 "use client";
 
+import { SliderBlock as OpenUISliderBlock } from "@openuidev/react-components";
 import {
   defineComponent,
   parseStructuredRules,
@@ -7,7 +8,6 @@ import {
   useIsStreaming,
   useStateField,
 } from "@openuidev/react-lang";
-import { SliderBlock as OpenUISliderBlock } from "@openuidev/react-ui-core";
 import React from "react";
 import { SliderSchema } from "./schema";
 

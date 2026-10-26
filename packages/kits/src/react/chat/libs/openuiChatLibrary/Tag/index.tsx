@@ -1,7 +1,7 @@
 "use client";
 
+import { IconWrapper, Tag as OpenUITag } from "@openuidev/react-components";
 import { defineComponent } from "@openuidev/react-lang";
-import { IconWrapper, Tag as OpenUITag } from "@openuidev/react-ui-core";
 import { TagSchema } from "./schema";
 
 export * from "./schema";

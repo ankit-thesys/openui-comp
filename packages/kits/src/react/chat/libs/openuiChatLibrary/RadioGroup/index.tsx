@@ -1,6 +1,10 @@
 "use client";
 
 import {
+  RadioGroup as OpenUIRadioGroup,
+  RadioItem as OpenUIRadioItem,
+} from "@openuidev/react-components";
+import {
   defineComponent,
   parseStructuredRules,
   reactive,
@@ -8,10 +12,6 @@ import {
   useIsStreaming,
   useStateField,
 } from "@openuidev/react-lang";
-import {
-  RadioGroup as OpenUIRadioGroup,
-  RadioItem as OpenUIRadioItem,
-} from "@openuidev/react-ui-core";
 import React from "react";
 import { z } from "zod/v4";
 import { rulesSchema } from "../rules";

@@ -1,5 +1,6 @@
 "use client";
 
+import { DatePicker as OpenUIDatePicker } from "@openuidev/react-components";
 import {
   defineComponent,
   parseStructuredRules,
@@ -7,7 +8,6 @@ import {
   useIsStreaming,
   useStateField,
 } from "@openuidev/react-lang";
-import { DatePicker as OpenUIDatePicker } from "@openuidev/react-ui-core";
 import React from "react";
 import { DatePickerSchema } from "./schema";
 

@@ -1,7 +1,7 @@
 "use client";
 
+import { EntityList as OpenUIEntityList } from "@openuidev/react-components";
 import { ComponentRenderProps, defineComponent } from "@openuidev/react-lang";
-import { EntityList as OpenUIEntityList } from "@openuidev/react-ui-core";
 import { asArray } from "../helpers";
 import { EntityListSchema, type EntityListProps, type EntityListRow } from "./schema";
 

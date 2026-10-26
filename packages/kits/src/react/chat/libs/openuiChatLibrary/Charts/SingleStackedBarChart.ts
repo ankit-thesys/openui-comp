@@ -1,7 +1,7 @@
 "use client";
 
+import { SingleStackedBar as SingleStackedBarChartComponent } from "@openuidev/react-components";
 import { defineComponent } from "@openuidev/react-lang";
-import { SingleStackedBar as SingleStackedBarChartComponent } from "@openuidev/react-ui-core";
 import React from "react";
 import { z } from "zod/v4";
 import { asArray, buildSliceData } from "../helpers";

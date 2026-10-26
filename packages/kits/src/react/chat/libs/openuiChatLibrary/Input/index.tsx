@@ -1,5 +1,6 @@
 "use client";
 
+import { Input as OpenUIInput } from "@openuidev/react-components";
 import {
   defineComponent,
   parseStructuredRules,
@@ -7,7 +8,6 @@ import {
   useIsStreaming,
   useStateField,
 } from "@openuidev/react-lang";
-import { Input as OpenUIInput } from "@openuidev/react-ui-core";
 import React from "react";
 import { InputSchema } from "./schema";
 

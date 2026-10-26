@@ -1,7 +1,7 @@
 "use client";
 
+import { RadarChart as RadarChartComponent } from "@openuidev/react-components";
 import { defineComponent } from "@openuidev/react-lang";
-import { RadarChart as RadarChartComponent } from "@openuidev/react-ui-core";
 import React from "react";
 import { z } from "zod/v4";
 import { buildChartData, hasAllProps } from "../helpers";

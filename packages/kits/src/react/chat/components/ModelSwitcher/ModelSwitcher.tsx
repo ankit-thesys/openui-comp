@@ -14,7 +14,7 @@ import {
   Tag,
   useTheme,
   type ThemeMode,
-} from "@openuidev/react-ui-core";
+} from "@openuidev/react-components";
 
 import {
   badgeTriggerClass,

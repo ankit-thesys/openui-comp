@@ -1,6 +1,11 @@
 "use client";
 
 import {
+  EditableTableChangesBar,
+  EditableTable as OpenUIEditableTable,
+  type EditableTableRow,
+} from "@openuidev/react-components";
+import {
   defineComponent,
   useGetFieldValue,
   useIsStreaming,
@@ -8,11 +13,6 @@ import {
   useTriggerAction,
   type ComponentRenderProps,
 } from "@openuidev/react-lang";
-import {
-  EditableTableChangesBar,
-  EditableTable as OpenUIEditableTable,
-  type EditableTableRow,
-} from "@openuidev/react-ui-core";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { EditableTableSchema, type EditableTableData, type EditableTableProps } from "./schema";
 

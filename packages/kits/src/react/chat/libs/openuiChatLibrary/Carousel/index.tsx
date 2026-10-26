@@ -1,13 +1,13 @@
 "use client";
 
-import { ComponentRenderProps, defineComponent } from "@openuidev/react-lang";
 import {
   Carousel as OpenUICarousel,
   CarouselContent as OpenUICarouselContent,
   CarouselItem as OpenUICarouselItem,
   CarouselNext as OpenUICarouselNext,
   CarouselPrevious as OpenUICarouselPrevious,
-} from "@openuidev/react-ui-core";
+} from "@openuidev/react-components";
+import { ComponentRenderProps, defineComponent } from "@openuidev/react-lang";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { z } from "zod/v4";
 import { ContentChildUnion } from "../unions";

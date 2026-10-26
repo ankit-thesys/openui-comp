@@ -1,13 +1,13 @@
 "use client";
 
-import { ComponentRenderProps, defineComponent, useIsStreaming } from "@openuidev/react-lang";
 import {
   FoldableSectionContent,
   FoldableSectionItem,
   FoldableSectionRoot,
   FoldableSectionTrigger,
   SectionV2,
-} from "@openuidev/react-ui-core";
+} from "@openuidev/react-components";
+import { ComponentRenderProps, defineComponent, useIsStreaming } from "@openuidev/react-lang";
 import React from "react";
 import { z } from "zod/v4";
 import { SectionItem } from "../SectionItem";

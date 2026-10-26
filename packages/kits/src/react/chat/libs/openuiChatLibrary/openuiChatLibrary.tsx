@@ -1,13 +1,13 @@
 "use client";
 
-import type { ComponentGroup } from "@openuidev/react-lang";
-import { createLibrary, defineComponent } from "@openuidev/react-lang";
 import {
   CardSourceProvider,
   CardSourceSchema,
   Card as OpenUICard,
   Sources,
-} from "@openuidev/react-ui-core";
+} from "@openuidev/react-components";
+import type { ComponentGroup } from "@openuidev/react-lang";
+import { createLibrary, defineComponent } from "@openuidev/react-lang";
 import { z } from "zod/v4";
 
 // Content

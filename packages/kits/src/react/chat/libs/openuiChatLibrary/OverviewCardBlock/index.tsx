@@ -1,5 +1,6 @@
 "use client";
 
+import { OverviewCardBlock as OpenUIOverviewCardBlock } from "@openuidev/react-components";
 import {
   ComponentRenderProps,
   defineComponent,
@@ -7,7 +8,6 @@ import {
   useIsStreaming,
   useTriggerAction,
 } from "@openuidev/react-lang";
-import { OverviewCardBlock as OpenUIOverviewCardBlock } from "@openuidev/react-ui-core";
 import { withItemContext } from "../cardActionUtils";
 import {
   OverviewCardBlockSchema,

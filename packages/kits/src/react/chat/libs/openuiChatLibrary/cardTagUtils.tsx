@@ -1,5 +1,5 @@
+import { IconWrapper, Tag as OpenUITag } from "@openuidev/react-components";
 import type { SubComponentOf } from "@openuidev/react-lang";
-import { IconWrapper, Tag as OpenUITag } from "@openuidev/react-ui-core";
 import { z } from "zod/v4";
 import type { TagSchema } from "./Tag";
 

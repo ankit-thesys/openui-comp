@@ -1,7 +1,7 @@
 "use client";
 
+import { InlineHeader as OpenUIInlineHeader } from "@openuidev/react-components";
 import { ComponentRenderProps, defineComponent } from "@openuidev/react-lang";
-import { InlineHeader as OpenUIInlineHeader } from "@openuidev/react-ui-core";
 import { InlineHeaderSchema, type InlineHeaderProps } from "./schema";
 
 export * from "./schema";

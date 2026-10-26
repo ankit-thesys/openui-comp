@@ -1,6 +1,5 @@
 "use client";
 
-import { defineComponent, useIsQueryLoading } from "@openuidev/react-lang";
 import {
   IconButton,
   ScrollableTable as OpenUITable,
@@ -10,7 +9,8 @@ import {
   TableHeader as OpenUITableHeader,
   TableRow as OpenUITableRow,
   TableSkeleton,
-} from "@openuidev/react-ui-core";
+} from "@openuidev/react-components";
+import { defineComponent, useIsQueryLoading } from "@openuidev/react-lang";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React from "react";
 import { z } from "zod/v4";

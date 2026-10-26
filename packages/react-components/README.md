@@ -1,4 +1,4 @@
-# @openuidev/react-ui-core (beta)
+# @openuidev/react-components (beta)
 
 Reusable OpenUI React components, charts and themes. This additive package keeps
 existing component props, appearance and behavior while converting owned styles
@@ -10,7 +10,7 @@ All public components, supporting parts and types come from the package root.
 There are no component subpath exports or new styling props.
 
 ```tsx
-import { Button, Input, TextArea, ThemeProvider } from "@openuidev/react-ui-core";
+import { Button, Input, TextArea, ThemeProvider } from "@openuidev/react-components";
 
 export function ContactForm() {
   return (
@@ -33,7 +33,7 @@ update `selected` in response to `onToggle`.
 ## Themes
 
 ```tsx
-import { createTheme, ThemeProvider, useTheme } from "@openuidev/react-ui-core";
+import { createTheme, ThemeProvider, useTheme } from "@openuidev/react-components";
 
 const brand = createTheme({ interactiveAccentDefault: "oklch(0.6 0.2 260 / 1)" });
 
@@ -85,7 +85,7 @@ its math module whenever mounted, including non-math text.
 ## Charts
 
 ```tsx
-import { PieChart, ThemeProvider } from "@openuidev/react-ui-core";
+import { PieChart, ThemeProvider } from "@openuidev/react-components";
 
 export function RevenueShare() {
   return (
@@ -131,9 +131,18 @@ Extraction preserves inherited behavior rather than redesigning it:
 ## Development
 
 ```sh
-pnpm --filter @openuidev/react-ui-core run build
-pnpm --filter @openuidev/react-ui-core run ci
+pnpm --filter @openuidev/react-components run build
+pnpm --filter @openuidev/react-components run ci
 ```
 
 ESM/CJS builds include matching declarations and source maps. Goober and React
 remain external dependencies. Build inputs contain no old SCSS or generated CSS.
+
+## Beta import migration
+
+Use `@openuidev/react-components` in place of the previous unpublished beta name
+`@openuidev/react-ui-core`. The folder is now `packages/react-components`. There
+is no compatibility alias. Component names, root-only exports, public types and
+customization APIs are preserved. The existing `@openuidev/react-ui` package stays
+unchanged. Historical validation artifact names remain valid for their recorded
+baselines.

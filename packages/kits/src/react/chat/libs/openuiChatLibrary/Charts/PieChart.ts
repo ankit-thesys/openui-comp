@@ -1,7 +1,7 @@
 "use client";
 
+import { PieChart as PieChartComponent, PieChartSkeleton } from "@openuidev/react-components";
 import { defineComponent, useIsQueryLoading } from "@openuidev/react-lang";
-import { PieChart as PieChartComponent, PieChartSkeleton } from "@openuidev/react-ui-core";
 import React from "react";
 import { z } from "zod/v4";
 import { asArray, buildSliceData } from "../helpers";

@@ -1,7 +1,7 @@
 "use client";
 
+import { TextBlockView } from "@openuidev/react-components";
 import { ComponentRenderProps, defineComponent } from "@openuidev/react-lang";
-import { TextBlockView } from "@openuidev/react-ui-core";
 import { getMetricSubtextTone } from "../Text";
 import { BoldTextSchema, type BoldTextProps } from "./schema";
 

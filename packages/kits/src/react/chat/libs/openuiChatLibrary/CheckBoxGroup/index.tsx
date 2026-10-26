@@ -1,6 +1,10 @@
 "use client";
 
 import {
+  CheckBoxGroup as OpenUICheckBoxGroup,
+  CheckBoxItem as OpenUICheckBoxItem,
+} from "@openuidev/react-components";
+import {
   defineComponent,
   parseStructuredRules,
   useFormValidation,
@@ -8,10 +12,6 @@ import {
   useStateField,
   type SubComponentOf,
 } from "@openuidev/react-lang";
-import {
-  CheckBoxGroup as OpenUICheckBoxGroup,
-  CheckBoxItem as OpenUICheckBoxItem,
-} from "@openuidev/react-ui-core";
 import React from "react";
 import { CheckBoxItemSchema, createCheckBoxGroupSchema } from "./schema";
 

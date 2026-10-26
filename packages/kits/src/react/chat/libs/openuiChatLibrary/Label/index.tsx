@@ -1,7 +1,7 @@
 "use client";
 
+import { Label as OpenUILabel } from "@openuidev/react-components";
 import { defineComponent } from "@openuidev/react-lang";
-import { Label as OpenUILabel } from "@openuidev/react-ui-core";
 import { LabelSchema } from "./schema";
 
 export { LabelSchema } from "./schema";

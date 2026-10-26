@@ -1,7 +1,7 @@
 "use client";
 
+import { TextContentWrapper } from "@openuidev/react-components";
 import { defineComponent } from "@openuidev/react-lang";
-import { TextContentWrapper } from "@openuidev/react-ui-core";
 import React from "react";
 import { TextContentSchema } from "./schema";
 const BODY_SIZE_VARS: Record<string, string> = {

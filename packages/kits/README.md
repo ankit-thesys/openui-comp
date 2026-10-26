@@ -1,6 +1,6 @@
 # @openuidev/kits (beta)
 
-Use-case kits built on `@openuidev/react-ui-core`. The initial React chat kit
+Use-case kits built on `@openuidev/react-components`. The initial React chat kit
 owns FollowUpBlock, FollowUpItem, ModelSwitcher and its OpenUI chat library.
 Additional kits can follow without moving reusable components into each kit.
 
@@ -12,7 +12,7 @@ import {
   openuiChatLibrary,
   openuiChatPromptOptions,
 } from "@openuidev/kits/react/chat/libs";
-import { ThemeProvider } from "@openuidev/react-ui-core";
+import { ThemeProvider } from "@openuidev/react-components";
 import { Renderer } from "@openuidev/react-lang";
 ```
 

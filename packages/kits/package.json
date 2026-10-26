@@ -42,7 +42,7 @@
     "prepublishOnly": "pnpm run build && pnpm run ci"
   },
   "dependencies": {
-    "@openuidev/react-ui-core": "workspace:^",
+    "@openuidev/react-components": "workspace:^",
     "clsx": "^2.1.1",
     "goober": "2.1.19",
     "lucide-react": "^0.562.0"

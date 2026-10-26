@@ -1,12 +1,12 @@
 "use client";
 
-import { ComponentRenderProps, defineComponent, type SubComponentOf } from "@openuidev/react-lang";
 import {
   Tabs as OpenUITabs,
   TabsContent as OpenUITabsContent,
   TabsList as OpenUITabsList,
   TabsTrigger as OpenUITabsTrigger,
-} from "@openuidev/react-ui-core";
+} from "@openuidev/react-components";
+import { ComponentRenderProps, defineComponent, type SubComponentOf } from "@openuidev/react-lang";
 import React from "react";
 import { z } from "zod/v4";
 import { TabItemSchema } from "./schema";

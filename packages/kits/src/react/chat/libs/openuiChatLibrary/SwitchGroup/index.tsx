@@ -1,15 +1,15 @@
 "use client";
 
 import {
+  SwitchGroup as OpenUISwitchGroup,
+  SwitchItem as OpenUISwitchItem,
+} from "@openuidev/react-components";
+import {
   defineComponent,
   useIsStreaming,
   useStateField,
   type SubComponentOf,
 } from "@openuidev/react-lang";
-import {
-  SwitchGroup as OpenUISwitchGroup,
-  SwitchItem as OpenUISwitchItem,
-} from "@openuidev/react-ui-core";
 import React from "react";
 import { SwitchItemSchema, createSwitchGroupSchema } from "./schema";
 

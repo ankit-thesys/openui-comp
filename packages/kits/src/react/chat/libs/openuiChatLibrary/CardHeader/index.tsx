@@ -1,7 +1,7 @@
 "use client";
 
+import { CardHeader as OpenUICardHeader } from "@openuidev/react-components";
 import { defineComponent } from "@openuidev/react-lang";
-import { CardHeader as OpenUICardHeader } from "@openuidev/react-ui-core";
 import { CardHeaderSchema } from "./schema";
 
 export { CardHeaderSchema } from "./schema";

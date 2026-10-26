@@ -1,7 +1,7 @@
 "use client";
 
+import { MarkDownRenderer, Callout as OpenUICallout } from "@openuidev/react-components";
 import { defineComponent, useStateField } from "@openuidev/react-lang";
-import { MarkDownRenderer, Callout as OpenUICallout } from "@openuidev/react-ui-core";
 import React from "react";
 import { CalloutSchema } from "./schema";
 

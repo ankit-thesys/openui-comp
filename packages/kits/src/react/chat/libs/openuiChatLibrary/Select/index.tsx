@@ -1,19 +1,19 @@
 "use client";
 
 import {
+  Select as OpenUISelect,
+  SelectContent as OpenUISelectContent,
+  SelectItem as OpenUISelectItem,
+  SelectTrigger as OpenUISelectTrigger,
+  SelectValue as OpenUISelectValue,
+} from "@openuidev/react-components";
+import {
   defineComponent,
   parseStructuredRules,
   useFormValidation,
   useIsStreaming,
   useStateField,
 } from "@openuidev/react-lang";
-import {
-  Select as OpenUISelect,
-  SelectContent as OpenUISelectContent,
-  SelectItem as OpenUISelectItem,
-  SelectTrigger as OpenUISelectTrigger,
-  SelectValue as OpenUISelectValue,
-} from "@openuidev/react-ui-core";
 import React from "react";
 import { SelectItemSchema, createSelectSchema } from "./schema";
 

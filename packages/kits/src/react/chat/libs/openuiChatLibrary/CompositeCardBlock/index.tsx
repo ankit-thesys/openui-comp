@@ -1,5 +1,6 @@
 "use client";
 
+import { CompositeCardBlock as OpenUICompositeCardBlock } from "@openuidev/react-components";
 import type { SubComponentOf } from "@openuidev/react-lang";
 import {
   ComponentRenderProps,
@@ -8,7 +9,6 @@ import {
   useIsStreaming,
   useTriggerAction,
 } from "@openuidev/react-lang";
-import { CompositeCardBlock as OpenUICompositeCardBlock } from "@openuidev/react-ui-core";
 import { Fragment, type ReactNode } from "react";
 import { BoldText } from "../BoldText";
 import { Button } from "../Button";

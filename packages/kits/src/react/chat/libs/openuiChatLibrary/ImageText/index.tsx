@@ -1,7 +1,7 @@
 "use client";
 
+import { ImageText as OpenUIImageText } from "@openuidev/react-components";
 import { ComponentRenderProps, defineComponent } from "@openuidev/react-lang";
-import { ImageText as OpenUIImageText } from "@openuidev/react-ui-core";
 import { ImageTextSchema, type ImageTextProps } from "./schema";
 
 export * from "./schema";

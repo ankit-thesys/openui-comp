@@ -1,7 +1,7 @@
 "use client";
 
+import { IconText as OpenUIIconText } from "@openuidev/react-components";
 import { ComponentRenderProps, defineComponent } from "@openuidev/react-lang";
-import { IconText as OpenUIIconText } from "@openuidev/react-ui-core";
 import { IconTextSchema, type IconTextProps } from "./schema";
 
 export * from "./schema";
