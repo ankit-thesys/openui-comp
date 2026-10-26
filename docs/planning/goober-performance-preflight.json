@@ -1,0 +1,30 @@
+{
+  "measuredAt": "2026-10-23T11:42:15.287Z",
+  "prototypeCommit": "09a336f3cc5c68ac6b9562932aa76140673c60bf",
+  "status": "Bundle preflight only; not a latency, pressure or full-OpenUI benchmark",
+  "method": {
+    "entry": "Installed prototype external-delivery Button",
+    "bundler": "esbuild 0.25.12",
+    "settings": "bundle, minify, esm, React externalized, NODE_ENV production",
+    "compression": "Node zlib defaults; estimates, not observed HTTP transfer"
+  },
+  "js": {
+    "rawBytes": 4532,
+    "gzipBytes": 1164,
+    "brotliBytes": 960
+  },
+  "css": {
+    "rawBytes": 1747,
+    "gzipBytes": 592,
+    "brotliBytes": 445
+  },
+  "includesGooberRuntime": false,
+  "retainsUnlayeredCSSInJS": true,
+  "retainsLayeredCSSInJS": true,
+  "inputs": [
+    ".compat/none/node_modules/@openui/goober-compat-prototype/generated-styles.js",
+    ".compat/none/node_modules/@openui/goober-compat-prototype/auto-button.js",
+    ".compat/none/openui.generated.js",
+    ".compat/none/measurement.js"
+  ]
+}
