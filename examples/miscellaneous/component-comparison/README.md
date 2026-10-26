@@ -9,14 +9,23 @@ conversation once. Refresh clears the session. No database or local storage.
 ## Set up
 
 Use Node22+ and the repository's pinned pnpm version. Build packages in this
-checkout first (generated dist only; do not edit product source or root lock):
+candidate production checkout first (generated dist only; do not edit product source
+or root lock). The lab branch preserves legacy source, so use `--from` with a
+complete directory of candidate archives when that checkout is separate:
 
 ```sh
-# repository root
+# candidate production checkout root
 pnpm install --frozen-lockfile
 pnpm run build:packages
-cd examples/miscellaneous/component-comparison
-node scripts/setup-artifacts.mjs
+mkdir -p /absolute/path/to/candidate-archives
+for package in lang-core observability devtools react-lang react-ui react-components kits; do
+  pnpm --filter "@openuidev/$package" --fail-if-no-match pack \
+    --pack-destination /absolute/path/to/candidate-archives
+done
+
+# separate lab checkout
+cd /absolute/path/to/lab/examples/miscellaneous/component-comparison
+node scripts/setup-artifacts.mjs --from=/absolute/path/to/candidate-archives
 npm install
 npm run generate
 cp .env.example .env.local

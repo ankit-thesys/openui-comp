@@ -18,6 +18,7 @@ for (const archive of localArchives(manifest)) {
       [
         "--filter",
         archive.name,
+        "--fail-if-no-match",
         "pack",
         "--pack-destination",
         path.dirname(destination),

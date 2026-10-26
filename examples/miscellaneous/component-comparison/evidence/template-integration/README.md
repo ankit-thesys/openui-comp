@@ -11,3 +11,5 @@ The esbuild bundle probe uses standard file asset emission with React external. 
 Independent source review found no blocking integration findings. The lab migration review found no blocking findings; versioned archive directories remain conventional, not immutable: setup overwrites the active manifest destinations, so use a new directory for every candidate. Historical archives and runs were preserved.
 
 GitHub checks were not scheduled for PR43/44 because the existing workflows target PR base main. Local checks above are passing; no remote-green claim is made.
+
+Matched pre-template archive comparison: Button 8,402 → 9,002 JavaScript bytes, or 2,461 → 2,489 gzip bytes (+28 bytes, about 1.1%). Full public exports 826,094 → 825,964 gzip bytes. CSS remains 24,235 bytes in both. This is a bundle-size observation, not a runtime-performance result. An initial baseline unused-import assertion falsely matched the consumer directory name; the corrected check matches exact node_modules package paths and passes for both archives. The original failure log is preserved.
