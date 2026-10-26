@@ -1,0 +1,50 @@
+[
+  {
+    "pr": 43,
+    "path": "/Users/ankitdas/.codex/worktrees/verified-important-cleanup/openui",
+    "old": "f9c28c6c2b4e26969dc7be0bcd0eb78e46306c21",
+    "new": "600eaab4b70c8214cfc4f77e20e69cca382e942a",
+    "branch": "codex/react-components-rename",
+    "packagesTree": "ff016cc621660b648a186d9fdfce82fdeb323567",
+    "files": [
+      ".github/workflows/build-js.yml",
+      ".github/workflows/changeset-check.yml"
+    ]
+  },
+  {
+    "pr": 44,
+    "path": "/Users/ankitdas/.codex/worktrees/react-components-templates/openui",
+    "old": "cf1a8a88123b9a577c9cb43ae69d857ea6242f11",
+    "new": "ec8c423d8d8778991263fa65c7a2665b260c7dfe",
+    "branch": "codex/react-components-templates",
+    "packagesTree": "c04a96be2a04eada835737e16ac602d3462aac9f",
+    "files": [
+      ".github/workflows/build-js.yml",
+      ".github/workflows/changeset-check.yml"
+    ]
+  },
+  {
+    "pr": 50,
+    "path": "/private/tmp/openui-nested-kit-discovery",
+    "old": "15d47db5c30fb85464830cf490064d6c20e20c41",
+    "new": "130d922989b74abd9ed05c4eb63c9cd32a327f6a",
+    "branch": "codex/nested-kit-discovery",
+    "packagesTree": "c04a96be2a04eada835737e16ac602d3462aac9f",
+    "files": [
+      ".github/workflows/build-js.yml",
+      ".github/workflows/changeset-check.yml"
+    ]
+  },
+  {
+    "pr": 51,
+    "path": "/private/tmp/openui-standalone-chat-kit",
+    "old": "9006a2066f93359c991eeafcf9d812db3ae78450",
+    "new": "e8ba6125ce10cc8f56483d24b8865d1d41bfc8aa",
+    "branch": "codex/standalone-chat-kit",
+    "packagesTree": "f8620a20922a2f0a5c5c28082477e7cba27b0c23",
+    "files": [
+      ".github/workflows/build-js.yml",
+      ".github/workflows/changeset-check.yml"
+    ]
+  }
+]
