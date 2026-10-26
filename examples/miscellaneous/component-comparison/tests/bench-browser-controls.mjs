@@ -9,6 +9,7 @@ import pixelmatch from "pixelmatch";
 import { createApp } from "../server.mjs";
 import { runBench } from "../bench/runner.mjs";
 import { measureDocument } from "../bench/probes.mjs";
+import { chartVariantAssertions } from "../bench/chart-variant-oracles.mjs";
 import { compareLayer, DEFAULT_CHROME } from "../bench/model.mjs";
 let upstreamCalls = 0;
 const app = await createApp({
@@ -92,6 +93,56 @@ try {
     ) > 0,
   );
   controls.styleAndPixelFaultDetected = true;
+  const chartCase = JSON.parse(await fs.readFile("bench/cases.json")).find(
+    (c) => c.id === "bar-chart-variants",
+  );
+  await page.evaluate((source) => {
+    for (const f of document.querySelectorAll("iframe"))
+      f.contentWindow.postMessage(
+        {
+          channel: "openui-component-comparison/v1",
+          type: "snapshot",
+          snapshot: {
+            messages: [
+              { id: "chart-control", role: "assistant", content: source },
+            ],
+            status: "idle",
+            error: "",
+            theme: "light",
+            viewId: "chart-control",
+            revision: 2,
+            allowActions: false,
+          },
+        },
+        location.origin,
+      );
+  }, chartCase.source);
+  const chartFrames = page
+    .frames()
+    .filter((f) => /\/(legacy|migrated)\.html$/.test(f.url()));
+  for (const f of chartFrames) {
+    await f
+      .getByRole("img", { name: "Bar chart", exact: true })
+      .nth(1)
+      .waitFor();
+    await f.getByText("Jan", { exact: true }).first().waitFor();
+  }
+  const validCharts = await Promise.all(
+    chartFrames.map((f) => f.evaluate(measureDocument)),
+  );
+  assert(chartVariantAssertions(chartCase, validCharts).every((a) => a.pass));
+  for (const f of chartFrames)
+    await f
+      .getByRole("img", { name: "Bar chart", exact: true })
+      .evaluateAll((es) => es.forEach((e) => e.remove()));
+  const missingCharts = await Promise.all(
+    chartFrames.map((f) => f.evaluate(measureDocument)),
+  );
+  assert(chartVariantAssertions(chartCase, missingCharts).some((a) => !a.pass));
+  assert(
+    missingCharts.every((p) => p.text.includes("Variant 1: variant=grouped")),
+  );
+  controls.bothChartsMissingCannotPassFromAnnotations = true;
   await browser.close();
   const common = {
     version: "explicit-control-v1",

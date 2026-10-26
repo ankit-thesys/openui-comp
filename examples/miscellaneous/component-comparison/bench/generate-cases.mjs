@@ -324,7 +324,8 @@ for (const name of names) {
       const r = base(name);
       for (const { node: n } of nodes(r)) {
         if (n.typeName === name) n.props[prop] = value;
-        if (typeof n.props.name === "string") n.props.name += `-v${i}`;
+        if (n.typeName !== "Icon" && typeof n.props.name === "string")
+          n.props.name += `-v${i}`;
         delete n.statementId;
       }
       r.statementId = "root";
@@ -1889,7 +1890,8 @@ add({
     {
       id: "HorizontalBarChart.height-stable",
       kind: "stableHeight",
-      selector: ".openui-horizontal-bar-chart-container",
+      selector: ".openui-horizontal-bar-chart-container-inner-wrapper",
+      frames: 120,
       expected: true,
     },
   ],
@@ -1899,7 +1901,7 @@ add({
       assertionIds: ["HorizontalBarChart.height-stable"],
       actual: [false, false],
       sourceProof:
-        "Existing string-height + fitLegendInHeight measurement feedback is explicitly retained. Heights must remain positive and exactly stable across12 animation frames.",
+        "Existing string-height + fitLegendInHeight measurement feedback is explicitly retained. Heights must remain positive and exactly stable across120 animation frames in the actual inner plot.",
       environments: [
         "plain",
         "tailwind3-before",
@@ -1908,7 +1910,7 @@ add({
         "tailwind4-after",
       ],
       reproduction:
-        "Use the recorded public string-height/legend props, inspect raw12-frame height samples. No production workaround applied.",
+        "Use the recorded public string-height/legend props, inspect raw120-frame inner-height samples. No production workaround applied.",
     },
   ],
 });
@@ -2186,6 +2188,20 @@ for (const c of cases) {
     });
 }
 for (const c of cases) {
+  if (c.id === "icon-button-variants")
+    c.assertions.push({
+      id: "IconButton.actual-variants",
+      kind: "count",
+      role: "button",
+      expected: c.variants.length,
+    });
+  if (c.id === "separator-variants")
+    c.assertions.push({
+      id: "Separator.actual-variants",
+      kind: "count",
+      selector: ".openui-separator",
+      expected: c.variants.length,
+    });
   const result = parser.parse(c.source);
   if (
     !c.setup.directHorizontal &&

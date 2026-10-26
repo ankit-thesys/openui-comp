@@ -2,7 +2,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { once } from "node:events";
-import { createHash } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import { chromium } from "playwright";
 import { PNG } from "pngjs";
 import pixelmatch from "pixelmatch";
@@ -25,7 +25,14 @@ const root = path.resolve(import.meta.dirname, "..");
 const run = JSON.parse(
   await fs.readFile(path.join(root, ".bench-runs", runId, "run.json")),
 );
-const output = path.join(root, ".bench-runs", runId, "isolated-repros");
+const output = path.join(
+  root,
+  ".bench-investigations",
+  runId,
+  new Date().toISOString().replace(/[:.]/g, "-") +
+    "-browser-" +
+    randomUUID().slice(0, 6),
+);
 await fs.mkdir(output, { recursive: true });
 const app = await createApp({
   env: { NODE_ENV: "production", COMPARISON_MODE: "mock" },
@@ -106,6 +113,7 @@ try {
                 allowActions: true,
                 presetId: preset.id,
                 themePreset: preset,
+                bench: { directHorizontal: c.setup.directHorizontal },
               },
             },
             location.origin,
@@ -149,6 +157,30 @@ try {
           });
         }
       }
+      const sizeTrace = c.setup.directHorizontal
+        ? await page.evaluate(async () => {
+            const samples = [];
+            for (let i = 0; i < 120; i++) {
+              await new Promise((r) => requestAnimationFrame(r));
+              samples.push(
+                Object.fromEntries(
+                  [
+                    ".openui-horizontal-bar-chart-container",
+                    ".openui-horizontal-bar-chart-container-inner-wrapper",
+                    ".openui-horizontal-bar-chart-container-inner",
+                    ".openui-horizontal-bar-chart-main-container",
+                    ".openui-horizontal-bar-chart-main-container svg",
+                  ].map((selector) => [
+                    selector,
+                    document.querySelector(selector)?.getBoundingClientRect()
+                      .height ?? null,
+                  ]),
+                ),
+              );
+            }
+            return samples;
+          })
+        : undefined;
       const probes = await page.evaluate(measureDocument);
       const diagnostics = await page.evaluate(() => ({
         fonts: {
@@ -254,7 +286,14 @@ try {
         pictures.push(file);
       }
       captures.push(pictures);
-      arms.push({ arm, keyboardTrace, probes, diagnostics, matched });
+      arms.push({
+        arm,
+        keyboardTrace,
+        sizeTrace,
+        probes,
+        diagnostics,
+        matched,
+      });
       await context.close();
     }
     const comparisons = [];

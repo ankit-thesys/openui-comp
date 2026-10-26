@@ -49,10 +49,13 @@ const summary = {
   propertyCounts,
   findings,
 };
-await fs.writeFile(
-  path.join(dir, "triage-classification.json"),
-  JSON.stringify(summary, null, 2),
+const output = path.resolve(
+  ".bench-investigations",
+  id,
+  "classification-" + Date.now() + ".json",
 );
+await fs.mkdir(path.dirname(output), { recursive: true });
+await fs.writeFile(output, JSON.stringify(summary, null, 2));
 console.log(
   JSON.stringify(
     {

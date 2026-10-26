@@ -24,6 +24,7 @@ import {
 import { htmlReport } from "./report.mjs";
 import { getThemePreset } from "../src/theme-presets.mjs";
 import { measureDocument } from "./probes.mjs";
+import { chartVariantAssertions } from "./chart-variant-oracles.mjs";
 const root = path.resolve(import.meta.dirname, "..");
 const sha = (b) => createHash("sha256").update(b).digest("hex");
 const readJson = async (p) => JSON.parse(await fs.readFile(p, "utf8"));
@@ -88,7 +89,12 @@ async function provenance(executable, browser, bundleDir, frozen) {
   return {
     runnerVersion: RUNNER_VERSION,
     runnerFiles: await Promise.all(
-      ["runner.mjs", "probes.mjs", "model.mjs"].map(async (n) => ({
+      [
+        "runner.mjs",
+        "probes.mjs",
+        "model.mjs",
+        "chart-variant-oracles.mjs",
+      ].map(async (n) => ({
         file: n,
         sha256: sha(await fs.readFile(path.join(root, "bench", n))),
       })),
@@ -191,14 +197,14 @@ async function assertion(frame, a, events, pane) {
     else if (a.kind === "scrollLeft")
       actual = await locator(frame, a).evaluate((e) => e.scrollLeft);
     else if (a.kind === "stableHeight") {
-      details = await frame.locator(a.selector).evaluate(async (e) => {
+      details = await frame.locator(a.selector).evaluate(async (e, frames) => {
         const values = [];
-        for (let i = 0; i < 12; i++) {
+        for (let i = 0; i < frames; i++) {
           await new Promise((r) => requestAnimationFrame(r));
           values.push(e.getBoundingClientRect().height);
         }
         return values;
-      });
+      }, a.frames ?? 12);
       actual = details.every((v) => v === details[0]) && details[0] > 0;
     } else if (a.kind === "actionCount")
       actual = events.filter(
@@ -757,10 +763,13 @@ async function executeCell(browser, origin, c, cell, dir, themePreset, slot) {
         e.style.top = "0px";
         e.style.zIndex = "2147483646";
       });
-      if (c.setup.clipboard)
+      if (c.setup.clipboard) {
+        await page.bringToFront();
+        await frame.evaluate(() => window.focus());
         await frame.evaluate(() =>
           navigator.clipboard.writeText("__bench-unset__"),
         );
+      }
       for (const s of c.steps) {
         if (s.op === "checkpoint") {
           const events = await page.evaluate(() => window.benchEvents);
@@ -782,6 +791,7 @@ async function executeCell(browser, origin, c, cell, dir, themePreset, slot) {
     checks.push(...combineAssertions(independent));
     const final = await compareCaptures(finalArms, cell, dir, "complete");
     checkpoints.push(final);
+    checks.push(...chartVariantAssertions(c, final.probes));
     const unnamed = final.probes.map((p) => p.unnamedControls);
     checks.push({
       id: "interactive-accessible-names",

@@ -76,3 +76,16 @@ test("renderer notice oracle passes clean arms and fails either actual error", (
   assert.equal(rendererNoticesPass([["Parse error"], []]), false);
   assert.equal(rendererNoticesPass([[], ["Missing component"]]), false);
 });
+
+test("recorded cancellation placeholders do not mean execution completed", () => {
+  const summary = summarize(
+    [
+      { executed: true, verdict: "Pass" },
+      { executed: false, verdict: "Not covered" },
+    ],
+    2,
+  );
+  assert.equal(summary.complete, false);
+  assert.equal(summary.recordedComplete, true);
+  assert.equal(summary.verdict, "Not covered");
+});

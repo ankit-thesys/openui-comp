@@ -188,3 +188,108 @@ The bounded committed archive is
 SHA-256`e2c85c39323531930af69a734163407668735d19e64f71319b1412263024091d`.
 It is a selected diagnostic archive, not a complete run export. Complete raw
 histories remain in ignored `.bench-runs/`; their original files are preserved.
+
+### Scheduling and sealed-history clarification
+
+The original single-process full run was deliberately stopped after 2,636 executed
+cells (2,631 Pass,5 Review,0 Fail). It remains **cancelled**, with9,634 unexecuted
+Not covered cells. Its old `summary.complete` meant all outcomes were recorded,
+including placeholders; new runner1.0.2 distinguishes `recordedComplete` from actual
+execution completeness. No partial run is presented as the full matrix.
+
+The explicit shard plan preserves48 fully covered current case versions, including
+the completed supplements, and requests all9,600 remaining cells in four ordinary
+CLI processes. Each shard has2,400 requested cells. Case sets are disjoint and
+frozen by `.test-results/matrix-shard-plan.json`; all original partial results,
+including its26 cells from an incomplete case family, remain retained. This is a
+scheduling change, not a reduced matrix. Final reconciliation still requires all
+12,450 current-version cells, with matching package/browser/theme/host identities.
+Partial-source use must be explicitly enabled and cannot credit placeholders.
+
+The five remaining original chart reviews are BarChart variants at768px under
+Tailwind3/4 (29/53 pixels across complete/intermediate captures) and one PieChart
+variant pixel. Separate-page installed-artifact repros at the recorded dimensions,
+theme and host fixture have zero repeated and cross-arm pixels. They remain Review
+because the iframe-only raster difference is not accepted or proven a core defect.
+
+Post-run investigations now live under `.bench-investigations/<source-run>/` rather
+than being appended to sealed run directories. Previously appended investigation
+files were moved intact; original run JSON, evidence and manifest bytes were not
+changed. The committed selected archive retains its original logical layout and
+hash. Each new browser/raster investigation receives its own output directory.
+
+### Final independent chart safeguards and inherited-loop measurement
+
+A review control found that chart-variant annotations alone could survive removing
+both rendered charts. The runner now independently checks the actual named chart
+count, positive-area plotted path/rect marks, and the fixed fixture data labels
+Jan/Feb/Mar. These are bounded render/data safeguards, not a claim to certify all
+chart mathematics. Arbitrary saved responses do not acquire invented expectations.
+The real browser control removes both charts while retaining annotations and must
+fail. All300 original chart-variant cells pass the additional audit using their
+original native DOM measurements. Original run verdicts are not rewritten; the
+separate versioned audit identifies its input run hash and oracle-source hash.
+
+The HorizontalBar root-only height assertion was insufficient: the outer container
+stays300px while the inner plot repeatedly cycles through heights0..273px. Native
+120-frame traces show the same cycle in both installed implementations, including
+changing overflow controls and dependent tick/layout states. The corrected case
+measures the actual inner wrapper over120 frames. Its case revision is explicit.
+
+Experiments with special visual-loop classification were **not retained**. The
+final runner has no special geometry/width/ARIA matching algorithm, resize freeze,
+height override or production workaround. Only the independently measured unstable
+behavior receives its exact Known issue signature. Every raw geometry/style/
+semantic failure and zero-tolerance screenshot review remains non-passing and
+visible. These unstable comparisons are not confirmed core-only regressions and
+cannot certify visual parity; an inherited limitation is not an all-green result.
+Experimental run histories and source investigation files remain preserved outside
+tracked runtime code. The final30-cell corrected measurement run is recorded
+separately from those experiments and supersedes the old outer-only case revision.
+
+
+### Final fixture correction and review boundaries
+
+A generator defect appended variant suffixes to `Icon.name`, creating unknown
+glyph identifiers in17 variant families. Canonical icon identifiers are now
+preserved. IconButton and Separator variants additionally assert actual rendered
+component counts. Two contract tests reproduced the fixture weaknesses before the
+fix and pass afterward. The explicit correction plan records18 revised cases
+and1,080 full-matrix cells; all four corrective shards completed. Earlier recipe
+versions and their evidence remain retained and cannot credit current versions.
+
+The full matrix has executed12,450 current-version cells. This is coverage, not an
+unconditional parity pass. Select portal shadow differences are confirmed new-core
+styling differences. The inherited HorizontalBar inner-height loop prevents stable
+visual comparisons. Other zero-tolerance image reviews remain unresolved, including
+small image/tag/card raster differences and Slider validation-state captures.
+They have not been accepted as baselines or normalized away.
+
+The code-copy case also exposed a browser harness focus failure: Clipboard API
+writes require the document to have focus. The harness now uses Playwright's
+standard `page.bringToFront()` and the iframe's `window.focus()` before the native
+clipboard operation. No clipboard shim or production workaround is introduced.
+The original60 focus failures remain recorded; the isolated60-cell rerun is
+reported separately in final reconciliation.
+
+
+### Final reconciled result and browser release
+
+Final reconciliation executed **12,450/12,450 current cells**, missing0:
+9,151 Pass;86 Fail;31 Review;3,182 Known issue. Aggregate **Fail**.
+The clipboard rerun `2026-10-26T07-40-15-403Z-689a754a` passes60/60;
+its original60 focus failures remain retained as same-version prior findings.
+The reconciliation also indexes1,170 superseded-recipe results.
+
+Current Fail cells are60 Select portal shadow differences and26 unstable inherited
+HorizontalBar comparisons. Reviews are4 HorizontalBar,4 BarChart,1 PieChart,
+2 Tag,7 ImageText,5 CompositeCardBlock and8 Slider validation captures. Remaining
+raster reviews are unresolved, not newly confirmed core regressions or accepted
+baselines. Full current-version execution does not imply all assertions passed.
+
+Final unit suite34/34 and example build/types pass. The browser is **released**
+to the verifier; no further bench browser work is scheduled during its window.
+Handoff `/private/tmp/worker1-bench-handoff.json` preserves exact fixture v2,
+package and621-file implementation source identities. Final durable compressed
+results and source-run hashes are in the example's `evidence/bench/final/`.
+Production packages and frozen artifacts remain unchanged.

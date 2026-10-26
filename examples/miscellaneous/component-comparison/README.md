@@ -188,7 +188,8 @@ Fail. Known issues never produce an unqualified green result. This bench does no
 certify performance, SSR or comprehensive accessibility.
 
 History lives in ignored `.bench-runs/`; explicit saved cases in `.bench-cases/`;
-child process logs in `.bench-logs/`. The UI can export JSON or an offline HTML +
+child process logs in `.bench-logs/`. Post-run diagnosis stays separately in
+ignored `.bench-investigations/`, leaving the sealed run files/manifests unchanged. The UI can export JSON or an offline HTML +
 evidence tarball. Keep the HTML beside its relative evidence paths after unpacking.
 Runs contain source, assertions, raw compressed measurements, screenshots/diffs,
 artifact/browser/CSS identities and a file-hash manifest. Operational progress and
@@ -196,3 +197,28 @@ cancellation files are excluded from new manifests. Missing artifacts are report
 as missing, never accepted as passes. Save a live response only through its explicit
 selection control: it starts Not covered until independent assertions are supplied.
 No environment files or credentials are included in exports.
+
+Large matrices may be divided into disjoint case selections using ordinary CLI
+processes. Retain each original run; use `node bench/reconcile.mjs RUN_ID...` for
+exact-version coverage, or explicitly add `--allow-partial` to use **only executed
+cells** from a preserved cancelled source run. Unexecuted placeholders never earn
+coverage. Different package/browser/theme/host identities cannot be merged. Earlier
+non-passing executions remain visible; a later pass does not silently erase them.
+The reconciliation JSON references the original run/evidence identities and is not
+a replacement for each run's complete HTML/evidence export.
+
+Chart variant cases include independent rendered-chart, plotted-mark and source-data
+checks. `node bench/audit-chart-variants.mjs RUN_ID...` can additionally evaluate
+those checks against original captured native DOM measurements; it writes a
+separate versioned audit and never rewrites a run. Known unstable HorizontalBar
+rendering is measured over120 inner-height frames. Its behavior may be Known issue
+while raw visual comparisons still fail/review; no special geometry normalization
+or production resize workaround makes those results green.
+
+
+Final Default matrix results are preserved under `evidence/bench/final/`:
+12,450 current-version cells executed, zero missing;9,151 Pass,86 Fail,
+31 Review and3,182 Known issue. This is **not an unconditional parity pass**.
+See `VALIDATION.md` and the versioned triage report for the confirmed Select shadow
+difference, inherited HorizontalBar instability, unresolved raster reviews and
+retained harness failures. Browser ownership has been released to the verifier.

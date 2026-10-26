@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { once } from "node:events";
@@ -12,7 +13,14 @@ const id = process.argv[2],
 if (!/^[a-zA-Z0-9-]+$/.test(id)) throw Error("Run ID required");
 const dir = path.join(root, ".bench-runs", id),
   run = JSON.parse(await fs.readFile(path.join(dir, "run.json"))),
-  out = path.join(dir, "raster-repros");
+  out = path.join(
+    root,
+    ".bench-investigations",
+    id,
+    new Date().toISOString().replace(/[:.]/g, "-") +
+      "-raster-" +
+      randomUUID().slice(0, 6),
+  );
 await fs.mkdir(out, { recursive: true });
 const app = await createApp({
   env: { NODE_ENV: "production", COMPARISON_MODE: "mock" },

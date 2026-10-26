@@ -3,6 +3,7 @@ export function measureDocument() {
   const properties = [
     "display",
     "position",
+    "transform",
     "boxSizing",
     "width",
     "height",

@@ -201,3 +201,41 @@ test("Carousel keyboard fixture requires native activation and real overflow at 
   assert.equal((c.source.match(/TextContent\(/g) ?? []).length, 8);
   assert(!c.steps.some((s) => s.op === "scroll"));
 });
+
+test("variant fixtures preserve the canonical icon identifiers instead of renaming glyphs", async () => {
+  const { demoSource } = await import("../src/offline-fixture.mjs");
+  const registry = await json(".generated/legacy.json"),
+    parser = createParser(registry.schema, registry.root);
+  const icons = (root) => {
+    const result = [];
+    function visit(value) {
+      if (!value || typeof value !== "object") return;
+      if (value.typeName === "Icon") result.push(JSON.stringify(value.props));
+      for (const child of Object.values(value))
+        if (Array.isArray(child)) child.forEach(visit);
+        else visit(child);
+    }
+    visit(root);
+    return result;
+  };
+  const baseline = new Set(icons(parser.parse(demoSource).root));
+  for (const c of (await json("bench/cases.json")).filter((c) => c.variants))
+    for (const icon of icons(parser.parse(c.source).root))
+      assert(baseline.has(icon), c.id + ": unexpected icon identifier " + icon);
+});
+test("variant cases cannot earn independent behavior credit from fixture annotations alone", async () => {
+  const { chartVariantAssertions } =
+    await import("../bench/chart-variant-oracles.mjs");
+  const empty = { semantics: [], geometry: [], text: "" };
+  for (const c of (await json("bench/cases.json")).filter((c) => c.variants)) {
+    const actual = c.assertions.filter(
+      (a) =>
+        a.kind !== "noNotices" &&
+        !(a.kind === "text" && String(a.value).startsWith("Variant ")),
+    );
+    assert(
+      actual.length || chartVariantAssertions(c, [empty, empty]).length,
+      c.id,
+    );
+  }
+});

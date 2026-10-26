@@ -1,0 +1,254 @@
+{
+  "files": [
+    {
+      "file": "reconciliation.json.gz",
+      "bytes": 3854747,
+      "sha256": "cbc2e25cd9dae8e7b6117aa3138dc6f42551d4349c833c71b64ef476669fcaf3"
+    },
+    {
+      "file": "2026-10-25T23-16-43-773Z-8bbbd7b0.json.gz",
+      "bytes": 580617,
+      "sha256": "a370ad684b720b9774d5f81ff2a5e108da2076fb54370ed1543cb5b9192ed758"
+    },
+    {
+      "file": "2026-10-25T23-22-54-703Z-e7138e72.json.gz",
+      "bytes": 239310,
+      "sha256": "ece2ebb41dc31ed0e0939a30adb84e3dfa09d147de5ded783fe6a091a3cd896d"
+    },
+    {
+      "file": "2026-10-25T23-27-31-347Z-c97250be.json.gz",
+      "bytes": 221663,
+      "sha256": "c986cacfcb5f55ce43b9ca7b00f2e2e7465754fece75ba5ca88437e605eca4d7"
+    },
+    {
+      "file": "2026-10-25T23-34-55-589Z-matrix-s1.json.gz",
+      "bytes": 506621,
+      "sha256": "2b2b6051f1ebf8d432a278646fc5c2ad6448d49a57ea08e9284ad7a42266c15e"
+    },
+    {
+      "file": "2026-10-25T23-34-55-589Z-matrix-s2.json.gz",
+      "bytes": 606480,
+      "sha256": "8a0c77968444b9bdb11bac26b4dfa910574638302101362bd59e6d9cce9c36bc"
+    },
+    {
+      "file": "2026-10-25T23-34-55-589Z-matrix-s3.json.gz",
+      "bytes": 497280,
+      "sha256": "d22d132e231c12dcbd0a53f22b0e014ee44e136eb4559843681ea8b95c9272b0"
+    },
+    {
+      "file": "2026-10-25T23-34-55-589Z-matrix-s4.json.gz",
+      "bytes": 490484,
+      "sha256": "28828f4e9913253de16ed8eb7a99ec6a3655e00969e1671964b448a33440c341"
+    },
+    {
+      "file": "2026-10-26T00-20-29-133Z-b475d340.json.gz",
+      "bytes": 227412,
+      "sha256": "ab30a48d92e70f94a29615ec0cd847d5516772b2ee9125147c9e34ea5f7849e9"
+    },
+    {
+      "file": "2026-10-26T00-37-08-563Z-fixtures-s1.json.gz",
+      "bytes": 264375,
+      "sha256": "253412cf9503bf9098010b2f8d82fa71da7f00c53b8882e47e11b7a85e3e1c41"
+    },
+    {
+      "file": "2026-10-26T00-37-08-563Z-fixtures-s2.json.gz",
+      "bytes": 266186,
+      "sha256": "acee19cb1d7d8db2e0a392ce378396371fac401442f8569fa3d4471b35477d1c"
+    },
+    {
+      "file": "2026-10-26T00-37-08-563Z-fixtures-s3.json.gz",
+      "bytes": 268495,
+      "sha256": "9dab92390fd8333da5040acdfd40a0436d3bc9859817cd10fdbd79ead7811a93"
+    },
+    {
+      "file": "2026-10-26T00-37-08-563Z-fixtures-s4.json.gz",
+      "bytes": 256177,
+      "sha256": "877362401729676f06ef391df89002ce93288825841151ef14c00c931e26a80b"
+    },
+    {
+      "file": "2026-10-26T07-40-15-403Z-689a754a.json.gz",
+      "bytes": 219833,
+      "sha256": "1db000c0fc04136d674cf59a701d6f734260316a5830eace3ff959f435abd5b4"
+    },
+    {
+      "file": "chart-variant-audit.json",
+      "bytes": 400509,
+      "sha256": "563616c47f27f8f55131da137755c35cd34d30bfb8bdf5f7f164f2dc8bc057c2"
+    },
+    {
+      "file": "matrix-shard-plan.json",
+      "bytes": 8097,
+      "sha256": "947e847a3414ce511e5faa2072d3df0de8007ec0e5618f6a41b2f82c9b67dce3"
+    },
+    {
+      "file": "fixture-correction-plan.json",
+      "bytes": 5684,
+      "sha256": "ab9b7f2535a5185157d3fcdb6fee4ef1285a2ff91989ca339730c77f70fbfc98"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 20899,
+      "sha256": "59d380128655e583cd5f9c5bd522bc6844780669eeb0e9a67afd691a04493a7e"
+    },
+    {
+      "file": "representative-findings/bar-chart-variants--tailwind3-after--768--dark--stream/complete-legacy.png",
+      "bytes": 34996,
+      "sha256": "78a2dd42272e1d1afcbff955461995392f5a98587931c3e331a9ed9ac6ce75d4"
+    },
+    {
+      "file": "representative-findings/bar-chart-variants--tailwind3-after--768--dark--stream/complete-migrated.png",
+      "bytes": 35004,
+      "sha256": "7887ed61fa18b60a2c5173176301069852f4915bcdd15175cb047e5aa3ff1a52"
+    },
+    {
+      "file": "representative-findings/bar-chart-variants--tailwind3-after--768--dark--stream/complete-diff.png",
+      "bytes": 27149,
+      "sha256": "cca8364a1bb2bdf430fc1a44f1cb51776ab3fb561fc3fac2cd7cca2d6b4cdde5"
+    },
+    {
+      "file": "representative-findings/bar-chart-variants--tailwind3-after--768--dark--stream/measurements.json.gz",
+      "bytes": 32723,
+      "sha256": "fa8fd9099b2282a9dc7167e17c3b7d36fa79c0204e5dc91e4c41bd5361567776"
+    },
+    {
+      "file": "representative-findings/pie-chart-variants--tailwind3-after--768--light--instant/complete-legacy.png",
+      "bytes": 78065,
+      "sha256": "9e450a7a658afe114e07b51d695113b10509b07250e429719e1f0efd7429d3e0"
+    },
+    {
+      "file": "representative-findings/pie-chart-variants--tailwind3-after--768--light--instant/complete-migrated.png",
+      "bytes": 78069,
+      "sha256": "dbe57b4acf7b227df1ce5a71ebe2774ef693e3c9e26e953f4795c4c7196fc080"
+    },
+    {
+      "file": "representative-findings/pie-chart-variants--tailwind3-after--768--light--instant/complete-diff.png",
+      "bytes": 58982,
+      "sha256": "7ed8dde0d0c1a22eadff6cc1a5f8c354af36d205bdf1e8695906f3bdd883f1ae"
+    },
+    {
+      "file": "representative-findings/pie-chart-variants--tailwind3-after--768--light--instant/measurements.json.gz",
+      "bytes": 16111,
+      "sha256": "dae1a1c2420b29d9983031cc4142db848e9fbb29aa45c6f80081fde89e7aa049"
+    },
+    {
+      "file": "representative-findings/tag-variants--plain--1280--dark--stream/complete-legacy.png",
+      "bytes": 154771,
+      "sha256": "f4eb41b8afb2d7698a53462c9606bd4ff62d3ee1f5e472b4e1e17705f1614097"
+    },
+    {
+      "file": "representative-findings/tag-variants--plain--1280--dark--stream/complete-migrated.png",
+      "bytes": 154771,
+      "sha256": "ba8d6284b429a90a464156c159aa274316f8923e72ee49e55909247a070ec01e"
+    },
+    {
+      "file": "representative-findings/tag-variants--plain--1280--dark--stream/complete-diff.png",
+      "bytes": 105438,
+      "sha256": "2ff161a47608422295a7e9c8702f19783de7cc613a68132340da2b25ec6635b3"
+    },
+    {
+      "file": "representative-findings/tag-variants--plain--1280--dark--stream/measurements.json.gz",
+      "bytes": 52443,
+      "sha256": "6fd7a1eb22d9cdd7a561160c3b739bed1d96557a6138d73de0ed3dbf9310e7c0"
+    },
+    {
+      "file": "representative-findings/image-text-variants--plain--390--light--stream/complete-legacy.png",
+      "bytes": 69795,
+      "sha256": "5290189b85661b61d91caaf34fd6580b88bda9496d9b653cd46830db316478bf"
+    },
+    {
+      "file": "representative-findings/image-text-variants--plain--390--light--stream/complete-migrated.png",
+      "bytes": 69795,
+      "sha256": "5290189b85661b61d91caaf34fd6580b88bda9496d9b653cd46830db316478bf"
+    },
+    {
+      "file": "representative-findings/image-text-variants--plain--390--light--stream/complete-diff.png",
+      "bytes": 46741,
+      "sha256": "d0c6af7fe681388904374c405013e1232b9336d7713be35b15565974b6026617"
+    },
+    {
+      "file": "representative-findings/image-text-variants--plain--390--light--stream/measurements.json.gz",
+      "bytes": 41799,
+      "sha256": "29269f32ff8875eeb07f68f886a315957f1ac2b4402bd3bc9bb6c206c4dce279"
+    },
+    {
+      "file": "representative-findings/composite-card-block-variants--plain--390--light--stream/complete-legacy.png",
+      "bytes": 169777,
+      "sha256": "15611e8e12b4c4193f35ca59b75af31147ae707b8903f1f7905159213cdb7c09"
+    },
+    {
+      "file": "representative-findings/composite-card-block-variants--plain--390--light--stream/complete-migrated.png",
+      "bytes": 169777,
+      "sha256": "e577093d5616cd716b5ebc5c92349ad7fb54385c95830f149e1f1f83f578be0b"
+    },
+    {
+      "file": "representative-findings/composite-card-block-variants--plain--390--light--stream/complete-diff.png",
+      "bytes": 115595,
+      "sha256": "44cda0a1a366351ecf12a504c5823a300a5e9127eff81855c30a7413cf3ddf05"
+    },
+    {
+      "file": "representative-findings/composite-card-block-variants--plain--390--light--stream/measurements.json.gz",
+      "bytes": 68040,
+      "sha256": "d0e010a32f5e6f678ffee5bdfcdaf4c44afdfb3520d6b2e765a5cfd1362b9742"
+    },
+    {
+      "file": "representative-findings/slider-validation-error--plain--768--light--stream/complete-legacy.png",
+      "bytes": 20563,
+      "sha256": "3034cc0fdf0973e73b7e31155a231ff8db148832f7eb3f00079c6e2ddccf61c7"
+    },
+    {
+      "file": "representative-findings/slider-validation-error--plain--768--light--stream/complete-migrated.png",
+      "bytes": 20558,
+      "sha256": "e0133657a72665c365e6419494a93444b99b2117e1c2a0b35717dc12d35ea9c8"
+    },
+    {
+      "file": "representative-findings/slider-validation-error--plain--768--light--stream/complete-diff.png",
+      "bytes": 15602,
+      "sha256": "23fb766841e2ec1a17ea226b54759ba5e3bf548b03c744a68d1fffe2dd4b451c"
+    },
+    {
+      "file": "representative-findings/slider-validation-error--plain--768--light--stream/measurements.json.gz",
+      "bytes": 12914,
+      "sha256": "c0d53d5319d3e2151d9d03e24b87e1c20afcb04b62e6df553c93df05a6045768"
+    },
+    {
+      "file": "representative-findings/horizontal-string-height-known--plain--390--light--instant/complete-legacy.png",
+      "bytes": 3105,
+      "sha256": "ba8f45519375683b58baea18b0fcd61e140bf617e9c1e963346796a938adfbf7"
+    },
+    {
+      "file": "representative-findings/horizontal-string-height-known--plain--390--light--instant/complete-migrated.png",
+      "bytes": 3105,
+      "sha256": "2058dcc336f636ae0939d0525cb201c5ac5b6d3c10ccad6287bcfd095fd60558"
+    },
+    {
+      "file": "representative-findings/horizontal-string-height-known--plain--390--light--instant/complete-diff.png",
+      "bytes": 2516,
+      "sha256": "fb46f39f0b53440acd3021697815d9aba9ac1f8b0432b40a2a1d9a362d411bb0"
+    },
+    {
+      "file": "representative-findings/horizontal-string-height-known--plain--390--light--instant/measurements.json.gz",
+      "bytes": 7976,
+      "sha256": "a2302b6d614e15a55981269773f56d0d8fd5f484b32d24e5df7d0f9ed719f943"
+    },
+    {
+      "file": "representative-findings/select-open-portal--plain--390--light--instant/complete-legacy.png",
+      "bytes": 13801,
+      "sha256": "4145ba7c470d04d6ba5201b2935744991437e008b97c6e8149dd1bf25d8e4f0e"
+    },
+    {
+      "file": "representative-findings/select-open-portal--plain--390--light--instant/complete-migrated.png",
+      "bytes": 13821,
+      "sha256": "e21884901b99e0c8184e349100ff531374f01e0e586592fc2433ba95e98afa7f"
+    },
+    {
+      "file": "representative-findings/select-open-portal--plain--390--light--instant/complete-diff.png",
+      "bytes": 10988,
+      "sha256": "678ff7efafb3b0b2a4ad6e0b0a44b8850114a2e4005e4523025ee2392a061260"
+    },
+    {
+      "file": "representative-findings/select-open-portal--plain--390--light--instant/measurements.json.gz",
+      "bytes": 5958,
+      "sha256": "b66eaf8df5a81d4626d3c18e991d115d2d569ac70d9b806c2119d7e58cc1d83f"
+    }
+  ]
+}

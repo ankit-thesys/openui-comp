@@ -1,5 +1,5 @@
 import { isDeepStrictEqual } from "node:util";
-export const RUNNER_VERSION = "1.0.1";
+export const RUNNER_VERSION = "1.0.7";
 export const CHROME_VERSION = "156.0.8078.47";
 export const DEFAULT_CHROME =
   "/private/tmp/beta17-cft/156.0.8078.47/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing";
@@ -42,14 +42,16 @@ export function summarize(results, expected) {
       "Not applicable",
     ].map((s) => [s, results.filter((r) => r.verdict === s).length]),
   );
-  const complete = results.length === expected;
+  const recordedComplete = results.length === expected;
+  const complete = recordedComplete && results.every((r) => r.executed);
   return {
     expected,
     executed: results.filter((r) => r.executed).length,
     recorded: results.length,
     complete,
+    recordedComplete,
     counts,
-    verdict: !complete
+    verdict: !recordedComplete
       ? "Not covered"
       : verdict(
           Object.fromEntries(

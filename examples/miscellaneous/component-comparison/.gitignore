@@ -10,3 +10,5 @@ dist/
 .bench-cases/
 
 .bench-logs/
+
+.bench-investigations/

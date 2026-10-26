@@ -82,11 +82,11 @@ these components expose their own accessible SVG labels. The test selector was
 corrected, with the failed control retained in offline evidence. No chart
 implementation or production styling was changed to make that check pass.
 
-## Bench validation (in progress)
+## Bench validation (historical pre-matrix checks)
 
 The automated bench is example-local. Production packages and their historical
-SCSS remain unchanged. The full approved Default matrix is executing; do not infer
-its outcome from the earlier diagnostics or from case inventory presence.
+SCSS remain unchanged. The following checks preceded the full approved Default matrix; final results
+are recorded below, separately from those diagnostics.
 
 Focused checks completed before the full run:
 
@@ -106,3 +106,37 @@ Original diagnostic evidence is preserved. See the bench triage report for the
 versioned inventory changes, font/cascade investigation and raster reproductions.
 The full matrix and refreshed original live/offline/theme tests are reported below
 once finalized; this section is not a full-suite pass claim.
+
+
+## Final bench execution (2026-10-26)
+
+All **12,450/12,450 current-version Default cells executed**, with zero missing
+cells: **9,151 Pass,86 Fail,31 Review,3,182 Known issue**. The aggregate remains
+**Fail**. Coverage completion is not unconditional parity approval.
+
+- 60 Select open-portal cells fail on a confirmed new-core shadow difference.
+- 26 HorizontalBar cells fail and4 require review while the inherited inner-height
+ loop runs in both implementations; visual parity cannot be certified there.
+- The other27 screenshot reviews remain unresolved: chart5,Tag2,ImageText7,
+ CompositeCardBlock5 andSlider validation8. Zero tolerance was preserved.
+- The isolated clipboard rerun passes60/60 after standard browser/document focus
+ setup. Its original60 harness focus failures remain in prior findings.
+- 1,170 superseded-version executions remain indexed; old cases never credit new
+ versions. Partial-source placeholders never credit execution coverage.
+
+The final unit suite passes34/34; schema generation, types and production example
+build pass. Original live/offline browser regressions, six preset/theme checks,
+bench UI execution/export/cancellation and seeded negative controls pass. Custom
+presets have focused coverage, not the entire Default catalog. The chart variant
+native-DOM audit passes300/300 captured cells and does not certify all mathematics.
+
+Durable results and exact source-run hashes are in `evidence/bench/final/`:
+compressed reconciliation, original source-run JSON files, correction/sharding
+plans, independent chart audit, summary and SHA-256 manifest. Complete screenshot
+and raw histories remain locally in ignored `.bench-runs/`; this committed bundle
+is not a complete screenshot export. All comparisons use unchanged packed
+production artifacts. No production component fix, accepted visual baseline,
+SSR/performance certification or broad accessibility certification is claimed.
+
+Browser ownership was explicitly released to the theme/cascade verifier after the
+final clipboard run. Further production changes remain gated on verifier results.
