@@ -1,0 +1,102 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 973,
+    "sha256": "a2fb33415517f1f1bd1e2fa0916779b0797b7a5f65b45a47f0d7b791a07e173b"
+  },
+  {
+    "file": "compressed-log-provenance.json",
+    "bytes": 782,
+    "sha256": "23d2d0b786bb9e8107f03457c24dce578aef96352c449170339c4672a822deaf"
+  },
+  {
+    "file": "retained-tests.log",
+    "bytes": 1272,
+    "sha256": "7ac71a02ec770dacee60be05756f1accfc77ab125f7892e3407c76411648714d"
+  },
+  {
+    "file": "ticket46-baseline-peer.log",
+    "bytes": 79,
+    "sha256": "b131eb7dc9704d5827936e7aaea620baf3c190cd9dd90ce892a59837e77d012e"
+  },
+  {
+    "file": "ticket46-current-changeset.log",
+    "bytes": 34,
+    "sha256": "886517d9951e9c370eb48c218596ce6a427853bc49a5c75e9c00014231e2c432"
+  },
+  {
+    "file": "ticket46-current-peer.log",
+    "bytes": 79,
+    "sha256": "b131eb7dc9704d5827936e7aaea620baf3c190cd9dd90ce892a59837e77d012e"
+  },
+  {
+    "file": "ticket46-current-workspaces.json",
+    "bytes": 3201,
+    "sha256": "2e30e5dca05959765fd861eb0754715574a81dcb3a008f957cdccbb63520f15f"
+  },
+  {
+    "file": "ticket46-existing-packages.json",
+    "bytes": 609,
+    "sha256": "fc078c63f59a05fa7e1b7658388cfd405c7d40a2fc7155eb0bdc707b665ee181"
+  },
+  {
+    "file": "ticket46-final-provenance.log",
+    "bytes": 1273,
+    "sha256": "ba86a49b75b9e2c5a969b37833a302634d9775668ec8641ae263b6523efb8be8"
+  },
+  {
+    "file": "ticket46-full.log",
+    "bytes": 1272,
+    "sha256": "8e0a2b7f73663237d07dca6ca76cf16c0a4bcaf937dd2bf0cdc1c564a1a491b4"
+  },
+  {
+    "file": "ticket46-green-build.log",
+    "bytes": 361,
+    "sha256": "628f19f4159db1d86cee2173070e08136465d1f45f0e7d168e21615c36c7341f"
+  },
+  {
+    "file": "ticket46-green-peer.log",
+    "bytes": 549,
+    "sha256": "2f049315b16f4847ae1237bcdce621588a403ec09d0d57088047609b6df6435c"
+  },
+  {
+    "file": "ticket46-green-release.log",
+    "bytes": 823,
+    "sha256": "f3ee72ede1dfb867c173679f4be9b08d6174ddf741b573e6ad382a8890276f0b"
+  },
+  {
+    "file": "ticket46-red-build.log.gz",
+    "bytes": 685,
+    "sha256": "a41463bc7010a6be7bed170836cb9a265e2841008cb717d0e481b8a1a6af87b1"
+  },
+  {
+    "file": "ticket46-red-peer.log.gz",
+    "bytes": 617,
+    "sha256": "505ce5907f76ea5a1c9fa8ad1a6919c36bac8b977e5d7b232ba164ae179d50dc"
+  },
+  {
+    "file": "ticket46-red-release.log.gz",
+    "bytes": 724,
+    "sha256": "f3bd53403cf79bbd056e06563e69bb4a84a206ad8e34ae9eab44603320737060"
+  },
+  {
+    "file": "ticket46-spec-review.md",
+    "bytes": 2589,
+    "sha256": "044e238e36f759316d9987008f4f97d68d7f814639b32d55b3f59a6210d28c1f"
+  },
+  {
+    "file": "ticket46-standards-review.md",
+    "bytes": 2264,
+    "sha256": "c31c453bd671534909b720c34ca7743a754fe6837629c9e47ed66a69e88a8303"
+  },
+  {
+    "file": "validation.json",
+    "bytes": 1344,
+    "sha256": "fcbba2cd191a32801e8bd4effcf174b77bd408d272080540a9351e54296417d2"
+  },
+  {
+    "file": "workspace.test.mjs",
+    "bytes": 5161,
+    "sha256": "8f6ccac006b2be9b1b16afc1e1c50d42416baf165fe144f931c661a8eb1a8cba"
+  }
+]

@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: workspace build discovers a nested nonpublishing kit alongside a first-level package
+ok 1 - workspace build discovers a nested nonpublishing kit alongside a first-level package
+  ---
+  duration_ms: 864.477708
+  type: 'test'
+  ...
+# Subtest: peer guard rejects an incompatible nested kit peer window
+ok 2 - peer guard rejects an incompatible nested kit peer window
+  ---
+  duration_ms: 900.514625
+  type: 'test'
+  ...
+# Subtest: nonpublishing changeset analysis identifies a changed nested kit without attributing it to the parent
+ok 3 - nonpublishing changeset analysis identifies a changed nested kit without attributing it to the parent
+  ---
+  duration_ms: 523.037375
+  type: 'test'
+  ...
+# Subtest: existing first-level peer checks continue rejecting incompatible windows
+ok 4 - existing first-level peer checks continue rejecting incompatible windows
+  ---
+  duration_ms: 410.683666
+  type: 'test'
+  ...
+# Subtest: changeset analysis recognizes a nested package version and its peer manifest path
+ok 5 - changeset analysis recognizes a nested package version and its peer manifest path
+  ---
+  duration_ms: 500.877
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3276.619375
