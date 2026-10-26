@@ -10,7 +10,7 @@
 // Note: on a pre-first-train working tree the windows are intentionally ahead
 // of the manifests, so this is wired into the publish path only — do not add
 // it to PR CI.
-import { readdirSync, readFileSync } from "node:fs";
+import { workspacePackages } from "./workspace-packages.mjs";
 
 const parseVersion = (v) => v.split("-")[0].split(".").map(Number);
 const compare = (a, b) => {
@@ -34,13 +34,7 @@ const satisfies = (version, range) =>
 
 const versions = new Map();
 const manifests = [];
-for (const dir of readdirSync("packages")) {
-  let manifest;
-  try {
-    manifest = JSON.parse(readFileSync(`packages/${dir}/package.json`, "utf8"));
-  } catch {
-    continue;
-  }
+for (const { manifest } of workspacePackages()) {
   versions.set(manifest.name, manifest.version);
   manifests.push(manifest);
 }
