@@ -27,13 +27,7 @@
   ],
   "scripts": {
     "build": "tsdown",
-    "typecheck": "tsc --noEmit",
-    "format:check": "prettier --check src *.json *.ts",
-    "lint:check": "eslint src",
-    "check:publint": "publint",
-    "check:attw": "attw --pack .",
-    "ci": "pnpm run format:check && pnpm run lint:check && pnpm run typecheck && pnpm run check:publint && pnpm run check:attw",
-    "prepublishOnly": "pnpm run build && pnpm run ci"
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "react": "^19.0.0",

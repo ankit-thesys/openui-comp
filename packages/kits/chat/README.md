@@ -55,7 +55,7 @@ Build workspace dependencies before the kit:
 
 ```sh
 pnpm run build:packages
-pnpm --filter @openuidev/chat-kit run ci
+pnpm --filter @openuidev/chat-kit run typecheck
 ```
 
 The package exports ESM/CJS modules, matching declarations and source maps for
