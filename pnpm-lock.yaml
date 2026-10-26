@@ -132,6 +132,9 @@ importers:
       publint:
         specifier: ^0.3.18
         version: 0.3.22
+      semver:
+        specifier: ^7.8.5
+        version: 7.8.5
       tsdown:
         specifier: ^0.21.7
         version: 0.21.10(@arethetypeswrong/core@0.18.5)(@typescript/native-preview@7.0.0-dev.20260523.1)(oxc-resolver@11.24.2)(publint@0.3.22)(synckit@0.11.13)(typescript@5.9.3)
@@ -1023,11 +1026,8 @@ importers:
         specifier: ^2.0.0
         version: 2.2.12(typescript@5.9.3)
 
-  packages/kits:
+  packages/kits/chat:
     dependencies:
-      '@openuidev/react-components':
-        specifier: workspace:^
-        version: link:../react-components
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1038,9 +1038,12 @@ importers:
         specifier: ^0.562.0
         version: 0.562.0(react@19.2.4)
     devDependencies:
+      '@openuidev/react-components':
+        specifier: workspace:^
+        version: link:../../react-components
       '@openuidev/react-lang':
         specifier: workspace:^
-        version: link:../react-lang
+        version: link:../../react-lang
       '@types/node':
         specifier: 'catalog:'
         version: 22.20.1
