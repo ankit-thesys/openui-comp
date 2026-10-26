@@ -19,7 +19,8 @@
 // `fixed` start being used (ignore lists, linked groups), revisit whether to
 // swap the model for @changesets/assemble-release-plan.
 import { execFileSync } from "node:child_process";
-import { appendFileSync, existsSync, readdirSync, readFileSync } from "node:fs";
+import { appendFileSync, existsSync, readFileSync } from "node:fs";
+import { workspacePackages } from "./workspace-packages.mjs";
 
 const report = (lines) => {
   console.log(lines.join("\n"));
@@ -39,13 +40,7 @@ const main = () => {
 
   // --- workspace model -----------------------------------------------------
   const packages = new Map(); // name -> {dir, version, dependencies, peerDependencies}
-  for (const dir of readdirSync("packages")) {
-    let manifest;
-    try {
-      manifest = JSON.parse(readFileSync(`packages/${dir}/package.json`, "utf8"));
-    } catch {
-      continue;
-    }
+  for (const { dir, manifest } of workspacePackages()) {
     packages.set(manifest.name, {
       dir,
       version: manifest.version,
@@ -53,7 +48,11 @@ const main = () => {
       peerDependencies: manifest.peerDependencies ?? {},
     });
   }
-  const packageByDir = new Map([...packages].map(([name, p]) => [p.dir, name]));
+  // Longest matching package root owns a changed file, even while a package
+  // temporarily contains another workspace during a staged migration.
+  const packageDirs = [...packages]
+    .map(([name, pkg]) => ({ name, dir: pkg.dir }))
+    .sort((a, b) => b.dir.length - a.dir.length);
 
   const config = JSON.parse(readFileSync(".changeset/config.json", "utf8"));
   const fixedGroups = config.fixed ?? [];
@@ -135,7 +134,7 @@ const main = () => {
   const touchedNames = [
     ...new Set(
       changedFiles
-        .map((f) => packageByDir.get(f.match(/^packages\/([^/]+)\//)?.[1]))
+        .map((file) => packageDirs.find((pkg) => file.startsWith(`${pkg.dir}/`))?.name)
         .filter(Boolean),
     ),
   ];
@@ -170,7 +169,7 @@ const main = () => {
     for (const [name, pkg] of packages) {
       const range = pkg.peerDependencies[target];
       if (!range || range.startsWith("workspace:")) continue;
-      const manifestPath = `packages/${pkg.dir}/package.json`;
+      const manifestPath = `${pkg.dir}/package.json`;
       if (changedFiles.includes(manifestPath)) continue;
       warnings.push(
         `\`${target}\` gets a breaking bump, and \`${name}\` peer-depends on it (\`${range}\`) ` +
