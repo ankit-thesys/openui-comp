@@ -23,6 +23,7 @@
 
 # Claude
 Claude.md
+!/CLAUDE.md
 .claude/
 CLAUDE.local.md
 .workspace/
