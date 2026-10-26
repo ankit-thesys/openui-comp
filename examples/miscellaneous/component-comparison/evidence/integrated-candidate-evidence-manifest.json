@@ -166,13 +166,13 @@
   },
   {
     "file": "template-integration/README.md",
-    "bytes": 2738,
-    "sha256": "3032ab8191b40b270b4ac33c77dfb7cc2b1f32c78e3a58414e75f099c41de19b"
+    "bytes": 2878,
+    "sha256": "87c7b203cc12cce57f4783aeceba6e4344b1937b09024d73b50d40edac68a8ac"
   },
   {
     "file": "template-integration/candidate.json",
-    "bytes": 609,
-    "sha256": "7142366734b0054ae81b12dcfe46ee6b1e7dafb766ff176105cf1dacde380f4d"
+    "bytes": 956,
+    "sha256": "ca4d90a9f75c4f2281ab2f7a9d56d9b757eb81a95351631599e001f6fde1a9e7"
   },
   {
     "file": "template-integration/check-imports.mjs",
@@ -207,7 +207,7 @@
   {
     "file": "template-integration/manifest.json",
     "bytes": 3877,
-    "sha256": "a82700dc684d57b62574c8056000de25d6482bdb85ecd47814a23972100ccd76"
+    "sha256": "4eb62742905148b130fa77851e581666c4329a4d6cd95ce9fb566855fcbfcd79"
   },
   {
     "file": "template-integration/rename-bundle-check-corrected.log",

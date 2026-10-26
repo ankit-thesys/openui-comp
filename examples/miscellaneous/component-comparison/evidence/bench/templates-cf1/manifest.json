@@ -21,13 +21,18 @@
   },
   {
     "file": "README.md",
-    "bytes": 1572,
-    "sha256": "b03ca8344227ac81facb81bf54fa921c4a537f90d178e9245f9cc790cf97249d"
+    "bytes": 1605,
+    "sha256": "2471bf9a0791b35ee324095b94fe462751b84261d74c6d618ce9b756c486c9be"
   },
   {
     "file": "baseline-verdict-comparison.json",
     "bytes": 9626,
     "sha256": "71be7c785648c7d8c87b0e03e89b7fc3fe00d14d7d796b144e1743aa3d2bf98d"
+  },
+  {
+    "file": "browser-release.json",
+    "bytes": 2487,
+    "sha256": "a18f4bb1b846ff97fca45756171b8cf4524106681308532acb60bdacf8c8bdae"
   },
   {
     "file": "matrix-plan.json",
@@ -480,6 +485,26 @@
     "sha256": "a7b78a677a107081b443abea890bf3cc8647b868c7f3a5ba95d1540b4bc68e3c"
   },
   {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s1/evidence/pie-chart-variants--tailwind3-after--768--light--instant/complete-diff.png",
+    "bytes": 58977,
+    "sha256": "4f8bd421d8c2e8c7a6aff8481ace1ca2445ab4a265c571306dde1a64461c8c12"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s1/evidence/pie-chart-variants--tailwind3-after--768--light--instant/complete-legacy.png",
+    "bytes": 78069,
+    "sha256": "dbe57b4acf7b227df1ce5a71ebe2774ef693e3c9e26e953f4795c4c7196fc080"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s1/evidence/pie-chart-variants--tailwind3-after--768--light--instant/complete-migrated.png",
+    "bytes": 78069,
+    "sha256": "dbe57b4acf7b227df1ce5a71ebe2774ef693e3c9e26e953f4795c4c7196fc080"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s1/evidence/pie-chart-variants--tailwind3-after--768--light--instant/measurements.json.gz",
+    "bytes": 16670,
+    "sha256": "ffe61a8aec45b7e74b3ead78100a8b4c7b360d915085a073b98c78a0aaa03e02"
+  },
+  {
     "file": "representative-findings/2026-10-26-integrated-cf1-s1/evidence/radio-group-empty-options--plain--390--light--instant/complete-diff.png",
     "bytes": 8690,
     "sha256": "070b80e4b99475c6229f0d149e468ba656dddf7eabb8865d9697976ef368942b"
@@ -678,6 +703,46 @@
     "file": "representative-findings/2026-10-26-integrated-cf1-s1/evidence/slider-keyboard--plain--390--light--stream/measurements.json.gz",
     "bytes": 11153,
     "sha256": "0f235991a65e532cd6724b8dd2576596e499b0230367bd9712e3a885dda6222a"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s1/evidence/tag-variants--plain--1280--dark--stream/complete-diff.png",
+    "bytes": 105426,
+    "sha256": "900515ac936c00588b56eb4ba7f7013bc34c40264f0fb0980f3bab9841470a53"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s1/evidence/tag-variants--plain--1280--dark--stream/complete-legacy.png",
+    "bytes": 154771,
+    "sha256": "ba8d6284b429a90a464156c159aa274316f8923e72ee49e55909247a070ec01e"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s1/evidence/tag-variants--plain--1280--dark--stream/complete-migrated.png",
+    "bytes": 154771,
+    "sha256": "ba8d6284b429a90a464156c159aa274316f8923e72ee49e55909247a070ec01e"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s1/evidence/tag-variants--plain--1280--dark--stream/measurements.json.gz",
+    "bytes": 52424,
+    "sha256": "28e4e42767759b6485010db702f1dd0c40debd3d92655ee01fde8a8d8c5b6888"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s1/evidence/tag-variants--tailwind4-after--1280--dark--stream/complete-diff.png",
+    "bytes": 105426,
+    "sha256": "900515ac936c00588b56eb4ba7f7013bc34c40264f0fb0980f3bab9841470a53"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s1/evidence/tag-variants--tailwind4-after--1280--dark--stream/complete-legacy.png",
+    "bytes": 154771,
+    "sha256": "ba8d6284b429a90a464156c159aa274316f8923e72ee49e55909247a070ec01e"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s1/evidence/tag-variants--tailwind4-after--1280--dark--stream/complete-migrated.png",
+    "bytes": 154771,
+    "sha256": "ba8d6284b429a90a464156c159aa274316f8923e72ee49e55909247a070ec01e"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s1/evidence/tag-variants--tailwind4-after--1280--dark--stream/measurements.json.gz",
+    "bytes": 52935,
+    "sha256": "8d127cf421c4ec0c60017c8cac16492e74f82768bda7ba6e685cee5c65fbc5fb"
   },
   {
     "file": "representative-findings/2026-10-26-integrated-cf1-s1/evidence/tag-variants--tailwind4-before--1280--dark--stream/complete-diff.png",
@@ -1200,6 +1265,26 @@
     "sha256": "8af85025c5da138cd35a3d74ce2e2d4afb8edba7aa401a1fa0b83ec7d4b1ac2c"
   },
   {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--plain--1280--dark--instant/complete-diff.png",
+    "bytes": 10150,
+    "sha256": "8b2f483f2b44181bb9a112355dc1989528ef976b1a49914af52ab76a73dfcf83"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--plain--1280--dark--instant/complete-legacy.png",
+    "bytes": 15321,
+    "sha256": "6513e4d0f0e4ceffdb1a95313be45cf0e1f5a3d6dadce1f3519632e166a81694"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--plain--1280--dark--instant/complete-migrated.png",
+    "bytes": 12395,
+    "sha256": "0b7268592b261389d8cfa80a6cda71b3fc195781b378e79f94a650afa6a0ec8a"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--plain--1280--dark--instant/measurements.json.gz",
+    "bytes": 10135,
+    "sha256": "f17fa753a157fc3d0b0de57e45003ef8668638c02df8871d15894f9b6bd57dec"
+  },
+  {
     "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--plain--390--dark--instant/complete-diff.png",
     "bytes": 2567,
     "sha256": "359a5926779493901119a948050763221114381f74397f7792471fdee2400c4c"
@@ -1238,6 +1323,26 @@
     "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--plain--390--light--instant/measurements.json.gz",
     "bytes": 8845,
     "sha256": "5f477ff8a06bf61d75b0be4234e566072b28f19968633e2051d81327bef7f347"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--plain--768--dark--instant/complete-diff.png",
+    "bytes": 5144,
+    "sha256": "c0ab143a173ef2f0562e01e46d5140b65428d335b8ad523b0ba9d5618a1745c7"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--plain--768--dark--instant/complete-legacy.png",
+    "bytes": 4377,
+    "sha256": "f3489710a041fa2dd073c23d19c7ec9195d50e82a17cdd3b5a754f3987123ba8"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--plain--768--dark--instant/complete-migrated.png",
+    "bytes": 11062,
+    "sha256": "401b2672236b403427fe9ee211c0e4d72a3780cab62c228413b5527ba69efc01"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--plain--768--dark--instant/measurements.json.gz",
+    "bytes": 8976,
+    "sha256": "502278e728d79814f150f7664fbd84f8a61338490a302f34826ddf2f21672357"
   },
   {
     "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--plain--768--light--instant/complete-diff.png",
@@ -1300,6 +1405,26 @@
     "sha256": "00da9e3a5097e93d000bcc6023b651a1caf60debbb9d745959e3cf08fb846b77"
   },
   {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--tailwind3-before--768--light--instant/complete-diff.png",
+    "bytes": 6854,
+    "sha256": "5a74e0ed52d3f38e0c6780e82a2f4033e659314ffad21a9fdb0b5bffdc1eb465"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--tailwind3-before--768--light--instant/complete-legacy.png",
+    "bytes": 11307,
+    "sha256": "381495879b312c1f791f936df85d0751012d802aa96e33734b58ecdc8572f832"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--tailwind3-before--768--light--instant/complete-migrated.png",
+    "bytes": 12124,
+    "sha256": "987c10c433bc951b62c2951d8f2e425e104a141b57e1306a7ec4441641f4363d"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--tailwind3-before--768--light--instant/measurements.json.gz",
+    "bytes": 8359,
+    "sha256": "b20bbe0b282da4ca53e29e8d4ffddf23ab93fb0609c1187bf860fedaea218894"
+  },
+  {
     "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--tailwind4-after--390--light--instant/complete-diff.png",
     "bytes": 5032,
     "sha256": "13d0ac21379550ab833e798ea689d7c4a4feeb8aba721b6d54baa49be37b2706"
@@ -1318,6 +1443,46 @@
     "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--tailwind4-after--390--light--instant/measurements.json.gz",
     "bytes": 11263,
     "sha256": "a1d18b5954d034ae1d62dfd9836386a0cc3fddaecf39af40f92786967dff3a22"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--tailwind4-after--768--light--instant/complete-diff.png",
+    "bytes": 5330,
+    "sha256": "993c6fcafc6f62ce63c4b9fe44d86401469d26151a5f1c875d46d1a80833a000"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--tailwind4-after--768--light--instant/complete-legacy.png",
+    "bytes": 12124,
+    "sha256": "987c10c433bc951b62c2951d8f2e425e104a141b57e1306a7ec4441641f4363d"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--tailwind4-after--768--light--instant/complete-migrated.png",
+    "bytes": 4362,
+    "sha256": "960ff125131a62a1b218b43fed100fbccf217d0182f9ba2e0515d608abed7afe"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--tailwind4-after--768--light--instant/measurements.json.gz",
+    "bytes": 12963,
+    "sha256": "9b0d3f56ae8257d0c7cacb04c8f14aa4e9107a27bc291d076565ed5bc44953ee"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--tailwind4-before--1280--light--instant/complete-diff.png",
+    "bytes": 8021,
+    "sha256": "0df932b63e20b14d514eccc4cbdb0bd3d9502ef5466165a28dc178c7a16f2bac"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--tailwind4-before--1280--light--instant/complete-legacy.png",
+    "bytes": 12158,
+    "sha256": "cd4945c2807b9ecef4ec57580c9a8e01eecc599a17ee14f6051943fcfb139ead"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--tailwind4-before--1280--light--instant/complete-migrated.png",
+    "bytes": 13404,
+    "sha256": "f069fd15a988332970e16e914a78bd9713dad24f9245d2790e9e0876079de726"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/horizontal-string-height-known--tailwind4-before--1280--light--instant/measurements.json.gz",
+    "bytes": 10126,
+    "sha256": "1fcca780097c095271f086c1d37926313cf822eedc281729d16939f5bd148b9f"
   },
   {
     "file": "representative-findings/2026-10-26-integrated-cf1-s2/evidence/option-cards-keyboard--plain--390--light--instant/complete-diff.png",
@@ -1478,6 +1643,86 @@
     "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind3-after--768--light--stream/measurements.json.gz",
     "bytes": 33348,
     "sha256": "e318a1e997fcb28318168e87fc30e63cd8ea91e5f0b6c10a7d4b606d77b80c9b"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-after--768--dark--stream/complete-diff.png",
+    "bytes": 27149,
+    "sha256": "cca8364a1bb2bdf430fc1a44f1cb51776ab3fb561fc3fac2cd7cca2d6b4cdde5"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-after--768--dark--stream/complete-legacy.png",
+    "bytes": 34996,
+    "sha256": "78a2dd42272e1d1afcbff955461995392f5a98587931c3e331a9ed9ac6ce75d4"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-after--768--dark--stream/complete-migrated.png",
+    "bytes": 35004,
+    "sha256": "7887ed61fa18b60a2c5173176301069852f4915bcdd15175cb047e5aa3ff1a52"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-after--768--dark--stream/measurements.json.gz",
+    "bytes": 33872,
+    "sha256": "5cbe1d6f46cfc7d3dec8920022e1ea395d4fb02666afaa9dd7331b5e84429f93"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-before--768--dark--instant/complete-diff.png",
+    "bytes": 27146,
+    "sha256": "a15f28017de705819e5313e4a59a00326345c537a44d8b51320d4ee31fde329f"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-before--768--dark--instant/complete-legacy.png",
+    "bytes": 35004,
+    "sha256": "7887ed61fa18b60a2c5173176301069852f4915bcdd15175cb047e5aa3ff1a52"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-before--768--dark--instant/complete-migrated.png",
+    "bytes": 35004,
+    "sha256": "7887ed61fa18b60a2c5173176301069852f4915bcdd15175cb047e5aa3ff1a52"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-before--768--dark--instant/measurements.json.gz",
+    "bytes": 12510,
+    "sha256": "5f539f926de99c2cad11b2ccb7dcdd04de608d8b2422ddae66322fa0a2f56aa9"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-before--768--dark--stream/complete-diff.png",
+    "bytes": 27146,
+    "sha256": "a15f28017de705819e5313e4a59a00326345c537a44d8b51320d4ee31fde329f"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-before--768--dark--stream/complete-legacy.png",
+    "bytes": 35004,
+    "sha256": "7887ed61fa18b60a2c5173176301069852f4915bcdd15175cb047e5aa3ff1a52"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-before--768--dark--stream/complete-migrated.png",
+    "bytes": 35004,
+    "sha256": "7887ed61fa18b60a2c5173176301069852f4915bcdd15175cb047e5aa3ff1a52"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-before--768--dark--stream/measurements.json.gz",
+    "bytes": 33862,
+    "sha256": "e9d0b8c7fb069e446617b9a46f5a090d106171134ce0840e22fe47510f96ded4"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-before--768--light--stream/complete-diff.png",
+    "bytes": 28576,
+    "sha256": "dffa85a7a741b8488097870054d364a941df3066d9b2521e12c9b54ba012cfc8"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-before--768--light--stream/complete-legacy.png",
+    "bytes": 35539,
+    "sha256": "83b2ebfe9f225d10d8d22f6453503ee0abb3f872b5fa93479ebad125fafaa29b"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-before--768--light--stream/complete-migrated.png",
+    "bytes": 35539,
+    "sha256": "83b2ebfe9f225d10d8d22f6453503ee0abb3f872b5fa93479ebad125fafaa29b"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/bar-chart-variants--tailwind4-before--768--light--stream/measurements.json.gz",
+    "bytes": 33543,
+    "sha256": "c43ba675a5b590ea59d9e0febe2eb2d75772fe252e72337d8d7ad3c46840e1cc"
   },
   {
     "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/carousel-scroll--plain--390--light--instant/complete-diff.png",
@@ -1760,6 +2005,26 @@
     "sha256": "32f99076a43c1ae0b260c0c5dd5c12f7ff6603f927461f7f0c29f2716d3cb54b"
   },
   {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--plain--390--dark--stream/complete-diff.png",
+    "bytes": 46847,
+    "sha256": "49a52f604fe0ab45119cfc9e48869b42c5f1b82846680d3d6a66a9d47db2cce0"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--plain--390--dark--stream/complete-legacy.png",
+    "bytes": 67110,
+    "sha256": "bca2466dff4cb574add41c4e384d38ae90f0b486998a229c9e3f2095624d2bd5"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--plain--390--dark--stream/complete-migrated.png",
+    "bytes": 67110,
+    "sha256": "bca2466dff4cb574add41c4e384d38ae90f0b486998a229c9e3f2095624d2bd5"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--plain--390--dark--stream/measurements.json.gz",
+    "bytes": 41688,
+    "sha256": "f7c53b99eea62598824e0c875ff5775002dc00bfd05a17d5a325c6f85c289c34"
+  },
+  {
     "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--plain--390--light--stream/complete-diff.png",
     "bytes": 46741,
     "sha256": "d0c6af7fe681388904374c405013e1232b9336d7713be35b15565974b6026617"
@@ -1780,6 +2045,46 @@
     "sha256": "29269f32ff8875eeb07f68f886a315957f1ac2b4402bd3bc9bb6c206c4dce279"
   },
   {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind3-after--390--light--stream/complete-diff.png",
+    "bytes": 46741,
+    "sha256": "d0c6af7fe681388904374c405013e1232b9336d7713be35b15565974b6026617"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind3-after--390--light--stream/complete-legacy.png",
+    "bytes": 69795,
+    "sha256": "5290189b85661b61d91caaf34fd6580b88bda9496d9b653cd46830db316478bf"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind3-after--390--light--stream/complete-migrated.png",
+    "bytes": 69795,
+    "sha256": "5290189b85661b61d91caaf34fd6580b88bda9496d9b653cd46830db316478bf"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind3-after--390--light--stream/measurements.json.gz",
+    "bytes": 41548,
+    "sha256": "63ed04c09bf8131f602491a7cbaa32f4c10ca3618f868a2d177aee4481d4139b"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind3-after--768--light--stream/complete-diff.png",
+    "bytes": 48610,
+    "sha256": "7a53d3bb801b910b6bdad7247261376c18b1dee434c209a128a1a58c19c6bdf4"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind3-after--768--light--stream/complete-legacy.png",
+    "bytes": 71121,
+    "sha256": "dba4b6eb579206208cf005ae4f6a2f36a2ce40c040f3690e72d1e45d9207f161"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind3-after--768--light--stream/complete-migrated.png",
+    "bytes": 71121,
+    "sha256": "dba4b6eb579206208cf005ae4f6a2f36a2ce40c040f3690e72d1e45d9207f161"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind3-after--768--light--stream/measurements.json.gz",
+    "bytes": 41417,
+    "sha256": "52f935965bfe6bcdd39363c47c600a7e19ad094f1c00a266be0eac5b93c5cadb"
+  },
+  {
     "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind3-before--390--dark--stream/complete-diff.png",
     "bytes": 46847,
     "sha256": "49a52f604fe0ab45119cfc9e48869b42c5f1b82846680d3d6a66a9d47db2cce0"
@@ -1798,6 +2103,86 @@
     "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind3-before--390--dark--stream/measurements.json.gz",
     "bytes": 41951,
     "sha256": "9b0650a25e7ae2e05ad11fe356c000756f3ce073a4d68d173055fb4be9f474dd"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-after--390--light--stream/complete-diff.png",
+    "bytes": 46741,
+    "sha256": "d0c6af7fe681388904374c405013e1232b9336d7713be35b15565974b6026617"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-after--390--light--stream/complete-legacy.png",
+    "bytes": 69795,
+    "sha256": "5290189b85661b61d91caaf34fd6580b88bda9496d9b653cd46830db316478bf"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-after--390--light--stream/complete-migrated.png",
+    "bytes": 69795,
+    "sha256": "5290189b85661b61d91caaf34fd6580b88bda9496d9b653cd46830db316478bf"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-after--390--light--stream/measurements.json.gz",
+    "bytes": 41915,
+    "sha256": "bcc7c5fbf9880ee46f2eba56f1eec890201962fda7a501c462bf68f7563d337c"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-after--768--dark--stream/complete-diff.png",
+    "bytes": 48457,
+    "sha256": "c89dbbb3183f980d8dfbd4c6785ac558cf88eb28f68182a67768bd1ab62f995b"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-after--768--dark--stream/complete-legacy.png",
+    "bytes": 68822,
+    "sha256": "7a62ddbe0b069c3abb2b7bfce7fdaf45eaac1ac8c792e464f5e83ce8c3ebc1cf"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-after--768--dark--stream/complete-migrated.png",
+    "bytes": 68822,
+    "sha256": "7a62ddbe0b069c3abb2b7bfce7fdaf45eaac1ac8c792e464f5e83ce8c3ebc1cf"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-after--768--dark--stream/measurements.json.gz",
+    "bytes": 41954,
+    "sha256": "2a646520b75ccbd828f5fce7ef4b958269daeed25e47963db8c460c864bf8454"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-after--768--light--stream/complete-diff.png",
+    "bytes": 48610,
+    "sha256": "7a53d3bb801b910b6bdad7247261376c18b1dee434c209a128a1a58c19c6bdf4"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-after--768--light--stream/complete-legacy.png",
+    "bytes": 71121,
+    "sha256": "dba4b6eb579206208cf005ae4f6a2f36a2ce40c040f3690e72d1e45d9207f161"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-after--768--light--stream/complete-migrated.png",
+    "bytes": 71121,
+    "sha256": "dba4b6eb579206208cf005ae4f6a2f36a2ce40c040f3690e72d1e45d9207f161"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-after--768--light--stream/measurements.json.gz",
+    "bytes": 41820,
+    "sha256": "f6a55658fe913a6b31afe1d7f31670d508c3eb20217b0e052b4608b456e8427d"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-before--390--light--stream/complete-diff.png",
+    "bytes": 46741,
+    "sha256": "d0c6af7fe681388904374c405013e1232b9336d7713be35b15565974b6026617"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-before--390--light--stream/complete-legacy.png",
+    "bytes": 69795,
+    "sha256": "5290189b85661b61d91caaf34fd6580b88bda9496d9b653cd46830db316478bf"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-before--390--light--stream/complete-migrated.png",
+    "bytes": 69795,
+    "sha256": "5290189b85661b61d91caaf34fd6580b88bda9496d9b653cd46830db316478bf"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/image-text-variants--tailwind4-before--390--light--stream/measurements.json.gz",
+    "bytes": 41924,
+    "sha256": "d28f0f3e060dbe5887c957dde30b58fceb0bfdaef138272342e7024d91668b65"
   },
   {
     "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/option-cards-empty-options--plain--390--light--instant/complete-diff.png",
@@ -2118,6 +2503,226 @@
     "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--plain--390--light--stream/measurements.json.gz",
     "bytes": 12997,
     "sha256": "4e80d2960d69cebf73002cdd1512ca816c81c4275adb851b1472a31a7c7e085e"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--plain--768--light--stream/complete-diff.png",
+    "bytes": 15049,
+    "sha256": "f845a7869f4ccf010bcbdbd487084593ff13922624326064876c21b9253780b2"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--plain--768--light--stream/complete-legacy.png",
+    "bytes": 20563,
+    "sha256": "3034cc0fdf0973e73b7e31155a231ff8db148832f7eb3f00079c6e2ddccf61c7"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--plain--768--light--stream/complete-migrated.png",
+    "bytes": 20563,
+    "sha256": "3034cc0fdf0973e73b7e31155a231ff8db148832f7eb3f00079c6e2ddccf61c7"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--plain--768--light--stream/measurements.json.gz",
+    "bytes": 13037,
+    "sha256": "47aba6bf1fdda9932ff42360cc2eaac5eba22b28dc7ba3ad2fbfd936e120cf37"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-after--1280--dark--instant/complete-diff.png",
+    "bytes": 16900,
+    "sha256": "3cd994885ca6e5d8280fe1e56d84d20aae7b96bea1b7af5622524d0e94db6a55"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-after--1280--dark--instant/complete-legacy.png",
+    "bytes": 21836,
+    "sha256": "c7ff8cefaa759eaddf864a33dc71b16201113104ef2f086e047f5c1af75369a2"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-after--1280--dark--instant/complete-migrated.png",
+    "bytes": 21913,
+    "sha256": "1fbd98079f535393cfc0c42de0d2721d499fef348f356798a6c11d77870b6aa7"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-after--1280--dark--instant/measurements.json.gz",
+    "bytes": 8268,
+    "sha256": "6eb63ab342fd22742f35d551dc77cc2e944ca0a7941220f1ebe9faea1dccd9b3"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-after--768--dark--instant/complete-diff.png",
+    "bytes": 14964,
+    "sha256": "28844ff09f676ca5d34ec9d56d78c2e6932f3c6cf0312e13c6672cf98b70d059"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-after--768--dark--instant/complete-legacy.png",
+    "bytes": 19876,
+    "sha256": "b9cac2cf61524f699782db822a12f008699fb6449b08a9431ec5122a9430586e"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-after--768--dark--instant/complete-migrated.png",
+    "bytes": 19955,
+    "sha256": "5185431285166621cb661caca59b0dd24facc77b16a365d49af3c3ea3216a924"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-after--768--dark--instant/measurements.json.gz",
+    "bytes": 8285,
+    "sha256": "89ab7c92af30e350c8d60ecae971031028e5fac5ee213d9f33f0dcb3877a8fb8"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-before--1280--dark--instant/complete-diff.png",
+    "bytes": 17123,
+    "sha256": "af5a9b9c279e67e76758d8a59984bca287a2036f6af198e4e24469346d125aed"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-before--1280--dark--instant/complete-legacy.png",
+    "bytes": 22287,
+    "sha256": "8f1b405a632a3f0338de4aea0d08a997e13d7739155924d1be7da4cf3f9720af"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-before--1280--dark--instant/complete-migrated.png",
+    "bytes": 22359,
+    "sha256": "f93f038d3e85b09e887748e7211d2031396523a8058c33f5db81e08a52e055df"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-before--1280--dark--instant/measurements.json.gz",
+    "bytes": 8253,
+    "sha256": "1b00fe8ac09ea0e8b0b542d56beb6771728fe3ec55f8241c680530c560079f07"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-before--1280--dark--stream/complete-diff.png",
+    "bytes": 17123,
+    "sha256": "af5a9b9c279e67e76758d8a59984bca287a2036f6af198e4e24469346d125aed"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-before--1280--dark--stream/complete-legacy.png",
+    "bytes": 22287,
+    "sha256": "8f1b405a632a3f0338de4aea0d08a997e13d7739155924d1be7da4cf3f9720af"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-before--1280--dark--stream/complete-migrated.png",
+    "bytes": 22359,
+    "sha256": "f93f038d3e85b09e887748e7211d2031396523a8058c33f5db81e08a52e055df"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind3-before--1280--dark--stream/measurements.json.gz",
+    "bytes": 13016,
+    "sha256": "2d82935bf0e7130cc2212dd05c7d50a9213b0a625967c1fbe0f833244af06aec"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-after--1280--light--instant/complete-diff.png",
+    "bytes": 16984,
+    "sha256": "8825d6b355e7b716525840637f9594b3f843bd145cd9c86d2590199b13a9ee98"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-after--1280--light--instant/complete-legacy.png",
+    "bytes": 22502,
+    "sha256": "609b442708cc35e34a26aeb3ddc5832fb5961570b51f7648f87b6fdfa784df30"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-after--1280--light--instant/complete-migrated.png",
+    "bytes": 22502,
+    "sha256": "609b442708cc35e34a26aeb3ddc5832fb5961570b51f7648f87b6fdfa784df30"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-after--1280--light--instant/measurements.json.gz",
+    "bytes": 8265,
+    "sha256": "f4add0b46ffd39235cabdc07b3322078289b4fdd078793f31edb92fc05a03555"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-after--1280--light--stream/complete-diff.png",
+    "bytes": 16984,
+    "sha256": "8825d6b355e7b716525840637f9594b3f843bd145cd9c86d2590199b13a9ee98"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-after--1280--light--stream/complete-legacy.png",
+    "bytes": 22502,
+    "sha256": "609b442708cc35e34a26aeb3ddc5832fb5961570b51f7648f87b6fdfa784df30"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-after--1280--light--stream/complete-migrated.png",
+    "bytes": 22502,
+    "sha256": "609b442708cc35e34a26aeb3ddc5832fb5961570b51f7648f87b6fdfa784df30"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-after--1280--light--stream/measurements.json.gz",
+    "bytes": 13053,
+    "sha256": "fadf4d323810a0dd1d19ae7ccc92b7f74a72351c197417b609fcd3f6440f8f4e"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-after--768--dark--stream/complete-diff.png",
+    "bytes": 15184,
+    "sha256": "b37844356cd9f5ee63e3d9ddb33e37715a237532770b2957c39b319aa5700e13"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-after--768--dark--stream/complete-legacy.png",
+    "bytes": 20340,
+    "sha256": "a13a4b9c3691da2a9a61acb68438a9596ee16d080df2f4396980d1d3721dcc8f"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-after--768--dark--stream/complete-migrated.png",
+    "bytes": 20417,
+    "sha256": "5954581557672364ad3e9f2e943ed535c15759c6e99b94b3b02585fc4137b7bf"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-after--768--dark--stream/measurements.json.gz",
+    "bytes": 13157,
+    "sha256": "659544c2867ec4e98cefef9a625c4b5c648caed24d54a026044b5139d24211f5"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-before--1280--dark--stream/complete-diff.png",
+    "bytes": 17123,
+    "sha256": "af5a9b9c279e67e76758d8a59984bca287a2036f6af198e4e24469346d125aed"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-before--1280--dark--stream/complete-legacy.png",
+    "bytes": 22287,
+    "sha256": "8f1b405a632a3f0338de4aea0d08a997e13d7739155924d1be7da4cf3f9720af"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-before--1280--dark--stream/complete-migrated.png",
+    "bytes": 22359,
+    "sha256": "f93f038d3e85b09e887748e7211d2031396523a8058c33f5db81e08a52e055df"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-before--1280--dark--stream/measurements.json.gz",
+    "bytes": 13141,
+    "sha256": "78d20b46bc4acddaeee9e993dcfe79ee8e3839c4e85e1ffea6b3ed0ff28ec751"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-before--768--dark--stream/complete-diff.png",
+    "bytes": 14715,
+    "sha256": "9c5c4df51d4faff440b4c7f9fdf8e55d7cd4343499daf048be1d1f1bba2074ca"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-before--768--dark--stream/complete-legacy.png",
+    "bytes": 20340,
+    "sha256": "a13a4b9c3691da2a9a61acb68438a9596ee16d080df2f4396980d1d3721dcc8f"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-before--768--dark--stream/complete-migrated.png",
+    "bytes": 20340,
+    "sha256": "a13a4b9c3691da2a9a61acb68438a9596ee16d080df2f4396980d1d3721dcc8f"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-before--768--dark--stream/measurements.json.gz",
+    "bytes": 13150,
+    "sha256": "7383b28896fe83e56451441952c545fd6341f7093a6b61d2a087c131c609472c"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-before--768--light--instant/complete-diff.png",
+    "bytes": 15049,
+    "sha256": "f845a7869f4ccf010bcbdbd487084593ff13922624326064876c21b9253780b2"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-before--768--light--instant/complete-legacy.png",
+    "bytes": 20563,
+    "sha256": "3034cc0fdf0973e73b7e31155a231ff8db148832f7eb3f00079c6e2ddccf61c7"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-before--768--light--instant/complete-migrated.png",
+    "bytes": 20563,
+    "sha256": "3034cc0fdf0973e73b7e31155a231ff8db148832f7eb3f00079c6e2ddccf61c7"
+  },
+  {
+    "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/slider-validation-error--tailwind4-before--768--light--instant/measurements.json.gz",
+    "bytes": 8289,
+    "sha256": "114c6ea27a1dcf0908f8d9760adc01aff8307daba97143408fc2f2bff48a0701"
   },
   {
     "file": "representative-findings/2026-10-26-integrated-cf1-s3/evidence/text-area-empty-value--plain--390--light--instant/complete-diff.png",
@@ -2601,7 +3206,7 @@
   },
   {
     "file": "summary.json",
-    "bytes": 79406,
-    "sha256": "073686b672f5e17ede06af5b23bbd47d32f4cfd75fa2dbd2ec5dacae99e44eca"
+    "bytes": 97337,
+    "sha256": "5c86e2f81037236103065d7b5301f01d99ef451ac6520b411ab13c469620884d"
   }
 ]

@@ -108,6 +108,11 @@
     },
     {
       "case": "bar-chart-variants",
+      "verdict": "Pass",
+      "cells": 3
+    },
+    {
+      "case": "bar-chart-variants",
       "verdict": "Review",
       "cells": 3
     },
@@ -273,6 +278,11 @@
     },
     {
       "case": "image-text-variants",
+      "verdict": "Pass",
+      "cells": 4
+    },
+    {
+      "case": "image-text-variants",
       "verdict": "Review",
       "cells": 6
     },
@@ -315,6 +325,11 @@
       "case": "option-cards-variants",
       "verdict": "Known issue",
       "cells": 60
+    },
+    {
+      "case": "pie-chart-variants",
+      "verdict": "Pass",
+      "cells": 1
     },
     {
       "case": "radio-group-default",
@@ -398,6 +413,11 @@
     },
     {
       "case": "tag-variants",
+      "verdict": "Pass",
+      "cells": 2
+    },
+    {
+      "case": "tag-variants",
       "verdict": "Review",
       "cells": 2
     },
@@ -443,6 +463,61 @@
         "evidence/bar-chart-variants--tailwind3-after--768--dark--stream/complete-legacy.png",
         "evidence/bar-chart-variants--tailwind3-after--768--dark--stream/complete-migrated.png",
         "evidence/bar-chart-variants--tailwind3-after--768--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "bar-chart-variants--tailwind4-before--768--light--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/bar-chart-variants--tailwind4-before--768--light--stream/measurements.json.gz",
+        "evidence/bar-chart-variants--tailwind4-before--768--light--stream/complete-legacy.png",
+        "evidence/bar-chart-variants--tailwind4-before--768--light--stream/complete-migrated.png",
+        "evidence/bar-chart-variants--tailwind4-before--768--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "bar-chart-variants--tailwind4-before--768--dark--instant",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--instant/measurements.json.gz",
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--instant/complete-legacy.png",
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--instant/complete-migrated.png",
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "bar-chart-variants--tailwind4-before--768--dark--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--stream/measurements.json.gz",
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--stream/complete-legacy.png",
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--stream/complete-migrated.png",
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "bar-chart-variants--tailwind4-after--768--dark--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/bar-chart-variants--tailwind4-after--768--dark--stream/measurements.json.gz",
+        "evidence/bar-chart-variants--tailwind4-after--768--dark--stream/complete-legacy.png",
+        "evidence/bar-chart-variants--tailwind4-after--768--dark--stream/complete-migrated.png",
+        "evidence/bar-chart-variants--tailwind4-after--768--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "pie-chart-variants--tailwind3-after--768--light--instant",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/pie-chart-variants--tailwind3-after--768--light--instant/measurements.json.gz",
+        "evidence/pie-chart-variants--tailwind3-after--768--light--instant/complete-legacy.png",
+        "evidence/pie-chart-variants--tailwind3-after--768--light--instant/complete-migrated.png",
+        "evidence/pie-chart-variants--tailwind3-after--768--light--instant/complete-diff.png"
       ]
     },
     {
@@ -732,6 +807,17 @@
       ]
     },
     {
+      "cell": "tag-variants--plain--1280--dark--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/tag-variants--plain--1280--dark--stream/measurements.json.gz",
+        "evidence/tag-variants--plain--1280--dark--stream/complete-legacy.png",
+        "evidence/tag-variants--plain--1280--dark--stream/complete-migrated.png",
+        "evidence/tag-variants--plain--1280--dark--stream/complete-diff.png"
+      ]
+    },
+    {
       "cell": "tag-variants--tailwind4-before--768--dark--stream",
       "verdict": "Review",
       "sourceRun": "2026-10-26-integrated-cf1-s1",
@@ -751,6 +837,17 @@
         "evidence/tag-variants--tailwind4-before--1280--dark--stream/complete-legacy.png",
         "evidence/tag-variants--tailwind4-before--1280--dark--stream/complete-migrated.png",
         "evidence/tag-variants--tailwind4-before--1280--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "tag-variants--tailwind4-after--1280--dark--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/tag-variants--tailwind4-after--1280--dark--stream/measurements.json.gz",
+        "evidence/tag-variants--tailwind4-after--1280--dark--stream/complete-legacy.png",
+        "evidence/tag-variants--tailwind4-after--1280--dark--stream/complete-migrated.png",
+        "evidence/tag-variants--tailwind4-after--1280--dark--stream/complete-diff.png"
       ]
     },
     {
@@ -897,6 +994,17 @@
       ]
     },
     {
+      "cell": "image-text-variants--plain--390--dark--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--plain--390--dark--stream/measurements.json.gz",
+        "evidence/image-text-variants--plain--390--dark--stream/complete-legacy.png",
+        "evidence/image-text-variants--plain--390--dark--stream/complete-migrated.png",
+        "evidence/image-text-variants--plain--390--dark--stream/complete-diff.png"
+      ]
+    },
+    {
       "cell": "image-text-variants--tailwind3-before--390--dark--stream",
       "verdict": "Review",
       "sourceRun": "2026-10-26-integrated-cf1-s3",
@@ -905,6 +1013,72 @@
         "evidence/image-text-variants--tailwind3-before--390--dark--stream/complete-legacy.png",
         "evidence/image-text-variants--tailwind3-before--390--dark--stream/complete-migrated.png",
         "evidence/image-text-variants--tailwind3-before--390--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-text-variants--tailwind3-after--390--light--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--tailwind3-after--390--light--stream/measurements.json.gz",
+        "evidence/image-text-variants--tailwind3-after--390--light--stream/complete-legacy.png",
+        "evidence/image-text-variants--tailwind3-after--390--light--stream/complete-migrated.png",
+        "evidence/image-text-variants--tailwind3-after--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-text-variants--tailwind3-after--768--light--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--tailwind3-after--768--light--stream/measurements.json.gz",
+        "evidence/image-text-variants--tailwind3-after--768--light--stream/complete-legacy.png",
+        "evidence/image-text-variants--tailwind3-after--768--light--stream/complete-migrated.png",
+        "evidence/image-text-variants--tailwind3-after--768--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-text-variants--tailwind4-before--390--light--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--tailwind4-before--390--light--stream/measurements.json.gz",
+        "evidence/image-text-variants--tailwind4-before--390--light--stream/complete-legacy.png",
+        "evidence/image-text-variants--tailwind4-before--390--light--stream/complete-migrated.png",
+        "evidence/image-text-variants--tailwind4-before--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-text-variants--tailwind4-after--390--light--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--tailwind4-after--390--light--stream/measurements.json.gz",
+        "evidence/image-text-variants--tailwind4-after--390--light--stream/complete-legacy.png",
+        "evidence/image-text-variants--tailwind4-after--390--light--stream/complete-migrated.png",
+        "evidence/image-text-variants--tailwind4-after--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-text-variants--tailwind4-after--768--light--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--tailwind4-after--768--light--stream/measurements.json.gz",
+        "evidence/image-text-variants--tailwind4-after--768--light--stream/complete-legacy.png",
+        "evidence/image-text-variants--tailwind4-after--768--light--stream/complete-migrated.png",
+        "evidence/image-text-variants--tailwind4-after--768--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-text-variants--tailwind4-after--768--dark--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--tailwind4-after--768--dark--stream/measurements.json.gz",
+        "evidence/image-text-variants--tailwind4-after--768--dark--stream/complete-legacy.png",
+        "evidence/image-text-variants--tailwind4-after--768--dark--stream/complete-migrated.png",
+        "evidence/image-text-variants--tailwind4-after--768--dark--stream/complete-diff.png"
       ]
     },
     {
@@ -1458,6 +1632,17 @@
       ]
     },
     {
+      "cell": "slider-validation-error--plain--768--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--plain--768--light--stream/measurements.json.gz",
+        "evidence/slider-validation-error--plain--768--light--stream/complete-legacy.png",
+        "evidence/slider-validation-error--plain--768--light--stream/complete-migrated.png",
+        "evidence/slider-validation-error--plain--768--light--stream/complete-diff.png"
+      ]
+    },
+    {
       "cell": "slider-validation-error--plain--1280--light--stream",
       "verdict": "Review",
       "sourceRun": "2026-10-26-integrated-cf1-s3",
@@ -1477,6 +1662,116 @@
         "evidence/slider-validation-error--plain--1280--dark--instant/complete-legacy.png",
         "evidence/slider-validation-error--plain--1280--dark--instant/complete-migrated.png",
         "evidence/slider-validation-error--plain--1280--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind3-before--1280--dark--instant",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--instant/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--instant/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--instant/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind3-before--1280--dark--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--stream/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--stream/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--stream/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind3-after--768--dark--instant",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind3-after--768--dark--instant/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind3-after--768--dark--instant/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind3-after--768--dark--instant/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind3-after--768--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind3-after--1280--dark--instant",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind3-after--1280--dark--instant/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind3-after--1280--dark--instant/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind3-after--1280--dark--instant/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind3-after--1280--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-before--768--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind4-before--768--light--instant/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind4-before--768--light--instant/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind4-before--768--light--instant/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind4-before--768--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-before--768--dark--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind4-before--768--dark--stream/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind4-before--768--dark--stream/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind4-before--768--dark--stream/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind4-before--768--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-before--1280--dark--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind4-before--1280--dark--stream/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind4-before--1280--dark--stream/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind4-before--1280--dark--stream/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind4-before--1280--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-after--768--dark--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind4-after--768--dark--stream/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind4-after--768--dark--stream/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind4-after--768--dark--stream/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind4-after--768--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-after--1280--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind4-after--1280--light--instant/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind4-after--1280--light--instant/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind4-after--1280--light--instant/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind4-after--1280--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-after--1280--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind4-after--1280--light--stream/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind4-after--1280--light--stream/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind4-after--1280--light--stream/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind4-after--1280--light--stream/complete-diff.png"
       ]
     },
     {
@@ -1755,6 +2050,28 @@
       ]
     },
     {
+      "cell": "horizontal-string-height-known--plain--768--dark--instant",
+      "verdict": "Fail",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--plain--768--dark--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--plain--768--dark--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--plain--768--dark--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--plain--768--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-string-height-known--plain--1280--dark--instant",
+      "verdict": "Fail",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--plain--1280--dark--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--plain--1280--dark--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--plain--1280--dark--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--plain--1280--dark--instant/complete-diff.png"
+      ]
+    },
+    {
       "cell": "horizontal-string-height-known--tailwind3-before--390--dark--instant",
       "verdict": "Review",
       "sourceRun": "2026-10-26-integrated-cf1-s2",
@@ -1763,6 +2080,17 @@
         "evidence/horizontal-string-height-known--tailwind3-before--390--dark--instant/complete-legacy.png",
         "evidence/horizontal-string-height-known--tailwind3-before--390--dark--instant/complete-migrated.png",
         "evidence/horizontal-string-height-known--tailwind3-before--390--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-string-height-known--tailwind3-before--768--light--instant",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--tailwind3-before--768--light--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--tailwind3-before--768--light--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--tailwind3-before--768--light--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--tailwind3-before--768--light--instant/complete-diff.png"
       ]
     },
     {
@@ -1777,6 +2105,17 @@
       ]
     },
     {
+      "cell": "horizontal-string-height-known--tailwind4-before--1280--light--instant",
+      "verdict": "Fail",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--tailwind4-before--1280--light--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--tailwind4-before--1280--light--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--tailwind4-before--1280--light--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--tailwind4-before--1280--light--instant/complete-diff.png"
+      ]
+    },
+    {
       "cell": "horizontal-string-height-known--tailwind4-after--390--light--instant",
       "verdict": "Fail",
       "sourceRun": "2026-10-26-integrated-cf1-s2",
@@ -1785,6 +2124,17 @@
         "evidence/horizontal-string-height-known--tailwind4-after--390--light--instant/complete-legacy.png",
         "evidence/horizontal-string-height-known--tailwind4-after--390--light--instant/complete-migrated.png",
         "evidence/horizontal-string-height-known--tailwind4-after--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-string-height-known--tailwind4-after--768--light--instant",
+      "verdict": "Fail",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--tailwind4-after--768--light--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--tailwind4-after--768--light--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--tailwind4-after--768--light--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--tailwind4-after--768--light--instant/complete-diff.png"
       ]
     },
     {
