@@ -14,5 +14,21 @@
     }
   ],
   "ci": "Local package CI passes; remote workflows not scheduled for stacked base.",
-  "browserMatrix": "in progress"
+  "browserMatrix": {
+    "expected": 12450,
+    "executed": 12450,
+    "recorded": 12450,
+    "complete": true,
+    "recordedComplete": true,
+    "counts": {
+      "Pass": 9154,
+      "Fail": 86,
+      "Review": 30,
+      "Known issue": 3180,
+      "Not covered": 0,
+      "Not applicable": 0
+    },
+    "verdict": "Fail"
+  },
+  "browserMatrixEvidence": "../bench/templates-cf1/"
 }
