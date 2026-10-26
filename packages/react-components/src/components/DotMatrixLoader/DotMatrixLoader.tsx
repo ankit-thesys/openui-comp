@@ -3,7 +3,9 @@ import { css } from "goober";
 import { useEffect, useRef, type CSSProperties } from "react";
 import { loaderStyles } from "./dotMatrixLoader.styles";
 
-const componentClass = css(loaderStyles);
+const componentClass = css`
+  ${loaderStyles}
+`;
 
 /** Time for each trail to complete one revolution of its ring. */
 const REVOLUTION_MS = 1400;

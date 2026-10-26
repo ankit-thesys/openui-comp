@@ -2,7 +2,9 @@ import clsx from "clsx";
 import { css } from "goober";
 import { pieStyles } from "./pieChartSkeleton.styles";
 import { SkeletonBar } from "./SkeletonBar";
-const componentClass = css(pieStyles);
+const componentClass = css`
+  ${pieStyles}
+`;
 export function PieChartSkeleton({
   size = 200,
   legendItems = 4,

@@ -4,7 +4,9 @@ import React from "react";
 import { useFormControlContext } from "../FormControl/context";
 import { inputStyles } from "./input.styles";
 
-const componentClass = css(inputStyles);
+const componentClass = css`
+  ${inputStyles}
+`;
 
 export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   styles?: React.CSSProperties;

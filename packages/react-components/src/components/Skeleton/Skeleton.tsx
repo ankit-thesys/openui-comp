@@ -2,7 +2,9 @@ import clsx from "clsx";
 import { css } from "goober";
 import { stackStyles } from "./skeleton.styles";
 import { SkeletonBar } from "./SkeletonBar";
-const componentClass = css(stackStyles);
+const componentClass = css`
+  ${stackStyles}
+`;
 export function Skeleton({
   count = 1,
   height = "16px",

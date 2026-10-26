@@ -4,7 +4,9 @@ import React from "react";
 import { CheckBoxItemProps } from "../CheckBoxItem";
 import { componentStyles } from "./styles";
 
-const componentClass = css(componentStyles);
+const componentClass = css`
+  ${componentStyles}
+`;
 
 type CheckBoxGroupVariant = "clear" | "card" | "sunk";
 

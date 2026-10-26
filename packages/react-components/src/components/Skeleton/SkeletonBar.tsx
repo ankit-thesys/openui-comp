@@ -1,7 +1,9 @@
 import clsx from "clsx";
 import { css } from "goober";
 import { barStyles } from "./skeleton.styles";
-const componentClass = css(barStyles);
+const componentClass = css`
+  ${barStyles}
+`;
 interface SkeletonBarProps {
   height: string;
   width: string;

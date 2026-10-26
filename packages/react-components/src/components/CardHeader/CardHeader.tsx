@@ -5,7 +5,9 @@ import { ButtonProps } from "../Button";
 import { IconButtonProps } from "../IconButton";
 import { cardHeaderStyles } from "./cardHeader.styles";
 
-const componentClass = css(cardHeaderStyles);
+const componentClass = css`
+  ${cardHeaderStyles}
+`;
 
 export interface CardHeaderProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
   icon?: ReactNode;

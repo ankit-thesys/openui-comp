@@ -4,7 +4,9 @@ import { css } from "goober";
 import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
 import { iconButtonStyles } from "./iconButton.styles";
 
-const componentClass = css(iconButtonStyles);
+const componentClass = css`
+  ${iconButtonStyles}
+`;
 
 type IconButtonVariant = "primary" | "secondary" | "tertiary";
 type IconButtonSize =

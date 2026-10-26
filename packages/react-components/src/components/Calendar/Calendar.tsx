@@ -7,7 +7,9 @@ import { useMultipleRefs } from "../../hooks/useMultipleRefs";
 import { calendarStyles } from "./calendar.styles";
 import { MonthsDropdown, YearsDropdown } from "./components/helperComponents";
 import { getDayPickerStyles } from "./utils/styles";
-const componentClass = css(calendarStyles);
+const componentClass = css`
+  ${calendarStyles}
+`;
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 

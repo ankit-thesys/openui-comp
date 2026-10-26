@@ -1,3 +1,6 @@
 import { css } from "goober";
 
-export const faviconClass = css({ objectFit: "cover", display: "flex" });
+export const faviconClass = css`
+  object-fit: cover;
+  display: flex;
+`;

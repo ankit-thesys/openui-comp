@@ -17,7 +17,9 @@ export function ContactForm() {
     <ThemeProvider>
       <Input aria-label="Name" size="medium" />
       <TextArea aria-label="Message" rows={3} />
-      <Button variant="primary" type="submit">Send</Button>
+      <Button variant="primary" type="submit">
+        Send
+      </Button>
     </ThemeProvider>
   );
 }
@@ -91,7 +93,10 @@ export function RevenueShare() {
   return (
     <ThemeProvider>
       <PieChart
-        data={[{ name: "Subscriptions", revenue: 80 }, { name: "Services", revenue: 20 }]}
+        data={[
+          { name: "Subscriptions", revenue: 80 },
+          { name: "Services", revenue: 20 },
+        ]}
         categoryKey="name"
         dataKey="revenue"
         variant="donut"
@@ -137,6 +142,41 @@ pnpm --filter @openuidev/react-components run ci
 
 ESM/CJS builds include matching declarations and source maps. Goober and React
 remain external dependencies. Build inputs contain no old SCSS or generated CSS.
+
+### Authoring styles
+
+Component declarations and keyframes use stock Goober tagged template strings.
+Reusable declaration fragments are plain template strings, interpolated where
+needed; registration remains at the existing module-level call site:
+
+```ts
+const body = `
+  font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
+`;
+const rootClass = css`
+  ${body}
+  display: flex;
+  &:disabled {
+    cursor: not-allowed;
+  }
+`;
+```
+
+Keep selector specificity, declaration order, token fallbacks and keyframe timing
+when editing styles. Use CSS units explicitly: Goober does not add `px` to numeric
+object values. Class-name maps are ordinary objects containing registered classes;
+they are not CSS declaration objects.
+
+The following retain their existing non-template contracts:
+
+- Native `style` forwarding and computed chart geometry/animation values are
+  per-instance React styles.
+- ThemeProvider serializes scoped theme variables through its existing lifecycle.
+- Syntax-highlighter theme maps use the third-party component's object API.
+- KaTeX keeps its official vendor CSS and font assets.
+
+These exceptions do not justify new static Goober declaration objects, custom
+serializers or styling APIs.
 
 ## Beta import migration
 

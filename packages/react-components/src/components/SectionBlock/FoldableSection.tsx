@@ -13,11 +13,21 @@ import {
   triggerStyles,
 } from "./foldableSection.styles";
 
-const rootClass = css(rootStyles);
-const itemClass = css(itemStyles);
-const headerClass = css(headerStyles);
-const triggerClass = css(triggerStyles);
-const contentClass = css(contentStyles);
+const rootClass = css`
+  ${rootStyles}
+`;
+const itemClass = css`
+  ${itemStyles}
+`;
+const headerClass = css`
+  ${headerStyles}
+`;
+const triggerClass = css`
+  ${triggerStyles}
+`;
+const contentClass = css`
+  ${contentStyles}
+`;
 
 export type FoldableSectionRootProps = AccordionPrimitive.AccordionMultipleProps;
 

@@ -5,7 +5,9 @@ import { ReactElement } from "react";
 import { ToggleItemProps } from "../ToggleItem";
 import { componentStyles } from "./styles";
 
-const componentClass = css(componentStyles);
+const componentClass = css`
+  ${componentStyles}
+`;
 
 type RadixToggleGroupProps =
   ToggleGroupPrimitive.ToggleGroupSingleProps | ToggleGroupPrimitive.ToggleGroupMultipleProps;

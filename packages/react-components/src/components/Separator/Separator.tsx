@@ -3,7 +3,9 @@ import clsx from "clsx";
 import { css } from "goober";
 import { separatorStyles } from "./separator.styles";
 
-const componentClass = css(separatorStyles);
+const componentClass = css`
+  ${separatorStyles}
+`;
 
 const Separator = ({ className, ...props }: React.ComponentProps<typeof RadixSeparator.Root>) => {
   return (

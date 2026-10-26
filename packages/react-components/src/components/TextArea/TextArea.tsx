@@ -4,7 +4,9 @@ import React, { forwardRef } from "react";
 import { useFormControlContext } from "../FormControl/context";
 import { textAreaStyles } from "./textArea.styles";
 
-const componentClass = css(textAreaStyles);
+const componentClass = css`
+  ${textAreaStyles}
+`;
 
 export interface TextAreaProps extends Omit<
   React.TextareaHTMLAttributes<HTMLTextAreaElement>,

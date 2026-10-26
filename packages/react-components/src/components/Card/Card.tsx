@@ -3,7 +3,9 @@ import { css } from "goober";
 import React from "react";
 import { cardStyles } from "./card.styles";
 
-const componentClass = css(cardStyles);
+const componentClass = css`
+  ${cardStyles}
+`;
 
 type CardVariant = "clear" | "card" | "sunk";
 type CardWidth = "standard" | "full";

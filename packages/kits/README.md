@@ -8,10 +8,7 @@ Additional kits can follow without moving reusable components into each kit.
 
 ```tsx
 import { FollowUpBlock, ModelSwitcher } from "@openuidev/kits/react/chat";
-import {
-  openuiChatLibrary,
-  openuiChatPromptOptions,
-} from "@openuidev/kits/react/chat/libs";
+import { openuiChatLibrary, openuiChatPromptOptions } from "@openuidev/kits/react/chat/libs";
 import { ThemeProvider } from "@openuidev/react-components";
 import { Renderer } from "@openuidev/react-lang";
 ```
@@ -53,3 +50,9 @@ pnpm --filter @openuidev/kits run ci
 
 The package exports ESM/CJS modules, matching declarations and source maps for
 `react/chat` and `react/chat/libs`. Internal implementation paths stay private.
+
+Authored kit styles use stock Goober `css` and `keyframes` template strings, with
+plain template fragments for shared declarations and module-level registration.
+Preserve selector specificity, token fallbacks and registration order. Native
+consumer style forwarding and TextContent's per-instance size variables remain
+React style objects; class-name lookup maps remain ordinary objects of classes.

@@ -4,7 +4,9 @@ import { css } from "goober";
 import { forwardRef, ReactNode, useMemo, useState } from "react";
 import { sliderStyles } from "./slider.styles";
 
-const componentClass = css(sliderStyles);
+const componentClass = css`
+  ${sliderStyles}
+`;
 
 const formatNumber = (num: number | undefined): string => {
   if (num === undefined) {

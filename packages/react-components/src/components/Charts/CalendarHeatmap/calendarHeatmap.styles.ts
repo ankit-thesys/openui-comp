@@ -1,5 +1,12 @@
 import { css, keyframes } from "goober";
-const cellIn = keyframes({ from: { opacity: 0 }, to: { opacity: 1 } });
+const cellIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 export const rootClass = css`
   & {
     display: flex;

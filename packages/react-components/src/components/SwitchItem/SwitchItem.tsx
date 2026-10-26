@@ -4,7 +4,9 @@ import { css } from "goober";
 import { CSSProperties, forwardRef, ReactNode, useId } from "react";
 import { componentStyles } from "./styles";
 
-const componentClass = css(componentStyles);
+const componentClass = css`
+  ${componentStyles}
+`;
 
 interface SwitchItemProps {
   label?: ReactNode;

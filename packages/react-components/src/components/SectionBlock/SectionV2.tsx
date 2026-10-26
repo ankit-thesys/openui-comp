@@ -3,7 +3,9 @@ import React from "react";
 import { Separator } from "../Separator";
 import { sectionStyles } from "./sectionV2.styles";
 
-const componentClass = css(sectionStyles);
+const componentClass = css`
+  ${sectionStyles}
+`;
 
 interface SectionV2Props {
   trigger: string;
