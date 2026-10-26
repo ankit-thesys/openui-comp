@@ -44,9 +44,9 @@ export const sliderBlockStyles = {
     },
   },
   "& .openui-slider-block__input": {
-    "text-align": "right !important",
-    paddingLeft: "var(--openui-space-s, 8px) !important",
-    paddingRight: "var(--openui-space-s, 8px) !important",
+    "text-align": "right",
+    paddingLeft: "var(--openui-space-s, 8px)",
+    paddingRight: "var(--openui-space-s, 8px)",
   },
   "& .openui-slider-block__error-message": {
     display: "flex",
