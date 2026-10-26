@@ -1,0 +1,4134 @@
+{
+  "provenance": {
+    "head": "ed4ada6cb56e6c25a37a15c576200e87c6fd09a7",
+    "productionReference": "57ea72e2892df7fdd551c668d4480a0267f90a09",
+    "mode": "read-only TypeScript AST inventory; no build/typecheck/runtime/browser",
+    "scope": "tracked production src excluding stories/tests/results; references retain active tests for manual review; historical validation/evidence excluded",
+    "limitations": "AST export trace, not type-checker symbol proof; no external-consumer telemetry. Absence of in-repo imports is not permission to remove public API."
+  },
+  "files": [
+    {
+      "path": "packages/kits/src/react/chat/components/FollowUpBlock/followUpBlock.styles.ts",
+      "sha256": "56a98052ce0c276668f7580cb30fecb9d65754aa532c035684920a81c1d914b5",
+      "calls": [
+        {
+          "line": 3,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  boxSizing: \"border-box\",\n  display: \"flex\",\n  flexDirection: \"column\",\n}"
+        },
+        {
+          "line": 9,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  color: \"var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))\",\n  borderBottom: \"1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))\",\n  "
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/kits/src/react/chat/components/FollowUpItem/followUpItem.styles.ts",
+      "sha256": "e696f2a6514b61d557334ea23649edd38ade96a9363032f16900222a16dcea49",
+      "calls": [
+        {
+          "line": 3,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  border: 0,\n  background: \"transparent\",\n  font: 'var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)',\n  letterSpacing: \"var(--openui-text-bod"
+        },
+        {
+          "line": 25,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 29,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  flex: 1,\n  whiteSpace: \"break-spaces\",\n  wordBreak: \"break-word\",\n  maxWidth: \"100%\",\n  textAlign: \"left\",\n  color: \"var(--openui-text-neutral-primary, oklc"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/kits/src/react/chat/components/ModelSwitcher/modelSwitcher.styles.ts",
+      "sha256": "9705f7dd580de51886bb674677e9042b4668d5486117207beb26d8b3a5b39fba",
+      "calls": [
+        {
+          "line": 3,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  minWidth: 0,\n  \"& .openui-model-switcher-trigger\": {\n    display: \"flex\",\n    height: \"32px\",\n    width: \"auto\",\n    maxWidth: \"240px\",\n    alignItems: \"cen"
+        },
+        {
+          "line": 41,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  \"&.openui-select-content\": {\n    maxHeight: \"calc(var(--radix-select-content-available-height, 376px) - 6px)\",\n    width: \"min(283px, calc(100vw - 32px))\",\n"
+        },
+        {
+          "line": 49,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  \"& .openui-tag.openui-tag-sm\": {\n    height: \"18px\",\n    padding: \"0 var(--openui-space-s, 8px)\",\n    borderRadius: \"var(--openui-radius-full, 9999px)\",\n   "
+        },
+        {
+          "line": 64,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  minWidth: 0,\n  flex: \"1 1 auto\",\n  overflow: \"hidden\",\n  textOverflow: \"ellipsis\",\n  whiteSpace: \"nowrap\",\n}"
+        },
+        {
+          "line": 72,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"inline-flex\",\n  width: \"16px\",\n  height: \"16px\",\n  flexShrink: 0,\n  alignItems: \"center\",\n  justifyContent: \"center\",\n  \"& > *\": { display: \"block"
+        },
+        {
+          "line": 82,
+          "api": "css",
+          "form": "object",
+          "expression": "{ height: \"6px\", width: \"6px\", flexShrink: 0, borderRadius: \"9999px\" }"
+        },
+        {
+          "line": 84,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n    backgroundColor: \"var(--openui-border-info-emphasis, oklch(0.546 0.215 262.881 / 1))\",\n  }"
+        },
+        {
+          "line": 87,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n    backgroundColor: \"var(--openui-border-success-emphasis, oklch(0.627 0.17 149.214 / 1))\",\n  }"
+        },
+        {
+          "line": 92,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"inline-flex\",\n  height: \"20px\",\n  width: \"20px\",\n  flexShrink: 0,\n  alignItems: \"center\",\n  justifyContent: \"center\",\n  borderRadius: \"9999px\",\n  "
+        },
+        {
+          "line": 103,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{ \"0%,100%\": { opacity: 1 }, \"50%\": { opacity: 0.5 } }"
+        },
+        {
+          "line": 104,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  height: \"20px\",\n  width: \"20px\",\n  flexShrink: 0,\n  borderRadius: \"var(--openui-radius-m, 8px)\",\n  backgroundColor: \"var(--openui-border-default, oklch(0.09"
+        },
+        {
+          "line": 112,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  height: \"16px\",\n  width: \"96px\",\n  borderRadius: \"var(--openui-radius-m, 8px)\",\n  backgroundColor: \"var(--openui-border-default, oklch(0.097 0 0 / 0.06))\",\n"
+        },
+        {
+          "line": 120,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"absolute\",\n  width: \"1px\",\n  height: \"1px\",\n  padding: 0,\n  margin: \"-1px\",\n  overflow: \"hidden\",\n  clip: \"rect(0, 0, 0, 0)\",\n  whiteSpace: \"nowr"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Accordion/Accordion.tsx",
+      "sha256": "e7a9904e92a5774df6ccc798eb8b1d8738dcf8b12b499bdfb066a8104390eadd",
+      "calls": [
+        {
+          "line": 7,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "accordionStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Accordion/accordion.styles.ts",
+      "sha256": "9a1f4f25e3dd9aaf99b2ec1498b369af3ba1d4ea430f336a892306c9c4a352c2",
+      "calls": [
+        {
+          "line": 8,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { height: 0 },\n  to: { height: \"var(--radix-accordion-content-height)\" },\n}"
+        },
+        {
+          "line": 12,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { height: \"var(--radix-accordion-content-height)\" },\n  to: { height: 0 },\n}"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "accordionStyles",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Button/Button.tsx",
+      "sha256": "5b72376f3b738d508114641de70c66624ba4e039050147a1a76d35b01d34ca86",
+      "calls": [
+        {
+          "line": 6,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "buttonStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Button/button.styles.ts",
+      "sha256": "ad4af475aeb911dd0044067dcdbc604ff33a2450532b21d116084f2a5c284fe5",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "buttonStyles",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Buttons/Buttons.tsx",
+      "sha256": "39c9978102385c9282980e35d7fab6f2ef76d0d848dd0c132e078ddd3f2d0dfa",
+      "calls": [
+        {
+          "line": 8,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "buttonsStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Buttons/buttons.styles.ts",
+      "sha256": "5d933c19b8fd032999c93529278a1c6a67d4cb5a5c06a0b9a3544267a79af479",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "buttonsStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Calendar/Calendar.tsx",
+      "sha256": "0edaf8b4756c5fd391a2e1088891ca78aca29920473c895c7bd49df0385fd9d5",
+      "calls": [
+        {
+          "line": 10,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "calendarStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Calendar/calendar.styles.ts",
+      "sha256": "413ffbfe96d3182824bb7d8ff22c99134c224a97d06225f49ef001b5ce44a2ad",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "calendarStyles",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Callout/callout.styles.ts",
+      "sha256": "283f12ae2aa84720b6d76ca860791f8d7ee0288ea3c1c3a1d3e527d12e8ba356",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 10,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 15,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 22,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 28,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 34,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 40,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 46,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 53,
+          "api": "keyframes",
+          "form": "template"
+        },
+        {
+          "line": 54,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Card/Card.tsx",
+      "sha256": "23f2761ce810fde22c0c0a427f4e6b80a11588d8ce4063c99ccec0a19bcf0daa",
+      "calls": [
+        {
+          "line": 6,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "cardStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Card/card.styles.ts",
+      "sha256": "6084367034fd66d45a18094fcce3d94bc548dada09243dfcad5f2f9ef44936e6",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "cardStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/CardHeader/CardHeader.tsx",
+      "sha256": "caceda84039a6ba12d4c774407e627f6cf2aa74d3d2b60dfdbb1cdb0b6a4137a",
+      "calls": [
+        {
+          "line": 8,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "cardHeaderStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/CardHeader/cardHeader.styles.ts",
+      "sha256": "651bf62526a331d7f94b911731ed774f7a7665f6174251fd3b186a14b7cec723",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "cardHeaderStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Carousel/carousel.styles.ts",
+      "sha256": "ba6b6b7bbf9116a898ef84fd9e5428978d83bbe38b5fac6893db668f59d7702f",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"relative\",\n  display: \"flex\",\n  \"@media (max-width: 400px)\": { \"& .openui-carousel-item\": { width: \"248px\", flexShrink: 0 } },\n  \"&.openui-carous"
+        },
+        {
+          "line": 10,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"relative\",\n  display: \"flex\",\n  flexDirection: \"row\",\n  gap: \"var(--openui-space-m, 12px)\",\n  overflowX: \"auto\",\n  scrollSnapType: \"x mandatory\","
+        },
+        {
+          "line": 37,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  font: 'var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)',\n  letterSpacing: \"var(--openui-text-body-default-letter-spacing, -0.01em)\",\n  fon"
+        },
+        {
+          "line": 51,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"absolute\",\n  top: \"50%\",\n  zIndex: 10,\n  transform: \"translateY(-50%)\",\n  background: \"var(--openui-foreground, oklch(0.994 0 89.876 / 1))\",\n  di"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "carouselClass",
+          "line": 2
+        },
+        {
+          "name": "contentClass",
+          "line": 10
+        },
+        {
+          "name": "itemClass",
+          "line": 37
+        },
+        {
+          "name": "buttonClass",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/AreaChart/areaChart.styles.ts",
+      "sha256": "e92d50cec91ccdc8e2a81533336122229da817512f2395fd2b52b0827b096d1c",
+      "calls": [
+        {
+          "line": 17,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  ...cartesianContainer,\n  \"& :where(.openui-area-chart-container-inner)\": cartesianContainerInner,\n  \"& :where(.openui-area-chart-y-axis-container)\": cartesi"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/BarChart/barChart.styles.ts",
+      "sha256": "997a56408abe70ff5facf3068e184cfe6179c5f025172f4415e217e97fba34c1",
+      "calls": [
+        {
+          "line": 12,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{ from: { transform: \"scaleY(0)\" }, to: { transform: \"scaleY(1)\" } }"
+        },
+        {
+          "line": 13,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  ...cartesianContainer,\n  \"& :where(.openui-bar-chart-container-inner)\": cartesianContainerInner,\n  \"& :where(.openui-bar-chart-y-axis-container)\": cartesian"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/BarChart/horizontalBarChart.styles.ts",
+      "sha256": "8c4d15f9a2f66f9b8edc07bbb08b5d79b45740ac3fbac2b739e4f6d14e5cf072",
+      "calls": [
+        {
+          "line": 5,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{ from: { transform: \"scaleX(0)\" }, to: { transform: \"scaleX(1)\" } }"
+        },
+        {
+          "line": 6,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"relative\",\n  width: \"100%\",\n  height: \"auto\",\n  display: \"flex\",\n  flexDirection: \"column\",\n  \"& :where(.openui-horizontal-bar-chart-container-in"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts",
+      "sha256": "8db5eae5e2cb111bc58a927545144c8d8b67a76b5b161f90cce2c2003fe72ad0",
+      "calls": [
+        {
+          "line": 2,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{ from: { opacity: 0 }, to: { opacity: 1 } }"
+        },
+        {
+          "line": 3,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/FunnelChart/funnelChart.styles.ts",
+      "sha256": "460a3a5f4dca92f18439772336c0ec9e009670bf2e8ae80d0074bb81397f3bc9",
+      "calls": [
+        {
+          "line": 2,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { opacity: 0, transform: \"scale(0.85)\" },\n  to: { opacity: 1, transform: \"scale(1)\" },\n}"
+        },
+        {
+          "line": 6,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/HeatmapChart/heatmapChart.styles.ts",
+      "sha256": "7d8e7a140bc358f2ecc2dda96a64a79953b45e5721e6564ecaf4a3b9f108b145",
+      "calls": [
+        {
+          "line": 10,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  ...centeredContainer,\n  \"& :where(.openui-heatmap-chart-x-tick), & :where(.openui-heatmap-chart-y-tick)\": svgTickLabel,\n  \"& :where(.openui-heatmap-chart-ce"
+        },
+        {
+          "line": 64,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  \"&::after\": {\n    content: '\\\"\\\"',\n    position: \"absolute\",\n    left: \"50%\",\n    top: 0,\n    bottom: 0,\n    width: \"2px\",\n    transform: \"translateX(-50%)\""
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/LineChart/lineChart.styles.ts",
+      "sha256": "f2747b7adc90075fcce628768ac299065f69457d70317a5d4627d57b8590c195",
+      "calls": [
+        {
+          "line": 16,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  ...cartesianContainer,\n  \"& :where(.openui-line-chart-container-inner)\": cartesianContainerInner,\n  \"& :where(.openui-line-chart-y-axis-container)\": cartesi"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/PieChart/pieChart.styles.ts",
+      "sha256": "df024b9831c248eff35afaf1d181ac3f551bc435417633bbe17ee220787b1feb",
+      "calls": [
+        {
+          "line": 3,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { opacity: 0, transform: \"scale(0.8)\" },\n  to: { opacity: 1, transform: \"scale(1)\" },\n}"
+        },
+        {
+          "line": 7,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  ...centeredContainer,\n  \"& :where(.openui-pie-chart-svg-wrapper)\": centeredSvgWrapper,\n  \"& :where(.openui-pie-chart-track)\": {\n    fill: \"var(--openui-sunk"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/RadarChart/radarChart.styles.ts",
+      "sha256": "929ae64c6dab48da879be27ea60820653fbb610bd579550a6a5577fbeef9f118",
+      "calls": [
+        {
+          "line": 9,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { opacity: 0, transform: \"scale(0.3)\" },\n  to: { opacity: 1, transform: \"scale(1)\" },\n}"
+        },
+        {
+          "line": 13,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  ...centeredContainer,\n  \"& :where(.openui-radar-chart-svg-wrapper)\": centeredSvgWrapper,\n  \"& svg:where(.openui-radar-chart-svg-wrapper > svg)\": { overflow:"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/RadialChart/radialChart.styles.ts",
+      "sha256": "f89bba654b4302df7cb5f076f54758f59dbf0668de2005d8baeb234b8a0dff20",
+      "calls": [
+        {
+          "line": 4,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  ...centeredContainer,\n  \"& :where(.openui-radial-chart-svg-wrapper)\": centeredSvgWrapper,\n  \"& :where(.openui-radial-chart-grid-circle)\": {\n    stroke: \"var"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/ScatterChart/scatterChart.styles.ts",
+      "sha256": "5df95afd19a4f4821a6a07ac1f5b8f8b869d13496bd79320de5a641747cf1262",
+      "calls": [
+        {
+          "line": 4,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{ from: { opacity: 0, r: 0 }, to: { opacity: 1 } }"
+        },
+        {
+          "line": 5,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  ...centeredContainer,\n  \"& line:where(.openui-scatter-chart-grid line)\": gridLine,\n  \"& line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)\": "
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/SegmentedBar/segmentedBar.styles.ts",
+      "sha256": "9fc73ff3fa5df96da4fd56b6ee5a77aa4d4e92dc5fb5c67337fc54193c2e1028",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/animations/drawLine.styles.ts",
+      "sha256": "d976903d8c704dcc7ac5ca2c6781f231296721f22a6b75004eb0e9ed0a923f3a",
+      "calls": [
+        {
+          "line": 2,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{ to: { strokeDashoffset: 0 } }"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/animations/fadeAppear.styles.ts",
+      "sha256": "51e49a68d3b4e1a8f6ac1ee086e4cf430e77f27c220287ed95e94b03de926921",
+      "calls": [
+        {
+          "line": 2,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{ from: { opacity: 0 }, to: { opacity: 1 } }"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts",
+      "sha256": "aca192524ccbd520c078731826d78e98a60e19a0a41ef1582914025ce1481655",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts",
+      "sha256": "372e80140ef2ec8ae0409c6a34949294720143d4f215032aae16fc96f6a7348e",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/chartBase.styles.ts",
+      "sha256": "46784aa1cd2d9e14bfc4ad385ac7010650e41447d4ba63da8d3d99454efd6c68",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 14,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 21,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/chartBaseDeclarations.ts",
+      "sha256": "3efeb2b51b939f67b7ef970d6810999370948996b1712dce042b9be92cb0bbcc",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "cartesianContainer",
+          "line": 4
+        },
+        {
+          "name": "cartesianContainerInner",
+          "line": 11
+        },
+        {
+          "name": "cartesianYAxisContainer",
+          "line": 17
+        },
+        {
+          "name": "cartesianMainContainer",
+          "line": 18
+        },
+        {
+          "name": "centeredContainer",
+          "line": 27
+        },
+        {
+          "name": "centeredSvgWrapper",
+          "line": 34
+        },
+        {
+          "name": "gridLine",
+          "line": 39
+        },
+        {
+          "name": "zeroGridLine",
+          "line": 43
+        },
+        {
+          "name": "activeDotOuter",
+          "line": 44
+        },
+        {
+          "name": "activeDotInner",
+          "line": 49
+        },
+        {
+          "name": "crosshairLine",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/chartTypography.ts",
+      "sha256": "9ca7bafb5c5968a75ebc07145b9781cfbab2df883d6c4b8ba52dee065b1578f3",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "svgTickLabel",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/core/DefaultLegend/defaultLegend.styles.ts",
+      "sha256": "0cd25d3d032eb641267ae46f5c4487a5c69c64a1dca28efd8c4d264c596fb524",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts",
+      "sha256": "3baf1d2c63848f897e97d230bf06e45757170a9c05e046c07ce75c5860932309",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 9,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
+      "sha256": "aad727aa5bdd58d7f8c3db7a4d732bc2a464f7faba3477b8f702f78c20f7f3ca",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 130,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 178,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/mini/miniChart.styles.ts",
+      "sha256": "3c48780f09a59db0b959eba6fd5443f88e254365dde22d0797d71044ab0e676f",
+      "calls": [
+        {
+          "line": 3,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/CheckBoxGroup/CheckBoxGroup.tsx",
+      "sha256": "81218496a46963d5d1e31665ca067c9b393a49d74ba2a3294e9b0e2809d2df45",
+      "calls": [
+        {
+          "line": 7,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "componentStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/CheckBoxGroup/styles.ts",
+      "sha256": "87e1b8171bc2a91dcafa914c7ffcdd02a715b9ac507b586721c25c33ff99476f",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "componentStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/CheckBoxItem/CheckBoxItem.tsx",
+      "sha256": "7019abbf5fd797fbbb67833db3d392de487fa411ff5c7505b769c05900801261",
+      "calls": [
+        {
+          "line": 7,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "componentStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/CheckBoxItem/styles.ts",
+      "sha256": "f85fb7e3cba30c35879ad96484adcf3aab12ab777a744113792412ced4dc519f",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "componentStyles",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Chips/Chips.tsx",
+      "sha256": "30d26eaee95922478d1d7ecaffa7295c30d75c49493843a020e3e9ffec9c2814",
+      "calls": [
+        {
+          "line": 6,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "chipsStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Chips/chips.styles.ts",
+      "sha256": "12a29c3ab0056f9141c6afd097ebc1310ed4ed79fa7bd38d2c3313abf6641df0",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "chipsStyles",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Citation/citation.styles.ts",
+      "sha256": "06fed3970662afbf6c8b38983da31300f9e5a7508c644a23a303239e9acb8748",
+      "calls": [
+        {
+          "line": 2,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { opacity: 0, transform: \"translateY(-2px)\" },\n  to: { opacity: 1, transform: \"translateY(0)\" },\n}"
+        },
+        {
+          "line": 6,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { opacity: 0, transform: \"translateY(2px)\" },\n  to: { opacity: 1, transform: \"translateY(0)\" },\n}"
+        },
+        {
+          "line": 10,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { opacity: 0, transform: \"translateX(2px)\" },\n  to: { opacity: 1, transform: \"translateX(0)\" },\n}"
+        },
+        {
+          "line": 14,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { opacity: 0, transform: \"translateX(-2px)\" },\n  to: { opacity: 1, transform: \"translateX(0)\" },\n}"
+        },
+        {
+          "line": 18,
+          "api": "css",
+          "form": "object",
+          "expression": "{ position: \"relative\", display: \"inline-flex\" }"
+        },
+        {
+          "line": 19,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  height: \"20px\",\n  width: \"20px\",\n  flexShrink: 0,\n  display: \"flex\",\n  alignItems: \"center\",\n  justifyContent: \"center\",\n  padding: \"var(--openui-space-3xs,"
+        },
+        {
+          "line": 43,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  backgroundColor: \"var(--openui-foreground, oklch(0.994 0 89.876 / 1))\",\n  border: \"1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))\",\n  borde"
+        },
+        {
+          "line": 61,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  padding: \"var(--openui-space-xs, 6px)\",\n  display: \"flex\",\n  flexDirection: \"column\",\n  gap: \"var(--openui-space-2xs, 4px)\",\n  overflowY: \"auto\",\n  maxHeigh"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "triggerClass",
+          "line": 19
+        },
+        {
+          "name": "tooltipClass",
+          "line": 43
+        },
+        {
+          "name": "tooltipContentClass",
+          "line": 61
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Citation/citationItem.styles.ts",
+      "sha256": "6cb69494766ac673dc1ae1b141d78cf4da100792b39b407000d9fb2d82d02548",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  alignItems: \"center\",\n  gap: \"var(--openui-space-s, 8px)\",\n  border: \"none\",\n  padding:\n    \"var(--openui-space-xs, 6px) var(--openui-spa"
+        },
+        {
+          "line": 24,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  flexShrink: 0,\n  width: \"24px\",\n  height: \"24px\",\n  display: \"flex\",\n  alignItems: \"center\",\n  justifyContent: \"center\",\n  border: \"1px solid var(--openui-b"
+        },
+        {
+          "line": 36,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  flexGrow: 1,\n  alignItems: \"baseline\",\n  gap: \"var(--openui-space-s, 8px)\",\n  minWidth: 0,\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 43,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  color: \"var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))\",\n  whiteSpace: \"nowrap\",\n  overflow: \"hidden\",\n  textOverflow: \"ellipsis\",\n} satisfies CSS"
+        },
+        {
+          "line": 49,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  color: \"var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))\",\n  whiteSpace: \"nowrap\",\n  overflow: \"hidden\",\n  textOverflow: \"ellipsis\",\n} satisfies"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "itemClass",
+          "line": 2
+        },
+        {
+          "name": "logoClass",
+          "line": 24
+        },
+        {
+          "name": "contentClass",
+          "line": 36
+        },
+        {
+          "name": "titleClass",
+          "line": 43
+        },
+        {
+          "name": "sourceClass",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/CodeBlock/codeBlock.styles.ts",
+      "sha256": "740c175945babab2d81ccbcd944f97a1afbdae10dfe7c7e6983cae0860462fae",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"relative\",\n  \"&:hover .openui-code-block-copy-button\": { opacity: 1 },\n  \"& .openui-code-block-copy-button\": {\n    position: \"absolute\",\n    righ"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "wrapperClass",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/CompositeCardBlock/card.styles.ts",
+      "sha256": "523c13c0cee6934994d9e38266be29c91911b36ac81b4d23bd2deb016e6cc4ad",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 5,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ContextCardBlock/card.styles.ts",
+      "sha256": "1e0b07a30003974279a5f43ce1a507236fe36649a238545ada92535b3ac977ec",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 15,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/DatePicker/datePicker.styles.ts",
+      "sha256": "9a3fa5bf932c8ffad3586a359bf21a4e62da8daff1cde449b127cae47612c66a",
+      "calls": [
+        {
+          "line": 2,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { opacity: 0, transform: \"scale(0.95)\" },\n  to: { opacity: 1, transform: \"scale(1)\" },\n}"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "datePickerStyles",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/DatePicker/helpers/components/FloatingDatePickerRenderer.tsx",
+      "sha256": "4f3e27790f4764a4096007d5969c4ba07abb32ed8ffd50bee7bacd99e7bcaec2",
+      "calls": [
+        {
+          "line": 14,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "datePickerStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/DotMatrixLoader/DotMatrixLoader.tsx",
+      "sha256": "61d07e79bd00515b34fab1b8eed6e85140dc396939f829a1a8c574ec989c8915",
+      "calls": [
+        {
+          "line": 6,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "loaderStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/DotMatrixLoader/dotMatrixLoader.styles.ts",
+      "sha256": "dfc0f47b471f002b199b756d91dffff05b2d5c8827bf40bf0f322ac291ff2ccc",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "loaderStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/EditableTable/base/components/editableCell.styles.ts",
+      "sha256": "0cd8bb846648e7f74fd85771ec017aa4c2d55c1352d5e0cff87e0cdbf4dcb160",
+      "calls": [
+        {
+          "line": 15,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"relative\",\n  width: \"100%\",\n  height: \"100%\",\n  padding: \"var(--openui-space-s, 8px) var(--openui-space-m, 12px)\",\n  color: \"var(--openui-text-ne"
+        },
+        {
+          "line": 23,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  height: \"100%\",\n  width: \"100%\",\n  padding: 0,\n  backgroundColor: \"transparent\",\n  outline: \"none\",\n  appearance: \"textfield\",\n  \"&::-webkit-inner-spin-butt"
+        },
+        {
+          "line": 32,
+          "api": "css",
+          "form": "object",
+          "expression": "{ ...centered, ...ellipsis, ...bodySmall } satisfies CSSAttribute"
+        },
+        {
+          "line": 33,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  ...centered,\n  ...ellipsis,\n  textAlign: \"right\",\n  font: 'var(--openui-text-numbers-sm, 400 14px/1.5 \"Inter\", sans-serif)',\n  letterSpacing: \"var(--openui-"
+        },
+        {
+          "line": 41,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"block\",\n  flex: \"1 1 auto\",\n  minWidth: 0,\n  ...ellipsis,\n  ...bodySmall,\n  \"&:hover\": { textDecoration: \"underline\" },\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 49,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  alignItems: \"center\",\n  gap: \"var(--openui-space-s, 8px)\",\n  ...centered,\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 55,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  flexShrink: 0,\n  color: \"var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))\",\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 59,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  flexShrink: 0,\n  color: \"var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1))\",\n  display: \"none\",\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 64,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"absolute\",\n  left: 0,\n  width: \"100%\",\n  height: \"0px\",\n  backgroundColor: \"var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1))\",\n  \""
+        },
+        {
+          "line": 77,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"absolute\",\n  top: 0,\n  width: \"0px\",\n  height: \"100%\",\n  backgroundColor: \"var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1))\",\n  \"&"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "centered",
+          "line": 7
+        },
+        {
+          "name": "cellClass",
+          "line": 15
+        },
+        {
+          "name": "inputClass",
+          "line": 23
+        },
+        {
+          "name": "textClass",
+          "line": 32
+        },
+        {
+          "name": "numberClass",
+          "line": 33
+        },
+        {
+          "name": "urlClass",
+          "line": 41
+        },
+        {
+          "name": "urlContainerClass",
+          "line": 49
+        },
+        {
+          "name": "urlIconClass",
+          "line": 55
+        },
+        {
+          "name": "warningClass",
+          "line": 59
+        },
+        {
+          "name": "horizontalOutlineClass",
+          "line": 64
+        },
+        {
+          "name": "verticalOutlineClass",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/EditableTable/base/components/editableSelectCell.styles.ts",
+      "sha256": "996fea4e0def7d5475be8e7a1c5c68a31987a2d23c8d740ab186fd6d8d8f9a1a",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "object",
+          "expression": "{ width: \"100%\" } satisfies CSSAttribute"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "triggerClass",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/EditableTable/editableTable.styles.ts",
+      "sha256": "24043a7ebb6bfabb42f47d367cc7c85763b3c1b2356001f251bb86438fe7a042",
+      "calls": [
+        {
+          "line": 7,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  border: \"1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))\",\n  borderRadius: \"var(--openui-radius-xl, 12px) var(--openui-radius-xl, 12px) 0 0\""
+        },
+        {
+          "line": 13,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  overflow: \"auto\",\n  scrollbarWidth: \"none\",\n  msOverflowStyle: \"none\",\n  \"&::-webkit-scrollbar\": { display: \"none\" },\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 19,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"absolute\",\n  top: \"var(--openui-space-s, 8px)\",\n  zIndex: 1,\n  width: \"fit-content\",\n  height: \"fit-content\",\n  borderRadius: \"var(--openui-radiu"
+        },
+        {
+          "line": 32,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  borderCollapse: \"collapse\",\n  \"& .openui-select-trigger\": { ...smallBody, width: \"100%\" },\n  \"& thead th\": {\n    textAlign: \"left\",\n    padding: \"var(--open"
+        },
+        {
+          "line": 59,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  alignItems: \"center\",\n  justifyContent: \"space-between\",\n  gap: \"var(--openui-space-s, 8px)\",\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 65,
+          "api": "css",
+          "form": "object",
+          "expression": "{ flexShrink: 0 } satisfies CSSAttribute"
+        },
+        {
+          "line": 66,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  flexDirection: \"row\",\n  gap: \"var(--openui-space-s, 8px)\",\n  padding:\n    \"var(--openui-space-s, 8px) var(--openui-space-s, 8px) var(--op"
+        },
+        {
+          "line": 80,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  font: 'var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)',\n  letterSpacing: \"var(--openui-text-body-default-letter-spacing, -0.01em)\",\n  fon"
+        },
+        {
+          "line": 85,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  flexDirection: \"row\",\n  gap: \"var(--openui-space-s, 8px)\",\n} satisfies CSSAttribute"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "wrapperClass",
+          "line": 7
+        },
+        {
+          "name": "scrollClass",
+          "line": 13
+        },
+        {
+          "name": "controlClass",
+          "line": 19
+        },
+        {
+          "name": "tableClass",
+          "line": 32
+        },
+        {
+          "name": "headerClass",
+          "line": 59
+        },
+        {
+          "name": "headerIconClass",
+          "line": 65
+        },
+        {
+          "name": "changesClass",
+          "line": 66
+        },
+        {
+          "name": "changesCountClass",
+          "line": 80
+        },
+        {
+          "name": "changesButtonsClass",
+          "line": 85
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/EntityList/entityList.styles.ts",
+      "sha256": "51bfd89ef447c3109ba8179b45a6b1f4da026aec16b3c966f830042e3f5538f6",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/FormControl/FormControl.tsx",
+      "sha256": "4513743abfabed9a4368b090dd1617a79ed942808adcebb79a002df137dd4436",
+      "calls": [
+        {
+          "line": 6,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "formControlStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/FormControl/Hint/Hint.tsx",
+      "sha256": "3fb77057c5b1eaf663d42e96d24ba20caf217072428826c4210eed593384edcd",
+      "calls": [
+        {
+          "line": 7,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "hintStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/FormControl/Hint/hint.styles.ts",
+      "sha256": "b8cb9afe96d9e05e8c0da26af2a0cebbcd99139f33c73e5f5d14786f81f09ea2",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "hintStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/FormControl/formControl.styles.ts",
+      "sha256": "bbd5a73610711da1ac2e598655704a47c4cf3299a9d5f169038a6bb3207a58a1",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "formControlStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/IconButton/IconButton.tsx",
+      "sha256": "c2ed5db36fd233d52811dd5689b38843a31bcf9f39b1484b9bf5858d9c68690d",
+      "calls": [
+        {
+          "line": 7,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "iconButtonStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/IconButton/iconButton.styles.ts",
+      "sha256": "e92f2d0e9c68f64c0901d9d9b74b4d7f31538fbd80fd9daf21377e2b7e882a28",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "iconButtonStyles",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/IconTag/iconTag.styles.ts",
+      "sha256": "4e9fcf8757fcf4a3365b7bbf428dd9c28e1e45097971168104f7f0b08ff97977",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 10,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 19,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 28,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 37,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 46,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 57,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 61,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 65,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 69,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 73,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 77,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/IconText/iconText.styles.ts",
+      "sha256": "97ac3265f7e8ef3ebe09b5f6fc483ff714d1fe1924798446f6dc6ab2602c540c",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 7,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 11,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 24,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Image/image.styles.ts",
+      "sha256": "5d74d104ea755b10520407aa572e1091fdce5461fb70b6c732938ceff5043eea",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 12,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 17,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 22,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ImageBlock/imageBlock.styles.ts",
+      "sha256": "3fdcc6e4c737c901083b66ed9fd9e2d509f4e162e218cda15b3f76d872525d85",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 29,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 34,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 37,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 46,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 51,
+          "api": "keyframes",
+          "form": "template"
+        },
+        {
+          "line": 52,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ImageGallery/galleryModal.styles.ts",
+      "sha256": "8034ab2e77912d04045eed873a731c3944dd1a9a4cf0c3f92eedd9db3c5a19ec",
+      "calls": [
+        {
+          "line": 2,
+          "api": "keyframes",
+          "form": "template"
+        },
+        {
+          "line": 3,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 17,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 40,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 47,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 52,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 67,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 74,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 86,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 98,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 101,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 104,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 124,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ImageGallery/imageGallery.styles.ts",
+      "sha256": "b246cf0726082f809e12b859a45a5fee779072b44d5168e29fa4b600185bbc69",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 10,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 17,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 22,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 27,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 52,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 71,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 103,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 116,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 121,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ImageText/imageText.styles.ts",
+      "sha256": "e010199d55bfd53686b078c5a108b3198898adcec5a13d7e558687d9a46383a4",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 6,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 18,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 24,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 28,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 41,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ImageTextLarge/imageTextLarge.styles.ts",
+      "sha256": "aef28ec0ba2010f469100a22561e06084b94314d78d742958c1f8455f4d14ded",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 9,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 19,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/InlineHeader/inlineHeader.styles.ts",
+      "sha256": "3b6257e9caeea9be9333d21cc9fcfc0e3b595d978524cf8df1a34316c1f5f7c5",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  flexDirection: \"column\",\n  gap: \"var(--openui-space-3xs, 2px)\",\n  alignItems: \"flex-start\",\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 8,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  alignItems: \"center\",\n  gap: \"var(--openui-space-xs, 6px)\",\n  color: \"var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))\",\n  font: "
+        },
+        {
+          "line": 17,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  color: \"var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))\",\n  font: 'var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)',\n  letter"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "rootClass",
+          "line": 2
+        },
+        {
+          "name": "headingClass",
+          "line": 8
+        },
+        {
+          "name": "descriptionClass",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/InlineMarkdownRenderer/inlineMarkdown.styles.ts",
+      "sha256": "04e736934749bce3efb6ca94728c876678b2b6a629db98e699f75d4541a4c91a",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"inline\",\n  textAlign: \"inherit\",\n  \"& .openui-markdown-renderer\": {\n    all: \"unset\",\n    display: \"inline\",\n    color: \"inherit\",\n    font: \"inhe"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "rootClass",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Input/Input.tsx",
+      "sha256": "2a12555b54e605ef94173a0ab762bdcfeb36a248c2cefcc13a90857ae4edf691",
+      "calls": [
+        {
+          "line": 7,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "inputStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Input/input.styles.ts",
+      "sha256": "30f3b4ada6a8b031472173ecdd0595b7d419a745b17e8d624927c3c6a85d90bc",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "inputStyles",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Label/Label.tsx",
+      "sha256": "94c2ddb184daebaa79b615b8a80df1e427bbdac32a29d96c547537d4bc22fa00",
+      "calls": [
+        {
+          "line": 7,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "labelStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Label/label.styles.ts",
+      "sha256": "f5c03014205d0f0857055a904b485f33ccfc7c12e5e36ae4de4d3d708b0e83b9",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "labelStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ListBlock/listBlock.styles.ts",
+      "sha256": "526e0a9f5d3eb9d7cac187091036723710ae567fc7666229793688e18b8642be",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ListItem/listItem.styles.ts",
+      "sha256": "1f19f48600f0799f38a677bc513ea8cd602960db6e0769ffb8f6f8c4c859e3fb",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/MarkDownRenderer/markdown.styles.ts",
+      "sha256": "a0d983930b006d0f07ddb167cc6402bc748997d6ba46fd9c9a1a8af03c5fc3e7",
+      "calls": [
+        {
+          "line": 17,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  borderRadius: \"4px\",\n  padding: \"2px 4px\",\n  backgroundColor: \"var(--openui-sunk, oklch(0.097 0 0 / 0.04))\",\n  border: \"1px solid var(--openui-border-defaul"
+        },
+        {
+          "line": 27,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  color: \"var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1))\",\n  cursor: \"pointer\",\n  textDecoration: \"none\",\n  transition: \"color 0.2s ease-in-o"
+        },
+        {
+          "line": 35,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  color: primary,\n  ...body,\n  maxWidth: \"none\",\n  \"&:where(.openui-markdown-renderer-card)\": {\n    backgroundColor: \"var(--openui-foreground, oklch(0.994 0 8"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "codeClass",
+          "line": 17
+        },
+        {
+          "name": "linkClass",
+          "line": 27
+        },
+        {
+          "name": "rootClass",
+          "line": 35
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/MetricIndicator/metricIndicator.styles.ts",
+      "sha256": "5a27317a556e1f14451b4becd840972e835f2bcb3b2fa66324350b0c5ecabdb1",
+      "calls": [
+        {
+          "line": 3,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Modal/modal.styles.ts",
+      "sha256": "96b2cb4bd2f4f809252f46b158d44ea61816e896f2c2143eb91be4908e3a0fd6",
+      "calls": [
+        {
+          "line": 2,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{ from: { opacity: 0 }, to: { opacity: 1 } }"
+        },
+        {
+          "line": 3,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { opacity: 0, transform: \"translate(-50%, -48%)\" },\n  to: { opacity: 1, transform: \"translate(-50%, -50%)\" },\n}"
+        },
+        {
+          "line": 7,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"relative\",\n  zIndex: 9999,\n  \"& :where(.openui-modal-sr-only)\": {\n    position: \"absolute\",\n    width: \"1px\",\n    height: \"1px\",\n    padding: 0,\n"
+        },
+        {
+          "line": 22,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"fixed\",\n  inset: 0,\n  background: \"var(--openui-overlay, oklch(0 0 0 / 0.4))\",\n  zIndex: 9999,\n  animation: `${fadeIn} 0.15s ease-out`,\n} satisfi"
+        },
+        {
+          "line": 29,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"fixed\",\n  top: \"50%\",\n  left: \"50%\",\n  transform: \"translate(-50%, -50%)\",\n  zIndex: 10000,\n  background: \"var(--openui-foreground, oklch(0.994 0"
+        },
+        {
+          "line": 49,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  alignItems: \"center\",\n  justifyContent: \"space-between\",\n  padding: \"var(--openui-space-m, 12px)\",\n  borderBottom: \"1px solid var(--openu"
+        },
+        {
+          "line": 56,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  font: 'var(--openui-text-body-default-heavy, 560 16px/1.5 \"Inter\", sans-serif)',\n  letterSpacing: \"var(--openui-text-body-default-heavy-letter-spacing, -0.0"
+        },
+        {
+          "line": 62,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  all: \"unset\",\n  cursor: \"pointer\",\n  display: \"flex\",\n  alignItems: \"center\",\n  justifyContent: \"center\",\n  width: \"28px\",\n  height: \"28px\",\n  borderRadius:"
+        },
+        {
+          "line": 74,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  padding: \"var(--openui-space-m, 12px)\",\n  overflowY: \"auto\",\n  flex: 1,\n  display: \"flex\",\n  flexDirection: \"column\",\n  gap: \"var(--openui-space-m, 12px)\",\n"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "rootClass",
+          "line": 7
+        },
+        {
+          "name": "overlayClass",
+          "line": 22
+        },
+        {
+          "name": "contentClass",
+          "line": 29
+        },
+        {
+          "name": "headerClass",
+          "line": 49
+        },
+        {
+          "name": "titleClass",
+          "line": 56
+        },
+        {
+          "name": "closeClass",
+          "line": 62
+        },
+        {
+          "name": "bodyClass",
+          "line": 74
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/OptionCards/optionCards.styles.ts",
+      "sha256": "3d8f8ca0fd483696e103e49531e35a16b66f4ebc7699b9845d5b8d9f43ae0e79",
+      "calls": [
+        {
+          "line": 3,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/OverviewCardBlock/overviewCardBlock.styles.ts",
+      "sha256": "8ae482c45f1668ac8cb7c757c9b6eb700c2c38ebccd8b77dfd73f435941375bb",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/RadioGroup/RadioGroup.tsx",
+      "sha256": "1d63bfcb75c34b6d1295b1ff2cd026bb7c1ffd2c070641972548517278f90d96",
+      "calls": [
+        {
+          "line": 8,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "componentStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/RadioGroup/styles.ts",
+      "sha256": "1ec4f1ee61e9e1fa185fc511749837d88ac53ef2a81a686ffe36ed5c6ffe5305",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "componentStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/RadioItem/RadioItem.tsx",
+      "sha256": "de8e00569912fe2d4ce502d498923c0a707d8d793b36d1b1042c9df784611e3d",
+      "calls": [
+        {
+          "line": 7,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "componentStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/RadioItem/styles.ts",
+      "sha256": "968bbdf5d35a2513b40818a5c6ec68341857b5e04a650ef7929ff8f68af76002",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "componentStyles",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/SectionBlock/FoldableSection.tsx",
+      "sha256": "a31ae2bbc02da5db0824964236dbf3fb6b2b399e657199c91d73d4648ba5a72a",
+      "calls": [
+        {
+          "line": 16,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "rootStyles"
+        },
+        {
+          "line": 17,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "itemStyles"
+        },
+        {
+          "line": 18,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "headerStyles"
+        },
+        {
+          "line": 19,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "triggerStyles"
+        },
+        {
+          "line": 20,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "contentStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/SectionBlock/SectionV2.tsx",
+      "sha256": "ee9cdc9b8d644dc2f8605c2a662d0615ff28d388043216e1200d43a5d1bd787f",
+      "calls": [
+        {
+          "line": 6,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "sectionStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/SectionBlock/foldableSection.styles.ts",
+      "sha256": "3ef473755082ed2958ce7396221ae9ba5df07895022fac78a952f5b812797f5e",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "rootStyles",
+          "line": 2
+        },
+        {
+          "name": "itemStyles",
+          "line": 8
+        },
+        {
+          "name": "headerStyles",
+          "line": 14
+        },
+        {
+          "name": "triggerStyles",
+          "line": 21
+        },
+        {
+          "name": "contentStyles",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/SectionBlock/sectionV2.styles.ts",
+      "sha256": "f7055239f091d157244aaefbbe935f8f8825433802468c859b2a7ab8ca0f6a25",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "sectionStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Select/select.styles.ts",
+      "sha256": "e88b0016d15486357d671c7004263378ec5dc12b39ddba0c3f3e623cc443691c",
+      "calls": [
+        {
+          "line": 13,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { opacity: 0, transform: \"scale(0.95)\" },\n  to: { opacity: 1, transform: \"scale(1)\" },\n}"
+        },
+        {
+          "line": 18,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  boxSizing: \"border-box\",\n  backgroundColor: \"var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))\",\n  color: \"var(--openui-text-neutral-primary, oklch(0."
+        },
+        {
+          "line": 65,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  boxSizing: \"border-box\",\n  position: \"relative\",\n  zIndex: 99999,\n  maxHeight: \"372px\",\n  minWidth: \"var(--radix-select-trigger-width)\",\n  overflow: \"hidden"
+        },
+        {
+          "line": 93,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  boxSizing: \"border-box\",\n  padding: \"var(--openui-space-2xs, 4px) 0\",\n  '&[data-position=\"popper\"]': { width: \"100%\" },\n}"
+        },
+        {
+          "line": 98,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  flexDirection: \"column\",\n  gap: \"var(--openui-space-3xs, 2px)\",\n}"
+        },
+        {
+          "line": 103,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  boxSizing: \"border-box\",\n  ...body,\n  padding: \"var(--openui-space-s, 8px) var(--openui-space-m-l, 16px) var(--openui-space-2xs, 4px)\",\n  color:\n    \"color-"
+        },
+        {
+          "line": 112,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  boxSizing: \"border-box\",\n  position: \"relative\",\n  display: \"flex\",\n  cursor: \"default\",\n  userSelect: \"none\",\n  alignItems: \"center\",\n  justifyContent: \"sp"
+        },
+        {
+          "line": 156,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  boxSizing: \"border-box\",\n  margin: \"var(--openui-space-2xs, 4px) 0\",\n  height: \"1px\",\n  borderTop: \"1px solid var(--openui-border-default, oklch(0.097 0 0 /"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "body",
+          "line": 3
+        },
+        {
+          "name": "small",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Separator/Separator.tsx",
+      "sha256": "4582bcf50b5058f92934c9eeed6e8d87d9c1b88676d6bf8a0d3b03f0e7e199b9",
+      "calls": [
+        {
+          "line": 6,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "separatorStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Separator/separator.styles.ts",
+      "sha256": "5647387759c3fc0f73c69b6a5460b8e0b251a80d4d6b1032b2d5f08c6d1b2793",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "separatorStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Skeleton/PieChartSkeleton.tsx",
+      "sha256": "92c2b8de176fdb4f9fd230bd87eddb2433d048821c537c11f0c4f68c1e390b70",
+      "calls": [
+        {
+          "line": 5,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "pieStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Skeleton/Skeleton.tsx",
+      "sha256": "04b8bb9369e7a52d2d0fbe272e92069978fef725e74f8c7de0079013a48dc742",
+      "calls": [
+        {
+          "line": 5,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "stackStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Skeleton/SkeletonBar.tsx",
+      "sha256": "184622c97cd0e225422e9b3408fb3a08aa56dc036525be0a0c44444c3a7febc8",
+      "calls": [
+        {
+          "line": 4,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "barStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Skeleton/TableSkeleton.tsx",
+      "sha256": "6a0a92aca6cda0b77c8a4c5f272b7cf28e6f1b6ebecce92f814754eea2fe290a",
+      "calls": [
+        {
+          "line": 5,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "tableStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Skeleton/pieChartSkeleton.styles.ts",
+      "sha256": "034cf61ffb7649eda6db66688fa74ff6e93a743c919b9505ee776147ece0edb9",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "pieStyles",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Skeleton/skeleton.styles.ts",
+      "sha256": "48a2c59fc3dfa570da268472bc3fe1a4f47f754a5db22ea10efbdf6869fe17bd",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "barStyles",
+          "line": 3
+        },
+        {
+          "name": "stackStyles",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Skeleton/skeletonPulse.ts",
+      "sha256": "6bd5c95915cb54205462a0e08a7b9d0dcb7795c71846a4057b46955a96e3ded3",
+      "calls": [
+        {
+          "line": 2,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  \"0%\": { opacity: 0.3 },\n  \"50%\": { opacity: 0.85 },\n  \"100%\": { opacity: 0.3 },\n}"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Skeleton/tableSkeleton.styles.ts",
+      "sha256": "f8ffcdd8771866cb0e907e8c10d3382608337df0391a0333b4116d3b8d6d172d",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "tableStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Slider/Slider.tsx",
+      "sha256": "3bd1abc55e21f0a0f549c0cab0b4139bac5870f46513ed96675306b3c454b835",
+      "calls": [
+        {
+          "line": 7,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "sliderStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Slider/SliderBlock.tsx",
+      "sha256": "e432293b3055f42c61bf2e14308b1e7dc5b028a238ae0a1762e1de0dd6e8a51a",
+      "calls": [
+        {
+          "line": 11,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "sliderBlockStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Slider/slider.styles.ts",
+      "sha256": "896b3767924e51a89dcfbef244603eae7a3b2870bda9b50086d9435fe4b81e27",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "sliderStyles",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Slider/sliderBlock.styles.ts",
+      "sha256": "a3fc2bfc030c85125bd37023cc7e991261cc9412883d3e6b7e8e37595df51d7c",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "sliderBlockStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/SnippetCardBlock/snippetCardBlock.styles.ts",
+      "sha256": "9be6fd2a1a31d9484eaad3d6ff1ab013f4a0b490cb0bef5782754b0cf9e70f2d",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/SourceFaviconImage/sourceFaviconImage.styles.ts",
+      "sha256": "cd0c05ae1caee47d58fcf2cd9ccef45fdc523e4503ccd95e70a0f58ef70bb4fe",
+      "calls": [
+        {
+          "line": 3,
+          "api": "css",
+          "form": "object",
+          "expression": "{ objectFit: \"cover\", display: \"flex\" }"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Sources/listedSources.styles.ts",
+      "sha256": "1360299784db47d34e391fa52969e3b335747f3dfd313faac799e03d9752795b",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  flexDirection: \"column\",\n  gap: \"var(--openui-space-m, 12px)\",\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 7,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  alignItems: \"center\",\n  justifyContent: \"space-between\",\n  gap: \"var(--openui-space-s, 8px)\",\n}"
+        },
+        {
+          "line": 13,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  color: \"var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))\",\n  font: 'var(--openui-text-label-default-heavy, 560 16px/1.25 \"Inter\", sans-serif)',\n"
+        },
+        {
+          "line": 19,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  alignItems: \"center\",\n  justifyContent: \"center\",\n  gap: \"var(--openui-space-s, 8px)\",\n}"
+        },
+        {
+          "line": 25,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  width: \"180px !important\",\n  padding: \"var(--openui-space-000, 0) !important\",\n  borderRadius: \"var(--openui-radius-l, 10px) !important\",\n  overflow: \"hidde"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "listClass",
+          "line": 2
+        },
+        {
+          "name": "containerClass",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Sources/sourcesItem.styles.ts",
+      "sha256": "640cb3e2cd8a7b64ff9d7d1d89cb62936aa808cea5cfcc1396098e7f89d488ca",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  flexDirection: \"column\",\n  alignItems: \"flex-start\",\n  gap: \"var(--openui-space-2xs, 4px)\",\n  padding: \"var(--openui-space-s, 8px)\",\n  he"
+        },
+        {
+          "line": 11,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  alignItems: \"flex-start\",\n  gap: \"var(--openui-space-s, 8px)\",\n}"
+        },
+        {
+          "line": 16,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  color: \"var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))\",\n  font: 'var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif)',\n  letterSpacing"
+        },
+        {
+          "line": 22,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  color: \"var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))\",\n  font: 'var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)',\n  letterSpaci"
+        },
+        {
+          "line": 28,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  flexShrink: 0,\n  width: \"20px\",\n  height: \"20px\",\n  display: \"flex\",\n  alignItems: \"center\",\n  justifyContent: \"center\",\n  border: \"1px solid var(--openui-b"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "itemClass",
+          "line": 2
+        },
+        {
+          "name": "logoClass",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Steps/Steps.tsx",
+      "sha256": "b51fc9f1832e237ef2f5e784f7f304dfecbeca9771d2a7bc64c1979af77c9660",
+      "calls": [
+        {
+          "line": 4,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "stepsStyles"
+        },
+        {
+          "line": 5,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "stepItemStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Steps/steps.styles.ts",
+      "sha256": "e20d0c5c778db5ac36a5c07cc6f38a8b26a6ba1603e7e4eb4bbcb37f270db9b0",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "stepsStyles",
+          "line": 2
+        },
+        {
+          "name": "stepItemStyles",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/SwitchGroup/SwitchGroup.tsx",
+      "sha256": "ff4a2c7d5e3f7497b02e53823d4dd667dd7c4e58235926c393552bae3bebef40",
+      "calls": [
+        {
+          "line": 7,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "componentStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/SwitchGroup/styles.ts",
+      "sha256": "bdea8bd3e619013a53775708b1e3ce3a7ee9228b73731e9f36bf4bff8a87307d",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "componentStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/SwitchItem/SwitchItem.tsx",
+      "sha256": "18bdf9e3cc89c3a93a0d347a89643d3f192bbde7bd1da945d2a9cd124a1c5512",
+      "calls": [
+        {
+          "line": 7,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "componentStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/SwitchItem/styles.ts",
+      "sha256": "81e1c7de771ff68363b16c1ab0b56504c77aa32a2d2fc2f09089904ff74333cb",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "componentStyles",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Table/scrollableTable.styles.ts",
+      "sha256": "dc461ce77d3ab7f1cf77b21d7340f1d180b86a6423f721a2ac1c81ff05bf51fb",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"relative\",\n  width: \"100%\",\n  outline: \"none\",\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 7,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  overflow: \"auto\",\n  scrollbarWidth: \"none\",\n  msOverflowStyle: \"none\",\n  \"&::-webkit-scrollbar\": { display: \"none\" },\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 13,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"absolute\",\n  top: \"var(--openui-space-s, 8px)\",\n  zIndex: 2,\n  width: \"fit-content\",\n  height: \"fit-content\",\n  borderRadius: \"var(--openui-radiu"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "wrapperClass",
+          "line": 2
+        },
+        {
+          "name": "scrollContainerClass",
+          "line": 7
+        },
+        {
+          "name": "controlClass",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Table/table.styles.ts",
+      "sha256": "a27b569aa0beb0fd77a87002d3b266f28de686c10a86dfb8720de6245ab8d0aa",
+      "calls": [
+        {
+          "line": 14,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"relative\",\n  width: \"100%\",\n  overflow: \"auto\",\n  border: \"1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))\",\n  borderRadius: \"var"
+        },
+        {
+          "line": 21,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  ...smallBody,\n  width: \"100%\",\n  captionSide: \"bottom\",\n  borderCollapse: \"collapse\",\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 27,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  borderTop: \"1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))\",\n  \"& > tr:last-child\": { borderBottom: 0 },\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 31,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  ...padding,\n  borderBottom: \"1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))\",\n  \"& .openui-table-head-label\": {\n    ...smallBody,\n    color"
+        },
+        {
+          "line": 53,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  \"&:nth-child(even)\": {\n    backgroundColor: \"var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))\",\n  },\n  borderBottom: \"1px solid var(--openui-border-d"
+        },
+        {
+          "line": 60,
+          "api": "css",
+          "form": "object",
+          "expression": "{ ...padding, whiteSpace: \"nowrap\" } satisfies CSSAttribute"
+        },
+        {
+          "line": 61,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  \"&:where(.openui-table-align-left)\": { textAlign: \"left\", justifyContent: \"flex-start\" },\n  \"&:where(.openui-table-align-right)\": {\n    textAlign: \"right\",\n"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "containerClass",
+          "line": 14
+        },
+        {
+          "name": "tableClass",
+          "line": 21
+        },
+        {
+          "name": "footerClass",
+          "line": 27
+        },
+        {
+          "name": "headClass",
+          "line": 31
+        },
+        {
+          "name": "rowClass",
+          "line": 53
+        },
+        {
+          "name": "cellClass",
+          "line": 60
+        },
+        {
+          "name": "alignmentClass",
+          "line": 61
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Tabs/tabs.styles.ts",
+      "sha256": "0d066e0071a051da80630a0b4faa2854aac41fd1bb33b07971595373809ce179",
+      "calls": [
+        {
+          "line": 7,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  boxSizing: \"border-box\",\n  display: \"flex\",\n  flexDirection: \"column\",\n  gap: \"var(--openui-space-l, 18px)\",\n  \"&.openui-tabs-clear\": {\n    \"& .openui-tabs-"
+        },
+        {
+          "line": 55,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  position: \"relative\",\n  display: \"flex\",\n  alignItems: \"center\",\n  overflow: \"hidden\",\n  \"&::after\": {\n    content: '\"\"',\n    position: \"absolute\",\n    bott"
+        },
+        {
+          "line": 112,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  width: \"100%\",\n  boxSizing: \"border-box\",\n  display: \"flex\",\n  gap: \"var(--openui-space-3xs, 2px)\",\n  flexDirection: \"row\",\n  padding: \"var(--openui-space-2"
+        },
+        {
+          "line": 157,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  cursor: \"pointer\",\n  display: \"flex\",\n  flexDirection: \"row\",\n  alignItems: \"center\",\n  justifyContent: \"center\",\n  gap: \"var(--openui-space-s, 8px)\",\n  box"
+        },
+        {
+          "line": 232,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  boxSizing: \"border-box\",\n  padding: \"var(--openui-space-l, 18px)\",\n  border: \"1px solid transparent\",\n  borderRadius: \"var(--openui-radius-m, 8px)\",\n  font:"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "tabsClass",
+          "line": 7
+        },
+        {
+          "name": "containerClass",
+          "line": 55
+        },
+        {
+          "name": "listClass",
+          "line": 112
+        },
+        {
+          "name": "triggerClass",
+          "line": 157
+        },
+        {
+          "name": "contentClass",
+          "line": 232
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Tag/tag.styles.ts",
+      "sha256": "5a6541bd27e399b395295475eaa80cf9b4c5ff4d18a2d8c3ed9a9f239fc2fe7a",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 13,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 22,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 28,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 33,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 39,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 47,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 51,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 55,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 59,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 63,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/TagBlock/tagBlock.styles.ts",
+      "sha256": "2e3fe9e305d0c71cd89dcc2d2b05d04a140213d4350587781cb8ba4583826563",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/TextArea/TextArea.tsx",
+      "sha256": "4f54bf23412e1f642ca148b66cc7d3200f026ab552d3be7d9c9b60ba2db0735b",
+      "calls": [
+        {
+          "line": 7,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "textAreaStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/TextArea/textArea.styles.ts",
+      "sha256": "bf2619d9f4f3a230d1647da77c3957741c3241a927b076cf1bf8769f2a361a4c",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "textAreaStyles",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/TextBlock/textBlock.styles.ts",
+      "sha256": "2d0c55b9d3b3eefd3cd361b51082fe167652403cbca6d9296223ac65f2848fce",
+      "calls": [
+        {
+          "line": 87,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  flexDirection: \"column\",\n  gap: \"var(--openui-space-3xs, 2px)\",\n  alignItems: \"flex-start\",\n  textAlign: \"left\",\n  \"& :where(.openui-text"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "rootClass",
+          "line": 87
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/TextCallout/textCallout.styles.ts",
+      "sha256": "9ae9b2ad2ac0741952c0d0211bd6d6e5fc2e9629296b93eb1f4d64ea70151da3",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 11,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 18,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 22,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 26,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 30,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 35,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 39,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 44,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/TextContent/textContent.styles.ts",
+      "sha256": "3c9b0ad1c225501dd2b1524a8ea96316a561d1b18d5614e79befc90c0e7bf113",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 11,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 17,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 22,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/TextContentWrapper/textContentWrapper.styles.ts",
+      "sha256": "1ecac5da91e4daabce7b4e38f21b137a1653bb9ab9d6c0e6f241ab3c63453bba",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  flexDirection: \"column\",\n  gap: \"var(--openui-space-xl, 24px)\",\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 8,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  \"& p:has(+ ol), & p:has(+ ul)\": { marginBottom: \"8px\" },\n  \"&:where(.openui-text-content-markdown-dark-mode) p, &:where(.openui-text-content-markdown-dark-m"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "rootClass",
+          "line": 2
+        },
+        {
+          "name": "markdownClass",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ToggleGroup/ToggleGroup.tsx",
+      "sha256": "493259ac80cc645b85109bc38d16d1e861280094f997c1d0407f9967d9f5597f",
+      "calls": [
+        {
+          "line": 8,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "componentStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ToggleGroup/styles.ts",
+      "sha256": "41ad9aa038dbf4fa93084e19fc55592d260e473c7b799655c148a717dd7bbe11",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "componentStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ToggleItem/ToggleItem.tsx",
+      "sha256": "4e06175dce769ecd7c88585ea7d16e4d3688d0128906c313a5ef6b6637b7fd50",
+      "calls": [
+        {
+          "line": 7,
+          "api": "css",
+          "form": "reference-or-expression",
+          "expression": "componentStyles"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ToggleItem/styles.ts",
+      "sha256": "4e89aa776dcac00d1054d20221e4c1f04196f790644de54aa2d430320c11156a",
+      "calls": [],
+      "typedObjects": [
+        {
+          "name": "componentStyles",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/TooltipWrapper/tooltipWrapper.styles.ts",
+      "sha256": "762a25dd367fb206b6d71b5961ce7f4cd38065787a9c1b0ff5b4502602f84ce9",
+      "calls": [
+        {
+          "line": 3,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { opacity: 0, transform: \"translateY(2px)\" },\n  to: { opacity: 1, transform: \"translateY(0)\" },\n}"
+        },
+        {
+          "line": 7,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { opacity: 0, transform: \"translateX(-2px)\" },\n  to: { opacity: 1, transform: \"translateX(0)\" },\n}"
+        },
+        {
+          "line": 11,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { opacity: 0, transform: \"translateY(-2px)\" },\n  to: { opacity: 1, transform: \"translateY(0)\" },\n}"
+        },
+        {
+          "line": 15,
+          "api": "keyframes",
+          "form": "object",
+          "expression": "{\n  from: { opacity: 0, transform: \"translateX(2px)\" },\n  to: { opacity: 1, transform: \"translateX(0)\" },\n}"
+        },
+        {
+          "line": 24,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  display: \"flex\",\n  flexDirection: \"column\",\n  gap: \"var(--openui-space-2xs, 4px)\",\n  width: \"100%\",\n  maxWidth: \"248px\",\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 31,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  ...smallBody,\n  color: \"var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))\",\n  width: \"100%\",\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 36,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  ...smallBody,\n  color: \"var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))\",\n  width: \"100%\",\n} satisfies CSSAttribute"
+        },
+        {
+          "line": 41,
+          "api": "css",
+          "form": "object",
+          "expression": "{\n  boxSizing: \"border-box\",\n  backgroundColor: \"var(--openui-elevated, oklch(0.097 0 0 / 0.08))\",\n  padding: \"var(--openui-space-xs, 6px) var(--openui-space-s,"
+        }
+      ],
+      "typedObjects": [
+        {
+          "name": "bodyClass",
+          "line": 24
+        },
+        {
+          "name": "headingClass",
+          "line": 31
+        },
+        {
+          "name": "textClass",
+          "line": 36
+        },
+        {
+          "name": "contentClass",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/VisualCardBlock/card.styles.ts",
+      "sha256": "e167c4a1b6ea7461c431532e9bee8b82e2008950fe5cef2f819fe062b9f640cb",
+      "calls": [
+        {
+          "line": 2,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 7,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    },
+    {
+      "path": "packages/react-ui-core/src/components/_shared/cards/cardBlockLayout.styles.ts",
+      "sha256": "e22fcf306dc8210388535297f5b0acf89ac54d2ffa3867a23913cc95dd4d750b",
+      "calls": [
+        {
+          "line": 3,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 10,
+          "api": "css",
+          "form": "template"
+        },
+        {
+          "line": 141,
+          "api": "css",
+          "form": "template"
+        }
+      ],
+      "typedObjects": []
+    }
+  ],
+  "inlineStyleFiles": [
+    {
+      "path": "packages/kits/src/react/chat/components/FollowUpBlock/FollowUpBlock.tsx",
+      "styles": [
+        {
+          "line": 18,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Form/index.tsx",
+      "styles": [
+        {
+          "line": 24,
+          "expression": "{{ display: \"flex\", flexDirection: \"column\", gap: \"16px\" }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Table/index.tsx",
+      "styles": [
+        {
+          "line": 99,
+          "expression": "{{\n              display: \"flex\",\n              alignItems: \"center\",\n              justifyContent: \"flex-end\",\n              gap: \"8px\",\n              paddingTop: \"8px\",\n         "
+        },
+        {
+          "line": 115,
+          "expression": "{{ fontSize: \"13px\", color: \"#6b7280\" }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/TextContent/index.tsx",
+      "styles": [
+        {
+          "line": 34,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/openuiChatLibrary.tsx",
+      "styles": [
+        {
+          "line": 208,
+          "expression": "{{\n          display: \"flex\",\n          flexDirection: \"column\",\n          gap: \"var(--openui-space-m, 12px)\",\n        }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Accordion/Accordion.tsx",
+      "styles": [
+        {
+          "line": 30,
+          "expression": "{style}"
+        },
+        {
+          "line": 50,
+          "expression": "{style}"
+        },
+        {
+          "line": 72,
+          "expression": "{style}"
+        },
+        {
+          "line": 98,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Buttons/Buttons.tsx",
+      "styles": [
+        {
+          "line": 31,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Calendar/components/helperComponents.tsx",
+      "styles": [
+        {
+          "line": 102,
+          "expression": "{{\n          maxHeight: `${containerHeight - 45}px`,\n          minWidth: `${containerWidth}px`,\n        }}"
+        },
+        {
+          "line": 192,
+          "expression": "{{\n          minHeight: `${containerHeight - 45}px`,\n          maxHeight: `${containerHeight - 45}px`,\n        }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Callout/Callout.tsx",
+      "styles": [
+        {
+          "line": 48,
+          "expression": "{dismissStyle}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/CardHeader/CardHeader.tsx",
+      "styles": [
+        {
+          "line": 26,
+          "expression": "{styles}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Carousel/Carousel.tsx",
+      "styles": [
+        {
+          "line": 252,
+          "expression": "{style}"
+        },
+        {
+          "line": 279,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/BarChart/parts/BarSeries.tsx",
+      "styles": [
+        {
+          "line": 139,
+          "expression": "{animationDelay ? { animationDelay } : undefined}"
+        },
+        {
+          "line": 151,
+          "expression": "{animationDelay ? { animationDelay } : undefined}"
+        },
+        {
+          "line": 204,
+          "expression": "{animationDelay ? { animationDelay } : undefined}"
+        },
+        {
+          "line": 216,
+          "expression": "{animationDelay ? { animationDelay } : undefined}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/BarChart/parts/HorizontalBarChartImpl.tsx",
+      "styles": [
+        {
+          "line": 126,
+          "expression": "{containerStyle as CSSProperties}"
+        },
+        {
+          "line": 134,
+          "expression": "{{ height: chartHeight }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/BarChart/parts/HorizontalBarSeries.tsx",
+      "styles": [
+        {
+          "line": 103,
+          "expression": "{{ pointerEvents: \"none\" }}"
+        },
+        {
+          "line": 120,
+          "expression": "{animatedStyle}"
+        },
+        {
+          "line": 137,
+          "expression": "{animatedStyle}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/CalendarHeatmap/CalendarHeatmap.tsx",
+      "styles": [
+        {
+          "line": 142,
+          "expression": "{orch.style.containerStyle}"
+        },
+        {
+          "line": 147,
+          "expression": "{{ position: \"relative\", width: svgWidth }}"
+        },
+        {
+          "line": 151,
+          "expression": "{{ overflow: \"visible\" }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/CalendarHeatmap/parts/CalendarCells.tsx",
+      "styles": [
+        {
+          "line": 100,
+          "expression": "{{\n              fill: levelFills[cell.level],\n              animationDelay,\n              cursor: onClick ? \"pointer\" : undefined,\n            }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/CalendarHeatmap/parts/CalendarLegend.tsx",
+      "styles": [
+        {
+          "line": 65,
+          "expression": "{{ backgroundColor: color }}"
+        },
+        {
+          "line": 109,
+          "expression": "{{\n              background: `linear-gradient(to right, ${gradientStops})`,\n            }}"
+        },
+        {
+          "line": 117,
+          "expression": "{{\n                  left: `${(level / LEVELS.length) * 100}%`,\n                  width: `${(1 / LEVELS.length) * 100}%`,\n                }}"
+        },
+        {
+          "line": 132,
+          "expression": "{{ opacity: swatchOpacity(level) }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/CalendarHeatmap/parts/CalendarSeparators.tsx",
+      "styles": [
+        {
+          "line": 54,
+          "expression": "{stroke ? { stroke } : undefined}"
+        },
+        {
+          "line": 97,
+          "expression": "{{\n            position: \"absolute\",\n            top: 0,\n            left: gutterLeft + col * pitchX + (offsets[col] ?? 0),\n          }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/FunnelChart/FunnelChart.tsx",
+      "styles": [
+        {
+          "line": 66,
+          "expression": "{orch.style.containerStyle}"
+        },
+        {
+          "line": 75,
+          "expression": "{{ overflow: \"visible\" }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/FunnelChart/parts/FunnelStages.tsx",
+      "styles": [
+        {
+          "line": 189,
+          "expression": "{{\n                animationDelay,\n                filter: isHovered ? \"brightness(1.08)\" : undefined,\n                pointerEvents: \"none\",\n              }}"
+        },
+        {
+          "line": 228,
+          "expression": "{{\n                  pointerEvents: \"none\",\n                  opacity: dimFactor === DIM ? 0.55 : 1,\n                }}"
+        },
+        {
+          "line": 272,
+          "expression": "{{\n                  pointerEvents: \"none\",\n                  opacity: dimFactor === DIM ? 0.55 : 1,\n                }}"
+        },
+        {
+          "line": 317,
+          "expression": "{{\n                  pointerEvents: \"all\",\n                  cursor: onClick ? \"pointer\" : undefined,\n                }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/HeatmapChart/HeatmapChart.tsx",
+      "styles": [
+        {
+          "line": 73,
+          "expression": "{orch.style.containerStyle}"
+        },
+        {
+          "line": 81,
+          "expression": "{{ overflow: \"visible\" }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/HeatmapChart/parts/HeatmapCells.tsx",
+      "styles": [
+        {
+          "line": 122,
+          "expression": "{{ fill, animationDelay }}"
+        },
+        {
+          "line": 167,
+          "expression": "{{\n                      animationDelay,\n                      cursor: onClick ? \"pointer\" : undefined,\n                    }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/HeatmapChart/parts/HeatmapColorScale.tsx",
+      "styles": [
+        {
+          "line": 47,
+          "expression": "{{ backgroundColor: bucket.color }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/PieChart/PieChart.tsx",
+      "styles": [
+        {
+          "line": 161,
+          "expression": "{orch.style.containerStyle}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/PieChart/parts/PieSlices.tsx",
+      "styles": [
+        {
+          "line": 188,
+          "expression": "{{\n          pointerEvents: \"all\",\n          cursor: clickable ? \"pointer\" : undefined,\n        }}"
+        },
+        {
+          "line": 198,
+          "expression": "{{ pointerEvents: \"none\" }}"
+        },
+        {
+          "line": 203,
+          "expression": "{{ ...baseStyle, animationDelay: entranceDelay }}"
+        },
+        {
+          "line": 210,
+          "expression": "{{ ...baseStyle, animationDelay: entranceDelay }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/RadarChart/RadarChart.tsx",
+      "styles": [
+        {
+          "line": 82,
+          "expression": "{orch.style.containerStyle}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/RadarChart/parts/RadarSeries.tsx",
+      "styles": [
+        {
+          "line": 74,
+          "expression": "{{ animationDelay }}"
+        },
+        {
+          "line": 80,
+          "expression": "{{ animationDelay }}"
+        },
+        {
+          "line": 96,
+          "expression": "{{ opacity }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/RadialChart/RadialChart.tsx",
+      "styles": [
+        {
+          "line": 116,
+          "expression": "{orch.style.containerStyle}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/RadialChart/parts/RadialBars.tsx",
+      "styles": [
+        {
+          "line": 85,
+          "expression": "{{\n              ...getSliceStyle(i, hoveredIndex),\n              cursor: onClick ? \"pointer\" : undefined,\n              animationDelay,\n              transition: POLAR_HOVER_TRANS"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/ScatterChart/ScatterChart.tsx",
+      "styles": [
+        {
+          "line": 88,
+          "expression": "{orch.style.containerStyle}"
+        },
+        {
+          "line": 96,
+          "expression": "{{ overflow: \"visible\" }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/ScatterChart/parts/ScatterDots.tsx",
+      "styles": [
+        {
+          "line": 62,
+          "expression": "{{\n                    fillOpacity: dim,\n                    strokeOpacity: dim,\n                    animationDelay,\n                  }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/SegmentedBar/SegmentedBar.tsx",
+      "styles": [
+        {
+          "line": 170,
+          "expression": "{style ?? {}}"
+        },
+        {
+          "line": 184,
+          "expression": "{{\n                    width: `${segment.percentage}%`,\n                    backgroundColor: segment.color,\n                    opacity: isActive ? 1 : 0.5,\n                  }}"
+        },
+        {
+          "line": 227,
+          "expression": "{{ paddingTop: 0 }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/cartesian/LineDotCrosshair.tsx",
+      "styles": [
+        {
+          "line": 185,
+          "expression": "{{ opacity: visible ? 1 : 0, transition: \"opacity 0.12s ease\" }}"
+        },
+        {
+          "line": 253,
+          "expression": "{{ opacity: visible ? 1 : 0, transition: \"opacity 0.15s ease\" }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/cartesian/layouts/CartesianChartLayout.tsx",
+      "styles": [
+        {
+          "line": 87,
+          "expression": "{orch.style.containerStyle as React.CSSProperties}"
+        },
+        {
+          "line": 158,
+          "expression": "{{ overflow: \"visible\" }}"
+        },
+        {
+          "line": 247,
+          "expression": "{{ overflow: \"visible\" }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/core/ChartShell.tsx",
+      "styles": [
+        {
+          "line": 71,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/core/DefaultLegend/DefaultLegend.tsx",
+      "styles": [
+        {
+          "line": 73,
+          "expression": "{style}"
+        },
+        {
+          "line": 107,
+          "expression": "{{\n                    cursor: onItemClick ? \"pointer\" : undefined,\n                    opacity: isHidden ? 0.3 : 1,\n                  }}"
+        },
+        {
+          "line": 118,
+          "expression": "{{ backgroundColor: item.color }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/core/PortalTooltip/ChartTooltip.tsx",
+      "styles": [
+        {
+          "line": 105,
+          "expression": "{{\n        position: strategy,\n        top: 0,\n        left: 0,\n        opacity: isPositioned ? 1 : 0,\n        transition: \"opacity 0.12s ease\",\n      }}"
+        },
+        {
+          "line": 132,
+          "expression": "{\n                  {\n                    \"--color-bg\": item.color,\n                    \"--color-border\": item.color,\n                  } as React.CSSProperties\n                }"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/core/StackedLegend/ChartWithStackedLegend.tsx",
+      "styles": [
+        {
+          "line": 51,
+          "expression": "{{ width: toCssSize(width), height: toCssSize(height) }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/core/StackedLegend/StackedLegendView.tsx",
+      "styles": [
+        {
+          "line": 108,
+          "expression": "{{\n        width: containerWidth ? `${containerWidth}px` : \"100%\",\n        ...style,\n      }}"
+        },
+        {
+          "line": 152,
+          "expression": "{{\n                  opacity: isHidden ? 0.3 : 1,\n                  cursor: onItemToggle ? \"pointer\" : undefined,\n                }}"
+        },
+        {
+          "line": 164,
+          "expression": "{{ backgroundColor: item.color }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/core/spring/FadeFollower.tsx",
+      "styles": [
+        {
+          "line": 49,
+          "expression": "{{\n        opacity: visible ? 1 : 0,\n        transition: `opacity ${fadeMs}ms ease`,\n      }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/shared/mini/MiniChartFrame.tsx",
+      "styles": [
+        {
+          "line": 42,
+          "expression": "{{ width: side, height: side }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/CheckBoxGroup/CheckBoxGroup.tsx",
+      "styles": [
+        {
+          "line": 30,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/CodeBlock/CodeBlock.tsx",
+      "styles": [
+        {
+          "line": 39,
+          "expression": "{theme ?? vscDarkPlus}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ContextCardBlock/ContextCardBlock.tsx",
+      "styles": [
+        {
+          "line": 57,
+          "expression": "{backgroundImage ? { backgroundImage } : undefined}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/DatePicker/DatePicker.tsx",
+      "styles": [
+        {
+          "line": 80,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/DatePicker/helpers/components/DatePickerRenderer.tsx",
+      "styles": [
+        {
+          "line": 17,
+          "expression": "{style}"
+        },
+        {
+          "line": 34,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/DatePicker/helpers/components/FloatingDatePickerRenderer.tsx",
+      "styles": [
+        {
+          "line": 78,
+          "expression": "{{ ...floatingStyles, width: \"fit-content\" }}"
+        },
+        {
+          "line": 130,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/DotMatrixLoader/DotMatrixLoader.tsx",
+      "styles": [
+        {
+          "line": 123,
+          "expression": "{\n        {\n          \"--openui-dot-matrix-loader-grid-size\": gridSize,\n          \"--openui-dot-matrix-loader-size\": `${resolvedSize}px`,\n        } as CSSProperties\n      }"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/EditableTable/EditableTable.tsx",
+      "styles": [
+        {
+          "line": 423,
+          "expression": "{{ width: isScrollable ? \"max-content\" : \"100%\" }}"
+        },
+        {
+          "line": 429,
+          "expression": "{{ width: header.getSize() }}"
+        },
+        {
+          "line": 447,
+          "expression": "{{ width: cell.column.getSize() }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/EditableTable/base/components/EditableDateCell.tsx",
+      "styles": [
+        {
+          "line": 115,
+          "expression": "{{ outline: \"none\" }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/EditableTable/base/components/EditableSelectCell.tsx",
+      "styles": [
+        {
+          "line": 115,
+          "expression": "{{ outline: \"none\" }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/EditableTable/base/components/TextBaseEditableCell.tsx",
+      "styles": [
+        {
+          "line": 196,
+          "expression": "{{ outline: \"none\" }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/FormControl/FormControl.tsx",
+      "styles": [
+        {
+          "line": 19,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/FormControl/Hint/Hint.tsx",
+      "styles": [
+        {
+          "line": 26,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Image/Image.tsx",
+      "styles": [
+        {
+          "line": 53,
+          "expression": "{styles}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ImageBlock/ImageBlock.tsx",
+      "styles": [
+        {
+          "line": 47,
+          "expression": "{\n          src && !hasError ? ({ \"--bg-image\": `url(${src})` } as React.CSSProperties) : undefined\n        }"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ImageText/ImageText.tsx",
+      "styles": [
+        {
+          "line": 48,
+          "expression": "{size ? { width: size, height: size } : undefined}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Input/Input.tsx",
+      "styles": [
+        {
+          "line": 33,
+          "expression": "{styles}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Label/Label.tsx",
+      "styles": [
+        {
+          "line": 30,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ListBlock/ListBlock.tsx",
+      "styles": [
+        {
+          "line": 52,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ListItem/ListItem.tsx",
+      "styles": [
+        {
+          "line": 54,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/RadioGroup/RadioGroup.tsx",
+      "styles": [
+        {
+          "line": 30,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/RadioItem/RadioItem.tsx",
+      "styles": [
+        {
+          "line": 31,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/SectionBlock/FoldableSection.tsx",
+      "styles": [
+        {
+          "line": 31,
+          "expression": "{style}"
+        },
+        {
+          "line": 52,
+          "expression": "{style}"
+        },
+        {
+          "line": 75,
+          "expression": "{style}"
+        },
+        {
+          "line": 115,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Select/Select.tsx",
+      "styles": [
+        {
+          "line": 65,
+          "expression": "{style}"
+        },
+        {
+          "line": 105,
+          "expression": "{style}"
+        },
+        {
+          "line": 172,
+          "expression": "{style}"
+        },
+        {
+          "line": 199,
+          "expression": "{style}"
+        },
+        {
+          "line": 230,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Skeleton/PieChartSkeleton.tsx",
+      "styles": [
+        {
+          "line": 36,
+          "expression": "{{ width: size, height: chartHeight }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Skeleton/SkeletonBar.tsx",
+      "styles": [
+        {
+          "line": 15,
+          "expression": "{{\n        height,\n        width,\n        ...(borderRadius ? { borderRadius } : {}),\n      }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Skeleton/TableSkeleton.tsx",
+      "styles": [
+        {
+          "line": 11,
+          "expression": "{{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}"
+        },
+        {
+          "line": 26,
+          "expression": "{{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Slider/Slider.tsx",
+      "styles": [
+        {
+          "line": 124,
+          "expression": "{{ left: `${position}%` }}"
+        },
+        {
+          "line": 158,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/SwitchGroup/SwitchGroup.tsx",
+      "styles": [
+        {
+          "line": 29,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Table/ScrollableTable.tsx",
+      "styles": [
+        {
+          "line": 139,
+          "expression": "{{ width: isScrollable ? \"max-content\" : \"100%\" }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Table/Table.tsx",
+      "styles": [
+        {
+          "line": 34,
+          "expression": "{containerStyle}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Tabs/Tabs.tsx",
+      "styles": [
+        {
+          "line": 25,
+          "expression": "{style}"
+        },
+        {
+          "line": 185,
+          "expression": "{style}"
+        },
+        {
+          "line": 229,
+          "expression": "{style}"
+        },
+        {
+          "line": 263,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Tag/Tag.tsx",
+      "styles": [
+        {
+          "line": 45,
+          "expression": "{styles}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/TagBlock/TagBlock.tsx",
+      "styles": [
+        {
+          "line": 17,
+          "expression": "{props.styles}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/TextBlock/TextBlock.tsx",
+      "styles": [
+        {
+          "line": 88,
+          "expression": "{secondaryStyle}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/TextContent/TextContent.tsx",
+      "styles": [
+        {
+          "line": 32,
+          "expression": "{style}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/ThemeProvider/ThemeProvider.tsx",
+      "styles": [
+        {
+          "line": 254,
+          "expression": "{{ display: \"contents\" }}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/VisualCardBlock/VisualCardBlock.tsx",
+      "styles": [
+        {
+          "line": 45,
+          "expression": "{cardImageStyle}"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/_shared/cards/CardBlockLayout.tsx",
+      "styles": [
+        {
+          "line": 86,
+          "expression": "{{ ...gapStyle, ...style }}"
+        }
+      ]
+    }
+  ]
+}

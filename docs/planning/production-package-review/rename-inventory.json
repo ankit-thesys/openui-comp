@@ -1,0 +1,2425 @@
+{
+  "provenance": {
+    "head": "ed4ada6cb56e6c25a37a15c576200e87c6fd09a7",
+    "productionReference": "57ea72e2892df7fdd551c668d4480a0267f90a09",
+    "mode": "read-only TypeScript AST inventory; no build/typecheck/runtime/browser",
+    "scope": "tracked production src excluding stories/tests/results; references retain active tests for manual review; historical validation/evidence excluded",
+    "limitations": "AST export trace, not type-checker symbol proof; no external-consumer telemetry. Absence of in-repo imports is not permission to remove public API."
+  },
+  "files": [
+    {
+      "path": ".changeset/core-charts.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 2,
+          "text": "\"@openuidev/react-ui-core\": minor"
+        }
+      ]
+    },
+    {
+      "path": ".changeset/core-data-cards.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 2,
+          "text": "\"@openuidev/react-ui-core\": minor"
+        }
+      ]
+    },
+    {
+      "path": ".changeset/core-form-controls.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 2,
+          "text": "\"@openuidev/react-ui-core\": minor"
+        }
+      ]
+    },
+    {
+      "path": ".changeset/core-layout-components.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 2,
+          "text": "\"@openuidev/react-ui-core\": minor"
+        }
+      ]
+    },
+    {
+      "path": ".changeset/core-option-cards.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 2,
+          "text": "\"@openuidev/react-ui-core\": minor"
+        }
+      ]
+    },
+    {
+      "path": ".changeset/core-text-media-components.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 2,
+          "text": "\"@openuidev/react-ui-core\": minor"
+        }
+      ]
+    },
+    {
+      "path": ".changeset/fresh-core-theme-slice.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 2,
+          "text": "\"@openuidev/react-ui-core\": minor"
+        }
+      ]
+    },
+    {
+      "path": ".github/workflows/build-js.yml",
+      "disposition": "ci",
+      "lines": [
+        {
+          "line": 34,
+          "text": "        run: pnpm --filter @openuidev/react-ui-core exec playwright install --with-deps chrome"
+        }
+      ]
+    },
+    {
+      "path": "docs/planning/migration-orchestration.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 187,
+          "text": "basecodex/react-ui-core-charts(PR37). PushedONLYankit-thesys userfork."
+        },
+        {
+          "line": 328,
+          "text": "at /private/tmp/chat16-final-artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz."
+        },
+        {
+          "line": 417,
+          "text": "Core remains `/private/tmp/chat16-final-artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz`"
+        },
+        {
+          "line": 478,
+          "text": "Core tar `/private/tmp/chat16-final-artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz`"
+        },
+        {
+          "line": 529,
+          "text": "basecodex/react-ui-core-option-cards(PR36), headcodex/react-ui-core-charts."
+        },
+        {
+          "line": 561,
+          "text": "Basecodex/react-ui-core-option-cards(PR36), headcodex/react-ui-core-charts,"
+        },
+        {
+          "line": 591,
+          "text": "Authorizednext: pushONLYankit-thesys/openui-comp codex/react-ui-core-charts,"
+        },
+        {
+          "line": 592,
+          "text": "openattachedDRAFT targetingcodex/react-ui-core-option-cards(PR36),monitor/fixremoteCI."
+        },
+        {
+          "line": 656,
+          "text": "`/private/tmp/core-chart-tracking-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`,"
+        },
+        {
+          "line": 712,
+          "text": "`/private/tmp/core-chart-final-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`,"
+        },
+        {
+          "line": 730,
+          "text": "Evidence: packages/react-ui-core/evidence/charts-final-installed/."
+        },
+        {
+          "line": 799,
+          "text": "Raw attempts and boundary: packages/react-ui-core/evidence/charts-owned-source/."
+        },
+        {
+          "line": 837,
+          "text": "Root explicitly dispatched full chart slice14 after PR36 green. Branch codex/react-ui-core-charts based reviewed d9d6c78f085bfb92d475d76bead2c73dbb428131; local docsfe60de390/b8c69cd5c carried asdb552aab6/6811a31f2, PR36unchanged. W1 FIRST owns Charts/types bootstrap; three files copied byte-for-byte, rootexports only existing5types. Genuine public…"
+        },
+        {
+          "line": 847,
+          "text": "Fork-only https://github.com/ankit-thesys/openui-comp/pull/36 OPEN/DRAFT, attached, stacked on codex/react-ui-core-data-cards (#35). Reviewed/pushed product head `d9d6c78f085bfb92d475d76bead2c73dbb428131`. BuildJS40186855402 PASS8m55s and changeset40186855341 PASS15s. Remote core110/110 tests plus format/lint/types/build/Publint/ATTW pass. Final bo…"
+        },
+        {
+          "line": 859,
+          "text": "Fork-only draft https://github.com/ankit-thesys/openui-comp/pull/36 OPEN/DRAFT and attached. Pushed reviewed head `d9d6c78f085bfb92d475d76bead2c73dbb428131`, branch codex/react-ui-core-option-cards, base codex/react-ui-core-data-cards (#35). Remote BuildJS40186855402 and changeset40186855341 running. No merge/closure/release/upstream/main writes."
+        },
+        {
+          "line": 873,
+          "text": "Authorized next: push only fork ankit-thesys/openui-comp branch codex/react-ui-core-option-cards, open attached stacked DRAFT targeting codex/react-ui-core-data-cards (#35), monitor/fix remoteCI. Prepared body docs/planning/option-cards-pr-draft.md. No local gate remains. No merge/release/closure/upstream/main/legacy/previews/crates changes. No cha…"
+        },
+        {
+          "line": 879,
+          "text": "Branch codex/react-ui-core-option-cards based PR35 reviewed838d78ec2. W2 sourceea6311ba0 integratede7dbede07; W1 root/export integration `4911a82f825ce518f073fd995637d853a38a6620`. Existing controlled/native behavior, markdown and private row helper preserved. No new dependency/package-lock changes. Focused public integration4/4 passes after genuin…"
+        },
+        {
+          "line": 881,
+          "text": "EXACT frozen consumer `/private/tmp/core-option-cards-consumer`; tar `/private/tmp/core-option-cards-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`;498447 bytes; SHA256 `0a66152ad19a6c7e0a732a652175723e8bd1bcde1b5159a10e3966d835b67821`; source4911a82f825ce518f073fd995637d853a38a6620. All tar files match installed bytes. Fixed tools/types instal…"
+        },
+        {
+          "line": 883,
+          "text": "Worker2 owns FIRST Chrome window and may now validate this exact normal artifact against legacy with plain/TW3/TW4 initial orders, themes, responsive boundaries, controlled selection/native keyboard/disabled/slots/overrides. Worker1 remains NON-BROWSER; no Chrome launched. CORE_BROWSER_TOOLS=this checkout/packages/react-ui-core; existing Sass/host …"
+        },
+        {
+          "line": 885,
+          "text": "Authorized next after browser/review gate: attached fork-only stacked DRAFT targeting codex/react-ui-core-data-cards (#35), check/fixCI; no merge/closure/release/upstream/main writes. Prepared body docs/planning/option-cards-pr-draft.md, accurately pending browser/CI. No charts production; root dispatch later uses sharedtypes→W2Bar/Scatterprereqs→W…"
+        },
+        {
+          "line": 891,
+          "text": "Root accepted PR35 green checkpoint and dispatched bounded OptionCards completion only. Branch `codex/react-ui-core-option-cards` based exactly reviewed838d78ec23f3c4e31c84873b9926d518cd5c2776; local docs99f1b131e/092f55a19/89301a837 carried safely asa03a116ad/ee3e7d3eb/27e201553. PR35 remains unchanged/green."
+        },
+        {
+          "line": 901,
+          "text": "Fork draft https://github.com/ankit-thesys/openui-comp/pull/35 OPEN/DRAFT, attached, stacked on codex/react-ui-core-text-media (#34). Reviewed/pushed product head `838d78ec23f3c4e31c84873b9926d518cd5c2776`. Remote BuildJS40184784878 PASS9m5s and changeset40184784860 PASS14s. Corrected-source core107/107 tests, format/lint/types/build/Publint/ATTW p…"
+        },
+        {
+          "line": 919,
+          "text": "Fork-only draft https://github.com/ankit-thesys/openui-comp/pull/35 OPEN/DRAFT and attached. Pushed head `838d78ec23f3c4e31c84873b9926d518cd5c2776`, branch codex/react-ui-core-data-cards, base codex/react-ui-core-text-media (#34). BuildJS40184784878 running; changeset40184784860 PASS14s. No merge/release/ticket closure/upstream writes."
+        },
+        {
+          "line": 933,
+          "text": "User/root authorized push ONLY ankit-thesys/openui-comp branch codex/react-ui-core-data-cards and open stacked DRAFT targeting codex/react-ui-core-text-media (#34), attach and check/fix CI. Prepared body docs/planning/slice13-pr-draft.md. No unresolved local gate remains. No merge/release/ticket closure/upstream/main writes. Following publication/C…"
+        },
+        {
+          "line": 943,
+          "text": "NEW exact normal consumer `/private/tmp/core-data13c-consumer`; tar `/private/tmp/core-data13c-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`;492247 bytes; SHA256 `2c29042765ee120d7f85dd4da7176152ee54cfa7dcaff794ee3990473ea59e02`. All tar files match installed bytes. Tools/types preinstalled before freeze; package/lock immutable. Exact artifact…"
+        },
+        {
+          "line": 965,
+          "text": "Branch `codex/react-ui-core-data-cards`; production `baa3c1d935d06e923ab9aa43ae3a97f3d3fd0ff5`, current source unchanged after measured correction. W1 Batch B455743987, W2 A670b14b70→28553bf25, W2 Ca3908845a→b4640259b, W1 D1175ae2f9, select effective-cascade fixbaa3c1d93. Shared layout reused; root/deps/lock W1-owned, only new TanStack importer3lin…"
+        },
+        {
+          "line": 969,
+          "text": "W1 owned B/D Chrome PASS6 initial CSS-order cases /48,494 paired snapshots, plain/TW3/TW4, themes/nested/overrides/grid/carousel/narrow, hover/focus/image pseudos, real table edits/Select/DatePicker portals/empty. Frozen consumer `/private/tmp/core-data13b-consumer`; tar `/private/tmp/core-data13b-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`;…"
+        },
+        {
+          "line": 971,
+          "text": "EXPLICIT browser RELEASE to Worker2: all Worker1 Chrome checks and full CI finished; browser/server closed. Worker2 can run prepared independent A/C matrix against this exact normal-installed artifact. W1 will run NO Chrome until released back. CORE_BROWSER_TOOLS points to this checkout's packages/react-ui-core; Sass/host tools unchanged. Only boun…"
+        },
+        {
+          "line": 979,
+          "text": "Draft PR https://github.com/ankit-thesys/openui-comp/pull/34 is OPEN/DRAFT, attached, stacked on codex/react-ui-core-layout (#33). Reviewed/pushed source head `c7d85dad3b356cd5de9d5e21fadd5a4cddc52fd7`. Remote Build JS40180403689 PASSED9m5s and changeset40180403680 PASSED14s. Local integrated package CI97/97, native/strict3 modes, public normal-pac…"
+        },
+        {
+          "line": 995,
+          "text": "User math exception/support contract remains ACCEPTED, normative docs/specs/react-ui-extraction-styling.md. .changeset/core-text-media-components.md records this slice. Local PR body finalized in docs/planning/slice12-pr-draft.md. Authorized next: push ONLY fork branch codex/react-ui-core-text-media; create stacked DRAFT targeting codex/react-ui-co…"
+        },
+        {
+          "line": 1003,
+          "text": "EXPLICIT browser release to Worker2: Worker1 Chrome test finished and all browser/server processes closed. Worker2 may independently review production commit and validate this immutable normal npm consumer: `/private/tmp/core-math-final-consumer`. Exact tarball `/private/tmp/core-math-final-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`;401873 …"
+        },
+        {
+          "line": 1005,
+          "text": "Worker2 can run the executable public test directly from Worker1 source with CORE_CONSUMER set to that normal install; Vite/Playwright DEV tool imports resolve from Worker1 package. Review math source/private module, preserved public behavior and native/asset/pruning limits; independent Vite/framework/theme/late update/unused-network checks follow …"
+        },
+        {
+          "line": 1017,
+          "text": "Worker1 RETAINS browser for full package CI (which includes a Chrome test). Worker2 may review committed source after commit, but NO Chrome until explicit release. Root should use this section, not historical pending-decision/open-PR blockers below. Once integrated checks and independent review pass, user authorized stacked DRAFT PR on fork targeti…"
+        },
+        {
+          "line": 1025,
+          "text": "Both independent source/evidence reviews report zero actionable findings. Normal installed prototype passes native ESM/CJS root imports, strict3 modes, Vite6.4.2 default build and Chrome6 cases /2,808 paired math snapshots (plain/TW3/TW4 both orders, themes/nested scopes); automatic CSS/fonts load with ordinary component imports. Button-only browse…"
+        },
+        {
+          "line": 1041,
+          "text": "Local unpublished PR description: `docs/planning/slice12-pr-draft.md`, intended to stack on forkPR33 (`codex/react-ui-core-layout`). It explicitly separates current vs historical evidence, inherited limitations and the unapproved math gate. DO NOT OPEN OR PUSH the slice12 PR while acceptance is blocked. Stock Goober only; old react-ui, both preview…"
+        },
+        {
+          "line": 1063,
+          "text": "Worker1's owned text/media browser completed and closed browser/server. Explicitly release Chrome to Worker2 for composer-only RETEST on corrected immutable artifact. Consumer `/private/tmp/core-selectors12-consumer`; tarball `/private/tmp/core-selectors12-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`;401238 bytes; SHA256 `bee4bc79ccac342cbdc4…"
+        },
+        {
+          "line": 1081,
+          "text": "Worker1 explicitly releases Chrome to Worker2 for the NEW four-composer matrix only. No Worker1 browser runs until returned. Frozen normal npm consumer: `/private/tmp/core-combined12-consumer`. Tarball `/private/tmp/core-combined12-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`,401147 bytes, SHA256 `f0fe45fde1e9eb22a674558fafddfe9a0269ff7a6f29e…"
+        },
+        {
+          "line": 1085,
+          "text": "Math probe: browser sample CSS/two fonts delivered; unused browser import loads neither CSS/fonts, but unused build still emits59 font files totaling1,072,948 bytes. Actual component automatic styling unproven. Explicit exception options and preserved probe sources/results: `packages/react-ui-core/evidence/katex-css-investigation/README.md`. No pro…"
+        },
+        {
+          "line": 1100,
+          "text": "New tarball: `/private/tmp/core-source-media-fixed-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`, 375293 bytes, SHA256 `cb6306b9646be0dad2654542156e5e11623600bfe321abe2a9d5496cf21f8b45`."
+        },
+        {
+          "line": 1110,
+          "text": "- Exact tarball: `/private/tmp/core-source-media-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`,353244 bytes, SHA256 `eefb647a4128f0b8754cb906fbccd6d0aecb41ab526d61494d32929412d95f3f`."
+        },
+        {
+          "line": 1113,
+          "text": "- CORE_BROWSER_TOOLS: `/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core`."
+        },
+        {
+          "line": 1121,
+          "text": "Parent draft PR #33 is GREEN at217a662d4: build/package CI passed (run40142522614), changeset passed (run40142522609). The correction from21819f19d is diagnostic formatting/evidence only; no product behavior or measured browser assertions changed. Slice12 branch `codex/react-ui-core-text-media` starts from corrected head217a662d4, keeping slice12 o…"
+        },
+        {
+          "line": 1151,
+          "text": "Draft PR #33 on the fork targets codex/integrated-baseline-corrections. Remote build succeeded at21819f19d, but package CI stopped on browser-diagnostic formatting. A whitespace-only formatter correction is being submitted; full local core format:check passes. Wait for corrected remote CI before creating the separate codex/react-ui-core-text-media …"
+        },
+        {
+          "line": 1155,
+          "text": "Final exact tarball SHA256 `784a951ebf8cf974b6a275b72a7c58fa8ed8abc0c400266efc8808a4fa9f09ea`, 246,462 bytes. Artifact, raw logs, failed-run diagnosis, reviews and limitations: `packages/react-ui-core/evidence/layout-overlays/README.md`. The first integrated browser mismatch was different Radix accessibility subtrees from unmatched dependencies; a …"
+        },
+        {
+          "line": 1188,
+          "text": "| #20 | codex/react-ui-core-first-slice-pr    | 48a877064     | Foundation; unmerged                     |"
+        },
+        {
+          "line": 1189,
+          "text": "| #25 | codex/react-ui-core-form-controls     | f1e9b4f60     | Controls; CI green; unmerged             |"
+        },
+        {
+          "line": 1203,
+          "text": "| OpenUI Kits (worker 1) | 01a16cae-f565-7dc2-adf5-343d199ae777 | codex/react-ui-core-layout     | Card/CardHeader, SectionBlock, Separator, Skeleton, DotMatrixLoader; package integration, root exports, dependency/lockfile changes, combined validation |"
+        },
+        {
+          "line": 1249,
+          "text": "DotMatrixLoader on `codex/react-ui-core-layout`. Each family has a recorded"
+        }
+      ]
+    },
+    {
+      "path": "docs/planning/option-cards-pr-draft.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 4,
+          "text": " @openuidev/react-ui-core (root imports)"
+        }
+      ]
+    },
+    {
+      "path": "docs/planning/production-package-tl-review.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 8,
+          "text": "- Rename `packages/react-ui-core` to `packages/react-components` and the npm/import"
+        }
+      ]
+    },
+    {
+      "path": "docs/planning/slice12-pr-draft.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 5,
+          "text": "Base: `codex/react-ui-core-layout` ([fork PR33](https://github.com/ankit-thesys/openui-comp/pull/33)); head: `codex/react-ui-core-text-media`. The user authorized opening/pushing a stacked DRAFT after integrated checks and independent review pass. No merge or ticket closure. Opened as [draft PR34](https://github.com/ankit-thesys/openui-comp/pull/34…"
+        },
+        {
+          "line": 14,
+          "text": "@openuidev/react-ui-core"
+        },
+        {
+          "line": 32,
+          "text": "**Current integrated artifact:** production `a288334807643bdc63acb75c08af3e7aef7d759e`,401873 bytes, SHA256 `8709be66bc8b6b5ffd859b3df4fda1507ee63f9b7a75506c149a2aaf56012537`. Exact normal npm artifact/lock/file manifest and logs: `packages/react-ui-core/evidence/katex-integration/`."
+        }
+      ]
+    },
+    {
+      "path": "docs/planning/slice13-pr-draft.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 4,
+          "text": "react-ui-core (root imports)"
+        },
+        {
+          "line": 12,
+          "text": "Extract data views and composed cards into `@openuidev/react-ui-core` so consumers can use existing APIs with automatic stock-Goober styles and root imports. Related fork issue: https://github.com/ankit-thesys/openui-comp/issues/13. Stacked on draft PR34; legacy react-ui remains unchanged."
+        },
+        {
+          "line": 29,
+          "text": "- [x] Historical broader B/D Chrome parity: six initial-order cases /48,494 paired snapshots onbaa3c1d93. Corrected shared-layout production4119cddbe passes affected D responsive checks: six plain/Tailwind3/Tailwind4 order cases /10,656 paired snapshots at450/650/950px, grid/carousel and responsive-disabled control. Exact corrected artifact492247 b…"
+        }
+      ]
+    },
+    {
+      "path": "docs/planning/slice13-readonly-plan.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 21,
+          "text": "All consumers use `@openuidev/react-ui-core`; no component subpaths or new aliases. Legacy family barrels export the following symbols:"
+        }
+      ]
+    },
+    {
+      "path": "docs/planning/slice14-foundation-handoff.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 15,
+          "text": "All paths below are under packages/react-ui-core/src/components/Charts/."
+        },
+        {
+          "line": 55,
+          "text": "See packages/react-ui-core/evidence/charts-foundation/README.md and raw logs."
+        }
+      ]
+    },
+    {
+      "path": "docs/planning/slice14-pr-draft.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 4,
+          "text": "react-ui-core (root imports)"
+        },
+        {
+          "line": 13,
+          "text": "Extract the complete existing chart set into `@openuidev/react-ui-core`, preserving public props, behavior and customization while automatically registering stock-Goober styles. Related fork issue: https://github.com/ankit-thesys/openui-comp/issues/14. Stacked on draft PR36; legacy react-ui remains unchanged."
+        }
+      ]
+    },
+    {
+      "path": "docs/planning/slice14-readonly-proposal.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 9,
+          "text": "Propose Worker2 own only `packages/react-ui-core/src/components/OptionCards/` source/styles/tests in a bounded follow-up. Worker1 owns its root export, integration evidence and any shared metadata. Reuse the committed helper without changing it or copying a second implementation. Preserve OptionCards, OptionCardsProps, OptionCardsItem and OptionCar…"
+        }
+      ]
+    },
+    {
+      "path": "docs/planning/slice16-pr-draft.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 6,
+          "text": "│   └── react-ui-core (components + shared theme)"
+        },
+        {
+          "line": 8,
+          "text": "    ├── react-ui-core (reusable UI + charts)"
+        }
+      ]
+    },
+    {
+      "path": "docs/specs/react-ui-extraction-styling.md",
+      "disposition": "documentation-manual-history-review",
+      "lines": [
+        {
+          "line": 27,
+          "text": "Retain exact artifact/version/lock evidence, native/strict/package checks and affected browser results. The stable prototype comparison and earlier experimental prototype remain historical evidence, not substitutes for integrated validation. See `packages/react-ui-core/evidence/katex-stable-delivery/README.md` and subsequent integrated evidence."
+        }
+      ]
+    },
+    {
+      "path": "examples/miscellaneous/component-comparison/README.md",
+      "disposition": "maintained-lab-consumer-preserve-frozen-inputs",
+      "lines": [
+        {
+          "line": 36,
+          "text": "react-ui-core and kits. Newly extracted packages are unpublished; a plain registry"
+        }
+      ]
+    },
+    {
+      "path": "examples/miscellaneous/component-comparison/package-lock.json",
+      "disposition": "maintained-lab-consumer-preserve-frozen-inputs",
+      "lines": [
+        {
+          "line": 19,
+          "text": "        \"@openuidev/react-ui-core\": \"file:.artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz\","
+        },
+        {
+          "line": 1688,
+          "text": "        \"@openuidev/react-ui-core\": \"^0.0.0-beta.0\","
+        },
+        {
+          "line": 1836,
+          "text": "    \"node_modules/@openuidev/react-ui-core\": {"
+        },
+        {
+          "line": 1838,
+          "text": "      \"resolved\": \"file:.artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz\","
+        },
+        {
+          "line": 1885,
+          "text": "    \"node_modules/@openuidev/react-ui-core/node_modules/lucide-react\": {"
+        }
+      ]
+    },
+    {
+      "path": "examples/miscellaneous/component-comparison/package.json",
+      "disposition": "maintained-lab-consumer-preserve-frozen-inputs",
+      "lines": [
+        {
+          "line": 33,
+          "text": "    \"@openuidev/react-ui-core\": \"file:.artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz\","
+        }
+      ]
+    },
+    {
+      "path": "examples/miscellaneous/component-comparison/scripts/setup-artifacts.mjs",
+      "disposition": "maintained-lab-consumer-preserve-frozen-inputs",
+      "lines": [
+        {
+          "line": 11,
+          "text": "  \"react-ui-core\","
+        }
+      ]
+    },
+    {
+      "path": "examples/miscellaneous/component-comparison/src/frame.tsx",
+      "disposition": "maintained-lab-consumer-preserve-frozen-inputs",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import type { Theme } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "examples/miscellaneous/component-comparison/src/main.tsx",
+      "disposition": "maintained-lab-consumer-preserve-frozen-inputs",
+      "lines": [
+        {
+          "line": 381,
+          "text": "              detail: \"react-ui-core + kits/react/chat/libs\","
+        }
+      ]
+    },
+    {
+      "path": "examples/miscellaneous/component-comparison/src/migrated.tsx",
+      "disposition": "maintained-lab-consumer-preserve-frozen-inputs",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import { HorizontalBarChart, ThemeProvider } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "examples/miscellaneous/component-comparison/tests/bench-contract.test.mjs",
+      "disposition": "maintained-lab-consumer-preserve-frozen-inputs",
+      "lines": [
+        {
+          "line": 15,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "examples/miscellaneous/component-comparison/tests/bench-themes.browser.mjs",
+      "disposition": "maintained-lab-consumer-preserve-frozen-inputs",
+      "lines": [
+        {
+          "line": 7,
+          "text": "import { defaultLightTheme, defaultDarkTheme } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "examples/miscellaneous/component-comparison/tests/setup.test.mjs",
+      "disposition": "maintained-lab-consumer-preserve-frozen-inputs",
+      "lines": [
+        {
+          "line": 7,
+          "text": "test(\"the public archive setup accepts react-ui and react-ui-core together without prefix ambiguity\", async () => {"
+        },
+        {
+          "line": 25,
+          "text": "      \"react-ui-core-0.0.0-beta.0\","
+        },
+        {
+          "line": 47,
+          "text": "          \".artifacts/openuidev-react-ui-core-0.0.0-beta.0.tgz\","
+        },
+        {
+          "line": 51,
+          "text": "      \"react-ui-core-0.0.0-beta.0\","
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/README.md",
+      "disposition": "package-metadata-or-current-doc",
+      "lines": [
+        {
+          "line": 4,
+          "text": "`@openuidev/kits/react/chat/libs`. Themes come from `@openuidev/react-ui-core`."
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/package.json",
+      "disposition": "package-metadata-or-current-doc",
+      "lines": [
+        {
+          "line": 45,
+          "text": "    \"@openuidev/react-ui-core\": \"workspace:^\","
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/components/FollowUpItem/__tests__/consumer.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 43,
+          "text": "export const core = require(\"@openuidev/react-ui-core\");"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/components/ModelSwitcher/ModelSwitcher.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 17,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/components/ModelSwitcher/__tests__/BORDER_DIAGNOSIS.md",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 35,
+          "text": "`react-ui-core/.../Select/select.styles.ts` lines 29–45; frozen installed"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/components/ModelSwitcher/__tests__/BROWSER_PLAN.md",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 19,
+          "text": "`@openuidev/kits/react/chat` and `@openuidev/react-ui-core`. It must not pull"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/components/ModelSwitcher/__tests__/FIXTURE_IDENTITY_DIAGNOSIS.md",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 18,
+          "text": "- Its useTheme came from workspace `packages/react-ui-core/dist` (only 227"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/components/ModelSwitcher/__tests__/README.md",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 28,
+          "text": "useTheme and ThemeMode from the public `@openuidev/react-ui-core` root."
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/components/ModelSwitcher/__tests__/browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 43,
+          "text": "  for (const name of [\"@openuidev/kits\", \"@openuidev/react-ui-core\"]) {"
+        },
+        {
+          "line": 98,
+          "text": "      ? 'import {ModelSwitcher,FollowUpBlock,FollowUpItem} from \"@openuidev/kits/react/chat\";import {ThemeProvider,createTheme} from \"@openuidev/react-ui-core\";'"
+        },
+        {
+          "line": 162,
+          "text": "      path.join(consumer, \"node_modules/@openuidev/react-ui-core\"),"
+        },
+        {
+          "line": 165,
+          "text": "    const coreModules = [...modulesUsed].filter((file) => file.includes(\"/react-ui-core/\"));"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Accordion/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 9,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/BoldText/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { TextBlockView } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Button/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 12,
+          "text": "import { Button as OpenUIButton } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Buttons/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { Buttons as OpenUIButtons, type ButtonsProps } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Callout/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { MarkDownRenderer, Callout as OpenUICallout } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/CardHeader/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { CardHeader as OpenUICardHeader } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Carousel/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 10,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/AreaChartCondensed.ts",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { AreaChartCondensed as AreaChartCondensedComponent } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/BarChartCondensed.ts",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { BarChartCondensed as BarChartCondensedComponent } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/HorizontalBarChart.ts",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { HorizontalBarChart as HorizontalBarChartComponent } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/LineChartCondensed.ts",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { LineChartCondensed as LineChartCondensedComponent } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/PieChart.ts",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { PieChart as PieChartComponent, PieChartSkeleton } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/RadarChart.ts",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { RadarChart as RadarChartComponent } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/RadialChart.ts",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { RadialChart as RadialChartComponent } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/ScatterChart.ts",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { ScatterChart as ScatterChartComponent } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Charts/SingleStackedBarChart.ts",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { SingleStackedBar as SingleStackedBarChartComponent } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/CheckBoxGroup/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 14,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Chips/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 14,
+          "text": "import { Chips as OpenUIChips } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/CodeBlock/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { CodeBlock as OpenUICodeBlock } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/CompositeCardBlock/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 11,
+          "text": "import { CompositeCardBlock as OpenUICompositeCardBlock } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/ContextCardBlock/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 11,
+          "text": "import { ContextCardBlock as OpenUIContextCardBlock } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/DatePicker/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 10,
+          "text": "import { DatePicker as OpenUIDatePicker } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/EditableTable/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 15,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/EntityList/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { EntityList as OpenUIEntityList } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/FormControl/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 8,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Icon/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { IconWrapper } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/IconButton/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 11,
+          "text": "import { IconWrapper, IconButton as OpenUIIconButton } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/IconText/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { IconText as OpenUIIconText } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Image/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { Image as OpenUIImage } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/ImageBlock/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { ImageBlock as OpenUIImageBlock } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/ImageGallery/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { ImageGallery as OpenUIImageGallery } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/ImageText/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { ImageText as OpenUIImageText } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/ImageTextLarge/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { ImageTextLarge as OpenUIImageTextLarge } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/InlineHeader/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { InlineHeader as OpenUIInlineHeader } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Input/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 10,
+          "text": "import { Input as OpenUIInput } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Label/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { Label as OpenUILabel } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/ListBlock/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 5,
+          "text": "import { ListBlock as OpenUIListBlock, ListItem as OpenUIListItem } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/MarkDownRenderer/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { MarkDownRenderer as OpenUIMarkDownRenderer } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/MetricIndicator/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 7,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/OptionCards/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 14,
+          "text": "import { OptionCards as OpenUIOptionCards } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/OverviewCardBlock/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 10,
+          "text": "import { OverviewCardBlock as OpenUIOverviewCardBlock } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/RadioGroup/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 14,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/SectionBlock/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 10,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Select/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 16,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Separator/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { Separator as OpenUISeparator } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Slider/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 10,
+          "text": "import { SliderBlock as OpenUISliderBlock } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/SnippetCardBlock/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 10,
+          "text": "import { SnippetCardBlock as OpenUISnippetCardBlock } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Steps/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 8,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/SwitchGroup/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 12,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Table/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 13,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Tabs/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 9,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Tag/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { IconWrapper, Tag as OpenUITag } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/TagBlock/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { Tag as OpenUITag, TagBlock as OpenUITagBlock } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/Text/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { TextBlockView } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/TextArea/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 10,
+          "text": "import { TextArea as OpenUITextArea } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/TextCallout/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { TextCallout as OpenUITextCallout } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/TextContent/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { TextContentWrapper } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/VisualCardBlock/index.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 11,
+          "text": "import { VisualCardBlock as OpenUIVisualCardBlock } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/cardTagUtils.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 2,
+          "text": "import { IconWrapper, Tag as OpenUITag } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/src/react/chat/libs/openuiChatLibrary/openuiChatLibrary.tsx",
+      "disposition": "production-import",
+      "lines": [
+        {
+          "line": 10,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/tests/browser/app.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 4,
+          "text": "import { ThemeProvider } from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/tests/browser/run.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 10,
+          "text": "  path.resolve(process.env.CORE_BROWSER_TOOLS ?? \"packages/react-ui-core\", \"package.json\"),"
+        }
+      ]
+    },
+    {
+      "path": "packages/kits/tests/packed.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 48,
+          "text": "          \"react-ui-core\","
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/FORM_CONTROLS.md",
+      "disposition": "package-metadata-or-current-doc",
+      "lines": [
+        {
+          "line": 3,
+          "text": "Base: reviewed PR20 head `48a877064e0a2039c2c6949959168dea077a5d49`. Branch: `codex/react-ui-core-form-controls`. This is an additive slice on PR20; no merge or later migration is authorized. Old React UI and friend baseline paths remain read-only."
+        },
+        {
+          "line": 48,
+          "text": "Evidence and reproduction: `evidence/form-controls/README.md`. Legacy production and friend-baseline directories are unchanged. This branch is ready for a stacked draft review targeting `codex/react-ui-core-first-slice-pr`, with inherited limitations disclosed; no merge or publication is authorized."
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/IMPLEMENTATION.md",
+      "disposition": "package-metadata-or-current-doc",
+      "lines": [
+        {
+          "line": 7,
+          "text": "`@openuidev/react-ui-core` exposes Button, Input, TextArea, their existing public prop types and existing theme APIs through the root only. The package produces module-preserving ESM/CJS and matching declarations. Runtime dependencies are stock Goober 2.1.19 and clsx, with React/ReactDOM 19 peers. The provisional package version is `0.0.0-beta.0`."
+        },
+        {
+          "line": 46,
+          "text": "pnpm --filter @openuidev/react-ui-core test"
+        },
+        {
+          "line": 47,
+          "text": "pnpm --filter @openuidev/react-ui-core typecheck"
+        },
+        {
+          "line": 48,
+          "text": "pnpm --filter @openuidev/react-ui-core lint:check"
+        },
+        {
+          "line": 49,
+          "text": "pnpm --filter @openuidev/react-ui-core format:check"
+        },
+        {
+          "line": 50,
+          "text": "pnpm --filter @openuidev/react-ui-core check:publint"
+        },
+        {
+          "line": 51,
+          "text": "pnpm --filter @openuidev/react-ui-core check:attw"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/LAYOUT.md",
+      "disposition": "package-metadata-or-current-doc",
+      "lines": [
+        {
+          "line": 16,
+          "text": "`codex/react-ui-core-layout`. Parent specification: fork issue #7; task: #11."
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/README.md",
+      "disposition": "package-metadata-or-current-doc",
+      "lines": [
+        {
+          "line": 1,
+          "text": "# @openuidev/react-ui-core"
+        },
+        {
+          "line": 10,
+          "text": "import { Button, Input, TextArea, ThemeProvider } from \"@openuidev/react-ui-core\";"
+        },
+        {
+          "line": 32,
+          "text": "import { createTheme, ThemeProvider, useTheme } from \"@openuidev/react-ui-core\";"
+        },
+        {
+          "line": 73,
+          "text": "import { OptionCards } from \"@openuidev/react-ui-core\";"
+        },
+        {
+          "line": 97,
+          "text": "import { PieChart, ThemeProvider } from \"@openuidev/react-ui-core\";"
+        },
+        {
+          "line": 145,
+          "text": "pnpm --filter @openuidev/react-ui-core typecheck"
+        },
+        {
+          "line": 146,
+          "text": "pnpm --filter @openuidev/react-ui-core test"
+        },
+        {
+          "line": 147,
+          "text": "pnpm --filter @openuidev/react-ui-core check:publint"
+        },
+        {
+          "line": 148,
+          "text": "pnpm --filter @openuidev/react-ui-core check:attw"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/package.json",
+      "disposition": "package-metadata-or-current-doc",
+      "lines": [
+        {
+          "line": 2,
+          "text": "  \"name\": \"@openuidev/react-ui-core\","
+        },
+        {
+          "line": 31,
+          "text": "    \"test\": \"pnpm build && cd ../.. && node --test packages/react-ui-core/tests/*.test.mjs packages/react-ui-core/src/components/*/__tests__/*.test.mjs packages/react-ui-core/src/components/Charts/*/__tests__/*.test.mjs\","
+        },
+        {
+          "line": 100,
+          "text": "    \"directory\": \"packages/react-ui-core\""
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Accordion/__tests__/README.md",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 43,
+          "text": "node --test packages/react-ui-core/src/components/Accordion/__tests__/*.test.mjs"
+        },
+        {
+          "line": 61,
+          "text": "node packages/react-ui-core/src/components/Accordion/__tests__/compatibility.browser.mjs"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Accordion/__tests__/bundles.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 15,
+          "text": "    stdin: { contents: `export {${name}} from \"@openuidev/react-ui-core\";`, resolveDir: consumer },"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Accordion/__tests__/compatibility.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 33,
+          "text": "  await fs.realpath(path.join(consumer, \"node_modules/@openuidev/react-ui-core\")),"
+        },
+        {
+          "line": 42,
+          "text": "      ? source.replace('import * as Core from \"@openuidev/react-ui-core\";', oldPrefix)"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Accordion/__tests__/imports.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 30,
+          "text": "        ? `import * as core from '@openuidev/react-ui-core';`"
+        },
+        {
+          "line": 31,
+          "text": "        : `const core=require('@openuidev/react-ui-core');`) +"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Accordion/__tests__/layout.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as Core from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Accordion/__tests__/types.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 29,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Button/__tests__/README.md",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 31,
+          "text": "node --test packages/react-ui-core/src/components/*/__tests__/*.test.mjs"
+        },
+        {
+          "line": 45,
+          "text": "node packages/react-ui-core/src/components/Button/__tests__/browser.mjs"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Button/__tests__/browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 32,
+          "text": "      ? 'import {Button,Input,TextArea,ThemeProvider,createTheme} from \"@openuidev/react-ui-core\";'"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Button/__tests__/bundle.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 34,
+          "text": "  const result = await bundle('export {Button} from \"@openuidev/react-ui-core\"');"
+        },
+        {
+          "line": 43,
+          "text": "    'import {Button, Input, TextArea, ThemeProvider} from \"@openuidev/react-ui-core\"; console.log(\"unused\");',"
+        },
+        {
+          "line": 46,
+          "text": "  assert(!inputs.some((name) => name.includes(\"react-ui-core\") || name.includes(\"goober\")));"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Button/__tests__/consumer.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 41,
+          "text": "export const core = require(\"@openuidev/react-ui-core\");"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Button/__tests__/types.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 8,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Calendar/__tests__/layout.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 15,
+          "text": "  await fs.realpath(path.join(consumer, \"node_modules/@openuidev/react-ui-core\")),"
+        },
+        {
+          "line": 27,
+          "text": "      ? `import {Calendar,LayoutContextProvider} from '@openuidev/react-ui-core';`"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Card/__tests__/bundles.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 24,
+          "text": "        contents: `export {${name}} from '@openuidev/react-ui-core';`,"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Card/__tests__/compatibility.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 47,
+          "text": "  await fs.realpath(path.join(consumer, \"node_modules/@openuidev/react-ui-core\")),"
+        },
+        {
+          "line": 56,
+          "text": "      ? source.replace('import * as Core from \"@openuidev/react-ui-core\";', oldPrefix)"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Card/__tests__/imports.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 42,
+          "text": "        ? `import * as core from '@openuidev/react-ui-core';`"
+        },
+        {
+          "line": 43,
+          "text": "        : `const core=require('@openuidev/react-ui-core');`;"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Card/__tests__/layout.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as Core from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Card/__tests__/types.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 21,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        },
+        {
+          "line": 108,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/BarChart/__tests__/BROWSER_FAILURE.md",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 9,
+          "text": "Product7e425b5b7261b47dc28e331e7afc223179990237; normal consumer /private/tmp/core-chart-final-consumer; tar /private/tmp/core-chart-final-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz,1062310bytes, SHA256546f680f12516b0702cfb7c07bd092a781b4a402e8d9ee4e79b17eb9149424eb. Every installed file matched the verified archive; package and lock remaine…"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/BarChart/__tests__/BROWSER_REPORT.md",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 7,
+          "text": "Product revision1d31a4b63ee66f03c21688d96cee28bcad8380ac. Normal npm consumer /private/tmp/core-chart-tracking-consumer; tar /private/tmp/core-chart-tracking-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz,1062926bytes, SHA256638a8336a60800ae40fa4e46a7130ca41141393382652dd5cf9e73626a8de806. Every installed file matches the verified archive. Packa…"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/BarChart/__tests__/charts.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 21,
+          "text": "const candidatePath = path.join(consumer, \"node_modules/@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 73,
+          "text": "const publicCore = candidate(\"@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 114,
+          "text": "          ? source.replace('import * as Core from \"@openuidev/react-ui-core\";', legacyImports)"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/BarChart/__tests__/charts.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as Core from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/MiniAreaChart/__tests__/MiniAreaChart.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 12,
+          "text": "const core = consumer(\"@openuidev/react-ui-core\");"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/MiniBarChart/__tests__/MiniBarChart.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 12,
+          "text": "const core = consumer(\"@openuidev/react-ui-core\");"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/MiniLineChart/__tests__/MiniLineChart.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 12,
+          "text": "const core = consumer(\"@openuidev/react-ui-core\");"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/ScatterChart/__tests__/ScatterChart.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 12,
+          "text": "const core = consumer(\"@openuidev/react-ui-core\");"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/ScatterChart/__tests__/scatter-helpers.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 11,
+          "text": "const core = consumer(\"@openuidev/react-ui-core\");"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/__tests__/OwnedCharts.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 7,
+          "text": "const consumer = process.env.CORE_CONSUMER || path.resolve(\"packages/react-ui-core\");"
+        },
+        {
+          "line": 18,
+          "text": "import {PieChart, RadialChart, RadarChart, HeatmapChart, FunnelChart, CalendarHeatmap, SegmentedBar, SingleStackedBar, LegendStoreProvider, StackedLegend, useLegendEntry, ThemeProvider, LineChart, PrintContextProvider} from '@openuidev/react-ui-core';"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/__tests__/owned-charts.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 21,
+          "text": "const candidatePath = path.join(consumer, \"node_modules/@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 70,
+          "text": "const publicCore = candidate(\"@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 110,
+          "text": "          ? source.replace('import * as Core from \"@openuidev/react-ui-core\";', legacyImports)"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Charts/__tests__/owned-charts.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as Core from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/CheckBoxGroup/__tests__/compatibility.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 46,
+          "text": "  await fs.realpath(path.join(consumer, \"node_modules/@openuidev/react-ui-core\")),"
+        },
+        {
+          "line": 55,
+          "text": "      ? source.replace('import * as Core from \"@openuidev/react-ui-core\";', oldPrefix)"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/CheckBoxGroup/__tests__/primitives.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as Core from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/CheckBoxGroup/__tests__/types.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 30,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Chips/__tests__/README.md",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 49,
+          "text": "Use a normally installed packed consumer (`CORE_CONSUMER`), tooling with esbuild (`CORE_BROWSER_TOOLS`, also `CORE_TEST_TOOLS` for Node helpers), normal Sass 1.102 (`CORE_SASS_TOOLS`), and Playwright's absolute module path (`CORE_PLAYWRIGHT`). Extract the existing `packages/react-ui-core/evidence/browser-host-styles.tar.gz` into `CORE_HOST_STYLES`."
+        },
+        {
+          "line": 52,
+          "text": "node --test packages/react-ui-core/src/components/*/__tests__/*.test.mjs"
+        },
+        {
+          "line": 53,
+          "text": "node packages/react-ui-core/src/components/Chips/__tests__/compatibility.browser.mjs"
+        },
+        {
+          "line": 54,
+          "text": "CORE_CASE=sliderBlock node packages/react-ui-core/src/components/Chips/__tests__/interactions.browser.mjs"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Chips/__tests__/bundles.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 15,
+          "text": "    stdin: { contents: `export {${name}} from \"@openuidev/react-ui-core\";`, resolveDir: consumer },"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Chips/__tests__/compatibility.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 43,
+          "text": "  await fs.realpath(path.join(consumer, \"node_modules/@openuidev/react-ui-core\")),"
+        },
+        {
+          "line": 52,
+          "text": "      ? source.replace('import * as Core from \"@openuidev/react-ui-core\";', oldPrefix)"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Chips/__tests__/controls.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as Core from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Chips/__tests__/imports.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 22,
+          "text": "        ? 'import * as core from \"@openuidev/react-ui-core\";'"
+        },
+        {
+          "line": 23,
+          "text": "        : 'const core=require(\"@openuidev/react-ui-core\");';"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Chips/__tests__/types.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 20,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/DotMatrixLoader/__tests__/animation.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 15,
+          "text": "  await fs.realpath(path.join(consumer, \"node_modules/@openuidev/react-ui-core\")),"
+        },
+        {
+          "line": 23,
+          "text": "      ? `import {DotMatrixLoader,Skeleton,PieChartSkeleton} from '@openuidev/react-ui-core';`"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/EditableTable/__tests__/EditableTable.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 12,
+          "text": "const core = createRequire(path.join(consumer, \"package.json\"))(\"@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 20,
+          "text": "    let fixture = `import React,{useRef,useState}from'react';import{createRoot}from'react-dom/client';import{EditableTable,EditableTableChangesBar,ThemeProvider}from'@openuidev/react-ui-core';const h=React.createElement;"
+        },
+        {
+          "line": 25,
+          "text": "        \"import{EditableTable,EditableTableChangesBar,ThemeProvider}from'@openuidev/react-ui-core';\","
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/EditableTable/__tests__/data-cards.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 16,
+          "text": "const candidatePath = path.join(consumer, \"node_modules/@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 38,
+          "text": "const exports = candidate(\"@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 106,
+          "text": "          ? source.replace('import * as Core from \"@openuidev/react-ui-core\";', legacyPrefix)"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/EditableTable/__tests__/data-cards.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as Core from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/IconTag/__tests__/BROWSER_PLAN.md",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 21,
+          "text": "CORE_MATRIX_CASES=composers node packages/react-ui-core/src/components/Sources/__tests__/foundation-media.browser.mjs --prepare-only"
+        },
+        {
+          "line": 22,
+          "text": "CORE_MATRIX_CASES=composers node packages/react-ui-core/src/components/Sources/__tests__/foundation-media.browser.mjs"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/IconTag/__tests__/composers.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as Core from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/IconTag/__tests__/consumer-types.ts",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 15,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Modal/__tests__/README.md",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 45,
+          "text": "node --test packages/react-ui-core/src/components/Modal/__tests__/*.test.mjs"
+        },
+        {
+          "line": 46,
+          "text": "node packages/react-ui-core/src/components/Modal/__tests__/compatibility.browser.mjs"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Modal/__tests__/bundles.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 15,
+          "text": "    stdin: { contents: `export {${name}} from \"@openuidev/react-ui-core\";`, resolveDir: consumer },"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Modal/__tests__/compatibility.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 31,
+          "text": "  await fs.realpath(path.join(consumer, \"node_modules/@openuidev/react-ui-core\")),"
+        },
+        {
+          "line": 40,
+          "text": "      ? source.replace('import * as Core from \"@openuidev/react-ui-core\";', oldPrefix)"
+        },
+        {
+          "line": 58,
+          "text": "                await fs.realpath(path.join(consumer, \"node_modules/@openuidev/react-ui-core\")),"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Modal/__tests__/imports.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 14,
+          "text": "        ? `import * as core from '@openuidev/react-ui-core';`"
+        },
+        {
+          "line": 15,
+          "text": "        : `const core=require('@openuidev/react-ui-core');`) +"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Modal/__tests__/overlays.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as Core from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Modal/__tests__/types.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 6,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/OptionCards/__tests__/BROWSER_REPORT.md",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 8,
+          "text": "- Tarball: `/private/tmp/core-option-cards-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`, 498447 bytes."
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/OptionCards/__tests__/option-cards.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 21,
+          "text": "const candidatePath = path.join(consumer, \"node_modules/@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 59,
+          "text": "const publicCore = candidate(\"@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 98,
+          "text": "          ? source.replace('import * as Core from \"@openuidev/react-ui-core\";', legacyImports)"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/OptionCards/__tests__/option-cards.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as Core from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/OverviewCardBlock/__tests__/BROWSER_DIAGNOSIS.md",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 69,
+          "text": "Tar `/private/tmp/core-data13b-artifact/openuidev-react-ui-core-0.0.0-beta.0.tgz`,491804 bytes."
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/OverviewCardBlock/__tests__/BROWSER_PLAN.md",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 36,
+          "text": "Run `node packages/react-ui-core/src/components/OverviewCardBlock/__tests__/data-cards.browser.mjs --prepare-only` for bundle/provenance preparation. After explicit browser release, run without the flag. These commands refer to the repository root; all package-consumer paths come from the handoff, not changing workspace dist."
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/OverviewCardBlock/__tests__/data-cards.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 21,
+          "text": "const candidatePath = path.join(consumer, \"node_modules/@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 69,
+          "text": "const publicCore = candidate(\"@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 108,
+          "text": "          ? source.replace('import * as Core from \"@openuidev/react-ui-core\";', legacyImports)"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/OverviewCardBlock/__tests__/data-cards.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as Core from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Select/__tests__/inherited-risks.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 10,
+          "text": "  await fs.realpath(path.join(consumer, \"node_modules/@openuidev/react-ui-core\")),"
+        },
+        {
+          "line": 36,
+          "text": "      ? `import * as Core from '@openuidev/react-ui-core';`"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Sources/__tests__/BROWSER_PLAN.md",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 4,
+          "text": "come from a normally npm-installed packed `@openuidev/react-ui-core` public root."
+        },
+        {
+          "line": 33,
+          "text": "node packages/react-ui-core/src/components/Sources/__tests__/foundation-media.browser.mjs --prepare-only"
+        },
+        {
+          "line": 34,
+          "text": "node packages/react-ui-core/src/components/Sources/__tests__/foundation-media.browser.mjs"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Sources/__tests__/foundation-media.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 16,
+          "text": "const candidatePath = path.join(consumer, \"node_modules/@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 50,
+          "text": "const exports = candidate(\"@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 99,
+          "text": "          ? source.replace('import * as Core from \"@openuidev/react-ui-core\";', legacyPrefix)"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Sources/__tests__/foundation-media.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as Core from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Table/__tests__/bundles.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 51,
+          "text": "        contents: `export {${name}} from '@openuidev/react-ui-core';`,"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Table/__tests__/imports.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 31,
+          "text": "        ? \"import * as core from '@openuidev/react-ui-core';\""
+        },
+        {
+          "line": 32,
+          "text": "        : \"const core=require('@openuidev/react-ui-core');\") +"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Table/__tests__/scroll.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 12,
+          "text": "const fixture = `import * as Core from '@openuidev/react-ui-core';"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Table/__tests__/text-media.browser.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 16,
+          "text": "const candidatePath = path.join(consumer, \"node_modules/@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 39,
+          "text": "const exports = candidate(\"@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 105,
+          "text": "          ? source.replace('import * as Core from \"@openuidev/react-ui-core\";', legacyPrefix)"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Table/__tests__/text-media.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as Core from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/Table/__tests__/types.fixture.tsx",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 23,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/src/components/TextContentWrapper/__tests__/TextContentWrapper.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 42,
+          "text": "              \"@openuidev/react-ui-core\": `file:./${tarball}`,"
+        },
+        {
+          "line": 56,
+          "text": "          await fs.lstat(path.join(consumer, \"node_modules/@openuidev/react-ui-core\"))"
+        },
+        {
+          "line": 67,
+          "text": "        `import React from 'react';import{createRoot}from'react-dom/client';import{flushSync}from'react-dom';import{TextContentWrapper,ThemeProvider}from'@openuidev/react-ui-core';"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/tests/build-isolation.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 17,
+          "text": "    const core = path.join(isolated, \"packages/react-ui-core\");"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/tests/charts-imports.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 11,
+          "text": "        contents: `import {${name}} from '@openuidev/react-ui-core'; console.log(${name});`,"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/tests/component-exports.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as core from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/tests/fixtures/chart-families.mts",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as Core from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/tests/fixtures/chart-types.mts",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 7,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        },
+        {
+          "line": 32,
+          "text": "type InternalHoverOverlay = import(\"@openuidev/react-ui-core\").HoverOverlayProps;"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/tests/option-cards-imports.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 8,
+          "text": "const core = createRequire(new URL(\"../package.json\", import.meta.url))(\"@openuidev/react-ui-core\");"
+        },
+        {
+          "line": 14,
+          "text": "        contents: `import {${name}} from '@openuidev/react-ui-core'; console.log(${name});`,"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/tests/packed-consumer.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 44,
+          "text": "            \"@openuidev/react-ui-core\": `file:./${tarball}`,"
+        },
+        {
+          "line": 58,
+          "text": "import * as core from '@openuidev/react-ui-core';"
+        },
+        {
+          "line": 59,
+          "text": "const cjs=createRequire(import.meta.url)('@openuidev/react-ui-core');"
+        },
+        {
+          "line": 64,
+          "text": "assert.throws(()=>createRequire(import.meta.url)('@openuidev/react-ui-core/ThemeProvider'),{code:'ERR_PACKAGE_PATH_NOT_EXPORTED'});`;"
+        },
+        {
+          "line": 68,
+          "text": "import {Button,Input,TextArea,createTheme,ThemeProvider,useTheme,useSystemThemeMode,useThemeModePreference,swatch,THEME_MODE_ATTRIBUTE} from '@openuidev/react-ui-core';"
+        },
+        {
+          "line": 69,
+          "text": "import type {ButtonProps,InputProps,TextAreaProps,Theme,ThemeMode,ThemeProps,ThemeModePreference,ColorTheme,TypographyTheme,LayoutTheme,EffectTheme,ChartColorPalette,ChartPaletteKey,BrandSwatchName,NeutralSwatchName} from '@openuidev/react-ui-core';"
+        },
+        {
+          "line": 107,
+          "text": "        `import {Button,Input,TextArea,ThemeProvider} from '@openuidev/react-ui-core'; console.log(42);`,"
+        },
+        {
+          "line": 127,
+          "text": "        retained.every((name) => !name.includes(\"react-ui-core\")),"
+        },
+        {
+          "line": 132,
+          "text": "        `import {Button} from '@openuidev/react-ui-core';"
+        },
+        {
+          "line": 186,
+          "text": "        `import {Button,Input,TextArea,ThemeProvider,useTheme} from '@openuidev/react-ui-core';"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/tests/theme-behavior.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 9,
+          "text": "} from \"@openuidev/react-ui-core\";"
+        }
+      ]
+    },
+    {
+      "path": "packages/react-ui-core/tests/theme-exports.test.mjs",
+      "disposition": "active-test-review",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import * as core from \"@openuidev/react-ui-core\";"
+        },
+        {
+          "line": 35,
+          "text": "    Object.keys(require(\"@openuidev/react-ui-core\")).sort(),"
+        },
+        {
+          "line": 38,
+          "text": "  assert.throws(() => require(\"@openuidev/react-ui-core/ThemeProvider\"), {"
+        }
+      ]
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "disposition": "workspace-lock",
+      "lines": [
+        {
+          "line": 465,
+          "text": "      '@openuidev/react-ui-core':"
+        },
+        {
+          "line": 467,
+          "text": "        version: link:../react-ui-core"
+        },
+        {
+          "line": 976,
+          "text": "  packages/react-ui-core:"
+        }
+      ]
+    }
+  ]
+}
