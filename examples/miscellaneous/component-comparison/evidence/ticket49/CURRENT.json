@@ -1,0 +1,10 @@
+{
+  "currentSnapshot": "planned-version/README.md",
+  "initialSnapshot": "README.md",
+  "note": "Initial beta-only evidence and original hashes remain unchanged. Subsequent separate planned-version verification closes the previously recorded packing/install gap.",
+  "sourceCommit": "9006a2066f93359c991eeafcf9d812db3ae78450",
+  "plannedVersion": "0.0.0",
+  "plannedArchiveSha256": "326128aeec62a10bdf120626dbb2d68e5a63af7e5ec1dec9c1a470c844d59737",
+  "results": "normalChangesets version:chatonly;563distbytesidentical;nativepack/strictpeerinstall/ESM/CJS/types/privateoldpathchecks PASS; no publication",
+  "CI": "Separate production CI enablement is underway; verify exact current heads before claiming green."
+}

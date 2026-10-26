@@ -1,0 +1,67 @@
+[
+  {
+    "coreVersion": "0.0.0-beta.0",
+    "peer": "0.0.0-beta.0",
+    "expectedExit": 0,
+    "actualExit": 0,
+    "command": [
+      "node",
+      "scripts/verify-peer-windows.mjs"
+    ],
+    "cwd": "/private/tmp/ticket49-release-verification/peer-fixture",
+    "stdout": "verify-peer-windows: all internal peer windows contain the workspace versions.\n",
+    "stderr": ""
+  },
+  {
+    "coreVersion": "0.0.0-beta.1",
+    "peer": "0.0.0-beta.0",
+    "expectedExit": 1,
+    "actualExit": 1,
+    "command": [
+      "node",
+      "scripts/verify-peer-windows.mjs"
+    ],
+    "cwd": "/private/tmp/ticket49-release-verification/peer-fixture",
+    "stdout": "",
+    "stderr": "Internal peer windows do not match the versions being published:\n\n  \u2717 @openuidev/chat-kit peer-requires @openuidev/react-components \"0.0.0-beta.0\", but the workspace version is 0.0.0-beta.1 \u2014 move the peer window before releasing.\n"
+  },
+  {
+    "coreVersion": "1.0.0",
+    "peer": "0.0.0-beta.0",
+    "expectedExit": 1,
+    "actualExit": 1,
+    "command": [
+      "node",
+      "scripts/verify-peer-windows.mjs"
+    ],
+    "cwd": "/private/tmp/ticket49-release-verification/peer-fixture",
+    "stdout": "",
+    "stderr": "Internal peer windows do not match the versions being published:\n\n  \u2717 @openuidev/chat-kit peer-requires @openuidev/react-components \"0.0.0-beta.0\", but the workspace version is 1.0.0 \u2014 move the peer window before releasing.\n"
+  },
+  {
+    "coreVersion": "1.2.0",
+    "peer": ">=1.0.0 <2.0.0",
+    "expectedExit": 0,
+    "actualExit": 0,
+    "command": [
+      "node",
+      "scripts/verify-peer-windows.mjs"
+    ],
+    "cwd": "/private/tmp/ticket49-release-verification/peer-fixture",
+    "stdout": "verify-peer-windows: all internal peer windows contain the workspace versions.\n",
+    "stderr": ""
+  },
+  {
+    "coreVersion": "2.0.0",
+    "peer": ">=1.0.0 <2.0.0",
+    "expectedExit": 1,
+    "actualExit": 1,
+    "command": [
+      "node",
+      "scripts/verify-peer-windows.mjs"
+    ],
+    "cwd": "/private/tmp/ticket49-release-verification/peer-fixture",
+    "stdout": "",
+    "stderr": "Internal peer windows do not match the versions being published:\n\n  \u2717 @openuidev/chat-kit peer-requires @openuidev/react-components \">=1.0.0 <2.0.0\", but the workspace version is 2.0.0 \u2014 move the peer window before releasing.\n"
+  }
+]
