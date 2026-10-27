@@ -24,6 +24,17 @@
   "fallbacksRetained": 1444,
   "sourceMapOwnedSources": 371,
   "independent60Verdict": "pending",
-  "pr": "not created yet",
-  "durableLabEvidence": "preparing"
+  "pr": "https://github.com/ankit-thesys/openui-comp/pull/67",
+  "durableLabEvidence": "https://github.com/ankit-thesys/openui-comp/tree/4f24c2938dcdb1f3dbddf0cc669277cec21e4e6e/validation/beta17/shared-styles55",
+  "windowRelease": {
+    "releasedUTC": "2026-10-27T10:53:24Z",
+    "worker": "Worker1",
+    "buildBrowserWindow": "RELEASED for independent60",
+    "ownBrowsersAndServersClosed": true,
+    "sourceCommit": "c1aaf994d5c0fbfb56b83685221eeea9b409e57c",
+    "archiveSHA256": "1db41852f9e5aa11ccbfe5a56cdb3d00c8ad753ad5e73cb19bdf4832e7f7b957",
+    "PR": "https://github.com/ankit-thesys/openui-comp/pull/67",
+    "independent60": "pending",
+    "ticket61": "not started; requires independent60 acceptance"
+  }
 }

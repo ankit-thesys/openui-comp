@@ -19,3 +19,5 @@ The preserved lab scripts use original /private/tmp paths to show exactly what r
 Review source/map and installed-file bindings before treating any replay as the same artifact. In particular, fresh60builds relocated two bundled syntax themes because59used a symlinked dependency directory; exact byte differences/logical import targets are documented, not silently treated as byte-identical.
 
 No unrelated root-owned files were included in this lab update. No upstream1491/PR42writes, issue closure, merge or publishing occurred.
+
+[Production draft PR67](https://github.com/ankit-thesys/openui-comp/pull/67) is stacked on unchanged42. See60/window-release.json for the explicit independent-review window handoff. Independent60acceptance remains pending;61has not started.

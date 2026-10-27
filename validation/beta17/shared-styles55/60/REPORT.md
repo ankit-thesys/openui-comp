@@ -36,3 +36,7 @@ All371unique embedded owned source-map contents match frozen Git source. Fresh60
 This is not expanded SSR/hydration, performance, memory-soak, duplicate-Goober-version, all-component/historical12450cell parity, or release-readiness certification. Known Select shadow, HorizontalBar instability, Input/disabled-Label customization and theme-coverage findings remain separate. No production fix was added for them.
 
 Independent60must audit this exact source/archive and combined evidence before56implementation starts. PR is reviewable/draft and stacked on unchanged42; no merge/publication/issue closure is authorized. Worker tests/browser/server are closed; the explicit handoff releases the build/browser window. Durable lab evidence includes compressed raw JSON with original and compressed SHA256 values, not temporary paths alone.
+
+## Review handoff
+
+Draft fork PR [67](https://github.com/ankit-thesys/openui-comp/pull/67) is stacked on PR42basecodex/production-core-kits. Its head is frozen c1aaf994d5c0fbfb56b83685221eeea9b409e57c;42remainsd1292715028f816bd6a0dcf92766ec7dd15350f4. Durable evidence is committed to lab41at4f24c2938dcdb1f3dbddf0cc669277cec21e4e6e. Build/browser window RELEASED2026-10-27T10:53:24Z for independent60; no61implementation before acceptance. Calendar/Select dependencies and indirect chart consumers remain explicit controls for the later61pilot, not scope silently certified here.

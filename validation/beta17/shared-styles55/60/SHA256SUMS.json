@@ -2,11 +2,11 @@
   "/private/tmp/openui-styles60-evidence/bind-artifact.py": "9997c158c3bc671562c4f7ab00a23e0d19e03c1e5d5c72479e8c2912b0395f79",
   "/private/tmp/openui-styles60-evidence/integration-progress.json": "3e982706adbfaecd26270035c2ca4498e8fb7d5e629278aa8f340b4af1c95fd1",
   "/private/tmp/openui-styles60-evidence/controls-summary.json": "0479e500393aad3ba547daa9adbe6ecb29e0e181135b6530e1439e5e1071b961",
-  "/private/tmp/openui-styles60-evidence/SUMMARY.json": "059bcb60cb9209aea4f574c0398155e86120b90c4d00901800aaad7013a1e78f",
+  "/private/tmp/openui-styles60-evidence/SUMMARY.json": "7c2bac3a518e4e7dc976a55c4acf7704fe4b33c55823046d308cd91217ae81c2",
   "/private/tmp/openui-styles60-evidence/integration-summary.json": "c06479f659d9ceed9c341a6d42dc3a41d82db520e1e4918dcecfdfebb06f2e49",
   "/private/tmp/openui-styles60-evidence/small-build.log": "6d0945b835d0cb56142734b058315e79b072b81db2d0424c3f19bb4ae5506e79",
   "/private/tmp/openui-styles60-evidence/source.patch": "4672120bf3eb6e71785ee1967d06379ed8022ab0c1c45848ab57aae7dd35f672",
-  "/private/tmp/openui-styles60-evidence/REPORT.md": "455b34af6ab66ee22418b5942d62ce4648e6f9eb3c037e555ac759465bc18981",
+  "/private/tmp/openui-styles60-evidence/REPORT.md": "052e6087887cee273acedd861215c52d243bfe91e912de492b67e5bee8cdd33e",
   "/private/tmp/openui-styles60-evidence/optimized-builds.json": "fb6faa633afef91e7d48608c51723ddc3b0cfab8be7cb1f3fcf0b529a4758648",
   "/private/tmp/openui-styles60-evidence/integration-results.json": "e50dfcfed881a859404bc77e1ccc934c4f6bf3b6f6532b24fc5cb5c9848b6fba",
   "/private/tmp/openui-styles60-evidence/package-build.log": "14eb720e3d7e3ae66a705431d745f1755fd24634e227e0e7314c63bef98251b1",
@@ -32,5 +32,8 @@
   "/private/tmp/openui-styles60-evidence/native-results.json": "9deaf0acc0096e603894df3773982e4d7f96ebeb0d42ec450c32a2dcefe99cbc",
   "/private/tmp/openui-styles60-evidence/consumer/pnpm-lock.yaml": "ae3b3b7f97e706a57f98a1846551381c1fe2ba7cceb32e10b7b86a0814073635",
   "/private/tmp/openui-styles60-evidence/consumer/public-contract.tsx": "25e70eb84775aef3c250c0702dde0cbcbdee690f3eff834a884d386902dcf97b",
-  "/private/tmp/openui-styles60-evidence/candidate/openuidev-react-components-0.0.0-beta.0.tgz": "1db41852f9e5aa11ccbfe5a56cdb3d00c8ad753ad5e73cb19bdf4832e7f7b957"
+  "/private/tmp/openui-styles60-evidence/candidate/openuidev-react-components-0.0.0-beta.0.tgz": "1db41852f9e5aa11ccbfe5a56cdb3d00c8ad753ad5e73cb19bdf4832e7f7b957",
+  "/private/tmp/openui-styles60-evidence/PR.json": "e96fb3c3210eeccf555615ebb8ea742e7d6c6169c3fbaf30e1405eb68046db6c",
+  "/private/tmp/openui-styles60-evidence/PR-body.md": "7b24de6b223118c4f79986144a81f5c20c07c1c1da2cf24b2eb5f0118d7cbaea",
+  "/private/tmp/openui-styles60-evidence/window-release.json": "04ff8637a0153831aa2ba7e2ccfc00f3b9dc941f9f8b829d69ca37daed94934e"
 }
