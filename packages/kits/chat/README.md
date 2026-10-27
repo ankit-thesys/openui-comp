@@ -18,7 +18,7 @@ and an explicit peer-window update. Install the other peers listed below too.
 
 ```tsx
 import { FollowUpBlock, ModelSwitcher } from "@openuidev/chat-kit";
-import { openuiChatLibrary, openuiChatPromptOptions } from "@openuidev/chat-kit/libs";
+import { openuiChatLibrary, openuiChatPromptOptions } from "@openuidev/chat-kit/lib";
 import { ThemeProvider } from "@openuidev/react-components";
 import { Renderer } from "@openuidev/react-lang";
 ```
@@ -28,7 +28,7 @@ with the public Renderer and supply the generated response through its existing
 `response` and `isStreaming` props. Forward `onAction` to your application.
 For generation, pass the library and prompt options separately to
 `generateSystemPrompt`; prompt helpers, examples, rules and groups are exported
-from the libs entry. The package root exposes components; implementation paths remain private.
+from the lib entry. The package root exposes components; implementation paths remain private.
 
 Themes come from core. Existing component props and customization APIs remain
 unchanged. Components use unmodified Goober; no manual CSS import is needed.
@@ -59,7 +59,7 @@ pnpm --filter @openuidev/chat-kit run typecheck
 ```
 
 The package exports ESM/CJS modules, matching declarations and source maps for
-the package root and `/libs`. Internal implementation paths stay private.
+the package root and `/lib`. Internal implementation paths stay private.
 
 Authored kit styles use stock Goober `css` and `keyframes` template strings, with
 plain template fragments for shared declarations and module-level registration.
@@ -70,7 +70,7 @@ React style objects; class-name lookup maps remain ordinary objects of classes.
 ## Migrating from the umbrella beta
 
 Replace `@openuidev/kits/react/chat` imports with `@openuidev/chat-kit` and
-`@openuidev/kits/react/chat/libs` with `@openuidev/chat-kit/libs`. Remove the old
+`@openuidev/kits/react/chat/libs` with `@openuidev/chat-kit/lib`. Remove the old
 `@openuidev/kits` dependency and install the chat kit plus React components
 explicitly. Component props, public types, library schemas and actions are unchanged.
 No compatibility wrapper or old subpath alias is provided.

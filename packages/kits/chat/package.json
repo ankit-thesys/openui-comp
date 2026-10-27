@@ -15,14 +15,14 @@
         "default": "./dist/index.cjs"
       }
     },
-    "./libs": {
+    "./lib": {
       "import": {
-        "types": "./dist/libs/index.d.mts",
-        "default": "./dist/libs/index.mjs"
+        "types": "./dist/lib/index.d.mts",
+        "default": "./dist/lib/index.mjs"
       },
       "require": {
-        "types": "./dist/libs/index.d.cts",
-        "default": "./dist/libs/index.cjs"
+        "types": "./dist/lib/index.d.cts",
+        "default": "./dist/lib/index.cjs"
       }
     }
   },
@@ -67,8 +67,8 @@
   },
   "typesVersions": {
     "*": {
-      "libs": [
-        "dist/libs/index.d.cts"
+      "lib": [
+        "dist/lib/index.d.cts"
       ]
     }
   },
