@@ -1,0 +1,20 @@
+[
+  {
+    "family": "Carousel",
+    "file": "components/Carousel/carousel.styles.ts",
+    "symbol": "buttonClass",
+    "hook": "openui-carousel-button",
+    "baselineUses": [
+      {
+        "file": "components/Carousel/Carousel.tsx",
+        "line": 244,
+        "context": "className={clsx(buttonClass, \"openui-carousel-button openui-carousel-button-left\", className)}"
+      },
+      {
+        "file": "components/Carousel/Carousel.tsx",
+        "line": 269,
+        "context": "\"openui-carousel-button openui-carousel-button-right\","
+      }
+    ]
+  }
+]

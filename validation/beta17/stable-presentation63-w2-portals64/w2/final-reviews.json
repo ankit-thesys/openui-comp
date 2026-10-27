@@ -1,0 +1,19 @@
+{
+  "time": "2026-10-27T12:47:05.322359+00:00",
+  "sourceCommit": "d1e8a05d035b66453d58953faf7d9fabacbaa8e8",
+  "mode": "read-only source/evidence review; no browser/build/install",
+  "standards": {
+    "reviewer": "/root/audit_standards_review",
+    "findings": "No actionable standards or evidence-fairness findings; no hard violations. Failed probes retained, same-property corrections and explicit Sources important limitation fairly disclosed."
+  },
+  "spec": {
+    "reviewer": "/root/audit_spec_review",
+    "findings": "No actionable misclassification or evidence-reporting defect. Correct baseline/candidate state selectors and12/12Tabs passes;178observed targets not exhaustive property/state coverage. Sources important background requires explicit integration acceptance under56."
+  },
+  "acceptance": "Independent verification still required. EditableTable and broader SSR/performance/readiness excluded.",
+  "subsequentVerifierCorrection": {
+    "record": "sources-diagnostic-erratum.md",
+    "qualification": "Earlier evidence-fairness reviews missed the nonmatching Sources ancestor diagnostic. No stronger matching override result may be inferred from that diagnostic. Original actual-target simple-class result and matching important declaration remain. Same-element contextual probe pending final verifier.",
+    "runtimeRun": false
+  }
+}

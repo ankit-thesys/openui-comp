@@ -1,0 +1,17 @@
+{
+  "base": "1c3833a045c4c66de92b69413a3824eca1798fcd",
+  "candidateCommit": "c427df6c4d84d8ff48005aed2b3d02667498e1cb",
+  "packageTree": "9411b6d9ed92f79de292e43da53eac8d7bb086db",
+  "branch": "codex/stable-selectors-63-64",
+  "worktree": "/private/tmp/openui-selectors-w2",
+  "clean": true,
+  "scope": "40 presentation/layout families +3portal +exact shared card layout; EditableTable explicitly deferred",
+  "staticReviews": {
+    "standards": "no actionable findings",
+    "spec": "no actionable findings"
+  },
+  "runtimeBuildBrowser": "NOT RUN; W1 owns window",
+  "sourceBindings": "static-bindings.json",
+  "documentation": "HOOKS-DRAFT.md",
+  "coverage": "coverage-ledger.json"
+}

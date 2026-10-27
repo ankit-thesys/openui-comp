@@ -1,0 +1,495 @@
+
+Accordion
+export interface AccordionItemProps extends React.ComponentPropsWithoutRef<
+  typeof AccordionPrimitive.Item
+> {
+  className?: string;
+  style?: React.CSSProperties;
+  value: string;
+}
+export interface AccordionTriggerProps extends React.ComponentPropsWithoutRef<
+  typeof AccordionPrimitive.Trigger
+> {
+  className?: string;
+  style?: React.CSSProperties;
+  icon?: React.ReactNode;
+  text: React.ReactNode;
+}
+export interface AccordionContentProps extends React.ComponentPropsWithoutRef<
+  typeof AccordionPrimitive.Content
+> {
+  className?: string;
+  style?: React.CSSProperties;
+  children?: React.ReactNode;
+}
+
+Buttons
+export interface ButtonsProps extends HTMLAttributes<HTMLDivElement> {
+  variant?: ButtonsVariant;
+  children:
+    ReactElement<ButtonProps | IconButtonProps> | ReactElement<ButtonProps | IconButtonProps>[];
+  className?: string;
+  style?: CSSProperties;
+}
+
+Callout
+export interface CalloutProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
+  variant?: CalloutVariant;
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  
+  duration?: number;
+}
+
+Card
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+  variant?: CardVariant;
+  width?: CardWidth;
+}
+
+CardHeader
+export interface CardHeaderProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
+  icon?: ReactNode;
+  title?: ReactNode;
+  subtitle?: ReactNode;
+  actions?:
+    ReactElement<ButtonProps | IconButtonProps> | ReactElement<ButtonProps | IconButtonProps>[];
+  className?: string;
+  styles?: CSSProperties;
+}
+
+Carousel
+export interface CarouselProps extends React.HTMLAttributes<HTMLDivElement> {
+  itemsToScroll?: number;
+  noSnap?: boolean;
+  showButtons?: boolean;
+  variant?: "card" | "sunk";
+  onScrollLeftEnabled?: (enabled: boolean) => void;
+  onScrollRightEnabled?: (enabled: boolean) => void;
+}
+
+Citation
+export interface CitationProps {
+  onClick?: () => void;
+  sources: SourceWithFavicon[];
+}
+export interface CitationItemProps extends SourceWithFavicon {
+  onClick?: () => void;
+}
+
+CodeBlock
+export interface CodeBlockProps {
+  language: string;
+  codeString: string;
+  theme?: {
+    [key: string]: React.CSSProperties;
+  };
+}
+
+CompositeCardBlock
+export interface CompositeCardProps {
+  item: CompositeCardBlockItem;
+  clickable?: boolean;
+  onClick?: () => void;
+  className?: string;
+}
+export interface CompositeCardBlockProps {
+  items: CompositeCardBlockItem[];
+  layout?: "grid" | "carousel";
+  responsive?: boolean;
+  
+  gap?: number | string;
+  
+  clickable?: boolean;
+  onItemClick?: (index: number) => void;
+  className?: string;
+}
+
+ContextCardBlock
+export interface ContextCardProps {
+  item: ContextCardBlockItem;
+  clickable?: boolean;
+  onClick?: () => void;
+  className?: string;
+}
+export interface ContextCardBlockProps {
+  items: ContextCardBlockItem[];
+  layout?: "grid" | "carousel";
+  responsive?: boolean;
+  
+  gap?: number | string;
+  
+  clickable?: boolean;
+  onItemClick?: (index: number) => void;
+  className?: string;
+}
+
+DotMatrixLoader
+
+EntityList
+export interface EntityListProps {
+  rows?: EntityListRow[];
+  size?: EntityListSize;
+  
+  header?: EntityListRow;
+  
+  footer?: EntityListRow;
+  className?: string;
+}
+
+IconTag
+export interface IconTagProps {
+  icon: IconProps;
+  size?: IconTagSize;
+  variant?: IconTagVariant;
+  className?: string;
+}
+
+IconText
+export interface IconTextProps {
+  icon: IconProps;
+  title: string;
+  subtitle?: string;
+  iconVariant?: IconTextIconVariant;
+  bold?: boolean;
+  layout?: IconTextLayout;
+  className?: string;
+}
+
+Image
+export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+  src: string;
+  alt?: string;
+  styles?: React.CSSProperties;
+  className?: string;
+  aspectRatio?: AspectRatioType;
+  scale?: ScaleType;
+}
+
+ImageBlock
+export interface ImageBlockProps extends React.HTMLAttributes<HTMLDivElement> {
+  src: string;
+  alt?: string;
+  imageLoading?: boolean;
+}
+
+ImageGallery
+export interface GalleryModalProps {
+  images: ImageItem[];
+  selectedImageIndex: number;
+  setSelectedImageIndex: (index: number) => void;
+  onClose: () => void;
+}
+export interface OpenUIGalleryProps {
+  images: ImageItem[];
+}
+
+ImageText
+export interface ImageTextProps {
+  title: string;
+  subtitle?: string;
+  src: string;
+  alt?: string;
+  bold?: boolean;
+  layout?: ImageTextLayout;
+  
+  imageSize?: number;
+  className?: string;
+}
+
+ImageTextLarge
+export interface ImageTextLargeProps {
+  title: string;
+  subtitle?: string;
+  src: string;
+  alt?: string;
+  className?: string;
+}
+
+InlineHeader
+export interface InlineHeaderProps {
+  heading?: string;
+  description?: string;
+  className?: string;
+}
+
+InlineMarkdownRenderer
+export interface InlineMarkdownRendererProps {
+  content: string;
+  className?: string;
+}
+
+ListBlock
+export interface ListBlockProps {
+  
+  variant?: ListItemVariant;
+  
+  size?: ListItemSize;
+  children: ReactElement<ListItemProps> | ReactElement<ListItemProps>[];
+  className?: string;
+  style?: CSSProperties;
+}
+
+ListItem
+export interface ListItemProps {
+  className?: string;
+  style?: CSSProperties;
+  title?: ReactNode;
+  subtitle?: ReactNode;
+  variant?: ListItemVariant;
+  size?: ListItemSize;
+  icon?: ReactNode;
+  image?: { src?: string; alt: string };
+  index?: number;
+  listHasSubtitle?: boolean;
+  actionLabel?: ReactNode;
+  actionIcon?: ReactNode;
+  onClick?: () => void;
+}
+
+MarkDownRenderer
+export interface MarkDownRendererProps {
+  variant?: "clear" | "card" | "sunk";
+  textMarkdown: string;
+  options?: Options;
+  className?: string;
+}
+
+MetricIndicator
+export interface MetricIndicatorWithStrikethroughProps {
+  value: string;
+  subtext?: string;
+  previousValue?: string;
+  trend?: MetricIndicatorTrend;
+  className?: string;
+}
+export interface MetricIndicatorInlineProps {
+  value: string;
+  subtext?: string;
+  trend?: MetricIndicatorTrend;
+  className?: string;
+}
+interface MetricIndicatorBaseProps extends MetricIndicatorWithStrikethroughProps {
+  variant: "with-strikethrough" | "inline";
+}
+
+OverviewCardBlock
+export interface OverviewCardBlockProps extends Omit<HTMLAttributes<HTMLDivElement>, "onClick"> {
+  items: OverviewCardBlockItem[];
+  layout?: OverviewCardBlockLayout;
+  
+  responsive?: boolean;
+  
+  gap?: number | string;
+  
+  clickable?: boolean;
+  onItemClick?: (item: OverviewCardBlockItem, index: number) => void;
+  className?: string;
+}
+
+SectionBlock
+export interface FoldableSectionItemProps extends React.ComponentPropsWithoutRef<
+  typeof AccordionPrimitive.Item
+> {
+  className?: string;
+  style?: React.CSSProperties;
+  value: string;
+}
+export interface FoldableSectionTriggerProps extends React.ComponentPropsWithoutRef<
+  typeof AccordionPrimitive.Trigger
+> {
+  className?: string;
+  style?: React.CSSProperties;
+  text: React.ReactNode;
+}
+export interface FoldableSectionContentProps extends React.ComponentPropsWithoutRef<
+  typeof AccordionPrimitive.Content
+> {
+  className?: string;
+  style?: React.CSSProperties;
+  children?: React.ReactNode;
+}
+interface SectionV2Props {
+  trigger: string;
+  children?: React.ReactNode;
+}
+
+Separator
+
+Skeleton
+interface SkeletonBarProps {
+  height: string;
+  width: string;
+  borderRadius?: string;
+}
+
+SnippetCardBlock
+export interface SnippetCardBlockProps extends Omit<HTMLAttributes<HTMLDivElement>, "onClick"> {
+  items: SnippetCardBlockItem[];
+  
+  responsive?: boolean;
+  
+  gap?: number | string;
+  
+  clickable?: boolean;
+  onItemClick?: (item: SnippetCardBlockItem, index: number) => void;
+  className?: string;
+}
+
+SourceFaviconImage
+export interface SourceFaviconImageProps {
+  height: number;
+  width: number;
+  url: string;
+  alt: string;
+}
+
+Sources
+export interface ListedSourcesProps {
+  sources: SourceWithFavicon[];
+}
+export interface SourcesItemComponentProps extends SourceWithFavicon {
+  onClick?: () => void;
+  sourceId: number;
+}
+
+Steps
+export interface StepsItemProps {
+  title: React.ReactNode;
+  details: React.ReactNode;
+  number?: number;
+}
+export interface StepsProps {
+  children: React.ReactNode;
+}
+
+Table
+export interface ScrollableTableProps extends React.HTMLAttributes<HTMLTableElement> {
+  containerClassName?: string;
+  containerStyle?: React.CSSProperties;
+}
+export interface TableHeadProps extends React.ThHTMLAttributes<HTMLTableCellElement> {
+  icon?: React.ReactNode;
+  align?: TableAlignment;
+}
+export interface TableCellProps extends React.TdHTMLAttributes<HTMLTableCellElement> {
+  align?: TableAlignment;
+}
+
+Tabs
+export interface TabsProps extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Root> {
+  className?: string;
+  style?: React.CSSProperties;
+  variant?: TabsVariant;
+}
+export interface TabsListProps extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.List> {
+  className?: string;
+  style?: React.CSSProperties;
+  variant?: TabsListVariant;
+}
+export interface TabsTriggerProps extends React.ComponentPropsWithoutRef<
+  typeof TabsPrimitive.Trigger
+> {
+  className?: string;
+  style?: React.CSSProperties;
+  value: string;
+  icon?: React.ReactNode;
+  text: React.ReactNode;
+  subtext?: React.ReactNode;
+  image?: string;
+}
+export interface TabsContentProps extends React.ComponentPropsWithoutRef<
+  typeof TabsPrimitive.Content
+> {
+  className?: string;
+  style?: React.CSSProperties;
+  children?: React.ReactNode;
+}
+
+Tag
+export interface TagProps {
+  className?: string;
+  styles?: CSSProperties;
+  icon?: ReactNode;
+  text: ReactNode;
+  size?: TagSize;
+  variant?: TagVariant;
+}
+
+TagBlock
+export interface TagBlockProps {
+  children: ReactElement<typeof Tag> | ReactElement<typeof Tag>[];
+  styles?: CSSProperties;
+  className?: string;
+}
+
+TextBlock
+export interface TextBlockViewProps {
+  primary: string;
+  secondary?: string;
+  tertiary?: string;
+  variant?: TextBlockVariant;
+  type?: TextBlockType;
+  size?: TextBlockSize;
+  align?: TextBlockAlign;
+  secondaryMaxLines?: number;
+  secondaryTone?: TextBlockSecondaryTone;
+  className?: string;
+}
+
+TextCallout
+export interface TextCalloutProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
+  variant?: TextCalloutVariant;
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+}
+
+TextContent
+export interface TextContentProps {
+  children: ReactNode;
+  variant?: TextContentVariant;
+  className?: string;
+  style?: CSSProperties;
+}
+
+TextContentWrapper
+export interface TextContentWrapperProps {
+  textMarkdown: string;
+  header?: { heading: string; description?: string };
+  variant?: "clear" | "card" | "sunk";
+  className?: string;
+}
+
+TooltipWrapper
+export interface TooltipWrapperProps {
+  tooltipHeading?: string;
+  tooltipContent?: string;
+  side?: "top" | "right" | "bottom" | "left";
+  align?: "start" | "center" | "end";
+  sideOffset?: number;
+  alignOffset?: number;
+  className?: string;
+  delayDuration?: number;
+  showOnlyWhenTruncated?: boolean;
+  headingSelector?: string;
+  contentSelector?: string;
+}
+
+VisualCardBlock
+export interface VisualCardProps {
+  item: VisualCardBlockItem;
+  clickable?: boolean;
+  onClick?: () => void;
+  className?: string;
+}
+export interface VisualCardBlockProps {
+  items: VisualCardBlockItem[];
+  layout?: "grid" | "carousel";
+  responsive?: boolean;
+  
+  gap?: number | string;
+  
+  clickable?: boolean;
+  onItemClick?: (index: number) => void;
+  className?: string;
+}

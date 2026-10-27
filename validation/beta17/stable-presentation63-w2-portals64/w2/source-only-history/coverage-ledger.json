@@ -1,0 +1,403 @@
+{
+  "baseCommit": "1c3833a045c4c66de92b69413a3824eca1798fcd",
+  "acceptedRuntime": false,
+  "families": [
+    {
+      "family": "Accordion",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "Buttons",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "Callout",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 9,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "Card",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "CardHeader",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "Carousel",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 4,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "Citation",
+      "ticket": 64,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 9,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "CodeBlock",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "CompositeCardBlock",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 2,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "ContextCardBlock",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 2,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "DotMatrixLoader",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "EditableTable",
+      "ticket": 63,
+      "sourceStatus": "explicitly deferred",
+      "convertedRules": 0,
+      "scope": "none; keyboard/editors/portal dependencies require coordinated follow-up",
+      "limits": "Defer whole family initially: editable cell keyboard/selection plus Select/DatePicker/Tooltip dependencies; table parts and editors require coordinated coverage.",
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "EntityList",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "IconTag",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 12,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "IconText",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 4,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "Image",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 4,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "ImageBlock",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 6,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "ImageGallery",
+      "ticket": 64,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 22,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "ImageText",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 6,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "ImageTextLarge",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 3,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "InlineHeader",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 3,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "InlineMarkdownRenderer",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": "Owned inline wrapper, markdown descendant scope, p and direct-child layout rules remain eligible; coordinate MarkDownRenderer. Defer only vendor internals, not existing owned selectors.",
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "ListBlock",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "ListItem",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "MarkDownRenderer",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 3,
+      "scope": "all existing owned css tagged registrations",
+      "limits": "Owned wrapper/link/code/table and deliberate descendant rules remain eligible. Vendor syntax-highlighter/KaTeX token DOM/inline themes are the specific deferred area; not a whole-family skip.",
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "MetricIndicator",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "OverviewCardBlock",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "SectionBlock",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 6,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "Separator",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "Skeleton",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 4,
+      "scope": "all existing owned css tagged registrations",
+      "limits": "SkeletonBar and stack ordinary styles are eligible. Inspect TableSkeleton/PieChartSkeleton shape areas separately; only specifically justified shapes may be deferred. Private keyframe identifiers alone are not a deferral reason.",
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "SnippetCardBlock",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "SourceFaviconImage",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": "Successful img root openui-source-favicon-image with object-fit/display is eligible. Empty URL/error branch renders shared IconWrapper without this hook: leave fallback behavior/icons unchanged and do not document the image hook as a fallback-icon hook.",
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "Sources",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 10,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "Steps",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 2,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "Table",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 10,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "Tabs",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 5,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "Tag",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 11,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "TagBlock",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "TextBlock",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": "Owned root/size/type/alignment/tone/variant rules are eligible; preserve InlineMarkdownRenderer dependency. Vendor internals only are excluded from any transitive guarantee.",
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "TextCallout",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 9,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "TextContent",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 4,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "TextContentWrapper",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 2,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "TooltipWrapper",
+      "ticket": 64,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 4,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "VisualCardBlock",
+      "ticket": 63,
+      "sourceStatus": "source converted; emitted/browser acceptance pending",
+      "convertedRules": 2,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    }
+  ],
+  "sharedCardLayout": "3 owned registrations source converted; exact private shared file only"
+}

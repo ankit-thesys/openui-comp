@@ -1,0 +1,11 @@
+{
+  "time": "2026-10-27T12:45:05.296575+00:00",
+  "owner": "W2",
+  "exclusiveWindow": "RELEASED",
+  "browserClosed": true,
+  "serverClosed": true,
+  "buildsInstallsTypechecksFinished": true,
+  "sourceCommit": "d1e8a05d035b66453d58953faf7d9fabacbaa8e8",
+  "archiveSha256": "212170767ecbea02251b723138c45ad753471f6a3a010e3e9d1e3a9970cea903",
+  "notes": "No further browser/build/install/test runs planned. Evidence packaging/review only. W1 may resume."
+}

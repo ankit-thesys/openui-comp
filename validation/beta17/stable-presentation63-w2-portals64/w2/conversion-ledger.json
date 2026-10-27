@@ -1,0 +1,1791 @@
+[
+  {
+    "family": "Separator",
+    "file": "components/Separator/Separator.tsx",
+    "symbol": "componentClass",
+    "hook": "openui-separator-root",
+    "bodySha256": "a45692f13e972a27b6d1a57ca8071edf24345fa31df0806adccf18c4a0dac94f",
+    "body": "\n  ${separatorStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconText",
+    "file": "components/IconText/iconText.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-icon-text-root",
+    "bodySha256": "cd56ce17dee2f64864b65e417f71ede5bc20ff9c3607964945ba7717e0adc1a6",
+    "body": "\n  display: flex;\n  gap: var(--openui-space-m, 12px);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconText",
+    "file": "components/IconText/iconText.styles.ts",
+    "symbol": "layoutClasses.vertical",
+    "hook": "openui-icon-text-layout-vertical",
+    "bodySha256": "66bfd75ba9eff85d0b42b5efa5e29f68e6357b75bc33f0633a7d2bdfa0f7879b",
+    "body": "\n    flex-direction: column;\n    align-items: flex-start;\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconText",
+    "file": "components/IconText/iconText.styles.ts",
+    "symbol": "layoutClasses.horizontal",
+    "hook": "openui-icon-text-layout-horizontal",
+    "bodySha256": "791d5e45911fcaf27dd2a11c1ba6366b1c8fd5884b96b17922c5bed10701b588",
+    "body": "\n    flex-direction: row;\n    align-items: flex-start;\n    .openui-icon-tag {\n      margin-top: var(--openui-space-3xs, 2px);\n    }\n    .openui-text-block__primary {\n      font: var(--openui-text-body-sm-heavy, 560 14px/1.5 \"Inter\", sans-serif);\n      letter-spacing: var(--openui-text-body-sm-heavy-letter-spacing, -0.01em);\n      font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconText",
+    "file": "components/IconText/iconText.styles.ts",
+    "symbol": "contentClass",
+    "hook": "openui-icon-text-content",
+    "bodySha256": "fa43a1a33764719428cbdfb9a7c83cc58e4e6c9ddde73e07c8f47c97098021ab",
+    "body": "\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextContentWrapper",
+    "file": "components/TextContentWrapper/textContentWrapper.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-text-content-wrapper-root",
+    "bodySha256": "944d47b004fcf5db164d3b8148b89d84d3be37085c7c26211354da8536a5ec68",
+    "body": "\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-xl, 24px);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextContentWrapper",
+    "file": "components/TextContentWrapper/textContentWrapper.styles.ts",
+    "symbol": "markdownClass",
+    "hook": "openui-text-content-wrapper-markdown",
+    "bodySha256": "8721fde8e514a7a6533f6058952dba9112069836b52bf67d36496392e5dcd17c",
+    "body": "\n  & p:has(+ ol),\n  & p:has(+ ul) {\n    margin-bottom: 8px;\n  }\n  &:where(.openui-text-content-markdown-dark-mode) p,\n  &:where(.openui-text-content-markdown-dark-mode) h1,\n  &:where(.openui-text-content-markdown-dark-mode) h2,\n  &:where(.openui-text-content-markdown-dark-mode) h3,\n  &:where(.openui-text-content-markdown-dark-mode) h4,\n  &:where(.openui-text-content-markdown-dark-mode) h5,\n  &:where(.openui-text-content-markdown-dark-mode) h6 {\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  &:where(.openui-text-content-markdown-dark-mode) .katex {\n    margin-top: var(--openui-space-xs, 6px);\n    display: inline-block;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending",
+    "authoringAdjustment": {
+      "from": "&:where(.openui-text-content-markdown-dark-mode)",
+      "to": "&.openui-text-content-markdown-dark-mode",
+      "occurrences": 8,
+      "reason": "Stock Goober nested expansion duplicated the old class in emitted baseline selectors; ordinary compound class matching preserves that actual numeric weight while avoiding repeated document :root guard.",
+      "proof": "baseline-dark-selector-diagnostic.json",
+      "runtimeStatus": "correction awaiting fresh emitted/browser validation"
+    }
+  },
+  {
+    "family": "Image",
+    "file": "components/Image/image.styles.ts",
+    "symbol": "imageClass",
+    "hook": "openui-image-root",
+    "bodySha256": "d8aa679154894f7851815ead28c876a12f21ddc4480effe82b0bb6349b531e77",
+    "body": "\n  display: flex;\n  box-sizing: border-box;\n  max-width: 100%;\n  height: auto;\n  overflow: clip;\n  border-radius: var(--openui-radius-m, 8px);\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Image",
+    "file": "components/Image/image.styles.ts",
+    "symbol": "fitClass",
+    "hook": "openui-image-fit-styled",
+    "bodySha256": "21e3d751e3c596dbd9c2f39ffe60fbec6acbaa4d03d906d10619c1cd1654ecf1",
+    "body": "\n  object-fit: contain;\n  width: 100%;\n  height: 100%;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Image",
+    "file": "components/Image/image.styles.ts",
+    "symbol": "fillClass",
+    "hook": "openui-image-fill-styled",
+    "bodySha256": "7e66e2d18446ec5e7c299ff241949b9cfdb0104f77f6f1052e31b6009cad60ff",
+    "body": "\n  object-fit: cover;\n  width: 100%;\n  height: 100%;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Image",
+    "file": "components/Image/image.styles.ts",
+    "symbol": "errorClass",
+    "hook": "openui-image-error",
+    "bodySha256": "3a2256d7317469c4cb7fecfdb06809c2555df2f9f510b9a040658ad9b910668f",
+    "body": "\n  visibility: hidden;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "SourceFaviconImage",
+    "file": "components/SourceFaviconImage/sourceFaviconImage.styles.ts",
+    "symbol": "faviconClass",
+    "hook": "openui-source-favicon-image-root",
+    "bodySha256": "69bc96df634d794bc98412073e818edaad9e5d66befb70ef5b287ade5481742a",
+    "body": "\n  object-fit: cover;\n  display: flex;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-tag-root",
+    "bodySha256": "97ead2e6f177a5971ce13ed83fb958e31a85cc1073213b0890f741de050194e2",
+    "body": "\n  box-sizing: border-box;\n  display: flex;\n  align-items: center;\n  overflow: hidden;\n  max-width: 100%;\n  gap: var(--openui-space-2xs, 4px);\n  font: var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "symbol": "iconClass",
+    "hook": "openui-tag-icon-styled",
+    "bodySha256": "a11d56be949f6c259ca6762c75d6a43b97e29975fb1b3faa785c3b5fe96c9765",
+    "body": "\n  display: flex;\n  align-items: center;\n  & svg {\n    stroke-width: 2.5;\n    width: 14px;\n    height: 14px;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "symbol": "textClass",
+    "hook": "openui-tag-text-styled",
+    "bodySha256": "a211aad4149ba95b1ce91968b066c61985fb3c94a71570f7939ffa66231eae61",
+    "body": "\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "symbol": "sizeClasses.sm",
+    "hook": "openui-tag-size-sm",
+    "bodySha256": "239dce4444d56b2237d4e1cd11c946d3c9f34f5ac2deeccbbf95a2b28c360a6e",
+    "body": "\n    padding: var(--openui-space-2xs, 4px) var(--openui-space-xs, 6px);\n    border-radius: var(--openui-radius-s, 6px);\n    height: 24px;\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "symbol": "sizeClasses.md",
+    "hook": "openui-tag-size-md",
+    "bodySha256": "a5ac80dafad0abc90d3d52c7388020dfb124ccf6e9284c314251414a89f04d6b",
+    "body": "\n    padding: var(--openui-space-xs, 6px) var(--openui-space-s, 8px);\n    border-radius: var(--openui-radius-s, 6px);\n    gap: var(--openui-space-xs, 6px);\n    height: 32px;\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "symbol": "sizeClasses.lg",
+    "hook": "openui-tag-size-lg",
+    "bodySha256": "864e69d29f0614fb3e69516ba25bb649ae0c5c55e4bfd3cbb2d83ddb460f98ef",
+    "body": "\n    padding: var(--openui-space-s, 8px) var(--openui-space-m, 12px);\n    border-radius: var(--openui-radius-m, 8px);\n    gap: var(--openui-space-xs, 6px);\n    height: 36px;\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "symbol": "variantClasses.neutral",
+    "hook": "openui-tag-variant-neutral",
+    "bodySha256": "ecc43f9bcff97cc1f3f2839db53d7ee4c743c9bb36f152cfc86e29e244c63d21",
+    "body": "\n    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "symbol": "variantClasses.info",
+    "hook": "openui-tag-variant-info",
+    "bodySha256": "b48394c6cb5bb7be9611c924186abf0183cd4acbb106567e8e71c9c3cdf21935",
+    "body": "\n    background-color: var(--openui-info-background, oklch(0.623 0.188 259.815 / 0.12));\n    color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "symbol": "variantClasses.success",
+    "hook": "openui-tag-variant-success",
+    "bodySha256": "3e4996e416cac4d4645ad5003cd7597675d104795b0f685972fc775071ecf58c",
+    "body": "\n    background-color: var(--openui-success-background, oklch(0.627 0.17 149.214 / 0.12));\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "symbol": "variantClasses.warning",
+    "hook": "openui-tag-variant-warning",
+    "bodySha256": "75ff65a57513749c7ece35546a130bc9e874ebc75b1666466913c8c6bba7bea2",
+    "body": "\n    background-color: var(--openui-alert-background, oklch(0.795 0.162 86.047 / 0.16));\n    color: var(--openui-text-alert-primary, oklch(0.476 0.103 61.907 / 1));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "symbol": "variantClasses.danger",
+    "hook": "openui-tag-variant-danger",
+    "bodySha256": "459aa1c9d73f434c70662b4f86764be45f8c66c3ceaf6eeb1486ab58bbde4273",
+    "body": "\n    background-color: var(--openui-danger-background, oklch(0.577 0.215 27.325 / 0.12));\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-icon-tag-root",
+    "bodySha256": "4571cf1e84b33bc98e4fcf3f63d1a080fb2d4103e5ba150d2b15fa687158ed12",
+    "body": "\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  box-sizing: border-box;\n  flex-shrink: 0;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "symbol": "sizeClasses.xs",
+    "hook": "openui-icon-tag-size-xs",
+    "bodySha256": "2e3599f39296360f437e0fcbd8c72d3c0fedb94aa05d650723dff0ae6c607739",
+    "body": "\n    width: 20px;\n    height: 20px;\n    border-radius: var(--openui-radius-xs, 4px);\n    svg {\n      width: 12px;\n      height: 12px;\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "symbol": "sizeClasses.s",
+    "hook": "openui-icon-tag-size-s",
+    "bodySha256": "f96dafa2f2d6f76568b74ba1ff898afa1e4a076e1c21409cac8ff3b53dcbf405",
+    "body": "\n    width: 24px;\n    height: 24px;\n    border-radius: var(--openui-radius-s, 6px);\n    svg {\n      width: 14px;\n      height: 14px;\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "symbol": "sizeClasses.m",
+    "hook": "openui-icon-tag-size-m",
+    "bodySha256": "12aa0661f9c161549e4273a6fcca33b96d9f87a7807a5e7f19d4c0d5e3364fa1",
+    "body": "\n    width: 32px;\n    height: 32px;\n    border-radius: var(--openui-radius-s, 6px);\n    svg {\n      width: 14px;\n      height: 14px;\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "symbol": "sizeClasses.l",
+    "hook": "openui-icon-tag-size-l",
+    "bodySha256": "e2ac4706d88f6ce77f6335562d5206e850df14a53131baa0e9ba636f858fa469",
+    "body": "\n    width: 36px;\n    height: 36px;\n    border-radius: var(--openui-radius-m, 8px);\n    svg {\n      width: 16px;\n      height: 16px;\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "symbol": "sizeClasses.xl",
+    "hook": "openui-icon-tag-size-xl",
+    "bodySha256": "edbda564dbf699b3751e9389b337772e12dac39d40ecf1494caae5054ab787a4",
+    "body": "\n    width: 40px;\n    height: 40px;\n    border-radius: var(--openui-radius-m, 8px);\n    svg {\n      width: 16px;\n      height: 16px;\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "symbol": "variantClasses.neutral",
+    "hook": "openui-icon-tag-variant-neutral",
+    "bodySha256": "5bc2c3aac2d6c49df2afd55b615b995f2cb556033b4356472b1d46b44e6a5b9d",
+    "body": "\n    background-color: var(--openui-highlight, oklch(0.097 0 0 / 0.04));\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "symbol": "variantClasses.info",
+    "hook": "openui-icon-tag-variant-info",
+    "bodySha256": "b48394c6cb5bb7be9611c924186abf0183cd4acbb106567e8e71c9c3cdf21935",
+    "body": "\n    background-color: var(--openui-info-background, oklch(0.623 0.188 259.815 / 0.12));\n    color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "symbol": "variantClasses.success",
+    "hook": "openui-icon-tag-variant-success",
+    "bodySha256": "3e4996e416cac4d4645ad5003cd7597675d104795b0f685972fc775071ecf58c",
+    "body": "\n    background-color: var(--openui-success-background, oklch(0.627 0.17 149.214 / 0.12));\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "symbol": "variantClasses.warning",
+    "hook": "openui-icon-tag-variant-warning",
+    "bodySha256": "75ff65a57513749c7ece35546a130bc9e874ebc75b1666466913c8c6bba7bea2",
+    "body": "\n    background-color: var(--openui-alert-background, oklch(0.795 0.162 86.047 / 0.16));\n    color: var(--openui-text-alert-primary, oklch(0.476 0.103 61.907 / 1));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "symbol": "variantClasses.danger",
+    "hook": "openui-icon-tag-variant-danger",
+    "bodySha256": "459aa1c9d73f434c70662b4f86764be45f8c66c3ceaf6eeb1486ab58bbde4273",
+    "body": "\n    background-color: var(--openui-danger-background, oklch(0.577 0.215 27.325 / 0.12));\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "symbol": "variantClasses.inverted",
+    "hook": "openui-icon-tag-variant-inverted",
+    "bodySha256": "139e4260733ec6e043646d7a4c28457e371704f57dc6cda8c035231cf406cb64",
+    "body": "\n    background-color: var(--openui-inverted-background, oklch(0.097 0 0 / 1));\n    color: var(--openui-background, oklch(0.97 0 89.876 / 1));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextContent",
+    "file": "components/TextContent/textContent.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-text-content-root",
+    "bodySha256": "43d2d622b5fcf88b9cfac11f40c4270f098b0f67249c9c6a1c43a5ba55a85a95",
+    "body": "\n  box-sizing: border-box;\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  border: 1px solid;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextContent",
+    "file": "components/TextContent/textContent.styles.ts",
+    "symbol": "variantClasses.sunk",
+    "hook": "openui-text-content-variant-sunk",
+    "bodySha256": "d768cf0ca06137cdeac847bbd7fcdfed2d97abdbd4373f6704a82d40d8f8b204",
+    "body": "\n    padding: var(--openui-space-m, 12px);\n    background: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n    border-radius: var(--openui-radius-m, 8px);\n    border-color: var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextContent",
+    "file": "components/TextContent/textContent.styles.ts",
+    "symbol": "variantClasses.card",
+    "hook": "openui-text-content-variant-card",
+    "bodySha256": "a8d5aa0d37a19ef2ffc35c91a065b3de7b545a4f7f7c4a40589fe60d00e39d65",
+    "body": "\n    padding: var(--openui-space-m, 12px);\n    border-radius: var(--openui-radius-m, 8px);\n    border-color: var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextContent",
+    "file": "components/TextContent/textContent.styles.ts",
+    "symbol": "variantClasses.clear",
+    "hook": "openui-text-content-variant-clear",
+    "bodySha256": "a78cba3359548f2b9a505ba8a52dbbd15f33dc07c9f56f31df62355bc2fdc281",
+    "body": "\n    border-color: transparent;\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "InlineHeader",
+    "file": "components/InlineHeader/inlineHeader.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-inline-header-root",
+    "bodySha256": "1b914655bf59139c9e18c3812cf5ff05dfc5ccb4f9e200e39e119a6250eddf14",
+    "body": "\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-3xs, 2px);\n  align-items: flex-start;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "InlineHeader",
+    "file": "components/InlineHeader/inlineHeader.styles.ts",
+    "symbol": "headingClass",
+    "hook": "openui-inline-header-heading-styled",
+    "bodySha256": "b8b5050ac8b92f094d583e3f6ca1d95fa88465069b6eb149aac226e7e08d5e26",
+    "body": "\n  display: flex;\n  align-items: center;\n  gap: var(--openui-space-xs, 6px);\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  font: var(--openui-text-body-default-heavy, 560 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-heavy-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "InlineHeader",
+    "file": "components/InlineHeader/inlineHeader.styles.ts",
+    "symbol": "descriptionClass",
+    "hook": "openui-inline-header-description-styled",
+    "bodySha256": "8967e95d19d59c0f2da1a9fd568b1ffc1bbd592bb298ce0ab14aa131000215da",
+    "body": "\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-callout-root",
+    "bodySha256": "57a9a466cdaefa9810f82145e1b1926edcd3ebf86b242ad399b94a55bc93bbf8",
+    "body": "\n  display: flex;\n  flex-direction: column;\n  padding: var(--openui-space-000, 0) calc(var(--openui-space-m, 12px) + 2px);\n  box-sizing: border-box;\n  align-items: flex-start;\n  border-left: 2px solid;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "symbol": "titleClass",
+    "hook": "openui-callout-title-styled",
+    "bodySha256": "be565aa454bfe957cfe08a591d29d2e4506891fbb748de930a91a8d619d508c8",
+    "body": "\n  font: var(--openui-text-body-default-heavy, 560 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-heavy-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "symbol": "descriptionClass",
+    "hook": "openui-callout-description-styled",
+    "bodySha256": "58680201235fc2753acc34e1edcb2931177441ab60a48f57a1b24472209c5e5c",
+    "body": "\n  font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "symbol": "variantClasses.info",
+    "hook": "openui-callout-variant-info",
+    "bodySha256": "9ebd8b7c8fe29ccfdf600052641bb5baecd2eb07f8fbf24bb31daf502068a0e1",
+    "body": "\n    border-color: var(--openui-border-info-emphasis, oklch(0.546 0.215 262.881 / 1));\n    & .openui-callout-title {\n      color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "symbol": "variantClasses.danger",
+    "hook": "openui-callout-variant-danger",
+    "bodySha256": "3112c58abebefa4cf6a3f4794be80caaddf59d4bb82322cb45b07b2176f92c9c",
+    "body": "\n    border-color: var(--openui-border-danger-emphasis, oklch(0.577 0.215 27.325 / 1));\n    & .openui-callout-title {\n      color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "symbol": "variantClasses.warning",
+    "hook": "openui-callout-variant-warning",
+    "bodySha256": "c26488a01e4fa993bf492fbd854f9b4c4eda52a8f23aceaf9ec18c710429379f",
+    "body": "\n    border-color: var(--openui-border-alert-emphasis, oklch(0.681 0.142 75.834 / 1));\n    & .openui-callout-title {\n      color: var(--openui-text-alert-primary, oklch(0.476 0.103 61.907 / 1));\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "symbol": "variantClasses.success",
+    "hook": "openui-callout-variant-success",
+    "bodySha256": "12269bce1b7db85a97b55bd7022675326235f0de221d25ee7f96631c46512796",
+    "body": "\n    border-color: var(--openui-border-success-emphasis, oklch(0.627 0.17 149.214 / 1));\n    & .openui-callout-title {\n      color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "symbol": "variantClasses.neutral",
+    "hook": "openui-callout-variant-neutral",
+    "bodySha256": "cbd8c6cb1bc834104f4781439bd439bed94f1cbe86e7ad7f91a2845950db36be",
+    "body": "\n    border-color: var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1));\n    & .openui-callout-title {\n      color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "symbol": "dismissClass",
+    "hook": "openui-callout-dismiss",
+    "bodySha256": "400d6448185efc82887c274c343b3563f8962571791f3ba2d6e84275f7abd2a5",
+    "body": "\n  animation: ${fadeOut} 0.4s ease-in forwards;\n  animation-delay: var(--callout-duration, 3000ms);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-text-callout-root",
+    "bodySha256": "d8f90874805865a1dd433de2f98b0222e10e3f43a062e84611e954cf9dfcbb94",
+    "body": "\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  gap: var(--openui-space-xs, 6px);\n  padding: 0 16px 0 16px;\n  box-sizing: border-box;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "symbol": "variantClasses.neutral",
+    "hook": "openui-text-callout-variant-neutral",
+    "bodySha256": "89dcf78d8e4a242c274a62ae5f6607c1c3d5bcd0925283561313ee0bdae700cc",
+    "body": "\n    border-left: 2px solid var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1));\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    & .openui-text-callout-content-title {\n      color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "symbol": "variantClasses.info",
+    "hook": "openui-text-callout-variant-info",
+    "bodySha256": "c909696a88585c46cf8f784e89d6909d60b3bf05c1ce94c58ef596c67540d5ba",
+    "body": "\n    border-left: 2px solid var(--openui-border-info-emphasis, oklch(0.546 0.215 262.881 / 1));\n    color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "symbol": "variantClasses.warning",
+    "hook": "openui-text-callout-variant-warning",
+    "bodySha256": "fac316503a0df6bd4df7db4b6ee3648b3b079310fe829d72877fefaaeb23b04e",
+    "body": "\n    border-left: 2px solid var(--openui-border-alert-emphasis, oklch(0.681 0.142 75.834 / 1));\n    color: var(--openui-text-alert-primary, oklch(0.476 0.103 61.907 / 1));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "symbol": "variantClasses.success",
+    "hook": "openui-text-callout-variant-success",
+    "bodySha256": "5e8e630c936b094077e7694c2fed056c935ae1364d2eda047008587067b73ac1",
+    "body": "\n    border-left: 2px solid var(--openui-border-success-emphasis, oklch(0.627 0.17 149.214 / 1));\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "symbol": "variantClasses.danger",
+    "hook": "openui-text-callout-variant-danger",
+    "bodySha256": "0451e9ef2722fd0a060d7c7d795059a72ff0026d1258b103b915df742063b90a",
+    "body": "\n    border-left: 2px solid var(--openui-border-danger-emphasis, oklch(0.577 0.215 27.325 / 1));\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "symbol": "contentClass",
+    "hook": "openui-text-callout-content-styled",
+    "bodySha256": "b78701416be80062e8905f10cdeede6aa4ae1ac50737f5554dda7c0b6e9e34b1",
+    "body": "\n  display: flex;\n  flex-direction: column;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "symbol": "titleClass",
+    "hook": "openui-text-callout-title",
+    "bodySha256": "be565aa454bfe957cfe08a591d29d2e4506891fbb748de930a91a8d619d508c8",
+    "body": "\n  font: var(--openui-text-body-default-heavy, 560 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-heavy-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "symbol": "descriptionClass",
+    "hook": "openui-text-callout-description",
+    "bodySha256": "58680201235fc2753acc34e1edcb2931177441ab60a48f57a1b24472209c5e5c",
+    "body": "\n  font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "MetricIndicator",
+    "file": "components/MetricIndicator/metricIndicator.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-metric-indicator-root",
+    "bodySha256": "981eccd4f7ca6e7b04c2e4e6cf6a437fd6e3a747c84fbc1736698c65a9f9a661",
+    "body": "\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n  gap: var(--openui-space-3xs, 2px);\n  &:where(.openui-metric-indicator--variant-inline) {\n    gap: 0;\n  }\n  &:where(.openui-metric-indicator--has-subtext) {\n    gap: var(--openui-space-3xs, 2px);\n  }\n  & :where(.openui-metric-indicator__row) {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    align-items: flex-end;\n    gap: var(--openui-space-xs, 6px);\n    min-width: 0;\n  }\n  &.openui-metric-indicator--variant-inline :where(.openui-metric-indicator__row) {\n    align-items: baseline;\n    gap: var(--openui-space-2xs, 4px);\n  }\n  & :where(.openui-metric-indicator__main-value) {\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    font: var(--openui-text-numbers-default-heavy, 560 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-default-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  & :where(.openui-metric-indicator__previous-value) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    text-decoration: line-through;\n    font: var(--openui-text-numbers-sm, 400 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    margin-bottom: 1px;\n  }\n  & :where(.openui-metric-indicator__subtext) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    min-width: 0;\n    font: var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  &.openui-metric-indicator--variant-inline :where(.openui-metric-indicator__subtext) {\n    margin-top: 0;\n  }\n  & :where(.openui-metric-indicator__trend--success) {\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n  }\n  & :where(.openui-metric-indicator__trend--danger) {\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n  }\n  & :where(.openui-metric-indicator__trend) {\n    font: var(--openui-text-numbers-sm, 400 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    margin-bottom: 1px;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "CodeBlock",
+    "file": "components/CodeBlock/codeBlock.styles.ts",
+    "symbol": "wrapperClass",
+    "hook": "openui-code-block-root",
+    "bodySha256": "f986588f2bae3c41053513280cdabc75417ae2b339bd313270b2db97dad2194a",
+    "body": "\n  position: relative;\n  &:hover .openui-code-block-copy-button {\n    opacity: 1;\n  }\n  & .openui-code-block-copy-button {\n    position: absolute;\n    right: 0.5rem;\n    top: 0.5rem;\n    opacity: 0;\n    transition: opacity 0.2s ease-in-out;\n    &.openui-code-block-copy-button-copied {\n      color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n      background-color: var(--openui-success-background, oklch(0.627 0.17 149.214 / 0.12));\n    }\n  }\n  & .openui-code-block-syntax-highlighter {\n    margin: 0 !important;\n    border-radius: 0.5rem;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "MarkDownRenderer",
+    "file": "components/MarkDownRenderer/markdown.styles.ts",
+    "symbol": "codeClass",
+    "hook": "openui-mark-down-renderer-markdown-code",
+    "bodySha256": "f0ebef7708a4c05c01a3d141ab9a9225a132fa5079a1a23c0c32093d3b4ffa45",
+    "body": "\n  border-radius: 4px;\n  padding: 2px 4px;\n  background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  color: ${primary};\n  ${body}\n  /* Browsers ignore the legacy display:hidden declaration; preserve its rule. */\n  &::after, &::before {\n    content: \"\";\n    display: hidden;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "MarkDownRenderer",
+    "file": "components/MarkDownRenderer/markdown.styles.ts",
+    "symbol": "linkClass",
+    "hook": "openui-mark-down-renderer-markdown-link",
+    "bodySha256": "cff91574a2d678683cba5287def987a528f79a5f093bd952d47cfadf7f5e1718",
+    "body": "\n  color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n  cursor: pointer;\n  text-decoration: none;\n  transition: color 0.2s ease-in-out;\n  ${body}\n  &:hover {\n    text-decoration: underline;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "MarkDownRenderer",
+    "file": "components/MarkDownRenderer/markdown.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-mark-down-renderer-markdown-root",
+    "bodySha256": "12e65db5519cc460ea456300ddeea74c08911abb964dfafe93881f6650635664",
+    "body": "\n  color: ${primary};\n  ${body}\n  max-width: none;\n  &:where(.openui-markdown-renderer-card) {\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    border-radius: 0.5rem;\n    padding: 1rem;\n  }\n  &:where(.openui-markdown-renderer-card-sunk) {\n    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n    border-radius: 0.5rem;\n    padding: 1rem;\n  }\n  & h1,\n  & h2,\n  & h3,\n  & h4,\n  & h5,\n  & h6 {\n    ${heading}\n    color: ${primary};\n    margin-bottom: 18px;\n    &:has(+ p) {\n      margin-bottom: 8px;\n    }\n    & + strong {\n      ${heading}\n    }\n  }\n  & p {\n    color: ${primary};\n    ${body}\n    margin-bottom: 0;\n    &:has(+ p) {\n      margin-bottom: 18px;\n    }\n  }\n  & strong {\n    color: ${primary};\n    ${heavy}\n  }\n  & li {\n    margin-bottom: 8px;\n    ${body}\n    & :last-child {\n      margin-bottom: 0;\n    }\n    &::marker {\n      ${body}\n      color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    }\n  }\n  & li ul,\n  & li li,\n  & li ol {\n    margin-top: 8px;\n  }\n  & ol {\n    list-style-type: decimal;\n    padding-left: 20px;\n    margin-bottom: 20px;\n    ${body}\n    color: ${primary};\n    & :last-child {\n      margin-bottom: 0;\n    }\n  }\n  & ul {\n    list-style-type: disc;\n    padding-left: 20px;\n    margin-bottom: 24px;\n    ${body}\n    color: ${primary};\n    & :last-child {\n      margin-bottom: 0;\n    }\n  }\n  & .openui-code-block-syntax-highlighter {\n    padding: 25px !important;\n    margin-top: 8px !important;\n    margin-bottom: 8px !important;\n    &:first-child {\n      margin-top: 0 !important;\n    }\n    &:last-child {\n      margin-bottom: 0 !important;\n    }\n  }\n  & hr {\n    margin-top: 48px;\n    margin-bottom: 48px;\n    & + * {\n      margin-top: 0;\n    }\n  }\n  & blockquote {\n    color: ${primary};\n    border-left: 4px solid color-mix(in oklab, ${primary} 70%, transparent);\n    padding: 0 0 0 8px;\n    font-style: italic;\n    margin-left: 0;\n    margin-top: 25px;\n    margin-bottom: 25px;\n    padding-left: 16px;\n    quotes: \"“\" \"”\" \"‘\" \"’\";\n    line-height: 1.625;\n  }\n  & blockquote strong {\n    ${heavy}\n  }\n  & blockquote > *:first-child::before {\n    content: open-quote;\n    font-size: 1em;\n    line-height: 1;\n    vertical-align: top;\n    margin-right: 0.2em;\n  }\n  & blockquote > *:last-child::after {\n    content: close-quote;\n    font-size: 1em;\n    line-height: 1.5;\n    vertical-align: top;\n    margin-left: 0.2em;\n  }\n  & blockquote * {\n    font-style: inherit;\n    color: inherit;\n    line-height: inherit;\n  }\n  & .openui-table-container {\n    margin-bottom: 20px;\n  }\n  & > *:first-child {\n    margin-top: 0;\n  }\n  & > *:last-child {\n    margin-bottom: 0;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "InlineMarkdownRenderer",
+    "file": "components/InlineMarkdownRenderer/inlineMarkdown.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-inline-markdown-renderer-inline-markdown-root",
+    "bodySha256": "6a59e3c2b41e9f5aac01cc442f10766fdd3895fb4ab82592154f7f1737636d9a",
+    "body": "\n  display: inline;\n  text-align: inherit;\n  & .openui-markdown-renderer {\n    all: unset;\n    display: inline;\n    color: inherit;\n    font: inherit;\n    letter-spacing: inherit;\n    text-align: inherit;\n  }\n  & p,\n  & .openui-markdown-renderer p {\n    display: inline;\n    margin: 0;\n    padding: 0;\n    text-align: inherit;\n  }\n  & > * {\n    display: inline;\n    margin: 0;\n    padding: 0;\n    text-align: inherit;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageBlock",
+    "file": "components/ImageBlock/imageBlock.styles.ts",
+    "symbol": "wrapperClass",
+    "hook": "openui-image-block-wrapper-styled",
+    "bodySha256": "4fdc455c7a63d93b95d16906713edf48f2daa3c0076deb1160f6de2faa243175",
+    "body": "\n  flex: 1 1 0;\n  min-width: 0;\n  min-height: 240px;\n  max-height: 240px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n  isolation: isolate;\n  border-radius: var(--openui-radius-2xl, 14px);\n  padding: calc(var(--openui-space-l, 18px) - 2px) calc(var(--openui-space-l, 18px) + 2px);\n  overflow: hidden;\n  &::before {\n    content: \"\";\n    position: absolute;\n    inset: -20px;\n    background-image: var(--bg-image);\n    background-size: 150%;\n    background-position: center;\n    background-repeat: no-repeat;\n    opacity: 0.2;\n    filter: blur(12px);\n    z-index: 0;\n    border-radius: inherit;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageBlock",
+    "file": "components/ImageBlock/imageBlock.styles.ts",
+    "symbol": "wrapperMobileClass",
+    "hook": "openui-image-block-wrapper-mobile",
+    "bodySha256": "95fca0f691148b6352032211e2703619f0c036abcf90ca099c6779712949a1d0",
+    "body": "\n  height: auto;\n  width: 100%;\n  padding: 0;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageBlock",
+    "file": "components/ImageBlock/imageBlock.styles.ts",
+    "symbol": "errorClass",
+    "hook": "openui-image-block-error",
+    "bodySha256": "3a2256d7317469c4cb7fecfdb06809c2555df2f9f510b9a040658ad9b910668f",
+    "body": "\n  visibility: hidden;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageBlock",
+    "file": "components/ImageBlock/imageBlock.styles.ts",
+    "symbol": "imageClass",
+    "hook": "openui-image-block-image-styled",
+    "bodySha256": "9f8660572cfba86b21628477c5a2f78598a2cda58627e6322078ce654695e039",
+    "body": "\n  height: 100%;\n  max-width: 100%;\n  object-fit: cover;\n  border: 4px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  border-radius: var(--openui-radius-l, 10px);\n  position: relative;\n  z-index: 1;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageBlock",
+    "file": "components/ImageBlock/imageBlock.styles.ts",
+    "symbol": "imageMobileClass",
+    "hook": "openui-image-block-image-mobile",
+    "bodySha256": "2fc11bd51d81a3423f187ca931014c3cafe77421e7a689f15e95a374e8017ba6",
+    "body": "\n  border-radius: var(--openui-radius-2xl, 14px);\n  width: 100%;\n  height: auto;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageBlock",
+    "file": "components/ImageBlock/imageBlock.styles.ts",
+    "symbol": "loaderClass",
+    "hook": "openui-image-block-loader-styled",
+    "bodySha256": "ac9a2987b1c8be562d6a0e787087f1ce0b0b8f2e0b98925cff620c917537b215",
+    "body": "\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  translate: -50% -50%;\n  border-width: 3px;\n  border-style: solid;\n  height: 24px;\n  width: 24px;\n  animation: ${spin} 1s linear infinite;\n  border-radius: var(--openui-radius-full, 9999px);\n  border-color: rgb(209, 213, 219);\n  border-top-color: rgb(37, 99, 235);\n  z-index: 2;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageText",
+    "file": "components/ImageText/imageText.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-image-text-root",
+    "bodySha256": "cd56ce17dee2f64864b65e417f71ede5bc20ff9c3607964945ba7717e0adc1a6",
+    "body": "\n  display: flex;\n  gap: var(--openui-space-m, 12px);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageText",
+    "file": "components/ImageText/imageText.styles.ts",
+    "symbol": "imageContainerClass",
+    "hook": "openui-image-text-image-container",
+    "bodySha256": "f1d4103d560fd24f107475ac00ca894547af21c28a95debc6558fac2110a7ce4",
+    "body": "\n  position: relative;\n  width: calc(var(--openui-space-2xl, 36px) + var(--openui-space-2xs, 4px));\n  height: calc(var(--openui-space-2xl, 36px) + var(--openui-space-2xs, 4px));\n  border-radius: var(--openui-radius-m, 8px);\n  overflow: hidden;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageText",
+    "file": "components/ImageText/imageText.styles.ts",
+    "symbol": "imageClass",
+    "hook": "openui-image-text-image",
+    "bodySha256": "6a27414938478844394577ca0422620213c123ee9f387aa850544d0638eb748b",
+    "body": "\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageText",
+    "file": "components/ImageText/imageText.styles.ts",
+    "symbol": "layoutClasses.vertical",
+    "hook": "openui-image-text-layout-vertical",
+    "bodySha256": "66bfd75ba9eff85d0b42b5efa5e29f68e6357b75bc33f0633a7d2bdfa0f7879b",
+    "body": "\n    flex-direction: column;\n    align-items: flex-start;\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageText",
+    "file": "components/ImageText/imageText.styles.ts",
+    "symbol": "layoutClasses.horizontal",
+    "hook": "openui-image-text-layout-horizontal",
+    "bodySha256": "025c93a612c50387c30316b4abbc2ebacfff402d19adb697c466f345862c940c",
+    "body": "\n    flex-direction: row;\n    align-items: center;\n    .openui-text-block__primary {\n      font: var(--openui-text-body-sm-heavy, 560 14px/1.5 \"Inter\", sans-serif);\n      letter-spacing: var(--openui-text-body-sm-heavy-letter-spacing, -0.01em);\n      font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n    }\n    .openui-image-text__content {\n      padding-top: var(--openui-space-3xs, 2px);\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageText",
+    "file": "components/ImageText/imageText.styles.ts",
+    "symbol": "contentClass",
+    "hook": "openui-image-text-content",
+    "bodySha256": "fa43a1a33764719428cbdfb9a7c83cc58e4e6c9ddde73e07c8f47c97098021ab",
+    "body": "\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageTextLarge",
+    "file": "components/ImageTextLarge/imageTextLarge.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-image-text-large-root",
+    "bodySha256": "1b9a4b02baf89771abb9ebf8cdb4c5b7e19b14d192acdd3bee6bc367b0d5dc97",
+    "body": "\n  display: flex;\n  width: 100%;\n  min-width: 0;\n  flex-direction: column;\n  gap: var(--openui-space-m, 12px);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageTextLarge",
+    "file": "components/ImageTextLarge/imageTextLarge.styles.ts",
+    "symbol": "imageWrapClass",
+    "hook": "openui-image-text-large-image-wrap",
+    "bodySha256": "3b78565c2e2fca594bc2fdf407aa0e25df66947302c75a9d0c4611c526c7036b",
+    "body": "\n  position: relative;\n  width: 100%;\n  min-height: 60px;\n  max-height: 180px;\n  border-radius: var(--openui-radius-m, 8px);\n  overflow: hidden;\n  background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n  line-height: 0;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageTextLarge",
+    "file": "components/ImageTextLarge/imageTextLarge.styles.ts",
+    "symbol": "imageClass",
+    "hook": "openui-image-text-large-image",
+    "bodySha256": "16f4f44c60242d074c9757f3e1bff4ab413d895d1800fb964131a8475a9bc5c1",
+    "body": "\n  display: block;\n  width: 100%;\n  height: 180px;\n  max-height: 180px;\n  object-fit: cover;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TextBlock",
+    "file": "components/TextBlock/textBlock.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-text-block-root",
+    "bodySha256": "6e88620f4e412f09eb664c432349c7600b5f983b8227fb319ea9ec9e206ecac6",
+    "body": "\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-3xs, 2px);\n  align-items: flex-start;\n  text-align: left;\n  & :where(.openui-text-block__primary) {\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  & :where(.openui-text-block__secondary) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n  & :where(.openui-text-block__secondary--positive) {\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n  }\n  & :where(.openui-text-block__secondary--negative) {\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n  }\n  & :where(.openui-text-block__tertiary) {\n    display: none;\n  }\n  &.openui-text-block--title-text :where(.openui-text-block__primary) {\n    ${headingMedium}\n  }\n  &.openui-text-block--title-text :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--number-title-text :where(.openui-text-block__primary) {\n    ${numberTitleMedium}\n  }\n  &.openui-text-block--number-title-text :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--text-subtext :where(.openui-text-block__primary) {\n    ${body}\n  }\n  &.openui-text-block--text-subtext :where(.openui-text-block__secondary) {\n    ${bodySmall}\n  }\n  &:where(.openui-text-block--highlight-text-number-subtext) {\n    gap: 0;\n  }\n  &.openui-text-block--highlight-text-number-subtext :where(.openui-text-block__primary) {\n    ${bodyHeavy}\n  }\n  &.openui-text-block--highlight-text-number-subtext :where(.openui-text-block__secondary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--text :where(.openui-text-block__primary) {\n    ${body}\n  }\n  &.openui-text-block--highlight-text :where(.openui-text-block__primary) {\n    ${bodyHeavy}\n  }\n  &.openui-text-block--number :where(.openui-text-block__primary) {\n    ${numberHeavy}\n  }\n  &.openui-text-block--highlight-number :where(.openui-text-block__primary) {\n    ${numberLargeHeavy}\n  }\n  &.openui-text-block--title-text:where(.openui-text-block--size-xs),\n  &.openui-text-block--number-title-text:where(.openui-text-block--size-xs) {\n    gap: 0;\n  }\n  &.openui-text-block--size-xs.openui-text-block--title-text :where(.openui-text-block__primary) {\n    ${headingXs}\n  }\n  &.openui-text-block--size-xs.openui-text-block--title-text :where(.openui-text-block__secondary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--number-title-text\n    :where(.openui-text-block__primary) {\n    ${numberHeavy}\n  }\n  &.openui-text-block--size-xs.openui-text-block--number-title-text\n    :where(.openui-text-block__secondary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--text :where(.openui-text-block__primary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--text.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberSmall}\n  }\n  &.openui-text-block--text-subtext:where(.openui-text-block--size-xs),\n  &.openui-text-block--highlight-text-number-subtext:where(.openui-text-block--size-xs) {\n    gap: 0;\n  }\n  &.openui-text-block--size-xs.openui-text-block--text-subtext :where(.openui-text-block__primary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--text-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberSmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__primary) {\n    ${bodySmallHeavy}\n  }\n  &.openui-text-block--size-xs.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberSmallHeavy}\n  }\n  &.openui-text-block--size-xs.openui-text-block--text-subtext\n    :where(.openui-text-block__secondary),\n  &.openui-text-block--size-xs.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__secondary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__secondary) {\n    ${numberSmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--number :where(.openui-text-block__primary) {\n    ${numberSmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--highlight-number\n    :where(.openui-text-block__primary) {\n    ${numberSmallHeavy}\n  }\n  &.openui-text-block--size-xs.openui-text-block--highlight-text\n    :where(.openui-text-block__primary) {\n    ${bodySmallHeavy}\n  }\n  &.openui-text-block--title-text:where(.openui-text-block--size-sm),\n  &.openui-text-block--number-title-text:where(.openui-text-block--size-sm) {\n    gap: var(--openui-space-3xs, 2px);\n  }\n  &.openui-text-block--size-sm.openui-text-block--title-text :where(.openui-text-block__primary) {\n    ${headingSmall}\n  }\n  &.openui-text-block--size-sm.openui-text-block--title-text :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--size-sm.openui-text-block--number-title-text\n    :where(.openui-text-block__primary) {\n    ${numberLargeHeavy}\n  }\n  &.openui-text-block--size-sm.openui-text-block--number-title-text\n    :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--size-sm.openui-text-block--text :where(.openui-text-block__primary) {\n    ${body}\n  }\n  &.openui-text-block--size-sm.openui-text-block--text.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${number}\n  }\n  &.openui-text-block--text-subtext:where(.openui-text-block--size-sm),\n  &.openui-text-block--highlight-text-number-subtext:where(.openui-text-block--size-sm) {\n    gap: 0;\n  }\n  &.openui-text-block--size-sm.openui-text-block--text-subtext :where(.openui-text-block__primary) {\n    ${body}\n  }\n  &.openui-text-block--size-sm.openui-text-block--text-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${number}\n  }\n  &.openui-text-block--size-sm.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__primary) {\n    ${bodyHeavy}\n  }\n  &.openui-text-block--size-sm.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberHeavy}\n  }\n  &.openui-text-block--size-sm.openui-text-block--text-subtext\n    :where(.openui-text-block__secondary),\n  &.openui-text-block--size-sm.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__secondary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--size-sm.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__secondary) {\n    ${numberSmall}\n  }\n  &.openui-text-block--size-sm.openui-text-block--number :where(.openui-text-block__primary) {\n    ${numberSmall}\n  }\n  &.openui-text-block--size-sm.openui-text-block--highlight-number\n    :where(.openui-text-block__primary) {\n    ${numberHeavy}\n  }\n  &.openui-text-block--highlight-text:where(.openui-text-block--size-sm) {\n    gap: 0;\n  }\n  &.openui-text-block--size-sm.openui-text-block--highlight-text\n    :where(.openui-text-block__secondary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--size-sm.openui-text-block--highlight-text\n    :where(.openui-text-block__primary) {\n    ${bodyHeavy}\n  }\n  &.openui-text-block--title-text:where(.openui-text-block--size-md),\n  &.openui-text-block--number-title-text:where(.openui-text-block--size-md) {\n    gap: var(--openui-space-xs, 6px);\n  }\n  &.openui-text-block--size-md.openui-text-block--title-text :where(.openui-text-block__primary) {\n    ${headingMedium}\n  }\n  &.openui-text-block--size-md.openui-text-block--title-text :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--size-md.openui-text-block--number-title-text\n    :where(.openui-text-block__primary) {\n    ${numberTitleMedium}\n  }\n  &.openui-text-block--size-md.openui-text-block--number-title-text\n    :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--text-subtext:where(.openui-text-block--size-md),\n  &.openui-text-block--highlight-text:where(.openui-text-block--size-md),\n  &.openui-text-block--highlight-text-number-subtext:where(.openui-text-block--size-md) {\n    gap: 0;\n  }\n  &.openui-text-block--size-md.openui-text-block--highlight-text\n    :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--size-md.openui-text-block--highlight-text\n    :where(.openui-text-block__primary) {\n    ${bodyHeavy}\n  }\n  &.openui-text-block--size-md.openui-text-block--text-subtext :where(.openui-text-block__primary) {\n    ${body}\n  }\n  &.openui-text-block--size-md.openui-text-block--text-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${number}\n  }\n  &.openui-text-block--size-md.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__primary) {\n    ${bodyHeavy}\n  }\n  &.openui-text-block--size-md.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberHeavy}\n  }\n  &.openui-text-block--size-md.openui-text-block--text-subtext\n    :where(.openui-text-block__secondary),\n  &.openui-text-block--size-md.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--size-md.openui-text-block--text-subtext.openui-text-block--type-number\n    :where(.openui-text-block__secondary) {\n    ${number}\n  }\n  &.openui-text-block--size-md.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__secondary) {\n    ${number}\n  }\n  &.openui-text-block--size-md.openui-text-block--text.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${number}\n  }\n  &.openui-text-block--size-md.openui-text-block--number :where(.openui-text-block__primary) {\n    ${number}\n  }\n  &.openui-text-block--size-md.openui-text-block--highlight-number\n    :where(.openui-text-block__primary) {\n    ${numberHeavy}\n  }\n  &.openui-text-block--size-lg.openui-text-block--text :where(.openui-text-block__primary) {\n    ${bodyLarge}\n  }\n  &.openui-text-block--size-lg.openui-text-block--text.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberLarge}\n  }\n  &.openui-text-block--text-subtext:where(.openui-text-block--size-lg),\n  &.openui-text-block--highlight-text:where(.openui-text-block--size-lg),\n  &.openui-text-block--highlight-text-number-subtext:where(.openui-text-block--size-lg) {\n    gap: 0;\n  }\n  &.openui-text-block--size-lg.openui-text-block--highlight-text\n    :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--size-lg.openui-text-block--highlight-text\n    :where(.openui-text-block__primary) {\n    ${bodyLargeHeavy}\n  }\n  &.openui-text-block--size-lg.openui-text-block--text-subtext :where(.openui-text-block__primary) {\n    ${bodyLarge}\n  }\n  &.openui-text-block--size-lg.openui-text-block--text-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberLarge}\n  }\n  &.openui-text-block--size-lg.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__primary) {\n    ${bodyLargeHeavy}\n  }\n  &.openui-text-block--size-lg.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberLargeHeavy}\n  }\n  &.openui-text-block--size-lg.openui-text-block--text-subtext\n    :where(.openui-text-block__secondary),\n  &.openui-text-block--size-lg.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--size-lg.openui-text-block--text-subtext.openui-text-block--type-number\n    :where(.openui-text-block__secondary) {\n    ${number}\n  }\n  &.openui-text-block--size-lg.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__secondary) {\n    ${number}\n  }\n  &.openui-text-block--size-lg.openui-text-block--number :where(.openui-text-block__primary) {\n    ${numberLarge}\n  }\n  &.openui-text-block--size-lg.openui-text-block--highlight-number\n    :where(.openui-text-block__primary) {\n    ${numberLargeHeavy}\n  }\n  &.openui-text-block--title-text:where(.openui-text-block--size-lg),\n  &.openui-text-block--number-title-text:where(.openui-text-block--size-lg) {\n    gap: var(--openui-space-xs, 6px);\n  }\n  &.openui-text-block--size-lg.openui-text-block--title-text :where(.openui-text-block__primary) {\n    ${headingLarge}\n  }\n  &.openui-text-block--size-lg.openui-text-block--title-text :where(.openui-text-block__secondary) {\n    ${bodyLarge}\n  }\n  &.openui-text-block--size-lg.openui-text-block--number-title-text\n    :where(.openui-text-block__primary) {\n    ${numberTitle}\n  }\n  &.openui-text-block--size-lg.openui-text-block--number-title-text\n    :where(.openui-text-block__secondary) {\n    ${bodyLarge}\n  }\n  &:where(.openui-text-block--align-left) {\n    align-items: flex-start;\n    text-align: left;\n  }\n  &:where(.openui-text-block--align-center) {\n    align-items: center;\n    text-align: center;\n  }\n  &:where(.openui-text-block--align-right) {\n    align-items: flex-end;\n    text-align: right;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ListItem",
+    "file": "components/ListItem/listItem.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-list-item-root",
+    "bodySha256": "6b99cf14ac23ec17c652f791294b53fe636d4f0914e836f61277abad7e2040de",
+    "body": "\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-m, 12px);\n  width: 100%;\n  &:where(.openui-list-item-wrapper-with-action) {\n    border-bottom: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    padding-bottom: var(--openui-space-m, 12px);\n  }\n  &.openui-list-item-wrapper-with-action:hover :where(.openui-list-item-indicator) {\n    scale: 1.1;\n  }\n  &:last-child:where(.openui-list-item-wrapper-with-action) {\n    border-bottom: none;\n    padding-bottom: 0;\n  }\n  & :where(.openui-list-item) {\n    display: flex;\n    flex-direction: row;\n    align-items: flex-start;\n    gap: var(--openui-space-m, 12px);\n  }\n  & :where(.openui-list-item-clickable) {\n    cursor: pointer;\n  }\n  & :not(:has(.openui-list-item-subtitle)):where(.openui-list-item) {\n    align-items: center;\n  }\n  & :where(.openui-list-item-indicator) {\n    margin-top: var(--openui-space-2xs, 4px);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 40px;\n    height: 40px;\n    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n    border-radius: var(--openui-radius-m, 8px);\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    overflow: hidden;\n    transition: background-color 0.2s ease;\n    flex-shrink: 0;\n  }\n  & :where(.openui-list-item-indicator-no-subtitle) {\n    height: 24px;\n    width: 24px;\n    margin-top: 0;\n    border-radius: var(--openui-radius-s, 6px);\n  }\n  & :where(.openui-list-item-indicator-clickable) {\n    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n  }\n  & :where(.openui-list-item-indicator-number) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    font: var(--openui-text-label-default, 400 16px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-default-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  & :where(.openui-list-item-indicator-image) {\n    border-radius: var(--openui-radius-s, 6px);\n    overflow: hidden;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 100%;\n    height: 100%;\n  }\n  & img:where(.openui-list-item-indicator-image img) {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    display: block;\n  }\n  & :where(.openui-list-item-content-wrapper) {\n    display: flex;\n    flex-direction: row;\n    align-items: flex-start;\n    justify-content: space-between;\n    width: 100%;\n  }\n  & :where(.openui-list-item-content) {\n    display: flex;\n    flex-direction: column;\n    flex: 1;\n  }\n  & :where(.openui-list-item-title) {\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  & :where(.openui-list-item-subtitle) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  & :where(.openui-list-item-action) {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: flex-start;\n    gap: var(--openui-space-2xs, 4px);\n    flex-shrink: 0;\n  }\n  & :where(.openui-list-item-action-label),\n  & :where(.openui-list-item-action-icon) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  & .openui-list-item:hover :where(.openui-list-item-indicator-clickable),\n  & .openui-list-item:focus :where(.openui-list-item-indicator-clickable) {\n    background-color: var(--openui-highlight-strong, oklch(0.097 0 0 / 0.08));\n  }\n  & .openui-list-item:hover :where(.openui-list-item-action-label),\n  & .openui-list-item:hover :where(.openui-list-item-action-icon),\n  & .openui-list-item:focus :where(.openui-list-item-action-label),\n  & .openui-list-item:focus :where(.openui-list-item-action-icon) {\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  &:where(.openui-list-item-wrapper--small) {\n    gap: var(--openui-space-s, 8px);\n  }\n  &.openui-list-item-wrapper--small :where(.openui-list-item) {\n    gap: var(--openui-space-s-m, 10px);\n  }\n  &.openui-list-item-wrapper--small :where(.openui-list-item-indicator) {\n    width: 36px;\n    height: 36px;\n  }\n  &.openui-list-item-wrapper--small :where(.openui-list-item-indicator-no-subtitle) {\n    width: 20px;\n    height: 20px;\n  }\n  &.openui-list-item-wrapper--small :where(.openui-list-item-indicator-number) {\n    font: var(--openui-text-numbers-sm, 400 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  &.openui-list-item-wrapper--small :where(.openui-list-item-title),\n  &.openui-list-item-wrapper--small :where(.openui-list-item-subtitle),\n  &.openui-list-item-wrapper--small :where(.openui-list-item-action-label),\n  &.openui-list-item-wrapper--small :where(.openui-list-item-action-icon) {\n    font: var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ListBlock",
+    "file": "components/ListBlock/listBlock.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-list-block-root",
+    "bodySha256": "0a957353857473bf011eca61d2590b751e5141b87739444a45b25e057d12efc7",
+    "body": "\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  width: 100%;\n  gap: var(--openui-space-l, 18px);\n  &:where(.openui-list-block--small) {\n    gap: var(--openui-space-m, 12px);\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Card",
+    "file": "components/Card/Card.tsx",
+    "symbol": "componentClass",
+    "hook": "openui-card-root",
+    "bodySha256": "af5b0c5eff5e52cb7e662499c6fdc240e896d863ec609bfceec8a83e9ac458da",
+    "body": "\n  ${cardStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "CardHeader",
+    "file": "components/CardHeader/CardHeader.tsx",
+    "symbol": "componentClass",
+    "hook": "openui-card-header-root",
+    "bodySha256": "5afc0765a1c0908ea2018e76381361bf88dc1d7157652e4ed846b8db1eebda53",
+    "body": "\n  ${cardHeaderStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Buttons",
+    "file": "components/Buttons/Buttons.tsx",
+    "symbol": "componentClass",
+    "hook": "openui-buttons-root",
+    "bodySha256": "ed0f5bf2b4a2571c518698ca800f089cb9b7cde54844eac98946a5085276ca84",
+    "body": "\n  ${buttonsStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TagBlock",
+    "file": "components/TagBlock/tagBlock.styles.ts",
+    "symbol": "blockClass",
+    "hook": "openui-tag-block-root",
+    "bodySha256": "4158855dd58785325f9b1289367a698a94862500408be4c4bc568f89d8580e2e",
+    "body": "\n  display: flex;\n  flex-wrap: wrap;\n  gap: var(--openui-space-s, 8px);\n  max-width: 100%;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "DotMatrixLoader",
+    "file": "components/DotMatrixLoader/DotMatrixLoader.tsx",
+    "symbol": "componentClass",
+    "hook": "openui-dot-matrix-loader-root",
+    "bodySha256": "1f628336193e55c4b01f3d2dffb12bba06f8fc6b60c453b9114d3791ec12ac69",
+    "body": "\n  ${loaderStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Skeleton",
+    "file": "components/Skeleton/PieChartSkeleton.tsx",
+    "symbol": "componentClass",
+    "hook": "openui-skeleton-pie-chart-skeleton-root",
+    "bodySha256": "49b6ab9c38a74521bc26fb077219e7704799a9448ed024ac0358cfa5a862ce87",
+    "body": "\n  ${pieStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Skeleton",
+    "file": "components/Skeleton/Skeleton.tsx",
+    "symbol": "componentClass",
+    "hook": "openui-skeleton-root",
+    "bodySha256": "da5d40d95ab13a89acf4e38be1fc97a739bce65bf204c17d499edf602eaeb771",
+    "body": "\n  ${stackStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Skeleton",
+    "file": "components/Skeleton/SkeletonBar.tsx",
+    "symbol": "componentClass",
+    "hook": "openui-skeleton-bar-root",
+    "bodySha256": "1e461209c7f24cb095cc16bae0e72d16ffda630edf7e77435cbd24a5922a433a",
+    "body": "\n  ${barStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Skeleton",
+    "file": "components/Skeleton/TableSkeleton.tsx",
+    "symbol": "componentClass",
+    "hook": "openui-skeleton-table-skeleton-root",
+    "bodySha256": "9affde24e818fe426c3b2e6f3d7a04f1bff063c7e4650341d575fdbaf8558b90",
+    "body": "\n  ${tableStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/listedSources.styles.ts",
+    "symbol": "listClass",
+    "hook": "openui-sources-listed-sources-list",
+    "bodySha256": "646f32c4063b941e1e798e3de5717ab7082128f0b15fc55508407f91a0e8571f",
+    "body": "\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-m, 12px);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/listedSources.styles.ts",
+    "symbol": "headerClass",
+    "hook": "openui-sources-listed-sources-header",
+    "bodySha256": "0eb68e73203cd6e5340aa745cb2ec75b5515484183ed1fc723a7a6c8d354bb41",
+    "body": "\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: var(--openui-space-s, 8px);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/listedSources.styles.ts",
+    "symbol": "titleClass",
+    "hook": "openui-sources-listed-sources-title",
+    "bodySha256": "fa9d012afa42007e1f28c7ad9e67a0b86f2ad0ecce618dbea034e2849c218a39",
+    "body": "\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  font: var(--openui-text-label-default-heavy, 560 16px/1.25 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-label-default-heavy-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/listedSources.styles.ts",
+    "symbol": "buttonsClass",
+    "hook": "openui-sources-listed-sources-buttons",
+    "bodySha256": "b13eff502ebc1a7e6e348c9502613ee385eec5abd22737cc00db4adc7382e0e5",
+    "body": "\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: var(--openui-space-s, 8px);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/listedSources.styles.ts",
+    "symbol": "containerClass",
+    "hook": "openui-sources-listed-sources-container",
+    "bodySha256": "6081dd6c851e6998d378a3b4a6c94e00896a173ddf35405bf007e418f7ead022",
+    "body": "\n  width: 180px !important;\n  padding: var(--openui-space-000, 0);\n  border-radius: var(--openui-radius-l, 10px);\n  overflow: hidden;\n  background-color: transparent !important;\n  &.openui-listed-sources-item-container--has-url:hover {\n    background-color: var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02)) !important;\n    border-color: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/sourcesItem.styles.ts",
+    "symbol": "itemClass",
+    "hook": "openui-sources-item-item",
+    "bodySha256": "dd1f7e20ad83a2fc10d1eee4d2d6c75be63d904d66f5a6612b75ab430b4db61a",
+    "body": "\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  gap: var(--openui-space-2xs, 4px);\n  padding: var(--openui-space-s, 8px);\n  height: 100%;\n  &.openui-listed-source-item--has-url {\n    cursor: pointer;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/sourcesItem.styles.ts",
+    "symbol": "headerClass",
+    "hook": "openui-sources-item-header",
+    "bodySha256": "ab6bc521b407db0ac1bfd2021ecfbf2e13bb19d3fcde2f6a40713efd5cd5e3b3",
+    "body": "\n  display: flex;\n  align-items: flex-start;\n  gap: var(--openui-space-s, 8px);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/sourcesItem.styles.ts",
+    "symbol": "nameClass",
+    "hook": "openui-sources-item-name",
+    "bodySha256": "949f105a54269c032218b06f73521f9c3be690281e08ba24d745e61593145dc8",
+    "body": "\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  font: var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/sourcesItem.styles.ts",
+    "symbol": "titleClass",
+    "hook": "openui-sources-item-title",
+    "bodySha256": "c461a423c2528369a6ed0412b521f293aec5b16dd1eddebe8479bbb5fbc71da6",
+    "body": "\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  font: var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/sourcesItem.styles.ts",
+    "symbol": "logoClass",
+    "hook": "openui-sources-item-logo",
+    "bodySha256": "4be4dc6ddaa1e42ff12da2757bd801ad3ca51df6934c2e3c995f77bf75bd42fe",
+    "body": "\n  flex-shrink: 0;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  border-radius: var(--openui-radius-s, 6px);\n  box-sizing: border-box;\n  overflow: hidden;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "SnippetCardBlock",
+    "file": "components/SnippetCardBlock/snippetCardBlock.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-snippet-card-block-root",
+    "bodySha256": "63fe034ac557672f59f35af36f75a26a120bc4c37d3fc2ded4c56d3d63d060d4",
+    "body": "\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: var(--openui-space-m, 12px);\n  width: 100%;\n  min-width: 0;\n  padding: var(--openui-space-s-m, 10px);\n  box-sizing: border-box;\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  border-radius: var(--openui-radius-2xl, 14px);\n  background-color: var(--openui-sunk-light, oklch(0.097 0 0 / 0.02));\n  position: relative;\n  overflow: hidden;\n  transition:\n    background-color 0.2s ease,\n    border-color 0.2s ease,\n    box-shadow 0.2s ease,\n    transform 0.2s ease;\n  &:where(.openui-value-card--static) {\n    background-color: var(--openui-sunk-light, oklch(0.097 0 0 / 0.02));\n    border-color: var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    box-shadow: none;\n  }\n  &:where(.openui-value-card--clickable) {\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    border-color: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));\n    box-shadow: var(\n      --openui-shadow-s,\n      0 1px 3px -2px oklch(0 0 0 / 0.02),\n      0 2px 5px -2px oklch(0 0 0 / 0.04)\n    );\n    cursor: pointer;\n  }\n  &:hover:where(.openui-value-card--clickable) {\n    box-shadow: none;\n    transform: scale(0.995);\n  }\n  &:focus-visible:where(.openui-value-card--clickable) {\n    outline: 2px solid var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08));\n    outline-offset: 2px;\n  }\n  & :where(.openui-value-card__lhs) {\n    display: flex;\n    align-items: center;\n    min-width: 0;\n    flex: 1;\n  }\n  & :where(.openui-value-card__lhs > *) {\n    min-width: 0;\n  }\n  & :where(.openui-value-card__rhs) {\n    flex-shrink: 1;\n    display: flex;\n    align-items: center;\n    justify-content: flex-end;\n    min-width: 0;\n    margin-left: var(--openui-space-m, 12px);\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    font: var(--openui-text-numbers-lg-heavy, 560 18px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-lg-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  & :where(.openui-value-card__rhs-content) {\n    display: flex;\n    justify-content: flex-end;\n    min-width: 0;\n    max-width: 100%;\n  }\n  & .openui-value-card__lhs :where(.openui-icon-text),\n  & .openui-value-card__lhs :where(.openui-image-text),\n  & .openui-value-card__lhs :where(.openui-icon-text__content),\n  & .openui-value-card__lhs :where(.openui-image-text__content),\n  & .openui-value-card__lhs :where(.openui-text-block),\n  & :where(.openui-value-card__rhs-content),\n  & :where(.openui-value-card__rhs-content > *),\n  & .openui-value-card__rhs :where(.openui-text-block) {\n    min-width: 0;\n  }\n  & .openui-value-card__lhs :where(.openui-icon-text),\n  & .openui-value-card__lhs :where(.openui-image-text),\n  & .openui-value-card__lhs :where(.openui-text-block),\n  & :where(.openui-value-card__rhs-content) {\n    width: 100%;\n    overflow: hidden;\n  }\n  & .openui-value-card__rhs :where(.openui-text-block) {\n    align-items: flex-end;\n    width: auto;\n    max-width: 100%;\n    overflow: hidden;\n    text-align: right;\n  }\n  & .openui-value-card__lhs :where(.openui-text-block__primary),\n  & .openui-value-card__lhs :where(.openui-text-block__secondary),\n  & .openui-value-card__rhs :where(.openui-text-block__primary),\n  & .openui-value-card__rhs :where(.openui-text-block__secondary) {\n    max-width: 100%;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n  }\n  & .openui-value-card__rhs :where(.openui-text-block--align-left) {\n    align-items: flex-end;\n    text-align: right;\n  }\n  & :where(.openui-value-card__chevron) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ContextCardBlock",
+    "file": "components/ContextCardBlock/card.styles.ts",
+    "symbol": "imageClass",
+    "hook": "openui-context-card-block-card-image",
+    "bodySha256": "574e08c9c8d5a9651b82ccb503e6864b4620263b1099b40004b11cf031ec0b26",
+    "body": "\n  & > * {\n    position: relative;\n    z-index: 2;\n  }\n  &::before {\n    content: \"\";\n    position: absolute;\n    inset: 0;\n    background: var(--openui-overlay, oklch(0 0 0 / 0.4));\n    z-index: 1;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ContextCardBlock",
+    "file": "components/ContextCardBlock/card.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-context-card-block-card-root",
+    "bodySha256": "d2dc76e74835b54806011ea2470052a55f12c331ce5cc49862c684a3326e762d",
+    "body": "\n  & {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    width: 100%;\n    min-width: 196px;\n    padding: var(--openui-space-m, 12px);\n    border: none;\n    border-radius: var(--openui-radius-xl, 12px);\n    box-sizing: border-box;\n    overflow: hidden;\n    position: relative;\n    transition:\n      background-color 0.2s ease,\n      box-shadow 0.2s ease,\n      transform 0.2s ease;\n  }\n  &:where(.openui-context-card--clickable) {\n    background-color: var(--openui-highlight, oklch(0.097 0 0 / 0.04));\n    cursor: pointer;\n  }\n  &:hover:where(.openui-context-card--clickable) {\n    transform: scale(0.995);\n  }\n  &:focus-visible:where(.openui-context-card--clickable) {\n    outline: 2px solid var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08));\n    outline-offset: 2px;\n  }\n  &:where(.openui-context-card--static) {\n    background-color: var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02));\n    box-shadow: none;\n  }\n  &:where(.openui-context-card--variant-gray) {\n    background-color: var(--openui-highlight, oklch(0.097 0 0 / 0.04));\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  &:where(.openui-context-card--variant-info) {\n    background-color: var(--openui-info-background, oklch(0.623 0.188 259.815 / 0.12));\n    color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n  }\n  &.openui-context-card--variant-info :where(.openui-context-card__title-text) {\n    color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n    opacity: 0.8;\n  }\n  &.openui-context-card--variant-info :where(.openui-context-card__body-text) {\n    color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n  }\n  &.openui-context-card--variant-info :where(.openui-context-card__tag) {\n    background-color: var(--openui-elevated, oklch(0.097 0 0 / 0.08));\n  }\n  &:where(.openui-context-card--variant-success) {\n    background-color: var(--openui-success-background, oklch(0.627 0.17 149.214 / 0.12));\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n  }\n  &.openui-context-card--variant-success :where(.openui-context-card__title-text) {\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n    opacity: 0.8;\n  }\n  &.openui-context-card--variant-success :where(.openui-context-card__body-text) {\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n  }\n  &.openui-context-card--variant-success :where(.openui-context-card__tag) {\n    background-color: var(--openui-elevated, oklch(0.097 0 0 / 0.08));\n  }\n  &:where(.openui-context-card--variant-warning) {\n    background-color: var(--openui-alert-background, oklch(0.795 0.162 86.047 / 0.16));\n    color: var(--openui-text-alert-primary, oklch(0.476 0.103 61.907 / 1));\n  }\n  &.openui-context-card--variant-warning :where(.openui-context-card__title-text) {\n    color: var(--openui-text-alert-primary, oklch(0.476 0.103 61.907 / 1));\n    opacity: 0.8;\n  }\n  &.openui-context-card--variant-warning :where(.openui-context-card__body-text) {\n    color: var(--openui-text-alert-primary, oklch(0.476 0.103 61.907 / 1));\n  }\n  &.openui-context-card--variant-warning :where(.openui-context-card__tag) {\n    background-color: var(--openui-elevated, oklch(0.097 0 0 / 0.08));\n  }\n  &:where(.openui-context-card--variant-danger) {\n    background-color: var(--openui-danger-background, oklch(0.577 0.215 27.325 / 0.12));\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n  }\n  &.openui-context-card--variant-danger :where(.openui-context-card__title-text) {\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n    opacity: 0.8;\n  }\n  &.openui-context-card--variant-danger :where(.openui-context-card__body-text) {\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n  }\n  &.openui-context-card--variant-danger :where(.openui-context-card__tag) {\n    background-color: var(--openui-elevated, oklch(0.097 0 0 / 0.08));\n  }\n  &:where(.openui-context-card--variant-image) {\n    background-position: center;\n    background-size: cover;\n    color: var(--openui-text-white, oklch(1 0 89.876 / 1));\n  }\n  &.openui-context-card--variant-image :where(.openui-context-card__title-text) {\n    color: var(--openui-text-white, oklch(1 0 89.876 / 1));\n    opacity: 0.6;\n  }\n  &.openui-context-card--variant-image .openui-context-card__tag :where(.openui-tag) {\n    background-color: rgba(0, 0, 0, 0.4);\n    color: var(--openui-text-white, oklch(1 0 89.876 / 1));\n    backdrop-filter: blur(2px);\n    -webkit-backdrop-filter: blur(2px);\n  }\n  & :where(.openui-context-card__vertical) {\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n    justify-content: space-between;\n    min-width: 0;\n    height: 100%;\n    gap: var(--openui-space-l, 18px);\n  }\n  & :where(.openui-context-card__slot) {\n    width: 100%;\n    border-radius: var(--openui-radius-m, 8px);\n  }\n  & :where(.openui-context-card__slot--top) {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    gap: var(--openui-space-s, 8px);\n    min-height: var(--openui-space-xl, 24px);\n  }\n  & :where(.openui-context-card__slot--bottom) {\n    display: flex;\n    flex-direction: column;\n    gap: var(--openui-space-2xs, 4px);\n  }\n  & :where(.openui-context-card__title-text) {\n    font: var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n  & :where(.openui-context-card__body-text) {\n    font: var(--openui-text-body-default-heavy, 560 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-default-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  & :where(.openui-context-card__chevron) {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-shrink: 0;\n    color: currentColor;\n    opacity: 0.7;\n  }\n  & :where(.openui-context-card__tag-wrapper) {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    pointer-events: none;\n  }\n  & :where(.openui-context-card__tag) {\n    border: none;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "CompositeCardBlock",
+    "file": "components/CompositeCardBlock/card.styles.ts",
+    "symbol": "wrapperClass",
+    "hook": "openui-composite-card-block-card-wrapper",
+    "bodySha256": "d4b51dabcbfdc0a22584b6eee1e1a03271cfe6a28a611e0f9cbd17a33f8a5c4d",
+    "body": "\n  height: 100%;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "CompositeCardBlock",
+    "file": "components/CompositeCardBlock/card.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-composite-card-block-card-root",
+    "bodySha256": "a855706a42bebabb902d9d983fdc312a8cda37b28af9b5a0846c9cdf3e704381",
+    "body": "\n  & {\n    display: flex;\n    flex-direction: column;\n    gap: var(--openui-space-m, 12px);\n    min-width: 15rem;\n    height: 100%;\n    padding: var(--openui-space-m, 12px);\n    border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    border-radius: var(--openui-radius-3xl, 16px);\n    box-sizing: border-box;\n    background: var(--openui-sunk-light, oklch(0.097 0 0 / 0.02));\n  }\n  &:where(.openui-composite-card--clickable) {\n    background: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    border-color: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));\n    box-shadow: var(\n      --openui-shadow-m,\n      0 4px 6px -2px oklch(0 0 0 / 0.025),\n      0 2px 2px -2px oklch(0 0 0 / 0.05)\n    );\n    cursor: pointer;\n    transition:\n      transform 0.2s ease,\n      box-shadow 0.2s ease;\n  }\n  &:hover:where(.openui-composite-card--clickable) {\n    transform: scale(0.995);\n    box-shadow: none;\n  }\n  &:focus-visible:where(.openui-composite-card--clickable) {\n    outline: 2px solid var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08));\n    outline-offset: 2px;\n  }\n  & :where(.openui-composite-card__header) {\n    display: flex;\n    flex-direction: column;\n    gap: var(--openui-space-m, 12px);\n    flex-shrink: 0;\n  }\n  & :where(.openui-composite-card__body) {\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n    gap: var(--openui-space-m, 12px);\n    min-height: 0;\n  }\n  & .openui-inline-markdown-renderer strong,\n  & .openui-inline-markdown-renderer em {\n    font: inherit;\n    letter-spacing: inherit;\n  }\n  & .openui-inline-markdown-renderer strong,\n  & .openui-inline-markdown-renderer strong em,\n  & .openui-inline-markdown-renderer em strong {\n    font-weight: var(--openui-font-weight-medium, 560);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  & .openui-inline-markdown-renderer em,\n  & .openui-inline-markdown-renderer strong em,\n  & .openui-inline-markdown-renderer em strong {\n    font-style: italic;\n  }\n  & .openui-inline-markdown-renderer code {\n    font: var(--openui-text-code-sm, 400 12px/1.5 \"SFMono-Regular\", Menlo, monospace);\n    letter-spacing: var(--openui-text-code-sm-letter-spacing, 0);\n    line-height: 1;\n  }\n  & :where(.openui-composite-card__footer) {\n    display: flex;\n    flex-shrink: 0;\n    margin-top: auto;\n  }\n  & :where(.openui-composite-card__footer > *) {\n    width: 100%;\n  }\n  & :where(.openui-composite-card__footer-content) {\n    display: flex;\n    flex-direction: column;\n    gap: var(--openui-space-s, 8px);\n    width: 100%;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "OverviewCardBlock",
+    "file": "components/OverviewCardBlock/overviewCardBlock.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-overview-card-block-root",
+    "bodySha256": "c5c94fe34e55d38fa62a16607792c93d1c98bfd31c89d0e96ee5cc14551e9022",
+    "body": "\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  min-width: 158px;\n  padding: var(--openui-space-s-m, 10px);\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  border-radius: var(--openui-radius-2xl, 14px);\n  background-color: var(--openui-sunk-light, oklch(0.097 0 0 / 0.02));\n  transition:\n    background-color 0.2s ease,\n    border-color 0.2s ease,\n    box-shadow 0.2s ease,\n    transform 0.2s ease;\n  &:where(.openui-overview-card--clickable) {\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    border-color: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));\n    box-shadow: var(\n      --openui-shadow-m,\n      0 4px 6px -2px oklch(0 0 0 / 0.025),\n      0 2px 2px -2px oklch(0 0 0 / 0.05)\n    );\n    cursor: pointer;\n  }\n  &:hover:where(.openui-overview-card--clickable) {\n    box-shadow: none;\n    transform: scale(0.995);\n  }\n  &:focus-visible:where(.openui-overview-card--clickable) {\n    outline: 2px solid var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08));\n    outline-offset: 2px;\n  }\n  & :where(.openui-overview-card__vertical) {\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n    justify-content: space-between;\n    gap: var(--openui-space-l, 18px);\n    min-width: 0;\n    min-height: 0;\n  }\n  & :where(.openui-overview-card__top-row) {\n    display: flex;\n    flex-direction: row;\n    align-items: flex-start;\n    justify-content: space-between;\n    gap: var(--openui-space-s, 8px);\n    width: 100%;\n    min-width: 0;\n  }\n  & :where(.openui-overview-card__chevron) {\n    flex-shrink: 0;\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n  & :where(.openui-overview-card__slot) {\n    width: 100%;\n    min-width: 0;\n  }\n  & :where(.openui-overview-card__slot--top) {\n    flex: 1;\n    min-width: 0;\n    width: auto;\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    gap: var(--openui-space-s, 8px);\n    min-height: var(--openui-space-xl, 24px);\n  }\n  & :where(.openui-overview-card__slot--bottom) {\n    display: flex;\n    flex-direction: column;\n    gap: var(--openui-space-2xs, 4px);\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "VisualCardBlock",
+    "file": "components/VisualCardBlock/card.styles.ts",
+    "symbol": "clickableClass",
+    "hook": "openui-visual-card-block-card-clickable",
+    "bodySha256": "34a8a68c1182ac80b8bd71ff4ad9911ac5eac331f767a4c17cce425a75ce8bcb",
+    "body": "\n  &:hover::before {\n    transform: scale(1.04);\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "VisualCardBlock",
+    "file": "components/VisualCardBlock/card.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-visual-card-block-card-root",
+    "bodySha256": "cf33a4227df54b5ea82d34b1e27226a5e39120213c57f0b2c6c75ece008c015c",
+    "body": "\n  & {\n    position: relative;\n    isolation: isolate;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    min-height: 280px;\n    height: 100%;\n    border-radius: var(--openui-radius-3xl, 16px);\n    overflow: hidden;\n    background-color: var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02));\n    border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    transition:\n      box-shadow 0.2s ease,\n      transform 0.2s ease;\n  }\n  &::before {\n    content: \"\";\n    position: absolute;\n    inset: 0;\n    z-index: 0;\n    background-image: var(--openui-visual-card-image, none);\n    background-size: cover;\n    background-position: center;\n    transition: transform 0.25s ease;\n  }\n  &::after {\n    content: \"\";\n    position: absolute;\n    inset: 0;\n    z-index: 1;\n    pointer-events: none;\n    background: linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.56) 100%);\n  }\n  &:where(.openui-visual-first-card--clickable) {\n    cursor: pointer;\n    box-shadow: var(\n      --openui-shadow-s,\n      0 1px 3px -2px oklch(0 0 0 / 0.02),\n      0 2px 5px -2px oklch(0 0 0 / 0.04)\n    );\n    border-color: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));\n  }\n  &:hover:where(.openui-visual-first-card--clickable) {\n    box-shadow: none;\n    transform: scale(0.995);\n  }\n  &:focus-visible:where(.openui-visual-first-card--clickable) {\n    outline: 2px solid var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08));\n    outline-offset: 2px;\n  }\n  & :where(.openui-visual-first-card__top) {\n    position: relative;\n    z-index: 2;\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    min-height: 24px;\n    padding: var(--openui-space-m, 12px);\n  }\n  & :where(.openui-visual-first-card__tag) {\n    min-width: 0;\n  }\n  & .openui-visual-first-card__tag :where(.openui-tag) {\n    background-color: rgba(0, 0, 0, 0.4);\n    color: var(--openui-text-white, oklch(1 0 89.876 / 1));\n    backdrop-filter: blur(2px);\n    -webkit-backdrop-filter: blur(2px);\n  }\n  & :where(.openui-visual-first-card__action) {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    flex-shrink: 0;\n    background-color: rgba(0, 0, 0, 0.4);\n    color: var(--openui-text-white, oklch(1 0 89.876 / 1));\n    backdrop-filter: blur(2px);\n    -webkit-backdrop-filter: blur(2px);\n    border-radius: var(--openui-radius-s, 6px);\n    padding: var(--openui-space-2xs, 4px);\n  }\n  & :where(.openui-visual-first-card__bottom) {\n    position: relative;\n    z-index: 2;\n    box-sizing: border-box;\n    margin: auto var(--openui-space-m, 12px) var(--openui-space-m, 12px) var(--openui-space-m, 12px);\n    padding: var(--openui-space-s, 8px) var(--openui-space-s-m, 10px);\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    border-radius: var(--openui-radius-l, 10px);\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "_shared/cards",
+    "file": "components/_shared/cards/cardBlockLayout.styles.ts",
+    "symbol": "scrollbarClass",
+    "hook": "openui-card-layout-scrollbar",
+    "bodySha256": "63d191bd1bf608c5a3ad5cba1f2e99340806b7949a13a259a9664a885e54826b",
+    "body": "\n  &::-webkit-scrollbar {\n    display: none;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "_shared/cards",
+    "file": "components/_shared/cards/cardBlockLayout.styles.ts",
+    "symbol": "layoutClasses.small",
+    "hook": "openui-card-layout-layout-small",
+    "bodySha256": "847a9b71706e511ca511d09c41e753e40b59d906a75e72fa13ae9a4f5f7b9b02",
+    "body": "\n    --openui-small-card-gap: var(--openui-space-m, 12px);\n    width: 100%;\n    container-type: inline-size;\n    &[data-layout=\"carousel\"] {\n      padding: 0;\n    }\n    & :where(.openui-small-card-block__grid) {\n      display: flex;\n      flex-direction: column;\n      gap: var(--openui-small-card-gap);\n      width: 100%;\n    }\n    & :where(.openui-small-card-block__row) {\n      display: grid;\n      gap: var(--openui-small-card-gap);\n      width: 100%;\n      align-items: stretch;\n    }\n    & :where(.openui-small-card-block__row--1) {\n      grid-template-columns: 1fr;\n    }\n    & :where(.openui-small-card-block__row--2) {\n      grid-template-columns: repeat(2, minmax(0, 1fr));\n    }\n    & :where(.openui-small-card-block__row--3) {\n      grid-template-columns: repeat(3, minmax(0, 1fr));\n    }\n    & :where(.openui-small-card-block__item) {\n      display: grid;\n      width: 100%;\n      min-width: 0;\n    }\n    & :where(.openui-small-card-block__carousel) {\n      width: 100%;\n      overflow-x: auto;\n      overflow-y: visible;\n      scrollbar-width: none;\n      -ms-overflow-style: none;\n    }\n    &\n      .openui-small-card-block__carousel--mask-left:where(\n        .openui-small-card-block__carousel--mask-right\n      ) {\n      mask-image: linear-gradient(\n        to right,\n        #0000,\n        #000 var(--openui-space-3xl, 48px),\n        #000 calc(100% - var(--openui-space-3xl, 48px)),\n        #0000\n      );\n      -webkit-mask-image: linear-gradient(\n        to right,\n        #0000,\n        #000 var(--openui-space-3xl, 48px),\n        #000 calc(100% - var(--openui-space-3xl, 48px)),\n        #0000\n      );\n    }\n    &\n      :not(.openui-small-card-block__carousel--mask-right):where(\n        .openui-small-card-block__carousel--mask-left\n      ) {\n      mask-image: linear-gradient(to right, #0000, #000 var(--openui-space-3xl, 48px), #000);\n      -webkit-mask-image: linear-gradient(\n        to right,\n        #0000,\n        #000 var(--openui-space-3xl, 48px),\n        #000\n      );\n    }\n    &\n      :not(.openui-small-card-block__carousel--mask-left):where(\n        .openui-small-card-block__carousel--mask-right\n      ) {\n      mask-image: linear-gradient(to left, #0000, #000 var(--openui-space-3xl, 48px), #000);\n      -webkit-mask-image: linear-gradient(to left, #0000, #000 var(--openui-space-3xl, 48px), #000);\n    }\n    & :where(.openui-small-card-block__carousel-track) {\n      display: flex;\n      gap: var(--openui-small-card-gap);\n      padding: var(--openui-space-2xs, 4px) 0;\n      width: max-content;\n    }\n    & :where(.openui-small-card-block__carousel-item) {\n      display: grid;\n      flex-shrink: 0;\n      width: 17.5rem;\n    }\n    /* Base sizing precedes grouped container-query overrides. */\n    &.openui-small-card-block--overview-card.openui-small-card-block--carousel\n      :where(.openui-small-card-block__carousel-item) {\n      width: 15rem;\n    }\n    @container (max-width: 48rem) {\n      & :where(.openui-small-card-block__grid--responsive) {\n        display: grid;\n        grid-template-columns: repeat(2, minmax(0, 1fr));\n        gap: var(--openui-small-card-gap);\n      }\n      & .openui-small-card-block__grid--responsive :where(.openui-small-card-block__row) {\n        display: contents;\n      }\n    }\n    @container (max-width: 30rem) {\n      & :where(.openui-small-card-block__grid--responsive) {\n        grid-template-columns: 1fr;\n      }\n    }\n    @container (max-width: 48rem) {\n      &\n        .openui-small-card-block__grid--odd-count\n        .openui-small-card-block__row:last-child\n        > :last-child:where(.openui-small-card-block__item) {\n        grid-column: 1 / -1;\n      }\n    }\n    @container (max-width: 30rem) {\n      &\n        .openui-small-card-block__carousel--responsive\n        :where(.openui-small-card-block__carousel-item) {\n        width: 15rem;\n      }\n    }\n    @container (max-width: 30rem) {\n      &.openui-small-card-block--overview-card.openui-small-card-block--carousel\n        :where(.openui-small-card-block__carousel-item) {\n        width: 12.5rem;\n      }\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "_shared/cards",
+    "file": "components/_shared/cards/cardBlockLayout.styles.ts",
+    "symbol": "layoutClasses.medium",
+    "hook": "openui-card-layout-layout-medium",
+    "bodySha256": "d574afb2ab5629a1ce02a81c1db7fc94f95f25716ee5876acb24bb50b835cb35",
+    "body": "\n    --openui-medium-card-gap: var(--openui-space-m, 12px);\n    width: 100%;\n    container-type: inline-size;\n    &[data-layout=\"carousel\"] {\n      padding: 0;\n    }\n    & :where(.openui-medium-card-block__grid) {\n      display: flex;\n      flex-direction: column;\n      gap: var(--openui-medium-card-gap);\n      width: 100%;\n    }\n    & :where(.openui-medium-card-block__row) {\n      display: grid;\n      gap: var(--openui-medium-card-gap);\n      width: 100%;\n      align-items: stretch;\n    }\n    & :where(.openui-medium-card-block__row--1) {\n      grid-template-columns: 1fr;\n    }\n    & :where(.openui-medium-card-block__row--2) {\n      grid-template-columns: repeat(2, minmax(0, 1fr));\n    }\n    & :where(.openui-medium-card-block__row--3) {\n      grid-template-columns: repeat(3, minmax(0, 1fr));\n    }\n    & :where(.openui-medium-card-block__item) {\n      width: 100%;\n      min-width: 0;\n    }\n    & :where(.openui-medium-card-block__carousel) {\n      width: 100%;\n      overflow-x: auto;\n      overflow-y: visible;\n      scrollbar-width: none;\n      -ms-overflow-style: none;\n    }\n    &\n      .openui-medium-card-block__carousel--mask-left:where(\n        .openui-medium-card-block__carousel--mask-right\n      ) {\n      mask-image: linear-gradient(\n        to right,\n        #0000,\n        #000 var(--openui-space-3xl, 48px),\n        #000 calc(100% - var(--openui-space-3xl, 48px)),\n        #0000\n      );\n      -webkit-mask-image: linear-gradient(\n        to right,\n        #0000,\n        #000 var(--openui-space-3xl, 48px),\n        #000 calc(100% - var(--openui-space-3xl, 48px)),\n        #0000\n      );\n    }\n    &\n      :not(.openui-medium-card-block__carousel--mask-right):where(\n        .openui-medium-card-block__carousel--mask-left\n      ) {\n      mask-image: linear-gradient(to right, #0000, #000 var(--openui-space-3xl, 48px), #000);\n      -webkit-mask-image: linear-gradient(\n        to right,\n        #0000,\n        #000 var(--openui-space-3xl, 48px),\n        #000\n      );\n    }\n    &\n      :not(.openui-medium-card-block__carousel--mask-left):where(\n        .openui-medium-card-block__carousel--mask-right\n      ) {\n      mask-image: linear-gradient(to left, #0000, #000 var(--openui-space-3xl, 48px), #000);\n      -webkit-mask-image: linear-gradient(to left, #0000, #000 var(--openui-space-3xl, 48px), #000);\n    }\n    & :where(.openui-medium-card-block__carousel-track) {\n      display: flex;\n      gap: var(--openui-medium-card-gap);\n      padding: var(--openui-space-2xs, 4px) 0;\n      width: max-content;\n    }\n    & :where(.openui-medium-card-block__carousel-item) {\n      flex-shrink: 0;\n      width: 20rem;\n    }\n    @container (max-width: 48rem) {\n      & :where(.openui-medium-card-block__grid--responsive) {\n        display: grid;\n        grid-template-columns: repeat(2, minmax(0, 1fr));\n      }\n      & .openui-medium-card-block__grid--responsive :where(.openui-medium-card-block__row) {\n        display: contents;\n      }\n    }\n    @container (max-width: 30rem) {\n      & :where(.openui-medium-card-block__grid--responsive) {\n        grid-template-columns: 1fr;\n      }\n    }\n    @container (max-width: 48rem) {\n      &\n        .openui-medium-card-block__grid--odd-count\n        .openui-medium-card-block__row:last-child\n        > :last-child:where(.openui-medium-card-block__item) {\n        grid-column: 1 / -1;\n      }\n    }\n    @container (max-width: 30rem) {\n      &\n        .openui-medium-card-block__carousel--responsive\n        :where(.openui-medium-card-block__carousel-item) {\n        width: 17.5rem;\n      }\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Accordion",
+    "file": "components/Accordion/Accordion.tsx",
+    "symbol": "componentClass",
+    "hook": "openui-accordion-root",
+    "bodySha256": "a72eeec938310eb623a56d5266f8a174550656654ac3fbcb8da77bb63a4f1670",
+    "body": "\n  ${accordionStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tabs",
+    "file": "components/Tabs/tabs.styles.ts",
+    "symbol": "tabsClass",
+    "hook": "openui-tabs-tabs",
+    "bodySha256": "3bfe4098010dfeb09657250e54e247357c167b63b2cddbb0a348683b7057d041",
+    "body": "\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-l, 18px);\n  &.openui-tabs-clear {\n    & .openui-tabs-content {\n      padding: var(--openui-space-3xs, 2px) 0;\n      border: transparent;\n    }\n    & .openui-tabs-list {\n      border-radius: 0;\n      gap: var(--openui-space-l, 18px);\n      background: none;\n      padding: 0;\n      box-sizing: border-box;\n      flex: 1;\n      display: flex;\n      width: 100%;\n      position: relative;\n      overflow-x: auto;\n      scrollbar-width: none;\n      ms-overflow-style: none;\n      scroll-behavior: smooth;\n      &::-webkit-scrollbar {\n        display: none;\n      }\n    }\n    & .openui-tabs-trigger {\n      width: auto;\n      min-width: 0;\n      border: 0px;\n      border-radius: var(--openui-radius-none, 0px);\n      flex-shrink: 0;\n      padding: var(--openui-space-s, 8px) 0;\n      &[data-state=\"active\"] {\n        border: 0px;\n        box-shadow: none;\n        background-color: transparent;\n        font: var(--openui-text-label-default-heavy, 560 16px/1.25 \"Inter\", sans-serif);\n        letter-spacing: var(--openui-text-label-default-heavy-letter-spacing, -0.01em);\n        font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n      }\n      &:hover:not([data-state=\"active\"]) {\n        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n        border: 0px;\n        background-color: transparent;\n      }\n    }\n    & .openui-tabs-list--icon-title-subtext .openui-tabs-trigger,\n    & .openui-tabs-list--image-title-subtext .openui-tabs-trigger {\n      padding: var(--openui-space-m, 12px) 0;\n    }\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tabs",
+    "file": "components/Tabs/tabs.styles.ts",
+    "symbol": "containerClass",
+    "hook": "openui-tabs-container",
+    "bodySha256": "b4cf432689e5d142b54a59d9123473e930fd2e9fb60b3bae13b31163dee6116c",
+    "body": "\n  position: relative;\n  display: flex;\n  align-items: center;\n  overflow: hidden;\n  &::after {\n    content: \"\";\n    position: absolute;\n    bottom: 0;\n    height: 1px;\n    left: 0;\n    right: 0;\n    border-bottom: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    pointer-events: none;\n  }\n  & .openui-tabs-indicator {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    height: 1.5px;\n    width: 0;\n    opacity: 0;\n    background-color: var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1));\n    pointer-events: none;\n    z-index: 1;\n  }\n  & .openui-tabs-scroll-button-container-left {\n    position: absolute;\n    height: 100%;\n    left: 0;\n    z-index: 1;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 0 4px 0 0;\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  }\n  & .openui-tabs-scroll-button-container-right {\n    position: absolute;\n    height: 100%;\n    right: 0;\n    z-index: 1;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 0 0 0 4px;\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  }\n  & .openui-tabs-scroll-button {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    cursor: pointer;\n    &.openui-tabs-scroll-left {\n      left: 2px;\n    }\n    &.openui-tabs-scroll-right {\n      right: 2px;\n    }\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tabs",
+    "file": "components/Tabs/tabs.styles.ts",
+    "symbol": "listClass",
+    "hook": "openui-tabs-list-styled",
+    "bodySha256": "00833b9dec11c44d3d512197a7c1eff19828e4b69e4e91638224caeb105e3393",
+    "body": "\n  width: 100%;\n  box-sizing: border-box;\n  display: flex;\n  gap: var(--openui-space-3xs, 2px);\n  flex-direction: row;\n  padding: var(--openui-space-2xs, 4px);\n  border-radius: var(--openui-radius-l, 10px);\n  background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n  overflow-x: auto;\n  scrollbar-width: none;\n  ms-overflow-style: none;\n  scroll-behavior: smooth;\n  &::-webkit-scrollbar {\n    display: none;\n  }\n  &.openui-tabs-list--title .openui-tabs-trigger-content {\n    align-items: center;\n  }\n  &.openui-tabs-list--icon-title,\n  &.openui-tabs-list--image-title {\n    & .openui-tabs-trigger-content {\n      align-items: flex-start;\n    }\n    & .openui-tabs-trigger-icon {\n      width: 24px;\n      height: 24px;\n      border-radius: var(--openui-radius-s, 6px);\n      & svg {\n        width: 14px;\n        height: 14px;\n      }\n    }\n  }\n  &.openui-tabs-list--icon-title-subtext,\n  &.openui-tabs-list--image-title-subtext {\n    & .openui-tabs-trigger {\n      align-items: flex-start;\n    }\n    & .openui-tabs-trigger-content {\n      align-items: flex-start;\n    }\n  }\n  &.openui-tabs-list--icon-title-subtext .openui-tabs-trigger-icon {\n    width: 36px;\n    height: 36px;\n    border-radius: var(--openui-radius-m, 8px);\n    & svg {\n      width: 16px;\n      height: 16px;\n    }\n  }\n  &.openui-tabs-list--image-title .openui-tabs-trigger-image {\n    width: 24px;\n    height: 24px;\n    border-radius: var(--openui-radius-s, 6px);\n  }\n  &.openui-tabs-list--image-title-subtext .openui-tabs-trigger-image {\n    width: 36px;\n    height: 36px;\n    border-radius: var(--openui-radius-m, 8px);\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tabs",
+    "file": "components/Tabs/tabs.styles.ts",
+    "symbol": "triggerClass",
+    "hook": "openui-tabs-trigger-styled",
+    "bodySha256": "0cacc90229f65484c5ea8805063eabdc402e0c9ad5c91b9b3f3c9f7a64960c10",
+    "body": "\n  cursor: pointer;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n  gap: var(--openui-space-s, 8px);\n  box-sizing: border-box;\n  padding: var(--openui-space-3xs, 2px) var(--openui-space-s, 8px);\n  border: 1px solid transparent;\n  border-radius: var(--openui-radius-s, 6px);\n  min-width: 7.3rem;\n  width: 100%;\n  background-color: transparent;\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  ${label}\n  &[data-state=\"active\"] {\n    background-color: var(--openui-elevated, oklch(0.097 0 0 / 0.08));\n    border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    box-shadow: var(\n      --openui-shadow-s,\n      0 1px 3px -2px oklch(0 0 0 / 0.02),\n      0 2px 5px -2px oklch(0 0 0 / 0.04)\n    );\n  }\n  &:hover:not([data-state=\"active\"]) {\n    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n    border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    box-shadow: var(\n      --openui-shadow-s,\n      0 1px 3px -2px oklch(0 0 0 / 0.02),\n      0 2px 5px -2px oklch(0 0 0 / 0.04)\n    );\n  }\n  & .openui-tabs-trigger-content {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    gap: var(--openui-space-3xs, 2px);\n    min-width: 0;\n  }\n  & .openui-tabs-trigger-text {\n    width: auto;\n    max-width: 232px;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n  }\n  & .openui-tabs-trigger-subtext {\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    max-width: 232px;\n  }\n  & .openui-tabs-trigger-icon {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 24px;\n    height: 24px;\n    flex-shrink: 0;\n    background: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n    & svg {\n      width: 14px;\n      height: 14px;\n    }\n  }\n  & .openui-tabs-trigger-image {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 24px;\n    height: 24px;\n    overflow: hidden;\n    flex-shrink: 0;\n    & img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    }\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Tabs",
+    "file": "components/Tabs/tabs.styles.ts",
+    "symbol": "contentClass",
+    "hook": "openui-tabs-content-styled",
+    "bodySha256": "55a3674af2c0c5335de361db73a242ae9709d31bb91b228820ac9e9fec4ca837",
+    "body": "\n  box-sizing: border-box;\n  padding: var(--openui-space-l, 18px);\n  border: 1px solid transparent;\n  border-radius: var(--openui-radius-m, 8px);\n  font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  & .openui-tabs-content-inner {\n    display: flex;\n    flex-direction: column;\n    gap: var(--openui-space-l, 18px);\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Steps",
+    "file": "components/Steps/Steps.tsx",
+    "symbol": "componentClass",
+    "hook": "openui-steps-root",
+    "bodySha256": "0afa1f0b94f204fd15abc172623f450b85fc54b7cdf8e2007d58b8d4b6d2fe41",
+    "body": "\n  ${stepsStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Steps",
+    "file": "components/Steps/Steps.tsx",
+    "symbol": "itemClass",
+    "hook": "openui-steps-item",
+    "bodySha256": "6e06187613671800ca23db3423008f8d2f9d2714a855c82dff759bb61aa7cfb9",
+    "body": "\n  ${stepItemStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "SectionBlock",
+    "file": "components/SectionBlock/FoldableSection.tsx",
+    "symbol": "rootClass",
+    "hook": "openui-section-block-foldable-section-root",
+    "bodySha256": "a52afa6b567300553bef4b7af987157c2a8f922b48b73457d1d4c82932e5cdb8",
+    "body": "\n  ${rootStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "SectionBlock",
+    "file": "components/SectionBlock/FoldableSection.tsx",
+    "symbol": "itemClass",
+    "hook": "openui-section-block-foldable-section-item",
+    "bodySha256": "93ec00f5b1c9062eeeb330ab856faed4ff518845426a9bf91b534fd6cf537566",
+    "body": "\n  ${itemStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "SectionBlock",
+    "file": "components/SectionBlock/FoldableSection.tsx",
+    "symbol": "headerClass",
+    "hook": "openui-section-block-foldable-section-header",
+    "bodySha256": "1f75c0cd7c50df5d269f59d12be68c23b00209a97dfc648e2218a7418144a971",
+    "body": "\n  ${headerStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "SectionBlock",
+    "file": "components/SectionBlock/FoldableSection.tsx",
+    "symbol": "triggerClass",
+    "hook": "openui-section-block-foldable-section-trigger",
+    "bodySha256": "8734cf9d9cb12190b2edb37739cf6eddec71108e583da57f76f0fcef7ac743db",
+    "body": "\n  ${triggerStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "SectionBlock",
+    "file": "components/SectionBlock/FoldableSection.tsx",
+    "symbol": "contentClass",
+    "hook": "openui-section-block-foldable-section-content",
+    "bodySha256": "a9ec51b35bcc249473d7ec901768a6d8a74478590e6dd0932120909bb2f84f11",
+    "body": "\n  ${contentStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "SectionBlock",
+    "file": "components/SectionBlock/SectionV2.tsx",
+    "symbol": "componentClass",
+    "hook": "openui-section-block-section-v2-root",
+    "bodySha256": "66ff88976d130cb2ad5017612ca40eed33b461e23f35379efe7f77836c470f05",
+    "body": "\n  ${sectionStyles}\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Carousel",
+    "file": "components/Carousel/carousel.styles.ts",
+    "symbol": "carouselClass",
+    "hook": "openui-carousel-carousel",
+    "bodySha256": "2df0359033f0f691cd0dc91491511ed0a5191139503942cba69597b876a73651",
+    "body": "\n  position: relative;\n  display: flex;\n  @media (max-width: 400px) {\n    & .openui-carousel-item {\n      width: 248px;\n      flex-shrink: 0;\n    }\n  }\n  &.openui-carousel--sunk .openui-carousel-item {\n    background-color: var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02));\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Carousel",
+    "file": "components/Carousel/carousel.styles.ts",
+    "symbol": "contentClass",
+    "hook": "openui-carousel-content-styled",
+    "bodySha256": "8d4048691b2844206343a309bb49ec0743de709d2a991db05ba956f3de88ae29",
+    "body": "\n  position: relative;\n  display: flex;\n  flex-direction: row;\n  gap: var(--openui-space-m, 12px);\n  overflow-x: auto;\n  scroll-snap-type: x mandatory;\n  ms-overflow-x: hidden;\n  scrollbar-width: none;\n  &.openui-carousel-content--mask-left.openui-carousel-content--mask-right {\n    mask-image: linear-gradient(\n      to right,\n      transparent,\n      black 40px,\n      black calc(100% - 40px),\n      transparent\n    );\n    -webkit-mask-image: linear-gradient(\n      to right,\n      transparent,\n      black 40px,\n      black calc(100% - 40px),\n      transparent\n    );\n  }\n  &.openui-carousel-content--mask-left:not(.openui-carousel-content--mask-right) {\n    mask-image: linear-gradient(to right, transparent, black 40px, black);\n    -webkit-mask-image: linear-gradient(to right, transparent, black 40px, black);\n  }\n  &.openui-carousel-content--mask-right:not(.openui-carousel-content--mask-left) {\n    mask-image: linear-gradient(to left, transparent, black 40px, black);\n    -webkit-mask-image: linear-gradient(to left, transparent, black 40px, black);\n  }\n  & .openui-carousel-content-wrapper {\n    display: flex;\n    gap: var(--openui-space-m, 12px);\n  }\n  &::-webkit-scrollbar {\n    display: none;\n  }\n  & > * {\n    box-sizing: border-box;\n    scroll-snap-align: start;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Carousel",
+    "file": "components/Carousel/carousel.styles.ts",
+    "symbol": "itemClass",
+    "hook": "openui-carousel-item-styled",
+    "bodySha256": "dcc6e920da817655f05dae41f6c66f8da4d1e3f6595663ad164868637c62f7ec",
+    "body": "\n  font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-m, 12px);\n  width: 280px;\n  flex-shrink: 0;\n  border-radius: var(--openui-radius-2xl, 14px);\n  background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  padding: var(--openui-space-m, 12px);\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Carousel",
+    "file": "components/Carousel/carousel.styles.ts",
+    "symbol": "buttonClass",
+    "hook": "openui-carousel-button-styled",
+    "bodySha256": "d2df3f02698fd2696d103a76f3536831e7a64188d2db51d0a5d0aeccf498ae61",
+    "body": "\n  position: absolute;\n  top: 50%;\n  z-index: 10;\n  transform: translateY(-50%);\n  background: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: var(--openui-radius-s, 6px);\n  &.openui-carousel-button-left {\n    left: -12px;\n  }\n  &.openui-carousel-button-right {\n    right: -12px;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending",
+    "sourceCorrection": "Distinct canonical hook; old alias occurs within a combined class string and remains attached to owned controls."
+  },
+  {
+    "family": "EntityList",
+    "file": "components/EntityList/entityList.styles.ts",
+    "symbol": "rootClass",
+    "hook": "openui-entity-list-root",
+    "bodySha256": "9fe28c833680b7198dc56b772660f997873365cec5344d1b9f90758ca1f7ec02",
+    "body": "\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  box-sizing: border-box;\n  & :where(.openui-entity-list__row) {\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-start;\n    gap: var(--openui-space-m, 12px);\n    padding: var(--openui-space-m, 12px) 0;\n    border-bottom: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  & :last-child:where(.openui-entity-list__row) {\n    border-bottom: none;\n  }\n  & :where(.openui-entity-list__cell-left),\n  & :where(.openui-entity-list__cell-right) {\n    flex: 1;\n    min-width: 0;\n    max-width: 50%;\n    overflow-wrap: break-word;\n    word-wrap: break-word;\n  }\n  & :where(.openui-entity-list__cell-right) {\n    text-align: right;\n  }\n  &.openui-entity-list--default :where(.openui-entity-list__cell-left) {\n    font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  &.openui-entity-list--default :where(.openui-entity-list__cell-right) {\n    font: var(--openui-text-body-default-heavy, 560 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-default-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  &.openui-entity-list--default\n    .openui-entity-list__row--header\n    :where(.openui-entity-list__cell-left),\n  &.openui-entity-list--default\n    .openui-entity-list__row--header\n    :where(.openui-entity-list__cell-right) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n  &.openui-entity-list--default :where(.openui-entity-list__cell-right--number) {\n    font: var(--openui-text-numbers-default-heavy, 560 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-default-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  &.openui-entity-list--default :where(.openui-entity-list__cell-left--footer) {\n    font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  &.openui-entity-list--default\n    .openui-entity-list__cell-right--footer:where(.openui-entity-list__cell-right--text) {\n    font: var(--openui-text-body-lg-heavy, 560 18px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-lg-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  &.openui-entity-list--default\n    .openui-entity-list__cell-right--footer:where(.openui-entity-list__cell-right--number) {\n    font: var(--openui-text-numbers-lg-heavy, 560 18px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-lg-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  &.openui-entity-list--small :where(.openui-entity-list__cell-left) {\n    font: var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  &.openui-entity-list--small :where(.openui-entity-list__cell-right--text) {\n    font: var(--openui-text-body-sm-heavy, 560 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-sm-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  &.openui-entity-list--small :where(.openui-entity-list__cell-right--number) {\n    font: var(--openui-text-numbers-sm-heavy, 560 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-sm-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/scrollableTable.styles.ts",
+    "symbol": "wrapperClass",
+    "hook": "openui-table-scrollable-table-wrapper",
+    "bodySha256": "6b202504cf8766f9e35b86339bca2938c919586d2fa4ce99f3be9bd1e69d5cde",
+    "body": "\n  position: relative;\n  width: 100%;\n  outline: none;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/scrollableTable.styles.ts",
+    "symbol": "scrollContainerClass",
+    "hook": "openui-table-scrollable-table-scroll-container",
+    "bodySha256": "70aba25c588fb0b0844afe3a3d4ed37d12b88e8904ac5913edc32c9fce2bbcee",
+    "body": "\n  overflow: auto;\n  scrollbar-width: none;\n  ms-overflow-style: none;\n  &::-webkit-scrollbar {\n    display: none;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/scrollableTable.styles.ts",
+    "symbol": "controlClass",
+    "hook": "openui-table-scrollable-table-control",
+    "bodySha256": "794560f005b0c5d52c3eac80500d85d30242c2311f80ea7d7f7c923f6ccc47d3",
+    "body": "\n  position: absolute;\n  top: var(--openui-space-s, 8px);\n  z-index: 2;\n  width: fit-content;\n  height: fit-content;\n  border-radius: var(--openui-radius-s, 6px);\n  background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  &:where(.openui-scrollable-table-control-left) {\n    left: var(--openui-space-s, 8px);\n  }\n  &:where(.openui-scrollable-table-control-right) {\n    right: var(--openui-space-s, 8px);\n  }\n  &:where(.openui-scrollable-table-control-disabled) {\n    display: none;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/table.styles.ts",
+    "symbol": "containerClass",
+    "hook": "openui-table-container-styled",
+    "bodySha256": "e30af97d8b6a55d5fdd31668345d323952104fe70903b0a38b1b136f61ff1ba8",
+    "body": "\n  position: relative;\n  width: 100%;\n  overflow: auto;\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  border-radius: var(--openui-radius-2xl, 14px);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/table.styles.ts",
+    "symbol": "tableClass",
+    "hook": "openui-table-table",
+    "bodySha256": "fbb1fc464d074f99a62bf35695b4ccef99b552a89312f7ca449ea1dee04dd8bf",
+    "body": "\n  ${smallBody}\n  width: 100%;\n  caption-side: bottom;\n  border-collapse: collapse;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/table.styles.ts",
+    "symbol": "footerClass",
+    "hook": "openui-table-footer-styled",
+    "bodySha256": "d47a171b0c8da9251cf41655d9b6e79efefcdafdbe1d6c360f436d9526ddc1bc",
+    "body": "\n  border-top: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  & > tr:last-child {\n    border-bottom: 0;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/table.styles.ts",
+    "symbol": "headClass",
+    "hook": "openui-table-head-styled",
+    "bodySha256": "afb50304fddde5a322ccf0287a984d5e40565a495b5b0975bf0d69215b379856",
+    "body": "\n  ${padding}\n  border-bottom: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  & .openui-table-head-label {\n    ${smallBody}\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    display: inline-flex;\n    flex-grow: 1;\n    justify-content: left;\n  }\n  & .openui-table-head-content {\n    display: flex;\n    align-items: center;\n    gap: var(--openui-space-2xs, 4px);\n  }\n  & .openui-table-head-icon {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/table.styles.ts",
+    "symbol": "rowClass",
+    "hook": "openui-table-row-styled",
+    "bodySha256": "ea44a550b2874f19d47a88806f93637240da470d13d6c760bdffda769d578ca3",
+    "body": "\n  &:nth-child(even) {\n    background-color: var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02));\n  }\n  border-bottom: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  &:last-child {\n    border-bottom: 0;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/table.styles.ts",
+    "symbol": "cellClass",
+    "hook": "openui-table-cell-styled",
+    "bodySha256": "a885b40a255ca8d7b04a9721a7136fbdc013d7498e913074da020ef6f8bc3c05",
+    "body": "\n  ${padding}\n  white-space: nowrap;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/table.styles.ts",
+    "symbol": "alignmentClass",
+    "hook": "openui-table-alignment",
+    "bodySha256": "338b52eccae9dd889323668b4b993063f48e71fcd83fc030391782d202c7f1e3",
+    "body": "\n  &:where(.openui-table-align-left) {\n    text-align: left;\n    justify-content: flex-start;\n  }\n  &:where(.openui-table-align-right) {\n    text-align: right;\n    justify-content: flex-end;\n    & .openui-table-head-label {\n      justify-content: flex-end;\n    }\n  }\n  &:where(.openui-table-align-center) {\n    text-align: center;\n    justify-content: center;\n    & .openui-table-head-label {\n      justify-content: center;\n    }\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TooltipWrapper",
+    "file": "components/TooltipWrapper/tooltipWrapper.styles.ts",
+    "symbol": "bodyClass",
+    "hook": "openui-tooltip-wrapper-body",
+    "bodySha256": "87f89c6a499f44222d11ee7092cc431d258ed66354b578e272131c99bb713c08",
+    "body": "\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-2xs, 4px);\n  width: 100%;\n  max-width: 248px;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TooltipWrapper",
+    "file": "components/TooltipWrapper/tooltipWrapper.styles.ts",
+    "symbol": "headingClass",
+    "hook": "openui-tooltip-wrapper-heading",
+    "bodySha256": "f6485c524862c005db91898b92ab36c4dc11bfeabccdc7bfc18628878ee215d2",
+    "body": "\n  ${smallBody}\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  width: 100%;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TooltipWrapper",
+    "file": "components/TooltipWrapper/tooltipWrapper.styles.ts",
+    "symbol": "textClass",
+    "hook": "openui-tooltip-wrapper-text",
+    "bodySha256": "47c1320d4ddc6d579e8f8c0d0f8068bd38121090da3902445763e8b47838f99f",
+    "body": "\n  ${smallBody}\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  width: 100%;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "TooltipWrapper",
+    "file": "components/TooltipWrapper/tooltipWrapper.styles.ts",
+    "symbol": "contentClass",
+    "hook": "openui-tooltip-wrapper-content",
+    "bodySha256": "2b17a828326a348e1b204b9262ab04bd177cf414675af7c0ed24bf51f0f01322",
+    "body": "\n  box-sizing: border-box;\n  background-color: var(--openui-elevated, oklch(0.097 0 0 / 0.08));\n  padding: var(--openui-space-xs, 6px) var(--openui-space-s, 8px);\n  outline: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  z-index: 9999;\n  border-radius: var(--openui-radius-s, 6px);\n  user-select: none;\n  animation-duration: 400ms;\n  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);\n  will-change: transform, opacity;\n  &[data-state=\"delayed-open\"] {\n    &[data-side=\"top\"] {\n      animation-name: ${down};\n    }\n    &[data-side=\"right\"] {\n      animation-name: ${left};\n    }\n    &[data-side=\"bottom\"] {\n      animation-name: ${up};\n    }\n    &[data-side=\"left\"] {\n      animation-name: ${right};\n    }\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citation.styles.ts",
+    "symbol": "containerClass",
+    "hook": "openui-citation-container-styled",
+    "bodySha256": "c5379b90d1a0ee9f56cdb976899ac5da028e8bd9f673822b15975a5f8480ed6f",
+    "body": "\n  position: relative;\n  display: inline-flex;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citation.styles.ts",
+    "symbol": "triggerClass",
+    "hook": "openui-citation-trigger",
+    "bodySha256": "af3bbc63f872af48191bcad7ef30a0eb3b73894af86a85d1cde952a548c94ec2",
+    "body": "\n  height: 20px;\n  width: 20px;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: var(--openui-space-3xs, 2px);\n  background-color: var(--openui-highlight-strong, oklch(0.097 0 0 / 0.08));\n  margin-left: var(--openui-space-3xs, 2px);\n  border: none;\n  border-radius: var(--openui-radius-xs, 4px);\n  cursor: pointer;\n  transition: all 0.2s ease-in-out;\n  & svg {\n    color: var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2));\n  }\n  &:hover svg,\n  &[data-state=\"delayed-open\"] svg,\n  &[data-state=\"instant-open\"] svg {\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  &:active {\n    background-color: var(--openui-highlight-strong, oklch(0.097 0 0 / 0.08));\n  }\n  &:focus-visible {\n    outline: 2px solid var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));\n    outline-offset: 2px;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citation.styles.ts",
+    "symbol": "tooltipClass",
+    "hook": "openui-citation-tooltip-styled",
+    "bodySha256": "f679e4132fb74620caffe52557b559f6126a50601b3352950d90ab50206a75c6",
+    "body": "\n  background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  border-radius: var(--openui-radius-xl, 12px);\n  box-shadow: var(\n    --openui-shadow-s,\n    0 1px 3px -2px oklch(0 0 0 / 0.02),\n    0 2px 5px -2px oklch(0 0 0 / 0.04)\n  );\n  white-space: nowrap;\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  z-index: 1000;\n  pointer-events: all;\n  overflow: hidden;\n  &[data-state=\"delayed-open\"] {\n    &[data-side=\"top\"] {\n      animation: ${down} 0.2s ease-in-out;\n    }\n    &[data-side=\"bottom\"] {\n      animation: ${up} 0.2s ease-in-out;\n    }\n    &[data-side=\"right\"] {\n      animation: ${left} 0.2s ease-in-out;\n    }\n    &[data-side=\"left\"] {\n      animation: ${right} 0.2s ease-in-out;\n    }\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citation.styles.ts",
+    "symbol": "tooltipContentClass",
+    "hook": "openui-citation-tooltip-content",
+    "bodySha256": "7f06cd2300fa2d1f78b06a1ac78dc906f92e74f9e91a222d2b8ecbf0883bbe3f",
+    "body": "\n  padding: var(--openui-space-xs, 6px);\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-2xs, 4px);\n  overflow-y: auto;\n  max-height: min(50vh);\n  scrollbar-width: thin;\n  scrollbar-color: var(--openui-border-default, oklch(0.097 0 0 / 0.06)) transparent;\n  &::-webkit-scrollbar {\n    width: 6px;\n  }\n  &::-webkit-scrollbar-track {\n    background: transparent;\n  }\n  &::-webkit-scrollbar-thumb {\n    background: var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    border-radius: var(--openui-radius-full, 9999px);\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citationItem.styles.ts",
+    "symbol": "itemClass",
+    "hook": "openui-citation-item-item",
+    "bodySha256": "d392dbc84d8f03d4243e6cbdbfbab7b8a17b37fe1832bf75ec16a52db81c028d",
+    "body": "\n  display: flex;\n  align-items: center;\n  gap: var(--openui-space-s, 8px);\n  border: none;\n  padding: var(--openui-space-xs, 6px) var(--openui-space-s, 8px) var(--openui-space-xs, 6px)\n    var(--openui-space-xs, 6px);\n  border-radius: var(--openui-radius-m, 8px);\n  background-color: transparent;\n  transition: background-color 0.2s ease-in-out;\n  text-align: left;\n  width: 100%;\n  max-width: 348px;\n  font: var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  @media (max-width: 800px) {\n    max-width: 320px;\n  }\n  &.openui-citation-item--has-url {\n    cursor: pointer;\n    &:hover {\n      background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n    }\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citationItem.styles.ts",
+    "symbol": "logoClass",
+    "hook": "openui-citation-item-logo",
+    "bodySha256": "499fce2a56e9fcab6c9572d70fbe5b5e776949d495933a39229f00f14ce6b89c",
+    "body": "\n  flex-shrink: 0;\n  width: 24px;\n  height: 24px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  border-radius: var(--openui-radius-s, 6px);\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  overflow: hidden;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citationItem.styles.ts",
+    "symbol": "contentClass",
+    "hook": "openui-citation-item-content",
+    "bodySha256": "18a3cb3893be93f309be229f08528adb507c7814790c822ff98ac59e39d7685e",
+    "body": "\n  display: flex;\n  flex-grow: 1;\n  align-items: baseline;\n  gap: var(--openui-space-s, 8px);\n  min-width: 0;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citationItem.styles.ts",
+    "symbol": "titleClass",
+    "hook": "openui-citation-item-title",
+    "bodySha256": "4fe8390e11a65502f278c02934f5cf20f1e9a78d18a48094aa2e17edd1836c11",
+    "body": "\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citationItem.styles.ts",
+    "symbol": "sourceClass",
+    "hook": "openui-citation-item-source",
+    "bodySha256": "2feeef0d97139f4e4afa3a195123b3f1cea49c1dbe4025bb71f3ffc79d5c5375",
+    "body": "\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "symbol": "modalClass",
+    "hook": "openui-image-gallery-gallery-modal-modal",
+    "bodySha256": "81ab673efcaf49d6af110998af0091de6fa8d9127a8d21b7c30ce2b8a9216f2f",
+    "body": "\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  z-index: 1000;\n  animation: ${fadeIn} 0.3s ease;\n  backdrop-filter: blur(3px);\n  background-color: var(--openui-overlay, oklch(0 0 0 / 0.4));\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "symbol": "contentClass",
+    "hook": "openui-image-gallery-gallery-modal-content",
+    "bodySha256": "92bb6b0a587c1f53c5bb9081046f9ef814da2230cb8378c8aa6ada136fabcae4",
+    "body": "\n  width: calc(100% - 80px);\n  height: calc(100% - 80px);\n  max-width: 720px;\n  max-height: 640px;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box;\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  border-radius: var(--openui-radius-xl, 12px);\n  gap: var(--openui-space-xl, 24px);\n  padding-top: var(--openui-space-xl, 24px);\n  padding-bottom: var(--openui-space-xl, 24px);\n  @media (max-width: 768px) {\n    width: 100%;\n    height: 100%;\n    border-radius: 0;\n    max-height: none;\n    max-width: none;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "symbol": "headerClass",
+    "hook": "openui-image-gallery-gallery-modal-header",
+    "bodySha256": "bf77d778505b5b458151742c50808a99bcf8005a9b88b1aa92ad4d33226227f1",
+    "body": "\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding-left: var(--openui-space-xl, 24px);\n  padding-right: var(--openui-space-xl, 24px);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "symbol": "headingClass",
+    "hook": "openui-image-gallery-gallery-modal-heading",
+    "bodySha256": "aa839dfd78209fccb6cd93d48b15c233fa365f0c61e073bf54f766e59f2e108f",
+    "body": "\n  font: var(--openui-text-heading-xs, 600 16px/1.25 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-heading-xs-letter-spacing, -0.01em);\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "symbol": "mainClass",
+    "hook": "openui-image-gallery-gallery-modal-main",
+    "bodySha256": "2f8b3d1f55f8a52cd78ee1712ea061c8f286570e8360018803ed3854b80f68d4",
+    "body": "\n  flex: 1;\n  min-height: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding-left: var(--openui-space-xl, 24px);\n  padding-right: var(--openui-space-xl, 24px);\n  img {\n    max-width: 100%;\n    max-height: 100%;\n    object-fit: contain;\n    border-radius: var(--openui-radius-s, 6px);\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "symbol": "carouselContainerClass",
+    "hook": "openui-image-gallery-gallery-modal-carousel-container",
+    "bodySha256": "410d1f654b000d13c1589abf9697367428cd9eb5dd02eda709658180ef5de574",
+    "body": "\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "symbol": "carouselClass",
+    "hook": "openui-image-gallery-gallery-modal-carousel",
+    "bodySha256": "0f7ab0859ab43c640754c2f057d1d656bea5d2163a9ae1a957f8a817032ab601",
+    "body": "\n  display: flex;\n  gap: var(--openui-space-s, 8px);\n  overflow-x: auto;\n  scroll-behavior: smooth;\n  scrollbar-width: none;\n  padding-left: var(--openui-space-xl, 24px);\n  padding-right: var(--openui-space-xl, 24px);\n  &::-webkit-scrollbar {\n    display: none;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "symbol": "buttonContainerClass",
+    "hook": "openui-image-gallery-gallery-modal-button-container",
+    "bodySha256": "610d123f0fdf559ac065a58cfd4b3b1c8d62fb1eae8ee2ae491402916414ad74",
+    "body": "\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  border-radius: var(--openui-radius-xs, 4px);\n  overflow: hidden;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "symbol": "leftButtonClass",
+    "hook": "openui-image-gallery-gallery-modal-left-button",
+    "bodySha256": "84081c1a1f5094e6bc637c04174cc07548e0754f9872b6b0c357497350808521",
+    "body": "\n  left: 24px;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "symbol": "rightButtonClass",
+    "hook": "openui-image-gallery-gallery-modal-right-button",
+    "bodySha256": "607876f1db65dbfe61d19cf6f4574cf076b38fa23cacbbaaf8d95c947503e76f",
+    "body": "\n  right: 24px;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "symbol": "thumbnailClass",
+    "hook": "openui-image-gallery-gallery-modal-thumbnail",
+    "bodySha256": "2561d816351550532438064f1750e3a276ea948cf5e21af7e4a218347a9b169f",
+    "body": "\n  flex: 1;\n  height: 116px;\n  min-width: 174px;\n  cursor: pointer;\n  opacity: 0.6;\n  border-radius: var(--openui-radius-s, 6px);\n  border: 1px solid transparent;\n  overflow: hidden;\n  transition: opacity 0.2s ease;\n  box-sizing: border-box;\n  &:hover {\n    opacity: 0.8;\n  }\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "symbol": "activeThumbnailClass",
+    "hook": "openui-image-gallery-gallery-modal-active-thumbnail",
+    "bodySha256": "681ed18812a9b2a95409a82e2133718e5211f8d7338e536bc032f6d7513e7f85",
+    "body": "\n  opacity: 1;\n  border-color: var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1));\n  border-radius: var(--openui-radius-s, 6px);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "symbol": "galleryClass",
+    "hook": "openui-image-gallery-gallery",
+    "bodySha256": "673c538c66221ab0d1096251fb406b268c10509f0855b183882e55d97f7eefd5",
+    "body": "\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  overflow: hidden;\n  position: relative;\n  border-radius: var(--openui-radius-m, 8px);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "symbol": "gridClass",
+    "hook": "openui-image-gallery-grid",
+    "bodySha256": "ea468a9ea28f9d06fd300ccb4201cbe9942c755446caa52eba940c9d47b2a9fb",
+    "body": "\n  display: grid;\n  width: 100%;\n  max-height: 376px;\n  grid-gap: var(--openui-space-s, 8px);\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "symbol": "layoutClasses.openui-gallery--single",
+    "hook": "openui-image-gallery-layout-openui-gallery-single",
+    "bodySha256": "2ea76d9c2e92a3cc1ade7fb921559170f18f8f92a8c6638a1e6ab3c4b133cec1",
+    "body": "\n    & .openui-gallery__grid {\n      grid-template-columns: 1fr;\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "symbol": "layoutClasses.openui-gallery--double",
+    "hook": "openui-image-gallery-layout-openui-gallery-double",
+    "bodySha256": "e296e5406c3b5a25e6afeb911c2110ba1346f9040f64ba19850912e10f740782",
+    "body": "\n    & .openui-gallery__grid {\n      grid-template-columns: repeat(2, 1fr);\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "symbol": "layoutClasses.openui-gallery--triple",
+    "hook": "openui-image-gallery-layout-openui-gallery-triple",
+    "bodySha256": "98bac46ddadad306334b513bb4044762e80b060c71e7d56230845dad66befa70",
+    "body": "\n    & .openui-gallery__grid {\n      grid-template-columns: 1fr 1fr;\n      grid-template-rows: 1fr 1fr;\n      .openui-gallery__image:first-child {\n        grid-row: 1 / -1;\n      }\n    }\n    @media (max-width: 768px) {\n      & .openui-gallery__grid {\n        grid-template-columns: repeat(2, 1fr);\n        grid-template-rows: repeat(2, 1fr);\n        grid-template-areas: \"img1 img1\" \"img2 img3\";\n        .openui-gallery__image:nth-child(1) {\n          grid-area: img1;\n        }\n        .openui-gallery__image:nth-child(2) {\n          grid-area: img2;\n        }\n        .openui-gallery__image:nth-child(3) {\n          grid-area: img3;\n        }\n      }\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "symbol": "layoutClasses.openui-gallery--quad",
+    "hook": "openui-image-gallery-layout-openui-gallery-quad",
+    "bodySha256": "85b218936319f94934f9e82b19fcf15af1394a424338ed90359f4fd65cb5f698",
+    "body": "\n    & .openui-gallery__grid {\n      grid-template-columns: repeat(4, 1fr);\n      grid-template-rows: repeat(2, 1fr);\n      grid-template-areas: \"img1 img1 img2 img2\" \"img1 img1 img3 img4\";\n      .openui-gallery__image:nth-child(1) {\n        grid-area: img1;\n      }\n      .openui-gallery__image:nth-child(2) {\n        grid-area: img2;\n      }\n      .openui-gallery__image:nth-child(3) {\n        grid-area: img3;\n      }\n      .openui-gallery__image:nth-child(4) {\n        grid-area: img4;\n      }\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "symbol": "layoutClasses.openui-gallery--default",
+    "hook": "openui-image-gallery-layout-openui-gallery-default",
+    "bodySha256": "799b1d5d9e9cdb49c5dd8492d13331c8bfb266033f37ecef33eeb731aa4afcce",
+    "body": "\n    & .openui-gallery__grid {\n      grid-template-columns: 2fr 1fr 1fr;\n      grid-template-rows: 1fr 1fr;\n      .openui-gallery__image:first-child {\n        grid-row: 1 / -1;\n      }\n    }\n    @media (max-width: 768px) {\n      & .openui-gallery__grid {\n        grid-template-columns: repeat(6, 1fr);\n        grid-template-rows: repeat(2, 1fr);\n        grid-template-areas: \"img1 img1 img1 img2 img2 img2\" \"img3 img3 img4 img4 img5 img5\";\n        .openui-gallery__image:nth-child(1) {\n          grid-area: img1;\n        }\n        .openui-gallery__image:nth-child(2) {\n          grid-area: img2;\n        }\n        .openui-gallery__image:nth-child(3) {\n          grid-area: img3;\n        }\n        .openui-gallery__image:nth-child(4) {\n          grid-area: img4;\n        }\n        .openui-gallery__image:nth-child(5) {\n          grid-area: img5;\n        }\n      }\n    }\n  ",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "symbol": "imageClass",
+    "hook": "openui-image-gallery-image",
+    "bodySha256": "b88627aee79f43d8490f83b0cad852f347076fe37b1f5f73c6707b583688f96d",
+    "body": "\n  position: relative;\n  overflow: hidden;\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    transition: transform 0.3s ease;\n    &:hover {\n      transform: scale(1.05);\n    }\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "symbol": "mainImageClass",
+    "hook": "openui-image-gallery-main-image",
+    "bodySha256": "baffbef13e383c98f3e4e64cdcd4b17548aa5cf66449bf18eeec660d4a81cf34",
+    "body": "\n  img {\n    height: 100%;\n  }\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "symbol": "showAllClass",
+    "hook": "openui-image-gallery-show-all",
+    "bodySha256": "88031f0753e01e2907075b6c1ae44fac077a261ef1591e794f3ce11b32f17ace",
+    "body": "\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: absolute;\n  bottom: 5px;\n  right: 5px;\n",
+    "scope": "document :where guard; single canonical class plus unchanged nested selectors",
+    "status": "source converted; runtime validation pending"
+  }
+]

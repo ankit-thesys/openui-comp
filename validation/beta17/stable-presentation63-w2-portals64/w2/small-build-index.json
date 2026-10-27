@@ -1,0 +1,756 @@
+[
+  {
+    "arm": "baseline",
+    "family": "Separator",
+    "imports": [
+      "Separator"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-Separator"
+  },
+  {
+    "arm": "candidate",
+    "family": "Separator",
+    "imports": [
+      "Separator"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-Separator"
+  },
+  {
+    "arm": "baseline",
+    "family": "IconText",
+    "imports": [
+      "IconText"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-IconText"
+  },
+  {
+    "arm": "candidate",
+    "family": "IconText",
+    "imports": [
+      "IconText"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-IconText"
+  },
+  {
+    "arm": "baseline",
+    "family": "TextContentWrapper",
+    "imports": [
+      "TextContentWrapper"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-TextContentWrapper"
+  },
+  {
+    "arm": "candidate",
+    "family": "TextContentWrapper",
+    "imports": [
+      "TextContentWrapper"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-TextContentWrapper"
+  },
+  {
+    "arm": "baseline",
+    "family": "Image",
+    "imports": [
+      "Image"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-Image"
+  },
+  {
+    "arm": "candidate",
+    "family": "Image",
+    "imports": [
+      "Image"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-Image"
+  },
+  {
+    "arm": "baseline",
+    "family": "SourceFaviconImage",
+    "imports": [
+      "SourceFaviconImage"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-SourceFaviconImage"
+  },
+  {
+    "arm": "candidate",
+    "family": "SourceFaviconImage",
+    "imports": [
+      "SourceFaviconImage"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-SourceFaviconImage"
+  },
+  {
+    "arm": "baseline",
+    "family": "Tag",
+    "imports": [
+      "Tag"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-Tag"
+  },
+  {
+    "arm": "candidate",
+    "family": "Tag",
+    "imports": [
+      "Tag"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-Tag"
+  },
+  {
+    "arm": "baseline",
+    "family": "IconTag",
+    "imports": [
+      "IconTag"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-IconTag"
+  },
+  {
+    "arm": "candidate",
+    "family": "IconTag",
+    "imports": [
+      "IconTag"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-IconTag"
+  },
+  {
+    "arm": "baseline",
+    "family": "TextContent",
+    "imports": [
+      "TextContent"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-TextContent"
+  },
+  {
+    "arm": "candidate",
+    "family": "TextContent",
+    "imports": [
+      "TextContent"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-TextContent"
+  },
+  {
+    "arm": "baseline",
+    "family": "InlineHeader",
+    "imports": [
+      "InlineHeader"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-InlineHeader"
+  },
+  {
+    "arm": "candidate",
+    "family": "InlineHeader",
+    "imports": [
+      "InlineHeader"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-InlineHeader"
+  },
+  {
+    "arm": "baseline",
+    "family": "Callout",
+    "imports": [
+      "Callout"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-Callout"
+  },
+  {
+    "arm": "candidate",
+    "family": "Callout",
+    "imports": [
+      "Callout"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-Callout"
+  },
+  {
+    "arm": "baseline",
+    "family": "TextCallout",
+    "imports": [
+      "TextCallout"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-TextCallout"
+  },
+  {
+    "arm": "candidate",
+    "family": "TextCallout",
+    "imports": [
+      "TextCallout"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-TextCallout"
+  },
+  {
+    "arm": "baseline",
+    "family": "MetricIndicator",
+    "imports": [
+      "MetricIndicatorInline",
+      "MetricIndicatorWithStrikethrough"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-MetricIndicator"
+  },
+  {
+    "arm": "candidate",
+    "family": "MetricIndicator",
+    "imports": [
+      "MetricIndicatorInline",
+      "MetricIndicatorWithStrikethrough"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-MetricIndicator"
+  },
+  {
+    "arm": "baseline",
+    "family": "CodeBlock",
+    "imports": [
+      "CodeBlock"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-CodeBlock"
+  },
+  {
+    "arm": "candidate",
+    "family": "CodeBlock",
+    "imports": [
+      "CodeBlock"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-CodeBlock"
+  },
+  {
+    "arm": "baseline",
+    "family": "MarkDownRenderer",
+    "imports": [
+      "MarkDownRenderer"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-MarkDownRenderer"
+  },
+  {
+    "arm": "candidate",
+    "family": "MarkDownRenderer",
+    "imports": [
+      "MarkDownRenderer"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-MarkDownRenderer"
+  },
+  {
+    "arm": "baseline",
+    "family": "InlineMarkdownRenderer",
+    "imports": [
+      "InlineMarkdownRenderer"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-InlineMarkdownRenderer"
+  },
+  {
+    "arm": "candidate",
+    "family": "InlineMarkdownRenderer",
+    "imports": [
+      "InlineMarkdownRenderer"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-InlineMarkdownRenderer"
+  },
+  {
+    "arm": "baseline",
+    "family": "ImageBlock",
+    "imports": [
+      "ImageBlock"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-ImageBlock"
+  },
+  {
+    "arm": "candidate",
+    "family": "ImageBlock",
+    "imports": [
+      "ImageBlock"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-ImageBlock"
+  },
+  {
+    "arm": "baseline",
+    "family": "ImageText",
+    "imports": [
+      "ImageText"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-ImageText"
+  },
+  {
+    "arm": "candidate",
+    "family": "ImageText",
+    "imports": [
+      "ImageText"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-ImageText"
+  },
+  {
+    "arm": "baseline",
+    "family": "ImageTextLarge",
+    "imports": [
+      "ImageTextLarge"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-ImageTextLarge"
+  },
+  {
+    "arm": "candidate",
+    "family": "ImageTextLarge",
+    "imports": [
+      "ImageTextLarge"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-ImageTextLarge"
+  },
+  {
+    "arm": "baseline",
+    "family": "TextBlock",
+    "imports": [
+      "TextBlockView"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-TextBlock"
+  },
+  {
+    "arm": "candidate",
+    "family": "TextBlock",
+    "imports": [
+      "TextBlockView"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-TextBlock"
+  },
+  {
+    "arm": "baseline",
+    "family": "ListItem",
+    "imports": [
+      "ListItem"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-ListItem"
+  },
+  {
+    "arm": "candidate",
+    "family": "ListItem",
+    "imports": [
+      "ListItem"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-ListItem"
+  },
+  {
+    "arm": "baseline",
+    "family": "ListBlock",
+    "imports": [
+      "ListBlock",
+      "ListItem"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-ListBlock"
+  },
+  {
+    "arm": "candidate",
+    "family": "ListBlock",
+    "imports": [
+      "ListBlock",
+      "ListItem"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-ListBlock"
+  },
+  {
+    "arm": "baseline",
+    "family": "Card",
+    "imports": [
+      "Card"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-Card"
+  },
+  {
+    "arm": "candidate",
+    "family": "Card",
+    "imports": [
+      "Card"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-Card"
+  },
+  {
+    "arm": "baseline",
+    "family": "CardHeader",
+    "imports": [
+      "CardHeader",
+      "Button"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-CardHeader"
+  },
+  {
+    "arm": "candidate",
+    "family": "CardHeader",
+    "imports": [
+      "CardHeader",
+      "Button"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-CardHeader"
+  },
+  {
+    "arm": "baseline",
+    "family": "Buttons",
+    "imports": [
+      "Buttons",
+      "Button"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-Buttons"
+  },
+  {
+    "arm": "candidate",
+    "family": "Buttons",
+    "imports": [
+      "Buttons",
+      "Button"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-Buttons"
+  },
+  {
+    "arm": "baseline",
+    "family": "TagBlock",
+    "imports": [
+      "TagBlock",
+      "Tag"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-TagBlock"
+  },
+  {
+    "arm": "candidate",
+    "family": "TagBlock",
+    "imports": [
+      "TagBlock",
+      "Tag"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-TagBlock"
+  },
+  {
+    "arm": "baseline",
+    "family": "DotMatrixLoader",
+    "imports": [
+      "DotMatrixLoader"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-DotMatrixLoader"
+  },
+  {
+    "arm": "candidate",
+    "family": "DotMatrixLoader",
+    "imports": [
+      "DotMatrixLoader"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-DotMatrixLoader"
+  },
+  {
+    "arm": "baseline",
+    "family": "Skeleton",
+    "imports": [
+      "Skeleton",
+      "TableSkeleton",
+      "PieChartSkeleton"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-Skeleton"
+  },
+  {
+    "arm": "candidate",
+    "family": "Skeleton",
+    "imports": [
+      "Skeleton",
+      "TableSkeleton",
+      "PieChartSkeleton"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-Skeleton"
+  },
+  {
+    "arm": "baseline",
+    "family": "Sources",
+    "imports": [
+      "CardSourceContext",
+      "Sources"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-Sources"
+  },
+  {
+    "arm": "candidate",
+    "family": "Sources",
+    "imports": [
+      "CardSourceContext",
+      "Sources"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-Sources"
+  },
+  {
+    "arm": "baseline",
+    "family": "SnippetCardBlock",
+    "imports": [
+      "SnippetCardBlock"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-SnippetCardBlock"
+  },
+  {
+    "arm": "candidate",
+    "family": "SnippetCardBlock",
+    "imports": [
+      "SnippetCardBlock"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-SnippetCardBlock"
+  },
+  {
+    "arm": "baseline",
+    "family": "ContextCardBlock",
+    "imports": [
+      "ContextCardBlock",
+      "Tag"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-ContextCardBlock"
+  },
+  {
+    "arm": "candidate",
+    "family": "ContextCardBlock",
+    "imports": [
+      "ContextCardBlock",
+      "Tag"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-ContextCardBlock"
+  },
+  {
+    "arm": "baseline",
+    "family": "CompositeCardBlock",
+    "imports": [
+      "CompositeCardBlock",
+      "Button"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-CompositeCardBlock"
+  },
+  {
+    "arm": "candidate",
+    "family": "CompositeCardBlock",
+    "imports": [
+      "CompositeCardBlock",
+      "Button"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-CompositeCardBlock"
+  },
+  {
+    "arm": "baseline",
+    "family": "OverviewCardBlock",
+    "imports": [
+      "OverviewCardBlock"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-OverviewCardBlock"
+  },
+  {
+    "arm": "candidate",
+    "family": "OverviewCardBlock",
+    "imports": [
+      "OverviewCardBlock"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-OverviewCardBlock"
+  },
+  {
+    "arm": "baseline",
+    "family": "VisualCardBlock",
+    "imports": [
+      "VisualCardBlock",
+      "Tag"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-VisualCardBlock"
+  },
+  {
+    "arm": "candidate",
+    "family": "VisualCardBlock",
+    "imports": [
+      "VisualCardBlock",
+      "Tag"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-VisualCardBlock"
+  },
+  {
+    "arm": "baseline",
+    "family": "Accordion",
+    "imports": [
+      "Accordion",
+      "AccordionItem",
+      "AccordionTrigger",
+      "AccordionContent"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-Accordion"
+  },
+  {
+    "arm": "candidate",
+    "family": "Accordion",
+    "imports": [
+      "Accordion",
+      "AccordionItem",
+      "AccordionTrigger",
+      "AccordionContent"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-Accordion"
+  },
+  {
+    "arm": "baseline",
+    "family": "Tabs",
+    "imports": [
+      "Tabs",
+      "TabsList",
+      "TabsTrigger",
+      "TabsContent"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-Tabs"
+  },
+  {
+    "arm": "candidate",
+    "family": "Tabs",
+    "imports": [
+      "Tabs",
+      "TabsList",
+      "TabsTrigger",
+      "TabsContent"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-Tabs"
+  },
+  {
+    "arm": "baseline",
+    "family": "Steps",
+    "imports": [
+      "Steps",
+      "StepsItem"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-Steps"
+  },
+  {
+    "arm": "candidate",
+    "family": "Steps",
+    "imports": [
+      "Steps",
+      "StepsItem"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-Steps"
+  },
+  {
+    "arm": "baseline",
+    "family": "SectionBlock",
+    "imports": [
+      "FoldableSectionRoot",
+      "FoldableSectionItem",
+      "FoldableSectionTrigger",
+      "FoldableSectionContent",
+      "SectionV2"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-SectionBlock"
+  },
+  {
+    "arm": "candidate",
+    "family": "SectionBlock",
+    "imports": [
+      "FoldableSectionRoot",
+      "FoldableSectionItem",
+      "FoldableSectionTrigger",
+      "FoldableSectionContent",
+      "SectionV2"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-SectionBlock"
+  },
+  {
+    "arm": "baseline",
+    "family": "Carousel",
+    "imports": [
+      "Carousel",
+      "CarouselContent",
+      "CarouselItem",
+      "CarouselPrevious",
+      "CarouselNext"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-Carousel"
+  },
+  {
+    "arm": "candidate",
+    "family": "Carousel",
+    "imports": [
+      "Carousel",
+      "CarouselContent",
+      "CarouselItem",
+      "CarouselPrevious",
+      "CarouselNext"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-Carousel"
+  },
+  {
+    "arm": "baseline",
+    "family": "EntityList",
+    "imports": [
+      "EntityList"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-EntityList"
+  },
+  {
+    "arm": "candidate",
+    "family": "EntityList",
+    "imports": [
+      "EntityList"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-EntityList"
+  },
+  {
+    "arm": "baseline",
+    "family": "Table",
+    "imports": [
+      "ScrollableTable",
+      "TableHeader",
+      "TableRow",
+      "TableHead",
+      "TableBody",
+      "TableCell",
+      "TableFooter"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-Table"
+  },
+  {
+    "arm": "candidate",
+    "family": "Table",
+    "imports": [
+      "ScrollableTable",
+      "TableHeader",
+      "TableRow",
+      "TableHead",
+      "TableBody",
+      "TableCell",
+      "TableFooter"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-Table"
+  },
+  {
+    "arm": "baseline",
+    "family": "TooltipWrapper",
+    "imports": [
+      "TooltipWrapper",
+      "Button"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-TooltipWrapper"
+  },
+  {
+    "arm": "candidate",
+    "family": "TooltipWrapper",
+    "imports": [
+      "TooltipWrapper",
+      "Button"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-TooltipWrapper"
+  },
+  {
+    "arm": "baseline",
+    "family": "Citation",
+    "imports": [
+      "Citation"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-Citation"
+  },
+  {
+    "arm": "candidate",
+    "family": "Citation",
+    "imports": [
+      "Citation"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-Citation"
+  },
+  {
+    "arm": "baseline",
+    "family": "ImageGallery",
+    "imports": [
+      "ImageGallery"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/baseline-small-ImageGallery"
+  },
+  {
+    "arm": "candidate",
+    "family": "ImageGallery",
+    "imports": [
+      "ImageGallery"
+    ],
+    "out": "/private/tmp/openui-selectors-w2-evidence/candidate-small-ImageGallery"
+  }
+]

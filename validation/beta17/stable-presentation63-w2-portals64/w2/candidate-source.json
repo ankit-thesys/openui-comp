@@ -1,0 +1,30 @@
+{
+  "base": "1c3833a045c4c66de92b69413a3824eca1798fcd",
+  "candidateCommit": "d1e8a05d035b66453d58953faf7d9fabacbaa8e8",
+  "packageTree": "81770675893b8fa944291fe7dafc777668d23406",
+  "branch": "codex/stable-selectors-63-64",
+  "worktree": "/private/tmp/openui-selectors-w2",
+  "clean": true,
+  "scope": "40 presentation/layout families +3portal +exact shared card layout; EditableTable explicitly deferred",
+  "staticReviews": {
+    "standards": "no actionable findings",
+    "spec": "no actionable findings"
+  },
+  "runtimeBuildBrowser": "Bounded W2 runs complete; window released. Independent integration/verifier acceptance pending.",
+  "sourceBindings": "static-bindings.json",
+  "documentation": "HOOKS-DRAFT.md",
+  "coverage": "coverage-ledger.json",
+  "previousCandidateCommit": "72699259c54c13ff806739f13c3d7bfa5f95e95f",
+  "resolvedSourceFinding": "Carousel canonical legacy-alias collision; dark TextContentWrapper 8 selectors changed to ordinary compound state selectors to preserve actual emitted baseline specificity. Both source fixes reviewed.",
+  "archive": "candidate-v2/openuidev-react-components-0.0.0-beta.0.tgz",
+  "archiveSha256": "212170767ecbea02251b723138c45ad753471f6a3a010e3e9d1e3a9970cea903",
+  "evidence": "SOURCE-STATUS.md",
+  "acceptance": "Scoped worker evidence only; no issue closure or broad readiness claim.",
+  "finalEvidenceReviews": {
+    "standards": "no actionable findings",
+    "spec": "no actionable misclassification/evidence defect",
+    "record": "final-reviews.json",
+    "acceptance": "independent verification and Sources exception acceptance remain pending"
+  },
+  "evidenceCorrection": "sources-diagnostic-erratum.md: nonmatching Sources ancestor diagnostic excluded as stronger-override evidence; actual matching contextual probe pending verifier; no source or runtime change."
+}

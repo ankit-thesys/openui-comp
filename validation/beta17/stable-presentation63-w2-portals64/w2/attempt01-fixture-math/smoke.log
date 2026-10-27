@@ -1,0 +1,14 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-family="TextContentWrapper"] .katex') to be visible[22m
+
+    at pageFor (/private/tmp/openui-selectors-w2-evidence/run.mjs:9:340)
+    at async file:///private/tmp/openui-selectors-w2-evidence/run.mjs:10:477 {
+  name: 'TimeoutError'
+}
+
+Node.js v22.22.2

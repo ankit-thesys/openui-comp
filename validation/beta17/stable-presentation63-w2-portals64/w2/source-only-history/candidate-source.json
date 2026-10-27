@@ -1,0 +1,19 @@
+{
+  "base": "1c3833a045c4c66de92b69413a3824eca1798fcd",
+  "candidateCommit": "72699259c54c13ff806739f13c3d7bfa5f95e95f",
+  "packageTree": "2338dd52875137fc237a065e13c4e0bb4f930bde",
+  "branch": "codex/stable-selectors-63-64",
+  "worktree": "/private/tmp/openui-selectors-w2",
+  "clean": true,
+  "scope": "40 presentation/layout families +3portal +exact shared card layout; EditableTable explicitly deferred",
+  "staticReviews": {
+    "standards": "no actionable findings",
+    "spec": "no actionable findings"
+  },
+  "runtimeBuildBrowser": "NOT RUN; W1 owns window",
+  "sourceBindings": "static-bindings.json",
+  "documentation": "HOOKS-DRAFT.md",
+  "coverage": "coverage-ledger.json",
+  "previousCandidateCommit": "c427df6c4d84d8ff48005aed2b3d02667498e1cb",
+  "resolvedSourceFinding": "Carousel combined-string legacy alias collision fixed with distinct canonical target; two source reviews clear; runtime pending"
+}

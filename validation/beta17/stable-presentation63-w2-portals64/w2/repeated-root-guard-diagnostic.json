@@ -1,0 +1,10 @@
+[
+  {
+    "selector": ":where(.go629930471:root) .openui-text-content-wrapper-markdown:where(.openui-text-content-markdown-dark-mode):where(.go629930471:root) .openui-text-content-wrapper-markdown p, :where(.go629930471:root) .openui-text-content-wrapper-markdown:where(.openui-text-content-markdown-dark-mode):where(.go629930471:root) .openui-text-content-wrapper-markdown h1, :where(.go629930471:root) .openui-text-content-wrapper-markdown:where(.openui-text-content-markdown-dark-mode):where(.go629930471:root) .openui-text-content-wrapper-markdown h2, :where(.go629930471:root) .openui-text-content-wrapper-markdown:where(.openui-text-content-markdown-dark-mode):where(.go629930471:root) .openui-text-content-wrapper-markdown h3, :where(.go629930471:root) .openui-text-content-wrapper-markdown:where(.openui-text-content-markdown-dark-mode):where(.go629930471:root) .openui-text-content-wrapper-markdown h4, :where(.go629930471:root) .openui-text-content-wrapper-markdown:where(.openui-text-content-markdown-dark-mode):where(.go629930471:root) .openui-text-content-wrapper-markdown h5, :where(.go629930471:root) .openui-text-content-wrapper-markdown:where(.openui-text-content-markdown-dark-mode):where(.go629930471:root) .openui-text-content-wrapper-markdown h6",
+    "styles": "color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));"
+  },
+  {
+    "selector": ":where(.go629930471:root) .openui-text-content-wrapper-markdown:where(.openui-text-content-markdown-dark-mode):where(.go629930471:root) .openui-text-content-wrapper-markdown .katex",
+    "styles": "margin-top: var(--openui-space-xs, 6px); display: inline-block;"
+  }
+]

@@ -1,0 +1,1993 @@
+[
+  {
+    "family": "Accordion",
+    "file": "components/Accordion/Accordion.tsx",
+    "line": 7,
+    "names": [
+      "componentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${accordionStyles}\n`"
+  },
+  {
+    "family": "Buttons",
+    "file": "components/Buttons/Buttons.tsx",
+    "line": 9,
+    "names": [
+      "componentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${buttonsStyles}\n`"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: column;\n  padding: var(--openui-space-000, 0) calc(var(--openui-space-m, 12px) + 2px);\n  box-sizing: border-box;\n  align-items: flex-start;\n  border-left: 2px solid;\n`"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "line": 10,
+    "names": [
+      "titleClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  font: var(--openui-text-body-default-heavy, 560 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-heavy-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n`"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "line": 15,
+    "names": [
+      "descriptionClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n`"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "line": 22,
+    "names": [
+      "variantClasses",
+      "info"
+    ],
+    "inFunction": false,
+    "template": "`\n    border-color: var(--openui-border-info-emphasis, oklch(0.546 0.215 262.881 / 1));\n    & .openui-callout-title {\n      color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n    }\n  `"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "line": 28,
+    "names": [
+      "variantClasses",
+      "danger"
+    ],
+    "inFunction": false,
+    "template": "`\n    border-color: var(--openui-border-danger-emphasis, oklch(0.577 0.215 27.325 / 1));\n    & .openui-callout-title {\n      color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n    }\n  `"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "line": 34,
+    "names": [
+      "variantClasses",
+      "warning"
+    ],
+    "inFunction": false,
+    "template": "`\n    border-color: var(--openui-border-alert-emphasis, oklch(0.681 0.142 75.834 / 1));\n    & .openui-callout-title {\n      color: var(--openui-text-alert-primary, oklch(0.476 0.103 61.907 / 1));\n    }\n  `"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "line": 40,
+    "names": [
+      "variantClasses",
+      "success"
+    ],
+    "inFunction": false,
+    "template": "`\n    border-color: var(--openui-border-success-emphasis, oklch(0.627 0.17 149.214 / 1));\n    & .openui-callout-title {\n      color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n    }\n  `"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "line": 46,
+    "names": [
+      "variantClasses",
+      "neutral"
+    ],
+    "inFunction": false,
+    "template": "`\n    border-color: var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1));\n    & .openui-callout-title {\n      color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    }\n  `"
+  },
+  {
+    "family": "Callout",
+    "file": "components/Callout/callout.styles.ts",
+    "line": 54,
+    "names": [
+      "dismissClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  animation: ${fadeOut} 0.4s ease-in forwards;\n  animation-delay: var(--callout-duration, 3000ms);\n`"
+  },
+  {
+    "family": "Card",
+    "file": "components/Card/Card.tsx",
+    "line": 6,
+    "names": [
+      "componentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${cardStyles}\n`"
+  },
+  {
+    "family": "CardHeader",
+    "file": "components/CardHeader/CardHeader.tsx",
+    "line": 8,
+    "names": [
+      "componentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${cardHeaderStyles}\n`"
+  },
+  {
+    "family": "Carousel",
+    "file": "components/Carousel/carousel.styles.ts",
+    "line": 2,
+    "names": [
+      "carouselClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: relative;\n  display: flex;\n  @media (max-width: 400px) {\n    & .openui-carousel-item {\n      width: 248px;\n      flex-shrink: 0;\n    }\n  }\n  &.openui-carousel--sunk .openui-carousel-item {\n    background-color: var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02));\n  }\n`"
+  },
+  {
+    "family": "Carousel",
+    "file": "components/Carousel/carousel.styles.ts",
+    "line": 15,
+    "names": [
+      "contentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: relative;\n  display: flex;\n  flex-direction: row;\n  gap: var(--openui-space-m, 12px);\n  overflow-x: auto;\n  scroll-snap-type: x mandatory;\n  ms-overflow-x: hidden;\n  scrollbar-width: none;\n  &.openui-carousel-content--mask-left.openui-carousel-content--mask-right {\n    mask-image: linear-gradient(\n      to right,\n      transparent,\n      black 40px,\n      black calc(100% - 40px),\n      transparent\n    );\n    -webkit-mask-image: linear-gradient(\n      to right,\n      transparent,\n      black 40px,\n      black calc(100% - 40px),\n      transparent\n    );\n  }\n  &.openui-carousel-content--mask-left:not(.openui-carousel-content--mask-right) {\n    mask-image: linear-gradient(to right, transparent, black 40px, black);\n    -webkit-mask-image: linear-gradient(to right, transparent, black 40px, black);\n  }\n  &.openui-carousel-content--mask-right:not(.openui-carousel-content--mask-left) {\n    mask-image: linear-gradient(to left, transparent, black 40px, black);\n    -webkit-mask-image: linear-gradient(to left, transparent, black 40px, black);\n  }\n  & .openui-carousel-content-wrapper {\n    display: flex;\n    gap: var(--openui-space-m, 12px);\n  }\n  &::-webkit-scrollbar {\n    display: none;\n  }\n  & > * {\n    box-sizing: border-box;\n    scroll-snap-align: start;\n  }\n`"
+  },
+  {
+    "family": "Carousel",
+    "file": "components/Carousel/carousel.styles.ts",
+    "line": 60,
+    "names": [
+      "itemClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-m, 12px);\n  width: 280px;\n  flex-shrink: 0;\n  border-radius: var(--openui-radius-2xl, 14px);\n  background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  padding: var(--openui-space-m, 12px);\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n`"
+  },
+  {
+    "family": "Carousel",
+    "file": "components/Carousel/carousel.styles.ts",
+    "line": 74,
+    "names": [
+      "buttonClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: absolute;\n  top: 50%;\n  z-index: 10;\n  transform: translateY(-50%);\n  background: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: var(--openui-radius-s, 6px);\n  &.openui-carousel-button-left {\n    left: -12px;\n  }\n  &.openui-carousel-button-right {\n    right: -12px;\n  }\n`"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citation.styles.ts",
+    "line": 42,
+    "names": [
+      "containerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: relative;\n  display: inline-flex;\n`"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citation.styles.ts",
+    "line": 46,
+    "names": [
+      "triggerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  height: 20px;\n  width: 20px;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: var(--openui-space-3xs, 2px);\n  background-color: var(--openui-highlight-strong, oklch(0.097 0 0 / 0.08));\n  margin-left: var(--openui-space-3xs, 2px);\n  border: none;\n  border-radius: var(--openui-radius-xs, 4px);\n  cursor: pointer;\n  transition: all 0.2s ease-in-out;\n  & svg {\n    color: var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2));\n  }\n  &:hover svg,\n  &[data-state=\"delayed-open\"] svg,\n  &[data-state=\"instant-open\"] svg {\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  &:active {\n    background-color: var(--openui-highlight-strong, oklch(0.097 0 0 / 0.08));\n  }\n  &:focus-visible {\n    outline: 2px solid var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));\n    outline-offset: 2px;\n  }\n`"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citation.styles.ts",
+    "line": 76,
+    "names": [
+      "tooltipClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  border-radius: var(--openui-radius-xl, 12px);\n  box-shadow: var(\n    --openui-shadow-s,\n    0 1px 3px -2px oklch(0 0 0 / 0.02),\n    0 2px 5px -2px oklch(0 0 0 / 0.04)\n  );\n  white-space: nowrap;\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  z-index: 1000;\n  pointer-events: all;\n  overflow: hidden;\n  &[data-state=\"delayed-open\"] {\n    &[data-side=\"top\"] {\n      animation: ${down} 0.2s ease-in-out;\n    }\n    &[data-side=\"bottom\"] {\n      animation: ${up} 0.2s ease-in-out;\n    }\n    &[data-side=\"right\"] {\n      animation: ${left} 0.2s ease-in-out;\n    }\n    &[data-side=\"left\"] {\n      animation: ${right} 0.2s ease-in-out;\n    }\n  }\n`"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citation.styles.ts",
+    "line": 105,
+    "names": [
+      "tooltipContentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  padding: var(--openui-space-xs, 6px);\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-2xs, 4px);\n  overflow-y: auto;\n  max-height: min(50vh);\n  scrollbar-width: thin;\n  scrollbar-color: var(--openui-border-default, oklch(0.097 0 0 / 0.06)) transparent;\n  &::-webkit-scrollbar {\n    width: 6px;\n  }\n  &::-webkit-scrollbar-track {\n    background: transparent;\n  }\n  &::-webkit-scrollbar-thumb {\n    background: var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    border-radius: var(--openui-radius-full, 9999px);\n  }\n`"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citationItem.styles.ts",
+    "line": 2,
+    "names": [
+      "itemClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  align-items: center;\n  gap: var(--openui-space-s, 8px);\n  border: none;\n  padding: var(--openui-space-xs, 6px) var(--openui-space-s, 8px) var(--openui-space-xs, 6px)\n    var(--openui-space-xs, 6px);\n  border-radius: var(--openui-radius-m, 8px);\n  background-color: transparent;\n  transition: background-color 0.2s ease-in-out;\n  text-align: left;\n  width: 100%;\n  max-width: 348px;\n  font: var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  @media (max-width: 800px) {\n    max-width: 320px;\n  }\n  &.openui-citation-item--has-url {\n    cursor: pointer;\n    &:hover {\n      background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n    }\n  }\n`"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citationItem.styles.ts",
+    "line": 28,
+    "names": [
+      "logoClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  flex-shrink: 0;\n  width: 24px;\n  height: 24px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  border-radius: var(--openui-radius-s, 6px);\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  overflow: hidden;\n`"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citationItem.styles.ts",
+    "line": 40,
+    "names": [
+      "contentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-grow: 1;\n  align-items: baseline;\n  gap: var(--openui-space-s, 8px);\n  min-width: 0;\n`"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citationItem.styles.ts",
+    "line": 47,
+    "names": [
+      "titleClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n`"
+  },
+  {
+    "family": "Citation",
+    "file": "components/Citation/citationItem.styles.ts",
+    "line": 53,
+    "names": [
+      "sourceClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n`"
+  },
+  {
+    "family": "CodeBlock",
+    "file": "components/CodeBlock/codeBlock.styles.ts",
+    "line": 2,
+    "names": [
+      "wrapperClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: relative;\n  &:hover .openui-code-block-copy-button {\n    opacity: 1;\n  }\n  & .openui-code-block-copy-button {\n    position: absolute;\n    right: 0.5rem;\n    top: 0.5rem;\n    opacity: 0;\n    transition: opacity 0.2s ease-in-out;\n    &.openui-code-block-copy-button-copied {\n      color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n      background-color: var(--openui-success-background, oklch(0.627 0.17 149.214 / 0.12));\n    }\n  }\n  & .openui-code-block-syntax-highlighter {\n    margin: 0 !important;\n    border-radius: 0.5rem;\n  }\n`"
+  },
+  {
+    "family": "CompositeCardBlock",
+    "file": "components/CompositeCardBlock/card.styles.ts",
+    "line": 2,
+    "names": [
+      "wrapperClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  height: 100%;\n`"
+  },
+  {
+    "family": "CompositeCardBlock",
+    "file": "components/CompositeCardBlock/card.styles.ts",
+    "line": 5,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  & {\n    display: flex;\n    flex-direction: column;\n    gap: var(--openui-space-m, 12px);\n    min-width: 15rem;\n    height: 100%;\n    padding: var(--openui-space-m, 12px);\n    border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    border-radius: var(--openui-radius-3xl, 16px);\n    box-sizing: border-box;\n    background: var(--openui-sunk-light, oklch(0.097 0 0 / 0.02));\n  }\n  &:where(.openui-composite-card--clickable) {\n    background: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    border-color: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));\n    box-shadow: var(\n      --openui-shadow-m,\n      0 4px 6px -2px oklch(0 0 0 / 0.025),\n      0 2px 2px -2px oklch(0 0 0 / 0.05)\n    );\n    cursor: pointer;\n    transition:\n      transform 0.2s ease,\n      box-shadow 0.2s ease;\n  }\n  &:hover:where(.openui-composite-card--clickable) {\n    transform: scale(0.995);\n    box-shadow: none;\n  }\n  &:focus-visible:where(.openui-composite-card--clickable) {\n    outline: 2px solid var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08));\n    outline-offset: 2px;\n  }\n  & :where(.openui-composite-card__header) {\n    display: flex;\n    flex-direction: column;\n    gap: var(--openui-space-m, 12px);\n    flex-shrink: 0;\n  }\n  & :where(.openui-composite-card__body) {\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n    gap: var(--openui-space-m, 12px);\n    min-height: 0;\n  }\n  & .openui-inline-markdown-renderer strong,\n  & .openui-inline-markdown-renderer em {\n    font: inherit;\n    letter-spacing: inherit;\n  }\n  & .openui-inline-markdown-renderer strong,\n  & .openui-inline-markdown-renderer strong em,\n  & .openui-inline-markdown-renderer em strong {\n    font-weight: var(--openui-font-weight-medium, 560);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  & .openui-inline-markdown-renderer em,\n  & .openui-inline-markdown-renderer strong em,\n  & .openui-inline-markdown-renderer em strong {\n    font-style: italic;\n  }\n  & .openui-inline-markdown-renderer code {\n    font: var(--openui-text-code-sm, 400 12px/1.5 \"SFMono-Regular\", Menlo, monospace);\n    letter-spacing: var(--openui-text-code-sm-letter-spacing, 0);\n    line-height: 1;\n  }\n  & :where(.openui-composite-card__footer) {\n    display: flex;\n    flex-shrink: 0;\n    margin-top: auto;\n  }\n  & :where(.openui-composite-card__footer > *) {\n    width: 100%;\n  }\n  & :where(.openui-composite-card__footer-content) {\n    display: flex;\n    flex-direction: column;\n    gap: var(--openui-space-s, 8px);\n    width: 100%;\n  }\n`"
+  },
+  {
+    "family": "ContextCardBlock",
+    "file": "components/ContextCardBlock/card.styles.ts",
+    "line": 2,
+    "names": [
+      "imageClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  & > * {\n    position: relative;\n    z-index: 2;\n  }\n  &::before {\n    content: \"\";\n    position: absolute;\n    inset: 0;\n    background: var(--openui-overlay, oklch(0 0 0 / 0.4));\n    z-index: 1;\n  }\n`"
+  },
+  {
+    "family": "ContextCardBlock",
+    "file": "components/ContextCardBlock/card.styles.ts",
+    "line": 15,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  & {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    width: 100%;\n    min-width: 196px;\n    padding: var(--openui-space-m, 12px);\n    border: none;\n    border-radius: var(--openui-radius-xl, 12px);\n    box-sizing: border-box;\n    overflow: hidden;\n    position: relative;\n    transition:\n      background-color 0.2s ease,\n      box-shadow 0.2s ease,\n      transform 0.2s ease;\n  }\n  &:where(.openui-context-card--clickable) {\n    background-color: var(--openui-highlight, oklch(0.097 0 0 / 0.04));\n    cursor: pointer;\n  }\n  &:hover:where(.openui-context-card--clickable) {\n    transform: scale(0.995);\n  }\n  &:focus-visible:where(.openui-context-card--clickable) {\n    outline: 2px solid var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08));\n    outline-offset: 2px;\n  }\n  &:where(.openui-context-card--static) {\n    background-color: var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02));\n    box-shadow: none;\n  }\n  &:where(.openui-context-card--variant-gray) {\n    background-color: var(--openui-highlight, oklch(0.097 0 0 / 0.04));\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  &:where(.openui-context-card--variant-info) {\n    background-color: var(--openui-info-background, oklch(0.623 0.188 259.815 / 0.12));\n    color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n  }\n  &.openui-context-card--variant-info :where(.openui-context-card__title-text) {\n    color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n    opacity: 0.8;\n  }\n  &.openui-context-card--variant-info :where(.openui-context-card__body-text) {\n    color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n  }\n  &.openui-context-card--variant-info :where(.openui-context-card__tag) {\n    background-color: var(--openui-elevated, oklch(0.097 0 0 / 0.08));\n  }\n  &:where(.openui-context-card--variant-success) {\n    background-color: var(--openui-success-background, oklch(0.627 0.17 149.214 / 0.12));\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n  }\n  &.openui-context-card--variant-success :where(.openui-context-card__title-text) {\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n    opacity: 0.8;\n  }\n  &.openui-context-card--variant-success :where(.openui-context-card__body-text) {\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n  }\n  &.openui-context-card--variant-success :where(.openui-context-card__tag) {\n    background-color: var(--openui-elevated, oklch(0.097 0 0 / 0.08));\n  }\n  &:where(.openui-context-card--variant-warning) {\n    background-color: var(--openui-alert-background, oklch(0.795 0.162 86.047 / 0.16));\n    color: var(--openui-text-alert-primary, oklch(0.476 0.103 61.907 / 1));\n  }\n  &.openui-context-card--variant-warning :where(.openui-context-card__title-text) {\n    color: var(--openui-text-alert-primary, oklch(0.476 0.103 61.907 / 1));\n    opacity: 0.8;\n  }\n  &.openui-context-card--variant-warning :where(.openui-context-card__body-text) {\n    color: var(--openui-text-alert-primary, oklch(0.476 0.103 61.907 / 1));\n  }\n  &.openui-context-card--variant-warning :where(.openui-context-card__tag) {\n    background-color: var(--openui-elevated, oklch(0.097 0 0 / 0.08));\n  }\n  &:where(.openui-context-card--variant-danger) {\n    background-color: var(--openui-danger-background, oklch(0.577 0.215 27.325 / 0.12));\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n  }\n  &.openui-context-card--variant-danger :where(.openui-context-card__title-text) {\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n    opacity: 0.8;\n  }\n  &.openui-context-card--variant-danger :where(.openui-context-card__body-text) {\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n  }\n  &.openui-context-card--variant-danger :where(.openui-context-card__tag) {\n    background-color: var(--openui-elevated, oklch(0.097 0 0 / 0.08));\n  }\n  &:where(.openui-context-card--variant-image) {\n    background-position: center;\n    background-size: cover;\n    color: var(--openui-text-white, oklch(1 0 89.876 / 1));\n  }\n  &.openui-context-card--variant-image :where(.openui-context-card__title-text) {\n    color: var(--openui-text-white, oklch(1 0 89.876 / 1));\n    opacity: 0.6;\n  }\n  &.openui-context-card--variant-image .openui-context-card__tag :where(.openui-tag) {\n    background-color: rgba(0, 0, 0, 0.4);\n    color: var(--openui-text-white, oklch(1 0 89.876 / 1));\n    backdrop-filter: blur(2px);\n    -webkit-backdrop-filter: blur(2px);\n  }\n  & :where(.openui-context-card__vertical) {\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n    justify-content: space-between;\n    min-width: 0;\n    height: 100%;\n    gap: var(--openui-space-l, 18px);\n  }\n  & :where(.openui-context-card__slot) {\n    width: 100%;\n    border-radius: var(--openui-radius-m, 8px);\n  }\n  & :where(.openui-context-card__slot--top) {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    gap: var(--openui-space-s, 8px);\n    min-height: var(--openui-space-xl, 24px);\n  }\n  & :where(.openui-context-card__slot--bottom) {\n    display: flex;\n    flex-direction: column;\n    gap: var(--openui-space-2xs, 4px);\n  }\n  & :where(.openui-context-card__title-text) {\n    font: var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n  & :where(.openui-context-card__body-text) {\n    font: var(--openui-text-body-default-heavy, 560 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-default-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  & :where(.openui-context-card__chevron) {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-shrink: 0;\n    color: currentColor;\n    opacity: 0.7;\n  }\n  & :where(.openui-context-card__tag-wrapper) {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    pointer-events: none;\n  }\n  & :where(.openui-context-card__tag) {\n    border: none;\n  }\n`"
+  },
+  {
+    "family": "DotMatrixLoader",
+    "file": "components/DotMatrixLoader/DotMatrixLoader.tsx",
+    "line": 6,
+    "names": [
+      "componentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${loaderStyles}\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/base/components/editableCell.styles.ts",
+    "line": 19,
+    "names": [
+      "cellClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: relative;\n  width: 100%;\n  height: 100%;\n  padding: var(--openui-space-s, 8px) var(--openui-space-m, 12px);\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  ${bodySmall}\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/base/components/editableCell.styles.ts",
+    "line": 27,
+    "names": [
+      "inputClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  height: 100%;\n  width: 100%;\n  padding: 0;\n  background-color: transparent;\n  outline: none;\n  appearance: textfield;\n  &::-webkit-inner-spin-button,\n  &::-webkit-outer-spin-button {\n    appearance: none;\n  }\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/base/components/editableCell.styles.ts",
+    "line": 39,
+    "names": [
+      "textClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${centered}\n  ${ellipsis}\n  ${bodySmall}\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/base/components/editableCell.styles.ts",
+    "line": 44,
+    "names": [
+      "numberClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${centered}\n  ${ellipsis}\n  text-align: right;\n  font: var(--openui-text-numbers-sm, 400 14px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-numbers-sm-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/base/components/editableCell.styles.ts",
+    "line": 52,
+    "names": [
+      "urlClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: block;\n  flex: 1 1 auto;\n  min-width: 0;\n  ${ellipsis}\n  ${bodySmall}\n  &:hover {\n    text-decoration: underline;\n  }\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/base/components/editableCell.styles.ts",
+    "line": 62,
+    "names": [
+      "urlContainerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  align-items: center;\n  gap: var(--openui-space-s, 8px);\n  ${centered}\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/base/components/editableCell.styles.ts",
+    "line": 68,
+    "names": [
+      "urlIconClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  flex-shrink: 0;\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/base/components/editableCell.styles.ts",
+    "line": 72,
+    "names": [
+      "warningClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  flex-shrink: 0;\n  color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n  display: none;\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/base/components/editableCell.styles.ts",
+    "line": 77,
+    "names": [
+      "horizontalOutlineClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: absolute;\n  left: 0;\n  width: 100%;\n  height: 0px;\n  background-color: var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1));\n  &:where(.openui-editable-table-cell-outline-top-selected),\n  &:where(.openui-editable-table-cell-outline-bottom-selected) {\n    height: 1px;\n  }\n  &:where(.openui-editable-table-cell-outline-top-editing),\n  &:where(.openui-editable-table-cell-outline-bottom-editing) {\n    height: 1.5px;\n  }\n  &:where(.openui-editable-table-cell-outline-top) {\n    top: 0;\n  }\n  &:where(.openui-editable-table-cell-outline-bottom) {\n    bottom: 0;\n  }\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/base/components/editableCell.styles.ts",
+    "line": 98,
+    "names": [
+      "verticalOutlineClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: absolute;\n  top: 0;\n  width: 0px;\n  height: 100%;\n  background-color: var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1));\n  &:where(.openui-editable-table-cell-outline-left-selected),\n  &:where(.openui-editable-table-cell-outline-right-selected) {\n    width: 1px;\n  }\n  &:where(.openui-editable-table-cell-outline-left-editing),\n  &:where(.openui-editable-table-cell-outline-right-editing) {\n    width: 1.5px;\n  }\n  &:where(.openui-editable-table-cell-outline-left) {\n    left: 0;\n  }\n  &:where(.openui-editable-table-cell-outline-right) {\n    right: 0;\n  }\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/base/components/editableSelectCell.styles.ts",
+    "line": 2,
+    "names": [
+      "triggerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  width: 100%;\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/editableTable.styles.ts",
+    "line": 7,
+    "names": [
+      "wrapperClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  border-radius: var(--openui-radius-xl, 12px) var(--openui-radius-xl, 12px) 0 0;\n  overflow: hidden;\n  position: relative;\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/editableTable.styles.ts",
+    "line": 13,
+    "names": [
+      "scrollClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  overflow: auto;\n  scrollbar-width: none;\n  ms-overflow-style: none;\n  &::-webkit-scrollbar {\n    display: none;\n  }\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/editableTable.styles.ts",
+    "line": 21,
+    "names": [
+      "controlClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: absolute;\n  top: var(--openui-space-s, 8px);\n  z-index: 1;\n  width: fit-content;\n  height: fit-content;\n  border-radius: var(--openui-radius-s, 6px);\n  background-color: var(--openui-elevated, oklch(0.097 0 0 / 0.08));\n  cursor: pointer;\n  &.openui-editable-table-scroll-control--disabled {\n    cursor: not-allowed;\n    display: none;\n  }\n  &.openui-editable-table-scroll-control--left {\n    left: var(--openui-space-s, 8px);\n  }\n  &.openui-editable-table-scroll-control--right {\n    right: var(--openui-space-s, 8px);\n  }\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/editableTable.styles.ts",
+    "line": 41,
+    "names": [
+      "tableClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  border-collapse: collapse;\n  & .openui-select-trigger {\n    ${smallBody}\n    width: 100%;\n  }\n  & thead th {\n    text-align: left;\n    padding: var(--openui-space-s, 8px) var(--openui-space-m, 12px);\n    border-right: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    background-color: var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02));\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    ${smallBody}\n    height: 48px;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n  }\n  & thead th:last-child {\n    border-right: 0;\n  }\n  & tbody tr {\n    border-bottom: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  }\n  & tbody tr:last-child {\n    border-bottom: 0;\n  }\n  & tbody td {\n    height: 48px;\n    padding: 0;\n    border-right: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    vertical-align: middle;\n    white-space: nowrap;\n  }\n  & tbody td:last-child {\n    border-right: 0;\n  }\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/editableTable.styles.ts",
+    "line": 79,
+    "names": [
+      "headerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: var(--openui-space-s, 8px);\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/editableTable.styles.ts",
+    "line": 85,
+    "names": [
+      "headerIconClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  flex-shrink: 0;\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/editableTable.styles.ts",
+    "line": 88,
+    "names": [
+      "changesClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: row;\n  gap: var(--openui-space-s, 8px);\n  padding: var(--openui-space-s, 8px) var(--openui-space-s, 8px) var(--openui-space-s, 8px)\n    var(--openui-space-m, 12px);\n  justify-content: space-between;\n  align-items: center;\n  background-color: var(--openui-elevated, oklch(0.097 0 0 / 0.08));\n  border-radius: var(--openui-radius-xl, 12px);\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  box-shadow: var(\n    --openui-shadow-s,\n    0 1px 3px -2px oklch(0 0 0 / 0.02),\n    0 2px 5px -2px oklch(0 0 0 / 0.04)\n  );\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/editableTable.styles.ts",
+    "line": 105,
+    "names": [
+      "changesCountClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n`"
+  },
+  {
+    "family": "EditableTable",
+    "file": "components/EditableTable/editableTable.styles.ts",
+    "line": 110,
+    "names": [
+      "changesButtonsClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: row;\n  gap: var(--openui-space-s, 8px);\n`"
+  },
+  {
+    "family": "EntityList",
+    "file": "components/EntityList/entityList.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  box-sizing: border-box;\n  & :where(.openui-entity-list__row) {\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-start;\n    gap: var(--openui-space-m, 12px);\n    padding: var(--openui-space-m, 12px) 0;\n    border-bottom: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  & :last-child:where(.openui-entity-list__row) {\n    border-bottom: none;\n  }\n  & :where(.openui-entity-list__cell-left),\n  & :where(.openui-entity-list__cell-right) {\n    flex: 1;\n    min-width: 0;\n    max-width: 50%;\n    overflow-wrap: break-word;\n    word-wrap: break-word;\n  }\n  & :where(.openui-entity-list__cell-right) {\n    text-align: right;\n  }\n  &.openui-entity-list--default :where(.openui-entity-list__cell-left) {\n    font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  &.openui-entity-list--default :where(.openui-entity-list__cell-right) {\n    font: var(--openui-text-body-default-heavy, 560 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-default-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  &.openui-entity-list--default\n    .openui-entity-list__row--header\n    :where(.openui-entity-list__cell-left),\n  &.openui-entity-list--default\n    .openui-entity-list__row--header\n    :where(.openui-entity-list__cell-right) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n  &.openui-entity-list--default :where(.openui-entity-list__cell-right--number) {\n    font: var(--openui-text-numbers-default-heavy, 560 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-default-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  &.openui-entity-list--default :where(.openui-entity-list__cell-left--footer) {\n    font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  &.openui-entity-list--default\n    .openui-entity-list__cell-right--footer:where(.openui-entity-list__cell-right--text) {\n    font: var(--openui-text-body-lg-heavy, 560 18px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-lg-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  &.openui-entity-list--default\n    .openui-entity-list__cell-right--footer:where(.openui-entity-list__cell-right--number) {\n    font: var(--openui-text-numbers-lg-heavy, 560 18px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-lg-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  &.openui-entity-list--small :where(.openui-entity-list__cell-left) {\n    font: var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  &.openui-entity-list--small :where(.openui-entity-list__cell-right--text) {\n    font: var(--openui-text-body-sm-heavy, 560 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-sm-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  &.openui-entity-list--small :where(.openui-entity-list__cell-right--number) {\n    font: var(--openui-text-numbers-sm-heavy, 560 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-sm-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n`"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  box-sizing: border-box;\n  flex-shrink: 0;\n`"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "line": 10,
+    "names": [
+      "sizeClasses",
+      "xs"
+    ],
+    "inFunction": false,
+    "template": "`\n    width: 20px;\n    height: 20px;\n    border-radius: var(--openui-radius-xs, 4px);\n    svg {\n      width: 12px;\n      height: 12px;\n    }\n  `"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "line": 19,
+    "names": [
+      "sizeClasses",
+      "s"
+    ],
+    "inFunction": false,
+    "template": "`\n    width: 24px;\n    height: 24px;\n    border-radius: var(--openui-radius-s, 6px);\n    svg {\n      width: 14px;\n      height: 14px;\n    }\n  `"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "line": 28,
+    "names": [
+      "sizeClasses",
+      "m"
+    ],
+    "inFunction": false,
+    "template": "`\n    width: 32px;\n    height: 32px;\n    border-radius: var(--openui-radius-s, 6px);\n    svg {\n      width: 14px;\n      height: 14px;\n    }\n  `"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "line": 37,
+    "names": [
+      "sizeClasses",
+      "l"
+    ],
+    "inFunction": false,
+    "template": "`\n    width: 36px;\n    height: 36px;\n    border-radius: var(--openui-radius-m, 8px);\n    svg {\n      width: 16px;\n      height: 16px;\n    }\n  `"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "line": 46,
+    "names": [
+      "sizeClasses",
+      "xl"
+    ],
+    "inFunction": false,
+    "template": "`\n    width: 40px;\n    height: 40px;\n    border-radius: var(--openui-radius-m, 8px);\n    svg {\n      width: 16px;\n      height: 16px;\n    }\n  `"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "line": 57,
+    "names": [
+      "variantClasses",
+      "neutral"
+    ],
+    "inFunction": false,
+    "template": "`\n    background-color: var(--openui-highlight, oklch(0.097 0 0 / 0.04));\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  `"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "line": 61,
+    "names": [
+      "variantClasses",
+      "info"
+    ],
+    "inFunction": false,
+    "template": "`\n    background-color: var(--openui-info-background, oklch(0.623 0.188 259.815 / 0.12));\n    color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n  `"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "line": 65,
+    "names": [
+      "variantClasses",
+      "success"
+    ],
+    "inFunction": false,
+    "template": "`\n    background-color: var(--openui-success-background, oklch(0.627 0.17 149.214 / 0.12));\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n  `"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "line": 69,
+    "names": [
+      "variantClasses",
+      "warning"
+    ],
+    "inFunction": false,
+    "template": "`\n    background-color: var(--openui-alert-background, oklch(0.795 0.162 86.047 / 0.16));\n    color: var(--openui-text-alert-primary, oklch(0.476 0.103 61.907 / 1));\n  `"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "line": 73,
+    "names": [
+      "variantClasses",
+      "danger"
+    ],
+    "inFunction": false,
+    "template": "`\n    background-color: var(--openui-danger-background, oklch(0.577 0.215 27.325 / 0.12));\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n  `"
+  },
+  {
+    "family": "IconTag",
+    "file": "components/IconTag/iconTag.styles.ts",
+    "line": 77,
+    "names": [
+      "variantClasses",
+      "inverted"
+    ],
+    "inFunction": false,
+    "template": "`\n    background-color: var(--openui-inverted-background, oklch(0.097 0 0 / 1));\n    color: var(--openui-background, oklch(0.97 0 89.876 / 1));\n  `"
+  },
+  {
+    "family": "IconText",
+    "file": "components/IconText/iconText.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  gap: var(--openui-space-m, 12px);\n`"
+  },
+  {
+    "family": "IconText",
+    "file": "components/IconText/iconText.styles.ts",
+    "line": 7,
+    "names": [
+      "layoutClasses",
+      "vertical"
+    ],
+    "inFunction": false,
+    "template": "`\n    flex-direction: column;\n    align-items: flex-start;\n  `"
+  },
+  {
+    "family": "IconText",
+    "file": "components/IconText/iconText.styles.ts",
+    "line": 11,
+    "names": [
+      "layoutClasses",
+      "horizontal"
+    ],
+    "inFunction": false,
+    "template": "`\n    flex-direction: row;\n    align-items: flex-start;\n    .openui-icon-tag {\n      margin-top: var(--openui-space-3xs, 2px);\n    }\n    .openui-text-block__primary {\n      font: var(--openui-text-body-sm-heavy, 560 14px/1.5 \"Inter\", sans-serif);\n      letter-spacing: var(--openui-text-body-sm-heavy-letter-spacing, -0.01em);\n      font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n    }\n  `"
+  },
+  {
+    "family": "IconText",
+    "file": "components/IconText/iconText.styles.ts",
+    "line": 24,
+    "names": [
+      "contentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n`"
+  },
+  {
+    "family": "Image",
+    "file": "components/Image/image.styles.ts",
+    "line": 2,
+    "names": [
+      "imageClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  box-sizing: border-box;\n  max-width: 100%;\n  height: auto;\n  overflow: clip;\n  border-radius: var(--openui-radius-m, 8px);\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n`"
+  },
+  {
+    "family": "Image",
+    "file": "components/Image/image.styles.ts",
+    "line": 12,
+    "names": [
+      "fitClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  object-fit: contain;\n  width: 100%;\n  height: 100%;\n`"
+  },
+  {
+    "family": "Image",
+    "file": "components/Image/image.styles.ts",
+    "line": 17,
+    "names": [
+      "fillClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  object-fit: cover;\n  width: 100%;\n  height: 100%;\n`"
+  },
+  {
+    "family": "Image",
+    "file": "components/Image/image.styles.ts",
+    "line": 22,
+    "names": [
+      "errorClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  visibility: hidden;\n`"
+  },
+  {
+    "family": "ImageBlock",
+    "file": "components/ImageBlock/imageBlock.styles.ts",
+    "line": 2,
+    "names": [
+      "wrapperClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  flex: 1 1 0;\n  min-width: 0;\n  min-height: 240px;\n  max-height: 240px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n  isolation: isolate;\n  border-radius: var(--openui-radius-2xl, 14px);\n  padding: calc(var(--openui-space-l, 18px) - 2px) calc(var(--openui-space-l, 18px) + 2px);\n  overflow: hidden;\n  &::before {\n    content: \"\";\n    position: absolute;\n    inset: -20px;\n    background-image: var(--bg-image);\n    background-size: 150%;\n    background-position: center;\n    background-repeat: no-repeat;\n    opacity: 0.2;\n    filter: blur(12px);\n    z-index: 0;\n    border-radius: inherit;\n  }\n`"
+  },
+  {
+    "family": "ImageBlock",
+    "file": "components/ImageBlock/imageBlock.styles.ts",
+    "line": 29,
+    "names": [
+      "wrapperMobileClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  height: auto;\n  width: 100%;\n  padding: 0;\n`"
+  },
+  {
+    "family": "ImageBlock",
+    "file": "components/ImageBlock/imageBlock.styles.ts",
+    "line": 34,
+    "names": [
+      "errorClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  visibility: hidden;\n`"
+  },
+  {
+    "family": "ImageBlock",
+    "file": "components/ImageBlock/imageBlock.styles.ts",
+    "line": 37,
+    "names": [
+      "imageClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  height: 100%;\n  max-width: 100%;\n  object-fit: cover;\n  border: 4px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  border-radius: var(--openui-radius-l, 10px);\n  position: relative;\n  z-index: 1;\n`"
+  },
+  {
+    "family": "ImageBlock",
+    "file": "components/ImageBlock/imageBlock.styles.ts",
+    "line": 46,
+    "names": [
+      "imageMobileClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  border-radius: var(--openui-radius-2xl, 14px);\n  width: 100%;\n  height: auto;\n`"
+  },
+  {
+    "family": "ImageBlock",
+    "file": "components/ImageBlock/imageBlock.styles.ts",
+    "line": 52,
+    "names": [
+      "loaderClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  translate: -50% -50%;\n  border-width: 3px;\n  border-style: solid;\n  height: 24px;\n  width: 24px;\n  animation: ${spin} 1s linear infinite;\n  border-radius: var(--openui-radius-full, 9999px);\n  border-color: rgb(209, 213, 219);\n  border-top-color: rgb(37, 99, 235);\n  z-index: 2;\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "line": 3,
+    "names": [
+      "modalClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  z-index: 1000;\n  animation: ${fadeIn} 0.3s ease;\n  backdrop-filter: blur(3px);\n  background-color: var(--openui-overlay, oklch(0 0 0 / 0.4));\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "line": 17,
+    "names": [
+      "contentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  width: calc(100% - 80px);\n  height: calc(100% - 80px);\n  max-width: 720px;\n  max-height: 640px;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  box-sizing: border-box;\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  border-radius: var(--openui-radius-xl, 12px);\n  gap: var(--openui-space-xl, 24px);\n  padding-top: var(--openui-space-xl, 24px);\n  padding-bottom: var(--openui-space-xl, 24px);\n  @media (max-width: 768px) {\n    width: 100%;\n    height: 100%;\n    border-radius: 0;\n    max-height: none;\n    max-width: none;\n  }\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "line": 40,
+    "names": [
+      "headerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding-left: var(--openui-space-xl, 24px);\n  padding-right: var(--openui-space-xl, 24px);\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "line": 47,
+    "names": [
+      "headingClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  font: var(--openui-text-heading-xs, 600 16px/1.25 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-heading-xs-letter-spacing, -0.01em);\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "line": 52,
+    "names": [
+      "mainClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  flex: 1;\n  min-height: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding-left: var(--openui-space-xl, 24px);\n  padding-right: var(--openui-space-xl, 24px);\n  img {\n    max-width: 100%;\n    max-height: 100%;\n    object-fit: contain;\n    border-radius: var(--openui-radius-s, 6px);\n  }\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "line": 67,
+    "names": [
+      "carouselContainerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "line": 74,
+    "names": [
+      "carouselClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  gap: var(--openui-space-s, 8px);\n  overflow-x: auto;\n  scroll-behavior: smooth;\n  scrollbar-width: none;\n  padding-left: var(--openui-space-xl, 24px);\n  padding-right: var(--openui-space-xl, 24px);\n  &::-webkit-scrollbar {\n    display: none;\n  }\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "line": 86,
+    "names": [
+      "buttonContainerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  border-radius: var(--openui-radius-xs, 4px);\n  overflow: hidden;\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "line": 98,
+    "names": [
+      "leftButtonClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  left: 24px;\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "line": 101,
+    "names": [
+      "rightButtonClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  right: 24px;\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "line": 104,
+    "names": [
+      "thumbnailClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  flex: 1;\n  height: 116px;\n  min-width: 174px;\n  cursor: pointer;\n  opacity: 0.6;\n  border-radius: var(--openui-radius-s, 6px);\n  border: 1px solid transparent;\n  overflow: hidden;\n  transition: opacity 0.2s ease;\n  box-sizing: border-box;\n  &:hover {\n    opacity: 0.8;\n  }\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n  }\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/galleryModal.styles.ts",
+    "line": 124,
+    "names": [
+      "activeThumbnailClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  opacity: 1;\n  border-color: var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1));\n  border-radius: var(--openui-radius-s, 6px);\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "line": 2,
+    "names": [
+      "galleryClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  overflow: hidden;\n  position: relative;\n  border-radius: var(--openui-radius-m, 8px);\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "line": 10,
+    "names": [
+      "gridClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: grid;\n  width: 100%;\n  max-height: 376px;\n  grid-gap: var(--openui-space-s, 8px);\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "line": 17,
+    "names": [
+      "layoutClasses",
+      "\"openui-gallery--single\""
+    ],
+    "inFunction": false,
+    "template": "`\n    & .openui-gallery__grid {\n      grid-template-columns: 1fr;\n    }\n  `"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "line": 22,
+    "names": [
+      "layoutClasses",
+      "\"openui-gallery--double\""
+    ],
+    "inFunction": false,
+    "template": "`\n    & .openui-gallery__grid {\n      grid-template-columns: repeat(2, 1fr);\n    }\n  `"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "line": 27,
+    "names": [
+      "layoutClasses",
+      "\"openui-gallery--triple\""
+    ],
+    "inFunction": false,
+    "template": "`\n    & .openui-gallery__grid {\n      grid-template-columns: 1fr 1fr;\n      grid-template-rows: 1fr 1fr;\n      .openui-gallery__image:first-child {\n        grid-row: 1 / -1;\n      }\n    }\n    @media (max-width: 768px) {\n      & .openui-gallery__grid {\n        grid-template-columns: repeat(2, 1fr);\n        grid-template-rows: repeat(2, 1fr);\n        grid-template-areas: \"img1 img1\" \"img2 img3\";\n        .openui-gallery__image:nth-child(1) {\n          grid-area: img1;\n        }\n        .openui-gallery__image:nth-child(2) {\n          grid-area: img2;\n        }\n        .openui-gallery__image:nth-child(3) {\n          grid-area: img3;\n        }\n      }\n    }\n  `"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "line": 52,
+    "names": [
+      "layoutClasses",
+      "\"openui-gallery--quad\""
+    ],
+    "inFunction": false,
+    "template": "`\n    & .openui-gallery__grid {\n      grid-template-columns: repeat(4, 1fr);\n      grid-template-rows: repeat(2, 1fr);\n      grid-template-areas: \"img1 img1 img2 img2\" \"img1 img1 img3 img4\";\n      .openui-gallery__image:nth-child(1) {\n        grid-area: img1;\n      }\n      .openui-gallery__image:nth-child(2) {\n        grid-area: img2;\n      }\n      .openui-gallery__image:nth-child(3) {\n        grid-area: img3;\n      }\n      .openui-gallery__image:nth-child(4) {\n        grid-area: img4;\n      }\n    }\n  `"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "line": 71,
+    "names": [
+      "layoutClasses",
+      "\"openui-gallery--default\""
+    ],
+    "inFunction": false,
+    "template": "`\n    & .openui-gallery__grid {\n      grid-template-columns: 2fr 1fr 1fr;\n      grid-template-rows: 1fr 1fr;\n      .openui-gallery__image:first-child {\n        grid-row: 1 / -1;\n      }\n    }\n    @media (max-width: 768px) {\n      & .openui-gallery__grid {\n        grid-template-columns: repeat(6, 1fr);\n        grid-template-rows: repeat(2, 1fr);\n        grid-template-areas: \"img1 img1 img1 img2 img2 img2\" \"img3 img3 img4 img4 img5 img5\";\n        .openui-gallery__image:nth-child(1) {\n          grid-area: img1;\n        }\n        .openui-gallery__image:nth-child(2) {\n          grid-area: img2;\n        }\n        .openui-gallery__image:nth-child(3) {\n          grid-area: img3;\n        }\n        .openui-gallery__image:nth-child(4) {\n          grid-area: img4;\n        }\n        .openui-gallery__image:nth-child(5) {\n          grid-area: img5;\n        }\n      }\n    }\n  `"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "line": 103,
+    "names": [
+      "imageClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: relative;\n  overflow: hidden;\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    transition: transform 0.3s ease;\n    &:hover {\n      transform: scale(1.05);\n    }\n  }\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "line": 116,
+    "names": [
+      "mainImageClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  img {\n    height: 100%;\n  }\n`"
+  },
+  {
+    "family": "ImageGallery",
+    "file": "components/ImageGallery/imageGallery.styles.ts",
+    "line": 121,
+    "names": [
+      "showAllClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: absolute;\n  bottom: 5px;\n  right: 5px;\n`"
+  },
+  {
+    "family": "ImageText",
+    "file": "components/ImageText/imageText.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  gap: var(--openui-space-m, 12px);\n`"
+  },
+  {
+    "family": "ImageText",
+    "file": "components/ImageText/imageText.styles.ts",
+    "line": 6,
+    "names": [
+      "imageContainerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: relative;\n  width: calc(var(--openui-space-2xl, 36px) + var(--openui-space-2xs, 4px));\n  height: calc(var(--openui-space-2xl, 36px) + var(--openui-space-2xs, 4px));\n  border-radius: var(--openui-radius-m, 8px);\n  overflow: hidden;\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n`"
+  },
+  {
+    "family": "ImageText",
+    "file": "components/ImageText/imageText.styles.ts",
+    "line": 18,
+    "names": [
+      "imageClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n`"
+  },
+  {
+    "family": "ImageText",
+    "file": "components/ImageText/imageText.styles.ts",
+    "line": 24,
+    "names": [
+      "layoutClasses",
+      "vertical"
+    ],
+    "inFunction": false,
+    "template": "`\n    flex-direction: column;\n    align-items: flex-start;\n  `"
+  },
+  {
+    "family": "ImageText",
+    "file": "components/ImageText/imageText.styles.ts",
+    "line": 28,
+    "names": [
+      "layoutClasses",
+      "horizontal"
+    ],
+    "inFunction": false,
+    "template": "`\n    flex-direction: row;\n    align-items: center;\n    .openui-text-block__primary {\n      font: var(--openui-text-body-sm-heavy, 560 14px/1.5 \"Inter\", sans-serif);\n      letter-spacing: var(--openui-text-body-sm-heavy-letter-spacing, -0.01em);\n      font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n    }\n    .openui-image-text__content {\n      padding-top: var(--openui-space-3xs, 2px);\n    }\n  `"
+  },
+  {
+    "family": "ImageText",
+    "file": "components/ImageText/imageText.styles.ts",
+    "line": 41,
+    "names": [
+      "contentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n`"
+  },
+  {
+    "family": "ImageTextLarge",
+    "file": "components/ImageTextLarge/imageTextLarge.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  width: 100%;\n  min-width: 0;\n  flex-direction: column;\n  gap: var(--openui-space-m, 12px);\n`"
+  },
+  {
+    "family": "ImageTextLarge",
+    "file": "components/ImageTextLarge/imageTextLarge.styles.ts",
+    "line": 9,
+    "names": [
+      "imageWrapClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: relative;\n  width: 100%;\n  min-height: 60px;\n  max-height: 180px;\n  border-radius: var(--openui-radius-m, 8px);\n  overflow: hidden;\n  background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n  line-height: 0;\n`"
+  },
+  {
+    "family": "ImageTextLarge",
+    "file": "components/ImageTextLarge/imageTextLarge.styles.ts",
+    "line": 19,
+    "names": [
+      "imageClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: block;\n  width: 100%;\n  height: 180px;\n  max-height: 180px;\n  object-fit: cover;\n`"
+  },
+  {
+    "family": "InlineHeader",
+    "file": "components/InlineHeader/inlineHeader.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-3xs, 2px);\n  align-items: flex-start;\n`"
+  },
+  {
+    "family": "InlineHeader",
+    "file": "components/InlineHeader/inlineHeader.styles.ts",
+    "line": 8,
+    "names": [
+      "headingClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  align-items: center;\n  gap: var(--openui-space-xs, 6px);\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  font: var(--openui-text-body-default-heavy, 560 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-heavy-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n`"
+  },
+  {
+    "family": "InlineHeader",
+    "file": "components/InlineHeader/inlineHeader.styles.ts",
+    "line": 17,
+    "names": [
+      "descriptionClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n`"
+  },
+  {
+    "family": "InlineMarkdownRenderer",
+    "file": "components/InlineMarkdownRenderer/inlineMarkdown.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: inline;\n  text-align: inherit;\n  & .openui-markdown-renderer {\n    all: unset;\n    display: inline;\n    color: inherit;\n    font: inherit;\n    letter-spacing: inherit;\n    text-align: inherit;\n  }\n  & p,\n  & .openui-markdown-renderer p {\n    display: inline;\n    margin: 0;\n    padding: 0;\n    text-align: inherit;\n  }\n  & > * {\n    display: inline;\n    margin: 0;\n    padding: 0;\n    text-align: inherit;\n  }\n`"
+  },
+  {
+    "family": "ListBlock",
+    "file": "components/ListBlock/listBlock.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  width: 100%;\n  gap: var(--openui-space-l, 18px);\n  &:where(.openui-list-block--small) {\n    gap: var(--openui-space-m, 12px);\n  }\n`"
+  },
+  {
+    "family": "ListItem",
+    "file": "components/ListItem/listItem.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-m, 12px);\n  width: 100%;\n  &:where(.openui-list-item-wrapper-with-action) {\n    border-bottom: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    padding-bottom: var(--openui-space-m, 12px);\n  }\n  &.openui-list-item-wrapper-with-action:hover :where(.openui-list-item-indicator) {\n    scale: 1.1;\n  }\n  &:last-child:where(.openui-list-item-wrapper-with-action) {\n    border-bottom: none;\n    padding-bottom: 0;\n  }\n  & :where(.openui-list-item) {\n    display: flex;\n    flex-direction: row;\n    align-items: flex-start;\n    gap: var(--openui-space-m, 12px);\n  }\n  & :where(.openui-list-item-clickable) {\n    cursor: pointer;\n  }\n  & :not(:has(.openui-list-item-subtitle)):where(.openui-list-item) {\n    align-items: center;\n  }\n  & :where(.openui-list-item-indicator) {\n    margin-top: var(--openui-space-2xs, 4px);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 40px;\n    height: 40px;\n    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n    border-radius: var(--openui-radius-m, 8px);\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    overflow: hidden;\n    transition: background-color 0.2s ease;\n    flex-shrink: 0;\n  }\n  & :where(.openui-list-item-indicator-no-subtitle) {\n    height: 24px;\n    width: 24px;\n    margin-top: 0;\n    border-radius: var(--openui-radius-s, 6px);\n  }\n  & :where(.openui-list-item-indicator-clickable) {\n    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n  }\n  & :where(.openui-list-item-indicator-number) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    font: var(--openui-text-label-default, 400 16px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-default-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  & :where(.openui-list-item-indicator-image) {\n    border-radius: var(--openui-radius-s, 6px);\n    overflow: hidden;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 100%;\n    height: 100%;\n  }\n  & img:where(.openui-list-item-indicator-image img) {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    display: block;\n  }\n  & :where(.openui-list-item-content-wrapper) {\n    display: flex;\n    flex-direction: row;\n    align-items: flex-start;\n    justify-content: space-between;\n    width: 100%;\n  }\n  & :where(.openui-list-item-content) {\n    display: flex;\n    flex-direction: column;\n    flex: 1;\n  }\n  & :where(.openui-list-item-title) {\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  & :where(.openui-list-item-subtitle) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  & :where(.openui-list-item-action) {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: flex-start;\n    gap: var(--openui-space-2xs, 4px);\n    flex-shrink: 0;\n  }\n  & :where(.openui-list-item-action-label),\n  & :where(.openui-list-item-action-icon) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  & .openui-list-item:hover :where(.openui-list-item-indicator-clickable),\n  & .openui-list-item:focus :where(.openui-list-item-indicator-clickable) {\n    background-color: var(--openui-highlight-strong, oklch(0.097 0 0 / 0.08));\n  }\n  & .openui-list-item:hover :where(.openui-list-item-action-label),\n  & .openui-list-item:hover :where(.openui-list-item-action-icon),\n  & .openui-list-item:focus :where(.openui-list-item-action-label),\n  & .openui-list-item:focus :where(.openui-list-item-action-icon) {\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  &:where(.openui-list-item-wrapper--small) {\n    gap: var(--openui-space-s, 8px);\n  }\n  &.openui-list-item-wrapper--small :where(.openui-list-item) {\n    gap: var(--openui-space-s-m, 10px);\n  }\n  &.openui-list-item-wrapper--small :where(.openui-list-item-indicator) {\n    width: 36px;\n    height: 36px;\n  }\n  &.openui-list-item-wrapper--small :where(.openui-list-item-indicator-no-subtitle) {\n    width: 20px;\n    height: 20px;\n  }\n  &.openui-list-item-wrapper--small :where(.openui-list-item-indicator-number) {\n    font: var(--openui-text-numbers-sm, 400 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  &.openui-list-item-wrapper--small :where(.openui-list-item-title),\n  &.openui-list-item-wrapper--small :where(.openui-list-item-subtitle),\n  &.openui-list-item-wrapper--small :where(.openui-list-item-action-label),\n  &.openui-list-item-wrapper--small :where(.openui-list-item-action-icon) {\n    font: var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n`"
+  },
+  {
+    "family": "MarkDownRenderer",
+    "file": "components/MarkDownRenderer/markdown.styles.ts",
+    "line": 17,
+    "names": [
+      "codeClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  border-radius: 4px;\n  padding: 2px 4px;\n  background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  color: ${primary};\n  ${body}\n  /* Browsers ignore the legacy display:hidden declaration; preserve its rule. */\n  &::after, &::before {\n    content: \"\";\n    display: hidden;\n  }\n`"
+  },
+  {
+    "family": "MarkDownRenderer",
+    "file": "components/MarkDownRenderer/markdown.styles.ts",
+    "line": 30,
+    "names": [
+      "linkClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n  cursor: pointer;\n  text-decoration: none;\n  transition: color 0.2s ease-in-out;\n  ${body}\n  &:hover {\n    text-decoration: underline;\n  }\n`"
+  },
+  {
+    "family": "MarkDownRenderer",
+    "file": "components/MarkDownRenderer/markdown.styles.ts",
+    "line": 40,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  color: ${primary};\n  ${body}\n  max-width: none;\n  &:where(.openui-markdown-renderer-card) {\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    border-radius: 0.5rem;\n    padding: 1rem;\n  }\n  &:where(.openui-markdown-renderer-card-sunk) {\n    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n    border-radius: 0.5rem;\n    padding: 1rem;\n  }\n  & h1,\n  & h2,\n  & h3,\n  & h4,\n  & h5,\n  & h6 {\n    ${heading}\n    color: ${primary};\n    margin-bottom: 18px;\n    &:has(+ p) {\n      margin-bottom: 8px;\n    }\n    & + strong {\n      ${heading}\n    }\n  }\n  & p {\n    color: ${primary};\n    ${body}\n    margin-bottom: 0;\n    &:has(+ p) {\n      margin-bottom: 18px;\n    }\n  }\n  & strong {\n    color: ${primary};\n    ${heavy}\n  }\n  & li {\n    margin-bottom: 8px;\n    ${body}\n    & :last-child {\n      margin-bottom: 0;\n    }\n    &::marker {\n      ${body}\n      color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    }\n  }\n  & li ul,\n  & li li,\n  & li ol {\n    margin-top: 8px;\n  }\n  & ol {\n    list-style-type: decimal;\n    padding-left: 20px;\n    margin-bottom: 20px;\n    ${body}\n    color: ${primary};\n    & :last-child {\n      margin-bottom: 0;\n    }\n  }\n  & ul {\n    list-style-type: disc;\n    padding-left: 20px;\n    margin-bottom: 24px;\n    ${body}\n    color: ${primary};\n    & :last-child {\n      margin-bottom: 0;\n    }\n  }\n  & .openui-code-block-syntax-highlighter {\n    padding: 25px !important;\n    margin-top: 8px !important;\n    margin-bottom: 8px !important;\n    &:first-child {\n      margin-top: 0 !important;\n    }\n    &:last-child {\n      margin-bottom: 0 !important;\n    }\n  }\n  & hr {\n    margin-top: 48px;\n    margin-bottom: 48px;\n    & + * {\n      margin-top: 0;\n    }\n  }\n  & blockquote {\n    color: ${primary};\n    border-left: 4px solid color-mix(in oklab, ${primary} 70%, transparent);\n    padding: 0 0 0 8px;\n    font-style: italic;\n    margin-left: 0;\n    margin-top: 25px;\n    margin-bottom: 25px;\n    padding-left: 16px;\n    quotes: \"“\" \"”\" \"‘\" \"’\";\n    line-height: 1.625;\n  }\n  & blockquote strong {\n    ${heavy}\n  }\n  & blockquote > *:first-child::before {\n    content: open-quote;\n    font-size: 1em;\n    line-height: 1;\n    vertical-align: top;\n    margin-right: 0.2em;\n  }\n  & blockquote > *:last-child::after {\n    content: close-quote;\n    font-size: 1em;\n    line-height: 1.5;\n    vertical-align: top;\n    margin-left: 0.2em;\n  }\n  & blockquote * {\n    font-style: inherit;\n    color: inherit;\n    line-height: inherit;\n  }\n  & .openui-table-container {\n    margin-bottom: 20px;\n  }\n  & > *:first-child {\n    margin-top: 0;\n  }\n  & > *:last-child {\n    margin-bottom: 0;\n  }\n`"
+  },
+  {
+    "family": "MetricIndicator",
+    "file": "components/MetricIndicator/metricIndicator.styles.ts",
+    "line": 3,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n  gap: var(--openui-space-3xs, 2px);\n  &:where(.openui-metric-indicator--variant-inline) {\n    gap: 0;\n  }\n  &:where(.openui-metric-indicator--has-subtext) {\n    gap: var(--openui-space-3xs, 2px);\n  }\n  & :where(.openui-metric-indicator__row) {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    align-items: flex-end;\n    gap: var(--openui-space-xs, 6px);\n    min-width: 0;\n  }\n  &.openui-metric-indicator--variant-inline :where(.openui-metric-indicator__row) {\n    align-items: baseline;\n    gap: var(--openui-space-2xs, 4px);\n  }\n  & :where(.openui-metric-indicator__main-value) {\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    font: var(--openui-text-numbers-default-heavy, 560 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-default-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  & :where(.openui-metric-indicator__previous-value) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    text-decoration: line-through;\n    font: var(--openui-text-numbers-sm, 400 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    margin-bottom: 1px;\n  }\n  & :where(.openui-metric-indicator__subtext) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    min-width: 0;\n    font: var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  &.openui-metric-indicator--variant-inline :where(.openui-metric-indicator__subtext) {\n    margin-top: 0;\n  }\n  & :where(.openui-metric-indicator__trend--success) {\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n  }\n  & :where(.openui-metric-indicator__trend--danger) {\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n  }\n  & :where(.openui-metric-indicator__trend) {\n    font: var(--openui-text-numbers-sm, 400 14px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    margin-bottom: 1px;\n  }\n`"
+  },
+  {
+    "family": "OverviewCardBlock",
+    "file": "components/OverviewCardBlock/overviewCardBlock.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  min-width: 158px;\n  padding: var(--openui-space-s-m, 10px);\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  border-radius: var(--openui-radius-2xl, 14px);\n  background-color: var(--openui-sunk-light, oklch(0.097 0 0 / 0.02));\n  transition:\n    background-color 0.2s ease,\n    border-color 0.2s ease,\n    box-shadow 0.2s ease,\n    transform 0.2s ease;\n  &:where(.openui-overview-card--clickable) {\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    border-color: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));\n    box-shadow: var(\n      --openui-shadow-m,\n      0 4px 6px -2px oklch(0 0 0 / 0.025),\n      0 2px 2px -2px oklch(0 0 0 / 0.05)\n    );\n    cursor: pointer;\n  }\n  &:hover:where(.openui-overview-card--clickable) {\n    box-shadow: none;\n    transform: scale(0.995);\n  }\n  &:focus-visible:where(.openui-overview-card--clickable) {\n    outline: 2px solid var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08));\n    outline-offset: 2px;\n  }\n  & :where(.openui-overview-card__vertical) {\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n    justify-content: space-between;\n    gap: var(--openui-space-l, 18px);\n    min-width: 0;\n    min-height: 0;\n  }\n  & :where(.openui-overview-card__top-row) {\n    display: flex;\n    flex-direction: row;\n    align-items: flex-start;\n    justify-content: space-between;\n    gap: var(--openui-space-s, 8px);\n    width: 100%;\n    min-width: 0;\n  }\n  & :where(.openui-overview-card__chevron) {\n    flex-shrink: 0;\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n  & :where(.openui-overview-card__slot) {\n    width: 100%;\n    min-width: 0;\n  }\n  & :where(.openui-overview-card__slot--top) {\n    flex: 1;\n    min-width: 0;\n    width: auto;\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    gap: var(--openui-space-s, 8px);\n    min-height: var(--openui-space-xl, 24px);\n  }\n  & :where(.openui-overview-card__slot--bottom) {\n    display: flex;\n    flex-direction: column;\n    gap: var(--openui-space-2xs, 4px);\n  }\n`"
+  },
+  {
+    "family": "SectionBlock",
+    "file": "components/SectionBlock/FoldableSection.tsx",
+    "line": 16,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${rootStyles}\n`"
+  },
+  {
+    "family": "SectionBlock",
+    "file": "components/SectionBlock/FoldableSection.tsx",
+    "line": 19,
+    "names": [
+      "itemClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${itemStyles}\n`"
+  },
+  {
+    "family": "SectionBlock",
+    "file": "components/SectionBlock/FoldableSection.tsx",
+    "line": 22,
+    "names": [
+      "headerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${headerStyles}\n`"
+  },
+  {
+    "family": "SectionBlock",
+    "file": "components/SectionBlock/FoldableSection.tsx",
+    "line": 25,
+    "names": [
+      "triggerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${triggerStyles}\n`"
+  },
+  {
+    "family": "SectionBlock",
+    "file": "components/SectionBlock/FoldableSection.tsx",
+    "line": 28,
+    "names": [
+      "contentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${contentStyles}\n`"
+  },
+  {
+    "family": "SectionBlock",
+    "file": "components/SectionBlock/SectionV2.tsx",
+    "line": 6,
+    "names": [
+      "componentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${sectionStyles}\n`"
+  },
+  {
+    "family": "Separator",
+    "file": "components/Separator/Separator.tsx",
+    "line": 6,
+    "names": [
+      "componentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${separatorStyles}\n`"
+  },
+  {
+    "family": "Skeleton",
+    "file": "components/Skeleton/PieChartSkeleton.tsx",
+    "line": 5,
+    "names": [
+      "componentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${pieStyles}\n`"
+  },
+  {
+    "family": "Skeleton",
+    "file": "components/Skeleton/Skeleton.tsx",
+    "line": 5,
+    "names": [
+      "componentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${stackStyles}\n`"
+  },
+  {
+    "family": "Skeleton",
+    "file": "components/Skeleton/SkeletonBar.tsx",
+    "line": 4,
+    "names": [
+      "componentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${barStyles}\n`"
+  },
+  {
+    "family": "Skeleton",
+    "file": "components/Skeleton/TableSkeleton.tsx",
+    "line": 5,
+    "names": [
+      "componentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${tableStyles}\n`"
+  },
+  {
+    "family": "SnippetCardBlock",
+    "file": "components/SnippetCardBlock/snippetCardBlock.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: var(--openui-space-m, 12px);\n  width: 100%;\n  min-width: 0;\n  padding: var(--openui-space-s-m, 10px);\n  box-sizing: border-box;\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  border-radius: var(--openui-radius-2xl, 14px);\n  background-color: var(--openui-sunk-light, oklch(0.097 0 0 / 0.02));\n  position: relative;\n  overflow: hidden;\n  transition:\n    background-color 0.2s ease,\n    border-color 0.2s ease,\n    box-shadow 0.2s ease,\n    transform 0.2s ease;\n  &:where(.openui-value-card--static) {\n    background-color: var(--openui-sunk-light, oklch(0.097 0 0 / 0.02));\n    border-color: var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    box-shadow: none;\n  }\n  &:where(.openui-value-card--clickable) {\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    border-color: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));\n    box-shadow: var(\n      --openui-shadow-s,\n      0 1px 3px -2px oklch(0 0 0 / 0.02),\n      0 2px 5px -2px oklch(0 0 0 / 0.04)\n    );\n    cursor: pointer;\n  }\n  &:hover:where(.openui-value-card--clickable) {\n    box-shadow: none;\n    transform: scale(0.995);\n  }\n  &:focus-visible:where(.openui-value-card--clickable) {\n    outline: 2px solid var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08));\n    outline-offset: 2px;\n  }\n  & :where(.openui-value-card__lhs) {\n    display: flex;\n    align-items: center;\n    min-width: 0;\n    flex: 1;\n  }\n  & :where(.openui-value-card__lhs > *) {\n    min-width: 0;\n  }\n  & :where(.openui-value-card__rhs) {\n    flex-shrink: 1;\n    display: flex;\n    align-items: center;\n    justify-content: flex-end;\n    min-width: 0;\n    margin-left: var(--openui-space-m, 12px);\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    font: var(--openui-text-numbers-lg-heavy, 560 18px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-numbers-lg-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n  }\n  & :where(.openui-value-card__rhs-content) {\n    display: flex;\n    justify-content: flex-end;\n    min-width: 0;\n    max-width: 100%;\n  }\n  & .openui-value-card__lhs :where(.openui-icon-text),\n  & .openui-value-card__lhs :where(.openui-image-text),\n  & .openui-value-card__lhs :where(.openui-icon-text__content),\n  & .openui-value-card__lhs :where(.openui-image-text__content),\n  & .openui-value-card__lhs :where(.openui-text-block),\n  & :where(.openui-value-card__rhs-content),\n  & :where(.openui-value-card__rhs-content > *),\n  & .openui-value-card__rhs :where(.openui-text-block) {\n    min-width: 0;\n  }\n  & .openui-value-card__lhs :where(.openui-icon-text),\n  & .openui-value-card__lhs :where(.openui-image-text),\n  & .openui-value-card__lhs :where(.openui-text-block),\n  & :where(.openui-value-card__rhs-content) {\n    width: 100%;\n    overflow: hidden;\n  }\n  & .openui-value-card__rhs :where(.openui-text-block) {\n    align-items: flex-end;\n    width: auto;\n    max-width: 100%;\n    overflow: hidden;\n    text-align: right;\n  }\n  & .openui-value-card__lhs :where(.openui-text-block__primary),\n  & .openui-value-card__lhs :where(.openui-text-block__secondary),\n  & .openui-value-card__rhs :where(.openui-text-block__primary),\n  & .openui-value-card__rhs :where(.openui-text-block__secondary) {\n    max-width: 100%;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n  }\n  & .openui-value-card__rhs :where(.openui-text-block--align-left) {\n    align-items: flex-end;\n    text-align: right;\n  }\n  & :where(.openui-value-card__chevron) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n  }\n`"
+  },
+  {
+    "family": "SourceFaviconImage",
+    "file": "components/SourceFaviconImage/sourceFaviconImage.styles.ts",
+    "line": 3,
+    "names": [
+      "faviconClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  object-fit: cover;\n  display: flex;\n`"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/listedSources.styles.ts",
+    "line": 2,
+    "names": [
+      "listClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-m, 12px);\n`"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/listedSources.styles.ts",
+    "line": 7,
+    "names": [
+      "headerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: var(--openui-space-s, 8px);\n`"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/listedSources.styles.ts",
+    "line": 13,
+    "names": [
+      "titleClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  font: var(--openui-text-label-default-heavy, 560 16px/1.25 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-label-default-heavy-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n`"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/listedSources.styles.ts",
+    "line": 19,
+    "names": [
+      "buttonsClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: var(--openui-space-s, 8px);\n`"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/listedSources.styles.ts",
+    "line": 25,
+    "names": [
+      "containerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  width: 180px !important;\n  padding: var(--openui-space-000, 0);\n  border-radius: var(--openui-radius-l, 10px);\n  overflow: hidden;\n  background-color: transparent !important;\n  &.openui-listed-sources-item-container--has-url:hover {\n    background-color: var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02)) !important;\n    border-color: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));\n  }\n`"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/sourcesItem.styles.ts",
+    "line": 2,
+    "names": [
+      "itemClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  gap: var(--openui-space-2xs, 4px);\n  padding: var(--openui-space-s, 8px);\n  height: 100%;\n  &.openui-listed-source-item--has-url {\n    cursor: pointer;\n  }\n`"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/sourcesItem.styles.ts",
+    "line": 13,
+    "names": [
+      "headerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  align-items: flex-start;\n  gap: var(--openui-space-s, 8px);\n`"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/sourcesItem.styles.ts",
+    "line": 18,
+    "names": [
+      "nameClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  font: var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n`"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/sourcesItem.styles.ts",
+    "line": 24,
+    "names": [
+      "titleClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  font: var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n`"
+  },
+  {
+    "family": "Sources",
+    "file": "components/Sources/sourcesItem.styles.ts",
+    "line": 30,
+    "names": [
+      "logoClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  flex-shrink: 0;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  border-radius: var(--openui-radius-s, 6px);\n  box-sizing: border-box;\n  overflow: hidden;\n`"
+  },
+  {
+    "family": "Steps",
+    "file": "components/Steps/Steps.tsx",
+    "line": 4,
+    "names": [
+      "componentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${stepsStyles}\n`"
+  },
+  {
+    "family": "Steps",
+    "file": "components/Steps/Steps.tsx",
+    "line": 7,
+    "names": [
+      "itemClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${stepItemStyles}\n`"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/scrollableTable.styles.ts",
+    "line": 2,
+    "names": [
+      "wrapperClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: relative;\n  width: 100%;\n  outline: none;\n`"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/scrollableTable.styles.ts",
+    "line": 7,
+    "names": [
+      "scrollContainerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  overflow: auto;\n  scrollbar-width: none;\n  ms-overflow-style: none;\n  &::-webkit-scrollbar {\n    display: none;\n  }\n`"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/scrollableTable.styles.ts",
+    "line": 15,
+    "names": [
+      "controlClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: absolute;\n  top: var(--openui-space-s, 8px);\n  z-index: 2;\n  width: fit-content;\n  height: fit-content;\n  border-radius: var(--openui-radius-s, 6px);\n  background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  &:where(.openui-scrollable-table-control-left) {\n    left: var(--openui-space-s, 8px);\n  }\n  &:where(.openui-scrollable-table-control-right) {\n    right: var(--openui-space-s, 8px);\n  }\n  &:where(.openui-scrollable-table-control-disabled) {\n    display: none;\n  }\n`"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/table.styles.ts",
+    "line": 14,
+    "names": [
+      "containerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: relative;\n  width: 100%;\n  overflow: auto;\n  border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  border-radius: var(--openui-radius-2xl, 14px);\n`"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/table.styles.ts",
+    "line": 21,
+    "names": [
+      "tableClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${smallBody}\n  width: 100%;\n  caption-side: bottom;\n  border-collapse: collapse;\n`"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/table.styles.ts",
+    "line": 27,
+    "names": [
+      "footerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  border-top: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  & > tr:last-child {\n    border-bottom: 0;\n  }\n`"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/table.styles.ts",
+    "line": 33,
+    "names": [
+      "headClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${padding}\n  border-bottom: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  & .openui-table-head-label {\n    ${smallBody}\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    display: inline-flex;\n    flex-grow: 1;\n    justify-content: left;\n  }\n  & .openui-table-head-content {\n    display: flex;\n    align-items: center;\n    gap: var(--openui-space-2xs, 4px);\n  }\n  & .openui-table-head-icon {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n`"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/table.styles.ts",
+    "line": 55,
+    "names": [
+      "rowClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  &:nth-child(even) {\n    background-color: var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02));\n  }\n  border-bottom: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  &:last-child {\n    border-bottom: 0;\n  }\n`"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/table.styles.ts",
+    "line": 64,
+    "names": [
+      "cellClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${padding}\n  white-space: nowrap;\n`"
+  },
+  {
+    "family": "Table",
+    "file": "components/Table/table.styles.ts",
+    "line": 68,
+    "names": [
+      "alignmentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  &:where(.openui-table-align-left) {\n    text-align: left;\n    justify-content: flex-start;\n  }\n  &:where(.openui-table-align-right) {\n    text-align: right;\n    justify-content: flex-end;\n    & .openui-table-head-label {\n      justify-content: flex-end;\n    }\n  }\n  &:where(.openui-table-align-center) {\n    text-align: center;\n    justify-content: center;\n    & .openui-table-head-label {\n      justify-content: center;\n    }\n  }\n`"
+  },
+  {
+    "family": "Tabs",
+    "file": "components/Tabs/tabs.styles.ts",
+    "line": 7,
+    "names": [
+      "tabsClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-l, 18px);\n  &.openui-tabs-clear {\n    & .openui-tabs-content {\n      padding: var(--openui-space-3xs, 2px) 0;\n      border: transparent;\n    }\n    & .openui-tabs-list {\n      border-radius: 0;\n      gap: var(--openui-space-l, 18px);\n      background: none;\n      padding: 0;\n      box-sizing: border-box;\n      flex: 1;\n      display: flex;\n      width: 100%;\n      position: relative;\n      overflow-x: auto;\n      scrollbar-width: none;\n      ms-overflow-style: none;\n      scroll-behavior: smooth;\n      &::-webkit-scrollbar {\n        display: none;\n      }\n    }\n    & .openui-tabs-trigger {\n      width: auto;\n      min-width: 0;\n      border: 0px;\n      border-radius: var(--openui-radius-none, 0px);\n      flex-shrink: 0;\n      padding: var(--openui-space-s, 8px) 0;\n      &[data-state=\"active\"] {\n        border: 0px;\n        box-shadow: none;\n        background-color: transparent;\n        font: var(--openui-text-label-default-heavy, 560 16px/1.25 \"Inter\", sans-serif);\n        letter-spacing: var(--openui-text-label-default-heavy-letter-spacing, -0.01em);\n        font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n      }\n      &:hover:not([data-state=\"active\"]) {\n        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n        border: 0px;\n        background-color: transparent;\n      }\n    }\n    & .openui-tabs-list--icon-title-subtext .openui-tabs-trigger,\n    & .openui-tabs-list--image-title-subtext .openui-tabs-trigger {\n      padding: var(--openui-space-m, 12px) 0;\n    }\n  }\n`"
+  },
+  {
+    "family": "Tabs",
+    "file": "components/Tabs/tabs.styles.ts",
+    "line": 62,
+    "names": [
+      "containerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  position: relative;\n  display: flex;\n  align-items: center;\n  overflow: hidden;\n  &::after {\n    content: \"\";\n    position: absolute;\n    bottom: 0;\n    height: 1px;\n    left: 0;\n    right: 0;\n    border-bottom: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    pointer-events: none;\n  }\n  & .openui-tabs-indicator {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    height: 1.5px;\n    width: 0;\n    opacity: 0;\n    background-color: var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1));\n    pointer-events: none;\n    z-index: 1;\n  }\n  & .openui-tabs-scroll-button-container-left {\n    position: absolute;\n    height: 100%;\n    left: 0;\n    z-index: 1;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 0 4px 0 0;\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  }\n  & .openui-tabs-scroll-button-container-right {\n    position: absolute;\n    height: 100%;\n    right: 0;\n    z-index: 1;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 0 0 0 4px;\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  }\n  & .openui-tabs-scroll-button {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    cursor: pointer;\n    &.openui-tabs-scroll-left {\n      left: 2px;\n    }\n    &.openui-tabs-scroll-right {\n      right: 2px;\n    }\n  }\n`"
+  },
+  {
+    "family": "Tabs",
+    "file": "components/Tabs/tabs.styles.ts",
+    "line": 123,
+    "names": [
+      "listClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  width: 100%;\n  box-sizing: border-box;\n  display: flex;\n  gap: var(--openui-space-3xs, 2px);\n  flex-direction: row;\n  padding: var(--openui-space-2xs, 4px);\n  border-radius: var(--openui-radius-l, 10px);\n  background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n  overflow-x: auto;\n  scrollbar-width: none;\n  ms-overflow-style: none;\n  scroll-behavior: smooth;\n  &::-webkit-scrollbar {\n    display: none;\n  }\n  &.openui-tabs-list--title .openui-tabs-trigger-content {\n    align-items: center;\n  }\n  &.openui-tabs-list--icon-title,\n  &.openui-tabs-list--image-title {\n    & .openui-tabs-trigger-content {\n      align-items: flex-start;\n    }\n    & .openui-tabs-trigger-icon {\n      width: 24px;\n      height: 24px;\n      border-radius: var(--openui-radius-s, 6px);\n      & svg {\n        width: 14px;\n        height: 14px;\n      }\n    }\n  }\n  &.openui-tabs-list--icon-title-subtext,\n  &.openui-tabs-list--image-title-subtext {\n    & .openui-tabs-trigger {\n      align-items: flex-start;\n    }\n    & .openui-tabs-trigger-content {\n      align-items: flex-start;\n    }\n  }\n  &.openui-tabs-list--icon-title-subtext .openui-tabs-trigger-icon {\n    width: 36px;\n    height: 36px;\n    border-radius: var(--openui-radius-m, 8px);\n    & svg {\n      width: 16px;\n      height: 16px;\n    }\n  }\n  &.openui-tabs-list--image-title .openui-tabs-trigger-image {\n    width: 24px;\n    height: 24px;\n    border-radius: var(--openui-radius-s, 6px);\n  }\n  &.openui-tabs-list--image-title-subtext .openui-tabs-trigger-image {\n    width: 36px;\n    height: 36px;\n    border-radius: var(--openui-radius-m, 8px);\n  }\n`"
+  },
+  {
+    "family": "Tabs",
+    "file": "components/Tabs/tabs.styles.ts",
+    "line": 186,
+    "names": [
+      "triggerClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  cursor: pointer;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n  gap: var(--openui-space-s, 8px);\n  box-sizing: border-box;\n  padding: var(--openui-space-3xs, 2px) var(--openui-space-s, 8px);\n  border: 1px solid transparent;\n  border-radius: var(--openui-radius-s, 6px);\n  min-width: 7.3rem;\n  width: 100%;\n  background-color: transparent;\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  ${label}\n  &[data-state=\"active\"] {\n    background-color: var(--openui-elevated, oklch(0.097 0 0 / 0.08));\n    border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    box-shadow: var(\n      --openui-shadow-s,\n      0 1px 3px -2px oklch(0 0 0 / 0.02),\n      0 2px 5px -2px oklch(0 0 0 / 0.04)\n    );\n  }\n  &:hover:not([data-state=\"active\"]) {\n    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n    border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    box-shadow: var(\n      --openui-shadow-s,\n      0 1px 3px -2px oklch(0 0 0 / 0.02),\n      0 2px 5px -2px oklch(0 0 0 / 0.04)\n    );\n  }\n  & .openui-tabs-trigger-content {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    gap: var(--openui-space-3xs, 2px);\n    min-width: 0;\n  }\n  & .openui-tabs-trigger-text {\n    width: auto;\n    max-width: 232px;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n  }\n  & .openui-tabs-trigger-subtext {\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    max-width: 232px;\n  }\n  & .openui-tabs-trigger-icon {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 24px;\n    height: 24px;\n    flex-shrink: 0;\n    background: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n    & svg {\n      width: 14px;\n      height: 14px;\n    }\n  }\n  & .openui-tabs-trigger-image {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 24px;\n    height: 24px;\n    overflow: hidden;\n    flex-shrink: 0;\n    & img {\n      width: 100%;\n      height: 100%;\n      object-fit: cover;\n    }\n  }\n`"
+  },
+  {
+    "family": "Tabs",
+    "file": "components/Tabs/tabs.styles.ts",
+    "line": 274,
+    "names": [
+      "contentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  box-sizing: border-box;\n  padding: var(--openui-space-l, 18px);\n  border: 1px solid transparent;\n  border-radius: var(--openui-radius-m, 8px);\n  font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  & .openui-tabs-content-inner {\n    display: flex;\n    flex-direction: column;\n    gap: var(--openui-space-l, 18px);\n  }\n`"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  box-sizing: border-box;\n  display: flex;\n  align-items: center;\n  overflow: hidden;\n  max-width: 100%;\n  gap: var(--openui-space-2xs, 4px);\n  font: var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n`"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "line": 13,
+    "names": [
+      "iconClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  align-items: center;\n  & svg {\n    stroke-width: 2.5;\n    width: 14px;\n    height: 14px;\n  }\n`"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "line": 22,
+    "names": [
+      "textClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n`"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "line": 28,
+    "names": [
+      "sizeClasses",
+      "sm"
+    ],
+    "inFunction": false,
+    "template": "`\n    padding: var(--openui-space-2xs, 4px) var(--openui-space-xs, 6px);\n    border-radius: var(--openui-radius-s, 6px);\n    height: 24px;\n  `"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "line": 33,
+    "names": [
+      "sizeClasses",
+      "md"
+    ],
+    "inFunction": false,
+    "template": "`\n    padding: var(--openui-space-xs, 6px) var(--openui-space-s, 8px);\n    border-radius: var(--openui-radius-s, 6px);\n    gap: var(--openui-space-xs, 6px);\n    height: 32px;\n  `"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "line": 39,
+    "names": [
+      "sizeClasses",
+      "lg"
+    ],
+    "inFunction": false,
+    "template": "`\n    padding: var(--openui-space-s, 8px) var(--openui-space-m, 12px);\n    border-radius: var(--openui-radius-m, 8px);\n    gap: var(--openui-space-xs, 6px);\n    height: 36px;\n  `"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "line": 47,
+    "names": [
+      "variantClasses",
+      "neutral"
+    ],
+    "inFunction": false,
+    "template": "`\n    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  `"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "line": 51,
+    "names": [
+      "variantClasses",
+      "info"
+    ],
+    "inFunction": false,
+    "template": "`\n    background-color: var(--openui-info-background, oklch(0.623 0.188 259.815 / 0.12));\n    color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n  `"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "line": 55,
+    "names": [
+      "variantClasses",
+      "success"
+    ],
+    "inFunction": false,
+    "template": "`\n    background-color: var(--openui-success-background, oklch(0.627 0.17 149.214 / 0.12));\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n  `"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "line": 59,
+    "names": [
+      "variantClasses",
+      "warning"
+    ],
+    "inFunction": false,
+    "template": "`\n    background-color: var(--openui-alert-background, oklch(0.795 0.162 86.047 / 0.16));\n    color: var(--openui-text-alert-primary, oklch(0.476 0.103 61.907 / 1));\n  `"
+  },
+  {
+    "family": "Tag",
+    "file": "components/Tag/tag.styles.ts",
+    "line": 63,
+    "names": [
+      "variantClasses",
+      "danger"
+    ],
+    "inFunction": false,
+    "template": "`\n    background-color: var(--openui-danger-background, oklch(0.577 0.215 27.325 / 0.12));\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n  `"
+  },
+  {
+    "family": "TagBlock",
+    "file": "components/TagBlock/tagBlock.styles.ts",
+    "line": 2,
+    "names": [
+      "blockClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-wrap: wrap;\n  gap: var(--openui-space-s, 8px);\n  max-width: 100%;\n`"
+  },
+  {
+    "family": "TextBlock",
+    "file": "components/TextBlock/textBlock.styles.ts",
+    "line": 87,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-3xs, 2px);\n  align-items: flex-start;\n  text-align: left;\n  & :where(.openui-text-block__primary) {\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  & :where(.openui-text-block__secondary) {\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n  & :where(.openui-text-block__secondary--positive) {\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n  }\n  & :where(.openui-text-block__secondary--negative) {\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n  }\n  & :where(.openui-text-block__tertiary) {\n    display: none;\n  }\n  &.openui-text-block--title-text :where(.openui-text-block__primary) {\n    ${headingMedium}\n  }\n  &.openui-text-block--title-text :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--number-title-text :where(.openui-text-block__primary) {\n    ${numberTitleMedium}\n  }\n  &.openui-text-block--number-title-text :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--text-subtext :where(.openui-text-block__primary) {\n    ${body}\n  }\n  &.openui-text-block--text-subtext :where(.openui-text-block__secondary) {\n    ${bodySmall}\n  }\n  &:where(.openui-text-block--highlight-text-number-subtext) {\n    gap: 0;\n  }\n  &.openui-text-block--highlight-text-number-subtext :where(.openui-text-block__primary) {\n    ${bodyHeavy}\n  }\n  &.openui-text-block--highlight-text-number-subtext :where(.openui-text-block__secondary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--text :where(.openui-text-block__primary) {\n    ${body}\n  }\n  &.openui-text-block--highlight-text :where(.openui-text-block__primary) {\n    ${bodyHeavy}\n  }\n  &.openui-text-block--number :where(.openui-text-block__primary) {\n    ${numberHeavy}\n  }\n  &.openui-text-block--highlight-number :where(.openui-text-block__primary) {\n    ${numberLargeHeavy}\n  }\n  &.openui-text-block--title-text:where(.openui-text-block--size-xs),\n  &.openui-text-block--number-title-text:where(.openui-text-block--size-xs) {\n    gap: 0;\n  }\n  &.openui-text-block--size-xs.openui-text-block--title-text :where(.openui-text-block__primary) {\n    ${headingXs}\n  }\n  &.openui-text-block--size-xs.openui-text-block--title-text :where(.openui-text-block__secondary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--number-title-text\n    :where(.openui-text-block__primary) {\n    ${numberHeavy}\n  }\n  &.openui-text-block--size-xs.openui-text-block--number-title-text\n    :where(.openui-text-block__secondary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--text :where(.openui-text-block__primary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--text.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberSmall}\n  }\n  &.openui-text-block--text-subtext:where(.openui-text-block--size-xs),\n  &.openui-text-block--highlight-text-number-subtext:where(.openui-text-block--size-xs) {\n    gap: 0;\n  }\n  &.openui-text-block--size-xs.openui-text-block--text-subtext :where(.openui-text-block__primary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--text-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberSmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__primary) {\n    ${bodySmallHeavy}\n  }\n  &.openui-text-block--size-xs.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberSmallHeavy}\n  }\n  &.openui-text-block--size-xs.openui-text-block--text-subtext\n    :where(.openui-text-block__secondary),\n  &.openui-text-block--size-xs.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__secondary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__secondary) {\n    ${numberSmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--number :where(.openui-text-block__primary) {\n    ${numberSmall}\n  }\n  &.openui-text-block--size-xs.openui-text-block--highlight-number\n    :where(.openui-text-block__primary) {\n    ${numberSmallHeavy}\n  }\n  &.openui-text-block--size-xs.openui-text-block--highlight-text\n    :where(.openui-text-block__primary) {\n    ${bodySmallHeavy}\n  }\n  &.openui-text-block--title-text:where(.openui-text-block--size-sm),\n  &.openui-text-block--number-title-text:where(.openui-text-block--size-sm) {\n    gap: var(--openui-space-3xs, 2px);\n  }\n  &.openui-text-block--size-sm.openui-text-block--title-text :where(.openui-text-block__primary) {\n    ${headingSmall}\n  }\n  &.openui-text-block--size-sm.openui-text-block--title-text :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--size-sm.openui-text-block--number-title-text\n    :where(.openui-text-block__primary) {\n    ${numberLargeHeavy}\n  }\n  &.openui-text-block--size-sm.openui-text-block--number-title-text\n    :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--size-sm.openui-text-block--text :where(.openui-text-block__primary) {\n    ${body}\n  }\n  &.openui-text-block--size-sm.openui-text-block--text.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${number}\n  }\n  &.openui-text-block--text-subtext:where(.openui-text-block--size-sm),\n  &.openui-text-block--highlight-text-number-subtext:where(.openui-text-block--size-sm) {\n    gap: 0;\n  }\n  &.openui-text-block--size-sm.openui-text-block--text-subtext :where(.openui-text-block__primary) {\n    ${body}\n  }\n  &.openui-text-block--size-sm.openui-text-block--text-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${number}\n  }\n  &.openui-text-block--size-sm.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__primary) {\n    ${bodyHeavy}\n  }\n  &.openui-text-block--size-sm.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberHeavy}\n  }\n  &.openui-text-block--size-sm.openui-text-block--text-subtext\n    :where(.openui-text-block__secondary),\n  &.openui-text-block--size-sm.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__secondary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--size-sm.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__secondary) {\n    ${numberSmall}\n  }\n  &.openui-text-block--size-sm.openui-text-block--number :where(.openui-text-block__primary) {\n    ${numberSmall}\n  }\n  &.openui-text-block--size-sm.openui-text-block--highlight-number\n    :where(.openui-text-block__primary) {\n    ${numberHeavy}\n  }\n  &.openui-text-block--highlight-text:where(.openui-text-block--size-sm) {\n    gap: 0;\n  }\n  &.openui-text-block--size-sm.openui-text-block--highlight-text\n    :where(.openui-text-block__secondary) {\n    ${bodySmall}\n  }\n  &.openui-text-block--size-sm.openui-text-block--highlight-text\n    :where(.openui-text-block__primary) {\n    ${bodyHeavy}\n  }\n  &.openui-text-block--title-text:where(.openui-text-block--size-md),\n  &.openui-text-block--number-title-text:where(.openui-text-block--size-md) {\n    gap: var(--openui-space-xs, 6px);\n  }\n  &.openui-text-block--size-md.openui-text-block--title-text :where(.openui-text-block__primary) {\n    ${headingMedium}\n  }\n  &.openui-text-block--size-md.openui-text-block--title-text :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--size-md.openui-text-block--number-title-text\n    :where(.openui-text-block__primary) {\n    ${numberTitleMedium}\n  }\n  &.openui-text-block--size-md.openui-text-block--number-title-text\n    :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--text-subtext:where(.openui-text-block--size-md),\n  &.openui-text-block--highlight-text:where(.openui-text-block--size-md),\n  &.openui-text-block--highlight-text-number-subtext:where(.openui-text-block--size-md) {\n    gap: 0;\n  }\n  &.openui-text-block--size-md.openui-text-block--highlight-text\n    :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--size-md.openui-text-block--highlight-text\n    :where(.openui-text-block__primary) {\n    ${bodyHeavy}\n  }\n  &.openui-text-block--size-md.openui-text-block--text-subtext :where(.openui-text-block__primary) {\n    ${body}\n  }\n  &.openui-text-block--size-md.openui-text-block--text-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${number}\n  }\n  &.openui-text-block--size-md.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__primary) {\n    ${bodyHeavy}\n  }\n  &.openui-text-block--size-md.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberHeavy}\n  }\n  &.openui-text-block--size-md.openui-text-block--text-subtext\n    :where(.openui-text-block__secondary),\n  &.openui-text-block--size-md.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--size-md.openui-text-block--text-subtext.openui-text-block--type-number\n    :where(.openui-text-block__secondary) {\n    ${number}\n  }\n  &.openui-text-block--size-md.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__secondary) {\n    ${number}\n  }\n  &.openui-text-block--size-md.openui-text-block--text.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${number}\n  }\n  &.openui-text-block--size-md.openui-text-block--number :where(.openui-text-block__primary) {\n    ${number}\n  }\n  &.openui-text-block--size-md.openui-text-block--highlight-number\n    :where(.openui-text-block__primary) {\n    ${numberHeavy}\n  }\n  &.openui-text-block--size-lg.openui-text-block--text :where(.openui-text-block__primary) {\n    ${bodyLarge}\n  }\n  &.openui-text-block--size-lg.openui-text-block--text.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberLarge}\n  }\n  &.openui-text-block--text-subtext:where(.openui-text-block--size-lg),\n  &.openui-text-block--highlight-text:where(.openui-text-block--size-lg),\n  &.openui-text-block--highlight-text-number-subtext:where(.openui-text-block--size-lg) {\n    gap: 0;\n  }\n  &.openui-text-block--size-lg.openui-text-block--highlight-text\n    :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--size-lg.openui-text-block--highlight-text\n    :where(.openui-text-block__primary) {\n    ${bodyLargeHeavy}\n  }\n  &.openui-text-block--size-lg.openui-text-block--text-subtext :where(.openui-text-block__primary) {\n    ${bodyLarge}\n  }\n  &.openui-text-block--size-lg.openui-text-block--text-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberLarge}\n  }\n  &.openui-text-block--size-lg.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__primary) {\n    ${bodyLargeHeavy}\n  }\n  &.openui-text-block--size-lg.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__primary) {\n    ${numberLargeHeavy}\n  }\n  &.openui-text-block--size-lg.openui-text-block--text-subtext\n    :where(.openui-text-block__secondary),\n  &.openui-text-block--size-lg.openui-text-block--highlight-text-number-subtext\n    :where(.openui-text-block__secondary) {\n    ${body}\n  }\n  &.openui-text-block--size-lg.openui-text-block--text-subtext.openui-text-block--type-number\n    :where(.openui-text-block__secondary) {\n    ${number}\n  }\n  &.openui-text-block--size-lg.openui-text-block--highlight-text-number-subtext.openui-text-block--type-number\n    :where(.openui-text-block__secondary) {\n    ${number}\n  }\n  &.openui-text-block--size-lg.openui-text-block--number :where(.openui-text-block__primary) {\n    ${numberLarge}\n  }\n  &.openui-text-block--size-lg.openui-text-block--highlight-number\n    :where(.openui-text-block__primary) {\n    ${numberLargeHeavy}\n  }\n  &.openui-text-block--title-text:where(.openui-text-block--size-lg),\n  &.openui-text-block--number-title-text:where(.openui-text-block--size-lg) {\n    gap: var(--openui-space-xs, 6px);\n  }\n  &.openui-text-block--size-lg.openui-text-block--title-text :where(.openui-text-block__primary) {\n    ${headingLarge}\n  }\n  &.openui-text-block--size-lg.openui-text-block--title-text :where(.openui-text-block__secondary) {\n    ${bodyLarge}\n  }\n  &.openui-text-block--size-lg.openui-text-block--number-title-text\n    :where(.openui-text-block__primary) {\n    ${numberTitle}\n  }\n  &.openui-text-block--size-lg.openui-text-block--number-title-text\n    :where(.openui-text-block__secondary) {\n    ${bodyLarge}\n  }\n  &:where(.openui-text-block--align-left) {\n    align-items: flex-start;\n    text-align: left;\n  }\n  &:where(.openui-text-block--align-center) {\n    align-items: center;\n    text-align: center;\n  }\n  &:where(.openui-text-block--align-right) {\n    align-items: flex-end;\n    text-align: right;\n  }\n`"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  gap: var(--openui-space-xs, 6px);\n  padding: 0 16px 0 16px;\n  box-sizing: border-box;\n`"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "line": 11,
+    "names": [
+      "variantClasses",
+      "neutral"
+    ],
+    "inFunction": false,
+    "template": "`\n    border-left: 2px solid var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1));\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    & .openui-text-callout-content-title {\n      color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    }\n  `"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "line": 18,
+    "names": [
+      "variantClasses",
+      "info"
+    ],
+    "inFunction": false,
+    "template": "`\n    border-left: 2px solid var(--openui-border-info-emphasis, oklch(0.546 0.215 262.881 / 1));\n    color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));\n  `"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "line": 22,
+    "names": [
+      "variantClasses",
+      "warning"
+    ],
+    "inFunction": false,
+    "template": "`\n    border-left: 2px solid var(--openui-border-alert-emphasis, oklch(0.681 0.142 75.834 / 1));\n    color: var(--openui-text-alert-primary, oklch(0.476 0.103 61.907 / 1));\n  `"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "line": 26,
+    "names": [
+      "variantClasses",
+      "success"
+    ],
+    "inFunction": false,
+    "template": "`\n    border-left: 2px solid var(--openui-border-success-emphasis, oklch(0.627 0.17 149.214 / 1));\n    color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));\n  `"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "line": 30,
+    "names": [
+      "variantClasses",
+      "danger"
+    ],
+    "inFunction": false,
+    "template": "`\n    border-left: 2px solid var(--openui-border-danger-emphasis, oklch(0.577 0.215 27.325 / 1));\n    color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));\n  `"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "line": 35,
+    "names": [
+      "contentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: column;\n`"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "line": 39,
+    "names": [
+      "titleClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  font: var(--openui-text-body-default-heavy, 560 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-heavy-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n`"
+  },
+  {
+    "family": "TextCallout",
+    "file": "components/TextCallout/textCallout.styles.ts",
+    "line": 44,
+    "names": [
+      "descriptionClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n`"
+  },
+  {
+    "family": "TextContent",
+    "file": "components/TextContent/textContent.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  box-sizing: border-box;\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  border: 1px solid;\n`"
+  },
+  {
+    "family": "TextContent",
+    "file": "components/TextContent/textContent.styles.ts",
+    "line": 11,
+    "names": [
+      "variantClasses",
+      "sunk"
+    ],
+    "inFunction": false,
+    "template": "`\n    padding: var(--openui-space-m, 12px);\n    background: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n    border-radius: var(--openui-radius-m, 8px);\n    border-color: var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  `"
+  },
+  {
+    "family": "TextContent",
+    "file": "components/TextContent/textContent.styles.ts",
+    "line": 17,
+    "names": [
+      "variantClasses",
+      "card"
+    ],
+    "inFunction": false,
+    "template": "`\n    padding: var(--openui-space-m, 12px);\n    border-radius: var(--openui-radius-m, 8px);\n    border-color: var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  `"
+  },
+  {
+    "family": "TextContent",
+    "file": "components/TextContent/textContent.styles.ts",
+    "line": 22,
+    "names": [
+      "variantClasses",
+      "clear"
+    ],
+    "inFunction": false,
+    "template": "`\n    border-color: transparent;\n  `"
+  },
+  {
+    "family": "TextContentWrapper",
+    "file": "components/TextContentWrapper/textContentWrapper.styles.ts",
+    "line": 2,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-xl, 24px);\n`"
+  },
+  {
+    "family": "TextContentWrapper",
+    "file": "components/TextContentWrapper/textContentWrapper.styles.ts",
+    "line": 8,
+    "names": [
+      "markdownClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  & p:has(+ ol),\n  & p:has(+ ul) {\n    margin-bottom: 8px;\n  }\n  &:where(.openui-text-content-markdown-dark-mode) p,\n  &:where(.openui-text-content-markdown-dark-mode) h1,\n  &:where(.openui-text-content-markdown-dark-mode) h2,\n  &:where(.openui-text-content-markdown-dark-mode) h3,\n  &:where(.openui-text-content-markdown-dark-mode) h4,\n  &:where(.openui-text-content-markdown-dark-mode) h5,\n  &:where(.openui-text-content-markdown-dark-mode) h6 {\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  &:where(.openui-text-content-markdown-dark-mode) .katex {\n    margin-top: var(--openui-space-xs, 6px);\n    display: inline-block;\n  }\n`"
+  },
+  {
+    "family": "TooltipWrapper",
+    "file": "components/TooltipWrapper/tooltipWrapper.styles.ts",
+    "line": 48,
+    "names": [
+      "bodyClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  display: flex;\n  flex-direction: column;\n  gap: var(--openui-space-2xs, 4px);\n  width: 100%;\n  max-width: 248px;\n`"
+  },
+  {
+    "family": "TooltipWrapper",
+    "file": "components/TooltipWrapper/tooltipWrapper.styles.ts",
+    "line": 55,
+    "names": [
+      "headingClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${smallBody}\n  color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  width: 100%;\n`"
+  },
+  {
+    "family": "TooltipWrapper",
+    "file": "components/TooltipWrapper/tooltipWrapper.styles.ts",
+    "line": 60,
+    "names": [
+      "textClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  ${smallBody}\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  width: 100%;\n`"
+  },
+  {
+    "family": "TooltipWrapper",
+    "file": "components/TooltipWrapper/tooltipWrapper.styles.ts",
+    "line": 65,
+    "names": [
+      "contentClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  box-sizing: border-box;\n  background-color: var(--openui-elevated, oklch(0.097 0 0 / 0.08));\n  padding: var(--openui-space-xs, 6px) var(--openui-space-s, 8px);\n  outline: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n  z-index: 9999;\n  border-radius: var(--openui-radius-s, 6px);\n  user-select: none;\n  animation-duration: 400ms;\n  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);\n  will-change: transform, opacity;\n  &[data-state=\"delayed-open\"] {\n    &[data-side=\"top\"] {\n      animation-name: ${down};\n    }\n    &[data-side=\"right\"] {\n      animation-name: ${left};\n    }\n    &[data-side=\"bottom\"] {\n      animation-name: ${up};\n    }\n    &[data-side=\"left\"] {\n      animation-name: ${right};\n    }\n  }\n`"
+  },
+  {
+    "family": "VisualCardBlock",
+    "file": "components/VisualCardBlock/card.styles.ts",
+    "line": 2,
+    "names": [
+      "clickableClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  &:hover::before {\n    transform: scale(1.04);\n  }\n`"
+  },
+  {
+    "family": "VisualCardBlock",
+    "file": "components/VisualCardBlock/card.styles.ts",
+    "line": 7,
+    "names": [
+      "rootClass"
+    ],
+    "inFunction": false,
+    "template": "`\n  & {\n    position: relative;\n    isolation: isolate;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    min-height: 280px;\n    height: 100%;\n    border-radius: var(--openui-radius-3xl, 16px);\n    overflow: hidden;\n    background-color: var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02));\n    border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    transition:\n      box-shadow 0.2s ease,\n      transform 0.2s ease;\n  }\n  &::before {\n    content: \"\";\n    position: absolute;\n    inset: 0;\n    z-index: 0;\n    background-image: var(--openui-visual-card-image, none);\n    background-size: cover;\n    background-position: center;\n    transition: transform 0.25s ease;\n  }\n  &::after {\n    content: \"\";\n    position: absolute;\n    inset: 0;\n    z-index: 1;\n    pointer-events: none;\n    background: linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.56) 100%);\n  }\n  &:where(.openui-visual-first-card--clickable) {\n    cursor: pointer;\n    box-shadow: var(\n      --openui-shadow-s,\n      0 1px 3px -2px oklch(0 0 0 / 0.02),\n      0 2px 5px -2px oklch(0 0 0 / 0.04)\n    );\n    border-color: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));\n  }\n  &:hover:where(.openui-visual-first-card--clickable) {\n    box-shadow: none;\n    transform: scale(0.995);\n  }\n  &:focus-visible:where(.openui-visual-first-card--clickable) {\n    outline: 2px solid var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08));\n    outline-offset: 2px;\n  }\n  & :where(.openui-visual-first-card__top) {\n    position: relative;\n    z-index: 2;\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    min-height: 24px;\n    padding: var(--openui-space-m, 12px);\n  }\n  & :where(.openui-visual-first-card__tag) {\n    min-width: 0;\n  }\n  & .openui-visual-first-card__tag :where(.openui-tag) {\n    background-color: rgba(0, 0, 0, 0.4);\n    color: var(--openui-text-white, oklch(1 0 89.876 / 1));\n    backdrop-filter: blur(2px);\n    -webkit-backdrop-filter: blur(2px);\n  }\n  & :where(.openui-visual-first-card__action) {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    flex-shrink: 0;\n    background-color: rgba(0, 0, 0, 0.4);\n    color: var(--openui-text-white, oklch(1 0 89.876 / 1));\n    backdrop-filter: blur(2px);\n    -webkit-backdrop-filter: blur(2px);\n    border-radius: var(--openui-radius-s, 6px);\n    padding: var(--openui-space-2xs, 4px);\n  }\n  & :where(.openui-visual-first-card__bottom) {\n    position: relative;\n    z-index: 2;\n    box-sizing: border-box;\n    margin: auto var(--openui-space-m, 12px) var(--openui-space-m, 12px) var(--openui-space-m, 12px);\n    padding: var(--openui-space-s, 8px) var(--openui-space-s-m, 10px);\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    border-radius: var(--openui-radius-l, 10px);\n  }\n`"
+  }
+]

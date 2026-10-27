@@ -1,0 +1,18 @@
+{
+  "archives": [
+    {
+      "arm": "baseline",
+      "sha": "0dad61fb4c48477f0496f819bef2f131908a3789ec184cefb7fe8de94c68d6a5",
+      "files": 2210,
+      "ownedSources": 371
+    },
+    {
+      "arm": "candidate",
+      "sha": "212170767ecbea02251b723138c45ad753471f6a3a010e3e9d1e3a9970cea903",
+      "files": 2210,
+      "ownedSources": 371
+    }
+  ],
+  "changedDeclarations": 0,
+  "publicEntryEqual": true
+}

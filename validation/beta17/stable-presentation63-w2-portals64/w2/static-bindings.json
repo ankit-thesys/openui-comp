@@ -1,0 +1,322 @@
+{
+  "status": "source checks only; separate runtime/artifact/type evidence required",
+  "base": "1c3833a045c4c66de92b69413a3824eca1798fcd",
+  "files": 52,
+  "rules": 178,
+  "uniqueStableHooks": 178,
+  "preservedFallbacks": 594,
+  "records": [
+    {
+      "file": "components/Separator/Separator.tsx",
+      "rules": 1,
+      "sourceSha256": "10c26a8c890a7758920206178fcd7224fe85eac1e47d1a1577fb2cc2a0ee227e",
+      "fallbackExpressions": 0
+    },
+    {
+      "file": "components/IconText/iconText.styles.ts",
+      "rules": 4,
+      "sourceSha256": "3c80cfe25bcaa715db78eee66c418ab6add45e93a9729f573949dc4b997955bc",
+      "fallbackExpressions": 5
+    },
+    {
+      "file": "components/TextContentWrapper/textContentWrapper.styles.ts",
+      "rules": 2,
+      "sourceSha256": "23e8d7ce74079889fa971b13a49e8a3d4cac362fab36f76e8d0f08e48b1bd5c0",
+      "fallbackExpressions": 3
+    },
+    {
+      "file": "components/Image/image.styles.ts",
+      "rules": 4,
+      "sourceSha256": "5ae145f83a223da4f5854f36a4932b76e46db1563253590e1ff9773cd915f59d",
+      "fallbackExpressions": 3
+    },
+    {
+      "file": "components/SourceFaviconImage/sourceFaviconImage.styles.ts",
+      "rules": 1,
+      "sourceSha256": "44d3ec901b03050ea42b6072fb485dc87d0eea7670ed402670871829d33381f9",
+      "fallbackExpressions": 0
+    },
+    {
+      "file": "components/Tag/tag.styles.ts",
+      "rules": 11,
+      "sourceSha256": "d090513312d6147297b4a7fcf271562abf1a3bc7f702fcdfdb8bea2ded539017",
+      "fallbackExpressions": 25
+    },
+    {
+      "file": "components/IconTag/iconTag.styles.ts",
+      "rules": 12,
+      "sourceSha256": "e5937615346ee7e087190c3c9e9cd14c4a4c0688b3f94861406a794a3bbdaba3",
+      "fallbackExpressions": 17
+    },
+    {
+      "file": "components/TextContent/textContent.styles.ts",
+      "rules": 4,
+      "sourceSha256": "af9d942c79fa3da3934bf8503806db355afebc576ff18d21a0ae54c2b27c73ba",
+      "fallbackExpressions": 11
+    },
+    {
+      "file": "components/InlineHeader/inlineHeader.styles.ts",
+      "rules": 3,
+      "sourceSha256": "32c3a1b4e9ebe4cfda26bce585001db0cae7045215c6eb5f18c162feaa1d3fd0",
+      "fallbackExpressions": 10
+    },
+    {
+      "file": "components/Callout/callout.styles.ts",
+      "rules": 9,
+      "sourceSha256": "07efeabb7b54ca6485a7ea418553a906c47989335dba82f49841ff7f9e10c73b",
+      "fallbackExpressions": 21
+    },
+    {
+      "file": "components/TextCallout/textCallout.styles.ts",
+      "rules": 9,
+      "sourceSha256": "d862a80b3b0f5d2618fad45834d5e56fd5de822aeb7227dfdc38e5c1ce1b474a",
+      "fallbackExpressions": 19
+    },
+    {
+      "file": "components/MetricIndicator/metricIndicator.styles.ts",
+      "rules": 1,
+      "sourceSha256": "a0059e5ec7c78cc0733aacf69da4fa90024ce08c581ffdb68411d9d4699fa339",
+      "fallbackExpressions": 21
+    },
+    {
+      "file": "components/CodeBlock/codeBlock.styles.ts",
+      "rules": 1,
+      "sourceSha256": "10cc10600b39dac9470237da9e1d0d46d3a4facefb8759818b3cde80a6674126",
+      "fallbackExpressions": 2
+    },
+    {
+      "file": "components/MarkDownRenderer/markdown.styles.ts",
+      "rules": 3,
+      "sourceSha256": "ef058c6c966fd440de2ecb709691898d00032c5d0c0b3e46570061491f820534",
+      "fallbackExpressions": 15
+    },
+    {
+      "file": "components/InlineMarkdownRenderer/inlineMarkdown.styles.ts",
+      "rules": 1,
+      "sourceSha256": "b82181263f258fb60fe9041b5b37e5ca4932374870cea042bb7cca723af13377",
+      "fallbackExpressions": 0
+    },
+    {
+      "file": "components/ImageBlock/imageBlock.styles.ts",
+      "rules": 6,
+      "sourceSha256": "5c92209bbd651fb4a573771f79dd86881481bd79f6d6330c5669e4dc2aa8a5db",
+      "fallbackExpressions": 7
+    },
+    {
+      "file": "components/ImageText/imageText.styles.ts",
+      "rules": 6,
+      "sourceSha256": "6632bc61cdc9d91607b2136e4f598fca76d0c9cc129124d0726c97f1235f7c56",
+      "fallbackExpressions": 11
+    },
+    {
+      "file": "components/ImageTextLarge/imageTextLarge.styles.ts",
+      "rules": 3,
+      "sourceSha256": "02619cacc4af41507bf21f1cd367f62a63457e9f48a4a574f9a40d7868df2693",
+      "fallbackExpressions": 3
+    },
+    {
+      "file": "components/TextBlock/textBlock.styles.ts",
+      "rules": 1,
+      "sourceSha256": "5f675915d344a3f95f56c4239fab5392161a32927550a09308f0d2a90631bbc5",
+      "fallbackExpressions": 46
+    },
+    {
+      "file": "components/ListItem/listItem.styles.ts",
+      "rules": 1,
+      "sourceSha256": "5143886e21668a41178a7872320da64f28f95c036b3a6910951435f51fcbf542",
+      "fallbackExpressions": 38
+    },
+    {
+      "file": "components/ListBlock/listBlock.styles.ts",
+      "rules": 1,
+      "sourceSha256": "4e17496f90f7a78f24e6f3bde382d0877fd76595c4fa937da7147b785f4d5da9",
+      "fallbackExpressions": 2
+    },
+    {
+      "file": "components/Card/Card.tsx",
+      "rules": 1,
+      "sourceSha256": "ad2a91f13e7b83bbafd0a4efc67faf4234b6d99a2fdb2e7536694898eedb9c8e",
+      "fallbackExpressions": 0
+    },
+    {
+      "file": "components/CardHeader/CardHeader.tsx",
+      "rules": 1,
+      "sourceSha256": "67bb2f09087aeb80618804d30905bf3aa4b596cdd5fc14511188b685a11de21e",
+      "fallbackExpressions": 0
+    },
+    {
+      "file": "components/Buttons/Buttons.tsx",
+      "rules": 1,
+      "sourceSha256": "7b3e7c9327961074e782089873829621c59dff2bc81c96bd92e5279feb262282",
+      "fallbackExpressions": 0
+    },
+    {
+      "file": "components/TagBlock/tagBlock.styles.ts",
+      "rules": 1,
+      "sourceSha256": "b7ea43eebe94d27d1023f30b15f97ca3f2fefaa9138c7fba5b59ad83202c0bcf",
+      "fallbackExpressions": 1
+    },
+    {
+      "file": "components/DotMatrixLoader/DotMatrixLoader.tsx",
+      "rules": 1,
+      "sourceSha256": "f547f01204f9e50a030e14d3d67d7bf45b1701c31e95b910ba3db2846ef3b11d",
+      "fallbackExpressions": 0
+    },
+    {
+      "file": "components/Skeleton/PieChartSkeleton.tsx",
+      "rules": 1,
+      "sourceSha256": "d24b6957cbdebfa3ccbecd3e1065945654f796326715a8627ef654dce7797e2a",
+      "fallbackExpressions": 0
+    },
+    {
+      "file": "components/Skeleton/Skeleton.tsx",
+      "rules": 1,
+      "sourceSha256": "071983f0019f51cb7503700ae312951cda6d9bfe11aa2fdac1e3c5920f4ed21d",
+      "fallbackExpressions": 0
+    },
+    {
+      "file": "components/Skeleton/SkeletonBar.tsx",
+      "rules": 1,
+      "sourceSha256": "b25ed193f8da461205c2c89059db74416cf37c79def4999a0fd3d845d2dd77ae",
+      "fallbackExpressions": 0
+    },
+    {
+      "file": "components/Skeleton/TableSkeleton.tsx",
+      "rules": 1,
+      "sourceSha256": "a095046d753ce666cfb7e91bd6031e60d3ae6a429440577d7c17589746388b73",
+      "fallbackExpressions": 0
+    },
+    {
+      "file": "components/Sources/listedSources.styles.ts",
+      "rules": 5,
+      "sourceSha256": "3549680db5cf10dd181ae4ddeaf09ff68c017cab96972d1db64dab13057ed3bd",
+      "fallbackExpressions": 11
+    },
+    {
+      "file": "components/Sources/sourcesItem.styles.ts",
+      "rules": 5,
+      "sourceSha256": "33d30e77dd876a78036f56bade0cefe4a045f36923efe5345d445175836b6e55",
+      "fallbackExpressions": 13
+    },
+    {
+      "file": "components/SnippetCardBlock/snippetCardBlock.styles.ts",
+      "rules": 1,
+      "sourceSha256": "40d2b33eb639a7713cb9af8ec7c14e2cf85149f04eb698966ee9c860c7db43ff",
+      "fallbackExpressions": 16
+    },
+    {
+      "file": "components/ContextCardBlock/card.styles.ts",
+      "rules": 2,
+      "sourceSha256": "cd0f64a4bd88040c7e0a06cf93af4096d0d9cb4a1edee0cca3ce077a58e1ac7c",
+      "fallbackExpressions": 43
+    },
+    {
+      "file": "components/CompositeCardBlock/card.styles.ts",
+      "rules": 2,
+      "sourceSha256": "0977ba3c61c2b9af39f5535e89476e23b90ecb9c60fd11df39e0ef347b7ceb92",
+      "fallbackExpressions": 15
+    },
+    {
+      "file": "components/OverviewCardBlock/overviewCardBlock.styles.ts",
+      "rules": 1,
+      "sourceSha256": "4d8e0dc364c4ae84c888ab4d7bfa1924de4171101c54bf8628e6aeff10092aa0",
+      "fallbackExpressions": 13
+    },
+    {
+      "file": "components/VisualCardBlock/card.styles.ts",
+      "rules": 2,
+      "sourceSha256": "8a255e692f4dc8b944f95513c3694ce1105aa31c8f57ff0931935bbc89737d6b",
+      "fallbackExpressions": 19
+    },
+    {
+      "file": "components/_shared/cards/cardBlockLayout.styles.ts",
+      "rules": 3,
+      "sourceSha256": "bacd8d14cee46b2929c97782b9bbb0a6b424a3f0d8023df9cd7d6a48a0f3b2bc",
+      "fallbackExpressions": 20
+    },
+    {
+      "file": "components/Accordion/Accordion.tsx",
+      "rules": 1,
+      "sourceSha256": "ab39f75b9de05977db20279c77cb6b2fc8bed8b706244a3a340784ee55d88ef1",
+      "fallbackExpressions": 0
+    },
+    {
+      "file": "components/Tabs/tabs.styles.ts",
+      "rules": 5,
+      "sourceSha256": "4c731cf6874a430c14297e6b6b2950b7d5a872f14364be65ff4058c1fa9adc22",
+      "fallbackExpressions": 48
+    },
+    {
+      "file": "components/Steps/Steps.tsx",
+      "rules": 2,
+      "sourceSha256": "d0da7f5985fe263bff5fa6a045c84eb4920136711cf74b28977a943077451627",
+      "fallbackExpressions": 0
+    },
+    {
+      "file": "components/SectionBlock/FoldableSection.tsx",
+      "rules": 5,
+      "sourceSha256": "84d83de061951669636e0c00f00255589686e006f01fbf3c2f4bb128e89a9b30",
+      "fallbackExpressions": 0
+    },
+    {
+      "file": "components/SectionBlock/SectionV2.tsx",
+      "rules": 1,
+      "sourceSha256": "bbecdb5ea013b9b069b25709daaadab3f5b0e6b0bf7be4568fc75c20a627ff2a",
+      "fallbackExpressions": 0
+    },
+    {
+      "file": "components/Carousel/carousel.styles.ts",
+      "rules": 4,
+      "sourceSha256": "78aca9cac22c26b9eacf3476a601fd26129a778bb7c9bddb7fc590b441fa18d9",
+      "fallbackExpressions": 13
+    },
+    {
+      "file": "components/EntityList/entityList.styles.ts",
+      "rules": 1,
+      "sourceSha256": "c5e47d3acf6be867f854ff4b1d744518e424164f1d8298ae540138f435b86273",
+      "fallbackExpressions": 32
+    },
+    {
+      "file": "components/Table/scrollableTable.styles.ts",
+      "rules": 3,
+      "sourceSha256": "e08bbabc895ecf261fa46efc5c4b431dd68945b6c661dcc8034ab1768a70dfe1",
+      "fallbackExpressions": 5
+    },
+    {
+      "file": "components/Table/table.styles.ts",
+      "rules": 7,
+      "sourceSha256": "2adb1ab013e6181d672aee934bfaff274a5e93cd5bfbdc9e38eb294965315703",
+      "fallbackExpressions": 17
+    },
+    {
+      "file": "components/TooltipWrapper/tooltipWrapper.styles.ts",
+      "rules": 4,
+      "sourceSha256": "8eafe902b1925b62fb73883c805ba4c1fa9035d34a1a2adda9044093128473fb",
+      "fallbackExpressions": 11
+    },
+    {
+      "file": "components/Citation/citation.styles.ts",
+      "rules": 4,
+      "sourceSha256": "72881ba3c4677c80548b96a12c157979541330779f2da8fd5c0203ef817af710",
+      "fallbackExpressions": 17
+    },
+    {
+      "file": "components/Citation/citationItem.styles.ts",
+      "rules": 5,
+      "sourceSha256": "44a98ed2f8f32be776a67e2b82563c371c01692aa5d4292f926517e36a3ff4f6",
+      "fallbackExpressions": 16
+    },
+    {
+      "file": "components/ImageGallery/galleryModal.styles.ts",
+      "rules": 12,
+      "sourceSha256": "cea55836ca738bb85f62c137c6508d758e768f37d1066be239fdc457a714d35c",
+      "fallbackExpressions": 23
+    },
+    {
+      "file": "components/ImageGallery/imageGallery.styles.ts",
+      "rules": 10,
+      "sourceSha256": "de7db2b8158becd802df684a2f07d97500bf65ba8bb7ea879177123518a297d2",
+      "fallbackExpressions": 2
+    }
+  ]
+}

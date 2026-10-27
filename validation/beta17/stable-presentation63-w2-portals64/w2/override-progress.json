@@ -1,0 +1,1 @@
+{"families":43,"total":43,"checks":116,"failed":[{"name":"Tabs/ordinary-override/openui-tabs-list-styled","pass":false,"detail":{"hook":"openui-tabs-list-styled","family":"Tabs","status":"probed","property":"box-sizing","before":"border-box","wanted":"content-box","actual":"border-box","pass":false}}]}

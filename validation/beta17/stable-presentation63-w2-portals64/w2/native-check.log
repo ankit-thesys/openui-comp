@@ -1,0 +1,4 @@
+[
+  { arm: 'baseline', esm: 166, cjs: 166 },
+  { arm: 'candidate', esm: 166, cjs: 166 }
+]

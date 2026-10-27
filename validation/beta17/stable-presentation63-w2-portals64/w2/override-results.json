@@ -1,0 +1,4507 @@
+{
+  "browser": "156.0.8078.48",
+  "checks": [
+    {
+      "name": "Separator/ordinary-override/openui-separator-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-separator-root",
+        "family": "Separator",
+        "status": "probed",
+        "property": "background-color",
+        "before": "oklch(0.097 0 0 / 0.06)",
+        "wanted": "rgb(2, 3, 4)",
+        "actual": "rgb(2, 3, 4)",
+        "pass": true
+      }
+    },
+    {
+      "name": "IconText/ordinary-override/openui-icon-text-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-icon-text-root",
+        "family": "IconText",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "IconText/ordinary-override/openui-icon-text-content",
+      "pass": true,
+      "detail": {
+        "hook": "openui-icon-text-content",
+        "family": "IconText",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "TextContentWrapper/ordinary-override/openui-text-content-wrapper-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-text-content-wrapper-root",
+        "family": "TextContentWrapper",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "Image/ordinary-override/openui-image-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-root",
+        "family": "Image",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "Image/ordinary-override/openui-image-fill-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-fill-styled",
+        "family": "Image",
+        "status": "probed",
+        "property": "object-fit",
+        "before": "cover",
+        "wanted": "contain",
+        "actual": "contain",
+        "pass": true
+      }
+    },
+    {
+      "name": "SourceFaviconImage/ordinary-override/openui-source-favicon-image-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-source-favicon-image-root",
+        "family": "SourceFaviconImage",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "Tag/ordinary-override/openui-tag-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-tag-root",
+        "family": "Tag",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "Tag/ordinary-override/openui-tag-icon-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-tag-icon-styled",
+        "family": "Tag",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "Tag/ordinary-override/openui-tag-size-sm",
+      "pass": true,
+      "detail": {
+        "hook": "openui-tag-size-sm",
+        "family": "Tag",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "6px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "Tag/ordinary-override/openui-tag-size-md",
+      "pass": true,
+      "detail": {
+        "hook": "openui-tag-size-md",
+        "family": "Tag",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "6px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "Tag/ordinary-override/openui-tag-size-lg",
+      "pass": true,
+      "detail": {
+        "hook": "openui-tag-size-lg",
+        "family": "Tag",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "8px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "Tag/ordinary-override/openui-tag-variant-neutral",
+      "pass": true,
+      "detail": {
+        "hook": "openui-tag-variant-neutral",
+        "family": "Tag",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.097 0 0)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "Tag/ordinary-override/openui-tag-variant-info",
+      "pass": true,
+      "detail": {
+        "hook": "openui-tag-variant-info",
+        "family": "Tag",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.424 0.181 265.638)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "Tag/ordinary-override/openui-tag-variant-success",
+      "pass": true,
+      "detail": {
+        "hook": "openui-tag-variant-success",
+        "family": "Tag",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.448 0.108 151.328)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "Tag/ordinary-override/openui-tag-variant-warning",
+      "pass": true,
+      "detail": {
+        "hook": "openui-tag-variant-warning",
+        "family": "Tag",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.476 0.103 61.907)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "Tag/ordinary-override/openui-tag-variant-danger",
+      "pass": true,
+      "detail": {
+        "hook": "openui-tag-variant-danger",
+        "family": "Tag",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.505 0.19 27.518)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "IconTag/ordinary-override/openui-icon-tag-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-icon-tag-root",
+        "family": "IconTag",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "IconTag/ordinary-override/openui-icon-tag-size-xs",
+      "pass": true,
+      "detail": {
+        "hook": "openui-icon-tag-size-xs",
+        "family": "IconTag",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "4px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "IconTag/ordinary-override/openui-icon-tag-size-s",
+      "pass": true,
+      "detail": {
+        "hook": "openui-icon-tag-size-s",
+        "family": "IconTag",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "6px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "IconTag/ordinary-override/openui-icon-tag-size-m",
+      "pass": true,
+      "detail": {
+        "hook": "openui-icon-tag-size-m",
+        "family": "IconTag",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "6px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "IconTag/ordinary-override/openui-icon-tag-size-l",
+      "pass": true,
+      "detail": {
+        "hook": "openui-icon-tag-size-l",
+        "family": "IconTag",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "8px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "IconTag/ordinary-override/openui-icon-tag-size-xl",
+      "pass": true,
+      "detail": {
+        "hook": "openui-icon-tag-size-xl",
+        "family": "IconTag",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "8px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "IconTag/ordinary-override/openui-icon-tag-variant-neutral",
+      "pass": true,
+      "detail": {
+        "hook": "openui-icon-tag-variant-neutral",
+        "family": "IconTag",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.097 0 0)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "IconTag/ordinary-override/openui-icon-tag-variant-info",
+      "pass": true,
+      "detail": {
+        "hook": "openui-icon-tag-variant-info",
+        "family": "IconTag",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.424 0.181 265.638)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "IconTag/ordinary-override/openui-icon-tag-variant-success",
+      "pass": true,
+      "detail": {
+        "hook": "openui-icon-tag-variant-success",
+        "family": "IconTag",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.448 0.108 151.328)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "IconTag/ordinary-override/openui-icon-tag-variant-warning",
+      "pass": true,
+      "detail": {
+        "hook": "openui-icon-tag-variant-warning",
+        "family": "IconTag",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.476 0.103 61.907)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "IconTag/ordinary-override/openui-icon-tag-variant-danger",
+      "pass": true,
+      "detail": {
+        "hook": "openui-icon-tag-variant-danger",
+        "family": "IconTag",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.505 0.19 27.518)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "IconTag/ordinary-override/openui-icon-tag-variant-inverted",
+      "pass": true,
+      "detail": {
+        "hook": "openui-icon-tag-variant-inverted",
+        "family": "IconTag",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.97 0 89.876)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "TextContent/ordinary-override/openui-text-content-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-text-content-root",
+        "family": "TextContent",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "TextContent/ordinary-override/openui-text-content-variant-sunk",
+      "pass": true,
+      "detail": {
+        "hook": "openui-text-content-variant-sunk",
+        "family": "TextContent",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "8px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "TextContent/ordinary-override/openui-text-content-variant-card",
+      "pass": true,
+      "detail": {
+        "hook": "openui-text-content-variant-card",
+        "family": "TextContent",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "8px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "TextContent/ordinary-override/openui-text-content-variant-clear",
+      "pass": true,
+      "detail": {
+        "hook": "openui-text-content-variant-clear",
+        "family": "TextContent",
+        "status": "probed",
+        "property": "border-top-color",
+        "before": "rgba(0, 0, 0, 0)",
+        "wanted": "rgb(3, 4, 5)",
+        "actual": "rgb(3, 4, 5)",
+        "pass": true
+      }
+    },
+    {
+      "name": "InlineHeader/ordinary-override/openui-inline-header-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-inline-header-root",
+        "family": "InlineHeader",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "InlineHeader/ordinary-override/openui-inline-header-heading-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-inline-header-heading-styled",
+        "family": "InlineHeader",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.097 0 0)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "InlineHeader/ordinary-override/openui-inline-header-description-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-inline-header-description-styled",
+        "family": "InlineHeader",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.097 0 0 / 0.6)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "Callout/ordinary-override/openui-callout-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-callout-root",
+        "family": "Callout",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "Callout/ordinary-override/openui-callout-description-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-callout-description-styled",
+        "family": "Callout",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.097 0 0)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "TextCallout/ordinary-override/openui-text-callout-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-text-callout-root",
+        "family": "TextCallout",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "TextCallout/ordinary-override/openui-text-callout-variant-neutral",
+      "pass": true,
+      "detail": {
+        "hook": "openui-text-callout-variant-neutral",
+        "family": "TextCallout",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.097 0 0)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "TextCallout/ordinary-override/openui-text-callout-variant-info",
+      "pass": true,
+      "detail": {
+        "hook": "openui-text-callout-variant-info",
+        "family": "TextCallout",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.424 0.181 265.638)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "TextCallout/ordinary-override/openui-text-callout-variant-warning",
+      "pass": true,
+      "detail": {
+        "hook": "openui-text-callout-variant-warning",
+        "family": "TextCallout",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.476 0.103 61.907)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "TextCallout/ordinary-override/openui-text-callout-variant-success",
+      "pass": true,
+      "detail": {
+        "hook": "openui-text-callout-variant-success",
+        "family": "TextCallout",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.448 0.108 151.328)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "TextCallout/ordinary-override/openui-text-callout-variant-danger",
+      "pass": true,
+      "detail": {
+        "hook": "openui-text-callout-variant-danger",
+        "family": "TextCallout",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.505 0.19 27.518)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "TextCallout/ordinary-override/openui-text-callout-content-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-text-callout-content-styled",
+        "family": "TextCallout",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "TextCallout/ordinary-override/openui-text-callout-description",
+      "pass": true,
+      "detail": {
+        "hook": "openui-text-callout-description",
+        "family": "TextCallout",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.097 0 0)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "MetricIndicator/ordinary-override/openui-metric-indicator-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-metric-indicator-root",
+        "family": "MetricIndicator",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "MarkDownRenderer/ordinary-override/openui-mark-down-renderer-markdown-code",
+      "pass": true,
+      "detail": {
+        "hook": "openui-mark-down-renderer-markdown-code",
+        "family": "MarkDownRenderer",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.097 0 0)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "MarkDownRenderer/ordinary-override/openui-mark-down-renderer-markdown-link",
+      "pass": true,
+      "detail": {
+        "hook": "openui-mark-down-renderer-markdown-link",
+        "family": "MarkDownRenderer",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.424 0.181 265.638)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "MarkDownRenderer/ordinary-override/openui-mark-down-renderer-markdown-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-mark-down-renderer-markdown-root",
+        "family": "MarkDownRenderer",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.097 0 0)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "InlineMarkdownRenderer/ordinary-override/openui-inline-markdown-renderer-inline-markdown-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-inline-markdown-renderer-inline-markdown-root",
+        "family": "InlineMarkdownRenderer",
+        "status": "probed",
+        "property": "display",
+        "before": "inline",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "ImageBlock/ordinary-override/openui-image-block-wrapper-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-block-wrapper-styled",
+        "family": "ImageBlock",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "14px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "ImageBlock/ordinary-override/openui-image-block-wrapper-mobile",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-block-wrapper-mobile",
+        "family": "ImageBlock",
+        "status": "probed",
+        "property": "padding-top",
+        "before": "0px",
+        "wanted": "17px",
+        "actual": "17px",
+        "pass": true
+      }
+    },
+    {
+      "name": "ImageBlock/ordinary-override/openui-image-block-image-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-block-image-styled",
+        "family": "ImageBlock",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "14px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "ImageBlock/ordinary-override/openui-image-block-image-mobile",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-block-image-mobile",
+        "family": "ImageBlock",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "14px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "ImageText/ordinary-override/openui-image-text-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-text-root",
+        "family": "ImageText",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "ImageText/ordinary-override/openui-image-text-image-container",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-text-image-container",
+        "family": "ImageText",
+        "status": "probed",
+        "property": "background-color",
+        "before": "oklch(0.097 0 0 / 0.04)",
+        "wanted": "rgb(2, 3, 4)",
+        "actual": "rgb(2, 3, 4)",
+        "pass": true
+      }
+    },
+    {
+      "name": "ImageText/ordinary-override/openui-image-text-image",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-text-image",
+        "family": "ImageText",
+        "status": "probed",
+        "property": "object-fit",
+        "before": "cover",
+        "wanted": "contain",
+        "actual": "contain",
+        "pass": true
+      }
+    },
+    {
+      "name": "ImageText/ordinary-override/openui-image-text-content",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-text-content",
+        "family": "ImageText",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "ImageTextLarge/ordinary-override/openui-image-text-large-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-text-large-root",
+        "family": "ImageTextLarge",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "ImageTextLarge/ordinary-override/openui-image-text-large-image-wrap",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-text-large-image-wrap",
+        "family": "ImageTextLarge",
+        "status": "probed",
+        "property": "background-color",
+        "before": "oklch(0.097 0 0 / 0.04)",
+        "wanted": "rgb(2, 3, 4)",
+        "actual": "rgb(2, 3, 4)",
+        "pass": true
+      }
+    },
+    {
+      "name": "ImageTextLarge/ordinary-override/openui-image-text-large-image",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-text-large-image",
+        "family": "ImageTextLarge",
+        "status": "probed",
+        "property": "display",
+        "before": "block",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "TextBlock/ordinary-override/openui-text-block-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-text-block-root",
+        "family": "TextBlock",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "ListItem/ordinary-override/openui-list-item-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-list-item-root",
+        "family": "ListItem",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "ListBlock/ordinary-override/openui-list-block-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-list-block-root",
+        "family": "ListBlock",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "Card/ordinary-override/openui-card-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-card-root",
+        "family": "Card",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "CardHeader/ordinary-override/openui-card-header-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-card-header-root",
+        "family": "CardHeader",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "Buttons/ordinary-override/openui-buttons-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-buttons-root",
+        "family": "Buttons",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "TagBlock/ordinary-override/openui-tag-block-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-tag-block-root",
+        "family": "TagBlock",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "DotMatrixLoader/ordinary-override/openui-dot-matrix-loader-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-dot-matrix-loader-root",
+        "family": "DotMatrixLoader",
+        "status": "probed",
+        "property": "width",
+        "before": "36px",
+        "wanted": "137px",
+        "actual": "137px",
+        "pass": true
+      }
+    },
+    {
+      "name": "Skeleton/ordinary-override/openui-skeleton-pie-chart-skeleton-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-skeleton-pie-chart-skeleton-root",
+        "family": "Skeleton",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "Skeleton/ordinary-override/openui-skeleton-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-skeleton-root",
+        "family": "Skeleton",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "Skeleton/ordinary-override/openui-skeleton-bar-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-skeleton-bar-root",
+        "family": "Skeleton",
+        "status": "probed",
+        "property": "background-color",
+        "before": "oklch(0.097 0 0 / 0.08)",
+        "wanted": "rgb(2, 3, 4)",
+        "actual": "rgb(2, 3, 4)",
+        "pass": true
+      }
+    },
+    {
+      "name": "Sources/ordinary-override/openui-sources-listed-sources-list",
+      "pass": true,
+      "detail": {
+        "hook": "openui-sources-listed-sources-list",
+        "family": "Sources",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "Sources/ordinary-override/openui-sources-listed-sources-header",
+      "pass": true,
+      "detail": {
+        "hook": "openui-sources-listed-sources-header",
+        "family": "Sources",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "Sources/ordinary-override/openui-sources-listed-sources-title",
+      "pass": true,
+      "detail": {
+        "hook": "openui-sources-listed-sources-title",
+        "family": "Sources",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.097 0 0 / 0.6)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "Sources/ordinary-override/openui-sources-listed-sources-container",
+      "pass": true,
+      "detail": {
+        "hook": "openui-sources-listed-sources-container",
+        "family": "Sources",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "10px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "Sources/ordinary-override/openui-sources-item-item",
+      "pass": true,
+      "detail": {
+        "hook": "openui-sources-item-item",
+        "family": "Sources",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "Sources/ordinary-override/openui-sources-item-header",
+      "pass": true,
+      "detail": {
+        "hook": "openui-sources-item-header",
+        "family": "Sources",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "Sources/ordinary-override/openui-sources-item-name",
+      "pass": true,
+      "detail": {
+        "hook": "openui-sources-item-name",
+        "family": "Sources",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.097 0 0)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "Sources/ordinary-override/openui-sources-item-title",
+      "pass": true,
+      "detail": {
+        "hook": "openui-sources-item-title",
+        "family": "Sources",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.097 0 0 / 0.6)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "Sources/ordinary-override/openui-sources-item-logo",
+      "pass": true,
+      "detail": {
+        "hook": "openui-sources-item-logo",
+        "family": "Sources",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "SnippetCardBlock/ordinary-override/openui-snippet-card-block-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-snippet-card-block-root",
+        "family": "SnippetCardBlock",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "ContextCardBlock/ordinary-override/openui-context-card-block-card-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-context-card-block-card-root",
+        "family": "ContextCardBlock",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "CompositeCardBlock/ordinary-override/openui-composite-card-block-card-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-composite-card-block-card-root",
+        "family": "CompositeCardBlock",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "OverviewCardBlock/ordinary-override/openui-overview-card-block-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-overview-card-block-root",
+        "family": "OverviewCardBlock",
+        "status": "probed",
+        "property": "background-color",
+        "before": "oklch(0.994 0 89.876)",
+        "wanted": "rgb(2, 3, 4)",
+        "actual": "rgb(2, 3, 4)",
+        "pass": true
+      }
+    },
+    {
+      "name": "VisualCardBlock/ordinary-override/openui-visual-card-block-card-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-visual-card-block-card-root",
+        "family": "VisualCardBlock",
+        "status": "probed",
+        "property": "background-color",
+        "before": "oklch(0.097 0 0 / 0.02)",
+        "wanted": "rgb(2, 3, 4)",
+        "actual": "rgb(2, 3, 4)",
+        "pass": true
+      }
+    },
+    {
+      "name": "Accordion/ordinary-override/openui-accordion-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-accordion-root",
+        "family": "Accordion",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "Tabs/ordinary-override/openui-tabs-tabs",
+      "pass": true,
+      "detail": {
+        "hook": "openui-tabs-tabs",
+        "family": "Tabs",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "Tabs/ordinary-override/openui-tabs-container",
+      "pass": true,
+      "detail": {
+        "hook": "openui-tabs-container",
+        "family": "Tabs",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "Tabs/ordinary-override/openui-tabs-list-styled",
+      "pass": false,
+      "detail": {
+        "hook": "openui-tabs-list-styled",
+        "family": "Tabs",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "border-box",
+        "pass": false
+      }
+    },
+    {
+      "name": "Tabs/ordinary-override/openui-tabs-trigger-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-tabs-trigger-styled",
+        "family": "Tabs",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "Tabs/ordinary-override/openui-tabs-content-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-tabs-content-styled",
+        "family": "Tabs",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "Steps/ordinary-override/openui-steps-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-steps-root",
+        "family": "Steps",
+        "status": "probed",
+        "property": "min-width",
+        "before": "280px",
+        "wanted": "31px",
+        "actual": "31px",
+        "pass": true
+      }
+    },
+    {
+      "name": "Steps/ordinary-override/openui-steps-item",
+      "pass": true,
+      "detail": {
+        "hook": "openui-steps-item",
+        "family": "Steps",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "SectionBlock/ordinary-override/openui-section-block-foldable-section-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-section-block-foldable-section-root",
+        "family": "SectionBlock",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "SectionBlock/ordinary-override/openui-section-block-foldable-section-item",
+      "pass": true,
+      "detail": {
+        "hook": "openui-section-block-foldable-section-item",
+        "family": "SectionBlock",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "SectionBlock/ordinary-override/openui-section-block-foldable-section-header",
+      "pass": true,
+      "detail": {
+        "hook": "openui-section-block-foldable-section-header",
+        "family": "SectionBlock",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "SectionBlock/ordinary-override/openui-section-block-foldable-section-trigger",
+      "pass": true,
+      "detail": {
+        "hook": "openui-section-block-foldable-section-trigger",
+        "family": "SectionBlock",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.097 0 0)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "SectionBlock/ordinary-override/openui-section-block-foldable-section-content",
+      "pass": true,
+      "detail": {
+        "hook": "openui-section-block-foldable-section-content",
+        "family": "SectionBlock",
+        "status": "probed",
+        "property": "padding-top",
+        "before": "0px",
+        "wanted": "17px",
+        "actual": "17px",
+        "pass": true
+      }
+    },
+    {
+      "name": "SectionBlock/ordinary-override/openui-section-block-section-v2-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-section-block-section-v2-root",
+        "family": "SectionBlock",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "Carousel/ordinary-override/openui-carousel-carousel",
+      "pass": true,
+      "detail": {
+        "hook": "openui-carousel-carousel",
+        "family": "Carousel",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "Carousel/ordinary-override/openui-carousel-content-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-carousel-content-styled",
+        "family": "Carousel",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "Carousel/ordinary-override/openui-carousel-item-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-carousel-item-styled",
+        "family": "Carousel",
+        "status": "probed",
+        "property": "background-color",
+        "before": "oklch(0.994 0 89.876)",
+        "wanted": "rgb(2, 3, 4)",
+        "actual": "rgb(2, 3, 4)",
+        "pass": true
+      }
+    },
+    {
+      "name": "Carousel/ordinary-override/openui-carousel-button-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-carousel-button-styled",
+        "family": "Carousel",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "6px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "EntityList/ordinary-override/openui-entity-list-root",
+      "pass": true,
+      "detail": {
+        "hook": "openui-entity-list-root",
+        "family": "EntityList",
+        "status": "probed",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "pass": true
+      }
+    },
+    {
+      "name": "Table/ordinary-override/openui-table-scrollable-table-wrapper",
+      "pass": true,
+      "detail": {
+        "hook": "openui-table-scrollable-table-wrapper",
+        "family": "Table",
+        "status": "probed",
+        "property": "width",
+        "before": "640px",
+        "wanted": "137px",
+        "actual": "137px",
+        "pass": true
+      }
+    },
+    {
+      "name": "Table/ordinary-override/openui-table-scrollable-table-control",
+      "pass": true,
+      "detail": {
+        "hook": "openui-table-scrollable-table-control",
+        "family": "Table",
+        "status": "probed",
+        "property": "background-color",
+        "before": "oklch(0.994 0 89.876)",
+        "wanted": "rgb(2, 3, 4)",
+        "actual": "rgb(2, 3, 4)",
+        "pass": true
+      }
+    },
+    {
+      "name": "Table/ordinary-override/openui-table-container-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-table-container-styled",
+        "family": "Table",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "14px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "Table/ordinary-override/openui-table-head-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-table-head-styled",
+        "family": "Table",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.097 0 0)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "Table/ordinary-override/openui-table-cell-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-table-cell-styled",
+        "family": "Table",
+        "status": "probed",
+        "property": "color",
+        "before": "oklch(0.097 0 0)",
+        "wanted": "rgb(1, 2, 3)",
+        "actual": "rgb(1, 2, 3)",
+        "pass": true
+      }
+    },
+    {
+      "name": "Citation/ordinary-override/openui-citation-container-styled",
+      "pass": true,
+      "detail": {
+        "hook": "openui-citation-container-styled",
+        "family": "Citation",
+        "status": "probed",
+        "property": "display",
+        "before": "inline-flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    },
+    {
+      "name": "Citation/ordinary-override/openui-citation-trigger",
+      "pass": true,
+      "detail": {
+        "hook": "openui-citation-trigger",
+        "family": "Citation",
+        "status": "probed",
+        "property": "background-color",
+        "before": "oklch(0.097 0 0 / 0.08)",
+        "wanted": "rgb(2, 3, 4)",
+        "actual": "rgb(2, 3, 4)",
+        "pass": true
+      }
+    },
+    {
+      "name": "ImageGallery/ordinary-override/openui-image-gallery-gallery",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-gallery-gallery",
+        "family": "ImageGallery",
+        "status": "probed",
+        "property": "border-radius",
+        "before": "8px",
+        "wanted": "19px",
+        "actual": "19px",
+        "pass": true
+      }
+    },
+    {
+      "name": "ImageGallery/ordinary-override/openui-image-gallery-grid",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-gallery-grid",
+        "family": "ImageGallery",
+        "status": "probed",
+        "property": "gap",
+        "before": "8px",
+        "wanted": "23px",
+        "actual": "23px",
+        "pass": true
+      }
+    },
+    {
+      "name": "ImageGallery/ordinary-override/openui-image-gallery-show-all",
+      "pass": true,
+      "detail": {
+        "hook": "openui-image-gallery-show-all",
+        "family": "ImageGallery",
+        "status": "probed",
+        "property": "display",
+        "before": "flex",
+        "wanted": "grid",
+        "actual": "grid",
+        "pass": true
+      }
+    }
+  ],
+  "records": [
+    {
+      "family": "Separator",
+      "probes": [
+        {
+          "hook": "openui-separator-root",
+          "family": "Separator",
+          "status": "probed",
+          "property": "background-color",
+          "before": "oklch(0.097 0 0 / 0.06)",
+          "wanted": "rgb(2, 3, 4)",
+          "actual": "rgb(2, 3, 4)",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "IconText",
+      "probes": [
+        {
+          "hook": "openui-icon-text-root",
+          "family": "IconText",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-icon-text-layout-vertical",
+          "family": "IconText",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-icon-text-layout-horizontal",
+          "family": "IconText",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-icon-text-content",
+          "family": "IconText",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "TextContentWrapper",
+      "probes": [
+        {
+          "hook": "openui-text-content-wrapper-root",
+          "family": "TextContentWrapper",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-text-content-wrapper-markdown",
+          "family": "TextContentWrapper",
+          "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+        }
+      ]
+    },
+    {
+      "family": "Image",
+      "probes": [
+        {
+          "hook": "openui-image-root",
+          "family": "Image",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        },
+        {
+          "hook": "openui-image-fit-styled",
+          "family": "Image",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-image-fill-styled",
+          "family": "Image",
+          "status": "probed",
+          "property": "object-fit",
+          "before": "cover",
+          "wanted": "contain",
+          "actual": "contain",
+          "pass": true
+        },
+        {
+          "hook": "openui-image-error",
+          "family": "Image",
+          "status": "no eligible non-inline property in bounded probe list"
+        }
+      ]
+    },
+    {
+      "family": "SourceFaviconImage",
+      "probes": [
+        {
+          "hook": "openui-source-favicon-image-root",
+          "family": "SourceFaviconImage",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "Tag",
+      "probes": [
+        {
+          "hook": "openui-tag-root",
+          "family": "Tag",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        },
+        {
+          "hook": "openui-tag-icon-styled",
+          "family": "Tag",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-tag-text-styled",
+          "family": "Tag",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-tag-size-sm",
+          "family": "Tag",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "6px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        },
+        {
+          "hook": "openui-tag-size-md",
+          "family": "Tag",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "6px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        },
+        {
+          "hook": "openui-tag-size-lg",
+          "family": "Tag",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "8px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        },
+        {
+          "hook": "openui-tag-variant-neutral",
+          "family": "Tag",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.097 0 0)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-tag-variant-info",
+          "family": "Tag",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.424 0.181 265.638)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-tag-variant-success",
+          "family": "Tag",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.448 0.108 151.328)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-tag-variant-warning",
+          "family": "Tag",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.476 0.103 61.907)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-tag-variant-danger",
+          "family": "Tag",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.505 0.19 27.518)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "IconTag",
+      "probes": [
+        {
+          "hook": "openui-icon-tag-root",
+          "family": "IconTag",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        },
+        {
+          "hook": "openui-icon-tag-size-xs",
+          "family": "IconTag",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "4px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        },
+        {
+          "hook": "openui-icon-tag-size-s",
+          "family": "IconTag",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "6px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        },
+        {
+          "hook": "openui-icon-tag-size-m",
+          "family": "IconTag",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "6px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        },
+        {
+          "hook": "openui-icon-tag-size-l",
+          "family": "IconTag",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "8px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        },
+        {
+          "hook": "openui-icon-tag-size-xl",
+          "family": "IconTag",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "8px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        },
+        {
+          "hook": "openui-icon-tag-variant-neutral",
+          "family": "IconTag",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.097 0 0)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-icon-tag-variant-info",
+          "family": "IconTag",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.424 0.181 265.638)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-icon-tag-variant-success",
+          "family": "IconTag",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.448 0.108 151.328)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-icon-tag-variant-warning",
+          "family": "IconTag",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.476 0.103 61.907)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-icon-tag-variant-danger",
+          "family": "IconTag",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.505 0.19 27.518)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-icon-tag-variant-inverted",
+          "family": "IconTag",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.97 0 89.876)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "TextContent",
+      "probes": [
+        {
+          "hook": "openui-text-content-root",
+          "family": "TextContent",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        },
+        {
+          "hook": "openui-text-content-variant-sunk",
+          "family": "TextContent",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "8px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        },
+        {
+          "hook": "openui-text-content-variant-card",
+          "family": "TextContent",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "8px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        },
+        {
+          "hook": "openui-text-content-variant-clear",
+          "family": "TextContent",
+          "status": "probed",
+          "property": "border-top-color",
+          "before": "rgba(0, 0, 0, 0)",
+          "wanted": "rgb(3, 4, 5)",
+          "actual": "rgb(3, 4, 5)",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "InlineHeader",
+      "probes": [
+        {
+          "hook": "openui-inline-header-root",
+          "family": "InlineHeader",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-inline-header-heading-styled",
+          "family": "InlineHeader",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.097 0 0)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-inline-header-description-styled",
+          "family": "InlineHeader",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.097 0 0 / 0.6)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "Callout",
+      "probes": [
+        {
+          "hook": "openui-callout-root",
+          "family": "Callout",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        },
+        {
+          "hook": "openui-callout-title-styled",
+          "family": "Callout",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-callout-description-styled",
+          "family": "Callout",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.097 0 0)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-callout-variant-info",
+          "family": "Callout",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-callout-variant-danger",
+          "family": "Callout",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-callout-variant-warning",
+          "family": "Callout",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-callout-variant-success",
+          "family": "Callout",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-callout-variant-neutral",
+          "family": "Callout",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-callout-dismiss",
+          "family": "Callout",
+          "status": "no eligible non-inline property in bounded probe list"
+        }
+      ]
+    },
+    {
+      "family": "TextCallout",
+      "probes": [
+        {
+          "hook": "openui-text-callout-root",
+          "family": "TextCallout",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        },
+        {
+          "hook": "openui-text-callout-variant-neutral",
+          "family": "TextCallout",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.097 0 0)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-text-callout-variant-info",
+          "family": "TextCallout",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.424 0.181 265.638)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-text-callout-variant-warning",
+          "family": "TextCallout",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.476 0.103 61.907)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-text-callout-variant-success",
+          "family": "TextCallout",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.448 0.108 151.328)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-text-callout-variant-danger",
+          "family": "TextCallout",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.505 0.19 27.518)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-text-callout-content-styled",
+          "family": "TextCallout",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-text-callout-title",
+          "family": "TextCallout",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-text-callout-description",
+          "family": "TextCallout",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.097 0 0)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "MetricIndicator",
+      "probes": [
+        {
+          "hook": "openui-metric-indicator-root",
+          "family": "MetricIndicator",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "CodeBlock",
+      "probes": [
+        {
+          "hook": "openui-code-block-root",
+          "family": "CodeBlock",
+          "status": "no eligible non-inline property in bounded probe list"
+        }
+      ]
+    },
+    {
+      "family": "MarkDownRenderer",
+      "probes": [
+        {
+          "hook": "openui-mark-down-renderer-markdown-code",
+          "family": "MarkDownRenderer",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.097 0 0)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-mark-down-renderer-markdown-link",
+          "family": "MarkDownRenderer",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.424 0.181 265.638)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-mark-down-renderer-markdown-root",
+          "family": "MarkDownRenderer",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.097 0 0)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "InlineMarkdownRenderer",
+      "probes": [
+        {
+          "hook": "openui-inline-markdown-renderer-inline-markdown-root",
+          "family": "InlineMarkdownRenderer",
+          "status": "probed",
+          "property": "display",
+          "before": "inline",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "ImageBlock",
+      "probes": [
+        {
+          "hook": "openui-image-block-wrapper-styled",
+          "family": "ImageBlock",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "14px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        },
+        {
+          "hook": "openui-image-block-wrapper-mobile",
+          "family": "ImageBlock",
+          "status": "probed",
+          "property": "padding-top",
+          "before": "0px",
+          "wanted": "17px",
+          "actual": "17px",
+          "pass": true
+        },
+        {
+          "hook": "openui-image-block-error",
+          "family": "ImageBlock",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-image-block-image-styled",
+          "family": "ImageBlock",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "14px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        },
+        {
+          "hook": "openui-image-block-image-mobile",
+          "family": "ImageBlock",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "14px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "ImageText",
+      "probes": [
+        {
+          "hook": "openui-image-text-root",
+          "family": "ImageText",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-image-text-image-container",
+          "family": "ImageText",
+          "status": "probed",
+          "property": "background-color",
+          "before": "oklch(0.097 0 0 / 0.04)",
+          "wanted": "rgb(2, 3, 4)",
+          "actual": "rgb(2, 3, 4)",
+          "pass": true
+        },
+        {
+          "hook": "openui-image-text-image",
+          "family": "ImageText",
+          "status": "probed",
+          "property": "object-fit",
+          "before": "cover",
+          "wanted": "contain",
+          "actual": "contain",
+          "pass": true
+        },
+        {
+          "hook": "openui-image-text-layout-vertical",
+          "family": "ImageText",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-image-text-layout-horizontal",
+          "family": "ImageText",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-image-text-content",
+          "family": "ImageText",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "ImageTextLarge",
+      "probes": [
+        {
+          "hook": "openui-image-text-large-root",
+          "family": "ImageTextLarge",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-image-text-large-image-wrap",
+          "family": "ImageTextLarge",
+          "status": "probed",
+          "property": "background-color",
+          "before": "oklch(0.097 0 0 / 0.04)",
+          "wanted": "rgb(2, 3, 4)",
+          "actual": "rgb(2, 3, 4)",
+          "pass": true
+        },
+        {
+          "hook": "openui-image-text-large-image",
+          "family": "ImageTextLarge",
+          "status": "probed",
+          "property": "display",
+          "before": "block",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "TextBlock",
+      "probes": [
+        {
+          "hook": "openui-text-block-root",
+          "family": "TextBlock",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "ListItem",
+      "probes": [
+        {
+          "hook": "openui-list-item-root",
+          "family": "ListItem",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "ListBlock",
+      "probes": [
+        {
+          "hook": "openui-list-block-root",
+          "family": "ListBlock",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "Card",
+      "probes": [
+        {
+          "hook": "openui-card-root",
+          "family": "Card",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "CardHeader",
+      "probes": [
+        {
+          "hook": "openui-card-header-root",
+          "family": "CardHeader",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "Buttons",
+      "probes": [
+        {
+          "hook": "openui-buttons-root",
+          "family": "Buttons",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "TagBlock",
+      "probes": [
+        {
+          "hook": "openui-tag-block-root",
+          "family": "TagBlock",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "DotMatrixLoader",
+      "probes": [
+        {
+          "hook": "openui-dot-matrix-loader-root",
+          "family": "DotMatrixLoader",
+          "status": "probed",
+          "property": "width",
+          "before": "36px",
+          "wanted": "137px",
+          "actual": "137px",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "Skeleton",
+      "probes": [
+        {
+          "hook": "openui-skeleton-pie-chart-skeleton-root",
+          "family": "Skeleton",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-skeleton-root",
+          "family": "Skeleton",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-skeleton-bar-root",
+          "family": "Skeleton",
+          "status": "probed",
+          "property": "background-color",
+          "before": "oklch(0.097 0 0 / 0.08)",
+          "wanted": "rgb(2, 3, 4)",
+          "actual": "rgb(2, 3, 4)",
+          "pass": true
+        },
+        {
+          "hook": "openui-skeleton-table-skeleton-root",
+          "family": "Skeleton",
+          "status": "no eligible non-inline property in bounded probe list"
+        }
+      ]
+    },
+    {
+      "family": "Sources",
+      "probes": [
+        {
+          "hook": "openui-sources-listed-sources-list",
+          "family": "Sources",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-sources-listed-sources-header",
+          "family": "Sources",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-sources-listed-sources-title",
+          "family": "Sources",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.097 0 0 / 0.6)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-sources-listed-sources-container",
+          "family": "Sources",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "10px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        },
+        {
+          "hook": "openui-sources-item-item",
+          "family": "Sources",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-sources-item-header",
+          "family": "Sources",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-sources-item-name",
+          "family": "Sources",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.097 0 0)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-sources-item-title",
+          "family": "Sources",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.097 0 0 / 0.6)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-sources-item-logo",
+          "family": "Sources",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "SnippetCardBlock",
+      "probes": [
+        {
+          "hook": "openui-snippet-card-block-root",
+          "family": "SnippetCardBlock",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "ContextCardBlock",
+      "probes": [
+        {
+          "hook": "openui-context-card-block-card-image",
+          "family": "ContextCardBlock",
+          "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+        },
+        {
+          "hook": "openui-context-card-block-card-root",
+          "family": "ContextCardBlock",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "CompositeCardBlock",
+      "probes": [
+        {
+          "hook": "openui-composite-card-block-card-wrapper",
+          "family": "CompositeCardBlock",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-composite-card-block-card-root",
+          "family": "CompositeCardBlock",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "OverviewCardBlock",
+      "probes": [
+        {
+          "hook": "openui-overview-card-block-root",
+          "family": "OverviewCardBlock",
+          "status": "probed",
+          "property": "background-color",
+          "before": "oklch(0.994 0 89.876)",
+          "wanted": "rgb(2, 3, 4)",
+          "actual": "rgb(2, 3, 4)",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "VisualCardBlock",
+      "probes": [
+        {
+          "hook": "openui-visual-card-block-card-clickable",
+          "family": "VisualCardBlock",
+          "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+        },
+        {
+          "hook": "openui-visual-card-block-card-root",
+          "family": "VisualCardBlock",
+          "status": "probed",
+          "property": "background-color",
+          "before": "oklch(0.097 0 0 / 0.02)",
+          "wanted": "rgb(2, 3, 4)",
+          "actual": "rgb(2, 3, 4)",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "Accordion",
+      "probes": [
+        {
+          "hook": "openui-accordion-root",
+          "family": "Accordion",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "Tabs",
+      "probes": [
+        {
+          "hook": "openui-tabs-tabs",
+          "family": "Tabs",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        },
+        {
+          "hook": "openui-tabs-container",
+          "family": "Tabs",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-tabs-list-styled",
+          "family": "Tabs",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "border-box",
+          "pass": false
+        },
+        {
+          "hook": "openui-tabs-trigger-styled",
+          "family": "Tabs",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        },
+        {
+          "hook": "openui-tabs-content-styled",
+          "family": "Tabs",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "Steps",
+      "probes": [
+        {
+          "hook": "openui-steps-root",
+          "family": "Steps",
+          "status": "probed",
+          "property": "min-width",
+          "before": "280px",
+          "wanted": "31px",
+          "actual": "31px",
+          "pass": true
+        },
+        {
+          "hook": "openui-steps-item",
+          "family": "Steps",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "SectionBlock",
+      "probes": [
+        {
+          "hook": "openui-section-block-foldable-section-root",
+          "family": "SectionBlock",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-section-block-foldable-section-item",
+          "family": "SectionBlock",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-section-block-foldable-section-header",
+          "family": "SectionBlock",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-section-block-foldable-section-trigger",
+          "family": "SectionBlock",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.097 0 0)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-section-block-foldable-section-content",
+          "family": "SectionBlock",
+          "status": "probed",
+          "property": "padding-top",
+          "before": "0px",
+          "wanted": "17px",
+          "actual": "17px",
+          "pass": true
+        },
+        {
+          "hook": "openui-section-block-section-v2-root",
+          "family": "SectionBlock",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "Carousel",
+      "probes": [
+        {
+          "hook": "openui-carousel-carousel",
+          "family": "Carousel",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-carousel-content-styled",
+          "family": "Carousel",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-carousel-item-styled",
+          "family": "Carousel",
+          "status": "probed",
+          "property": "background-color",
+          "before": "oklch(0.994 0 89.876)",
+          "wanted": "rgb(2, 3, 4)",
+          "actual": "rgb(2, 3, 4)",
+          "pass": true
+        },
+        {
+          "hook": "openui-carousel-button-styled",
+          "family": "Carousel",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "6px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "EntityList",
+      "probes": [
+        {
+          "hook": "openui-entity-list-root",
+          "family": "EntityList",
+          "status": "probed",
+          "property": "box-sizing",
+          "before": "border-box",
+          "wanted": "content-box",
+          "actual": "content-box",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "Table",
+      "probes": [
+        {
+          "hook": "openui-table-scrollable-table-wrapper",
+          "family": "Table",
+          "status": "probed",
+          "property": "width",
+          "before": "640px",
+          "wanted": "137px",
+          "actual": "137px",
+          "pass": true
+        },
+        {
+          "hook": "openui-table-scrollable-table-scroll-container",
+          "family": "Table",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-table-scrollable-table-control",
+          "family": "Table",
+          "status": "probed",
+          "property": "background-color",
+          "before": "oklch(0.994 0 89.876)",
+          "wanted": "rgb(2, 3, 4)",
+          "actual": "rgb(2, 3, 4)",
+          "pass": true
+        },
+        {
+          "hook": "openui-table-container-styled",
+          "family": "Table",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "14px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        },
+        {
+          "hook": "openui-table-table",
+          "family": "Table",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-table-footer-styled",
+          "family": "Table",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-table-head-styled",
+          "family": "Table",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.097 0 0)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-table-row-styled",
+          "family": "Table",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-table-cell-styled",
+          "family": "Table",
+          "status": "probed",
+          "property": "color",
+          "before": "oklch(0.097 0 0)",
+          "wanted": "rgb(1, 2, 3)",
+          "actual": "rgb(1, 2, 3)",
+          "pass": true
+        },
+        {
+          "hook": "openui-table-alignment",
+          "family": "Table",
+          "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+        }
+      ]
+    },
+    {
+      "family": "TooltipWrapper",
+      "probes": []
+    },
+    {
+      "family": "Citation",
+      "probes": [
+        {
+          "hook": "openui-citation-container-styled",
+          "family": "Citation",
+          "status": "probed",
+          "property": "display",
+          "before": "inline-flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        },
+        {
+          "hook": "openui-citation-trigger",
+          "family": "Citation",
+          "status": "probed",
+          "property": "background-color",
+          "before": "oklch(0.097 0 0 / 0.08)",
+          "wanted": "rgb(2, 3, 4)",
+          "actual": "rgb(2, 3, 4)",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "family": "ImageGallery",
+      "probes": [
+        {
+          "hook": "openui-image-gallery-gallery",
+          "family": "ImageGallery",
+          "status": "probed",
+          "property": "border-radius",
+          "before": "8px",
+          "wanted": "19px",
+          "actual": "19px",
+          "pass": true
+        },
+        {
+          "hook": "openui-image-gallery-grid",
+          "family": "ImageGallery",
+          "status": "probed",
+          "property": "gap",
+          "before": "8px",
+          "wanted": "23px",
+          "actual": "23px",
+          "pass": true
+        },
+        {
+          "hook": "openui-image-gallery-layout-openui-gallery-single",
+          "family": "ImageGallery",
+          "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+        },
+        {
+          "hook": "openui-image-gallery-layout-openui-gallery-double",
+          "family": "ImageGallery",
+          "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+        },
+        {
+          "hook": "openui-image-gallery-layout-openui-gallery-triple",
+          "family": "ImageGallery",
+          "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+        },
+        {
+          "hook": "openui-image-gallery-layout-openui-gallery-quad",
+          "family": "ImageGallery",
+          "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+        },
+        {
+          "hook": "openui-image-gallery-layout-openui-gallery-default",
+          "family": "ImageGallery",
+          "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+        },
+        {
+          "hook": "openui-image-gallery-image",
+          "family": "ImageGallery",
+          "status": "no eligible non-inline property in bounded probe list"
+        },
+        {
+          "hook": "openui-image-gallery-main-image",
+          "family": "ImageGallery",
+          "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+        },
+        {
+          "hook": "openui-image-gallery-show-all",
+          "family": "ImageGallery",
+          "status": "probed",
+          "property": "display",
+          "before": "flex",
+          "wanted": "grid",
+          "actual": "grid",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "probes": [
+    {
+      "hook": "openui-separator-root",
+      "family": "Separator",
+      "status": "probed",
+      "property": "background-color",
+      "before": "oklch(0.097 0 0 / 0.06)",
+      "wanted": "rgb(2, 3, 4)",
+      "actual": "rgb(2, 3, 4)",
+      "pass": true
+    },
+    {
+      "hook": "openui-icon-text-root",
+      "family": "IconText",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-icon-text-layout-vertical",
+      "family": "IconText",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-icon-text-layout-horizontal",
+      "family": "IconText",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-icon-text-content",
+      "family": "IconText",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-text-content-wrapper-root",
+      "family": "TextContentWrapper",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-text-content-wrapper-markdown",
+      "family": "TextContentWrapper",
+      "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+    },
+    {
+      "hook": "openui-image-root",
+      "family": "Image",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-fit-styled",
+      "family": "Image",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-image-fill-styled",
+      "family": "Image",
+      "status": "probed",
+      "property": "object-fit",
+      "before": "cover",
+      "wanted": "contain",
+      "actual": "contain",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-error",
+      "family": "Image",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-source-favicon-image-root",
+      "family": "SourceFaviconImage",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-tag-root",
+      "family": "Tag",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-tag-icon-styled",
+      "family": "Tag",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-tag-text-styled",
+      "family": "Tag",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-tag-size-sm",
+      "family": "Tag",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "6px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-tag-size-md",
+      "family": "Tag",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "6px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-tag-size-lg",
+      "family": "Tag",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "8px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-tag-variant-neutral",
+      "family": "Tag",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.097 0 0)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-tag-variant-info",
+      "family": "Tag",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.424 0.181 265.638)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-tag-variant-success",
+      "family": "Tag",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.448 0.108 151.328)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-tag-variant-warning",
+      "family": "Tag",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.476 0.103 61.907)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-tag-variant-danger",
+      "family": "Tag",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.505 0.19 27.518)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-icon-tag-root",
+      "family": "IconTag",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-icon-tag-size-xs",
+      "family": "IconTag",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "4px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-icon-tag-size-s",
+      "family": "IconTag",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "6px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-icon-tag-size-m",
+      "family": "IconTag",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "6px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-icon-tag-size-l",
+      "family": "IconTag",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "8px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-icon-tag-size-xl",
+      "family": "IconTag",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "8px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-icon-tag-variant-neutral",
+      "family": "IconTag",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.097 0 0)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-icon-tag-variant-info",
+      "family": "IconTag",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.424 0.181 265.638)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-icon-tag-variant-success",
+      "family": "IconTag",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.448 0.108 151.328)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-icon-tag-variant-warning",
+      "family": "IconTag",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.476 0.103 61.907)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-icon-tag-variant-danger",
+      "family": "IconTag",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.505 0.19 27.518)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-icon-tag-variant-inverted",
+      "family": "IconTag",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.97 0 89.876)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-text-content-root",
+      "family": "TextContent",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-text-content-variant-sunk",
+      "family": "TextContent",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "8px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-text-content-variant-card",
+      "family": "TextContent",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "8px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-text-content-variant-clear",
+      "family": "TextContent",
+      "status": "probed",
+      "property": "border-top-color",
+      "before": "rgba(0, 0, 0, 0)",
+      "wanted": "rgb(3, 4, 5)",
+      "actual": "rgb(3, 4, 5)",
+      "pass": true
+    },
+    {
+      "hook": "openui-inline-header-root",
+      "family": "InlineHeader",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-inline-header-heading-styled",
+      "family": "InlineHeader",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.097 0 0)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-inline-header-description-styled",
+      "family": "InlineHeader",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.097 0 0 / 0.6)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-callout-root",
+      "family": "Callout",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-callout-title-styled",
+      "family": "Callout",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-callout-description-styled",
+      "family": "Callout",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.097 0 0)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-callout-variant-info",
+      "family": "Callout",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-callout-variant-danger",
+      "family": "Callout",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-callout-variant-warning",
+      "family": "Callout",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-callout-variant-success",
+      "family": "Callout",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-callout-variant-neutral",
+      "family": "Callout",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-callout-dismiss",
+      "family": "Callout",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-text-callout-root",
+      "family": "TextCallout",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-text-callout-variant-neutral",
+      "family": "TextCallout",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.097 0 0)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-text-callout-variant-info",
+      "family": "TextCallout",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.424 0.181 265.638)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-text-callout-variant-warning",
+      "family": "TextCallout",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.476 0.103 61.907)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-text-callout-variant-success",
+      "family": "TextCallout",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.448 0.108 151.328)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-text-callout-variant-danger",
+      "family": "TextCallout",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.505 0.19 27.518)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-text-callout-content-styled",
+      "family": "TextCallout",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-text-callout-title",
+      "family": "TextCallout",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-text-callout-description",
+      "family": "TextCallout",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.097 0 0)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-metric-indicator-root",
+      "family": "MetricIndicator",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-code-block-root",
+      "family": "CodeBlock",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-mark-down-renderer-markdown-code",
+      "family": "MarkDownRenderer",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.097 0 0)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-mark-down-renderer-markdown-link",
+      "family": "MarkDownRenderer",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.424 0.181 265.638)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-mark-down-renderer-markdown-root",
+      "family": "MarkDownRenderer",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.097 0 0)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-inline-markdown-renderer-inline-markdown-root",
+      "family": "InlineMarkdownRenderer",
+      "status": "probed",
+      "property": "display",
+      "before": "inline",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-block-wrapper-styled",
+      "family": "ImageBlock",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "14px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-block-wrapper-mobile",
+      "family": "ImageBlock",
+      "status": "probed",
+      "property": "padding-top",
+      "before": "0px",
+      "wanted": "17px",
+      "actual": "17px",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-block-error",
+      "family": "ImageBlock",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-image-block-image-styled",
+      "family": "ImageBlock",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "14px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-block-image-mobile",
+      "family": "ImageBlock",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "14px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-text-root",
+      "family": "ImageText",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-text-image-container",
+      "family": "ImageText",
+      "status": "probed",
+      "property": "background-color",
+      "before": "oklch(0.097 0 0 / 0.04)",
+      "wanted": "rgb(2, 3, 4)",
+      "actual": "rgb(2, 3, 4)",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-text-image",
+      "family": "ImageText",
+      "status": "probed",
+      "property": "object-fit",
+      "before": "cover",
+      "wanted": "contain",
+      "actual": "contain",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-text-layout-vertical",
+      "family": "ImageText",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-image-text-layout-horizontal",
+      "family": "ImageText",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-image-text-content",
+      "family": "ImageText",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-text-large-root",
+      "family": "ImageTextLarge",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-text-large-image-wrap",
+      "family": "ImageTextLarge",
+      "status": "probed",
+      "property": "background-color",
+      "before": "oklch(0.097 0 0 / 0.04)",
+      "wanted": "rgb(2, 3, 4)",
+      "actual": "rgb(2, 3, 4)",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-text-large-image",
+      "family": "ImageTextLarge",
+      "status": "probed",
+      "property": "display",
+      "before": "block",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-text-block-root",
+      "family": "TextBlock",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-list-item-root",
+      "family": "ListItem",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-list-block-root",
+      "family": "ListBlock",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-card-root",
+      "family": "Card",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-card-header-root",
+      "family": "CardHeader",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-buttons-root",
+      "family": "Buttons",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-tag-block-root",
+      "family": "TagBlock",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-dot-matrix-loader-root",
+      "family": "DotMatrixLoader",
+      "status": "probed",
+      "property": "width",
+      "before": "36px",
+      "wanted": "137px",
+      "actual": "137px",
+      "pass": true
+    },
+    {
+      "hook": "openui-skeleton-pie-chart-skeleton-root",
+      "family": "Skeleton",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-skeleton-root",
+      "family": "Skeleton",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-skeleton-bar-root",
+      "family": "Skeleton",
+      "status": "probed",
+      "property": "background-color",
+      "before": "oklch(0.097 0 0 / 0.08)",
+      "wanted": "rgb(2, 3, 4)",
+      "actual": "rgb(2, 3, 4)",
+      "pass": true
+    },
+    {
+      "hook": "openui-skeleton-table-skeleton-root",
+      "family": "Skeleton",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-sources-listed-sources-list",
+      "family": "Sources",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-sources-listed-sources-header",
+      "family": "Sources",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-sources-listed-sources-title",
+      "family": "Sources",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.097 0 0 / 0.6)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-sources-listed-sources-container",
+      "family": "Sources",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "10px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-sources-item-item",
+      "family": "Sources",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-sources-item-header",
+      "family": "Sources",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-sources-item-name",
+      "family": "Sources",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.097 0 0)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-sources-item-title",
+      "family": "Sources",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.097 0 0 / 0.6)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-sources-item-logo",
+      "family": "Sources",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-snippet-card-block-root",
+      "family": "SnippetCardBlock",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-context-card-block-card-image",
+      "family": "ContextCardBlock",
+      "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+    },
+    {
+      "hook": "openui-context-card-block-card-root",
+      "family": "ContextCardBlock",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-composite-card-block-card-wrapper",
+      "family": "CompositeCardBlock",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-composite-card-block-card-root",
+      "family": "CompositeCardBlock",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-overview-card-block-root",
+      "family": "OverviewCardBlock",
+      "status": "probed",
+      "property": "background-color",
+      "before": "oklch(0.994 0 89.876)",
+      "wanted": "rgb(2, 3, 4)",
+      "actual": "rgb(2, 3, 4)",
+      "pass": true
+    },
+    {
+      "hook": "openui-visual-card-block-card-clickable",
+      "family": "VisualCardBlock",
+      "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+    },
+    {
+      "hook": "openui-visual-card-block-card-root",
+      "family": "VisualCardBlock",
+      "status": "probed",
+      "property": "background-color",
+      "before": "oklch(0.097 0 0 / 0.02)",
+      "wanted": "rgb(2, 3, 4)",
+      "actual": "rgb(2, 3, 4)",
+      "pass": true
+    },
+    {
+      "hook": "openui-accordion-root",
+      "family": "Accordion",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-tabs-tabs",
+      "family": "Tabs",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-tabs-container",
+      "family": "Tabs",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-tabs-list-styled",
+      "family": "Tabs",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "border-box",
+      "pass": false
+    },
+    {
+      "hook": "openui-tabs-trigger-styled",
+      "family": "Tabs",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-tabs-content-styled",
+      "family": "Tabs",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-steps-root",
+      "family": "Steps",
+      "status": "probed",
+      "property": "min-width",
+      "before": "280px",
+      "wanted": "31px",
+      "actual": "31px",
+      "pass": true
+    },
+    {
+      "hook": "openui-steps-item",
+      "family": "Steps",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-section-block-foldable-section-root",
+      "family": "SectionBlock",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-section-block-foldable-section-item",
+      "family": "SectionBlock",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-section-block-foldable-section-header",
+      "family": "SectionBlock",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-section-block-foldable-section-trigger",
+      "family": "SectionBlock",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.097 0 0)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-section-block-foldable-section-content",
+      "family": "SectionBlock",
+      "status": "probed",
+      "property": "padding-top",
+      "before": "0px",
+      "wanted": "17px",
+      "actual": "17px",
+      "pass": true
+    },
+    {
+      "hook": "openui-section-block-section-v2-root",
+      "family": "SectionBlock",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-carousel-carousel",
+      "family": "Carousel",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-carousel-content-styled",
+      "family": "Carousel",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-carousel-item-styled",
+      "family": "Carousel",
+      "status": "probed",
+      "property": "background-color",
+      "before": "oklch(0.994 0 89.876)",
+      "wanted": "rgb(2, 3, 4)",
+      "actual": "rgb(2, 3, 4)",
+      "pass": true
+    },
+    {
+      "hook": "openui-carousel-button-styled",
+      "family": "Carousel",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "6px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-entity-list-root",
+      "family": "EntityList",
+      "status": "probed",
+      "property": "box-sizing",
+      "before": "border-box",
+      "wanted": "content-box",
+      "actual": "content-box",
+      "pass": true
+    },
+    {
+      "hook": "openui-table-scrollable-table-wrapper",
+      "family": "Table",
+      "status": "probed",
+      "property": "width",
+      "before": "640px",
+      "wanted": "137px",
+      "actual": "137px",
+      "pass": true
+    },
+    {
+      "hook": "openui-table-scrollable-table-scroll-container",
+      "family": "Table",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-table-scrollable-table-control",
+      "family": "Table",
+      "status": "probed",
+      "property": "background-color",
+      "before": "oklch(0.994 0 89.876)",
+      "wanted": "rgb(2, 3, 4)",
+      "actual": "rgb(2, 3, 4)",
+      "pass": true
+    },
+    {
+      "hook": "openui-table-container-styled",
+      "family": "Table",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "14px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-table-table",
+      "family": "Table",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-table-footer-styled",
+      "family": "Table",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-table-head-styled",
+      "family": "Table",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.097 0 0)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-table-row-styled",
+      "family": "Table",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-table-cell-styled",
+      "family": "Table",
+      "status": "probed",
+      "property": "color",
+      "before": "oklch(0.097 0 0)",
+      "wanted": "rgb(1, 2, 3)",
+      "actual": "rgb(1, 2, 3)",
+      "pass": true
+    },
+    {
+      "hook": "openui-table-alignment",
+      "family": "Table",
+      "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+    },
+    {
+      "hook": "openui-citation-container-styled",
+      "family": "Citation",
+      "status": "probed",
+      "property": "display",
+      "before": "inline-flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    },
+    {
+      "hook": "openui-citation-trigger",
+      "family": "Citation",
+      "status": "probed",
+      "property": "background-color",
+      "before": "oklch(0.097 0 0 / 0.08)",
+      "wanted": "rgb(2, 3, 4)",
+      "actual": "rgb(2, 3, 4)",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-gallery-gallery",
+      "family": "ImageGallery",
+      "status": "probed",
+      "property": "border-radius",
+      "before": "8px",
+      "wanted": "19px",
+      "actual": "19px",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-gallery-grid",
+      "family": "ImageGallery",
+      "status": "probed",
+      "property": "gap",
+      "before": "8px",
+      "wanted": "23px",
+      "actual": "23px",
+      "pass": true
+    },
+    {
+      "hook": "openui-image-gallery-layout-openui-gallery-single",
+      "family": "ImageGallery",
+      "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+    },
+    {
+      "hook": "openui-image-gallery-layout-openui-gallery-double",
+      "family": "ImageGallery",
+      "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+    },
+    {
+      "hook": "openui-image-gallery-layout-openui-gallery-triple",
+      "family": "ImageGallery",
+      "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+    },
+    {
+      "hook": "openui-image-gallery-layout-openui-gallery-quad",
+      "family": "ImageGallery",
+      "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+    },
+    {
+      "hook": "openui-image-gallery-layout-openui-gallery-default",
+      "family": "ImageGallery",
+      "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+    },
+    {
+      "hook": "openui-image-gallery-image",
+      "family": "ImageGallery",
+      "status": "no eligible non-inline property in bounded probe list"
+    },
+    {
+      "hook": "openui-image-gallery-main-image",
+      "family": "ImageGallery",
+      "status": "no direct base declaration; nested/pseudo rule needs specific coverage"
+    },
+    {
+      "hook": "openui-image-gallery-show-all",
+      "family": "ImageGallery",
+      "status": "probed",
+      "property": "display",
+      "before": "flex",
+      "wanted": "grid",
+      "actual": "grid",
+      "pass": true
+    }
+  ]
+}
