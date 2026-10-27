@@ -1,0 +1,15 @@
+{
+  "baseControlCommit": "659b495700998b5170e0eca4413a6cdae5a2d966",
+  "sourceOnly": true,
+  "built": false,
+  "runtimeValidated": false,
+  "files": [
+    "Calendar/Calendar.tsx",
+    "DatePicker/helpers/components/FloatingDatePickerRenderer.tsx",
+    "Modal/modal.styles.ts",
+    "Select/select.styles.ts"
+  ],
+  "registrationSites": 16,
+  "windowOwner": "W2",
+  "nextAction": "Await returned browser/heavybuild window before building or running portal fixtures. Preserve Calendar direct imports from Select."
+}
