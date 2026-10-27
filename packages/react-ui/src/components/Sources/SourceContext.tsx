@@ -39,7 +39,12 @@ export const getFaviconUrl = (url?: string) => {
     }
     const parsedUrl = new URL(url);
     const domain = parsedUrl.hostname;
-    return `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
+    // Encode the hostname: `&`, `=`, `~` and `'` are legal WHATWG hostname
+    // characters, so interpolating it raw let a crafted source url append or
+    // override query parameters on this outbound third-party request. Source
+    // urls are document- or LLM-supplied, which makes that reachable from
+    // untrusted data.
+    return `https://www.google.com/s2/favicons?sz=128&domain=${encodeURIComponent(domain)}`;
   } catch {
     return "";
   }

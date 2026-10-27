@@ -107,7 +107,15 @@ export function useChartDimensions<T extends ChartData>({
         ? containerHeight
         : DEFAULT_CHART_HEIGHT;
   const shouldFitLegend = resolveShouldFitLegend(fitLegendInHeight, height);
-  const svgAvailableHeight = shouldFitLegend ? resolvedHeight - legendHeight : resolvedHeight;
+  // Clamped at the source: when the container is briefly smaller than the legend
+  // -- which happens mid-stream before layout settles -- the subtraction went
+  // negative and flowed into `totalHeight`, producing `<svg height="-25">` and a
+  // browser error on every streamed render. `chartInnerHeight` below was already
+  // clamped; `totalHeight` and the x-axis `maxHeight` were not.
+  const svgAvailableHeight = Math.max(
+    0,
+    shouldFitLegend ? resolvedHeight - legendHeight : resolvedHeight,
+  );
 
   // "angled" is fit-only; the scrolling axis also drops to one line in narrow containers.
   const tickVariant: XAxisTickVariant =
