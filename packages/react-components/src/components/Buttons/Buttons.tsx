@@ -6,9 +6,7 @@ import { ButtonProps } from "../Button";
 import { IconButtonProps } from "../IconButton";
 import { buttonsStyles } from "./buttons.styles";
 
-const componentClass = css`
-  ${buttonsStyles}
-`;
+const componentClass = "openui-buttons-root";
 
 type ButtonsVariant = "vertical" | "horizontal";
 
@@ -46,3 +44,15 @@ export const Buttons = forwardRef<HTMLDivElement, ButtonsProps>((props, ref) => 
 });
 
 Buttons.displayName = "Buttons";
+
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-buttons-root {
+      ${buttonsStyles}
+    }
+  }
+`;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
