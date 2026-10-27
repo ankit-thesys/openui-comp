@@ -19,7 +19,14 @@
       }
     }
   },
-  "sideEffects": false,
+  "sideEffects": [
+    "./src/index.ts",
+    "./src/styles/defaults.ts",
+    "./dist/index.mjs",
+    "./dist/index.cjs",
+    "./dist/styles/defaults.mjs",
+    "./dist/styles/defaults.cjs"
+  ],
   "files": [
     "dist",
     "README.md",

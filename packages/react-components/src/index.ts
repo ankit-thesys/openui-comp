@@ -1,3 +1,5 @@
+import "./styles/defaults";
+
 export { IconWrapper, type IconWrapperProps } from "./components/_shared/icons";
 export { safeOpenUrl, safeUrl } from "./components/_shared/utils/safeUrl";
 export * from "./components/Accordion";
