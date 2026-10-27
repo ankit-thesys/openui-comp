@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { css } from "goober";
 import { CSSProperties, forwardRef, HTMLAttributes, ReactElement } from "react";
+import { borderBoxClass } from "../../styles/base";
 import { ButtonProps } from "../Button";
 import { IconButtonProps } from "../IconButton";
 import { buttonsStyles } from "./buttons.styles";
@@ -29,7 +30,13 @@ export const Buttons = forwardRef<HTMLDivElement, ButtonsProps>((props, ref) => 
   return (
     <div
       ref={ref}
-      className={clsx(componentClass, "openui-buttons", variantMap[variant], className)}
+      className={clsx(
+        componentClass,
+        borderBoxClass,
+        "openui-buttons",
+        variantMap[variant],
+        className,
+      )}
       style={style}
       {...rest}
     >
