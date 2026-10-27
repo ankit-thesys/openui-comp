@@ -89,12 +89,13 @@ framework's important utility modifier: Tailwind v3 `!bg-red-500`, Tailwind v4
 the primary customization APIs. Replacing host styles dynamically after mount
 has not been certified.
 
-### Stable selector pilot
+### Stable selectors
 
 Button and IconButton use stable styling targets. Importing either component
 registers its rules automatically through stock Goober. A private generated class
 on `html` is contained in `:where(...:root)` and adds zero specificity. Consumers
-do not use that class. Other component families still use generated selectors.
+do not use that class. The documented batches below share this mechanism;
+EditableTable and chart-owned styles retain their existing selectors.
 
 | Target | Button | IconButton |
 | --- | --- | --- |
@@ -127,33 +128,161 @@ aliases do not acquire the new component styles.
 
 The shared `openui-border-box` helper opts in only Buttons, FormControl and
 TagBlock roots. A later root class can override its box sizing. It does not style
-descendants or complete the selector migration for those three families.
+descendants. Buttons, FormControl and TagBlock also have their remaining owned rules
+converted in the batches below.
+
+### Control selectors
+
+The control batch adds the following stable styling roots. Existing aliases,
+parts, variants, native attributes, refs and customization props are retained.
+No rendered wrapper is added. Component styles use the same private
+zero-specificity document guard as the Button/IconButton pilot.
+
+| Family | Styling root | Existing parts and states |
+| --- | --- | --- |
+| CheckBoxGroup | `.openui-checkbox-group-root` | Existing clear/card/sunk variant classes. |
+| CheckBoxItem | `.openui-checkbox-item-container-root` | Container root; `.openui-checkbox-item-root`, indicator, content, label and description; checked/disabled states stay on the Radix control. |
+| Chips | `.openui-chips-root` | Existing chip item, icon and text; selected/disabled modifiers and focus-visible state. |
+| FormControl | `.openui-form-control-root`, `.openui-hint-root` | FormControl and Hint roots; error context still reaches Input/TextArea/Hint. |
+| Input | `.openui-input-root` | Existing small/medium/large, error, focus, hover, disabled and placeholder selectors. |
+| Label | `.openui-label-root` | Existing disabled modifier and required-asterisk part. |
+| OptionCards | `.openui-option-cards-root` | Existing grid/row/card/content/text/title/subtitle/top parts; selected/disabled/focus-visible state and container queries. |
+| RadioGroup | `.openui-radio-group-root` | Existing clear/card/sunk variants; native Radix behavior. |
+| RadioItem | `.openui-radio-item-container-root` | Container root; existing control, SVG paths, content, label and description; checked/disabled states. |
+| Slider | `.openui-slider-wrapper-root`, `.openui-slider-block-root` | Wrapper and SliderBlock roots; existing track/range/thumb/handle/value/dot/label/block parts and native disabled/focus/hover state. |
+| SwitchGroup | `.openui-switch-group-root` | Existing clear/card/sunk variants. |
+| SwitchItem | `.openui-switch-item-container-root` | Container root; existing control/thumb/content/label/description and checked/disabled states. |
+| TextArea | `.openui-textarea-root` | Existing error, focus, hover and disabled selectors. |
+| ToggleGroup | `.openui-toggle-group-root` | Existing group root and native disabled behavior. |
+| ToggleItem | `.openui-toggle-item-root` | Existing item alias and on/off, hover and disabled state. |
+
+For example, a later `.openui-input-root { border-width: 2px; }` overrides
+Input's base border width. Use the corresponding variant, state or part selector
+when overriding a declaration owned there:
+
+```css
+.openui-input-root:focus { box-shadow: none; }
+.openui-checkbox-item-container-root .openui-checkbox-item-root[data-state="checked"] {
+  background-color: navy;
+}
+.openui-toggle-item-root[data-state="on"] { background-color: navy; }
+```
+
+The Slider `className` still applies to its inner Radix root, while the new
+styling root identifies its existing outer wrapper. Checkbox/Radio/Switch
+`className` forwarding likewise remains on their existing control elements.
+Vendor inline styles are preserved: for example Radix RadioGroup and
+ToggleGroup retain inline `outline: none`. The ordinary CSS override contract
+covers the component's owned stylesheet declarations; it does not promise to
+beat inline styles without using the existing inline customization API.
+
+### Select, Calendar, DatePicker and Modal selectors
+
+These families retain their existing props, markup, behavior and theme delivery.
+Ordinary overrides require the corresponding later, unlayered selector. Floating
+coordinates and other existing inline styles keep their current precedence.
+
+| Family | Stable styling targets | Scope |
+| --- | --- | --- |
+| Select | `.openui-select-trigger-root`, `.openui-select-content-root`, `.openui-select-viewport-root`, `.openui-select-group-root`, `.openui-select-label-root`, `.openui-select-item-root`, `.openui-select-separator-root` | Existing trigger, portaled content and parts; existing aliases, size classes, placeholder/open/checked/highlighted/disabled state remain. |
+| Calendar | `.openui-calendar-container-root` | Existing outer wrapper scopes the existing DayPicker classes; owned declarations primarily target its parts, not the wrapper itself. `classNames` overrides keep their current behavior. |
+| DatePicker | `.openui-date-picker-style-root` | Marks both the existing floating container and portal content. Qualify with their existing aliases when styling one role. Floating UI's inline coordinates are preserved. |
+| Modal | `.openui-modal-portal-root`, `.openui-modal-overlay-root`, `.openui-modal-content-root`, `.openui-modal-header-root`, `.openui-modal-title-root`, `.openui-modal-close-root`, `.openui-modal-body-root` | Existing portal and parts; sizes, close paths and supported props remain unchanged. |
+
+```css
+.openui-select-trigger-root:where(.openui-select-trigger-sm) { padding-left: 24px; }
+.openui-select-content-root.openui-select-content-sm .openui-select-label { font-size: 14px; }
+.openui-calendar-container-root .openui-calendar-single-day-selected { background: navy; }
+.openui-date-picker-style-root:where(.openui-date-picker-renderer-floating-content) { z-index: 60; }
+.openui-modal-close-root:focus-visible { outline-color: navy; }
+```
+
+Calendar's custom dropdowns still use Select's private content/viewport exports;
+this internal dependency is preserved. Select, DatePicker, Modal and Calendar
+month dropdowns keep their existing nested-theme behavior in real portals.
+These client checks do not establish SSR, hydration or concurrent server support.
+
+### Presentation, layout and help selectors
+
+The following canonical targets replace generated component attachment classes.
+Existing aliases and props remain. Each target styles its existing root, part or
+variant; use the matching descendant/state context for declarations owned there.
+The private document guard contributes no specificity.
+
+| Family | Canonical targets |
+| --- | --- |
+| Separator | `.openui-separator-root` |
+| IconText | `.openui-icon-text-root`, `.openui-icon-text-layout-vertical`, `.openui-icon-text-layout-horizontal`, `.openui-icon-text-content` |
+| TextContentWrapper | `.openui-text-content-wrapper-root`, `.openui-text-content-wrapper-markdown` |
+| Image | `.openui-image-root`, `.openui-image-fit-styled`, `.openui-image-fill-styled`, `.openui-image-error` |
+| SourceFaviconImage | `.openui-source-favicon-image-root` |
+| Tag | `.openui-tag-root`, `.openui-tag-icon-styled`, `.openui-tag-text-styled`, `.openui-tag-size-sm`, `.openui-tag-size-md`, `.openui-tag-size-lg`, `.openui-tag-variant-neutral`, `.openui-tag-variant-info`, `.openui-tag-variant-success`, `.openui-tag-variant-warning`, `.openui-tag-variant-danger` |
+| IconTag | `.openui-icon-tag-root`, `.openui-icon-tag-size-xs`, `.openui-icon-tag-size-s`, `.openui-icon-tag-size-m`, `.openui-icon-tag-size-l`, `.openui-icon-tag-size-xl`, `.openui-icon-tag-variant-neutral`, `.openui-icon-tag-variant-info`, `.openui-icon-tag-variant-success`, `.openui-icon-tag-variant-warning`, `.openui-icon-tag-variant-danger`, `.openui-icon-tag-variant-inverted` |
+| TextContent | `.openui-text-content-root`, `.openui-text-content-variant-sunk`, `.openui-text-content-variant-card`, `.openui-text-content-variant-clear` |
+| InlineHeader | `.openui-inline-header-root`, `.openui-inline-header-heading-styled`, `.openui-inline-header-description-styled` |
+| Callout | `.openui-callout-root`, `.openui-callout-title-styled`, `.openui-callout-description-styled`, `.openui-callout-variant-info`, `.openui-callout-variant-danger`, `.openui-callout-variant-warning`, `.openui-callout-variant-success`, `.openui-callout-variant-neutral`, `.openui-callout-dismiss` |
+| TextCallout | `.openui-text-callout-root`, `.openui-text-callout-variant-neutral`, `.openui-text-callout-variant-info`, `.openui-text-callout-variant-warning`, `.openui-text-callout-variant-success`, `.openui-text-callout-variant-danger`, `.openui-text-callout-content-styled`, `.openui-text-callout-title`, `.openui-text-callout-description` |
+| MetricIndicator | `.openui-metric-indicator-root` |
+| CodeBlock | `.openui-code-block-root` |
+| MarkDownRenderer | `.openui-mark-down-renderer-markdown-code`, `.openui-mark-down-renderer-markdown-link`, `.openui-mark-down-renderer-markdown-root` |
+| InlineMarkdownRenderer | `.openui-inline-markdown-renderer-inline-markdown-root` |
+| ImageBlock | `.openui-image-block-wrapper-styled`, `.openui-image-block-wrapper-mobile`, `.openui-image-block-error`, `.openui-image-block-image-styled`, `.openui-image-block-image-mobile`, `.openui-image-block-loader-styled` |
+| ImageText | `.openui-image-text-root`, `.openui-image-text-image-container`, `.openui-image-text-image`, `.openui-image-text-layout-vertical`, `.openui-image-text-layout-horizontal`, `.openui-image-text-content` |
+| ImageTextLarge | `.openui-image-text-large-root`, `.openui-image-text-large-image-wrap`, `.openui-image-text-large-image` |
+| TextBlock | `.openui-text-block-root` |
+| ListItem | `.openui-list-item-root` |
+| ListBlock | `.openui-list-block-root` |
+| Card | `.openui-card-root` |
+| CardHeader | `.openui-card-header-root` |
+| Buttons | `.openui-buttons-root` |
+| TagBlock | `.openui-tag-block-root` |
+| DotMatrixLoader | `.openui-dot-matrix-loader-root` |
+| Skeleton | `.openui-skeleton-pie-chart-skeleton-root`, `.openui-skeleton-root`, `.openui-skeleton-bar-root`, `.openui-skeleton-table-skeleton-root` |
+| Sources | `.openui-sources-listed-sources-list`, `.openui-sources-listed-sources-header`, `.openui-sources-listed-sources-title`, `.openui-sources-listed-sources-buttons`, `.openui-sources-listed-sources-container`, `.openui-sources-item-item`, `.openui-sources-item-header`, `.openui-sources-item-name`, `.openui-sources-item-title`, `.openui-sources-item-logo` |
+| SnippetCardBlock | `.openui-snippet-card-block-root` |
+| ContextCardBlock | `.openui-context-card-block-card-image`, `.openui-context-card-block-card-root` |
+| CompositeCardBlock | `.openui-composite-card-block-card-wrapper`, `.openui-composite-card-block-card-root` |
+| OverviewCardBlock | `.openui-overview-card-block-root` |
+| VisualCardBlock | `.openui-visual-card-block-card-clickable`, `.openui-visual-card-block-card-root` |
+| _shared/cards | `.openui-card-layout-scrollbar`, `.openui-card-layout-layout-small`, `.openui-card-layout-layout-medium` |
+| Accordion | `.openui-accordion-root` |
+| Tabs | `.openui-tabs-tabs`, `.openui-tabs-container`, `.openui-tabs-list-styled`, `.openui-tabs-trigger-styled`, `.openui-tabs-content-styled` |
+| Steps | `.openui-steps-root`, `.openui-steps-item` |
+| SectionBlock | `.openui-section-block-foldable-section-root`, `.openui-section-block-foldable-section-item`, `.openui-section-block-foldable-section-header`, `.openui-section-block-foldable-section-trigger`, `.openui-section-block-foldable-section-content`, `.openui-section-block-section-v2-root` |
+| Carousel | `.openui-carousel-carousel`, `.openui-carousel-content-styled`, `.openui-carousel-item-styled`, `.openui-carousel-button-styled` |
+| EntityList | `.openui-entity-list-root` |
+| Table | `.openui-table-scrollable-table-wrapper`, `.openui-table-scrollable-table-scroll-container`, `.openui-table-scrollable-table-control`, `.openui-table-container-styled`, `.openui-table-table`, `.openui-table-footer-styled`, `.openui-table-head-styled`, `.openui-table-row-styled`, `.openui-table-cell-styled`, `.openui-table-alignment` |
+| TooltipWrapper | `.openui-tooltip-wrapper-body`, `.openui-tooltip-wrapper-heading`, `.openui-tooltip-wrapper-text`, `.openui-tooltip-wrapper-content` |
+| Citation | `.openui-citation-container-styled`, `.openui-citation-trigger`, `.openui-citation-tooltip-styled`, `.openui-citation-tooltip-content`, `.openui-citation-item-item`, `.openui-citation-item-logo`, `.openui-citation-item-content`, `.openui-citation-item-title`, `.openui-citation-item-source` |
+| ImageGallery | `.openui-image-gallery-gallery-modal-modal`, `.openui-image-gallery-gallery-modal-content`, `.openui-image-gallery-gallery-modal-header`, `.openui-image-gallery-gallery-modal-heading`, `.openui-image-gallery-gallery-modal-main`, `.openui-image-gallery-gallery-modal-carousel-container`, `.openui-image-gallery-gallery-modal-carousel`, `.openui-image-gallery-gallery-modal-button-container`, `.openui-image-gallery-gallery-modal-left-button`, `.openui-image-gallery-gallery-modal-right-button`, `.openui-image-gallery-gallery-modal-thumbnail`, `.openui-image-gallery-gallery-modal-active-thumbnail`, `.openui-image-gallery-gallery`, `.openui-image-gallery-grid`, `.openui-image-gallery-layout-openui-gallery-single`, `.openui-image-gallery-layout-openui-gallery-double`, `.openui-image-gallery-layout-openui-gallery-triple`, `.openui-image-gallery-layout-openui-gallery-quad`, `.openui-image-gallery-layout-openui-gallery-default`, `.openui-image-gallery-image`, `.openui-image-gallery-main-image`, `.openui-image-gallery-show-all` |
+
+Sources retains its existing important width (180px), transparent background
+and hover background on listed-source items. Ordinary background overrides do
+not beat those declarations, even when the same element also has Carousel's
+canonical item class. Use existing props/theme customization or intentionally
+important CSS where appropriate; this is not an ordinary-override pass.
+
+Clear Tabs overrides need its root, clear-state and relevant part context. Dark
+Markdown descendant selectors retain their existing compound context. Vendor
+inline syntax themes, floating coordinates, live loader opacity and private
+keyframe identifiers keep their existing precedence and behavior.
 
 ### Selector conversion status
 
-This inventory describes the selector pilot, not a completed package-wide
-conversion. All existing token fallbacks remain in place.
+Button/IconButton, the 15 control families, Select/Calendar/DatePicker/Modal and
+the presentation/layout/help families above are converted. New batches remain
+pending combined and independent acceptance; this is not a package-wide approval.
+All 1,444 existing token fallback expressions remain in place.
 
-| Status | Families |
-| --- | --- |
-| Converted pilot | Button, IconButton |
-| Shared box sizing only; remaining selectors pending | Buttons, FormControl, TagBlock |
-| Deferred to #62 | CheckBoxGroup, CheckBoxItem, Chips, Input, Label, OptionCards, RadioGroup, RadioItem, Slider, SwitchGroup, SwitchItem, TextArea, ToggleGroup, ToggleItem |
-| Deferred to #63 | Accordion, Callout, Card, CardHeader, Carousel, CodeBlock, CompositeCardBlock, ContextCardBlock, DotMatrixLoader, EditableTable, EntityList, IconTag, IconText, Image, ImageBlock, ImageText, ImageTextLarge, InlineHeader, InlineMarkdownRenderer, ListBlock, ListItem, MarkDownRenderer, MetricIndicator, OverviewCardBlock, SectionBlock, Separator, Skeleton, SnippetCardBlock, SourceFaviconImage, Sources, Steps, Table, Tabs, Tag, TextBlock, TextCallout, TextContent, TextContentWrapper, VisualCardBlock |
-| Deferred to #64 | Calendar, Citation, DatePicker, ImageGallery, Modal, Select, TooltipWrapper |
+EditableTable remains deferred. Chart-owned selectors are outside these tickets;
+their shared Button/IconButton controls consume the stable styles indirectly.
+Calendar's direct Select content/viewport dependency remains intact.
 
-Charts retain their current selectors; their Button/IconButton controls consume
-the pilot indirectly. Later tickets must review each owned root, variant, state
-and part before declaring a family converted. Calendar's direct imports of
-Select content/viewport styles remain unchanged and require coordinated review.
-
-EditableTable remains a complex deferred candidate, not an automatic exception
-for all its owned wrappers. Markdown/code wrapper styles can migrate separately
-from vendor syntax themes and KaTeX. Dynamic geometry and per-instance colors,
-React inline styles, ThemeProvider serialization and official vendor CSS retain
-their existing contracts; animations alone do not justify skipping owned styles.
-SourceFaviconImage's existing hook applies to the successful image, not its
-shared icon fallback. TextContent's existing `text-content` aliases are preserved.
+SourceFaviconImage's canonical image hook applies to the successful image only;
+its shared icon fallback retains its existing styling. Markdown/code wrappers
+are converted independently of vendor syntax theme objects and official KaTeX
+CSS/fonts. Existing per-instance inline geometry and colors, ThemeProvider
+serialization and animation behavior retain their contracts.
 
 ### Math styles and fonts
 
@@ -236,18 +365,26 @@ needed; registration remains at the existing module-level call site:
 const body = `
   font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
 `;
-const rootClass = css`
-  ${body}
-  display: flex;
-  &:disabled {
-    cursor: not-allowed;
+const scope = css`
+  :where(&:root) {
+    .openui-example-root {
+      ${body}
+      display: flex;
+      &:disabled {
+        cursor: not-allowed;
+      }
+    }
   }
 `;
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(scope);
+}
+const rootClass = "openui-example-root";
 ```
 
 Keep selector specificity, declaration order, token fallbacks and keyframe timing
 when editing styles. Use CSS units explicitly: Goober does not add `px` to numeric
-object values. Class-name maps are ordinary objects containing registered classes;
+object values. Class-name maps are ordinary objects containing canonical target strings;
 they are not CSS declaration objects.
 
 The following retain their existing non-template contracts:

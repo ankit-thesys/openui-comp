@@ -11,9 +11,19 @@ import { useDatePicker } from "../context/DatePickerContext";
 import { formatDateRange, formatSingleDate } from "../utils/helperFn";
 import { DatepickerRenderer } from "./DatePickerRenderer";
 
-const componentClass = css`
-  ${datePickerStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-date-picker-style-root {
+      ${datePickerStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+const componentClass = "openui-date-picker-style-root";
 
 const FloatingDateInput = () => {
   const { mode, selectedDate, selectedRange, isOpen, setIsOpen } = useDatePicker();

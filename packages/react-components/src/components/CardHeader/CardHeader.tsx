@@ -5,9 +5,7 @@ import { ButtonProps } from "../Button";
 import { IconButtonProps } from "../IconButton";
 import { cardHeaderStyles } from "./cardHeader.styles";
 
-const componentClass = css`
-  ${cardHeaderStyles}
-`;
+const componentClass = "openui-card-header-root";
 
 export interface CardHeaderProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
   icon?: ReactNode;
@@ -45,3 +43,15 @@ export const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>((props, re
 });
 
 CardHeader.displayName = "CardHeader";
+
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-card-header-root {
+      ${cardHeaderStyles}
+    }
+  }
+`;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}

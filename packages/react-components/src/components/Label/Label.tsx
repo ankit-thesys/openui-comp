@@ -4,9 +4,19 @@ import { css } from "goober";
 import React, { forwardRef } from "react";
 import { labelStyles } from "./label.styles";
 
-const componentClass = css`
-  ${labelStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-label-root {
+      ${labelStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+const componentClass = "openui-label-root";
 
 export interface LabelProps extends React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> {
   children: React.ReactNode;

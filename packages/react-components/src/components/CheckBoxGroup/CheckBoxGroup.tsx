@@ -4,9 +4,19 @@ import React from "react";
 import { CheckBoxItemProps } from "../CheckBoxItem";
 import { componentStyles } from "./styles";
 
-const componentClass = css`
-  ${componentStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-checkbox-group-root {
+      ${componentStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+const componentClass = "openui-checkbox-group-root";
 
 type CheckBoxGroupVariant = "clear" | "card" | "sunk";
 

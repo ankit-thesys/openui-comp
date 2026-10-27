@@ -2,9 +2,7 @@ import clsx from "clsx";
 import { css } from "goober";
 import { SkeletonBar } from "./SkeletonBar";
 import { tableStyles } from "./tableSkeleton.styles";
-const componentClass = css`
-  ${tableStyles}
-`;
+const componentClass = "openui-skeleton-table-skeleton-root";
 export function TableSkeleton({ rows = 5, columns = 4 }: { rows?: number; columns?: number }) {
   return (
     <div className={clsx(componentClass, "openui-skeleton-table")}>
@@ -36,4 +34,16 @@ export function TableSkeleton({ rows = 5, columns = 4 }: { rows?: number; column
       ))}
     </div>
   );
+}
+
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-skeleton-table-skeleton-root {
+      ${tableStyles}
+    }
+  }
+`;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
 }

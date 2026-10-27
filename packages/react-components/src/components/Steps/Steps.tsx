@@ -1,12 +1,8 @@
 import { css } from "goober";
 import React, { createContext, useContext } from "react";
 import { stepItemStyles, stepsStyles } from "./steps.styles";
-const componentClass = css`
-  ${stepsStyles}
-`;
-const itemClass = css`
-  ${stepItemStyles}
-`;
+const componentClass = "openui-steps-root";
+const itemClass = "openui-steps-item";
 
 export interface StepsItemProps {
   title: React.ReactNode;
@@ -52,3 +48,18 @@ export const StepsItem: React.FC<StepsItemProps> = ({ title, details, number }) 
     </div>
   );
 };
+
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-steps-root {
+      ${stepsStyles}
+    }
+    .openui-steps-item {
+      ${stepItemStyles}
+    }
+  }
+`;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}

@@ -2,9 +2,7 @@ import clsx from "clsx";
 import { css } from "goober";
 import { pieStyles } from "./pieChartSkeleton.styles";
 import { SkeletonBar } from "./SkeletonBar";
-const componentClass = css`
-  ${pieStyles}
-`;
+const componentClass = "openui-skeleton-pie-chart-skeleton-root";
 export function PieChartSkeleton({
   size = 200,
   legendItems = 4,
@@ -47,4 +45,16 @@ export function PieChartSkeleton({
       </div>
     </div>
   );
+}
+
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-skeleton-pie-chart-skeleton-root {
+      ${pieStyles}
+    }
+  }
+`;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
 }

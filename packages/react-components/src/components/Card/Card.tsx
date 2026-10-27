@@ -3,9 +3,7 @@ import { css } from "goober";
 import React from "react";
 import { cardStyles } from "./card.styles";
 
-const componentClass = css`
-  ${cardStyles}
-`;
+const componentClass = "openui-card-root";
 
 type CardVariant = "clear" | "card" | "sunk";
 type CardWidth = "standard" | "full";
@@ -47,3 +45,15 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>((props, ref) => 
 });
 
 Card.displayName = "Card";
+
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-card-root {
+      ${cardStyles}
+    }
+  }
+`;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}

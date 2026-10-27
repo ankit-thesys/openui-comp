@@ -3,9 +3,7 @@ import React from "react";
 import { Separator } from "../Separator";
 import { sectionStyles } from "./sectionV2.styles";
 
-const componentClass = css`
-  ${sectionStyles}
-`;
+const componentClass = "openui-section-block-section-v2-root";
 
 interface SectionV2Props {
   trigger: string;
@@ -25,3 +23,15 @@ export const SectionV2 = ({ trigger, children }: SectionV2Props) => {
     </div>
   );
 };
+
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-section-block-section-v2-root {
+      ${sectionStyles}
+    }
+  }
+`;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
