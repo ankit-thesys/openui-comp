@@ -72,6 +72,32 @@ framework's important utility modifier: Tailwind v3 `!bg-red-500`, Tailwind v4
 the primary customization APIs. Replacing host styles dynamically after mount
 has not been certified.
 
+### Server-rendered styles
+
+Component styles live in Goober's in-memory sheet on the server. Inline them in
+every server response with `getComponentStyles()` so the first paint is styled
+before hydration:
+
+```tsx
+import { getComponentStyles } from "@openuidev/react-components";
+import { renderToString } from "react-dom/server";
+
+const html = renderToString(<App />);
+const page = `<!doctype html>
+<html>
+  <head><style id="_goober">${getComponentStyles()}</style></head>
+  <body><div id="root">${html}</div></body>
+</html>`;
+```
+
+Keep the `_goober` id: the browser runtime adopts that element instead of
+injecting a second copy. Each call returns the full stylesheet. Goober's own
+`extractCss` returns only rules added since its previous call and then empties
+the sheet, so after the first request it returns nothing. Do not call `extractCss`
+from the same Goober instance in the application: it takes the rules before
+`getComponentStyles` can collect them. Rules the application registers with
+that Goober instance are included and kept for the life of the process.
+
 ### Math styles and fonts
 
 TextContentWrapper retains its lazy math renderer and automatically imports
@@ -118,9 +144,10 @@ are also public. Shared chart implementations remain private.
 ## Support boundary and inherited behavior
 
 React/ReactDOM19 are required. Zod3.25+ or4 and Zustand4.5.5+ remain peer
-dependencies. **SSR, hydration, streaming SSR and concurrent server style
-isolation are deferred.** Node imports and declarations do not establish SSR
-support. Client-side OpenUI response streaming is a separate capability.
+dependencies. Server style output uses `getComponentStyles()` (see
+[Server-rendered styles](#server-rendered-styles)). **Hydration, streaming SSR and
+concurrent server style isolation are not certified.** Node imports and
+declarations do not establish SSR support. Client-side OpenUI response streaming is a separate capability.
 
 Extraction preserves inherited behavior rather than redesigning it:
 
