@@ -1,0 +1,37 @@
+{
+  "verdict": "PASS bounded independent #61 corrected stable-target pilot; #62-64 may proceed under scoped gates",
+  "sourceHead": "1c3833a045c4c66de92b69413a3824eca1798fcd",
+  "packageTree": "50aecff579bd19b75cb6102377679d308cfc0fb6",
+  "archiveSHA256": "0dad61fb4c48477f0496f819bef2f131908a3789ec184cefb7fe8de94c68d6a5",
+  "baseline60SHA256": "1db41852f9e5aa11ccbfe5a56cdb3d00c8ad753ad5e73cb19bdf4832e7f7b957",
+  "browser": "156.0.8078.48",
+  "checks": 259,
+  "passed": 259,
+  "failures": [],
+  "cssomRulesPerFrameworkOrder": 76,
+  "frameworkOrderConfigurations": 6,
+  "pilotRootsPerArmConfiguration": 111,
+  "iconPartsPerArmConfiguration": 80,
+  "unchangedOwnedSourcesBound": 371,
+  "unchangedDeclarations": 440,
+  "retainedFallbackExpressions": 1444,
+  "nativeExports": 166,
+  "lazyLimit": "First lazy import co-registers Button+IconButton in shared retained chunk in both baseline/candidate; no eager pilot styles; individual entry prunes other pilot",
+  "sourceFilesChanged": 4,
+  "protected67": "c1aaf994d5c0fbfb56b83685221eeea9b409e57c",
+  "protected42": "d1292715028f816bd6a0dcf92766ec7dd15350f4",
+  "windowReleased": {
+    "releasedUTC": "2026-10-27T11:44:46.872Z",
+    "browserClosed": true,
+    "serverClosed": true,
+    "buildWindowReleased": true
+  },
+  "limits": [
+    "No generation-free/unconditional global claim",
+    "No #62-64 family acceptance transferred",
+    "No strict per-component lazy chunk isolation guarantee",
+    "Unreachable emitted vendor chunks/assets retained",
+    "No SSR/hydration/performance/memory/fullmatrix/duplicate-Goober certification",
+    "Historical findings unchanged;58 deletion deferred"
+  ]
+}
