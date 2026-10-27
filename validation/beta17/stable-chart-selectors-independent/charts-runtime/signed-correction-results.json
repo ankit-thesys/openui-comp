@@ -1,0 +1,986 @@
+{
+  "browser": "156.0.8078.48",
+  "checks": [
+    {
+      "name": "plain/before/baseline/real-app-Area-zero",
+      "pass": true
+    },
+    {
+      "name": "plain/before/baseline/real-matching-public-override",
+      "pass": true
+    },
+    {
+      "name": "plain/before/candidate/real-app-Area-zero",
+      "pass": true
+    },
+    {
+      "name": "plain/before/candidate/real-matching-public-override",
+      "pass": true
+    },
+    {
+      "name": "plain/before/actual-Area-geometry-pair",
+      "pass": true
+    },
+    {
+      "name": "plain/after/baseline/real-app-Area-zero",
+      "pass": true
+    },
+    {
+      "name": "plain/after/baseline/real-matching-public-override",
+      "pass": true
+    },
+    {
+      "name": "plain/after/candidate/real-app-Area-zero",
+      "pass": true
+    },
+    {
+      "name": "plain/after/candidate/real-matching-public-override",
+      "pass": true
+    },
+    {
+      "name": "plain/after/actual-Area-geometry-pair",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/baseline/real-app-Area-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/baseline/real-matching-public-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/candidate/real-app-Area-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/candidate/real-matching-public-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/actual-Area-geometry-pair",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/baseline/real-app-Area-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/baseline/real-matching-public-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/candidate/real-app-Area-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/candidate/real-matching-public-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/actual-Area-geometry-pair",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/baseline/real-app-Area-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/baseline/real-matching-public-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/candidate/real-app-Area-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/candidate/real-matching-public-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/actual-Area-geometry-pair",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/baseline/real-app-Area-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/baseline/real-matching-public-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/candidate/real-app-Area-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/candidate/real-matching-public-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/actual-Area-geometry-pair",
+      "pass": true
+    }
+  ],
+  "records": [
+    {
+      "key": "plain/before",
+      "arm": "baseline",
+      "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+      "observed": [
+        {
+          "matches": true,
+          "stroke": "rgb(103, 102, 101)"
+        }
+      ]
+    },
+    {
+      "key": "plain/before",
+      "arm": "candidate",
+      "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+      "observed": [
+        {
+          "matches": true,
+          "stroke": "rgb(103, 102, 101)"
+        }
+      ]
+    },
+    {
+      "key": "plain/before",
+      "pair": {
+        "baseline": [
+          {
+            "tag": "line",
+            "text": "",
+            "attrs": {
+              "x": null,
+              "y": null,
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714",
+              "width": null,
+              "height": null,
+              "cx": null,
+              "cy": null,
+              "r": null,
+              "rx": null,
+              "d": null,
+              "data-openui-highlight-level": null,
+              "data-state": null,
+              "disabled": null
+            },
+            "size": [
+              499,
+              0
+            ],
+            "style": {
+              "display": "inline",
+              "position": "static",
+              "boxSizing": "content-box",
+              "width": "auto",
+              "height": "auto",
+              "minWidth": "0px",
+              "minHeight": "0px",
+              "maxWidth": "none",
+              "padding": "0px",
+              "border": "0px none rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "gap": "normal",
+              "flexDirection": "row",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "font": "16px Times",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "strokeWidth": "1px",
+              "strokeDasharray": "none",
+              "fillOpacity": "1",
+              "strokeOpacity": "1",
+              "opacity": "1",
+              "overflow": "visible",
+              "cursor": "auto",
+              "visibility": "visible"
+            }
+          }
+        ],
+        "candidate": [
+          {
+            "tag": "line",
+            "text": "",
+            "attrs": {
+              "x": null,
+              "y": null,
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714",
+              "width": null,
+              "height": null,
+              "cx": null,
+              "cy": null,
+              "r": null,
+              "rx": null,
+              "d": null,
+              "data-openui-highlight-level": null,
+              "data-state": null,
+              "disabled": null
+            },
+            "size": [
+              499,
+              0
+            ],
+            "style": {
+              "display": "inline",
+              "position": "static",
+              "boxSizing": "content-box",
+              "width": "auto",
+              "height": "auto",
+              "minWidth": "0px",
+              "minHeight": "0px",
+              "maxWidth": "none",
+              "padding": "0px",
+              "border": "0px none rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "gap": "normal",
+              "flexDirection": "row",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "font": "16px Times",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "strokeWidth": "1px",
+              "strokeDasharray": "none",
+              "fillOpacity": "1",
+              "strokeOpacity": "1",
+              "opacity": "1",
+              "overflow": "visible",
+              "cursor": "auto",
+              "visibility": "visible"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "plain/after",
+      "arm": "baseline",
+      "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+      "observed": [
+        {
+          "matches": true,
+          "stroke": "rgb(103, 102, 101)"
+        }
+      ]
+    },
+    {
+      "key": "plain/after",
+      "arm": "candidate",
+      "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+      "observed": [
+        {
+          "matches": true,
+          "stroke": "rgb(103, 102, 101)"
+        }
+      ]
+    },
+    {
+      "key": "plain/after",
+      "pair": {
+        "baseline": [
+          {
+            "tag": "line",
+            "text": "",
+            "attrs": {
+              "x": null,
+              "y": null,
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714",
+              "width": null,
+              "height": null,
+              "cx": null,
+              "cy": null,
+              "r": null,
+              "rx": null,
+              "d": null,
+              "data-openui-highlight-level": null,
+              "data-state": null,
+              "disabled": null
+            },
+            "size": [
+              499,
+              0
+            ],
+            "style": {
+              "display": "inline",
+              "position": "static",
+              "boxSizing": "content-box",
+              "width": "auto",
+              "height": "auto",
+              "minWidth": "0px",
+              "minHeight": "0px",
+              "maxWidth": "none",
+              "padding": "0px",
+              "border": "0px none rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "gap": "normal",
+              "flexDirection": "row",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "font": "16px Times",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "strokeWidth": "1px",
+              "strokeDasharray": "none",
+              "fillOpacity": "1",
+              "strokeOpacity": "1",
+              "opacity": "1",
+              "overflow": "visible",
+              "cursor": "auto",
+              "visibility": "visible"
+            }
+          }
+        ],
+        "candidate": [
+          {
+            "tag": "line",
+            "text": "",
+            "attrs": {
+              "x": null,
+              "y": null,
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714",
+              "width": null,
+              "height": null,
+              "cx": null,
+              "cy": null,
+              "r": null,
+              "rx": null,
+              "d": null,
+              "data-openui-highlight-level": null,
+              "data-state": null,
+              "disabled": null
+            },
+            "size": [
+              499,
+              0
+            ],
+            "style": {
+              "display": "inline",
+              "position": "static",
+              "boxSizing": "content-box",
+              "width": "auto",
+              "height": "auto",
+              "minWidth": "0px",
+              "minHeight": "0px",
+              "maxWidth": "none",
+              "padding": "0px",
+              "border": "0px none rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "gap": "normal",
+              "flexDirection": "row",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "font": "16px Times",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "strokeWidth": "1px",
+              "strokeDasharray": "none",
+              "fillOpacity": "1",
+              "strokeOpacity": "1",
+              "opacity": "1",
+              "overflow": "visible",
+              "cursor": "auto",
+              "visibility": "visible"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "tailwind3/before",
+      "arm": "baseline",
+      "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+      "observed": [
+        {
+          "matches": true,
+          "stroke": "rgb(103, 102, 101)"
+        }
+      ]
+    },
+    {
+      "key": "tailwind3/before",
+      "arm": "candidate",
+      "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+      "observed": [
+        {
+          "matches": true,
+          "stroke": "rgb(103, 102, 101)"
+        }
+      ]
+    },
+    {
+      "key": "tailwind3/before",
+      "pair": {
+        "baseline": [
+          {
+            "tag": "line",
+            "text": "",
+            "attrs": {
+              "x": null,
+              "y": null,
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714",
+              "width": null,
+              "height": null,
+              "cx": null,
+              "cy": null,
+              "r": null,
+              "rx": null,
+              "d": null,
+              "data-openui-highlight-level": null,
+              "data-state": null,
+              "disabled": null
+            },
+            "size": [
+              499,
+              0
+            ],
+            "style": {
+              "display": "inline",
+              "position": "static",
+              "boxSizing": "border-box",
+              "width": "auto",
+              "height": "auto",
+              "minWidth": "0px",
+              "minHeight": "0px",
+              "maxWidth": "none",
+              "padding": "0px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "0px",
+              "gap": "normal",
+              "flexDirection": "row",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "strokeWidth": "1px",
+              "strokeDasharray": "none",
+              "fillOpacity": "1",
+              "strokeOpacity": "1",
+              "opacity": "1",
+              "overflow": "visible",
+              "cursor": "auto",
+              "visibility": "visible"
+            }
+          }
+        ],
+        "candidate": [
+          {
+            "tag": "line",
+            "text": "",
+            "attrs": {
+              "x": null,
+              "y": null,
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714",
+              "width": null,
+              "height": null,
+              "cx": null,
+              "cy": null,
+              "r": null,
+              "rx": null,
+              "d": null,
+              "data-openui-highlight-level": null,
+              "data-state": null,
+              "disabled": null
+            },
+            "size": [
+              499,
+              0
+            ],
+            "style": {
+              "display": "inline",
+              "position": "static",
+              "boxSizing": "border-box",
+              "width": "auto",
+              "height": "auto",
+              "minWidth": "0px",
+              "minHeight": "0px",
+              "maxWidth": "none",
+              "padding": "0px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "0px",
+              "gap": "normal",
+              "flexDirection": "row",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "strokeWidth": "1px",
+              "strokeDasharray": "none",
+              "fillOpacity": "1",
+              "strokeOpacity": "1",
+              "opacity": "1",
+              "overflow": "visible",
+              "cursor": "auto",
+              "visibility": "visible"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "tailwind3/after",
+      "arm": "baseline",
+      "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+      "observed": [
+        {
+          "matches": true,
+          "stroke": "rgb(103, 102, 101)"
+        }
+      ]
+    },
+    {
+      "key": "tailwind3/after",
+      "arm": "candidate",
+      "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+      "observed": [
+        {
+          "matches": true,
+          "stroke": "rgb(103, 102, 101)"
+        }
+      ]
+    },
+    {
+      "key": "tailwind3/after",
+      "pair": {
+        "baseline": [
+          {
+            "tag": "line",
+            "text": "",
+            "attrs": {
+              "x": null,
+              "y": null,
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714",
+              "width": null,
+              "height": null,
+              "cx": null,
+              "cy": null,
+              "r": null,
+              "rx": null,
+              "d": null,
+              "data-openui-highlight-level": null,
+              "data-state": null,
+              "disabled": null
+            },
+            "size": [
+              499,
+              0
+            ],
+            "style": {
+              "display": "inline",
+              "position": "static",
+              "boxSizing": "border-box",
+              "width": "auto",
+              "height": "auto",
+              "minWidth": "0px",
+              "minHeight": "0px",
+              "maxWidth": "none",
+              "padding": "0px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "0px",
+              "gap": "normal",
+              "flexDirection": "row",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "strokeWidth": "1px",
+              "strokeDasharray": "none",
+              "fillOpacity": "1",
+              "strokeOpacity": "1",
+              "opacity": "1",
+              "overflow": "visible",
+              "cursor": "auto",
+              "visibility": "visible"
+            }
+          }
+        ],
+        "candidate": [
+          {
+            "tag": "line",
+            "text": "",
+            "attrs": {
+              "x": null,
+              "y": null,
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714",
+              "width": null,
+              "height": null,
+              "cx": null,
+              "cy": null,
+              "r": null,
+              "rx": null,
+              "d": null,
+              "data-openui-highlight-level": null,
+              "data-state": null,
+              "disabled": null
+            },
+            "size": [
+              499,
+              0
+            ],
+            "style": {
+              "display": "inline",
+              "position": "static",
+              "boxSizing": "border-box",
+              "width": "auto",
+              "height": "auto",
+              "minWidth": "0px",
+              "minHeight": "0px",
+              "maxWidth": "none",
+              "padding": "0px",
+              "border": "0px solid rgb(229, 231, 235)",
+              "borderRadius": "0px",
+              "gap": "normal",
+              "flexDirection": "row",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "font": "16px / 24px ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "strokeWidth": "1px",
+              "strokeDasharray": "none",
+              "fillOpacity": "1",
+              "strokeOpacity": "1",
+              "opacity": "1",
+              "overflow": "visible",
+              "cursor": "auto",
+              "visibility": "visible"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "tailwind4/before",
+      "arm": "baseline",
+      "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+      "observed": [
+        {
+          "matches": true,
+          "stroke": "rgb(103, 102, 101)"
+        }
+      ]
+    },
+    {
+      "key": "tailwind4/before",
+      "arm": "candidate",
+      "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+      "observed": [
+        {
+          "matches": true,
+          "stroke": "rgb(103, 102, 101)"
+        }
+      ]
+    },
+    {
+      "key": "tailwind4/before",
+      "pair": {
+        "baseline": [
+          {
+            "tag": "line",
+            "text": "",
+            "attrs": {
+              "x": null,
+              "y": null,
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714",
+              "width": null,
+              "height": null,
+              "cx": null,
+              "cy": null,
+              "r": null,
+              "rx": null,
+              "d": null,
+              "data-openui-highlight-level": null,
+              "data-state": null,
+              "disabled": null
+            },
+            "size": [
+              499,
+              0
+            ],
+            "style": {
+              "display": "inline",
+              "position": "static",
+              "boxSizing": "border-box",
+              "width": "auto",
+              "height": "auto",
+              "minWidth": "0px",
+              "minHeight": "0px",
+              "maxWidth": "none",
+              "padding": "0px",
+              "border": "0px solid rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "gap": "normal",
+              "flexDirection": "row",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "font": "16px / 24px -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "strokeWidth": "1px",
+              "strokeDasharray": "none",
+              "fillOpacity": "1",
+              "strokeOpacity": "1",
+              "opacity": "1",
+              "overflow": "visible",
+              "cursor": "auto",
+              "visibility": "visible"
+            }
+          }
+        ],
+        "candidate": [
+          {
+            "tag": "line",
+            "text": "",
+            "attrs": {
+              "x": null,
+              "y": null,
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714",
+              "width": null,
+              "height": null,
+              "cx": null,
+              "cy": null,
+              "r": null,
+              "rx": null,
+              "d": null,
+              "data-openui-highlight-level": null,
+              "data-state": null,
+              "disabled": null
+            },
+            "size": [
+              499,
+              0
+            ],
+            "style": {
+              "display": "inline",
+              "position": "static",
+              "boxSizing": "border-box",
+              "width": "auto",
+              "height": "auto",
+              "minWidth": "0px",
+              "minHeight": "0px",
+              "maxWidth": "none",
+              "padding": "0px",
+              "border": "0px solid rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "gap": "normal",
+              "flexDirection": "row",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "font": "16px / 24px -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "strokeWidth": "1px",
+              "strokeDasharray": "none",
+              "fillOpacity": "1",
+              "strokeOpacity": "1",
+              "opacity": "1",
+              "overflow": "visible",
+              "cursor": "auto",
+              "visibility": "visible"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "tailwind4/after",
+      "arm": "baseline",
+      "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+      "observed": [
+        {
+          "matches": true,
+          "stroke": "rgb(103, 102, 101)"
+        }
+      ]
+    },
+    {
+      "key": "tailwind4/after",
+      "arm": "candidate",
+      "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+      "observed": [
+        {
+          "matches": true,
+          "stroke": "rgb(103, 102, 101)"
+        }
+      ]
+    },
+    {
+      "key": "tailwind4/after",
+      "pair": {
+        "baseline": [
+          {
+            "tag": "line",
+            "text": "",
+            "attrs": {
+              "x": null,
+              "y": null,
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714",
+              "width": null,
+              "height": null,
+              "cx": null,
+              "cy": null,
+              "r": null,
+              "rx": null,
+              "d": null,
+              "data-openui-highlight-level": null,
+              "data-state": null,
+              "disabled": null
+            },
+            "size": [
+              499,
+              0
+            ],
+            "style": {
+              "display": "inline",
+              "position": "static",
+              "boxSizing": "border-box",
+              "width": "auto",
+              "height": "auto",
+              "minWidth": "0px",
+              "minHeight": "0px",
+              "maxWidth": "none",
+              "padding": "0px",
+              "border": "0px solid rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "gap": "normal",
+              "flexDirection": "row",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "font": "16px / 24px -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "strokeWidth": "1px",
+              "strokeDasharray": "none",
+              "fillOpacity": "1",
+              "strokeOpacity": "1",
+              "opacity": "1",
+              "overflow": "visible",
+              "cursor": "auto",
+              "visibility": "visible"
+            }
+          }
+        ],
+        "candidate": [
+          {
+            "tag": "line",
+            "text": "",
+            "attrs": {
+              "x": null,
+              "y": null,
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714",
+              "width": null,
+              "height": null,
+              "cx": null,
+              "cy": null,
+              "r": null,
+              "rx": null,
+              "d": null,
+              "data-openui-highlight-level": null,
+              "data-state": null,
+              "disabled": null
+            },
+            "size": [
+              499,
+              0
+            ],
+            "style": {
+              "display": "inline",
+              "position": "static",
+              "boxSizing": "border-box",
+              "width": "auto",
+              "height": "auto",
+              "minWidth": "0px",
+              "minHeight": "0px",
+              "maxWidth": "none",
+              "padding": "0px",
+              "border": "0px solid rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "gap": "normal",
+              "flexDirection": "row",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "font": "16px / 24px -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "fill": "rgb(0, 0, 0)",
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "strokeWidth": "1px",
+              "strokeDasharray": "none",
+              "fillOpacity": "1",
+              "strokeOpacity": "1",
+              "opacity": "1",
+              "overflow": "visible",
+              "cursor": "auto",
+              "visibility": "visible"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "seen": []
+}

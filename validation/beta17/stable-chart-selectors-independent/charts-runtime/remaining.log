@@ -1,0 +1,19 @@
+START signed 2026-10-27T16:46:39.435Z
+{"phase":"signed","checks":132,"passed":126,"failed":["plain/before/area/paired-signed-geometry","plain/after/area/paired-signed-geometry","tailwind3/before/area/paired-signed-geometry","tailwind3/after/area/paired-signed-geometry","tailwind4/before/area/paired-signed-geometry","tailwind4/after/area/paired-signed-geometry"],"error":null}
+END signed 2026-10-27T16:47:43.569Z
+START unique 2026-10-27T16:47:43.569Z
+{"phase":"unique","checks":3,"passed":3,"failed":[],"error":"Error: locator.click: Error: strict mode violation: locator('.openui-mini-area-chart-container') resolved to 2 elements:\n    1) <div data-shared-host-index=\"51\" class=\"openui-mini-area-chart-container\">Host openui-mini-area-chart-container</div> aka getByText('Host openui-mini-area-chart-')\n    2) <div class=\"go3857798306 openui-mini-chart openui-mini-area-chart-container openui-mini-chart--clickable\">…</div> aka locator('.go3857798306').first()\n\nCall log:\n\u001b[2m  - waiting for locator('.openui-mini-area-chart-container')\u001b[22m\n"}
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.click: Error: strict mode violation: locator('.openui-mini-area-chart-container') resolved to 2 elements:
+    1) <div data-shared-host-index="51" class="openui-mini-area-chart-container">Host openui-mini-area-chart-container</div> aka getByText('Host openui-mini-area-chart-')
+    2) <div class="go3857798306 openui-mini-chart openui-mini-area-chart-container openui-mini-chart--clickable">…</div> aka locator('.go3857798306').first()
+
+Call log:
+[2m  - waiting for locator('.openui-mini-area-chart-container')[22m
+
+    at /private/tmp/openui-styles-independent-verification/charts-runtime/unique.mjs:1:2266
+
+Node.js v22.22.2
