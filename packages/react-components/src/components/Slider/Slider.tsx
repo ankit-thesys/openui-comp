@@ -4,9 +4,19 @@ import { css } from "goober";
 import { forwardRef, ReactNode, useMemo, useState } from "react";
 import { sliderStyles } from "./slider.styles";
 
-const componentClass = css`
-  ${sliderStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-slider-wrapper-root {
+      ${sliderStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+const componentClass = "openui-slider-wrapper-root";
 
 const formatNumber = (num: number | undefined): string => {
   if (num === undefined) {

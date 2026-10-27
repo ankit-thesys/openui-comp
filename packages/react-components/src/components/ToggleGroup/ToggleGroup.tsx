@@ -5,9 +5,19 @@ import { ReactElement } from "react";
 import { ToggleItemProps } from "../ToggleItem";
 import { componentStyles } from "./styles";
 
-const componentClass = css`
-  ${componentStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-toggle-group-root {
+      ${componentStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+const componentClass = "openui-toggle-group-root";
 
 type RadixToggleGroupProps =
   ToggleGroupPrimitive.ToggleGroupSingleProps | ToggleGroupPrimitive.ToggleGroupMultipleProps;

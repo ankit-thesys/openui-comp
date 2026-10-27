@@ -4,9 +4,19 @@ import React from "react";
 import { useFormControlContext } from "../FormControl/context";
 import { inputStyles } from "./input.styles";
 
-const componentClass = css`
-  ${inputStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-input-root {
+      ${inputStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+const componentClass = "openui-input-root";
 
 export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   styles?: React.CSSProperties;

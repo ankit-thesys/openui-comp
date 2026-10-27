@@ -4,9 +4,19 @@ import React, { forwardRef } from "react";
 import { useFormControlContext } from "../context";
 import { hintStyles } from "./hint.styles";
 
-const componentClass = css`
-  ${hintStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-hint-root {
+      ${hintStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+const componentClass = "openui-hint-root";
 
 export interface HintProps extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;

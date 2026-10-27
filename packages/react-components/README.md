@@ -94,7 +94,8 @@ has not been certified.
 Button and IconButton use stable styling targets. Importing either component
 registers its rules automatically through stock Goober. A private generated class
 on `html` is contained in `:where(...:root)` and adds zero specificity. Consumers
-do not use that class. Other component families still use generated selectors.
+do not use that class. Families outside this pilot and the control batch below
+still use generated selectors.
 
 | Target | Button | IconButton |
 | --- | --- | --- |
@@ -127,7 +128,53 @@ aliases do not acquire the new component styles.
 
 The shared `openui-border-box` helper opts in only Buttons, FormControl and
 TagBlock roots. A later root class can override its box sizing. It does not style
-descendants or complete the selector migration for those three families.
+descendants. The control batch below also converts FormControl's remaining
+owned rules; Buttons and TagBlock still have shared-base-only conversion.
+
+### Control selectors
+
+The control batch adds the following stable styling roots. Existing aliases,
+parts, variants, native attributes, refs and customization props are retained.
+No rendered wrapper is added. Component styles use the same private
+zero-specificity document guard as the Button/IconButton pilot.
+
+| Family | Styling root | Existing parts and states |
+| --- | --- | --- |
+| CheckBoxGroup | `.openui-checkbox-group-root` | Existing clear/card/sunk variant classes. |
+| CheckBoxItem | `.openui-checkbox-item-container-root` | Container root; `.openui-checkbox-item-root`, indicator, content, label and description; checked/disabled states stay on the Radix control. |
+| Chips | `.openui-chips-root` | Existing chip item, icon and text; selected/disabled modifiers and focus-visible state. |
+| FormControl | `.openui-form-control-root`, `.openui-hint-root` | FormControl and Hint roots; error context still reaches Input/TextArea/Hint. |
+| Input | `.openui-input-root` | Existing small/medium/large, error, focus, hover, disabled and placeholder selectors. |
+| Label | `.openui-label-root` | Existing disabled modifier and required-asterisk part. |
+| OptionCards | `.openui-option-cards-root` | Existing grid/row/card/content/text/title/subtitle/top parts; selected/disabled/focus-visible state and container queries. |
+| RadioGroup | `.openui-radio-group-root` | Existing clear/card/sunk variants; native Radix behavior. |
+| RadioItem | `.openui-radio-item-container-root` | Container root; existing control, SVG paths, content, label and description; checked/disabled states. |
+| Slider | `.openui-slider-wrapper-root`, `.openui-slider-block-root` | Wrapper and SliderBlock roots; existing track/range/thumb/handle/value/dot/label/block parts and native disabled/focus/hover state. |
+| SwitchGroup | `.openui-switch-group-root` | Existing clear/card/sunk variants. |
+| SwitchItem | `.openui-switch-item-container-root` | Container root; existing control/thumb/content/label/description and checked/disabled states. |
+| TextArea | `.openui-textarea-root` | Existing error, focus, hover and disabled selectors. |
+| ToggleGroup | `.openui-toggle-group-root` | Existing group root and native disabled behavior. |
+| ToggleItem | `.openui-toggle-item-root` | Existing item alias and on/off, hover and disabled state. |
+
+For example, a later `.openui-input-root { border-width: 2px; }` overrides
+Input's base border width. Use the corresponding variant, state or part selector
+when overriding a declaration owned there:
+
+```css
+.openui-input-root:focus { box-shadow: none; }
+.openui-checkbox-item-container-root .openui-checkbox-item-root[data-state="checked"] {
+  background-color: navy;
+}
+.openui-toggle-item-root[data-state="on"] { background-color: navy; }
+```
+
+The Slider `className` still applies to its inner Radix root, while the new
+styling root identifies its existing outer wrapper. Checkbox/Radio/Switch
+`className` forwarding likewise remains on their existing control elements.
+Vendor inline styles are preserved: for example Radix RadioGroup and
+ToggleGroup retain inline `outline: none`. The ordinary CSS override contract
+covers the component's owned stylesheet declarations; it does not promise to
+beat inline styles without using the existing inline customization API.
 
 ### Selector conversion status
 
@@ -136,9 +183,8 @@ conversion. All existing token fallbacks remain in place.
 
 | Status | Families |
 | --- | --- |
-| Converted pilot | Button, IconButton |
-| Shared box sizing only; remaining selectors pending | Buttons, FormControl, TagBlock |
-| Deferred to #62 | CheckBoxGroup, CheckBoxItem, Chips, Input, Label, OptionCards, RadioGroup, RadioItem, Slider, SwitchGroup, SwitchItem, TextArea, ToggleGroup, ToggleItem |
+| Converted (pending batch acceptance for controls) | Button, IconButton, CheckBoxGroup, CheckBoxItem, Chips, FormControl, Input, Label, OptionCards, RadioGroup, RadioItem, Slider, SwitchGroup, SwitchItem, TextArea, ToggleGroup, ToggleItem |
+| Shared box sizing only; remaining selectors pending | Buttons, TagBlock |
 | Deferred to #63 | Accordion, Callout, Card, CardHeader, Carousel, CodeBlock, CompositeCardBlock, ContextCardBlock, DotMatrixLoader, EditableTable, EntityList, IconTag, IconText, Image, ImageBlock, ImageText, ImageTextLarge, InlineHeader, InlineMarkdownRenderer, ListBlock, ListItem, MarkDownRenderer, MetricIndicator, OverviewCardBlock, SectionBlock, Separator, Skeleton, SnippetCardBlock, SourceFaviconImage, Sources, Steps, Table, Tabs, Tag, TextBlock, TextCallout, TextContent, TextContentWrapper, VisualCardBlock |
 | Deferred to #64 | Calendar, Citation, DatePicker, ImageGallery, Modal, Select, TooltipWrapper |
 

@@ -4,9 +4,19 @@ import { css } from "goober";
 import { CSSProperties, forwardRef, ReactNode, useId } from "react";
 import { componentStyles } from "./styles";
 
-const componentClass = css`
-  ${componentStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-switch-item-container-root {
+      ${componentStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+const componentClass = "openui-switch-item-container-root";
 
 interface SwitchItemProps {
   label?: ReactNode;

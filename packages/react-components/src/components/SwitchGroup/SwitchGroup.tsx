@@ -4,9 +4,19 @@ import { CSSProperties, forwardRef, ReactElement } from "react";
 import { SwitchItemProps } from "../SwitchItem";
 import { componentStyles } from "./styles";
 
-const componentClass = css`
-  ${componentStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-switch-group-root {
+      ${componentStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+const componentClass = "openui-switch-group-root";
 
 type SwitchGroupVariant = "clear" | "card" | "sunk";
 export interface SwitchGroupProps {

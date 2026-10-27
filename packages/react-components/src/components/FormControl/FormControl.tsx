@@ -4,9 +4,19 @@ import React, { forwardRef, useMemo } from "react";
 import { borderBoxClass } from "../../styles/base";
 import { FormControlProvider } from "./context";
 import { formControlStyles } from "./formControl.styles";
-const componentClass = css`
-  ${formControlStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-form-control-root {
+      ${formControlStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+const componentClass = "openui-form-control-root";
 
 export interface FormControlProps {
   children: React.ReactNode;

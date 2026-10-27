@@ -3,9 +3,19 @@ import { css } from "goober";
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 import { chipsStyles } from "./chips.styles";
 
-const componentClass = css`
-  ${chipsStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-chips-root {
+      ${chipsStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+const componentClass = "openui-chips-root";
 
 export type ChipsSelectionType = "single" | "multiple";
 

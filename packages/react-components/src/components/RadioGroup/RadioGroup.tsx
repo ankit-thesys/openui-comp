@@ -5,9 +5,19 @@ import { CSSProperties, forwardRef, ReactElement } from "react";
 import { RadioItemProps } from "../RadioItem";
 import { componentStyles } from "./styles";
 
-const componentClass = css`
-  ${componentStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-radio-group-root {
+      ${componentStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+const componentClass = "openui-radio-group-root";
 
 type RadioGroupVariant = "clear" | "card" | "sunk";
 interface RadioGroupProps extends Radio.RadioGroupProps {

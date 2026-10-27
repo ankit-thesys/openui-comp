@@ -4,9 +4,19 @@ import React, { forwardRef } from "react";
 import { useFormControlContext } from "../FormControl/context";
 import { textAreaStyles } from "./textArea.styles";
 
-const componentClass = css`
-  ${textAreaStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-textarea-root {
+      ${textAreaStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+const componentClass = "openui-textarea-root";
 
 export interface TextAreaProps extends Omit<
   React.TextareaHTMLAttributes<HTMLTextAreaElement>,

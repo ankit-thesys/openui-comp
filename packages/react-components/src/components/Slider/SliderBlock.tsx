@@ -8,9 +8,19 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Slider, SliderProps } from "./Slider";
 import { sliderBlockStyles } from "./sliderBlock.styles";
 
-const componentClass = css`
-  ${sliderBlockStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-slider-block-root {
+      ${sliderBlockStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+const componentClass = "openui-slider-block-root";
 
 export interface SliderBlockProps extends Omit<SliderProps, "value" | "defaultValue"> {
   label: string;

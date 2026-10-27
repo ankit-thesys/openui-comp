@@ -4,9 +4,19 @@ import { css } from "goober";
 import { ReactNode } from "react";
 import { componentStyles } from "./styles";
 
-const componentClass = css`
-  ${componentStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-toggle-item-root {
+      ${componentStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+const componentClass = "openui-toggle-item-root";
 
 export interface ToggleItemProps extends ToggleGroupPrimitive.ToggleGroupItemProps {
   children: ReactNode;
