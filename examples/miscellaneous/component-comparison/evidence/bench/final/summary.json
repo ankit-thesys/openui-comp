@@ -1,0 +1,474 @@
+{
+  "summary": {
+    "expected": 12450,
+    "executed": 12450,
+    "recorded": 12450,
+    "complete": true,
+    "recordedComplete": true,
+    "counts": {
+      "Pass": 9151,
+      "Fail": 86,
+      "Review": 31,
+      "Known issue": 3182,
+      "Not covered": 0,
+      "Not applicable": 0
+    },
+    "verdict": "Fail"
+  },
+  "missing": 0,
+  "priorFindings": [
+    {
+      "cellId": "code-copy-keyboard--plain--390--light--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--plain--390--light--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--plain--390--dark--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--plain--390--dark--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--plain--768--light--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--plain--768--light--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--plain--768--dark--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--plain--768--dark--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--plain--1280--light--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--plain--1280--light--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--plain--1280--dark--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--plain--1280--dark--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-before--390--light--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-before--390--light--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-before--390--dark--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-before--390--dark--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-before--768--light--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-before--768--light--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-before--768--dark--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-before--768--dark--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-before--1280--light--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-before--1280--light--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-before--1280--dark--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-before--1280--dark--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-after--390--light--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-after--390--light--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-after--390--dark--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-after--390--dark--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-after--768--light--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-after--768--light--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-after--768--dark--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-after--768--dark--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-after--1280--light--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-after--1280--light--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-after--1280--dark--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind3-after--1280--dark--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-before--390--light--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-before--390--light--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-before--390--dark--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-before--390--dark--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-before--768--light--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-before--768--light--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-before--768--dark--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-before--768--dark--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-before--1280--light--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-before--1280--light--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-before--1280--dark--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-before--1280--dark--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-after--390--light--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-after--390--light--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-after--390--dark--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-after--390--dark--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-after--768--light--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-after--768--light--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-after--768--dark--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-after--768--dark--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-after--1280--light--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-after--1280--light--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-after--1280--dark--instant",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    },
+    {
+      "cellId": "code-copy-keyboard--tailwind4-after--1280--dark--stream",
+      "runId": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "verdict": "Fail",
+      "reason": "Earlier same-version non-passing execution retained for explicit review; a later pass does not erase it."
+    }
+  ],
+  "superseded": 1170,
+  "nonpassing": {
+    "bar-chart-variants / Review": 4,
+    "pie-chart-variants / Review": 1,
+    "tag-variants / Review": 2,
+    "image-text-variants / Review": 7,
+    "composite-card-block-variants / Review": 5,
+    "slider-validation-error / Review": 8,
+    "horizontal-string-height-known / Fail": 26,
+    "horizontal-string-height-known / Review": 4,
+    "select-open-portal / Fail": 60
+  },
+  "sourceRuns": [
+    {
+      "id": "2026-10-25T23-16-43-773Z-8bbbd7b0",
+      "sha256": "3a1a96c6c0b063c6a4bde1fa190f39f630307e65c51de8da4c21247524ad92ad",
+      "status": "cancelled",
+      "runner": "1.0.0"
+    },
+    {
+      "id": "2026-10-25T23-22-54-703Z-e7138e72",
+      "sha256": "814cf75b8e612a06e0ab502c407a00c2c8f7c7e3c0fa8c2b82c0be01b662011b",
+      "status": "completed",
+      "runner": "1.0.1"
+    },
+    {
+      "id": "2026-10-25T23-27-31-347Z-c97250be",
+      "sha256": "318569948e10864818f89dd5b7ae9721346e55526f708c215566200a4f2a7ac8",
+      "status": "completed",
+      "runner": "1.0.1"
+    },
+    {
+      "id": "2026-10-25T23-34-55-589Z-matrix-s1",
+      "sha256": "e6ec1d7992e6a678ba997c44bec4a7bd89db6baad5a689db86fb25afd76dba05",
+      "status": "completed",
+      "runner": "1.0.1"
+    },
+    {
+      "id": "2026-10-25T23-34-55-589Z-matrix-s2",
+      "sha256": "d00cba70a5da77a1af16474407e935691561b6d4c22f3a8f886424e42b28f1bf",
+      "status": "completed",
+      "runner": "1.0.1"
+    },
+    {
+      "id": "2026-10-25T23-34-55-589Z-matrix-s3",
+      "sha256": "2b44447df0b2e4c91332b1fca034a86efa6f8b9bcbe20f9c995fcb4436491b5f",
+      "status": "completed",
+      "runner": "1.0.1"
+    },
+    {
+      "id": "2026-10-25T23-34-55-589Z-matrix-s4",
+      "sha256": "b0e06c46dd55f4d97370b72e74ba4bbb308fae7b1bec23c942b844c465baa623",
+      "status": "completed",
+      "runner": "1.0.1"
+    },
+    {
+      "id": "2026-10-26T00-20-29-133Z-b475d340",
+      "sha256": "5c1419ba07d084cf9e5ea24382c7a64be139c5501529a8c04f1a36a2a4488d14",
+      "status": "completed",
+      "runner": "1.0.6"
+    },
+    {
+      "id": "2026-10-26T00-37-08-563Z-fixtures-s1",
+      "sha256": "662a63ca9bd48fdd4ed89f6c642de84e45e54434aec230a2f7af5870ceb1d597",
+      "status": "completed",
+      "runner": "1.0.7"
+    },
+    {
+      "id": "2026-10-26T00-37-08-563Z-fixtures-s2",
+      "sha256": "e3f57d3f224212a6ac492958c7d91dc14c1df31d6899b74609fa435593b9b635",
+      "status": "completed",
+      "runner": "1.0.7"
+    },
+    {
+      "id": "2026-10-26T00-37-08-563Z-fixtures-s3",
+      "sha256": "765c44b01f31803f12b8a7578b11676a4f450dbfc942036d760948aa879fad97",
+      "status": "completed",
+      "runner": "1.0.7"
+    },
+    {
+      "id": "2026-10-26T00-37-08-563Z-fixtures-s4",
+      "sha256": "3f321a88eb8dc853a96aedd9f3c17234819d523a3bea4a5503b3632624cd86dd",
+      "status": "completed",
+      "runner": "1.0.7"
+    },
+    {
+      "id": "2026-10-26T07-40-15-403Z-689a754a",
+      "sha256": "aaefe76349398094fea09a81ea886eb7cf7fa4238d56fbbdb86897458c32afec",
+      "status": "completed",
+      "runner": "1.0.7"
+    }
+  ],
+  "note": "All current cells executed; nonpassing results remain unresolved. Complete screenshots/raw measurements stay in original local immutable run histories. This compressed evidence is not a complete screenshot export."
+}

@@ -1,0 +1,21 @@
+{
+  "sourceCommit": "15d47db5c30fb85464830cf490064d6c20e20c41",
+  "sourceWorktree": "/private/tmp/openui-nested-kit-discovery",
+  "baseline": "cf1a8a88123b9a577c9cb43ae69d857ea6242f11",
+  "command": "TICKET46_SOURCE=/private/tmp/openui-nested-kit-discovery node --test /private/tmp/ticket46-workspace.test.mjs",
+  "exitCode": 0,
+  "result": "5/5 passed",
+  "recordedUtc": "2026-10-26T12:37:47.532789+00:00",
+  "files": {
+    "/private/tmp/ticket46-workspace.test.mjs": "8f6ccac006b2be9b1b16afc1e1c50d42416baf165fe144f931c661a8eb1a8cba",
+    "/private/tmp/ticket46-final-provenance.log": "ba86a49b75b9e2c5a969b37833a302634d9775668ec8641ae263b6523efb8be8",
+    "/private/tmp/ticket46-existing-packages.json": "fc078c63f59a05fa7e1b7658388cfd405c7d40a2fc7155eb0bdc707b665ee181"
+  },
+  "productionInputs": {
+    "pnpm-workspace.yaml": "275f06c565c4d4b922702c9a9930305666205ebb4ba3b949294d95dd225ff529",
+    "scripts/workspace-packages.mjs": "bb644e609aad2e2b392c536c54050f845dd6bd29b33454110e3a66071a3982d4",
+    "scripts/verify-peer-windows.mjs": "8b0d3e0d384b9dba9c7437213d5d5187023a4e071a4e09a4a1e8c287f0e89757",
+    "scripts/changeset-check.mjs": "6d29d0222817a28a0dcfa664d728e5249a9e5110bf9b560ee6a7b2ed8df122b2",
+    ".github/workflows/changeset-check.yml": "9071ab02f7ed7cc413b99d4812b2f0c66a40fbe4ac665c9e77f90d4def42bd87"
+  }
+}

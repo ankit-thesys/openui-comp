@@ -1,0 +1,198 @@
+{
+  "browser": "156.0.8078.48",
+  "checks": [
+    {
+      "name": "plain/before/.openui-select-trigger-root[data-state=\"open\"]",
+      "pass": true
+    },
+    {
+      "name": "plain/before/.openui-select-item-root[data-disabled]",
+      "pass": true
+    },
+    {
+      "name": "plain/before/.openui-select-trigger-root .openui-select-trigger-icon",
+      "pass": true
+    },
+    {
+      "name": "plain/before/selected-calendar-day-override",
+      "pass": true
+    },
+    {
+      "name": "plain/before/month-popup-nested-token",
+      "pass": true
+    },
+    {
+      "name": "plain/before/closed-DatePicker-hover-override",
+      "pass": true
+    },
+    {
+      "name": "plain/before/actual-overlay-dismissal",
+      "pass": true
+    },
+    {
+      "name": "plain/before/page-errors",
+      "pass": true
+    },
+    {
+      "name": "plain/after/.openui-select-trigger-root[data-state=\"open\"]",
+      "pass": true
+    },
+    {
+      "name": "plain/after/.openui-select-item-root[data-disabled]",
+      "pass": true
+    },
+    {
+      "name": "plain/after/.openui-select-trigger-root .openui-select-trigger-icon",
+      "pass": true
+    },
+    {
+      "name": "plain/after/selected-calendar-day-override",
+      "pass": true
+    },
+    {
+      "name": "plain/after/month-popup-nested-token",
+      "pass": true
+    },
+    {
+      "name": "plain/after/closed-DatePicker-hover-override",
+      "pass": true
+    },
+    {
+      "name": "plain/after/actual-overlay-dismissal",
+      "pass": true
+    },
+    {
+      "name": "plain/after/page-errors",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/.openui-select-trigger-root[data-state=\"open\"]",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/.openui-select-item-root[data-disabled]",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/.openui-select-trigger-root .openui-select-trigger-icon",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/selected-calendar-day-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/month-popup-nested-token",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/closed-DatePicker-hover-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/actual-overlay-dismissal",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/page-errors",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/.openui-select-trigger-root[data-state=\"open\"]",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/.openui-select-item-root[data-disabled]",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/.openui-select-trigger-root .openui-select-trigger-icon",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/selected-calendar-day-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/month-popup-nested-token",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/closed-DatePicker-hover-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/actual-overlay-dismissal",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/page-errors",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/.openui-select-trigger-root[data-state=\"open\"]",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/.openui-select-item-root[data-disabled]",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/.openui-select-trigger-root .openui-select-trigger-icon",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/selected-calendar-day-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/month-popup-nested-token",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/closed-DatePicker-hover-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/actual-overlay-dismissal",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/page-errors",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/.openui-select-trigger-root[data-state=\"open\"]",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/.openui-select-item-root[data-disabled]",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/.openui-select-trigger-root .openui-select-trigger-icon",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/selected-calendar-day-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/month-popup-nested-token",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/closed-DatePicker-hover-override",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/actual-overlay-dismissal",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/page-errors",
+      "pass": true
+    }
+  ],
+  "observations": []
+}

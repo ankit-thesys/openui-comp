@@ -1,0 +1,20 @@
+[
+  {
+    "file": "ticket46-red-build.log.gz",
+    "originalFile": "ticket46-red-build.log",
+    "originalSha256": "82881901d953a7c3f752e7a45f88274b8d4b9256f40b6765b7204d75c7e6f1bb",
+    "encoding": "gzip; decompressed bytes preserve original log exactly"
+  },
+  {
+    "file": "ticket46-red-peer.log.gz",
+    "originalFile": "ticket46-red-peer.log",
+    "originalSha256": "8a743cbada2889103887922f4f1b44058dcf8c88aad5969d86fedce4c2c6201b",
+    "encoding": "gzip; decompressed bytes preserve original log exactly"
+  },
+  {
+    "file": "ticket46-red-release.log.gz",
+    "originalFile": "ticket46-red-release.log",
+    "originalSha256": "1523a2ed74b0af940cf00688b43e72f6871d0822367d663857417c99cab05acf",
+    "encoding": "gzip; decompressed bytes preserve original log exactly"
+  }
+]

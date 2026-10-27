@@ -1,0 +1,9 @@
+{
+  "mainResultsFixture": "main-fixture-v3.tsx",
+  "additionalStackedChartFixture": "fixture.tsx",
+  "note": "Main480 and dependency180 used the original fixture; later added only a standalone public StackedLegend mode for chart-controls102. Existing component modes and production payload unchanged. Replaying main480 exactly: copy main-fixture-v3.tsx to fixture.tsx before build.mjs; restore current fixture for chart-controls-run.mjs.",
+  "fixtureSHA256": {
+    "main-fixture-v3.tsx": "a3e47281c5b5e183bf88da24e2096eb4b7017d110b4653193036a5f07a63ca64",
+    "fixture.tsx": "0e40167d61010ed4cf86f7fa8e3ce492e4bef7363c5a75fd2faf5889bd15dcb3"
+  }
+}

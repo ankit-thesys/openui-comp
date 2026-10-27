@@ -1,0 +1,251 @@
+{
+  "scopeOnly19ChartStyleFilesAndREADME": true,
+  "registrationTargets": [
+    {
+      "file": "packages/react-components/src/components/Charts/AreaChart/areaChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-area-chart-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "0c2b0313a6e4411025ba4e2cf4b4256382c7976673d13a054e6cff0cb222e493"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/BarChart/barChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-bar-chart-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "7f48a3457b40f48d41e0c5c48eed909495b94e180eea95ad4f13f9486626c70c"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/BarChart/horizontalBarChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-horizontal-bar-chart-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "6a6f02320dc65e5343a7d6bdbbfc905d11dbe4c2e3b022953d7e48106de6bc02"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-calendar-heatmap-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "ecd6ceee0a305f91796b2a92619a9454ad110f237d441575ca94d21d4091281e"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/FunnelChart/funnelChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-funnel-chart-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "2378b05c01d21037de1894052f5b669d2aad370d329c8d3dc002dfbd4aa7d6c0"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-heatmap-chart-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "a5b96bc04e1cb36b38469112b655bf839d402ccde86b72a50d03cf2ce2c262de"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts",
+      "symbol": "divergingRampClass",
+      "hook": "openui-heatmap-chart-diverging-ramp-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "a5b96bc04e1cb36b38469112b655bf839d402ccde86b72a50d03cf2ce2c262de"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/LineChart/lineChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-line-chart-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "bb6a64f698ce5371454509193a54ef308700ea30f5384a3a0fa2e64915b565c1"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/PieChart/pieChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-pie-chart-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "3131aa2fef32bee3f862845c1b89d1d8c7e348c9114eac51e136ef1c79deed8e"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/RadarChart/radarChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-radar-chart-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "234fefce581c51ba705af0d5807d34d29cda1682be19c62fa28e07d44a3bc27d"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/RadialChart/radialChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-radial-chart-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "a152ba3c9a7e30296bd6c6587c510d2eb243356cd9304d764d9f3be4b26f6367"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/ScatterChart/scatterChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-scatter-chart-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "798bf3215ff97a7ea68a67f8317cbb03754558e94549abb6d7c04903ef9c4a53"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/SegmentedBar/segmentedBar.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-segmented-bar-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "c64af8dca25b2d26bcc0341567bb9f1497ba1cc064391dd8fb5a780ad9c4fb3b"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-chart-horizontal-scroll-controls-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "99f5debe3d5af76222b8243f4a51f3d310bae34fd72c1fdeb9f6c7acef6dc0f5"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-chart-vertical-scroll-controls-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "55435a2144bb64644c09f2908cb3d31ceaac72d94121616d8a8da95543a8499c"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/chartBase.styles.ts",
+      "symbol": "emptyClass",
+      "hook": "openui-chart-empty-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "de8b822ed3f97a12972bf1d69d1663b4a4402410cd0b9a82e71baccfac756136"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/chartBase.styles.ts",
+      "symbol": "yAxisLabelClass",
+      "hook": "openui-chart-y-axis-label-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "de8b822ed3f97a12972bf1d69d1663b4a4402410cd0b9a82e71baccfac756136"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/chartBase.styles.ts",
+      "symbol": "xAxisLabelClass",
+      "hook": "openui-chart-x-axis-label-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "de8b822ed3f97a12972bf1d69d1663b4a4402410cd0b9a82e71baccfac756136"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/DefaultLegend/defaultLegend.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-chart-default-legend-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "344768e3105ed501d5bdea558ff4cf67b15b3000ac96a6b8bdf2ea94a3a9fce4"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts",
+      "symbol": "portalClass",
+      "hook": "openui-chart-tooltip-portal-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "e2fdfedca2a1000cdec702f6e4c1fc735dc7f60e886368c470063e31306fc544"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts",
+      "symbol": "tooltipClass",
+      "hook": "openui-chart-tooltip-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "e2fdfedca2a1000cdec702f6e4c1fc735dc7f60e886368c470063e31306fc544"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-chart-stacked-legend-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "14ecf6c27660f42c5a8bf413b7681f0ff5c496cf6a4a28e738f2371c83dd94c4"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
+      "symbol": "layoutClass",
+      "hook": "openui-chart-stacked-legend-layout-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "14ecf6c27660f42c5a8bf413b7681f0ff5c496cf6a4a28e738f2371c83dd94c4"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
+      "symbol": "scrollbarClass",
+      "hook": "openui-chart-stacked-legend-scrollbar",
+      "bodyPreserved": true,
+      "currentFileSHA256": "14ecf6c27660f42c5a8bf413b7681f0ff5c496cf6a4a28e738f2371c83dd94c4"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/mini/miniChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-mini-chart-root",
+      "bodyPreserved": true,
+      "currentFileSHA256": "85f94c7e9e5f2b64c61f70a260c5725c68d397f63f41da29e2e3b717856e7371"
+    }
+  ],
+  "keyframesUnchanged": [
+    {
+      "file": "packages/react-components/src/components/Charts/BarChart/barChart.styles.ts",
+      "symbol": "grow",
+      "bodySHA256": "7bdb75f81cb0f386ce8df77bb3958c0057526de758436299c62424be0722cfe7"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/BarChart/horizontalBarChart.styles.ts",
+      "symbol": "grow",
+      "bodySHA256": "354da30bdb62392a755a0f17e44fdb552ac7efcd421cd243e47815ee86bf5614"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts",
+      "symbol": "cellIn",
+      "bodySHA256": "28244dd4f1f149527349698932e080cec6f2a42364446b2cf0618e9c8be12035"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/FunnelChart/funnelChart.styles.ts",
+      "symbol": "appear",
+      "bodySHA256": "f1475c64440ebf8a58a68c0ede4f057707619e2d28fcbb57a7707f7daf8f75f2"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/PieChart/pieChart.styles.ts",
+      "symbol": "appear",
+      "bodySHA256": "7c1618cc7ecea9f4436edc59ca278a216fb15e886e9ac38ee972b4102a293e80"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/RadarChart/radarChart.styles.ts",
+      "symbol": "appear",
+      "bodySHA256": "7b125f72fdee5a16f0eebaebd43060b4c0e53d137b82fafd70356aff27174681"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/ScatterChart/scatterChart.styles.ts",
+      "symbol": "appear",
+      "bodySHA256": "445cc174626096a8b474744efe8e49c94e3d11de4d1f7ad91dc987e153829493"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/animations/drawLine.styles.ts",
+      "symbol": "drawLineAnimation",
+      "bodySHA256": "79f68fda6ced0f584540b9e65f46efb7c1599a350ccc16209c9f66d293dcf657"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/animations/fadeAppear.styles.ts",
+      "symbol": "fadeAppearAnimation",
+      "bodySHA256": "28244dd4f1f149527349698932e080cec6f2a42364446b2cf0618e9c8be12035"
+    }
+  ],
+  "allW2SharedFilesByteIdenticalToFrozenCandidate": true,
+  "geometryPhysicsInlineAndOtherComponentsUnchanged": true,
+  "changed": [
+    "packages/react-components/README.md",
+    "packages/react-components/src/components/Charts/AreaChart/areaChart.styles.ts",
+    "packages/react-components/src/components/Charts/BarChart/barChart.styles.ts",
+    "packages/react-components/src/components/Charts/BarChart/horizontalBarChart.styles.ts",
+    "packages/react-components/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts",
+    "packages/react-components/src/components/Charts/FunnelChart/funnelChart.styles.ts",
+    "packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts",
+    "packages/react-components/src/components/Charts/LineChart/lineChart.styles.ts",
+    "packages/react-components/src/components/Charts/PieChart/pieChart.styles.ts",
+    "packages/react-components/src/components/Charts/RadarChart/radarChart.styles.ts",
+    "packages/react-components/src/components/Charts/RadialChart/radialChart.styles.ts",
+    "packages/react-components/src/components/Charts/ScatterChart/scatterChart.styles.ts",
+    "packages/react-components/src/components/Charts/SegmentedBar/segmentedBar.styles.ts",
+    "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts",
+    "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts",
+    "packages/react-components/src/components/Charts/shared/chartBase.styles.ts",
+    "packages/react-components/src/components/Charts/shared/core/DefaultLegend/defaultLegend.styles.ts",
+    "packages/react-components/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts",
+    "packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
+    "packages/react-components/src/components/Charts/shared/mini/miniChart.styles.ts"
+  ]
+}

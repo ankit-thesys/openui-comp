@@ -1,0 +1,330 @@
+{
+  "sourceCommit": "659b495700998b5170e0eca4413a6cdae5a2d966",
+  "families": [
+    {
+      "family": "Accordion",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "Button",
+      "status": "independently accepted61",
+      "futureTicket": 61
+    },
+    {
+      "family": "Buttons",
+      "status": "shared base only",
+      "futureTicket": 63
+    },
+    {
+      "family": "Calendar",
+      "status": "deferred in this artifact",
+      "futureTicket": 64
+    },
+    {
+      "family": "Callout",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "Card",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "CardHeader",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "Carousel",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "CheckBoxGroup",
+      "status": "worker62 converted; independent pending",
+      "futureTicket": 62
+    },
+    {
+      "family": "CheckBoxItem",
+      "status": "worker62 converted; independent pending",
+      "futureTicket": 62
+    },
+    {
+      "family": "Chips",
+      "status": "worker62 converted; independent pending",
+      "futureTicket": 62
+    },
+    {
+      "family": "Citation",
+      "status": "deferred in this artifact",
+      "futureTicket": 64
+    },
+    {
+      "family": "CodeBlock",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "CompositeCardBlock",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "ContextCardBlock",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "DatePicker",
+      "status": "deferred in this artifact",
+      "futureTicket": 64
+    },
+    {
+      "family": "DotMatrixLoader",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "EditableTable",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "EntityList",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "FormControl",
+      "status": "worker62 converted; independent pending",
+      "futureTicket": 62
+    },
+    {
+      "family": "IconButton",
+      "status": "independently accepted61",
+      "futureTicket": 61
+    },
+    {
+      "family": "IconTag",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "IconText",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "Image",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "ImageBlock",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "ImageGallery",
+      "status": "deferred in this artifact",
+      "futureTicket": 64
+    },
+    {
+      "family": "ImageText",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "ImageTextLarge",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "InlineHeader",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "InlineMarkdownRenderer",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "Input",
+      "status": "worker62 converted; independent pending",
+      "futureTicket": 62
+    },
+    {
+      "family": "Label",
+      "status": "worker62 converted; independent pending",
+      "futureTicket": 62
+    },
+    {
+      "family": "ListBlock",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "ListItem",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "MarkDownRenderer",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "MetricIndicator",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "Modal",
+      "status": "deferred in this artifact",
+      "futureTicket": 64
+    },
+    {
+      "family": "OptionCards",
+      "status": "worker62 converted; independent pending",
+      "futureTicket": 62
+    },
+    {
+      "family": "OverviewCardBlock",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "RadioGroup",
+      "status": "worker62 converted; independent pending",
+      "futureTicket": 62
+    },
+    {
+      "family": "RadioItem",
+      "status": "worker62 converted; independent pending",
+      "futureTicket": 62
+    },
+    {
+      "family": "SectionBlock",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "Select",
+      "status": "deferred in this artifact",
+      "futureTicket": 64
+    },
+    {
+      "family": "Separator",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "Skeleton",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "Slider",
+      "status": "worker62 converted; independent pending",
+      "futureTicket": 62
+    },
+    {
+      "family": "SnippetCardBlock",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "SourceFaviconImage",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "Sources",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "Steps",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "SwitchGroup",
+      "status": "worker62 converted; independent pending",
+      "futureTicket": 62
+    },
+    {
+      "family": "SwitchItem",
+      "status": "worker62 converted; independent pending",
+      "futureTicket": 62
+    },
+    {
+      "family": "Table",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "Tabs",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "Tag",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "TagBlock",
+      "status": "shared base only",
+      "futureTicket": 63
+    },
+    {
+      "family": "TextArea",
+      "status": "worker62 converted; independent pending",
+      "futureTicket": 62
+    },
+    {
+      "family": "TextBlock",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "TextCallout",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "TextContent",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "TextContentWrapper",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    },
+    {
+      "family": "ToggleGroup",
+      "status": "worker62 converted; independent pending",
+      "futureTicket": 62
+    },
+    {
+      "family": "ToggleItem",
+      "status": "worker62 converted; independent pending",
+      "futureTicket": 62
+    },
+    {
+      "family": "TooltipWrapper",
+      "status": "deferred in this artifact",
+      "futureTicket": 64
+    },
+    {
+      "family": "VisualCardBlock",
+      "status": "deferred in this artifact",
+      "futureTicket": 63
+    }
+  ]
+}

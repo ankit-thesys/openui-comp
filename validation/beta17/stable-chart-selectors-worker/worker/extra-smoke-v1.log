@@ -1,0 +1,14 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.evaluate: Error: strict mode violation: locator('.openui-stacked-legend') resolved to 2 elements:
+    1) <div class="openui-stacked-legend">Host alias</div> aka locator('.openui-stacked-legend').first()
+    2) <div class="go2811413688 openui-stacked-legend">…</div> aka getByText('Series 01.3%Series 12.6%')
+
+Call log:
+[2m  - waiting for locator('.openui-stacked-legend')[22m
+
+    at /private/tmp/openui-charts-w1-evidence/run-extra.mjs:18:340
+
+Node.js v22.22.2

@@ -1,0 +1,22 @@
+[
+  {
+    "file": "FINAL-HANDOFF.md",
+    "sha256": "603ba1c3803b6aaf9109b178d35e2324a451ece11b2c2547af60fc57cd90b495"
+  },
+  {
+    "file": "pr-body.md",
+    "sha256": "26f1a1331249f329cdcf9286eb01e495c102bd7e85275764fc71237859a2bfa9"
+  },
+  {
+    "file": "pr-metadata.json",
+    "sha256": "ffbfdf8ab763cf5ac2513a5968adc28954f6de64e98fc9cd2f13cde2ca7532dc"
+  },
+  {
+    "file": "protected-heads.json",
+    "sha256": "4572d4f94cf7d544e77372f9c765480b787a0c646c27db82de882ac9ace16bf9"
+  },
+  {
+    "file": "RELEASE.json",
+    "sha256": "0918848b678c7737232694e17b15184b622223c4da45341f2128595ab3f67fb9"
+  }
+]

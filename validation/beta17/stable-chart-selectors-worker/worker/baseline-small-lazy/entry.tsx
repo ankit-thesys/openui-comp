@@ -1,0 +1,1 @@
+import React from'react';import{createRoot}from'react-dom/client';const root=createRoot(document.querySelector('#app'));let View;window.load=async kind=>{View=(await(kind==='mini'?import('./chart-lazy-mini'):import('./chart-lazy-bar'))).View;window.mount=()=>root.render(<View/>);window.mount();};window.ready=true;

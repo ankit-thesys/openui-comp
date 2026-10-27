@@ -1,0 +1,314 @@
+{
+  "acceptance": "Passed bounded independent ticket57 verification; eligible to unblock58/59, not blanket fallback-deletion or shared-base acceptance",
+  "head": "50df8768157c5e76abda45bf39098ec4b87fa702",
+  "packageTree": "f06811c5e7e3324829f552a153ff36e9e7b6df5c",
+  "archiveSHA256": "a7c562a0f284d8f290f414ce4bee2fae632c601470677d71046800a021e808e4",
+  "rawInitial": {
+    "checks": 522,
+    "passed": 458,
+    "failed": 64,
+    "invalidOrEarlyControls": [
+      {
+        "name": "plain/before/layered/baseline/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "plain/before/layered/baseline/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "plain/before/layered/candidate/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "plain/before/layered/candidate/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "plain/before/layered/portal-visual-equivalence",
+        "pass": false
+      },
+      {
+        "name": "plain/before/unlayered/baseline/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "plain/before/unlayered/baseline/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "plain/before/unlayered/candidate/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "plain/before/unlayered/candidate/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "plain/after/layered/baseline/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "plain/after/layered/baseline/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "plain/after/layered/candidate/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "plain/after/layered/candidate/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "plain/after/layered/portal-visual-equivalence",
+        "pass": false
+      },
+      {
+        "name": "plain/after/unlayered/baseline/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "plain/after/unlayered/baseline/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "plain/after/unlayered/candidate/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "plain/after/unlayered/candidate/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/before/layered/baseline/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/before/layered/baseline/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/before/layered/candidate/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/before/layered/candidate/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/before/layered/portal-visual-equivalence",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/before/unlayered/baseline/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/before/unlayered/baseline/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/before/unlayered/candidate/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/before/unlayered/candidate/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/after/layered/baseline/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/after/layered/baseline/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/after/layered/candidate/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/after/layered/candidate/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/after/layered/portal-visual-equivalence",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/after/unlayered/baseline/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/after/unlayered/baseline/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/after/unlayered/candidate/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind3/after/unlayered/candidate/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/before/layered/baseline/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/before/layered/baseline/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/before/layered/candidate/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/before/layered/candidate/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/before/layered/portal-visual-equivalence",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/before/unlayered/baseline/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/before/unlayered/baseline/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/before/unlayered/candidate/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/before/unlayered/candidate/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/after/layered/baseline/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/after/layered/baseline/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/after/layered/candidate/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/after/layered/candidate/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/after/layered/portal-visual-equivalence",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/after/unlayered/baseline/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/after/unlayered/baseline/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/after/unlayered/candidate/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "tailwind4/after/unlayered/candidate/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "plain/before/none/baseline/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "plain/before/none/baseline/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "plain/before/none/candidate/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "plain/before/none/candidate/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "plain/before/none/portal-visual-equivalence",
+        "pass": false
+      },
+      {
+        "name": "plain/after/none/baseline/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "plain/after/none/baseline/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "plain/after/none/candidate/host-global-A",
+        "pass": false
+      },
+      {
+        "name": "plain/after/none/candidate/host-global-B",
+        "pass": false
+      },
+      {
+        "name": "plain/after/none/portal-visual-equivalence",
+        "pass": false
+      }
+    ]
+  },
+  "corrected": {
+    "checks": 170,
+    "passed": 170,
+    "failed": 0
+  },
+  "validChecks": 628,
+  "optimizedImports": [
+    "button",
+    "input",
+    "combo"
+  ],
+  "sameInstanceGoober": true,
+  "canonicalRootStrings": 215,
+  "nativeExports": 166,
+  "strictTypeConsumers": "baseline and candidate pass; existing React typings linked at normal private node_modules/@types paths; no dependency/package changes",
+  "vendorCSS": [
+    {
+      "arm": "baseline",
+      "bytes": 24235,
+      "sha256": "9ad7a2306eda2788161ef1158f09bb863430ef66820fd3c25caa811000cbd1cd"
+    },
+    {
+      "arm": "candidate",
+      "bytes": 24235,
+      "sha256": "9ad7a2306eda2788161ef1158f09bb863430ef66820fd3c25caa811000cbd1cd"
+    }
+  ],
+  "browser": "156.0.8078.48",
+  "coverage": "14 fresh configurations per arm including plain/TW3/TW4 before/after, named/unlayered root overrides and no-override controls; actual finite portal animation completion; no product animations disabled",
+  "limits": [
+    "SSRandhydration deferred",
+    "no historical fullmatrix/performance rerun",
+    "no multiple-version or duplicate-Goober-instance certification",
+    "no blanket inherited-failure resolution",
+    "no fallback deletion/base extraction accepted yet"
+  ],
+  "browserRelease": {
+    "releasedUTC": "2026-10-27T10:07:21.116Z",
+    "browserReleased": true,
+    "serverClosed": true,
+    "configs": 14,
+    "checks": 170,
+    "failures": 0,
+    "lab4188": "Untouched"
+  }
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "arm": "baseline",
+    "name": "condensed",
+    "out": "/private/tmp/openui-charts-w1-evidence/baseline-small-condensed",
+    "imports": "BarChartCondensed"
+  },
+  {
+    "arm": "baseline",
+    "name": "mini",
+    "out": "/private/tmp/openui-charts-w1-evidence/baseline-small-mini",
+    "imports": "MiniLineChart"
+  },
+  {
+    "arm": "baseline",
+    "name": "pie",
+    "out": "/private/tmp/openui-charts-w1-evidence/baseline-small-pie",
+    "imports": "PieChart"
+  },
+  {
+    "arm": "baseline",
+    "name": "empty",
+    "out": "/private/tmp/openui-charts-w1-evidence/baseline-small-empty",
+    "imports": "BarChart"
+  },
+  {
+    "arm": "baseline",
+    "name": "stacked",
+    "out": "/private/tmp/openui-charts-w1-evidence/baseline-small-stacked",
+    "imports": "StackedLegend"
+  },
+  {
+    "arm": "baseline",
+    "name": "button",
+    "out": "/private/tmp/openui-charts-w1-evidence/baseline-small-button",
+    "imports": "Button"
+  },
+  {
+    "arm": "baseline",
+    "name": "lazy",
+    "out": "/private/tmp/openui-charts-w1-evidence/baseline-small-lazy",
+    "imports": "lazy MiniLineChart + BarChartCondensed"
+  },
+  {
+    "arm": "candidate",
+    "name": "condensed",
+    "out": "/private/tmp/openui-charts-w1-evidence/candidate-small-condensed",
+    "imports": "BarChartCondensed"
+  },
+  {
+    "arm": "candidate",
+    "name": "mini",
+    "out": "/private/tmp/openui-charts-w1-evidence/candidate-small-mini",
+    "imports": "MiniLineChart"
+  },
+  {
+    "arm": "candidate",
+    "name": "pie",
+    "out": "/private/tmp/openui-charts-w1-evidence/candidate-small-pie",
+    "imports": "PieChart"
+  },
+  {
+    "arm": "candidate",
+    "name": "empty",
+    "out": "/private/tmp/openui-charts-w1-evidence/candidate-small-empty",
+    "imports": "BarChart"
+  },
+  {
+    "arm": "candidate",
+    "name": "stacked",
+    "out": "/private/tmp/openui-charts-w1-evidence/candidate-small-stacked",
+    "imports": "StackedLegend"
+  },
+  {
+    "arm": "candidate",
+    "name": "button",
+    "out": "/private/tmp/openui-charts-w1-evidence/candidate-small-button",
+    "imports": "Button"
+  },
+  {
+    "arm": "candidate",
+    "name": "lazy",
+    "out": "/private/tmp/openui-charts-w1-evidence/candidate-small-lazy",
+    "imports": "lazy MiniLineChart + BarChartCondensed"
+  }
+]

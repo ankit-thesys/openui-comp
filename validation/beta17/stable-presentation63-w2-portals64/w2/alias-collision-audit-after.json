@@ -1,0 +1,7 @@
+{
+  "status": "source-only; no canonical hook equals an inventoried old hook in its family",
+  "rulesChecked": 178,
+  "collisions": [],
+  "runtimeAcceptance": "pending alias-negative browser checks",
+  "baselineInventoryCommit": "c1aaf994d5c0fbfb56b83685221eeea9b409e57c"
+}

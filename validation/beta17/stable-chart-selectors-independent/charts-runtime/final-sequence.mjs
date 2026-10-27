@@ -1,0 +1,1 @@
+for(const phase of['unique','motion','small','signed-correction']){console.log('START',phase,new Date().toISOString());await import('./'+phase+'.mjs');console.log('END',phase,new Date().toISOString());}

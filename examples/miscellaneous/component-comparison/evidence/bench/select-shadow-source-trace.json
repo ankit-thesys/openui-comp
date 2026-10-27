@@ -1,0 +1,29 @@
+{
+  "source": {
+    "legacyMixin": "packages/react-ui/src/components/_menu.scss:39-42",
+    "legacyUse": "packages/react-ui/src/components/Select/select.scss:74",
+    "core": "packages/react-ui-core/src/components/Select/select.styles.ts:76-77"
+  },
+  "frozenLegacyCss": {
+    "path": ".bench-runs/2026-10-25T23-22-04-256Z-0e475508/runtime/assets/legacy-CDV1cNrX.css",
+    "sha256": "9c0413728a94ac96cbd92f66387a2dbeeddb7f08743c8b04a68136a6130290de",
+    "rule": ".openui-select-content{box-sizing:border-box;position:relative;z-index:99999;max-height:372px;min-width:var(--radix-select-trigger-width);border:none;border-radius:var(--openui-radius-2xl);overflow:hidden;background-color:color-mix(in oklch,var(--openui-foreground),var(--openui-text-white) 6%);box-shadow:0 0 0 1px color-mix(in oklch,var(--openui-text-neutral-primary) 6%,transparent),0 4px 12px -2px #0000000d,0 16px 32px -8px #00000014;padding:var(--openui-space-2xs) 0}"
+  },
+  "minifier": {
+    "name": "esbuild",
+    "version": "0.25.12",
+    "input": ".x{box-shadow:0 4px 12px -2px oklch(0 0 0 / .05),0 16px 32px -8px oklch(0 0 0 / .08)}",
+    "output": ".x{box-shadow:0 4px 12px -2px #0000000d,0 16px 32px -8px #00000014}\n"
+  },
+  "alpha": {
+    "first": {
+      "runtime": 0.05,
+      "hex": 0.050980392156862744
+    },
+    "second": {
+      "runtime": 0.08,
+      "hex": 0.0784313725490196
+    }
+  },
+  "classification": "Confirmed built-application visual difference. Same authored OKLCH source; static CSS minification changes color representation and quantizes alpha, whereas runtime Goober retains it. Alpha quantization is the leading source-level explanation, not a browser-toggle-isolated causal proof. Not an inherited label defect or a proven incorrect SCSS transcription. No production fix."
+}

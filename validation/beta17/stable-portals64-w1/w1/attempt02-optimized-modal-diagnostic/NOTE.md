@@ -1,0 +1,1 @@
+Same Modal-only empty app readiness defect, now with exact baseline-small-modal URL and body HTML showing the real portal. No product change. Corrected runner waits for [role=dialog] only for Modal and checkpoints all completed family observations. No accepted raw verdict from this attempt.

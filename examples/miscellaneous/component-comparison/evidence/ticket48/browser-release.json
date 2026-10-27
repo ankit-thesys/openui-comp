@@ -1,0 +1,11 @@
+{
+  "releasedAt": "2026-10-26T14:23:37Z",
+  "status": "RELEASED; bounded48 browsers and ephemeral servers closed; old fixed-port servers not restarted",
+  "chatArchiveSha256": "b4cb71c1d378bd4b50c69b0092af55ca55bc4ef0c33771624d367f782d739384",
+  "results": [
+    "browser.json",
+    "offline-browser.json",
+    "bench-themes.json"
+  ],
+  "newFullMatrixRun": false
+}

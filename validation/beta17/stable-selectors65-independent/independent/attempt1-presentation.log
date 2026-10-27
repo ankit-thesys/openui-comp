@@ -1,0 +1,14 @@
+{"phase":"presentation","checks":6,"passed":6,"failed":[],"error":"TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-family=ListItem] button')\u001b[22m\n"}
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-family=ListItem] button')[22m
+
+    at /private/tmp/openui-styles-independent-verification/ticket65/presentation.mjs:4:436 {
+  name: 'TimeoutError'
+}
+
+Node.js v22.22.2

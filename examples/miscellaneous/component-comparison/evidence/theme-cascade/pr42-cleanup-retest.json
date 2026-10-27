@@ -1,0 +1,105 @@
+{
+  "productionHead": "7aaf25d4079c465992a2d8edc1f5fe7df87c8d4b",
+  "sourceBase": "57ea72e2892df7fdd551c668d4480a0267f90a09",
+  "normalBuild": true,
+  "combined": {
+    "cells": 240,
+    "equal": 240,
+    "different": 0
+  },
+  "namedGuards": {
+    "cells": 68,
+    "passed": 68
+  },
+  "publicDeclarationsIdentical": 440,
+  "review": "Independent scoped reviewer approved exact allowlist match; no extra changes/replacement rules.",
+  "ci": {
+    "build": "SUCCESS",
+    "changeset-check": "SUCCESS",
+    "buildRun": "https://github.com/ankit-thesys/openui-comp/actions/runs/40308307636"
+  },
+  "archiveSha256": "96086150709e97b99153f3be221e72bf11268db5e5f629ff9f91cec2c56dec29",
+  "files": [
+    {
+      "file": "named-guards-progress.json",
+      "bytes": 54,
+      "sha256": "058a3b28ea76f746bea4ae3c5dd45998c41ec7af5bf7c40451c896a22daaa25f"
+    },
+    {
+      "file": "browser-common.mjs",
+      "bytes": 3363,
+      "sha256": "ba740aca581d9d297e2f2b19cd5010bd9f8ea9b208d8203e7596b8b39810043a"
+    },
+    {
+      "file": "combined-browser.mjs",
+      "bytes": 10686,
+      "sha256": "134a8f2ac9249a58e88c5e788c9b8afa67aedc8fb23ca3e35ae2e9085312e913"
+    },
+    {
+      "file": "named-guards-results.json",
+      "bytes": 1279955,
+      "sha256": "2ca43c1245e8caff68bf28417d2b9391af0672eaed263d38627a23a0011b6f30"
+    },
+    {
+      "file": "important-v3-discovery-results.json",
+      "bytes": 78181,
+      "sha256": "c2487eecd21f65579660c67b77eabdd6b3fee954a3ac1d82c36142f8b8fb8183"
+    },
+    {
+      "file": "build-named.mjs",
+      "bytes": 1757,
+      "sha256": "c9c720cb45b78573ea77e4c5c2cf1cb4360b2eb83084f465f0c1303dec1c8635"
+    },
+    {
+      "file": "important-combined-combined-raw.json.gz",
+      "bytes": 400099,
+      "sha256": "a2d0e622456c6bae6727db6213b1ee3e6d86ec37d184efc7e30c33f7ba078315"
+    },
+    {
+      "file": "harness-adaptation.json",
+      "bytes": 2510,
+      "sha256": "844899495cbe8a478ff231d50a9b621567c587647ca3d9258e412102d5a27f87"
+    },
+    {
+      "file": "named-guards.mjs",
+      "bytes": 4221,
+      "sha256": "b974fa6c3920e309b88a6ba435fb16f0dd1129e0e55fbee86de98df3507adb0a"
+    },
+    {
+      "file": "artifact-correspondence.json",
+      "bytes": 1141,
+      "sha256": "3cc6e6ec66a00517f729de41ad29f36a1bbab30932a031600fd126e0350d3d91"
+    },
+    {
+      "file": "candidate-artifacts.json",
+      "bytes": 306,
+      "sha256": "72f13390c084885232e598948bb983ac69089231b6bb99b6d26050e96a570d62"
+    },
+    {
+      "file": "important-v3-browser-progress.json",
+      "bytes": 123,
+      "sha256": "fbc391b8c5c71353a64fc9413a5c7079471e402386b48af688da7588c67fc017"
+    },
+    {
+      "file": "named-guards-partial.json",
+      "bytes": 1279894,
+      "sha256": "a014cc115018f9c5fa1263f9140e10ab894abcc3e8f8397a4ef7f8a24df03c76"
+    },
+    {
+      "file": "serve.mjs",
+      "bytes": 1856,
+      "sha256": "7d28e840c46b611338f21691ad555f080f06688a5da15aa202c0150283d71198"
+    },
+    {
+      "file": "build-fixture.mjs",
+      "bytes": 1538,
+      "sha256": "c17c6ad72e0db7dd4ac7e8bea0276c9c6ada479c94a69441f848a8ff769a3217"
+    },
+    {
+      "file": "important-v3-combined-results.json",
+      "bytes": 84101,
+      "sha256": "abf10df9894a08716600711684cd574bddaaf31b99d1af4c17b337a9c5e81cab"
+    }
+  ],
+  "limits": "Affected cleanup parity only; separate Input/Label regressions, token122/124 and palette20/32 limits remain. Original baseline snapshots are retained in verifier-evidence.tar.gz; exact reused hash in harness-adaptation.json."
+}

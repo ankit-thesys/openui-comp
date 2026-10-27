@@ -1,0 +1,25 @@
+{
+  "count": 19,
+  "exactlyOnce": true,
+  "names": [
+    "@openuidev/a2ui",
+    "@openuidev/angular-lang",
+    "@openuidev/assistant-ui",
+    "@openuidev/browser-bundle",
+    "@openuidev/cli",
+    "@openuidev/devtools",
+    "@openuidev/kits",
+    "@openuidev/lang-core",
+    "@openuidev/langchain",
+    "@openuidev/observability",
+    "@openuidev/observability-cloud",
+    "@openuidev/react-components",
+    "@openuidev/react-email",
+    "@openuidev/react-headless",
+    "@openuidev/react-lang",
+    "@openuidev/react-ui",
+    "@openuidev/server",
+    "@openuidev/svelte-lang",
+    "@openuidev/vue-lang"
+  ]
+}

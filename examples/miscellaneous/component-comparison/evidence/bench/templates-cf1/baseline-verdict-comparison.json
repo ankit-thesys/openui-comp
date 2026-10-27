@@ -1,0 +1,271 @@
+{
+  "note": "Strict results at distinct frozen artifacts. Changed outcomes are observations, not automatic causal attribution or acceptance. Original baseline preserved separately.",
+  "changes": [
+    {
+      "cell": "bar-chart-variants--tailwind3-after--768--light--stream",
+      "old": "Pass",
+      "new": "Review",
+      "oldSourceRun": "2026-10-25T23-16-43-773Z-8bbbd7b0",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "bar-chart-variants--tailwind4-before--768--light--stream",
+      "old": "Review",
+      "new": "Pass",
+      "oldSourceRun": "2026-10-25T23-16-43-773Z-8bbbd7b0",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "bar-chart-variants--tailwind4-before--768--dark--instant",
+      "old": "Review",
+      "new": "Pass",
+      "oldSourceRun": "2026-10-25T23-16-43-773Z-8bbbd7b0",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "bar-chart-variants--tailwind4-before--768--dark--stream",
+      "old": "Review",
+      "new": "Pass",
+      "oldSourceRun": "2026-10-25T23-16-43-773Z-8bbbd7b0",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "bar-chart-variants--tailwind4-after--768--dark--stream",
+      "old": "Pass",
+      "new": "Review",
+      "oldSourceRun": "2026-10-25T23-16-43-773Z-8bbbd7b0",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "pie-chart-variants--tailwind3-after--768--light--instant",
+      "old": "Review",
+      "new": "Pass",
+      "oldSourceRun": "2026-10-25T23-16-43-773Z-8bbbd7b0",
+      "newSourceRun": "2026-10-26-integrated-cf1-s1"
+    },
+    {
+      "cell": "tag-variants--plain--1280--dark--stream",
+      "old": "Review",
+      "new": "Pass",
+      "oldSourceRun": "2026-10-26T00-37-08-563Z-fixtures-s4",
+      "newSourceRun": "2026-10-26-integrated-cf1-s1"
+    },
+    {
+      "cell": "tag-variants--tailwind4-before--768--dark--stream",
+      "old": "Pass",
+      "new": "Review",
+      "oldSourceRun": "2026-10-26T00-37-08-563Z-fixtures-s4",
+      "newSourceRun": "2026-10-26-integrated-cf1-s1"
+    },
+    {
+      "cell": "tag-variants--tailwind4-before--1280--dark--stream",
+      "old": "Pass",
+      "new": "Review",
+      "oldSourceRun": "2026-10-26T00-37-08-563Z-fixtures-s4",
+      "newSourceRun": "2026-10-26-integrated-cf1-s1"
+    },
+    {
+      "cell": "tag-variants--tailwind4-after--1280--dark--stream",
+      "old": "Review",
+      "new": "Pass",
+      "oldSourceRun": "2026-10-26T00-37-08-563Z-fixtures-s4",
+      "newSourceRun": "2026-10-26-integrated-cf1-s1"
+    },
+    {
+      "cell": "image-text-variants--plain--390--dark--stream",
+      "old": "Review",
+      "new": "Pass",
+      "oldSourceRun": "2026-10-26T00-37-08-563Z-fixtures-s2",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "image-text-variants--tailwind3-after--390--light--stream",
+      "old": "Review",
+      "new": "Pass",
+      "oldSourceRun": "2026-10-26T00-37-08-563Z-fixtures-s2",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "image-text-variants--tailwind3-after--768--light--stream",
+      "old": "Review",
+      "new": "Pass",
+      "oldSourceRun": "2026-10-26T00-37-08-563Z-fixtures-s2",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "image-text-variants--tailwind4-before--390--light--stream",
+      "old": "Pass",
+      "new": "Review",
+      "oldSourceRun": "2026-10-26T00-37-08-563Z-fixtures-s2",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "image-text-variants--tailwind4-after--390--light--stream",
+      "old": "Pass",
+      "new": "Review",
+      "oldSourceRun": "2026-10-26T00-37-08-563Z-fixtures-s2",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "image-text-variants--tailwind4-after--768--light--stream",
+      "old": "Pass",
+      "new": "Review",
+      "oldSourceRun": "2026-10-26T00-37-08-563Z-fixtures-s2",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "image-text-variants--tailwind4-after--768--dark--stream",
+      "old": "Review",
+      "new": "Pass",
+      "oldSourceRun": "2026-10-26T00-37-08-563Z-fixtures-s2",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "slider-validation-error--plain--768--light--stream",
+      "old": "Review",
+      "new": "Known issue",
+      "oldSourceRun": "2026-10-25T23-34-55-589Z-matrix-s3",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "slider-validation-error--plain--1280--light--stream",
+      "old": "Known issue",
+      "new": "Review",
+      "oldSourceRun": "2026-10-25T23-34-55-589Z-matrix-s3",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "slider-validation-error--plain--1280--dark--instant",
+      "old": "Known issue",
+      "new": "Review",
+      "oldSourceRun": "2026-10-25T23-34-55-589Z-matrix-s3",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "slider-validation-error--tailwind3-before--1280--dark--instant",
+      "old": "Known issue",
+      "new": "Review",
+      "oldSourceRun": "2026-10-25T23-34-55-589Z-matrix-s3",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "slider-validation-error--tailwind3-before--1280--dark--stream",
+      "old": "Known issue",
+      "new": "Review",
+      "oldSourceRun": "2026-10-25T23-34-55-589Z-matrix-s3",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "slider-validation-error--tailwind3-after--768--dark--instant",
+      "old": "Known issue",
+      "new": "Review",
+      "oldSourceRun": "2026-10-25T23-34-55-589Z-matrix-s3",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "slider-validation-error--tailwind3-after--1280--dark--instant",
+      "old": "Known issue",
+      "new": "Review",
+      "oldSourceRun": "2026-10-25T23-34-55-589Z-matrix-s3",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-before--768--light--instant",
+      "old": "Review",
+      "new": "Known issue",
+      "oldSourceRun": "2026-10-25T23-34-55-589Z-matrix-s3",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-before--768--dark--stream",
+      "old": "Review",
+      "new": "Known issue",
+      "oldSourceRun": "2026-10-25T23-34-55-589Z-matrix-s3",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-before--1280--dark--stream",
+      "old": "Known issue",
+      "new": "Review",
+      "oldSourceRun": "2026-10-25T23-34-55-589Z-matrix-s3",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-after--768--dark--stream",
+      "old": "Known issue",
+      "new": "Review",
+      "oldSourceRun": "2026-10-25T23-34-55-589Z-matrix-s3",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-after--1280--light--instant",
+      "old": "Review",
+      "new": "Known issue",
+      "oldSourceRun": "2026-10-25T23-34-55-589Z-matrix-s3",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-after--1280--light--stream",
+      "old": "Review",
+      "new": "Known issue",
+      "oldSourceRun": "2026-10-25T23-34-55-589Z-matrix-s3",
+      "newSourceRun": "2026-10-26-integrated-cf1-s3"
+    },
+    {
+      "cell": "horizontal-string-height-known--plain--390--dark--instant",
+      "old": "Fail",
+      "new": "Review",
+      "oldSourceRun": "2026-10-26T00-20-29-133Z-b475d340",
+      "newSourceRun": "2026-10-26-integrated-cf1-s2"
+    },
+    {
+      "cell": "horizontal-string-height-known--plain--768--dark--instant",
+      "old": "Review",
+      "new": "Fail",
+      "oldSourceRun": "2026-10-26T00-20-29-133Z-b475d340",
+      "newSourceRun": "2026-10-26-integrated-cf1-s2"
+    },
+    {
+      "cell": "horizontal-string-height-known--plain--1280--dark--instant",
+      "old": "Review",
+      "new": "Fail",
+      "oldSourceRun": "2026-10-26T00-20-29-133Z-b475d340",
+      "newSourceRun": "2026-10-26-integrated-cf1-s2"
+    },
+    {
+      "cell": "horizontal-string-height-known--tailwind3-before--390--dark--instant",
+      "old": "Fail",
+      "new": "Review",
+      "oldSourceRun": "2026-10-26T00-20-29-133Z-b475d340",
+      "newSourceRun": "2026-10-26-integrated-cf1-s2"
+    },
+    {
+      "cell": "horizontal-string-height-known--tailwind3-before--768--light--instant",
+      "old": "Fail",
+      "new": "Review",
+      "oldSourceRun": "2026-10-26T00-20-29-133Z-b475d340",
+      "newSourceRun": "2026-10-26-integrated-cf1-s2"
+    },
+    {
+      "cell": "horizontal-string-height-known--tailwind3-after--768--dark--instant",
+      "old": "Fail",
+      "new": "Known issue",
+      "oldSourceRun": "2026-10-26T00-20-29-133Z-b475d340",
+      "newSourceRun": "2026-10-26-integrated-cf1-s2"
+    },
+    {
+      "cell": "horizontal-string-height-known--tailwind4-before--1280--light--instant",
+      "old": "Review",
+      "new": "Fail",
+      "oldSourceRun": "2026-10-26T00-20-29-133Z-b475d340",
+      "newSourceRun": "2026-10-26-integrated-cf1-s2"
+    },
+    {
+      "cell": "horizontal-string-height-known--tailwind4-after--768--light--instant",
+      "old": "Review",
+      "new": "Fail",
+      "oldSourceRun": "2026-10-26T00-20-29-133Z-b475d340",
+      "newSourceRun": "2026-10-26-integrated-cf1-s2"
+    }
+  ]
+}

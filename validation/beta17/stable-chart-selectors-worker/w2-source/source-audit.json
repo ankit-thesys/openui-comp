@@ -1,0 +1,166 @@
+{
+  "status": "SOURCE CONSERVATION ONLY; build/types/emitted/browser/SSR/performance acceptance not run",
+  "base": "75f69041891147d52dc0f0d2c4b21a048e575aa8",
+  "repo": "/private/tmp/openui-chart-shared-w2",
+  "files": [
+    {
+      "file": "shared/chartBase.styles.ts",
+      "sourceSha256": "de8b822ed3f97a12972bf1d69d1663b4a4402410cd0b9a82e71baccfac756136",
+      "baselineSha256": "46784aa1cd2d9e14bfc4ad385ac7010650e41447d4ba63da8d3d99454efd6c68",
+      "preservedFallbacks": 13,
+      "registrations": 3,
+      "parseDiagnostics": 0
+    },
+    {
+      "file": "shared/mini/miniChart.styles.ts",
+      "sourceSha256": "85f94c7e9e5f2b64c61f70a260c5725c68d397f63f41da29e2e3b717856e7371",
+      "baselineSha256": "3c48780f09a59db0b959eba6fd5443f88e254365dde22d0797d71044ab0e676f",
+      "preservedFallbacks": 1,
+      "registrations": 1,
+      "parseDiagnostics": 0
+    },
+    {
+      "file": "shared/core/DefaultLegend/defaultLegend.styles.ts",
+      "sourceSha256": "344768e3105ed501d5bdea558ff4cf67b15b3000ac96a6b8bdf2ea94a3a9fce4",
+      "baselineSha256": "0cd25d3d032eb641267ae46f5c4487a5c69c64a1dca28efd8c4d264c596fb524",
+      "preservedFallbacks": 28,
+      "registrations": 1,
+      "parseDiagnostics": 0
+    },
+    {
+      "file": "shared/core/PortalTooltip/portalTooltip.styles.ts",
+      "sourceSha256": "e2fdfedca2a1000cdec702f6e4c1fc735dc7f60e886368c470063e31306fc544",
+      "baselineSha256": "3baf1d2c63848f897e97d230bf06e45757170a9c05e046c07ce75c5860932309",
+      "preservedFallbacks": 42,
+      "registrations": 2,
+      "parseDiagnostics": 0
+    },
+    {
+      "file": "shared/core/StackedLegend/stackedLegend.styles.ts",
+      "sourceSha256": "14ecf6c27660f42c5a8bf413b7681f0ff5c496cf6a4a28e738f2371c83dd94c4",
+      "baselineSha256": "aad727aa5bdd58d7f8c3db7a4d732bc2a464f7faba3477b8f702f78c20f7f3ca",
+      "preservedFallbacks": 22,
+      "registrations": 3,
+      "parseDiagnostics": 0
+    },
+    {
+      "file": "shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts",
+      "sourceSha256": "99f5debe3d5af76222b8243f4a51f3d310bae34fd72c1fdeb9f6c7acef6dc0f5",
+      "baselineSha256": "aca192524ccbd520c078731826d78e98a60e19a0a41ef1582914025ce1481655",
+      "preservedFallbacks": 1,
+      "registrations": 1,
+      "parseDiagnostics": 0
+    },
+    {
+      "file": "shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts",
+      "sourceSha256": "55435a2144bb64644c09f2908cb3d31ceaac72d94121616d8a8da95543a8499c",
+      "baselineSha256": "372e80140ef2ec8ae0409c6a34949294720143d4f215032aae16fc96f6a7348e",
+      "preservedFallbacks": 2,
+      "registrations": 1,
+      "parseDiagnostics": 0
+    }
+  ],
+  "registrationCount": 12,
+  "preservedFallbacks": 109,
+  "callers": [
+    {
+      "file": "AreaChart/AreaChart.tsx",
+      "sourceSha256": "a2454be2e39cb1cbdc748f5ecbd1e751c4fac071fcdbd79f159f61e001aa0d3c",
+      "unchanged": true,
+      "outsideShared": true
+    },
+    {
+      "file": "BarChart/BarChart.tsx",
+      "sourceSha256": "7d7890126485ca97146ee781c81975b180fa801ced29e464259399c499bcd850",
+      "unchanged": true,
+      "outsideShared": true
+    },
+    {
+      "file": "LineChart/LineChart.tsx",
+      "sourceSha256": "5b7fa4ccc67ec2c655c98bb69d990087577943b823060d18f00007441b386041",
+      "unchanged": true,
+      "outsideShared": true
+    },
+    {
+      "file": "shared/cartesian/ScrollButtonsHorizontal/ScrollButtonsHorizontal.tsx",
+      "sourceSha256": "7ed7223cb9c6a6ebbb4c30ac7d2c8bb5b8f6188e628ed74a63bd43a5110b210b",
+      "unchanged": true,
+      "outsideShared": false
+    },
+    {
+      "file": "shared/cartesian/ScrollButtonsVertical/ScrollButtonsVertical.tsx",
+      "sourceSha256": "dce6d54e061b3e12a108404a078476a4ee35b471b8a6d602b23c64bd4f7f6027",
+      "unchanged": true,
+      "outsideShared": false
+    },
+    {
+      "file": "shared/cartesian/layouts/CartesianChartLayout.tsx",
+      "sourceSha256": "428e3a3b38642d7e3c5795d7edaa9218d449e3541f8576e4dbb211371e0c9607",
+      "unchanged": true,
+      "outsideShared": false
+    },
+    {
+      "file": "shared/core/ChartShell.tsx",
+      "sourceSha256": "b790fcaa170c083cd2551c4f5e2a2a6ea4badcd36a432538ba40f4fc6a2701c5",
+      "unchanged": true,
+      "outsideShared": false
+    },
+    {
+      "file": "shared/core/DefaultLegend/DefaultLegend.tsx",
+      "sourceSha256": "6f383188c2c610834a7b2ae1517143d823303c1cf4c978fcbfcaf9829a8057fb",
+      "unchanged": true,
+      "outsideShared": false
+    },
+    {
+      "file": "shared/core/PortalTooltip/ChartTooltip.tsx",
+      "sourceSha256": "71bc42f854911ec76681f6b8d8adaedbb5722a06ebda262009bd15742625e655",
+      "unchanged": true,
+      "outsideShared": false
+    },
+    {
+      "file": "shared/core/StackedLegend/ChartWithStackedLegend.tsx",
+      "sourceSha256": "2aee700367ebfe31a56300de709c5a26bddaf437c854c927b78b12e8a8df71e1",
+      "unchanged": true,
+      "outsideShared": false
+    },
+    {
+      "file": "shared/core/StackedLegend/StackedLegendView.tsx",
+      "sourceSha256": "ec657dd5fcc77f5b20c4c4a8e89f48f669e95a43e1f4cc14f1546d5de2238d2f",
+      "unchanged": true,
+      "outsideShared": false
+    },
+    {
+      "file": "shared/mini/MiniChartFrame.tsx",
+      "sourceSha256": "9a578a617d2e388fc02b4626aee0a74b50e1c1c2106eb59ba124051db9187011",
+      "unchanged": true,
+      "outsideShared": false
+    }
+  ],
+  "unchangedSharedKeyframeFiles": [
+    "shared/animations/drawLine.styles.ts",
+    "shared/animations/fadeAppear.styles.ts"
+  ],
+  "canonicalTargets": [
+    "openui-chart-horizontal-scroll-controls-root",
+    "openui-chart-vertical-scroll-controls-root",
+    "openui-chart-empty-root",
+    "openui-chart-y-axis-label-root",
+    "openui-chart-x-axis-label-root",
+    "openui-chart-default-legend-root",
+    "openui-chart-tooltip-portal-root",
+    "openui-chart-tooltip-root",
+    "openui-chart-stacked-legend-root",
+    "openui-chart-stacked-legend-layout-root",
+    "openui-chart-stacked-legend-scrollbar",
+    "openui-mini-chart-root"
+  ],
+  "changedPaths": [
+    "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts",
+    "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts",
+    "packages/react-components/src/components/Charts/shared/chartBase.styles.ts",
+    "packages/react-components/src/components/Charts/shared/core/DefaultLegend/defaultLegend.styles.ts",
+    "packages/react-components/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts",
+    "packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
+    "packages/react-components/src/components/Charts/shared/mini/miniChart.styles.ts"
+  ]
+}

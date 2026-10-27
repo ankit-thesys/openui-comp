@@ -1,0 +1,5 @@
+
+> @openuidev/example-component-comparison@0.1.0 test:bench-themes
+> node tests/bench-themes.browser.mjs
+
+{"pass":true,"combinations":6,"presets":[{"id":"default","hash":"720dd4f2ff9f5b19411d482c97132f081f6d7160c9737ad9310354d0a7c1439f"},{"id":"cyberpunk","hash":"f8fd65ffcdbd8e32320a94d31ef99d1a877635095cbb0b91bc5413d1f73b528f"},{"id":"crimson-desert","hash":"cb90ab4e65c957be2f23f2a2b88f808f6575b9da4491b008153fff9b9e40cad0"}],"switchDuringStreamPreserved":true,"blocked":[],"pageErrors":[]}

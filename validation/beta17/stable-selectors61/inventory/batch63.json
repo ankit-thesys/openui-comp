@@ -1,0 +1,1369 @@
+{
+  "baseCommit": "c1aaf994d5c0fbfb56b83685221eeea9b409e57c",
+  "implementationGate": "accepted61 stock registration and shared-base contract + root-assigned branch/worktree/window",
+  "accepted": false,
+  "families": [
+    {
+      "batch": "A",
+      "batchTitle": "Small roots and image behavior",
+      "family": "Separator",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Horizontal/vertical orientation and thickness/extent; target root decorative styles without changing semantics."
+      ],
+      "observedHooks": [
+        "openui-separator"
+      ],
+      "observedStateSelectors": [
+        "[data-orientation=\"horizontal\"]",
+        "[data-orientation=\"vertical\"]"
+      ],
+      "files": [
+        "components/Separator/Separator.tsx",
+        "components/Separator/index.ts",
+        "components/Separator/separator.styles.ts"
+      ],
+      "dependencies": [],
+      "partialAreas": null
+    },
+    {
+      "batch": "A",
+      "batchTitle": "Small roots and image behavior",
+      "family": "IconText",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Icon/text alignment, spacing, wrapping and icon dimensions; customize only intentional owned parts."
+      ],
+      "observedHooks": [
+        "openui-icon-tag",
+        "openui-icon-text",
+        "openui-icon-text--",
+        "openui-icon-text__content",
+        "openui-text-block__primary"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/IconText/IconText.tsx",
+        "components/IconText/iconText.styles.ts",
+        "components/IconText/index.ts"
+      ],
+      "dependencies": [
+        "IconTag",
+        "TextBlock",
+        "_shared"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "A",
+      "batchTitle": "Small roots and image behavior",
+      "family": "TextContentWrapper",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Wrapper width/spacing and child geometry; existing caller class/style forwarding."
+      ],
+      "observedHooks": [
+        "openui-text-content",
+        "openui-text-content-markdown",
+        "openui-text-content-markdown-dark-mode"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/TextContentWrapper/TextContentWrapper.tsx",
+        "components/TextContentWrapper/index.ts",
+        "components/TextContentWrapper/mathRenderer.ts",
+        "components/TextContentWrapper/textContentWrapper.styles.ts"
+      ],
+      "dependencies": [
+        "Citation",
+        "InlineHeader",
+        "MarkDownRenderer",
+        "ThemeProvider",
+        "_shared"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "A",
+      "batchTitle": "Small roots and image behavior",
+      "family": "Image",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Fit/fill modes, dimensions, successful image and load-error branch; preserve existing error hook and accessible alt."
+      ],
+      "observedHooks": [
+        "openui-image",
+        "openui-image--error",
+        "openui-image-fill",
+        "openui-image-fit"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/Image/Image.tsx",
+        "components/Image/image.styles.ts",
+        "components/Image/index.ts"
+      ],
+      "dependencies": [],
+      "partialAreas": null
+    },
+    {
+      "batch": "A",
+      "batchTitle": "Small roots and image behavior",
+      "family": "SourceFaviconImage",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Successful img object-fit/display hook; empty URL, natural-size miss and load error render shared IconWrapper without the image hook; URL change restores image attempt."
+      ],
+      "observedHooks": [
+        "openui-source-favicon-image"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/SourceFaviconImage/SourceFaviconImage.tsx",
+        "components/SourceFaviconImage/index.ts",
+        "components/SourceFaviconImage/sourceFaviconImage.styles.ts"
+      ],
+      "dependencies": [
+        "_shared"
+      ],
+      "partialAreas": "Successful img root openui-source-favicon-image with object-fit/display is eligible. Empty URL/error branch renders shared IconWrapper without this hook: leave fallback behavior/icons unchanged and do not document the image hook as a fallback-icon hook."
+    },
+    {
+      "batch": "B",
+      "batchTitle": "Tokens, variants and small parts",
+      "family": "Tag",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Sizes, semantic variants, icon/text parts and wrapping; preserve current styles prop."
+      ],
+      "observedHooks": [
+        "openui-tag",
+        "openui-tag-danger",
+        "openui-tag-icon",
+        "openui-tag-info",
+        "openui-tag-lg",
+        "openui-tag-md",
+        "openui-tag-neutral",
+        "openui-tag-sm",
+        "openui-tag-success",
+        "openui-tag-text",
+        "openui-tag-warning"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/Tag/Tag.tsx",
+        "components/Tag/index.ts",
+        "components/Tag/tag.styles.ts"
+      ],
+      "dependencies": [],
+      "partialAreas": null
+    },
+    {
+      "batch": "B",
+      "batchTitle": "Tokens, variants and small parts",
+      "family": "IconTag",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Existing icon/text layout and variant/size maps, caller overrides and truncation."
+      ],
+      "observedHooks": [
+        "openui-icon-tag",
+        "openui-icon-tag--"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/IconTag/IconTag.tsx",
+        "components/IconTag/iconTag.styles.ts",
+        "components/IconTag/index.ts"
+      ],
+      "dependencies": [
+        "_shared"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "B",
+      "batchTitle": "Tokens, variants and small parts",
+      "family": "TextContent",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Preserve text-content and text-content-clear/card/sunk; decide intentional openui alias with61 pattern. Verify root typography/border plus all three variant padding/background/border rules; no skip due prefix filter."
+      ],
+      "observedHooks": [
+        "text-content",
+        "text-content-card",
+        "text-content-clear",
+        "text-content-sunk"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/TextContent/TextContent.tsx",
+        "components/TextContent/index.ts",
+        "components/TextContent/textContent.styles.ts"
+      ],
+      "dependencies": [],
+      "partialAreas": null
+    },
+    {
+      "batch": "B",
+      "batchTitle": "Tokens, variants and small parts",
+      "family": "InlineHeader",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Heading, description/icon/side slots and responsive wrapping; customize supported parts, retain actual semantics."
+      ],
+      "observedHooks": [
+        "openui-inline-header",
+        "openui-inline-header-description",
+        "openui-inline-header-heading"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/InlineHeader/InlineHeader.tsx",
+        "components/InlineHeader/index.ts",
+        "components/InlineHeader/inlineHeader.styles.ts"
+      ],
+      "dependencies": [
+        "InlineMarkdownRenderer"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "B",
+      "batchTitle": "Tokens, variants and small parts",
+      "family": "Callout",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Title/body/icon parts and all semantic variants; background/border/text geometry."
+      ],
+      "observedHooks": [
+        "openui-callout",
+        "openui-callout-autodismiss",
+        "openui-callout-danger",
+        "openui-callout-description",
+        "openui-callout-info",
+        "openui-callout-neutral",
+        "openui-callout-success",
+        "openui-callout-title",
+        "openui-callout-warning"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/Callout/Callout.tsx",
+        "components/Callout/callout.styles.ts",
+        "components/Callout/index.ts"
+      ],
+      "dependencies": [],
+      "partialAreas": null
+    },
+    {
+      "batch": "B",
+      "batchTitle": "Tokens, variants and small parts",
+      "family": "TextCallout",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Existing text/variant surfaces and child layout, typography and spacing."
+      ],
+      "observedHooks": [
+        "openui-text-callout",
+        "openui-text-callout-content",
+        "openui-text-callout-content-description",
+        "openui-text-callout-content-title",
+        "openui-text-callout-danger",
+        "openui-text-callout-info",
+        "openui-text-callout-neutral",
+        "openui-text-callout-success",
+        "openui-text-callout-warning"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/TextCallout/TextCallout.tsx",
+        "components/TextCallout/index.ts",
+        "components/TextCallout/textCallout.styles.ts"
+      ],
+      "dependencies": [],
+      "partialAreas": null
+    },
+    {
+      "batch": "B",
+      "batchTitle": "Tokens, variants and small parts",
+      "family": "MetricIndicator",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Value/label/trend or other actually exposed variant parts; typography alignment and wrapping; document actual existing API only."
+      ],
+      "observedHooks": [
+        "openui-metric-indicator",
+        "openui-metric-indicator--has-subtext",
+        "openui-metric-indicator--variant-",
+        "openui-metric-indicator--variant-inline",
+        "openui-metric-indicator__main-value",
+        "openui-metric-indicator__previous-value",
+        "openui-metric-indicator__row",
+        "openui-metric-indicator__subtext",
+        "openui-metric-indicator__trend",
+        "openui-metric-indicator__trend--danger",
+        "openui-metric-indicator__trend--success"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/MetricIndicator/MetricIndicator.tsx",
+        "components/MetricIndicator/index.ts",
+        "components/MetricIndicator/metricIndicator.styles.ts"
+      ],
+      "dependencies": [],
+      "partialAreas": null
+    },
+    {
+      "batch": "C",
+      "batchTitle": "Owned rich text, with explicit vendor boundary",
+      "family": "CodeBlock",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Wrapper positioning, copy-button placement/hover/copied-state and accessible copy callback; owned highlighter container margin/radius.",
+        "Vendor token-color inline themes are outside ordinary later-CSS guarantee. Disclose existing margin important; preserve dependency theme and runtime clipboard behavior."
+      ],
+      "observedHooks": [
+        "openui-code-block-copy-button",
+        "openui-code-block-copy-button-copied",
+        "openui-code-block-syntax-highlighter",
+        "openui-code-block-wrapper"
+      ],
+      "observedStateSelectors": [
+        ":hover"
+      ],
+      "files": [
+        "components/CodeBlock/CodeBlock.tsx",
+        "components/CodeBlock/codeBlock.styles.ts",
+        "components/CodeBlock/index.ts"
+      ],
+      "dependencies": [
+        "IconButton"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "C",
+      "batchTitle": "Owned rich text, with explicit vendor boundary",
+      "family": "MarkDownRenderer",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Owned root, headings/link/code/table/list styles and intentional card/sunk variants; actual Markdown rendering and link behavior.",
+        "Preserve KaTeX/vendor token DOM and inline themes. Owned descendant rules remain eligible; document exact vendor boundary rather than whole-family defer."
+      ],
+      "observedHooks": [
+        "openui-code-block-syntax-highlighter",
+        "openui-markdown-renderer",
+        "openui-markdown-renderer-card",
+        "openui-markdown-renderer-card-sunk",
+        "openui-markdown-renderer-code",
+        "openui-markdown-renderer-link",
+        "openui-table-container"
+      ],
+      "observedStateSelectors": [
+        ":hover"
+      ],
+      "files": [
+        "components/MarkDownRenderer/MarkDownRenderer.tsx",
+        "components/MarkDownRenderer/index.ts",
+        "components/MarkDownRenderer/markdown.styles.ts"
+      ],
+      "dependencies": [
+        "CodeBlock",
+        "Table",
+        "ThemeProvider"
+      ],
+      "partialAreas": "Owned wrapper/link/code/table and deliberate descendant rules remain eligible. Vendor syntax-highlighter/KaTeX token DOM/inline themes are the specific deferred area; not a whole-family skip."
+    },
+    {
+      "batch": "C",
+      "batchTitle": "Owned rich text, with explicit vendor boundary",
+      "family": "InlineMarkdownRenderer",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Inline root, markdown scope, p/direct-child display/margins and inherited typography; flow inside surrounding text and nested TextBlock.",
+        "Vendor token internals only deferred; retain owned all:unset and cascade semantics."
+      ],
+      "observedHooks": [
+        "openui-inline-markdown-renderer",
+        "openui-inline-markdown-renderer--dark",
+        "openui-markdown-renderer"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/InlineMarkdownRenderer/InlineMarkdownRenderer.tsx",
+        "components/InlineMarkdownRenderer/index.ts",
+        "components/InlineMarkdownRenderer/inlineMarkdown.styles.ts"
+      ],
+      "dependencies": [
+        "Citation",
+        "MarkDownRenderer",
+        "ThemeProvider",
+        "_shared"
+      ],
+      "partialAreas": "Owned inline wrapper, markdown descendant scope, p and direct-child layout rules remain eligible; coordinate MarkDownRenderer. Defer only vendor internals, not existing owned selectors."
+    },
+    {
+      "batch": "D",
+      "batchTitle": "Composed image/text and lists",
+      "family": "ImageBlock",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Image/content wrapper dimensions, crop/fit and existing image error behavior; indirect Image regression."
+      ],
+      "observedHooks": [
+        "openui-image-block-image",
+        "openui-image-block-image--error",
+        "openui-image-block-image--mobile",
+        "openui-image-block-loader",
+        "openui-image-block-wrapper",
+        "openui-image-block-wrapper--error",
+        "openui-image-block-wrapper--mobile"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/ImageBlock/ImageBlock.tsx",
+        "components/ImageBlock/imageBlock.styles.ts",
+        "components/ImageBlock/index.ts"
+      ],
+      "dependencies": [],
+      "partialAreas": null
+    },
+    {
+      "batch": "D",
+      "batchTitle": "Composed image/text and lists",
+      "family": "ImageText",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Image and text part spacing/wrapping and available placement/variant combinations; indirect Image/Markdown controls."
+      ],
+      "observedHooks": [
+        "openui-image-text",
+        "openui-image-text--",
+        "openui-image-text__content",
+        "openui-image-text__image",
+        "openui-image-text__image-container",
+        "openui-text-block__primary"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/ImageText/ImageText.tsx",
+        "components/ImageText/imageText.styles.ts",
+        "components/ImageText/index.ts"
+      ],
+      "dependencies": [
+        "TextBlock"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "D",
+      "batchTitle": "Composed image/text and lists",
+      "family": "ImageTextLarge",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Large layout/part sizing and text overflow; image load/error and narrow container."
+      ],
+      "observedHooks": [
+        "openui-image-text-large",
+        "openui-image-text-large__content",
+        "openui-image-text-large__image",
+        "openui-image-text-large__image-wrap"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/ImageTextLarge/ImageTextLarge.tsx",
+        "components/ImageTextLarge/imageTextLarge.styles.ts",
+        "components/ImageTextLarge/index.ts"
+      ],
+      "dependencies": [
+        "TextBlock"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "D",
+      "batchTitle": "Composed image/text and lists",
+      "family": "TextBlock",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Owned root/primary/secondary/tertiary parts, size/type/alignment/tone/variant combinations; wrapping/truncation and inline Markdown composition."
+      ],
+      "observedHooks": [
+        "openui-text-block",
+        "openui-text-block--",
+        "openui-text-block--align-",
+        "openui-text-block--align-center",
+        "openui-text-block--align-left",
+        "openui-text-block--align-right",
+        "openui-text-block--highlight-number",
+        "openui-text-block--highlight-text",
+        "openui-text-block--highlight-text-number-subtext",
+        "openui-text-block--number",
+        "openui-text-block--number-title-text",
+        "openui-text-block--size-",
+        "openui-text-block--size-lg",
+        "openui-text-block--size-md",
+        "openui-text-block--size-sm",
+        "openui-text-block--size-xs",
+        "openui-text-block--text",
+        "openui-text-block--text-subtext",
+        "openui-text-block--title-text",
+        "openui-text-block--type-",
+        "openui-text-block--type-number",
+        "openui-text-block__primary",
+        "openui-text-block__secondary",
+        "openui-text-block__secondary--",
+        "openui-text-block__secondary--negative",
+        "openui-text-block__secondary--positive",
+        "openui-text-block__tertiary"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/TextBlock/TextBlock.tsx",
+        "components/TextBlock/index.ts",
+        "components/TextBlock/textBlock.styles.ts"
+      ],
+      "dependencies": [
+        "InlineMarkdownRenderer"
+      ],
+      "partialAreas": "Owned root/size/type/alignment/tone/variant rules are eligible; preserve InlineMarkdownRenderer dependency. Vendor internals only are excluded from any transitive guarantee."
+    },
+    {
+      "batch": "D",
+      "batchTitle": "Composed image/text and lists",
+      "family": "ListItem",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Owned row/icon/title/description/action layout, supported variants and clickable/disabled states if present; preserve actual semantics/ref/callback."
+      ],
+      "observedHooks": [
+        "openui-list-item",
+        "openui-list-item-action",
+        "openui-list-item-action-icon",
+        "openui-list-item-action-label",
+        "openui-list-item-clickable",
+        "openui-list-item-content",
+        "openui-list-item-content-wrapper",
+        "openui-list-item-indicator",
+        "openui-list-item-indicator-clickable",
+        "openui-list-item-indicator-image",
+        "openui-list-item-indicator-no-subtitle",
+        "openui-list-item-indicator-number",
+        "openui-list-item-subtitle",
+        "openui-list-item-title",
+        "openui-list-item-wrapper",
+        "openui-list-item-wrapper--small",
+        "openui-list-item-wrapper-with-action"
+      ],
+      "observedStateSelectors": [
+        ":hover",
+        ":focus"
+      ],
+      "files": [
+        "components/ListItem/ListItem.tsx",
+        "components/ListItem/index.ts",
+        "components/ListItem/listItem.styles.ts"
+      ],
+      "dependencies": [],
+      "partialAreas": null
+    },
+    {
+      "batch": "D",
+      "batchTitle": "Composed image/text and lists",
+      "family": "ListBlock",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "List container/direction/gaps and repeated ListItem geometry; no unscoped host list reset."
+      ],
+      "observedHooks": [
+        "openui-list-block",
+        "openui-list-block--small"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/ListBlock/ListBlock.tsx",
+        "components/ListBlock/index.ts",
+        "components/ListBlock/listBlock.styles.ts"
+      ],
+      "dependencies": [
+        "ListItem"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "E",
+      "batchTitle": "Containers and shared-base consumers",
+      "family": "Card",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Surface/size variants, padding/radius/border and child geometry; caller base vs matching variant overrides."
+      ],
+      "observedHooks": [
+        "openui-card",
+        "openui-card-card",
+        "openui-card-clear",
+        "openui-card-full",
+        "openui-card-standard",
+        "openui-card-sunk"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/Card/Card.tsx",
+        "components/Card/card.styles.ts",
+        "components/Card/index.ts"
+      ],
+      "dependencies": [],
+      "partialAreas": null
+    },
+    {
+      "batch": "E",
+      "batchTitle": "Containers and shared-base consumers",
+      "family": "CardHeader",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Existing openui-header top/bottom/left/right/icon parts and conditional slot layout; no renamed hooks by assumption."
+      ],
+      "observedHooks": [
+        "openui-header",
+        "openui-header-bottom",
+        "openui-header-top",
+        "openui-header-top-left",
+        "openui-header-top-left-icon",
+        "openui-header-top-right"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/CardHeader/CardHeader.tsx",
+        "components/CardHeader/cardHeader.styles.ts",
+        "components/CardHeader/index.ts"
+      ],
+      "dependencies": [
+        "Button",
+        "IconButton"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "E",
+      "batchTitle": "Containers and shared-base consumers",
+      "family": "Buttons",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Horizontal/vertical/wrap geometry with real Button/IconButton children; preserve61 controls. Shared-base stock stable handling must be accepted for this root before full conversion."
+      ],
+      "observedHooks": [
+        "openui-buttons",
+        "openui-buttons-horizontal",
+        "openui-buttons-vertical"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/Buttons/Buttons.tsx",
+        "components/Buttons/buttons.styles.ts",
+        "components/Buttons/index.ts"
+      ],
+      "dependencies": [
+        "Button",
+        "IconButton"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "E",
+      "batchTitle": "Containers and shared-base consumers",
+      "family": "TagBlock",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Wrapping/gaps with real Tag children; preserve styles plural. Accepted61 shared-base handling required; no independent edit to styles/base.ts."
+      ],
+      "observedHooks": [
+        "openui-tag-block"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/TagBlock/TagBlock.tsx",
+        "components/TagBlock/index.ts",
+        "components/TagBlock/tagBlock.styles.ts"
+      ],
+      "dependencies": [
+        "Tag"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "F",
+      "batchTitle": "Loaders and shape-specific skeletons",
+      "family": "DotMatrixLoader",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Root grid/size and owned dot dimensions/color/radius; observe animation with normal runtime enabled.",
+        "Inline opacity and runtime size variables are exact customization limits; do not disable animation or defer ordinary root/dot cosmetics."
+      ],
+      "observedHooks": [
+        "openui-dot-matrix-loader",
+        "openui-dot-matrix-loader__dot"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/DotMatrixLoader/DotMatrixLoader.tsx",
+        "components/DotMatrixLoader/dotMatrixLoader.styles.ts",
+        "components/DotMatrixLoader/index.ts"
+      ],
+      "dependencies": [],
+      "partialAreas": null
+    },
+    {
+      "batch": "F",
+      "batchTitle": "Loaders and shape-specific skeletons",
+      "family": "Skeleton",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "SkeletonBar and stack ordinary styles plus current theme/pulse behavior.",
+        "Review TableSkeleton/PieChartSkeleton shapes separately; list any specific deferred shape/rule. Private keyframe names alone do not justify deferral."
+      ],
+      "observedHooks": [
+        "openui-skeleton-bar",
+        "openui-skeleton-pie-chart-container",
+        "openui-skeleton-pie-chart-donut",
+        "openui-skeleton-pie-chart-legend",
+        "openui-skeleton-pie-chart-legend-dot",
+        "openui-skeleton-pie-chart-legend-item",
+        "openui-skeleton-pie-chart-semi",
+        "openui-skeleton-pie-chart-semi-donut",
+        "openui-skeleton-pie-chart-shape",
+        "openui-skeleton-pie-chart-wrapper",
+        "openui-skeleton-stack",
+        "openui-skeleton-table",
+        "openui-skeleton-table-cell",
+        "openui-skeleton-table-cell-short",
+        "openui-skeleton-table-row"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/Skeleton/PieChartSkeleton.tsx",
+        "components/Skeleton/Skeleton.tsx",
+        "components/Skeleton/SkeletonBar.tsx",
+        "components/Skeleton/TableSkeleton.tsx",
+        "components/Skeleton/index.ts",
+        "components/Skeleton/pieChartSkeleton.styles.ts",
+        "components/Skeleton/skeleton.styles.ts",
+        "components/Skeleton/skeletonPulse.ts",
+        "components/Skeleton/tableSkeleton.styles.ts"
+      ],
+      "dependencies": [],
+      "partialAreas": "SkeletonBar and stack ordinary styles are eligible. Inspect TableSkeleton/PieChartSkeleton shape areas separately; only specifically justified shapes may be deferred. Private keyframe identifiers alone are not a deferral reason."
+    },
+    {
+      "batch": "G",
+      "batchTitle": "Sources and composed cards",
+      "family": "Sources",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Provider empty/null vs populated strip, favicon/title/item layouts and actual source interaction; transitive portal usage remainsW2#64."
+      ],
+      "observedHooks": [
+        "openui-listed-source-item",
+        "openui-listed-source-item--has-url",
+        "openui-listed-source-item__header",
+        "openui-listed-source-item__logo",
+        "openui-listed-source-item__source-name",
+        "openui-listed-source-item__title",
+        "openui-listed-sources",
+        "openui-listed-sources-header",
+        "openui-listed-sources-header__buttons",
+        "openui-listed-sources-header__title",
+        "openui-listed-sources-item-container",
+        "openui-listed-sources-item-container--has-url"
+      ],
+      "observedStateSelectors": [
+        ":hover"
+      ],
+      "files": [
+        "components/Sources/ListedSources.tsx",
+        "components/Sources/SourceContext.tsx",
+        "components/Sources/Sources.tsx",
+        "components/Sources/SourcesItem.tsx",
+        "components/Sources/index.ts",
+        "components/Sources/listedSources.styles.ts",
+        "components/Sources/sourcesItem.styles.ts"
+      ],
+      "dependencies": [
+        "Carousel",
+        "IconButton",
+        "SourceFaviconImage",
+        "_shared"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "G",
+      "batchTitle": "Sources and composed cards",
+      "family": "SnippetCardBlock",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "LHS/RHS/truncation/tooltip trigger slots, surfaces and narrow layouts; TooltipWrapper behavior unchanged until64 then revisit consumer."
+      ],
+      "observedHooks": [
+        "openui-icon-text",
+        "openui-icon-text__content",
+        "openui-image-text",
+        "openui-image-text__content",
+        "openui-text-block",
+        "openui-text-block--align-left",
+        "openui-text-block__primary",
+        "openui-text-block__secondary",
+        "openui-value-card",
+        "openui-value-card--clickable",
+        "openui-value-card--static",
+        "openui-value-card__chevron",
+        "openui-value-card__lhs",
+        "openui-value-card__rhs",
+        "openui-value-card__rhs-content"
+      ],
+      "observedStateSelectors": [
+        ":hover",
+        ":focus-visible"
+      ],
+      "files": [
+        "components/SnippetCardBlock/SnippetCardBlock.tsx",
+        "components/SnippetCardBlock/index.ts",
+        "components/SnippetCardBlock/snippetCardBlock.styles.ts"
+      ],
+      "dependencies": [
+        "TooltipWrapper",
+        "_shared"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "G",
+      "batchTitle": "Sources and composed cards",
+      "family": "ContextCardBlock",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Root/tag/slot/chevron parts and interactive/static variants; click/keyboard and overflow.",
+        "Coordinate shared card layout file and Tag consumer; no behavior-hook rewrite."
+      ],
+      "observedHooks": [
+        "openui-context-card",
+        "openui-context-card--clickable",
+        "openui-context-card--static",
+        "openui-context-card--variant-",
+        "openui-context-card--variant-danger",
+        "openui-context-card--variant-gray",
+        "openui-context-card--variant-image",
+        "openui-context-card--variant-info",
+        "openui-context-card--variant-success",
+        "openui-context-card--variant-warning",
+        "openui-context-card__body-text",
+        "openui-context-card__chevron",
+        "openui-context-card__slot",
+        "openui-context-card__slot--bottom",
+        "openui-context-card__slot--top",
+        "openui-context-card__tag",
+        "openui-context-card__tag-wrapper",
+        "openui-context-card__title-text",
+        "openui-context-card__vertical",
+        "openui-tag"
+      ],
+      "observedStateSelectors": [
+        ":hover",
+        ":focus-visible"
+      ],
+      "files": [
+        "components/ContextCardBlock/ContextCardBlock.tsx",
+        "components/ContextCardBlock/card.styles.ts",
+        "components/ContextCardBlock/index.ts"
+      ],
+      "dependencies": [
+        "InlineMarkdownRenderer",
+        "_shared"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "G",
+      "batchTitle": "Sources and composed cards",
+      "family": "CompositeCardBlock",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Header/body/footer/wrapper and static/interactive rules, focus/click behavior and all shared layout consumers."
+      ],
+      "observedHooks": [
+        "openui-composite-card",
+        "openui-composite-card--clickable",
+        "openui-composite-card--static",
+        "openui-composite-card__body",
+        "openui-composite-card__footer",
+        "openui-composite-card__footer-content",
+        "openui-composite-card__header",
+        "openui-composite-card__wrapper",
+        "openui-inline-markdown-renderer"
+      ],
+      "observedStateSelectors": [
+        ":hover",
+        ":focus-visible"
+      ],
+      "files": [
+        "components/CompositeCardBlock/CompositeCardBlock.tsx",
+        "components/CompositeCardBlock/card.styles.ts",
+        "components/CompositeCardBlock/index.ts"
+      ],
+      "dependencies": [
+        "_shared"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "G",
+      "batchTitle": "Sources and composed cards",
+      "family": "OverviewCardBlock",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Owned content/items/slots and shared small-card grid/rows; container-query breakpoints."
+      ],
+      "observedHooks": [
+        "openui-overview-card",
+        "openui-overview-card--clickable",
+        "openui-overview-card__chevron",
+        "openui-overview-card__slot",
+        "openui-overview-card__slot--bottom",
+        "openui-overview-card__slot--top",
+        "openui-overview-card__top-row",
+        "openui-overview-card__vertical"
+      ],
+      "observedStateSelectors": [
+        ":hover",
+        ":focus-visible"
+      ],
+      "files": [
+        "components/OverviewCardBlock/OverviewCardBlock.tsx",
+        "components/OverviewCardBlock/index.ts",
+        "components/OverviewCardBlock/overviewCardBlock.styles.ts"
+      ],
+      "dependencies": [
+        "MetricIndicator",
+        "_shared"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "G",
+      "batchTitle": "Sources and composed cards",
+      "family": "VisualCardBlock",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Background image variable and missing-image none fallback, content/overlay layout and interaction; retain per-instance fallback."
+      ],
+      "observedHooks": [
+        "openui-tag",
+        "openui-visual-first-card",
+        "openui-visual-first-card--clickable",
+        "openui-visual-first-card--static",
+        "openui-visual-first-card__action",
+        "openui-visual-first-card__bottom",
+        "openui-visual-first-card__tag",
+        "openui-visual-first-card__top"
+      ],
+      "observedStateSelectors": [
+        ":hover",
+        ":focus-visible"
+      ],
+      "files": [
+        "components/VisualCardBlock/VisualCardBlock.tsx",
+        "components/VisualCardBlock/card.styles.ts",
+        "components/VisualCardBlock/index.ts"
+      ],
+      "dependencies": [
+        "_shared"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "H",
+      "batchTitle": "Interactive layout and structured data",
+      "family": "Accordion",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Open/closed content/header/item surfaces, focus-within/data-state rules, keyboard and aria/callback/ref; nested controls preserve61 semantics."
+      ],
+      "observedHooks": [
+        "openui-accordion",
+        "openui-accordion-card",
+        "openui-accordion-clear",
+        "openui-accordion-content",
+        "openui-accordion-content-wrapper",
+        "openui-accordion-header",
+        "openui-accordion-item",
+        "openui-accordion-sunk",
+        "openui-accordion-trigger",
+        "openui-accordion-trigger-content",
+        "openui-accordion-trigger-content-icon",
+        "openui-accordion-trigger-icon"
+      ],
+      "observedStateSelectors": [
+        ":focus-within",
+        "[data-state=\"open\"]",
+        "[data-state=\"closed\"]"
+      ],
+      "files": [
+        "components/Accordion/Accordion.tsx",
+        "components/Accordion/accordion.styles.ts",
+        "components/Accordion/index.ts"
+      ],
+      "dependencies": [],
+      "partialAreas": null
+    },
+    {
+      "batch": "H",
+      "batchTitle": "Interactive layout and structured data",
+      "family": "Tabs",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Root/list/trigger/content, active/inactive/disabled and keyboard focus; keep tab semantics and token fallbacks."
+      ],
+      "observedHooks": [
+        "openui-tabs",
+        "openui-tabs-clear",
+        "openui-tabs-content",
+        "openui-tabs-content-inner",
+        "openui-tabs-indicator",
+        "openui-tabs-list",
+        "openui-tabs-list--icon-title",
+        "openui-tabs-list--icon-title-subtext",
+        "openui-tabs-list--image-title",
+        "openui-tabs-list--image-title-subtext",
+        "openui-tabs-list--title",
+        "openui-tabs-list-container",
+        "openui-tabs-scroll-button",
+        "openui-tabs-scroll-button-container-left",
+        "openui-tabs-scroll-button-container-right",
+        "openui-tabs-scroll-left",
+        "openui-tabs-scroll-right",
+        "openui-tabs-trigger",
+        "openui-tabs-trigger-content",
+        "openui-tabs-trigger-icon",
+        "openui-tabs-trigger-image",
+        "openui-tabs-trigger-subtext",
+        "openui-tabs-trigger-text"
+      ],
+      "observedStateSelectors": [
+        "[data-state=\"active\"]",
+        ":hover"
+      ],
+      "files": [
+        "components/Tabs/Tabs.tsx",
+        "components/Tabs/index.ts",
+        "components/Tabs/tabs.styles.ts"
+      ],
+      "dependencies": [
+        "IconButton"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "H",
+      "batchTitle": "Interactive layout and structured data",
+      "family": "Steps",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Step/item/connector/current/completed states actually exposed; label wrapping, spacing and semantics."
+      ],
+      "observedHooks": [
+        "openui-connector-line",
+        "openui-step-connector",
+        "openui-step-content",
+        "openui-step-details",
+        "openui-step-item",
+        "openui-step-number",
+        "openui-step-number-inner",
+        "openui-step-title",
+        "openui-steps",
+        "openui-steps-container"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/Steps/Steps.tsx",
+        "components/Steps/index.ts",
+        "components/Steps/steps.styles.ts"
+      ],
+      "dependencies": [],
+      "partialAreas": null
+    },
+    {
+      "batch": "H",
+      "batchTitle": "Interactive layout and structured data",
+      "family": "SectionBlock",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Foldable section toggle vs nonfoldable layout, header/content parts, open/closed keyboard/callback behavior and narrow layout."
+      ],
+      "observedHooks": [
+        "openui-foldable-section",
+        "openui-foldable-section-content",
+        "openui-foldable-section-header",
+        "openui-foldable-section-item",
+        "openui-foldable-section-root",
+        "openui-foldable-section-trigger",
+        "openui-foldable-section-trigger-content-icon-button",
+        "openui-foldable-section-trigger-content-icon-button-icon",
+        "openui-foldable-section-trigger-content-icon-button-wrapper",
+        "openui-foldable-section-trigger-content-separator",
+        "openui-foldable-section-trigger-content-text",
+        "openui-foldable-section-trigger-content-wrapper",
+        "openui-section-v2",
+        "openui-section-v2-content",
+        "openui-section-v2-header",
+        "openui-section-v2-header-trigger",
+        "openui-section-v2-wrapper"
+      ],
+      "observedStateSelectors": [
+        "[data-state=\"open\"]",
+        "[data-state=\"closed\"]"
+      ],
+      "files": [
+        "components/SectionBlock/FoldableSection.tsx",
+        "components/SectionBlock/SectionV2.tsx",
+        "components/SectionBlock/foldableSection.styles.ts",
+        "components/SectionBlock/index.ts",
+        "components/SectionBlock/sectionV2.styles.ts"
+      ],
+      "dependencies": [
+        "IconButton",
+        "Separator"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "H",
+      "batchTitle": "Interactive layout and structured data",
+      "family": "Carousel",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Items/content/navigation, each surface variant, scrolling and disabled/end controls; preserve IconButton geometry and keyboard."
+      ],
+      "observedHooks": [
+        "openui-carousel",
+        "openui-carousel--",
+        "openui-carousel--sunk",
+        "openui-carousel-button",
+        "openui-carousel-button-left",
+        "openui-carousel-button-right",
+        "openui-carousel-content",
+        "openui-carousel-content--mask-left",
+        "openui-carousel-content--mask-right",
+        "openui-carousel-content-wrapper",
+        "openui-carousel-item"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/Carousel/Carousel.tsx",
+        "components/Carousel/carousel.styles.ts",
+        "components/Carousel/index.ts"
+      ],
+      "dependencies": [
+        "IconButton"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "H",
+      "batchTitle": "Interactive layout and structured data",
+      "family": "EntityList",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Rows/icons/text/actions, size/tone variants and clickable states where present; narrow/truncated/empty cases and refs."
+      ],
+      "observedHooks": [
+        "openui-entity-list",
+        "openui-entity-list--",
+        "openui-entity-list--default",
+        "openui-entity-list--small",
+        "openui-entity-list__cell-left",
+        "openui-entity-list__cell-left--",
+        "openui-entity-list__cell-left--footer",
+        "openui-entity-list__cell-right",
+        "openui-entity-list__cell-right--",
+        "openui-entity-list__cell-right--footer",
+        "openui-entity-list__cell-right--number",
+        "openui-entity-list__cell-right--text",
+        "openui-entity-list__row",
+        "openui-entity-list__row--",
+        "openui-entity-list__row--header"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/EntityList/EntityList.tsx",
+        "components/EntityList/entityList.styles.ts",
+        "components/EntityList/index.ts"
+      ],
+      "dependencies": [
+        "InlineMarkdownRenderer"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "H",
+      "batchTitle": "Interactive layout and structured data",
+      "family": "Table",
+      "owner": "W2",
+      "status": "gated source preparation; not converted",
+      "checks": [
+        "Owned table/container/header/body/row/cell/alignment/scroll selectors, sticky/overflow behavior where present; do not restyle unrelated host tables."
+      ],
+      "observedHooks": [
+        "openui-scrollable-table-control",
+        "openui-scrollable-table-control-disabled",
+        "openui-scrollable-table-control-left",
+        "openui-scrollable-table-control-right",
+        "openui-scrollable-table-scroll-container",
+        "openui-scrollable-table-wrapper",
+        "openui-table",
+        "openui-table-align-center",
+        "openui-table-align-left",
+        "openui-table-align-right",
+        "openui-table-body",
+        "openui-table-cell",
+        "openui-table-container",
+        "openui-table-footer",
+        "openui-table-head",
+        "openui-table-head-content",
+        "openui-table-head-icon",
+        "openui-table-head-label",
+        "openui-table-header",
+        "openui-table-row"
+      ],
+      "observedStateSelectors": [],
+      "files": [
+        "components/Table/ScrollableTable.tsx",
+        "components/Table/Table.tsx",
+        "components/Table/index.ts",
+        "components/Table/scrollableTable.styles.ts",
+        "components/Table/table.styles.ts"
+      ],
+      "dependencies": [
+        "IconButton"
+      ],
+      "partialAreas": null
+    },
+    {
+      "batch": "I",
+      "batchTitle": "Explicit initial complex deferral",
+      "family": "EditableTable",
+      "owner": "W2",
+      "status": "proposed initial deferral",
+      "checks": [
+        "Initial whole-family deferral: editable selection/keyboard and portal Select/DatePicker/Tooltip dependencies need a later coordinated slice.",
+        "Existing hooks remain recorded but not claimed effective/global converted. Regression-smoke unchanged editors after W1#64 dependencies convert; reconsider scope explicitly."
+      ],
+      "observedHooks": [
+        "openui-editable-table-cell-base",
+        "openui-editable-table-cell-input",
+        "openui-editable-table-cell-outline-",
+        "openui-editable-table-cell-outline-bottom",
+        "openui-editable-table-cell-outline-bottom-editing",
+        "openui-editable-table-cell-outline-bottom-selected",
+        "openui-editable-table-cell-outline-left",
+        "openui-editable-table-cell-outline-left-editing",
+        "openui-editable-table-cell-outline-left-selected",
+        "openui-editable-table-cell-outline-right",
+        "openui-editable-table-cell-outline-right-editing",
+        "openui-editable-table-cell-outline-right-selected",
+        "openui-editable-table-cell-outline-top",
+        "openui-editable-table-cell-outline-top-editing",
+        "openui-editable-table-cell-outline-top-selected",
+        "openui-editable-table-changes-buttons",
+        "openui-editable-table-changes-container",
+        "openui-editable-table-changes-count",
+        "openui-editable-table-display-number",
+        "openui-editable-table-display-text",
+        "openui-editable-table-display-url",
+        "openui-editable-table-display-url-container",
+        "openui-editable-table-display-url-icon",
+        "openui-editable-table-display-url-warning-icon",
+        "openui-editable-table-header-container",
+        "openui-editable-table-header-icon",
+        "openui-editable-table-scroll-container",
+        "openui-editable-table-scroll-control",
+        "openui-editable-table-scroll-control--disabled",
+        "openui-editable-table-scroll-control--left",
+        "openui-editable-table-scroll-control--right",
+        "openui-editable-table-select-item",
+        "openui-editable-table-select-trigger",
+        "openui-editable-table-table",
+        "openui-editable-table-wrapper",
+        "openui-select-trigger"
+      ],
+      "observedStateSelectors": [
+        ":hover"
+      ],
+      "files": [
+        "components/EditableTable/EditableTable.tsx",
+        "components/EditableTable/base/components/CellOutline.tsx",
+        "components/EditableTable/base/components/CellTypes.ts",
+        "components/EditableTable/base/components/EditableDateCell.tsx",
+        "components/EditableTable/base/components/EditableNumberCell.tsx",
+        "components/EditableTable/base/components/EditableSelectCell.tsx",
+        "components/EditableTable/base/components/EditableTextCell.tsx",
+        "components/EditableTable/base/components/EditableUrlCell.tsx",
+        "components/EditableTable/base/components/TextBaseEditableCell.tsx",
+        "components/EditableTable/base/components/cellRegistry.ts",
+        "components/EditableTable/base/components/editableCell.styles.ts",
+        "components/EditableTable/base/components/editableSelectCell.styles.ts",
+        "components/EditableTable/base/hooks/useEditableCellKeyboard.ts",
+        "components/EditableTable/base/utils/utilsFn.ts",
+        "components/EditableTable/editableTable.styles.ts",
+        "components/EditableTable/index.ts"
+      ],
+      "dependencies": [
+        "Button",
+        "DatePicker",
+        "IconButton",
+        "Select",
+        "TooltipWrapper",
+        "_shared"
+      ],
+      "partialAreas": "Defer whole family initially: editable cell keyboard/selection plus Select/DatePicker/Tooltip dependencies; table parts and editors require coordinated coverage."
+    }
+  ]
+}

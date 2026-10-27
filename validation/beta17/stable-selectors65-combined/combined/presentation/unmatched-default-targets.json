@@ -1,0 +1,132 @@
+[
+  {
+    "family": "ImageBlock",
+    "symbol": "loaderClass",
+    "hook": "openui-image-block-loader-styled"
+  },
+  {
+    "family": "Sources",
+    "symbol": "buttonsClass",
+    "hook": "openui-sources-listed-sources-buttons"
+  },
+  {
+    "family": "_shared/cards",
+    "symbol": "scrollbarClass",
+    "hook": "openui-card-layout-scrollbar"
+  },
+  {
+    "family": "TooltipWrapper",
+    "symbol": "bodyClass",
+    "hook": "openui-tooltip-wrapper-body"
+  },
+  {
+    "family": "TooltipWrapper",
+    "symbol": "headingClass",
+    "hook": "openui-tooltip-wrapper-heading"
+  },
+  {
+    "family": "TooltipWrapper",
+    "symbol": "textClass",
+    "hook": "openui-tooltip-wrapper-text"
+  },
+  {
+    "family": "TooltipWrapper",
+    "symbol": "contentClass",
+    "hook": "openui-tooltip-wrapper-content"
+  },
+  {
+    "family": "Citation",
+    "symbol": "tooltipClass",
+    "hook": "openui-citation-tooltip-styled"
+  },
+  {
+    "family": "Citation",
+    "symbol": "tooltipContentClass",
+    "hook": "openui-citation-tooltip-content"
+  },
+  {
+    "family": "Citation",
+    "symbol": "itemClass",
+    "hook": "openui-citation-item-item"
+  },
+  {
+    "family": "Citation",
+    "symbol": "logoClass",
+    "hook": "openui-citation-item-logo"
+  },
+  {
+    "family": "Citation",
+    "symbol": "contentClass",
+    "hook": "openui-citation-item-content"
+  },
+  {
+    "family": "Citation",
+    "symbol": "titleClass",
+    "hook": "openui-citation-item-title"
+  },
+  {
+    "family": "Citation",
+    "symbol": "sourceClass",
+    "hook": "openui-citation-item-source"
+  },
+  {
+    "family": "ImageGallery",
+    "symbol": "modalClass",
+    "hook": "openui-image-gallery-gallery-modal-modal"
+  },
+  {
+    "family": "ImageGallery",
+    "symbol": "contentClass",
+    "hook": "openui-image-gallery-gallery-modal-content"
+  },
+  {
+    "family": "ImageGallery",
+    "symbol": "headerClass",
+    "hook": "openui-image-gallery-gallery-modal-header"
+  },
+  {
+    "family": "ImageGallery",
+    "symbol": "headingClass",
+    "hook": "openui-image-gallery-gallery-modal-heading"
+  },
+  {
+    "family": "ImageGallery",
+    "symbol": "mainClass",
+    "hook": "openui-image-gallery-gallery-modal-main"
+  },
+  {
+    "family": "ImageGallery",
+    "symbol": "carouselContainerClass",
+    "hook": "openui-image-gallery-gallery-modal-carousel-container"
+  },
+  {
+    "family": "ImageGallery",
+    "symbol": "carouselClass",
+    "hook": "openui-image-gallery-gallery-modal-carousel"
+  },
+  {
+    "family": "ImageGallery",
+    "symbol": "buttonContainerClass",
+    "hook": "openui-image-gallery-gallery-modal-button-container"
+  },
+  {
+    "family": "ImageGallery",
+    "symbol": "leftButtonClass",
+    "hook": "openui-image-gallery-gallery-modal-left-button"
+  },
+  {
+    "family": "ImageGallery",
+    "symbol": "rightButtonClass",
+    "hook": "openui-image-gallery-gallery-modal-right-button"
+  },
+  {
+    "family": "ImageGallery",
+    "symbol": "thumbnailClass",
+    "hook": "openui-image-gallery-gallery-modal-thumbnail"
+  },
+  {
+    "family": "ImageGallery",
+    "symbol": "activeThumbnailClass",
+    "hook": "openui-image-gallery-gallery-modal-active-thumbnail"
+  }
+]

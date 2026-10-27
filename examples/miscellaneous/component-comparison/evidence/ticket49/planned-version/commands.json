@@ -1,0 +1,50 @@
+[
+  {
+    "command": [
+      "node",
+      "--version"
+    ],
+    "cwd": "/private/tmp/ticket49-release-verification/workspace",
+    "exitCode": 0,
+    "stdout": "v22.22.2\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "pnpm",
+      "--version"
+    ],
+    "cwd": "/private/tmp/ticket49-release-verification/workspace",
+    "exitCode": 0,
+    "stdout": "10.33.0\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "pnpm",
+      "--filter",
+      "./packages/**",
+      "list",
+      "--depth",
+      "-1",
+      "--json"
+    ],
+    "cwd": "/private/tmp/ticket49-release-verification/workspace",
+    "exitCode": 0,
+    "stdout": "[\n  {\n    \"name\": \"@openuidev/a2ui\",\n    \"version\": \"0.5.0\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/a2ui\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/angular-lang\",\n    \"version\": \"0.4.2\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/angular-lang\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/assistant-ui\",\n    \"version\": \"0.2.0\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/assistant-ui\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/browser-bundle\",\n    \"version\": \"0.2.1\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/browser-bundle\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/devtools\",\n    \"version\": \"0.3.0\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/devtools\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/chat-kit\",\n    \"version\": \"0.0.0-beta.0\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/kits/chat\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/lang-core\",\n    \"version\": \"1.0.1\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/lang-core\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/langchain\",\n    \"version\": \"0.0.3\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/langchain\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/observability\",\n    \"version\": \"0.0.4\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/observability\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/observability-cloud\",\n    \"version\": \"0.0.3\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/observability-cloud\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/cli\",\n    \"version\": \"0.6.0\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/openui-cli\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/react-components\",\n    \"version\": \"0.0.0-beta.0\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/react-components\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/react-email\",\n    \"version\": \"0.4.0\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/react-email\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/react-headless\",\n    \"version\": \"0.18.1\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/react-headless\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/react-lang\",\n    \"version\": \"1.0.1\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/react-lang\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/react-ui\",\n    \"version\": \"0.18.1\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/react-ui\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/server\",\n    \"version\": \"0.3.0\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/server\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/svelte-lang\",\n    \"version\": \"0.4.2\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/svelte-lang\",\n    \"private\": false\n  },\n  {\n    \"name\": \"@openuidev/vue-lang\",\n    \"version\": \"0.4.2\",\n    \"path\": \"/private/tmp/ticket49-release-verification/workspace/packages/vue-lang\",\n    \"private\": false\n  }\n]\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "changeset",
+      "status",
+      "--output=/private/tmp/ticket49-release-verification/release-plan.json"
+    ],
+    "cwd": "/private/tmp/ticket49-release-verification/workspace",
+    "exitCode": 0,
+    "stdout": "\ud83e\udd8b changeset v3.0.2\n",
+    "stderr": ""
+  }
+]

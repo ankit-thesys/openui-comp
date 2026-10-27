@@ -1,0 +1,12 @@
+[
+  {
+    "phase": "extra",
+    "exitCode": 1,
+    "seconds": 46.42413783073425,
+    "checks": 102,
+    "passes": 101,
+    "failures": [
+      "plain/before/SVG-zero-line/positive-target"
+    ]
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "folder": "controls",
+    "script": "state-parts.mjs",
+    "exitCode": 0,
+    "elapsedSeconds": 57.14433813095093,
+    "checks": 66,
+    "passes": 66,
+    "failures": []
+  },
+  {
+    "folder": "portals",
+    "script": "run.mjs",
+    "exitCode": 0,
+    "elapsedSeconds": 386.855446100235,
+    "checks": 991,
+    "passes": 991,
+    "failures": []
+  },
+  {
+    "folder": "portals",
+    "script": "state-cssom.mjs",
+    "exitCode": 0,
+    "elapsedSeconds": 56.33112287521362,
+    "checks": 72,
+    "passes": 72,
+    "failures": []
+  },
+  {
+    "folder": "presentation",
+    "script": "run.mjs",
+    "exitCode": 0,
+    "elapsedSeconds": 116.78438186645508,
+    "checks": 2424,
+    "passes": 2424,
+    "failures": []
+  },
+  {
+    "folder": "presentation",
+    "script": "run-extra.mjs",
+    "exitCode": 0,
+    "elapsedSeconds": 102.2164900302887,
+    "checks": 374,
+    "passes": 374,
+    "failures": []
+  },
+  {
+    "folder": "presentation",
+    "script": "run-small-bounded.mjs",
+    "exitCode": 0,
+    "elapsedSeconds": 19.281190156936646,
+    "checks": 40,
+    "passes": 40,
+    "failures": []
+  },
+  {
+    "folder": "presentation",
+    "script": "run-tabs-state.mjs",
+    "exitCode": 0,
+    "elapsedSeconds": 7.1047680377960205,
+    "checks": 12,
+    "passes": 12,
+    "failures": []
+  },
+  {
+    "folder": "presentation",
+    "script": "run-sources-matched.mjs",
+    "exitCode": 0,
+    "elapsedSeconds": 9.026790857315063,
+    "checks": 36,
+    "passes": 36,
+    "failures": []
+  }
+]

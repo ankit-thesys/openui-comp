@@ -1,0 +1,1151 @@
+{
+  "scope": "Read-only source/archive/installed-file preflight. No imports/install/build/browser execution. Runtime pending W1 release.",
+  "head": "5e09b37c04a1a3be05b9447cf8b9effaf33a331f",
+  "baseline": "75f69041891147d52dc0f0d2c4b21a048e575aa8",
+  "packageTree": "2c31eb88b05349b48717c389deab040ec532fc7f",
+  "finalArchiveSHA256": "b09f11e6aa2809f42f7aee5eb2c23bd7bf6c58904d4a935918044f039ff7dd71",
+  "testedArchiveSHA256": "ec56caf237bcd0355e1f87cae2ac6716a2d10ad789169069a53b82ad18758431",
+  "finalVsTestedDiff": [
+    "package/README.md"
+  ],
+  "installed": {
+    "candidate": {
+      "consumer": "/private/tmp/openui-charts-w1-evidence/candidate-consumer",
+      "resolvedPackage": "/private/tmp/openui-charts-w1-evidence/candidate-consumer/node_modules/.pnpm/@openuidev+react-components@file+..+candidate-final+openuidev-react-components-0.0.0-be_27671c99b4897b9de51dac3d27aa45cb/node_modules/@openuidev/react-components",
+      "members": 2210
+    },
+    "baseline": {
+      "consumer": "/private/tmp/openui-charts-w1-evidence/baseline-consumer",
+      "resolvedPackage": "/private/tmp/openui-charts-w1-evidence/baseline-consumer/node_modules/.pnpm/@openuidev+react-components@file+..+baseline-archive+openuidev-react-components-0.0.0-b_1b6698ff81afcde5b361781ffac44251/node_modules/@openuidev/react-components",
+      "members": 2210
+    }
+  },
+  "ownedSources": {
+    "packages/react-components/src/components/Accordion/Accordion.tsx": "ab39f75b9de05977db20279c77cb6b2fc8bed8b706244a3a340784ee55d88ef1",
+    "packages/react-components/src/components/Accordion/accordion.styles.ts": "e66ba2a0033721bd93be9a3fb70fac5e8c3a34ff904164784aaac254667bd0ac",
+    "packages/react-components/src/components/Charts/shared/cartesian/AnimatedPath.tsx": "3365049b0158f31d4aedac473eca78e83d36a142f9ad0caa5436e91fc50d9157",
+    "packages/react-components/src/components/Charts/AreaChart/AreaChart.tsx": "a2454be2e39cb1cbdc748f5ecbd1e751c4fac071fcdbd79f159f61e001aa0d3c",
+    "packages/react-components/src/components/Charts/AreaChart/areaChart.styles.ts": "0c2b0313a6e4411025ba4e2cf4b4256382c7976673d13a054e6cff0cb222e493",
+    "packages/react-components/src/components/Charts/AreaChart/AreaChartCondensed.tsx": "e871492e12c0113d3bbe9ad1b7bc217a80082f4f38f3e8416389649dc5549b42",
+    "packages/react-components/src/components/Charts/AreaChart/parts/AreaSeries.tsx": "49db87715509f01b8caa8203e5f6abf96aff7c71037e8e3f27292bc2e446ed73",
+    "packages/react-components/src/components/Charts/BarChart/BarChart.tsx": "7d7890126485ca97146ee781c81975b180fa801ced29e464259399c499bcd850",
+    "packages/react-components/src/components/Charts/BarChart/barChart.styles.ts": "7f48a3457b40f48d41e0c5c48eed909495b94e180eea95ad4f13f9486626c70c",
+    "packages/react-components/src/components/Charts/BarChart/BarChartCondensed.tsx": "c2f49e5ea50eaebaf0d4788af758f9e32947a37ec10009bdfaf92fe1d9340724",
+    "packages/react-components/src/components/Charts/BarChart/parts/BarSeries.tsx": "ffd462a27c6fb3c96d49bab9ea85488326eb0e6bbee69fcc90fb83870dbc6371",
+    "packages/react-components/src/styles/base.ts": "0399c80e41c4ea65207d66ced63325e47a869441b1d66e8e363222b7d9f613df",
+    "packages/react-components/src/components/Charts/utils/buildContainerStyle.ts": "88afc8439352b9899c891c001cd7c726535b406cdede50d840cc55cca647faff",
+    "packages/react-components/src/components/Button/Button.tsx": "9a2bbfdd000bd1064dd0c9b06cf3a7e33b9373acef20dd5cf6f19d85596a1d7d",
+    "packages/react-components/src/components/Button/button.styles.ts": "9da8215e1b64a87ab82f2f9d281369661617d7b8d96a982b9c57c535ac02f605",
+    "packages/react-components/src/components/Buttons/Buttons.tsx": "7b3e7c9327961074e782089873829621c59dff2bc81c96bd92e5279feb262282",
+    "packages/react-components/src/components/Buttons/buttons.styles.ts": "955375c89a710e0672b4ed7782824c2cf1d07611f3dcfac61bf75de28f5be2b1",
+    "packages/react-components/src/components/Calendar/Calendar.tsx": "a27f68785c12b11dc19cd3701f110aa807317ca3d1e69a3b1729269d495fd53b",
+    "packages/react-components/src/components/Calendar/calendar.styles.ts": "08d332196a223103194965a1f810c8ad60782e10e21ceaaeb3edc15d769a2caa",
+    "packages/react-components/src/components/Charts/CalendarHeatmap/parts/CalendarCells.tsx": "555852fdff1e30220e84aa6511dac22ee582829a5ab57db7a7bd10dfc76b10f1",
+    "packages/react-components/src/components/Charts/CalendarHeatmap/CalendarHeatmap.tsx": "6c9c15f16ede1ad4b0ab8154f33e224973db58e00fa3ab1d70a5ab024f78193c",
+    "packages/react-components/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts": "ecd6ceee0a305f91796b2a92619a9454ad110f237d441575ca94d21d4091281e",
+    "packages/react-components/src/components/Charts/CalendarHeatmap/parts/CalendarLegend.tsx": "11698b00bd993fdf77978c74ebe65bad11d9ced3a20901831f492c2d98696704",
+    "packages/react-components/src/components/Charts/CalendarHeatmap/parts/calendarMath.ts": "5ab5f53d3f64144a4e67a6e7f5f1b901cadef05486d5f48c539d2974df3aef78",
+    "packages/react-components/src/components/Charts/CalendarHeatmap/parts/CalendarPatternDefs.tsx": "56f826bcf95387522a710d2d54ae019320aa93c9ca3e126d9f8d5af69251bc0f",
+    "packages/react-components/src/components/Charts/CalendarHeatmap/parts/CalendarSeparators.tsx": "c07caa85e702bd6cf4aad004527bfda41fec05accc356b3ca0b9286a921d9b4e",
+    "packages/react-components/src/components/Callout/Callout.tsx": "14ce4cecbf1b13c3a296bc9edacda28d2d06c7ffe633c7f77ee073409c740040",
+    "packages/react-components/src/components/Callout/callout.styles.ts": "07efeabb7b54ca6485a7ea418553a906c47989335dba82f49841ff7f9e10c73b",
+    "packages/react-components/src/components/Card/Card.tsx": "ad2a91f13e7b83bbafd0a4efc67faf4234b6d99a2fdb2e7536694898eedb9c8e",
+    "packages/react-components/src/components/Card/card.styles.ts": "5c3fd09b2b04f6437f890516240d708a3819806efc861cf660428e3d4420679c",
+    "packages/react-components/src/components/CompositeCardBlock/card.styles.ts": "0977ba3c61c2b9af39f5535e89476e23b90ecb9c60fd11df39e0ef347b7ceb92",
+    "packages/react-components/src/components/ContextCardBlock/card.styles.ts": "cd0f64a4bd88040c7e0a06cf93af4096d0d9cb4a1edee0cca3ce077a58e1ac7c",
+    "packages/react-components/src/components/VisualCardBlock/card.styles.ts": "8a255e692f4dc8b944f95513c3694ce1105aa31c8f57ff0931935bbc89737d6b",
+    "packages/react-components/src/components/_shared/cards/CardBlockLayout.tsx": "a72a9a97b2a37b3fbac74a77b8d08f36a2c397ad58cf3e1b2a7cf47960ee1fda",
+    "packages/react-components/src/components/_shared/cards/cardBlockLayout.styles.ts": "bacd8d14cee46b2929c97782b9bbb0a6b424a3f0d8023df9cd7d6a48a0f3b2bc",
+    "packages/react-components/src/components/CardHeader/CardHeader.tsx": "67bb2f09087aeb80618804d30905bf3aa4b596cdd5fc14511188b685a11de21e",
+    "packages/react-components/src/components/CardHeader/cardHeader.styles.ts": "244cfd1c3a6209d7f35191a26c6a0dc99819bdf35eef48b1b27976e1d1a7aa42",
+    "packages/react-components/src/components/Carousel/Carousel.tsx": "eae58eb8050d199b19e6298e2357d67f9ba1ebcb3c791b5738bc5c0f1d0862fa",
+    "packages/react-components/src/components/Carousel/carousel.styles.ts": "78aca9cac22c26b9eacf3476a601fd26129a778bb7c9bddb7fc590b441fa18d9",
+    "packages/react-components/src/components/Charts/shared/cartesian/layouts/CartesianChartLayout.tsx": "428e3a3b38642d7e3c5795d7edaa9218d449e3541f8576e4dbb211371e0c9607",
+    "packages/react-components/src/components/Charts/shared/cartesian/axes/CartesianXAxis.tsx": "d7981a88d4a1b45b42aa743bc92987f5a5a033ac52fb9cdc10ba818cf05ac8ff",
+    "packages/react-components/src/components/_shared/icons/categoryFallbacks.ts": "9d611b8a61be67b4e77dc14a2105f6677f1bd2192c164eeae99bcd9c6def8be0",
+    "packages/react-components/src/components/EditableTable/base/components/CellOutline.tsx": "4b4ad4c894c56781b3274bb0771f1196d6b8759586ef26390a5def08e403fedd",
+    "packages/react-components/src/components/EditableTable/base/components/cellRegistry.ts": "173071098e18b81dda42f18b27d923605b2814f83b84e5114073b2db73eb0ce7",
+    "packages/react-components/src/components/Charts/shared/chartBase.styles.ts": "de8b822ed3f97a12972bf1d69d1663b4a4402410cd0b9a82e71baccfac756136",
+    "packages/react-components/src/components/Charts/shared/chartBaseDeclarations.ts": "55712fd5e8a482def43d088a53e75ca97e8748051ba6a77af59cd4ab65785e7f",
+    "packages/react-components/src/components/Charts/shared/core/ChartShell.tsx": "b790fcaa170c083cd2551c4f5e2a2a6ea4badcd36a432538ba40f4fc6a2701c5",
+    "packages/react-components/src/components/Charts/shared/core/PortalTooltip/ChartTooltip.tsx": "71bc42f854911ec76681f6b8d8adaedbb5722a06ebda262009bd15742625e655",
+    "packages/react-components/src/components/Charts/shared/chartTypography.ts": "10286b5b1f9d998f7e41e0613ea96bc18e3d73ad6328878abbb6774c891dd4fe",
+    "packages/react-components/src/components/Charts/shared/core/StackedLegend/ChartWithStackedLegend.tsx": "2aee700367ebfe31a56300de709c5a26bddaf437c854c927b78b12e8a8df71e1",
+    "packages/react-components/src/components/CheckBoxGroup/CheckBoxGroup.tsx": "dd4fb98b792d6d40753f1d6461513936e925113f197b9d2e0f20e449c286f043",
+    "packages/react-components/src/components/CheckBoxItem/CheckBoxItem.tsx": "42bd3e007264cc65c2fec45f14a0206524331570b3cf6066ec6c985722ea1a10",
+    "packages/react-components/src/components/Chips/Chips.tsx": "83b014e24cb4f96c55b45591f817d7f8e9e65558b191e781e5cf450ae8e86da4",
+    "packages/react-components/src/components/Chips/chips.styles.ts": "f428229fb6813241c845e36c18a4d7263a4a2bc281e5f7deb9aac62eb79f3324",
+    "packages/react-components/src/components/Citation/Citation.tsx": "8aafbf1ae2369b91b1fd4a834a50b9a89bb6419e48cfec0a686988ff1a87abc7",
+    "packages/react-components/src/components/Citation/citation.styles.ts": "72881ba3c4677c80548b96a12c157979541330779f2da8fd5c0203ef817af710",
+    "packages/react-components/src/components/Citation/CitationItem.tsx": "6fbabf5d776f95eeeea5896c8e15ef5ed0f098c187259a2679f654bd9203ee74",
+    "packages/react-components/src/components/Citation/citationItem.styles.ts": "44a98ed2f8f32be776a67e2b82563c371c01692aa5d4292f926517e36a3ff4f6",
+    "packages/react-components/src/components/Charts/shared/cartesian/ClipDefs.tsx": "c14818e983ef05d083fdeedd2ed3c09e465a0d419ea744b8d952b1d8fb14d4ad",
+    "packages/react-components/src/components/CodeBlock/CodeBlock.tsx": "db20c52917a9ac790c7e582d4815922fb8e81d67725f17336023f89ffbd3c308",
+    "packages/react-components/src/components/CodeBlock/codeBlock.styles.ts": "10cc10600b39dac9470237da9e1d0d46d3a4facefb8759818b3cde80a6674126",
+    "packages/react-components/src/components/Charts/utils/colorLuminance.ts": "646bcd2190f5551b4f17f73f22b22b0b36cd8be33f72cb9eb85cadc1cf25f7d2",
+    "packages/react-components/src/components/CompositeCardBlock/CompositeCardBlock.tsx": "362cca7edea77b38f575c6d7cf33d27984e968c9d54f869a625283c7e0a36673",
+    "packages/react-components/src/components/Charts/shared/cartesian/axes/CondensedXAxis.tsx": "d00cec27a477df5bf1d0a89b057d133e323ee17ae714a20345a87e0a7cc5516f",
+    "packages/react-components/src/components/Charts/utils/constants.ts": "c8e1abc457db4b1a1181536c435b0e5e997c12a23b48217729d4041cab1d8f27",
+    "packages/react-components/src/components/FormControl/context.tsx": "bb31fde39b5c7dcb0440767003245dde4d6d6c29f1ea791b4c265599e3fbe17c",
+    "packages/react-components/src/components/ContextCardBlock/ContextCardBlock.tsx": "df30995a9d97c87a84de36d8acfb2c60a7d4a1c7c0843697722ee99e50ba7e43",
+    "packages/react-components/src/components/Charts/BarChart/parts/Crosshair.tsx": "fa3042afc62eada087de5be41336d6af9e1fc8051834beac42f758384836b639",
+    "packages/react-components/src/components/Charts/shared/core/spring/dataMorph.ts": "83cccbec5b08898d86260fe894e87b9e625d2dcc67e229e49dfb13d431241f58",
+    "packages/react-components/src/components/Charts/utils/dataUtils.ts": "b8e55d5e73fd8ff8e094ee45ae106daa3ef7b77b05558fc1927410f998487fd6",
+    "packages/react-components/src/components/DatePicker/DatePicker.tsx": "ec58d1af8832a26e5c50ca17d2e27261427aa20cce4cb431d83578aa326f3222",
+    "packages/react-components/src/components/DatePicker/datePicker.styles.ts": "46f47dcdaa23c895f3a579f4751587b4e4a84b0ad2b2dbd62ffb77ed217d6815",
+    "packages/react-components/src/components/DatePicker/helpers/context/DatePickerContext.tsx": "b37c84aa21dbd152a52a5a230e217b3374a15a4485dca27cd44733f3a91ae9da",
+    "packages/react-components/src/components/DatePicker/helpers/components/DatePickerRenderer.tsx": "854dd08b8285998105a3c46283119feadf2a5178cd4f3b486059405488c5e353",
+    "packages/react-components/src/components/Charts/shared/core/DefaultLegend/DefaultLegend.tsx": "6f383188c2c610834a7b2ae1517143d823303c1cf4c978fcbfcaf9829a8057fb",
+    "packages/react-components/src/components/Charts/shared/core/DefaultLegend/defaultLegend.styles.ts": "344768e3105ed501d5bdea558ff4cf67b15b3000ac96a6b8bdf2ea94a3a9fce4",
+    "packages/react-components/src/styles/defaults.ts": "0e1348b2b862663eb325756cde61e8075483e6891252777ec9b73d2459e63390",
+    "packages/react-components/src/components/ThemeProvider/defaultTheme.ts": "820ef8dd31e33395a4e63049f55baf683d67ae02cc7c1d2daf642a9382c626bf",
+    "packages/react-components/src/components/DotMatrixLoader/DotMatrixLoader.tsx": "f547f01204f9e50a030e14d3d67d7bf45b1701c31e95b910ba3db2846ef3b11d",
+    "packages/react-components/src/components/DotMatrixLoader/dotMatrixLoader.styles.ts": "b71f3941cec1e0ff48b9351fe032f845ac82bd0f06c93c14d4bc9d2532071090",
+    "packages/react-components/src/components/Charts/shared/animations/drawLine.styles.ts": "43b459a448ce9839aa3213403f51a87cd30e690303c3afd68e312f5bd6da93b8",
+    "packages/react-components/src/components/_shared/icons/dynamicIconImports.ts": "c47469e5370837b736bc6acb580f5a586898cb4ba3befbeecb5ef82a4623d22a",
+    "packages/react-components/src/components/EditableTable/base/components/editableCell.styles.ts": "749364ef23844077abad8266a5d9ee68e3095e5cb387180a6de70a71037333f0",
+    "packages/react-components/src/components/EditableTable/base/components/EditableDateCell.tsx": "4215b3f4194bcf1b6de9ccbc5b750747acdefe9c29b5638fd684e9419ba5297d",
+    "packages/react-components/src/components/EditableTable/base/components/EditableNumberCell.tsx": "4be5d21e676d824f8bf7befb0e3591a5280fb703990ef03690c15149338f0033",
+    "packages/react-components/src/components/EditableTable/base/components/EditableSelectCell.tsx": "9b39c77253c0b495398232c64e5d6c4261512f96032aad78d58455f29b72d9a6",
+    "packages/react-components/src/components/EditableTable/base/components/editableSelectCell.styles.ts": "0338b0d8e4eac36e7e5a8e4460acf084595dca042024f09ce36f5ed01ab318e4",
+    "packages/react-components/src/components/EditableTable/EditableTable.tsx": "d86bb5736626cd39fe89621287216dfb86205585b51031ce349f53847ecf7aee",
+    "packages/react-components/src/components/EditableTable/editableTable.styles.ts": "749dbccae2936f4edc47f381318c3c9cc6fb0f7072d23cfc8fcf61c004c40955",
+    "packages/react-components/src/components/EditableTable/base/components/EditableTextCell.tsx": "b688eaf643b18892ccc2fb05d1cb5ee086fa3befd350bd35cf5ff7b439dcd5ef",
+    "packages/react-components/src/components/EditableTable/base/components/EditableUrlCell.tsx": "2aeaf7f7abc6c5957ee1e3586889e13ce0872048f9046a251607522d404fc5b9",
+    "packages/react-components/src/components/EntityList/EntityList.tsx": "4397d82f27487f7357a5b392f5abdcf8fffc131482310a047d52ad489c500185",
+    "packages/react-components/src/components/EntityList/entityList.styles.ts": "c5e47d3acf6be867f854ff4b1d744518e424164f1d8298ae540138f435b86273",
+    "packages/react-components/src/components/Charts/utils/entranceUtils.ts": "71321b87ffe4ab04a6849d6f50f04524911e84bbb39345dcb895c1c3c9e997fb",
+    "packages/react-components/src/components/Charts/shared/animations/fadeAppear.styles.ts": "59be28a388e81a71b0962984f07c94ced09b6b22cb5a84e71aad59a9738399d4",
+    "packages/react-components/src/components/Charts/shared/core/spring/FadeFollower.tsx": "98fe66093ebfd6539b608d7eefd98f7790bbf4a3c8dbaf756fb3cea73bb3106c",
+    "packages/react-components/src/components/DatePicker/helpers/components/FloatingDatePickerRenderer.tsx": "01f9b00f6511a3aaab7b4470be997c26d1d860eb7869bf8f74a0674bc401b139",
+    "packages/react-components/src/components/SectionBlock/FoldableSection.tsx": "84d83de061951669636e0c00f00255589686e006f01fbf3c2f4bb128e89a9b30",
+    "packages/react-components/src/components/SectionBlock/foldableSection.styles.ts": "da92475f34483e32ee017ab6efe3ff5d68764efdd428629f769096a5a51cd387",
+    "packages/react-components/src/components/FormControl/FormControl.tsx": "8eddba078fc619bd0d6c9f9906a756b97c48ca5532fef2b84bb65d18f6a84fda",
+    "packages/react-components/src/components/FormControl/formControl.styles.ts": "d04147d41a54e63f56bc8f496a4381d3982a46ff9281dc03f59632bbdf975539",
+    "packages/react-components/src/components/Charts/FunnelChart/FunnelChart.tsx": "f97915f4147949d20f184fc9b55cfc39f6b70bd63734439296e157a52a955a05",
+    "packages/react-components/src/components/Charts/FunnelChart/funnelChart.styles.ts": "2378b05c01d21037de1894052f5b669d2aad370d329c8d3dc002dfbd4aa7d6c0",
+    "packages/react-components/src/components/Charts/FunnelChart/parts/funnelGeometry.ts": "717569473a0d7ace237104beaf72593423684ce98c265e0a1e14f3d81cf3e26d",
+    "packages/react-components/src/components/Charts/FunnelChart/parts/FunnelStages.tsx": "66ae09a179a60cbf8d3539eb6469923f946ce570c90efe3bedf48cef3e5f1aad",
+    "packages/react-components/src/components/ImageGallery/GalleryModal.tsx": "01d86796df1c629af0a69e36c6586b98251f9e53ad47de0ffca7b88b582de08e",
+    "packages/react-components/src/components/ImageGallery/galleryModal.styles.ts": "cea55836ca738bb85f62c137c6508d758e768f37d1066be239fdc457a714d35c",
+    "packages/react-components/src/components/Charts/AreaChart/parts/GradientDefs.tsx": "de5a336b73f7fa4705804dce161cfcf2a57c1c7ed13443ab7b043bc02e824c4e",
+    "packages/react-components/src/components/Charts/shared/cartesian/Grid.tsx": "a78ae348cfb2307e9c980cac2508f913e916c02bbc6cc5585068d8c86d868658",
+    "packages/react-components/src/components/Charts/HeatmapChart/parts/HeatmapCells.tsx": "41eabd4794b4aa0fe657cf1e8efada817d2f3979b3ce688f78bdfb018a2ea2f4",
+    "packages/react-components/src/components/Charts/HeatmapChart/HeatmapChart.tsx": "dbfec006ee1610c45cdd5ca88a4a04fcd7048c39a701b15754787abaad0fb2da",
+    "packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts": "a5b96bc04e1cb36b38469112b655bf839d402ccde86b72a50d03cf2ce2c262de",
+    "packages/react-components/src/components/Charts/HeatmapChart/parts/HeatmapColorScale.tsx": "fa44b6cee720696cf380f40deebb72a26f51e2a2a5aa4fdbf81ce67d55998bf9",
+    "packages/react-components/src/components/Charts/utils/heatmapUtils.ts": "8d4f34ce4148ed7f35eb2a7116a43dbec3c9d10a55b0081e76dcdd560033de43",
+    "packages/react-components/src/components/Charts/HeatmapChart/parts/HeatmapYAxis.tsx": "0811e3ad48b2ac6736d1e9b00f31461289fcbf354a4e56955fc1bf50ac8605d3",
+    "packages/react-components/src/components/Calendar/components/helperComponents.tsx": "b86df9a93d71867216aff252332fc5105171783d7b6a0ec9a50d42b4d9025d23",
+    "packages/react-components/src/components/Calendar/utils/helperFn.tsx": "aa2bc9486cd16d6cb33c5a8f06db099845a2dd5b1281dacb4e4b5d671cb37f72",
+    "packages/react-components/src/components/DatePicker/helpers/utils/helperFn.tsx": "2ab00b09396d723e8043913755c20d4aa5852ac2a776afd7633fb2273c45f7f7",
+    "packages/react-components/src/components/FormControl/Hint/Hint.tsx": "11582e7dd93fab0d34dd519bd0e972b6668dee0c5cbefeb9754de1f3198cd595",
+    "packages/react-components/src/components/FormControl/Hint/hint.styles.ts": "77c78249dd8ac022b6956be12adc909db94354fe7748b03482dfb273a75f644f",
+    "packages/react-components/src/components/Charts/BarChart/HorizontalBarChart.tsx": "4f608e54770df73e48d91a4234f556c0f8aac27b6d003992c3b43a70a13314ad",
+    "packages/react-components/src/components/Charts/BarChart/horizontalBarChart.styles.ts": "6a6f02320dc65e5343a7d6bdbbfc905d11dbe4c2e3b022953d7e48106de6bc02",
+    "packages/react-components/src/components/Charts/BarChart/parts/HorizontalBarChartImpl.tsx": "95595dc4d460038fc4ff50bb64233c1b0e65b0212f12e67364fee684934e3037",
+    "packages/react-components/src/components/Charts/BarChart/parts/horizontalBarGeometry.ts": "a71302288eabf50d0e6c8949007241722ef27d7a381976bdeed720c4a14b5855",
+    "packages/react-components/src/components/Charts/BarChart/parts/HorizontalBarSeries.tsx": "05b71ac09453d79d91a22aa6b4213f9f60a321533b103fc3e4e418f36d0815cd",
+    "packages/react-components/src/components/Charts/BarChart/parts/HorizontalCrosshair.tsx": "45c61fe9f7b6f6da666c29a090b2ca570bd98626571c3c9b811fc57c2c65c39d",
+    "packages/react-components/src/components/IconButton/IconButton.tsx": "6adc9cca2d3eec4c816b5841e1aac97ca4e2cd249e25f48cbe375dc33871e340",
+    "packages/react-components/src/components/IconButton/iconButton.styles.ts": "9bb883a220480acdc127111bfe67fcec2484aa980e9b4131380ceddcd17a6711",
+    "packages/react-components/src/components/_shared/icons/iconNames.ts": "cdaa544137330277c0a664980026dc5ad41501e24428f583e1f8199c986fbbe6",
+    "packages/react-components/src/components/IconTag/IconTag.tsx": "c0f3ea40ece0c1366fe81c71c50d36e7851d4f9e4d1ff41c60ec7193531d0dc6",
+    "packages/react-components/src/components/IconTag/iconTag.styles.ts": "e5937615346ee7e087190c3c9e9cd14c4a4c0688b3f94861406a794a3bbdaba3",
+    "packages/react-components/src/components/IconText/IconText.tsx": "f5ecef8da28eab08ec20f2f9af97410e3171ebadf0b965a85d76d21a2a200be6",
+    "packages/react-components/src/components/IconText/iconText.styles.ts": "3c80cfe25bcaa715db78eee66c418ab6add45e93a9729f573949dc4b997955bc",
+    "packages/react-components/src/components/_shared/icons/IconWrapper.tsx": "fbf24eae871d5cf2f5210eb0a0432338cdbec97435664078e3c41368147d599b",
+    "packages/react-components/src/components/Image/Image.tsx": "aaf117416235d10b65d8b2871a2481560fddaa1a4db38b4edd023ac2c2834ef8",
+    "packages/react-components/src/components/Image/image.styles.ts": "5ae145f83a223da4f5854f36a4932b76e46db1563253590e1ff9773cd915f59d",
+    "packages/react-components/src/components/ImageBlock/ImageBlock.tsx": "1a25276eaa1e46a467e3e60fd320662779a8f863b8c9c173e73616e69560cef0",
+    "packages/react-components/src/components/ImageBlock/imageBlock.styles.ts": "5c92209bbd651fb4a573771f79dd86881481bd79f6d6330c5669e4dc2aa8a5db",
+    "packages/react-components/src/components/ImageGallery/ImageGallery.tsx": "74c92c4b4dad1c01fa7bb7e7cc7e935ee6de368001797f5f61574c25cc4d180e",
+    "packages/react-components/src/components/ImageGallery/imageGallery.styles.ts": "de7db2b8158becd802df684a2f07d97500bf65ba8bb7ea879177123518a297d2",
+    "packages/react-components/src/components/ImageText/ImageText.tsx": "2a4d7c44adc2e01f5c12f013d5c3f4e689df2e9b4fff74bbdefea905f1e7b96f",
+    "packages/react-components/src/components/ImageText/imageText.styles.ts": "6632bc61cdc9d91607b2136e4f598fca76d0c9cc129124d0726c97f1235f7c56",
+    "packages/react-components/src/components/ImageTextLarge/ImageTextLarge.tsx": "bd16fa4e07785e5d5ae7b48a913e67d98cb573e800e5b622be322aa6c3e1a18f",
+    "packages/react-components/src/components/ImageTextLarge/imageTextLarge.styles.ts": "02619cacc4af41507bf21f1cd367f62a63457e9f48a4a574f9a40d7868df2693",
+    "packages/react-components/src/components/Charts/shared/core/PortalTooltip/utils/index.ts": "3fbc27ab27346c9347abd023a097292dad66acb6d90a789d700650c6ace92702",
+    "packages/react-components/src/components/InlineHeader/InlineHeader.tsx": "e241681e231a9aed6f0a3b23cac4e1a7a8e5e764a952101421dba46ee711ebd2",
+    "packages/react-components/src/components/InlineHeader/inlineHeader.styles.ts": "32c3a1b4e9ebe4cfda26bce585001db0cae7045215c6eb5f18c162feaa1d3fd0",
+    "packages/react-components/src/components/InlineMarkdownRenderer/inlineMarkdown.styles.ts": "b82181263f258fb60fe9041b5b37e5ca4932374870cea042bb7cca723af13377",
+    "packages/react-components/src/components/InlineMarkdownRenderer/InlineMarkdownRenderer.tsx": "c4cae1cef3e88feaed51457eb5f8f9cbd4eb9fc05c99f931986ef06ad8a6d252",
+    "packages/react-components/src/components/Input/Input.tsx": "cc9a046cc862c18eae4a9f8c821e41362dacebaef2234ce33e23a9cf9881a363",
+    "packages/react-components/src/components/Input/input.styles.ts": "5efba23db1af839b912b3ef42805d09587113ddfd0b292b4168f93014f4e4f03",
+    "packages/react-components/src/components/Label/Label.tsx": "52b06b9b4ec59656688d2db0680c04993207b6bb18ab919d9b5860b271fb326c",
+    "packages/react-components/src/components/Label/label.styles.ts": "fc058a00d083b9afe25c38862323d6a5f708092dbafa003be8bfb10df3043e28",
+    "packages/react-components/src/components/Charts/shared/core/LabelTooltip/LabelTooltip.tsx": "cf8fb0df2475bdd810ac59bef02918447b76c6e014d8ff4f39319f7dbb6fea5d",
+    "packages/react-components/src/components/Charts/utils/labelWrap.ts": "e063268575ff6f9a66b1ebbebe24af5adf242673edca48791953f504b8bf1cd3",
+    "packages/react-components/src/context/LayoutContext.tsx": "2ea5bb4131db5a5ce9c9779c9fc4a8c231e2956ce77429d7dbfcea4087a1054e",
+    "packages/react-components/src/components/Charts/shared/core/legend/legendSelectors.ts": "3322b6e582c0ba82ac0d8cdb85a36b648e3f93ac64e1510fc3e1c4b5241b9c6f",
+    "packages/react-components/src/components/Charts/shared/core/legend/legendStore.ts": "490ebec47954a5d59e58886659421268dce71526d4e86e9ba5c4cd4414fc7720",
+    "packages/react-components/src/components/Charts/shared/core/legend/LegendStoreProvider.tsx": "9f954b6eb2a39fec12c736ba00bf0f6f73b114fdf6a3d06eb7bd21bf556c8640",
+    "packages/react-components/src/components/Charts/CalendarHeatmap/parts/levelScale.ts": "c2173522a68e363585a312d0a71f01ab622cb2ab6530b7509c8ac8c0b33231a3",
+    "packages/react-components/src/components/Charts/LineChart/LineChart.tsx": "5b7fa4ccc67ec2c655c98bb69d990087577943b823060d18f00007441b386041",
+    "packages/react-components/src/components/Charts/LineChart/lineChart.styles.ts": "bb6a64f698ce5371454509193a54ef308700ea30f5384a3a0fa2e64915b565c1",
+    "packages/react-components/src/components/Charts/LineChart/LineChartCondensed.tsx": "c931f0085982cb330366a52b61d58698682e95c37d91164781c292b2460e881b",
+    "packages/react-components/src/components/Charts/shared/cartesian/LineDotCrosshair.tsx": "f40c1c2c093b115b4235227561dea02442887691f0e10054ba9128395d361b65",
+    "packages/react-components/src/components/Charts/LineChart/parts/LineSeries.tsx": "696796c13a0376d1f0ff72badd4537783fb1388bba9fcf370cf2ee860627f37f",
+    "packages/react-components/src/components/ListBlock/ListBlock.tsx": "fc41514832450f287eb7a19b126ca5866a0ce2476cda4b4674cbd48a0a0704e6",
+    "packages/react-components/src/components/ListBlock/listBlock.styles.ts": "4e17496f90f7a78f24e6f3bde382d0877fd76595c4fa937da7147b785f4d5da9",
+    "packages/react-components/src/components/Sources/ListedSources.tsx": "1ff98e66e79776b803b0126704ece53b6b7c33181dee117d6bb59a6ae6a0e96f",
+    "packages/react-components/src/components/Sources/listedSources.styles.ts": "3549680db5cf10dd181ae4ddeaf09ff68c017cab96972d1db64dab13057ed3bd",
+    "packages/react-components/src/components/ListItem/ListItem.tsx": "c071fcbcd595c35ab4953163ce9259d645830c2a839e673463483e477d2e986c",
+    "packages/react-components/src/components/ListItem/listItem.styles.ts": "5143886e21668a41178a7872320da64f28f95c036b3a6910951435f51fcbf542",
+    "packages/react-components/src/components/_shared/icons/lucide/lucideDynamicImports.mjs": "297c1db15a60f0c54bc3e9b5e2653b9f6a33470d923c007376ce42307675efb4",
+    "packages/react-components/src/components/MarkDownRenderer/markdown.styles.ts": "ef058c6c966fd440de2ecb709691898d00032c5d0c0b3e46570061491f820534",
+    "packages/react-components/src/components/MarkDownRenderer/MarkDownRenderer.tsx": "f96036f559662e3476fd4cfe27f226b22fbd3e097b489ddd8930d611365fedb1",
+    "packages/react-components/src/components/Charts/hooks/core/measureFontScope.ts": "e33cc9b85fa9cda241cb6108b60e6b6d4d6992d559ae911ad3d7dab13b1ae333",
+    "packages/react-components/src/components/MetricIndicator/MetricIndicator.tsx": "22f935a9396962a0bdbe8aa36b5a9219920c68802b6d402210a9c699e4fe4521",
+    "packages/react-components/src/components/MetricIndicator/metricIndicator.styles.ts": "a0059e5ec7c78cc0733aacf69da4fa90024ce08c581ffdb68411d9d4699fa339",
+    "packages/react-components/src/components/Charts/MiniAreaChart/MiniAreaChart.tsx": "9dd9a3079a42de70dfc84e48c3e24c61ad50777711410bb6860308fe51f16e18",
+    "packages/react-components/src/components/Charts/MiniBarChart/MiniBarChart.tsx": "112ef9c741bd5e6e1e253f5d756e775967b5edef09e9e10717903a57d4e317af",
+    "packages/react-components/src/components/Charts/shared/mini/miniChart.styles.ts": "85f94c7e9e5f2b64c61f70a260c5725c68d397f63f41da29e2e3b717856e7371",
+    "packages/react-components/src/components/Charts/shared/mini/MiniChartFrame.tsx": "9a578a617d2e388fc02b4626aee0a74b50e1c1c2106eb59ba124051db9187011",
+    "packages/react-components/src/components/Charts/shared/mini/miniChartUtils.ts": "6fa4aec1b4d2d676e3b6e8a2e2ef23e6fb3cdd96a594cca1e290b5e1c8ca1c4a",
+    "packages/react-components/src/components/Charts/MiniLineChart/MiniLineChart.tsx": "2e2f74c5d2399baf219afa086b3a199b484f1eac79b9f1639c1a9f14d5415752",
+    "packages/react-components/src/components/Modal/Modal.tsx": "ef544ad7f3331d4257fd29189a16b8cb003c44b5a24dd8a4cbaecb08851a4933",
+    "packages/react-components/src/components/Modal/modal.styles.ts": "33b9c02f5e9a29c71907699b9c1e5a36b27924dc490a9a4ae361fa68bd92fb61",
+    "packages/react-components/src/components/Charts/CalendarHeatmap/parts/MonthAxis.tsx": "24937b94c0504b9df84a07bf0264ed21908eb14606aa27719b114c083b347d9e",
+    "packages/react-components/src/components/Charts/utils/mouseUtils.ts": "9f8912316e68a34a0362d3d926d0fc6c9628386b252e609933d3efb375e9850f",
+    "packages/react-components/src/components/Charts/shared/cartesian/axes/NumericXAxis.tsx": "eef1853a6f3c5245d76045c68865ce7c9ef68ef7bc55cc162c92457fb13a1796",
+    "packages/react-components/src/components/OptionCards/OptionCards.tsx": "8debf7a6cdb6ebf0b2acee348e54d15d75b63f8925ac72808d8e7a1e93357526",
+    "packages/react-components/src/components/OptionCards/optionCards.styles.ts": "bcdef31284a50a366033519c5d34caa33aa38b22e19af62496dc2d706fb1fe89",
+    "packages/react-components/src/components/OverviewCardBlock/OverviewCardBlock.tsx": "dd0bae611c42904e73b1427077d805b08bdb2952b1228b5c6ec64988955777e2",
+    "packages/react-components/src/components/OverviewCardBlock/overviewCardBlock.styles.ts": "4d8e0dc364c4ae84c888ab4d7bfa1924de4171101c54bf8628e6aeff10092aa0",
+    "packages/react-components/src/components/Charts/utils/paletteUtils.ts": "b60217980242420b2129bff506d2ee673ed1fd847e3f8eb82efc956f0cb41f20",
+    "packages/react-components/src/components/Charts/PieChart/PieChart.tsx": "6fbf1181a4646dcf263db2d218146c9b80aa97e511b00cbecc06615cc228b758",
+    "packages/react-components/src/components/Charts/PieChart/pieChart.styles.ts": "3131aa2fef32bee3f862845c1b89d1d8c7e348c9114eac51e136ef1c79deed8e",
+    "packages/react-components/src/components/Skeleton/PieChartSkeleton.tsx": "d24b6957cbdebfa3ccbecd3e1065945654f796326715a8627ef654dce7797e2a",
+    "packages/react-components/src/components/Skeleton/pieChartSkeleton.styles.ts": "3d0abfdd236a101ab30267a85f21b22d9f66c6e9a8b5b707095104e4fa9fbf3b",
+    "packages/react-components/src/components/Charts/PieChart/parts/PieSlices.tsx": "7551ef33f396a7efab5d68dadad8e361b956bb2b24fa2ffb559a8ce6d6c2e168",
+    "packages/react-components/src/components/Charts/utils/polarUtils.ts": "4f4a10f55fd19885e7dc4de73cad1e3179307283323ce95ac65abc332444dcd8",
+    "packages/react-components/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts": "e2fdfedca2a1000cdec702f6e4c1fc735dc7f60e886368c470063e31306fc544",
+    "packages/react-components/src/utils/preferences.ts": "db9287c27ef44a94aa532868c480e5d150fe4fd463ba18da9eeaca14af42345a",
+    "packages/react-components/src/components/Charts/shared/core/spring/presets.ts": "4747d71a94bec92ddb1ca946c953521a999d317a74dbd6152e839d4a9eb875a8",
+    "packages/react-components/src/context/PrintContext.tsx": "c52fd537110ac2ffb6b503589f911df5489dcd0560760f79bf9a883e184e72a7",
+    "packages/react-components/src/components/Charts/RadarChart/parts/RadarAxisLabels.tsx": "60f61845f1ef00531008ec1e637e9042d72b3c3ace41e41a01685b4f89c22283",
+    "packages/react-components/src/components/Charts/RadarChart/RadarChart.tsx": "c5ee9de2a67cfe3db95e43e3dead95694101d01ac120ed38b0fdf89c63571f07",
+    "packages/react-components/src/components/Charts/RadarChart/radarChart.styles.ts": "234fefce581c51ba705af0d5807d34d29cda1682be19c62fa28e07d44a3bc27d",
+    "packages/react-components/src/components/Charts/RadarChart/parts/RadarGrid.tsx": "5e52048eb89c163c99baf10de37b8074629a07f132b0ff9b3ca77da63bc4ac7d",
+    "packages/react-components/src/components/Charts/utils/radarLabelLayout.ts": "1f34112b9145b93b9facc6d84513e0d24d02539116e276af965ee2c5624eea6e",
+    "packages/react-components/src/components/Charts/RadarChart/parts/RadarSeries.tsx": "a010bbcad9988deda0ed63d7a97f32c460bee30af33ec54b4dc472c721435d74",
+    "packages/react-components/src/components/Charts/RadialChart/parts/RadialBars.tsx": "d4c5f38781e8fc099449f7bb10b62d35b9354d8829b9b43aa2ad33919f8519ae",
+    "packages/react-components/src/components/Charts/RadialChart/RadialChart.tsx": "ece4895798ce8e20599d020ab08c1eeee0c31d3686e3a4af042834643442dd03",
+    "packages/react-components/src/components/Charts/RadialChart/radialChart.styles.ts": "a152ba3c9a7e30296bd6c6587c510d2eb243356cd9304d764d9f3be4b26f6367",
+    "packages/react-components/src/components/Charts/RadialChart/parts/RadialGrid.tsx": "eff416c05e32f137caab32edc219a6040989b701516fd5073209f06e140a762c",
+    "packages/react-components/src/components/RadioGroup/RadioGroup.tsx": "6419471212a1e06db0d019a7b2c144ebe5fbc49ef41c6359ddc600e9ddf54313",
+    "packages/react-components/src/components/RadioItem/RadioItem.tsx": "56c74bea19e2a21cfcfefc9be086b952ba139e5ed9800fdd11497a9a8474d723",
+    "packages/react-components/src/components/Charts/utils/rampUtils.ts": "bd23a06c30c8d5bed7b82aa60038540d8790fc6b0a525be5b900aa1b1bceace3",
+    "packages/react-components/src/internalUtils/ref.ts": "c4efc4365e51b3386eba6836cf667284bfaa6d6851584534a74118f3e44b69e9",
+    "packages/react-components/src/components/_shared/remark/remarkCitations.ts": "339db694a06a54e6d76f8bb67f65bcfe8623bc7bbcf1b96278de5310b8d90862",
+    "packages/react-components/src/components/Charts/utils/resolveShouldFitLegend.ts": "9485b8cd6d5a03656960182a13512763073cb0bd5ca7766d7fd05bd4f1efa0dc",
+    "packages/react-components/src/components/Charts/shared/cartesian/roundedBarPath.ts": "7a6394b7d04aa37eb7eb84860f0e97f7d7489c98c99863b71b0e56222e4f6b1e",
+    "packages/react-components/src/components/_shared/utils/safeUrl.ts": "27e83dc94934919888e2e1dc686f251c42b5b85b000de27b445aa27e3a34feac",
+    "packages/react-components/src/components/Charts/ScatterChart/ScatterChart.tsx": "da9b904665300d27e88bb05b898b9b53a1f8d3ce80e4a4aec0c6b506ea394a25",
+    "packages/react-components/src/components/Charts/ScatterChart/scatterChart.styles.ts": "798bf3215ff97a7ea68a67f8317cbb03754558e94549abb6d7c04903ef9c4a53",
+    "packages/react-components/src/components/Charts/ScatterChart/utils/scatterChartUtils.ts": "d71bf9d636061903670926deba51ae5fad41a80b0278c235766b324b0845e102",
+    "packages/react-components/src/components/Charts/ScatterChart/parts/ScatterDots.tsx": "e0bdf0791e2a8f870295f2a2df4a32b1e19e150197d7c62c7b94505250d3672a",
+    "packages/react-components/src/components/Table/ScrollableTable.tsx": "d6d3fd032cb1c35d8ee5d4b08ea22dcf3ca232e2683631c57a53b5368e5f617a",
+    "packages/react-components/src/components/Table/scrollableTable.styles.ts": "e08bbabc895ecf261fa46efc5c4b431dd68945b6c661dcc8034ab1768a70dfe1",
+    "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsHorizontal/ScrollButtonsHorizontal.tsx": "7ed7223cb9c6a6ebbb4c30ac7d2c8bb5b8f6188e628ed74a63bd43a5110b210b",
+    "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts": "99f5debe3d5af76222b8243f4a51f3d310bae34fd72c1fdeb9f6c7acef6dc0f5",
+    "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsVertical/ScrollButtonsVertical.tsx": "dce6d54e061b3e12a108404a078476a4ee35b471b8a6d602b23c64bd4f7f6027",
+    "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts": "55435a2144bb64644c09f2908cb3d31ceaac72d94121616d8a8da95543a8499c",
+    "packages/react-components/src/components/Charts/utils/scrollUtils.ts": "677cfebac02125e0f2f6a7740cf65b3b0194804672da872dd7e3e58f53e50f2a",
+    "packages/react-components/src/components/SectionBlock/SectionV2.tsx": "bbecdb5ea013b9b069b25709daaadab3f5b0e6b0bf7be4568fc75c20a627ff2a",
+    "packages/react-components/src/components/SectionBlock/sectionV2.styles.ts": "7c14a062d68d7d562f1ec836630ede2b275dd54fddea05efcc303ea00040917d",
+    "packages/react-components/src/components/Charts/SegmentedBar/SegmentedBar.tsx": "296eca12596c03bacdf12736fafeb5f07851c3ae307fffae777a023ed0e95e16",
+    "packages/react-components/src/components/Charts/SegmentedBar/segmentedBar.styles.ts": "c64af8dca25b2d26bcc0341567bb9f1497ba1cc064391dd8fb5a780ad9c4fb3b",
+    "packages/react-components/src/components/Charts/SegmentedBar/parts/segmentedBarGeometry.ts": "8007f35727eefd2956589b65499f2a2ccda74c30018bf5913208b9c6b1c95786",
+    "packages/react-components/src/components/Select/Select.tsx": "e3a3d9c27f38916fc34023359c0b33eb0538c334f1ab1bcb5443879bebe95e86",
+    "packages/react-components/src/components/Select/select.styles.ts": "82387fc2d94d0fe3910c26c4cfd2a72475ae6dc43dbb1c7186802bad6c09d4f8",
+    "packages/react-components/src/components/Separator/Separator.tsx": "10c26a8c890a7758920206178fcd7224fe85eac1e47d1a1577fb2cc2a0ee227e",
+    "packages/react-components/src/components/Separator/separator.styles.ts": "ea99f383547fdfcfbd086eab06a8c95a0ff0f3a4240550a0953a9b7169513496",
+    "packages/react-components/src/components/Charts/CalendarHeatmap/parts/separatorLayout.ts": "2372fc5531068d8011a747eaca9de1471aac31401be74eab2c8037e1ffd2f605",
+    "packages/react-components/src/components/Charts/shared/cartesian/seriesGeometry.ts": "2663bbdde8a52838bbc9695c46e07a2bb76f0df3129ef9449bae9428b02b6c5e",
+    "packages/react-components/src/components/Charts/SegmentedBar/SingleStackedBar.tsx": "25110076790f200fb4f74b7a38ec6273346557a7776a2c53cbbd6c1c5b107394",
+    "packages/react-components/src/components/Skeleton/Skeleton.tsx": "071983f0019f51cb7503700ae312951cda6d9bfe11aa2fdac1e3c5920f4ed21d",
+    "packages/react-components/src/components/Skeleton/skeleton.styles.ts": "2f04a3aec477d2f07dbb834c22cb83799ea025c369e8fcf5696f4ba137bd54ef",
+    "packages/react-components/src/components/Skeleton/SkeletonBar.tsx": "b25ed193f8da461205c2c89059db74416cf37c79def4999a0fd3d845d2dd77ae",
+    "packages/react-components/src/components/Skeleton/skeletonPulse.ts": "a5dcb74cbfb94abfb0c99d498c98b87bd901ac75ee306d3825c803f08ce5f183",
+    "packages/react-components/src/components/Slider/Slider.tsx": "4fb4dafa61683f8944503315c27c3329b832aad4019d556ac173ce05f8c038b3",
+    "packages/react-components/src/components/Slider/slider.styles.ts": "c7696e3c5acb332e4f7ee694b755527b8de417d7d5e986aa5ca90522b178aeaa",
+    "packages/react-components/src/components/Slider/SliderBlock.tsx": "e101bc973e0d584a795adbd9884a66665523747450c8269011619d5cc08106e1",
+    "packages/react-components/src/components/Slider/sliderBlock.styles.ts": "548a6a7abf2b99c282a525a5acba0930af90370813ccd07384d952d5dfbc11a8",
+    "packages/react-components/src/components/_shared/cards/smallCardBlockUtils.ts": "62f3caacf4f7e7affb9d205410cafabc9d5853192f44d9576aaac37c9cb1015d",
+    "packages/react-components/src/components/SnippetCardBlock/SnippetCardBlock.tsx": "ddb9454a8de236bcea1681b2bf5ed7d62e7a81e57aa613dee5be6ae93dbacc5e",
+    "packages/react-components/src/components/SnippetCardBlock/snippetCardBlock.styles.ts": "40d2b33eb639a7713cb9af8ec7c14e2cf85149f04eb698966ee9c860c7db43ff",
+    "packages/react-components/src/components/Sources/SourceContext.tsx": "79202db5e9c041b32b8cdd72e8a681bc4cc2dbe284e8215136fe4e955722ffdc",
+    "packages/react-components/src/components/SourceFaviconImage/SourceFaviconImage.tsx": "6b7040eba6490abd23b5a1ae2211e58044a35f25ba3b463f21b837d7ce44f627",
+    "packages/react-components/src/components/SourceFaviconImage/sourceFaviconImage.styles.ts": "44d3ec901b03050ea42b6072fb485dc87d0eea7670ed402670871829d33381f9",
+    "packages/react-components/src/components/Sources/Sources.tsx": "05014172dcaa3461c3884fd246506f566313d268f776f5122a5a87e7bdbd5bc4",
+    "packages/react-components/src/components/Sources/SourcesItem.tsx": "0d12ea346461d1e6081887df56d917898b022252a1818c666a5ccdc5cbc4edf5",
+    "packages/react-components/src/components/Sources/sourcesItem.styles.ts": "33d30e77dd876a78036f56bade0cefe4a045f36923efe5345d445175836b6e55",
+    "packages/react-components/src/components/Charts/shared/core/spring/spring.ts": "5078b3e6cec1d3c880e9f61a0c27ec609ea346bb054617e7ac88c6072dd31c2c",
+    "packages/react-components/src/components/Charts/shared/core/StackedLegend/StackedLegend.tsx": "bcd8b8c5010befd188d65e5a6525cdcf61cdd5c3fdb2ec2c3499ff400fcfef48",
+    "packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts": "14ecf6c27660f42c5a8bf413b7681f0ff5c496cf6a4a28e738f2371c83dd94c4",
+    "packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegendLayout.ts": "b1081a894167adcbf44f72244b60e9973373148a88d35914c1f9106f12a241be",
+    "packages/react-components/src/components/Charts/shared/core/StackedLegend/StackedLegendView.tsx": "ec657dd5fcc77f5b20c4c4a8e89f48f669e95a43e1f4cc14f1546d5de2238d2f",
+    "packages/react-components/src/components/Charts/CalendarHeatmap/parts/staggerSeed.ts": "d9fe4a58911e0c8ccc2765d57c2afe5b36142747d33d634c945f50079e16ac3f",
+    "packages/react-components/src/components/Steps/Steps.tsx": "d0da7f5985fe263bff5fa6a045c84eb4920136711cf74b28977a943077451627",
+    "packages/react-components/src/components/Steps/steps.styles.ts": "83b5f1dfee51611e10e3fabde8d815fd22fabedb9ee3ae1fd3abc32286dbfb86",
+    "packages/react-components/src/components/Calendar/utils/styles.tsx": "56986028c82a9d1aea9556c17fec7e2a0a366adb2bbd0895ca620de59a5576bd",
+    "packages/react-components/src/components/CheckBoxGroup/styles.ts": "3a11f52c411816850ef0252603a7cc2b43cb5b630fbdf1c70c57e917ed163d70",
+    "packages/react-components/src/components/CheckBoxItem/styles.ts": "23f416a62280ddb8f5f3b97110506393f4baa9684e662edc6fdd0c91f94de3a3",
+    "packages/react-components/src/components/RadioGroup/styles.ts": "17498281811368009ad3bffb2f9180fe0f9ebcd94afa1741a50d1830db542f66",
+    "packages/react-components/src/components/RadioItem/styles.ts": "55f3ab6c4d56bc8e44390464948aafd2b4656f315ac31d65191996fa4720af39",
+    "packages/react-components/src/components/SwitchGroup/styles.ts": "e284dba584dc5077c2b75c0c474d83d6aba4520240dc389f02ea4c84935b50e7",
+    "packages/react-components/src/components/SwitchItem/styles.ts": "150f334324b81ded26c42a6a68e9f0af52dd8ab313a7fd4eb4d4eb7299fc14ea",
+    "packages/react-components/src/components/ToggleGroup/styles.ts": "0f80b1785091acf3e8239adc274d7536024c80cd95b89aa563e33cfa4441ebbd",
+    "packages/react-components/src/components/ToggleItem/styles.ts": "1f06c73448eec3226e480ae28c3bbc812fbdf350151be85e40199c8bae0c2f70",
+    "packages/react-components/src/components/Charts/utils/styleUtils.ts": "04cde91f0693f89b7c9edbe896c891e5593bbcdbcb0d5859989eb537d59441d2",
+    "packages/react-components/src/components/ThemeProvider/swatches.ts": "400c6bdb7df4ffe74d717e96714b167ebb273d6bdbaeb0861bddbc0c22bd87b3",
+    "packages/react-components/src/components/SwitchGroup/SwitchGroup.tsx": "d523e4c7abf8eab1ebc0498f748292fe3654ba68be74c940fa1a1cc30be21be6",
+    "packages/react-components/src/components/SwitchItem/SwitchItem.tsx": "5de769cbbfa25339ca09e0f824666af3ff1aadb77851cdafb5db892ac0de7699",
+    "packages/react-components/src/components/Table/Table.tsx": "1f1150ad333edeb8970896197cb8236a3d28140baa8d17107aada52a600e50f4",
+    "packages/react-components/src/components/Table/table.styles.ts": "2adb1ab013e6181d672aee934bfaff274a5e93cd5bfbdc9e38eb294965315703",
+    "packages/react-components/src/components/Skeleton/TableSkeleton.tsx": "a095046d753ce666cfb7e91bd6031e60d3ae6a429440577d7c17589746388b73",
+    "packages/react-components/src/components/Skeleton/tableSkeleton.styles.ts": "185cf858223fce0518652babf4fd3e32498f0a12b93d3db3610c8108ffc62581",
+    "packages/react-components/src/components/Tabs/Tabs.tsx": "799fcdd5152564aa0850ca6b43b7cb7603f4d2dc52514f2bf747998a2cd5ce00",
+    "packages/react-components/src/components/Tabs/tabs.styles.ts": "4c731cf6874a430c14297e6b6b2950b7d5a872f14364be65ff4058c1fa9adc22",
+    "packages/react-components/src/components/Tag/Tag.tsx": "a8b5431884a9b6268e7ebdc57c00f60fe0d8c780700e8cb4d5e6d45938edbe71",
+    "packages/react-components/src/components/Tag/tag.styles.ts": "d090513312d6147297b4a7fcf271562abf1a3bc7f702fcdfdb8bea2ded539017",
+    "packages/react-components/src/components/TagBlock/TagBlock.tsx": "9f96babaa5c0282b2a6d5d8eca00bf334c2f757a1de25f41c4ab9c3ffc39aa6a",
+    "packages/react-components/src/components/TagBlock/tagBlock.styles.ts": "b7ea43eebe94d27d1023f30b15f97ca3f2fefaa9138c7fba5b59ad83202c0bcf",
+    "packages/react-components/src/components/TextArea/TextArea.tsx": "0afaa053ec00e94e8df6989a073a1c5101158ff56470b1ac31ef3a5615b72315",
+    "packages/react-components/src/components/TextArea/textArea.styles.ts": "7763780fafb5d867f78b257e24ff5844132ed9a9088ad18dbe5456ea0c58af55",
+    "packages/react-components/src/components/EditableTable/base/components/TextBaseEditableCell.tsx": "06f9d413a4d6c36504578f5791541adbc7b183460cba27ec0185df00997ef689",
+    "packages/react-components/src/components/TextBlock/TextBlock.tsx": "431a93d18d746763da2e45c0726a13f92b436477b00d733483fe3761aedbe27b",
+    "packages/react-components/src/components/TextBlock/textBlock.styles.ts": "5f675915d344a3f95f56c4239fab5392161a32927550a09308f0d2a90631bbc5",
+    "packages/react-components/src/components/TextCallout/TextCallout.tsx": "940172c38a851ac883761fcf565a1b4a550ead5454bdb652fae71706610d99a3",
+    "packages/react-components/src/components/TextCallout/textCallout.styles.ts": "d862a80b3b0f5d2618fad45834d5e56fd5de822aeb7227dfdc38e5c1ce1b474a",
+    "packages/react-components/src/components/TextContent/TextContent.tsx": "03527374c387260c8003e8abf5d495a68226e26e01fcf1b7a8c61bba760c08cd",
+    "packages/react-components/src/components/TextContent/textContent.styles.ts": "af9d942c79fa3da3934bf8503806db355afebc576ff18d21a0ae54c2b27c73ba",
+    "packages/react-components/src/components/Citation/TextContentCitation.tsx": "5cc8af3d04635e78e84a20d79776db611a3e51c165d4df608b4ea0d69e3e4886",
+    "packages/react-components/src/components/TextContentWrapper/TextContentWrapper.tsx": "0be7a54e25708d46a72dedf25986b1663565785932e7c65fa4e8bcdfb0eaf395",
+    "packages/react-components/src/components/TextContentWrapper/textContentWrapper.styles.ts": "23e8d7ce74079889fa971b13a49e8a3d4cac362fab36f76e8d0f08e48b1bd5c0",
+    "packages/react-components/src/components/ThemeProvider/ThemeProvider.tsx": "9b34ff6bfddf857e0184a13fe6f3524f00793b9385ddc690bc4049f222b7244b",
+    "packages/react-components/src/components/Charts/shared/core/spring/ticker.ts": "22a3940d56ccd8398501440c46a8c11b309fa0209d26ceaae2ef63ff7f468309",
+    "packages/react-components/src/components/ToggleGroup/ToggleGroup.tsx": "8b9ec8140c1023399a193eb98ef9cab3ccfb04d10c81ea2904a539a1d520c43d",
+    "packages/react-components/src/components/ToggleItem/ToggleItem.tsx": "1dab96ef621bd9066cb02964d47ff99aad57c4d49f1c2dc70afd87e88840008d",
+    "packages/react-components/src/components/TooltipWrapper/TooltipWrapper.tsx": "edc5b5d0f3edf5252dba288a9783b90c00979c86d3afa0bfedef4c4b19a15983",
+    "packages/react-components/src/components/TooltipWrapper/tooltipWrapper.styles.ts": "8eafe902b1925b62fb73883c805ba4c1fa9035d34a1a2adda9044093128473fb",
+    "packages/react-components/src/components/ThemeProvider/types.ts": "8ec5603828f16a68d88812e666bce75a2af9caa41b3900d219b61571843e4156",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useAutoAngleCalculation.ts": "100ad8322648a6701b870ec1feec46d24289f280f329f7d71da5cc69ef4d675d",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useCalendarHeatmapOrchestrator.ts": "a56968e41b541179b3e222a28a3e41768954784a22f26e1cf128bd5faf73c772",
+    "packages/react-components/src/components/Charts/hooks/core/useCanvasContextForLabelSize.ts": "eb787bdc442029a4475f9269cd5a61a058c14b36dbc94dd33aaa9542afd26af3",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useCartesianChartOrchestrator.ts": "9a624fa287d308ff8cb06538f59523d9b5c22eabd1aa3da70b6ceab11ca4b8f4",
+    "packages/react-components/src/components/Charts/hooks/core/useCategoricalChartData.ts": "86b54cf4b4acbd52ba0dd4aee18cda1c7792db1f427fb62b27bc73b388f62c87",
+    "packages/react-components/src/components/Charts/hooks/polar/useCategoricalChartOrchestrator.ts": "5702957f784e786eca422a38f316667e0c207d040f91fc64c76ae2c1b09d2a93",
+    "packages/react-components/src/components/Charts/hooks/core/useChartData.ts": "c6e62dc0a5ec7f722eacc48209697567e941addc1b1345b4324b7e0b8b10e14a",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useChartDimensions.ts": "082bf0021e0746ad3f3b24ba62488d3858882663b71afeffb0950219f1cbf198",
+    "packages/react-components/src/components/Charts/hooks/core/useChartHover.ts": "520ed53df9900122db7ffac9348f5805cf653a7912fbe5e7fac6d8bdd17ca892",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useChartScroll.ts": "8ed0285349d4520934515e1f3201033b2571a8f99193bee0fbdfb5753608c175",
+    "packages/react-components/src/components/Charts/hooks/core/useChartShell.ts": "9b06133e6a155ad3fa41aea1515a056c58ef3b533f1e5841ead3e7d26e5498ef",
+    "packages/react-components/src/components/Charts/hooks/core/useContainerSize.ts": "e0ca42b6ee2bd006e40400824dc6ea08786003c442015a42550b11c9ffe799ad",
+    "packages/react-components/src/components/Charts/shared/core/spring/useDataMorph.ts": "2759c2b5889a1360074270285f4190f58dbf5a254dc8cfc5fcd9207dcfbbcbcc",
+    "packages/react-components/src/components/Charts/shared/core/DefaultLegend/hooks/useDefaultLegend.ts": "3c46d0565aeef754973df7c68f50ec587eb4efdb4fae76d3123fc5e0eeec191d",
+    "packages/react-components/src/components/Charts/CalendarHeatmap/parts/useDelayedHover.ts": "109ad4bcbfec99c53f2392d4c1f0130c42ccae3ae694ccf749c66b97e9567b73",
+    "packages/react-components/src/components/EditableTable/base/hooks/useEditableCellKeyboard.ts": "aac4b801e440e52fa79527c5f0fae479bddb3e922254fecaf57be811f57f4d7c",
+    "packages/react-components/src/components/Charts/hooks/core/useEffectiveAnimation.ts": "ab9c8b44b45287f95abb1d107ed6380d903a1dda462c93ca36829e1596739b33",
+    "packages/react-components/src/components/Charts/hooks/core/useExportChartData.ts": "64e161d113ed303d171de333ce85c9192703104de14f1ccfcc3699eab61ac6dd",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useFunnelChartOrchestrator.ts": "953853e78a3e60fd0451c03d917cf6fe078579dc9aea72956216a4e0572554ae",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useHeatmapChartOrchestrator.ts": "6fcb39e961e7b3e0fc0445bbcbbaa878126f095dc2c8b42e54cfbb3a571e52a0",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useHorizontalBarChartOrchestrator.ts": "b08948ace7c90243d87483a54f618b89f5bea452e9c8eab1a48c3dde1df261cc",
+    "packages/react-components/src/components/Charts/hooks/core/useHydrated.ts": "568738ac8b3ddd32bafdbd2197a1d8cf7b4402968763d10d26a5207acb29caae",
+    "packages/react-components/src/components/_shared/hooks/useId.ts": "ecd9a105578e2c4115adb7b4480435febbb5f1943188016483e47ad69ab82a93",
+    "packages/react-components/src/components/Charts/hooks/core/useIndexedClickHandler.ts": "d8a485afa3f33ddaa2d1cb7031f084fba13421a04d785bd825ad28c98badeaac",
+    "packages/react-components/src/components/Charts/hooks/core/useIsomorphicLayoutEffect.ts": "644bc7f1d237a4378c65106047b523c97729755c772fdeecec1376958410216f",
+    "packages/react-components/src/utils/useIsomorphicLayoutEffect.ts": "644bc7f1d237a4378c65106047b523c97729755c772fdeecec1376958410216f",
+    "packages/react-components/src/components/Charts/hooks/core/useLegendHeight.ts": "9717c7ae82f94754d19ef599695cc11f1e0875f548549bafb9f993a1fbd05e49",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useMaxLabelWidth.ts": "97c248e04bf2fd21c69dbce5d377b922cec7da6205bcbff36a6e593aa7d783bc",
+    "packages/react-components/src/hooks/useMultipleRefs.ts": "ee7713fa896674fee4c7693bdcd5420f807b150ca25acd05fdcfe571d5c602e0",
+    "packages/react-components/src/components/Charts/hooks/core/usePerElementHover.ts": "348b17e3e1c8d33c517066df131dd8fa0cac5b76ea8a67f2579e98ed1cb99524",
+    "packages/react-components/src/components/_shared/hooks/usePinnableTooltip.ts": "515eefb542b2123370b13c8524d86c3db688d7670c3ad6d87ce4400b0be0801e",
+    "packages/react-components/src/components/Charts/hooks/core/usePrintContext.ts": "1665fd06c95d76ad66472d5c626fdfc87afbef352746ab0fb0988d39b0229c1b",
+    "packages/react-components/src/components/Charts/hooks/polar/useRadarChartOrchestrator.ts": "b412c7e4bbfe57b27232d759ec9944e3d359a82b51cdaf4364764a7e08284e0e",
+    "packages/react-components/src/hooks/useResponsiveContainer.ts": "fbfdcab043fb8f21aa573e6e19db0d962d1eef8634e38f2b54c2ede2aee6ad1d",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useScatterChartOrchestrator.ts": "da46d5c72783a1637ce744139c3555c40d528601ca4252ba9c40421d45967ab1",
+    "packages/react-components/src/components/Charts/shared/core/spring/useSeededAim.ts": "eba8768bddd5e9c8b5cd6a801c97b28f7fbc095e8339c6ff53bc24275ac79461",
+    "packages/react-components/src/components/Charts/hooks/core/useSeriesVisibility.ts": "29868724a67a897c4b79a813e9054c22f9a518504b2180e1d24ce67dffde60af",
+    "packages/react-components/src/components/Charts/shared/core/spring/useSpring.ts": "64d4fcad3ba47514bd8d9bb65aea2aed9685ed33537a6c9f05c7a06882d2729e",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useStackedData.ts": "74c7248ede71287419736cf1c82a476fd3906f0e0d8abb2b93ec885f42fc9454",
+    "packages/react-components/src/components/ThemeProvider/useSystemThemeMode.ts": "9d795ebf06f017d5a01f4bb401e0a35604d6cb81b28de056d5da84219b2039e4",
+    "packages/react-components/src/components/ThemeProvider/useThemeModePreference.ts": "c3a63dd673d1d07d94719d753cd87dc173d7f87bfaaff57574d73a87ec39b47f",
+    "packages/react-components/src/components/Charts/hooks/core/useTooltipPayload.ts": "966b42d5992f4f65452d22711a6da0fb9f549c7fad50aa108c750782f076a6e5",
+    "packages/react-components/src/components/Charts/hooks/core/useTransformedKeys.ts": "7c207a80e9d4634da3ad800edca5d35819af5d0048024c442bdd93420227d6de",
+    "packages/react-components/src/components/Charts/shared/core/spring/useTranslate.ts": "c63d4ac2616cb5b45eb294816e1b387d9c2f4283f30cf96427472bc109143862",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useXAxisHeight.ts": "bb388c6e5b301514b441be6b79596a98e0d77944c1f2c7df400217666e7d3f25",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useXAxisLabelLayout.ts": "ce0962a4126e1761c57047efebae447d80bb3150ba304dabddfe1eed4c233ba3",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useXBandScale.ts": "11305f3decdad243fb7e12065179c4c2ddedf1c9ee98ab5b06de0aff7a151a09",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useXScale.ts": "418bcab99a2e03e072c5b9bc46824a410586433db0a228d0f150c9c8a3459724",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useYAxisWidth.ts": "7fdd815232fbf91e3b1ba64be4389c64e643cac764018e62d49bd7eff9f6e509",
+    "packages/react-components/src/components/Charts/hooks/cartesian/useYScale.ts": "df521ccd4d0463e8e36f04bf26f8264bde6c14f3221e569e2faacc789fab55c8",
+    "packages/react-components/src/components/ThemeProvider/utils.ts": "7957e80fd56eec6547d09135cdec962603de5f19821ffce634d2fe0f07e5862c",
+    "packages/react-components/src/components/EditableTable/base/utils/utilsFn.ts": "c357a1bb964803cbf6935555b9ce4cc1711591fdcd3de1fb4425d6610280043c",
+    "packages/react-components/src/components/Charts/BarChart/parts/verticalBarRadii.ts": "e0ed9b6c1f349bd4da9a4b18cd5045d75c766516e4b53f14ba23b7bca6e68b14",
+    "packages/react-components/src/components/Charts/shared/cartesian/VerticalGrid.tsx": "2309d48e4697c6bf53f5cca06f8f8f7a9edd2362a9602c3bb5130a21563f267c",
+    "packages/react-components/src/components/VisualCardBlock/VisualCardBlock.tsx": "a684871de3af09f45ae24bfaec82dd4646344d6f5e15f10d764b6d6ae7139b0e",
+    "packages/react-components/src/components/Charts/CalendarHeatmap/parts/WeekdayAxis.tsx": "7dfe91c6880ac7c833c9943acc1001ed8a373c00e2139703062f4863ed5668eb",
+    "packages/react-components/src/components/Charts/shared/cartesian/axes/XAxis.tsx": "bd20effc6655941cc9a15dd741c63112ecb4c77de118f7f7e125cb5b263ca605",
+    "packages/react-components/src/components/Charts/utils/xAxisLabelLayout.ts": "3a8b357bb99b66da0883579dbaf60f3b8a02ca46f66028c989b74d47b726218e",
+    "packages/react-components/src/components/Charts/shared/cartesian/axes/YAxis.tsx": "7668c60cd187e23b0ef6d497b675bd07b1f294382b349b5935939e35e774b18e",
+    "packages/react-components/src/components/Charts/utils/yDomain.ts": "45815d7522824b34bfc3c3146693862070662ac5342a6019d1650919b7548204"
+  },
+  "declarationsIdentical": 440,
+  "canonicalSites": [
+    {
+      "file": "packages/react-components/src/components/Charts/AreaChart/areaChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-area-chart-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "1d0d6826b90bbac3fabc6258c0c8421f10d12f07350d5523a84fada20c3801ac",
+      "afterRawBodySHA256": "f0310a8302faff39f0a3b86171242e4bbcc548e2bf1c0c9a344b4b135f29e442"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/BarChart/barChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-bar-chart-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "3198ea5441c6cbf855d23539436ab1c75bef508d1dc6f4bce59c0624eda76ace",
+      "afterRawBodySHA256": "105e2c6e6a00a0f4a888dcd9e479305412206b44b33a0718093881fd47b7aeda"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/BarChart/horizontalBarChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-horizontal-bar-chart-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "eb03fd4891c7b038c007fb5825234cb2fe98f8c01713fa20ced38f460e47c49d",
+      "afterRawBodySHA256": "a4115dc5dc765c402d1ef8fcd5e2f36677014b2763b6f8901f3001a8042abeed"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-calendar-heatmap-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "0c59d8a34a98db114496ecaca6d5a8876e4fd96c2e906836684cc8ad159fe591",
+      "afterRawBodySHA256": "28029c11ea408a6e4ec018af89e0e0f0feb9a710b270017c0cd1e8e3649347c5"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/FunnelChart/funnelChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-funnel-chart-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "63389dedfb60dfcbdd6a78326a17f651e2cf1435ea402c56a3fe4b89e0507f10",
+      "afterRawBodySHA256": "0ea697e724a715cf6b68c357554bc793f4b32090dbe35fece54c8234fc31a76f"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-heatmap-chart-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "1636c1923cd4da0edeefd831d5adfc60b8f8fdb6993eb67ca446d094518d4734",
+      "afterRawBodySHA256": "4dce42f8dee599c6d1d68885e5a0c8c92257ee2c3436d4f17f977958451cdabe"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts",
+      "symbol": "divergingRampClass",
+      "hook": "openui-heatmap-chart-diverging-ramp-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "4c34094e787be5a8a2ed13349be1e1677798093db9a875fa9691830b62c66e70",
+      "afterRawBodySHA256": "aec8a89e6b84c2d72c94bcb21925a0f140b6533597465753a82a3f5a3ef76cbd"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/LineChart/lineChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-line-chart-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "1046c60751e8b65114bb81c3074887ad16123a144ace24e462bd0d714ff72fed",
+      "afterRawBodySHA256": "ed62e1239935e8a393e06591989b8c9a857262f05991b575983d4e8420cbf472"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/PieChart/pieChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-pie-chart-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "a65728b8e5f28f23015e8bcdbd58434ec72d36ccccc2e8088c935000b0562e53",
+      "afterRawBodySHA256": "8e211f6536c84a1360b15f181c451b11adef8e85e730edff127da09c5f800f3d"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/RadarChart/radarChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-radar-chart-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "4186444e384ac3c1be79d6913cfbfa4d954d708531f2c25c4d846f9302c2d30a",
+      "afterRawBodySHA256": "03f7434e9472c08f19eac31ce76dd3352817747ad0e120627e61b13f2463a59a"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/RadialChart/radialChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-radial-chart-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "e062c16d6083c629962a23be2acaf7d105d1dd7ef3cfbe80e231c1fdb0ddb85e",
+      "afterRawBodySHA256": "7d0b6c6067520a48030856e2df546a3fce7a48167284ef776504e46440595bfb"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/ScatterChart/scatterChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-scatter-chart-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "53ab5c6c242ad566a2130dba67c2556d83e13326e9ae7e3d6cb5589c6f1c4709",
+      "afterRawBodySHA256": "f19586752047df1f4c8551c45e68a1ffc7effc5498361a9881ce504b31097a80"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/SegmentedBar/segmentedBar.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-segmented-bar-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "be2c1374d835a0864a40afab4b9e18f58ab65137f121be56a54f9ddef9701022",
+      "afterRawBodySHA256": "f7cc718d9a67327279595c3a03bc27d7b72488eaf99dc2776ff43a56ae2d2435"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-chart-horizontal-scroll-controls-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "e399c703b13760e081b95402e832befa7a1c16d7c1416bbed375eba02a48d5a9",
+      "afterRawBodySHA256": "5d18d03e22294afc583e75b4ead387b657c49eb1d4e53ffc4951f02312499373"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-chart-vertical-scroll-controls-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "5d5a33d8b4bf183e505df9f71dd865664301cd3f2e9d061f55a8d8d152db30a8",
+      "afterRawBodySHA256": "5ab9568f434070472bd68fcb41c4f833296b089e38706b8748c93ca4c2f78948"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/chartBase.styles.ts",
+      "symbol": "emptyClass",
+      "hook": "openui-chart-empty-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "6cb1e28abd17950e2760026a739bfabc50d0ddbe7908a022c00dde2300ae9f4f",
+      "afterRawBodySHA256": "253cf8279f499c7a7cc18fc6e4e370a9bfc45a9e2e4fefec4ac2d67a87ddbe53"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/chartBase.styles.ts",
+      "symbol": "yAxisLabelClass",
+      "hook": "openui-chart-y-axis-label-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "bc637caca289e9abdb2e8f468ddd2200d02d6ba6d965fefb9bf6b5ad698e644e",
+      "afterRawBodySHA256": "cca23d2e953f1cfd1b11c10e396691c7d4ba24b098cae9e17f0d8678f9db2927"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/chartBase.styles.ts",
+      "symbol": "xAxisLabelClass",
+      "hook": "openui-chart-x-axis-label-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "48a9bb8ddfb30686cc836dba6ea9f853fea3549a37290ecae677355edf415ef6",
+      "afterRawBodySHA256": "a9603909e21277fb048cc5784287b36915e7bd00f25ea1bbe8534e9c7adda328"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/DefaultLegend/defaultLegend.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-chart-default-legend-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "74be88ddc4939ce09f8f300cbd552e1008377fe4acff376ae33c32cd6e417f56",
+      "afterRawBodySHA256": "ee2e4810a676108cfc361dd42da9ef8262272032e8e1fc7b1dca4da8b572cfd3"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts",
+      "symbol": "portalClass",
+      "hook": "openui-chart-tooltip-portal-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "dab48fb18a50688c4f9d938f616cd7d35cfc54de4109f8d0227ef89a587c0fee",
+      "afterRawBodySHA256": "a25e3ac8483c6fb35b9e083d135db0b5bfa3f03997c516f83e8346959449843b"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts",
+      "symbol": "tooltipClass",
+      "hook": "openui-chart-tooltip-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "b8ccc14e88bf2dbbd4be2e403fc2cf76af5fe6920ce417ea27ef175ffd2e31d6",
+      "afterRawBodySHA256": "f7e94f2e3443794ea8bbfc709bc544e80fa59a3d51121f87e15a5f7e05fca9f8"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-chart-stacked-legend-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "e6b34cc598e397d1d42d15bd660e190a5b4151c2226eef7599e77eaf4893b76f",
+      "afterRawBodySHA256": "6c1a9de49d500442449d827c86529457f71596bd16b56521db6650e17d09aeb4"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
+      "symbol": "layoutClass",
+      "hook": "openui-chart-stacked-legend-layout-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "cb41d345ff0cd8e6748e50399bb32ec14667d5afc784cb24a8352963d9729fc2",
+      "afterRawBodySHA256": "2b5fc182d381b73e2a4654f6d975133a9bf87c003087ba8efdd740cf623ef97f"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
+      "symbol": "scrollbarClass",
+      "hook": "openui-chart-stacked-legend-scrollbar",
+      "bodyConserved": true,
+      "beforeBodySHA256": "63d191bd1bf608c5a3ad5cba1f2e99340806b7949a13a259a9664a885e54826b",
+      "afterRawBodySHA256": "df71ea95a43d657cb95a84803cf63ca7e0de900274045ec9b56ac1daa671273c"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/mini/miniChart.styles.ts",
+      "symbol": "rootClass",
+      "hook": "openui-mini-chart-root",
+      "bodyConserved": true,
+      "beforeBodySHA256": "50c385902185c71c0d87733f463ef6c66f7b9a5e806ddcaa33e261f1f4e3e87e",
+      "afterRawBodySHA256": "22cb485cfa4d87ed15481fd80ed9cc6443c672ed845f785b1b7b39754033df29"
+    }
+  ],
+  "keyframes": [
+    {
+      "file": "packages/react-components/src/components/Charts/BarChart/barChart.styles.ts",
+      "symbol": "grow",
+      "bodySHA256": "7bdb75f81cb0f386ce8df77bb3958c0057526de758436299c62424be0722cfe7"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/BarChart/horizontalBarChart.styles.ts",
+      "symbol": "grow",
+      "bodySHA256": "354da30bdb62392a755a0f17e44fdb552ac7efcd421cd243e47815ee86bf5614"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts",
+      "symbol": "cellIn",
+      "bodySHA256": "28244dd4f1f149527349698932e080cec6f2a42364446b2cf0618e9c8be12035"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/FunnelChart/funnelChart.styles.ts",
+      "symbol": "appear",
+      "bodySHA256": "f1475c64440ebf8a58a68c0ede4f057707619e2d28fcbb57a7707f7daf8f75f2"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/PieChart/pieChart.styles.ts",
+      "symbol": "appear",
+      "bodySHA256": "7c1618cc7ecea9f4436edc59ca278a216fb15e886e9ac38ee972b4102a293e80"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/RadarChart/radarChart.styles.ts",
+      "symbol": "appear",
+      "bodySHA256": "7b125f72fdee5a16f0eebaebd43060b4c0e53d137b82fafd70356aff27174681"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/ScatterChart/scatterChart.styles.ts",
+      "symbol": "appear",
+      "bodySHA256": "445cc174626096a8b474744efe8e49c94e3d11de4d1f7ad91dc987e153829493"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/animations/drawLine.styles.ts",
+      "symbol": "drawLineAnimation",
+      "bodySHA256": "79f68fda6ced0f584540b9e65f46efb7c1599a350ccc16209c9f66d293dcf657"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/animations/fadeAppear.styles.ts",
+      "symbol": "fadeAppearAnimation",
+      "bodySHA256": "28244dd4f1f149527349698932e080cec6f2a42364446b2cf0618e9c8be12035"
+    }
+  ],
+  "fallbackFiles": [
+    {
+      "file": "packages/react-components/src/components/Accordion/accordion.styles.ts",
+      "count": 23,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Button/button.styles.ts",
+      "count": 56,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Buttons/buttons.styles.ts",
+      "count": 1,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Calendar/calendar.styles.ts",
+      "count": 63,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Callout/callout.styles.ts",
+      "count": 21,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Card/card.styles.ts",
+      "count": 12,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/CardHeader/cardHeader.styles.ts",
+      "count": 11,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Carousel/carousel.styles.ts",
+      "count": 13,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/BarChart/barChart.styles.ts",
+      "count": 1,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/BarChart/horizontalBarChart.styles.ts",
+      "count": 5,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts",
+      "count": 19,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/CalendarHeatmap/parts/CalendarPatternDefs.tsx",
+      "count": 1,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/FunnelChart/funnelChart.styles.ts",
+      "count": 13,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts",
+      "count": 7,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/LineChart/lineChart.styles.ts",
+      "count": 1,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/PieChart/pieChart.styles.ts",
+      "count": 1,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/RadarChart/radarChart.styles.ts",
+      "count": 2,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/RadialChart/radialChart.styles.ts",
+      "count": 1,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/ScatterChart/scatterChart.styles.ts",
+      "count": 1,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/SegmentedBar/segmentedBar.styles.ts",
+      "count": 13,
+      "rawEqual": false
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts",
+      "count": 1,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts",
+      "count": 2,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/chartBase.styles.ts",
+      "count": 13,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/chartBaseDeclarations.ts",
+      "count": 4,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/chartTypography.ts",
+      "count": 4,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/DefaultLegend/defaultLegend.styles.ts",
+      "count": 28,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts",
+      "count": 43,
+      "rawEqual": false
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
+      "count": 22,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/mini/miniChart.styles.ts",
+      "count": 1,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/CheckBoxGroup/styles.ts",
+      "count": 8,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/CheckBoxItem/styles.ts",
+      "count": 19,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Chips/chips.styles.ts",
+      "count": 15,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Citation/citation.styles.ts",
+      "count": 18,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Citation/citationItem.styles.ts",
+      "count": 16,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/CodeBlock/codeBlock.styles.ts",
+      "count": 2,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/CompositeCardBlock/card.styles.ts",
+      "count": 16,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/ContextCardBlock/card.styles.ts",
+      "count": 43,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/DatePicker/datePicker.styles.ts",
+      "count": 20,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/DotMatrixLoader/dotMatrixLoader.styles.ts",
+      "count": 1,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/EditableTable/base/components/editableCell.styles.ts",
+      "count": 16,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/EditableTable/editableTable.styles.ts",
+      "count": 32,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/EntityList/entityList.styles.ts",
+      "count": 32,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/FormControl/Hint/hint.styles.ts",
+      "count": 6,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/FormControl/formControl.styles.ts",
+      "count": 1,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/IconButton/iconButton.styles.ts",
+      "count": 44,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/IconTag/iconTag.styles.ts",
+      "count": 17,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/IconText/iconText.styles.ts",
+      "count": 5,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Image/image.styles.ts",
+      "count": 3,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/ImageBlock/imageBlock.styles.ts",
+      "count": 7,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/ImageGallery/galleryModal.styles.ts",
+      "count": 23,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/ImageGallery/imageGallery.styles.ts",
+      "count": 2,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/ImageText/imageText.styles.ts",
+      "count": 11,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/ImageTextLarge/imageTextLarge.styles.ts",
+      "count": 3,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/InlineHeader/inlineHeader.styles.ts",
+      "count": 10,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Input/input.styles.ts",
+      "count": 27,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Label/label.styles.ts",
+      "count": 6,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/ListBlock/listBlock.styles.ts",
+      "count": 2,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/ListItem/listItem.styles.ts",
+      "count": 38,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/MarkDownRenderer/markdown.styles.ts",
+      "count": 15,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/MetricIndicator/metricIndicator.styles.ts",
+      "count": 21,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Modal/modal.styles.ts",
+      "count": 13,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/OptionCards/optionCards.styles.ts",
+      "count": 24,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/OverviewCardBlock/overviewCardBlock.styles.ts",
+      "count": 14,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/RadioGroup/styles.ts",
+      "count": 8,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/RadioItem/styles.ts",
+      "count": 19,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/SectionBlock/foldableSection.styles.ts",
+      "count": 11,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/SectionBlock/sectionV2.styles.ts",
+      "count": 9,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Select/select.styles.ts",
+      "count": 61,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Separator/separator.styles.ts",
+      "count": 1,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Skeleton/pieChartSkeleton.styles.ts",
+      "count": 14,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Skeleton/skeleton.styles.ts",
+      "count": 3,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Skeleton/tableSkeleton.styles.ts",
+      "count": 5,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Slider/slider.styles.ts",
+      "count": 30,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Slider/sliderBlock.styles.ts",
+      "count": 20,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/SnippetCardBlock/snippetCardBlock.styles.ts",
+      "count": 17,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Sources/listedSources.styles.ts",
+      "count": 11,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Sources/sourcesItem.styles.ts",
+      "count": 13,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Steps/steps.styles.ts",
+      "count": 18,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/SwitchGroup/styles.ts",
+      "count": 8,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/SwitchItem/styles.ts",
+      "count": 21,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Table/scrollableTable.styles.ts",
+      "count": 5,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Table/table.styles.ts",
+      "count": 17,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Tabs/tabs.styles.ts",
+      "count": 50,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/Tag/tag.styles.ts",
+      "count": 25,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/TagBlock/tagBlock.styles.ts",
+      "count": 1,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/TextArea/textArea.styles.ts",
+      "count": 18,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/TextBlock/textBlock.styles.ts",
+      "count": 46,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/TextCallout/textCallout.styles.ts",
+      "count": 19,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/TextContent/textContent.styles.ts",
+      "count": 11,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/TextContentWrapper/textContentWrapper.styles.ts",
+      "count": 3,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/ToggleGroup/styles.ts",
+      "count": 1,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/ToggleItem/styles.ts",
+      "count": 15,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/TooltipWrapper/tooltipWrapper.styles.ts",
+      "count": 11,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/VisualCardBlock/card.styles.ts",
+      "count": 20,
+      "rawEqual": true
+    },
+    {
+      "file": "packages/react-components/src/components/_shared/cards/cardBlockLayout.styles.ts",
+      "count": 20,
+      "rawEqual": true
+    }
+  ],
+  "fallbackExpressions": 1444,
+  "formattingOnlyFallbackFiles": [
+    "packages/react-components/src/components/Charts/SegmentedBar/segmentedBar.styles.ts",
+    "packages/react-components/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts"
+  ],
+  "changedFiles": [
+    "packages/react-components/README.md",
+    "packages/react-components/src/components/Charts/AreaChart/areaChart.styles.ts",
+    "packages/react-components/src/components/Charts/BarChart/barChart.styles.ts",
+    "packages/react-components/src/components/Charts/BarChart/horizontalBarChart.styles.ts",
+    "packages/react-components/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts",
+    "packages/react-components/src/components/Charts/FunnelChart/funnelChart.styles.ts",
+    "packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts",
+    "packages/react-components/src/components/Charts/LineChart/lineChart.styles.ts",
+    "packages/react-components/src/components/Charts/PieChart/pieChart.styles.ts",
+    "packages/react-components/src/components/Charts/RadarChart/radarChart.styles.ts",
+    "packages/react-components/src/components/Charts/RadialChart/radialChart.styles.ts",
+    "packages/react-components/src/components/Charts/ScatterChart/scatterChart.styles.ts",
+    "packages/react-components/src/components/Charts/SegmentedBar/segmentedBar.styles.ts",
+    "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts",
+    "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts",
+    "packages/react-components/src/components/Charts/shared/chartBase.styles.ts",
+    "packages/react-components/src/components/Charts/shared/core/DefaultLegend/defaultLegend.styles.ts",
+    "packages/react-components/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts",
+    "packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
+    "packages/react-components/src/components/Charts/shared/mini/miniChart.styles.ts"
+  ],
+  "canonicalLiteralCollisions": []
+}

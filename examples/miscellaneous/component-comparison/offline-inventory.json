@@ -1,0 +1,674 @@
+[
+  {
+    "name": "Accordion",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "TabItem",
+    "path": "root.Card.children[6].SectionBlock.sections[0].SectionItem.content[0].Tabs.items[1].TabItem.content[1]"
+  },
+  {
+    "name": "AccordionItem",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "Accordion",
+    "path": "root.Card.children[6].SectionBlock.sections[0].SectionItem.content[0].Tabs.items[1].TabItem.content[1].Accordion.items[0]"
+  },
+  {
+    "name": "AreaChart",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[3].SectionBlock.sections[0].SectionItem.content[3]"
+  },
+  {
+    "name": "BarChart",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[3].SectionBlock.sections[0].SectionItem.content[1]"
+  },
+  {
+    "name": "BoldText",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SnippetCardItem",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[0].SnippetCardBlock.items[1].SnippetCardItem.rhs"
+  },
+  {
+    "name": "Button",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "Buttons",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.buttons.Buttons.buttons[0]"
+  },
+  {
+    "name": "Buttons",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "Form",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.buttons"
+  },
+  {
+    "name": "Callout",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[1]"
+  },
+  {
+    "name": "Card",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": false,
+    "parent": null,
+    "path": "root"
+  },
+  {
+    "name": "CardHeader",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "Card",
+    "path": "root.Card.children[0]"
+  },
+  {
+    "name": "Carousel",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[6].SectionBlock.sections[0].SectionItem.content[1]"
+  },
+  {
+    "name": "CheckBoxGroup",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "FormControl",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[5].FormControl.input"
+  },
+  {
+    "name": "CheckBoxItem",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "CheckBoxGroup",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[5].FormControl.input.CheckBoxGroup.items[0]"
+  },
+  {
+    "name": "ChipItem",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "Chips",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[7].FormControl.input.Chips.items[0]"
+  },
+  {
+    "name": "Chips",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "FormControl",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[7].FormControl.input"
+  },
+  {
+    "name": "CodeBlock",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[3]"
+  },
+  {
+    "name": "Col",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "Table",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[8].Table.columns[0]"
+  },
+  {
+    "name": "CompositeCardBlock",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[3]"
+  },
+  {
+    "name": "CompositeCardItem",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "CompositeCardBlock",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[3].CompositeCardBlock.items[0]"
+  },
+  {
+    "name": "ContextCardBlock",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[2]"
+  },
+  {
+    "name": "ContextCardItem",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "ContextCardBlock",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[2].ContextCardBlock.items[0]"
+  },
+  {
+    "name": "DatePicker",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "FormControl",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[3].FormControl.input"
+  },
+  {
+    "name": "EditableTable",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[13]"
+  },
+  {
+    "name": "EntityList",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[10]"
+  },
+  {
+    "name": "FollowUpBlock",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "Card",
+    "path": "root.Card.children[7]"
+  },
+  {
+    "name": "FollowUpItem",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "FollowUpBlock",
+    "path": "root.Card.children[7].FollowUpBlock.items[0]"
+  },
+  {
+    "name": "Form",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0]"
+  },
+  {
+    "name": "FormControl",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "Form",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[0]"
+  },
+  {
+    "name": "HorizontalBarChart",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[3].SectionBlock.sections[0].SectionItem.content[5]"
+  },
+  {
+    "name": "Icon",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "ChipItem",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[7].FormControl.input.Chips.items[0].ChipItem.icon"
+  },
+  {
+    "name": "IconButton",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[2]"
+  },
+  {
+    "name": "IconText",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SnippetCardItem",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[0].SnippetCardBlock.items[0].SnippetCardItem.lhs"
+  },
+  {
+    "name": "Image",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[4]"
+  },
+  {
+    "name": "ImageBlock",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[5]"
+  },
+  {
+    "name": "ImageGallery",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[6]"
+  },
+  {
+    "name": "ImageText",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SnippetCardItem",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[0].SnippetCardBlock.items[1].SnippetCardItem.lhs"
+  },
+  {
+    "name": "ImageTextLarge",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "CompositeCardItem",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[3].CompositeCardBlock.items[0].CompositeCardItem.header"
+  },
+  {
+    "name": "InlineHeader",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[11]"
+  },
+  {
+    "name": "Input",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "FormControl",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[0].FormControl.input"
+  },
+  {
+    "name": "Label",
+    "example": "Label",
+    "delivery": "direct",
+    "nested": false,
+    "parent": null,
+    "path": "root"
+  },
+  {
+    "name": "LineChart",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[3].SectionBlock.sections[0].SectionItem.content[2]"
+  },
+  {
+    "name": "ListBlock",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[12]"
+  },
+  {
+    "name": "ListItem",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "ListBlock",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[12].ListBlock.items[0]"
+  },
+  {
+    "name": "MarkDownRenderer",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[0]"
+  },
+  {
+    "name": "MetricIndicatorInline",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "OverviewCardItem",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[1].OverviewCardBlock.items[0].OverviewCardItem.bottom"
+  },
+  {
+    "name": "MetricIndicatorWithStrikethrough",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "CompositeCardItem",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[3].CompositeCardBlock.items[0].CompositeCardItem.footer.price"
+  },
+  {
+    "name": "OptionCard",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "OptionCards",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[8].FormControl.input.OptionCards.items[0]"
+  },
+  {
+    "name": "OptionCards",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "FormControl",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[8].FormControl.input"
+  },
+  {
+    "name": "OverviewCardBlock",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[1]"
+  },
+  {
+    "name": "OverviewCardItem",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "OverviewCardBlock",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[1].OverviewCardBlock.items[0]"
+  },
+  {
+    "name": "PieChart",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[3].SectionBlock.sections[0].SectionItem.content[6]"
+  },
+  {
+    "name": "Point",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "ScatterSeries",
+    "path": "root.Card.children[3].SectionBlock.sections[0].SectionItem.content[9].ScatterChart.datasets[0].ScatterSeries.points[0]"
+  },
+  {
+    "name": "RadarChart",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[3].SectionBlock.sections[0].SectionItem.content[4]"
+  },
+  {
+    "name": "RadialChart",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[3].SectionBlock.sections[0].SectionItem.content[7]"
+  },
+  {
+    "name": "RadioGroup",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "FormControl",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[6].FormControl.input"
+  },
+  {
+    "name": "RadioItem",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "RadioGroup",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[6].FormControl.input.RadioGroup.items[0]"
+  },
+  {
+    "name": "ScatterChart",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[3].SectionBlock.sections[0].SectionItem.content[9]"
+  },
+  {
+    "name": "ScatterSeries",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "ScatterChart",
+    "path": "root.Card.children[3].SectionBlock.sections[0].SectionItem.content[9].ScatterChart.datasets[0]"
+  },
+  {
+    "name": "SectionBlock",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "Card",
+    "path": "root.Card.children[2]"
+  },
+  {
+    "name": "SectionItem",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionBlock",
+    "path": "root.Card.children[2].SectionBlock.sections[0]"
+  },
+  {
+    "name": "Select",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "FormControl",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[2].FormControl.input"
+  },
+  {
+    "name": "SelectItem",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "Select",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[2].FormControl.input.Select.items[0]"
+  },
+  {
+    "name": "Separator",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[7]"
+  },
+  {
+    "name": "Series",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "BarChart",
+    "path": "root.Card.children[3].SectionBlock.sections[0].SectionItem.content[1].BarChart.series[0]"
+  },
+  {
+    "name": "SingleStackedBarChart",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[3].SectionBlock.sections[0].SectionItem.content[8]"
+  },
+  {
+    "name": "Slice",
+    "example": "Slice",
+    "delivery": "direct",
+    "nested": false,
+    "parent": null,
+    "path": "root"
+  },
+  {
+    "name": "Slider",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "FormControl",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[4].FormControl.input"
+  },
+  {
+    "name": "SnippetCardBlock",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[0]"
+  },
+  {
+    "name": "SnippetCardItem",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SnippetCardBlock",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[0].SnippetCardBlock.items[0]"
+  },
+  {
+    "name": "Steps",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[14]"
+  },
+  {
+    "name": "StepsItem",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "Steps",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[14].Steps.items[0]"
+  },
+  {
+    "name": "SwitchGroup",
+    "example": "SwitchGroup",
+    "delivery": "direct",
+    "nested": false,
+    "parent": null,
+    "path": "root"
+  },
+  {
+    "name": "SwitchItem",
+    "example": "SwitchGroup",
+    "delivery": "direct",
+    "nested": true,
+    "parent": "SwitchGroup",
+    "path": "root.SwitchGroup.items[0]"
+  },
+  {
+    "name": "TabItem",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "Tabs",
+    "path": "root.Card.children[6].SectionBlock.sections[0].SectionItem.content[0].Tabs.items[0]"
+  },
+  {
+    "name": "Table",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[8]"
+  },
+  {
+    "name": "Tabs",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[6].SectionBlock.sections[0].SectionItem.content[0]"
+  },
+  {
+    "name": "Tag",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "ContextCardItem",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[2].ContextCardBlock.items[0].ContextCardItem.title"
+  },
+  {
+    "name": "TagBlock",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[9]"
+  },
+  {
+    "name": "Text",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SnippetCardItem",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[0].SnippetCardBlock.items[0].SnippetCardItem.rhs"
+  },
+  {
+    "name": "TextArea",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "FormControl",
+    "path": "root.Card.children[4].SectionBlock.sections[0].SectionItem.content[0].Form.fields[1].FormControl.input"
+  },
+  {
+    "name": "TextCallout",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[2].SectionBlock.sections[0].SectionItem.content[2]"
+  },
+  {
+    "name": "TextContent",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "Card",
+    "path": "root.Card.children[1]"
+  },
+  {
+    "name": "VisualCardBlock",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "SectionItem",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[4]"
+  },
+  {
+    "name": "VisualCardItem",
+    "example": "Shared response",
+    "delivery": "instant and local stream",
+    "nested": true,
+    "parent": "VisualCardBlock",
+    "path": "root.Card.children[5].SectionBlock.sections[0].SectionItem.content[4].VisualCardBlock.items[0]"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "testedCommit": "f17dae57d0b1d482d6702ddd09bea94cdc6a671a",
+  "currentCommit": "50df8768157c5e76abda45bf39098ec4b87fa702",
+  "testedPackageTree": "f06811c5e7e3324829f552a153ff36e9e7b6df5c",
+  "currentPackageTree": "f06811c5e7e3324829f552a153ff36e9e7b6df5c",
+  "packageTreeIdentical": true,
+  "followupDiff": "D\t.changeset/react-components-root-defaults.md",
+  "clean": true,
+  "archive": "/private/tmp/openui-styles57-evidence/final/openuidev-react-components-0.0.0-beta.0.tgz",
+  "archiveSHA256": "a7c562a0f284d8f290f414ce4bee2fae632c601470677d71046800a021e808e4",
+  "buildOrBrowserRerun": false,
+  "reason": "Follow-up removes only deferred release changeset; exact package tree and immutable archive unchanged."
+}

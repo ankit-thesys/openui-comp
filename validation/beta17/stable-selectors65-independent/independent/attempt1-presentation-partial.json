@@ -1,0 +1,30 @@
+{
+  "browser": "156.0.8078.48",
+  "checks": [
+    {
+      "name": "plain/before/baseline/host-isolation",
+      "pass": true
+    },
+    {
+      "name": "plain/before/baseline/43-families",
+      "pass": true
+    },
+    {
+      "name": "plain/before/baseline/Skeleton-real-animation-contract",
+      "pass": true
+    },
+    {
+      "name": "plain/before/baseline/loader-progression",
+      "pass": true
+    },
+    {
+      "name": "plain/before/baseline/tabs-interaction",
+      "pass": true
+    },
+    {
+      "name": "plain/before/baseline/accordion-close",
+      "pass": true
+    }
+  ],
+  "observations": []
+}

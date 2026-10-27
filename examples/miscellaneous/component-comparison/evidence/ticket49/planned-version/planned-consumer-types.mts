@@ -1,0 +1,10 @@
+import {createElement} from 'react';
+import { FollowUpBlock, FollowUpItem, ModelSwitcher } from '@openuidev/chat-kit';
+import type { FollowUpBlockProps, FollowUpItemProps, ModelLogo, ModelOption, ModelSwitcherProps } from '@openuidev/chat-kit';
+import { openuiChatAdditionalRules, openuiChatComponentGroups, openuiChatExamples, openuiChatLibrary, openuiChatPromptOptions } from '@openuidev/chat-kit/libs';
+const block: FollowUpBlockProps = { children: createElement(FollowUpItem,{text:'next'}) };
+const item: FollowUpItemProps = { text: 'next', onClick: event => event.preventDefault() };
+const logo: ModelLogo = {light:'L',dark:'D'};
+const option: ModelOption = {id:'model',name:'Model',logo};
+const switcher: ModelSwitcherProps = {models:[option],value:'model',onValueChange: value => { const id:string=value; void id; }};
+void [FollowUpBlock,FollowUpItem,ModelSwitcher,block,item,switcher,openuiChatAdditionalRules,openuiChatComponentGroups,openuiChatExamples,openuiChatLibrary,openuiChatPromptOptions];

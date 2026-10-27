@@ -1,0 +1,24 @@
+{
+  "checks": [
+    "Core ThemeProvider context reaches kit ModelSwitcher",
+    "Custom tokens switch through shared provider into kit library",
+    "Direct/root/library action handlers fire",
+    "Deterministic partial stream completes and action remains functional"
+  ],
+  "actions": [
+    "direct",
+    "root",
+    {
+      "type": "continue_conversation",
+      "params": {},
+      "humanFriendlyMessage": "Continue fixture",
+      "formState": {}
+    }
+  ],
+  "dark": "rgb(18, 171, 52)",
+  "light": "rgb(171, 18, 52)",
+  "errors": [],
+  "browserVersion": "156.0.8078.47",
+  "source": "9006a2066f93359c991eeafcf9d812db3ae78450",
+  "archiveSha256": "b4cb71c1d378bd4b50c69b0092af55ca55bc4ef0c33771624d367f782d739384"
+}

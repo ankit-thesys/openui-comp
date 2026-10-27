@@ -1,0 +1,608 @@
+{
+  "browser": "156.0.8078.47",
+  "cells": 24,
+  "passed": 24,
+  "results": [
+    {
+      "host": {
+        "host": "plain",
+        "order": "before"
+      },
+      "width": 390,
+      "caseId": "form-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": [
+        {
+          "type": "continue_conversation",
+          "params": {},
+          "humanFriendlyMessage": "Submitted offline form",
+          "formState": {
+            "offline-form": {
+              "tags": {
+                "value": [
+                  "chat"
+                ],
+                "componentType": "Chips"
+              },
+              "kit": {
+                "value": "chat",
+                "componentType": "OptionCards"
+              },
+              "name": {
+                "value": "Rename fixture"
+              }
+            }
+          },
+          "formName": "offline-form"
+        }
+      ],
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "plain",
+        "order": "before"
+      },
+      "width": 390,
+      "caseId": "bar-chart-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": 1,
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "plain",
+        "order": "before"
+      },
+      "width": 1280,
+      "caseId": "form-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": [
+        {
+          "type": "continue_conversation",
+          "params": {},
+          "humanFriendlyMessage": "Submitted offline form",
+          "formState": {
+            "offline-form": {
+              "tags": {
+                "value": [
+                  "chat"
+                ],
+                "componentType": "Chips"
+              },
+              "kit": {
+                "value": "chat",
+                "componentType": "OptionCards"
+              },
+              "name": {
+                "value": "Rename fixture"
+              }
+            }
+          },
+          "formName": "offline-form"
+        }
+      ],
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "plain",
+        "order": "before"
+      },
+      "width": 1280,
+      "caseId": "bar-chart-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": 1,
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "plain",
+        "order": "after"
+      },
+      "width": 390,
+      "caseId": "form-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": [
+        {
+          "type": "continue_conversation",
+          "params": {},
+          "humanFriendlyMessage": "Submitted offline form",
+          "formState": {
+            "offline-form": {
+              "tags": {
+                "value": [
+                  "chat"
+                ],
+                "componentType": "Chips"
+              },
+              "kit": {
+                "value": "chat",
+                "componentType": "OptionCards"
+              },
+              "name": {
+                "value": "Rename fixture"
+              }
+            }
+          },
+          "formName": "offline-form"
+        }
+      ],
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "plain",
+        "order": "after"
+      },
+      "width": 390,
+      "caseId": "bar-chart-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": 1,
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "plain",
+        "order": "after"
+      },
+      "width": 1280,
+      "caseId": "form-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": [
+        {
+          "type": "continue_conversation",
+          "params": {},
+          "humanFriendlyMessage": "Submitted offline form",
+          "formState": {
+            "offline-form": {
+              "tags": {
+                "value": [
+                  "chat"
+                ],
+                "componentType": "Chips"
+              },
+              "kit": {
+                "value": "chat",
+                "componentType": "OptionCards"
+              },
+              "name": {
+                "value": "Rename fixture"
+              }
+            }
+          },
+          "formName": "offline-form"
+        }
+      ],
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "plain",
+        "order": "after"
+      },
+      "width": 1280,
+      "caseId": "bar-chart-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": 1,
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind3",
+        "order": "before"
+      },
+      "width": 390,
+      "caseId": "form-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": [
+        {
+          "type": "continue_conversation",
+          "params": {},
+          "humanFriendlyMessage": "Submitted offline form",
+          "formState": {
+            "offline-form": {
+              "tags": {
+                "value": [
+                  "chat"
+                ],
+                "componentType": "Chips"
+              },
+              "kit": {
+                "value": "chat",
+                "componentType": "OptionCards"
+              },
+              "name": {
+                "value": "Rename fixture"
+              }
+            }
+          },
+          "formName": "offline-form"
+        }
+      ],
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind3",
+        "order": "before"
+      },
+      "width": 390,
+      "caseId": "bar-chart-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": 1,
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind3",
+        "order": "before"
+      },
+      "width": 1280,
+      "caseId": "form-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": [
+        {
+          "type": "continue_conversation",
+          "params": {},
+          "humanFriendlyMessage": "Submitted offline form",
+          "formState": {
+            "offline-form": {
+              "tags": {
+                "value": [
+                  "chat"
+                ],
+                "componentType": "Chips"
+              },
+              "kit": {
+                "value": "chat",
+                "componentType": "OptionCards"
+              },
+              "name": {
+                "value": "Rename fixture"
+              }
+            }
+          },
+          "formName": "offline-form"
+        }
+      ],
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind3",
+        "order": "before"
+      },
+      "width": 1280,
+      "caseId": "bar-chart-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": 1,
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind3",
+        "order": "after"
+      },
+      "width": 390,
+      "caseId": "form-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": [
+        {
+          "type": "continue_conversation",
+          "params": {},
+          "humanFriendlyMessage": "Submitted offline form",
+          "formState": {
+            "offline-form": {
+              "tags": {
+                "value": [
+                  "chat"
+                ],
+                "componentType": "Chips"
+              },
+              "kit": {
+                "value": "chat",
+                "componentType": "OptionCards"
+              },
+              "name": {
+                "value": "Rename fixture"
+              }
+            }
+          },
+          "formName": "offline-form"
+        }
+      ],
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind3",
+        "order": "after"
+      },
+      "width": 390,
+      "caseId": "bar-chart-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": 1,
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind3",
+        "order": "after"
+      },
+      "width": 1280,
+      "caseId": "form-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": [
+        {
+          "type": "continue_conversation",
+          "params": {},
+          "humanFriendlyMessage": "Submitted offline form",
+          "formState": {
+            "offline-form": {
+              "tags": {
+                "value": [
+                  "chat"
+                ],
+                "componentType": "Chips"
+              },
+              "kit": {
+                "value": "chat",
+                "componentType": "OptionCards"
+              },
+              "name": {
+                "value": "Rename fixture"
+              }
+            }
+          },
+          "formName": "offline-form"
+        }
+      ],
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind3",
+        "order": "after"
+      },
+      "width": 1280,
+      "caseId": "bar-chart-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": 1,
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind4",
+        "order": "before"
+      },
+      "width": 390,
+      "caseId": "form-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": [
+        {
+          "type": "continue_conversation",
+          "params": {},
+          "humanFriendlyMessage": "Submitted offline form",
+          "formState": {
+            "offline-form": {
+              "tags": {
+                "value": [
+                  "chat"
+                ],
+                "componentType": "Chips"
+              },
+              "kit": {
+                "value": "chat",
+                "componentType": "OptionCards"
+              },
+              "name": {
+                "value": "Rename fixture"
+              }
+            }
+          },
+          "formName": "offline-form"
+        }
+      ],
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind4",
+        "order": "before"
+      },
+      "width": 390,
+      "caseId": "bar-chart-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": 1,
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind4",
+        "order": "before"
+      },
+      "width": 1280,
+      "caseId": "form-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": [
+        {
+          "type": "continue_conversation",
+          "params": {},
+          "humanFriendlyMessage": "Submitted offline form",
+          "formState": {
+            "offline-form": {
+              "tags": {
+                "value": [
+                  "chat"
+                ],
+                "componentType": "Chips"
+              },
+              "kit": {
+                "value": "chat",
+                "componentType": "OptionCards"
+              },
+              "name": {
+                "value": "Rename fixture"
+              }
+            }
+          },
+          "formName": "offline-form"
+        }
+      ],
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind4",
+        "order": "before"
+      },
+      "width": 1280,
+      "caseId": "bar-chart-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": 1,
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind4",
+        "order": "after"
+      },
+      "width": 390,
+      "caseId": "form-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": [
+        {
+          "type": "continue_conversation",
+          "params": {},
+          "humanFriendlyMessage": "Submitted offline form",
+          "formState": {
+            "offline-form": {
+              "tags": {
+                "value": [
+                  "chat"
+                ],
+                "componentType": "Chips"
+              },
+              "kit": {
+                "value": "chat",
+                "componentType": "OptionCards"
+              },
+              "name": {
+                "value": "Rename fixture"
+              }
+            }
+          },
+          "formName": "offline-form"
+        }
+      ],
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind4",
+        "order": "after"
+      },
+      "width": 390,
+      "caseId": "bar-chart-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": 1,
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind4",
+        "order": "after"
+      },
+      "width": 1280,
+      "caseId": "form-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": [
+        {
+          "type": "continue_conversation",
+          "params": {},
+          "humanFriendlyMessage": "Submitted offline form",
+          "formState": {
+            "offline-form": {
+              "tags": {
+                "value": [
+                  "chat"
+                ],
+                "componentType": "Chips"
+              },
+              "kit": {
+                "value": "chat",
+                "componentType": "OptionCards"
+              },
+              "name": {
+                "value": "Rename fixture"
+              }
+            }
+          },
+          "formName": "offline-form"
+        }
+      ],
+      "errors": [],
+      "notices": []
+    },
+    {
+      "host": {
+        "host": "tailwind4",
+        "order": "after"
+      },
+      "width": 1280,
+      "caseId": "bar-chart-default",
+      "delivery": "80-character partial updates through public Renderer",
+      "pass": true,
+      "actual": 1,
+      "errors": [],
+      "notices": []
+    }
+  ],
+  "note": "Affected renamed import/library/streaming smoke, not the full approved matrix or SSR certification."
+}

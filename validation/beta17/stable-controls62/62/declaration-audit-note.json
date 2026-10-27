@@ -1,0 +1,7 @@
+{
+  "initialTestExpectation": "Two private OptionCards style declarations would change inference after stable literal replacement.",
+  "actualChangedDeclarations": [],
+  "initialAssertionFailed": true,
+  "correctedAssertion": "All declarations must be byte-identical. Passed.",
+  "productChanged": false
+}

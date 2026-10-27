@@ -1,0 +1,3 @@
+Initial optimized first-page readiness timed out after30s without a complete verdict. Preserve runner; investigate browser/page/network diagnostics rather than relaxing a product check. Main991 and state72 results remain complete and separate.
+
+Diagnostics subsequently located the timeout at baseline-small-modal, not the first page: Modal correctly portals all content into document.body and leaves #app empty. No page or HTTP errors occurred. Readiness now waits for the real dialog for Modal, and real app children for other families; each completed family is checkpointed. No production or archive change.

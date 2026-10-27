@@ -1,0 +1,4 @@
+Recreating /private/tmp/openui-selectors61-evidence/consumer/node_modules
+ ERR_PNPM_NO_OFFLINE_TARBALL  A package is missing from the store but cannot download it in offline mode. The missing package may be downloaded from https://registry.npmjs.org/react/-/react-19.2.4.tgz.
+
+This error happened while installing a direct dependency of /private/tmp/openui-selectors61-evidence/consumer

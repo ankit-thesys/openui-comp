@@ -1,0 +1,16 @@
+{
+  "source": "/private/tmp/openui-standalone-chat-kit",
+  "commit": "9006a2066f93359c991eeafcf9d812db3ae78450",
+  "archiveSHA256": "5d4bb0c8511ddb1c709c3a70c86c966b8a8fe4f44cfa800135840c48f596daf0",
+  "inputs": {
+    "package.json": "32dc9eb926d816d1f81af13b9add4e5840a01c2216ef4efe274dafe69a995757",
+    "pnpm-lock.yaml": "8e4946085b5c31dc44fe038e75fbca32eca807131ce0642a97dc6027383939a8",
+    "pnpm-workspace.yaml": "275f06c565c4d4b922702c9a9930305666205ebb4ba3b949294d95dd225ff529",
+    ".changeset/config.json": "801376d199d3b629db5fd6886a2c8166a11b179b94f35b2746715a9d0218b5d7",
+    "packages/kits/chat/package.json": "4bd4026ff5217db56595e9a4aa5dbc0754ab2f1e3311b64749fdf64880b81391",
+    "packages/react-components/package.json": "d0171dd5aa7ec0fd00cede8e808a854a956291d3de1d2163330bff4b49540cf7",
+    "scripts/verify-peer-windows.mjs": "c2483c01388ae93cff22dafb27ce9301b9f7c2de8a472221f3e54fa5ce0ca7ba",
+    "scripts/workspace-packages.mjs": "bb644e609aad2e2b392c536c54050f845dd6bd29b33454110e3a66071a3982d4"
+  },
+  "mutations": "Disposable archive copy only: removed copied pending markdown changesets; added chat-only patch changeset; linked existing installed tooling. No production modifications."
+}

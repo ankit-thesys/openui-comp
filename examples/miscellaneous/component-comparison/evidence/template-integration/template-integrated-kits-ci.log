@@ -1,0 +1,64 @@
+
+> @openuidev/kits@0.0.0-beta.0 ci /Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/kits
+> pnpm run format:check && pnpm run lint:check && pnpm run typecheck && pnpm run check:publint && pnpm run check:attw
+
+
+> @openuidev/kits@0.0.0-beta.0 format:check /Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/kits
+> prettier --check src *.json *.ts
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> @openuidev/kits@0.0.0-beta.0 lint:check /Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/kits
+> eslint src
+
+
+/Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/kits/src/react/chat/libs/openuiChatLibrary/CheckBoxGroup/index.tsx
+  45:11  warning  The 'items' logical expression could make the dependencies of useCallback Hook (at line 55) change on every render. To fix this, wrap the initialization of 'items' in its own useMemo() Hook  react-hooks/exhaustive-deps
+
+/Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/kits/src/react/chat/libs/openuiChatLibrary/SectionBlock/index.tsx
+  45:6  warning  React Hook React.useEffect has a missing dependency: 'items'. Either include it or remove the dependency array                                react-hooks/exhaustive-deps
+  53:6  warning  React Hook React.useEffect has missing dependencies: 'firstItemValue' and 'items.length'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+/Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/kits/src/react/chat/libs/openuiChatLibrary/SwitchGroup/index.tsx
+  40:11  warning  The 'items' logical expression could make the dependencies of useCallback Hook (at line 50) change on every render. To fix this, wrap the initialization of 'items' in its own useMemo() Hook  react-hooks/exhaustive-deps
+
+/Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/kits/src/react/chat/libs/openuiChatLibrary/Tabs/index.tsx
+  39:6  warning  React Hook React.useEffect has a missing dependency: 'items'. Either include it or remove the dependency array                                                                                                          react-hooks/exhaustive-deps
+  41:3  warning  React Hook useEffect contains a call to 'setActiveTab'. Without a list of dependencies, this can lead to an infinite chain of updates. To fix this, pass [activeTab, items] as a second argument to the useEffect Hook  react-hooks/exhaustive-deps
+
+✖ 6 problems (0 errors, 6 warnings)
+
+
+> @openuidev/kits@0.0.0-beta.0 typecheck /Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/kits
+> tsc --noEmit
+
+
+> @openuidev/kits@0.0.0-beta.0 check:publint /Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/kits
+> publint
+
+Running publint v0.3.22 for @openuidev/kits...
+Packing files with `pnpm pack`...
+Linting...
+All good!
+
+> @openuidev/kits@0.0.0-beta.0 check:attw /Users/ankitdas/.codex/worktrees/react-components-templates/openui/packages/kits
+> attw --pack .
+
+
+@openuidev/kits v0.0.0-beta.0
+
+ No problems found 🌟
+
+
+[90m┌───────────────────[39m[90m┬──────────────────────────────[39m[90m┬───────────────────────────────────┐[39m
+[90m│[39m[31m                   [39m[90m│[39m[31m "@openuidev/kits/react/chat" [39m[90m│[39m[31m "@openuidev/kits/react/chat/libs" [39m[90m│[39m
+[90m├───────────────────[39m[90m┼──────────────────────────────[39m[90m┼───────────────────────────────────┤[39m
+[90m│[39m node10            [90m│[39m 🟢                           [90m│[39m 🟢                                [90m│[39m
+[90m├───────────────────[39m[90m┼──────────────────────────────[39m[90m┼───────────────────────────────────┤[39m
+[90m│[39m node16 (from CJS) [90m│[39m 🟢 (CJS)                     [90m│[39m 🟢 (CJS)                          [90m│[39m
+[90m├───────────────────[39m[90m┼──────────────────────────────[39m[90m┼───────────────────────────────────┤[39m
+[90m│[39m node16 (from ESM) [90m│[39m 🟢 (ESM)                     [90m│[39m 🟢 (ESM)                          [90m│[39m
+[90m├───────────────────[39m[90m┼──────────────────────────────[39m[90m┼───────────────────────────────────┤[39m
+[90m│[39m bundler           [90m│[39m 🟢                           [90m│[39m 🟢                                [90m│[39m
+[90m└───────────────────[39m[90m┴──────────────────────────────[39m[90m┴───────────────────────────────────┘[39m

@@ -1,0 +1,2187 @@
+{
+  "head": "cf1a8a88123b9a577c9cb43ae69d857ea6242f11",
+  "summary": {
+    "expected": 12450,
+    "executed": 12450,
+    "recorded": 12450,
+    "complete": true,
+    "recordedComplete": true,
+    "counts": {
+      "Pass": 9154,
+      "Fail": 86,
+      "Review": 30,
+      "Known issue": 3180,
+      "Not covered": 0,
+      "Not applicable": 0
+    },
+    "verdict": "Fail"
+  },
+  "missing": 0,
+  "superseded": 0,
+  "sourceRuns": [
+    {
+      "id": "2026-10-26-integrated-cf1-s1",
+      "sha256": "a374d876149cab45059f92b06b571650bf702d7a9517e801b4a4089592bd2116",
+      "summary": {
+        "expected": 3120,
+        "executed": 3120,
+        "recorded": 3120,
+        "complete": true,
+        "recordedComplete": true,
+        "counts": {
+          "Pass": 2188,
+          "Fail": 60,
+          "Review": 2,
+          "Known issue": 870,
+          "Not covered": 0,
+          "Not applicable": 0
+        },
+        "verdict": "Fail"
+      }
+    },
+    {
+      "id": "2026-10-26-integrated-cf1-s2",
+      "sha256": "5b04680e4d1f0594b31ad0fdf5248b7a9913b9ac3db685b421608a7952c0db47",
+      "summary": {
+        "expected": 3120,
+        "executed": 3120,
+        "recorded": 3120,
+        "complete": true,
+        "recordedComplete": true,
+        "counts": {
+          "Pass": 2285,
+          "Fail": 26,
+          "Review": 8,
+          "Known issue": 801,
+          "Not covered": 0,
+          "Not applicable": 0
+        },
+        "verdict": "Fail"
+      }
+    },
+    {
+      "id": "2026-10-26-integrated-cf1-s3",
+      "sha256": "74a9d56a6107c7ae18f1b5fb7576ab5a178cf1d5150bcef68cccbb247d60914d",
+      "summary": {
+        "expected": 3090,
+        "executed": 3090,
+        "recorded": 3090,
+        "complete": true,
+        "recordedComplete": true,
+        "counts": {
+          "Pass": 2161,
+          "Fail": 0,
+          "Review": 20,
+          "Known issue": 909,
+          "Not covered": 0,
+          "Not applicable": 0
+        },
+        "verdict": "Review"
+      }
+    },
+    {
+      "id": "2026-10-26-integrated-cf1-s4",
+      "sha256": "05658a3fa112a8227f76a00f7ee2cbcc7b5595d4d591a7e3237197b3aea4bbd1",
+      "summary": {
+        "expected": 3120,
+        "executed": 3120,
+        "recorded": 3120,
+        "complete": true,
+        "recordedComplete": true,
+        "counts": {
+          "Pass": 2520,
+          "Fail": 0,
+          "Review": 0,
+          "Known issue": 600,
+          "Not covered": 0,
+          "Not applicable": 0
+        },
+        "verdict": "Known issue"
+      }
+    }
+  ],
+  "nonpassingByCase": [
+    {
+      "case": "accordion-item-empty-content",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "bar-chart-variants",
+      "verdict": "Pass",
+      "cells": 3
+    },
+    {
+      "case": "bar-chart-variants",
+      "verdict": "Review",
+      "cells": 3
+    },
+    {
+      "case": "button-empty-content",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "carousel-default",
+      "verdict": "Known issue",
+      "cells": 20
+    },
+    {
+      "case": "carousel-scroll",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "carousel-variants",
+      "verdict": "Known issue",
+      "cells": 20
+    },
+    {
+      "case": "check-box-group-default",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "check-box-group-empty-options",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "check-box-group-empty-value",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "check-box-group-validation-error",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "check-box-item-variants",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "checkbox-keyboard",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "chip-item-default",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "chip-item-variants",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "chips-empty-options",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "chips-empty-value",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "chips-keyboard",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "chips-validation-error",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "chips-variants",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "composite-card-block-variants",
+      "verdict": "Review",
+      "cells": 5
+    },
+    {
+      "case": "date-picker-default",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "date-picker-empty-value",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "date-picker-keyboard",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "date-picker-open-calendar",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "date-picker-validation-error",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "date-picker-variants",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "follow-up-item-empty-content",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "form-default",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "horizontal-callback-known",
+      "verdict": "Known issue",
+      "cells": 30
+    },
+    {
+      "case": "horizontal-string-height-known",
+      "verdict": "Fail",
+      "cells": 26
+    },
+    {
+      "case": "horizontal-string-height-known",
+      "verdict": "Known issue",
+      "cells": 1
+    },
+    {
+      "case": "horizontal-string-height-known",
+      "verdict": "Review",
+      "cells": 3
+    },
+    {
+      "case": "icon-button-empty-label",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "image-gallery-keyboard",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "image-text-variants",
+      "verdict": "Pass",
+      "cells": 4
+    },
+    {
+      "case": "image-text-variants",
+      "verdict": "Review",
+      "cells": 6
+    },
+    {
+      "case": "list-item-action",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "option-card-default",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "option-card-variants",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "option-cards-empty-options",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "option-cards-empty-value",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "option-cards-keyboard",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "option-cards-validation-error",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "option-cards-variants",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "pie-chart-variants",
+      "verdict": "Pass",
+      "cells": 1
+    },
+    {
+      "case": "radio-group-default",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "radio-group-empty-options",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "radio-group-empty-value",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "radio-group-validation-error",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "radio-keyboard",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "select-default",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "select-empty-value",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "select-keyboard",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "select-open-portal",
+      "verdict": "Fail",
+      "cells": 60
+    },
+    {
+      "case": "select-validation-error",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "select-variants",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "slider-default",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "slider-keyboard",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "slider-validation-error",
+      "verdict": "Known issue",
+      "cells": 49
+    },
+    {
+      "case": "slider-validation-error",
+      "verdict": "Review",
+      "cells": 11
+    },
+    {
+      "case": "slider-variants",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "tag-variants",
+      "verdict": "Pass",
+      "cells": 2
+    },
+    {
+      "case": "tag-variants",
+      "verdict": "Review",
+      "cells": 2
+    },
+    {
+      "case": "text-area-default",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "text-area-empty-value",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "text-area-validation-error",
+      "verdict": "Known issue",
+      "cells": 60
+    },
+    {
+      "case": "textarea-keyboard",
+      "verdict": "Known issue",
+      "cells": 60
+    }
+  ],
+  "representatives": [
+    {
+      "cell": "bar-chart-variants--tailwind3-after--768--light--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/bar-chart-variants--tailwind3-after--768--light--stream/measurements.json.gz",
+        "evidence/bar-chart-variants--tailwind3-after--768--light--stream/complete-legacy.png",
+        "evidence/bar-chart-variants--tailwind3-after--768--light--stream/complete-migrated.png",
+        "evidence/bar-chart-variants--tailwind3-after--768--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "bar-chart-variants--tailwind3-after--768--dark--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/bar-chart-variants--tailwind3-after--768--dark--stream/measurements.json.gz",
+        "evidence/bar-chart-variants--tailwind3-after--768--dark--stream/complete-legacy.png",
+        "evidence/bar-chart-variants--tailwind3-after--768--dark--stream/complete-migrated.png",
+        "evidence/bar-chart-variants--tailwind3-after--768--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "bar-chart-variants--tailwind4-before--768--light--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/bar-chart-variants--tailwind4-before--768--light--stream/measurements.json.gz",
+        "evidence/bar-chart-variants--tailwind4-before--768--light--stream/complete-legacy.png",
+        "evidence/bar-chart-variants--tailwind4-before--768--light--stream/complete-migrated.png",
+        "evidence/bar-chart-variants--tailwind4-before--768--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "bar-chart-variants--tailwind4-before--768--dark--instant",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--instant/measurements.json.gz",
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--instant/complete-legacy.png",
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--instant/complete-migrated.png",
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "bar-chart-variants--tailwind4-before--768--dark--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--stream/measurements.json.gz",
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--stream/complete-legacy.png",
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--stream/complete-migrated.png",
+        "evidence/bar-chart-variants--tailwind4-before--768--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "bar-chart-variants--tailwind4-after--768--dark--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/bar-chart-variants--tailwind4-after--768--dark--stream/measurements.json.gz",
+        "evidence/bar-chart-variants--tailwind4-after--768--dark--stream/complete-legacy.png",
+        "evidence/bar-chart-variants--tailwind4-after--768--dark--stream/complete-migrated.png",
+        "evidence/bar-chart-variants--tailwind4-after--768--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "pie-chart-variants--tailwind3-after--768--light--instant",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/pie-chart-variants--tailwind3-after--768--light--instant/measurements.json.gz",
+        "evidence/pie-chart-variants--tailwind3-after--768--light--instant/complete-legacy.png",
+        "evidence/pie-chart-variants--tailwind3-after--768--light--instant/complete-migrated.png",
+        "evidence/pie-chart-variants--tailwind3-after--768--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "form-default--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/form-default--plain--390--light--instant/measurements.json.gz",
+        "evidence/form-default--plain--390--light--instant/complete-legacy.png",
+        "evidence/form-default--plain--390--light--instant/complete-migrated.png",
+        "evidence/form-default--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "form-default--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/form-default--plain--390--light--stream/measurements.json.gz",
+        "evidence/form-default--plain--390--light--stream/complete-legacy.png",
+        "evidence/form-default--plain--390--light--stream/complete-migrated.png",
+        "evidence/form-default--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "text-area-default--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/text-area-default--plain--390--light--instant/measurements.json.gz",
+        "evidence/text-area-default--plain--390--light--instant/complete-legacy.png",
+        "evidence/text-area-default--plain--390--light--instant/complete-migrated.png",
+        "evidence/text-area-default--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "text-area-default--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/text-area-default--plain--390--light--stream/measurements.json.gz",
+        "evidence/text-area-default--plain--390--light--stream/complete-legacy.png",
+        "evidence/text-area-default--plain--390--light--stream/complete-migrated.png",
+        "evidence/text-area-default--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "select-default--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/select-default--plain--390--light--instant/measurements.json.gz",
+        "evidence/select-default--plain--390--light--instant/complete-legacy.png",
+        "evidence/select-default--plain--390--light--instant/complete-migrated.png",
+        "evidence/select-default--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "select-default--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/select-default--plain--390--light--stream/measurements.json.gz",
+        "evidence/select-default--plain--390--light--stream/complete-legacy.png",
+        "evidence/select-default--plain--390--light--stream/complete-migrated.png",
+        "evidence/select-default--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "select-variants--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/select-variants--plain--390--light--instant/measurements.json.gz",
+        "evidence/select-variants--plain--390--light--instant/complete-legacy.png",
+        "evidence/select-variants--plain--390--light--instant/complete-migrated.png",
+        "evidence/select-variants--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "select-variants--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/select-variants--plain--390--light--stream/measurements.json.gz",
+        "evidence/select-variants--plain--390--light--stream/complete-legacy.png",
+        "evidence/select-variants--plain--390--light--stream/complete-migrated.png",
+        "evidence/select-variants--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "date-picker-default--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/date-picker-default--plain--390--light--instant/measurements.json.gz",
+        "evidence/date-picker-default--plain--390--light--instant/complete-legacy.png",
+        "evidence/date-picker-default--plain--390--light--instant/complete-migrated.png",
+        "evidence/date-picker-default--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "date-picker-default--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/date-picker-default--plain--390--light--stream/measurements.json.gz",
+        "evidence/date-picker-default--plain--390--light--stream/complete-legacy.png",
+        "evidence/date-picker-default--plain--390--light--stream/complete-migrated.png",
+        "evidence/date-picker-default--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "date-picker-variants--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/date-picker-variants--plain--390--light--instant/measurements.json.gz",
+        "evidence/date-picker-variants--plain--390--light--instant/complete-legacy.png",
+        "evidence/date-picker-variants--plain--390--light--instant/complete-migrated.png",
+        "evidence/date-picker-variants--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "date-picker-variants--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/date-picker-variants--plain--390--light--stream/measurements.json.gz",
+        "evidence/date-picker-variants--plain--390--light--stream/complete-legacy.png",
+        "evidence/date-picker-variants--plain--390--light--stream/complete-migrated.png",
+        "evidence/date-picker-variants--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-default--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-default--plain--390--light--instant/measurements.json.gz",
+        "evidence/slider-default--plain--390--light--instant/complete-legacy.png",
+        "evidence/slider-default--plain--390--light--instant/complete-migrated.png",
+        "evidence/slider-default--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-default--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-default--plain--390--light--stream/measurements.json.gz",
+        "evidence/slider-default--plain--390--light--stream/complete-legacy.png",
+        "evidence/slider-default--plain--390--light--stream/complete-migrated.png",
+        "evidence/slider-default--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-variants--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/slider-variants--plain--390--light--instant/measurements.json.gz",
+        "evidence/slider-variants--plain--390--light--instant/complete-legacy.png",
+        "evidence/slider-variants--plain--390--light--instant/complete-migrated.png",
+        "evidence/slider-variants--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-variants--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/slider-variants--plain--390--light--stream/measurements.json.gz",
+        "evidence/slider-variants--plain--390--light--stream/complete-legacy.png",
+        "evidence/slider-variants--plain--390--light--stream/complete-migrated.png",
+        "evidence/slider-variants--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "check-box-group-default--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/check-box-group-default--plain--390--light--instant/measurements.json.gz",
+        "evidence/check-box-group-default--plain--390--light--instant/complete-legacy.png",
+        "evidence/check-box-group-default--plain--390--light--instant/complete-migrated.png",
+        "evidence/check-box-group-default--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "check-box-group-default--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/check-box-group-default--plain--390--light--stream/measurements.json.gz",
+        "evidence/check-box-group-default--plain--390--light--stream/complete-legacy.png",
+        "evidence/check-box-group-default--plain--390--light--stream/complete-migrated.png",
+        "evidence/check-box-group-default--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "check-box-item-variants--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/check-box-item-variants--plain--390--light--instant/measurements.json.gz",
+        "evidence/check-box-item-variants--plain--390--light--instant/complete-legacy.png",
+        "evidence/check-box-item-variants--plain--390--light--instant/complete-migrated.png",
+        "evidence/check-box-item-variants--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "check-box-item-variants--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/check-box-item-variants--plain--390--light--stream/measurements.json.gz",
+        "evidence/check-box-item-variants--plain--390--light--stream/complete-legacy.png",
+        "evidence/check-box-item-variants--plain--390--light--stream/complete-migrated.png",
+        "evidence/check-box-item-variants--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "radio-group-default--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/radio-group-default--plain--390--light--instant/measurements.json.gz",
+        "evidence/radio-group-default--plain--390--light--instant/complete-legacy.png",
+        "evidence/radio-group-default--plain--390--light--instant/complete-migrated.png",
+        "evidence/radio-group-default--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "radio-group-default--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/radio-group-default--plain--390--light--stream/measurements.json.gz",
+        "evidence/radio-group-default--plain--390--light--stream/complete-legacy.png",
+        "evidence/radio-group-default--plain--390--light--stream/complete-migrated.png",
+        "evidence/radio-group-default--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "carousel-default--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/carousel-default--plain--390--light--instant/measurements.json.gz",
+        "evidence/carousel-default--plain--390--light--instant/complete-legacy.png",
+        "evidence/carousel-default--plain--390--light--instant/complete-migrated.png",
+        "evidence/carousel-default--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "carousel-default--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/carousel-default--plain--390--light--stream/measurements.json.gz",
+        "evidence/carousel-default--plain--390--light--stream/complete-legacy.png",
+        "evidence/carousel-default--plain--390--light--stream/complete-migrated.png",
+        "evidence/carousel-default--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "carousel-variants--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/carousel-variants--plain--390--light--instant/measurements.json.gz",
+        "evidence/carousel-variants--plain--390--light--instant/complete-legacy.png",
+        "evidence/carousel-variants--plain--390--light--instant/complete-migrated.png",
+        "evidence/carousel-variants--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "carousel-variants--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/carousel-variants--plain--390--light--stream/measurements.json.gz",
+        "evidence/carousel-variants--plain--390--light--stream/complete-legacy.png",
+        "evidence/carousel-variants--plain--390--light--stream/complete-migrated.png",
+        "evidence/carousel-variants--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "tag-variants--plain--1280--dark--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/tag-variants--plain--1280--dark--stream/measurements.json.gz",
+        "evidence/tag-variants--plain--1280--dark--stream/complete-legacy.png",
+        "evidence/tag-variants--plain--1280--dark--stream/complete-migrated.png",
+        "evidence/tag-variants--plain--1280--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "tag-variants--tailwind4-before--768--dark--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/tag-variants--tailwind4-before--768--dark--stream/measurements.json.gz",
+        "evidence/tag-variants--tailwind4-before--768--dark--stream/complete-legacy.png",
+        "evidence/tag-variants--tailwind4-before--768--dark--stream/complete-migrated.png",
+        "evidence/tag-variants--tailwind4-before--768--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "tag-variants--tailwind4-before--1280--dark--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/tag-variants--tailwind4-before--1280--dark--stream/measurements.json.gz",
+        "evidence/tag-variants--tailwind4-before--1280--dark--stream/complete-legacy.png",
+        "evidence/tag-variants--tailwind4-before--1280--dark--stream/complete-migrated.png",
+        "evidence/tag-variants--tailwind4-before--1280--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "tag-variants--tailwind4-after--1280--dark--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/tag-variants--tailwind4-after--1280--dark--stream/measurements.json.gz",
+        "evidence/tag-variants--tailwind4-after--1280--dark--stream/complete-legacy.png",
+        "evidence/tag-variants--tailwind4-after--1280--dark--stream/complete-migrated.png",
+        "evidence/tag-variants--tailwind4-after--1280--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "chip-item-default--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/chip-item-default--plain--390--light--instant/measurements.json.gz",
+        "evidence/chip-item-default--plain--390--light--instant/complete-legacy.png",
+        "evidence/chip-item-default--plain--390--light--instant/complete-migrated.png",
+        "evidence/chip-item-default--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "chip-item-default--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/chip-item-default--plain--390--light--stream/measurements.json.gz",
+        "evidence/chip-item-default--plain--390--light--stream/complete-legacy.png",
+        "evidence/chip-item-default--plain--390--light--stream/complete-migrated.png",
+        "evidence/chip-item-default--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "chip-item-variants--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/chip-item-variants--plain--390--light--instant/measurements.json.gz",
+        "evidence/chip-item-variants--plain--390--light--instant/complete-legacy.png",
+        "evidence/chip-item-variants--plain--390--light--instant/complete-migrated.png",
+        "evidence/chip-item-variants--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "chip-item-variants--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/chip-item-variants--plain--390--light--stream/measurements.json.gz",
+        "evidence/chip-item-variants--plain--390--light--stream/complete-legacy.png",
+        "evidence/chip-item-variants--plain--390--light--stream/complete-migrated.png",
+        "evidence/chip-item-variants--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "chips-variants--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/chips-variants--plain--390--light--instant/measurements.json.gz",
+        "evidence/chips-variants--plain--390--light--instant/complete-legacy.png",
+        "evidence/chips-variants--plain--390--light--instant/complete-migrated.png",
+        "evidence/chips-variants--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "chips-variants--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/chips-variants--plain--390--light--stream/measurements.json.gz",
+        "evidence/chips-variants--plain--390--light--stream/complete-legacy.png",
+        "evidence/chips-variants--plain--390--light--stream/complete-migrated.png",
+        "evidence/chips-variants--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "option-card-default--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/option-card-default--plain--390--light--instant/measurements.json.gz",
+        "evidence/option-card-default--plain--390--light--instant/complete-legacy.png",
+        "evidence/option-card-default--plain--390--light--instant/complete-migrated.png",
+        "evidence/option-card-default--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "option-card-default--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/option-card-default--plain--390--light--stream/measurements.json.gz",
+        "evidence/option-card-default--plain--390--light--stream/complete-legacy.png",
+        "evidence/option-card-default--plain--390--light--stream/complete-migrated.png",
+        "evidence/option-card-default--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "option-card-variants--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/option-card-variants--plain--390--light--instant/measurements.json.gz",
+        "evidence/option-card-variants--plain--390--light--instant/complete-legacy.png",
+        "evidence/option-card-variants--plain--390--light--instant/complete-migrated.png",
+        "evidence/option-card-variants--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "option-card-variants--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/option-card-variants--plain--390--light--stream/measurements.json.gz",
+        "evidence/option-card-variants--plain--390--light--stream/complete-legacy.png",
+        "evidence/option-card-variants--plain--390--light--stream/complete-migrated.png",
+        "evidence/option-card-variants--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "option-cards-variants--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/option-cards-variants--plain--390--light--instant/measurements.json.gz",
+        "evidence/option-cards-variants--plain--390--light--instant/complete-legacy.png",
+        "evidence/option-cards-variants--plain--390--light--instant/complete-migrated.png",
+        "evidence/option-cards-variants--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "option-cards-variants--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/option-cards-variants--plain--390--light--stream/measurements.json.gz",
+        "evidence/option-cards-variants--plain--390--light--stream/complete-legacy.png",
+        "evidence/option-cards-variants--plain--390--light--stream/complete-migrated.png",
+        "evidence/option-cards-variants--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-text-variants--plain--390--light--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--plain--390--light--stream/measurements.json.gz",
+        "evidence/image-text-variants--plain--390--light--stream/complete-legacy.png",
+        "evidence/image-text-variants--plain--390--light--stream/complete-migrated.png",
+        "evidence/image-text-variants--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-text-variants--plain--390--dark--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--plain--390--dark--stream/measurements.json.gz",
+        "evidence/image-text-variants--plain--390--dark--stream/complete-legacy.png",
+        "evidence/image-text-variants--plain--390--dark--stream/complete-migrated.png",
+        "evidence/image-text-variants--plain--390--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-text-variants--tailwind3-before--390--dark--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--tailwind3-before--390--dark--stream/measurements.json.gz",
+        "evidence/image-text-variants--tailwind3-before--390--dark--stream/complete-legacy.png",
+        "evidence/image-text-variants--tailwind3-before--390--dark--stream/complete-migrated.png",
+        "evidence/image-text-variants--tailwind3-before--390--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-text-variants--tailwind3-after--390--light--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--tailwind3-after--390--light--stream/measurements.json.gz",
+        "evidence/image-text-variants--tailwind3-after--390--light--stream/complete-legacy.png",
+        "evidence/image-text-variants--tailwind3-after--390--light--stream/complete-migrated.png",
+        "evidence/image-text-variants--tailwind3-after--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-text-variants--tailwind3-after--768--light--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--tailwind3-after--768--light--stream/measurements.json.gz",
+        "evidence/image-text-variants--tailwind3-after--768--light--stream/complete-legacy.png",
+        "evidence/image-text-variants--tailwind3-after--768--light--stream/complete-migrated.png",
+        "evidence/image-text-variants--tailwind3-after--768--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-text-variants--tailwind4-before--390--light--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--tailwind4-before--390--light--stream/measurements.json.gz",
+        "evidence/image-text-variants--tailwind4-before--390--light--stream/complete-legacy.png",
+        "evidence/image-text-variants--tailwind4-before--390--light--stream/complete-migrated.png",
+        "evidence/image-text-variants--tailwind4-before--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-text-variants--tailwind4-after--390--light--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--tailwind4-after--390--light--stream/measurements.json.gz",
+        "evidence/image-text-variants--tailwind4-after--390--light--stream/complete-legacy.png",
+        "evidence/image-text-variants--tailwind4-after--390--light--stream/complete-migrated.png",
+        "evidence/image-text-variants--tailwind4-after--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-text-variants--tailwind4-after--768--light--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--tailwind4-after--768--light--stream/measurements.json.gz",
+        "evidence/image-text-variants--tailwind4-after--768--light--stream/complete-legacy.png",
+        "evidence/image-text-variants--tailwind4-after--768--light--stream/complete-migrated.png",
+        "evidence/image-text-variants--tailwind4-after--768--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-text-variants--tailwind4-after--768--dark--stream",
+      "verdict": "Pass",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-text-variants--tailwind4-after--768--dark--stream/measurements.json.gz",
+        "evidence/image-text-variants--tailwind4-after--768--dark--stream/complete-legacy.png",
+        "evidence/image-text-variants--tailwind4-after--768--dark--stream/complete-migrated.png",
+        "evidence/image-text-variants--tailwind4-after--768--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "composite-card-block-variants--plain--390--light--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/composite-card-block-variants--plain--390--light--stream/measurements.json.gz",
+        "evidence/composite-card-block-variants--plain--390--light--stream/complete-legacy.png",
+        "evidence/composite-card-block-variants--plain--390--light--stream/complete-migrated.png",
+        "evidence/composite-card-block-variants--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "composite-card-block-variants--tailwind3-before--390--light--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/composite-card-block-variants--tailwind3-before--390--light--stream/measurements.json.gz",
+        "evidence/composite-card-block-variants--tailwind3-before--390--light--stream/complete-legacy.png",
+        "evidence/composite-card-block-variants--tailwind3-before--390--light--stream/complete-migrated.png",
+        "evidence/composite-card-block-variants--tailwind3-before--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "checkbox-keyboard--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/checkbox-keyboard--plain--390--light--instant/measurements.json.gz",
+        "evidence/checkbox-keyboard--plain--390--light--instant/complete-legacy.png",
+        "evidence/checkbox-keyboard--plain--390--light--instant/complete-migrated.png",
+        "evidence/checkbox-keyboard--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "checkbox-keyboard--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/checkbox-keyboard--plain--390--light--stream/measurements.json.gz",
+        "evidence/checkbox-keyboard--plain--390--light--stream/complete-legacy.png",
+        "evidence/checkbox-keyboard--plain--390--light--stream/complete-migrated.png",
+        "evidence/checkbox-keyboard--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "textarea-keyboard--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/textarea-keyboard--plain--390--light--instant/measurements.json.gz",
+        "evidence/textarea-keyboard--plain--390--light--instant/complete-legacy.png",
+        "evidence/textarea-keyboard--plain--390--light--instant/complete-migrated.png",
+        "evidence/textarea-keyboard--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "textarea-keyboard--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/textarea-keyboard--plain--390--light--stream/measurements.json.gz",
+        "evidence/textarea-keyboard--plain--390--light--stream/complete-legacy.png",
+        "evidence/textarea-keyboard--plain--390--light--stream/complete-migrated.png",
+        "evidence/textarea-keyboard--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "select-keyboard--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/select-keyboard--plain--390--light--instant/measurements.json.gz",
+        "evidence/select-keyboard--plain--390--light--instant/complete-legacy.png",
+        "evidence/select-keyboard--plain--390--light--instant/complete-migrated.png",
+        "evidence/select-keyboard--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "select-keyboard--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/select-keyboard--plain--390--light--stream/measurements.json.gz",
+        "evidence/select-keyboard--plain--390--light--stream/complete-legacy.png",
+        "evidence/select-keyboard--plain--390--light--stream/complete-migrated.png",
+        "evidence/select-keyboard--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-keyboard--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/slider-keyboard--plain--390--light--instant/measurements.json.gz",
+        "evidence/slider-keyboard--plain--390--light--instant/complete-legacy.png",
+        "evidence/slider-keyboard--plain--390--light--instant/complete-migrated.png",
+        "evidence/slider-keyboard--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-keyboard--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/slider-keyboard--plain--390--light--stream/measurements.json.gz",
+        "evidence/slider-keyboard--plain--390--light--stream/complete-legacy.png",
+        "evidence/slider-keyboard--plain--390--light--stream/complete-migrated.png",
+        "evidence/slider-keyboard--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "carousel-scroll--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/carousel-scroll--plain--390--light--instant/measurements.json.gz",
+        "evidence/carousel-scroll--plain--390--light--instant/complete-legacy.png",
+        "evidence/carousel-scroll--plain--390--light--instant/complete-migrated.png",
+        "evidence/carousel-scroll--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "carousel-scroll--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/carousel-scroll--plain--390--light--stream/measurements.json.gz",
+        "evidence/carousel-scroll--plain--390--light--stream/complete-legacy.png",
+        "evidence/carousel-scroll--plain--390--light--stream/complete-migrated.png",
+        "evidence/carousel-scroll--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "button-empty-content--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/button-empty-content--plain--390--light--instant/measurements.json.gz",
+        "evidence/button-empty-content--plain--390--light--instant/complete-legacy.png",
+        "evidence/button-empty-content--plain--390--light--instant/complete-migrated.png",
+        "evidence/button-empty-content--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "button-empty-content--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/button-empty-content--plain--390--light--stream/measurements.json.gz",
+        "evidence/button-empty-content--plain--390--light--stream/complete-legacy.png",
+        "evidence/button-empty-content--plain--390--light--stream/complete-migrated.png",
+        "evidence/button-empty-content--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "follow-up-item-empty-content--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/follow-up-item-empty-content--plain--390--light--instant/measurements.json.gz",
+        "evidence/follow-up-item-empty-content--plain--390--light--instant/complete-legacy.png",
+        "evidence/follow-up-item-empty-content--plain--390--light--instant/complete-migrated.png",
+        "evidence/follow-up-item-empty-content--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "follow-up-item-empty-content--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/follow-up-item-empty-content--plain--390--light--stream/measurements.json.gz",
+        "evidence/follow-up-item-empty-content--plain--390--light--stream/complete-legacy.png",
+        "evidence/follow-up-item-empty-content--plain--390--light--stream/complete-migrated.png",
+        "evidence/follow-up-item-empty-content--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "accordion-item-empty-content--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/accordion-item-empty-content--plain--390--light--instant/measurements.json.gz",
+        "evidence/accordion-item-empty-content--plain--390--light--instant/complete-legacy.png",
+        "evidence/accordion-item-empty-content--plain--390--light--instant/complete-migrated.png",
+        "evidence/accordion-item-empty-content--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "accordion-item-empty-content--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/accordion-item-empty-content--plain--390--light--stream/measurements.json.gz",
+        "evidence/accordion-item-empty-content--plain--390--light--stream/complete-legacy.png",
+        "evidence/accordion-item-empty-content--plain--390--light--stream/complete-migrated.png",
+        "evidence/accordion-item-empty-content--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "text-area-empty-value--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/text-area-empty-value--plain--390--light--instant/measurements.json.gz",
+        "evidence/text-area-empty-value--plain--390--light--instant/complete-legacy.png",
+        "evidence/text-area-empty-value--plain--390--light--instant/complete-migrated.png",
+        "evidence/text-area-empty-value--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "text-area-empty-value--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/text-area-empty-value--plain--390--light--stream/measurements.json.gz",
+        "evidence/text-area-empty-value--plain--390--light--stream/complete-legacy.png",
+        "evidence/text-area-empty-value--plain--390--light--stream/complete-migrated.png",
+        "evidence/text-area-empty-value--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "select-empty-value--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/select-empty-value--plain--390--light--instant/measurements.json.gz",
+        "evidence/select-empty-value--plain--390--light--instant/complete-legacy.png",
+        "evidence/select-empty-value--plain--390--light--instant/complete-migrated.png",
+        "evidence/select-empty-value--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "select-empty-value--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/select-empty-value--plain--390--light--stream/measurements.json.gz",
+        "evidence/select-empty-value--plain--390--light--stream/complete-legacy.png",
+        "evidence/select-empty-value--plain--390--light--stream/complete-migrated.png",
+        "evidence/select-empty-value--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "date-picker-empty-value--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/date-picker-empty-value--plain--390--light--instant/measurements.json.gz",
+        "evidence/date-picker-empty-value--plain--390--light--instant/complete-legacy.png",
+        "evidence/date-picker-empty-value--plain--390--light--instant/complete-migrated.png",
+        "evidence/date-picker-empty-value--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "date-picker-empty-value--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/date-picker-empty-value--plain--390--light--stream/measurements.json.gz",
+        "evidence/date-picker-empty-value--plain--390--light--stream/complete-legacy.png",
+        "evidence/date-picker-empty-value--plain--390--light--stream/complete-migrated.png",
+        "evidence/date-picker-empty-value--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "check-box-group-empty-value--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/check-box-group-empty-value--plain--390--light--instant/measurements.json.gz",
+        "evidence/check-box-group-empty-value--plain--390--light--instant/complete-legacy.png",
+        "evidence/check-box-group-empty-value--plain--390--light--instant/complete-migrated.png",
+        "evidence/check-box-group-empty-value--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "check-box-group-empty-value--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/check-box-group-empty-value--plain--390--light--stream/measurements.json.gz",
+        "evidence/check-box-group-empty-value--plain--390--light--stream/complete-legacy.png",
+        "evidence/check-box-group-empty-value--plain--390--light--stream/complete-migrated.png",
+        "evidence/check-box-group-empty-value--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "radio-group-empty-value--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/radio-group-empty-value--plain--390--light--instant/measurements.json.gz",
+        "evidence/radio-group-empty-value--plain--390--light--instant/complete-legacy.png",
+        "evidence/radio-group-empty-value--plain--390--light--instant/complete-migrated.png",
+        "evidence/radio-group-empty-value--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "radio-group-empty-value--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/radio-group-empty-value--plain--390--light--stream/measurements.json.gz",
+        "evidence/radio-group-empty-value--plain--390--light--stream/complete-legacy.png",
+        "evidence/radio-group-empty-value--plain--390--light--stream/complete-migrated.png",
+        "evidence/radio-group-empty-value--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "chips-empty-value--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/chips-empty-value--plain--390--light--instant/measurements.json.gz",
+        "evidence/chips-empty-value--plain--390--light--instant/complete-legacy.png",
+        "evidence/chips-empty-value--plain--390--light--instant/complete-migrated.png",
+        "evidence/chips-empty-value--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "chips-empty-value--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/chips-empty-value--plain--390--light--stream/measurements.json.gz",
+        "evidence/chips-empty-value--plain--390--light--stream/complete-legacy.png",
+        "evidence/chips-empty-value--plain--390--light--stream/complete-migrated.png",
+        "evidence/chips-empty-value--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "option-cards-empty-value--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/option-cards-empty-value--plain--390--light--instant/measurements.json.gz",
+        "evidence/option-cards-empty-value--plain--390--light--instant/complete-legacy.png",
+        "evidence/option-cards-empty-value--plain--390--light--instant/complete-migrated.png",
+        "evidence/option-cards-empty-value--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "option-cards-empty-value--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/option-cards-empty-value--plain--390--light--stream/measurements.json.gz",
+        "evidence/option-cards-empty-value--plain--390--light--stream/complete-legacy.png",
+        "evidence/option-cards-empty-value--plain--390--light--stream/complete-migrated.png",
+        "evidence/option-cards-empty-value--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "chips-empty-options--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/chips-empty-options--plain--390--light--instant/measurements.json.gz",
+        "evidence/chips-empty-options--plain--390--light--instant/complete-legacy.png",
+        "evidence/chips-empty-options--plain--390--light--instant/complete-migrated.png",
+        "evidence/chips-empty-options--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "chips-empty-options--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/chips-empty-options--plain--390--light--stream/measurements.json.gz",
+        "evidence/chips-empty-options--plain--390--light--stream/complete-legacy.png",
+        "evidence/chips-empty-options--plain--390--light--stream/complete-migrated.png",
+        "evidence/chips-empty-options--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "option-cards-empty-options--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/option-cards-empty-options--plain--390--light--instant/measurements.json.gz",
+        "evidence/option-cards-empty-options--plain--390--light--instant/complete-legacy.png",
+        "evidence/option-cards-empty-options--plain--390--light--instant/complete-migrated.png",
+        "evidence/option-cards-empty-options--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "option-cards-empty-options--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/option-cards-empty-options--plain--390--light--stream/measurements.json.gz",
+        "evidence/option-cards-empty-options--plain--390--light--stream/complete-legacy.png",
+        "evidence/option-cards-empty-options--plain--390--light--stream/complete-migrated.png",
+        "evidence/option-cards-empty-options--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "check-box-group-empty-options--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/check-box-group-empty-options--plain--390--light--instant/measurements.json.gz",
+        "evidence/check-box-group-empty-options--plain--390--light--instant/complete-legacy.png",
+        "evidence/check-box-group-empty-options--plain--390--light--instant/complete-migrated.png",
+        "evidence/check-box-group-empty-options--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "check-box-group-empty-options--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/check-box-group-empty-options--plain--390--light--stream/measurements.json.gz",
+        "evidence/check-box-group-empty-options--plain--390--light--stream/complete-legacy.png",
+        "evidence/check-box-group-empty-options--plain--390--light--stream/complete-migrated.png",
+        "evidence/check-box-group-empty-options--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "radio-group-empty-options--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/radio-group-empty-options--plain--390--light--instant/measurements.json.gz",
+        "evidence/radio-group-empty-options--plain--390--light--instant/complete-legacy.png",
+        "evidence/radio-group-empty-options--plain--390--light--instant/complete-migrated.png",
+        "evidence/radio-group-empty-options--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "radio-group-empty-options--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/radio-group-empty-options--plain--390--light--stream/measurements.json.gz",
+        "evidence/radio-group-empty-options--plain--390--light--stream/complete-legacy.png",
+        "evidence/radio-group-empty-options--plain--390--light--stream/complete-migrated.png",
+        "evidence/radio-group-empty-options--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "icon-button-empty-label--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/icon-button-empty-label--plain--390--light--instant/measurements.json.gz",
+        "evidence/icon-button-empty-label--plain--390--light--instant/complete-legacy.png",
+        "evidence/icon-button-empty-label--plain--390--light--instant/complete-migrated.png",
+        "evidence/icon-button-empty-label--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "icon-button-empty-label--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/icon-button-empty-label--plain--390--light--stream/measurements.json.gz",
+        "evidence/icon-button-empty-label--plain--390--light--stream/complete-legacy.png",
+        "evidence/icon-button-empty-label--plain--390--light--stream/complete-migrated.png",
+        "evidence/icon-button-empty-label--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "text-area-validation-error--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/text-area-validation-error--plain--390--light--instant/measurements.json.gz",
+        "evidence/text-area-validation-error--plain--390--light--instant/complete-legacy.png",
+        "evidence/text-area-validation-error--plain--390--light--instant/complete-migrated.png",
+        "evidence/text-area-validation-error--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "text-area-validation-error--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/text-area-validation-error--plain--390--light--stream/measurements.json.gz",
+        "evidence/text-area-validation-error--plain--390--light--stream/complete-legacy.png",
+        "evidence/text-area-validation-error--plain--390--light--stream/complete-migrated.png",
+        "evidence/text-area-validation-error--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "select-validation-error--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/select-validation-error--plain--390--light--instant/measurements.json.gz",
+        "evidence/select-validation-error--plain--390--light--instant/complete-legacy.png",
+        "evidence/select-validation-error--plain--390--light--instant/complete-migrated.png",
+        "evidence/select-validation-error--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "select-validation-error--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/select-validation-error--plain--390--light--stream/measurements.json.gz",
+        "evidence/select-validation-error--plain--390--light--stream/complete-legacy.png",
+        "evidence/select-validation-error--plain--390--light--stream/complete-migrated.png",
+        "evidence/select-validation-error--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "date-picker-validation-error--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/date-picker-validation-error--plain--390--light--instant/measurements.json.gz",
+        "evidence/date-picker-validation-error--plain--390--light--instant/complete-legacy.png",
+        "evidence/date-picker-validation-error--plain--390--light--instant/complete-migrated.png",
+        "evidence/date-picker-validation-error--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "date-picker-validation-error--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/date-picker-validation-error--plain--390--light--stream/measurements.json.gz",
+        "evidence/date-picker-validation-error--plain--390--light--stream/complete-legacy.png",
+        "evidence/date-picker-validation-error--plain--390--light--stream/complete-migrated.png",
+        "evidence/date-picker-validation-error--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--plain--390--light--instant/measurements.json.gz",
+        "evidence/slider-validation-error--plain--390--light--instant/complete-legacy.png",
+        "evidence/slider-validation-error--plain--390--light--instant/complete-migrated.png",
+        "evidence/slider-validation-error--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--plain--390--light--stream/measurements.json.gz",
+        "evidence/slider-validation-error--plain--390--light--stream/complete-legacy.png",
+        "evidence/slider-validation-error--plain--390--light--stream/complete-migrated.png",
+        "evidence/slider-validation-error--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--plain--768--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--plain--768--light--stream/measurements.json.gz",
+        "evidence/slider-validation-error--plain--768--light--stream/complete-legacy.png",
+        "evidence/slider-validation-error--plain--768--light--stream/complete-migrated.png",
+        "evidence/slider-validation-error--plain--768--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--plain--1280--light--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--plain--1280--light--stream/measurements.json.gz",
+        "evidence/slider-validation-error--plain--1280--light--stream/complete-legacy.png",
+        "evidence/slider-validation-error--plain--1280--light--stream/complete-migrated.png",
+        "evidence/slider-validation-error--plain--1280--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--plain--1280--dark--instant",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--plain--1280--dark--instant/measurements.json.gz",
+        "evidence/slider-validation-error--plain--1280--dark--instant/complete-legacy.png",
+        "evidence/slider-validation-error--plain--1280--dark--instant/complete-migrated.png",
+        "evidence/slider-validation-error--plain--1280--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind3-before--1280--dark--instant",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--instant/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--instant/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--instant/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind3-before--1280--dark--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--stream/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--stream/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--stream/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind3-before--1280--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind3-after--768--dark--instant",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind3-after--768--dark--instant/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind3-after--768--dark--instant/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind3-after--768--dark--instant/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind3-after--768--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind3-after--1280--dark--instant",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind3-after--1280--dark--instant/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind3-after--1280--dark--instant/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind3-after--1280--dark--instant/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind3-after--1280--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-before--768--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind4-before--768--light--instant/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind4-before--768--light--instant/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind4-before--768--light--instant/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind4-before--768--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-before--768--dark--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind4-before--768--dark--stream/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind4-before--768--dark--stream/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind4-before--768--dark--stream/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind4-before--768--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-before--1280--dark--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind4-before--1280--dark--stream/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind4-before--1280--dark--stream/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind4-before--1280--dark--stream/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind4-before--1280--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-after--768--dark--stream",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind4-after--768--dark--stream/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind4-after--768--dark--stream/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind4-after--768--dark--stream/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind4-after--768--dark--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-after--1280--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind4-after--1280--light--instant/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind4-after--1280--light--instant/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind4-after--1280--light--instant/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind4-after--1280--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "slider-validation-error--tailwind4-after--1280--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/slider-validation-error--tailwind4-after--1280--light--stream/measurements.json.gz",
+        "evidence/slider-validation-error--tailwind4-after--1280--light--stream/complete-legacy.png",
+        "evidence/slider-validation-error--tailwind4-after--1280--light--stream/complete-migrated.png",
+        "evidence/slider-validation-error--tailwind4-after--1280--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "check-box-group-validation-error--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/check-box-group-validation-error--plain--390--light--instant/measurements.json.gz",
+        "evidence/check-box-group-validation-error--plain--390--light--instant/complete-legacy.png",
+        "evidence/check-box-group-validation-error--plain--390--light--instant/complete-migrated.png",
+        "evidence/check-box-group-validation-error--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "check-box-group-validation-error--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/check-box-group-validation-error--plain--390--light--stream/measurements.json.gz",
+        "evidence/check-box-group-validation-error--plain--390--light--stream/complete-legacy.png",
+        "evidence/check-box-group-validation-error--plain--390--light--stream/complete-migrated.png",
+        "evidence/check-box-group-validation-error--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "radio-group-validation-error--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/radio-group-validation-error--plain--390--light--instant/measurements.json.gz",
+        "evidence/radio-group-validation-error--plain--390--light--instant/complete-legacy.png",
+        "evidence/radio-group-validation-error--plain--390--light--instant/complete-migrated.png",
+        "evidence/radio-group-validation-error--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "radio-group-validation-error--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/radio-group-validation-error--plain--390--light--stream/measurements.json.gz",
+        "evidence/radio-group-validation-error--plain--390--light--stream/complete-legacy.png",
+        "evidence/radio-group-validation-error--plain--390--light--stream/complete-migrated.png",
+        "evidence/radio-group-validation-error--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "chips-validation-error--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/chips-validation-error--plain--390--light--instant/measurements.json.gz",
+        "evidence/chips-validation-error--plain--390--light--instant/complete-legacy.png",
+        "evidence/chips-validation-error--plain--390--light--instant/complete-migrated.png",
+        "evidence/chips-validation-error--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "chips-validation-error--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/chips-validation-error--plain--390--light--stream/measurements.json.gz",
+        "evidence/chips-validation-error--plain--390--light--stream/complete-legacy.png",
+        "evidence/chips-validation-error--plain--390--light--stream/complete-migrated.png",
+        "evidence/chips-validation-error--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "option-cards-validation-error--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/option-cards-validation-error--plain--390--light--instant/measurements.json.gz",
+        "evidence/option-cards-validation-error--plain--390--light--instant/complete-legacy.png",
+        "evidence/option-cards-validation-error--plain--390--light--instant/complete-migrated.png",
+        "evidence/option-cards-validation-error--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "option-cards-validation-error--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/option-cards-validation-error--plain--390--light--stream/measurements.json.gz",
+        "evidence/option-cards-validation-error--plain--390--light--stream/complete-legacy.png",
+        "evidence/option-cards-validation-error--plain--390--light--stream/complete-migrated.png",
+        "evidence/option-cards-validation-error--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "radio-keyboard--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/radio-keyboard--plain--390--light--instant/measurements.json.gz",
+        "evidence/radio-keyboard--plain--390--light--instant/complete-legacy.png",
+        "evidence/radio-keyboard--plain--390--light--instant/complete-migrated.png",
+        "evidence/radio-keyboard--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "radio-keyboard--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s4",
+      "files": [
+        "evidence/radio-keyboard--plain--390--light--stream/measurements.json.gz",
+        "evidence/radio-keyboard--plain--390--light--stream/complete-legacy.png",
+        "evidence/radio-keyboard--plain--390--light--stream/complete-migrated.png",
+        "evidence/radio-keyboard--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "chips-keyboard--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/chips-keyboard--plain--390--light--instant/measurements.json.gz",
+        "evidence/chips-keyboard--plain--390--light--instant/complete-legacy.png",
+        "evidence/chips-keyboard--plain--390--light--instant/complete-migrated.png",
+        "evidence/chips-keyboard--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "chips-keyboard--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/chips-keyboard--plain--390--light--stream/measurements.json.gz",
+        "evidence/chips-keyboard--plain--390--light--stream/complete-legacy.png",
+        "evidence/chips-keyboard--plain--390--light--stream/complete-migrated.png",
+        "evidence/chips-keyboard--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "option-cards-keyboard--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/option-cards-keyboard--plain--390--light--instant/measurements.json.gz",
+        "evidence/option-cards-keyboard--plain--390--light--instant/complete-legacy.png",
+        "evidence/option-cards-keyboard--plain--390--light--instant/complete-migrated.png",
+        "evidence/option-cards-keyboard--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "option-cards-keyboard--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/option-cards-keyboard--plain--390--light--stream/measurements.json.gz",
+        "evidence/option-cards-keyboard--plain--390--light--stream/complete-legacy.png",
+        "evidence/option-cards-keyboard--plain--390--light--stream/complete-migrated.png",
+        "evidence/option-cards-keyboard--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "date-picker-keyboard--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/date-picker-keyboard--plain--390--light--instant/measurements.json.gz",
+        "evidence/date-picker-keyboard--plain--390--light--instant/complete-legacy.png",
+        "evidence/date-picker-keyboard--plain--390--light--instant/complete-migrated.png",
+        "evidence/date-picker-keyboard--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "date-picker-keyboard--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/date-picker-keyboard--plain--390--light--stream/measurements.json.gz",
+        "evidence/date-picker-keyboard--plain--390--light--stream/complete-legacy.png",
+        "evidence/date-picker-keyboard--plain--390--light--stream/complete-migrated.png",
+        "evidence/date-picker-keyboard--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "list-item-action--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/list-item-action--plain--390--light--instant/measurements.json.gz",
+        "evidence/list-item-action--plain--390--light--instant/complete-legacy.png",
+        "evidence/list-item-action--plain--390--light--instant/complete-migrated.png",
+        "evidence/list-item-action--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "list-item-action--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/list-item-action--plain--390--light--stream/measurements.json.gz",
+        "evidence/list-item-action--plain--390--light--stream/complete-legacy.png",
+        "evidence/list-item-action--plain--390--light--stream/complete-migrated.png",
+        "evidence/list-item-action--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-gallery-keyboard--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-gallery-keyboard--plain--390--light--instant/measurements.json.gz",
+        "evidence/image-gallery-keyboard--plain--390--light--instant/complete-legacy.png",
+        "evidence/image-gallery-keyboard--plain--390--light--instant/complete-migrated.png",
+        "evidence/image-gallery-keyboard--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "image-gallery-keyboard--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s3",
+      "files": [
+        "evidence/image-gallery-keyboard--plain--390--light--stream/measurements.json.gz",
+        "evidence/image-gallery-keyboard--plain--390--light--stream/complete-legacy.png",
+        "evidence/image-gallery-keyboard--plain--390--light--stream/complete-migrated.png",
+        "evidence/image-gallery-keyboard--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-callback-known--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/horizontal-callback-known--plain--390--light--instant/measurements.json.gz",
+        "evidence/horizontal-callback-known--plain--390--light--instant/complete-legacy.png",
+        "evidence/horizontal-callback-known--plain--390--light--instant/complete-migrated.png",
+        "evidence/horizontal-callback-known--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-callback-known--plain--390--dark--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/horizontal-callback-known--plain--390--dark--instant/measurements.json.gz",
+        "evidence/horizontal-callback-known--plain--390--dark--instant/complete-legacy.png",
+        "evidence/horizontal-callback-known--plain--390--dark--instant/complete-migrated.png",
+        "evidence/horizontal-callback-known--plain--390--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-string-height-known--plain--390--light--instant",
+      "verdict": "Fail",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--plain--390--light--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--plain--390--light--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--plain--390--light--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-string-height-known--plain--390--dark--instant",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--plain--390--dark--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--plain--390--dark--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--plain--390--dark--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--plain--390--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-string-height-known--plain--768--light--instant",
+      "verdict": "Fail",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--plain--768--light--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--plain--768--light--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--plain--768--light--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--plain--768--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-string-height-known--plain--768--dark--instant",
+      "verdict": "Fail",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--plain--768--dark--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--plain--768--dark--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--plain--768--dark--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--plain--768--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-string-height-known--plain--1280--dark--instant",
+      "verdict": "Fail",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--plain--1280--dark--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--plain--1280--dark--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--plain--1280--dark--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--plain--1280--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-string-height-known--tailwind3-before--390--dark--instant",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--tailwind3-before--390--dark--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--tailwind3-before--390--dark--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--tailwind3-before--390--dark--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--tailwind3-before--390--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-string-height-known--tailwind3-before--768--light--instant",
+      "verdict": "Review",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--tailwind3-before--768--light--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--tailwind3-before--768--light--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--tailwind3-before--768--light--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--tailwind3-before--768--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-string-height-known--tailwind3-after--768--dark--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--tailwind3-after--768--dark--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--tailwind3-after--768--dark--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--tailwind3-after--768--dark--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--tailwind3-after--768--dark--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-string-height-known--tailwind4-before--1280--light--instant",
+      "verdict": "Fail",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--tailwind4-before--1280--light--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--tailwind4-before--1280--light--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--tailwind4-before--1280--light--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--tailwind4-before--1280--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-string-height-known--tailwind4-after--390--light--instant",
+      "verdict": "Fail",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--tailwind4-after--390--light--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--tailwind4-after--390--light--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--tailwind4-after--390--light--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--tailwind4-after--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "horizontal-string-height-known--tailwind4-after--768--light--instant",
+      "verdict": "Fail",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/horizontal-string-height-known--tailwind4-after--768--light--instant/measurements.json.gz",
+        "evidence/horizontal-string-height-known--tailwind4-after--768--light--instant/complete-legacy.png",
+        "evidence/horizontal-string-height-known--tailwind4-after--768--light--instant/complete-migrated.png",
+        "evidence/horizontal-string-height-known--tailwind4-after--768--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "select-open-portal--plain--390--light--instant",
+      "verdict": "Fail",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/select-open-portal--plain--390--light--instant/measurements.json.gz",
+        "evidence/select-open-portal--plain--390--light--instant/complete-legacy.png",
+        "evidence/select-open-portal--plain--390--light--instant/complete-migrated.png",
+        "evidence/select-open-portal--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "select-open-portal--plain--390--light--stream",
+      "verdict": "Fail",
+      "sourceRun": "2026-10-26-integrated-cf1-s1",
+      "files": [
+        "evidence/select-open-portal--plain--390--light--stream/measurements.json.gz",
+        "evidence/select-open-portal--plain--390--light--stream/complete-legacy.png",
+        "evidence/select-open-portal--plain--390--light--stream/complete-migrated.png",
+        "evidence/select-open-portal--plain--390--light--stream/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "date-picker-open-calendar--plain--390--light--instant",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/date-picker-open-calendar--plain--390--light--instant/measurements.json.gz",
+        "evidence/date-picker-open-calendar--plain--390--light--instant/complete-legacy.png",
+        "evidence/date-picker-open-calendar--plain--390--light--instant/complete-migrated.png",
+        "evidence/date-picker-open-calendar--plain--390--light--instant/complete-diff.png"
+      ]
+    },
+    {
+      "cell": "date-picker-open-calendar--plain--390--light--stream",
+      "verdict": "Known issue",
+      "sourceRun": "2026-10-26-integrated-cf1-s2",
+      "files": [
+        "evidence/date-picker-open-calendar--plain--390--light--stream/measurements.json.gz",
+        "evidence/date-picker-open-calendar--plain--390--light--stream/complete-legacy.png",
+        "evidence/date-picker-open-calendar--plain--390--light--stream/complete-migrated.png",
+        "evidence/date-picker-open-calendar--plain--390--light--stream/complete-diff.png"
+      ]
+    }
+  ],
+  "baselineVerdictChanges": 38,
+  "limits": "No SSR/hydration certification or runtime performance rerun. Existing customization findings remain separately documented. Historical comparison outcomes are not relabeled."
+}

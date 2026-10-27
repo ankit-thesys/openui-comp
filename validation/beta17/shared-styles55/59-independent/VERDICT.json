@@ -1,0 +1,28 @@
+{
+  "verdict": "PASS bounded independent ticket59 verification; eligible for integrated ticket60 gate",
+  "head": "67369bc07261c726cdc01f065b6e9b0fa70b3eab",
+  "packageTree": "aacb627a0efe5c6ce36e9c3675e76577f35b90c2",
+  "archiveSHA256": "5d88d8a440a865ec7b3395a2b1888a8f4e288bb32f9efbb6b7565a4cd1b4ea9f",
+  "baselineSHA256": "a7c562a0f284d8f290f414ce4bee2fae632c601470677d71046800a021e808e4",
+  "browser": "156.0.8078.48",
+  "configs": 36,
+  "checks": 1136,
+  "passed": 1136,
+  "pairedStateComparisons": 648,
+  "individualStateObservations": 1296,
+  "optimizedImportConfigurations": 8,
+  "fallbacksRemoved": 0,
+  "PR42": "d1292715028f816bd6a0dcf92766ec7dd15350f4",
+  "windowReleased": {
+    "releasedUTC": "2026-10-27T10:38:21.555Z",
+    "browserClosed": true,
+    "serverClosed": true,
+    "buildWindowReleased": true
+  },
+  "limits": [
+    "No ticket60 combined acceptance",
+    "No fallback deletion acceptance;58 deferred",
+    "No SSR/hydration/performance/fullmatrix/duplicate-Goober certification",
+    "No broad stable selector migration acceptance"
+  ]
+}

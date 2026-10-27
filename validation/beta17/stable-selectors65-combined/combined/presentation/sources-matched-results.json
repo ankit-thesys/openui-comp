@@ -1,0 +1,678 @@
+{
+  "browser": "156.0.8078.48",
+  "note": "PASS confirms retained important exception on actual positively matched same-element targets; does not mean ordinary override succeeds.",
+  "checks": [
+    {
+      "name": "baseline/plain/before/actual-same-element-target-present",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2
+      }
+    },
+    {
+      "name": "baseline/plain/before/false/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": false,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ".go3301084552",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "baseline/plain/before/true/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": true,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ".go3301084552",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "candidate/plain/before/actual-same-element-target-present",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2
+      }
+    },
+    {
+      "name": "candidate/plain/before/false/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": false,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ":where(.go2926285176:root) .openui-sources-listed-sources-container",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "candidate/plain/before/true/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": true,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ":where(.go2926285176:root) .openui-sources-listed-sources-container",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "baseline/plain/after/actual-same-element-target-present",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2
+      }
+    },
+    {
+      "name": "baseline/plain/after/false/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": false,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ".go3301084552",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "baseline/plain/after/true/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": true,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ".go3301084552",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "candidate/plain/after/actual-same-element-target-present",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2
+      }
+    },
+    {
+      "name": "candidate/plain/after/false/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": false,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ":where(.go2926285176:root) .openui-sources-listed-sources-container",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "candidate/plain/after/true/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": true,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ":where(.go2926285176:root) .openui-sources-listed-sources-container",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "baseline/tailwind3/before/actual-same-element-target-present",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2
+      }
+    },
+    {
+      "name": "baseline/tailwind3/before/false/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": false,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ".go3301084552",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "baseline/tailwind3/before/true/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": true,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ".go3301084552",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "candidate/tailwind3/before/actual-same-element-target-present",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2
+      }
+    },
+    {
+      "name": "candidate/tailwind3/before/false/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": false,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ":where(.go2926285176:root) .openui-sources-listed-sources-container",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "candidate/tailwind3/before/true/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": true,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ":where(.go2926285176:root) .openui-sources-listed-sources-container",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "baseline/tailwind3/after/actual-same-element-target-present",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2
+      }
+    },
+    {
+      "name": "baseline/tailwind3/after/false/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": false,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ".go3301084552",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "baseline/tailwind3/after/true/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": true,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ".go3301084552",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "candidate/tailwind3/after/actual-same-element-target-present",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2
+      }
+    },
+    {
+      "name": "candidate/tailwind3/after/false/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": false,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ":where(.go2926285176:root) .openui-sources-listed-sources-container",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "candidate/tailwind3/after/true/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": true,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ":where(.go2926285176:root) .openui-sources-listed-sources-container",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "baseline/tailwind4/before/actual-same-element-target-present",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2
+      }
+    },
+    {
+      "name": "baseline/tailwind4/before/false/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": false,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ".go3301084552",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "baseline/tailwind4/before/true/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": true,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ".go3301084552",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "candidate/tailwind4/before/actual-same-element-target-present",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2
+      }
+    },
+    {
+      "name": "candidate/tailwind4/before/false/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": false,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ":where(.go2926285176:root) .openui-sources-listed-sources-container",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "candidate/tailwind4/before/true/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": true,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ":where(.go2926285176:root) .openui-sources-listed-sources-container",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "baseline/tailwind4/after/actual-same-element-target-present",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2
+      }
+    },
+    {
+      "name": "baseline/tailwind4/after/false/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": false,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ".go3301084552",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "baseline/tailwind4/after/true/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item.openui-listed-sources-item-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": true,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ".go3301084552",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "candidate/tailwind4/after/actual-same-element-target-present",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2
+      }
+    },
+    {
+      "name": "candidate/tailwind4/after/false/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": false,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ":where(.go2926285176:root) .openui-sources-listed-sources-container",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    },
+    {
+      "name": "candidate/tailwind4/after/true/retained-important-exception",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-carousel-item-styled.openui-sources-listed-sources-container",
+        "count": 2,
+        "allNodesMatch": true,
+        "hover": true,
+        "before": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "after": {
+          "background": "rgba(0, 0, 0, 0)",
+          "width": "180px"
+        },
+        "importantRules": [
+          {
+            "selector": ":where(.go2926285176:root) .openui-sources-listed-sources-container",
+            "css": "padding: var(--openui-space-000, 0); border-radius: var(--openui-radius-l, 10px); overflow: hidden; width: 180px !important; background-color: transparent !important;"
+          }
+        ]
+      }
+    }
+  ]
+}

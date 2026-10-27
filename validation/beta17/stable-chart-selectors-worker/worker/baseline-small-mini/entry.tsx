@@ -1,0 +1,1 @@
+import React from'react';import{createRoot}from'react-dom/client';import{MiniLineChart}from'@openuidev/react-components';const root=createRoot(document.querySelector('#app'));window.mount=()=>root.render(<MiniLineChart data={[1,4,2]} size={140}/>);window.mount();window.ready=true;

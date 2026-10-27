@@ -1,0 +1,882 @@
+[
+  {
+    "selector": ":where(.go2744113888:root) .openui-chart-empty-root",
+    "css": "display: flex; align-items: center; justify-content: center; min-height: 200px;"
+  },
+  {
+    "selector": ":where(.go2744113888:root) .openui-chart-empty-root :where(.openui-chart-empty-text)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));"
+  },
+  {
+    "selector": ":where(.go2744113888:root) .openui-chart-y-axis-label-root",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6)); padding-bottom: var(--openui-space-s, 8px);"
+  },
+  {
+    "selector": ":where(.go2744113888:root) .openui-chart-x-axis-label-root",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6)); text-align: center;"
+  },
+  {
+    "selector": ":where(.go2573380542:root) .openui-area-chart-root",
+    "css": "width: 100%; position: relative; display: flex; flex-direction: column; overflow: hidden;"
+  },
+  {
+    "selector": ":where(.go2573380542:root) .openui-area-chart-root :where(.openui-area-chart-container-inner)",
+    "css": "display: flex; width: 100%; flex: 1 1 0%; min-height: 0px;"
+  },
+  {
+    "selector": ":where(.go2573380542:root) .openui-area-chart-root :where(.openui-area-chart-y-axis-container)",
+    "css": "flex-shrink: 0;"
+  },
+  {
+    "selector": ":where(.go2573380542:root) .openui-area-chart-root :where(.openui-area-chart-main-container)",
+    "css": "flex: 1 1 0%; min-width: 0px; overflow: auto hidden; scrollbar-width: none;"
+  },
+  {
+    "selector": ":where(.go2573380542:root) .openui-area-chart-root :where(.openui-area-chart-main-container)::-webkit-scrollbar",
+    "css": "display: none;"
+  },
+  {
+    "selector": ":where(.go2573380542:root) .openui-area-chart-root line:where(.openui-area-chart-grid line)",
+    "css": "stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06)); stroke-dasharray: 3, 3;"
+  },
+  {
+    "selector": ":where(.go2573380542:root) .openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+    "css": "stroke-dasharray: none;"
+  },
+  {
+    "selector": ":where(.go2573380542:root) .openui-area-chart-root :where(.openui-area-chart-y-tick, .openui-area-chart-x-tick, .openui-area-chart-x-tick-angled)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));"
+  },
+  {
+    "selector": ":where(.go2573380542:root) .openui-area-chart-root :where(.openui-area-chart-crosshair-line)",
+    "css": "stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06)); stroke-width: 1; stroke-dasharray: 4, 4;"
+  },
+  {
+    "selector": ":where(.go2573380542:root) .openui-area-chart-root :where(.openui-area-chart-active-dot-outer)",
+    "css": "fill: var(--openui-foreground, oklch(0.994 0 89.876 / 1)); stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06)); stroke-width: 1;"
+  },
+  {
+    "selector": ":where(.go2573380542:root) .openui-area-chart-root :where(.openui-area-chart-active-dot-inner)",
+    "css": "stroke: none;"
+  },
+  {
+    "selector": ":where(.go2573380542:root) .openui-area-chart-root :where(.openui-area-chart-area-path)",
+    "css": "transition: opacity 0.2s;"
+  },
+  {
+    "selector": ":where(.go2573380542:root) .openui-area-chart-root :where(.openui-area-chart-area-line)",
+    "css": "fill: none; stroke-width: 2;"
+  },
+  {
+    "selector": ":where(.go2573380542:root) .openui-area-chart-root :where(.openui-area-chart-area-line--animated)",
+    "css": "stroke-dasharray: var(--path-length); stroke-dashoffset: var(--path-length); animation: 1s ease-out 0s 1 normal forwards running go3858848515;"
+  },
+  {
+    "selector": ":where(.go2573380542:root) .openui-area-chart-root :where(.openui-area-chart-area-path--animated)",
+    "css": "opacity: 0; animation: 0.6s ease-out 0.4s 1 normal forwards running go3768685529;"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root",
+    "css": "display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--openui-space-s, 8px);"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root :where(.openui-chart-legend-axis-label-container)",
+    "css": "display: flex; align-items: center; justify-content: center; gap: var(--openui-space-m, 12px); flex-wrap: wrap;"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root :where(.openui-chart-legend-axis-label)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root :where(.openui-chart-legend-axis-label-text)",
+    "css": "color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root :where(.openui-chart-legend)",
+    "css": "display: flex; align-items: center; justify-content: center; gap: var(--openui-space-m, 12px); flex-wrap: wrap;"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root:where(.openui-chart-legend--bottom)",
+    "css": "padding-top: var(--openui-space-m, 12px);"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root :where(.openui-chart-legend--collapsed)",
+    "css": "flex-wrap: nowrap; overflow: hidden;"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root :where(.openui-chart-legend--expanded)",
+    "css": "flex-wrap: wrap;"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root :where(.openui-chart-legend-item)",
+    "css": "display: flex; align-items: center; gap: var(--openui-space-xs, 6px);"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root svg:where(.openui-chart-legend-item svg)",
+    "css": "height: 10px; width: 10px; color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root :where(.openui-chart-legend-item-indicator)",
+    "css": "height: 10px; width: 10px; flex-shrink: 0; border-radius: var(--openui-radius-2xs, 2px); background-color: var(--color-bg);"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root :where(.openui-chart-legend-item-label)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root :where(.openui-chart-legend-toggle-button)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)); padding-left: var(--openui-space-2xs, 4px); padding-right: var(--openui-space-3xs, 2px);"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root :where(.openui-chart-legend-toggle-button-icon)",
+    "css": "width: 1em; height: 1em; color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root :where(.openui-chart-legend-item-label-container)",
+    "css": "display: flex; align-items: center; gap: var(--openui-space-2xs, 4px);"
+  },
+  {
+    "selector": ":where(.go2580847612:root) .openui-chart-default-legend-root :where(.openui-chart-legend-item-percentage)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-portal-root",
+    "css": "pointer-events: none; z-index: 1000; position: absolute;"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root",
+    "css": "display: grid; align-items: start; min-width: 128px; max-width: 240px; gap: var(--openui-space-xs, 6px); padding: var(--openui-space-xs, 6px); color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)); font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); border-radius: var(--openui-radius-l, 10px); border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06)); background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1)); box-shadow: var( --openui-shadow-s, 0 1px 3px -2px oklch(0 0 0 / 0.02), 0 2px 5px -2px oklch(0 0 0 / 0.04) );"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-label)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)); overflow-wrap: break-word; word-break: break-word;"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-label-heavy)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-heavy-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560); color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)); overflow-wrap: break-word; word-break: break-word;"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content)",
+    "css": "display: grid; align-items: start; min-width: 128px; gap: var(--openui-space-xs, 6px); color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)); font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content-item)",
+    "css": "display: flex; width: 100%; flex-wrap: wrap; gap: var(--openui-space-xs, 6px); align-items: flex-start;"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content-item--dot)",
+    "css": "align-items: center;"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root svg:where(.openui-chart-tooltip-content-item svg)",
+    "css": "height: 10px; width: 10px; color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content-indicator)",
+    "css": "flex-shrink: 0; border-radius: var(--openui-radius-2xs, 2px);"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content-indicator--dot)",
+    "css": "height: 10px; width: 10px; background-color: var(--color-bg); border-color: var(--color-border);"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content-indicator--line)",
+    "css": "width: 4px; background-color: var(--color-bg); border-color: var(--color-border);"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content-indicator--dashed)",
+    "css": "width: 0px; border: 1.5px dashed var(--color-border); background-color: transparent;"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content-indicator--two-items)",
+    "css": "margin-top: 2px;"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content-value-wrapper)",
+    "css": "display: flex; flex: 1 1 0%; gap: var(--openui-space-s, 8px); justify-content: space-between; line-height: 1;"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content-value-wrapper--nested)",
+    "css": "align-items: flex-end;"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content-value-wrapper--standard)",
+    "css": "align-items: center;"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content-value-wrapper--vertical)",
+    "css": "flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: var(--openui-space-2xs, 4px);"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content-label)",
+    "css": "display: grid; gap: var(--openui-space-xs, 6px); color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6)); font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root span:where(.openui-chart-tooltip-content-label span)",
+    "css": "display: block; overflow-wrap: break-word; word-break: break-word;"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content-value)",
+    "css": "color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)); font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content-item-separator)",
+    "css": "width: 100%; height: 1px; background-color: var(--openui-border-default, oklch(0.097 0 0 / 0.06)); margin: 0px;"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root .openui-chart-tooltip-content-item:last-child :where(.openui-chart-tooltip-content-item-separator)",
+    "css": "display: none;"
+  },
+  {
+    "selector": ":where(.go3184685759:root) .openui-chart-tooltip-root :where(.openui-chart-tooltip-content-view-more)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)); text-align: left; overflow-wrap: break-word; word-break: break-word;"
+  },
+  {
+    "selector": ":where(.go3433688784:root) .openui-chart-horizontal-scroll-controls-root",
+    "css": "position: relative;"
+  },
+  {
+    "selector": ":where(.go3433688784:root) .openui-chart-horizontal-scroll-controls-root .openui-chart-horizontal-scroll-button",
+    "css": "position: absolute; background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));"
+  },
+  {
+    "selector": ":where(.go3433688784:root) .openui-chart-horizontal-scroll-controls-root .openui-chart-horizontal-scroll-button--left",
+    "css": "top: -23px; transform: translateY(-50%); left: 20px;"
+  },
+  {
+    "selector": ":where(.go3433688784:root) .openui-chart-horizontal-scroll-controls-root .openui-chart-horizontal-scroll-button--right",
+    "css": "top: -23px; transform: translateY(-50%); right: 0px;"
+  },
+  {
+    "selector": ":where(.go3433688784:root) .openui-chart-horizontal-scroll-controls-root .openui-chart-horizontal-scroll-button--disabled",
+    "css": "visibility: hidden; cursor: not-allowed; transition: visibility 0.1s linear;"
+  },
+  {
+    "selector": ":where(.go2871082298:root) .openui-line-chart-root",
+    "css": "width: 100%; position: relative; display: flex; flex-direction: column; overflow: hidden;"
+  },
+  {
+    "selector": ":where(.go2871082298:root) .openui-line-chart-root :where(.openui-line-chart-container-inner)",
+    "css": "display: flex; width: 100%; flex: 1 1 0%; min-height: 0px;"
+  },
+  {
+    "selector": ":where(.go2871082298:root) .openui-line-chart-root :where(.openui-line-chart-y-axis-container)",
+    "css": "flex-shrink: 0;"
+  },
+  {
+    "selector": ":where(.go2871082298:root) .openui-line-chart-root :where(.openui-line-chart-main-container)",
+    "css": "flex: 1 1 0%; min-width: 0px; overflow: auto hidden; scrollbar-width: none;"
+  },
+  {
+    "selector": ":where(.go2871082298:root) .openui-line-chart-root :where(.openui-line-chart-main-container)::-webkit-scrollbar",
+    "css": "display: none;"
+  },
+  {
+    "selector": ":where(.go2871082298:root) .openui-line-chart-root line:where(.openui-line-chart-grid line)",
+    "css": "stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06)); stroke-dasharray: 3, 3;"
+  },
+  {
+    "selector": ":where(.go2871082298:root) .openui-line-chart-root line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+    "css": "stroke-dasharray: none;"
+  },
+  {
+    "selector": ":where(.go2871082298:root) .openui-line-chart-root :where(.openui-line-chart-y-tick, .openui-line-chart-x-tick, .openui-line-chart-x-tick-angled)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));"
+  },
+  {
+    "selector": ":where(.go2871082298:root) .openui-line-chart-root :where(.openui-line-chart-crosshair-line)",
+    "css": "stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06)); stroke-width: 1; stroke-dasharray: 4, 4;"
+  },
+  {
+    "selector": ":where(.go2871082298:root) .openui-line-chart-root :where(.openui-line-chart-active-dot-outer)",
+    "css": "fill: var(--openui-foreground, oklch(0.994 0 89.876 / 1)); stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06)); stroke-width: 1;"
+  },
+  {
+    "selector": ":where(.go2871082298:root) .openui-line-chart-root :where(.openui-line-chart-active-dot-inner)",
+    "css": "stroke: none;"
+  },
+  {
+    "selector": ":where(.go2871082298:root) .openui-line-chart-root :where(.openui-line-chart-line)",
+    "css": "fill: none; stroke-width: 2;"
+  },
+  {
+    "selector": ":where(.go2871082298:root) .openui-line-chart-root :where(.openui-line-chart-dot)",
+    "css": "stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1)); stroke-width: 1;"
+  },
+  {
+    "selector": ":where(.go2871082298:root) .openui-line-chart-root :where(.openui-line-chart-line--animated)",
+    "css": "stroke-dasharray: var(--path-length); stroke-dashoffset: var(--path-length); animation: 1s ease-out 0s 1 normal forwards running go3858848515;"
+  },
+  {
+    "selector": ":where(.go393648582:root) .openui-bar-chart-root",
+    "css": "width: 100%; position: relative; display: flex; flex-direction: column; overflow: hidden;"
+  },
+  {
+    "selector": ":where(.go393648582:root) .openui-bar-chart-root :where(.openui-bar-chart-container-inner)",
+    "css": "display: flex; width: 100%; flex: 1 1 0%; min-height: 0px;"
+  },
+  {
+    "selector": ":where(.go393648582:root) .openui-bar-chart-root :where(.openui-bar-chart-y-axis-container)",
+    "css": "flex-shrink: 0;"
+  },
+  {
+    "selector": ":where(.go393648582:root) .openui-bar-chart-root :where(.openui-bar-chart-main-container)",
+    "css": "flex: 1 1 0%; min-width: 0px; overflow: auto hidden; scrollbar-width: none;"
+  },
+  {
+    "selector": ":where(.go393648582:root) .openui-bar-chart-root :where(.openui-bar-chart-main-container)::-webkit-scrollbar",
+    "css": "display: none;"
+  },
+  {
+    "selector": ":where(.go393648582:root) .openui-bar-chart-root line:where(.openui-bar-chart-grid line)",
+    "css": "stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06)); stroke-dasharray: 3, 3;"
+  },
+  {
+    "selector": ":where(.go393648582:root) .openui-bar-chart-root line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+    "css": "stroke-dasharray: none;"
+  },
+  {
+    "selector": ":where(.go393648582:root) .openui-bar-chart-root :where(.openui-bar-chart-y-tick, .openui-bar-chart-x-tick, .openui-bar-chart-x-tick-angled)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));"
+  },
+  {
+    "selector": ":where(.go393648582:root) .openui-bar-chart-root :where(.openui-bar-chart-hover-highlight)",
+    "css": "fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)); opacity: 0.04; pointer-events: none;"
+  },
+  {
+    "selector": ":where(.go393648582:root) .openui-bar-chart-root :where(.openui-bar-chart-internal-line)",
+    "css": "pointer-events: none;"
+  },
+  {
+    "selector": ":where(.go393648582:root) .openui-bar-chart-root :where(.openui-bar-chart-bar--animated)",
+    "css": "transform-box: fill-box; transform-origin: center bottom; animation: 0.6s ease-out 0s 1 normal both running go3979219859;"
+  },
+  {
+    "selector": ":where(.go393648582:root) .openui-bar-chart-root .openui-bar-chart-bar--negative:where(.openui-bar-chart-bar--animated)",
+    "css": "transform-origin: center top;"
+  },
+  {
+    "selector": ":where(.go2676050953:root) .openui-horizontal-bar-chart-root",
+    "css": "position: relative; width: 100%; height: auto; display: flex; flex-direction: column;"
+  },
+  {
+    "selector": ":where(.go2676050953:root) .openui-horizontal-bar-chart-root :where(.openui-horizontal-bar-chart-container-inner-wrapper)",
+    "css": "width: 100%; display: flex; flex-direction: row; overflow: hidden;"
+  },
+  {
+    "selector": ":where(.go2676050953:root) .openui-horizontal-bar-chart-root :where(.openui-horizontal-bar-chart-container-inner)",
+    "css": "position: relative; display: flex; flex-direction: column; width: 100%; flex: 1 1 0%; min-width: 0px;"
+  },
+  {
+    "selector": ":where(.go2676050953:root) .openui-horizontal-bar-chart-root :where(.openui-horizontal-bar-chart-main-container)",
+    "css": "height: 100%; overflow-y: auto; scrollbar-width: none;"
+  },
+  {
+    "selector": ":where(.go2676050953:root) .openui-horizontal-bar-chart-root :where(.openui-horizontal-bar-chart-main-container)::-webkit-scrollbar",
+    "css": "display: none;"
+  },
+  {
+    "selector": ":where(.go2676050953:root) .openui-horizontal-bar-chart-root :where(.openui-horizontal-bar-chart-x-axis-container)",
+    "css": "flex-shrink: 0; width: 100%; box-sizing: border-box; border-top: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06)); padding-top: var(--openui-space-2xs, 4px);"
+  },
+  {
+    "selector": ":where(.go2676050953:root) .openui-horizontal-bar-chart-root :where(.openui-horizontal-bar-chart-category-label)",
+    "css": "display: flex; align-items: center; color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6)); font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; width: 100%; padding-left: var(--openui-space-m, 12px); box-sizing: border-box;"
+  },
+  {
+    "selector": ":where(.go2676050953:root) .openui-horizontal-bar-chart-root :where(.openui-horizontal-bar-chart-x-tick)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));"
+  },
+  {
+    "selector": ":where(.go2676050953:root) .openui-horizontal-bar-chart-root line:where(.openui-horizontal-bar-chart-grid-vertical line)",
+    "css": "stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06)); stroke-dasharray: 3, 3;"
+  },
+  {
+    "selector": ":where(.go2676050953:root) .openui-horizontal-bar-chart-root :where(.openui-horizontal-bar-chart-internal-line)",
+    "css": "pointer-events: none;"
+  },
+  {
+    "selector": ":where(.go2676050953:root) .openui-horizontal-bar-chart-root :where(.openui-horizontal-bar-chart-crosshair)",
+    "css": "fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)); opacity: 0.04; pointer-events: none;"
+  },
+  {
+    "selector": ":where(.go2676050953:root) .openui-horizontal-bar-chart-root :where(.openui-horizontal-bar-chart-bar--animated)",
+    "css": "transform-box: fill-box; transform-origin: left center; animation: 0.6s ease-out 0s 1 normal both running go1876224805;"
+  },
+  {
+    "selector": ":where(.go2676050953:root) .openui-horizontal-bar-chart-root .openui-horizontal-bar-chart-bar--negative:where(.openui-horizontal-bar-chart-bar--animated)",
+    "css": "transform-origin: right center;"
+  },
+  {
+    "selector": ":where(.go3901028490:root) .openui-chart-vertical-scroll-controls-root",
+    "css": "display: flex; flex-direction: column; justify-content: space-between; align-items: center; width: 36px; height: calc(100% - 44px); flex-shrink: 0; padding-left: var(--openui-space-2xs, 4px);"
+  },
+  {
+    "selector": ":where(.go3901028490:root) .openui-chart-vertical-scroll-controls-root .openui-chart-vertical-scroll-button",
+    "css": "background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1)); pointer-events: auto;"
+  },
+  {
+    "selector": ":where(.go3901028490:root) .openui-chart-vertical-scroll-controls-root .openui-chart-vertical-scroll-button--disabled",
+    "css": "visibility: hidden; cursor: not-allowed; transition: visibility 0.1s linear;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root",
+    "css": "position: relative; display: flex; flex-direction: column; align-items: center; height: 100%;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root :where(.openui-stacked-legend-header)",
+    "css": "width: 100%; box-sizing: border-box; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 10px; padding: 0 var(--openui-space-xs, 6px) var(--openui-space-xs, 6px) var(--openui-space-l, 18px); color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root :where(.openui-stacked-legend-header-buttons)",
+    "css": "display: flex; flex-direction: row; align-items: center; gap: var(--openui-space-xs, 6px);"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root :where(.openui-stacked-legend-header-title)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root :where(.openui-stacked-legend-scroll-button)",
+    "css": "z-index: 100; display: flex; align-items: center; justify-content: center; cursor: pointer;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root :where(.openui-stacked-legend)",
+    "css": "width: 100%; display: flex; flex-direction: column; justify-content: safe center; min-width: 200px; overflow-y: scroll; height: 100%; scrollbar-width: none; scroll-behavior: smooth;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root :where(.openui-stacked-legend__item)",
+    "css": "width: 100%; box-sizing: border-box; display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 10px; padding: 4px 8px; border-radius: var(--openui-radius-m, 8px); transition: 0.2s ease-in-out; height: 32px; flex-shrink: 0;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root :hover:where(.openui-stacked-legend__item)",
+    "css": "background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root :where(.openui-stacked-legend__item--active)",
+    "css": "background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root :where(.openui-stacked-legend__item-label)",
+    "css": "display: flex; flex-direction: row; align-items: center; gap: 8px; min-width: 0px; flex: 1 1 0%;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root :where(.openui-stacked-legend__item-color-container)",
+    "css": "display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px; height: 100%; width: 32px; flex-shrink: 0;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root :where(.openui-stacked-legend__item-color)",
+    "css": "width: 10px; height: 10px; border-radius: 2px; transition: 0.2s ease-in-out;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root .openui-stacked-legend__item:hover :where(.openui-stacked-legend__item-color)",
+    "css": "transform: scale(1.2);"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root .openui-stacked-legend__item--active :where(.openui-stacked-legend__item-color)",
+    "css": "transform: scale(1.3);"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root :where(.openui-stacked-legend__item-label-text)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)); transition: color 0.2s ease-in-out; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0px;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root :where(.openui-stacked-legend__item-value)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)); transition: 0.2s ease-in-out; flex-shrink: 0;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root :where(.openui-stacked-legend-show-more-button)",
+    "css": "width: 100%; justify-content: center; margin-top: var(--openui-space-2xs, 4px);"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-root :where(.openui-stacked-legend-separator)",
+    "css": "margin: var(--openui-space-2xs, 4px) 0;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-layout-root",
+    "css": "display: flex; position: relative; gap: 20px; align-items: center;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-layout-root:where(.openui-chart-with-stacked-legend--column)",
+    "css": "flex-direction: column;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-layout-root:where(.openui-chart-with-stacked-legend--row)",
+    "css": "flex-direction: row; min-height: 296px;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-layout-root :where(.openui-chart-with-stacked-legend__chart)",
+    "css": "width: 100%; min-width: 0px;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-layout-root :where(.openui-chart-with-stacked-legend__legend)",
+    "css": "display: flex; justify-content: center; width: 100%;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-layout-root.openui-chart-with-stacked-legend--column :where(.openui-chart-with-stacked-legend__legend)",
+    "css": "align-items: flex-start;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-layout-root.openui-chart-with-stacked-legend--row :where(.openui-chart-with-stacked-legend__chart)",
+    "css": "flex: 1 1 0%;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-layout-root.openui-chart-with-stacked-legend--row :where(.openui-chart-with-stacked-legend__legend)",
+    "css": "flex: 1 1 0%; min-width: 0px; height: 296px; align-items: center;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-layout-root.openui-chart-with-stacked-legend--row .openui-chart-with-stacked-legend__legend :where(.openui-stacked-legend-container)",
+    "css": "justify-content: center;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-layout-root.openui-chart-with-stacked-legend--row .openui-chart-with-stacked-legend__legend :where(.openui-stacked-legend)",
+    "css": "height: auto; max-height: 100%;"
+  },
+  {
+    "selector": ":where(.go3176713504:root) .openui-chart-stacked-legend-scrollbar::-webkit-scrollbar",
+    "css": "display: none;"
+  },
+  {
+    "selector": ":where(.go1997822966:root) .openui-pie-chart-root",
+    "css": "display: flex; flex-direction: column; align-items: center; width: 100%; position: relative;"
+  },
+  {
+    "selector": ":where(.go1997822966:root) .openui-pie-chart-root :where(.openui-pie-chart-svg-wrapper)",
+    "css": "display: flex; justify-content: center; align-items: center;"
+  },
+  {
+    "selector": ":where(.go1997822966:root) .openui-pie-chart-root :where(.openui-pie-chart-track)",
+    "css": "fill: var(--openui-sunk, oklch(0.097 0 0 / 0.04));"
+  },
+  {
+    "selector": ":where(.go1997822966:root) .openui-pie-chart-root :where(.openui-pie-chart-slice--animated)",
+    "css": "opacity: 0; transform-origin: center center; animation: 0.6s ease-out 0s 1 normal forwards running go2307064964;"
+  },
+  {
+    "selector": ":where(.go2475659288:root) .openui-radial-chart-root",
+    "css": "display: flex; flex-direction: column; align-items: center; width: 100%; position: relative;"
+  },
+  {
+    "selector": ":where(.go2475659288:root) .openui-radial-chart-root :where(.openui-radial-chart-svg-wrapper)",
+    "css": "display: flex; justify-content: center; align-items: center;"
+  },
+  {
+    "selector": ":where(.go2475659288:root) .openui-radial-chart-root :where(.openui-radial-chart-grid-circle)",
+    "css": "stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06)); stroke-width: 1; stroke-dasharray: 4, 4;"
+  },
+  {
+    "selector": ":where(.go2475659288:root) .openui-radial-chart-root :where(.openui-radial-chart-bar--animated)",
+    "css": "opacity: 0; animation: 0.5s ease-out 0s 1 normal forwards running go3768685529;"
+  },
+  {
+    "selector": ":where(.go1511506455:root) .openui-radar-chart-root",
+    "css": "display: flex; flex-direction: column; align-items: center; width: 100%; position: relative;"
+  },
+  {
+    "selector": ":where(.go1511506455:root) .openui-radar-chart-root :where(.openui-radar-chart-svg-wrapper)",
+    "css": "display: flex; justify-content: center; align-items: center;"
+  },
+  {
+    "selector": ":where(.go1511506455:root) .openui-radar-chart-root svg:where(.openui-radar-chart-svg-wrapper > svg)",
+    "css": "overflow: visible;"
+  },
+  {
+    "selector": ":where(.go1511506455:root) .openui-radar-chart-root :where(.openui-radar-chart-grid-ring), :where(.go1511506455:root) .openui-radar-chart-root :where(.openui-radar-chart-grid-spoke)",
+    "css": "stroke: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12)); stroke-width: 1;"
+  },
+  {
+    "selector": ":where(.go1511506455:root) .openui-radar-chart-root :where(.openui-radar-chart-polygon-area)",
+    "css": "transition: opacity 0.2s;"
+  },
+  {
+    "selector": ":where(.go1511506455:root) .openui-radar-chart-root :where(.openui-radar-chart-polygon-stroke)",
+    "css": "fill: none; stroke-width: 2;"
+  },
+  {
+    "selector": ":where(.go1511506455:root) .openui-radar-chart-root :where(.openui-radar-chart-dot)",
+    "css": "stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1)); stroke-width: 1.5; transition: r 0.15s, opacity 0.15s;"
+  },
+  {
+    "selector": ":where(.go1511506455:root) .openui-radar-chart-root :where(.openui-radar-chart-active-dot-outer)",
+    "css": "fill: var(--openui-foreground, oklch(0.994 0 89.876 / 1)); stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06)); stroke-width: 1;"
+  },
+  {
+    "selector": ":where(.go1511506455:root) .openui-radar-chart-root :where(.openui-radar-chart-active-dot-inner)",
+    "css": "stroke: none;"
+  },
+  {
+    "selector": ":where(.go1511506455:root) .openui-radar-chart-root :where(.openui-radar-chart-active-dots)",
+    "css": "pointer-events: none;"
+  },
+  {
+    "selector": ":where(.go1511506455:root) .openui-radar-chart-root :where(.openui-radar-chart-axis-label)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));"
+  },
+  {
+    "selector": ":where(.go1511506455:root) .openui-radar-chart-root :where(.openui-radar-chart-polygon--animated)",
+    "css": "opacity: 0; transform-origin: center center; animation: 0.5s ease-out 0s 1 normal forwards running go3153860947;"
+  },
+  {
+    "selector": ":where(.go3243911187:root) .openui-scatter-chart-root",
+    "css": "display: flex; flex-direction: column; align-items: center; width: 100%; position: relative;"
+  },
+  {
+    "selector": ":where(.go3243911187:root) .openui-scatter-chart-root line:where(.openui-scatter-chart-grid line)",
+    "css": "stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06)); stroke-dasharray: 3, 3;"
+  },
+  {
+    "selector": ":where(.go3243911187:root) .openui-scatter-chart-root line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+    "css": "stroke-dasharray: none;"
+  },
+  {
+    "selector": ":where(.go3243911187:root) .openui-scatter-chart-root line:where(.openui-scatter-chart-grid-vertical line)",
+    "css": "stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06)); stroke-dasharray: 3, 3;"
+  },
+  {
+    "selector": ":where(.go3243911187:root) .openui-scatter-chart-root :where(.openui-scatter-chart-y-tick, .openui-scatter-chart-x-tick)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));"
+  },
+  {
+    "selector": ":where(.go3243911187:root) .openui-scatter-chart-root :where(.openui-scatter-chart-dot)",
+    "css": "stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1)); stroke-width: 1.5; transition: r 0.15s, fill-opacity 0.15s, stroke-opacity 0.15s;"
+  },
+  {
+    "selector": ":where(.go3243911187:root) .openui-scatter-chart-root :where(.openui-scatter-chart-dot--animated)",
+    "css": "opacity: 0; animation: 0.4s ease-out 0s 1 normal forwards running go386393658;"
+  },
+  {
+    "selector": ":where(.go1228661198:root) .openui-heatmap-chart-root",
+    "css": "display: flex; flex-direction: column; align-items: center; width: 100%; position: relative;"
+  },
+  {
+    "selector": ":where(.go1228661198:root) .openui-heatmap-chart-root :where(.openui-heatmap-chart-x-tick), :where(.go1228661198:root) .openui-heatmap-chart-root :where(.openui-heatmap-chart-y-tick)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));"
+  },
+  {
+    "selector": ":where(.go1228661198:root) .openui-heatmap-chart-root :where(.openui-heatmap-chart-cell), :where(.go1228661198:root) .openui-heatmap-chart-root :where(.openui-heatmap-chart-cell-label)",
+    "css": "transition: fill 0.2s;"
+  },
+  {
+    "selector": ":where(.go1228661198:root) .openui-heatmap-chart-root :where(.openui-heatmap-chart-cell), :where(.go1228661198:root) .openui-heatmap-chart-root :where(.openui-heatmap-chart-cell-label)",
+    "css": "transition: none;"
+  },
+  {
+    "selector": ":where(.go1228661198:root) .openui-heatmap-chart-root :hover:where(.openui-heatmap-chart-cell)",
+    "css": "stroke: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)); stroke-width: 1.5;"
+  },
+  {
+    "selector": ":where(.go1228661198:root) .openui-heatmap-chart-root :where(.openui-heatmap-chart-cell-label)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); pointer-events: none; user-select: none;"
+  },
+  {
+    "selector": ":where(.go1228661198:root) .openui-heatmap-chart-root :where(.openui-heatmap-chart-cell--empty)",
+    "css": "fill: var(--openui-border-default, oklch(0.097 0 0 / 0.06)); fill-opacity: 0.35;"
+  },
+  {
+    "selector": ":where(.go1228661198:root) .openui-heatmap-chart-root :where(.openui-heatmap-chart-cell--animated), :where(.go1228661198:root) .openui-heatmap-chart-root :where(.openui-heatmap-chart-cell-label--animated)",
+    "css": "opacity: 0; animation: 0.4s ease-out 0s 1 normal forwards running go3768685529;"
+  },
+  {
+    "selector": ":where(.go1228661198:root) .openui-heatmap-chart-root :where(.openui-heatmap-chart-color-scale)",
+    "css": "display: flex; align-items: center; gap: 8px; width: 100%; padding: 6px 0px 2px;"
+  },
+  {
+    "selector": ":where(.go1228661198:root) .openui-heatmap-chart-root :where(.openui-heatmap-chart-color-scale-label)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6)); white-space: nowrap;"
+  },
+  {
+    "selector": ":where(.go1228661198:root) .openui-heatmap-chart-root :where(.openui-heatmap-chart-color-scale-ramp)",
+    "css": "position: relative; display: flex; flex: 1 1 0%; height: 8px; border-radius: 4px; overflow: hidden;"
+  },
+  {
+    "selector": ":where(.go1228661198:root) .openui-heatmap-chart-root :where(.openui-heatmap-chart-color-scale-bucket)",
+    "css": "flex: 1 1 0%;"
+  },
+  {
+    "selector": ":where(.go1228661198:root) .openui-heatmap-chart-diverging-ramp-root::after",
+    "css": "content: \"\"; position: absolute; left: 50%; top: 0px; bottom: 0px; width: 2px; transform: translateX(-50%); background: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)); opacity: 0.55;"
+  },
+  {
+    "selector": ":where(.go3433849010:root) .openui-funnel-chart-root",
+    "css": "display: flex; flex-direction: column; align-items: center; width: 100%; position: relative;"
+  },
+  {
+    "selector": ":where(.go3433849010:root) .openui-funnel-chart-root :where(.openui-funnel-chart-ring)",
+    "css": "transition: d 0.3s, fill-opacity 0.2s;"
+  },
+  {
+    "selector": ":where(.go3433849010:root) .openui-funnel-chart-root :where(.openui-funnel-chart-ring--springy)",
+    "css": "transform-box: fill-box; transform-origin: center center;"
+  },
+  {
+    "selector": ":where(.go3433849010:root) .openui-funnel-chart-root :where(.openui-funnel-chart-ring--bloom-y)",
+    "css": "transform: scaleY(var(--funnel-ring-scale, 1));"
+  },
+  {
+    "selector": ":where(.go3433849010:root) .openui-funnel-chart-root :where(.openui-funnel-chart-ring--bloom-x)",
+    "css": "transform: scaleX(var(--funnel-ring-scale, 1));"
+  },
+  {
+    "selector": ":where(.go3433849010:root) .openui-funnel-chart-root :where(.openui-funnel-chart-stage)",
+    "css": "transition: filter 0.2s;"
+  },
+  {
+    "selector": ":where(.go3433849010:root) .openui-funnel-chart-root :where(.openui-funnel-chart-ring), :where(.go3433849010:root) .openui-funnel-chart-root :where(.openui-funnel-chart-stage)",
+    "css": "transition: none;"
+  },
+  {
+    "selector": ":where(.go3433849010:root) .openui-funnel-chart-root :where(.openui-funnel-chart-value)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em); font-variation-settings: normal; fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)); font-weight: 600;"
+  },
+  {
+    "selector": ":where(.go3433849010:root) .openui-funnel-chart-root :where(.openui-funnel-chart-label)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));"
+  },
+  {
+    "selector": ":where(.go3433849010:root) .openui-funnel-chart-root :where(.openui-funnel-chart-pct)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: normal; fill: var(--openui-background, oklch(0.97 0 89.876 / 1)); font-weight: 700;"
+  },
+  {
+    "selector": ":where(.go3433849010:root) .openui-funnel-chart-root :where(.openui-funnel-chart-pct-pill)",
+    "css": "fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));"
+  },
+  {
+    "selector": ":where(.go3433849010:root) .openui-funnel-chart-root :where(.openui-funnel-chart-stage--animated)",
+    "css": "opacity: 0; transform-box: fill-box; transform-origin: center center; animation: 0.5s ease-out 0s 1 normal forwards running go304659629;"
+  },
+  {
+    "selector": ":where(.go1089553954:root) .openui-segmented-bar-root",
+    "css": "display: flex; flex-direction: column; align-items: center; width: 100%; position: relative; justify-content: center;"
+  },
+  {
+    "selector": ":where(.go1089553954:root) .openui-segmented-bar-root:where(.openui-segmented-bar-container--gap)",
+    "css": "gap: var(--openui-space-m, 12px);"
+  },
+  {
+    "selector": ":where(.go1089553954:root) .openui-segmented-bar-root :where(.openui-segmented-bar)",
+    "css": "width: 100%; box-sizing: border-box; height: 20px; font-family: inherit; background-color: var(--openui-background, oklch(0.97 0 89.876 / 1)); border-radius: var(--openui-radius-s, 6px); overflow: hidden; box-shadow: var( --openui-shadow-s, 0 1px 3px -2px oklch(0 0 0 / 0.02), 0 2px 5px -2px oklch(0 0 0 / 0.04) ); display: flex; padding: var(--openui-space-2xs, 4px); gap: var(--openui-space-3xs, 2px);"
+  },
+  {
+    "selector": ":where(.go1089553954:root) .openui-segmented-bar-root :where(.openui-segmented-bar-segment)",
+    "css": "height: 100%; display: flex; align-items: center; justify-content: center; min-width: 2px; box-shadow: var( --openui-shadow-s, 0 1px 3px -2px oklch(0 0 0 / 0.02), 0 2px 5px -2px oklch(0 0 0 / 0.04) ); position: relative; overflow: hidden; transition: box-shadow 0.2s, filter 0.2s, opacity 0.2s;"
+  },
+  {
+    "selector": ":where(.go1089553954:root) .openui-segmented-bar-root :first-child:where(.openui-segmented-bar-segment)",
+    "css": "border-radius: var(--openui-radius-xs, 4px) 0 0 var(--openui-radius-xs, 4px);"
+  },
+  {
+    "selector": ":where(.go1089553954:root) .openui-segmented-bar-root :last-child:where(.openui-segmented-bar-segment)",
+    "css": "border-radius: 0 var(--openui-radius-xs, 4px) var(--openui-radius-xs, 4px) 0;"
+  },
+  {
+    "selector": ":where(.go1089553954:root) .openui-segmented-bar-root :where(.openui-segmented-bar-segment-line)",
+    "css": "position: absolute; transform: translateY(-50%); background-color: var(--openui-border-accent-emphasis, oklch(0.546 0.215 262.881 / 0.3)); top: 50%; left: 5px; width: calc(100% - 10px); height: 1px; z-index: 1; min-width: 2px;"
+  },
+  {
+    "selector": ":where(.go1089553954:root) .openui-segmented-bar-root :where(.openui-segmented-bar-segment--animated)",
+    "css": "transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);"
+  },
+  {
+    "selector": ":where(.go1089553954:root) .openui-segmented-bar-root :where(.openui-segmented-bar-stacked-legend)",
+    "css": "margin-top: var(--openui-space-s, 8px);"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root",
+    "css": "display: flex; flex-direction: column; align-items: center; width: 100%; position: relative;"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root :where(.openui-calendar-heatmap-month-label), :where(.go1310135529:root) .openui-calendar-heatmap-root :where(.openui-calendar-heatmap-weekday-label)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root :hover:where(.openui-calendar-heatmap-cell)",
+    "css": "stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1)); stroke-width: 1.5;"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root :where(.openui-calendar-heatmap-cell--ghost)",
+    "css": "fill-opacity: 0.4;"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root :where(.openui-calendar-heatmap-cell--animated)",
+    "css": "opacity: 0; animation: 0.4s ease-out 0s 1 normal forwards running go3768685529;"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root :where(.openui-calendar-heatmap-cell), :where(.go1310135529:root) .openui-calendar-heatmap-root :where(.openui-calendar-heatmap-legend-swatch-slot)",
+    "css": "transition: fill-opacity 0.2s, opacity 0.2s;"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root [data-openui-highlight-level=\"0\"] :not(.openui-calendar-heatmap-cell--level-0):where(.openui-calendar-heatmap-cell)",
+    "css": "fill-opacity: 0.3;"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root [data-openui-highlight-level=\"1\"] :not(.openui-calendar-heatmap-cell--level-1):where(.openui-calendar-heatmap-cell)",
+    "css": "fill-opacity: 0.3;"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root [data-openui-highlight-level=\"2\"] :not(.openui-calendar-heatmap-cell--level-2):where(.openui-calendar-heatmap-cell)",
+    "css": "fill-opacity: 0.3;"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root [data-openui-highlight-level=\"3\"] :not(.openui-calendar-heatmap-cell--level-3):where(.openui-calendar-heatmap-cell)",
+    "css": "fill-opacity: 0.3;"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root [data-openui-highlight-level=\"4\"] :not(.openui-calendar-heatmap-cell--level-4):where(.openui-calendar-heatmap-cell)",
+    "css": "fill-opacity: 0.3;"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root :where(.openui-calendar-heatmap-separator)",
+    "css": "stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06)); stroke-width: 1;"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root :where(.openui-calendar-heatmap-quarter-label)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6)); white-space: nowrap; pointer-events: none;"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root :where(.openui-calendar-heatmap-legend)",
+    "css": "display: flex; align-items: center; justify-content: flex-end; gap: var(--openui-space-s, 8px); width: 100%; padding-top: var(--openui-space-m, 12px);"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root :where(.openui-calendar-heatmap-legend-label)",
+    "css": "font-style: ; font-variant-ligatures: ; font-variant-caps: ; font-variant-numeric: ; font-variant-east-asian: ; font-variant-alternates: ; font-variant-position: ; font-variant-emoji: ; font-weight: ; font-stretch: ; font-size: ; line-height: ; font-family: ; font-optical-sizing: ; font-size-adjust: ; font-kerning: ; font-feature-settings: ; font-language-override: ; letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em); font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440); color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root :where(.openui-calendar-heatmap-legend-swatches)",
+    "css": "display: flex; align-items: center; gap: var(--openui-space-3xs, 2px);"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root :where(.openui-calendar-heatmap-legend-swatch-slot)",
+    "css": "display: inline-flex; cursor: pointer;"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root :where(.openui-calendar-heatmap-legend-swatch)",
+    "css": "display: block; width: 12px; height: 12px; flex-shrink: 0; border-radius: var(--openui-radius-2xs, 2px);"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root :where(.openui-calendar-heatmap-legend-gradient)",
+    "css": "position: relative; width: 60px; height: 12px; flex-shrink: 0; border-radius: var(--openui-radius-2xs, 2px);"
+  },
+  {
+    "selector": ":where(.go1310135529:root) .openui-calendar-heatmap-root :where(.openui-calendar-heatmap-legend-gradient-hit)",
+    "css": "position: absolute; top: 0px; height: 100%; cursor: pointer;"
+  },
+  {
+    "selector": ":where(.go3836809384:root) .openui-mini-chart-root",
+    "css": "position: relative; aspect-ratio: 1 / 1; min-width: 100px; min-height: 100px;"
+  },
+  {
+    "selector": ":where(.go3836809384:root) .openui-mini-chart-root > svg",
+    "css": "display: block;"
+  },
+  {
+    "selector": ":where(.go3836809384:root) .openui-mini-chart-root:where(.openui-mini-chart--clickable)",
+    "css": "cursor: pointer;"
+  },
+  {
+    "selector": ":where(.go3836809384:root) .openui-mini-chart-root :where(.openui-mini-line-chart-point)",
+    "css": "fill: var(--openui-background, oklch(0.97 0 89.876 / 1));"
+  },
+  {
+    "selector": ":where(.go3836809384:root) .openui-mini-chart-root :where(.openui-mini-chart-mark--animated)",
+    "css": "opacity: 0; animation: 0.6s ease-out 0s 1 normal forwards running go3768685529;"
+  }
+]

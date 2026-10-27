@@ -1,0 +1,26 @@
+{
+  "builders": {
+    "tailwind3": "3.4.17",
+    "tailwind4": "4.1.18",
+    "postcss": "8.5.8"
+  },
+  "source": {
+    "input3": "@tailwind base;\n@tailwind components;\n@tailwind utilities;",
+    "input4": "@import \"tailwindcss\" source(none);\n@source inline(\"text-sm font-medium bg-red-500 text-blue-600 p-4 rounded-lg border flex gap-4 disabled:cursor-not-allowed hover:bg-red-600\");",
+    "utilities": "text-sm font-medium bg-red-500 text-blue-600 p-4 rounded-lg border flex gap-4 disabled:cursor-not-allowed hover:bg-red-600"
+  },
+  "files": {
+    "plain": {
+      "sha256": "383c01de4e3d6acd9bc016cf10b9d54b74f56381b7e25ad86ff124391cd52b44",
+      "bytes": 169
+    },
+    "tailwind3": {
+      "sha256": "834acb557c1baf648f028f06ed162e6913ab2511efcb29d7e5e51816801410cb",
+      "bytes": 10833
+    },
+    "tailwind4": {
+      "sha256": "054d6804d0941a6af31192219d24f173ba374a2d9605aeb59e59a1535b25dbf1",
+      "bytes": 5205
+    }
+  }
+}

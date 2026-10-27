@@ -1,0 +1,116 @@
+[
+  {
+    "name": "@openuidev/a2ui",
+    "version": "0.5.0",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/a2ui",
+    "private": false
+  },
+  {
+    "name": "@openuidev/angular-lang",
+    "version": "0.4.2",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/angular-lang",
+    "private": false
+  },
+  {
+    "name": "@openuidev/assistant-ui",
+    "version": "0.2.0",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/assistant-ui",
+    "private": false
+  },
+  {
+    "name": "@openuidev/browser-bundle",
+    "version": "0.2.1",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/browser-bundle",
+    "private": false
+  },
+  {
+    "name": "@openuidev/devtools",
+    "version": "0.3.0",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/devtools",
+    "private": false
+  },
+  {
+    "name": "@openuidev/kits",
+    "version": "0.0.0-beta.0",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/kits",
+    "private": false
+  },
+  {
+    "name": "@openuidev/lang-core",
+    "version": "1.0.1",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/lang-core",
+    "private": false
+  },
+  {
+    "name": "@openuidev/langchain",
+    "version": "0.0.3",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/langchain",
+    "private": false
+  },
+  {
+    "name": "@openuidev/observability",
+    "version": "0.0.4",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/observability",
+    "private": false
+  },
+  {
+    "name": "@openuidev/observability-cloud",
+    "version": "0.0.3",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/observability-cloud",
+    "private": false
+  },
+  {
+    "name": "@openuidev/cli",
+    "version": "0.6.0",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/openui-cli",
+    "private": false
+  },
+  {
+    "name": "@openuidev/react-components",
+    "version": "0.0.0-beta.0",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/react-components",
+    "private": false
+  },
+  {
+    "name": "@openuidev/react-email",
+    "version": "0.4.0",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/react-email",
+    "private": false
+  },
+  {
+    "name": "@openuidev/react-headless",
+    "version": "0.18.1",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/react-headless",
+    "private": false
+  },
+  {
+    "name": "@openuidev/react-lang",
+    "version": "1.0.1",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/react-lang",
+    "private": false
+  },
+  {
+    "name": "@openuidev/react-ui",
+    "version": "0.18.1",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/react-ui",
+    "private": false
+  },
+  {
+    "name": "@openuidev/server",
+    "version": "0.3.0",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/server",
+    "private": false
+  },
+  {
+    "name": "@openuidev/svelte-lang",
+    "version": "0.4.2",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/svelte-lang",
+    "private": false
+  },
+  {
+    "name": "@openuidev/vue-lang",
+    "version": "0.4.2",
+    "path": "/private/tmp/openui-nested-kit-discovery/packages/vue-lang",
+    "private": false
+  }
+]

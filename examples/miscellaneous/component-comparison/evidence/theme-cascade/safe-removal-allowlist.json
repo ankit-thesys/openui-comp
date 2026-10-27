@@ -1,0 +1,207 @@
+{
+  "baselineHead": "57ea72e2892df7fdd551c668d4480a0267f90a09",
+  "scope": "Six literal important removals only, two files; verification evidence, not a production change or global parity approval. Named-import compatibility guards must be checked in named-guards-results.json.",
+  "ids": [
+    "08",
+    "09",
+    "10",
+    "12",
+    "13",
+    "16"
+  ],
+  "files": {
+    "packages/react-ui-core/src/components/Slider/sliderBlock.styles.ts": {
+      "originalSha256": "a3fc2bfc030c85125bd37023cc7e991261cc9412883d3e6b7e8e37595df51d7c",
+      "candidateSha256": "936f9a9383e6a577323e9f4c6d18767aef724f3a680c18ec08747ac30b1c5355"
+    },
+    "packages/react-ui-core/src/components/Sources/listedSources.styles.ts": {
+      "originalSha256": "1360299784db47d34e391fa52969e3b335747f3dfd313faac799e03d9752795b",
+      "candidateSha256": "5184bce6afb1fb59311003bb2b34ecc0afbc7e73ec9774842f02215086fb5855"
+    }
+  },
+  "declarations": [
+    {
+      "file": "packages/react-ui-core/src/components/Slider/sliderBlock.styles.ts",
+      "line": 47,
+      "column": 19,
+      "value": "right !important",
+      "path": [
+        "sliderBlockStyles",
+        "& .openui-slider-block__input",
+        "text-align"
+      ],
+      "property": "text-align",
+      "id": "08",
+      "originalSha256": "a3fc2bfc030c85125bd37023cc7e991261cc9412883d3e6b7e8e37595df51d7c",
+      "candidateSha256": "8c2672d44577a0b58daf1b676a48accc007a68655466d1373c8c40c35ae1b55c",
+      "decision": "Eligible for removal within recorded coverage",
+      "status": "Passed removal-only comparison",
+      "individualCells": 240,
+      "differentCells": 0,
+      "combinedCells": 240,
+      "combinedDifferences": 0,
+      "reason": "No replacement; ordinary existing rule wins with unchanged observed computed styles, geometry and interaction behavior.",
+      "evidence": [
+        "important-v3-discovery-results.json",
+        "important-v3-extension-results.json"
+      ]
+    },
+    {
+      "file": "packages/react-ui-core/src/components/Slider/sliderBlock.styles.ts",
+      "line": 48,
+      "column": 18,
+      "value": "var(--openui-space-s, 8px) !important",
+      "path": [
+        "sliderBlockStyles",
+        "& .openui-slider-block__input",
+        "paddingLeft"
+      ],
+      "property": "paddingLeft",
+      "id": "09",
+      "originalSha256": "a3fc2bfc030c85125bd37023cc7e991261cc9412883d3e6b7e8e37595df51d7c",
+      "candidateSha256": "b497879f9aa8ae5dab1cba2667f0e4307b0d8ed5edc980d5cb950570f8c372bc",
+      "decision": "Eligible for removal within recorded coverage",
+      "status": "Passed removal-only comparison",
+      "individualCells": 240,
+      "differentCells": 0,
+      "combinedCells": 240,
+      "combinedDifferences": 0,
+      "reason": "No replacement; ordinary existing rule wins with unchanged observed computed styles, geometry and interaction behavior.",
+      "evidence": [
+        "important-v3-discovery-results.json",
+        "important-v3-extension-results.json"
+      ]
+    },
+    {
+      "file": "packages/react-ui-core/src/components/Slider/sliderBlock.styles.ts",
+      "line": 49,
+      "column": 19,
+      "value": "var(--openui-space-s, 8px) !important",
+      "path": [
+        "sliderBlockStyles",
+        "& .openui-slider-block__input",
+        "paddingRight"
+      ],
+      "property": "paddingRight",
+      "id": "10",
+      "originalSha256": "a3fc2bfc030c85125bd37023cc7e991261cc9412883d3e6b7e8e37595df51d7c",
+      "candidateSha256": "3f32c9de83861915001bd0ead72927801ef50f7b987eea3e0ab753bfc07f8806",
+      "decision": "Eligible for removal within recorded coverage",
+      "status": "Passed removal-only comparison",
+      "individualCells": 240,
+      "differentCells": 0,
+      "combinedCells": 240,
+      "combinedDifferences": 0,
+      "reason": "No replacement; ordinary existing rule wins with unchanged observed computed styles, geometry and interaction behavior.",
+      "evidence": [
+        "important-v3-discovery-results.json",
+        "important-v3-extension-results.json"
+      ]
+    },
+    {
+      "file": "packages/react-ui-core/src/components/Sources/listedSources.styles.ts",
+      "line": 27,
+      "column": 12,
+      "value": "var(--openui-space-000, 0) !important",
+      "path": [
+        "containerClass",
+        "padding"
+      ],
+      "property": "padding",
+      "id": "12",
+      "originalSha256": "1360299784db47d34e391fa52969e3b335747f3dfd313faac799e03d9752795b",
+      "candidateSha256": "6aeea63cdaa9e24664e160d445ff4a6e85dbb8a89743090913e9eeb3dd1685df",
+      "decision": "Eligible for removal within recorded coverage",
+      "status": "Passed removal-only comparison",
+      "individualCells": 240,
+      "differentCells": 0,
+      "combinedCells": 240,
+      "combinedDifferences": 0,
+      "reason": "No replacement; ordinary existing rule wins with unchanged observed computed styles, geometry and interaction behavior.",
+      "evidence": [
+        "important-v2-discovery-results.json",
+        "important-v3-extension-results.json"
+      ]
+    },
+    {
+      "file": "packages/react-ui-core/src/components/Sources/listedSources.styles.ts",
+      "line": 28,
+      "column": 17,
+      "value": "var(--openui-radius-l, 10px) !important",
+      "path": [
+        "containerClass",
+        "borderRadius"
+      ],
+      "property": "borderRadius",
+      "id": "13",
+      "originalSha256": "1360299784db47d34e391fa52969e3b335747f3dfd313faac799e03d9752795b",
+      "candidateSha256": "d2fb49a27ede550ac42b1e3d286ba10888321ba4aaa9e625af4d0ce818caf67c",
+      "decision": "Eligible for removal within recorded coverage",
+      "status": "Passed removal-only comparison",
+      "individualCells": 240,
+      "differentCells": 0,
+      "combinedCells": 240,
+      "combinedDifferences": 0,
+      "reason": "No replacement; ordinary existing rule wins with unchanged observed computed styles, geometry and interaction behavior.",
+      "evidence": [
+        "important-v2-discovery-results.json",
+        "important-v3-extension-results.json"
+      ]
+    },
+    {
+      "file": "packages/react-ui-core/src/components/Sources/listedSources.styles.ts",
+      "line": 33,
+      "column": 18,
+      "value": "var(--openui-border-interactive, oklch(0.097 0 0 / 0.12)) !important",
+      "path": [
+        "containerClass",
+        "&.openui-listed-sources-item-container--has-url:hover",
+        "borderColor"
+      ],
+      "property": "borderColor",
+      "id": "16",
+      "originalSha256": "1360299784db47d34e391fa52969e3b335747f3dfd313faac799e03d9752795b",
+      "candidateSha256": "3e0f628fd1c825faa2844907a9dfa69309437773ba3b8a0ac93cef66896083ec",
+      "decision": "Eligible for removal within recorded coverage",
+      "status": "Passed removal-only comparison",
+      "individualCells": 240,
+      "differentCells": 0,
+      "combinedCells": 240,
+      "combinedDifferences": 0,
+      "reason": "No replacement; ordinary existing rule wins with unchanged observed computed styles, geometry and interaction behavior.",
+      "evidence": [
+        "important-v2-discovery-results.json",
+        "important-v3-extension-results.json"
+      ]
+    }
+  ],
+  "combinedArtifact": {
+    "id": "combined",
+    "productionHead": "57ea72e2892df7fdd551c668d4480a0267f90a09",
+    "ids": [
+      "08",
+      "09",
+      "10",
+      "12",
+      "13",
+      "16"
+    ],
+    "affected": {
+      "packages/react-ui-core/src/components/Slider/sliderBlock.styles.ts": "936f9a9383e6a577323e9f4c6d18767aef724f3a680c18ec08747ac30b1c5355",
+      "packages/react-ui-core/src/components/Sources/listedSources.styles.ts": "5184bce6afb1fb59311003bb2b34ecc0afbc7e73ec9774842f02215086fb5855"
+    },
+    "archive": "/private/tmp/openui-theme-cascade-verification/artifacts/combined/openuidev-react-ui-core-0.0.0-beta.0.tgz",
+    "archiveSha256": "eaea671c9760abf7e756f247d2f06e43e4284bb28b06f61a6636999053ce2f12",
+    "browserEntrySha256": "6785d33f3c439db52ad9022c4d3fcc4c3ade7c8029db6342717f7ef159b0b7bd",
+    "approval": "Passed 240-cell combined comparison plus 68 named-import guards"
+  },
+  "publicTypes": "combined-type-invariants.json",
+  "patch": "safe-important-removals.patch",
+  "patchSha256": "2c3f0177a40b9c7f8be88cdf46541e776534cb36f9f05c06ee709e6092188bcc",
+  "status": "Approved for scoped six-literal cleanup only",
+  "namedImportGuards": {
+    "cells": 68,
+    "passed": 68,
+    "evidence": "named-guards-results.json"
+  }
+}

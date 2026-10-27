@@ -1,0 +1,9 @@
+{
+  "manifestMembers": 30,
+  "archiveMembers": 31,
+  "sha256": "61e7010800e299762f87e843c3439bfec944690542443e963933c5f8abf43cb5",
+  "bytes": 508947,
+  "reviewedLabCommit": "2d03fcf6b110c52d72fc75e2020b225c94346f9f",
+  "candidate": "cf1a8a88123b9a577c9cb43ae69d857ea6242f11",
+  "limits": "StrictFail, seven new rasterReviews unresolved, runner-version differences limit causal attribution. No blanket acceptance."
+}

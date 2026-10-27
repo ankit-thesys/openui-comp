@@ -1,0 +1,4 @@
+import{createRequire}from'node:module';import{writeFileSync}from'node:fs';
+const root='/private/tmp/openui-selectors61-evidence';const results=[];
+for(const [arm,dir]of[['baseline','/private/tmp/openui-styles60-evidence/consumer'],['candidate',root+'/consumer']]){const require=createRequire(dir+'/package.json');const esm=await import(dir+'/node_modules/@openuidev/react-components/dist/index.mjs');const cjs=require('@openuidev/react-components');results.push({arm,esm:Object.keys(esm).sort(),cjs:Object.keys(cjs).sort()});}
+const before=results[0],after=results[1];if(JSON.stringify(before.esm)!==JSON.stringify(after.esm)||JSON.stringify(before.cjs)!==JSON.stringify(after.cjs))throw new Error('Public exports changed');writeFileSync(root+'/native-results.json',JSON.stringify(results,null,2));console.log('Native ESM/CJS exports unchanged:',after.esm.length,after.cjs.length);

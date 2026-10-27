@@ -1,0 +1,1 @@
+Initial fixture used unsupported single-dollar math, while TextContentWrapper sets singleDollarTextMath:false. No comparisons completed. Correct fixture to supported display math and link the emitted entry CSS bundle as standard consumer build output. Production/archive unchanged; no failed comparison relabeled.

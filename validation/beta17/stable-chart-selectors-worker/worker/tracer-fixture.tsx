@@ -1,0 +1,2 @@
+import React from 'react';import{createRoot}from'react-dom/client';
+const readHost=()=>[...document.querySelectorAll('#host>*')].map(e=>({position:getComputedStyle(e).position,width:e.getBoundingClientRect().width,color:getComputedStyle(e).color}));window.hostBefore=readHost();const{AreaChart}=await import('@openuidev/react-components');window.hostAfter=readHost();createRoot(document.querySelector('#app')!).render(<AreaChart data={[{month:'Jan',desktop:10,mobile:4},{month:'Feb',desktop:20,mobile:8}]} categoryKey="month" width={420} height={260}/>);window.ready=true;

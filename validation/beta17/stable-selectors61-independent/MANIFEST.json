@@ -1,0 +1,914 @@
+[
+  {
+    "path": "REPORT.md",
+    "originalSHA256": "0b7b4bb08fe32e43cc7ffe224f503b75628dea42b6280c5e65908cf3bec43cbb",
+    "storedSHA256": "0b7b4bb08fe32e43cc7ffe224f503b75628dea42b6280c5e65908cf3bec43cbb",
+    "gzip": false
+  },
+  {
+    "path": "SHA256SUMS.json",
+    "originalSHA256": "d32c7b14b2a7691d0b5ffc1f384c61905039005dbef66f2c370cc270b0f421b4",
+    "storedSHA256": "d32c7b14b2a7691d0b5ffc1f384c61905039005dbef66f2c370cc270b0f421b4",
+    "gzip": false
+  },
+  {
+    "path": "VERDICT.json",
+    "originalSHA256": "a68a6740ac7ed0c572da1986eee48b3b25dea9d5e789cffab06d3509b680e8f6",
+    "storedSHA256": "a68a6740ac7ed0c572da1986eee48b3b25dea9d5e789cffab06d3509b680e8f6",
+    "gzip": false
+  },
+  {
+    "path": "attempt01-lazy-readiness/NOTE.md",
+    "originalSHA256": "8e3305ba7e5c747e74ee4d4a9fa7dbb2dccaf78199e18fd8de6ab6f26365f4a8",
+    "storedSHA256": "8e3305ba7e5c747e74ee4d4a9fa7dbb2dccaf78199e18fd8de6ab6f26365f4a8",
+    "gzip": false
+  },
+  {
+    "path": "attempt01-lazy-readiness/browser.log",
+    "originalSHA256": "96d49e8c07262cdd42e0f7e6fde72f23c22c13d510cf959769dbd1aad2f48ad6",
+    "storedSHA256": "96d49e8c07262cdd42e0f7e6fde72f23c22c13d510cf959769dbd1aad2f48ad6",
+    "gzip": false
+  },
+  {
+    "path": "attempt01-lazy-readiness/progress.json",
+    "originalSHA256": "8f5d574d751e1f3bb884b169c0764980627903c085874f396c572d3b0a4b7dfb",
+    "storedSHA256": "8f5d574d751e1f3bb884b169c0764980627903c085874f396c572d3b0a4b7dfb",
+    "gzip": false
+  },
+  {
+    "path": "attempt01-lazy-readiness/run.mjs",
+    "originalSHA256": "ae73fac2e8a4e14e4b5d076a70694d4948ee7b7ce922f05a498aa4f3b886f9b3",
+    "storedSHA256": "ae73fac2e8a4e14e4b5d076a70694d4948ee7b7ce922f05a498aa4f3b886f9b3",
+    "gzip": false
+  },
+  {
+    "path": "attempt01-lazy-readiness/window-release.json",
+    "originalSHA256": "2f8b60c7b72499d120c60607eccff92f39003d79601b8ae83f0e49408354241b",
+    "storedSHA256": "2f8b60c7b72499d120c60607eccff92f39003d79601b8ae83f0e49408354241b",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_AMS-Regular-CYEKBG2K.woff",
+    "originalSHA256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251",
+    "storedSHA256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_AMS-Regular-JKX5W2C4.ttf",
+    "originalSHA256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13",
+    "storedSHA256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_AMS-Regular-U6PRYMIZ.woff2",
+    "originalSHA256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308",
+    "storedSHA256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Caligraphic-Bold-5QL5CMTE.woff2",
+    "originalSHA256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c",
+    "storedSHA256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Caligraphic-Bold-WZ3QSGD3.woff",
+    "originalSHA256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed",
+    "storedSHA256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Caligraphic-Bold-ZTS3R3HK.ttf",
+    "originalSHA256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268",
+    "storedSHA256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Caligraphic-Regular-3LKEU76G.woff",
+    "originalSHA256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c",
+    "storedSHA256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Caligraphic-Regular-A7XRTZ5Q.ttf",
+    "originalSHA256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7",
+    "storedSHA256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Caligraphic-Regular-KX5MEWCF.woff2",
+    "originalSHA256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b",
+    "storedSHA256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Fraktur-Bold-2QVFK6NQ.woff2",
+    "originalSHA256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f",
+    "storedSHA256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Fraktur-Bold-T4SWXBMT.woff",
+    "originalSHA256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb",
+    "storedSHA256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Fraktur-Bold-WGHVTYOR.ttf",
+    "originalSHA256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1",
+    "storedSHA256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Fraktur-Regular-2PEIFJSJ.woff2",
+    "originalSHA256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc",
+    "storedSHA256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Fraktur-Regular-5U4OPH2X.ttf",
+    "originalSHA256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3",
+    "storedSHA256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Fraktur-Regular-PQMHCIK6.woff",
+    "originalSHA256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463",
+    "storedSHA256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Main-Bold-2GA4IZIN.woff",
+    "originalSHA256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822",
+    "storedSHA256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Main-Bold-W5FBVCZM.ttf",
+    "originalSHA256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8",
+    "storedSHA256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Main-Bold-YP5VVQRP.woff2",
+    "originalSHA256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021",
+    "storedSHA256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Main-BoldItalic-4P4C7HJH.woff",
+    "originalSHA256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c",
+    "storedSHA256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Main-BoldItalic-N4V3DX7S.woff2",
+    "originalSHA256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b",
+    "storedSHA256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Main-BoldItalic-ODMLBJJQ.ttf",
+    "originalSHA256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f",
+    "storedSHA256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Main-Italic-I43T2HSR.ttf",
+    "originalSHA256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a",
+    "storedSHA256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Main-Italic-RELBIK7M.woff2",
+    "originalSHA256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267",
+    "storedSHA256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Main-Italic-SASNQFN2.woff",
+    "originalSHA256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf",
+    "storedSHA256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Main-Regular-ARRPAO67.woff2",
+    "originalSHA256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866",
+    "storedSHA256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Main-Regular-P5I74A2A.woff",
+    "originalSHA256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc",
+    "storedSHA256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Main-Regular-W74P5G27.ttf",
+    "originalSHA256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830",
+    "storedSHA256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Math-BoldItalic-6EBV3DK5.woff",
+    "originalSHA256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e",
+    "storedSHA256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Math-BoldItalic-K4WTGH3J.woff2",
+    "originalSHA256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1",
+    "storedSHA256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Math-BoldItalic-VB447A4D.ttf",
+    "originalSHA256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5",
+    "storedSHA256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Math-Italic-6KGCHLFN.woff2",
+    "originalSHA256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264",
+    "storedSHA256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Math-Italic-KKK3USB2.woff",
+    "originalSHA256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571",
+    "storedSHA256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Math-Italic-SON4MRCA.ttf",
+    "originalSHA256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a",
+    "storedSHA256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_SansSerif-Bold-RRNVJFFW.woff2",
+    "originalSHA256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62",
+    "storedSHA256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_SansSerif-Bold-STQ6RXC7.ttf",
+    "originalSHA256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0",
+    "storedSHA256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_SansSerif-Bold-X5M5EMOD.woff",
+    "originalSHA256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba",
+    "storedSHA256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_SansSerif-Italic-HMPFTM52.woff2",
+    "originalSHA256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a",
+    "storedSHA256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_SansSerif-Italic-PSN4QKYX.woff",
+    "originalSHA256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2",
+    "storedSHA256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_SansSerif-Italic-WTBAZBGY.ttf",
+    "originalSHA256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083",
+    "storedSHA256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_SansSerif-Regular-2TL3USAE.ttf",
+    "originalSHA256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad",
+    "storedSHA256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_SansSerif-Regular-OQCII6EP.woff",
+    "originalSHA256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605",
+    "storedSHA256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_SansSerif-Regular-XIQ62X4E.woff2",
+    "originalSHA256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342",
+    "storedSHA256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Script-Regular-72OLXYNA.ttf",
+    "originalSHA256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67",
+    "storedSHA256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Script-Regular-A5IFOEBS.woff",
+    "originalSHA256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a",
+    "storedSHA256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Script-Regular-APUWIHLP.woff2",
+    "originalSHA256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b",
+    "storedSHA256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Size1-Regular-4HRHTS65.woff",
+    "originalSHA256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9",
+    "storedSHA256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Size1-Regular-5LRUTBFT.woff2",
+    "originalSHA256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe",
+    "storedSHA256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Size1-Regular-7K6AASVL.ttf",
+    "originalSHA256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b",
+    "storedSHA256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Size2-Regular-222HN3GT.ttf",
+    "originalSHA256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b",
+    "storedSHA256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Size2-Regular-K5ZHAIS6.woff",
+    "originalSHA256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d",
+    "storedSHA256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Size2-Regular-LELKET5D.woff2",
+    "originalSHA256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd",
+    "storedSHA256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Size3-Regular-TLFPAHDE.woff",
+    "originalSHA256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949",
+    "storedSHA256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Size3-Regular-UFCO6WCA.ttf",
+    "originalSHA256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082",
+    "storedSHA256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Size3-Regular-WQRQ47UD.woff2",
+    "originalSHA256": "73d591271b1604960cb10bb90fee021670af7297017e0e98480b332d11f51995",
+    "storedSHA256": "73d591271b1604960cb10bb90fee021670af7297017e0e98480b332d11f51995",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Size4-Regular-7PGNVPQK.ttf",
+    "originalSHA256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877",
+    "storedSHA256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Size4-Regular-CDMV7U5C.woff2",
+    "originalSHA256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0",
+    "storedSHA256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Size4-Regular-PKMWZHNC.woff",
+    "originalSHA256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58",
+    "storedSHA256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Typewriter-Regular-3F5K6SQ6.ttf",
+    "originalSHA256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa",
+    "storedSHA256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Typewriter-Regular-MJMFSK64.woff",
+    "originalSHA256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7",
+    "storedSHA256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/KaTeX_Typewriter-Regular-VBYJ4NRC.woff2",
+    "originalSHA256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b",
+    "storedSHA256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/metafile.json.gz",
+    "originalSHA256": "7f57c23623ac5e225f96a5b13ffc504e1240f4d47c149a19c0ca22e0fcb5cf42",
+    "storedSHA256": "c74a702eb4adea431193440424406f0fb6774caec3e99e84152489f1b28a23f2",
+    "gzip": true
+  },
+  {
+    "path": "baseline-portal/stdin.css",
+    "originalSHA256": "9ad7a2306eda2788161ef1158f09bb863430ef66820fd3c25caa811000cbd1cd",
+    "storedSHA256": "9ad7a2306eda2788161ef1158f09bb863430ef66820fd3c25caa811000cbd1cd",
+    "gzip": false
+  },
+  {
+    "path": "baseline-portal/stdin.js",
+    "originalSHA256": "95c6f12a94d5de36aa8c4b306af034113185b0fd0f58aca74a6f93cc1d2751b2",
+    "storedSHA256": "95c6f12a94d5de36aa8c4b306af034113185b0fd0f58aca74a6f93cc1d2751b2",
+    "gzip": false
+  },
+  {
+    "path": "browser.log",
+    "originalSHA256": "26a655ba09c24661680d7c15c71c8b136bff889958e9b92668b0310c2f666b45",
+    "storedSHA256": "26a655ba09c24661680d7c15c71c8b136bff889958e9b92668b0310c2f666b45",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_AMS-Regular-CYEKBG2K.woff",
+    "originalSHA256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251",
+    "storedSHA256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_AMS-Regular-JKX5W2C4.ttf",
+    "originalSHA256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13",
+    "storedSHA256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_AMS-Regular-U6PRYMIZ.woff2",
+    "originalSHA256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308",
+    "storedSHA256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Caligraphic-Bold-5QL5CMTE.woff2",
+    "originalSHA256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c",
+    "storedSHA256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Caligraphic-Bold-WZ3QSGD3.woff",
+    "originalSHA256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed",
+    "storedSHA256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Caligraphic-Bold-ZTS3R3HK.ttf",
+    "originalSHA256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268",
+    "storedSHA256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Caligraphic-Regular-3LKEU76G.woff",
+    "originalSHA256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c",
+    "storedSHA256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Caligraphic-Regular-A7XRTZ5Q.ttf",
+    "originalSHA256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7",
+    "storedSHA256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Caligraphic-Regular-KX5MEWCF.woff2",
+    "originalSHA256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b",
+    "storedSHA256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Fraktur-Bold-2QVFK6NQ.woff2",
+    "originalSHA256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f",
+    "storedSHA256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Fraktur-Bold-T4SWXBMT.woff",
+    "originalSHA256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb",
+    "storedSHA256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Fraktur-Bold-WGHVTYOR.ttf",
+    "originalSHA256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1",
+    "storedSHA256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Fraktur-Regular-2PEIFJSJ.woff2",
+    "originalSHA256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc",
+    "storedSHA256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Fraktur-Regular-5U4OPH2X.ttf",
+    "originalSHA256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3",
+    "storedSHA256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Fraktur-Regular-PQMHCIK6.woff",
+    "originalSHA256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463",
+    "storedSHA256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Main-Bold-2GA4IZIN.woff",
+    "originalSHA256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822",
+    "storedSHA256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Main-Bold-W5FBVCZM.ttf",
+    "originalSHA256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8",
+    "storedSHA256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Main-Bold-YP5VVQRP.woff2",
+    "originalSHA256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021",
+    "storedSHA256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Main-BoldItalic-4P4C7HJH.woff",
+    "originalSHA256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c",
+    "storedSHA256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Main-BoldItalic-N4V3DX7S.woff2",
+    "originalSHA256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b",
+    "storedSHA256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Main-BoldItalic-ODMLBJJQ.ttf",
+    "originalSHA256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f",
+    "storedSHA256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Main-Italic-I43T2HSR.ttf",
+    "originalSHA256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a",
+    "storedSHA256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Main-Italic-RELBIK7M.woff2",
+    "originalSHA256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267",
+    "storedSHA256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Main-Italic-SASNQFN2.woff",
+    "originalSHA256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf",
+    "storedSHA256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Main-Regular-ARRPAO67.woff2",
+    "originalSHA256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866",
+    "storedSHA256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Main-Regular-P5I74A2A.woff",
+    "originalSHA256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc",
+    "storedSHA256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Main-Regular-W74P5G27.ttf",
+    "originalSHA256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830",
+    "storedSHA256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Math-BoldItalic-6EBV3DK5.woff",
+    "originalSHA256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e",
+    "storedSHA256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Math-BoldItalic-K4WTGH3J.woff2",
+    "originalSHA256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1",
+    "storedSHA256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Math-BoldItalic-VB447A4D.ttf",
+    "originalSHA256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5",
+    "storedSHA256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Math-Italic-6KGCHLFN.woff2",
+    "originalSHA256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264",
+    "storedSHA256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Math-Italic-KKK3USB2.woff",
+    "originalSHA256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571",
+    "storedSHA256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Math-Italic-SON4MRCA.ttf",
+    "originalSHA256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a",
+    "storedSHA256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_SansSerif-Bold-RRNVJFFW.woff2",
+    "originalSHA256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62",
+    "storedSHA256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_SansSerif-Bold-STQ6RXC7.ttf",
+    "originalSHA256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0",
+    "storedSHA256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_SansSerif-Bold-X5M5EMOD.woff",
+    "originalSHA256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba",
+    "storedSHA256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_SansSerif-Italic-HMPFTM52.woff2",
+    "originalSHA256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a",
+    "storedSHA256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_SansSerif-Italic-PSN4QKYX.woff",
+    "originalSHA256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2",
+    "storedSHA256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_SansSerif-Italic-WTBAZBGY.ttf",
+    "originalSHA256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083",
+    "storedSHA256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_SansSerif-Regular-2TL3USAE.ttf",
+    "originalSHA256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad",
+    "storedSHA256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_SansSerif-Regular-OQCII6EP.woff",
+    "originalSHA256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605",
+    "storedSHA256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_SansSerif-Regular-XIQ62X4E.woff2",
+    "originalSHA256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342",
+    "storedSHA256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Script-Regular-72OLXYNA.ttf",
+    "originalSHA256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67",
+    "storedSHA256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Script-Regular-A5IFOEBS.woff",
+    "originalSHA256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a",
+    "storedSHA256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Script-Regular-APUWIHLP.woff2",
+    "originalSHA256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b",
+    "storedSHA256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Size1-Regular-4HRHTS65.woff",
+    "originalSHA256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9",
+    "storedSHA256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Size1-Regular-5LRUTBFT.woff2",
+    "originalSHA256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe",
+    "storedSHA256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Size1-Regular-7K6AASVL.ttf",
+    "originalSHA256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b",
+    "storedSHA256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Size2-Regular-222HN3GT.ttf",
+    "originalSHA256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b",
+    "storedSHA256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Size2-Regular-K5ZHAIS6.woff",
+    "originalSHA256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d",
+    "storedSHA256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Size2-Regular-LELKET5D.woff2",
+    "originalSHA256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd",
+    "storedSHA256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Size3-Regular-TLFPAHDE.woff",
+    "originalSHA256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949",
+    "storedSHA256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Size3-Regular-UFCO6WCA.ttf",
+    "originalSHA256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082",
+    "storedSHA256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Size3-Regular-WQRQ47UD.woff2",
+    "originalSHA256": "73d591271b1604960cb10bb90fee021670af7297017e0e98480b332d11f51995",
+    "storedSHA256": "73d591271b1604960cb10bb90fee021670af7297017e0e98480b332d11f51995",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Size4-Regular-7PGNVPQK.ttf",
+    "originalSHA256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877",
+    "storedSHA256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Size4-Regular-CDMV7U5C.woff2",
+    "originalSHA256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0",
+    "storedSHA256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Size4-Regular-PKMWZHNC.woff",
+    "originalSHA256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58",
+    "storedSHA256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Typewriter-Regular-3F5K6SQ6.ttf",
+    "originalSHA256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa",
+    "storedSHA256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Typewriter-Regular-MJMFSK64.woff",
+    "originalSHA256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7",
+    "storedSHA256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/KaTeX_Typewriter-Regular-VBYJ4NRC.woff2",
+    "originalSHA256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b",
+    "storedSHA256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/metafile.json.gz",
+    "originalSHA256": "c86610f4341a6697adbed72de1878017adf82d5350aa8fa8dcd32976e8735f39",
+    "storedSHA256": "6d2ae9c5cca038c8cd3bd5a8a6282aeb000759902abed4d87c8ce4150f4df3f3",
+    "gzip": true
+  },
+  {
+    "path": "candidate-portal/stdin.css",
+    "originalSHA256": "9ad7a2306eda2788161ef1158f09bb863430ef66820fd3c25caa811000cbd1cd",
+    "storedSHA256": "9ad7a2306eda2788161ef1158f09bb863430ef66820fd3c25caa811000cbd1cd",
+    "gzip": false
+  },
+  {
+    "path": "candidate-portal/stdin.js",
+    "originalSHA256": "ab0ea0c4dac2499fdcb493a37f86b2d597e3d1ce8ce2a84164e4777c2a414c09",
+    "storedSHA256": "ab0ea0c4dac2499fdcb493a37f86b2d597e3d1ce8ce2a84164e4777c2a414c09",
+    "gzip": false
+  },
+  {
+    "path": "native-results.json",
+    "originalSHA256": "dadbd2ea5449717f8a039a4a4633e42c8b89da726ce8849c44597a6f8c06f701",
+    "storedSHA256": "dadbd2ea5449717f8a039a4a4633e42c8b89da726ce8849c44597a6f8c06f701",
+    "gzip": false
+  },
+  {
+    "path": "native-same-arm-v1.json",
+    "originalSHA256": "c21c18e3d03e332c3069cea89eae4b305924e6f9873a38650c856dc97f53e23a",
+    "storedSHA256": "c21c18e3d03e332c3069cea89eae4b305924e6f9873a38650c856dc97f53e23a",
+    "gzip": false
+  },
+  {
+    "path": "native-same-arm-v1.mjs",
+    "originalSHA256": "db9409bedc9d81cbb4f6e1fc3639d019a9165b9703734c3cb3e34b92990fc3ea",
+    "storedSHA256": "db9409bedc9d81cbb4f6e1fc3639d019a9165b9703734c3cb3e34b92990fc3ea",
+    "gzip": false
+  },
+  {
+    "path": "native.mjs",
+    "originalSHA256": "66cc02329f3c0a156e83a568df9c45398226133295318a1081906db8cc7ad887",
+    "storedSHA256": "66cc02329f3c0a156e83a568df9c45398226133295318a1081906db8cc7ad887",
+    "gzip": false
+  },
+  {
+    "path": "partial-final.json.gz",
+    "originalSHA256": "577aea6f21c29dbe50dbfb0c00d880cf9df40c298474cbaf1f59ec8ad221d54d",
+    "storedSHA256": "80374f2b44451c2abdfcf0939688ff1b02054e9bfde9517f974d736d76bbefc4",
+    "gzip": true
+  },
+  {
+    "path": "partial.json.gz",
+    "originalSHA256": "577aea6f21c29dbe50dbfb0c00d880cf9df40c298474cbaf1f59ec8ad221d54d",
+    "storedSHA256": "80374f2b44451c2abdfcf0939688ff1b02054e9bfde9517f974d736d76bbefc4",
+    "gzip": true
+  },
+  {
+    "path": "portal-build.log",
+    "originalSHA256": "1b0d0cc0d297dc0e58941951cd04c6e6a2921836a4a62032e61b15b8b26345b6",
+    "storedSHA256": "1b0d0cc0d297dc0e58941951cd04c6e6a2921836a4a62032e61b15b8b26345b6",
+    "gzip": false
+  },
+  {
+    "path": "portal-build.mjs",
+    "originalSHA256": "1b7e2e20418c3960be8abe831e966971b1966ddaa799cac711adcf9a3cc25893",
+    "storedSHA256": "1b7e2e20418c3960be8abe831e966971b1966ddaa799cac711adcf9a3cc25893",
+    "gzip": false
+  },
+  {
+    "path": "portal-fixture.tsx",
+    "originalSHA256": "62133bf2e1c4f35cbae57450632208e89760c25063dfa0fd61f712a6653d26cc",
+    "storedSHA256": "62133bf2e1c4f35cbae57450632208e89760c25063dfa0fd61f712a6653d26cc",
+    "gzip": false
+  },
+  {
+    "path": "portal-provenance.json",
+    "originalSHA256": "920d9df32518db8883f9577ad85d4815d5daf476f3b976882e3c7c0351767e39",
+    "storedSHA256": "920d9df32518db8883f9577ad85d4815d5daf476f3b976882e3c7c0351767e39",
+    "gzip": false
+  },
+  {
+    "path": "progress.json",
+    "originalSHA256": "ff4390a3516f2bd50ae3ebe078076263182fae6b7f3640601d04419eda3cc079",
+    "storedSHA256": "ff4390a3516f2bd50ae3ebe078076263182fae6b7f3640601d04419eda3cc079",
+    "gzip": false
+  },
+  {
+    "path": "provenance-all-emitted-v1.py",
+    "originalSHA256": "71658e5b28f9655afa17b57686d72e2b4e9f288283c81a3e65ea2b7e47514010",
+    "storedSHA256": "71658e5b28f9655afa17b57686d72e2b4e9f288283c81a3e65ea2b7e47514010",
+    "gzip": false
+  },
+  {
+    "path": "provenance.json.gz",
+    "originalSHA256": "c69eb9169b1b75f0a54a7104af4a754ecfd9d846247710f569c9e0012cba31f0",
+    "storedSHA256": "8b7cb92089e22c6499acce7485bffd5d5256b500a9a94318ce312197a14fd4c0",
+    "gzip": true
+  },
+  {
+    "path": "provenance.py",
+    "originalSHA256": "37452066e867e79b65c6f5d95a46c4cb2ce1054f1b593ae6315a0812e3105790",
+    "storedSHA256": "37452066e867e79b65c6f5d95a46c4cb2ce1054f1b593ae6315a0812e3105790",
+    "gzip": false
+  },
+  {
+    "path": "results.json.gz",
+    "originalSHA256": "8bdfc9356488271a9d3cfc7fc78bd4e6613d6e63d7a70090fef8024648ffc070",
+    "storedSHA256": "5d813dedecbded926a88d7fa733be37cafeed61c3f9a1ad9b02970a7ddf18d4c",
+    "gzip": true
+  },
+  {
+    "path": "run.mjs",
+    "originalSHA256": "807635b42770dc9d15296c15a02225889c102638cf8e5c4b7aa408c6c02412f0",
+    "storedSHA256": "807635b42770dc9d15296c15a02225889c102638cf8e5c4b7aa408c6c02412f0",
+    "gzip": false
+  },
+  {
+    "path": "window-release.json",
+    "originalSHA256": "732d93f96c1e9becb72be97f6d03bf3e0dcb55f79cde014e573a6f776535c9f7",
+    "storedSHA256": "732d93f96c1e9becb72be97f6d03bf3e0dcb55f79cde014e573a6f776535c9f7",
+    "gzip": false
+  }
+]

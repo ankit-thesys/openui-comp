@@ -1,0 +1,8 @@
+{
+  "configs": 0,
+  "checks": 0,
+  "failures": [],
+  "errors": [
+    "TimeoutError: page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-family=\"TextContentWrapper\"] .katex') to be visible\u001b[22m\n"
+  ]
+}

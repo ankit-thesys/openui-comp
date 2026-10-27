@@ -1,0 +1,1 @@
+import React from'react';import{createRoot}from'react-dom/client';import{PieChart}from'@openuidev/react-components';const root=createRoot(document.querySelector('#app'));window.mount=()=>root.render(<PieChart data={[{name:"A",value:4},{name:"B",value:8}]} categoryKey="name" dataKey="value" width={420} height={280}/>);window.mount();window.ready=true;

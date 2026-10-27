@@ -1,0 +1,160 @@
+{
+  "reason": "Preserve canonical Icon identifiers; actual component count guards for count-only variants",
+  "caseIds": [
+    "separator-variants",
+    "tag-variants",
+    "icon-button-variants",
+    "chip-item-variants",
+    "chips-variants",
+    "option-card-variants",
+    "option-cards-variants",
+    "text-variants",
+    "bold-text-variants",
+    "icon-text-variants",
+    "image-text-variants",
+    "image-text-large-variants",
+    "snippet-card-block-variants",
+    "overview-card-block-variants",
+    "context-card-item-variants",
+    "context-card-block-variants",
+    "composite-card-block-variants",
+    "visual-card-block-variants"
+  ],
+  "versions": [
+    {
+      "id": "separator-variants",
+      "before": "46a3df6f8a3b2eb729dcf4135d4aaec6a2a133562cba7f0ebbbdea6022a5fb66",
+      "after": "b5113cc785812dcceddc353acad4683833541a6274d75c298fdafd66a92737f8"
+    },
+    {
+      "id": "tag-variants",
+      "before": "6dbcc013d3329f3e2a879a8b849084a44ba61abffa6f4b64c0a80d7eb95e00ab",
+      "after": "622a1835386d4df8b94eb189e1f7a105540e13b1992d481a146c344f5e2838ab"
+    },
+    {
+      "id": "icon-button-variants",
+      "before": "30f96bed9033a8ad28e0b109ba818701aefcf0c47e17fa8338a322cb0d1eea26",
+      "after": "968b9373ecf0d15a0ad4863faaf7e55491d485c5d9f5c391cc25c30da7af4959"
+    },
+    {
+      "id": "chip-item-variants",
+      "before": "74b27300f032719a8629aa8d278f807c587720321641b08f888a70564a4f6d38",
+      "after": "3598771adb2a3034c23b589c525730f701acd00621c46210aa7bfeac62390b48"
+    },
+    {
+      "id": "chips-variants",
+      "before": "561e878c46eb6a7c0081257045ec37e00553a4583e849d3d63692293feddb0f5",
+      "after": "728635ca1533e06cdf878ae31d2406cd5e04f3fa34d1f750a0f66492decca180"
+    },
+    {
+      "id": "option-card-variants",
+      "before": "9a5d7db8eebc5b53fc5b6780b4e3bb344a4938462b614c30a6f7fb7a6a73f115",
+      "after": "9b66101a0ff09900b556380a6261b34483be3c88c639d14e65d52a2f88e58f81"
+    },
+    {
+      "id": "option-cards-variants",
+      "before": "5c7396c230a05ead254c3d093ab34dd9b1b4af6c2e452e3c88f4d35cc194ef37",
+      "after": "9b743a122dc7f519ac3c872317b5ce3ea9dbd019a69e268138e86c108782378a"
+    },
+    {
+      "id": "text-variants",
+      "before": "a8a90832d12f95ac559c5bde59259579b955c14266119a5d3f9b59b9e6d8ef48",
+      "after": "9650c4a7a3989627cbd901b589e1a98eb15598868c865b3180cb20e8050aa2f7"
+    },
+    {
+      "id": "bold-text-variants",
+      "before": "5bf6a4bc40e72f0e25c3e15db0dca68b06916c43e2f2ae947b7e010aa38141da",
+      "after": "274a56eec79b7ad6674602f1fe55364d1b34ee91f0be9153b7650b8ced8d7cdc"
+    },
+    {
+      "id": "icon-text-variants",
+      "before": "b4520212046eddc0fc54293d0c20755fd0619a78e5710d9d406123dfdd61ea0d",
+      "after": "eb2598cbd184bfb22e8e6768d5d4204340f7344873e465385b02f2f344c8d5a1"
+    },
+    {
+      "id": "image-text-variants",
+      "before": "0e6df68f7aa39b4cbaa7f2168556ad049d73bdd927f58d3735cfd5e74b3c083f",
+      "after": "82224b354a4fded7cb4a079ae22002eeb60ef675013ce0f33a14cd9b439b8c26"
+    },
+    {
+      "id": "image-text-large-variants",
+      "before": "add71ed09cd8b080c51828125fc880f082fef6999176cbf4b9ecf60ff9242b02",
+      "after": "8890c99c15dab7a15995d4bde47a5e6a0c1a707e6aee5c68d3279766ca230e3a"
+    },
+    {
+      "id": "snippet-card-block-variants",
+      "before": "90adb9e67adacff88ec1f60b8e3c957b99bd4caf86512b6253fca8f05e213e1d",
+      "after": "fb147bdd61a405030281359ede7f2bb72514738a973a428a98fdaac00c0c8948"
+    },
+    {
+      "id": "overview-card-block-variants",
+      "before": "f753d4fb90f5be257dec93bb0764c210c22a49af2e91a5e0d9d7bf814e6d1487",
+      "after": "684e10d3cec5a0a2ec8316b40b4563f6323fa630ba0e6225488ad8f0634a7bb0"
+    },
+    {
+      "id": "context-card-item-variants",
+      "before": "29669210ceb4c4beb31d363c908e001b8675a41737a1396e302585c089940999",
+      "after": "fdb552445152b90d3e7db180d7485131991d4ea6832f9cc8fdc55027dff87ef6"
+    },
+    {
+      "id": "context-card-block-variants",
+      "before": "78298ccf33790aeefd87048a1f17ef640d3d44543fcc4baa52538bcaf4de9b39",
+      "after": "50ba9ca380a2dd54b68d1d31118fd6f40be972fe76de20727f29f0efa5403f80"
+    },
+    {
+      "id": "composite-card-block-variants",
+      "before": "abf1b06f873e9004338272e8293bad46f4e66a25dfa9e45d78732a364d4360b5",
+      "after": "f71d3f2737e327bf261f88596fb48c73141ed5bbb3853084b3d3753da1df6b37"
+    },
+    {
+      "id": "visual-card-block-variants",
+      "before": "514bc9430a9212ab09244a9aa1539f65d2ac26fd795960d884fc0512dac80157",
+      "after": "ea462261e02363437ac48d1b437d16fd4215df73168145b8cc94bd680877cf65"
+    }
+  ],
+  "cells": 1080,
+  "shards": [
+    {
+      "caseIds": [
+        "icon-text-variants",
+        "image-text-large-variants",
+        "snippet-card-block-variants",
+        "chips-variants"
+      ],
+      "weight": 332.11333333333334,
+      "id": "2026-10-26T00-37-08-563Z-fixtures-s1"
+    },
+    {
+      "caseIds": [
+        "bold-text-variants",
+        "image-text-variants",
+        "overview-card-block-variants",
+        "option-cards-variants",
+        "separator-variants"
+      ],
+      "weight": 361.65999999999997,
+      "id": "2026-10-26T00-37-08-563Z-fixtures-s2"
+    },
+    {
+      "caseIds": [
+        "text-variants",
+        "visual-card-block-variants",
+        "icon-button-variants",
+        "option-card-variants",
+        "context-card-item-variants"
+      ],
+      "weight": 360.7333333333333,
+      "id": "2026-10-26T00-37-08-563Z-fixtures-s3"
+    },
+    {
+      "caseIds": [
+        "composite-card-block-variants",
+        "tag-variants",
+        "context-card-block-variants",
+        "chip-item-variants"
+      ],
+      "weight": 300.52,
+      "id": "2026-10-26T00-37-08-563Z-fixtures-s4"
+    }
+  ]
+}

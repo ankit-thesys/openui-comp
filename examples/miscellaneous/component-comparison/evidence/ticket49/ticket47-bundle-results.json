@@ -1,0 +1,14 @@
+{
+  "component": {
+    "inputCount": 4356,
+    "chatLibraryInputs": 0,
+    "reactLangInputs": 0,
+    "bytes": 1846973
+  },
+  "library": {
+    "inputCount": 4489,
+    "chatLibraryInputs": 126,
+    "reactLangInputs": 1,
+    "bytes": 9023259
+  }
+}

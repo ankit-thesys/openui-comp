@@ -1,0 +1,7 @@
+{
+  "directCore": "/Users/ankitdas/.codex/worktrees/component-comparison/openui/examples/miscellaneous/component-comparison/node_modules/@openuidev/react-components/dist/index.cjs",
+  "kitCore": "/Users/ankitdas/.codex/worktrees/component-comparison/openui/examples/miscellaneous/component-comparison/node_modules/@openuidev/react-components/dist/index.cjs",
+  "shared": true,
+  "oldKitIdentity": "MODULE_NOT_FOUND",
+  "note": "Actual installed resolution; browser context checks are separately retained producer evidence."
+}

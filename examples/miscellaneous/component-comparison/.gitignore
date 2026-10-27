@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.artifacts/
+.generated/
+.env*
+!.env.example
+.test-results/
+
+.bench-runs/
+.bench-cases/
+
+.bench-logs/
+
+.bench-investigations/

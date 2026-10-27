@@ -1,0 +1,59 @@
+{
+  "source": "5e09b37c04a1a3be05b9447cf8b9effaf33a331f",
+  "packageTree": "2c31eb88b05349b48717c389deab040ec532fc7f",
+  "finalArchiveSHA256": "b09f11e6aa2809f42f7aee5eb2c23bd7bf6c58904d4a935918044f039ff7dd71",
+  "testedArchiveSHA256": "ec56caf237bcd0355e1f87cae2ac6716a2d10ad789169069a53b82ad18758431",
+  "baselineArchiveSHA256": "d2a4b51255d745f41a7b51820ac0ec55ef5db8ff2b6f8d91ab43bade7766d037",
+  "workerChecks": 1908,
+  "allPassed": true,
+  "phases": [
+    {
+      "phase": "families",
+      "file": "results.json",
+      "checks": 648,
+      "passes": 648,
+      "rawSHA256": "2b132b7c13800ff665baaad0f745570e355220d1c0754e04fabc8bba0ed87f79"
+    },
+    {
+      "phase": "focused-family",
+      "file": "extra-results.json",
+      "checks": 319,
+      "passes": 319,
+      "rawSHA256": "2f02e9cdba7f03386e7d11303b3ecd3e3072141db2c575e0fcf2282e61e4a2ca"
+    },
+    {
+      "phase": "signed-zero",
+      "file": "signed-results.json",
+      "checks": 132,
+      "passes": 132,
+      "rawSHA256": "70b9de419df4438cc6c5cac8a8843d4a2a69690470e4b62fa14208f570a20a24"
+    },
+    {
+      "phase": "motion-print",
+      "file": "motion-results.json",
+      "checks": 180,
+      "passes": 180,
+      "rawSHA256": "9bf7308fb172fc73440abcbb438c6abaafdfdc1cc7590e620cc46fd51fa4fc2a"
+    },
+    {
+      "phase": "shared",
+      "file": "shared-results.json",
+      "checks": 548,
+      "passes": 548,
+      "rawSHA256": "9fb75f2fd530c577f79048bced40c03b42fb4b1bcddaa55c8e866d1d4395b215"
+    },
+    {
+      "phase": "optimized-lazy",
+      "file": "small-results.json",
+      "checks": 81,
+      "passes": 81,
+      "rawSHA256": "c0540c1e7cff5bcd5e4904c5bb107b75515fb3a779696811f57da6a044325680"
+    }
+  ],
+  "publicChartEntries": 19,
+  "canonicalSites": 25,
+  "keyframesPreserved": 9,
+  "independentChartAcceptance": "pending",
+  "extraGates": "No broadSSR/streaming/performance/memory/soak/release claim",
+  "sourceScope": "19 chart style modules +README only"
+}

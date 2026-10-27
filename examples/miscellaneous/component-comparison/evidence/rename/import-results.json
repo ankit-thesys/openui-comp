@@ -1,0 +1,46 @@
+{
+  "coreESM": 166,
+  "coreCJS": 166,
+  "chatESM": 3,
+  "chatCJS": 3,
+  "libsESM": 5,
+  "libsCJS": 5,
+  "publicTypesImported": 194,
+  "boundaries": [
+    {
+      "specifier": "@openuidev/react-ui-core",
+      "error": "MODULE_NOT_FOUND"
+    },
+    {
+      "specifier": "@openuidev/react-components/internal",
+      "error": "ERR_PACKAGE_PATH_NOT_EXPORTED"
+    },
+    {
+      "specifier": "@openuidev/react-components/components/Button",
+      "error": "ERR_PACKAGE_PATH_NOT_EXPORTED"
+    },
+    {
+      "specifier": "@openuidev/react-components/dist/index.mjs",
+      "error": "ERR_PACKAGE_PATH_NOT_EXPORTED"
+    },
+    {
+      "specifier": "@openuidev/react-components/src/index.ts",
+      "error": "ERR_PACKAGE_PATH_NOT_EXPORTED"
+    },
+    {
+      "specifier": "@openuidev/kits",
+      "error": "ERR_PACKAGE_PATH_NOT_EXPORTED"
+    },
+    {
+      "specifier": "@openuidev/kits/internal",
+      "error": "ERR_PACKAGE_PATH_NOT_EXPORTED"
+    },
+    {
+      "specifier": "@openuidev/kits/dist/react/chat/index.mjs",
+      "error": "ERR_PACKAGE_PATH_NOT_EXPORTED"
+    }
+  ],
+  "coreResolved": "/private/tmp/react-components-rename-consumer/node_modules/@openuidev/react-components/dist/index.cjs",
+  "oldAliasAbsent": true,
+  "note": "Native imports prove module/package consumption, not SSR/hydration support."
+}

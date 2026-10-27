@@ -1,0 +1,11 @@
+[
+  {
+    "file": "packages/react-components/src/components/Charts/AreaChart/areaChart.styles.ts",
+    "family": "AreaChart",
+    "symbol": "rootClass",
+    "line": 17,
+    "bodySHA256": "1d0d6826b90bbac3fabc6258c0c8421f10d12f07350d5523a84fada20c3801ac",
+    "body": "\n  ${cartesianContainer}\n  & :where(.openui-area-chart-container-inner) {\n    ${cartesianContainerInner}\n  }\n  & :where(.openui-area-chart-y-axis-container) {\n    ${cartesianYAxisContainer}\n  }\n  & :where(.openui-area-chart-main-container) {\n    ${cartesianMainContainer}\n  }\n  & line:where(.openui-area-chart-grid line) {\n    ${gridLine}\n  }\n  & line.openui-grid-zero-line:where(.openui-area-chart-grid line) {\n    ${zeroGridLine}\n  }\n  & :where(.openui-area-chart-y-tick, .openui-area-chart-x-tick, .openui-area-chart-x-tick-angled) {\n    ${svgTickLabel}\n  }\n  & :where(.openui-area-chart-crosshair-line) {\n    ${crosshairLine}\n  }\n  & :where(.openui-area-chart-active-dot-outer) {\n    ${activeDotOuter}\n  }\n  & :where(.openui-area-chart-active-dot-inner) {\n    ${activeDotInner}\n  }\n  & :where(.openui-area-chart-area-path) {\n    transition: opacity 0.2s ease;\n  }\n  & :where(.openui-area-chart-area-line) {\n    fill: none;\n    stroke-width: 2;\n  }\n  @media (prefers-reduced-motion: no-preference) {\n    & :where(.openui-area-chart-area-line--animated) {\n      stroke-dasharray: var(--path-length);\n      stroke-dashoffset: var(--path-length);\n      animation: ${drawLineAnimation} 1s ease-out forwards;\n    }\n    & :where(.openui-area-chart-area-path--animated) {\n      opacity: 0;\n      animation: ${fadeAppearAnimation} 0.6s ease-out 0.4s forwards;\n    }\n  }\n",
+    "hook": "openui-area-chart-root"
+  }
+]

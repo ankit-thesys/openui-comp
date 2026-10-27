@@ -1,0 +1,11 @@
+{
+  "releasedUTC": "2026-10-26T10:19:22.386212+00:00",
+  "browserReleased": true,
+  "finalBrowserProcess": "named-guards.mjs completed; browser.close awaited in finally",
+  "finalGuards": {
+    "cells": 68,
+    "passed": 68
+  },
+  "labServer4188": "Untouched",
+  "scope": "Six literal important removals eligible; broader styling parity not approved. Two unreachable tokens and palette/selector coverage gaps remain explicit."
+}

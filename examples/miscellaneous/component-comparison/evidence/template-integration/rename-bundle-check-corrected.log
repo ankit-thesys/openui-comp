@@ -1,0 +1,5 @@
+[
+  { name: 'button', bytes: 1109209, gzipBytes: 876692 },
+  { name: 'unused', bytes: 1100830, gzipBytes: 874274 },
+  { name: 'all', bytes: 4077710, gzipBytes: 1700325 }
+]

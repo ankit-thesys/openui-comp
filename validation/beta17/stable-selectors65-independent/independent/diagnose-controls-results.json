@@ -1,0 +1,84 @@
+{
+  "browser": "156.0.8078.48",
+  "checks": [],
+  "observations": [
+    {
+      "arm": "baseline",
+      "count": 34,
+      "toggle": [
+        {
+          "tag": "DIV",
+          "text": "Old openui-toggle-item",
+          "cls": "openui-toggle-item",
+          "state": null
+        },
+        {
+          "tag": "DIV",
+          "text": "Host openui-toggle-item",
+          "cls": "openui-toggle-item",
+          "state": null
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Toggle one",
+          "cls": "go3769492925 openui-toggle-item",
+          "state": "on"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Toggle two",
+          "cls": "go3769492925 openui-toggle-item",
+          "state": "off"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Disabled toggle",
+          "cls": "go3769492925 openui-toggle-item",
+          "state": "off"
+        }
+      ]
+    },
+    {
+      "radioCount": 1
+    },
+    {
+      "arm": "candidate",
+      "count": 34,
+      "toggle": [
+        {
+          "tag": "DIV",
+          "text": "Old openui-toggle-item",
+          "cls": "openui-toggle-item",
+          "state": null
+        },
+        {
+          "tag": "DIV",
+          "text": "Host openui-toggle-item",
+          "cls": "openui-toggle-item",
+          "state": null
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Toggle one",
+          "cls": "openui-toggle-item-root openui-toggle-item",
+          "state": "on"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Toggle two",
+          "cls": "openui-toggle-item-root openui-toggle-item",
+          "state": "off"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Disabled toggle",
+          "cls": "openui-toggle-item-root openui-toggle-item",
+          "state": "off"
+        }
+      ]
+    },
+    {
+      "radioCount": 1
+    }
+  ]
+}

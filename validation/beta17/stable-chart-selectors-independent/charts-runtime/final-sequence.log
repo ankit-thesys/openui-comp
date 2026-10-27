@@ -1,0 +1,12 @@
+START unique 2026-10-27T16:48:47.727Z
+{"phase":"unique","checks":45,"passed":45,"failed":[],"error":null}
+END unique 2026-10-27T16:49:40.416Z
+START motion 2026-10-27T16:49:40.416Z
+{"phase":"motion","checks":20,"passed":20,"failed":[],"error":null}
+END motion 2026-10-27T16:49:55.416Z
+START small 2026-10-27T16:49:55.416Z
+{"phase":"small","checks":66,"passed":66,"failed":[],"error":null}
+END small 2026-10-27T16:50:43.712Z
+START signed-correction 2026-10-27T16:50:43.712Z
+{"phase":"signed-correction","checks":30,"passed":30,"failed":[],"error":null}
+END signed-correction 2026-10-27T16:51:30.091Z

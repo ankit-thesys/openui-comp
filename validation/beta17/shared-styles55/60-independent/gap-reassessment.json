@@ -1,0 +1,1932 @@
+{
+  "method": "Corrected assertion evaluated against preserved independent raw DOM observations; no browser rerun or production change",
+  "rawResultsSHA256": "24765fde073eb2a65c6bace06a9aa91b2d9e513f666e18e59af4623350fbcef0",
+  "rawChecks": 340,
+  "initialValidPasses": 220,
+  "rawInvalidAssertionFailures": 120,
+  "correctedGapAssertions": [
+    {
+      "name": "plain/before/baseline/gap-root-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/baseline/gap-root-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/baseline/gap-root-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/baseline/gap-root-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/baseline/gap-root-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/baseline/gap-root-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/baseline/gap-root-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/baseline/gap-root-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/baseline/gap-root-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/baseline/gap-root-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/baseline/gap-container-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/baseline/gap-container-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/baseline/gap-container-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/baseline/gap-container-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/baseline/gap-container-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/baseline/gap-container-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/baseline/gap-container-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/baseline/gap-container-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/baseline/gap-container-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/baseline/gap-container-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/candidate/gap-root-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/candidate/gap-root-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/candidate/gap-root-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/candidate/gap-root-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/candidate/gap-root-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/candidate/gap-root-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/candidate/gap-root-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/candidate/gap-root-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/candidate/gap-root-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/candidate/gap-root-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/candidate/gap-container-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/candidate/gap-container-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/candidate/gap-container-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/candidate/gap-container-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/candidate/gap-container-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/candidate/gap-container-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/candidate/gap-container-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/candidate/gap-container-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/before/candidate/gap-container-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/before/candidate/gap-container-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/baseline/gap-root-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/baseline/gap-root-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/baseline/gap-root-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/baseline/gap-root-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/baseline/gap-root-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/baseline/gap-root-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/baseline/gap-root-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/baseline/gap-root-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/baseline/gap-root-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/baseline/gap-root-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/baseline/gap-container-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/baseline/gap-container-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/baseline/gap-container-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/baseline/gap-container-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/baseline/gap-container-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/baseline/gap-container-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/baseline/gap-container-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/baseline/gap-container-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/baseline/gap-container-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/baseline/gap-container-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/candidate/gap-root-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/candidate/gap-root-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/candidate/gap-root-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/candidate/gap-root-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/candidate/gap-root-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/candidate/gap-root-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/candidate/gap-root-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/candidate/gap-root-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/candidate/gap-root-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/candidate/gap-root-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/candidate/gap-container-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/candidate/gap-container-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/candidate/gap-container-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/candidate/gap-container-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/candidate/gap-container-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/candidate/gap-container-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/candidate/gap-container-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/candidate/gap-container-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "plain/after/candidate/gap-container-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "plain/after/candidate/gap-container-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/baseline/gap-root-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/baseline/gap-root-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/baseline/gap-root-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/baseline/gap-root-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/baseline/gap-root-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/baseline/gap-root-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/baseline/gap-root-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/baseline/gap-root-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/baseline/gap-root-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/baseline/gap-root-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/baseline/gap-container-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/baseline/gap-container-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/baseline/gap-container-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/baseline/gap-container-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/baseline/gap-container-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/baseline/gap-container-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/baseline/gap-container-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/baseline/gap-container-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/baseline/gap-container-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/baseline/gap-container-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/candidate/gap-root-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/candidate/gap-root-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/candidate/gap-root-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/candidate/gap-root-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/candidate/gap-root-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/candidate/gap-root-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/candidate/gap-root-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/candidate/gap-root-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/candidate/gap-root-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/candidate/gap-root-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/candidate/gap-container-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/candidate/gap-container-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/candidate/gap-container-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/candidate/gap-container-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/candidate/gap-container-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/candidate/gap-container-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/candidate/gap-container-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/candidate/gap-container-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/before/candidate/gap-container-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/before/candidate/gap-container-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/baseline/gap-root-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/baseline/gap-root-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/baseline/gap-root-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/baseline/gap-root-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/baseline/gap-root-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/baseline/gap-root-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/baseline/gap-root-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/baseline/gap-root-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/baseline/gap-root-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/baseline/gap-root-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/baseline/gap-container-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/baseline/gap-container-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/baseline/gap-container-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/baseline/gap-container-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/baseline/gap-container-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/baseline/gap-container-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/baseline/gap-container-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/baseline/gap-container-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/baseline/gap-container-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/baseline/gap-container-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/candidate/gap-root-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/candidate/gap-root-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/candidate/gap-root-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/candidate/gap-root-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/candidate/gap-root-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/candidate/gap-root-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/candidate/gap-root-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/candidate/gap-root-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/candidate/gap-root-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/candidate/gap-root-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/candidate/gap-container-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/candidate/gap-container-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/candidate/gap-container-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/candidate/gap-container-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/candidate/gap-container-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/candidate/gap-container-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/candidate/gap-container-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/candidate/gap-container-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind3/after/candidate/gap-container-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind3/after/candidate/gap-container-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/baseline/gap-root-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/baseline/gap-root-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/baseline/gap-root-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/baseline/gap-root-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/baseline/gap-root-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/baseline/gap-root-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/baseline/gap-root-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/baseline/gap-root-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/baseline/gap-root-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/baseline/gap-root-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/baseline/gap-container-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/baseline/gap-container-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/baseline/gap-container-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/baseline/gap-container-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/baseline/gap-container-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/baseline/gap-container-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/baseline/gap-container-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/baseline/gap-container-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/baseline/gap-container-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/baseline/gap-container-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/candidate/gap-root-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/candidate/gap-root-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/candidate/gap-root-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/candidate/gap-root-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/candidate/gap-root-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/candidate/gap-root-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/candidate/gap-root-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/candidate/gap-root-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/candidate/gap-root-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/candidate/gap-root-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/candidate/gap-container-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/candidate/gap-container-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/candidate/gap-container-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/candidate/gap-container-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/candidate/gap-container-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/candidate/gap-container-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/candidate/gap-container-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/candidate/gap-container-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/before/candidate/gap-container-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/before/candidate/gap-container-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/baseline/gap-root-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/baseline/gap-root-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/baseline/gap-root-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/baseline/gap-root-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/baseline/gap-root-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/baseline/gap-root-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/baseline/gap-root-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/baseline/gap-root-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/baseline/gap-root-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/baseline/gap-root-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/baseline/gap-container-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/baseline/gap-container-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/baseline/gap-container-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/baseline/gap-container-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/baseline/gap-container-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/baseline/gap-container-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/baseline/gap-container-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/baseline/gap-container-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/baseline/gap-container-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/baseline/gap-container-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/candidate/gap-root-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/candidate/gap-root-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/candidate/gap-root-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/candidate/gap-root-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/candidate/gap-root-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/candidate/gap-root-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/candidate/gap-root-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/candidate/gap-root-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/candidate/gap-root-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/candidate/gap-root-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/candidate/gap-container-remove/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/candidate/gap-container-remove",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/candidate/gap-container-valid/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/candidate/gap-container-valid",
+      "observedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "expectedGap": [
+        "21px",
+        "21px",
+        "21px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/candidate/gap-container-initial/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/candidate/gap-container-initial",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/candidate/gap-container-unset/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/candidate/gap-container-unset",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    },
+    {
+      "name": "tailwind4/after/candidate/gap-container-inherit/correct-three-root-selection",
+      "pass": true,
+      "rawCheck": "tailwind4/after/candidate/gap-container-inherit",
+      "observedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "expectedGap": [
+        "12px",
+        "8px",
+        "8px"
+      ],
+      "excludedProbeButtonGap": "6px"
+    }
+  ],
+  "correctedPasses": 120,
+  "failures": [],
+  "validAssessedChecks": 340
+}

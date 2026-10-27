@@ -1,0 +1,16 @@
+{
+  "ticket": 58,
+  "disposition": "examined; broad fallback deletion deferred by explicit user decision",
+  "decision": "Preserve behavior; retain affected fallbacks.",
+  "issueClosed": false,
+  "sourceCommit": "50df8768157c5e76abda45bf39098ec4b87fa702",
+  "sourceTreeClean": true,
+  "retainedOccurrences": 1444,
+  "worker1Occurrences": 1441,
+  "worker2Occurrences": 3,
+  "reason": "Clearing an inherited custom property with a legal CSS-wide keyword can invoke the existing local var() fallback. Root defaults do not preserve that behavior after deletion.",
+  "evidence": "/private/tmp/openui-styles58-evidence/button-corrected-results.json",
+  "failedCandidateSHA256": "cd0782d738a199d155e25ad634129c2b18efc2f33137e1d3c29f90252cfdef1d",
+  "implementationRequired": false,
+  "downstream": "Ticket60 consumes this resolved disposition; it does not wait for broad fallback deletion. Ticket59 is base-only and retains its three gap fallbacks."
+}

@@ -1,0 +1,68 @@
+{
+  "releasedAt": "2026-10-26T12:31:00Z",
+  "status": "RELEASED: all four runner Chrome instances closed in finally; worker will not launch browsers until returned",
+  "candidate": "cf1a8a88123b9a577c9cb43ae69d857ea6242f11",
+  "runRoot": "/Users/ankitdas/.codex/worktrees/component-comparison/openui/examples/miscellaneous/component-comparison/.bench-runs",
+  "runIds": [
+    "2026-10-26-integrated-cf1-s1",
+    "2026-10-26-integrated-cf1-s2",
+    "2026-10-26-integrated-cf1-s3",
+    "2026-10-26-integrated-cf1-s4"
+  ],
+  "artifactHashes": "../../template-integration/candidate.json",
+  "runHashes": "summary.json sourceRuns[].sha256",
+  "runtimeHashes": "Each original run.json provenance.bundleFiles; frozen runtime under each run/runtime",
+  "summary": {
+    "expected": 12450,
+    "executed": 12450,
+    "recorded": 12450,
+    "complete": true,
+    "recordedComplete": true,
+    "counts": {
+      "Pass": 9154,
+      "Fail": 86,
+      "Review": 30,
+      "Known issue": 3180,
+      "Not covered": 0,
+      "Not applicable": 0
+    },
+    "verdict": "Fail"
+  },
+  "deltaVsBaseline": {
+    "Pass": 3,
+    "Fail": 0,
+    "Review": -1,
+    "Known issue": -2
+  },
+  "newlyFailedCells": [
+    {
+      "cell": "horizontal-string-height-known--plain--768--dark--instant",
+      "old": "Review",
+      "new": "Fail",
+      "oldSourceRun": "2026-10-26T00-20-29-133Z-b475d340",
+      "newSourceRun": "2026-10-26-integrated-cf1-s2"
+    },
+    {
+      "cell": "horizontal-string-height-known--plain--1280--dark--instant",
+      "old": "Review",
+      "new": "Fail",
+      "oldSourceRun": "2026-10-26T00-20-29-133Z-b475d340",
+      "newSourceRun": "2026-10-26-integrated-cf1-s2"
+    },
+    {
+      "cell": "horizontal-string-height-known--tailwind4-before--1280--light--instant",
+      "old": "Review",
+      "new": "Fail",
+      "oldSourceRun": "2026-10-26T00-20-29-133Z-b475d340",
+      "newSourceRun": "2026-10-26-integrated-cf1-s2"
+    },
+    {
+      "cell": "horizontal-string-height-known--tailwind4-after--768--light--instant",
+      "old": "Review",
+      "new": "Fail",
+      "oldSourceRun": "2026-10-26T00-20-29-133Z-b475d340",
+      "newSourceRun": "2026-10-26-integrated-cf1-s2"
+    }
+  ],
+  "classification": "All four newly failed cells belong to the same inherited HorizontalBar string-height instability family. Strict failures remain unresolved; bounded verifier audit pending. No new failed family elsewhere. Screenshot changes preserved; no claim of regression-free behavior."
+}

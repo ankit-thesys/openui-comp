@@ -1,0 +1,16 @@
+[
+  {
+    "arm": "baseline",
+    "type": "integration",
+    "goober": [
+      "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js"
+    ]
+  },
+  {
+    "arm": "candidate",
+    "type": "integration",
+    "goober": [
+      "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js"
+    ]
+  }
+]

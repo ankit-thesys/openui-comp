@@ -1,0 +1,4 @@
+# Original cold/lazy fixture defects retained
+The first boot run uses `window.closed` as a callback counter. Chrome exposes that existing Window property with a getter only, producing the same TypeError in both arms. This is an independent harness mistake, not a package error. Correct the private fixture counter to `window.independentModalClosed` and rebuild both arms with unchanged existing esbuild tooling; preserve original fixture, output bundles, logs, and raw results.
+The first 215-token assertion converted camel case but omitted the documented hyphen before digits (e.g. space3xs). Correct only the expectation mapping to match the existing public token naming rule; preserve initial assertions.
+Rerun the bounded boot phase only after the active serialized browser run closes. Rebind rebuilt inputs and output hashes. No product code or accepted baseline is changed.

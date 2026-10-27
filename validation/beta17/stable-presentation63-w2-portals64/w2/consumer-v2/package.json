@@ -1,0 +1,13 @@
+{
+  "name": "openui-selectors-w2-consumer-v2",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@openuidev/react-components": "file:/private/tmp/openui-selectors-w2-evidence/candidate-v2/openuidev-react-components-0.0.0-beta.0.tgz",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "goober": "2.1.19",
+    "zod": "4.4.3",
+    "zustand": "4.5.7"
+  }
+}

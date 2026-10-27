@@ -1,0 +1,823 @@
+[
+  {
+    "arm": "baseline",
+    "type": "integration",
+    "goober": [
+      "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js"
+    ]
+  },
+  {
+    "arm": "candidate",
+    "type": "integration",
+    "goober": [
+      "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js"
+    ]
+  },
+  {
+    "type": "small",
+    "name": "button",
+    "goober": [
+      {
+        "file": "../small-button/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      }
+    ],
+    "defaults": [
+      {
+        "file": "../small-button/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+final+openuidev-react-components-0.0.0-beta.0.tgz_@_a5231e580c01b5a0abe49529f8d1dfa9/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 317
+      }
+    ],
+    "unrelatedJS": [],
+    "outputs": [
+      {
+        "file": "../small-button/stdin.js",
+        "bytes": 224302
+      },
+      {
+        "file": "../small-button/KaTeX_AMS-Regular-U6PRYMIZ.woff2",
+        "bytes": 28076
+      },
+      {
+        "file": "../small-button/KaTeX_AMS-Regular-CYEKBG2K.woff",
+        "bytes": 33516
+      },
+      {
+        "file": "../small-button/KaTeX_AMS-Regular-JKX5W2C4.ttf",
+        "bytes": 63632
+      },
+      {
+        "file": "../small-button/KaTeX_Caligraphic-Bold-5QL5CMTE.woff2",
+        "bytes": 6912
+      },
+      {
+        "file": "../small-button/KaTeX_Caligraphic-Bold-WZ3QSGD3.woff",
+        "bytes": 7716
+      },
+      {
+        "file": "../small-button/KaTeX_Caligraphic-Bold-ZTS3R3HK.ttf",
+        "bytes": 12368
+      },
+      {
+        "file": "../small-button/KaTeX_Caligraphic-Regular-KX5MEWCF.woff2",
+        "bytes": 6908
+      },
+      {
+        "file": "../small-button/KaTeX_Caligraphic-Regular-3LKEU76G.woff",
+        "bytes": 7656
+      },
+      {
+        "file": "../small-button/KaTeX_Caligraphic-Regular-A7XRTZ5Q.ttf",
+        "bytes": 12344
+      },
+      {
+        "file": "../small-button/KaTeX_Fraktur-Bold-2QVFK6NQ.woff2",
+        "bytes": 11348
+      },
+      {
+        "file": "../small-button/KaTeX_Fraktur-Bold-T4SWXBMT.woff",
+        "bytes": 13296
+      },
+      {
+        "file": "../small-button/KaTeX_Fraktur-Bold-WGHVTYOR.ttf",
+        "bytes": 19584
+      },
+      {
+        "file": "../small-button/KaTeX_Fraktur-Regular-2PEIFJSJ.woff2",
+        "bytes": 11316
+      },
+      {
+        "file": "../small-button/KaTeX_Fraktur-Regular-PQMHCIK6.woff",
+        "bytes": 13208
+      },
+      {
+        "file": "../small-button/KaTeX_Fraktur-Regular-5U4OPH2X.ttf",
+        "bytes": 19572
+      },
+      {
+        "file": "../small-button/KaTeX_Main-Bold-YP5VVQRP.woff2",
+        "bytes": 25324
+      },
+      {
+        "file": "../small-button/KaTeX_Main-Bold-2GA4IZIN.woff",
+        "bytes": 29912
+      },
+      {
+        "file": "../small-button/KaTeX_Main-Bold-W5FBVCZM.ttf",
+        "bytes": 51336
+      },
+      {
+        "file": "../small-button/KaTeX_Main-BoldItalic-N4V3DX7S.woff2",
+        "bytes": 16780
+      },
+      {
+        "file": "../small-button/KaTeX_Main-BoldItalic-4P4C7HJH.woff",
+        "bytes": 19412
+      },
+      {
+        "file": "../small-button/KaTeX_Main-BoldItalic-ODMLBJJQ.ttf",
+        "bytes": 32968
+      },
+      {
+        "file": "../small-button/KaTeX_Main-Italic-RELBIK7M.woff2",
+        "bytes": 16988
+      },
+      {
+        "file": "../small-button/KaTeX_Main-Italic-SASNQFN2.woff",
+        "bytes": 19676
+      },
+      {
+        "file": "../small-button/KaTeX_Main-Italic-I43T2HSR.ttf",
+        "bytes": 33580
+      },
+      {
+        "file": "../small-button/KaTeX_Main-Regular-ARRPAO67.woff2",
+        "bytes": 26272
+      },
+      {
+        "file": "../small-button/KaTeX_Main-Regular-P5I74A2A.woff",
+        "bytes": 30772
+      },
+      {
+        "file": "../small-button/KaTeX_Main-Regular-W74P5G27.ttf",
+        "bytes": 53580
+      },
+      {
+        "file": "../small-button/KaTeX_Math-BoldItalic-K4WTGH3J.woff2",
+        "bytes": 16400
+      },
+      {
+        "file": "../small-button/KaTeX_Math-BoldItalic-6EBV3DK5.woff",
+        "bytes": 18668
+      },
+      {
+        "file": "../small-button/KaTeX_Math-BoldItalic-VB447A4D.ttf",
+        "bytes": 31196
+      },
+      {
+        "file": "../small-button/KaTeX_Math-Italic-6KGCHLFN.woff2",
+        "bytes": 16440
+      },
+      {
+        "file": "../small-button/KaTeX_Math-Italic-KKK3USB2.woff",
+        "bytes": 18748
+      },
+      {
+        "file": "../small-button/KaTeX_Math-Italic-SON4MRCA.ttf",
+        "bytes": 31308
+      },
+      {
+        "file": "../small-button/KaTeX_SansSerif-Bold-RRNVJFFW.woff2",
+        "bytes": 12216
+      },
+      {
+        "file": "../small-button/KaTeX_SansSerif-Bold-X5M5EMOD.woff",
+        "bytes": 14408
+      },
+      {
+        "file": "../small-button/KaTeX_SansSerif-Bold-STQ6RXC7.ttf",
+        "bytes": 24504
+      },
+      {
+        "file": "../small-button/KaTeX_SansSerif-Italic-HMPFTM52.woff2",
+        "bytes": 12028
+      },
+      {
+        "file": "../small-button/KaTeX_SansSerif-Italic-PSN4QKYX.woff",
+        "bytes": 14112
+      },
+      {
+        "file": "../small-button/KaTeX_SansSerif-Italic-WTBAZBGY.ttf",
+        "bytes": 22364
+      },
+      {
+        "file": "../small-button/KaTeX_SansSerif-Regular-XIQ62X4E.woff2",
+        "bytes": 10344
+      },
+      {
+        "file": "../small-button/KaTeX_SansSerif-Regular-OQCII6EP.woff",
+        "bytes": 12316
+      },
+      {
+        "file": "../small-button/KaTeX_SansSerif-Regular-2TL3USAE.ttf",
+        "bytes": 19436
+      },
+      {
+        "file": "../small-button/KaTeX_Script-Regular-APUWIHLP.woff2",
+        "bytes": 9644
+      },
+      {
+        "file": "../small-button/KaTeX_Script-Regular-A5IFOEBS.woff",
+        "bytes": 10588
+      },
+      {
+        "file": "../small-button/KaTeX_Script-Regular-72OLXYNA.ttf",
+        "bytes": 16648
+      },
+      {
+        "file": "../small-button/KaTeX_Size1-Regular-5LRUTBFT.woff2",
+        "bytes": 5468
+      },
+      {
+        "file": "../small-button/KaTeX_Size1-Regular-4HRHTS65.woff",
+        "bytes": 6496
+      },
+      {
+        "file": "../small-button/KaTeX_Size1-Regular-7K6AASVL.ttf",
+        "bytes": 12228
+      },
+      {
+        "file": "../small-button/KaTeX_Size2-Regular-LELKET5D.woff2",
+        "bytes": 5208
+      },
+      {
+        "file": "../small-button/KaTeX_Size2-Regular-K5ZHAIS6.woff",
+        "bytes": 6188
+      },
+      {
+        "file": "../small-button/KaTeX_Size2-Regular-222HN3GT.ttf",
+        "bytes": 11508
+      },
+      {
+        "file": "../small-button/KaTeX_Size3-Regular-WQRQ47UD.woff2",
+        "bytes": 3624
+      },
+      {
+        "file": "../small-button/KaTeX_Size3-Regular-TLFPAHDE.woff",
+        "bytes": 4420
+      },
+      {
+        "file": "../small-button/KaTeX_Size3-Regular-UFCO6WCA.ttf",
+        "bytes": 7588
+      },
+      {
+        "file": "../small-button/KaTeX_Size4-Regular-CDMV7U5C.woff2",
+        "bytes": 4928
+      },
+      {
+        "file": "../small-button/KaTeX_Size4-Regular-PKMWZHNC.woff",
+        "bytes": 5980
+      },
+      {
+        "file": "../small-button/KaTeX_Size4-Regular-7PGNVPQK.ttf",
+        "bytes": 10364
+      },
+      {
+        "file": "../small-button/KaTeX_Typewriter-Regular-VBYJ4NRC.woff2",
+        "bytes": 13568
+      },
+      {
+        "file": "../small-button/KaTeX_Typewriter-Regular-MJMFSK64.woff",
+        "bytes": 16028
+      },
+      {
+        "file": "../small-button/KaTeX_Typewriter-Regular-3F5K6SQ6.ttf",
+        "bytes": 27556
+      },
+      {
+        "file": "../small-button/stdin.css",
+        "bytes": 24235
+      }
+    ]
+  },
+  {
+    "type": "small",
+    "name": "input",
+    "goober": [
+      {
+        "file": "../small-input/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      }
+    ],
+    "defaults": [
+      {
+        "file": "../small-input/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+final+openuidev-react-components-0.0.0-beta.0.tgz_@_a5231e580c01b5a0abe49529f8d1dfa9/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 317
+      }
+    ],
+    "unrelatedJS": [],
+    "outputs": [
+      {
+        "file": "../small-input/stdin.js",
+        "bytes": 220382
+      },
+      {
+        "file": "../small-input/KaTeX_AMS-Regular-U6PRYMIZ.woff2",
+        "bytes": 28076
+      },
+      {
+        "file": "../small-input/KaTeX_AMS-Regular-CYEKBG2K.woff",
+        "bytes": 33516
+      },
+      {
+        "file": "../small-input/KaTeX_AMS-Regular-JKX5W2C4.ttf",
+        "bytes": 63632
+      },
+      {
+        "file": "../small-input/KaTeX_Caligraphic-Bold-5QL5CMTE.woff2",
+        "bytes": 6912
+      },
+      {
+        "file": "../small-input/KaTeX_Caligraphic-Bold-WZ3QSGD3.woff",
+        "bytes": 7716
+      },
+      {
+        "file": "../small-input/KaTeX_Caligraphic-Bold-ZTS3R3HK.ttf",
+        "bytes": 12368
+      },
+      {
+        "file": "../small-input/KaTeX_Caligraphic-Regular-KX5MEWCF.woff2",
+        "bytes": 6908
+      },
+      {
+        "file": "../small-input/KaTeX_Caligraphic-Regular-3LKEU76G.woff",
+        "bytes": 7656
+      },
+      {
+        "file": "../small-input/KaTeX_Caligraphic-Regular-A7XRTZ5Q.ttf",
+        "bytes": 12344
+      },
+      {
+        "file": "../small-input/KaTeX_Fraktur-Bold-2QVFK6NQ.woff2",
+        "bytes": 11348
+      },
+      {
+        "file": "../small-input/KaTeX_Fraktur-Bold-T4SWXBMT.woff",
+        "bytes": 13296
+      },
+      {
+        "file": "../small-input/KaTeX_Fraktur-Bold-WGHVTYOR.ttf",
+        "bytes": 19584
+      },
+      {
+        "file": "../small-input/KaTeX_Fraktur-Regular-2PEIFJSJ.woff2",
+        "bytes": 11316
+      },
+      {
+        "file": "../small-input/KaTeX_Fraktur-Regular-PQMHCIK6.woff",
+        "bytes": 13208
+      },
+      {
+        "file": "../small-input/KaTeX_Fraktur-Regular-5U4OPH2X.ttf",
+        "bytes": 19572
+      },
+      {
+        "file": "../small-input/KaTeX_Main-Bold-YP5VVQRP.woff2",
+        "bytes": 25324
+      },
+      {
+        "file": "../small-input/KaTeX_Main-Bold-2GA4IZIN.woff",
+        "bytes": 29912
+      },
+      {
+        "file": "../small-input/KaTeX_Main-Bold-W5FBVCZM.ttf",
+        "bytes": 51336
+      },
+      {
+        "file": "../small-input/KaTeX_Main-BoldItalic-N4V3DX7S.woff2",
+        "bytes": 16780
+      },
+      {
+        "file": "../small-input/KaTeX_Main-BoldItalic-4P4C7HJH.woff",
+        "bytes": 19412
+      },
+      {
+        "file": "../small-input/KaTeX_Main-BoldItalic-ODMLBJJQ.ttf",
+        "bytes": 32968
+      },
+      {
+        "file": "../small-input/KaTeX_Main-Italic-RELBIK7M.woff2",
+        "bytes": 16988
+      },
+      {
+        "file": "../small-input/KaTeX_Main-Italic-SASNQFN2.woff",
+        "bytes": 19676
+      },
+      {
+        "file": "../small-input/KaTeX_Main-Italic-I43T2HSR.ttf",
+        "bytes": 33580
+      },
+      {
+        "file": "../small-input/KaTeX_Main-Regular-ARRPAO67.woff2",
+        "bytes": 26272
+      },
+      {
+        "file": "../small-input/KaTeX_Main-Regular-P5I74A2A.woff",
+        "bytes": 30772
+      },
+      {
+        "file": "../small-input/KaTeX_Main-Regular-W74P5G27.ttf",
+        "bytes": 53580
+      },
+      {
+        "file": "../small-input/KaTeX_Math-BoldItalic-K4WTGH3J.woff2",
+        "bytes": 16400
+      },
+      {
+        "file": "../small-input/KaTeX_Math-BoldItalic-6EBV3DK5.woff",
+        "bytes": 18668
+      },
+      {
+        "file": "../small-input/KaTeX_Math-BoldItalic-VB447A4D.ttf",
+        "bytes": 31196
+      },
+      {
+        "file": "../small-input/KaTeX_Math-Italic-6KGCHLFN.woff2",
+        "bytes": 16440
+      },
+      {
+        "file": "../small-input/KaTeX_Math-Italic-KKK3USB2.woff",
+        "bytes": 18748
+      },
+      {
+        "file": "../small-input/KaTeX_Math-Italic-SON4MRCA.ttf",
+        "bytes": 31308
+      },
+      {
+        "file": "../small-input/KaTeX_SansSerif-Bold-RRNVJFFW.woff2",
+        "bytes": 12216
+      },
+      {
+        "file": "../small-input/KaTeX_SansSerif-Bold-X5M5EMOD.woff",
+        "bytes": 14408
+      },
+      {
+        "file": "../small-input/KaTeX_SansSerif-Bold-STQ6RXC7.ttf",
+        "bytes": 24504
+      },
+      {
+        "file": "../small-input/KaTeX_SansSerif-Italic-HMPFTM52.woff2",
+        "bytes": 12028
+      },
+      {
+        "file": "../small-input/KaTeX_SansSerif-Italic-PSN4QKYX.woff",
+        "bytes": 14112
+      },
+      {
+        "file": "../small-input/KaTeX_SansSerif-Italic-WTBAZBGY.ttf",
+        "bytes": 22364
+      },
+      {
+        "file": "../small-input/KaTeX_SansSerif-Regular-XIQ62X4E.woff2",
+        "bytes": 10344
+      },
+      {
+        "file": "../small-input/KaTeX_SansSerif-Regular-OQCII6EP.woff",
+        "bytes": 12316
+      },
+      {
+        "file": "../small-input/KaTeX_SansSerif-Regular-2TL3USAE.ttf",
+        "bytes": 19436
+      },
+      {
+        "file": "../small-input/KaTeX_Script-Regular-APUWIHLP.woff2",
+        "bytes": 9644
+      },
+      {
+        "file": "../small-input/KaTeX_Script-Regular-A5IFOEBS.woff",
+        "bytes": 10588
+      },
+      {
+        "file": "../small-input/KaTeX_Script-Regular-72OLXYNA.ttf",
+        "bytes": 16648
+      },
+      {
+        "file": "../small-input/KaTeX_Size1-Regular-5LRUTBFT.woff2",
+        "bytes": 5468
+      },
+      {
+        "file": "../small-input/KaTeX_Size1-Regular-4HRHTS65.woff",
+        "bytes": 6496
+      },
+      {
+        "file": "../small-input/KaTeX_Size1-Regular-7K6AASVL.ttf",
+        "bytes": 12228
+      },
+      {
+        "file": "../small-input/KaTeX_Size2-Regular-LELKET5D.woff2",
+        "bytes": 5208
+      },
+      {
+        "file": "../small-input/KaTeX_Size2-Regular-K5ZHAIS6.woff",
+        "bytes": 6188
+      },
+      {
+        "file": "../small-input/KaTeX_Size2-Regular-222HN3GT.ttf",
+        "bytes": 11508
+      },
+      {
+        "file": "../small-input/KaTeX_Size3-Regular-WQRQ47UD.woff2",
+        "bytes": 3624
+      },
+      {
+        "file": "../small-input/KaTeX_Size3-Regular-TLFPAHDE.woff",
+        "bytes": 4420
+      },
+      {
+        "file": "../small-input/KaTeX_Size3-Regular-UFCO6WCA.ttf",
+        "bytes": 7588
+      },
+      {
+        "file": "../small-input/KaTeX_Size4-Regular-CDMV7U5C.woff2",
+        "bytes": 4928
+      },
+      {
+        "file": "../small-input/KaTeX_Size4-Regular-PKMWZHNC.woff",
+        "bytes": 5980
+      },
+      {
+        "file": "../small-input/KaTeX_Size4-Regular-7PGNVPQK.ttf",
+        "bytes": 10364
+      },
+      {
+        "file": "../small-input/KaTeX_Typewriter-Regular-VBYJ4NRC.woff2",
+        "bytes": 13568
+      },
+      {
+        "file": "../small-input/KaTeX_Typewriter-Regular-MJMFSK64.woff",
+        "bytes": 16028
+      },
+      {
+        "file": "../small-input/KaTeX_Typewriter-Regular-3F5K6SQ6.ttf",
+        "bytes": 27556
+      },
+      {
+        "file": "../small-input/stdin.css",
+        "bytes": 24235
+      }
+    ]
+  },
+  {
+    "type": "small",
+    "name": "combo",
+    "goober": [
+      {
+        "file": "../small-combo/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      }
+    ],
+    "defaults": [
+      {
+        "file": "../small-combo/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+final+openuidev-react-components-0.0.0-beta.0.tgz_@_a5231e580c01b5a0abe49529f8d1dfa9/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 317
+      }
+    ],
+    "unrelatedJS": [],
+    "outputs": [
+      {
+        "file": "../small-combo/stdin.js",
+        "bytes": 238179
+      },
+      {
+        "file": "../small-combo/KaTeX_AMS-Regular-U6PRYMIZ.woff2",
+        "bytes": 28076
+      },
+      {
+        "file": "../small-combo/KaTeX_AMS-Regular-CYEKBG2K.woff",
+        "bytes": 33516
+      },
+      {
+        "file": "../small-combo/KaTeX_AMS-Regular-JKX5W2C4.ttf",
+        "bytes": 63632
+      },
+      {
+        "file": "../small-combo/KaTeX_Caligraphic-Bold-5QL5CMTE.woff2",
+        "bytes": 6912
+      },
+      {
+        "file": "../small-combo/KaTeX_Caligraphic-Bold-WZ3QSGD3.woff",
+        "bytes": 7716
+      },
+      {
+        "file": "../small-combo/KaTeX_Caligraphic-Bold-ZTS3R3HK.ttf",
+        "bytes": 12368
+      },
+      {
+        "file": "../small-combo/KaTeX_Caligraphic-Regular-KX5MEWCF.woff2",
+        "bytes": 6908
+      },
+      {
+        "file": "../small-combo/KaTeX_Caligraphic-Regular-3LKEU76G.woff",
+        "bytes": 7656
+      },
+      {
+        "file": "../small-combo/KaTeX_Caligraphic-Regular-A7XRTZ5Q.ttf",
+        "bytes": 12344
+      },
+      {
+        "file": "../small-combo/KaTeX_Fraktur-Bold-2QVFK6NQ.woff2",
+        "bytes": 11348
+      },
+      {
+        "file": "../small-combo/KaTeX_Fraktur-Bold-T4SWXBMT.woff",
+        "bytes": 13296
+      },
+      {
+        "file": "../small-combo/KaTeX_Fraktur-Bold-WGHVTYOR.ttf",
+        "bytes": 19584
+      },
+      {
+        "file": "../small-combo/KaTeX_Fraktur-Regular-2PEIFJSJ.woff2",
+        "bytes": 11316
+      },
+      {
+        "file": "../small-combo/KaTeX_Fraktur-Regular-PQMHCIK6.woff",
+        "bytes": 13208
+      },
+      {
+        "file": "../small-combo/KaTeX_Fraktur-Regular-5U4OPH2X.ttf",
+        "bytes": 19572
+      },
+      {
+        "file": "../small-combo/KaTeX_Main-Bold-YP5VVQRP.woff2",
+        "bytes": 25324
+      },
+      {
+        "file": "../small-combo/KaTeX_Main-Bold-2GA4IZIN.woff",
+        "bytes": 29912
+      },
+      {
+        "file": "../small-combo/KaTeX_Main-Bold-W5FBVCZM.ttf",
+        "bytes": 51336
+      },
+      {
+        "file": "../small-combo/KaTeX_Main-BoldItalic-N4V3DX7S.woff2",
+        "bytes": 16780
+      },
+      {
+        "file": "../small-combo/KaTeX_Main-BoldItalic-4P4C7HJH.woff",
+        "bytes": 19412
+      },
+      {
+        "file": "../small-combo/KaTeX_Main-BoldItalic-ODMLBJJQ.ttf",
+        "bytes": 32968
+      },
+      {
+        "file": "../small-combo/KaTeX_Main-Italic-RELBIK7M.woff2",
+        "bytes": 16988
+      },
+      {
+        "file": "../small-combo/KaTeX_Main-Italic-SASNQFN2.woff",
+        "bytes": 19676
+      },
+      {
+        "file": "../small-combo/KaTeX_Main-Italic-I43T2HSR.ttf",
+        "bytes": 33580
+      },
+      {
+        "file": "../small-combo/KaTeX_Main-Regular-ARRPAO67.woff2",
+        "bytes": 26272
+      },
+      {
+        "file": "../small-combo/KaTeX_Main-Regular-P5I74A2A.woff",
+        "bytes": 30772
+      },
+      {
+        "file": "../small-combo/KaTeX_Main-Regular-W74P5G27.ttf",
+        "bytes": 53580
+      },
+      {
+        "file": "../small-combo/KaTeX_Math-BoldItalic-K4WTGH3J.woff2",
+        "bytes": 16400
+      },
+      {
+        "file": "../small-combo/KaTeX_Math-BoldItalic-6EBV3DK5.woff",
+        "bytes": 18668
+      },
+      {
+        "file": "../small-combo/KaTeX_Math-BoldItalic-VB447A4D.ttf",
+        "bytes": 31196
+      },
+      {
+        "file": "../small-combo/KaTeX_Math-Italic-6KGCHLFN.woff2",
+        "bytes": 16440
+      },
+      {
+        "file": "../small-combo/KaTeX_Math-Italic-KKK3USB2.woff",
+        "bytes": 18748
+      },
+      {
+        "file": "../small-combo/KaTeX_Math-Italic-SON4MRCA.ttf",
+        "bytes": 31308
+      },
+      {
+        "file": "../small-combo/KaTeX_SansSerif-Bold-RRNVJFFW.woff2",
+        "bytes": 12216
+      },
+      {
+        "file": "../small-combo/KaTeX_SansSerif-Bold-X5M5EMOD.woff",
+        "bytes": 14408
+      },
+      {
+        "file": "../small-combo/KaTeX_SansSerif-Bold-STQ6RXC7.ttf",
+        "bytes": 24504
+      },
+      {
+        "file": "../small-combo/KaTeX_SansSerif-Italic-HMPFTM52.woff2",
+        "bytes": 12028
+      },
+      {
+        "file": "../small-combo/KaTeX_SansSerif-Italic-PSN4QKYX.woff",
+        "bytes": 14112
+      },
+      {
+        "file": "../small-combo/KaTeX_SansSerif-Italic-WTBAZBGY.ttf",
+        "bytes": 22364
+      },
+      {
+        "file": "../small-combo/KaTeX_SansSerif-Regular-XIQ62X4E.woff2",
+        "bytes": 10344
+      },
+      {
+        "file": "../small-combo/KaTeX_SansSerif-Regular-OQCII6EP.woff",
+        "bytes": 12316
+      },
+      {
+        "file": "../small-combo/KaTeX_SansSerif-Regular-2TL3USAE.ttf",
+        "bytes": 19436
+      },
+      {
+        "file": "../small-combo/KaTeX_Script-Regular-APUWIHLP.woff2",
+        "bytes": 9644
+      },
+      {
+        "file": "../small-combo/KaTeX_Script-Regular-A5IFOEBS.woff",
+        "bytes": 10588
+      },
+      {
+        "file": "../small-combo/KaTeX_Script-Regular-72OLXYNA.ttf",
+        "bytes": 16648
+      },
+      {
+        "file": "../small-combo/KaTeX_Size1-Regular-5LRUTBFT.woff2",
+        "bytes": 5468
+      },
+      {
+        "file": "../small-combo/KaTeX_Size1-Regular-4HRHTS65.woff",
+        "bytes": 6496
+      },
+      {
+        "file": "../small-combo/KaTeX_Size1-Regular-7K6AASVL.ttf",
+        "bytes": 12228
+      },
+      {
+        "file": "../small-combo/KaTeX_Size2-Regular-LELKET5D.woff2",
+        "bytes": 5208
+      },
+      {
+        "file": "../small-combo/KaTeX_Size2-Regular-K5ZHAIS6.woff",
+        "bytes": 6188
+      },
+      {
+        "file": "../small-combo/KaTeX_Size2-Regular-222HN3GT.ttf",
+        "bytes": 11508
+      },
+      {
+        "file": "../small-combo/KaTeX_Size3-Regular-WQRQ47UD.woff2",
+        "bytes": 3624
+      },
+      {
+        "file": "../small-combo/KaTeX_Size3-Regular-TLFPAHDE.woff",
+        "bytes": 4420
+      },
+      {
+        "file": "../small-combo/KaTeX_Size3-Regular-UFCO6WCA.ttf",
+        "bytes": 7588
+      },
+      {
+        "file": "../small-combo/KaTeX_Size4-Regular-CDMV7U5C.woff2",
+        "bytes": 4928
+      },
+      {
+        "file": "../small-combo/KaTeX_Size4-Regular-PKMWZHNC.woff",
+        "bytes": 5980
+      },
+      {
+        "file": "../small-combo/KaTeX_Size4-Regular-7PGNVPQK.ttf",
+        "bytes": 10364
+      },
+      {
+        "file": "../small-combo/KaTeX_Typewriter-Regular-VBYJ4NRC.woff2",
+        "bytes": 13568
+      },
+      {
+        "file": "../small-combo/KaTeX_Typewriter-Regular-MJMFSK64.woff",
+        "bytes": 16028
+      },
+      {
+        "file": "../small-combo/KaTeX_Typewriter-Regular-3F5K6SQ6.ttf",
+        "bytes": 27556
+      },
+      {
+        "file": "../small-combo/stdin.css",
+        "bytes": 24235
+      }
+    ]
+  }
+]

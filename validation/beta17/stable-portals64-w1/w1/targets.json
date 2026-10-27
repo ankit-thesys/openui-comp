@@ -1,0 +1,146 @@
+[
+  {
+    "family": "Calendar",
+    "file": "components/Calendar/Calendar.tsx",
+    "constant": "componentClass",
+    "target": "openui-calendar-container-root",
+    "property": "border-top-width",
+    "value": "7px",
+    "selector": ".openui-calendar-container-root .openui-calendar-root"
+  },
+  {
+    "family": "DatePicker",
+    "file": "components/DatePicker/helpers/components/FloatingDatePickerRenderer.tsx",
+    "constant": "componentClass",
+    "target": "openui-date-picker-style-root",
+    "property": "z-index",
+    "value": "57",
+    "selector": ".openui-date-picker-style-root:where(.openui-date-picker-renderer-floating-content)"
+  },
+  {
+    "family": "Select",
+    "file": "components/Select/select.styles.ts",
+    "constant": "separatorClass",
+    "target": "openui-select-separator-root",
+    "property": "height",
+    "value": "7px",
+    "selector": ".openui-select-separator-root"
+  },
+  {
+    "family": "Select",
+    "file": "components/Select/select.styles.ts",
+    "constant": "itemClass",
+    "target": "openui-select-item-root",
+    "property": "padding-left",
+    "value": "31px",
+    "selector": ".openui-select-item-root"
+  },
+  {
+    "family": "Select",
+    "file": "components/Select/select.styles.ts",
+    "constant": "labelClass",
+    "target": "openui-select-label-root",
+    "property": "padding-top",
+    "value": "19px",
+    "selector": ".openui-select-label-root"
+  },
+  {
+    "family": "Select",
+    "file": "components/Select/select.styles.ts",
+    "constant": "groupClass",
+    "target": "openui-select-group-root",
+    "property": "gap",
+    "value": "17px",
+    "selector": ".openui-select-group-root"
+  },
+  {
+    "family": "Select",
+    "file": "components/Select/select.styles.ts",
+    "constant": "viewportClass",
+    "target": "openui-select-viewport-root",
+    "property": "padding-top",
+    "value": "13px",
+    "selector": ".openui-select-viewport-root"
+  },
+  {
+    "family": "Select",
+    "file": "components/Select/select.styles.ts",
+    "constant": "contentClass",
+    "target": "openui-select-content-root",
+    "property": "border-radius",
+    "value": "21px",
+    "selector": ".openui-select-content-root"
+  },
+  {
+    "family": "Select",
+    "file": "components/Select/select.styles.ts",
+    "constant": "triggerClass",
+    "target": "openui-select-trigger-root",
+    "property": "border-top-width",
+    "value": "7px",
+    "selector": ".openui-select-trigger-root"
+  },
+  {
+    "family": "Modal",
+    "file": "components/Modal/modal.styles.ts",
+    "constant": "bodyClass",
+    "target": "openui-modal-body-root",
+    "property": "gap",
+    "value": "17px",
+    "selector": ".openui-modal-body-root"
+  },
+  {
+    "family": "Modal",
+    "file": "components/Modal/modal.styles.ts",
+    "constant": "closeClass",
+    "target": "openui-modal-close-root",
+    "property": "width",
+    "value": "31px",
+    "selector": ".openui-modal-close-root"
+  },
+  {
+    "family": "Modal",
+    "file": "components/Modal/modal.styles.ts",
+    "constant": "titleClass",
+    "target": "openui-modal-title-root",
+    "property": "color",
+    "value": "rgb(101, 102, 103)",
+    "selector": ".openui-modal-title-root"
+  },
+  {
+    "family": "Modal",
+    "file": "components/Modal/modal.styles.ts",
+    "constant": "headerClass",
+    "target": "openui-modal-header-root",
+    "property": "padding-top",
+    "value": "19px",
+    "selector": ".openui-modal-header-root"
+  },
+  {
+    "family": "Modal",
+    "file": "components/Modal/modal.styles.ts",
+    "constant": "contentClass",
+    "target": "openui-modal-content-root",
+    "property": "background-color",
+    "value": "rgb(101, 102, 103)",
+    "selector": ".openui-modal-content-root"
+  },
+  {
+    "family": "Modal",
+    "file": "components/Modal/modal.styles.ts",
+    "constant": "overlayClass",
+    "target": "openui-modal-overlay-root",
+    "property": "background-color",
+    "value": "rgb(101, 102, 103)",
+    "selector": ".openui-modal-overlay-root"
+  },
+  {
+    "family": "Modal",
+    "file": "components/Modal/modal.styles.ts",
+    "constant": "rootClass",
+    "target": "openui-modal-portal-root",
+    "property": "z-index",
+    "value": "9997",
+    "selector": ".openui-modal-portal-root"
+  }
+]

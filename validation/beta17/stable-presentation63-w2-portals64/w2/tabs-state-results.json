@@ -1,0 +1,313 @@
+{
+  "browser": "156.0.8078.48",
+  "checks": [
+    {
+      "name": "baseline/plain/before/clear-tabs-contextual-part",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-tabs.openui-tabs-clear .openui-tabs-list",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "ownedCompetingRules": [
+          {
+            "selector": ".go954559615.openui-tabs-clear .openui-tabs-list",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ".go1237837314",
+            "value": "border-box",
+            "priority": ""
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "name": "candidate/plain/before/clear-tabs-contextual-part",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-tabs-tabs.openui-tabs-clear .openui-tabs-list-styled",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "ownedCompetingRules": [
+          {
+            "selector": ":where(.go2743503827:root) .openui-tabs-tabs.openui-tabs-clear .openui-tabs-list",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ":where(.go2743503827:root) .openui-tabs-list-styled",
+            "value": "border-box",
+            "priority": ""
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "name": "baseline/plain/after/clear-tabs-contextual-part",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-tabs.openui-tabs-clear .openui-tabs-list",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "ownedCompetingRules": [
+          {
+            "selector": ".go954559615.openui-tabs-clear .openui-tabs-list",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ".go1237837314",
+            "value": "border-box",
+            "priority": ""
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "name": "candidate/plain/after/clear-tabs-contextual-part",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-tabs-tabs.openui-tabs-clear .openui-tabs-list-styled",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "ownedCompetingRules": [
+          {
+            "selector": ":where(.go2743503827:root) .openui-tabs-tabs.openui-tabs-clear .openui-tabs-list",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ":where(.go2743503827:root) .openui-tabs-list-styled",
+            "value": "border-box",
+            "priority": ""
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "name": "baseline/tailwind3/before/clear-tabs-contextual-part",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-tabs.openui-tabs-clear .openui-tabs-list",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "ownedCompetingRules": [
+          {
+            "selector": "*, ::before, ::after",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ".go954559615.openui-tabs-clear .openui-tabs-list",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ".go1237837314",
+            "value": "border-box",
+            "priority": ""
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "name": "candidate/tailwind3/before/clear-tabs-contextual-part",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-tabs-tabs.openui-tabs-clear .openui-tabs-list-styled",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "ownedCompetingRules": [
+          {
+            "selector": "*, ::before, ::after",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ":where(.go2743503827:root) .openui-tabs-tabs.openui-tabs-clear .openui-tabs-list",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ":where(.go2743503827:root) .openui-tabs-list-styled",
+            "value": "border-box",
+            "priority": ""
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "name": "baseline/tailwind3/after/clear-tabs-contextual-part",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-tabs.openui-tabs-clear .openui-tabs-list",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "ownedCompetingRules": [
+          {
+            "selector": ".go954559615.openui-tabs-clear .openui-tabs-list",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ".go1237837314",
+            "value": "border-box",
+            "priority": ""
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "name": "candidate/tailwind3/after/clear-tabs-contextual-part",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-tabs-tabs.openui-tabs-clear .openui-tabs-list-styled",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "ownedCompetingRules": [
+          {
+            "selector": ":where(.go2743503827:root) .openui-tabs-tabs.openui-tabs-clear .openui-tabs-list",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ":where(.go2743503827:root) .openui-tabs-list-styled",
+            "value": "border-box",
+            "priority": ""
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "name": "baseline/tailwind4/before/clear-tabs-contextual-part",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-tabs.openui-tabs-clear .openui-tabs-list",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "ownedCompetingRules": [
+          {
+            "selector": "*, ::after, ::before, ::backdrop, ::file-selector-button",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ".go954559615.openui-tabs-clear .openui-tabs-list",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ".go1237837314",
+            "value": "border-box",
+            "priority": ""
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "name": "candidate/tailwind4/before/clear-tabs-contextual-part",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-tabs-tabs.openui-tabs-clear .openui-tabs-list-styled",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "ownedCompetingRules": [
+          {
+            "selector": "*, ::after, ::before, ::backdrop, ::file-selector-button",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ":where(.go2743503827:root) .openui-tabs-tabs.openui-tabs-clear .openui-tabs-list",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ":where(.go2743503827:root) .openui-tabs-list-styled",
+            "value": "border-box",
+            "priority": ""
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "name": "baseline/tailwind4/after/clear-tabs-contextual-part",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-tabs.openui-tabs-clear .openui-tabs-list",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "ownedCompetingRules": [
+          {
+            "selector": ".go954559615.openui-tabs-clear .openui-tabs-list",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ".go1237837314",
+            "value": "border-box",
+            "priority": ""
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "name": "candidate/tailwind4/after/clear-tabs-contextual-part",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-tabs-tabs.openui-tabs-clear .openui-tabs-list-styled",
+        "property": "box-sizing",
+        "before": "border-box",
+        "wanted": "content-box",
+        "actual": "content-box",
+        "ownedCompetingRules": [
+          {
+            "selector": ":where(.go2743503827:root) .openui-tabs-tabs.openui-tabs-clear .openui-tabs-list",
+            "value": "border-box",
+            "priority": ""
+          },
+          {
+            "selector": ":where(.go2743503827:root) .openui-tabs-list-styled",
+            "value": "border-box",
+            "priority": ""
+          }
+        ],
+        "pass": true
+      }
+    }
+  ]
+}

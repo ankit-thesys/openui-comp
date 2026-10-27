@@ -1,0 +1,155 @@
+[
+  {
+    "family": "CheckBoxGroup",
+    "file": "components/CheckBoxGroup/CheckBoxGroup.tsx",
+    "constant": "componentClass",
+    "target": "openui-checkbox-group-root",
+    "oldRoot": "openui-checkbox-group",
+    "overrideProperty": "gap",
+    "overrideValue": "17px"
+  },
+  {
+    "family": "CheckBoxItem",
+    "file": "components/CheckBoxItem/CheckBoxItem.tsx",
+    "constant": "componentClass",
+    "target": "openui-checkbox-item-container-root",
+    "oldRoot": "openui-checkbox-item-container",
+    "overrideProperty": "gap",
+    "overrideValue": "17px"
+  },
+  {
+    "family": "Chips",
+    "file": "components/Chips/Chips.tsx",
+    "constant": "componentClass",
+    "target": "openui-chips-root",
+    "oldRoot": "openui-chips",
+    "overrideProperty": "gap",
+    "overrideValue": "17px"
+  },
+  {
+    "family": "FormControl",
+    "file": "components/FormControl/FormControl.tsx",
+    "constant": "componentClass",
+    "target": "openui-form-control-root",
+    "oldRoot": "openui-form-control",
+    "overrideProperty": "gap",
+    "overrideValue": "17px"
+  },
+  {
+    "family": "FormControl",
+    "file": "components/FormControl/Hint/Hint.tsx",
+    "constant": "componentClass",
+    "target": "openui-hint-root",
+    "oldRoot": "openui-hint",
+    "overrideProperty": "color",
+    "overrideValue": "rgb(101, 102, 103)"
+  },
+  {
+    "family": "Input",
+    "file": "components/Input/Input.tsx",
+    "constant": "componentClass",
+    "target": "openui-input-root",
+    "oldRoot": "openui-input",
+    "overrideProperty": "border-top-width",
+    "overrideValue": "7px"
+  },
+  {
+    "family": "Label",
+    "file": "components/Label/Label.tsx",
+    "constant": "componentClass",
+    "target": "openui-label-root",
+    "oldRoot": "openui-label",
+    "overrideProperty": "color",
+    "overrideValue": "rgb(101, 102, 103)"
+  },
+  {
+    "family": "OptionCards",
+    "file": "components/OptionCards/optionCards.styles.ts",
+    "constant": "rootClass",
+    "target": "openui-option-cards-root",
+    "oldRoot": "openui-option-cards",
+    "overrideProperty": "width",
+    "overrideValue": "321px"
+  },
+  {
+    "family": "RadioGroup",
+    "file": "components/RadioGroup/RadioGroup.tsx",
+    "constant": "componentClass",
+    "target": "openui-radio-group-root",
+    "oldRoot": "openui-radio-group",
+    "overrideProperty": "gap",
+    "overrideValue": "17px"
+  },
+  {
+    "family": "RadioItem",
+    "file": "components/RadioItem/RadioItem.tsx",
+    "constant": "componentClass",
+    "target": "openui-radio-item-container-root",
+    "oldRoot": "openui-radio-item-container",
+    "overrideProperty": "gap",
+    "overrideValue": "17px"
+  },
+  {
+    "family": "Slider",
+    "file": "components/Slider/Slider.tsx",
+    "constant": "componentClass",
+    "target": "openui-slider-wrapper-root",
+    "oldRoot": "openui-slider-wrapper",
+    "overrideProperty": "gap",
+    "overrideValue": "17px"
+  },
+  {
+    "family": "Slider",
+    "file": "components/Slider/SliderBlock.tsx",
+    "constant": "componentClass",
+    "target": "openui-slider-block-root",
+    "oldRoot": "openui-slider-block",
+    "overrideProperty": "width",
+    "overrideValue": "321px"
+  },
+  {
+    "family": "SwitchGroup",
+    "file": "components/SwitchGroup/SwitchGroup.tsx",
+    "constant": "componentClass",
+    "target": "openui-switch-group-root",
+    "oldRoot": "openui-switch-group",
+    "overrideProperty": "gap",
+    "overrideValue": "17px"
+  },
+  {
+    "family": "SwitchItem",
+    "file": "components/SwitchItem/SwitchItem.tsx",
+    "constant": "componentClass",
+    "target": "openui-switch-item-container-root",
+    "oldRoot": "openui-switch-item-container",
+    "overrideProperty": "gap",
+    "overrideValue": "17px"
+  },
+  {
+    "family": "TextArea",
+    "file": "components/TextArea/TextArea.tsx",
+    "constant": "componentClass",
+    "target": "openui-textarea-root",
+    "oldRoot": "openui-textarea",
+    "overrideProperty": "border-top-width",
+    "overrideValue": "7px"
+  },
+  {
+    "family": "ToggleGroup",
+    "file": "components/ToggleGroup/ToggleGroup.tsx",
+    "constant": "componentClass",
+    "target": "openui-toggle-group-root",
+    "oldRoot": "openui-toggle-group",
+    "overrideProperty": "gap",
+    "overrideValue": "17px"
+  },
+  {
+    "family": "ToggleItem",
+    "file": "components/ToggleItem/ToggleItem.tsx",
+    "constant": "componentClass",
+    "target": "openui-toggle-item-root",
+    "oldRoot": "openui-toggle-item",
+    "overrideProperty": "gap",
+    "overrideValue": "17px"
+  }
+]

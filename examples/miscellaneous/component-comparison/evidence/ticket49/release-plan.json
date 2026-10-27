@@ -1,0 +1,25 @@
+{
+  "changesets": [
+    {
+      "releases": [
+        {
+          "name": "@openuidev/chat-kit",
+          "type": "patch"
+        }
+      ],
+      "summary": "Isolated nonpublishing chat-only verification.",
+      "id": "ticket49-chat-only"
+    }
+  ],
+  "releases": [
+    {
+      "name": "@openuidev/chat-kit",
+      "type": "patch",
+      "oldVersion": "0.0.0-beta.0",
+      "changesets": [
+        "ticket49-chat-only"
+      ],
+      "newVersion": "0.0.0"
+    }
+  ]
+}

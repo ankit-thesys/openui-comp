@@ -1,0 +1,9 @@
+{
+  "time": "2026-10-27T12:55:23.605712+00:00",
+  "rawFile": "override-dispositions.json",
+  "rawSha256Unchanged": "f32881c1de71432bea7fcac1a97aad9ead5965f8b8c059213eb8b1627814ef99",
+  "sourceUnchanged": true,
+  "runtimeRun": false,
+  "windowOwner": "W1",
+  "report": "sources-diagnostic-erratum.md"
+}

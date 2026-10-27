@@ -1,0 +1,534 @@
+{
+  "renameParent": "f9c28c6c2b4e26969dc7be0bcd0eb78e46306c21",
+  "reviewedTemplateCommit": "75e95dc664bc4ddfa58112a07e58ac7c850d2bee",
+  "sourceFiles": 105,
+  "changesFromReviewedSource": "Only six approved important removals; renamed paths mapped. README preserves new name, migration note and reviewed authoring guidance.",
+  "checked": [
+    {
+      "old": "packages/kits/src/react/chat/components/FollowUpBlock/followUpBlock.styles.ts",
+      "new": "packages/kits/src/react/chat/components/FollowUpBlock/followUpBlock.styles.ts",
+      "sha256": "1251445f284b6f3d06b3602e053f3e4d572c22264c885214609bfce89276cfb0"
+    },
+    {
+      "old": "packages/kits/src/react/chat/components/FollowUpItem/followUpItem.styles.ts",
+      "new": "packages/kits/src/react/chat/components/FollowUpItem/followUpItem.styles.ts",
+      "sha256": "d5b20e46a821cd1db1e41d13e1ad215fbd8b2df04ba351b1989a8c87ec18be72"
+    },
+    {
+      "old": "packages/kits/src/react/chat/components/ModelSwitcher/modelSwitcher.styles.ts",
+      "new": "packages/kits/src/react/chat/components/ModelSwitcher/modelSwitcher.styles.ts",
+      "sha256": "25e9229de9170a8bd9a123e5e6cfc4d75fda33ec034a3c9718313d3cde38bb31"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Accordion/Accordion.tsx",
+      "new": "packages/react-components/src/components/Accordion/Accordion.tsx",
+      "sha256": "aa5c38ba1fc7ead599dd4c50e25839a3bffb1a87e5fb20a3345003743a30fc03"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Accordion/accordion.styles.ts",
+      "new": "packages/react-components/src/components/Accordion/accordion.styles.ts",
+      "sha256": "e66ba2a0033721bd93be9a3fb70fac5e8c3a34ff904164784aaac254667bd0ac"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Button/Button.tsx",
+      "new": "packages/react-components/src/components/Button/Button.tsx",
+      "sha256": "91e5fb36d47d08ca02afd585fa03f1b45716ca748e670269db2b12fdeaf12258"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Button/button.styles.ts",
+      "new": "packages/react-components/src/components/Button/button.styles.ts",
+      "sha256": "9da8215e1b64a87ab82f2f9d281369661617d7b8d96a982b9c57c535ac02f605"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Buttons/Buttons.tsx",
+      "new": "packages/react-components/src/components/Buttons/Buttons.tsx",
+      "sha256": "757e2063abd2d343dda4cd5910086de88ebf5d2e82830f5500ef367014c09c7a"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Buttons/buttons.styles.ts",
+      "new": "packages/react-components/src/components/Buttons/buttons.styles.ts",
+      "sha256": "130f66f97e90b618110fe7cdba525b493f6c27f584ce060ff581fc9c90ac2689"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Calendar/Calendar.tsx",
+      "new": "packages/react-components/src/components/Calendar/Calendar.tsx",
+      "sha256": "e1132843986e98f7357a2c452729ea6c3a59665adcecdafe4c7b6ef52e48e493"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Calendar/calendar.styles.ts",
+      "new": "packages/react-components/src/components/Calendar/calendar.styles.ts",
+      "sha256": "08d332196a223103194965a1f810c8ad60782e10e21ceaaeb3edc15d769a2caa"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Card/Card.tsx",
+      "new": "packages/react-components/src/components/Card/Card.tsx",
+      "sha256": "eae960b352aa985ded01e3d494f36dba8ecb081c98d90899fe9ecf98f7c83772"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Card/card.styles.ts",
+      "new": "packages/react-components/src/components/Card/card.styles.ts",
+      "sha256": "5c3fd09b2b04f6437f890516240d708a3819806efc861cf660428e3d4420679c"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/CardHeader/CardHeader.tsx",
+      "new": "packages/react-components/src/components/CardHeader/CardHeader.tsx",
+      "sha256": "dcdad475ce70d45345fba1e85a884090a45f04338e9dd05f4506cad4d58c8d72"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/CardHeader/cardHeader.styles.ts",
+      "new": "packages/react-components/src/components/CardHeader/cardHeader.styles.ts",
+      "sha256": "244cfd1c3a6209d7f35191a26c6a0dc99819bdf35eef48b1b27976e1d1a7aa42"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Carousel/carousel.styles.ts",
+      "new": "packages/react-components/src/components/Carousel/carousel.styles.ts",
+      "sha256": "1fb2c7dadde4e8c71b827614d1fed838ed5ff98828b2a21bf79df0ebe29adba2"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Charts/AreaChart/areaChart.styles.ts",
+      "new": "packages/react-components/src/components/Charts/AreaChart/areaChart.styles.ts",
+      "sha256": "d623e156d5743442f4b4de249c340d7a0ac5bcba874e266b2adda07563631dcf"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Charts/BarChart/barChart.styles.ts",
+      "new": "packages/react-components/src/components/Charts/BarChart/barChart.styles.ts",
+      "sha256": "a5051e634c2650efffc8e4498009981fc56285d54f2048880d2f15ade0cb036c"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Charts/BarChart/horizontalBarChart.styles.ts",
+      "new": "packages/react-components/src/components/Charts/BarChart/horizontalBarChart.styles.ts",
+      "sha256": "4065d9bfda3454e55e675ab28597b8e16365de7de919d71bff861e117623fc4e"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts",
+      "new": "packages/react-components/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts",
+      "sha256": "a6423209000ea7a73ea25d30353c82dfbc9cf3cd7ff78267af0b97769ae7cb7e"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Charts/FunnelChart/funnelChart.styles.ts",
+      "new": "packages/react-components/src/components/Charts/FunnelChart/funnelChart.styles.ts",
+      "sha256": "ed1cee8b48fc16625f0c68cd961995693ce275bd64e9737e28ffc87c8b2a0d2b"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Charts/HeatmapChart/heatmapChart.styles.ts",
+      "new": "packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts",
+      "sha256": "69fbf1ae9cf94f09d887e40e60a2993a5e9fe943be27c743fee6dc4c2560d8b0"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Charts/LineChart/lineChart.styles.ts",
+      "new": "packages/react-components/src/components/Charts/LineChart/lineChart.styles.ts",
+      "sha256": "be6889d776bef224fef7204e820122ef94a55228c97584b41e9a7db7e937cb82"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Charts/PieChart/pieChart.styles.ts",
+      "new": "packages/react-components/src/components/Charts/PieChart/pieChart.styles.ts",
+      "sha256": "8c4f49b34bf03bc700ab2e28c0d98d8b1b2e057b0610637a9e7f0438855823d2"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Charts/RadarChart/radarChart.styles.ts",
+      "new": "packages/react-components/src/components/Charts/RadarChart/radarChart.styles.ts",
+      "sha256": "50631dc1fab6bd6e467414370f2aebf46b00de0d3bf919a1307d926b681f3776"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Charts/RadialChart/radialChart.styles.ts",
+      "new": "packages/react-components/src/components/Charts/RadialChart/radialChart.styles.ts",
+      "sha256": "b00c5292e64e2635345619abc5ade43cfb7fe91c5800525c199c2ba33316fcf4"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Charts/ScatterChart/scatterChart.styles.ts",
+      "new": "packages/react-components/src/components/Charts/ScatterChart/scatterChart.styles.ts",
+      "sha256": "96e87cafa68cc07aae609870e107d97a871974709acf89019b127340984e7b45"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Charts/shared/animations/drawLine.styles.ts",
+      "new": "packages/react-components/src/components/Charts/shared/animations/drawLine.styles.ts",
+      "sha256": "43b459a448ce9839aa3213403f51a87cd30e690303c3afd68e312f5bd6da93b8"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Charts/shared/animations/fadeAppear.styles.ts",
+      "new": "packages/react-components/src/components/Charts/shared/animations/fadeAppear.styles.ts",
+      "sha256": "59be28a388e81a71b0962984f07c94ced09b6b22cb5a84e71aad59a9738399d4"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Charts/shared/chartBaseDeclarations.ts",
+      "new": "packages/react-components/src/components/Charts/shared/chartBaseDeclarations.ts",
+      "sha256": "55712fd5e8a482def43d088a53e75ca97e8748051ba6a77af59cd4ab65785e7f"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Charts/shared/chartTypography.ts",
+      "new": "packages/react-components/src/components/Charts/shared/chartTypography.ts",
+      "sha256": "10286b5b1f9d998f7e41e0613ea96bc18e3d73ad6328878abbb6774c891dd4fe"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/CheckBoxGroup/CheckBoxGroup.tsx",
+      "new": "packages/react-components/src/components/CheckBoxGroup/CheckBoxGroup.tsx",
+      "sha256": "0e5de51bc2899571d9520e6e105dd3ab80aabeadc91519799e7f2687ac54fd5a"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/CheckBoxGroup/styles.ts",
+      "new": "packages/react-components/src/components/CheckBoxGroup/styles.ts",
+      "sha256": "3a11f52c411816850ef0252603a7cc2b43cb5b630fbdf1c70c57e917ed163d70"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/CheckBoxItem/CheckBoxItem.tsx",
+      "new": "packages/react-components/src/components/CheckBoxItem/CheckBoxItem.tsx",
+      "sha256": "783d36b9e337a3d540507f7e16cfabae1f3cd1c9a15492d0357b43efb5d004ae"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/CheckBoxItem/styles.ts",
+      "new": "packages/react-components/src/components/CheckBoxItem/styles.ts",
+      "sha256": "23f416a62280ddb8f5f3b97110506393f4baa9684e662edc6fdd0c91f94de3a3"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Chips/Chips.tsx",
+      "new": "packages/react-components/src/components/Chips/Chips.tsx",
+      "sha256": "e65e12d80ef0b0ab05772411282c654ab9c1754aa32e29f796130eaac4079780"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Chips/chips.styles.ts",
+      "new": "packages/react-components/src/components/Chips/chips.styles.ts",
+      "sha256": "f428229fb6813241c845e36c18a4d7263a4a2bc281e5f7deb9aac62eb79f3324"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Citation/citation.styles.ts",
+      "new": "packages/react-components/src/components/Citation/citation.styles.ts",
+      "sha256": "61c85e9fe45851d41135e993ecbef90fd53d669d3f25b975970a37ad81091587"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Citation/citationItem.styles.ts",
+      "new": "packages/react-components/src/components/Citation/citationItem.styles.ts",
+      "sha256": "93214c3acd93e7508506fe3098325323a811eaa7a064e2dcbf367f8279cb05d7"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/CodeBlock/codeBlock.styles.ts",
+      "new": "packages/react-components/src/components/CodeBlock/codeBlock.styles.ts",
+      "sha256": "8ab3e841337f06e06c8fe2c032dc8958c6e239a87ddf54d0978815eb9f3f5830"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/DatePicker/datePicker.styles.ts",
+      "new": "packages/react-components/src/components/DatePicker/datePicker.styles.ts",
+      "sha256": "46f47dcdaa23c895f3a579f4751587b4e4a84b0ad2b2dbd62ffb77ed217d6815"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/DatePicker/helpers/components/FloatingDatePickerRenderer.tsx",
+      "new": "packages/react-components/src/components/DatePicker/helpers/components/FloatingDatePickerRenderer.tsx",
+      "sha256": "20702c010361875a9e6fab47e029c14ce9e7827c4d806de2ce391869472b07c1"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/DotMatrixLoader/DotMatrixLoader.tsx",
+      "new": "packages/react-components/src/components/DotMatrixLoader/DotMatrixLoader.tsx",
+      "sha256": "f3a0cf0e291707d248fe62822a2425219e12ee9e77faf4e8434730a8e2341526"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/DotMatrixLoader/dotMatrixLoader.styles.ts",
+      "new": "packages/react-components/src/components/DotMatrixLoader/dotMatrixLoader.styles.ts",
+      "sha256": "b71f3941cec1e0ff48b9351fe032f845ac82bd0f06c93c14d4bc9d2532071090"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/EditableTable/base/components/editableCell.styles.ts",
+      "new": "packages/react-components/src/components/EditableTable/base/components/editableCell.styles.ts",
+      "sha256": "749364ef23844077abad8266a5d9ee68e3095e5cb387180a6de70a71037333f0"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/EditableTable/base/components/editableSelectCell.styles.ts",
+      "new": "packages/react-components/src/components/EditableTable/base/components/editableSelectCell.styles.ts",
+      "sha256": "0338b0d8e4eac36e7e5a8e4460acf084595dca042024f09ce36f5ed01ab318e4"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/EditableTable/editableTable.styles.ts",
+      "new": "packages/react-components/src/components/EditableTable/editableTable.styles.ts",
+      "sha256": "749dbccae2936f4edc47f381318c3c9cc6fb0f7072d23cfc8fcf61c004c40955"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/FormControl/FormControl.tsx",
+      "new": "packages/react-components/src/components/FormControl/FormControl.tsx",
+      "sha256": "d0d29d3ce081315e1bb4d54788bfbfdfff274b1a50d3be6201fe8dccf9346698"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/FormControl/Hint/Hint.tsx",
+      "new": "packages/react-components/src/components/FormControl/Hint/Hint.tsx",
+      "sha256": "518b2ce61235cc59cf166841bb1f07e801d180299c08c7823d813962ff2e12f0"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/FormControl/Hint/hint.styles.ts",
+      "new": "packages/react-components/src/components/FormControl/Hint/hint.styles.ts",
+      "sha256": "77c78249dd8ac022b6956be12adc909db94354fe7748b03482dfb273a75f644f"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/FormControl/formControl.styles.ts",
+      "new": "packages/react-components/src/components/FormControl/formControl.styles.ts",
+      "sha256": "8a205b2cc948b1315b447e5bebaf35176cdef53b80b4294613441a60afd387f1"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/IconButton/IconButton.tsx",
+      "new": "packages/react-components/src/components/IconButton/IconButton.tsx",
+      "sha256": "890eabfd309dd8fea29c79e2808cccdc9d62a1c771a243107fea05d7edc33385"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/IconButton/iconButton.styles.ts",
+      "new": "packages/react-components/src/components/IconButton/iconButton.styles.ts",
+      "sha256": "9bb883a220480acdc127111bfe67fcec2484aa980e9b4131380ceddcd17a6711"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/InlineHeader/inlineHeader.styles.ts",
+      "new": "packages/react-components/src/components/InlineHeader/inlineHeader.styles.ts",
+      "sha256": "65b549d457eee2375d102431fc021fd14b6bd4aceb54ff58fee649a4c25cb64d"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/InlineMarkdownRenderer/inlineMarkdown.styles.ts",
+      "new": "packages/react-components/src/components/InlineMarkdownRenderer/inlineMarkdown.styles.ts",
+      "sha256": "49424d130d810a8ed53e905ac41a9a14d801587c1948231565b97e7fe87885af"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Input/Input.tsx",
+      "new": "packages/react-components/src/components/Input/Input.tsx",
+      "sha256": "76b5cf0a9649e08a6d92aca62a528b391acbfb2dee8693c97b13387090b463f2"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Input/input.styles.ts",
+      "new": "packages/react-components/src/components/Input/input.styles.ts",
+      "sha256": "5efba23db1af839b912b3ef42805d09587113ddfd0b292b4168f93014f4e4f03"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Label/Label.tsx",
+      "new": "packages/react-components/src/components/Label/Label.tsx",
+      "sha256": "a7ee64a943abf5892bb6cfdfcc074699b41f4b422d69339baf58f44bf9a30d90"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Label/label.styles.ts",
+      "new": "packages/react-components/src/components/Label/label.styles.ts",
+      "sha256": "fc058a00d083b9afe25c38862323d6a5f708092dbafa003be8bfb10df3043e28"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/MarkDownRenderer/markdown.styles.ts",
+      "new": "packages/react-components/src/components/MarkDownRenderer/markdown.styles.ts",
+      "sha256": "4bf782618601432daa6c0adae74734da76eed4e61c09920178f6168e2a3e8913"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Modal/modal.styles.ts",
+      "new": "packages/react-components/src/components/Modal/modal.styles.ts",
+      "sha256": "f84d3aec7ba19a7c335f3cb38b91fa41f9c27022b5b7e13cf7e0a3919df19a0e"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/RadioGroup/RadioGroup.tsx",
+      "new": "packages/react-components/src/components/RadioGroup/RadioGroup.tsx",
+      "sha256": "ad0d641733cdba45e5df229c6aa9a9c9c4236a28042b8c1e375a65ff13140cd5"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/RadioGroup/styles.ts",
+      "new": "packages/react-components/src/components/RadioGroup/styles.ts",
+      "sha256": "17498281811368009ad3bffb2f9180fe0f9ebcd94afa1741a50d1830db542f66"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/RadioItem/RadioItem.tsx",
+      "new": "packages/react-components/src/components/RadioItem/RadioItem.tsx",
+      "sha256": "14c286ddf5f9925a901ce1eadccf9c3bbfcac68e988bc29a29be65c9295df901"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/RadioItem/styles.ts",
+      "new": "packages/react-components/src/components/RadioItem/styles.ts",
+      "sha256": "55f3ab6c4d56bc8e44390464948aafd2b4656f315ac31d65191996fa4720af39"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/SectionBlock/FoldableSection.tsx",
+      "new": "packages/react-components/src/components/SectionBlock/FoldableSection.tsx",
+      "sha256": "95ffa96fc59a8448c5179ebda28f2cf01663c5ba05938ef2d89f399a29f0ca91"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/SectionBlock/SectionV2.tsx",
+      "new": "packages/react-components/src/components/SectionBlock/SectionV2.tsx",
+      "sha256": "12221448f79c7e83dd20809f3948b4e03d9408656ea79e312193116fb68d91a4"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/SectionBlock/foldableSection.styles.ts",
+      "new": "packages/react-components/src/components/SectionBlock/foldableSection.styles.ts",
+      "sha256": "da92475f34483e32ee017ab6efe3ff5d68764efdd428629f769096a5a51cd387"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/SectionBlock/sectionV2.styles.ts",
+      "new": "packages/react-components/src/components/SectionBlock/sectionV2.styles.ts",
+      "sha256": "7c14a062d68d7d562f1ec836630ede2b275dd54fddea05efcc303ea00040917d"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Select/select.styles.ts",
+      "new": "packages/react-components/src/components/Select/select.styles.ts",
+      "sha256": "03fa6c89e017d06e5babeb400a5760b7b16cf99ad228ad0bb083a9360a9bf56e"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Separator/Separator.tsx",
+      "new": "packages/react-components/src/components/Separator/Separator.tsx",
+      "sha256": "e534d70f36f3eb2fe4a229d037f63aabc68c86d95d90605724bf0198f1c362ba"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Separator/separator.styles.ts",
+      "new": "packages/react-components/src/components/Separator/separator.styles.ts",
+      "sha256": "ea99f383547fdfcfbd086eab06a8c95a0ff0f3a4240550a0953a9b7169513496"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Skeleton/PieChartSkeleton.tsx",
+      "new": "packages/react-components/src/components/Skeleton/PieChartSkeleton.tsx",
+      "sha256": "9b163d19afb811d988a25390b3bd3a688e56e35c4705dd77bfed6fb65288aafe"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Skeleton/Skeleton.tsx",
+      "new": "packages/react-components/src/components/Skeleton/Skeleton.tsx",
+      "sha256": "5ae264d4e1656dd77a1e91cabfc1d04b3ce59af2ec60c4e4e4d7cb9858fd4786"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Skeleton/SkeletonBar.tsx",
+      "new": "packages/react-components/src/components/Skeleton/SkeletonBar.tsx",
+      "sha256": "0dee47d5933305f1ccde60501f4ca0c9440fd4854d3495f20c5e67ebb366ffc4"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Skeleton/TableSkeleton.tsx",
+      "new": "packages/react-components/src/components/Skeleton/TableSkeleton.tsx",
+      "sha256": "1ca67de66c13838abb7ed6ba3e18e96f1bdb5e3cf0fc874ffdb6afef9351807f"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Skeleton/pieChartSkeleton.styles.ts",
+      "new": "packages/react-components/src/components/Skeleton/pieChartSkeleton.styles.ts",
+      "sha256": "3d0abfdd236a101ab30267a85f21b22d9f66c6e9a8b5b707095104e4fa9fbf3b"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Skeleton/skeleton.styles.ts",
+      "new": "packages/react-components/src/components/Skeleton/skeleton.styles.ts",
+      "sha256": "2f04a3aec477d2f07dbb834c22cb83799ea025c369e8fcf5696f4ba137bd54ef"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Skeleton/skeletonPulse.ts",
+      "new": "packages/react-components/src/components/Skeleton/skeletonPulse.ts",
+      "sha256": "a5dcb74cbfb94abfb0c99d498c98b87bd901ac75ee306d3825c803f08ce5f183"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Skeleton/tableSkeleton.styles.ts",
+      "new": "packages/react-components/src/components/Skeleton/tableSkeleton.styles.ts",
+      "sha256": "185cf858223fce0518652babf4fd3e32498f0a12b93d3db3610c8108ffc62581"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Slider/Slider.tsx",
+      "new": "packages/react-components/src/components/Slider/Slider.tsx",
+      "sha256": "91f4029d43af7a7df0bd26cc3a61b96d876d0a1b8735fc9edd85220f3c908741"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Slider/SliderBlock.tsx",
+      "new": "packages/react-components/src/components/Slider/SliderBlock.tsx",
+      "sha256": "492cf4567d109a3926e3722be45bd8e51a0a2c851b70f0b1fe38608d465a411e"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Slider/slider.styles.ts",
+      "new": "packages/react-components/src/components/Slider/slider.styles.ts",
+      "sha256": "c7696e3c5acb332e4f7ee694b755527b8de417d7d5e986aa5ca90522b178aeaa"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Slider/sliderBlock.styles.ts",
+      "new": "packages/react-components/src/components/Slider/sliderBlock.styles.ts",
+      "sha256": "548a6a7abf2b99c282a525a5acba0930af90370813ccd07384d952d5dfbc11a8"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/SourceFaviconImage/sourceFaviconImage.styles.ts",
+      "new": "packages/react-components/src/components/SourceFaviconImage/sourceFaviconImage.styles.ts",
+      "sha256": "270faea937b41f4df229ad8f3627db01bf7d66a4498d5faf1fcb36d671a554b4"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Sources/listedSources.styles.ts",
+      "new": "packages/react-components/src/components/Sources/listedSources.styles.ts",
+      "sha256": "0bf86011dab81c509aeb145ac1f9568ed2c9640efcfda7eb64e062a93ccee353"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Sources/sourcesItem.styles.ts",
+      "new": "packages/react-components/src/components/Sources/sourcesItem.styles.ts",
+      "sha256": "593b362efa0bf846d0e68064f7a4c8b1f518db02d4d426e2262da77abee260c4"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Steps/Steps.tsx",
+      "new": "packages/react-components/src/components/Steps/Steps.tsx",
+      "sha256": "f98b783648a0e3b5152a3765cb82e5174b11e20c8505b4b372756ec0f51409d2"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Steps/steps.styles.ts",
+      "new": "packages/react-components/src/components/Steps/steps.styles.ts",
+      "sha256": "83b5f1dfee51611e10e3fabde8d815fd22fabedb9ee3ae1fd3abc32286dbfb86"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/SwitchGroup/SwitchGroup.tsx",
+      "new": "packages/react-components/src/components/SwitchGroup/SwitchGroup.tsx",
+      "sha256": "32bb2ce3471ea9c2058ca5f2c39f884fae2f07d4b6381143ea07ec9a11d9d0c9"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/SwitchGroup/styles.ts",
+      "new": "packages/react-components/src/components/SwitchGroup/styles.ts",
+      "sha256": "e284dba584dc5077c2b75c0c474d83d6aba4520240dc389f02ea4c84935b50e7"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/SwitchItem/SwitchItem.tsx",
+      "new": "packages/react-components/src/components/SwitchItem/SwitchItem.tsx",
+      "sha256": "c09bcd7b892c3d5cb314e8cec157c2cb74f1d2a9cee8ca99aa0626f03cc9e748"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/SwitchItem/styles.ts",
+      "new": "packages/react-components/src/components/SwitchItem/styles.ts",
+      "sha256": "150f334324b81ded26c42a6a68e9f0af52dd8ab313a7fd4eb4d4eb7299fc14ea"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Table/scrollableTable.styles.ts",
+      "new": "packages/react-components/src/components/Table/scrollableTable.styles.ts",
+      "sha256": "622c8c31fe7826d01404b7cf3fa0d0ec3b34857bc1e04978b9b7ea70fffbb9d8"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Table/table.styles.ts",
+      "new": "packages/react-components/src/components/Table/table.styles.ts",
+      "sha256": "4bb0f8312b0c570179fb4e0984df01f32304185e95d7f192a0adff09b8523183"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/Tabs/tabs.styles.ts",
+      "new": "packages/react-components/src/components/Tabs/tabs.styles.ts",
+      "sha256": "a5610376c640039c4611fd33b464efd9cb8ff91bd56addcb5ee6ed5289b26b4c"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/TextArea/TextArea.tsx",
+      "new": "packages/react-components/src/components/TextArea/TextArea.tsx",
+      "sha256": "1072e46ad6570a211c80c21fe25b7f92920e6c744f11c78831f2d402ccd664a3"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/TextArea/textArea.styles.ts",
+      "new": "packages/react-components/src/components/TextArea/textArea.styles.ts",
+      "sha256": "7763780fafb5d867f78b257e24ff5844132ed9a9088ad18dbe5456ea0c58af55"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/TextBlock/textBlock.styles.ts",
+      "new": "packages/react-components/src/components/TextBlock/textBlock.styles.ts",
+      "sha256": "684002839108120f9a2cfb4e56629388e72b52a7925104a6a5b646feef76ca3e"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/TextContentWrapper/textContentWrapper.styles.ts",
+      "new": "packages/react-components/src/components/TextContentWrapper/textContentWrapper.styles.ts",
+      "sha256": "c92f5aa4b0cd3f87c51c186555d50c75275df65bd28d78592aa7e9662ed5d43a"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/ToggleGroup/ToggleGroup.tsx",
+      "new": "packages/react-components/src/components/ToggleGroup/ToggleGroup.tsx",
+      "sha256": "db484ab70543bef30aa2c083664a657be522a2e1ae182bad50633d074d809fa6"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/ToggleGroup/styles.ts",
+      "new": "packages/react-components/src/components/ToggleGroup/styles.ts",
+      "sha256": "0f80b1785091acf3e8239adc274d7536024c80cd95b89aa563e33cfa4441ebbd"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/ToggleItem/ToggleItem.tsx",
+      "new": "packages/react-components/src/components/ToggleItem/ToggleItem.tsx",
+      "sha256": "74e53289b87ed8e7f1a65808931bfefe1c898839ca2a130adb1072c24965f10e"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/ToggleItem/styles.ts",
+      "new": "packages/react-components/src/components/ToggleItem/styles.ts",
+      "sha256": "1f06c73448eec3226e480ae28c3bbc812fbdf350151be85e40199c8bae0c2f70"
+    },
+    {
+      "old": "packages/react-ui-core/src/components/TooltipWrapper/tooltipWrapper.styles.ts",
+      "new": "packages/react-components/src/components/TooltipWrapper/tooltipWrapper.styles.ts",
+      "sha256": "ec542b7d692a7e7cad9307e5697e51a91e601a49433fa02263441e5ee3f9bffd"
+    }
+  ],
+  "runtimeValidation": "Deferred during exclusive HorizontalBar verifier window."
+}

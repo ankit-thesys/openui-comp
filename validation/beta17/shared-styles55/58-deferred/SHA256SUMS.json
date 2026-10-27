@@ -1,0 +1,16 @@
+{
+  "/private/tmp/openui-styles58-evidence/REPORT.md": "7df8d59806ad71eec83150bcd6739616b48212ad8fb04010b40de500e76273a4",
+  "/private/tmp/openui-styles58-evidence/button-first-batch.json": "efc76262831cefcf705743b5440f9bc95c3f975bd0b6d8781ede78d05c373a3f",
+  "/private/tmp/openui-styles58-evidence/button-before.styles.ts": "9da8215e1b64a87ab82f2f9d281369661617d7b8d96a982b9c57c535ac02f605",
+  "/private/tmp/openui-styles58-evidence/button-after.styles.ts": "d21154b5a91a578f97987f9f7779b4061183914e6e1ca44ff44da385b00cde23",
+  "/private/tmp/openui-styles58-evidence/button-removal.patch": "2f60a03c5ca9c27f1b577e9ead6bb0aa4149016182fe134d7bc37a3e34de1580",
+  "/private/tmp/openui-styles58-evidence/button-corrected-results.json": "6e94e7add5d37a5d0908d0538c3eac16b5dda859f0cb6571d3dcb5b86fc02a06",
+  "/private/tmp/openui-styles58-evidence/button-corrected-summary.json": "6b6446c1bca4824169067beb2fd0cc0787af30b2c3aee58b81f4a8d719e63c7f",
+  "/private/tmp/openui-styles58-evidence/build-button.mjs": "678b975d7f6a1e5baaa24d94546f5926039b32c20c7da889609f0cce16f1bae4",
+  "/private/tmp/openui-styles58-evidence/run-button-corrected.mjs": "a8266c36e728f0d4eef4456d191ae1c96e9f2e97d336955fcf3e60b7ab13b1fa",
+  "/private/tmp/openui-styles58-evidence/baseline-browser/metafile.json": "b0ae13d3019424647792069b49123cc7eb77b1ac9cb45d31df86549685377a70",
+  "/private/tmp/openui-styles58-evidence/candidate-browser/metafile.json": "8a54f008806b9c17b173ab00abc40b40a210e8888851fc8a13359be2022761f8",
+  "/private/tmp/openui-styles58-evidence/consumer/pnpm-lock.yaml": "bcef10e3a5c10b85e5b608b371ea3622ec68137cc9942952a7475ec4cc63cba2",
+  "/private/tmp/openui-styles58-evidence/button-candidate/openuidev-react-components-0.0.0-beta.0.tgz": "cd0782d738a199d155e25ad634129c2b18efc2f33137e1d3c29f90252cfdef1d",
+  "/private/tmp/openui-styles58-evidence/DISPOSITION.json": "5a9b22b7b1931cbfc69cd7c3702384feee20f81e8d70fb47fa0b3ef9c76bc6d7"
+}

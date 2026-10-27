@@ -1,0 +1,2719 @@
+{
+  "browser": "156.0.8078.48",
+  "checks": [
+    {
+      "name": "plain/before/baseline/area/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/before/baseline/area/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/before/baseline/bar/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-container line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/before/baseline/bar/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-container line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/before/baseline/line/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-container line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/before/baseline/line/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-container line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/before/baseline/scatter/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-container line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/before/baseline/scatter/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-container line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/before/baseline/page-errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "plain/before/candidate/area/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/before/candidate/area/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/before/candidate/bar/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-root line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/before/candidate/bar/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-root line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/before/candidate/line/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-root line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/before/candidate/line/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-root line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/before/candidate/scatter/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-root line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/before/candidate/scatter/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-root line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/before/candidate/page-errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "plain/before/area/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/before/bar/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/before/line/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/before/scatter/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/after/baseline/area/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/after/baseline/area/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/after/baseline/bar/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-container line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/after/baseline/bar/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-container line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/after/baseline/line/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-container line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/after/baseline/line/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-container line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/after/baseline/scatter/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-container line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/after/baseline/scatter/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-container line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/after/baseline/page-errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "plain/after/candidate/area/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/after/candidate/area/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/after/candidate/bar/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-root line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/after/candidate/bar/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-root line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/after/candidate/line/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-root line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/after/candidate/line/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-root line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/after/candidate/scatter/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-root line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "plain/after/candidate/scatter/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-root line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/after/candidate/page-errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "plain/after/area/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/after/bar/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/after/line/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "plain/after/scatter/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/before/baseline/area/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/before/baseline/area/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/before/baseline/bar/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-container line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/before/baseline/bar/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-container line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/before/baseline/line/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-container line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/before/baseline/line/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-container line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/before/baseline/scatter/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-container line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/before/baseline/scatter/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-container line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/before/baseline/page-errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "tailwind3/before/candidate/area/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/before/candidate/area/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/before/candidate/bar/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-root line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/before/candidate/bar/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-root line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/before/candidate/line/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-root line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/before/candidate/line/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-root line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/before/candidate/scatter/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-root line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/before/candidate/scatter/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-root line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/before/candidate/page-errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "tailwind3/before/area/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/before/bar/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/before/line/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/before/scatter/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/after/baseline/area/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/after/baseline/area/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/after/baseline/bar/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-container line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/after/baseline/bar/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-container line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/after/baseline/line/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-container line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/after/baseline/line/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-container line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/after/baseline/scatter/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-container line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/after/baseline/scatter/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-container line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/after/baseline/page-errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "tailwind3/after/candidate/area/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/after/candidate/area/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/after/candidate/bar/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-root line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/after/candidate/bar/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-root line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/after/candidate/line/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-root line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/after/candidate/line/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-root line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/after/candidate/scatter/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-root line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind3/after/candidate/scatter/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-root line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/after/candidate/page-errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "tailwind3/after/area/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/after/bar/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/after/line/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind3/after/scatter/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/before/baseline/area/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/before/baseline/area/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/before/baseline/bar/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-container line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/before/baseline/bar/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-container line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/before/baseline/line/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-container line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/before/baseline/line/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-container line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/before/baseline/scatter/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-container line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/before/baseline/scatter/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-container line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/before/baseline/page-errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "tailwind4/before/candidate/area/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/before/candidate/area/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/before/candidate/bar/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-root line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/before/candidate/bar/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-root line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/before/candidate/line/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-root line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/before/candidate/line/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-root line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/before/candidate/scatter/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-root line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/before/candidate/scatter/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-root line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/before/candidate/page-errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "tailwind4/before/area/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/before/bar/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/before/line/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/before/scatter/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/after/baseline/area/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/after/baseline/area/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-container line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/after/baseline/bar/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-container line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/after/baseline/bar/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-container line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/after/baseline/line/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-container line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/after/baseline/line/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-container line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/after/baseline/scatter/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-container line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/after/baseline/scatter/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-container line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/after/baseline/page-errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "tailwind4/after/candidate/area/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/after/candidate/area/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/after/candidate/bar/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-root line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/after/candidate/bar/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-bar-chart-root line.openui-grid-zero-line:where(.openui-bar-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/after/candidate/line/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-root line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/after/candidate/line/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-line-chart-root line.openui-grid-zero-line:where(.openui-line-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/after/candidate/scatter/positive-signed-zero-target",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-root line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "count": 1
+      }
+    },
+    {
+      "name": "tailwind4/after/candidate/scatter/ordinary-zero-type-state-override",
+      "pass": true,
+      "detail": {
+        "selector": ".openui-scatter-chart-root line.openui-grid-zero-line:where(.openui-scatter-chart-grid line)",
+        "values": [
+          "rgb(103, 102, 101)"
+        ],
+        "before": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/after/candidate/page-errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "tailwind4/after/area/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "144.64285714285714",
+            "y2": "144.64285714285714"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/after/bar/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/after/line/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "496",
+            "y1": "125",
+            "y2": "125"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tailwind4/after/scatter/default-zero-paired",
+      "pass": true,
+      "detail": {
+        "baseline": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ],
+        "candidate": [
+          {
+            "stroke": "oklch(0.994 0 89.876 / 0.06)",
+            "width": "1px",
+            "dash": "none",
+            "x1": "0",
+            "x2": "499",
+            "y1": "113.5",
+            "y2": "113.5"
+          }
+        ]
+      }
+    }
+  ],
+  "records": [
+    {
+      "framework": "plain",
+      "order": "before",
+      "pair": {
+        "baseline": {
+          "area": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714"
+            }
+          ],
+          "bar": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "line": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "scatter": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "113.5",
+              "y2": "113.5"
+            }
+          ]
+        },
+        "candidate": {
+          "area": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714"
+            }
+          ],
+          "bar": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "line": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "scatter": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "113.5",
+              "y2": "113.5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "pair": {
+        "baseline": {
+          "area": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714"
+            }
+          ],
+          "bar": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "line": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "scatter": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "113.5",
+              "y2": "113.5"
+            }
+          ]
+        },
+        "candidate": {
+          "area": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714"
+            }
+          ],
+          "bar": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "line": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "scatter": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "113.5",
+              "y2": "113.5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "pair": {
+        "baseline": {
+          "area": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714"
+            }
+          ],
+          "bar": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "line": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "scatter": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "113.5",
+              "y2": "113.5"
+            }
+          ]
+        },
+        "candidate": {
+          "area": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714"
+            }
+          ],
+          "bar": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "line": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "scatter": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "113.5",
+              "y2": "113.5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "pair": {
+        "baseline": {
+          "area": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714"
+            }
+          ],
+          "bar": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "line": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "scatter": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "113.5",
+              "y2": "113.5"
+            }
+          ]
+        },
+        "candidate": {
+          "area": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714"
+            }
+          ],
+          "bar": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "line": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "scatter": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "113.5",
+              "y2": "113.5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "pair": {
+        "baseline": {
+          "area": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714"
+            }
+          ],
+          "bar": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "line": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "scatter": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "113.5",
+              "y2": "113.5"
+            }
+          ]
+        },
+        "candidate": {
+          "area": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714"
+            }
+          ],
+          "bar": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "line": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "scatter": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "113.5",
+              "y2": "113.5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "pair": {
+        "baseline": {
+          "area": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714"
+            }
+          ],
+          "bar": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "line": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "scatter": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "113.5",
+              "y2": "113.5"
+            }
+          ]
+        },
+        "candidate": {
+          "area": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "144.64285714285714",
+              "y2": "144.64285714285714"
+            }
+          ],
+          "bar": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "line": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "496",
+              "y1": "125",
+              "y2": "125"
+            }
+          ],
+          "scatter": [
+            {
+              "stroke": "oklch(0.994 0 89.876 / 0.06)",
+              "width": "1px",
+              "dash": "none",
+              "x1": "0",
+              "x2": "499",
+              "y1": "113.5",
+              "y2": "113.5"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

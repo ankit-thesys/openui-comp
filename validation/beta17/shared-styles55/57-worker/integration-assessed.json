@@ -1,0 +1,1220 @@
+{
+  "note": "Visual parity compares computed properties/geometry, not the newly defined inherited custom-property token field. Original raw results preserved. Pre/post component-mount host checks are excluded because mounting changes scrollbar geometry in baseline too; no-render import-only host controls are separately recorded in supplement-results.json. Explicit root/container/theme token assertions remain unchanged.",
+  "checks": [
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"plain\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"plain\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "provider-free-light-system-dark:{\"framework\":\"plain\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"plain\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"plain\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "earlier-or-later-layer-root:{\"framework\":\"plain\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"plain\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"plain\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "inherited-container:{\"framework\":\"plain\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"plain\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"plain\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "provider-free-light-system-dark:{\"framework\":\"plain\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"plain\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"plain\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "earlier-or-later-layer-root:{\"framework\":\"plain\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"plain\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"plain\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"plain\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "inherited-container:{\"framework\":\"plain\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "provider-free-light-system-dark:{\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "earlier-or-later-layer-root:{\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "inherited-container:{\"framework\":\"tailwind3\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "provider-free-light-system-dark:{\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "earlier-or-later-layer-root:{\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "inherited-container:{\"framework\":\"tailwind3\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "provider-free-light-system-dark:{\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "earlier-or-later-layer-root:{\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "inherited-container:{\"framework\":\"tailwind4\",\"order\":\"before\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "provider-free-light-system-dark:{\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"none\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "earlier-or-later-layer-root:{\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"root\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"baseline\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "initial-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "updated-hostglob:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "defaults-survive-host-update:{\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "root-marker-preserves-host:{\"artifact\":\"candidate\",\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "image-is-not-theme-token:{\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "inherited-container:{\"framework\":\"tailwind4\",\"order\":\"after\",\"override\":\"container\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "provider-unmount-restores-light:light",
+      "pass": true
+    },
+    {
+      "name": "provider-unmount-restores-light:dark",
+      "pass": true
+    },
+    {
+      "name": "nested-theme:baseline",
+      "pass": true
+    },
+    {
+      "name": "nested-theme:candidate",
+      "pass": true
+    },
+    {
+      "name": "provider-unmount-restores-light:nested",
+      "pass": true
+    },
+    {
+      "name": "explicit-root-selector:baseline",
+      "pass": true
+    },
+    {
+      "name": "explicit-root-selector:candidate",
+      "pass": true
+    },
+    {
+      "name": "provider-unmount-restores-light:root",
+      "pass": true
+    },
+    {
+      "name": "portal-theme:baseline:portal",
+      "pass": true,
+      "detail": [
+        {
+          "tag": "DIV",
+          "text": "DialogPortal",
+          "styles": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "borderColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "font": "16px Times",
+            "letterSpacing": "normal",
+            "boxSizing": "content-box",
+            "cursor": "auto",
+            "outlineStyle": "none",
+            "outlineColor": "rgb(0, 0, 0)",
+            "outlineWidth": "3px",
+            "boxShadow": "none",
+            "width": "1264px",
+            "height": "0px"
+          },
+          "token": "rgb(51, 52, 53)",
+          "rect": {
+            "width": 1264,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "portal-theme:candidate:portal",
+      "pass": true,
+      "detail": [
+        {
+          "tag": "DIV",
+          "text": "DialogPortal",
+          "styles": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "borderColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "font": "16px Times",
+            "letterSpacing": "normal",
+            "boxSizing": "content-box",
+            "cursor": "auto",
+            "outlineStyle": "none",
+            "outlineColor": "rgb(0, 0, 0)",
+            "outlineWidth": "3px",
+            "boxShadow": "none",
+            "width": "1264px",
+            "height": "0px"
+          },
+          "token": "rgb(51, 52, 53)",
+          "rect": {
+            "width": 1264,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "provider-unmount-restores-light:portal",
+      "pass": true
+    },
+    {
+      "name": "portal-theme:baseline:select",
+      "pass": true,
+      "detail": [
+        {
+          "tag": "DIV",
+          "text": "[data-radix-select-viewport]{scroll",
+          "styles": {
+            "backgroundColor": "oklch(0.2527 0 5.39255)",
+            "color": "oklch(0.985 0 89.876)",
+            "borderColor": "oklch(0.985 0 89.876)",
+            "borderRadius": "14px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "font": "16px Times",
+            "letterSpacing": "normal",
+            "boxSizing": "border-box",
+            "cursor": "auto",
+            "outlineStyle": "none",
+            "outlineColor": "oklch(0.985 0 89.876)",
+            "outlineWidth": "3px",
+            "boxShadow": "oklch(0.985 0 89.876 / 0.06) 0px 0px 0px 1px, oklch(0 0 0 / 0.05) 0px 4px 12px -2px, oklch(0 0 0 / 0.08) 0px 16px 32px -8px",
+            "width": "77.7656px",
+            "height": "72px"
+          },
+          "token": "rgb(51, 52, 53)",
+          "rect": {
+            "width": 77.765625,
+            "height": 72
+          }
+        }
+      ]
+    },
+    {
+      "name": "portal-theme:candidate:select",
+      "pass": true,
+      "detail": [
+        {
+          "tag": "DIV",
+          "text": "[data-radix-select-viewport]{scroll",
+          "styles": {
+            "backgroundColor": "oklch(0.2527 0 5.39255)",
+            "color": "oklch(0.985 0 89.876)",
+            "borderColor": "oklch(0.985 0 89.876)",
+            "borderRadius": "14px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "font": "16px Times",
+            "letterSpacing": "normal",
+            "boxSizing": "border-box",
+            "cursor": "auto",
+            "outlineStyle": "none",
+            "outlineColor": "oklch(0.985 0 89.876)",
+            "outlineWidth": "3px",
+            "boxShadow": "oklch(0.985 0 89.876 / 0.06) 0px 0px 0px 1px, oklch(0 0 0 / 0.05) 0px 4px 12px -2px, oklch(0 0 0 / 0.08) 0px 16px 32px -8px",
+            "width": "77.7656px",
+            "height": "72px"
+          },
+          "token": "rgb(51, 52, 53)",
+          "rect": {
+            "width": 77.765625,
+            "height": 72
+          }
+        }
+      ]
+    },
+    {
+      "name": "provider-unmount-restores-light:select",
+      "pass": true
+    },
+    {
+      "name": "portal-theme:baseline:calendar",
+      "pass": true,
+      "detail": [
+        {
+          "tag": "DIV",
+          "text": "October2026October 2026SuMoTuWeThFr",
+          "styles": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "borderColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "font": "16px Times",
+            "letterSpacing": "normal",
+            "boxSizing": "content-box",
+            "cursor": "auto",
+            "outlineStyle": "none",
+            "outlineColor": "rgb(0, 0, 0)",
+            "outlineWidth": "3px",
+            "boxShadow": "none",
+            "width": "318px",
+            "height": "320px"
+          },
+          "token": "rgb(51, 52, 53)",
+          "rect": {
+            "width": 318,
+            "height": 320
+          }
+        }
+      ]
+    },
+    {
+      "name": "portal-theme:candidate:calendar",
+      "pass": true,
+      "detail": [
+        {
+          "tag": "DIV",
+          "text": "October2026October 2026SuMoTuWeThFr",
+          "styles": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "borderColor": "rgb(0, 0, 0)",
+            "borderRadius": "0px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "font": "16px Times",
+            "letterSpacing": "normal",
+            "boxSizing": "content-box",
+            "cursor": "auto",
+            "outlineStyle": "none",
+            "outlineColor": "rgb(0, 0, 0)",
+            "outlineWidth": "3px",
+            "boxShadow": "none",
+            "width": "318px",
+            "height": "320px"
+          },
+          "token": "rgb(51, 52, 53)",
+          "rect": {
+            "width": 318,
+            "height": 320
+          }
+        }
+      ]
+    },
+    {
+      "name": "provider-unmount-restores-light:calendar",
+      "pass": true
+    },
+    {
+      "name": "portal-theme:baseline:tooltip",
+      "pass": true,
+      "detail": [
+        {
+          "tag": "DIV",
+          "text": "tip",
+          "styles": {
+            "backgroundColor": "oklch(0.994 0 89.876 / 0.08)",
+            "color": "rgb(0, 0, 0)",
+            "borderColor": "rgb(0, 0, 0)",
+            "borderRadius": "6px",
+            "paddingTop": "6px",
+            "paddingRight": "8px",
+            "paddingBottom": "6px",
+            "paddingLeft": "8px",
+            "font": "16px Times",
+            "letterSpacing": "normal",
+            "boxSizing": "border-box",
+            "cursor": "auto",
+            "outlineStyle": "solid",
+            "outlineColor": "oklch(0.994 0 89.876 / 0.06)",
+            "outlineWidth": "1px",
+            "boxShadow": "none",
+            "width": "30.375px",
+            "height": "33px"
+          },
+          "token": "rgb(51, 52, 53)",
+          "rect": {
+            "width": 30.375,
+            "height": 33
+          }
+        }
+      ]
+    },
+    {
+      "name": "portal-theme:candidate:tooltip",
+      "pass": true,
+      "detail": [
+        {
+          "tag": "DIV",
+          "text": "tip",
+          "styles": {
+            "backgroundColor": "oklch(0.994 0 89.876 / 0.08)",
+            "color": "rgb(0, 0, 0)",
+            "borderColor": "rgb(0, 0, 0)",
+            "borderRadius": "6px",
+            "paddingTop": "6px",
+            "paddingRight": "8px",
+            "paddingBottom": "6px",
+            "paddingLeft": "8px",
+            "font": "16px Times",
+            "letterSpacing": "normal",
+            "boxSizing": "border-box",
+            "cursor": "auto",
+            "outlineStyle": "solid",
+            "outlineColor": "oklch(0.994 0 89.876 / 0.06)",
+            "outlineWidth": "1px",
+            "boxShadow": "none",
+            "width": "30.375px",
+            "height": "33px"
+          },
+          "token": "rgb(51, 52, 53)",
+          "rect": {
+            "width": 30.375,
+            "height": 33
+          }
+        }
+      ]
+    },
+    {
+      "name": "provider-unmount-restores-light:tooltip",
+      "pass": true
+    },
+    {
+      "name": "root-boundary:plain-root:before",
+      "pass": true
+    },
+    {
+      "name": "root-boundary:plain-root:after",
+      "pass": true
+    },
+    {
+      "name": "root-boundary:important-root:before",
+      "pass": true
+    },
+    {
+      "name": "root-boundary:important-root:after",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"plain\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"none\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"plain\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"none\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"plain\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"root\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"plain\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"root\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"plain\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"container\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"plain\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"container\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"plain\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"none\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"plain\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"none\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"plain\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"root\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"plain\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"root\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"plain\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"container\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"plain\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"container\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"tailwind3\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"none\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"tailwind3\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"none\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"tailwind3\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"root\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"tailwind3\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"root\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"tailwind3\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"container\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"tailwind3\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"container\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"tailwind3\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"none\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"tailwind3\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"none\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"tailwind3\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"root\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"tailwind3\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"root\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"tailwind3\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"container\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"tailwind3\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"container\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"tailwind4\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"none\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"tailwind4\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"none\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"tailwind4\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"root\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"tailwind4\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"root\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"tailwind4\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"container\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"tailwind4\", \"globOrder\": \"before\", \"order\": \"before\", \"override\": \"container\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"tailwind4\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"none\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"tailwind4\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"none\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"tailwind4\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"root\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"tailwind4\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"root\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"framework\": \"tailwind4\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"container\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:hosts:{\"framework\": \"tailwind4\", \"globOrder\": \"before\", \"order\": \"after\", \"override\": \"container\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"theme\": \"light\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:portals:{\"theme\": \"light\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"theme\": \"dark\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:portals:{\"theme\": \"dark\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"theme\": \"nested\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:portals:{\"theme\": \"nested\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"theme\": \"root\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:portals:{\"theme\": \"root\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"theme\": \"portal\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:portals:{\"theme\": \"portal\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"theme\": \"select\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:portals:{\"theme\": \"select\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"theme\": \"calendar\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:portals:{\"theme\": \"calendar\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:controls:{\"theme\": \"tooltip\"}",
+      "pass": true
+    },
+    {
+      "name": "visual-geometry-parity:portals:{\"theme\": \"tooltip\"}",
+      "pass": true
+    },
+    {
+      "name": "focus-hover-disabled-error-parity:plain",
+      "pass": true
+    },
+    {
+      "name": "focus-hover-disabled-error-parity:tailwind3",
+      "pass": true
+    },
+    {
+      "name": "focus-hover-disabled-error-parity:tailwind4",
+      "pass": true
+    }
+  ],
+  "total": 241,
+  "pass": 241,
+  "failures": []
+}

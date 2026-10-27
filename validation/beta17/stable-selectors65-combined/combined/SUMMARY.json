@@ -1,0 +1,93 @@
+{
+  "source": "75f69041891147d52dc0f0d2c4b21a048e575aa8",
+  "packageTree": "17e1a8c3a98e8b1833636aa78b53a49cbc245fe1",
+  "archiveSHA256": "d2a4b51255d745f41a7b51820ac0ec55ef5db8ff2b6f8d91ab43bade7766d037",
+  "workerChecks": 4591,
+  "allWorkerChecksPassed": true,
+  "matrices": [
+    {
+      "folder": "controls",
+      "script": "run.mjs",
+      "checks": 576,
+      "passes": 576,
+      "failures": []
+    },
+    {
+      "folder": "controls",
+      "script": "state-parts.mjs",
+      "exitCode": 0,
+      "elapsedSeconds": 57.14433813095093,
+      "checks": 66,
+      "passes": 66,
+      "failures": []
+    },
+    {
+      "folder": "portals",
+      "script": "run.mjs",
+      "exitCode": 0,
+      "elapsedSeconds": 386.855446100235,
+      "checks": 991,
+      "passes": 991,
+      "failures": []
+    },
+    {
+      "folder": "portals",
+      "script": "state-cssom.mjs",
+      "exitCode": 0,
+      "elapsedSeconds": 56.33112287521362,
+      "checks": 72,
+      "passes": 72,
+      "failures": []
+    },
+    {
+      "folder": "presentation",
+      "script": "run.mjs",
+      "exitCode": 0,
+      "elapsedSeconds": 116.78438186645508,
+      "checks": 2424,
+      "passes": 2424,
+      "failures": []
+    },
+    {
+      "folder": "presentation",
+      "script": "run-extra.mjs",
+      "exitCode": 0,
+      "elapsedSeconds": 102.2164900302887,
+      "checks": 374,
+      "passes": 374,
+      "failures": []
+    },
+    {
+      "folder": "presentation",
+      "script": "run-small-bounded.mjs",
+      "exitCode": 0,
+      "elapsedSeconds": 19.281190156936646,
+      "checks": 40,
+      "passes": 40,
+      "failures": []
+    },
+    {
+      "folder": "presentation",
+      "script": "run-tabs-state.mjs",
+      "exitCode": 0,
+      "elapsedSeconds": 7.1047680377960205,
+      "checks": 12,
+      "passes": 12,
+      "failures": []
+    },
+    {
+      "folder": "presentation",
+      "script": "run-sources-matched.mjs",
+      "exitCode": 0,
+      "elapsedSeconds": 9.026790857315063,
+      "checks": 36,
+      "passes": 36,
+      "failures": []
+    }
+  ],
+  "w2TargetsObserved": 178,
+  "independentAcceptance": "pending",
+  "sourcesImportantException": "retained, matching-target measurement does not establish ordinary override success",
+  "editableTable": "deferred",
+  "window": "all worker browser/server jobs complete; release recorded in handoff"
+}

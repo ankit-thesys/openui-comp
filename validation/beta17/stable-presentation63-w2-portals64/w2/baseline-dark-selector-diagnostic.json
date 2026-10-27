@@ -1,0 +1,20 @@
+{
+  "rules": [
+    {
+      "selector": ".go3605314259:where(.openui-text-content-markdown-dark-mode).go3605314259 p, .go3605314259:where(.openui-text-content-markdown-dark-mode).go3605314259 h1, .go3605314259:where(.openui-text-content-markdown-dark-mode).go3605314259 h2, .go3605314259:where(.openui-text-content-markdown-dark-mode).go3605314259 h3, .go3605314259:where(.openui-text-content-markdown-dark-mode).go3605314259 h4, .go3605314259:where(.openui-text-content-markdown-dark-mode).go3605314259 h5, .go3605314259:where(.openui-text-content-markdown-dark-mode).go3605314259 h6",
+      "styles": "color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));"
+    },
+    {
+      "selector": ".go3605314259:where(.openui-text-content-markdown-dark-mode).go3605314259 .katex",
+      "styles": "margin-top: var(--openui-space-xs, 6px); display: inline-block;"
+    }
+  ],
+  "markdown": "go686976788 openui-markdown-renderer go3605314259 openui-text-content-markdown openui-text-content-markdown-dark-mode",
+  "math": [
+    {
+      "className": "katex",
+      "display": "inline-block",
+      "marginTop": "6px"
+    }
+  ]
+}

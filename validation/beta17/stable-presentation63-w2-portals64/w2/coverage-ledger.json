@@ -1,0 +1,424 @@
+{
+  "baseCommit": "1c3833a045c4c66de92b69413a3824eca1798fcd",
+  "acceptedRuntime": false,
+  "families": [
+    {
+      "family": "Accordion",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "Buttons",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "Callout",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 9,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "Card",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "CardHeader",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "Carousel",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 4,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "Citation",
+      "ticket": 64,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 9,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee.",
+      "additionalValidation": "Actual portal/transient branches across six configs and light/dark/nested themes: extra-results.json. All 26 previously unobserved canonical targets observed."
+    },
+    {
+      "family": "CodeBlock",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "CompositeCardBlock",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 2,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "ContextCardBlock",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 2,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee.",
+      "additionalValidation": "Actual portal/transient branches across six configs and light/dark/nested themes: extra-results.json. All 26 previously unobserved canonical targets observed."
+    },
+    {
+      "family": "DotMatrixLoader",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "EditableTable",
+      "ticket": 63,
+      "sourceStatus": "explicitly deferred",
+      "convertedRules": 0,
+      "scope": "none; keyboard/editors/portal dependencies require coordinated follow-up",
+      "limits": "Defer whole family initially: editable cell keyboard/selection plus Select/DatePicker/Tooltip dependencies; table parts and editors require coordinated coverage.",
+      "validation": "not yet run; W1 owns initial exclusive browser/build window"
+    },
+    {
+      "family": "EntityList",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "IconTag",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 12,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "IconText",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 4,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "Image",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 4,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "ImageBlock",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 6,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee.",
+      "additionalValidation": "Actual portal/transient branches across six configs and light/dark/nested themes: extra-results.json. All 26 previously unobserved canonical targets observed."
+    },
+    {
+      "family": "ImageGallery",
+      "ticket": 64,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 22,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee.",
+      "additionalValidation": "Actual portal/transient branches across six configs and light/dark/nested themes: extra-results.json. All 26 previously unobserved canonical targets observed."
+    },
+    {
+      "family": "ImageText",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 6,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "ImageTextLarge",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 3,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "InlineHeader",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 3,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "InlineMarkdownRenderer",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": "Owned inline wrapper, markdown descendant scope, p and direct-child layout rules remain eligible; coordinate MarkDownRenderer. Defer only vendor internals, not existing owned selectors.",
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "ListBlock",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "ListItem",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "MarkDownRenderer",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 3,
+      "scope": "all existing owned css tagged registrations",
+      "limits": "Owned wrapper/link/code/table and deliberate descendant rules remain eligible. Vendor syntax-highlighter/KaTeX token DOM/inline themes are the specific deferred area; not a whole-family skip.",
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "MetricIndicator",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "OverviewCardBlock",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "SectionBlock",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 6,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "Separator",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "Skeleton",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 4,
+      "scope": "all existing owned css tagged registrations",
+      "limits": "SkeletonBar and stack ordinary styles are eligible. Inspect TableSkeleton/PieChartSkeleton shape areas separately; only specifically justified shapes may be deferred. Private keyframe identifiers alone are not a deferral reason.",
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "SnippetCardBlock",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "SourceFaviconImage",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": "Successful img root openui-source-favicon-image with object-fit/display is eligible. Empty URL/error branch renders shared IconWrapper without this hook: leave fallback behavior/icons unchanged and do not document the image hook as a fallback-icon hook.",
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "Sources",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 10,
+      "scope": "all existing owned css tagged registrations",
+      "limits": "Existing important width/background declarations retain precedence; ordinary background override on Sources Carousel item fails in baseline and candidate. Explicitly not counted as passing override.",
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee.",
+      "additionalValidation": "Actual portal/transient branches across six configs and light/dark/nested themes: extra-results.json. All 26 previously unobserved canonical targets observed."
+    },
+    {
+      "family": "Steps",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 2,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "Table",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 10,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "Tabs",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 5,
+      "scope": "all existing owned css tagged registrations",
+      "limits": "Clear state requires matching root+clear-state+part selector; 12 fresh paired checks pass in tabs-state-results.json. Original weaker failures retained.",
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "Tag",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 11,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "TagBlock",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "TextBlock",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 1,
+      "scope": "all existing owned css tagged registrations",
+      "limits": "Owned root/size/type/alignment/tone/variant rules are eligible; preserve InlineMarkdownRenderer dependency. Vendor internals only are excluded from any transitive guarantee.",
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "TextCallout",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 9,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "TextContent",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 4,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "TextContentWrapper",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 2,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    },
+    {
+      "family": "TooltipWrapper",
+      "ticket": 64,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 4,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee.",
+      "additionalValidation": "Actual portal/transient branches across six configs and light/dark/nested themes: extra-results.json. All 26 previously unobserved canonical targets observed."
+    },
+    {
+      "family": "VisualCardBlock",
+      "ticket": 63,
+      "sourceStatus": "converted and committed; bounded packed-consumer checks complete; independent acceptance pending",
+      "convertedRules": 2,
+      "scope": "all existing owned css tagged registrations",
+      "limits": null,
+      "validation": "Main six-config parity and single-family optimized first-use parity passed. Root/part/state override limits and original failures are disclosed in override-dispositions.md; no blanket all-property override guarantee."
+    }
+  ],
+  "sharedCardLayout": {
+    "scope": "3 owned registrations source converted; exact private shared file only",
+    "validation": "Shared scrollbar actually observed in ContextCardBlock carousel branch; paired extra-state tests pass."
+  },
+  "candidateCommit": "d1e8a05d035b66453d58953faf7d9fabacbaa8e8",
+  "archiveSha256": "212170767ecbea02251b723138c45ad753471f6a3a010e3e9d1e3a9970cea903",
+  "acceptanceStatus": "Worker scoped runs complete; integration/verifier acceptance pending.",
+  "runtimeEvidence": [
+    "runtime-results.json",
+    "small-results.json",
+    "override-results.json",
+    "extra-results.json",
+    "tabs-state-results.json",
+    "override-dispositions.md"
+  ],
+  "window": "RELEASED"
+}

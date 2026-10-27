@@ -1,0 +1,152 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 5090,
+    "sha256": "5f1120a82c55d86218b6a7810f0d6e4de8acaca9fc9851e4e68cfef21ff0809a"
+  },
+  {
+    "file": "changesets-config.json",
+    "bytes": 529,
+    "sha256": "801376d199d3b629db5fd6886a2c8166a11b179b94f35b2746715a9d0218b5d7"
+  },
+  {
+    "file": "chat-only-changeset.md",
+    "bytes": 84,
+    "sha256": "8e69209329d9ad7d10d327fc11d61521ac308f2b77ae3939a25d61c95af0d093"
+  },
+  {
+    "file": "commands.json",
+    "bytes": 4806,
+    "sha256": "a14d4bc04a1c0b280ff43ce0b6dcc57839ea6c477985163f108316172f92756f"
+  },
+  {
+    "file": "evidence-hashes.json",
+    "bytes": 2868,
+    "sha256": "bce8e5d118f18436135c3ecc53c14fc4bbc9a0a8b1e98ac7804a5e77b7ad8b68"
+  },
+  {
+    "file": "inspect-final.py",
+    "bytes": 2777,
+    "sha256": "35c44d2c411b76eb73516809912db7169278020b57c1bc67914efef43fc08c5c"
+  },
+  {
+    "file": "packed-artifact-inspection.json",
+    "bytes": 196588,
+    "sha256": "0c108d4dbde056fa833488da8e0cfa83988b4ffbe099970b8f3bfd45e10724d5"
+  },
+  {
+    "file": "peer-controls.json",
+    "bytes": 2366,
+    "sha256": "d8d5299279ed9e05e9d04ef90c01b94c8ef6a80c300692aab52014e1a2ed9680"
+  },
+  {
+    "file": "planned-artifact-inspection.json",
+    "bytes": 39709,
+    "sha256": "6c16dfd10fd80d314b2c1398ecf808ae051d7c4d9ff629e37d21c8bdbb6c0ad9"
+  },
+  {
+    "file": "planned-consumer-commands.json",
+    "bytes": 33949,
+    "sha256": "2cb8756f02676c5f3fc98381aa0ebadd17e81b300b63fcc7c2060b4575265a49"
+  },
+  {
+    "file": "planned-consumer-package.json",
+    "bytes": 1017,
+    "sha256": "deb3b7ae2e328818c29622db3ce177104e72af67450cd7d87d71e22160f96f9b"
+  },
+  {
+    "file": "planned-consumer-pnpm-lock.yaml",
+    "bytes": 107316,
+    "sha256": "5e6c6f283330e4eb2a82cf417d4ff1976a593c20a9fd80833ee8bebb68da87d3"
+  },
+  {
+    "file": "planned-consumer-types.cts",
+    "bytes": 693,
+    "sha256": "014aa4ec630cd5998dee684e99a2e4779b99e3693246f22cdb57dc4d55f10222"
+  },
+  {
+    "file": "planned-consumer-types.mts",
+    "bytes": 1007,
+    "sha256": "c71d3db1bf91876c705ab4623fdb24e9e9b09d06c26d829f759919e3f99e9f2d"
+  },
+  {
+    "file": "planned-consumer-verify-imports.mjs",
+    "bytes": 1412,
+    "sha256": "998079ba420f4f13566d81aac3fb02fb382d71f21a559a0d03a7fb2d40d8b4b8"
+  },
+  {
+    "file": "planned-dist-provenance.json",
+    "bytes": 77782,
+    "sha256": "921b893ebb70af0387b3b24b829e7d9b4df79480e6b444ec5cfb9ef9a1877248"
+  },
+  {
+    "file": "planned-version-command.json",
+    "bytes": 293,
+    "sha256": "8577db4274187e20522144c21d3a83d722bcd5eb1b55d19feee827e74fdb144c"
+  },
+  {
+    "file": "pnpm-workspace.yaml",
+    "bytes": 1046,
+    "sha256": "275f06c565c4d4b922702c9a9930305666205ebb4ba3b949294d95dd225ff529"
+  },
+  {
+    "file": "provenance.json",
+    "bytes": 1212,
+    "sha256": "d6ff5457086cb1e9338d9fd6cfdd4687feb1bb0ec827a024f4b06419f5800db0"
+  },
+  {
+    "file": "release-plan.json",
+    "bytes": 470,
+    "sha256": "5bfb56771969e8ab57dd092afda594cdc74fc68ea9271bd6a6fb093e74e9fb8f"
+  },
+  {
+    "file": "run-planned-consumer.py",
+    "bytes": 1205,
+    "sha256": "d3f8b7705555d3a696d3395467ee6fe5fd55621d75c3465a1ec374017c37f83b"
+  },
+  {
+    "file": "ticket47-browser-results.json",
+    "bytes": 719,
+    "sha256": "063daeee310b76f712e651ed27705098f4e1c7000f55f3d976282d861efb410c"
+  },
+  {
+    "file": "ticket47-bundle-results.json",
+    "bytes": 244,
+    "sha256": "a305b48dd7cef8746fbf099833fd57fc7bc8c62fe7ac76d1429feb776c91e1de"
+  },
+  {
+    "file": "ticket47-evidence-hashes-verified.json",
+    "bytes": 2168,
+    "sha256": "bcbf9da3123340850401814cf57b03b5beaab4dc2ff453803439e022ca6fffa9"
+  },
+  {
+    "file": "ticket47-final-provenance.json",
+    "bytes": 2950,
+    "sha256": "e13a0c69ca2ab774f35e40ed97d30c229b7e8be017d3bfe156b6073709c0b1d4"
+  },
+  {
+    "file": "ticket47-packed-types.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "file": "ticket47-registry-schema.json",
+    "bytes": 97972,
+    "sha256": "516446fb9ec66b6986a78a19903058ab45601e66ce3f11f5901f46ccd86ca9e9"
+  },
+  {
+    "file": "ticket47-resume-packed.log",
+    "bytes": 358,
+    "sha256": "0f3afed62637c6211f73c6598438fea7a194cc713e1a1990204440a734cd7ece"
+  },
+  {
+    "file": "verify-peer-windows.mjs",
+    "bytes": 1754,
+    "sha256": "c2483c01388ae93cff22dafb27ce9301b9f7c2de8a472221f3e54fa5ce0ca7ba"
+  },
+  {
+    "file": "workspace-packages.mjs",
+    "bytes": 685,
+    "sha256": "bb644e609aad2e2b392c536c54050f845dd6bd29b33454110e3a66071a3982d4"
+  }
+]

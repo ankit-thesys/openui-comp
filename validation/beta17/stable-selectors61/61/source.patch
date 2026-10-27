@@ -1,0 +1,179 @@
+diff --git a/packages/react-components/README.md b/packages/react-components/README.md
+index 1c55bc27a..fce9d60b0 100644
+--- a/packages/react-components/README.md
++++ b/packages/react-components/README.md
+@@ -63,6 +63,9 @@ Owned component styles use unmodified Goober module-scope `css` calls and do not
+ require a CSS import, setup command or styling build plugin. Styles register
+ when a referenced module evaluates, before the component renders. The build
+ preserves modules and marks unused modules removable by the consumer's bundler.
++A bundler may combine several retained components in a shared lazy chunk; their
++styles can register together when that chunk evaluates. This is not a guarantee
++of a separate stylesheet or network chunk for each component.
+ 
+ Importing the package also registers the existing light-theme token defaults on
+ the document root, without a provider. These defaults occupy the first CSS layer,
+@@ -86,6 +89,72 @@ framework's important utility modifier: Tailwind v3 `!bg-red-500`, Tailwind v4
+ the primary customization APIs. Replacing host styles dynamically after mount
+ has not been certified.
+ 
++### Stable selector pilot
++
++Button and IconButton use stable styling targets. Importing either component
++registers its rules automatically through stock Goober. A private generated class
++on `html` is contained in `:where(...:root)` and adds zero specificity. Consumers
++do not use that class. Other component families still use generated selectors.
++
++| Target | Button | IconButton |
++| --- | --- | --- |
++| Root | `.openui-button-root` | `.openui-icon-button-root` |
++| Preserved root alias | `.openui-button-base` | `.openui-icon-button` |
++| Variant | `.openui-button-base-primary` (also secondary/tertiary) | `.openui-icon-button-primary` (also secondary/tertiary) |
++| Destructive variant | `.openui-button-base-destructive-primary` (also secondary/tertiary) | `.openui-icon-button-destructive-primary` (also secondary/tertiary) |
++| Size | `.openui-button-base-{extra-small,small,medium,large}` | `.openui-icon-button-{3-extra-small,2-extra-small,extra-small,small,medium,large}` |
++| Shape | Existing Button geometry | `.openui-icon-button-square`, `.openui-icon-button-circle` |
++| State | `:hover:not(:disabled)`, `:active:not(:disabled)`, `:disabled` | Same |
++| Owned part | No added wrapper around children or icons | `.openui-icon-button-icon` (existing span) |
++
++Use ordinary **later, unlayered CSS** with the corresponding selector. Root rules
++have one class of specificity; variants, sizes, states and parts retain their
++additional selectors. For example:
++
++```css
++.openui-button-root { border-width: 2px; }
++.openui-button-root.openui-button-base-primary { background: navy; }
++.openui-button-root.openui-button-base-primary:disabled { cursor: wait; }
++.openui-icon-button-root .openui-icon-button-icon { gap: 4px; }
++```
++
++No `!important` is required for these matching overrides. This does not promise
++that earlier CSS, a root-only selector against a variant rule, or normal CSS in a
++named layer beats unlayered component rules. Existing props, inline styles and
++theme APIs remain unchanged; no new styling prop is introduced. Old root aliases
++remain available on actual components. Host elements carrying only those old
++aliases do not acquire the new component styles.
++
++The shared `openui-border-box` helper opts in only Buttons, FormControl and
++TagBlock roots. A later root class can override its box sizing. It does not style
++descendants or complete the selector migration for those three families.
++
++### Selector conversion status
++
++This inventory describes the selector pilot, not a completed package-wide
++conversion. All existing token fallbacks remain in place.
++
++| Status | Families |
++| --- | --- |
++| Converted pilot | Button, IconButton |
++| Shared box sizing only; remaining selectors pending | Buttons, FormControl, TagBlock |
++| Deferred to #62 | CheckBoxGroup, CheckBoxItem, Chips, Input, Label, OptionCards, RadioGroup, RadioItem, Slider, SwitchGroup, SwitchItem, TextArea, ToggleGroup, ToggleItem |
++| Deferred to #63 | Accordion, Callout, Card, CardHeader, Carousel, CodeBlock, CompositeCardBlock, ContextCardBlock, DotMatrixLoader, EditableTable, EntityList, IconTag, IconText, Image, ImageBlock, ImageText, ImageTextLarge, InlineHeader, InlineMarkdownRenderer, ListBlock, ListItem, MarkDownRenderer, MetricIndicator, OverviewCardBlock, SectionBlock, Separator, Skeleton, SnippetCardBlock, SourceFaviconImage, Sources, Steps, Table, Tabs, Tag, TextBlock, TextCallout, TextContent, TextContentWrapper, VisualCardBlock |
++| Deferred to #64 | Calendar, Citation, DatePicker, ImageGallery, Modal, Select, TooltipWrapper |
++
++Charts retain their current selectors; their Button/IconButton controls consume
++the pilot indirectly. Later tickets must review each owned root, variant, state
++and part before declaring a family converted. Calendar's direct imports of
++Select content/viewport styles remain unchanged and require coordinated review.
++
++EditableTable remains a complex deferred candidate, not an automatic exception
++for all its owned wrappers. Markdown/code wrapper styles can migrate separately
++from vendor syntax themes and KaTeX. Dynamic geometry and per-instance colors,
++React inline styles, ThemeProvider serialization and official vendor CSS retain
++their existing contracts; animations alone do not justify skipping owned styles.
++SourceFaviconImage's existing hook applies to the successful image, not its
++shared icon fallback. TextContent's existing `text-content` aliases are preserved.
++
+ ### Math styles and fonts
+ 
+ TextContentWrapper retains its lazy math renderer and automatically imports
+diff --git a/packages/react-components/src/components/Button/Button.tsx b/packages/react-components/src/components/Button/Button.tsx
+index edeecd56b..bfb9629cf 100644
+--- a/packages/react-components/src/components/Button/Button.tsx
++++ b/packages/react-components/src/components/Button/Button.tsx
+@@ -3,10 +3,18 @@ import { css } from "goober";
+ import { forwardRef, ReactNode } from "react";
+ import { buttonStyles } from "./button.styles";
+ 
+-const componentClass = css`
+-  ${buttonStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-button-root {
++      ${buttonStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
+ type ButtonVariant = "primary" | "secondary" | "tertiary";
+ type ButtonSize = "extra-small" | "small" | "medium" | "large";
+ type ButtonType = "normal" | "destructive";
+@@ -57,7 +65,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+       <button
+         ref={ref}
+         className={clsx(
+-          componentClass,
++          "openui-button-root",
+           "openui-button-base",
+           variantMap[variant],
+           sizeMap[size],
+diff --git a/packages/react-components/src/components/IconButton/IconButton.tsx b/packages/react-components/src/components/IconButton/IconButton.tsx
+index 014576a14..3c1187076 100644
+--- a/packages/react-components/src/components/IconButton/IconButton.tsx
++++ b/packages/react-components/src/components/IconButton/IconButton.tsx
+@@ -4,10 +4,18 @@ import { css } from "goober";
+ import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
+ import { iconButtonStyles } from "./iconButton.styles";
+ 
+-const componentClass = css`
+-  ${iconButtonStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-icon-button-root {
++      ${iconButtonStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
+ type IconButtonVariant = "primary" | "secondary" | "tertiary";
+ type IconButtonSize =
+   "3-extra-small" | "2-extra-small" | "extra-small" | "small" | "medium" | "large";
+@@ -77,7 +85,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props,
+     <Comp
+       ref={ref}
+       className={clsx(
+-        componentClass,
++        "openui-icon-button-root",
+         "openui-icon-button",
+         iconButtonVariants[variant],
+         iconButtonSizes[size],
+diff --git a/packages/react-components/src/styles/base.ts b/packages/react-components/src/styles/base.ts
+index cc2def602..418aeed24 100644
+--- a/packages/react-components/src/styles/base.ts
++++ b/packages/react-components/src/styles/base.ts
+@@ -1,6 +1,16 @@
+ import { css } from "goober";
+ 
+-// Apply only to component roots that already used border-box.
+-export const borderBoxClass = css`
+-  box-sizing: border-box;
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-border-box {
++      box-sizing: border-box;
++    }
++  }
+ `;
++
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++// Explicit opt-in preserves the three roots' existing applicability.
++export const borderBoxClass = "openui-border-box";

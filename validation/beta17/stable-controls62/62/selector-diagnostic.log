@@ -1,0 +1,9 @@
+[
+  ":where(.go4150332225:root) .openui-chips-root .openui-chip-item:disabled, :where(.go4150332225:root) .openui-chips-root .openui-chip-item--disabled",
+  ":where(.go2369360468:root) .openui-option-cards-root .openui-option-card--disabled :where(.openui-option-card__title), :where(.go2369360468:root) .openui-option-cards-root .openui-option-card--disabled :where(.openui-option-card__subtitle)",
+  ":where(.go2477125944:root) .openui-slider-wrapper-root .openui-slider-left-content, :where(.go2477125944:root) .openui-slider-wrapper-root .openui-slider-right-content",
+  ":where(.go2477125944:root) .openui-slider-wrapper-root .openui-slider-left-content svg, :where(.go2477125944:root) .openui-slider-wrapper-root .openui-slider-right-content svg",
+  ":where(.go2477125944:root) .openui-slider-wrapper-root .openui-slider-thumb-handle:hover .openui-slider-thumb-value, :where(.go2477125944:root) .openui-slider-wrapper-root .openui-slider-thumb-handle:focus .openui-slider-thumb-value",
+  ":where(.go552077232:root) .openui-slider-block-root .openui-slider-block__controls input, :where(.go552077232:root) .openui-slider-block-root .openui-slider-block__controls button",
+  ":where(.go552077232:root) .openui-slider-block-root .openui-slider-block__validated-input-container, :where(.go552077232:root) .openui-slider-block-root .openui-slider-block__validated-select-container"
+]

@@ -1,0 +1,1682 @@
+[
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "plain",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind3",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "before",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/root/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "baseline",
+    "case": "tokens/container/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/root/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/remove",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/21px",
+    "gaps": [
+      "21px",
+      "21px",
+      "21px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/initial",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/unset",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  },
+  {
+    "config": {
+      "framework": "tailwind4",
+      "order": "after",
+      "consumer": "none"
+    },
+    "arm": "candidate",
+    "case": "tokens/container/inherit",
+    "gaps": [
+      "12px",
+      "8px",
+      "8px"
+    ]
+  }
+]

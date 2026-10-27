@@ -1,0 +1,2117 @@
+[
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/source-progress.json",
+    "path": "worker/source-progress.json",
+    "originalSHA256": "50d903f6dc16974e1e6c4264d09689cc44fda9ae352d7760e423b84f41b00922",
+    "storedSHA256": "50d903f6dc16974e1e6c4264d09689cc44fda9ae352d7760e423b84f41b00922",
+    "originalBytes": 2161,
+    "storedBytes": 2161,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/extra-smoke-v1.log",
+    "path": "worker/extra-smoke-v1.log",
+    "originalSHA256": "2b3e9cfc3bd64b880834d3d5714908a629c6ae000369740d094bb3c4ffd7613e",
+    "storedSHA256": "2b3e9cfc3bd64b880834d3d5714908a629c6ae000369740d094bb3c4ffd7613e",
+    "originalBytes": 546,
+    "storedBytes": 546,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-smoke-v1.log",
+    "path": "worker/shared-smoke-v1.log",
+    "originalSHA256": "d2a6916760aa5913ee0e6b413b5194ad90d7eb96769e00ae9a6a1ef9315b42b4",
+    "storedSHA256": "d2a6916760aa5913ee0e6b413b5194ad90d7eb96769e00ae9a6a1ef9315b42b4",
+    "originalBytes": 231,
+    "storedBytes": 231,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/SUMMARY.json",
+    "path": "worker/SUMMARY.json",
+    "originalSHA256": "ebb595ce832842843fedf964ea2dff69f659347fad5af40cee6d620708338528",
+    "storedSHA256": "ebb595ce832842843fedf964ea2dff69f659347fad5af40cee6d620708338528",
+    "originalBytes": 1956,
+    "storedBytes": 1956,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/extra-full.log",
+    "path": "worker/extra-full.log",
+    "originalSHA256": "fa775e3ea13a2c23546e9c77842ae9e108acea4d002d26fadc98f60dcc7bb15e",
+    "storedSHA256": "fa775e3ea13a2c23546e9c77842ae9e108acea4d002d26fadc98f60dcc7bb15e",
+    "originalBytes": 710,
+    "storedBytes": 710,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/motion-resources-closed.json",
+    "path": "worker/motion-resources-closed.json",
+    "originalSHA256": "233f86021eae932d1a1f6887592d48066b921a24b79f19881ed5bf4238442edb",
+    "storedSHA256": "233f86021eae932d1a1f6887592d48066b921a24b79f19881ed5bf4238442edb",
+    "originalBytes": 76,
+    "storedBytes": 76,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-tailwind3-after-baseline-raw.json",
+    "path": "worker/shared-tailwind3-after-baseline-raw.json.gz",
+    "originalSHA256": "4ea6a6a3cecfc63256a752ccfe06d769ff62418676ca0eb270f9376474b69836",
+    "storedSHA256": "7630bcfa179c95771d8f3c56d3c9dc33f0164af51b6f71da7b7222a3a5d1e3a3",
+    "originalBytes": 1371596,
+    "storedBytes": 26516,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/final-installed-binding.json",
+    "path": "worker/final-installed-binding.json",
+    "originalSHA256": "2d322bf23be793178aa77fc7c263006a15191020b47435e7eed9b021a2ee16b0",
+    "storedSHA256": "2d322bf23be793178aa77fc7c263006a15191020b47435e7eed9b021a2ee16b0",
+    "originalBytes": 177,
+    "storedBytes": 177,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/motion-results.json",
+    "path": "worker/motion-results.json.gz",
+    "originalSHA256": "9bf7308fb172fc73440abcbb438c6abaafdfdc1cc7590e620cc46fd51fa4fc2a",
+    "storedSHA256": "2c72b32e3b96214c0c7841a8196d30dbb4faf10e33d733e172a46c6a450a2f52",
+    "originalBytes": 60927298,
+    "storedBytes": 989544,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-results.json",
+    "path": "worker/shared-results.json.gz",
+    "originalSHA256": "9fb75f2fd530c577f79048bced40c03b42fb4b1bcddaa55c8e866d1d4395b215",
+    "storedSHA256": "aa964c6d08079f6b4474f9263fa1d0f7f02c22519191e43894aebe28db8b28e6",
+    "originalBytes": 25097682,
+    "storedBytes": 441838,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/pack-area.log",
+    "path": "worker/pack-area.log",
+    "originalSHA256": "cf99d4010f1697e02e3aec1f7fb08dffc6841a727bf7f11d99133a48591eba3f",
+    "storedSHA256": "cf99d4010f1697e02e3aec1f7fb08dffc6841a727bf7f11d99133a48591eba3f",
+    "originalBytes": 115364,
+    "storedBytes": 115364,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/extra-results.json",
+    "path": "worker/extra-results.json.gz",
+    "originalSHA256": "2f02e9cdba7f03386e7d11303b3ecd3e3072141db2c575e0fcf2282e61e4a2ca",
+    "storedSHA256": "f0e4c5b10bc40e504594273aa27f3820e25b17c092a2a815403468f501b87faf",
+    "originalBytes": 461058,
+    "storedBytes": 24220,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/extra-smoke-v2.log",
+    "path": "worker/extra-smoke-v2.log",
+    "originalSHA256": "35cedb5599490762fef08c9e19d6060619714b0c41e65081d9a9261d674054e6",
+    "storedSHA256": "35cedb5599490762fef08c9e19d6060619714b0c41e65081d9a9261d674054e6",
+    "originalBytes": 890,
+    "storedBytes": 890,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/spec-review-final.md",
+    "path": "worker/spec-review-final.md",
+    "originalSHA256": "13980c6b512d767d3c56bfcb4f729ad0480575a97082c2b587204010135273a1",
+    "storedSHA256": "13980c6b512d767d3c56bfcb4f729ad0480575a97082c2b587204010135273a1",
+    "originalBytes": 2729,
+    "storedBytes": 2729,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/run-extra.mjs",
+    "path": "worker/run-extra.mjs",
+    "originalSHA256": "d8ff7e773d83defdf3951b0e32a3b03fe72495c5b96151cdb76f474266df3e02",
+    "storedSHA256": "d8ff7e773d83defdf3951b0e32a3b03fe72495c5b96151cdb76f474266df3e02",
+    "originalBytes": 13312,
+    "storedBytes": 13312,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-probes.mjs",
+    "path": "worker/shared-probes.mjs",
+    "originalSHA256": "4e7c2eb34f9ba1ce1776cb02f764d0b8f518e380652f8eb9ea59b94ffcbf4e83",
+    "storedSHA256": "4e7c2eb34f9ba1ce1776cb02f764d0b8f518e380652f8eb9ea59b94ffcbf4e83",
+    "originalBytes": 19544,
+    "storedBytes": 19544,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/run.mjs",
+    "path": "worker/run.mjs",
+    "originalSHA256": "221d2f903b5e1f8d11db70882519570e42b3e7cf204a37d207be9877dc8137c7",
+    "storedSHA256": "221d2f903b5e1f8d11db70882519570e42b3e7cf204a37d207be9877dc8137c7",
+    "originalBytes": 7605,
+    "storedBytes": 7605,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-tailwind3-before-baseline-raw.json",
+    "path": "worker/shared-tailwind3-before-baseline-raw.json.gz",
+    "originalSHA256": "a5269db1d2058f3966bf306569b0dcb61d3ea70438d0b321f98694e6d2b26fa2",
+    "storedSHA256": "14028ce210b0a684a852ae93ad63841ebeecbedcf926b78f018d165f7102c469",
+    "originalBytes": 1371597,
+    "storedBytes": 26515,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/cssom-tailwind3-after.json",
+    "path": "worker/cssom-tailwind3-after.json",
+    "originalSHA256": "cb029ea3e8910d8b86ac78f03d93d5adfd311fdf01e5f7a2b943ec123227ee7e",
+    "storedSHA256": "cb029ea3e8910d8b86ac78f03d93d5adfd311fdf01e5f7a2b943ec123227ee7e",
+    "originalBytes": 66322,
+    "storedBytes": 66322,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/small-build-index.json",
+    "path": "worker/small-build-index.json",
+    "originalSHA256": "8afaaa46005f21eefb9b40d9b725f3970d71b260cc8d2f48316b5ce81e6c4ac2",
+    "storedSHA256": "8afaaa46005f21eefb9b40d9b725f3970d71b260cc8d2f48316b5ce81e6c4ac2",
+    "originalBytes": 2264,
+    "storedBytes": 2264,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-full-v2.log",
+    "path": "worker/shared-full-v2.log",
+    "originalSHA256": "4b840d61b6ec55c8bd1e24d915c9cd66b1098c482f65b9d0830434cdd0ae0246",
+    "storedSHA256": "4b840d61b6ec55c8bd1e24d915c9cd66b1098c482f65b9d0830434cdd0ae0246",
+    "originalBytes": 42,
+    "storedBytes": 42,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/source-audit.json",
+    "path": "worker/source-audit.json",
+    "originalSHA256": "b9d0ab34c0ad31432f7a1d8b0b3cda311f7c27a2abcf0c65740b92039cd63fa8",
+    "storedSHA256": "b9d0ab34c0ad31432f7a1d8b0b3cda311f7c27a2abcf0c65740b92039cd63fa8",
+    "originalBytes": 12101,
+    "storedBytes": 12101,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/pack-combined-v1.log",
+    "path": "worker/pack-combined-v1.log",
+    "originalSHA256": "ca00d3927e2518aed52c5953911c84692437ecffbfe7de881b84e1a76e9707e7",
+    "storedSHA256": "ca00d3927e2518aed52c5953911c84692437ecffbfe7de881b84e1a76e9707e7",
+    "originalBytes": 115371,
+    "storedBytes": 115371,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/build-shared-fixtures-v2.log",
+    "path": "worker/build-shared-fixtures-v2.log",
+    "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "storedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "storedBytes": 0,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-host-aliases.json",
+    "path": "worker/shared-host-aliases.json",
+    "originalSHA256": "2fbcacc791a051b485b5d40c5cb0d231bb5359e3feb58121c4349ec240270c78",
+    "storedSHA256": "2fbcacc791a051b485b5d40c5cb0d231bb5359e3feb58121c4349ec240270c78",
+    "originalBytes": 3392,
+    "storedBytes": 3392,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/cssom-plain-before.json",
+    "path": "worker/cssom-plain-before.json",
+    "originalSHA256": "cb029ea3e8910d8b86ac78f03d93d5adfd311fdf01e5f7a2b943ec123227ee7e",
+    "storedSHA256": "cb029ea3e8910d8b86ac78f03d93d5adfd311fdf01e5f7a2b943ec123227ee7e",
+    "originalBytes": 66322,
+    "storedBytes": 66322,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/small-runtime.log",
+    "path": "worker/small-runtime.log",
+    "originalSHA256": "360068e370322866647c9ead4bb187d3e2f347e4c1bb840795500074d61e0617",
+    "storedSHA256": "360068e370322866647c9ead4bb187d3e2f347e4c1bb840795500074d61e0617",
+    "originalBytes": 40,
+    "storedBytes": 40,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-resources-closed.json",
+    "path": "worker/shared-resources-closed.json",
+    "originalSHA256": "0ea3a6491af18be8af18405ad04f0b7ac038756851c2677bae20e021eab660df",
+    "storedSHA256": "0ea3a6491af18be8af18405ad04f0b7ac038756851c2677bae20e021eab660df",
+    "originalBytes": 76,
+    "storedBytes": 76,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/typecheck-combined-initial.log",
+    "path": "worker/typecheck-combined-initial.log",
+    "originalSHA256": "a9d27db6cf3d1a2e2f9bc53fff59274102a265747780347e9c3afc0ed6fb217e",
+    "storedSHA256": "a9d27db6cf3d1a2e2f9bc53fff59274102a265747780347e9c3afc0ed6fb217e",
+    "originalBytes": 126,
+    "storedBytes": 126,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/source-inventory.json",
+    "path": "worker/source-inventory.json",
+    "originalSHA256": "e5c3669022a205d8605fbd6e9b3a39f4d3ef54fd42657c43184d380ecea50a02",
+    "storedSHA256": "e5c3669022a205d8605fbd6e9b3a39f4d3ef54fd42657c43184d380ecea50a02",
+    "originalBytes": 36282,
+    "storedBytes": 36282,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/run-motion.mjs",
+    "path": "worker/run-motion.mjs",
+    "originalSHA256": "0551cd72dede5a9421d3911619923e24ed9c260f882f284609ae717145cbb09f",
+    "storedSHA256": "0551cd72dede5a9421d3911619923e24ed9c260f882f284609ae717145cbb09f",
+    "originalBytes": 8296,
+    "storedBytes": 8296,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-final-install.log",
+    "path": "worker/candidate-final-install.log",
+    "originalSHA256": "822c67e61007b1a074577649f8463dfca80f542361516277aa1bc6e6d486527d",
+    "storedSHA256": "822c67e61007b1a074577649f8463dfca80f542361516277aa1bc6e6d486527d",
+    "originalBytes": 196,
+    "storedBytes": 196,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-plain-before-baseline-raw.json",
+    "path": "worker/shared-plain-before-baseline-raw.json.gz",
+    "originalSHA256": "c014e409ce25ff64eadd96ea4a4327c23c13221b29c81821fedb9c4ebeaa0395",
+    "storedSHA256": "4e85bd30801ac46ed170c07251275399a25af3d32434007a86870fa202af96d7",
+    "originalBytes": 1288334,
+    "storedBytes": 25937,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/focused-execution.json",
+    "path": "worker/focused-execution.json",
+    "originalSHA256": "a8f9bb705f23af9b717801a0fe53aec12a96db2ed02e6f37e3b18aeb2e998857",
+    "storedSHA256": "a8f9bb705f23af9b717801a0fe53aec12a96db2ed02e6f37e3b18aeb2e998857",
+    "originalBytes": 428,
+    "storedBytes": 428,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/run-focused.py",
+    "path": "worker/run-focused.py",
+    "originalSHA256": "35b89df33b20f97d7e2c6324e7bada0f991849ac2a127aff03f7780cce42be9e",
+    "storedSHA256": "35b89df33b20f97d7e2c6324e7bada0f991849ac2a127aff03f7780cce42be9e",
+    "originalBytes": 937,
+    "storedBytes": 937,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/keyframe-source-bindings.json",
+    "path": "worker/keyframe-source-bindings.json",
+    "originalSHA256": "52cce75623cd4021431f733f5c234b2b2e9c541d2c968e3480fd3676c47ad56f",
+    "storedSHA256": "52cce75623cd4021431f733f5c234b2b2e9c541d2c968e3480fd3676c47ad56f",
+    "originalBytes": 2444,
+    "storedBytes": 2444,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/tracer-green.json",
+    "path": "worker/tracer-green.json",
+    "originalSHA256": "de9d2d3614f5de3d1897895d94d06b6305b827a6f8887c77a15547e43113e4db",
+    "storedSHA256": "de9d2d3614f5de3d1897895d94d06b6305b827a6f8887c77a15547e43113e4db",
+    "originalBytes": 351,
+    "storedBytes": 351,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/source.patch",
+    "path": "worker/source.patch",
+    "originalSHA256": "46362a76159853639ae0d082cd454e1753f5ae475babbda250f27e35c9aa822e",
+    "storedSHA256": "46362a76159853639ae0d082cd454e1753f5ae475babbda250f27e35c9aa822e",
+    "originalBytes": 100850,
+    "storedBytes": 100850,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-plain-after-candidate-raw.json",
+    "path": "worker/shared-plain-after-candidate-raw.json.gz",
+    "originalSHA256": "64458d49ffba2f05f66a335ea59e4b71df69d5771364ad18c06fad2a06a78783",
+    "storedSHA256": "570973fcccbe2fb4203843acfd09dc6a51ba7f96097286611f9ea3efca2ec1e8",
+    "originalBytes": 1307685,
+    "storedBytes": 27439,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/motion-full.log",
+    "path": "worker/motion-full.log",
+    "originalSHA256": "06b2aab8dceb07f0f7d1cc3acb557caf33934e750028646b05115501d77a7a8b",
+    "storedSHA256": "06b2aab8dceb07f0f7d1cc3acb557caf33934e750028646b05115501d77a7a8b",
+    "originalBytes": 42,
+    "storedBytes": 42,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/REPORT.md",
+    "path": "worker/REPORT.md",
+    "originalSHA256": "254d27559d17fe4eb4f4101ac379436dadcd3e802f0a2c9a9a748192d9cdc4ed",
+    "storedSHA256": "254d27559d17fe4eb4f4101ac379436dadcd3e802f0a2c9a9a748192d9cdc4ed",
+    "originalBytes": 8884,
+    "storedBytes": 8884,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/smoke-v1.log",
+    "path": "worker/smoke-v1.log",
+    "originalSHA256": "459cb2b3026df40cac46e929c2bc308297751650c2eced6be6b6f37409bb8785",
+    "storedSHA256": "459cb2b3026df40cac46e929c2bc308297751650c2eced6be6b6f37409bb8785",
+    "originalBytes": 736,
+    "storedBytes": 736,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-tailwind4-after-baseline-raw.json",
+    "path": "worker/shared-tailwind4-after-baseline-raw.json.gz",
+    "originalSHA256": "5a4405e77900f267fc54abec567da4d230723ef4ea023554a3ebb6d1b05106bc",
+    "storedSHA256": "24cfcdb47ac40192058cc13fc54ab94dbac8c956f96f6d4f816bdb7096c6e361",
+    "originalBytes": 1421712,
+    "storedBytes": 27007,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-plain-after-baseline-raw.json",
+    "path": "worker/shared-plain-after-baseline-raw.json.gz",
+    "originalSHA256": "c019377c3c048a801c05dee58f5a39117e85cb6cf55e5d2bf8dc244da79bd340",
+    "storedSHA256": "e4d2ba12dc917142393eeeeb9709c8f1ca88bffa7b7195ada8c76d29a5cd3a9b",
+    "originalBytes": 1288333,
+    "storedBytes": 25937,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/bind-graphs-syntax-attempt.py",
+    "path": "worker/bind-graphs-syntax-attempt.py",
+    "originalSHA256": "373db08fe0d7d7757fdf39febe5590d153c0dab05ffc9928f8f9b7cd76ae1734",
+    "storedSHA256": "373db08fe0d7d7757fdf39febe5590d153c0dab05ffc9928f8f9b7cd76ae1734",
+    "originalBytes": 3967,
+    "storedBytes": 3967,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/graph-bindings.json",
+    "path": "worker/graph-bindings.json.gz",
+    "originalSHA256": "cdbc837f4f7b7932634e55bf7f2836eb7837d18a0811a8695238119e7ad384d5",
+    "storedSHA256": "f0fe89fc1100eb9e1fb41f054123bd228a1d644143831fd1e0ad0613a08d24e4",
+    "originalBytes": 22822377,
+    "storedBytes": 4738789,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/graph-binding.log",
+    "path": "worker/graph-binding.log",
+    "originalSHA256": "7061537f90003a749f25fb966a95c74597b04cfd097be818f7fa04adaf18d35e",
+    "storedSHA256": "7061537f90003a749f25fb966a95c74597b04cfd097be818f7fa04adaf18d35e",
+    "originalBytes": 2302,
+    "storedBytes": 2302,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/cssom-tailwind4-before.json",
+    "path": "worker/cssom-tailwind4-before.json",
+    "originalSHA256": "cb029ea3e8910d8b86ac78f03d93d5adfd311fdf01e5f7a2b943ec123227ee7e",
+    "storedSHA256": "cb029ea3e8910d8b86ac78f03d93d5adfd311fdf01e5f7a2b943ec123227ee7e",
+    "originalBytes": 66322,
+    "storedBytes": 66322,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/tracer-red.log",
+    "path": "worker/tracer-red.log",
+    "originalSHA256": "b06a390c26b8289534131b935819bbd339415f1e7e2ae0b519a245a60502e151",
+    "storedSHA256": "b06a390c26b8289534131b935819bbd339415f1e7e2ae0b519a245a60502e151",
+    "originalBytes": 152,
+    "storedBytes": 152,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/runtime-style-text-summary.json",
+    "path": "worker/runtime-style-text-summary.json",
+    "originalSHA256": "5092af6ff65c752769e09622e5e37300820ad1ba85f83c8da91c69010df29208",
+    "storedSHA256": "5092af6ff65c752769e09622e5e37300820ad1ba85f83c8da91c69010df29208",
+    "originalBytes": 1635,
+    "storedBytes": 1635,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/build-fixtures.mjs",
+    "path": "worker/build-fixtures.mjs",
+    "originalSHA256": "e959ab119b650f731921cbd035d1cbb142a0bb50262269469a77f7f13afac6b0",
+    "storedSHA256": "e959ab119b650f731921cbd035d1cbb142a0bb50262269469a77f7f13afac6b0",
+    "originalBytes": 786,
+    "storedBytes": 786,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/families.tsx",
+    "path": "worker/families.tsx",
+    "originalSHA256": "8670bd2f82475b0f3478b4f3d393c09d6aed3ef4de03c998e7fa74b6b6a07626",
+    "storedSHA256": "8670bd2f82475b0f3478b4f3d393c09d6aed3ef4de03c998e7fa74b6b6a07626",
+    "originalBytes": 13618,
+    "storedBytes": 13618,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-tailwind3-before-candidate-raw.json",
+    "path": "worker/shared-tailwind3-before-candidate-raw.json.gz",
+    "originalSHA256": "ea4269ff6d4858dfeb5e143af151dd09172a2fa432ffa7fa8046b59a41cae7c4",
+    "storedSHA256": "594d4e9e0f8f26571c0a2c479a2ca6dd92a33f8c86386951abec7c98c5eb91c9",
+    "originalBytes": 1391291,
+    "storedBytes": 27918,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/cssom-plain-after.json",
+    "path": "worker/cssom-plain-after.json",
+    "originalSHA256": "cb029ea3e8910d8b86ac78f03d93d5adfd311fdf01e5f7a2b943ec123227ee7e",
+    "storedSHA256": "cb029ea3e8910d8b86ac78f03d93d5adfd311fdf01e5f7a2b943ec123227ee7e",
+    "originalBytes": 66322,
+    "storedBytes": 66322,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/results.json",
+    "path": "worker/results.json.gz",
+    "originalSHA256": "2b132b7c13800ff665baaad0f745570e355220d1c0754e04fabc8bba0ed87f79",
+    "storedSHA256": "f991631e67a1b28a41fdfd7288bb91434b4819c64b7eec8767b489112f0944ec",
+    "originalBytes": 130294829,
+    "storedBytes": 2068660,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/motion-progress.json",
+    "path": "worker/motion-progress.json",
+    "originalSHA256": "1972998b71cca773f0aa08ae8007869419f8546094826a3c3a2af709f3958b24",
+    "storedSHA256": "1972998b71cca773f0aa08ae8007869419f8546094826a3c3a2af709f3958b24",
+    "originalBytes": 53,
+    "storedBytes": 53,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/cssom-tailwind4-after.json",
+    "path": "worker/cssom-tailwind4-after.json",
+    "originalSHA256": "cb029ea3e8910d8b86ac78f03d93d5adfd311fdf01e5f7a2b943ec123227ee7e",
+    "storedSHA256": "cb029ea3e8910d8b86ac78f03d93d5adfd311fdf01e5f7a2b943ec123227ee7e",
+    "originalBytes": 66322,
+    "storedBytes": 66322,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-area-install.log",
+    "path": "worker/candidate-area-install.log",
+    "originalSHA256": "e82011ee7ce04918b760f49d8f9539c34f7d922bc677031afe3c82d6a73bf8d6",
+    "storedSHA256": "e82011ee7ce04918b760f49d8f9539c34f7d922bc677031afe3c82d6a73bf8d6",
+    "originalBytes": 477,
+    "storedBytes": 477,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/tracer-fixture.tsx",
+    "path": "worker/tracer-fixture.tsx",
+    "originalSHA256": "3f0ee5efb7563fee222b3a3408e30d481bf45462b7378db76c4fd291870fbd4f",
+    "storedSHA256": "3f0ee5efb7563fee222b3a3408e30d481bf45462b7378db76c4fd291870fbd4f",
+    "originalBytes": 573,
+    "storedBytes": 573,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-tailwind3-after-candidate-raw.json",
+    "path": "worker/shared-tailwind3-after-candidate-raw.json.gz",
+    "originalSHA256": "0a87d7872aa7e4eafc79107c9e43aa1543220bfed51b0a6dcdf9784cb80b8423",
+    "storedSHA256": "79b4578d85620700f834f6c79192f0cf3a3a19dd4692178e549ef2a08a63526e",
+    "originalBytes": 1391290,
+    "storedBytes": 27909,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-tailwind4-before-candidate-raw.json",
+    "path": "worker/shared-tailwind4-before-candidate-raw.json.gz",
+    "originalSHA256": "7a3b76a8b52f8e28246d9daf6a11b5abbaf87dd12a6d30920d54c0791f6eacd0",
+    "storedSHA256": "daca3d459b662b191443b89e8bdb11e043ac0d72c316d73b3f784388cd320660",
+    "originalBytes": 1441271,
+    "storedBytes": 28412,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/build-area.log",
+    "path": "worker/build-area.log",
+    "originalSHA256": "7761d29f8222c7b9ce11ee01ef30925c32b47beaf624291880d84b65da17c0bd",
+    "storedSHA256": "7761d29f8222c7b9ce11ee01ef30925c32b47beaf624291880d84b65da17c0bd",
+    "originalBytes": 431404,
+    "storedBytes": 431404,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/extra-error.json",
+    "path": "worker/extra-error.json",
+    "originalSHA256": "b31efe71cf056a5ddd0e07900b2ea20ad475118c54a9d4b64929d51c7e42e726",
+    "storedSHA256": "b31efe71cf056a5ddd0e07900b2ea20ad475118c54a9d4b64929d51c7e42e726",
+    "originalBytes": 3634,
+    "storedBytes": 3634,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-install.log",
+    "path": "worker/baseline-install.log",
+    "originalSHA256": "95cfb8aef08fc41e445af13027b4a2e37947287aaa1628b07242d6ce4c16b07e",
+    "storedSHA256": "95cfb8aef08fc41e445af13027b4a2e37947287aaa1628b07242d6ce4c16b07e",
+    "originalBytes": 477,
+    "storedBytes": 477,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/build-fixtures-v1.log",
+    "path": "worker/build-fixtures-v1.log",
+    "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "storedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "storedBytes": 0,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/conversion-ledger.json",
+    "path": "worker/conversion-ledger.json",
+    "originalSHA256": "b3396b7d57106546ff1354a691b936ad5bb7ef08674d7ffb250cd5c066b79009",
+    "storedSHA256": "b3396b7d57106546ff1354a691b936ad5bb7ef08674d7ffb250cd5c066b79009",
+    "originalBytes": 7231,
+    "storedBytes": 7231,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/signed-fixture.tsx",
+    "path": "worker/signed-fixture.tsx",
+    "originalSHA256": "d698d47ecb644815274a37ba54322a26b6633a14e551b9b0c07ffc8ad3ba9137",
+    "storedSHA256": "d698d47ecb644815274a37ba54322a26b6633a14e551b9b0c07ffc8ad3ba9137",
+    "originalBytes": 706,
+    "storedBytes": 706,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/fixture.tsx",
+    "path": "worker/fixture.tsx",
+    "originalSHA256": "3a1bbc28a443f47dc3d606a7eaaf2cf8114303349fac660f8303652447fccbb4",
+    "storedSHA256": "3a1bbc28a443f47dc3d606a7eaaf2cf8114303349fac660f8303652447fccbb4",
+    "originalBytes": 3112,
+    "storedBytes": 3112,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/SHARED-PROBES-HANDOFF.md",
+    "path": "worker/SHARED-PROBES-HANDOFF.md",
+    "originalSHA256": "bf5233e01c955f1e7ffd5f401e1b2be2722b6adaa3563ece6ea1a595f1cc44ee",
+    "storedSHA256": "bf5233e01c955f1e7ffd5f401e1b2be2722b6adaa3563ece6ea1a595f1cc44ee",
+    "originalBytes": 8732,
+    "storedBytes": 8732,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/build-shared-fixtures.mjs",
+    "path": "worker/build-shared-fixtures.mjs",
+    "originalSHA256": "39ec7f2f96707aea3ce03e991dc6019423a0b33af7c5d4ab37894922f355aba6",
+    "storedSHA256": "39ec7f2f96707aea3ce03e991dc6019423a0b33af7c5d4ab37894922f355aba6",
+    "originalBytes": 809,
+    "storedBytes": 809,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/build-small.log",
+    "path": "worker/build-small.log",
+    "originalSHA256": "2a6fbb2b3512d06a9486cbb3469dafe2d6960f6af3f8d56acf7d4d3c7b1acabb",
+    "storedSHA256": "2a6fbb2b3512d06a9486cbb3469dafe2d6960f6af3f8d56acf7d4d3c7b1acabb",
+    "originalBytes": 40,
+    "storedBytes": 40,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/run-signed.mjs",
+    "path": "worker/run-signed.mjs",
+    "originalSHA256": "76abb0ef214a10ea7e5930372606adad8f922327d168b1c355e050de4f0ed2e6",
+    "storedSHA256": "76abb0ef214a10ea7e5930372606adad8f922327d168b1c355e050de4f0ed2e6",
+    "originalBytes": 4330,
+    "storedBytes": 4330,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/run-shared.mjs",
+    "path": "worker/run-shared.mjs",
+    "originalSHA256": "65824bd105a54f9cbdc46576e6b116184e9e34b79dda80cfde4b42e6af1a122b",
+    "storedSHA256": "65824bd105a54f9cbdc46576e6b116184e9e34b79dda80cfde4b42e6af1a122b",
+    "originalBytes": 5668,
+    "storedBytes": 5668,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-progress.json",
+    "path": "worker/shared-progress.json",
+    "originalSHA256": "b87ae779fe7d2f55df14a5696944b6644d99e387f07ff036c4142656b47e849e",
+    "storedSHA256": "b87ae779fe7d2f55df14a5696944b6644d99e387f07ff036c4142656b47e849e",
+    "originalBytes": 53,
+    "storedBytes": 53,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/audit-fallbacks.py",
+    "path": "worker/audit-fallbacks.py",
+    "originalSHA256": "3ed15e71057583d2bc7b5386124ca1c07ed4a5503c0aec82e7da1e24f98c10c5",
+    "storedSHA256": "3ed15e71057583d2bc7b5386124ca1c07ed4a5503c0aec82e7da1e24f98c10c5",
+    "originalBytes": 2400,
+    "storedBytes": 2400,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/small-progress.json",
+    "path": "worker/small-progress.json",
+    "originalSHA256": "e36937a9d06dac99109498eefa106c93e341fe66f5f2ec7473fdc5d7fb2828e2",
+    "storedSHA256": "e36937a9d06dac99109498eefa106c93e341fe66f5f2ec7473fdc5d7fb2828e2",
+    "originalBytes": 53,
+    "storedBytes": 53,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/native-check.mjs",
+    "path": "worker/native-check.mjs",
+    "originalSHA256": "21363767dce13007f10692c620f1e6ef9c23278c8cffc452eb9bfffe33741550",
+    "storedSHA256": "21363767dce13007f10692c620f1e6ef9c23278c8cffc452eb9bfffe33741550",
+    "originalBytes": 867,
+    "storedBytes": 867,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/graph-summary.json",
+    "path": "worker/graph-summary.json",
+    "originalSHA256": "92ae1681843bec450bc8bd73afe94b33bac613482ebe16b0ec1ab70451dd5bec",
+    "storedSHA256": "92ae1681843bec450bc8bd73afe94b33bac613482ebe16b0ec1ab70451dd5bec",
+    "originalBytes": 2570,
+    "storedBytes": 2570,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/build-signed.log",
+    "path": "worker/build-signed.log",
+    "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "storedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "storedBytes": 0,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/datasets.ts",
+    "path": "worker/datasets.ts",
+    "originalSHA256": "fbe7b802aa4f83813f343b3e6b6c5feed2d2ad770d6ab3d888185807f03b39b3",
+    "storedSHA256": "fbe7b802aa4f83813f343b3e6b6c5feed2d2ad770d6ab3d888185807f03b39b3",
+    "originalBytes": 4062,
+    "storedBytes": 4062,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-fixture.tsx",
+    "path": "worker/shared-fixture.tsx",
+    "originalSHA256": "a9eb039eb7b46efba9e868aa7864073cecd413b209636e127418deb81975b44c",
+    "storedSHA256": "a9eb039eb7b46efba9e868aa7864073cecd413b209636e127418deb81975b44c",
+    "originalBytes": 825,
+    "storedBytes": 825,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/run-tracer.mjs",
+    "path": "worker/run-tracer.mjs",
+    "originalSHA256": "4331d737322d6b98abb1a9d63b4071d811d742eb1200d0539a500b52146cbada",
+    "storedSHA256": "4331d737322d6b98abb1a9d63b4071d811d742eb1200d0539a500b52146cbada",
+    "originalBytes": 2580,
+    "storedBytes": 2580,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/conversion-remaining.json",
+    "path": "worker/conversion-remaining.json",
+    "originalSHA256": "7e878e8a33940fdd70491e89eb86f7913a78e013b7f83a94b49c3c7cce4321b0",
+    "storedSHA256": "7e878e8a33940fdd70491e89eb86f7913a78e013b7f83a94b49c3c7cce4321b0",
+    "originalBytes": 21900,
+    "storedBytes": 21900,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/pack-final.log",
+    "path": "worker/pack-final.log",
+    "originalSHA256": "3c9ef0910994022c5bf586738da1cd7d26935de6bb56ff0752209970a34c4cd3",
+    "storedSHA256": "3c9ef0910994022c5bf586738da1cd7d26935de6bb56ff0752209970a34c4cd3",
+    "originalBytes": 115365,
+    "storedBytes": 115365,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/small-resources-closed.json",
+    "path": "worker/small-resources-closed.json",
+    "originalSHA256": "b37108c6722b32574361ea32cc6546105acfd0199cf620aeecda49afa9333824",
+    "storedSHA256": "b37108c6722b32574361ea32cc6546105acfd0199cf620aeecda49afa9333824",
+    "originalBytes": 76,
+    "storedBytes": 76,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-tailwind4-before-baseline-raw.json",
+    "path": "worker/shared-tailwind4-before-baseline-raw.json.gz",
+    "originalSHA256": "954e2e577f2b0367e3b02ca001816ec5dd0c9492a18a4cd6d1a87bbde578207b",
+    "storedSHA256": "fc864bc743e43d917185bd6b1e0b07fe45bd80bda18b266e9c19137d93751d8c",
+    "originalBytes": 1421713,
+    "storedBytes": 27007,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/conversion-AreaChart.json",
+    "path": "worker/conversion-AreaChart.json",
+    "originalSHA256": "8d108577210243a3652e0ceada3a68ba5d62f37ff160232f31010d264ce894a0",
+    "storedSHA256": "8d108577210243a3652e0ceada3a68ba5d62f37ff160232f31010d264ce894a0",
+    "originalBytes": 1726,
+    "storedBytes": 1726,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/save-durable.py",
+    "path": "worker/save-durable.py",
+    "originalSHA256": "17f252bf55d70a1541882c3a87367af14fa93e03b01fb95c552c85a1bdcc7eec",
+    "storedSHA256": "17f252bf55d70a1541882c3a87367af14fa93e03b01fb95c552c85a1bdcc7eec",
+    "originalBytes": 3040,
+    "storedBytes": 3040,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/tracer-baseline-build.log",
+    "path": "worker/tracer-baseline-build.log",
+    "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "storedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "storedBytes": 0,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-combined-v1-install.log",
+    "path": "worker/candidate-combined-v1-install.log",
+    "originalSHA256": "3ef262a9a4318a867e3efe3da850cc2a49d0e9493a0962b32c022709e720093f",
+    "storedSHA256": "3ef262a9a4318a867e3efe3da850cc2a49d0e9493a0962b32c022709e720093f",
+    "originalBytes": 199,
+    "storedBytes": 199,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/inventory.mjs",
+    "path": "worker/inventory.mjs",
+    "originalSHA256": "588fb411a0a7a5f397eb3cb2a11776940060c23f8979a29f854508abb03b936f",
+    "storedSHA256": "588fb411a0a7a5f397eb3cb2a11776940060c23f8979a29f854508abb03b936f",
+    "originalBytes": 1858,
+    "storedBytes": 1858,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/standards-review-source.md",
+    "path": "worker/standards-review-source.md",
+    "originalSHA256": "18170d670c20099aabf1b9f8ad94a9019755b3041dc18f50719ec982d0097f95",
+    "storedSHA256": "18170d670c20099aabf1b9f8ad94a9019755b3041dc18f50719ec982d0097f95",
+    "originalBytes": 2585,
+    "storedBytes": 2585,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/run-small.mjs",
+    "path": "worker/run-small.mjs",
+    "originalSHA256": "0de1b834f5ba0afcd2a0ce2c821eb0594fd80a3cf9e95f75af73805c8fb097d9",
+    "storedSHA256": "0de1b834f5ba0afcd2a0ce2c821eb0594fd80a3cf9e95f75af73805c8fb097d9",
+    "originalBytes": 7066,
+    "storedBytes": 7066,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/convert-family.mjs",
+    "path": "worker/convert-family.mjs",
+    "originalSHA256": "08384f5dc04ee910e6d7473953328ba14b4202f214a6260c62b8eb88fd5acdda",
+    "storedSHA256": "08384f5dc04ee910e6d7473953328ba14b4202f214a6260c62b8eb88fd5acdda",
+    "originalBytes": 2470,
+    "storedBytes": 2470,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-plain-before-candidate-raw.json",
+    "path": "worker/shared-plain-before-candidate-raw.json.gz",
+    "originalSHA256": "a65549e01c6a39d72e064d7bcf0c8f0764b41fbda598b3c4b5b6318cb2fbb009",
+    "storedSHA256": "0eecd63c36e8d4ab545ed0a47ca0e2edb292d448134d16cd843bdeaa46634dfa",
+    "originalBytes": 1307686,
+    "storedBytes": 27438,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/build-combined-initial.log",
+    "path": "worker/build-combined-initial.log",
+    "originalSHA256": "0cc9ec2f8a31d1c50e285e5cb1b5e22fb705a01553fbf363303087df6c08e370",
+    "storedSHA256": "0cc9ec2f8a31d1c50e285e5cb1b5e22fb705a01553fbf363303087df6c08e370",
+    "originalBytes": 431428,
+    "storedBytes": 431428,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/spec-review-source.md",
+    "path": "worker/spec-review-source.md",
+    "originalSHA256": "0d174056326ab8f47fec6620083b1418f53fc187df19fff32754822b1b418b29",
+    "storedSHA256": "0d174056326ab8f47fec6620083b1418f53fc187df19fff32754822b1b418b29",
+    "originalBytes": 2976,
+    "storedBytes": 2976,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/standards-review-final.md",
+    "path": "worker/standards-review-final.md",
+    "originalSHA256": "4682de9515289502e069537a089d33a8665e4635cca0c3ca7be2a4c2d4e9e869",
+    "storedSHA256": "4682de9515289502e069537a089d33a8665e4635cca0c3ca7be2a4c2d4e9e869",
+    "originalBytes": 2497,
+    "storedBytes": 2497,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/progress.json",
+    "path": "worker/progress.json",
+    "originalSHA256": "f7f4a9a541e3f3190651dd522e71971e082694fc66318e8d1575f962e6d44513",
+    "storedSHA256": "f7f4a9a541e3f3190651dd522e71971e082694fc66318e8d1575f962e6d44513",
+    "originalBytes": 880,
+    "storedBytes": 880,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/cssom-tailwind3-before.json",
+    "path": "worker/cssom-tailwind3-before.json",
+    "originalSHA256": "cb029ea3e8910d8b86ac78f03d93d5adfd311fdf01e5f7a2b943ec123227ee7e",
+    "storedSHA256": "cb029ea3e8910d8b86ac78f03d93d5adfd311fdf01e5f7a2b943ec123227ee7e",
+    "originalBytes": 66322,
+    "storedBytes": 66322,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/small-results.json",
+    "path": "worker/small-results.json.gz",
+    "originalSHA256": "c0540c1e7cff5bcd5e4904c5bb107b75515fb3a779696811f57da6a044325680",
+    "storedSHA256": "8ef1fa59e1dac5156d75d52e95a70694a86207a27ae99bd78cf24f2222fdf186",
+    "originalBytes": 962882,
+    "storedBytes": 44756,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/extra-progress.json",
+    "path": "worker/extra-progress.json",
+    "originalSHA256": "9bbe3e49f5dca488373db5dfa52b336d966159b126063e22e7f57083e851133b",
+    "storedSHA256": "9bbe3e49f5dca488373db5dfa52b336d966159b126063e22e7f57083e851133b",
+    "originalBytes": 833,
+    "storedBytes": 833,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/build-signed.mjs",
+    "path": "worker/build-signed.mjs",
+    "originalSHA256": "a9e6367e233af0b82f5fe1ba8cdec281aaf3cc9539f0b07f4d9c011bb70f0236",
+    "storedSHA256": "a9e6367e233af0b82f5fe1ba8cdec281aaf3cc9539f0b07f4d9c011bb70f0236",
+    "originalBytes": 751,
+    "storedBytes": 751,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/fallback-conservation.json",
+    "path": "worker/fallback-conservation.json",
+    "originalSHA256": "6154314ffe32063d5904060236be5726fd3420213f2c7e37910edda628ca54c8",
+    "storedSHA256": "6154314ffe32063d5904060236be5726fd3420213f2c7e37910edda628ca54c8",
+    "originalBytes": 28984,
+    "storedBytes": 28984,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/native-check.log",
+    "path": "worker/native-check.log",
+    "originalSHA256": "41851a2eb9a1f0f0b06d54e88d3144976ee61515b9ff9c9e5ff475150fb185fd",
+    "storedSHA256": "41851a2eb9a1f0f0b06d54e88d3144976ee61515b9ff9c9e5ff475150fb185fd",
+    "originalBytes": 42,
+    "storedBytes": 42,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/typecheck-area.log",
+    "path": "worker/typecheck-area.log",
+    "originalSHA256": "a9d27db6cf3d1a2e2f9bc53fff59274102a265747780347e9c3afc0ed6fb217e",
+    "storedSHA256": "a9d27db6cf3d1a2e2f9bc53fff59274102a265747780347e9c3afc0ed6fb217e",
+    "originalBytes": 126,
+    "storedBytes": 126,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-host-aliases.html",
+    "path": "worker/shared-host-aliases.html",
+    "originalSHA256": "6862f81f6f138db64b0ea7b38a5c8431060ce5e4b50d9f4c1b0a18b8e95d0369",
+    "storedSHA256": "6862f81f6f138db64b0ea7b38a5c8431060ce5e4b50d9f4c1b0a18b8e95d0369",
+    "originalBytes": 10905,
+    "storedBytes": 10905,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/signed-resources-closed.json",
+    "path": "worker/signed-resources-closed.json",
+    "originalSHA256": "bdefdb174d8ad42ecb9af93970866be5f10245c3bb790ddba30bafc719933500",
+    "storedSHA256": "bdefdb174d8ad42ecb9af93970866be5f10245c3bb790ddba30bafc719933500",
+    "originalBytes": 76,
+    "storedBytes": 76,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/build-tracer.mjs",
+    "path": "worker/build-tracer.mjs",
+    "originalSHA256": "4c886480d775e588b1506e1e44272b49111aa98b794cb1c114cb9901a2b3c1f4",
+    "storedSHA256": "4c886480d775e588b1506e1e44272b49111aa98b794cb1c114cb9901a2b3c1f4",
+    "originalBytes": 816,
+    "storedBytes": 816,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-tailwind4-after-candidate-raw.json",
+    "path": "worker/shared-tailwind4-after-candidate-raw.json.gz",
+    "originalSHA256": "bf36d60f660cc378cb107ce12d13380ebcd5a464386545434c275d900b2dd5a7",
+    "storedSHA256": "c46f4ca4d883a83cc2b01af3fbd411a4b2afd33109832e001c72ce38450ff8cb",
+    "originalBytes": 1441270,
+    "storedBytes": 28415,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/resources-closed.json",
+    "path": "worker/resources-closed.json",
+    "originalSHA256": "e631b15d7c3377a6b6062fb2045b46f9c818f4526a4f8147733624ef59acccd8",
+    "storedSHA256": "e631b15d7c3377a6b6062fb2045b46f9c818f4526a4f8147733624ef59acccd8",
+    "originalBytes": 76,
+    "storedBytes": 76,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/extra-resources-closed.json",
+    "path": "worker/extra-resources-closed.json",
+    "originalSHA256": "7e791341af8603ed72dcdd9ab1f120a6eea315c97ce5bba3a62a4e9f4db61726",
+    "storedSHA256": "7e791341af8603ed72dcdd9ab1f120a6eea315c97ce5bba3a62a4e9f4db61726",
+    "originalBytes": 76,
+    "storedBytes": 76,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/artifact-provenance.json",
+    "path": "worker/artifact-provenance.json.gz",
+    "originalSHA256": "34dcd0fe22ad4f10907e2e76d0d3d65141544e17a1f88b9cf6c84c4819b3aef8",
+    "storedSHA256": "e1a56837a239a1301d3622bfa6f3f2f486102945b822b7d0ca901a99bdec515b",
+    "originalBytes": 355624,
+    "storedBytes": 124530,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/build-small.mjs",
+    "path": "worker/build-small.mjs",
+    "originalSHA256": "a923713250845f0be4b68eea6ebf0b9f0a31a2934bd4db636ab5a9bfc290add8",
+    "storedSHA256": "a923713250845f0be4b68eea6ebf0b9f0a31a2934bd4db636ab5a9bfc290add8",
+    "originalBytes": 2998,
+    "storedBytes": 2998,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/matrix-v1.log",
+    "path": "worker/matrix-v1.log",
+    "originalSHA256": "40b33763089cea20ffd266906253d25ac41e3e34fbeeba5bb8e352e247a03c8e",
+    "storedSHA256": "40b33763089cea20ffd266906253d25ac41e3e34fbeeba5bb8e352e247a03c8e",
+    "originalBytes": 736,
+    "storedBytes": 736,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/install-candidate.py",
+    "path": "worker/install-candidate.py",
+    "originalSHA256": "aa357df31ffbc46d5bb84249a5dc65bc57c2463b074ec99da07c79ec0e60076c",
+    "storedSHA256": "aa357df31ffbc46d5bb84249a5dc65bc57c2463b074ec99da07c79ec0e60076c",
+    "originalBytes": 834,
+    "storedBytes": 834,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/partial.json",
+    "path": "worker/partial.json.gz",
+    "originalSHA256": "92b746a5154e06ce4e51f3ada1762d1a964bc6251313ee53e650320e3bcb5ffb",
+    "storedSHA256": "e64eba78afb3ce8890c6860ecefe2ae16bb545845c71e95a2b1fddd9bdddec51",
+    "originalBytes": 58061845,
+    "storedBytes": 1415714,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/build-shared-fixtures.log",
+    "path": "worker/build-shared-fixtures.log",
+    "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "storedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "storedBytes": 0,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/tracer-green.log",
+    "path": "worker/tracer-green.log",
+    "originalSHA256": "1d3f68ee2fdf2a402e61b8f5410442814311d9dc63324b7564038acbb170e74c",
+    "storedSHA256": "1d3f68ee2fdf2a402e61b8f5410442814311d9dc63324b7564038acbb170e74c",
+    "originalBytes": 256,
+    "storedBytes": 256,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/signed-full.log",
+    "path": "worker/signed-full.log",
+    "originalSHA256": "7a653e753b4380d493d5aeaaa852764a65f9e3233d143f28113cfae63a123b0e",
+    "storedSHA256": "7a653e753b4380d493d5aeaaa852764a65f9e3233d143f28113cfae63a123b0e",
+    "originalBytes": 42,
+    "storedBytes": 42,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/shared-scene.tsx",
+    "path": "worker/shared-scene.tsx",
+    "originalSHA256": "cba3bf1e7740134b2f91fbf2c1f5a3e8eb28a79203af8acb4aecd2bc51c45d1c",
+    "storedSHA256": "cba3bf1e7740134b2f91fbf2c1f5a3e8eb28a79203af8acb4aecd2bc51c45d1c",
+    "originalBytes": 3930,
+    "storedBytes": 3930,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/fallback-audit.log",
+    "path": "worker/fallback-audit.log",
+    "originalSHA256": "4897278a84c00f7b2e41db4476dd458e9de6beab38f03d35909777a859f62d8d",
+    "storedSHA256": "4897278a84c00f7b2e41db4476dd458e9de6beab38f03d35909777a859f62d8d",
+    "originalBytes": 304,
+    "storedBytes": 304,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/audit-source.mjs",
+    "path": "worker/audit-source.mjs",
+    "originalSHA256": "7b3952964ca0203e57b9c75c555514398e31a40741c93906e04bf2aefc21f702",
+    "storedSHA256": "7b3952964ca0203e57b9c75c555514398e31a40741c93906e04bf2aefc21f702",
+    "originalBytes": 3457,
+    "storedBytes": 3457,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/tracer-area-build.log",
+    "path": "worker/tracer-area-build.log",
+    "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "storedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "originalBytes": 0,
+    "storedBytes": 0,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/graph-binding-syntax-attempt.log",
+    "path": "worker/graph-binding-syntax-attempt.log",
+    "originalSHA256": "b4ab83807154ba84b053deffdccb29a0fd7767fd992e13de690c1afe46700f38",
+    "storedSHA256": "b4ab83807154ba84b053deffdccb29a0fd7767fd992e13de690c1afe46700f38",
+    "originalBytes": 1515,
+    "storedBytes": 1515,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/tracer-red.json",
+    "path": "worker/tracer-red.json",
+    "originalSHA256": "a6998bd3ec5ee1b2c0ed8448d9e16ed4a18364e6d21460f505da88427b91739c",
+    "storedSHA256": "a6998bd3ec5ee1b2c0ed8448d9e16ed4a18364e6d21460f505da88427b91739c",
+    "originalBytes": 205,
+    "storedBytes": 205,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/native-results.json",
+    "path": "worker/native-results.json",
+    "originalSHA256": "9deaf0acc0096e603894df3773982e4d7f96ebeb0d42ec450c32a2dcefe99cbc",
+    "storedSHA256": "9deaf0acc0096e603894df3773982e4d7f96ebeb0d42ec450c32a2dcefe99cbc",
+    "originalBytes": 15077,
+    "storedBytes": 15077,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/bind-graphs.py",
+    "path": "worker/bind-graphs.py",
+    "originalSHA256": "44a2def02fa1c3d8ed1d3a2fc323bf57afc9c0ae1ed694e233a36ae8c25772c5",
+    "storedSHA256": "44a2def02fa1c3d8ed1d3a2fc323bf57afc9c0ae1ed694e233a36ae8c25772c5",
+    "originalBytes": 3968,
+    "storedBytes": 3968,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/signed-results.json",
+    "path": "worker/signed-results.json",
+    "originalSHA256": "70b9de419df4438cc6c5cac8a8843d4a2a69690470e4b62fa14208f570a20a24",
+    "storedSHA256": "70b9de419df4438cc6c5cac8a8843d4a2a69690470e4b62fa14208f570a20a24",
+    "originalBytes": 73010,
+    "storedBytes": 73010,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/smoke-v1/run.mjs",
+    "path": "worker/smoke-v1/run.mjs",
+    "originalSHA256": "221d2f903b5e1f8d11db70882519570e42b3e7cf204a37d207be9877dc8137c7",
+    "storedSHA256": "221d2f903b5e1f8d11db70882519570e42b3e7cf204a37d207be9877dc8137c7",
+    "originalBytes": 7605,
+    "storedBytes": 7605,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/smoke-v1/cssom-plain-before.json",
+    "path": "worker/smoke-v1/cssom-plain-before.json",
+    "originalSHA256": "cb029ea3e8910d8b86ac78f03d93d5adfd311fdf01e5f7a2b943ec123227ee7e",
+    "storedSHA256": "cb029ea3e8910d8b86ac78f03d93d5adfd311fdf01e5f7a2b943ec123227ee7e",
+    "originalBytes": 66322,
+    "storedBytes": 66322,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/smoke-v1/smoke-v1.log",
+    "path": "worker/smoke-v1/smoke-v1.log",
+    "originalSHA256": "459cb2b3026df40cac46e929c2bc308297751650c2eced6be6b6f37409bb8785",
+    "storedSHA256": "459cb2b3026df40cac46e929c2bc308297751650c2eced6be6b6f37409bb8785",
+    "originalBytes": 736,
+    "storedBytes": 736,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/smoke-v1/families.tsx",
+    "path": "worker/smoke-v1/families.tsx",
+    "originalSHA256": "8670bd2f82475b0f3478b4f3d393c09d6aed3ef4de03c998e7fa74b6b6a07626",
+    "storedSHA256": "8670bd2f82475b0f3478b4f3d393c09d6aed3ef4de03c998e7fa74b6b6a07626",
+    "originalBytes": 13618,
+    "storedBytes": 13618,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/smoke-v1/results.json",
+    "path": "worker/smoke-v1/results.json.gz",
+    "originalSHA256": "e305a310642c839f4803f7a8b3e280db8236c790bebafe1bde9bee357ce5647d",
+    "storedSHA256": "9fed7fc0abf77d9a2917cce612137230e4afb5481c0f861f5c3cdce5d466bc24",
+    "originalBytes": 20797838,
+    "storedBytes": 334276,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/smoke-v1/fixture.tsx",
+    "path": "worker/smoke-v1/fixture.tsx",
+    "originalSHA256": "3a1bbc28a443f47dc3d606a7eaaf2cf8114303349fac660f8303652447fccbb4",
+    "storedSHA256": "3a1bbc28a443f47dc3d606a7eaaf2cf8114303349fac660f8303652447fccbb4",
+    "originalBytes": 3112,
+    "storedBytes": 3112,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/smoke-v1/datasets.ts",
+    "path": "worker/smoke-v1/datasets.ts",
+    "originalSHA256": "fbe7b802aa4f83813f343b3e6b6c5feed2d2ad770d6ab3d888185807f03b39b3",
+    "storedSHA256": "fbe7b802aa4f83813f343b3e6b6c5feed2d2ad770d6ab3d888185807f03b39b3",
+    "originalBytes": 4062,
+    "storedBytes": 4062,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/smoke-v1/progress.json",
+    "path": "worker/smoke-v1/progress.json",
+    "originalSHA256": "26ca3277d7a5212eda3e1c0b5bdc3935d98f17a73f1a79108b5a56f8f956e7ad",
+    "storedSHA256": "26ca3277d7a5212eda3e1c0b5bdc3935d98f17a73f1a79108b5a56f8f956e7ad",
+    "originalBytes": 880,
+    "storedBytes": 880,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/smoke-v1/resources-closed.json",
+    "path": "worker/smoke-v1/resources-closed.json",
+    "originalSHA256": "92c53c787bea57a59f5b5d9794602205e6501f63d757968873a24789271627bc",
+    "storedSHA256": "92c53c787bea57a59f5b5d9794602205e6501f63d757968873a24789271627bc",
+    "originalBytes": 76,
+    "storedBytes": 76,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/smoke-v1/partial.json",
+    "path": "worker/smoke-v1/partial.json.gz",
+    "originalSHA256": "de9d6c6609b7c143d895a15fc262f4317cbeb20f0be39cd54e6be3a7f8c26731",
+    "storedSHA256": "28609e87c2eb9e5d80f65857a265d9481319961af1325cf3c9ec5e1c067c4157",
+    "originalBytes": 8758304,
+    "storedBytes": 226940,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt01-extra-host-alias-scoping/extra-smoke-v1.log",
+    "path": "worker/attempt01-extra-host-alias-scoping/extra-smoke-v1.log",
+    "originalSHA256": "2b3e9cfc3bd64b880834d3d5714908a629c6ae000369740d094bb3c4ffd7613e",
+    "storedSHA256": "2b3e9cfc3bd64b880834d3d5714908a629c6ae000369740d094bb3c4ffd7613e",
+    "originalBytes": 546,
+    "storedBytes": 546,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt01-extra-host-alias-scoping/run-extra.mjs",
+    "path": "worker/attempt01-extra-host-alias-scoping/run-extra.mjs",
+    "originalSHA256": "25bd569c61064d12974e0a6371da21476fff67878f2065dd92821f5d315cf18c",
+    "storedSHA256": "25bd569c61064d12974e0a6371da21476fff67878f2065dd92821f5d315cf18c",
+    "originalBytes": 15748,
+    "storedBytes": 15748,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt01-extra-host-alias-scoping/NOTE.md",
+    "path": "worker/attempt01-extra-host-alias-scoping/NOTE.md",
+    "originalSHA256": "427b091ddcfa35f5da01130110192964a86cef22e9ed7be26862d972ed73c003",
+    "storedSHA256": "427b091ddcfa35f5da01130110192964a86cef22e9ed7be26862d972ed73c003",
+    "originalBytes": 447,
+    "storedBytes": 447,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt01-extra-host-alias-scoping/extra-error.json",
+    "path": "worker/attempt01-extra-host-alias-scoping/extra-error.json",
+    "originalSHA256": "4ff9abdecb7a7b59672b966769c2c4729629965a4bda65ae1e3b24b2ff777df3",
+    "storedSHA256": "4ff9abdecb7a7b59672b966769c2c4729629965a4bda65ae1e3b24b2ff777df3",
+    "originalBytes": 2451,
+    "storedBytes": 2451,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt01-extra-host-alias-scoping/extra-resources-closed.json",
+    "path": "worker/attempt01-extra-host-alias-scoping/extra-resources-closed.json",
+    "originalSHA256": "5581f0148539c313af2f1cf67fb9c962752a7f7487764b3f679eb14553192c5f",
+    "storedSHA256": "5581f0148539c313af2f1cf67fb9c962752a7f7487764b3f679eb14553192c5f",
+    "originalBytes": 76,
+    "storedBytes": 76,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt02-positive-only-zero-line/extra-results.json",
+    "path": "worker/attempt02-positive-only-zero-line/extra-results.json",
+    "originalSHA256": "13b95761f203685841bf118bbbe0cbec3cbed90ae422f35cd9fc0b2955c8f731",
+    "storedSHA256": "13b95761f203685841bf118bbbe0cbec3cbed90ae422f35cd9fc0b2955c8f731",
+    "originalBytes": 121351,
+    "storedBytes": 121351,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt02-positive-only-zero-line/extra-smoke-v2.log",
+    "path": "worker/attempt02-positive-only-zero-line/extra-smoke-v2.log",
+    "originalSHA256": "35cedb5599490762fef08c9e19d6060619714b0c41e65081d9a9261d674054e6",
+    "storedSHA256": "35cedb5599490762fef08c9e19d6060619714b0c41e65081d9a9261d674054e6",
+    "originalBytes": 890,
+    "storedBytes": 890,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt02-positive-only-zero-line/run-extra.mjs",
+    "path": "worker/attempt02-positive-only-zero-line/run-extra.mjs",
+    "originalSHA256": "3dfa41b6599bbc3f9867865f8bd334f7edeb7be9a6e168e686802d1c1dee0b1d",
+    "storedSHA256": "3dfa41b6599bbc3f9867865f8bd334f7edeb7be9a6e168e686802d1c1dee0b1d",
+    "originalBytes": 15799,
+    "storedBytes": 15799,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt02-positive-only-zero-line/NOTE.md",
+    "path": "worker/attempt02-positive-only-zero-line/NOTE.md",
+    "originalSHA256": "5b8dd92a7caf3b6a431dbd3e32b2df14a0c51e6cb211d8b47143947b4eab070e",
+    "storedSHA256": "5b8dd92a7caf3b6a431dbd3e32b2df14a0c51e6cb211d8b47143947b4eab070e",
+    "originalBytes": 410,
+    "storedBytes": 410,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt02-positive-only-zero-line/extra-resources-closed.json",
+    "path": "worker/attempt02-positive-only-zero-line/extra-resources-closed.json",
+    "originalSHA256": "25e533f13a873566f161d1933507d7559eca136a3e743f8988a21dfe98e5d590",
+    "storedSHA256": "25e533f13a873566f161d1933507d7559eca136a3e743f8988a21dfe98e5d590",
+    "originalBytes": 76,
+    "storedBytes": 76,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt03-extra-baseline-pointer-interception/extra-full.log",
+    "path": "worker/attempt03-extra-baseline-pointer-interception/extra-full.log",
+    "originalSHA256": "6a202b2b513e7b5be7d3a80fac8dc5ee0875d3b19a33dd9885808c56eb903fb9",
+    "storedSHA256": "6a202b2b513e7b5be7d3a80fac8dc5ee0875d3b19a33dd9885808c56eb903fb9",
+    "originalBytes": 1685,
+    "storedBytes": 1685,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt03-extra-baseline-pointer-interception/extra-results.json",
+    "path": "worker/attempt03-extra-baseline-pointer-interception/extra-results.json",
+    "originalSHA256": "13b95761f203685841bf118bbbe0cbec3cbed90ae422f35cd9fc0b2955c8f731",
+    "storedSHA256": "13b95761f203685841bf118bbbe0cbec3cbed90ae422f35cd9fc0b2955c8f731",
+    "originalBytes": 121351,
+    "storedBytes": 121351,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt03-extra-baseline-pointer-interception/run-extra.mjs",
+    "path": "worker/attempt03-extra-baseline-pointer-interception/run-extra.mjs",
+    "originalSHA256": "3795bebf4118d688a4550e5d5da6d17938b041840d34367607899a77df80459e",
+    "storedSHA256": "3795bebf4118d688a4550e5d5da6d17938b041840d34367607899a77df80459e",
+    "originalBytes": 16819,
+    "storedBytes": 16819,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt03-extra-baseline-pointer-interception/focused-execution.json",
+    "path": "worker/attempt03-extra-baseline-pointer-interception/focused-execution.json",
+    "originalSHA256": "0f1ee2b5745f441c476562b440b9ecad70385cdf748181503280c6872fc0ff7c",
+    "storedSHA256": "0f1ee2b5745f441c476562b440b9ecad70385cdf748181503280c6872fc0ff7c",
+    "originalBytes": 200,
+    "storedBytes": 200,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt03-extra-baseline-pointer-interception/run-focused.py",
+    "path": "worker/attempt03-extra-baseline-pointer-interception/run-focused.py",
+    "originalSHA256": "afa2ece8da5712fb1fcf93256ba6bd475fde38a611d31227c0f1dcdffa243102",
+    "storedSHA256": "afa2ece8da5712fb1fcf93256ba6bd475fde38a611d31227c0f1dcdffa243102",
+    "originalBytes": 807,
+    "storedBytes": 807,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt03-extra-baseline-pointer-interception/NOTE.md",
+    "path": "worker/attempt03-extra-baseline-pointer-interception/NOTE.md",
+    "originalSHA256": "5e5c47f7ab3994f259d3d2451918edee7e81b19029b193ea9b8ce2830049f880",
+    "storedSHA256": "5e5c47f7ab3994f259d3d2451918edee7e81b19029b193ea9b8ce2830049f880",
+    "originalBytes": 606,
+    "storedBytes": 606,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt03-extra-baseline-pointer-interception/extra-error.json",
+    "path": "worker/attempt03-extra-baseline-pointer-interception/extra-error.json",
+    "originalSHA256": "b31efe71cf056a5ddd0e07900b2ea20ad475118c54a9d4b64929d51c7e42e726",
+    "storedSHA256": "b31efe71cf056a5ddd0e07900b2ea20ad475118c54a9d4b64929d51c7e42e726",
+    "originalBytes": 3634,
+    "storedBytes": 3634,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/shared-smoke-v1.log",
+    "path": "worker/attempt04-shared-stock-glob-formatting/shared-smoke-v1.log",
+    "originalSHA256": "d2a6916760aa5913ee0e6b413b5194ad90d7eb96769e00ae9a6a1ef9315b42b4",
+    "storedSHA256": "d2a6916760aa5913ee0e6b413b5194ad90d7eb96769e00ae9a6a1ef9315b42b4",
+    "originalBytes": 231,
+    "storedBytes": 231,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/shared-results.json",
+    "path": "worker/attempt04-shared-stock-glob-formatting/shared-results.json.gz",
+    "originalSHA256": "650203430a788d6328cc9b39e23ac81fe8bb8300040de05375dbe5548f829e4c",
+    "storedSHA256": "84166b82093816d7af49d3f12e717165c1e4cac9ff1697262e3c8e2795dbd1a6",
+    "originalBytes": 4039764,
+    "storedBytes": 74035,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/shared-resources-closed.json",
+    "path": "worker/attempt04-shared-stock-glob-formatting/shared-resources-closed.json",
+    "originalSHA256": "00a57c91c19cab1231e8d3fbd474656922d3b6bfde434e07960d69de19545a42",
+    "storedSHA256": "00a57c91c19cab1231e8d3fbd474656922d3b6bfde434e07960d69de19545a42",
+    "originalBytes": 76,
+    "storedBytes": 76,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/shared-plain-before-baseline-raw.json",
+    "path": "worker/attempt04-shared-stock-glob-formatting/shared-plain-before-baseline-raw.json.gz",
+    "originalSHA256": "c014e409ce25ff64eadd96ea4a4327c23c13221b29c81821fedb9c4ebeaa0395",
+    "storedSHA256": "4e85bd30801ac46ed170c07251275399a25af3d32434007a86870fa202af96d7",
+    "originalBytes": 1288334,
+    "storedBytes": 25937,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/stock-api-diagnostic.txt",
+    "path": "worker/attempt04-shared-stock-glob-formatting/stock-api-diagnostic.txt",
+    "originalSHA256": "0f6e5731e6ca4ef1f7fee7d9666ce0f4141c007caafc86124d9651169c2a13ef",
+    "storedSHA256": "0f6e5731e6ca4ef1f7fee7d9666ce0f4141c007caafc86124d9651169c2a13ef",
+    "originalBytes": 41,
+    "storedBytes": 41,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/NOTE.md",
+    "path": "worker/attempt04-shared-stock-glob-formatting/NOTE.md",
+    "originalSHA256": "de09d43940e0119a2b9fdc34714c0e26f4f55f1913410f817bca4f44dab770ae",
+    "storedSHA256": "de09d43940e0119a2b9fdc34714c0e26f4f55f1913410f817bca4f44dab770ae",
+    "originalBytes": 603,
+    "storedBytes": 603,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/run-shared.mjs",
+    "path": "worker/attempt04-shared-stock-glob-formatting/run-shared.mjs",
+    "originalSHA256": "65824bd105a54f9cbdc46576e6b116184e9e34b79dda80cfde4b42e6af1a122b",
+    "storedSHA256": "65824bd105a54f9cbdc46576e6b116184e9e34b79dda80cfde4b42e6af1a122b",
+    "originalBytes": 5668,
+    "storedBytes": 5668,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/shared-progress.json",
+    "path": "worker/attempt04-shared-stock-glob-formatting/shared-progress.json",
+    "originalSHA256": "76d50adf1bdeac686173a5ba75c849ef1d8bc06991516646c8b21a5921e6d5e9",
+    "storedSHA256": "76d50adf1bdeac686173a5ba75c849ef1d8bc06991516646c8b21a5921e6d5e9",
+    "originalBytes": 266,
+    "storedBytes": 266,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/shared-fixture.tsx",
+    "path": "worker/attempt04-shared-stock-glob-formatting/shared-fixture.tsx",
+    "originalSHA256": "83c209d0d7638838e6ac744ea1b658d0a87e2c378c6a6131b032386b0a7ecd91",
+    "storedSHA256": "83c209d0d7638838e6ac744ea1b658d0a87e2c378c6a6131b032386b0a7ecd91",
+    "originalBytes": 822,
+    "storedBytes": 822,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/shared-plain-before-candidate-raw.json",
+    "path": "worker/attempt04-shared-stock-glob-formatting/shared-plain-before-candidate-raw.json.gz",
+    "originalSHA256": "a65549e01c6a39d72e064d7bcf0c8f0764b41fbda598b3c4b5b6318cb2fbb009",
+    "storedSHA256": "0eecd63c36e8d4ab545ed0a47ca0e2edb292d448134d16cd843bdeaa46634dfa",
+    "originalBytes": 1307686,
+    "storedBytes": 27438,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/candidate/output-hashes.json",
+    "path": "worker/attempt04-shared-stock-glob-formatting/candidate/output-hashes.json.gz",
+    "originalSHA256": "55ee14ce63728813ff9595bcff138d69545c776a850f546905cf68e84b2da8fc",
+    "storedSHA256": "906c34f2f9b2801370e2ff351f533a9c277ea46dea63bbd073cf4194faaf54bd",
+    "originalBytes": 393452,
+    "storedBytes": 219401,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/candidate/shared-fixture.js",
+    "path": "worker/attempt04-shared-stock-glob-formatting/candidate/shared-fixture.js",
+    "originalSHA256": "c9ac535f1faefd95c5118116fcbdb9e7ca8a4ef3a260f02d660e599c41792afc",
+    "storedSHA256": "c9ac535f1faefd95c5118116fcbdb9e7ca8a4ef3a260f02d660e599c41792afc",
+    "originalBytes": 185015,
+    "storedBytes": 185015,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/candidate/metafile.json",
+    "path": "worker/attempt04-shared-stock-glob-formatting/candidate/metafile.json.gz",
+    "originalSHA256": "3603d9810d1a75f5411d152acce03c2bf1ffff75719d81e3d5f8155d951971a4",
+    "storedSHA256": "930c118da0f22233276b8b30e2ab116847b3dfa5df457d9956952fb033a2fd28",
+    "originalBytes": 5217398,
+    "storedBytes": 279486,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/baseline/output-hashes.json",
+    "path": "worker/attempt04-shared-stock-glob-formatting/baseline/output-hashes.json.gz",
+    "originalSHA256": "f98cc4c1fd49dde128d2efa49261159994fddffdfc31b8655ba746da44b0ef42",
+    "storedSHA256": "646c20ac3d83ba09b681941a0f4b8f179c7f4187a38d47390c8f3731356142d6",
+    "originalBytes": 393452,
+    "storedBytes": 219403,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/baseline/shared-fixture.js",
+    "path": "worker/attempt04-shared-stock-glob-formatting/baseline/shared-fixture.js",
+    "originalSHA256": "f800ea341f864681e6bdd11aa5657ad3ed5a4cc459c09a214e89faf6b60766a0",
+    "storedSHA256": "f800ea341f864681e6bdd11aa5657ad3ed5a4cc459c09a214e89faf6b60766a0",
+    "originalBytes": 185015,
+    "storedBytes": 185015,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/attempt04-shared-stock-glob-formatting/baseline/metafile.json",
+    "path": "worker/attempt04-shared-stock-glob-formatting/baseline/metafile.json.gz",
+    "originalSHA256": "caa4daaee88f07a385a4fcea98056f963eb06057a01b253cafb5a742c1f86cc0",
+    "storedSHA256": "6a237b544808e1c7fce7bf9679a43f4f686a31f3b4e03da87e60e8d9eecba8ed",
+    "originalBytes": 5199092,
+    "storedBytes": 279309,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-signed/metafile.json",
+    "path": "worker/candidate-signed/metafile.json.gz",
+    "originalSHA256": "bb3f9e070d9abc63428744211d503fbe1b6558863be18b1265c885e606a3f65a",
+    "storedSHA256": "c7f99b39d0ee99b6492dcb0e6eb76a8666146399b20be23c92a16d295d47588b",
+    "originalBytes": 4749014,
+    "storedBytes": 248509,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-browser/metafile.json",
+    "path": "worker/baseline-browser/metafile.json.gz",
+    "originalSHA256": "b358f18fb9cefbf2fa1f199fd179f921f33d5d7d754a77aab4f0d422e32ecea7",
+    "storedSHA256": "61ad7dffb93d4ca9da89c3e76d086dec20888481f5f5b3b03206a87a2cbb3e28",
+    "originalBytes": 5241225,
+    "storedBytes": 299092,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-condensed/metafile.json",
+    "path": "worker/candidate-small-condensed/metafile.json.gz",
+    "originalSHA256": "f72f9d5a06957c472bedfeeef157666e5a50036e91c928cb0b5bdad90f8a5839",
+    "storedSHA256": "ab695444f8407e8df78b747db30e6f232ab463e7ae78eeecbeae76d9025d68fd",
+    "originalBytes": 4869800,
+    "storedBytes": 248880,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-mini/metafile.json",
+    "path": "worker/baseline-small-mini/metafile.json.gz",
+    "originalSHA256": "a3d40d5caaea9224a911317f8e6fed625a5fd58b2c89985f4526e11d08c286b8",
+    "storedSHA256": "e9988940007d27961aeff2f74b40af5850e8de69c30d020d13d6d88fe31f1e1d",
+    "originalBytes": 4333944,
+    "storedBytes": 208275,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-condensed/metafile.json",
+    "path": "worker/baseline-small-condensed/metafile.json.gz",
+    "originalSHA256": "6601eb56b054e3b6eed8a2787135b6b500c800a32c9fe75dd7e0c8c2697fd2b1",
+    "storedSHA256": "ce50e938b41f5768ce5a1c10972675039ac3a937482e1c9b2aaaafe2e2b20134",
+    "originalBytes": 4855758,
+    "storedBytes": 248632,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-empty/metafile.json",
+    "path": "worker/candidate-small-empty/metafile.json.gz",
+    "originalSHA256": "cf23d4059a0b21e817f51004c50f4e0a7175bed6173c831d0ca228dd2f9c8371",
+    "storedSHA256": "5231eb4b8723eba1324f411dd6d109b98d3aa94a2d3955cdb3f50348e5da3098",
+    "originalBytes": 4813382,
+    "storedBytes": 248888,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-pie/metafile.json",
+    "path": "worker/candidate-small-pie/metafile.json.gz",
+    "originalSHA256": "2f22bc097f188c6e28454024b14f7adc735acfdfed4e8901858aa3a346e0e6fa",
+    "storedSHA256": "d5bd8c6bf54ee4d9d4ece047de968d2daebf6784c523c23f409b78b8e50143b4",
+    "originalBytes": 4773407,
+    "storedBytes": 247667,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-empty/metafile.json",
+    "path": "worker/baseline-small-empty/metafile.json.gz",
+    "originalSHA256": "11a8d008f65bec8a7dc4dc8ef32e36311bf348bc0550d7ff7a5c3d75e19f85c0",
+    "storedSHA256": "326611df4f39fae716f812993bc8bbfc5a655bdaf49bc37efbcc0b269b9f5aea",
+    "originalBytes": 4799340,
+    "storedBytes": 248823,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-signed/metafile.json",
+    "path": "worker/baseline-signed/metafile.json.gz",
+    "originalSHA256": "1f3e00d4111cf45d4f981075ce6c212ac506f787fbc0760ec2f4df1a7f880bed",
+    "storedSHA256": "d3fddc5b254c80f82dc250ab482643a5234d7212687f01e6edbbe38ecc40850a",
+    "originalBytes": 4734971,
+    "storedBytes": 248261,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-stacked/metafile.json",
+    "path": "worker/candidate-small-stacked/metafile.json.gz",
+    "originalSHA256": "aa68a03032421323db661c7a7279e2d2e74f3cb6c803dcc7807410271072593b",
+    "storedSHA256": "d16cbf6c3a5bab125b9e3aa4a5a3f11eb322d24466f1f9ad48e1512eab4a2287",
+    "originalBytes": 4814280,
+    "storedBytes": 246335,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-button/metafile.json",
+    "path": "worker/candidate-small-button/metafile.json.gz",
+    "originalSHA256": "80dd7caf5a639f669f67dcd9ed9846f55b6f440165e29f9f47f842df40afd5d3",
+    "storedSHA256": "7baba0198fd1e1f8942335cdc3aad602905c3b0a114a40c41f0cb9b549df7a23",
+    "originalBytes": 4352616,
+    "storedBytes": 207527,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-mini/metafile.json",
+    "path": "worker/candidate-small-mini/metafile.json.gz",
+    "originalSHA256": "7890ab83494196da3e519b668eb2738cfa58da195c24c466733d32caba9ebfb3",
+    "storedSHA256": "7edd326542ed47c15ff25c376f00ff09669920e572072e7f54dc430799de23c7",
+    "originalBytes": 4342991,
+    "storedBytes": 208339,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-tracer/metafile.json",
+    "path": "worker/candidate-tracer/metafile.json.gz",
+    "originalSHA256": "c95d04c6fc6183fab15d8c7cd2d058c768c5c5011479377ddaa0593619fdcaad",
+    "storedSHA256": "e24390184fb191c171f1833eaf26151bbb09d5194e32672f3df56ea3f39183b6",
+    "originalBytes": 5215868,
+    "storedBytes": 279080,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-browser/metafile.json",
+    "path": "worker/candidate-browser/metafile.json.gz",
+    "originalSHA256": "0dd07b9423d6e85769ed2eacc2a78f0dac24f89e0df0450f4acee824d5408ee4",
+    "storedSHA256": "ba87772f2cb57110350aaf377661e1ddfab180701caf7a009be1e145c01c7bc5",
+    "originalBytes": 5259840,
+    "storedBytes": 299186,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-button/metafile.json",
+    "path": "worker/baseline-small-button/metafile.json.gz",
+    "originalSHA256": "d53fd8e4908581c23901efc5127b8642923056da60a0f59564c6ee2dfc1afe6e",
+    "storedSHA256": "b06824b06907f2e43ef47f15e72ab3a2c001e328cead9aaaa3b1c6ece1ae087f",
+    "originalBytes": 4343569,
+    "storedBytes": 207553,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-pie/metafile.json",
+    "path": "worker/baseline-small-pie/metafile.json.gz",
+    "originalSHA256": "3e60096c82e31877bbd2669e4c23131d378a53dd2a180c0b61faaf28e8219379",
+    "storedSHA256": "a1a19235306e5ff73bc42dde23395627f9ee1f65fa8defd15671bcfaed23dd5f",
+    "originalBytes": 4759622,
+    "storedBytes": 247512,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-lazy/metafile.json",
+    "path": "worker/baseline-small-lazy/metafile.json.gz",
+    "originalSHA256": "1a0ec00f9cffa2e90358172d9bf628de5123bc26e3bd0ed66b39706b8b4eaee0",
+    "storedSHA256": "764564a4955d38200319c4765ab9ed8aef77a049ebc25c10ba7ce92296cc1ccd",
+    "originalBytes": 5061927,
+    "storedBytes": 258609,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-shared/metafile.json",
+    "path": "worker/baseline-shared/metafile.json.gz",
+    "originalSHA256": "173b6ad00f0c78dd6e3417ea64cd83fa17802ae3a218f1eac700afa2eab66677",
+    "storedSHA256": "f2c25659a8986b2fdf949830f2d3905a26a6eb319d93e31162736516c3e25a75",
+    "originalBytes": 5199092,
+    "storedBytes": 279310,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-tracer/metafile.json",
+    "path": "worker/baseline-tracer/metafile.json.gz",
+    "originalSHA256": "afdcc041ad846520bb78a27319001321087c99edb47441bd773e316a45416ff6",
+    "storedSHA256": "3a99e8c51679a4ee161448fc8760d491863d3f9bd06e30e465f97ee0f9ef857a",
+    "originalBytes": 5197574,
+    "storedBytes": 278905,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-stacked/metafile.json",
+    "path": "worker/baseline-small-stacked/metafile.json.gz",
+    "originalSHA256": "6164df74e75e1b2e55aee2c8939a1073aadb061da502b57bd344d2bb9f61b364",
+    "storedSHA256": "60e35353b39a4169ffb6d68562f9123da2ad8ef0003eb2db47a2dc0eb1d941ac",
+    "originalBytes": 4800238,
+    "storedBytes": 246445,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-shared/metafile.json",
+    "path": "worker/candidate-shared/metafile.json.gz",
+    "originalSHA256": "5bc635787d0e6e1664bc11734f7adef0fe723cc195d0919a3b9fe5c34a761d6b",
+    "storedSHA256": "95cc0f121bdf13a7d691385776ec0257ea9ac098f5d260ba9ccc49cf4222cfed",
+    "originalBytes": 5217398,
+    "storedBytes": 279486,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-lazy/metafile.json",
+    "path": "worker/candidate-small-lazy/metafile.json.gz",
+    "originalSHA256": "a8da7ac82a19f915729aaacea42ee7f0376e7ee06f99877e744334efb45a44b0",
+    "storedSHA256": "daf9a62ea78ea8c3fdd69ca1e3465929675a87ba01e64736095038d2af43e1ee",
+    "originalBytes": 5079454,
+    "storedBytes": 258796,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-condensed/entry.tsx",
+    "path": "worker/candidate-small-condensed/entry.tsx",
+    "originalSHA256": "3430dafdbc487b99d8c159c61c75eb881727b6de81513afb58d25b33cdd1c5a9",
+    "storedSHA256": "3430dafdbc487b99d8c159c61c75eb881727b6de81513afb58d25b33cdd1c5a9",
+    "originalBytes": 395,
+    "storedBytes": 395,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-mini/entry.tsx",
+    "path": "worker/baseline-small-mini/entry.tsx",
+    "originalSHA256": "d036a2f2254a829408ca966afe70ee0b8eaa3bff1b33f75c865f40755b60e149",
+    "storedSHA256": "d036a2f2254a829408ca966afe70ee0b8eaa3bff1b33f75c865f40755b60e149",
+    "originalBytes": 281,
+    "storedBytes": 281,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-condensed/entry.tsx",
+    "path": "worker/baseline-small-condensed/entry.tsx",
+    "originalSHA256": "3430dafdbc487b99d8c159c61c75eb881727b6de81513afb58d25b33cdd1c5a9",
+    "storedSHA256": "3430dafdbc487b99d8c159c61c75eb881727b6de81513afb58d25b33cdd1c5a9",
+    "originalBytes": 395,
+    "storedBytes": 395,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-empty/entry.tsx",
+    "path": "worker/candidate-small-empty/entry.tsx",
+    "originalSHA256": "5444ba9c73016dd81f9334776d404397097e17c00075f335c4f3ce86bd8909d5",
+    "storedSHA256": "5444ba9c73016dd81f9334776d404397097e17c00075f335c4f3ce86bd8909d5",
+    "originalBytes": 300,
+    "storedBytes": 300,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-pie/entry.tsx",
+    "path": "worker/candidate-small-pie/entry.tsx",
+    "originalSHA256": "8427dbb9d372d0eeab856377ef5c20bdf96a3f98598dddba2a683790d902460e",
+    "storedSHA256": "8427dbb9d372d0eeab856377ef5c20bdf96a3f98598dddba2a683790d902460e",
+    "originalBytes": 352,
+    "storedBytes": 352,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-empty/entry.tsx",
+    "path": "worker/baseline-small-empty/entry.tsx",
+    "originalSHA256": "5444ba9c73016dd81f9334776d404397097e17c00075f335c4f3ce86bd8909d5",
+    "storedSHA256": "5444ba9c73016dd81f9334776d404397097e17c00075f335c4f3ce86bd8909d5",
+    "originalBytes": 300,
+    "storedBytes": 300,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-stacked/entry.tsx",
+    "path": "worker/candidate-small-stacked/entry.tsx",
+    "originalSHA256": "ea08e2cdb48f42eca7ebf7bda7190bf5502178009c00ddf92b62256749246b4d",
+    "storedSHA256": "ea08e2cdb48f42eca7ebf7bda7190bf5502178009c00ddf92b62256749246b4d",
+    "originalBytes": 432,
+    "storedBytes": 432,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-button/entry.tsx",
+    "path": "worker/candidate-small-button/entry.tsx",
+    "originalSHA256": "139682c9fb6845928c77baee97821b70ef8b4bf3f67f997241d61ba5d915ebd7",
+    "storedSHA256": "139682c9fb6845928c77baee97821b70ef8b4bf3f67f997241d61ba5d915ebd7",
+    "originalBytes": 260,
+    "storedBytes": 260,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-mini/entry.tsx",
+    "path": "worker/candidate-small-mini/entry.tsx",
+    "originalSHA256": "d036a2f2254a829408ca966afe70ee0b8eaa3bff1b33f75c865f40755b60e149",
+    "storedSHA256": "d036a2f2254a829408ca966afe70ee0b8eaa3bff1b33f75c865f40755b60e149",
+    "originalBytes": 281,
+    "storedBytes": 281,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-button/entry.tsx",
+    "path": "worker/baseline-small-button/entry.tsx",
+    "originalSHA256": "139682c9fb6845928c77baee97821b70ef8b4bf3f67f997241d61ba5d915ebd7",
+    "storedSHA256": "139682c9fb6845928c77baee97821b70ef8b4bf3f67f997241d61ba5d915ebd7",
+    "originalBytes": 260,
+    "storedBytes": 260,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-pie/entry.tsx",
+    "path": "worker/baseline-small-pie/entry.tsx",
+    "originalSHA256": "8427dbb9d372d0eeab856377ef5c20bdf96a3f98598dddba2a683790d902460e",
+    "storedSHA256": "8427dbb9d372d0eeab856377ef5c20bdf96a3f98598dddba2a683790d902460e",
+    "originalBytes": 352,
+    "storedBytes": 352,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-lazy/chart-lazy-mini.tsx",
+    "path": "worker/baseline-small-lazy/chart-lazy-mini.tsx",
+    "originalSHA256": "16e8304279f7ea39fff07c5d5d54c420afdf44140eb5fcf53a7828b0e3304431",
+    "storedSHA256": "16e8304279f7ea39fff07c5d5d54c420afdf44140eb5fcf53a7828b0e3304431",
+    "originalBytes": 145,
+    "storedBytes": 145,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-lazy/chart-lazy-bar.tsx",
+    "path": "worker/baseline-small-lazy/chart-lazy-bar.tsx",
+    "originalSHA256": "cb6278d14bed9081154358fa19cbeafaa5e49a19f3a4095c828847a1c85be645",
+    "storedSHA256": "cb6278d14bed9081154358fa19cbeafaa5e49a19f3a4095c828847a1c85be645",
+    "originalBytes": 259,
+    "storedBytes": 259,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-lazy/entry.tsx",
+    "path": "worker/baseline-small-lazy/entry.tsx",
+    "originalSHA256": "293bcc8cf7eaa75f206bf5cdfb8cea2eb3a1ce477b9d75245d8a6775292a6726",
+    "storedSHA256": "293bcc8cf7eaa75f206bf5cdfb8cea2eb3a1ce477b9d75245d8a6775292a6726",
+    "originalBytes": 315,
+    "storedBytes": 315,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-small-stacked/entry.tsx",
+    "path": "worker/baseline-small-stacked/entry.tsx",
+    "originalSHA256": "ea08e2cdb48f42eca7ebf7bda7190bf5502178009c00ddf92b62256749246b4d",
+    "storedSHA256": "ea08e2cdb48f42eca7ebf7bda7190bf5502178009c00ddf92b62256749246b4d",
+    "originalBytes": 432,
+    "storedBytes": 432,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-lazy/chart-lazy-mini.tsx",
+    "path": "worker/candidate-small-lazy/chart-lazy-mini.tsx",
+    "originalSHA256": "16e8304279f7ea39fff07c5d5d54c420afdf44140eb5fcf53a7828b0e3304431",
+    "storedSHA256": "16e8304279f7ea39fff07c5d5d54c420afdf44140eb5fcf53a7828b0e3304431",
+    "originalBytes": 145,
+    "storedBytes": 145,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-lazy/chart-lazy-bar.tsx",
+    "path": "worker/candidate-small-lazy/chart-lazy-bar.tsx",
+    "originalSHA256": "cb6278d14bed9081154358fa19cbeafaa5e49a19f3a4095c828847a1c85be645",
+    "storedSHA256": "cb6278d14bed9081154358fa19cbeafaa5e49a19f3a4095c828847a1c85be645",
+    "originalBytes": 259,
+    "storedBytes": 259,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-small-lazy/entry.tsx",
+    "path": "worker/candidate-small-lazy/entry.tsx",
+    "originalSHA256": "293bcc8cf7eaa75f206bf5cdfb8cea2eb3a1ce477b9d75245d8a6775292a6726",
+    "storedSHA256": "293bcc8cf7eaa75f206bf5cdfb8cea2eb3a1ce477b9d75245d8a6775292a6726",
+    "originalBytes": 315,
+    "storedBytes": 315,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-consumer/package.json",
+    "path": "consumers/baseline-consumer/package.json",
+    "originalSHA256": "aeb63f3d4c87bde0837b28f0f0528f37b4cd1d2b35f5788ae2dfaec85c9caad3",
+    "storedSHA256": "aeb63f3d4c87bde0837b28f0f0528f37b4cd1d2b35f5788ae2dfaec85c9caad3",
+    "originalBytes": 371,
+    "storedBytes": 371,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-consumer/pnpm-lock.yaml",
+    "path": "consumers/baseline-consumer/pnpm-lock.yaml",
+    "originalSHA256": "f450728584443edf2d53760adff675a2b58c60d0fd87a47bfb5ba0778d80a95d",
+    "storedSHA256": "f450728584443edf2d53760adff675a2b58c60d0fd87a47bfb5ba0778d80a95d",
+    "originalBytes": 93627,
+    "storedBytes": 93627,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-consumer/package.json",
+    "path": "consumers/candidate-consumer/package.json",
+    "originalSHA256": "938207648f05ddf132ee5ea24ac17c26f9d0514dcc450db91d5e2ff8de93b696",
+    "storedSHA256": "938207648f05ddf132ee5ea24ac17c26f9d0514dcc450db91d5e2ff8de93b696",
+    "originalBytes": 370,
+    "storedBytes": 370,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-consumer/pnpm-lock.yaml",
+    "path": "consumers/candidate-consumer/pnpm-lock.yaml",
+    "originalSHA256": "ebf2dcbfa15926f1aae4d6fb6749e6600c420c133872ed77333fb8d81cebc205",
+    "storedSHA256": "ebf2dcbfa15926f1aae4d6fb6749e6600c420c133872ed77333fb8d81cebc205",
+    "originalBytes": 93622,
+    "storedBytes": 93622,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/baseline-archive/openuidev-react-components-0.0.0-beta.0.tgz",
+    "path": "artifacts/baseline-archive.tgz",
+    "originalSHA256": "d2a4b51255d745f41a7b51820ac0ec55ef5db8ff2b6f8d91ab43bade7766d037",
+    "storedSHA256": "d2a4b51255d745f41a7b51820ac0ec55ef5db8ff2b6f8d91ab43bade7766d037",
+    "originalBytes": 1077678,
+    "storedBytes": 1077678,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-area/openuidev-react-components-0.0.0-beta.0.tgz",
+    "path": "artifacts/candidate-area.tgz",
+    "originalSHA256": "90ec19200ff48368c437ef5bb22763f02324442a33e7e8b7feeebb8920a3d5cc",
+    "storedSHA256": "90ec19200ff48368c437ef5bb22763f02324442a33e7e8b7feeebb8920a3d5cc",
+    "originalBytes": 1077818,
+    "storedBytes": 1077818,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-combined-v1/openuidev-react-components-0.0.0-beta.0.tgz",
+    "path": "artifacts/candidate-combined-v1.tgz",
+    "originalSHA256": "ec56caf237bcd0355e1f87cae2ac6716a2d10ad789169069a53b82ad18758431",
+    "storedSHA256": "ec56caf237bcd0355e1f87cae2ac6716a2d10ad789169069a53b82ad18758431",
+    "originalBytes": 1079916,
+    "storedBytes": 1079916,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/candidate-final/openuidev-react-components-0.0.0-beta.0.tgz",
+    "path": "artifacts/candidate-final.tgz",
+    "originalSHA256": "b09f11e6aa2809f42f7aee5eb2c23bd7bf6c58904d4a935918044f039ff7dd71",
+    "storedSHA256": "b09f11e6aa2809f42f7aee5eb2c23bd7bf6c58904d4a935918044f039ff7dd71",
+    "originalBytes": 1081254,
+    "storedBytes": 1081254,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-public-gate-consumer/frameworks/tailwind3.css",
+    "path": "host-css/tailwind3.css",
+    "originalSHA256": "584ed8b229b2a8df96f9ddc478e94a07249e8905bdf068afdef8981d969ae150",
+    "storedSHA256": "584ed8b229b2a8df96f9ddc478e94a07249e8905bdf068afdef8981d969ae150",
+    "originalBytes": 11461,
+    "storedBytes": 11461,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-public-gate-consumer/frameworks/tailwind4.css",
+    "path": "host-css/tailwind4.css",
+    "originalSHA256": "e05a054044718b3c9ac536e5fe41ddde475f1a06ca68f57674a90db0a3c1b36e",
+    "storedSHA256": "e05a054044718b3c9ac536e5fe41ddde475f1a06ca68f57674a90db0a3c1b36e",
+    "originalBytes": 6994,
+    "storedBytes": 6994,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-public-gate-consumer/frameworks/plain.css",
+    "path": "host-css/plain.css",
+    "originalSHA256": "d4a1d5dcf591b093b35a4b9bebf48406a70ccf0504b60b11e27f4002f3ddcb00",
+    "storedSHA256": "d4a1d5dcf591b093b35a4b9bebf48406a70ccf0504b60b11e27f4002f3ddcb00",
+    "originalBytes": 286,
+    "storedBytes": 286,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w2-evidence/inventory.json",
+    "path": "w2-source/inventory.json",
+    "originalSHA256": "05afba867196ec4a6a1ae4c3afea34e10731c3365fa27fe8cf7239b95ac51cab",
+    "storedSHA256": "05afba867196ec4a6a1ae4c3afea34e10731c3365fa27fe8cf7239b95ac51cab",
+    "originalBytes": 28529,
+    "storedBytes": 28529,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w2-evidence/source-audit.json",
+    "path": "w2-source/source-audit.json",
+    "originalSHA256": "a1524efb982684844218495b7b5ff7790ddec39a7f53815cde749de70ec8f1d9",
+    "storedSHA256": "a1524efb982684844218495b7b5ff7790ddec39a7f53815cde749de70ec8f1d9",
+    "originalBytes": 6731,
+    "storedBytes": 6731,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w2-evidence/candidate-source.json",
+    "path": "w2-source/candidate-source.json",
+    "originalSHA256": "b6d0eba9e9da66a70e58841c7e9b4c4a9191296b686b97af0432cc81790225e3",
+    "storedSHA256": "b6d0eba9e9da66a70e58841c7e9b4c4a9191296b686b97af0432cc81790225e3",
+    "originalBytes": 1238,
+    "storedBytes": 1238,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w2-evidence/spec-review.md",
+    "path": "w2-source/spec-review.md",
+    "originalSHA256": "cc3878aa008714faae31a998e917a8315b6be18ee729954adc539ccfb5a873a0",
+    "storedSHA256": "cc3878aa008714faae31a998e917a8315b6be18ee729954adc539ccfb5a873a0",
+    "originalBytes": 1167,
+    "storedBytes": 1167,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w2-evidence/standards-review.md",
+    "path": "w2-source/standards-review.md",
+    "originalSHA256": "fb2ebda487c52aa70636890b9cf238bdaaa6f092d15934d38dade23654476478",
+    "storedSHA256": "fb2ebda487c52aa70636890b9cf238bdaaa6f092d15934d38dade23654476478",
+    "originalBytes": 1168,
+    "storedBytes": 1168,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w2-evidence/HOOKS-DRAFT.md",
+    "path": "w2-source/HOOKS-DRAFT.md",
+    "originalSHA256": "d71c296e2660b385e7b56a9e0022cd21318ec5e63342a0c3cee4971bc49d2fed",
+    "storedSHA256": "d71c296e2660b385e7b56a9e0022cd21318ec5e63342a0c3cee4971bc49d2fed",
+    "originalBytes": 2831,
+    "storedBytes": 2831,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w2-evidence/keyframe-source-bindings.json",
+    "path": "w2-source/keyframe-source-bindings.json",
+    "originalSHA256": "52cce75623cd4021431f733f5c234b2b2e9c541d2c968e3480fd3676c47ad56f",
+    "storedSHA256": "52cce75623cd4021431f733f5c234b2b2e9c541d2c968e3480fd3676c47ad56f",
+    "originalBytes": 2444,
+    "storedBytes": 2444,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w2-evidence/SHARED-PROBES-HANDOFF.md",
+    "path": "w2-source/SHARED-PROBES-HANDOFF.md",
+    "originalSHA256": "bf5233e01c955f1e7ffd5f401e1b2be2722b6adaa3563ece6ea1a595f1cc44ee",
+    "storedSHA256": "bf5233e01c955f1e7ffd5f401e1b2be2722b6adaa3563ece6ea1a595f1cc44ee",
+    "originalBytes": 8732,
+    "storedBytes": 8732,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-verifier-handoff.md",
+    "path": "verifier-source-preparation.md",
+    "originalSHA256": "57df9109232c0b80ab61eca268b9a1bf48e35951122a80149bf0979f89d061e3",
+    "storedSHA256": "57df9109232c0b80ab61eca268b9a1bf48e35951122a80149bf0979f89d061e3",
+    "originalBytes": 16479,
+    "storedBytes": 16479,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-verifier-inventory.json",
+    "path": "verifier-source-inventory.json",
+    "originalSHA256": "9af7e49bd9b33701380894539356c611747b3c04144d9f6552114581f8302359",
+    "storedSHA256": "9af7e49bd9b33701380894539356c611747b3c04144d9f6552114581f8302359",
+    "originalBytes": 16375,
+    "storedBytes": 16375,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-evidence/RELEASE.json",
+    "path": "worker/RELEASE.json",
+    "originalSHA256": "0918848b678c7737232694e17b15184b622223c4da45341f2128595ab3f67fb9",
+    "storedSHA256": "0918848b678c7737232694e17b15184b622223c4da45341f2128595ab3f67fb9",
+    "originalBytes": 771,
+    "storedBytes": 771,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-charts-w1-handoff.md",
+    "path": "worker/HANDOFF-at-release.md",
+    "originalSHA256": "06c713c17abdce0127f5d9c73b56d871e8d163df3e2c8550f3f90e702c477154",
+    "storedSHA256": "06c713c17abdce0127f5d9c73b56d871e8d163df3e2c8550f3f90e702c477154",
+    "originalBytes": 11523,
+    "storedBytes": 11523,
+    "gzip": false
+  }
+]
