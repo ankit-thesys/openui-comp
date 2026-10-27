@@ -1,0 +1,37 @@
+## Summary
+
+Extend the accepted stable-selector mechanism to all 19 public chart entries.25 canonical targets cover13 family and12 shared owned styling sites. Existing aliases, props, appearance, callbacks, theme delivery, SVG attributes and per-instance inline values remain.
+
+```text
+packages/react-components/
+├── src/components/Charts/           # family-owned selector registrations
+│   └── shared/                      # labels, legends, tooltip, mini/empty, scroll controls
+└── README.md                        # 25 targets, selector context and precise limits
+```
+
+Stacked on frozen #69. Related: #56. Condensed and alias wrappers reuse their parents; minis reuse the shared frame. No scales, geometry, JS physics, keyframe bodies, legacy code, dependencies or CI/release tooling changed. All 1,444 fallbacks remain; deletion is deferred.
+
+## Evidence
+
+- **Before:** chart-owned defaults attach generated classes, requiring private names to target some base styles.
+  **After:** stock nested Goober registers matching canonical root/type/part/state/pseudo selectors beneath the accepted private zero-specificity document guard. No library patch, custom injector/registry/pruner or new styling API.
+- **1,908 final worker assertions PASS**, separate scoped runs: 648family/theme/empty/CSSOM; 319focused family; 132signed zero-line; 180normal/reduced-motion/print; 548targeted shared; 81optimized/lazy. Preliminary smoke/tracer and preserved invalid harness assertions are not pooled. **Independent chart gate pending.** Counts are assertions, not independent scenarios.
+- Actual plain CSS/Tailwind v3/v4, six framework/order configurations; all 19 chart entries, 25 actual targets, 74 shared old-alias sentinels, real nested body tooltip with >10 items, palette/mark-preserving legend hide/restore, controlled stacked states/scroll, actual mini callbacks and native scroll actions.
+- Native ESM/CJS exports 166, 440 declarations, 371 embedded source bindings and 2210 installed/native members preserved. All 25 declaration bodies and 9 keyframe bodies conserved; 1444 fallback expressions/counts remain. Build/typecheck and both source review axes pass.
+- Twenty actual build graphs bind archive inputs/output hashes and one Goober origin. Static representatives add 0–3063 uncompressed JS bytes; Button-only and lazy shell static bytes are unchanged. Injected style text adds 0–3368 bytes separately; unchanged emitted vendor CSS is not zero runtime-CSS growth. No timing/heap/zero-unused guarantee.
+- Real SVG type/state overrides and diverging-ramp ::after pass. Presentation stroke attributes remain distinguishable from Heatmap inline fill and other inline dimensions/position/opacity. Scrollbar pseudo display is not a native visibility guarantee. LabelTooltip has no owned registration; none is invented.
+- Original host-sentinel scoping, positive-only zero-line, baseline HorizontalBar pointer-interception and stock-glob semicolon formatting failures/corrections are retained. No product code was patched to manufacture a pass. Stock Goober 2.1.19 drops a final declaration in the tested plain glob string without its semicolon in both arms; component templates already terminate declarations and corrected stock-API test inputs pass.
+
+[Exact worker report](https://github.com/ankit-thesys/openui-comp/blob/363e1c1eea993d200a56f2054649bc7d1dd39996/validation/beta17/stable-chart-selectors-worker/worker/REPORT.md) · [Summary](https://github.com/ankit-thesys/openui-comp/blob/363e1c1eea993d200a56f2054649bc7d1dd39996/validation/beta17/stable-chart-selectors-worker/worker/SUMMARY.json) · [Raw evidence/hash manifest](https://github.com/ankit-thesys/openui-comp/blob/363e1c1eea993d200a56f2054649bc7d1dd39996/validation/beta17/stable-chart-selectors-worker/MANIFEST.json) · [Explicit verifier-window release](https://github.com/ankit-thesys/openui-comp/blob/363e1c1eea993d200a56f2054649bc7d1dd39996/validation/beta17/stable-chart-selectors-worker/worker/RELEASE.json).
+
+Frozen source `5e09b37c04a1a3be05b9447cf8b9effaf33a331f`; package tree `2c31eb88b05349b48717c389deab040ec532fc7f`; final archive SHA256 `b09f11e6aa2809f42f7aee5eb2c23bd7bf6c58904d4a935918044f039ff7dd71`. Final differs from tested functional archive only in README; all runtime bytes identical. No source CI pass, merge, release or ticket closure is implied. PR42/67/68/69 heads unchanged.
+
+## Merge Danger
+
+**Door:** two-way
+
+Source-only chart styling registrations can be reverted; no data migration.
+
+**Blast Radius:** charts
+
+Consumers must use corresponding later unlayered selectors for type/state/part context. Existing inline geometry/values, nine private keyframes and vendor limits remain. HorizontalBar string-height/legend-fit and unwired-click limitations are not fixed; selector checks use documented numeric stable cases and preserve the prior failures separately. EditableTable and fallback deletion remain deferred. SSR/hydration, full chat/parser streaming, performance/memory/soak and full beta #17 acceptance remain outside this gate. Independent verification is required before scope acceptance.

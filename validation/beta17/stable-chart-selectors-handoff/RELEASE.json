@@ -1,0 +1,15 @@
+{
+  "time": "2026-10-27T16:36:08.788224+00:00",
+  "window": "RELEASED to independent chart verifier",
+  "allOwnedBrowserServerBuildJobsComplete": true,
+  "source": "5e09b37c04a1a3be05b9447cf8b9effaf33a331f",
+  "packageTree": "2c31eb88b05349b48717c389deab040ec532fc7f",
+  "archive": "/private/tmp/openui-charts-w1-evidence/candidate-final/openuidev-react-components-0.0.0-beta.0.tgz",
+  "archiveSHA256": "b09f11e6aa2809f42f7aee5eb2c23bd7bf6c58904d4a935918044f039ff7dd71",
+  "baselineArchiveSHA256": "d2a4b51255d745f41a7b51820ac0ec55ef5db8ff2b6f8d91ab43bade7766d037",
+  "workerAssertions": 1908,
+  "optimizedLazyAssertions": 81,
+  "graphBuildsBound": 20,
+  "independentAcceptance": "pending",
+  "persistence": "continuing only Git/evidence/docs/PR; no new runtime/build"
+}
