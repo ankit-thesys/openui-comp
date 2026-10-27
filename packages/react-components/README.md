@@ -95,7 +95,8 @@ Button and IconButton use stable styling targets. Importing either component
 registers its rules automatically through stock Goober. A private generated class
 on `html` is contained in `:where(...:root)` and adds zero specificity. Consumers
 do not use that class. The documented batches below share this mechanism;
-EditableTable and chart-owned styles retain their existing selectors.
+EditableTable retains its existing selectors. Chart-owned targets are documented
+in the Charts section below.
 
 | Target | Button | IconButton |
 | --- | --- | --- |
@@ -270,12 +271,12 @@ keyframe identifiers keep their existing precedence and behavior.
 ### Selector conversion status
 
 Button/IconButton, the 15 control families, Select/Calendar/DatePicker/Modal and
-the presentation/layout/help families above are converted. New batches remain
-pending combined and independent acceptance; this is not a package-wide approval.
+the presentation/layout/help families above are converted. The non-chart batches have passed their bounded independent gate. The chart
+extension remains pending independent acceptance; this is not full beta approval.
 All 1,444 existing token fallback expressions remain in place.
 
-EditableTable remains deferred. Chart-owned selectors are outside these tickets;
-their shared Button/IconButton controls consume the stable styles indirectly.
+EditableTable remains deferred. The chart extension below also converts chart-owned and shared chart rules.
+Its independent acceptance remains pending; chart behavior is unchanged.
 Calendar's direct Select content/viewport dependency remains intact.
 
 SourceFaviconImage's canonical image hook applies to the successful image only;
@@ -326,6 +327,90 @@ CalendarHeatmap, SegmentedBar, SingleStackedBar (the existing alias),
 MiniAreaChart, MiniBarChart and MiniLineChart. Existing data/prop types, Scatter
 helpers, LegendStoreProvider/useLegendEntry, StackedLegend and CHART_CLASS_PREFIX
 are also public. Shared chart implementations remain private.
+
+### Chart styling targets
+
+All 19 public chart entries use the same stock-Goober registration mechanism and
+private zero-specificity document guard. Condensed charts reuse their parent
+rules, SingleStackedBar remains an alias, and mini charts share MiniChartFrame.
+No extra wrapper or duplicate family stylesheet is introduced.
+
+| Public chart entries | Canonical owned root |
+| --- | --- |
+| AreaChart, AreaChartCondensed | `.openui-area-chart-root` |
+| LineChart, LineChartCondensed | `.openui-line-chart-root` |
+| BarChart, BarChartCondensed | `.openui-bar-chart-root` |
+| HorizontalBarChart | `.openui-horizontal-bar-chart-root` |
+| PieChart | `.openui-pie-chart-root` |
+| RadialChart | `.openui-radial-chart-root` |
+| RadarChart | `.openui-radar-chart-root` |
+| ScatterChart | `.openui-scatter-chart-root` |
+| HeatmapChart | `.openui-heatmap-chart-root` |
+| FunnelChart | `.openui-funnel-chart-root` |
+| CalendarHeatmap | `.openui-calendar-heatmap-root` |
+| SegmentedBar, SingleStackedBar | `.openui-segmented-bar-root` |
+| MiniAreaChart, MiniBarChart, MiniLineChart | `.openui-mini-chart-root` (shared frame) |
+
+HeatmapChart additionally exposes `.openui-heatmap-chart-diverging-ramp-root`
+for its existing diverging color-scale ramp. Its owned declaration targets
+`::after`; it does not add a generic base rule.
+
+| Shared role | Canonical target |
+| --- | --- |
+| Empty state | `.openui-chart-empty-root` |
+| X/Y axis labels | `.openui-chart-x-axis-label-root`, `.openui-chart-y-axis-label-root` |
+| Default legend | `.openui-chart-default-legend-root` |
+| Body tooltip wrapper/panel | `.openui-chart-tooltip-portal-root`, `.openui-chart-tooltip-root` |
+| Stacked legend | `.openui-chart-stacked-legend-root` |
+| Chart with stacked legend | `.openui-chart-stacked-legend-layout-root` |
+| Stacked scrollbar | `.openui-chart-stacked-legend-scrollbar` (`::-webkit-scrollbar` only) |
+| Horizontal/vertical scroll controls | `.openui-chart-horizontal-scroll-controls-root`, `.openui-chart-vertical-scroll-controls-root` |
+
+Existing aliases and part/state classes remain on the same DOM and SVG nodes.
+Ordinary later unlayered consumer CSS must match the owned root, type, part and
+state context. SVG type selectors outside `:where()` still contribute specificity;
+the private document guard contributes none. For example:
+
+```css
+.openui-bar-chart-root { position: relative; }
+.openui-area-chart-root line:where(.openui-area-chart-grid line) {
+  stroke: navy;
+}
+.openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line) {
+  stroke: purple;
+}
+.openui-heatmap-chart-diverging-ramp-root::after { opacity: 0.25; }
+.openui-chart-tooltip-root { border-radius: 12px; }
+.openui-chart-horizontal-scroll-controls-root
+  .openui-chart-horizontal-scroll-button--disabled:disabled { cursor: wait; }
+```
+
+The emphasized zero-line class is rendered only when the data domain spans
+negative values. The body tooltip retains its existing portal and nearest theme
+scope; it does not depend on being a descendant of a chart container. LabelTooltip
+is a separate existing Radix behavior with no owned chart CSS registration here.
+
+SVG presentation attributes such as fill/stroke are different from inline CSS:
+a matching stylesheet can override a presentation attribute. Existing inline
+Heatmap label fill, legend swatch color/hidden opacity, container dimensions,
+mini size, animation delays and tooltip FloatingUI/spring position/transform/opacity
+keep their current precedence. Use existing props, palettes, themes and inline
+customization for those values; ordinary CSS is not promised to beat inline styles.
+The scrollbar hook controls its owned pseudo rule, not whether a native scrollbar
+becomes visible on every platform.
+
+All nine existing chart keyframes, media boundaries and animation behavior remain.
+Normal/reduced motion and existing Heatmap/Funnel print rules are preserved;
+SegmentedBar's transition stays outside the reduced-motion media guard as before.
+No scales, physics, data transforms, geometry, mark attributes or JS animation
+helpers are changed by selector conversion. Existing HorizontalBar limitations
+below remain; numeric-height selector checks do not repair the inherited
+string-height/legend-fit failure.
+
+Registration is module-based: a shared style module or retained lazy chunk may
+register styles for more than the currently visible part. This does not promise
+zero-unused CSS, per-chart lazy stylesheet isolation, startup timing or heap
+performance. The chart selector gate remains pending independent verification.
 
 ## Support boundary and inherited behavior
 
