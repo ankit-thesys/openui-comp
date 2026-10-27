@@ -982,5 +982,13 @@
     "originalBytes": 286,
     "storedBytes": 286,
     "gzip": false
+  },
+  {
+    "path": "61/fixture-binding.json",
+    "originalSHA256": "7de788c729bde5d3351d358864130db89a45eaa1264fc76677055714a868110c",
+    "storedSHA256": "7de788c729bde5d3351d358864130db89a45eaa1264fc76677055714a868110c",
+    "originalBytes": 648,
+    "storedBytes": 648,
+    "gzip": false
   }
 ]
