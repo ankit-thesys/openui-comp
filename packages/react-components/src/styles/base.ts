@@ -1,6 +1,16 @@
 import { css } from "goober";
 
-// Apply only to component roots that already used border-box.
-export const borderBoxClass = css`
-  box-sizing: border-box;
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-border-box {
+      box-sizing: border-box;
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
+
+// Explicit opt-in preserves the three roots' existing applicability.
+export const borderBoxClass = "openui-border-box";
