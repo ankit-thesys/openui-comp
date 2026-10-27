@@ -2,7 +2,7 @@ import { css } from "goober";
 export const carouselClass = "openui-carousel-carousel";
 export const contentClass = "openui-carousel-content-styled";
 export const itemClass = "openui-carousel-item-styled";
-export const buttonClass = "openui-carousel-button";
+export const buttonClass = "openui-carousel-button-styled";
 
 const stylesheetScope = css`
   :where(&:root) {
@@ -78,7 +78,7 @@ const stylesheetScope = css`
       padding: var(--openui-space-m, 12px);
       border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));
     }
-    .openui-carousel-button {
+    .openui-carousel-button-styled {
       position: absolute;
       top: 50%;
       z-index: 10;
