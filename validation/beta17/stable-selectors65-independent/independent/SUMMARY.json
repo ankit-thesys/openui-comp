@@ -1,0 +1,897 @@
+{
+  "scope": "Independent bounded selector runtime gate only. Source/artifact provenance is separate. No SSR/performance/memory/streaming/full historical certification.",
+  "phases": [
+    {
+      "phase": "controls",
+      "checks": 378,
+      "validPassed": 378,
+      "invalidHarnessAssertionsPreserved": 0,
+      "browser": "156.0.8078.48",
+      "closed": "2026-10-27T14:52:38.456Z"
+    },
+    {
+      "phase": "presentation",
+      "checks": 918,
+      "validPassed": 912,
+      "invalidHarnessAssertionsPreserved": 6,
+      "browser": "156.0.8078.48",
+      "closed": "2026-10-27T14:55:48.916Z"
+    },
+    {
+      "phase": "portals",
+      "checks": 270,
+      "validPassed": 258,
+      "invalidHarnessAssertionsPreserved": 12,
+      "browser": "156.0.8078.48",
+      "closed": "2026-10-27T14:56:55.763Z"
+    },
+    {
+      "phase": "extra",
+      "checks": 163,
+      "validPassed": 157,
+      "invalidHarnessAssertionsPreserved": 6,
+      "browser": "156.0.8078.48",
+      "closed": "2026-10-27T14:58:48.051Z"
+    },
+    {
+      "phase": "small",
+      "checks": 41,
+      "validPassed": 41,
+      "invalidHarnessAssertionsPreserved": 0,
+      "browser": "156.0.8078.48",
+      "closed": "2026-10-27T14:59:05.563Z"
+    },
+    {
+      "phase": "image-inline-correction",
+      "checks": 12,
+      "validPassed": 12,
+      "invalidHarnessAssertionsPreserved": 0,
+      "browser": "156.0.8078.48",
+      "closed": "2026-10-27T14:59:21.983Z"
+    },
+    {
+      "phase": "escape-correction",
+      "checks": 12,
+      "validPassed": 12,
+      "invalidHarnessAssertionsPreserved": 0,
+      "browser": "156.0.8078.48",
+      "closed": "2026-10-27T15:00:07.925Z"
+    },
+    {
+      "phase": "boot",
+      "checks": 288,
+      "validPassed": 288,
+      "invalidHarnessAssertionsPreserved": 0,
+      "browser": "156.0.8078.48",
+      "closed": "2026-10-27T15:01:31.523Z"
+    },
+    {
+      "phase": "loader-correction",
+      "checks": 30,
+      "validPassed": 30,
+      "invalidHarnessAssertionsPreserved": 0,
+      "browser": "156.0.8078.48",
+      "closed": "2026-10-27T15:01:51.353Z"
+    },
+    {
+      "phase": "portal-states",
+      "checks": 48,
+      "validPassed": 48,
+      "invalidHarnessAssertionsPreserved": 0,
+      "browser": "156.0.8078.48",
+      "closed": "2026-10-27T15:02:10.304Z"
+    }
+  ],
+  "validPassed": 2136,
+  "preservedHarnessAssertions": 24,
+  "rawFailures": [
+    {
+      "phase": "presentation",
+      "name": "plain/before/matching-.openui-image-root",
+      "pass": false,
+      "detail": {
+        "count": 3,
+        "values": [
+          "100px",
+          "100px",
+          "31px"
+        ],
+        "allMatch": true,
+        "pass": false
+      }
+    },
+    {
+      "phase": "presentation",
+      "name": "plain/after/matching-.openui-image-root",
+      "pass": false,
+      "detail": {
+        "count": 3,
+        "values": [
+          "100px",
+          "100px",
+          "31px"
+        ],
+        "allMatch": true,
+        "pass": false
+      }
+    },
+    {
+      "phase": "presentation",
+      "name": "tailwind3/before/matching-.openui-image-root",
+      "pass": false,
+      "detail": {
+        "count": 3,
+        "values": [
+          "100px",
+          "100px",
+          "31px"
+        ],
+        "allMatch": true,
+        "pass": false
+      }
+    },
+    {
+      "phase": "presentation",
+      "name": "tailwind3/after/matching-.openui-image-root",
+      "pass": false,
+      "detail": {
+        "count": 3,
+        "values": [
+          "100px",
+          "100px",
+          "31px"
+        ],
+        "allMatch": true,
+        "pass": false
+      }
+    },
+    {
+      "phase": "presentation",
+      "name": "tailwind4/before/matching-.openui-image-root",
+      "pass": false,
+      "detail": {
+        "count": 3,
+        "values": [
+          "100px",
+          "100px",
+          "31px"
+        ],
+        "allMatch": true,
+        "pass": false
+      }
+    },
+    {
+      "phase": "presentation",
+      "name": "tailwind4/after/matching-.openui-image-root",
+      "pass": false,
+      "detail": {
+        "count": 3,
+        "values": [
+          "100px",
+          "100px",
+          "31px"
+        ],
+        "allMatch": true,
+        "pass": false
+      }
+    },
+    {
+      "phase": "portals",
+      "name": "plain/before/baseline/select-escape",
+      "pass": false
+    },
+    {
+      "phase": "portals",
+      "name": "plain/before/candidate/select-escape",
+      "pass": false
+    },
+    {
+      "phase": "portals",
+      "name": "plain/after/baseline/select-escape",
+      "pass": false
+    },
+    {
+      "phase": "portals",
+      "name": "plain/after/candidate/select-escape",
+      "pass": false
+    },
+    {
+      "phase": "portals",
+      "name": "tailwind3/before/baseline/select-escape",
+      "pass": false
+    },
+    {
+      "phase": "portals",
+      "name": "tailwind3/before/candidate/select-escape",
+      "pass": false
+    },
+    {
+      "phase": "portals",
+      "name": "tailwind3/after/baseline/select-escape",
+      "pass": false
+    },
+    {
+      "phase": "portals",
+      "name": "tailwind3/after/candidate/select-escape",
+      "pass": false
+    },
+    {
+      "phase": "portals",
+      "name": "tailwind4/before/baseline/select-escape",
+      "pass": false
+    },
+    {
+      "phase": "portals",
+      "name": "tailwind4/before/candidate/select-escape",
+      "pass": false
+    },
+    {
+      "phase": "portals",
+      "name": "tailwind4/after/baseline/select-escape",
+      "pass": false
+    },
+    {
+      "phase": "portals",
+      "name": "tailwind4/after/candidate/select-escape",
+      "pass": false
+    },
+    {
+      "phase": "extra",
+      "name": "plain/before/paired-loader",
+      "pass": false,
+      "detail": {
+        "baseline": [
+          {
+            "tag": "DIV",
+            "text": "",
+            "role": null,
+            "state": null,
+            "disabled": false,
+            "style": {
+              "display": "block",
+              "position": "absolute",
+              "boxSizing": "content-box",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "border": "",
+              "padding": "0px",
+              "fontFamily": "Times",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "letterSpacing": "normal",
+              "borderRadius": "9999px",
+              "gap": "normal",
+              "width": "24px",
+              "height": "24px",
+              "maxWidth": "none",
+              "minWidth": "0px",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "overflow": "visible",
+              "visibility": "visible",
+              "opacity": "1",
+              "cursor": "auto",
+              "outline": "rgb(0, 0, 0) none 3px",
+              "objectFit": "fill",
+              "zIndex": "2"
+            },
+            "size": [
+              37.79638671875,
+              37.79638671875
+            ]
+          }
+        ],
+        "candidate": [
+          {
+            "tag": "DIV",
+            "text": "",
+            "role": null,
+            "state": null,
+            "disabled": false,
+            "style": {
+              "display": "block",
+              "position": "absolute",
+              "boxSizing": "content-box",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "border": "",
+              "padding": "0px",
+              "fontFamily": "Times",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "letterSpacing": "normal",
+              "borderRadius": "9999px",
+              "gap": "normal",
+              "width": "24px",
+              "height": "24px",
+              "maxWidth": "none",
+              "minWidth": "0px",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "overflow": "visible",
+              "visibility": "visible",
+              "opacity": "1",
+              "cursor": "auto",
+              "outline": "rgb(0, 0, 0) none 3px",
+              "objectFit": "fill",
+              "zIndex": "2"
+            },
+            "size": [
+              37.7987060546875,
+              37.7987060546875
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "phase": "extra",
+      "name": "plain/after/paired-loader",
+      "pass": false,
+      "detail": {
+        "baseline": [
+          {
+            "tag": "DIV",
+            "text": "",
+            "role": null,
+            "state": null,
+            "disabled": false,
+            "style": {
+              "display": "block",
+              "position": "absolute",
+              "boxSizing": "content-box",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "border": "",
+              "padding": "0px",
+              "fontFamily": "Times",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "letterSpacing": "normal",
+              "borderRadius": "9999px",
+              "gap": "normal",
+              "width": "24px",
+              "height": "24px",
+              "maxWidth": "none",
+              "minWidth": "0px",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "overflow": "visible",
+              "visibility": "visible",
+              "opacity": "1",
+              "cursor": "auto",
+              "outline": "rgb(0, 0, 0) none 3px",
+              "objectFit": "fill",
+              "zIndex": "2"
+            },
+            "size": [
+              37.7991943359375,
+              37.7991943359375
+            ]
+          }
+        ],
+        "candidate": [
+          {
+            "tag": "DIV",
+            "text": "",
+            "role": null,
+            "state": null,
+            "disabled": false,
+            "style": {
+              "display": "block",
+              "position": "absolute",
+              "boxSizing": "content-box",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "border": "",
+              "padding": "0px",
+              "fontFamily": "Times",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "normal",
+              "letterSpacing": "normal",
+              "borderRadius": "9999px",
+              "gap": "normal",
+              "width": "24px",
+              "height": "24px",
+              "maxWidth": "none",
+              "minWidth": "0px",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "overflow": "visible",
+              "visibility": "visible",
+              "opacity": "1",
+              "cursor": "auto",
+              "outline": "rgb(0, 0, 0) none 3px",
+              "objectFit": "fill",
+              "zIndex": "2"
+            },
+            "size": [
+              37.798095703125,
+              37.798095703125
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "phase": "extra",
+      "name": "tailwind3/before/paired-loader",
+      "pass": false,
+      "detail": {
+        "baseline": [
+          {
+            "tag": "DIV",
+            "text": "",
+            "role": null,
+            "state": null,
+            "disabled": false,
+            "style": {
+              "display": "block",
+              "position": "absolute",
+              "boxSizing": "border-box",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "border": "",
+              "padding": "0px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "letterSpacing": "normal",
+              "borderRadius": "9999px",
+              "gap": "normal",
+              "width": "24px",
+              "height": "24px",
+              "maxWidth": "none",
+              "minWidth": "0px",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "overflow": "visible",
+              "visibility": "visible",
+              "opacity": "1",
+              "cursor": "auto",
+              "outline": "rgb(0, 0, 0) none 3px",
+              "objectFit": "fill",
+              "zIndex": "2"
+            },
+            "size": [
+              30.2432861328125,
+              30.243316650390625
+            ]
+          }
+        ],
+        "candidate": [
+          {
+            "tag": "DIV",
+            "text": "",
+            "role": null,
+            "state": null,
+            "disabled": false,
+            "style": {
+              "display": "block",
+              "position": "absolute",
+              "boxSizing": "border-box",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "border": "",
+              "padding": "0px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "letterSpacing": "normal",
+              "borderRadius": "9999px",
+              "gap": "normal",
+              "width": "24px",
+              "height": "24px",
+              "maxWidth": "none",
+              "minWidth": "0px",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "overflow": "visible",
+              "visibility": "visible",
+              "opacity": "1",
+              "cursor": "auto",
+              "outline": "rgb(0, 0, 0) none 3px",
+              "objectFit": "fill",
+              "zIndex": "2"
+            },
+            "size": [
+              30.2353515625,
+              30.235366821289062
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "phase": "extra",
+      "name": "tailwind3/after/paired-loader",
+      "pass": false,
+      "detail": {
+        "baseline": [
+          {
+            "tag": "DIV",
+            "text": "",
+            "role": null,
+            "state": null,
+            "disabled": false,
+            "style": {
+              "display": "block",
+              "position": "absolute",
+              "boxSizing": "border-box",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "border": "",
+              "padding": "0px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "letterSpacing": "normal",
+              "borderRadius": "9999px",
+              "gap": "normal",
+              "width": "24px",
+              "height": "24px",
+              "maxWidth": "none",
+              "minWidth": "0px",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "overflow": "visible",
+              "visibility": "visible",
+              "opacity": "1",
+              "cursor": "auto",
+              "outline": "rgb(0, 0, 0) none 3px",
+              "objectFit": "fill",
+              "zIndex": "2"
+            },
+            "size": [
+              30.2415771484375,
+              30.2415771484375
+            ]
+          }
+        ],
+        "candidate": [
+          {
+            "tag": "DIV",
+            "text": "",
+            "role": null,
+            "state": null,
+            "disabled": false,
+            "style": {
+              "display": "block",
+              "position": "absolute",
+              "boxSizing": "border-box",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "border": "",
+              "padding": "0px",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "letterSpacing": "normal",
+              "borderRadius": "9999px",
+              "gap": "normal",
+              "width": "24px",
+              "height": "24px",
+              "maxWidth": "none",
+              "minWidth": "0px",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "overflow": "visible",
+              "visibility": "visible",
+              "opacity": "1",
+              "cursor": "auto",
+              "outline": "rgb(0, 0, 0) none 3px",
+              "objectFit": "fill",
+              "zIndex": "2"
+            },
+            "size": [
+              30.24090576171875,
+              30.24090576171875
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "phase": "extra",
+      "name": "tailwind4/before/paired-loader",
+      "pass": false,
+      "detail": {
+        "baseline": [
+          {
+            "tag": "DIV",
+            "text": "",
+            "role": null,
+            "state": null,
+            "disabled": false,
+            "style": {
+              "display": "block",
+              "position": "absolute",
+              "boxSizing": "border-box",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "border": "",
+              "padding": "0px",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "letterSpacing": "normal",
+              "borderRadius": "9999px",
+              "gap": "normal",
+              "width": "24px",
+              "height": "24px",
+              "maxWidth": "none",
+              "minWidth": "0px",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "overflow": "visible",
+              "visibility": "visible",
+              "opacity": "1",
+              "cursor": "auto",
+              "outline": "rgb(0, 0, 0) none 3px",
+              "objectFit": "fill",
+              "zIndex": "2"
+            },
+            "size": [
+              30.24566650390625,
+              30.245635986328125
+            ]
+          }
+        ],
+        "candidate": [
+          {
+            "tag": "DIV",
+            "text": "",
+            "role": null,
+            "state": null,
+            "disabled": false,
+            "style": {
+              "display": "block",
+              "position": "absolute",
+              "boxSizing": "border-box",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "border": "",
+              "padding": "0px",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "letterSpacing": "normal",
+              "borderRadius": "9999px",
+              "gap": "normal",
+              "width": "24px",
+              "height": "24px",
+              "maxWidth": "none",
+              "minWidth": "0px",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "overflow": "visible",
+              "visibility": "visible",
+              "opacity": "1",
+              "cursor": "auto",
+              "outline": "rgb(0, 0, 0) none 3px",
+              "objectFit": "fill",
+              "zIndex": "2"
+            },
+            "size": [
+              30.24176025390625,
+              30.24176025390625
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "phase": "extra",
+      "name": "tailwind4/after/paired-loader",
+      "pass": false,
+      "detail": {
+        "baseline": [
+          {
+            "tag": "DIV",
+            "text": "",
+            "role": null,
+            "state": null,
+            "disabled": false,
+            "style": {
+              "display": "block",
+              "position": "absolute",
+              "boxSizing": "border-box",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "border": "",
+              "padding": "0px",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "letterSpacing": "normal",
+              "borderRadius": "9999px",
+              "gap": "normal",
+              "width": "24px",
+              "height": "24px",
+              "maxWidth": "none",
+              "minWidth": "0px",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "overflow": "visible",
+              "visibility": "visible",
+              "opacity": "1",
+              "cursor": "auto",
+              "outline": "rgb(0, 0, 0) none 3px",
+              "objectFit": "fill",
+              "zIndex": "2"
+            },
+            "size": [
+              30.24505615234375,
+              30.24505615234375
+            ]
+          }
+        ],
+        "candidate": [
+          {
+            "tag": "DIV",
+            "text": "",
+            "role": null,
+            "state": null,
+            "disabled": false,
+            "style": {
+              "display": "block",
+              "position": "absolute",
+              "boxSizing": "border-box",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "border": "",
+              "padding": "0px",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "letterSpacing": "normal",
+              "borderRadius": "9999px",
+              "gap": "normal",
+              "width": "24px",
+              "height": "24px",
+              "maxWidth": "none",
+              "minWidth": "0px",
+              "flexDirection": "row",
+              "flexWrap": "nowrap",
+              "alignItems": "normal",
+              "justifyContent": "normal",
+              "overflow": "visible",
+              "visibility": "visible",
+              "opacity": "1",
+              "cursor": "auto",
+              "outline": "rgb(0, 0, 0) none 3px",
+              "objectFit": "fill",
+              "zIndex": "2"
+            },
+            "size": [
+              30.2364501953125,
+              30.2364501953125
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "nativeImports": {
+    "distinctArmESMandCJS": true,
+    "exportsPerImport": 166,
+    "themeKeys": 215
+  },
+  "graphs": [
+    {
+      "family": "boot",
+      "baselineStaticBytes": 197199,
+      "candidateStaticBytes": 197199,
+      "baselineReachableBytes": 3842945,
+      "candidateReachableBytes": 3878366,
+      "deltaStaticBytes": 0,
+      "deltaReachableBytes": 35421
+    },
+    {
+      "family": "Buttons",
+      "baselineStaticBytes": 225577,
+      "candidateStaticBytes": 225730,
+      "baselineReachableBytes": 225577,
+      "candidateReachableBytes": 225730,
+      "deltaStaticBytes": 153,
+      "deltaReachableBytes": 153
+    },
+    {
+      "family": "TagBlock",
+      "baselineStaticBytes": 220961,
+      "candidateStaticBytes": 221921,
+      "baselineReachableBytes": 220961,
+      "candidateReachableBytes": 221921,
+      "deltaStaticBytes": 960,
+      "deltaReachableBytes": 960
+    },
+    {
+      "family": "Table",
+      "baselineStaticBytes": 1283478,
+      "candidateStaticBytes": 1284727,
+      "baselineReachableBytes": 1283478,
+      "candidateReachableBytes": 1284727,
+      "deltaStaticBytes": 1249,
+      "deltaReachableBytes": 1249
+    },
+    {
+      "family": "CodeBlock",
+      "baselineStaticBytes": 1951061,
+      "candidateStaticBytes": 1951288,
+      "baselineReachableBytes": 1951061,
+      "candidateReachableBytes": 1951288,
+      "deltaStaticBytes": 227,
+      "deltaReachableBytes": 227
+    },
+    {
+      "family": "TextContentWrapper",
+      "baselineStaticBytes": 2618017,
+      "candidateStaticBytes": 2622380,
+      "baselineReachableBytes": 3110079,
+      "candidateReachableBytes": 3114442,
+      "deltaStaticBytes": 4363,
+      "deltaReachableBytes": 4363
+    },
+    {
+      "family": "Tabs",
+      "baselineStaticBytes": 1312856,
+      "candidateStaticBytes": 1314315,
+      "baselineReachableBytes": 1312856,
+      "candidateReachableBytes": 1314315,
+      "deltaStaticBytes": 1459,
+      "deltaReachableBytes": 1459
+    },
+    {
+      "family": "Sources",
+      "baselineStaticBytes": 1720975,
+      "candidateStaticBytes": 1722962,
+      "baselineReachableBytes": 1939221,
+      "candidateReachableBytes": 1941208,
+      "deltaStaticBytes": 1987,
+      "deltaReachableBytes": 1987
+    },
+    {
+      "family": "Citation",
+      "baselineStaticBytes": 716368,
+      "candidateStaticBytes": 717820,
+      "baselineReachableBytes": 1834627,
+      "candidateReachableBytes": 1836079,
+      "deltaStaticBytes": 1452,
+      "deltaReachableBytes": 1452
+    }
+  ]
+}

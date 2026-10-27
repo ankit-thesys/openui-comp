@@ -1,0 +1,99 @@
+{
+  "42": {
+    "baseRefName": "main",
+    "body": "## Summary\nAdd `packages/react-components` as `@openuidev/react-components`, with supported components, themes and type APIs. Owned styles use stock Goober tagged templates; six verified redundant `!important` declarations are removed and the remaining ten retained.\n\n## Scope\nOnly `packages/react-components` and its required `pnpm-lock.yaml` entries. Includes package build/type configuration, README, license and third-party notices. Chat kit is split into #54, based on this branch.\n\nNo CI, release tooling, new tooling, lab/test evidence or legacy react-ui changes. Publishing and SSR/hydration remain deferred.\n\n## Validation\nAfter the split, existing `pnpm --filter @openuidev/react-components run build` and `run typecheck` both passed. Offline frozen-lockfile installation also passed. Core files are unchanged from the previously validated combined implementation. These are local results, not a new remote CI claim.\n\nHistorical comparison evidence remains in #41: 9,154 Pass, 86 Fail, 30 Review and 3,180 Known issue. Select shadow, inherited HorizontalBar instability, Input/disabled-Label override findings and theme-coverage gaps remain documented; this PR does not claim blanket visual parity.\n\nReady for review; not merged or published.\n",
+    "headRefName": "codex/production-core-kits",
+    "headRefOid": "d1292715028f816bd6a0dcf92766ec7dd15350f4",
+    "isDraft": false,
+    "state": "OPEN",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-27T07:19:11Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/ankit-thesys/openui-comp/actions/runs/40465814232/job/122060829379",
+        "name": "build",
+        "startedAt": "2026-10-27T07:13:25Z",
+        "status": "COMPLETED",
+        "workflowName": "Build JS"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-27T07:13:39Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/ankit-thesys/openui-comp/actions/runs/40465814294/job/122060829509",
+        "name": "changeset-check",
+        "startedAt": "2026-10-27T07:13:25Z",
+        "status": "COMPLETED",
+        "workflowName": "Changeset check"
+      }
+    ],
+    "title": "Add production React components with Goober styles",
+    "url": "https://github.com/ankit-thesys/openui-comp/pull/42"
+  },
+  "67": {
+    "baseRefName": "codex/production-core-kits",
+    "body": "## Summary\n\nAutomatically register canonical light-theme tokens on the document root and share border-box only across Buttons, FormControl and TagBlock roots. Public imports still need no CSS import, provider or setup command.\n\n```text\nsrc/styles/\n\u251c\u2500\u2500 defaults.ts  canonical light tokens in the lowest-priority layer\n\u2514\u2500\u2500 base.ts      border-box class for the three existing roots\n```\n\nComponent fallbacks are intentionally retained: clearing a token with `initial` must preserve the component's existing default. Broad deletion in #58 is deferred by user decision.\n\nStacked on unchanged #42 (`d12927150`). Related: #55, #57, #58, #59, #60.\n\n## Evidence\n\n- **Before:** three repeated root declarations; provider-free token literals lived in local fallbacks.\n  **After:** automatic canonical root defaults plus one shared root rule, with all 1,444 fallback expressions preserved.\n- **453/453** fresh combined browser checks pass against #42: plain CSS/Tailwind v3/v4, stylesheet orders, root/container overrides, cleared tokens, host negatives/globals, themes, four portal types, and affected interaction states.\n- **39/39** optimized build-origin checks pass; package build/typecheck, strict consumer types and native ESM/CJS 166 exports pass.\n- [Frozen combined report and exact provenance](https://github.com/ankit-thesys/openui-comp/blob/4f24c2938dcdb1f3dbddf0cc669277cec21e4e6e/validation/beta17/shared-styles55/60/REPORT.md) \u00b7 [Durable raw evidence and archives in lab PR #41](https://github.com/ankit-thesys/openui-comp/tree/4f24c2938dcdb1f3dbddf0cc669277cec21e4e6e/validation/beta17/shared-styles55).\n\nSource: `c1aaf994d`. This remains a draft pending independent #60 acceptance. No stable-selector migration is included.\n\n## Merge Danger\n\n**Door:** two-way\n\nSmall additive-package change; reverting restores the prior styling implementation.\n\n**Blast Radius:** Components\n\nRoot custom-property inheritance and three component roots are affected. Legacy packages, kits and release/CI tooling are unchanged. SSR, performance and historical full-matrix readiness are outside this gate.\n",
+    "headRefName": "codex/react-components-common-styles",
+    "headRefOid": "c1aaf994d5c0fbfb56b83685221eeea9b409e57c",
+    "isDraft": true,
+    "state": "OPEN",
+    "statusCheckRollup": [],
+    "title": "Centralize component token defaults and scoped base styles",
+    "url": "https://github.com/ankit-thesys/openui-comp/pull/67"
+  },
+  "68": {
+    "baseRefName": "codex/react-components-common-styles",
+    "body": "## Summary\n\nButton and IconButton currently attach generated Goober classes to their roots, so ordinary consumer CSS cannot reliably target the base styles through stable hooks. This pilot moves owned rules to `openui-button-root` and `openui-icon-button-root` using stock nested Goober CSS, with a private zero-specificity html guard. Existing aliases, props, appearance and token fallbacks remain intact.\n\n```text\npackages/react-components/\n  src/components/{Button,IconButton}/  stable root targets\n  src/styles/base.ts                  explicit shared border-box opt-in\n  README.md                           override contract and conversion ledger\n```\n\nStacked on PR67's frozen accepted60 commit. Only these two component families and the already-shared one-declaration base helper are converted; later tickets remain gated on independent review.\n\n## Evidence\n\nThe failed flat selector emitted an extra generated class outside `:where()`, preventing ordinary overrides. Standard nested CSS emits the intended zero-specificity guard; actual CSSOM and computed base/variant/size/state/part override checks pass. Failed trials and initial assertion defects remain separate evidence, not passing records.\n\nMatched package consumers cover plain CSS/Tailwind v3/v4, both stylesheet orders, host Goober globals before/after, native keyboard/callback/disabled/ref/asChild behavior, themes, shared roots, Calendar/Select, chart controls, optimized imports and lazy mount orders. Build/types, 166 native ESM/CJS exports, 440 unchanged declaration files and all 1,444 fallback expressions pass. Exact source/archive/result bindings are recorded in the lab evidence.\n\nA bundler shared lazy chunk registers both retained pilot components' styles on first use in both baseline and candidate. Single-component optimized entries prune the unused counterpart; no per-component lazy stylesheet isolation is promised or patched.\n\n## Merge danger\n\n**Door:** beta component styling and the root-only box-sizing helper. Ordinary overrides require matching later unlayered selectors; this does not change the deferred SSR boundary.\n\n**Blast radius:** Button/IconButton consumers, including indirect chart controls, and shared box sizing on Buttons/FormControl/TagBlock. Legacy react-ui, chart source, kits, dependencies, CI and releases are untouched. Independent pilot acceptance is pending; do not treat this draft as permission to start #62\u201364. PR67 and PR42 heads remain unchanged.\n\nFrozen worker evidence: [report](https://github.com/ankit-thesys/openui-comp/blob/8df9c4d6accdd291b136924dedc85f7e95d371a2/validation/beta17/stable-selectors61/61/REPORT.md), [summary](https://github.com/ankit-thesys/openui-comp/blob/8df9c4d6accdd291b136924dedc85f7e95d371a2/validation/beta17/stable-selectors61/61/SUMMARY.json). 888 checks pass; independent acceptance pending.\n",
+    "headRefName": "codex/react-components-stable-selectors",
+    "headRefOid": "1c3833a045c4c66de92b69413a3824eca1798fcd",
+    "isDraft": true,
+    "state": "OPEN",
+    "statusCheckRollup": [],
+    "title": "Pilot stable styling targets for Button and IconButton",
+    "url": "https://github.com/ankit-thesys/openui-comp/pull/68"
+  },
+  "69": {
+    "baseRefName": "codex/react-components-stable-selectors",
+    "body": "## Summary\n\nGive controls, layouts, presentation components and portals stable targets for ordinary later, unlayered CSS. Keep existing props, aliases, behavior, theme delivery and fallback values. Stock Goober registration stays in each component module behind the accepted private zero-specificity document guard.\n\n```text\npackages/react-components/\n\u251c\u2500\u2500 README.md                 # canonical targets, selector context and limits\n\u2514\u2500\u2500 src/components/           # controls, presentation/layout and portal registrations\n```\n\nStacked on frozen pilot #68. Related: #62, #63, #64, #65. EditableTable stays deferred; chart-owned styles and legacy react-ui are unchanged.\n\n## Evidence\n\n- **Before:** accepted61 provides stable Button/IconButton targets; remaining owned registrations use generated attachment classes.\n  **After:** matching stable root/variant/state/part selectors apply without targeting private Goober markers. Existing appearance, interactions, aliases, theme scopes and host isolation are compared with the exact accepted61 archive.\n- controls / run.mjs: **576/576 PASS**.\n- controls / state-parts.mjs: **66/66 PASS**.\n- portals / run.mjs: **991/991 PASS**.\n- portals / state-cssom.mjs: **72/72 PASS**.\n- presentation / run.mjs: **2424/2424 PASS**.\n- presentation / run-extra.mjs: **374/374 PASS**.\n- presentation / run-small-bounded.mjs: **40/40 PASS**.\n- presentation / run-tabs-state.mjs: **12/12 PASS**.\n- presentation / run-sources-matched.mjs: **36/36 PASS**.\n- Plain CSS, Tailwind v3/v4 and before/after order; all178 W2 canonical targets observed, plus16 W1 portal targets. Counts are separate scoped worker checks, not independent acceptance.\n- Build/typecheck, unchanged166 native ESM/CJS exports and440 declarations;371 embedded sources and2210 installed members bind the frozen source/archive. All1444 fallback expressions/counts retained, with formatting-only whitespace recorded.\n- Sources positively matched same-element probes confirm its **retained important width/background/hover exception**. This is not a passing ordinary-override claim. Existing important declarations remain.\n- Eight representative optimized family pairs preserve reachable output counts and emitted entry CSS sizes. Remount registration checks are not broad performance/memory certification. SSR remains deferred.\n- Both source review axes pass. **Independent combined acceptance pending.** No CI, release or issue-closure claim.\n\n[Exact worker evidence and preserved raw results](https://github.com/ankit-thesys/openui-comp/blob/e39ad8f165364759b0ceb0ab6c9b83dbbe225c4b/validation/beta17/stable-selectors65-combined/README.md). Frozen source `75f69041891147d52dc0f0d2c4b21a048e575aa8`; archive SHA256 `d2a4b51255d745f41a7b51820ac0ec55ef5db8ff2b6f8d91ab43bade7766d037`.\n\n## Merge Danger\n\n**Door:** two-way\n\nSource-only styling changes can be reverted; no data or release migration occurs here.\n\n**Blast Radius:** styling\n\nConsumers of the new react-components package may depend on selector precedence and portal behavior. Contextual selectors, existing vendor inline styles and Sources important declarations retain their documented limits. Independent verification remains required. PR42, PR67 and PR68 heads are unchanged.\n",
+    "headRefName": "codex/react-components-stable-family-selectors",
+    "headRefOid": "75f69041891147d52dc0f0d2c4b21a048e575aa8",
+    "isDraft": true,
+    "state": "OPEN",
+    "statusCheckRollup": [],
+    "title": "Use stable selectors for controls, presentation and portals",
+    "url": "https://github.com/ankit-thesys/openui-comp/pull/69"
+  },
+  "41": {
+    "baseRefName": "codex/react-ui-beta-validation",
+    "body": "Adds a maintained comparison lab for legacy React UI and the extracted React components/chat kit. One ordered response feeds two isolated panes, with deterministic offline rendering, replay, actions, independent form drafts and theme controls. The lab consumes native package archives through public imports; historical archives and frozen runs remain reproducible.\n\nThe maintained consumer now imports `@openuidev/chat-kit/libs` with an explicit `@openuidev/react-components` peer. The glossary and migration guide describe component root imports versus `/libs`, independent versions and future kits. Production changes remain in #42, #43, #44, #50 and #51; their reproducible test evidence stays here.\n\nValidation:\n- 34 tests, CLI schema correspondence and build pass. Chrome 156 checks pass for streaming, action values, replay, cancellation, isolation, offline 84-entry rendering and six theme combinations.\n- All 566 installed chat-package files and lock integrity match frozen native archive b4cb71...; direct/kit imports resolve one core instance, with the old kit identity absent. Producer public-import/type/context/bundle checks are hash-verified and retained under evidence/ticket47.\n- Independent release verification includes normal chat-only Changesets planning/versioning, native 0.0.0 packing, strict-peer offline installation and ESM/CJS/type/private-path checks. Updated proof is under evidence/ticket49/planned-version; the initial snapshot is preserved.\n- Final exact-head CI at b0f22f5ef passes: [Build JS](https://github.com/ankit-thesys/openui-comp/actions/runs/40341060152) and [changeset check](https://github.com/ankit-thesys/openui-comp/actions/runs/40341059585). All mapped production-stack heads also pass both checks; unchanged package trees and run records are retained under evidence/stacked-ci.\n\nThe full 12,450-cell visual/behavior matrix remains nonpassing:9,154 Pass, 86 Fail, 30 Review, 3,180 Known issue, zero missing cells. Strict Select portal and inherited HorizontalBar findings remain; four newly failed HorizontalBar cells support inherited instability in bounded reproduction, while seven new raster Reviews remain unresolved. Runner-version differences limit causal attribution. Existing Input/Label customization findings, theme/palette coverage gaps and KaTeX emitted-CSS cost remain separate limitations. No unchanged exhaustive matrix was repeated for package paths, no new SSR/hydration/runtime performance certification is claimed, and nothing was merged or published.\n",
+    "headRefName": "codex/component-comparison",
+    "headRefOid": "79af6e157549e383053d5166ee1878fecf2ffcb5",
+    "isDraft": true,
+    "state": "OPEN",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-27T14:42:53Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/ankit-thesys/openui-comp/actions/runs/40521078159/job/122248017375",
+        "name": "build",
+        "startedAt": "2026-10-27T14:26:14Z",
+        "status": "COMPLETED",
+        "workflowName": "Build JS"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-27T14:26:38Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/ankit-thesys/openui-comp/actions/runs/40521078155/job/122248019367",
+        "name": "changeset-check",
+        "startedAt": "2026-10-27T14:26:15Z",
+        "status": "COMPLETED",
+        "workflowName": "Changeset check"
+      }
+    ],
+    "title": "Add a local OpenUI component parity bench and comparison atlas",
+    "url": "https://github.com/ankit-thesys/openui-comp/pull/41"
+  }
+}

@@ -1,0 +1,1 @@
+{"phase":"presentation","checks":918,"passed":912,"failed":["plain/before/matching-.openui-image-root","plain/after/matching-.openui-image-root","tailwind3/before/matching-.openui-image-root","tailwind3/after/matching-.openui-image-root","tailwind4/before/matching-.openui-image-root","tailwind4/after/matching-.openui-image-root"],"error":null}

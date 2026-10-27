@@ -1,0 +1,1 @@
+{"phase":"extra","checks":163,"passed":157,"failed":["plain/before/paired-loader","plain/after/paired-loader","tailwind3/before/paired-loader","tailwind3/after/paired-loader","tailwind4/before/paired-loader","tailwind4/after/paired-loader"],"observations":7}

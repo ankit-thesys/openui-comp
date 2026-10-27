@@ -1,0 +1,919 @@
+{
+  "browser": "156.0.8078.48",
+  "checks": [
+    {
+      "name": "plain/before/baseline/actual-spin-contract",
+      "pass": true
+    },
+    {
+      "name": "plain/before/baseline/pause-at-zero",
+      "pass": true
+    },
+    {
+      "name": "plain/before/candidate/actual-spin-contract",
+      "pass": true
+    },
+    {
+      "name": "plain/before/candidate/pause-at-zero",
+      "pass": true
+    },
+    {
+      "name": "plain/before/strict-equal-phase-geometry",
+      "pass": true
+    },
+    {
+      "name": "plain/after/baseline/actual-spin-contract",
+      "pass": true
+    },
+    {
+      "name": "plain/after/baseline/pause-at-zero",
+      "pass": true
+    },
+    {
+      "name": "plain/after/candidate/actual-spin-contract",
+      "pass": true
+    },
+    {
+      "name": "plain/after/candidate/pause-at-zero",
+      "pass": true
+    },
+    {
+      "name": "plain/after/strict-equal-phase-geometry",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/baseline/actual-spin-contract",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/baseline/pause-at-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/candidate/actual-spin-contract",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/candidate/pause-at-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/before/strict-equal-phase-geometry",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/baseline/actual-spin-contract",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/baseline/pause-at-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/candidate/actual-spin-contract",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/candidate/pause-at-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind3/after/strict-equal-phase-geometry",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/baseline/actual-spin-contract",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/baseline/pause-at-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/candidate/actual-spin-contract",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/candidate/pause-at-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/before/strict-equal-phase-geometry",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/baseline/actual-spin-contract",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/baseline/pause-at-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/candidate/actual-spin-contract",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/candidate/pause-at-zero",
+      "pass": true
+    },
+    {
+      "name": "tailwind4/after/strict-equal-phase-geometry",
+      "pass": true
+    }
+  ],
+  "observations": [
+    {
+      "framework": "plain",
+      "order": "before",
+      "arm": "baseline",
+      "motion": [
+        {
+          "time": 50.045999913848945,
+          "duration": 1000,
+          "iterations": "Infinity",
+          "frames": [
+            {
+              "offset": 0,
+              "transform": "none"
+            },
+            {
+              "offset": 1,
+              "transform": "rotate(360deg)"
+            }
+          ]
+        }
+      ],
+      "zeroTimeSnapshot": [
+        {
+          "tag": "DIV",
+          "text": "",
+          "role": null,
+          "state": null,
+          "disabled": false,
+          "style": {
+            "display": "block",
+            "position": "absolute",
+            "boxSizing": "content-box",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "",
+            "padding": "0px",
+            "fontFamily": "Times",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderRadius": "9999px",
+            "gap": "normal",
+            "width": "24px",
+            "height": "24px",
+            "maxWidth": "none",
+            "minWidth": "0px",
+            "flexDirection": "row",
+            "flexWrap": "nowrap",
+            "alignItems": "normal",
+            "justifyContent": "normal",
+            "overflow": "visible",
+            "visibility": "visible",
+            "opacity": "1",
+            "cursor": "auto",
+            "outline": "rgb(0, 0, 0) none 3px",
+            "objectFit": "fill",
+            "zIndex": "2"
+          },
+          "size": [
+            30,
+            30
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "before",
+      "arm": "candidate",
+      "motion": [
+        {
+          "time": 50.02399996984752,
+          "duration": 1000,
+          "iterations": "Infinity",
+          "frames": [
+            {
+              "offset": 0,
+              "transform": "none"
+            },
+            {
+              "offset": 1,
+              "transform": "rotate(360deg)"
+            }
+          ]
+        }
+      ],
+      "zeroTimeSnapshot": [
+        {
+          "tag": "DIV",
+          "text": "",
+          "role": null,
+          "state": null,
+          "disabled": false,
+          "style": {
+            "display": "block",
+            "position": "absolute",
+            "boxSizing": "content-box",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "",
+            "padding": "0px",
+            "fontFamily": "Times",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderRadius": "9999px",
+            "gap": "normal",
+            "width": "24px",
+            "height": "24px",
+            "maxWidth": "none",
+            "minWidth": "0px",
+            "flexDirection": "row",
+            "flexWrap": "nowrap",
+            "alignItems": "normal",
+            "justifyContent": "normal",
+            "overflow": "visible",
+            "visibility": "visible",
+            "opacity": "1",
+            "cursor": "auto",
+            "outline": "rgb(0, 0, 0) none 3px",
+            "objectFit": "fill",
+            "zIndex": "2"
+          },
+          "size": [
+            30,
+            30
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "arm": "baseline",
+      "motion": [
+        {
+          "time": 50.049999964796086,
+          "duration": 1000,
+          "iterations": "Infinity",
+          "frames": [
+            {
+              "offset": 0,
+              "transform": "none"
+            },
+            {
+              "offset": 1,
+              "transform": "rotate(360deg)"
+            }
+          ]
+        }
+      ],
+      "zeroTimeSnapshot": [
+        {
+          "tag": "DIV",
+          "text": "",
+          "role": null,
+          "state": null,
+          "disabled": false,
+          "style": {
+            "display": "block",
+            "position": "absolute",
+            "boxSizing": "content-box",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "",
+            "padding": "0px",
+            "fontFamily": "Times",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderRadius": "9999px",
+            "gap": "normal",
+            "width": "24px",
+            "height": "24px",
+            "maxWidth": "none",
+            "minWidth": "0px",
+            "flexDirection": "row",
+            "flexWrap": "nowrap",
+            "alignItems": "normal",
+            "justifyContent": "normal",
+            "overflow": "visible",
+            "visibility": "visible",
+            "opacity": "1",
+            "cursor": "auto",
+            "outline": "rgb(0, 0, 0) none 3px",
+            "objectFit": "fill",
+            "zIndex": "2"
+          },
+          "size": [
+            30,
+            30
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "arm": "candidate",
+      "motion": [
+        {
+          "time": 50.04600006099791,
+          "duration": 1000,
+          "iterations": "Infinity",
+          "frames": [
+            {
+              "offset": 0,
+              "transform": "none"
+            },
+            {
+              "offset": 1,
+              "transform": "rotate(360deg)"
+            }
+          ]
+        }
+      ],
+      "zeroTimeSnapshot": [
+        {
+          "tag": "DIV",
+          "text": "",
+          "role": null,
+          "state": null,
+          "disabled": false,
+          "style": {
+            "display": "block",
+            "position": "absolute",
+            "boxSizing": "content-box",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "",
+            "padding": "0px",
+            "fontFamily": "Times",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderRadius": "9999px",
+            "gap": "normal",
+            "width": "24px",
+            "height": "24px",
+            "maxWidth": "none",
+            "minWidth": "0px",
+            "flexDirection": "row",
+            "flexWrap": "nowrap",
+            "alignItems": "normal",
+            "justifyContent": "normal",
+            "overflow": "visible",
+            "visibility": "visible",
+            "opacity": "1",
+            "cursor": "auto",
+            "outline": "rgb(0, 0, 0) none 3px",
+            "objectFit": "fill",
+            "zIndex": "2"
+          },
+          "size": [
+            30,
+            30
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "arm": "baseline",
+      "motion": [
+        {
+          "time": 49.97399993222196,
+          "duration": 1000,
+          "iterations": "Infinity",
+          "frames": [
+            {
+              "offset": 0,
+              "transform": "none"
+            },
+            {
+              "offset": 1,
+              "transform": "rotate(360deg)"
+            }
+          ]
+        }
+      ],
+      "zeroTimeSnapshot": [
+        {
+          "tag": "DIV",
+          "text": "",
+          "role": null,
+          "state": null,
+          "disabled": false,
+          "style": {
+            "display": "block",
+            "position": "absolute",
+            "boxSizing": "border-box",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "",
+            "padding": "0px",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "borderRadius": "9999px",
+            "gap": "normal",
+            "width": "24px",
+            "height": "24px",
+            "maxWidth": "none",
+            "minWidth": "0px",
+            "flexDirection": "row",
+            "flexWrap": "nowrap",
+            "alignItems": "normal",
+            "justifyContent": "normal",
+            "overflow": "visible",
+            "visibility": "visible",
+            "opacity": "1",
+            "cursor": "auto",
+            "outline": "rgb(0, 0, 0) none 3px",
+            "objectFit": "fill",
+            "zIndex": "2"
+          },
+          "size": [
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "arm": "candidate",
+      "motion": [
+        {
+          "time": 50.03100001327687,
+          "duration": 1000,
+          "iterations": "Infinity",
+          "frames": [
+            {
+              "offset": 0,
+              "transform": "none"
+            },
+            {
+              "offset": 1,
+              "transform": "rotate(360deg)"
+            }
+          ]
+        }
+      ],
+      "zeroTimeSnapshot": [
+        {
+          "tag": "DIV",
+          "text": "",
+          "role": null,
+          "state": null,
+          "disabled": false,
+          "style": {
+            "display": "block",
+            "position": "absolute",
+            "boxSizing": "border-box",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "",
+            "padding": "0px",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "borderRadius": "9999px",
+            "gap": "normal",
+            "width": "24px",
+            "height": "24px",
+            "maxWidth": "none",
+            "minWidth": "0px",
+            "flexDirection": "row",
+            "flexWrap": "nowrap",
+            "alignItems": "normal",
+            "justifyContent": "normal",
+            "overflow": "visible",
+            "visibility": "visible",
+            "opacity": "1",
+            "cursor": "auto",
+            "outline": "rgb(0, 0, 0) none 3px",
+            "objectFit": "fill",
+            "zIndex": "2"
+          },
+          "size": [
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "arm": "baseline",
+      "motion": [
+        {
+          "time": 66.69999999776488,
+          "duration": 1000,
+          "iterations": "Infinity",
+          "frames": [
+            {
+              "offset": 0,
+              "transform": "none"
+            },
+            {
+              "offset": 1,
+              "transform": "rotate(360deg)"
+            }
+          ]
+        }
+      ],
+      "zeroTimeSnapshot": [
+        {
+          "tag": "DIV",
+          "text": "",
+          "role": null,
+          "state": null,
+          "disabled": false,
+          "style": {
+            "display": "block",
+            "position": "absolute",
+            "boxSizing": "border-box",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "",
+            "padding": "0px",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "borderRadius": "9999px",
+            "gap": "normal",
+            "width": "24px",
+            "height": "24px",
+            "maxWidth": "none",
+            "minWidth": "0px",
+            "flexDirection": "row",
+            "flexWrap": "nowrap",
+            "alignItems": "normal",
+            "justifyContent": "normal",
+            "overflow": "visible",
+            "visibility": "visible",
+            "opacity": "1",
+            "cursor": "auto",
+            "outline": "rgb(0, 0, 0) none 3px",
+            "objectFit": "fill",
+            "zIndex": "2"
+          },
+          "size": [
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "arm": "candidate",
+      "motion": [
+        {
+          "time": 49.942000017501485,
+          "duration": 1000,
+          "iterations": "Infinity",
+          "frames": [
+            {
+              "offset": 0,
+              "transform": "none"
+            },
+            {
+              "offset": 1,
+              "transform": "rotate(360deg)"
+            }
+          ]
+        }
+      ],
+      "zeroTimeSnapshot": [
+        {
+          "tag": "DIV",
+          "text": "",
+          "role": null,
+          "state": null,
+          "disabled": false,
+          "style": {
+            "display": "block",
+            "position": "absolute",
+            "boxSizing": "border-box",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "",
+            "padding": "0px",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "borderRadius": "9999px",
+            "gap": "normal",
+            "width": "24px",
+            "height": "24px",
+            "maxWidth": "none",
+            "minWidth": "0px",
+            "flexDirection": "row",
+            "flexWrap": "nowrap",
+            "alignItems": "normal",
+            "justifyContent": "normal",
+            "overflow": "visible",
+            "visibility": "visible",
+            "opacity": "1",
+            "cursor": "auto",
+            "outline": "rgb(0, 0, 0) none 3px",
+            "objectFit": "fill",
+            "zIndex": "2"
+          },
+          "size": [
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "arm": "baseline",
+      "motion": [
+        {
+          "time": 50.00800002291794,
+          "duration": 1000,
+          "iterations": "Infinity",
+          "frames": [
+            {
+              "offset": 0,
+              "transform": "none"
+            },
+            {
+              "offset": 1,
+              "transform": "rotate(360deg)"
+            }
+          ]
+        }
+      ],
+      "zeroTimeSnapshot": [
+        {
+          "tag": "DIV",
+          "text": "",
+          "role": null,
+          "state": null,
+          "disabled": false,
+          "style": {
+            "display": "block",
+            "position": "absolute",
+            "boxSizing": "border-box",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "",
+            "padding": "0px",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "borderRadius": "9999px",
+            "gap": "normal",
+            "width": "24px",
+            "height": "24px",
+            "maxWidth": "none",
+            "minWidth": "0px",
+            "flexDirection": "row",
+            "flexWrap": "nowrap",
+            "alignItems": "normal",
+            "justifyContent": "normal",
+            "overflow": "visible",
+            "visibility": "visible",
+            "opacity": "1",
+            "cursor": "auto",
+            "outline": "rgb(0, 0, 0) none 3px",
+            "objectFit": "fill",
+            "zIndex": "2"
+          },
+          "size": [
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "arm": "candidate",
+      "motion": [
+        {
+          "time": 50.087999939546044,
+          "duration": 1000,
+          "iterations": "Infinity",
+          "frames": [
+            {
+              "offset": 0,
+              "transform": "none"
+            },
+            {
+              "offset": 1,
+              "transform": "rotate(360deg)"
+            }
+          ]
+        }
+      ],
+      "zeroTimeSnapshot": [
+        {
+          "tag": "DIV",
+          "text": "",
+          "role": null,
+          "state": null,
+          "disabled": false,
+          "style": {
+            "display": "block",
+            "position": "absolute",
+            "boxSizing": "border-box",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "",
+            "padding": "0px",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "borderRadius": "9999px",
+            "gap": "normal",
+            "width": "24px",
+            "height": "24px",
+            "maxWidth": "none",
+            "minWidth": "0px",
+            "flexDirection": "row",
+            "flexWrap": "nowrap",
+            "alignItems": "normal",
+            "justifyContent": "normal",
+            "overflow": "visible",
+            "visibility": "visible",
+            "opacity": "1",
+            "cursor": "auto",
+            "outline": "rgb(0, 0, 0) none 3px",
+            "objectFit": "fill",
+            "zIndex": "2"
+          },
+          "size": [
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "arm": "baseline",
+      "motion": [
+        {
+          "time": 49.993000002019,
+          "duration": 1000,
+          "iterations": "Infinity",
+          "frames": [
+            {
+              "offset": 0,
+              "transform": "none"
+            },
+            {
+              "offset": 1,
+              "transform": "rotate(360deg)"
+            }
+          ]
+        }
+      ],
+      "zeroTimeSnapshot": [
+        {
+          "tag": "DIV",
+          "text": "",
+          "role": null,
+          "state": null,
+          "disabled": false,
+          "style": {
+            "display": "block",
+            "position": "absolute",
+            "boxSizing": "border-box",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "",
+            "padding": "0px",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "borderRadius": "9999px",
+            "gap": "normal",
+            "width": "24px",
+            "height": "24px",
+            "maxWidth": "none",
+            "minWidth": "0px",
+            "flexDirection": "row",
+            "flexWrap": "nowrap",
+            "alignItems": "normal",
+            "justifyContent": "normal",
+            "overflow": "visible",
+            "visibility": "visible",
+            "opacity": "1",
+            "cursor": "auto",
+            "outline": "rgb(0, 0, 0) none 3px",
+            "objectFit": "fill",
+            "zIndex": "2"
+          },
+          "size": [
+            24,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "arm": "candidate",
+      "motion": [
+        {
+          "time": 49.991000099666394,
+          "duration": 1000,
+          "iterations": "Infinity",
+          "frames": [
+            {
+              "offset": 0,
+              "transform": "none"
+            },
+            {
+              "offset": 1,
+              "transform": "rotate(360deg)"
+            }
+          ]
+        }
+      ],
+      "zeroTimeSnapshot": [
+        {
+          "tag": "DIV",
+          "text": "",
+          "role": null,
+          "state": null,
+          "disabled": false,
+          "style": {
+            "display": "block",
+            "position": "absolute",
+            "boxSizing": "border-box",
+            "color": "rgb(0, 0, 0)",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "border": "",
+            "padding": "0px",
+            "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "letterSpacing": "normal",
+            "borderRadius": "9999px",
+            "gap": "normal",
+            "width": "24px",
+            "height": "24px",
+            "maxWidth": "none",
+            "minWidth": "0px",
+            "flexDirection": "row",
+            "flexWrap": "nowrap",
+            "alignItems": "normal",
+            "justifyContent": "normal",
+            "overflow": "visible",
+            "visibility": "visible",
+            "opacity": "1",
+            "cursor": "auto",
+            "outline": "rgb(0, 0, 0) none 3px",
+            "objectFit": "fill",
+            "zIndex": "2"
+          },
+          "size": [
+            24,
+            24
+          ]
+        }
+      ]
+    }
+  ]
+}

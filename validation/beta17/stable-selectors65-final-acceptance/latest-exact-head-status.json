@@ -1,0 +1,304 @@
+{
+  "recordedAt": "2026-10-27T14:56:36.324196+00:00",
+  "prs": {
+    "69": {
+      "head": "75f69041891147d52dc0f0d2c4b21a048e575aa8",
+      "expectedHead": "75f69041891147d52dc0f0d2c4b21a048e575aa8",
+      "headUnchanged": true,
+      "draft": true,
+      "base": "codex/react-components-stable-selectors",
+      "checkRuns": [],
+      "commitStatuses": [],
+      "combinedCommitStatus": "pending"
+    },
+    "41": {
+      "head": "79af6e157549e383053d5166ee1878fecf2ffcb5",
+      "expectedHead": "79af6e157549e383053d5166ee1878fecf2ffcb5",
+      "headUnchanged": true,
+      "draft": true,
+      "base": "codex/react-ui-beta-validation",
+      "checkRuns": [
+        {
+          "id": 122248019367,
+          "name": "changeset-check",
+          "node_id": "CR_kwDORdtlvs8AAAAcdoy9pw",
+          "head_sha": "79af6e157549e383053d5166ee1878fecf2ffcb5",
+          "external_id": "5a90a58e-ff39-50c3-aa1b-171117178ba7",
+          "url": "https://api.github.com/repos/ankit-thesys/openui-comp/check-runs/122248019367",
+          "html_url": "https://github.com/ankit-thesys/openui-comp/actions/runs/40521078155/job/122248019367",
+          "details_url": "https://github.com/ankit-thesys/openui-comp/actions/runs/40521078155/job/122248019367",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-27T14:26:15Z",
+          "completed_at": "2026-10-27T14:26:38Z",
+          "output": {
+            "title": null,
+            "summary": null,
+            "text": null,
+            "annotations_count": 2,
+            "annotations_url": "https://api.github.com/repos/ankit-thesys/openui-comp/check-runs/122248019367/annotations"
+          },
+          "check_suite": {
+            "id": 109827916291
+          },
+          "app": {
+            "id": 15368,
+            "client_id": "Iv1.05c79e9ad1f6bdfa",
+            "slug": "github-actions",
+            "node_id": "MDM6QXBwMTUzNjg=",
+            "owner": {
+              "login": "github",
+              "id": 9919,
+              "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+              "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/github",
+              "html_url": "https://github.com/github",
+              "followers_url": "https://api.github.com/users/github/followers",
+              "following_url": "https://api.github.com/users/github/following{/other_user}",
+              "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+              "organizations_url": "https://api.github.com/users/github/orgs",
+              "repos_url": "https://api.github.com/users/github/repos",
+              "events_url": "https://api.github.com/users/github/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/github/received_events",
+              "type": "Organization",
+              "user_view_type": "public",
+              "site_admin": false
+            },
+            "name": "GitHub Actions",
+            "description": "Automate your workflow from idea to production",
+            "external_url": "https://help.github.com/en/actions",
+            "html_url": "https://github.com/apps/github-actions",
+            "created_at": "2018-07-30T09:30:17Z",
+            "updated_at": "2026-06-18T16:17:48Z",
+            "permissions": {
+              "actions": "write",
+              "administration": "read",
+              "artifact_metadata": "write",
+              "attestations": "write",
+              "checks": "write",
+              "code_quality": "write",
+              "contents": "write",
+              "copilot_requests": "write",
+              "deployments": "write",
+              "discussions": "write",
+              "drives": "write",
+              "issues": "write",
+              "merge_queues": "write",
+              "metadata": "read",
+              "models": "read",
+              "packages": "write",
+              "pages": "write",
+              "pull_requests": "write",
+              "repository_hooks": "write",
+              "repository_projects": "write",
+              "security_events": "write",
+              "statuses": "write",
+              "vulnerability_alerts": "read"
+            },
+            "events": [
+              "branch_protection_rule",
+              "check_run",
+              "check_suite",
+              "create",
+              "delete",
+              "deployment",
+              "deployment_status",
+              "discussion",
+              "discussion_comment",
+              "fork",
+              "gollum",
+              "issues",
+              "issue_comment",
+              "label",
+              "merge_group",
+              "milestone",
+              "page_build",
+              "public",
+              "pull_request",
+              "pull_request_review",
+              "pull_request_review_comment",
+              "push",
+              "registry_package",
+              "release",
+              "repository",
+              "repository_dispatch",
+              "status",
+              "watch",
+              "workflow_dispatch",
+              "workflow_run"
+            ]
+          },
+          "pull_requests": [
+            {
+              "url": "https://api.github.com/repos/ankit-thesys/openui-comp/pulls/41",
+              "id": 5008151567,
+              "number": 41,
+              "head": {
+                "ref": "codex/component-comparison",
+                "sha": "79af6e157549e383053d5166ee1878fecf2ffcb5",
+                "repo": {
+                  "id": 1172006334,
+                  "url": "https://api.github.com/repos/ankit-thesys/openui-comp",
+                  "name": "openui-comp"
+                }
+              },
+              "base": {
+                "ref": "codex/react-ui-beta-validation",
+                "sha": "03bf40c7e60f39799c2de532f505cf8254501ffb",
+                "repo": {
+                  "id": 1172006334,
+                  "url": "https://api.github.com/repos/ankit-thesys/openui-comp",
+                  "name": "openui-comp"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 122248017375,
+          "name": "build",
+          "node_id": "CR_kwDORdtlvs8AAAAcdoy13w",
+          "head_sha": "79af6e157549e383053d5166ee1878fecf2ffcb5",
+          "external_id": "c217eeae-c023-5b96-a37d-1bc2a18a1c9e",
+          "url": "https://api.github.com/repos/ankit-thesys/openui-comp/check-runs/122248017375",
+          "html_url": "https://github.com/ankit-thesys/openui-comp/actions/runs/40521078159/job/122248017375",
+          "details_url": "https://github.com/ankit-thesys/openui-comp/actions/runs/40521078159/job/122248017375",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-27T14:26:14Z",
+          "completed_at": "2026-10-27T14:42:53Z",
+          "output": {
+            "title": null,
+            "summary": null,
+            "text": null,
+            "annotations_count": 12,
+            "annotations_url": "https://api.github.com/repos/ankit-thesys/openui-comp/check-runs/122248017375/annotations"
+          },
+          "check_suite": {
+            "id": 109827916444
+          },
+          "app": {
+            "id": 15368,
+            "client_id": "Iv1.05c79e9ad1f6bdfa",
+            "slug": "github-actions",
+            "node_id": "MDM6QXBwMTUzNjg=",
+            "owner": {
+              "login": "github",
+              "id": 9919,
+              "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+              "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/github",
+              "html_url": "https://github.com/github",
+              "followers_url": "https://api.github.com/users/github/followers",
+              "following_url": "https://api.github.com/users/github/following{/other_user}",
+              "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+              "organizations_url": "https://api.github.com/users/github/orgs",
+              "repos_url": "https://api.github.com/users/github/repos",
+              "events_url": "https://api.github.com/users/github/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/github/received_events",
+              "type": "Organization",
+              "user_view_type": "public",
+              "site_admin": false
+            },
+            "name": "GitHub Actions",
+            "description": "Automate your workflow from idea to production",
+            "external_url": "https://help.github.com/en/actions",
+            "html_url": "https://github.com/apps/github-actions",
+            "created_at": "2018-07-30T09:30:17Z",
+            "updated_at": "2026-06-18T16:17:48Z",
+            "permissions": {
+              "actions": "write",
+              "administration": "read",
+              "artifact_metadata": "write",
+              "attestations": "write",
+              "checks": "write",
+              "code_quality": "write",
+              "contents": "write",
+              "copilot_requests": "write",
+              "deployments": "write",
+              "discussions": "write",
+              "drives": "write",
+              "issues": "write",
+              "merge_queues": "write",
+              "metadata": "read",
+              "models": "read",
+              "packages": "write",
+              "pages": "write",
+              "pull_requests": "write",
+              "repository_hooks": "write",
+              "repository_projects": "write",
+              "security_events": "write",
+              "statuses": "write",
+              "vulnerability_alerts": "read"
+            },
+            "events": [
+              "branch_protection_rule",
+              "check_run",
+              "check_suite",
+              "create",
+              "delete",
+              "deployment",
+              "deployment_status",
+              "discussion",
+              "discussion_comment",
+              "fork",
+              "gollum",
+              "issues",
+              "issue_comment",
+              "label",
+              "merge_group",
+              "milestone",
+              "page_build",
+              "public",
+              "pull_request",
+              "pull_request_review",
+              "pull_request_review_comment",
+              "push",
+              "registry_package",
+              "release",
+              "repository",
+              "repository_dispatch",
+              "status",
+              "watch",
+              "workflow_dispatch",
+              "workflow_run"
+            ]
+          },
+          "pull_requests": [
+            {
+              "url": "https://api.github.com/repos/ankit-thesys/openui-comp/pulls/41",
+              "id": 5008151567,
+              "number": 41,
+              "head": {
+                "ref": "codex/component-comparison",
+                "sha": "79af6e157549e383053d5166ee1878fecf2ffcb5",
+                "repo": {
+                  "id": 1172006334,
+                  "url": "https://api.github.com/repos/ankit-thesys/openui-comp",
+                  "name": "openui-comp"
+                }
+              },
+              "base": {
+                "ref": "codex/react-ui-beta-validation",
+                "sha": "03bf40c7e60f39799c2de532f505cf8254501ffb",
+                "repo": {
+                  "id": 1172006334,
+                  "url": "https://api.github.com/repos/ankit-thesys/openui-comp",
+                  "name": "openui-comp"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "commitStatuses": [],
+      "combinedCommitStatus": "pending"
+    }
+  }
+}

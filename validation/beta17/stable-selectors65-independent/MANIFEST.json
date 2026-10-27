@@ -1,0 +1,1253 @@
+[
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/loader-correction-resources-closed.json",
+    "path": "independent/loader-correction-resources-closed.json",
+    "originalSHA256": "1f2bc1941714c4a452d34d620290808d0bece8691f2dde5d1ab430f743ba5b72",
+    "storedSHA256": "1f2bc1941714c4a452d34d620290808d0bece8691f2dde5d1ab430f743ba5b72",
+    "originalBytes": 123,
+    "storedBytes": 123,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/boot-fixture.tsx",
+    "path": "independent/boot-fixture.tsx",
+    "originalSHA256": "a86c3e5737bba5d064d5c02d5db3f575e3ce07817cb52d0181aa35ff1672dfba",
+    "storedSHA256": "a86c3e5737bba5d064d5c02d5db3f575e3ce07817cb52d0181aa35ff1672dfba",
+    "originalBytes": 1554,
+    "storedBytes": 1554,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/controls.log",
+    "path": "independent/controls.log",
+    "originalSHA256": "bca6e3a5d7ffea98437510adfc765863a2a0755a2355b91ecfddf1c38a675ac7",
+    "storedSHA256": "bca6e3a5d7ffea98437510adfc765863a2a0755a2355b91ecfddf1c38a675ac7",
+    "originalBytes": 72,
+    "storedBytes": 72,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/presentation-results.json",
+    "path": "independent/presentation-results.json.gz",
+    "originalSHA256": "103dbc5a4cbf532ca9d1beba90c9692b5b84a4055b84572e7e4613f3a624552b",
+    "storedSHA256": "ec65df450dda1614e476209a05f3995f82a8bc29140aedbf358d631559084f18",
+    "originalBytes": 60807377,
+    "storedBytes": 956264,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/SUMMARY.json",
+    "path": "independent/SUMMARY.json",
+    "originalSHA256": "2cb1abe8ba09e365612a4caed7396d2cd98230a987674cb8e9c10db1fd9fe65e",
+    "storedSHA256": "2cb1abe8ba09e365612a4caed7396d2cd98230a987674cb8e9c10db1fd9fe65e",
+    "originalBytes": 26698,
+    "storedBytes": 26698,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/portals-results.json",
+    "path": "independent/portals-results.json.gz",
+    "originalSHA256": "bcdb8f3dc4c7d245e66964d657546f6bc239c923276e9f603277f1253b9118c2",
+    "storedSHA256": "5f12482261e48af6e0b5dc32b366583a17d47e63052302c47861b37e9831c88c",
+    "originalBytes": 5912498,
+    "storedBytes": 80267,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-presentation-error.json",
+    "path": "independent/attempt1-presentation-error.json",
+    "originalSHA256": "8f0f5ac140018cf2234a33748b9527c422ba4945ada1af25eed540b82c69b74f",
+    "storedSHA256": "8f0f5ac140018cf2234a33748b9527c422ba4945ada1af25eed540b82c69b74f",
+    "originalBytes": 398,
+    "storedBytes": 398,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/escape-correction-resources-closed.json",
+    "path": "independent/escape-correction-resources-closed.json",
+    "originalSHA256": "40c2f1be47b1e739eb6ec2955c2d5aead6c0f048dbd17de24459cb4c941a5d59",
+    "storedSHA256": "40c2f1be47b1e739eb6ec2955c2d5aead6c0f048dbd17de24459cb4c941a5d59",
+    "originalBytes": 123,
+    "storedBytes": 123,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/extra-results.json",
+    "path": "independent/extra-results.json.gz",
+    "originalSHA256": "5ea47b5254a155b5b124aa5a93d916d6c64b40edfe889f0577d2d5a9d4565cb3",
+    "storedSHA256": "4d55c48aeff9bd89f716e66191475d6f7ed3621e9859ee4ebc671d386098eb76",
+    "originalBytes": 2014817,
+    "storedBytes": 32613,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/loader-correction.mjs",
+    "path": "independent/loader-correction.mjs",
+    "originalSHA256": "ce1ac97a7ad8a03e8420787d45d699498b618e878a856c3b018676e592be3a94",
+    "storedSHA256": "ce1ac97a7ad8a03e8420787d45d699498b618e878a856c3b018676e592be3a94",
+    "originalBytes": 1632,
+    "storedBytes": 1632,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/portals.mjs",
+    "path": "independent/portals.mjs",
+    "originalSHA256": "9fdfa42b3515f7bf5e455b574461484e73cb254e500f180c48ccff2abb0edc7e",
+    "storedSHA256": "9fdfa42b3515f7bf5e455b574461484e73cb254e500f180c48ccff2abb0edc7e",
+    "originalBytes": 3726,
+    "storedBytes": 3726,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/portal-states-partial.json",
+    "path": "independent/portal-states-partial.json",
+    "originalSHA256": "4473a970d1ace481359d790fa94327846779f453ba6c9cc9d2e3b577bf462a02",
+    "storedSHA256": "4473a970d1ace481359d790fa94327846779f453ba6c9cc9d2e3b577bf462a02",
+    "originalBytes": 4778,
+    "storedBytes": 4778,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/remaining.mjs",
+    "path": "independent/remaining.mjs",
+    "originalSHA256": "270a3e3b671711046a504d69d3cd8931aecab9162642d1584361e428e1d14195",
+    "storedSHA256": "270a3e3b671711046a504d69d3cd8931aecab9162642d1584361e428e1d14195",
+    "originalBytes": 226,
+    "storedBytes": 226,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-controls-partial.json",
+    "path": "independent/attempt1-controls-partial.json.gz",
+    "originalSHA256": "9c55e17ef2b0aaad44c1c06ca5fc9a9c314555a633026e6a809471bd671038f2",
+    "storedSHA256": "be0fb0aaa8bd639ff09219e4caac9c72a3b4ec4afef1493831f67f98d0fbb68d",
+    "originalBytes": 37276031,
+    "storedBytes": 605029,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/image-inline-correction-partial.json",
+    "path": "independent/image-inline-correction-partial.json",
+    "originalSHA256": "3757feb406dea49a3adac0dabf714f1a8da88a08c4c17cb97f2affd4e5fabcec",
+    "storedSHA256": "3757feb406dea49a3adac0dabf714f1a8da88a08c4c17cb97f2affd4e5fabcec",
+    "originalBytes": 1286,
+    "storedBytes": 1286,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/loader-correction-partial.json",
+    "path": "independent/loader-correction-partial.json",
+    "originalSHA256": "059db627d37ddc91000454f5400d9d2a2245143f36221394bace01082e22fa8d",
+    "storedSHA256": "059db627d37ddc91000454f5400d9d2a2245143f36221394bace01082e22fa8d",
+    "originalBytes": 24890,
+    "storedBytes": 24890,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/boot-partial.json",
+    "path": "independent/boot-partial.json.gz",
+    "originalSHA256": "3e88be1b11a18372590f884ed9e808d67b15b5491f2c8c1484cc870115179b32",
+    "storedSHA256": "c6315fc11f334354636d6c0391081522ecac24d5cc6d883c9a8362c8d2773cb0",
+    "originalBytes": 525061,
+    "storedBytes": 12258,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/audit.py",
+    "path": "independent/audit.py",
+    "originalSHA256": "3467d78ceec4aaa39d896b024fc525feb565e4f1a9d548dc560ff98a0b24a36e",
+    "storedSHA256": "3467d78ceec4aaa39d896b024fc525feb565e4f1a9d548dc560ff98a0b24a36e",
+    "originalBytes": 6474,
+    "storedBytes": 6474,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/provenance.json",
+    "path": "independent/provenance.json.gz",
+    "originalSHA256": "2279fa4cefb9c70d927cf0d0c27b3a1d2b453e4feb987a5f90469d530c5aeda3",
+    "storedSHA256": "c4664822266463e9e6a58b0022ec4a8d443da842356c67d156fa080cdc9e81e4",
+    "originalBytes": 13909943,
+    "storedBytes": 4806984,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/portal-states-resources-closed.json",
+    "path": "independent/portal-states-resources-closed.json",
+    "originalSHA256": "ce8c218d8cd3bddb933af6f32cb33696bbc35852272052bec78ae71da1d03cb0",
+    "storedSHA256": "ce8c218d8cd3bddb933af6f32cb33696bbc35852272052bec78ae71da1d03cb0",
+    "originalBytes": 123,
+    "storedBytes": 123,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-boot-partial.json",
+    "path": "independent/attempt1-boot-partial.json.gz",
+    "originalSHA256": "d77fc974b043396aae716fea2691a68da1b7271616a4f9978e41242ef7895e71",
+    "storedSHA256": "7a59141ffaf19877a08a7b82a86546bb01ea0de16f274abf80d0f668cbe60667",
+    "originalBytes": 526441,
+    "storedBytes": 12352,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/presentation-error.json",
+    "path": "independent/presentation-error.json",
+    "originalSHA256": "8f0f5ac140018cf2234a33748b9527c422ba4945ada1af25eed540b82c69b74f",
+    "storedSHA256": "8f0f5ac140018cf2234a33748b9527c422ba4945ada1af25eed540b82c69b74f",
+    "originalBytes": 398,
+    "storedBytes": 398,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-presentation.mjs",
+    "path": "independent/attempt1-presentation.mjs",
+    "originalSHA256": "124060859ca771b6aaef20e9dc8d31f219f8cc3aefad9f12004247579d6a73d5",
+    "storedSHA256": "124060859ca771b6aaef20e9dc8d31f219f8cc3aefad9f12004247579d6a73d5",
+    "originalBytes": 3897,
+    "storedBytes": 3897,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/portals-resources-closed.json",
+    "path": "independent/portals-resources-closed.json",
+    "originalSHA256": "f9fff266bdf7781a543762e4ca4ea2a0050b2f22ce1c84e908a8147ec52f7c5e",
+    "storedSHA256": "f9fff266bdf7781a543762e4ca4ea2a0050b2f22ce1c84e908a8147ec52f7c5e",
+    "originalBytes": 123,
+    "storedBytes": 123,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/small-partial.json",
+    "path": "independent/small-partial.json.gz",
+    "originalSHA256": "3ce3ebdf88f39435bce680cd1775c7f39d537c485b63b5cc2cb8566b5c27c60c",
+    "storedSHA256": "7f4ddb1db266fa8d09f5849e5d5c4e651582c9cdc532d368484b3aad727cb1e9",
+    "originalBytes": 471051,
+    "storedBytes": 9833,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/portals.log",
+    "path": "independent/portals.log",
+    "originalSHA256": "b77552c78fbe905244045a0f9b6d5330b9d0dc0cadb12898809723c69ad9f832",
+    "storedSHA256": "b77552c78fbe905244045a0f9b6d5330b9d0dc0cadb12898809723c69ad9f832",
+    "originalBytes": 558,
+    "storedBytes": 558,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/REPORT.md",
+    "path": "independent/REPORT.md",
+    "originalSHA256": "72977ae780c2b61cbcd93c98f51720b9ff56da1a4ac8acd4897b29e531f71cb1",
+    "storedSHA256": "72977ae780c2b61cbcd93c98f51720b9ff56da1a4ac8acd4897b29e531f71cb1",
+    "originalBytes": 12037,
+    "storedBytes": 12037,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/image-inline-correction-progress.json",
+    "path": "independent/image-inline-correction-progress.json",
+    "originalSHA256": "dfd8b6cb403cf35a992c1992796456b6734899704b5094316513631bc101add6",
+    "storedSHA256": "dfd8b6cb403cf35a992c1992796456b6734899704b5094316513631bc101add6",
+    "originalBytes": 88,
+    "storedBytes": 88,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/remaining.log",
+    "path": "independent/remaining.log",
+    "originalSHA256": "ce64ab4998a4361d1413d192ff2602b0741533f7b887fc215dfa6150417b75d9",
+    "storedSHA256": "ce64ab4998a4361d1413d192ff2602b0741533f7b887fc215dfa6150417b75d9",
+    "originalBytes": 2519,
+    "storedBytes": 2519,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/escape-correction-results.json",
+    "path": "independent/escape-correction-results.json",
+    "originalSHA256": "938a5724b4f188e61c306c976f36e36e21d726f9bf451440c989895a959ca737",
+    "storedSHA256": "938a5724b4f188e61c306c976f36e36e21d726f9bf451440c989895a959ca737",
+    "originalBytes": 2514,
+    "storedBytes": 2514,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/boot.mjs",
+    "path": "independent/boot.mjs",
+    "originalSHA256": "902c9824b2c0faa06a153a16ce8d08dd1a09234f568f223c92765db8759b9db6",
+    "storedSHA256": "902c9824b2c0faa06a153a16ce8d08dd1a09234f568f223c92765db8759b9db6",
+    "originalBytes": 6970,
+    "storedBytes": 6970,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-boot-resources-closed.json",
+    "path": "independent/attempt1-boot-resources-closed.json",
+    "originalSHA256": "62843a0ad2dd9960f5a733a6775758115e4b30159decde32683296876c54d980",
+    "storedSHA256": "62843a0ad2dd9960f5a733a6775758115e4b30159decde32683296876c54d980",
+    "originalBytes": 123,
+    "storedBytes": 123,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/diagnose-controls-partial.json",
+    "path": "independent/diagnose-controls-partial.json",
+    "originalSHA256": "d05d81799daf9a118bd4d7add92fed53f5a71a7987744c365ec7ddbb000b9174",
+    "storedSHA256": "d05d81799daf9a118bd4d7add92fed53f5a71a7987744c365ec7ddbb000b9174",
+    "originalBytes": 1900,
+    "storedBytes": 1900,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-independent-graphs.json",
+    "path": "independent/attempt1-independent-graphs.json.gz",
+    "originalSHA256": "7a346e12119b6ed42d9e74ceb296edbc5a03d0f9d827c620d2fec7c94708c017",
+    "storedSHA256": "7d9e054d8c6cd950c6db8e916c38336575ab9d700016024af5aaf8c706248d4a",
+    "originalBytes": 3534486,
+    "storedBytes": 791202,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/controls-results.json",
+    "path": "independent/controls-results.json.gz",
+    "originalSHA256": "2f2244cbdc39232e4658ce310c7bcc4cb742bb2be17fa5b92e459ac05beaf21b",
+    "storedSHA256": "2a1c3226b5fba73db96f612060f19556ea55b56ac309c24d6fe4b35039da7cc8",
+    "originalBytes": 37276007,
+    "storedBytes": 605039,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/controls.mjs",
+    "path": "independent/controls.mjs",
+    "originalSHA256": "df7edf6bf2a696328037f8e9fa2dabb9fc92b26372b838b93964740defa28a45",
+    "storedSHA256": "df7edf6bf2a696328037f8e9fa2dabb9fc92b26372b838b93964740defa28a45",
+    "originalBytes": 5238,
+    "storedBytes": 5238,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/diagnose-controls-resources-closed.json",
+    "path": "independent/diagnose-controls-resources-closed.json",
+    "originalSHA256": "3fbde0a1f55eda8d0926e35aa57f4547814ff386886e0f43595d321ec7b251d1",
+    "storedSHA256": "3fbde0a1f55eda8d0926e35aa57f4547814ff386886e0f43595d321ec7b251d1",
+    "originalBytes": 123,
+    "storedBytes": 123,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/graphs.log",
+    "path": "independent/graphs.log",
+    "originalSHA256": "ce4c13038e0dfdd10c9e8cdff428b45fcd70dca3790a63ef0c4793fd48c9e2e8",
+    "storedSHA256": "ce4c13038e0dfdd10c9e8cdff428b45fcd70dca3790a63ef0c4793fd48c9e2e8",
+    "originalBytes": 894,
+    "storedBytes": 894,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-boot-progress.json",
+    "path": "independent/attempt1-boot-progress.json",
+    "originalSHA256": "8a67614f78796b41888355385692fa5bc9f39b98030ffdcf2a59f14c0e8d9f0b",
+    "storedSHA256": "8a67614f78796b41888355385692fa5bc9f39b98030ffdcf2a59f14c0e8d9f0b",
+    "originalBytes": 1618,
+    "storedBytes": 1618,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/small.mjs",
+    "path": "independent/small.mjs",
+    "originalSHA256": "4d0eaf8f8e3607b77af504af672e1e682c8722ad45513a83574527cfb82fbca0",
+    "storedSHA256": "4d0eaf8f8e3607b77af504af672e1e682c8722ad45513a83574527cfb82fbca0",
+    "originalBytes": 1454,
+    "storedBytes": 1454,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-presentation.log",
+    "path": "independent/attempt1-presentation.log",
+    "originalSHA256": "94b8d073c2df54ba49347cf3338ef2abd247d5173231fde2550cee5e25aacd49",
+    "storedSHA256": "94b8d073c2df54ba49347cf3338ef2abd247d5173231fde2550cee5e25aacd49",
+    "originalBytes": 540,
+    "storedBytes": 540,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/portal-states.mjs",
+    "path": "independent/portal-states.mjs",
+    "originalSHA256": "8f7c377438a65990c8310f46382de21033ad7ff32217215c599ff24585064820",
+    "storedSHA256": "8f7c377438a65990c8310f46382de21033ad7ff32217215c599ff24585064820",
+    "originalBytes": 2501,
+    "storedBytes": 2501,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/independent-graphs.json",
+    "path": "independent/independent-graphs.json.gz",
+    "originalSHA256": "040cbfe7ad39dc4e011127b3d530e0ca35893e6cc469ce042677699523c2db14",
+    "storedSHA256": "5776489753c56794c5a51e61e66ae0b289903cfede6c148f8822723a9ac2154d",
+    "originalBytes": 3534486,
+    "storedBytes": 791192,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/summarize.py",
+    "path": "independent/summarize.py",
+    "originalSHA256": "52112de80ad18c93e4d4338c3366fe27e8367c7d051e3b285640f44933637fc3",
+    "storedSHA256": "52112de80ad18c93e4d4338c3366fe27e8367c7d051e3b285640f44933637fc3",
+    "originalBytes": 2700,
+    "storedBytes": 2700,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-presentation-progress.json",
+    "path": "independent/attempt1-presentation-progress.json",
+    "originalSHA256": "88d7d3048422c9e3aaeb2383506849f3a4de4e38b9aac7305e2b5e3714f41045",
+    "storedSHA256": "88d7d3048422c9e3aaeb2383506849f3a4de4e38b9aac7305e2b5e3714f41045",
+    "originalBytes": 75,
+    "storedBytes": 75,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/controls-progress.json",
+    "path": "independent/controls-progress.json",
+    "originalSHA256": "51f67af193e4fc505e9576aa10f10b22f34440d4c0d91d57a7dfb449860ede4b",
+    "storedSHA256": "51f67af193e4fc505e9576aa10f10b22f34440d4c0d91d57a7dfb449860ede4b",
+    "originalBytes": 76,
+    "storedBytes": 76,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/presentation-resources-closed.json",
+    "path": "independent/presentation-resources-closed.json",
+    "originalSHA256": "69d30d0b42bece9fbc8e6e48d66430d3db8a5aad98935909bb378d987f1f6d6d",
+    "storedSHA256": "69d30d0b42bece9fbc8e6e48d66430d3db8a5aad98935909bb378d987f1f6d6d",
+    "originalBytes": 123,
+    "storedBytes": 123,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-boot-build.mjs",
+    "path": "independent/attempt1-boot-build.mjs",
+    "originalSHA256": "83e61c64bffec33245527a60c193d62753c2f5c8efc7463299df6a29d0ea8281",
+    "storedSHA256": "83e61c64bffec33245527a60c193d62753c2f5c8efc7463299df6a29d0ea8281",
+    "originalBytes": 2448,
+    "storedBytes": 2448,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/boot-build.mjs",
+    "path": "independent/boot-build.mjs",
+    "originalSHA256": "fa630593ae530a6a4c83b26131eb410991c7601da05cc44ee14460544f5c9864",
+    "storedSHA256": "fa630593ae530a6a4c83b26131eb410991c7601da05cc44ee14460544f5c9864",
+    "originalBytes": 2480,
+    "storedBytes": 2480,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/presentation-partial.json",
+    "path": "independent/presentation-partial.json.gz",
+    "originalSHA256": "103dbc5a4cbf532ca9d1beba90c9692b5b84a4055b84572e7e4613f3a624552b",
+    "storedSHA256": "ec65df450dda1614e476209a05f3995f82a8bc29140aedbf358d631559084f18",
+    "originalBytes": 60807377,
+    "storedBytes": 956264,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/portals-partial.json",
+    "path": "independent/portals-partial.json.gz",
+    "originalSHA256": "bcdb8f3dc4c7d245e66964d657546f6bc239c923276e9f603277f1253b9118c2",
+    "storedSHA256": "5f12482261e48af6e0b5dc32b366583a17d47e63052302c47861b37e9831c88c",
+    "originalBytes": 5912498,
+    "storedBytes": 80267,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/RELEASE.json",
+    "path": "independent/RELEASE.json",
+    "originalSHA256": "82e22432a92dbbc7b9ea4781ff2df5acea321ed26adafbefc8102c6ed3e5cbfe",
+    "storedSHA256": "82e22432a92dbbc7b9ea4781ff2df5acea321ed26adafbefc8102c6ed3e5cbfe",
+    "originalBytes": 510,
+    "storedBytes": 510,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/controls-resources-closed.json",
+    "path": "independent/controls-resources-closed.json",
+    "originalSHA256": "c618075d23b3af969036db1b7bc93c8ef71590779d5cddd0b0f2e749d7df4fba",
+    "storedSHA256": "c618075d23b3af969036db1b7bc93c8ef71590779d5cddd0b0f2e749d7df4fba",
+    "originalBytes": 123,
+    "storedBytes": 123,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/presentation.log",
+    "path": "independent/presentation.log",
+    "originalSHA256": "f1accc9297baf0aeb81a0899b9445fb82a23d57502367a93b7e81eb3bfb7ab98",
+    "storedSHA256": "f1accc9297baf0aeb81a0899b9445fb82a23d57502367a93b7e81eb3bfb7ab98",
+    "originalBytes": 346,
+    "storedBytes": 346,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/extra-partial.json",
+    "path": "independent/extra-partial.json.gz",
+    "originalSHA256": "5ea47b5254a155b5b124aa5a93d916d6c64b40edfe889f0577d2d5a9d4565cb3",
+    "storedSHA256": "4d55c48aeff9bd89f716e66191475d6f7ed3621e9859ee4ebc671d386098eb76",
+    "originalBytes": 2014817,
+    "storedBytes": 32613,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/small-progress.json",
+    "path": "independent/small-progress.json",
+    "originalSHA256": "dd37b41ff2c916f0064dfce067acf283d3b41871c7c112a0c465a7137707aaad",
+    "storedSHA256": "dd37b41ff2c916f0064dfce067acf283d3b41871c7c112a0c465a7137707aaad",
+    "originalBytes": 70,
+    "storedBytes": 70,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/portal-states-results.json",
+    "path": "independent/portal-states-results.json",
+    "originalSHA256": "4473a970d1ace481359d790fa94327846779f453ba6c9cc9d2e3b577bf462a02",
+    "storedSHA256": "4473a970d1ace481359d790fa94327846779f453ba6c9cc9d2e3b577bf462a02",
+    "originalBytes": 4778,
+    "storedBytes": 4778,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/runtime.mjs",
+    "path": "independent/runtime.mjs",
+    "originalSHA256": "30955d900e0b9af998d79ce292292eba2ff04492f8c0e3d55216d2f1a6e9e04b",
+    "storedSHA256": "30955d900e0b9af998d79ce292292eba2ff04492f8c0e3d55216d2f1a6e9e04b",
+    "originalBytes": 10152,
+    "storedBytes": 10152,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-controls-results.json",
+    "path": "independent/attempt1-controls-results.json.gz",
+    "originalSHA256": "9c55e17ef2b0aaad44c1c06ca5fc9a9c314555a633026e6a809471bd671038f2",
+    "storedSHA256": "be0fb0aaa8bd639ff09219e4caac9c72a3b4ec4afef1493831f67f98d0fbb68d",
+    "originalBytes": 37276031,
+    "storedBytes": 605029,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/final-sequence.mjs",
+    "path": "independent/final-sequence.mjs",
+    "originalSHA256": "38fa9239dfd577c8db0048d124101395610bfa68a4b5b91afffabc55c80a5098",
+    "storedSHA256": "38fa9239dfd577c8db0048d124101395610bfa68a4b5b91afffabc55c80a5098",
+    "originalBytes": 200,
+    "storedBytes": 200,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/image-inline-correction-results.json",
+    "path": "independent/image-inline-correction-results.json",
+    "originalSHA256": "3757feb406dea49a3adac0dabf714f1a8da88a08c4c17cb97f2affd4e5fabcec",
+    "storedSHA256": "3757feb406dea49a3adac0dabf714f1a8da88a08c4c17cb97f2affd4e5fabcec",
+    "originalBytes": 1286,
+    "storedBytes": 1286,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/boot-results.json",
+    "path": "independent/boot-results.json.gz",
+    "originalSHA256": "3e88be1b11a18372590f884ed9e808d67b15b5491f2c8c1484cc870115179b32",
+    "storedSHA256": "c6315fc11f334354636d6c0391081522ecac24d5cc6d883c9a8362c8d2773cb0",
+    "originalBytes": 525061,
+    "storedBytes": 12258,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/loader-correction-results.json",
+    "path": "independent/loader-correction-results.json",
+    "originalSHA256": "059db627d37ddc91000454f5400d9d2a2245143f36221394bace01082e22fa8d",
+    "storedSHA256": "059db627d37ddc91000454f5400d9d2a2245143f36221394bace01082e22fa8d",
+    "originalBytes": 24890,
+    "storedBytes": 24890,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/small-resources-closed.json",
+    "path": "independent/small-resources-closed.json",
+    "originalSHA256": "4ac913bbf4fec7c094c2026f1d9757f7bac90f2bb3aa81bb63777443ea2deace",
+    "storedSHA256": "4ac913bbf4fec7c094c2026f1d9757f7bac90f2bb3aa81bb63777443ea2deace",
+    "originalBytes": 123,
+    "storedBytes": 123,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-presentation-partial.json",
+    "path": "independent/attempt1-presentation-partial.json",
+    "originalSHA256": "6ae007f4dda94c4482e114bfe6d8fc6dec367a6501192b8648de2d33ed421cec",
+    "storedSHA256": "6ae007f4dda94c4482e114bfe6d8fc6dec367a6501192b8648de2d33ed421cec",
+    "originalBytes": 610,
+    "storedBytes": 610,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-boot.mjs",
+    "path": "independent/attempt1-boot.mjs",
+    "originalSHA256": "5d9bc917c15baf658a028841ff1f99d55f9d9ae52460d9f4171cf53d1e5c8f4e",
+    "storedSHA256": "5d9bc917c15baf658a028841ff1f99d55f9d9ae52460d9f4171cf53d1e5c8f4e",
+    "originalBytes": 6879,
+    "storedBytes": 6879,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-controls.log",
+    "path": "independent/attempt1-controls.log",
+    "originalSHA256": "52839e37cf5c8600887c8fd562c1730798e53d4e57524662c93eeef21a94e734",
+    "storedSHA256": "52839e37cf5c8600887c8fd562c1730798e53d4e57524662c93eeef21a94e734",
+    "originalBytes": 1143,
+    "storedBytes": 1143,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-boot-results.json",
+    "path": "independent/attempt1-boot-results.json.gz",
+    "originalSHA256": "d77fc974b043396aae716fea2691a68da1b7271616a4f9978e41242ef7895e71",
+    "storedSHA256": "7a59141ffaf19877a08a7b82a86546bb01ea0de16f274abf80d0f668cbe60667",
+    "originalBytes": 526441,
+    "storedBytes": 12352,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/boot-correction-notes.md",
+    "path": "independent/boot-correction-notes.md",
+    "originalSHA256": "68715c0bcf723273e83fb10a61f1218c057e95167777b1f05348339188cf7cf4",
+    "storedSHA256": "68715c0bcf723273e83fb10a61f1218c057e95167777b1f05348339188cf7cf4",
+    "originalBytes": 880,
+    "storedBytes": 880,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/escape-correction-progress.json",
+    "path": "independent/escape-correction-progress.json",
+    "originalSHA256": "bc30ddd214c4772211b25ad8b70fec8c5344b6296db1506d32dd50649e09ba17",
+    "storedSHA256": "bc30ddd214c4772211b25ad8b70fec8c5344b6296db1506d32dd50649e09ba17",
+    "originalBytes": 83,
+    "storedBytes": 83,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/escape-correction.mjs",
+    "path": "independent/escape-correction.mjs",
+    "originalSHA256": "7a79c543542746d3e60f5dcd17db7523e60a1d249bcf07d076176948b845e5d7",
+    "storedSHA256": "7a79c543542746d3e60f5dcd17db7523e60a1d249bcf07d076176948b845e5d7",
+    "originalBytes": 889,
+    "storedBytes": 889,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/fallback-formatting-six-files.json",
+    "path": "independent/fallback-formatting-six-files.json",
+    "originalSHA256": "72abd121cb301de629f1cc71262cd362ac214c8eb1cad87179aff2bab890658a",
+    "storedSHA256": "72abd121cb301de629f1cc71262cd362ac214c8eb1cad87179aff2bab890658a",
+    "originalBytes": 16358,
+    "storedBytes": 16358,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/small-results.json",
+    "path": "independent/small-results.json.gz",
+    "originalSHA256": "3ce3ebdf88f39435bce680cd1775c7f39d537c485b63b5cc2cb8566b5c27c60c",
+    "storedSHA256": "7f4ddb1db266fa8d09f5849e5d5c4e651582c9cdc532d368484b3aad727cb1e9",
+    "originalBytes": 471051,
+    "storedBytes": 9833,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/extra.mjs",
+    "path": "independent/extra.mjs",
+    "originalSHA256": "2ea5c4be7c1c69d3f1f64cc087d2c55c09897fab00eb665419630abf527d1c8c",
+    "storedSHA256": "2ea5c4be7c1c69d3f1f64cc087d2c55c09897fab00eb665419630abf527d1c8c",
+    "originalBytes": 4768,
+    "storedBytes": 4768,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/extra-progress.json",
+    "path": "independent/extra-progress.json",
+    "originalSHA256": "53af876066ab9baba907492c46212a8705da0c13097c8ce919676d5c7119af8e",
+    "storedSHA256": "53af876066ab9baba907492c46212a8705da0c13097c8ce919676d5c7119af8e",
+    "originalBytes": 258,
+    "storedBytes": 258,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/native.mjs",
+    "path": "independent/native.mjs",
+    "originalSHA256": "b706d34296dcda6b3b4d08967de0b7c0fc6f423851cd5d35bc0bd982b0a51e3e",
+    "storedSHA256": "b706d34296dcda6b3b4d08967de0b7c0fc6f423851cd5d35bc0bd982b0a51e3e",
+    "originalBytes": 1000,
+    "storedBytes": 1000,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/escape-correction-partial.json",
+    "path": "independent/escape-correction-partial.json",
+    "originalSHA256": "938a5724b4f188e61c306c976f36e36e21d726f9bf451440c989895a959ca737",
+    "storedSHA256": "938a5724b4f188e61c306c976f36e36e21d726f9bf451440c989895a959ca737",
+    "originalBytes": 2514,
+    "storedBytes": 2514,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/presentation.mjs",
+    "path": "independent/presentation.mjs",
+    "originalSHA256": "c8ccd1f321d5fa1d4724bcc9ab799e7e6382e7ec047518363db2bb966ef06e97",
+    "storedSHA256": "c8ccd1f321d5fa1d4724bcc9ab799e7e6382e7ec047518363db2bb966ef06e97",
+    "originalBytes": 3919,
+    "storedBytes": 3919,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/portals-progress.json",
+    "path": "independent/portals-progress.json",
+    "originalSHA256": "0f0ab5bd8f30270dfa1da5314ed0210f39e32c982da0a7fa4c3f0554da6ec954",
+    "storedSHA256": "0f0ab5bd8f30270dfa1da5314ed0210f39e32c982da0a7fa4c3f0554da6ec954",
+    "originalBytes": 561,
+    "storedBytes": 561,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/loader-correction-progress.json",
+    "path": "independent/loader-correction-progress.json",
+    "originalSHA256": "fa9aff7020320d91767b3711cce50efe06633ac19ca405e94f89e72b12582c49",
+    "storedSHA256": "fa9aff7020320d91767b3711cce50efe06633ac19ca405e94f89e72b12582c49",
+    "originalBytes": 83,
+    "storedBytes": 83,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/boot-build.log",
+    "path": "independent/boot-build.log",
+    "originalSHA256": "89b645104f66c20b4c1a1c11aeed97027d26228bf91d89d4ce8088b99a855c2e",
+    "storedSHA256": "89b645104f66c20b4c1a1c11aeed97027d26228bf91d89d4ce8088b99a855c2e",
+    "originalBytes": 73,
+    "storedBytes": 73,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/diagnose-controls-results.json",
+    "path": "independent/diagnose-controls-results.json",
+    "originalSHA256": "d05d81799daf9a118bd4d7add92fed53f5a71a7987744c365ec7ddbb000b9174",
+    "storedSHA256": "d05d81799daf9a118bd4d7add92fed53f5a71a7987744c365ec7ddbb000b9174",
+    "originalBytes": 1900,
+    "storedBytes": 1900,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/boot-progress.json",
+    "path": "independent/boot-progress.json",
+    "originalSHA256": "d3aac2965fef9ecc1588fc10f675e7196f9514dcf34a5164fb3ba8e6bc8e16e1",
+    "storedSHA256": "d3aac2965fef9ecc1588fc10f675e7196f9514dcf34a5164fb3ba8e6bc8e16e1",
+    "originalBytes": 71,
+    "storedBytes": 71,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-boot-build.log",
+    "path": "independent/attempt1-boot-build.log",
+    "originalSHA256": "89b645104f66c20b4c1a1c11aeed97027d26228bf91d89d4ce8088b99a855c2e",
+    "storedSHA256": "89b645104f66c20b4c1a1c11aeed97027d26228bf91d89d4ce8088b99a855c2e",
+    "originalBytes": 73,
+    "storedBytes": 73,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/extra-resources-closed.json",
+    "path": "independent/extra-resources-closed.json",
+    "originalSHA256": "2ec149326ace38760d526fb14cc269eddb845ca390e6cf917ca42d9a3d4518cd",
+    "storedSHA256": "2ec149326ace38760d526fb14cc269eddb845ca390e6cf917ca42d9a3d4518cd",
+    "originalBytes": 123,
+    "storedBytes": 123,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/graphs.py",
+    "path": "independent/graphs.py",
+    "originalSHA256": "0399a2d0db011f85d7c548e437e11611cf081b1a736d786af7dfb5f44c878d11",
+    "storedSHA256": "0399a2d0db011f85d7c548e437e11611cf081b1a736d786af7dfb5f44c878d11",
+    "originalBytes": 2590,
+    "storedBytes": 2590,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/boot-resources-closed.json",
+    "path": "independent/boot-resources-closed.json",
+    "originalSHA256": "7b6530b8b29882365fcdfa0b58d5acab4a50c45bde57edd2fa6fdc0ff432a1c4",
+    "storedSHA256": "7b6530b8b29882365fcdfa0b58d5acab4a50c45bde57edd2fa6fdc0ff432a1c4",
+    "originalBytes": 123,
+    "storedBytes": 123,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/controls-partial.json",
+    "path": "independent/controls-partial.json.gz",
+    "originalSHA256": "2f2244cbdc39232e4658ce310c7bcc4cb742bb2be17fa5b92e459ac05beaf21b",
+    "storedSHA256": "2a1c3226b5fba73db96f612060f19556ea55b56ac309c24d6fe4b35039da7cc8",
+    "originalBytes": 37276007,
+    "storedBytes": 605039,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/write-report.py",
+    "path": "independent/write-report.py",
+    "originalSHA256": "6a98b793f56eab0eab0c8d4406130d20ea586a2170f80401a15e1275c0845a07",
+    "storedSHA256": "6a98b793f56eab0eab0c8d4406130d20ea586a2170f80401a15e1275c0845a07",
+    "originalBytes": 13709,
+    "storedBytes": 13709,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/image-inline-correction-resources-closed.json",
+    "path": "independent/image-inline-correction-resources-closed.json",
+    "originalSHA256": "4bfd7d5c8284d248fbf94eb8aa4891f5a3894f60ebb6609f12583ec793289e57",
+    "storedSHA256": "4bfd7d5c8284d248fbf94eb8aa4891f5a3894f60ebb6609f12583ec793289e57",
+    "originalBytes": 123,
+    "storedBytes": 123,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/light-theme.json",
+    "path": "independent/light-theme.json",
+    "originalSHA256": "8a87816ffc17d8d23d6955357f15bb757878dba2237c66fc9387a6b8fee75bec",
+    "storedSHA256": "8a87816ffc17d8d23d6955357f15bb757878dba2237c66fc9387a6b8fee75bec",
+    "originalBytes": 9343,
+    "storedBytes": 9343,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/presentation-progress.json",
+    "path": "independent/presentation-progress.json",
+    "originalSHA256": "083b62f83e1ca8915c6fe8b8d9efbeafff9d42b65ed6fd9edfa9b6ac8ecdae40",
+    "storedSHA256": "083b62f83e1ca8915c6fe8b8d9efbeafff9d42b65ed6fd9edfa9b6ac8ecdae40",
+    "originalBytes": 350,
+    "storedBytes": 350,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/portal-states-progress.json",
+    "path": "independent/portal-states-progress.json",
+    "originalSHA256": "ad96345e90b742963ee4beb9d9f5f49b76b5b877f44ed7d68615a7c049852b11",
+    "storedSHA256": "ad96345e90b742963ee4beb9d9f5f49b76b5b877f44ed7d68615a7c049852b11",
+    "originalBytes": 78,
+    "storedBytes": 78,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/image-inline-correction.mjs",
+    "path": "independent/image-inline-correction.mjs",
+    "originalSHA256": "e261e2f4551e3008fa656bce7c6fbdfe2bc2cf02adecdaa1686d315f3abc970d",
+    "storedSHA256": "e261e2f4551e3008fa656bce7c6fbdfe2bc2cf02adecdaa1686d315f3abc970d",
+    "originalBytes": 625,
+    "storedBytes": 625,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-controls.mjs",
+    "path": "independent/attempt1-controls.mjs",
+    "originalSHA256": "9f5ce59578e9e2313ebcd04d8f0e9bc2ff82dcaeac4e1b7825acc55682cfc0fb",
+    "storedSHA256": "9f5ce59578e9e2313ebcd04d8f0e9bc2ff82dcaeac4e1b7825acc55682cfc0fb",
+    "originalBytes": 5200,
+    "storedBytes": 5200,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-controls-progress.json",
+    "path": "independent/attempt1-controls-progress.json",
+    "originalSHA256": "b350a1897ef9511c4379384dd4744ba67d3d608f585fa63c2fa5a9fd0490b1f0",
+    "storedSHA256": "b350a1897ef9511c4379384dd4744ba67d3d608f585fa63c2fa5a9fd0490b1f0",
+    "originalBytes": 1147,
+    "storedBytes": 1147,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/native-results.json",
+    "path": "independent/native-results.json",
+    "originalSHA256": "d533ec1409285d64f113ae216d4677d78d4b21c9a6122126e47ea87793247f4c",
+    "storedSHA256": "d533ec1409285d64f113ae216d4677d78d4b21c9a6122126e47ea87793247f4c",
+    "originalBytes": 38299,
+    "storedBytes": 38299,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/final-sequence.log",
+    "path": "independent/final-sequence.log",
+    "originalSHA256": "79f68b4a6555b5b17668ec1a2da813270ffd34bad4749e7cdb06f1560b94c959",
+    "storedSHA256": "79f68b4a6555b5b17668ec1a2da813270ffd34bad4749e7cdb06f1560b94c959",
+    "originalBytes": 476,
+    "storedBytes": 476,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-boot-fixture.tsx",
+    "path": "independent/attempt1-boot-fixture.tsx",
+    "originalSHA256": "224ead616a1ac6a18904653aa5a45282a3a727bd8729d91e43a360e50b014c3c",
+    "storedSHA256": "224ead616a1ac6a18904653aa5a45282a3a727bd8729d91e43a360e50b014c3c",
+    "originalBytes": 1522,
+    "storedBytes": 1522,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/diagnose-controls.mjs",
+    "path": "independent/diagnose-controls.mjs",
+    "originalSHA256": "90b2d1952adbdcd7712c799f73abf2f4a76f2bdce800535d196d91a2af398b69",
+    "storedSHA256": "90b2d1952adbdcd7712c799f73abf2f4a76f2bdce800535d196d91a2af398b69",
+    "originalBytes": 585,
+    "storedBytes": 585,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/diagnose-controls-progress.json",
+    "path": "independent/diagnose-controls-progress.json",
+    "originalSHA256": "3cda8f06021d5f6a98b5930aff0ba6979d14f878365e2ce34a33ad3d117158f1",
+    "storedSHA256": "3cda8f06021d5f6a98b5930aff0ba6979d14f878365e2ce34a33ad3d117158f1",
+    "originalBytes": 80,
+    "storedBytes": 80,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/baseline-boot/metafile.json",
+    "path": "independent/baseline-boot/metafile.json.gz",
+    "originalSHA256": "977fcc46765dc6e9af75c8d512c206d3a3a99e333d3112c26bdb11138584b975",
+    "storedSHA256": "749a38d775569fa861e9f60ec786f3e0114bf11aac633a6035511d8ad03686e4",
+    "originalBytes": 6094108,
+    "storedBytes": 286670,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/candidate-boot/metafile.json",
+    "path": "independent/candidate-boot/metafile.json.gz",
+    "originalSHA256": "6720142cd224daf6fddff2a16289f78c288cf13bf5b9a5432f1eb75fe7eda2ac",
+    "storedSHA256": "7402f22f988a582b9346e55eec519901f7bbf26028e13595efa33ded3a5e31e5",
+    "originalBytes": 6112425,
+    "storedBytes": 286703,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-baseline-boot/metafile.json",
+    "path": "independent/attempt1-baseline-boot/metafile.json.gz",
+    "originalSHA256": "e2858e9cccd0006d7eb968c0a2408d9651fd9eed79e8206ecd8d343e2edcf773",
+    "storedSHA256": "a00b3fd7f01c95ace2631124e5d0109c89d06c9ab54c8bf3c66456c554546719",
+    "originalBytes": 6094108,
+    "storedBytes": 286671,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket65/attempt1-candidate-boot/metafile.json",
+    "path": "independent/attempt1-candidate-boot/metafile.json.gz",
+    "originalSHA256": "648d23de626fa74c358a439a778798a0d57500d8f7c6edd28928e37d1eb33077",
+    "storedSHA256": "0246c2408b9b7f0f334163dc658f40a3b0b584391192bca083376dd917620305",
+    "originalBytes": 6112425,
+    "storedBytes": 286705,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-finalization/omitted-build-output-inventory.json",
+    "path": "omitted-build-output-inventory.json.gz",
+    "originalSHA256": "65e85281b0b151d708d72a313a4aee9a6e7e9ee2a5247e94b38d886aa7ee827f",
+    "storedSHA256": "9f31335eadb2369e78dfdfa506fd4ac8315b50986301a4ecfbee22445c6500d3",
+    "originalBytes": 4744539,
+    "storedBytes": 917446,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/controls/baseline-browser/metafile.json",
+    "path": "frozen-worker-graphs/controls/baseline-browser/metafile.json.gz",
+    "originalSHA256": "af04ac2d9c7c6ddc7ca1c0d9f7094e9ddc9b21358573d941e26007866af7f42e",
+    "storedSHA256": "d1ce26fed3e39113074e0c933a370b4a4fa9b7b7a1d6ecbcbe1a16e97a33a526",
+    "originalBytes": 5947768,
+    "storedBytes": 285611,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/controls/candidate-browser/metafile.json",
+    "path": "frozen-worker-graphs/controls/candidate-browser/metafile.json.gz",
+    "originalSHA256": "fa2e87c2719bfac22c651c14436f81ac045e32b3f66b17c407088deda897e696",
+    "storedSHA256": "ad5302b32cd10add41c0489126ca94989af9edd9d8283a50ad5f325c456630c7",
+    "originalBytes": 5398971,
+    "storedBytes": 280837,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/portals/baseline-browser/metafile.json",
+    "path": "frozen-worker-graphs/portals/baseline-browser/metafile.json.gz",
+    "originalSHA256": "ff64b00dfaa4a97605ed37d3145e86d20698fb71e4131620f46cb287fbfe3630",
+    "storedSHA256": "451a5481910c47470359461e8603061faca5176bb254ddb6d0bba9d1e9e137dc",
+    "originalBytes": 5929474,
+    "storedBytes": 284831,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/portals/candidate-browser/metafile.json",
+    "path": "frozen-worker-graphs/portals/candidate-browser/metafile.json.gz",
+    "originalSHA256": "e189b22f138f1b67dc6b130953f621ffcb64771170ff6b11b82118f700e313f9",
+    "storedSHA256": "907369f718cdc5da128358cf6bee314def98cf46722e141b245152880b947d0d",
+    "originalBytes": 5380677,
+    "storedBytes": 280730,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/baseline-browser/metafile.json",
+    "path": "frozen-worker-graphs/presentation/baseline-browser/metafile.json.gz",
+    "originalSHA256": "7fce4293196da1b000493c6a2035ca23dbb067a32b0b066d1c633a510d145fe4",
+    "storedSHA256": "1b83e6ab61e3215ffe03e3b743c77ea5a41cad362bcb19e8d20335c5f4a0bd09",
+    "originalBytes": 6020946,
+    "storedBytes": 286109,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/candidate-browser/metafile.json",
+    "path": "frozen-worker-graphs/presentation/candidate-browser/metafile.json.gz",
+    "originalSHA256": "56fe0b636add1c366aac29f0703e674b97e5639e07798afc719870a4b37c8b15",
+    "storedSHA256": "fd440db0db1edef20fd07db81740ab71e1c5eaf54ef8dcb687579e3822a85bee",
+    "originalBytes": 5472149,
+    "storedBytes": 281166,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/baseline-extra/metafile.json",
+    "path": "frozen-worker-graphs/presentation/baseline-extra/metafile.json.gz",
+    "originalSHA256": "ea78ca1c3a063f969dc14b5105538ed62253f012e3993c9189536a91906068d5",
+    "storedSHA256": "0a6752c4b7feefbd61523d9d7006ec77bec6a21ef8ad4fa27d2e9835de7d580a",
+    "originalBytes": 5984374,
+    "storedBytes": 285828,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/candidate-extra/metafile.json",
+    "path": "frozen-worker-graphs/presentation/candidate-extra/metafile.json.gz",
+    "originalSHA256": "0bd20b40980ba9af85ad51c62b4e90dca08bddd3e58ceb64061a1e0e7fd8da2d",
+    "storedSHA256": "a975a19720652699b998a5865f118fe176f5c74da3845cdfe7a26143afb57af5",
+    "originalBytes": 5435577,
+    "storedBytes": 280811,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/baseline-small-Buttons/metafile.json",
+    "path": "frozen-worker-graphs/presentation/baseline-small-Buttons/metafile.json.gz",
+    "originalSHA256": "c61a96a1d6434c0c3ca98c333707d144deb138360fc45e69533ef80efaedd062",
+    "storedSHA256": "95901b8bc7166441f479dd36b49f652f84f191cf1c0fbffe075eb483ed785297",
+    "originalBytes": 4751139,
+    "storedBytes": 211152,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/candidate-small-Buttons/metafile.json",
+    "path": "frozen-worker-graphs/presentation/candidate-small-Buttons/metafile.json.gz",
+    "originalSHA256": "680d5e0f41c02702edd60a8213a7eb8fd728af10df7691ae5655cf51ab2c8d04",
+    "storedSHA256": "d62cf9c7f326f5baa8d90d6442c2f40811e00f26559444bff4cd8c860cddfb55",
+    "originalBytes": 4479893,
+    "storedBytes": 208325,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/baseline-small-TagBlock/metafile.json",
+    "path": "frozen-worker-graphs/presentation/baseline-small-TagBlock/metafile.json.gz",
+    "originalSHA256": "9d825fdd7b7612a086b8be3ca46a51eca8982eb056775314774c42dcbd6d45ca",
+    "storedSHA256": "46f8f6439d4c0d656269cf8f059d0b5d795b976b2711fadb5dbb3464762352cc",
+    "originalBytes": 4760173,
+    "storedBytes": 211412,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/candidate-small-TagBlock/metafile.json",
+    "path": "frozen-worker-graphs/presentation/candidate-small-TagBlock/metafile.json.gz",
+    "originalSHA256": "0eab4feb73708108a9f1fc80172f8466e433e2f196a2c3e462d0d7b4b1db53dc",
+    "storedSHA256": "cfc42dd19d195ec6282e0fd47d5d46d675bbe8dedceec247d6e2c2c2785193c1",
+    "originalBytes": 4488927,
+    "storedBytes": 208319,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/baseline-small-Table/metafile.json",
+    "path": "frozen-worker-graphs/presentation/baseline-small-Table/metafile.json.gz",
+    "originalSHA256": "e7599e27dfe25698ab496248de555a4fcb302efc46de6bbc8d4b0f9bf566467a",
+    "storedSHA256": "775d6e0b71695841fd90e2e5cf640fed2ccbc090a104627fe0ed65ea30cdcd70",
+    "originalBytes": 5386463,
+    "storedBytes": 250532,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/candidate-small-Table/metafile.json",
+    "path": "frozen-worker-graphs/presentation/candidate-small-Table/metafile.json.gz",
+    "originalSHA256": "b9bf7fe1feab1f1a7262018fcf64d090212c9b5a03ce4c77efe10db0dd78e3af",
+    "storedSHA256": "c1670bb0103a8373907944f8da277176f5c401eaaa77d0da603796f36e01f2ac",
+    "originalBytes": 4965368,
+    "storedBytes": 247536,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/baseline-small-CodeBlock/metafile.json",
+    "path": "frozen-worker-graphs/presentation/baseline-small-CodeBlock/metafile.json.gz",
+    "originalSHA256": "16194ca3aad97165b8adde4fb70b9dd6373b332bc0652587e3cb1aed4f2b2a66",
+    "storedSHA256": "26f0704a8eafc13fe314d0cf8be0355164f84f5c8756d7331147f27b81116326",
+    "originalBytes": 5521672,
+    "storedBytes": 256798,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/candidate-small-CodeBlock/metafile.json",
+    "path": "frozen-worker-graphs/presentation/candidate-small-CodeBlock/metafile.json.gz",
+    "originalSHA256": "73d4a269ab200c7a850aae592151dd0939271e7fa180c4ebba904a47657f8ce1",
+    "storedSHA256": "b6be402973e136fa01a6e6c752451302384d53742faf5eb2b96493ebf0f6ee9c",
+    "originalBytes": 5082576,
+    "storedBytes": 253379,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/baseline-small-TextContentWrapper/metafile.json",
+    "path": "frozen-worker-graphs/presentation/baseline-small-TextContentWrapper/metafile.json.gz",
+    "originalSHA256": "32a9a8e6194e3efaee2fd58a8986419ab6c021e252ee466f589710e62f2a5ed2",
+    "storedSHA256": "dbd52b91c89ccfbdf09aa1943145f7fc2bebb25633344a220cdb2a7877c69709",
+    "originalBytes": 5967160,
+    "storedBytes": 282599,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/candidate-small-TextContentWrapper/metafile.json",
+    "path": "frozen-worker-graphs/presentation/candidate-small-TextContentWrapper/metafile.json.gz",
+    "originalSHA256": "aeb726a6e9f9e40270b3ba0aed351bba4f3046b113b42d0b0821fdc358043f95",
+    "storedSHA256": "11848f3f66c34d7f35d1c2d10fd199552776c5ef736a743ce24746cb6398b8ab",
+    "originalBytes": 5470587,
+    "storedBytes": 278629,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/baseline-small-Tabs/metafile.json",
+    "path": "frozen-worker-graphs/presentation/baseline-small-Tabs/metafile.json.gz",
+    "originalSHA256": "e0c6fa62c3116341ded68a3c0951f888c7c0f44ce9ba313efa95be8251638332",
+    "storedSHA256": "74782a2546e1c767d85134b2e47943d29a021076d663b9ba4aa963cad42e1366",
+    "originalBytes": 5374503,
+    "storedBytes": 250901,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/candidate-small-Tabs/metafile.json",
+    "path": "frozen-worker-graphs/presentation/candidate-small-Tabs/metafile.json.gz",
+    "originalSHA256": "359a60ec1b982e3020e0b259ed740b7aef35bb1562d8d0f3b50b6ee3478a2066",
+    "storedSHA256": "7f05f2484f4607277b0e7c04623598f4304790c3916f0a713912eeca3a8bb87d",
+    "originalBytes": 4953407,
+    "storedBytes": 247772,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/baseline-small-Sources/metafile.json",
+    "path": "frozen-worker-graphs/presentation/baseline-small-Sources/metafile.json.gz",
+    "originalSHA256": "bcabccea3e5bf143cbf92c9875b805132547a9fe4d259cc1d913df8f9cf16c2c",
+    "storedSHA256": "e5b3b96950fb28b0dd5b4a86964a133ae9560e4248baddcec6a4a754915e5b20",
+    "originalBytes": 5672449,
+    "storedBytes": 271351,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/candidate-small-Sources/metafile.json",
+    "path": "frozen-worker-graphs/presentation/candidate-small-Sources/metafile.json.gz",
+    "originalSHA256": "726e0a5b221e5e4292a7a3fb31b526e8482ca1607916aee0604117d6245ee6df",
+    "storedSHA256": "98bb4c540bd1876e85263bd05db2a77f4cc369aaa75c8bac9e98771496f43505",
+    "originalBytes": 5193994,
+    "storedBytes": 268428,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/baseline-small-Citation/metafile.json",
+    "path": "frozen-worker-graphs/presentation/baseline-small-Citation/metafile.json.gz",
+    "originalSHA256": "c8cff544d31dc00db98a4cdb23967b160c6fba85a199060cd372b454d9a698d0",
+    "storedSHA256": "e89193f13c4bc190a2c18a7e1996a28c50fd120f0481f5c77f01eb950acea161",
+    "originalBytes": 5023827,
+    "storedBytes": 233083,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/presentation/candidate-small-Citation/metafile.json",
+    "path": "frozen-worker-graphs/presentation/candidate-small-Citation/metafile.json.gz",
+    "originalSHA256": "377c725c63dbd67b6991dd1ccf9b38740263fc7c888673ea47d8e2cbe070b4ce",
+    "storedSHA256": "1e55bd57e8e710c20a6cba6bf3cbed4166cf8711a24481ee50570f5de724b3a6",
+    "originalBytes": 4695222,
+    "storedBytes": 229761,
+    "gzip": true
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors61-evidence/candidate-final/openuidev-react-components-0.0.0-beta.0.tgz",
+    "path": "artifacts/baseline.tgz",
+    "originalSHA256": "0dad61fb4c48477f0496f819bef2f131908a3789ec184cefb7fe8de94c68d6a5",
+    "storedSHA256": "0dad61fb4c48477f0496f819bef2f131908a3789ec184cefb7fe8de94c68d6a5",
+    "originalBytes": 1060444,
+    "storedBytes": 1060444,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors61-evidence/consumer/package.json",
+    "path": "consumers/baseline/package.json",
+    "originalSHA256": "ffddde46db6c1d3c1a5563b8341058a3b146cc99e7f81efa7d0d97e8696b0c9f",
+    "storedSHA256": "ffddde46db6c1d3c1a5563b8341058a3b146cc99e7f81efa7d0d97e8696b0c9f",
+    "originalBytes": 369,
+    "storedBytes": 369,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors61-evidence/consumer/pnpm-lock.yaml",
+    "path": "consumers/baseline/pnpm-lock.yaml",
+    "originalSHA256": "c3cdb3b9ac5a4500510e6f4a397a6d33b642667337e1fc5f125f7470a744a4a9",
+    "storedSHA256": "c3cdb3b9ac5a4500510e6f4a397a6d33b642667337e1fc5f125f7470a744a4a9",
+    "originalBytes": 93624,
+    "storedBytes": 93624,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/candidate-v1/openuidev-react-components-0.0.0-beta.0.tgz",
+    "path": "artifacts/candidate.tgz",
+    "originalSHA256": "d2a4b51255d745f41a7b51820ac0ec55ef5db8ff2b6f8d91ab43bade7766d037",
+    "storedSHA256": "d2a4b51255d745f41a7b51820ac0ec55ef5db8ff2b6f8d91ab43bade7766d037",
+    "originalBytes": 1077678,
+    "storedBytes": 1077678,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/consumer/package.json",
+    "path": "consumers/candidate/package.json",
+    "originalSHA256": "e1e2a5edecb608a0cd5888eeeb03a6ca8da398bcd904730ad1eca691ceab015e",
+    "storedSHA256": "e1e2a5edecb608a0cd5888eeeb03a6ca8da398bcd904730ad1eca691ceab015e",
+    "originalBytes": 369,
+    "storedBytes": 369,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-selectors65-evidence/consumer/pnpm-lock.yaml",
+    "path": "consumers/candidate/pnpm-lock.yaml",
+    "originalSHA256": "75dacd73c8100e0341e21c5cae5eebb2c0b359e5d236bd34f93166b515a06593",
+    "storedSHA256": "75dacd73c8100e0341e21c5cae5eebb2c0b359e5d236bd34f93166b515a06593",
+    "originalBytes": 93609,
+    "storedBytes": 93609,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-public-gate-consumer/frameworks/tailwind3.css",
+    "path": "host-css/tailwind3.css",
+    "originalSHA256": "584ed8b229b2a8df96f9ddc478e94a07249e8905bdf068afdef8981d969ae150",
+    "storedSHA256": "584ed8b229b2a8df96f9ddc478e94a07249e8905bdf068afdef8981d969ae150",
+    "originalBytes": 11461,
+    "storedBytes": 11461,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-public-gate-consumer/frameworks/tailwind4.css",
+    "path": "host-css/tailwind4.css",
+    "originalSHA256": "e05a054044718b3c9ac536e5fe41ddde475f1a06ca68f57674a90db0a3c1b36e",
+    "storedSHA256": "e05a054044718b3c9ac536e5fe41ddde475f1a06ca68f57674a90db0a3c1b36e",
+    "originalBytes": 6994,
+    "storedBytes": 6994,
+    "gzip": false
+  },
+  {
+    "originalPath": "/private/tmp/openui-public-gate-consumer/frameworks/plain.css",
+    "path": "host-css/plain.css",
+    "originalSHA256": "d4a1d5dcf591b093b35a4b9bebf48406a70ccf0504b60b11e27f4002f3ddcb00",
+    "storedSHA256": "d4a1d5dcf591b093b35a4b9bebf48406a70ccf0504b60b11e27f4002f3ddcb00",
+    "originalBytes": 286,
+    "storedBytes": 286,
+    "gzip": false
+  }
+]

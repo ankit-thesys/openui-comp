@@ -1,0 +1,22 @@
+[
+  {
+    "file": "ticket-disposition.md",
+    "sha256": "d2cdb731808e47eabf9cd37a0c5358959b1062b05ce33ab2976216ce8503c588"
+  },
+  {
+    "file": "retain-independent.py",
+    "sha256": "eedbba78e5e9d5964235a4e8ee70c09cd20e2b1cd27473df11ccaab1de9b36a5"
+  },
+  {
+    "file": "pr-metadata-before.json",
+    "sha256": "fc0c6fa0aa614b941f6d1458fc195213b0e7082d865f6c33260b8bf88df4d2eb"
+  },
+  {
+    "file": "CI-STATUS.md",
+    "sha256": "26bda58d17e462c20167f035908a7370e96627ebee4438a3bbd9cd5dd5a8cd83"
+  },
+  {
+    "file": "latest-exact-head-status.json",
+    "sha256": "7ec1184c6f27448a44657adff68be146e82e1810cbcc49b93f571b4bff9b6d8b"
+  }
+]
