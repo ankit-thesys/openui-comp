@@ -1,0 +1,1 @@
+The installed gh pr edit failed on its deprecated Projects classic GraphQL query before updating PR67. Used the standard GitHub REST pull-request PATCH endpoint with a structured body instead. No CLI installation/configuration or production changes.

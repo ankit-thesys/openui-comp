@@ -18,5 +18,33 @@
   {
     "file": "latest-exact-head-status.json",
     "sha256": "7ec1184c6f27448a44657adff68be146e82e1810cbcc49b93f571b4bff9b6d8b"
+  },
+  {
+    "file": "pr67-body-final.md",
+    "sha256": "bba57c4fa65940abc7e94e7afbffe1c7af6a178e7285688cd7c54a69e700ce64"
+  },
+  {
+    "file": "pr68-body-final.md",
+    "sha256": "eb47df61338879801b482311364f42712d22b6ddb5bc25916f5ff45632d5babe"
+  },
+  {
+    "file": "pr69-body-final.md",
+    "sha256": "3eadb18d6f7e5e2cca79e80b1cbc52dc399d268202a9a23dd608198e26f1d707"
+  },
+  {
+    "file": "production-prs-after.json",
+    "sha256": "fb3a45720c42fcefa6f811dfabfcbb356f3494e6e5c06731e7d0c56ce433ad1b"
+  },
+  {
+    "file": "pr-edit-cli-note.md",
+    "sha256": "ad37f6769714d3681e32df76450c15032f44abe18fbbdcea32d6daa4b4744e24"
+  },
+  {
+    "file": "write-final-pr-bodies.py",
+    "sha256": "e15c1ee6a03d5f27b3cd0556fff51e9a4c440dd4c52f25309391a8a02069e52f"
+  },
+  {
+    "file": "README.md",
+    "sha256": "3de73c2634481b17d192cfc32e2f03fb0254c2c1742b89fede73bbde7ab1bffb"
   }
 ]
