@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { css } from "goober";
 import React, { forwardRef, useMemo } from "react";
+import { borderBoxClass } from "../../styles/base";
 import { FormControlProvider } from "./context";
 import { formControlStyles } from "./formControl.styles";
 const componentClass = css`
@@ -18,7 +19,11 @@ const FormControl = forwardRef<HTMLDivElement, FormControlProps>((props, ref) =>
   const { children, className, style, hasError = false } = props;
   const formControlContextValue = useMemo(() => ({ hasError }), [hasError]);
   return (
-    <div ref={ref} className={clsx(componentClass, "openui-form-control", className)} style={style}>
+    <div
+      ref={ref}
+      className={clsx(componentClass, borderBoxClass, "openui-form-control", className)}
+      style={style}
+    >
       <FormControlProvider value={formControlContextValue}>{children}</FormControlProvider>
     </div>
   );
