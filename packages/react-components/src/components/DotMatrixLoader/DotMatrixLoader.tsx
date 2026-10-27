@@ -3,9 +3,7 @@ import { css } from "goober";
 import { useEffect, useRef, type CSSProperties } from "react";
 import { loaderStyles } from "./dotMatrixLoader.styles";
 
-const componentClass = css`
-  ${loaderStyles}
-`;
+const componentClass = "openui-dot-matrix-loader-root";
 
 /** Time for each trail to complete one revolution of its ring. */
 const REVOLUTION_MS = 1400;
@@ -133,3 +131,15 @@ export const DotMatrixLoader = ({
     </div>
   );
 };
+
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-dot-matrix-loader-root {
+      ${loaderStyles}
+    }
+  }
+`;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
