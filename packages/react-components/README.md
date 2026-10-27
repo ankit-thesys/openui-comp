@@ -94,8 +94,7 @@ has not been certified.
 Button and IconButton use stable styling targets. Importing either component
 registers its rules automatically through stock Goober. A private generated class
 on `html` is contained in `:where(...:root)` and adds zero specificity. Consumers
-do not use that class. Families outside this pilot and the control batch below
-still use generated selectors.
+do not use that class. Families outside the documented batches below still use generated selectors.
 
 | Target | Button | IconButton |
 | --- | --- | --- |
@@ -176,6 +175,32 @@ ToggleGroup retain inline `outline: none`. The ordinary CSS override contract
 covers the component's owned stylesheet declarations; it does not promise to
 beat inline styles without using the existing inline customization API.
 
+### Select, Calendar, DatePicker and Modal selectors
+
+These families retain their existing props, markup, behavior and theme delivery.
+Ordinary overrides require the corresponding later, unlayered selector. Floating
+coordinates and other existing inline styles keep their current precedence.
+
+| Family | Stable styling targets | Scope |
+| --- | --- | --- |
+| Select | `.openui-select-trigger-root`, `.openui-select-content-root`, `.openui-select-viewport-root`, `.openui-select-group-root`, `.openui-select-label-root`, `.openui-select-item-root`, `.openui-select-separator-root` | Existing trigger, portaled content and parts; existing aliases, size classes, placeholder/open/checked/highlighted/disabled state remain. |
+| Calendar | `.openui-calendar-container-root` | Existing outer wrapper scopes the existing DayPicker classes; owned declarations primarily target its parts, not the wrapper itself. `classNames` overrides keep their current behavior. |
+| DatePicker | `.openui-date-picker-style-root` | Marks both the existing floating container and portal content. Qualify with their existing aliases when styling one role. Floating UI's inline coordinates are preserved. |
+| Modal | `.openui-modal-portal-root`, `.openui-modal-overlay-root`, `.openui-modal-content-root`, `.openui-modal-header-root`, `.openui-modal-title-root`, `.openui-modal-close-root`, `.openui-modal-body-root` | Existing portal and parts; sizes, close paths and supported props remain unchanged. |
+
+```css
+.openui-select-trigger-root:where(.openui-select-trigger-sm) { padding-left: 24px; }
+.openui-select-content-root.openui-select-content-sm .openui-select-label { font-size: 14px; }
+.openui-calendar-container-root .openui-calendar-single-day-selected { background: navy; }
+.openui-date-picker-style-root:where(.openui-date-picker-renderer-floating-content) { z-index: 60; }
+.openui-modal-close-root:focus-visible { outline-color: navy; }
+```
+
+Calendar's custom dropdowns still use Select's private content/viewport exports;
+this internal dependency is preserved. Select, DatePicker, Modal and Calendar
+month dropdowns keep their existing nested-theme behavior in real portals.
+These client checks do not establish SSR, hydration or concurrent server support.
+
 ### Selector conversion status
 
 This inventory describes the selector pilot, not a completed package-wide
@@ -183,10 +208,10 @@ conversion. All existing token fallbacks remain in place.
 
 | Status | Families |
 | --- | --- |
-| Converted (pending batch acceptance for controls) | Button, IconButton, CheckBoxGroup, CheckBoxItem, Chips, FormControl, Input, Label, OptionCards, RadioGroup, RadioItem, Slider, SwitchGroup, SwitchItem, TextArea, ToggleGroup, ToggleItem |
+| Converted; new batches pending independent acceptance | Button, IconButton, CheckBoxGroup, CheckBoxItem, Chips, FormControl, Input, Label, OptionCards, RadioGroup, RadioItem, Slider, SwitchGroup, SwitchItem, TextArea, ToggleGroup, ToggleItem, Select, Calendar, DatePicker, Modal |
 | Shared box sizing only; remaining selectors pending | Buttons, TagBlock |
 | Deferred to #63 | Accordion, Callout, Card, CardHeader, Carousel, CodeBlock, CompositeCardBlock, ContextCardBlock, DotMatrixLoader, EditableTable, EntityList, IconTag, IconText, Image, ImageBlock, ImageText, ImageTextLarge, InlineHeader, InlineMarkdownRenderer, ListBlock, ListItem, MarkDownRenderer, MetricIndicator, OverviewCardBlock, SectionBlock, Separator, Skeleton, SnippetCardBlock, SourceFaviconImage, Sources, Steps, Table, Tabs, Tag, TextBlock, TextCallout, TextContent, TextContentWrapper, VisualCardBlock |
-| Deferred to #64 | Calendar, Citation, DatePicker, ImageGallery, Modal, Select, TooltipWrapper |
+| Deferred to #64 | Citation, ImageGallery, TooltipWrapper |
 
 Charts retain their current selectors; their Button/IconButton controls consume
 the pilot indirectly. Later tickets must review each owned root, variant, state
