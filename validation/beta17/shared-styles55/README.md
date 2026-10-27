@@ -1,6 +1,6 @@
 # Shared styles55 / combined60 evidence
 
-Worker60checks pass; independent60acceptance is pending. [Combined report](60/REPORT.md), [machine summary](60/SUMMARY.json), [artifact provenance](60/artifact-provenance.json) and [source patch](60/source.patch).
+Worker60checks pass; [independent60acceptance PASS](60-independent/REPORT.md) permits the61pilot. [Combined report](60/REPORT.md), [machine summary](60/SUMMARY.json), [artifact provenance](60/artifact-provenance.json) and [source patch](60/source.patch).
 
 Source c1aaf994d5c0fbfb56b83685221eeea9b409e57c; combined archive SHA2561db41852f9e5aa11ccbfe5a56cdb3d00c8ad753ad5e73cb19bdf4832e7f7b957. Protected42remains d1292715028f816bd6a0dcf92766ec7dd15350f4.
 
@@ -21,3 +21,7 @@ Review source/map and installed-file bindings before treating any replay as the 
 No unrelated root-owned files were included in this lab update. No upstream1491/PR42writes, issue closure, merge or publishing occurred.
 
 [Production draft PR67](https://github.com/ankit-thesys/openui-comp/pull/67) is stacked on unchanged42. See60/window-release.json for the explicit independent-review window handoff. Independent60acceptance remains pending;61has not started.
+
+## Independent60acceptance
+
+The independently written [report](60-independent/REPORT.md) and [verdict](60-independent/VERDICT.json) bind exactly c1aaf994d and archive1db41852.340valid passing checks comprise220direct passes and120corrected gap assertions against preserved raw measurements; the original120invalid four-root assertions remain in results.json.gz. No product patch or raw observation was changed. Exclusive browser/build release is recorded in60-independent/window-release.json. This permits only the61pilot, not parallel families or broad release readiness.

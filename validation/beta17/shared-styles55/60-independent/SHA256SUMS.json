@@ -1,0 +1,17 @@
+{
+  "REPORT.md": "331b6c6e5eab316434898797276acc5a4a1167e9b95b746470d54cddd6f9d88d",
+  "VERDICT.json": "81c408a8283ab21673e8821cf64d148f06fa8d24fec004e20381a4620f33eac9",
+  "browser.log": "b6b836549e1c14eb96af2d04a6f24dd97fb5a294d6bfebfd123ce659c05db671",
+  "gap-reassessment.json": "09b49d846ea7c4e3520fceaa7ae761ad102534ea73ec9dca9a5e72d9efdcf6c9",
+  "native-results.json": "c21c18e3d03e332c3069cea89eae4b305924e6f9873a38650c856dc97f53e23a",
+  "native.mjs": "a9060d9be39f890059bddb95f589f78ee5ea75d9319046a0e7ad7f649e454064",
+  "progress.json": "14781e7778053e76deb4c4154613c7423514a502e15a064c53f7359eaf2d1aa4",
+  "provenance-v1.py": "d15c0aea8359bc3dc459f14deb65d4ede17e5fc1f3fe4c91e1a9c847f7c1e880",
+  "provenance.json": "9b8ecff9cb04d2dbbc2e902d91bf7c78b0d10841974b5c8573cda7422ab33d80",
+  "provenance.py": "03ae408d53d789020c153a0ea862eb2815acfbe4c42205ca18669d932e063ef2",
+  "reassess-gaps.py": "4e6a89f5ae11cacfcd7bb1e00026098867dc44cb13d5dea44fd85fd059095ec6",
+  "results.json": "24765fde073eb2a65c6bace06a9aa91b2d9e513f666e18e59af4623350fbcef0",
+  "run.mjs": "a1018898772d2f8368f14ca1563ae3223a9ceb77eccd6ecb0d981e689baa10e6",
+  "window-release.json": "6fa8f8ccf9fe03cece9123f4159c13982ed193582027d70ac39e0c462b2304d7",
+  "/private/tmp/openui-styles-verifier-handoff.md": "ed99370f8e37359caaa1762d28f61fbe92d9eb093cf7dfb32205efc66ab88dc7"
+}
