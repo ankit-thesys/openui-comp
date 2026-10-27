@@ -1,0 +1,1 @@
+import React from'react';import{BarChartCondensed}from'@openuidev/react-components';export const View=()=><BarChartCondensed data={[{month:"A",value:4},{month:"B",value:8}]} categoryKey="month" xAxisLabel="Month" yAxisLabel="Value" width={360} height={260}/>;

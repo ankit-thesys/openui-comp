@@ -1,0 +1,78 @@
+{
+  "error": "TimeoutError: locator.hover: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#app .openui-stacked-legend__item').first()\u001b[22m\n\u001b[2m    - locator resolved to <div class=\"openui-stacked-legend__item\">…</div>\u001b[22m\n\u001b[2m  - attempting hover action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <svg role=\"img\" width=\"100%\" height=\"3828\" aria-label=\"Horizontal bar chart\">…</svg> from <div>…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is visible and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <svg role=\"img\" width=\"100%\" height=\"3828\" aria-label=\"Horizontal bar chart\">…</svg> from <div>…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    57 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m       - element is visible and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <svg role=\"img\" width=\"100%\" height=\"3828\" aria-label=\"Horizontal bar chart\">…</svg> from <div>…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying hover action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+  "checks": [
+    {
+      "name": "plain/before/baseline/calendar-real-highlight",
+      "pass": true,
+      "detail": [
+        "1"
+      ]
+    },
+    {
+      "name": "plain/before/baseline/inline-label-fill-retained",
+      "pass": true,
+      "detail": {
+        "before": "rgba(20, 24, 28, 0.85)",
+        "actual": "rgba(20, 24, 28, 0.85)",
+        "inline": "rgba(20, 24, 28, 0.85)"
+      }
+    },
+    {
+      "name": "plain/before/baseline/real-body-tooltip-theme",
+      "pass": true,
+      "detail": {
+        "color": "rgb(21, 22, 23)",
+        "bg": "rgb(31, 32, 33)",
+        "padding": "6px",
+        "border": "1px solid oklch(0.994 0 89.876 / 0.06)",
+        "borderRadius": "10px",
+        "text": "Febdesktop305mobile200tablet100",
+        "foreground": "rgb(31,32,33)",
+        "inBody": true
+      }
+    },
+    {
+      "name": "plain/before/baseline/real-column-layout",
+      "pass": true,
+      "detail": {
+        "column": true,
+        "direction": "column",
+        "gap": "20px"
+      }
+    },
+    {
+      "name": "plain/before/baseline/horizontal/scroll-controls-present",
+      "pass": true
+    },
+    {
+      "name": "plain/before/baseline/horizontal/actual-scroll-advance",
+      "pass": true,
+      "detail": {
+        "before": true,
+        "after": false
+      }
+    },
+    {
+      "name": "plain/before/baseline/vertical/scroll-controls-present",
+      "pass": true
+    },
+    {
+      "name": "plain/before/baseline/vertical/actual-scroll-advance",
+      "pass": true,
+      "detail": {
+        "before": true,
+        "after": false
+      }
+    },
+    {
+      "name": "plain/before/baseline/legend-show-more-present",
+      "pass": true
+    },
+    {
+      "name": "plain/before/baseline/legend-keyboard-expand",
+      "pass": true
+    }
+  ],
+  "captures": [],
+  "seen": []
+}

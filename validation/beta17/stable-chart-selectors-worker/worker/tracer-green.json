@@ -1,0 +1,18 @@
+{
+  "arm": "candidate",
+  "redExpected": false,
+  "checks": [
+    {
+      "name": "canonical filled AreaChart target exists",
+      "pass": true,
+      "actual": 1
+    },
+    {
+      "name": "ordinary matching owned position override",
+      "pass": true,
+      "before": "relative",
+      "actual": "static"
+    }
+  ],
+  "hostImportIsolation": true
+}

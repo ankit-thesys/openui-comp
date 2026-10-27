@@ -1,0 +1,283 @@
+{
+  "base": "75f69041891147d52dc0f0d2c4b21a048e575aa8",
+  "repo": "/private/tmp/openui-chart-shared-w2",
+  "registrationCount": 12,
+  "files": [
+    "shared/chartBase.styles.ts",
+    "shared/mini/miniChart.styles.ts",
+    "shared/core/DefaultLegend/defaultLegend.styles.ts",
+    "shared/core/PortalTooltip/portalTooltip.styles.ts",
+    "shared/core/StackedLegend/stackedLegend.styles.ts",
+    "shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts",
+    "shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts"
+  ],
+  "registrations": [
+    {
+      "file": "shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts",
+      "symbol": "rootClass",
+      "line": 2,
+      "body": "\n  & {\n    position: relative;\n  }\n  & .openui-chart-horizontal-scroll-button {\n    position: absolute;\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  }\n  & .openui-chart-horizontal-scroll-button--left {\n    top: -23px;\n    transform: translateY(-50%);\n    left: 20px;\n  }\n  & .openui-chart-horizontal-scroll-button--right {\n    top: -23px;\n    transform: translateY(-50%);\n    right: 0px;\n  }\n  & .openui-chart-horizontal-scroll-button--disabled {\n    visibility: hidden;\n    cursor: not-allowed;\n    transition: visibility 0.1s linear;\n  }\n",
+      "bodySha256": "e399c703b13760e081b95402e832befa7a1c16d7c1416bbed375eba02a48d5a9",
+      "tag": "css",
+      "sourceSha256": "aca192524ccbd520c078731826d78e98a60e19a0a41ef1582914025ce1481655",
+      "target": "openui-chart-horizontal-scroll-controls-root"
+    },
+    {
+      "file": "shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts",
+      "symbol": "rootClass",
+      "line": 2,
+      "body": "\n  & {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    align-items: center;\n    width: 36px;\n    height: calc(100% - 44px);\n    flex-shrink: 0;\n    padding-left: var(--openui-space-2xs, 4px);\n  }\n  & .openui-chart-vertical-scroll-button {\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    pointer-events: auto;\n  }\n  & .openui-chart-vertical-scroll-button--disabled {\n    visibility: hidden;\n    cursor: not-allowed;\n    transition: visibility 0.1s linear;\n  }\n",
+      "bodySha256": "5d5a33d8b4bf183e505df9f71dd865664301cd3f2e9d061f55a8d8d152db30a8",
+      "tag": "css",
+      "sourceSha256": "372e80140ef2ec8ae0409c6a34949294720143d4f215032aae16fc96f6a7348e",
+      "target": "openui-chart-vertical-scroll-controls-root"
+    },
+    {
+      "file": "shared/chartBase.styles.ts",
+      "symbol": "emptyClass",
+      "line": 2,
+      "body": "\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 200px;\n  & :where(.openui-chart-empty-text) {\n    font: var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n",
+      "bodySha256": "6cb1e28abd17950e2760026a739bfabc50d0ddbe7908a022c00dde2300ae9f4f",
+      "tag": "css",
+      "sourceSha256": "46784aa1cd2d9e14bfc4ad385ac7010650e41447d4ba63da8d3d99454efd6c68",
+      "target": "openui-chart-empty-root"
+    },
+    {
+      "file": "shared/chartBase.styles.ts",
+      "symbol": "yAxisLabelClass",
+      "line": 14,
+      "body": "\n  font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  padding-bottom: var(--openui-space-s, 8px);\n",
+      "bodySha256": "bc637caca289e9abdb2e8f468ddd2200d02d6ba6d965fefb9bf6b5ad698e644e",
+      "tag": "css",
+      "sourceSha256": "46784aa1cd2d9e14bfc4ad385ac7010650e41447d4ba63da8d3d99454efd6c68",
+      "target": "openui-chart-y-axis-label-root"
+    },
+    {
+      "file": "shared/chartBase.styles.ts",
+      "symbol": "xAxisLabelClass",
+      "line": 21,
+      "body": "\n  font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n  letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n  font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  text-align: center;\n",
+      "bodySha256": "48a9bb8ddfb30686cc836dba6ea9f853fea3549a37290ecae677355edf415ef6",
+      "tag": "css",
+      "sourceSha256": "46784aa1cd2d9e14bfc4ad385ac7010650e41447d4ba63da8d3d99454efd6c68",
+      "target": "openui-chart-x-axis-label-root"
+    },
+    {
+      "file": "shared/core/DefaultLegend/defaultLegend.styles.ts",
+      "symbol": "rootClass",
+      "line": 2,
+      "body": "\n  & {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    gap: var(--openui-space-s, 8px);\n  }\n  & :where(.openui-chart-legend-axis-label-container) {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: var(--openui-space-m, 12px);\n    flex-wrap: wrap;\n  }\n  & :where(.openui-chart-legend-axis-label) {\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n  & :where(.openui-chart-legend-axis-label-text) {\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  & :where(.openui-chart-legend) {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: var(--openui-space-m, 12px);\n    flex-wrap: wrap;\n  }\n  &:where(.openui-chart-legend--bottom) {\n    padding-top: var(--openui-space-m, 12px);\n  }\n  & :where(.openui-chart-legend--collapsed) {\n    flex-wrap: nowrap;\n    overflow: hidden;\n  }\n  & :where(.openui-chart-legend--expanded) {\n    flex-wrap: wrap;\n  }\n  & :where(.openui-chart-legend-item) {\n    display: flex;\n    align-items: center;\n    gap: var(--openui-space-xs, 6px);\n  }\n  & svg:where(.openui-chart-legend-item svg) {\n    height: 10px;\n    width: 10px;\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  & :where(.openui-chart-legend-item-indicator) {\n    height: 10px;\n    width: 10px;\n    flex-shrink: 0;\n    border-radius: var(--openui-radius-2xs, 2px);\n    background-color: var(--color-bg);\n  }\n  & :where(.openui-chart-legend-item-label) {\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  & :where(.openui-chart-legend-toggle-button) {\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    padding-left: var(--openui-space-2xs, 4px);\n    padding-right: var(--openui-space-3xs, 2px);\n  }\n  & :where(.openui-chart-legend-toggle-button-icon) {\n    width: 1em;\n    height: 1em;\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  & :where(.openui-chart-legend-item-label-container) {\n    display: flex;\n    align-items: center;\n    gap: var(--openui-space-2xs, 4px);\n  }\n  & :where(.openui-chart-legend-item-percentage) {\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n",
+      "bodySha256": "74be88ddc4939ce09f8f300cbd552e1008377fe4acff376ae33c32cd6e417f56",
+      "tag": "css",
+      "sourceSha256": "0cd25d3d032eb641267ae46f5c4487a5c69c64a1dca28efd8c4d264c596fb524",
+      "target": "openui-chart-default-legend-root"
+    },
+    {
+      "file": "shared/core/PortalTooltip/portalTooltip.styles.ts",
+      "symbol": "portalClass",
+      "line": 2,
+      "body": "\n  & {\n    pointer-events: none;\n    z-index: 1000;\n    position: absolute;\n  }\n",
+      "bodySha256": "dab48fb18a50688c4f9d938f616cd7d35cfc54de4109f8d0227ef89a587c0fee",
+      "tag": "css",
+      "sourceSha256": "3baf1d2c63848f897e97d230bf06e45757170a9c05e046c07ce75c5860932309",
+      "target": "openui-chart-tooltip-portal-root"
+    },
+    {
+      "file": "shared/core/PortalTooltip/portalTooltip.styles.ts",
+      "symbol": "tooltipClass",
+      "line": 9,
+      "body": "\n  & {\n    display: grid;\n    align-items: start;\n    min-width: 128px;\n    max-width: 240px;\n    gap: var(--openui-space-xs, 6px);\n    padding: var(--openui-space-xs, 6px);\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    border-radius: var(--openui-radius-l, 10px);\n    border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    box-shadow: var(\n      --openui-shadow-s,\n      0 1px 3px -2px oklch(0 0 0 / 0.02),\n      0 2px 5px -2px oklch(0 0 0 / 0.04)\n    );\n  }\n  & :where(.openui-chart-tooltip-label) {\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    overflow-wrap: break-word;\n    word-break: break-word;\n  }\n  & :where(.openui-chart-tooltip-label-heavy) {\n    font: var(--openui-text-label-xs-heavy, 560 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-heavy-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-medium, \"wght\" 560);\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    overflow-wrap: break-word;\n    word-break: break-word;\n  }\n  & :where(.openui-chart-tooltip-content) {\n    display: grid;\n    align-items: start;\n    min-width: 128px;\n    gap: var(--openui-space-xs, 6px);\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n  }\n  & :where(.openui-chart-tooltip-content-item) {\n    display: flex;\n    width: 100%;\n    flex-wrap: wrap;\n    gap: var(--openui-space-xs, 6px);\n    align-items: flex-start;\n  }\n  & :where(.openui-chart-tooltip-content-item--dot) {\n    align-items: center;\n  }\n  & svg:where(.openui-chart-tooltip-content-item svg) {\n    height: 10px;\n    width: 10px;\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n  & :where(.openui-chart-tooltip-content-indicator) {\n    flex-shrink: 0;\n    border-radius: var(--openui-radius-2xs, 2px);\n  }\n  & :where(.openui-chart-tooltip-content-indicator--dot) {\n    height: 10px;\n    width: 10px;\n    background-color: var(--color-bg);\n    border-color: var(--color-border);\n  }\n  & :where(.openui-chart-tooltip-content-indicator--line) {\n    width: 4px;\n    background-color: var(--color-bg);\n    border-color: var(--color-border);\n  }\n  & :where(.openui-chart-tooltip-content-indicator--dashed) {\n    width: 0;\n    border: 1.5px dashed var(--color-border);\n    background-color: transparent;\n  }\n  & :where(.openui-chart-tooltip-content-indicator--two-items) {\n    margin-top: 2px;\n  }\n  & :where(.openui-chart-tooltip-content-value-wrapper) {\n    display: flex;\n    flex: 1;\n    gap: var(--openui-space-s, 8px);\n    justify-content: space-between;\n    line-height: 1;\n  }\n  & :where(.openui-chart-tooltip-content-value-wrapper--nested) {\n    align-items: flex-end;\n  }\n  & :where(.openui-chart-tooltip-content-value-wrapper--standard) {\n    align-items: center;\n  }\n  & :where(.openui-chart-tooltip-content-value-wrapper--vertical) {\n    flex-direction: column;\n    align-items: flex-start;\n    justify-content: flex-start;\n    gap: var(--openui-space-2xs, 4px);\n  }\n  & :where(.openui-chart-tooltip-content-label) {\n    display: grid;\n    gap: var(--openui-space-xs, 6px);\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n  }\n  & span:where(.openui-chart-tooltip-content-label span) {\n    display: block;\n    overflow-wrap: break-word;\n    word-break: break-word;\n  }\n  & :where(.openui-chart-tooltip-content-value) {\n    font-variant-numeric: tabular-nums;\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n  }\n  & :where(.openui-chart-tooltip-content-item-separator) {\n    width: 100%;\n    height: 1px;\n    background-color: var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    margin: 0;\n  }\n  &\n    .openui-chart-tooltip-content-item:last-child\n    :where(.openui-chart-tooltip-content-item-separator) {\n    display: none;\n  }\n  & :where(.openui-chart-tooltip-content-view-more) {\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    text-align: left;\n    overflow-wrap: break-word;\n    word-break: break-word;\n  }\n",
+      "bodySha256": "b8ccc14e88bf2dbbd4be2e403fc2cf76af5fe6920ce417ea27ef175ffd2e31d6",
+      "tag": "css",
+      "sourceSha256": "3baf1d2c63848f897e97d230bf06e45757170a9c05e046c07ce75c5860932309",
+      "target": "openui-chart-tooltip-root"
+    },
+    {
+      "file": "shared/core/StackedLegend/stackedLegend.styles.ts",
+      "symbol": "rootClass",
+      "line": 2,
+      "body": "\n  & {\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    height: 100%;\n  }\n  & :where(.openui-stacked-legend-header) {\n    width: 100%;\n    box-sizing: border-box;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    gap: 10px;\n    padding: 0 var(--openui-space-xs, 6px) var(--openui-space-xs, 6px) var(--openui-space-l, 18px);\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n  & :where(.openui-stacked-legend-header-buttons) {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    gap: var(--openui-space-xs, 6px);\n  }\n  & :where(.openui-stacked-legend-header-title) {\n    font: var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n  & :where(.openui-stacked-legend-scroll-button) {\n    z-index: 100;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    cursor: pointer;\n  }\n  & :where(.openui-stacked-legend) {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content: safe center;\n    min-width: 200px;\n    overflow-y: scroll;\n    height: 100%;\n    scrollbar-width: none;\n    -ms-overflow-style: none;\n    scroll-behavior: smooth;\n  }\n  & :where(.openui-stacked-legend__item) {\n    width: 100%;\n    box-sizing: border-box;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    gap: 10px;\n    padding: 4px 8px;\n    border-radius: var(--openui-radius-m, 8px);\n    transition: all 0.2s ease-in-out;\n    height: 32px;\n    flex-shrink: 0;\n  }\n  & :hover:where(.openui-stacked-legend__item) {\n    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n  }\n  & :where(.openui-stacked-legend__item--active) {\n    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n  }\n  & :where(.openui-stacked-legend__item-label) {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    gap: 8px;\n    min-width: 0;\n    flex: 1;\n  }\n  & :where(.openui-stacked-legend__item-color-container) {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n    height: 100%;\n    width: 32px;\n    flex-shrink: 0;\n  }\n  & :where(.openui-stacked-legend__item-color) {\n    width: 10px;\n    height: 10px;\n    border-radius: 2px;\n    transition: all 0.2s ease-in-out;\n  }\n  & .openui-stacked-legend__item:hover :where(.openui-stacked-legend__item-color) {\n    transform: scale(1.2);\n  }\n  & .openui-stacked-legend__item--active :where(.openui-stacked-legend__item-color) {\n    transform: scale(1.3);\n  }\n  & :where(.openui-stacked-legend__item-label-text) {\n    font: var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    transition: color 0.2s ease-in-out;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    min-width: 0;\n  }\n  & :where(.openui-stacked-legend__item-value) {\n    font: var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    transition: all 0.2s ease-in-out;\n    flex-shrink: 0;\n  }\n  & :where(.openui-stacked-legend-show-more-button) {\n    width: 100%;\n    justify-content: center;\n    margin-top: var(--openui-space-2xs, 4px);\n  }\n  & :where(.openui-stacked-legend-separator) {\n    margin: var(--openui-space-2xs, 4px) 0;\n  }\n",
+      "bodySha256": "e6b34cc598e397d1d42d15bd660e190a5b4151c2226eef7599e77eaf4893b76f",
+      "tag": "css",
+      "sourceSha256": "aad727aa5bdd58d7f8c3db7a4d732bc2a464f7faba3477b8f702f78c20f7f3ca",
+      "target": "openui-chart-stacked-legend-root"
+    },
+    {
+      "file": "shared/core/StackedLegend/stackedLegend.styles.ts",
+      "symbol": "layoutClass",
+      "line": 130,
+      "body": "\n  & {\n    display: flex;\n    position: relative;\n    gap: 20px;\n    align-items: center;\n  }\n  &:where(.openui-chart-with-stacked-legend--column) {\n    flex-direction: column;\n  }\n  &:where(.openui-chart-with-stacked-legend--row) {\n    flex-direction: row;\n    min-height: 296px;\n  }\n  & :where(.openui-chart-with-stacked-legend__chart) {\n    width: 100%;\n    min-width: 0;\n  }\n  & :where(.openui-chart-with-stacked-legend__legend) {\n    display: flex;\n    justify-content: center;\n    width: 100%;\n  }\n  &.openui-chart-with-stacked-legend--column :where(.openui-chart-with-stacked-legend__legend) {\n    align-items: flex-start;\n  }\n  &.openui-chart-with-stacked-legend--row :where(.openui-chart-with-stacked-legend__chart) {\n    flex: 1;\n  }\n  &.openui-chart-with-stacked-legend--row :where(.openui-chart-with-stacked-legend__legend) {\n    flex: 1;\n    min-width: 0;\n    height: 296px;\n    align-items: center;\n  }\n  &.openui-chart-with-stacked-legend--row\n    .openui-chart-with-stacked-legend__legend\n    :where(.openui-stacked-legend-container) {\n    justify-content: center;\n  }\n  &.openui-chart-with-stacked-legend--row\n    .openui-chart-with-stacked-legend__legend\n    :where(.openui-stacked-legend) {\n    height: auto;\n    max-height: 100%;\n  }\n",
+      "bodySha256": "cb41d345ff0cd8e6748e50399bb32ec14667d5afc784cb24a8352963d9729fc2",
+      "tag": "css",
+      "sourceSha256": "aad727aa5bdd58d7f8c3db7a4d732bc2a464f7faba3477b8f702f78c20f7f3ca",
+      "target": "openui-chart-stacked-legend-layout-root"
+    },
+    {
+      "file": "shared/core/StackedLegend/stackedLegend.styles.ts",
+      "symbol": "scrollbarClass",
+      "line": 178,
+      "body": "\n  &::-webkit-scrollbar {\n    display: none;\n  }\n",
+      "bodySha256": "63d191bd1bf608c5a3ad5cba1f2e99340806b7949a13a259a9664a885e54826b",
+      "tag": "css",
+      "sourceSha256": "aad727aa5bdd58d7f8c3db7a4d732bc2a464f7faba3477b8f702f78c20f7f3ca",
+      "target": "openui-chart-stacked-legend-scrollbar"
+    },
+    {
+      "file": "shared/mini/miniChart.styles.ts",
+      "symbol": "rootClass",
+      "line": 3,
+      "body": "\n  & {\n    position: relative;\n    aspect-ratio: 1/1;\n    min-width: 100px;\n    min-height: 100px;\n  }\n  & > svg {\n    display: block;\n  }\n  &:where(.openui-mini-chart--clickable) {\n    cursor: pointer;\n  }\n  & :where(.openui-mini-line-chart-point) {\n    fill: var(--openui-background, oklch(0.97 0 89.876 / 1));\n  }\n  @media (prefers-reduced-motion: no-preference) {\n    & :where(.openui-mini-chart-mark--animated) {\n      opacity: 0;\n      animation: ${fadeAppearAnimation} 0.6s ease-out forwards;\n    }\n  }\n",
+      "bodySha256": "50c385902185c71c0d87733f463ef6c66f7b9a5e806ddcaa33e261f1f4e3e87e",
+      "tag": "css",
+      "sourceSha256": "3c48780f09a59db0b959eba6fd5443f88e254365dde22d0797d71044ab0e676f",
+      "target": "openui-mini-chart-root"
+    }
+  ],
+  "keyframes": [
+    {
+      "file": "shared/animations/drawLine.styles.ts",
+      "symbol": "drawLineAnimation",
+      "line": 2,
+      "body": "\n  to {\n    stroke-dashoffset: 0;\n  }\n",
+      "bodySha256": "79f68fda6ced0f584540b9e65f46efb7c1599a350ccc16209c9f66d293dcf657",
+      "tag": "keyframes",
+      "sourceSha256": "43b459a448ce9839aa3213403f51a87cd30e690303c3afd68e312f5bd6da93b8"
+    },
+    {
+      "file": "shared/animations/fadeAppear.styles.ts",
+      "symbol": "fadeAppearAnimation",
+      "line": 2,
+      "body": "\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n",
+      "bodySha256": "28244dd4f1f149527349698932e080cec6f2a42364446b2cf0618e9c8be12035",
+      "tag": "keyframes",
+      "sourceSha256": "59be28a388e81a71b0962984f07c94ced09b6b22cb5a84e71aad59a9738399d4"
+    }
+  ],
+  "callers": [
+    {
+      "file": "AreaChart/AreaChart.tsx",
+      "import": "import { emptyClass } from \"../shared/chartBase.styles\";",
+      "styleFile": "shared/chartBase.styles.ts",
+      "symbols": [
+        "emptyClass"
+      ],
+      "sourceSha256": "a2454be2e39cb1cbdc748f5ecbd1e751c4fac071fcdbd79f159f61e001aa0d3c",
+      "outsideShared": true
+    },
+    {
+      "file": "BarChart/BarChart.tsx",
+      "import": "import { emptyClass } from \"../shared/chartBase.styles\";",
+      "styleFile": "shared/chartBase.styles.ts",
+      "symbols": [
+        "emptyClass"
+      ],
+      "sourceSha256": "7d7890126485ca97146ee781c81975b180fa801ced29e464259399c499bcd850",
+      "outsideShared": true
+    },
+    {
+      "file": "LineChart/LineChart.tsx",
+      "import": "import { emptyClass } from \"../shared/chartBase.styles\";",
+      "styleFile": "shared/chartBase.styles.ts",
+      "symbols": [
+        "emptyClass"
+      ],
+      "sourceSha256": "5b7fa4ccc67ec2c655c98bb69d990087577943b823060d18f00007441b386041",
+      "outsideShared": true
+    },
+    {
+      "file": "shared/cartesian/ScrollButtonsHorizontal/ScrollButtonsHorizontal.tsx",
+      "import": "import { rootClass } from \"./scrollButtonsHorizontal.styles\";",
+      "styleFile": "shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts",
+      "symbols": [
+        "rootClass"
+      ],
+      "sourceSha256": "7ed7223cb9c6a6ebbb4c30ac7d2c8bb5b8f6188e628ed74a63bd43a5110b210b",
+      "outsideShared": false
+    },
+    {
+      "file": "shared/cartesian/ScrollButtonsVertical/ScrollButtonsVertical.tsx",
+      "import": "import { rootClass } from \"./scrollButtonsVertical.styles\";",
+      "styleFile": "shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts",
+      "symbols": [
+        "rootClass"
+      ],
+      "sourceSha256": "dce6d54e061b3e12a108404a078476a4ee35b471b8a6d602b23c64bd4f7f6027",
+      "outsideShared": false
+    },
+    {
+      "file": "shared/cartesian/layouts/CartesianChartLayout.tsx",
+      "import": "import { xAxisLabelClass, yAxisLabelClass } from \"../../chartBase.styles\";",
+      "styleFile": "shared/chartBase.styles.ts",
+      "symbols": [
+        "xAxisLabelClass",
+        "yAxisLabelClass"
+      ],
+      "sourceSha256": "428e3a3b38642d7e3c5795d7edaa9218d449e3541f8576e4dbb211371e0c9607",
+      "outsideShared": false
+    },
+    {
+      "file": "shared/core/ChartShell.tsx",
+      "import": "import { emptyClass } from \"../chartBase.styles\";",
+      "styleFile": "shared/chartBase.styles.ts",
+      "symbols": [
+        "emptyClass"
+      ],
+      "sourceSha256": "b790fcaa170c083cd2551c4f5e2a2a6ea4badcd36a432538ba40f4fc6a2701c5",
+      "outsideShared": false
+    },
+    {
+      "file": "shared/core/DefaultLegend/DefaultLegend.tsx",
+      "import": "import { rootClass } from \"./defaultLegend.styles\";",
+      "styleFile": "shared/core/DefaultLegend/defaultLegend.styles.ts",
+      "symbols": [
+        "rootClass"
+      ],
+      "sourceSha256": "6f383188c2c610834a7b2ae1517143d823303c1cf4c978fcbfcaf9829a8057fb",
+      "outsideShared": false
+    },
+    {
+      "file": "shared/core/PortalTooltip/ChartTooltip.tsx",
+      "import": "import { portalClass, tooltipClass } from \"./portalTooltip.styles\";",
+      "styleFile": "shared/core/PortalTooltip/portalTooltip.styles.ts",
+      "symbols": [
+        "portalClass",
+        "tooltipClass"
+      ],
+      "sourceSha256": "71bc42f854911ec76681f6b8d8adaedbb5722a06ebda262009bd15742625e655",
+      "outsideShared": false
+    },
+    {
+      "file": "shared/core/StackedLegend/ChartWithStackedLegend.tsx",
+      "import": "import { layoutClass } from \"./stackedLegend.styles\";",
+      "styleFile": "shared/core/StackedLegend/stackedLegend.styles.ts",
+      "symbols": [
+        "layoutClass"
+      ],
+      "sourceSha256": "2aee700367ebfe31a56300de709c5a26bddaf437c854c927b78b12e8a8df71e1",
+      "outsideShared": false
+    },
+    {
+      "file": "shared/core/StackedLegend/StackedLegendView.tsx",
+      "import": "import { rootClass, scrollbarClass } from \"./stackedLegend.styles\";",
+      "styleFile": "shared/core/StackedLegend/stackedLegend.styles.ts",
+      "symbols": [
+        "rootClass",
+        "scrollbarClass"
+      ],
+      "sourceSha256": "ec657dd5fcc77f5b20c4c4a8e89f48f669e95a43e1f4cc14f1546d5de2238d2f",
+      "outsideShared": false
+    },
+    {
+      "file": "shared/mini/MiniChartFrame.tsx",
+      "import": "import { rootClass } from \"./miniChart.styles\";",
+      "styleFile": "shared/mini/miniChart.styles.ts",
+      "symbols": [
+        "rootClass"
+      ],
+      "sourceSha256": "9a578a617d2e388fc02b4626aee0a74b50e1c1c2106eb59ba124051db9187011",
+      "outsideShared": false
+    }
+  ],
+  "canonicalAliasCollisions": [],
+  "limits": "Literal/openui-prefix source hook audit, not proof of every dynamic class. Callers attach existing exports; no caller edits required. Source-only; build/browser/types not run while W1 owns window."
+}

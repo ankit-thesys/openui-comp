@@ -1,0 +1,26 @@
+[
+  {
+    "phase": "extra",
+    "exitCode": 0,
+    "seconds": 86.91149306297302,
+    "checks": 319,
+    "passes": 319,
+    "failures": []
+  },
+  {
+    "phase": "signed",
+    "exitCode": 0,
+    "seconds": 19.38932991027832,
+    "checks": 132,
+    "passes": 132,
+    "failures": []
+  },
+  {
+    "phase": "motion",
+    "exitCode": 0,
+    "seconds": 47.12719392776489,
+    "checks": 180,
+    "passes": 180,
+    "failures": []
+  }
+]

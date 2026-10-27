@@ -1,0 +1,478 @@
+{
+  "baselineHead": "75f69041891147d52dc0f0d2c4b21a048e575aa8",
+  "sourceOnly": true,
+  "noBuildOrBrowser": true,
+  "registrationCounts": {
+    "css": 25,
+    "keyframes": 9
+  },
+  "styles": [
+    {
+      "file": "components/Charts/AreaChart/areaChart.styles.ts",
+      "sourceSHA256": "d623e156d5743442f4b4de249c340d7a0ac5bcba874e266b2adda07563631dcf",
+      "registrations": [
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 17,
+          "bodySHA256": "1d0d6826b90bbac3fabc6258c0c8421f10d12f07350d5523a84fada20c3801ac"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/AreaChart/AreaChart.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 1,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/BarChart/barChart.styles.ts",
+      "sourceSHA256": "a5051e634c2650efffc8e4498009981fc56285d54f2048880d2f15ade0cb036c",
+      "registrations": [
+        {
+          "symbol": "grow",
+          "kind": "keyframes",
+          "line": 12,
+          "bodySHA256": "7bdb75f81cb0f386ce8df77bb3958c0057526de758436299c62424be0722cfe7"
+        },
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 20,
+          "bodySHA256": "3198ea5441c6cbf855d23539436ab1c75bef508d1dc6f4bce59c0624eda76ace"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/BarChart/BarChart.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 1,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/BarChart/horizontalBarChart.styles.ts",
+      "sourceSHA256": "4065d9bfda3454e55e675ab28597b8e16365de7de919d71bff861e117623fc4e",
+      "registrations": [
+        {
+          "symbol": "grow",
+          "kind": "keyframes",
+          "line": 5,
+          "bodySHA256": "354da30bdb62392a755a0f17e44fdb552ac7efcd421cd243e47815ee86bf5614"
+        },
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 13,
+          "bodySHA256": "eb03fd4891c7b038c007fb5825234cb2fe98f8c01713fa20ced38f460e47c49d"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/BarChart/parts/HorizontalBarChartImpl.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 1,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts",
+      "sourceSHA256": "a6423209000ea7a73ea25d30353c82dfbc9cf3cd7ff78267af0b97769ae7cb7e",
+      "registrations": [
+        {
+          "symbol": "cellIn",
+          "kind": "keyframes",
+          "line": 2,
+          "bodySHA256": "28244dd4f1f149527349698932e080cec6f2a42364446b2cf0618e9c8be12035"
+        },
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 10,
+          "bodySHA256": "0c59d8a34a98db114496ecaca6d5a8876e4fd96c2e906836684cc8ad159fe591"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/CalendarHeatmap/CalendarHeatmap.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 2,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/FunnelChart/funnelChart.styles.ts",
+      "sourceSHA256": "ed1cee8b48fc16625f0c68cd961995693ce275bd64e9737e28ffc87c8b2a0d2b",
+      "registrations": [
+        {
+          "symbol": "appear",
+          "kind": "keyframes",
+          "line": 2,
+          "bodySHA256": "f1475c64440ebf8a58a68c0ede4f057707619e2d28fcbb57a7707f7daf8f75f2"
+        },
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 12,
+          "bodySHA256": "63389dedfb60dfcbdd6a78326a17f651e2cf1435ea402c56a3fe4b89e0507f10"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/FunnelChart/FunnelChart.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 1,
+      "printMediaBlocks": 1,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/HeatmapChart/heatmapChart.styles.ts",
+      "sourceSHA256": "69fbf1ae9cf94f09d887e40e60a2993a5e9fe943be27c743fee6dc4c2560d8b0",
+      "registrations": [
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 10,
+          "bodySHA256": "1636c1923cd4da0edeefd831d5adfc60b8f8fdb6993eb67ca446d094518d4734"
+        },
+        {
+          "symbol": "divergingRampClass",
+          "kind": "css",
+          "line": 70,
+          "bodySHA256": "4c34094e787be5a8a2ed13349be1e1677798093db9a875fa9691830b62c66e70"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/HeatmapChart/HeatmapChart.tsx",
+        "components/Charts/HeatmapChart/parts/HeatmapColorScale.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 1,
+      "printMediaBlocks": 1,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/LineChart/lineChart.styles.ts",
+      "sourceSHA256": "be6889d776bef224fef7204e820122ef94a55228c97584b41e9a7db7e937cb82",
+      "registrations": [
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 16,
+          "bodySHA256": "1046c60751e8b65114bb81c3074887ad16123a144ace24e462bd0d714ff72fed"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/LineChart/LineChart.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 1,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/PieChart/pieChart.styles.ts",
+      "sourceSHA256": "8c4f49b34bf03bc700ab2e28c0d98d8b1b2e057b0610637a9e7f0438855823d2",
+      "registrations": [
+        {
+          "symbol": "appear",
+          "kind": "keyframes",
+          "line": 3,
+          "bodySHA256": "7c1618cc7ecea9f4436edc59ca278a216fb15e886e9ac38ee972b4102a293e80"
+        },
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 13,
+          "bodySHA256": "a65728b8e5f28f23015e8bcdbd58434ec72d36ccccc2e8088c935000b0562e53"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/PieChart/PieChart.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 1,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/RadarChart/radarChart.styles.ts",
+      "sourceSHA256": "50631dc1fab6bd6e467414370f2aebf46b00de0d3bf919a1307d926b681f3776",
+      "registrations": [
+        {
+          "symbol": "appear",
+          "kind": "keyframes",
+          "line": 9,
+          "bodySHA256": "7b125f72fdee5a16f0eebaebd43060b4c0e53d137b82fafd70356aff27174681"
+        },
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 19,
+          "bodySHA256": "4186444e384ac3c1be79d6913cfbfa4d954d708531f2c25c4d846f9302c2d30a"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/RadarChart/RadarChart.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 1,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/RadialChart/radialChart.styles.ts",
+      "sourceSHA256": "b00c5292e64e2635345619abc5ade43cfb7fe91c5800525c199c2ba33316fcf4",
+      "registrations": [
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 4,
+          "bodySHA256": "e062c16d6083c629962a23be2acaf7d105d1dd7ef3cfbe80e231c1fdb0ddb85e"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/RadialChart/RadialChart.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 1,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/ScatterChart/scatterChart.styles.ts",
+      "sourceSHA256": "96e87cafa68cc07aae609870e107d97a871974709acf89019b127340984e7b45",
+      "registrations": [
+        {
+          "symbol": "appear",
+          "kind": "keyframes",
+          "line": 4,
+          "bodySHA256": "445cc174626096a8b474744efe8e49c94e3d11de4d1f7ad91dc987e153829493"
+        },
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 13,
+          "bodySHA256": "53ab5c6c242ad566a2130dba67c2556d83e13326e9ae7e3d6cb5589c6f1c4709"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/ScatterChart/ScatterChart.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 1,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/SegmentedBar/segmentedBar.styles.ts",
+      "sourceSHA256": "9fc73ff3fa5df96da4fd56b6ee5a77aa4d4e92dc5fb5c67337fc54193c2e1028",
+      "registrations": [
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 2,
+          "bodySHA256": "be2c1374d835a0864a40afab4b9e18f58ab65137f121be56a54f9ddef9701022"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/SegmentedBar/SegmentedBar.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 0,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/shared/animations/drawLine.styles.ts",
+      "sourceSHA256": "43b459a448ce9839aa3213403f51a87cd30e690303c3afd68e312f5bd6da93b8",
+      "registrations": [
+        {
+          "symbol": "drawLineAnimation",
+          "kind": "keyframes",
+          "line": 2,
+          "bodySHA256": "79f68fda6ced0f584540b9e65f46efb7c1599a350ccc16209c9f66d293dcf657"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/AreaChart/areaChart.styles.ts",
+        "components/Charts/LineChart/lineChart.styles.ts"
+      ],
+      "reducedMotionNoPreferenceBlocks": 0,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/shared/animations/fadeAppear.styles.ts",
+      "sourceSHA256": "59be28a388e81a71b0962984f07c94ced09b6b22cb5a84e71aad59a9738399d4",
+      "registrations": [
+        {
+          "symbol": "fadeAppearAnimation",
+          "kind": "keyframes",
+          "line": 2,
+          "bodySHA256": "28244dd4f1f149527349698932e080cec6f2a42364446b2cf0618e9c8be12035"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/AreaChart/areaChart.styles.ts",
+        "components/Charts/HeatmapChart/heatmapChart.styles.ts",
+        "components/Charts/RadialChart/radialChart.styles.ts",
+        "components/Charts/shared/mini/miniChart.styles.ts"
+      ],
+      "reducedMotionNoPreferenceBlocks": 0,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts",
+      "sourceSHA256": "aca192524ccbd520c078731826d78e98a60e19a0a41ef1582914025ce1481655",
+      "registrations": [
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 2,
+          "bodySHA256": "e399c703b13760e081b95402e832befa7a1c16d7c1416bbed375eba02a48d5a9"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/shared/cartesian/ScrollButtonsHorizontal/ScrollButtonsHorizontal.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 0,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts",
+      "sourceSHA256": "372e80140ef2ec8ae0409c6a34949294720143d4f215032aae16fc96f6a7348e",
+      "registrations": [
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 2,
+          "bodySHA256": "5d5a33d8b4bf183e505df9f71dd865664301cd3f2e9d061f55a8d8d152db30a8"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/shared/cartesian/ScrollButtonsVertical/ScrollButtonsVertical.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 0,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/shared/chartBase.styles.ts",
+      "sourceSHA256": "46784aa1cd2d9e14bfc4ad385ac7010650e41447d4ba63da8d3d99454efd6c68",
+      "registrations": [
+        {
+          "symbol": "emptyClass",
+          "kind": "css",
+          "line": 2,
+          "bodySHA256": "6cb1e28abd17950e2760026a739bfabc50d0ddbe7908a022c00dde2300ae9f4f"
+        },
+        {
+          "symbol": "yAxisLabelClass",
+          "kind": "css",
+          "line": 14,
+          "bodySHA256": "bc637caca289e9abdb2e8f468ddd2200d02d6ba6d965fefb9bf6b5ad698e644e"
+        },
+        {
+          "symbol": "xAxisLabelClass",
+          "kind": "css",
+          "line": 21,
+          "bodySHA256": "48a9bb8ddfb30686cc836dba6ea9f853fea3549a37290ecae677355edf415ef6"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/AreaChart/AreaChart.tsx",
+        "components/Charts/BarChart/BarChart.tsx",
+        "components/Charts/LineChart/LineChart.tsx",
+        "components/Charts/shared/cartesian/layouts/CartesianChartLayout.tsx",
+        "components/Charts/shared/core/ChartShell.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 0,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/shared/core/DefaultLegend/defaultLegend.styles.ts",
+      "sourceSHA256": "0cd25d3d032eb641267ae46f5c4487a5c69c64a1dca28efd8c4d264c596fb524",
+      "registrations": [
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 2,
+          "bodySHA256": "74be88ddc4939ce09f8f300cbd552e1008377fe4acff376ae33c32cd6e417f56"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/shared/core/DefaultLegend/DefaultLegend.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 0,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts",
+      "sourceSHA256": "3baf1d2c63848f897e97d230bf06e45757170a9c05e046c07ce75c5860932309",
+      "registrations": [
+        {
+          "symbol": "portalClass",
+          "kind": "css",
+          "line": 2,
+          "bodySHA256": "dab48fb18a50688c4f9d938f616cd7d35cfc54de4109f8d0227ef89a587c0fee"
+        },
+        {
+          "symbol": "tooltipClass",
+          "kind": "css",
+          "line": 9,
+          "bodySHA256": "b8ccc14e88bf2dbbd4be2e403fc2cf76af5fe6920ce417ea27ef175ffd2e31d6"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/shared/core/PortalTooltip/ChartTooltip.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 0,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
+      "sourceSHA256": "aad727aa5bdd58d7f8c3db7a4d732bc2a464f7faba3477b8f702f78c20f7f3ca",
+      "registrations": [
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 2,
+          "bodySHA256": "e6b34cc598e397d1d42d15bd660e190a5b4151c2226eef7599e77eaf4893b76f"
+        },
+        {
+          "symbol": "layoutClass",
+          "kind": "css",
+          "line": 130,
+          "bodySHA256": "cb41d345ff0cd8e6748e50399bb32ec14667d5afc784cb24a8352963d9729fc2"
+        },
+        {
+          "symbol": "scrollbarClass",
+          "kind": "css",
+          "line": 178,
+          "bodySHA256": "63d191bd1bf608c5a3ad5cba1f2e99340806b7949a13a259a9664a885e54826b"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/shared/core/StackedLegend/ChartWithStackedLegend.tsx",
+        "components/Charts/shared/core/StackedLegend/StackedLegendView.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 0,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    },
+    {
+      "file": "components/Charts/shared/mini/miniChart.styles.ts",
+      "sourceSHA256": "3c48780f09a59db0b959eba6fd5443f88e254365dde22d0797d71044ab0e676f",
+      "registrations": [
+        {
+          "symbol": "rootClass",
+          "kind": "css",
+          "line": 3,
+          "bodySHA256": "50c385902185c71c0d87733f463ef6c66f7b9a5e806ddcaa33e261f1f4e3e87e"
+        }
+      ],
+      "directImporters": [
+        "components/Charts/shared/mini/MiniChartFrame.tsx"
+      ],
+      "reducedMotionNoPreferenceBlocks": 1,
+      "printMediaBlocks": 0,
+      "containsImportant": false
+    }
+  ],
+  "note": "Lexical template inventory including interpolation source text. Not compiler output, evaluated CSS or a computed-specificity proof. Dynamic CHART_CLASS_PREFIX hooks require actual DOM verification after freeze."
+}

@@ -1,0 +1,1 @@
+import React from'react';import{createRoot}from'react-dom/client';import{BarChart}from'@openuidev/react-components';const root=createRoot(document.querySelector('#app'));window.mount=()=>root.render(<BarChart data={[]} categoryKey="month" width={360} height={240}/>);window.mount();window.ready=true;

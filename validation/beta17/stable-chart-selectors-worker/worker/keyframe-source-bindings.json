@@ -1,0 +1,63 @@
+{
+  "base": "75f69041891147d52dc0f0d2c4b21a048e575aa8",
+  "candidate": "6662ff5424a5a43b509d5912cd85dd56871ace01",
+  "sourceOnly": true,
+  "keyframes": 9,
+  "records": [
+    {
+      "file": "components/Charts/BarChart/barChart.styles.ts",
+      "symbol": "grow",
+      "bodySha256": "7bdb75f81cb0f386ce8df77bb3958c0057526de758436299c62424be0722cfe7",
+      "matchesVerifierBaseline": true
+    },
+    {
+      "file": "components/Charts/BarChart/horizontalBarChart.styles.ts",
+      "symbol": "grow",
+      "bodySha256": "354da30bdb62392a755a0f17e44fdb552ac7efcd421cd243e47815ee86bf5614",
+      "matchesVerifierBaseline": true
+    },
+    {
+      "file": "components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts",
+      "symbol": "cellIn",
+      "bodySha256": "28244dd4f1f149527349698932e080cec6f2a42364446b2cf0618e9c8be12035",
+      "matchesVerifierBaseline": true
+    },
+    {
+      "file": "components/Charts/FunnelChart/funnelChart.styles.ts",
+      "symbol": "appear",
+      "bodySha256": "f1475c64440ebf8a58a68c0ede4f057707619e2d28fcbb57a7707f7daf8f75f2",
+      "matchesVerifierBaseline": true
+    },
+    {
+      "file": "components/Charts/PieChart/pieChart.styles.ts",
+      "symbol": "appear",
+      "bodySha256": "7c1618cc7ecea9f4436edc59ca278a216fb15e886e9ac38ee972b4102a293e80",
+      "matchesVerifierBaseline": true
+    },
+    {
+      "file": "components/Charts/RadarChart/radarChart.styles.ts",
+      "symbol": "appear",
+      "bodySha256": "7b125f72fdee5a16f0eebaebd43060b4c0e53d137b82fafd70356aff27174681",
+      "matchesVerifierBaseline": true
+    },
+    {
+      "file": "components/Charts/ScatterChart/scatterChart.styles.ts",
+      "symbol": "appear",
+      "bodySha256": "445cc174626096a8b474744efe8e49c94e3d11de4d1f7ad91dc987e153829493",
+      "matchesVerifierBaseline": true
+    },
+    {
+      "file": "components/Charts/shared/animations/drawLine.styles.ts",
+      "symbol": "drawLineAnimation",
+      "bodySha256": "79f68fda6ced0f584540b9e65f46efb7c1599a350ccc16209c9f66d293dcf657",
+      "matchesVerifierBaseline": true
+    },
+    {
+      "file": "components/Charts/shared/animations/fadeAppear.styles.ts",
+      "symbol": "fadeAppearAnimation",
+      "bodySha256": "28244dd4f1f149527349698932e080cec6f2a42364446b2cf0618e9c8be12035",
+      "matchesVerifierBaseline": true
+    }
+  ],
+  "note": "All nine source bodies match verifier baseline. Does not assert emitted IDs, media activation, timing or motion behavior."
+}

@@ -1,0 +1,1 @@
+import React from'react';import{createRoot}from'react-dom/client';import{Button}from'@openuidev/react-components';const root=createRoot(document.querySelector('#app'));window.mount=()=>root.render(<Button>Only button</Button>);window.mount();window.ready=true;

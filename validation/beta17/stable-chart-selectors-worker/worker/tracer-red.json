@@ -1,0 +1,12 @@
+{
+  "arm": "baseline",
+  "redExpected": true,
+  "checks": [
+    {
+      "name": "canonical filled AreaChart target exists",
+      "pass": false,
+      "actual": 0
+    }
+  ],
+  "hostImportIsolation": true
+}

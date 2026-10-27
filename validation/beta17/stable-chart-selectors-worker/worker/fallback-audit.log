@@ -1,0 +1,1 @@
+{'baseline': 'd1292715028f816bd6a0dcf92766ec7dd15350f4', 'candidate': '5e09b37c04a1a3be05b9447cf8b9effaf33a331f', 'allFallbackExpressionsUnchanged': True, 'comparison': 'CSS whitespace outside quoted strings normalized; raw indentation changes separately recorded', 'fileCount': 95, 'occurrences': 1444}

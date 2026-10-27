@@ -1,0 +1,32 @@
+{
+  "sourceCommit": "6662ff5424a5a43b509d5912cd85dd56871ace01",
+  "packageTree": "f34104d0425b0aaf8745700746edd1434c3aa80f",
+  "base": "75f69041891147d52dc0f0d2c4b21a048e575aa8",
+  "worktree": "/private/tmp/openui-chart-shared-w2",
+  "branch": "codex/stable-chart-shared",
+  "sourceOnly": true,
+  "buildTypesBrowser": "NOT RUN; W1 owns first exclusive window",
+  "scopeFiles": [
+    "shared/chartBase.styles.ts",
+    "shared/mini/miniChart.styles.ts",
+    "shared/core/DefaultLegend/defaultLegend.styles.ts",
+    "shared/core/PortalTooltip/portalTooltip.styles.ts",
+    "shared/core/StackedLegend/stackedLegend.styles.ts",
+    "shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts",
+    "shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts"
+  ],
+  "registrationCount": 12,
+  "preservedFallbacks": 109,
+  "directCallersUnchanged": 12,
+  "sharedKeyframeFilesUnchanged": 2,
+  "outsideSharedEdits": false,
+  "reviewStatus": {
+    "standards": "no actionable source-only findings",
+    "spec": "no actionable source-only findings",
+    "reports": [
+      "standards-review.md",
+      "spec-review.md"
+    ],
+    "runtimeAcceptance": "PENDING explicit window assignment and built-consumer checks"
+  }
+}

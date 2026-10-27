@@ -1,0 +1,44 @@
+[
+  {
+    "fixture": "button",
+    "baselineInjectedStyleTextBytes": 18230,
+    "candidateInjectedStyleTextBytes": 18230,
+    "deltaBytes": 0,
+    "note": "Actual combined inline style text at first use, including unchanged defaults; not heap or timing measurement."
+  },
+  {
+    "fixture": "mini",
+    "baselineInjectedStyleTextBytes": 11388,
+    "candidateInjectedStyleTextBytes": 11573,
+    "deltaBytes": 185,
+    "note": "Actual combined inline style text at first use, including unchanged defaults; not heap or timing measurement."
+  },
+  {
+    "fixture": "condensed",
+    "baselineInjectedStyleTextBytes": 41218,
+    "candidateInjectedStyleTextBytes": 44586,
+    "deltaBytes": 3368,
+    "note": "Actual combined inline style text at first use, including unchanged defaults; not heap or timing measurement."
+  },
+  {
+    "fixture": "pie",
+    "baselineInjectedStyleTextBytes": 41645,
+    "candidateInjectedStyleTextBytes": 43886,
+    "deltaBytes": 2241,
+    "note": "Actual combined inline style text at first use, including unchanged defaults; not heap or timing measurement."
+  },
+  {
+    "fixture": "empty",
+    "baselineInjectedStyleTextBytes": 41218,
+    "candidateInjectedStyleTextBytes": 44586,
+    "deltaBytes": 3368,
+    "note": "Actual combined inline style text at first use, including unchanged defaults; not heap or timing measurement."
+  },
+  {
+    "fixture": "stacked",
+    "baselineInjectedStyleTextBytes": 31903,
+    "candidateInjectedStyleTextBytes": 33351,
+    "deltaBytes": 1448,
+    "note": "Actual combined inline style text at first use, including unchanged defaults; not heap or timing measurement."
+  }
+]

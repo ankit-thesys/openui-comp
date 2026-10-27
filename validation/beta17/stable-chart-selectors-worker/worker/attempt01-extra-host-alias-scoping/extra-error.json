@@ -1,0 +1,88 @@
+{
+  "error": "Error: locator.evaluate: Error: strict mode violation: locator('.openui-stacked-legend') resolved to 2 elements:\n    1) <div class=\"openui-stacked-legend\">Host alias</div> aka locator('.openui-stacked-legend').first()\n    2) <div class=\"go2811413688 openui-stacked-legend\">…</div> aka getByText('Series 01.3%Series 12.6%')\n\nCall log:\n\u001b[2m  - waiting for locator('.openui-stacked-legend')\u001b[22m\n",
+  "checks": [
+    {
+      "name": "plain/before/baseline/calendar-real-highlight",
+      "pass": true,
+      "detail": [
+        "1"
+      ]
+    },
+    {
+      "name": "plain/before/baseline/inline-label-fill-retained",
+      "pass": true,
+      "detail": {
+        "before": "rgba(20, 24, 28, 0.85)",
+        "actual": "rgba(20, 24, 28, 0.85)",
+        "inline": "rgba(20, 24, 28, 0.85)"
+      }
+    },
+    {
+      "name": "plain/before/baseline/real-body-tooltip-theme",
+      "pass": false,
+      "detail": {
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "text": "Host alias",
+        "foreground": "oklch(0.994 0 89.876 / 1)",
+        "inBody": true
+      }
+    },
+    {
+      "name": "plain/before/baseline/horizontal/scroll-controls-present",
+      "pass": true
+    },
+    {
+      "name": "plain/before/baseline/horizontal/actual-scroll-advance",
+      "pass": true,
+      "detail": {
+        "before": true,
+        "after": false
+      }
+    },
+    {
+      "name": "plain/before/baseline/vertical/scroll-controls-present",
+      "pass": true
+    },
+    {
+      "name": "plain/before/baseline/vertical/actual-scroll-advance",
+      "pass": true,
+      "detail": {
+        "before": true,
+        "after": false
+      }
+    },
+    {
+      "name": "plain/before/baseline/legend-show-more-present",
+      "pass": true
+    },
+    {
+      "name": "plain/before/baseline/legend-keyboard-expand",
+      "pass": true
+    },
+    {
+      "name": "plain/before/baseline/legend-hide-state",
+      "pass": true,
+      "detail": {
+        "labelText": "Long series 0",
+        "state": {
+          "opacity": "0.3",
+          "text": "Long series 0"
+        }
+      }
+    },
+    {
+      "name": "plain/before/baseline/legend-restore-state",
+      "pass": true
+    },
+    {
+      "name": "plain/before/baseline/stacked-scroll-control",
+      "pass": true
+    }
+  ],
+  "captures": [],
+  "seen": []
+}

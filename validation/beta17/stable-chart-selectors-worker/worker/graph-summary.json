@@ -1,0 +1,92 @@
+[
+  {
+    "fixture": "browser",
+    "baselineStaticJSBytes": 3350541,
+    "candidateStaticJSBytes": 3358645,
+    "staticDeltaBytes": 8104,
+    "allReachableDeltaBytes": 8104,
+    "entryCSSBytesUnchanged": true,
+    "reachableOutputCountUnchanged": true
+  },
+  {
+    "fixture": "shared",
+    "baselineStaticJSBytes": 198184,
+    "candidateStaticJSBytes": 198184,
+    "staticDeltaBytes": 0,
+    "allReachableDeltaBytes": 8104,
+    "entryCSSBytesUnchanged": true,
+    "reachableOutputCountUnchanged": true
+  },
+  {
+    "fixture": "signed",
+    "baselineStaticJSBytes": 1458890,
+    "candidateStaticJSBytes": 1462882,
+    "staticDeltaBytes": 3992,
+    "allReachableDeltaBytes": 3992,
+    "entryCSSBytesUnchanged": true,
+    "reachableOutputCountUnchanged": true
+  },
+  {
+    "fixture": "small-button",
+    "baselineStaticJSBytes": 224549,
+    "candidateStaticJSBytes": 224549,
+    "staticDeltaBytes": 0,
+    "allReachableDeltaBytes": 0,
+    "entryCSSBytesUnchanged": true,
+    "reachableOutputCountUnchanged": true
+  },
+  {
+    "fixture": "small-condensed",
+    "baselineStaticJSBytes": 1425158,
+    "candidateStaticJSBytes": 1428221,
+    "staticDeltaBytes": 3063,
+    "allReachableDeltaBytes": 3063,
+    "entryCSSBytesUnchanged": true,
+    "reachableOutputCountUnchanged": true
+  },
+  {
+    "fixture": "small-empty",
+    "baselineStaticJSBytes": 1425024,
+    "candidateStaticJSBytes": 1428087,
+    "staticDeltaBytes": 3063,
+    "allReachableDeltaBytes": 3063,
+    "entryCSSBytesUnchanged": true,
+    "reachableOutputCountUnchanged": true
+  },
+  {
+    "fixture": "small-lazy",
+    "baselineStaticJSBytes": 193922,
+    "candidateStaticJSBytes": 193922,
+    "staticDeltaBytes": 0,
+    "allReachableDeltaBytes": 3301,
+    "entryCSSBytesUnchanged": true,
+    "reachableOutputCountUnchanged": true
+  },
+  {
+    "fixture": "small-mini",
+    "baselineStaticJSBytes": 250684,
+    "candidateStaticJSBytes": 250919,
+    "staticDeltaBytes": 235,
+    "allReachableDeltaBytes": 235,
+    "entryCSSBytesUnchanged": true,
+    "reachableOutputCountUnchanged": true
+  },
+  {
+    "fixture": "small-pie",
+    "baselineStaticJSBytes": 1392861,
+    "candidateStaticJSBytes": 1394387,
+    "staticDeltaBytes": 1526,
+    "allReachableDeltaBytes": 1526,
+    "entryCSSBytesUnchanged": true,
+    "reachableOutputCountUnchanged": true
+  },
+  {
+    "fixture": "small-stacked",
+    "baselineStaticJSBytes": 1299584,
+    "candidateStaticJSBytes": 1300594,
+    "staticDeltaBytes": 1010,
+    "allReachableDeltaBytes": 1010,
+    "entryCSSBytesUnchanged": true,
+    "reachableOutputCountUnchanged": true
+  }
+]

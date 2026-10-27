@@ -1,0 +1,4 @@
+from pathlib import Path
+import json,re,base64,hashlib
+r=Path('/private/tmp/openui-charts-w1-evidence');import sys
+folder=sys.argv[1];a=next((r/folder).glob('*.tgz'));c=r/'candidate-consumer';c.mkdir(exist_ok=True);j=json.loads((r/'baseline-consumer/package.json').read_text());j['dependencies']['@openuidev/react-components']='file:'+str(a);(c/'package.json').write_text(json.dumps(j,indent=2)+'\n');s=(r/'baseline-consumer/pnpm-lock.yaml').read_text().replace('baseline-archive/',folder+'/');v='sha512-'+base64.b64encode(hashlib.sha512(a.read_bytes()).digest()).decode();s,n=re.subn(r'resolution: \{integrity: sha512-[^\n,]+, tarball: file:../'+re.escape(folder)+'/', 'resolution: {integrity: '+v+', tarball: file:../'+folder+'/',s);assert n==1,n;(c/'pnpm-lock.yaml').write_text(s);print(hashlib.sha256(a.read_bytes()).hexdigest())

@@ -1,0 +1,1 @@
+import React from'react';import{MiniLineChart}from'@openuidev/react-components';export const View=()=><MiniLineChart data={[1,4,2]} size={140}/>;

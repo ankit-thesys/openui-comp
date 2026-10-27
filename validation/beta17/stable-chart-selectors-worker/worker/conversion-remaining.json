@@ -1,0 +1,110 @@
+[
+  {
+    "file": "packages/react-components/src/components/Charts/BarChart/barChart.styles.ts",
+    "family": "BarChart",
+    "symbol": "rootClass",
+    "line": 20,
+    "bodySHA256": "3198ea5441c6cbf855d23539436ab1c75bef508d1dc6f4bce59c0624eda76ace",
+    "body": "\n  ${cartesianContainer}\n  & :where(.openui-bar-chart-container-inner) {\n    ${cartesianContainerInner}\n  }\n  & :where(.openui-bar-chart-y-axis-container) {\n    ${cartesianYAxisContainer}\n  }\n  & :where(.openui-bar-chart-main-container) {\n    ${cartesianMainContainer}\n  }\n  & line:where(.openui-bar-chart-grid line) {\n    ${gridLine}\n  }\n  & line.openui-grid-zero-line:where(.openui-bar-chart-grid line) {\n    ${zeroGridLine}\n  }\n  & :where(.openui-bar-chart-y-tick, .openui-bar-chart-x-tick, .openui-bar-chart-x-tick-angled) {\n    ${svgTickLabel}\n  }\n  & :where(.openui-bar-chart-hover-highlight) {\n    fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    opacity: 0.04;\n    pointer-events: none;\n  }\n  & :where(.openui-bar-chart-internal-line) {\n    pointer-events: none;\n  }\n  @media (prefers-reduced-motion: no-preference) {\n    & :where(.openui-bar-chart-bar--animated) {\n      transform-box: fill-box;\n      transform-origin: center bottom;\n      animation: ${grow} 0.6s ease-out both;\n    }\n    & .openui-bar-chart-bar--negative:where(.openui-bar-chart-bar--animated) {\n      transform-origin: center top;\n    }\n  }\n",
+    "hook": "openui-bar-chart-root"
+  },
+  {
+    "file": "packages/react-components/src/components/Charts/BarChart/horizontalBarChart.styles.ts",
+    "family": "BarChart",
+    "symbol": "rootClass",
+    "line": 13,
+    "bodySHA256": "eb03fd4891c7b038c007fb5825234cb2fe98f8c01713fa20ced38f460e47c49d",
+    "body": "\n  position: relative;\n  width: 100%;\n  height: auto;\n  display: flex;\n  flex-direction: column;\n  & :where(.openui-horizontal-bar-chart-container-inner-wrapper) {\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    overflow: hidden;\n  }\n  & :where(.openui-horizontal-bar-chart-container-inner) {\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    width: 100%;\n    flex: 1;\n    min-width: 0;\n  }\n  & :where(.openui-horizontal-bar-chart-main-container) {\n    height: 100%;\n    overflow-y: auto;\n    &::-webkit-scrollbar {\n      display: none;\n    }\n    scrollbar-width: none;\n    ms-overflow-style: none;\n  }\n  & :where(.openui-horizontal-bar-chart-x-axis-container) {\n    flex-shrink: 0;\n    width: 100%;\n    box-sizing: border-box;\n    border-top: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    padding-top: var(--openui-space-2xs, 4px);\n  }\n  & :where(.openui-horizontal-bar-chart-category-label) {\n    display: flex;\n    align-items: center;\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    ${svgTickTypography}\n    overflow: hidden;\n    white-space: nowrap;\n    text-overflow: ellipsis;\n    width: 100%;\n    padding-left: var(--openui-space-m, 12px);\n    box-sizing: border-box;\n  }\n  & :where(.openui-horizontal-bar-chart-x-tick) {\n    ${svgTickLabel}\n  }\n  & line:where(.openui-horizontal-bar-chart-grid-vertical line) {\n    ${gridLine}\n  }\n  & :where(.openui-horizontal-bar-chart-internal-line) {\n    pointer-events: none;\n  }\n  & :where(.openui-horizontal-bar-chart-crosshair) {\n    fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    opacity: 0.04;\n    pointer-events: none;\n  }\n  @media (prefers-reduced-motion: no-preference) {\n    & :where(.openui-horizontal-bar-chart-bar--animated) {\n      transform-box: fill-box;\n      transform-origin: left center;\n      animation: ${grow} 0.6s ease-out both;\n    }\n    & .openui-horizontal-bar-chart-bar--negative:where(.openui-horizontal-bar-chart-bar--animated) {\n      transform-origin: right center;\n    }\n  }\n",
+    "hook": "openui-horizontal-bar-chart-root"
+  },
+  {
+    "file": "packages/react-components/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts",
+    "family": "CalendarHeatmap",
+    "symbol": "rootClass",
+    "line": 10,
+    "bodySHA256": "0c59d8a34a98db114496ecaca6d5a8876e4fd96c2e906836684cc8ad159fe591",
+    "body": "\n  & {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    width: 100%;\n    position: relative;\n  }\n\n  & :where(.openui-calendar-heatmap-month-label),\n  & :where(.openui-calendar-heatmap-weekday-label) {\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n\n  & :hover:where(.openui-calendar-heatmap-cell) {\n    stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    stroke-width: 1.5;\n  }\n\n  & :where(.openui-calendar-heatmap-cell--ghost) {\n    fill-opacity: 0.4;\n  }\n\n  @media (prefers-reduced-motion: no-preference) {\n    & :where(.openui-calendar-heatmap-cell--animated) {\n      opacity: 0;\n      animation: ${cellIn} 0.4s ease-out forwards;\n    }\n  }\n  &\n    [data-openui-highlight-level=\"0\"]\n    :not(.openui-calendar-heatmap-cell--level-0):where(.openui-calendar-heatmap-cell) {\n    fill-opacity: 0.3;\n  }\n\n  &\n    [data-openui-highlight-level=\"1\"]\n    :not(.openui-calendar-heatmap-cell--level-1):where(.openui-calendar-heatmap-cell) {\n    fill-opacity: 0.3;\n  }\n\n  &\n    [data-openui-highlight-level=\"2\"]\n    :not(.openui-calendar-heatmap-cell--level-2):where(.openui-calendar-heatmap-cell) {\n    fill-opacity: 0.3;\n  }\n\n  &\n    [data-openui-highlight-level=\"3\"]\n    :not(.openui-calendar-heatmap-cell--level-3):where(.openui-calendar-heatmap-cell) {\n    fill-opacity: 0.3;\n  }\n\n  &\n    [data-openui-highlight-level=\"4\"]\n    :not(.openui-calendar-heatmap-cell--level-4):where(.openui-calendar-heatmap-cell) {\n    fill-opacity: 0.3;\n  }\n\n  @media (prefers-reduced-motion: no-preference) {\n    & :where(.openui-calendar-heatmap-cell),\n    & :where(.openui-calendar-heatmap-legend-swatch-slot) {\n      transition:\n        fill-opacity 0.2s ease,\n        opacity 0.2s ease;\n    }\n  }\n  & :where(.openui-calendar-heatmap-separator) {\n    stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    stroke-width: 1;\n  }\n\n  & :where(.openui-calendar-heatmap-quarter-label) {\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    white-space: nowrap;\n    pointer-events: none;\n  }\n\n  & :where(.openui-calendar-heatmap-legend) {\n    display: flex;\n    align-items: center;\n    justify-content: flex-end;\n    gap: var(--openui-space-s, 8px);\n    width: 100%;\n    padding-top: var(--openui-space-m, 12px);\n  }\n  & :where(.openui-calendar-heatmap-legend-label) {\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n  & :where(.openui-calendar-heatmap-legend-swatches) {\n    display: flex;\n    align-items: center;\n    gap: var(--openui-space-3xs, 2px);\n  }\n  & :where(.openui-calendar-heatmap-legend-swatch-slot) {\n    display: inline-flex;\n    cursor: pointer;\n  }\n  & :where(.openui-calendar-heatmap-legend-swatch) {\n    display: block;\n    width: 12px;\n    height: 12px;\n    flex-shrink: 0;\n    border-radius: var(--openui-radius-2xs, 2px);\n  }\n  & :where(.openui-calendar-heatmap-legend-gradient) {\n    position: relative;\n    width: 60px;\n    height: 12px;\n    flex-shrink: 0;\n    border-radius: var(--openui-radius-2xs, 2px);\n  }\n  & :where(.openui-calendar-heatmap-legend-gradient-hit) {\n    position: absolute;\n    top: 0;\n    height: 100%;\n    cursor: pointer;\n  }\n",
+    "hook": "openui-calendar-heatmap-root"
+  },
+  {
+    "file": "packages/react-components/src/components/Charts/FunnelChart/funnelChart.styles.ts",
+    "family": "FunnelChart",
+    "symbol": "rootClass",
+    "line": 12,
+    "bodySHA256": "63389dedfb60dfcbdd6a78326a17f651e2cf1435ea402c56a3fe4b89e0507f10",
+    "body": "\n  & {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    width: 100%;\n    position: relative;\n  }\n\n  & :where(.openui-funnel-chart-ring) {\n    transition:\n      d 0.3s ease,\n      fill-opacity 0.2s ease;\n  }\n\n  & :where(.openui-funnel-chart-ring--springy) {\n    transform-box: fill-box;\n    transform-origin: center;\n  }\n\n  & :where(.openui-funnel-chart-ring--bloom-y) {\n    transform: scaleY(var(--funnel-ring-scale, 1));\n  }\n\n  & :where(.openui-funnel-chart-ring--bloom-x) {\n    transform: scaleX(var(--funnel-ring-scale, 1));\n  }\n\n  & :where(.openui-funnel-chart-stage) {\n    transition: filter 0.2s ease;\n  }\n\n  @media print {\n    & :where(.openui-funnel-chart-ring),\n    & :where(.openui-funnel-chart-stage) {\n      transition: none;\n    }\n  }\n  & :where(.openui-funnel-chart-value) {\n    font: var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    font-weight: 600;\n    font-variation-settings: normal;\n  }\n\n  & :where(.openui-funnel-chart-label) {\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n  }\n\n  & :where(.openui-funnel-chart-pct) {\n    font: var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif);\n    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);\n    font-variation-settings: var(--openui-font-variation-regular, \"wght\" 440);\n    fill: var(--openui-background, oklch(0.97 0 89.876 / 1));\n    font-weight: 700;\n    font-variation-settings: normal;\n  }\n\n  & :where(.openui-funnel-chart-pct-pill) {\n    fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n  }\n\n  @media (prefers-reduced-motion: no-preference) {\n    & :where(.openui-funnel-chart-stage--animated) {\n      opacity: 0;\n      transform-box: fill-box;\n      transform-origin: center;\n      animation: ${appear} 0.5s ease-out forwards;\n    }\n  }\n",
+    "hook": "openui-funnel-chart-root"
+  },
+  {
+    "file": "packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts",
+    "family": "HeatmapChart",
+    "symbol": "rootClass",
+    "line": 10,
+    "bodySHA256": "1636c1923cd4da0edeefd831d5adfc60b8f8fdb6993eb67ca446d094518d4734",
+    "body": "\n  ${centeredContainer}\n  & :where(.openui-heatmap-chart-x-tick), & :where(.openui-heatmap-chart-y-tick) {\n    ${svgTickLabel}\n  }\n  & :where(.openui-heatmap-chart-cell),\n  & :where(.openui-heatmap-chart-cell-label) {\n    transition: fill 0.2s ease;\n  }\n  @media print {\n    & :where(.openui-heatmap-chart-cell),\n    & :where(.openui-heatmap-chart-cell-label) {\n      transition: none;\n    }\n  }\n  & :hover:where(.openui-heatmap-chart-cell) {\n    stroke: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    stroke-width: 1.5;\n  }\n  & :where(.openui-heatmap-chart-cell-label) {\n    ${labelTypography}\n    pointer-events: none;\n    user-select: none;\n  }\n  & :where(.openui-heatmap-chart-cell--empty) {\n    fill: var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    fill-opacity: 0.35;\n  }\n  @media (prefers-reduced-motion: no-preference) {\n    & :where(.openui-heatmap-chart-cell--animated),\n    & :where(.openui-heatmap-chart-cell-label--animated) {\n      opacity: 0;\n      animation: ${fadeAppearAnimation} 0.4s ease-out forwards;\n    }\n  }\n  & :where(.openui-heatmap-chart-color-scale) {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    width: 100%;\n    padding: 6px 0 2px;\n  }\n  & :where(.openui-heatmap-chart-color-scale-label) {\n    ${labelTypography}\n    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));\n    white-space: nowrap;\n  }\n  & :where(.openui-heatmap-chart-color-scale-ramp) {\n    position: relative;\n    display: flex;\n    flex: 1;\n    height: 8px;\n    border-radius: 4px;\n    overflow: hidden;\n  }\n  & :where(.openui-heatmap-chart-color-scale-bucket) {\n    flex: 1;\n  }\n",
+    "hook": "openui-heatmap-chart-root"
+  },
+  {
+    "file": "packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts",
+    "family": "HeatmapChart",
+    "symbol": "divergingRampClass",
+    "line": 70,
+    "bodySHA256": "4c34094e787be5a8a2ed13349be1e1677798093db9a875fa9691830b62c66e70",
+    "body": "\n  &::after {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    top: 0;\n    bottom: 0;\n    width: 2px;\n    transform: translateX(-50%);\n    background: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));\n    opacity: 0.55;\n  }\n",
+    "hook": "openui-heatmap-chart-diverging-ramp-root"
+  },
+  {
+    "file": "packages/react-components/src/components/Charts/LineChart/lineChart.styles.ts",
+    "family": "LineChart",
+    "symbol": "rootClass",
+    "line": 16,
+    "bodySHA256": "1046c60751e8b65114bb81c3074887ad16123a144ace24e462bd0d714ff72fed",
+    "body": "\n  ${cartesianContainer}\n  & :where(.openui-line-chart-container-inner) {\n    ${cartesianContainerInner}\n  }\n  & :where(.openui-line-chart-y-axis-container) {\n    ${cartesianYAxisContainer}\n  }\n  & :where(.openui-line-chart-main-container) {\n    ${cartesianMainContainer}\n  }\n  & line:where(.openui-line-chart-grid line) {\n    ${gridLine}\n  }\n  & line.openui-grid-zero-line:where(.openui-line-chart-grid line) {\n    ${zeroGridLine}\n  }\n  & :where(.openui-line-chart-y-tick, .openui-line-chart-x-tick, .openui-line-chart-x-tick-angled) {\n    ${svgTickLabel}\n  }\n  & :where(.openui-line-chart-crosshair-line) {\n    ${crosshairLine}\n  }\n  & :where(.openui-line-chart-active-dot-outer) {\n    ${activeDotOuter}\n  }\n  & :where(.openui-line-chart-active-dot-inner) {\n    ${activeDotInner}\n  }\n  & :where(.openui-line-chart-line) {\n    fill: none;\n    stroke-width: 2;\n  }\n  & :where(.openui-line-chart-dot) {\n    stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    stroke-width: 1;\n  }\n  @media (prefers-reduced-motion: no-preference) {\n    & :where(.openui-line-chart-line--animated) {\n      stroke-dasharray: var(--path-length);\n      stroke-dashoffset: var(--path-length);\n      animation: ${drawLineAnimation} 1s ease-out forwards;\n    }\n  }\n",
+    "hook": "openui-line-chart-root"
+  },
+  {
+    "file": "packages/react-components/src/components/Charts/PieChart/pieChart.styles.ts",
+    "family": "PieChart",
+    "symbol": "rootClass",
+    "line": 13,
+    "bodySHA256": "a65728b8e5f28f23015e8bcdbd58434ec72d36ccccc2e8088c935000b0562e53",
+    "body": "\n  ${centeredContainer}\n  & :where(.openui-pie-chart-svg-wrapper) {\n    ${centeredSvgWrapper}\n  }\n  & :where(.openui-pie-chart-track) {\n    fill: var(--openui-sunk, oklch(0.097 0 0 / 0.04));\n  }\n  @media (prefers-reduced-motion: no-preference) {\n    & :where(.openui-pie-chart-slice--animated) {\n      opacity: 0;\n      transform-origin: center center;\n      animation: ${appear} 0.6s ease-out forwards;\n    }\n  }\n",
+    "hook": "openui-pie-chart-root"
+  },
+  {
+    "file": "packages/react-components/src/components/Charts/RadarChart/radarChart.styles.ts",
+    "family": "RadarChart",
+    "symbol": "rootClass",
+    "line": 19,
+    "bodySHA256": "4186444e384ac3c1be79d6913cfbfa4d954d708531f2c25c4d846f9302c2d30a",
+    "body": "\n  ${centeredContainer}\n  & :where(.openui-radar-chart-svg-wrapper) {\n    ${centeredSvgWrapper}\n  }\n  & svg:where(.openui-radar-chart-svg-wrapper > svg) {\n    overflow: visible;\n  }\n  & :where(.openui-radar-chart-grid-ring),\n  & :where(.openui-radar-chart-grid-spoke) {\n    stroke: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));\n    stroke-width: 1;\n  }\n  & :where(.openui-radar-chart-polygon-area) {\n    transition: opacity 0.2s ease;\n  }\n  & :where(.openui-radar-chart-polygon-stroke) {\n    fill: none;\n    stroke-width: 2;\n  }\n  & :where(.openui-radar-chart-dot) {\n    stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    stroke-width: 1.5;\n    transition:\n      r 0.15s ease,\n      opacity 0.15s ease;\n  }\n  & :where(.openui-radar-chart-active-dot-outer) {\n    ${activeDotOuter}\n  }\n  & :where(.openui-radar-chart-active-dot-inner) {\n    ${activeDotInner}\n  }\n  & :where(.openui-radar-chart-active-dots) {\n    pointer-events: none;\n  }\n  & :where(.openui-radar-chart-axis-label) {\n    ${svgTickLabel}\n  }\n  @media (prefers-reduced-motion: no-preference) {\n    & :where(.openui-radar-chart-polygon--animated) {\n      opacity: 0;\n      transform-origin: center center;\n      animation: ${appear} 0.5s ease-out forwards;\n    }\n  }\n",
+    "hook": "openui-radar-chart-root"
+  },
+  {
+    "file": "packages/react-components/src/components/Charts/RadialChart/radialChart.styles.ts",
+    "family": "RadialChart",
+    "symbol": "rootClass",
+    "line": 4,
+    "bodySHA256": "e062c16d6083c629962a23be2acaf7d105d1dd7ef3cfbe80e231c1fdb0ddb85e",
+    "body": "\n  ${centeredContainer}\n  & :where(.openui-radial-chart-svg-wrapper) {\n    ${centeredSvgWrapper}\n  }\n  & :where(.openui-radial-chart-grid-circle) {\n    stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06));\n    stroke-width: 1;\n    stroke-dasharray: 4 4;\n  }\n  @media (prefers-reduced-motion: no-preference) {\n    & :where(.openui-radial-chart-bar--animated) {\n      opacity: 0;\n      animation: ${fadeAppearAnimation} 0.5s ease-out forwards;\n    }\n  }\n",
+    "hook": "openui-radial-chart-root"
+  },
+  {
+    "file": "packages/react-components/src/components/Charts/ScatterChart/scatterChart.styles.ts",
+    "family": "ScatterChart",
+    "symbol": "rootClass",
+    "line": 13,
+    "bodySHA256": "53ab5c6c242ad566a2130dba67c2556d83e13326e9ae7e3d6cb5589c6f1c4709",
+    "body": "\n  ${centeredContainer}\n  & line:where(.openui-scatter-chart-grid line) {\n    ${gridLine}\n  }\n  & line.openui-grid-zero-line:where(.openui-scatter-chart-grid line) {\n    ${zeroGridLine}\n  }\n  & line:where(.openui-scatter-chart-grid-vertical line) {\n    ${gridLine}\n  }\n  & :where(.openui-scatter-chart-y-tick, .openui-scatter-chart-x-tick) {\n    ${svgTickLabel}\n  }\n  & :where(.openui-scatter-chart-dot) {\n    stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));\n    stroke-width: 1.5;\n    transition:\n      r 0.15s ease,\n      fill-opacity 0.15s ease,\n      stroke-opacity 0.15s ease;\n  }\n  @media (prefers-reduced-motion: no-preference) {\n    & :where(.openui-scatter-chart-dot--animated) {\n      opacity: 0;\n      animation: ${appear} 0.4s ease-out forwards;\n    }\n  }\n",
+    "hook": "openui-scatter-chart-root"
+  },
+  {
+    "file": "packages/react-components/src/components/Charts/SegmentedBar/segmentedBar.styles.ts",
+    "family": "SegmentedBar",
+    "symbol": "rootClass",
+    "line": 2,
+    "bodySHA256": "be2c1374d835a0864a40afab4b9e18f58ab65137f121be56a54f9ddef9701022",
+    "body": "\n  & {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    width: 100%;\n    position: relative;\n  }\n\n  & {\n    justify-content: center;\n  }\n  &:where(.openui-segmented-bar-container--gap) {\n    gap: var(--openui-space-m, 12px);\n  }\n\n  & :where(.openui-segmented-bar) {\n    width: 100%;\n    box-sizing: border-box;\n    height: 20px;\n    font-family: inherit;\n    background-color: var(--openui-background, oklch(0.97 0 89.876 / 1));\n    border-radius: var(--openui-radius-s, 6px);\n    overflow: hidden;\n    box-shadow: var(\n      --openui-shadow-s,\n      0 1px 3px -2px oklch(0 0 0 / 0.02),\n      0 2px 5px -2px oklch(0 0 0 / 0.04)\n    );\n    display: flex;\n    padding: var(--openui-space-2xs, 4px);\n    gap: var(--openui-space-3xs, 2px);\n  }\n\n  & :where(.openui-segmented-bar-segment) {\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-width: 2px;\n    box-shadow: var(\n      --openui-shadow-s,\n      0 1px 3px -2px oklch(0 0 0 / 0.02),\n      0 2px 5px -2px oklch(0 0 0 / 0.04)\n    );\n    position: relative;\n    overflow: hidden;\n    transition:\n      box-shadow 0.2s ease,\n      filter 0.2s ease,\n      opacity 0.2s ease;\n  }\n  & :first-child:where(.openui-segmented-bar-segment) {\n    border-radius: var(--openui-radius-xs, 4px) 0 0 var(--openui-radius-xs, 4px);\n  }\n  & :last-child:where(.openui-segmented-bar-segment) {\n    border-radius: 0 var(--openui-radius-xs, 4px) var(--openui-radius-xs, 4px) 0;\n  }\n  & :where(.openui-segmented-bar-segment-line) {\n    position: absolute;\n    transform: translateY(-50%);\n    background-color: var(--openui-border-accent-emphasis, oklch(0.546 0.215 262.881 / 0.3));\n    top: 50%;\n    left: 5px;\n    width: calc(100% - 10px);\n    height: 1px;\n    z-index: 1;\n    min-width: 2px;\n  }\n  & :where(.openui-segmented-bar-segment--animated) {\n    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);\n  }\n\n  & :where(.openui-segmented-bar-stacked-legend) {\n    margin-top: var(--openui-space-s, 8px);\n  }\n",
+    "hook": "openui-segmented-bar-root"
+  }
+]

@@ -1,0 +1,2744 @@
+diff --git a/packages/react-components/README.md b/packages/react-components/README.md
+index 450113cc7..99a444617 100644
+--- a/packages/react-components/README.md
++++ b/packages/react-components/README.md
+@@ -95,7 +95,8 @@ Button and IconButton use stable styling targets. Importing either component
+ registers its rules automatically through stock Goober. A private generated class
+ on `html` is contained in `:where(...:root)` and adds zero specificity. Consumers
+ do not use that class. The documented batches below share this mechanism;
+-EditableTable and chart-owned styles retain their existing selectors.
++EditableTable retains its existing selectors. Chart-owned targets are documented
++in the Charts section below.
+ 
+ | Target | Button | IconButton |
+ | --- | --- | --- |
+@@ -270,12 +271,12 @@ keyframe identifiers keep their existing precedence and behavior.
+ ### Selector conversion status
+ 
+ Button/IconButton, the 15 control families, Select/Calendar/DatePicker/Modal and
+-the presentation/layout/help families above are converted. New batches remain
+-pending combined and independent acceptance; this is not a package-wide approval.
++the presentation/layout/help families above are converted. The non-chart batches have passed their bounded independent gate. The chart
++extension remains pending independent acceptance; this is not full beta approval.
+ All 1,444 existing token fallback expressions remain in place.
+ 
+-EditableTable remains deferred. Chart-owned selectors are outside these tickets;
+-their shared Button/IconButton controls consume the stable styles indirectly.
++EditableTable remains deferred. The chart extension below also converts chart-owned and shared chart rules.
++Its independent acceptance remains pending; chart behavior is unchanged.
+ Calendar's direct Select content/viewport dependency remains intact.
+ 
+ SourceFaviconImage's canonical image hook applies to the successful image only;
+@@ -327,6 +328,90 @@ MiniAreaChart, MiniBarChart and MiniLineChart. Existing data/prop types, Scatter
+ helpers, LegendStoreProvider/useLegendEntry, StackedLegend and CHART_CLASS_PREFIX
+ are also public. Shared chart implementations remain private.
+ 
++### Chart styling targets
++
++All 19 public chart entries use the same stock-Goober registration mechanism and
++private zero-specificity document guard. Condensed charts reuse their parent
++rules, SingleStackedBar remains an alias, and mini charts share MiniChartFrame.
++No extra wrapper or duplicate family stylesheet is introduced.
++
++| Public chart entries | Canonical owned root |
++| --- | --- |
++| AreaChart, AreaChartCondensed | `.openui-area-chart-root` |
++| LineChart, LineChartCondensed | `.openui-line-chart-root` |
++| BarChart, BarChartCondensed | `.openui-bar-chart-root` |
++| HorizontalBarChart | `.openui-horizontal-bar-chart-root` |
++| PieChart | `.openui-pie-chart-root` |
++| RadialChart | `.openui-radial-chart-root` |
++| RadarChart | `.openui-radar-chart-root` |
++| ScatterChart | `.openui-scatter-chart-root` |
++| HeatmapChart | `.openui-heatmap-chart-root` |
++| FunnelChart | `.openui-funnel-chart-root` |
++| CalendarHeatmap | `.openui-calendar-heatmap-root` |
++| SegmentedBar, SingleStackedBar | `.openui-segmented-bar-root` |
++| MiniAreaChart, MiniBarChart, MiniLineChart | `.openui-mini-chart-root` (shared frame) |
++
++HeatmapChart additionally exposes `.openui-heatmap-chart-diverging-ramp-root`
++for its existing diverging color-scale ramp. Its owned declaration targets
++`::after`; it does not add a generic base rule.
++
++| Shared role | Canonical target |
++| --- | --- |
++| Empty state | `.openui-chart-empty-root` |
++| X/Y axis labels | `.openui-chart-x-axis-label-root`, `.openui-chart-y-axis-label-root` |
++| Default legend | `.openui-chart-default-legend-root` |
++| Body tooltip wrapper/panel | `.openui-chart-tooltip-portal-root`, `.openui-chart-tooltip-root` |
++| Stacked legend | `.openui-chart-stacked-legend-root` |
++| Chart with stacked legend | `.openui-chart-stacked-legend-layout-root` |
++| Stacked scrollbar | `.openui-chart-stacked-legend-scrollbar` (`::-webkit-scrollbar` only) |
++| Horizontal/vertical scroll controls | `.openui-chart-horizontal-scroll-controls-root`, `.openui-chart-vertical-scroll-controls-root` |
++
++Existing aliases and part/state classes remain on the same DOM and SVG nodes.
++Ordinary later unlayered consumer CSS must match the owned root, type, part and
++state context. SVG type selectors outside `:where()` still contribute specificity;
++the private document guard contributes none. For example:
++
++```css
++.openui-bar-chart-root { position: relative; }
++.openui-area-chart-root line:where(.openui-area-chart-grid line) {
++  stroke: navy;
++}
++.openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line) {
++  stroke: purple;
++}
++.openui-heatmap-chart-diverging-ramp-root::after { opacity: 0.25; }
++.openui-chart-tooltip-root { border-radius: 12px; }
++.openui-chart-horizontal-scroll-controls-root
++  .openui-chart-horizontal-scroll-button--disabled:disabled { cursor: wait; }
++```
++
++The emphasized zero-line class is rendered only when the data domain spans
++negative values. The body tooltip retains its existing portal and nearest theme
++scope; it does not depend on being a descendant of a chart container. LabelTooltip
++is a separate existing Radix behavior with no owned chart CSS registration here.
++
++SVG presentation attributes such as fill/stroke are different from inline CSS:
++a matching stylesheet can override a presentation attribute. Existing inline
++Heatmap label fill, legend swatch color/hidden opacity, container dimensions,
++mini size, animation delays and tooltip FloatingUI/spring position/transform/opacity
++keep their current precedence. Use existing props, palettes, themes and inline
++customization for those values; ordinary CSS is not promised to beat inline styles.
++The scrollbar hook controls its owned pseudo rule, not whether a native scrollbar
++becomes visible on every platform.
++
++All nine existing chart keyframes, media boundaries and animation behavior remain.
++Normal/reduced motion and existing Heatmap/Funnel print rules are preserved;
++SegmentedBar's transition stays outside the reduced-motion media guard as before.
++No scales, physics, data transforms, geometry, mark attributes or JS animation
++helpers are changed by selector conversion. Existing HorizontalBar limitations
++below remain; numeric-height selector checks do not repair the inherited
++string-height/legend-fit failure.
++
++Registration is module-based: a shared style module or retained lazy chunk may
++register styles for more than the currently visible part. This does not promise
++zero-unused CSS, per-chart lazy stylesheet isolation, startup timing or heap
++performance. The chart selector gate remains pending independent verification.
++
+ ## Support boundary and inherited behavior
+ 
+ React/ReactDOM19 are required. Zod3.25+ or4 and Zustand4.5.5+ remain peer
+diff --git a/packages/react-components/src/components/Charts/AreaChart/areaChart.styles.ts b/packages/react-components/src/components/Charts/AreaChart/areaChart.styles.ts
+index d6e045e16..e0a617209 100644
+--- a/packages/react-components/src/components/Charts/AreaChart/areaChart.styles.ts
++++ b/packages/react-components/src/components/Charts/AreaChart/areaChart.styles.ts
+@@ -14,51 +14,60 @@ import {
+ } from "../shared/chartBaseDeclarations";
+ import { svgTickLabel } from "../shared/chartTypography";
+ 
+-export const rootClass = css`
+-  ${cartesianContainer}
+-  & :where(.openui-area-chart-container-inner) {
+-    ${cartesianContainerInner}
+-  }
+-  & :where(.openui-area-chart-y-axis-container) {
+-    ${cartesianYAxisContainer}
+-  }
+-  & :where(.openui-area-chart-main-container) {
+-    ${cartesianMainContainer}
+-  }
+-  & line:where(.openui-area-chart-grid line) {
+-    ${gridLine}
+-  }
+-  & line.openui-grid-zero-line:where(.openui-area-chart-grid line) {
+-    ${zeroGridLine}
+-  }
+-  & :where(.openui-area-chart-y-tick, .openui-area-chart-x-tick, .openui-area-chart-x-tick-angled) {
+-    ${svgTickLabel}
+-  }
+-  & :where(.openui-area-chart-crosshair-line) {
+-    ${crosshairLine}
+-  }
+-  & :where(.openui-area-chart-active-dot-outer) {
+-    ${activeDotOuter}
+-  }
+-  & :where(.openui-area-chart-active-dot-inner) {
+-    ${activeDotInner}
+-  }
+-  & :where(.openui-area-chart-area-path) {
+-    transition: opacity 0.2s ease;
+-  }
+-  & :where(.openui-area-chart-area-line) {
+-    fill: none;
+-    stroke-width: 2;
+-  }
+-  @media (prefers-reduced-motion: no-preference) {
+-    & :where(.openui-area-chart-area-line--animated) {
+-      stroke-dasharray: var(--path-length);
+-      stroke-dashoffset: var(--path-length);
+-      animation: ${drawLineAnimation} 1s ease-out forwards;
+-    }
+-    & :where(.openui-area-chart-area-path--animated) {
+-      opacity: 0;
+-      animation: ${fadeAppearAnimation} 0.6s ease-out 0.4s forwards;
++export const rootClass = "openui-area-chart-root";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-area-chart-root {
++      ${cartesianContainer}
++      & :where(.openui-area-chart-container-inner) {
++        ${cartesianContainerInner}
++      }
++      & :where(.openui-area-chart-y-axis-container) {
++        ${cartesianYAxisContainer}
++      }
++      & :where(.openui-area-chart-main-container) {
++        ${cartesianMainContainer}
++      }
++      & line:where(.openui-area-chart-grid line) {
++        ${gridLine}
++      }
++      & line.openui-grid-zero-line:where(.openui-area-chart-grid line) {
++        ${zeroGridLine}
++      }
++      & :where(.openui-area-chart-y-tick, .openui-area-chart-x-tick, .openui-area-chart-x-tick-angled) {
++        ${svgTickLabel}
++      }
++      & :where(.openui-area-chart-crosshair-line) {
++        ${crosshairLine}
++      }
++      & :where(.openui-area-chart-active-dot-outer) {
++        ${activeDotOuter}
++      }
++      & :where(.openui-area-chart-active-dot-inner) {
++        ${activeDotInner}
++      }
++      & :where(.openui-area-chart-area-path) {
++        transition: opacity 0.2s ease;
++      }
++      & :where(.openui-area-chart-area-line) {
++        fill: none;
++        stroke-width: 2;
++      }
++      @media (prefers-reduced-motion: no-preference) {
++        & :where(.openui-area-chart-area-line--animated) {
++          stroke-dasharray: var(--path-length);
++          stroke-dashoffset: var(--path-length);
++          animation: ${drawLineAnimation} 1s ease-out forwards;
++        }
++        & :where(.openui-area-chart-area-path--animated) {
++          opacity: 0;
++          animation: ${fadeAppearAnimation} 0.6s ease-out 0.4s forwards;
++        }
++      }
+     }
+   }
+ `;
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/BarChart/barChart.styles.ts b/packages/react-components/src/components/Charts/BarChart/barChart.styles.ts
+index 5583a555f..ef23ad7e1 100644
+--- a/packages/react-components/src/components/Charts/BarChart/barChart.styles.ts
++++ b/packages/react-components/src/components/Charts/BarChart/barChart.styles.ts
+@@ -17,42 +17,51 @@ const grow = keyframes`
+     transform: scaleY(1);
+   }
+ `;
+-export const rootClass = css`
+-  ${cartesianContainer}
+-  & :where(.openui-bar-chart-container-inner) {
+-    ${cartesianContainerInner}
+-  }
+-  & :where(.openui-bar-chart-y-axis-container) {
+-    ${cartesianYAxisContainer}
+-  }
+-  & :where(.openui-bar-chart-main-container) {
+-    ${cartesianMainContainer}
+-  }
+-  & line:where(.openui-bar-chart-grid line) {
+-    ${gridLine}
+-  }
+-  & line.openui-grid-zero-line:where(.openui-bar-chart-grid line) {
+-    ${zeroGridLine}
+-  }
+-  & :where(.openui-bar-chart-y-tick, .openui-bar-chart-x-tick, .openui-bar-chart-x-tick-angled) {
+-    ${svgTickLabel}
+-  }
+-  & :where(.openui-bar-chart-hover-highlight) {
+-    fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-    opacity: 0.04;
+-    pointer-events: none;
+-  }
+-  & :where(.openui-bar-chart-internal-line) {
+-    pointer-events: none;
+-  }
+-  @media (prefers-reduced-motion: no-preference) {
+-    & :where(.openui-bar-chart-bar--animated) {
+-      transform-box: fill-box;
+-      transform-origin: center bottom;
+-      animation: ${grow} 0.6s ease-out both;
+-    }
+-    & .openui-bar-chart-bar--negative:where(.openui-bar-chart-bar--animated) {
+-      transform-origin: center top;
++export const rootClass = "openui-bar-chart-root";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-bar-chart-root {
++      ${cartesianContainer}
++      & :where(.openui-bar-chart-container-inner) {
++        ${cartesianContainerInner}
++      }
++      & :where(.openui-bar-chart-y-axis-container) {
++        ${cartesianYAxisContainer}
++      }
++      & :where(.openui-bar-chart-main-container) {
++        ${cartesianMainContainer}
++      }
++      & line:where(.openui-bar-chart-grid line) {
++        ${gridLine}
++      }
++      & line.openui-grid-zero-line:where(.openui-bar-chart-grid line) {
++        ${zeroGridLine}
++      }
++      & :where(.openui-bar-chart-y-tick, .openui-bar-chart-x-tick, .openui-bar-chart-x-tick-angled) {
++        ${svgTickLabel}
++      }
++      & :where(.openui-bar-chart-hover-highlight) {
++        fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++        opacity: 0.04;
++        pointer-events: none;
++      }
++      & :where(.openui-bar-chart-internal-line) {
++        pointer-events: none;
++      }
++      @media (prefers-reduced-motion: no-preference) {
++        & :where(.openui-bar-chart-bar--animated) {
++          transform-box: fill-box;
++          transform-origin: center bottom;
++          animation: ${grow} 0.6s ease-out both;
++        }
++        & .openui-bar-chart-bar--negative:where(.openui-bar-chart-bar--animated) {
++          transform-origin: center top;
++        }
++      }
+     }
+   }
+ `;
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/BarChart/horizontalBarChart.styles.ts b/packages/react-components/src/components/Charts/BarChart/horizontalBarChart.styles.ts
+index 26b0b0c9b..5f02a96fc 100644
+--- a/packages/react-components/src/components/Charts/BarChart/horizontalBarChart.styles.ts
++++ b/packages/react-components/src/components/Charts/BarChart/horizontalBarChart.styles.ts
+@@ -10,76 +10,85 @@ const grow = keyframes`
+     transform: scaleX(1);
+   }
+ `;
+-export const rootClass = css`
+-  position: relative;
+-  width: 100%;
+-  height: auto;
+-  display: flex;
+-  flex-direction: column;
+-  & :where(.openui-horizontal-bar-chart-container-inner-wrapper) {
+-    width: 100%;
+-    display: flex;
+-    flex-direction: row;
+-    overflow: hidden;
+-  }
+-  & :where(.openui-horizontal-bar-chart-container-inner) {
+-    position: relative;
+-    display: flex;
+-    flex-direction: column;
+-    width: 100%;
+-    flex: 1;
+-    min-width: 0;
+-  }
+-  & :where(.openui-horizontal-bar-chart-main-container) {
+-    height: 100%;
+-    overflow-y: auto;
+-    &::-webkit-scrollbar {
+-      display: none;
+-    }
+-    scrollbar-width: none;
+-    ms-overflow-style: none;
+-  }
+-  & :where(.openui-horizontal-bar-chart-x-axis-container) {
+-    flex-shrink: 0;
+-    width: 100%;
+-    box-sizing: border-box;
+-    border-top: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));
+-    padding-top: var(--openui-space-2xs, 4px);
+-  }
+-  & :where(.openui-horizontal-bar-chart-category-label) {
+-    display: flex;
+-    align-items: center;
+-    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+-    ${svgTickTypography}
+-    overflow: hidden;
+-    white-space: nowrap;
+-    text-overflow: ellipsis;
+-    width: 100%;
+-    padding-left: var(--openui-space-m, 12px);
+-    box-sizing: border-box;
+-  }
+-  & :where(.openui-horizontal-bar-chart-x-tick) {
+-    ${svgTickLabel}
+-  }
+-  & line:where(.openui-horizontal-bar-chart-grid-vertical line) {
+-    ${gridLine}
+-  }
+-  & :where(.openui-horizontal-bar-chart-internal-line) {
+-    pointer-events: none;
+-  }
+-  & :where(.openui-horizontal-bar-chart-crosshair) {
+-    fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-    opacity: 0.04;
+-    pointer-events: none;
+-  }
+-  @media (prefers-reduced-motion: no-preference) {
+-    & :where(.openui-horizontal-bar-chart-bar--animated) {
+-      transform-box: fill-box;
+-      transform-origin: left center;
+-      animation: ${grow} 0.6s ease-out both;
+-    }
+-    & .openui-horizontal-bar-chart-bar--negative:where(.openui-horizontal-bar-chart-bar--animated) {
+-      transform-origin: right center;
++export const rootClass = "openui-horizontal-bar-chart-root";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-horizontal-bar-chart-root {
++      position: relative;
++      width: 100%;
++      height: auto;
++      display: flex;
++      flex-direction: column;
++      & :where(.openui-horizontal-bar-chart-container-inner-wrapper) {
++        width: 100%;
++        display: flex;
++        flex-direction: row;
++        overflow: hidden;
++      }
++      & :where(.openui-horizontal-bar-chart-container-inner) {
++        position: relative;
++        display: flex;
++        flex-direction: column;
++        width: 100%;
++        flex: 1;
++        min-width: 0;
++      }
++      & :where(.openui-horizontal-bar-chart-main-container) {
++        height: 100%;
++        overflow-y: auto;
++        &::-webkit-scrollbar {
++          display: none;
++        }
++        scrollbar-width: none;
++        ms-overflow-style: none;
++      }
++      & :where(.openui-horizontal-bar-chart-x-axis-container) {
++        flex-shrink: 0;
++        width: 100%;
++        box-sizing: border-box;
++        border-top: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));
++        padding-top: var(--openui-space-2xs, 4px);
++      }
++      & :where(.openui-horizontal-bar-chart-category-label) {
++        display: flex;
++        align-items: center;
++        color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++        ${svgTickTypography}
++        overflow: hidden;
++        white-space: nowrap;
++        text-overflow: ellipsis;
++        width: 100%;
++        padding-left: var(--openui-space-m, 12px);
++        box-sizing: border-box;
++      }
++      & :where(.openui-horizontal-bar-chart-x-tick) {
++        ${svgTickLabel}
++      }
++      & line:where(.openui-horizontal-bar-chart-grid-vertical line) {
++        ${gridLine}
++      }
++      & :where(.openui-horizontal-bar-chart-internal-line) {
++        pointer-events: none;
++      }
++      & :where(.openui-horizontal-bar-chart-crosshair) {
++        fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++        opacity: 0.04;
++        pointer-events: none;
++      }
++      @media (prefers-reduced-motion: no-preference) {
++        & :where(.openui-horizontal-bar-chart-bar--animated) {
++          transform-box: fill-box;
++          transform-origin: left center;
++          animation: ${grow} 0.6s ease-out both;
++        }
++        & .openui-horizontal-bar-chart-bar--negative:where(.openui-horizontal-bar-chart-bar--animated) {
++          transform-origin: right center;
++        }
++      }
+     }
+   }
+ `;
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts b/packages/react-components/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts
+index 4303ade89..5d1ef11cd 100644
+--- a/packages/react-components/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts
++++ b/packages/react-components/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts
+@@ -7,131 +7,140 @@ const cellIn = keyframes`
+     opacity: 1;
+   }
+ `;
+-export const rootClass = css`
+-  & {
+-    display: flex;
+-    flex-direction: column;
+-    align-items: center;
+-    width: 100%;
+-    position: relative;
+-  }
++export const rootClass = "openui-calendar-heatmap-root";
+ 
+-  & :where(.openui-calendar-heatmap-month-label),
+-  & :where(.openui-calendar-heatmap-weekday-label) {
+-    font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+-  }
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-calendar-heatmap-root {
++      & {
++        display: flex;
++        flex-direction: column;
++        align-items: center;
++        width: 100%;
++        position: relative;
++      }
+ 
+-  & :hover:where(.openui-calendar-heatmap-cell) {
+-    stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
+-    stroke-width: 1.5;
+-  }
++      & :where(.openui-calendar-heatmap-month-label),
++      & :where(.openui-calendar-heatmap-weekday-label) {
++        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++      }
+ 
+-  & :where(.openui-calendar-heatmap-cell--ghost) {
+-    fill-opacity: 0.4;
+-  }
++      & :hover:where(.openui-calendar-heatmap-cell) {
++        stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
++        stroke-width: 1.5;
++      }
+ 
+-  @media (prefers-reduced-motion: no-preference) {
+-    & :where(.openui-calendar-heatmap-cell--animated) {
+-      opacity: 0;
+-      animation: ${cellIn} 0.4s ease-out forwards;
+-    }
+-  }
+-  &
+-    [data-openui-highlight-level="0"]
+-    :not(.openui-calendar-heatmap-cell--level-0):where(.openui-calendar-heatmap-cell) {
+-    fill-opacity: 0.3;
+-  }
++      & :where(.openui-calendar-heatmap-cell--ghost) {
++        fill-opacity: 0.4;
++      }
+ 
+-  &
+-    [data-openui-highlight-level="1"]
+-    :not(.openui-calendar-heatmap-cell--level-1):where(.openui-calendar-heatmap-cell) {
+-    fill-opacity: 0.3;
+-  }
++      @media (prefers-reduced-motion: no-preference) {
++        & :where(.openui-calendar-heatmap-cell--animated) {
++          opacity: 0;
++          animation: ${cellIn} 0.4s ease-out forwards;
++        }
++      }
++      &
++        [data-openui-highlight-level="0"]
++        :not(.openui-calendar-heatmap-cell--level-0):where(.openui-calendar-heatmap-cell) {
++        fill-opacity: 0.3;
++      }
+ 
+-  &
+-    [data-openui-highlight-level="2"]
+-    :not(.openui-calendar-heatmap-cell--level-2):where(.openui-calendar-heatmap-cell) {
+-    fill-opacity: 0.3;
+-  }
++      &
++        [data-openui-highlight-level="1"]
++        :not(.openui-calendar-heatmap-cell--level-1):where(.openui-calendar-heatmap-cell) {
++        fill-opacity: 0.3;
++      }
+ 
+-  &
+-    [data-openui-highlight-level="3"]
+-    :not(.openui-calendar-heatmap-cell--level-3):where(.openui-calendar-heatmap-cell) {
+-    fill-opacity: 0.3;
+-  }
++      &
++        [data-openui-highlight-level="2"]
++        :not(.openui-calendar-heatmap-cell--level-2):where(.openui-calendar-heatmap-cell) {
++        fill-opacity: 0.3;
++      }
+ 
+-  &
+-    [data-openui-highlight-level="4"]
+-    :not(.openui-calendar-heatmap-cell--level-4):where(.openui-calendar-heatmap-cell) {
+-    fill-opacity: 0.3;
+-  }
++      &
++        [data-openui-highlight-level="3"]
++        :not(.openui-calendar-heatmap-cell--level-3):where(.openui-calendar-heatmap-cell) {
++        fill-opacity: 0.3;
++      }
+ 
+-  @media (prefers-reduced-motion: no-preference) {
+-    & :where(.openui-calendar-heatmap-cell),
+-    & :where(.openui-calendar-heatmap-legend-swatch-slot) {
+-      transition:
+-        fill-opacity 0.2s ease,
+-        opacity 0.2s ease;
+-    }
+-  }
+-  & :where(.openui-calendar-heatmap-separator) {
+-    stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06));
+-    stroke-width: 1;
+-  }
++      &
++        [data-openui-highlight-level="4"]
++        :not(.openui-calendar-heatmap-cell--level-4):where(.openui-calendar-heatmap-cell) {
++        fill-opacity: 0.3;
++      }
+ 
+-  & :where(.openui-calendar-heatmap-quarter-label) {
+-    font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+-    white-space: nowrap;
+-    pointer-events: none;
+-  }
++      @media (prefers-reduced-motion: no-preference) {
++        & :where(.openui-calendar-heatmap-cell),
++        & :where(.openui-calendar-heatmap-legend-swatch-slot) {
++          transition:
++            fill-opacity 0.2s ease,
++            opacity 0.2s ease;
++        }
++      }
++      & :where(.openui-calendar-heatmap-separator) {
++        stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06));
++        stroke-width: 1;
++      }
+ 
+-  & :where(.openui-calendar-heatmap-legend) {
+-    display: flex;
+-    align-items: center;
+-    justify-content: flex-end;
+-    gap: var(--openui-space-s, 8px);
+-    width: 100%;
+-    padding-top: var(--openui-space-m, 12px);
+-  }
+-  & :where(.openui-calendar-heatmap-legend-label) {
+-    font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+-  }
+-  & :where(.openui-calendar-heatmap-legend-swatches) {
+-    display: flex;
+-    align-items: center;
+-    gap: var(--openui-space-3xs, 2px);
+-  }
+-  & :where(.openui-calendar-heatmap-legend-swatch-slot) {
+-    display: inline-flex;
+-    cursor: pointer;
+-  }
+-  & :where(.openui-calendar-heatmap-legend-swatch) {
+-    display: block;
+-    width: 12px;
+-    height: 12px;
+-    flex-shrink: 0;
+-    border-radius: var(--openui-radius-2xs, 2px);
+-  }
+-  & :where(.openui-calendar-heatmap-legend-gradient) {
+-    position: relative;
+-    width: 60px;
+-    height: 12px;
+-    flex-shrink: 0;
+-    border-radius: var(--openui-radius-2xs, 2px);
+-  }
+-  & :where(.openui-calendar-heatmap-legend-gradient-hit) {
+-    position: absolute;
+-    top: 0;
+-    height: 100%;
+-    cursor: pointer;
++      & :where(.openui-calendar-heatmap-quarter-label) {
++        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++        white-space: nowrap;
++        pointer-events: none;
++      }
++
++      & :where(.openui-calendar-heatmap-legend) {
++        display: flex;
++        align-items: center;
++        justify-content: flex-end;
++        gap: var(--openui-space-s, 8px);
++        width: 100%;
++        padding-top: var(--openui-space-m, 12px);
++      }
++      & :where(.openui-calendar-heatmap-legend-label) {
++        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++      }
++      & :where(.openui-calendar-heatmap-legend-swatches) {
++        display: flex;
++        align-items: center;
++        gap: var(--openui-space-3xs, 2px);
++      }
++      & :where(.openui-calendar-heatmap-legend-swatch-slot) {
++        display: inline-flex;
++        cursor: pointer;
++      }
++      & :where(.openui-calendar-heatmap-legend-swatch) {
++        display: block;
++        width: 12px;
++        height: 12px;
++        flex-shrink: 0;
++        border-radius: var(--openui-radius-2xs, 2px);
++      }
++      & :where(.openui-calendar-heatmap-legend-gradient) {
++        position: relative;
++        width: 60px;
++        height: 12px;
++        flex-shrink: 0;
++        border-radius: var(--openui-radius-2xs, 2px);
++      }
++      & :where(.openui-calendar-heatmap-legend-gradient-hit) {
++        position: absolute;
++        top: 0;
++        height: 100%;
++        cursor: pointer;
++      }
++    }
+   }
+ `;
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/FunnelChart/funnelChart.styles.ts b/packages/react-components/src/components/Charts/FunnelChart/funnelChart.styles.ts
+index 375d529ca..029bb1a52 100644
+--- a/packages/react-components/src/components/Charts/FunnelChart/funnelChart.styles.ts
++++ b/packages/react-components/src/components/Charts/FunnelChart/funnelChart.styles.ts
+@@ -9,79 +9,88 @@ const appear = keyframes`
+     transform: scale(1);
+   }
+ `;
+-export const rootClass = css`
+-  & {
+-    display: flex;
+-    flex-direction: column;
+-    align-items: center;
+-    width: 100%;
+-    position: relative;
+-  }
++export const rootClass = "openui-funnel-chart-root";
+ 
+-  & :where(.openui-funnel-chart-ring) {
+-    transition:
+-      d 0.3s ease,
+-      fill-opacity 0.2s ease;
+-  }
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-funnel-chart-root {
++      & {
++        display: flex;
++        flex-direction: column;
++        align-items: center;
++        width: 100%;
++        position: relative;
++      }
+ 
+-  & :where(.openui-funnel-chart-ring--springy) {
+-    transform-box: fill-box;
+-    transform-origin: center;
+-  }
++      & :where(.openui-funnel-chart-ring) {
++        transition:
++          d 0.3s ease,
++          fill-opacity 0.2s ease;
++      }
+ 
+-  & :where(.openui-funnel-chart-ring--bloom-y) {
+-    transform: scaleY(var(--funnel-ring-scale, 1));
+-  }
++      & :where(.openui-funnel-chart-ring--springy) {
++        transform-box: fill-box;
++        transform-origin: center;
++      }
+ 
+-  & :where(.openui-funnel-chart-ring--bloom-x) {
+-    transform: scaleX(var(--funnel-ring-scale, 1));
+-  }
++      & :where(.openui-funnel-chart-ring--bloom-y) {
++        transform: scaleY(var(--funnel-ring-scale, 1));
++      }
+ 
+-  & :where(.openui-funnel-chart-stage) {
+-    transition: filter 0.2s ease;
+-  }
++      & :where(.openui-funnel-chart-ring--bloom-x) {
++        transform: scaleX(var(--funnel-ring-scale, 1));
++      }
+ 
+-  @media print {
+-    & :where(.openui-funnel-chart-ring),
+-    & :where(.openui-funnel-chart-stage) {
+-      transition: none;
+-    }
+-  }
+-  & :where(.openui-funnel-chart-value) {
+-    font: var(--openui-text-label-sm, 400 14px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-    font-weight: 600;
+-    font-variation-settings: normal;
+-  }
++      & :where(.openui-funnel-chart-stage) {
++        transition: filter 0.2s ease;
++      }
+ 
+-  & :where(.openui-funnel-chart-label) {
+-    font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+-  }
++      @media print {
++        & :where(.openui-funnel-chart-ring),
++        & :where(.openui-funnel-chart-stage) {
++          transition: none;
++        }
++      }
++      & :where(.openui-funnel-chart-value) {
++        font: var(--openui-text-label-sm, 400 14px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++        font-weight: 600;
++        font-variation-settings: normal;
++      }
+ 
+-  & :where(.openui-funnel-chart-pct) {
+-    font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    fill: var(--openui-background, oklch(0.97 0 89.876 / 1));
+-    font-weight: 700;
+-    font-variation-settings: normal;
+-  }
++      & :where(.openui-funnel-chart-label) {
++        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++      }
+ 
+-  & :where(.openui-funnel-chart-pct-pill) {
+-    fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-  }
++      & :where(.openui-funnel-chart-pct) {
++        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        fill: var(--openui-background, oklch(0.97 0 89.876 / 1));
++        font-weight: 700;
++        font-variation-settings: normal;
++      }
++
++      & :where(.openui-funnel-chart-pct-pill) {
++        fill: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++      }
+ 
+-  @media (prefers-reduced-motion: no-preference) {
+-    & :where(.openui-funnel-chart-stage--animated) {
+-      opacity: 0;
+-      transform-box: fill-box;
+-      transform-origin: center;
+-      animation: ${appear} 0.5s ease-out forwards;
++      @media (prefers-reduced-motion: no-preference) {
++        & :where(.openui-funnel-chart-stage--animated) {
++          opacity: 0;
++          transform-box: fill-box;
++          transform-origin: center;
++          animation: ${appear} 0.5s ease-out forwards;
++        }
++      }
+     }
+   }
+ `;
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts b/packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts
+index 82dcd16b2..b7f4d4cad 100644
+--- a/packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts
++++ b/packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts
+@@ -7,76 +7,86 @@ const labelTypography = `
+   letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+   font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+ `;
+-export const rootClass = css`
+-  ${centeredContainer}
+-  & :where(.openui-heatmap-chart-x-tick), & :where(.openui-heatmap-chart-y-tick) {
+-    ${svgTickLabel}
+-  }
+-  & :where(.openui-heatmap-chart-cell),
+-  & :where(.openui-heatmap-chart-cell-label) {
+-    transition: fill 0.2s ease;
+-  }
+-  @media print {
+-    & :where(.openui-heatmap-chart-cell),
+-    & :where(.openui-heatmap-chart-cell-label) {
+-      transition: none;
++export const rootClass = "openui-heatmap-chart-root";
++
++export const divergingRampClass = "openui-heatmap-chart-diverging-ramp-root";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-heatmap-chart-root {
++      ${centeredContainer}
++      & :where(.openui-heatmap-chart-x-tick), & :where(.openui-heatmap-chart-y-tick) {
++        ${svgTickLabel}
++      }
++      & :where(.openui-heatmap-chart-cell),
++      & :where(.openui-heatmap-chart-cell-label) {
++        transition: fill 0.2s ease;
++      }
++      @media print {
++        & :where(.openui-heatmap-chart-cell),
++        & :where(.openui-heatmap-chart-cell-label) {
++          transition: none;
++        }
++      }
++      & :hover:where(.openui-heatmap-chart-cell) {
++        stroke: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++        stroke-width: 1.5;
++      }
++      & :where(.openui-heatmap-chart-cell-label) {
++        ${labelTypography}
++        pointer-events: none;
++        user-select: none;
++      }
++      & :where(.openui-heatmap-chart-cell--empty) {
++        fill: var(--openui-border-default, oklch(0.097 0 0 / 0.06));
++        fill-opacity: 0.35;
++      }
++      @media (prefers-reduced-motion: no-preference) {
++        & :where(.openui-heatmap-chart-cell--animated),
++        & :where(.openui-heatmap-chart-cell-label--animated) {
++          opacity: 0;
++          animation: ${fadeAppearAnimation} 0.4s ease-out forwards;
++        }
++      }
++      & :where(.openui-heatmap-chart-color-scale) {
++        display: flex;
++        align-items: center;
++        gap: 8px;
++        width: 100%;
++        padding: 6px 0 2px;
++      }
++      & :where(.openui-heatmap-chart-color-scale-label) {
++        ${labelTypography}
++        color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++        white-space: nowrap;
++      }
++      & :where(.openui-heatmap-chart-color-scale-ramp) {
++        position: relative;
++        display: flex;
++        flex: 1;
++        height: 8px;
++        border-radius: 4px;
++        overflow: hidden;
++      }
++      & :where(.openui-heatmap-chart-color-scale-bucket) {
++        flex: 1;
++      }
+     }
+-  }
+-  & :hover:where(.openui-heatmap-chart-cell) {
+-    stroke: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-    stroke-width: 1.5;
+-  }
+-  & :where(.openui-heatmap-chart-cell-label) {
+-    ${labelTypography}
+-    pointer-events: none;
+-    user-select: none;
+-  }
+-  & :where(.openui-heatmap-chart-cell--empty) {
+-    fill: var(--openui-border-default, oklch(0.097 0 0 / 0.06));
+-    fill-opacity: 0.35;
+-  }
+-  @media (prefers-reduced-motion: no-preference) {
+-    & :where(.openui-heatmap-chart-cell--animated),
+-    & :where(.openui-heatmap-chart-cell-label--animated) {
+-      opacity: 0;
+-      animation: ${fadeAppearAnimation} 0.4s ease-out forwards;
++    .openui-heatmap-chart-diverging-ramp-root {
++      &::after {
++        content: "";
++        position: absolute;
++        left: 50%;
++        top: 0;
++        bottom: 0;
++        width: 2px;
++        transform: translateX(-50%);
++        background: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++        opacity: 0.55;
++      }
+     }
+   }
+-  & :where(.openui-heatmap-chart-color-scale) {
+-    display: flex;
+-    align-items: center;
+-    gap: 8px;
+-    width: 100%;
+-    padding: 6px 0 2px;
+-  }
+-  & :where(.openui-heatmap-chart-color-scale-label) {
+-    ${labelTypography}
+-    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+-    white-space: nowrap;
+-  }
+-  & :where(.openui-heatmap-chart-color-scale-ramp) {
+-    position: relative;
+-    display: flex;
+-    flex: 1;
+-    height: 8px;
+-    border-radius: 4px;
+-    overflow: hidden;
+-  }
+-  & :where(.openui-heatmap-chart-color-scale-bucket) {
+-    flex: 1;
+-  }
+-`;
+-
+-export const divergingRampClass = css`
+-  &::after {
+-    content: "";
+-    position: absolute;
+-    left: 50%;
+-    top: 0;
+-    bottom: 0;
+-    width: 2px;
+-    transform: translateX(-50%);
+-    background: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-    opacity: 0.55;
+-  }
+ `;
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/LineChart/lineChart.styles.ts b/packages/react-components/src/components/Charts/LineChart/lineChart.styles.ts
+index 4fd5a6967..8b724b84d 100644
+--- a/packages/react-components/src/components/Charts/LineChart/lineChart.styles.ts
++++ b/packages/react-components/src/components/Charts/LineChart/lineChart.styles.ts
+@@ -13,48 +13,57 @@ import {
+ } from "../shared/chartBaseDeclarations";
+ import { svgTickLabel } from "../shared/chartTypography";
+ 
+-export const rootClass = css`
+-  ${cartesianContainer}
+-  & :where(.openui-line-chart-container-inner) {
+-    ${cartesianContainerInner}
+-  }
+-  & :where(.openui-line-chart-y-axis-container) {
+-    ${cartesianYAxisContainer}
+-  }
+-  & :where(.openui-line-chart-main-container) {
+-    ${cartesianMainContainer}
+-  }
+-  & line:where(.openui-line-chart-grid line) {
+-    ${gridLine}
+-  }
+-  & line.openui-grid-zero-line:where(.openui-line-chart-grid line) {
+-    ${zeroGridLine}
+-  }
+-  & :where(.openui-line-chart-y-tick, .openui-line-chart-x-tick, .openui-line-chart-x-tick-angled) {
+-    ${svgTickLabel}
+-  }
+-  & :where(.openui-line-chart-crosshair-line) {
+-    ${crosshairLine}
+-  }
+-  & :where(.openui-line-chart-active-dot-outer) {
+-    ${activeDotOuter}
+-  }
+-  & :where(.openui-line-chart-active-dot-inner) {
+-    ${activeDotInner}
+-  }
+-  & :where(.openui-line-chart-line) {
+-    fill: none;
+-    stroke-width: 2;
+-  }
+-  & :where(.openui-line-chart-dot) {
+-    stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
+-    stroke-width: 1;
+-  }
+-  @media (prefers-reduced-motion: no-preference) {
+-    & :where(.openui-line-chart-line--animated) {
+-      stroke-dasharray: var(--path-length);
+-      stroke-dashoffset: var(--path-length);
+-      animation: ${drawLineAnimation} 1s ease-out forwards;
++export const rootClass = "openui-line-chart-root";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-line-chart-root {
++      ${cartesianContainer}
++      & :where(.openui-line-chart-container-inner) {
++        ${cartesianContainerInner}
++      }
++      & :where(.openui-line-chart-y-axis-container) {
++        ${cartesianYAxisContainer}
++      }
++      & :where(.openui-line-chart-main-container) {
++        ${cartesianMainContainer}
++      }
++      & line:where(.openui-line-chart-grid line) {
++        ${gridLine}
++      }
++      & line.openui-grid-zero-line:where(.openui-line-chart-grid line) {
++        ${zeroGridLine}
++      }
++      & :where(.openui-line-chart-y-tick, .openui-line-chart-x-tick, .openui-line-chart-x-tick-angled) {
++        ${svgTickLabel}
++      }
++      & :where(.openui-line-chart-crosshair-line) {
++        ${crosshairLine}
++      }
++      & :where(.openui-line-chart-active-dot-outer) {
++        ${activeDotOuter}
++      }
++      & :where(.openui-line-chart-active-dot-inner) {
++        ${activeDotInner}
++      }
++      & :where(.openui-line-chart-line) {
++        fill: none;
++        stroke-width: 2;
++      }
++      & :where(.openui-line-chart-dot) {
++        stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
++        stroke-width: 1;
++      }
++      @media (prefers-reduced-motion: no-preference) {
++        & :where(.openui-line-chart-line--animated) {
++          stroke-dasharray: var(--path-length);
++          stroke-dashoffset: var(--path-length);
++          animation: ${drawLineAnimation} 1s ease-out forwards;
++        }
++      }
+     }
+   }
+ `;
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/PieChart/pieChart.styles.ts b/packages/react-components/src/components/Charts/PieChart/pieChart.styles.ts
+index d4171e639..e71925791 100644
+--- a/packages/react-components/src/components/Charts/PieChart/pieChart.styles.ts
++++ b/packages/react-components/src/components/Charts/PieChart/pieChart.styles.ts
+@@ -10,19 +10,28 @@ const appear = keyframes`
+     transform: scale(1);
+   }
+ `;
+-export const rootClass = css`
+-  ${centeredContainer}
+-  & :where(.openui-pie-chart-svg-wrapper) {
+-    ${centeredSvgWrapper}
+-  }
+-  & :where(.openui-pie-chart-track) {
+-    fill: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
+-  }
+-  @media (prefers-reduced-motion: no-preference) {
+-    & :where(.openui-pie-chart-slice--animated) {
+-      opacity: 0;
+-      transform-origin: center center;
+-      animation: ${appear} 0.6s ease-out forwards;
++export const rootClass = "openui-pie-chart-root";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-pie-chart-root {
++      ${centeredContainer}
++      & :where(.openui-pie-chart-svg-wrapper) {
++        ${centeredSvgWrapper}
++      }
++      & :where(.openui-pie-chart-track) {
++        fill: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
++      }
++      @media (prefers-reduced-motion: no-preference) {
++        & :where(.openui-pie-chart-slice--animated) {
++          opacity: 0;
++          transform-origin: center center;
++          animation: ${appear} 0.6s ease-out forwards;
++        }
++      }
+     }
+   }
+ `;
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/RadarChart/radarChart.styles.ts b/packages/react-components/src/components/Charts/RadarChart/radarChart.styles.ts
+index 6a0926173..45dfe3f63 100644
+--- a/packages/react-components/src/components/Charts/RadarChart/radarChart.styles.ts
++++ b/packages/react-components/src/components/Charts/RadarChart/radarChart.styles.ts
+@@ -16,50 +16,59 @@ const appear = keyframes`
+     transform: scale(1);
+   }
+ `;
+-export const rootClass = css`
+-  ${centeredContainer}
+-  & :where(.openui-radar-chart-svg-wrapper) {
+-    ${centeredSvgWrapper}
+-  }
+-  & svg:where(.openui-radar-chart-svg-wrapper > svg) {
+-    overflow: visible;
+-  }
+-  & :where(.openui-radar-chart-grid-ring),
+-  & :where(.openui-radar-chart-grid-spoke) {
+-    stroke: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));
+-    stroke-width: 1;
+-  }
+-  & :where(.openui-radar-chart-polygon-area) {
+-    transition: opacity 0.2s ease;
+-  }
+-  & :where(.openui-radar-chart-polygon-stroke) {
+-    fill: none;
+-    stroke-width: 2;
+-  }
+-  & :where(.openui-radar-chart-dot) {
+-    stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
+-    stroke-width: 1.5;
+-    transition:
+-      r 0.15s ease,
+-      opacity 0.15s ease;
+-  }
+-  & :where(.openui-radar-chart-active-dot-outer) {
+-    ${activeDotOuter}
+-  }
+-  & :where(.openui-radar-chart-active-dot-inner) {
+-    ${activeDotInner}
+-  }
+-  & :where(.openui-radar-chart-active-dots) {
+-    pointer-events: none;
+-  }
+-  & :where(.openui-radar-chart-axis-label) {
+-    ${svgTickLabel}
+-  }
+-  @media (prefers-reduced-motion: no-preference) {
+-    & :where(.openui-radar-chart-polygon--animated) {
+-      opacity: 0;
+-      transform-origin: center center;
+-      animation: ${appear} 0.5s ease-out forwards;
++export const rootClass = "openui-radar-chart-root";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-radar-chart-root {
++      ${centeredContainer}
++      & :where(.openui-radar-chart-svg-wrapper) {
++        ${centeredSvgWrapper}
++      }
++      & svg:where(.openui-radar-chart-svg-wrapper > svg) {
++        overflow: visible;
++      }
++      & :where(.openui-radar-chart-grid-ring),
++      & :where(.openui-radar-chart-grid-spoke) {
++        stroke: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));
++        stroke-width: 1;
++      }
++      & :where(.openui-radar-chart-polygon-area) {
++        transition: opacity 0.2s ease;
++      }
++      & :where(.openui-radar-chart-polygon-stroke) {
++        fill: none;
++        stroke-width: 2;
++      }
++      & :where(.openui-radar-chart-dot) {
++        stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
++        stroke-width: 1.5;
++        transition:
++          r 0.15s ease,
++          opacity 0.15s ease;
++      }
++      & :where(.openui-radar-chart-active-dot-outer) {
++        ${activeDotOuter}
++      }
++      & :where(.openui-radar-chart-active-dot-inner) {
++        ${activeDotInner}
++      }
++      & :where(.openui-radar-chart-active-dots) {
++        pointer-events: none;
++      }
++      & :where(.openui-radar-chart-axis-label) {
++        ${svgTickLabel}
++      }
++      @media (prefers-reduced-motion: no-preference) {
++        & :where(.openui-radar-chart-polygon--animated) {
++          opacity: 0;
++          transform-origin: center center;
++          animation: ${appear} 0.5s ease-out forwards;
++        }
++      }
+     }
+   }
+ `;
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/RadialChart/radialChart.styles.ts b/packages/react-components/src/components/Charts/RadialChart/radialChart.styles.ts
+index 93f6ddce7..4efab359b 100644
+--- a/packages/react-components/src/components/Charts/RadialChart/radialChart.styles.ts
++++ b/packages/react-components/src/components/Charts/RadialChart/radialChart.styles.ts
+@@ -1,20 +1,29 @@
+ import { css } from "goober";
+ import { fadeAppearAnimation } from "../shared/animations/fadeAppear.styles";
+ import { centeredContainer, centeredSvgWrapper } from "../shared/chartBaseDeclarations";
+-export const rootClass = css`
+-  ${centeredContainer}
+-  & :where(.openui-radial-chart-svg-wrapper) {
+-    ${centeredSvgWrapper}
+-  }
+-  & :where(.openui-radial-chart-grid-circle) {
+-    stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06));
+-    stroke-width: 1;
+-    stroke-dasharray: 4 4;
+-  }
+-  @media (prefers-reduced-motion: no-preference) {
+-    & :where(.openui-radial-chart-bar--animated) {
+-      opacity: 0;
+-      animation: ${fadeAppearAnimation} 0.5s ease-out forwards;
++export const rootClass = "openui-radial-chart-root";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-radial-chart-root {
++      ${centeredContainer}
++      & :where(.openui-radial-chart-svg-wrapper) {
++        ${centeredSvgWrapper}
++      }
++      & :where(.openui-radial-chart-grid-circle) {
++        stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06));
++        stroke-width: 1;
++        stroke-dasharray: 4 4;
++      }
++      @media (prefers-reduced-motion: no-preference) {
++        & :where(.openui-radial-chart-bar--animated) {
++          opacity: 0;
++          animation: ${fadeAppearAnimation} 0.5s ease-out forwards;
++        }
++      }
+     }
+   }
+ `;
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/ScatterChart/scatterChart.styles.ts b/packages/react-components/src/components/Charts/ScatterChart/scatterChart.styles.ts
+index fd2d05d78..310373a15 100644
+--- a/packages/react-components/src/components/Charts/ScatterChart/scatterChart.styles.ts
++++ b/packages/react-components/src/components/Charts/ScatterChart/scatterChart.styles.ts
+@@ -10,32 +10,41 @@ const appear = keyframes`
+     opacity: 1;
+   }
+ `;
+-export const rootClass = css`
+-  ${centeredContainer}
+-  & line:where(.openui-scatter-chart-grid line) {
+-    ${gridLine}
+-  }
+-  & line.openui-grid-zero-line:where(.openui-scatter-chart-grid line) {
+-    ${zeroGridLine}
+-  }
+-  & line:where(.openui-scatter-chart-grid-vertical line) {
+-    ${gridLine}
+-  }
+-  & :where(.openui-scatter-chart-y-tick, .openui-scatter-chart-x-tick) {
+-    ${svgTickLabel}
+-  }
+-  & :where(.openui-scatter-chart-dot) {
+-    stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
+-    stroke-width: 1.5;
+-    transition:
+-      r 0.15s ease,
+-      fill-opacity 0.15s ease,
+-      stroke-opacity 0.15s ease;
+-  }
+-  @media (prefers-reduced-motion: no-preference) {
+-    & :where(.openui-scatter-chart-dot--animated) {
+-      opacity: 0;
+-      animation: ${appear} 0.4s ease-out forwards;
++export const rootClass = "openui-scatter-chart-root";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-scatter-chart-root {
++      ${centeredContainer}
++      & line:where(.openui-scatter-chart-grid line) {
++        ${gridLine}
++      }
++      & line.openui-grid-zero-line:where(.openui-scatter-chart-grid line) {
++        ${zeroGridLine}
++      }
++      & line:where(.openui-scatter-chart-grid-vertical line) {
++        ${gridLine}
++      }
++      & :where(.openui-scatter-chart-y-tick, .openui-scatter-chart-x-tick) {
++        ${svgTickLabel}
++      }
++      & :where(.openui-scatter-chart-dot) {
++        stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
++        stroke-width: 1.5;
++        transition:
++          r 0.15s ease,
++          fill-opacity 0.15s ease,
++          stroke-opacity 0.15s ease;
++      }
++      @media (prefers-reduced-motion: no-preference) {
++        & :where(.openui-scatter-chart-dot--animated) {
++          opacity: 0;
++          animation: ${appear} 0.4s ease-out forwards;
++        }
++      }
+     }
+   }
+ `;
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/SegmentedBar/segmentedBar.styles.ts b/packages/react-components/src/components/Charts/SegmentedBar/segmentedBar.styles.ts
+index a54c12452..4a5fa1ebf 100644
+--- a/packages/react-components/src/components/Charts/SegmentedBar/segmentedBar.styles.ts
++++ b/packages/react-components/src/components/Charts/SegmentedBar/segmentedBar.styles.ts
+@@ -1,78 +1,87 @@
+ import { css } from "goober";
+-export const rootClass = css`
+-  & {
+-    display: flex;
+-    flex-direction: column;
+-    align-items: center;
+-    width: 100%;
+-    position: relative;
+-  }
++export const rootClass = "openui-segmented-bar-root";
+ 
+-  & {
+-    justify-content: center;
+-  }
+-  &:where(.openui-segmented-bar-container--gap) {
+-    gap: var(--openui-space-m, 12px);
+-  }
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-segmented-bar-root {
++      & {
++        display: flex;
++        flex-direction: column;
++        align-items: center;
++        width: 100%;
++        position: relative;
++      }
+ 
+-  & :where(.openui-segmented-bar) {
+-    width: 100%;
+-    box-sizing: border-box;
+-    height: 20px;
+-    font-family: inherit;
+-    background-color: var(--openui-background, oklch(0.97 0 89.876 / 1));
+-    border-radius: var(--openui-radius-s, 6px);
+-    overflow: hidden;
+-    box-shadow: var(
+-      --openui-shadow-s,
+-      0 1px 3px -2px oklch(0 0 0 / 0.02),
+-      0 2px 5px -2px oklch(0 0 0 / 0.04)
+-    );
+-    display: flex;
+-    padding: var(--openui-space-2xs, 4px);
+-    gap: var(--openui-space-3xs, 2px);
+-  }
++      & {
++        justify-content: center;
++      }
++      &:where(.openui-segmented-bar-container--gap) {
++        gap: var(--openui-space-m, 12px);
++      }
+ 
+-  & :where(.openui-segmented-bar-segment) {
+-    height: 100%;
+-    display: flex;
+-    align-items: center;
+-    justify-content: center;
+-    min-width: 2px;
+-    box-shadow: var(
+-      --openui-shadow-s,
+-      0 1px 3px -2px oklch(0 0 0 / 0.02),
+-      0 2px 5px -2px oklch(0 0 0 / 0.04)
+-    );
+-    position: relative;
+-    overflow: hidden;
+-    transition:
+-      box-shadow 0.2s ease,
+-      filter 0.2s ease,
+-      opacity 0.2s ease;
+-  }
+-  & :first-child:where(.openui-segmented-bar-segment) {
+-    border-radius: var(--openui-radius-xs, 4px) 0 0 var(--openui-radius-xs, 4px);
+-  }
+-  & :last-child:where(.openui-segmented-bar-segment) {
+-    border-radius: 0 var(--openui-radius-xs, 4px) var(--openui-radius-xs, 4px) 0;
+-  }
+-  & :where(.openui-segmented-bar-segment-line) {
+-    position: absolute;
+-    transform: translateY(-50%);
+-    background-color: var(--openui-border-accent-emphasis, oklch(0.546 0.215 262.881 / 0.3));
+-    top: 50%;
+-    left: 5px;
+-    width: calc(100% - 10px);
+-    height: 1px;
+-    z-index: 1;
+-    min-width: 2px;
+-  }
+-  & :where(.openui-segmented-bar-segment--animated) {
+-    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+-  }
++      & :where(.openui-segmented-bar) {
++        width: 100%;
++        box-sizing: border-box;
++        height: 20px;
++        font-family: inherit;
++        background-color: var(--openui-background, oklch(0.97 0 89.876 / 1));
++        border-radius: var(--openui-radius-s, 6px);
++        overflow: hidden;
++        box-shadow: var(
++          --openui-shadow-s,
++          0 1px 3px -2px oklch(0 0 0 / 0.02),
++          0 2px 5px -2px oklch(0 0 0 / 0.04)
++        );
++        display: flex;
++        padding: var(--openui-space-2xs, 4px);
++        gap: var(--openui-space-3xs, 2px);
++      }
++
++      & :where(.openui-segmented-bar-segment) {
++        height: 100%;
++        display: flex;
++        align-items: center;
++        justify-content: center;
++        min-width: 2px;
++        box-shadow: var(
++          --openui-shadow-s,
++          0 1px 3px -2px oklch(0 0 0 / 0.02),
++          0 2px 5px -2px oklch(0 0 0 / 0.04)
++        );
++        position: relative;
++        overflow: hidden;
++        transition:
++          box-shadow 0.2s ease,
++          filter 0.2s ease,
++          opacity 0.2s ease;
++      }
++      & :first-child:where(.openui-segmented-bar-segment) {
++        border-radius: var(--openui-radius-xs, 4px) 0 0 var(--openui-radius-xs, 4px);
++      }
++      & :last-child:where(.openui-segmented-bar-segment) {
++        border-radius: 0 var(--openui-radius-xs, 4px) var(--openui-radius-xs, 4px) 0;
++      }
++      & :where(.openui-segmented-bar-segment-line) {
++        position: absolute;
++        transform: translateY(-50%);
++        background-color: var(--openui-border-accent-emphasis, oklch(0.546 0.215 262.881 / 0.3));
++        top: 50%;
++        left: 5px;
++        width: calc(100% - 10px);
++        height: 1px;
++        z-index: 1;
++        min-width: 2px;
++      }
++      & :where(.openui-segmented-bar-segment--animated) {
++        transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
++      }
+ 
+-  & :where(.openui-segmented-bar-stacked-legend) {
+-    margin-top: var(--openui-space-s, 8px);
++      & :where(.openui-segmented-bar-stacked-legend) {
++        margin-top: var(--openui-space-s, 8px);
++      }
++    }
+   }
+ `;
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts b/packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts
+index d78e744d8..e18c088ae 100644
+--- a/packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts
++++ b/packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts
+@@ -1,25 +1,35 @@
+ import { css } from "goober";
+-export const rootClass = css`
+-  & {
+-    position: relative;
+-  }
+-  & .openui-chart-horizontal-scroll-button {
+-    position: absolute;
+-    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
+-  }
+-  & .openui-chart-horizontal-scroll-button--left {
+-    top: -23px;
+-    transform: translateY(-50%);
+-    left: 20px;
+-  }
+-  & .openui-chart-horizontal-scroll-button--right {
+-    top: -23px;
+-    transform: translateY(-50%);
+-    right: 0px;
+-  }
+-  & .openui-chart-horizontal-scroll-button--disabled {
+-    visibility: hidden;
+-    cursor: not-allowed;
+-    transition: visibility 0.1s linear;
++export const rootClass = "openui-chart-horizontal-scroll-controls-root";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-chart-horizontal-scroll-controls-root {
++      & {
++        position: relative;
++      }
++      & .openui-chart-horizontal-scroll-button {
++        position: absolute;
++        background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
++      }
++      & .openui-chart-horizontal-scroll-button--left {
++        top: -23px;
++        transform: translateY(-50%);
++        left: 20px;
++      }
++      & .openui-chart-horizontal-scroll-button--right {
++        top: -23px;
++        transform: translateY(-50%);
++        right: 0px;
++      }
++      & .openui-chart-horizontal-scroll-button--disabled {
++        visibility: hidden;
++        cursor: not-allowed;
++        transition: visibility 0.1s linear;
++      }
++    }
+   }
+ `;
++
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts b/packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts
+index 6f8717d19..86aba4590 100644
+--- a/packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts
++++ b/packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts
+@@ -1,22 +1,32 @@
+ import { css } from "goober";
+-export const rootClass = css`
+-  & {
+-    display: flex;
+-    flex-direction: column;
+-    justify-content: space-between;
+-    align-items: center;
+-    width: 36px;
+-    height: calc(100% - 44px);
+-    flex-shrink: 0;
+-    padding-left: var(--openui-space-2xs, 4px);
+-  }
+-  & .openui-chart-vertical-scroll-button {
+-    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
+-    pointer-events: auto;
+-  }
+-  & .openui-chart-vertical-scroll-button--disabled {
+-    visibility: hidden;
+-    cursor: not-allowed;
+-    transition: visibility 0.1s linear;
++export const rootClass = "openui-chart-vertical-scroll-controls-root";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-chart-vertical-scroll-controls-root {
++      & {
++        display: flex;
++        flex-direction: column;
++        justify-content: space-between;
++        align-items: center;
++        width: 36px;
++        height: calc(100% - 44px);
++        flex-shrink: 0;
++        padding-left: var(--openui-space-2xs, 4px);
++      }
++      & .openui-chart-vertical-scroll-button {
++        background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
++        pointer-events: auto;
++      }
++      & .openui-chart-vertical-scroll-button--disabled {
++        visibility: hidden;
++        cursor: not-allowed;
++        transition: visibility 0.1s linear;
++      }
++    }
+   }
+ `;
++
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/shared/chartBase.styles.ts b/packages/react-components/src/components/Charts/shared/chartBase.styles.ts
+index 3a89be9b0..a136feafd 100644
+--- a/packages/react-components/src/components/Charts/shared/chartBase.styles.ts
++++ b/packages/react-components/src/components/Charts/shared/chartBase.styles.ts
+@@ -1,27 +1,39 @@
+ import { css } from "goober";
+-export const emptyClass = css`
+-  display: flex;
+-  align-items: center;
+-  justify-content: center;
+-  min-height: 200px;
+-  & :where(.openui-chart-empty-text) {
+-    font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++export const emptyClass = "openui-chart-empty-root";
++export const yAxisLabelClass = "openui-chart-y-axis-label-root";
++export const xAxisLabelClass = "openui-chart-x-axis-label-root";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-chart-empty-root {
++      display: flex;
++      align-items: center;
++      justify-content: center;
++      min-height: 200px;
++      & :where(.openui-chart-empty-text) {
++        font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++      }
++    }
++    .openui-chart-y-axis-label-root {
++      font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++      letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++      font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++      color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++      padding-bottom: var(--openui-space-s, 8px);
++    }
++    .openui-chart-x-axis-label-root {
++      font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++      letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++      font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++      color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++      text-align: center;
++    }
+   }
+ `;
+-export const yAxisLabelClass = css`
+-  font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-  letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-  font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+-  padding-bottom: var(--openui-space-s, 8px);
+-`;
+-export const xAxisLabelClass = css`
+-  font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-  letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-  font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-  color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+-  text-align: center;
+-`;
++
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/shared/core/DefaultLegend/defaultLegend.styles.ts b/packages/react-components/src/components/Charts/shared/core/DefaultLegend/defaultLegend.styles.ts
+index d73adb640..79c0d20ff 100644
+--- a/packages/react-components/src/components/Charts/shared/core/DefaultLegend/defaultLegend.styles.ts
++++ b/packages/react-components/src/components/Charts/shared/core/DefaultLegend/defaultLegend.styles.ts
+@@ -1,90 +1,100 @@
+ import { css } from "goober";
+-export const rootClass = css`
+-  & {
+-    display: flex;
+-    flex-direction: column;
+-    align-items: center;
+-    justify-content: center;
+-    gap: var(--openui-space-s, 8px);
+-  }
+-  & :where(.openui-chart-legend-axis-label-container) {
+-    display: flex;
+-    align-items: center;
+-    justify-content: center;
+-    gap: var(--openui-space-m, 12px);
+-    flex-wrap: wrap;
+-  }
+-  & :where(.openui-chart-legend-axis-label) {
+-    font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+-  }
+-  & :where(.openui-chart-legend-axis-label-text) {
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-  }
+-  & :where(.openui-chart-legend) {
+-    display: flex;
+-    align-items: center;
+-    justify-content: center;
+-    gap: var(--openui-space-m, 12px);
+-    flex-wrap: wrap;
+-  }
+-  &:where(.openui-chart-legend--bottom) {
+-    padding-top: var(--openui-space-m, 12px);
+-  }
+-  & :where(.openui-chart-legend--collapsed) {
+-    flex-wrap: nowrap;
+-    overflow: hidden;
+-  }
+-  & :where(.openui-chart-legend--expanded) {
+-    flex-wrap: wrap;
+-  }
+-  & :where(.openui-chart-legend-item) {
+-    display: flex;
+-    align-items: center;
+-    gap: var(--openui-space-xs, 6px);
+-  }
+-  & svg:where(.openui-chart-legend-item svg) {
+-    height: 10px;
+-    width: 10px;
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-  }
+-  & :where(.openui-chart-legend-item-indicator) {
+-    height: 10px;
+-    width: 10px;
+-    flex-shrink: 0;
+-    border-radius: var(--openui-radius-2xs, 2px);
+-    background-color: var(--color-bg);
+-  }
+-  & :where(.openui-chart-legend-item-label) {
+-    font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-  }
+-  & :where(.openui-chart-legend-toggle-button) {
+-    font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-    padding-left: var(--openui-space-2xs, 4px);
+-    padding-right: var(--openui-space-3xs, 2px);
+-  }
+-  & :where(.openui-chart-legend-toggle-button-icon) {
+-    width: 1em;
+-    height: 1em;
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-  }
+-  & :where(.openui-chart-legend-item-label-container) {
+-    display: flex;
+-    align-items: center;
+-    gap: var(--openui-space-2xs, 4px);
+-  }
+-  & :where(.openui-chart-legend-item-percentage) {
+-    font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++export const rootClass = "openui-chart-default-legend-root";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-chart-default-legend-root {
++      & {
++        display: flex;
++        flex-direction: column;
++        align-items: center;
++        justify-content: center;
++        gap: var(--openui-space-s, 8px);
++      }
++      & :where(.openui-chart-legend-axis-label-container) {
++        display: flex;
++        align-items: center;
++        justify-content: center;
++        gap: var(--openui-space-m, 12px);
++        flex-wrap: wrap;
++      }
++      & :where(.openui-chart-legend-axis-label) {
++        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++      }
++      & :where(.openui-chart-legend-axis-label-text) {
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++      }
++      & :where(.openui-chart-legend) {
++        display: flex;
++        align-items: center;
++        justify-content: center;
++        gap: var(--openui-space-m, 12px);
++        flex-wrap: wrap;
++      }
++      &:where(.openui-chart-legend--bottom) {
++        padding-top: var(--openui-space-m, 12px);
++      }
++      & :where(.openui-chart-legend--collapsed) {
++        flex-wrap: nowrap;
++        overflow: hidden;
++      }
++      & :where(.openui-chart-legend--expanded) {
++        flex-wrap: wrap;
++      }
++      & :where(.openui-chart-legend-item) {
++        display: flex;
++        align-items: center;
++        gap: var(--openui-space-xs, 6px);
++      }
++      & svg:where(.openui-chart-legend-item svg) {
++        height: 10px;
++        width: 10px;
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++      }
++      & :where(.openui-chart-legend-item-indicator) {
++        height: 10px;
++        width: 10px;
++        flex-shrink: 0;
++        border-radius: var(--openui-radius-2xs, 2px);
++        background-color: var(--color-bg);
++      }
++      & :where(.openui-chart-legend-item-label) {
++        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++      }
++      & :where(.openui-chart-legend-toggle-button) {
++        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++        padding-left: var(--openui-space-2xs, 4px);
++        padding-right: var(--openui-space-3xs, 2px);
++      }
++      & :where(.openui-chart-legend-toggle-button-icon) {
++        width: 1em;
++        height: 1em;
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++      }
++      & :where(.openui-chart-legend-item-label-container) {
++        display: flex;
++        align-items: center;
++        gap: var(--openui-space-2xs, 4px);
++      }
++      & :where(.openui-chart-legend-item-percentage) {
++        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++      }
++    }
+   }
+ `;
++
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts b/packages/react-components/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts
+index 37677e707..c2d97b6e8 100644
+--- a/packages/react-components/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts
++++ b/packages/react-components/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts
+@@ -1,157 +1,168 @@
+ import { css } from "goober";
+-export const portalClass = css`
+-  & {
+-    pointer-events: none;
+-    z-index: 1000;
+-    position: absolute;
+-  }
+-`;
+-export const tooltipClass = css`
+-  & {
+-    display: grid;
+-    align-items: start;
+-    min-width: 128px;
+-    max-width: 240px;
+-    gap: var(--openui-space-xs, 6px);
+-    padding: var(--openui-space-xs, 6px);
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-    font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    border-radius: var(--openui-radius-l, 10px);
+-    border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));
+-    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
+-    box-shadow: var(
+-      --openui-shadow-s,
+-      0 1px 3px -2px oklch(0 0 0 / 0.02),
+-      0 2px 5px -2px oklch(0 0 0 / 0.04)
+-    );
+-  }
+-  & :where(.openui-chart-tooltip-label) {
+-    font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-    overflow-wrap: break-word;
+-    word-break: break-word;
+-  }
+-  & :where(.openui-chart-tooltip-label-heavy) {
+-    font: var(--openui-text-label-xs-heavy, 560 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-heavy-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-medium, "wght" 560);
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-    overflow-wrap: break-word;
+-    word-break: break-word;
+-  }
+-  & :where(.openui-chart-tooltip-content) {
+-    display: grid;
+-    align-items: start;
+-    min-width: 128px;
+-    gap: var(--openui-space-xs, 6px);
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-    font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
+-  }
+-  & :where(.openui-chart-tooltip-content-item) {
+-    display: flex;
+-    width: 100%;
+-    flex-wrap: wrap;
+-    gap: var(--openui-space-xs, 6px);
+-    align-items: flex-start;
+-  }
+-  & :where(.openui-chart-tooltip-content-item--dot) {
+-    align-items: center;
+-  }
+-  & svg:where(.openui-chart-tooltip-content-item svg) {
+-    height: 10px;
+-    width: 10px;
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-  }
+-  & :where(.openui-chart-tooltip-content-indicator) {
+-    flex-shrink: 0;
+-    border-radius: var(--openui-radius-2xs, 2px);
+-  }
+-  & :where(.openui-chart-tooltip-content-indicator--dot) {
+-    height: 10px;
+-    width: 10px;
+-    background-color: var(--color-bg);
+-    border-color: var(--color-border);
+-  }
+-  & :where(.openui-chart-tooltip-content-indicator--line) {
+-    width: 4px;
+-    background-color: var(--color-bg);
+-    border-color: var(--color-border);
+-  }
+-  & :where(.openui-chart-tooltip-content-indicator--dashed) {
+-    width: 0;
+-    border: 1.5px dashed var(--color-border);
+-    background-color: transparent;
+-  }
+-  & :where(.openui-chart-tooltip-content-indicator--two-items) {
+-    margin-top: 2px;
+-  }
+-  & :where(.openui-chart-tooltip-content-value-wrapper) {
+-    display: flex;
+-    flex: 1;
+-    gap: var(--openui-space-s, 8px);
+-    justify-content: space-between;
+-    line-height: 1;
+-  }
+-  & :where(.openui-chart-tooltip-content-value-wrapper--nested) {
+-    align-items: flex-end;
+-  }
+-  & :where(.openui-chart-tooltip-content-value-wrapper--standard) {
+-    align-items: center;
+-  }
+-  & :where(.openui-chart-tooltip-content-value-wrapper--vertical) {
+-    flex-direction: column;
+-    align-items: flex-start;
+-    justify-content: flex-start;
+-    gap: var(--openui-space-2xs, 4px);
+-  }
+-  & :where(.openui-chart-tooltip-content-label) {
+-    display: grid;
+-    gap: var(--openui-space-xs, 6px);
+-    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+-    font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-  }
+-  & span:where(.openui-chart-tooltip-content-label span) {
+-    display: block;
+-    overflow-wrap: break-word;
+-    word-break: break-word;
+-  }
+-  & :where(.openui-chart-tooltip-content-value) {
+-    font-variant-numeric: tabular-nums;
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-    font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    white-space: nowrap;
+-    overflow: hidden;
+-    text-overflow: ellipsis;
+-  }
+-  & :where(.openui-chart-tooltip-content-item-separator) {
+-    width: 100%;
+-    height: 1px;
+-    background-color: var(--openui-border-default, oklch(0.097 0 0 / 0.06));
+-    margin: 0;
+-  }
+-  &
+-    .openui-chart-tooltip-content-item:last-child
+-    :where(.openui-chart-tooltip-content-item-separator) {
+-    display: none;
+-  }
+-  & :where(.openui-chart-tooltip-content-view-more) {
+-    font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-    text-align: left;
+-    overflow-wrap: break-word;
+-    word-break: break-word;
++export const portalClass = "openui-chart-tooltip-portal-root";
++export const tooltipClass = "openui-chart-tooltip-root";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-chart-tooltip-portal-root {
++      & {
++        pointer-events: none;
++        z-index: 1000;
++        position: absolute;
++      }
++    }
++    .openui-chart-tooltip-root {
++      & {
++        display: grid;
++        align-items: start;
++        min-width: 128px;
++        max-width: 240px;
++        gap: var(--openui-space-xs, 6px);
++        padding: var(--openui-space-xs, 6px);
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        border-radius: var(--openui-radius-l, 10px);
++        border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));
++        background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
++        box-shadow: var(
++          --openui-shadow-s,
++          0 1px 3px -2px oklch(0 0 0 / 0.02),
++          0 2px 5px -2px oklch(0 0 0 / 0.04)
++        );
++      }
++      & :where(.openui-chart-tooltip-label) {
++        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++        overflow-wrap: break-word;
++        word-break: break-word;
++      }
++      & :where(.openui-chart-tooltip-label-heavy) {
++        font: var(--openui-text-label-xs-heavy, 560 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-heavy-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-medium, "wght" 560);
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++        overflow-wrap: break-word;
++        word-break: break-word;
++      }
++      & :where(.openui-chart-tooltip-content) {
++        display: grid;
++        align-items: start;
++        min-width: 128px;
++        gap: var(--openui-space-xs, 6px);
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
++      }
++      & :where(.openui-chart-tooltip-content-item) {
++        display: flex;
++        width: 100%;
++        flex-wrap: wrap;
++        gap: var(--openui-space-xs, 6px);
++        align-items: flex-start;
++      }
++      & :where(.openui-chart-tooltip-content-item--dot) {
++        align-items: center;
++      }
++      & svg:where(.openui-chart-tooltip-content-item svg) {
++        height: 10px;
++        width: 10px;
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++      }
++      & :where(.openui-chart-tooltip-content-indicator) {
++        flex-shrink: 0;
++        border-radius: var(--openui-radius-2xs, 2px);
++      }
++      & :where(.openui-chart-tooltip-content-indicator--dot) {
++        height: 10px;
++        width: 10px;
++        background-color: var(--color-bg);
++        border-color: var(--color-border);
++      }
++      & :where(.openui-chart-tooltip-content-indicator--line) {
++        width: 4px;
++        background-color: var(--color-bg);
++        border-color: var(--color-border);
++      }
++      & :where(.openui-chart-tooltip-content-indicator--dashed) {
++        width: 0;
++        border: 1.5px dashed var(--color-border);
++        background-color: transparent;
++      }
++      & :where(.openui-chart-tooltip-content-indicator--two-items) {
++        margin-top: 2px;
++      }
++      & :where(.openui-chart-tooltip-content-value-wrapper) {
++        display: flex;
++        flex: 1;
++        gap: var(--openui-space-s, 8px);
++        justify-content: space-between;
++        line-height: 1;
++      }
++      & :where(.openui-chart-tooltip-content-value-wrapper--nested) {
++        align-items: flex-end;
++      }
++      & :where(.openui-chart-tooltip-content-value-wrapper--standard) {
++        align-items: center;
++      }
++      & :where(.openui-chart-tooltip-content-value-wrapper--vertical) {
++        flex-direction: column;
++        align-items: flex-start;
++        justify-content: flex-start;
++        gap: var(--openui-space-2xs, 4px);
++      }
++      & :where(.openui-chart-tooltip-content-label) {
++        display: grid;
++        gap: var(--openui-space-xs, 6px);
++        color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++      }
++      & span:where(.openui-chart-tooltip-content-label span) {
++        display: block;
++        overflow-wrap: break-word;
++        word-break: break-word;
++      }
++      & :where(.openui-chart-tooltip-content-value) {
++        font-variant-numeric: tabular-nums;
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        white-space: nowrap;
++        overflow: hidden;
++        text-overflow: ellipsis;
++      }
++      & :where(.openui-chart-tooltip-content-item-separator) {
++        width: 100%;
++        height: 1px;
++        background-color: var(--openui-border-default, oklch(0.097 0 0 / 0.06));
++        margin: 0;
++      }
++      &
++        .openui-chart-tooltip-content-item:last-child
++        :where(.openui-chart-tooltip-content-item-separator) {
++        display: none;
++      }
++      & :where(.openui-chart-tooltip-content-view-more) {
++        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++        text-align: left;
++        overflow-wrap: break-word;
++        word-break: break-word;
++      }
++    }
+   }
+ `;
++
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts b/packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts
+index 99a1cf4c3..f2e41ad06 100644
+--- a/packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts
++++ b/packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts
+@@ -1,182 +1,195 @@
+ import { css } from "goober";
+-export const rootClass = css`
+-  & {
+-    position: relative;
+-    display: flex;
+-    flex-direction: column;
+-    align-items: center;
+-    height: 100%;
+-  }
+-  & :where(.openui-stacked-legend-header) {
+-    width: 100%;
+-    box-sizing: border-box;
+-    display: flex;
+-    flex-direction: row;
+-    align-items: center;
+-    justify-content: space-between;
+-    gap: 10px;
+-    padding: 0 var(--openui-space-xs, 6px) var(--openui-space-xs, 6px) var(--openui-space-l, 18px);
+-    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+-  }
+-  & :where(.openui-stacked-legend-header-buttons) {
+-    display: flex;
+-    flex-direction: row;
+-    align-items: center;
+-    gap: var(--openui-space-xs, 6px);
+-  }
+-  & :where(.openui-stacked-legend-header-title) {
+-    font: var(--openui-text-label-sm, 400 14px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+-  }
+-  & :where(.openui-stacked-legend-scroll-button) {
+-    z-index: 100;
+-    display: flex;
+-    align-items: center;
+-    justify-content: center;
+-    cursor: pointer;
+-  }
+-  & :where(.openui-stacked-legend) {
+-    width: 100%;
+-    display: flex;
+-    flex-direction: column;
+-    justify-content: safe center;
+-    min-width: 200px;
+-    overflow-y: scroll;
+-    height: 100%;
+-    scrollbar-width: none;
+-    -ms-overflow-style: none;
+-    scroll-behavior: smooth;
+-  }
+-  & :where(.openui-stacked-legend__item) {
+-    width: 100%;
+-    box-sizing: border-box;
+-    display: flex;
+-    flex-direction: row;
+-    justify-content: space-between;
+-    align-items: center;
+-    gap: 10px;
+-    padding: 4px 8px;
+-    border-radius: var(--openui-radius-m, 8px);
+-    transition: all 0.2s ease-in-out;
+-    height: 32px;
+-    flex-shrink: 0;
+-  }
+-  & :hover:where(.openui-stacked-legend__item) {
+-    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
+-  }
+-  & :where(.openui-stacked-legend__item--active) {
+-    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
+-  }
+-  & :where(.openui-stacked-legend__item-label) {
+-    display: flex;
+-    flex-direction: row;
+-    align-items: center;
+-    gap: 8px;
+-    min-width: 0;
+-    flex: 1;
+-  }
+-  & :where(.openui-stacked-legend__item-color-container) {
+-    display: flex;
+-    flex-direction: row;
+-    align-items: center;
+-    justify-content: center;
+-    gap: 10px;
+-    height: 100%;
+-    width: 32px;
+-    flex-shrink: 0;
+-  }
+-  & :where(.openui-stacked-legend__item-color) {
+-    width: 10px;
+-    height: 10px;
+-    border-radius: 2px;
+-    transition: all 0.2s ease-in-out;
+-  }
+-  & .openui-stacked-legend__item:hover :where(.openui-stacked-legend__item-color) {
+-    transform: scale(1.2);
+-  }
+-  & .openui-stacked-legend__item--active :where(.openui-stacked-legend__item-color) {
+-    transform: scale(1.3);
+-  }
+-  & :where(.openui-stacked-legend__item-label-text) {
+-    font: var(--openui-text-label-sm, 400 14px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-    transition: color 0.2s ease-in-out;
+-    overflow: hidden;
+-    text-overflow: ellipsis;
+-    white-space: nowrap;
+-    min-width: 0;
+-  }
+-  & :where(.openui-stacked-legend__item-value) {
+-    font: var(--openui-text-label-sm, 400 14px/1.25 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-    transition: all 0.2s ease-in-out;
+-    flex-shrink: 0;
+-  }
+-  & :where(.openui-stacked-legend-show-more-button) {
+-    width: 100%;
+-    justify-content: center;
+-    margin-top: var(--openui-space-2xs, 4px);
+-  }
+-  & :where(.openui-stacked-legend-separator) {
+-    margin: var(--openui-space-2xs, 4px) 0;
+-  }
+-`;
+-export const layoutClass = css`
+-  & {
+-    display: flex;
+-    position: relative;
+-    gap: 20px;
+-    align-items: center;
+-  }
+-  &:where(.openui-chart-with-stacked-legend--column) {
+-    flex-direction: column;
+-  }
+-  &:where(.openui-chart-with-stacked-legend--row) {
+-    flex-direction: row;
+-    min-height: 296px;
+-  }
+-  & :where(.openui-chart-with-stacked-legend__chart) {
+-    width: 100%;
+-    min-width: 0;
+-  }
+-  & :where(.openui-chart-with-stacked-legend__legend) {
+-    display: flex;
+-    justify-content: center;
+-    width: 100%;
+-  }
+-  &.openui-chart-with-stacked-legend--column :where(.openui-chart-with-stacked-legend__legend) {
+-    align-items: flex-start;
+-  }
+-  &.openui-chart-with-stacked-legend--row :where(.openui-chart-with-stacked-legend__chart) {
+-    flex: 1;
+-  }
+-  &.openui-chart-with-stacked-legend--row :where(.openui-chart-with-stacked-legend__legend) {
+-    flex: 1;
+-    min-width: 0;
+-    height: 296px;
+-    align-items: center;
+-  }
+-  &.openui-chart-with-stacked-legend--row
+-    .openui-chart-with-stacked-legend__legend
+-    :where(.openui-stacked-legend-container) {
+-    justify-content: center;
+-  }
+-  &.openui-chart-with-stacked-legend--row
+-    .openui-chart-with-stacked-legend__legend
+-    :where(.openui-stacked-legend) {
+-    height: auto;
+-    max-height: 100%;
+-  }
+-`;
++export const rootClass = "openui-chart-stacked-legend-root";
++export const layoutClass = "openui-chart-stacked-legend-layout-root";
+ 
+-export const scrollbarClass = css`
+-  &::-webkit-scrollbar {
+-    display: none;
++export const scrollbarClass = "openui-chart-stacked-legend-scrollbar";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-chart-stacked-legend-root {
++      & {
++        position: relative;
++        display: flex;
++        flex-direction: column;
++        align-items: center;
++        height: 100%;
++      }
++      & :where(.openui-stacked-legend-header) {
++        width: 100%;
++        box-sizing: border-box;
++        display: flex;
++        flex-direction: row;
++        align-items: center;
++        justify-content: space-between;
++        gap: 10px;
++        padding: 0 var(--openui-space-xs, 6px) var(--openui-space-xs, 6px)
++          var(--openui-space-l, 18px);
++        color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++      }
++      & :where(.openui-stacked-legend-header-buttons) {
++        display: flex;
++        flex-direction: row;
++        align-items: center;
++        gap: var(--openui-space-xs, 6px);
++      }
++      & :where(.openui-stacked-legend-header-title) {
++        font: var(--openui-text-label-sm, 400 14px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++      }
++      & :where(.openui-stacked-legend-scroll-button) {
++        z-index: 100;
++        display: flex;
++        align-items: center;
++        justify-content: center;
++        cursor: pointer;
++      }
++      & :where(.openui-stacked-legend) {
++        width: 100%;
++        display: flex;
++        flex-direction: column;
++        justify-content: safe center;
++        min-width: 200px;
++        overflow-y: scroll;
++        height: 100%;
++        scrollbar-width: none;
++        -ms-overflow-style: none;
++        scroll-behavior: smooth;
++      }
++      & :where(.openui-stacked-legend__item) {
++        width: 100%;
++        box-sizing: border-box;
++        display: flex;
++        flex-direction: row;
++        justify-content: space-between;
++        align-items: center;
++        gap: 10px;
++        padding: 4px 8px;
++        border-radius: var(--openui-radius-m, 8px);
++        transition: all 0.2s ease-in-out;
++        height: 32px;
++        flex-shrink: 0;
++      }
++      & :hover:where(.openui-stacked-legend__item) {
++        background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
++      }
++      & :where(.openui-stacked-legend__item--active) {
++        background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
++      }
++      & :where(.openui-stacked-legend__item-label) {
++        display: flex;
++        flex-direction: row;
++        align-items: center;
++        gap: 8px;
++        min-width: 0;
++        flex: 1;
++      }
++      & :where(.openui-stacked-legend__item-color-container) {
++        display: flex;
++        flex-direction: row;
++        align-items: center;
++        justify-content: center;
++        gap: 10px;
++        height: 100%;
++        width: 32px;
++        flex-shrink: 0;
++      }
++      & :where(.openui-stacked-legend__item-color) {
++        width: 10px;
++        height: 10px;
++        border-radius: 2px;
++        transition: all 0.2s ease-in-out;
++      }
++      & .openui-stacked-legend__item:hover :where(.openui-stacked-legend__item-color) {
++        transform: scale(1.2);
++      }
++      & .openui-stacked-legend__item--active :where(.openui-stacked-legend__item-color) {
++        transform: scale(1.3);
++      }
++      & :where(.openui-stacked-legend__item-label-text) {
++        font: var(--openui-text-label-sm, 400 14px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++        transition: color 0.2s ease-in-out;
++        overflow: hidden;
++        text-overflow: ellipsis;
++        white-space: nowrap;
++        min-width: 0;
++      }
++      & :where(.openui-stacked-legend__item-value) {
++        font: var(--openui-text-label-sm, 400 14px/1.25 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++        transition: all 0.2s ease-in-out;
++        flex-shrink: 0;
++      }
++      & :where(.openui-stacked-legend-show-more-button) {
++        width: 100%;
++        justify-content: center;
++        margin-top: var(--openui-space-2xs, 4px);
++      }
++      & :where(.openui-stacked-legend-separator) {
++        margin: var(--openui-space-2xs, 4px) 0;
++      }
++    }
++    .openui-chart-stacked-legend-layout-root {
++      & {
++        display: flex;
++        position: relative;
++        gap: 20px;
++        align-items: center;
++      }
++      &:where(.openui-chart-with-stacked-legend--column) {
++        flex-direction: column;
++      }
++      &:where(.openui-chart-with-stacked-legend--row) {
++        flex-direction: row;
++        min-height: 296px;
++      }
++      & :where(.openui-chart-with-stacked-legend__chart) {
++        width: 100%;
++        min-width: 0;
++      }
++      & :where(.openui-chart-with-stacked-legend__legend) {
++        display: flex;
++        justify-content: center;
++        width: 100%;
++      }
++      &.openui-chart-with-stacked-legend--column :where(.openui-chart-with-stacked-legend__legend) {
++        align-items: flex-start;
++      }
++      &.openui-chart-with-stacked-legend--row :where(.openui-chart-with-stacked-legend__chart) {
++        flex: 1;
++      }
++      &.openui-chart-with-stacked-legend--row :where(.openui-chart-with-stacked-legend__legend) {
++        flex: 1;
++        min-width: 0;
++        height: 296px;
++        align-items: center;
++      }
++      &.openui-chart-with-stacked-legend--row
++        .openui-chart-with-stacked-legend__legend
++        :where(.openui-stacked-legend-container) {
++        justify-content: center;
++      }
++      &.openui-chart-with-stacked-legend--row
++        .openui-chart-with-stacked-legend__legend
++        :where(.openui-stacked-legend) {
++        height: auto;
++        max-height: 100%;
++      }
++    }
++    .openui-chart-stacked-legend-scrollbar {
++      &::-webkit-scrollbar {
++        display: none;
++      }
++    }
+   }
+ `;
++
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
+diff --git a/packages/react-components/src/components/Charts/shared/mini/miniChart.styles.ts b/packages/react-components/src/components/Charts/shared/mini/miniChart.styles.ts
+index d76c49f4b..f874c0a8a 100644
+--- a/packages/react-components/src/components/Charts/shared/mini/miniChart.styles.ts
++++ b/packages/react-components/src/components/Charts/shared/mini/miniChart.styles.ts
+@@ -1,25 +1,35 @@
+ import { css } from "goober";
+ import { fadeAppearAnimation } from "../animations/fadeAppear.styles";
+-export const rootClass = css`
+-  & {
+-    position: relative;
+-    aspect-ratio: 1/1;
+-    min-width: 100px;
+-    min-height: 100px;
+-  }
+-  & > svg {
+-    display: block;
+-  }
+-  &:where(.openui-mini-chart--clickable) {
+-    cursor: pointer;
+-  }
+-  & :where(.openui-mini-line-chart-point) {
+-    fill: var(--openui-background, oklch(0.97 0 89.876 / 1));
+-  }
+-  @media (prefers-reduced-motion: no-preference) {
+-    & :where(.openui-mini-chart-mark--animated) {
+-      opacity: 0;
+-      animation: ${fadeAppearAnimation} 0.6s ease-out forwards;
++export const rootClass = "openui-mini-chart-root";
++
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-mini-chart-root {
++      & {
++        position: relative;
++        aspect-ratio: 1/1;
++        min-width: 100px;
++        min-height: 100px;
++      }
++      & > svg {
++        display: block;
++      }
++      &:where(.openui-mini-chart--clickable) {
++        cursor: pointer;
++      }
++      & :where(.openui-mini-line-chart-point) {
++        fill: var(--openui-background, oklch(0.97 0 89.876 / 1));
++      }
++      @media (prefers-reduced-motion: no-preference) {
++        & :where(.openui-mini-chart-mark--animated) {
++          opacity: 0;
++          animation: ${fadeAppearAnimation} 0.6s ease-out forwards;
++        }
++      }
+     }
+   }
+ `;
++
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}

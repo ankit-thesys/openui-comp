@@ -1,0 +1,36 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.hover: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('#app .openui-stacked-legend__item').first()[22m
+[2m    - locator resolved to <div class="openui-stacked-legend__item">…</div>[22m
+[2m  - attempting hover action[22m
+[2m    2 × waiting for element to be visible and stable[22m
+[2m      - element is visible and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <svg role="img" width="100%" height="3828" aria-label="Horizontal bar chart">…</svg> from <div>…</div> subtree intercepts pointer events[22m
+[2m    - retrying hover action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible and stable[22m
+[2m      - element is visible and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <svg role="img" width="100%" height="3828" aria-label="Horizontal bar chart">…</svg> from <div>…</div> subtree intercepts pointer events[22m
+[2m    - retrying hover action[22m
+[2m      - waiting 100ms[22m
+[2m    57 × waiting for element to be visible and stable[22m
+[2m       - element is visible and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <svg role="img" width="100%" height="3828" aria-label="Horizontal bar chart">…</svg> from <div>…</div> subtree intercepts pointer events[22m
+[2m     - retrying hover action[22m
+[2m       - waiting 500ms[22m
+
+    at /private/tmp/openui-charts-w1-evidence/run-extra.mjs:17:92 {
+  name: 'TimeoutError'
+}
+
+Node.js v22.22.2
