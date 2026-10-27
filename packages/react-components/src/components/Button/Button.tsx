@@ -3,9 +3,17 @@ import { css } from "goober";
 import { forwardRef, ReactNode } from "react";
 import { buttonStyles } from "./button.styles";
 
-const componentClass = css`
-  ${buttonStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-button-root {
+      ${buttonStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
 
 type ButtonVariant = "primary" | "secondary" | "tertiary";
 type ButtonSize = "extra-small" | "small" | "medium" | "large";
@@ -57,7 +65,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={clsx(
-          componentClass,
+          "openui-button-root",
           "openui-button-base",
           variantMap[variant],
           sizeMap[size],

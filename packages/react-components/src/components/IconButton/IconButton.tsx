@@ -4,9 +4,17 @@ import { css } from "goober";
 import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
 import { iconButtonStyles } from "./iconButton.styles";
 
-const componentClass = css`
-  ${iconButtonStyles}
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-icon-button-root {
+      ${iconButtonStyles}
+    }
+  }
 `;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
 
 type IconButtonVariant = "primary" | "secondary" | "tertiary";
 type IconButtonSize =
@@ -77,7 +85,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props,
     <Comp
       ref={ref}
       className={clsx(
-        componentClass,
+        "openui-icon-button-root",
         "openui-icon-button",
         iconButtonVariants[variant],
         iconButtonSizes[size],
