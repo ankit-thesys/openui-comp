@@ -13,21 +13,11 @@ import {
   triggerStyles,
 } from "./foldableSection.styles";
 
-const rootClass = css`
-  ${rootStyles}
-`;
-const itemClass = css`
-  ${itemStyles}
-`;
-const headerClass = css`
-  ${headerStyles}
-`;
-const triggerClass = css`
-  ${triggerStyles}
-`;
-const contentClass = css`
-  ${contentStyles}
-`;
+const rootClass = "openui-section-block-foldable-section-root";
+const itemClass = "openui-section-block-foldable-section-item";
+const headerClass = "openui-section-block-foldable-section-header";
+const triggerClass = "openui-section-block-foldable-section-trigger";
+const contentClass = "openui-section-block-foldable-section-content";
 
 export type FoldableSectionRootProps = AccordionPrimitive.AccordionMultipleProps;
 
@@ -129,3 +119,27 @@ export const FoldableSectionContent = forwardRef<
   </AccordionPrimitive.Content>
 ));
 FoldableSectionContent.displayName = "FoldableSectionContent";
+
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-section-block-foldable-section-root {
+      ${rootStyles}
+    }
+    .openui-section-block-foldable-section-item {
+      ${itemStyles}
+    }
+    .openui-section-block-foldable-section-header {
+      ${headerStyles}
+    }
+    .openui-section-block-foldable-section-trigger {
+      ${triggerStyles}
+    }
+    .openui-section-block-foldable-section-content {
+      ${contentStyles}
+    }
+  }
+`;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}

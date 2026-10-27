@@ -4,9 +4,7 @@ import { css } from "goober";
 import { ChevronDownIcon } from "lucide-react";
 import React, { forwardRef } from "react";
 import { accordionStyles } from "./accordion.styles";
-const componentClass = css`
-  ${accordionStyles}
-`;
+const componentClass = "openui-accordion-root";
 
 type AccordionVariant = "clear" | "card" | "sunk";
 
@@ -103,3 +101,15 @@ export const AccordionContent = forwardRef<
     <div className="openui-accordion-content-wrapper">{children}</div>
   </AccordionPrimitive.Content>
 ));
+
+const stylesheetScope = css`
+  :where(&:root) {
+    .openui-accordion-root {
+      ${accordionStyles}
+    }
+  }
+`;
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add(stylesheetScope);
+}
