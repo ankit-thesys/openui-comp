@@ -1,0 +1,675 @@
+{
+  "baseline": "d1292715028f816bd6a0dcf92766ec7dd15350f4",
+  "candidate": "75f69041891147d52dc0f0d2c4b21a048e575aa8",
+  "allFallbackExpressionsUnchanged": true,
+  "comparison": "CSS whitespace outside quoted strings normalized; raw indentation changes separately recorded",
+  "fileCount": 95,
+  "occurrences": 1444,
+  "files": [
+    {
+      "file": "packages/react-components/src/components/Accordion/accordion.styles.ts",
+      "occurrences": 23,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "e66ba2a0033721bd93be9a3fb70fac5e8c3a34ff904164784aaac254667bd0ac"
+    },
+    {
+      "file": "packages/react-components/src/components/Button/button.styles.ts",
+      "occurrences": 56,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "9da8215e1b64a87ab82f2f9d281369661617d7b8d96a982b9c57c535ac02f605"
+    },
+    {
+      "file": "packages/react-components/src/components/Buttons/buttons.styles.ts",
+      "occurrences": 1,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "955375c89a710e0672b4ed7782824c2cf1d07611f3dcfac61bf75de28f5be2b1"
+    },
+    {
+      "file": "packages/react-components/src/components/Calendar/calendar.styles.ts",
+      "occurrences": 63,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "08d332196a223103194965a1f810c8ad60782e10e21ceaaeb3edc15d769a2caa"
+    },
+    {
+      "file": "packages/react-components/src/components/Callout/callout.styles.ts",
+      "occurrences": 21,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "07efeabb7b54ca6485a7ea418553a906c47989335dba82f49841ff7f9e10c73b"
+    },
+    {
+      "file": "packages/react-components/src/components/Card/card.styles.ts",
+      "occurrences": 12,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "5c3fd09b2b04f6437f890516240d708a3819806efc861cf660428e3d4420679c"
+    },
+    {
+      "file": "packages/react-components/src/components/CardHeader/cardHeader.styles.ts",
+      "occurrences": 11,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "244cfd1c3a6209d7f35191a26c6a0dc99819bdf35eef48b1b27976e1d1a7aa42"
+    },
+    {
+      "file": "packages/react-components/src/components/Carousel/carousel.styles.ts",
+      "occurrences": 13,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "78aca9cac22c26b9eacf3476a601fd26129a778bb7c9bddb7fc590b441fa18d9"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/BarChart/barChart.styles.ts",
+      "occurrences": 1,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "a5051e634c2650efffc8e4498009981fc56285d54f2048880d2f15ade0cb036c"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/BarChart/horizontalBarChart.styles.ts",
+      "occurrences": 5,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "4065d9bfda3454e55e675ab28597b8e16365de7de919d71bff861e117623fc4e"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts",
+      "occurrences": 19,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "a6423209000ea7a73ea25d30353c82dfbc9cf3cd7ff78267af0b97769ae7cb7e"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/CalendarHeatmap/parts/CalendarPatternDefs.tsx",
+      "occurrences": 1,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "56f826bcf95387522a710d2d54ae019320aa93c9ca3e126d9f8d5af69251bc0f"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/FunnelChart/funnelChart.styles.ts",
+      "occurrences": 13,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "ed1cee8b48fc16625f0c68cd961995693ce275bd64e9737e28ffc87c8b2a0d2b"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/HeatmapChart/heatmapChart.styles.ts",
+      "occurrences": 7,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "69fbf1ae9cf94f09d887e40e60a2993a5e9fe943be27c743fee6dc4c2560d8b0"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/LineChart/lineChart.styles.ts",
+      "occurrences": 1,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "be6889d776bef224fef7204e820122ef94a55228c97584b41e9a7db7e937cb82"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/PieChart/pieChart.styles.ts",
+      "occurrences": 1,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "8c4f49b34bf03bc700ab2e28c0d98d8b1b2e057b0610637a9e7f0438855823d2"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/RadarChart/radarChart.styles.ts",
+      "occurrences": 2,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "50631dc1fab6bd6e467414370f2aebf46b00de0d3bf919a1307d926b681f3776"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/RadialChart/radialChart.styles.ts",
+      "occurrences": 1,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "b00c5292e64e2635345619abc5ade43cfb7fe91c5800525c199c2ba33316fcf4"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/ScatterChart/scatterChart.styles.ts",
+      "occurrences": 1,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "96e87cafa68cc07aae609870e107d97a871974709acf89019b127340984e7b45"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/SegmentedBar/segmentedBar.styles.ts",
+      "occurrences": 13,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "9fc73ff3fa5df96da4fd56b6ee5a77aa4d4e92dc5fb5c67337fc54193c2e1028"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsHorizontal/scrollButtonsHorizontal.styles.ts",
+      "occurrences": 1,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "aca192524ccbd520c078731826d78e98a60e19a0a41ef1582914025ce1481655"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/cartesian/ScrollButtonsVertical/scrollButtonsVertical.styles.ts",
+      "occurrences": 2,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "372e80140ef2ec8ae0409c6a34949294720143d4f215032aae16fc96f6a7348e"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/chartBase.styles.ts",
+      "occurrences": 13,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "46784aa1cd2d9e14bfc4ad385ac7010650e41447d4ba63da8d3d99454efd6c68"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/chartBaseDeclarations.ts",
+      "occurrences": 4,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "55712fd5e8a482def43d088a53e75ca97e8748051ba6a77af59cd4ab65785e7f"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/chartTypography.ts",
+      "occurrences": 4,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "10286b5b1f9d998f7e41e0613ea96bc18e3d73ad6328878abbb6774c891dd4fe"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/DefaultLegend/defaultLegend.styles.ts",
+      "occurrences": 28,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "0cd25d3d032eb641267ae46f5c4487a5c69c64a1dca28efd8c4d264c596fb524"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts",
+      "occurrences": 43,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "3baf1d2c63848f897e97d230bf06e45757170a9c05e046c07ce75c5860932309"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
+      "occurrences": 22,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "aad727aa5bdd58d7f8c3db7a4d732bc2a464f7faba3477b8f702f78c20f7f3ca"
+    },
+    {
+      "file": "packages/react-components/src/components/Charts/shared/mini/miniChart.styles.ts",
+      "occurrences": 1,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "3c48780f09a59db0b959eba6fd5443f88e254365dde22d0797d71044ab0e676f"
+    },
+    {
+      "file": "packages/react-components/src/components/CheckBoxGroup/styles.ts",
+      "occurrences": 8,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "3a11f52c411816850ef0252603a7cc2b43cb5b630fbdf1c70c57e917ed163d70"
+    },
+    {
+      "file": "packages/react-components/src/components/CheckBoxItem/styles.ts",
+      "occurrences": 19,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "23f416a62280ddb8f5f3b97110506393f4baa9684e662edc6fdd0c91f94de3a3"
+    },
+    {
+      "file": "packages/react-components/src/components/Chips/chips.styles.ts",
+      "occurrences": 15,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "f428229fb6813241c845e36c18a4d7263a4a2bc281e5f7deb9aac62eb79f3324"
+    },
+    {
+      "file": "packages/react-components/src/components/Citation/citation.styles.ts",
+      "occurrences": 18,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": false,
+      "currentSHA256": "72881ba3c4677c80548b96a12c157979541330779f2da8fd5c0203ef817af710"
+    },
+    {
+      "file": "packages/react-components/src/components/Citation/citationItem.styles.ts",
+      "occurrences": 16,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "44a98ed2f8f32be776a67e2b82563c371c01692aa5d4292f926517e36a3ff4f6"
+    },
+    {
+      "file": "packages/react-components/src/components/CodeBlock/codeBlock.styles.ts",
+      "occurrences": 2,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "10cc10600b39dac9470237da9e1d0d46d3a4facefb8759818b3cde80a6674126"
+    },
+    {
+      "file": "packages/react-components/src/components/CompositeCardBlock/card.styles.ts",
+      "occurrences": 16,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": false,
+      "currentSHA256": "0977ba3c61c2b9af39f5535e89476e23b90ecb9c60fd11df39e0ef347b7ceb92"
+    },
+    {
+      "file": "packages/react-components/src/components/ContextCardBlock/card.styles.ts",
+      "occurrences": 43,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "cd0f64a4bd88040c7e0a06cf93af4096d0d9cb4a1edee0cca3ce077a58e1ac7c"
+    },
+    {
+      "file": "packages/react-components/src/components/DatePicker/datePicker.styles.ts",
+      "occurrences": 20,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "46f47dcdaa23c895f3a579f4751587b4e4a84b0ad2b2dbd62ffb77ed217d6815"
+    },
+    {
+      "file": "packages/react-components/src/components/DotMatrixLoader/dotMatrixLoader.styles.ts",
+      "occurrences": 1,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "b71f3941cec1e0ff48b9351fe032f845ac82bd0f06c93c14d4bc9d2532071090"
+    },
+    {
+      "file": "packages/react-components/src/components/EditableTable/base/components/editableCell.styles.ts",
+      "occurrences": 16,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "749364ef23844077abad8266a5d9ee68e3095e5cb387180a6de70a71037333f0"
+    },
+    {
+      "file": "packages/react-components/src/components/EditableTable/editableTable.styles.ts",
+      "occurrences": 32,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "749dbccae2936f4edc47f381318c3c9cc6fb0f7072d23cfc8fcf61c004c40955"
+    },
+    {
+      "file": "packages/react-components/src/components/EntityList/entityList.styles.ts",
+      "occurrences": 32,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "c5e47d3acf6be867f854ff4b1d744518e424164f1d8298ae540138f435b86273"
+    },
+    {
+      "file": "packages/react-components/src/components/FormControl/Hint/hint.styles.ts",
+      "occurrences": 6,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "77c78249dd8ac022b6956be12adc909db94354fe7748b03482dfb273a75f644f"
+    },
+    {
+      "file": "packages/react-components/src/components/FormControl/formControl.styles.ts",
+      "occurrences": 1,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "d04147d41a54e63f56bc8f496a4381d3982a46ff9281dc03f59632bbdf975539"
+    },
+    {
+      "file": "packages/react-components/src/components/IconButton/iconButton.styles.ts",
+      "occurrences": 44,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "9bb883a220480acdc127111bfe67fcec2484aa980e9b4131380ceddcd17a6711"
+    },
+    {
+      "file": "packages/react-components/src/components/IconTag/iconTag.styles.ts",
+      "occurrences": 17,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "e5937615346ee7e087190c3c9e9cd14c4a4c0688b3f94861406a794a3bbdaba3"
+    },
+    {
+      "file": "packages/react-components/src/components/IconText/iconText.styles.ts",
+      "occurrences": 5,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "3c80cfe25bcaa715db78eee66c418ab6add45e93a9729f573949dc4b997955bc"
+    },
+    {
+      "file": "packages/react-components/src/components/Image/image.styles.ts",
+      "occurrences": 3,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "5ae145f83a223da4f5854f36a4932b76e46db1563253590e1ff9773cd915f59d"
+    },
+    {
+      "file": "packages/react-components/src/components/ImageBlock/imageBlock.styles.ts",
+      "occurrences": 7,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "5c92209bbd651fb4a573771f79dd86881481bd79f6d6330c5669e4dc2aa8a5db"
+    },
+    {
+      "file": "packages/react-components/src/components/ImageGallery/galleryModal.styles.ts",
+      "occurrences": 23,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "cea55836ca738bb85f62c137c6508d758e768f37d1066be239fdc457a714d35c"
+    },
+    {
+      "file": "packages/react-components/src/components/ImageGallery/imageGallery.styles.ts",
+      "occurrences": 2,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "de7db2b8158becd802df684a2f07d97500bf65ba8bb7ea879177123518a297d2"
+    },
+    {
+      "file": "packages/react-components/src/components/ImageText/imageText.styles.ts",
+      "occurrences": 11,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "6632bc61cdc9d91607b2136e4f598fca76d0c9cc129124d0726c97f1235f7c56"
+    },
+    {
+      "file": "packages/react-components/src/components/ImageTextLarge/imageTextLarge.styles.ts",
+      "occurrences": 3,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "02619cacc4af41507bf21f1cd367f62a63457e9f48a4a574f9a40d7868df2693"
+    },
+    {
+      "file": "packages/react-components/src/components/InlineHeader/inlineHeader.styles.ts",
+      "occurrences": 10,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "32c3a1b4e9ebe4cfda26bce585001db0cae7045215c6eb5f18c162feaa1d3fd0"
+    },
+    {
+      "file": "packages/react-components/src/components/Input/input.styles.ts",
+      "occurrences": 27,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "5efba23db1af839b912b3ef42805d09587113ddfd0b292b4168f93014f4e4f03"
+    },
+    {
+      "file": "packages/react-components/src/components/Label/label.styles.ts",
+      "occurrences": 6,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "fc058a00d083b9afe25c38862323d6a5f708092dbafa003be8bfb10df3043e28"
+    },
+    {
+      "file": "packages/react-components/src/components/ListBlock/listBlock.styles.ts",
+      "occurrences": 2,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "4e17496f90f7a78f24e6f3bde382d0877fd76595c4fa937da7147b785f4d5da9"
+    },
+    {
+      "file": "packages/react-components/src/components/ListItem/listItem.styles.ts",
+      "occurrences": 38,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "5143886e21668a41178a7872320da64f28f95c036b3a6910951435f51fcbf542"
+    },
+    {
+      "file": "packages/react-components/src/components/MarkDownRenderer/markdown.styles.ts",
+      "occurrences": 15,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "ef058c6c966fd440de2ecb709691898d00032c5d0c0b3e46570061491f820534"
+    },
+    {
+      "file": "packages/react-components/src/components/MetricIndicator/metricIndicator.styles.ts",
+      "occurrences": 21,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "a0059e5ec7c78cc0733aacf69da4fa90024ce08c581ffdb68411d9d4699fa339"
+    },
+    {
+      "file": "packages/react-components/src/components/Modal/modal.styles.ts",
+      "occurrences": 13,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "33b9c02f5e9a29c71907699b9c1e5a36b27924dc490a9a4ae361fa68bd92fb61"
+    },
+    {
+      "file": "packages/react-components/src/components/OptionCards/optionCards.styles.ts",
+      "occurrences": 24,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "bcdef31284a50a366033519c5d34caa33aa38b22e19af62496dc2d706fb1fe89"
+    },
+    {
+      "file": "packages/react-components/src/components/OverviewCardBlock/overviewCardBlock.styles.ts",
+      "occurrences": 14,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": false,
+      "currentSHA256": "4d8e0dc364c4ae84c888ab4d7bfa1924de4171101c54bf8628e6aeff10092aa0"
+    },
+    {
+      "file": "packages/react-components/src/components/RadioGroup/styles.ts",
+      "occurrences": 8,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "17498281811368009ad3bffb2f9180fe0f9ebcd94afa1741a50d1830db542f66"
+    },
+    {
+      "file": "packages/react-components/src/components/RadioItem/styles.ts",
+      "occurrences": 19,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "55f3ab6c4d56bc8e44390464948aafd2b4656f315ac31d65191996fa4720af39"
+    },
+    {
+      "file": "packages/react-components/src/components/SectionBlock/foldableSection.styles.ts",
+      "occurrences": 11,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "da92475f34483e32ee017ab6efe3ff5d68764efdd428629f769096a5a51cd387"
+    },
+    {
+      "file": "packages/react-components/src/components/SectionBlock/sectionV2.styles.ts",
+      "occurrences": 9,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "7c14a062d68d7d562f1ec836630ede2b275dd54fddea05efcc303ea00040917d"
+    },
+    {
+      "file": "packages/react-components/src/components/Select/select.styles.ts",
+      "occurrences": 61,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "82387fc2d94d0fe3910c26c4cfd2a72475ae6dc43dbb1c7186802bad6c09d4f8"
+    },
+    {
+      "file": "packages/react-components/src/components/Separator/separator.styles.ts",
+      "occurrences": 1,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "ea99f383547fdfcfbd086eab06a8c95a0ff0f3a4240550a0953a9b7169513496"
+    },
+    {
+      "file": "packages/react-components/src/components/Skeleton/pieChartSkeleton.styles.ts",
+      "occurrences": 14,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "3d0abfdd236a101ab30267a85f21b22d9f66c6e9a8b5b707095104e4fa9fbf3b"
+    },
+    {
+      "file": "packages/react-components/src/components/Skeleton/skeleton.styles.ts",
+      "occurrences": 3,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "2f04a3aec477d2f07dbb834c22cb83799ea025c369e8fcf5696f4ba137bd54ef"
+    },
+    {
+      "file": "packages/react-components/src/components/Skeleton/tableSkeleton.styles.ts",
+      "occurrences": 5,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "185cf858223fce0518652babf4fd3e32498f0a12b93d3db3610c8108ffc62581"
+    },
+    {
+      "file": "packages/react-components/src/components/Slider/slider.styles.ts",
+      "occurrences": 30,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "c7696e3c5acb332e4f7ee694b755527b8de417d7d5e986aa5ca90522b178aeaa"
+    },
+    {
+      "file": "packages/react-components/src/components/Slider/sliderBlock.styles.ts",
+      "occurrences": 20,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "548a6a7abf2b99c282a525a5acba0930af90370813ccd07384d952d5dfbc11a8"
+    },
+    {
+      "file": "packages/react-components/src/components/SnippetCardBlock/snippetCardBlock.styles.ts",
+      "occurrences": 17,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": false,
+      "currentSHA256": "40d2b33eb639a7713cb9af8ec7c14e2cf85149f04eb698966ee9c860c7db43ff"
+    },
+    {
+      "file": "packages/react-components/src/components/Sources/listedSources.styles.ts",
+      "occurrences": 11,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "3549680db5cf10dd181ae4ddeaf09ff68c017cab96972d1db64dab13057ed3bd"
+    },
+    {
+      "file": "packages/react-components/src/components/Sources/sourcesItem.styles.ts",
+      "occurrences": 13,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "33d30e77dd876a78036f56bade0cefe4a045f36923efe5345d445175836b6e55"
+    },
+    {
+      "file": "packages/react-components/src/components/Steps/steps.styles.ts",
+      "occurrences": 18,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "83b5f1dfee51611e10e3fabde8d815fd22fabedb9ee3ae1fd3abc32286dbfb86"
+    },
+    {
+      "file": "packages/react-components/src/components/SwitchGroup/styles.ts",
+      "occurrences": 8,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "e284dba584dc5077c2b75c0c474d83d6aba4520240dc389f02ea4c84935b50e7"
+    },
+    {
+      "file": "packages/react-components/src/components/SwitchItem/styles.ts",
+      "occurrences": 21,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "150f334324b81ded26c42a6a68e9f0af52dd8ab313a7fd4eb4d4eb7299fc14ea"
+    },
+    {
+      "file": "packages/react-components/src/components/Table/scrollableTable.styles.ts",
+      "occurrences": 5,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "e08bbabc895ecf261fa46efc5c4b431dd68945b6c661dcc8034ab1768a70dfe1"
+    },
+    {
+      "file": "packages/react-components/src/components/Table/table.styles.ts",
+      "occurrences": 17,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "2adb1ab013e6181d672aee934bfaff274a5e93cd5bfbdc9e38eb294965315703"
+    },
+    {
+      "file": "packages/react-components/src/components/Tabs/tabs.styles.ts",
+      "occurrences": 50,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": false,
+      "currentSHA256": "4c731cf6874a430c14297e6b6b2950b7d5a872f14364be65ff4058c1fa9adc22"
+    },
+    {
+      "file": "packages/react-components/src/components/Tag/tag.styles.ts",
+      "occurrences": 25,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "d090513312d6147297b4a7fcf271562abf1a3bc7f702fcdfdb8bea2ded539017"
+    },
+    {
+      "file": "packages/react-components/src/components/TagBlock/tagBlock.styles.ts",
+      "occurrences": 1,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "b7ea43eebe94d27d1023f30b15f97ca3f2fefaa9138c7fba5b59ad83202c0bcf"
+    },
+    {
+      "file": "packages/react-components/src/components/TextArea/textArea.styles.ts",
+      "occurrences": 18,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "7763780fafb5d867f78b257e24ff5844132ed9a9088ad18dbe5456ea0c58af55"
+    },
+    {
+      "file": "packages/react-components/src/components/TextBlock/textBlock.styles.ts",
+      "occurrences": 46,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "5f675915d344a3f95f56c4239fab5392161a32927550a09308f0d2a90631bbc5"
+    },
+    {
+      "file": "packages/react-components/src/components/TextCallout/textCallout.styles.ts",
+      "occurrences": 19,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "d862a80b3b0f5d2618fad45834d5e56fd5de822aeb7227dfdc38e5c1ce1b474a"
+    },
+    {
+      "file": "packages/react-components/src/components/TextContent/textContent.styles.ts",
+      "occurrences": 11,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "af9d942c79fa3da3934bf8503806db355afebc576ff18d21a0ae54c2b27c73ba"
+    },
+    {
+      "file": "packages/react-components/src/components/TextContentWrapper/textContentWrapper.styles.ts",
+      "occurrences": 3,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "23e8d7ce74079889fa971b13a49e8a3d4cac362fab36f76e8d0f08e48b1bd5c0"
+    },
+    {
+      "file": "packages/react-components/src/components/ToggleGroup/styles.ts",
+      "occurrences": 1,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "0f80b1785091acf3e8239adc274d7536024c80cd95b89aa563e33cfa4441ebbd"
+    },
+    {
+      "file": "packages/react-components/src/components/ToggleItem/styles.ts",
+      "occurrences": 15,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "1f06c73448eec3226e480ae28c3bbc812fbdf350151be85e40199c8bae0c2f70"
+    },
+    {
+      "file": "packages/react-components/src/components/TooltipWrapper/tooltipWrapper.styles.ts",
+      "occurrences": 11,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "8eafe902b1925b62fb73883c805ba4c1fa9035d34a1a2adda9044093128473fb"
+    },
+    {
+      "file": "packages/react-components/src/components/VisualCardBlock/card.styles.ts",
+      "occurrences": 20,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": false,
+      "currentSHA256": "8a255e692f4dc8b944f95513c3694ce1105aa31c8f57ff0931935bbc89737d6b"
+    },
+    {
+      "file": "packages/react-components/src/components/_shared/cards/cardBlockLayout.styles.ts",
+      "occurrences": 20,
+      "unchangedFallbackExpressions": true,
+      "rawFormattingIdentical": true,
+      "currentSHA256": "bacd8d14cee46b2929c97782b9bbb0a6b424a3f0d8023df9cd7d6a48a0f3b2bc"
+    }
+  ]
+}

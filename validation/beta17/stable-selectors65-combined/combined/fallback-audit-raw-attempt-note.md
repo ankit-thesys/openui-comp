@@ -1,0 +1,1 @@
+The initial raw-byte fallback-expression comparison stopped at Citation box-shadow because formatting indented its multiline var expression. No final PASS came from that run. The corrected audit normalizes formatting whitespace outside quoted CSS strings, preserves each expression/count and records raw-formatting equality separately. Product source is unchanged.

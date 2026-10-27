@@ -1,0 +1,3 @@
+# Combined65 validation scope
+
+New immutable combined artifact compared with accepted61 archive. Replays existing controls, portal and presentation framework/order/theme/interaction matrices plus state/part probes. The extra portal run uses the documented corrected clear Tabs root/state/part selector; original W2 failed probes remain frozen separately. Sixteen representative optimized builds cover eight interacting presentation families; earlier individual43family graph evidence remains separate. A new actual same-element Sources probe must positively match nodes before recording its retained important exception. No broad performance/memory/SSR certification or new thresholds added.

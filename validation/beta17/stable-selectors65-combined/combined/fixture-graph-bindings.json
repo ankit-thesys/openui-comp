@@ -1,0 +1,373 @@
+{
+  "note": "Emitted outputs bound to actual byte sizes; entry reachability for small fixtures is separately bound in presentation/small-graph-bindings.json. Emission is not a browser download claim.",
+  "rows": [
+    {
+      "file": "controls/baseline-browser/metafile.json",
+      "metafileSHA256": "af04ac2d9c7c6ddc7ca1c0d9f7094e9ddc9b21358573d941e26007866af7f42e",
+      "emittedOutputs": 4194,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "controls/fixture.tsx",
+          "3e7445a66e4944ff3866e1854a31d20288eddc678c5d287001ed7660976c952d"
+        ]
+      ]
+    },
+    {
+      "file": "controls/candidate-browser/metafile.json",
+      "metafileSHA256": "fa2e87c2719bfac22c651c14436f81ac045e32b3f66b17c407088deda897e696",
+      "emittedOutputs": 4194,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "controls/fixture.tsx",
+          "3e7445a66e4944ff3866e1854a31d20288eddc678c5d287001ed7660976c952d"
+        ]
+      ]
+    },
+    {
+      "file": "portals/baseline-browser/metafile.json",
+      "metafileSHA256": "ff64b00dfaa4a97605ed37d3145e86d20698fb71e4131620f46cb287fbfe3630",
+      "emittedOutputs": 4194,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "portals/fixture.tsx",
+          "39ddc81423a5c91e6c518e7bb69ae98f84c481a56bafbf8f73e2e45bda4eb989"
+        ]
+      ]
+    },
+    {
+      "file": "portals/candidate-browser/metafile.json",
+      "metafileSHA256": "e189b22f138f1b67dc6b130953f621ffcb64771170ff6b11b82118f700e313f9",
+      "emittedOutputs": 4194,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "portals/fixture.tsx",
+          "39ddc81423a5c91e6c518e7bb69ae98f84c481a56bafbf8f73e2e45bda4eb989"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/baseline-browser/metafile.json",
+      "metafileSHA256": "7fce4293196da1b000493c6a2035ca23dbb067a32b0b066d1c633a510d145fe4",
+      "emittedOutputs": 4194,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/candidate-small-Sources/metafile.json",
+      "metafileSHA256": "726e0a5b221e5e4292a7a3fb31b526e8482ca1607916aee0604117d6245ee6df",
+      "emittedOutputs": 4188,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/baseline-small-Buttons/metafile.json",
+      "metafileSHA256": "c61a96a1d6434c0c3ca98c333707d144deb138360fc45e69533ef80efaedd062",
+      "emittedOutputs": 2523,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/candidate-small-TextContentWrapper/metafile.json",
+      "metafileSHA256": "aeb726a6e9f9e40270b3ba0aed351bba4f3046b113b42d0b0821fdc358043f95",
+      "emittedOutputs": 4190,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/baseline-small-Tabs/metafile.json",
+      "metafileSHA256": "e0c6fa62c3116341ded68a3c0951f888c7c0f44ce9ba313efa95be8251638332",
+      "emittedOutputs": 4188,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/candidate-small-Citation/metafile.json",
+      "metafileSHA256": "377c725c63dbd67b6991dd1ccf9b38740263fc7c888673ea47d8e2cbe070b4ce",
+      "emittedOutputs": 2523,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/baseline-small-TagBlock/metafile.json",
+      "metafileSHA256": "9d825fdd7b7612a086b8be3ca46a51eca8982eb056775314774c42dcbd6d45ca",
+      "emittedOutputs": 2523,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/candidate-small-Tabs/metafile.json",
+      "metafileSHA256": "359a60ec1b982e3020e0b259ed740b7aef35bb1562d8d0f3b50b6ee3478a2066",
+      "emittedOutputs": 4188,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/candidate-small-Buttons/metafile.json",
+      "metafileSHA256": "680d5e0f41c02702edd60a8213a7eb8fd728af10df7691ae5655cf51ab2c8d04",
+      "emittedOutputs": 2523,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/baseline-extra/metafile.json",
+      "metafileSHA256": "ea78ca1c3a063f969dc14b5105538ed62253f012e3993c9189536a91906068d5",
+      "emittedOutputs": 4194,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/candidate-browser/metafile.json",
+      "metafileSHA256": "56fe0b636add1c366aac29f0703e674b97e5639e07798afc719870a4b37c8b15",
+      "emittedOutputs": 4194,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/baseline-small-TextContentWrapper/metafile.json",
+      "metafileSHA256": "32a9a8e6194e3efaee2fd58a8986419ab6c021e252ee466f589710e62f2a5ed2",
+      "emittedOutputs": 4190,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/baseline-small-CodeBlock/metafile.json",
+      "metafileSHA256": "16194ca3aad97165b8adde4fb70b9dd6373b332bc0652587e3cb1aed4f2b2a66",
+      "emittedOutputs": 4189,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/candidate-small-TagBlock/metafile.json",
+      "metafileSHA256": "0eab4feb73708108a9f1fc80172f8466e433e2f196a2c3e462d0d7b4b1db53dc",
+      "emittedOutputs": 2523,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/candidate-small-Table/metafile.json",
+      "metafileSHA256": "b9bf7fe1feab1f1a7262018fcf64d090212c9b5a03ce4c77efe10db0dd78e3af",
+      "emittedOutputs": 4188,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/baseline-small-Sources/metafile.json",
+      "metafileSHA256": "bcabccea3e5bf143cbf92c9875b805132547a9fe4d259cc1d913df8f9cf16c2c",
+      "emittedOutputs": 4188,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/candidate-small-CodeBlock/metafile.json",
+      "metafileSHA256": "73d4a269ab200c7a850aae592151dd0939271e7fa180c4ebba904a47657f8ce1",
+      "emittedOutputs": 4189,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/candidate-extra/metafile.json",
+      "metafileSHA256": "0bd20b40980ba9af85ad51c62b4e90dca08bddd3e58ceb64061a1e0e7fd8da2d",
+      "emittedOutputs": 4194,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/baseline-small-Table/metafile.json",
+      "metafileSHA256": "e7599e27dfe25698ab496248de555a4fcb302efc46de6bbc8d4b0f9bf566467a",
+      "emittedOutputs": 4188,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    },
+    {
+      "file": "presentation/baseline-small-Citation/metafile.json",
+      "metafileSHA256": "c8cff544d31dc00db98a4cdb23967b160c6fba85a199060cd372b454d9a698d0",
+      "emittedOutputs": 2523,
+      "allEmittedOutputsMatchMetadataBytes": true,
+      "fixtures": [
+        [
+          "presentation/fixture-extra.tsx",
+          "4c65fabdaa8708a372c5a1f70339743ee561a0c9083c540889e077c919adf0c5"
+        ],
+        [
+          "presentation/fixture.tsx",
+          "e0c8a89c73bea00b3f8920744c592f43a30d31029b514500ee4d372d1d56fae2"
+        ]
+      ]
+    }
+  ]
+}

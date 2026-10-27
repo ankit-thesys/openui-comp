@@ -1,0 +1,78 @@
+{
+  "scope": "8 representative family pairs; prior43family W2 stage remains separate",
+  "notRuntimePerformanceCertification": true,
+  "rows": [
+    {
+      "family": "TextContentWrapper",
+      "baselineStaticJSBytes": 2618017,
+      "candidateStaticJSBytes": 2622380,
+      "deltaBytes": 4363,
+      "deltaPercent": 0.1666528521396156,
+      "reachableOutputCountUnchanged": true,
+      "entryCssBytesUnchanged": true
+    },
+    {
+      "family": "CodeBlock",
+      "baselineStaticJSBytes": 1951061,
+      "candidateStaticJSBytes": 1951288,
+      "deltaBytes": 227,
+      "deltaPercent": 0.011634695173549162,
+      "reachableOutputCountUnchanged": true,
+      "entryCssBytesUnchanged": true
+    },
+    {
+      "family": "Buttons",
+      "baselineStaticJSBytes": 225577,
+      "candidateStaticJSBytes": 225730,
+      "deltaBytes": 153,
+      "deltaPercent": 0.06782606382742921,
+      "reachableOutputCountUnchanged": true,
+      "entryCssBytesUnchanged": true
+    },
+    {
+      "family": "TagBlock",
+      "baselineStaticJSBytes": 220961,
+      "candidateStaticJSBytes": 221921,
+      "deltaBytes": 960,
+      "deltaPercent": 0.43446581070867707,
+      "reachableOutputCountUnchanged": true,
+      "entryCssBytesUnchanged": true
+    },
+    {
+      "family": "Sources",
+      "baselineStaticJSBytes": 1720975,
+      "candidateStaticJSBytes": 1722962,
+      "deltaBytes": 1987,
+      "deltaPercent": 0.11545780734757913,
+      "reachableOutputCountUnchanged": true,
+      "entryCssBytesUnchanged": true
+    },
+    {
+      "family": "Tabs",
+      "baselineStaticJSBytes": 1312856,
+      "candidateStaticJSBytes": 1314315,
+      "deltaBytes": 1459,
+      "deltaPercent": 0.1111317615945694,
+      "reachableOutputCountUnchanged": true,
+      "entryCssBytesUnchanged": true
+    },
+    {
+      "family": "Table",
+      "baselineStaticJSBytes": 1283478,
+      "candidateStaticJSBytes": 1284727,
+      "deltaBytes": 1249,
+      "deltaPercent": 0.09731370541606478,
+      "reachableOutputCountUnchanged": true,
+      "entryCssBytesUnchanged": true
+    },
+    {
+      "family": "Citation",
+      "baselineStaticJSBytes": 716368,
+      "candidateStaticJSBytes": 717820,
+      "deltaBytes": 1452,
+      "deltaPercent": 0.20268912067540706,
+      "reachableOutputCountUnchanged": true,
+      "entryCssBytesUnchanged": true
+    }
+  ]
+}
