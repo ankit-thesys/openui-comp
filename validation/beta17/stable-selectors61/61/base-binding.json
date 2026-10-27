@@ -1,0 +1,12 @@
+{
+  "accepted60Commit": "c1aaf994d5c0fbfb56b83685221eeea9b409e57c",
+  "accepted60ArchiveSHA256": "1db41852f9e5aa11ccbfe5a56cdb3d00c8ad753ad5e73cb19bdf4832e7f7b957",
+  "accepted60Verdict": "/private/tmp/openui-styles-independent-verification/ticket60/VERDICT.json",
+  "independent60DurableLabCommit": "3c441f0e6b7adaec48e3a74fd0d53b91bc960bc5",
+  "inventoryOriginalBase": "67369bc07261c726cdc01f065b6e9b0fa70b3eab",
+  "inventorySHA256": "79397d4c20acb01da31a07fd9c94290a4f0d105efd545e8519898e39fe8b3808",
+  "inventoryRebind": "Corrected source-only inventory now explicitly bound to accepted60. Only pilot61 is implemented here; ledger records remaining scope.",
+  "protected67": "c1aaf994d5c0fbfb56b83685221eeea9b409e57c",
+  "protected42": "d1292715028f816bd6a0dcf92766ec7dd15350f4",
+  "inventoryBase": "c1aaf994d5c0fbfb56b83685221eeea9b409e57c"
+}

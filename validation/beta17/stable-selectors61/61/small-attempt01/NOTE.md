@@ -1,0 +1,1 @@
+Initial strict lazy-first-no-other-style assertion failed in candidate; this is not silently waived. Rerun records the same actual registration predicates in both arms to determine whether it is a regression or pre-existing bundler shared-chunk behavior. Single-entry unused component/style pruning and lazy render parity passed. No production patch.

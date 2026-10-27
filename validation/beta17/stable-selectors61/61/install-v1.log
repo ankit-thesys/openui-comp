@@ -1,0 +1,18 @@
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +218
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ WARN  Got unexpected checksum for "/private/tmp/openui-selectors61-evidence/candidate-v1/openuidev-react-components-0.0.0-beta.0.tgz". Wanted "sha512-JImLDxspXN5djjZyANQPvblGyH4PmWbMuP6qkNe3E6fS0YRrEcoyn+n8gMdpgnFzZeRMT0bO0X3pDe3nTLKcVQ==". Got "sha512-OHSjU6EN+FwbhS26DJ/nUTEQ2h6WS4OUl6okKcmV9fX4fUqIoJ981Nf9KwyeB/S/NPMMV6abN17wkdgh6TB6Nw==".
+ ERR_PNPM_TARBALL_INTEGRITY  The lockfile is broken! Resolution step will be performed to fix it.
+Progress: resolved 223, reused 217, downloaded 0, added 213
+Progress: resolved 436, reused 217, downloaded 1, added 218, done
+
+dependencies:
++ @openuidev/react-components 0.0.0-beta.0
++ goober 2.1.19
++ react 19.2.4 (19.3.1 is available)
++ react-dom 19.2.4 (19.3.1 is available)
++ zod 4.4.3 (4.6.7 is available)
++ zustand 4.5.7 (5.0.16 is available)
+
+Done in 2.3s

@@ -1,0 +1,43 @@
+{
+  "error": "Error: CDP timeout: Runtime.evaluate",
+  "checks": [
+    {
+      "name": "111pilot-root-count:baseline:{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"before\"}",
+      "pass": true,
+      "detail": 111
+    },
+    {
+      "name": "host-import-isolation:baseline:{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "host-glob-A:baseline:{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "three-shared-root-default:baseline:{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "public-ref-tags:baseline:{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "new-canonical-base-contract:baseline:{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "existing-alias-base-contract:baseline:{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "shared-stable-base-overridden:baseline:{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"before\"}",
+      "pass": true
+    },
+    {
+      "name": "callback-native-asChild:baseline:{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"before\"}",
+      "pass": true
+    }
+  ],
+  "observations": []
+}

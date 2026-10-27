@@ -1,0 +1,56 @@
+✘ [ERROR] Could not resolve "react"
+
+    ../../openui-selectors61-evidence/small-source-baseline-lazy/button.js:1:18:
+      1 │ import React from 'react';import{Button as Component}from'@openuide...
+        ╵                   ~~~~~~~
+
+  You can mark the path "react" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+✘ [ERROR] Could not resolve "@openuidev/react-components"
+
+    ../../openui-selectors61-evidence/small-source-baseline-lazy/button.js:1:57:
+      1 │ ... as Component}from'@openuidev/react-components';export function ...
+        ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "@openuidev/react-components" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+✘ [ERROR] Could not resolve "react"
+
+    ../../openui-selectors61-evidence/small-source-baseline-lazy/icon.js:1:18:
+      1 │ import React from 'react';import{IconButton as Component}from'@open...
+        ╵                   ~~~~~~~
+
+  You can mark the path "react" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+✘ [ERROR] Could not resolve "@openuidev/react-components"
+
+    ../../openui-selectors61-evidence/small-source-baseline-lazy/icon.js:1:61:
+      1 │ ... as Component}from'@openuidev/react-components';export function ...
+        ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "@openuidev/react-components" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+/private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467
+  let error = new Error(text);
+              ^
+
+Error: Build failed with 4 errors:
+../../openui-selectors61-evidence/small-source-baseline-lazy/button.js:1:18: ERROR: Could not resolve "react"
+../../openui-selectors61-evidence/small-source-baseline-lazy/button.js:1:57: ERROR: Could not resolve "@openuidev/react-components"
+../../openui-selectors61-evidence/small-source-baseline-lazy/icon.js:1:18: ERROR: Could not resolve "react"
+../../openui-selectors61-evidence/small-source-baseline-lazy/icon.js:1:61: ERROR: Could not resolve "@openuidev/react-components"
+    at failureErrorWithLog (/private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    at /private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    at /private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    at buildResponseToResult (/private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    at /private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    at responseCallbacks.<computed> (/private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    at handleIncomingPacket (/private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    at Socket.readFromStdout (/private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  errors: [Getter/Setter],
+  warnings: [Getter/Setter]
+}
+
+Node.js v22.22.2

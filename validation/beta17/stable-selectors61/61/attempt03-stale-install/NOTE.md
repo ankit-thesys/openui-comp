@@ -1,0 +1,1 @@
+Aborted Playwright run: pnpm noninteractive invocation returned without answering its reinstall prompt, leaving candidate-v2 installed. Not evidence for candidate-v3. Corrected with CI=true offline install, then verified installed module source before rebuilding.

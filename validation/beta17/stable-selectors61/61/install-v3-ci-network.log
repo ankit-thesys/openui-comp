@@ -1,0 +1,17 @@
+Progress: resolved 0, reused 1, downloaded 0, added 0
+Progress: resolved 119, reused 117, downloaded 1, added 0
+Packages: +218
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 218, reused 217, downloaded 1, added 43
+Progress: resolved 218, reused 217, downloaded 1, added 216
+Progress: resolved 218, reused 217, downloaded 1, added 218, done
+
+dependencies:
++ @openuidev/react-components 0.0.0-beta.0
++ goober 2.1.19
++ react 19.2.4
++ react-dom 19.2.4
++ zod 4.4.3
++ zustand 4.5.7
+
+Done in 3.4s

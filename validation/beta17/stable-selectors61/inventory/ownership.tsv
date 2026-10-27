@@ -1,0 +1,66 @@
+ticket	proposed_owner	family	files	hooks	state_selectors	portal_sites	complex_review
+63	W2	Accordion	3	12	3	0	-
+61	W1	Button	3	11	3	0	-
+63	W2	Buttons	3	3	0	0	-
+64	W1	Calendar	6	39	8	1	Portal batch with Select: directly imports contentClass/viewportClass; react-day-picker classNames and custom dropdowns require dependency-first conversion.
+63	W2	Callout	3	9	0	0	-
+63	W2	Card	3	6	0	0	-
+63	W2	CardHeader	3	6	0	0	-
+63	W2	Carousel	3	11	0	0	-
+62	W1	CheckBoxGroup	3	4	0	0	-
+62	W1	CheckBoxItem	3	6	3	0	-
+62	W1	Chips	3	6	3	0	-
+64	W2	Citation	6	10	9	1	-
+63	W2	CodeBlock	3	4	1	0	-
+63	W2	CompositeCardBlock	3	9	2	0	-
+63	W2	ContextCardBlock	3	20	2	0	-
+64	W1	DatePicker	7	13	2	1	-
+63	W2	DotMatrixLoader	3	2	0	0	-
+63	W2	EditableTable	16	36	1	0	Defer whole family initially: editable cell keyboard/selection plus Select/DatePicker/Tooltip dependencies; table parts and editors require coordinated coverage.
+63	W2	EntityList	3	15	0	0	-
+62	W1	FormControl	7	3	0	0	-
+61	W1	IconButton	3	16	3	0	-
+63	W2	IconTag	3	2	0	0	-
+63	W2	IconText	3	5	0	0	-
+63	W2	Image	3	4	0	0	-
+63	W2	ImageBlock	3	7	0	0	-
+64	W2	ImageGallery	5	26	1	1	-
+63	W2	ImageText	3	6	0	0	-
+63	W2	ImageTextLarge	3	4	0	0	-
+63	W2	InlineHeader	3	3	0	0	-
+63	W2	InlineMarkdownRenderer	3	3	0	0	Owned inline wrapper, markdown descendant scope, p and direct-child layout rules remain eligible; coordinate MarkDownRenderer. Defer only vendor internals, not existing owned selectors.
+62	W1	Input	3	5	3	0	-
+62	W1	Label	3	3	0	0	-
+63	W2	ListBlock	3	2	0	0	-
+63	W2	ListItem	3	17	2	0	-
+63	W2	MarkDownRenderer	3	7	1	0	Owned wrapper/link/code/table and deliberate descendant rules remain eligible. Vendor syntax-highlighter/KaTeX token DOM/inline themes are the specific deferred area; not a whole-family skip.
+63	W2	MetricIndicator	3	11	0	0	-
+64	W1	Modal	3	11	2	1	-
+62	W1	OptionCards	3	21	3	0	-
+63	W2	OverviewCardBlock	3	8	2	0	-
+62	W1	RadioGroup	3	4	0	0	-
+62	W1	RadioItem	3	9	5	0	-
+63	W2	SectionBlock	5	17	2	0	-
+64	W1	Select	3	20	9	1	-
+63	W2	Separator	3	1	2	0	-
+63	W2	Skeleton	9	15	0	0	SkeletonBar and stack ordinary styles are eligible. Inspect TableSkeleton/PieChartSkeleton shape areas separately; only specifically justified shapes may be deferred. Private keyframe identifiers alone are not a deferral reason.
+62	W1	Slider	5	32	2	0	-
+63	W2	SnippetCardBlock	3	15	2	0	-
+63	W2	SourceFaviconImage	3	1	0	0	Successful img root openui-source-favicon-image with object-fit/display is eligible. Empty URL/error branch renders shared IconWrapper without this hook: leave fallback behavior/icons unchanged and do not document the image hook as a fallback-icon hook.
+63	W2	Sources	7	12	1	0	-
+63	W2	Steps	3	10	0	0	-
+62	W1	SwitchGroup	3	4	0	0	-
+62	W1	SwitchItem	3	6	4	0	-
+63	W2	Table	5	20	0	0	-
+63	W2	Tabs	3	23	2	0	-
+63	W2	Tag	3	11	0	0	-
+63	W2	TagBlock	3	1	0	0	-
+62	W1	TextArea	3	2	3	0	-
+63	W2	TextBlock	3	27	0	0	Owned root/size/type/alignment/tone/variant rules are eligible; preserve InlineMarkdownRenderer dependency. Vendor internals only are excluded from any transitive guarantee.
+63	W2	TextCallout	3	9	0	0	-
+63	W2	TextContent	3	4	0	0	-
+63	W2	TextContentWrapper	4	3	0	0	-
+62	W1	ToggleGroup	3	1	0	0	-
+62	W1	ToggleItem	3	1	3	0	-
+64	W2	TooltipWrapper	3	4	5	1	-
+63	W2	VisualCardBlock	3	8	2	0	-
