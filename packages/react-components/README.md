@@ -70,6 +70,14 @@ so normal host token declarations override them, including declarations in named
 layers. Inherited container overrides and ThemeProvider scopes remain supported;
 system dark mode does not change the provider-free defaults.
 
+Component-level `var()` fallbacks are intentionally retained. Clearing an
+inherited token, for example with `--openui-interactive-accent-default: initial`,
+still uses the component's existing default. Automatic root defaults complement
+that behavior; they do not replace the fallback when a consumer clears a token.
+
+Buttons, FormControl and TagBlock share a root-only `box-sizing: border-box`
+declaration. Descendant styling, component layout and state rules remain local.
+
 Chrome with plain CSS, Tailwind v3 and Tailwind v4 is the current browser target.
 Host preflight remains enabled. Ordinary utility classes do not necessarily beat
 component defaults. Intentional overrides can use scoped important CSS or the
