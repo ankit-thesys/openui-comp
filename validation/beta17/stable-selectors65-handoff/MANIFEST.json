@@ -1,0 +1,14 @@
+[
+  {
+    "file": "final-window-release.json",
+    "sha256": "578319b019baaf72ab3b6f64eca1c88e1f38d6340d8411f835955f21e82535f2"
+  },
+  {
+    "file": "pr-body.md",
+    "sha256": "61a02d70080deace36e63bcefc4e80588121974bdb1ffcd20821240d98db8ab4"
+  },
+  {
+    "file": "openui-styles-w1-handoff.md",
+    "sha256": "264d164cf051cacfa274c980c89f3b0f519ef7d21ea29b23ec2249211981da37"
+  }
+]
