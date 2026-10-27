@@ -1,0 +1,27 @@
+{
+  "status": "worker PASS; independent62 acceptance pending",
+  "sourceCommit": "659b495700998b5170e0eca4413a6cdae5a2d966",
+  "packageTree": "f26757e418425e775a17836c56baa8c8c3c97178",
+  "sourceCheckout": "/private/tmp/openui-selectors62-frozen",
+  "archiveSHA256": "8f854105bdc13dbc50b55863ca62f7a5d24bfb95a07f03dc6334155b142f12b5",
+  "groups": {
+    "matrix": {
+      "checks": 576,
+      "file": "results.json",
+      "sha256": "f9dd5d7bfd6241bb335eb5a757cdbc25da8d28eab3fb85af9718214fecce8f41"
+    },
+    "stateParts": {
+      "checks": 66,
+      "file": "state-part-results.json",
+      "sha256": "fda200422f7bbc2e7a5cd9c5e095ea074d78932348999885b3b29fa8b1d3a9ec"
+    },
+    "optimizedBrowser": {
+      "checks": 16,
+      "file": "optimized-results.json",
+      "sha256": "d6f840827485f2b4de330edd203e3cb700aa5d5a6d1a978ec23ef8b48a74dceb"
+    }
+  },
+  "browserChecks": 658,
+  "windowReleased": true,
+  "portalBatchExcluded": true
+}

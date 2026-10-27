@@ -1,0 +1,15 @@
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+ ERROR  Cannot use 'in' operator to search for 'directory' in undefined
+
+pnpm: Cannot use 'in' operator to search for 'directory' in undefined
+    at /opt/homebrew/Cellar/pnpm/10.3.0/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:147766:46
+    at Array.map (<anonymous>)
+    at lockfileToDepGraph (/opt/homebrew/Cellar/pnpm/10.3.0/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:147740:61)
+    at headlessInstall (/opt/homebrew/Cellar/pnpm/10.3.0/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:149389:364)
+    at async _install (/opt/homebrew/Cellar/pnpm/10.3.0/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:188674:48)
+    at async mutateModules (/opt/homebrew/Cellar/pnpm/10.3.0/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:188527:23)
+    at async install (/opt/homebrew/Cellar/pnpm/10.3.0/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:188430:60)
+    at async installDeps (/opt/homebrew/Cellar/pnpm/10.3.0/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:190339:50)
+    at async /opt/homebrew/Cellar/pnpm/10.3.0/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:222866:21
+    at async main (/opt/homebrew/Cellar/pnpm/10.3.0/libexec/lib/node_modules/pnpm/dist/pnpm.cjs:222825:34)

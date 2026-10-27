@@ -1,0 +1,813 @@
+diff --git a/packages/react-components/README.md b/packages/react-components/README.md
+index fce9d60b0..655044a13 100644
+--- a/packages/react-components/README.md
++++ b/packages/react-components/README.md
+@@ -94,7 +94,8 @@ has not been certified.
+ Button and IconButton use stable styling targets. Importing either component
+ registers its rules automatically through stock Goober. A private generated class
+ on `html` is contained in `:where(...:root)` and adds zero specificity. Consumers
+-do not use that class. Other component families still use generated selectors.
++do not use that class. Families outside this pilot and the control batch below
++still use generated selectors.
+ 
+ | Target | Button | IconButton |
+ | --- | --- | --- |
+@@ -127,7 +128,53 @@ aliases do not acquire the new component styles.
+ 
+ The shared `openui-border-box` helper opts in only Buttons, FormControl and
+ TagBlock roots. A later root class can override its box sizing. It does not style
+-descendants or complete the selector migration for those three families.
++descendants. The control batch below also converts FormControl's remaining
++owned rules; Buttons and TagBlock still have shared-base-only conversion.
++
++### Control selectors
++
++The control batch adds the following stable styling roots. Existing aliases,
++parts, variants, native attributes, refs and customization props are retained.
++No rendered wrapper is added. Component styles use the same private
++zero-specificity document guard as the Button/IconButton pilot.
++
++| Family | Styling root | Existing parts and states |
++| --- | --- | --- |
++| CheckBoxGroup | `.openui-checkbox-group-root` | Existing clear/card/sunk variant classes. |
++| CheckBoxItem | `.openui-checkbox-item-container-root` | Container root; `.openui-checkbox-item-root`, indicator, content, label and description; checked/disabled states stay on the Radix control. |
++| Chips | `.openui-chips-root` | Existing chip item, icon and text; selected/disabled modifiers and focus-visible state. |
++| FormControl | `.openui-form-control-root`, `.openui-hint-root` | FormControl and Hint roots; error context still reaches Input/TextArea/Hint. |
++| Input | `.openui-input-root` | Existing small/medium/large, error, focus, hover, disabled and placeholder selectors. |
++| Label | `.openui-label-root` | Existing disabled modifier and required-asterisk part. |
++| OptionCards | `.openui-option-cards-root` | Existing grid/row/card/content/text/title/subtitle/top parts; selected/disabled/focus-visible state and container queries. |
++| RadioGroup | `.openui-radio-group-root` | Existing clear/card/sunk variants; native Radix behavior. |
++| RadioItem | `.openui-radio-item-container-root` | Container root; existing control, SVG paths, content, label and description; checked/disabled states. |
++| Slider | `.openui-slider-wrapper-root`, `.openui-slider-block-root` | Wrapper and SliderBlock roots; existing track/range/thumb/handle/value/dot/label/block parts and native disabled/focus/hover state. |
++| SwitchGroup | `.openui-switch-group-root` | Existing clear/card/sunk variants. |
++| SwitchItem | `.openui-switch-item-container-root` | Container root; existing control/thumb/content/label/description and checked/disabled states. |
++| TextArea | `.openui-textarea-root` | Existing error, focus, hover and disabled selectors. |
++| ToggleGroup | `.openui-toggle-group-root` | Existing group root and native disabled behavior. |
++| ToggleItem | `.openui-toggle-item-root` | Existing item alias and on/off, hover and disabled state. |
++
++For example, a later `.openui-input-root { border-width: 2px; }` overrides
++Input's base border width. Use the corresponding variant, state or part selector
++when overriding a declaration owned there:
++
++```css
++.openui-input-root:focus { box-shadow: none; }
++.openui-checkbox-item-container-root .openui-checkbox-item-root[data-state="checked"] {
++  background-color: navy;
++}
++.openui-toggle-item-root[data-state="on"] { background-color: navy; }
++```
++
++The Slider `className` still applies to its inner Radix root, while the new
++styling root identifies its existing outer wrapper. Checkbox/Radio/Switch
++`className` forwarding likewise remains on their existing control elements.
++Vendor inline styles are preserved: for example Radix RadioGroup and
++ToggleGroup retain inline `outline: none`. The ordinary CSS override contract
++covers the component's owned stylesheet declarations; it does not promise to
++beat inline styles without using the existing inline customization API.
+ 
+ ### Selector conversion status
+ 
+@@ -136,9 +183,8 @@ conversion. All existing token fallbacks remain in place.
+ 
+ | Status | Families |
+ | --- | --- |
+-| Converted pilot | Button, IconButton |
+-| Shared box sizing only; remaining selectors pending | Buttons, FormControl, TagBlock |
+-| Deferred to #62 | CheckBoxGroup, CheckBoxItem, Chips, Input, Label, OptionCards, RadioGroup, RadioItem, Slider, SwitchGroup, SwitchItem, TextArea, ToggleGroup, ToggleItem |
++| Converted (pending batch acceptance for controls) | Button, IconButton, CheckBoxGroup, CheckBoxItem, Chips, FormControl, Input, Label, OptionCards, RadioGroup, RadioItem, Slider, SwitchGroup, SwitchItem, TextArea, ToggleGroup, ToggleItem |
++| Shared box sizing only; remaining selectors pending | Buttons, TagBlock |
+ | Deferred to #63 | Accordion, Callout, Card, CardHeader, Carousel, CodeBlock, CompositeCardBlock, ContextCardBlock, DotMatrixLoader, EditableTable, EntityList, IconTag, IconText, Image, ImageBlock, ImageText, ImageTextLarge, InlineHeader, InlineMarkdownRenderer, ListBlock, ListItem, MarkDownRenderer, MetricIndicator, OverviewCardBlock, SectionBlock, Separator, Skeleton, SnippetCardBlock, SourceFaviconImage, Sources, Steps, Table, Tabs, Tag, TextBlock, TextCallout, TextContent, TextContentWrapper, VisualCardBlock |
+ | Deferred to #64 | Calendar, Citation, DatePicker, ImageGallery, Modal, Select, TooltipWrapper |
+ 
+diff --git a/packages/react-components/src/components/CheckBoxGroup/CheckBoxGroup.tsx b/packages/react-components/src/components/CheckBoxGroup/CheckBoxGroup.tsx
+index 57c2e6168..8a038eac7 100644
+--- a/packages/react-components/src/components/CheckBoxGroup/CheckBoxGroup.tsx
++++ b/packages/react-components/src/components/CheckBoxGroup/CheckBoxGroup.tsx
+@@ -4,10 +4,20 @@ import React from "react";
+ import { CheckBoxItemProps } from "../CheckBoxItem";
+ import { componentStyles } from "./styles";
+ 
+-const componentClass = css`
+-  ${componentStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-checkbox-group-root {
++      ${componentStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-checkbox-group-root";
++
+ type CheckBoxGroupVariant = "clear" | "card" | "sunk";
+ 
+ interface CheckBoxGroupProps {
+diff --git a/packages/react-components/src/components/CheckBoxItem/CheckBoxItem.tsx b/packages/react-components/src/components/CheckBoxItem/CheckBoxItem.tsx
+index 91666e313..bdf35ad5b 100644
+--- a/packages/react-components/src/components/CheckBoxItem/CheckBoxItem.tsx
++++ b/packages/react-components/src/components/CheckBoxItem/CheckBoxItem.tsx
+@@ -4,10 +4,20 @@ import { css } from "goober";
+ import { CSSProperties, forwardRef, ReactNode, useId } from "react";
+ import { componentStyles } from "./styles";
+ 
+-const componentClass = css`
+-  ${componentStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-checkbox-item-container-root {
++      ${componentStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-checkbox-item-container-root";
++
+ export interface CheckBoxItemProps {
+   label?: ReactNode;
+   description?: ReactNode;
+diff --git a/packages/react-components/src/components/Chips/Chips.tsx b/packages/react-components/src/components/Chips/Chips.tsx
+index d34e8b4df..d2bd4f74d 100644
+--- a/packages/react-components/src/components/Chips/Chips.tsx
++++ b/packages/react-components/src/components/Chips/Chips.tsx
+@@ -3,10 +3,20 @@ import { css } from "goober";
+ import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
+ import { chipsStyles } from "./chips.styles";
+ 
+-const componentClass = css`
+-  ${chipsStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-chips-root {
++      ${chipsStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-chips-root";
++
+ export type ChipsSelectionType = "single" | "multiple";
+ 
+ export interface ChipsItem {
+diff --git a/packages/react-components/src/components/FormControl/FormControl.tsx b/packages/react-components/src/components/FormControl/FormControl.tsx
+index 373fbd62f..97176f4f9 100644
+--- a/packages/react-components/src/components/FormControl/FormControl.tsx
++++ b/packages/react-components/src/components/FormControl/FormControl.tsx
+@@ -4,10 +4,20 @@ import React, { forwardRef, useMemo } from "react";
+ import { borderBoxClass } from "../../styles/base";
+ import { FormControlProvider } from "./context";
+ import { formControlStyles } from "./formControl.styles";
+-const componentClass = css`
+-  ${formControlStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-form-control-root {
++      ${formControlStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-form-control-root";
++
+ export interface FormControlProps {
+   children: React.ReactNode;
+   className?: string;
+diff --git a/packages/react-components/src/components/FormControl/Hint/Hint.tsx b/packages/react-components/src/components/FormControl/Hint/Hint.tsx
+index 497bd87de..4e74cbafa 100644
+--- a/packages/react-components/src/components/FormControl/Hint/Hint.tsx
++++ b/packages/react-components/src/components/FormControl/Hint/Hint.tsx
+@@ -4,10 +4,20 @@ import React, { forwardRef } from "react";
+ import { useFormControlContext } from "../context";
+ import { hintStyles } from "./hint.styles";
+ 
+-const componentClass = css`
+-  ${hintStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-hint-root {
++      ${hintStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-hint-root";
++
+ export interface HintProps extends React.ComponentPropsWithoutRef<"div"> {
+   children: React.ReactNode;
+   className?: string;
+diff --git a/packages/react-components/src/components/Input/Input.tsx b/packages/react-components/src/components/Input/Input.tsx
+index 74121f5f2..cafa09dbb 100644
+--- a/packages/react-components/src/components/Input/Input.tsx
++++ b/packages/react-components/src/components/Input/Input.tsx
+@@ -4,10 +4,20 @@ import React from "react";
+ import { useFormControlContext } from "../FormControl/context";
+ import { inputStyles } from "./input.styles";
+ 
+-const componentClass = css`
+-  ${inputStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-input-root {
++      ${inputStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-input-root";
++
+ export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
+   styles?: React.CSSProperties;
+   className?: string;
+diff --git a/packages/react-components/src/components/Label/Label.tsx b/packages/react-components/src/components/Label/Label.tsx
+index 186d13471..05e0e13ad 100644
+--- a/packages/react-components/src/components/Label/Label.tsx
++++ b/packages/react-components/src/components/Label/Label.tsx
+@@ -4,10 +4,20 @@ import { css } from "goober";
+ import React, { forwardRef } from "react";
+ import { labelStyles } from "./label.styles";
+ 
+-const componentClass = css`
+-  ${labelStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-label-root {
++      ${labelStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-label-root";
++
+ export interface LabelProps extends React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> {
+   children: React.ReactNode;
+   className?: string;
+diff --git a/packages/react-components/src/components/OptionCards/optionCards.styles.ts b/packages/react-components/src/components/OptionCards/optionCards.styles.ts
+index 9f1fde0cf..227e9b8d3 100644
+--- a/packages/react-components/src/components/OptionCards/optionCards.styles.ts
++++ b/packages/react-components/src/components/OptionCards/optionCards.styles.ts
+@@ -1,145 +1,155 @@
+ import { css } from "goober";
+ 
+-export const rootClass = css`
+-  width: 100%;
+-  container-type: inline-size;
+-  & :where(.openui-option-cards__grid) {
+-    display: flex;
+-    flex-direction: column;
+-    gap: var(--openui-space-m, 12px);
+-    width: 100%;
+-  }
+-  & :where(.openui-option-cards__row) {
+-    display: grid;
+-    gap: var(--openui-space-m, 12px);
+-    width: 100%;
+-    align-items: stretch;
+-  }
+-  & :where(.openui-option-cards__row--1) {
+-    grid-template-columns: 1fr;
+-  }
+-  & :where(.openui-option-cards__row--2) {
+-    grid-template-columns: repeat(2, 1fr);
+-  }
+-  & :where(.openui-option-cards__row--3) {
+-    grid-template-columns: repeat(3, 1fr);
+-  }
+-  & :where(.openui-option-cards__item) {
+-    width: 100%;
+-    min-width: 0;
+-  }
+-  & :where(.openui-option-card) {
+-    display: flex;
+-    align-items: flex-start;
+-    justify-content: flex-start;
+-    width: 100%;
+-    height: 100%;
+-    box-sizing: border-box;
+-    padding: var(--openui-space-s-m, 10px);
+-    border: 1px solid var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));
+-    border-radius: var(--openui-radius-2xl, 14px);
+-    background: transparent;
+-    cursor: pointer;
+-    text-align: left;
+-    transition:
+-      opacity 0.16s ease-out,
+-      border-color 0.16s ease-out,
+-      background-color 0.16s ease-out;
+-  }
+-  & :hover:not(:disabled):not(.openui-option-card--selected):where(.openui-option-card) {
+-    border-color: var(--openui-border-interactive-emphasis, oklch(0.097 0 0 / 0.3));
+-  }
+-  & :focus-visible:where(.openui-option-card) {
+-    outline: 2px solid var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08));
+-    outline-offset: 2px;
+-  }
+-  & :where(.openui-option-card--selected) {
+-    background: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
+-    border-color: var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1));
+-  }
+-  & :where(.openui-option-card--disabled) {
+-    opacity: 0.5;
+-    cursor: not-allowed;
+-  }
+-  & :where(.openui-option-card__content) {
+-    display: flex;
+-    flex-direction: column;
+-    align-items: flex-start;
+-    justify-content: flex-start;
+-    gap: var(--openui-space-m, 12px);
+-    width: 100%;
+-  }
+-  & :where(.openui-option-card__top) {
+-    align-self: flex-start;
+-    flex-shrink: 0;
+-  }
+-  & :where(.openui-option-card__top--icon) {
+-    display: inline-flex;
+-    align-items: center;
+-    justify-content: center;
+-    width: 2rem;
+-    height: 2rem;
+-    border-radius: var(--openui-radius-s, 6px);
+-    background: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-  }
+-  & :where(.openui-option-card__top--image) {
+-    width: 4.5rem;
+-    height: 4.5rem;
+-    border-radius: var(--openui-radius-m, 8px);
+-    overflow: hidden;
+-  }
+-  & img:where(.openui-option-card__top--image img) {
+-    width: 100%;
+-    height: 100%;
+-    object-fit: cover;
+-  }
+-  & :where(.openui-option-card__text) {
+-    display: flex;
+-    flex-direction: column;
+-    gap: var(--openui-space-3xs, 2px);
+-    min-width: 0;
+-  }
+-  & :where(.openui-option-card__title) {
+-    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+-    word-wrap: break-word;
+-    overflow-wrap: break-word;
+-    font: var(--openui-text-body-default-heavy, 560 16px/1.5 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-body-default-heavy-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-medium, "wght" 560);
+-  }
+-  & :where(.openui-option-card__subtitle) {
+-    color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+-    word-wrap: break-word;
+-    overflow-wrap: break-word;
+-    font: var(--openui-text-body-sm, 400 14px/1.5 "Inter", sans-serif);
+-    letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);
+-    font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+-  }
+-  & .openui-option-card--disabled :where(.openui-option-card__title),
+-  & .openui-option-card--disabled :where(.openui-option-card__subtitle) {
+-    color: var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2));
+-  }
+-  @container (max-width: 768px) {
+-    & :where(.openui-option-cards__grid--responsive) {
+-      display: grid;
+-      grid-template-columns: repeat(2, 1fr);
+-    }
+-    & .openui-option-cards__grid--responsive :where(.openui-option-cards__row) {
+-      display: contents;
+-    }
+-  }
+-  @container (max-width: 480px) {
+-    & :where(.openui-option-cards__grid--responsive) {
+-      grid-template-columns: 1fr;
+-    }
+-  }
+-  @container (max-width: 768px) {
+-    &
+-      .openui-option-cards__grid--odd-count
+-      .openui-option-cards__row:last-child
+-      > :last-child:where(.openui-option-cards__item) {
+-      grid-column: 1 / -1;
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-option-cards-root {
++      width: 100%;
++      container-type: inline-size;
++      & :where(.openui-option-cards__grid) {
++        display: flex;
++        flex-direction: column;
++        gap: var(--openui-space-m, 12px);
++        width: 100%;
++      }
++      & :where(.openui-option-cards__row) {
++        display: grid;
++        gap: var(--openui-space-m, 12px);
++        width: 100%;
++        align-items: stretch;
++      }
++      & :where(.openui-option-cards__row--1) {
++        grid-template-columns: 1fr;
++      }
++      & :where(.openui-option-cards__row--2) {
++        grid-template-columns: repeat(2, 1fr);
++      }
++      & :where(.openui-option-cards__row--3) {
++        grid-template-columns: repeat(3, 1fr);
++      }
++      & :where(.openui-option-cards__item) {
++        width: 100%;
++        min-width: 0;
++      }
++      & :where(.openui-option-card) {
++        display: flex;
++        align-items: flex-start;
++        justify-content: flex-start;
++        width: 100%;
++        height: 100%;
++        box-sizing: border-box;
++        padding: var(--openui-space-s-m, 10px);
++        border: 1px solid var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));
++        border-radius: var(--openui-radius-2xl, 14px);
++        background: transparent;
++        cursor: pointer;
++        text-align: left;
++        transition:
++          opacity 0.16s ease-out,
++          border-color 0.16s ease-out,
++          background-color 0.16s ease-out;
++      }
++      & :hover:not(:disabled):not(.openui-option-card--selected):where(.openui-option-card) {
++        border-color: var(--openui-border-interactive-emphasis, oklch(0.097 0 0 / 0.3));
++      }
++      & :focus-visible:where(.openui-option-card) {
++        outline: 2px solid var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08));
++        outline-offset: 2px;
++      }
++      & :where(.openui-option-card--selected) {
++        background: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
++        border-color: var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1));
++      }
++      & :where(.openui-option-card--disabled) {
++        opacity: 0.5;
++        cursor: not-allowed;
++      }
++      & :where(.openui-option-card__content) {
++        display: flex;
++        flex-direction: column;
++        align-items: flex-start;
++        justify-content: flex-start;
++        gap: var(--openui-space-m, 12px);
++        width: 100%;
++      }
++      & :where(.openui-option-card__top) {
++        align-self: flex-start;
++        flex-shrink: 0;
++      }
++      & :where(.openui-option-card__top--icon) {
++        display: inline-flex;
++        align-items: center;
++        justify-content: center;
++        width: 2rem;
++        height: 2rem;
++        border-radius: var(--openui-radius-s, 6px);
++        background: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++      }
++      & :where(.openui-option-card__top--image) {
++        width: 4.5rem;
++        height: 4.5rem;
++        border-radius: var(--openui-radius-m, 8px);
++        overflow: hidden;
++      }
++      & img:where(.openui-option-card__top--image img) {
++        width: 100%;
++        height: 100%;
++        object-fit: cover;
++      }
++      & :where(.openui-option-card__text) {
++        display: flex;
++        flex-direction: column;
++        gap: var(--openui-space-3xs, 2px);
++        min-width: 0;
++      }
++      & :where(.openui-option-card__title) {
++        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
++        word-wrap: break-word;
++        overflow-wrap: break-word;
++        font: var(--openui-text-body-default-heavy, 560 16px/1.5 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-body-default-heavy-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-medium, "wght" 560);
++      }
++      & :where(.openui-option-card__subtitle) {
++        color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
++        word-wrap: break-word;
++        overflow-wrap: break-word;
++        font: var(--openui-text-body-sm, 400 14px/1.5 "Inter", sans-serif);
++        letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);
++        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
++      }
++      & .openui-option-card--disabled :where(.openui-option-card__title),
++      & .openui-option-card--disabled :where(.openui-option-card__subtitle) {
++        color: var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2));
++      }
++      @container (max-width: 768px) {
++        & :where(.openui-option-cards__grid--responsive) {
++          display: grid;
++          grid-template-columns: repeat(2, 1fr);
++        }
++        & .openui-option-cards__grid--responsive :where(.openui-option-cards__row) {
++          display: contents;
++        }
++      }
++      @container (max-width: 480px) {
++        & :where(.openui-option-cards__grid--responsive) {
++          grid-template-columns: 1fr;
++        }
++      }
++      @container (max-width: 768px) {
++        &
++          .openui-option-cards__grid--odd-count
++          .openui-option-cards__row:last-child
++          > :last-child:where(.openui-option-cards__item) {
++          grid-column: 1 / -1;
++        }
++      }
+     }
+   }
+ `;
++
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++export const rootClass = "openui-option-cards-root";
+diff --git a/packages/react-components/src/components/RadioGroup/RadioGroup.tsx b/packages/react-components/src/components/RadioGroup/RadioGroup.tsx
+index 72ab527ae..b062b5f39 100644
+--- a/packages/react-components/src/components/RadioGroup/RadioGroup.tsx
++++ b/packages/react-components/src/components/RadioGroup/RadioGroup.tsx
+@@ -5,10 +5,20 @@ import { CSSProperties, forwardRef, ReactElement } from "react";
+ import { RadioItemProps } from "../RadioItem";
+ import { componentStyles } from "./styles";
+ 
+-const componentClass = css`
+-  ${componentStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-radio-group-root {
++      ${componentStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-radio-group-root";
++
+ type RadioGroupVariant = "clear" | "card" | "sunk";
+ interface RadioGroupProps extends Radio.RadioGroupProps {
+   children: ReactElement<RadioItemProps> | ReactElement<RadioItemProps>[];
+diff --git a/packages/react-components/src/components/RadioItem/RadioItem.tsx b/packages/react-components/src/components/RadioItem/RadioItem.tsx
+index eebecad52..984005be3 100644
+--- a/packages/react-components/src/components/RadioItem/RadioItem.tsx
++++ b/packages/react-components/src/components/RadioItem/RadioItem.tsx
+@@ -4,10 +4,20 @@ import { css } from "goober";
+ import { CSSProperties, forwardRef, ReactNode, useId } from "react";
+ import { componentStyles } from "./styles";
+ 
+-const componentClass = css`
+-  ${componentStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-radio-item-container-root {
++      ${componentStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-radio-item-container-root";
++
+ export interface RadioItemProps {
+   label?: ReactNode;
+   description?: ReactNode;
+diff --git a/packages/react-components/src/components/Slider/Slider.tsx b/packages/react-components/src/components/Slider/Slider.tsx
+index 62d7a86b4..e238625e3 100644
+--- a/packages/react-components/src/components/Slider/Slider.tsx
++++ b/packages/react-components/src/components/Slider/Slider.tsx
+@@ -4,10 +4,20 @@ import { css } from "goober";
+ import { forwardRef, ReactNode, useMemo, useState } from "react";
+ import { sliderStyles } from "./slider.styles";
+ 
+-const componentClass = css`
+-  ${sliderStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-slider-wrapper-root {
++      ${sliderStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-slider-wrapper-root";
++
+ const formatNumber = (num: number | undefined): string => {
+   if (num === undefined) {
+     return "";
+diff --git a/packages/react-components/src/components/Slider/SliderBlock.tsx b/packages/react-components/src/components/Slider/SliderBlock.tsx
+index bf76a1e9d..5a3fcc32f 100644
+--- a/packages/react-components/src/components/Slider/SliderBlock.tsx
++++ b/packages/react-components/src/components/Slider/SliderBlock.tsx
+@@ -8,10 +8,20 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
+ import { Slider, SliderProps } from "./Slider";
+ import { sliderBlockStyles } from "./sliderBlock.styles";
+ 
+-const componentClass = css`
+-  ${sliderBlockStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-slider-block-root {
++      ${sliderBlockStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-slider-block-root";
++
+ export interface SliderBlockProps extends Omit<SliderProps, "value" | "defaultValue"> {
+   label: string;
+   defaultValue?: number[];
+diff --git a/packages/react-components/src/components/SwitchGroup/SwitchGroup.tsx b/packages/react-components/src/components/SwitchGroup/SwitchGroup.tsx
+index f46e0f356..3cacca516 100644
+--- a/packages/react-components/src/components/SwitchGroup/SwitchGroup.tsx
++++ b/packages/react-components/src/components/SwitchGroup/SwitchGroup.tsx
+@@ -4,10 +4,20 @@ import { CSSProperties, forwardRef, ReactElement } from "react";
+ import { SwitchItemProps } from "../SwitchItem";
+ import { componentStyles } from "./styles";
+ 
+-const componentClass = css`
+-  ${componentStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-switch-group-root {
++      ${componentStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-switch-group-root";
++
+ type SwitchGroupVariant = "clear" | "card" | "sunk";
+ export interface SwitchGroupProps {
+   children: ReactElement<SwitchItemProps> | ReactElement<SwitchItemProps>[];
+diff --git a/packages/react-components/src/components/SwitchItem/SwitchItem.tsx b/packages/react-components/src/components/SwitchItem/SwitchItem.tsx
+index 8fc392d47..ad8bdf8e5 100644
+--- a/packages/react-components/src/components/SwitchItem/SwitchItem.tsx
++++ b/packages/react-components/src/components/SwitchItem/SwitchItem.tsx
+@@ -4,10 +4,20 @@ import { css } from "goober";
+ import { CSSProperties, forwardRef, ReactNode, useId } from "react";
+ import { componentStyles } from "./styles";
+ 
+-const componentClass = css`
+-  ${componentStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-switch-item-container-root {
++      ${componentStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-switch-item-container-root";
++
+ interface SwitchItemProps {
+   label?: ReactNode;
+   description?: ReactNode;
+diff --git a/packages/react-components/src/components/TextArea/TextArea.tsx b/packages/react-components/src/components/TextArea/TextArea.tsx
+index 26268830b..28c75bf44 100644
+--- a/packages/react-components/src/components/TextArea/TextArea.tsx
++++ b/packages/react-components/src/components/TextArea/TextArea.tsx
+@@ -4,10 +4,20 @@ import React, { forwardRef } from "react";
+ import { useFormControlContext } from "../FormControl/context";
+ import { textAreaStyles } from "./textArea.styles";
+ 
+-const componentClass = css`
+-  ${textAreaStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-textarea-root {
++      ${textAreaStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-textarea-root";
++
+ export interface TextAreaProps extends Omit<
+   React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+   "size"
+diff --git a/packages/react-components/src/components/ToggleGroup/ToggleGroup.tsx b/packages/react-components/src/components/ToggleGroup/ToggleGroup.tsx
+index 624768485..eebfeff12 100644
+--- a/packages/react-components/src/components/ToggleGroup/ToggleGroup.tsx
++++ b/packages/react-components/src/components/ToggleGroup/ToggleGroup.tsx
+@@ -5,10 +5,20 @@ import { ReactElement } from "react";
+ import { ToggleItemProps } from "../ToggleItem";
+ import { componentStyles } from "./styles";
+ 
+-const componentClass = css`
+-  ${componentStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-toggle-group-root {
++      ${componentStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-toggle-group-root";
++
+ type RadixToggleGroupProps =
+   ToggleGroupPrimitive.ToggleGroupSingleProps | ToggleGroupPrimitive.ToggleGroupMultipleProps;
+ 
+diff --git a/packages/react-components/src/components/ToggleItem/ToggleItem.tsx b/packages/react-components/src/components/ToggleItem/ToggleItem.tsx
+index e3a68ad42..0d5150622 100644
+--- a/packages/react-components/src/components/ToggleItem/ToggleItem.tsx
++++ b/packages/react-components/src/components/ToggleItem/ToggleItem.tsx
+@@ -4,10 +4,20 @@ import { css } from "goober";
+ import { ReactNode } from "react";
+ import { componentStyles } from "./styles";
+ 
+-const componentClass = css`
+-  ${componentStyles}
++const stylesheetScope = css`
++  :where(&:root) {
++    .openui-toggle-item-root {
++      ${componentStyles}
++    }
++  }
+ `;
+ 
++if (typeof document !== "undefined") {
++  document.documentElement.classList.add(stylesheetScope);
++}
++
++const componentClass = "openui-toggle-item-root";
++
+ export interface ToggleItemProps extends ToggleGroupPrimitive.ToggleGroupItemProps {
+   children: ReactNode;
+   className?: string;

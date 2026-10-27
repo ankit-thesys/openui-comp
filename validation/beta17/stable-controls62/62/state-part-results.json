@@ -1,0 +1,997 @@
+{
+  "chrome": "156.0.8078.48",
+  "checks": [
+    {
+      "name": "checked-checkbox-part{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "checked-switch-part{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "selected-chip{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "selected-card{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "toggle-on{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "slider-track-part{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "input-focus{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "input-error{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "hint-error{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "disabled-callback-inert{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true
+    },
+    {
+      "name": "disabled-input{\"framework\":\"plain\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "checked-checkbox-part{\"framework\":\"plain\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "checked-switch-part{\"framework\":\"plain\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "selected-chip{\"framework\":\"plain\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "selected-card{\"framework\":\"plain\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "toggle-on{\"framework\":\"plain\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "slider-track-part{\"framework\":\"plain\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "input-focus{\"framework\":\"plain\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "input-error{\"framework\":\"plain\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "hint-error{\"framework\":\"plain\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "disabled-callback-inert{\"framework\":\"plain\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true
+    },
+    {
+      "name": "disabled-input{\"framework\":\"plain\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "checked-checkbox-part{\"framework\":\"tailwind3\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "checked-switch-part{\"framework\":\"tailwind3\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "selected-chip{\"framework\":\"tailwind3\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "selected-card{\"framework\":\"tailwind3\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "toggle-on{\"framework\":\"tailwind3\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "slider-track-part{\"framework\":\"tailwind3\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "input-focus{\"framework\":\"tailwind3\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "input-error{\"framework\":\"tailwind3\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "hint-error{\"framework\":\"tailwind3\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "disabled-callback-inert{\"framework\":\"tailwind3\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true
+    },
+    {
+      "name": "disabled-input{\"framework\":\"tailwind3\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "checked-checkbox-part{\"framework\":\"tailwind3\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "checked-switch-part{\"framework\":\"tailwind3\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "selected-chip{\"framework\":\"tailwind3\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "selected-card{\"framework\":\"tailwind3\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "toggle-on{\"framework\":\"tailwind3\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "slider-track-part{\"framework\":\"tailwind3\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "input-focus{\"framework\":\"tailwind3\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "input-error{\"framework\":\"tailwind3\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "hint-error{\"framework\":\"tailwind3\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "disabled-callback-inert{\"framework\":\"tailwind3\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true
+    },
+    {
+      "name": "disabled-input{\"framework\":\"tailwind3\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "checked-checkbox-part{\"framework\":\"tailwind4\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "checked-switch-part{\"framework\":\"tailwind4\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "selected-chip{\"framework\":\"tailwind4\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "selected-card{\"framework\":\"tailwind4\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "toggle-on{\"framework\":\"tailwind4\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "slider-track-part{\"framework\":\"tailwind4\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "input-focus{\"framework\":\"tailwind4\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "input-error{\"framework\":\"tailwind4\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "hint-error{\"framework\":\"tailwind4\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "disabled-callback-inert{\"framework\":\"tailwind4\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true
+    },
+    {
+      "name": "disabled-input{\"framework\":\"tailwind4\",\"order\":\"before\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "checked-checkbox-part{\"framework\":\"tailwind4\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "checked-switch-part{\"framework\":\"tailwind4\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "selected-chip{\"framework\":\"tailwind4\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "selected-card{\"framework\":\"tailwind4\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "toggle-on{\"framework\":\"tailwind4\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "slider-track-part{\"framework\":\"tailwind4\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "input-focus{\"framework\":\"tailwind4\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "input-error{\"framework\":\"tailwind4\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "hint-error{\"framework\":\"tailwind4\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)"
+      ]
+    },
+    {
+      "name": "disabled-callback-inert{\"framework\":\"tailwind4\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true
+    },
+    {
+      "name": "disabled-input{\"framework\":\"tailwind4\",\"order\":\"after\",\"globOrder\":\"after\"}",
+      "pass": true,
+      "detail": [
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)",
+        "rgb(101, 102, 103)"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "config": {
+        "framework": "plain",
+        "order": "before",
+        "globOrder": "after"
+      },
+      "samples": [
+        {
+          "name": "checked-checkbox-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "checked-switch-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "selected-chip",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "selected-card",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "toggle-on",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "slider-track-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "input-focus",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "input-error",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "hint-error",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "disabled-input",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        }
+      ]
+    },
+    {
+      "config": {
+        "framework": "plain",
+        "order": "after",
+        "globOrder": "after"
+      },
+      "samples": [
+        {
+          "name": "checked-checkbox-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "checked-switch-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "selected-chip",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "selected-card",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "toggle-on",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "slider-track-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "input-focus",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "input-error",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "hint-error",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "disabled-input",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        }
+      ]
+    },
+    {
+      "config": {
+        "framework": "tailwind3",
+        "order": "before",
+        "globOrder": "after"
+      },
+      "samples": [
+        {
+          "name": "checked-checkbox-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "checked-switch-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "selected-chip",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "selected-card",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "toggle-on",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "slider-track-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "input-focus",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "input-error",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "hint-error",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "disabled-input",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        }
+      ]
+    },
+    {
+      "config": {
+        "framework": "tailwind3",
+        "order": "after",
+        "globOrder": "after"
+      },
+      "samples": [
+        {
+          "name": "checked-checkbox-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "checked-switch-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "selected-chip",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "selected-card",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "toggle-on",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "slider-track-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "input-focus",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "input-error",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "hint-error",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "disabled-input",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        }
+      ]
+    },
+    {
+      "config": {
+        "framework": "tailwind4",
+        "order": "before",
+        "globOrder": "after"
+      },
+      "samples": [
+        {
+          "name": "checked-checkbox-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "checked-switch-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "selected-chip",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "selected-card",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "toggle-on",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "slider-track-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "input-focus",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "input-error",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "hint-error",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "disabled-input",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        }
+      ]
+    },
+    {
+      "config": {
+        "framework": "tailwind4",
+        "order": "after",
+        "globOrder": "after"
+      },
+      "samples": [
+        {
+          "name": "checked-checkbox-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "checked-switch-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "selected-chip",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "selected-card",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "toggle-on",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "slider-track-part",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "input-focus",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "input-error",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "hint-error",
+          "values": [
+            "rgb(101, 102, 103)"
+          ]
+        },
+        {
+          "name": "disabled-input",
+          "values": [
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)",
+            "rgb(101, 102, 103)"
+          ]
+        }
+      ]
+    }
+  ]
+}

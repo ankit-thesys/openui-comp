@@ -1,0 +1,56 @@
+✘ [ERROR] Could not resolve "react"
+
+    fixture.tsx:1:37:
+      1 │ ...eact,{useState,createRef}from'react';import{createRoot}from'reac...
+        ╵                                 ~~~~~~~
+
+  You can mark the path "react" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+✘ [ERROR] Could not resolve "react-dom/client"
+
+    fixture.tsx:1:67:
+      1 │ ...;import{createRoot}from'react-dom/client';import{glob}from'goober';
+        ╵                           ~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "react-dom/client" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+✘ [ERROR] Could not resolve "goober"
+
+    fixture.tsx:1:102:
+      1 │ ...;import{createRoot}from'react-dom/client';import{glob}from'goober';
+        ╵                                                              ~~~~~~~~
+
+  You can mark the path "goober" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+✘ [ERROR] Could not resolve "@openuidev/react-components"
+
+    fixture.tsx:3:23:
+      3 │ ... pkg=await import('@openuidev/react-components');window.hostAfte...
+        ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "@openuidev/react-components" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also add ".catch()" here to handle this failure at run-time instead of bundle-time.
+
+/private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467
+  let error = new Error(text);
+              ^
+
+Error: Build failed with 4 errors:
+fixture.tsx:1:37: ERROR: Could not resolve "react"
+fixture.tsx:1:67: ERROR: Could not resolve "react-dom/client"
+fixture.tsx:1:102: ERROR: Could not resolve "goober"
+fixture.tsx:3:23: ERROR: Could not resolve "@openuidev/react-components"
+    at failureErrorWithLog (/private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+    at /private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:926:25
+    at /private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:878:52
+    at buildResponseToResult (/private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:924:7)
+    at /private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:951:16
+    at responseCallbacks.<computed> (/private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:603:9)
+    at handleIncomingPacket (/private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:658:12)
+    at Socket.readFromStdout (/private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  errors: [Getter/Setter],
+  warnings: [Getter/Setter]
+}
+
+Node.js v22.22.2
