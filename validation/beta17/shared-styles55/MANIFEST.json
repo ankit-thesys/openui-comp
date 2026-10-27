@@ -1,0 +1,956 @@
+[
+  {
+    "path": "60/REPORT.md",
+    "originalPath": "/private/tmp/openui-styles60-evidence/REPORT.md",
+    "originalBytes": 5876,
+    "originalSHA256": "455b34af6ab66ee22418b5942d62ce4648e6f9eb3c037e555ac759465bc18981",
+    "storedBytes": 5876,
+    "storedSHA256": "455b34af6ab66ee22418b5942d62ce4648e6f9eb3c037e555ac759465bc18981",
+    "gzip": false
+  },
+  {
+    "path": "60/SHA256SUMS.json",
+    "originalPath": "/private/tmp/openui-styles60-evidence/SHA256SUMS.json",
+    "originalBytes": 4488,
+    "originalSHA256": "dbab402b263f94d1712ee2134e701e01316292afa81aff583c131d86d0c18a3a",
+    "storedBytes": 4488,
+    "storedSHA256": "dbab402b263f94d1712ee2134e701e01316292afa81aff583c131d86d0c18a3a",
+    "gzip": false
+  },
+  {
+    "path": "60/SUMMARY.json",
+    "originalPath": "/private/tmp/openui-styles60-evidence/SUMMARY.json",
+    "originalBytes": 820,
+    "originalSHA256": "059bcb60cb9209aea4f574c0398155e86120b90c4d00901800aaad7013a1e78f",
+    "storedBytes": 820,
+    "storedSHA256": "059bcb60cb9209aea4f574c0398155e86120b90c4d00901800aaad7013a1e78f",
+    "gzip": false
+  },
+  {
+    "path": "60/artifact-provenance.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/artifact-provenance.json",
+    "originalBytes": 358792,
+    "originalSHA256": "f2c6f643251b2d59e681407c3c567a45d4e42106890797cd7d6c86d854088c63",
+    "storedBytes": 127348,
+    "storedSHA256": "eb7687503b7ca14c5269958ae0f9af7cd9638bdc2fd51c74fd151bf84dc17873",
+    "gzip": true
+  },
+  {
+    "path": "60/audit-fallbacks.py",
+    "originalPath": "/private/tmp/openui-styles60-evidence/audit-fallbacks.py",
+    "originalBytes": 1666,
+    "originalSHA256": "68d4f8d81666b0801f7956909625021f36f249c9950ad5980ed1f8c1cf296a7d",
+    "storedBytes": 1666,
+    "storedSHA256": "68d4f8d81666b0801f7956909625021f36f249c9950ad5980ed1f8c1cf296a7d",
+    "gzip": false
+  },
+  {
+    "path": "60/bind-artifact.py",
+    "originalPath": "/private/tmp/openui-styles60-evidence/bind-artifact.py",
+    "originalBytes": 4035,
+    "originalSHA256": "9997c158c3bc671562c4f7ab00a23e0d19e03c1e5d5c72479e8c2912b0395f79",
+    "storedBytes": 4035,
+    "storedSHA256": "9997c158c3bc671562c4f7ab00a23e0d19e03c1e5d5c72479e8c2912b0395f79",
+    "gzip": false
+  },
+  {
+    "path": "60/build-integration.mjs",
+    "originalPath": "/private/tmp/openui-styles60-evidence/build-integration.mjs",
+    "originalBytes": 909,
+    "originalSHA256": "372a45d2854fe44c1cc1987ba5c548f1aa5567e2a5e1a89da6e3bf46d4e48a14",
+    "storedBytes": 909,
+    "storedSHA256": "372a45d2854fe44c1cc1987ba5c548f1aa5567e2a5e1a89da6e3bf46d4e48a14",
+    "gzip": false
+  },
+  {
+    "path": "60/build-negative.mjs",
+    "originalPath": "/private/tmp/openui-styles60-evidence/build-negative.mjs",
+    "originalBytes": 979,
+    "originalSHA256": "6a90e7baac848120e6ee47b932868507019753bfa2a9bd95a8ee3c65f0038db8",
+    "storedBytes": 979,
+    "storedSHA256": "6a90e7baac848120e6ee47b932868507019753bfa2a9bd95a8ee3c65f0038db8",
+    "gzip": false
+  },
+  {
+    "path": "60/build-small.mjs",
+    "originalPath": "/private/tmp/openui-styles60-evidence/build-small.mjs",
+    "originalBytes": 3006,
+    "originalSHA256": "94f33378e511ccbfef7c367d6c76ffa9fe95aca94b192f3a15c04c891390a1ab",
+    "storedBytes": 3006,
+    "storedSHA256": "94f33378e511ccbfef7c367d6c76ffa9fe95aca94b192f3a15c04c891390a1ab",
+    "gzip": false
+  },
+  {
+    "path": "60/cleared-token-results.json",
+    "originalPath": "/private/tmp/openui-styles60-evidence/cleared-token-results.json",
+    "originalBytes": 30978,
+    "originalSHA256": "c9b6133f917777685170a8872fb71e061863ad8f90351c3a57e2b0e46feb5ea4",
+    "storedBytes": 30978,
+    "storedSHA256": "c9b6133f917777685170a8872fb71e061863ad8f90351c3a57e2b0e46feb5ea4",
+    "gzip": false
+  },
+  {
+    "path": "60/consumer-install.log",
+    "originalPath": "/private/tmp/openui-styles60-evidence/consumer-install.log",
+    "originalBytes": 1009,
+    "originalSHA256": "59ff8c10f6541135e76254ada75c066438566e7c53567554f31356f70177c03d",
+    "storedBytes": 1009,
+    "storedSHA256": "59ff8c10f6541135e76254ada75c066438566e7c53567554f31356f70177c03d",
+    "gzip": false
+  },
+  {
+    "path": "60/controls-results.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/controls-results.json",
+    "originalBytes": 2752700,
+    "originalSHA256": "86b8e448a703c971668565a159f4e5d1605a87a5b67a11624c597778b5f52601",
+    "storedBytes": 192902,
+    "storedSHA256": "23a63044ec88f9fb8a34d388500c8018a2ec5ca1876687d9563467d31f630fa6",
+    "gzip": true
+  },
+  {
+    "path": "60/controls-summary.json",
+    "originalPath": "/private/tmp/openui-styles60-evidence/controls-summary.json",
+    "originalBytes": 53,
+    "originalSHA256": "0479e500393aad3ba547daa9adbe6ecb29e0e181135b6530e1439e5e1071b961",
+    "storedBytes": 53,
+    "storedSHA256": "0479e500393aad3ba547daa9adbe6ecb29e0e181135b6530e1439e5e1071b961",
+    "gzip": false
+  },
+  {
+    "path": "60/fallback-conservation.json",
+    "originalPath": "/private/tmp/openui-styles60-evidence/fallback-conservation.json",
+    "originalBytes": 25253,
+    "originalSHA256": "2827fc9b21b5d6a22c41a3f548602c12c6fc0324597e1b21715094f63db42f73",
+    "storedBytes": 25253,
+    "storedSHA256": "2827fc9b21b5d6a22c41a3f548602c12c6fc0324597e1b21715094f63db42f73",
+    "gzip": false
+  },
+  {
+    "path": "60/integration-progress.json",
+    "originalPath": "/private/tmp/openui-styles60-evidence/integration-progress.json",
+    "originalBytes": 43,
+    "originalSHA256": "3e982706adbfaecd26270035c2ca4498e8fb7d5e629278aa8f340b4af1c95fd1",
+    "storedBytes": 43,
+    "storedSHA256": "3e982706adbfaecd26270035c2ca4498e8fb7d5e629278aa8f340b4af1c95fd1",
+    "gzip": false
+  },
+  {
+    "path": "60/integration-results.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/integration-results.json",
+    "originalBytes": 2878445,
+    "originalSHA256": "e50dfcfed881a859404bc77e1ccc934c4f6bf3b6f6532b24fc5cb5c9848b6fba",
+    "storedBytes": 56445,
+    "storedSHA256": "9b72b1c4dd69c2b7e539ba2e33d20fef21460c2e4ac293adfd863c89e200722c",
+    "gzip": true
+  },
+  {
+    "path": "60/integration-summary.json",
+    "originalPath": "/private/tmp/openui-styles60-evidence/integration-summary.json",
+    "originalBytes": 53,
+    "originalSHA256": "c06479f659d9ceed9c341a6d42dc3a41d82db520e1e4918dcecfdfebb06f2e49",
+    "storedBytes": 53,
+    "storedSHA256": "c06479f659d9ceed9c341a6d42dc3a41d82db520e1e4918dcecfdfebb06f2e49",
+    "gzip": false
+  },
+  {
+    "path": "60/integration.tsx",
+    "originalPath": "/private/tmp/openui-styles60-evidence/integration.tsx",
+    "originalBytes": 5741,
+    "originalSHA256": "66af5d8f9361711c81248db225ebf519940279880b3c0b266a28ff0bbd792a9d",
+    "storedBytes": 5741,
+    "storedSHA256": "66af5d8f9361711c81248db225ebf519940279880b3c0b266a28ff0bbd792a9d",
+    "gzip": false
+  },
+  {
+    "path": "60/native-check.mjs",
+    "originalPath": "/private/tmp/openui-styles60-evidence/native-check.mjs",
+    "originalBytes": 879,
+    "originalSHA256": "f377459ff80175828b7e49652e78337615ded0b9a22576f6403bbb5f6cb76873",
+    "storedBytes": 879,
+    "storedSHA256": "f377459ff80175828b7e49652e78337615ded0b9a22576f6403bbb5f6cb76873",
+    "gzip": false
+  },
+  {
+    "path": "60/native-results.json",
+    "originalPath": "/private/tmp/openui-styles60-evidence/native-results.json",
+    "originalBytes": 15077,
+    "originalSHA256": "9deaf0acc0096e603894df3773982e4d7f96ebeb0d42ec450c32a2dcefe99cbc",
+    "storedBytes": 15077,
+    "storedSHA256": "9deaf0acc0096e603894df3773982e4d7f96ebeb0d42ec450c32a2dcefe99cbc",
+    "gzip": false
+  },
+  {
+    "path": "60/optimized-assessment.json",
+    "originalPath": "/private/tmp/openui-styles60-evidence/optimized-assessment.json",
+    "originalBytes": 3164,
+    "originalSHA256": "0edd4473c341006e6beb207fa47f5ae975198fea84b4e7295277c9cf9911d5b7",
+    "storedBytes": 3164,
+    "storedSHA256": "0edd4473c341006e6beb207fa47f5ae975198fea84b4e7295277c9cf9911d5b7",
+    "gzip": false
+  },
+  {
+    "path": "60/optimized-builds.json",
+    "originalPath": "/private/tmp/openui-styles60-evidence/optimized-builds.json",
+    "originalBytes": 86278,
+    "originalSHA256": "fb6faa633afef91e7d48608c51723ddc3b0cfab8be7cb1f3fcf0b529a4758648",
+    "storedBytes": 86278,
+    "storedSHA256": "fb6faa633afef91e7d48608c51723ddc3b0cfab8be7cb1f3fcf0b529a4758648",
+    "gzip": false
+  },
+  {
+    "path": "60/pack.log",
+    "originalPath": "/private/tmp/openui-styles60-evidence/pack.log",
+    "originalBytes": 115190,
+    "originalSHA256": "1eb12d6edd6a739877836dd4225bac07002ba3ca2456dc62600f65652eded337",
+    "storedBytes": 115190,
+    "storedSHA256": "1eb12d6edd6a739877836dd4225bac07002ba3ca2456dc62600f65652eded337",
+    "gzip": false
+  },
+  {
+    "path": "60/package-build.log",
+    "originalPath": "/private/tmp/openui-styles60-evidence/package-build.log",
+    "originalBytes": 392544,
+    "originalSHA256": "14eb720e3d7e3ae66a705431d745f1755fd24634e227e0e7314c63bef98251b1",
+    "storedBytes": 392544,
+    "storedSHA256": "14eb720e3d7e3ae66a705431d745f1755fd24634e227e0e7314c63bef98251b1",
+    "gzip": false
+  },
+  {
+    "path": "60/package-typecheck.log",
+    "originalPath": "/private/tmp/openui-styles60-evidence/package-typecheck.log",
+    "originalBytes": 130,
+    "originalSHA256": "8ca188c9bf4a563631db2696fc59d7f942b46f42aef690140d6f1b948eec8cb4",
+    "storedBytes": 130,
+    "storedSHA256": "8ca188c9bf4a563631db2696fc59d7f942b46f42aef690140d6f1b948eec8cb4",
+    "gzip": false
+  },
+  {
+    "path": "60/public-types.log",
+    "originalPath": "/private/tmp/openui-styles60-evidence/public-types.log",
+    "originalBytes": 0,
+    "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "storedBytes": 0,
+    "storedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzip": false
+  },
+  {
+    "path": "60/run-controls.mjs",
+    "originalPath": "/private/tmp/openui-styles60-evidence/run-controls.mjs",
+    "originalBytes": 10189,
+    "originalSHA256": "b2b5d8863f0226aadd81238e37a153712af51a18d0cdd0f4f1cc33802f0a0f5d",
+    "storedBytes": 10189,
+    "storedSHA256": "b2b5d8863f0226aadd81238e37a153712af51a18d0cdd0f4f1cc33802f0a0f5d",
+    "gzip": false
+  },
+  {
+    "path": "60/run-integration.mjs",
+    "originalPath": "/private/tmp/openui-styles60-evidence/run-integration.mjs",
+    "originalBytes": 9057,
+    "originalSHA256": "93fa6a9f36a0814daff13102832cdeae18633cc28a6d958136b42f49e9090e51",
+    "storedBytes": 9057,
+    "storedSHA256": "93fa6a9f36a0814daff13102832cdeae18633cc28a6d958136b42f49e9090e51",
+    "gzip": false
+  },
+  {
+    "path": "60/small-build.log",
+    "originalPath": "/private/tmp/openui-styles60-evidence/small-build.log",
+    "originalBytes": 46,
+    "originalSHA256": "6d0945b835d0cb56142734b058315e79b072b81db2d0424c3f19bb4ae5506e79",
+    "storedBytes": 46,
+    "storedSHA256": "6d0945b835d0cb56142734b058315e79b072b81db2d0424c3f19bb4ae5506e79",
+    "gzip": false
+  },
+  {
+    "path": "60/source.patch",
+    "originalPath": "/private/tmp/openui-styles60-evidence/source.patch",
+    "originalBytes": 8868,
+    "originalSHA256": "4672120bf3eb6e71785ee1967d06379ed8022ab0c1c45848ab57aae7dd35f672",
+    "storedBytes": 8868,
+    "storedSHA256": "4672120bf3eb6e71785ee1967d06379ed8022ab0c1c45848ab57aae7dd35f672",
+    "gzip": false
+  },
+  {
+    "path": "60/spec-review.md",
+    "originalPath": "/private/tmp/openui-styles60-evidence/spec-review.md",
+    "originalBytes": 2833,
+    "originalSHA256": "d1800934732975e4ca71702f46f61a4f55278d9cd03521075c938f702e6d23d3",
+    "storedBytes": 2833,
+    "storedSHA256": "d1800934732975e4ca71702f46f61a4f55278d9cd03521075c938f702e6d23d3",
+    "gzip": false
+  },
+  {
+    "path": "60/standards-review.md",
+    "originalPath": "/private/tmp/openui-styles60-evidence/standards-review.md",
+    "originalBytes": 2210,
+    "originalSHA256": "3680719c047335990db40373836bdf44acb2e10f2204b1070b3288153a6b77ac",
+    "storedBytes": 2210,
+    "storedSHA256": "3680719c047335990db40373836bdf44acb2e10f2204b1070b3288153a6b77ac",
+    "gzip": false
+  },
+  {
+    "path": "60/baseline-browser/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/baseline-browser/metafile.json",
+    "originalBytes": 5725063,
+    "originalSHA256": "8301d058b8611c0e1c162f0fc704b099753e1b8d57ccf951f72f3b7b556bac6b",
+    "storedBytes": 290172,
+    "storedSHA256": "2ff6e163485bd7a1b17f00a42f9e6ae54276214ab6bd7b0f4f6e4fc7630dd66a",
+    "gzip": true
+  },
+  {
+    "path": "60/candidate-browser/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/candidate-browser/metafile.json",
+    "originalBytes": 5234097,
+    "originalSHA256": "da6fbf4a75736321318ff2b166ff1217402fcd5ba7b559acf05d801bc10333c9",
+    "storedBytes": 286477,
+    "storedSHA256": "f098eb7c07e889c3b587353a8537de71fc8b71f77cb5e44d7d9bdc186ca120a2",
+    "gzip": true
+  },
+  {
+    "path": "60/baseline-small-button/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/baseline-small-button/metafile.json",
+    "originalBytes": 3006002,
+    "originalSHA256": "2db05775884dd1aed539a897f09244715b5f8a8b4225ab9d433c6897487e7956",
+    "storedBytes": 135966,
+    "storedSHA256": "ac65e92b4fb1b44e09c979348b45db868d6f9c337e7297f609fa1692fa05f492",
+    "gzip": true
+  },
+  {
+    "path": "60/baseline-small-buttons/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/baseline-small-buttons/metafile.json",
+    "originalBytes": 3006614,
+    "originalSHA256": "8438e51259bc87be93e94ac676593355daeb9b47b4d93c6063e04186d8afe9ca",
+    "storedBytes": 135990,
+    "storedSHA256": "c54b557061e7a1f89252c3fabf86b5bb67b063ed4f22dac363b7a9b7ae6d9478",
+    "gzip": true
+  },
+  {
+    "path": "60/baseline-small-controls/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/baseline-small-controls/metafile.json",
+    "originalBytes": 3007799,
+    "originalSHA256": "5c8d265a0429803a32453f8624cc9d8e241ef7d5bfd3b325ae9e37b229cca446",
+    "storedBytes": 136108,
+    "storedSHA256": "1a90dd6b4d3448af9a6885e10de80225464c38c7b582eb20246545e51a13aeb1",
+    "gzip": true
+  },
+  {
+    "path": "60/baseline-small-form/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/baseline-small-form/metafile.json",
+    "originalBytes": 3006521,
+    "originalSHA256": "3f7fbd507d713a477a9ac2557fdbaade25ab9861a910002789c42e2bf3eb5202",
+    "storedBytes": 135993,
+    "storedSHA256": "8a911746ad5da4acf035bd0dab0a23e7703ade12b83a71933a64a879a8ff9c75",
+    "gzip": true
+  },
+  {
+    "path": "60/baseline-small-input/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/baseline-small-input/metafile.json",
+    "originalBytes": 3006120,
+    "originalSHA256": "e3151e83f46d0368df66d16e9e82f87e42e669b3e4b7c861f9b7ab3294662740",
+    "storedBytes": 135980,
+    "storedSHA256": "dde87e18ed267bf9a3bae06a32f64a6469cd7f9df06f988ce1dd83edc096aa92",
+    "gzip": true
+  },
+  {
+    "path": "60/baseline-small-shared/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/baseline-small-shared/metafile.json",
+    "originalBytes": 3008709,
+    "originalSHA256": "a962d5353ea8b1f8d708a94e9fa969fdf6ee3ef0c8e1618f2c67b710a7bb2665",
+    "storedBytes": 136097,
+    "storedSHA256": "a4766181a7beba245bcb3a9ab2416208142e541e0468ec2720bfba345aad8aaf",
+    "gzip": true
+  },
+  {
+    "path": "60/baseline-small-tags/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/baseline-small-tags/metafile.json",
+    "originalBytes": 3006237,
+    "originalSHA256": "03d5fb1dabd57845890fcdbc2a3b23910fd2f721ce200cfefe458346f2aa8330",
+    "storedBytes": 135984,
+    "storedSHA256": "6a5f4fa2443ab000d62a1c7c20fc3e24574f0afdef93992f74c7b9d98d28db21",
+    "gzip": true
+  },
+  {
+    "path": "60/candidate-small-button/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/candidate-small-button/metafile.json",
+    "originalBytes": 3006422,
+    "originalSHA256": "533515496d580f5d8f3693743a06800896d3f3daf6538be66b2f2ce2efb8536f",
+    "storedBytes": 136199,
+    "storedSHA256": "9ca928ca09abf4dc1e7716aec854c8029da2217760796e21602d3d44988ad9d4",
+    "gzip": true
+  },
+  {
+    "path": "60/candidate-small-buttons/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/candidate-small-buttons/metafile.json",
+    "originalBytes": 3007259,
+    "originalSHA256": "394c4419e1b05ab462fe564c2dc2c7d77d5d1c3828b6dc92fd0474a999dbf5ac",
+    "storedBytes": 136243,
+    "storedSHA256": "3a4863c3ea64489cd813a2c88fdcd7aa6bbe0e60d5511a40fda38c145d95d203",
+    "gzip": true
+  },
+  {
+    "path": "60/candidate-small-controls/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/candidate-small-controls/metafile.json",
+    "originalBytes": 3008219,
+    "originalSHA256": "d04e8eb20f8a9426558a5fb55b2cb756591605789172f3466a897831af9b20d3",
+    "storedBytes": 136338,
+    "storedSHA256": "26b867b38291e3695960ccff9295b80529ef01e3fb9abfff246b6853caea0d1c",
+    "gzip": true
+  },
+  {
+    "path": "60/candidate-small-form/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/candidate-small-form/metafile.json",
+    "originalBytes": 3007165,
+    "originalSHA256": "f17310025fe641929dd486b6507523238214948fe9f776586242cfb453113779",
+    "storedBytes": 136236,
+    "storedSHA256": "1ccec36692607d5ffc8a2230d5ba22b9e1c69ce73832a950100db54e2da89ec1",
+    "gzip": true
+  },
+  {
+    "path": "60/candidate-small-input/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/candidate-small-input/metafile.json",
+    "originalBytes": 3006540,
+    "originalSHA256": "89b125eec4b985b12ba4d91a295182b61e7ad24f9228379b666732a2b52942f2",
+    "storedBytes": 136213,
+    "storedSHA256": "719c5d99223ae1fabfbddcec90670828bbe88613ac47cf6bbf99d40817c8a5e7",
+    "gzip": true
+  },
+  {
+    "path": "60/candidate-small-shared/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/candidate-small-shared/metafile.json",
+    "originalBytes": 3009353,
+    "originalSHA256": "1e902804094403e6e6a53ac0a9d58437a392c8cef20a13e29664a3b47b6fe8af",
+    "storedBytes": 136343,
+    "storedSHA256": "1e7a03f9d2a04fb84c299a670712210b4e03b7dd13508cf3cf3b44e6635c9ea0",
+    "gzip": true
+  },
+  {
+    "path": "60/candidate-small-tags/metafile.json.gz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/candidate-small-tags/metafile.json",
+    "originalBytes": 3006882,
+    "originalSHA256": "9cc3cea74a2632d99a17657f1fde342710efa89e6ee27874994ac5efc3528ab4",
+    "storedBytes": 136228,
+    "storedSHA256": "3606e8f52c0a22bdfb33c76abd7e90d845ee9fa7e3eb6a45c3c6b093bc0df39f",
+    "gzip": true
+  },
+  {
+    "path": "60/consumer/package.json",
+    "originalPath": "/private/tmp/openui-styles60-evidence/consumer/package.json",
+    "originalBytes": 356,
+    "originalSHA256": "4d6a63153e05faf0e383a2d9a613d26a7793967a42988d219a92633e725b0b49",
+    "storedBytes": 356,
+    "storedSHA256": "4d6a63153e05faf0e383a2d9a613d26a7793967a42988d219a92633e725b0b49",
+    "gzip": false
+  },
+  {
+    "path": "60/consumer/pnpm-lock.yaml",
+    "originalPath": "/private/tmp/openui-styles60-evidence/consumer/pnpm-lock.yaml",
+    "originalBytes": 93591,
+    "originalSHA256": "ae3b3b7f97e706a57f98a1846551381c1fe2ba7cceb32e10b7b86a0814073635",
+    "storedBytes": 93591,
+    "storedSHA256": "ae3b3b7f97e706a57f98a1846551381c1fe2ba7cceb32e10b7b86a0814073635",
+    "gzip": false
+  },
+  {
+    "path": "60/consumer/public-contract.tsx",
+    "originalPath": "/private/tmp/openui-styles60-evidence/consumer/public-contract.tsx",
+    "originalBytes": 693,
+    "originalSHA256": "25e70eb84775aef3c250c0702dde0cbcbdee690f3eff834a884d386902dcf97b",
+    "storedBytes": 693,
+    "storedSHA256": "25e70eb84775aef3c250c0702dde0cbcbdee690f3eff834a884d386902dcf97b",
+    "gzip": false
+  },
+  {
+    "path": "57-worker/REPORT.md",
+    "originalPath": "/private/tmp/openui-styles57-evidence/REPORT.md",
+    "originalBytes": 8154,
+    "originalSHA256": "7edbdc6151035e94818149c198ff854ed8e37a69757ac6e5aabbfca95932ca44",
+    "storedBytes": 8154,
+    "storedSHA256": "7edbdc6151035e94818149c198ff854ed8e37a69757ac6e5aabbfca95932ca44",
+    "gzip": false
+  },
+  {
+    "path": "57-worker/integration-assessed.json",
+    "originalPath": "/private/tmp/openui-styles57-evidence/integration-assessed.json",
+    "originalBytes": 49132,
+    "originalSHA256": "90734f8d8040117a16cc07da1d744a855bcd5f7c492a549022fe4b11220f97ab",
+    "storedBytes": 49132,
+    "storedSHA256": "90734f8d8040117a16cc07da1d744a855bcd5f7c492a549022fe4b11220f97ab",
+    "gzip": false
+  },
+  {
+    "path": "57-worker/supplement-results.json.gz",
+    "originalPath": "/private/tmp/openui-styles57-evidence/supplement-results.json",
+    "originalBytes": 2573269,
+    "originalSHA256": "6096dd3cd2ee4628880e2f1d0f5c8b49253b5b0a73cc9b52dde23605e7d6159b",
+    "storedBytes": 188147,
+    "storedSHA256": "ee7f14b73398e20601237b62f9094059f2dd93bee8c61d88647d1b32b466f8bf",
+    "gzip": true
+  },
+  {
+    "path": "57-worker/final-smoke-results.json.gz",
+    "originalPath": "/private/tmp/openui-styles57-evidence/final-smoke-results.json",
+    "originalBytes": 611685,
+    "originalSHA256": "205a61bdb31654c62d1c6410cc7506391beae4ab87582d4ddfdf724ce4372bdf",
+    "storedBytes": 43097,
+    "storedSHA256": "5085fc1c518922fa2d617e545632387d997f0cef2872d2eb9a1232a01c176964",
+    "gzip": true
+  },
+  {
+    "path": "57-worker/spec-review.md",
+    "originalPath": "/private/tmp/openui-styles57-evidence/spec-review.md",
+    "originalBytes": 2592,
+    "originalSHA256": "eefc340dc5ffb54a487430ea0a23d27126c4bf94eeabf72b33c77080a5aaca00",
+    "storedBytes": 2592,
+    "storedSHA256": "eefc340dc5ffb54a487430ea0a23d27126c4bf94eeabf72b33c77080a5aaca00",
+    "gzip": false
+  },
+  {
+    "path": "57-worker/standards-review.md",
+    "originalPath": "/private/tmp/openui-styles57-evidence/standards-review.md",
+    "originalBytes": 1879,
+    "originalSHA256": "f41a983d0b4d15ac93770ed044abd91dc9bc2f709f63e3d39bd720bdfb27316a",
+    "storedBytes": 1879,
+    "storedSHA256": "f41a983d0b4d15ac93770ed044abd91dc9bc2f709f63e3d39bd720bdfb27316a",
+    "gzip": false
+  },
+  {
+    "path": "57-worker/cleanup-commit-binding.json",
+    "originalPath": "/private/tmp/openui-styles57-evidence/cleanup-commit-binding.json",
+    "originalBytes": 722,
+    "originalSHA256": "fc198e6ad294a6c8603a6a99f5b695a8da67d5f0b80af7000f8df75c757de992",
+    "storedBytes": 722,
+    "storedSHA256": "fc198e6ad294a6c8603a6a99f5b695a8da67d5f0b80af7000f8df75c757de992",
+    "gzip": false
+  },
+  {
+    "path": "57-independent/REPORT.md",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/runtime57/REPORT.md",
+    "originalBytes": 4090,
+    "originalSHA256": "2aa5f4630b87534a592e7d9d1ff4b95b81dd0c28291d8e063ea3121c267c62d3",
+    "storedBytes": 4090,
+    "storedSHA256": "2aa5f4630b87534a592e7d9d1ff4b95b81dd0c28291d8e063ea3121c267c62d3",
+    "gzip": false
+  },
+  {
+    "path": "57-independent/VERDICT.json",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/runtime57/VERDICT.json",
+    "originalBytes": 8638,
+    "originalSHA256": "eb877059de272e74856aa84df795475239ba57d2d7bc03c8602e8914cb98af6c",
+    "storedBytes": 8638,
+    "storedSHA256": "eb877059de272e74856aa84df795475239ba57d2d7bc03c8602e8914cb98af6c",
+    "gzip": false
+  },
+  {
+    "path": "57-independent/artifact-provenance.json",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/runtime57/artifact-provenance.json",
+    "originalBytes": 57482,
+    "originalSHA256": "84b6603cf3658241c20e35611ede02f7e24ddbcd6861bb38c608311082384ccc",
+    "storedBytes": 57482,
+    "storedSHA256": "84b6603cf3658241c20e35611ede02f7e24ddbcd6861bb38c608311082384ccc",
+    "gzip": false
+  },
+  {
+    "path": "57-independent/build-provenance.json",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/runtime57/build-provenance.json",
+    "originalBytes": 22399,
+    "originalSHA256": "dfa4a4c2b7f281946d1af3b06f022a6c5b68de96b007943161d7ef724952c8d1",
+    "storedBytes": 22399,
+    "storedSHA256": "dfa4a4c2b7f281946d1af3b06f022a6c5b68de96b007943161d7ef724952c8d1",
+    "gzip": false
+  },
+  {
+    "path": "57-independent/build-corrected-provenance.json",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/runtime57/build-corrected-provenance.json",
+    "originalBytes": 359,
+    "originalSHA256": "7c9374a1b03253f5aa8e76461e8cfa38e91029d8dd01b80c7d55e7a19bfbfd37",
+    "storedBytes": 359,
+    "storedSHA256": "7c9374a1b03253f5aa8e76461e8cfa38e91029d8dd01b80c7d55e7a19bfbfd37",
+    "gzip": false
+  },
+  {
+    "path": "57-independent/independent-results.json.gz",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/runtime57/independent-results.json",
+    "originalBytes": 22680939,
+    "originalSHA256": "8465a470e92114bcfa536d742c454c52d0bf439abc6a922f03876c23f0d567ac",
+    "storedBytes": 1241241,
+    "storedSHA256": "c2f8cb84ee21eab81d4a6c73872c26123c40be4aff23f6f13bd8bf7e359e7feb",
+    "gzip": true
+  },
+  {
+    "path": "57-independent/corrected-results.json.gz",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/runtime57/corrected-results.json",
+    "originalBytes": 11208585,
+    "originalSHA256": "aa3f672b8642b356e8020d2a49315e3ab22bf83771512ac3e0dc6fbfcb716902",
+    "storedBytes": 677923,
+    "storedSHA256": "45ba100247f254b265e2ac70609fd2e635db6b769291bf4aa0858a9943882770",
+    "gzip": true
+  },
+  {
+    "path": "57-independent/run.mjs",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/runtime57/run.mjs",
+    "originalBytes": 13067,
+    "originalSHA256": "66e8ec954fb04836b6cc765f68c2fdc40f9443c96fdc03e1bf9f958ee7b5fa9e",
+    "storedBytes": 13067,
+    "storedSHA256": "66e8ec954fb04836b6cc765f68c2fdc40f9443c96fdc03e1bf9f958ee7b5fa9e",
+    "gzip": false
+  },
+  {
+    "path": "57-independent/run-corrected.mjs",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/runtime57/run-corrected.mjs",
+    "originalBytes": 8496,
+    "originalSHA256": "7b5f541fbe415739c11a76f4c8444af688da2c67b7d5e6b4151568e431d316bd",
+    "storedBytes": 8496,
+    "storedSHA256": "7b5f541fbe415739c11a76f4c8444af688da2c67b7d5e6b4151568e431d316bd",
+    "gzip": false
+  },
+  {
+    "path": "58-deferred/REPORT.md",
+    "originalPath": "/private/tmp/openui-styles58-evidence/REPORT.md",
+    "originalBytes": 5473,
+    "originalSHA256": "7df8d59806ad71eec83150bcd6739616b48212ad8fb04010b40de500e76273a4",
+    "storedBytes": 5473,
+    "storedSHA256": "7df8d59806ad71eec83150bcd6739616b48212ad8fb04010b40de500e76273a4",
+    "gzip": false
+  },
+  {
+    "path": "58-deferred/DISPOSITION.json",
+    "originalPath": "/private/tmp/openui-styles58-evidence/DISPOSITION.json",
+    "originalBytes": 945,
+    "originalSHA256": "5a9b22b7b1931cbfc69cd7c3702384feee20f81e8d70fb47fa0b3ef9c76bc6d7",
+    "storedBytes": 945,
+    "storedSHA256": "5a9b22b7b1931cbfc69cd7c3702384feee20f81e8d70fb47fa0b3ef9c76bc6d7",
+    "gzip": false
+  },
+  {
+    "path": "58-deferred/button-corrected-results.json",
+    "originalPath": "/private/tmp/openui-styles58-evidence/button-corrected-results.json",
+    "originalBytes": 123611,
+    "originalSHA256": "6e94e7add5d37a5d0908d0538c3eac16b5dda859f0cb6571d3dcb5b86fc02a06",
+    "storedBytes": 123611,
+    "storedSHA256": "6e94e7add5d37a5d0908d0538c3eac16b5dda859f0cb6571d3dcb5b86fc02a06",
+    "gzip": false
+  },
+  {
+    "path": "58-deferred/button-corrected-summary.json",
+    "originalPath": "/private/tmp/openui-styles58-evidence/button-corrected-summary.json",
+    "originalBytes": 23405,
+    "originalSHA256": "6b6446c1bca4824169067beb2fd0cc0787af30b2c3aee58b81f4a8d719e63c7f",
+    "storedBytes": 23405,
+    "storedSHA256": "6b6446c1bca4824169067beb2fd0cc0787af30b2c3aee58b81f4a8d719e63c7f",
+    "gzip": false
+  },
+  {
+    "path": "58-deferred/button-first-batch.json",
+    "originalPath": "/private/tmp/openui-styles58-evidence/button-first-batch.json",
+    "originalBytes": 16709,
+    "originalSHA256": "efc76262831cefcf705743b5440f9bc95c3f975bd0b6d8781ede78d05c373a3f",
+    "storedBytes": 16709,
+    "storedSHA256": "efc76262831cefcf705743b5440f9bc95c3f975bd0b6d8781ede78d05c373a3f",
+    "gzip": false
+  },
+  {
+    "path": "58-deferred/button-before.styles.ts",
+    "originalPath": "/private/tmp/openui-styles58-evidence/button-before.styles.ts",
+    "originalBytes": 6124,
+    "originalSHA256": "9da8215e1b64a87ab82f2f9d281369661617d7b8d96a982b9c57c535ac02f605",
+    "storedBytes": 6124,
+    "storedSHA256": "9da8215e1b64a87ab82f2f9d281369661617d7b8d96a982b9c57c535ac02f605",
+    "gzip": false
+  },
+  {
+    "path": "58-deferred/button-after.styles.ts",
+    "originalPath": "/private/tmp/openui-styles58-evidence/button-after.styles.ts",
+    "originalBytes": 4750,
+    "originalSHA256": "d21154b5a91a578f97987f9f7779b4061183914e6e1ca44ff44da385b00cde23",
+    "storedBytes": 4750,
+    "storedSHA256": "d21154b5a91a578f97987f9f7779b4061183914e6e1ca44ff44da385b00cde23",
+    "gzip": false
+  },
+  {
+    "path": "58-deferred/button-removal.patch",
+    "originalPath": "/private/tmp/openui-styles58-evidence/button-removal.patch",
+    "originalBytes": 9596,
+    "originalSHA256": "2f60a03c5ca9c27f1b577e9ead6bb0aa4149016182fe134d7bc37a3e34de1580",
+    "storedBytes": 9596,
+    "storedSHA256": "2f60a03c5ca9c27f1b577e9ead6bb0aa4149016182fe134d7bc37a3e34de1580",
+    "gzip": false
+  },
+  {
+    "path": "58-deferred/build-button.mjs",
+    "originalPath": "/private/tmp/openui-styles58-evidence/build-button.mjs",
+    "originalBytes": 1889,
+    "originalSHA256": "678b975d7f6a1e5baaa24d94546f5926039b32c20c7da889609f0cce16f1bae4",
+    "storedBytes": 1889,
+    "storedSHA256": "678b975d7f6a1e5baaa24d94546f5926039b32c20c7da889609f0cce16f1bae4",
+    "gzip": false
+  },
+  {
+    "path": "58-deferred/run-button-corrected.mjs",
+    "originalPath": "/private/tmp/openui-styles58-evidence/run-button-corrected.mjs",
+    "originalBytes": 2725,
+    "originalSHA256": "a8266c36e728f0d4eef4456d191ae1c96e9f2e97d336955fcf3e60b7ab13b1fa",
+    "storedBytes": 2725,
+    "storedSHA256": "a8266c36e728f0d4eef4456d191ae1c96e9f2e97d336955fcf3e60b7ab13b1fa",
+    "gzip": false
+  },
+  {
+    "path": "58-deferred/SHA256SUMS.json",
+    "originalPath": "/private/tmp/openui-styles58-evidence/SHA256SUMS.json",
+    "originalBytes": 1925,
+    "originalSHA256": "8f3021f905ff2fe41b944be09980a2eb9a8c7517c0a4175531031a6e2110dec3",
+    "storedBytes": 1925,
+    "storedSHA256": "8f3021f905ff2fe41b944be09980a2eb9a8c7517c0a4175531031a6e2110dec3",
+    "gzip": false
+  },
+  {
+    "path": "59-worker/REPORT.md",
+    "originalPath": "/private/tmp/openui-styles59-evidence/REPORT.md",
+    "originalBytes": 6210,
+    "originalSHA256": "e7877c55a81100d2c16edbc1662cb3a4b360630b47c13ed211cc526c481a19a6",
+    "storedBytes": 6210,
+    "storedSHA256": "e7877c55a81100d2c16edbc1662cb3a4b360630b47c13ed211cc526c481a19a6",
+    "gzip": false
+  },
+  {
+    "path": "59-worker/SUMMARY.json",
+    "originalPath": "/private/tmp/openui-styles59-evidence/SUMMARY.json",
+    "originalBytes": 815,
+    "originalSHA256": "1e1b736dd73540f146a9f6fc52bfea46afe11112253d214285b3a71163e9b034",
+    "storedBytes": 815,
+    "storedSHA256": "1e1b736dd73540f146a9f6fc52bfea46afe11112253d214285b3a71163e9b034",
+    "gzip": false
+  },
+  {
+    "path": "59-worker/results.json.gz",
+    "originalPath": "/private/tmp/openui-styles59-evidence/results.json",
+    "originalBytes": 36358254,
+    "originalSHA256": "ee9e3aff4936334c1812104816179fced9d94793796e163d4741c435f255fff3",
+    "storedBytes": 529608,
+    "storedSHA256": "1a47f4b7f1d73780e51bd4671e31aee67efde1490114d558451233e75ce8e9ff",
+    "gzip": true
+  },
+  {
+    "path": "59-worker/artifact-provenance.json.gz",
+    "originalPath": "/private/tmp/openui-styles59-evidence/artifact-provenance.json",
+    "originalBytes": 710406,
+    "originalSHA256": "455e7e74c324bc527bed7f9f30c1f68f3292a55381c5f5a0b65caa300b64bcee",
+    "storedBytes": 253021,
+    "storedSHA256": "d031c484fc016f502d8b0b0002c44d07881436427785aa757513219d358825eb",
+    "gzip": true
+  },
+  {
+    "path": "59-worker/source-binding.json",
+    "originalPath": "/private/tmp/openui-styles59-evidence/source-binding.json",
+    "originalBytes": 47025,
+    "originalSHA256": "c9ee9bf15b80ce86500d718adbd47012918b57d1e8631a616cd23ccc6a0721e6",
+    "storedBytes": 47025,
+    "storedSHA256": "c9ee9bf15b80ce86500d718adbd47012918b57d1e8631a616cd23ccc6a0721e6",
+    "gzip": false
+  },
+  {
+    "path": "59-worker/cleared-token-observations.json",
+    "originalPath": "/private/tmp/openui-styles59-evidence/cleared-token-observations.json",
+    "originalBytes": 27767,
+    "originalSHA256": "3c11eed2a178e9368e690adfb43f8624a31356e83dcaf65328ec135370b1082e",
+    "storedBytes": 27767,
+    "storedSHA256": "3c11eed2a178e9368e690adfb43f8624a31356e83dcaf65328ec135370b1082e",
+    "gzip": false
+  },
+  {
+    "path": "59-worker/fixture.tsx",
+    "originalPath": "/private/tmp/openui-styles59-evidence/fixture.tsx",
+    "originalBytes": 3373,
+    "originalSHA256": "cb4bc87b41a485bd4318196f2af8f828931060d4747d0caed9623b1702619cb9",
+    "storedBytes": 3373,
+    "storedSHA256": "cb4bc87b41a485bd4318196f2af8f828931060d4747d0caed9623b1702619cb9",
+    "gzip": false
+  },
+  {
+    "path": "59-worker/run.mjs",
+    "originalPath": "/private/tmp/openui-styles59-evidence/run.mjs",
+    "originalBytes": 7297,
+    "originalSHA256": "6db26395b40f08a81eaf8bb3efd30ccf0c221ca578afd9cf2a50eda2e5a6ba87",
+    "storedBytes": 7297,
+    "storedSHA256": "6db26395b40f08a81eaf8bb3efd30ccf0c221ca578afd9cf2a50eda2e5a6ba87",
+    "gzip": false
+  },
+  {
+    "path": "59-worker/build.mjs",
+    "originalPath": "/private/tmp/openui-styles59-evidence/build.mjs",
+    "originalBytes": 2313,
+    "originalSHA256": "2f0824eb5eeda08a9b87340a4af8c487ff174e7137e84cc00fb0164602af5ec1",
+    "storedBytes": 2313,
+    "storedSHA256": "2f0824eb5eeda08a9b87340a4af8c487ff174e7137e84cc00fb0164602af5ec1",
+    "gzip": false
+  },
+  {
+    "path": "59-independent/REPORT.md",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket59/REPORT.md",
+    "originalBytes": 5363,
+    "originalSHA256": "b923bf62d506c13a5912034af4169931544c22a1cfe239de245e6b2ba4271f32",
+    "storedBytes": 5363,
+    "storedSHA256": "b923bf62d506c13a5912034af4169931544c22a1cfe239de245e6b2ba4271f32",
+    "gzip": false
+  },
+  {
+    "path": "59-independent/VERDICT.json",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket59/VERDICT.json",
+    "originalBytes": 1065,
+    "originalSHA256": "643695884150a528a979e5de471f32ea83d67eab51050ed550dcaf16250a6618",
+    "storedBytes": 1065,
+    "storedSHA256": "643695884150a528a979e5de471f32ea83d67eab51050ed550dcaf16250a6618",
+    "gzip": false
+  },
+  {
+    "path": "59-independent/results.json.gz",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket59/results.json",
+    "originalBytes": 22612617,
+    "originalSHA256": "fb3cbfd55ab31acec7a0c36bfb1c0d4cc1c0b69ea42b317cd5012e4cdddd9c59",
+    "storedBytes": 333543,
+    "storedSHA256": "5ddc7e289505e44a2ee51a0ee2a5ab868ea8954efb2da2b3904ed0d7632aabb5",
+    "gzip": true
+  },
+  {
+    "path": "59-independent/run-independent.mjs",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket59/run-independent.mjs",
+    "originalBytes": 8624,
+    "originalSHA256": "6390e46fabfec9733270f6d47dbc251ceac50fba2e9da7340cc4f67754dff9c0",
+    "storedBytes": 8624,
+    "storedSHA256": "6390e46fabfec9733270f6d47dbc251ceac50fba2e9da7340cc4f67754dff9c0",
+    "gzip": false
+  },
+  {
+    "path": "59-independent/provenance.json.gz",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket59/provenance.json",
+    "originalBytes": 932267,
+    "originalSHA256": "bafef9041d3b04340821b370254c455b208fff65581e0cfdf73c2d7c48b4c583",
+    "storedBytes": 441614,
+    "storedSHA256": "606a827a2c810a0973b83ad382905e068520e15d208218074c88834396425ba0",
+    "gzip": true
+  },
+  {
+    "path": "59-independent/source-audit.json",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket59/source-audit.json",
+    "originalBytes": 639,
+    "originalSHA256": "b32fbca181ab397fe4da7f0fa3a8d9d14aa2dd5d7f0dbeeb16842bd14234171a",
+    "storedBytes": 639,
+    "storedSHA256": "b32fbca181ab397fe4da7f0fa3a8d9d14aa2dd5d7f0dbeeb16842bd14234171a",
+    "gzip": false
+  },
+  {
+    "path": "59-independent/optimized-audit.json",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket59/optimized-audit.json",
+    "originalBytes": 3825,
+    "originalSHA256": "e689934d1d6bc38c96b55d1a26e0ec5a085ba4076a1e90a7f42f24cd095f85c3",
+    "storedBytes": 3825,
+    "storedSHA256": "e689934d1d6bc38c96b55d1a26e0ec5a085ba4076a1e90a7f42f24cd095f85c3",
+    "gzip": false
+  },
+  {
+    "path": "59-independent/window-release.json",
+    "originalPath": "/private/tmp/openui-styles-independent-verification/ticket59/window-release.json",
+    "originalBytes": 110,
+    "originalSHA256": "759e1b7976fe8c2217ec21360db18c4407bb9084d96a7e2de4ea54ed57dccc45",
+    "storedBytes": 110,
+    "storedSHA256": "759e1b7976fe8c2217ec21360db18c4407bb9084d96a7e2de4ea54ed57dccc45",
+    "gzip": false
+  },
+  {
+    "path": "artifacts/baseline42.tgz",
+    "originalPath": "/private/tmp/openui-styles57-evidence/baseline/openuidev-react-components-0.0.0-beta.0.tgz",
+    "originalBytes": 1056136,
+    "originalSHA256": "2ae11b4e46a6846bbc7403c70fe51bb8cd40b3b90d4ae39cf4f4dfe1d12a3294",
+    "storedBytes": 1056136,
+    "storedSHA256": "2ae11b4e46a6846bbc7403c70fe51bb8cd40b3b90d4ae39cf4f4dfe1d12a3294",
+    "gzip": false
+  },
+  {
+    "path": "artifacts/accepted57.tgz",
+    "originalPath": "/private/tmp/openui-styles57-evidence/final/openuidev-react-components-0.0.0-beta.0.tgz",
+    "originalBytes": 1057392,
+    "originalSHA256": "a7c562a0f284d8f290f414ce4bee2fae632c601470677d71046800a021e808e4",
+    "storedBytes": 1057392,
+    "storedSHA256": "a7c562a0f284d8f290f414ce4bee2fae632c601470677d71046800a021e808e4",
+    "gzip": false
+  },
+  {
+    "path": "artifacts/failed58-button.tgz",
+    "originalPath": "/private/tmp/openui-styles58-evidence/button-candidate/openuidev-react-components-0.0.0-beta.0.tgz",
+    "originalBytes": 1057068,
+    "originalSHA256": "cd0782d738a199d155e25ad634129c2b18efc2f33137e1d3c29f90252cfdef1d",
+    "storedBytes": 1057068,
+    "storedSHA256": "cd0782d738a199d155e25ad634129c2b18efc2f33137e1d3c29f90252cfdef1d",
+    "gzip": false
+  },
+  {
+    "path": "artifacts/accepted59.tgz",
+    "originalPath": "/private/tmp/openui-styles59-evidence/candidate/openuidev-react-components-0.0.0-beta.0.tgz",
+    "originalBytes": 1058008,
+    "originalSHA256": "5d88d8a440a865ec7b3395a2b1888a8f4e288bb32f9efbb6b7565a4cd1b4ea9f",
+    "storedBytes": 1058008,
+    "storedSHA256": "5d88d8a440a865ec7b3395a2b1888a8f4e288bb32f9efbb6b7565a4cd1b4ea9f",
+    "gzip": false
+  },
+  {
+    "path": "artifacts/combined60.tgz",
+    "originalPath": "/private/tmp/openui-styles60-evidence/candidate/openuidev-react-components-0.0.0-beta.0.tgz",
+    "originalBytes": 1058096,
+    "originalSHA256": "1db41852f9e5aa11ccbfe5a56cdb3d00c8ad753ad5e73cb19bdf4832e7f7b957",
+    "storedBytes": 1058096,
+    "storedSHA256": "1db41852f9e5aa11ccbfe5a56cdb3d00c8ad753ad5e73cb19bdf4832e7f7b957",
+    "gzip": false
+  },
+  {
+    "path": "host-css/tailwind3.css",
+    "originalPath": "/private/tmp/openui-public-gate-consumer/frameworks/tailwind3.css",
+    "originalBytes": 11461,
+    "originalSHA256": "584ed8b229b2a8df96f9ddc478e94a07249e8905bdf068afdef8981d969ae150",
+    "storedBytes": 11461,
+    "storedSHA256": "584ed8b229b2a8df96f9ddc478e94a07249e8905bdf068afdef8981d969ae150",
+    "gzip": false
+  },
+  {
+    "path": "host-css/tailwind4.css",
+    "originalPath": "/private/tmp/openui-public-gate-consumer/frameworks/tailwind4.css",
+    "originalBytes": 6994,
+    "originalSHA256": "e05a054044718b3c9ac536e5fe41ddde475f1a06ca68f57674a90db0a3c1b36e",
+    "storedBytes": 6994,
+    "storedSHA256": "e05a054044718b3c9ac536e5fe41ddde475f1a06ca68f57674a90db0a3c1b36e",
+    "gzip": false
+  },
+  {
+    "path": "host-css/plain.css",
+    "originalPath": "/private/tmp/openui-public-gate-consumer/frameworks/plain.css",
+    "originalBytes": 286,
+    "originalSHA256": "d4a1d5dcf591b093b35a4b9bebf48406a70ccf0504b60b11e27f4002f3ddcb00",
+    "storedBytes": 286,
+    "storedSHA256": "d4a1d5dcf591b093b35a4b9bebf48406a70ccf0504b60b11e27f4002f3ddcb00",
+    "gzip": false
+  },
+  {
+    "path": "inventory/themes.json",
+    "originalPath": "/private/tmp/openui-common-styles-inventory/themes.json",
+    "originalBytes": 21419,
+    "originalSHA256": "1f5a16fb4594573508ea8cd3d00439095b349d2438d5f94a69fe01bc6442b1b0",
+    "storedBytes": 21419,
+    "storedSHA256": "1f5a16fb4594573508ea8cd3d00439095b349d2438d5f94a69fe01bc6442b1b0",
+    "gzip": false
+  },
+  {
+    "path": "inventory/fallbacks.json.gz",
+    "originalPath": "/private/tmp/openui-common-styles-inventory/fallbacks.json",
+    "originalBytes": 358021,
+    "originalSHA256": "3b71e2937579e25b5738e5a09e3ed03c1d491e282a3257093c04d46ce9426d4c",
+    "storedBytes": 14109,
+    "storedSHA256": "49c29f04f4167a456d0a58dbd1831e9ede3e257685c66692cf02baff3275fb9a",
+    "gzip": true
+  },
+  {
+    "path": "inventory/ownership.tsv",
+    "originalPath": "/private/tmp/openui-common-styles-inventory/ownership.tsv",
+    "originalBytes": 8716,
+    "originalSHA256": "4bd2ef5a54dbfb1ac95e483b666a8eff5bf5816a7c3466bbd8c5c6f18f333a16",
+    "storedBytes": 8716,
+    "storedSHA256": "4bd2ef5a54dbfb1ac95e483b666a8eff5bf5816a7c3466bbd8c5c6f18f333a16",
+    "gzip": false
+  }
+]

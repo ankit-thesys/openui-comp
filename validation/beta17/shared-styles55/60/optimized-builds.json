@@ -1,0 +1,1797 @@
+[
+  {
+    "arm": "baseline",
+    "name": "button",
+    "goober": [
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      }
+    ],
+    "defaults": [],
+    "sharedBase": [],
+    "unrelatedJS": [],
+    "allJSInputs": [
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react.production.js",
+        "bytes": 7590
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js",
+        "bytes": 3638
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom.production.js",
+        "bytes": 3343
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/index.js",
+        "bytes": 253
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom-client.production.js",
+        "bytes": 176480
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+        "bytes": 253
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react-jsx-runtime.production.js",
+        "bytes": 364
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/jsx-runtime.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "small.tsx",
+        "bytes": 191
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs",
+        "bytes": 372
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Button/button.styles.mjs",
+        "bytes": 5988
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-button/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Button/Button.mjs",
+        "bytes": 775
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "name": "input",
+    "goober": [
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      }
+    ],
+    "defaults": [],
+    "sharedBase": [],
+    "unrelatedJS": [],
+    "allJSInputs": [
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react.production.js",
+        "bytes": 7590
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js",
+        "bytes": 3638
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom.production.js",
+        "bytes": 3343
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/index.js",
+        "bytes": 253
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom-client.production.js",
+        "bytes": 176480
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+        "bytes": 253
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react-jsx-runtime.production.js",
+        "bytes": 364
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/jsx-runtime.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "small.tsx",
+        "bytes": 202
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs",
+        "bytes": 372
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/FormControl/context.mjs",
+        "bytes": 104
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Input/input.styles.mjs",
+        "bytes": 2310
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-input/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Input/Input.mjs",
+        "bytes": 415
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "name": "controls",
+    "goober": [
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      }
+    ],
+    "defaults": [],
+    "sharedBase": [],
+    "unrelatedJS": [],
+    "allJSInputs": [
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react.production.js",
+        "bytes": 7590
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js",
+        "bytes": 3638
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom.production.js",
+        "bytes": 3343
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/index.js",
+        "bytes": 253
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom-client.production.js",
+        "bytes": 176480
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+        "bytes": 253
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react-jsx-runtime.production.js",
+        "bytes": 364
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/jsx-runtime.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "small.tsx",
+        "bytes": 437
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@radix-ui+react-compose-refs@1.1.5_@types+react@19.3.0_react@19.2.4/node_modules/@radix-ui/react-compose-refs/dist/index.mjs",
+        "bytes": 486
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@radix-ui+react-slot@1.5.0_@types+react@19.3.0_react@19.2.4/node_modules/@radix-ui/react-slot/dist/index.mjs",
+        "bytes": 2735
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs",
+        "bytes": 372
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Button/button.styles.mjs",
+        "bytes": 5988
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Button/Button.mjs",
+        "bytes": 775
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/IconButton/iconButton.styles.mjs",
+        "bytes": 6542
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/IconButton/IconButton.mjs",
+        "bytes": 1084
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/FormControl/context.mjs",
+        "bytes": 104
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Input/input.styles.mjs",
+        "bytes": 2310
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Input/Input.mjs",
+        "bytes": 415
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "name": "buttons",
+    "goober": [
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      }
+    ],
+    "defaults": [],
+    "sharedBase": [],
+    "unrelatedJS": [],
+    "allJSInputs": [
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react.production.js",
+        "bytes": 7590
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js",
+        "bytes": 3638
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom.production.js",
+        "bytes": 3343
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/index.js",
+        "bytes": 253
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom-client.production.js",
+        "bytes": 176480
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+        "bytes": 253
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react-jsx-runtime.production.js",
+        "bytes": 364
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/jsx-runtime.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "small.tsx",
+        "bytes": 276
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs",
+        "bytes": 372
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Button/button.styles.mjs",
+        "bytes": 5988
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Button/Button.mjs",
+        "bytes": 775
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Buttons/buttons.styles.mjs",
+        "bytes": 249
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Buttons/Buttons.mjs",
+        "bytes": 352
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "name": "form",
+    "goober": [
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      }
+    ],
+    "defaults": [],
+    "sharedBase": [],
+    "unrelatedJS": [],
+    "allJSInputs": [
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react.production.js",
+        "bytes": 7590
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js",
+        "bytes": 3638
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom.production.js",
+        "bytes": 3343
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/index.js",
+        "bytes": 253
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom-client.production.js",
+        "bytes": 176480
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+        "bytes": 253
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react-jsx-runtime.production.js",
+        "bytes": 364
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/jsx-runtime.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "small.tsx",
+        "bytes": 277
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs",
+        "bytes": 372
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/FormControl/context.mjs",
+        "bytes": 196
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/FormControl/formControl.styles.mjs",
+        "bytes": 115
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/FormControl/FormControl.mjs",
+        "bytes": 332
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/FormControl/Hint/hint.styles.mjs",
+        "bytes": 505
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/FormControl/Hint/Hint.mjs",
+        "bytes": 294
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "name": "tags",
+    "goober": [
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      }
+    ],
+    "defaults": [],
+    "sharedBase": [],
+    "unrelatedJS": [],
+    "allJSInputs": [
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react.production.js",
+        "bytes": 7590
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js",
+        "bytes": 3638
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom.production.js",
+        "bytes": 3343
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/index.js",
+        "bytes": 253
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom-client.production.js",
+        "bytes": 176480
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+        "bytes": 253
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react-jsx-runtime.production.js",
+        "bytes": 364
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/jsx-runtime.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "small.tsx",
+        "bytes": 279
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs",
+        "bytes": 372
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Tag/tag.styles.mjs",
+        "bytes": 1975
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Tag/Tag.mjs",
+        "bytes": 621
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/TagBlock/tagBlock.styles.mjs",
+        "bytes": 129
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/TagBlock/TagBlock.mjs",
+        "bytes": 200
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "name": "shared",
+    "goober": [
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1888
+      }
+    ],
+    "defaults": [],
+    "sharedBase": [],
+    "unrelatedJS": [],
+    "allJSInputs": [
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react.production.js",
+        "bytes": 7590
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js",
+        "bytes": 3638
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom.production.js",
+        "bytes": 3343
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/index.js",
+        "bytes": 253
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom-client.production.js",
+        "bytes": 176501
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+        "bytes": 253
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react-jsx-runtime.production.js",
+        "bytes": 364
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/jsx-runtime.js",
+        "bytes": 51
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "small.tsx",
+        "bytes": 627
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1888
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs",
+        "bytes": 372
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Button/button.styles.mjs",
+        "bytes": 5988
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Button/Button.mjs",
+        "bytes": 774
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Buttons/buttons.styles.mjs",
+        "bytes": 249
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Buttons/Buttons.mjs",
+        "bytes": 351
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/FormControl/context.mjs",
+        "bytes": 196
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/FormControl/formControl.styles.mjs",
+        "bytes": 115
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/FormControl/FormControl.mjs",
+        "bytes": 331
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/FormControl/Hint/hint.styles.mjs",
+        "bytes": 505
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/FormControl/Hint/Hint.mjs",
+        "bytes": 293
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Tag/tag.styles.mjs",
+        "bytes": 1964
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/Tag/Tag.mjs",
+        "bytes": 621
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/TagBlock/tagBlock.styles.mjs",
+        "bytes": 128
+      },
+      {
+        "output": "../../openui-styles60-evidence/baseline-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+baseline+openuidev-react-components-0.0.0-beta.0.tg_75b5b223bccfd3c1ef6e1d9b0948b21c/node_modules/@openuidev/react-components/dist/components/TagBlock/TagBlock.mjs",
+        "bytes": 200
+      }
+    ]
+  },
+  {
+    "arm": "candidate",
+    "name": "button",
+    "goober": [
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      }
+    ],
+    "defaults": [
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 317
+      }
+    ],
+    "sharedBase": [],
+    "unrelatedJS": [],
+    "allJSInputs": [
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react.production.js",
+        "bytes": 7590
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js",
+        "bytes": 3638
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom.production.js",
+        "bytes": 3343
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/index.js",
+        "bytes": 253
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom-client.production.js",
+        "bytes": 176568
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+        "bytes": 253
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react-jsx-runtime.production.js",
+        "bytes": 364
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/jsx-runtime.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "small.tsx",
+        "bytes": 191
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/swatches.mjs",
+        "bytes": 11025
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/defaultTheme.mjs",
+        "bytes": 9019
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/types.mjs",
+        "bytes": 174
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/utils.mjs",
+        "bytes": 328
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 317
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs",
+        "bytes": 372
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Button/button.styles.mjs",
+        "bytes": 5988
+      },
+      {
+        "output": "../candidate-small-button/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Button/Button.mjs",
+        "bytes": 775
+      }
+    ]
+  },
+  {
+    "arm": "candidate",
+    "name": "input",
+    "goober": [
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      }
+    ],
+    "defaults": [
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 317
+      }
+    ],
+    "sharedBase": [],
+    "unrelatedJS": [],
+    "allJSInputs": [
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react.production.js",
+        "bytes": 7590
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js",
+        "bytes": 3638
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom.production.js",
+        "bytes": 3343
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/index.js",
+        "bytes": 253
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom-client.production.js",
+        "bytes": 176568
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+        "bytes": 253
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react-jsx-runtime.production.js",
+        "bytes": 364
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/jsx-runtime.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "small.tsx",
+        "bytes": 202
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/swatches.mjs",
+        "bytes": 11025
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/defaultTheme.mjs",
+        "bytes": 9019
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/types.mjs",
+        "bytes": 174
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/utils.mjs",
+        "bytes": 328
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 317
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs",
+        "bytes": 372
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/FormControl/context.mjs",
+        "bytes": 104
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Input/input.styles.mjs",
+        "bytes": 2310
+      },
+      {
+        "output": "../candidate-small-input/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Input/Input.mjs",
+        "bytes": 415
+      }
+    ]
+  },
+  {
+    "arm": "candidate",
+    "name": "controls",
+    "goober": [
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      }
+    ],
+    "defaults": [
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 317
+      }
+    ],
+    "sharedBase": [],
+    "unrelatedJS": [],
+    "allJSInputs": [
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react.production.js",
+        "bytes": 7590
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js",
+        "bytes": 3638
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom.production.js",
+        "bytes": 3343
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/index.js",
+        "bytes": 253
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom-client.production.js",
+        "bytes": 176568
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+        "bytes": 253
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react-jsx-runtime.production.js",
+        "bytes": 364
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/jsx-runtime.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "small.tsx",
+        "bytes": 437
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/swatches.mjs",
+        "bytes": 11025
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/defaultTheme.mjs",
+        "bytes": 9019
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/types.mjs",
+        "bytes": 174
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/utils.mjs",
+        "bytes": 328
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 317
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@radix-ui+react-compose-refs@1.1.5_@types+react@19.3.0_react@19.2.4/node_modules/@radix-ui/react-compose-refs/dist/index.mjs",
+        "bytes": 486
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@radix-ui+react-slot@1.5.0_@types+react@19.3.0_react@19.2.4/node_modules/@radix-ui/react-slot/dist/index.mjs",
+        "bytes": 2735
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs",
+        "bytes": 372
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Button/button.styles.mjs",
+        "bytes": 5988
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Button/Button.mjs",
+        "bytes": 775
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/IconButton/iconButton.styles.mjs",
+        "bytes": 6542
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/IconButton/IconButton.mjs",
+        "bytes": 1084
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/FormControl/context.mjs",
+        "bytes": 104
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Input/input.styles.mjs",
+        "bytes": 2310
+      },
+      {
+        "output": "../candidate-small-controls/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Input/Input.mjs",
+        "bytes": 415
+      }
+    ]
+  },
+  {
+    "arm": "candidate",
+    "name": "buttons",
+    "goober": [
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      }
+    ],
+    "defaults": [
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 317
+      }
+    ],
+    "sharedBase": [
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/base.mjs",
+        "bytes": 39
+      }
+    ],
+    "unrelatedJS": [],
+    "allJSInputs": [
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react.production.js",
+        "bytes": 7590
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js",
+        "bytes": 3638
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom.production.js",
+        "bytes": 3343
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/index.js",
+        "bytes": 253
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom-client.production.js",
+        "bytes": 176568
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+        "bytes": 253
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react-jsx-runtime.production.js",
+        "bytes": 364
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/jsx-runtime.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "small.tsx",
+        "bytes": 276
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/swatches.mjs",
+        "bytes": 11025
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/defaultTheme.mjs",
+        "bytes": 9019
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/types.mjs",
+        "bytes": 174
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/utils.mjs",
+        "bytes": 328
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 317
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs",
+        "bytes": 372
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Button/button.styles.mjs",
+        "bytes": 5988
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Button/Button.mjs",
+        "bytes": 775
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/base.mjs",
+        "bytes": 39
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Buttons/buttons.styles.mjs",
+        "bytes": 223
+      },
+      {
+        "output": "../candidate-small-buttons/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Buttons/Buttons.mjs",
+        "bytes": 355
+      }
+    ]
+  },
+  {
+    "arm": "candidate",
+    "name": "form",
+    "goober": [
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      }
+    ],
+    "defaults": [
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 317
+      }
+    ],
+    "sharedBase": [
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/base.mjs",
+        "bytes": 39
+      }
+    ],
+    "unrelatedJS": [],
+    "allJSInputs": [
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react.production.js",
+        "bytes": 7590
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js",
+        "bytes": 3638
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom.production.js",
+        "bytes": 3343
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/index.js",
+        "bytes": 253
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom-client.production.js",
+        "bytes": 176568
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+        "bytes": 253
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react-jsx-runtime.production.js",
+        "bytes": 364
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/jsx-runtime.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "small.tsx",
+        "bytes": 277
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/swatches.mjs",
+        "bytes": 11025
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/defaultTheme.mjs",
+        "bytes": 9019
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/types.mjs",
+        "bytes": 174
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/utils.mjs",
+        "bytes": 328
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 317
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs",
+        "bytes": 372
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/base.mjs",
+        "bytes": 39
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/FormControl/context.mjs",
+        "bytes": 196
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/FormControl/formControl.styles.mjs",
+        "bytes": 89
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/FormControl/FormControl.mjs",
+        "bytes": 335
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/FormControl/Hint/hint.styles.mjs",
+        "bytes": 505
+      },
+      {
+        "output": "../candidate-small-form/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/FormControl/Hint/Hint.mjs",
+        "bytes": 294
+      }
+    ]
+  },
+  {
+    "arm": "candidate",
+    "name": "tags",
+    "goober": [
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      }
+    ],
+    "defaults": [
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 317
+      }
+    ],
+    "sharedBase": [
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/base.mjs",
+        "bytes": 39
+      }
+    ],
+    "unrelatedJS": [],
+    "allJSInputs": [
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react.production.js",
+        "bytes": 7590
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js",
+        "bytes": 3638
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom.production.js",
+        "bytes": 3343
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/index.js",
+        "bytes": 253
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom-client.production.js",
+        "bytes": 176568
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+        "bytes": 253
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react-jsx-runtime.production.js",
+        "bytes": 364
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/jsx-runtime.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "small.tsx",
+        "bytes": 279
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/swatches.mjs",
+        "bytes": 11025
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/defaultTheme.mjs",
+        "bytes": 9019
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/types.mjs",
+        "bytes": 174
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/utils.mjs",
+        "bytes": 328
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1891
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 317
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs",
+        "bytes": 372
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/base.mjs",
+        "bytes": 39
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Tag/tag.styles.mjs",
+        "bytes": 1975
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Tag/Tag.mjs",
+        "bytes": 621
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/TagBlock/tagBlock.styles.mjs",
+        "bytes": 103
+      },
+      {
+        "output": "../candidate-small-tags/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/TagBlock/TagBlock.mjs",
+        "bytes": 203
+      }
+    ]
+  },
+  {
+    "arm": "candidate",
+    "name": "shared",
+    "goober": [
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1888
+      }
+    ],
+    "defaults": [
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 316
+      }
+    ],
+    "sharedBase": [
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/base.mjs",
+        "bytes": 38
+      }
+    ],
+    "unrelatedJS": [],
+    "allJSInputs": [
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react.production.js",
+        "bytes": 7590
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/cjs/scheduler.production.js",
+        "bytes": 3638
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/scheduler@0.27.0/node_modules/scheduler/index.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom.production.js",
+        "bytes": 3343
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/index.js",
+        "bytes": 253
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/cjs/react-dom-client.production.js",
+        "bytes": 176591
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
+        "bytes": 253
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/cjs/react-jsx-runtime.production.js",
+        "bytes": 364
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/react@19.2.4/node_modules/react/jsx-runtime.js",
+        "bytes": 51
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "small.tsx",
+        "bytes": 627
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/swatches.mjs",
+        "bytes": 11025
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/defaultTheme.mjs",
+        "bytes": 9019
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/types.mjs",
+        "bytes": 174
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/ThemeProvider/utils.mjs",
+        "bytes": 328
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/goober@2.1.19_csstype@3.2.3/node_modules/goober/dist/goober.modern.js",
+        "bytes": 1888
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs",
+        "bytes": 316
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs",
+        "bytes": 372
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Button/button.styles.mjs",
+        "bytes": 5988
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Button/Button.mjs",
+        "bytes": 774
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/base.mjs",
+        "bytes": 38
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Buttons/buttons.styles.mjs",
+        "bytes": 223
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Buttons/Buttons.mjs",
+        "bytes": 354
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/FormControl/context.mjs",
+        "bytes": 196
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/FormControl/formControl.styles.mjs",
+        "bytes": 89
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/FormControl/FormControl.mjs",
+        "bytes": 334
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/FormControl/Hint/hint.styles.mjs",
+        "bytes": 505
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/FormControl/Hint/Hint.mjs",
+        "bytes": 293
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Tag/tag.styles.mjs",
+        "bytes": 1964
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/Tag/Tag.mjs",
+        "bytes": 621
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/TagBlock/tagBlock.styles.mjs",
+        "bytes": 102
+      },
+      {
+        "output": "../candidate-small-shared/stdin.js",
+        "input": "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/components/TagBlock/TagBlock.mjs",
+        "bytes": 203
+      }
+    ]
+  }
+]

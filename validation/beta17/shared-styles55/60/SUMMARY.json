@@ -1,0 +1,29 @@
+{
+  "sourceCommit": "c1aaf994d5c0fbfb56b83685221eeea9b409e57c",
+  "packageTree": "a71ebda7e9812ff9a488ac8d025b6983be24e9ef",
+  "archiveSHA256": "1db41852f9e5aa11ccbfe5a56cdb3d00c8ad753ad5e73cb19bdf4832e7f7b957",
+  "baseline42Commit": "d1292715028f816bd6a0dcf92766ec7dd15350f4",
+  "baseline42ArchiveSHA256": "2ae11b4e46a6846bbc7403c70fe51bb8cd40b3b90d4ae39cf4f4dfe1d12a3294",
+  "browserChecks": {
+    "integration": {
+      "checks": 300,
+      "pass": 300,
+      "failures": []
+    },
+    "controls": {
+      "checks": 153,
+      "pass": 153,
+      "failures": []
+    }
+  },
+  "optimizedChecks": {
+    "total": 39,
+    "passes": 39,
+    "failures": []
+  },
+  "fallbacksRetained": 1444,
+  "sourceMapOwnedSources": 371,
+  "independent60Verdict": "pending",
+  "pr": "not created yet",
+  "durableLabEvidence": "preparing"
+}

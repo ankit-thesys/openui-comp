@@ -1,0 +1,11 @@
+import {build} from '/private/tmp/openui-common-styles/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js';
+import {writeFileSync} from 'node:fs';
+const root='/private/tmp/openui-styles60-evidence';
+const src=`import {glob} from 'goober';
+const before=window.capture();glob('.host-sentinel{color:rgb(4,5,6);}');
+const pkg=await import('@openuidev/react-components');
+const after=window.capture();
+glob('.host-sentinel{color:rgb(7,8,9);}');
+window.negative={before,after,afterUpdate:window.capture()};window.ready=true;`;
+const r=await build({absWorkingDir:root+'/consumer',stdin:{contents:src,resolveDir:root+'/consumer',sourcefile:'negative.ts',loader:'ts'},bundle:true,minify:true,format:'esm',splitting:true,outdir:root+'/negative-browser',metafile:true,loader:{'.woff2':'file','.woff':'file','.ttf':'file'},define:{'process.env.NODE_ENV':'"production"'},logLevel:'warning'});
+writeFileSync(root+'/negative-browser/metafile.json',JSON.stringify(r.metafile));

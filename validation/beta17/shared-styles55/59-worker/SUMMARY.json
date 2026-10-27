@@ -1,0 +1,26 @@
+{
+  "status": "PASS within bounded ticket59 checks; independent runtime verification and integration60 pending",
+  "baseCommit": "50df8768157c5e76abda45bf39098ec4b87fa702",
+  "chrome": "156.0.8078.48",
+  "configurations": 36,
+  "checks": 480,
+  "passed": 480,
+  "failures": [],
+  "fallbacksRemoved": 0,
+  "sourceFiles": 7,
+  "ownedEmbeddedSources": 371,
+  "publicExports": 166,
+  "browserReleased": {
+    "time": "2026-10-27T10:30:18.714Z",
+    "browserClosed": true,
+    "serverClosed": true
+  },
+  "candidateCommit": "67369bc07261c726cdc01f065b6e9b0fa70b3eab",
+  "packageTree": "aacb627a0efe5c6ce36e9c3675e76577f35b90c2",
+  "sourceReviews": {
+    "standards": "no actionable findings",
+    "spec": "no actionable findings",
+    "finalEvidence": "no actionable findings",
+    "independentRuntime": "pending"
+  }
+}

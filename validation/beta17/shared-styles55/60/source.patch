@@ -1,0 +1,199 @@
+diff --git a/packages/react-components/README.md b/packages/react-components/README.md
+index 644cbcb66..1c55bc27a 100644
+--- a/packages/react-components/README.md
++++ b/packages/react-components/README.md
+@@ -64,6 +64,20 @@ require a CSS import, setup command or styling build plugin. Styles register
+ when a referenced module evaluates, before the component renders. The build
+ preserves modules and marks unused modules removable by the consumer's bundler.
+ 
++Importing the package also registers the existing light-theme token defaults on
++the document root, without a provider. These defaults occupy the first CSS layer,
++so normal host token declarations override them, including declarations in named
++layers. Inherited container overrides and ThemeProvider scopes remain supported;
++system dark mode does not change the provider-free defaults.
++
++Component-level `var()` fallbacks are intentionally retained. Clearing an
++inherited token, for example with `--openui-interactive-accent-default: initial`,
++still uses the component's existing default. Automatic root defaults complement
++that behavior; they do not replace the fallback when a consumer clears a token.
++
++Buttons, FormControl and TagBlock share a root-only `box-sizing: border-box`
++declaration. Descendant styling, component layout and state rules remain local.
++
+ Chrome with plain CSS, Tailwind v3 and Tailwind v4 is the current browser target.
+ Host preflight remains enabled. Ordinary utility classes do not necessarily beat
+ component defaults. Intentional overrides can use scoped important CSS or the
+diff --git a/packages/react-components/package.json b/packages/react-components/package.json
+index 2d4a06c1f..3b9daf1c1 100644
+--- a/packages/react-components/package.json
++++ b/packages/react-components/package.json
+@@ -19,7 +19,14 @@
+       }
+     }
+   },
+-  "sideEffects": false,
++  "sideEffects": [
++    "./src/index.ts",
++    "./src/styles/defaults.ts",
++    "./dist/index.mjs",
++    "./dist/index.cjs",
++    "./dist/styles/defaults.mjs",
++    "./dist/styles/defaults.cjs"
++  ],
+   "files": [
+     "dist",
+     "README.md",
+diff --git a/packages/react-components/src/components/Buttons/Buttons.tsx b/packages/react-components/src/components/Buttons/Buttons.tsx
+index 5f389124c..0e2927b14 100644
+--- a/packages/react-components/src/components/Buttons/Buttons.tsx
++++ b/packages/react-components/src/components/Buttons/Buttons.tsx
+@@ -1,6 +1,7 @@
+ import clsx from "clsx";
+ import { css } from "goober";
+ import { CSSProperties, forwardRef, HTMLAttributes, ReactElement } from "react";
++import { borderBoxClass } from "../../styles/base";
+ import { ButtonProps } from "../Button";
+ import { IconButtonProps } from "../IconButton";
+ import { buttonsStyles } from "./buttons.styles";
+@@ -29,7 +30,13 @@ export const Buttons = forwardRef<HTMLDivElement, ButtonsProps>((props, ref) =>
+   return (
+     <div
+       ref={ref}
+-      className={clsx(componentClass, "openui-buttons", variantMap[variant], className)}
++      className={clsx(
++        componentClass,
++        borderBoxClass,
++        "openui-buttons",
++        variantMap[variant],
++        className,
++      )}
+       style={style}
+       {...rest}
+     >
+diff --git a/packages/react-components/src/components/Buttons/buttons.styles.ts b/packages/react-components/src/components/Buttons/buttons.styles.ts
+index a4755767a..525de93c2 100644
+--- a/packages/react-components/src/components/Buttons/buttons.styles.ts
++++ b/packages/react-components/src/components/Buttons/buttons.styles.ts
+@@ -2,7 +2,6 @@ export const buttonsStyles = `
+   display: flex;
+   width: 100%;
+   gap: var(--openui-space-m, 12px);
+-  box-sizing: border-box;
+   &.openui-buttons-horizontal {
+     flex-direction: row;
+     flex-wrap: wrap;
+diff --git a/packages/react-components/src/components/FormControl/FormControl.tsx b/packages/react-components/src/components/FormControl/FormControl.tsx
+index de9cc0475..373fbd62f 100644
+--- a/packages/react-components/src/components/FormControl/FormControl.tsx
++++ b/packages/react-components/src/components/FormControl/FormControl.tsx
+@@ -1,6 +1,7 @@
+ import clsx from "clsx";
+ import { css } from "goober";
+ import React, { forwardRef, useMemo } from "react";
++import { borderBoxClass } from "../../styles/base";
+ import { FormControlProvider } from "./context";
+ import { formControlStyles } from "./formControl.styles";
+ const componentClass = css`
+@@ -18,7 +19,11 @@ const FormControl = forwardRef<HTMLDivElement, FormControlProps>((props, ref) =>
+   const { children, className, style, hasError = false } = props;
+   const formControlContextValue = useMemo(() => ({ hasError }), [hasError]);
+   return (
+-    <div ref={ref} className={clsx(componentClass, "openui-form-control", className)} style={style}>
++    <div
++      ref={ref}
++      className={clsx(componentClass, borderBoxClass, "openui-form-control", className)}
++      style={style}
++    >
+       <FormControlProvider value={formControlContextValue}>{children}</FormControlProvider>
+     </div>
+   );
+diff --git a/packages/react-components/src/components/FormControl/formControl.styles.ts b/packages/react-components/src/components/FormControl/formControl.styles.ts
+index 5dee3f0fa..f40d56e06 100644
+--- a/packages/react-components/src/components/FormControl/formControl.styles.ts
++++ b/packages/react-components/src/components/FormControl/formControl.styles.ts
+@@ -1,5 +1,4 @@
+ export const formControlStyles = `
+-  box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   gap: var(--openui-space-s, 8px);
+diff --git a/packages/react-components/src/components/TagBlock/TagBlock.tsx b/packages/react-components/src/components/TagBlock/TagBlock.tsx
+index 212954168..727232a20 100644
+--- a/packages/react-components/src/components/TagBlock/TagBlock.tsx
++++ b/packages/react-components/src/components/TagBlock/TagBlock.tsx
+@@ -1,5 +1,6 @@
+ import clsx from "clsx";
+ import { CSSProperties, forwardRef, ReactElement } from "react";
++import { borderBoxClass } from "../../styles/base";
+ import { Tag } from "../Tag";
+ import { blockClass } from "./tagBlock.styles";
+ 
+@@ -13,7 +14,7 @@ export const TagBlock = forwardRef<HTMLDivElement, TagBlockProps>((props, ref) =
+   return (
+     <div
+       ref={ref}
+-      className={clsx(blockClass, "openui-tag-block", props.className)}
++      className={clsx(blockClass, borderBoxClass, "openui-tag-block", props.className)}
+       style={props.styles}
+     >
+       {props.children}
+diff --git a/packages/react-components/src/components/TagBlock/tagBlock.styles.ts b/packages/react-components/src/components/TagBlock/tagBlock.styles.ts
+index dc0fed961..2aefa4d3a 100644
+--- a/packages/react-components/src/components/TagBlock/tagBlock.styles.ts
++++ b/packages/react-components/src/components/TagBlock/tagBlock.styles.ts
+@@ -1,6 +1,5 @@
+ import { css } from "goober";
+ export const blockClass = css`
+-  box-sizing: border-box;
+   display: flex;
+   flex-wrap: wrap;
+   gap: var(--openui-space-s, 8px);
+diff --git a/packages/react-components/src/index.ts b/packages/react-components/src/index.ts
+index ab11a6a74..323b6fcaf 100644
+--- a/packages/react-components/src/index.ts
++++ b/packages/react-components/src/index.ts
+@@ -1,3 +1,5 @@
++import "./styles/defaults";
++
+ export { IconWrapper, type IconWrapperProps } from "./components/_shared/icons";
+ export { safeOpenUrl, safeUrl } from "./components/_shared/utils/safeUrl";
+ export * from "./components/Accordion";
+diff --git a/packages/react-components/src/styles/base.ts b/packages/react-components/src/styles/base.ts
+new file mode 100644
+index 000000000..cc2def602
+--- /dev/null
++++ b/packages/react-components/src/styles/base.ts
+@@ -0,0 +1,6 @@
++import { css } from "goober";
++
++// Apply only to component roots that already used border-box.
++export const borderBoxClass = css`
++  box-sizing: border-box;
++`;
+diff --git a/packages/react-components/src/styles/defaults.ts b/packages/react-components/src/styles/defaults.ts
+new file mode 100644
+index 000000000..ab8c2882a
+--- /dev/null
++++ b/packages/react-components/src/styles/defaults.ts
+@@ -0,0 +1,21 @@
++import { css } from "goober";
++import { defaultLightTheme } from "../components/ThemeProvider/defaultTheme";
++import { themeToCssVars } from "../components/ThemeProvider/utils";
++
++if (typeof document !== "undefined") {
++  // Establish the defaults layer before host layers, regardless of import order.
++  const order = document.createElement("style");
++  order.setAttribute("data-openui-layer-order", "");
++  order.textContent = "@layer openui-defaults;";
++  document.head.prepend(order);
++
++  // Normal css registration avoids glob's replacement of host global styles.
++  const rootClass = css`
++    @layer openui-defaults {
++      :where(&:root) {
++        ${themeToCssVars({ ...defaultLightTheme })}
++      }
++    }
++  `;
++  document.documentElement.classList.add(rootClass);
++}

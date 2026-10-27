@@ -1,0 +1,21 @@
+{
+  "styleChanges": [
+    {
+      "file": "packages/react-components/src/components/Buttons/buttons.styles.ts",
+      "onlyRemoved": "box-sizing: border-box",
+      "gapFallbackUnchanged": true
+    },
+    {
+      "file": "packages/react-components/src/components/FormControl/formControl.styles.ts",
+      "onlyRemoved": "box-sizing: border-box",
+      "gapFallbackUnchanged": true
+    },
+    {
+      "file": "packages/react-components/src/components/TagBlock/tagBlock.styles.ts",
+      "onlyRemoved": "box-sizing: border-box",
+      "gapFallbackUnchanged": true
+    }
+  ],
+  "indexDefaultsMetadata": "unchanged",
+  "legacy": "unchanged"
+}

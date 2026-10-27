@@ -1,0 +1,90 @@
+[
+  {
+    "arm": "baseline",
+    "import": "buttons",
+    "defaults": [
+      "node_modules/.pnpm/@openuidev+react-components@file+..+final+openuidev-react-components-0.0.0-beta.0.tgz_@_a5231e580c01b5a0abe49529f8d1dfa9/node_modules/@openuidev/react-components/dist/styles/defaults.mjs"
+    ],
+    "sharedBase": [],
+    "unrelatedPositiveJS": [],
+    "jsBytes": 224944
+  },
+  {
+    "arm": "baseline",
+    "import": "form",
+    "defaults": [
+      "node_modules/.pnpm/@openuidev+react-components@file+..+final+openuidev-react-components-0.0.0-beta.0.tgz_@_a5231e580c01b5a0abe49529f8d1dfa9/node_modules/@openuidev/react-components/dist/styles/defaults.mjs"
+    ],
+    "sharedBase": [],
+    "unrelatedPositiveJS": [],
+    "jsBytes": 219023
+  },
+  {
+    "arm": "baseline",
+    "import": "tags",
+    "defaults": [
+      "node_modules/.pnpm/@openuidev+react-components@file+..+final+openuidev-react-components-0.0.0-beta.0.tgz_@_a5231e580c01b5a0abe49529f8d1dfa9/node_modules/@openuidev/react-components/dist/styles/defaults.mjs"
+    ],
+    "sharedBase": [],
+    "unrelatedPositiveJS": [],
+    "jsBytes": 220507
+  },
+  {
+    "arm": "baseline",
+    "import": "combined",
+    "defaults": [
+      "node_modules/.pnpm/@openuidev+react-components@file+..+final+openuidev-react-components-0.0.0-beta.0.tgz_@_a5231e580c01b5a0abe49529f8d1dfa9/node_modules/@openuidev/react-components/dist/styles/defaults.mjs"
+    ],
+    "sharedBase": [],
+    "unrelatedPositiveJS": [],
+    "jsBytes": 229516
+  },
+  {
+    "arm": "candidate",
+    "import": "buttons",
+    "defaults": [
+      "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs"
+    ],
+    "sharedBase": [
+      "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/base.mjs"
+    ],
+    "unrelatedPositiveJS": [],
+    "jsBytes": 224960
+  },
+  {
+    "arm": "candidate",
+    "import": "form",
+    "defaults": [
+      "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs"
+    ],
+    "sharedBase": [
+      "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/base.mjs"
+    ],
+    "unrelatedPositiveJS": [],
+    "jsBytes": 219039
+  },
+  {
+    "arm": "candidate",
+    "import": "tags",
+    "defaults": [
+      "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs"
+    ],
+    "sharedBase": [
+      "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/base.mjs"
+    ],
+    "unrelatedPositiveJS": [],
+    "jsBytes": 220523
+  },
+  {
+    "arm": "candidate",
+    "import": "combined",
+    "defaults": [
+      "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/defaults.mjs"
+    ],
+    "sharedBase": [
+      "node_modules/.pnpm/@openuidev+react-components@file+..+candidate+openuidev-react-components-0.0.0-beta.0.t_2e42f0472bf2ad606aeec021af6c6922/node_modules/@openuidev/react-components/dist/styles/base.mjs"
+    ],
+    "unrelatedPositiveJS": [],
+    "jsBytes": 229485
+  }
+]

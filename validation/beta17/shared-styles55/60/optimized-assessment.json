@@ -1,0 +1,163 @@
+{
+  "checks": [
+    {
+      "name": "one-goober:baseline:button",
+      "pass": true
+    },
+    {
+      "name": "no-unrelated-js:baseline:button",
+      "pass": true
+    },
+    {
+      "name": "one-goober:baseline:input",
+      "pass": true
+    },
+    {
+      "name": "no-unrelated-js:baseline:input",
+      "pass": true
+    },
+    {
+      "name": "one-goober:baseline:controls",
+      "pass": true
+    },
+    {
+      "name": "no-unrelated-js:baseline:controls",
+      "pass": true
+    },
+    {
+      "name": "one-goober:baseline:buttons",
+      "pass": true
+    },
+    {
+      "name": "no-unrelated-js:baseline:buttons",
+      "pass": true
+    },
+    {
+      "name": "one-goober:baseline:form",
+      "pass": true
+    },
+    {
+      "name": "no-unrelated-js:baseline:form",
+      "pass": true
+    },
+    {
+      "name": "one-goober:baseline:tags",
+      "pass": true
+    },
+    {
+      "name": "no-unrelated-js:baseline:tags",
+      "pass": true
+    },
+    {
+      "name": "one-goober:baseline:shared",
+      "pass": true
+    },
+    {
+      "name": "no-unrelated-js:baseline:shared",
+      "pass": true
+    },
+    {
+      "name": "one-goober:candidate:button",
+      "pass": true
+    },
+    {
+      "name": "no-unrelated-js:candidate:button",
+      "pass": true
+    },
+    {
+      "name": "automatic-defaults-retained:button",
+      "pass": true
+    },
+    {
+      "name": "one-goober:candidate:input",
+      "pass": true
+    },
+    {
+      "name": "no-unrelated-js:candidate:input",
+      "pass": true
+    },
+    {
+      "name": "automatic-defaults-retained:input",
+      "pass": true
+    },
+    {
+      "name": "one-goober:candidate:controls",
+      "pass": true
+    },
+    {
+      "name": "no-unrelated-js:candidate:controls",
+      "pass": true
+    },
+    {
+      "name": "automatic-defaults-retained:controls",
+      "pass": true
+    },
+    {
+      "name": "one-goober:candidate:buttons",
+      "pass": true
+    },
+    {
+      "name": "no-unrelated-js:candidate:buttons",
+      "pass": true
+    },
+    {
+      "name": "automatic-defaults-retained:buttons",
+      "pass": true
+    },
+    {
+      "name": "shared-base-retained:buttons",
+      "pass": true
+    },
+    {
+      "name": "one-goober:candidate:form",
+      "pass": true
+    },
+    {
+      "name": "no-unrelated-js:candidate:form",
+      "pass": true
+    },
+    {
+      "name": "automatic-defaults-retained:form",
+      "pass": true
+    },
+    {
+      "name": "shared-base-retained:form",
+      "pass": true
+    },
+    {
+      "name": "one-goober:candidate:tags",
+      "pass": true
+    },
+    {
+      "name": "no-unrelated-js:candidate:tags",
+      "pass": true
+    },
+    {
+      "name": "automatic-defaults-retained:tags",
+      "pass": true
+    },
+    {
+      "name": "shared-base-retained:tags",
+      "pass": true
+    },
+    {
+      "name": "one-goober:candidate:shared",
+      "pass": true
+    },
+    {
+      "name": "no-unrelated-js:candidate:shared",
+      "pass": true
+    },
+    {
+      "name": "automatic-defaults-retained:shared",
+      "pass": true
+    },
+    {
+      "name": "shared-base-retained:shared",
+      "pass": true
+    }
+  ],
+  "total": 39,
+  "passes": 39,
+  "failures": []
+}
