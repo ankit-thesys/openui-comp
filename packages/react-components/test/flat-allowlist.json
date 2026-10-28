@@ -60,7 +60,6 @@
   "src/components/Label/Label.tsx",
   "src/components/ListBlock/listBlock.styles.ts",
   "src/components/ListItem/listItem.styles.ts",
-  "src/components/MarkDownRenderer/markdown.styles.ts",
   "src/components/MetricIndicator/metricIndicator.styles.ts",
   "src/components/Modal/modal.styles.ts",
   "src/components/OptionCards/optionCards.styles.ts",

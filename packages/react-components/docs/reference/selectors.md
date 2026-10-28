@@ -22,3 +22,17 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-button--size-large` | Modifier | `size="large"` |
 | `.openui-button--tone-default` | Modifier | `tone="default"` |
 | `.openui-button--tone-destructive` | Modifier | `tone="destructive"` |
+
+## MarkDownRenderer
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-markdown-renderer` | Root | Always |
+| `.openui-markdown-renderer-code` | Part (`code`) | On that part, whenever it renders |
+| `.openui-markdown-renderer-link` | Part (`link`) | On that part, whenever it renders |
+| `.openui-markdown-renderer-code-block` | Part (`codeBlock`) | On that part, whenever it renders |
+| `.openui-markdown-renderer-table` | Part (`table`) | On that part, whenever it renders |
+| `.openui-markdown-renderer-table-container` | Part (`tableContainer`) | On that part, whenever it renders |
+| `.openui-markdown-renderer--variant-clear` | Modifier | `variant="clear"` |
+| `.openui-markdown-renderer--variant-card` | Modifier | `variant="card"` |
+| `.openui-markdown-renderer--variant-sunk` | Modifier | `variant="sunk"` |

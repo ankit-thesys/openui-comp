@@ -97,6 +97,10 @@ to a stable class to restyle it:
 
 Library rules for these components weigh one generated class, plus at most one state. Content the
 library does not render itself (your children, icons inside an icon part) is styled at zero weight.
+Markdown prose (paragraphs, headings, lists, quotes, rules and strong text) also uses zero-weight
+root scoping: `.openui-markdown-renderer p { color: navy; }` overrides paragraph colour. Code,
+links, code-block roots, tables and table containers have the stable classes in the reference.
+`MarkDownRenderer` defaults to `variant="clear"` and always emits its variant modifier.
 A rule of yours on a stable class, with the same state where you need one, therefore wins:
 
 - whether your CSS loads before or after the library, because the library's `<style id="_goober">`
@@ -115,8 +119,14 @@ rule in a named cascade layer loses to the unlayered library rules.
 
 ### Exceptions
 
-- A few `!important` declarations remain, in MarkDownRenderer, the listed sources view, CodeBlock and
-  SliderBlock, where they override inline styles from third-party renderers.
+- MarkDownRenderer retains four `!important` declarations on its third-party syntax-highlighter
+  output: `padding: 25px`, `margin-top: 8px`, `margin-bottom: 8px`, and `margin-bottom: 0` on its
+  last child. These declarations are exceptions to ordinary consumer overrides. The never-matching
+  first-child `margin-top: 0 !important` rule has been removed (the copy button precedes the
+  highlighter).
+- The listed sources view, standalone CodeBlock and SliderBlock also retain their existing
+  `!important` declarations. Syntax-highlighter theme maps and token output keep their third-party
+  inline styles; use the code-block root class to restyle the block around that output.
 - Components that have not moved to the contract register their styles on import, behind a class on
   `<html>`, and keep the selectors documented under [Automatic styles](#automatic-styles). The
   package's `test/flat-allowlist.json` lists their modules; it must be empty before a stable release.
@@ -157,8 +167,8 @@ has not been certified.
 ### Stable selectors
 
 The selectors in this and the following sections belong to components that have
-not moved to the [styling contract](#styling-and-overrides) yet; Button has, and
-is documented in the [stable class reference](docs/reference/selectors.md).
+not moved to the [styling contract](#styling-and-overrides) yet; Button and MarkDownRenderer have, and
+are documented in the [stable class reference](docs/reference/selectors.md).
 IconButton uses stable styling targets that register on import: a private
 generated class on `html` is contained in `:where(...:root)` and adds zero
 specificity. Consumers do not use that class. The documented batches below share this mechanism;
@@ -291,7 +301,6 @@ The private document guard contributes no specificity.
 | TextCallout | `.openui-text-callout-root`, `.openui-text-callout-variant-neutral`, `.openui-text-callout-variant-info`, `.openui-text-callout-variant-warning`, `.openui-text-callout-variant-success`, `.openui-text-callout-variant-danger`, `.openui-text-callout-content-styled`, `.openui-text-callout-title`, `.openui-text-callout-description` |
 | MetricIndicator | `.openui-metric-indicator-root` |
 | CodeBlock | `.openui-code-block-root` |
-| MarkDownRenderer | `.openui-mark-down-renderer-markdown-code`, `.openui-mark-down-renderer-markdown-link`, `.openui-mark-down-renderer-markdown-root` |
 | InlineMarkdownRenderer | `.openui-inline-markdown-renderer-inline-markdown-root` |
 | ImageBlock | `.openui-image-block-wrapper-styled`, `.openui-image-block-wrapper-mobile`, `.openui-image-block-error`, `.openui-image-block-image-styled`, `.openui-image-block-image-mobile`, `.openui-image-block-loader-styled` |
 | ImageText | `.openui-image-text-root`, `.openui-image-text-image-container`, `.openui-image-text-image`, `.openui-image-text-layout-vertical`, `.openui-image-text-layout-horizontal`, `.openui-image-text-content` |
@@ -620,6 +629,15 @@ Renamed stable classes and props, per component converted to the flat convention
 | Button | `buttonType="destructive"` prop | `tone="destructive"`; emits `.openui-button--tone-destructive` |
 | Button | `.openui-button-base-destructive-{primary,secondary,tertiary}` | `.openui-button--tone-destructive` with `.openui-button--variant-{…}` |
 | Button | Icons as direct children | Each icon wrapped in `.openui-button-icon` |
+| MarkDownRenderer | `.openui-mark-down-renderer-markdown-root` | `.openui-markdown-renderer` |
+| MarkDownRenderer | `.openui-mark-down-renderer-markdown-code` | `.openui-markdown-renderer-code` |
+| MarkDownRenderer | `.openui-mark-down-renderer-markdown-link` | `.openui-markdown-renderer-link` |
+| MarkDownRenderer | `.openui-markdown-renderer-card` | `.openui-markdown-renderer--variant-card` |
+| MarkDownRenderer | `.openui-markdown-renderer-card-sunk` | `.openui-markdown-renderer--variant-sunk` |
+| MarkDownRenderer | No default `variant`, no clear modifier | `variant="clear"` by default; always emits `.openui-markdown-renderer--variant-clear` |
+| MarkDownRenderer | Shared `.openui-code-block-wrapper` | Also carries `.openui-markdown-renderer-code-block`; standalone CodeBlock defaults are unchanged |
+| MarkDownRenderer | `.openui-code-block-syntax-highlighter` inside markdown | Removed inside markdown; target `.openui-markdown-renderer-code-block` for the owned root around third-party output. Standalone CodeBlock keeps the old class. |
+| MarkDownRenderer | Shared `.openui-table` / `.openui-table-container` | Also carry `.openui-markdown-renderer-table` / `.openui-markdown-renderer-table-container` |
 
 ## Beta import migration
 
