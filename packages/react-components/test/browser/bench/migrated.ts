@@ -1,6 +1,6 @@
 // Pages that client-render each migrated component (fixtures/migrated-server.tsx) through the
 // `elements` fixture, the way a client-only app renders them.
-import type { Page } from "@playwright/test";
+import { expect, type Page } from "@playwright/test";
 
 // Built by build-fixtures.ts (Playwright's global setup) before any spec runs.
 const { migrated } = (await import(
@@ -15,7 +15,8 @@ export async function openMigrated(
   page: Page,
   component: MigratedComponent,
   head = "",
-  part?: string,
+  targetClass = "",
+  openPortals = true,
 ) {
   const path = `/migrated-${component.folder}.html`;
   const body =
@@ -49,7 +50,7 @@ export async function openMigrated(
     // Wait for measured overflow, then exercise a real editing state. The select's content
     // lives outside #root; all bench snapshots and override queries include the document.
     await page.locator('.openui-editable-table-scroll-control[data-side="right"]').waitFor();
-    const input = part === "openui-editable-table-cell-input";
+    const input = targetClass === "openui-editable-table-cell-input";
     const cell = page.locator(".openui-editable-table-cell-base").nth(input ? 0 : 3);
     await cell.click();
     await cell.press("Enter");
@@ -60,4 +61,40 @@ export async function openMigrated(
       .first()
       .waitFor();
   }
+
+  // #93: mount the requested portal through the public trigger. Its wrapper can have zero
+  // height, so readiness means a visible item/day. Only one modal Select opens per page.
+  if (openPortals && component.folder === "Select") {
+    const size = targetClass.match(/--size-(sm|md|lg)$/)?.[1] ?? "md";
+    const position = targetClass.endsWith("--position-item-aligned") ? "item-aligned" : "popper";
+    await page
+      .locator(`.openui-select-trigger--size-${size}[data-bench-position="${position}"]`)
+      .first()
+      .click();
+    await expect(page.locator('.openui-select-item[data-state="checked"]')).toBeFocused();
+  } else if (openPortals && component.folder === "Calendar") {
+    const years = /select-(viewport|item)|content-years/.test(targetClass);
+    await page
+      .locator(".openui-calendar-select-trigger")
+      .nth(years ? 1 : 0)
+      .click();
+    await expect(page.locator('.openui-select-item[data-state="checked"]')).toBeFocused();
+    const content = page.locator(`.openui-calendar-select-content-${years ? "years" : "months"}`);
+    await expect
+      .poll(() => content.evaluate((el) => parseFloat((el as HTMLElement).style.maxHeight)))
+      .toBeGreaterThan(0);
+  } else if (openPortals && component.folder === "DatePicker") {
+    await page.locator(".openui-date-picker-trigger").first().click();
+    await expect(
+      page.locator(".openui-date-picker-menu .openui-calendar-day-button").first(),
+    ).toBeVisible();
+  }
+  // The ordinary matrix uses untyped buttons. The typed-background tests explicitly restore
+  // type=button, including Radix's automatically typed triggers and any portal buttons.
+  if (["Select", "Calendar", "DatePicker"].includes(component.folder))
+    await page
+      .locator("button")
+      .evaluateAll((buttons) => buttons.forEach((button) => button.removeAttribute("type")));
+  if (targetClass && ["Select", "Calendar", "DatePicker"].includes(component.folder))
+    await expect(page.locator(`.${targetClass}`).first()).toBeAttached();
 }

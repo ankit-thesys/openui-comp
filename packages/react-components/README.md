@@ -311,39 +311,42 @@ beat inline styles without using the existing inline customization API.
 
 ### Select, Calendar, DatePicker and Modal selectors
 
-These families retain their existing props, markup, behavior and theme delivery.
-Ordinary overrides require the corresponding later, unlayered selector. Floating
-coordinates and other existing inline styles keep their current precedence.
-
-| Family     | Stable styling targets                                                                                                                                                                                              | Scope                                                                                                                                                                                    |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Select     | `.openui-select-trigger-root`, `.openui-select-content-root`, `.openui-select-viewport-root`, `.openui-select-group-root`, `.openui-select-label-root`, `.openui-select-item-root`, `.openui-select-separator-root` | Existing trigger, portaled content and parts; existing aliases, size classes, placeholder/open/checked/highlighted/disabled state remain.                                                |
-| Calendar   | `.openui-calendar-container-root`                                                                                                                                                                                   | Existing outer wrapper scopes the existing DayPicker classes; owned declarations primarily target its parts, not the wrapper itself. `classNames` overrides keep their current behavior. |
-| DatePicker | `.openui-date-picker-style-root`                                                                                                                                                                                    | Marks both the existing floating container and portal content. Qualify with their existing aliases when styling one role. Floating UI's inline coordinates are preserved.                |
-| Modal      | `.openui-modal-portal-root`, `.openui-modal-overlay-root`, `.openui-modal-content-root`, `.openui-modal-header-root`, `.openui-modal-title-root`, `.openui-modal-close-root`, `.openui-modal-body-root`             | Existing portal and parts; sizes, close paths and supported props remain unchanged.                                                                                                      |
+Select, Calendar and DatePicker follow the flat contract in both default and layer mode.
+Their roots, owned parts, modifiers and runtime states are in the
+[generated selector reference](docs/reference/selectors.md). Calendar composes the public
+Select components, and portalled content receives the active theme.
 
 ```css
-.openui-select-trigger-root:where(.openui-select-trigger-sm) {
+.openui-select-trigger--size-sm {
   padding-left: 24px;
 }
-.openui-select-content-root.openui-select-content-sm .openui-select-label {
+.openui-select-label {
   font-size: 14px;
 }
-.openui-calendar-container-root .openui-calendar-single-day-selected {
+.openui-calendar-day[data-selection="single"] {
   background: navy;
 }
-.openui-date-picker-style-root:where(.openui-date-picker-renderer-floating-content) {
+.openui-date-picker-content {
   z-index: 60;
 }
-.openui-modal-close-root:focus-visible {
+```
+
+Floating coordinates and measured dropdown bounds remain inline. Static appearance defaults
+are flat CSS, including the Calendar content inside the floating DatePicker.
+See the migration table below for every renamed class.
+
+Modal also follows the flat contract, with `.openui-modal`, its owned parts and
+`--size-{sm,md,lg}` modifiers. Sizes, close paths and supported props remain unchanged.
+
+```css
+.openui-modal-close:focus-visible {
   outline-color: navy;
 }
 ```
 
-Calendar's custom dropdowns still use Select's private content/viewport exports;
-this internal dependency is preserved. Select, DatePicker, Modal and Calendar
-month dropdowns keep their existing nested-theme behavior in real portals.
-These client checks do not establish SSR, hydration or concurrent server support.
+Select, DatePicker, Modal and Calendar month dropdowns retain their nested-theme
+behavior in real portals. These client checks do not establish SSR, hydration or
+concurrent server support.
 
 ### Presentation, layout and help selectors
 
@@ -417,6 +420,10 @@ keyframe identifiers keep their existing precedence and behavior.
 
 ### Selector conversion status
 
+This inventory describes the earlier selector conversion. The flat override contract is
+enforced only for families in the generated reference; Select, Calendar and DatePicker
+are now included alongside Modal.
+
 Button/IconButton, the 15 control families, Select/Calendar/DatePicker/Modal and
 the presentation/layout/help families above are converted. The non-chart batches have passed their bounded independent gate. The chart
 extension remains pending independent acceptance; this is not full beta approval.
@@ -424,7 +431,7 @@ All 1,444 existing token fallback expressions remain in place.
 
 EditableTable remains deferred. The chart extension below also converts chart-owned and shared chart rules.
 Its independent acceptance remains pending; chart behavior is unchanged.
-Calendar's direct Select content/viewport dependency remains intact.
+Calendar composes public Select parts; it imports no Select style internals.
 
 SourceFaviconImage's stable class applies to the image and its globe fallback;
 the fallback keeps its existing styling until overridden. Markdown/code wrappers
@@ -852,6 +859,24 @@ Renamed stable classes and props, per component converted to the flat convention
 | Chips | `.openui-chip-item`, `.openui-chip-item__{icon,text}` | `.openui-chips-item`, `.openui-chips-item-{icon,text}` |
 | Chips | `.openui-chip-item--selected`, `.openui-chip-item--disabled` | `.openui-chips-item[aria-selected="true"]`, `.openui-chips-item:disabled`; no state classes |
 | Choice controls (#92) | Public props | No prop renames; `type` on Chips/ToggleGroup changes selection behavior, not appearance, and adds no modifier |
+| Select | `.openui-select-trigger-{sm,md,lg}`, `.openui-select-content-{sm,md,lg}` | `.openui-select-trigger--size-{sm,md,lg}`, `.openui-select-content--size-{sm,md,lg}`; default `md` always emitted. Content inherits Select/SelectTrigger `size`. |
+| Select | `.openui-select-item--with-tick`, `.openui-select-item--without-tick` | `.openui-select-item--show-tick` only when `showTick` is true (the default); no false modifier. |
+| Select | Trigger icon hidden by `hideDropdownIcon` | Also emits `.openui-select-trigger--hide-dropdown-icon` only when true. |
+| Select | Content `position` / viewport `data-position` | `.openui-select-content--position-{popper,item-aligned}`; default `popper` always emitted. The viewport retains `data-position`. |
+| Select | `.openui-select-{trigger,content,viewport,group,label,item,separator}` and icon/check/text-value parts | Unchanged. Value, item text and indicator now have owned `.openui-select-value`, `.openui-select-item-text` and `.openui-select-item-indicator` targets; Radix discards classes passed directly to Value/ItemText. Their inherited appearance is preserved. |
+| Select | Props | Existing props unchanged. `SelectContent` adds `container` (portal destination) and `viewportClassName` so Calendar composes public Select parts. |
+| Calendar | `.openui-calendar-container`, `.openui-calendar-root` | `.openui-calendar` (outer root receiving `className`/ref), `.openui-calendar-content` (DayPicker part). |
+| Calendar | `.openui-calendar-{nav,dropdowns}-{mobile,fullscreen,tray,copilot}` | `.openui-calendar-{nav,dropdowns}`; `.openui-calendar--layout-{mobile,fullscreen,tray,copilot}` on the root records LayoutContextProvider's `layout`, including default `fullscreen`. |
+| Calendar | `.openui-calendar-{single,range}-day`, `.openui-calendar-{single,range}-day-button` | `.openui-calendar-day`, `.openui-calendar-day-button` |
+| Calendar | `.openui-calendar-single-day-selected`, `.openui-calendar-range-{start,middle,end}`, `.openui-calendar-today`, `.openui-calendar-disabled` | States on `.openui-calendar-day`: `[data-selection="single"]`, `[data-range-start]`, `[data-range-middle]`, `[data-range-end]`, `[data-today-unselected]`, `[data-disabled]`. Existing DayPicker ARIA/data attributes remain. |
+| Calendar | `.openui-calendar-select-viewport-mobile` | Removed unused hook (the old Calendar never supplied its helper's `botType`); years retain the existing three-column grid in every layout. |
+| Calendar | Other existing parts and props | Unchanged. Previously unnamed DayPicker months/weeks/week/caption-label/week-number/week-number-header structures now carry matching `.openui-calendar-*` part classes. Consumer `components` maps retain their existing replacement behavior; the day-state adapter wraps either default or custom Day renderers. |
+| Calendar | `--openui-calendar-day-size`, `--openui-calendar-cell-radius` | Private `--_openui-calendar-day-size`, `--_openui-calendar-cell-radius`; use stable classes to override geometry. |
+| DatePicker | `.openui-date-picker-renderer-floating-container` | `.openui-date-picker`; always emits `.openui-date-picker--mode-{single,range}` (default `single`). |
+| DatePicker | `.openui-date-picker-renderer-floating-input-container`, `-input-container-text`, open-only `-input-container-icon` | `.openui-date-picker-trigger`, `.openui-date-picker-text`, always-present `.openui-date-picker-icon` |
+| DatePicker | `…-input-container-open`, `…-input-container-not-open`, `…-input-container-has-no-selected-date` | `.openui-date-picker-trigger[data-state="open"/"closed"]`, `[data-placeholder="true"]` |
+| DatePicker | `.openui-date-picker-renderer-floating-{reference,content,menu}` | `.openui-date-picker-{reference,content,menu}` |
+| DatePicker | `.openui-date-picker-renderer-{single,range}-mode`, descendant Calendar root override | `.openui-date-picker-calendar`, `.openui-date-picker-calendar-content` (owned Calendar root via its public `components.Root` slot); props unchanged. |
 
 
 For rollout #96, **TextBlock** is the established family name of the public `TextBlockView`
@@ -894,6 +919,9 @@ react-ui never had. They are gone; use the class on the right instead:
 | `.openui-table-{footer,head,row,cell}-styled`                                                      | `.openui-table-{footer,head,row,cell}`                                                                                            |
 | `.openui-table-alignment`                                                                          | Removed; target the head/cell root or its `--align-{left,center,right}` modifier                                                  |
 | `.openui-table-scrollable-table-{wrapper,scroll-container,control}`                                | `.openui-scrollable-table-{wrapper,scroll-container,control}`                                                                     |
+| `.openui-select-{trigger,content,viewport,group,label,item,separator}-root` | `.openui-select-{trigger,content,viewport,group,label,item,separator}` |
+| `.openui-calendar-container-root` | `.openui-calendar` |
+| `.openui-date-picker-style-root` | `.openui-date-picker` / `.openui-date-picker-content` |
 | `.openui-form-control-root` | `.openui-form-control` |
 | `.openui-hint-root` | `.openui-form-control-hint` |
 | `.openui-input-root` | `.openui-input` |

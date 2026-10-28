@@ -1,61 +1,42 @@
-import { ClassNames, getDefaultClassNames } from "react-day-picker";
+"use client";
 
-type BotType = "mobile" | "fullscreen" | "tray" | "copilot";
-export const getDayPickerStyles = (botType: BotType) => {
-  const defaultClassNames = getDefaultClassNames();
+import clsx from "clsx";
+import type { ClassNames } from "react-day-picker";
+import { calendarStyles, names } from "../calendar.styles";
 
-  const botTypeMapNav: Record<BotType, string> = {
-    mobile: "openui-calendar-nav-mobile",
-    fullscreen: "openui-calendar-nav-fullscreen",
-    tray: "openui-calendar-nav-tray",
-    copilot: "openui-calendar-nav-copilot",
-  };
-
-  const botTypeMapDropdowns: Record<BotType, string> = {
-    mobile: "openui-calendar-dropdowns-mobile",
-    fullscreen: "openui-calendar-dropdowns-fullscreen",
-    tray: "openui-calendar-dropdowns-tray",
-    copilot: "openui-calendar-dropdowns-copilot",
-  };
-
-  const commonClassNames: Partial<ClassNames> = {
-    root: `${defaultClassNames.root} openui-calendar-root`,
-    nav: `${defaultClassNames.nav} ${botTypeMapNav[botType]}`,
-    dropdowns: `${defaultClassNames.dropdowns} ${botTypeMapDropdowns[botType]}`,
-    month_caption: `openui-calendar-month-caption`,
-    month_grid: `openui-calendar-month-grid`,
-    button_next: `openui-calendar-button-next `,
-    button_previous: `openui-calendar-button-previous `,
-    today: `openui-calendar-today`,
-    disabled: `openui-calendar-disabled`,
-    weekdays: `openui-calendar-weekdays`,
-    weekday: `openui-calendar-weekday`,
-    chevron: `openui-calendar-chevron`,
-    month: `openui-calendar-month`,
-    months_dropdown: `openui-calendar-months-dropdown`,
-    years_dropdown: `openui-calendar-years-dropdown`,
-    footer: `openui-calendar-footer`,
-  };
-
-  const DateSingleClasses: Partial<ClassNames> = {
-    ...commonClassNames,
-    day_button: "openui-calendar-single-day-button",
-    day: "openui-calendar-single-day",
-    selected: "openui-calendar-single-day-selected",
-  };
-
-  const DateRangeClasses: Partial<ClassNames> = {
-    ...commonClassNames,
-    selected: "",
-    range_start: "openui-calendar-range-start",
-    range_middle: "openui-calendar-range-middle",
-    range_end: "openui-calendar-range-end",
-    day_button: "openui-calendar-range-day-button",
-    day: "openui-calendar-range-day",
-  };
-
-  return {
-    DateSingleClasses,
-    DateRangeClasses,
-  };
-};
+// DayPicker's selection/flag class slots are empty: states live on the day part's attributes.
+export const getDayPickerStyles = (
+  styles: ReturnType<typeof calendarStyles>,
+): Partial<ClassNames> => ({
+  root: clsx(styles.content, names.content),
+  months: names.months,
+  nav: clsx(styles.nav, names.nav),
+  dropdowns: clsx(styles.dropdowns, names.dropdowns),
+  month_caption: clsx(styles.monthCaption, names.monthCaption),
+  caption_label: names.captionLabel,
+  month_grid: clsx(styles.monthGrid, names.monthGrid),
+  button_next: clsx(styles.buttonNext, names.buttonNext),
+  button_previous: clsx(styles.buttonPrevious, names.buttonPrevious),
+  weekdays: clsx(styles.weekdays, names.weekdays),
+  weekday: clsx(styles.weekday, names.weekday),
+  chevron: clsx(styles.chevron, names.chevron),
+  month: clsx(styles.month, names.month),
+  months_dropdown: clsx(styles.monthsDropdown, names.monthsDropdown),
+  years_dropdown: clsx(styles.yearsDropdown, names.yearsDropdown),
+  footer: clsx(styles.footer, names.footer),
+  day_button: clsx(styles.dayButton, names.dayButton),
+  day: clsx(styles.day, names.day),
+  weeks: names.weeks,
+  week: names.week,
+  week_number: clsx(styles.weekNumber, names.weekNumber),
+  week_number_header: clsx(styles.weekNumberHeader, names.weekNumberHeader),
+  today: "",
+  disabled: "",
+  selected: "",
+  range_start: "",
+  range_middle: "",
+  range_end: "",
+  hidden: "",
+  outside: "",
+  focused: "",
+});

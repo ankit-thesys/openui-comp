@@ -92,7 +92,7 @@ const buttonBackgrounds = (page: Page) =>
       }
     };
     visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
-    return [...document.querySelectorAll("button")].map((button) => {
+    return [...document.querySelectorAll("button")].flatMap((button) => {
       button.getAnimations().forEach((animation) => animation.finish());
       const matching = backgroundRules.filter((rule) => {
         try {
@@ -101,14 +101,17 @@ const buttonBackgrounds = (page: Page) =>
           return false; // pseudo-elements
         }
       });
-      return {
-        color: getComputedStyle(button).backgroundColor,
-        stateBackground: matching.some((rule) => !/^\.go\d+$/.test(rule.selectorText)),
-        // Flat base rules have exactly one generated class. A matching stronger rule must
-        // retain its exact plain color; it is never covered by the typed-button exception.
-        resets:
-          matching.length > 0 && matching.every((rule) => /^\.go\d+$/.test(rule.selectorText)),
-      };
+      if (matching.length === 0) return []; // UA backgrounds belong to Preflight.
+      return [
+        {
+          color: getComputedStyle(button).backgroundColor,
+          stateBackground: matching.some((rule) => !/^\.go\d+$/.test(rule.selectorText)),
+          // Flat base rules have exactly one generated class. A matching stronger rule must
+          // retain its exact plain color; it is never covered by the typed-button exception.
+          resets:
+            matching.length > 0 && matching.every((rule) => /^\.go\d+$/.test(rule.selectorText)),
+        },
+      ];
     });
   });
 
@@ -118,7 +121,6 @@ for (const component of migrated) {
       test(`Tailwind ${version === "4" ? "4.1" : `3.${version[1]}`} preflight leaves it styled`, async ({
         page,
       }) => {
-        await openMigrated(page, component);
         // Radix adds type="button" itself. Normalize only the ordinary matrix, as the pilot
         // Button fixture does; the dedicated typed cases below exercise real typed buttons.
         const untypeButtons = () =>
@@ -126,12 +128,25 @@ for (const component of migrated) {
             for (const button of document.querySelectorAll("button"))
               button.removeAttribute("type");
           });
-        await untypeButtons();
-        const plain = await snapshot(page, component);
-        expect(Object.keys(plain).length).toBeGreaterThan(0);
-        await openMigrated(page, component, tailwind(version));
-        await untypeButtons();
-        expect(await snapshot(page, component)).toEqual(plain);
+        // #93: check each portal variant with only one modal open at a time.
+        const targets =
+          component.folder === "Calendar"
+            ? ["openui-calendar-select-content-months", "openui-calendar-select-content-years"]
+            : component.folder === "Select"
+              ? [
+                  ...["sm", "md", "lg"].map((size) => `openui-select-content--size-${size}`),
+                  "openui-select-content--position-item-aligned",
+                ]
+              : [""];
+        for (const target of targets) {
+          await openMigrated(page, component, "", target);
+          await untypeButtons();
+          const plain = await snapshot(page, component);
+          expect(Object.keys(plain).length).toBeGreaterThan(0);
+          await openMigrated(page, component, tailwind(version), target);
+          await untypeButtons();
+          expect(await snapshot(page, component)).toEqual(plain);
+        }
       });
     }
 
@@ -139,7 +154,9 @@ for (const component of migrated) {
     // as a library base class and loads later, so it clears base backgrounds. State backgrounds
     // outweigh it. 3.4 and 4.1 scope the preflight rule with :where() and clear neither.
     const typedBackgrounds = async (page: Page, head = "") => {
-      await openMigrated(page, component, head);
+      // This known conflict concerns base backgrounds. Keep portals closed so a trigger's
+      // higher-specificity open/hover state is not mistaken for a base background.
+      await openMigrated(page, component, head, "", false);
       await page.evaluate(() => {
         for (const button of document.querySelectorAll("button"))
           button.setAttribute("type", "button");

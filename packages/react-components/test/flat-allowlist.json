@@ -1,5 +1,4 @@
 [
-  "src/components/Calendar/Calendar.tsx",
   "src/components/Carousel/carousel.styles.ts",
   "src/components/Charts/AreaChart/areaChart.styles.ts",
   "src/components/Charts/BarChart/barChart.styles.ts",
@@ -23,8 +22,6 @@
   "src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
   "src/components/Charts/shared/mini/miniChart.styles.ts",
   "src/components/CodeBlock/codeBlock.styles.ts",
-  "src/components/DatePicker/datePicker.styles.ts",
-  "src/components/DatePicker/helpers/components/FloatingDatePickerRenderer.tsx",
   "src/components/DotMatrixLoader/DotMatrixLoader.tsx",
   "src/components/Image/image.styles.ts",
   "src/components/ImageBlock/imageBlock.styles.ts",
@@ -32,7 +29,6 @@
   "src/components/ImageGallery/imageGallery.styles.ts",
   "src/components/ImageText/imageText.styles.ts",
   "src/components/ImageTextLarge/imageTextLarge.styles.ts",
-  "src/components/Select/select.styles.ts",
   "src/components/Skeleton/PieChartSkeleton.tsx",
   "src/components/Skeleton/Skeleton.tsx",
   "src/components/Skeleton/SkeletonBar.tsx",

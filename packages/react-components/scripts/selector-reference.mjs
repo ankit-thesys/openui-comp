@@ -47,8 +47,14 @@ export async function readStableNames() {
 }
 
 const code = (text) => `\`${text}\``;
-const prop = (axis, value) =>
-  code(value === "true" ? `${axis}={true}` : `${axis}="${value}"`);
+const prop = (axis, value, name) => {
+  const modifier = name.split("--")[1];
+  if (value === "true") return code(`${axis}={true}`);
+  const suffix = String(value).replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
+  const classAxis = modifier?.endsWith(`-${suffix}`) ? modifier.slice(0, -suffix.length - 1) : axis;
+  const propName = classAxis.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
+  return code(`${propName}="${value}"`);
+};
 
 /** The reference markdown for `entries` from `readStableNames`. */
 export function renderSelectorReference(entries) {
@@ -71,7 +77,7 @@ export function renderSelectorReference(entries) {
     for (const [axis, values] of Object.entries(names)) {
       if (typeof values === "string") continue;
       for (const [value, name] of Object.entries(values)) {
-        rows.push(`| ${code(`.${name}`)} | Modifier | ${prop(axis, value)} |`);
+        rows.push(`| ${code(`.${name}`)} | Modifier | ${prop(axis, value, name)} |`);
       }
     }
     return [

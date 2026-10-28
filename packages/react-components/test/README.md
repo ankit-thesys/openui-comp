@@ -485,3 +485,51 @@ When Chromium cannot run, the orchestrator must capture these six baselines from
 No renamed-class references were found in the current tree outside these modules/tests/docs,
 or in `packages/kits` on the available `origin/codex/chat-kit-separate` and
 `origin/claude/chat-kit-tone` refs. The chat kit is not present in this worktree and is unchanged.
+
+### Select, Calendar and DatePicker (#93)
+
+These families join the public-export contract and generic override/Tailwind benches.
+`select-calendar.spec.ts` and `fixtures/select-calendar.tsx` cover every stable class before
+and after library CSS, both cascade modes, portal nodes outside `#root`, keyboard selection,
+disabled items/days, lazy registration and `<html class>` replacement. Readiness waits on
+visible item/day parts; hidden Calendar navigation buttons are queried by class.
+
+`select.parity.spec.ts`, `calendar.parity.spec.ts` and `date-picker.parity.spec.ts` use
+`parity-select.tsx`, `parity-calendar.tsx` and `parity-date-picker.tsx`. Capture the baseline
+names `select`, `calendar` and `date-picker` from #72 with `pnpm test:parity:baseline`.
+There are no intentional visual differences. The parity helper accepts optional fresh-page
+scenarios and a preparation callback: each modal popup gets a separate page, preventing it
+from blocking the next hover/press target. Calendar preparation marks actual day cells and
+opened dropdown parts; DatePicker fixes the date and waits for its floating day buttons.
+Calendar dropdown captures wait for the debounced measured bounds before taking even the rest
+snapshot. Its week-number scenario also pins the native 1px cell padding against Preflight.
+The #72 Select fixture hides the regular icon with fixture CSS for hidden-icon cases: passing
+`hideDropdownIcon` to #72 throws with the installed Radix Slot because its `asChild` child is
+falsy. This preserves the requested hidden-icon appearance without changing the #72 source.
+The `select` and `calendar` baselines were recaptured after these fixture/readiness changes;
+`date-picker` is unchanged. Do not hand-write baseline JSON. Selected disabled Select triggers
+retain #72's primary text/icon colour on hover and press, while placeholders remain secondary.
+The private hover colour variable preserves that precedence within the flat selector budget.
+
+The generic benches open Select/Calendar/DatePicker through their public triggers and query
+owned classes across the document, including portals. The override helper opens the requested
+size/position or month/year dropdown; Tailwind checks both dropdowns and all Select sizes and
+positions. Ordinary checks remove Radix's automatic `type=button`; the typed-background checks
+restore it explicitly. Keyboard tests await focused options before sending the next key.
+
+Calendar composes public Select parts (including the new `container`/`viewportClassName`
+props), and uses its own flat classes. It imports no Select style module or private variables.
+DatePicker uses Calendar's `components.Root` slot for its borderless owned content, with a
+private context preserving the caption defaults for that internal use. Public Calendar
+`components` maps retain replacement semantics.
+Only Floating UI position/transform and Calendar dropdown measurements remain inline;
+static colour/background/padding defaults are CSS. Radix's static Content display/outline/
+box-sizing/item-aligned max-height and Viewport position/flex/overflow defaults move from inline styles into the flat
+factory, with focused overrides verifying those properties. The SelectValue ref lands on its
+owned styling root. Calendar's state adapter also wraps consumer Day components that forward
+their cell props, including incomplete ranges without a selected fill.
+
+Chat-kit inspection: the available `origin/codex/chat-kit-separate` and
+`origin/claude/chat-kit-tone` refs contain ModelSwitcher references to the unchanged
+`.openui-select-trigger-icon` and `.openui-select-content`; no renamed-class references
+were found in `packages/kits`. The kit is absent in this worktree and is unchanged.

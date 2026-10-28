@@ -25,6 +25,14 @@ describe("selector reference", () => {
     expect(reference).toContain("| `.openui-icon-text--bold` | Modifier | `bold={true}` |");
   });
 
+  it("documents inherited Select sizes and boolean modifiers with their public prop names", async () => {
+    const reference = renderSelectorReference(await readStableNames());
+    expect(reference).toContain('| `.openui-select-content--size-md` | Modifier | `size="md"` |');
+    expect(reference).toContain(
+      "| `.openui-select-item--show-tick` | Modifier | `showTick={true}` |",
+    );
+  });
+
   it("matches the committed reference (run `pnpm docs:selectors` after changing names)", async () => {
     expect(committed()).toBe(renderSelectorReference(await readStableNames()));
   });
