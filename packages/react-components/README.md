@@ -91,32 +91,39 @@ has not been certified.
 
 ### Stable selectors
 
-Button and IconButton use stable styling targets. Importing either component
-registers its rules automatically through stock Goober. A private generated class
-on `html` is contained in `:where(...:root)` and adds zero specificity. Consumers
-do not use that class. The documented batches below share this mechanism;
+Button and IconButton use stable styling targets. Button follows the flat
+convention: each stable class is a single class, every prop emits its current
+value (defaults included), and its rules register through stock Goober the first
+time a Button renders, with nothing added to `html`. Library rules weigh one
+class, plus one state such as `:hover`, and the library sheet is placed first in
+`<head>`, so a consumer rule of the same shape wins whether it loads before or
+after the library: `.openui-button--variant-primary` for the resting look,
+`.openui-button--variant-primary:hover` for the hover look.
+IconButton still registers on import: a private generated class on `html` is
+contained in `:where(...:root)` and adds zero specificity. Consumers do not use
+that class. The documented batches below share this mechanism;
 EditableTable retains its existing selectors. Chart-owned targets are documented
 in the Charts section below.
 
 | Target | Button | IconButton |
 | --- | --- | --- |
-| Root | `.openui-button-root` | `.openui-icon-button-root` |
-| Preserved root alias | `.openui-button-base` | `.openui-icon-button` |
-| Variant | `.openui-button-base-primary` (also secondary/tertiary) | `.openui-icon-button-primary` (also secondary/tertiary) |
-| Destructive variant | `.openui-button-base-destructive-primary` (also secondary/tertiary) | `.openui-icon-button-destructive-primary` (also secondary/tertiary) |
-| Size | `.openui-button-base-{extra-small,small,medium,large}` | `.openui-icon-button-{3-extra-small,2-extra-small,extra-small,small,medium,large}` |
+| Root | `.openui-button` | `.openui-icon-button-root` |
+| Preserved root alias | None | `.openui-icon-button` |
+| Variant | `.openui-button--variant-primary` (also secondary/tertiary) | `.openui-icon-button-primary` (also secondary/tertiary) |
+| Destructive | `tone="destructive"`: `.openui-button--tone-destructive` (default `.openui-button--tone-default`) | `.openui-icon-button-destructive-primary` (also secondary/tertiary) |
+| Size | `.openui-button--size-{extra-small,small,medium,large}` | `.openui-icon-button-{3-extra-small,2-extra-small,extra-small,small,medium,large}` |
 | Shape | Existing Button geometry | `.openui-icon-button-square`, `.openui-icon-button-circle` |
-| State | `:hover:not(:disabled)`, `:active:not(:disabled)`, `:disabled` | Same |
-| Owned part | No added wrapper around children or icons | `.openui-icon-button-icon` (existing span) |
+| State | `:hover`, `:active`, `:disabled` on any Button class | `:hover:not(:disabled)`, `:active:not(:disabled)`, `:disabled` |
+| Owned part | `.openui-button-icon` (span around `iconLeft` and `iconRight`) | `.openui-icon-button-icon` (existing span) |
 
 Use ordinary **later, unlayered CSS** with the corresponding selector. Root rules
 have one class of specificity; variants, sizes, states and parts retain their
 additional selectors. For example:
 
 ```css
-.openui-button-root { border-width: 2px; }
-.openui-button-root.openui-button-base-primary { background: navy; }
-.openui-button-root.openui-button-base-primary:disabled { cursor: wait; }
+.openui-button { border-width: 2px; }
+.openui-button--variant-primary { background: navy; }
+.openui-button--variant-primary:disabled { cursor: wait; }
 .openui-icon-button-root .openui-icon-button-icon { gap: 4px; }
 ```
 
@@ -482,6 +489,21 @@ The following retain their existing non-template contracts:
 
 These exceptions do not justify new static Goober declaration objects, custom
 serializers or styling APIs.
+
+## Migration from `@openuidev/react-ui` styling
+
+Renamed stable classes and props, per component converted to the flat convention.
+
+| Component | `@openuidev/react-ui` | `@openuidev/react-components` |
+| --- | --- | --- |
+| Button | `.openui-button-root` | `.openui-button` |
+| Button | `.openui-button-base` | Removed; use `.openui-button` |
+| Button | `.openui-button-base-{primary,secondary,tertiary}` | `.openui-button--variant-{primary,secondary,tertiary}` |
+| Button | `.openui-button-base-{extra-small,small,medium,large}` | `.openui-button--size-{extra-small,small,medium,large}` |
+| Button | `buttonType="normal"` prop | `tone="default"` (the default); emits `.openui-button--tone-default` |
+| Button | `buttonType="destructive"` prop | `tone="destructive"`; emits `.openui-button--tone-destructive` |
+| Button | `.openui-button-base-destructive-{primary,secondary,tertiary}` | `.openui-button--tone-destructive` with `.openui-button--variant-{…}` |
+| Button | Icons as direct children | Each icon wrapped in `.openui-button-icon` |
 
 ## Beta import migration
 

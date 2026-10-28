@@ -8,7 +8,7 @@ describe("built package in Node", () => {
   it("server-renders a Button with its stable class", () => {
     const html = renderToString(<Button>Save</Button>);
 
-    expect(html).toMatch(/^<button[^>]*class="[^"]*\bopenui-button-root\b/);
+    expect(html).toMatch(/^<button[^>]*class="[^"]*\bopenui-button\b/);
     expect(html).toContain(">Save</button>");
   });
 });
