@@ -69,11 +69,25 @@ const measure = (root: Element, properties: string[]) => {
     const part = root.querySelector(selector);
     if (part) record(part, `${name}.`);
   }
+  // Portals live outside the case root. A fixture may explicitly name their public DOM parts.
+  const globalParts = JSON.parse(root.getAttribute("data-parity-global-parts") ?? "{}") as Record<
+    string,
+    string
+  >;
+  for (const [name, selector] of Object.entries(globalParts)) {
+    const part = document.querySelector(selector);
+    if (part) record(part, `${name}.`);
+  }
   return out;
 };
 
 /** Snapshots every case of `fixture` in `mode`, at rest and under hover and press. */
-export async function snapshot(page: Page, fixture: string, mode: Mode): Promise<Snapshot> {
+export async function snapshot(
+  page: Page,
+  fixture: string,
+  mode: Mode,
+  prepareCase?: (page: Page, id: string) => Promise<void>,
+): Promise<Snapshot> {
   await page.goto(`/${fixture}.html?mode=${mode}`);
   const cases = page.locator("[data-parity-case]");
   await expect(cases.first()).toBeVisible();
@@ -83,13 +97,14 @@ export async function snapshot(page: Page, fixture: string, mode: Mode): Promise
   const result: Snapshot = {};
   for (const id of ids) {
     const el = page.locator(`[data-parity-case="${id}"]`);
-    const take = (state: State) =>
-      el.evaluate(measure, PROPERTIES).then((values) => {
-        result[`${mode} ${id} ${state}`] = values;
-      });
+    const take = async (state: State) => {
+      await prepareCase?.(page, id);
+      result[`${mode} ${id} ${state}`] = await el.evaluate(measure, PROPERTIES);
+    };
     await page.mouse.move(0, 0);
     await take("rest");
-    await el.hover();
+    const hoverTarget = await el.getAttribute("data-parity-hover-target");
+    await (hoverTarget ? el.locator(hoverTarget).first() : el).hover();
     await take("hover");
     await page.mouse.down();
     await take("active");
@@ -110,12 +125,13 @@ export async function checkParity(
   page: Page,
   name: string,
   intentional: readonly string[] = [],
+  prepareCase?: (page: Page, id: string) => Promise<void>,
 ): Promise<void> {
   const capture = !!process.env["OPENUI_PARITY_CAPTURE"];
   const fixture = `parity-${name}${capture ? "-baseline" : ""}`;
   const current: Snapshot = {
-    ...(await snapshot(page, fixture, "light")),
-    ...(await snapshot(page, fixture, "dark")),
+    ...(await snapshot(page, fixture, "light", prepareCase)),
+    ...(await snapshot(page, fixture, "dark", prepareCase)),
   };
   if (capture) {
     mkdirSync(fileURLToPath(new URL("./baselines/", import.meta.url)), { recursive: true });

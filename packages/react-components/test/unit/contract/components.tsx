@@ -20,6 +20,7 @@ import type { ReactElement } from "react";
 import { renderToString } from "react-dom/server";
 import remarkGfm from "remark-gfm";
 import { readStableNames, type StableNames } from "../../../scripts/selector-reference.mjs";
+import { chartFoundationElements } from "../../fixtures/chart-foundations";
 import { markdown } from "../../fixtures/markdown";
 import { stableClassesIn } from "./collect";
 
@@ -56,6 +57,48 @@ const product = <T,>(...lists: T[][]): T[][] =>
   );
 
 export const migratedComponents: MigratedComponent[] = [
+  {
+    folder: "Charts",
+    get names() {
+      // Unmigrated chart frames and composed controls keep their own contract. Only their
+      // rendered names are accounted for here, like markdown's Table/CodeBlock dependencies.
+      const dependencies = [
+        ...stableClassesIn(
+          chartFoundationElements()
+            .map((element) => renderToString(element))
+            .join(""),
+        ),
+      ].filter((name) =>
+        /^openui-(line-chart|bar-chart|horizontal-bar-chart|pie-chart|button|icon-button|separator)(-|$)/.test(
+          name,
+        ),
+      );
+      return [
+        ...namesOf("Charts"),
+        Object.fromEntries(dependencies.map((name, i) => [`dependency${i}`, name])),
+      ];
+    },
+    elements: chartFoundationElements,
+    clientOnly: [
+      "openui-chart-tooltip",
+      "openui-chart-tooltip-portal",
+      "openui-chart-tooltip-label",
+      "openui-chart-tooltip-content",
+      "openui-chart-tooltip-content-item",
+      "openui-chart-tooltip-content-indicator",
+      "openui-chart-tooltip-content-value-wrapper",
+      "openui-chart-tooltip-content-label",
+      "openui-chart-tooltip-content-value",
+      "openui-chart-tooltip-content-item-separator",
+      "openui-chart-tooltip-content-view-more",
+      "openui-chart-tooltip-label-text",
+      "openui-stacked-legend-header",
+      "openui-stacked-legend-header-buttons",
+      "openui-stacked-legend-header-title",
+      "openui-stacked-legend-scroll-button",
+    ],
+  },
+
   {
     folder: "MarkDownRenderer",
     prose: true,

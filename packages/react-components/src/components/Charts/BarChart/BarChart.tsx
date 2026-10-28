@@ -2,7 +2,8 @@
 
 import clsx from "clsx";
 import { useCallback } from "react";
-import { emptyClass } from "../shared/chartBase.styles";
+import { useStyles } from "../../../styles/useStyles";
+import { names as baseNames, chartBaseStyles } from "../shared/chartBase.styles";
 import { rootClass } from "./barChart.styles";
 
 import {
@@ -32,17 +33,19 @@ import type { BarChartData, BarChartProps } from "./types";
  * otherwise break the Rules of Hooks).
  */
 export function BarChart<T extends BarChartData>(props: BarChartProps<T>) {
+  const baseStyles = useStyles(chartBaseStyles);
   if (!props.data || props.data.length === 0) {
     return (
       <div
         className={clsx(
           rootClass,
-          emptyClass,
-          `${CHART_CLASS_PREFIX}-bar-chart-container ${CHART_CLASS_PREFIX}-chart-empty`,
+          baseStyles.empty,
+          baseNames.empty,
+          `${CHART_CLASS_PREFIX}-bar-chart-container`,
           props.className,
         )}
       >
-        <span className={`${CHART_CLASS_PREFIX}-chart-empty-text`}>No data available</span>
+        <span className={clsx(baseStyles.emptyText, baseNames.emptyText)}>No data available</span>
       </div>
     );
   }

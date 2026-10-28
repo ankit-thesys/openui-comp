@@ -519,9 +519,7 @@ for its existing diverging color-scale ramp. Its owned declaration targets
 | --- | --- |
 | Empty state | `.openui-chart-empty-root` |
 | X/Y axis labels | `.openui-chart-x-axis-label-root`, `.openui-chart-y-axis-label-root` |
-| Default legend | `.openui-chart-default-legend-root` |
 | Body tooltip wrapper/panel | `.openui-chart-tooltip-portal-root`, `.openui-chart-tooltip-root` |
-| Stacked legend | `.openui-chart-stacked-legend-root` |
 | Chart with stacked legend | `.openui-chart-stacked-legend-layout-root` |
 | Stacked scrollbar | `.openui-chart-stacked-legend-scrollbar` (`::-webkit-scrollbar` only) |
 | Horizontal/vertical scroll controls | `.openui-chart-horizontal-scroll-controls-root`, `.openui-chart-vertical-scroll-controls-root` |
@@ -691,6 +689,32 @@ Renamed stable classes and props, per component converted to the flat convention
 | MarkDownRenderer | Shared `.openui-code-block-wrapper` | Also carries `.openui-markdown-renderer-code-block`; standalone CodeBlock defaults are unchanged |
 | MarkDownRenderer | `.openui-code-block-syntax-highlighter` inside markdown | Removed inside markdown; target `.openui-markdown-renderer-code-block` for the owned root around third-party output. Standalone CodeBlock keeps the old class. |
 | MarkDownRenderer | Shared `.openui-table` / `.openui-table-container` | Also carry `.openui-markdown-renderer-table` / `.openui-markdown-renderer-table-container` |
+| Chart base | `.openui-chart-empty`, `.openui-chart-empty-text` | Unchanged; registered during render, including SSR |
+| Chart base | `.openui-cartesian-{x,y}-axis-label` | `.openui-chart-{x,y}-axis-label` |
+| Default legend | `.openui-chart-legend-container`, `.openui-chart-legend--bottom` | `.openui-default-legend` (bottom padding is part of its base style) |
+| Default legend | `.openui-chart-legend` | `.openui-default-legend-list` |
+| Default legend | `.openui-chart-legend-{axis-label-container,axis-label,axis-label-text,item,item-indicator,item-label,item-label-container,item-percentage,toggle-button,toggle-button-icon}` | `.openui-default-legend-{…}` (same part suffix) |
+| Default legend | SVG directly inside a legend item | Wrapped in `.openui-default-legend-item-icon`; SVG remains foreign icon content |
+| Default legend | `.openui-chart-legend--{collapsed,expanded}` | `.openui-default-legend-list[data-state="collapsed" or "expanded"]` |
+| Stacked legend | `.openui-stacked-legend-container` | `.openui-stacked-legend` |
+| Stacked legend | `.openui-stacked-legend` (list) | `.openui-stacked-legend-list` |
+| Stacked legend | `.openui-stacked-legend__{item,item-label,item-color-container,item-color,item-label-text,item-value}` | `.openui-stacked-legend-{…}` (same part suffix) |
+| Stacked legend | `.openui-stacked-legend__item--active` | `.openui-stacked-legend-item[data-state="active"]` |
+| Stacked legend | Header, scroll-button, show-more-button and separator parts | Unchanged |
+| Stacked chart layout | `.openui-chart-with-stacked-legend` | Unchanged |
+| Stacked chart layout | `.openui-chart-with-stacked-legend__{chart,legend}` | `.openui-chart-with-stacked-legend-{chart,legend}` |
+| Stacked chart layout | `.openui-chart-with-stacked-legend--{row,column}` | `.openui-chart-with-stacked-legend[data-orientation="horizontal" or "vertical"]` |
+| Chart tooltip | `.openui-portal-tooltip` | `.openui-chart-tooltip-portal` |
+| Chart tooltip | `.openui-chart-tooltip` and its rendered `-label`, `-content*` parts | Unchanged; label text now also has `.openui-chart-tooltip-label-text` |
+| Chart tooltip | Internal `--dot`, `--two-items`, `--standard`, `--vertical` classes | Dot appearance is the base; count-derived layout uses `[data-layout="two-items" or "multiple"]` on the affected parts |
+| Chart tooltip | Unrendered `-label-heavy`, indicator `--line` / `--dashed`, wrapper `--nested` selectors | Removed; no public prop rendered these styles |
+| Horizontal scroll controls | `.openui-chart-horizontal-scroll-buttons-container`, `.openui-chart-horizontal-scroll-button`, `--left`, `--right` | `.openui-scroll-buttons-horizontal`, `-button`, `-left`, `-right`; own SVGs also carry `-icon` |
+| Vertical scroll controls | `.openui-chart-vertical-scroll-buttons-container`, `.openui-chart-vertical-scroll-button`, `--up`, `--down` | `.openui-scroll-buttons-vertical`, `-button`, `-up`, `-down`; own SVGs also carry `-icon` |
+| Scroll controls | `.openui-chart-{horizontal,vertical}-scroll-button--disabled` | `.openui-scroll-buttons-{horizontal,vertical}-button:disabled` |
+| Mini charts | `.openui-mini-chart`, `.openui-mini-{line,area,bar}-chart-container` | `.openui-mini-{line,area,bar}-chart` (one root per exported component) |
+| Mini charts | `.openui-mini-{line,area,bar}-chart-*` drawing parts | Unchanged; SVGs, area gradient definitions and stops now also have stable part classes |
+| Mini charts | `.openui-mini-chart--clickable` | `.openui-mini-{line,area,bar}-chart[data-clickable]` |
+| Mini charts | `.openui-mini-chart-mark--animated` | `.openui-mini-{line,area,bar}-chart--is-animation-active` on the root, emitted only when the prop is true |
 
 Pre-release `@openuidev/react-components` betas also emitted internal carrier classes that
 react-ui never had. They are gone; use the class on the right instead:
@@ -703,6 +727,19 @@ react-ui never had. They are gone; use the class on the right instead:
 | `.openui-tabs-container` | `.openui-tabs-list-container` |
 | `.openui-tabs-list-styled`, `.openui-tabs-trigger-styled`, `.openui-tabs-content-styled` | `.openui-tabs-list`, `.openui-tabs-trigger`, `.openui-tabs-content` |
 | `.openui-mark-down-renderer-markdown-{root,code,link}` | `.openui-markdown-renderer`, `-code`, `-link` |
+| `.openui-chart-empty-root`, `.openui-chart-{x,y}-axis-label-root` | `.openui-chart-empty`, `.openui-chart-{x,y}-axis-label` |
+| `.openui-chart-default-legend-root`, `.openui-chart-stacked-legend-root` | `.openui-default-legend`, `.openui-stacked-legend` |
+| `.openui-chart-stacked-legend-layout-root`, `.openui-chart-stacked-legend-scrollbar` | `.openui-chart-with-stacked-legend`, `.openui-stacked-legend-list` |
+| `.openui-chart-tooltip-root`, `.openui-chart-tooltip-portal-root` | `.openui-chart-tooltip`, `.openui-chart-tooltip-portal` |
+| `.openui-chart-{horizontal,vertical}-scroll-controls-root` | `.openui-scroll-buttons-{horizontal,vertical}` |
+| `.openui-mini-chart-root` | `.openui-mini-{line,area,bar}-chart` |
+
+Chart foundation props are unchanged. Data colors, dimming and draw-line length use private
+`--_openui-*` variables; override the resulting CSS property on the stable class. Mini-chart
+frame width/height, explicit `StackedLegend style` values, and the tooltip spring's positioning
+transform remain geometry set by JavaScript. The tooltip panel and its appearance are class-overridable.
+The chart-specific modules still on the allowlist retain their existing classes and unlayered rules.
+No chat-kit source references to these renamed chart classes were found for ticket #102.
 
 ## Beta import migration
 

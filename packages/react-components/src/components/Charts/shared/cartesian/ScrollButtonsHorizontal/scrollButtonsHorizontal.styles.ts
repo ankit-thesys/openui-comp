@@ -1,35 +1,39 @@
-import { css } from "goober";
-export const rootClass = "openui-chart-horizontal-scroll-controls-root";
+import type { StyleCss } from "../../../../../styles/useStyles";
+import { iconButtonStyles } from "../../../../IconButton/iconButton.styles";
 
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-chart-horizontal-scroll-controls-root {
-      & {
-        position: relative;
-      }
-      & .openui-chart-horizontal-scroll-button {
-        position: absolute;
-        background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
-      }
-      & .openui-chart-horizontal-scroll-button--left {
-        top: -23px;
-        transform: translateY(-50%);
-        left: 20px;
-      }
-      & .openui-chart-horizontal-scroll-button--right {
-        top: -23px;
-        transform: translateY(-50%);
-        right: 0px;
-      }
-      & .openui-chart-horizontal-scroll-button--disabled {
+export const names = {
+  root: "openui-scroll-buttons-horizontal",
+  button: "openui-scroll-buttons-horizontal-button",
+  icon: "openui-scroll-buttons-horizontal-icon",
+  left: "openui-scroll-buttons-horizontal-left",
+  right: "openui-scroll-buttons-horizontal-right",
+} as const;
+
+export const scrollButtonsHorizontalStyles = (css: StyleCss) => {
+  // Register composed controls first so these equal-weight part rules also win on first render.
+  iconButtonStyles(css);
+  return {
+    root: css`
+      position: relative;
+    `,
+    button: css`
+      position: absolute;
+      background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
+      &:disabled {
         visibility: hidden;
         cursor: not-allowed;
         transition: visibility 0.1s linear;
       }
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
+    `,
+    left: css`
+      top: -23px;
+      transform: translateY(-50%);
+      left: 20px;
+    `,
+    right: css`
+      top: -23px;
+      transform: translateY(-50%);
+      right: 0px;
+    `,
+  };
+};

@@ -21,8 +21,8 @@ interface AnimatedPathProps {
 /**
  * A series line that can draw itself on. The stroke-dash draw-on keyframe
  * (`${CHART_CLASS_PREFIX}-draw-line`, chartBase.scss) needs the path's length in the
- * `--path-length` CSS var; it is measured in a LAYOUT effect — a plain
- * useEffect ran after paint, so `stroke-dasharray: var(--path-length)` was
+ * `--_openui-chart-path-length` CSS var; it is measured in a LAYOUT effect — a plain
+ * useEffect ran after paint, so `stroke-dasharray: var(--_openui-chart-path-length)` was
  * invalid-at-computed-value-time for one frame, fell back to `none`, and the
  * fully-drawn line flashed before the draw-on started.
  */
@@ -39,7 +39,7 @@ export function AnimatedPath({
   useIsomorphicLayoutEffect(() => {
     if (isAnimationActive && ref.current) {
       const length = ref.current.getTotalLength();
-      ref.current.style.setProperty("--path-length", String(length));
+      ref.current.style.setProperty("--_openui-chart-path-length", String(length));
     }
   }, [d, isAnimationActive]);
 

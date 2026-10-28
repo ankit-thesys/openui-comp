@@ -2,6 +2,8 @@
 
 import clsx from "clsx";
 import { useMemo } from "react";
+import { useStyles } from "../../../styles/useStyles";
+import { fadeAppearStyles } from "../shared/animations/fadeAppear.styles";
 import { rootClass } from "./radialChart.styles";
 
 import {
@@ -81,6 +83,7 @@ function RadialChartImpl<T extends RadialChartData>(props: RadialChartProps<T>) 
     legendKey,
   });
 
+  useStyles(fadeAppearStyles);
   const animate = useEffectiveAnimation(isAnimationActive);
 
   // Radial-specific geometry

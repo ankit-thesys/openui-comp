@@ -160,3 +160,44 @@ background. Components are not restyled; parity, not the screenshots, is the gat
 
 - `pnpm run ci` (typecheck of `src` and tests, unit tests, lint of `src`, format) needs the build too, because tests import the built package; in CI it runs in the shared `build-js.yml` step after all packages are built.
 - Browser tests run in the separate `react-components-browser` job in `build-js.yml`, which builds this package and `@openuidev/react-ui` (for the react-ui benches) with their workspace dependencies, installs Chromium and runs `test:browser`. Locally, build react-ui too: `pnpm --filter "@openuidev/react-ui..." build`.
+
+## Ticket #102: chart foundations
+
+`Charts.contract.test.tsx` renders public LineChart, BarChart, HorizontalBarChart, PieChart,
+StackedLegend and all three mini charts. Chart-specific frames remain allowlisted; the contract
+accounts for their composed names separately, as markdown does for Table and CodeBlock. The nine
+shared modules are no longer allowlisted. Browser-only portal and measured header parts are listed
+as `clientOnly`; `chart-foundations.spec.ts` checks their grammar, layers and overrides through the
+public charts, including every stable class loaded before/after library CSS and in layer mode.
+`chart-animations.test.tsx` guards deferred keyframe registration through the built public package.
+
+New browser fixtures: `chart-foundations`, `parity-chart-foundations`, `parity-mini-charts`,
+`parity-chart-tooltip`; `foundation-cases.tsx` shares the public consumer cases. Parity names are
+`chart-foundations`, `mini-charts`, `chart-tooltip`, with no intentional visual differences.
+The parity helper accepts an optional fourth `prepareCase(page, id)` argument for interaction-only
+parts, run before each observation. A fixture's `data-parity-global-parts` JSON names portal parts
+outside its root; `data-parity-hover-target` chooses an owned part for hover/press while the
+case root and every named part are still measured. Expanded/show-all legend cases activate their
+public controls before measurement. The tooltip spec activates the actual public chart before measuring its portal.
+
+Orchestrator follow-up (Chromium cannot run in the implementation sandbox):
+
+```bash
+pnpm test:parity:baseline
+pnpm exec playwright test chart-foundations.spec.ts chart-foundations.parity.spec.ts mini-charts.parity.spec.ts chart-tooltip.parity.spec.ts
+pnpm test:browser
+```
+
+Capture baselines from #72 using the script; never hand-write or recapture them to absorb a
+regression. Run the full browser suite too: the shared override and Tailwind benches now include
+the chart foundations. Screenshot capture discovers the new parity fixtures automatically;
+tooltip appearance is checked by its activated parity spec.
+
+The #102 browser follow-up preserves #72's active-row swatch scale (1.3 at rest, 1.2 when
+hovered or pressed). The scroll interaction test locates disabled controls by stable class because
+their intentional `visibility: hidden` removes them from role queries; it checks native disabled
+state and visibility before scrolling, after scrolling, and after returning. The HTML-class rewrite
+test checks the foundations' styles, including minimum widths for mini charts and the tooltip.
+For DefaultLegend it checks its declared gap instead of an undeclared minimum width: removing
+the still-allowlisted parent chart's flex layout changes the browser's resolution of `auto`.
+These fixes do not change parity fixtures or require baseline recapture.
