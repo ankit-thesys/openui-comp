@@ -20,7 +20,7 @@ pnpm --filter @openuidev/react-components test
 
 - `test/browser/fixtures/<name>.tsx` is a small app that imports `@openuidev/react-components` and renders into `#root`.
 - Playwright's global setup (`build-fixtures.ts`) bundles each fixture with tsdown, as a consumer's bundler would, into `test/browser/.fixtures/` (gitignored). CSS imports become empty modules there; no fixture renders math, which is the only package code that imports a stylesheet.
-- `serve.mjs` serves `/<name>.html` (an empty page that loads `/<name>.js`) on port 5370. Playwright starts it.
+- `serve.mjs` serves `/<name>.html` (an empty page that loads `/<name>.js`) on port 5370 (override with `OPENUI_TEST_PORT` when several worktrees run browser tests at once). Playwright starts it.
 
 Install Chromium once, then run:
 
