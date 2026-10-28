@@ -420,9 +420,7 @@ const page = `<!doctype html>
 - The page is styled before JavaScript runs, and app CSS after the sheet overrides converted
   components' equal-weight rules.
 - Keep the `_goober` id: the browser adopts that element instead of injecting a second sheet.
-- Inline the returned string as is. It is never empty, because the browser writes into the
-  element's first text node and an empty `<style id="_goober"></style>` breaks the first style
-  registration.
+- Inline the returned string as is.
 - Every call returns the full sheet collected so far, so concurrent requests cannot take each
   other's rules. The sheet is cumulative for the life of the process: a response may carry rules
   for components another request rendered, which is harmless.
