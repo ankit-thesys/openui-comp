@@ -10,6 +10,21 @@ const heavy = `
   letter-spacing: var(--openui-text-body-default-heavy-letter-spacing, -0.01em);
   font-variation-settings: var(--openui-font-variation-medium, "wght" 560);
 `;
+// Links and inline code are parts, styled on their own class so unlayered element resets (such
+// as Tailwind 3's preflight `a` and `code` rules) cannot override them. Inside a blockquote they
+// inherit colour, line-height and font-style like the quote's other text: the blockquote prose
+// rule sets this flag and the parts read it through a container style query. Browsers without
+// style queries on custom properties (Firefox) keep the parts' own look inside quotes.
+const quoted = "--_openui-markdown-renderer-quoted";
+const inheritWhenQuoted = `
+  @container style(${quoted}: 1) {
+    & {
+      color: inherit;
+      line-height: inherit;
+      font-style: inherit;
+    }
+  }
+`;
 const heading = `
   font: var(--openui-text-heading-xs, 600 16px/1.25 "Inter", sans-serif);
   letter-spacing: var(--openui-text-heading-xs-letter-spacing, -0.01em);
@@ -35,13 +50,9 @@ export const markdownStyles = (css: StyleCss) => ({
     padding: 2px 4px;
     background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
     border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));
-    /* Typography participates in prose inheritance; layout keeps a flat part class. */
-    :where(&) {
-      &:is(code) {
-        color: ${primary};
-        ${body}
-      }
-    }
+    color: ${primary};
+    ${body}
+    ${inheritWhenQuoted}
     /* Browsers ignore the legacy display:hidden declaration; preserve its rule. */
     &::after,
     &::before {
@@ -53,12 +64,9 @@ export const markdownStyles = (css: StyleCss) => ({
     cursor: pointer;
     text-decoration: none;
     transition: color 0.2s ease-in-out;
-    :where(&) {
-      &:is(a) {
-        color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));
-        ${body}
-      }
-    }
+    color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));
+    ${body}
+    ${inheritWhenQuoted}
     &:hover {
       text-decoration: underline;
     }
@@ -182,6 +190,7 @@ export const markdownStyles = (css: StyleCss) => ({
         padding-left: 16px;
         quotes: "“" "”" "‘" "’";
         line-height: 1.625;
+        ${quoted}: 1;
       }
       & blockquote strong {
         ${heavy}

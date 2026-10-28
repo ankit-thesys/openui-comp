@@ -99,3 +99,38 @@ test("code and link typography honor the consumer's body font token", async ({ p
     await expect(part).toHaveCSS("line-height", "36px");
   }
 });
+
+test("links and inline code take the library's look, and inherit the quote's inside a blockquote", async ({
+  page,
+}) => {
+  await page.goto("/markdown.html");
+  const markdown = page.getByTestId("markdown").first();
+  const look = (selector: string) =>
+    markdown
+      .locator(selector)
+      .first()
+      .evaluate((el) => {
+        const style = getComputedStyle(el);
+        const parent = getComputedStyle(el.parentElement!);
+        return {
+          inheritsColor: style.color === parent.color,
+          inheritsLineHeight: style.lineHeight === parent.lineHeight,
+          fontStyle: style.fontStyle,
+        };
+      });
+
+  // Outside a quote the parts set their own colour, line-height and an upright style.
+  expect(await look(".openui-markdown-renderer > p > a")).toMatchObject({
+    inheritsColor: false,
+    fontStyle: "normal",
+  });
+  expect(await look(".openui-markdown-renderer > p > code")).toMatchObject({ fontStyle: "normal" });
+  // Inside one they inherit like the quote's other text, as in #72.
+  for (const selector of ["blockquote p > a", "blockquote p > code"]) {
+    expect(await look(selector)).toEqual({
+      inheritsColor: true,
+      inheritsLineHeight: true,
+      fontStyle: "italic",
+    });
+  }
+});

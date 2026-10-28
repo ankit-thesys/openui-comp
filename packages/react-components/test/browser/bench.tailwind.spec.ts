@@ -64,14 +64,6 @@ for (const component of migrated) {
       test(`Tailwind ${version === "4" ? "4.1" : `3.${version[1]}`} preflight leaves it styled`, async ({
         page,
       }) => {
-        // Known, reported issue: MarkDownRenderer styles link and inline-code typography at prose
-        // weight (`:where(.goN):is(a)`, 0,0,1), which Tailwind 3's unlayered preflight
-        // (`a { color: inherit }`, `code { font-family: … }`) ties and, loading later, beats.
-        // Tailwind 4 puts its preflight in a layer, so it cannot. Remove once fixed.
-        test.fail(
-          component.folder === "MarkDownRenderer" && version !== "4",
-          "Tailwind 3 preflight resets MarkDownRenderer's prose-weight link and code typography",
-        );
         await openMigrated(page, component);
         const plain = await snapshot(page, component);
         expect(Object.keys(plain).length).toBeGreaterThan(0);

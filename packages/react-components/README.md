@@ -99,7 +99,9 @@ Library rules for these components weigh one generated class, plus at most one s
 library does not render itself (your children, icons inside an icon part) is styled at zero weight.
 Markdown prose (paragraphs, headings, lists, quotes, rules and strong text) also uses zero-weight
 root scoping: `.openui-markdown-renderer p { color: navy; }` overrides paragraph colour. Code,
-links, code-block roots, tables and table containers have the stable classes in the reference.
+links, code-block roots, tables and table containers have the stable classes in the reference
+and are styled on them, so element resets do not reach them; inside a blockquote, links and inline
+code inherit the quote's colour, line-height and italic style like its other text.
 `MarkDownRenderer` defaults to `variant="clear"` and always emits its variant modifier.
 A rule of yours on a stable class, with the same state where you need one, therefore wins:
 
@@ -171,9 +173,13 @@ radius.
 Without `cssLayer`, Tailwind 4 utilities lose to the unlayered component rules on
 the same element. Use the important modifier (`!bg-red-500`, or `bg-red-500!`) or
 target the stable class instead. In this default mode, Tailwind 3.4 and 4
-preflights leave components styled, but Tailwind 3.3 and earlier conflict: their
-preflight `[type='button'] { background-color: transparent }` clears button
-backgrounds. Tailwind 3 emits its preflight unlayered, so it beats layered rules:
+preflights leave every element that carries a stable class styled, but Tailwind
+3.3 and earlier conflict: their preflight `[type='button'] { background-color:
+transparent }` clears button backgrounds. Markdown prose (paragraphs, headings,
+lists, quotes) weighs zero by design, so Tailwind 3's unlayered preflight, which
+loads later, resets parts of it: list markers and padding, blockquote margins and
+`strong` weight. Tailwind 4 keeps its preflight in a layer and leaves prose
+styled. Tailwind 3 emits its preflight unlayered, so it beats layered rules:
 use layer mode with Tailwind 4, not Tailwind 3.
 
 ## Automatic styles

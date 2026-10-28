@@ -70,9 +70,8 @@ override and Tailwind cases.
     a stable-class element keeps its computed value (percentage sizes compare as declared, since
     they resolve against page layout). Properties the library leaves to the page are Tailwind's to
     reset. It pins the known conflict: 3.3 clears the background of `button[type=button]`, 3.4 and
-    4.1 do not. MarkDownRenderer under Tailwind 3 is an expected failure (`test.fail`): its link and
-    inline-code typography sit at prose weight, which Tailwind 3's unlayered preflight ties and
-    beats.
+    4.1 do not. Markdown prose (zero weight, no stable class) is outside this check; README,
+    "Tailwind", describes what Tailwind 3's preflight resets there.
 
 ## Styling contract
 
