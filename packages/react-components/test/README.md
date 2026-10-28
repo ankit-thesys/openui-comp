@@ -37,8 +37,8 @@ To add a browser test, add a fixture that imports `openui-under-test` (aliased t
 
 - `components.tsx` lists every migrated component with elements covering every value of every
   prop that changes its classes. `contract.test.tsx` server-renders them through public exports,
-  collects the CSS registered while rendering (`collect.ts`, which reads Goober's server sheet until
-  the package exposes `getComponentStyles()`), and checks:
+  collects the CSS registered while rendering (`collect.ts`: what the render added to the public
+  `getComponentStyles()` sheet), and checks:
   - every selector is one generated class, optionally with one state, a sibling pair
     (`.go1 + .go1`) or a zero-weight `:where(.go1) <type selectors>` rule;
   - every rendered `openui-*` class matches `openui-<block>[--<prop>-<value>]`, a modifier attaches
@@ -58,7 +58,7 @@ pnpm --filter @openuidev/react-components docs:selectors
 themselves and register CSS on import. `allowlist.test.ts` fails if a module that imports Goober is
 missing from it, if a listed module no longer imports Goober (or no longer exists), or if a
 component that exports `names` is missing from `components.tsx`. `src/styles/defaults.ts` (theme
-token defaults) and `src/styles/useStyles.ts` are exempt.
+token defaults), `src/styles/useStyles.ts` and `src/utils/componentStyles.ts` are exempt.
 
 When you convert a component: remove its modules from the allowlist, add it to `components.tsx`,
 regenerate the reference, and add a parity spec. The list must be empty before a stable release.

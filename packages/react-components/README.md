@@ -107,8 +107,7 @@ A rule of yours on a stable class, with the same state where you need one, there
 
 Load order: the token defaults' `@layer openui-defaults;` declaration comes first in `<head>`, then
 the library sheet, then your CSS. If you place `<style id="_goober">` yourself, the library reuses it
-where it is; keep it before your stylesheets and put a single space inside it (Goober writes into its
-text node and fails on an empty tag).
+where it is; keep it before your stylesheets.
 
 Your rule has to match the library's shape: a resting-state rule does not restyle `:hover`, and a
 rule in a named cascade layer loses to the unlayered library rules.
