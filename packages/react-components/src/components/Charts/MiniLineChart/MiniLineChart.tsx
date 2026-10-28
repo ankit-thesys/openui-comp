@@ -1,3 +1,5 @@
+"use client";
+
 import { line } from "d3-shape";
 import { useEffectiveAnimation } from "../hooks/core/useEffectiveAnimation";
 import { MiniChartFrame } from "../shared/mini/MiniChartFrame";

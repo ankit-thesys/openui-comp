@@ -1,3 +1,5 @@
+"use client";
+
 import type { ScaleBand, ScaleLinear } from "d3-scale";
 import { scaleBand } from "d3-scale";
 import React, { useMemo } from "react";

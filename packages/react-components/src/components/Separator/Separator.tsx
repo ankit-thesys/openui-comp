@@ -1,3 +1,5 @@
+"use client";
+
 import * as RadixSeparator from "@radix-ui/react-separator";
 import clsx from "clsx";
 import { css } from "goober";

@@ -1,3 +1,5 @@
+"use client";
+
 import type { ScaleLinear } from "d3-scale";
 import React from "react";
 import { numberTickFormatter } from "../../../utils/styleUtils";

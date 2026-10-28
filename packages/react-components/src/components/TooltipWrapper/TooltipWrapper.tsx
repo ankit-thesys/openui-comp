@@ -1,3 +1,5 @@
+"use client";
+
 import * as Tooltip from "@radix-ui/react-tooltip";
 import clsx from "clsx";
 import React, { cloneElement, isValidElement, useLayoutEffect, useRef, useState } from "react";

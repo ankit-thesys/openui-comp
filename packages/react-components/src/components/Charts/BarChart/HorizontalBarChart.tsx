@@ -1,3 +1,5 @@
+"use client";
+
 import { BarChart } from "./BarChart";
 import type { BarChartData, BarChartProps, BarChartVariant } from "./types";
 

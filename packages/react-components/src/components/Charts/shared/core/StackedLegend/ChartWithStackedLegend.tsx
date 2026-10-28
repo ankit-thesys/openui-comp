@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { type ReactNode, useId, useRef } from "react";
 import { useContainerSize } from "../../../hooks/core/useContainerSize";

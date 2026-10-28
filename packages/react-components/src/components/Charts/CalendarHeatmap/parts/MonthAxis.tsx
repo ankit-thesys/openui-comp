@@ -1,3 +1,5 @@
+"use client";
+
 interface MonthAxisProps {
   /** One short-month label per month, anchored to its first-of-month column. */
   labels: Array<{ col: number; label: string }>;

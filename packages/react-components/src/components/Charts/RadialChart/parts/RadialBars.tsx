@@ -1,3 +1,5 @@
+"use client";
+
 import { arc } from "d3-shape";
 import React, { useMemo } from "react";
 import type { CategoricalSlice } from "../../hooks";

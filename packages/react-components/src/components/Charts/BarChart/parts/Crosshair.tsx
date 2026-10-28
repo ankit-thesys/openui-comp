@@ -1,3 +1,5 @@
+"use client";
+
 import type { ScaleBand } from "d3-scale";
 import React from "react";
 import { FadeFollower } from "../../shared/core/spring";

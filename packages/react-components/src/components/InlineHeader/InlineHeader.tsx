@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { InlineMarkdownRenderer } from "../InlineMarkdownRenderer";
 import { descriptionClass, headingClass, rootClass } from "./inlineHeader.styles";

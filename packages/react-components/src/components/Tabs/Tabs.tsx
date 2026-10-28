@@ -1,3 +1,5 @@
+"use client";
+
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";

@@ -1,3 +1,5 @@
+"use client";
+
 import type { LucideIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { getFallbackIconName } from "./categoryFallbacks";

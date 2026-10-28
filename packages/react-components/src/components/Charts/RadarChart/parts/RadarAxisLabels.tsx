@@ -1,3 +1,5 @@
+"use client";
+
 import { useCanvasContextForLabelSize } from "../../hooks/core/useCanvasContextForLabelSize";
 import { LabelTooltip } from "../../shared/core/LabelTooltip/LabelTooltip";
 import type { ChartData } from "../../types";

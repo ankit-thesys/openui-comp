@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import React, { CSSProperties, ReactNode } from "react";
 import { rootClass } from "./listItem.styles";

@@ -1,3 +1,5 @@
+"use client";
+
 import { AreaChart } from "./AreaChart";
 import type { AreaChartData, AreaChartProps } from "./types";
 

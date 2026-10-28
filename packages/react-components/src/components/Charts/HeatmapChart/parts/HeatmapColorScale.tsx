@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { divergingRampClass } from "../heatmapChart.styles";
 

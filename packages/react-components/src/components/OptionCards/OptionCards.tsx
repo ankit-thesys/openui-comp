@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 import { InlineMarkdownRenderer } from "../InlineMarkdownRenderer";

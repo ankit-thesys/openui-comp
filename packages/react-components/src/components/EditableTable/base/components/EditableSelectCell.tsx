@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../../Select";

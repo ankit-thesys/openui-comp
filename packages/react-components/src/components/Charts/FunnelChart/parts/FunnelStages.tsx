@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useMemo, useRef } from "react";
 
 import type { FunnelStage } from "../../hooks/cartesian/useFunnelChartOrchestrator";

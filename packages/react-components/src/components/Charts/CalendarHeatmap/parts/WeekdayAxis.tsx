@@ -1,3 +1,5 @@
+"use client";
+
 interface WeekdayAxisProps {
   /** The rows that get a label (already filtered), with their weekday text. */
   ticks: Array<{ row: number; label: string }>;

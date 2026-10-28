@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { forwardRef, type ReactNode } from "react";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";

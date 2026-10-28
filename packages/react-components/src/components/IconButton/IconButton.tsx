@@ -1,3 +1,5 @@
+"use client";
+
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import clsx from "clsx";
 import { css } from "goober";

@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { CSSProperties, forwardRef, ReactNode } from "react";
 import { iconClass, rootClass, sizeClasses, textClass, variantClasses } from "./tag.styles";

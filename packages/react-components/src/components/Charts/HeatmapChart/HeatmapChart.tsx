@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { useEffectiveAnimation } from "../hooks";
 import { useHeatmapChartOrchestrator } from "../hooks/cartesian/useHeatmapChartOrchestrator";
