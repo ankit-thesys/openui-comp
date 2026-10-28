@@ -153,6 +153,51 @@ framework's important utility modifier: Tailwind v3 `!bg-red-500`, Tailwind v4
 the primary customization APIs. Replacing host styles dynamically after mount
 has not been certified.
 
+### Cascade layer mode
+
+Component rules are unlayered by default. Apps that order their CSS with cascade
+layers, such as Tailwind 4, can put them in a layer instead:
+
+```tsx
+<ThemeProvider cssLayer="openui">{/* application */}</ThemeProvider>
+```
+
+Rules of components under the provider then sit in `@layer openui`, so any
+unlayered app CSS beats them, whatever its specificity or load order, and so do
+layers ordered after `openui`. Nested providers inherit `cssLayer` and can set
+their own. A value that is not a layer name (or a dotted path such as
+`app.openui`) is ignored, with a development warning. Components outside any provider stay unlayered, and so do components
+not yet converted to the flat convention (currently all but Button), under any
+provider. Each layer gets its own generated classes, so a component rendered both
+in and out of a layer registers its rules twice.
+
+The library declares no layer order. Put the order and an empty library sheet
+first in `<head>`, before any stylesheet, in this order:
+
+```html
+<style>@layer theme, base, openui, components, utilities;</style>
+<style id="_goober"> </style>
+```
+
+The library writes its rules into that `#_goober` tag instead of creating its
+own. Keep the single space inside it: an empty tag fails on the first style
+registration. With this recipe, Tailwind 4 utilities such as `bg-red-500` beat
+Button, and Tailwind's preflight in `base` does not reset it.
+
+Writing the same `@layer` statement only in the app's CSS file does not work.
+Layer priority follows where a layer first appears in the document, and the
+library sheet comes before the app's CSS, so `openui` ranks first: below
+Tailwind's `base`, whose preflight then clears Button's background, padding and
+radius.
+
+Without `cssLayer`, Tailwind 4 utilities lose to the unlayered component rules on
+the same element. Use the important modifier (`!bg-red-500`, or `bg-red-500!`) or
+target the stable class instead. In this default mode, Tailwind 3.4 and 4
+preflights leave components styled, but Tailwind 3.3 and earlier conflict: their
+preflight `[type='button'] { background-color: transparent }` clears button
+backgrounds. Tailwind 3 emits its preflight unlayered, so it beats layered rules:
+use layer mode with Tailwind 4, not Tailwind 3.
+
 ### Stable selectors
 
 The selectors in this and the following sections belong to components that have
