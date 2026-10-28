@@ -46,11 +46,14 @@ To add a browser test, add a fixture that imports `openui-under-test` (aliased t
   collects the CSS registered while rendering (`collect.ts`: what the render added to the public
   `getComponentStyles()` sheet), and checks:
   - every selector is one generated class, optionally with one state, a sibling pair
-    (`.go1 + .go1`) or a zero-weight `:where(.go1) <type selectors>` rule;
+    (`.go1 + .go1`) or a zero-weight `:where(.go1) <type selectors>` rule, and no rule is layered;
+  - the same elements rendered under `<ThemeProvider cssLayer="openui">` put every rule in
+    `@layer openui` (no unlayered rule, no other or nested layer), within the same budget and
+    with the same selector shapes;
   - every rendered `openui-*` class matches `openui-<block>[--<prop>-<value>]`, a modifier attaches
     to a documented root or part, and the rendered classes equal the component's `names`.
-- `checks.ts` holds the selector and class grammar; `checks.test.ts` feeds it deliberately broken
-  selectors and names so a passing contract test means something.
+- `checks.ts` holds the selector, layer and class grammar; `checks.test.ts` feeds it deliberately
+  broken selectors, layered rules and names so a passing contract test means something.
 - `reference.test.ts` fails when `docs/reference/selectors.md` differs from what
   `scripts/selector-reference.mjs` generates from the built `names`. Regenerate it after a build:
 

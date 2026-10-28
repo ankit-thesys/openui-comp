@@ -1,12 +1,21 @@
 // The styling contract as code: which library selectors and stable class names are allowed.
 // See test/README.md, "Styling contract".
 
-const AT_RULES_WITH_RULES = /^@(media|container|supports|layer)\b/;
+const AT_RULES_WITH_RULES = /^@(media|container|supports)\b/;
 
-/** Top-level selectors of every style rule in `css`, including rules inside @media, @container,
- * @supports and @layer blocks. @keyframes and other at-rules are skipped. */
-export function selectorsOf(css: string): string[] {
-  const selectors: string[] = [];
+/** A style rule's selector and the cascade layer it sits in: a dotted path for nested layers,
+ * `<anonymous>` for an unnamed one, `""` when unlayered. */
+export interface Rule {
+  selector: string;
+  layer: string;
+}
+
+/** Every style rule in `css`, including rules inside @media, @container, @supports and @layer
+ * blocks. @keyframes and other at-rules are skipped. */
+export const rulesOf = (css: string): Rule[] => rulesIn(css, "");
+
+function rulesIn(css: string, layer: string): Rule[] {
+  const rules: Rule[] = [];
   let i = 0;
   while (i < css.length) {
     const open = indexOutsideStrings(css, i, "{;");
@@ -18,12 +27,20 @@ export function selectorsOf(css: string): string[] {
     const close = matchingBrace(css, open);
     const prelude = css.slice(i, open).trim();
     const body = css.slice(open + 1, close);
-    if (AT_RULES_WITH_RULES.test(prelude)) selectors.push(...selectorsOf(body));
-    else if (!prelude.startsWith("@")) selectors.push(...splitList(prelude));
+    const layerName = prelude.match(/^@layer(?![\w-])\s*([\s\S]*)$/);
+    if (layerName) {
+      const name = layerName[1] || "<anonymous>";
+      rules.push(...rulesIn(body, layer ? `${layer}.${name}` : name));
+    } else if (AT_RULES_WITH_RULES.test(prelude)) rules.push(...rulesIn(body, layer));
+    else if (!prelude.startsWith("@"))
+      rules.push(...splitList(prelude).map((selector) => ({ selector, layer })));
     i = close + 1;
   }
-  return selectors;
+  return rules;
 }
+
+/** Top-level selectors of every style rule in `css`; see {@link rulesOf}. */
+export const selectorsOf = (css: string): string[] => rulesOf(css).map((rule) => rule.selector);
 
 /** Index of the first of `chars` at or after `from`, skipping quoted strings; -1 if none. */
 const indexOutsideStrings = (css: string, from: number, chars: string) => {
@@ -101,6 +118,17 @@ export function selectorViolation(selector: string): string | null {
     return null;
   }
   return "not one generated class plus at most one state, a sibling pair or a zero-weight rule";
+}
+
+/** Why `rule` breaks the contract when every library rule must sit in `layer` (`""` for default
+ * mode), or `null` when it is allowed: the layer must match exactly and the selector must keep
+ * the budget. */
+export function ruleViolation(rule: Rule, layer: string): string | null {
+  if (rule.layer !== layer) {
+    const where = (name: string) => (name ? `layer ${name}` : "no layer");
+    return `in ${where(rule.layer)}, expected ${where(layer)}`;
+  }
+  return selectorViolation(rule.selector);
 }
 
 const GRAMMAR = /^openui(-[a-z0-9]+)+(--[a-z0-9]+(-[a-z0-9]+)*)?$/;

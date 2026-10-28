@@ -1,7 +1,7 @@
 // Guards the contract checker itself: it must accept the selector and class shapes the spec allows
 // and reject deliberately broken ones, so a passing contract test means something.
 import { describe, expect, it } from "vitest";
-import { classViolation, selectorViolation, selectorsOf } from "./checks";
+import { classViolation, ruleViolation, rulesOf, selectorViolation, selectorsOf } from "./checks";
 
 describe("selectorsOf", () => {
   it("reads selectors from Goober's minified output, inside @media and @container", () => {
@@ -32,6 +32,53 @@ describe("selectorsOf", () => {
       ":where(.go1) h1:is(.a,.b)",
       ".go2",
     ]);
+  });
+});
+
+describe("rulesOf", () => {
+  it("records the cascade layer of every rule, as a dotted path for nested layers", () => {
+    const css =
+      ".go1{color:red;}" +
+      "@layer openui{.go2{color:red;}.go2:hover{color:blue;}}" +
+      "@layer a{@media (min-width: 1px){@layer b{.go3{x:y;}}}}" +
+      "@layer{.go4{x:y;}}";
+    expect(rulesOf(css)).toEqual([
+      { selector: ".go1", layer: "" },
+      { selector: ".go2", layer: "openui" },
+      { selector: ".go2:hover", layer: "openui" },
+      { selector: ".go3", layer: "a.b" },
+      { selector: ".go4", layer: "<anonymous>" },
+    ]);
+  });
+
+  it("reads layer names across line breaks and skips other at-rules starting with @layer", () => {
+    expect(rulesOf("@layer\n  openui {.go1{x:y;}}@layer-x{.go2{x:y;}}")).toEqual([
+      { selector: ".go1", layer: "openui" },
+    ]);
+  });
+});
+
+describe("ruleViolation", () => {
+  it.each([
+    [".go1{x:y;}", ""],
+    ["@media (max-width: 1px){.go1:hover{x:y;}}", ""],
+    ["@layer openui{.go1{x:y;}}", "openui"],
+    ["@layer openui{.go1:hover{x:y;}.go1+.go1{x:y;}:where(.go1) svg{x:y;}}", "openui"],
+    ["@layer openui{@media (max-width: 1px){.go1{x:y;}}}", "openui"],
+  ])("accepts %s in layer %j", (css, layer) => {
+    for (const rule of rulesOf(css)) expect(ruleViolation(rule, layer)).toBeNull();
+  });
+
+  it.each([
+    ["@layer openui{.go1.go2{x:y;}}", "openui", "compound selector inside the layer"],
+    ["@layer openui{.go1:hover:not(:disabled){x:y;}}", "openui", "state chain inside the layer"],
+    [".go1{x:y;}", "openui", "unlayered rule in layer mode"],
+    ["@layer other{.go1{x:y;}}", "openui", "another layer"],
+    ["@layer openui{@layer inner{.go1{x:y;}}}", "openui", "a nested layer"],
+    ["@layer openui{.go1{x:y;}}", "", "layered rule in default mode"],
+  ])("rejects %s in layer %j (%s)", (css, layer) => {
+    const [rule] = rulesOf(css);
+    expect(ruleViolation(rule!, layer)).toEqual(expect.any(String));
   });
 });
 
