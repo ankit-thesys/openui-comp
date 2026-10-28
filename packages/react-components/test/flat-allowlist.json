@@ -27,8 +27,6 @@
   "src/components/CheckBoxItem/CheckBoxItem.tsx",
   "src/components/Chips/Chips.tsx",
   "src/components/CodeBlock/codeBlock.styles.ts",
-  "src/components/CompositeCardBlock/card.styles.ts",
-  "src/components/ContextCardBlock/card.styles.ts",
   "src/components/DatePicker/datePicker.styles.ts",
   "src/components/DatePicker/helpers/components/FloatingDatePickerRenderer.tsx",
   "src/components/DotMatrixLoader/DotMatrixLoader.tsx",
@@ -49,8 +47,6 @@
   "src/components/ListBlock/listBlock.styles.ts",
   "src/components/ListItem/listItem.styles.ts",
   "src/components/MetricIndicator/metricIndicator.styles.ts",
-  "src/components/OptionCards/optionCards.styles.ts",
-  "src/components/OverviewCardBlock/overviewCardBlock.styles.ts",
   "src/components/RadioGroup/RadioGroup.tsx",
   "src/components/RadioItem/RadioItem.tsx",
   "src/components/Select/select.styles.ts",
@@ -60,14 +56,11 @@
   "src/components/Skeleton/TableSkeleton.tsx",
   "src/components/Slider/Slider.tsx",
   "src/components/Slider/SliderBlock.tsx",
-  "src/components/SnippetCardBlock/snippetCardBlock.styles.ts",
   "src/components/SwitchGroup/SwitchGroup.tsx",
   "src/components/SwitchItem/SwitchItem.tsx",
   "src/components/Table/scrollableTable.styles.ts",
   "src/components/Table/table.styles.ts",
   "src/components/TextArea/TextArea.tsx",
   "src/components/ToggleGroup/ToggleGroup.tsx",
-  "src/components/ToggleItem/ToggleItem.tsx",
-  "src/components/VisualCardBlock/card.styles.ts",
-  "src/components/_shared/cards/cardBlockLayout.styles.ts"
+  "src/components/ToggleItem/ToggleItem.tsx"
 ]

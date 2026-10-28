@@ -20,6 +20,9 @@ export const names = {
 } as const;
 export const iconTextStyles = (css: StyleCss) => ({
   root: css`
+    min-width: var(--_openui-snippet-card-min-width, auto);
+    width: var(--_openui-snippet-card-text-width, auto);
+    overflow: var(--_openui-snippet-card-overflow, visible);
     display: flex;
     gap: var(--openui-space-m, 12px);
   `,

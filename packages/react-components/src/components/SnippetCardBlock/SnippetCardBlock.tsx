@@ -3,9 +3,10 @@
 import clsx from "clsx";
 import { ChevronRight } from "lucide-react";
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
 import { TooltipWrapper } from "../TooltipWrapper";
-import { rootClass } from "./snippetCardBlock.styles";
+import { names, snippetCardBlockStyles } from "./snippetCardBlock.styles";
 
 export interface SnippetCardTooltip {
   heading?: string;
@@ -40,6 +41,7 @@ const TEXT_BLOCK_HEADING_SELECTOR = ".openui-text-block-primary";
 const TEXT_BLOCK_CONTENT_SELECTOR = ".openui-text-block-secondary";
 
 const SnippetCardBlock = forwardRef<HTMLDivElement, SnippetCardBlockProps>((props, ref) => {
+  const styles = useStyles(snippetCardBlockStyles);
   const {
     items,
     responsive = true,
@@ -63,15 +65,14 @@ const SnippetCardBlock = forwardRef<HTMLDivElement, SnippetCardBlockProps>((prop
       responsive={responsive}
       maxPerRow={2}
       gap={gap}
-      className={className}
+      className={clsx(names.root, className)}
       itemKey={(item, index) => item.id ?? `snippet-card-${index}`}
       renderItem={(item, index) => (
         <div
           className={clsx(
-            rootClass,
-            "openui-value-card",
-            !isClickable && "openui-value-card--static",
-            isClickable && "openui-value-card--clickable",
+            names.card,
+            styles.card,
+            isClickable && [names.clickable.true, styles.clickable.true],
           )}
           role={isClickable ? "button" : undefined}
           tabIndex={isClickable ? 0 : undefined}
@@ -86,10 +87,10 @@ const SnippetCardBlock = forwardRef<HTMLDivElement, SnippetCardBlockProps>((prop
               headingSelector={TEXT_BLOCK_HEADING_SELECTOR}
               contentSelector={TEXT_BLOCK_CONTENT_SELECTOR}
             >
-              <div className="openui-value-card__lhs">{item.lhs}</div>
+              <div className={clsx(names.lhs, styles.lhs)}>{item.lhs}</div>
             </TooltipWrapper>
           )}
-          <div className="openui-value-card__rhs">
+          <div className={clsx(names.rhs, styles.rhs)}>
             {item.rhs != null ? (
               <TooltipWrapper
                 tooltipHeading={item.rhsTooltip?.heading}
@@ -98,12 +99,12 @@ const SnippetCardBlock = forwardRef<HTMLDivElement, SnippetCardBlockProps>((prop
                 headingSelector={TEXT_BLOCK_HEADING_SELECTOR}
                 contentSelector={TEXT_BLOCK_CONTENT_SELECTOR}
               >
-                <div className="openui-value-card__rhs-content">{item.rhs}</div>
+                <div className={clsx(names.rhsContent, styles.rhsContent)}>{item.rhs}</div>
               </TooltipWrapper>
             ) : (
               isClickable && (
-                <div className="openui-value-card__chevron" aria-hidden="true">
-                  <ChevronRight size={14} />
+                <div className={clsx(names.chevron, styles.chevron)} aria-hidden="true">
+                  <ChevronRight size={14} className={clsx(names.chevronIcon, styles.chevronIcon)} />
                 </div>
               )
             )}

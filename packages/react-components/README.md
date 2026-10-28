@@ -766,6 +766,23 @@ Renamed stable classes and props, per component converted to the flat convention
 | Modal                       | Overlay, content, header, title, close and body classes                                                                                     | Unchanged; close SVG also has `.openui-modal-close-icon`                                                                                                       |
 | TooltipWrapper              | `.openui-tooltip-content`                                                                                                                   | `.openui-tooltip-wrapper` (portal content root, receives `className`)                                                                                          |
 | TooltipWrapper              | `.openui-tooltip-{body,heading,text-content}`                                                                                               | `.openui-tooltip-wrapper-{body,heading,text}`                                                                                                                  |
+| CardBlockLayout (#100) | `.openui-{small,medium}-card-block` and `.openui-card-layout-layout-{small,medium}` | `.openui-card-block-layout` and `--size-{small,medium}` |
+| CardBlockLayout | `--{grid,carousel}`, `--{composite-card,context-card,visual-first-card,overview-card,value-card}` | `--layout-{grid,carousel}`, `--card-type-{composite-card,context-card,visual-first-card,overview-card,value-card}`; defaults emitted |
+| CardBlockLayout | `.openui-{small,medium}-card-block__{grid,row,item,carousel,carousel-track,carousel-item}`, `.openui-card-layout-scrollbar` | `.openui-card-block-layout-{grid,row,item,carousel,carousel-track,carousel-item}`; scrollbar rules on `-carousel` |
+| CardBlockLayout | `__grid--responsive`, `__carousel--responsive`, `__grid--odd-count`, `__row--{1,2,3}` | Root `--responsive` only when true; row `[data-columns]` and item `[data-span="full"]` describe derived row geometry |
+| CardBlockLayout | `__carousel--mask-{left,right}` class combinations | `.openui-card-block-layout-carousel[data-mask="none\|left\|right\|both"]` |
+| CardBlockLayout | `--openui-{small,medium}-card-gap` | Gap remains the public `gap` prop; implementation variables are private `--_openui-card-block-layout-*` |
+| CompositeCard / CompositeCardBlock | `.openui-composite-card__{wrapper,header,body,footer,footer-content}`, `.openui-composite-card-block-card-{wrapper,root}` | `.openui-composite-card-{wrapper,header,body,footer,footer-content}` and root `.openui-composite-card`; block also carries `.openui-composite-card-block` |
+| ContextCard / ContextCardBlock | `__{vertical,slot,slot--top,slot--bottom,title-text,body-text,tag-wrapper,tag,chevron}`, `.openui-context-card-block-card-{root,image}` | `.openui-context-card-{vertical,top,bottom,title-text,body-text,tag-wrapper,tag,chevron}`; root `.openui-context-card`, block `.openui-context-card-block`; `-chevron-icon` owns SVG sizing |
+| ContextCard | `--variant-{gray,info,success,warning,danger,image}` | `--bg-color-{default,gray,info,success,warning,danger}` (`item.bgColor`, implicit default included); image state `[data-background-image="true"]` and private image input replace inline `background-image` |
+| VisualCard / VisualCardBlock | `.openui-visual-first-card`, `__{top,tag,action,bottom}`, `.openui-visual-card-block-card-{root,clickable}` | `.openui-visual-card`, `.openui-visual-card-{top,tag,action,bottom}`, block `.openui-visual-card-block`; action SVG has `-action-icon` |
+| VisualCard | `--openui-visual-card-image` | Private `--_openui-visual-card-image`; continue to pass `item.bgImageSrc` |
+| OverviewCardBlock | `.openui-overview-card`, `.openui-overview-card-block-root`, `__{vertical,top-row,slot,slot--top,slot--bottom,chevron}` | Root `.openui-overview-card-block`; owned `.openui-overview-card-block-{card,vertical,top-row,top,bottom,chevron,chevron-icon}` |
+| SnippetCardBlock | `.openui-value-card`, `.openui-snippet-card-block-root`, `__{lhs,rhs,rhs-content,chevron}` | Root `.openui-snippet-card-block`; owned `.openui-snippet-card-block-{card,lhs,rhs,rhs-content,chevron,chevron-icon}` |
+| Card clickability | `--static`, `--clickable` on the legacy card names | False emits no modifier. True emits `--clickable` on `.openui-{composite-card,context-card,visual-card,overview-card-block-card,snippet-card-block-card}` |
+| OptionCards | `.openui-option-cards-root`, `__{grid,row,item}`, `.openui-option-card`, `__{content,top,text,title,subtitle}` | `.openui-option-cards`, `.openui-option-cards-{grid,row,item,card,content,top,text,title,subtitle}` |
+| OptionCards | `.openui-option-card__top--{icon,image}` | `.openui-option-cards-top--top-content-variant-{icon,image}` (`item.topContentVariant`, default `icon` emitted) |
+| OptionCards | `--selected`, `--disabled`, `__row--{1,2,3}`, `__grid--{responsive,odd-count}` | Selection `[aria-checked]`, native `:disabled`; row `[data-columns]`, last spanning item `[data-span="full"]`; responsive grid is always enabled |
 
 For rollout #96, **TextBlock** is the established family name of the public `TextBlockView`
 export; its stable root is `.openui-text-block`. The React export name is unchanged.
@@ -803,6 +820,12 @@ react-ui never had. They are gone; use the class on the right instead:
 The #98 disclosure/layout/overlay migration changes no prop names. No internal callers outside
 these families reference their renamed classes. No chat-kit directory or matching references
 are present in this checkout; no chat-kit files were changed.
+
+The #100 card-block migration changes no public prop names. Blocks compose public text,
+markdown, tag, citation and tooltip components; inherited private values preserve their existing
+inline emphasis, image-tag appearance and snippet truncation. MetricIndicator and ImageText
+remain on their own rollout allowlists. No renamed-card-class callers outside these families
+or chat-kit directories/references were found; no chat-kit files changed.
 
 ## Beta import migration
 

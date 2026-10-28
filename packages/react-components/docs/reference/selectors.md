@@ -7,6 +7,28 @@ library's rule (add the same state, such as `:hover` or `[data-state=active]`, t
 A root is always present and a part whenever its element renders; a modifier is present when the
 prop has that value, including its default. Components not listed have not moved to this convention yet.
 
+## _shared/cards
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-card-block-layout` | Root | Always |
+| `.openui-card-block-layout-grid` | Part (`grid`) | On that part, whenever it renders |
+| `.openui-card-block-layout-row` | Part (`row`) | On that part, whenever it renders |
+| `.openui-card-block-layout-item` | Part (`item`) | On that part, whenever it renders |
+| `.openui-card-block-layout-carousel` | Part (`carousel`) | On that part, whenever it renders |
+| `.openui-card-block-layout-carousel-track` | Part (`track`) | On that part, whenever it renders |
+| `.openui-card-block-layout-carousel-item` | Part (`carouselItem`) | On that part, whenever it renders |
+| `.openui-card-block-layout--size-small` | Modifier | `size="small"` |
+| `.openui-card-block-layout--size-medium` | Modifier | `size="medium"` |
+| `.openui-card-block-layout--layout-grid` | Modifier | `layout="grid"` |
+| `.openui-card-block-layout--layout-carousel` | Modifier | `layout="carousel"` |
+| `.openui-card-block-layout--responsive` | Modifier | `responsive={true}` |
+| `.openui-card-block-layout--card-type-composite-card` | Modifier | `cardType="composite-card"` |
+| `.openui-card-block-layout--card-type-context-card` | Modifier | `cardType="context-card"` |
+| `.openui-card-block-layout--card-type-visual-first-card` | Modifier | `cardType="visual-first-card"` |
+| `.openui-card-block-layout--card-type-overview-card` | Modifier | `cardType="overview-card"` |
+| `.openui-card-block-layout--card-type-value-card` | Modifier | `cardType="value-card"` |
+
 ## Accordion
 
 | Stable class | Kind | Present when |
@@ -94,6 +116,42 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-citation-item-content` | Part (`content`) | On that part, whenever it renders |
 | `.openui-citation-item-title` | Part (`title`) | On that part, whenever it renders |
 | `.openui-citation-item-source` | Part (`source`) | On that part, whenever it renders |
+
+## CompositeCardBlock
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-composite-card` | Part (`card`) | On that part, whenever it renders |
+| `.openui-composite-card-block` | Root | Always |
+| `.openui-composite-card-wrapper` | Part (`wrapper`) | On that part, whenever it renders |
+| `.openui-composite-card-header` | Part (`header`) | On that part, whenever it renders |
+| `.openui-composite-card-body` | Part (`body`) | On that part, whenever it renders |
+| `.openui-composite-card-footer` | Part (`footer`) | On that part, whenever it renders |
+| `.openui-composite-card-footer-content` | Part (`footerContent`) | On that part, whenever it renders |
+| `.openui-composite-card--clickable` | Modifier | `clickable={true}` |
+
+## ContextCardBlock
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-context-card` | Part (`card`) | On that part, whenever it renders |
+| `.openui-context-card-block` | Root | Always |
+| `.openui-context-card-vertical` | Part (`vertical`) | On that part, whenever it renders |
+| `.openui-context-card-top` | Part (`top`) | On that part, whenever it renders |
+| `.openui-context-card-bottom` | Part (`bottom`) | On that part, whenever it renders |
+| `.openui-context-card-title-text` | Part (`title`) | On that part, whenever it renders |
+| `.openui-context-card-body-text` | Part (`body`) | On that part, whenever it renders |
+| `.openui-context-card-chevron` | Part (`chevron`) | On that part, whenever it renders |
+| `.openui-context-card-tag-wrapper` | Part (`tagWrapper`) | On that part, whenever it renders |
+| `.openui-context-card-tag` | Part (`tag`) | On that part, whenever it renders |
+| `.openui-context-card-chevron-icon` | Part (`chevronIcon`) | On that part, whenever it renders |
+| `.openui-context-card--clickable` | Modifier | `clickable={true}` |
+| `.openui-context-card--bg-color-default` | Modifier | `bgColor="default"` |
+| `.openui-context-card--bg-color-gray` | Modifier | `bgColor="gray"` |
+| `.openui-context-card--bg-color-info` | Modifier | `bgColor="info"` |
+| `.openui-context-card--bg-color-success` | Modifier | `bgColor="success"` |
+| `.openui-context-card--bg-color-warning` | Modifier | `bgColor="warning"` |
+| `.openui-context-card--bg-color-danger` | Modifier | `bgColor="danger"` |
 
 ## IconButton
 
@@ -196,6 +254,37 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-modal--size-md` | Modifier | `size="md"` |
 | `.openui-modal--size-lg` | Modifier | `size="lg"` |
 
+## OptionCards
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-option-cards` | Root | Always |
+| `.openui-option-cards-grid` | Part (`grid`) | On that part, whenever it renders |
+| `.openui-option-cards-row` | Part (`row`) | On that part, whenever it renders |
+| `.openui-option-cards-item` | Part (`item`) | On that part, whenever it renders |
+| `.openui-option-cards-card` | Part (`card`) | On that part, whenever it renders |
+| `.openui-option-cards-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-option-cards-top` | Part (`top`) | On that part, whenever it renders |
+| `.openui-option-cards-text` | Part (`text`) | On that part, whenever it renders |
+| `.openui-option-cards-title` | Part (`title`) | On that part, whenever it renders |
+| `.openui-option-cards-subtitle` | Part (`subtitle`) | On that part, whenever it renders |
+| `.openui-option-cards-top--top-content-variant-icon` | Modifier | `topContentVariant="icon"` |
+| `.openui-option-cards-top--top-content-variant-image` | Modifier | `topContentVariant="image"` |
+
+## OverviewCardBlock
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-overview-card-block` | Root | Always |
+| `.openui-overview-card-block-card` | Part (`card`) | On that part, whenever it renders |
+| `.openui-overview-card-block-vertical` | Part (`vertical`) | On that part, whenever it renders |
+| `.openui-overview-card-block-top-row` | Part (`topRow`) | On that part, whenever it renders |
+| `.openui-overview-card-block-top` | Part (`top`) | On that part, whenever it renders |
+| `.openui-overview-card-block-bottom` | Part (`bottom`) | On that part, whenever it renders |
+| `.openui-overview-card-block-chevron` | Part (`chevron`) | On that part, whenever it renders |
+| `.openui-overview-card-block-chevron-icon` | Part (`chevronIcon`) | On that part, whenever it renders |
+| `.openui-overview-card-block-card--clickable` | Modifier | `clickable={true}` |
+
 ## SectionBlock (FoldableSection)
 
 | Stable class | Kind | Present when |
@@ -227,6 +316,19 @@ prop has that value, including its default. Components not listed have not moved
 | Stable class | Kind | Present when |
 | --- | --- | --- |
 | `.openui-separator` | Root | Always |
+
+## SnippetCardBlock
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-snippet-card-block` | Root | Always |
+| `.openui-snippet-card-block-card` | Part (`card`) | On that part, whenever it renders |
+| `.openui-snippet-card-block-lhs` | Part (`lhs`) | On that part, whenever it renders |
+| `.openui-snippet-card-block-rhs` | Part (`rhs`) | On that part, whenever it renders |
+| `.openui-snippet-card-block-rhs-content` | Part (`rhsContent`) | On that part, whenever it renders |
+| `.openui-snippet-card-block-chevron` | Part (`chevron`) | On that part, whenever it renders |
+| `.openui-snippet-card-block-chevron-icon` | Part (`chevronIcon`) | On that part, whenever it renders |
+| `.openui-snippet-card-block-card--clickable` | Modifier | `clickable={true}` |
 
 ## SourceFaviconImage
 
@@ -406,6 +508,19 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-tooltip-wrapper-heading` | Part (`heading`) | On that part, whenever it renders |
 | `.openui-tooltip-wrapper-text` | Part (`text`) | On that part, whenever it renders |
 | `.openui-tooltip-wrapper` | Root | Always |
+
+## VisualCardBlock
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-visual-card` | Part (`card`) | On that part, whenever it renders |
+| `.openui-visual-card-block` | Root | Always |
+| `.openui-visual-card-top` | Part (`top`) | On that part, whenever it renders |
+| `.openui-visual-card-tag` | Part (`tag`) | On that part, whenever it renders |
+| `.openui-visual-card-action` | Part (`action`) | On that part, whenever it renders |
+| `.openui-visual-card-bottom` | Part (`bottom`) | On that part, whenever it renders |
+| `.openui-visual-card-action-icon` | Part (`actionIcon`) | On that part, whenever it renders |
+| `.openui-visual-card--clickable` | Modifier | `clickable={true}` |
 
 ## SharedBase
 

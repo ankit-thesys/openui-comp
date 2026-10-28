@@ -2,8 +2,9 @@
 
 import clsx from "clsx";
 import { forwardRef, type ReactNode } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
-import { rootClass, wrapperClass } from "./card.styles";
+import { compositeCardStyles, names } from "./card.styles";
 
 export interface CompositeCardBlockItem {
   id?: string;
@@ -24,19 +25,20 @@ export interface CompositeCardProps {
 
 /** A bordered card with header, stacked body content and a price/button footer. */
 export const CompositeCard = forwardRef<HTMLDivElement, CompositeCardProps>((props, ref) => {
+  const styles = useStyles(compositeCardStyles);
   const { item, clickable = false, onClick, className } = props;
   const { header, body, footer } = item;
   const bodyItems = body ?? [];
   const hasFooter = Boolean(footer?.price || footer?.button);
 
   return (
-    <div className={clsx("openui-composite-card__wrapper", wrapperClass)}>
+    <div className={clsx(names.wrapper, styles.wrapper)}>
       <div
         ref={ref}
         className={clsx(
-          "openui-composite-card",
-          rootClass,
-          clickable ? "openui-composite-card--clickable" : "openui-composite-card--static",
+          names.card,
+          styles.card,
+          clickable && [names.clickable.true, styles.clickable.true],
           className,
         )}
         role={clickable ? "button" : undefined}
@@ -44,13 +46,13 @@ export const CompositeCard = forwardRef<HTMLDivElement, CompositeCardProps>((pro
         onClick={clickable ? onClick : undefined}
         onKeyDown={clickable && onClick ? cardKeyDownHandler(onClick) : undefined}
       >
-        {header && <div className="openui-composite-card__header">{header}</div>}
+        {header && <div className={clsx(names.header, styles.header)}>{header}</div>}
 
-        {bodyItems.length > 0 && <div className="openui-composite-card__body">{bodyItems}</div>}
+        {bodyItems.length > 0 && <div className={clsx(names.body, styles.body)}>{bodyItems}</div>}
 
         {hasFooter && (
-          <div className="openui-composite-card__footer">
-            <div className="openui-composite-card__footer-content">
+          <div className={clsx(names.footer, styles.footer)}>
+            <div className={clsx(names.footerContent, styles.footerContent)}>
               {footer?.price ?? null}
               {footer?.button ?? null}
             </div>
@@ -91,7 +93,7 @@ export const CompositeCardBlock = forwardRef<HTMLDivElement, CompositeCardBlockP
         responsive={responsive}
         maxPerRow={2}
         gap={gap}
-        className={className}
+        className={clsx(names.root, className)}
         itemKey={(item, index) => {
           const itemId = item.id?.trim();
           return itemId ? `composite-card-${itemId}-${index}` : `composite-card-${index}`;

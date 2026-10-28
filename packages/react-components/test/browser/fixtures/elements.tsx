@@ -22,6 +22,12 @@ function Fixture() {
         // lets any library declaration still win; every declared property remains asserted.
         <style>{`:where(.openui-modal-content) { box-sizing: border-box; }`}</style>
       )}
+      {["VisualCardBlock", "OverviewCardBlock"].includes(component?.folder ?? "") && (
+        // #100: like #72, these cards leave box-sizing to the page. Pin that input so
+        // auto margins/flex widths resolve identically with and without preflight.
+        // Zero specificity lets library declarations win; the bench still checks all of them.
+        <style>{`:where(.openui-visual-card, .openui-overview-card-block-card) { box-sizing: content-box; }`}</style>
+      )}
       {elements}
     </>
   );

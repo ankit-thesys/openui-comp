@@ -41,19 +41,32 @@ export const names = {
 // Heading shorthands reset font variation to normal, matching the original font declarations.
 export const textBlockStyles = (css: StyleCss) => ({
   root: css`
+    /* SnippetCardBlock supplies its existing truncation/alignment through its slots. */
+    min-width: var(--_openui-snippet-card-min-width, auto);
+    width: var(--_openui-snippet-card-text-width, auto);
+    max-width: var(--_openui-snippet-card-text-max-width, none);
+    overflow: var(--_openui-snippet-card-overflow, visible);
     display: flex;
     flex-direction: column;
     gap: var(--_openui-text-block-gap, var(--openui-space-3xs, 2px));
-    align-items: flex-start;
-    text-align: left;
+    align-items: var(--_openui-snippet-card-align, flex-start);
+    text-align: var(--_openui-snippet-card-text-align, left);
   `,
   primary: css`
+    max-width: var(--_openui-snippet-card-text-max-width, none);
+    overflow: var(--_openui-snippet-card-overflow, visible);
+    text-overflow: var(--_openui-snippet-card-text-overflow, clip);
+    white-space: var(--_openui-snippet-card-white-space, normal);
     color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
     font: var(--_openui-text-block-primary-font, inherit);
     letter-spacing: var(--_openui-text-block-primary-spacing, inherit);
     font-variation-settings: var(--_openui-text-block-primary-variation, inherit);
   `,
   secondary: css`
+    max-width: var(--_openui-snippet-card-text-max-width, none);
+    overflow: var(--_openui-snippet-card-overflow, visible);
+    text-overflow: var(--_openui-snippet-card-text-overflow, clip);
+    white-space: var(--_openui-snippet-card-white-space, normal);
     color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
     &[data-clamped] {
       display: -webkit-box;
@@ -677,16 +690,16 @@ export const textBlockStyles = (css: StyleCss) => ({
   },
   align: {
     left: css`
-      align-items: flex-start;
-      text-align: left;
+      align-items: var(--_openui-snippet-card-align, flex-start);
+      text-align: var(--_openui-snippet-card-text-align, left);
     `,
     center: css`
-      align-items: center;
-      text-align: center;
+      align-items: var(--_openui-snippet-card-align, center);
+      text-align: var(--_openui-snippet-card-text-align, center);
     `,
     right: css`
-      align-items: flex-end;
-      text-align: right;
+      align-items: var(--_openui-snippet-card-align, flex-end);
+      text-align: var(--_openui-snippet-card-text-align, right);
     `,
   },
 });

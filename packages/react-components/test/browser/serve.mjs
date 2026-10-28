@@ -46,6 +46,9 @@ createServer(async (req, res) => {
   const bundle = pathname.match(/^\/([\w-]+\.js)$/);
   if (bundle) return serve(res, fixtures, bundle[1], "text/javascript");
   if (pathname === "/react-ui.css") return serve(res, reactUiCss, "", "text/css");
+  // #100: background image URLs pass through safeUrl, which rejects data: URLs.
+  if (pathname === "/card-blocks-image.svg")
+    return serve(res, stylesheets, "card-blocks-image.svg", "image/svg+xml");
   const stylesheet = pathname.match(/^\/([\w-]+\.css)$/);
   if (stylesheet) return serve(res, stylesheets, stylesheet[1], "text/css");
   res.writeHead(404).end();

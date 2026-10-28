@@ -11,6 +11,9 @@ export const contentClass = "openui-image-text-content";
 const stylesheetScope = css`
   :where(&:root) {
     .openui-image-text-root {
+      min-width: var(--_openui-snippet-card-min-width, auto);
+      width: var(--_openui-snippet-card-text-width, auto);
+      overflow: var(--_openui-snippet-card-overflow, visible);
       display: flex;
       gap: var(--openui-space-m, 12px);
     }

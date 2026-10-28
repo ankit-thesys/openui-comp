@@ -16,6 +16,10 @@ import {
   Citation,
   CitationItem,
   CodeBlock,
+  CompositeCard,
+  CompositeCardBlock,
+  ContextCard,
+  ContextCardBlock,
   FoldableSectionContent,
   FoldableSectionItem,
   FoldableSectionRoot,
@@ -29,9 +33,13 @@ import {
   ListedSourceItem,
   ListedSources,
   MarkDownRenderer,
+  MetricIndicatorInline,
   Modal,
+  OptionCards,
+  OverviewCardBlock,
   SectionV2,
   Separator,
+  SnippetCardBlock,
   SourceFaviconImage,
   Sources,
   Steps,
@@ -53,6 +61,8 @@ import {
   TextContent,
   TextContentWrapper,
   TooltipWrapper,
+  VisualCard,
+  VisualCardBlock,
 } from "@openuidev/react-components";
 import type { ReactElement } from "react";
 import { renderToString } from "react-dom/server";
@@ -75,6 +85,8 @@ export interface MigratedComponent {
    * component generates without classes. MarkDownRenderer and the inline renderer composing it opt in.
    */
   prose?: boolean;
+  /** Classes owned by an explicitly allowlisted dependency, outside this family contract. */
+  unmigratedClasses?: string[];
 }
 
 // Stable names as the reference generator reads them: every style module in the folder or below.
@@ -202,7 +214,175 @@ const textBlockElements = () =>
     ),
   );
 
+// #100 exercises the internal layout only through the public card blocks.
+const cardLabel = <span style={{ font: "14px/21px sans-serif" }}>Card content</span>;
+const compositeItem = {
+  header: cardLabel,
+  body: [cardLabel],
+  footer: { price: cardLabel, button: <Button>Choose</Button> },
+};
+const contextItems = [undefined, "gray", "info", "success", "warning", "danger"].flatMap(
+  (bgColor) =>
+    ["Title", <Tag text="Tag" />].map((title) => ({
+      title,
+      body: "Body",
+      bgColor: bgColor as "info",
+    })),
+);
+const cardImage = "/card-blocks-image.svg";
+const visualItem = {
+  tag: <Tag text="Photo" />,
+  // A block owns the line box as well as its text font; an inline span still shares
+  // its parent's browser/preflight strut and changes the bottom panel's auto margin.
+  body: <div style={{ font: "14px/21px sans-serif" }}>Card content</div>,
+  bgImageSrc: cardImage,
+};
+const overviewItem = {
+  top: cardLabel,
+  bottom: { value: "42", subtext: "Items", trend: { direction: "up" as const, value: 2 } },
+};
+const snippetItems = [
+  {
+    lhs: <TextBlockView primary="Label" secondary="Details" />,
+    rhs: <TextBlockView primary="42" secondary="Items" />,
+  },
+  { lhs: cardLabel },
+];
+const metricClasses = () => [
+  ...stableClassesIn(renderToString(<MetricIndicatorInline {...overviewItem.bottom} />)),
+];
+const withoutMetric = (element: ReactElement): StableNames =>
+  Object.fromEntries(
+    Object.entries(composedNames(element)).filter(
+      ([, value]) => !metricClasses().includes(value as string),
+    ),
+  );
+const layoutElements = () =>
+  (["grid", "carousel"] as const).flatMap((layout) =>
+    [true, false].flatMap((responsive) => [
+      <CompositeCardBlock items={[compositeItem]} layout={layout} responsive={responsive} />,
+      <ContextCardBlock items={[{ title: "Context" }]} layout={layout} responsive={responsive} />,
+      <VisualCardBlock items={[visualItem]} layout={layout} responsive={responsive} />,
+      <OverviewCardBlock items={[{ top: cardLabel }]} layout={layout} responsive={responsive} />,
+      <SnippetCardBlock items={[{ lhs: cardLabel }]} responsive={responsive} />,
+    ]),
+  );
+const cardDependencyNames = (elements: ReactElement[]) => elements.map(composedNames);
+
 export const migratedComponents: MigratedComponent[] = [
+  {
+    folder: "_shared",
+    get names() {
+      return [...namesOf("_shared"), ...cardDependencyNames(layoutElements())];
+    },
+    elements: layoutElements,
+  },
+  {
+    folder: "CompositeCardBlock",
+    get names() {
+      return [
+        ...namesOf("CompositeCardBlock"),
+        ...cardDependencyNames([
+          <CompositeCardBlock items={[compositeItem]} />,
+          <CompositeCard item={compositeItem} clickable />,
+        ]),
+      ];
+    },
+    elements: () => [
+      <CompositeCardBlock items={[compositeItem]} />,
+      <CompositeCard item={compositeItem} clickable />,
+    ],
+  },
+  {
+    folder: "ContextCardBlock",
+    prose: true,
+    get names() {
+      return [
+        ...namesOf("ContextCardBlock"),
+        ...cardDependencyNames([
+          <ContextCardBlock items={contextItems} />,
+          <ContextCard item={contextItems[0]!} clickable />,
+        ]),
+      ];
+    },
+    elements: () => [
+      <ContextCardBlock items={contextItems} />,
+      <ContextCard item={{ title: "Image", body: "Body", bgImageSrc: cardImage }} clickable />,
+    ],
+  },
+  {
+    folder: "VisualCardBlock",
+    get names() {
+      return [
+        ...namesOf("VisualCardBlock"),
+        ...cardDependencyNames([
+          <VisualCardBlock items={[visualItem]} />,
+          <VisualCard item={visualItem} clickable />,
+        ]),
+      ];
+    },
+    elements: () => [
+      <VisualCardBlock items={[visualItem]} />,
+      <VisualCard item={visualItem} clickable />,
+    ],
+  },
+  {
+    folder: "OverviewCardBlock",
+    get names() {
+      return [
+        ...namesOf("OverviewCardBlock"),
+        withoutMetric(<OverviewCardBlock items={[overviewItem]} />),
+      ];
+    },
+    get unmigratedClasses() {
+      return metricClasses();
+    },
+    elements: () =>
+      [false, true].map((clickable) => (
+        <OverviewCardBlock items={[overviewItem]} clickable={clickable} onItemClick={() => {}} />
+      )),
+  },
+  {
+    folder: "SnippetCardBlock",
+    prose: true,
+    get names() {
+      return [
+        ...namesOf("SnippetCardBlock"),
+        composedNames(<SnippetCardBlock items={snippetItems} />),
+      ];
+    },
+    elements: () =>
+      [false, true].map((clickable) => (
+        <SnippetCardBlock items={snippetItems} clickable={clickable} onItemClick={() => {}} />
+      )),
+  },
+  {
+    folder: "OptionCards",
+    prose: true,
+    get names() {
+      return [...namesOf("OptionCards"), inlineNames()];
+    },
+    elements: () =>
+      ["single", "multiple"].map((type) => (
+        <OptionCards
+          type={type as "single"}
+          selected={["selected", "selected-disabled"]}
+          items={[
+            { value: "default", title: "Default", subtitle: "Subtitle", topContent: cardLabel },
+            {
+              value: "image",
+              title: "Image",
+              topContentVariant: "image",
+              topContent: <img src={source.faviconUrl} alt="Tile" />,
+            },
+            { value: "selected", title: "Selected" },
+            { value: "disabled", title: "Disabled", disabled: true },
+            { value: "selected-disabled", title: "Both", disabled: true },
+          ]}
+        />
+      )),
+  },
+
   {
     folder: "Tag",
     names: namesOf("Tag"),
