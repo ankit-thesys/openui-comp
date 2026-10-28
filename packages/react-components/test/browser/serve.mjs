@@ -5,6 +5,8 @@ import { createServer } from "node:http";
 const port = Number(process.env.PORT ?? 5370);
 const fixtures = new URL("./.fixtures/", import.meta.url);
 const stylesheets = new URL("./fixtures/", import.meta.url);
+// The stylesheet the react-ui benches load, from the workspace's built @openuidev/react-ui.
+const reactUiCss = new URL("../../../react-ui/dist/components/index.css", import.meta.url);
 const text = (value) => value.replaceAll("<", "");
 // Query parameters build the static <head>, all loaded before the fixture's script:
 // `?recipe=<layer order>` starts it with the layer-mode recipe, a layer statement then an empty
@@ -43,6 +45,7 @@ createServer(async (req, res) => {
     return res.writeHead(200, { "content-type": "text/html" }).end(page(html[1], searchParams));
   const bundle = pathname.match(/^\/([\w-]+\.js)$/);
   if (bundle) return serve(res, fixtures, bundle[1], "text/javascript");
+  if (pathname === "/react-ui.css") return serve(res, reactUiCss, "", "text/css");
   const stylesheet = pathname.match(/^\/([\w-]+\.css)$/);
   if (stylesheet) return serve(res, stylesheets, stylesheet[1], "text/css");
   res.writeHead(404).end();
