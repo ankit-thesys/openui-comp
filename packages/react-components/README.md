@@ -292,6 +292,50 @@ are converted independently of vendor syntax theme objects and official KaTeX
 CSS/fonts. Existing per-instance inline geometry and colors, ThemeProvider
 serialization and animation behavior retain their contracts.
 
+### Server-rendered styles
+
+On the server, component styles live in Goober's in-memory sheet. Converted components register
+their rules the first time they render, so a server **renders first, then collects** the CSS with
+`getComponentStyles()`, and inlines it as the **first** element of `<head>`, ahead of the app's own
+stylesheets:
+
+```tsx
+import { getComponentStyles } from "@openuidev/react-components";
+import { renderToString } from "react-dom/server";
+
+const html = renderToString(<App />); // 1. render: registers the styles this page uses
+const css = getComponentStyles(); // 2. collect, after rendering
+const page = `<!doctype html>
+<html>
+  <head>
+    <style id="_goober">${css}</style>
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body><div id="root">${html}</div></body>
+</html>`;
+```
+
+- The page is styled before JavaScript runs, and app CSS after the sheet overrides converted
+  components' equal-weight rules.
+- Keep the `_goober` id: the browser adopts that element instead of injecting a second sheet.
+- Inline the returned string as is. It is never empty, because the browser writes into the
+  element's first text node and an empty `<style id="_goober"></style>` breaks the first style
+  registration.
+- Every call returns the full sheet collected so far, so concurrent requests cannot take each
+  other's rules. The sheet is cumulative for the life of the process: a response may carry rules
+  for components another request rendered, which is harmless.
+- Do not call Goober's own `extractCss` from the same Goober instance: it empties the sheet before
+  `getComponentStyles()` can collect it. Rules the application registers with that instance are
+  included.
+- ThemeProvider writes its theme variables in the browser, so a server-rendered first paint uses
+  the components' built-in light values; `mode="dark"`, `lightTheme` and `darkTheme` apply once
+  client JavaScript runs. Host `:root { --openui-… }` declarations in the app's own CSS apply from
+  the first paint.
+- **Streaming SSR is not supported yet.** With `renderToPipeableStream`, Next.js App Router or
+  other streaming renderers, `<head>` is sent before most components render, so their styles are
+  missing from the first paint. Those components are unstyled until client JavaScript renders
+  them, then styled normally; nothing breaks.
+
 ### Math styles and fonts
 
 TextContentWrapper retains its lazy math renderer and automatically imports
@@ -422,9 +466,9 @@ performance. The chart selector gate remains pending independent verification.
 ## Support boundary and inherited behavior
 
 React/ReactDOM19 are required. Zod3.25+ or4 and Zustand4.5.5+ remain peer
-dependencies. **SSR, hydration, streaming SSR and concurrent server style
-isolation are deferred.** Node imports and declarations do not establish SSR
-support. Client-side OpenUI response streaming is a separate capability.
+dependencies. Non-streaming server rendering is supported with `getComponentStyles()` (see
+[Server-rendered styles](#server-rendered-styles)). **Streaming SSR is deferred, and hydration is
+not certified.** Client-side OpenUI response streaming is a separate capability.
 
 Extraction preserves inherited behavior rather than redesigning it:
 
