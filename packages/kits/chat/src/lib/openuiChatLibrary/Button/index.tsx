@@ -36,7 +36,7 @@ export const Button = defineComponent({
       <OpenUIButton
         variant={variantMap[props.variant as string] || "primary"}
         size={(props.size as "extra-small" | "small" | "medium" | "large") || "medium"}
-        buttonType={props.type as "normal" | "destructive"}
+        tone={props.type === "destructive" ? "destructive" : "default"}
         disabled={isStreaming}
         onClick={() => {
           const action = props.action as ActionPlan | undefined;
