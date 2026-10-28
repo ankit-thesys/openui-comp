@@ -82,7 +82,10 @@ const stylesheetScope = css`
           transform-origin: left center;
           animation: ${grow} 0.6s ease-out both;
         }
-        & .openui-horizontal-bar-chart-bar--negative:where(.openui-horizontal-bar-chart-bar--animated) {
+        &
+          .openui-horizontal-bar-chart-bar--negative:where(
+            .openui-horizontal-bar-chart-bar--animated
+          ) {
           transform-origin: right center;
         }
       }

@@ -38,7 +38,12 @@ const stylesheetScope = css`
       & line.openui-grid-zero-line:where(.openui-bar-chart-grid line) {
         ${zeroGridLine}
       }
-      & :where(.openui-bar-chart-y-tick, .openui-bar-chart-x-tick, .openui-bar-chart-x-tick-angled) {
+      &
+        :where(
+          .openui-bar-chart-y-tick,
+          .openui-bar-chart-x-tick,
+          .openui-bar-chart-x-tick-angled
+        ) {
         ${svgTickLabel}
       }
       & :where(.openui-bar-chart-hover-highlight) {

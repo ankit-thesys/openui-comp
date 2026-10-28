@@ -105,16 +105,26 @@ const contentStylesheetScope = css`
       );
       box-shadow:
         0 0 0 1px
-          color-mix(in oklch, var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)) 6%, transparent),
+          color-mix(
+            in oklch,
+            var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)) 6%,
+            transparent
+          ),
         0 4px 12px -2px oklch(0 0 0 / 0.05),
         0 16px 32px -8px oklch(0 0 0 / 0.08);
       & > :first-child:first-child {
         border-top-left-radius: calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px));
-        border-top-right-radius: calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px));
+        border-top-right-radius: calc(
+          var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px)
+        );
       }
       & > :last-child:last-child {
-        border-bottom-left-radius: calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px));
-        border-bottom-right-radius: calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px));
+        border-bottom-left-radius: calc(
+          var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px)
+        );
+        border-bottom-right-radius: calc(
+          var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px)
+        );
       }
       padding: 0;
       color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
