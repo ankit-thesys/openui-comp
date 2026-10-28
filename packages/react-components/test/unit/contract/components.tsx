@@ -1,6 +1,13 @@
 // Components converted to the flat styling convention, each rendered across every prop
 // combination through public exports. Add a component here when it leaves the allowlist.
-import { Button, IconButton } from "@openuidev/react-components";
+import {
+  Button,
+  IconButton,
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@openuidev/react-components";
 import type { ReactElement } from "react";
 import { readStableNames, type StableNames } from "../../../scripts/selector-reference.mjs";
 
@@ -11,6 +18,8 @@ export interface MigratedComponent {
   names: StableNames[];
   /** Elements covering every value of every prop that changes its classes. */
   elements: () => ReactElement[];
+  /** Stable classes that only render in the browser, such as parts shown after measuring. */
+  clientOnly?: string[];
 }
 
 // Stable names as the reference generator reads them: every style module in the folder or below.
@@ -71,5 +80,35 @@ export const migratedComponents: MigratedComponent[] = [
           aria-label="Action"
         />
       )),
+  },
+  {
+    folder: "Tabs",
+    names: namesOf("Tabs"),
+    // Scroll buttons appear only once the browser measures an overflowing list.
+    clientOnly: [
+      "openui-tabs-scroll-button-container-left",
+      "openui-tabs-scroll-button-container-right",
+      "openui-tabs-scroll-button",
+      "openui-tabs-scroll-left",
+      "openui-tabs-scroll-right",
+    ],
+    elements: () =>
+      (["title", "iconTitle", "iconTitleSubtext", "imageTitle", "imageTitleSubtext"] as const).map(
+        (variant) => (
+          <Tabs key={variant} defaultValue="first">
+            <TabsList variant={variant}>
+              <TabsTrigger
+                value="first"
+                text="Overview"
+                subtext="Details"
+                icon={<svg />}
+                image="image.png"
+              />
+              <TabsTrigger value="second" text="Activity" />
+            </TabsList>
+            <TabsContent value="first">Panel</TabsContent>
+          </Tabs>
+        ),
+      ),
   },
 ];

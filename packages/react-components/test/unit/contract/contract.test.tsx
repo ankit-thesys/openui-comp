@@ -8,7 +8,7 @@ import { classViolation, ruleViolation, rulesOf, selectorsOf } from "./checks";
 import { blocksIn, namesIn, renderAndCollect, stableClassesIn } from "./collect";
 import { migratedComponents } from "./components";
 
-describe.each(migratedComponents)("$folder", ({ names, elements }) => {
+describe.each(migratedComponents)("$folder", ({ names, elements, clientOnly = [] }) => {
   const { html, css } = renderAndCollect(elements());
   const layered = renderAndCollect(
     elements().map((element, key) => (
@@ -41,7 +41,8 @@ describe.each(migratedComponents)("$folder", ({ names, elements }) => {
   });
 
   it("renders exactly its documented stable classes", () => {
-    expect([...stableClassesIn(html)].sort()).toEqual([...namesIn(names)].sort());
+    const serverRendered = [...namesIn(names)].filter((name) => !clientOnly.includes(name));
+    expect([...stableClassesIn(html)].sort()).toEqual(serverRendered.sort());
   });
 
   it("puts every rule in the openui layer in layer mode, within the same budget", () => {

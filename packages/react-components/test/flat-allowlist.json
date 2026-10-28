@@ -86,7 +86,6 @@
   "src/components/SwitchItem/SwitchItem.tsx",
   "src/components/Table/scrollableTable.styles.ts",
   "src/components/Table/table.styles.ts",
-  "src/components/Tabs/tabs.styles.ts",
   "src/components/Tag/tag.styles.ts",
   "src/components/TagBlock/tagBlock.styles.ts",
   "src/components/TextArea/TextArea.tsx",

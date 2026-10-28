@@ -59,6 +59,16 @@ const measure = (root: Element, properties: string[]) => {
   root.querySelectorAll("[data-parity-part]").forEach((part) => {
     record(part, `${part.getAttribute("data-parity-part")}.`);
   });
+  // Parts the component renders itself, named by selector in the case's `data-parity-parts`
+  // JSON ({ "<part name>": "<selector within the case>" }); a part that is absent is skipped.
+  const named = JSON.parse(root.getAttribute("data-parity-parts") ?? "{}") as Record<
+    string,
+    string
+  >;
+  for (const [name, selector] of Object.entries(named)) {
+    const part = root.querySelector(selector);
+    if (part) record(part, `${name}.`);
+  }
   return out;
 };
 
