@@ -143,6 +143,10 @@ pnpm --filter @openuidev/react-components test:parity:baseline
 
 Commit the new baseline file. Recapture only when adding cases, never to absorb a regression.
 
+Playwright's setup also bundles every parity fixture against the #72 source, extracting it into
+`test/browser/.baseline/` first when missing (this needs full git history), because some specs
+(`card-blocks.parity-details.spec.ts`) compare live against those `-baseline` pages.
+
 ### Shared helpers (#90)
 
 `src/styles/base.ts` and `src/components/Skeleton/skeletonPulse.ts` are factories registered

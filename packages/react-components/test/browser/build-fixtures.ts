@@ -1,5 +1,6 @@
 // Bundles each fixture app against the built package, the way a consumer's bundler would.
 // Runs once as Playwright's global setup; `serve.mjs` serves the output.
+import { execFileSync } from "node:child_process";
 import { existsSync, rmSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { build } from "tsdown";
@@ -10,7 +11,7 @@ const baselineEntry = here("./.baseline/src/index.ts");
 const reactUi = here("../../../react-ui/dist/index.mjs");
 
 // Fixtures import the package under test as "openui-under-test". Parity fixtures also get a
-// "-baseline" bundle against the #72 source once `parity/extract-baseline.mjs` has run.
+// "-baseline" bundle against the #72 source, which `parity/extract-baseline.mjs` extracts.
 const fixtures = [
   "card-blocks",
   "parity-card-block-layout",
@@ -214,7 +215,18 @@ export default async function buildFixtures() {
   for (const pkg of ["react-components", "react-ui"] as const)
     for (const mode of ["light", "dark"] as const)
       writeFileSync(here(`./.fixtures/server/bench-${pkg}-${mode}.html`), serverPage(pkg, mode));
-  if (existsSync(baselineEntry)) {
-    await bundle(entries(parityFixtures, "-baseline"), baselineEntry, true);
+  // Specs such as card-blocks.parity-details compare live against the "-baseline" pages, so
+  // extract the #72 source when a fresh checkout has none.
+  if (!existsSync(baselineEntry)) {
+    try {
+      execFileSync("node", [here("./parity/extract-baseline.mjs")], { stdio: "inherit" });
+    } catch (error) {
+      throw new Error(
+        "Extract the #72 parity baseline first (needs full git history): " +
+          "node test/browser/parity/extract-baseline.mjs",
+        { cause: error },
+      );
+    }
   }
+  await bundle(entries(parityFixtures, "-baseline"), baselineEntry, true);
 }
