@@ -111,8 +111,7 @@ A rule of yours on a stable class, with the same state where you need one, there
 
 Load order: the token defaults' `@layer openui-defaults;` declaration comes first in `<head>`, then
 the library sheet, then your CSS. If you place `<style id="_goober">` yourself, the library reuses it
-where it is; keep it before your stylesheets and put a single space inside it (Goober writes into its
-text node and fails on an empty tag).
+where it is; keep it before your stylesheets.
 
 Your rule has to match the library's shape: a resting-state rule does not restyle `:hover`, and a
 rule in a named cascade layer loses to the unlayered library rules.
@@ -130,6 +129,50 @@ rule in a named cascade layer loses to the unlayered library rules.
 - Components that have not moved to the contract register their styles on import, behind a class on
   `<html>`, and keep the selectors documented under [Automatic styles](#automatic-styles). The
   package's `test/flat-allowlist.json` lists their modules; it must be empty before a stable release.
+
+### Cascade layer mode
+
+Component rules are unlayered by default. Apps that order their CSS with cascade
+layers, such as Tailwind 4, can put them in a layer instead:
+
+```tsx
+<ThemeProvider cssLayer="openui">{/* application */}</ThemeProvider>
+```
+
+Rules of components under the provider then sit in `@layer openui`, so any
+unlayered app CSS beats them, whatever its specificity or load order, and so do
+layers ordered after `openui`. Nested providers inherit `cssLayer` and can set
+their own. A value that is not a layer name (or a dotted path such as
+`app.openui`) is ignored, with a development warning. Components outside any provider stay unlayered, and so do components
+not yet converted to the flat convention (currently all but Button), under any
+provider. Each layer gets its own generated classes, so a component rendered both
+in and out of a layer registers its rules twice.
+
+The library declares no layer order. Put the order and an empty library sheet
+first in `<head>`, before any stylesheet, in this order:
+
+```html
+<style>@layer theme, base, openui, components, utilities;</style>
+<style id="_goober"> </style>
+```
+
+The library writes its rules into that `#_goober` tag instead of creating its
+own. With this recipe, Tailwind 4 utilities such as `bg-red-500` beat
+Button, and Tailwind's preflight in `base` does not reset it.
+
+Writing the same `@layer` statement only in the app's CSS file does not work.
+Layer priority follows where a layer first appears in the document, and the
+library sheet comes before the app's CSS, so `openui` ranks first: below
+Tailwind's `base`, whose preflight then clears Button's background, padding and
+radius.
+
+Without `cssLayer`, Tailwind 4 utilities lose to the unlayered component rules on
+the same element. Use the important modifier (`!bg-red-500`, or `bg-red-500!`) or
+target the stable class instead. In this default mode, Tailwind 3.4 and 4
+preflights leave components styled, but Tailwind 3.3 and earlier conflict: their
+preflight `[type='button'] { background-color: transparent }` clears button
+backgrounds. Tailwind 3 emits its preflight unlayered, so it beats layered rules:
+use layer mode with Tailwind 4, not Tailwind 3.
 
 ## Automatic styles
 
@@ -167,34 +210,16 @@ has not been certified.
 ### Stable selectors
 
 The selectors in this and the following sections belong to components that have
-not moved to the [styling contract](#styling-and-overrides) yet; Button and MarkDownRenderer have, and
-are documented in the [stable class reference](docs/reference/selectors.md).
-IconButton uses stable styling targets that register on import: a private
+not moved to the [styling contract](#styling-and-overrides) yet; Button, IconButton and
+MarkDownRenderer have, and are documented in the [stable class reference](docs/reference/selectors.md).
+The documented batches below use stable styling targets that register on import: a private
 generated class on `html` is contained in `:where(...:root)` and adds zero
-specificity. Consumers do not use that class. The documented batches below share this mechanism;
-EditableTable retains its existing selectors. Chart-owned targets are documented
-in the Charts section below.
-
-| Target | IconButton |
-| --- | --- |
-| Root | `.openui-icon-button-root` |
-| Preserved root alias | `.openui-icon-button` |
-| Variant | `.openui-icon-button-primary` (also secondary/tertiary) |
-| Destructive variant | `.openui-icon-button-destructive-primary` (also secondary/tertiary) |
-| Size | `.openui-icon-button-{3-extra-small,2-extra-small,extra-small,small,medium,large}` |
-| Shape | `.openui-icon-button-square`, `.openui-icon-button-circle` |
-| State | `:hover:not(:disabled)`, `:active:not(:disabled)`, `:disabled` |
-| Owned part | `.openui-icon-button-icon` (existing span) |
+specificity. Consumers do not use that class. EditableTable retains its existing selectors.
+Chart-owned targets are documented in the Charts section below.
 
 Use ordinary **later, unlayered CSS** with the corresponding selector. Root rules
 have one class of specificity; variants, sizes, states and parts retain their
-additional selectors. For example:
-
-```css
-.openui-icon-button-root { border-width: 2px; }
-.openui-icon-button-root.openui-icon-button-primary { background: navy; }
-.openui-icon-button-root .openui-icon-button-icon { gap: 4px; }
-```
+additional selectors.
 
 No `!important` is required for these matching overrides. This does not promise
 that earlier CSS, a root-only selector against a variant rule, or normal CSS in a
@@ -386,9 +411,7 @@ const page = `<!doctype html>
 - The page is styled before JavaScript runs, and app CSS after the sheet overrides converted
   components' equal-weight rules.
 - Keep the `_goober` id: the browser adopts that element instead of injecting a second sheet.
-- Inline the returned string as is. It is never empty, because the browser writes into the
-  element's first text node and an empty `<style id="_goober"></style>` breaks the first style
-  registration.
+- Inline the returned string as is.
 - Every call returns the full sheet collected so far, so concurrent requests cannot take each
   other's rules. The sheet is cumulative for the life of the process: a response may carry rules
   for components another request rendered, which is harmless.
@@ -629,6 +652,13 @@ Renamed stable classes and props, per component converted to the flat convention
 | Button | `buttonType="destructive"` prop | `tone="destructive"`; emits `.openui-button--tone-destructive` |
 | Button | `.openui-button-base-destructive-{primary,secondary,tertiary}` | `.openui-button--tone-destructive` with `.openui-button--variant-{…}` |
 | Button | Icons as direct children | Each icon wrapped in `.openui-button-icon` |
+| IconButton | `.openui-icon-button-root` | `.openui-icon-button` |
+| IconButton | `.openui-icon-button-{primary,secondary,tertiary}` | `.openui-icon-button--variant-{primary,secondary,tertiary}` |
+| IconButton | `.openui-icon-button-{3-extra-small,2-extra-small,extra-small,small,medium,large}` | `.openui-icon-button--size-{3-extra-small,2-extra-small,extra-small,small,medium,large}` |
+| IconButton | `.openui-icon-button-{square,circle}` | `.openui-icon-button--shape-{square,circle}` |
+| IconButton | `appearance="normal"` prop | `tone="default"` (the default); emits `.openui-icon-button--tone-default` |
+| IconButton | `appearance="destructive"` prop | `tone="destructive"`; emits `.openui-icon-button--tone-destructive` |
+| IconButton | `.openui-icon-button-destructive-{primary,secondary,tertiary}` | `.openui-icon-button--tone-destructive` with `.openui-icon-button--variant-{…}` |
 | MarkDownRenderer | `.openui-mark-down-renderer-markdown-root` | `.openui-markdown-renderer` |
 | MarkDownRenderer | `.openui-mark-down-renderer-markdown-code` | `.openui-markdown-renderer-code` |
 | MarkDownRenderer | `.openui-mark-down-renderer-markdown-link` | `.openui-markdown-renderer-link` |

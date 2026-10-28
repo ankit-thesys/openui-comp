@@ -45,7 +45,6 @@
   "src/components/EntityList/entityList.styles.ts",
   "src/components/FormControl/FormControl.tsx",
   "src/components/FormControl/Hint/Hint.tsx",
-  "src/components/IconButton/IconButton.tsx",
   "src/components/IconTag/iconTag.styles.ts",
   "src/components/IconText/iconText.styles.ts",
   "src/components/Image/image.styles.ts",

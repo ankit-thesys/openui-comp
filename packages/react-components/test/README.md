@@ -29,22 +29,34 @@ pnpm --filter @openuidev/react-components exec playwright install chromium
 pnpm --filter @openuidev/react-components test:browser
 ```
 
-To add a browser test, add a fixture that imports `openui-under-test` (aliased to the built package), add it to `fixtures` in `build-fixtures.ts`, and open `/<name>.html` from the spec. `/<name>.html?css=<text>` puts a consumer stylesheet in the static `<head>`, loaded before the fixture script.
+To add a browser test, add a fixture that imports `openui-under-test` (aliased to the built package), add it to `fixtures` in `build-fixtures.ts`, and open `/<name>.html` from the spec. Query parameters build the static `<head>`, all loaded before the fixture script:
+
+- `?css=<text>` adds a consumer stylesheet.
+- `?sheet=<name>` links `fixtures/<name>.css`.
+- `?recipe=<layer order>` starts `<head>` with the layer-mode recipe: `<style>@layer <layer order>;</style><style id="_goober"> </style>`.
+
+`fixtures/tailwind4.css` is unmodified Tailwind 4.1.11 CLI output (`@import "tailwindcss"` with `bg-red-500` and `!bg-red-500` as the only sources), checked in so the tests need no Tailwind dependency. Regenerate it the same way if the tests need more utilities.
 
 ## Styling contract
 
 `test/unit/contract/` enforces the styling contract (README, "Styling and overrides") at the Node seam.
 
 - `components.tsx` lists every migrated component with elements covering every value of every
-  prop that changes its classes. `contract.test.tsx` server-renders them through public exports,
-  collects the CSS registered while rendering (`collect.ts`, which reads Goober's server sheet until
-  the package exposes `getComponentStyles()`), and checks:
+  prop that changes its classes. Each component has its own `<Folder>.contract.test.tsx`, which calls
+  `describeContract(folder)` from `defineContract.tsx`. One file per component gives each a fresh
+  module graph, so a component's CSS is never already registered by another that renders it.
+  `coverage.test.ts` fails if an entry has no file. The contract test server-renders the entry through public exports,
+  collects the CSS registered while rendering (`collect.ts`: what the render added to the public
+  `getComponentStyles()` sheet), and checks:
   - every selector is one generated class, optionally with one state, a sibling pair
-    (`.go1 + .go1`) or a zero-weight `:where(.go1) <type selectors>` rule;
+    (`.go1 + .go1`) or a zero-weight `:where(.go1) <type selectors>` rule, and no rule is layered;
+  - the same elements rendered under `<ThemeProvider cssLayer="openui">` put every rule in
+    `@layer openui` (no unlayered rule, no other or nested layer), within the same budget and
+    with the same selector shapes;
   - every rendered `openui-*` class matches `openui-<block>[--<prop>-<value>]`, a modifier attaches
     to a documented root or part, and the rendered classes equal the component's `names`.
-- `checks.ts` holds the selector and class grammar; `checks.test.ts` feeds it deliberately broken
-  selectors and names so a passing contract test means something.
+- `checks.ts` holds the selector, layer and class grammar; `checks.test.ts` feeds it deliberately
+  broken selectors, layered rules and names so a passing contract test means something.
 - `reference.test.ts` fails when `docs/reference/selectors.md` differs from what
   `scripts/selector-reference.mjs` generates from the built `names`. Regenerate it after a build:
 
@@ -58,9 +70,10 @@ pnpm --filter @openuidev/react-components docs:selectors
 themselves and register CSS on import. `allowlist.test.ts` fails if a module that imports Goober is
 missing from it, if a listed module no longer imports Goober (or no longer exists), or if a
 component that exports `names` is missing from `components.tsx`. `src/styles/defaults.ts` (theme
-token defaults) and `src/styles/useStyles.ts` are exempt.
+token defaults), `src/styles/useStyles.ts` and `src/utils/componentStyles.ts` are exempt.
 
-When you convert a component: remove its modules from the allowlist, add it to `components.tsx`,
+When you convert a component: remove its modules from the allowlist, add it to `components.tsx`
+and add a one-line `<Folder>.contract.test.tsx`,
 regenerate the reference, and add a parity spec. The list must be empty before a stable release.
 
 ## Parity with #72

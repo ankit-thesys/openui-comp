@@ -12,11 +12,11 @@ const allowlist: string[] = JSON.parse(
   readFileSync(new URL("../../flat-allowlist.json", import.meta.url), "utf8"),
 );
 
-// Modules that register CSS by design and never migrate.
+// Modules that use Goober by design and never migrate.
 const EXEMPT = new Set([
   "src/styles/defaults.ts", // theme token defaults on <html> (ADR 0001, Q5)
   "src/styles/useStyles.ts", // the hook that hands Goober's css to migrated components
-  "src/utils/componentStyles.ts", // reads Goober's server sheet for getComponentStyles(); registers nothing
+  "src/utils/componentStyles.ts", // getComponentStyles(): reads the sheet, registers nothing
 ]);
 
 const sourceFiles = (dir: string): string[] =>

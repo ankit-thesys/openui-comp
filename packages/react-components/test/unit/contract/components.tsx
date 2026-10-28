@@ -3,6 +3,7 @@
 import {
   Button,
   CodeBlock,
+  IconButton,
   MarkDownRenderer,
   Table,
   TableBody,
@@ -46,34 +47,38 @@ const product = <T,>(...lists: T[][]): T[][] =>
 export const migratedComponents: MigratedComponent[] = [
   {
     folder: "MarkDownRenderer",
-    names: [
-      ...namesOf("MarkDownRenderer"),
-      // Account for composed, still-allowlisted Table/CodeBlock parts separately from markdown
-      // names. Read their classes through public exports so their own migrations can rename them.
-      Object.fromEntries(
-        [
-          ...stableClassesIn(
-            renderToString(
-              <>
-                <CodeBlock language="text" codeString="Code" syntaxHighlighterClassName="" />
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead>Head</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    <TableRow>
-                      <TableCell>Cell</TableCell>
-                    </TableRow>
-                  </TableBody>
-                </Table>
-              </>,
+    // A getter, read only after the contract test has collected MarkDownRenderer's CSS: rendering
+    // CodeBlock here at import would register IconButton's CSS (the copy button) too early.
+    get names() {
+      return [
+        ...namesOf("MarkDownRenderer"),
+        // Account for composed, still-allowlisted Table/CodeBlock parts separately from markdown
+        // names. Read their classes through public exports so their own migrations can rename them.
+        Object.fromEntries(
+          [
+            ...stableClassesIn(
+              renderToString(
+                <>
+                  <CodeBlock language="text" codeString="Code" syntaxHighlighterClassName="" />
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Head</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>Cell</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </>,
+              ),
             ),
-          ),
-        ].map((name, index) => [`dependency${index}`, name]),
-      ),
-    ],
+          ].map((name, index) => [`dependency${index}`, name]),
+        ),
+      ];
+    },
     elements: () =>
       ["clear", "card", "sunk"].map((variant) => (
         <MarkDownRenderer
@@ -104,6 +109,27 @@ export const migratedComponents: MigratedComponent[] = [
         >
           Label
         </Button>
+      )),
+  },
+  {
+    folder: "IconButton",
+    names: namesOf("IconButton"),
+    elements: () =>
+      product<string>(
+        ["primary", "secondary", "tertiary"],
+        ["3-extra-small", "2-extra-small", "extra-small", "small", "medium", "large"],
+        ["square", "circle"],
+        ["default", "destructive"],
+      ).map(([variant, size, shape, tone]) => (
+        <IconButton
+          key={`${variant}-${size}-${shape}-${tone}`}
+          variant={variant as "primary"}
+          size={size as "small"}
+          shape={shape as "square"}
+          tone={tone as "default"}
+          icon={<svg />}
+          aria-label="Action"
+        />
       )),
   },
 ];
