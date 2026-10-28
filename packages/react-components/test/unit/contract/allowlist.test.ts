@@ -48,9 +48,13 @@ describe("flat-styles migration allowlist", () => {
   });
 
   it("checks every component that exports stable names in the contract test", () => {
-    const withNames = files
-      .filter((file) => /^export const names\b/m.test(read(file)))
-      .map((file) => file.split("/")[2]);
+    const withNames = [
+      ...new Set(
+        files
+          .filter((file) => /^export const names\b/m.test(read(file)))
+          .map((file) => file.split("/")[2]),
+      ),
+    ];
     expect(withNames.sort()).toEqual(migratedComponents.map(({ folder }) => folder).sort());
   });
 });

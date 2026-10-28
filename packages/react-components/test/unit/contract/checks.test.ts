@@ -93,6 +93,7 @@ describe("selectorViolation", () => {
     ".go1[data-highlighted]",
     ".go1[aria-selected=true]",
     ".go1::before",
+    ".go1::-webkit-scrollbar",
     ".go1+.go1",
     ".go1 + .go1",
     ":where(.go1) svg",

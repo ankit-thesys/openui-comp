@@ -46,7 +46,10 @@ export function renderSelectorReference(entries) {
   for (const { component } of entries)
     perFolder.set(component, (perFolder.get(component) ?? 0) + 1);
   const sections = entries.map(({ component, module, names }) => {
-    const heading = perFolder.get(component) > 1 ? `${component} (${module})` : component;
+    // A folder with several style modules gets one section per module, named by its component.
+    const member = module.charAt(0).toUpperCase() + module.slice(1);
+    const heading =
+      perFolder.get(component) > 1 && member !== component ? `${component} (${member})` : component;
     const rows = [];
     for (const [key, value] of Object.entries(names)) {
       if (typeof value === "string") {
@@ -62,7 +65,7 @@ export function renderSelectorReference(entries) {
       }
     }
     return [
-      `## ${component}`,
+      `## ${heading}`,
       "",
       "| Stable class | Kind | Present when |",
       "| --- | --- | --- |",

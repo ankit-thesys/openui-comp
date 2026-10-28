@@ -97,6 +97,10 @@ to a stable class to restyle it:
 
 Library rules for these components weigh one generated class, plus at most one state. Content the
 library does not render itself (your children, icons inside an icon part) is styled at zero weight.
+Markdown prose (paragraphs, headings, lists, quotes, rules and strong text) also uses zero-weight
+root scoping: `.openui-markdown-renderer p { color: navy; }` overrides paragraph colour. Code,
+links, code-block roots, tables and table containers have the stable classes in the reference.
+`MarkDownRenderer` defaults to `variant="clear"` and always emits its variant modifier.
 A rule of yours on a stable class, with the same state where you need one, therefore wins:
 
 - whether your CSS loads before or after the library, because the library's `<style id="_goober">`
@@ -114,8 +118,16 @@ rule in a named cascade layer loses to the unlayered library rules.
 
 ### Exceptions
 
-- A few `!important` declarations remain, in MarkDownRenderer, the listed sources view, CodeBlock and
-  SliderBlock, where they override inline styles from third-party renderers.
+- MarkDownRenderer retains four `!important` declarations on its third-party syntax-highlighter
+  output: `padding: 25px`, `margin-top: 8px`, `margin-bottom: 8px`, and `margin-bottom: 0` on its
+  last child. These declarations are exceptions to ordinary consumer overrides. The never-matching
+  first-child `margin-top: 0 !important` rule has been removed (the copy button precedes the
+  highlighter).
+- The listed sources view, standalone CodeBlock and SliderBlock also retain their existing
+  `!important` declarations. Syntax-highlighter theme maps and token output keep their third-party
+  inline styles; use the code-block root class to restyle the block around that output.
+- The Tabs indicator's width and position are set inline as the active tab changes, so they are
+  not overridable; its colour and height are, through `.openui-tabs-indicator`.
 - Components that have not moved to the contract register their styles on import, behind a class on
   `<html>`, and keep the selectors documented under [Automatic styles](#automatic-styles). The
   package's `test/flat-allowlist.json` lists their modules; it must be empty before a stable release.
@@ -200,34 +212,16 @@ has not been certified.
 ### Stable selectors
 
 The selectors in this and the following sections belong to components that have
-not moved to the [styling contract](#styling-and-overrides) yet; Button has, and
-is documented in the [stable class reference](docs/reference/selectors.md).
-IconButton uses stable styling targets that register on import: a private
+not moved to the [styling contract](#styling-and-overrides) yet; Button, IconButton and
+MarkDownRenderer have, and are documented in the [stable class reference](docs/reference/selectors.md).
+The documented batches below use stable styling targets that register on import: a private
 generated class on `html` is contained in `:where(...:root)` and adds zero
-specificity. Consumers do not use that class. The documented batches below share this mechanism;
-EditableTable retains its existing selectors. Chart-owned targets are documented
-in the Charts section below.
-
-| Target | IconButton |
-| --- | --- |
-| Root | `.openui-icon-button-root` |
-| Preserved root alias | `.openui-icon-button` |
-| Variant | `.openui-icon-button-primary` (also secondary/tertiary) |
-| Destructive variant | `.openui-icon-button-destructive-primary` (also secondary/tertiary) |
-| Size | `.openui-icon-button-{3-extra-small,2-extra-small,extra-small,small,medium,large}` |
-| Shape | `.openui-icon-button-square`, `.openui-icon-button-circle` |
-| State | `:hover:not(:disabled)`, `:active:not(:disabled)`, `:disabled` |
-| Owned part | `.openui-icon-button-icon` (existing span) |
+specificity. Consumers do not use that class. EditableTable retains its existing selectors.
+Chart-owned targets are documented in the Charts section below.
 
 Use ordinary **later, unlayered CSS** with the corresponding selector. Root rules
 have one class of specificity; variants, sizes, states and parts retain their
-additional selectors. For example:
-
-```css
-.openui-icon-button-root { border-width: 2px; }
-.openui-icon-button-root.openui-icon-button-primary { background: navy; }
-.openui-icon-button-root .openui-icon-button-icon { gap: 4px; }
-```
+additional selectors.
 
 No `!important` is required for these matching overrides. This does not promise
 that earlier CSS, a root-only selector against a variant rule, or normal CSS in a
@@ -334,7 +328,6 @@ The private document guard contributes no specificity.
 | TextCallout | `.openui-text-callout-root`, `.openui-text-callout-variant-neutral`, `.openui-text-callout-variant-info`, `.openui-text-callout-variant-warning`, `.openui-text-callout-variant-success`, `.openui-text-callout-variant-danger`, `.openui-text-callout-content-styled`, `.openui-text-callout-title`, `.openui-text-callout-description` |
 | MetricIndicator | `.openui-metric-indicator-root` |
 | CodeBlock | `.openui-code-block-root` |
-| MarkDownRenderer | `.openui-mark-down-renderer-markdown-code`, `.openui-mark-down-renderer-markdown-link`, `.openui-mark-down-renderer-markdown-root` |
 | InlineMarkdownRenderer | `.openui-inline-markdown-renderer-inline-markdown-root` |
 | ImageBlock | `.openui-image-block-wrapper-styled`, `.openui-image-block-wrapper-mobile`, `.openui-image-block-error`, `.openui-image-block-image-styled`, `.openui-image-block-image-mobile`, `.openui-image-block-loader-styled` |
 | ImageText | `.openui-image-text-root`, `.openui-image-text-image-container`, `.openui-image-text-image`, `.openui-image-text-layout-vertical`, `.openui-image-text-layout-horizontal`, `.openui-image-text-content` |
@@ -356,7 +349,6 @@ The private document guard contributes no specificity.
 | VisualCardBlock | `.openui-visual-card-block-card-clickable`, `.openui-visual-card-block-card-root` |
 | _shared/cards | `.openui-card-layout-scrollbar`, `.openui-card-layout-layout-small`, `.openui-card-layout-layout-medium` |
 | Accordion | `.openui-accordion-root` |
-| Tabs | `.openui-tabs-tabs`, `.openui-tabs-container`, `.openui-tabs-list-styled`, `.openui-tabs-trigger-styled`, `.openui-tabs-content-styled` |
 | Steps | `.openui-steps-root`, `.openui-steps-item` |
 | SectionBlock | `.openui-section-block-foldable-section-root`, `.openui-section-block-foldable-section-item`, `.openui-section-block-foldable-section-header`, `.openui-section-block-foldable-section-trigger`, `.openui-section-block-foldable-section-content`, `.openui-section-block-section-v2-root` |
 | Carousel | `.openui-carousel-carousel`, `.openui-carousel-content-styled`, `.openui-carousel-item-styled`, `.openui-carousel-button-styled` |
@@ -372,7 +364,7 @@ not beat those declarations, even when the same element also has Carousel's
 canonical item class. Use existing props/theme customization or intentionally
 important CSS where appropriate; this is not an ordinary-override pass.
 
-Clear Tabs overrides need its root, clear-state and relevant part context. Dark
+Dark
 Markdown descendant selectors retain their existing compound context. Vendor
 inline syntax themes, floating coordinates, live loader opacity and private
 keyframe identifiers keep their existing precedence and behavior.
@@ -653,14 +645,41 @@ Renamed stable classes and props, per component converted to the flat convention
 
 | Component | `@openuidev/react-ui` | `@openuidev/react-components` |
 | --- | --- | --- |
-| Button | `.openui-button-root` | `.openui-button` |
-| Button | `.openui-button-base` | Removed; use `.openui-button` |
+| Button | `.openui-button-base` (root) | `.openui-button` |
 | Button | `.openui-button-base-{primary,secondary,tertiary}` | `.openui-button--variant-{primary,secondary,tertiary}` |
 | Button | `.openui-button-base-{extra-small,small,medium,large}` | `.openui-button--size-{extra-small,small,medium,large}` |
 | Button | `buttonType="normal"` prop | `tone="default"` (the default); emits `.openui-button--tone-default` |
 | Button | `buttonType="destructive"` prop | `tone="destructive"`; emits `.openui-button--tone-destructive` |
 | Button | `.openui-button-base-destructive-{primary,secondary,tertiary}` | `.openui-button--tone-destructive` with `.openui-button--variant-{…}` |
 | Button | Icons as direct children | Each icon wrapped in `.openui-button-icon` |
+| IconButton | `.openui-icon-button` (root) | `.openui-icon-button` (unchanged; now the only root class) |
+| IconButton | `.openui-icon-button-icon` | `.openui-icon-button-icon` (unchanged) |
+| IconButton | `.openui-icon-button-{primary,secondary,tertiary}` | `.openui-icon-button--variant-{primary,secondary,tertiary}` |
+| IconButton | `.openui-icon-button-{3-extra-small,2-extra-small,extra-small,small,medium,large}` | `.openui-icon-button--size-{3-extra-small,2-extra-small,extra-small,small,medium,large}` |
+| IconButton | `.openui-icon-button-{square,circle}` | `.openui-icon-button--shape-{square,circle}` |
+| IconButton | `appearance="normal"` prop | `tone="default"` (the default); emits `.openui-icon-button--tone-default` |
+| IconButton | `appearance="destructive"` prop | `tone="destructive"`; emits `.openui-icon-button--tone-destructive` |
+| IconButton | `.openui-icon-button-destructive-{primary,secondary,tertiary}` | `.openui-icon-button--tone-destructive` with `.openui-icon-button--variant-{…}` |
+| Tabs | `.openui-tabs-tabs` | Removed; use `.openui-tabs` |
+| Tabs | `.openui-tabs-clear` | `.openui-tabs--variant-clear` |
+| Tabs | `.openui-tabs-container` | `.openui-tabs-list-container` (the wrapper around the tablist) |
+| Tabs | `.openui-tabs-list-styled` | Removed; use `.openui-tabs-list` (the tablist) |
+| Tabs | `.openui-tabs-list--{title,icon-title,icon-title-subtext,image-title,image-title-subtext}` | `.openui-tabs-list--variant-{title,icon-title,icon-title-subtext,image-title,image-title-subtext}` |
+| Tabs | `.openui-tabs-trigger-styled` | Removed; use `.openui-tabs-trigger` |
+| Tabs | `.openui-tabs-content-styled` | Removed; use `.openui-tabs-content` |
+| Tabs | `.openui-tabs-clear .openui-tabs-trigger`, `.openui-tabs-list--… .openui-tabs-trigger-icon` and other context selectors | The single class of the element, such as `.openui-tabs-trigger` or `.openui-tabs-trigger-icon` |
+| MarkDownRenderer | `.openui-mark-down-renderer-markdown-root` | `.openui-markdown-renderer` |
+| MarkDownRenderer | `.openui-mark-down-renderer-markdown-code` | `.openui-markdown-renderer-code` |
+| MarkDownRenderer | `.openui-mark-down-renderer-markdown-link` | `.openui-markdown-renderer-link` |
+| MarkDownRenderer | `.openui-markdown-renderer-card` | `.openui-markdown-renderer--variant-card` |
+| MarkDownRenderer | `.openui-markdown-renderer-card-sunk` | `.openui-markdown-renderer--variant-sunk` |
+| MarkDownRenderer | No default `variant`, no clear modifier | `variant="clear"` by default; always emits `.openui-markdown-renderer--variant-clear` |
+| MarkDownRenderer | Shared `.openui-code-block-wrapper` | Also carries `.openui-markdown-renderer-code-block`; standalone CodeBlock defaults are unchanged |
+| MarkDownRenderer | `.openui-code-block-syntax-highlighter` inside markdown | Removed inside markdown; target `.openui-markdown-renderer-code-block` for the owned root around third-party output. Standalone CodeBlock keeps the old class. |
+| MarkDownRenderer | Shared `.openui-table` / `.openui-table-container` | Also carry `.openui-markdown-renderer-table` / `.openui-markdown-renderer-table-container` |
+
+Pre-release `@openuidev/react-components` betas also emitted `.openui-button-root` and
+`.openui-icon-button-root`; use `.openui-button` and `.openui-icon-button` instead.
 
 ## Beta import migration
 

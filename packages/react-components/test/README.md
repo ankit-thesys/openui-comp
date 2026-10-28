@@ -58,18 +58,28 @@ override and Tailwind cases.
   `test/unit/contract/components.tsx` elements and stable classes; the `elements` fixture renders
   them client-side. A component joins these benches when it joins that list.
   - `bench.overrides`: consumer CSS on every stable class, loaded before or after the library, beats
-    it on every element carrying the class (the lab's nested-vs-flat bench).
-  - `bench.tailwind`: Tailwind 3.3, 3.4 and 4.1 preflights leave every stable-class element's
-    computed style unchanged (a zero-width border's style and colour are ignored, being invisible),
-    and pin the known conflict: 3.3 clears the background of `button[type=button]`, 3.4 and 4.1 do
-    not.
+    it on every element carrying the class (the lab's nested-vs-flat bench). As the README's
+    contract says, the consumer rule adds the same state where the library styles one, such as an
+    active Tabs trigger's `[data-state="active"]`; the bench reads those states from the library
+    rules that match each element. Classes listed as `clientOnly` that the fixture does not render
+    (Tabs' scroll buttons) are skipped.
+  - `bench.tailwind`: with Tailwind 3.3, 3.4 or 4.1 loaded, every property a library rule declares on
+    a stable-class element keeps its computed value (percentage sizes compare as declared, since
+    they resolve against page layout). Properties the library leaves to the page are Tailwind's to
+    reset. It pins the known conflict: 3.3 clears the background of `button[type=button]`, 3.4 and
+    4.1 do not. MarkDownRenderer under Tailwind 3 is an expected failure (`test.fail`): its link and
+    inline-code typography sit at prose weight, which Tailwind 3's unlayered preflight ties and
+    beats.
 
 ## Styling contract
 
 `test/unit/contract/` enforces the styling contract (README, "Styling and overrides") at the Node seam.
 
 - `components.tsx` lists every migrated component with elements covering every value of every
-  prop that changes its classes. `contract.test.tsx` server-renders them through public exports,
+  prop that changes its classes. Each component has its own `<Folder>.contract.test.tsx`, which calls
+  `describeContract(folder)` from `defineContract.tsx`. One file per component gives each a fresh
+  module graph, so a component's CSS is never already registered by another that renders it.
+  `coverage.test.ts` fails if an entry has no file. The contract test server-renders the entry through public exports,
   collects the CSS registered while rendering (`collect.ts`: what the render added to the public
   `getComponentStyles()` sheet), and checks:
   - every selector is one generated class, optionally with one state, a sibling pair
@@ -96,14 +106,16 @@ missing from it, if a listed module no longer imports Goober (or no longer exist
 component that exports `names` is missing from `components.tsx`. `src/styles/defaults.ts` (theme
 token defaults), `src/styles/useStyles.ts` and `src/utils/componentStyles.ts` are exempt.
 
-When you convert a component: remove its modules from the allowlist, add it to `components.tsx`,
+When you convert a component: remove its modules from the allowlist, add it to `components.tsx`
+and add a one-line `<Folder>.contract.test.tsx`,
 regenerate the reference, and add a parity spec. The list must be empty before a stable release.
 
 ## Parity with #72
 
 Converted components must render exactly as they did before the flat-styles pilot. A parity spec
 (`<component>.parity.spec.ts`) snapshots computed styles of every `[data-parity-case]` element in
-a `parity-<component>` fixture, plus its `[data-parity-part]` children, at rest, hovered and pressed,
+a `parity-<component>` fixture, plus its `[data-parity-part]` children and any parts named by
+selector in the case's `data-parity-parts` JSON (for parts the component renders itself), at rest, hovered and pressed,
 in light and dark. It compares them with `parity/baselines/<component>.json`, captured from the
 source at #72's head (`5e09b37c`). A case's id names its props, so a component with renamed props
 renders the same cases from both sources: `__PARITY_BASELINE__` is `true` in the baseline bundle.
@@ -112,7 +124,8 @@ Pass design changes that are meant to differ to `checkParity(page, name, intenti
 `"<snapshot key> <property>"` entries and list them in the PR.
 
 To add a component: write `fixtures/parity-<component>.tsx`, add it to `fixtures` in
-`build-fixtures.ts`, add a spec calling `checkParity(page, "<component>")`, then capture its
+`build-fixtures.ts`, add a spec titled `"<Component> matches the #72 computed styles"` calling
+`checkParity(page, "<component>")` (the capture script selects specs by that title), then capture its
 baseline (this extracts the #72 source into `test/browser/.baseline/`, gitignored):
 
 ```bash
@@ -120,6 +133,21 @@ pnpm --filter @openuidev/react-components test:parity:baseline
 ```
 
 Commit the new baseline file. Recapture only when adding cases, never to absorb a regression.
+
+## Review screenshots
+
+`screenshots.spec.ts` saves a full-page PNG of every parity fixture, in light and dark, to
+`test/browser/.screenshots/` (gitignored) for attaching to a pull request. It is skipped unless
+`OPENUI_SCREENSHOTS=1`, so CI never runs it:
+
+```bash
+pnpm --filter @openuidev/react-components test:screenshots
+```
+
+It finds fixtures by their `fixtures/parity-*.tsx` file name, so a new component's parity fixture
+is included once it is in `fixtures` in `build-fixtures.ts`. The capture adds a presentation-only
+stylesheet that wraps the cases into rows and paints the page with the theme background; components
+are not restyled.
 
 ## CI
 

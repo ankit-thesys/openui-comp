@@ -22,3 +22,81 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-button--size-large` | Modifier | `size="large"` |
 | `.openui-button--tone-default` | Modifier | `tone="default"` |
 | `.openui-button--tone-destructive` | Modifier | `tone="destructive"` |
+
+## IconButton
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-icon-button` | Root | Always |
+| `.openui-icon-button-icon` | Part (`icon`) | On that part, whenever it renders |
+| `.openui-icon-button--variant-primary` | Modifier | `variant="primary"` |
+| `.openui-icon-button--variant-secondary` | Modifier | `variant="secondary"` |
+| `.openui-icon-button--variant-tertiary` | Modifier | `variant="tertiary"` |
+| `.openui-icon-button--size-3-extra-small` | Modifier | `size="3-extra-small"` |
+| `.openui-icon-button--size-2-extra-small` | Modifier | `size="2-extra-small"` |
+| `.openui-icon-button--size-extra-small` | Modifier | `size="extra-small"` |
+| `.openui-icon-button--size-small` | Modifier | `size="small"` |
+| `.openui-icon-button--size-medium` | Modifier | `size="medium"` |
+| `.openui-icon-button--size-large` | Modifier | `size="large"` |
+| `.openui-icon-button--shape-square` | Modifier | `shape="square"` |
+| `.openui-icon-button--shape-circle` | Modifier | `shape="circle"` |
+| `.openui-icon-button--tone-default` | Modifier | `tone="default"` |
+| `.openui-icon-button--tone-destructive` | Modifier | `tone="destructive"` |
+
+## MarkDownRenderer
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-markdown-renderer` | Root | Always |
+| `.openui-markdown-renderer-code` | Part (`code`) | On that part, whenever it renders |
+| `.openui-markdown-renderer-link` | Part (`link`) | On that part, whenever it renders |
+| `.openui-markdown-renderer-code-block` | Part (`codeBlock`) | On that part, whenever it renders |
+| `.openui-markdown-renderer-table` | Part (`table`) | On that part, whenever it renders |
+| `.openui-markdown-renderer-table-container` | Part (`tableContainer`) | On that part, whenever it renders |
+| `.openui-markdown-renderer--variant-clear` | Modifier | `variant="clear"` |
+| `.openui-markdown-renderer--variant-card` | Modifier | `variant="card"` |
+| `.openui-markdown-renderer--variant-sunk` | Modifier | `variant="sunk"` |
+
+## Tabs
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-tabs` | Root | Always |
+| `.openui-tabs--variant-clear` | Modifier | `variant="clear"` |
+
+## Tabs (TabsContent)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-tabs-content` | Root | Always |
+| `.openui-tabs-content-inner` | Part (`inner`) | On that part, whenever it renders |
+
+## Tabs (TabsList)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-tabs-list` | Root | Always |
+| `.openui-tabs-list-container` | Part (`container`) | On that part, whenever it renders |
+| `.openui-tabs-indicator` | Part (`indicator`) | On that part, whenever it renders |
+| `.openui-tabs-scroll-button-container-left` | Part (`scrollButtonContainerLeft`) | On that part, whenever it renders |
+| `.openui-tabs-scroll-button-container-right` | Part (`scrollButtonContainerRight`) | On that part, whenever it renders |
+| `.openui-tabs-scroll-button` | Part (`scrollButton`) | On that part, whenever it renders |
+| `.openui-tabs-scroll-left` | Part (`scrollLeft`) | On that part, whenever it renders |
+| `.openui-tabs-scroll-right` | Part (`scrollRight`) | On that part, whenever it renders |
+| `.openui-tabs-list--variant-title` | Modifier | `variant="title"` |
+| `.openui-tabs-list--variant-icon-title` | Modifier | `variant="iconTitle"` |
+| `.openui-tabs-list--variant-icon-title-subtext` | Modifier | `variant="iconTitleSubtext"` |
+| `.openui-tabs-list--variant-image-title` | Modifier | `variant="imageTitle"` |
+| `.openui-tabs-list--variant-image-title-subtext` | Modifier | `variant="imageTitleSubtext"` |
+
+## Tabs (TabsTrigger)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-tabs-trigger` | Root | Always |
+| `.openui-tabs-trigger-image` | Part (`image`) | On that part, whenever it renders |
+| `.openui-tabs-trigger-img` | Part (`img`) | On that part, whenever it renders |
+| `.openui-tabs-trigger-icon` | Part (`icon`) | On that part, whenever it renders |
+| `.openui-tabs-trigger-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-tabs-trigger-text` | Part (`text`) | On that part, whenever it renders |
+| `.openui-tabs-trigger-subtext` | Part (`subtext`) | On that part, whenever it renders |

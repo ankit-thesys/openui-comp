@@ -1,4 +1,4 @@
-import { css } from "goober";
+import type { StyleCss } from "../../styles/useStyles";
 const primary = "var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))";
 const body = `
   font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
@@ -14,49 +14,92 @@ const heading = `
   font: var(--openui-text-heading-xs, 600 16px/1.25 "Inter", sans-serif);
   letter-spacing: var(--openui-text-heading-xs-letter-spacing, -0.01em);
 `;
-export const codeClass = "openui-mark-down-renderer-markdown-code";
-export const linkClass = "openui-mark-down-renderer-markdown-link";
-export const rootClass = "openui-mark-down-renderer-markdown-root";
+/** Stable classes for markdown's root and renderer-owned replacements. */
+export const names = {
+  root: "openui-markdown-renderer",
+  code: "openui-markdown-renderer-code",
+  link: "openui-markdown-renderer-link",
+  codeBlock: "openui-markdown-renderer-code-block",
+  table: "openui-markdown-renderer-table",
+  tableContainer: "openui-markdown-renderer-table-container",
+  variant: {
+    clear: "openui-markdown-renderer--variant-clear",
+    card: "openui-markdown-renderer--variant-card",
+    sunk: "openui-markdown-renderer--variant-sunk",
+  },
+} as const;
 
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-mark-down-renderer-markdown-code {
-      border-radius: 4px;
-      padding: 2px 4px;
+export const markdownStyles = (css: StyleCss) => ({
+  code: css`
+    border-radius: 4px;
+    padding: 2px 4px;
+    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
+    border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));
+    /* Typography participates in prose inheritance; layout keeps a flat part class. */
+    :where(&) {
+      &:is(code) {
+        color: ${primary};
+        ${body}
+      }
+    }
+    /* Browsers ignore the legacy display:hidden declaration; preserve its rule. */
+    &::after,
+    &::before {
+      content: "";
+      display: hidden;
+    }
+  `,
+  link: css`
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    :where(&) {
+      &:is(a) {
+        color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));
+        ${body}
+      }
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  `,
+  // Syntax-highlighter markup inside the code-block part is foreign content.
+  codeBlock: css`
+    :where(&) {
+      & > div {
+        /* Preserve the shared highlighter radius when the theme has no inline radius. */
+        border-radius: 0.5rem;
+        padding: 25px !important;
+        margin-top: 8px !important;
+        margin-bottom: 8px !important;
+        &:last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+  `,
+  tableContainer: css`
+    margin-bottom: 20px;
+  `,
+  variant: {
+    clear: "",
+    card: css`
+      background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
+      border-radius: 0.5rem;
+      padding: 1rem;
+    `,
+    sunk: css`
       background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
-      border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));
-      color: ${primary};
-      ${body}
-      /* Browsers ignore the legacy display:hidden declaration; preserve its rule. */
-  &::after, &::before {
-        content: "";
-        display: hidden;
-      }
-    }
-    .openui-mark-down-renderer-markdown-link {
-      color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));
-      cursor: pointer;
-      text-decoration: none;
-      transition: color 0.2s ease-in-out;
-      ${body}
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-    .openui-mark-down-renderer-markdown-root {
-      color: ${primary};
-      ${body}
-      max-width: none;
-      &:where(.openui-markdown-renderer-card) {
-        background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
-        border-radius: 0.5rem;
-        padding: 1rem;
-      }
-      &:where(.openui-markdown-renderer-card-sunk) {
-        background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
-        border-radius: 0.5rem;
-        padding: 1rem;
-      }
+      border-radius: 0.5rem;
+      padding: 1rem;
+    `,
+  },
+  // Register structural rules after parts so first/last-child spacing retains its precedence.
+  root: css`
+    color: ${primary};
+    ${body}
+    max-width: none;
+    :where(&) {
       & h1,
       & h2,
       & h3,
@@ -121,17 +164,6 @@ const stylesheetScope = css`
           margin-bottom: 0;
         }
       }
-      & .openui-code-block-syntax-highlighter {
-        padding: 25px !important;
-        margin-top: 8px !important;
-        margin-bottom: 8px !important;
-        &:first-child {
-          margin-top: 0 !important;
-        }
-        &:last-child {
-          margin-bottom: 0 !important;
-        }
-      }
       & hr {
         margin-top: 48px;
         margin-bottom: 48px;
@@ -173,9 +205,6 @@ const stylesheetScope = css`
         color: inherit;
         line-height: inherit;
       }
-      & .openui-table-container {
-        margin-bottom: 20px;
-      }
       & > *:first-child {
         margin-top: 0;
       }
@@ -183,9 +212,5 @@ const stylesheetScope = css`
         margin-bottom: 0;
       }
     }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
+  `,
+});
