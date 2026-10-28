@@ -157,34 +157,16 @@ has not been certified.
 ### Stable selectors
 
 The selectors in this and the following sections belong to components that have
-not moved to the [styling contract](#styling-and-overrides) yet; Button has, and
-is documented in the [stable class reference](docs/reference/selectors.md).
-IconButton uses stable styling targets that register on import: a private
+not moved to the [styling contract](#styling-and-overrides) yet; Button and
+IconButton have, and are documented in the [stable class reference](docs/reference/selectors.md).
+The documented batches below use stable styling targets that register on import: a private
 generated class on `html` is contained in `:where(...:root)` and adds zero
-specificity. Consumers do not use that class. The documented batches below share this mechanism;
-EditableTable retains its existing selectors. Chart-owned targets are documented
-in the Charts section below.
-
-| Target | IconButton |
-| --- | --- |
-| Root | `.openui-icon-button-root` |
-| Preserved root alias | `.openui-icon-button` |
-| Variant | `.openui-icon-button-primary` (also secondary/tertiary) |
-| Destructive variant | `.openui-icon-button-destructive-primary` (also secondary/tertiary) |
-| Size | `.openui-icon-button-{3-extra-small,2-extra-small,extra-small,small,medium,large}` |
-| Shape | `.openui-icon-button-square`, `.openui-icon-button-circle` |
-| State | `:hover:not(:disabled)`, `:active:not(:disabled)`, `:disabled` |
-| Owned part | `.openui-icon-button-icon` (existing span) |
+specificity. Consumers do not use that class. EditableTable retains its existing selectors.
+Chart-owned targets are documented in the Charts section below.
 
 Use ordinary **later, unlayered CSS** with the corresponding selector. Root rules
 have one class of specificity; variants, sizes, states and parts retain their
-additional selectors. For example:
-
-```css
-.openui-icon-button-root { border-width: 2px; }
-.openui-icon-button-root.openui-icon-button-primary { background: navy; }
-.openui-icon-button-root .openui-icon-button-icon { gap: 4px; }
-```
+additional selectors.
 
 No `!important` is required for these matching overrides. This does not promise
 that earlier CSS, a root-only selector against a variant rule, or normal CSS in a
@@ -620,6 +602,13 @@ Renamed stable classes and props, per component converted to the flat convention
 | Button | `buttonType="destructive"` prop | `tone="destructive"`; emits `.openui-button--tone-destructive` |
 | Button | `.openui-button-base-destructive-{primary,secondary,tertiary}` | `.openui-button--tone-destructive` with `.openui-button--variant-{…}` |
 | Button | Icons as direct children | Each icon wrapped in `.openui-button-icon` |
+| IconButton | `.openui-icon-button-root` | `.openui-icon-button` |
+| IconButton | `.openui-icon-button-{primary,secondary,tertiary}` | `.openui-icon-button--variant-{primary,secondary,tertiary}` |
+| IconButton | `.openui-icon-button-{3-extra-small,2-extra-small,extra-small,small,medium,large}` | `.openui-icon-button--size-{3-extra-small,2-extra-small,extra-small,small,medium,large}` |
+| IconButton | `.openui-icon-button-{square,circle}` | `.openui-icon-button--shape-{square,circle}` |
+| IconButton | `appearance="normal"` prop | `tone="default"` (the default); emits `.openui-icon-button--tone-default` |
+| IconButton | `appearance="destructive"` prop | `tone="destructive"`; emits `.openui-icon-button--tone-destructive` |
+| IconButton | `.openui-icon-button-destructive-{primary,secondary,tertiary}` | `.openui-icon-button--tone-destructive` with `.openui-icon-button--variant-{…}` |
 
 ## Beta import migration
 

@@ -1,6 +1,6 @@
 // Components converted to the flat styling convention, each rendered across every prop
 // combination through public exports. Add a component here when it leaves the allowlist.
-import { Button } from "@openuidev/react-components";
+import { Button, IconButton } from "@openuidev/react-components";
 import type { ReactElement } from "react";
 import { readStableNames, type StableNames } from "../../../scripts/selector-reference.mjs";
 
@@ -49,6 +49,27 @@ export const migratedComponents: MigratedComponent[] = [
         >
           Label
         </Button>
+      )),
+  },
+  {
+    folder: "IconButton",
+    names: namesOf("IconButton"),
+    elements: () =>
+      product<string>(
+        ["primary", "secondary", "tertiary"],
+        ["3-extra-small", "2-extra-small", "extra-small", "small", "medium", "large"],
+        ["square", "circle"],
+        ["default", "destructive"],
+      ).map(([variant, size, shape, tone]) => (
+        <IconButton
+          key={`${variant}-${size}-${shape}-${tone}`}
+          variant={variant as "primary"}
+          size={size as "small"}
+          shape={shape as "square"}
+          tone={tone as "default"}
+          icon={<svg />}
+          aria-label="Action"
+        />
       )),
   },
 ];
