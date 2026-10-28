@@ -5,7 +5,7 @@ import { useCallback } from "react";
 import { useStyles } from "../../../styles/useStyles";
 import { drawLineStyles } from "../shared/animations/drawLine.styles";
 import { names as baseNames, chartBaseStyles } from "../shared/chartBase.styles";
-import { rootClass } from "./lineChart.styles";
+import { lineChartStyles, names } from "./lineChart.styles";
 
 import {
   useCartesianChartOrchestrator,
@@ -31,15 +31,16 @@ import type { LineChartData, LineChartProps } from "./types";
  * otherwise break the Rules of Hooks).
  */
 export function LineChart<T extends LineChartData>(props: LineChartProps<T>) {
+  const styles = useStyles(lineChartStyles);
   const baseStyles = useStyles(chartBaseStyles);
   if (!props.data || props.data.length === 0) {
     return (
       <div
         className={clsx(
-          rootClass,
+          styles.root,
+          names.root,
           baseStyles.empty,
           baseNames.empty,
-          `${CHART_CLASS_PREFIX}-line-chart-container`,
           props.className,
         )}
       >
@@ -77,6 +78,7 @@ function LineChartImpl<T extends LineChartData>({
   activeDots = true,
   yTickCount,
 }: LineChartProps<T>) {
+  const styles = useStyles(lineChartStyles);
   useStyles(drawLineStyles);
   const animate = useEffectiveAnimation(isAnimationActive);
   const mode = condensed ? "fit" : "scroll";
@@ -134,6 +136,16 @@ function LineChartImpl<T extends LineChartData>({
 
   return (
     <CartesianChartLayout
+      classes={{
+        ...names,
+        svg: clsx(styles.svg, names.svg),
+        group: clsx(styles.group, names.group),
+        containerInner: clsx(styles.containerInner, names.containerInner),
+        yAxisContainer: clsx(styles.yAxisContainer, names.yAxisContainer),
+        mainContainer: clsx(styles.mainContainer, names.mainContainer),
+        yTick: clsx(styles.yTick, names.yTick),
+        gridLine: clsx(styles.gridLine, names.gridLine),
+      }}
       orch={orch}
       yScale={yScale}
       mouseHandlers={mouseHandlers}
@@ -147,10 +159,12 @@ function LineChartImpl<T extends LineChartData>({
       xAxisLabel={xAxisLabel}
       yAxisLabel={yAxisLabel}
       yTickCount={yTickCount}
-      className={clsx(rootClass, className)}
+      className={clsx(styles.root, names.root, className)}
       defs={
-        <defs>
+        <defs className={names.defs}>
           <ClipDefs
+            className={names.clip}
+            rectClassName={names.clipRect}
             chartId={orch.identity.chartId}
             chartWidth={orch.dimensions.chartAreaWidth}
             chartHeight={orch.dimensions.chartInnerHeight}
@@ -181,6 +195,13 @@ function LineChartImpl<T extends LineChartData>({
             colors={orch.data.colorMap}
             chartHeight={orch.dimensions.chartInnerHeight}
             getYValue={getYValue}
+            classes={{
+              ...names,
+              group: clsx(styles.group, names.group),
+              crosshairLine: clsx(styles.crosshairLine, names.crosshairLine),
+              activeDotOuter: clsx(styles.activeDotOuter, names.activeDotOuter),
+              activeDotInner: clsx(styles.activeDotInner, names.activeDotInner),
+            }}
             classPrefix={`${CHART_CLASS_PREFIX}-line-chart`}
             crosshair={crosshair}
             highlight={highlight}
@@ -193,6 +214,9 @@ function LineChartImpl<T extends LineChartData>({
           mode={mode}
           scale={xScale}
           classPrefix={`${CHART_CLASS_PREFIX}-line-chart`}
+          classes={names}
+          tickClassName={clsx(styles.xTick, names.xTick)}
+          angledTickClassName={clsx(styles.xTickAngled, names.xTickAngled)}
           tickVariant={orch.dimensions.tickVariant}
           widthOfGroup={orch.dimensions.widthOfGroup}
           labelHeight={orch.xAxis.xAxisHeight}

@@ -61,7 +61,11 @@ export function renderSelectorReference(entries) {
     for (const [axis, values] of Object.entries(names)) {
       if (typeof values === "string") continue;
       for (const [value, name] of Object.entries(values)) {
-        rows.push(`| ${code(`.${name}`)} | Modifier | ${prop(axis, value)} |`);
+        const propName =
+          value === "true"
+            ? name.split("--")[1].replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())
+            : axis;
+        rows.push(`| ${code(`.${name}`)} | Modifier | ${prop(propName, value)} |`);
       }
     }
     return [

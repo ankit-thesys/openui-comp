@@ -12,6 +12,7 @@ interface ChartShellProps {
   containerRef: React.Ref<HTMLDivElement>;
   /** e.g. `${CHART_CLASS_PREFIX}-pie-chart` → the persistent div gets `${classPrefix}-container`. */
   classPrefix: string;
+  flat?: boolean;
   /** The consumer's passthrough `className`. */
   className?: string;
   style: React.CSSProperties;
@@ -47,6 +48,7 @@ interface ChartShellProps {
 export const ChartShell: React.FC<ChartShellProps> = ({
   containerRef,
   classPrefix,
+  flat = false,
   className,
   style,
   isEmpty,
@@ -67,7 +69,7 @@ export const ChartShell: React.FC<ChartShellProps> = ({
         <div
           ref={containerRef}
           className={clsx(
-            `${classPrefix}-container`,
+            !flat && `${classPrefix}-container`,
             isEmpty && styles.empty,
             isEmpty && names.empty,
             className,

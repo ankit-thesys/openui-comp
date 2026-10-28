@@ -6,7 +6,7 @@ import { useStyles } from "../../../styles/useStyles";
 import { drawLineStyles } from "../shared/animations/drawLine.styles";
 import { fadeAppearStyles } from "../shared/animations/fadeAppear.styles";
 import { names as baseNames, chartBaseStyles } from "../shared/chartBase.styles";
-import { rootClass } from "./areaChart.styles";
+import { areaChartStyles, names } from "./areaChart.styles";
 
 import {
   useCartesianChartOrchestrator,
@@ -33,15 +33,16 @@ import type { AreaChartData, AreaChartProps } from "./types";
  * otherwise break the Rules of Hooks).
  */
 export function AreaChart<T extends AreaChartData>(props: AreaChartProps<T>) {
+  const styles = useStyles(areaChartStyles);
   const baseStyles = useStyles(chartBaseStyles);
   if (!props.data || props.data.length === 0) {
     return (
       <div
         className={clsx(
-          rootClass,
+          styles.root,
+          names.root,
           baseStyles.empty,
           baseNames.empty,
-          `${CHART_CLASS_PREFIX}-area-chart-container`,
           props.className,
         )}
       >
@@ -82,6 +83,7 @@ function AreaChartImpl<T extends AreaChartData>({
   activeDots = true,
   yTickCount,
 }: AreaChartProps<T>) {
+  const styles = useStyles(areaChartStyles);
   useStyles(drawLineStyles);
   useStyles(fadeAppearStyles);
   const animate = useEffectiveAnimation(isAnimationActive);
@@ -168,6 +170,16 @@ function AreaChartImpl<T extends AreaChartData>({
 
   return (
     <CartesianChartLayout
+      classes={{
+        ...names,
+        svg: clsx(styles.svg, names.svg),
+        group: clsx(styles.group, names.group),
+        containerInner: clsx(styles.containerInner, names.containerInner),
+        yAxisContainer: clsx(styles.yAxisContainer, names.yAxisContainer),
+        mainContainer: clsx(styles.mainContainer, names.mainContainer),
+        yTick: clsx(styles.yTick, names.yTick),
+        gridLine: clsx(styles.gridLine, names.gridLine),
+      }}
       orch={orch}
       yScale={yScale}
       mouseHandlers={mouseHandlers}
@@ -181,7 +193,7 @@ function AreaChartImpl<T extends AreaChartData>({
       xAxisLabel={xAxisLabel}
       yAxisLabel={yAxisLabel}
       yTickCount={yTickCount}
-      className={clsx(rootClass, className)}
+      className={clsx(styles.root, names.root, className)}
       defs={
         <GradientDefs
           negativeKeys={negativeKeys}
@@ -218,6 +230,13 @@ function AreaChartImpl<T extends AreaChartData>({
             colors={orch.data.colorMap}
             chartHeight={orch.dimensions.chartInnerHeight}
             getYValue={getYValue}
+            classes={{
+              ...names,
+              group: clsx(styles.group, names.group),
+              crosshairLine: clsx(styles.crosshairLine, names.crosshairLine),
+              activeDotOuter: clsx(styles.activeDotOuter, names.activeDotOuter),
+              activeDotInner: clsx(styles.activeDotInner, names.activeDotInner),
+            }}
             classPrefix={`${CHART_CLASS_PREFIX}-area-chart`}
             crosshair={crosshair}
             highlight={highlight}
@@ -230,6 +249,9 @@ function AreaChartImpl<T extends AreaChartData>({
           mode={mode}
           scale={xScale}
           classPrefix={`${CHART_CLASS_PREFIX}-area-chart`}
+          classes={names}
+          tickClassName={clsx(styles.xTick, names.xTick)}
+          angledTickClassName={clsx(styles.xTickAngled, names.xTickAngled)}
           tickVariant={orch.dimensions.tickVariant}
           widthOfGroup={orch.dimensions.widthOfGroup}
           labelHeight={orch.xAxis.xAxisHeight}

@@ -18,7 +18,12 @@ import { classViolation, ruleViolation, rulesOf } from "../unit/contract/checks"
 import { blocksIn, namesIn } from "../unit/contract/collect";
 
 const constants = (await readStableNames())
-  .filter(({ component }) => component.startsWith("Charts/"))
+  .filter(
+    ({ component }) =>
+      component === "Charts/shared" ||
+      component.startsWith("Charts/shared/") ||
+      component.startsWith("Charts/Mini"),
+  )
   .map(({ names }) => names);
 const targets = [...namesIn(constants)];
 const values = {

@@ -10,6 +10,7 @@ import { useTranslate } from "./useTranslate";
 interface FadeFollowerProps {
   /** Spring target in chart coordinates. Ignored while `!visible`. */
   x: number;
+  className?: string;
   /** Default 0 — most followers slide along one axis. */
   y?: number;
   visible: boolean;
@@ -33,6 +34,7 @@ interface FadeFollowerProps {
  */
 export function FadeFollower({
   x,
+  className,
   y = 0,
   visible,
   config = springPresets.crosshair,
@@ -47,11 +49,19 @@ export function FadeFollower({
 
   return (
     <g
+      className={className}
       ref={follow.bind}
-      style={{
-        opacity: visible ? 1 : 0,
-        transition: `opacity ${fadeMs}ms ease`,
-      }}
+      style={
+        className
+          ? ({
+              "--_openui-chart-group-opacity": visible ? 1 : 0,
+              "--_openui-chart-group-transition": `opacity ${fadeMs}ms ease`,
+            } as React.CSSProperties)
+          : {
+              opacity: visible ? 1 : 0,
+              transition: `opacity ${fadeMs}ms ease`,
+            }
+      }
     >
       {children}
     </g>
