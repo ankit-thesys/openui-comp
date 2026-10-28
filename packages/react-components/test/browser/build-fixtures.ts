@@ -94,6 +94,10 @@ const fixtures = [
   "parity-select",
   "parity-calendar",
   "parity-date-picker",
+  "loading-code",
+  "parity-skeleton",
+  "parity-dot-matrix-loader",
+  "parity-code-block",
 ];
 const parityFixtures = fixtures.filter((name) => name.startsWith("parity-"));
 

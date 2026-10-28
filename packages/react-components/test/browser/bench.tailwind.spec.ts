@@ -31,7 +31,12 @@ const snapshot = (page: Page, component: MigratedComponent) =>
     return Object.fromEntries(
       classes.flatMap((className) =>
         [...document.querySelectorAll(`.${className}`)].map((el, i) => {
-          el.getAnimations().forEach((animation) => animation.finish());
+          el.getAnimations().forEach((animation) => {
+            if (animation.effect?.getTiming().iterations === Infinity) {
+              animation.pause();
+              animation.currentTime = 0;
+            } else animation.finish();
+          });
           // Later matching rules win, as in the cascade (all library rules weigh the same here).
           const declared = new Map<string, string>();
           for (const rule of libraryRules.filter((rule) => matches(el, rule.selectorText)))
@@ -93,7 +98,12 @@ const buttonBackgrounds = (page: Page) =>
     };
     visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
     return [...document.querySelectorAll("button")].flatMap((button) => {
-      button.getAnimations().forEach((animation) => animation.finish());
+      button.getAnimations().forEach((animation) => {
+        if (animation.effect?.getTiming().iterations === Infinity) {
+          animation.pause();
+          animation.currentTime = 0;
+        } else animation.finish();
+      });
       const matching = backgroundRules.filter((rule) => {
         try {
           return button.matches(rule.selectorText);
@@ -117,6 +127,15 @@ const buttonBackgrounds = (page: Page) =>
 
 for (const component of migrated) {
   test.describe(component.folder, () => {
+    if (component.folder === "DotMatrixLoader") {
+      // RAF trails are not Web Animations: compare the initial dot opacity in both pages.
+      // loading-code.spec.ts separately checks that the trail moves and stays overridable.
+      test.beforeEach(async ({ page }) => {
+        await page.addInitScript(() => {
+          window.requestAnimationFrame = () => 0;
+        });
+      });
+    }
     for (const version of ["33", "34", "4"]) {
       test(`Tailwind ${version === "4" ? "4.1" : `3.${version[1]}`} preflight leaves it styled`, async ({
         page,

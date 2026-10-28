@@ -21,16 +21,10 @@
   "src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts",
   "src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
   "src/components/Charts/shared/mini/miniChart.styles.ts",
-  "src/components/CodeBlock/codeBlock.styles.ts",
-  "src/components/DotMatrixLoader/DotMatrixLoader.tsx",
   "src/components/Image/image.styles.ts",
   "src/components/ImageBlock/imageBlock.styles.ts",
   "src/components/ImageGallery/galleryModal.styles.ts",
   "src/components/ImageGallery/imageGallery.styles.ts",
   "src/components/ImageText/imageText.styles.ts",
-  "src/components/ImageTextLarge/imageTextLarge.styles.ts",
-  "src/components/Skeleton/PieChartSkeleton.tsx",
-  "src/components/Skeleton/Skeleton.tsx",
-  "src/components/Skeleton/SkeletonBar.tsx",
-  "src/components/Skeleton/TableSkeleton.tsx"
+  "src/components/ImageTextLarge/imageTextLarge.styles.ts"
 ]

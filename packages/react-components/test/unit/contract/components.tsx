@@ -25,6 +25,7 @@ import {
   ContextCard,
   ContextCardBlock,
   DatePicker,
+  DotMatrixLoader,
   EditableTable,
   EditableTableChangesBar,
   EntityList,
@@ -52,6 +53,7 @@ import {
   Modal,
   OptionCards,
   OverviewCardBlock,
+  PieChartSkeleton,
   RadioGroup,
   RadioItem,
   ScrollableTable,
@@ -65,6 +67,7 @@ import {
   SelectTrigger,
   SelectValue,
   Separator,
+  Skeleton,
   Slider,
   SliderBlock,
   SnippetCardBlock,
@@ -81,6 +84,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
+  TableSkeleton,
   Tabs,
   TabsContent,
   TabsList,
@@ -294,6 +298,61 @@ const layoutElements = () =>
 const cardDependencyNames = (elements: ReactElement[]) => elements.map(composedNames);
 
 export const migratedComponents: MigratedComponent[] = [
+  {
+    folder: "Skeleton",
+    names: [...namesOf("Skeleton"), ...namesOf("SkeletonPulse")],
+    elements: () => [
+      <Skeleton key="default" />,
+      <Skeleton key="custom" count={3} height="20px" width="80px" borderRadius="12px" />,
+      <TableSkeleton key="table-default" />,
+      <TableSkeleton key="table-custom" rows={2} columns={2} />,
+      <PieChartSkeleton key="pie-default" />,
+      ...(["pie", "donut"] as const).flatMap((variant) =>
+        (["circular", "semiCircular"] as const).map((appearance) => (
+          <PieChartSkeleton
+            key={`${variant}-${appearance}`}
+            variant={variant}
+            appearance={appearance}
+            size={120}
+            legendItems={2}
+          />
+        )),
+      ),
+    ],
+  },
+  {
+    folder: "DotMatrixLoader",
+    names: namesOf("DotMatrixLoader"),
+    elements: () => [
+      <DotMatrixLoader key="default" />,
+      <DotMatrixLoader key="compact" variant="compact" size={40} />,
+    ],
+  },
+  {
+    folder: "CodeBlock",
+    get names() {
+      return [
+        ...namesOf("CodeBlock"),
+        // Composed IconButton classes, observed through the public package after CSS collection.
+        Object.fromEntries(
+          [...stableClassesIn(renderToString(<CodeBlock language="text" codeString="x" />))]
+            .filter((name) => name.startsWith("openui-icon-button"))
+            .map((name, index) => [`dependency${index}`, name]),
+        ),
+      ];
+    },
+    elements: () => [
+      <CodeBlock key="default" language="javascript" codeString="const x = 1;" />,
+      <CodeBlock
+        key="custom"
+        language="text"
+        codeString="x"
+        className="app-code"
+        syntaxHighlighterClassName="app-highlighter"
+      />,
+      <CodeBlock key="empty" language="text" codeString="x" syntaxHighlighterClassName="" />,
+    ],
+  },
   {
     folder: "Slider",
     // SliderBlock composes public Input/Select roots. Read only the classes those renders
