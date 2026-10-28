@@ -2,10 +2,28 @@
 // `?component=<folder>`, straight from that list, the way a client-only app renders it: its
 // elements keep every prop as written, functions and plugin objects included, and its styles
 // register at render.
+import { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { migratedComponents } from "../../unit/contract/components";
 
 const folder = new URLSearchParams(location.search).get("component");
 const component = migratedComponents.find((entry) => entry.folder === folder);
 if (!component) throw new Error(`No migrated component ${folder}`);
-createRoot(document.getElementById("root")!).render(component.elements());
+const elements = component.elements();
+function Fixture() {
+  useEffect(() => {
+    document.querySelector<HTMLButtonElement>("[data-tooltip-trigger]")?.focus();
+  }, []);
+  return (
+    <>
+      {component?.folder === "Modal" && (
+        // Modal leaves box-sizing to the page. Pin that input so its percentage translation
+        // resolves against the same border box with or without preflight. Zero specificity
+        // lets any library declaration still win; every declared property remains asserted.
+        <style>{`:where(.openui-modal-content) { box-sizing: border-box; }`}</style>
+      )}
+      {elements}
+    </>
+  );
+}
+createRoot(document.getElementById("root")!).render(<Fixture />);

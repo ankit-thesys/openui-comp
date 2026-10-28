@@ -3,8 +3,9 @@
 import * as Tooltip from "@radix-ui/react-tooltip";
 import clsx from "clsx";
 import React, { cloneElement, isValidElement, useLayoutEffect, useRef, useState } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { useTheme } from "../ThemeProvider";
-import { bodyClass, contentClass, headingClass, textClass } from "./tooltipWrapper.styles";
+import { names, tooltipWrapperStyles } from "./tooltipWrapper.styles";
 
 export interface TooltipWrapperProps {
   tooltipHeading?: string;
@@ -34,6 +35,7 @@ export const TooltipWrapper = ({
   headingSelector,
   contentSelector,
 }: React.PropsWithChildren<TooltipWrapperProps>) => {
+  const styles = useStyles(tooltipWrapperStyles);
   const { portalThemeClassName } = useTheme();
   const triggerRef = useRef<HTMLElement>(null);
   const [isHeadingTruncated, setIsHeadingTruncated] = useState(false);
@@ -136,27 +138,18 @@ export const TooltipWrapper = ({
         <Tooltip.Trigger asChild>{triggerWithRef}</Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content
-            className={clsx(
-              contentClass,
-              "openui-tooltip-content",
-              portalThemeClassName,
-              className,
-            )}
+            className={clsx(styles.root, names.root, portalThemeClassName, className)}
             side={side}
             align={align}
             sideOffset={sideOffset}
             alignOffset={alignOffset}
           >
-            <div className={clsx(bodyClass, "openui-tooltip-body")}>
+            <div className={clsx(styles.body, names.body)}>
               {displayTooltipHeading && (
-                <span className={clsx(headingClass, "openui-tooltip-heading")}>
-                  {displayTooltipHeading}
-                </span>
+                <span className={clsx(styles.heading, names.heading)}>{displayTooltipHeading}</span>
               )}
               {displayTooltipContent && (
-                <span className={clsx(textClass, "openui-tooltip-text-content")}>
-                  {displayTooltipContent}
-                </span>
+                <span className={clsx(styles.text, names.text)}>{displayTooltipContent}</span>
               )}
             </div>
           </Tooltip.Content>

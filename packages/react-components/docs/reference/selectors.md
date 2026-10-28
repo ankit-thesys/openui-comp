@@ -7,6 +7,23 @@ library's rule (add the same state, such as `:hover` or `[data-state=active]`, t
 A root is always present and a part whenever its element renders; a modifier is present when the
 prop has that value, including its default. Components not listed have not moved to this convention yet.
 
+## Accordion
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-accordion` | Root | Always |
+| `.openui-accordion-item` | Part (`item`) | On that part, whenever it renders |
+| `.openui-accordion-header` | Part (`header`) | On that part, whenever it renders |
+| `.openui-accordion-trigger` | Part (`trigger`) | On that part, whenever it renders |
+| `.openui-accordion-trigger-content` | Part (`triggerContent`) | On that part, whenever it renders |
+| `.openui-accordion-trigger-content-icon` | Part (`triggerContentIcon`) | On that part, whenever it renders |
+| `.openui-accordion-trigger-icon` | Part (`triggerIcon`) | On that part, whenever it renders |
+| `.openui-accordion-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-accordion-content-wrapper` | Part (`contentWrapper`) | On that part, whenever it renders |
+| `.openui-accordion--variant-clear` | Modifier | `variant="clear"` |
+| `.openui-accordion--variant-card` | Modifier | `variant="card"` |
+| `.openui-accordion--variant-sunk` | Modifier | `variant="sunk"` |
+
 ## Button
 
 | Stable class | Kind | Present when |
@@ -22,6 +39,28 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-button--size-large` | Modifier | `size="large"` |
 | `.openui-button--tone-default` | Modifier | `tone="default"` |
 | `.openui-button--tone-destructive` | Modifier | `tone="destructive"` |
+
+## Card
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-card` | Root | Always |
+| `.openui-card--variant-clear` | Modifier | `variant="clear"` |
+| `.openui-card--variant-card` | Modifier | `variant="card"` |
+| `.openui-card--variant-sunk` | Modifier | `variant="sunk"` |
+| `.openui-card--width-standard` | Modifier | `width="standard"` |
+| `.openui-card--width-full` | Modifier | `width="full"` |
+
+## CardHeader
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-card-header` | Root | Always |
+| `.openui-card-header-top` | Part (`top`) | On that part, whenever it renders |
+| `.openui-card-header-top-left` | Part (`topLeft`) | On that part, whenever it renders |
+| `.openui-card-header-top-left-icon` | Part (`topLeftIcon`) | On that part, whenever it renders |
+| `.openui-card-header-top-right` | Part (`topRight`) | On that part, whenever it renders |
+| `.openui-card-header-bottom` | Part (`bottom`) | On that part, whenever it renders |
 
 ## IconButton
 
@@ -56,6 +95,63 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-markdown-renderer--variant-clear` | Modifier | `variant="clear"` |
 | `.openui-markdown-renderer--variant-card` | Modifier | `variant="card"` |
 | `.openui-markdown-renderer--variant-sunk` | Modifier | `variant="sunk"` |
+
+## Modal
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-modal` | Root | Always |
+| `.openui-modal-overlay` | Part (`overlay`) | On that part, whenever it renders |
+| `.openui-modal-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-modal-header` | Part (`header`) | On that part, whenever it renders |
+| `.openui-modal-title` | Part (`title`) | On that part, whenever it renders |
+| `.openui-modal-close` | Part (`close`) | On that part, whenever it renders |
+| `.openui-modal-body` | Part (`body`) | On that part, whenever it renders |
+| `.openui-modal-close-icon` | Part (`closeIcon`) | On that part, whenever it renders |
+| `.openui-modal--size-sm` | Modifier | `size="sm"` |
+| `.openui-modal--size-md` | Modifier | `size="md"` |
+| `.openui-modal--size-lg` | Modifier | `size="lg"` |
+
+## SectionBlock (FoldableSection)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-foldable-section` | Root | Always |
+| `.openui-foldable-section-item` | Part (`item`) | On that part, whenever it renders |
+| `.openui-foldable-section-header` | Part (`header`) | On that part, whenever it renders |
+| `.openui-foldable-section-trigger-content-wrapper` | Part (`triggerContentWrapper`) | On that part, whenever it renders |
+| `.openui-foldable-section-trigger-content-separator` | Part (`triggerContentSeparator`) | On that part, whenever it renders |
+| `.openui-foldable-section-trigger-content-icon-button-wrapper` | Part (`triggerContentIconButtonWrapper`) | On that part, whenever it renders |
+| `.openui-foldable-section-trigger-content-icon-button` | Part (`triggerContentIconButton`) | On that part, whenever it renders |
+| `.openui-foldable-section-trigger-content-icon-button-icon` | Part (`triggerContentIconButtonIcon`) | On that part, whenever it renders |
+| `.openui-foldable-section-trigger-content-text` | Part (`triggerContentText`) | On that part, whenever it renders |
+| `.openui-foldable-section-trigger` | Part (`trigger`) | On that part, whenever it renders |
+| `.openui-foldable-section-content` | Part (`content`) | On that part, whenever it renders |
+
+## SectionBlock (SectionV2)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-section-v2` | Root | Always |
+| `.openui-section-v2-wrapper` | Part (`wrapper`) | On that part, whenever it renders |
+| `.openui-section-v2-header` | Part (`header`) | On that part, whenever it renders |
+| `.openui-section-v2-header-trigger` | Part (`headerTrigger`) | On that part, whenever it renders |
+| `.openui-section-v2-content` | Part (`content`) | On that part, whenever it renders |
+
+## Steps
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-steps` | Root | Always |
+| `.openui-steps-list` | Part (`list`) | On that part, whenever it renders |
+| `.openui-steps-item` | Part (`item`) | On that part, whenever it renders |
+| `.openui-steps-connector` | Part (`connector`) | On that part, whenever it renders |
+| `.openui-steps-number` | Part (`number`) | On that part, whenever it renders |
+| `.openui-steps-number-inner` | Part (`numberInner`) | On that part, whenever it renders |
+| `.openui-steps-connector-line` | Part (`connectorLine`) | On that part, whenever it renders |
+| `.openui-steps-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-steps-title` | Part (`title`) | On that part, whenever it renders |
+| `.openui-steps-details` | Part (`details`) | On that part, whenever it renders |
 
 ## Tabs
 
@@ -100,3 +196,12 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-tabs-trigger-content` | Part (`content`) | On that part, whenever it renders |
 | `.openui-tabs-trigger-text` | Part (`text`) | On that part, whenever it renders |
 | `.openui-tabs-trigger-subtext` | Part (`subtext`) | On that part, whenever it renders |
+
+## TooltipWrapper
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-tooltip-wrapper-body` | Part (`body`) | On that part, whenever it renders |
+| `.openui-tooltip-wrapper-heading` | Part (`heading`) | On that part, whenever it renders |
+| `.openui-tooltip-wrapper-text` | Part (`text`) | On that part, whenever it renders |
+| `.openui-tooltip-wrapper` | Root | Always |

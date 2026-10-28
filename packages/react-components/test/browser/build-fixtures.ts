@@ -24,6 +24,16 @@ const fixtures = [
   "parity-markdown",
   "tabs",
   "parity-tabs",
+  "parity-card",
+  "parity-card-header",
+  "parity-steps",
+  "parity-accordion",
+  "parity-section-block",
+  "parity-modal-sm",
+  "parity-modal-md",
+  "parity-modal-lg",
+  "parity-tooltip-wrapper",
+  "disclosure",
 ];
 const parityFixtures = fixtures.filter((name) => name.startsWith("parity-"));
 

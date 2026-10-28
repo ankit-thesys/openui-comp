@@ -22,7 +22,7 @@ const declarations = Object.entries(OVERRIDE)
 
 // Computed OVERRIDE properties of every element carrying `className`, transitions finished.
 const computedAll = (page: Page, className: string) =>
-  page.locator(`#root .${className}`).evaluateAll(
+  page.locator(`.${className}`).evaluateAll(
     (elements, properties) =>
       elements.map((el) => {
         el.getAnimations().forEach((animation) => animation.finish());
@@ -36,7 +36,7 @@ const computedAll = (page: Page, className: string) =>
 // element carrying `className`, read from the library sheet.
 const statesOn = (page: Page, className: string) =>
   page.evaluate((className) => {
-    const elements = [...document.querySelectorAll(`#root .${className}`)];
+    const elements = [...document.querySelectorAll(`.${className}`)];
     const states = new Set<string>();
     const visit = (rules: CSSRuleList) => {
       for (const rule of rules) {
