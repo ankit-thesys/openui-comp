@@ -29,7 +29,29 @@ pnpm --filter @openuidev/react-components exec playwright install chromium
 pnpm --filter @openuidev/react-components test:browser
 ```
 
-To add a browser test, add a fixture, add it to `entry` in `build-fixtures.ts`, and open `/<name>.html` from the spec.
+To add a browser test, add a fixture that imports `openui-under-test` (aliased to the built package), add it to `fixtures` in `build-fixtures.ts`, and open `/<name>.html` from the spec. `/<name>.html?css=<text>` puts a consumer stylesheet in the static `<head>`, loaded before the fixture script.
+
+## Parity with #72
+
+Converted components must render exactly as they did before the flat-styles pilot. A parity spec
+(`<component>.parity.spec.ts`) snapshots computed styles of every `[data-parity-case]` element in
+a `parity-<component>` fixture, plus its `[data-parity-part]` children, at rest, hovered and pressed,
+in light and dark. It compares them with `parity/baselines/<component>.json`, captured from the
+source at #72's head (`5e09b37c`). A case's id names its props, so a component with renamed props
+renders the same cases from both sources: `__PARITY_BASELINE__` is `true` in the baseline bundle.
+
+Pass design changes that are meant to differ to `checkParity(page, name, intentional)` as
+`"<snapshot key> <property>"` entries and list them in the PR.
+
+To add a component: write `fixtures/parity-<component>.tsx`, add it to `fixtures` in
+`build-fixtures.ts`, add a spec calling `checkParity(page, "<component>")`, then capture its
+baseline (this extracts the #72 source into `test/browser/.baseline/`, gitignored):
+
+```bash
+pnpm --filter @openuidev/react-components test:parity:baseline
+```
+
+Commit the new baseline file. Recapture only when adding cases, never to absorb a regression.
 
 ## CI
 
