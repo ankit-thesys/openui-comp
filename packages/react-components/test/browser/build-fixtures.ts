@@ -17,6 +17,8 @@ const fixtures = [
   "parity-button",
   "icon-button",
   "parity-icon-button",
+  "markdown",
+  "parity-markdown",
 ];
 const parityFixtures = fixtures.filter((name) => name.startsWith("parity-"));
 

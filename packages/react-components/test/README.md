@@ -42,7 +42,10 @@ To add a browser test, add a fixture that imports `openui-under-test` (aliased t
 `test/unit/contract/` enforces the styling contract (README, "Styling and overrides") at the Node seam.
 
 - `components.tsx` lists every migrated component with elements covering every value of every
-  prop that changes its classes. `contract.test.tsx` server-renders them through public exports,
+  prop that changes its classes. Each component has its own `<Folder>.contract.test.tsx`, which calls
+  `describeContract(folder)` from `defineContract.tsx`. One file per component gives each a fresh
+  module graph, so a component's CSS is never already registered by another that renders it.
+  `coverage.test.ts` fails if an entry has no file. The contract test server-renders the entry through public exports,
   collects the CSS registered while rendering (`collect.ts`: what the render added to the public
   `getComponentStyles()` sheet), and checks:
   - every selector is one generated class, optionally with one state, a sibling pair
@@ -69,7 +72,8 @@ missing from it, if a listed module no longer imports Goober (or no longer exist
 component that exports `names` is missing from `components.tsx`. `src/styles/defaults.ts` (theme
 token defaults), `src/styles/useStyles.ts` and `src/utils/componentStyles.ts` are exempt.
 
-When you convert a component: remove its modules from the allowlist, add it to `components.tsx`,
+When you convert a component: remove its modules from the allowlist, add it to `components.tsx`
+and add a one-line `<Folder>.contract.test.tsx`,
 regenerate the reference, and add a parity spec. The list must be empty before a stable release.
 
 ## Parity with #72
