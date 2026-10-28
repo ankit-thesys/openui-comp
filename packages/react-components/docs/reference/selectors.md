@@ -22,3 +22,23 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-button--size-large` | Modifier | `size="large"` |
 | `.openui-button--tone-default` | Modifier | `tone="default"` |
 | `.openui-button--tone-destructive` | Modifier | `tone="destructive"` |
+
+## IconButton
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-icon-button` | Root | Always |
+| `.openui-icon-button-icon` | Part (`icon`) | On that part, whenever it renders |
+| `.openui-icon-button--variant-primary` | Modifier | `variant="primary"` |
+| `.openui-icon-button--variant-secondary` | Modifier | `variant="secondary"` |
+| `.openui-icon-button--variant-tertiary` | Modifier | `variant="tertiary"` |
+| `.openui-icon-button--size-3-extra-small` | Modifier | `size="3-extra-small"` |
+| `.openui-icon-button--size-2-extra-small` | Modifier | `size="2-extra-small"` |
+| `.openui-icon-button--size-extra-small` | Modifier | `size="extra-small"` |
+| `.openui-icon-button--size-small` | Modifier | `size="small"` |
+| `.openui-icon-button--size-medium` | Modifier | `size="medium"` |
+| `.openui-icon-button--size-large` | Modifier | `size="large"` |
+| `.openui-icon-button--shape-square` | Modifier | `shape="square"` |
+| `.openui-icon-button--shape-circle` | Modifier | `shape="circle"` |
+| `.openui-icon-button--tone-default` | Modifier | `tone="default"` |
+| `.openui-icon-button--tone-destructive` | Modifier | `tone="destructive"` |

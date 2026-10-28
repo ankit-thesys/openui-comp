@@ -10,7 +10,14 @@ const baselineEntry = here("./.baseline/src/index.ts");
 
 // Fixtures import the package under test as "openui-under-test". Parity fixtures also get a
 // "-baseline" bundle against the #72 source once `parity/extract-baseline.mjs` has run.
-const fixtures = ["smoke", "button", "layers", "parity-button"];
+const fixtures = [
+  "smoke",
+  "button",
+  "layers",
+  "parity-button",
+  "icon-button",
+  "parity-icon-button",
+];
 const parityFixtures = fixtures.filter((name) => name.startsWith("parity-"));
 
 // The package's lazy math renderer imports KaTeX's stylesheet. A consumer's bundler would emit it;
