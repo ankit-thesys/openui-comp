@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { useCallback, useMemo } from "react";
 import { rootClass } from "./radarChart.styles";

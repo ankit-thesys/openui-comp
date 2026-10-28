@@ -1,3 +1,5 @@
+"use client";
+
 import { memo } from "react";
 import { ListedSources } from "./ListedSources";
 import { useCardSourceContext } from "./SourceContext";

@@ -1,3 +1,5 @@
+"use client";
+
 import type { ScaleLinear } from "d3-scale";
 import React from "react";
 

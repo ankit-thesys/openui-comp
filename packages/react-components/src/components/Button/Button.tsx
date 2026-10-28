@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { forwardRef, ReactNode } from "react";
 import { useStyles } from "../../styles/useStyles";

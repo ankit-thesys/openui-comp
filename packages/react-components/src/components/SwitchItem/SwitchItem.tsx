@@ -1,3 +1,5 @@
+"use client";
+
 import * as Switch from "@radix-ui/react-switch";
 import clsx from "clsx";
 import { css } from "goober";

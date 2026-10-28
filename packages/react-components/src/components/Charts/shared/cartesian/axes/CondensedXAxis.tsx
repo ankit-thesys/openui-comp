@@ -1,3 +1,5 @@
+"use client";
+
 import type { ScaleBand, ScalePoint } from "d3-scale";
 import React from "react";
 

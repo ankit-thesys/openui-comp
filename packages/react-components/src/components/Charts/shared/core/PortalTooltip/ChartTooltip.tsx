@@ -1,3 +1,5 @@
+"use client";
+
 import { flip, offset, type Placement, shift, useFloating } from "@floating-ui/react-dom";
 import clsx from "clsx";
 import React, { memo, useCallback, useLayoutEffect, useMemo, useRef } from "react";

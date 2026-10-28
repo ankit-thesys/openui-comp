@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import type { Arc, PieArcDatum } from "d3-shape";
 import React from "react";

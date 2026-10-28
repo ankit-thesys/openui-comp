@@ -1,3 +1,5 @@
+"use client";
+
 import * as LabelPrimitive from "@radix-ui/react-label";
 import clsx from "clsx";
 import { css } from "goober";

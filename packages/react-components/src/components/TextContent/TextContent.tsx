@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { CSSProperties, ReactNode } from "react";
 import { rootClass, variantClasses } from "./textContent.styles";

@@ -1,3 +1,5 @@
+"use client";
+
 import { LineChart } from "./LineChart";
 import type { LineChartData, LineChartProps } from "./types";
 

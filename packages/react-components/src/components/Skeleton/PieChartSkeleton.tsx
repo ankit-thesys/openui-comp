@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { css } from "goober";
 import { pieStyles } from "./pieChartSkeleton.styles";

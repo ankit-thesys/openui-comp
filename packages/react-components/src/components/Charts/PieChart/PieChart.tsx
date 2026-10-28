@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { arc, pie, type PieArcDatum } from "d3-shape";
 import { useMemo } from "react";

@@ -1,3 +1,5 @@
+"use client";
+
 import * as AspectRatio from "@radix-ui/react-aspect-ratio";
 import clsx from "clsx";
 import React, { forwardRef, useState } from "react";

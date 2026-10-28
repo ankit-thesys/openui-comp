@@ -1,3 +1,5 @@
+"use client";
+
 import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
 import clsx from "clsx";
 import { css } from "goober";

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { createContext, useContext, useId, useInsertionEffect, useMemo } from "react";
 import { defaultDarkTheme, defaultLightTheme } from "./defaultTheme";
 import { Theme, ThemeMode } from "./types";

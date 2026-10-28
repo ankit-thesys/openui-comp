@@ -1,3 +1,5 @@
+"use client";
+
 import { css } from "goober";
 import React from "react";
 import { Separator } from "../Separator";

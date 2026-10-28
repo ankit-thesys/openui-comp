@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { memo, ReactNode } from "react";
 import remarkBreaks from "remark-breaks";

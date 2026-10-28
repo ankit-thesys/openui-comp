@@ -1,3 +1,5 @@
+"use client";
+
 import * as SelectPrimitive from "@radix-ui/react-select";
 import clsx from "clsx";
 import debounce from "lodash-es/debounce.js";
