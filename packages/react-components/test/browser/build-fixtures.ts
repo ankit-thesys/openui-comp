@@ -1,6 +1,6 @@
 // Bundles each fixture app against the built package, the way a consumer's bundler would.
 // Runs once as Playwright's global setup; `serve.mjs` serves the output.
-import { existsSync, rmSync } from "node:fs";
+import { existsSync, rmSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { build } from "tsdown";
 
@@ -45,6 +45,17 @@ const fixtures = [
   "parity-markdown",
   "tabs",
   "parity-tabs",
+  "lists-tables",
+  "parity-list-item",
+  "parity-list-block",
+  "parity-entity-list",
+  "parity-metric-indicator",
+  "parity-table",
+  "parity-scrollable-table",
+  "parity-editable-table",
+  "parity-editable-table-selected",
+  "parity-editable-table-editing",
+  "parity-editable-table-select",
   "citations-sources",
   "parity-inline-markdown",
   "parity-citation",
@@ -141,6 +152,15 @@ export default async function buildFixtures() {
     false,
     "node",
   );
+  // Render the four SSR documents during setup. Importing these large generated server
+  // bundles inside a test makes Playwright transform them in each cold worker, consuming
+  // the hydration/interaction timeout before a page can even open.
+  const { serverPage } = (await import(
+    new URL("./.fixtures/server/bench-server.mjs", import.meta.url).href
+  )) as typeof import("./fixtures/bench-server");
+  for (const pkg of ["react-components", "react-ui"] as const)
+    for (const mode of ["light", "dark"] as const)
+      writeFileSync(here(`./.fixtures/server/bench-${pkg}-${mode}.html`), serverPage(pkg, mode));
   if (existsSync(baselineEntry)) {
     await bundle(entries(parityFixtures, "-baseline"), baselineEntry, true);
   }

@@ -153,6 +153,76 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-context-card--bg-color-warning` | Modifier | `bgColor="warning"` |
 | `.openui-context-card--bg-color-danger` | Modifier | `bgColor="danger"` |
 
+## EditableTable/base/components (EditableCell)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-editable-table-cell-base` | Part (`cell`) | On that part, whenever it renders |
+| `.openui-editable-table-cell-input` | Part (`input`) | On that part, whenever it renders |
+| `.openui-editable-table-display-text` | Part (`text`) | On that part, whenever it renders |
+| `.openui-editable-table-display-number` | Part (`number`) | On that part, whenever it renders |
+| `.openui-editable-table-display-url` | Part (`url`) | On that part, whenever it renders |
+| `.openui-editable-table-display-url-container` | Part (`urlContainer`) | On that part, whenever it renders |
+| `.openui-editable-table-display-url-icon` | Part (`urlIcon`) | On that part, whenever it renders |
+| `.openui-editable-table-display-url-warning-icon` | Part (`warning`) | On that part, whenever it renders |
+| `.openui-editable-table-display-url-warning` | Part (`warningContainer`) | On that part, whenever it renders |
+| `.openui-editable-table-cell-outline-top` | Part (`top`) | On that part, whenever it renders |
+| `.openui-editable-table-cell-outline-bottom` | Part (`bottom`) | On that part, whenever it renders |
+| `.openui-editable-table-cell-outline-left` | Part (`left`) | On that part, whenever it renders |
+| `.openui-editable-table-cell-outline-right` | Part (`right`) | On that part, whenever it renders |
+
+## EditableTable/base/components (EditableSelectCell)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-editable-table-select-trigger` | Part (`trigger`) | On that part, whenever it renders |
+| `.openui-editable-table-select-icon` | Part (`icon`) | On that part, whenever it renders |
+| `.openui-editable-table-select-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-editable-table-select-viewport` | Part (`viewport`) | On that part, whenever it renders |
+| `.openui-editable-table-select-item` | Part (`item`) | On that part, whenever it renders |
+| `.openui-editable-table-select-check-wrapper` | Part (`checkWrapper`) | On that part, whenever it renders |
+| `.openui-editable-table-select-check-icon` | Part (`checkIcon`) | On that part, whenever it renders |
+| `.openui-editable-table-select-item-text` | Part (`itemText`) | On that part, whenever it renders |
+| `.openui-editable-table-select-value` | Part (`value`) | On that part, whenever it renders |
+| `.openui-editable-table-select-indicator` | Part (`indicator`) | On that part, whenever it renders |
+
+## EditableTable
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-editable-table-scroll-container` | Part (`scroll`) | On that part, whenever it renders |
+| `.openui-editable-table-scroll-control` | Part (`control`) | On that part, whenever it renders |
+| `.openui-editable-table-table` | Part (`table`) | On that part, whenever it renders |
+| `.openui-editable-table-header-container` | Part (`header`) | On that part, whenever it renders |
+| `.openui-editable-table-header-icon` | Part (`headerIcon`) | On that part, whenever it renders |
+| `.openui-editable-table-changes-container` | Part (`changes`) | On that part, whenever it renders |
+| `.openui-editable-table-changes-count` | Part (`changesCount`) | On that part, whenever it renders |
+| `.openui-editable-table-changes-buttons` | Part (`changesButtons`) | On that part, whenever it renders |
+| `.openui-editable-table` | Root | Always |
+| `.openui-editable-table-head` | Part (`head`) | On that part, whenever it renders |
+| `.openui-editable-table-row` | Part (`row`) | On that part, whenever it renders |
+| `.openui-editable-table-cell` | Part (`cell`) | On that part, whenever it renders |
+| `.openui-editable-table-table-header` | Part (`tableHeader`) | On that part, whenever it renders |
+| `.openui-editable-table-table-body` | Part (`tableBody`) | On that part, whenever it renders |
+| `.openui-editable-table-header-row` | Part (`headerRow`) | On that part, whenever it renders |
+| `.openui-editable-table-icon` | Part (`icon`) | On that part, whenever it renders |
+
+## EntityList
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-entity-list` | Root | Always |
+| `.openui-entity-list-row` | Part (`row`) | On that part, whenever it renders |
+| `.openui-entity-list-cell-left` | Part (`cellLeft`) | On that part, whenever it renders |
+| `.openui-entity-list-cell-right` | Part (`cellRight`) | On that part, whenever it renders |
+| `.openui-entity-list--size-default` | Modifier | `size="default"` |
+| `.openui-entity-list--size-small` | Modifier | `size="small"` |
+| `.openui-entity-list-row--row-type-header` | Modifier | `rowType="header"` |
+| `.openui-entity-list-row--row-type-body` | Modifier | `rowType="body"` |
+| `.openui-entity-list-row--row-type-footer` | Modifier | `rowType="footer"` |
+| `.openui-entity-list-cell-right--right-variant-text` | Modifier | `rightVariant="text"` |
+| `.openui-entity-list-cell-right--right-variant-number` | Modifier | `rightVariant="number"` |
+
 ## IconButton
 
 | Stable class | Kind | Present when |
@@ -224,6 +294,41 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-inline-markdown-renderer` | Root | Always |
 | `.openui-inline-markdown-renderer-content` | Part (`content`) | On that part, whenever it renders |
 
+## ListBlock
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-list-block` | Root | Always |
+| `.openui-list-block--size-default` | Modifier | `size="default"` |
+| `.openui-list-block--size-small` | Modifier | `size="small"` |
+| `.openui-list-block--variant-number` | Modifier | `variant="number"` |
+| `.openui-list-block--variant-icon` | Modifier | `variant="icon"` |
+| `.openui-list-block--variant-image` | Modifier | `variant="image"` |
+
+## ListItem
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-list-item` | Root | Always |
+| `.openui-list-item-item` | Part (`item`) | On that part, whenever it renders |
+| `.openui-list-item-indicator` | Part (`indicator`) | On that part, whenever it renders |
+| `.openui-list-item-indicator-number` | Part (`indicatorNumber`) | On that part, whenever it renders |
+| `.openui-list-item-indicator-image` | Part (`indicatorImage`) | On that part, whenever it renders |
+| `.openui-list-item-content-wrapper` | Part (`contentWrapper`) | On that part, whenever it renders |
+| `.openui-list-item-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-list-item-title` | Part (`title`) | On that part, whenever it renders |
+| `.openui-list-item-subtitle` | Part (`subtitle`) | On that part, whenever it renders |
+| `.openui-list-item-action` | Part (`action`) | On that part, whenever it renders |
+| `.openui-list-item-action-label` | Part (`actionLabel`) | On that part, whenever it renders |
+| `.openui-list-item-action-icon` | Part (`actionIcon`) | On that part, whenever it renders |
+| `.openui-list-item-image` | Part (`image`) | On that part, whenever it renders |
+| `.openui-list-item--list-has-subtitle` | Part (`listHasSubtitle`) | On that part, whenever it renders |
+| `.openui-list-item--variant-number` | Modifier | `variant="number"` |
+| `.openui-list-item--variant-icon` | Modifier | `variant="icon"` |
+| `.openui-list-item--variant-image` | Modifier | `variant="image"` |
+| `.openui-list-item--size-default` | Modifier | `size="default"` |
+| `.openui-list-item--size-small` | Modifier | `size="small"` |
+
 ## MarkDownRenderer
 
 | Stable class | Kind | Present when |
@@ -237,6 +342,21 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-markdown-renderer--variant-clear` | Modifier | `variant="clear"` |
 | `.openui-markdown-renderer--variant-card` | Modifier | `variant="card"` |
 | `.openui-markdown-renderer--variant-sunk` | Modifier | `variant="sunk"` |
+
+## MetricIndicator
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-metric-indicator` | Root | Always |
+| `.openui-metric-indicator-row` | Part (`row`) | On that part, whenever it renders |
+| `.openui-metric-indicator-main-value` | Part (`mainValue`) | On that part, whenever it renders |
+| `.openui-metric-indicator-previous-value` | Part (`previousValue`) | On that part, whenever it renders |
+| `.openui-metric-indicator-subtext` | Part (`subtext`) | On that part, whenever it renders |
+| `.openui-metric-indicator-trend` | Part (`trend`) | On that part, whenever it renders |
+| `.openui-metric-indicator--variant-inline` | Modifier | `variant="inline"` |
+| `.openui-metric-indicator--variant-with-strikethrough` | Modifier | `variant="with-strikethrough"` |
+| `.openui-metric-indicator-trend--direction-up` | Modifier | `direction="up"` |
+| `.openui-metric-indicator-trend--direction-down` | Modifier | `direction="down"` |
 
 ## Modal
 
@@ -370,6 +490,48 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-steps-content` | Part (`content`) | On that part, whenever it renders |
 | `.openui-steps-title` | Part (`title`) | On that part, whenever it renders |
 | `.openui-steps-details` | Part (`details`) | On that part, whenever it renders |
+
+## Table (ScrollableTable)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-scrollable-table` | Root | Always |
+| `.openui-scrollable-table-wrapper` | Part (`wrapper`) | On that part, whenever it renders |
+| `.openui-scrollable-table-scroll-container` | Part (`scrollContainer`) | On that part, whenever it renders |
+| `.openui-scrollable-table-control` | Part (`control`) | On that part, whenever it renders |
+| `.openui-scrollable-table-icon` | Part (`icon`) | On that part, whenever it renders |
+
+## Table
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-table-container` | Part (`container`) | On that part, whenever it renders |
+| `.openui-table` | Root | Always |
+| `.openui-table-footer` | Part (`footer`) | On that part, whenever it renders |
+| `.openui-table-row` | Part (`row`) | On that part, whenever it renders |
+| `.openui-table-header` | Part (`header`) | On that part, whenever it renders |
+| `.openui-table-body` | Part (`body`) | On that part, whenever it renders |
+
+## Table (TableCell)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-table-cell` | Root | Always |
+| `.openui-table-cell--align-left` | Modifier | `align="left"` |
+| `.openui-table-cell--align-center` | Modifier | `align="center"` |
+| `.openui-table-cell--align-right` | Modifier | `align="right"` |
+
+## Table (TableHead)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-table-head` | Root | Always |
+| `.openui-table-head-label` | Part (`label`) | On that part, whenever it renders |
+| `.openui-table-head-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-table-head-icon` | Part (`icon`) | On that part, whenever it renders |
+| `.openui-table-head--align-left` | Modifier | `align="left"` |
+| `.openui-table-head--align-center` | Modifier | `align="center"` |
+| `.openui-table-head--align-right` | Modifier | `align="right"` |
 
 ## Tabs
 

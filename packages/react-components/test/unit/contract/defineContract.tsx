@@ -25,7 +25,7 @@ export function describeContract(folder: string) {
         </ThemeProvider>
       )),
     );
-    // The rollout's allowlist still owns these dependency classes (MetricIndicator in #100).
+    // The rollout's allowlist still owns any explicitly excluded dependency classes.
     const stable = (markup: string) =>
       new Set(
         [...stableClassesIn(markup)].filter((name) => !entry.unmigratedClasses?.includes(name)),

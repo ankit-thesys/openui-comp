@@ -2,7 +2,8 @@
 
 import clsx from "clsx";
 import React from "react";
-import { horizontalOutlineClass, verticalOutlineClass } from "./editableCell.styles";
+import { useStyles } from "../../../../styles/useStyles";
+import { editableCellStyles, names } from "./editableCell.styles";
 
 export interface CellOutlineProps {
   isSelected: boolean;
@@ -12,16 +13,17 @@ export interface CellOutlineProps {
 const SIDES = ["top", "bottom", "left", "right"] as const;
 
 export const CellOutline: React.FC<CellOutlineProps> = ({ isSelected, isEditing }) => {
+  const styles = useStyles(editableCellStyles);
   return (
     <>
       {SIDES.map((side) => (
         <div
           key={side}
+          data-state={isEditing ? "editing" : isSelected ? "selected" : "idle"}
           className={clsx(
-            side === "top" || side === "bottom" ? horizontalOutlineClass : verticalOutlineClass,
-            `openui-editable-table-cell-outline-${side}`,
-            isSelected && `openui-editable-table-cell-outline-${side}-selected`,
-            isEditing && `openui-editable-table-cell-outline-${side}-editing`,
+            side === "top" || side === "bottom" ? styles.horizontalOutline : styles.verticalOutline,
+            styles[side],
+            names[side],
           )}
         />
       ))}

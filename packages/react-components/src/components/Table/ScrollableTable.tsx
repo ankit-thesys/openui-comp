@@ -3,9 +3,10 @@
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { IconButton } from "../IconButton";
+import { names, scrollableTableStyles } from "./scrollableTable.styles";
 import { Table } from "./Table";
-import { controlClass, scrollContainerClass, wrapperClass } from "./scrollableTable.styles";
 
 export interface ScrollableTableProps extends React.HTMLAttributes<HTMLTableElement> {
   containerClassName?: string;
@@ -14,6 +15,7 @@ export interface ScrollableTableProps extends React.HTMLAttributes<HTMLTableElem
 
 const ScrollableTable = React.forwardRef<HTMLTableElement, ScrollableTableProps>(
   ({ className, containerClassName, containerStyle, children, ...tableProps }, ref) => {
+    const styles = useStyles(scrollableTableStyles);
     const wrapperRef = useRef<HTMLDivElement>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -85,20 +87,13 @@ const ScrollableTable = React.forwardRef<HTMLTableElement, ScrollableTableProps>
     }, []);
 
     return (
-      <div
-        className={clsx(wrapperClass, "openui-scrollable-table-wrapper")}
-        ref={wrapperRef}
-        tabIndex={0}
-      >
+      <div className={clsx(styles.wrapper, names.wrapper)} ref={wrapperRef} tabIndex={0}>
         {isScrollable && (
           <>
             <div
-              className={clsx(
-                controlClass,
-                "openui-scrollable-table-control",
-                "openui-scrollable-table-control-left",
-                !canScrollLeft && "openui-scrollable-table-control-disabled",
-              )}
+              className={clsx(styles.control, names.control)}
+              data-side="left"
+              data-disabled={!canScrollLeft}
             >
               <IconButton
                 aria-label="Scroll left"
@@ -106,16 +101,13 @@ const ScrollableTable = React.forwardRef<HTMLTableElement, ScrollableTableProps>
                 variant="secondary"
                 onClick={scrollToPrevColumn}
                 disabled={!canScrollLeft}
-                icon={<ChevronLeft size={16} />}
+                icon={<ChevronLeft className={names.icon} size={16} />}
               />
             </div>
             <div
-              className={clsx(
-                controlClass,
-                "openui-scrollable-table-control",
-                "openui-scrollable-table-control-right",
-                !canScrollRight && "openui-scrollable-table-control-disabled",
-              )}
+              className={clsx(styles.control, names.control)}
+              data-side="right"
+              data-disabled={!canScrollRight}
             >
               <IconButton
                 aria-label="Scroll right"
@@ -123,7 +115,7 @@ const ScrollableTable = React.forwardRef<HTMLTableElement, ScrollableTableProps>
                 variant="secondary"
                 onClick={scrollToNextColumn}
                 disabled={!canScrollRight}
-                icon={<ChevronRight size={16} />}
+                icon={<ChevronRight className={names.icon} size={16} />}
               />
             </div>
           </>
@@ -132,13 +124,13 @@ const ScrollableTable = React.forwardRef<HTMLTableElement, ScrollableTableProps>
           ref={ref}
           containerRef={scrollContainerRef as React.RefObject<HTMLDivElement>}
           containerClassName={clsx(
-            scrollContainerClass,
-            "openui-scrollable-table-scroll-container",
+            styles.scrollContainer,
+            names.scrollContainer,
             containerClassName,
           )}
           containerStyle={containerStyle}
-          className={className}
-          style={{ width: isScrollable ? "max-content" : "100%" }}
+          className={clsx(styles.root, names.root, className)}
+          data-scrollable={isScrollable}
           {...tableProps}
         >
           {children}

@@ -9,8 +9,9 @@ import {
   isValidElement,
   ReactElement,
 } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { ListItemProps, ListItemSize, ListItemVariant } from "../ListItem";
-import { rootClass } from "./listBlock.styles";
+import { listBlockStyles, names } from "./listBlock.styles";
 
 export interface ListBlockProps {
   /** Controls the indicator shown on every ListItem. Defaults to "number". */
@@ -25,6 +26,7 @@ export interface ListBlockProps {
 const ListBlock = forwardRef<HTMLDivElement, ListBlockProps>((props, ref) => {
   const { children, variant = "number", size = "default", className, style } = props;
 
+  const styles = useStyles(listBlockStyles);
   const childArray = Children.toArray(children);
   const listHasSubtitle = childArray.some(
     (child) => isValidElement(child) && !!(child as ReactElement<ListItemProps>).props.subtitle,
@@ -46,9 +48,11 @@ const ListBlock = forwardRef<HTMLDivElement, ListBlockProps>((props, ref) => {
     <div
       ref={ref}
       className={clsx(
-        rootClass,
-        "openui-list-block",
-        size === "small" && "openui-list-block--small",
+        styles.root,
+        names.root,
+        styles.size[size],
+        names.size[size],
+        names.variant[variant],
         className,
       )}
       style={style}

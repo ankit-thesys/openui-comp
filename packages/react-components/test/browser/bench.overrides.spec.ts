@@ -59,7 +59,7 @@ for (const component of migrated) {
     for (const className of component.stableClasses) {
       // The override as a consumer would write it: the class, plus each state the library styles.
       const ruleFor = async (page: Page) => {
-        await openMigrated(page, component);
+        await openMigrated(page, component, "", className);
         const selectors = [``, ...(await statesOn(page, className))].map(
           (state) => `.${className}${state}`,
         );
@@ -93,7 +93,7 @@ for (const component of migrated) {
 
       test(`.${className} wins when loaded before the library`, async ({ page }) => {
         const rule = await ruleFor(page);
-        await openMigrated(page, component, `<style>${rule}</style>`);
+        await openMigrated(page, component, `<style>${rule}</style>`, className);
         await check(page);
       });
 
