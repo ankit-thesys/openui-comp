@@ -2,8 +2,9 @@
 
 import clsx from "clsx";
 import { memo, useEffect, useRef, useState } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { IconWrapper } from "../_shared/icons";
-import { faviconClass } from "./sourceFaviconImage.styles";
+import { names, sourceFaviconImageStyles } from "./sourceFaviconImage.styles";
 
 export interface SourceFaviconImageProps {
   height: number;
@@ -17,6 +18,7 @@ export interface SourceFaviconImageProps {
  * 16x16 placeholder when it has nothing better, which is treated as a miss.
  */
 export const SourceFaviconImage = memo(({ height, width, url, alt }: SourceFaviconImageProps) => {
+  const styles = useStyles(sourceFaviconImageStyles);
   const ref = useRef<HTMLImageElement>(null);
   const [imageError, setImageError] = useState(false);
 
@@ -41,7 +43,7 @@ export const SourceFaviconImage = memo(({ height, width, url, alt }: SourceFavic
   };
 
   if (imageError || !url) {
-    return <IconWrapper name="globe" size={Math.max(height, width)} />;
+    return <IconWrapper name="globe" size={Math.max(height, width)} className={names.root} />;
   }
 
   return (
@@ -53,7 +55,7 @@ export const SourceFaviconImage = memo(({ height, width, url, alt }: SourceFavic
       width={width}
       onLoad={onSuccess}
       onError={onError}
-      className={clsx(faviconClass, "openui-source-favicon-image")}
+      className={clsx(styles.root, names.root)}
     />
   );
 });

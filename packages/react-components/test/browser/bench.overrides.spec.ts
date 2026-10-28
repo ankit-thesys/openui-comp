@@ -22,7 +22,7 @@ const declarations = Object.entries(OVERRIDE)
 
 // Computed OVERRIDE properties of every element carrying `className`, transitions finished.
 const computedAll = (page: Page, className: string) =>
-  page.locator(`#root .${className}`).evaluateAll(
+  page.locator(`.${className}`).evaluateAll(
     (elements, properties) =>
       elements.map((el) => {
         el.getAnimations().forEach((animation) => animation.finish());
@@ -36,7 +36,7 @@ const computedAll = (page: Page, className: string) =>
 // element carrying `className`, read from the library sheet.
 const statesOn = (page: Page, className: string) =>
   page.evaluate((className) => {
-    const elements = [...document.querySelectorAll(`#root .${className}`)];
+    const elements = [...document.querySelectorAll(`.${className}`)];
     const states = new Set<string>();
     const visit = (rules: CSSRuleList) => {
       for (const rule of rules) {
@@ -73,7 +73,13 @@ for (const component of migrated) {
           `.${className} renders only once the browser measures overflow`,
         );
         expect(styles.length).toBeGreaterThan(0);
-        for (const style of styles) expect(style).toEqual(OVERRIDE);
+        // #95 retains ADR Q12's listed-source background !important exception.
+        // Exercise every other property normally, and pin the exception rather than skipping it.
+        const expected =
+          className === "openui-sources-item-container"
+            ? { ...OVERRIDE, "background-color": "rgba(0, 0, 0, 0)" }
+            : OVERRIDE;
+        for (const style of styles) expect(style).toEqual(expected);
       };
 
       test(`.${className} wins when loaded before the library`, async ({ page }) => {

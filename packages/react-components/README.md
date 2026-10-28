@@ -328,7 +328,6 @@ The private document guard contributes no specificity.
 | IconText | `.openui-icon-text-root`, `.openui-icon-text-layout-vertical`, `.openui-icon-text-layout-horizontal`, `.openui-icon-text-content` |
 | TextContentWrapper | `.openui-text-content-wrapper-root`, `.openui-text-content-wrapper-markdown` |
 | Image | `.openui-image-root`, `.openui-image-fit-styled`, `.openui-image-fill-styled`, `.openui-image-error` |
-| SourceFaviconImage | `.openui-source-favicon-image-root` |
 | Tag | `.openui-tag-root`, `.openui-tag-icon-styled`, `.openui-tag-text-styled`, `.openui-tag-size-sm`, `.openui-tag-size-md`, `.openui-tag-size-lg`, `.openui-tag-variant-neutral`, `.openui-tag-variant-info`, `.openui-tag-variant-success`, `.openui-tag-variant-warning`, `.openui-tag-variant-danger` |
 | IconTag | `.openui-icon-tag-root`, `.openui-icon-tag-size-xs`, `.openui-icon-tag-size-s`, `.openui-icon-tag-size-m`, `.openui-icon-tag-size-l`, `.openui-icon-tag-size-xl`, `.openui-icon-tag-variant-neutral`, `.openui-icon-tag-variant-info`, `.openui-icon-tag-variant-success`, `.openui-icon-tag-variant-warning`, `.openui-icon-tag-variant-danger`, `.openui-icon-tag-variant-inverted` |
 | TextContent | `.openui-text-content-root`, `.openui-text-content-variant-sunk`, `.openui-text-content-variant-card`, `.openui-text-content-variant-clear` |
@@ -337,7 +336,6 @@ The private document guard contributes no specificity.
 | TextCallout | `.openui-text-callout-root`, `.openui-text-callout-variant-neutral`, `.openui-text-callout-variant-info`, `.openui-text-callout-variant-warning`, `.openui-text-callout-variant-success`, `.openui-text-callout-variant-danger`, `.openui-text-callout-content-styled`, `.openui-text-callout-title`, `.openui-text-callout-description` |
 | MetricIndicator | `.openui-metric-indicator-root` |
 | CodeBlock | `.openui-code-block-root` |
-| InlineMarkdownRenderer | `.openui-inline-markdown-renderer-inline-markdown-root` |
 | ImageBlock | `.openui-image-block-wrapper-styled`, `.openui-image-block-wrapper-mobile`, `.openui-image-block-error`, `.openui-image-block-image-styled`, `.openui-image-block-image-mobile`, `.openui-image-block-loader-styled` |
 | ImageText | `.openui-image-text-root`, `.openui-image-text-image-container`, `.openui-image-text-image`, `.openui-image-text-layout-vertical`, `.openui-image-text-layout-horizontal`, `.openui-image-text-content` |
 | ImageTextLarge | `.openui-image-text-large-root`, `.openui-image-text-large-image-wrap`, `.openui-image-text-large-image` |
@@ -350,7 +348,6 @@ The private document guard contributes no specificity.
 | TagBlock | `.openui-tag-block-root` |
 | DotMatrixLoader | `.openui-dot-matrix-loader-root` |
 | Skeleton | `.openui-skeleton-pie-chart-skeleton-root`, `.openui-skeleton-root`, `.openui-skeleton-bar-root`, `.openui-skeleton-table-skeleton-root` |
-| Sources | `.openui-sources-listed-sources-list`, `.openui-sources-listed-sources-header`, `.openui-sources-listed-sources-title`, `.openui-sources-listed-sources-buttons`, `.openui-sources-listed-sources-container`, `.openui-sources-item-item`, `.openui-sources-item-header`, `.openui-sources-item-name`, `.openui-sources-item-title`, `.openui-sources-item-logo` |
 | SnippetCardBlock | `.openui-snippet-card-block-root` |
 | ContextCardBlock | `.openui-context-card-block-card-image`, `.openui-context-card-block-card-root` |
 | CompositeCardBlock | `.openui-composite-card-block-card-wrapper`, `.openui-composite-card-block-card-root` |
@@ -364,7 +361,6 @@ The private document guard contributes no specificity.
 | EntityList | `.openui-entity-list-root` |
 | Table | `.openui-table-scrollable-table-wrapper`, `.openui-table-scrollable-table-scroll-container`, `.openui-table-scrollable-table-control`, `.openui-table-container-styled`, `.openui-table-table`, `.openui-table-footer-styled`, `.openui-table-head-styled`, `.openui-table-row-styled`, `.openui-table-cell-styled`, `.openui-table-alignment` |
 | TooltipWrapper | `.openui-tooltip-wrapper-body`, `.openui-tooltip-wrapper-heading`, `.openui-tooltip-wrapper-text`, `.openui-tooltip-wrapper-content` |
-| Citation | `.openui-citation-container-styled`, `.openui-citation-trigger`, `.openui-citation-tooltip-styled`, `.openui-citation-tooltip-content`, `.openui-citation-item-item`, `.openui-citation-item-logo`, `.openui-citation-item-content`, `.openui-citation-item-title`, `.openui-citation-item-source` |
 | ImageGallery | `.openui-image-gallery-gallery-modal-modal`, `.openui-image-gallery-gallery-modal-content`, `.openui-image-gallery-gallery-modal-header`, `.openui-image-gallery-gallery-modal-heading`, `.openui-image-gallery-gallery-modal-main`, `.openui-image-gallery-gallery-modal-carousel-container`, `.openui-image-gallery-gallery-modal-carousel`, `.openui-image-gallery-gallery-modal-button-container`, `.openui-image-gallery-gallery-modal-left-button`, `.openui-image-gallery-gallery-modal-right-button`, `.openui-image-gallery-gallery-modal-thumbnail`, `.openui-image-gallery-gallery-modal-active-thumbnail`, `.openui-image-gallery-gallery`, `.openui-image-gallery-grid`, `.openui-image-gallery-layout-openui-gallery-single`, `.openui-image-gallery-layout-openui-gallery-double`, `.openui-image-gallery-layout-openui-gallery-triple`, `.openui-image-gallery-layout-openui-gallery-quad`, `.openui-image-gallery-layout-openui-gallery-default`, `.openui-image-gallery-image`, `.openui-image-gallery-main-image`, `.openui-image-gallery-show-all` |
 
 
@@ -397,8 +393,8 @@ EditableTable remains deferred. The chart extension below also converts chart-ow
 Its independent acceptance remains pending; chart behavior is unchanged.
 Calendar's direct Select content/viewport dependency remains intact.
 
-SourceFaviconImage's canonical image hook applies to the successful image only;
-its shared icon fallback retains its existing styling. Markdown/code wrappers
+SourceFaviconImage's stable class applies to the image and its globe fallback;
+the fallback keeps its existing styling until overridden. Markdown/code wrappers
 are converted independently of vendor syntax theme objects and official KaTeX
 CSS/fonts. Existing per-instance inline geometry and colors, ThemeProvider
 serialization and animation behavior retain their contracts.
@@ -691,6 +687,23 @@ Renamed stable classes and props, per component converted to the flat convention
 | MarkDownRenderer | Shared `.openui-code-block-wrapper` | Also carries `.openui-markdown-renderer-code-block`; standalone CodeBlock defaults are unchanged |
 | MarkDownRenderer | `.openui-code-block-syntax-highlighter` inside markdown | Removed inside markdown; target `.openui-markdown-renderer-code-block` for the owned root around third-party output. Standalone CodeBlock keeps the old class. |
 | MarkDownRenderer | Shared `.openui-table` / `.openui-table-container` | Also carry `.openui-markdown-renderer-table` / `.openui-markdown-renderer-table-container` |
+| InlineMarkdownRenderer | `.openui-inline-markdown-renderer` | Unchanged root; the inline reset now belongs to `.openui-inline-markdown-renderer-content` on the composed markdown root |
+| InlineMarkdownRenderer | `.openui-inline-markdown-renderer--dark` | Removed (an inert theme marker); ThemeProvider continues to supply the theme |
+| Citation | `.openui-citation`, `.openui-citation-container`, `.openui-citation-tooltip`, `.openui-citation-tooltip-content` | Unchanged; the globe also carries `.openui-citation-icon` |
+| Citation | `.openui-citation-tooltip__content` | `.openui-citation-tooltip-content` |
+| CitationItem | `.openui-citation-item`, `.openui-citation-item-{logo,content,title,source}` | Unchanged family parts; `__{logo,content,title,source}` aliases removed |
+| CitationItem | `.openui-citation-item--has-url` | Removed derived marker; override `.openui-citation-item` or `.openui-citation-item:hover` |
+| Sources / ListedSources | `.openui-listed-sources`, `.openui-listed-sources-header` | `.openui-sources`, `.openui-sources-header` (Sources family) |
+| Sources / ListedSources | `.openui-listed-sources-header__{title,buttons}` | `.openui-sources-{title,buttons}` |
+| Sources / ListedSources | Shared `.openui-carousel-item` on each source card | `.openui-sources-item-container` owns the card styling, including in layer mode; Carousel keeps its scrolling role |
+| Sources / ListedSources | `.openui-listed-sources-item-container` | `.openui-sources-item-container` (retains its important width and backgrounds) |
+| Sources / ListedSources | `.openui-listed-sources-item-container--has-url` | Removed derived marker; override `.openui-sources-item-container:hover`, subject to the background exception |
+| ListedSourceItem | `.openui-listed-source-item` | `.openui-sources-item` |
+| ListedSourceItem | `.openui-listed-source-item__{header,logo,title}` | `.openui-sources-item-{header,logo,title}` |
+| ListedSourceItem | `.openui-listed-source-item__source-name` | `.openui-sources-item-name` |
+| ListedSourceItem | `.openui-listed-source-item--has-url` | Removed derived marker; override `.openui-sources-item` |
+| SourceFaviconImage | `.openui-source-favicon-image` | Unchanged root; the fallback globe also carries it |
+
 
 Pre-release `@openuidev/react-components` betas also emitted internal carrier classes that
 react-ui never had. They are gone; use the class on the right instead:
@@ -703,6 +716,13 @@ react-ui never had. They are gone; use the class on the right instead:
 | `.openui-tabs-container` | `.openui-tabs-list-container` |
 | `.openui-tabs-list-styled`, `.openui-tabs-trigger-styled`, `.openui-tabs-content-styled` | `.openui-tabs-list`, `.openui-tabs-trigger`, `.openui-tabs-content` |
 | `.openui-mark-down-renderer-markdown-{root,code,link}` | `.openui-markdown-renderer`, `-code`, `-link` |
+| `.openui-inline-markdown-renderer-inline-markdown-root` | `.openui-inline-markdown-renderer` |
+| `.openui-citation-container-styled`, `.openui-citation-trigger`, `.openui-citation-tooltip-styled` | `.openui-citation-container`, `.openui-citation`, `.openui-citation-tooltip` |
+| `.openui-citation-item-item` | `.openui-citation-item` |
+| `.openui-sources-listed-sources-{list,header,title,buttons,container}` | `.openui-sources`, `.openui-sources-header`, `.openui-sources-title`, `.openui-sources-buttons`, `.openui-sources-item-container` |
+| `.openui-sources-item-item` | `.openui-sources-item` |
+| `.openui-source-favicon-image-root` | `.openui-source-favicon-image` |
+
 
 ## Beta import migration
 

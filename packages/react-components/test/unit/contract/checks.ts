@@ -88,7 +88,7 @@ const GENERATED = String.raw`\.go\d+`;
 const STATE = [
   String.raw`:(?:hover|focus-visible|active|disabled|first-child|last-child|checked|placeholder-shown|focus-within)`,
   String.raw`\[(?:data|aria)-[a-z-]+(?:=(?:"[^"]*"|'[^']*'|[\w-]+))?\]`,
-  String.raw`::(?:before|after|placeholder|-webkit-scrollbar)`,
+  String.raw`::(?:before|after|placeholder|-webkit-scrollbar(?:-track|-thumb)?)`,
 ].join("|");
 
 const ONE_CLASS = new RegExp(`^${GENERATED}$`);
