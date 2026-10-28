@@ -11,6 +11,10 @@ import { migrated, openMigrated, type MigratedComponent } from "./bench/migrated
 // that a library rule matching it at rest declares. Transitions are finished first.
 const snapshot = (page: Page, component: MigratedComponent) =>
   page.evaluate((classes) => {
+    // Match the pilot Button's untyped fixture. Radix and Chips default to type="button";
+    // exercise that separate, documented <=3.3 conflict in the typed-button cases below.
+    for (const button of document.querySelectorAll('#root button[type="button"]'))
+      button.removeAttribute("type");
     const libraryRules: CSSStyleRule[] = [];
     const visit = (rules: CSSRuleList) => {
       for (const rule of rules) {
@@ -72,9 +76,9 @@ for (const component of migrated) {
       });
     }
 
-    // Buttons with type="button": Tailwind ≤3.3 preflight's `[type='button']` rule weighs as much
-    // as a library class and loads later, so it clears their background. That is the known
-    // conflict documented in the README; 3.4 and 4.1 scope the rule with :where() and do not.
+    // Tailwind <=3.3's [type='button'] ties a base class and loads later. A library class plus
+    // a matching state (:disabled, [data-state], [aria-selected], ...) outweighs that reset.
+    // Exercise both sets of real buttons; 3.4 and 4.1 scope the reset with :where().
     const typedBackgrounds = async (page: Page, head = "") => {
       await openMigrated(page, component, head);
       await page.evaluate(() => {
@@ -82,25 +86,55 @@ for (const component of migrated) {
           button.setAttribute("type", "button");
       });
       // Buttons transition their background; read the end value.
-      return page.evaluate(() =>
-        [...document.querySelectorAll("#root button")].map((button) => {
+      return page.evaluate(() => {
+        const stateBackgrounds: CSSStyleRule[] = [];
+        const visit = (rules: CSSRuleList) => {
+          for (const rule of rules) {
+            if (rule instanceof CSSStyleRule) {
+              if (/^\.go\d+(?=:|\[)/.test(rule.selectorText) && rule.style.backgroundColor)
+                stateBackgrounds.push(rule);
+            } else if (rule instanceof CSSMediaRule) {
+              if (matchMedia(rule.conditionText).matches) visit(rule.cssRules);
+            } else if (rule instanceof CSSGroupingRule) visit(rule.cssRules);
+          }
+        };
+        visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
+        return [...document.querySelectorAll("#root button")].map((button) => {
           button.getAnimations().forEach((animation) => animation.finish());
-          return getComputedStyle(button).backgroundColor;
-        }),
-      );
+          return {
+            background: getComputedStyle(button).backgroundColor,
+            stateBackground: stateBackgrounds.some((rule) => button.matches(rule.selectorText)),
+          };
+        });
+      });
     };
 
     test("Tailwind 3.3 preflight clears the background of type=button buttons", async ({
       page,
     }) => {
-      const plain = await typedBackgrounds(page);
+      const plain = (await typedBackgrounds(page)).filter((button) => !button.stateBackground);
       test.skip(
-        !plain.some((background) => background !== "rgba(0, 0, 0, 0)"),
-        `${component.folder} renders no <button> with a background to clear`,
+        !plain.some(({ background }) => background !== "rgba(0, 0, 0, 0)"),
+        `${component.folder} renders no class-level <button> background to clear`,
       );
-      expect(new Set(await typedBackgrounds(page, tailwind("33")))).toEqual(
-        new Set(["rgba(0, 0, 0, 0)"]),
+      const reset = (await typedBackgrounds(page, tailwind("33")))
+        .filter((button) => !button.stateBackground)
+        .map(({ background }) => background);
+      expect(reset).toHaveLength(plain.length);
+      expect(new Set(reset)).toEqual(new Set(["rgba(0, 0, 0, 0)"]));
+    });
+
+    test("Tailwind 3.3 preflight keeps state backgrounds of type=button buttons", async ({
+      page,
+    }) => {
+      const plain = (await typedBackgrounds(page)).filter((button) => button.stateBackground);
+      test.skip(
+        plain.length === 0,
+        `${component.folder} renders no state background on a <button>`,
       );
+      expect(
+        (await typedBackgrounds(page, tailwind("33"))).filter((button) => button.stateBackground),
+      ).toEqual(plain);
     });
 
     for (const version of ["34", "4"]) {

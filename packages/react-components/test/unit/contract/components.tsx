@@ -3,10 +3,17 @@
 import {
   Button,
   Buttons,
+  CheckBoxGroup,
+  CheckBoxItem,
+  Chips,
   CodeBlock,
   FormControl,
   IconButton,
   MarkDownRenderer,
+  RadioGroup,
+  RadioItem,
+  SwitchGroup,
+  SwitchItem,
   Table,
   TableBody,
   TableCell,
@@ -18,6 +25,8 @@ import {
   TabsList,
   TabsTrigger,
   TagBlock,
+  ToggleGroup,
+  ToggleItem,
 } from "@openuidev/react-components";
 import type { ReactElement } from "react";
 import { renderToString } from "react-dom/server";
@@ -99,6 +108,111 @@ export const sharedBaseConsumers = [
 ];
 
 export const migratedComponents: MigratedComponent[] = [
+  {
+    folder: "Chips",
+    names: namesOf("Chips"),
+    elements: () =>
+      (["single", "multiple"] as const).flatMap((type) =>
+        [false, true].map((disabled) => (
+          <Chips
+            key={`${type}-${disabled}`}
+            type={type}
+            disabled={disabled}
+            selected={["a"]}
+            items={[
+              { value: "a", label: "Selected", icon: <svg /> },
+              { value: "b", label: "Other", icon: <svg /> },
+              { value: "c", label: "Disabled", disabled: true },
+            ]}
+          />
+        )),
+      ),
+  },
+
+  ...["ToggleGroup", "ToggleItem"].map((folder) => ({
+    folder,
+    names: [...namesOf("ToggleGroup"), ...namesOf("ToggleItem")],
+    elements: () =>
+      [false, true].map((disabled) => (
+        <ToggleGroup
+          key={String(disabled)}
+          type="multiple"
+          defaultValue={["a"]}
+          disabled={disabled}
+        >
+          <ToggleItem value="a">Selected</ToggleItem>
+          <ToggleItem value="b">Other</ToggleItem>
+        </ToggleGroup>
+      )),
+  })),
+
+  {
+    folder: "SwitchItem",
+    names: namesOf("SwitchItem"),
+    elements: () =>
+      [false, true].flatMap((checked) =>
+        [false, true].map((disabled) => (
+          <SwitchItem
+            key={`${checked}-${disabled}`}
+            checked={checked}
+            disabled={disabled}
+            label="Choice"
+            description="Details"
+          />
+        )),
+      ),
+  },
+  {
+    folder: "SwitchGroup",
+    names: [...namesOf("SwitchGroup"), ...namesOf("SwitchItem")],
+    elements: () =>
+      (["clear", "card", "sunk"] as const).map((variant) => (
+        <SwitchGroup key={variant} variant={variant}>
+          <SwitchItem checked label="Choice" description="Details" />
+        </SwitchGroup>
+      )),
+  },
+
+  ...["RadioGroup", "RadioItem"].map((folder) => ({
+    folder,
+    names: [...namesOf("RadioGroup"), ...namesOf("RadioItem")],
+    elements: () =>
+      (["clear", "card", "sunk"] as const).map((variant) => (
+        <RadioGroup key={variant} variant={variant} defaultValue="a">
+          <RadioItem value="a" label="Selected" description="Details" />
+          <RadioItem value="b" disabled label="Disabled" description="Details" />
+          <RadioItem value="c" label="Other" />
+        </RadioGroup>
+      )),
+  })),
+
+  {
+    folder: "CheckBoxItem",
+    names: namesOf("CheckBoxItem"),
+    elements: () =>
+      [false, true].flatMap((checked) =>
+        [false, true].map((disabled) => (
+          <CheckBoxItem
+            key={`${checked}-${disabled}`}
+            checked={checked}
+            disabled={disabled}
+            label="Choice"
+            description="Details"
+          />
+        )),
+      ),
+  },
+  {
+    folder: "CheckBoxGroup",
+    names: [...namesOf("CheckBoxGroup"), ...namesOf("CheckBoxItem")],
+    elements: () =>
+      (["clear", "card", "sunk"] as const).map((variant) => (
+        <CheckBoxGroup key={variant} variant={variant}>
+          <CheckBoxItem checked label="Choice" description="Details" />
+        </CheckBoxGroup>
+      )),
+  },
+
   {
     folder: "MarkDownRenderer",
     prose: true,

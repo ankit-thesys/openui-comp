@@ -46,6 +46,8 @@ const PROPERTIES = [
 /** Captures blocks and parts of one case element, after any running transition has finished. */
 const measure = (root: Element, properties: string[]) => {
   const out: Record<string, string> = {};
+  // Choice controls also compare their SVG paint, thumb transform and focus outline.
+  const extra = JSON.parse(root.getAttribute("data-parity-properties") ?? "[]") as string[];
   const record = (el: Element, prefix: string) => {
     el.getAnimations().forEach((animation) => {
       // Infinite skeleton pulses cannot finish (the Web Animations API throws). Compare the
@@ -56,7 +58,7 @@ const measure = (root: Element, properties: string[]) => {
       } else animation.finish();
     });
     const style = getComputedStyle(el);
-    for (const property of properties)
+    for (const property of [...properties, ...extra])
       out[`${prefix}${property}`] = style.getPropertyValue(property);
     const box = el.getBoundingClientRect();
     out[`${prefix}width`] = box.width.toFixed(2);

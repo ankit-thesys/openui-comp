@@ -14,8 +14,11 @@ export { migrated };
 export async function openMigrated(page: Page, component: MigratedComponent, head = "") {
   const path = `/migrated-${component.folder}.html`;
   const body =
-    // A margin-free body, so percentage sizes do not depend on whether a reset removed its margin.
-    `<!doctype html><html><head><meta charset="utf-8"><style>body { margin: 0; }</style>${head}` +
+    // Normalize page-owned values that affect declared library properties: body margin changes
+    // percentage sizes; UA disabled-button color changes currentColor borders, even border:none.
+    // Zero specificity lets every library color declaration (and consumer override) still win.
+    `<!doctype html><html><head><meta charset="utf-8"><style>body { margin: 0; }
+      :where(#root button) { color: inherit; }</style>${head}` +
     `</head><body><div id="root"></div><script type="module" src="/elements.js"></script></body></html>`;
   await page.route(`**${path}?*`, (route) => route.fulfill({ contentType: "text/html", body }));
   await page.goto(`${path}?component=${encodeURIComponent(component.folder)}`);
