@@ -16,6 +16,7 @@ const allowlist: string[] = JSON.parse(
 const EXEMPT = new Set([
   "src/styles/defaults.ts", // theme token defaults on <html> (ADR 0001, Q5)
   "src/styles/useStyles.ts", // the hook that hands Goober's css to migrated components
+  "src/utils/componentStyles.ts", // reads Goober's server sheet for getComponentStyles(); registers nothing
 ]);
 
 const sourceFiles = (dir: string): string[] =>
