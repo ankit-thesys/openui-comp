@@ -1,4 +1,3 @@
-import { skeletonPulse } from "./skeletonPulse";
 export const pieStyles = `
   display: flex;
   align-items: center;
@@ -14,7 +13,6 @@ export const pieStyles = `
   & .openui-skeleton-pie-chart-shape {
     border-radius: 50%;
     background-color: var(--openui-elevated-strong, oklch(0.097 0 0 / 0.16));
-    animation: ${skeletonPulse} 1.2s ease-in-out infinite;
   }
   & .openui-skeleton-pie-chart-donut {
     background-color: transparent;
@@ -45,7 +43,6 @@ export const pieStyles = `
     height: 10px;
     border-radius: 50%;
     background-color: var(--openui-elevated-strong, oklch(0.097 0 0 / 0.16));
-    animation: ${skeletonPulse} 1.2s ease-in-out infinite;
     flex-shrink: 0;
   }
 `;

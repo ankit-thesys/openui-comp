@@ -141,6 +141,80 @@ pnpm --filter @openuidev/react-components test:parity:baseline
 
 Commit the new baseline file. Recapture only when adding cases, never to absorb a regression.
 
+### Shared helpers (#90)
+
+`src/styles/base.ts` and `src/components/Skeleton/skeletonPulse.ts` are factories registered
+by their users through `useStyles`, with no import-time registration or `<html>` marker.
+Their `names` appear as SharedBase and SkeletonPulse in the generated reference.
+`sharedStyleContracts` in `components.tsx` records these helpers separately; their focused
+`SharedBase.contract.test.tsx` and `SkeletonPulse.contract.test.tsx` collect only the CSS
+added by rendering public components. `sharedBaseConsumers` lists the three border-box users.
+The callers' remaining owned styles stay allowlisted for #91, #96 and #101. They are not
+fully migrated families and must not join `migratedComponents` yet.
+
+`shared-base.spec.ts` covers both stable helper classes before/after the library, in default
+and layer mode, import-time inactivity, an `<html class>` rewrite, root-only box sizing and
+actual pulse progression. `shared-base.parity.spec.ts` and `skeleton-pulse.parity.spec.ts`
+use the `parity-shared-base` and `parity-skeleton-pulse` fixtures. Capture the new
+`shared-base.json` and `skeleton-pulse.json` baselines from #72 with the command above.
+No intentional differences are allowed. The parity collector pauses infinite animations
+at time zero (they cannot be finished); the browser spec separately advances the pulse
+through its 0% and 50% frames to verify the animation still runs.
+
+### Migrate a component checklist
+
+Follow ADR 0001 **including its Amendments**, the package glossary and the pilot spec on
+`origin/claude/flat-styles-spec-grill`. Button, IconButton, Tabs and MarkDownRenderer are
+the working examples. Keep the change inside the rollout ticket's family scope.
+
+1. Inventory the public roots, owned parts, appearance props and runtime states. Read the
+   existing styles and callers, including chat-kit references (report kit references; do not
+   change that package). Record the exact old-to-new names and props in the README migration
+   table and update internal callers. Preserve `"use client"` as every component module's
+   first line; barrels have no directive.
+2. Add a public-export contract case in `test/unit/contract/components.tsx` and a
+   `<Folder>.contract.test.tsx` calling `describeContract("<Folder>")`. Cover every value of
+   every prop that changes classes, defaults included, and all parts. Record genuinely
+   browser-only parts in `clientOnly`. Start with one failing behaviour through public
+   server rendering of the **built** package; never import factories or `useStyles` in tests.
+3. Export a plain `names` const from each style module and a `componentStyles(css: StyleCss)`
+   factory returning root, part and axis entries. Call `useStyles(factory)` inside the component
+   render and join generated and stable classes with `clsx`, as Button does. Register nothing
+   at import and remove the module's `<html>` marker. Reuse the shared border-box and pulse
+   factories at render when applicable; do not copy or eagerly register them.
+4. Use roots `openui-<component>`, parts `openui-<component>-<part>` and modifiers
+   `--<kebab-case-prop>-<kebab-case-value>`. Emit default modifiers, and boolean modifiers only
+   when true. Put states on native attributes/pseudo-classes or Radix attributes. Keep each
+   selector to one class plus one state (or the documented sibling/foreign-content rules).
+   Root modifiers pass cross-axis/part values via private `--_openui-*` variables. Keep state
+   rules ordered to preserve precedence, as in the pilot. Only MarkDownRenderer opts into
+   the amended prose budget. Retain the documented `!important` exceptions.
+5. Go green for that behaviour, rebuild and run its single contract file and `pnpm typecheck`.
+   Repeat one behaviour at a time. Add a `parity-<component>.tsx` fixture importing
+   `openui-under-test`, register it in `build-fixtures.ts`, and add a spec titled
+   `"<Component> matches the #72 computed styles"` calling `checkParity(page, "<component>")`.
+   Cover prop combinations and parts in light/dark at rest, hover and press. Use
+   `__PARITY_BASELINE__` only to translate renamed props/classes for the #72 bundle.
+6. Capture the computed-style baseline from **#72 at `5e09b37c`**, using
+   `pnpm test:parity:baseline`; commit its generated `parity/baselines/<component>.json`.
+   Never hand-write JSON or recapture to hide a regression. List any intentional visual
+   differences explicitly in `checkParity` and explain why. If Chromium is unavailable,
+   leave capture/execution to the orchestrator and report the fixture/spec/baseline names.
+7. Joining `migratedComponents` automatically joins `bench.overrides` and `bench.tailwind`.
+   Verify consumer CSS wins on **every stable class** before and after the library, adding
+   the same state when needed, with no `!important`. Add focused fixture/spec coverage for
+   runtime states, portal/measurement-only parts, layer mode and `<html class>` replacement
+   as needed; the generic bench does not replace these. Typecheck browser tests even when
+   Chromium cannot run.
+8. Remove only the converted modules from `test/flat-allowlist.json`. After building, run
+   `pnpm docs:selectors` and check in the generated reference. Additive entries in shared
+   files must preserve other tickets' work. Shared helper migrations use the focused
+   contracts above instead of claiming an entire family is flat.
+9. From this package, run `pnpm build && pnpm test && pnpm run ci` from a clean build, then
+   run Chromium's `pnpm test:browser` (including parity and override specs). Review the diff
+   against the ticket and ADR, fix findings, and report any blocked checks or intentional
+   differences. Leave commits, pushes and PRs to the ticket's authorized delivery flow.
+
 ## Review screenshots
 
 `screenshots.spec.ts` saves a full-page PNG of every parity fixture, in light and dark, to

@@ -2,12 +2,14 @@
 // combination through public exports. Add a component here when it leaves the allowlist.
 import {
   Button,
+  Buttons,
   CardSourceProvider,
   Carousel,
   CarouselContent,
   Citation,
   CitationItem,
   CodeBlock,
+  FormControl,
   IconButton,
   InlineMarkdownRenderer,
   ListedSourceItem,
@@ -25,6 +27,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
+  TagBlock,
 } from "@openuidev/react-components";
 import type { ReactElement } from "react";
 import { renderToString } from "react-dom/server";
@@ -59,6 +62,17 @@ const namesOf = (folder: string) => {
   return names;
 };
 
+// Shared factories migrate independently of the component families that use them. Their
+// focused contracts inspect only the CSS registered by rendering those public components.
+export const sharedStyleContracts = [
+  { folder: "SharedBase", module: "src/styles/base.ts", names: namesOf("SharedBase") },
+  {
+    folder: "SkeletonPulse",
+    module: "src/components/Skeleton/skeletonPulse.ts",
+    names: namesOf("SkeletonPulse"),
+  },
+];
+
 const product = <T,>(...lists: T[][]): T[][] =>
   lists.reduce<T[][]>(
     (rows, list) => rows.flatMap((row) => list.map((item) => [...row, item])),
@@ -84,6 +98,35 @@ const source = {
   url: "https://example.com",
 };
 const inlineContent = "**Inline** [link](https://example.com) and `code` [1]";
+
+// Only their shared border-box rule is migrated in #90. Their owned styles stay on the
+// allowlist until #91/#96; do not add these families to migratedComponents yet.
+export const sharedBaseConsumers = [
+  {
+    name: "Buttons",
+    element: (
+      <Buttons>
+        <button>Action</button>
+      </Buttons>
+    ),
+  },
+  {
+    name: "FormControl",
+    element: (
+      <FormControl>
+        <span>Field</span>
+      </FormControl>
+    ),
+  },
+  {
+    name: "TagBlock",
+    element: (
+      <TagBlock>
+        <span>Tag</span>
+      </TagBlock>
+    ),
+  },
+];
 
 export const migratedComponents: MigratedComponent[] = [
   {

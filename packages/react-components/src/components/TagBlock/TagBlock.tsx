@@ -2,7 +2,8 @@
 
 import clsx from "clsx";
 import { CSSProperties, forwardRef, ReactElement } from "react";
-import { borderBoxClass } from "../../styles/base";
+import { names as baseNames, baseStyles } from "../../styles/base";
+import { useStyles } from "../../styles/useStyles";
 import { Tag } from "../Tag";
 import { blockClass } from "./tagBlock.styles";
 
@@ -13,10 +14,11 @@ export interface TagBlockProps {
 }
 
 export const TagBlock = forwardRef<HTMLDivElement, TagBlockProps>((props, ref) => {
+  const base = useStyles(baseStyles);
   return (
     <div
       ref={ref}
-      className={clsx(blockClass, borderBoxClass, "openui-tag-block", props.className)}
+      className={clsx(blockClass, base.root, baseNames.root, "openui-tag-block", props.className)}
       style={props.styles}
     >
       {props.children}

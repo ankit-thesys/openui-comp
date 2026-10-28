@@ -30,6 +30,9 @@ const fixtures = [
   "parity-citation-tooltip",
   "parity-sources",
   "parity-source-favicon-image",
+  "shared-base",
+  "parity-shared-base",
+  "parity-skeleton-pulse",
 ];
 const parityFixtures = fixtures.filter((name) => name.startsWith("parity-"));
 

@@ -3,7 +3,8 @@
 import clsx from "clsx";
 import { css } from "goober";
 import { CSSProperties, forwardRef, HTMLAttributes, ReactElement } from "react";
-import { borderBoxClass } from "../../styles/base";
+import { names as baseNames, baseStyles } from "../../styles/base";
+import { useStyles } from "../../styles/useStyles";
 import { ButtonProps } from "../Button";
 import { IconButtonProps } from "../IconButton";
 import { buttonsStyles } from "./buttons.styles";
@@ -27,12 +28,14 @@ const variantMap: Record<ButtonsVariant, string> = {
 
 export const Buttons = forwardRef<HTMLDivElement, ButtonsProps>((props, ref) => {
   const { className, style, variant = "horizontal", children, ...rest } = props;
+  const base = useStyles(baseStyles);
   return (
     <div
       ref={ref}
       className={clsx(
         componentClass,
-        borderBoxClass,
+        base.root,
+        baseNames.root,
         "openui-buttons",
         variantMap[variant],
         className,
