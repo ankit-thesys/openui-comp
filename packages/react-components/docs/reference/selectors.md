@@ -175,6 +175,49 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-select-trigger--size-md` | Modifier | `size="md"` |
 | `.openui-select-trigger--size-lg` | Modifier | `size="lg"` |
 
+## Slider
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-slider-left-content` | Part (`leftContent`) | On that part, whenever it renders |
+| `.openui-slider-container` | Part (`container`) | On that part, whenever it renders |
+| `.openui-slider` | Root | Always |
+| `.openui-slider-track` | Part (`track`) | On that part, whenever it renders |
+| `.openui-slider-range` | Part (`range`) | On that part, whenever it renders |
+| `.openui-slider-thumb` | Part (`thumb`) | On that part, whenever it renders |
+| `.openui-slider-thumb-handle` | Part (`handle`) | On that part, whenever it renders |
+| `.openui-slider-thumb-handle-inner` | Part (`handleInner`) | On that part, whenever it renders |
+| `.openui-slider-thumb-handle-inner-dot` | Part (`handleDot`) | On that part, whenever it renders |
+| `.openui-slider-thumb-value` | Part (`value`) | On that part, whenever it renders |
+| `.openui-slider-dots-dot` | Part (`mark`) | On that part, whenever it renders |
+| `.openui-slider-container-wrapper` | Part (`containerWrapper`) | On that part, whenever it renders |
+| `.openui-slider-labels` | Part (`labels`) | On that part, whenever it renders |
+| `.openui-slider-wrapper` | Part (`wrapper`) | On that part, whenever it renders |
+| `.openui-slider-right-content` | Part (`rightContent`) | On that part, whenever it renders |
+| `.openui-slider-label` | Part (`label`) | On that part, whenever it renders |
+| `.openui-slider--variant-continuous` | Modifier | `variant="continuous"` |
+| `.openui-slider--variant-discrete` | Modifier | `variant="discrete"` |
+
+## Slider (SliderBlock)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-slider-block` | Root | Always |
+| `.openui-slider-block-header` | Part (`header`) | On that part, whenever it renders |
+| `.openui-slider-block-label` | Part (`label`) | On that part, whenever it renders |
+| `.openui-slider-block-controls` | Part (`controls`) | On that part, whenever it renders |
+| `.openui-slider-block-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-slider-block-validated-input-container` | Part (`inputContainer`) | On that part, whenever it renders |
+| `.openui-slider-block-validated-select-container` | Part (`selectContainer`) | On that part, whenever it renders |
+| `.openui-slider-block-validated-input` | Part (`validatedInput`) | On that part, whenever it renders |
+| `.openui-slider-block-input` | Part (`input`) | On that part, whenever it renders |
+| `.openui-slider-block-select-trigger` | Part (`selectTrigger`) | On that part, whenever it renders |
+| `.openui-slider-block-error-message` | Part (`error`) | On that part, whenever it renders |
+| `.openui-slider-block-error-icon` | Part (`errorIcon`) | On that part, whenever it renders |
+| `.openui-slider-block-separator` | Part (`separator`) | On that part, whenever it renders |
+| `.openui-slider-block--variant-continuous` | Modifier | `variant="continuous"` |
+| `.openui-slider-block--variant-discrete` | Modifier | `variant="discrete"` |
+
 ## Tabs
 
 | Stable class | Kind | Present when |

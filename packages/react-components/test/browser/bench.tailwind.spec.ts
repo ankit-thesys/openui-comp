@@ -87,6 +87,7 @@ for (const component of migrated) {
     // Buttons with type="button": Tailwind ≤3.3 preflight's `[type='button']` rule weighs as much
     // as a library class and loads later, so it clears their background. That is the known
     // conflict documented in the README; 3.4 and 4.1 scope the rule with :where() and do not.
+    // Matching state backgrounds outweigh preflight even in 3.3 and must remain unchanged.
     const typedBackgrounds = async (page: Page, head = "") => {
       // This known conflict concerns base backgrounds. Keep portals closed so a trigger's
       // higher-specificity open/hover state is not mistaken for a base background.
@@ -103,7 +104,6 @@ for (const component of migrated) {
           for (const rule of rules) {
             if (
               rule instanceof CSSStyleRule &&
-              /^\.go\d+$/.test(rule.selectorText) &&
               (rule.style.background || rule.style.backgroundColor)
             )
               backgrounds.push(rule);
@@ -111,12 +111,18 @@ for (const component of migrated) {
           }
         };
         visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
-        return [...document.querySelectorAll("button")]
-          .filter((button) => backgrounds.some((rule) => button.matches(rule.selectorText)))
-          .map((button) => {
-            button.getAnimations().forEach((animation) => animation.finish());
-            return getComputedStyle(button).backgroundColor;
-          });
+        const baseRule = (rule: CSSStyleRule) => /^\.go\d+$/.test(rule.selectorText);
+        const result = { base: [] as string[], state: [] as string[] };
+        for (const button of document.querySelectorAll("button")) {
+          const matching = backgrounds.filter((rule) => button.matches(rule.selectorText));
+          if (!matching.some(baseRule)) continue;
+          // #94: disabled SliderBlock Select triggers have both a base background and a
+          // :disabled background. The latter wins over [type=button], so assert it separately.
+          const group = matching.some((rule) => !baseRule(rule)) ? result.state : result.base;
+          button.getAnimations().forEach((animation) => animation.finish());
+          group.push(getComputedStyle(button).backgroundColor);
+        }
+        return result;
       });
     };
 
@@ -124,13 +130,15 @@ for (const component of migrated) {
       page,
     }) => {
       const plain = await typedBackgrounds(page);
+      const reset = await typedBackgrounds(page, tailwind("33"));
+      if (component.folder === "Slider") expect(plain.state.length).toBeGreaterThan(0);
+      expect(reset.state).toEqual(plain.state);
       test.skip(
-        !plain.some((background) => background !== "rgba(0, 0, 0, 0)"),
+        !plain.base.some((background) => background !== "rgba(0, 0, 0, 0)"),
         `${component.folder} renders no <button> with a background to clear`,
       );
-      expect(new Set(await typedBackgrounds(page, tailwind("33")))).toEqual(
-        new Set(["rgba(0, 0, 0, 0)"]),
-      );
+      expect(reset.base).toHaveLength(plain.base.length);
+      expect(new Set(reset.base)).toEqual(new Set(["rgba(0, 0, 0, 0)"]));
     });
 
     for (const version of ["34", "4"]) {
@@ -138,7 +146,10 @@ for (const component of migrated) {
         page,
       }) => {
         const plain = await typedBackgrounds(page);
-        test.skip(plain.length === 0, `${component.folder} renders no <button>`);
+        test.skip(
+          plain.base.length + plain.state.length === 0,
+          `${component.folder} renders no <button>`,
+        );
         expect(await typedBackgrounds(page, tailwind(version))).toEqual(plain);
       });
     }

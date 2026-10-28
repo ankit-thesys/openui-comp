@@ -27,7 +27,11 @@ const computedAll = (page: Page, className: string) =>
       elements.map((el) => {
         el.getAnimations().forEach((animation) => animation.finish());
         const style = getComputedStyle(el);
-        return Object.fromEntries(properties.map((p) => [p, style.getPropertyValue(p)]));
+        return {
+          values: Object.fromEntries(properties.map((p) => [p, style.getPropertyValue(p)])),
+          // ADR Q12: SliderBlock retains its existing important error border.
+          importantBorder: el.matches('.openui-slider-block-input[data-invalid="true"]'),
+        };
       }),
     Object.keys(OVERRIDE),
   );
@@ -73,7 +77,13 @@ for (const component of migrated) {
           `.${className} renders only once the browser measures overflow`,
         );
         expect(styles.length).toBeGreaterThan(0);
-        for (const style of styles) expect(style).toEqual(OVERRIDE);
+        for (const { values, importantBorder } of styles) {
+          if (importantBorder) {
+            const { "border-top-color": _exception, ...ordinary } = values;
+            const { "border-top-color": _expectedException, ...expected } = OVERRIDE;
+            expect(ordinary).toEqual(expected);
+          } else expect(values).toEqual(OVERRIDE);
+        }
       };
 
       test(`.${className} wins when loaded before the library`, async ({ page }) => {
