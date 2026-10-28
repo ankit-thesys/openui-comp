@@ -40,21 +40,21 @@ export const editableSelectCellStyles = (css: StyleCss) => ({
     &[data-state="open"] {
       border-color: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));
       background-color: var(--openui-highlight, oklch(0.097 0 0 / 0.04));
-      --_openui-editable-table-select-rotation: 180deg;
+      --_openui-editable-table-select-icon-rotation: 180deg;
     }
     &:disabled {
       background-color: var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02));
       color: var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2));
       border-color: var(--openui-border-default, oklch(0.097 0 0 / 0.06));
       cursor: not-allowed;
-      --_openui-editable-table-select-rotation: 0deg;
+      --_openui-editable-table-select-icon-rotation: 0deg;
     }
   `,
   icon: css`
     height: 16px;
     width: 16px;
     transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: rotate(var(--_openui-editable-table-select-rotation, 0deg));
+    transform: rotate(var(--_openui-editable-table-select-icon-rotation, 0deg));
   `,
   content: css`
     box-sizing: border-box;
@@ -82,8 +82,8 @@ export const editableSelectCellStyles = (css: StyleCss) => ({
     padding: 0;
     color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
     transform-origin: top center;
-    animation: openui-editable-table-select-show 0.18s ease-out forwards;
-    @keyframes openui-editable-table-select-show {
+    animation: _openui-editable-table-select-show 0.18s ease-out forwards;
+    @keyframes _openui-editable-table-select-show {
       from {
         opacity: 0;
         transform: scale(0.95);

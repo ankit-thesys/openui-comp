@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { migrated, openMigrated } from "./bench/migrated";
 
 const color = "rgb(1, 2, 3)";
 const background = "rgb(4, 5, 6)";
@@ -101,6 +102,60 @@ for (const order of ["before", "after"] as const) {
           await expect(target).toHaveCSS("color", color);
           await expect(target).toHaveCSS("background-color", background);
         }
+      });
+    }
+  }
+}
+
+// #98 in layer mode: consumer CSS on every Accordion, SectionBlock, Steps, Card and CardHeader
+// stable class beats the library in `@layer openui`, loaded before or after it. Layer order, not
+// specificity, decides, so the bare class also beats the library's state rules (first and last
+// items, focus, open and closed): the override includes each property those rules set.
+const layeredOverride = {
+  color,
+  "background-color": background,
+  "padding-top": "7px",
+  "padding-right": "8px",
+  "padding-bottom": "9px",
+  "padding-left": "10px",
+  "border-top-color": "rgb(11, 12, 13)",
+  "border-bottom-color": "rgb(11, 12, 13)",
+  "border-top-left-radius": "2px",
+  "border-bottom-left-radius": "2px",
+  "margin-top": "3px",
+  position: "relative",
+  "z-index": "3",
+  "animation-name": "none",
+};
+const layeredDeclarations = Object.entries(layeredOverride)
+  .map(([property, value]) => `${property}: ${value};`)
+  .join(" ");
+for (const component of migrated.filter((entry) =>
+  ["Accordion", "SectionBlock", "Steps", "Card", "CardHeader"].includes(entry.folder),
+)) {
+  for (const name of component.stableClasses) {
+    for (const order of ["before", "after"] as const) {
+      test(`${component.folder}: .${name} overrides ${order} the library in openui layer mode`, async ({
+        page,
+      }) => {
+        const css = `.${name} { ${layeredDeclarations} }`;
+        const head = order === "before" ? `<style>${css}</style>` : "";
+        await openMigrated(page, component, head, name, true, "openui");
+        if (order === "after") await page.addStyleTag({ content: css });
+        expect(
+          await page.evaluate(() => document.getElementById("_goober")!.textContent),
+        ).toContain("@layer openui");
+        const values = await page.locator(`.${name}`).evaluateAll(
+          (elements, properties) =>
+            elements.map((el) => {
+              el.getAnimations().forEach((animation) => animation.finish());
+              const style = getComputedStyle(el);
+              return Object.fromEntries(properties.map((p) => [p, style.getPropertyValue(p)]));
+            }),
+          Object.keys(layeredOverride),
+        );
+        expect(values.length).toBeGreaterThan(0);
+        for (const value of values) expect(value).toEqual(layeredOverride);
       });
     }
   }

@@ -2,12 +2,15 @@
 // `?component=<folder>`, straight from that list, the way a client-only app renders it: its
 // elements keep every prop as written, functions and plugin objects included, and its styles
 // register at render.
-import { LineChart } from "@openuidev/react-components";
+import { LineChart, ThemeProvider } from "@openuidev/react-components";
 import { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { migratedComponents } from "../../unit/contract/components";
 
-const folder = new URLSearchParams(location.search).get("component");
+const params = new URLSearchParams(location.search);
+const folder = params.get("component");
+// `?layer=<name>` renders the same elements in layer mode (`<ThemeProvider cssLayer>`).
+const layer = params.get("layer");
 const component = migratedComponents.find((entry) => entry.folder === folder);
 if (!component) throw new Error(`No migrated component ${folder}`);
 const elements = component.elements();
@@ -47,4 +50,12 @@ function Fixture() {
     </>
   );
 }
-createRoot(document.getElementById("root")!).render(<Fixture />);
+createRoot(document.getElementById("root")!).render(
+  layer ? (
+    <ThemeProvider cssLayer={layer}>
+      <Fixture />
+    </ThemeProvider>
+  ) : (
+    <Fixture />
+  ),
+);

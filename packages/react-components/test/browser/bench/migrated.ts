@@ -10,13 +10,17 @@ const { migrated } = (await import(
 export type MigratedComponent = (typeof migrated)[number];
 export { migrated };
 
-/** Opens a page rendering `component`, with `head` (consumer CSS, say) before the bundle. */
+/**
+ * Opens a page rendering `component`, with `head` (consumer CSS, say) before the bundle, in
+ * layer mode when `layer` names a cascade layer.
+ */
 export async function openMigrated(
   page: Page,
   component: MigratedComponent,
   head = "",
   targetClass = "",
   openPortals = true,
+  layer = "",
 ) {
   const path = `/migrated-${component.folder}.html`;
   // SegmentedBar deliberately inherits the page's font. Give the chart bench explicit page
@@ -41,9 +45,12 @@ export async function openMigrated(
     `</head><body><div id="root"></div><script type="module" src="/elements.js"></script></body></html>`;
   await page.route(`**${path}?*`, (route) => route.fulfill({ contentType: "text/html", body }));
   if (component.folder === "ImageBlock") await page.route("**/media-pending.svg", () => {});
-  await page.goto(`${path}?component=${encodeURIComponent(component.folder)}`, {
-    waitUntil: component.folder === "ImageBlock" ? "domcontentloaded" : "load",
-  });
+  await page.goto(
+    `${path}?${new URLSearchParams({ component: component.folder, ...(layer ? { layer } : {}) })}`,
+    {
+      waitUntil: component.folder === "ImageBlock" ? "domcontentloaded" : "load",
+    },
+  );
   // Wait for a visible stable part: a Modal portal root has no box because its children
   // are fixed-positioned. Selecting that root first would time out despite an open dialog.
   await page

@@ -62,7 +62,7 @@ const ValueInput = ({
           }
         }}
         className={clsx(inputCss.input, names.input)}
-        data-invalid={Boolean(error) || undefined}
+        hasError={Boolean(error)}
         disabled={disabled}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}

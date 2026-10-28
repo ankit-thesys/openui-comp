@@ -8,7 +8,10 @@ export const names = {
 export const inlineMarkdownStyles = (css: StyleCss) => ({
   // The span is inline by default; leave display to callers such as TextBlock's hidden row.
   root: css`
-    --_openui-inline-markdown-renderer-composite: var(--_openui-composite-card-inline, 0);
+    --_openui-inline-markdown-renderer-root-composite-typography: var(
+      --_openui-composite-card-inline,
+      0
+    );
     text-align: inherit;
   `,
   content: css`

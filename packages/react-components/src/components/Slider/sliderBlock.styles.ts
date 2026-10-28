@@ -85,7 +85,9 @@ export const sliderBlockStyles = (css: StyleCss) => ({
   `,
 });
 
-// Registered after the composed Input defaults, so a single owned class wins the tie.
+// Registered after the composed Input defaults, so a single owned class wins the tie. The error
+// state is Input's own `[aria-invalid]`, so Input's state overrides reach it. As in #72 it keeps
+// the danger border even when disabled, draws no danger ring, and keeps the focus ring.
 export const sliderBlockInputStyles = (css: StyleCss) => ({
   input: css`
     height: 36px;
@@ -93,8 +95,12 @@ export const sliderBlockInputStyles = (css: StyleCss) => ({
     text-align: right;
     padding-left: var(--openui-space-s, 8px);
     padding-right: var(--openui-space-s, 8px);
-    &[data-invalid="true"] {
-      border-color: var(--openui-border-danger-emphasis, oklch(0.577 0.215 27.325 / 1)) !important;
+    &[aria-invalid="true"] {
+      border-color: var(--openui-border-danger-emphasis, oklch(0.577 0.215 27.325 / 1));
+      box-shadow: none;
+    }
+    &:focus-within {
+      box-shadow: 0 0 0 2.5px var(--openui-border-default, oklch(0.097 0 0 / 0.06));
     }
   `,
 });

@@ -133,12 +133,10 @@ rule in a named cascade layer loses to the unlayered library rules.
   last child. These declarations are exceptions to ordinary consumer overrides. The never-matching
   first-child `margin-top: 0 !important` rule has been removed (the copy button precedes the
   highlighter).
-- The listed sources view, standalone CodeBlock and SliderBlock also retain their existing
+- The listed sources view and standalone CodeBlock also retain their existing
   `!important` declarations. Syntax-highlighter theme maps and token output keep their third-party
   inline styles; use the code-block root class to restyle the block around that output.
-- SliderBlock retains `border-color: … !important` on
-  `.openui-slider-block-input[data-invalid="true"]`. Other properties remain ordinarily overridable.
-  Slider marks and Radix track/range/thumb placement keep their dynamic inline positions.
+- Slider marks and Radix track/range/thumb placement keep their dynamic inline positions.
 - Markdown prose ignores bare element selectors (`p { … }`, element resets); target it through
   `.openui-markdown-renderer` instead.
 - The Tabs indicator's width and position are set inline as the active tab changes, so they are
@@ -902,7 +900,7 @@ Renamed stable classes and props, per component converted to the flat convention
 | Slider | `.openui-slider-range--at-min` | `.openui-slider-range[data-at-min]` |
 | Slider | `.openui-slider-dots-dot--active` | `.openui-slider-dots-dot[data-state="active"]` (other marks use `inactive`). |
 | SliderBlock | `.openui-slider-block`, `.openui-slider-block__{header,label,controls,content,validated-input-container,validated-select-container,validated-input,input,error-message,separator}` | Root unchanged; parts use single hyphens: `.openui-slider-block-{…}`. The error SVG also carries `.openui-slider-block-error-icon`. |
-| SliderBlock | `.openui-slider-block__header--with-error`, `.openui-slider-block__input-error` | `.openui-slider-block-header[data-invalid="true"]`, `.openui-slider-block-input[data-invalid="true"]`; the input's important border is retained. |
+| SliderBlock | `.openui-slider-block__header--with-error`, `.openui-slider-block__input-error` | `.openui-slider-block-header[data-invalid="true"]`, the input uses Input's `.openui-input[aria-invalid="true"]` (also `.openui-slider-block-input[aria-invalid="true"]`), with no `!important`. |
 | SliderBlock | `.is-range`, `.is-single`, `.openui-slider-block__controls--inputs` | Range controls use `.openui-slider-block-controls[data-range]`; absence means single. Input/Select roots have owned `.openui-slider-block-input` / `.openui-slider-block-select-trigger` parts. |
 | SliderBlock | `variant="continuous"` / `"discrete"` | Always emit `.openui-slider-block--variant-{continuous,discrete}` for the requested variant, even while streaming temporarily renders a continuous nested Slider. |
 | SliderBlock | Embedded Input and Select | Keep public `.openui-input--size-medium` and `.openui-select-trigger--size-md` names; props, validation and streaming behavior unchanged. |

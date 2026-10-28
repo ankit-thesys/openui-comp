@@ -29,12 +29,15 @@ export const listItemStyles = (css: StyleCss) => ({
     flex-direction: column;
     gap: var(--_openui-list-item-gap);
     width: 100%;
-    --_openui-list-item-indicator-size: var(--_openui-list-item-compact-size);
+    --_openui-list-item-indicator-size: var(--_openui-list-item-indicator-compact-size);
     --_openui-list-item-indicator-margin: 0px;
     --_openui-list-item-indicator-radius: var(--openui-radius-s, 6px);
     &[data-action="true"] {
       --_openui-list-item-action-scale: 1.1;
-      --_openui-list-item-hover-bg: var(--openui-highlight-strong, oklch(0.097 0 0 / 0.08));
+      --_openui-list-item-indicator-hover-bg: var(
+        --openui-highlight-strong,
+        oklch(0.097 0 0 / 0.08)
+      );
       border-bottom: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));
       padding-bottom: var(--openui-space-m, 12px);
     }
@@ -59,11 +62,11 @@ export const listItemStyles = (css: StyleCss) => ({
       --_openui-list-item-action-scale: 1.1;
     }
     &:hover {
-      --_openui-list-item-indicator-bg: var(--_openui-list-item-hover-bg);
+      --_openui-list-item-indicator-bg: var(--_openui-list-item-indicator-hover-bg);
       --_openui-list-item-action-color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
     }
     &:focus {
-      --_openui-list-item-indicator-bg: var(--_openui-list-item-hover-bg);
+      --_openui-list-item-indicator-bg: var(--_openui-list-item-indicator-hover-bg);
       --_openui-list-item-action-color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
     }
   `,
@@ -114,14 +117,14 @@ export const listItemStyles = (css: StyleCss) => ({
   `,
   title: css`
     color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
-    font: var(--_openui-list-item-body-font);
-    letter-spacing: var(--_openui-list-item-body-spacing);
+    font: var(--_openui-list-item-item-font);
+    letter-spacing: var(--_openui-list-item-item-letter-spacing);
     font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
   `,
   subtitle: css`
     color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
-    font: var(--_openui-list-item-body-font);
-    letter-spacing: var(--_openui-list-item-body-spacing);
+    font: var(--_openui-list-item-item-font);
+    letter-spacing: var(--_openui-list-item-item-letter-spacing);
     font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
   `,
   action: css`
@@ -137,8 +140,8 @@ export const listItemStyles = (css: StyleCss) => ({
       --_openui-list-item-action-color,
       var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))
     );
-    font: var(--_openui-list-item-body-font);
-    letter-spacing: var(--_openui-list-item-body-spacing);
+    font: var(--_openui-list-item-item-font);
+    letter-spacing: var(--_openui-list-item-item-letter-spacing);
     font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
   `,
   actionIcon: css`
@@ -146,8 +149,8 @@ export const listItemStyles = (css: StyleCss) => ({
       --_openui-list-item-action-color,
       var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))
     );
-    font: var(--_openui-list-item-body-font);
-    letter-spacing: var(--_openui-list-item-body-spacing);
+    font: var(--_openui-list-item-item-font);
+    letter-spacing: var(--_openui-list-item-item-letter-spacing);
     font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
   `,
   image: css`
@@ -157,7 +160,7 @@ export const listItemStyles = (css: StyleCss) => ({
     display: block;
   `,
   listHasSubtitle: css`
-    --_openui-list-item-indicator-size: var(--_openui-list-item-full-size);
+    --_openui-list-item-indicator-size: var(--_openui-list-item-indicator-full-size);
     --_openui-list-item-indicator-margin: var(--openui-space-2xs, 4px);
     --_openui-list-item-indicator-radius: var(--openui-radius-m, 8px);
   `,
@@ -165,14 +168,17 @@ export const listItemStyles = (css: StyleCss) => ({
     default: css`
       --_openui-list-item-gap: var(--openui-space-m, 12px);
       --_openui-list-item-item-gap: var(--openui-space-m, 12px);
-      --_openui-list-item-compact-size: 24px;
-      --_openui-list-item-full-size: 40px;
-      --_openui-list-item-body-font: var(
+      --_openui-list-item-indicator-compact-size: 24px;
+      --_openui-list-item-indicator-full-size: 40px;
+      --_openui-list-item-item-font: var(
         --openui-text-body-default,
         400 16px/1.5 "Inter",
         sans-serif
       );
-      --_openui-list-item-body-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);
+      --_openui-list-item-item-letter-spacing: var(
+        --openui-text-body-default-letter-spacing,
+        -0.01em
+      );
       --_openui-list-item-number-font: var(
         --openui-text-label-default,
         400 16px/1.25 "Inter",
@@ -183,10 +189,10 @@ export const listItemStyles = (css: StyleCss) => ({
     small: css`
       --_openui-list-item-gap: var(--openui-space-s, 8px);
       --_openui-list-item-item-gap: var(--openui-space-s-m, 10px);
-      --_openui-list-item-compact-size: 20px;
-      --_openui-list-item-full-size: 36px;
-      --_openui-list-item-body-font: var(--openui-text-body-sm, 400 14px/1.5 "Inter", sans-serif);
-      --_openui-list-item-body-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);
+      --_openui-list-item-indicator-compact-size: 20px;
+      --_openui-list-item-indicator-full-size: 36px;
+      --_openui-list-item-item-font: var(--openui-text-body-sm, 400 14px/1.5 "Inter", sans-serif);
+      --_openui-list-item-item-letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);
       --_openui-list-item-number-font: var(
         --openui-text-numbers-sm,
         400 14px/1.5 "Inter",
