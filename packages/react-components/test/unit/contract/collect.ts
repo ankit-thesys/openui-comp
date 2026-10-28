@@ -1,18 +1,17 @@
-import { extractCss } from "goober";
+import { getComponentStyles } from "@openuidev/react-components";
 import type { ReactElement } from "react";
 import { renderToString } from "react-dom/server";
 
 /**
- * Server-renders `elements` and returns their markup and the CSS registered while rendering.
- *
- * Reads Goober's server sheet directly for now: drains it, renders, then takes what was added.
- * Switch to the package's public `getComponentStyles()` once it lands, diffing its cumulative
- * output before and after the render instead.
+ * Server-renders `elements` and returns their markup and the CSS registered while rendering:
+ * the part of the package's cumulative `getComponentStyles()` sheet that the render added.
  */
 export function renderAndCollect(elements: ReactElement[]): { html: string; css: string } {
-  extractCss();
+  const before = getComponentStyles().trim();
   const html = elements.map((element) => renderToString(element)).join("");
-  return { html, css: extractCss() };
+  const after = getComponentStyles().trim();
+  if (!after.startsWith(before)) throw new Error("getComponentStyles() is no longer cumulative.");
+  return { html, css: after.slice(before.length) };
 }
 
 /** Every `openui-*` class in `html`. */
