@@ -660,17 +660,14 @@ Renamed stable classes and props, per component converted to the flat convention
 | IconButton | `appearance="normal"` prop | `tone="default"` (the default); emits `.openui-icon-button--tone-default` |
 | IconButton | `appearance="destructive"` prop | `tone="destructive"`; emits `.openui-icon-button--tone-destructive` |
 | IconButton | `.openui-icon-button-destructive-{primary,secondary,tertiary}` | `.openui-icon-button--tone-destructive` with `.openui-icon-button--variant-{…}` |
-| Tabs | `.openui-tabs-tabs` | Removed; use `.openui-tabs` |
+| Tabs | `.openui-tabs` (root), `.openui-tabs-list`, `.openui-tabs-trigger`, `.openui-tabs-content` and their parts | Unchanged |
 | Tabs | `.openui-tabs-clear` | `.openui-tabs--variant-clear` |
-| Tabs | `.openui-tabs-container` | `.openui-tabs-list-container` (the wrapper around the tablist) |
-| Tabs | `.openui-tabs-list-styled` | Removed; use `.openui-tabs-list` (the tablist) |
 | Tabs | `.openui-tabs-list--{title,icon-title,icon-title-subtext,image-title,image-title-subtext}` | `.openui-tabs-list--variant-{title,icon-title,icon-title-subtext,image-title,image-title-subtext}` |
-| Tabs | `.openui-tabs-trigger-styled` | Removed; use `.openui-tabs-trigger` |
-| Tabs | `.openui-tabs-content-styled` | Removed; use `.openui-tabs-content` |
+| Tabs | `.openui-tabs-list-container` | Unchanged; now a part around the tablist, which is the TabsList root and receives `className`, `style` and `ref` |
+| Tabs | `<img>` inside `.openui-tabs-trigger-image` | Also carries the new `.openui-tabs-trigger-img` part |
 | Tabs | `.openui-tabs-clear .openui-tabs-trigger`, `.openui-tabs-list--… .openui-tabs-trigger-icon` and other context selectors | The single class of the element, such as `.openui-tabs-trigger` or `.openui-tabs-trigger-icon` |
-| MarkDownRenderer | `.openui-mark-down-renderer-markdown-root` | `.openui-markdown-renderer` |
-| MarkDownRenderer | `.openui-mark-down-renderer-markdown-code` | `.openui-markdown-renderer-code` |
-| MarkDownRenderer | `.openui-mark-down-renderer-markdown-link` | `.openui-markdown-renderer-link` |
+| Tabs | Scroll buttons styled by Tabs rules | Styled as IconButtons (`.openui-icon-button…`); `.openui-tabs-scroll-button`, `-scroll-left` and `-scroll-right` remain as hooks |
+| MarkDownRenderer | `.openui-markdown-renderer` (root), `.openui-markdown-renderer-code`, `.openui-markdown-renderer-link` | Unchanged |
 | MarkDownRenderer | `.openui-markdown-renderer-card` | `.openui-markdown-renderer--variant-card` |
 | MarkDownRenderer | `.openui-markdown-renderer-card-sunk` | `.openui-markdown-renderer--variant-sunk` |
 | MarkDownRenderer | No default `variant`, no clear modifier | `variant="clear"` by default; always emits `.openui-markdown-renderer--variant-clear` |
@@ -678,8 +675,17 @@ Renamed stable classes and props, per component converted to the flat convention
 | MarkDownRenderer | `.openui-code-block-syntax-highlighter` inside markdown | Removed inside markdown; target `.openui-markdown-renderer-code-block` for the owned root around third-party output. Standalone CodeBlock keeps the old class. |
 | MarkDownRenderer | Shared `.openui-table` / `.openui-table-container` | Also carry `.openui-markdown-renderer-table` / `.openui-markdown-renderer-table-container` |
 
-Pre-release `@openuidev/react-components` betas also emitted `.openui-button-root` and
-`.openui-icon-button-root`; use `.openui-button` and `.openui-icon-button` instead.
+Pre-release `@openuidev/react-components` betas also emitted internal carrier classes that
+react-ui never had. They are gone; use the class on the right instead:
+
+| Beta-only class | Use |
+| --- | --- |
+| `.openui-button-root` | `.openui-button` |
+| `.openui-icon-button-root` | `.openui-icon-button` |
+| `.openui-tabs-tabs` | `.openui-tabs` |
+| `.openui-tabs-container` | `.openui-tabs-list-container` |
+| `.openui-tabs-list-styled`, `.openui-tabs-trigger-styled`, `.openui-tabs-content-styled` | `.openui-tabs-list`, `.openui-tabs-trigger`, `.openui-tabs-content` |
+| `.openui-mark-down-renderer-markdown-{root,code,link}` | `.openui-markdown-renderer`, `-code`, `-link` |
 
 ## Beta import migration
 

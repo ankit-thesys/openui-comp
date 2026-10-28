@@ -139,8 +139,8 @@ pnpm --filter @openuidev/react-components test:screenshots
 
 It finds fixtures by their `fixtures/parity-*.tsx` file name, so a new component's parity fixture
 is included once it is in `fixtures` in `build-fixtures.ts`. The capture adds a presentation-only
-stylesheet that wraps the cases into rows and paints the page with the theme background; components
-are not restyled.
+stylesheet on the page and `#root` only: the cases sit in wrapping rows as flex items, on the theme
+background. Components are not restyled; parity, not the screenshots, is the gate.
 
 ## CI
 

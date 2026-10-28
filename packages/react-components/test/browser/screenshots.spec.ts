@@ -17,8 +17,7 @@ const parityFixtures = readdirSync(here("./fixtures/"))
 const PNG_SIGNATURE = "89504e470d0a1a0a";
 const REVIEW_LAYOUT = `
   body { margin: 0; background: var(--openui-background, #fff); }
-  #root, #root > * { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-  #root { padding: 16px; }
+  #root { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; padding: 16px; }
 `;
 
 test.describe("review screenshots", () => {
@@ -44,8 +43,10 @@ test.describe("review screenshots", () => {
 
         await page.goto(`/${fixture}.html?mode=${mode}`);
         await expect(page.locator("[data-parity-case]").first()).toBeVisible();
-        // Presentation only, for a readable image: wrap the cases into rows and paint the page with
-        // the theme's background so dark-mode cases are visible. Components are not restyled.
+        // Presentation only, for a readable image: lay the cases out in wrapping rows and paint the
+        // page with the theme's background so dark-mode cases are visible. Only the page and #root
+        // are styled; fixtures render their cases directly under #root, so the cases themselves are
+        // not restyled, only placed as flex items.
         await page.addStyleTag({ content: REVIEW_LAYOUT });
         // Let transitions settle so idle cases are captured in their resting state.
         await page.evaluate(() =>
