@@ -99,9 +99,7 @@ test("the client adopts the server sheet instead of adding a second one", async 
   expect((await computed(page, "default"))["background-color"]).not.toBe("rgba(0, 0, 0, 0)");
 });
 
-test("an empty server sheet breaks the client, which is why getComponentStyles never returns one", async ({
-  page,
-}) => {
+test("an empty library sheet tag left by the host still works on the client", async ({ page }) => {
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   const empty = serverPage("", `<script type="module" src="/button.js"></script>`).replace(
@@ -110,5 +108,7 @@ test("an empty server sheet breaks the client, which is why getComponentStyles n
   );
 
   await openServerPage(page, empty);
-  await expect.poll(() => errors.length).toBeGreaterThan(0);
+  await expect(page.locator("#root > button")).toHaveCount(3);
+  expect(errors).toEqual([]);
+  expect((await computed(page, "default"))["background-color"]).not.toBe("rgba(0, 0, 0, 0)");
 });
