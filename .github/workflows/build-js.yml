@@ -30,3 +30,26 @@ jobs:
 
       - name: Run Packages CI
         run: pnpm --filter "./packages/**" --workspace-concurrency=1 run ci
+
+  react-components-browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: v24.22.1
+          cache: pnpm
+          cache-dependency-path: "pnpm-lock.yaml"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build react-components
+        run: pnpm --filter @openuidev/react-components run build
+
+      - name: Install Chromium
+        run: pnpm --filter @openuidev/react-components exec playwright install --with-deps chromium
+
+      - name: Run react-components browser tests
+        run: pnpm --filter @openuidev/react-components run test:browser
