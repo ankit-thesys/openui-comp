@@ -21,9 +21,10 @@ export async function openMigrated(page: Page, component: MigratedComponent, hea
     `</head><body><div id="root"></div><script type="module" src="/elements.js"></script></body></html>`;
   await page.route(`**${path}?*`, (route) => route.fulfill({ contentType: "text/html", body }));
   await page.goto(`${path}?component=${encodeURIComponent(component.folder)}`);
-  // Any stable class will do: which parts and modifiers render depends on the elements.
+  // Wait for a visible stable part: a Modal portal root has no box because its children
+  // are fixed-positioned. Selecting that root first would time out despite an open dialog.
   await page
-    .locator(component.stableClasses.map((name) => `#root .${name}`).join(", "))
+    .locator(component.stableClasses.map((name) => `.${name}:visible`).join(", "))
     .first()
     .waitFor();
   if (component.folder === "Citation") {

@@ -2,11 +2,10 @@
 
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import clsx from "clsx";
-import { css } from "goober";
 import { ChevronDownIcon } from "lucide-react";
 import React, { forwardRef } from "react";
-import { accordionStyles } from "./accordion.styles";
-const componentClass = "openui-accordion-root";
+import { useStyles } from "../../styles/useStyles";
+import { accordionStyles, names } from "./accordion.styles";
 
 type AccordionVariant = "clear" | "card" | "sunk";
 
@@ -16,23 +15,26 @@ export type AccordionProps = (
   variant?: AccordionVariant;
 };
 
-const variantMap: Record<AccordionVariant, string> = {
-  clear: "openui-accordion-clear",
-  card: "openui-accordion-card",
-  sunk: "openui-accordion-sunk",
-};
-
 export const Accordion = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Root>,
   AccordionProps
->(({ className, style, variant = "clear", ...props }, ref) => (
-  <AccordionPrimitive.Root
-    ref={ref}
-    className={clsx(componentClass, "openui-accordion", variantMap[variant], className)}
-    style={style}
-    {...props}
-  />
-));
+>(({ className, style, variant = "clear", ...props }, ref) => {
+  const styles = useStyles(accordionStyles);
+  return (
+    <AccordionPrimitive.Root
+      ref={ref}
+      className={clsx(
+        styles.root,
+        names.root,
+        styles.variant[variant],
+        names.variant[variant],
+        className,
+      )}
+      style={style}
+      {...props}
+    />
+  );
+});
 
 export interface AccordionItemProps extends React.ComponentPropsWithoutRef<
   typeof AccordionPrimitive.Item
@@ -45,15 +47,18 @@ export interface AccordionItemProps extends React.ComponentPropsWithoutRef<
 export const AccordionItem = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Item>,
   AccordionItemProps
->(({ className, style, value, ...props }, ref) => (
-  <AccordionPrimitive.Item
-    ref={ref}
-    className={clsx("openui-accordion-item", className)}
-    style={style}
-    value={value}
-    {...props}
-  />
-));
+>(({ className, style, value, ...props }, ref) => {
+  const styles = useStyles(accordionStyles);
+  return (
+    <AccordionPrimitive.Item
+      ref={ref}
+      className={clsx(styles.item, names.item, className)}
+      style={style}
+      value={value}
+      {...props}
+    />
+  );
+});
 
 export interface AccordionTriggerProps extends React.ComponentPropsWithoutRef<
   typeof AccordionPrimitive.Trigger
@@ -66,22 +71,29 @@ export interface AccordionTriggerProps extends React.ComponentPropsWithoutRef<
 export const AccordionTrigger = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Trigger>,
   AccordionTriggerProps
->(({ className, style, text, icon, ...props }, ref) => (
-  <AccordionPrimitive.Header className={clsx("openui-accordion-header")}>
-    <AccordionPrimitive.Trigger
-      ref={ref}
-      className={clsx("openui-accordion-trigger", className)}
-      style={style}
-      {...props}
-    >
-      <div className="openui-accordion-trigger-content">
-        {icon && <span className="openui-accordion-trigger-content-icon">{icon}</span>}
-        {text}
-      </div>
-      <ChevronDownIcon className="openui-accordion-trigger-icon" />
-    </AccordionPrimitive.Trigger>
-  </AccordionPrimitive.Header>
-));
+>(({ className, style, text, icon, ...props }, ref) => {
+  const styles = useStyles(accordionStyles);
+  return (
+    <AccordionPrimitive.Header className={clsx(styles.header, names.header)}>
+      <AccordionPrimitive.Trigger
+        ref={ref}
+        className={clsx(styles.trigger, names.trigger, className)}
+        style={style}
+        {...props}
+      >
+        <div className={clsx(styles.triggerContent, names.triggerContent)}>
+          {icon && (
+            <span className={clsx(styles.triggerContentIcon, names.triggerContentIcon)}>
+              {icon}
+            </span>
+          )}
+          {text}
+        </div>
+        <ChevronDownIcon className={clsx(styles.triggerIcon, names.triggerIcon)} />
+      </AccordionPrimitive.Trigger>
+    </AccordionPrimitive.Header>
+  );
+});
 
 export interface AccordionContentProps extends React.ComponentPropsWithoutRef<
   typeof AccordionPrimitive.Content
@@ -93,25 +105,16 @@ export interface AccordionContentProps extends React.ComponentPropsWithoutRef<
 export const AccordionContent = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Content>,
   AccordionContentProps
->(({ className, style, children, ...props }, ref) => (
-  <AccordionPrimitive.Content
-    ref={ref}
-    className={clsx("openui-accordion-content", className)}
-    style={style}
-    {...props}
-  >
-    <div className="openui-accordion-content-wrapper">{children}</div>
-  </AccordionPrimitive.Content>
-));
-
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-accordion-root {
-      ${accordionStyles}
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
+>(({ className, style, children, ...props }, ref) => {
+  const styles = useStyles(accordionStyles);
+  return (
+    <AccordionPrimitive.Content
+      ref={ref}
+      className={clsx(styles.content, names.content, className)}
+      style={style}
+      {...props}
+    >
+      <div className={clsx(styles.contentWrapper, names.contentWrapper)}>{children}</div>
+    </AccordionPrimitive.Content>
+  );
+});

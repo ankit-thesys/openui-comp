@@ -317,3 +317,36 @@ The Callout override checks disable its forwards-filled animation with a consume
 They assert the animation override too; the focused timing test separately verifies the
 original fade/collapse. IconText's boolean `bold` names entry uses the `true` axis value, and
 the reference generator displays it as `bold={true}` rather than a part or string prop.
+
+## Disclosure, layout and overlays (#98)
+
+`Accordion`, `SectionBlock` (SectionV2 and FoldableSection), `Steps`, `Card`, `CardHeader`,
+`Modal` and `TooltipWrapper` now join the contract and override benches. Modal and tooltip
+classes are marked `clientOnly` because Node cannot render their portals; their factories
+still register during Node rendering in both layer modes. The `elements` fixture opens Modal
+in the browser and focuses the tooltip trigger. The shared benches query the whole isolated
+fixture document so they include portal content and Radix's accessible copies.
+
+The shared readiness helper waits for a visible stable part, including fixed-positioned Modal
+content whose portal wrapper has no height. The tooltip trigger is a library `Button`, so the
+button-background bench measures declared library styles. The foldable fixture's caller-supplied
+body has explicit typography: its `fit-content` height must not vary with preflight's inherited
+line height. These fixture choices preserve all override and Tailwind assertions.
+
+The Modal fixture also pins caller-supplied body typography and sets the dialog's page-owned
+`box-sizing` to `border-box` with a zero-specificity rule in `elements.tsx`. Its
+`translate(-50%, -50%)` computes to a pixel matrix using the border box: preflight's box-sizing
+and inherited line-height resets otherwise change that matrix without overriding any Modal
+declaration. The bench still compares the computed transform and every other declared property.
+These inputs apply only to the benches; the #72 parity fixtures keep their original page inputs.
+
+`disclosure.spec.ts` exercises open/closed overrides with mouse and keyboard, Modal and tooltip
+portal overrides before/after library CSS in both modes, all tooltip sides, lazy registration,
+and an html-class rewrite. The parity fixtures/specs cover `accordion`, `section-block`, `steps`,
+`card`, `card-header`, `modal-sm`, `modal-md`, `modal-lg`, and `tooltip-wrapper`, in light and dark.
+No intentional visual differences are declared. Modal's overlay is named with a `document:`
+selector in `data-parity-parts` because it is a sibling of the measured content root.
+
+Chromium execution and #72 baseline capture for these names are delegated to the orchestrator.
+Run `pnpm test:parity:baseline`, then `pnpm test:browser`. Baselines must come from #72;
+never write them manually or capture the migrated implementation as the reference.
