@@ -2,4 +2,4 @@
 test/browser/parity/baselines/
 docs/reference/
 # Unmodified Tailwind CLI output, kept byte for byte.
-test/browser/fixtures/tailwind4.css
+test/browser/fixtures/tailwind*.css

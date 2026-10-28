@@ -45,8 +45,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build react-components
-        run: pnpm --filter @openuidev/react-components run build
+      # The react-ui benches compare against the workspace's @openuidev/react-ui, so build it and
+      # its workspace dependencies too.
+      - name: Build react-components and react-ui
+        run: pnpm --filter "@openuidev/react-components..." --filter "@openuidev/react-ui..." run build
 
       - name: Install Chromium
         run: pnpm --filter @openuidev/react-components exec playwright install --with-deps chromium

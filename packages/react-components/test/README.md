@@ -35,7 +35,34 @@ To add a browser test, add a fixture that imports `openui-under-test` (aliased t
 - `?sheet=<name>` links `fixtures/<name>.css`.
 - `?recipe=<layer order>` starts `<head>` with the layer-mode recipe: `<style>@layer <layer order>;</style><style id="_goober"> </style>`.
 
-`fixtures/tailwind4.css` is unmodified Tailwind 4.1.11 CLI output (`@import "tailwindcss"` with `bg-red-500` and `!bg-red-500` as the only sources), checked in so the tests need no Tailwind dependency. Regenerate it the same way if the tests need more utilities.
+`fixtures/tailwind33.css`, `tailwind34.css` and `tailwind4.css` are unmodified Tailwind 3.3.7, 3.4.17 and 4.1.11 CLI output (`@tailwind base/components/utilities` for 3, `@import "tailwindcss"` for 4) with `bg-red-500` as the only source (plus `!bg-red-500` for 4), checked in so the tests need no Tailwind dependency. Regenerate them the same way if the tests need more utilities.
+
+## Benches
+
+`bench.*.spec.ts` are the acceptance benches from the earlier out-of-repo harness, plus the lab's
+override and Tailwind cases.
+
+- **Bench app** (`fixtures/bench-app.tsx`): Select, Accordion, Tabs, TooltipWrapper, DatePicker,
+  Switch/Checkbox/Radio, Slider, Carousel, theme probes, a nested ThemeProvider and every component
+  that renders with no props. It takes a package namespace, so the same tree runs against this
+  package and against the workspace's built `@openuidev/react-ui`, imported by path (react-ui is
+  not a dependency; build it first). `fixtures/bench-server.tsx`, bundled for Node by
+  `build-fixtures.ts`, server-renders it; `bench.tsx` and `bench-react-ui.tsx` hydrate it. The Node
+  bundle exists because Playwright compiles JSX in spec files for component testing.
+  - `bench.hydration`: no mismatch, caught/uncaught or render error, light and dark, both packages.
+  - `bench.interactions`: mouse and keyboard on the interactive components, both packages.
+  - `bench.theme`: mode round trip, dark first paint, portalled Select content, nested provider.
+  - `bench.react-ui-parity`: the theme observations match react-ui's computed styles. Class names
+    may differ; computed styles may not.
+- **Migrated components** (`fixtures/migrated-server.tsx`): serializes the contract test's
+  `test/unit/contract/components.tsx` elements and stable classes; the `elements` fixture renders
+  them client-side. A component joins these benches when it joins that list.
+  - `bench.overrides`: consumer CSS on every stable class, loaded before or after the library, beats
+    it on every element carrying the class (the lab's nested-vs-flat bench).
+  - `bench.tailwind`: Tailwind 3.3, 3.4 and 4.1 preflights leave every stable-class element's
+    computed style unchanged (a zero-width border's style and colour are ignored, being invisible),
+    and pin the known conflict: 3.3 clears the background of `button[type=button]`, 3.4 and 4.1 do
+    not.
 
 ## Styling contract
 
@@ -118,4 +145,4 @@ are not restyled.
 ## CI
 
 - `pnpm run ci` (typecheck of `src` and tests, unit tests, lint of `src`, format) needs the build too, because tests import the built package; in CI it runs in the shared `build-js.yml` step after all packages are built.
-- Browser tests run in the separate `react-components-browser` job in `build-js.yml`, which builds this package, installs Chromium and runs `test:browser`.
+- Browser tests run in the separate `react-components-browser` job in `build-js.yml`, which builds this package and `@openuidev/react-ui` (for the react-ui benches) with their workspace dependencies, installs Chromium and runs `test:browser`. Locally, build react-ui too: `pnpm --filter "@openuidev/react-ui..." build`.
