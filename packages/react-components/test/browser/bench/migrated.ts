@@ -13,14 +13,12 @@ export { migrated };
 /** Opens a page rendering `component`, with `head` (consumer CSS, say) before the bundle. */
 export async function openMigrated(page: Page, component: MigratedComponent, head = "") {
   const path = `/migrated-${component.folder}.html`;
-  const json = JSON.stringify(component.elements).replaceAll("<", "\\u003c");
   const body =
     // A margin-free body, so percentage sizes do not depend on whether a reset removed its margin.
     `<!doctype html><html><head><meta charset="utf-8"><style>body { margin: 0; }</style>${head}` +
-    `<script id="elements" type="application/json">${json}</script>` +
     `</head><body><div id="root"></div><script type="module" src="/elements.js"></script></body></html>`;
-  await page.route(`**${path}`, (route) => route.fulfill({ contentType: "text/html", body }));
-  await page.goto(path);
+  await page.route(`**${path}?*`, (route) => route.fulfill({ contentType: "text/html", body }));
+  await page.goto(`${path}?component=${encodeURIComponent(component.folder)}`);
   // Any stable class will do: which parts and modifiers render depends on the elements.
   await page
     .locator(component.stableClasses.map((name) => `#root .${name}`).join(", "))
