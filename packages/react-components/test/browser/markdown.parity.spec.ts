@@ -63,7 +63,11 @@ test("MarkDownRenderer matches the #72 computed styles for every element and var
     ...(await proseSnapshot(page, fixture, "dark")),
   };
   const baseline = new URL("./parity/baselines/markdown-prose.json", import.meta.url);
-  if (capture) writeFileSync(baseline, JSON.stringify(current, null, 2) + "\n");
+  // One snapshot per line, like the other parity baselines.
+  const lines = Object.entries(current).map(
+    ([key, values]) => `  ${JSON.stringify(key)}: ${JSON.stringify(values)}`,
+  );
+  if (capture) writeFileSync(baseline, `{\n${lines.join(",\n")}\n}\n`);
   else
     expect(current, "prose spacing, markers and quotes differ from #72").toEqual(
       JSON.parse(readFileSync(baseline, "utf8")),
