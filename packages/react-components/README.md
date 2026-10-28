@@ -704,6 +704,30 @@ Renamed stable classes and props, per component converted to the flat convention
 | ListedSourceItem | `.openui-listed-source-item--has-url` | Removed derived marker; override `.openui-sources-item` |
 | SourceFaviconImage | `.openui-source-favicon-image` | Unchanged root; the fallback globe also carries it |
 
+| ListItem | `.openui-list-item-wrapper` (root), `.openui-list-item` (inner item) | `.openui-list-item` (consumer root), `.openui-list-item-item` (inner part) |
+| ListItem | `.openui-list-item-wrapper--small` | `.openui-list-item--size-small`; default emits `--size-default` |
+| ListItem | No indicator variant class | `.openui-list-item--variant-{number,icon,image}`; default emits `--variant-number` |
+| ListItem | `-wrapper-with-action`, `-clickable`, `-indicator-clickable`, `-indicator-no-subtitle` | Derived markers removed; root and item use `[data-action="true"]`, item uses `[data-subtitle="true"]`; `listHasSubtitle` emits `.openui-list-item--list-has-subtitle` only when true |
+| ListItem | Existing indicator, content, title, subtitle and action parts | Unchanged; the owned image also carries `.openui-list-item-image` |
+| ListBlock | `.openui-list-block--small` | `.openui-list-block--size-small`; default emits `--size-default`; variant always emits `--variant-{number,icon,image}` |
+| EntityList | `.openui-entity-list--{default,small}` | `.openui-entity-list--size-{default,small}` |
+| EntityList | `.openui-entity-list__row`, `__cell-{left,right}` | `.openui-entity-list-row`, `.openui-entity-list-cell-{left,right}` |
+| EntityList | `__row--{header,body,footer}`, `__cell-{left,right}--{header,body,footer}` | `.openui-entity-list-row--row-type-{header,body,footer}`; cells inherit row values |
+| EntityList | `__cell-right--{text,number}` | `.openui-entity-list-cell-right--right-variant-{text,number}` (default is text) |
+| Table | `.openui-table`, `-container`, `-header`, `-body`, `-footer`, `-row`, `-head`, `-head-{content,icon,label}`, `-cell` | Unchanged roots and parts |
+| TableHead / TableCell | Shared `.openui-table-align-{left,center,right}` | `.openui-table-head--align-{left,center,right}` on the head; `.openui-table-cell--align-{left,center,right}` on the cell; omitted align emits left while preserving the legacy header layout |
+| ScrollableTable | `.openui-scrollable-table-wrapper`, `-scroll-container`, `-control` | Unchanged parts; the table also carries the consumer root `.openui-scrollable-table`; icons carry `-icon` |
+| ScrollableTable | `-control-{left,right,disabled}` | `.openui-scrollable-table-control[data-side="left"/"right"]`, `[data-disabled="true"]`; measured table width uses `[data-scrollable="true"]` |
+| EditableTable | `.openui-editable-table-wrapper` | `.openui-editable-table` |
+| EditableTable | `-scroll-control--{left,right,disabled}` | `.openui-editable-table-scroll-control[data-side="left"/"right"]`, `[data-disabled="true"]` |
+| EditableTable | `-cell-outline-{top,bottom,left,right}-{selected,editing}` | `.openui-editable-table-cell-outline-{top,bottom,left,right}[data-state="selected"/"editing"]`; idle emits `[data-state="idle"]`; cell-base exposes the same state |
+| EditableTable | Unclassed table sections, rows, heads and cells | `-table-header`, `-table-body`, `-header-row`, `-row`, `-head`, `-cell`; column widths are private variables read by CSS so consumer width wins |
+| EditableTable | Select dependency classes inside cells | Owned `.openui-editable-table-select-{trigger,value,icon,content,viewport,item,item-text,check-wrapper,indicator,check-icon}` parts; Radix `[data-state]` and `[data-highlighted]` states remain; portals inherit the theme |
+| EditableTable | Existing display, input, header, scroll and changes-bar parts | Unchanged; URL warning wrapper also carries `-display-url-warning`; supplied icons carry `-icon` |
+| MetricIndicator family | `.openui-metric-indicator__{row,main-value,previous-value,subtext,trend}` | `.openui-metric-indicator-{row,main-value,previous-value,subtext,trend}` |
+| MetricIndicator family | `__trend--{success,danger}`, `--has-subtext` | `.openui-metric-indicator-trend--direction-{up,down}`, root `[data-subtext="true"]`; `--variant-{inline,with-strikethrough}` remains |
+
+
 
 Pre-release `@openuidev/react-components` betas also emitted internal carrier classes that
 react-ui never had. They are gone; use the class on the right instead:
@@ -722,6 +746,15 @@ react-ui never had. They are gone; use the class on the right instead:
 | `.openui-sources-listed-sources-{list,header,title,buttons,container}` | `.openui-sources`, `.openui-sources-header`, `.openui-sources-title`, `.openui-sources-buttons`, `.openui-sources-item-container` |
 | `.openui-sources-item-item` | `.openui-sources-item` |
 | `.openui-source-favicon-image-root` | `.openui-source-favicon-image` |
+| `.openui-list-item-root` | `.openui-list-item` |
+| `.openui-list-block-root` | `.openui-list-block` |
+| `.openui-entity-list-root` | `.openui-entity-list` |
+| `.openui-metric-indicator-root` | `.openui-metric-indicator` |
+| `.openui-table-container-styled`, `.openui-table-table` | `.openui-table-container`, `.openui-table` |
+| `.openui-table-{footer,head,row,cell}-styled` | `.openui-table-{footer,head,row,cell}` |
+| `.openui-table-alignment` | Removed; target the head/cell root or its `--align-{left,center,right}` modifier |
+| `.openui-table-scrollable-table-{wrapper,scroll-container,control}` | `.openui-scrollable-table-{wrapper,scroll-container,control}` |
+
 
 
 ## Beta import migration

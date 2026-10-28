@@ -2,8 +2,8 @@
 // library (fixtures/tailwind*.css, unmodified CLI output for `bg-red-500`), every property the
 // library's rules declare on an element of a migrated component keeps the computed value it has
 // without Tailwind. Properties the library leaves to the page (body margin, inherited line-height,
-// the browser's button font size) are Tailwind's to reset. The one known conflict, Tailwind ≤3.3
-// preflight clearing the background of `button[type=button]`, is pinned below.
+// the browser's button font size) are Tailwind's to reset. The ordinary matrix uses untyped
+// buttons; Tailwind ≤3.3's typed-button base background conflict is pinned separately below.
 import { expect, test, type Page } from "@playwright/test";
 import { migrated, openMigrated, type MigratedComponent } from "./bench/migrated";
 
@@ -71,6 +71,46 @@ const snapshot = (page: Page, component: MigratedComponent) =>
 
 const tailwind = (version: string) => `<link rel="stylesheet" href="/tailwind${version}.css">`;
 
+// Tailwind 3.3's [type='button'] ties a single class, but cannot beat a class plus state
+// (EditableTable's open select, for example). Read the actual matching rules, including portal
+// buttons, so the typed test pins both the base reset and the stronger backgrounds that survive.
+const buttonBackgrounds = (page: Page) =>
+  page.evaluate(() => {
+    const backgroundRules: CSSStyleRule[] = [];
+    const visit = (rules: CSSRuleList) => {
+      for (const rule of rules) {
+        if (rule instanceof CSSStyleRule) {
+          // A shorthand containing var() can leave the CSSOM longhand empty until computed.
+          if (
+            rule.style.getPropertyValue("background-color") ||
+            rule.style.getPropertyValue("background")
+          )
+            backgroundRules.push(rule);
+        } else if (rule instanceof CSSMediaRule) {
+          if (matchMedia(rule.conditionText).matches) visit(rule.cssRules);
+        } else if (rule instanceof CSSGroupingRule) visit(rule.cssRules);
+      }
+    };
+    visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
+    return [...document.querySelectorAll("button")].map((button) => {
+      button.getAnimations().forEach((animation) => animation.finish());
+      const matching = backgroundRules.filter((rule) => {
+        try {
+          return button.matches(rule.selectorText);
+        } catch {
+          return false; // pseudo-elements
+        }
+      });
+      return {
+        color: getComputedStyle(button).backgroundColor,
+        // Flat base rules have exactly one generated class. A matching stronger rule must
+        // retain its exact plain color; it is never covered by the typed-button exception.
+        resets:
+          matching.length > 0 && matching.every((rule) => /^\.go\d+$/.test(rule.selectorText)),
+      };
+    });
+  });
+
 for (const component of migrated) {
   test.describe(component.folder, () => {
     for (const version of ["33", "34", "4"]) {
@@ -78,48 +118,32 @@ for (const component of migrated) {
         page,
       }) => {
         await openMigrated(page, component);
+        // Radix adds type="button" itself. Normalize only the ordinary matrix, as the pilot
+        // Button fixture does; the dedicated typed cases below exercise real typed buttons.
+        const untypeButtons = () =>
+          page.evaluate(() => {
+            for (const button of document.querySelectorAll("button"))
+              button.removeAttribute("type");
+          });
+        await untypeButtons();
         const plain = await snapshot(page, component);
         expect(Object.keys(plain).length).toBeGreaterThan(0);
-        const expected = structuredClone(plain);
-        // Citation already renders type="button". Apply the documented 3.3 exception to
-        // exactly those elements; all their other declared properties must still match.
-        // The dedicated typed-button test below also pins this reset independently.
-        if (version === "33") {
-          const typedButtons = await page.evaluate(
-            (classes) =>
-              classes.flatMap((className) =>
-                [...document.querySelectorAll(`.${className}`)].flatMap((el, i) =>
-                  el.matches('button[type="button"]') ? [`${className} #${i}`] : [],
-                ),
-              ),
-            component.stableClasses,
-          );
-          for (const key of typedButtons) {
-            if (expected[key]?.["background-color"] !== undefined)
-              expected[key]!["background-color"] = "rgba(0, 0, 0, 0)";
-          }
-        }
         await openMigrated(page, component, tailwind(version));
-        expect(await snapshot(page, component)).toEqual(expected);
+        await untypeButtons();
+        expect(await snapshot(page, component)).toEqual(plain);
       });
     }
 
     // Buttons with type="button": Tailwind ≤3.3 preflight's `[type='button']` rule weighs as much
-    // as a library class and loads later, so it clears their background. That is the known
-    // conflict documented in the README; 3.4 and 4.1 scope the rule with :where() and do not.
+    // as a library base class and loads later, so it clears base backgrounds. State backgrounds
+    // outweigh it. 3.4 and 4.1 scope the preflight rule with :where() and clear neither.
     const typedBackgrounds = async (page: Page, head = "") => {
       await openMigrated(page, component, head);
       await page.evaluate(() => {
         for (const button of document.querySelectorAll("button"))
           button.setAttribute("type", "button");
       });
-      // Buttons transition their background; read the end value.
-      return page.evaluate(() =>
-        [...document.querySelectorAll("button")].map((button) => {
-          button.getAnimations().forEach((animation) => animation.finish());
-          return getComputedStyle(button).backgroundColor;
-        }),
-      );
+      return buttonBackgrounds(page);
     };
 
     test("Tailwind 3.3 preflight clears the background of type=button buttons", async ({
@@ -127,11 +151,11 @@ for (const component of migrated) {
     }) => {
       const plain = await typedBackgrounds(page);
       test.skip(
-        !plain.some((background) => background !== "rgba(0, 0, 0, 0)"),
-        `${component.folder} renders no <button> with a background to clear`,
+        !plain.some(({ color, resets }) => resets && color !== "rgba(0, 0, 0, 0)"),
+        `${component.folder} renders no <button> with a base background to clear`,
       );
-      expect(new Set(await typedBackgrounds(page, tailwind("33")))).toEqual(
-        new Set(["rgba(0, 0, 0, 0)"]),
+      expect((await typedBackgrounds(page, tailwind("33"))).map(({ color }) => color)).toEqual(
+        plain.map(({ color, resets }) => (resets ? "rgba(0, 0, 0, 0)" : color)),
       );
     });
 

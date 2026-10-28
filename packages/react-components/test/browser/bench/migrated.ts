@@ -11,7 +11,12 @@ export type MigratedComponent = (typeof migrated)[number];
 export { migrated };
 
 /** Opens a page rendering `component`, with `head` (consumer CSS, say) before the bundle. */
-export async function openMigrated(page: Page, component: MigratedComponent, head = "") {
+export async function openMigrated(
+  page: Page,
+  component: MigratedComponent,
+  head = "",
+  part?: string,
+) {
   const path = `/migrated-${component.folder}.html`;
   const body =
     // Normalize page-owned defaults in both runs: margins affect percentage sizes, and native
@@ -36,4 +41,19 @@ export async function openMigrated(page: Page, component: MigratedComponent, hea
   }
   if (component.folder === "SourceFaviconImage")
     await page.locator("svg.openui-source-favicon-image").waitFor();
+  if (component.folder === "EditableTable") {
+    // Wait for measured overflow, then exercise a real editing state. The select's content
+    // lives outside #root; all bench snapshots and override queries include the document.
+    await page.locator('.openui-editable-table-scroll-control[data-side="right"]').waitFor();
+    const input = part === "openui-editable-table-cell-input";
+    const cell = page.locator(".openui-editable-table-cell-base").nth(input ? 0 : 3);
+    await cell.click();
+    await cell.press("Enter");
+    await page
+      .locator(
+        input ? "input.openui-editable-table-cell-input" : ".openui-editable-table-select-item",
+      )
+      .first()
+      .waitFor();
+  }
 }
