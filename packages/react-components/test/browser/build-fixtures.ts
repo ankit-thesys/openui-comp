@@ -98,6 +98,10 @@ const fixtures = [
   "parity-skeleton",
   "parity-dot-matrix-loader",
   "parity-code-block",
+  "chart-foundations",
+  "parity-chart-foundations",
+  "parity-mini-charts",
+  "parity-chart-tooltip",
 ];
 const parityFixtures = fixtures.filter((name) => name.startsWith("parity-"));
 

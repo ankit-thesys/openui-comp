@@ -3,12 +3,12 @@
 import clsx from "clsx";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
+import { useStyles } from "../../../../../styles/useStyles";
 import { Button } from "../../../../Button";
 import { IconButton } from "../../../../IconButton";
 import { Separator } from "../../../../Separator";
-import { CHART_CLASS_PREFIX } from "../../../utils/constants";
 import type { StackedLegendItem } from "../legend/types";
-import { rootClass, scrollbarClass } from "./stackedLegend.styles";
+import { names, stackedLegendStyles } from "./stackedLegend.styles";
 import {
   formatStackedValue,
   LEGEND_ITEM_LIMIT,
@@ -48,6 +48,7 @@ export const StackedLegendView = ({
   className,
   style,
 }: StackedLegendViewProps) => {
+  const styles = useStyles(stackedLegendStyles);
   const listRef = useRef<HTMLDivElement>(null);
   const [showUpButton, setShowUpButton] = useState(false);
   const [showDownButton, setShowDownButton] = useState(false);
@@ -106,22 +107,20 @@ export const StackedLegendView = ({
 
   return (
     <div
-      className={clsx(rootClass, `${CHART_CLASS_PREFIX}-stacked-legend-container`, className)}
+      className={clsx(styles.root, names.root, className)}
       style={{
         width: containerWidth ? `${containerWidth}px` : "100%",
         ...style,
       }}
     >
       {showScrollControls && (
-        <div className={`${CHART_CLASS_PREFIX}-stacked-legend-header`}>
+        <div className={clsx(styles.header, names.header)}>
           {showTitle && (
-            <div className={`${CHART_CLASS_PREFIX}-stacked-legend-header-title`}>
-              {items.length} labels
-            </div>
+            <div className={clsx(styles.headerTitle, names.headerTitle)}>{items.length} labels</div>
           )}
-          <div className={`${CHART_CLASS_PREFIX}-stacked-legend-header-buttons`}>
+          <div className={clsx(styles.headerButtons, names.headerButtons)}>
             <IconButton
-              className={`${CHART_CLASS_PREFIX}-stacked-legend-scroll-button`}
+              className={clsx(styles.scrollButton, names.scrollButton)}
               onClick={() => scrollBy(-1)}
               aria-label="Scroll legend up"
               icon={<ChevronUp />}
@@ -130,7 +129,7 @@ export const StackedLegendView = ({
               disabled={!showUpButton}
             />
             <IconButton
-              className={`${CHART_CLASS_PREFIX}-stacked-legend-scroll-button`}
+              className={clsx(styles.scrollButton, names.scrollButton)}
               onClick={() => scrollBy(1)}
               aria-label="Scroll legend down"
               icon={<ChevronDown />}
@@ -142,40 +141,41 @@ export const StackedLegendView = ({
         </div>
       )}
 
-      <div ref={listRef} className={clsx(scrollbarClass, `${CHART_CLASS_PREFIX}-stacked-legend`)}>
+      <div ref={listRef} className={clsx(styles.list, names.list)}>
         {itemsToDisplay.map((item, index) => {
           const isHidden = hiddenKeys?.has(item.key);
           return (
             <React.Fragment key={item.key}>
               <div
-                className={clsx(`${CHART_CLASS_PREFIX}-stacked-legend__item`, {
-                  [`${CHART_CLASS_PREFIX}-stacked-legend__item--active`]: activeKey === item.key,
-                })}
-                style={{
-                  opacity: isHidden ? 0.3 : 1,
-                  cursor: onItemToggle ? "pointer" : undefined,
-                }}
+                className={clsx(styles.item, names.item)}
+                data-state={activeKey === item.key ? "active" : undefined}
+                data-clickable={onItemToggle ? "" : undefined}
+                style={
+                  {
+                    "--_openui-stacked-legend-item-opacity": isHidden ? 0.3 : 1,
+                  } as React.CSSProperties
+                }
                 onMouseEnter={() => onItemHover?.(item.key)}
                 onMouseLeave={() => onItemHover?.(null)}
                 onClick={onItemToggle ? () => onItemToggle(item.key) : undefined}
               >
-                <div className={`${CHART_CLASS_PREFIX}-stacked-legend__item-label`}>
-                  <div className={`${CHART_CLASS_PREFIX}-stacked-legend__item-color-container`}>
+                <div className={clsx(styles.label, names.label)}>
+                  <div className={clsx(styles.colorContainer, names.colorContainer)}>
                     <div
-                      className={`${CHART_CLASS_PREFIX}-stacked-legend__item-color`}
-                      style={{ backgroundColor: item.color }}
+                      className={clsx(styles.color, names.color)}
+                      style={
+                        { "--_openui-stacked-legend-item-color": item.color } as React.CSSProperties
+                      }
                     />
                   </div>
-                  <div className={`${CHART_CLASS_PREFIX}-stacked-legend__item-label-text`}>
-                    {item.label}
-                  </div>
+                  <div className={clsx(styles.labelText, names.labelText)}>{item.label}</div>
                 </div>
-                <div className={`${CHART_CLASS_PREFIX}-stacked-legend__item-value`}>
+                <div className={clsx(styles.value, names.value)}>
                   {formatStackedValue(item.value, total, format)}
                 </div>
               </div>
               {index !== itemsToDisplay.length - 1 && separator && (
-                <Separator className={`${CHART_CLASS_PREFIX}-stacked-legend-separator`} />
+                <Separator className={clsx(styles.separator, names.separator)} />
               )}
             </React.Fragment>
           );
@@ -187,7 +187,7 @@ export const StackedLegendView = ({
           variant="secondary"
           size="small"
           onClick={() => setShowAll((v) => !v)}
-          className={`${CHART_CLASS_PREFIX}-stacked-legend-show-more-button`}
+          className={clsx(styles.showMore, names.showMore)}
         >
           {showAll ? "Show less" : "Show more"}
         </Button>

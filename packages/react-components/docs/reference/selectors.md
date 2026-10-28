@@ -142,6 +142,128 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-card-header-top-right` | Part (`topRight`) | On that part, whenever it renders |
 | `.openui-card-header-bottom` | Part (`bottom`) | On that part, whenever it renders |
 
+## Charts/MiniAreaChart
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-mini-area-chart` | Root | Always |
+| `.openui-mini-area-chart-svg` | Part (`svg`) | On that part, whenever it renders |
+| `.openui-mini-area-chart-area` | Part (`area`) | On that part, whenever it renders |
+| `.openui-mini-area-chart-line` | Part (`line`) | On that part, whenever it renders |
+| `.openui-mini-area-chart-point` | Part (`point`) | On that part, whenever it renders |
+| `.openui-mini-area-chart-defs` | Part (`defs`) | On that part, whenever it renders |
+| `.openui-mini-area-chart-gradient` | Part (`gradient`) | On that part, whenever it renders |
+| `.openui-mini-area-chart-stop-start` | Part (`stopStart`) | On that part, whenever it renders |
+| `.openui-mini-area-chart-stop-end` | Part (`stopEnd`) | On that part, whenever it renders |
+| `.openui-mini-area-chart--is-animation-active` | Modifier | `isAnimationActive={true}` |
+
+## Charts/MiniBarChart
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-mini-bar-chart` | Root | Always |
+| `.openui-mini-bar-chart-svg` | Part (`svg`) | On that part, whenever it renders |
+| `.openui-mini-bar-chart-bar-group` | Part (`barGroup`) | On that part, whenever it renders |
+| `.openui-mini-bar-chart-bar` | Part (`bar`) | On that part, whenever it renders |
+| `.openui-mini-bar-chart-inner-line` | Part (`innerLine`) | On that part, whenever it renders |
+| `.openui-mini-bar-chart--is-animation-active` | Modifier | `isAnimationActive={true}` |
+
+## Charts/MiniLineChart
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-mini-line-chart` | Root | Always |
+| `.openui-mini-line-chart-svg` | Part (`svg`) | On that part, whenever it renders |
+| `.openui-mini-line-chart-line` | Part (`line`) | On that part, whenever it renders |
+| `.openui-mini-line-chart-point` | Part (`point`) | On that part, whenever it renders |
+| `.openui-mini-line-chart--is-animation-active` | Modifier | `isAnimationActive={true}` |
+
+## Charts/shared/cartesian/ScrollButtonsHorizontal
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-scroll-buttons-horizontal` | Root | Always |
+| `.openui-scroll-buttons-horizontal-button` | Part (`button`) | On that part, whenever it renders |
+| `.openui-scroll-buttons-horizontal-icon` | Part (`icon`) | On that part, whenever it renders |
+| `.openui-scroll-buttons-horizontal-left` | Part (`left`) | On that part, whenever it renders |
+| `.openui-scroll-buttons-horizontal-right` | Part (`right`) | On that part, whenever it renders |
+
+## Charts/shared/cartesian/ScrollButtonsVertical
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-scroll-buttons-vertical` | Root | Always |
+| `.openui-scroll-buttons-vertical-button` | Part (`button`) | On that part, whenever it renders |
+| `.openui-scroll-buttons-vertical-icon` | Part (`icon`) | On that part, whenever it renders |
+| `.openui-scroll-buttons-vertical-up` | Part (`up`) | On that part, whenever it renders |
+| `.openui-scroll-buttons-vertical-down` | Part (`down`) | On that part, whenever it renders |
+
+## Charts/shared
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-chart-empty` | Part (`empty`) | On that part, whenever it renders |
+| `.openui-chart-empty-text` | Part (`emptyText`) | On that part, whenever it renders |
+| `.openui-chart-y-axis-label` | Part (`yAxisLabel`) | On that part, whenever it renders |
+| `.openui-chart-x-axis-label` | Part (`xAxisLabel`) | On that part, whenever it renders |
+
+## Charts/shared/core/DefaultLegend
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-default-legend` | Root | Always |
+| `.openui-default-legend-axis-label-container` | Part (`axisLabelContainer`) | On that part, whenever it renders |
+| `.openui-default-legend-axis-label` | Part (`axisLabel`) | On that part, whenever it renders |
+| `.openui-default-legend-axis-label-text` | Part (`axisLabelText`) | On that part, whenever it renders |
+| `.openui-default-legend-list` | Part (`list`) | On that part, whenever it renders |
+| `.openui-default-legend-item` | Part (`item`) | On that part, whenever it renders |
+| `.openui-default-legend-item-indicator` | Part (`indicator`) | On that part, whenever it renders |
+| `.openui-default-legend-item-label` | Part (`label`) | On that part, whenever it renders |
+| `.openui-default-legend-toggle-button` | Part (`toggleButton`) | On that part, whenever it renders |
+| `.openui-default-legend-toggle-button-icon` | Part (`toggleIcon`) | On that part, whenever it renders |
+| `.openui-default-legend-item-label-container` | Part (`labelContainer`) | On that part, whenever it renders |
+| `.openui-default-legend-item-percentage` | Part (`percentage`) | On that part, whenever it renders |
+| `.openui-default-legend-item-icon` | Part (`icon`) | On that part, whenever it renders |
+
+## Charts/shared/core/PortalTooltip
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-chart-tooltip` | Root | Always |
+| `.openui-chart-tooltip-portal` | Part (`portal`) | On that part, whenever it renders |
+| `.openui-chart-tooltip-label` | Part (`label`) | On that part, whenever it renders |
+| `.openui-chart-tooltip-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-chart-tooltip-content-item` | Part (`item`) | On that part, whenever it renders |
+| `.openui-chart-tooltip-content-indicator` | Part (`indicator`) | On that part, whenever it renders |
+| `.openui-chart-tooltip-content-value-wrapper` | Part (`valueWrapper`) | On that part, whenever it renders |
+| `.openui-chart-tooltip-content-label` | Part (`contentLabel`) | On that part, whenever it renders |
+| `.openui-chart-tooltip-content-value` | Part (`value`) | On that part, whenever it renders |
+| `.openui-chart-tooltip-content-item-separator` | Part (`separator`) | On that part, whenever it renders |
+| `.openui-chart-tooltip-content-view-more` | Part (`viewMore`) | On that part, whenever it renders |
+| `.openui-chart-tooltip-label-text` | Part (`labelText`) | On that part, whenever it renders |
+
+## Charts/shared/core/StackedLegend
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-stacked-legend` | Root | Always |
+| `.openui-stacked-legend-header` | Part (`header`) | On that part, whenever it renders |
+| `.openui-stacked-legend-header-buttons` | Part (`headerButtons`) | On that part, whenever it renders |
+| `.openui-stacked-legend-header-title` | Part (`headerTitle`) | On that part, whenever it renders |
+| `.openui-stacked-legend-scroll-button` | Part (`scrollButton`) | On that part, whenever it renders |
+| `.openui-stacked-legend-list` | Part (`list`) | On that part, whenever it renders |
+| `.openui-stacked-legend-item` | Part (`item`) | On that part, whenever it renders |
+| `.openui-stacked-legend-item-label` | Part (`label`) | On that part, whenever it renders |
+| `.openui-stacked-legend-item-color-container` | Part (`colorContainer`) | On that part, whenever it renders |
+| `.openui-stacked-legend-item-color` | Part (`color`) | On that part, whenever it renders |
+| `.openui-stacked-legend-item-label-text` | Part (`labelText`) | On that part, whenever it renders |
+| `.openui-stacked-legend-item-value` | Part (`value`) | On that part, whenever it renders |
+| `.openui-stacked-legend-show-more-button` | Part (`showMore`) | On that part, whenever it renders |
+| `.openui-stacked-legend-separator` | Part (`separator`) | On that part, whenever it renders |
+| `.openui-chart-with-stacked-legend` | Part (`layout`) | On that part, whenever it renders |
+| `.openui-chart-with-stacked-legend-chart` | Part (`chart`) | On that part, whenever it renders |
+| `.openui-chart-with-stacked-legend-legend` | Part (`legend`) | On that part, whenever it renders |
+
 ## CheckBoxGroup
 
 | Stable class | Kind | Present when |

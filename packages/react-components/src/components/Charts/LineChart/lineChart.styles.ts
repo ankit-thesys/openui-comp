@@ -61,8 +61,8 @@ const stylesheetScope = css`
       }
       @media (prefers-reduced-motion: no-preference) {
         & :where(.openui-line-chart-line--animated) {
-          stroke-dasharray: var(--path-length);
-          stroke-dashoffset: var(--path-length);
+          stroke-dasharray: var(--_openui-chart-path-length);
+          stroke-dashoffset: var(--_openui-chart-path-length);
           animation: ${drawLineAnimation} 1s ease-out forwards;
         }
       }

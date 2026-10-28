@@ -1,8 +1,10 @@
 "use client";
 
 import clsx from "clsx";
+import { useStyles } from "../../../styles/useStyles";
 import { useEffectiveAnimation } from "../hooks";
 import { useHeatmapChartOrchestrator } from "../hooks/cartesian/useHeatmapChartOrchestrator";
+import { fadeAppearStyles } from "../shared/animations/fadeAppear.styles";
 import { XAxis } from "../shared/cartesian/axes/XAxis";
 import { ChartShell } from "../shared/core/ChartShell";
 import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
@@ -52,6 +54,7 @@ export function HeatmapChart<T extends HeatmapChartData>(props: HeatmapChartProp
     fitLegendInHeight,
   });
 
+  useStyles(fadeAppearStyles);
   const animate = useEffectiveAnimation(isAnimationActive);
 
   const {

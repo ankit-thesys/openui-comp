@@ -81,6 +81,15 @@ const measure = (root: Element, properties: string[]) => {
       : root.querySelector(selector);
     if (part) record(part, `${name}.`);
   }
+  // Portals live outside the case root. A fixture may explicitly name their public DOM parts.
+  const globalParts = JSON.parse(root.getAttribute("data-parity-global-parts") ?? "{}") as Record<
+    string,
+    string
+  >;
+  for (const [name, selector] of Object.entries(globalParts)) {
+    const part = document.querySelector(selector);
+    if (part) record(part, `${name}.`);
+  }
   return out;
 };
 
@@ -89,15 +98,21 @@ export interface ParityOptions {
   /** Each scenario gets a fresh page, so modal portals cannot interfere with other cases. */
   scenarios?: readonly string[];
   prepare?: (page: Page, scenario: string) => Promise<void>;
+  /** Runs before every observation, including interaction-only chart portal parts. */
+  prepareCase?: (page: Page, id: string) => Promise<void>;
 }
 
 export async function snapshot(
   page: Page,
   fixture: string,
   mode: Mode,
-  scenario = "",
+  scenarioOrPrepareCase: string | ParityOptions["prepareCase"] = "",
   prepare?: ParityOptions["prepare"],
+  prepareCase?: ParityOptions["prepareCase"],
 ): Promise<Snapshot> {
+  const scenario = typeof scenarioOrPrepareCase === "string" ? scenarioOrPrepareCase : "";
+  const prepareObservation =
+    typeof scenarioOrPrepareCase === "function" ? scenarioOrPrepareCase : prepareCase;
   await page.goto(`/${fixture}.html?${new URLSearchParams({ mode, scenario })}`);
   await prepare?.(page, scenario);
   const cases = page.locator("[data-parity-case]");
@@ -112,12 +127,17 @@ export async function snapshot(
     // enter a runtime state first (CodeBlock's copy button). Specs freeze its reset timer.
     const setupClick = await el.getAttribute("data-parity-setup-click");
     if (setupClick) await el.locator(setupClick).click();
-    const targetSelector = await el.getAttribute("data-parity-target");
-    const target = targetSelector ? el.locator(targetSelector) : el;
-    const take = (state: State) =>
-      el.evaluate(measure, PROPERTIES).then((values) => {
-        result[`${mode} ${scenario ? `${scenario} ` : ""}${id} ${state}`] = values;
-      });
+    const targetSelector =
+      (await el.getAttribute("data-parity-hover-target")) ??
+      (await el.getAttribute("data-parity-target"));
+    const target = targetSelector ? el.locator(targetSelector).first() : el;
+    const take = async (state: State) => {
+      await prepareObservation?.(page, id);
+      result[`${mode} ${scenario ? `${scenario} ` : ""}${id} ${state}`] = await el.evaluate(
+        measure,
+        PROPERTIES,
+      );
+    };
     await page.mouse.move(0, 0);
     await take("rest");
     await target.hover();
@@ -141,14 +161,21 @@ export async function checkParity(
   page: Page,
   name: string,
   intentional: readonly string[] = [],
-  options: ParityOptions = {},
+  optionsOrPrepareCase: ParityOptions | ParityOptions["prepareCase"] = {},
 ): Promise<void> {
+  const options: ParityOptions =
+    typeof optionsOrPrepareCase === "function"
+      ? { prepareCase: optionsOrPrepareCase }
+      : optionsOrPrepareCase;
   const capture = !!process.env["OPENUI_PARITY_CAPTURE"];
   const fixture = `parity-${name}${capture ? "-baseline" : ""}`;
   const current: Snapshot = {};
   for (const mode of ["light", "dark"] as const) {
     for (const scenario of options.scenarios ?? [""]) {
-      Object.assign(current, await snapshot(page, fixture, mode, scenario, options.prepare));
+      Object.assign(
+        current,
+        await snapshot(page, fixture, mode, scenario, options.prepare, options.prepareCase),
+      );
     }
   }
   if (capture) {
