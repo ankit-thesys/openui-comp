@@ -1,27 +1,43 @@
-import { css } from "goober";
+"use client";
 
-/** Goober's `css`, as handed to style factories. */
-export type StyleCss = typeof css;
+import { css } from "goober";
+import { createContext, useContext } from "react";
+
+/** The `css` tag handed to style factories: Goober's, or one wrapping each rule in a layer. */
+export type StyleCss = (strings: TemplateStringsArray, ...values: (string | number)[]) => string;
 
 /** A style module's factory: `css` rules in, generated class names out. */
 export type StyleFactory<T> = (css: StyleCss) => T;
 
-// Results per cascade layer, then per factory, so each rule registers once: the first time a
-// component using it renders. Every rule is unlayered (`undefined`) until ThemeProvider gains
-// `cssLayer`, which adds a layer-wrapping `css` for named layers.
+/** The cascade layer for component rules, set by ThemeProvider's `cssLayer`; unlayered if unset. */
+export const CssLayerContext = createContext<string | undefined>(undefined);
+
+// Joins a tagged template as Goober's own `compile` does for the string values factories use.
+const joined = (strings: TemplateStringsArray, values: (string | number)[]) =>
+  strings.reduce((out, string, i) => out + string + (values[i] ?? ""), "");
+
+// `&` keeps every selector a single generated class, inside the layer block.
+const layered =
+  (layer: string): StyleCss =>
+  (strings, ...values) =>
+    css(`@layer ${layer}{&{${joined(strings, values)}}}`);
+
+// Results per cascade layer, then per factory, so each rule registers once per layer: the first
+// time a component using it renders there. A layer gets its own generated classes.
 const cache = new Map<string | undefined, WeakMap<StyleFactory<unknown>, unknown>>();
 
 const stylesFor = <T>(factory: StyleFactory<T>, layer: string | undefined): T => {
   let byFactory = cache.get(layer);
   if (!byFactory) cache.set(layer, (byFactory = new WeakMap()));
-  if (!byFactory.has(factory)) byFactory.set(factory, factory(css));
+  if (!byFactory.has(factory)) byFactory.set(factory, factory(layer ? layered(layer) : css));
   return byFactory.get(factory) as T;
 };
 
 /**
- * Returns a component's generated classes, registering its rules on first use. Internal: style
- * factories and their class names are not part of the public API.
+ * Returns a component's generated classes, registering its rules on first use, in the cascade
+ * layer of the nearest ThemeProvider with `cssLayer`. Internal: style factories and their class
+ * names are not part of the public API.
  */
 export function useStyles<T>(factory: StyleFactory<T>): T {
-  return stylesFor(factory, undefined);
+  return stylesFor(factory, useContext(CssLayerContext) || undefined);
 }

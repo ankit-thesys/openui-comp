@@ -29,7 +29,13 @@ pnpm --filter @openuidev/react-components exec playwright install chromium
 pnpm --filter @openuidev/react-components test:browser
 ```
 
-To add a browser test, add a fixture that imports `openui-under-test` (aliased to the built package), add it to `fixtures` in `build-fixtures.ts`, and open `/<name>.html` from the spec. `/<name>.html?css=<text>` puts a consumer stylesheet in the static `<head>`, loaded before the fixture script.
+To add a browser test, add a fixture that imports `openui-under-test` (aliased to the built package), add it to `fixtures` in `build-fixtures.ts`, and open `/<name>.html` from the spec. Query parameters build the static `<head>`, all loaded before the fixture script:
+
+- `?css=<text>` adds a consumer stylesheet.
+- `?sheet=<name>` links `fixtures/<name>.css`.
+- `?recipe=<layer order>` starts `<head>` with the layer-mode recipe: `<style>@layer <layer order>;</style><style id="_goober"> </style>`.
+
+`fixtures/tailwind4.css` is unmodified Tailwind 4.1.11 CLI output (`@import "tailwindcss"` with `bg-red-500` and `!bg-red-500` as the only sources), checked in so the tests need no Tailwind dependency. Regenerate it the same way if the tests need more utilities.
 
 ## Parity with #72
 
