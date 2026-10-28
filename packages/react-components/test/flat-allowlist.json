@@ -73,7 +73,6 @@
   "src/components/Skeleton/Skeleton.tsx",
   "src/components/Skeleton/SkeletonBar.tsx",
   "src/components/Skeleton/TableSkeleton.tsx",
-  "src/components/Skeleton/skeletonPulse.ts",
   "src/components/Slider/Slider.tsx",
   "src/components/Slider/SliderBlock.tsx",
   "src/components/SnippetCardBlock/snippetCardBlock.styles.ts",
@@ -96,6 +95,5 @@
   "src/components/ToggleItem/ToggleItem.tsx",
   "src/components/TooltipWrapper/tooltipWrapper.styles.ts",
   "src/components/VisualCardBlock/card.styles.ts",
-  "src/components/_shared/cards/cardBlockLayout.styles.ts",
-  "src/styles/base.ts"
+  "src/components/_shared/cards/cardBlockLayout.styles.ts"
 ]

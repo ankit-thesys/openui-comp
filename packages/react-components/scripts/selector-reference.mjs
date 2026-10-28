@@ -10,9 +10,10 @@ const components = new URL("dist/components/", packageRoot);
 const output = new URL("docs/reference/selectors.md", packageRoot);
 
 /**
- * Stable names of every built style module that exports `names`, in path order. `component` is the
- * module's folder under dist/components (nested folders included, such as "Charts/BarChart") and
- * `module` its file name without `.styles.mjs`.
+ * Stable names of every built style module that exports `names`, in path order, followed by
+ * shared opt-ins. `component` is the module's folder under dist/components (nested folders
+ * included, such as "Charts/BarChart"), or the shared helper's contract name. `module` is its
+ * file name without `.styles.mjs` (or `.mjs` for shared helpers).
  */
 export async function readStableNames() {
   const found = [];
@@ -34,6 +35,14 @@ export async function readStableNames() {
     }
   };
   await visit(components, "");
+  // Shared opt-ins have their own contracts; their users' owned styles migrate separately.
+  for (const [component, module, path] of [
+    ["SharedBase", "base", "dist/styles/base.mjs"],
+    ["SkeletonPulse", "skeletonPulse", "dist/components/Skeleton/skeletonPulse.mjs"],
+  ]) {
+    const { names } = await import(new URL(path, packageRoot).href);
+    found.push({ component, module, names });
+  }
   return found;
 }
 

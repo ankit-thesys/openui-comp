@@ -240,9 +240,16 @@ remain available on actual components. Host elements carrying only those old
 aliases do not acquire the new component styles.
 
 The shared `openui-border-box` helper opts in only Buttons, FormControl and
-TagBlock roots. A later root class can override its box sizing. It does not style
+TagBlock roots. Its flat rule registers when a user renders, honours `cssLayer`, and
+survives replacement of `<html class>`. A single consumer class can override its box sizing. It does not style
 descendants. Buttons, FormControl and TagBlock also have their remaining owned rules
 converted in the batches below.
+
+The shared `.openui-skeleton-pulse` class registers its animation and keyframes when
+an animated Skeleton bar, pie shape or legend dot renders, in the provider's layer.
+Override that class to change or disable the pulse. The Skeleton family's layout
+rules remain on the migration allowlist. Both shared classes are listed in the
+[stable class reference](docs/reference/selectors.md).
 
 ### Control selectors
 
@@ -691,6 +698,8 @@ Renamed stable classes and props, per component converted to the flat convention
 | MarkDownRenderer | Shared `.openui-code-block-wrapper` | Also carries `.openui-markdown-renderer-code-block`; standalone CodeBlock defaults are unchanged |
 | MarkDownRenderer | `.openui-code-block-syntax-highlighter` inside markdown | Removed inside markdown; target `.openui-markdown-renderer-code-block` for the owned root around third-party output. Standalone CodeBlock keeps the old class. |
 | MarkDownRenderer | Shared `.openui-table` / `.openui-table-container` | Also carry `.openui-markdown-renderer-table` / `.openui-markdown-renderer-table-container` |
+| Shared border-box (#90) | `.openui-border-box` on Buttons, FormControl and TagBlock | Unchanged; registered at render, flat and layer-aware. No prop renames. |
+| Shared Skeleton pulse (#90) | Animation on bars, pie shapes and legend dots | Also carry `.openui-skeleton-pulse`; animation and keyframes register at render. Existing classes and props are unchanged. |
 
 Pre-release `@openuidev/react-components` betas also emitted internal carrier classes that
 react-ui never had. They are gone; use the class on the right instead:
