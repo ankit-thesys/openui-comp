@@ -12,8 +12,9 @@ import {
   useRef,
   useState,
 } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { IconButton } from "../IconButton";
-import { buttonClass, carouselClass, contentClass, itemClass } from "./carousel.styles";
+import { carouselStyles, names } from "./carousel.styles";
 
 interface CarouselContextType {
   scrollDivRef: React.RefObject<HTMLDivElement | null>;
@@ -63,6 +64,7 @@ export const Carousel = forwardRef<CarouselRef, CarouselProps>(
     },
     ref,
   ) => {
+    const styles = useStyles(carouselStyles);
     const scrollDivRef = useRef<HTMLDivElement>(null);
     const [isPrevVisible, setIsPrevVisible] = useState(false);
     const [isNextVisible, setIsNextVisible] = useState(false);
@@ -181,9 +183,12 @@ export const Carousel = forwardRef<CarouselRef, CarouselProps>(
       <CarouselContext.Provider value={contextValue}>
         <div
           className={clsx(
-            carouselClass,
-            "openui-carousel",
-            `openui-carousel--${variant}`,
+            styles.root,
+            names.root,
+            styles.variant[variant],
+            names.variant[variant],
+            noSnap && names.noSnap.true,
+            showButtons && names.showButtons.true,
             className,
           )}
           {...props}
@@ -197,10 +202,11 @@ export const Carousel = forwardRef<CarouselRef, CarouselProps>(
 
 export const CarouselContent = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, children, ...props }, _ref) => {
+    const styles = useStyles(carouselStyles);
     const { scrollDivRef, noSnap, isPrevVisible, isNextVisible } = useCarousel();
 
     const content = noSnap ? (
-      <div className="openui-carousel-content-wrapper">{children}</div>
+      <div className={clsx(styles.contentWrapper, names.contentWrapper)}>{children}</div>
     ) : (
       children
     );
@@ -208,15 +214,10 @@ export const CarouselContent = forwardRef<HTMLDivElement, React.HTMLAttributes<H
     return (
       <div
         ref={scrollDivRef}
-        className={clsx(
-          contentClass,
-          "openui-carousel-content",
-          {
-            "openui-carousel-content--mask-left": isPrevVisible,
-            "openui-carousel-content--mask-right": isNextVisible,
-          },
-          className,
-        )}
+        className={clsx(styles.content, names.content, className)}
+        data-mask={
+          isPrevVisible ? (isNextVisible ? "both" : "left") : isNextVisible ? "right" : "none"
+        }
         {...props}
       >
         {content}
@@ -226,27 +227,30 @@ export const CarouselContent = forwardRef<HTMLDivElement, React.HTMLAttributes<H
 );
 
 export const CarouselItem = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, children, ...props }, ref) => (
-    <div ref={ref} className={clsx(itemClass, "openui-carousel-item", className)} {...props}>
-      {children}
-    </div>
-  ),
+  ({ className, children, ...props }, ref) => {
+    const styles = useStyles(carouselStyles);
+    return (
+      <div ref={ref} className={clsx(styles.item, names.item, className)} {...props}>
+        {children}
+      </div>
+    );
+  },
 );
 
 export const CarouselPrevious = forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof IconButton>
 >(({ className, style, ...props }, ref) => {
+  const styles = useStyles(carouselStyles);
   const { scroll, showButtons, isPrevVisible } = useCarousel();
 
   if (!isPrevVisible || !showButtons) return null;
 
   return (
-    <div
-      className={clsx(buttonClass, "openui-carousel-button openui-carousel-button-left", className)}
-    >
+    <div className={clsx(styles.button, names.button, styles.left, names.left)}>
       <IconButton
         ref={ref}
+        className={clsx(names.previous, className)}
         shape="square"
         variant="secondary"
         size="small"
@@ -260,20 +264,16 @@ export const CarouselPrevious = forwardRef<
 
 export const CarouselNext = forwardRef<HTMLButtonElement, React.ComponentProps<typeof IconButton>>(
   ({ className, style, ...props }, ref) => {
+    const styles = useStyles(carouselStyles);
     const { scroll, showButtons, isNextVisible } = useCarousel();
 
     if (!isNextVisible || !showButtons) return null;
 
     return (
-      <div
-        className={clsx(
-          buttonClass,
-          "openui-carousel-button openui-carousel-button-right",
-          className,
-        )}
-      >
+      <div className={clsx(styles.button, names.button, styles.right, names.right)}>
         <IconButton
           ref={ref}
+          className={clsx(names.next, className)}
           shape="square"
           variant="secondary"
           size="small"

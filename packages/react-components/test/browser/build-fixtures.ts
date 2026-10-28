@@ -12,6 +12,18 @@ const reactUi = here("../../../react-ui/dist/index.mjs");
 // Fixtures import the package under test as "openui-under-test". Parity fixtures also get a
 // "-baseline" bundle against the #72 source once `parity/extract-baseline.mjs` has run.
 const fixtures = [
+  "parity-image-gallery-mobile",
+  "parity-image-gallery-modal-mobile",
+  "parity-carousel-mobile",
+  "media",
+  "parity-image",
+  "parity-image-block",
+  "parity-image-text",
+  "parity-image-text-large",
+  "parity-image-gallery",
+  "parity-image-gallery-modal",
+  "parity-carousel",
+
   "text-blocks",
   "parity-text-block",
   "parity-text-callout",

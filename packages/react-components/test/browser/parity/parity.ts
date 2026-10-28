@@ -81,7 +81,9 @@ const measure = (root: Element, properties: string[]) => {
 
 /** Snapshots every case of `fixture` in `mode`, at rest and under hover and press. */
 export async function snapshot(page: Page, fixture: string, mode: Mode): Promise<Snapshot> {
-  await page.goto(`/${fixture}.html?mode=${mode}`);
+  await page.goto(`/${fixture}.html?mode=${mode}`, {
+    waitUntil: fixture.startsWith("parity-image-block") ? "domcontentloaded" : "load",
+  });
   const cases = page.locator("[data-parity-case]");
   await expect(cases.first()).toBeVisible();
   const ids = await cases.evaluateAll((els) =>
