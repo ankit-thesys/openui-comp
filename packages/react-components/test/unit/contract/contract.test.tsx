@@ -1,6 +1,7 @@
 // Guards the styling contract for every migrated component, at the Node seam: rendered through
 // public exports, its CSS stays within the selector budget and its classes follow the grammar and
-// match its documented stable names exactly.
+// match its documented stable names exactly, in default mode and in layer mode.
+import { ThemeProvider } from "@openuidev/react-components";
 import { describe, expect, it } from "vitest";
 import { classViolation, selectorViolation, selectorsOf } from "./checks";
 import { blocksIn, namesIn, renderAndCollect, stableClassesIn } from "./collect";
@@ -32,5 +33,21 @@ describe.each(migratedComponents)("$folder", ({ names, elements }) => {
 
   it("renders exactly its documented stable classes", () => {
     expect([...stableClassesIn(html)].sort()).toEqual([...namesIn(names)].sort());
+  });
+
+  it("keeps the same selectors and classes in layer mode, inside the layer", () => {
+    const layered = renderAndCollect(
+      elements().map((element, key) => (
+        <ThemeProvider key={key} cssLayer="openui">
+          {element}
+        </ThemeProvider>
+      )),
+    );
+    const generic = (selector: string) => selector.replace(/\bgo\d+\b/g, "go");
+    expect(layered.css).toMatch(/^@layer openui\{/);
+    expect(selectorsOf(layered.css).map(generic).sort()).toEqual(
+      selectorsOf(css).map(generic).sort(),
+    );
+    expect([...stableClassesIn(layered.html)].sort()).toEqual([...stableClassesIn(html)].sort());
   });
 });
