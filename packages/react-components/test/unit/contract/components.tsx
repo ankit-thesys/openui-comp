@@ -32,6 +32,11 @@ export interface MigratedComponent {
   elements: () => ReactElement[];
   /** Stable classes that only render in the browser, such as parts shown after measuring. */
   clientOnly?: string[];
+  /**
+   * Allows prose rules (`.goN p`, the root's generated class then tags only) for content the
+   * component generates without classes. Only MarkDownRenderer opts in.
+   */
+  prose?: boolean;
 }
 
 // Stable names as the reference generator reads them: every style module in the folder or below.
@@ -53,6 +58,7 @@ const product = <T,>(...lists: T[][]): T[][] =>
 export const migratedComponents: MigratedComponent[] = [
   {
     folder: "MarkDownRenderer",
+    prose: true,
     // A getter, read only after the contract test has collected MarkDownRenderer's CSS: rendering
     // CodeBlock here at import would register IconButton's CSS (the copy button) too early.
     get names() {

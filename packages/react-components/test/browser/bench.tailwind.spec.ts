@@ -114,3 +114,37 @@ for (const component of migrated) {
     }
   });
 }
+
+// Markdown prose has no stable class per element, so the matrix above does not cover it. Its
+// rules weigh one class plus the tag, above Tailwind 3's unlayered element preflight, so list
+// markers and padding, quote margins and strong weight survive every version.
+test.describe("MarkDownRenderer prose", () => {
+  const markdown = migrated.find((component) => component.folder === "MarkDownRenderer")!;
+  const prose = (page: Page) =>
+    page.evaluate(() => {
+      const root = document.querySelector("#root .openui-markdown-renderer")!;
+      const read = (selector: string, properties: string[]) => {
+        const style = getComputedStyle(root.querySelector(selector)!);
+        return Object.fromEntries(properties.map((name) => [name, style.getPropertyValue(name)]));
+      };
+      return {
+        ul: read("ul", ["list-style-type", "padding-left", "margin-bottom"]),
+        ol: read("ol", ["list-style-type", "padding-left", "margin-bottom"]),
+        blockquote: read("blockquote", ["margin-top", "margin-bottom", "margin-left"]),
+        strong: read("p strong", ["font-weight"]),
+        h1: read("h1", ["font-size", "font-weight", "margin-bottom"]),
+      };
+    });
+
+  for (const version of ["33", "34", "4"]) {
+    test(`Tailwind ${version === "4" ? "4.1" : `3.${version[1]}`} preflight leaves prose styled`, async ({
+      page,
+    }) => {
+      await openMigrated(page, markdown);
+      const plain = await prose(page);
+      expect(plain.ul["list-style-type"]).toBe("disc");
+      await openMigrated(page, markdown, tailwind(version));
+      expect(await prose(page)).toEqual(plain);
+    });
+  }
+});
