@@ -54,9 +54,12 @@ override and Tailwind cases.
   - `bench.theme`: mode round trip, dark first paint, portalled Select content, nested provider.
   - `bench.react-ui-parity`: the theme observations match react-ui's computed styles. Class names
     may differ; computed styles may not.
-- **Migrated components** (`fixtures/migrated-server.tsx`): serializes the contract test's
-  `test/unit/contract/components.tsx` elements and stable classes; the `elements` fixture renders
-  them client-side. A component joins these benches when it joins that list.
+- **Migrated components**: the contract test's `test/unit/contract/components.tsx` list. The
+  `elements` fixture (`/migrated-<folder>.html?component=<folder>`) imports that list and renders a
+  component's elements client-side exactly as written; its browser bundle gets the list's stable
+  names, read from the built package at fixture build time, instead of `node:fs`.
+  `fixtures/migrated-server.tsx` gives specs each component's own stable classes. A component
+  joins these benches when it joins that list.
   - `bench.overrides`: consumer CSS on every stable class, loaded before or after the library, beats
     it on every element carrying the class (the lab's nested-vs-flat bench). As the README's
     contract says, the consumer rule adds the same state where the library styles one, such as an
