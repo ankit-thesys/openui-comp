@@ -32,7 +32,7 @@ T0 ─┬─ T1 ─┬─ T5
 
 ### T1 — Enforcement tests with full allowlist · M · needs T0
 
-- `test/selectors.test.ts`: hand-written selector tokenizer for spec §5; runs every style factory (and, for not-yet-migrated modules, their registered CSS) and reports violations.
+- `test/selectors.test.ts`: hand-written selector tokenizer for spec §5; server-renders components through public exports, collects CSS with `getComponentStyles()` and reports violations; never imports style factories.
 - `test/names.test.ts`: §4.1 grammar, no duplicates, reference-doc match (doc check stubbed until T11), no public `--_` tokens.
 - `test/directives.test.ts`: `"use client"` first statement in built component modules.
 - `test/flat-allowlist.json` listing **every** current style module; test fails if a listed file is compliant or an unlisted file is not.
