@@ -89,7 +89,8 @@ Pass design changes that are meant to differ to `checkParity(page, name, intenti
 `"<snapshot key> <property>"` entries and list them in the PR.
 
 To add a component: write `fixtures/parity-<component>.tsx`, add it to `fixtures` in
-`build-fixtures.ts`, add a spec calling `checkParity(page, "<component>")`, then capture its
+`build-fixtures.ts`, add a spec titled `"<Component> matches the #72 computed styles"` calling
+`checkParity(page, "<component>")` (the capture script selects specs by that title), then capture its
 baseline (this extracts the #72 source into `test/browser/.baseline/`, gitignored):
 
 ```bash
@@ -97,6 +98,21 @@ pnpm --filter @openuidev/react-components test:parity:baseline
 ```
 
 Commit the new baseline file. Recapture only when adding cases, never to absorb a regression.
+
+## Review screenshots
+
+`screenshots.spec.ts` saves a full-page PNG of every parity fixture, in light and dark, to
+`test/browser/.screenshots/` (gitignored) for attaching to a pull request. It is skipped unless
+`OPENUI_SCREENSHOTS=1`, so CI never runs it:
+
+```bash
+pnpm --filter @openuidev/react-components test:screenshots
+```
+
+It finds fixtures by their `fixtures/parity-*.tsx` file name, so a new component's parity fixture
+is included once it is in `fixtures` in `build-fixtures.ts`. The capture adds a presentation-only
+stylesheet that wraps the cases into rows and paints the page with the theme background; components
+are not restyled.
 
 ## CI
 

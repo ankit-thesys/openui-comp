@@ -2,3 +2,4 @@ test/browser/.fixtures/
 test/browser/.baseline/
 test-results/
 playwright-report/
+test/browser/.screenshots/

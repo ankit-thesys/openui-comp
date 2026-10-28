@@ -644,15 +644,15 @@ Renamed stable classes and props, per component converted to the flat convention
 
 | Component | `@openuidev/react-ui` | `@openuidev/react-components` |
 | --- | --- | --- |
-| Button | `.openui-button-root` | `.openui-button` |
-| Button | `.openui-button-base` | Removed; use `.openui-button` |
+| Button | `.openui-button-base` (root) | `.openui-button` |
 | Button | `.openui-button-base-{primary,secondary,tertiary}` | `.openui-button--variant-{primary,secondary,tertiary}` |
 | Button | `.openui-button-base-{extra-small,small,medium,large}` | `.openui-button--size-{extra-small,small,medium,large}` |
 | Button | `buttonType="normal"` prop | `tone="default"` (the default); emits `.openui-button--tone-default` |
 | Button | `buttonType="destructive"` prop | `tone="destructive"`; emits `.openui-button--tone-destructive` |
 | Button | `.openui-button-base-destructive-{primary,secondary,tertiary}` | `.openui-button--tone-destructive` with `.openui-button--variant-{…}` |
 | Button | Icons as direct children | Each icon wrapped in `.openui-button-icon` |
-| IconButton | `.openui-icon-button-root` | `.openui-icon-button` |
+| IconButton | `.openui-icon-button` (root) | `.openui-icon-button` (unchanged; now the only root class) |
+| IconButton | `.openui-icon-button-icon` | `.openui-icon-button-icon` (unchanged) |
 | IconButton | `.openui-icon-button-{primary,secondary,tertiary}` | `.openui-icon-button--variant-{primary,secondary,tertiary}` |
 | IconButton | `.openui-icon-button-{3-extra-small,2-extra-small,extra-small,small,medium,large}` | `.openui-icon-button--size-{3-extra-small,2-extra-small,extra-small,small,medium,large}` |
 | IconButton | `.openui-icon-button-{square,circle}` | `.openui-icon-button--shape-{square,circle}` |
@@ -668,6 +668,9 @@ Renamed stable classes and props, per component converted to the flat convention
 | MarkDownRenderer | Shared `.openui-code-block-wrapper` | Also carries `.openui-markdown-renderer-code-block`; standalone CodeBlock defaults are unchanged |
 | MarkDownRenderer | `.openui-code-block-syntax-highlighter` inside markdown | Removed inside markdown; target `.openui-markdown-renderer-code-block` for the owned root around third-party output. Standalone CodeBlock keeps the old class. |
 | MarkDownRenderer | Shared `.openui-table` / `.openui-table-container` | Also carry `.openui-markdown-renderer-table` / `.openui-markdown-renderer-table-container` |
+
+Pre-release `@openuidev/react-components` betas also emitted `.openui-button-root` and
+`.openui-icon-button-root`; use `.openui-button` and `.openui-icon-button` instead.
 
 ## Beta import migration
 
