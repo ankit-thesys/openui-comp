@@ -9,8 +9,12 @@ import { IconButton } from "../IconButton";
 import { wrapperClass } from "./codeBlock.styles";
 
 export interface CodeBlockProps {
+  /** Added to the wrapper, next to its own classes. */
   className?: string;
-  /** Replaces the default highlighter class when a parent owns its styles. */
+  /**
+   * Replaces the highlighter's `openui-code-block-syntax-highlighter` class, and with it the
+   * library's highlighter rules, when a parent owns those styles.
+   */
   syntaxHighlighterClassName?: string;
   language: string;
   codeString: string;

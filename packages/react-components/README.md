@@ -364,6 +364,14 @@ The private document guard contributes no specificity.
 | Citation | `.openui-citation-container-styled`, `.openui-citation-trigger`, `.openui-citation-tooltip-styled`, `.openui-citation-tooltip-content`, `.openui-citation-item-item`, `.openui-citation-item-logo`, `.openui-citation-item-content`, `.openui-citation-item-title`, `.openui-citation-item-source` |
 | ImageGallery | `.openui-image-gallery-gallery-modal-modal`, `.openui-image-gallery-gallery-modal-content`, `.openui-image-gallery-gallery-modal-header`, `.openui-image-gallery-gallery-modal-heading`, `.openui-image-gallery-gallery-modal-main`, `.openui-image-gallery-gallery-modal-carousel-container`, `.openui-image-gallery-gallery-modal-carousel`, `.openui-image-gallery-gallery-modal-button-container`, `.openui-image-gallery-gallery-modal-left-button`, `.openui-image-gallery-gallery-modal-right-button`, `.openui-image-gallery-gallery-modal-thumbnail`, `.openui-image-gallery-gallery-modal-active-thumbnail`, `.openui-image-gallery-gallery`, `.openui-image-gallery-grid`, `.openui-image-gallery-layout-openui-gallery-single`, `.openui-image-gallery-layout-openui-gallery-double`, `.openui-image-gallery-layout-openui-gallery-triple`, `.openui-image-gallery-layout-openui-gallery-quad`, `.openui-image-gallery-layout-openui-gallery-default`, `.openui-image-gallery-image`, `.openui-image-gallery-main-image`, `.openui-image-gallery-show-all` |
 
+
+CodeBlock accepts two class props:
+
+- `className` is added to the wrapper (`.openui-code-block-root`), next to its own classes.
+- `syntaxHighlighterClassName` replaces the class on the third-party highlighter element. It
+  defaults to `openui-code-block-syntax-highlighter`, whose rules (including its `!important`
+  margin) apply only while that default is kept; pass your own class to style the highlighter
+  yourself. MarkDownRenderer uses this to own its code blocks' spacing.
 Sources retains its existing important width (180px), transparent background
 and hover background on listed-source items. Ordinary background overrides do
 not beat those declarations, even when the same element also has Carousel's
