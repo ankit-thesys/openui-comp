@@ -77,6 +77,24 @@ export async function openMigrated(
       )
       .first()
       .waitFor();
+    // Clicking the cell scrolls the table, and the scroll controls' disabled state follows on the
+    // asynchronous scroll event. Wait for it, or :disabled backgrounds depend on timing.
+    await expect
+      .poll(() =>
+        page.locator(".openui-editable-table").evaluate((root) => {
+          const scroll = root.querySelector(".openui-editable-table-scroll-container")!;
+          const max = scroll.scrollWidth - scroll.clientWidth - 1;
+          const disabled = (side: string) =>
+            root
+              .querySelector(`.openui-editable-table-scroll-control[data-side="${side}"] button`)!
+              .matches(":disabled");
+          return (
+            disabled("left") === !(scroll.scrollLeft > 0) &&
+            disabled("right") === !(scroll.scrollLeft < max)
+          );
+        }),
+      )
+      .toBe(true);
   }
 
   // #93: mount the requested portal through the public trigger. Its wrapper can have zero
