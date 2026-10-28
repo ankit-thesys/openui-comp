@@ -35,19 +35,35 @@ const skipStylesheets = {
   load: (id: string) => (id === "\0empty-stylesheet" ? "" : null),
 };
 
-// The contract's component list reads stable names from the built package relative to its own
-// location, so the Node bundles import that script where it is instead of inlining it.
+// The contract's component list (test/unit/contract/components.tsx) reads stable names from the
+// built package with node:fs, relative to its own location. Node bundles import that script where
+// it is; browser bundles get its result, read once here, so the list itself runs in the browser.
 const selectorReference = new URL("../../scripts/selector-reference.mjs", import.meta.url).href;
-const externalSelectorReference = {
-  name: "external-selector-reference",
+const selectorReferencePlugin = (platform: "browser" | "node", stableNames: unknown) => ({
+  name: "selector-reference",
   resolveId: (id: string) =>
-    id.endsWith("/selector-reference.mjs") ? { id: selectorReference, external: true } : null,
+    id.endsWith("/selector-reference.mjs")
+      ? platform === "node"
+        ? { id: selectorReference, external: true }
+        : "\0stable-names"
+      : null,
+  load: (id: string) =>
+    id === "\0stable-names"
+      ? `const names = ${JSON.stringify(stableNames)};\nexport const readStableNames = async () => names;`
+      : null,
+});
+
+const stableNames = async () => {
+  const { readStableNames } = (await import(selectorReference)) as {
+    readStableNames: () => Promise<unknown>;
+  };
+  return readStableNames();
 };
 
 const entries = (names: string[], suffix = "") =>
   Object.fromEntries(names.map((name) => [`${name}${suffix}`, here(`./fixtures/${name}.tsx`)]));
 
-const bundle = (
+const bundle = async (
   entry: Record<string, string>,
   packageUnderTest: string,
   baseline: boolean,
@@ -69,7 +85,7 @@ const bundle = (
       __PARITY_BASELINE__: String(baseline),
     },
     deps: { alwaysBundle: [/.*/], onlyBundle: false },
-    plugins: [skipStylesheets, externalSelectorReference],
+    plugins: [skipStylesheets, selectorReferencePlugin(platform, await stableNames())],
   });
 
 export default async function buildFixtures() {
