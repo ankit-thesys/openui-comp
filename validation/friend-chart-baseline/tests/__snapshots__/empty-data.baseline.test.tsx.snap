@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`empty data > records which families use the shared placeholder 1`] = `
+{
+  "withPlaceholder": [
+    "AreaChart",
+    "AreaChartCondensed",
+    "BarChart",
+    "BarChartCondensed",
+    "CalendarHeatmap",
+    "FunnelChart",
+    "HeatmapChart",
+    "HorizontalBarChart",
+    "LineChart",
+    "LineChartCondensed",
+    "PieChart",
+    "RadarChart",
+    "RadialChart",
+    "ScatterChart",
+    "SegmentedBar",
+    "SingleStackedBar",
+  ],
+  "without": [
+    "MiniAreaChart",
+    "MiniBarChart",
+    "MiniLineChart",
+  ],
+}
+`;
