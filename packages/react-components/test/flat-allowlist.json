@@ -22,9 +22,6 @@
   "src/components/Charts/shared/core/PortalTooltip/portalTooltip.styles.ts",
   "src/components/Charts/shared/core/StackedLegend/stackedLegend.styles.ts",
   "src/components/Charts/shared/mini/miniChart.styles.ts",
-  "src/components/CheckBoxGroup/CheckBoxGroup.tsx",
-  "src/components/CheckBoxItem/CheckBoxItem.tsx",
-  "src/components/Chips/Chips.tsx",
   "src/components/CodeBlock/codeBlock.styles.ts",
   "src/components/DatePicker/datePicker.styles.ts",
   "src/components/DatePicker/helpers/components/FloatingDatePickerRenderer.tsx",
@@ -35,17 +32,11 @@
   "src/components/ImageGallery/imageGallery.styles.ts",
   "src/components/ImageText/imageText.styles.ts",
   "src/components/ImageTextLarge/imageTextLarge.styles.ts",
-  "src/components/RadioGroup/RadioGroup.tsx",
-  "src/components/RadioItem/RadioItem.tsx",
   "src/components/Select/select.styles.ts",
   "src/components/Skeleton/PieChartSkeleton.tsx",
   "src/components/Skeleton/Skeleton.tsx",
   "src/components/Skeleton/SkeletonBar.tsx",
   "src/components/Skeleton/TableSkeleton.tsx",
   "src/components/Slider/Slider.tsx",
-  "src/components/Slider/SliderBlock.tsx",
-  "src/components/SwitchGroup/SwitchGroup.tsx",
-  "src/components/SwitchItem/SwitchItem.tsx",
-  "src/components/ToggleGroup/ToggleGroup.tsx",
-  "src/components/ToggleItem/ToggleItem.tsx"
+  "src/components/Slider/SliderBlock.tsx"
 ]

@@ -105,6 +105,37 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-card-header-top-right` | Part (`topRight`) | On that part, whenever it renders |
 | `.openui-card-header-bottom` | Part (`bottom`) | On that part, whenever it renders |
 
+## CheckBoxGroup
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-check-box-group` | Root | Always |
+| `.openui-check-box-group--variant-clear` | Modifier | `variant="clear"` |
+| `.openui-check-box-group--variant-card` | Modifier | `variant="card"` |
+| `.openui-check-box-group--variant-sunk` | Modifier | `variant="sunk"` |
+
+## CheckBoxItem
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-check-box-item` | Root | Always |
+| `.openui-check-box-item-container` | Part (`container`) | On that part, whenever it renders |
+| `.openui-check-box-item-indicator` | Part (`indicator`) | On that part, whenever it renders |
+| `.openui-check-box-item-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-check-box-item-label` | Part (`label`) | On that part, whenever it renders |
+| `.openui-check-box-item-description` | Part (`description`) | On that part, whenever it renders |
+| `.openui-check-box-item-icon` | Part (`icon`) | On that part, whenever it renders |
+| `.openui-check-box-item-check` | Part (`check`) | On that part, whenever it renders |
+
+## Chips
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-chips` | Root | Always |
+| `.openui-chips-item` | Part (`item`) | On that part, whenever it renders |
+| `.openui-chips-item-icon` | Part (`icon`) | On that part, whenever it renders |
+| `.openui-chips-item-text` | Part (`text`) | On that part, whenever it renders |
+
 ## Citation
 
 | Stable class | Kind | Present when |
@@ -441,6 +472,29 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-overview-card-block-chevron-icon` | Part (`chevronIcon`) | On that part, whenever it renders |
 | `.openui-overview-card-block-card--clickable` | Modifier | `clickable={true}` |
 
+## RadioGroup
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-radio-group` | Root | Always |
+| `.openui-radio-group--variant-clear` | Modifier | `variant="clear"` |
+| `.openui-radio-group--variant-card` | Modifier | `variant="card"` |
+| `.openui-radio-group--variant-sunk` | Modifier | `variant="sunk"` |
+
+## RadioItem
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-radio-item` | Root | Always |
+| `.openui-radio-item-svg` | Part (`svg`) | On that part, whenever it renders |
+| `.openui-radio-item-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-radio-item-label` | Part (`label`) | On that part, whenever it renders |
+| `.openui-radio-item-description` | Part (`description`) | On that part, whenever it renders |
+| `.openui-radio-item-container` | Part (`container`) | On that part, whenever it renders |
+| `.openui-radio-item-path` | Part (`path`) | On that part, whenever it renders |
+| `.openui-radio-item-border` | Part (`border`) | On that part, whenever it renders |
+| `.openui-radio-item-inner` | Part (`inner`) | On that part, whenever it renders |
+
 ## SectionBlock (FoldableSection)
 
 | Stable class | Kind | Present when |
@@ -526,6 +580,26 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-steps-content` | Part (`content`) | On that part, whenever it renders |
 | `.openui-steps-title` | Part (`title`) | On that part, whenever it renders |
 | `.openui-steps-details` | Part (`details`) | On that part, whenever it renders |
+
+## SwitchGroup
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-switch-group` | Root | Always |
+| `.openui-switch-group--variant-clear` | Modifier | `variant="clear"` |
+| `.openui-switch-group--variant-card` | Modifier | `variant="card"` |
+| `.openui-switch-group--variant-sunk` | Modifier | `variant="sunk"` |
+
+## SwitchItem
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-switch-item` | Root | Always |
+| `.openui-switch-item-container` | Part (`container`) | On that part, whenever it renders |
+| `.openui-switch-item-thumb` | Part (`thumb`) | On that part, whenever it renders |
+| `.openui-switch-item-label` | Part (`label`) | On that part, whenever it renders |
+| `.openui-switch-item-description` | Part (`description`) | On that part, whenever it renders |
+| `.openui-switch-item-content` | Part (`content`) | On that part, whenever it renders |
 
 ## Table (ScrollableTable)
 
@@ -703,6 +777,18 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-text-content-wrapper--variant-clear` | Modifier | `variant="clear"` |
 | `.openui-text-content-wrapper--variant-card` | Modifier | `variant="card"` |
 | `.openui-text-content-wrapper--variant-sunk` | Modifier | `variant="sunk"` |
+
+## ToggleGroup
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-toggle-group` | Root | Always |
+
+## ToggleItem
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-toggle-item` | Root | Always |
 
 ## TooltipWrapper
 

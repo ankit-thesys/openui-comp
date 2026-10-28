@@ -161,6 +161,32 @@ No intentional differences are allowed. The parity collector pauses infinite ani
 at time zero (they cannot be finished); the browser spec separately advances the pulse
 through its 0% and 50% frames to verify the animation still runs.
 
+### Choice controls (#92)
+
+CheckBoxGroup/Item, RadioGroup/Item, SwitchGroup/Item, ToggleGroup/Item and Chips
+join the contract, override and Tailwind benches. `choice-controls.spec.ts` uses the
+`choice-controls` fixture for checked/unchecked, disabled and keyboard-focus overrides
+before/after the library in default/layer mode, mouse/keyboard state changes, SVG/ thumb
+part overrides, render-time registration and `<html class>` replacement.
+
+The `check-box`, `radio`, `switch`, `toggle` and `chips` parity specs use their
+`parity-<name>` fixtures and need `<name>.json` baselines captured from #72. No intentional
+differences are allowed. `choice-parity.tsx` translates old classes only for the baseline
+bundle and measures both item containers and the actual hovered/pressed controls.
+Cases can add `data-parity-properties` (a JSON string array) to compare SVG fill/stroke,
+thumb transforms or focus outlines alongside the standard properties. Chromium capture
+and execution are left to the orchestrator in the #92 sandbox.
+
+The Tailwind matrix compares buttons without a `type` attribute, matching the pilot Button
+fixture; separate cases exercise `type="button"`. Tailwind 3.3 clears a class-level
+background but leaves a background declared by a class plus a state intact. Those cases
+check both groups separately: an all-checked SwitchGroup or selected Chips has no
+class-level background to clear. The migrated bench also normalizes page-owned button
+text color with a zero-specificity rule, so UA disabled text color does not change the
+computed `currentColor` of a library's `border: none`. Library and consumer color rules
+still win. Radio parity includes disabled unchecked hover/press in light and dark; the
+disabled fill must stay at the foreground color, as it did in #72.
+
 ### Migrate a component checklist
 
 Follow ADR 0001 **including its Amendments**, the package glossary and the pilot spec on

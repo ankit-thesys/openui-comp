@@ -13,6 +13,9 @@ import {
   CardSourceProvider,
   Carousel,
   CarouselContent,
+  CheckBoxGroup,
+  CheckBoxItem,
+  Chips,
   Citation,
   CitationItem,
   CodeBlock,
@@ -46,6 +49,8 @@ import {
   Modal,
   OptionCards,
   OverviewCardBlock,
+  RadioGroup,
+  RadioItem,
   ScrollableTable,
   SectionV2,
   Separator,
@@ -54,6 +59,8 @@ import {
   Sources,
   Steps,
   StepsItem,
+  SwitchGroup,
+  SwitchItem,
   Table,
   TableBody,
   TableCell,
@@ -72,6 +79,8 @@ import {
   TextCallout,
   TextContent,
   TextContentWrapper,
+  ToggleGroup,
+  ToggleItem,
   TooltipWrapper,
   VisualCard,
   VisualCardBlock,
@@ -272,6 +281,111 @@ const layoutElements = () =>
 const cardDependencyNames = (elements: ReactElement[]) => elements.map(composedNames);
 
 export const migratedComponents: MigratedComponent[] = [
+  {
+    folder: "Chips",
+    names: namesOf("Chips"),
+    elements: () =>
+      (["single", "multiple"] as const).flatMap((type) =>
+        [false, true].map((disabled) => (
+          <Chips
+            key={`${type}-${disabled}`}
+            type={type}
+            disabled={disabled}
+            selected={["a"]}
+            items={[
+              { value: "a", label: "Selected", icon: <svg /> },
+              { value: "b", label: "Other", icon: <svg /> },
+              { value: "c", label: "Disabled", disabled: true },
+            ]}
+          />
+        )),
+      ),
+  },
+
+  ...["ToggleGroup", "ToggleItem"].map((folder) => ({
+    folder,
+    names: [...namesOf("ToggleGroup"), ...namesOf("ToggleItem")],
+    elements: () =>
+      [false, true].map((disabled) => (
+        <ToggleGroup
+          key={String(disabled)}
+          type="multiple"
+          defaultValue={["a"]}
+          disabled={disabled}
+        >
+          <ToggleItem value="a">Selected</ToggleItem>
+          <ToggleItem value="b">Other</ToggleItem>
+        </ToggleGroup>
+      )),
+  })),
+
+  {
+    folder: "SwitchItem",
+    names: namesOf("SwitchItem"),
+    elements: () =>
+      [false, true].flatMap((checked) =>
+        [false, true].map((disabled) => (
+          <SwitchItem
+            key={`${checked}-${disabled}`}
+            checked={checked}
+            disabled={disabled}
+            label="Choice"
+            description="Details"
+          />
+        )),
+      ),
+  },
+  {
+    folder: "SwitchGroup",
+    names: [...namesOf("SwitchGroup"), ...namesOf("SwitchItem")],
+    elements: () =>
+      (["clear", "card", "sunk"] as const).map((variant) => (
+        <SwitchGroup key={variant} variant={variant}>
+          <SwitchItem checked label="Choice" description="Details" />
+        </SwitchGroup>
+      )),
+  },
+
+  ...["RadioGroup", "RadioItem"].map((folder) => ({
+    folder,
+    names: [...namesOf("RadioGroup"), ...namesOf("RadioItem")],
+    elements: () =>
+      (["clear", "card", "sunk"] as const).map((variant) => (
+        <RadioGroup key={variant} variant={variant} defaultValue="a">
+          <RadioItem value="a" label="Selected" description="Details" />
+          <RadioItem value="b" disabled label="Disabled" description="Details" />
+          <RadioItem value="c" label="Other" />
+        </RadioGroup>
+      )),
+  })),
+
+  {
+    folder: "CheckBoxItem",
+    names: namesOf("CheckBoxItem"),
+    elements: () =>
+      [false, true].flatMap((checked) =>
+        [false, true].map((disabled) => (
+          <CheckBoxItem
+            key={`${checked}-${disabled}`}
+            checked={checked}
+            disabled={disabled}
+            label="Choice"
+            description="Details"
+          />
+        )),
+      ),
+  },
+  {
+    folder: "CheckBoxGroup",
+    names: [...namesOf("CheckBoxGroup"), ...namesOf("CheckBoxItem")],
+    elements: () =>
+      (["clear", "card", "sunk"] as const).map((variant) => (
+        <CheckBoxGroup key={variant} variant={variant}>
+          <CheckBoxItem checked label="Choice" description="Details" />
+        </CheckBoxGroup>
+      )),
+  },
+
   {
     folder: "Buttons",
     // Read composed Button classes after CSS collection, so this getter does not register

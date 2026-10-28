@@ -1,23 +1,9 @@
 "use client";
 
 import clsx from "clsx";
-import { css } from "goober";
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
-import { chipsStyles } from "./chips.styles";
-
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-chips-root {
-      ${chipsStyles}
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
-
-const componentClass = "openui-chips-root";
+import { useStyles } from "../../styles/useStyles";
+import { chipsStyles, names } from "./chips.styles";
 
 export type ChipsSelectionType = "single" | "multiple";
 
@@ -50,13 +36,15 @@ const Chips = forwardRef<HTMLDivElement, ChipsProps>((props, ref) => {
     ...rest
   } = props;
 
+  const styles = useStyles(chipsStyles);
+
   // Items without a value have no stable identity to select or toggle by.
   const renderableItems = (items ?? []).filter((item) => Boolean(item?.value));
 
   return (
     <div
       ref={ref}
-      className={clsx(componentClass, "openui-chips", className)}
+      className={clsx(styles.root, names.root, className)}
       role="listbox"
       aria-multiselectable={type === "multiple"}
       {...rest}
@@ -72,15 +60,11 @@ const Chips = forwardRef<HTMLDivElement, ChipsProps>((props, ref) => {
             role="option"
             aria-selected={isSelected}
             disabled={isDisabled}
-            className={clsx(
-              "openui-chip-item",
-              isSelected && "openui-chip-item--selected",
-              isDisabled && "openui-chip-item--disabled",
-            )}
+            className={clsx(styles.item, names.item)}
             onClick={() => onToggle?.(item.value)}
           >
-            {item.icon ? <span className="openui-chip-item__icon">{item.icon}</span> : null}
-            <span className="openui-chip-item__text">{item.label}</span>
+            {item.icon ? <span className={clsx(styles.icon, names.icon)}>{item.icon}</span> : null}
+            <span className={clsx(styles.text, names.text)}>{item.label}</span>
           </button>
         );
       })}

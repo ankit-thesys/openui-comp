@@ -21,8 +21,8 @@ export async function openMigrated(
   const body =
     // Normalize page-owned defaults in both runs: margins affect percentage sizes, and native
     // button text color affects currentColor from `border: none` inside Citation's tooltip.
-    // Tailwind inherits that color; use the same baseline without changing library declarations.
-    `<!doctype html><html><head><meta charset="utf-8"><style>body { margin: 0; } button { color: inherit; }</style>${head}` +
+    // Zero specificity covers disabled and portal buttons while letting library colors win.
+    `<!doctype html><html><head><meta charset="utf-8"><style>body { margin: 0; } :where(button) { color: inherit; }</style>${head}` +
     `</head><body><div id="root"></div><script type="module" src="/elements.js"></script></body></html>`;
   await page.route(`**${path}?*`, (route) => route.fulfill({ contentType: "text/html", body }));
   await page.goto(`${path}?component=${encodeURIComponent(component.folder)}`);

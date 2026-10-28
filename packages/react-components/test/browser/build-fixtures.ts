@@ -20,7 +20,6 @@ const fixtures = [
   "parity-overview-card-block",
   "parity-snippet-card-block",
   "parity-option-cards",
-
   "text-blocks",
   "parity-text-block",
   "parity-text-callout",
@@ -82,6 +81,12 @@ const fixtures = [
   "parity-hint",
   "parity-form-control",
   "parity-buttons",
+  "choice-controls",
+  "parity-check-box",
+  "parity-radio",
+  "parity-switch",
+  "parity-toggle",
+  "parity-chips",
 ];
 const parityFixtures = fixtures.filter((name) => name.startsWith("parity-"));
 

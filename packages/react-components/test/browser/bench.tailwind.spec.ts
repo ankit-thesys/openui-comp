@@ -103,6 +103,7 @@ const buttonBackgrounds = (page: Page) =>
       });
       return {
         color: getComputedStyle(button).backgroundColor,
+        stateBackground: matching.some((rule) => !/^\.go\d+$/.test(rule.selectorText)),
         // Flat base rules have exactly one generated class. A matching stronger rule must
         // retain its exact plain color; it is never covered by the typed-button exception.
         resets:
@@ -154,9 +155,27 @@ for (const component of migrated) {
         !plain.some(({ color, resets }) => resets && color !== "rgba(0, 0, 0, 0)"),
         `${component.folder} renders no <button> with a base background to clear`,
       );
-      expect((await typedBackgrounds(page, tailwind("33"))).map(({ color }) => color)).toEqual(
+      const reset = await typedBackgrounds(page, tailwind("33"));
+      expect(reset.map(({ color }) => color)).toEqual(
         plain.map(({ color, resets }) => (resets ? "rgba(0, 0, 0, 0)" : color)),
       );
+      const base = plain.filter(({ resets }) => resets);
+      const resetBase = reset.filter(({ resets }) => resets).map(({ color }) => color);
+      expect(resetBase).toHaveLength(base.length);
+      expect(new Set(resetBase)).toEqual(new Set(["rgba(0, 0, 0, 0)"]));
+    });
+
+    test("Tailwind 3.3 preflight keeps state backgrounds of type=button buttons", async ({
+      page,
+    }) => {
+      const plain = (await typedBackgrounds(page)).filter((button) => button.stateBackground);
+      test.skip(
+        plain.length === 0,
+        `${component.folder} renders no state background on a <button>`,
+      );
+      expect(
+        (await typedBackgrounds(page, tailwind("33"))).filter((button) => button.stateBackground),
+      ).toEqual(plain);
     });
 
     for (const version of ["34", "4"]) {
