@@ -106,6 +106,7 @@ import type { ReactElement } from "react";
 import { renderToString } from "react-dom/server";
 import remarkGfm from "remark-gfm";
 import { readStableNames, type StableNames } from "../../../scripts/selector-reference.mjs";
+import { cartesianChartElements } from "../../fixtures/cartesian-charts";
 import { chartFoundationElements } from "../../fixtures/chart-foundations";
 import { markdown } from "../../fixtures/markdown";
 import { stableClassesIn } from "./collect";
@@ -316,7 +317,14 @@ export const migratedComponents: MigratedComponent[] = [
         ),
       );
       return [
-        ...namesOf("Charts"),
+        ...stableNames
+          .filter(
+            ({ component }) =>
+              component === "Charts/shared" ||
+              component.startsWith("Charts/shared/") ||
+              component.startsWith("Charts/Mini"),
+          )
+          .map((entry) => entry.names),
         Object.fromEntries(dependencies.map((name, i) => [`dependency${i}`, name])),
       ];
     },
@@ -1261,6 +1269,36 @@ export const migratedComponents: MigratedComponent[] = [
         )),
       ),
   },
+  ...["AreaChart", "BarChart", "HorizontalBarChart", "LineChart", "ScatterChart"].map(
+    (family): MigratedComponent => ({
+      folder: `Charts/${family}`,
+      get names() {
+        const module = family[0]!.toLowerCase() + family.slice(1);
+        const own = stableNames
+          .filter((entry) => entry.module === module)
+          .map((entry) => entry.names);
+        const prefix = `openui-${family.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`).slice(1)}`;
+        const dependencies = [
+          ...stableClassesIn(
+            cartesianChartElements(family)
+              .map((element) => renderToString(element))
+              .join(""),
+          ),
+        ].filter((name) => !name.startsWith(prefix));
+        return [
+          ...own,
+          Object.fromEntries(dependencies.map((name, i) => [`dependency${i}`, name])),
+        ];
+      },
+      elements: () => cartesianChartElements(family),
+      clientOnly: ["AreaChart", "BarChart", "LineChart"].includes(family)
+        ? [
+            `openui-${family.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`).slice(1)}-x-tick-angled`,
+          ]
+        : [],
+    }),
+  ),
+
   {
     folder: "MarkDownRenderer",
     prose: true,

@@ -5,6 +5,8 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
+import { readStableNames } from "../../../scripts/selector-reference.mjs";
+import { namesIn } from "./collect";
 import { migratedComponents, sharedStyleContracts } from "./components";
 
 const packageRoot = fileURLToPath(new URL("../../../", import.meta.url));
@@ -35,6 +37,22 @@ const usesGoober = (file: string) =>
   );
 
 describe("flat-styles migration allowlist", () => {
+  it("covers every built names-exporting style module with its own contract names", async () => {
+    // A top-level Charts entry must not hide a newly converted family that has no entry of its own.
+    // Composed dependency names cannot count as coverage for a component's own public contract.
+    const covered = namesIn(
+      [...migratedComponents, ...sharedStyleContracts].flatMap((entry) =>
+        entry.names.filter(
+          (names) => !Object.keys(names).every((key) => key.startsWith("dependency")),
+        ),
+      ),
+    );
+    const missing = (await readStableNames())
+      .filter((entry) => [...namesIn([entry.names])].some((name) => !covered.has(name)))
+      .map((entry) => `${entry.component}/${entry.module}`);
+    expect(missing).toEqual([]);
+  });
+
   it("lists every module still on the old styling", () => {
     const unlisted = files.filter(
       (file) => usesGoober(file) && !EXEMPT.has(file) && !allowlist.includes(file),
@@ -60,7 +78,13 @@ describe("flat-styles migration allowlist", () => {
       ),
     ];
     expect(withNames.sort()).toEqual(
-      [...migratedComponents, ...sharedStyleContracts].map(({ folder }) => folder).sort(),
+      [
+        ...new Set(
+          [...migratedComponents, ...sharedStyleContracts].map(
+            ({ folder }) => folder.split("/")[0],
+          ),
+        ),
+      ].sort(),
     );
   });
 });

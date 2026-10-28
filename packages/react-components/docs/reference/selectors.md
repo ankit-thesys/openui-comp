@@ -142,6 +142,127 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-card-header-top-right` | Part (`topRight`) | On that part, whenever it renders |
 | `.openui-card-header-bottom` | Part (`bottom`) | On that part, whenever it renders |
 
+## Charts/AreaChart
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-area-chart` | Root | Always |
+| `.openui-area-chart-container-inner` | Part (`containerInner`) | On that part, whenever it renders |
+| `.openui-area-chart-y-axis-container` | Part (`yAxisContainer`) | On that part, whenever it renders |
+| `.openui-area-chart-main-container` | Part (`mainContainer`) | On that part, whenever it renders |
+| `.openui-area-chart-grid` | Part (`grid`) | On that part, whenever it renders |
+| `.openui-area-chart-grid-line` | Part (`gridLine`) | On that part, whenever it renders |
+| `.openui-area-chart-y-axis` | Part (`yAxis`) | On that part, whenever it renders |
+| `.openui-area-chart-y-tick` | Part (`yTick`) | On that part, whenever it renders |
+| `.openui-area-chart-x-axis` | Part (`xAxis`) | On that part, whenever it renders |
+| `.openui-area-chart-x-tick` | Part (`xTick`) | On that part, whenever it renders |
+| `.openui-area-chart-x-tick-angled` | Part (`xTickAngled`) | On that part, whenever it renders |
+| `.openui-area-chart-crosshair` | Part (`crosshair`) | On that part, whenever it renders |
+| `.openui-area-chart-crosshair-line` | Part (`crosshairLine`) | On that part, whenever it renders |
+| `.openui-area-chart-active-dot-outer` | Part (`activeDotOuter`) | On that part, whenever it renders |
+| `.openui-area-chart-active-dot-inner` | Part (`activeDotInner`) | On that part, whenever it renders |
+| `.openui-area-chart-areas` | Part (`areas`) | On that part, whenever it renders |
+| `.openui-area-chart-area-path` | Part (`areaPath`) | On that part, whenever it renders |
+| `.openui-area-chart-area-line` | Part (`areaLine`) | On that part, whenever it renders |
+| `.openui-area-chart-svg` | Part (`svg`) | On that part, whenever it renders |
+| `.openui-area-chart-group` | Part (`group`) | On that part, whenever it renders |
+| `.openui-area-chart-hit-target` | Part (`hitTarget`) | On that part, whenever it renders |
+| `.openui-area-chart-tick-line` | Part (`tickLine`) | On that part, whenever it renders |
+| `.openui-area-chart-defs` | Part (`defs`) | On that part, whenever it renders |
+| `.openui-area-chart-clip` | Part (`clip`) | On that part, whenever it renders |
+| `.openui-area-chart-clip-rect` | Part (`clipRect`) | On that part, whenever it renders |
+| `.openui-area-chart-gradient` | Part (`gradient`) | On that part, whenever it renders |
+| `.openui-area-chart-stop` | Part (`stop`) | On that part, whenever it renders |
+| `.openui-area-chart-highlight` | Part (`highlight`) | On that part, whenever it renders |
+| `.openui-area-chart-area-path--is-animation-active` | Modifier | `isAnimationActive={true}` |
+| `.openui-area-chart-area-line--is-animation-active` | Modifier | `isAnimationActive={true}` |
+
+## Charts/BarChart (BarChart)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-bar-chart` | Root | Always |
+| `.openui-bar-chart-container-inner` | Part (`containerInner`) | On that part, whenever it renders |
+| `.openui-bar-chart-y-axis-container` | Part (`yAxisContainer`) | On that part, whenever it renders |
+| `.openui-bar-chart-main-container` | Part (`mainContainer`) | On that part, whenever it renders |
+| `.openui-bar-chart-grid` | Part (`grid`) | On that part, whenever it renders |
+| `.openui-bar-chart-grid-line` | Part (`gridLine`) | On that part, whenever it renders |
+| `.openui-bar-chart-y-axis` | Part (`yAxis`) | On that part, whenever it renders |
+| `.openui-bar-chart-y-tick` | Part (`yTick`) | On that part, whenever it renders |
+| `.openui-bar-chart-x-axis` | Part (`xAxis`) | On that part, whenever it renders |
+| `.openui-bar-chart-x-tick` | Part (`xTick`) | On that part, whenever it renders |
+| `.openui-bar-chart-x-tick-angled` | Part (`xTickAngled`) | On that part, whenever it renders |
+| `.openui-bar-chart-bars` | Part (`bars`) | On that part, whenever it renders |
+| `.openui-bar-chart-bar` | Part (`bar`) | On that part, whenever it renders |
+| `.openui-bar-chart-internal-line` | Part (`internalLine`) | On that part, whenever it renders |
+| `.openui-bar-chart-hover-highlight` | Part (`hoverHighlight`) | On that part, whenever it renders |
+| `.openui-bar-chart-svg` | Part (`svg`) | On that part, whenever it renders |
+| `.openui-bar-chart-group` | Part (`group`) | On that part, whenever it renders |
+| `.openui-bar-chart-hit-target` | Part (`hitTarget`) | On that part, whenever it renders |
+| `.openui-bar-chart-tick-line` | Part (`tickLine`) | On that part, whenever it renders |
+| `.openui-bar-chart-defs` | Part (`defs`) | On that part, whenever it renders |
+| `.openui-bar-chart-clip` | Part (`clip`) | On that part, whenever it renders |
+| `.openui-bar-chart-clip-rect` | Part (`clipRect`) | On that part, whenever it renders |
+| `.openui-bar-chart-bar--is-animation-active` | Modifier | `isAnimationActive={true}` |
+| `.openui-bar-chart-internal-line--is-animation-active` | Modifier | `isAnimationActive={true}` |
+
+## Charts/BarChart (HorizontalBarChart)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-horizontal-bar-chart` | Root | Always |
+| `.openui-horizontal-bar-chart-container-inner-wrapper` | Part (`containerInnerWrapper`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-container-inner` | Part (`containerInner`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-main-container` | Part (`mainContainer`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-x-axis-container` | Part (`xAxisContainer`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-category-label` | Part (`categoryLabel`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-x-tick` | Part (`xTick`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-grid-vertical` | Part (`gridVertical`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-grid-line` | Part (`gridLine`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-x-axis` | Part (`xAxis`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-internal-line` | Part (`internalLine`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-crosshair` | Part (`crosshair`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-bars` | Part (`bars`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-bar` | Part (`bar`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-row` | Part (`row`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-svg` | Part (`svg`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-group` | Part (`group`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-label-container` | Part (`labelContainer`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart-bar--is-animation-active` | Modifier | `isAnimationActive={true}` |
+| `.openui-horizontal-bar-chart-internal-line--is-animation-active` | Modifier | `isAnimationActive={true}` |
+
+## Charts/LineChart
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-line-chart` | Root | Always |
+| `.openui-line-chart-container-inner` | Part (`containerInner`) | On that part, whenever it renders |
+| `.openui-line-chart-y-axis-container` | Part (`yAxisContainer`) | On that part, whenever it renders |
+| `.openui-line-chart-main-container` | Part (`mainContainer`) | On that part, whenever it renders |
+| `.openui-line-chart-grid` | Part (`grid`) | On that part, whenever it renders |
+| `.openui-line-chart-grid-line` | Part (`gridLine`) | On that part, whenever it renders |
+| `.openui-line-chart-y-axis` | Part (`yAxis`) | On that part, whenever it renders |
+| `.openui-line-chart-y-tick` | Part (`yTick`) | On that part, whenever it renders |
+| `.openui-line-chart-x-axis` | Part (`xAxis`) | On that part, whenever it renders |
+| `.openui-line-chart-x-tick` | Part (`xTick`) | On that part, whenever it renders |
+| `.openui-line-chart-x-tick-angled` | Part (`xTickAngled`) | On that part, whenever it renders |
+| `.openui-line-chart-crosshair` | Part (`crosshair`) | On that part, whenever it renders |
+| `.openui-line-chart-crosshair-line` | Part (`crosshairLine`) | On that part, whenever it renders |
+| `.openui-line-chart-active-dot-outer` | Part (`activeDotOuter`) | On that part, whenever it renders |
+| `.openui-line-chart-active-dot-inner` | Part (`activeDotInner`) | On that part, whenever it renders |
+| `.openui-line-chart-lines` | Part (`lines`) | On that part, whenever it renders |
+| `.openui-line-chart-dot` | Part (`dot`) | On that part, whenever it renders |
+| `.openui-line-chart-line` | Part (`line`) | On that part, whenever it renders |
+| `.openui-line-chart-svg` | Part (`svg`) | On that part, whenever it renders |
+| `.openui-line-chart-group` | Part (`group`) | On that part, whenever it renders |
+| `.openui-line-chart-hit-target` | Part (`hitTarget`) | On that part, whenever it renders |
+| `.openui-line-chart-tick-line` | Part (`tickLine`) | On that part, whenever it renders |
+| `.openui-line-chart-defs` | Part (`defs`) | On that part, whenever it renders |
+| `.openui-line-chart-clip` | Part (`clip`) | On that part, whenever it renders |
+| `.openui-line-chart-clip-rect` | Part (`clipRect`) | On that part, whenever it renders |
+| `.openui-line-chart-highlight` | Part (`highlight`) | On that part, whenever it renders |
+| `.openui-line-chart-line--is-animation-active` | Modifier | `isAnimationActive={true}` |
+
 ## Charts/MiniAreaChart
 
 | Stable class | Kind | Present when |
@@ -177,6 +298,25 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-mini-line-chart-line` | Part (`line`) | On that part, whenever it renders |
 | `.openui-mini-line-chart-point` | Part (`point`) | On that part, whenever it renders |
 | `.openui-mini-line-chart--is-animation-active` | Modifier | `isAnimationActive={true}` |
+
+## Charts/ScatterChart
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-scatter-chart` | Root | Always |
+| `.openui-scatter-chart-grid` | Part (`grid`) | On that part, whenever it renders |
+| `.openui-scatter-chart-grid-vertical` | Part (`gridVertical`) | On that part, whenever it renders |
+| `.openui-scatter-chart-grid-line` | Part (`gridLine`) | On that part, whenever it renders |
+| `.openui-scatter-chart-y-axis` | Part (`yAxis`) | On that part, whenever it renders |
+| `.openui-scatter-chart-x-axis` | Part (`xAxis`) | On that part, whenever it renders |
+| `.openui-scatter-chart-y-tick` | Part (`yTick`) | On that part, whenever it renders |
+| `.openui-scatter-chart-x-tick` | Part (`xTick`) | On that part, whenever it renders |
+| `.openui-scatter-chart-dots` | Part (`dots`) | On that part, whenever it renders |
+| `.openui-scatter-chart-dot` | Part (`dot`) | On that part, whenever it renders |
+| `.openui-scatter-chart-svg` | Part (`svg`) | On that part, whenever it renders |
+| `.openui-scatter-chart-group` | Part (`group`) | On that part, whenever it renders |
+| `.openui-scatter-chart-hit-target` | Part (`hitTarget`) | On that part, whenever it renders |
+| `.openui-scatter-chart-dot--is-animation-active` | Modifier | `isAnimationActive={true}` |
 
 ## Charts/shared/cartesian/ScrollButtonsHorizontal
 

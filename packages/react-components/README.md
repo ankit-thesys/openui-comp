@@ -948,6 +948,11 @@ Renamed stable classes and props, per component converted to the flat convention
 | Mini charts | `.openui-mini-{line,area,bar}-chart-*` drawing parts | Unchanged; SVGs, area gradient definitions and stops now also have stable part classes |
 | Mini charts | `.openui-mini-chart--clickable` | `.openui-mini-{line,area,bar}-chart[data-clickable]` |
 | Mini charts | `.openui-mini-chart-mark--animated` | `.openui-mini-{line,area,bar}-chart--is-animation-active` on the root, emitted only when the prop is true |
+| Cartesian charts (#103) | `.openui-{area,bar,horizontal-bar,line,scatter}-chart-container` | `.openui-{area,bar,horizontal-bar,line,scatter}-chart` (the root; condensed wrappers use their family's root) |
+| Cartesian charts (#103) | Existing axis, series, tick, crosshair, category-label and frame part classes | Unchanged; each rendered SVG/group/hit target, grid line, tick span, clip and gradient also has its own documented stable class |
+| Cartesian entrances (#103) | `.openui-{area,line}-chart-{area-path,area-line,line}--animated`, `.openui-{bar,horizontal-bar}-chart-bar--animated`, `.openui-scatter-chart-dot--animated` | Corresponding drawing part's `--is-animation-active` modifier; emitted only while `isAnimationActive` is true and not printing. Bar internal lines have their own `-internal-line--is-animation-active` modifier. |
+| Cartesian negative values (#103) | `.openui-{bar,horizontal-bar}-chart-bar--negative` | `[data-negative]` on the bar or internal line; add the same attribute to a stable-class override for that state |
+| Cartesian zero baseline (#103) | `.openui-grid-zero-line` | `.openui-{area,bar,line,scatter}-chart-grid-line[data-zero]`; other grid lines carry the same part class without the state |
 
 
 For rollout #96, **TextBlock** is the established family name of the public `TextBlockView`
@@ -1013,6 +1018,7 @@ react-ui never had. They are gone; use the class on the right instead:
 | `.openui-chart-tooltip-root`, `.openui-chart-tooltip-portal-root` | `.openui-chart-tooltip`, `.openui-chart-tooltip-portal` |
 | `.openui-chart-{horizontal,vertical}-scroll-controls-root` | `.openui-scroll-buttons-{horizontal,vertical}` |
 | `.openui-mini-chart-root` | `.openui-mini-{line,area,bar}-chart` |
+| `.openui-{area,bar,horizontal-bar,line,scatter}-chart-root` | `.openui-{area,bar,horizontal-bar,line,scatter}-chart` |
 
 The #98 disclosure/layout/overlay migration changes no prop names. No internal callers outside
 these families reference their renamed classes. No chat-kit directory or matching references
@@ -1030,6 +1036,13 @@ frame width/height, explicit `StackedLegend style` values, and the tooltip sprin
 transform remain geometry set by JavaScript. The tooltip panel and its appearance are class-overridable.
 The chart-specific modules still on the allowlist retain their existing classes and unlayered rules.
 No chat-kit source references to these renamed chart classes were found for ticket #102.
+
+Cartesian chart props are unchanged for ticket #103. Dynamic dimming, follower appearance and
+entrance delays use private `--_openui-*` variables read by flat part styles. Chart frame
+width/height, SVG coordinates, path lengths and spring positioning remain geometry set by
+JavaScript. The public classes override appearance properties directly. Empty HorizontalBarChart
+frames retain their existing layout and now carry their own family's stable root.
+A repository-wide scan found no external/chat-kit references to the renamed classes; no kit was modified.
 
 ## Beta import migration
 

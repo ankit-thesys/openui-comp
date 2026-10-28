@@ -45,28 +45,37 @@ const PROPERTIES = [
 
 /** Captures blocks and parts of one case element, after any running transition has finished. */
 const measure = (root: Element, properties: string[]) => {
+  // A fixture may add domain-specific properties (for example SVG strokes and animation timing).
+  properties = [
+    ...properties,
+    ...(JSON.parse(root.getAttribute("data-parity-properties") ?? "[]") as string[]),
+  ];
   const out: Record<string, string> = {};
-  // Choice controls also compare their SVG paint, thumb transform and focus outline.
-  const extra = JSON.parse(root.getAttribute("data-parity-properties") ?? "[]") as string[];
   const record = (el: Element, prefix: string) => {
-    el.getAnimations().forEach((animation) => {
-      // Infinite skeleton pulses cannot finish (the Web Animations API throws). Compare the
-      // same first frame in #72 and the current build; the pulse spec checks progression.
-      if (animation.effect?.getTiming().iterations === Infinity) {
-        animation.pause();
-        animation.currentTime = 0;
-      } else animation.finish();
-    });
     const style = getComputedStyle(el);
-    for (const property of [...properties, ...extra])
-      out[`${prefix}${property}`] = style.getPropertyValue(property);
+    for (const property of properties) {
+      // Local SVG paint URLs identify the same gradient in current/baseline pages despite their
+      // different fixture filenames. Compare the fragment, retaining external paint-server URLs.
+      const value = style.getPropertyValue(property);
+      out[`${prefix}${property}`] = value.replace(
+        /url\(["']?([^"'()]*)["']?\)/g,
+        (match, url: string) => {
+          const resolved = new URL(url, location.href);
+          return resolved.origin === location.origin &&
+            resolved.pathname === location.pathname &&
+            resolved.hash
+            ? `url("${resolved.hash}")`
+            : match;
+        },
+      );
+    }
     const box = el.getBoundingClientRect();
     out[`${prefix}width`] = box.width.toFixed(2);
     out[`${prefix}height`] = box.height.toFixed(2);
   };
-  record(root, "");
+  const parts: Array<[Element, string]> = [[root, ""]];
   root.querySelectorAll("[data-parity-part]").forEach((part) => {
-    record(part, `${part.getAttribute("data-parity-part")}.`);
+    parts.push([part, `${part.getAttribute("data-parity-part")}.`]);
   });
   // Parts the component renders itself, named by selector in the case's `data-parity-parts`
   // JSON ({ "<part name>": "<selector within the case>" }); a part that is absent is skipped.
@@ -79,7 +88,7 @@ const measure = (root: Element, properties: string[]) => {
     const part = selector.startsWith("document:")
       ? document.querySelector(selector.slice("document:".length))
       : root.querySelector(selector);
-    if (part) record(part, `${name}.`);
+    if (part) parts.push([part, `${name}.`]);
   }
   // Portals live outside the case root. A fixture may explicitly name their public DOM parts.
   const globalParts = JSON.parse(root.getAttribute("data-parity-global-parts") ?? "{}") as Record<
@@ -88,8 +97,21 @@ const measure = (root: Element, properties: string[]) => {
   >;
   for (const [name, selector] of Object.entries(globalParts)) {
     const part = document.querySelector(selector);
-    if (part) record(part, `${name}.`);
+    if (part) parts.push([part, `${name}.`]);
   }
+  // SVG group bounds include transformed descendants. Settle every observed subtree before
+  // reading any geometry, including animated children that are not themselves named parts.
+  // Global parts (portals) need the same treatment even though they live outside the case.
+  const animations = new Set(parts.flatMap(([part]) => part.getAnimations({ subtree: true })));
+  animations.forEach((animation) => {
+    // Infinite skeleton pulses cannot finish (the Web Animations API throws). Compare the
+    // same first frame in #72 and the current build; the pulse spec checks progression.
+    if (animation.effect?.getTiming().iterations === Infinity) {
+      animation.pause();
+      animation.currentTime = 0;
+    } else animation.finish();
+  });
+  for (const [part, prefix] of parts) record(part, prefix);
   return out;
 };
 

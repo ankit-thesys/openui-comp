@@ -29,6 +29,21 @@ interface MouseHandlers {
 }
 
 export interface CartesianChartLayoutProps {
+  classes?: Partial<
+    Record<
+      | "containerInner"
+      | "yAxisContainer"
+      | "mainContainer"
+      | "yTick"
+      | "gridLine"
+      | "svg"
+      | "group"
+      | "hitTarget"
+      | "grid"
+      | "yAxis",
+      string
+    >
+  >;
   orch: CartesianChartOrchestrator;
   yScale: ScaleLinear<number, number>;
   mouseHandlers: MouseHandlers;
@@ -87,7 +102,7 @@ export function CartesianChartLayout(props: CartesianChartLayoutProps) {
       <MeasureFontScopeContext.Provider value={orch.refs.containerRef}>
         <div
           ref={orch.refs.containerRef}
-          className={clsx(`${prefix}-container`, props.className)}
+          className={props.className}
           style={orch.style.containerStyle as React.CSSProperties}
           // PPTX-exporter contract attribute — not derived from the class prefix.
           data-openui-chart={props.exportData ?? props.chartType}
@@ -135,6 +150,7 @@ export function CartesianChartLayout(props: CartesianChartLayoutProps) {
 
 // ── scroll mode: fixed y-axis svg + scrolling main svg + scroll buttons ──────
 function ScrollBody({
+  classes,
   orch,
   yScale,
   mouseHandlers,
@@ -149,18 +165,22 @@ function ScrollBody({
 }: CartesianChartLayoutProps & { prefix: string }) {
   return (
     <>
-      <div className={`${prefix}-container-inner`}>
+      <div className={classes?.containerInner ?? `${prefix}-container-inner`}>
         {showYAxis && (
-          <div className={`${prefix}-y-axis-container`}>
+          <div className={classes?.yAxisContainer ?? `${prefix}-y-axis-container`}>
             <svg
+              className={classes?.svg}
               width={orch.dimensions.effectiveYAxisWidth}
               height={orch.dimensions.totalHeight}
-              style={{ overflow: "visible" }}
+              data-overflow="visible"
             >
-              <g transform={`translate(0, ${orch.dimensions.marginTop})`}>
+              <g
+                className={classes?.group}
+                transform={`translate(0, ${orch.dimensions.marginTop})`}
+              >
                 <YAxis
-                  className={`${prefix}-y-axis`}
-                  tickClassName={`${prefix}-y-tick`}
+                  className={classes?.yAxis ?? `${prefix}-y-axis`}
+                  tickClassName={classes?.yTick ?? `${prefix}-y-tick`}
                   scale={yScale}
                   width={orch.dimensions.effectiveYAxisWidth}
                   chartHeight={orch.dimensions.chartInnerHeight}
@@ -173,10 +193,11 @@ function ScrollBody({
 
         <div
           ref={orch.refs.mainContainerRef}
-          className={`${prefix}-main-container`}
+          className={classes?.mainContainer ?? `${prefix}-main-container`}
           onScroll={orch.scroll.handleScroll}
         >
           <svg
+            className={classes?.svg}
             role="img"
             aria-label={ariaLabel}
             width={orch.dimensions.chartAreaWidth}
@@ -189,12 +210,14 @@ function ScrollBody({
           >
             {defs}
             <g
+              className={classes?.group}
               transform={`translate(0, ${orch.dimensions.marginTop})`}
               clipPath={`url(#clip-${orch.identity.chartId})`}
             >
               {grid && (
                 <Grid
-                  className={`${prefix}-grid`}
+                  lineClassName={classes?.gridLine}
+                  className={classes?.grid ?? `${prefix}-grid`}
                   yScale={yScale}
                   chartWidth={orch.dimensions.chartAreaWidth}
                   chartHeight={orch.dimensions.chartInnerHeight}
@@ -204,6 +227,7 @@ function ScrollBody({
               {series}
             </g>
             <g
+              className={classes?.group}
               transform={`translate(0, ${orch.dimensions.chartInnerHeight + orch.dimensions.marginTop})`}
             >
               {xAxis}
@@ -226,6 +250,7 @@ function ScrollBody({
 
 // ── fit mode: one svg, translated g's, transparent hit-rect, no scroll ───────
 function FitBody({
+  classes,
   orch,
   yScale,
   mouseHandlers,
@@ -240,19 +265,20 @@ function FitBody({
 }: CartesianChartLayoutProps & { prefix: string }) {
   return (
     <svg
+      className={classes?.svg}
       role="img"
       aria-label={ariaLabel}
       width={orch.dimensions.totalSvgWidth}
       height={orch.dimensions.totalHeight}
-      style={{ overflow: "visible" }}
+      data-overflow="visible"
     >
       {defs}
 
       {showYAxis && (
-        <g transform={`translate(0, ${orch.dimensions.marginTop})`}>
+        <g className={classes?.group} transform={`translate(0, ${orch.dimensions.marginTop})`}>
           <YAxis
-            className={`${prefix}-y-axis`}
-            tickClassName={`${prefix}-y-tick`}
+            className={classes?.yAxis ?? `${prefix}-y-axis`}
+            tickClassName={classes?.yTick ?? `${prefix}-y-tick`}
             scale={yScale}
             width={orch.dimensions.effectiveYAxisWidth}
             chartHeight={orch.dimensions.chartInnerHeight}
@@ -262,6 +288,7 @@ function FitBody({
       )}
 
       <g
+        className={classes?.group}
         transform={`translate(${orch.dimensions.effectiveYAxisWidth}, ${orch.dimensions.marginTop})`}
         onMouseMove={mouseHandlers.handleMouseMove}
         onMouseLeave={mouseHandlers.handleMouseLeave}
@@ -270,14 +297,16 @@ function FitBody({
         onClick={mouseHandlers.handleClick}
       >
         <rect
+          className={classes?.hitTarget}
           width={orch.dimensions.chartAreaWidth}
           height={orch.dimensions.chartInnerHeight}
           fill="transparent"
         />
-        <g clipPath={`url(#clip-${orch.identity.chartId})`}>
+        <g className={classes?.group} clipPath={`url(#clip-${orch.identity.chartId})`}>
           {grid && (
             <Grid
-              className={`${prefix}-grid`}
+              lineClassName={classes?.gridLine}
+              className={classes?.grid ?? `${prefix}-grid`}
               yScale={yScale}
               chartWidth={orch.dimensions.chartAreaWidth}
               chartHeight={orch.dimensions.chartInnerHeight}
@@ -289,6 +318,7 @@ function FitBody({
       </g>
 
       <g
+        className={classes?.group}
         transform={`translate(${orch.dimensions.effectiveYAxisWidth}, ${orch.dimensions.chartInnerHeight + orch.dimensions.marginTop})`}
       >
         {xAxis}

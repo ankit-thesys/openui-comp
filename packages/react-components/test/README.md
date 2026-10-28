@@ -640,3 +640,46 @@ test checks the foundations' styles, including minimum widths for mini charts an
 For DefaultLegend it checks its declared gap instead of an undeclared minimum width: removing
 the still-allowlisted parent chart's flex layout changes the browser's resolution of `auto`.
 These fixes do not change parity fixtures or require baseline recapture.
+
+## Ticket #103: cartesian charts
+
+`Charts/{AreaChart,BarChart,HorizontalBarChart,LineChart,ScatterChart}.contract.test.tsx`
+checks each public family independently. The contract list supports nested chart families;
+`Charts` continues to cover the shared foundations and mini charts. The migrated browser benches
+use each entry's own documented names, excluding composed dependencies, so one chart's fixture
+never claims another chart's parts. The five chart style modules are off the allowlist.
+
+`cartesian-charts.test.tsx` checks render-time registration, layers, data states, empty horizontal
+frames, stable classes on owned SVG output and overridable dynamic appearance. Existing built-dist
+client-boundary tests cover every changed component. No style internals are imported by tests.
+
+`cartesian-charts.spec.ts` uses the `cartesian-charts` consumer fixture and checks every stable
+class before/after library CSS and in layer mode, SVG properties, data-state origins, zero lines,
+HTML-class rewrites, reduced motion and printing. Parity fixtures and names are `area-chart`,
+`bar-chart`, `horizontal-bar-chart`, `line-chart`, `scatter-chart`; their source files are
+`fixtures/parity-<name>.tsx`, sharing `cartesian-cases.tsx`. Each family's spec is
+`<name>.parity.spec.ts`. There are no intentional visual differences. Cases cover empty frames,
+curves, grouped/stacked bars, signs, dots, internal lines, entrances, condensed wrappers, scrolling,
+axes and grid/legend suppression. Fixtures can add SVG/animation properties with
+`data-parity-properties`; the shared parity observations remain unchanged for other fixtures.
+
+Orchestrator follow-up (Chromium is unavailable in the implementation sandbox):
+
+```bash
+pnpm test:parity:baseline
+pnpm exec playwright test parity.spec.ts cartesian-charts.spec.ts area-chart.parity.spec.ts bar-chart.parity.spec.ts horizontal-bar-chart.parity.spec.ts line-chart.parity.spec.ts scatter-chart.parity.spec.ts
+pnpm test:browser
+```
+
+Capture the five new JSON baselines using #72's source and the script; do not hand-write them.
+The full browser suite also reruns chart foundations, overrides, Tailwind and hydration benches.
+`pnpm test:screenshots` discovers all five parity fixtures automatically.
+
+Ticket #103 browser follow-up: parity settles all observed descendants, including unnamed SVG
+marks and portal children, before measuring any part's geometry. `parity.spec.ts` pins this
+ordering with paused descendant animations. Recapture the #72 baselines with
+`pnpm test:parity:baseline` after this measurement change, then rerun the parity specs and full
+browser suite. The print check waits for marks to settle naturally to opacity 1 and zero
+animations; the reduced-motion check still requires those values immediately. Neither forces
+animation completion. This retains #72's area opacity transition while accounting for the
+print hook's effect-driven entrance-class removal.

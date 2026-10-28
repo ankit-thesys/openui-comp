@@ -49,7 +49,10 @@ export async function readStableNames() {
 const code = (text) => `\`${text}\``;
 const prop = (axis, value, name) => {
   const modifier = name.split("--")[1];
-  if (value === "true") return code(`${axis}={true}`);
+  if (value === "true") {
+    const propName = modifier.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
+    return code(`${propName}={true}`);
+  }
   const suffix = String(value).replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
   const classAxis = modifier?.endsWith(`-${suffix}`) ? modifier.slice(0, -suffix.length - 1) : axis;
   const propName = classAxis.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
