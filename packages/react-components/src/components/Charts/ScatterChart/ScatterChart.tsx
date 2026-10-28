@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { useMemo } from "react";
 import { rootClass } from "./scatterChart.styles";

@@ -83,11 +83,9 @@ const stylesheetScope = css`
       top: 50%;
       z-index: 10;
       transform: translateY(-50%);
-      background: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: var(--openui-radius-s, 6px);
       &.openui-carousel-button-left {
         left: -12px;
       }

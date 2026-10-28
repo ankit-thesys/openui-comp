@@ -1,3 +1,5 @@
+"use client";
+
 import { area, line } from "d3-shape";
 import { useId } from "react";
 import { useEffectiveAnimation } from "../hooks/core/useEffectiveAnimation";

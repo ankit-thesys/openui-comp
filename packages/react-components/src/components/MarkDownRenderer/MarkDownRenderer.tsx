@@ -1,8 +1,11 @@
+"use client";
+
 import clsx from "clsx";
 import { memo } from "react";
 import ReactMarkdown, { Components, type Options } from "react-markdown";
 import oneLight from "react-syntax-highlighter/dist/cjs/styles/prism/one-light";
 import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus";
+import { useStyles } from "../../styles/useStyles";
 import { CodeBlock } from "../CodeBlock";
 import {
   Table,
@@ -15,7 +18,7 @@ import {
   TableRow,
 } from "../Table";
 import { useTheme } from "../ThemeProvider";
-import { codeClass, linkClass, rootClass } from "./markdown.styles";
+import { markdownStyles, names } from "./markdown.styles";
 
 type TableAlignment = TableHeadProps["align"];
 
@@ -32,12 +35,6 @@ const MarkdownTableCell: Components["td"] = ({ align, ...props }) => (
   <TableCell {...(props as Omit<TableCellProps, "align">)} align={toTableAlignment(align)} />
 );
 
-const variantStyles = {
-  clear: "",
-  card: "openui-markdown-renderer-card",
-  sunk: "openui-markdown-renderer-card-sunk",
-};
-
 export interface MarkDownRendererProps {
   variant?: "clear" | "card" | "sunk";
   textMarkdown: string;
@@ -46,6 +43,8 @@ export interface MarkDownRendererProps {
 }
 
 export const MarkDownRenderer = memo((props: MarkDownRendererProps) => {
+  const { variant = "clear" } = props;
+  const styles = useStyles(markdownStyles);
   const { mode } = useTheme();
   const theme = mode === "dark" ? vscDarkPlus : oneLight;
   const components: Components = {
@@ -55,11 +54,19 @@ export const MarkDownRenderer = memo((props: MarkDownRendererProps) => {
       if (match || (!className && String(children).includes("\n"))) {
         const language = match?.[1] ?? "text";
         const codeString = String(children).trim();
-        return <CodeBlock language={language} codeString={codeString} theme={theme} />;
+        return (
+          <CodeBlock
+            language={language}
+            codeString={codeString}
+            theme={theme}
+            className={clsx(styles.codeBlock, names.codeBlock)}
+            syntaxHighlighterClassName=""
+          />
+        );
       }
 
       return (
-        <code className={clsx(codeClass, "openui-markdown-renderer-code", className)} {...props}>
+        <code className={clsx(styles.code, names.code, className)} {...props}>
           {children}
         </code>
       );
@@ -70,14 +77,20 @@ export const MarkDownRenderer = memo((props: MarkDownRendererProps) => {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className={clsx(linkClass, "openui-markdown-renderer-link")}
+          className={clsx(styles.link, names.link)}
           {...props}
         >
           {children}
         </a>
       );
     },
-    table: Table,
+    table: ({ node: _node, className, ...props }) => (
+      <Table
+        {...props}
+        className={clsx(names.table, className)}
+        containerClassName={clsx(styles.tableContainer, names.tableContainer)}
+      />
+    ),
     thead: TableHeader,
     th: MarkdownTableHead,
     tbody: TableBody,
@@ -93,9 +106,10 @@ export const MarkDownRenderer = memo((props: MarkDownRendererProps) => {
   return (
     <div
       className={clsx(
-        rootClass,
-        props["variant"] && variantStyles[props["variant"] as keyof typeof variantStyles],
-        "openui-markdown-renderer",
+        styles.root,
+        styles.variant[variant],
+        names.root,
+        names.variant[variant],
         props.className,
       )}
     >

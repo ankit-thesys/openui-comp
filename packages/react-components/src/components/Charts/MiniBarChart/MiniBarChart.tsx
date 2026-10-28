@@ -1,3 +1,5 @@
+"use client";
+
 import { useTheme } from "../../ThemeProvider";
 import { useEffectiveAnimation } from "../hooks/core/useEffectiveAnimation";
 import { roundedBarPath } from "../shared/cartesian/roundedBarPath";

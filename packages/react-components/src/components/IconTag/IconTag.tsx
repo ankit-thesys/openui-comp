@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { forwardRef } from "react";
 import { IconWrapper, type IconProps } from "../_shared/icons";

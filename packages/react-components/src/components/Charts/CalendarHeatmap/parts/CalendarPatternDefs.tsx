@@ -1,3 +1,5 @@
+"use client";
+
 import type { CalendarLevelPattern } from "../types";
 
 /** Default pattern stroke — a theme-adaptive contrast token over the tile. */

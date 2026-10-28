@@ -1,26 +1,16 @@
+"use client";
+
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import clsx from "clsx";
-import { css } from "goober";
 import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
-import { iconButtonStyles } from "./iconButton.styles";
-
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-icon-button-root {
-      ${iconButtonStyles}
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
+import { useStyles } from "../../styles/useStyles";
+import { iconButtonStyles, names } from "./iconButton.styles";
 
 type IconButtonVariant = "primary" | "secondary" | "tertiary";
 type IconButtonSize =
   "3-extra-small" | "2-extra-small" | "extra-small" | "small" | "medium" | "large";
 type IconButtonShape = "square" | "circle";
-type IconButtonAppearance = "normal" | "destructive";
+type IconButtonTone = "default" | "destructive";
 
 export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: ReactNode;
@@ -28,7 +18,8 @@ export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>
   size?: IconButtonSize;
   shape?: IconButtonShape;
   className?: string;
-  appearance?: IconButtonAppearance;
+  /** What the action means to the user; `destructive` colours it as a dangerous action. */
+  tone?: IconButtonTone;
   /**
    * Render as the provided child element instead of a `<button>`. Useful when the
    * icon button is nested inside another interactive element (e.g. an accordion
@@ -37,32 +28,6 @@ export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>
   asChild?: boolean;
 }
 
-const normalIconButtonVariants = {
-  primary: "openui-icon-button-primary",
-  secondary: "openui-icon-button-secondary",
-  tertiary: "openui-icon-button-tertiary",
-} as const;
-
-const destructiveIconButtonVariants = {
-  primary: "openui-icon-button-destructive-primary",
-  secondary: "openui-icon-button-destructive-secondary",
-  tertiary: "openui-icon-button-destructive-tertiary",
-} as const;
-
-const iconButtonSizes = {
-  "3-extra-small": "openui-icon-button-3-extra-small",
-  "2-extra-small": "openui-icon-button-2-extra-small",
-  "extra-small": "openui-icon-button-extra-small",
-  small: "openui-icon-button-small",
-  medium: "openui-icon-button-medium",
-  large: "openui-icon-button-large",
-} as const;
-
-const iconButtonShapes = {
-  square: "openui-icon-button-square",
-  circle: "openui-icon-button-circle",
-} as const;
-
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => {
   const {
     className,
@@ -70,14 +35,12 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props,
     variant = "primary",
     size = "medium",
     shape = "square",
-    appearance = "normal",
+    tone = "default",
     asChild = false,
     children,
     ...rest
   } = props;
-
-  const iconButtonVariants =
-    appearance === "normal" ? normalIconButtonVariants : destructiveIconButtonVariants;
+  const styles = useStyles(iconButtonStyles);
 
   const Comp = asChild ? Slot : "button";
 
@@ -85,17 +48,22 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props,
     <Comp
       ref={ref}
       className={clsx(
-        "openui-icon-button-root",
-        "openui-icon-button",
-        iconButtonVariants[variant],
-        iconButtonSizes[size],
-        iconButtonShapes[shape],
+        styles.root,
+        styles.variant[variant],
+        styles.size[size],
+        styles.shape[shape],
+        styles.tone[tone],
+        names.root,
+        names.variant[variant],
+        names.size[size],
+        names.shape[shape],
+        names.tone[tone],
         className,
       )}
       {...rest}
     >
       <Slottable>{children}</Slottable>
-      {icon && <span className="openui-icon-button-icon">{icon}</span>}
+      {icon && <span className={clsx(styles.icon, names.icon)}>{icon}</span>}
     </Comp>
   );
 });

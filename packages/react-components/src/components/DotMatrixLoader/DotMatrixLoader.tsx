@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { css } from "goober";
 import { useEffect, useRef, type CSSProperties } from "react";

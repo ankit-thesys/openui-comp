@@ -1,3 +1,5 @@
+"use client";
+
 import type { CalendarSeparatorLabel } from "./separatorLayout";
 
 interface CalendarSeparatorsProps {

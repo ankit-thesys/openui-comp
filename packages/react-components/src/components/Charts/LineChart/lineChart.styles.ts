@@ -34,7 +34,12 @@ const stylesheetScope = css`
       & line.openui-grid-zero-line:where(.openui-line-chart-grid line) {
         ${zeroGridLine}
       }
-      & :where(.openui-line-chart-y-tick, .openui-line-chart-x-tick, .openui-line-chart-x-tick-angled) {
+      &
+        :where(
+          .openui-line-chart-y-tick,
+          .openui-line-chart-x-tick,
+          .openui-line-chart-x-tick-angled
+        ) {
         ${svgTickLabel}
       }
       & :where(.openui-line-chart-crosshair-line) {

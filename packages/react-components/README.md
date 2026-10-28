@@ -57,11 +57,140 @@ mechanism. `useThemeModePreference` keeps JSON localStorage preferences and the
 `data-openui-theme` document attribute; it does not synchronize separate hook
 instances or browser tabs.
 
+## Styling and overrides
+
+Components are moving to one styling contract: restyle any part of a component with a single
+documented class, without `!important`. Components that follow it are listed, with every class, in
+the [stable class reference](docs/reference/selectors.md), which is generated from the components'
+own class constants. Other components keep their earlier selectors, documented under
+[Automatic styles](#automatic-styles), until they move.
+
+### Class names
+
+| Kind | Pattern | Example |
+| --- | --- | --- |
+| Root | `openui-<component>` | `openui-button` |
+| Part | `openui-<component>-<part>` | `openui-button-icon` |
+| Modifier | `openui-<block>--<prop>-<value>` | `openui-button--variant-primary` |
+| Boolean modifier | `openui-<block>--<prop>` | present only when the prop is `true` |
+
+- `<component>` is the exported component name in kebab case. Sub-components and portal content
+  belong to their component's family (`openui-tabs-trigger`).
+- The root is the element that receives your `className`, `style` and `ref`; other elements the
+  component renders are parts.
+- A modifier names the prop and its value in kebab case, and the current value is always present,
+  defaults included: a plain `<Button>` carries `openui-button--variant-primary`,
+  `openui-button--size-medium` and `openui-button--tone-default`.
+
+### States
+
+Runtime states use the attributes the element already has, never extra classes: `:hover`,
+`:active`, `:disabled`, `:focus-visible`, `[aria-*]` and Radix `[data-state]`. Add the same state
+to a stable class to restyle it:
+
+```css
+.openui-button--variant-primary { background: navy; }
+.openui-button--variant-primary:hover { background: midnightblue; }
+```
+
+### The override guarantee
+
+Library rules for these components weigh one generated class, plus at most one state. Content the
+library does not render itself (your children, icons inside an icon part) is styled at zero weight.
+Markdown prose (paragraphs, headings, lists, quotes, rules and strong text) has no class of its
+own: its rules weigh the root's generated class plus the tag, such as `.goN p`, so write
+`.openui-markdown-renderer p { color: navy; }` to restyle it: it has the same weight and your
+stylesheets sit after the library's in `<head>`, so it wins whenever it loads. A bare element selector such as `p { … }` in your app, or a reset, does not reach
+markdown prose. A few structural rules weigh one more pseudo-class or tag, such as the spacing
+between consecutive paragraphs (`p:has(+ p)`), so match that shape to change them. Code,
+links, code-block roots, tables and table containers have the stable classes in the reference
+and are styled on them, so element resets do not reach them; inside a blockquote, links and inline
+code inherit the quote's colour, line-height and italic style like its other text.
+`MarkDownRenderer` defaults to `variant="clear"` and always emits its variant modifier.
+A rule of yours on a stable class, with the same state where you need one, therefore wins:
+
+- whether your CSS loads before or after the library, because the library's `<style id="_goober">`
+  is placed first in `<head>`, ahead of app stylesheets;
+- after `<html class>` is rewritten, for example by a theme script, because nothing depends on a
+  class on `<html>`;
+- with no `!important` and no wrapper selector.
+
+Load order: the token defaults' `@layer openui-defaults;` declaration comes first in `<head>`, then
+the library sheet, then your CSS. If you place `<style id="_goober">` yourself, the library reuses it
+where it is; keep it before your stylesheets.
+
+Your rule has to match the library's shape: a resting-state rule does not restyle `:hover`, and a
+rule in a named cascade layer loses to the unlayered library rules.
+
+### Exceptions
+
+- MarkDownRenderer retains four `!important` declarations on its third-party syntax-highlighter
+  output: `padding: 25px`, `margin-top: 8px`, `margin-bottom: 8px`, and `margin-bottom: 0` on its
+  last child. These declarations are exceptions to ordinary consumer overrides. The never-matching
+  first-child `margin-top: 0 !important` rule has been removed (the copy button precedes the
+  highlighter).
+- The listed sources view, standalone CodeBlock and SliderBlock also retain their existing
+  `!important` declarations. Syntax-highlighter theme maps and token output keep their third-party
+  inline styles; use the code-block root class to restyle the block around that output.
+- Markdown prose ignores bare element selectors (`p { … }`, element resets); target it through
+  `.openui-markdown-renderer` instead.
+- The Tabs indicator's width and position are set inline as the active tab changes, so they are
+  not overridable; its colour and height are, through `.openui-tabs-indicator`.
+- Components that have not moved to the contract register their styles on import, behind a class on
+  `<html>`, and keep the selectors documented under [Automatic styles](#automatic-styles). The
+  package's `test/flat-allowlist.json` lists their modules; it must be empty before a stable release.
+
+### Cascade layer mode
+
+Component rules are unlayered by default. Apps that order their CSS with cascade
+layers, such as Tailwind 4, can put them in a layer instead:
+
+```tsx
+<ThemeProvider cssLayer="openui">{/* application */}</ThemeProvider>
+```
+
+Rules of components under the provider then sit in `@layer openui`, so any
+unlayered app CSS beats them, whatever its specificity or load order, and so do
+layers ordered after `openui`. Nested providers inherit `cssLayer` and can set
+their own. A value that is not a layer name (or a dotted path such as
+`app.openui`) is ignored, with a development warning. Components outside any provider stay unlayered, and so do components
+not yet converted to the flat convention (currently all but Button), under any
+provider. Each layer gets its own generated classes, so a component rendered both
+in and out of a layer registers its rules twice.
+
+The library declares no layer order. Put the order and an empty library sheet
+first in `<head>`, before any stylesheet, in this order:
+
+```html
+<style>@layer theme, base, openui, components, utilities;</style>
+<style id="_goober"> </style>
+```
+
+The library writes its rules into that `#_goober` tag instead of creating its
+own. With this recipe, Tailwind 4 utilities such as `bg-red-500` beat
+Button, and Tailwind's preflight in `base` does not reset it.
+
+Writing the same `@layer` statement only in the app's CSS file does not work.
+Layer priority follows where a layer first appears in the document, and the
+library sheet comes before the app's CSS, so `openui` ranks first: below
+Tailwind's `base`, whose preflight then clears Button's background, padding and
+radius.
+
+Without `cssLayer`, Tailwind 4 utilities lose to the unlayered component rules on
+the same element. Use the important modifier (`!bg-red-500`, or `bg-red-500!`) or
+target the stable class instead. In this default mode, Tailwind 3.4 and 4
+preflights leave every element that carries a stable class styled, and markdown
+prose too, since its rules outweigh the preflight's element selectors. Tailwind
+3.3 and earlier conflict: their preflight `[type='button'] { background-color:
+transparent }` clears button backgrounds. Tailwind 3 emits its preflight unlayered, so it beats layered rules:
+use layer mode with Tailwind 4, not Tailwind 3.
+
 ## Automatic styles
 
-Owned component styles use unmodified Goober module-scope `css` calls and do not
-require a CSS import, setup command or styling build plugin. Styles register
-when a referenced module evaluates, before the component renders. The build
+Owned component styles use stock Goober and do not require a CSS import, setup
+command or styling build plugin. Components on the styling contract above register
+their styles the first time they render; the others register when a referenced
+module evaluates, before the component renders. The build
 preserves modules and marks unused modules removable by the consumer's bundler.
 A bundler may combine several retained components in a shared lazy chunk; their
 styles can register together when that chunk evaluates. This is not a guarantee
@@ -91,34 +220,17 @@ has not been certified.
 
 ### Stable selectors
 
-Button and IconButton use stable styling targets. Importing either component
-registers its rules automatically through stock Goober. A private generated class
-on `html` is contained in `:where(...:root)` and adds zero specificity. Consumers
-do not use that class. The documented batches below share this mechanism;
-EditableTable retains its existing selectors. Chart-owned targets are documented
-in the Charts section below.
-
-| Target | Button | IconButton |
-| --- | --- | --- |
-| Root | `.openui-button-root` | `.openui-icon-button-root` |
-| Preserved root alias | `.openui-button-base` | `.openui-icon-button` |
-| Variant | `.openui-button-base-primary` (also secondary/tertiary) | `.openui-icon-button-primary` (also secondary/tertiary) |
-| Destructive variant | `.openui-button-base-destructive-primary` (also secondary/tertiary) | `.openui-icon-button-destructive-primary` (also secondary/tertiary) |
-| Size | `.openui-button-base-{extra-small,small,medium,large}` | `.openui-icon-button-{3-extra-small,2-extra-small,extra-small,small,medium,large}` |
-| Shape | Existing Button geometry | `.openui-icon-button-square`, `.openui-icon-button-circle` |
-| State | `:hover:not(:disabled)`, `:active:not(:disabled)`, `:disabled` | Same |
-| Owned part | No added wrapper around children or icons | `.openui-icon-button-icon` (existing span) |
+The selectors in this and the following sections belong to components that have
+not moved to the [styling contract](#styling-and-overrides) yet; Button, IconButton and
+MarkDownRenderer have, and are documented in the [stable class reference](docs/reference/selectors.md).
+The documented batches below use stable styling targets that register on import: a private
+generated class on `html` is contained in `:where(...:root)` and adds zero
+specificity. Consumers do not use that class. EditableTable retains its existing selectors.
+Chart-owned targets are documented in the Charts section below.
 
 Use ordinary **later, unlayered CSS** with the corresponding selector. Root rules
 have one class of specificity; variants, sizes, states and parts retain their
-additional selectors. For example:
-
-```css
-.openui-button-root { border-width: 2px; }
-.openui-button-root.openui-button-base-primary { background: navy; }
-.openui-button-root.openui-button-base-primary:disabled { cursor: wait; }
-.openui-icon-button-root .openui-icon-button-icon { gap: 4px; }
-```
+additional selectors.
 
 No `!important` is required for these matching overrides. This does not promise
 that earlier CSS, a root-only selector against a variant rule, or normal CSS in a
@@ -225,7 +337,6 @@ The private document guard contributes no specificity.
 | TextCallout | `.openui-text-callout-root`, `.openui-text-callout-variant-neutral`, `.openui-text-callout-variant-info`, `.openui-text-callout-variant-warning`, `.openui-text-callout-variant-success`, `.openui-text-callout-variant-danger`, `.openui-text-callout-content-styled`, `.openui-text-callout-title`, `.openui-text-callout-description` |
 | MetricIndicator | `.openui-metric-indicator-root` |
 | CodeBlock | `.openui-code-block-root` |
-| MarkDownRenderer | `.openui-mark-down-renderer-markdown-code`, `.openui-mark-down-renderer-markdown-link`, `.openui-mark-down-renderer-markdown-root` |
 | InlineMarkdownRenderer | `.openui-inline-markdown-renderer-inline-markdown-root` |
 | ImageBlock | `.openui-image-block-wrapper-styled`, `.openui-image-block-wrapper-mobile`, `.openui-image-block-error`, `.openui-image-block-image-styled`, `.openui-image-block-image-mobile`, `.openui-image-block-loader-styled` |
 | ImageText | `.openui-image-text-root`, `.openui-image-text-image-container`, `.openui-image-text-image`, `.openui-image-text-layout-vertical`, `.openui-image-text-layout-horizontal`, `.openui-image-text-content` |
@@ -247,7 +358,6 @@ The private document guard contributes no specificity.
 | VisualCardBlock | `.openui-visual-card-block-card-clickable`, `.openui-visual-card-block-card-root` |
 | _shared/cards | `.openui-card-layout-scrollbar`, `.openui-card-layout-layout-small`, `.openui-card-layout-layout-medium` |
 | Accordion | `.openui-accordion-root` |
-| Tabs | `.openui-tabs-tabs`, `.openui-tabs-container`, `.openui-tabs-list-styled`, `.openui-tabs-trigger-styled`, `.openui-tabs-content-styled` |
 | Steps | `.openui-steps-root`, `.openui-steps-item` |
 | SectionBlock | `.openui-section-block-foldable-section-root`, `.openui-section-block-foldable-section-item`, `.openui-section-block-foldable-section-header`, `.openui-section-block-foldable-section-trigger`, `.openui-section-block-foldable-section-content`, `.openui-section-block-section-v2-root` |
 | Carousel | `.openui-carousel-carousel`, `.openui-carousel-content-styled`, `.openui-carousel-item-styled`, `.openui-carousel-button-styled` |
@@ -257,13 +367,21 @@ The private document guard contributes no specificity.
 | Citation | `.openui-citation-container-styled`, `.openui-citation-trigger`, `.openui-citation-tooltip-styled`, `.openui-citation-tooltip-content`, `.openui-citation-item-item`, `.openui-citation-item-logo`, `.openui-citation-item-content`, `.openui-citation-item-title`, `.openui-citation-item-source` |
 | ImageGallery | `.openui-image-gallery-gallery-modal-modal`, `.openui-image-gallery-gallery-modal-content`, `.openui-image-gallery-gallery-modal-header`, `.openui-image-gallery-gallery-modal-heading`, `.openui-image-gallery-gallery-modal-main`, `.openui-image-gallery-gallery-modal-carousel-container`, `.openui-image-gallery-gallery-modal-carousel`, `.openui-image-gallery-gallery-modal-button-container`, `.openui-image-gallery-gallery-modal-left-button`, `.openui-image-gallery-gallery-modal-right-button`, `.openui-image-gallery-gallery-modal-thumbnail`, `.openui-image-gallery-gallery-modal-active-thumbnail`, `.openui-image-gallery-gallery`, `.openui-image-gallery-grid`, `.openui-image-gallery-layout-openui-gallery-single`, `.openui-image-gallery-layout-openui-gallery-double`, `.openui-image-gallery-layout-openui-gallery-triple`, `.openui-image-gallery-layout-openui-gallery-quad`, `.openui-image-gallery-layout-openui-gallery-default`, `.openui-image-gallery-image`, `.openui-image-gallery-main-image`, `.openui-image-gallery-show-all` |
 
+
+CodeBlock accepts two class props:
+
+- `className` is added to the wrapper (`.openui-code-block-root`), next to its own classes.
+- `syntaxHighlighterClassName` replaces the class on the third-party highlighter element. It
+  defaults to `openui-code-block-syntax-highlighter`, whose rules (including its `!important`
+  margin) apply only while that default is kept; pass your own class to style the highlighter
+  yourself. MarkDownRenderer uses this to own its code blocks' spacing.
 Sources retains its existing important width (180px), transparent background
 and hover background on listed-source items. Ordinary background overrides do
 not beat those declarations, even when the same element also has Carousel's
 canonical item class. Use existing props/theme customization or intentionally
 important CSS where appropriate; this is not an ordinary-override pass.
 
-Clear Tabs overrides need its root, clear-state and relevant part context. Dark
+Dark
 Markdown descendant selectors retain their existing compound context. Vendor
 inline syntax themes, floating coordinates, live loader opacity and private
 keyframe identifiers keep their existing precedence and behavior.
@@ -284,6 +402,48 @@ its shared icon fallback retains its existing styling. Markdown/code wrappers
 are converted independently of vendor syntax theme objects and official KaTeX
 CSS/fonts. Existing per-instance inline geometry and colors, ThemeProvider
 serialization and animation behavior retain their contracts.
+
+### Server-rendered styles
+
+On the server, component styles live in Goober's in-memory sheet. Converted components register
+their rules the first time they render, so a server **renders first, then collects** the CSS with
+`getComponentStyles()`, and inlines it as the **first** element of `<head>`, ahead of the app's own
+stylesheets:
+
+```tsx
+import { getComponentStyles } from "@openuidev/react-components";
+import { renderToString } from "react-dom/server";
+
+const html = renderToString(<App />); // 1. render: registers the styles this page uses
+const css = getComponentStyles(); // 2. collect, after rendering
+const page = `<!doctype html>
+<html>
+  <head>
+    <style id="_goober">${css}</style>
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body><div id="root">${html}</div></body>
+</html>`;
+```
+
+- The page is styled before JavaScript runs, and app CSS after the sheet overrides converted
+  components' equal-weight rules.
+- Keep the `_goober` id: the browser adopts that element instead of injecting a second sheet.
+- Inline the returned string as is.
+- Every call returns the full sheet collected so far, so concurrent requests cannot take each
+  other's rules. The sheet is cumulative for the life of the process: a response may carry rules
+  for components another request rendered, which is harmless.
+- Do not call Goober's own `extractCss` from the same Goober instance: it empties the sheet before
+  `getComponentStyles()` can collect it. Rules the application registers with that instance are
+  included.
+- ThemeProvider writes its theme variables in the browser, so a server-rendered first paint uses
+  the components' built-in light values; `mode="dark"`, `lightTheme` and `darkTheme` apply once
+  client JavaScript runs. Host `:root { --openui-… }` declarations in the app's own CSS apply from
+  the first paint.
+- **Streaming SSR is not supported yet.** With `renderToPipeableStream`, Next.js App Router or
+  other streaming renderers, `<head>` is sent before most components render, so their styles are
+  missing from the first paint. Those components are unstyled until client JavaScript renders
+  them, then styled normally; nothing breaks.
 
 ### Math styles and fonts
 
@@ -415,9 +575,9 @@ performance. The chart selector gate remains pending independent verification.
 ## Support boundary and inherited behavior
 
 React/ReactDOM19 are required. Zod3.25+ or4 and Zustand4.5.5+ remain peer
-dependencies. **SSR, hydration, streaming SSR and concurrent server style
-isolation are deferred.** Node imports and declarations do not establish SSR
-support. Client-side OpenUI response streaming is a separate capability.
+dependencies. Non-streaming server rendering is supported with `getComponentStyles()` (see
+[Server-rendered styles](#server-rendered-styles)). **Streaming SSR is deferred, and hydration is
+not certified.** Client-side OpenUI response streaming is a separate capability.
 
 Extraction preserves inherited behavior rather than redesigning it:
 
@@ -442,30 +602,43 @@ remain external dependencies. Build inputs contain no old SCSS or generated CSS.
 
 ### Authoring styles
 
-Component declarations and keyframes use stock Goober tagged template strings.
-Reusable declaration fragments are plain template strings, interpolated where
-needed; registration remains at the existing module-level call site:
+Converted components follow the [styling contract](#styling-and-overrides). A
+style module exports a `names` constant with its stable classes, the single source
+for the markup and the generated reference, and a factory that receives Goober's
+`css` and returns plain class maps. Components read them with the internal
+`useStyles` hook, which registers the rules on first render:
 
 ```ts
-const body = `
-  font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
-`;
-const scope = css`
-  :where(&:root) {
-    .openui-example-root {
-      ${body}
-      display: flex;
-      &:disabled {
-        cursor: not-allowed;
-      }
+// example.styles.ts
+export const names = {
+  root: "openui-example",
+  label: "openui-example-label",
+  size: { small: "openui-example--size-small", medium: "openui-example--size-medium" },
+} as const;
+
+export const exampleStyles = (css: StyleCss) => ({
+  root: css`
+    display: flex;
+    &:disabled {
+      cursor: not-allowed;
     }
-  }
-`;
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(scope);
-}
-const rootClass = "openui-example-root";
+  `,
+  size: { small: css`padding: 4px;`, medium: css`padding: 8px;` },
+  label: css`font-weight: 500;`,
+});
+
+// Example.tsx
+const styles = useStyles(exampleStyles);
+<div className={clsx(styles.root, styles.size[size], names.root, names.size[size], className)} />;
 ```
+
+Each rule is one class plus at most one state. A parent's prop that changes a
+part's value travels through a private `--_openui-<component>-*` variable the
+part reads, not a descendant selector. After changing `names`, run
+`pnpm docs:selectors` to regenerate the reference. The unit tests enforce the
+selector budget, the naming grammar and the migration allowlist; see
+`test/README.md`. Modules on the allowlist keep their module-level `css` call
+behind a class on `html` until they are converted.
 
 Keep selector specificity, declaration order, token fallbacks and keyframe timing
 when editing styles. Use CSS units explicitly: Goober does not add `px` to numeric
@@ -482,6 +655,54 @@ The following retain their existing non-template contracts:
 
 These exceptions do not justify new static Goober declaration objects, custom
 serializers or styling APIs.
+
+## Migration from `@openuidev/react-ui` styling
+
+Renamed stable classes and props, per component converted to the flat convention.
+
+| Component | `@openuidev/react-ui` | `@openuidev/react-components` |
+| --- | --- | --- |
+| Button | `.openui-button-base` (root) | `.openui-button` |
+| Button | `.openui-button-base-{primary,secondary,tertiary}` | `.openui-button--variant-{primary,secondary,tertiary}` |
+| Button | `.openui-button-base-{extra-small,small,medium,large}` | `.openui-button--size-{extra-small,small,medium,large}` |
+| Button | `buttonType="normal"` prop | `tone="default"` (the default); emits `.openui-button--tone-default` |
+| Button | `buttonType="destructive"` prop | `tone="destructive"`; emits `.openui-button--tone-destructive` |
+| Button | `.openui-button-base-destructive-{primary,secondary,tertiary}` | `.openui-button--tone-destructive` with `.openui-button--variant-{…}` |
+| Button | Icons as direct children | Each icon wrapped in `.openui-button-icon` |
+| IconButton | `.openui-icon-button` (root) | `.openui-icon-button` (unchanged; now the only root class) |
+| IconButton | `.openui-icon-button-icon` | `.openui-icon-button-icon` (unchanged) |
+| IconButton | `.openui-icon-button-{primary,secondary,tertiary}` | `.openui-icon-button--variant-{primary,secondary,tertiary}` |
+| IconButton | `.openui-icon-button-{3-extra-small,2-extra-small,extra-small,small,medium,large}` | `.openui-icon-button--size-{3-extra-small,2-extra-small,extra-small,small,medium,large}` |
+| IconButton | `.openui-icon-button-{square,circle}` | `.openui-icon-button--shape-{square,circle}` |
+| IconButton | `appearance="normal"` prop | `tone="default"` (the default); emits `.openui-icon-button--tone-default` |
+| IconButton | `appearance="destructive"` prop | `tone="destructive"`; emits `.openui-icon-button--tone-destructive` |
+| IconButton | `.openui-icon-button-destructive-{primary,secondary,tertiary}` | `.openui-icon-button--tone-destructive` with `.openui-icon-button--variant-{…}` |
+| Tabs | `.openui-tabs` (root), `.openui-tabs-list`, `.openui-tabs-trigger`, `.openui-tabs-content` and their parts | Unchanged |
+| Tabs | `.openui-tabs-clear` | `.openui-tabs--variant-clear` |
+| Tabs | `.openui-tabs-list--{title,icon-title,icon-title-subtext,image-title,image-title-subtext}` | `.openui-tabs-list--variant-{title,icon-title,icon-title-subtext,image-title,image-title-subtext}` |
+| Tabs | `.openui-tabs-list-container` | Unchanged; now a part around the tablist, which is the TabsList root and receives `className`, `style` and `ref` |
+| Tabs | `<img>` inside `.openui-tabs-trigger-image` | Also carries the new `.openui-tabs-trigger-img` part |
+| Tabs | `.openui-tabs-clear .openui-tabs-trigger`, `.openui-tabs-list--… .openui-tabs-trigger-icon` and other context selectors | The single class of the element, such as `.openui-tabs-trigger` or `.openui-tabs-trigger-icon` |
+| Tabs | Scroll buttons styled by Tabs rules | Styled as IconButtons (`.openui-icon-button…`); `.openui-tabs-scroll-button`, `-scroll-left` and `-scroll-right` remain as hooks |
+| MarkDownRenderer | `.openui-markdown-renderer` (root), `.openui-markdown-renderer-code`, `.openui-markdown-renderer-link` | Unchanged |
+| MarkDownRenderer | `.openui-markdown-renderer-card` | `.openui-markdown-renderer--variant-card` |
+| MarkDownRenderer | `.openui-markdown-renderer-card-sunk` | `.openui-markdown-renderer--variant-sunk` |
+| MarkDownRenderer | No default `variant`, no clear modifier | `variant="clear"` by default; always emits `.openui-markdown-renderer--variant-clear` |
+| MarkDownRenderer | Shared `.openui-code-block-wrapper` | Also carries `.openui-markdown-renderer-code-block`; standalone CodeBlock defaults are unchanged |
+| MarkDownRenderer | `.openui-code-block-syntax-highlighter` inside markdown | Removed inside markdown; target `.openui-markdown-renderer-code-block` for the owned root around third-party output. Standalone CodeBlock keeps the old class. |
+| MarkDownRenderer | Shared `.openui-table` / `.openui-table-container` | Also carry `.openui-markdown-renderer-table` / `.openui-markdown-renderer-table-container` |
+
+Pre-release `@openuidev/react-components` betas also emitted internal carrier classes that
+react-ui never had. They are gone; use the class on the right instead:
+
+| Beta-only class | Use |
+| --- | --- |
+| `.openui-button-root` | `.openui-button` |
+| `.openui-icon-button-root` | `.openui-icon-button` |
+| `.openui-tabs-tabs` | `.openui-tabs` |
+| `.openui-tabs-container` | `.openui-tabs-list-container` |
+| `.openui-tabs-list-styled`, `.openui-tabs-trigger-styled`, `.openui-tabs-content-styled` | `.openui-tabs-list`, `.openui-tabs-trigger`, `.openui-tabs-content` |
+| `.openui-mark-down-renderer-markdown-{root,code,link}` | `.openui-markdown-renderer`, `-code`, `-link` |
 
 ## Beta import migration
 

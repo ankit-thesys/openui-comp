@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, Key, ReactNode, useContext, useMemo } from "react";
 import { z } from "zod/v4";
 import { safeOpenUrl } from "../_shared/utils/safeUrl";

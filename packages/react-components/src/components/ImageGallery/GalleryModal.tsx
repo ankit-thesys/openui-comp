@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import React, { useCallback, useEffect, useRef, useState } from "react";

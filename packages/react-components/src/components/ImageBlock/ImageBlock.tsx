@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import React, { forwardRef, useRef, useState } from "react";
 import { useResponsiveContainer } from "../../hooks/useResponsiveContainer";

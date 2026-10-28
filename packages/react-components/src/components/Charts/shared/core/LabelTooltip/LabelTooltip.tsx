@@ -1,3 +1,5 @@
+"use client";
+
 import * as Tooltip from "@radix-ui/react-tooltip";
 import React from "react";
 import { CHART_CLASS_PREFIX } from "../../../utils/constants";

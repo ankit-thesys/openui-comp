@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { useCallback } from "react";
 import { emptyClass } from "../shared/chartBase.styles";

@@ -1,4 +1,4 @@
-import { css } from "goober";
+import type { StyleCss } from "../../styles/useStyles";
 const primary = "var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))";
 const body = `
   font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
@@ -10,53 +10,129 @@ const heavy = `
   letter-spacing: var(--openui-text-body-default-heavy-letter-spacing, -0.01em);
   font-variation-settings: var(--openui-font-variation-medium, "wght" 560);
 `;
+// Links and inline code are parts, styled on their own class so unlayered element resets (such
+// as Tailwind 3's preflight `a` and `code` rules) cannot override them. Inside a blockquote they
+// inherit colour, line-height and font-style like the quote's other text: the blockquote prose
+// rule sets this flag and the parts read it through a container style query. Browsers without
+// style queries on custom properties (Firefox) keep the parts' own look inside quotes.
+const quoted = "--_openui-markdown-renderer-quoted";
+const inheritWhenQuoted = `
+  @container style(${quoted}: 1) {
+    & {
+      color: inherit;
+      line-height: inherit;
+      font-style: inherit;
+    }
+  }
+`;
+// Prose inside a quote takes the quote's look, as #72's `.root blockquote *` did, at the same
+// weight. It lists the prose tags instead of `*` so the parts (links, inline code, tables, code
+// blocks) are left to their own rules, which inherit inside quotes themselves and stay
+// overridable by one consumer class. One rule per tag: Goober splits selectors on commas and
+// mangles nested parentheses, so neither `:where(p, li)` nor `:not(:where(a))` is possible.
+// Everything markdown, GFM and raw inline HTML commonly produce inside a quote, except the parts.
+const proseTags = [
+  ..."p em strong b i u s del ins mark small sub sup kbd abbr q cite span br img input".split(" "),
+  ..."h1 h2 h3 h4 h5 h6 ul ol li dl dt dd blockquote hr pre figure figcaption section".split(" "),
+  ..."caption thead tbody tfoot tr th td".split(" "),
+];
+const quotedProse = proseTags
+  .map(
+    (tag) => `
+      & blockquote :where(${tag}) {
+        font-style: inherit;
+        color: inherit;
+        line-height: inherit;
+      }`,
+  )
+  .join("");
 const heading = `
   font: var(--openui-text-heading-xs, 600 16px/1.25 "Inter", sans-serif);
   letter-spacing: var(--openui-text-heading-xs-letter-spacing, -0.01em);
 `;
-export const codeClass = "openui-mark-down-renderer-markdown-code";
-export const linkClass = "openui-mark-down-renderer-markdown-link";
-export const rootClass = "openui-mark-down-renderer-markdown-root";
+/** Stable classes for markdown's root and renderer-owned replacements. */
+export const names = {
+  root: "openui-markdown-renderer",
+  code: "openui-markdown-renderer-code",
+  link: "openui-markdown-renderer-link",
+  codeBlock: "openui-markdown-renderer-code-block",
+  table: "openui-markdown-renderer-table",
+  tableContainer: "openui-markdown-renderer-table-container",
+  variant: {
+    clear: "openui-markdown-renderer--variant-clear",
+    card: "openui-markdown-renderer--variant-card",
+    sunk: "openui-markdown-renderer--variant-sunk",
+  },
+} as const;
 
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-mark-down-renderer-markdown-code {
-      border-radius: 4px;
-      padding: 2px 4px;
+export const markdownStyles = (css: StyleCss) => ({
+  code: css`
+    border-radius: 4px;
+    padding: 2px 4px;
+    background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
+    border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));
+    color: ${primary};
+    ${body}
+    ${inheritWhenQuoted}
+    /* Browsers ignore the legacy display:hidden declaration; preserve its rule. */
+    &::after,
+    &::before {
+      content: "";
+      display: hidden;
+    }
+  `,
+  link: css`
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));
+    ${body}
+    ${inheritWhenQuoted}
+    &:hover {
+      text-decoration: underline;
+    }
+  `,
+  // Syntax-highlighter markup inside the code-block part is foreign content.
+  codeBlock: css`
+    :where(&) {
+      & > div {
+        /* Preserve the shared highlighter radius when the theme has no inline radius. */
+        border-radius: 0.5rem;
+        padding: 25px !important;
+        margin-top: 8px !important;
+        margin-bottom: 8px !important;
+        &:last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+  `,
+  tableContainer: css`
+    margin-bottom: 20px;
+  `,
+  variant: {
+    clear: "",
+    card: css`
+      background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
+      border-radius: 0.5rem;
+      padding: 1rem;
+    `,
+    sunk: css`
       background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
-      border: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));
-      color: ${primary};
-      ${body}
-      /* Browsers ignore the legacy display:hidden declaration; preserve its rule. */
-  &::after, &::before {
-        content: "";
-        display: hidden;
-      }
-    }
-    .openui-mark-down-renderer-markdown-link {
-      color: var(--openui-text-info-primary, oklch(0.424 0.181 265.638 / 1));
-      cursor: pointer;
-      text-decoration: none;
-      transition: color 0.2s ease-in-out;
-      ${body}
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-    .openui-mark-down-renderer-markdown-root {
-      color: ${primary};
-      ${body}
-      max-width: none;
-      &:where(.openui-markdown-renderer-card) {
-        background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
-        border-radius: 0.5rem;
-        padding: 1rem;
-      }
-      &:where(.openui-markdown-renderer-card-sunk) {
-        background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
-        border-radius: 0.5rem;
-        padding: 1rem;
-      }
+      border-radius: 0.5rem;
+      padding: 1rem;
+    `,
+  },
+  // Prose (the tags markdown generates without classes) weighs the root's generated class plus the
+  // tag, as #72's `.root p` did, so unlayered element resets such as Tailwind 3's preflight cannot
+  // outweigh it while `.openui-markdown-renderer p` from the app still wins on order. Structural
+  // rules keep #72's shapes on top of that base. Registered after the parts so first/last-child
+  // spacing keeps its precedence over them.
+  root: css`
+    color: ${primary};
+    ${body}
+    max-width: none;
+    & {
       & h1,
       & h2,
       & h3,
@@ -121,17 +197,6 @@ const stylesheetScope = css`
           margin-bottom: 0;
         }
       }
-      & .openui-code-block-syntax-highlighter {
-        padding: 25px !important;
-        margin-top: 8px !important;
-        margin-bottom: 8px !important;
-        &:first-child {
-          margin-top: 0 !important;
-        }
-        &:last-child {
-          margin-bottom: 0 !important;
-        }
-      }
       & hr {
         margin-top: 48px;
         margin-bottom: 48px;
@@ -150,6 +215,7 @@ const stylesheetScope = css`
         padding-left: 16px;
         quotes: "“" "”" "‘" "’";
         line-height: 1.625;
+        ${quoted}: 1;
       }
       & blockquote strong {
         ${heavy}
@@ -168,14 +234,7 @@ const stylesheetScope = css`
         vertical-align: top;
         margin-left: 0.2em;
       }
-      & blockquote * {
-        font-style: inherit;
-        color: inherit;
-        line-height: inherit;
-      }
-      & .openui-table-container {
-        margin-bottom: 20px;
-      }
+      ${quotedProse}
       & > *:first-child {
         margin-top: 0;
       }
@@ -183,9 +242,5 @@ const stylesheetScope = css`
         margin-bottom: 0;
       }
     }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
+  `,
+});

@@ -1,3 +1,5 @@
+"use client";
+
 import type { ScaleLinear, ScalePoint } from "d3-scale";
 import React, { useCallback, useId, useRef } from "react";
 import { FadeFollower, springPresets, useSeededAim, useSpring } from "../core/spring";

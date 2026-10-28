@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { css } from "goober";
 import { barStyles } from "./skeleton.styles";

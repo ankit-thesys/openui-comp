@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { CheckCheck, Copy } from "lucide-react";
 import { useState } from "react";
@@ -7,6 +9,13 @@ import { IconButton } from "../IconButton";
 import { wrapperClass } from "./codeBlock.styles";
 
 export interface CodeBlockProps {
+  /** Added to the wrapper, next to its own classes. */
+  className?: string;
+  /**
+   * Replaces the highlighter's `openui-code-block-syntax-highlighter` class, and with it the
+   * library's highlighter rules, when a parent owns those styles.
+   */
+  syntaxHighlighterClassName?: string;
   language: string;
   codeString: string;
   theme?: {
@@ -14,7 +23,13 @@ export interface CodeBlockProps {
   };
 }
 
-export const CodeBlock = ({ language, codeString, theme }: CodeBlockProps) => {
+export const CodeBlock = ({
+  language,
+  codeString,
+  theme,
+  className,
+  syntaxHighlighterClassName,
+}: CodeBlockProps) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -24,7 +39,7 @@ export const CodeBlock = ({ language, codeString, theme }: CodeBlockProps) => {
   };
 
   return (
-    <div className={clsx(wrapperClass, "openui-code-block-wrapper")}>
+    <div className={clsx(wrapperClass, "openui-code-block-wrapper", className)}>
       <IconButton
         onClick={handleCopy}
         variant="secondary"
@@ -39,7 +54,7 @@ export const CodeBlock = ({ language, codeString, theme }: CodeBlockProps) => {
         style={theme ?? vscDarkPlus}
         language={language}
         PreTag="div"
-        className="openui-code-block-syntax-highlighter"
+        className={syntaxHighlighterClassName ?? "openui-code-block-syntax-highlighter"}
       >
         {codeString}
       </SyntaxHighlighter>

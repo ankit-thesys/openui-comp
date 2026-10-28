@@ -1,3 +1,5 @@
+"use client";
+
 import { CHART_CLASS_PREFIX } from "../../utils/constants";
 import { radarAxisAngle } from "../../utils/polarUtils";
 

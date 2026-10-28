@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { memo, useEffect, useRef, useState } from "react";
 import { IconWrapper } from "../_shared/icons";
