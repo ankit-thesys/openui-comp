@@ -15,6 +15,9 @@ import {
   CardSourceProvider,
   Carousel,
   CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
   CheckBoxGroup,
   CheckBoxItem,
   Chips,
@@ -39,6 +42,11 @@ import {
   IconButton,
   IconTag,
   IconText,
+  Image,
+  ImageBlock,
+  ImageGallery,
+  ImageText,
+  ImageTextLarge,
   InlineHeader,
   InlineMarkdownRenderer,
   Input,
@@ -300,6 +308,23 @@ const layoutElements = () =>
     ]),
   );
 const cardDependencyNames = (elements: ReactElement[]) => elements.map(composedNames);
+
+const imageTextElements = () => [
+  <ImageText key="default" src={source.faviconUrl} title="Title" subtitle="Subtitle" />,
+  ...(["horizontal", "vertical"] as const).flatMap((layout) =>
+    [false, true].map((bold) => (
+      <ImageText
+        key={`${layout}-${bold}`}
+        src={source.faviconUrl}
+        title="Title"
+        subtitle="Subtitle"
+        layout={layout}
+        bold={bold}
+        imageSize={64}
+      />
+    )),
+  ),
+];
 
 export const migratedComponents: MigratedComponent[] = [
   {
@@ -918,6 +943,134 @@ export const migratedComponents: MigratedComponent[] = [
   },
 
   {
+    folder: "Image",
+    names: namesOf("Image"),
+    elements: () => [
+      <Image key="default" src={source.faviconUrl} />,
+      ...(["1:1", "3:2", "3:4", "4:3", "16:9"] as const).flatMap((aspectRatio) =>
+        (["fit", "fill"] as const).map((scale) => (
+          <Image
+            key={`${aspectRatio}-${scale}`}
+            src={source.faviconUrl}
+            aspectRatio={aspectRatio}
+            scale={scale}
+          />
+        )),
+      ),
+    ],
+  },
+  {
+    folder: "ImageBlock",
+    names: namesOf("ImageBlock"),
+    elements: () => [
+      <ImageBlock key="default" src="/media-pending.svg" />,
+      <ImageBlock key="loaded" src={source.faviconUrl} imageLoading={false} />,
+    ],
+  },
+  {
+    folder: "ImageText",
+    prose: true,
+    get names() {
+      return [...namesOf("ImageText"), ...imageTextElements().map(composedNames)];
+    },
+    elements: imageTextElements,
+  },
+  {
+    folder: "ImageTextLarge",
+    prose: true,
+    get names() {
+      return [
+        ...namesOf("ImageTextLarge"),
+        composedNames(<ImageTextLarge src={source.faviconUrl} title="Title" subtitle="Subtitle" />),
+      ];
+    },
+    elements: () => [
+      <ImageTextLarge key="banner" src={source.faviconUrl} title="Title" subtitle="Subtitle" />,
+    ],
+  },
+  {
+    folder: "ImageGallery",
+    get names() {
+      return [
+        ...namesOf("ImageGallery"),
+        composedNames(
+          <Button variant="primary" size="small">
+            Show All
+          </Button>,
+        ),
+      ];
+    },
+    clientOnly: [
+      "openui-image-gallery-modal",
+      "openui-image-gallery-modal-content",
+      "openui-image-gallery-modal-header",
+      "openui-image-gallery-modal-heading",
+      "openui-image-gallery-modal-main",
+      "openui-image-gallery-modal-main-image",
+      "openui-image-gallery-modal-carousel-container",
+      "openui-image-gallery-modal-carousel",
+      "openui-image-gallery-modal-button-container",
+      "openui-image-gallery-modal-left-button",
+      "openui-image-gallery-modal-right-button",
+      "openui-image-gallery-modal-thumbnail",
+      "openui-image-gallery-modal-thumbnail-image",
+      "openui-image-gallery-modal-close",
+      "openui-image-gallery-modal-scroll-left",
+      "openui-image-gallery-modal-scroll-right",
+      "openui-image-gallery-modal-icon",
+    ],
+    elements: () =>
+      [1, 2, 3, 4, 5, 6].map((count) => (
+        <ImageGallery
+          key={count}
+          images={Array.from({ length: count }, (_, i) => ({
+            src: source.faviconUrl,
+            alt: `Photo ${i + 1}`,
+          }))}
+        />
+      )),
+  },
+  {
+    folder: "Carousel",
+    names: namesOf("Carousel"),
+    clientOnly: [
+      "openui-carousel-button",
+      "openui-carousel-button-left",
+      "openui-carousel-button-right",
+      "openui-carousel-previous",
+      "openui-carousel-next",
+    ],
+    elements: () => [
+      <Carousel key="default">
+        <CarouselContent>
+          <CarouselItem>Card</CarouselItem>
+        </CarouselContent>
+      </Carousel>,
+      ...(["card", "sunk"] as const).flatMap((variant) =>
+        [false, true].flatMap((noSnap) =>
+          [false, true].map((showButtons) => (
+            <Carousel
+              key={`${variant}-${noSnap}-${showButtons}`}
+              variant={variant}
+              noSnap={noSnap}
+              showButtons={showButtons}
+              style={{ width: 320 }}
+            >
+              <CarouselContent>
+                {[1, 2, 3].map((i) => (
+                  <CarouselItem key={i}>Card {i}</CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious aria-label="Previous card" icon={<svg />} />
+              <CarouselNext aria-label="Next card" icon={<svg />} />
+            </Carousel>
+          )),
+        ),
+      ),
+    ],
+  },
+
+  {
     folder: "Tag",
     names: namesOf("Tag"),
     elements: () => [<Tag key="default" text="Label" />, ...tagElements()],
@@ -1117,7 +1270,7 @@ export const migratedComponents: MigratedComponent[] = [
         ...namesOf("Sources"),
         ...namesOf("SourceFaviconImage"),
         composedNames(
-          <Carousel variant="sunk">
+          <Carousel variant="sunk" showButtons={false}>
             <CarouselContent />
           </Carousel>,
         ),

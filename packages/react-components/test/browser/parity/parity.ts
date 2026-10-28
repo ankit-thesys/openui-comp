@@ -136,7 +136,9 @@ export async function snapshot(
   const scenario = typeof scenarioOrPrepareCase === "string" ? scenarioOrPrepareCase : "";
   const prepareObservation =
     typeof scenarioOrPrepareCase === "function" ? scenarioOrPrepareCase : prepareCase;
-  await page.goto(`/${fixture}.html?${new URLSearchParams({ mode, scenario })}`);
+  await page.goto(`/${fixture}.html?${new URLSearchParams({ mode, scenario })}`, {
+    waitUntil: fixture.startsWith("parity-image-block") ? "domcontentloaded" : "load",
+  });
   const prepare =
     typeof prepareOrExtraProperties === "function" ? prepareOrExtraProperties : undefined;
   const properties = Array.isArray(prepareOrExtraProperties)

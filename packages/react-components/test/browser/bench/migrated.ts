@@ -24,14 +24,26 @@ export async function openMigrated(
   // so portalled chart parts inherit the same typography as the elements inside #root. Load
   // the page rule after head CSS: Tailwind 3 also declares body { line-height: inherit }.
   const typography = component.folder === "Charts" ? "font: 16px/normal serif;" : "";
+  // These properties are page-owned in #72 and in the flat build. Hold their layout inputs
+  // constant so percentage loader offsets and auto grid tracks compare library styling,
+  // rather than Tailwind's box-sizing reset or its removal of the inline-image baseline gap.
+  const mediaPageDefaults =
+    component.folder === "ImageBlock"
+      ? "*, ::before, ::after { box-sizing: border-box; }"
+      : component.folder === "ImageGallery"
+        ? "img { display: block; vertical-align: middle; }"
+        : "";
   const body =
     // Normalize page-owned typography, margins and native button currentColor.
     // Body typography follows Tailwind so its inherited line-height cannot reset this input;
     // zero-specificity button color still lets library and consumer rules win.
-    `<!doctype html><html><head><meta charset="utf-8"><style>:where(button) { color: inherit; }</style>${head}<style>body { margin: 0; ${typography} }</style>` +
+    `<!doctype html><html><head><meta charset="utf-8"><style>:where(button) { color: inherit; } ${mediaPageDefaults}</style>${head}<style>body { margin: 0; ${typography} }</style>` +
     `</head><body><div id="root"></div><script type="module" src="/elements.js"></script></body></html>`;
   await page.route(`**${path}?*`, (route) => route.fulfill({ contentType: "text/html", body }));
-  await page.goto(`${path}?component=${encodeURIComponent(component.folder)}`);
+  if (component.folder === "ImageBlock") await page.route("**/media-pending.svg", () => {});
+  await page.goto(`${path}?component=${encodeURIComponent(component.folder)}`, {
+    waitUntil: component.folder === "ImageBlock" ? "domcontentloaded" : "load",
+  });
   // Wait for a visible stable part: a Modal portal root has no box because its children
   // are fixed-positioned. Selecting that root first would time out despite an open dialog.
   await page
@@ -113,5 +125,34 @@ export async function openMigrated(
     await page
       .locator(".openui-chart-tooltip-portal[data-positioned]")
       .waitFor({ state: "attached" });
+  }
+  if (component.folder === "ImageGallery") {
+    // Include the portalled classes in both common benches, outside #root. The six-image
+    // case overflows the thumbnail track, exposing both measurement-only scroll controls.
+    await page
+      .locator(".openui-image-gallery")
+      .last()
+      .locator(".openui-image-gallery-image")
+      .first()
+      .click();
+    await expect(page.getByRole("dialog")).toBeVisible();
+    await page.locator(".openui-image-gallery-modal-carousel").evaluate((el) => {
+      el.scrollLeft = 100;
+    });
+    await expect(page.getByRole("button", { name: "Scroll images left" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Scroll images right" })).toBeVisible();
+    for (const name of component.clientOnly)
+      await expect(page.locator(`.${name}`).first()).toBeAttached();
+  }
+  if (component.folder === "Carousel") {
+    await page
+      .locator(".openui-carousel--show-buttons .openui-carousel-content")
+      .evaluateAll((els) =>
+        els.forEach((el) => {
+          el.scrollLeft = 300;
+        }),
+      );
+    await expect(page.locator(".openui-carousel-previous")).toHaveCount(4);
+    await expect(page.locator(".openui-carousel-next")).toHaveCount(4);
   }
 }

@@ -142,6 +142,24 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-card-header-top-right` | Part (`topRight`) | On that part, whenever it renders |
 | `.openui-card-header-bottom` | Part (`bottom`) | On that part, whenever it renders |
 
+## Carousel
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-carousel` | Root | Always |
+| `.openui-carousel-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-carousel-content-wrapper` | Part (`contentWrapper`) | On that part, whenever it renders |
+| `.openui-carousel-item` | Part (`item`) | On that part, whenever it renders |
+| `.openui-carousel-button` | Part (`button`) | On that part, whenever it renders |
+| `.openui-carousel-button-left` | Part (`left`) | On that part, whenever it renders |
+| `.openui-carousel-button-right` | Part (`right`) | On that part, whenever it renders |
+| `.openui-carousel-previous` | Part (`previous`) | On that part, whenever it renders |
+| `.openui-carousel-next` | Part (`next`) | On that part, whenever it renders |
+| `.openui-carousel--variant-card` | Modifier | `variant="card"` |
+| `.openui-carousel--variant-sunk` | Modifier | `variant="sunk"` |
+| `.openui-carousel--no-snap` | Modifier | `noSnap={true}` |
+| `.openui-carousel--show-buttons` | Modifier | `showButtons={true}` |
+
 ## Charts/AreaChart
 
 | Stable class | Kind | Present when |
@@ -827,6 +845,82 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-icon-text--icon-variant-inverted` | Modifier | `iconVariant="inverted"` |
 | `.openui-icon-text--icon-variant-filled` | Modifier | `iconVariant="filled"` |
 | `.openui-icon-text--icon-variant-soft` | Modifier | `iconVariant="soft"` |
+
+## Image
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-image` | Root | Always |
+| `.openui-image-aspect` | Part (`aspect`) | On that part, whenever it renders |
+| `.openui-image-viewport` | Part (`viewport`) | On that part, whenever it renders |
+| `.openui-image--scale-fit` | Modifier | `scale="fit"` |
+| `.openui-image--scale-fill` | Modifier | `scale="fill"` |
+| `.openui-image-aspect--aspect-ratio-1-1` | Modifier | `aspectRatio="1:1"` |
+| `.openui-image-aspect--aspect-ratio-3-2` | Modifier | `aspectRatio="3:2"` |
+| `.openui-image-aspect--aspect-ratio-3-4` | Modifier | `aspectRatio="3:4"` |
+| `.openui-image-aspect--aspect-ratio-4-3` | Modifier | `aspectRatio="4:3"` |
+| `.openui-image-aspect--aspect-ratio-16-9` | Modifier | `aspectRatio="16:9"` |
+
+## ImageBlock
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-image-block` | Root | Always |
+| `.openui-image-block-image` | Part (`image`) | On that part, whenever it renders |
+| `.openui-image-block-loader` | Part (`loader`) | On that part, whenever it renders |
+
+## ImageGallery (GalleryModal)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-image-gallery-modal` | Part (`modal`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-header` | Part (`header`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-heading` | Part (`heading`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-main` | Part (`main`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-carousel-container` | Part (`carouselContainer`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-carousel` | Part (`carousel`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-button-container` | Part (`buttonContainer`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-left-button` | Part (`leftButton`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-right-button` | Part (`rightButton`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-thumbnail` | Part (`thumbnail`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-main-image` | Part (`mainImage`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-thumbnail-image` | Part (`thumbnailImage`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-close` | Part (`close`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-scroll-left` | Part (`scrollLeft`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-scroll-right` | Part (`scrollRight`) | On that part, whenever it renders |
+| `.openui-image-gallery-modal-icon` | Part (`icon`) | On that part, whenever it renders |
+
+## ImageGallery
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-image-gallery` | Root | Always |
+| `.openui-image-gallery-grid` | Part (`grid`) | On that part, whenever it renders |
+| `.openui-image-gallery-image` | Part (`image`) | On that part, whenever it renders |
+| `.openui-image-gallery-img` | Part (`img`) | On that part, whenever it renders |
+| `.openui-image-gallery-show-all` | Part (`showAll`) | On that part, whenever it renders |
+
+## ImageText
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-image-text` | Root | Always |
+| `.openui-image-text-image-container` | Part (`imageContainer`) | On that part, whenever it renders |
+| `.openui-image-text-image` | Part (`image`) | On that part, whenever it renders |
+| `.openui-image-text-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-image-text--layout-horizontal` | Modifier | `layout="horizontal"` |
+| `.openui-image-text--layout-vertical` | Modifier | `layout="vertical"` |
+| `.openui-image-text--bold` | Modifier | `bold={true}` |
+
+## ImageTextLarge
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-image-text-large` | Root | Always |
+| `.openui-image-text-large-image-wrap` | Part (`imageWrap`) | On that part, whenever it renders |
+| `.openui-image-text-large-image` | Part (`image`) | On that part, whenever it renders |
+| `.openui-image-text-large-content` | Part (`content`) | On that part, whenever it renders |
 
 ## InlineHeader
 

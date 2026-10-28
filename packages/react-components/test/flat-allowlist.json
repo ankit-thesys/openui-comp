@@ -1,9 +1,1 @@
-[
-  "src/components/Carousel/carousel.styles.ts",
-  "src/components/Image/image.styles.ts",
-  "src/components/ImageBlock/imageBlock.styles.ts",
-  "src/components/ImageGallery/galleryModal.styles.ts",
-  "src/components/ImageGallery/imageGallery.styles.ts",
-  "src/components/ImageText/imageText.styles.ts",
-  "src/components/ImageTextLarge/imageTextLarge.styles.ts"
-]
+[]

@@ -2,16 +2,10 @@
 
 import clsx from "clsx";
 import React, { useCallback, useMemo, useState } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { Button } from "../Button";
 import { GalleryModal } from "./GalleryModal";
-import {
-  galleryClass,
-  gridClass,
-  imageClass,
-  layoutClasses,
-  mainImageClass,
-  showAllClass,
-} from "./imageGallery.styles";
+import { imageGalleryStyles, names } from "./imageGallery.styles";
 
 export interface ImageItem {
   src: string;
@@ -24,27 +18,28 @@ export interface OpenUIGalleryProps {
 }
 
 const MAX_GRID_IMAGES = 5;
-const getLayoutClassName = (imageCount: number): keyof typeof layoutClasses => {
+const getLayout = (imageCount: number) => {
   switch (imageCount) {
     case 1:
-      return "openui-gallery--single";
+      return "single";
     case 2:
-      return "openui-gallery--double";
+      return "double";
     case 3:
-      return "openui-gallery--triple";
+      return "triple";
     case 4:
-      return "openui-gallery--quad";
+      return "quad";
     default:
-      return "openui-gallery--default";
+      return "default";
   }
 };
 
 export const ImageGallery: React.FC<OpenUIGalleryProps> = ({ images }) => {
+  const styles = useStyles(imageGalleryStyles);
   const [showAll, setShowAll] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   // Memoize layout class to prevent recalculation
-  const layoutClass = useMemo(() => getLayoutClassName(images.length), [images.length]);
+  const layoutClass = useMemo(() => getLayout(images.length), [images.length]);
 
   // Memoize whether to show button
   const shouldShowButton = useMemo(() => images.length > MAX_GRID_IMAGES, [images.length]);
@@ -67,24 +62,24 @@ export const ImageGallery: React.FC<OpenUIGalleryProps> = ({ images }) => {
   }, []);
 
   return (
-    <div className={clsx(galleryClass, layoutClasses[layoutClass], "openui-gallery", layoutClass)}>
-      <div className={clsx(gridClass, "openui-gallery__grid")}>
+    <div className={clsx(styles.root, names.root)} data-layout={layoutClass}>
+      <div className={clsx(styles.grid, names.grid)}>
         {visibleImages.map((image, index) => (
           <div
             key={index}
-            className={clsx(
-              imageClass,
-              "openui-gallery__image",
-              index === 0 && mainImageClass,
-              index === 0 && "openui-gallery__image--main",
-            )}
+            className={clsx(styles.image, names.image)}
+            data-position={index + 1}
             onClick={() => handleImageClick(index)}
           >
-            <img src={image.src} alt={image.alt || `Gallery image ${index + 1}`} />
+            <img
+              className={clsx(styles.img, names.img)}
+              src={image.src}
+              alt={image.alt || `Gallery image ${index + 1}`}
+            />
           </div>
         ))}
         {shouldShowButton && (
-          <div className={clsx(showAllClass, "openui-gallery__show-all-button")}>
+          <div className={clsx(styles.showAll, names.showAll)}>
             <Button variant="primary" size="small" onClick={toggleShowAll}>
               Show All
             </Button>

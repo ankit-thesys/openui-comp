@@ -2,14 +2,9 @@
 
 import clsx from "clsx";
 import { forwardRef } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { TextBlockView } from "../TextBlock";
-import {
-  contentClass,
-  imageClass,
-  imageContainerClass,
-  layoutClasses,
-  rootClass,
-} from "./imageText.styles";
+import { imageTextStyles, names } from "./imageText.styles";
 
 export type ImageTextLayout = "horizontal" | "vertical";
 
@@ -31,6 +26,7 @@ export const ImageText = forwardRef<HTMLDivElement, ImageTextProps>(
     { title, subtitle, src, alt, bold = false, layout = "horizontal", imageSize, className },
     ref,
   ) => {
+    const styles = useStyles(imageTextStyles);
     const altText = alt ?? title;
     const size = imageSize ?? (layout === "horizontal" ? 40 : undefined);
 
@@ -38,20 +34,23 @@ export const ImageText = forwardRef<HTMLDivElement, ImageTextProps>(
       <div
         ref={ref}
         className={clsx(
-          rootClass,
-          layoutClasses[layout],
-          "openui-image-text",
-          `openui-image-text--${layout}`,
+          styles.root,
+          names.root,
+          styles.layout[layout],
+          names.layout[layout],
+          bold && names.bold.true,
           className,
         )}
       >
         <div
-          className={clsx(imageContainerClass, "openui-image-text__image-container")}
-          style={size ? { width: size, height: size } : undefined}
+          className={clsx(styles.imageContainer, names.imageContainer)}
+          style={
+            size ? ({ "--_openui-image-text-size": `${size}px` } as React.CSSProperties) : undefined
+          }
         >
-          <img className={clsx(imageClass, "openui-image-text__image")} src={src} alt={altText} />
+          <img className={clsx(styles.image, names.image)} src={src} alt={altText} />
         </div>
-        <div className={clsx(contentClass, "openui-image-text__content")}>
+        <div className={clsx(styles.content, names.content)}>
           <TextBlockView
             variant={bold ? "highlight-text-number-subtext" : "text-subtext"}
             primary={title}
