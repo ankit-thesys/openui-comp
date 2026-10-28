@@ -27,6 +27,13 @@ const fixtures = [
   "shared-base",
   "parity-shared-base",
   "parity-skeleton-pulse",
+  "form-controls",
+  "parity-input",
+  "parity-text-area",
+  "parity-label",
+  "parity-hint",
+  "parity-form-control",
+  "parity-buttons",
 ];
 const parityFixtures = fixtures.filter((name) => name.startsWith("parity-"));
 

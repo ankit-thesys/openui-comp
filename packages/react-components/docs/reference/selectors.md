@@ -23,6 +23,26 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-button--tone-default` | Modifier | `tone="default"` |
 | `.openui-button--tone-destructive` | Modifier | `tone="destructive"` |
 
+## Buttons
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-buttons` | Root | Always |
+| `.openui-buttons--variant-horizontal` | Modifier | `variant="horizontal"` |
+| `.openui-buttons--variant-vertical` | Modifier | `variant="vertical"` |
+
+## FormControl
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-form-control` | Root | Always |
+
+## FormControl/Hint
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-form-control-hint` | Root | Always |
+
 ## IconButton
 
 | Stable class | Kind | Present when |
@@ -42,6 +62,22 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-icon-button--shape-circle` | Modifier | `shape="circle"` |
 | `.openui-icon-button--tone-default` | Modifier | `tone="default"` |
 | `.openui-icon-button--tone-destructive` | Modifier | `tone="destructive"` |
+
+## Input
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-input` | Root | Always |
+| `.openui-input--size-small` | Modifier | `size="small"` |
+| `.openui-input--size-medium` | Modifier | `size="medium"` |
+| `.openui-input--size-large` | Modifier | `size="large"` |
+
+## Label
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-label` | Root | Always |
+| `.openui-label-required-asterisk` | Part (`requiredAsterisk`) | On that part, whenever it renders |
 
 ## MarkDownRenderer
 
@@ -100,6 +136,12 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-tabs-trigger-content` | Part (`content`) | On that part, whenever it renders |
 | `.openui-tabs-trigger-text` | Part (`text`) | On that part, whenever it renders |
 | `.openui-tabs-trigger-subtext` | Part (`subtext`) | On that part, whenever it renders |
+
+## TextArea
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-text-area` | Root | Always |
 
 ## SharedBase
 
