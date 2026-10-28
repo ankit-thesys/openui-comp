@@ -1,6 +1,6 @@
 // Shared border-box opt-in, through public server rendering of its three users. Run after build:
 // pnpm test test/unit/contract/SharedBase.contract.test.tsx
-// Only src/styles/base.ts leaves the allowlist; callers' owned styles migrate in #91/#96.
+// Buttons and FormControl now own flat rules too (#91); isolate the class shared by all roots.
 import { getComponentStyles, ThemeProvider } from "@openuidev/react-components";
 import { expect, it } from "vitest";
 import { classViolation, rulesOf, ruleViolation } from "./checks";
@@ -43,12 +43,13 @@ it("registers the same root-only rule in the provider's layer", () => {
     )),
   );
   expect(css).toContain("box-sizing:border-box");
-  expect(sharedRules(html, css)).toHaveLength(1);
-  expect(sharedRules(html, css).map((rule) => ruleViolation(rule, "openui"))).toEqual([null]);
+  const rules = sharedRules(html, css);
+  expect(rules).toHaveLength(1);
+  expect(rules.map((rule) => ruleViolation(rule, "openui"))).toEqual([null]);
   expect(html.match(/openui-border-box/g)).toHaveLength(3);
 });
 
-// #96 migrates TagBlock's owned layout as well. Collect the rule on the generated class
+// #91 and #96 migrate the three consumers' owned layout as well. Collect the rule on the generated class
 // shared by all three public roots, keeping this contract focused on the shared helper.
 function sharedRules(html: string, css: string) {
   const roots = [...html.matchAll(/<div class="([^"]+)"/g)].map((match) => match[1]!.split(" "));

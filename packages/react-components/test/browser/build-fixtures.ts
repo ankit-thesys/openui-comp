@@ -75,6 +75,13 @@ const fixtures = [
   "parity-modal-lg",
   "parity-tooltip-wrapper",
   "disclosure",
+  "form-controls",
+  "parity-input",
+  "parity-text-area",
+  "parity-label",
+  "parity-hint",
+  "parity-form-control",
+  "parity-buttons",
 ];
 const parityFixtures = fixtures.filter((name) => name.startsWith("parity-"));
 

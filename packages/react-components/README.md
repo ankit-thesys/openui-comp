@@ -158,7 +158,7 @@ unlayered app CSS beats them, whatever its specificity or load order, and so do
 layers ordered after `openui`. Nested providers inherit `cssLayer` and can set
 their own. A value that is not a layer name (or a dotted path such as
 `app.openui`) is ignored, with a development warning. Components outside any provider stay unlayered, and so do components
-not yet converted to the flat convention (currently all but Button), under any
+not yet converted to the flat convention (see `test/flat-allowlist.json`), under any
 provider. Each layer gets its own generated classes, so a component rendered both
 in and out of a layer registers its rules twice.
 
@@ -227,8 +227,9 @@ has not been certified.
 ### Stable selectors
 
 The selectors in this and the following sections belong to components that have
-not moved to the [styling contract](#styling-and-overrides) yet; Button, IconButton and
-MarkDownRenderer have, and are documented in the [stable class reference](docs/reference/selectors.md).
+not moved to the [styling contract](#styling-and-overrides) yet. Button, IconButton, Tabs,
+MarkDownRenderer, FormControl (including Hint), Label, Input, TextArea and Buttons have;
+see the [stable class reference](docs/reference/selectors.md).
 The documented batches below use stable styling targets that register on import: a private
 generated class on `html` is contained in `:where(...:root)` and adds zero
 specificity. Consumers do not use that class. EditableTable retains its existing selectors.
@@ -248,8 +249,8 @@ aliases do not acquire the new component styles.
 The shared `openui-border-box` helper opts in only Buttons, FormControl and
 TagBlock roots. Its flat rule registers when a user renders, honours `cssLayer`, and
 survives replacement of `<html class>`. A single consumer class can override its box sizing. It does not style
-descendants. Buttons, FormControl and TagBlock also have their remaining owned rules
-converted in the batches below.
+descendants. Buttons, FormControl and TagBlock also use flat, layer-aware owned rules
+through the #91 and #96 rollouts.
 
 The shared `.openui-skeleton-pulse` class registers its animation and keyframes when
 an animated Skeleton bar, pie shape or legend dot renders, in the provider's layer.
@@ -262,34 +263,34 @@ rules remain on the migration allowlist. Both shared classes are listed in the
 The control batch adds the following stable styling roots. Existing aliases,
 parts, variants, native attributes, refs and customization props are retained.
 No rendered wrapper is added. Component styles use the same private
-zero-specificity document guard as the Button/IconButton pilot.
+zero-specificity document guard. The migrated form controls are documented separately below.
 
 | Family        | Styling root                                               | Existing parts and states                                                                                                                   |
 | ------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | CheckBoxGroup | `.openui-checkbox-group-root`                              | Existing clear/card/sunk variant classes.                                                                                                   |
 | CheckBoxItem  | `.openui-checkbox-item-container-root`                     | Container root; `.openui-checkbox-item-root`, indicator, content, label and description; checked/disabled states stay on the Radix control. |
 | Chips         | `.openui-chips-root`                                       | Existing chip item, icon and text; selected/disabled modifiers and focus-visible state.                                                     |
-| FormControl   | `.openui-form-control-root`, `.openui-hint-root`           | FormControl and Hint roots; error context still reaches Input/TextArea/Hint.                                                                |
-| Input         | `.openui-input-root`                                       | Existing small/medium/large, error, focus, hover, disabled and placeholder selectors.                                                       |
-| Label         | `.openui-label-root`                                       | Existing disabled modifier and required-asterisk part.                                                                                      |
+| FormControl   | `.openui-form-control`, `.openui-form-control-hint`           | FormControl and Hint roots; error context still reaches Input/TextArea/Hint.                                                                |
+| Input         | `.openui-input`                                       | Existing small/medium/large, error, focus, hover, disabled and placeholder selectors.                                                       |
+| Label         | `.openui-label`                                       | Existing disabled modifier and required-asterisk part.                                                                                      |
 | OptionCards   | `.openui-option-cards-root`                                | Existing grid/row/card/content/text/title/subtitle/top parts; selected/disabled/focus-visible state and container queries.                  |
 | RadioGroup    | `.openui-radio-group-root`                                 | Existing clear/card/sunk variants; native Radix behavior.                                                                                   |
 | RadioItem     | `.openui-radio-item-container-root`                        | Container root; existing control, SVG paths, content, label and description; checked/disabled states.                                       |
 | Slider        | `.openui-slider-wrapper-root`, `.openui-slider-block-root` | Wrapper and SliderBlock roots; existing track/range/thumb/handle/value/dot/label/block parts and native disabled/focus/hover state.         |
 | SwitchGroup   | `.openui-switch-group-root`                                | Existing clear/card/sunk variants.                                                                                                          |
 | SwitchItem    | `.openui-switch-item-container-root`                       | Container root; existing control/thumb/content/label/description and checked/disabled states.                                               |
-| TextArea      | `.openui-textarea-root`                                    | Existing error, focus, hover and disabled selectors.                                                                                        |
+| TextArea      | `.openui-text-area`                                    | Existing error, focus, hover and disabled selectors.                                                                                        |
 | ToggleGroup   | `.openui-toggle-group-root`                                | Existing group root and native disabled behavior.                                                                                           |
 | ToggleItem    | `.openui-toggle-item-root`                                 | Existing item alias and on/off, hover and disabled state.                                                                                   |
 
-For example, a later `.openui-input-root { border-width: 2px; }` overrides
-Input's base border width. Use the corresponding variant, state or part selector
-when overriding a declaration owned there:
+FormControl, Hint, Label, Input and TextArea follow the flat contract. For example,
+`.openui-input { border-width: 2px; }` overrides Input's base border width regardless
+of load order. Add the same state when overriding a state declaration:
 
 ```css
-.openui-input-root:focus {
-  box-shadow: none;
-}
+.openui-input:focus-within { box-shadow: none; }
+.openui-input[aria-invalid="true"] { border-color: crimson; }
+.openui-text-area[aria-invalid="true"] { border-color: crimson; }
 .openui-checkbox-item-container-root .openui-checkbox-item-root[data-state="checked"] {
   background-color: navy;
 }
@@ -361,7 +362,7 @@ The private document guard contributes no specificity.
 | ListBlock          | `.openui-list-block-root`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | Card               | `.openui-card-root`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | CardHeader         | `.openui-card-header-root`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Buttons            | `.openui-buttons-root`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Buttons            | `.openui-buttons`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | DotMatrixLoader    | `.openui-dot-matrix-loader-root`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | Skeleton           | `.openui-skeleton-pie-chart-skeleton-root`, `.openui-skeleton-root`, `.openui-skeleton-bar-root`, `.openui-skeleton-table-skeleton-root`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | SnippetCardBlock   | `.openui-snippet-card-block-root`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
@@ -378,6 +379,21 @@ The private document guard contributes no specificity.
 | Table              | `.openui-table-scrollable-table-wrapper`, `.openui-table-scrollable-table-scroll-container`, `.openui-table-scrollable-table-control`, `.openui-table-container-styled`, `.openui-table-table`, `.openui-table-footer-styled`, `.openui-table-head-styled`, `.openui-table-row-styled`, `.openui-table-cell-styled`, `.openui-table-alignment`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | TooltipWrapper     | `.openui-tooltip-wrapper-body`, `.openui-tooltip-wrapper-heading`, `.openui-tooltip-wrapper-text`, `.openui-tooltip-wrapper-content`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ImageGallery       | `.openui-image-gallery-gallery-modal-modal`, `.openui-image-gallery-gallery-modal-content`, `.openui-image-gallery-gallery-modal-header`, `.openui-image-gallery-gallery-modal-heading`, `.openui-image-gallery-gallery-modal-main`, `.openui-image-gallery-gallery-modal-carousel-container`, `.openui-image-gallery-gallery-modal-carousel`, `.openui-image-gallery-gallery-modal-button-container`, `.openui-image-gallery-gallery-modal-left-button`, `.openui-image-gallery-gallery-modal-right-button`, `.openui-image-gallery-gallery-modal-thumbnail`, `.openui-image-gallery-gallery-modal-active-thumbnail`, `.openui-image-gallery-gallery`, `.openui-image-gallery-grid`, `.openui-image-gallery-layout-openui-gallery-single`, `.openui-image-gallery-layout-openui-gallery-double`, `.openui-image-gallery-layout-openui-gallery-triple`, `.openui-image-gallery-layout-openui-gallery-quad`, `.openui-image-gallery-layout-openui-gallery-default`, `.openui-image-gallery-image`, `.openui-image-gallery-main-image`, `.openui-image-gallery-show-all` |
+| Separator | `.openui-separator-root` |
+| IconText | `.openui-icon-text-root`, `.openui-icon-text-layout-vertical`, `.openui-icon-text-layout-horizontal`, `.openui-icon-text-content` |
+| TextContentWrapper | `.openui-text-content-wrapper-root`, `.openui-text-content-wrapper-markdown` |
+| SourceFaviconImage | `.openui-source-favicon-image-root` |
+| Tag | `.openui-tag-root`, `.openui-tag-icon-styled`, `.openui-tag-text-styled`, `.openui-tag-size-sm`, `.openui-tag-size-md`, `.openui-tag-size-lg`, `.openui-tag-variant-neutral`, `.openui-tag-variant-info`, `.openui-tag-variant-success`, `.openui-tag-variant-warning`, `.openui-tag-variant-danger` |
+| IconTag | `.openui-icon-tag-root`, `.openui-icon-tag-size-xs`, `.openui-icon-tag-size-s`, `.openui-icon-tag-size-m`, `.openui-icon-tag-size-l`, `.openui-icon-tag-size-xl`, `.openui-icon-tag-variant-neutral`, `.openui-icon-tag-variant-info`, `.openui-icon-tag-variant-success`, `.openui-icon-tag-variant-warning`, `.openui-icon-tag-variant-danger`, `.openui-icon-tag-variant-inverted` |
+| TextContent | `.openui-text-content-root`, `.openui-text-content-variant-sunk`, `.openui-text-content-variant-card`, `.openui-text-content-variant-clear` |
+| InlineHeader | `.openui-inline-header-root`, `.openui-inline-header-heading-styled`, `.openui-inline-header-description-styled` |
+| Callout | `.openui-callout-root`, `.openui-callout-title-styled`, `.openui-callout-description-styled`, `.openui-callout-variant-info`, `.openui-callout-variant-danger`, `.openui-callout-variant-warning`, `.openui-callout-variant-success`, `.openui-callout-variant-neutral`, `.openui-callout-dismiss` |
+| TextCallout | `.openui-text-callout-root`, `.openui-text-callout-variant-neutral`, `.openui-text-callout-variant-info`, `.openui-text-callout-variant-warning`, `.openui-text-callout-variant-success`, `.openui-text-callout-variant-danger`, `.openui-text-callout-content-styled`, `.openui-text-callout-title`, `.openui-text-callout-description` |
+| InlineMarkdownRenderer | `.openui-inline-markdown-renderer-inline-markdown-root` |
+| TextBlock | `.openui-text-block-root` |
+| TagBlock | `.openui-tag-block-root` |
+| Sources | `.openui-sources-listed-sources-list`, `.openui-sources-listed-sources-header`, `.openui-sources-listed-sources-title`, `.openui-sources-listed-sources-buttons`, `.openui-sources-listed-sources-container`, `.openui-sources-item-item`, `.openui-sources-item-header`, `.openui-sources-item-name`, `.openui-sources-item-title`, `.openui-sources-item-logo` |
+| Citation | `.openui-citation-container-styled`, `.openui-citation-trigger`, `.openui-citation-tooltip-styled`, `.openui-citation-tooltip-content`, `.openui-citation-item-item`, `.openui-citation-item-logo`, `.openui-citation-item-content`, `.openui-citation-item-title`, `.openui-citation-item-source` |
 
 CodeBlock accepts two class props:
 
@@ -805,6 +821,19 @@ Renamed stable classes and props, per component converted to the flat convention
 | EditableTable                      | Existing display, input, header, scroll and changes-bar parts                                                                               | Unchanged; URL warning wrapper also carries `-display-url-warning`; supplied icons carry `-icon`                                                                                                                            |
 | MetricIndicator family             | `.openui-metric-indicator__{row,main-value,previous-value,subtext,trend}`                                                                   | `.openui-metric-indicator-{row,main-value,previous-value,subtext,trend}`                                                                                                                                                    |
 | MetricIndicator family             | `__trend--{success,danger}`, `--has-subtext`                                                                                                | `.openui-metric-indicator-trend--direction-{up,down}`, root `[data-subtext="true"]`; `--variant-{inline,with-strikethrough}` remains                                                                                        |
+| FormControl | `.openui-form-control` | Unchanged; now the only family root class (plus the shared `.openui-border-box` opt-in). |
+| Hint | `.openui-hint` | `.openui-form-control-hint` (FormControl family member; also works standalone). |
+| Hint | `.openui-hint-error` | `.openui-form-control-hint[data-invalid="true"]` |
+| Input | `.openui-input` | Unchanged; now the only root class. |
+| Input | `.openui-input-{small,medium,large}` | `.openui-input--size-{small,medium,large}`; default `medium` always emitted. |
+| Input | `.openui-input-error` | `.openui-input[aria-invalid="true"]` |
+| TextArea | `.openui-textarea` | `.openui-text-area` (kebab-case of the exported name). |
+| TextArea | `.openui-textarea-error` | `.openui-text-area[aria-invalid="true"]` |
+| Label | `.openui-label`, `.openui-label-required-asterisk` | Unchanged; root and independently styled required-asterisk part. |
+| Label | `.openui-label-disabled` | `.openui-label[aria-disabled="true"]` |
+| Buttons | `.openui-buttons` | Unchanged; now the only family root class (plus `.openui-border-box`). |
+| Buttons | `.openui-buttons-{horizontal,vertical}` | `.openui-buttons--variant-{horizontal,vertical}`; default `horizontal` always emitted. |
+| Form controls (#91) | `hasError`, `disabled`, `required`, Input `size` / `styles`, TextArea `rows`, Buttons `variant` | Props unchanged. `hasError` inherits from FormControl; explicit `false` opts out. Input/TextArea use `aria-invalid`, Hint uses `data-invalid`, Label uses `aria-disabled`. Explicit native ARIA attributes are forwarded and take precedence. |
 
 For rollout #96, **TextBlock** is the established family name of the public `TextBlockView`
 export; its stable root is `.openui-text-block`. The React export name is unchanged.
@@ -838,7 +867,6 @@ react-ui never had. They are gone; use the class on the right instead:
 | `.openui-modal-portal-root`                                                                        | `.openui-modal`                                                                                                                   |
 | `.openui-modal-{overlay,content,header,title,close,body}-root`                                     | `.openui-modal-{overlay,content,header,title,close,body}`                                                                         |
 | `.openui-tooltip-wrapper-content`                                                                  | `.openui-tooltip-wrapper`                                                                                                         |
-| ---                                                                                                | ---                                                                                                                               |
 | `.openui-list-item-root`                                                                           | `.openui-list-item`                                                                                                               |
 | `.openui-list-block-root`                                                                          | `.openui-list-block`                                                                                                              |
 | `.openui-entity-list-root`                                                                         | `.openui-entity-list`                                                                                                             |
@@ -847,6 +875,12 @@ react-ui never had. They are gone; use the class on the right instead:
 | `.openui-table-{footer,head,row,cell}-styled`                                                      | `.openui-table-{footer,head,row,cell}`                                                                                            |
 | `.openui-table-alignment`                                                                          | Removed; target the head/cell root or its `--align-{left,center,right}` modifier                                                  |
 | `.openui-table-scrollable-table-{wrapper,scroll-container,control}`                                | `.openui-scrollable-table-{wrapper,scroll-container,control}`                                                                     |
+| `.openui-form-control-root` | `.openui-form-control` |
+| `.openui-hint-root` | `.openui-form-control-hint` |
+| `.openui-input-root` | `.openui-input` |
+| `.openui-textarea-root` | `.openui-text-area` |
+| `.openui-label-root` | `.openui-label` |
+| `.openui-buttons-root` | `.openui-buttons` |
 
 The #98 disclosure/layout/overlay migration changes no prop names. No internal callers outside
 these families reference their renamed classes. No chat-kit directory or matching references
