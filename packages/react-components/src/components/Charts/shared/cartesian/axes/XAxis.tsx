@@ -28,6 +28,8 @@ interface XAxisProps {
   /** Line cap for "multiLine" labels. */
   maxLines?: number;
   classPrefix: string;
+  /** Flat classes supplied by a migrated chart; legacy callers keep their prefix. */
+  partClassNames?: Partial<Record<"root" | "tick" | "textLine" | "group" | "hitbox", string>>;
 }
 
 function isBandScale(scale: XAxisScale): scale is ScaleBand<string> {
@@ -49,6 +51,7 @@ export const XAxis: React.FC<XAxisProps> = ({
   labelInterval = 1,
   maxLines = MAX_LABEL_LINES,
   classPrefix,
+  partClassNames,
 }) => {
   const ctx = useCanvasContextForLabelSize();
   const lineHeight = parseLineHeight(ctx.font);
@@ -78,7 +81,7 @@ export const XAxis: React.FC<XAxisProps> = ({
   };
 
   return (
-    <g className={`${classPrefix}-x-axis`}>
+    <g className={partClassNames?.root ?? `${classPrefix}-x-axis`}>
       {shown.map((i, pos) => {
         const category = domain[i]!;
         const labelWidth = labelWidthAt(pos);
@@ -98,10 +101,15 @@ export const XAxis: React.FC<XAxisProps> = ({
             y={X_AXIS_TOP_GAP}
             textAnchor="middle"
             dominantBaseline="hanging"
-            className={`${classPrefix}-x-tick`}
+            className={partClassNames?.tick ?? `${classPrefix}-x-tick`}
           >
             {lines.map((line, li) => (
-              <tspan key={li} x={cx} dy={li === 0 ? 0 : lineHeight}>
+              <tspan
+                className={partClassNames?.textLine}
+                key={li}
+                x={cx}
+                dy={li === 0 ? 0 : lineHeight}
+              >
                 {line}
               </tspan>
             ))}
@@ -110,9 +118,10 @@ export const XAxis: React.FC<XAxisProps> = ({
 
         return (
           <LabelTooltip key={category} content={label} disabled={!truncated}>
-            <g>
+            <g className={partClassNames?.group}>
               {truncated && (
                 <rect
+                  className={partClassNames?.hitbox}
                   x={cx - labelWidth / 2}
                   y={0}
                   width={labelWidth}

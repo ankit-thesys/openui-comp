@@ -1,12 +1,15 @@
 "use client";
 
+import clsx from "clsx";
 import { arc } from "d3-shape";
+import type { CSSProperties } from "react";
 import React, { useMemo } from "react";
+import { useStyles } from "../../../../styles/useStyles";
 import type { CategoricalSlice } from "../../hooks";
 import { useIndexedClickHandler } from "../../hooks/core/useIndexedClickHandler";
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
 import { entranceProps } from "../../utils/entranceUtils";
 import { getSliceStyle, POLAR_HOVER_TRANSITION } from "../../utils/polarUtils";
+import { names, radialChartStyles } from "../radialChart.styles";
 
 interface RadialBarsProps<T> {
   slices: CategoricalSlice[];
@@ -42,6 +45,7 @@ export function RadialBars<T>({
   onMouseLeave,
   onClick,
 }: RadialBarsProps<T>) {
+  const styles = useStyles(radialChartStyles);
   const handleClick = useIndexedClickHandler(data, onClick);
 
   const totalSweep = endAngle - startAngle;
@@ -71,11 +75,12 @@ export function RadialBars<T>({
   );
 
   return (
-    <g>
+    <g className={names.group}>
       {bars.map((bar, i) => {
+        const sliceStyle = getSliceStyle(i, hoveredIndex);
         const { className, animationDelay } = entranceProps(
           animate,
-          `${CHART_CLASS_PREFIX}-radial-chart-bar--animated`,
+          clsx(styles.barIsAnimationActive, names.barIsAnimationActive),
           i * 60,
         );
         return (
@@ -83,13 +88,16 @@ export function RadialBars<T>({
             key={bar.label}
             d={bar.path}
             fill={bar.color}
-            className={className || undefined}
-            style={{
-              ...getSliceStyle(i, hoveredIndex),
-              cursor: onClick ? "pointer" : undefined,
-              animationDelay,
-              transition: POLAR_HOVER_TRANSITION,
-            }}
+            className={clsx(styles.bar, names.bar, className)}
+            style={
+              {
+                "--_openui-radial-chart-bar-fill-opacity": sliceStyle.fillOpacity,
+                "--_openui-radial-chart-bar-filter": sliceStyle.filter,
+                "--_openui-radial-chart-bar-cursor": onClick ? "pointer" : undefined,
+                "--_openui-radial-chart-bar-animation-delay": animationDelay,
+                "--_openui-radial-chart-bar-transition": POLAR_HOVER_TRANSITION,
+              } as CSSProperties
+            }
             onMouseMove={(e) => onMouseMove(e, i)}
             onMouseLeave={onMouseLeave}
             onClick={() => handleClick(i)}

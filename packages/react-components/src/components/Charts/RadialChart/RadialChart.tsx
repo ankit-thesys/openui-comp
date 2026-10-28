@@ -1,24 +1,23 @@
 "use client";
 
 import clsx from "clsx";
+import type { CSSProperties } from "react";
 import { useMemo } from "react";
 import { useStyles } from "../../../styles/useStyles";
-import { fadeAppearStyles } from "../shared/animations/fadeAppear.styles";
-import { rootClass } from "./radialChart.styles";
-
 import {
   useCategoricalChartOrchestrator,
   useEffectiveAnimation,
   useExportChartData,
 } from "../hooks";
+import { fadeAppearStyles } from "../shared/animations/fadeAppear.styles";
 import { ChartShell } from "../shared/core/ChartShell";
 import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
 import { useResolvedLegendKey } from "../shared/core/legend/LegendStoreProvider";
 import { ChartTooltip } from "../shared/core/PortalTooltip/ChartTooltip";
 import { ChartWithStackedLegend } from "../shared/core/StackedLegend/ChartWithStackedLegend";
-import { CHART_CLASS_PREFIX } from "../utils/constants";
 import { RadialBars } from "./parts/RadialBars";
 import { RadialGrid } from "./parts/RadialGrid";
+import { names, radialChartStyles } from "./radialChart.styles";
 import type { RadialChartData, RadialChartProps } from "./types";
 
 const BAR_GAP = 2;
@@ -43,6 +42,7 @@ export function RadialChart<T extends RadialChartData>(props: RadialChartProps<T
 }
 
 function RadialChartImpl<T extends RadialChartData>(props: RadialChartProps<T>) {
+  const styles = useStyles(radialChartStyles);
   const {
     data,
     categoryKey,
@@ -116,23 +116,37 @@ function RadialChartImpl<T extends RadialChartData>(props: RadialChartProps<T>) 
   return (
     <ChartShell
       containerRef={orch.refs.containerRef}
-      classPrefix={`${CHART_CLASS_PREFIX}-radial-chart`}
-      className={clsx(rootClass, className)}
-      style={orch.style.containerStyle}
+      className={clsx(
+        styles.root,
+        names.root,
+        names.variant[variant],
+        isAnimationActive && names.isAnimationActive.true,
+        className,
+      )}
+      style={
+        {
+          "--_openui-radial-chart-root-width": orch.style.containerStyle["width"],
+          "--_openui-radial-chart-root-height": orch.style.containerStyle["height"],
+        } as CSSProperties
+      }
       isEmpty={orch.isEmpty}
       exportData={exportData}
     >
       {() => (
         <>
-          <div className={`${CHART_CLASS_PREFIX}-radial-chart-svg-wrapper`}>
+          <div className={clsx(styles.svgWrapper, names.svgWrapper)}>
             <svg
+              className={names.svg}
               width={orch.dimensions.svgWidth}
               height={orch.dimensions.svgHeight}
               viewBox={`0 0 ${orch.dimensions.svgWidth} ${orch.dimensions.svgHeight}`}
               role="img"
               aria-label="Radial chart"
             >
-              <g transform={`translate(${orch.dimensions.centerX}, ${orch.dimensions.centerY})`}>
+              <g
+                className={names.group}
+                transform={`translate(${orch.dimensions.centerX}, ${orch.dimensions.centerY})`}
+              >
                 {showGrid && (
                   <RadialGrid
                     maxRadius={maxRadius}

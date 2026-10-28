@@ -22,7 +22,7 @@ const declarations = Object.entries(OVERRIDE)
 
 // Computed OVERRIDE properties of every element carrying `className`, transitions finished.
 const computedAll = (page: Page, className: string) =>
-  page.locator(`#root .${className}`).evaluateAll(
+  page.locator(`.${className}`).evaluateAll(
     (elements, properties) =>
       elements.map((el) => {
         el.getAnimations().forEach((animation) => animation.finish());
@@ -36,7 +36,7 @@ const computedAll = (page: Page, className: string) =>
 // element carrying `className`, read from the library sheet.
 const statesOn = (page: Page, className: string) =>
   page.evaluate((className) => {
-    const elements = [...document.querySelectorAll(`#root .${className}`)];
+    const elements = [...document.querySelectorAll(`.${className}`)];
     const states = new Set<string>();
     const visit = (rules: CSSRuleList) => {
       for (const rule of rules) {
@@ -69,7 +69,9 @@ for (const component of migrated) {
       const check = async (page: Page) => {
         const styles = await computedAll(page, className);
         test.skip(
-          styles.length === 0 && component.clientOnly.includes(className),
+          styles.length === 0 &&
+            component.clientOnly.includes(className) &&
+            !className.startsWith("openui-chart-tooltip"),
           `.${className} renders only once the browser measures overflow`,
         );
         expect(styles.length).toBeGreaterThan(0);

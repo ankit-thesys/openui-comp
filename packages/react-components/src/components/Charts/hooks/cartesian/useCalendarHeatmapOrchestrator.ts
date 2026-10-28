@@ -16,7 +16,7 @@ import {
 } from "../../CalendarHeatmap/parts/separatorLayout";
 import type { CalendarColumnSeparators, CalendarLevelStyle } from "../../CalendarHeatmap/types";
 import { buildContainerStyle } from "../../utils/buildContainerStyle";
-import { CHART_CLASS_PREFIX, DEFAULT_CHART_HEIGHT } from "../../utils/constants";
+import { DEFAULT_CHART_HEIGHT } from "../../utils/constants";
 import { parseLineHeight } from "../../utils/labelWrap";
 import { orientRampToSurface, resolvePalette } from "../../utils/paletteUtils";
 import { sampleRampStops } from "../../utils/rampUtils";
@@ -293,8 +293,7 @@ export function useCalendarHeatmapOrchestrator({
   const containerStyle = useMemo<CSSProperties>(() => {
     const vars: Record<string, string> = {};
     for (let level = 0; level < LEVEL_COUNT; level++) {
-      vars[`--${CHART_CLASS_PREFIX}-calendar-heatmap-level-${level}`] =
-        levelColors[level] ?? "#000000";
+      vars[`--_openui-calendar-heatmap-level-${level}`] = levelColors[level] ?? "#000000";
     }
     return {
       ...buildContainerStyle({}, width, height),
