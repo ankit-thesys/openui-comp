@@ -97,8 +97,12 @@ to a stable class to restyle it:
 
 Library rules for these components weigh one generated class, plus at most one state. Content the
 library does not render itself (your children, icons inside an icon part) is styled at zero weight.
-Markdown prose (paragraphs, headings, lists, quotes, rules and strong text) also uses zero-weight
-root scoping: `.openui-markdown-renderer p { color: navy; }` overrides paragraph colour. Code,
+Markdown prose (paragraphs, headings, lists, quotes, rules and strong text) has no class of its
+own: its rules weigh the root's generated class plus the tag, such as `.goN p`, so write
+`.openui-markdown-renderer p { color: navy; }` to restyle it: it has the same weight and your
+stylesheets sit after the library's in `<head>`, so it wins whenever it loads. A bare element selector such as `p { … }` in your app, or a reset, does not reach
+markdown prose. A few structural rules weigh one more pseudo-class or tag, such as the spacing
+between consecutive paragraphs (`p:has(+ p)`), so match that shape to change them. Code,
 links, code-block roots, tables and table containers have the stable classes in the reference
 and are styled on them, so element resets do not reach them; inside a blockquote, links and inline
 code inherit the quote's colour, line-height and italic style like its other text.
@@ -128,6 +132,8 @@ rule in a named cascade layer loses to the unlayered library rules.
 - The listed sources view, standalone CodeBlock and SliderBlock also retain their existing
   `!important` declarations. Syntax-highlighter theme maps and token output keep their third-party
   inline styles; use the code-block root class to restyle the block around that output.
+- Markdown prose ignores bare element selectors (`p { … }`, element resets); target it through
+  `.openui-markdown-renderer` instead.
 - The Tabs indicator's width and position are set inline as the active tab changes, so they are
   not overridable; its colour and height are, through `.openui-tabs-indicator`.
 - Components that have not moved to the contract register their styles on import, behind a class on
@@ -173,13 +179,10 @@ radius.
 Without `cssLayer`, Tailwind 4 utilities lose to the unlayered component rules on
 the same element. Use the important modifier (`!bg-red-500`, or `bg-red-500!`) or
 target the stable class instead. In this default mode, Tailwind 3.4 and 4
-preflights leave every element that carries a stable class styled, but Tailwind
+preflights leave every element that carries a stable class styled, and markdown
+prose too, since its rules outweigh the preflight's element selectors. Tailwind
 3.3 and earlier conflict: their preflight `[type='button'] { background-color:
-transparent }` clears button backgrounds. Markdown prose (paragraphs, headings,
-lists, quotes) weighs zero by design, so Tailwind 3's unlayered preflight, which
-loads later, resets parts of it: list markers and padding, blockquote margins and
-`strong` weight. Tailwind 4 keeps its preflight in a layer and leaves prose
-styled. Tailwind 3 emits its preflight unlayered, so it beats layered rules:
+transparent }` clears button backgrounds. Tailwind 3 emits its preflight unlayered, so it beats layered rules:
 use layer mode with Tailwind 4, not Tailwind 3.
 
 ## Automatic styles

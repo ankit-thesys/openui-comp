@@ -27,7 +27,7 @@ export function describeContract(folder: string) {
     );
     const violationsIn = (sheet: string, layer: string) =>
       rulesOf(sheet)
-        .map((rule) => [rule, ruleViolation(rule, layer)] as const)
+        .map((rule) => [rule, ruleViolation(rule, layer, { prose: entry.prose })] as const)
         .filter(([, reason]) => reason !== null)
         .map(([rule, reason]) => `${rule.selector}: ${reason}`);
 

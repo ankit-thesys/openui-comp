@@ -16,6 +16,25 @@ for (const position of ["before", "after"] as const) {
   });
 }
 
+for (const position of ["before", "after"] as const) {
+  test(`a bare element selector in the app, loaded ${position} the library, does not reach markdown prose`, async ({
+    page,
+  }) => {
+    // The trade-off of prose rules weighing one class plus the tag: element-only rules such as
+    // resets no longer restyle markdown; restyle it through .openui-markdown-renderer instead.
+    const css = "p { color: rgb(1, 2, 3); }";
+    await page.goto(
+      `/markdown.html${position === "before" ? `?css=${encodeURIComponent(css)}` : ""}`,
+    );
+    const paragraph = page.getByTestId("markdown").locator(".openui-markdown-renderer > p").first();
+    await expect(paragraph).toBeVisible();
+    const library = await paragraph.evaluate((el) => getComputedStyle(el).color);
+    if (position === "after") await page.addStyleTag({ content: css });
+    expect(library).not.toBe("rgb(1, 2, 3)");
+    await expect(paragraph).toHaveCSS("color", library);
+  });
+}
+
 const targets = [
   ["openui-markdown-renderer", ".openui-markdown-renderer"],
   ["openui-markdown-renderer--variant-clear", ".openui-markdown-renderer--variant-clear"],

@@ -70,8 +70,9 @@ override and Tailwind cases.
     a stable-class element keeps its computed value (percentage sizes compare as declared, since
     they resolve against page layout). Properties the library leaves to the page are Tailwind's to
     reset. It pins the known conflict: 3.3 clears the background of `button[type=button]`, 3.4 and
-    4.1 do not. Markdown prose (zero weight, no stable class) is outside this check; README,
-    "Tailwind", describes what Tailwind 3's preflight resets there.
+    4.1 do not. Markdown prose has no stable class, so a separate "MarkDownRenderer prose" case
+    checks that list markers and padding, quote margins, strong weight and heading font survive
+    every version.
 
 ## Styling contract
 
@@ -86,6 +87,10 @@ override and Tailwind cases.
   `getComponentStyles()` sheet), and checks:
   - every selector is one generated class, optionally with one state, a sibling pair
     (`.go1 + .go1`) or a zero-weight `:where(.go1) <type selectors>` rule, and no rule is layered;
+  - components that set `prose: true` in `components.tsx` (MarkDownRenderer only) may also use
+    prose rules: `.go1` and a combinator, then at most two compounds of tags or `*`, with at most
+    one structural pseudo-class (tag-only `:has()` or `:where()` included) and one pseudo-element,
+    such as `.go1 p`, `.go1 li :last-child` or `.go1 blockquote > *:first-child::before`;
   - the same elements rendered under `<ThemeProvider cssLayer="openui">` put every rule in
     `@layer openui` (no unlayered rule, no other or nested layer), within the same budget and
     with the same selector shapes;

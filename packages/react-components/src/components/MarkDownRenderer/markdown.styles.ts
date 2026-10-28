@@ -25,6 +25,27 @@ const inheritWhenQuoted = `
     }
   }
 `;
+// Prose inside a quote takes the quote's look, as #72's `.root blockquote *` did, at the same
+// weight. It lists the prose tags instead of `*` so the parts (links, inline code, tables, code
+// blocks) are left to their own rules, which inherit inside quotes themselves and stay
+// overridable by one consumer class. One rule per tag: Goober splits selectors on commas and
+// mangles nested parentheses, so neither `:where(p, li)` nor `:not(:where(a))` is possible.
+// Everything markdown, GFM and raw inline HTML commonly produce inside a quote, except the parts.
+const proseTags = [
+  ..."p em strong b i u s del ins mark small sub sup kbd abbr q cite span br img input".split(" "),
+  ..."h1 h2 h3 h4 h5 h6 ul ol li dl dt dd blockquote hr pre figure figcaption section".split(" "),
+  ..."caption thead tbody tfoot tr th td".split(" "),
+];
+const quotedProse = proseTags
+  .map(
+    (tag) => `
+      & blockquote :where(${tag}) {
+        font-style: inherit;
+        color: inherit;
+        line-height: inherit;
+      }`,
+  )
+  .join("");
 const heading = `
   font: var(--openui-text-heading-xs, 600 16px/1.25 "Inter", sans-serif);
   letter-spacing: var(--openui-text-heading-xs-letter-spacing, -0.01em);
@@ -102,12 +123,16 @@ export const markdownStyles = (css: StyleCss) => ({
       padding: 1rem;
     `,
   },
-  // Register structural rules after parts so first/last-child spacing retains its precedence.
+  // Prose (the tags markdown generates without classes) weighs the root's generated class plus the
+  // tag, as #72's `.root p` did, so unlayered element resets such as Tailwind 3's preflight cannot
+  // outweigh it while `.openui-markdown-renderer p` from the app still wins on order. Structural
+  // rules keep #72's shapes on top of that base. Registered after the parts so first/last-child
+  // spacing keeps its precedence over them.
   root: css`
     color: ${primary};
     ${body}
     max-width: none;
-    :where(&) {
+    & {
       & h1,
       & h2,
       & h3,
@@ -209,11 +234,7 @@ export const markdownStyles = (css: StyleCss) => ({
         vertical-align: top;
         margin-left: 0.2em;
       }
-      & blockquote * {
-        font-style: inherit;
-        color: inherit;
-        line-height: inherit;
-      }
+      ${quotedProse}
       & > *:first-child {
         margin-top: 0;
       }

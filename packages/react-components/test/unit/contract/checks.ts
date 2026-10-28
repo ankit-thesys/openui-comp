@@ -100,12 +100,52 @@ const STRUCTURAL =
   /^:(?:first-child|last-child|only-child|first-of-type|last-of-type|nth-child|nth-of-type|nth-last-child|has|not|is)$/;
 const PSEUDO_ELEMENT = /^::(?:before|after|marker)$/;
 
+/** Options for components that opt in to extra selector shapes. */
+export interface SelectorOptions {
+  /**
+   * Markdown prose: the root's generated class, then generated tags only, so element resets such
+   * as Tailwind 3's preflight cannot outweigh it. Only MarkDownRenderer opts in.
+   */
+  prose?: boolean;
+}
+
+// A prose rule: `.goN`, a combinator, then at most two compounds of type selectors or `*`, joined
+// by combinators, with at most one structural pseudo-class (`:has()` and the zero-weight
+// `:where()` may hold only tags and combinators) and at most one pseudo-element. No classes, ids,
+// attributes or states.
+const PROSE = new RegExp(`^${GENERATED}(\\s*>\\s*|\\s+)(.+)$`);
+const proseViolation = (selector: string): string | null => {
+  const tail = selector.match(PROSE)?.[2];
+  if (tail === undefined) return "a prose rule starts with one generated class and a combinator";
+  const outsideHas = tail.replace(/:(has|where)\(([^()]*)\)/g, (_, name: string, inner: string) =>
+    /[.#[:]/.test(inner) ? "!" : `:${name}`,
+  );
+  if (/[.#[!]/.test(outsideHas))
+    return "a prose rule targets tags only, not classes, ids or attributes";
+  const pseudoClasses = outsideHas.match(/(?<!:):[a-z-]+/g) ?? [];
+  const pseudoElements = outsideHas.match(/::[a-z-]+/g) ?? [];
+  if (pseudoClasses.some((pseudo) => pseudo !== ":where" && !STRUCTURAL.test(pseudo)))
+    return "a prose rule uses only structural pseudo-classes";
+  if (pseudoClasses.length > 1) return "a prose rule has at most one structural pseudo-class";
+  if (pseudoElements.length > 1 || pseudoElements.some((pseudo) => !PSEUDO_ELEMENT.test(pseudo)))
+    return "a prose rule has at most one ::before, ::after or ::marker";
+  const compounds = outsideHas
+    // A pseudo standing alone (`li :last-child`) is its own compound, so keep a placeholder.
+    .replace(/::?[a-z-]+(\([^()]*\))?/g, "_")
+    .split(/\s*[>+~]\s*|\s+/)
+    .filter(Boolean);
+  if (compounds.length > 2) return "a prose rule reaches at most two tags deep";
+  return null;
+};
+
 /** Why `selector` breaks the library's selector budget, or `null` when it is allowed. */
-export function selectorViolation(selector: string): string | null {
+export function selectorViolation(selector: string, options: SelectorOptions = {}): string | null {
   const compact = selector.trim();
   if (ONE_CLASS.test(compact) || CLASS_AND_STATE.test(compact) || SIBLINGS.test(compact)) {
     return null;
   }
+  if (options.prose && PROSE.test(compact) && proseViolation(compact) === null) return null;
+  if (options.prose && PROSE.test(compact)) return proseViolation(compact);
   const zeroWeight = compact.match(ZERO_WEIGHT);
   if (zeroWeight) {
     const rest = zeroWeight[1]!;
@@ -123,12 +163,16 @@ export function selectorViolation(selector: string): string | null {
 /** Why `rule` breaks the contract when every library rule must sit in `layer` (`""` for default
  * mode), or `null` when it is allowed: the layer must match exactly and the selector must keep
  * the budget. */
-export function ruleViolation(rule: Rule, layer: string): string | null {
+export function ruleViolation(
+  rule: Rule,
+  layer: string,
+  options: SelectorOptions = {},
+): string | null {
   if (rule.layer !== layer) {
     const where = (name: string) => (name ? `layer ${name}` : "no layer");
     return `in ${where(rule.layer)}, expected ${where(layer)}`;
   }
-  return selectorViolation(rule.selector);
+  return selectorViolation(rule.selector, options);
 }
 
 const GRAMMAR = /^openui(-[a-z0-9]+)+(--[a-z0-9]+(-[a-z0-9]+)*)?$/;
