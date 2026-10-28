@@ -10,8 +10,8 @@ import { LabelTooltipProvider } from "./LabelTooltip/LabelTooltip";
 
 interface ChartShellProps {
   containerRef: React.Ref<HTMLDivElement>;
-  /** e.g. `${CHART_CLASS_PREFIX}-pie-chart` → the persistent div gets `${classPrefix}-container`. */
-  classPrefix: string;
+  /** Legacy chart prefix for its container alias. Migrated charts pass their root via className. */
+  classPrefix?: string;
   flat?: boolean;
   /** The consumer's passthrough `className`. */
   className?: string;
@@ -69,7 +69,7 @@ export const ChartShell: React.FC<ChartShellProps> = ({
         <div
           ref={containerRef}
           className={clsx(
-            !flat && `${classPrefix}-container`,
+            !flat && classPrefix && `${classPrefix}-container`,
             isEmpty && styles.empty,
             isEmpty && names.empty,
             className,

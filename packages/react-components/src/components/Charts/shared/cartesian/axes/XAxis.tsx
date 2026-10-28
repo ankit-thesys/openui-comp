@@ -31,6 +31,8 @@ interface XAxisProps {
   classes?: Partial<Record<"xAxis" | "group" | "hitTarget" | "tickLine", string>>;
   tickClassName?: string;
   angledTickClassName?: string;
+  /** Flat classes supplied by a migrated chart; legacy callers keep their prefix. */
+  partClassNames?: Partial<Record<"root" | "tick" | "textLine" | "group" | "hitbox", string>>;
 }
 
 function isBandScale(scale: XAxisScale): scale is ScaleBand<string> {
@@ -54,6 +56,7 @@ export const XAxis: React.FC<XAxisProps> = ({
   classPrefix,
   classes,
   tickClassName,
+  partClassNames,
 }) => {
   const ctx = useCanvasContextForLabelSize();
   const lineHeight = parseLineHeight(ctx.font);
@@ -83,7 +86,7 @@ export const XAxis: React.FC<XAxisProps> = ({
   };
 
   return (
-    <g className={classes?.xAxis ?? `${classPrefix}-x-axis`}>
+    <g className={classes?.xAxis ?? partClassNames?.root ?? `${classPrefix}-x-axis`}>
       {shown.map((i, pos) => {
         const category = domain[i]!;
         const labelWidth = labelWidthAt(pos);
@@ -103,10 +106,15 @@ export const XAxis: React.FC<XAxisProps> = ({
             y={X_AXIS_TOP_GAP}
             textAnchor="middle"
             dominantBaseline="hanging"
-            className={tickClassName ?? `${classPrefix}-x-tick`}
+            className={tickClassName ?? partClassNames?.tick ?? `${classPrefix}-x-tick`}
           >
             {lines.map((line, li) => (
-              <tspan className={classes?.tickLine} key={li} x={cx} dy={li === 0 ? 0 : lineHeight}>
+              <tspan
+                className={classes?.tickLine ?? partClassNames?.textLine}
+                key={li}
+                x={cx}
+                dy={li === 0 ? 0 : lineHeight}
+              >
                 {line}
               </tspan>
             ))}
@@ -115,10 +123,10 @@ export const XAxis: React.FC<XAxisProps> = ({
 
         return (
           <LabelTooltip key={category} content={label} disabled={!truncated}>
-            <g className={classes?.group}>
+            <g className={classes?.group ?? partClassNames?.group}>
               {truncated && (
                 <rect
-                  className={classes?.hitTarget}
+                  className={classes?.hitTarget ?? partClassNames?.hitbox}
                   x={cx - labelWidth / 2}
                   y={0}
                   width={labelWidth}

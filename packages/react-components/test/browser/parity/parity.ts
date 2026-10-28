@@ -129,13 +129,19 @@ export async function snapshot(
   fixture: string,
   mode: Mode,
   scenarioOrPrepareCase: string | ParityOptions["prepareCase"] = "",
-  prepare?: ParityOptions["prepare"],
+  prepareOrExtraProperties?: ParityOptions["prepare"] | readonly string[],
   prepareCase?: ParityOptions["prepareCase"],
+  extraProperties: readonly string[] = [],
 ): Promise<Snapshot> {
   const scenario = typeof scenarioOrPrepareCase === "string" ? scenarioOrPrepareCase : "";
   const prepareObservation =
     typeof scenarioOrPrepareCase === "function" ? scenarioOrPrepareCase : prepareCase;
   await page.goto(`/${fixture}.html?${new URLSearchParams({ mode, scenario })}`);
+  const prepare =
+    typeof prepareOrExtraProperties === "function" ? prepareOrExtraProperties : undefined;
+  const properties = Array.isArray(prepareOrExtraProperties)
+    ? prepareOrExtraProperties
+    : extraProperties;
   await prepare?.(page, scenario);
   const cases = page.locator("[data-parity-case]");
   await expect(cases.first()).toBeVisible();
@@ -157,7 +163,7 @@ export async function snapshot(
       await prepareObservation?.(page, id);
       result[`${mode} ${scenario ? `${scenario} ` : ""}${id} ${state}`] = await el.evaluate(
         measure,
-        PROPERTIES,
+        [...PROPERTIES, ...properties],
       );
     };
     await page.mouse.move(0, 0);
@@ -184,6 +190,7 @@ export async function checkParity(
   name: string,
   intentional: readonly string[] = [],
   optionsOrPrepareCase: ParityOptions | ParityOptions["prepareCase"] = {},
+  extraProperties: readonly string[] = [],
 ): Promise<void> {
   const options: ParityOptions =
     typeof optionsOrPrepareCase === "function"
@@ -196,7 +203,15 @@ export async function checkParity(
     for (const scenario of options.scenarios ?? [""]) {
       Object.assign(
         current,
-        await snapshot(page, fixture, mode, scenario, options.prepare, options.prepareCase),
+        await snapshot(
+          page,
+          fixture,
+          mode,
+          scenario,
+          options.prepare,
+          options.prepareCase,
+          extraProperties,
+        ),
       );
     }
   }

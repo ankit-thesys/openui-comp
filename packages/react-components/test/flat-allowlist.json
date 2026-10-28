@@ -1,12 +1,5 @@
 [
   "src/components/Carousel/carousel.styles.ts",
-  "src/components/Charts/CalendarHeatmap/calendarHeatmap.styles.ts",
-  "src/components/Charts/FunnelChart/funnelChart.styles.ts",
-  "src/components/Charts/HeatmapChart/heatmapChart.styles.ts",
-  "src/components/Charts/PieChart/pieChart.styles.ts",
-  "src/components/Charts/RadarChart/radarChart.styles.ts",
-  "src/components/Charts/RadialChart/radialChart.styles.ts",
-  "src/components/Charts/SegmentedBar/segmentedBar.styles.ts",
   "src/components/Image/image.styles.ts",
   "src/components/ImageBlock/imageBlock.styles.ts",
   "src/components/ImageGallery/galleryModal.styles.ts",

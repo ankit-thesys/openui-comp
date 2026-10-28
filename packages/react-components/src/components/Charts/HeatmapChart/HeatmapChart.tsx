@@ -1,6 +1,7 @@
 "use client";
 
 import clsx from "clsx";
+import type { CSSProperties } from "react";
 import { useStyles } from "../../../styles/useStyles";
 import { useEffectiveAnimation } from "../hooks";
 import { useHeatmapChartOrchestrator } from "../hooks/cartesian/useHeatmapChartOrchestrator";
@@ -10,7 +11,7 @@ import { ChartShell } from "../shared/core/ChartShell";
 import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
 import { ChartTooltip } from "../shared/core/PortalTooltip/ChartTooltip";
 import { CHART_CLASS_PREFIX } from "../utils/constants";
-import { rootClass } from "./heatmapChart.styles";
+import { heatmapChartStyles, names } from "./heatmapChart.styles";
 import { HeatmapCells } from "./parts/HeatmapCells";
 import { HeatmapColorScale } from "./parts/HeatmapColorScale";
 import { HeatmapYAxis } from "./parts/HeatmapYAxis";
@@ -19,6 +20,7 @@ import type { HeatmapChartData, HeatmapChartProps } from "./types";
 const CLASS_PREFIX = `${CHART_CLASS_PREFIX}-heatmap-chart`;
 
 export function HeatmapChart<T extends HeatmapChartData>(props: HeatmapChartProps<T>) {
+  const styles = useStyles(heatmapChartStyles);
   const {
     data,
     categoryKey,
@@ -73,35 +75,48 @@ export function HeatmapChart<T extends HeatmapChartData>(props: HeatmapChartProp
   return (
     <ChartShell
       containerRef={orch.refs.containerRef}
-      classPrefix={CLASS_PREFIX}
-      className={clsx(rootClass, className)}
-      style={orch.style.containerStyle}
+      className={clsx(
+        styles.root,
+        names.root,
+        names.rampMode[rampMode],
+        isAnimationActive && names.isAnimationActive.true,
+        className,
+      )}
+      style={
+        {
+          "--_openui-heatmap-chart-root-width": orch.style.containerStyle["width"],
+          "--_openui-heatmap-chart-root-height": orch.style.containerStyle["height"],
+        } as CSSProperties
+      }
       isEmpty={orch.isEmpty}
     >
       {() => (
         <>
           <svg
+            className={clsx(styles.svg, names.svg)}
             width={totalSvgWidth}
             height={totalSvgHeight}
-            style={{ overflow: "visible" }}
+            style={{ "--_openui-heatmap-chart-svg-overflow": "visible" } as CSSProperties}
             role="img"
             aria-label="Heatmap chart"
           >
             {showYAxis && (
-              <g transform={`translate(0, ${marginTop})`}>
-                <HeatmapYAxis
-                  scale={yScale}
-                  width={effectiveYAxisWidth}
-                  classPrefix={CLASS_PREFIX}
-                />
+              <g className={names.group} transform={`translate(0, ${marginTop})`}>
+                <HeatmapYAxis scale={yScale} width={effectiveYAxisWidth} />
               </g>
             )}
 
             <g
+              className={names.group}
               transform={`translate(${effectiveYAxisWidth}, ${marginTop})`}
               onMouseLeave={orch.hover.handleMouseLeave}
             >
-              <rect width={chartAreaWidth} height={chartInnerHeight} fill="transparent" />
+              <rect
+                className={names.hitbox}
+                width={chartAreaWidth}
+                height={chartInnerHeight}
+                fill="transparent"
+              />
 
               <HeatmapCells
                 data={data}
@@ -121,13 +136,23 @@ export function HeatmapChart<T extends HeatmapChartData>(props: HeatmapChartProp
               />
             </g>
 
-            <g transform={`translate(${effectiveYAxisWidth}, ${chartInnerHeight + marginTop})`}>
+            <g
+              className={names.group}
+              transform={`translate(${effectiveYAxisWidth}, ${chartInnerHeight + marginTop})`}
+            >
               <XAxis
+                partClassNames={{
+                  root: names.xAxis,
+                  tick: clsx(styles.xTick, names.xTick),
+                  textLine: names.textLine,
+                  group: names.group,
+                  hitbox: names.hitbox,
+                }}
+                classPrefix={CLASS_PREFIX}
                 scale={xScale}
                 tickVariant="singleLine"
                 labelHeight={xAxisHeight}
                 labelInterval={orch.dimensions.labelInterval}
-                classPrefix={CLASS_PREFIX}
               />
             </g>
           </svg>
@@ -139,7 +164,6 @@ export function HeatmapChart<T extends HeatmapChartData>(props: HeatmapChartProp
               domainMin={orch.colorScaleLegend.domainMin}
               domainMax={orch.colorScaleLegend.domainMax}
               diverging={rampMode === "diverging"}
-              classPrefix={CLASS_PREFIX}
             />
           )}
 

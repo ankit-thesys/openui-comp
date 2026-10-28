@@ -19,11 +19,16 @@ export async function openMigrated(
   openPortals = true,
 ) {
   const path = `/migrated-${component.folder}.html`;
+  // SegmentedBar deliberately inherits the page's font. Give the chart bench explicit page
+  // typography so Preflight's html font/line-height reset does not change that input. Use body
+  // so portalled chart parts inherit the same typography as the elements inside #root. Load
+  // the page rule after head CSS: Tailwind 3 also declares body { line-height: inherit }.
+  const typography = component.folder === "Charts" ? "font: 16px/normal serif;" : "";
   const body =
-    // Normalize page-owned defaults in both runs: margins affect percentage sizes, and native
-    // button text color affects currentColor from `border: none` inside Citation's tooltip.
-    // Zero specificity covers disabled and portal buttons while letting library colors win.
-    `<!doctype html><html><head><meta charset="utf-8"><style>body { margin: 0; } :where(button) { color: inherit; }</style>${head}` +
+    // Normalize page-owned typography, margins and native button currentColor.
+    // Body typography follows Tailwind so its inherited line-height cannot reset this input;
+    // zero-specificity button color still lets library and consumer rules win.
+    `<!doctype html><html><head><meta charset="utf-8"><style>:where(button) { color: inherit; }</style>${head}<style>body { margin: 0; ${typography} }</style>` +
     `</head><body><div id="root"></div><script type="module" src="/elements.js"></script></body></html>`;
   await page.route(`**${path}?*`, (route) => route.fulfill({ contentType: "text/html", body }));
   await page.goto(`${path}?component=${encodeURIComponent(component.folder)}`);
@@ -97,4 +102,16 @@ export async function openMigrated(
       .evaluateAll((buttons) => buttons.forEach((button) => button.removeAttribute("type")));
   if (targetClass && ["Select", "Calendar", "DatePicker", "Slider"].includes(component.folder))
     await expect(page.locator(`.${targetClass}`).first()).toBeAttached();
+  if (component.folder === "Charts") {
+    await page
+      .getByTestId("bench-chart-tooltip")
+      .getByRole("img", { name: "Line chart", exact: true })
+      .hover({ position: { x: 120, y: 80 } });
+    // The portal wrapper is a positioning element. Its visible panel is readiness, and lives
+    // outside #root; the override and Tailwind snapshots must include it.
+    await page.locator(".openui-chart-tooltip").waitFor({ state: "visible" });
+    await page
+      .locator(".openui-chart-tooltip-portal[data-positioned]")
+      .waitFor({ state: "attached" });
+  }
 }

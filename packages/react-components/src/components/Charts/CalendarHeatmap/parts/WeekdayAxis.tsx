@@ -1,5 +1,8 @@
 "use client";
 
+import clsx from "clsx";
+import { useStyles } from "../../../../styles/useStyles";
+import { calendarHeatmapStyles, names } from "../calendarHeatmap.styles";
 interface WeekdayAxisProps {
   /** The rows that get a label (already filtered), with their weekday text. */
   ticks: Array<{ row: number; label: string }>;
@@ -7,7 +10,6 @@ interface WeekdayAxisProps {
   pitchY: number;
   /** Right edge x for every weekday label (labels are end-anchored). */
   x: number;
-  classPrefix: string;
 }
 
 /**
@@ -15,9 +17,10 @@ interface WeekdayAxisProps {
  * on the row band. Rendered inside a group already translated down past the top
  * month gutter, so `row * pitchY` lines each label up with its cell row.
  */
-export function WeekdayAxis({ ticks, pitchY, x, classPrefix }: WeekdayAxisProps) {
+export function WeekdayAxis({ ticks, pitchY, x }: WeekdayAxisProps) {
+  const styles = useStyles(calendarHeatmapStyles);
   return (
-    <g>
+    <g className={names.group}>
       {ticks.map(({ row, label }) => (
         <text
           key={row}
@@ -25,7 +28,7 @@ export function WeekdayAxis({ ticks, pitchY, x, classPrefix }: WeekdayAxisProps)
           y={row * pitchY + pitchY / 2}
           textAnchor="end"
           dominantBaseline="central"
-          className={`${classPrefix}-weekday-label`}
+          className={clsx(styles.weekdayLabel, names.weekdayLabel)}
         >
           {label}
         </text>

@@ -47,7 +47,9 @@ for (const layer of [undefined, "openui"]) {
   for (const position of ["before", "after"]) {
     for (const component of migrated.filter((entry) => families.includes(entry.folder))) {
       for (const name of component.stableClasses) {
-        test(`.${name} overrides ${position}, ${layer ?? "default"} mode`, async ({ page }) => {
+        test(`${component.folder}: .${name} overrides ${position}, ${layer ?? "default"} mode`, async ({
+          page,
+        }) => {
           const css = `${states.map((state) => `.${name}${state}`).join(", ")} { ${declarations} }`;
           const params = new URLSearchParams();
           if (layer) params.set("layer", layer);

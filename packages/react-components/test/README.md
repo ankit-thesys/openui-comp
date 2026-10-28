@@ -683,3 +683,77 @@ browser suite. The print check waits for marks to settle naturally to opacity 1 
 animations; the reduced-motion check still requires those values immediately. Neither forces
 animation completion. This retains #72's area opacity transition while accounting for the
 print hook's effect-driven entrance-class removal.
+
+## Ticket #104: other charts
+
+PieChart, RadarChart, RadialChart, FunnelChart, HeatmapChart, CalendarHeatmap and SegmentedBar
+have individual `test/unit/contract/<Component>.contract.test.tsx` files. The shared public cases
+in `test/fixtures/other-charts.tsx` cover appearance axes, animation on/off, empty frames, legend
+layouts, radar dots/grids/truncation, heatmap labels/empty cells/diverging ramps, calendar patterns,
+ghost cells and separators, and the SingleStackedBar alias. `components.tsx` includes these cases
+in the Charts family and also supplies each focused contract. Only hydration-dependent heatmap
+labels and the truncated radar label hitbox are marked `clientOnly`.
+
+`other-chart-modifiers.test.tsx` pins default modifiers; `other-chart-overrides.test.tsx` guards
+against inline appearance declarations defeating consumer CSS. It retains #102's documented
+exception for the shared StackedLegend frame's JavaScript width. The seven converted style
+modules are removed from the allowlist; regenerate the reference after building.
+
+`other-charts.spec.ts` checks every stable class before/after library CSS and in layer mode,
+including SVG fill, the diverging notch pseudo-element, runtime cell states, render-time
+registration and HTML-class rewrites. Its fixture is `other-charts`; `?chart=<Component>` selects
+one chart and `?layer=1` enables layer mode. The parity fixtures and names are:
+
+- `parity-pie-chart` / `pie-chart`
+- `parity-radar-chart` / `radar-chart`
+- `parity-radial-chart` / `radial-chart`
+- `parity-funnel-chart` / `funnel-chart`
+- `parity-heatmap-chart` / `heatmap-chart`
+- `parity-calendar-heatmap` / `calendar-heatmap`
+- `parity-segmented-bar` / `segmented-bar`
+
+Each `<name>.parity.spec.ts` checks light and dark against #72. No intentional differences.
+The shared parity helper accepts an optional fifth argument for extra computed properties;
+these cases include SVG fill, fill opacity, stroke, stroke width/dashes, pointer events,
+overflow, transform origins/boxes and animation delays/durations/easing, including later marks
+that exercise each entrance stagger. Existing parity properties and baselines are unchanged.
+
+Orchestrator follow-up (Chromium is unavailable in this implementation sandbox):
+
+```bash
+pnpm test:parity:baseline
+pnpm exec playwright test other-charts.spec.ts pie-chart.parity.spec.ts radar-chart.parity.spec.ts radial-chart.parity.spec.ts funnel-chart.parity.spec.ts heatmap-chart.parity.spec.ts calendar-heatmap.parity.spec.ts segmented-bar.parity.spec.ts
+pnpm test:browser
+```
+
+Capture the seven baseline JSON files from #72 with the script; do not hand-write them. The
+screenshot runner discovers the parity fixtures automatically. Run the full browser suite,
+including foundation parity and the shared override/Tailwind benches, before committing.
+
+### #104 browser follow-up
+
+The Tailwind snapshot indexes flat rules by their owning class and finishes animations once
+before reading styles, retaining every stable-class element and declared property in the large
+Charts matrix. Complex selectors still use `matches()`, with stylesheet order and active media
+preserved. `bench-snapshot.test.ts` guards coverage, portals, rule ordering and matching work.
+The ordinary reset matrix uses untyped buttons; the separate typed-button tests retain the
+documented Tailwind 3.3 conflict.
+
+The `elements` fixture opens a public LineChart with eleven series so both generic benches
+exercise the tooltip summary and every portal part outside `#root`. Readiness waits for the
+visible panel and its positioned wrapper; tooltip override cases cannot silently skip.
+The foundations HTML-class rewrite test reopens the public chart tooltip after reflow and
+requires a visible panel before each unchanged style comparison.
+
+The supplied #72 capture completed all fourteen specs. No parity fixtures or baseline JSON
+changed in this follow-up, so no recapture is needed. Rerun `bench.tailwind.spec.ts`,
+`bench.overrides.spec.ts` and `chart-foundations.spec.ts`, then the full browser suite.
+
+The next browser run exposed actual style differences in all three Charts reset cases, rather
+than timeouts: Preflight's block SVG reset removed CalendarHeatmap's 4px inline baseline gap,
+and its page font reset changed the seven SegmentedBar tracks that declare `font-family: inherit`.
+CalendarHeatmap now explicitly preserves #72's `display: inline` and baseline alignment. The
+Charts bench supplies page typography (`16px/normal serif`) on `body`, including portals, since
+inherited typography is a page input. Every element, case and property comparison remains in
+place. No parity fixtures or baselines changed; rerun the Tailwind and override benches,
+`calendar-heatmap.parity.spec.ts`, and then the full browser suite. No recapture is required.

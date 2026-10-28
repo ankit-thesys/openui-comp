@@ -1,5 +1,6 @@
 "use client";
 
+import { names } from "../calendarHeatmap.styles";
 import type { CalendarLevelPattern } from "../types";
 
 /** Default pattern stroke — a theme-adaptive contrast token over the tile. */
@@ -73,13 +74,31 @@ function CalendarPattern({
 }) {
   const tile = patternTile(pattern);
   return (
-    <pattern id={id} width={tile.width} height={tile.height} patternUnits="userSpaceOnUse">
-      <rect width={tile.width} height={tile.height} fill={tileBackground} />
+    <pattern
+      className={names.pattern}
+      id={id}
+      width={tile.width}
+      height={tile.height}
+      patternUnits="userSpaceOnUse"
+    >
+      <rect
+        className={names.patternBackground}
+        width={tile.width}
+        height={tile.height}
+        fill={tileBackground}
+      />
       {tile.dotRadius != null ? (
-        <circle cx={tile.width / 2} cy={tile.height / 2} r={tile.dotRadius} fill={stroke} />
+        <circle
+          className={names.patternDot}
+          cx={tile.width / 2}
+          cy={tile.height / 2}
+          r={tile.dotRadius}
+          fill={stroke}
+        />
       ) : (
         tile.paths?.map((d, index) => (
           <path
+            className={names.patternLine}
             key={index}
             d={d}
             stroke={stroke}
@@ -134,5 +153,5 @@ export function CalendarPatternDefs({
   });
 
   if (patterns.length === 0) return null;
-  return <defs>{patterns}</defs>;
+  return <defs className={names.defs}>{patterns}</defs>;
 }

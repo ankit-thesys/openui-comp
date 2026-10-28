@@ -81,7 +81,9 @@ for (const component of migrated) {
       const check = async (page: Page) => {
         const styles = await computedAll(page, className);
         test.skip(
-          styles.length === 0 && component.clientOnly.includes(className),
+          styles.length === 0 &&
+            component.clientOnly.includes(className) &&
+            !className.startsWith("openui-chart-tooltip"),
           `.${className} renders only once the browser measures overflow`,
         );
         expect(styles.length).toBeGreaterThan(0);

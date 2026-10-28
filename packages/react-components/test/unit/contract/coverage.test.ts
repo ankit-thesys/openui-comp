@@ -2,10 +2,10 @@
 // a fresh module graph (see defineContract.tsx).
 import { existsSync } from "node:fs";
 import { expect, it } from "vitest";
-import { migratedComponents, sharedStyleContracts } from "./components";
+import { migratedComponents, otherChartContracts, sharedStyleContracts } from "./components";
 
 it("gives every migrated component its own contract test file", () => {
-  const missing = [...migratedComponents, ...sharedStyleContracts]
+  const missing = [...migratedComponents, ...otherChartContracts, ...sharedStyleContracts]
     .map(({ folder }) => `${folder}.contract.test.tsx`)
     .filter((file) => !existsSync(new URL(`./${file}`, import.meta.url)));
   expect(missing).toEqual([]);

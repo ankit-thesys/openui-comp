@@ -547,30 +547,29 @@ are also public. Shared chart implementations remain private.
 
 ### Chart styling targets
 
-All 19 public chart entries use the same stock-Goober registration mechanism and
-private zero-specificity document guard. Condensed charts reuse their parent
-rules, SingleStackedBar remains an alias, and mini charts share MiniChartFrame.
+Charts register flat styles during render and need no document guard. Condensed charts reuse
+their parent rules, SingleStackedBar remains an alias, and mini charts share MiniChartFrame.
 No extra wrapper or duplicate family stylesheet is introduced.
 
-| Public chart entries                       | Canonical owned root                     |
-| ------------------------------------------ | ---------------------------------------- |
-| AreaChart, AreaChartCondensed              | `.openui-area-chart-root`                |
-| LineChart, LineChartCondensed              | `.openui-line-chart-root`                |
-| BarChart, BarChartCondensed                | `.openui-bar-chart-root`                 |
-| HorizontalBarChart                         | `.openui-horizontal-bar-chart-root`      |
-| PieChart                                   | `.openui-pie-chart-root`                 |
-| RadialChart                                | `.openui-radial-chart-root`              |
-| RadarChart                                 | `.openui-radar-chart-root`               |
-| ScatterChart                               | `.openui-scatter-chart-root`             |
-| HeatmapChart                               | `.openui-heatmap-chart-root`             |
-| FunnelChart                                | `.openui-funnel-chart-root`              |
-| CalendarHeatmap                            | `.openui-calendar-heatmap-root`          |
-| SegmentedBar, SingleStackedBar             | `.openui-segmented-bar-root`             |
+| Public chart entries | Canonical owned root |
+| --- | --- |
+| AreaChart, AreaChartCondensed | `.openui-area-chart` |
+| LineChart, LineChartCondensed | `.openui-line-chart` |
+| BarChart, BarChartCondensed | `.openui-bar-chart` |
+| HorizontalBarChart | `.openui-horizontal-bar-chart` |
+| PieChart | `.openui-pie-chart` |
+| RadialChart | `.openui-radial-chart` |
+| RadarChart | `.openui-radar-chart` |
+| ScatterChart | `.openui-scatter-chart` |
+| HeatmapChart | `.openui-heatmap-chart` |
+| FunnelChart | `.openui-funnel-chart` |
+| CalendarHeatmap | `.openui-calendar-heatmap` |
+| SegmentedBar, SingleStackedBar | `.openui-segmented-bar` |
 | MiniAreaChart, MiniBarChart, MiniLineChart | `.openui-mini-{area,bar,line}-chart` (one root per export) |
 
-HeatmapChart additionally exposes `.openui-heatmap-chart-diverging-ramp-root`
-for its existing diverging color-scale ramp. Its owned declaration targets
-`::after`; it does not add a generic base rule.
+HeatmapChart exposes `.openui-heatmap-chart-color-scale-ramp--ramp-mode-diverging::after`
+for the diverging color-scale notch. The [generated reference](docs/reference/selectors.md)
+lists every flat chart part, appearance modifier and shared foundation target.
 
 | Shared role                         | Canonical target                                                                               |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -583,24 +582,21 @@ for its existing diverging color-scale ramp. Its owned declaration targets
 | Stacked scrollbar                   | `.openui-stacked-legend-list` (`::-webkit-scrollbar` only)                          |
 | Horizontal/vertical scroll controls | `.openui-scroll-buttons-horizontal`, `.openui-scroll-buttons-vertical` |
 
-Shared foundations and mini charts now use the flat classes listed above and in the
-[generated reference](./docs/reference/selectors.md). The migration tables below record
-their renamed aliases and state hooks. Chart-specific modules still on the allowlist
-retain their existing selectors. For those rules, ordinary later unlayered consumer CSS
-must match the owned root, type, part and state context. SVG type selectors outside `:where()` still contribute specificity;
-the private document guard contributes none. For example:
+The flat classes above and in the [generated reference](./docs/reference/selectors.md)
+follow the single-class override contract. The migration tables below record renamed aliases,
+appearance modifiers and state hooks. Match the same state when overriding a state rule:
 
 ```css
-.openui-bar-chart-root {
+.openui-bar-chart {
   position: relative;
 }
-.openui-area-chart-root line:where(.openui-area-chart-grid line) {
+.openui-area-chart-grid-line {
   stroke: navy;
 }
-.openui-area-chart-root line.openui-grid-zero-line:where(.openui-area-chart-grid line) {
+.openui-area-chart-grid-line[data-zero] {
   stroke: purple;
 }
-.openui-heatmap-chart-diverging-ramp-root::after {
+.openui-heatmap-chart-color-scale-ramp--ramp-mode-diverging::after {
   opacity: 0.25;
 }
 .openui-chart-tooltip {
@@ -953,7 +949,15 @@ Renamed stable classes and props, per component converted to the flat convention
 | Cartesian entrances (#103) | `.openui-{area,line}-chart-{area-path,area-line,line}--animated`, `.openui-{bar,horizontal-bar}-chart-bar--animated`, `.openui-scatter-chart-dot--animated` | Corresponding drawing part's `--is-animation-active` modifier; emitted only while `isAnimationActive` is true and not printing. Bar internal lines have their own `-internal-line--is-animation-active` modifier. |
 | Cartesian negative values (#103) | `.openui-{bar,horizontal-bar}-chart-bar--negative` | `[data-negative]` on the bar or internal line; add the same attribute to a stable-class override for that state |
 | Cartesian zero baseline (#103) | `.openui-grid-zero-line` | `.openui-{area,bar,line,scatter}-chart-grid-line[data-zero]`; other grid lines carry the same part class without the state |
-
+| PieChart, RadarChart, RadialChart, FunnelChart, HeatmapChart, CalendarHeatmap | `.openui-<chart>-container` | `.openui-<chart>`; owned drawing elements also have stable part classes |
+| SegmentedBar / SingleStackedBar | `.openui-segmented-bar-container`, `-container--gap` | `.openui-segmented-bar`; gap comes from `--legend` and `--legend-variant-{default,stacked}` |
+| SegmentedBar / SingleStackedBar | `.openui-segmented-bar` (track) | `.openui-segmented-bar-track` |
+| Other charts | `-slice--animated`, `-polygon--animated`, `-bar--animated`, `-stage--animated`, `-cell--animated`, `-cell-label--animated`, `-segment--animated` | Same block with `--is-animation-active`; the chart root also emits `--is-animation-active` only when the prop is true |
+| Other charts | Appearance axes previously implicit in markup/geometry | Root modifiers for Pie `variant`/`appearance`, Radar `variant`/`gridShape`, Radial `variant`, Funnel `orientation`/`edges`, Heatmap `rampMode`, Calendar `layout`/`legendVariant`, SegmentedBar `legendVariant`; defaults always emit their modifier and names use kebab-case |
+| FunnelChart | `-ring--springy`, `-ring--bloom-{x,y}` | `.openui-funnel-chart-ring[data-motion="spring"]`; the root's `--orientation-{horizontal,vertical}` sets the private transform axis |
+| HeatmapChart | `.openui-heatmap-chart-cell--empty` | `.openui-heatmap-chart-cell[data-empty]` |
+| HeatmapChart | `.openui-heatmap-chart-color-scale-ramp--diverging` | `.openui-heatmap-chart-color-scale-ramp--ramp-mode-diverging`; sequential mode emits `--ramp-mode-sequential` |
+| CalendarHeatmap | `.openui-calendar-heatmap-cell--level-N`, `--ghost`; ancestor `data-openui-highlight-level` dimming | `.openui-calendar-heatmap-cell[data-level="N"]`, `[data-ghost]`, `[data-dimmed]` on the affected cell |
 
 For rollout #96, **TextBlock** is the established family name of the public `TextBlockView`
 export; its stable root is `.openui-text-block`. The React export name is unchanged.
@@ -1019,6 +1023,8 @@ react-ui never had. They are gone; use the class on the right instead:
 | `.openui-chart-{horizontal,vertical}-scroll-controls-root` | `.openui-scroll-buttons-{horizontal,vertical}` |
 | `.openui-mini-chart-root` | `.openui-mini-{line,area,bar}-chart` |
 | `.openui-{area,bar,horizontal-bar,line,scatter}-chart-root` | `.openui-{area,bar,horizontal-bar,line,scatter}-chart` |
+| `.openui-{pie-chart,radar-chart,radial-chart,funnel-chart,heatmap-chart,calendar-heatmap,segmented-bar}-root` | The corresponding `.openui-<chart>` root |
+| `.openui-heatmap-chart-diverging-ramp-root` | `.openui-heatmap-chart-color-scale-ramp--ramp-mode-diverging::after` |
 
 The #98 disclosure/layout/overlay migration changes no prop names. No internal callers outside
 these families reference their renamed classes. No chat-kit directory or matching references
@@ -1034,7 +1040,6 @@ Chart foundation props are unchanged. Data colors, dimming and draw-line length 
 `--_openui-*` variables; override the resulting CSS property on the stable class. Mini-chart
 frame width/height, explicit `StackedLegend style` values, and the tooltip spring's positioning
 transform remain geometry set by JavaScript. The tooltip panel and its appearance are class-overridable.
-The chart-specific modules still on the allowlist retain their existing classes and unlayered rules.
 No chat-kit source references to these renamed chart classes were found for ticket #102.
 
 Cartesian chart props are unchanged for ticket #103. Dynamic dimming, follower appearance and
@@ -1043,6 +1048,12 @@ width/height, SVG coordinates, path lengths and spring positioning remain geomet
 JavaScript. The public classes override appearance properties directly. Empty HorizontalBarChart
 frames retain their existing layout and now carry their own family's stable root.
 A repository-wide scan found no external/chat-kit references to the renamed classes; no kit was modified.
+
+Ticket #104 changes no public prop names. Runtime chart appearance values use private
+`--_openui-*` variables, read by flat class rules. Calendar level fills and the funnel spring
+scale are private too. `SingleStackedBar` remains the `SegmentedBar` alias.
+No references to these renamed classes were found outside react-components and the retained
+react-ui implementation (including chat-kit consumers); no chat-kit source was changed.
 
 ## Beta import migration
 

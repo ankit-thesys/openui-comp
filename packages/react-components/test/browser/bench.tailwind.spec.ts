@@ -6,73 +6,19 @@
 // buttons; Tailwind ≤3.3's typed-button base background conflict is pinned separately below.
 import { expect, test, type Page } from "@playwright/test";
 import { migrated, openMigrated, type MigratedComponent } from "./bench/migrated";
+import { snapshotDeclaredStyles } from "./bench/snapshot";
 
 // For every stable-class element, keyed by class and index: the computed value of each property
 // that a library rule matching it at rest declares. Transitions are finished first.
 const snapshot = (page: Page, component: MigratedComponent) =>
-  page.evaluate((classes) => {
-    const libraryRules: CSSStyleRule[] = [];
-    const visit = (rules: CSSRuleList) => {
-      for (const rule of rules) {
-        if (rule instanceof CSSStyleRule) libraryRules.push(rule);
-        else if (rule instanceof CSSMediaRule) {
-          if (matchMedia(rule.conditionText).matches) visit(rule.cssRules);
-        } else if (rule instanceof CSSGroupingRule) visit(rule.cssRules);
-      }
-    };
-    visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
-    const matches = (el: Element, selector: string) => {
-      try {
-        return el.matches(selector);
-      } catch {
-        return false; // pseudo-elements
-      }
-    };
-    return Object.fromEntries(
-      classes.flatMap((className) =>
-        [...document.querySelectorAll(`.${className}`)].map((el, i) => {
-          el.getAnimations().forEach((animation) => {
-            if (animation.effect?.getTiming().iterations === Infinity) {
-              animation.pause();
-              animation.currentTime = 0;
-            } else animation.finish();
-          });
-          // Later matching rules win, as in the cascade (all library rules weigh the same here).
-          const declared = new Map<string, string>();
-          for (const rule of libraryRules.filter((rule) => matches(el, rule.selectorText)))
-            for (const property of rule.style)
-              declared.set(property, rule.style.getPropertyValue(property));
-          const style = getComputedStyle(el);
-          return [
-            `${className} #${i}`,
-            Object.fromEntries(
-              [...declared].sort().map(([property, value]) => {
-                // #95's inline reset deliberately inherits caller typography. Verify that
-                // relationship, not the page-owned font Tailwind changes on html/body.
-                if (
-                  className === "openui-inline-markdown-renderer-content" &&
-                  value.trim() === "inherit"
-                ) {
-                  const parent = getComputedStyle(el.parentElement!);
-                  if (style.getPropertyValue(property) !== parent.getPropertyValue(property))
-                    throw new Error(`Inline markdown no longer inherits ${property}`);
-                  return [property, "inherits from parent"];
-                }
-                return [
-                  property,
-                  // A percentage size resolves against layout the page owns (a reset's table
-                  // border-collapse changes the pixels), so compare the declaration itself.
-                  value.includes("%") && /(^|-)(width|height)$/.test(property)
-                    ? `declared ${value}`
-                    : style.getPropertyValue(property),
-                ];
-              }),
-            ),
-          ];
-        }),
-      ),
-    );
-  }, component.stableClasses);
+  page.evaluate(snapshotDeclaredStyles, component.stableClasses);
+
+// Exercise the ordinary class contract on untyped buttons, like the Button fixture. The
+// separate typed-button matrix below retains the documented Tailwind <=3.3 conflict.
+const untypeButtons = (page: Page) =>
+  page.locator("button").evaluateAll((buttons) => {
+    for (const button of buttons) button.removeAttribute("type");
+  });
 
 const tailwind = (version: string) => `<link rel="stylesheet" href="/tailwind${version}.css">`;
 
@@ -140,13 +86,6 @@ for (const component of migrated) {
       test(`Tailwind ${version === "4" ? "4.1" : `3.${version[1]}`} preflight leaves it styled`, async ({
         page,
       }) => {
-        // Radix adds type="button" itself. Normalize only the ordinary matrix, as the pilot
-        // Button fixture does; the dedicated typed cases below exercise real typed buttons.
-        const untypeButtons = () =>
-          page.evaluate(() => {
-            for (const button of document.querySelectorAll("button"))
-              button.removeAttribute("type");
-          });
         // #93: check each portal variant with only one modal open at a time.
         const targets =
           component.folder === "Calendar"
@@ -159,11 +98,16 @@ for (const component of migrated) {
               : [""];
         for (const target of targets) {
           await openMigrated(page, component, "", target);
-          await untypeButtons();
+          await untypeButtons(page);
           const plain = await snapshot(page, component);
           expect(Object.keys(plain).length).toBeGreaterThan(0);
+          if (component.folder === "Charts")
+            for (const name of component.stableClasses.filter((name) =>
+              name.startsWith("openui-chart-tooltip"),
+            ))
+              expect(Object.keys(plain).some((key) => key.startsWith(`${name} #`))).toBe(true);
           await openMigrated(page, component, tailwind(version), target);
-          await untypeButtons();
+          await untypeButtons(page);
           expect(await snapshot(page, component)).toEqual(plain);
         }
       });

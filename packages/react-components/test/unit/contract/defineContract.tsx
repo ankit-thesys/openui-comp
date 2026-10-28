@@ -10,10 +10,10 @@ import { ThemeProvider } from "@openuidev/react-components";
 import { describe, expect, it } from "vitest";
 import { classViolation, ruleViolation, rulesOf, selectorsOf } from "./checks";
 import { blocksIn, namesIn, renderAndCollect, stableClassesIn } from "./collect";
-import { migratedComponents } from "./components";
+import { migratedComponents, type MigratedComponent } from "./components";
 
-export function describeContract(folder: string) {
-  const entry = migratedComponents.find((component) => component.folder === folder);
+export function describeContract(folder: string, component?: MigratedComponent) {
+  const entry = component ?? migratedComponents.find((component) => component.folder === folder);
   if (!entry) throw new Error(`${folder} is not in test/unit/contract/components.tsx.`);
   const { elements, clientOnly = [] } = entry;
   describe(folder, () => {
