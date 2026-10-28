@@ -31,6 +31,38 @@ pnpm --filter @openuidev/react-components test:browser
 
 To add a browser test, add a fixture that imports `openui-under-test` (aliased to the built package), add it to `fixtures` in `build-fixtures.ts`, and open `/<name>.html` from the spec. `/<name>.html?css=<text>` puts a consumer stylesheet in the static `<head>`, loaded before the fixture script.
 
+## Styling contract
+
+`test/unit/contract/` enforces the styling contract (README, "Styling and overrides") at the Node seam.
+
+- `components.tsx` lists every migrated component with elements covering every value of every
+  prop that changes its classes. `contract.test.tsx` server-renders them through public exports,
+  collects the CSS registered while rendering (`collect.ts`, which reads Goober's server sheet until
+  the package exposes `getComponentStyles()`), and checks:
+  - every selector is one generated class, optionally with one state, a sibling pair
+    (`.go1 + .go1`) or a zero-weight `:where(.go1) <type selectors>` rule;
+  - every rendered `openui-*` class matches `openui-<block>[--<prop>-<value>]`, a modifier attaches
+    to a documented root or part, and the rendered classes equal the component's `names`.
+- `checks.ts` holds the selector and class grammar; `checks.test.ts` feeds it deliberately broken
+  selectors and names so a passing contract test means something.
+- `reference.test.ts` fails when `docs/reference/selectors.md` differs from what
+  `scripts/selector-reference.mjs` generates from the built `names`. Regenerate it after a build:
+
+```bash
+pnpm --filter @openuidev/react-components docs:selectors
+```
+
+### Migration allowlist
+
+`test/flat-allowlist.json` lists the source modules still on the old styling: they import Goober
+themselves and register CSS on import. `allowlist.test.ts` fails if a module that imports Goober is
+missing from it, if a listed module no longer imports Goober (or no longer exists), or if a
+component that exports `names` is missing from `components.tsx`. `src/styles/defaults.ts` (theme
+token defaults) and `src/styles/useStyles.ts` are exempt.
+
+When you convert a component: remove its modules from the allowlist, add it to `components.tsx`,
+regenerate the reference, and add a parity spec. The list must be empty before a stable release.
+
 ## Parity with #72
 
 Converted components must render exactly as they did before the flat-styles pilot. A parity spec
