@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import type { CellRendererProps } from "./CellTypes";
 import { TextBaseEditableCell } from "./TextBaseEditableCell";

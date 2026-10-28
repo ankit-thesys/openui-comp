@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import React, { useCallback, useMemo, useRef, useState } from "react";
 import { Separator } from "../../Separator";

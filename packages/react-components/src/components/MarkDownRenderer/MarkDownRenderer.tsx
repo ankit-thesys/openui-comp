@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { memo } from "react";
 import ReactMarkdown, { Components, type Options } from "react-markdown";

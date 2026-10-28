@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { useEffectiveAnimation } from "../hooks";
 import { useFunnelChartOrchestrator } from "../hooks/cartesian/useFunnelChartOrchestrator";

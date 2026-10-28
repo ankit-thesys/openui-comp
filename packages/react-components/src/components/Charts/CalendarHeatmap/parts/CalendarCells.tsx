@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useCallback } from "react";
 
 import type { CalendarLeveledCell } from "../../hooks/cartesian/useCalendarHeatmapOrchestrator";

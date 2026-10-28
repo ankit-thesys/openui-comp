@@ -1,3 +1,5 @@
+"use client";
+
 import * as Radio from "@radix-ui/react-radio-group";
 import clsx from "clsx";
 import { css } from "goober";

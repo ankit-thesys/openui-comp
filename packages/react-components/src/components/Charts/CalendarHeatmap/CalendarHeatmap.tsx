@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { useId, useMemo } from "react";
 import { useEffectiveAnimation } from "../hooks";

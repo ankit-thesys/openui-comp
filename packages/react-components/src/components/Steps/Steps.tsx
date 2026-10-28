@@ -1,3 +1,5 @@
+"use client";
+
 import { css } from "goober";
 import React, { createContext, useContext } from "react";
 import { stepItemStyles, stepsStyles } from "./steps.styles";

@@ -1,3 +1,5 @@
+"use client";
+
 import type { ScaleBand, ScaleQuantize } from "d3-scale";
 import React, { useCallback } from "react";
 

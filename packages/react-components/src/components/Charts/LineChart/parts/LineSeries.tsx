@@ -1,3 +1,5 @@
+"use client";
+
 import type { ScaleLinear, ScalePoint } from "d3-scale";
 import type { CurveFactory } from "d3-shape";
 import React, { useMemo, useRef } from "react";

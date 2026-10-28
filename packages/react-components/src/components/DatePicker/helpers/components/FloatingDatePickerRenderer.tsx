@@ -1,3 +1,5 @@
+"use client";
+
 import { autoUpdate, flip, offset, useFloating } from "@floating-ui/react-dom";
 import clsx from "clsx";
 import { css } from "goober";
