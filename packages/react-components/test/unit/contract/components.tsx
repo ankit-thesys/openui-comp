@@ -3,13 +3,24 @@
 import {
   Button,
   Buttons,
+  Calendar,
   CodeBlock,
+  DatePicker,
   FormControl,
   Hint,
   IconButton,
   Input,
   Label,
+  LayoutContextProvider,
   MarkDownRenderer,
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
   Table,
   TableBody,
   TableCell,
@@ -103,6 +114,121 @@ export const sharedBaseConsumers = [
 ];
 
 export const migratedComponents: MigratedComponent[] = [
+  {
+    folder: "DatePicker",
+    names: namesOf("DatePicker"),
+    clientOnly: [
+      "openui-date-picker-calendar-content",
+      "openui-date-picker-content",
+      "openui-date-picker-menu",
+      "openui-date-picker-calendar",
+      "openui-date-picker-reference",
+    ],
+    elements: () => [
+      <DatePicker key="default" />,
+      <DatePicker key="single" mode="single" selectedSingleDate={new Date(2026, 9, 15)} />,
+      <DatePicker
+        key="range"
+        mode="range"
+        selectedRangeDates={{ from: new Date(2026, 9, 15), to: new Date(2026, 9, 18) }}
+      />,
+    ],
+  },
+  {
+    folder: "Calendar",
+    get names() {
+      return [
+        ...namesOf("Calendar"),
+        Object.fromEntries(
+          [
+            ...stableClassesIn(
+              renderToString(
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Choose" />
+                  </SelectTrigger>
+                </Select>,
+              ),
+            ),
+          ].map((name, index) => [`dependency${index}`, name]),
+        ),
+      ];
+    },
+    clientOnly: [
+      "openui-calendar-select-content-months",
+      "openui-calendar-select-content-years",
+      "openui-calendar-select-viewport",
+      "openui-calendar-select-item",
+    ],
+    elements: () =>
+      ["mobile", "fullscreen", "tray", "copilot"].flatMap((layout) =>
+        ["single", "multiple", "range"].map((mode) => (
+          <LayoutContextProvider key={`${layout}/${mode}`} layout={layout as "mobile"}>
+            <Calendar
+              mode={mode as "single"}
+              month={new Date(2026, 9)}
+              today={new Date(2026, 9, 10)}
+              showWeekNumber
+              footer={<span style={{ font: "inherit" }}>Details</span>}
+            />
+            <Calendar captionLayout="label" month={new Date(2026, 9)} />
+          </LayoutContextProvider>
+        )),
+      ),
+  },
+  {
+    folder: "Select",
+    names: namesOf("Select"),
+    clientOnly: [
+      "openui-select-content",
+      "openui-select-viewport",
+      "openui-select-group",
+      "openui-select-label",
+      "openui-select-item",
+      "openui-select-item--show-tick",
+      "openui-select-item-check-wrapper",
+      "openui-select-item-indicator",
+      "openui-select-item-check-icon",
+      "openui-select-item-text",
+      "openui-select-item-text-value",
+      "openui-select-separator",
+      "openui-select-content--position-popper",
+      "openui-select-content--position-item-aligned",
+      ...["sm", "md", "lg"].map((size) => `openui-select-content--size-${size}`),
+    ],
+    elements: () =>
+      [undefined, "sm", "md", "lg"].flatMap((size) =>
+        ["popper", "item-aligned"].flatMap((position) =>
+          [false, true].map((hideDropdownIcon) => (
+            <Select
+              key={`${size}/${position}/${hideDropdownIcon}`}
+              size={size as "sm"}
+              defaultValue="one"
+            >
+              <SelectTrigger
+                type={undefined}
+                hideDropdownIcon={hideDropdownIcon}
+                data-bench-position={position}
+              >
+                <SelectValue placeholder="Choose" />
+              </SelectTrigger>
+              <SelectContent position={position as "popper"}>
+                <SelectGroup>
+                  <SelectLabel>Group</SelectLabel>
+                  <SelectItem value="one" textValue="Detail">
+                    One
+                  </SelectItem>
+                  <SelectItem value="two" showTick={false}>
+                    Two
+                  </SelectItem>
+                  <SelectSeparator />
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          )),
+        ),
+      ),
+  },
   {
     folder: "Buttons",
     // Read composed Button classes after CSS collection, so this getter does not register

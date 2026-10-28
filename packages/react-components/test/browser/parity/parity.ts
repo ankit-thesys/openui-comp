@@ -80,8 +80,21 @@ const measure = (root: Element, properties: string[]) => {
 };
 
 /** Snapshots every case of `fixture` in `mode`, at rest and under hover and press. */
-export async function snapshot(page: Page, fixture: string, mode: Mode): Promise<Snapshot> {
-  await page.goto(`/${fixture}.html?mode=${mode}`);
+export interface ParityOptions {
+  /** Each scenario gets a fresh page, so modal portals cannot interfere with other cases. */
+  scenarios?: readonly string[];
+  prepare?: (page: Page, scenario: string) => Promise<void>;
+}
+
+export async function snapshot(
+  page: Page,
+  fixture: string,
+  mode: Mode,
+  scenario = "",
+  prepare?: ParityOptions["prepare"],
+): Promise<Snapshot> {
+  await page.goto(`/${fixture}.html?${new URLSearchParams({ mode, scenario })}`);
+  await prepare?.(page, scenario);
   const cases = page.locator("[data-parity-case]");
   await expect(cases.first()).toBeVisible();
   const ids = await cases.evaluateAll((els) =>
@@ -92,7 +105,7 @@ export async function snapshot(page: Page, fixture: string, mode: Mode): Promise
     const el = page.locator(`[data-parity-case="${id}"]`);
     const take = (state: State) =>
       el.evaluate(measure, PROPERTIES).then((values) => {
-        result[`${mode} ${id} ${state}`] = values;
+        result[`${mode} ${scenario ? `${scenario} ` : ""}${id} ${state}`] = values;
       });
     await page.mouse.move(0, 0);
     await take("rest");
@@ -117,13 +130,16 @@ export async function checkParity(
   page: Page,
   name: string,
   intentional: readonly string[] = [],
+  options: ParityOptions = {},
 ): Promise<void> {
   const capture = !!process.env["OPENUI_PARITY_CAPTURE"];
   const fixture = `parity-${name}${capture ? "-baseline" : ""}`;
-  const current: Snapshot = {
-    ...(await snapshot(page, fixture, "light")),
-    ...(await snapshot(page, fixture, "dark")),
-  };
+  const current: Snapshot = {};
+  for (const mode of ["light", "dark"] as const) {
+    for (const scenario of options.scenarios ?? [""]) {
+      Object.assign(current, await snapshot(page, fixture, mode, scenario, options.prepare));
+    }
+  }
   if (capture) {
     mkdirSync(fileURLToPath(new URL("./baselines/", import.meta.url)), { recursive: true });
     // One snapshot per line keeps recapture diffs readable per case.
