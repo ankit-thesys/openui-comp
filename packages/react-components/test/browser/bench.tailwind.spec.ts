@@ -168,11 +168,15 @@ for (const component of migrated) {
       page,
     }) => {
       const plain = await typedBackgrounds(page);
+      const reset = await typedBackgrounds(page, tailwind("33"));
+      const state = plain.filter(({ stateBackground }) => stateBackground);
+      // #94: disabled SliderBlock Select triggers keep their stronger :disabled background.
+      if (component.folder === "Slider") expect(state.length).toBeGreaterThan(0);
+      expect(reset.filter(({ stateBackground }) => stateBackground)).toEqual(state);
       test.skip(
         !plain.some(({ color, resets }) => resets && color !== "rgba(0, 0, 0, 0)"),
         `${component.folder} renders no <button> with a base background to clear`,
       );
-      const reset = await typedBackgrounds(page, tailwind("33"));
       expect(reset.map(({ color }) => color)).toEqual(
         plain.map(({ color, resets }) => (resets ? "rgba(0, 0, 0, 0)" : color)),
       );

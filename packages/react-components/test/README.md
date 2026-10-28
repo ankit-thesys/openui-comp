@@ -533,3 +533,40 @@ Chat-kit inspection: the available `origin/codex/chat-kit-separate` and
 `origin/claude/chat-kit-tone` refs contain ModelSwitcher references to the unchanged
 `.openui-select-trigger-icon` and `.openui-select-content`; no renamed-class references
 were found in `packages/kits`. The kit is absent in this worktree and is unchanged.
+
+### Slider and SliderBlock (#94)
+
+The `Slider` family entry covers both public exports, every variant, range/single and
+invalid/disabled/streaming combinations. `Slider.contract.test.tsx` enforces the full family
+budget in default and layer modes; `SliderBlock.contract.test.tsx` checks render-time input
+validation parts separately. Both use only the built package's public exports. The generic
+override/Tailwind benches include all stable classes. The override bench exempts only the
+existing important error border on `.openui-slider-block-input[data-invalid="true"]`,
+including when that element is targeted through the public Input class.
+
+The typed-button Tailwind check distinguishes base backgrounds from matching state
+backgrounds. Tailwind 3.3 clears the enabled Select triggers' base backgrounds, while
+SliderBlock's disabled Select triggers retain their higher-specificity `:disabled`
+backgrounds. Both results are asserted; Tailwind 3.4 and 4.1 preserve both groups.
+
+`slider.spec.ts` and `fixtures/slider.tsx` cover thumb hover/focus/disabled overrides before
+and after library CSS in both modes, active marks/minimum range/tooltip overrides, embedded
+Input/Select sizing and interactions, portal selection, streaming, import-time inactivity
+and `<html class>` replacement. Input defaults register through their shared internal factory
+before SliderBlock's composed input rules; Select defaults register at its public root before
+the owned trigger renders. No public Input/Select variables or legacy names are shared.
+
+`slider.parity.spec.ts` / `fixtures/parity-slider.tsx` cover min/middle/max/range values,
+continuous/discrete, disabled and side content, with explicit enabled-thumb hover/press cases.
+`slider-block.parity.spec.ts` / `fixtures/parity-slider-block.tsx` cover continuous Input and
+discrete Select controls, single/range, invalid/reversed values and disabled combinations.
+Each Select portal scenario uses a fresh page and waits for the focused selected item outside
+`#root`. Capture the `slider` and `slider-block` baselines from #72 with
+`pnpm test:parity:baseline`, then run `pnpm test:browser`. Chromium execution and capture
+are left to the orchestrator when unavailable; no baselines are hand-written. There are no
+intentional visual differences. The old handle `:focus` tooltip rule was ineffective (that
+owned div cannot receive focus); the Radix thumb still accepts consumer `:focus-visible` CSS.
+
+No renamed-class references were found outside the Slider modules and package docs in this
+worktree, or in `packages/kits` on `origin/codex/chat-kit-separate` and
+`origin/claude/chat-kit-tone`. The chat kit is absent here and unchanged.

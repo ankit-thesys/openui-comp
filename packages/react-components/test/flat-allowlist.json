@@ -32,7 +32,5 @@
   "src/components/Skeleton/PieChartSkeleton.tsx",
   "src/components/Skeleton/Skeleton.tsx",
   "src/components/Skeleton/SkeletonBar.tsx",
-  "src/components/Skeleton/TableSkeleton.tsx",
-  "src/components/Slider/Slider.tsx",
-  "src/components/Slider/SliderBlock.tsx"
+  "src/components/Skeleton/TableSkeleton.tsx"
 ]

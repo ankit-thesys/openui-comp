@@ -136,6 +136,9 @@ rule in a named cascade layer loses to the unlayered library rules.
 - The listed sources view, standalone CodeBlock and SliderBlock also retain their existing
   `!important` declarations. Syntax-highlighter theme maps and token output keep their third-party
   inline styles; use the code-block root class to restyle the block around that output.
+- SliderBlock retains `border-color: … !important` on
+  `.openui-slider-block-input[data-invalid="true"]`. Other properties remain ordinarily overridable.
+  Slider marks and Radix track/range/thumb placement keep their dynamic inline positions.
 - Markdown prose ignores bare element selectors (`p { … }`, element resets); target it through
   `.openui-markdown-renderer` instead.
 - The Tabs indicator's width and position are set inline as the active tab changes, so they are
@@ -264,7 +267,8 @@ The control batch adds the following stable styling roots. Existing parts, varia
 native attributes, refs and customization props are retained. No rendered wrapper is added.
 Choice controls (#92) and form controls (#91) use render-time flat styles, honour
 `ThemeProvider cssLayer`, and need no document marker. Choice controls remove their
-old aliases; the migration table below records the replacements. Controls still on
+old aliases; the migration table below records the replacements. Slider and SliderBlock (#94)
+use flat, layer-aware styles as well. Controls still on
 the migration allowlist retain their private zero-specificity document guard.
 
 | Family        | Styling root                                               | Existing parts and states                                                                                                                   |
@@ -278,7 +282,7 @@ the migration allowlist retain their private zero-specificity document guard.
 | OptionCards   | `.openui-option-cards-root`                                | Existing grid/row/card/content/text/title/subtitle/top parts; selected/disabled/focus-visible state and container queries.                  |
 | RadioGroup | `.openui-radio-group` | `--variant-{clear,card,sunk}`, defaults included. |
 | RadioItem | `.openui-radio-item` | Control root; `-container`, `-svg`, `-path`, `-border`, `-inner`, `-content`, `-label`, `-description`; Radix `[data-state]`, `:disabled`. |
-| Slider        | `.openui-slider-wrapper-root`, `.openui-slider-block-root` | Wrapper and SliderBlock roots; existing track/range/thumb/handle/value/dot/label/block parts and native disabled/focus/hover state.         |
+| Slider | `.openui-slider`, `.openui-slider-block` | Flat roots and owned parts in the [generated reference](docs/reference/selectors.md#slider); variants and runtime states below. |
 | SwitchGroup | `.openui-switch-group` | `--variant-{clear,card,sunk}`, defaults included. |
 | SwitchItem | `.openui-switch-item` | Control root; `-container`, `-thumb`, `-content`, `-label`, `-description`; Radix `[data-state]`, `[data-disabled]`. |
 | TextArea      | `.openui-text-area`                                    | Existing error, focus, hover and disabled selectors.                                                                                        |
@@ -301,8 +305,8 @@ of load order. Add the same state when overriding a state declaration:
 }
 ```
 
-The Slider `className` still applies to its inner Radix root, while the new
-styling root identifies its existing outer wrapper. Checkbox/Radio/Switch
+Slider `className`, `style` and `ref` apply to its inner Radix root (`.openui-slider`);
+its existing outer wrapper is the `.openui-slider-wrapper` part. Checkbox/Radio/Switch
 `className` forwarding likewise remains on their existing control elements.
 Vendor inline styles are preserved: for example Radix RadioGroup and
 ToggleGroup retain inline `outline: none`. The ordinary CSS override contract
@@ -877,6 +881,19 @@ Renamed stable classes and props, per component converted to the flat convention
 | DatePicker | `…-input-container-open`, `…-input-container-not-open`, `…-input-container-has-no-selected-date` | `.openui-date-picker-trigger[data-state="open"/"closed"]`, `[data-placeholder="true"]` |
 | DatePicker | `.openui-date-picker-renderer-floating-{reference,content,menu}` | `.openui-date-picker-{reference,content,menu}` |
 | DatePicker | `.openui-date-picker-renderer-{single,range}-mode`, descendant Calendar root override | `.openui-date-picker-calendar`, `.openui-date-picker-calendar-content` (owned Calendar root via its public `components.Root` slot); props unchanged. |
+| Slider | `.openui-slider-root` | `.openui-slider`; `className`, `style` and `ref` still target the Radix root. |
+| Slider | `.openui-slider-wrapper` and existing container/track/range/thumb/handle/value/dot/label parts | Unchanged; min/max label spans also carry `.openui-slider-label`. |
+| Slider | `variant="continuous"` / `"discrete"` | Props unchanged; always emit `.openui-slider--variant-{continuous,discrete}`. |
+| Slider | `.openui-slider--disabled` | `.openui-slider[data-disabled]`; thumbs also expose Radix `[data-disabled]`. |
+| Slider | `.openui-slider-range--at-min` | `.openui-slider-range[data-at-min]` |
+| Slider | `.openui-slider-dots-dot--active` | `.openui-slider-dots-dot[data-state="active"]` (other marks use `inactive`). |
+| SliderBlock | `.openui-slider-block`, `.openui-slider-block__{header,label,controls,content,validated-input-container,validated-select-container,validated-input,input,error-message,separator}` | Root unchanged; parts use single hyphens: `.openui-slider-block-{…}`. The error SVG also carries `.openui-slider-block-error-icon`. |
+| SliderBlock | `.openui-slider-block__header--with-error`, `.openui-slider-block__input-error` | `.openui-slider-block-header[data-invalid="true"]`, `.openui-slider-block-input[data-invalid="true"]`; the input's important border is retained. |
+| SliderBlock | `.is-range`, `.is-single`, `.openui-slider-block__controls--inputs` | Range controls use `.openui-slider-block-controls[data-range]`; absence means single. Input/Select roots have owned `.openui-slider-block-input` / `.openui-slider-block-select-trigger` parts. |
+| SliderBlock | `variant="continuous"` / `"discrete"` | Always emit `.openui-slider-block--variant-{continuous,discrete}` for the requested variant, even while streaming temporarily renders a continuous nested Slider. |
+| SliderBlock | Embedded Input and Select | Keep public `.openui-input--size-medium` and `.openui-select-trigger--size-md` names; props, validation and streaming behavior unchanged. |
+| Shared border-box (#90) | `.openui-border-box` on Buttons, FormControl and TagBlock | Unchanged; registered at render, flat and layer-aware. No prop renames. |
+| Shared Skeleton pulse (#90) | Animation on bars, pie shapes and legend dots | Also carry `.openui-skeleton-pulse`; animation and keyframes register at render. Existing classes and props are unchanged. |
 
 
 For rollout #96, **TextBlock** is the established family name of the public `TextBlockView`
@@ -919,6 +936,8 @@ react-ui never had. They are gone; use the class on the right instead:
 | `.openui-table-{footer,head,row,cell}-styled`                                                      | `.openui-table-{footer,head,row,cell}`                                                                                            |
 | `.openui-table-alignment`                                                                          | Removed; target the head/cell root or its `--align-{left,center,right}` modifier                                                  |
 | `.openui-table-scrollable-table-{wrapper,scroll-container,control}`                                | `.openui-scrollable-table-{wrapper,scroll-container,control}`                                                                     |
+| `.openui-slider-wrapper-root` | `.openui-slider-wrapper` (part) / `.openui-slider` (root) |
+| `.openui-slider-block-root` | `.openui-slider-block` |
 | `.openui-select-{trigger,content,viewport,group,label,item,separator}-root` | `.openui-select-{trigger,content,viewport,group,label,item,separator}` |
 | `.openui-calendar-container-root` | `.openui-calendar` |
 | `.openui-date-picker-style-root` | `.openui-date-picker` / `.openui-date-picker-content` |

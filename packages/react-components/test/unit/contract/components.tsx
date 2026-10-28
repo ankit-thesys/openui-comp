@@ -65,6 +65,8 @@ import {
   SelectTrigger,
   SelectValue,
   Separator,
+  Slider,
+  SliderBlock,
   SnippetCardBlock,
   SourceFaviconImage,
   Sources,
@@ -292,6 +294,84 @@ const layoutElements = () =>
 const cardDependencyNames = (elements: ReactElement[]) => elements.map(composedNames);
 
 export const migratedComponents: MigratedComponent[] = [
+  {
+    folder: "Slider",
+    // SliderBlock composes public Input/Select roots. Read only the classes those renders
+    // expose, after collecting CSS, rather than claiming their portal parts as our own.
+    get names() {
+      return [
+        ...namesOf("Slider"),
+        Object.fromEntries(
+          [
+            ...stableClassesIn(
+              renderToString(
+                <>
+                  <Input />
+                  <Select>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                  </Select>
+                </>,
+              ),
+            ),
+          ].map((name, index) => [`dependency${index}`, name]),
+        ),
+      ];
+    },
+    elements: () => [
+      ...(["continuous", "discrete"] as const).flatMap((variant) =>
+        [false, true].flatMap((disabled) =>
+          [false, true].map((range) => (
+            <Slider
+              key={`${variant}/${disabled}/${range}`}
+              variant={variant}
+              min={0}
+              max={100}
+              step={25}
+              disabled={disabled}
+              defaultValue={range ? [25, 75] : [0]}
+              leftContent={<svg />}
+              rightContent={<svg />}
+            />
+          )),
+        ),
+      ),
+      ...(["continuous", "discrete"] as const).flatMap((variant) =>
+        [false, true].flatMap((disabled) =>
+          [false, true].map((range) => (
+            <SliderBlock
+              key={`block/${variant}/${disabled}/${range}`}
+              label="Budget"
+              variant={variant}
+              min={0}
+              max={100}
+              step={25}
+              disabled={disabled}
+              defaultValue={range ? [25, 75] : [50]}
+            />
+          )),
+        ),
+      ),
+      <SliderBlock
+        key="error"
+        label="Budget"
+        variant="continuous"
+        min={0}
+        max={100}
+        defaultValue={[-1, 75]}
+      />,
+      <SliderBlock
+        key="streaming"
+        label="Budget"
+        variant="discrete"
+        min={0}
+        max={100}
+        step={25}
+        isStreaming
+      />,
+    ],
+  },
   {
     folder: "DatePicker",
     names: namesOf("DatePicker"),
