@@ -15,7 +15,8 @@ export async function openMigrated(page: Page, component: MigratedComponent, hea
   const path = `/migrated-${component.folder}.html`;
   const json = JSON.stringify(component.elements).replaceAll("<", "\\u003c");
   const body =
-    `<!doctype html><html><head><meta charset="utf-8">${head}` +
+    // A margin-free body, so percentage sizes do not depend on whether a reset removed its margin.
+    `<!doctype html><html><head><meta charset="utf-8"><style>body { margin: 0; }</style>${head}` +
     `<script id="elements" type="application/json">${json}</script>` +
     `</head><body><div id="root"></div><script type="module" src="/elements.js"></script></body></html>`;
   await page.route(`**${path}`, (route) => route.fulfill({ contentType: "text/html", body }));

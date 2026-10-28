@@ -58,11 +58,18 @@ override and Tailwind cases.
   `test/unit/contract/components.tsx` elements and stable classes; the `elements` fixture renders
   them client-side. A component joins these benches when it joins that list.
   - `bench.overrides`: consumer CSS on every stable class, loaded before or after the library, beats
-    it on every element carrying the class (the lab's nested-vs-flat bench).
-  - `bench.tailwind`: Tailwind 3.3, 3.4 and 4.1 preflights leave every stable-class element's
-    computed style unchanged (a zero-width border's style and colour are ignored, being invisible),
-    and pin the known conflict: 3.3 clears the background of `button[type=button]`, 3.4 and 4.1 do
-    not.
+    it on every element carrying the class (the lab's nested-vs-flat bench). As the README's
+    contract says, the consumer rule adds the same state where the library styles one, such as an
+    active Tabs trigger's `[data-state="active"]`; the bench reads those states from the library
+    rules that match each element. Classes listed as `clientOnly` that the fixture does not render
+    (Tabs' scroll buttons) are skipped.
+  - `bench.tailwind`: with Tailwind 3.3, 3.4 or 4.1 loaded, every property a library rule declares on
+    a stable-class element keeps its computed value (percentage sizes compare as declared, since
+    they resolve against page layout). Properties the library leaves to the page are Tailwind's to
+    reset. It pins the known conflict: 3.3 clears the background of `button[type=button]`, 3.4 and
+    4.1 do not. MarkDownRenderer under Tailwind 3 is an expected failure (`test.fail`): its link and
+    inline-code typography sit at prose weight, which Tailwind 3's unlayered preflight ties and
+    beats.
 
 ## Styling contract
 
