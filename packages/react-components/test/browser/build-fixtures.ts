@@ -27,6 +27,10 @@ const fixtures = [
   "shared-base",
   "parity-shared-base",
   "parity-skeleton-pulse",
+  "loading-code",
+  "parity-skeleton",
+  "parity-dot-matrix-loader",
+  "parity-code-block",
 ];
 const parityFixtures = fixtures.filter((name) => name.startsWith("parity-"));
 

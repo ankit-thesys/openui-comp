@@ -123,7 +123,9 @@ Converted components must render exactly as they did before the flat-styles pilo
 (`<component>.parity.spec.ts`) snapshots computed styles of every `[data-parity-case]` element in
 a `parity-<component>` fixture, plus its `[data-parity-part]` children and any parts named by
 selector in the case's `data-parity-parts` JSON (for parts the component renders itself), at rest, hovered and pressed,
-in light and dark. It compares them with `parity/baselines/<component>.json`, captured from the
+in light and dark. Cases may set `data-parity-target` to hover/press an owned part and
+`data-parity-setup-click` to enter a runtime state before measuring it (CodeBlock
+freezes its copied-state reset timer in the spec). It compares them with `parity/baselines/<component>.json`, captured from the
 source at #72's head (`5e09b37c`). A case's id names its props, so a component with renamed props
 renders the same cases from both sources: `__PARITY_BASELINE__` is `true` in the baseline bundle.
 
@@ -149,8 +151,8 @@ Their `names` appear as SharedBase and SkeletonPulse in the generated reference.
 `sharedStyleContracts` in `components.tsx` records these helpers separately; their focused
 `SharedBase.contract.test.tsx` and `SkeletonPulse.contract.test.tsx` collect only the CSS
 added by rendering public components. `sharedBaseConsumers` lists the three border-box users.
-The callers' remaining owned styles stay allowlisted for #91, #96 and #101. They are not
-fully migrated families and must not join `migratedComponents` yet.
+The border-box callers' remaining owned styles stay allowlisted for #91 and #96;
+they must not join `migratedComponents` yet. The Skeleton family is fully migrated by #101.
 
 `shared-base.spec.ts` covers both stable helper classes before/after the library, in default
 and layer mode, import-time inactivity, an `<html class>` rewrite, root-only box sizing and
@@ -160,6 +162,32 @@ use the `parity-shared-base` and `parity-skeleton-pulse` fixtures. Capture the n
 No intentional differences are allowed. The parity collector pauses infinite animations
 at time zero (they cannot be finished); the browser spec separately advances the pulse
 through its 0% and 50% frames to verify the animation still runs.
+
+### Loading and code (#101)
+
+Skeleton (including its internal SkeletonBar), PieChartSkeleton, TableSkeleton,
+DotMatrixLoader and CodeBlock are fully migrated. `Skeleton.contract.test.tsx` covers
+all Skeleton family parts and pie appearance combinations through public exports;
+DotMatrixLoader and CodeBlock have their own contract files. They join the generic
+`bench.overrides` and `bench.tailwind` coverage for every stable class. The benches
+pause infinite animations at time zero, matching the parity collector.
+
+`loading-code.spec.ts` and `fixtures/loading-code.tsx` cover render-time registration,
+HTML class replacement, dimension overrides, live dot opacity, CodeBlock's two class
+props, hover visibility and copied colours (including #72's hover/press precedence), before/after
+consumer CSS in default and layer mode. `skeleton.parity.spec.ts`,
+`dot-matrix-loader.parity.spec.ts` and `code-block.parity.spec.ts` use the corresponding
+`parity-skeleton`, `parity-dot-matrix-loader` and `parity-code-block` fixtures and
+`skeleton.json`, `dot-matrix-loader.json` and `code-block.json` #72 baselines.
+There are no intentional visual differences. Dot parity freezes RAF at the initial
+frame in both builds; the focused spec separately checks that the trail moves.
+The existing `parity-skeleton-pulse` fixture translates the #101 part renames.
+Baseline capture and browser execution require Chromium; see the checklist below.
+CodeBlock's default highlighter frame has no inline styles; the public-export Node
+test guards this while preserving token colours, explicit themes and replacement
+classes. The focused browser spec checks frame colour, background and all four
+padding overrides in both load orders and layer modes. The generic override and
+Tailwind benches also cover the frame; their assertions remain unchanged.
 
 ### Migrate a component checklist
 
