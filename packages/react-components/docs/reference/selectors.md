@@ -23,6 +23,19 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-button--tone-default` | Modifier | `tone="default"` |
 | `.openui-button--tone-destructive` | Modifier | `tone="destructive"` |
 
+## Callout
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-callout` | Root | Always |
+| `.openui-callout-title` | Part (`title`) | On that part, whenever it renders |
+| `.openui-callout-description` | Part (`description`) | On that part, whenever it renders |
+| `.openui-callout--variant-neutral` | Modifier | `variant="neutral"` |
+| `.openui-callout--variant-info` | Modifier | `variant="info"` |
+| `.openui-callout--variant-warning` | Modifier | `variant="warning"` |
+| `.openui-callout--variant-success` | Modifier | `variant="success"` |
+| `.openui-callout--variant-danger` | Modifier | `variant="danger"` |
+
 ## Citation
 
 | Stable class | Kind | Present when |
@@ -63,6 +76,50 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-icon-button--tone-default` | Modifier | `tone="default"` |
 | `.openui-icon-button--tone-destructive` | Modifier | `tone="destructive"` |
 
+## IconTag
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-icon-tag` | Root | Always |
+| `.openui-icon-tag-icon` | Part (`icon`) | On that part, whenever it renders |
+| `.openui-icon-tag--size-xs` | Modifier | `size="xs"` |
+| `.openui-icon-tag--size-s` | Modifier | `size="s"` |
+| `.openui-icon-tag--size-m` | Modifier | `size="m"` |
+| `.openui-icon-tag--size-l` | Modifier | `size="l"` |
+| `.openui-icon-tag--size-xl` | Modifier | `size="xl"` |
+| `.openui-icon-tag--variant-neutral` | Modifier | `variant="neutral"` |
+| `.openui-icon-tag--variant-info` | Modifier | `variant="info"` |
+| `.openui-icon-tag--variant-success` | Modifier | `variant="success"` |
+| `.openui-icon-tag--variant-warning` | Modifier | `variant="warning"` |
+| `.openui-icon-tag--variant-danger` | Modifier | `variant="danger"` |
+| `.openui-icon-tag--variant-inverted` | Modifier | `variant="inverted"` |
+
+## IconText
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-icon-text` | Root | Always |
+| `.openui-icon-text-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-icon-text--layout-horizontal` | Modifier | `layout="horizontal"` |
+| `.openui-icon-text--layout-vertical` | Modifier | `layout="vertical"` |
+| `.openui-icon-text--bold` | Modifier | `bold={true}` |
+| `.openui-icon-text--icon-variant-neutral` | Modifier | `iconVariant="neutral"` |
+| `.openui-icon-text--icon-variant-info` | Modifier | `iconVariant="info"` |
+| `.openui-icon-text--icon-variant-success` | Modifier | `iconVariant="success"` |
+| `.openui-icon-text--icon-variant-warning` | Modifier | `iconVariant="warning"` |
+| `.openui-icon-text--icon-variant-danger` | Modifier | `iconVariant="danger"` |
+| `.openui-icon-text--icon-variant-inverted` | Modifier | `iconVariant="inverted"` |
+| `.openui-icon-text--icon-variant-filled` | Modifier | `iconVariant="filled"` |
+| `.openui-icon-text--icon-variant-soft` | Modifier | `iconVariant="soft"` |
+
+## InlineHeader
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-inline-header` | Root | Always |
+| `.openui-inline-header-heading` | Part (`heading`) | On that part, whenever it renders |
+| `.openui-inline-header-description` | Part (`description`) | On that part, whenever it renders |
+
 ## InlineMarkdownRenderer
 
 | Stable class | Kind | Present when |
@@ -83,6 +140,12 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-markdown-renderer--variant-clear` | Modifier | `variant="clear"` |
 | `.openui-markdown-renderer--variant-card` | Modifier | `variant="card"` |
 | `.openui-markdown-renderer--variant-sunk` | Modifier | `variant="sunk"` |
+
+## Separator
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-separator` | Root | Always |
 
 ## SourceFaviconImage
 
@@ -153,6 +216,91 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-tabs-trigger-content` | Part (`content`) | On that part, whenever it renders |
 | `.openui-tabs-trigger-text` | Part (`text`) | On that part, whenever it renders |
 | `.openui-tabs-trigger-subtext` | Part (`subtext`) | On that part, whenever it renders |
+
+## Tag
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-tag` | Root | Always |
+| `.openui-tag-icon` | Part (`icon`) | On that part, whenever it renders |
+| `.openui-tag-text` | Part (`text`) | On that part, whenever it renders |
+| `.openui-tag--size-sm` | Modifier | `size="sm"` |
+| `.openui-tag--size-md` | Modifier | `size="md"` |
+| `.openui-tag--size-lg` | Modifier | `size="lg"` |
+| `.openui-tag--variant-neutral` | Modifier | `variant="neutral"` |
+| `.openui-tag--variant-info` | Modifier | `variant="info"` |
+| `.openui-tag--variant-success` | Modifier | `variant="success"` |
+| `.openui-tag--variant-warning` | Modifier | `variant="warning"` |
+| `.openui-tag--variant-danger` | Modifier | `variant="danger"` |
+
+## TagBlock
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-tag-block` | Root | Always |
+
+## TextBlock
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-text-block` | Root | Always |
+| `.openui-text-block-primary` | Part (`primary`) | On that part, whenever it renders |
+| `.openui-text-block-secondary` | Part (`secondary`) | On that part, whenever it renders |
+| `.openui-text-block-tertiary` | Part (`tertiary`) | On that part, whenever it renders |
+| `.openui-text-block--variant-title-text` | Modifier | `variant="title-text"` |
+| `.openui-text-block--variant-number-title-text` | Modifier | `variant="number-title-text"` |
+| `.openui-text-block--variant-text-subtext` | Modifier | `variant="text-subtext"` |
+| `.openui-text-block--variant-highlight-text-number-subtext` | Modifier | `variant="highlight-text-number-subtext"` |
+| `.openui-text-block--variant-text` | Modifier | `variant="text"` |
+| `.openui-text-block--variant-highlight-text` | Modifier | `variant="highlight-text"` |
+| `.openui-text-block--variant-number` | Modifier | `variant="number"` |
+| `.openui-text-block--variant-highlight-number` | Modifier | `variant="highlight-number"` |
+| `.openui-text-block--size-xs` | Modifier | `size="xs"` |
+| `.openui-text-block--size-sm` | Modifier | `size="sm"` |
+| `.openui-text-block--size-md` | Modifier | `size="md"` |
+| `.openui-text-block--size-lg` | Modifier | `size="lg"` |
+| `.openui-text-block--align-left` | Modifier | `align="left"` |
+| `.openui-text-block--align-center` | Modifier | `align="center"` |
+| `.openui-text-block--align-right` | Modifier | `align="right"` |
+| `.openui-text-block--type-text` | Modifier | `type="text"` |
+| `.openui-text-block--type-number` | Modifier | `type="number"` |
+| `.openui-text-block--type-text-only` | Modifier | `type="textOnly"` |
+| `.openui-text-block-secondary--secondary-tone-positive` | Modifier | `secondaryTone="positive"` |
+| `.openui-text-block-secondary--secondary-tone-negative` | Modifier | `secondaryTone="negative"` |
+
+## TextCallout
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-text-callout` | Root | Always |
+| `.openui-text-callout-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-text-callout-title` | Part (`title`) | On that part, whenever it renders |
+| `.openui-text-callout-description` | Part (`description`) | On that part, whenever it renders |
+| `.openui-text-callout--variant-neutral` | Modifier | `variant="neutral"` |
+| `.openui-text-callout--variant-info` | Modifier | `variant="info"` |
+| `.openui-text-callout--variant-warning` | Modifier | `variant="warning"` |
+| `.openui-text-callout--variant-success` | Modifier | `variant="success"` |
+| `.openui-text-callout--variant-danger` | Modifier | `variant="danger"` |
+
+## TextContent
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-text-content` | Root | Always |
+| `.openui-text-content--variant-clear` | Modifier | `variant="clear"` |
+| `.openui-text-content--variant-card` | Modifier | `variant="card"` |
+| `.openui-text-content--variant-sunk` | Modifier | `variant="sunk"` |
+
+## TextContentWrapper
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-text-content-wrapper` | Root | Always |
+| `.openui-text-content-wrapper-markdown` | Part (`markdown`) | On that part, whenever it renders |
+| `.openui-text-content-wrapper-math` | Part (`math`) | On that part, whenever it renders |
+| `.openui-text-content-wrapper--variant-clear` | Modifier | `variant="clear"` |
+| `.openui-text-content-wrapper--variant-card` | Modifier | `variant="card"` |
+| `.openui-text-content-wrapper--variant-sunk` | Modifier | `variant="sunk"` |
 
 ## SharedBase
 

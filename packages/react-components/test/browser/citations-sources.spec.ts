@@ -98,7 +98,7 @@ for (const position of ["before", "after"]) {
 test("inline markdown keeps its reset and formatting in every caller", async ({ page }) => {
   await open(page);
   // TextBlock owns this visibility rule. The inline renderer's root must not override it.
-  const tertiary = page.getByTestId("text-block").locator(".openui-text-block__tertiary");
+  const tertiary = page.getByTestId("text-block").locator(".openui-text-block-tertiary");
   await expect(tertiary).toHaveText("Third");
   await expect(tertiary).toHaveCSS("display", "none");
   for (const caller of [

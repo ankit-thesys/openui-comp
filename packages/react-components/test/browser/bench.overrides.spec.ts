@@ -63,7 +63,10 @@ for (const component of migrated) {
         const selectors = [``, ...(await statesOn(page, className))].map(
           (state) => `.${className}${state}`,
         );
-        return `${selectors.join(", ")} { ${declarations} }`;
+        // A forwards-filled animation has animation-origin priority over normal CSS.
+        // Consumers disable it through the same public class to restyle animated properties.
+        const animation = component.folder === "Callout" ? "animation: none;" : "";
+        return `${selectors.join(", ")} { ${declarations} ${animation} }`;
       };
 
       const check = async (page: Page) => {
@@ -80,6 +83,12 @@ for (const component of migrated) {
             ? { ...OVERRIDE, "background-color": "rgba(0, 0, 0, 0)" }
             : OVERRIDE;
         for (const style of styles) expect(style).toEqual(expected);
+        if (component.folder === "Callout") {
+          const animations = await page
+            .locator(`.${className}`)
+            .evaluateAll((elements) => elements.map((el) => getComputedStyle(el).animationName));
+          expect(animations.every((name) => name === "none")).toBe(true);
+        }
       };
 
       test(`.${className} wins when loaded before the library`, async ({ page }) => {

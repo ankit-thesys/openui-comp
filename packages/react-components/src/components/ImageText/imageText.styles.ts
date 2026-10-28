@@ -38,7 +38,7 @@ const stylesheetScope = css`
     .openui-image-text-layout-horizontal {
       flex-direction: row;
       align-items: center;
-      .openui-text-block__primary {
+      .openui-text-block-primary {
         font: var(--openui-text-body-sm-heavy, 560 14px/1.5 "Inter", sans-serif);
         letter-spacing: var(--openui-text-body-sm-heavy-letter-spacing, -0.01em);
         font-variation-settings: var(--openui-font-variation-medium, "wght" 560);

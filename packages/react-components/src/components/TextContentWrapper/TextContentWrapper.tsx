@@ -5,12 +5,13 @@ import { memo, useEffect, useState } from "react";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
+import { useStyles } from "../../styles/useStyles";
 import { remarkCitations } from "../_shared/remark/remarkCitations";
 import { TextContentCitation } from "../Citation";
 import { InlineHeader } from "../InlineHeader";
 import { MarkDownRenderer } from "../MarkDownRenderer";
 import { useTheme } from "../ThemeProvider";
-import { markdownClass, rootClass } from "./textContentWrapper.styles";
+import { names, textContentWrapperStyles } from "./textContentWrapper.styles";
 
 export interface TextContentWrapperProps {
   textMarkdown: string;
@@ -38,6 +39,7 @@ type RehypePlugin = NonNullable<
  * `CardSourceProvider`.
  */
 export const TextContentWrapper = memo((props: TextContentWrapperProps) => {
+  const styles = useStyles(textContentWrapperStyles);
   const { mode } = useTheme();
   const [rehypeKatex, setRehypeKatex] = useState<RehypePlugin | null>(null);
 
@@ -52,7 +54,15 @@ export const TextContentWrapper = memo((props: TextContentWrapperProps) => {
   }, []);
 
   return (
-    <div className={clsx(rootClass, "openui-text-content", props.className)}>
+    <div
+      className={clsx(
+        styles.root,
+        names.root,
+        names.variant[props.variant ?? "clear"],
+        props.className,
+      )}
+      data-mode={mode}
+    >
       {props.header && (
         <InlineHeader heading={props.header.heading} description={props.header.description} />
       )}
@@ -72,12 +82,19 @@ export const TextContentWrapper = memo((props: TextContentWrapperProps) => {
           ],
           rehypePlugins: rehypeKatex ? [rehypeKatex] : [],
           components: {
-            span: TextContentCitation,
+            span: ({ node, className, ...rest }) => (
+              <TextContentCitation
+                node={node}
+                {...rest}
+                className={clsx(
+                  className,
+                  className?.split(" ").includes("katex") && [styles.math, names.math],
+                )}
+              />
+            ),
           },
         }}
-        className={clsx(markdownClass, "openui-text-content-markdown", {
-          "openui-text-content-markdown-dark-mode": mode === "dark",
-        })}
+        className={names.markdown}
       />
     </div>
   );

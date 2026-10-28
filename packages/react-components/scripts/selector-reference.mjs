@@ -47,7 +47,8 @@ export async function readStableNames() {
 }
 
 const code = (text) => `\`${text}\``;
-const prop = (axis, value) => code(`${axis}="${value}"`);
+const prop = (axis, value) =>
+  code(value === "true" ? `${axis}={true}` : `${axis}="${value}"`);
 
 /** The reference markdown for `entries` from `readStableNames`. */
 export function renderSelectorReference(entries) {

@@ -34,6 +34,9 @@ export async function openMigrated(page: Page, component: MigratedComponent, hea
     await page.locator("svg.openui-citation-icon").waitFor();
     await page.mouse.move(0, 700);
   }
+  // #96: owned lazy SVG parts must participate in overrides and preflight comparisons.
+  if (component.folder === "IconTag" || component.folder === "IconText")
+    await page.locator("svg.openui-icon-tag-icon").first().waitFor();
   if (component.folder === "SourceFaviconImage")
     await page.locator("svg.openui-source-favicon-image").waitFor();
 }

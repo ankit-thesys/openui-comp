@@ -2,7 +2,8 @@
 
 import clsx from "clsx";
 import { CSSProperties, ReactNode } from "react";
-import { rootClass, variantClasses } from "./textContent.styles";
+import { useStyles } from "../../styles/useStyles";
+import { names, textContentStyles } from "./textContent.styles";
 
 export type TextContentVariant = "clear" | "card" | "sunk";
 
@@ -13,22 +14,17 @@ export interface TextContentProps {
   style?: CSSProperties;
 }
 
-const variants: Record<TextContentVariant, string> = {
-  clear: "text-content-clear",
-  card: "text-content-card",
-  sunk: "text-content-sunk",
-};
-
 const TextContent = (props: TextContentProps) => {
   const { children, variant = "sunk", className, style } = props;
 
+  const css = useStyles(textContentStyles);
   return (
     <div
       className={clsx(
-        rootClass,
-        "text-content",
-        variantClasses[variant],
-        variants[variant],
+        css.root,
+        names.root,
+        css.variant[variant],
+        names.variant[variant],
         className,
       )}
       style={style}

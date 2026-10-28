@@ -16,7 +16,7 @@ it("does not register the shared rule at import", () => {
 it("registers a flat border-box rule on the three opted-in roots when they render", () => {
   const { html, css } = renderAndCollect(sharedBaseConsumers.map(({ element }) => element));
   expect(css).toContain("box-sizing:border-box");
-  const rules = rulesOf(css);
+  const rules = sharedRules(html, css);
   expect(rules).toHaveLength(1);
   expect(rules.map((rule) => ruleViolation(rule, ""))).toEqual([null]);
   const rootClasses = [...html.matchAll(/<div class="([^"]+)"/g)].map((match) =>
@@ -43,7 +43,17 @@ it("registers the same root-only rule in the provider's layer", () => {
     )),
   );
   expect(css).toContain("box-sizing:border-box");
-  expect(rulesOf(css)).toHaveLength(1);
-  expect(rulesOf(css).map((rule) => ruleViolation(rule, "openui"))).toEqual([null]);
+  expect(sharedRules(html, css)).toHaveLength(1);
+  expect(sharedRules(html, css).map((rule) => ruleViolation(rule, "openui"))).toEqual([null]);
   expect(html.match(/openui-border-box/g)).toHaveLength(3);
 });
+
+// #96 migrates TagBlock's owned layout as well. Collect the rule on the generated class
+// shared by all three public roots, keeping this contract focused on the shared helper.
+function sharedRules(html: string, css: string) {
+  const roots = [...html.matchAll(/<div class="([^"]+)"/g)].map((match) => match[1]!.split(" "));
+  const common = roots[0]!.filter(
+    (name) => /^go\d+$/.test(name) && roots.every((classes) => classes.includes(name)),
+  );
+  return rulesOf(css).filter((rule) => common.some((name) => rule.selector === `.${name}`));
+}

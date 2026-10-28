@@ -275,3 +275,45 @@ state's pinned tooltip cannot cover another case. No intentional visual
 differences are allowed. Capture the baselines with `pnpm test:parity:baseline` in an environment
 that can run Chromium, then run the parity specs and `citations-sources.spec.ts` (and the common
 benches). No baseline JSON is authored by hand.
+
+## Text and tag primitives rollout (#96)
+
+The eleven new contract families are TextBlock (public TextBlockView), TextCallout, Callout,
+TextContent, TextContentWrapper, InlineHeader, IconText, IconTag, Tag, TagBlock and Separator.
+They join the common override and Tailwind benches. The inline owners opt into the prose
+checker only for their composed MarkDownRenderer; their owned rules keep the flat budget.
+IconTag's lazy SVG is client-only in SSR and the browser bench waits for it explicitly.
+TagBlock still registers the shared border-box factory; the shared helper's contract collects
+only the generated rule shared by its three public roots now that TagBlock also registers layout.
+
+`text-blocks.spec.ts`, using `text-blocks.tsx` and `text-blocks-cases.tsx`, checks every owned
+class before/after the library in default/layer mode, html class replacement, overridable line
+clamping, actual lazy SVG sizes and Callout's timed fade/collapse. No raw native buttons appear
+in these fixtures. TextContent owns its child typography; tags and callouts own theirs.
+
+TextBlock preserves all size × variant × type typography combinations through private inherited
+variables. IconText supplies its horizontal icon offset and primary typography through private
+variables rather than descendant selectors. Numeric line-clamp and duration values stay in private
+inline variables; display, overflow and animation defaults live in CSS. TextContentWrapper's
+paragraph-before-list spacing is passed to MarkDownRenderer through a private variable, keeping
+prose structure in its existing renderer. Its old dark paragraph/heading color rules duplicated
+MarkDownRenderer's theme colors. Its lazy KaTeX span gets the owned `-math` class and inherits its
+dark display/margin values from the wrapper, with vendor typography unchanged.
+
+Capture these eleven #72 baselines with `pnpm test:parity:baseline`: `text-block`, `text-callout`,
+`callout`, `text-content`, `text-content-wrapper`, `inline-header`, `icon-text`, `icon-tag`, `tag`,
+`tag-block`, `separator`. Each has `fixtures/parity-<name>.tsx` and `<name>.parity.spec.ts`.
+Cases cover defaults, every appearance value and owned parts in both themes, plus clamping,
+alignment, secondary tone, icon aliases, math and list lead-ins. Callout's duration case is
+measured at its completed collapsed frame; the focused browser test also checks animation start.
+No intentional visual differences are allowed. Chromium execution and baseline capture are
+left to the orchestrator; no baseline JSON is authored by hand.
+
+Internal renamed-class callers updated here are ImageText and SnippetCardBlock, plus the #95
+inline caller browser test. No chat-kit package or chat-kit references exist in this checkout.
+
+The Callout override checks disable its forwards-filled animation with a consumer
+`animation: none` rule on the same stable/state selector before checking animated properties.
+They assert the animation override too; the focused timing test separately verifies the
+original fade/collapse. IconText's boolean `bold` names entry uses the `true` axis value, and
+the reference generator displays it as `bold={true}` rather than a part or string prop.

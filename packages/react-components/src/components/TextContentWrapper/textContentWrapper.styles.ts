@@ -1,37 +1,29 @@
-import { css } from "goober";
-export const rootClass = "openui-text-content-wrapper-root";
-// MarkDownRenderer owns the shared rich-text rules; these are the wrapper's differences.
-export const markdownClass = "openui-text-content-wrapper-markdown";
-
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-text-content-wrapper-root {
-      display: flex;
-      flex-direction: column;
-      gap: var(--openui-space-xl, 24px);
+import type { StyleCss } from "../../styles/useStyles";
+export const names = {
+  root: "openui-text-content-wrapper",
+  markdown: "openui-text-content-wrapper-markdown",
+  math: "openui-text-content-wrapper-math",
+  variant: {
+    clear: "openui-text-content-wrapper--variant-clear",
+    card: "openui-text-content-wrapper--variant-card",
+    sunk: "openui-text-content-wrapper--variant-sunk",
+  },
+} as const;
+export const textContentWrapperStyles = (css: StyleCss) => ({
+  root: css`
+    display: flex;
+    flex-direction: column;
+    gap: var(--openui-space-xl, 24px);
+    --_openui-markdown-renderer-paragraph-before-list-margin: 8px;
+    --_openui-text-content-wrapper-math-display: inline;
+    --_openui-text-content-wrapper-math-margin: 0px;
+    &[data-mode="dark"] {
+      --_openui-text-content-wrapper-math-display: inline-block;
+      --_openui-text-content-wrapper-math-margin: var(--openui-space-xs, 6px);
     }
-    .openui-text-content-wrapper-markdown {
-      & p:has(+ ol),
-      & p:has(+ ul) {
-        margin-bottom: 8px;
-      }
-      &.openui-text-content-markdown-dark-mode p,
-      &.openui-text-content-markdown-dark-mode h1,
-      &.openui-text-content-markdown-dark-mode h2,
-      &.openui-text-content-markdown-dark-mode h3,
-      &.openui-text-content-markdown-dark-mode h4,
-      &.openui-text-content-markdown-dark-mode h5,
-      &.openui-text-content-markdown-dark-mode h6 {
-        color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
-      }
-      &.openui-text-content-markdown-dark-mode .katex {
-        margin-top: var(--openui-space-xs, 6px);
-        display: inline-block;
-      }
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
+  `,
+  math: css`
+    display: var(--_openui-text-content-wrapper-math-display);
+    margin-top: var(--_openui-text-content-wrapper-math-margin);
+  `,
+});
