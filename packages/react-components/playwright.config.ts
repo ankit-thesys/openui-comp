@@ -1,6 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
 
-const port = 5370;
+const port = Number(process.env["OPENUI_TEST_PORT"] ?? 5370);
 const ci = !!process.env["CI"];
 
 export default defineConfig({
