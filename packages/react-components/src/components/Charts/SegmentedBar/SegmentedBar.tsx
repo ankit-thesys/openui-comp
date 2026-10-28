@@ -167,6 +167,7 @@ export function SegmentedBar<T extends SegmentedBarData>({
         styles.root,
         names.root,
         isAnimationActive && names.isAnimationActive.true,
+        animate && styles.isAnimationActive,
         styles.legendVariant[legendVariant],
         names.legendVariant[legendVariant],
         legend && styles.legend,
@@ -184,12 +185,7 @@ export function SegmentedBar<T extends SegmentedBarData>({
               return (
                 <div
                   key={segment.key}
-                  className={clsx(
-                    styles.segment,
-                    names.segment,
-                    animate && styles.segmentIsAnimationActive,
-                    animate && names.segmentIsAnimationActive,
-                  )}
+                  className={clsx(styles.segment, names.segment)}
                   style={
                     {
                       "--_openui-segmented-bar-segment-width": `${segment.percentage}%`,

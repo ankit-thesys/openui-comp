@@ -42,6 +42,9 @@ export function BarChart<T extends BarChartData>(props: BarChartProps<T>) {
         className={clsx(
           styles.root,
           props.orientation === "horizontal" ? horizontalNames.root : names.root,
+          (props.orientation === "horizontal" ? horizontalNames : names).variant[
+            props.variant ?? "grouped"
+          ],
           baseStyles.empty,
           baseNames.empty,
           props.className,
@@ -157,7 +160,7 @@ function BarChartImpl<T extends BarChartData>({
       xAxisLabel={xAxisLabel}
       yAxisLabel={yAxisLabel}
       yTickCount={yTickCount}
-      className={clsx(styles.root, names.root, className)}
+      className={clsx(styles.root, names.root, names.variant[variant], className)}
       defs={
         <defs className={names.defs}>
           <ClipDefs

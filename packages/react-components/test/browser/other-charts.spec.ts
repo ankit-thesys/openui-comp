@@ -9,64 +9,198 @@ import { blocksIn, namesIn } from "../unit/contract/collect";
 const entries = await readStableNames();
 const constants = (chart: OtherChart) =>
   entries.filter(({ component }) => component === `Charts/${chart}`).map(({ names }) => names);
-const values = {
-  color: "rgb(1, 2, 3)",
+// A sentinel for every property a #104 library rule declares (longhands, as the CSSOM lists them).
+// Each override test checks that this table covers every property the library sets on the class,
+// so a new declaration cannot slip past the override contract untested.
+const sentinels: Record<string, string> = {
+  "align-items": "baseline",
+  "animation-delay": "0.123s",
+  "animation-direction": "reverse",
+  "animation-duration": "0.456s",
+  "animation-fill-mode": "backwards",
+  "animation-iteration-count": "3",
+  "animation-name": "none",
+  "animation-play-state": "paused",
+  "animation-range-end": "90%",
+  "animation-range-start": "10%",
+  "animation-timeline": "none",
+  "animation-timing-function": "linear",
+  "background-attachment": "fixed",
+  "background-clip": "content-box",
   "background-color": "rgb(4, 5, 6)",
-  "padding-top": "7px",
-  "border-top-color": "rgb(11, 12, 13)",
+  "background-image": "linear-gradient(rgb(1, 2, 3), rgb(4, 5, 6))",
+  "background-origin": "content-box",
+  "background-position-x": "7px",
+  "background-position-y": "8px",
+  "background-repeat": "no-repeat",
+  "background-size": "9px 10px",
+  "border-bottom-left-radius": "3px",
+  "border-bottom-right-radius": "4px",
+  "border-top-left-radius": "5px",
+  "border-top-right-radius": "6px",
+  bottom: "7px",
+  "box-shadow": "rgb(1, 2, 3) 1px 2px 3px 0px",
+  "box-sizing": "content-box",
+  color: "rgb(1, 2, 3)",
+  "column-gap": "7px",
+  cursor: "crosshair",
+  display: "grid",
   fill: "rgb(14, 15, 16)",
+  "fill-opacity": "0.6",
+  filter: "blur(1px)",
+  "flex-basis": "7px",
+  "flex-direction": "column-reverse",
+  "flex-grow": "2",
+  "flex-shrink": "3",
+  "font-family": "monospace",
+  "font-feature-settings": '"smcp"',
+  "font-kerning": "none",
+  "font-optical-sizing": "none",
+  "font-size": "17px",
+  "font-size-adjust": "0.5",
+  "font-stretch": "75%",
+  "font-style": "italic",
+  "font-variant-alternates": "historical-forms",
+  "font-variant-caps": "small-caps",
+  "font-variant-east-asian": "ruby",
+  "font-variant-emoji": "text",
+  "font-variant-ligatures": "none",
+  "font-variant-numeric": "tabular-nums",
+  "font-variant-position": "sub",
+  "font-variation-settings": '"wdth" 80',
+  "font-weight": "300",
+  height: "41px",
+  "justify-content": "space-around",
+  left: "7px",
+  "letter-spacing": "3px",
+  "line-height": "19px",
+  "margin-top": "7px",
+  "min-height": "9px",
+  "min-width": "9px",
+  opacity: "0.7",
+  "overflow-x": "scroll",
+  "overflow-y": "scroll",
+  "padding-bottom": "7px",
+  "padding-left": "7px",
+  "padding-right": "7px",
+  "padding-top": "7px",
+  "pointer-events": "all",
+  position: "absolute",
+  "row-gap": "7px",
+  stroke: "rgb(17, 18, 19)",
+  "stroke-dasharray": "5px, 6px",
+  "stroke-width": "3px",
+  "text-wrap-mode": "wrap",
+  top: "7px",
+  transform: "translate(1px, 2px)",
+  "transform-box": "content-box",
+  "transform-origin": "7px 8px",
+  "transition-behavior": "allow-discrete",
+  "transition-delay": "0.1s",
+  "transition-duration": "0.2s",
+  "transition-property": "opacity",
+  "transition-timing-function": "linear",
+  "user-select": "all",
+  "vertical-align": "7px",
+  "white-space-collapse": "preserve",
+  width: "41px",
+  "z-index": "7",
 };
-const declarations = Object.entries(values)
-  .map(([property, value]) => `${property}: ${value};`)
-  .join(" ");
 const url = (chart: OtherChart, query = "") => `/other-charts.html?chart=${chart}&${query}`;
 const open = async (page: Page, chart: OtherChart, className: string, query = "") => {
   await page.goto(url(chart, query));
   await expect(page.locator(`.${className}`).first()).toBeAttached();
 };
-const statesOn = (page: Page, className: string) =>
+// Q18 runtime states a consumer matches with the same (0,2,0) shape, and pseudo-elements, which
+// are separate boxes. Anything else on a library rule (a constant attribute, a structural
+// pseudo-class) would make a plain single-class override lose, so the override tests leave it
+// out of the consumer selector and fail if the library depends on it.
+const runtimeState =
+  /^(?::(?:hover|focus|focus-visible|focus-within|active|disabled)|\[(?:aria-[\w-]+|data-(?:state|orientation|highlighted|dimmed|empty|ghost))(?:="[^"]*")?\]|::[\w-]+)$/;
+// Every state and property the library's rules declare on the elements carrying `className`.
+// Pseudo-element rules style another box; the dedicated ::after test covers them.
+const libraryRulesOn = (page: Page, className: string) =>
   page.locator(`.${className}`).evaluateAll((elements) => {
     const states = new Set<string>();
+    const properties = new Set<string>();
     const visit = (rules: CSSRuleList) => {
       for (const rule of rules) {
         if (rule instanceof CSSStyleRule) {
-          const state = rule.selectorText.match(/^\.go\d+((?::[\w-]+|\[[^\]]+\]))$/)?.[1];
-          if (state && elements.some((element) => element.matches(rule.selectorText)))
-            states.add(state);
+          const [, base, state = ""] = rule.selectorText.match(/^(\.go\d+)(.*)$/) ?? [];
+          if (!base || !elements.some((element) => element.matches(base))) continue;
+          if (state) states.add(state);
+          if (!state.startsWith("::"))
+            for (const property of rule.style)
+              if (!property.startsWith("--")) properties.add(property);
         } else if (rule instanceof CSSMediaRule) {
           if (matchMedia(rule.conditionText).matches) visit(rule.cssRules);
         } else if (rule instanceof CSSGroupingRule) visit(rule.cssRules);
       }
     };
     visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
-    return [...states];
+    return { states: [...states], properties: [...properties].sort() };
   });
-
+// The computed form of each sentinel, read from a probe of the same tag outside any component.
+const computedSentinels = (page: Page, className: string, properties: string[]) =>
+  page
+    .locator(`.${className}`)
+    .first()
+    .evaluate(
+      (element, { properties, sentinels }) => {
+        const svg = element instanceof SVGElement;
+        const host = svg
+          ? document.createElementNS("http://www.w3.org/2000/svg", "svg")
+          : document.createElement("div");
+        const probe = svg
+          ? document.createElementNS("http://www.w3.org/2000/svg", element.tagName)
+          : document.createElement(element.tagName);
+        for (const property of properties)
+          (probe as HTMLElement).style.setProperty(property, sentinels[property]!);
+        host.append(probe);
+        document.body.append(host);
+        const style = getComputedStyle(probe);
+        const values = Object.fromEntries(
+          properties.map((property) => [property, style.getPropertyValue(property)]),
+        );
+        host.remove();
+        return values;
+      },
+      { properties, sentinels },
+    );
+const read = (page: Page, className: string, properties: string[]) =>
+  page.locator(`.${className}`).evaluateAll(
+    (elements, properties) =>
+      elements.map((element) => {
+        element.getAnimations().forEach((animation) => animation.finish());
+        const style = getComputedStyle(element);
+        return Object.fromEntries(
+          properties.map((property) => [property, style.getPropertyValue(property)]),
+        );
+      }),
+    properties,
+  );
 for (const chart of otherCharts) {
   for (const className of namesIn(constants(chart))) {
     for (const order of ["before", "after", "layer"] as const) {
       test(`${chart} .${className} overrides: ${order}`, async ({ page }) => {
         await open(page, chart, className, order === "layer" ? "layer=1" : "");
-        const selectors = ["", ...(await statesOn(page, className))].map(
+        const { states, properties } = await libraryRulesOn(page, className);
+        expect(properties.filter((property) => !(property in sentinels))).toEqual([]);
+        // A plain single class, plus only the runtime states the library styles.
+        const selectors = ["", ...states.filter((state) => runtimeState.test(state))].map(
           (state) => `.${className}${state}`,
         );
+        const declarations = properties
+          .map((property) => `${property}: ${sentinels[property]};`)
+          .join(" ");
         const rule = `${selectors.join(", ")} { ${declarations} }`;
+        const expected = await computedSentinels(page, className, properties);
         if (order === "before")
           await open(page, chart, className, `css=${encodeURIComponent(rule)}`);
         else await page.addStyleTag({ content: rule });
-        const observed = await page.locator(`.${className}`).evaluateAll(
-          (elements, properties) =>
-            elements.map((element) => {
-              element.getAnimations().forEach((animation) => animation.finish());
-              const style = getComputedStyle(element);
-              return Object.fromEntries(
-                properties.map((property) => [property, style.getPropertyValue(property)]),
-              );
-            }),
-          Object.keys(values),
-        );
+        const observed = await read(page, className, properties);
         expect(observed.length).toBeGreaterThan(0);
-        for (const actual of observed) expect(actual).toEqual(values);
+        for (const actual of observed) expect(actual).toEqual(expected);
       });
     }
   }
@@ -204,7 +338,7 @@ for (const orientation of ["horizontal", "vertical"] as const) {
   test(`FunnelChart blooms on its ${orientation} cross axis`, async ({ page }) => {
     await page.goto(url("FunnelChart"));
     const frame = page.locator(`[data-parity-case="${orientation}/curved/false"]`);
-    const ring = frame.locator('.openui-funnel-chart-ring[data-motion="spring"]').nth(2);
+    const ring = frame.locator(".openui-funnel-chart-ring").nth(2);
     await frame.locator(".openui-funnel-chart-hitbox").first().hover();
     await expect
       .poll(() =>

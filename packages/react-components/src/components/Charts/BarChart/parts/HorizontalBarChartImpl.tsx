@@ -124,7 +124,12 @@ export function HorizontalBarChartImpl<T extends BarChartData>(props: BarChartPr
       flat
       containerRef={shellContainerRef}
       classPrefix={names.root}
-      className={clsx(styles.root, names.root, className)}
+      className={clsx(
+        styles.root,
+        names.root,
+        names.variant[props.variant ?? "grouped"],
+        className,
+      )}
       style={containerStyle as CSSProperties}
       isEmpty={isEmpty}
       exportData={exportData}

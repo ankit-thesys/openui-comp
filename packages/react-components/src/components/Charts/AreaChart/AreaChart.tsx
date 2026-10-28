@@ -41,6 +41,8 @@ export function AreaChart<T extends AreaChartData>(props: AreaChartProps<T>) {
         className={clsx(
           styles.root,
           names.root,
+          names.variant[props.variant ?? "natural"],
+          (props.stacked ?? true) && names.stacked.true,
           baseStyles.empty,
           baseNames.empty,
           props.className,
@@ -193,7 +195,13 @@ function AreaChartImpl<T extends AreaChartData>({
       xAxisLabel={xAxisLabel}
       yAxisLabel={yAxisLabel}
       yTickCount={yTickCount}
-      className={clsx(styles.root, names.root, className)}
+      className={clsx(
+        styles.root,
+        names.root,
+        names.variant[variant],
+        stacked && names.stacked.true,
+        className,
+      )}
       defs={
         <GradientDefs
           negativeKeys={negativeKeys}

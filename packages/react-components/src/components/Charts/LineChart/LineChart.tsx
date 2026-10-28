@@ -39,6 +39,7 @@ export function LineChart<T extends LineChartData>(props: LineChartProps<T>) {
         className={clsx(
           styles.root,
           names.root,
+          names.variant[props.variant ?? "natural"],
           baseStyles.empty,
           baseNames.empty,
           props.className,
@@ -159,7 +160,7 @@ function LineChartImpl<T extends LineChartData>({
       xAxisLabel={xAxisLabel}
       yAxisLabel={yAxisLabel}
       yTickCount={yTickCount}
-      className={clsx(styles.root, names.root, className)}
+      className={clsx(styles.root, names.root, names.variant[variant], className)}
       defs={
         <defs className={names.defs}>
           <ClipDefs

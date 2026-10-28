@@ -12,7 +12,6 @@ export const names = {
   track: "openui-segmented-bar-track",
   segment: "openui-segmented-bar-segment",
   segmentLine: "openui-segmented-bar-segment-line",
-  segmentIsAnimationActive: "openui-segmented-bar-segment--is-animation-active",
   stackedLegend: "openui-segmented-bar-stacked-legend",
   legendWrapper: "openui-segmented-bar-legend-wrapper",
   defaultLegend: "openui-segmented-bar-default-legend",
@@ -32,10 +31,10 @@ export const segmentedBarStyles = (css: StyleCss) => {
       width: 100%;
       position: relative;
       justify-content: center;
-      gap: var(--_openui-segmented-bar-gap, normal);
+      gap: var(--_openui-segmented-bar-root-gap, normal);
     `,
     legend: css`
-      --_openui-segmented-bar-gap: var(--_openui-segmented-bar-legend-gap);
+      --_openui-segmented-bar-root-gap: var(--_openui-segmented-bar-legend-gap);
     `,
     legendVariant: {
       default: css`
@@ -75,15 +74,24 @@ export const segmentedBarStyles = (css: StyleCss) => {
       );
       position: relative;
       overflow: hidden;
-      transition:
+      transition: var(
+        --_openui-segmented-bar-segment-transition,
         box-shadow 0.2s ease,
         filter 0.2s ease,
-        opacity 0.2s ease;
+        opacity 0.2s ease
+      );
+      /* Position only rounds the outer ends, so a plain class still overrides the radius. */
+      border-radius: var(--_openui-segmented-bar-segment-border-start-radius, 0)
+        var(--_openui-segmented-bar-segment-border-end-radius, 0)
+        var(--_openui-segmented-bar-segment-border-end-radius, 0)
+        var(--_openui-segmented-bar-segment-border-start-radius, 0);
       &:first-child {
-        border-radius: var(--openui-radius-xs, 4px) 0 0 var(--openui-radius-xs, 4px);
+        --_openui-segmented-bar-segment-border-start-radius: var(--openui-radius-xs, 4px);
+        --_openui-segmented-bar-segment-border-end-radius: 0;
       }
       &:last-child {
-        border-radius: 0 var(--openui-radius-xs, 4px) var(--openui-radius-xs, 4px) 0;
+        --_openui-segmented-bar-segment-border-start-radius: 0;
+        --_openui-segmented-bar-segment-border-end-radius: var(--openui-radius-xs, 4px);
       }
       width: var(--_openui-segmented-bar-segment-width, unset);
       background-color: var(--_openui-segmented-bar-segment-background-color, unset);
@@ -100,8 +108,8 @@ export const segmentedBarStyles = (css: StyleCss) => {
       z-index: 1;
       min-width: 2px;
     `,
-    segmentIsAnimationActive: css`
-      transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    isAnimationActive: css`
+      --_openui-segmented-bar-segment-transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     `,
     stackedLegend: css`
       margin-top: var(--openui-space-s, 8px);

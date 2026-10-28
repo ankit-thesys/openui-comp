@@ -33,7 +33,7 @@ export const stackedLegendStyles = (css: StyleCss) => {
       flex-direction: column;
       align-items: center;
       height: 100%;
-      justify-content: var(--_openui-stacked-legend-justify, normal);
+      justify-content: var(--_openui-stacked-legend-root-justify-content, normal);
     `,
     header: css`
       width: 100%;
@@ -177,7 +177,7 @@ export const stackedLegendStyles = (css: StyleCss) => {
         --_openui-stacked-legend-legend-min-width: 0;
         --_openui-stacked-legend-legend-height: 296px;
         --_openui-stacked-legend-legend-align: center;
-        --_openui-stacked-legend-justify: center;
+        --_openui-stacked-legend-root-justify-content: center;
         --_openui-stacked-legend-list-height: auto;
         --_openui-stacked-legend-list-max-height: 100%;
       }

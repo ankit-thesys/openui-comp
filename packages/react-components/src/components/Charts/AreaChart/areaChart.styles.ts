@@ -16,6 +16,12 @@ import { svgTickLabel } from "../shared/chartTypography";
 
 export const names = {
   root: "openui-area-chart",
+  variant: {
+    linear: "openui-area-chart--variant-linear",
+    natural: "openui-area-chart--variant-natural",
+    step: "openui-area-chart--variant-step",
+  },
+  stacked: { true: "openui-area-chart--stacked" },
   containerInner: "openui-area-chart-container-inner",
   yAxisContainer: "openui-area-chart-y-axis-container",
   mainContainer: "openui-area-chart-main-container",
@@ -54,8 +60,8 @@ export const areaChartStyles = (css: StyleCss) => ({
     }
   `,
   group: css`
-    opacity: var(--_openui-chart-group-opacity, 1);
-    transition: var(--_openui-chart-group-transition, all 0s ease 0s);
+    opacity: var(--_openui-area-chart-group-opacity, 1);
+    transition: var(--_openui-area-chart-group-transition, all 0s ease 0s);
   `,
   root: css`
     ${cartesianContainer}
@@ -101,8 +107,8 @@ export const areaChartStyles = (css: StyleCss) => ({
   `,
   areaLineAnimated: css`
     @media (prefers-reduced-motion: no-preference) {
-      stroke-dasharray: var(--_openui-chart-path-length);
-      stroke-dashoffset: var(--_openui-chart-path-length);
+      stroke-dasharray: var(--_openui-area-chart-area-line-path-length);
+      stroke-dashoffset: var(--_openui-area-chart-area-line-path-length);
       animation: ${drawLineAnimation} 1s ease-out forwards;
     }
   `,
