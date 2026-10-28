@@ -1,4 +1,5 @@
-// #99 parity at the public Chromium seam; capture from #72, then compare both themes.
+// No intentional visual differences. #99 parity at the public Chromium seam; capture from #72,
+// then compare both themes.
 import { test } from "@playwright/test";
 import { checkParity } from "./parity/parity";
 
