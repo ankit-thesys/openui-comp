@@ -126,6 +126,8 @@ rule in a named cascade layer loses to the unlayered library rules.
 - The listed sources view, standalone CodeBlock and SliderBlock also retain their existing
   `!important` declarations. Syntax-highlighter theme maps and token output keep their third-party
   inline styles; use the code-block root class to restyle the block around that output.
+- The Tabs indicator's width and position are set inline as the active tab changes, so they are
+  not overridable; its colour and height are, through `.openui-tabs-indicator`.
 - Components that have not moved to the contract register their styles on import, behind a class on
   `<html>`, and keep the selectors documented under [Automatic styles](#automatic-styles). The
   package's `test/flat-allowlist.json` lists their modules; it must be empty before a stable release.
@@ -347,7 +349,6 @@ The private document guard contributes no specificity.
 | VisualCardBlock | `.openui-visual-card-block-card-clickable`, `.openui-visual-card-block-card-root` |
 | _shared/cards | `.openui-card-layout-scrollbar`, `.openui-card-layout-layout-small`, `.openui-card-layout-layout-medium` |
 | Accordion | `.openui-accordion-root` |
-| Tabs | `.openui-tabs-tabs`, `.openui-tabs-container`, `.openui-tabs-list-styled`, `.openui-tabs-trigger-styled`, `.openui-tabs-content-styled` |
 | Steps | `.openui-steps-root`, `.openui-steps-item` |
 | SectionBlock | `.openui-section-block-foldable-section-root`, `.openui-section-block-foldable-section-item`, `.openui-section-block-foldable-section-header`, `.openui-section-block-foldable-section-trigger`, `.openui-section-block-foldable-section-content`, `.openui-section-block-section-v2-root` |
 | Carousel | `.openui-carousel-carousel`, `.openui-carousel-content-styled`, `.openui-carousel-item-styled`, `.openui-carousel-button-styled` |
@@ -363,7 +364,7 @@ not beat those declarations, even when the same element also has Carousel's
 canonical item class. Use existing props/theme customization or intentionally
 important CSS where appropriate; this is not an ordinary-override pass.
 
-Clear Tabs overrides need its root, clear-state and relevant part context. Dark
+Dark
 Markdown descendant selectors retain their existing compound context. Vendor
 inline syntax themes, floating coordinates, live loader opacity and private
 keyframe identifiers keep their existing precedence and behavior.
@@ -659,6 +660,14 @@ Renamed stable classes and props, per component converted to the flat convention
 | IconButton | `appearance="normal"` prop | `tone="default"` (the default); emits `.openui-icon-button--tone-default` |
 | IconButton | `appearance="destructive"` prop | `tone="destructive"`; emits `.openui-icon-button--tone-destructive` |
 | IconButton | `.openui-icon-button-destructive-{primary,secondary,tertiary}` | `.openui-icon-button--tone-destructive` with `.openui-icon-button--variant-{…}` |
+| Tabs | `.openui-tabs-tabs` | Removed; use `.openui-tabs` |
+| Tabs | `.openui-tabs-clear` | `.openui-tabs--variant-clear` |
+| Tabs | `.openui-tabs-container` | `.openui-tabs-list-container` (the wrapper around the tablist) |
+| Tabs | `.openui-tabs-list-styled` | Removed; use `.openui-tabs-list` (the tablist) |
+| Tabs | `.openui-tabs-list--{title,icon-title,icon-title-subtext,image-title,image-title-subtext}` | `.openui-tabs-list--variant-{title,icon-title,icon-title-subtext,image-title,image-title-subtext}` |
+| Tabs | `.openui-tabs-trigger-styled` | Removed; use `.openui-tabs-trigger` |
+| Tabs | `.openui-tabs-content-styled` | Removed; use `.openui-tabs-content` |
+| Tabs | `.openui-tabs-clear .openui-tabs-trigger`, `.openui-tabs-list--… .openui-tabs-trigger-icon` and other context selectors | The single class of the element, such as `.openui-tabs-trigger` or `.openui-tabs-trigger-icon` |
 | MarkDownRenderer | `.openui-mark-down-renderer-markdown-root` | `.openui-markdown-renderer` |
 | MarkDownRenderer | `.openui-mark-down-renderer-markdown-code` | `.openui-markdown-renderer-code` |
 | MarkDownRenderer | `.openui-mark-down-renderer-markdown-link` | `.openui-markdown-renderer-link` |

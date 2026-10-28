@@ -4,8 +4,12 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { forwardRef, useCallback, useEffect, useRef, useState } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { IconButton } from "../IconButton";
-import { containerClass, contentClass, listClass, tabsClass, triggerClass } from "./tabs.styles";
+import { names as tabsNames, tabsStyles } from "./tabs.styles";
+import { names as contentNames, tabsContentStyles } from "./tabsContent.styles";
+import { names as listNames, tabsListStyles } from "./tabsList.styles";
+import { tabsTriggerStyles, names as triggerNames } from "./tabsTrigger.styles";
 
 type TabsVariant = "clear";
 
@@ -15,33 +19,24 @@ export interface TabsProps extends React.ComponentPropsWithoutRef<typeof TabsPri
   variant?: TabsVariant;
 }
 
-const tabsVariants: Record<TabsVariant, string> = {
-  clear: "openui-tabs-clear",
-};
-
 export const Tabs = forwardRef<React.ComponentRef<typeof TabsPrimitive.Root>, TabsProps>(
-  ({ className, style, variant = "clear", ...props }, ref) => (
-    <TabsPrimitive.Root
-      ref={ref}
-      className={clsx(tabsClass, "openui-tabs", tabsVariants[variant], className)}
-      style={style}
-      {...props}
-    />
-  ),
+  ({ className, style, variant = "clear", ...props }, ref) => {
+    const styles = useStyles(tabsStyles);
+    return (
+      <TabsPrimitive.Root
+        ref={ref}
+        className={clsx(styles.root, tabsNames.root, tabsNames.variant[variant], className)}
+        style={style}
+        {...props}
+      />
+    );
+  },
 );
 
 Tabs.displayName = "Tabs";
 
 type TabsListVariant =
   "title" | "iconTitle" | "iconTitleSubtext" | "imageTitle" | "imageTitleSubtext";
-
-const tabsListVariants: Record<TabsListVariant, string> = {
-  title: "openui-tabs-list--title",
-  iconTitle: "openui-tabs-list--icon-title",
-  iconTitleSubtext: "openui-tabs-list--icon-title-subtext",
-  imageTitle: "openui-tabs-list--image-title",
-  imageTitleSubtext: "openui-tabs-list--image-title-subtext",
-};
 
 export interface TabsListProps extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.List> {
   className?: string;
@@ -51,6 +46,7 @@ export interface TabsListProps extends React.ComponentPropsWithoutRef<typeof Tab
 
 export const TabsList = forwardRef<React.ComponentRef<typeof TabsPrimitive.List>, TabsListProps>(
   ({ className, style, variant = "title", ...props }, ref) => {
+    const styles = useStyles(tabsListStyles);
     const listRef = useRef<HTMLDivElement>(null);
     const indicatorRef = useRef<HTMLDivElement>(null);
     const [showLeftButton, setShowLeftButton] = useState(false);
@@ -160,11 +156,13 @@ export const TabsList = forwardRef<React.ComponentRef<typeof TabsPrimitive.List>
     };
 
     return (
-      <div className={clsx(containerClass, "openui-tabs-list-container")}>
+      <div className={clsx(styles.container, listNames.container)}>
         {showLeftButton && (
-          <div className="openui-tabs-scroll-button-container-left">
+          <div
+            className={clsx(styles.scrollButtonContainerLeft, listNames.scrollButtonContainerLeft)}
+          >
             <IconButton
-              className="openui-tabs-scroll-button openui-tabs-scroll-left"
+              className={clsx(listNames.scrollButton, listNames.scrollLeft)}
               onClick={scrollLeft}
               aria-label="Scroll tabs left"
               icon={<ChevronLeft />}
@@ -183,17 +181,28 @@ export const TabsList = forwardRef<React.ComponentRef<typeof TabsPrimitive.List>
             }
             listRef.current = node;
           }}
-          className={clsx(listClass, "openui-tabs-list", tabsListVariants[variant], className)}
+          className={clsx(
+            styles.root,
+            styles.variant[variant],
+            listNames.root,
+            listNames.variant[variant],
+            className,
+          )}
           style={style}
           {...props}
         />
 
-        <div className="openui-tabs-indicator" ref={indicatorRef} />
+        <div className={clsx(styles.indicator, listNames.indicator)} ref={indicatorRef} />
 
         {showRightButton && (
-          <div className="openui-tabs-scroll-button-container-right">
+          <div
+            className={clsx(
+              styles.scrollButtonContainerRight,
+              listNames.scrollButtonContainerRight,
+            )}
+          >
             <IconButton
-              className="openui-tabs-scroll-button openui-tabs-scroll-right"
+              className={clsx(listNames.scrollButton, listNames.scrollRight)}
               onClick={scrollRight}
               aria-label="Scroll tabs right"
               icon={<ChevronRight />}
@@ -224,26 +233,29 @@ export interface TabsTriggerProps extends React.ComponentPropsWithoutRef<
 export const TabsTrigger = forwardRef<
   React.ComponentRef<typeof TabsPrimitive.Trigger>,
   TabsTriggerProps
->(({ className, style, icon, text, subtext, image, value, ...props }, ref) => (
-  <TabsPrimitive.Trigger
-    ref={ref}
-    className={clsx(triggerClass, "openui-tabs-trigger", className)}
-    style={style}
-    value={value}
-    {...props}
-  >
-    {image && (
-      <span className="openui-tabs-trigger-image">
-        <img src={image} alt="" />
+>(({ className, style, icon, text, subtext, image, value, ...props }, ref) => {
+  const styles = useStyles(tabsTriggerStyles);
+  return (
+    <TabsPrimitive.Trigger
+      ref={ref}
+      className={clsx(styles.root, triggerNames.root, className)}
+      style={style}
+      value={value}
+      {...props}
+    >
+      {image && (
+        <span className={clsx(styles.image, triggerNames.image)}>
+          <img className={clsx(styles.img, triggerNames.img)} src={image} alt="" />
+        </span>
+      )}
+      {icon && <span className={clsx(styles.icon, triggerNames.icon)}>{icon}</span>}
+      <span className={clsx(styles.content, triggerNames.content)}>
+        {text && <span className={clsx(styles.text, triggerNames.text)}>{text}</span>}
+        {subtext && <span className={clsx(styles.subtext, triggerNames.subtext)}>{subtext}</span>}
       </span>
-    )}
-    {icon && <span className="openui-tabs-trigger-icon">{icon}</span>}
-    <span className="openui-tabs-trigger-content">
-      {text && <span className="openui-tabs-trigger-text">{text}</span>}
-      {subtext && <span className="openui-tabs-trigger-subtext">{subtext}</span>}
-    </span>
-  </TabsPrimitive.Trigger>
-));
+    </TabsPrimitive.Trigger>
+  );
+});
 
 TabsTrigger.displayName = "TabsTrigger";
 
@@ -258,15 +270,18 @@ export interface TabsContentProps extends React.ComponentPropsWithoutRef<
 export const TabsContent = forwardRef<
   React.ComponentRef<typeof TabsPrimitive.Content>,
   TabsContentProps
->(({ className, style, children, ...props }, ref) => (
-  <TabsPrimitive.Content
-    ref={ref}
-    className={clsx(contentClass, "openui-tabs-content", className)}
-    style={style}
-    {...props}
-  >
-    <div className="openui-tabs-content-inner">{children}</div>
-  </TabsPrimitive.Content>
-));
+>(({ className, style, children, ...props }, ref) => {
+  const styles = useStyles(tabsContentStyles);
+  return (
+    <TabsPrimitive.Content
+      ref={ref}
+      className={clsx(styles.root, contentNames.root, className)}
+      style={style}
+      {...props}
+    >
+      <div className={clsx(styles.inner, contentNames.inner)}>{children}</div>
+    </TabsPrimitive.Content>
+  );
+});
 
 TabsContent.displayName = "TabsContent";

@@ -15,7 +15,7 @@ import { migratedComponents } from "./components";
 export function describeContract(folder: string) {
   const entry = migratedComponents.find((component) => component.folder === folder);
   if (!entry) throw new Error(`${folder} is not in test/unit/contract/components.tsx.`);
-  const { elements } = entry;
+  const { elements, clientOnly = [] } = entry;
   describe(folder, () => {
     const { html, css } = renderAndCollect(elements());
     const layered = renderAndCollect(
@@ -49,7 +49,8 @@ export function describeContract(folder: string) {
     });
 
     it("renders exactly its documented stable classes", () => {
-      expect([...stableClassesIn(html)].sort()).toEqual([...namesIn(entry.names)].sort());
+      const serverRendered = [...namesIn(entry.names)].filter((name) => !clientOnly.includes(name));
+      expect([...stableClassesIn(html)].sort()).toEqual(serverRendered.sort());
     });
 
     it("puts every rule in the openui layer in layer mode, within the same budget", () => {

@@ -11,6 +11,10 @@ describe("selector reference", () => {
   it("documents Button from its stable names", async () => {
     const reference = renderSelectorReference(await readStableNames());
     expect(reference).toContain("## Button");
+    expect(reference).toContain("## Tabs (TabsList)");
+    expect(reference).toContain(
+      '| `.openui-tabs-list--variant-icon-title` | Modifier | `variant="iconTitle"` |',
+    );
     expect(reference).toContain(
       '| `.openui-button--tone-destructive` | Modifier | `tone="destructive"` |',
     );

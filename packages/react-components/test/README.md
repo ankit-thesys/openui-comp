@@ -80,7 +80,8 @@ regenerate the reference, and add a parity spec. The list must be empty before a
 
 Converted components must render exactly as they did before the flat-styles pilot. A parity spec
 (`<component>.parity.spec.ts`) snapshots computed styles of every `[data-parity-case]` element in
-a `parity-<component>` fixture, plus its `[data-parity-part]` children, at rest, hovered and pressed,
+a `parity-<component>` fixture, plus its `[data-parity-part]` children and any parts named by
+selector in the case's `data-parity-parts` JSON (for parts the component renders itself), at rest, hovered and pressed,
 in light and dark. It compares them with `parity/baselines/<component>.json`, captured from the
 source at #72's head (`5e09b37c`). A case's id names its props, so a component with renamed props
 renders the same cases from both sources: `__PARITY_BASELINE__` is `true` in the baseline bundle.
