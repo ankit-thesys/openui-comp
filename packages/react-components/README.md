@@ -57,37 +57,69 @@ mechanism. `useThemeModePreference` keeps JSON localStorage preferences and the
 `data-openui-theme` document attribute; it does not synchronize separate hook
 instances or browser tabs.
 
-## Automatic styles
+## Styling and overrides
 
-Owned component styles use unmodified Goober module-scope `css` calls and do not
-require a CSS import, setup command or styling build plugin. Styles register
-when a referenced module evaluates, before the component renders. The build
-preserves modules and marks unused modules removable by the consumer's bundler.
-A bundler may combine several retained components in a shared lazy chunk; their
-styles can register together when that chunk evaluates. This is not a guarantee
-of a separate stylesheet or network chunk for each component.
+Components are moving to one styling contract: restyle any part of a component with a single
+documented class, without `!important`. Components that follow it are listed, with every class, in
+the [stable class reference](docs/reference/selectors.md), which is generated from the components'
+own class constants. Other components keep their earlier selectors, documented under
+[Automatic styles](#automatic-styles), until they move.
 
-Importing the package also registers the existing light-theme token defaults on
-the document root, without a provider. These defaults occupy the first CSS layer,
-so normal host token declarations override them, including declarations in named
-layers. Inherited container overrides and ThemeProvider scopes remain supported;
-system dark mode does not change the provider-free defaults.
+### Class names
 
-Component-level `var()` fallbacks are intentionally retained. Clearing an
-inherited token, for example with `--openui-interactive-accent-default: initial`,
-still uses the component's existing default. Automatic root defaults complement
-that behavior; they do not replace the fallback when a consumer clears a token.
+| Kind | Pattern | Example |
+| --- | --- | --- |
+| Root | `openui-<component>` | `openui-button` |
+| Part | `openui-<component>-<part>` | `openui-button-icon` |
+| Modifier | `openui-<block>--<prop>-<value>` | `openui-button--variant-primary` |
+| Boolean modifier | `openui-<block>--<prop>` | present only when the prop is `true` |
 
-Buttons, FormControl and TagBlock share a root-only `box-sizing: border-box`
-declaration. Descendant styling, component layout and state rules remain local.
+- `<component>` is the exported component name in kebab case. Sub-components and portal content
+  belong to their component's family (`openui-tabs-trigger`).
+- The root is the element that receives your `className`, `style` and `ref`; other elements the
+  component renders are parts.
+- A modifier names the prop and its value in kebab case, and the current value is always present,
+  defaults included: a plain `<Button>` carries `openui-button--variant-primary`,
+  `openui-button--size-medium` and `openui-button--tone-default`.
 
-Chrome with plain CSS, Tailwind v3 and Tailwind v4 is the current browser target.
-Host preflight remains enabled. Ordinary utility classes do not necessarily beat
-component defaults. Intentional overrides can use scoped important CSS or the
-framework's important utility modifier: Tailwind v3 `!bg-red-500`, Tailwind v4
-`bg-red-500!`. Existing component props, inline styles and theme tokens remain
-the primary customization APIs. Replacing host styles dynamically after mount
-has not been certified.
+### States
+
+Runtime states use the attributes the element already has, never extra classes: `:hover`,
+`:active`, `:disabled`, `:focus-visible`, `[aria-*]` and Radix `[data-state]`. Add the same state
+to a stable class to restyle it:
+
+```css
+.openui-button--variant-primary { background: navy; }
+.openui-button--variant-primary:hover { background: midnightblue; }
+```
+
+### The override guarantee
+
+Library rules for these components weigh one generated class, plus at most one state. Content the
+library does not render itself (your children, icons inside an icon part) is styled at zero weight.
+A rule of yours on a stable class, with the same state where you need one, therefore wins:
+
+- whether your CSS loads before or after the library, because the library's `<style id="_goober">`
+  is placed first in `<head>`, ahead of app stylesheets;
+- after `<html class>` is rewritten, for example by a theme script, because nothing depends on a
+  class on `<html>`;
+- with no `!important` and no wrapper selector.
+
+Load order: the token defaults' `@layer openui-defaults;` declaration comes first in `<head>`, then
+the library sheet, then your CSS. If you place `<style id="_goober">` yourself, the library reuses it
+where it is; keep it before your stylesheets and put a single space inside it (Goober writes into its
+text node and fails on an empty tag).
+
+Your rule has to match the library's shape: a resting-state rule does not restyle `:hover`, and a
+rule in a named cascade layer loses to the unlayered library rules.
+
+### Exceptions
+
+- A few `!important` declarations remain, in MarkDownRenderer, the listed sources view, CodeBlock and
+  SliderBlock, where they override inline styles from third-party renderers.
+- Components that have not moved to the contract register their styles on import, behind a class on
+  `<html>`, and keep the selectors documented under [Automatic styles](#automatic-styles). The
+  package's `test/flat-allowlist.json` lists their modules; it must be empty before a stable release.
 
 ### Cascade layer mode
 
@@ -116,8 +148,7 @@ first in `<head>`, before any stylesheet, in this order:
 ```
 
 The library writes its rules into that `#_goober` tag instead of creating its
-own. Keep the single space inside it: an empty tag fails on the first style
-registration. With this recipe, Tailwind 4 utilities such as `bg-red-500` beat
+own. With this recipe, Tailwind 4 utilities such as `bg-red-500` beat
 Button, and Tailwind's preflight in `base` does not reset it.
 
 Writing the same `@layer` statement only in the app's CSS file does not work.
@@ -134,41 +165,68 @@ preflight `[type='button'] { background-color: transparent }` clears button
 backgrounds. Tailwind 3 emits its preflight unlayered, so it beats layered rules:
 use layer mode with Tailwind 4, not Tailwind 3.
 
+## Automatic styles
+
+Owned component styles use stock Goober and do not require a CSS import, setup
+command or styling build plugin. Components on the styling contract above register
+their styles the first time they render; the others register when a referenced
+module evaluates, before the component renders. The build
+preserves modules and marks unused modules removable by the consumer's bundler.
+A bundler may combine several retained components in a shared lazy chunk; their
+styles can register together when that chunk evaluates. This is not a guarantee
+of a separate stylesheet or network chunk for each component.
+
+Importing the package also registers the existing light-theme token defaults on
+the document root, without a provider. These defaults occupy the first CSS layer,
+so normal host token declarations override them, including declarations in named
+layers. Inherited container overrides and ThemeProvider scopes remain supported;
+system dark mode does not change the provider-free defaults.
+
+Component-level `var()` fallbacks are intentionally retained. Clearing an
+inherited token, for example with `--openui-interactive-accent-default: initial`,
+still uses the component's existing default. Automatic root defaults complement
+that behavior; they do not replace the fallback when a consumer clears a token.
+
+Buttons, FormControl and TagBlock share a root-only `box-sizing: border-box`
+declaration. Descendant styling, component layout and state rules remain local.
+
+Chrome with plain CSS, Tailwind v3 and Tailwind v4 is the current browser target.
+Host preflight remains enabled. Ordinary utility classes do not necessarily beat
+component defaults. Intentional overrides can use scoped important CSS or the
+framework's important utility modifier: Tailwind v3 `!bg-red-500`, Tailwind v4
+`bg-red-500!`. Existing component props, inline styles and theme tokens remain
+the primary customization APIs. Replacing host styles dynamically after mount
+has not been certified.
+
 ### Stable selectors
 
-Button and IconButton use stable styling targets. Button follows the flat
-convention: each stable class is a single class, every prop emits its current
-value (defaults included), and its rules register through stock Goober the first
-time a Button renders, with nothing added to `html`. Library rules weigh one
-class, plus one state such as `:hover`, and the library sheet is placed first in
-`<head>`, so a consumer rule of the same shape wins whether it loads before or
-after the library: `.openui-button--variant-primary` for the resting look,
-`.openui-button--variant-primary:hover` for the hover look.
-IconButton still registers on import: a private generated class on `html` is
-contained in `:where(...:root)` and adds zero specificity. Consumers do not use
-that class. The documented batches below share this mechanism;
+The selectors in this and the following sections belong to components that have
+not moved to the [styling contract](#styling-and-overrides) yet; Button has, and
+is documented in the [stable class reference](docs/reference/selectors.md).
+IconButton uses stable styling targets that register on import: a private
+generated class on `html` is contained in `:where(...:root)` and adds zero
+specificity. Consumers do not use that class. The documented batches below share this mechanism;
 EditableTable retains its existing selectors. Chart-owned targets are documented
 in the Charts section below.
 
-| Target | Button | IconButton |
-| --- | --- | --- |
-| Root | `.openui-button` | `.openui-icon-button-root` |
-| Preserved root alias | None | `.openui-icon-button` |
-| Variant | `.openui-button--variant-primary` (also secondary/tertiary) | `.openui-icon-button-primary` (also secondary/tertiary) |
-| Destructive | `tone="destructive"`: `.openui-button--tone-destructive` (default `.openui-button--tone-default`) | `.openui-icon-button-destructive-primary` (also secondary/tertiary) |
-| Size | `.openui-button--size-{extra-small,small,medium,large}` | `.openui-icon-button-{3-extra-small,2-extra-small,extra-small,small,medium,large}` |
-| Shape | Existing Button geometry | `.openui-icon-button-square`, `.openui-icon-button-circle` |
-| State | `:hover`, `:active`, `:disabled` on any Button class | `:hover:not(:disabled)`, `:active:not(:disabled)`, `:disabled` |
-| Owned part | `.openui-button-icon` (span around `iconLeft` and `iconRight`) | `.openui-icon-button-icon` (existing span) |
+| Target | IconButton |
+| --- | --- |
+| Root | `.openui-icon-button-root` |
+| Preserved root alias | `.openui-icon-button` |
+| Variant | `.openui-icon-button-primary` (also secondary/tertiary) |
+| Destructive variant | `.openui-icon-button-destructive-primary` (also secondary/tertiary) |
+| Size | `.openui-icon-button-{3-extra-small,2-extra-small,extra-small,small,medium,large}` |
+| Shape | `.openui-icon-button-square`, `.openui-icon-button-circle` |
+| State | `:hover:not(:disabled)`, `:active:not(:disabled)`, `:disabled` |
+| Owned part | `.openui-icon-button-icon` (existing span) |
 
 Use ordinary **later, unlayered CSS** with the corresponding selector. Root rules
 have one class of specificity; variants, sizes, states and parts retain their
 additional selectors. For example:
 
 ```css
-.openui-button { border-width: 2px; }
-.openui-button--variant-primary { background: navy; }
-.openui-button--variant-primary:disabled { cursor: wait; }
+.openui-icon-button-root { border-width: 2px; }
+.openui-icon-button-root.openui-icon-button-primary { background: navy; }
 .openui-icon-button-root .openui-icon-button-icon { gap: 4px; }
 ```
 
@@ -337,6 +395,50 @@ are converted independently of vendor syntax theme objects and official KaTeX
 CSS/fonts. Existing per-instance inline geometry and colors, ThemeProvider
 serialization and animation behavior retain their contracts.
 
+### Server-rendered styles
+
+On the server, component styles live in Goober's in-memory sheet. Converted components register
+their rules the first time they render, so a server **renders first, then collects** the CSS with
+`getComponentStyles()`, and inlines it as the **first** element of `<head>`, ahead of the app's own
+stylesheets:
+
+```tsx
+import { getComponentStyles } from "@openuidev/react-components";
+import { renderToString } from "react-dom/server";
+
+const html = renderToString(<App />); // 1. render: registers the styles this page uses
+const css = getComponentStyles(); // 2. collect, after rendering
+const page = `<!doctype html>
+<html>
+  <head>
+    <style id="_goober">${css}</style>
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body><div id="root">${html}</div></body>
+</html>`;
+```
+
+- The page is styled before JavaScript runs, and app CSS after the sheet overrides converted
+  components' equal-weight rules.
+- Keep the `_goober` id: the browser adopts that element instead of injecting a second sheet.
+- Inline the returned string as is. It is never empty, because the browser writes into the
+  element's first text node and an empty `<style id="_goober"></style>` breaks the first style
+  registration.
+- Every call returns the full sheet collected so far, so concurrent requests cannot take each
+  other's rules. The sheet is cumulative for the life of the process: a response may carry rules
+  for components another request rendered, which is harmless.
+- Do not call Goober's own `extractCss` from the same Goober instance: it empties the sheet before
+  `getComponentStyles()` can collect it. Rules the application registers with that instance are
+  included.
+- ThemeProvider writes its theme variables in the browser, so a server-rendered first paint uses
+  the components' built-in light values; `mode="dark"`, `lightTheme` and `darkTheme` apply once
+  client JavaScript runs. Host `:root { --openui-… }` declarations in the app's own CSS apply from
+  the first paint.
+- **Streaming SSR is not supported yet.** With `renderToPipeableStream`, Next.js App Router or
+  other streaming renderers, `<head>` is sent before most components render, so their styles are
+  missing from the first paint. Those components are unstyled until client JavaScript renders
+  them, then styled normally; nothing breaks.
+
 ### Math styles and fonts
 
 TextContentWrapper retains its lazy math renderer and automatically imports
@@ -467,9 +569,9 @@ performance. The chart selector gate remains pending independent verification.
 ## Support boundary and inherited behavior
 
 React/ReactDOM19 are required. Zod3.25+ or4 and Zustand4.5.5+ remain peer
-dependencies. **SSR, hydration, streaming SSR and concurrent server style
-isolation are deferred.** Node imports and declarations do not establish SSR
-support. Client-side OpenUI response streaming is a separate capability.
+dependencies. Non-streaming server rendering is supported with `getComponentStyles()` (see
+[Server-rendered styles](#server-rendered-styles)). **Streaming SSR is deferred, and hydration is
+not certified.** Client-side OpenUI response streaming is a separate capability.
 
 Extraction preserves inherited behavior rather than redesigning it:
 
@@ -494,30 +596,43 @@ remain external dependencies. Build inputs contain no old SCSS or generated CSS.
 
 ### Authoring styles
 
-Component declarations and keyframes use stock Goober tagged template strings.
-Reusable declaration fragments are plain template strings, interpolated where
-needed; registration remains at the existing module-level call site:
+Converted components follow the [styling contract](#styling-and-overrides). A
+style module exports a `names` constant with its stable classes, the single source
+for the markup and the generated reference, and a factory that receives Goober's
+`css` and returns plain class maps. Components read them with the internal
+`useStyles` hook, which registers the rules on first render:
 
 ```ts
-const body = `
-  font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
-`;
-const scope = css`
-  :where(&:root) {
-    .openui-example-root {
-      ${body}
-      display: flex;
-      &:disabled {
-        cursor: not-allowed;
-      }
+// example.styles.ts
+export const names = {
+  root: "openui-example",
+  label: "openui-example-label",
+  size: { small: "openui-example--size-small", medium: "openui-example--size-medium" },
+} as const;
+
+export const exampleStyles = (css: StyleCss) => ({
+  root: css`
+    display: flex;
+    &:disabled {
+      cursor: not-allowed;
     }
-  }
-`;
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(scope);
-}
-const rootClass = "openui-example-root";
+  `,
+  size: { small: css`padding: 4px;`, medium: css`padding: 8px;` },
+  label: css`font-weight: 500;`,
+});
+
+// Example.tsx
+const styles = useStyles(exampleStyles);
+<div className={clsx(styles.root, styles.size[size], names.root, names.size[size], className)} />;
 ```
+
+Each rule is one class plus at most one state. A parent's prop that changes a
+part's value travels through a private `--_openui-<component>-*` variable the
+part reads, not a descendant selector. After changing `names`, run
+`pnpm docs:selectors` to regenerate the reference. The unit tests enforce the
+selector budget, the naming grammar and the migration allowlist; see
+`test/README.md`. Modules on the allowlist keep their module-level `css` call
+behind a class on `html` until they are converted.
 
 Keep selector specificity, declaration order, token fallbacks and keyframe timing
 when editing styles. Use CSS units explicitly: Goober does not add `px` to numeric
