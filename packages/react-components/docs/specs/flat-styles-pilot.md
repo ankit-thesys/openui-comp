@@ -76,6 +76,8 @@ Runtime state uses existing attributes; no state classes. Consumers write e.g. `
   <style id="_goober"></style>
   ```
 
+  The library tag must contain one space: Goober 2.1.19 writes into the tag's first text node, and an empty tag crashes the first style registration (found while implementing #78).
+
   Layer priority follows where a layer first appears in the document. Writing the statement in the app's CSS file is not enough: `#_goober` sits above it, so `openui` would be declared first and lose to Tailwind's `base` (verified in Chromium against Tailwind 4.1). The library reuses the consumer's `#_goober` (Q23) and emits no layer statement of its own (Goober cannot emit one).
 
 ### 4.5 Private surface (Q14, Q24, Q34)
