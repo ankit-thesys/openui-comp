@@ -64,8 +64,6 @@
   "src/components/Skeleton/Skeleton.tsx",
   "src/components/Skeleton/SkeletonBar.tsx",
   "src/components/Skeleton/TableSkeleton.tsx",
-  "src/components/Slider/Slider.tsx",
-  "src/components/Slider/SliderBlock.tsx",
   "src/components/SnippetCardBlock/snippetCardBlock.styles.ts",
   "src/components/SourceFaviconImage/sourceFaviconImage.styles.ts",
   "src/components/Sources/listedSources.styles.ts",

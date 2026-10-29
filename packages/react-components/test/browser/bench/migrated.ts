@@ -60,10 +60,10 @@ export async function openMigrated(
   }
   // The ordinary matrix uses untyped buttons. The typed-background tests explicitly restore
   // type=button, including Radix's automatically typed triggers and any portal buttons.
-  if (["Select", "Calendar", "DatePicker"].includes(component.folder))
+  if (["Select", "Calendar", "DatePicker", "Slider"].includes(component.folder))
     await page
       .locator("button")
       .evaluateAll((buttons) => buttons.forEach((button) => button.removeAttribute("type")));
-  if (targetClass && ["Select", "Calendar", "DatePicker"].includes(component.folder))
+  if (targetClass && ["Select", "Calendar", "DatePicker", "Slider"].includes(component.folder))
     await expect(page.locator(`.${targetClass}`).first()).toBeAttached();
 }
