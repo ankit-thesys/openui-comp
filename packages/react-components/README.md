@@ -7,7 +7,11 @@ to stock Goober. The existing `@openuidev/react-ui` remains unchanged.
 ## Imports and customization
 
 All public components, supporting parts and types come from the package root.
-There are no component subpath exports or new styling props.
+There are no component subpath exports. The only new styling props are the card
+looks on a few shared components (Tag `surface`; TextBlock, IconText and ImageText
+`overflow` and `width`; MarkDownRenderer and InlineMarkdownRenderer `typography`;
+MarkDownRenderer `listLeadIn`), listed under
+[Primitive props for cards](#primitive-props-for-cards).
 
 ```tsx
 import { Button, Input, TextArea, ThemeProvider } from "@openuidev/react-components";
