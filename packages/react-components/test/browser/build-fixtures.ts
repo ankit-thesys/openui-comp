@@ -24,6 +24,9 @@ const fixtures = [
   "parity-markdown",
   "tabs",
   "parity-tabs",
+  "shared-base",
+  "parity-shared-base",
+  "parity-skeleton-pulse",
 ];
 const parityFixtures = fixtures.filter((name) => name.startsWith("parity-"));
 

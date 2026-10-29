@@ -2,7 +2,9 @@
 
 import clsx from "clsx";
 import { css } from "goober";
+import { useStyles } from "../../styles/useStyles";
 import { barStyles } from "./skeleton.styles";
+import { names as pulseNames, skeletonPulseStyles } from "./skeletonPulse";
 const componentClass = "openui-skeleton-bar-root";
 interface SkeletonBarProps {
   height: string;
@@ -11,9 +13,10 @@ interface SkeletonBarProps {
 }
 
 export function SkeletonBar({ height, width, borderRadius }: SkeletonBarProps) {
+  const pulse = useStyles(skeletonPulseStyles);
   return (
     <div
-      className={clsx(componentClass, "openui-skeleton-bar")}
+      className={clsx(componentClass, "openui-skeleton-bar", pulse.root, pulseNames.root)}
       style={{
         height,
         width,

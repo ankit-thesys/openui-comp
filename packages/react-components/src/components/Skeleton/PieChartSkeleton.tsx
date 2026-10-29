@@ -2,8 +2,10 @@
 
 import clsx from "clsx";
 import { css } from "goober";
+import { useStyles } from "../../styles/useStyles";
 import { pieStyles } from "./pieChartSkeleton.styles";
 import { SkeletonBar } from "./SkeletonBar";
+import { names as pulseNames, skeletonPulseStyles } from "./skeletonPulse";
 const componentClass = "openui-skeleton-pie-chart-skeleton-root";
 export function PieChartSkeleton({
   size = 200,
@@ -16,10 +18,13 @@ export function PieChartSkeleton({
   variant?: "pie" | "donut";
   appearance?: "circular" | "semiCircular";
 }) {
+  const pulse = useStyles(skeletonPulseStyles);
   const isSemi = appearance === "semiCircular";
   const isDonut = variant === "donut";
 
   const chartClass = clsx(
+    pulse.root,
+    pulseNames.root,
     "openui-skeleton-pie-chart-shape",
     isSemi && isDonut
       ? "openui-skeleton-pie-chart-semi-donut"
@@ -40,7 +45,9 @@ export function PieChartSkeleton({
       <div className="openui-skeleton-pie-chart-legend">
         {Array.from({ length: legendItems }, (_, i) => (
           <div key={i} className="openui-skeleton-pie-chart-legend-item">
-            <div className="openui-skeleton-pie-chart-legend-dot" />
+            <div
+              className={clsx("openui-skeleton-pie-chart-legend-dot", pulse.root, pulseNames.root)}
+            />
             <SkeletonBar height="12px" width={`${50 + ((i * 15) % 40)}%`} />
           </div>
         ))}

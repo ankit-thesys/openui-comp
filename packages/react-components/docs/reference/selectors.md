@@ -100,3 +100,15 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-tabs-trigger-content` | Part (`content`) | On that part, whenever it renders |
 | `.openui-tabs-trigger-text` | Part (`text`) | On that part, whenever it renders |
 | `.openui-tabs-trigger-subtext` | Part (`subtext`) | On that part, whenever it renders |
+
+## SharedBase
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-border-box` | Root | Always |
+
+## SkeletonPulse
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-skeleton-pulse` | Root | Always |

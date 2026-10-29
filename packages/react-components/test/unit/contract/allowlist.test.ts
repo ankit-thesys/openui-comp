@@ -5,7 +5,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { migratedComponents } from "./components";
+import { migratedComponents, sharedStyleContracts } from "./components";
 
 const packageRoot = fileURLToPath(new URL("../../../", import.meta.url));
 const allowlist: string[] = JSON.parse(
@@ -52,9 +52,15 @@ describe("flat-styles migration allowlist", () => {
       ...new Set(
         files
           .filter((file) => /^export const names\b/m.test(read(file)))
-          .map((file) => file.split("/")[2]),
+          .map(
+            (file) =>
+              sharedStyleContracts.find((entry) => entry.module === file)?.folder ??
+              file.split("/")[2],
+          ),
       ),
     ];
-    expect(withNames.sort()).toEqual(migratedComponents.map(({ folder }) => folder).sort());
+    expect(withNames.sort()).toEqual(
+      [...migratedComponents, ...sharedStyleContracts].map(({ folder }) => folder).sort(),
+    );
   });
 });

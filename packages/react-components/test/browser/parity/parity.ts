@@ -47,7 +47,14 @@ const PROPERTIES = [
 const measure = (root: Element, properties: string[]) => {
   const out: Record<string, string> = {};
   const record = (el: Element, prefix: string) => {
-    el.getAnimations().forEach((animation) => animation.finish());
+    el.getAnimations().forEach((animation) => {
+      // Infinite skeleton pulses cannot finish (the Web Animations API throws). Compare the
+      // same first frame in #72 and the current build; the pulse spec checks progression.
+      if (animation.effect?.getTiming().iterations === Infinity) {
+        animation.pause();
+        animation.currentTime = 0;
+      } else animation.finish();
+    });
     const style = getComputedStyle(el);
     for (const property of properties)
       out[`${prefix}${property}`] = style.getPropertyValue(property);
