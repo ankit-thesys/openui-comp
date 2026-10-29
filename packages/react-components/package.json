@@ -30,7 +30,8 @@
   "files": [
     "dist",
     "README.md",
-    "THIRD_PARTY_NOTICES.md"
+    "THIRD_PARTY_NOTICES.md",
+    "docs/reference/selectors.md"
   ],
   "scripts": {
     "build": "tsdown",

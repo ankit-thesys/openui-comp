@@ -19,6 +19,8 @@ const allowed = [
   /^THIRD_PARTY_NOTICES\.md$/,
   /^eslint\.config\.[cm]?js$/,
 ];
+// Test code never ships, even under src/.
+const denied = /\.(test|spec|stories)\.[cm]?[jt]sx?$|(^|\/)__tests__\//;
 const libraryFiles = execFileSync(
   "git",
   ["ls-files", "--cached", "--others", "--exclude-standard", "--full-name", "--", "."],
@@ -30,7 +32,11 @@ const libraryFiles = execFileSync(
 
 it("keeps only the shipped files in packages/react-components", () => {
   expect(libraryFiles.length).toBeGreaterThan(0);
-  expect(libraryFiles.filter((file) => !allowed.some((pattern) => pattern.test(file)))).toEqual([]);
+  expect(
+    libraryFiles.filter(
+      (file) => !allowed.some((pattern) => pattern.test(file)) || denied.test(file),
+    ),
+  ).toEqual([]);
 });
 
 // The package.json `files` entries (expanded), package.json itself and the source upstream reviews.
@@ -41,7 +47,7 @@ const below = (path: string): string[] =>
         .map((file) => join(path, file))
         .filter((file) => statSync(library(file)).isFile())
     : [path];
-const shipped = ["package.json", ...manifest.files.flatMap(below), ...below("src")];
+const shipped = [...new Set(["package.json", ...manifest.files.flatMap(below), ...below("src")])];
 
 it("publishes nothing that references fork/", () => {
   expect(shipped).toContain("README.md");
@@ -49,4 +55,19 @@ it("publishes nothing that references fork/", () => {
   expect(shipped.filter((file) => /\bfork\//.test(readFileSync(library(file), "utf8")))).toEqual(
     [],
   );
+});
+
+// Ticket numbers belong to the fork's tracker; upstream reads them as its own PRs. Matches `#NN` in
+// source comments and in the shipped docs, not colours (a colour is code, not a comment).
+const ticketRef = /(^|[^\w&/])#\d{1,4}\b/;
+const commentsOf = (text: string) => (text.match(/\/\/.*|\/\*[\s\S]*?\*\//g) ?? []).join("\n");
+
+it("publishes no fork ticket numbers", () => {
+  const texts = shipped
+    .filter((file) => !file.startsWith("dist/"))
+    .map((file) => {
+      const text = readFileSync(library(file), "utf8");
+      return [file, /\.[cm]?[jt]sx?$/.test(file) ? commentsOf(text) : text] as const;
+    });
+  expect(texts.filter(([, text]) => ticketRef.test(text)).map(([file]) => file)).toEqual([]);
 });
