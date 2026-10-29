@@ -30,6 +30,9 @@ interface CondensedXAxisProps {
   /** Width of the y-axis to the axis' left — as far as rotated labels may reach. */
   yAxisWidth: number;
   classPrefix: string;
+  classes?: Partial<Record<"xAxis" | "group" | "hitTarget" | "tickLine", string>>;
+  tickClassName?: string;
+  angledTickClassName?: string;
 }
 
 /**
@@ -48,6 +51,9 @@ export const CondensedXAxis: React.FC<CondensedXAxisProps> = ({
   chartWidth,
   yAxisWidth,
   classPrefix,
+  classes,
+  tickClassName,
+  angledTickClassName,
 }) => {
   const ctx = useCanvasContextForLabelSize();
   const lineHeight = parseLineHeight(ctx.font);
@@ -57,7 +63,7 @@ export const CondensedXAxis: React.FC<CondensedXAxisProps> = ({
   const isAngled = angle !== 0;
 
   return (
-    <g className={`${classPrefix}-x-axis`}>
+    <g className={classes?.xAxis ?? `${classPrefix}-x-axis`}>
       {domain.map((category, i) => {
         if (i % labelInterval !== 0) return null;
         const label = String(category);
@@ -73,9 +79,10 @@ export const CondensedXAxis: React.FC<CondensedXAxisProps> = ({
           const transform = `rotate(${angle}, ${cx}, ${y})`;
           return (
             <LabelTooltip key={category} content={label} disabled={text === label}>
-              <g>
+              <g className={classes?.group}>
                 {text !== label && (
                   <rect
+                    className={classes?.hitTarget}
                     x={cx - textWidth}
                     y={y}
                     width={textWidth}
@@ -89,7 +96,7 @@ export const CondensedXAxis: React.FC<CondensedXAxisProps> = ({
                   y={y}
                   textAnchor="end"
                   dominantBaseline="hanging"
-                  className={`${classPrefix}-x-tick-angled`}
+                  className={angledTickClassName ?? `${classPrefix}-x-tick-angled`}
                   transform={transform}
                 >
                   {text}
@@ -113,19 +120,31 @@ export const CondensedXAxis: React.FC<CondensedXAxisProps> = ({
         const x = Math.min(Math.max(cx, left + half), right - half);
         return (
           <LabelTooltip key={category} content={label} disabled={!truncated}>
-            <g>
+            <g className={classes?.group}>
               {truncated && (
-                <rect x={left} y={0} width={right - left} height={labelHeight} fill="transparent" />
+                <rect
+                  className={classes?.hitTarget}
+                  x={left}
+                  y={0}
+                  width={right - left}
+                  height={labelHeight}
+                  fill="transparent"
+                />
               )}
               <text
                 x={x}
                 y={y}
                 textAnchor="middle"
                 dominantBaseline="hanging"
-                className={`${classPrefix}-x-tick`}
+                className={tickClassName ?? `${classPrefix}-x-tick`}
               >
                 {lines.map((line, li) => (
-                  <tspan key={li} x={x} dy={li === 0 ? 0 : lineHeight}>
+                  <tspan
+                    className={classes?.tickLine}
+                    key={li}
+                    x={x}
+                    dy={li === 0 ? 0 : lineHeight}
+                  >
                     {line}
                   </tspan>
                 ))}

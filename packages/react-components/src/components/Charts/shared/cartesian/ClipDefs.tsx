@@ -6,14 +6,23 @@ const CLIP_OVERFLOW = 6;
 
 interface ClipDefsProps {
   chartId: string;
+  className?: string;
+  rectClassName?: string;
   chartWidth: number;
   chartHeight: number;
 }
 
-export const ClipDefs: React.FC<ClipDefsProps> = ({ chartId, chartWidth, chartHeight }) => {
+export const ClipDefs: React.FC<ClipDefsProps> = ({
+  chartId,
+  chartWidth,
+  chartHeight,
+  className,
+  rectClassName,
+}) => {
   return (
-    <clipPath id={`clip-${chartId}`}>
+    <clipPath className={className} id={`clip-${chartId}`}>
       <rect
+        className={rectClassName}
         y={-CLIP_OVERFLOW}
         // Fit-mode SSR renders before the container is measured, so
         // chartWidth can be negative (0 − yAxisWidth) — an invalid SVG

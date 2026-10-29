@@ -4,7 +4,8 @@ import clsx from "clsx";
 import { useCallback } from "react";
 import { useStyles } from "../../../styles/useStyles";
 import { names as baseNames, chartBaseStyles } from "../shared/chartBase.styles";
-import { rootClass } from "./barChart.styles";
+import { barChartStyles, names } from "./barChart.styles";
+import { names as horizontalNames } from "./horizontalBarChart.styles";
 
 import {
   BAND_PADDING_INNER,
@@ -33,15 +34,16 @@ import type { BarChartData, BarChartProps } from "./types";
  * otherwise break the Rules of Hooks).
  */
 export function BarChart<T extends BarChartData>(props: BarChartProps<T>) {
+  const styles = useStyles(barChartStyles);
   const baseStyles = useStyles(chartBaseStyles);
   if (!props.data || props.data.length === 0) {
     return (
       <div
         className={clsx(
-          rootClass,
+          styles.root,
+          props.orientation === "horizontal" ? horizontalNames.root : names.root,
           baseStyles.empty,
           baseNames.empty,
-          `${CHART_CLASS_PREFIX}-bar-chart-container`,
           props.className,
         )}
       >
@@ -82,6 +84,7 @@ function BarChartImpl<T extends BarChartData>({
   onClick,
   yTickCount,
 }: BarChartProps<T>) {
+  const styles = useStyles(barChartStyles);
   const animate = useEffectiveAnimation(isAnimationActive);
   const mode = condensed ? "fit" : "scroll";
 
@@ -131,6 +134,16 @@ function BarChartImpl<T extends BarChartData>({
 
   return (
     <CartesianChartLayout
+      classes={{
+        ...names,
+        svg: clsx(styles.svg, names.svg),
+        group: clsx(styles.group, names.group),
+        containerInner: clsx(styles.containerInner, names.containerInner),
+        yAxisContainer: clsx(styles.yAxisContainer, names.yAxisContainer),
+        mainContainer: clsx(styles.mainContainer, names.mainContainer),
+        yTick: clsx(styles.yTick, names.yTick),
+        gridLine: clsx(styles.gridLine, names.gridLine),
+      }}
       orch={orch}
       yScale={yScale}
       mouseHandlers={mouseHandlers}
@@ -144,10 +157,12 @@ function BarChartImpl<T extends BarChartData>({
       xAxisLabel={xAxisLabel}
       yAxisLabel={yAxisLabel}
       yTickCount={yTickCount}
-      className={clsx(rootClass, className)}
+      className={clsx(styles.root, names.root, className)}
       defs={
-        <defs>
+        <defs className={names.defs}>
           <ClipDefs
+            className={names.clip}
+            rectClassName={names.clipRect}
             chartId={orch.identity.chartId}
             chartWidth={orch.dimensions.chartAreaWidth}
             chartHeight={orch.dimensions.chartInnerHeight}
@@ -186,6 +201,9 @@ function BarChartImpl<T extends BarChartData>({
           mode={mode}
           scale={xScale}
           classPrefix={`${CHART_CLASS_PREFIX}-bar-chart`}
+          classes={names}
+          tickClassName={clsx(styles.xTick, names.xTick)}
+          angledTickClassName={clsx(styles.xTickAngled, names.xTickAngled)}
           tickVariant={orch.dimensions.tickVariant}
           labelHeight={orch.xAxis.xAxisHeight}
           labelWidth={orch.xAxis.labelWidth}

@@ -1,5 +1,6 @@
 "use client";
 
+import clsx from "clsx";
 import { useRef } from "react";
 
 import { useIsomorphicLayoutEffect } from "../core/spring";
@@ -7,8 +8,9 @@ import { useIsomorphicLayoutEffect } from "../core/spring";
 interface AnimatedPathProps {
   d: string;
   color: string;
-  /** Base element class; the `--animated` modifier is appended when animating. */
+  /** Base and entrance classes are supplied by the owning family's names and styles. */
   className: string;
+  animatedClassName: string;
   isAnimationActive?: boolean;
   /**
    * External ref so the owning series can write `d` imperatively (the spring
@@ -30,6 +32,7 @@ export function AnimatedPath({
   d,
   color,
   className,
+  animatedClassName,
   isAnimationActive,
   pathRef,
 }: AnimatedPathProps) {
@@ -46,7 +49,7 @@ export function AnimatedPath({
   return (
     <path
       ref={ref}
-      className={`${className}${isAnimationActive ? ` ${className}--animated` : ""}`}
+      className={clsx(className, isAnimationActive && animatedClassName)}
       d={d}
       fill="none"
       stroke={color}

@@ -2,19 +2,19 @@
 // component's own stable classes, for browser benches to iterate over: a component is covered as
 // soon as it joins the contract list. The `elements` fixture renders the same list client-side.
 // Bundled for Node by build-fixtures.ts, like bench-server.tsx.
-import { readStableNames } from "../../../scripts/selector-reference.mjs";
 import { namesIn } from "../../unit/contract/collect";
 import { migratedComponents } from "../../unit/contract/components";
 
 // A component's own stable classes: the `names` of its style modules, as the reference reads them.
 // Classes of composed components that are not migrated yet (MarkDownRenderer's CodeBlock and
 // Table) are left out; they keep their earlier selectors.
-const stableNames = await readStableNames();
+// Use the contract's exact names rather than every nested style module: Charts/shared and
+// individual cartesian families share a parent folder but render different public compositions.
 const ownClasses = (folder: string) => [
   ...namesIn(
-    stableNames
-      .filter(({ component }) => component === folder || component.startsWith(`${folder}/`))
-      .map((entry) => entry.names),
+    migratedComponents
+      .find((entry) => entry.folder === folder)!
+      .names.filter((names) => !Object.keys(names).every((key) => key.startsWith("dependency"))),
   ),
 ];
 

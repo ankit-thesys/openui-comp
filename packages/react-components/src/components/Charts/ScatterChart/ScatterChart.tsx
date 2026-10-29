@@ -2,7 +2,8 @@
 
 import clsx from "clsx";
 import { useMemo } from "react";
-import { rootClass } from "./scatterChart.styles";
+import { useStyles } from "../../../styles/useStyles";
+import { names, scatterChartStyles } from "./scatterChart.styles";
 
 import { useEffectiveAnimation, useScatterChartOrchestrator } from "../hooks";
 import { NumericXAxis } from "../shared/cartesian/axes/NumericXAxis";
@@ -12,11 +13,11 @@ import { VerticalGrid } from "../shared/cartesian/VerticalGrid";
 import { ChartShell } from "../shared/core/ChartShell";
 import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
 import { ChartTooltip } from "../shared/core/PortalTooltip/ChartTooltip";
-import { CHART_CLASS_PREFIX } from "../utils/constants";
 import { ScatterDots } from "./parts/ScatterDots";
 import type { ScatterChartProps } from "./types";
 
 export function ScatterChart(props: ScatterChartProps) {
+  const styles = useStyles(scatterChartStyles);
   const {
     data,
     xAxisDataKey = "x",
@@ -84,34 +85,36 @@ export function ScatterChart(props: ScatterChartProps) {
 
   return (
     <ChartShell
+      flat
       containerRef={orch.refs.containerRef}
-      classPrefix={`${CHART_CLASS_PREFIX}-scatter-chart`}
-      className={clsx(rootClass, className)}
+      classPrefix={names.root}
+      className={clsx(styles.root, names.root, className)}
       style={orch.style.containerStyle}
       isEmpty={orch.isEmpty}
     >
       {() => (
         <>
           <svg
+            className={clsx(styles.svg, names.svg)}
             width={totalSvgWidth}
             height={totalSvgHeight}
-            style={{ overflow: "visible" }}
             role="img"
             aria-label="Scatter chart"
           >
             {showYAxis && (
-              <g transform={`translate(0, ${marginTop})`}>
+              <g className={names.group} transform={`translate(0, ${marginTop})`}>
                 <YAxis
                   scale={yScale}
                   width={effectiveYAxisWidth}
                   chartHeight={chartInnerHeight}
-                  className={`${CHART_CLASS_PREFIX}-scatter-chart-y-axis`}
-                  tickClassName={`${CHART_CLASS_PREFIX}-scatter-chart-y-tick`}
+                  className={names.yAxis}
+                  tickClassName={clsx(styles.yTick, names.yTick)}
                 />
               </g>
             )}
 
             <g
+              className={names.group}
               transform={`translate(${effectiveYAxisWidth}, ${marginTop})`}
               onMouseMove={orch.hover.handleMouseMove}
               onMouseLeave={orch.hover.handleMouseLeave}
@@ -119,23 +122,30 @@ export function ScatterChart(props: ScatterChartProps) {
               onTouchEnd={orch.hover.handleTouchEnd}
               onClick={orch.hover.handleClick}
             >
-              <rect width={chartAreaWidth} height={chartInnerHeight} fill="transparent" />
+              <rect
+                className={names.hitTarget}
+                width={chartAreaWidth}
+                height={chartInnerHeight}
+                fill="transparent"
+              />
 
               {showGrid && (
                 <Grid
+                  lineClassName={clsx(styles.gridLine, names.gridLine)}
                   yScale={yScale}
                   chartWidth={chartAreaWidth}
                   chartHeight={chartInnerHeight}
-                  className={`${CHART_CLASS_PREFIX}-scatter-chart-grid`}
+                  className={names.grid}
                 />
               )}
 
               {showVerticalGrid && (
                 <VerticalGrid
+                  lineClassName={clsx(styles.gridLine, names.gridLine)}
                   xScale={xScale}
                   chartWidth={chartAreaWidth}
                   chartHeight={chartInnerHeight}
-                  className={`${CHART_CLASS_PREFIX}-scatter-chart-grid-vertical`}
+                  className={names.gridVertical}
                 />
               )}
 
@@ -150,13 +160,16 @@ export function ScatterChart(props: ScatterChartProps) {
               />
             </g>
 
-            <g transform={`translate(${effectiveYAxisWidth}, ${chartInnerHeight + marginTop})`}>
+            <g
+              className={names.group}
+              transform={`translate(${effectiveYAxisWidth}, ${chartInnerHeight + marginTop})`}
+            >
               <NumericXAxis
                 scale={xScale}
                 chartWidth={chartAreaWidth}
                 height={xAxisHeight}
-                className={`${CHART_CLASS_PREFIX}-scatter-chart-x-axis`}
-                tickClassName={`${CHART_CLASS_PREFIX}-scatter-chart-x-tick`}
+                className={names.xAxis}
+                tickClassName={clsx(styles.xTick, names.xTick)}
               />
             </g>
           </svg>

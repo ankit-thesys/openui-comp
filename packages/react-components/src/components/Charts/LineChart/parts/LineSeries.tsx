@@ -1,12 +1,14 @@
 "use client";
 
+import clsx from "clsx";
 import type { ScaleLinear, ScalePoint } from "d3-scale";
 import type { CurveFactory } from "d3-shape";
 import React, { useMemo, useRef } from "react";
+import { useStyles } from "../../../../styles/useStyles";
 import { AnimatedPath } from "../../shared/cartesian/AnimatedPath";
 import { buildLineD, LINE_STRIDE, seriesCurve } from "../../shared/cartesian/seriesGeometry";
 import { springPresets, useDataMorph, useIsomorphicLayoutEffect } from "../../shared/core/spring";
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
+import { lineChartStyles, names } from "../lineChart.styles";
 import type { LineChartVariant } from "../types";
 
 interface LineSeriesProps {
@@ -51,7 +53,7 @@ export const LineSeries: React.FC<LineSeriesProps> = ({
   }, [data, dataKeys, xScale, yScale, categoryKey, curve]);
 
   return (
-    <g className={`${CHART_CLASS_PREFIX}-line-chart-lines`}>
+    <g className={names.lines}>
       {seriesGeom.map(({ key, points, linePath }) => (
         <LineSeriesItem
           key={key}
@@ -96,6 +98,7 @@ function LineSeriesItem({
   dotRadius: number;
   isAnimationActive?: boolean;
 }) {
+  const styles = useStyles(lineChartStyles);
   const pathRef = useRef<SVGPathElement | null>(null);
   const dotsRef = useRef<SVGGElement | null>(null);
   const curveRef = useRef(curve);
@@ -121,16 +124,17 @@ function LineSeriesItem({
   }, [points, isAnimationActive, aim]);
 
   return (
-    <g>
+    <g className={names.group}>
       <AnimatedPath
         d={linePath}
         color={color}
-        className={`${CHART_CLASS_PREFIX}-line-chart-line`}
+        className={clsx(styles.line, names.line)}
+        animatedClassName={clsx(styles.lineAnimated, names.lineAnimated.true)}
         isAnimationActive={isAnimationActive}
         pathRef={pathRef}
       />
       {showDots && (
-        <g ref={dotsRef}>
+        <g className={names.group} ref={dotsRef}>
           {Array.from({ length: points.length / LINE_STRIDE }, (_, i) => (
             <circle
               key={i}
@@ -138,7 +142,7 @@ function LineSeriesItem({
               cy={points[i * LINE_STRIDE + 1]}
               r={dotRadius}
               fill={color}
-              className={`${CHART_CLASS_PREFIX}-line-chart-dot`}
+              className={clsx(styles.dot, names.dot)}
             />
           ))}
         </g>
