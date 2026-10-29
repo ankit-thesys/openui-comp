@@ -30,7 +30,7 @@ const snapshot = (page: Page, component: MigratedComponent) =>
     };
     return Object.fromEntries(
       classes.flatMap((className) =>
-        [...document.querySelectorAll(`#root .${className}`)].map((el, i) => {
+        [...document.querySelectorAll(`.${className}`)].map((el, i) => {
           el.getAnimations().forEach((animation) => animation.finish());
           // Later matching rules win, as in the cascade (all library rules weigh the same here).
           const declared = new Map<string, string>();
@@ -78,12 +78,12 @@ for (const component of migrated) {
     const typedBackgrounds = async (page: Page, head = "") => {
       await openMigrated(page, component, head);
       await page.evaluate(() => {
-        for (const button of document.querySelectorAll("#root button"))
+        for (const button of document.querySelectorAll("button"))
           button.setAttribute("type", "button");
       });
       // Buttons transition their background; read the end value.
       return page.evaluate(() =>
-        [...document.querySelectorAll("#root button")].map((button) => {
+        [...document.querySelectorAll("button")].map((button) => {
           button.getAnimations().forEach((animation) => animation.finish());
           return getComputedStyle(button).backgroundColor;
         }),

@@ -691,6 +691,21 @@ Renamed stable classes and props, per component converted to the flat convention
 | MarkDownRenderer | Shared `.openui-code-block-wrapper` | Also carries `.openui-markdown-renderer-code-block`; standalone CodeBlock defaults are unchanged |
 | MarkDownRenderer | `.openui-code-block-syntax-highlighter` inside markdown | Removed inside markdown; target `.openui-markdown-renderer-code-block` for the owned root around third-party output. Standalone CodeBlock keeps the old class. |
 | MarkDownRenderer | Shared `.openui-table` / `.openui-table-container` | Also carry `.openui-markdown-renderer-table` / `.openui-markdown-renderer-table-container` |
+| Accordion | `.openui-accordion-{clear,card,sunk}` | `.openui-accordion--variant-{clear,card,sunk}` (including default `clear`) |
+| Accordion | `.openui-accordion` and its part classes | Unchanged; open/closed overrides use `[data-state]` |
+| SectionV2 | `.openui-section-v2` and its parts | Unchanged |
+| FoldableSectionRoot | `.openui-foldable-section-root` | `.openui-foldable-section`; other parts unchanged, open/closed overrides use `[data-state]` |
+| Steps | `.openui-steps-container` (outer root), `.openui-steps` (inner list) | `.openui-steps` (root), `.openui-steps-list` |
+| Steps | `.openui-step-{item,connector,number,number-inner,content,title,details}` | `.openui-steps-{item,connector,number,number-inner,content,title,details}` |
+| Steps | `.openui-connector-line` | `.openui-steps-connector-line` |
+| Card | `.openui-card-{clear,card,sunk}` | `.openui-card--variant-{clear,card,sunk}` (including default `card`) |
+| Card | `.openui-card-{standard,full}` | `.openui-card--width-{standard,full}` (including default `standard`) |
+| CardHeader | `.openui-header`, `.openui-header-{top,top-left,top-left-icon,top-right,bottom}` | `.openui-card-header`, `.openui-card-header-{top,top-left,top-left-icon,top-right,bottom}` |
+| Modal | `.openui-modal-root` | `.openui-modal` (portal root) |
+| Modal | `.openui-modal-{sm,md,lg}` on content | `.openui-modal--size-{sm,md,lg}` on the portal root (including default `md`) |
+| Modal | Overlay, content, header, title, close and body classes | Unchanged; close SVG also has `.openui-modal-close-icon` |
+| TooltipWrapper | `.openui-tooltip-content` | `.openui-tooltip-wrapper` (portal content root, receives `className`) |
+| TooltipWrapper | `.openui-tooltip-{body,heading,text-content}` | `.openui-tooltip-wrapper-{body,heading,text}` |
 
 Pre-release `@openuidev/react-components` betas also emitted internal carrier classes that
 react-ui never had. They are gone; use the class on the right instead:
@@ -703,6 +718,19 @@ react-ui never had. They are gone; use the class on the right instead:
 | `.openui-tabs-container` | `.openui-tabs-list-container` |
 | `.openui-tabs-list-styled`, `.openui-tabs-trigger-styled`, `.openui-tabs-content-styled` | `.openui-tabs-list`, `.openui-tabs-trigger`, `.openui-tabs-content` |
 | `.openui-mark-down-renderer-markdown-{root,code,link}` | `.openui-markdown-renderer`, `-code`, `-link` |
+| `.openui-accordion-root` | `.openui-accordion` |
+| `.openui-card-root` | `.openui-card` |
+| `.openui-card-header-root` | `.openui-card-header` |
+| `.openui-section-block-section-v2-root` | `.openui-section-v2` |
+| `.openui-section-block-foldable-section-{root,item,header,trigger,content}` | `.openui-foldable-section` (root) or `.openui-foldable-section-{item,header,trigger,content}` |
+| `.openui-steps-root`, `.openui-steps-item` | `.openui-steps`, `.openui-steps-item` |
+| `.openui-modal-portal-root` | `.openui-modal` |
+| `.openui-modal-{overlay,content,header,title,close,body}-root` | `.openui-modal-{overlay,content,header,title,close,body}` |
+| `.openui-tooltip-wrapper-content` | `.openui-tooltip-wrapper` |
+
+The #98 disclosure/layout/overlay migration changes no prop names. No internal callers outside
+these families reference their renamed classes. No chat-kit directory or matching references
+are present in this checkout; no chat-kit files were changed.
 
 ## Beta import migration
 

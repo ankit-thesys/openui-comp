@@ -1,10 +1,25 @@
 // Components converted to the flat styling convention, each rendered across every prop
 // combination through public exports. Add a component here when it leaves the allowlist.
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Button,
+  Card,
+  CardHeader,
   CodeBlock,
+  FoldableSectionContent,
+  FoldableSectionItem,
+  FoldableSectionRoot,
+  FoldableSectionTrigger,
   IconButton,
   MarkDownRenderer,
+  Modal,
+  SectionV2,
+  Separator,
+  Steps,
+  StepsItem,
   Table,
   TableBody,
   TableCell,
@@ -15,6 +30,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
+  TooltipWrapper,
 } from "@openuidev/react-components";
 import type { ReactElement } from "react";
 import { renderToString } from "react-dom/server";
@@ -56,6 +72,148 @@ const product = <T,>(...lists: T[][]): T[][] =>
   );
 
 export const migratedComponents: MigratedComponent[] = [
+  {
+    folder: "TooltipWrapper",
+    get names() {
+      return [
+        ...namesOf("TooltipWrapper"),
+        // The caller supplies the trigger. Use a styled Button so the Tailwind bench
+        // exercises a library background, rather than the browser's native button face.
+        Object.fromEntries(
+          [...stableClassesIn(renderToString(<Button>Show tooltip</Button>))].map((name, index) => [
+            `dependency${index}`,
+            name,
+          ]),
+        ),
+      ];
+    },
+    clientOnly: [
+      "openui-tooltip-wrapper",
+      "openui-tooltip-wrapper-body",
+      "openui-tooltip-wrapper-heading",
+      "openui-tooltip-wrapper-text",
+    ],
+    elements: () => [
+      <TooltipWrapper
+        key="tooltip"
+        tooltipHeading="Heading"
+        tooltipContent="Content"
+        delayDuration={0}
+      >
+        <Button data-tooltip-trigger>Show tooltip</Button>
+      </TooltipWrapper>,
+    ],
+  },
+  {
+    folder: "Modal",
+    names: namesOf("Modal"),
+    clientOnly: [
+      "openui-modal",
+      "openui-modal-overlay",
+      "openui-modal-content",
+      "openui-modal-header",
+      "openui-modal-title",
+      "openui-modal-close",
+      "openui-modal-close-icon",
+      "openui-modal-body",
+      "openui-modal--size-sm",
+      "openui-modal--size-md",
+      "openui-modal--size-lg",
+    ],
+    elements: () =>
+      (["sm", "md", "lg"] as const).map((size) => (
+        <Modal
+          key={size}
+          size={size}
+          title="Title"
+          open={typeof document !== "undefined"}
+          onOpenChange={() => {}}
+        >
+          {/* The caller owns body typography. Keep the dialog's percentage translation
+              independent of preflight's inherited font and line height. */}
+          <div style={{ font: "16px/normal serif" }}>Body</div>
+        </Modal>
+      )),
+  },
+  {
+    folder: "SectionBlock",
+    get names() {
+      return [
+        ...namesOf("SectionBlock"),
+        Object.fromEntries(
+          [
+            ...stableClassesIn(
+              renderToString(
+                <>
+                  <Separator />
+                  <IconButton size="3-extra-small" variant="secondary" icon={<svg />} />
+                </>,
+              ),
+            ),
+          ].map((name, index) => [`dependency${index}`, name]),
+        ),
+      ];
+    },
+    elements: () => [
+      <SectionV2 key="section" trigger="Title">
+        Body
+      </SectionV2>,
+      <FoldableSectionRoot key="foldable" type="multiple" defaultValue={["one"]}>
+        {["one", "two"].map((value) => (
+          <FoldableSectionItem key={value} value={value}>
+            <FoldableSectionTrigger text="Title" />
+            <FoldableSectionContent forceMount>
+              {/* The caller owns body typography. Pin it so fit-content measures the same
+                  content under preflight while all section declarations remain tested. */}
+              <div style={{ font: "16px/normal serif" }}>Body</div>
+            </FoldableSectionContent>
+          </FoldableSectionItem>
+        ))}
+      </FoldableSectionRoot>,
+    ],
+  },
+  {
+    folder: "Accordion",
+    names: namesOf("Accordion"),
+    elements: () =>
+      (["clear", "card", "sunk"] as const).map((variant) => (
+        <Accordion key={variant} variant={variant} type="multiple" defaultValue={["one"]}>
+          {["one", "two", "three"].map((value) => (
+            <AccordionItem key={value} value={value}>
+              <AccordionTrigger text="Title" icon={<svg />} />
+              <AccordionContent forceMount>Body</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      )),
+  },
+  {
+    folder: "Steps",
+    names: namesOf("Steps"),
+    elements: () => [
+      <Steps key="steps">
+        <StepsItem title="First" details="Details" />
+        <StepsItem title="Last" details="Details" number={7} />
+      </Steps>,
+    ],
+  },
+  {
+    folder: "CardHeader",
+    names: namesOf("CardHeader"),
+    elements: () => [<CardHeader key="header" title="Title" subtitle="Subtitle" icon={<svg />} />],
+  },
+  {
+    folder: "Card",
+    names: namesOf("Card"),
+    elements: () =>
+      (["clear", "card", "sunk"] as const).flatMap((variant) =>
+        (["standard", "full"] as const).map((width) => (
+          <Card key={`${variant}-${width}`} variant={variant} width={width}>
+            Body
+          </Card>
+        )),
+      ),
+  },
   {
     folder: "MarkDownRenderer",
     prose: true,
