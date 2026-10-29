@@ -121,6 +121,10 @@ then render something, so the checks cannot pass on a dead sheet. `goober-import
 if any source module other than `styles/defaults.ts`, `styles/useStyles.ts` and
 `utils/componentStyles.ts` imports Goober: components get `css` only from `useStyles`, so even a
 code path no contract element renders cannot register CSS on its own.
+`contract/private-names.test.tsx` fails if a component's source reads or sets a `--_openui-*`
+variable that does not start with one of its own roots or parts (ADR 0001, Q14), or if any source
+uses an `@container style()` query, which Firefox does not support. A primitive that needs a look
+from the card around it takes a public prop instead.
 
 ## Parity with #72
 

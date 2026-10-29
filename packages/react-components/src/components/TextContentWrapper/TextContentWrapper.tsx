@@ -69,6 +69,7 @@ export const TextContentWrapper = memo((props: TextContentWrapperProps) => {
       <MarkDownRenderer
         textMarkdown={props.textMarkdown}
         variant={props.variant}
+        listLeadIn="spaced"
         options={{
           remarkPlugins: [
             // singleTilde: false → only ~~double tildes~~ render as strikethrough.

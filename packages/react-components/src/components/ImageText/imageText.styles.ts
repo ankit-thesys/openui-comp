@@ -9,12 +9,11 @@ export const names = {
     vertical: "openui-image-text--layout-vertical",
   },
   bold: { true: "openui-image-text--bold" },
+  overflow: { truncate: "openui-image-text--overflow-truncate" },
+  width: { fill: "openui-image-text--width-fill" },
 } as const;
 export const imageTextStyles = (css: StyleCss) => ({
   root: css`
-    min-width: var(--_openui-snippet-card-min-width, auto);
-    width: var(--_openui-snippet-card-text-width, auto);
-    overflow: var(--_openui-snippet-card-overflow, visible);
     display: flex;
     gap: var(--openui-space-m, 12px);
   `,
@@ -56,6 +55,18 @@ export const imageTextStyles = (css: StyleCss) => ({
       flex-direction: row;
       align-items: center;
       --_openui-image-text-content-padding: var(--openui-space-3xs, 2px);
+    `,
+  },
+  // As TextBlock's: a slot that truncates lets the row shrink; one that fills spans its container.
+  overflow: {
+    truncate: css`
+      min-width: 0px;
+      overflow: hidden;
+    `,
+  },
+  width: {
+    fill: css`
+      width: 100%;
     `,
   },
 });

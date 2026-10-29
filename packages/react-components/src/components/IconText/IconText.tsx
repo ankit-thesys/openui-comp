@@ -1,10 +1,11 @@
 "use client";
 
 import clsx from "clsx";
-import { forwardRef } from "react";
+import { forwardRef, useContext } from "react";
 import { useStyles } from "../../styles/useStyles";
 import { IconTag, type IconTagVariant } from "../IconTag";
-import { TextBlockView } from "../TextBlock";
+import { TextBlockView, type TextBlockOverflow, type TextBlockWidth } from "../TextBlock";
+import { TextFitContext } from "../TextBlock/TextFit";
 import type { IconProps } from "../_shared/icons";
 import { iconTextStyles, names } from "./iconText.styles";
 
@@ -18,6 +19,13 @@ export interface IconTextProps {
   iconVariant?: IconTextIconVariant;
   bold?: boolean;
   layout?: IconTextLayout;
+  /**
+   * `"truncate"` keeps the title and subtitle to one line each, ending in an ellipsis, and lets the
+   * component shrink in a flex row. SnippetCardBlock sets it for its slots; omit it to wrap.
+   */
+  overflow?: TextBlockOverflow;
+  /** `"fill"` makes the component as wide as its container. Omit it to size to the content. */
+  width?: TextBlockWidth;
   className?: string;
 }
 
@@ -41,10 +49,16 @@ export const IconText = forwardRef<HTMLDivElement, IconTextProps>(
       iconVariant = "neutral",
       bold = false,
       layout = "horizontal",
+      overflow: ownOverflow,
+      width: ownWidth,
       className,
     },
     ref,
   ) => {
+    // A card slot supplies the fit the caller leaves out.
+    const slot = useContext(TextFitContext);
+    const overflow = ownOverflow ?? slot.overflow;
+    const width = ownWidth ?? slot.width;
     const styles = useStyles(iconTextStyles);
     return (
       <div
@@ -56,10 +70,17 @@ export const IconText = forwardRef<HTMLDivElement, IconTextProps>(
           names.layout[layout],
           names.iconVariant[iconVariant],
           bold && names.bold.true,
+          overflow && [styles.overflow[overflow], names.overflow[overflow]],
+          width && [styles.width[width], names.width[width]],
           className,
         )}
       >
-        <IconTag icon={icon} variant={normalizeIconVariant(iconVariant)} size="l" />
+        <IconTag
+          icon={icon}
+          variant={normalizeIconVariant(iconVariant)}
+          size="l"
+          className={clsx(styles.icon, names.icon)}
+        />
         <div className={clsx(styles.content, names.content)}>
           <TextBlockView
             variant={bold ? "highlight-text-number-subtext" : "text-subtext"}
@@ -67,7 +88,8 @@ export const IconText = forwardRef<HTMLDivElement, IconTextProps>(
             secondary={subtitle}
             type="text"
             size={layout === "horizontal" ? "xs" : "sm"}
-            align="left"
+            overflow={overflow}
+            width={width}
           />
         </div>
       </div>

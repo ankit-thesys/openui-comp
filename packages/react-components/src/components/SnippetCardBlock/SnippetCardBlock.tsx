@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react";
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 import { useStyles } from "../../styles/useStyles";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
+import { TextFitContext } from "../TextBlock/TextFit";
 import { TooltipWrapper } from "../TooltipWrapper";
 import { names, snippetCardBlockStyles } from "./snippetCardBlock.styles";
 
@@ -36,6 +37,11 @@ export interface SnippetCardBlockProps extends Omit<HTMLAttributes<HTMLDivElemen
   onItemClick?: (item: SnippetCardBlockItem, index: number) => void;
   className?: string;
 }
+
+// The text in each slot keeps to one truncated line: the left fills its slot, the right aligns
+// to the end.
+const LHS_FIT = { overflow: "truncate", width: "fill" } as const;
+const RHS_FIT = { overflow: "truncate", align: "right" } as const;
 
 const TEXT_BLOCK_HEADING_SELECTOR = ".openui-text-block-primary";
 const TEXT_BLOCK_CONTENT_SELECTOR = ".openui-text-block-secondary";
@@ -87,7 +93,9 @@ const SnippetCardBlock = forwardRef<HTMLDivElement, SnippetCardBlockProps>((prop
               headingSelector={TEXT_BLOCK_HEADING_SELECTOR}
               contentSelector={TEXT_BLOCK_CONTENT_SELECTOR}
             >
-              <div className={clsx(names.lhs, styles.lhs)}>{item.lhs}</div>
+              <div className={clsx(names.lhs, styles.lhs)}>
+                <TextFitContext.Provider value={LHS_FIT}>{item.lhs}</TextFitContext.Provider>
+              </div>
             </TooltipWrapper>
           )}
           <div className={clsx(names.rhs, styles.rhs)}>
@@ -99,7 +107,9 @@ const SnippetCardBlock = forwardRef<HTMLDivElement, SnippetCardBlockProps>((prop
                 headingSelector={TEXT_BLOCK_HEADING_SELECTOR}
                 contentSelector={TEXT_BLOCK_CONTENT_SELECTOR}
               >
-                <div className={clsx(names.rhsContent, styles.rhsContent)}>{item.rhs}</div>
+                <div className={clsx(names.rhsContent, styles.rhsContent)}>
+                  <TextFitContext.Provider value={RHS_FIT}>{item.rhs}</TextFitContext.Provider>
+                </div>
               </TooltipWrapper>
             ) : (
               isClickable && (

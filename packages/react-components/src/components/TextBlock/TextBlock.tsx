@@ -1,10 +1,11 @@
 "use client";
 
 import clsx from "clsx";
-import { forwardRef } from "react";
+import { forwardRef, useContext } from "react";
 import { useStyles } from "../../styles/useStyles";
 import { InlineMarkdownRenderer } from "../InlineMarkdownRenderer";
 import { names, textBlockStyles } from "./textBlock.styles";
+import { TextFitContext } from "./TextFit";
 
 export type TextBlockVariant =
   | "title-text"
@@ -20,6 +21,8 @@ export type TextBlockType = "text" | "number" | "textOnly";
 export type TextBlockSize = "xs" | "sm" | "md" | "lg";
 export type TextBlockAlign = "left" | "center" | "right";
 export type TextBlockSecondaryTone = "positive" | "negative";
+export type TextBlockOverflow = "truncate";
+export type TextBlockWidth = "fill";
 
 export interface TextBlockViewProps {
   primary: string;
@@ -31,6 +34,13 @@ export interface TextBlockViewProps {
   align?: TextBlockAlign;
   secondaryMaxLines?: number;
   secondaryTone?: TextBlockSecondaryTone;
+  /**
+   * `"truncate"` keeps each line to one line that ends in an ellipsis and lets the block shrink in
+   * a flex row. SnippetCardBlock sets it for the text in its slots; omit it to wrap.
+   */
+  overflow?: TextBlockOverflow;
+  /** `"fill"` makes the block as wide as its container. Omit it to size to the content. */
+  width?: TextBlockWidth;
   className?: string;
 }
 
@@ -48,13 +58,20 @@ export const TextBlockView = forwardRef<HTMLDivElement, TextBlockViewProps>(
       variant = "title-text",
       type = "text",
       size = "sm",
-      align = "left",
+      align: ownAlign,
       secondaryMaxLines,
       secondaryTone,
+      overflow: ownOverflow,
+      width: ownWidth,
       className,
     },
     ref,
   ) => {
+    // A card slot supplies the fit the caller leaves out.
+    const slot = useContext(TextFitContext);
+    const align = ownAlign ?? slot.align ?? "left";
+    const overflow = ownOverflow ?? slot.overflow;
+    const width = ownWidth ?? slot.width;
     const styles = useStyles(textBlockStyles);
     const secondaryClassName = clsx(
       styles.secondary,
@@ -85,6 +102,8 @@ export const TextBlockView = forwardRef<HTMLDivElement, TextBlockViewProps>(
           names.align[align],
           styles.type[type],
           names.type[type],
+          overflow && [styles.overflow[overflow], names.overflow[overflow]],
+          width && [styles.width[width], names.width[width]],
           className,
         )}
       >

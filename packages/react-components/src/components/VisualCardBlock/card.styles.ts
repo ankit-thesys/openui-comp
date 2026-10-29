@@ -83,9 +83,6 @@ export const visualCardStyles = (css: StyleCss) => ({
   `,
   tag: css`
     min-width: 0;
-    --_openui-card-tag-background: rgba(0, 0, 0, 0.4);
-    --_openui-card-tag-color: var(--openui-text-white, oklch(1 0 89.876 / 1));
-    --_openui-card-tag-backdrop: blur(2px);
   `,
   action: css`
     display: inline-flex;

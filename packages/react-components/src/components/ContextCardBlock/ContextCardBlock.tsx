@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react";
 import { forwardRef, type CSSProperties, type ReactNode } from "react";
 import { useStyles } from "../../styles/useStyles";
 import { InlineMarkdownRenderer } from "../InlineMarkdownRenderer";
+import { TagSurfaceContext } from "../Tag/TagSurface";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
 import { toCssUrl } from "../_shared/utils/safeUrl";
 import { contextCardStyles, names } from "./card.styles";
@@ -70,23 +71,26 @@ export const ContextCard = forwardRef<HTMLDivElement, ContextCardProps>((props, 
       onClick={clickable ? onClick : undefined}
       onKeyDown={clickable && onClick ? cardKeyDownHandler(onClick) : undefined}
     >
-      <div className={clsx(names.vertical, styles.vertical)}>
-        <div className={clsx(names.top, styles.top)}>
-          {titleContent}
-          {clickable && (
-            <div className={clsx(names.chevron, styles.chevron)} aria-hidden="true">
-              <ChevronRight size={16} className={clsx(names.chevronIcon, styles.chevronIcon)} />
+      {/* Tags over the background image take the overlay surface. */}
+      <TagSurfaceContext.Provider value={backgroundImage ? "image" : undefined}>
+        <div className={clsx(names.vertical, styles.vertical)}>
+          <div className={clsx(names.top, styles.top)}>
+            {titleContent}
+            {clickable && (
+              <div className={clsx(names.chevron, styles.chevron)} aria-hidden="true">
+                <ChevronRight size={16} className={clsx(names.chevronIcon, styles.chevronIcon)} />
+              </div>
+            )}
+          </div>
+          {body && (
+            <div className={clsx(names.bottom, styles.bottom)}>
+              <div className={clsx(names.body, styles.body)}>
+                <InlineMarkdownRenderer content={body} />
+              </div>
             </div>
           )}
         </div>
-        {body && (
-          <div className={clsx(names.bottom, styles.bottom)}>
-            <div className={clsx(names.body, styles.body)}>
-              <InlineMarkdownRenderer content={body} />
-            </div>
-          </div>
-        )}
-      </div>
+      </TagSurfaceContext.Provider>
     </div>
   );
 });

@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { memo } from "react";
+import { createContext, memo, useContext, type ComponentProps } from "react";
 import ReactMarkdown, { Components, type Options } from "react-markdown";
 import oneLight from "react-syntax-highlighter/dist/cjs/styles/prism/one-light";
 import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus";
@@ -35,15 +35,40 @@ const MarkdownTableCell: Components["td"] = ({ align, ...props }) => (
   <TableCell {...(props as Omit<TableCellProps, "align">)} align={toTableAlignment(align)} />
 );
 
+// Links and inline code inside a blockquote carry `data-quoted`, so they inherit the quote's look.
+const QuoteContext = createContext(false);
+
+const MarkdownBlockquote: Components["blockquote"] = ({ node: _node, ...props }) => (
+  <QuoteContext.Provider value={true}>
+    <blockquote {...props} />
+  </QuoteContext.Provider>
+);
+
+const QuotableLink = (props: ComponentProps<"a">) => (
+  <a {...props} data-quoted={useContext(QuoteContext) || undefined} />
+);
+
+const QuotableCode = (props: ComponentProps<"code">) => (
+  <code {...props} data-quoted={useContext(QuoteContext) || undefined} />
+);
+
 export interface MarkDownRendererProps {
   variant?: "clear" | "card" | "sunk";
+  /**
+   * `"inherit"` gives bold and italic text the surrounding text's typography, at medium weight, and
+   * sets inline code at the small code size, for markdown inside other text. InlineMarkdownRenderer
+   * passes it on; omit it for the renderer's own typography.
+   */
+  typography?: "inherit";
+  /** `"spaced"` puts 8px between a paragraph and the list that follows it. Omit it for none. */
+  listLeadIn?: "spaced";
   textMarkdown: string;
   options?: Options;
   className?: string;
 }
 
 export const MarkDownRenderer = memo((props: MarkDownRendererProps) => {
-  const { variant = "clear" } = props;
+  const { variant = "clear", typography, listLeadIn } = props;
   const styles = useStyles(markdownStyles);
   const { mode } = useTheme();
   const theme = mode === "dark" ? vscDarkPlus : oneLight;
@@ -66,14 +91,22 @@ export const MarkDownRenderer = memo((props: MarkDownRendererProps) => {
       }
 
       return (
-        <code className={clsx(styles.code, names.code, className)} {...props}>
+        <QuotableCode
+          className={clsx(
+            styles.code,
+            names.code,
+            typography && [styles.codeTypography[typography], names.codeTypography[typography]],
+            className,
+          )}
+          {...props}
+        >
           {children}
-        </code>
+        </QuotableCode>
       );
     },
     a({ href, children, ...props }) {
       return (
-        <a
+        <QuotableLink
           href={href}
           target="_blank"
           rel="noopener noreferrer"
@@ -81,7 +114,7 @@ export const MarkDownRenderer = memo((props: MarkDownRendererProps) => {
           {...props}
         >
           {children}
-        </a>
+        </QuotableLink>
       );
     },
     table: ({ node: _node, className, ...props }) => (
@@ -96,6 +129,7 @@ export const MarkDownRenderer = memo((props: MarkDownRendererProps) => {
     tbody: TableBody,
     tr: TableRow,
     td: MarkdownTableCell,
+    blockquote: MarkdownBlockquote,
   };
 
   const markdownProps = {
@@ -110,6 +144,8 @@ export const MarkDownRenderer = memo((props: MarkDownRendererProps) => {
         styles.variant[variant],
         names.root,
         names.variant[variant],
+        typography && [styles.typography[typography], names.typography[typography]],
+        listLeadIn && [styles.listLeadIn[listLeadIn], names.listLeadIn[listLeadIn]],
         props.className,
       )}
     >
