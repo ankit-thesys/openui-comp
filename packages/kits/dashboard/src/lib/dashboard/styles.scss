@@ -11,9 +11,6 @@
 
 // Kept primitives
 @use "./components/TextBlock/TextBlock";
-@use "./components/IconTag/IconTag";
-@use "./components/MetricIndicatorInline/MetricIndicatorInline";
-@use "./components/InlineMarkdownRenderer/InlineMarkdownRenderer";
 @use "./components/Table/table";
 
 // Dashboard components
@@ -24,7 +21,6 @@
 @use "./components/CardRow/cardRow";
 @use "./components/FilterBar/filterBar";
 @use "./components/FilterSelect/filterSelect";
-@use "./components/EntityList/entityList";
 @use "./components/List/List";
 // into c1's unlayered dist/styles.css via build-styles' nodePackageImporter
 // and the visualization package's ./styles.scss export. Sass @use loads each

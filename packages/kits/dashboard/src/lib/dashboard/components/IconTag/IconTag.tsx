@@ -1,11 +1,18 @@
 "use client";
 
+import { IconTag } from "@openuidev/react-components";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { IconTagView } from "./IconTagView";
+import { toIconProps } from "../shared/iconProps";
 import { iconTagPropsSchema, type IconTagProps } from "./schema";
 
+/**
+ * Thin adapter over react-components' IconTag — same sizes, same variants,
+ * same IconWrapper. The kit only converts the openui-lang icon node.
+ */
 function IconTagRenderer({ props }: ComponentRenderProps<IconTagProps>) {
-  return <IconTagView {...props} />;
+  const icon = toIconProps(props.icon);
+  if (!icon) return null;
+  return <IconTag icon={icon} size={props.size} variant={props.variant} />;
 }
 
 export const IconTagComponent = defineComponent({
@@ -14,5 +21,3 @@ export const IconTagComponent = defineComponent({
   description: "",
   component: IconTagRenderer,
 });
-
-export { IconTagView } from "./IconTagView";

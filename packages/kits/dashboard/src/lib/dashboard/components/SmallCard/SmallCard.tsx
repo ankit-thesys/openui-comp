@@ -1,11 +1,11 @@
 "use client";
 
-import { Card } from "@openuidev/react-components";
+import { Card, IconTag } from "@openuidev/react-components";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
 import clsx from "clsx";
 import { C1_CLASS_PREFIX } from "../../../shared/classPrefix";
-import { IconTagView } from "../IconTag/IconTagView";
 import type { IconTagProps } from "../IconTag/schema";
+import { toIconProps } from "../shared/iconProps";
 import { TextBlockView } from "../TextBlock/TextBlockView";
 import { smallCardPropsSchema, type SmallCardProps } from "./schema";
 
@@ -90,9 +90,9 @@ function SmallCardSnippetContent({ lhs, rhs }: { lhs: SnippetLhs; rhs: SnippetRh
       )}
     >
       <div className={`${C1_CLASS_PREFIX}-small-card-snippet__lhs`}>
-        {lhs["icon"] ? (
-          <IconTagView
-            icon={lhs["icon"] as IconTagProps["icon"]}
+        {toIconProps(lhs["icon"]) ? (
+          <IconTag
+            icon={toIconProps(lhs["icon"])!}
             variant={(lhs.iconVariant ?? "neutral") as IconTagProps["variant"]}
             size="l"
           />
