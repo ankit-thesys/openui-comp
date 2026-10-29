@@ -1,0 +1,13 @@
+# What make-upstream-branch.sh strips from a fork branch to make its upstream branch.
+#   <path>           removed; restored from the upstream base where the base has it
+#   <path>|<line>    that exact line removed from the file
+fork/
+AGENTS.md
+CLAUDE.md
+GLOSSARY-MAP.md
+docs/agents/
+docs/adr/
+.github/workflows/build-js.yml
+.workspace/
+.claude/
+pnpm-workspace.yaml|  - "fork/*"
