@@ -77,8 +77,16 @@ export const shellCardClass = css`
     min-width: 0;
   }
 
+  /*
+   * flex: 1 1 0 here resolved to a ZERO-height preview: the card is a flex
+   * column with no definite height, so there is no free space for a zero-basis
+   * item to grow into. The body rendered empty and, because the overflow probe
+   * requires wrapElement.clientHeight > 0, the Expand control — and with it the
+   * whole modal below — could never appear. 0 1 auto lets the wrap take its
+   * content height, which max-height then clips to the preview.
+   */
   &.${P}-shell-card--collapsed > .${P}-shell-card__content-wrap {
-    flex: 1 1 0;
+    flex: 0 1 auto;
     max-height: var(--${P}-shell-card-collapsed-preview-height);
     overflow: hidden;
   }

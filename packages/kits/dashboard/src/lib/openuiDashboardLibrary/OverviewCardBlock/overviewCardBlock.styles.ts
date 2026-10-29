@@ -121,6 +121,9 @@ export const smallCardBlockClass = css`
 export const overviewCardClass = css`
   display: flex;
   flex-direction: column;
+  /* width:100% + padding + border on a content-box made every card overflow its
+   * grid cell by exactly padding+border (22px at the default spacing). */
+  box-sizing: border-box;
   width: 100%;
   min-width: 158px;
   padding: var(--openui-space-s-m);
