@@ -255,26 +255,28 @@ rules remain on the migration allowlist. Both shared classes are listed in the
 
 The control batch adds the following stable styling roots. Existing aliases,
 parts, variants, native attributes, refs and customization props are retained.
-No rendered wrapper is added. Component styles use the same private
-zero-specificity document guard as the Button/IconButton pilot.
+No rendered wrapper is added. Choice controls migrated in #92 use render-time flat styles,
+honour `ThemeProvider cssLayer`, and need no document marker. Their old aliases are removed;
+the migration table below records the replacements. Other controls in this table remain on
+the migration allowlist and retain their document guard.
 
 | Family | Styling root | Existing parts and states |
 | --- | --- | --- |
-| CheckBoxGroup | `.openui-checkbox-group-root` | Existing clear/card/sunk variant classes. |
-| CheckBoxItem | `.openui-checkbox-item-container-root` | Container root; `.openui-checkbox-item-root`, indicator, content, label and description; checked/disabled states stay on the Radix control. |
-| Chips | `.openui-chips-root` | Existing chip item, icon and text; selected/disabled modifiers and focus-visible state. |
+| CheckBoxGroup | `.openui-check-box-group` | `--variant-{clear,card,sunk}`, defaults included. |
+| CheckBoxItem | `.openui-check-box-item` | Control root; `-container`, `-indicator`, `-icon`, `-check`, `-content`, `-label`, `-description`; Radix `[data-state]`, `:disabled`. |
+| Chips | `.openui-chips` | `-item`, `-item-icon`, `-item-text`; `[aria-selected]`, `:disabled`, `:focus-visible`. |
 | FormControl | `.openui-form-control-root`, `.openui-hint-root` | FormControl and Hint roots; error context still reaches Input/TextArea/Hint. |
 | Input | `.openui-input-root` | Existing small/medium/large, error, focus, hover, disabled and placeholder selectors. |
 | Label | `.openui-label-root` | Existing disabled modifier and required-asterisk part. |
 | OptionCards | `.openui-option-cards-root` | Existing grid/row/card/content/text/title/subtitle/top parts; selected/disabled/focus-visible state and container queries. |
-| RadioGroup | `.openui-radio-group-root` | Existing clear/card/sunk variants; native Radix behavior. |
-| RadioItem | `.openui-radio-item-container-root` | Container root; existing control, SVG paths, content, label and description; checked/disabled states. |
+| RadioGroup | `.openui-radio-group` | `--variant-{clear,card,sunk}`, defaults included. |
+| RadioItem | `.openui-radio-item` | Control root; `-container`, `-svg`, `-path`, `-border`, `-inner`, `-content`, `-label`, `-description`; Radix `[data-state]`, `:disabled`. |
 | Slider | `.openui-slider-wrapper-root`, `.openui-slider-block-root` | Wrapper and SliderBlock roots; existing track/range/thumb/handle/value/dot/label/block parts and native disabled/focus/hover state. |
-| SwitchGroup | `.openui-switch-group-root` | Existing clear/card/sunk variants. |
-| SwitchItem | `.openui-switch-item-container-root` | Container root; existing control/thumb/content/label/description and checked/disabled states. |
+| SwitchGroup | `.openui-switch-group` | `--variant-{clear,card,sunk}`, defaults included. |
+| SwitchItem | `.openui-switch-item` | Control root; `-container`, `-thumb`, `-content`, `-label`, `-description`; Radix `[data-state]`, `[data-disabled]`. |
 | TextArea | `.openui-textarea-root` | Existing error, focus, hover and disabled selectors. |
-| ToggleGroup | `.openui-toggle-group-root` | Existing group root and native disabled behavior. |
-| ToggleItem | `.openui-toggle-item-root` | Existing item alias and on/off, hover and disabled state. |
+| ToggleGroup | `.openui-toggle-group` | Group layout; native Radix disabled behavior. |
+| ToggleItem | `.openui-toggle-item` | Radix `[data-state="on"]` / `[data-state="off"]`, `:hover`, `:disabled`. |
 
 For example, a later `.openui-input-root { border-width: 2px; }` overrides
 Input's base border width. Use the corresponding variant, state or part selector
@@ -282,10 +284,10 @@ when overriding a declaration owned there:
 
 ```css
 .openui-input-root:focus { box-shadow: none; }
-.openui-checkbox-item-container-root .openui-checkbox-item-root[data-state="checked"] {
+.openui-check-box-item[data-state="checked"] {
   background-color: navy;
 }
-.openui-toggle-item-root[data-state="on"] { background-color: navy; }
+.openui-toggle-item[data-state="on"] { background-color: navy; }
 ```
 
 The Slider `className` still applies to its inner Radix root, while the new
@@ -700,6 +702,22 @@ Renamed stable classes and props, per component converted to the flat convention
 | MarkDownRenderer | Shared `.openui-table` / `.openui-table-container` | Also carry `.openui-markdown-renderer-table` / `.openui-markdown-renderer-table-container` |
 | Shared border-box (#90) | `.openui-border-box` on Buttons, FormControl and TagBlock | Unchanged; registered at render, flat and layer-aware. No prop renames. |
 | Shared Skeleton pulse (#90) | Animation on bars, pie shapes and legend dots | Also carry `.openui-skeleton-pulse`; animation and keyframes register at render. Existing classes and props are unchanged. |
+| CheckBoxGroup | `.openui-checkbox-group`, beta `.openui-checkbox-group-root` | `.openui-check-box-group` |
+| CheckBoxGroup | `.openui-checkbox-group-{clear,card,sunk}` | `.openui-check-box-group--variant-{clear,card,sunk}`; default `clear` always emitted |
+| CheckBoxItem | `.openui-checkbox-item-root` (control), `.openui-checkbox-item-container` and beta `-container-root` (wrapper) | `.openui-check-box-item` (control root), `.openui-check-box-item-container` (part); `className`, `style`, `ref` stay on the control |
+| CheckBoxItem | `.openui-checkbox-item-{indicator,content,label,description}` | `.openui-check-box-item-{indicator,content,label,description}`; new owned SVG `-icon` and path `-check` parts |
+| RadioGroup | `.openui-radio-group`, beta `.openui-radio-group-root` | `.openui-radio-group` only |
+| RadioGroup | `.openui-radio-group-{clear,card,sunk}` | `.openui-radio-group--variant-{clear,card,sunk}`; default `clear` always emitted |
+| RadioItem | `.openui-radio-item-root` (control), `.openui-radio-item-container` and beta `-container-root` (wrapper) | `.openui-radio-item` (control root), `.openui-radio-item-container` (part); forwarding unchanged |
+| RadioItem | `.openui-radio-item-svg-{path,border,inner}` | `.openui-radio-item-{path,border,inner}`; `-svg`, `-content`, `-label`, `-description` unchanged |
+| SwitchGroup | `.openui-switch-group`, beta `.openui-switch-group-root` | `.openui-switch-group` only |
+| SwitchGroup | `.openui-switch-group-{clear,card,sunk}` | `.openui-switch-group--variant-{clear,card,sunk}`; default `clear` always emitted |
+| SwitchItem | `.openui-switch-item-root` (control), `.openui-switch-item-container` and beta `-container-root` (wrapper) | `.openui-switch-item` (control root), `.openui-switch-item-container` (part); forwarding and other part names unchanged |
+| ToggleGroup / ToggleItem | `.openui-toggle-{group,item}`, beta `.openui-toggle-{group,item}-root` | `.openui-toggle-{group,item}` only; on/off remain Radix `[data-state]` |
+| Chips | `.openui-chips`, beta `.openui-chips-root` | `.openui-chips` only |
+| Chips | `.openui-chip-item`, `.openui-chip-item__{icon,text}` | `.openui-chips-item`, `.openui-chips-item-{icon,text}` |
+| Chips | `.openui-chip-item--selected`, `.openui-chip-item--disabled` | `.openui-chips-item[aria-selected="true"]`, `.openui-chips-item:disabled`; no state classes |
+| Choice controls (#92) | Public props | No prop renames; `type` on Chips/ToggleGroup changes selection behavior, not appearance, and adds no modifier |
 
 Pre-release `@openuidev/react-components` betas also emitted internal carrier classes that
 react-ui never had. They are gone; use the class on the right instead:
