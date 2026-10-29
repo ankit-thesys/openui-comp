@@ -2,7 +2,8 @@
 # Makes the upstream branch for a fork branch: one commit on the fork branch's merge base with the
 # upstream base, holding the fork branch's tree minus fork/upstream-exclude.txt. Paths the base
 # also has are restored from that merge base, the fork's workspace line is dropped and the lockfile
-# is regenerated. Writes only the local branch upstream/<fork-branch>; it never pushes.
+# is regenerated from the merge base's. Writes only the local branch upstream/<fork-branch>; it
+# never pushes.
 #
 #   fork/make-upstream-branch.sh <fork-branch> [upstream-base]   (base: codex/production-core-kits)
 #
@@ -51,6 +52,8 @@ while IFS= read -r entry; do
   fi
 done <<<"$exclude_list"
 
+# Regenerate from the base's lockfile, so it changes only where the remaining manifests do.
+git checkout -q "$merge_base" -- pnpm-lock.yaml
 pnpm install --lockfile-only --ignore-scripts --prefer-offline >/dev/null
 git add -A
 tree=$(git write-tree)
