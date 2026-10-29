@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PROTOTYPE: hook-free css</title>
+    <!-- The head recipe: layer order first, then the library's sheet. -->
+    <style>
+      @layer theme, base, openui, components, utilities;
+    </style>
+    <style id="openui-styles"></style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.11"></script>
+    <style>
+      .proto { font: 14px/1.5 system-ui, sans-serif; max-width: 920px; margin: 24px auto; padding: 0 16px; }
+      .proto h1 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+      .proto h2 { font-size: 15px; font-weight: 600; margin: 20px 0 8px; }
+      .proto .controls button.ctl { border: 1px solid #999; border-radius: 6px; padding: 4px 10px; margin: 0 6px 6px 0; background: #fff; }
+      .proto .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+      .proto pre { background: #f4f4f4; padding: 10px; white-space: pre-wrap; word-break: break-all; font-size: 12px; }
+      .proto .pass { color: #0a7a2f; } .proto .fail { color: #b00020; } .proto .note { color: #666; }
+    </style>
+  </head>
+  <body>
+    <div class="proto">
+      <h1>PROTOTYPE: hook-free <code>css</code>, layer applied when the sheet is written</h1>
+      <p class="note">
+        <code>fake-button.mjs</code> registers its rule at import time, before this page calls
+        <code>configureStyles()</code>. Tailwind 4 runs in the browser; its preflight sits in
+        <code>base</code>, its utilities in <code>utilities</code>.
+      </p>
+
+      <div class="controls">
+        <button class="ctl" data-act="layer">configureStyles({ layer: "openui" })</button>
+        <button class="ctl" data-act="none">configureStyles({}) — unlayered</button>
+        <button class="ctl" data-act="lazy">import("./lazy-card.mjs")</button>
+        <button class="ctl" data-act="host">host app: goober glob + extractCss</button>
+      </div>
+
+      <h2>Probes</h2>
+      <div class="row">
+        <button id="a">A: library only</button>
+        <button id="b" class="bg-red-500 rounded-full">B: library + bg-red-500 rounded-full</button>
+        <div id="lazy-slot"></div>
+      </div>
+
+      <h2>Checks</h2>
+      <ul id="checks"></ul>
+
+      <h2>State</h2>
+      <pre id="state"></pre>
+    </div>
+
+    <script type="module">
+      import { button } from "./fake-button.mjs"; // hoisted: runs before configureStyles below
+      import { configureStyles, sheetText, writes } from "./hookfree-css.mjs";
+      import { glob, extractCss } from "./vendor/goober.modern.js";
+
+      const a = document.getElementById("a");
+      const b = document.getElementById("b");
+      a.classList.add(button);
+      b.classList.add(button);
+      let card;
+      let mode = "layer";
+      let hostRan = false;
+
+      const bg = (el) => getComputedStyle(el).backgroundColor;
+      const radius = (el) => getComputedStyle(el).borderTopLeftRadius;
+      const DARK = "rgb(17, 17, 17)";
+
+      function render() {
+        const sheet = document.getElementById("openui-styles").textContent;
+        const red = !bg(b).startsWith("rgb(17") && bg(b) !== DARK;
+        const checks = [];
+        const check = (label, ok) => checks.push(`<li class="${ok ? "pass" : "fail"}">${ok ? "PASS" : "FAIL"} ${label}</li>`);
+        check("import-time rule is in the sheet", sheet.includes(`.${button}{`));
+        check("Tailwind preflight does not reset A (library background survives)", bg(a) === DARK);
+        if (mode === "layer") {
+          check("sheet wrapped once in @layer openui", sheet.startsWith("@layer openui{") && sheet.split("@layer").length === 2);
+          check("utility beats the library on B (bg-red-500)", red);
+          check("utility rounded-full beats the library radius on B", radius(b) !== "4px");
+        } else {
+          check("sheet unlayered", !sheet.includes("@layer"));
+          check("unlayered library beats the utility on B (expected without a layer)", !red);
+        }
+        if (card) check("lazy rule (+ keyframes) inside the current sheet", sheet.includes(`.${card}{`) && /@keyframes go\w+/.test(sheet));
+        if (hostRan) check("host glob/extractCss did not touch our sheet", sheet.includes(`.${button}{`));
+        document.getElementById("checks").innerHTML = checks.join("");
+        document.getElementById("state").textContent = [
+          `mode: ${mode}`,
+          `A background: ${bg(a)}   radius: ${radius(a)}`,
+          `B background: ${bg(b)}   radius: ${radius(b)}`,
+          `writes: ${writes.map((w) => `${w.reason}[${w.layer ?? "-"}]`).join(" → ")}`,
+          `goober's own _goober sheet: ${document.getElementById("_goober")?.textContent.length ?? "absent"} chars`,
+          "",
+          "#openui-styles:",
+          sheet,
+        ].join("\n");
+      }
+      // Tailwind's browser build generates CSS asynchronously; measure after it settles.
+      const settle = () => setTimeout(render, 150);
+
+      configureStyles({ layer: "openui" }); // "late": after the module above already registered
+      settle();
+
+      document.querySelector(".controls").addEventListener("click", async (event) => {
+        const act = event.target.dataset?.act;
+        if (act === "layer") { mode = "layer"; configureStyles({ layer: "openui" }); }
+        if (act === "none") { mode = "none"; configureStyles({}); }
+        if (act === "lazy") {
+          ({ card } = await import("./lazy-card.mjs"));
+          const el = document.createElement("div");
+          el.className = card;
+          el.textContent = "Lazy card";
+          document.getElementById("lazy-slot").replaceChildren(el);
+        }
+        if (act === "host") {
+          glob`body { outline: 0 solid transparent; }`; // goober's single global slot
+          extractCss(); // empties goober's default sheet
+          hostRan = true;
+        }
+        settle();
+      });
+    </script>
+  </body>
+</html>
