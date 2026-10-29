@@ -8,7 +8,8 @@
 #   fork/make-upstream-branch.sh <fork-branch> [upstream-base]   (base: codex/production-core-kits)
 #
 # An existing upstream/<fork-branch> on the same merge base gets a new commit on top (none when
-# nothing changed); one on another merge base is recreated. UPSTREAM_MESSAGE sets the message.
+# nothing changed); one on another merge base is recreated. UPSTREAM_MESSAGE sets the message
+# (default: a neutral one); UPSTREAM_SQUASH=1 rebuilds the branch as a single commit.
 set -euo pipefail
 
 usage() { echo "usage: $0 <fork-branch> [upstream-base]" >&2; exit 2; }
@@ -58,8 +59,11 @@ pnpm install --lockfile-only --ignore-scripts --prefer-offline >/dev/null
 git add -A
 tree=$(git write-tree)
 
-message=${UPSTREAM_MESSAGE:-"Upstream snapshot of $fork_branch at $(git rev-parse --short "$fork_commit")"}
-if previous=$(git rev-parse --verify --quiet "refs/heads/$target") &&
+# The message lands in upstream history, so it never names fork branches or SHAs.
+message=${UPSTREAM_MESSAGE:-"feat(react-components): update the component library"}
+# UPSTREAM_SQUASH=1 rebuilds the branch as one commit on the merge base (the push then needs force).
+if [[ -z ${UPSTREAM_SQUASH:-} ]] &&
+  previous=$(git rev-parse --verify --quiet "refs/heads/$target") &&
   git merge-base --is-ancestor "$merge_base" "$previous" &&
   [[ $(git rev-list --count "$merge_base..$previous") -gt 0 ]]; then
   if [[ $(git rev-parse "$previous^{tree}") == "$tree" ]]; then
