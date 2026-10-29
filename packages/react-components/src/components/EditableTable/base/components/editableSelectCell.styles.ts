@@ -1,5 +1,5 @@
 import type { StyleCss } from "../../../../styles/useStyles";
-// This cell owns its Radix parts so the still-unmigrated Select family cannot outrank its layer.
+// This cell owns its Radix parts, styled as table cells rather than as the Select family.
 export const names = {
   trigger: "openui-editable-table-select-trigger",
   icon: "openui-editable-table-select-icon",

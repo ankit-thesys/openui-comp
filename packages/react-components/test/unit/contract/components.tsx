@@ -1,5 +1,5 @@
-// Components converted to the flat styling convention, each rendered across every prop
-// combination through public exports. Add a component here when it leaves the allowlist.
+// Every component's styling contract, each rendered across every prop combination through public
+// exports. A new component gets an entry here; coverage.test.ts fails until it does.
 import * as PublicCharts from "@openuidev/react-components";
 import {
   Accordion,
@@ -135,8 +135,6 @@ export interface MigratedComponent {
    * component generates without classes. MarkDownRenderer and the inline renderer composing it opt in.
    */
   prose?: boolean;
-  /** Classes owned by an explicitly allowlisted dependency, outside this family contract. */
-  unmigratedClasses?: string[];
 }
 
 // Stable names as the reference generator reads them: every style module in the folder or below.
@@ -330,8 +328,8 @@ export const migratedComponents: MigratedComponent[] = [
   {
     folder: "Charts",
     get names() {
-      // Unmigrated chart frames and composed controls keep their own contract. Only their
-      // rendered names are accounted for here, like markdown's Table/CodeBlock dependencies.
+      // Composed charts and controls keep their own contract entries. Only their rendered names
+      // are accounted for here, like markdown's Table/CodeBlock dependencies.
       const dependencies = [
         ...stableClassesIn(
           [
@@ -1479,8 +1477,8 @@ export const migratedComponents: MigratedComponent[] = [
     get names() {
       return [
         ...namesOf("MarkDownRenderer"),
-        // Account for composed, still-allowlisted Table/CodeBlock parts separately from markdown
-        // names. Read their classes through public exports so their own migrations can rename them.
+        // Account for composed Table/CodeBlock parts separately from markdown names. Read their
+        // classes through public exports, so their own contracts stay the source of their names.
         Object.fromEntries(
           [
             ...stableClassesIn(

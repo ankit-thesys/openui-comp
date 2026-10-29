@@ -699,9 +699,8 @@ Each rule is one class plus at most one state. A parent's prop that changes a
 part's value travels through a private `--_openui-<component>-*` variable the
 part reads, not a descendant selector. After changing `names`, run
 `pnpm docs:selectors` to regenerate the reference. The unit tests enforce the
-selector budget, the naming grammar and the migration allowlist; see
-`test/README.md`. Modules on the allowlist keep their module-level `css` call
-behind a class on `html` until they are converted.
+selector budget and the naming grammar for every component, and that no module
+registers CSS or adds a class to `<html>` on import; see `test/README.md`.
 
 Keep selector specificity, declaration order, token fallbacks and keyframe timing
 when editing styles. Use CSS units explicitly: Goober does not add `px` to numeric

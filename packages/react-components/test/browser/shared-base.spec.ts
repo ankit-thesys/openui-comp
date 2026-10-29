@@ -1,5 +1,5 @@
 // #90: shared border-box and pulse survive <html> rewrites, register at render, honour layers,
-// and remain overridable by one stable class before/after the library. No allowlist exemptions.
+// and remain overridable by one stable class before/after the library.
 import { expect, test } from "@playwright/test";
 
 test("shared styles register at render and survive an html class rewrite", async ({ page }) => {
