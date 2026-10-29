@@ -20,6 +20,11 @@ describe("selector reference", () => {
     );
   });
 
+  it("documents IconText's boolean modifier as a prop", async () => {
+    const reference = renderSelectorReference(await readStableNames());
+    expect(reference).toContain("| `.openui-icon-text--bold` | Modifier | `bold={true}` |");
+  });
+
   it("matches the committed reference (run `pnpm docs:selectors` after changing names)", async () => {
     expect(committed()).toBe(renderSelectorReference(await readStableNames()));
   });

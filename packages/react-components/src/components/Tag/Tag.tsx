@@ -2,24 +2,11 @@
 
 import clsx from "clsx";
 import { CSSProperties, forwardRef, ReactNode } from "react";
-import { iconClass, rootClass, sizeClasses, textClass, variantClasses } from "./tag.styles";
+import { useStyles } from "../../styles/useStyles";
+import { names, tagStyles } from "./tag.styles";
 
 export type TagSize = "sm" | "md" | "lg";
 export type TagVariant = "neutral" | "info" | "success" | "warning" | "danger";
-
-const sizeMap: Record<TagSize, string> = {
-  sm: "openui-tag-sm",
-  md: "openui-tag-md",
-  lg: "openui-tag-lg",
-};
-
-const variantMap: Record<TagVariant, string> = {
-  neutral: "openui-tag-neutral",
-  info: "openui-tag-info",
-  success: "openui-tag-success",
-  warning: "openui-tag-warning",
-  danger: "openui-tag-danger",
-};
 
 export interface TagProps {
   className?: string;
@@ -32,23 +19,24 @@ export interface TagProps {
 
 export const Tag = forwardRef<HTMLDivElement, TagProps>((props, ref) => {
   const { className, styles, icon, text, size = "md", variant = "neutral", ...rest } = props;
+  const css = useStyles(tagStyles);
   return (
     <div
       ref={ref}
       className={clsx(
-        rootClass,
-        "openui-tag",
-        sizeClasses[size],
-        sizeMap[size],
-        variantClasses[variant],
-        variantMap[variant],
+        css.root,
+        names.root,
+        css.size[size],
+        names.size[size],
+        css.variant[variant],
+        names.variant[variant],
         className,
       )}
       style={styles}
       {...rest}
     >
-      {icon && <span className={clsx(iconClass, "openui-tag-icon")}>{icon}</span>}
-      <span className={clsx(textClass, "openui-tag-text")}>{text}</span>
+      {icon && <span className={clsx(css.icon, names.icon)}>{icon}</span>}
+      <span className={clsx(css.text, names.text)}>{text}</span>
     </div>
   );
 });

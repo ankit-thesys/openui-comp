@@ -3,10 +3,25 @@
 import {
   Button,
   Buttons,
+  Callout,
+  CardSourceProvider,
+  Carousel,
+  CarouselContent,
+  Citation,
+  CitationItem,
   CodeBlock,
   FormControl,
   IconButton,
+  IconTag,
+  IconText,
+  InlineHeader,
+  InlineMarkdownRenderer,
+  ListedSourceItem,
+  ListedSources,
   MarkDownRenderer,
+  Separator,
+  SourceFaviconImage,
+  Sources,
   Table,
   TableBody,
   TableCell,
@@ -17,7 +32,12 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
+  Tag,
   TagBlock,
+  TextBlockView,
+  TextCallout,
+  TextContent,
+  TextContentWrapper,
 } from "@openuidev/react-components";
 import type { ReactElement } from "react";
 import { renderToString } from "react-dom/server";
@@ -37,7 +57,7 @@ export interface MigratedComponent {
   clientOnly?: string[];
   /**
    * Allows prose rules (`.goN p`, the root's generated class then tags only) for content the
-   * component generates without classes. Only MarkDownRenderer opts in.
+   * component generates without classes. MarkDownRenderer and the inline renderer composing it opt in.
    */
   prose?: boolean;
 }
@@ -69,6 +89,26 @@ const product = <T,>(...lists: T[][]): T[][] =>
     [[]],
   );
 
+// Composed components keep their own names plus their dependencies' public rendered classes.
+// Read only after CSS collection, so this never registers a dependency before the contract render.
+const composedNames = (element: ReactElement): StableNames =>
+  Object.fromEntries(
+    [...stableClassesIn(renderToString(element))].map((name, index) => [
+      `dependency${index}`,
+      name,
+    ]),
+  );
+
+const source = {
+  title: "A source",
+  sourceName: "Example",
+  // A real local image keeps the browser benches deterministic, including inside portals.
+  faviconUrl:
+    'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="32" height="32"%3E%3Crect width="32" height="32" fill="%236286ab"/%3E%3C/svg%3E',
+  url: "https://example.com",
+};
+const inlineContent = "**Inline** [link](https://example.com) and `code` [1]";
+
 // Only their shared border-box rule is migrated in #90. Their owned styles stay on the
 // allowlist until #91/#96; do not add these families to migratedComponents yet.
 export const sharedBaseConsumers = [
@@ -98,7 +138,285 @@ export const sharedBaseConsumers = [
   },
 ];
 
+// #96: text and tag primitives. All typography combinations are exercised through public exports.
+const textVariants = [
+  "title-text",
+  "number-title-text",
+  "text-subtext",
+  "highlight-text-number-subtext",
+  "text",
+  "highlight-text",
+  "number",
+  "highlight-number",
+] as const;
+const tones = ["neutral", "info", "warning", "success", "danger"] as const;
+const wrapperText =
+  "# Heading\n\nParagraph before a list\n\n- First\n- Second\n\n[Link](https://example.com) and `code`";
+const inlineNames = () => composedNames(<InlineMarkdownRenderer content="Text" />);
+const tagElements = () =>
+  (["sm", "md", "lg"] as const).flatMap((size) =>
+    tones.map((variant) => (
+      <Tag key={`${size}-${variant}`} text="Label" size={size} variant={variant} icon={<svg />} />
+    )),
+  );
+const iconTagElements = () =>
+  (["xs", "s", "m", "l", "xl"] as const).flatMap((size) =>
+    [...tones, "inverted" as const].map((variant) => (
+      <IconTag key={`${size}-${variant}`} icon={{ name: "star" }} size={size} variant={variant} />
+    )),
+  );
+const textBlockElements = () =>
+  textVariants.flatMap((variant) =>
+    (["xs", "sm", "md", "lg"] as const).flatMap((size) =>
+      (["text", "number", "textOnly"] as const).flatMap((type) =>
+        (["left", "center", "right"] as const).map((align, index) => (
+          <TextBlockView
+            key={`${variant}-${size}-${type}-${align}`}
+            primary="Primary"
+            secondary="Secondary"
+            tertiary="Tertiary"
+            variant={variant}
+            size={size}
+            type={type}
+            align={align}
+            secondaryTone={index === 0 ? undefined : index === 1 ? "positive" : "negative"}
+            secondaryMaxLines={index === 0 ? undefined : 2}
+          />
+        )),
+      ),
+    ),
+  );
+
 export const migratedComponents: MigratedComponent[] = [
+  {
+    folder: "Tag",
+    names: namesOf("Tag"),
+    elements: () => [<Tag key="default" text="Label" />, ...tagElements()],
+  },
+  {
+    folder: "IconTag",
+    names: namesOf("IconTag"),
+    clientOnly: ["openui-icon-tag-icon"],
+    elements: () => [<IconTag key="default" icon={{ name: "star" }} />, ...iconTagElements()],
+  },
+  {
+    folder: "Callout",
+    names: namesOf("Callout"),
+    elements: () => [
+      <Callout key="default" title="Title" description="Description" />,
+      ...tones.flatMap((variant) =>
+        [undefined, 5000].map((duration) => (
+          <Callout
+            key={`${variant}-${duration}`}
+            variant={variant}
+            duration={duration}
+            title="Title"
+            description="Description"
+          />
+        )),
+      ),
+    ],
+  },
+  {
+    folder: "TextCallout",
+    names: namesOf("TextCallout"),
+    elements: () => [
+      <TextCallout key="default" title="Title" description="Description" />,
+      ...tones.map((variant) => (
+        <TextCallout key={variant} variant={variant} title="Title" description="Description" />
+      )),
+    ],
+  },
+  {
+    folder: "TextContent",
+    names: namesOf("TextContent"),
+    elements: () => [
+      <TextContent key="default">Content</TextContent>,
+      ...(["clear", "card", "sunk"] as const).map((variant) => (
+        <TextContent key={variant} variant={variant}>
+          Content
+        </TextContent>
+      )),
+    ],
+  },
+  {
+    folder: "TextBlock",
+    prose: true,
+    get names() {
+      return [...namesOf("TextBlock"), inlineNames()];
+    },
+    elements: () => [<TextBlockView key="default" primary="Primary" />, ...textBlockElements()],
+  },
+  {
+    folder: "InlineHeader",
+    prose: true,
+    get names() {
+      return [...namesOf("InlineHeader"), inlineNames()];
+    },
+    elements: () => [
+      <InlineHeader key="both" heading="Heading" description="Description" />,
+      <InlineHeader key="heading" heading="Heading" />,
+      <InlineHeader key="description" description="Description" />,
+      <InlineHeader key="empty" />,
+    ],
+  },
+  {
+    folder: "IconText",
+    prose: true,
+    get names() {
+      return [
+        ...namesOf("IconText"),
+        { icon: "openui-icon-tag-icon" },
+        ...[...tones, "inverted" as const].map((variant) =>
+          composedNames(<IconTag icon={{ name: "star" }} variant={variant} size="l" />),
+        ),
+        ...(["xs", "sm"] as const).flatMap((size) =>
+          (["text-subtext", "highlight-text-number-subtext"] as const).map((variant) =>
+            composedNames(
+              <TextBlockView primary="Title" secondary="Subtitle" variant={variant} size={size} />,
+            ),
+          ),
+        ),
+        inlineNames(),
+      ];
+    },
+    clientOnly: ["openui-icon-tag-icon"],
+    elements: () => [
+      <IconText key="default" icon={{ name: "star" }} title="Title" />,
+      ...(["horizontal", "vertical"] as const).flatMap((layout) =>
+        [...tones, "inverted" as const, "filled" as const, "soft" as const].flatMap((iconVariant) =>
+          [false, true].map((bold) => (
+            <IconText
+              key={`${layout}-${iconVariant}-${bold}`}
+              icon={{ name: "star" }}
+              title="Title"
+              subtitle="Subtitle"
+              layout={layout}
+              iconVariant={iconVariant}
+              bold={bold}
+            />
+          )),
+        ),
+      ),
+    ],
+  },
+  {
+    folder: "TagBlock",
+    get names() {
+      return [...namesOf("TagBlock"), ...namesOf("Tag"), ...namesOf("SharedBase")];
+    },
+    elements: () => [<TagBlock key="tags">{tagElements()}</TagBlock>],
+  },
+  {
+    folder: "Separator",
+    names: namesOf("Separator"),
+    elements: () => [
+      <Separator key="default" />,
+      <Separator key="horizontal" orientation="horizontal" />,
+      <Separator key="vertical" orientation="vertical" decorative={false} />,
+    ],
+  },
+  {
+    folder: "TextContentWrapper",
+    prose: true,
+    get names() {
+      return [
+        ...namesOf("TextContentWrapper"),
+        ...namesOf("InlineHeader"),
+        inlineNames(),
+        ...(["clear", "card", "sunk"] as const).map((variant) =>
+          composedNames(
+            <MarkDownRenderer
+              variant={variant}
+              textMarkdown={wrapperText}
+              options={{ remarkPlugins: [remarkGfm] }}
+            />,
+          ),
+        ),
+      ];
+    },
+    clientOnly: ["openui-text-content-wrapper-math"],
+    elements: () => [
+      <TextContentWrapper key="default" textMarkdown={wrapperText} />,
+      ...(["clear", "card", "sunk"] as const).map((variant) => (
+        <TextContentWrapper
+          key={variant}
+          variant={variant}
+          textMarkdown={wrapperText}
+          header={{ heading: "Heading", description: "Description" }}
+        />
+      )),
+    ],
+  },
+
+  {
+    folder: "SourceFaviconImage",
+    names: namesOf("SourceFaviconImage"),
+    elements: () => [
+      <SourceFaviconImage
+        key="image"
+        {...source}
+        url={source.faviconUrl}
+        alt="Example"
+        width={24}
+        height={24}
+      />,
+      <SourceFaviconImage key="fallback" url="" alt="Example" width={20} height={20} />,
+    ],
+  },
+  {
+    folder: "Citation",
+    get names() {
+      return [...namesOf("Citation"), ...namesOf("SourceFaviconImage")];
+    },
+    clientOnly: [
+      "openui-citation-icon",
+      "openui-citation-tooltip",
+      "openui-citation-tooltip-content",
+    ],
+    elements: () => [
+      <Citation key="citation" sources={[source]} />,
+      ...[source.url, undefined, "", " "].map((url, index) => (
+        <CitationItem key={index} {...source} url={url} />
+      )),
+    ],
+  },
+  {
+    folder: "Sources",
+    get names() {
+      return [
+        ...namesOf("Sources"),
+        ...namesOf("SourceFaviconImage"),
+        composedNames(
+          <Carousel variant="sunk">
+            <CarouselContent />
+          </Carousel>,
+        ),
+      ];
+    },
+    clientOnly: ["openui-sources-buttons"],
+    elements: () => [
+      <ListedSources key="list" sources={[source, { ...source, url: undefined }]} />,
+      <CardSourceProvider key="context" sources={[source]}>
+        <Sources />
+      </CardSourceProvider>,
+      ...[source.url, undefined, "", " "].map((url, index) => (
+        <ListedSourceItem key={index} {...source} url={url} sourceId={index} />
+      )),
+    ],
+  },
+  {
+    folder: "InlineMarkdownRenderer",
+    // The composed MarkDownRenderer emits the pilot's accepted prose rules.
+    prose: true,
+    get names() {
+      return [
+        ...namesOf("InlineMarkdownRenderer"),
+        composedNames(<MarkDownRenderer textMarkdown={inlineContent} />),
+      ];
+    },
+    elements: () => [<InlineMarkdownRenderer key="inline" content={inlineContent} />],
+  },
   {
     folder: "MarkDownRenderer",
     prose: true,

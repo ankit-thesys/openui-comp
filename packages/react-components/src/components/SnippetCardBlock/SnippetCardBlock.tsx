@@ -36,8 +36,8 @@ export interface SnippetCardBlockProps extends Omit<HTMLAttributes<HTMLDivElemen
   className?: string;
 }
 
-const TEXT_BLOCK_HEADING_SELECTOR = ".openui-text-block__primary";
-const TEXT_BLOCK_CONTENT_SELECTOR = ".openui-text-block__secondary";
+const TEXT_BLOCK_HEADING_SELECTOR = ".openui-text-block-primary";
+const TEXT_BLOCK_CONTENT_SELECTOR = ".openui-text-block-secondary";
 
 const SnippetCardBlock = forwardRef<HTMLDivElement, SnippetCardBlockProps>((props, ref) => {
   const {

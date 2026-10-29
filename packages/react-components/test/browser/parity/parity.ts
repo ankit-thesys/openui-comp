@@ -90,13 +90,16 @@ export async function snapshot(page: Page, fixture: string, mode: Mode): Promise
   const result: Snapshot = {};
   for (const id of ids) {
     const el = page.locator(`[data-parity-case="${id}"]`);
+    // Some cases wrap a smaller interactive element; hover that element in both builds.
+    const selector = await el.getAttribute("data-parity-target");
+    const target = selector ? el.locator(selector) : el;
     const take = (state: State) =>
       el.evaluate(measure, PROPERTIES).then((values) => {
         result[`${mode} ${id} ${state}`] = values;
       });
     await page.mouse.move(0, 0);
     await take("rest");
-    await el.hover();
+    await target.hover();
     await take("hover");
     await page.mouse.down();
     await take("active");

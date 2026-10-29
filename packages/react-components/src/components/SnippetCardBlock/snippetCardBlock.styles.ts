@@ -74,7 +74,7 @@ const stylesheetScope = css`
       }
       & .openui-value-card__lhs :where(.openui-icon-text),
       & .openui-value-card__lhs :where(.openui-image-text),
-      & .openui-value-card__lhs :where(.openui-icon-text__content),
+      & .openui-value-card__lhs :where(.openui-icon-text-content),
       & .openui-value-card__lhs :where(.openui-image-text__content),
       & .openui-value-card__lhs :where(.openui-text-block),
       & :where(.openui-value-card__rhs-content),
@@ -96,10 +96,10 @@ const stylesheetScope = css`
         overflow: hidden;
         text-align: right;
       }
-      & .openui-value-card__lhs :where(.openui-text-block__primary),
-      & .openui-value-card__lhs :where(.openui-text-block__secondary),
-      & .openui-value-card__rhs :where(.openui-text-block__primary),
-      & .openui-value-card__rhs :where(.openui-text-block__secondary) {
+      & .openui-value-card__lhs :where(.openui-text-block-primary),
+      & .openui-value-card__lhs :where(.openui-text-block-secondary),
+      & .openui-value-card__rhs :where(.openui-text-block-primary),
+      & .openui-value-card__rhs :where(.openui-text-block-secondary) {
         max-width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;

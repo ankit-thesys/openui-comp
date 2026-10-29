@@ -1,16 +1,10 @@
-import { css } from "goober";
+import type { StyleCss } from "../../styles/useStyles";
 
-export const faviconClass = "openui-source-favicon-image-root";
+export const names = { root: "openui-source-favicon-image" } as const;
 
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-source-favicon-image-root {
-      object-fit: cover;
-      display: flex;
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
+export const sourceFaviconImageStyles = (css: StyleCss) => ({
+  root: css`
+    object-fit: cover;
+    display: flex;
+  `,
+});

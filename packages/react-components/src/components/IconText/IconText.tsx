@@ -2,10 +2,11 @@
 
 import clsx from "clsx";
 import { forwardRef } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { IconTag, type IconTagVariant } from "../IconTag";
 import { TextBlockView } from "../TextBlock";
 import type { IconProps } from "../_shared/icons";
-import { contentClass, layoutClasses, rootClass } from "./iconText.styles";
+import { iconTextStyles, names } from "./iconText.styles";
 
 export type IconTextIconVariant = IconTagVariant | "filled" | "soft";
 export type IconTextLayout = "horizontal" | "vertical";
@@ -43,30 +44,35 @@ export const IconText = forwardRef<HTMLDivElement, IconTextProps>(
       className,
     },
     ref,
-  ) => (
-    <div
-      ref={ref}
-      className={clsx(
-        rootClass,
-        layoutClasses[layout],
-        "openui-icon-text",
-        `openui-icon-text--${layout}`,
-        className,
-      )}
-    >
-      <IconTag icon={icon} variant={normalizeIconVariant(iconVariant)} size="l" />
-      <div className={clsx(contentClass, "openui-icon-text__content")}>
-        <TextBlockView
-          variant={bold ? "highlight-text-number-subtext" : "text-subtext"}
-          primary={title}
-          secondary={subtitle}
-          type="text"
-          size={layout === "horizontal" ? "xs" : "sm"}
-          align="left"
-        />
+  ) => {
+    const styles = useStyles(iconTextStyles);
+    return (
+      <div
+        ref={ref}
+        className={clsx(
+          styles.root,
+          names.root,
+          styles.layout[layout],
+          names.layout[layout],
+          names.iconVariant[iconVariant],
+          bold && names.bold.true,
+          className,
+        )}
+      >
+        <IconTag icon={icon} variant={normalizeIconVariant(iconVariant)} size="l" />
+        <div className={clsx(styles.content, names.content)}>
+          <TextBlockView
+            variant={bold ? "highlight-text-number-subtext" : "text-subtext"}
+            primary={title}
+            secondary={subtitle}
+            type="text"
+            size={layout === "horizontal" ? "xs" : "sm"}
+            align="left"
+          />
+        </div>
       </div>
-    </div>
-  ),
+    );
+  },
 );
 
 IconText.displayName = "IconText";

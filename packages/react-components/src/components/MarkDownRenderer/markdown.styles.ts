@@ -156,6 +156,13 @@ export const markdownStyles = (css: StyleCss) => ({
         &:has(+ p) {
           margin-bottom: 18px;
         }
+        /* TextContentWrapper supplies its existing list lead-in spacing through inheritance. */
+        &:has(+ ol) {
+          margin-bottom: var(--_openui-markdown-renderer-paragraph-before-list-margin, 0px);
+        }
+        &:has(+ ul) {
+          margin-bottom: var(--_openui-markdown-renderer-paragraph-before-list-margin, 0px);
+        }
       }
       & strong {
         color: ${primary};
