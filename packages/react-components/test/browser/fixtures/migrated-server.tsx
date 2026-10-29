@@ -6,8 +6,8 @@ import { namesIn } from "../../unit/contract/collect";
 import { migratedComponents } from "../../unit/contract/components";
 
 // A component's own stable classes: the `names` of its style modules, as the reference reads them.
-// Classes of composed components that are not migrated yet (MarkDownRenderer's CodeBlock and
-// Table) are left out; they keep their earlier selectors.
+// Name groups made only of `dependency*` keys belong to composed components, which have contract
+// entries of their own, so they are left out.
 // Use the contract's exact names rather than every nested style module: Charts/shared and
 // individual cartesian families share a parent folder but render different public compositions.
 const ownClasses = (folder: string) => [

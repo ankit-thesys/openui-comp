@@ -11,11 +11,12 @@ const sourceFiles = (dir: string): string[] =>
   readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const path = join(dir, entry.name);
     if (entry.isDirectory()) return sourceFiles(path);
-    return /\.tsx?$/.test(entry.name) ? [relative(packageRoot, path)] : [];
+    return /\.[cm]?[jt]sx?$/.test(entry.name) ? [relative(packageRoot, path)] : [];
   });
-// Any import or require of goober or one of its entry points, such as goober/global.
+// Any import, re-export, side-effect import or require of goober or one of its entry points, such
+// as goober/global.
 const importsGoober = (file: string) =>
-  /\bfrom\s*["']goober(?:\/[\w-]+)?["']|\b(?:require|import)\(\s*["']goober(?:\/[\w-]+)?["']\s*\)/.test(
+  /\b(?:from|import)\s*["']goober(?:\/[\w-]+)?["']|\b(?:require|import)\(\s*["']goober(?:\/[\w-]+)?["']\s*\)/.test(
     readFileSync(join(packageRoot, file), "utf8"),
   );
 
