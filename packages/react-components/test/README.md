@@ -317,3 +317,45 @@ The Callout override checks disable its forwards-filled animation with a consume
 They assert the animation override too; the focused timing test separately verifies the
 original fade/collapse. IconText's boolean `bold` names entry uses the `true` axis value, and
 the reference generator displays it as `bold={true}` rather than a part or string prop.
+
+## Media rollout (#97)
+
+Image, ImageBlock, ImageText, ImageTextLarge, ImageGallery (including GalleryModal) and Carousel
+join the contract list, override and Tailwind benches. All seven owned style modules register
+through useStyles at render. Image's two aspect wrapper parts preserve Radix's geometry with CSS
+instead of inline defaults. ImageText retains TextBlock's size/variant typography; its numeric
+image size is a private inline variable consumed by CSS.
+ImageBlock uses data-breakpoint, data-loading and data-error; Carousel uses a single data-mask;
+gallery layout is a derived data-layout, and selected thumbnails use aria-pressed.
+
+`media.spec.ts` / `fixtures/media.tsx` cover every gallery portal part and measured Carousel
+control in both load orders and both layer modes, html class replacement, image geometry,
+custom ImageText size, ImageBlock loading/error/recovery and spinner progression, carousel
+scroll masks and gallery keyboard selection/close. Pending ImageBlock requests intentionally
+remain open: these pages use domcontentloaded readiness, then wait for visible stable parts.
+The common benches pause infinite loader animations at time zero before measuring them.
+They open the six-image gallery's portal and scroll both gallery and Carousel tracks to expose
+both controls. Portal parts outside #root participate in every override and Tailwind comparison.
+The ImageBlock bench fixes the page's box-sizing to border-box, and the ImageGallery bench fixes
+page-owned img display/vertical-align to block/middle in both runs: Tailwind's resets otherwise
+change percentage loader offsets and auto grid track sizes through properties the library leaves
+to the page. All computed-value assertions remain intact. The full media override matrix loads
+consumer CSS through a routed stylesheet before the bundle, avoiding oversized query URLs.
+The portal budget test sets its middle scroll offset instantly, then selects the fully visible
+Photo 2 thumbnail and checks both its resting and hovered opacity. Hovering the clipped first
+thumbnail would scroll the smooth track again and move the target away from the pointer.
+
+Capture these ten #72 parity baselines with `pnpm test:parity:baseline`: `image`, `image-block`,
+`image-text`, `image-text-large`, `image-gallery`, `image-gallery-modal`, `carousel`,
+`image-gallery-mobile`, `image-gallery-modal-mobile`, `carousel-mobile`. Each has a matching
+`fixtures/parity-<name>.tsx` and `<name>.parity.spec.ts`; mobile specs pin the viewport.
+Grid cases prevent opening a portal on press; the separate modal fixture exposes its case
+only after both scroll controls render. Local images settle before cases become ready, except
+for the deliberately pending loader case. No intentional visual differences are allowed.
+Chromium execution and baseline capture are left to the orchestrator; no JSON is hand-written.
+Carousel parity waits for every requested next control and icon before labeling descendants;
+recapture carousel and carousel-mobile after this readiness fix to replace timing-dependent
+part coverage. The other eight media baselines need no recapture.
+
+Internal renamed-class caller: SnippetCardBlock now uses openui-image-text-content. No chat-kit
+package or chat-kit references exist in this checkout.

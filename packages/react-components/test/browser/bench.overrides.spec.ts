@@ -25,7 +25,12 @@ const computedAll = (page: Page, className: string) =>
   page.locator(`.${className}`).evaluateAll(
     (elements, properties) =>
       elements.map((el) => {
-        el.getAnimations().forEach((animation) => animation.finish());
+        el.getAnimations().forEach((animation) => {
+          if (animation.effect?.getTiming().iterations === Infinity) {
+            animation.pause();
+            animation.currentTime = 0;
+          } else animation.finish();
+        });
         const style = getComputedStyle(el);
         return Object.fromEntries(properties.map((p) => [p, style.getPropertyValue(p)]));
       }),

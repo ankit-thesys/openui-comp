@@ -31,7 +31,12 @@ const snapshot = (page: Page, component: MigratedComponent) =>
     return Object.fromEntries(
       classes.flatMap((className) =>
         [...document.querySelectorAll(`.${className}`)].map((el, i) => {
-          el.getAnimations().forEach((animation) => animation.finish());
+          el.getAnimations().forEach((animation) => {
+            if (animation.effect?.getTiming().iterations === Infinity) {
+              animation.pause();
+              animation.currentTime = 0;
+            } else animation.finish();
+          });
           // Later matching rules win, as in the cascade (all library rules weigh the same here).
           const declared = new Map<string, string>();
           for (const rule of libraryRules.filter((rule) => matches(el, rule.selectorText)))

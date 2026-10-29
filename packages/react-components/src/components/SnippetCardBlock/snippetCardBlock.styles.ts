@@ -75,7 +75,7 @@ const stylesheetScope = css`
       & .openui-value-card__lhs :where(.openui-icon-text),
       & .openui-value-card__lhs :where(.openui-image-text),
       & .openui-value-card__lhs :where(.openui-icon-text-content),
-      & .openui-value-card__lhs :where(.openui-image-text__content),
+      & .openui-value-card__lhs :where(.openui-image-text-content),
       & .openui-value-card__lhs :where(.openui-text-block),
       & :where(.openui-value-card__rhs-content),
       & :where(.openui-value-card__rhs-content > *),
