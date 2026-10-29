@@ -1,11 +1,11 @@
 "use client";
 
 import clsx from "clsx";
+import type { CSSProperties } from "react";
 import React, { useCallback, useMemo, useRef, useState } from "react";
+import { useStyles } from "../../../styles/useStyles";
 import { Separator } from "../../Separator";
 import { useTheme } from "../../ThemeProvider";
-import { rootClass } from "./segmentedBar.styles";
-
 import { useChartShell } from "../hooks/core/useChartShell";
 import { ChartShell } from "../shared/core/ChartShell";
 import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
@@ -13,13 +13,11 @@ import type { StackedLegendItem } from "../shared/core/legend";
 import { ChartTooltip } from "../shared/core/PortalTooltip/ChartTooltip";
 import { StackedLegend } from "../shared/core/StackedLegend";
 import type { LegendItem } from "../types";
-import { CHART_CLASS_PREFIX } from "../utils/constants";
 import { resolvePalette } from "../utils/paletteUtils";
 import { numberTickFormatter } from "../utils/styleUtils";
 import { segmentShare, segmentValue } from "./parts/segmentedBarGeometry";
+import { names, segmentedBarStyles } from "./segmentedBar.styles";
 import type { SegmentedBarData, SegmentedBarProps } from "./types";
-
-const CLASS_PREFIX = `${CHART_CLASS_PREFIX}-segmented-bar`;
 
 /**
  * A thin div-based stacked progress bar — a faithful visual port of react-ui's
@@ -41,6 +39,7 @@ export function SegmentedBar<T extends SegmentedBarData>({
   className,
   style,
 }: SegmentedBarProps<T>) {
+  const styles = useStyles(segmentedBarStyles);
   const containerRef = useRef<HTMLDivElement>(null);
   const legendRef = useRef<HTMLDivElement>(null);
 
@@ -117,9 +116,8 @@ export function SegmentedBar<T extends SegmentedBarData>({
   // Position the tooltip at the top-center of a segment, in VIEWPORT coords
   // (viz's ChartTooltip positions a virtual element by raw client rect).
   const positionTooltipOver = useCallback((index: number) => {
-    const segmentEl = containerRef.current?.querySelectorAll(`.${CLASS_PREFIX}-segment`)?.[
-      index
-    ] as HTMLElement | undefined;
+    const segmentEl = containerRef.current?.querySelectorAll(`.${names.segment}`)?.[index] as
+      HTMLElement | undefined;
     if (!segmentEl) return;
     const rect = segmentEl.getBoundingClientRect();
     setTooltipPosition({ x: rect.left + rect.width / 2, y: rect.top });
@@ -165,33 +163,44 @@ export function SegmentedBar<T extends SegmentedBarData>({
   return (
     <ChartShell
       containerRef={containerRef}
-      classPrefix={CLASS_PREFIX}
-      className={clsx(rootClass, className, {
-        [`${CLASS_PREFIX}-container--gap`]: legend && legendVariant === "default",
-      })}
+      className={clsx(
+        styles.root,
+        names.root,
+        isAnimationActive && names.isAnimationActive.true,
+        styles.legendVariant[legendVariant],
+        names.legendVariant[legendVariant],
+        legend && styles.legend,
+        legend && names.legend.true,
+        className,
+      )}
       style={style ?? {}}
       isEmpty={isEmpty}
     >
       {() => (
         <>
-          <div className={CLASS_PREFIX} role="img" aria-label="Segmented bar">
+          <div className={clsx(styles.track, names.track)} role="img" aria-label="Segmented bar">
             {segments.map((segment, index) => {
               const isActive = activeIndex === null || activeIndex === index;
               return (
                 <div
                   key={segment.key}
-                  className={clsx(`${CLASS_PREFIX}-segment`, {
-                    [`${CLASS_PREFIX}-segment--animated`]: animate,
-                  })}
-                  style={{
-                    width: `${segment.percentage}%`,
-                    backgroundColor: segment.color,
-                    opacity: isActive ? 1 : 0.5,
-                  }}
+                  className={clsx(
+                    styles.segment,
+                    names.segment,
+                    animate && styles.segmentIsAnimationActive,
+                    animate && names.segmentIsAnimationActive,
+                  )}
+                  style={
+                    {
+                      "--_openui-segmented-bar-segment-width": `${segment.percentage}%`,
+                      "--_openui-segmented-bar-segment-background-color": segment.color,
+                      "--_openui-segmented-bar-segment-opacity": isActive ? 1 : 0.5,
+                    } as CSSProperties
+                  }
                   onMouseEnter={(e) => handleSegmentEnter(index, e)}
                   onMouseLeave={clearHover}
                 >
-                  <div className={`${CLASS_PREFIX}-segment-line`} />
+                  <div className={clsx(styles.segmentLine, names.segmentLine)} />
                 </div>
               );
             })}
@@ -221,12 +230,13 @@ export function SegmentedBar<T extends SegmentedBarData>({
             <>
               <Separator />
               <DefaultLegend
+                className={clsx(styles.defaultLegend, names.defaultLegend)}
                 ref={legendRef}
                 items={legendItems}
                 isExpanded={isLegendExpanded}
                 setIsExpanded={setIsLegendExpanded}
                 containerWidth={containerWidth}
-                style={{ paddingTop: 0 }}
+                style={{ "--_openui-segmented-bar-default-legend-padding-top": 0 } as CSSProperties}
               />
             </>
           )}
@@ -236,7 +246,7 @@ export function SegmentedBar<T extends SegmentedBarData>({
             // measurement is attached in this mode too — the `default` variant
             // attaches it via `DefaultLegend`. `StackedLegend` keeps its own
             // class (and its `margin-top`), so the layout is unchanged.
-            <div ref={legendRef}>
+            <div ref={legendRef} className={names.legendWrapper}>
               <StackedLegend
                 items={stackedLegendItems}
                 activeKey={hoveredKey}
@@ -245,7 +255,7 @@ export function SegmentedBar<T extends SegmentedBarData>({
                 separator
                 showTitle={false}
                 containerWidth={containerWidth}
-                className={`${CLASS_PREFIX}-stacked-legend`}
+                className={clsx(styles.stackedLegend, names.stackedLegend)}
               />
             </div>
           )}

@@ -14,11 +14,18 @@ test("a portal tooltip exposes flat override targets through a public chart", as
 });
 
 import { readStableNames } from "../../scripts/selector-reference.mjs";
+import { otherCharts } from "../fixtures/other-charts";
 import { classViolation, ruleViolation, rulesOf } from "../unit/contract/checks";
 import { blocksIn, namesIn } from "../unit/contract/collect";
 
 const constants = (await readStableNames())
-  .filter(({ component }) => component.startsWith("Charts/"))
+  .filter(
+    ({ component }) =>
+      component.startsWith("Charts/") &&
+      !otherCharts.some(
+        (chart) => component.startsWith(`Charts/${chart}/`) || component === `Charts/${chart}`,
+      ),
+  )
   .map(({ names }) => names);
 const targets = [...namesIn(constants)];
 const values = {
@@ -237,8 +244,16 @@ test("rewriting html classes preserves foundation styles including the portal", 
   await expect(page.locator(".openui-chart-tooltip")).toHaveCount(1);
   await expect(page.locator(".openui-default-legend").first()).toBeVisible();
   await expect(page.locator(".openui-mini-line-chart").first()).toBeVisible();
-  const sample = () =>
-    page
+  const sample = async () => {
+    // Rewriting html removes the unmigrated LineChart frame's scoped layout. Reflow can move
+    // it out from under the pointer and close its tooltip; reopen through the public chart.
+    await page
+      .getByTestId("tooltip-chart")
+      .getByRole("img", { name: "Line chart", exact: true })
+      .hover({ position: { x: 120, y: 80 } });
+    await expect(page.locator(".openui-chart-tooltip")).toBeVisible();
+    await expect(page.locator(".openui-chart-tooltip")).toHaveCount(1);
+    return page
       .locator(".openui-chart-tooltip, .openui-default-legend, .openui-mini-line-chart")
       .evaluateAll((els) =>
         els.map((el) => {
@@ -253,6 +268,7 @@ test("rewriting html classes preserves foundation styles including the portal", 
           );
         }),
       );
+  };
   const before = await sample();
   await page.evaluate(() => {
     document.documentElement.className = "app-dark";

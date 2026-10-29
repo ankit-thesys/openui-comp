@@ -87,6 +87,7 @@ export async function snapshot(
   fixture: string,
   mode: Mode,
   prepareCase?: (page: Page, id: string) => Promise<void>,
+  extraProperties: readonly string[] = [],
 ): Promise<Snapshot> {
   await page.goto(`/${fixture}.html?mode=${mode}`);
   const cases = page.locator("[data-parity-case]");
@@ -99,7 +100,10 @@ export async function snapshot(
     const el = page.locator(`[data-parity-case="${id}"]`);
     const take = async (state: State) => {
       await prepareCase?.(page, id);
-      result[`${mode} ${id} ${state}`] = await el.evaluate(measure, PROPERTIES);
+      result[`${mode} ${id} ${state}`] = await el.evaluate(measure, [
+        ...PROPERTIES,
+        ...extraProperties,
+      ]);
     };
     await page.mouse.move(0, 0);
     await take("rest");
@@ -126,12 +130,13 @@ export async function checkParity(
   name: string,
   intentional: readonly string[] = [],
   prepareCase?: (page: Page, id: string) => Promise<void>,
+  extraProperties: readonly string[] = [],
 ): Promise<void> {
   const capture = !!process.env["OPENUI_PARITY_CAPTURE"];
   const fixture = `parity-${name}${capture ? "-baseline" : ""}`;
   const current: Snapshot = {
-    ...(await snapshot(page, fixture, "light", prepareCase)),
-    ...(await snapshot(page, fixture, "dark", prepareCase)),
+    ...(await snapshot(page, fixture, "light", prepareCase, extraProperties)),
+    ...(await snapshot(page, fixture, "dark", prepareCase, extraProperties)),
   };
   if (capture) {
     mkdirSync(fileURLToPath(new URL("./baselines/", import.meta.url)), { recursive: true });

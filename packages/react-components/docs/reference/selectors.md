@@ -23,6 +23,91 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-button--tone-default` | Modifier | `tone="default"` |
 | `.openui-button--tone-destructive` | Modifier | `tone="destructive"` |
 
+## Charts/CalendarHeatmap
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-calendar-heatmap` | Root | Always |
+| `.openui-calendar-heatmap-weekday-label` | Part (`weekdayLabel`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-legend-swatch-slot` | Part (`legendSwatchSlot`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-separator` | Part (`separator`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-quarter-label` | Part (`quarterLabel`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-legend` | Part (`legend`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-legend-label` | Part (`legendLabel`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-legend-swatches` | Part (`legendSwatches`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-legend-swatch` | Part (`legendSwatch`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-legend-gradient` | Part (`legendGradient`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-legend-gradient-hit` | Part (`legendGradientHit`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-month-label` | Part (`monthLabel`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-cell` | Part (`cell`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-cell--is-animation-active` | Part (`cellIsAnimationActive`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-plot` | Part (`plot`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-svg` | Part (`svg`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-group` | Part (`group`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-pattern` | Part (`pattern`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-defs` | Part (`defs`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-pattern-background` | Part (`patternBackground`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-swatch-tile` | Part (`swatchTile`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-pattern-dot` | Part (`patternDot`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap-pattern-line` | Part (`patternLine`) | On that part, whenever it renders |
+| `.openui-calendar-heatmap--layout-fluid` | Modifier | `layout="fluid"` |
+| `.openui-calendar-heatmap--layout-fill` | Modifier | `layout="fill"` |
+| `.openui-calendar-heatmap--legend-variant-swatches` | Modifier | `legendVariant="swatches"` |
+| `.openui-calendar-heatmap--legend-variant-gradient` | Modifier | `legendVariant="gradient"` |
+| `.openui-calendar-heatmap--legend-variant-none` | Modifier | `legendVariant="none"` |
+| `.openui-calendar-heatmap--is-animation-active` | Modifier | `isAnimationActive="true"` |
+
+## Charts/FunnelChart
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-funnel-chart` | Root | Always |
+| `.openui-funnel-chart-ring` | Part (`ring`) | On that part, whenever it renders |
+| `.openui-funnel-chart-stage` | Part (`stage`) | On that part, whenever it renders |
+| `.openui-funnel-chart-value` | Part (`value`) | On that part, whenever it renders |
+| `.openui-funnel-chart-label` | Part (`label`) | On that part, whenever it renders |
+| `.openui-funnel-chart-pct` | Part (`pct`) | On that part, whenever it renders |
+| `.openui-funnel-chart-pct-pill` | Part (`pctPill`) | On that part, whenever it renders |
+| `.openui-funnel-chart-stage--is-animation-active` | Part (`stageIsAnimationActive`) | On that part, whenever it renders |
+| `.openui-funnel-chart-readouts` | Part (`readouts`) | On that part, whenever it renders |
+| `.openui-funnel-chart-labels` | Part (`labels`) | On that part, whenever it renders |
+| `.openui-funnel-chart-svg` | Part (`svg`) | On that part, whenever it renders |
+| `.openui-funnel-chart-group` | Part (`group`) | On that part, whenever it renders |
+| `.openui-funnel-chart-text-line` | Part (`textLine`) | On that part, whenever it renders |
+| `.openui-funnel-chart-hitbox` | Part (`hitbox`) | On that part, whenever it renders |
+| `.openui-funnel-chart--orientation-horizontal` | Modifier | `orientation="horizontal"` |
+| `.openui-funnel-chart--orientation-vertical` | Modifier | `orientation="vertical"` |
+| `.openui-funnel-chart--edges-curved` | Modifier | `edges="curved"` |
+| `.openui-funnel-chart--edges-straight` | Modifier | `edges="straight"` |
+| `.openui-funnel-chart--is-animation-active` | Modifier | `isAnimationActive="true"` |
+
+## Charts/HeatmapChart
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-heatmap-chart` | Root | Always |
+| `.openui-heatmap-chart-x-tick` | Part (`xTick`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-y-tick` | Part (`yTick`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-cell` | Part (`cell`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-cell-label` | Part (`cellLabel`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-cell--is-animation-active` | Part (`cellIsAnimationActive`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-cell-label--is-animation-active` | Part (`cellLabelIsAnimationActive`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-color-scale` | Part (`colorScale`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-color-scale-label` | Part (`colorScaleLabel`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-color-scale-ramp` | Part (`colorScaleRamp`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-color-scale-ramp--ramp-mode-diverging` | Part (`colorScaleRampRampModeDiverging`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-color-scale-bucket` | Part (`colorScaleBucket`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-color-scale-ramp--ramp-mode-sequential` | Part (`colorScaleRampRampModeSequential`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-y-axis` | Part (`yAxis`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-x-axis` | Part (`xAxis`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-svg` | Part (`svg`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-group` | Part (`group`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-text-line` | Part (`textLine`) | On that part, whenever it renders |
+| `.openui-heatmap-chart-hitbox` | Part (`hitbox`) | On that part, whenever it renders |
+| `.openui-heatmap-chart--ramp-mode-sequential` | Modifier | `rampMode="sequential"` |
+| `.openui-heatmap-chart--ramp-mode-diverging` | Modifier | `rampMode="diverging"` |
+| `.openui-heatmap-chart--is-animation-active` | Modifier | `isAnimationActive="true"` |
+
 ## Charts/MiniAreaChart
 
 | Stable class | Kind | Present when |
@@ -58,6 +143,87 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-mini-line-chart-line` | Part (`line`) | On that part, whenever it renders |
 | `.openui-mini-line-chart-point` | Part (`point`) | On that part, whenever it renders |
 | `.openui-mini-line-chart--is-animation-active` | Modifier | `isAnimationActive="true"` |
+
+## Charts/PieChart
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-pie-chart` | Root | Always |
+| `.openui-pie-chart-svg-wrapper` | Part (`svgWrapper`) | On that part, whenever it renders |
+| `.openui-pie-chart-track` | Part (`track`) | On that part, whenever it renders |
+| `.openui-pie-chart-slice--is-animation-active` | Part (`sliceIsAnimationActive`) | On that part, whenever it renders |
+| `.openui-pie-chart-slice` | Part (`slice`) | On that part, whenever it renders |
+| `.openui-pie-chart-group` | Part (`group`) | On that part, whenever it renders |
+| `.openui-pie-chart-svg` | Part (`svg`) | On that part, whenever it renders |
+| `.openui-pie-chart-hitbox` | Part (`hitbox`) | On that part, whenever it renders |
+| `.openui-pie-chart--variant-pie` | Modifier | `variant="pie"` |
+| `.openui-pie-chart--variant-donut` | Modifier | `variant="donut"` |
+| `.openui-pie-chart--appearance-circular` | Modifier | `appearance="circular"` |
+| `.openui-pie-chart--appearance-semi-circular` | Modifier | `appearance="semiCircular"` |
+| `.openui-pie-chart--is-animation-active` | Modifier | `isAnimationActive="true"` |
+
+## Charts/RadarChart
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-radar-chart` | Root | Always |
+| `.openui-radar-chart-svg-wrapper` | Part (`svgWrapper`) | On that part, whenever it renders |
+| `.openui-radar-chart-svg` | Part (`svg`) | On that part, whenever it renders |
+| `.openui-radar-chart-grid-ring` | Part (`gridRing`) | On that part, whenever it renders |
+| `.openui-radar-chart-grid-spoke` | Part (`gridSpoke`) | On that part, whenever it renders |
+| `.openui-radar-chart-polygon-area` | Part (`polygonArea`) | On that part, whenever it renders |
+| `.openui-radar-chart-polygon-stroke` | Part (`polygonStroke`) | On that part, whenever it renders |
+| `.openui-radar-chart-dot` | Part (`dot`) | On that part, whenever it renders |
+| `.openui-radar-chart-active-dot-outer` | Part (`activeDotOuter`) | On that part, whenever it renders |
+| `.openui-radar-chart-active-dot-inner` | Part (`activeDotInner`) | On that part, whenever it renders |
+| `.openui-radar-chart-active-dots` | Part (`activeDots`) | On that part, whenever it renders |
+| `.openui-radar-chart-axis-label` | Part (`axisLabel`) | On that part, whenever it renders |
+| `.openui-radar-chart-polygon--is-animation-active` | Part (`polygonIsAnimationActive`) | On that part, whenever it renders |
+| `.openui-radar-chart-grid` | Part (`grid`) | On that part, whenever it renders |
+| `.openui-radar-chart-series` | Part (`series`) | On that part, whenever it renders |
+| `.openui-radar-chart-axis-labels` | Part (`axisLabels`) | On that part, whenever it renders |
+| `.openui-radar-chart-polygon` | Part (`polygon`) | On that part, whenever it renders |
+| `.openui-radar-chart-group` | Part (`group`) | On that part, whenever it renders |
+| `.openui-radar-chart-text-line` | Part (`textLine`) | On that part, whenever it renders |
+| `.openui-radar-chart-hitbox` | Part (`hitbox`) | On that part, whenever it renders |
+| `.openui-radar-chart--variant-line` | Modifier | `variant="line"` |
+| `.openui-radar-chart--variant-area` | Modifier | `variant="area"` |
+| `.openui-radar-chart--grid-shape-polygon` | Modifier | `gridShape="polygon"` |
+| `.openui-radar-chart--grid-shape-circle` | Modifier | `gridShape="circle"` |
+| `.openui-radar-chart--is-animation-active` | Modifier | `isAnimationActive="true"` |
+
+## Charts/RadialChart
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-radial-chart` | Root | Always |
+| `.openui-radial-chart-svg-wrapper` | Part (`svgWrapper`) | On that part, whenever it renders |
+| `.openui-radial-chart-grid-circle` | Part (`gridCircle`) | On that part, whenever it renders |
+| `.openui-radial-chart-bar--is-animation-active` | Part (`barIsAnimationActive`) | On that part, whenever it renders |
+| `.openui-radial-chart-bar` | Part (`bar`) | On that part, whenever it renders |
+| `.openui-radial-chart-grid` | Part (`grid`) | On that part, whenever it renders |
+| `.openui-radial-chart-svg` | Part (`svg`) | On that part, whenever it renders |
+| `.openui-radial-chart-group` | Part (`group`) | On that part, whenever it renders |
+| `.openui-radial-chart--variant-circular` | Modifier | `variant="circular"` |
+| `.openui-radial-chart--variant-semi-circular` | Modifier | `variant="semiCircular"` |
+| `.openui-radial-chart--is-animation-active` | Modifier | `isAnimationActive="true"` |
+
+## Charts/SegmentedBar
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-segmented-bar` | Root | Always |
+| `.openui-segmented-bar-track` | Part (`track`) | On that part, whenever it renders |
+| `.openui-segmented-bar-segment` | Part (`segment`) | On that part, whenever it renders |
+| `.openui-segmented-bar-segment-line` | Part (`segmentLine`) | On that part, whenever it renders |
+| `.openui-segmented-bar-segment--is-animation-active` | Part (`segmentIsAnimationActive`) | On that part, whenever it renders |
+| `.openui-segmented-bar-stacked-legend` | Part (`stackedLegend`) | On that part, whenever it renders |
+| `.openui-segmented-bar-legend-wrapper` | Part (`legendWrapper`) | On that part, whenever it renders |
+| `.openui-segmented-bar-default-legend` | Part (`defaultLegend`) | On that part, whenever it renders |
+| `.openui-segmented-bar--legend` | Modifier | `legend="true"` |
+| `.openui-segmented-bar--legend-variant-default` | Modifier | `legendVariant="default"` |
+| `.openui-segmented-bar--legend-variant-stacked` | Modifier | `legendVariant="stacked"` |
+| `.openui-segmented-bar--is-animation-active` | Modifier | `isAnimationActive="true"` |
 
 ## Charts/shared/cartesian/ScrollButtonsHorizontal
 

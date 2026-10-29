@@ -1,146 +1,189 @@
-import { css, keyframes } from "goober";
-const cellIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
-export const rootClass = "openui-calendar-heatmap-root";
+import type { StyleCss } from "../../../styles/useStyles";
 
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-calendar-heatmap-root {
-      & {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        position: relative;
+/** Stable override targets for CalendarHeatmap. */
+export const names = {
+  root: "openui-calendar-heatmap",
+  weekdayLabel: "openui-calendar-heatmap-weekday-label",
+  legendSwatchSlot: "openui-calendar-heatmap-legend-swatch-slot",
+  separator: "openui-calendar-heatmap-separator",
+  quarterLabel: "openui-calendar-heatmap-quarter-label",
+  legend: "openui-calendar-heatmap-legend",
+  legendLabel: "openui-calendar-heatmap-legend-label",
+  legendSwatches: "openui-calendar-heatmap-legend-swatches",
+  legendSwatch: "openui-calendar-heatmap-legend-swatch",
+  legendGradient: "openui-calendar-heatmap-legend-gradient",
+  legendGradientHit: "openui-calendar-heatmap-legend-gradient-hit",
+  monthLabel: "openui-calendar-heatmap-month-label",
+  cell: "openui-calendar-heatmap-cell",
+  cellIsAnimationActive: "openui-calendar-heatmap-cell--is-animation-active",
+  plot: "openui-calendar-heatmap-plot",
+  svg: "openui-calendar-heatmap-svg",
+  group: "openui-calendar-heatmap-group",
+  pattern: "openui-calendar-heatmap-pattern",
+  defs: "openui-calendar-heatmap-defs",
+  patternBackground: "openui-calendar-heatmap-pattern-background",
+  swatchTile: "openui-calendar-heatmap-swatch-tile",
+  patternDot: "openui-calendar-heatmap-pattern-dot",
+  patternLine: "openui-calendar-heatmap-pattern-line",
+  layout: {
+    fluid: "openui-calendar-heatmap--layout-fluid",
+    fill: "openui-calendar-heatmap--layout-fill",
+  },
+  legendVariant: {
+    swatches: "openui-calendar-heatmap--legend-variant-swatches",
+    gradient: "openui-calendar-heatmap--legend-variant-gradient",
+    none: "openui-calendar-heatmap--legend-variant-none",
+  },
+  isAnimationActive: {
+    true: "openui-calendar-heatmap--is-animation-active",
+  },
+} as const;
+
+// Register the entrance keyframes with the component, never on import.
+export const calendarHeatmapStyles = (css: StyleCss) => {
+  css`
+    @keyframes openui-calendar-heatmap-appear {
+      from {
+        opacity: 0;
       }
-
-      & :where(.openui-calendar-heatmap-month-label),
-      & :where(.openui-calendar-heatmap-weekday-label) {
-        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
-        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
-        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
-        fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+      to {
+        opacity: 1;
       }
+    }
+  `;
+  return {
+    root: css`
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      width: var(--_openui-calendar-heatmap-root-width, 100%);
+      height: var(--_openui-calendar-heatmap-root-height, unset);
+    `,
+    weekdayLabel: css`
+      font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+      letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+      font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+      fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+    `,
+    legendSwatchSlot: css`
+      display: inline-flex;
+      cursor: pointer;
+      @media (prefers-reduced-motion: no-preference) {
+        transition:
+          fill-opacity 0.2s ease,
+          opacity 0.2s ease;
+      }
+      opacity: var(--_openui-calendar-heatmap-legend-swatch-slot-opacity, unset);
+    `,
+    separator: css`
+      stroke: var(
+        --_openui-calendar-heatmap-separator-stroke,
+        var(--openui-border-default, oklch(0.097 0 0 / 0.06))
+      );
+      stroke-width: 1;
+    `,
+    quarterLabel: css`
+      font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+      letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+      font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+      color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+      white-space: nowrap;
+      pointer-events: none;
 
-      & :hover:where(.openui-calendar-heatmap-cell) {
+      position: var(--_openui-calendar-heatmap-quarter-label-position, unset);
+      top: var(--_openui-calendar-heatmap-quarter-label-top, unset);
+      left: var(--_openui-calendar-heatmap-quarter-label-left, unset);
+    `,
+    legend: css`
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: var(--openui-space-s, 8px);
+      width: 100%;
+      padding-top: var(--openui-space-m, 12px);
+    `,
+    legendLabel: css`
+      font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+      letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+      font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+      color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+    `,
+    legendSwatches: css`
+      display: flex;
+      align-items: center;
+      gap: var(--openui-space-3xs, 2px);
+    `,
+    legendSwatch: css`
+      display: block;
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+      border-radius: var(--openui-radius-2xs, 2px);
+
+      background-color: var(--_openui-calendar-heatmap-legend-swatch-background-color, unset);
+    `,
+    legendGradient: css`
+      position: relative;
+      width: 60px;
+      height: 12px;
+      flex-shrink: 0;
+      border-radius: var(--openui-radius-2xs, 2px);
+
+      background: var(--_openui-calendar-heatmap-legend-gradient-background, unset);
+    `,
+    legendGradientHit: css`
+      position: absolute;
+      top: 0;
+      height: 100%;
+      cursor: pointer;
+
+      left: var(--_openui-calendar-heatmap-legend-gradient-hit-left, unset);
+      width: var(--_openui-calendar-heatmap-legend-gradient-hit-width, unset);
+    `,
+    monthLabel: css`
+      font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+      letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
+      font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
+      fill: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+    `,
+    cell: css`
+      &:hover {
         stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
         stroke-width: 1.5;
       }
-
-      & :where(.openui-calendar-heatmap-cell--ghost) {
+      &[data-ghost] {
         fill-opacity: 0.4;
       }
-
+      &[data-dimmed] {
+        fill-opacity: 0.3;
+      }
       @media (prefers-reduced-motion: no-preference) {
-        & :where(.openui-calendar-heatmap-cell--animated) {
-          opacity: 0;
-          animation: ${cellIn} 0.4s ease-out forwards;
-        }
+        transition:
+          fill-opacity 0.2s ease,
+          opacity 0.2s ease;
       }
-      &
-        [data-openui-highlight-level="0"]
-        :not(.openui-calendar-heatmap-cell--level-0):where(.openui-calendar-heatmap-cell) {
-        fill-opacity: 0.3;
-      }
-
-      &
-        [data-openui-highlight-level="1"]
-        :not(.openui-calendar-heatmap-cell--level-1):where(.openui-calendar-heatmap-cell) {
-        fill-opacity: 0.3;
-      }
-
-      &
-        [data-openui-highlight-level="2"]
-        :not(.openui-calendar-heatmap-cell--level-2):where(.openui-calendar-heatmap-cell) {
-        fill-opacity: 0.3;
-      }
-
-      &
-        [data-openui-highlight-level="3"]
-        :not(.openui-calendar-heatmap-cell--level-3):where(.openui-calendar-heatmap-cell) {
-        fill-opacity: 0.3;
-      }
-
-      &
-        [data-openui-highlight-level="4"]
-        :not(.openui-calendar-heatmap-cell--level-4):where(.openui-calendar-heatmap-cell) {
-        fill-opacity: 0.3;
-      }
-
+      fill: var(--_openui-calendar-heatmap-cell-fill, unset);
+      animation-delay: var(--_openui-calendar-heatmap-cell-animation-delay, unset);
+      cursor: var(--_openui-calendar-heatmap-cell-cursor, unset);
+    `,
+    cellIsAnimationActive: css`
       @media (prefers-reduced-motion: no-preference) {
-        & :where(.openui-calendar-heatmap-cell),
-        & :where(.openui-calendar-heatmap-legend-swatch-slot) {
-          transition:
-            fill-opacity 0.2s ease,
-            opacity 0.2s ease;
-        }
+        opacity: 0;
+        animation: openui-calendar-heatmap-appear 0.4s ease-out forwards;
+        animation-delay: var(--_openui-calendar-heatmap-cell-animation-delay, 0s);
       }
-      & :where(.openui-calendar-heatmap-separator) {
-        stroke: var(--openui-border-default, oklch(0.097 0 0 / 0.06));
-        stroke-width: 1;
-      }
-
-      & :where(.openui-calendar-heatmap-quarter-label) {
-        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
-        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
-        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
-        color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
-        white-space: nowrap;
-        pointer-events: none;
-      }
-
-      & :where(.openui-calendar-heatmap-legend) {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: var(--openui-space-s, 8px);
-        width: 100%;
-        padding-top: var(--openui-space-m, 12px);
-      }
-      & :where(.openui-calendar-heatmap-legend-label) {
-        font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
-        letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
-        font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
-        color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
-      }
-      & :where(.openui-calendar-heatmap-legend-swatches) {
-        display: flex;
-        align-items: center;
-        gap: var(--openui-space-3xs, 2px);
-      }
-      & :where(.openui-calendar-heatmap-legend-swatch-slot) {
-        display: inline-flex;
-        cursor: pointer;
-      }
-      & :where(.openui-calendar-heatmap-legend-swatch) {
-        display: block;
-        width: 12px;
-        height: 12px;
-        flex-shrink: 0;
-        border-radius: var(--openui-radius-2xs, 2px);
-      }
-      & :where(.openui-calendar-heatmap-legend-gradient) {
-        position: relative;
-        width: 60px;
-        height: 12px;
-        flex-shrink: 0;
-        border-radius: var(--openui-radius-2xs, 2px);
-      }
-      & :where(.openui-calendar-heatmap-legend-gradient-hit) {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        cursor: pointer;
-      }
-    }
-  }
-`;
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
+    `,
+    plot: css`
+      position: var(--_openui-calendar-heatmap-plot-position, unset);
+      width: var(--_openui-calendar-heatmap-plot-width, unset);
+    `,
+    svg: css`
+      /* Preserve #72's inline baseline gap when Preflight resets replaced elements. */
+      display: inline;
+      vertical-align: baseline;
+      overflow: var(--_openui-calendar-heatmap-svg-overflow, unset);
+    `,
+  };
+};

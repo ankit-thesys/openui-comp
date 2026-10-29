@@ -1,5 +1,6 @@
 // Components converted to the flat styling convention, each rendered across every prop
 // combination through public exports. Add a component here when it leaves the allowlist.
+import * as PublicCharts from "@openuidev/react-components";
 import {
   Button,
   CodeBlock,
@@ -22,6 +23,7 @@ import remarkGfm from "remark-gfm";
 import { readStableNames, type StableNames } from "../../../scripts/selector-reference.mjs";
 import { chartFoundationElements } from "../../fixtures/chart-foundations";
 import { markdown } from "../../fixtures/markdown";
+import { chartSlug, otherChartCases, otherCharts } from "../../fixtures/other-charts";
 import { stableClassesIn } from "./collect";
 
 export interface MigratedComponent {
@@ -64,7 +66,12 @@ export const migratedComponents: MigratedComponent[] = [
       // rendered names are accounted for here, like markdown's Table/CodeBlock dependencies.
       const dependencies = [
         ...stableClassesIn(
-          chartFoundationElements()
+          [
+            ...chartFoundationElements(),
+            ...otherCharts.flatMap((chart) =>
+              otherChartCases(PublicCharts, chart).map(({ element }) => element),
+            ),
+          ]
             .map((element) => renderToString(element))
             .join(""),
         ),
@@ -78,8 +85,16 @@ export const migratedComponents: MigratedComponent[] = [
         Object.fromEntries(dependencies.map((name, i) => [`dependency${i}`, name])),
       ];
     },
-    elements: chartFoundationElements,
+    elements: () => [
+      ...chartFoundationElements(),
+      ...otherCharts.flatMap((chart) =>
+        otherChartCases(PublicCharts, chart).map(({ element }) => element),
+      ),
+    ],
     clientOnly: [
+      "openui-radar-chart-hitbox",
+      "openui-heatmap-chart-cell-label",
+      "openui-heatmap-chart-cell-label--is-animation-active",
       "openui-chart-tooltip",
       "openui-chart-tooltip-portal",
       "openui-chart-tooltip-label",
@@ -218,3 +233,33 @@ export const migratedComponents: MigratedComponent[] = [
       ),
   },
 ];
+
+// Ticket #104: each chart also has a focused contract, including its public compositions.
+// Dependencies are observed through public exports after CSS collection, as for markdown above.
+export const otherChartContracts: MigratedComponent[] = otherCharts.map((chart) => ({
+  folder: chart,
+  elements: () => otherChartCases(PublicCharts, chart).map(({ element }) => element),
+  get names() {
+    const prefix = `openui-${chartSlug(chart)}`;
+    const dependencies = [
+      ...stableClassesIn(
+        otherChartCases(PublicCharts, chart)
+          .map(({ element }) => renderToString(element))
+          .join(""),
+      ),
+    ].filter((name) => name !== prefix && !name.startsWith(`${prefix}-`));
+    return [
+      ...namesOf(`Charts/${chart}`),
+      Object.fromEntries(dependencies.map((name, i) => [`dependency${i}`, name])),
+    ];
+  },
+  clientOnly:
+    chart === "RadarChart"
+      ? ["openui-radar-chart-hitbox"]
+      : chart === "HeatmapChart"
+        ? [
+            "openui-heatmap-chart-cell-label",
+            "openui-heatmap-chart-cell-label--is-animation-active",
+          ]
+        : [],
+}));

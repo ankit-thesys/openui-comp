@@ -1,22 +1,23 @@
 "use client";
 
 import clsx from "clsx";
+import type { CSSProperties } from "react";
+import { useStyles } from "../../../styles/useStyles";
 import { useEffectiveAnimation } from "../hooks";
 import { useFunnelChartOrchestrator } from "../hooks/cartesian/useFunnelChartOrchestrator";
 import { ChartShell } from "../shared/core/ChartShell";
 import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
 import { ChartTooltip } from "../shared/core/PortalTooltip/ChartTooltip";
-import { CHART_CLASS_PREFIX } from "../utils/constants";
-import { rootClass } from "./funnelChart.styles";
+import { funnelChartStyles, names } from "./funnelChart.styles";
 import { FunnelStages } from "./parts/FunnelStages";
 import type { FunnelChartData, FunnelChartProps } from "./types";
 
-const CLASS_PREFIX = `${CHART_CLASS_PREFIX}-funnel-chart`;
 // Gap between stage cells (px). Internal — a flat public `gap` prop can be
 // added later if a consumer needs it; no demand yet.
 const STAGE_GAP = 4;
 
 export function FunnelChart<T extends FunnelChartData>(props: FunnelChartProps<T>) {
+  const styles = useStyles(funnelChartStyles);
   const {
     data,
     categoryKey,
@@ -63,18 +64,31 @@ export function FunnelChart<T extends FunnelChartData>(props: FunnelChartProps<T
   return (
     <ChartShell
       containerRef={orch.refs.containerRef}
-      classPrefix={CLASS_PREFIX}
-      className={clsx(rootClass, className)}
-      style={orch.style.containerStyle}
+      className={clsx(
+        styles.root,
+        names.root,
+        names.edges[edges],
+        isAnimationActive && names.isAnimationActive.true,
+        styles.orientation[orientation],
+        names.orientation[orientation],
+        className,
+      )}
+      style={
+        {
+          "--_openui-funnel-chart-root-width": orch.style.containerStyle["width"],
+          "--_openui-funnel-chart-root-height": orch.style.containerStyle["height"],
+        } as CSSProperties
+      }
       isEmpty={orch.isEmpty}
     >
       {() => (
         <>
           <svg
+            className={clsx(styles.svg, names.svg)}
             width={W}
             height={H}
             viewBox={`0 0 ${W} ${H}`}
-            style={{ overflow: "visible" }}
+            style={{ "--_openui-funnel-chart-svg-overflow": "visible" } as CSSProperties}
             role="img"
             aria-label="Funnel chart"
           >
