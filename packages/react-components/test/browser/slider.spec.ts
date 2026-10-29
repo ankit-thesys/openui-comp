@@ -11,6 +11,24 @@ const open = async (page: Page, params: URLSearchParams) => {
   await expect(page.locator(".openui-slider-thumb").first()).toBeVisible();
 };
 
+// The outline style that the library's `.<thumb class><suffix>` rule declares, or null if none.
+const libraryOutline = (page: Page, suffix: string) =>
+  page.evaluate((suffix) => {
+    const thumb = document.querySelector(".openui-slider-thumb")!;
+    const generated = [...thumb.classList].filter((name) => /^go\d+$/.test(name));
+    const selectors = new Set(generated.map((name) => `.${name}${suffix}`));
+    let outline: string | null = null;
+    const visit = (rules: CSSRuleList) => {
+      for (const rule of rules) {
+        if (rule instanceof CSSStyleRule && selectors.has(rule.selectorText.replace(/"/g, "")))
+          outline = rule.style.getPropertyValue("outline-style") || outline;
+        else if (rule instanceof CSSGroupingRule) visit(rule.cssRules);
+      }
+    };
+    visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
+    return outline;
+  }, suffix);
+
 for (const layer of ["", "openui"]) {
   for (const position of ["before", "after"]) {
     for (const state of ["hover", "focus-visible", "disabled"] as const) {
@@ -18,7 +36,7 @@ for (const layer of ["", "openui"]) {
         page,
       }) => {
         const suffix = state === "disabled" ? "[data-disabled]" : `:${state}`;
-        const css = `.openui-slider-thumb${suffix} { outline: 3px solid rgb(1, 2, 3); background-color: rgb(4, 5, 6); }`;
+        const css = `.openui-slider-thumb${suffix} { outline: 3px solid rgb(1, 2, 3); }`;
         const params = new URLSearchParams({
           layer,
           ...(state === "disabled" ? { disabled: "1" } : {}),
@@ -30,8 +48,11 @@ for (const layer of ["", "openui"]) {
         if (state === "hover") await thumb.hover();
         if (state === "focus-visible") await page.keyboard.press("Tab");
         if (state === "focus-visible") await expect(thumb).toBeFocused();
+        // The library styles this state on the thumb's own class, so the override competes with it.
+        expect(await libraryOutline(page, suffix)).toBe("none");
+        await expect(thumb).toHaveCSS("outline-style", "solid");
+        await expect(thumb).toHaveCSS("outline-width", "3px");
         await expect(thumb).toHaveCSS("outline-color", "rgb(1, 2, 3)");
-        await expect(thumb).toHaveCSS("background-color", "rgb(4, 5, 6)");
       });
     }
 

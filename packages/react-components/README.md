@@ -304,7 +304,10 @@ of load order. Add the same state when overriding a state declaration:
 ```
 
 Slider `className`, `style` and `ref` apply to its inner Radix root (`.openui-slider`);
-its existing outer wrapper is the `.openui-slider-wrapper` part. Checkbox/Radio/Switch
+its existing outer wrapper is the `.openui-slider-wrapper` part. The thumb's states are
+`.openui-slider-thumb:hover`, `:focus-visible` and `[data-disabled]`; they style its outline and
+show the value on hover. The handle covers the thumb, so restyle the visible hover fill on
+`.openui-slider-thumb-handle-inner:hover`. Checkbox/Radio/Switch
 `className` forwarding likewise remains on their existing control elements.
 Vendor inline styles are preserved: for example Radix RadioGroup and
 ToggleGroup retain inline `outline: none`. The ordinary CSS override contract
