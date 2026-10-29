@@ -272,6 +272,7 @@ const textBlockElements = () =>
         overflow="truncate"
         width="fill"
       />,
+      <TextBlockView key="wrap" primary="Primary" overflow="wrap" />,
     );
 
 // #100 exercises the internal layout only through the public card blocks.
@@ -343,6 +344,7 @@ const imageTextElements = () => [
     overflow="truncate"
     width="fill"
   />,
+  <ImageText key="wrap" src={source.faviconUrl} title="Title" overflow="wrap" />,
 ];
 
 export const migratedComponents: MigratedComponent[] = [
@@ -1180,6 +1182,9 @@ export const migratedComponents: MigratedComponent[] = [
             width="fill"
           />,
         ),
+        composedNames(
+          <TextBlockView primary="Title" variant="text-subtext" size="xs" overflow="wrap" />,
+        ),
         inlineNames(),
       ];
     },
@@ -1194,6 +1199,7 @@ export const migratedComponents: MigratedComponent[] = [
         overflow="truncate"
         width="fill"
       />,
+      <IconText key="wrap" icon={{ name: "star" }} title="Title" overflow="wrap" />,
       ...(["horizontal", "vertical"] as const).flatMap((layout) =>
         [...tones, "inverted" as const, "filled" as const, "soft" as const].flatMap((iconVariant) =>
           [false, true].map((bold) => (

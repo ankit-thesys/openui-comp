@@ -20,7 +20,8 @@ export interface ImageTextProps {
   imageSize?: number;
   /**
    * `"truncate"` keeps the title and subtitle to one line each, ending in an ellipsis, and lets the
-   * component shrink in a flex row. SnippetCardBlock sets it for its slots; omit it to wrap.
+   * component shrink in a flex row. SnippetCardBlock sets it for its slots; pass `"wrap"` there to
+   * wrap anyway. Omitted elsewhere, the text wraps.
    */
   overflow?: TextBlockOverflow;
   /** `"fill"` makes the component as wide as its container. Omit it to size to the content. */

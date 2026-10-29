@@ -9,7 +9,10 @@ export const names = {
     vertical: "openui-image-text--layout-vertical",
   },
   bold: { true: "openui-image-text--bold" },
-  overflow: { truncate: "openui-image-text--overflow-truncate" },
+  overflow: {
+    wrap: "openui-image-text--overflow-wrap",
+    truncate: "openui-image-text--overflow-truncate",
+  },
   width: { fill: "openui-image-text--width-fill" },
 } as const;
 export const imageTextStyles = (css: StyleCss) => ({
@@ -59,6 +62,7 @@ export const imageTextStyles = (css: StyleCss) => ({
   },
   // As TextBlock's: a slot that truncates lets the row shrink; one that fills spans its container.
   overflow: {
+    wrap: "",
     truncate: css`
       min-width: 0px;
       overflow: hidden;

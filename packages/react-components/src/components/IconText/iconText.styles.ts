@@ -8,7 +8,10 @@ export const names = {
     vertical: "openui-icon-text--layout-vertical",
   },
   bold: { true: "openui-icon-text--bold" },
-  overflow: { truncate: "openui-icon-text--overflow-truncate" },
+  overflow: {
+    wrap: "openui-icon-text--overflow-wrap",
+    truncate: "openui-icon-text--overflow-truncate",
+  },
   width: { fill: "openui-icon-text--width-fill" },
   iconVariant: {
     neutral: "openui-icon-text--icon-variant-neutral",
@@ -49,6 +52,7 @@ export const iconTextStyles = (css: StyleCss) => ({
   },
   // As TextBlock's: a slot that truncates lets the row shrink; one that fills spans its container.
   overflow: {
+    wrap: "",
     truncate: css`
       min-width: 0px;
       overflow: hidden;

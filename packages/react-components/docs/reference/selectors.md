@@ -854,6 +854,7 @@ renders it, and it is a public override target like any other class.
 | `.openui-icon-text--layout-horizontal` | Modifier | `layout="horizontal"` |
 | `.openui-icon-text--layout-vertical` | Modifier | `layout="vertical"` |
 | `.openui-icon-text--bold` | Modifier | `bold={true}` |
+| `.openui-icon-text--overflow-wrap` | Modifier | `overflow="wrap"` |
 | `.openui-icon-text--overflow-truncate` | Modifier | `overflow="truncate"` |
 | `.openui-icon-text--width-fill` | Modifier | `width="fill"` |
 | `.openui-icon-text--icon-variant-neutral` | Modifier | `iconVariant="neutral"` |
@@ -931,6 +932,7 @@ renders it, and it is a public override target like any other class.
 | `.openui-image-text--layout-horizontal` | Modifier | `layout="horizontal"` |
 | `.openui-image-text--layout-vertical` | Modifier | `layout="vertical"` |
 | `.openui-image-text--bold` | Modifier | `bold={true}` |
+| `.openui-image-text--overflow-wrap` | Modifier | `overflow="wrap"` |
 | `.openui-image-text--overflow-truncate` | Modifier | `overflow="truncate"` |
 | `.openui-image-text--width-fill` | Modifier | `width="fill"` |
 
@@ -1464,6 +1466,7 @@ renders it, and it is a public override target like any other class.
 | `.openui-text-block--type-text-only` | Modifier | `type="textOnly"` |
 | `.openui-text-block-secondary--secondary-tone-positive` | Modifier | `secondaryTone="positive"` |
 | `.openui-text-block-secondary--secondary-tone-negative` | Modifier | `secondaryTone="negative"` |
+| `.openui-text-block--overflow-wrap` | Modifier | `overflow="wrap"` |
 | `.openui-text-block--overflow-truncate` | Modifier | `overflow="truncate"` |
 | `.openui-text-block--width-fill` | Modifier | `width="fill"` |
 

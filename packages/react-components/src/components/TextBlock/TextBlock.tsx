@@ -21,7 +21,7 @@ export type TextBlockType = "text" | "number" | "textOnly";
 export type TextBlockSize = "xs" | "sm" | "md" | "lg";
 export type TextBlockAlign = "left" | "center" | "right";
 export type TextBlockSecondaryTone = "positive" | "negative";
-export type TextBlockOverflow = "truncate";
+export type TextBlockOverflow = "wrap" | "truncate";
 export type TextBlockWidth = "fill";
 
 export interface TextBlockViewProps {
@@ -36,7 +36,8 @@ export interface TextBlockViewProps {
   secondaryTone?: TextBlockSecondaryTone;
   /**
    * `"truncate"` keeps each line to one line that ends in an ellipsis and lets the block shrink in
-   * a flex row. SnippetCardBlock sets it for the text in its slots; omit it to wrap.
+   * a flex row. SnippetCardBlock sets it for the text in its slots; pass `"wrap"` there to wrap
+   * anyway. Omitted elsewhere, the text wraps.
    */
   overflow?: TextBlockOverflow;
   /** `"fill"` makes the block as wide as its container. Omit it to size to the content. */

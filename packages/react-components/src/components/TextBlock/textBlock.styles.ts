@@ -36,6 +36,7 @@ export const names = {
     negative: "openui-text-block-secondary--secondary-tone-negative",
   },
   overflow: {
+    wrap: "openui-text-block--overflow-wrap",
     truncate: "openui-text-block--overflow-truncate",
   },
   width: {
@@ -703,8 +704,10 @@ export const textBlockStyles = (css: StyleCss) => ({
       text-align: right;
     `,
   },
-  // A single line per text that ends in an ellipsis, as SnippetCardBlock's slots show it.
+  // `wrap` is the default look, passed to opt out of a slot's truncation. `truncate` keeps a single
+  // line per text that ends in an ellipsis, as SnippetCardBlock's slots show it.
   overflow: {
+    wrap: "",
     truncate: css`
       min-width: 0px;
       max-width: 100%;
