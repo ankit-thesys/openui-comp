@@ -499,9 +499,15 @@ importers:
 
   packages/kits/dashboard:
     dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       lucide-react:
         specifier: ^0.562.0
         version: 0.562.0(react@19.2.4)
+      remark-gfm:
+        specifier: ^4.0.1
+        version: 4.0.1
     devDependencies:
       '@openuidev/react-components':
         specifier: workspace:^
@@ -524,6 +530,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.2.4(react@19.2.4)
+      sass:
+        specifier: ^1.83.4
+        version: 1.102.0
       zod:
         specifier: 'catalog:'
         version: 4.4.3
