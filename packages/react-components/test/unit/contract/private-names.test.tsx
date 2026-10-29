@@ -73,9 +73,11 @@ it("sets every private variable that a rule reads", () => {
 });
 
 // A component's private variables belong to it alone (ADR 0001, Q14): every `--_openui-*` name a
-// component's source reads or sets starts with one of its own roots or parts. A primitive that
-// needs a look from the component around it takes a public prop instead. A file belongs to the
-// nearest folder at or above it whose subtree holds style modules, such as a chart's `parts/`.
+// component's source reads or sets belongs to one of its own roots or parts. A name belongs to the
+// longest root or part of any component that prefixes it, so `openui-image` does not own
+// `--_openui-image-block-*`. A primitive that needs a look from the component around it takes a
+// public prop instead. A file belongs to the nearest folder at or above it whose subtree holds
+// style modules, such as a chart's `parts/`.
 const src = fileURLToPath(new URL("../../../src/", import.meta.url));
 const sourceFiles = (readdirSync(src, { recursive: true }) as string[])
   .map((file) => file.split(/[\\/]/).join("/"))
@@ -99,12 +101,18 @@ const ownersOf = (file: string) => {
   return [];
 };
 
+// Every root and part, longest first, so the first one prefixing a name is the one it belongs to.
+const allBlocks = [...blocksIn(styleModules.flatMap(({ names }) => (names ? [names] : [])))].sort(
+  (a, b) => b.length - a.length,
+);
+const blockOf = (name: string) => allBlocks.find((block) => name.startsWith(`--_${block}-`));
+
 it("reads and sets only its own component's private variables", () => {
   const foreign = sourceFiles.flatMap((file) => {
-    const owners = ownersOf(file);
+    const owners = new Set(ownersOf(file));
     return [...new Set(readFileSync(join(src, file), "utf8").match(/--_openui-[\w-]+/g) ?? [])]
-      .filter((name) => !owners.some((block) => name.startsWith(`--_${block}-`)))
-      .map((name) => `${file}: ${name}`);
+      .filter((name) => !owners.has(blockOf(name) ?? ""))
+      .map((name) => `${file}: ${name} (${blockOf(name) ?? "no component"})`);
   });
   expect(foreign).toEqual([]);
 });
