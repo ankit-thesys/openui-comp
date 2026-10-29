@@ -34,6 +34,10 @@ const fixtures = [
   "parity-hint",
   "parity-form-control",
   "parity-buttons",
+  "select-calendar",
+  "parity-select",
+  "parity-calendar",
+  "parity-date-picker",
 ];
 const parityFixtures = fixtures.filter((name) => name.startsWith("parity-"));
 

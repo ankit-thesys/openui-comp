@@ -31,6 +31,59 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-buttons--variant-horizontal` | Modifier | `variant="horizontal"` |
 | `.openui-buttons--variant-vertical` | Modifier | `variant="vertical"` |
 
+## Calendar
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-calendar` | Root | Always |
+| `.openui-calendar-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-calendar-nav` | Part (`nav`) | On that part, whenever it renders |
+| `.openui-calendar-dropdowns` | Part (`dropdowns`) | On that part, whenever it renders |
+| `.openui-calendar-month` | Part (`month`) | On that part, whenever it renders |
+| `.openui-calendar-weekdays` | Part (`weekdays`) | On that part, whenever it renders |
+| `.openui-calendar-month-caption` | Part (`monthCaption`) | On that part, whenever it renders |
+| `.openui-calendar-months-dropdown` | Part (`monthsDropdown`) | On that part, whenever it renders |
+| `.openui-calendar-years-dropdown` | Part (`yearsDropdown`) | On that part, whenever it renders |
+| `.openui-calendar-chevron` | Part (`chevron`) | On that part, whenever it renders |
+| `.openui-calendar-month-grid` | Part (`monthGrid`) | On that part, whenever it renders |
+| `.openui-calendar-weekday` | Part (`weekday`) | On that part, whenever it renders |
+| `.openui-calendar-day` | Part (`day`) | On that part, whenever it renders |
+| `.openui-calendar-day-button` | Part (`dayButton`) | On that part, whenever it renders |
+| `.openui-calendar-button-next` | Part (`buttonNext`) | On that part, whenever it renders |
+| `.openui-calendar-button-previous` | Part (`buttonPrevious`) | On that part, whenever it renders |
+| `.openui-calendar-footer` | Part (`footer`) | On that part, whenever it renders |
+| `.openui-calendar-select-trigger` | Part (`selectTrigger`) | On that part, whenever it renders |
+| `.openui-calendar-select-content-months` | Part (`selectContentMonths`) | On that part, whenever it renders |
+| `.openui-calendar-select-content-years` | Part (`selectContentYears`) | On that part, whenever it renders |
+| `.openui-calendar-select-item` | Part (`selectItem`) | On that part, whenever it renders |
+| `.openui-calendar-select-viewport` | Part (`selectViewport`) | On that part, whenever it renders |
+| `.openui-calendar-months` | Part (`months`) | On that part, whenever it renders |
+| `.openui-calendar-weeks` | Part (`weeks`) | On that part, whenever it renders |
+| `.openui-calendar-week` | Part (`week`) | On that part, whenever it renders |
+| `.openui-calendar-caption-label` | Part (`captionLabel`) | On that part, whenever it renders |
+| `.openui-calendar-week-number` | Part (`weekNumber`) | On that part, whenever it renders |
+| `.openui-calendar-week-number-header` | Part (`weekNumberHeader`) | On that part, whenever it renders |
+| `.openui-calendar--layout-mobile` | Modifier | `layout="mobile"` |
+| `.openui-calendar--layout-fullscreen` | Modifier | `layout="fullscreen"` |
+| `.openui-calendar--layout-tray` | Modifier | `layout="tray"` |
+| `.openui-calendar--layout-copilot` | Modifier | `layout="copilot"` |
+
+## DatePicker
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-date-picker` | Root | Always |
+| `.openui-date-picker-trigger` | Part (`trigger`) | On that part, whenever it renders |
+| `.openui-date-picker-text` | Part (`text`) | On that part, whenever it renders |
+| `.openui-date-picker-icon` | Part (`icon`) | On that part, whenever it renders |
+| `.openui-date-picker-reference` | Part (`reference`) | On that part, whenever it renders |
+| `.openui-date-picker-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-date-picker-menu` | Part (`menu`) | On that part, whenever it renders |
+| `.openui-date-picker-calendar` | Part (`calendar`) | On that part, whenever it renders |
+| `.openui-date-picker-calendar-content` | Part (`calendarContent`) | On that part, whenever it renders |
+| `.openui-date-picker--mode-single` | Modifier | `mode="single"` |
+| `.openui-date-picker--mode-range` | Modifier | `mode="range"` |
+
 ## FormControl
 
 | Stable class | Kind | Present when |
@@ -92,6 +145,35 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-markdown-renderer--variant-clear` | Modifier | `variant="clear"` |
 | `.openui-markdown-renderer--variant-card` | Modifier | `variant="card"` |
 | `.openui-markdown-renderer--variant-sunk` | Modifier | `variant="sunk"` |
+
+## Select
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-select-trigger` | Part (`trigger`) | On that part, whenever it renders |
+| `.openui-select-trigger-icon` | Part (`triggerIcon`) | On that part, whenever it renders |
+| `.openui-select-value` | Part (`value`) | On that part, whenever it renders |
+| `.openui-select-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-select-viewport` | Part (`viewport`) | On that part, whenever it renders |
+| `.openui-select-group` | Part (`group`) | On that part, whenever it renders |
+| `.openui-select-label` | Part (`label`) | On that part, whenever it renders |
+| `.openui-select-item` | Part (`item`) | On that part, whenever it renders |
+| `.openui-select-item-check-wrapper` | Part (`checkWrapper`) | On that part, whenever it renders |
+| `.openui-select-item-indicator` | Part (`indicator`) | On that part, whenever it renders |
+| `.openui-select-item-check-icon` | Part (`checkIcon`) | On that part, whenever it renders |
+| `.openui-select-item-text` | Part (`itemText`) | On that part, whenever it renders |
+| `.openui-select-item-text-value` | Part (`textValue`) | On that part, whenever it renders |
+| `.openui-select-separator` | Part (`separator`) | On that part, whenever it renders |
+| `.openui-select-trigger--hide-dropdown-icon` | Modifier | `hideDropdownIcon={true}` |
+| `.openui-select-item--show-tick` | Modifier | `showTick={true}` |
+| `.openui-select-content--position-popper` | Modifier | `position="popper"` |
+| `.openui-select-content--position-item-aligned` | Modifier | `position="item-aligned"` |
+| `.openui-select-content--size-sm` | Modifier | `size="sm"` |
+| `.openui-select-content--size-md` | Modifier | `size="md"` |
+| `.openui-select-content--size-lg` | Modifier | `size="lg"` |
+| `.openui-select-trigger--size-sm` | Modifier | `size="sm"` |
+| `.openui-select-trigger--size-md` | Modifier | `size="md"` |
+| `.openui-select-trigger--size-lg` | Modifier | `size="lg"` |
 
 ## Tabs
 

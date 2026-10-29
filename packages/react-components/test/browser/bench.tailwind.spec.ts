@@ -30,7 +30,7 @@ const snapshot = (page: Page, component: MigratedComponent) =>
     };
     return Object.fromEntries(
       classes.flatMap((className) =>
-        [...document.querySelectorAll(`#root .${className}`)].map((el, i) => {
+        [...document.querySelectorAll(`.${className}`)].map((el, i) => {
           el.getAnimations().forEach((animation) => animation.finish());
           // Later matching rules win, as in the cascade (all library rules weigh the same here).
           const declared = new Map<string, string>();
@@ -64,11 +64,23 @@ for (const component of migrated) {
       test(`Tailwind ${version === "4" ? "4.1" : `3.${version[1]}`} preflight leaves it styled`, async ({
         page,
       }) => {
-        await openMigrated(page, component);
-        const plain = await snapshot(page, component);
-        expect(Object.keys(plain).length).toBeGreaterThan(0);
-        await openMigrated(page, component, tailwind(version));
-        expect(await snapshot(page, component)).toEqual(plain);
+        // #93: check each portal variant with only one modal open at a time.
+        const targets =
+          component.folder === "Calendar"
+            ? ["openui-calendar-select-content-months", "openui-calendar-select-content-years"]
+            : component.folder === "Select"
+              ? [
+                  ...["sm", "md", "lg"].map((size) => `openui-select-content--size-${size}`),
+                  "openui-select-content--position-item-aligned",
+                ]
+              : [""];
+        for (const target of targets) {
+          await openMigrated(page, component, "", target);
+          const plain = await snapshot(page, component);
+          expect(Object.keys(plain).length).toBeGreaterThan(0);
+          await openMigrated(page, component, tailwind(version), target);
+          expect(await snapshot(page, component)).toEqual(plain);
+        }
       });
     }
 
@@ -76,18 +88,36 @@ for (const component of migrated) {
     // as a library class and loads later, so it clears their background. That is the known
     // conflict documented in the README; 3.4 and 4.1 scope the rule with :where() and do not.
     const typedBackgrounds = async (page: Page, head = "") => {
-      await openMigrated(page, component, head);
+      // This known conflict concerns base backgrounds. Keep portals closed so a trigger's
+      // higher-specificity open/hover state is not mistaken for a base background.
+      await openMigrated(page, component, head, "", false);
       await page.evaluate(() => {
-        for (const button of document.querySelectorAll("#root button"))
+        for (const button of document.querySelectorAll("button"))
           button.setAttribute("type", "button");
       });
-      // Buttons transition their background; read the end value.
-      return page.evaluate(() =>
-        [...document.querySelectorAll("#root button")].map((button) => {
-          button.getAnimations().forEach((animation) => animation.finish());
-          return getComputedStyle(button).backgroundColor;
-        }),
-      );
+      // Only backgrounds declared by a base library rule belong to this known-conflict case.
+      // Calendar's hidden navigation buttons have a UA background; that is Preflight's to reset.
+      return page.evaluate(() => {
+        const backgrounds: CSSStyleRule[] = [];
+        const visit = (rules: CSSRuleList) => {
+          for (const rule of rules) {
+            if (
+              rule instanceof CSSStyleRule &&
+              /^\.go\d+$/.test(rule.selectorText) &&
+              (rule.style.background || rule.style.backgroundColor)
+            )
+              backgrounds.push(rule);
+            else if (rule instanceof CSSGroupingRule) visit(rule.cssRules);
+          }
+        };
+        visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
+        return [...document.querySelectorAll("button")]
+          .filter((button) => backgrounds.some((rule) => button.matches(rule.selectorText)))
+          .map((button) => {
+            button.getAnimations().forEach((animation) => animation.finish());
+            return getComputedStyle(button).backgroundColor;
+          });
+      });
     };
 
     test("Tailwind 3.3 preflight clears the background of type=button buttons", async ({
