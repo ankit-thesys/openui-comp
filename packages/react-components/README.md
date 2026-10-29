@@ -64,8 +64,7 @@ instances or browser tabs.
 ## Styling and overrides
 
 Every component follows one styling contract: restyle any part of a component with a single
-documented class, without `!important`. The [stable class reference](docs/reference/selectors.md),
-generated from the components' own class constants, lists every class.
+documented class, without `!important`. The sections below list each component's classes.
 
 ### Class names
 
@@ -105,8 +104,7 @@ Some components describe a derived condition (one the component works out from i
 or layout) with a data attribute of their own. These attributes are public API, like the stable
 classes: combine one with its element's class to restyle that case, such as
 `.openui-callout[data-autodismiss] { animation: none; }`. A boolean attribute is absent when false,
-never `="false"`. Each one is pinned by `test/unit/contract/data-attributes.test.tsx`, or by a
-browser spec where it needs layout, events or a portal (the test file lists which). Attributes that
+never `="false"`. Attributes that
 third-party primitives set (Radix, react-day-picker), the chart root's `data-openui-chart` export
 marker, the `data-source-id` identifier, and the citation input attributes `data-component-type`
 and `data-citation-indices` are not part of this list.
@@ -250,7 +248,7 @@ transparent }` clears button backgrounds. Tailwind 3 emits its preflight unlayer
 use layer mode with Tailwind 4, not Tailwind 3.
 
 Every Tailwind preflight also sets `*, ::before, ::after { box-sizing: border-box }`. Modal
-content, VisualCard, OverviewCard's card and ImageBlock (root, image and loader) declare #72's
+content, VisualCard, OverviewCard's card and ImageBlock (root, image and loader) declare
 `box-sizing: content-box`, so that reset leaves their geometry unchanged. CalendarHeatmap declares
 its own typography, so preflight's font and line-height resets cannot change its height.
 
@@ -289,8 +287,7 @@ has not been certified.
 ### Stable selectors
 
 Every component follows the [styling contract](#styling-and-overrides); its roots, parts and
-modifiers are in the generated [stable class reference](docs/reference/selectors.md), which
-replaces the hand-written lists earlier betas kept here. The states its library rules use are
+modifiers follow the [naming grammar](#class-names). The states its library rules use are
 listed below and, for form and choice controls, under [Control selectors](#control-selectors). Chart-specific
 notes are in the Charts section below; renamed classes are in the
 [migration table](#migration-from-openuidevreact-ui-styling).
@@ -340,15 +337,14 @@ descendants.
 
 The shared `.openui-skeleton-pulse` class registers its animation and keyframes when
 an animated Skeleton bar, pie shape or legend dot renders, in the provider's layer.
-Override that class to change or disable the pulse. Both shared classes are listed in the
-[stable class reference](docs/reference/selectors.md).
+Override that class to change or disable the pulse.
 
 ### Control selectors
 
 Form controls (FormControl, Hint, Label, Input, TextArea, Buttons), choice controls
 (CheckBox, Radio, Switch, Toggle, Chips), Slider and SliderBlock, Select, Calendar,
-DatePicker and Modal are in the [generated reference](docs/reference/selectors.md). Their states
-are attributes the elements already carry:
+DatePicker and Modal follow the same grammar. Their states are attributes the elements already
+carry:
 
 - Input and TextArea: `:focus-within`, `:disabled`, `[aria-invalid="true"]` and `::placeholder`;
   Input sizes are `--size-{small,medium,large}` modifiers.
@@ -595,8 +591,7 @@ No extra wrapper or duplicate family stylesheet is introduced.
 | MiniAreaChart, MiniBarChart, MiniLineChart | `.openui-mini-{area,bar,line}-chart` (one root per export) |
 
 HeatmapChart exposes `.openui-heatmap-chart-color-scale-ramp--ramp-mode-diverging::after`
-for the diverging color-scale notch. The [generated reference](docs/reference/selectors.md)
-lists every flat chart part, appearance modifier and shared foundation target.
+for the diverging color-scale notch.
 
 | Shared role                         | Canonical target                                                                               |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -609,8 +604,7 @@ lists every flat chart part, appearance modifier and shared foundation target.
 | Stacked scrollbar                   | `.openui-stacked-legend-list` (`::-webkit-scrollbar` only)                          |
 | Horizontal/vertical scroll controls | `.openui-scroll-buttons-horizontal`, `.openui-scroll-buttons-vertical` |
 
-The flat classes above and in the [generated reference](./docs/reference/selectors.md)
-follow the single-class override contract. The migration tables below record renamed aliases,
+The flat classes above follow the single-class override contract. The migration tables below record renamed aliases,
 appearance modifiers and state hooks. Match the same state when overriding a state rule:
 
 ```css
@@ -659,7 +653,7 @@ string-height/legend-fit failure.
 Registration is module-based: a shared style module or retained lazy chunk may
 register styles for more than the currently visible part. This does not promise
 zero-unused CSS, per-chart lazy stylesheet isolation, startup timing or heap
-performance. The chart selector gate remains pending independent verification.
+performance.
 
 ## Support boundary and inherited behavior
 
@@ -672,7 +666,7 @@ Extraction preserves inherited behavior rather than redesigning it:
 
 - HorizontalBar's `onClick` remains unwired; numeric width affects scales without
   setting the CSS box. String height with a fitting legend can cause sizing
-  feedback, and that combination does not have a passing strict comparison.
+  feedback; that combination is not supported.
 - Scatter retains no print-export metadata, and its public domain helper clamps
   negative lower bounds.
 - EditableTable can notify `onDataChange` twice when Enter-save is followed by blur.
@@ -683,66 +677,10 @@ Extraction preserves inherited behavior rather than redesigning it:
 
 ```sh
 pnpm --filter @openuidev/react-components run build
-pnpm --filter @openuidev/react-components run ci
 ```
 
 ESM/CJS builds include matching declarations and source maps. Goober and React
-remain external dependencies. Build inputs contain no old SCSS or generated CSS.
-
-### Authoring styles
-
-Converted components follow the [styling contract](#styling-and-overrides). A
-style module exports a `names` constant with its stable classes, the single source
-for the markup and the generated reference, and a factory that receives Goober's
-`css` and returns plain class maps. Components read them with the internal
-`useStyles` hook, which registers the rules on first render:
-
-```ts
-// example.styles.ts
-export const names = {
-  root: "openui-example",
-  label: "openui-example-label",
-  size: { small: "openui-example--size-small", medium: "openui-example--size-medium" },
-} as const;
-
-export const exampleStyles = (css: StyleCss) => ({
-  root: css`
-    display: flex;
-    &:disabled {
-      cursor: not-allowed;
-    }
-  `,
-  size: { small: css`padding: 4px;`, medium: css`padding: 8px;` },
-  label: css`font-weight: 500;`,
-});
-
-// Example.tsx
-const styles = useStyles(exampleStyles);
-<div className={clsx(styles.root, styles.size[size], names.root, names.size[size], className)} />;
-```
-
-Each rule is one class plus at most one state. A parent's prop that changes a
-part's value travels through a private `--_openui-<component>-*` variable the
-part reads, not a descendant selector. After changing `names`, run
-`pnpm docs:selectors` to regenerate the reference. The unit tests enforce the
-selector budget and the naming grammar for every component, and that no module
-registers CSS or adds a class to `<html>` on import; see `test/README.md`.
-
-Keep selector specificity, declaration order, token fallbacks and keyframe timing
-when editing styles. Use CSS units explicitly: Goober does not add `px` to numeric
-object values. Class-name maps are ordinary objects containing canonical target strings;
-they are not CSS declaration objects.
-
-The following retain their existing non-template contracts:
-
-- Native `style` forwarding and computed chart geometry/animation values are
-  per-instance React styles.
-- ThemeProvider serializes scoped theme variables through its existing lifecycle.
-- Syntax-highlighter theme maps use the third-party component's object API.
-- KaTeX keeps its official vendor CSS and font assets.
-
-These exceptions do not justify new static Goober declaration objects, custom
-serializers or styling APIs.
+remain external dependencies.
 
 ## Migration from `@openuidev/react-ui` styling
 
@@ -799,7 +737,7 @@ Renamed stable classes and props, per component converted to the flat convention
 | ListedSourceItem                   | `.openui-listed-source-item__source-name`                                                                                                   | `.openui-sources-item-name`                                                                                                                                                                                                 |
 | ListedSourceItem                   | `.openui-listed-source-item--has-url`                                                                                                       | Removed derived marker; override `.openui-sources-item`                                                                                                                                                                     |
 | SourceFaviconImage                 | `.openui-source-favicon-image`                                                                                                              | Unchanged root; the fallback globe also carries it                                                                                                                                                                          |
-| Shared border-box (#90)            | `.openui-border-box` on Buttons, FormControl and TagBlock                                                                                   | Unchanged; registered at render, flat and layer-aware. No prop renames.                                                                                                                                                     |
+| Shared border-box            | `.openui-border-box` on Buttons, FormControl and TagBlock                                                                                   | Unchanged; registered at render, flat and layer-aware. No prop renames.                                                                                                                                                     |
 | TextBlock (TextBlockView)          | `.openui-text-block-root`, `.openui-text-block`                                                                                             | `.openui-text-block` only                                                                                                                                                                                                   |
 | TextBlock                          | `.openui-text-block--{title-text,number-title-text,text-subtext,highlight-text-number-subtext,text,highlight-text,number,highlight-number}` | `.openui-text-block--variant-{…}`; default `title-text` always emitted                                                                                                                                                      |
 | TextBlock                          | `.openui-text-block__{primary,secondary,tertiary}`                                                                                          | `.openui-text-block-{primary,secondary,tertiary}`                                                                                                                                                                           |
@@ -827,7 +765,7 @@ Renamed stable classes and props, per component converted to the flat convention
 | Tag                                | `.openui-tag-icon-styled`, `.openui-tag-text-styled`                                                                                        | `.openui-tag-icon`, `.openui-tag-text`                                                                                                                                                                                      |
 | Tag | Read ContextCard and VisualCard's `--_openui-card-tag-*` variables | `surface="image"` emits `--surface-image`; ContextCard (with a background image) and VisualCard set it for the Tags in their slots |
 | TagBlock / Separator               | `.openui-tag-block-root`, `.openui-separator-root`                                                                                          | `.openui-tag-block`, `.openui-separator`; Separator keeps Radix `[data-orientation]`                                                                                                                                        |
-| Shared Skeleton pulse (#90)        | Animation on bars, pie shapes and legend dots                                                                                               | Also carry `.openui-skeleton-pulse`; animation and keyframes register at render. Existing classes and props are unchanged.                                                                                                  |
+| Shared Skeleton pulse        | Animation on bars, pie shapes and legend dots                                                                                               | Also carry `.openui-skeleton-pulse`; animation and keyframes register at render. Existing classes and props are unchanged.                                                                                                  |
 | Accordion                          | `.openui-accordion-{clear,card,sunk}`                                                                                                       | `.openui-accordion--variant-{clear,card,sunk}` (including default `clear`)                                                                                                                                                  |
 | Accordion                          | `.openui-accordion` and its part classes                                                                                                    | Unchanged; open/closed overrides use `[data-state]`                                                                                                                                                                         |
 | SectionV2                          | `.openui-section-v2` and its parts                                                                                                          | Unchanged                                                                                                                                                                                                                   |
@@ -843,7 +781,7 @@ Renamed stable classes and props, per component converted to the flat convention
 | Modal                              | Overlay, content, header, title, close and body classes                                                                                     | Unchanged; close SVG also has `.openui-modal-close-icon`                                                                                                                                                                    |
 | TooltipWrapper                     | `.openui-tooltip-content`                                                                                                                   | `.openui-tooltip-wrapper` (portal content root, receives `className`)                                                                                                                                                       |
 | TooltipWrapper                     | `.openui-tooltip-{body,heading,text-content}`                                                                                               | `.openui-tooltip-wrapper-{body,heading,text}`                                                                                                                                                                               |
-| CardBlockLayout (#100)             | `.openui-{small,medium}-card-block` and `.openui-card-layout-layout-{small,medium}`                                                         | `.openui-card-block-layout` and `--size-{small,medium}`                                                                                                                                                                     |
+| CardBlockLayout             | `.openui-{small,medium}-card-block` and `.openui-card-layout-layout-{small,medium}`                                                         | `.openui-card-block-layout` and `--size-{small,medium}`                                                                                                                                                                     |
 | CardBlockLayout                    | `--{grid,carousel}`, `--{composite-card,context-card,visual-first-card,overview-card,value-card}`                                           | `--layout-{grid,carousel}`, `--card-type-{composite-card,context-card,visual-first-card,overview-card,value-card}`; defaults emitted                                                                                        |
 | CardBlockLayout                    | `.openui-{small,medium}-card-block__{grid,row,item,carousel,carousel-track,carousel-item}`, `.openui-card-layout-scrollbar`                 | `.openui-card-block-layout-{grid,row,item,carousel,carousel-track,carousel-item}`; scrollbar rules on `-carousel`                                                                                                           |
 | CardBlockLayout                    | `__grid--responsive`, `__carousel--responsive`, `__grid--odd-count`, `__row--{1,2,3}`                                                       | Root `--responsive` only when true; row `[data-columns]` and item `[data-span="full"]` describe derived row geometry                                                                                                        |
@@ -894,23 +832,23 @@ Renamed stable classes and props, per component converted to the flat convention
 | Label | `.openui-label-disabled` | `.openui-label[aria-disabled="true"]` |
 | Buttons | `.openui-buttons` | Unchanged; now the only family root class (plus `.openui-border-box`). |
 | Buttons | `.openui-buttons-{horizontal,vertical}` | `.openui-buttons--variant-{horizontal,vertical}`; default `horizontal` always emitted. |
-| Form controls (#91) | `hasError`, `disabled`, `required`, Input `size` / `styles`, TextArea `rows`, Buttons `variant` | Props unchanged. `hasError` inherits from FormControl; explicit `false` opts out. Input/TextArea use `aria-invalid`, Hint uses `data-invalid`, Label uses `aria-disabled`. Explicit native ARIA attributes are forwarded and take precedence. |
-| CheckBoxGroup | `.openui-checkbox-group`, beta `.openui-checkbox-group-root` | `.openui-check-box-group` |
+| Form controls | `hasError`, `disabled`, `required`, Input `size` / `styles`, TextArea `rows`, Buttons `variant` | Props unchanged. `hasError` inherits from FormControl; explicit `false` opts out. Input/TextArea use `aria-invalid`, Hint uses `data-invalid`, Label uses `aria-disabled`. Explicit native ARIA attributes are forwarded and take precedence. |
+| CheckBoxGroup | `.openui-checkbox-group` | `.openui-check-box-group` |
 | CheckBoxGroup | `.openui-checkbox-group-{clear,card,sunk}` | `.openui-check-box-group--variant-{clear,card,sunk}`; default `clear` always emitted |
-| CheckBoxItem | `.openui-checkbox-item-root` (control), `.openui-checkbox-item-container` and beta `-container-root` (wrapper) | `.openui-check-box-item` (control root), `.openui-check-box-item-container` (part); `className`, `style`, `ref` stay on the control |
+| CheckBoxItem | `.openui-checkbox-item-root` (control), `.openui-checkbox-item-container` (wrapper) | `.openui-check-box-item` (control root), `.openui-check-box-item-container` (part); `className`, `style`, `ref` stay on the control |
 | CheckBoxItem | `.openui-checkbox-item-{indicator,content,label,description}` | `.openui-check-box-item-{indicator,content,label,description}`; new owned SVG `-icon` and path `-check` parts |
-| RadioGroup | `.openui-radio-group`, beta `.openui-radio-group-root` | `.openui-radio-group` only |
+| RadioGroup | `.openui-radio-group` | `.openui-radio-group` only |
 | RadioGroup | `.openui-radio-group-{clear,card,sunk}` | `.openui-radio-group--variant-{clear,card,sunk}`; default `clear` always emitted |
-| RadioItem | `.openui-radio-item-root` (control), `.openui-radio-item-container` and beta `-container-root` (wrapper) | `.openui-radio-item` (control root), `.openui-radio-item-container` (part); forwarding unchanged |
+| RadioItem | `.openui-radio-item-root` (control), `.openui-radio-item-container` (wrapper) | `.openui-radio-item` (control root), `.openui-radio-item-container` (part); forwarding unchanged |
 | RadioItem | `.openui-radio-item-svg-{path,border,inner}` | `.openui-radio-item-{path,border,inner}`; `-svg`, `-content`, `-label`, `-description` unchanged |
-| SwitchGroup | `.openui-switch-group`, beta `.openui-switch-group-root` | `.openui-switch-group` only |
+| SwitchGroup | `.openui-switch-group` | `.openui-switch-group` only |
 | SwitchGroup | `.openui-switch-group-{clear,card,sunk}` | `.openui-switch-group--variant-{clear,card,sunk}`; default `clear` always emitted |
-| SwitchItem | `.openui-switch-item-root` (control), `.openui-switch-item-container` and beta `-container-root` (wrapper) | `.openui-switch-item` (control root), `.openui-switch-item-container` (part); forwarding and other part names unchanged |
-| ToggleGroup / ToggleItem | `.openui-toggle-{group,item}`, beta `.openui-toggle-{group,item}-root` | `.openui-toggle-{group,item}` only; on/off remain Radix `[data-state]` |
-| Chips | `.openui-chips`, beta `.openui-chips-root` | `.openui-chips` only |
+| SwitchItem | `.openui-switch-item-root` (control), `.openui-switch-item-container` (wrapper) | `.openui-switch-item` (control root), `.openui-switch-item-container` (part); forwarding and other part names unchanged |
+| ToggleGroup / ToggleItem | `.openui-toggle-{group,item}` | `.openui-toggle-{group,item}` only; on/off remain Radix `[data-state]` |
+| Chips | `.openui-chips` | `.openui-chips` only |
 | Chips | `.openui-chip-item`, `.openui-chip-item__{icon,text}` | `.openui-chips-item`, `.openui-chips-item-{icon,text}` |
 | Chips | `.openui-chip-item--selected`, `.openui-chip-item--disabled` | `.openui-chips-item[aria-selected="true"]`, `.openui-chips-item:disabled`; no state classes |
-| Choice controls (#92) | Public props | No prop renames; `type` on Chips/ToggleGroup changes selection behavior, not appearance, and adds no modifier |
+| Choice controls | Public props | No prop renames; `type` on Chips/ToggleGroup changes selection behavior, not appearance, and adds no modifier |
 | Select | `.openui-select-trigger-{sm,md,lg}`, `.openui-select-content-{sm,md,lg}` | `.openui-select-trigger--size-{sm,md,lg}`, `.openui-select-content--size-{sm,md,lg}`; default `md` always emitted. Content inherits Select/SelectTrigger `size`. |
 | Select | `.openui-select-item--with-tick`, `.openui-select-item--without-tick` | `.openui-select-item--show-tick` only when `showTick` is true (the default); no false modifier. |
 | Select | Trigger icon hidden by `hideDropdownIcon` | Also emits `.openui-select-trigger--hide-dropdown-icon` only when true. |
@@ -940,18 +878,18 @@ Renamed stable classes and props, per component converted to the flat convention
 | SliderBlock | `.is-range`, `.is-single`, `.openui-slider-block__controls--inputs` | Range controls use `.openui-slider-block-controls[data-range]`; absence means single. Input/Select roots have owned `.openui-slider-block-input` / `.openui-slider-block-select-trigger` parts. |
 | SliderBlock | `variant="continuous"` / `"discrete"` | Always emit `.openui-slider-block--variant-{continuous,discrete}` for the requested variant, even while streaming temporarily renders a continuous nested Slider. |
 | SliderBlock | Embedded Input and Select | Keep public `.openui-input--size-medium` and `.openui-select-trigger--size-md` names; props, validation and streaming behavior unchanged. |
-| Skeleton (#101) | `.openui-skeleton-stack` | `.openui-skeleton`; props unchanged |
-| SkeletonBar (#101) | `.openui-skeleton-bar` | Unchanged; still rendered through public Skeleton family components, not separately exported |
-| PieChartSkeleton (#101) | `.openui-skeleton-pie-chart-wrapper` | `.openui-pie-chart-skeleton` |
-| PieChartSkeleton (#101) | `.openui-skeleton-pie-chart-{container,shape,legend,legend-item,legend-dot}` | `.openui-pie-chart-skeleton-{container,shape,legend,legend-item,legend-dot}` |
-| PieChartSkeleton (#101) | `.openui-skeleton-pie-chart-{donut,semi,semi-donut}` | Root `.openui-pie-chart-skeleton--variant-{pie,donut}` and `--appearance-{circular,semi-circular}`; defaults emitted, `variant` and `appearance` props unchanged |
-| TableSkeleton (#101) | `.openui-skeleton-table`, `.openui-skeleton-table-{row,cell}` | `.openui-table-skeleton`, `.openui-table-skeleton-{row,cell}` |
-| TableSkeleton (#101) | `.openui-skeleton-table-cell-short` | `.openui-table-skeleton-header-cell`; props unchanged |
-| DotMatrixLoader (#101) | `.openui-dot-matrix-loader`, `.openui-dot-matrix-loader__dot` | Root unchanged, part becomes `.openui-dot-matrix-loader-dot`; root always emits `--variant-{default,compact}`; props unchanged |
-| DotMatrixLoader (#101) | `--openui-dot-matrix-loader-{size,grid-size}` | Private `--_openui-dot-matrix-loader-*` variables; override width/height/grid on the stable class or use `size`/`variant` props |
-| CodeBlock (#101) | `.openui-code-block-wrapper` | `.openui-code-block`; additive `className` behavior unchanged, including inside markdown |
-| CodeBlock (#101) | `.openui-code-block-copy-button-copied` | `.openui-code-block-copy-button[data-state="copied"]`; idle uses `data-state="idle"` |
-| CodeBlock (#101) | `.openui-code-block-syntax-highlighter` | Unchanged; `syntaxHighlighterClassName` still replaces the default class and all its rules; `""` opts out too |
+| Skeleton | `.openui-skeleton-stack` | `.openui-skeleton`; props unchanged |
+| SkeletonBar | `.openui-skeleton-bar` | Unchanged; still rendered through public Skeleton family components, not separately exported |
+| PieChartSkeleton | `.openui-skeleton-pie-chart-wrapper` | `.openui-pie-chart-skeleton` |
+| PieChartSkeleton | `.openui-skeleton-pie-chart-{container,shape,legend,legend-item,legend-dot}` | `.openui-pie-chart-skeleton-{container,shape,legend,legend-item,legend-dot}` |
+| PieChartSkeleton | `.openui-skeleton-pie-chart-{donut,semi,semi-donut}` | Root `.openui-pie-chart-skeleton--variant-{pie,donut}` and `--appearance-{circular,semi-circular}`; defaults emitted, `variant` and `appearance` props unchanged |
+| TableSkeleton | `.openui-skeleton-table`, `.openui-skeleton-table-{row,cell}` | `.openui-table-skeleton`, `.openui-table-skeleton-{row,cell}` |
+| TableSkeleton | `.openui-skeleton-table-cell-short` | `.openui-table-skeleton-header-cell`; props unchanged |
+| DotMatrixLoader | `.openui-dot-matrix-loader`, `.openui-dot-matrix-loader__dot` | Root unchanged, part becomes `.openui-dot-matrix-loader-dot`; root always emits `--variant-{default,compact}`; props unchanged |
+| DotMatrixLoader | `--openui-dot-matrix-loader-{size,grid-size}` | Private `--_openui-dot-matrix-loader-*` variables; override width/height/grid on the stable class or use `size`/`variant` props |
+| CodeBlock | `.openui-code-block-wrapper` | `.openui-code-block`; additive `className` behavior unchanged, including inside markdown |
+| CodeBlock | `.openui-code-block-copy-button-copied` | `.openui-code-block-copy-button[data-state="copied"]`; idle uses `data-state="idle"` |
+| CodeBlock | `.openui-code-block-syntax-highlighter` | Unchanged; `syntaxHighlighterClassName` still replaces the default class and all its rules; `""` opts out too |
 | Chart base | `.openui-chart-empty`, `.openui-chart-empty-text` | Unchanged; registered during render, including SSR |
 | Chart base | `.openui-cartesian-{x,y}-axis-label` | `.openui-chart-{x,y}-axis-label` |
 | Default legend | `.openui-chart-legend-container`, `.openui-chart-legend--bottom` | `.openui-default-legend` (bottom padding is part of its base style) |
@@ -978,12 +916,12 @@ Renamed stable classes and props, per component converted to the flat convention
 | Mini charts | `.openui-mini-{line,area,bar}-chart-*` drawing parts | Unchanged; SVGs, area gradient definitions and stops now also have stable part classes |
 | Mini charts | `.openui-mini-chart--clickable` | `.openui-mini-{line,area,bar}-chart[data-clickable]` |
 | Mini charts | `.openui-mini-chart-mark--animated` | `.openui-mini-{line,area,bar}-chart--is-animation-active` on the root, emitted only when the prop is true |
-| Cartesian charts (#103) | `.openui-{area,bar,horizontal-bar,line,scatter}-chart-container` | `.openui-{area,bar,horizontal-bar,line,scatter}-chart` (the root; condensed wrappers use their family's root) |
-| Cartesian charts (#103) | Existing axis, series, tick, crosshair, category-label and frame part classes | Unchanged; each rendered SVG/group/hit target, grid line, tick span, clip and gradient also has its own documented stable class |
-| Cartesian entrances (#103) | `.openui-{area,line}-chart-{area-path,area-line,line}--animated`, `.openui-{bar,horizontal-bar}-chart-bar--animated`, `.openui-scatter-chart-dot--animated` | Corresponding drawing part's `--is-animation-active` modifier; emitted only while `isAnimationActive` is true and not printing. Bar internal lines have their own `-internal-line--is-animation-active` modifier. |
-| Cartesian negative values (#103) | `.openui-{bar,horizontal-bar}-chart-bar--negative` | `[data-negative]` on the bar or internal line; add the same attribute to a stable-class override for that state |
-| Cartesian appearance (#103) | `variant` (and AreaChart `stacked`) without a class | Root `.openui-{line,area}-chart--variant-{linear,natural,step}` and `.openui-{bar,horizontal-bar}-chart--variant-{grouped,stacked}`, defaults always emitted; AreaChart also emits `--stacked` when true (its default). Props unchanged |
-| Cartesian zero baseline (#103) | `.openui-grid-zero-line` | `.openui-{area,bar,line,scatter}-chart-grid-line[data-zero]`; other grid lines carry the same part class without the state |
+| Cartesian charts | `.openui-{area,bar,horizontal-bar,line,scatter}-chart-container` | `.openui-{area,bar,horizontal-bar,line,scatter}-chart` (the root; condensed wrappers use their family's root) |
+| Cartesian charts | Existing axis, series, tick, crosshair, category-label and frame part classes | Unchanged; each rendered SVG/group/hit target, grid line, tick span, clip and gradient also has its own documented stable class |
+| Cartesian entrances | `.openui-{area,line}-chart-{area-path,area-line,line}--animated`, `.openui-{bar,horizontal-bar}-chart-bar--animated`, `.openui-scatter-chart-dot--animated` | Corresponding drawing part's `--is-animation-active` modifier; emitted only while `isAnimationActive` is true and not printing. Bar internal lines have their own `-internal-line--is-animation-active` modifier. |
+| Cartesian negative values | `.openui-{bar,horizontal-bar}-chart-bar--negative` | `[data-negative]` on the bar or internal line; add the same attribute to a stable-class override for that state |
+| Cartesian appearance | `variant` (and AreaChart `stacked`) without a class | Root `.openui-{line,area}-chart--variant-{linear,natural,step}` and `.openui-{bar,horizontal-bar}-chart--variant-{grouped,stacked}`, defaults always emitted; AreaChart also emits `--stacked` when true (its default). Props unchanged |
+| Cartesian zero baseline | `.openui-grid-zero-line` | `.openui-{area,bar,line,scatter}-chart-grid-line[data-zero]`; other grid lines carry the same part class without the state |
 | PieChart, RadarChart, RadialChart, FunnelChart, HeatmapChart, CalendarHeatmap | `.openui-<chart>-container` | `.openui-<chart>`; owned drawing elements also have stable part classes |
 | SegmentedBar / SingleStackedBar | `.openui-segmented-bar-container`, `-container--gap` | `.openui-segmented-bar`; gap comes from `--legend` and `--legend-variant-{default,stacked}` |
 | SegmentedBar / SingleStackedBar | `.openui-segmented-bar` (track) | `.openui-segmented-bar-track` |
@@ -994,7 +932,7 @@ Renamed stable classes and props, per component converted to the flat convention
 | HeatmapChart | `.openui-heatmap-chart-cell--empty` | `.openui-heatmap-chart-cell[data-empty]` |
 | HeatmapChart | `.openui-heatmap-chart-color-scale-ramp--diverging` | `.openui-heatmap-chart-color-scale-ramp--ramp-mode-diverging`; sequential mode emits `--ramp-mode-sequential` |
 | CalendarHeatmap | `.openui-calendar-heatmap-cell--level-N`, `--ghost`; ancestor `data-openui-highlight-level` dimming | `.openui-calendar-heatmap-cell[data-level="N"]`, `[data-ghost]`, `[data-dimmed]` on the affected cell |
-| Image (#97) | `.openui-image` | Unchanged root; aspect wrapper and viewport now have `.openui-image-aspect` and `.openui-image-viewport`, with CSS defaults replacing Radix inline geometry |
+| Image | `.openui-image` | Unchanged root; aspect wrapper and viewport now have `.openui-image-aspect` and `.openui-image-viewport`, with CSS defaults replacing Radix inline geometry |
 | Image | `.openui-image-{fit,fill}` | `.openui-image--scale-{fit,fill}`; default `fill` always emitted |
 | Image | `aspectRatio` without a modifier | `.openui-image-aspect--aspect-ratio-{1-1,3-2,3-4,4-3,16-9}` on the aspect part; default `3:2` always emitted; prop values unchanged |
 | Image | `.openui-image--error` | `.openui-image[data-error]` |
@@ -1013,152 +951,17 @@ Renamed stable classes and props, per component converted to the flat convention
 | Carousel | `.openui-carousel-content--mask-{left,right}` | `.openui-carousel-content[data-mask="…"]` with `none`, `left`, `right` or `both` |
 | Carousel | `.openui-carousel`, `-content`, `-content-wrapper`, `-item`, `-button`, `-button-{left,right}` | Unchanged parts; actual buttons also carry `-previous` / `-next`; their consumer `className`, `style`, and ref now share the actual button root |
 
-For rollout #96, **TextBlock** is the established family name of the public `TextBlockView`
+**TextBlock** is the established family name of the public `TextBlockView`
 export; its stable root is `.openui-text-block`. The React export name is unchanged.
 Callout's timed fade/collapse has the normal CSS animation priority: disable it with
 `.openui-callout[data-autodismiss] { animation: none; }` before overriding animated padding,
 opacity or height. That animation declaration is itself overridable in both load orders.
 
-Pre-release `@openuidev/react-components` betas also emitted internal carrier classes that
-react-ui never had. They are gone; use the class on the right instead:
+Carousel buttons forward consumer `className`, `style` and ref to the actual button.
 
-| Beta-only class                                                                                    | Use                                                                                                                               |
-| -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `.openui-button-root`                                                                              | `.openui-button`                                                                                                                  |
-| `.openui-icon-button-root`                                                                         | `.openui-icon-button`                                                                                                             |
-| `.openui-tabs-tabs`                                                                                | `.openui-tabs`                                                                                                                    |
-| `.openui-tabs-container`                                                                           | `.openui-tabs-list-container`                                                                                                     |
-| `.openui-tabs-list-styled`, `.openui-tabs-trigger-styled`, `.openui-tabs-content-styled`           | `.openui-tabs-list`, `.openui-tabs-trigger`, `.openui-tabs-content`                                                               |
-| `.openui-mark-down-renderer-markdown-{root,code,link}`                                             | `.openui-markdown-renderer`, `-code`, `-link`                                                                                     |
-| `.openui-inline-markdown-renderer-inline-markdown-root`                                            | `.openui-inline-markdown-renderer`                                                                                                |
-| `.openui-citation-container-styled`, `.openui-citation-trigger`, `.openui-citation-tooltip-styled` | `.openui-citation-container`, `.openui-citation`, `.openui-citation-tooltip`                                                      |
-| `.openui-citation-item-item`                                                                       | `.openui-citation-item`                                                                                                           |
-| `.openui-sources-listed-sources-{list,header,title,buttons,container}`                             | `.openui-sources`, `.openui-sources-header`, `.openui-sources-title`, `.openui-sources-buttons`, `.openui-sources-item-container` |
-| `.openui-sources-item-item`                                                                        | `.openui-sources-item`                                                                                                            |
-| `.openui-source-favicon-image-root`                                                                | `.openui-source-favicon-image`                                                                                                    |
-| `.openui-accordion-root`                                                                           | `.openui-accordion`                                                                                                               |
-| `.openui-card-root`                                                                                | `.openui-card`                                                                                                                    |
-| `.openui-card-header-root`                                                                         | `.openui-card-header`                                                                                                             |
-| `.openui-section-block-section-v2-root`                                                            | `.openui-section-v2`                                                                                                              |
-| `.openui-section-block-foldable-section-{root,item,header,trigger,content}`                        | `.openui-foldable-section` (root) or `.openui-foldable-section-{item,header,trigger,content}`                                     |
-| `.openui-steps-root`, `.openui-steps-item`                                                         | `.openui-steps`, `.openui-steps-item`                                                                                             |
-| `.openui-modal-portal-root`                                                                        | `.openui-modal`                                                                                                                   |
-| `.openui-modal-{overlay,content,header,title,close,body}-root`                                     | `.openui-modal-{overlay,content,header,title,close,body}`                                                                         |
-| `.openui-tooltip-wrapper-content`                                                                  | `.openui-tooltip-wrapper`                                                                                                         |
-| `.openui-list-item-root`                                                                           | `.openui-list-item`                                                                                                               |
-| `.openui-list-block-root`                                                                          | `.openui-list-block`                                                                                                              |
-| `.openui-entity-list-root`                                                                         | `.openui-entity-list`                                                                                                             |
-| `.openui-metric-indicator-root`                                                                    | `.openui-metric-indicator`                                                                                                        |
-| `.openui-table-container-styled`, `.openui-table-table`                                            | `.openui-table-container`, `.openui-table`                                                                                        |
-| `.openui-table-{footer,head,row,cell}-styled`                                                      | `.openui-table-{footer,head,row,cell}`                                                                                            |
-| `.openui-table-alignment`                                                                          | Removed; target the head/cell root or its `--align-{left,center,right}` modifier                                                  |
-| `.openui-table-scrollable-table-{wrapper,scroll-container,control}`                                | `.openui-scrollable-table-{wrapper,scroll-container,control}`                                                                     |
-| `.openui-slider-wrapper-root` | `.openui-slider-wrapper` (part) / `.openui-slider` (root) |
-| `.openui-slider-block-root` | `.openui-slider-block` |
-| `.openui-select-{trigger,content,viewport,group,label,item,separator}-root` | `.openui-select-{trigger,content,viewport,group,label,item,separator}` |
-| `.openui-calendar-container-root` | `.openui-calendar` |
-| `.openui-date-picker-style-root` | `.openui-date-picker` / `.openui-date-picker-content` |
-| `.openui-form-control-root` | `.openui-form-control` |
-| `.openui-hint-root` | `.openui-hint` |
-| `.openui-input-root` | `.openui-input` |
-| `.openui-textarea-root` | `.openui-text-area` |
-| `.openui-label-root` | `.openui-label` |
-| `.openui-buttons-root` | `.openui-buttons` |
-| `.openui-skeleton-root` | `.openui-skeleton` |
-| `.openui-skeleton-bar-root` | `.openui-skeleton-bar` |
-| `.openui-skeleton-pie-chart-skeleton-root` | `.openui-pie-chart-skeleton` |
-| `.openui-skeleton-table-skeleton-root` | `.openui-table-skeleton` |
-| `.openui-dot-matrix-loader-root` | `.openui-dot-matrix-loader` |
-| `.openui-code-block-root` | `.openui-code-block` |
-| `.openui-chart-empty-root`, `.openui-chart-{x,y}-axis-label-root` | `.openui-chart-empty`, `.openui-chart-{x,y}-axis-label` |
-| `.openui-chart-default-legend-root`, `.openui-chart-stacked-legend-root` | `.openui-default-legend`, `.openui-stacked-legend` |
-| `.openui-chart-stacked-legend-layout-root`, `.openui-chart-stacked-legend-scrollbar` | `.openui-chart-with-stacked-legend`, `.openui-stacked-legend-list` |
-| `.openui-chart-tooltip-root`, `.openui-chart-tooltip-portal-root` | `.openui-chart-tooltip`, `.openui-chart-tooltip-portal` |
-| `.openui-chart-{horizontal,vertical}-scroll-controls-root` | `.openui-scroll-buttons-{horizontal,vertical}` |
-| `.openui-mini-chart-root` | `.openui-mini-{line,area,bar}-chart` |
-| `.openui-{area,bar,horizontal-bar,line,scatter}-chart-root` | `.openui-{area,bar,horizontal-bar,line,scatter}-chart` |
-| `.openui-{pie-chart,radar-chart,radial-chart,funnel-chart,heatmap-chart,calendar-heatmap,segmented-bar}-root` | The corresponding `.openui-<chart>` root |
-| `.openui-heatmap-chart-diverging-ramp-root` | `.openui-heatmap-chart-color-scale-ramp--ramp-mode-diverging::after` |
-| `.openui-image-root`, `-fit-styled`, `-fill-styled`, `-error` | `.openui-image`, `--scale-fit`, `--scale-fill`, `[data-error]` |
-| `.openui-image-block-wrapper-styled`, `-wrapper-mobile`, `-image-styled`, `-image-mobile`, `-error`, `-loader-styled` | `.openui-image-block`, `[data-breakpoint="mobile"]`, `-image`, `[data-error]`, `-loader` |
-| `.openui-image-text-root`, `-layout-{horizontal,vertical}` | `.openui-image-text`, `--layout-{horizontal,vertical}`; existing flat part carriers remain |
-| `.openui-image-text-large-root` | `.openui-image-text-large`; existing flat image carriers remain |
-| `.openui-image-gallery-gallery`, `-layout-openui-gallery-{single,double,triple,quad,default}`, `-main-image` | `.openui-image-gallery`, `[data-layout="…"]`, `-image[data-position="1"]`; grid/image/show-all carriers remain |
-| `.openui-image-gallery-gallery-modal-{modal,content,header,heading,main,carousel-container,carousel,button-container,left-button,right-button,thumbnail,active-thumbnail}` | `.openui-image-gallery-modal`, `-modal-{content,header,heading,main,carousel-container,carousel,button-container,left-button,right-button,thumbnail}`; active uses `[aria-pressed="true"]` |
-| `.openui-carousel-carousel`, `-content-styled`, `-item-styled`, `-button-styled` | `.openui-carousel`, `-content`, `-item`, `-button` |
+Chart props are unchanged. Data colors, dimming, entrance delays and draw-line length use private
+`--_openui-*` variables; override the resulting CSS property on the stable class. Chart frame
+width/height, SVG coordinates, path lengths, mini-chart frames, explicit `StackedLegend style`
+values and spring positioning remain geometry set by JavaScript. `SingleStackedBar` remains the
+`SegmentedBar` alias.
 
-The #95 citations and sources migration changes no prop names. No internal callers outside
-these families reference their renamed classes, and no chat-kit source in the local kit branches
-(`chat-kit-tone`, `dashboard-kit`, `intelligent-kit`, `chat-kit-separate`, `standalone-chat-kit`,
-`react-chat-kit`, `nested-kit-discovery`, `production-core-kits`) references them; no chat-kit
-files were changed.
-
-The #96 text-block migration changes no prop names. No internal callers outside these families
-reference their renamed classes; the docs app's `.openui-callout-title` rule styles react-ui's
-Callout, which is unchanged. Chat-kit's ModelSwitcher styles (`modelSwitcher.styles.ts` in
-`chat-kit-tone`, `dashboard-kit`, `chat-kit-separate`, `standalone-chat-kit` and
-`nested-kit-discovery`) select `.openui-tag.openui-tag-sm` and `.openui-tag-text` on this
-package's Tag. `.openui-tag` and `.openui-tag-text` are unchanged, but `.openui-tag-sm` is now
-`.openui-tag--size-sm`, so that rule stops matching until the kit is updated. `react-chat-kit`
-has the same rule in its own `ModelSwitcher/modelSwitcher.styles.ts`, and its captured test results
-(`__tests__/results/*/baseline.css`) also contain those names. No chat-kit files were changed.
-
-The #97 media migration changes no prop names; Carousel buttons now forward consumer
-`className`, `style` and ref to the actual button. No internal callers outside these families,
-and no chat-kit source in the local kit branches, reference their renamed classes; no chat-kit
-files were changed.
-
-The #98 disclosure/layout/overlay migration changes no prop names. No internal callers outside
-these families reference their renamed classes. No chat-kit directory or matching references
-are present in this checkout; no chat-kit files were changed.
-
-The #99 lists and tables migration changes no prop names. No internal callers outside these
-families, and no chat-kit source in the local kit branches, reference their renamed classes; no
-chat-kit files were changed.
-
-The #100 card-block migration changes no public prop names. Blocks compose public text,
-markdown, tag, citation and tooltip components; inherited private values preserve their existing
-inline emphasis, image-tag appearance and snippet truncation. MetricIndicator is migrated by #99; ImageText
-uses flat styles from #97 with the same snippet truncation variables. No renamed-card-class callers outside these families
-or chat-kit directories/references were found; no chat-kit files changed.
-
-Chart foundation props are unchanged. Data colors, dimming and draw-line length use private
-`--_openui-*` variables; override the resulting CSS property on the stable class. Mini-chart
-frame width/height, explicit `StackedLegend style` values, and the tooltip spring's positioning
-transform remain geometry set by JavaScript. The tooltip panel and its appearance are class-overridable.
-No chat-kit source references to these renamed chart classes were found for ticket #102.
-
-Cartesian chart props are unchanged for ticket #103. Dynamic dimming, follower appearance and
-entrance delays use private `--_openui-*` variables read by flat part styles. Chart frame
-width/height, SVG coordinates, path lengths and spring positioning remain geometry set by
-JavaScript. The public classes override appearance properties directly. Empty HorizontalBarChart
-frames retain their existing layout and now carry their own family's stable root.
-A repository-wide scan found no external/chat-kit references to the renamed classes; no kit was modified.
-
-Ticket #104 changes no public prop names. Runtime chart appearance values use private
-`--_openui-*` variables, read by flat class rules. Calendar level fills and the funnel spring
-scale are private too. `SingleStackedBar` remains the `SegmentedBar` alias.
-No references to these renamed classes were found outside react-components and the retained
-react-ui implementation (including chat-kit consumers); no chat-kit source was changed.
-
-## Beta import migration
-
-Use `@openuidev/react-components` in place of the previous unpublished beta name
-`@openuidev/react-ui-core`. The folder is now `packages/react-components`. There
-is no compatibility alias. Component names, root-only exports, public types and
-customization APIs are preserved. The existing `@openuidev/react-ui` package stays
-unchanged. Historical validation artifact names remain valid for their recorded
-baselines.
-
-### Names changed during the beta
-
-These classes and attributes changed after earlier betas shipped them.
-
-| Earlier beta | Now |
-| --- | --- |
-| `.openui-form-control-hint` | `.openui-hint`, inside FormControl and standalone |
-| `.openui-list-item-item` | `.openui-list-item-row` |
-| `.openui-editable-table-table`, `-table-header`, `-table-body` | `.openui-editable-table-grid`, `-grid-header`, `-grid-body` |
-| `.openui-chart-with-stacked-legend-legend` | `.openui-chart-with-stacked-legend-panel` |
-| `.openui-calendar-day[data-selection="single"]` in `mode="multiple"` | `[data-selection="multiple"]`; match `[data-selection]` for both modes |
-| ListItem `data-action="false"`, `data-subtitle="false"`; MetricIndicator `data-subtext="false"`; ContextCardBlock `data-background-image="false"`; Table and EditableTable `data-scrollable="false"` | Absent when false |
