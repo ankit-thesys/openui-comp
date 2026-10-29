@@ -116,6 +116,7 @@ and `data-citation-indices` are not part of this list.
 | ContextCardBlock | `.openui-context-card` | `data-background-image="true"` | the item has `bgImageSrc` |
 | ImageGallery | `.openui-image-gallery` | `data-layout="single"`, `"double"`, `"triple"`, `"quad"` or `"default"` | Always: 1, 2, 3, 4, or 5 and more images |
 | TextBlock | `.openui-text-block-secondary` | `data-clamped="true"` | `secondaryMaxLines` is set |
+| MarkDownRenderer | `.openui-markdown-renderer-link`, `.openui-markdown-renderer-code` | `data-quoted="true"` | The link or inline code is inside a blockquote, the renderer's own or a caller's `options.components.blockquote` |
 | SliderBlock | `.openui-slider-block-controls` | `data-range=""` | the value has two ends (a range slider) |
 | Calendar | `.openui-calendar-day` | `data-selection="single"` or `"multiple"` (the `mode`) | the day is selected in `single` or `multiple` mode; range days use `[data-range-start]`, `[data-range-middle]` and `[data-range-end]` |
 | Table (ScrollableTable), EditableTable | `.openui-scrollable-table-control`, `.openui-editable-table-scroll-control` | `data-side="left"` or `"right"` | Always on a scroll button; the buttons render while the table overflows |
@@ -429,6 +430,7 @@ in its slots is a public prop on the primitive, which emits a modifier class:
 | --- | --- | --- | --- |
 | Tag | `surface="image"` | `.openui-tag--surface-image` | Translucent dark fill, white text and a backdrop blur, in place of the variant's colours |
 | TextBlock (TextBlockView), IconText, ImageText | `overflow="truncate"` | `.openui-{text-block,icon-text,image-text}--overflow-truncate` | One line per text, ending in an ellipsis; the block can shrink in a flex row |
+| TextBlock (TextBlockView), IconText, ImageText | `overflow="wrap"` | `.openui-{text-block,icon-text,image-text}--overflow-wrap` | The default wrapping look, passed to opt out of a slot's truncation; no rule of its own |
 | TextBlock (TextBlockView), IconText, ImageText | `width="fill"` | `.openui-{text-block,icon-text,image-text}--width-fill` | As wide as its container |
 | InlineMarkdownRenderer | `typography="inherit"` | `.openui-inline-markdown-renderer--typography-inherit` | Passes `typography="inherit"` to its markdown renderer |
 | MarkDownRenderer | `typography="inherit"` | `.openui-markdown-renderer--typography-inherit`, and `.openui-markdown-renderer-code--typography-inherit` on inline code | Bold and italic text take the surrounding typography at medium weight; inline code is set at the small code size |
@@ -443,10 +445,12 @@ them:
 - CompositeCard gives its inline markdown `typography="inherit"`.
 - TextContentWrapper passes `listLeadIn="spaced"` to its markdown.
 
-A prop the caller passes wins over the card's. A TextBlock given an explicit `align` in a
-SnippetCardBlock's right slot now keeps it; earlier the slot forced right alignment. Inside a
-blockquote, MarkDownRenderer marks links and inline code `[data-quoted]`; they inherit the
-quote's colour, line-height and italic style, in every browser (no style query is used).
+A prop the caller passes wins over the card's, such as `overflow="wrap"` on text in a snippet
+slot. A TextBlock given an explicit `align` in a SnippetCardBlock's right slot now keeps it;
+earlier the slot forced right alignment. Inside a blockquote, the renderer's own or a caller's
+`options.components.blockquote`, MarkDownRenderer marks links and inline code `[data-quoted]`;
+they inherit the quote's colour, line-height and italic style, in every browser (no style query
+is used).
 
 ### Presentation, layout and code notes
 
@@ -798,7 +802,7 @@ Renamed stable classes and props, per component converted to the flat convention
 | TextBlock                          | `.openui-text-block__secondary--{positive,negative}`                                                                                        | `.openui-text-block-secondary--secondary-tone-{positive,negative}`                                                                                                                                                          |
 | TextBlock                          | `.openui-text-block--type-textOnly`                                                                                                         | `.openui-text-block--type-text-only`; prop remains `type="textOnly"`                                                                                                                                                        |
 | TextBlock                          | `--size-*`, `--align-*`, other `--type-*`                                                                                                   | Unchanged; defaults always emitted. `secondaryMaxLines` sets a private variable on the secondary part with `[data-clamped]`; layout defaults now live in CSS                                                                |
-| TextBlock | Read SnippetCardBlock's `--_openui-snippet-card-*` variables | `overflow="truncate"` and `width="fill"` emit `--overflow-truncate` and `--width-fill`; SnippetCardBlock sets them, and `align="right"` in its right slot. An explicit `align` now wins in that slot |
+| TextBlock | Read SnippetCardBlock's `--_openui-snippet-card-*` variables | `overflow="truncate"` and `width="fill"` emit `--overflow-truncate` and `--width-fill`; SnippetCardBlock sets them, and `align="right"` in its right slot. An explicit `align` or `overflow="wrap"` wins in a slot |
 | Callout / TextCallout              | `.openui-{callout,text-callout}-root`, `-variant-{neutral,info,warning,success,danger}`, and `-{neutral,info,warning,success,danger}`       | `.openui-{callout,text-callout}` and `--variant-{neutral,info,warning,success,danger}`; defaults always emitted                                                                                                             |
 | Callout                            | `-title-styled`, `-description-styled`                                                                                                      | `.openui-callout-title`, `.openui-callout-description`                                                                                                                                                                      |
 | Callout                            | `.openui-callout-dismiss`, `.openui-callout-autodismiss`, `--callout-duration`                                                              | `.openui-callout[data-autodismiss]` and private `--_openui-callout-duration`; `duration` prop unchanged                                                                                                                     |
@@ -810,7 +814,7 @@ Renamed stable classes and props, per component converted to the flat convention
 | InlineHeader                       | `.openui-inline-header-root`, `-heading-styled`, `-description-styled`                                                                      | `.openui-inline-header`, `-heading`, `-description`                                                                                                                                                                         |
 | IconText                           | `.openui-icon-text-root`, `-layout-{horizontal,vertical}`, `--{horizontal,vertical}`                                                        | `.openui-icon-text`, `--layout-{horizontal,vertical}`; `--icon-variant-*` always emitted and `--bold` only when true                                                                                                        |
 | IconText                           | `.openui-icon-text__content`                                                                                                                | `.openui-icon-text-content`                                                                                                                                                                                                 |
-| IconText | Read SnippetCardBlock's `--_openui-snippet-card-*` variables | `overflow="truncate"` and `width="fill"` emit `--overflow-truncate` and `--width-fill` and pass on to the inner TextBlock; SnippetCardBlock sets them |
+| IconText | Read SnippetCardBlock's `--_openui-snippet-card-*` variables | `overflow="truncate"` and `width="fill"` emit `--overflow-truncate` and `--width-fill` and pass on to the inner TextBlock; SnippetCardBlock sets them, and `overflow="wrap"` opts out |
 | IconText | Set IconTag's private top-margin variable | The composed IconTag also carries `.openui-icon-text-icon`, which owns its top margin |
 | IconTag                            | `.openui-icon-tag-root`, `-size-{xs,s,m,l,xl}`, `--{xs,s,m,l,xl}`                                                                           | `.openui-icon-tag`, `--size-{xs,s,m,l,xl}`; default remains `m`                                                                                                                                                             |
 | IconTag                            | `-variant-*`, `--{neutral,info,success,warning,danger,inverted}`                                                                            | `--variant-{neutral,info,success,warning,danger,inverted}`; default remains `neutral`; owned SVG has `.openui-icon-tag-icon`                                                                                                |
@@ -994,7 +998,7 @@ Renamed stable classes and props, per component converted to the flat convention
 | ImageBlock | `-wrapper--mobile`, `-image--mobile`, `-wrapper--error`, `-image--error` | `[data-breakpoint="mobile"]` and `[data-error]` on root/image; root also exposes `[data-loading]`; no prop renames |
 | ImageText | `.openui-image-text--{horizontal,vertical}`, `__{image-container,image,content}` | `--layout-{horizontal,vertical}` and `-{image-container,image,content}`; default horizontal emitted, `bold` emits `--bold` only when true |
 | ImageText | `imageSize` as inline width/height | Same numeric prop; geometry defaults live in CSS and can be overridden by `.openui-image-text-image-container` |
-| ImageText | Read SnippetCardBlock's `--_openui-snippet-card-*` variables | `overflow="truncate"` and `width="fill"` emit `--overflow-truncate` and `--width-fill` and pass on to the inner TextBlock; SnippetCardBlock sets them |
+| ImageText | Read SnippetCardBlock's `--_openui-snippet-card-*` variables | `overflow="truncate"` and `width="fill"` emit `--overflow-truncate` and `--width-fill` and pass on to the inner TextBlock; SnippetCardBlock sets them, and `overflow="wrap"` opts out |
 | ImageTextLarge | `.openui-image-text-large__{image-wrap,image,content}` | `.openui-image-text-large-{image-wrap,image,content}`; root unchanged; no prop renames |
 | ImageGallery | `.openui-gallery`, `__{grid,image}`, `__show-all-button` | `.openui-image-gallery`, `-grid`, `-image`, `-show-all`; each owned img has `-img` |
 | ImageGallery | `.openui-gallery--{single,double,triple,quad,default}`, `__image--main` | Root `[data-layout="…"]` derived from image count; tile `[data-position="1"]`; no invented layout prop |

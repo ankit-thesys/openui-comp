@@ -1,7 +1,14 @@
 "use client";
 
 import clsx from "clsx";
-import { createContext, memo, useContext, type ComponentProps } from "react";
+import {
+  createContext,
+  memo,
+  useContext,
+  useMemo,
+  type ComponentProps,
+  type ElementType,
+} from "react";
 import ReactMarkdown, { Components, type Options } from "react-markdown";
 import oneLight from "react-syntax-highlighter/dist/cjs/styles/prism/one-light";
 import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus";
@@ -38,10 +45,23 @@ const MarkdownTableCell: Components["td"] = ({ align, ...props }) => (
 // Links and inline code inside a blockquote carry `data-quoted`, so they inherit the quote's look.
 const QuoteContext = createContext(false);
 
-const MarkdownBlockquote: Components["blockquote"] = ({ node: _node, ...props }) => (
-  <QuoteContext.Provider value={true}>
-    <blockquote {...props} />
-  </QuoteContext.Provider>
+/** A blockquote renderer, the default or a caller's override, that marks what it holds quoted. */
+const quoting = (Blockquote: ElementType): Components["blockquote"] =>
+  function QuotedBlockquote(props) {
+    return (
+      <QuoteContext.Provider value={true}>
+        <Blockquote {...props} />
+      </QuoteContext.Provider>
+    );
+  };
+
+const MarkdownBlockquote = quoting(
+  ({
+    node: _node,
+    ...props
+  }: ComponentProps<"blockquote"> & {
+    node?: unknown;
+  }) => <blockquote {...props} />,
 );
 
 const QuotableLink = (props: ComponentProps<"a">) => (
@@ -132,9 +152,15 @@ export const MarkDownRenderer = memo((props: MarkDownRendererProps) => {
     blockquote: MarkdownBlockquote,
   };
 
+  // A caller's own blockquote still marks the links and code inside it quoted.
+  const customBlockquote = props.options?.components?.blockquote;
+  const blockquote = useMemo(
+    () => (customBlockquote ? quoting(customBlockquote) : MarkdownBlockquote),
+    [customBlockquote],
+  );
   const markdownProps = {
     ...props.options,
-    components: { ...components, ...props.options?.components },
+    components: { ...components, ...props.options?.components, blockquote },
   };
 
   return (
