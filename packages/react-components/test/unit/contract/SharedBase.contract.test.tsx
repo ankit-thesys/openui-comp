@@ -1,6 +1,6 @@
 // Shared border-box opt-in, through public server rendering of its three users. Run after build:
 // pnpm test test/unit/contract/SharedBase.contract.test.tsx
-// Only src/styles/base.ts leaves the allowlist; callers' owned styles migrate in #91/#96.
+// Buttons and FormControl now own flat rules too (#91); isolate the class shared by all roots.
 import { getComponentStyles, ThemeProvider } from "@openuidev/react-components";
 import { expect, it } from "vitest";
 import { classViolation, rulesOf, ruleViolation } from "./checks";
@@ -9,6 +9,12 @@ import { sharedBaseConsumers, sharedStyleContracts } from "./components";
 
 const importedCss = getComponentStyles();
 
+const sharedRules = (html: string, css: string) => {
+  const roots = [...html.matchAll(/<div class="([^"]+)"/g)].map((match) => match[1]!.split(" "));
+  const common = roots[0]!.filter((name) => roots.every((classes) => classes.includes(name)));
+  return rulesOf(css).filter((rule) => common.some((name) => rule.selector === `.${name}`));
+};
+
 it("does not register the shared rule at import", () => {
   expect(importedCss).not.toContain(".openui-border-box");
 });
@@ -16,7 +22,7 @@ it("does not register the shared rule at import", () => {
 it("registers a flat border-box rule on the three opted-in roots when they render", () => {
   const { html, css } = renderAndCollect(sharedBaseConsumers.map(({ element }) => element));
   expect(css).toContain("box-sizing:border-box");
-  const rules = rulesOf(css);
+  const rules = sharedRules(html, css);
   expect(rules).toHaveLength(1);
   expect(rules.map((rule) => ruleViolation(rule, ""))).toEqual([null]);
   const rootClasses = [...html.matchAll(/<div class="([^"]+)"/g)].map((match) =>
@@ -43,7 +49,8 @@ it("registers the same root-only rule in the provider's layer", () => {
     )),
   );
   expect(css).toContain("box-sizing:border-box");
-  expect(rulesOf(css)).toHaveLength(1);
-  expect(rulesOf(css).map((rule) => ruleViolation(rule, "openui"))).toEqual([null]);
+  const rules = sharedRules(html, css);
+  expect(rules).toHaveLength(1);
+  expect(rules.map((rule) => ruleViolation(rule, "openui"))).toEqual([null]);
   expect(html.match(/openui-border-box/g)).toHaveLength(3);
 });

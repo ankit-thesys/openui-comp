@@ -2,23 +2,9 @@
 
 import * as LabelPrimitive from "@radix-ui/react-label";
 import clsx from "clsx";
-import { css } from "goober";
 import React, { forwardRef } from "react";
-import { labelStyles } from "./label.styles";
-
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-label-root {
-      ${labelStyles}
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
-
-const componentClass = "openui-label-root";
+import { useStyles } from "../../styles/useStyles";
+import { labelStyles, names } from "./label.styles";
 
 export interface LabelProps extends React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> {
   children: React.ReactNode;
@@ -30,22 +16,19 @@ export interface LabelProps extends React.ComponentPropsWithoutRef<typeof LabelP
 
 const Label = forwardRef<HTMLLabelElement, LabelProps>(
   ({ children, className, style, disabled, required, ...props }, ref) => {
+    const styles = useStyles(labelStyles);
     return (
       <LabelPrimitive.Root
         ref={ref}
-        className={clsx(
-          componentClass,
-          "openui-label",
-          {
-            "openui-label-disabled": disabled,
-          },
-          className,
-        )}
+        className={clsx(styles.root, names.root, className)}
+        aria-disabled={disabled || undefined}
         style={style}
         {...props}
       >
         {children}
-        {required && <span className="openui-label-required-asterisk">*</span>}
+        {required && (
+          <span className={clsx(styles.requiredAsterisk, names.requiredAsterisk)}>*</span>
+        )}
       </LabelPrimitive.Root>
     );
   },

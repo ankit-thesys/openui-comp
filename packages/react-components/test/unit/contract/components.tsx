@@ -5,7 +5,10 @@ import {
   Buttons,
   CodeBlock,
   FormControl,
+  Hint,
   IconButton,
+  Input,
+  Label,
   MarkDownRenderer,
   Table,
   TableBody,
@@ -18,6 +21,7 @@ import {
   TabsList,
   TabsTrigger,
   TagBlock,
+  TextArea,
 } from "@openuidev/react-components";
 import type { ReactElement } from "react";
 import { renderToString } from "react-dom/server";
@@ -69,8 +73,8 @@ const product = <T,>(...lists: T[][]): T[][] =>
     [[]],
   );
 
-// Only their shared border-box rule is migrated in #90. Their owned styles stay on the
-// allowlist until #91/#96; do not add these families to migratedComponents yet.
+// The three shared border-box users. Buttons and FormControl migrate in #91;
+// TagBlock's owned styles remain allowlisted until #96.
 export const sharedBaseConsumers = [
   {
     name: "Buttons",
@@ -99,6 +103,93 @@ export const sharedBaseConsumers = [
 ];
 
 export const migratedComponents: MigratedComponent[] = [
+  {
+    folder: "Buttons",
+    // Read composed Button classes after CSS collection, so this getter does not register
+    // their styles before the contract renders. The browser benches use these elements too:
+    // a bare <button> has only a UA background, which Tailwind is allowed to reset.
+    get names() {
+      return [
+        ...namesOf("Buttons"),
+        ...namesOf("SharedBase"),
+        Object.fromEntries(
+          [...stableClassesIn(renderToString(<Button>Action</Button>))].map((name, index) => [
+            `dependency${index}`,
+            name,
+          ]),
+        ),
+      ];
+    },
+    elements: () => [
+      <Buttons key="default">
+        <Button>Action</Button>
+      </Buttons>,
+      ...(["horizontal", "vertical"] as const).map((variant) => (
+        <Buttons key={variant} variant={variant}>
+          <Button>Action</Button>
+        </Buttons>
+      )),
+    ],
+  },
+  {
+    folder: "FormControl",
+    names: [...namesOf("FormControl"), ...namesOf("SharedBase")],
+    elements: () => [
+      <FormControl key="default">
+        <Hint>Details</Hint>
+      </FormControl>,
+      ...[false, true].map((hasError) => (
+        <FormControl key={String(hasError)} hasError={hasError}>
+          <Hint>Details</Hint>
+        </FormControl>
+      )),
+    ],
+  },
+  {
+    folder: "Label",
+    names: namesOf("Label"),
+    elements: () => [
+      <Label key="default">Name</Label>,
+      ...[false, true].flatMap((disabled) =>
+        [false, true].map((required) => (
+          <Label key={`${disabled}/${required}`} disabled={disabled} required={required}>
+            Name
+          </Label>
+        )),
+      ),
+    ],
+  },
+  {
+    folder: "TextArea",
+    names: namesOf("TextArea"),
+    elements: () => [
+      <TextArea key="default" />,
+      ...[false, true].flatMap((hasError) =>
+        [false, true].map((disabled) => (
+          <TextArea key={`${hasError}/${disabled}`} hasError={hasError} disabled={disabled} />
+        )),
+      ),
+    ],
+  },
+  {
+    folder: "Input",
+    names: namesOf("Input"),
+    elements: () => [
+      <Input key="default" />,
+      ...(["small", "medium", "large"] as const).flatMap((size) =>
+        [false, true].flatMap((hasError) =>
+          [false, true].map((disabled) => (
+            <Input
+              key={`${size}/${hasError}/${disabled}`}
+              size={size}
+              hasError={hasError}
+              disabled={disabled}
+            />
+          )),
+        ),
+      ),
+    ],
+  },
   {
     folder: "MarkDownRenderer",
     prose: true,

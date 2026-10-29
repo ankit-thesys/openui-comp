@@ -234,3 +234,30 @@ background. Components are not restyled; parity, not the screenshots, is the gat
 
 - `pnpm run ci` (typecheck of `src` and tests, unit tests, lint of `src`, format) needs the build too, because tests import the built package; in CI it runs in the shared `build-js.yml` step after all packages are built.
 - Browser tests run in the separate `react-components-browser` job in `build-js.yml`, which builds this package and `@openuidev/react-ui` (for the react-ui benches) with their workspace dependencies, installs Chromium and runs `test:browser`. Locally, build react-ui too: `pnpm --filter "@openuidev/react-ui..." build`.
+
+### Form controls (#91)
+
+FormControl (including Hint), Label, Input, TextArea and Buttons join `migratedComponents`,
+so `bench.overrides` and `bench.tailwind` exercise every stable class. Their focused contract
+files cover the built package in Node; `Hint.contract.test.tsx` additionally guards the family
+part's inherited invalid state. The shared-base test isolates the generated class common to
+its three roots, since Buttons and FormControl now register their owned rules as well.
+
+`form-controls.spec.ts` uses `fixtures/form-controls.tsx` for before/after overrides on every
+class in both default and layer mode, invalid/disabled/focus precedence, context updates,
+independent hint/label overrides, lazy render registration and `<html class>` replacement.
+Native fields use `:focus-within` (equivalent to focus on these elements) within the existing
+selector grammar. Input's invalid ring remains visible when disabled, while the disabled
+border wins; TextArea keeps its focus ring and invalid border independently.
+
+Parity fixtures/specs and baseline names are `input`, `text-area`, `label`, `hint`,
+`form-control` and `buttons` (each fixture is `parity-<name>.tsx`). They cover defaults,
+appearance props, owned parts and invalid/disabled combinations, light/dark at rest, hover
+and press; press also focuses enabled native fields. There are no intentional differences.
+Only `parity-form-control` translates renamed part selectors with `__PARITY_BASELINE__`.
+When Chromium cannot run, the orchestrator must capture these six baselines from #72 using
+`pnpm test:parity:baseline`, then run the full browser suite. Never hand-write baselines.
+
+No renamed-class references were found in the current tree outside these modules/tests/docs,
+or in `packages/kits` on the available `origin/codex/chat-kit-separate` and
+`origin/claude/chat-kit-tone` refs. The chat kit is not present in this worktree and is unchanged.

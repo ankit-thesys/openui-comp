@@ -1,24 +1,10 @@
 "use client";
 
 import clsx from "clsx";
-import { css } from "goober";
 import React, { forwardRef } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { useFormControlContext } from "../FormControl/context";
-import { textAreaStyles } from "./textArea.styles";
-
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-textarea-root {
-      ${textAreaStyles}
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
-
-const componentClass = "openui-textarea-root";
+import { names, textAreaStyles } from "./textArea.styles";
 
 export interface TextAreaProps extends Omit<
   React.TextareaHTMLAttributes<HTMLTextAreaElement>,
@@ -32,15 +18,15 @@ export interface TextAreaProps extends Omit<
 
 const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>((props, ref) => {
   const { className, rows = 3, hasError, ...rest } = props;
+  const styles = useStyles(textAreaStyles);
   const ctx = useFormControlContext();
   const resolvedHasError = hasError ?? ctx?.hasError ?? false;
 
   return (
     <textarea
       ref={ref}
-      className={clsx(componentClass, "openui-textarea", className, {
-        "openui-textarea-error": resolvedHasError,
-      })}
+      className={clsx(styles.root, names.root, className)}
+      aria-invalid={resolvedHasError || undefined}
       {...rest}
       rows={rows}
     />

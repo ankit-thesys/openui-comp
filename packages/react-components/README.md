@@ -154,7 +154,7 @@ unlayered app CSS beats them, whatever its specificity or load order, and so do
 layers ordered after `openui`. Nested providers inherit `cssLayer` and can set
 their own. A value that is not a layer name (or a dotted path such as
 `app.openui`) is ignored, with a development warning. Components outside any provider stay unlayered, and so do components
-not yet converted to the flat convention (currently all but Button), under any
+not yet converted to the flat convention (see `test/flat-allowlist.json`), under any
 provider. Each layer gets its own generated classes, so a component rendered both
 in and out of a layer registers its rules twice.
 
@@ -221,8 +221,9 @@ has not been certified.
 ### Stable selectors
 
 The selectors in this and the following sections belong to components that have
-not moved to the [styling contract](#styling-and-overrides) yet; Button, IconButton and
-MarkDownRenderer have, and are documented in the [stable class reference](docs/reference/selectors.md).
+not moved to the [styling contract](#styling-and-overrides) yet. Button, IconButton, Tabs,
+MarkDownRenderer, FormControl (including Hint), Label, Input, TextArea and Buttons have;
+see the [stable class reference](docs/reference/selectors.md).
 The documented batches below use stable styling targets that register on import: a private
 generated class on `html` is contained in `:where(...:root)` and adds zero
 specificity. Consumers do not use that class. EditableTable retains its existing selectors.
@@ -242,8 +243,8 @@ aliases do not acquire the new component styles.
 The shared `openui-border-box` helper opts in only Buttons, FormControl and
 TagBlock roots. Its flat rule registers when a user renders, honours `cssLayer`, and
 survives replacement of `<html class>`. A single consumer class can override its box sizing. It does not style
-descendants. Buttons, FormControl and TagBlock also have their remaining owned rules
-converted in the batches below.
+descendants. Buttons and FormControl also use flat, layer-aware owned rules (#91);
+TagBlock retains the import-time rules documented below.
 
 The shared `.openui-skeleton-pulse` class registers its animation and keyframes when
 an animated Skeleton bar, pie shape or legend dot renders, in the provider's layer.
@@ -256,32 +257,30 @@ rules remain on the migration allowlist. Both shared classes are listed in the
 The control batch adds the following stable styling roots. Existing aliases,
 parts, variants, native attributes, refs and customization props are retained.
 No rendered wrapper is added. Component styles use the same private
-zero-specificity document guard as the Button/IconButton pilot.
+zero-specificity document guard. The migrated form controls are documented separately below.
 
 | Family | Styling root | Existing parts and states |
 | --- | --- | --- |
 | CheckBoxGroup | `.openui-checkbox-group-root` | Existing clear/card/sunk variant classes. |
 | CheckBoxItem | `.openui-checkbox-item-container-root` | Container root; `.openui-checkbox-item-root`, indicator, content, label and description; checked/disabled states stay on the Radix control. |
 | Chips | `.openui-chips-root` | Existing chip item, icon and text; selected/disabled modifiers and focus-visible state. |
-| FormControl | `.openui-form-control-root`, `.openui-hint-root` | FormControl and Hint roots; error context still reaches Input/TextArea/Hint. |
-| Input | `.openui-input-root` | Existing small/medium/large, error, focus, hover, disabled and placeholder selectors. |
-| Label | `.openui-label-root` | Existing disabled modifier and required-asterisk part. |
 | OptionCards | `.openui-option-cards-root` | Existing grid/row/card/content/text/title/subtitle/top parts; selected/disabled/focus-visible state and container queries. |
 | RadioGroup | `.openui-radio-group-root` | Existing clear/card/sunk variants; native Radix behavior. |
 | RadioItem | `.openui-radio-item-container-root` | Container root; existing control, SVG paths, content, label and description; checked/disabled states. |
 | Slider | `.openui-slider-wrapper-root`, `.openui-slider-block-root` | Wrapper and SliderBlock roots; existing track/range/thumb/handle/value/dot/label/block parts and native disabled/focus/hover state. |
 | SwitchGroup | `.openui-switch-group-root` | Existing clear/card/sunk variants. |
 | SwitchItem | `.openui-switch-item-container-root` | Container root; existing control/thumb/content/label/description and checked/disabled states. |
-| TextArea | `.openui-textarea-root` | Existing error, focus, hover and disabled selectors. |
 | ToggleGroup | `.openui-toggle-group-root` | Existing group root and native disabled behavior. |
 | ToggleItem | `.openui-toggle-item-root` | Existing item alias and on/off, hover and disabled state. |
 
-For example, a later `.openui-input-root { border-width: 2px; }` overrides
-Input's base border width. Use the corresponding variant, state or part selector
-when overriding a declaration owned there:
+FormControl, Hint, Label, Input and TextArea follow the flat contract. For example,
+`.openui-input { border-width: 2px; }` overrides Input's base border width regardless
+of load order. Add the same state when overriding a state declaration:
 
 ```css
-.openui-input-root:focus { box-shadow: none; }
+.openui-input:focus-within { box-shadow: none; }
+.openui-input[aria-invalid="true"] { border-color: crimson; }
+.openui-text-area[aria-invalid="true"] { border-color: crimson; }
 .openui-checkbox-item-container-root .openui-checkbox-item-root[data-state="checked"] {
   background-color: navy;
 }
@@ -353,7 +352,6 @@ The private document guard contributes no specificity.
 | ListBlock | `.openui-list-block-root` |
 | Card | `.openui-card-root` |
 | CardHeader | `.openui-card-header-root` |
-| Buttons | `.openui-buttons-root` |
 | TagBlock | `.openui-tag-block-root` |
 | DotMatrixLoader | `.openui-dot-matrix-loader-root` |
 | Skeleton | `.openui-skeleton-pie-chart-skeleton-root`, `.openui-skeleton-root`, `.openui-skeleton-bar-root`, `.openui-skeleton-table-skeleton-root` |
@@ -698,6 +696,19 @@ Renamed stable classes and props, per component converted to the flat convention
 | MarkDownRenderer | Shared `.openui-code-block-wrapper` | Also carries `.openui-markdown-renderer-code-block`; standalone CodeBlock defaults are unchanged |
 | MarkDownRenderer | `.openui-code-block-syntax-highlighter` inside markdown | Removed inside markdown; target `.openui-markdown-renderer-code-block` for the owned root around third-party output. Standalone CodeBlock keeps the old class. |
 | MarkDownRenderer | Shared `.openui-table` / `.openui-table-container` | Also carry `.openui-markdown-renderer-table` / `.openui-markdown-renderer-table-container` |
+| FormControl | `.openui-form-control` | Unchanged; now the only family root class (plus the shared `.openui-border-box` opt-in). |
+| Hint | `.openui-hint` | `.openui-form-control-hint` (FormControl family member; also works standalone). |
+| Hint | `.openui-hint-error` | `.openui-form-control-hint[data-invalid="true"]` |
+| Input | `.openui-input` | Unchanged; now the only root class. |
+| Input | `.openui-input-{small,medium,large}` | `.openui-input--size-{small,medium,large}`; default `medium` always emitted. |
+| Input | `.openui-input-error` | `.openui-input[aria-invalid="true"]` |
+| TextArea | `.openui-textarea` | `.openui-text-area` (kebab-case of the exported name). |
+| TextArea | `.openui-textarea-error` | `.openui-text-area[aria-invalid="true"]` |
+| Label | `.openui-label`, `.openui-label-required-asterisk` | Unchanged; root and independently styled required-asterisk part. |
+| Label | `.openui-label-disabled` | `.openui-label[aria-disabled="true"]` |
+| Buttons | `.openui-buttons` | Unchanged; now the only family root class (plus `.openui-border-box`). |
+| Buttons | `.openui-buttons-{horizontal,vertical}` | `.openui-buttons--variant-{horizontal,vertical}`; default `horizontal` always emitted. |
+| Form controls (#91) | `hasError`, `disabled`, `required`, Input `size` / `styles`, TextArea `rows`, Buttons `variant` | Props unchanged. `hasError` inherits from FormControl; explicit `false` opts out. Input/TextArea use `aria-invalid`, Hint uses `data-invalid`, Label uses `aria-disabled`. Explicit native ARIA attributes are forwarded and take precedence. |
 | Shared border-box (#90) | `.openui-border-box` on Buttons, FormControl and TagBlock | Unchanged; registered at render, flat and layer-aware. No prop renames. |
 | Shared Skeleton pulse (#90) | Animation on bars, pie shapes and legend dots | Also carry `.openui-skeleton-pulse`; animation and keyframes register at render. Existing classes and props are unchanged. |
 
@@ -706,6 +717,12 @@ react-ui never had. They are gone; use the class on the right instead:
 
 | Beta-only class | Use |
 | --- | --- |
+| `.openui-form-control-root` | `.openui-form-control` |
+| `.openui-hint-root` | `.openui-form-control-hint` |
+| `.openui-input-root` | `.openui-input` |
+| `.openui-textarea-root` | `.openui-text-area` |
+| `.openui-label-root` | `.openui-label` |
+| `.openui-buttons-root` | `.openui-buttons` |
 | `.openui-button-root` | `.openui-button` |
 | `.openui-icon-button-root` | `.openui-icon-button` |
 | `.openui-tabs-tabs` | `.openui-tabs` |

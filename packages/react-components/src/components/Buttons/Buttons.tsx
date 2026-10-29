@@ -1,15 +1,12 @@
 "use client";
 
 import clsx from "clsx";
-import { css } from "goober";
 import { CSSProperties, forwardRef, HTMLAttributes, ReactElement } from "react";
 import { names as baseNames, baseStyles } from "../../styles/base";
 import { useStyles } from "../../styles/useStyles";
 import { ButtonProps } from "../Button";
 import { IconButtonProps } from "../IconButton";
-import { buttonsStyles } from "./buttons.styles";
-
-const componentClass = "openui-buttons-root";
+import { buttonsStyles, names } from "./buttons.styles";
 
 type ButtonsVariant = "vertical" | "horizontal";
 
@@ -21,23 +18,20 @@ export interface ButtonsProps extends HTMLAttributes<HTMLDivElement> {
   style?: CSSProperties;
 }
 
-const variantMap: Record<ButtonsVariant, string> = {
-  vertical: "openui-buttons-vertical",
-  horizontal: "openui-buttons-horizontal",
-};
-
 export const Buttons = forwardRef<HTMLDivElement, ButtonsProps>((props, ref) => {
   const { className, style, variant = "horizontal", children, ...rest } = props;
+  const styles = useStyles(buttonsStyles);
   const base = useStyles(baseStyles);
   return (
     <div
       ref={ref}
       className={clsx(
-        componentClass,
+        styles.root,
+        styles.variant[variant],
+        names.root,
+        names.variant[variant],
         base.root,
         baseNames.root,
-        "openui-buttons",
-        variantMap[variant],
         className,
       )}
       style={style}
@@ -49,15 +43,3 @@ export const Buttons = forwardRef<HTMLDivElement, ButtonsProps>((props, ref) => 
 });
 
 Buttons.displayName = "Buttons";
-
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-buttons-root {
-      ${buttonsStyles}
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
