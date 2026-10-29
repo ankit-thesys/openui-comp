@@ -241,7 +241,7 @@ has not been certified.
 Every component follows the [styling contract](#styling-and-overrides); its roots, parts and
 modifiers are in the generated [stable class reference](docs/reference/selectors.md), which
 replaces the hand-written lists earlier betas kept here. The states its library rules use are
-listed below and, for form and choice controls, under [Control selectors](#control-selectors). The package's `test/flat-allowlist.json` is empty. Chart-specific
+listed below and, for form and choice controls, under [Control selectors](#control-selectors). Chart-specific
 notes are in the Charts section below; renamed classes are in the
 [migration table](#migration-from-openuidevreact-ui-styling).
 
