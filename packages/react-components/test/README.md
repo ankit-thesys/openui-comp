@@ -317,3 +317,64 @@ The Callout override checks disable its forwards-filled animation with a consume
 They assert the animation override too; the focused timing test separately verifies the
 original fade/collapse. IconText's boolean `bold` names entry uses the `true` axis value, and
 the reference generator displays it as `bold={true}` rather than a part or string prop.
+
+## Disclosure, layout and overlays (#98)
+
+`Accordion`, `SectionBlock` (SectionV2 and FoldableSection), `Steps`, `Card`, `CardHeader`,
+`Modal` and `TooltipWrapper` now join the contract and override benches. Modal and tooltip
+classes are marked `clientOnly` because Node cannot render their portals; their factories
+still register during Node rendering in both layer modes. The `elements` fixture opens Modal
+in the browser and focuses the tooltip trigger. The shared benches query the whole isolated
+fixture document so they include portal content and Radix's accessible copies.
+
+The shared readiness helper waits for a visible stable part, including fixed-positioned Modal
+content whose portal wrapper has no height. The tooltip trigger is a library `Button`, so the
+button-background bench measures declared library styles. The foldable fixture's caller-supplied
+body has explicit typography: its `fit-content` height must not vary with preflight's inherited
+line height. These fixture choices preserve all override and Tailwind assertions.
+
+The Modal fixture also pins caller-supplied body typography and sets the dialog's page-owned
+`box-sizing` to `border-box` with a zero-specificity rule in `elements.tsx`. Its
+`translate(-50%, -50%)` computes to a pixel matrix using the border box: preflight's box-sizing
+and inherited line-height resets otherwise change that matrix without overriding any Modal
+declaration. The bench still compares the computed transform and every other declared property.
+These inputs apply only to the benches; the #72 parity fixtures keep their original page inputs.
+
+`disclosure.spec.ts` exercises open/closed overrides with mouse and keyboard, Modal and tooltip
+portal overrides before/after library CSS in both modes, all tooltip sides, lazy registration,
+and an html-class rewrite. The parity fixtures/specs cover `accordion`, `section-block`, `steps`,
+`card`, `card-header`, `modal-sm`, `modal-md`, `modal-lg`, and `tooltip-wrapper`, in light and dark.
+No intentional visual differences are declared. Modal's overlay is named with a `document:`
+selector in `data-parity-parts` because it is a sibling of the measured content root.
+
+Chromium execution and #72 baseline capture for these names are delegated to the orchestrator.
+Run `pnpm test:parity:baseline`, then `pnpm test:browser`. Baselines must come from #72;
+never write them manually or capture the migrated implementation as the reference.
+
+## Card blocks rollout (#100)
+
+The seven contract entries are CompositeCardBlock, ContextCardBlock, VisualCardBlock,
+OverviewCardBlock, SnippetCardBlock, OptionCards and `_shared` (CardBlockLayout, exercised only
+through public card blocks). Each has its own contract file. OverviewCardBlock explicitly
+excludes only the classes rendered by its allowlisted public MetricIndicatorInline dependency
+from owned-class grammar/reference checks; MetricIndicator's module remains allowlisted.
+All newly registered CSS and every owned stable class still pass the ordinary checks in both modes.
+
+The common override and Tailwind benches include all seven entries. `card-blocks.spec.ts` and
+`fixtures/card-blocks.tsx` add before/after overrides for owned classes in default/layer modes,
+hover/focus and selected/disabled states, keyboard activation, the real truncated-text tooltip
+portal, lazy registration and html-class replacement. Fixtures use library buttons and pin
+caller-owned raw text typography. Selected OptionCards backgrounds are declared on the base
+button through a private value, preserving the documented Tailwind 3.3 typed-button conflict.
+
+Capture these seven #72 baselines with `pnpm test:parity:baseline`:
+`card-block-layout`, `composite-card-block`, `context-card-block`, `visual-card-block`,
+`overview-card-block`, `snippet-card-block`, `option-cards`. Each has a matching
+`fixtures/parity-<name>.tsx` and `<name>.parity.spec.ts`, backed by `card-blocks-cases.tsx`.
+Cases cover both layout sizes, grid row distributions, narrow containers, carousel widths,
+responsive false/true, numeric/string gaps, colored/image cards and tags, emphasis/code, snippet text/icon/image
+callers and all option states. Parity cases do not open truncation tooltips; the focused spec
+owns those interactions. `card-blocks.parity-details.spec.ts` additionally compares #72 geometry, overlays,
+image zoom and carousel masks, including the legacy narrow Overview carousel behavior with
+`responsive={false}`. No intentional visual differences are declared. Chromium execution
+and baseline capture are left to the orchestrator; no baseline JSON is authored by hand.

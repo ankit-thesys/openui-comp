@@ -74,6 +74,13 @@ export const markdownStyles = (css: StyleCss) => ({
     color: ${primary};
     ${body}
     ${inheritWhenQuoted}
+    @container style(--_openui-inline-markdown-renderer-composite: 1) {
+      & {
+        font: var(--openui-text-code-sm, 400 12px/1.5 "SFMono-Regular", Menlo, monospace);
+        letter-spacing: var(--openui-text-code-sm-letter-spacing, 0);
+        line-height: 1;
+      }
+    }
     /* Browsers ignore the legacy display:hidden declaration; preserve its rule. */
     &::after,
     &::before {
@@ -247,6 +254,29 @@ export const markdownStyles = (css: StyleCss) => ({
       }
       & > *:last-child {
         margin-bottom: 0;
+      }
+    }
+
+    /* CompositeCard's inline emphasis preserves the surrounding public text typography. */
+    @container style(--_openui-inline-markdown-renderer-composite: 1) {
+      & strong {
+        font: inherit;
+        letter-spacing: inherit;
+        font-weight: var(--openui-font-weight-medium, 560);
+        font-variation-settings: var(--openui-font-variation-medium, "wght" 560);
+      }
+      & em {
+        font: inherit;
+        letter-spacing: inherit;
+        font-style: italic;
+      }
+      & strong em {
+        font-weight: var(--openui-font-weight-medium, 560);
+        font-variation-settings: var(--openui-font-variation-medium, "wght" 560);
+        font-style: italic;
+      }
+      & em strong {
+        font-style: italic;
       }
     }
   `,

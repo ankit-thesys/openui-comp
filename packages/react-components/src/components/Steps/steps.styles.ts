@@ -1,30 +1,51 @@
-export const stepsStyles = `
-  min-width: 280px;
-  width: 100%;
-  margin: 0 auto;
-  & .openui-steps {
+import type { StyleCss } from "../../styles/useStyles";
+export const names = {
+  root: "openui-steps",
+  list: "openui-steps-list",
+  item: "openui-steps-item",
+  connector: "openui-steps-connector",
+  number: "openui-steps-number",
+  numberInner: "openui-steps-number-inner",
+  connectorLine: "openui-steps-connector-line",
+  content: "openui-steps-content",
+  title: "openui-steps-title",
+  details: "openui-steps-details",
+} as const;
+export const stepsStyles = (css: StyleCss) => ({
+  root: css`
+    min-width: 280px;
+    width: 100%;
+    margin: 0 auto;
+  `,
+  list: css`
     display: flex;
     flex-direction: column;
-  }
-`;
-
-export const stepItemStyles = `
-  display: flex;
-  position: relative;
-  gap: var(--openui-space-m, 12px);
-  & .openui-step-connector {
+  `,
+  item: css`
+    display: flex;
+    position: relative;
+    gap: var(--openui-space-m, 12px);
+    /* Legacy typography(title, default) emits no declarations; retain inherited text. */
+    --_openui-steps-line-display: block;
+    --_openui-steps-content-margin: var(--openui-space-l, 18px);
+    &:last-child {
+      --_openui-steps-line-display: none;
+      --_openui-steps-content-margin: 0;
+    }
+  `,
+  connector: css`
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  & .openui-step-number {
+  `,
+  number: css`
     padding: var(--openui-space-2xs, 4px) 0px var(--openui-space-2xs, 4px) 0px;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 2;
-  }
-  & .openui-step-number-inner {
+  `,
+  numberInner: css`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,31 +59,25 @@ export const stepItemStyles = `
     font: var(--openui-text-label-sm, 400 14px/1.25 "Inter", sans-serif);
     letter-spacing: var(--openui-text-label-sm-letter-spacing, -0.01em);
     font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
-  }
-  & .openui-connector-line {
+  `,
+  connectorLine: css`
     width: 1px;
     flex-grow: 1;
     z-index: 1;
     background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
-  }
-  &:last-child .openui-connector-line {
-    display: none;
-  }
-  & .openui-step-content {
+    display: var(--_openui-steps-line-display, block);
+  `,
+  content: css`
     padding-top: var(--openui-space-2xs, 4px);
     display: flex;
     flex-direction: column;
     gap: var(--openui-space-3xs, 2px);
-    margin-bottom: var(--openui-space-l, 18px);
-  }
-  &:last-child .openui-step-content {
-    margin-bottom: 0;
-  }
-  /* Legacy typography(title, default) emits no declarations; retain inherited text. */
-  & .openui-step-title {
+    margin-bottom: var(--_openui-steps-content-margin, var(--openui-space-l, 18px));
+  `,
+  title: css`
     color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
-  }
-  & .openui-step-details {
+  `,
+  details: css`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,5 +85,5 @@ export const stepItemStyles = `
     font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
     letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);
     font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
-  }
-`;
+  `,
+});

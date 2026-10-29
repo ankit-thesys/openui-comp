@@ -73,7 +73,10 @@ const measure = (root: Element, properties: string[]) => {
     string
   >;
   for (const [name, selector] of Object.entries(named)) {
-    const part = root.querySelector(selector);
+    // Portal siblings (Modal's overlay, for example) live outside the case's content root.
+    const part = selector.startsWith("document:")
+      ? document.querySelector(selector.slice("document:".length))
+      : root.querySelector(selector);
     if (part) record(part, `${name}.`);
   }
   return out;
