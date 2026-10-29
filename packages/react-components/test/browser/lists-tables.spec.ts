@@ -158,7 +158,7 @@ test("list hover and focus keep part overrides and scrolling keeps state and wid
     }),
   );
   const item = page
-    .locator('[data-family="ListItem"] .openui-list-item-item[role="button"]')
+    .locator('[data-family="ListItem"] .openui-list-item-row[role="button"]')
     .first();
   await item.hover();
   await expect(item.locator(".openui-list-item-indicator")).toHaveCSS(
@@ -197,4 +197,21 @@ test("lists and tables retain computed styles after html classes are rewritten",
     document.documentElement.className = "consumer-root";
   });
   expect(await snapshot()).toEqual(before);
+});
+
+// Derived data attribute (README "Derived data attributes"): each overflowing table's scroll
+// buttons carry data-side, left then right for each table.
+test("table scroll buttons carry data-side", async ({ page }) => {
+  await open(page);
+  for (const control of [
+    ".openui-scrollable-table-control",
+    ".openui-editable-table-scroll-control",
+  ]) {
+    await expect(page.locator(control).first()).toBeAttached();
+    const sides = await page
+      .locator(control)
+      .evaluateAll((elements) => elements.map((el) => el.getAttribute("data-side")));
+    expect(sides.length % 2).toBe(0);
+    expect(sides).toEqual(sides.map((_, i) => (i % 2 === 0 ? "left" : "right")));
+  }
 });

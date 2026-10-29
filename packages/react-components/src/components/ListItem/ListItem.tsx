@@ -58,14 +58,14 @@ const ListItem = React.forwardRef<HTMLDivElement, ListItemProps>((props, ref) =>
         listHasSubtitle && names.listHasSubtitle,
         className,
       )}
-      data-action={hasAction}
+      data-action={hasAction || undefined}
       style={style}
       {...rest}
     >
       <div
         className={clsx(styles.item, names.item)}
-        data-action={hasAction}
-        data-subtitle={!!subtitle}
+        data-action={hasAction || undefined}
+        data-subtitle={!!subtitle || undefined}
         onClick={onClick}
         role={hasAction ? "button" : undefined}
         tabIndex={hasAction ? 0 : undefined}
