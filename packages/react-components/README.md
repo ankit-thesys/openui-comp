@@ -64,7 +64,8 @@ instances or browser tabs.
 ## Styling and overrides
 
 Every component follows one styling contract: restyle any part of a component with a single
-documented class, without `!important`. The sections below list each component's classes.
+documented class, without `!important`. The [stable class reference](docs/reference/selectors.md)
+lists every class.
 
 ### Class names
 
@@ -164,7 +165,7 @@ own: its rules weigh the root's generated class plus the tag, such as `.goN p`, 
 stylesheets sit after the library's in `<head>`, so it wins whenever it loads. A bare element selector such as `p { … }` in your app, or a reset, does not reach
 markdown prose. A few structural rules weigh one more pseudo-class or tag, such as the spacing
 between consecutive paragraphs (`p:has(+ p)`), so match that shape to change them. Code,
-links, code-block roots, tables and table containers have the stable classes in the reference
+links, code-block roots, tables and table containers have stable classes
 and are styled on them, so element resets do not reach them; inside a blockquote, links and inline
 code inherit the quote's colour, line-height and italic style like its other text.
 `MarkDownRenderer` defaults to `variant="clear"` and always emits its variant modifier.
@@ -282,12 +283,12 @@ component defaults. Intentional overrides can use scoped important CSS or the
 framework's important utility modifier: Tailwind v3 `!bg-red-500`, Tailwind v4
 `bg-red-500!`. Existing component props, inline styles and theme tokens remain
 the primary customization APIs. Replacing host styles dynamically after mount
-has not been certified.
+is not supported.
 
 ### Stable selectors
 
 Every component follows the [styling contract](#styling-and-overrides); its roots, parts and
-modifiers follow the [naming grammar](#class-names). The states its library rules use are
+modifiers are in the [stable class reference](docs/reference/selectors.md). The states its library rules use are
 listed below and, for form and choice controls, under [Control selectors](#control-selectors). Chart-specific
 notes are in the Charts section below; renamed classes are in the
 [migration table](#migration-from-openuidevreact-ui-styling).
@@ -343,8 +344,8 @@ Override that class to change or disable the pulse.
 
 Form controls (FormControl, Hint, Label, Input, TextArea, Buttons), choice controls
 (CheckBox, Radio, Switch, Toggle, Chips), Slider and SliderBlock, Select, Calendar,
-DatePicker and Modal follow the same grammar. Their states are attributes the elements already
-carry:
+DatePicker and Modal are in the [stable class reference](docs/reference/selectors.md). Their states
+are attributes the elements already carry:
 
 - Input and TextArea: `:focus-within`, `:disabled`, `[aria-invalid="true"]` and `::placeholder`;
   Input sizes are `--size-{small,medium,large}` modifiers.
@@ -418,8 +419,8 @@ paths and supported props remain unchanged.
 ```
 
 Select, DatePicker, Modal and Calendar month dropdowns retain their nested-theme
-behavior in real portals. These client checks do not establish SSR, hydration or
-concurrent server support.
+behavior in real portals. Server rendering of portalled content is not covered; see
+[Server-rendered styles](#server-rendered-styles).
 
 ### Primitive props for cards
 
@@ -528,13 +529,12 @@ const page = `<!doctype html>
 ### Math styles and fonts
 
 TextContentWrapper retains its lazy math renderer and automatically imports
-official KaTeX CSS/fonts from a private module. This accepted vendor-style
-exception does not import legacy SCSS. The default Vite6.4.2 production build
-handles it without consumer styling setup. Other bundlers need validation;
-bare esbuild requires font loaders and application CSS linking.
+official KaTeX CSS/fonts from a private module. It imports no other stylesheet. The
+Vite 6.4.2 production build handles it with no setup; other bundlers may need font
+loaders and CSS linking (bare esbuild does).
 
-Vite can emit about1.07MB of unused font assets. This accepted output cost does
-not mean the browser downloads them on a Button-only page. The wrapper loads
+Vite can emit about 1.07 MB of font assets that a page without math never
+downloads. The wrapper loads
 its math module whenever mounted, including non-math text.
 
 ## Charts
@@ -570,7 +570,7 @@ are also public. Shared chart implementations remain private.
 
 ### Chart styling targets
 
-Charts register flat styles during render and need no document guard. Condensed charts reuse
+Charts register flat styles during render. Condensed charts reuse
 their parent rules, SingleStackedBar remains an alias, and mini charts share MiniChartFrame.
 No extra wrapper or duplicate family stylesheet is introduced.
 
@@ -591,7 +591,8 @@ No extra wrapper or duplicate family stylesheet is introduced.
 | MiniAreaChart, MiniBarChart, MiniLineChart | `.openui-mini-{area,bar,line}-chart` (one root per export) |
 
 HeatmapChart exposes `.openui-heatmap-chart-color-scale-ramp--ramp-mode-diverging::after`
-for the diverging color-scale notch.
+for the diverging color-scale notch. The [stable class reference](docs/reference/selectors.md)
+lists every chart part, appearance modifier and shared foundation target.
 
 | Shared role                         | Canonical target                                                                               |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -604,7 +605,7 @@ for the diverging color-scale notch.
 | Stacked scrollbar                   | `.openui-stacked-legend-list` (`::-webkit-scrollbar` only)                          |
 | Horizontal/vertical scroll controls | `.openui-scroll-buttons-horizontal`, `.openui-scroll-buttons-vertical` |
 
-The flat classes above follow the single-class override contract. The migration tables below record renamed aliases,
+The flat classes above follow the single-class override contract. The migration table below record renamed aliases,
 appearance modifiers and state hooks. Match the same state when overriding a state rule:
 
 ```css
@@ -646,9 +647,7 @@ All nine existing chart keyframes, media boundaries and animation behavior remai
 Normal/reduced motion and existing Heatmap/Funnel print rules are preserved;
 SegmentedBar's transition stays outside the reduced-motion media guard as before.
 No scales, physics, data transforms, geometry, mark attributes or JS animation
-helpers are changed by selector conversion. Existing HorizontalBar limitations
-below remain; numeric-height selector checks do not repair the inherited
-string-height/legend-fit failure.
+helpers are changed by selector conversion.
 
 Registration is module-based: a shared style module or retained lazy chunk may
 register styles for more than the currently visible part. This does not promise
@@ -657,12 +656,12 @@ performance.
 
 ## Support boundary and inherited behavior
 
-React/ReactDOM19 are required. Zod3.25+ or4 and Zustand4.5.5+ remain peer
+React/ReactDOM 19 are required. Zod 3.25+ or 4 and Zustand 4.5.5+ remain peer
 dependencies. Non-streaming server rendering is supported with `getComponentStyles()` (see
 [Server-rendered styles](#server-rendered-styles)). **Streaming SSR is deferred, and hydration is
-not certified.** Client-side OpenUI response streaming is a separate capability.
+not supported yet.** Client-side OpenUI response streaming is a separate capability.
 
-Extraction preserves inherited behavior rather than redesigning it:
+These behaviors carry over from `@openuidev/react-ui`:
 
 - HorizontalBar's `onClick` remains unwired; numeric width affects scales without
   setting the CSS box. String height with a fitting legend can cause sizing
