@@ -235,7 +235,7 @@ export function ChartFoundationCases() {
               : ".openui-chart-with-stacked-legend-chart",
             legend: baseline
               ? ".openui-chart-with-stacked-legend__legend"
-              : ".openui-chart-with-stacked-legend-legend",
+              : ".openui-chart-with-stacked-legend-panel",
             ...JSON.parse(stackedParts),
           }),
           width,

@@ -22,7 +22,7 @@ const computed = (element: Locator, properties: string[]) =>
 
 const targets = [
   ["openui-form-control", ".openui-form-control"],
-  ["openui-form-control-hint", '[data-testid="hint"]'],
+  ["openui-hint", '[data-testid="hint"]'],
   ["openui-label", '[data-testid="disabled-label"]'],
   ["openui-label-required-asterisk", ".openui-label-required-asterisk"],
   ["openui-input", '[data-testid="input"]'],
@@ -74,7 +74,7 @@ for (const layer of ["", "openui"]) {
     const label = await computed(page.getByTestId("label"), ["color"]);
     const input = await computed(page.getByTestId("input"), ["color"]);
     await page.addStyleTag({
-      content: '.openui-form-control-hint[data-invalid="true"]{color:rgb(1,2,3)}',
+      content: '.openui-hint[data-invalid="true"]{color:rgb(1,2,3)}',
     });
     await expect(page.getByTestId("hint")).toHaveCSS("color", "rgb(1, 2, 3)");
     expect(await computed(page.getByTestId("label"), ["color"])).toEqual(label);

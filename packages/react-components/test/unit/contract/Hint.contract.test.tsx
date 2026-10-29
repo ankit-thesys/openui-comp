@@ -9,7 +9,8 @@ it("exposes the hint part and inherited invalid state without an error class", (
       <Hint>Check the field</Hint>
     </FormControl>,
   );
-  expect(html).toContain("openui-form-control-hint");
+  expect(html).toMatch(/class="[^"]*\bopenui-hint(?: |")/);
+  expect(html).not.toContain("openui-form-control-hint");
   expect(html).toContain('data-invalid="true"');
   expect(html).not.toContain("openui-hint-error");
 });

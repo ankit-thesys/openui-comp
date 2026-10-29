@@ -174,6 +174,26 @@ describe("selectorViolation with prose rules (MarkDownRenderer only)", () => {
   });
 });
 
+describe("selectorViolation with prose credited to MarkDownRenderer", () => {
+  const composed = { proseRoots: new Set(["go1"]) };
+
+  it.each([".go1 p", ".go1 li :last-child", ".go1 > *:last-child"])(
+    "accepts %s when go1 is MarkDownRenderer's root class",
+    (selector) => {
+      expect(selectorViolation(selector, composed)).toBeNull();
+    },
+  );
+
+  it.each([
+    [".go2 p", "another module's class plus a tag"],
+    [".go2 > *:last-child", "another module's class plus a structural tag"],
+    [".go1 .go2", "a class after MarkDownRenderer's root"],
+    [".go1 li ul li", "three compounds after MarkDownRenderer's root"],
+  ])("rejects %s (%s)", (selector) => {
+    expect(selectorViolation(selector, composed)).toEqual(expect.any(String));
+  });
+});
+
 describe("classViolation", () => {
   const documented = new Set(["openui-button", "openui-button-icon"]);
 

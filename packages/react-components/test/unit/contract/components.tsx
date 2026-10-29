@@ -132,7 +132,8 @@ export interface MigratedComponent {
   clientOnly?: string[];
   /**
    * Allows prose rules (`.goN p`, the root's generated class then tags only) for content the
-   * component generates without classes. MarkDownRenderer and the inline renderer composing it opt in.
+   * component generates without classes. Only MarkDownRenderer opts in; families that compose it
+   * get its prose rules credited to it (see defineContract.tsx).
    */
   prose?: boolean;
 }
@@ -875,7 +876,6 @@ export const migratedComponents: MigratedComponent[] = [
   },
   {
     folder: "ContextCardBlock",
-    prose: true,
     get names() {
       return [
         ...namesOf("ContextCardBlock"),
@@ -921,7 +921,6 @@ export const migratedComponents: MigratedComponent[] = [
   },
   {
     folder: "SnippetCardBlock",
-    prose: true,
     get names() {
       return [
         ...namesOf("SnippetCardBlock"),
@@ -935,7 +934,6 @@ export const migratedComponents: MigratedComponent[] = [
   },
   {
     folder: "OptionCards",
-    prose: true,
     get names() {
       return [...namesOf("OptionCards"), inlineNames()];
     },
@@ -987,7 +985,6 @@ export const migratedComponents: MigratedComponent[] = [
   },
   {
     folder: "ImageText",
-    prose: true,
     get names() {
       return [...namesOf("ImageText"), ...imageTextElements().map(composedNames)];
     },
@@ -995,7 +992,6 @@ export const migratedComponents: MigratedComponent[] = [
   },
   {
     folder: "ImageTextLarge",
-    prose: true,
     get names() {
       return [
         ...namesOf("ImageTextLarge"),
@@ -1141,7 +1137,6 @@ export const migratedComponents: MigratedComponent[] = [
   },
   {
     folder: "TextBlock",
-    prose: true,
     get names() {
       return [...namesOf("TextBlock"), inlineNames()];
     },
@@ -1149,7 +1144,6 @@ export const migratedComponents: MigratedComponent[] = [
   },
   {
     folder: "InlineHeader",
-    prose: true,
     get names() {
       return [...namesOf("InlineHeader"), inlineNames()];
     },
@@ -1162,7 +1156,6 @@ export const migratedComponents: MigratedComponent[] = [
   },
   {
     folder: "IconText",
-    prose: true,
     get names() {
       return [
         ...namesOf("IconText"),
@@ -1236,7 +1229,6 @@ export const migratedComponents: MigratedComponent[] = [
   },
   {
     folder: "TextContentWrapper",
-    prose: true,
     get names() {
       return [
         ...namesOf("TextContentWrapper"),
@@ -1326,8 +1318,6 @@ export const migratedComponents: MigratedComponent[] = [
   },
   {
     folder: "InlineMarkdownRenderer",
-    // The composed MarkDownRenderer emits the pilot's accepted prose rules.
-    prose: true,
     get names() {
       return [
         ...namesOf("InlineMarkdownRenderer"),
@@ -1692,7 +1682,6 @@ export const migratedComponents: MigratedComponent[] = [
   },
   {
     folder: "EntityList",
-    prose: true,
     get names() {
       return [
         ...namesOf("EntityList"),

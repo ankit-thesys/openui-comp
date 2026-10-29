@@ -15,6 +15,9 @@ export const names = {
 
 export const visualCardStyles = (css: StyleCss) => ({
   card: css`
+    /* #72's content-box sizing, declared so a page's box-sizing reset (Tailwind's preflight, for
+       one) cannot change the geometry. */
+    box-sizing: content-box;
     --_openui-visual-card-image: initial;
     --_openui-visual-card-image-transform: initial;
     position: relative;

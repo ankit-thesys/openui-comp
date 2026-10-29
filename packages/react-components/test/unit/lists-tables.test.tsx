@@ -100,7 +100,7 @@ it("ScrollableTable exposes its root and measures width through state instead of
     </ScrollableTable>,
   );
   expect(html).toMatch(/<table[^>]*class="[^"]*openui-scrollable-table/);
-  expect(html).toContain('data-scrollable="false"');
+  expect(html).not.toContain("data-scrollable");
   expect(html).not.toContain('style="width:');
 });
 

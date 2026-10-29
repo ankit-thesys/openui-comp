@@ -2,7 +2,7 @@ import type { StyleCss } from "../../styles/useStyles";
 export const names = {
   scroll: "openui-editable-table-scroll-container",
   control: "openui-editable-table-scroll-control",
-  table: "openui-editable-table-table",
+  table: "openui-editable-table-grid",
   header: "openui-editable-table-header-container",
   headerIcon: "openui-editable-table-header-icon",
   changes: "openui-editable-table-changes-container",
@@ -12,8 +12,8 @@ export const names = {
   head: "openui-editable-table-head",
   row: "openui-editable-table-row",
   cell: "openui-editable-table-cell",
-  tableHeader: "openui-editable-table-table-header",
-  tableBody: "openui-editable-table-table-body",
+  tableHeader: "openui-editable-table-grid-header",
+  tableBody: "openui-editable-table-grid-body",
   headerRow: "openui-editable-table-header-row",
   icon: "openui-editable-table-icon",
 } as const;

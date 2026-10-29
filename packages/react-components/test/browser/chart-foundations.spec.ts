@@ -11,6 +11,27 @@ test("a portal tooltip exposes flat override targets through a public chart", as
   await expect(page.locator(".openui-chart-tooltip-portal")).toBeVisible();
   await expect(page.locator(".openui-chart-tooltip")).toBeVisible();
   await expect(page.locator(".openui-chart-tooltip-label-text")).toHaveText("sales");
+  // Derived data attributes: the portal once positioned, the item layout from the item count
+  // (two or fewer items: "two-items"), and the last item's separator.
+  await expect(page.locator(".openui-chart-tooltip-portal")).toHaveAttribute("data-positioned", "");
+  const items = page.locator(".openui-chart-tooltip-content-item");
+  const count = await items.count();
+  for (const part of [
+    ".openui-chart-tooltip-content-item",
+    ".openui-chart-tooltip-content-indicator",
+    ".openui-chart-tooltip-content-value-wrapper",
+  ])
+    expect(
+      await page
+        .locator(part)
+        .evaluateAll((elements) => elements.map((el) => el.getAttribute("data-layout"))),
+    ).toEqual(Array(count).fill(count <= 2 ? "two-items" : "multiple"));
+  expect(
+    await page
+      // The separator under the label shares the class; only item separators carry data-last.
+      .locator(".openui-chart-tooltip-content-item > .openui-chart-tooltip-content-item-separator")
+      .evaluateAll((elements) => elements.map((el) => el.getAttribute("data-last"))),
+  ).toEqual([...Array(count - 1).fill(null), ""]);
 });
 
 import { readStableNames } from "../../scripts/selector-reference.mjs";

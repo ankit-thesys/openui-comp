@@ -53,6 +53,10 @@ export const calendarHeatmapStyles = (css: StyleCss) => {
   `;
   return {
     root: css`
+      /* The plot's inline SVG keeps #72's baseline gap, whose size follows the font. Declare it
+         so the page's typography (Tailwind's preflight, for one) cannot change the height. */
+      font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
+      letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
       display: flex;
       flex-direction: column;
       align-items: center;

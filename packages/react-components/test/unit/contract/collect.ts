@@ -22,6 +22,15 @@ export const stableClassesIn = (html: string) =>
       .filter((name) => name.startsWith("openui-")),
   );
 
+/** The generated (`goN`) classes on every element of `html` that carries stable class `name`. */
+export const generatedClassesOn = (html: string, name: string) =>
+  new Set(
+    [...html.matchAll(/class="([^"]*)"/g)]
+      .map((match) => match[1]!.split(/\s+/))
+      .filter((classes) => classes.includes(name))
+      .flatMap((classes) => classes.filter((value) => /^go\d+$/.test(value))),
+  );
+
 type StableNames = Record<string, string | Record<string, string>>;
 
 /** Every value of the given `names` constants, whose axis objects nest one level deep. */

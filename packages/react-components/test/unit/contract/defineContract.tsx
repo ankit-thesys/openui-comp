@@ -6,10 +6,18 @@
 // Each component runs in its own `<folder>.contract.test.tsx` file. Vitest gives every file a fresh
 // module graph, so Goober's cache starts empty and a component's CSS is not already registered by
 // another component that renders it (MarkDownRenderer renders IconButton inside code blocks).
-import { ThemeProvider } from "@openuidev/react-components";
+import { MarkDownRenderer, ThemeProvider } from "@openuidev/react-components";
+import type { ReactElement } from "react";
+import { renderToString } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { classViolation, ruleViolation, rulesOf, selectorsOf } from "./checks";
-import { blocksIn, namesIn, renderAndCollect, stableClassesIn } from "./collect";
+import {
+  blocksIn,
+  generatedClassesOn,
+  namesIn,
+  renderAndCollect,
+  stableClassesIn,
+} from "./collect";
 import { migratedComponents, type MigratedComponent } from "./components";
 
 export function describeContract(folder: string, component?: MigratedComponent) {
@@ -25,9 +33,29 @@ export function describeContract(folder: string, component?: MigratedComponent) 
         </ThemeProvider>
       )),
     );
-    const violationsIn = (sheet: string, layer: string) =>
+    // MarkDownRenderer's prose rules weigh its root's generated class plus a tag. A family that
+    // composes it carries them, so they are credited to it by the generated classes it puts on its
+    // own root in each mode. Rendered after both collections, so nothing here reaches `css`.
+    const proseRootsWith = (wrap: (element: ReactElement) => ReactElement) =>
+      generatedClassesOn(
+        renderToString(wrap(<MarkDownRenderer textMarkdown="Prose" />)),
+        "openui-markdown-renderer",
+      );
+    const proseRoots = {
+      "": proseRootsWith((element) => element),
+      openui: proseRootsWith((element) => (
+        <ThemeProvider cssLayer="openui">{element}</ThemeProvider>
+      )),
+    };
+    const violationsIn = (sheet: string, layer: "" | "openui") =>
       rulesOf(sheet)
-        .map((rule) => [rule, ruleViolation(rule, layer, { prose: entry.prose })] as const)
+        .map(
+          (rule) =>
+            [
+              rule,
+              ruleViolation(rule, layer, { prose: entry.prose, proseRoots: proseRoots[layer] }),
+            ] as const,
+        )
         .filter(([, reason]) => reason !== null)
         .map(([rule, reason]) => `${rule.selector}: ${reason}`);
 

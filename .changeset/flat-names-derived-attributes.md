@@ -1,0 +1,5 @@
+---
+"@openuidev/react-components": minor
+---
+
+Settle shared-internal names and derived data attributes. Hint's class is `openui-hint` (it was `openui-form-control-hint`), since Hint is exported on its own. Names that repeated a segment are renamed: `openui-list-item-item` is now `openui-list-item-row`; `openui-editable-table-table`, `-table-header` and `-table-body` are now `openui-editable-table-grid`, `-grid-header` and `-grid-body`; `openui-chart-with-stacked-legend-legend` is now `openui-chart-with-stacked-legend-panel`. The selector reference marks shared internals (`openui-border-box`, `openui-skeleton-pulse` and the `openui-chart-*` family). Every derived data attribute the components render is public API, listed in the README with its values and when it appears. Boolean ones are absent when false: ListItem `data-action` and `data-subtitle`, MetricIndicator `data-subtext`, ContextCardBlock `data-background-image` and the tables' `data-scrollable` no longer render `="false"`. Calendar's `data-selection` now names the mode (`"single"` or `"multiple"`).

@@ -59,7 +59,7 @@ export const ContextCard = forwardRef<HTMLDivElement, ContextCardProps>((props, 
         clickable && [names.clickable.true, styles.clickable.true],
         className,
       )}
-      data-background-image={Boolean(backgroundImage)}
+      data-background-image={Boolean(backgroundImage) || undefined}
       style={
         backgroundImage
           ? ({ "--_openui-context-card-image": backgroundImage } as CSSProperties)

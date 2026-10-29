@@ -6,6 +6,9 @@ export const names = {
 } as const;
 export const imageBlockStyles = (css: StyleCss) => ({
   root: css`
+    /* #72's content-box sizing, declared so a page's box-sizing reset (Tailwind's preflight, for
+       one) cannot change the geometry. */
+    box-sizing: content-box;
     flex: 1 1 0;
     min-width: 0;
     min-height: 240px;
@@ -42,6 +45,7 @@ export const imageBlockStyles = (css: StyleCss) => ({
     }
   `,
   image: css`
+    box-sizing: content-box;
     height: 100%;
     max-width: 100%;
     object-fit: cover;
@@ -67,6 +71,7 @@ export const imageBlockStyles = (css: StyleCss) => ({
     }
     position: absolute;
     left: 50%;
+    box-sizing: content-box;
     top: 50%;
     translate: -50% -50%;
     border-width: 3px;

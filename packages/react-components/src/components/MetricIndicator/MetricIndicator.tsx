@@ -37,7 +37,7 @@ const MetricIndicatorBase = forwardRef<HTMLDivElement, MetricIndicatorBaseProps>
 
     return (
       <div
-        data-subtext={!!subtext}
+        data-subtext={!!subtext || undefined}
         ref={ref}
         className={clsx(
           styles.root,
