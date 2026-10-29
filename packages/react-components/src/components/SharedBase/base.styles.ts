@@ -1,4 +1,4 @@
-import type { StyleCss } from "./useStyles";
+import type { StyleCss } from "../../styles/useStyles";
 
 export const names = { root: "openui-border-box" } as const;
 

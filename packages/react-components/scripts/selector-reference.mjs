@@ -1,19 +1,18 @@
-// Generates docs/reference/selectors.md from the `names` constant each migrated component's style
-// module exports (its stable classes). Reads the built package: run `pnpm build` first.
+// Generates docs/reference/selectors.md from the `names` constant each component's style module
+// exports (its stable classes). Reads the built package: run `pnpm build` first.
 //   pnpm docs:selectors        write the reference
 // test/unit/contract/reference.test.ts fails when the committed file drifts from this output.
 import { readdirSync, writeFileSync } from "node:fs";
-import { fileURLToPath, pathToFileURL } from "node:url";
+import { fileURLToPath } from "node:url";
 
 const packageRoot = new URL("../", import.meta.url);
 const components = new URL("dist/components/", packageRoot);
 const output = new URL("docs/reference/selectors.md", packageRoot);
 
 /**
- * Stable names of every built style module that exports `names`, in path order, followed by
- * shared opt-ins. `component` is the module's folder under dist/components (nested folders
- * included, such as "Charts/BarChart"), or the shared helper's contract name. `module` is its
- * file name without `.styles.mjs` (or `.mjs` for shared helpers).
+ * Stable names of every built style module that exports `names`, in path order. `component` is the
+ * module's folder under dist/components (nested folders included, such as "Charts/BarChart"), and
+ * `module` is its file name without `.styles.mjs`.
  */
 export async function readStableNames() {
   const found = [];
@@ -24,7 +23,7 @@ export async function readStableNames() {
       const url = new URL(entry.isDirectory() ? `${entry.name}/` : entry.name, dir);
       if (entry.isDirectory()) await visit(url, folder ? `${folder}/${entry.name}` : entry.name);
       else if (entry.name.endsWith(".styles.mjs")) {
-        const { names } = await import(pathToFileURL(fileURLToPath(url)).href);
+        const { names } = await import(url.href);
         if (names)
           found.push({
             component: folder,
@@ -35,14 +34,6 @@ export async function readStableNames() {
     }
   };
   await visit(components, "");
-  // Shared opt-ins have their own contracts; their users' owned styles migrate separately.
-  for (const [component, module, path] of [
-    ["SharedBase", "base", "dist/styles/base.mjs"],
-    ["SkeletonPulse", "skeletonPulse", "dist/components/Skeleton/skeletonPulse.mjs"],
-  ]) {
-    const { names } = await import(new URL(path, packageRoot).href);
-    found.push({ component, module, names });
-  }
   return found;
 }
 

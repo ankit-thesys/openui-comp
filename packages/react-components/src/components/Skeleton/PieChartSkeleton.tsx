@@ -3,9 +3,9 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import { useStyles } from "../../styles/useStyles";
+import { names as pulseNames, skeletonPulseStyles } from "../SkeletonPulse/skeletonPulse.styles";
 import { names, pieChartSkeletonStyles } from "./pieChartSkeleton.styles";
 import { SkeletonBar } from "./SkeletonBar";
-import { names as pulseNames, skeletonPulseStyles } from "./skeletonPulse";
 export function PieChartSkeleton({
   size = 200,
   legendItems = 4,

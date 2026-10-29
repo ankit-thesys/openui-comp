@@ -1,8 +1,8 @@
 export type StableNames = Record<string, string | Record<string, string>>;
 export interface ComponentNames {
-  /** Folder under dist/components, or a shared helper's contract name. */
+  /** Folder under dist/components, such as "Charts/BarChart". */
   component: string;
-  /** Style module file name without `.styles.mjs` (or `.mjs` for shared helpers). */
+  /** Style module file name without `.styles.mjs`. */
   module: string;
   names: StableNames;
 }

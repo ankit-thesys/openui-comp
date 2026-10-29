@@ -162,7 +162,8 @@ Playwright's setup also bundles every parity fixture against the #72 source, ext
 
 ### Shared helpers (#90)
 
-`src/styles/base.ts` and `src/components/Skeleton/skeletonPulse.ts` are factories registered
+`src/components/SharedBase/base.styles.ts` and `src/components/SkeletonPulse/skeletonPulse.styles.ts`
+are factories registered
 by their users through `useStyles`, with no import-time registration or `<html>` marker.
 Their `names` appear as SharedBase and SkeletonPulse in the generated reference.
 `sharedStyleContracts` in `components.tsx` records these helpers separately; their focused

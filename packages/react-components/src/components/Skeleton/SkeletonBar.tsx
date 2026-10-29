@@ -3,8 +3,8 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import { useStyles } from "../../styles/useStyles";
+import { names as pulseNames, skeletonPulseStyles } from "../SkeletonPulse/skeletonPulse.styles";
 import { names, skeletonBarStyles } from "./skeleton.styles";
-import { names as pulseNames, skeletonPulseStyles } from "./skeletonPulse";
 interface SkeletonBarProps {
   height: string;
   width: string;

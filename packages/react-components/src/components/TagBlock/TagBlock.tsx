@@ -2,8 +2,8 @@
 
 import clsx from "clsx";
 import { CSSProperties, forwardRef, ReactElement } from "react";
-import { names as baseNames, baseStyles } from "../../styles/base";
 import { useStyles } from "../../styles/useStyles";
+import { names as baseNames, baseStyles } from "../SharedBase/base.styles";
 import { Tag } from "../Tag";
 import { names, tagBlockStyles } from "./tagBlock.styles";
 

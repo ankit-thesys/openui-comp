@@ -48,11 +48,7 @@ describe("contract coverage", () => {
       ...new Set(
         files
           .filter((file) => /^export const names\b/m.test(read(file)))
-          .map(
-            (file) =>
-              sharedStyleContracts.find((entry) => entry.module === file)?.folder ??
-              file.split("/")[2],
-          ),
+          .map((file) => file.split("/")[2]),
       ),
     ];
     expect(withNames.sort()).toEqual(

@@ -148,15 +148,11 @@ const namesOf = (folder: string) => {
   return names;
 };
 
-// Shared factories migrate independently of the component families that use them. Their
-// focused contracts inspect only the CSS registered by rendering those public components.
+// Shared factories other families register through useStyles. Their focused contracts inspect only
+// the CSS registered by rendering those public components.
 export const sharedStyleContracts = [
-  { folder: "SharedBase", module: "src/styles/base.ts", names: namesOf("SharedBase") },
-  {
-    folder: "SkeletonPulse",
-    module: "src/components/Skeleton/skeletonPulse.ts",
-    names: namesOf("SkeletonPulse"),
-  },
+  { folder: "SharedBase", names: namesOf("SharedBase") },
+  { folder: "SkeletonPulse", names: namesOf("SkeletonPulse") },
 ];
 
 const product = <T,>(...lists: T[][]): T[][] =>

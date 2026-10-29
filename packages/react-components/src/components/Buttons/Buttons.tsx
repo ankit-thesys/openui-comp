@@ -2,10 +2,10 @@
 
 import clsx from "clsx";
 import { CSSProperties, forwardRef, HTMLAttributes, ReactElement } from "react";
-import { names as baseNames, baseStyles } from "../../styles/base";
 import { useStyles } from "../../styles/useStyles";
 import { ButtonProps } from "../Button";
 import { IconButtonProps } from "../IconButton";
+import { names as baseNames, baseStyles } from "../SharedBase/base.styles";
 import { buttonsStyles, names } from "./buttons.styles";
 
 type ButtonsVariant = "vertical" | "horizontal";

@@ -2,8 +2,8 @@
 
 import clsx from "clsx";
 import React, { forwardRef, useMemo } from "react";
-import { names as baseNames, baseStyles } from "../../styles/base";
 import { useStyles } from "../../styles/useStyles";
+import { names as baseNames, baseStyles } from "../SharedBase/base.styles";
 import { FormControlProvider } from "./context";
 import { formControlStyles, names } from "./formControl.styles";
 export interface FormControlProps {

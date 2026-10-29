@@ -1175,6 +1175,12 @@ renders it, and it is a public override target like any other class.
 | --- | --- | --- |
 | `.openui-separator` | Root | Always |
 
+## SharedBase
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-border-box` | Root, shared internal | Always |
+
 ## Skeleton (PieChartSkeleton)
 
 | Stable class | Kind | Present when |
@@ -1205,6 +1211,12 @@ renders it, and it is a public override target like any other class.
 | `.openui-table-skeleton-row` | Part (`row`) | On that part, whenever it renders |
 | `.openui-table-skeleton-cell` | Part (`cell`) | On that part, whenever it renders |
 | `.openui-table-skeleton-header-cell` | Part (`headerCell`) | On that part, whenever it renders |
+
+## SkeletonPulse
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-skeleton-pulse` | Root, shared internal | Always |
 
 ## Slider
 
@@ -1537,15 +1549,3 @@ renders it, and it is a public override target like any other class.
 | `.openui-visual-card-bottom` | Part (`bottom`) | On that part, whenever it renders |
 | `.openui-visual-card-action-icon` | Part (`actionIcon`) | On that part, whenever it renders |
 | `.openui-visual-card--clickable` | Modifier | `clickable={true}` |
-
-## SharedBase
-
-| Stable class | Kind | Present when |
-| --- | --- | --- |
-| `.openui-border-box` | Root, shared internal | Always |
-
-## SkeletonPulse
-
-| Stable class | Kind | Present when |
-| --- | --- | --- |
-| `.openui-skeleton-pulse` | Root, shared internal | Always |
