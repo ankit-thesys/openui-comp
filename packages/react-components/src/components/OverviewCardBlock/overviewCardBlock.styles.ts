@@ -16,7 +16,7 @@ export const names = {
 
 export const overviewCardBlockStyles = (css: StyleCss) => ({
   card: css`
-    /* #72's content-box sizing, declared so a page's box-sizing reset (Tailwind's preflight, for
+    /* react-ui's content-box sizing, declared so a page's box-sizing reset (Tailwind's preflight, for
        one) cannot change the geometry. */
     box-sizing: content-box;
     display: flex;

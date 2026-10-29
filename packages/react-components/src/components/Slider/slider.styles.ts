@@ -92,7 +92,7 @@ export const sliderStyles = (css: StyleCss) => ({
     }
   `,
   // The thumb owns its states, one class plus one state each: they declare its outline and drive
-  // the value's opacity. The handle's inner part keeps its own hover fill, as in #72, so hovering
+  // the value's opacity. The handle's inner part keeps its own hover fill, as in react-ui, so hovering
   // the tooltip does not tint it.
   thumb: css`
     outline: none;

@@ -105,7 +105,7 @@ export const calendarStyles = (css: StyleCss) => ({
     table-layout: auto;
     border-collapse: collapse;
   `,
-  // Preserve the native table-cell inset used in #72, including under Preflight.
+  // Preserve the native table-cell inset used in react-ui, including under Preflight.
   weekNumber: css`
     padding: 1px;
   `,
@@ -250,7 +250,7 @@ export const calendarDropdownStyles = (css: StyleCss) => ({
     &[data-state="open"] {
       background-color: var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02));
     }
-    /* In #72 the month/year cursor rule tied and followed Select's disabled rule. */
+    /* In react-ui the month/year cursor rule tied and followed Select's disabled rule. */
     &:disabled {
       cursor: pointer;
     }

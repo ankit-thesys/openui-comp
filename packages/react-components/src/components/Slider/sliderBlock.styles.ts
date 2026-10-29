@@ -86,7 +86,7 @@ export const sliderBlockStyles = (css: StyleCss) => ({
 });
 
 // Registered after the composed Input defaults, so a single owned class wins the tie. The error
-// state is Input's own `[aria-invalid]`, so Input's state overrides reach it. As in #72 it keeps
+// state is Input's own `[aria-invalid]`, so Input's state overrides reach it. As in react-ui it keeps
 // the danger border even when disabled, draws no danger ring, and keeps the focus ring.
 export const sliderBlockInputStyles = (css: StyleCss) => ({
   input: css`

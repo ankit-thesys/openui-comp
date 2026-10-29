@@ -83,7 +83,7 @@ export const selectStyles = (css: StyleCss) => ({
     }
     &:disabled {
       background-color: var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02));
-      /* #72's selected hover colour outweighs disabled; placeholder below still wins.
+      /* react-ui's selected hover colour outweighs disabled; placeholder below still wins.
          A variable preserves that precedence without a compound state selector. */
       color: var(
         --_openui-select-trigger-hover-color,

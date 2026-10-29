@@ -102,7 +102,7 @@ export const stackedLegendStyles = (css: StyleCss) => {
         background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
         --_openui-stacked-legend-color-scale: scale(1.3);
       }
-      /* #72's hover selector outweighed its active selector, including on active rows. */
+      /* react-ui's hover selector outweighed its active selector, including on active rows. */
       &:hover {
         background-color: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
         --_openui-stacked-legend-color-scale: scale(1.2);

@@ -14,7 +14,7 @@ export const codeBlockStyles = (css: StyleCss) => ({
       --_openui-code-block-copy-button-opacity: 1;
     }
   `,
-  // vscDarkPlus's pre frame, with the same values as #72. Unlike the code/token
+  // vscDarkPlus's pre frame, with the same values as react-ui. Unlike the code/token
   // theme, this element carries a documented part class and must be overridable.
   defaultFrame: css`
     color: #d4d4d4;
@@ -46,7 +46,7 @@ export const codeBlockStyles = (css: StyleCss) => ({
 });
 
 // Registered by IconButton's child, after IconButton's own styles, so positioning and
-// the opacity-only transition win base ties. #72 used the normal hover/pressed background
+// the opacity-only transition win base ties. react-ui used the normal hover/pressed background
 // even while copied; order those states after copied without chaining selectors.
 export const codeBlockCopyButtonStyles = (css: StyleCss) => ({
   root: css`

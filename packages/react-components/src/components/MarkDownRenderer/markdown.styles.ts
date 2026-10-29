@@ -21,7 +21,7 @@ const inheritWhenQuoted = `
     font-style: inherit;
   }
 `;
-// Prose inside a quote takes the quote's look, as #72's `.root blockquote *` did, at the same
+// Prose inside a quote takes the quote's look, as react-ui's `.root blockquote *` did, at the same
 // weight. It lists the prose tags instead of `*` so the parts (links, inline code, tables, code
 // blocks) are left to their own rules, which inherit inside quotes themselves and stay
 // overridable by one consumer class. One rule per tag: Goober splits selectors on commas and
@@ -129,9 +129,9 @@ export const markdownStyles = (css: StyleCss) => ({
     `,
   },
   // Prose (the tags markdown generates without classes) weighs the root's generated class plus the
-  // tag, as #72's `.root p` did, so unlayered element resets such as Tailwind 3's preflight cannot
+  // tag, as react-ui's `.root p` did, so unlayered element resets such as Tailwind 3's preflight cannot
   // outweigh it while `.openui-markdown-renderer p` from the app still wins on order. Structural
-  // rules keep #72's shapes on top of that base. Registered after the parts so first/last-child
+  // rules keep react-ui's shapes on top of that base. Registered after the parts so first/last-child
   // spacing keeps its precedence over them.
   root: css`
     color: ${primary};

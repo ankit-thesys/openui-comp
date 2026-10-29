@@ -81,7 +81,7 @@ export const defaultLegendStyles = (css: StyleCss) => {
       font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
       color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
     `,
-    // #72's more-specific Button size rule won the old font/padding declarations.
+    // react-ui's more-specific Button size rule won the old font/padding declarations.
     // Keep those effective small-Button values, independent of which control renders first.
     toggleButton: css`
       color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));

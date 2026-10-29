@@ -98,7 +98,7 @@ export const editableSelectCellStyles = (css: StyleCss) => ({
     box-sizing: border-box;
     padding: var(--openui-space-2xs, 4px) 0;
     width: 100%;
-    /* Radix injects a style sibling before this viewport. In #72 it is only the last child. */
+    /* Radix injects a style sibling before this viewport. In react-ui it is only the last child. */
     border-bottom-left-radius: calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px));
     border-bottom-right-radius: calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px));
   `,

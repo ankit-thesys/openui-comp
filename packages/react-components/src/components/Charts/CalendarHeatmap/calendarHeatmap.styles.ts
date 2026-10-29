@@ -53,7 +53,7 @@ export const calendarHeatmapStyles = (css: StyleCss) => {
   `;
   return {
     root: css`
-      /* The plot's inline SVG keeps #72's baseline gap, whose size follows the font. Declare it
+      /* The plot's inline SVG keeps react-ui's baseline gap, whose size follows the font. Declare it
          so the page's typography (Tailwind's preflight, for one) cannot change the height. */
       font: var(--openui-text-label-xs, 400 12px/1.25 "Inter", sans-serif);
       letter-spacing: var(--openui-text-label-xs-letter-spacing, -0.01em);
@@ -184,7 +184,7 @@ export const calendarHeatmapStyles = (css: StyleCss) => {
       width: var(--_openui-calendar-heatmap-plot-width, unset);
     `,
     svg: css`
-      /* Preserve #72's inline baseline gap when Preflight resets replaced elements. */
+      /* Preserve react-ui's inline baseline gap when Preflight resets replaced elements. */
       display: inline;
       vertical-align: baseline;
       overflow: var(--_openui-calendar-heatmap-svg-overflow, unset);

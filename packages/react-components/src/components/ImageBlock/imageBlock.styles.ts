@@ -6,7 +6,7 @@ export const names = {
 } as const;
 export const imageBlockStyles = (css: StyleCss) => ({
   root: css`
-    /* #72's content-box sizing, declared so a page's box-sizing reset (Tailwind's preflight, for
+    /* react-ui's content-box sizing, declared so a page's box-sizing reset (Tailwind's preflight, for
        one) cannot change the geometry. */
     box-sizing: content-box;
     flex: 1 1 0;

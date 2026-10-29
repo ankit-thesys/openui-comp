@@ -88,7 +88,7 @@ export const cardBlockLayoutStyles = (css: StyleCss) => ({
       --_openui-card-block-layout-small-mobile-width: 15rem;
     `,
     "overview-card": css`
-      /* #72 shrinks Overview carousels on narrow containers even with responsive=false. */
+      /* react-ui shrinks Overview carousels on narrow containers even with responsive=false. */
       --_openui-card-block-layout-mobile-width: 12.5rem;
       --_openui-card-block-layout-small-width: 15rem;
       --_openui-card-block-layout-small-mobile-width: 12.5rem;
