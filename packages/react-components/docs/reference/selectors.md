@@ -850,9 +850,13 @@ renders it, and it is a public override target like any other class.
 | --- | --- | --- |
 | `.openui-icon-text` | Root | Always |
 | `.openui-icon-text-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-icon-text-icon` | Part (`icon`) | On that part, whenever it renders |
 | `.openui-icon-text--layout-horizontal` | Modifier | `layout="horizontal"` |
 | `.openui-icon-text--layout-vertical` | Modifier | `layout="vertical"` |
 | `.openui-icon-text--bold` | Modifier | `bold={true}` |
+| `.openui-icon-text--overflow-wrap` | Modifier | `overflow="wrap"` |
+| `.openui-icon-text--overflow-truncate` | Modifier | `overflow="truncate"` |
+| `.openui-icon-text--width-fill` | Modifier | `width="fill"` |
 | `.openui-icon-text--icon-variant-neutral` | Modifier | `iconVariant="neutral"` |
 | `.openui-icon-text--icon-variant-info` | Modifier | `iconVariant="info"` |
 | `.openui-icon-text--icon-variant-success` | Modifier | `iconVariant="success"` |
@@ -928,6 +932,9 @@ renders it, and it is a public override target like any other class.
 | `.openui-image-text--layout-horizontal` | Modifier | `layout="horizontal"` |
 | `.openui-image-text--layout-vertical` | Modifier | `layout="vertical"` |
 | `.openui-image-text--bold` | Modifier | `bold={true}` |
+| `.openui-image-text--overflow-wrap` | Modifier | `overflow="wrap"` |
+| `.openui-image-text--overflow-truncate` | Modifier | `overflow="truncate"` |
+| `.openui-image-text--width-fill` | Modifier | `width="fill"` |
 
 ## ImageTextLarge
 
@@ -952,6 +959,7 @@ renders it, and it is a public override target like any other class.
 | --- | --- | --- |
 | `.openui-inline-markdown-renderer` | Root | Always |
 | `.openui-inline-markdown-renderer-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-inline-markdown-renderer--typography-inherit` | Modifier | `typography="inherit"` |
 
 ## Input
 
@@ -1017,6 +1025,9 @@ renders it, and it is a public override target like any other class.
 | `.openui-markdown-renderer--variant-clear` | Modifier | `variant="clear"` |
 | `.openui-markdown-renderer--variant-card` | Modifier | `variant="card"` |
 | `.openui-markdown-renderer--variant-sunk` | Modifier | `variant="sunk"` |
+| `.openui-markdown-renderer--typography-inherit` | Modifier | `typography="inherit"` |
+| `.openui-markdown-renderer--list-lead-in-spaced` | Modifier | `listLeadIn="spaced"` |
+| `.openui-markdown-renderer-code--typography-inherit` | Modifier | `typography="inherit"` |
 
 ## MetricIndicator
 
@@ -1413,6 +1424,7 @@ renders it, and it is a public override target like any other class.
 | `.openui-tag--variant-success` | Modifier | `variant="success"` |
 | `.openui-tag--variant-warning` | Modifier | `variant="warning"` |
 | `.openui-tag--variant-danger` | Modifier | `variant="danger"` |
+| `.openui-tag--surface-image` | Modifier | `surface="image"` |
 
 ## TagBlock
 
@@ -1454,6 +1466,9 @@ renders it, and it is a public override target like any other class.
 | `.openui-text-block--type-text-only` | Modifier | `type="textOnly"` |
 | `.openui-text-block-secondary--secondary-tone-positive` | Modifier | `secondaryTone="positive"` |
 | `.openui-text-block-secondary--secondary-tone-negative` | Modifier | `secondaryTone="negative"` |
+| `.openui-text-block--overflow-wrap` | Modifier | `overflow="wrap"` |
+| `.openui-text-block--overflow-truncate` | Modifier | `overflow="truncate"` |
+| `.openui-text-block--width-fill` | Modifier | `width="fill"` |
 
 ## TextCallout
 

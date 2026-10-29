@@ -144,12 +144,49 @@ test("links and inline code take the library's look, and inherit the quote's ins
     fontStyle: "normal",
   });
   expect(await look(".openui-markdown-renderer > p > code")).toMatchObject({ fontStyle: "normal" });
-  // Inside one they inherit like the quote's other text, as in #72.
+  // Inside one they carry the quoted state and inherit like the quote's other text, as in #72.
   for (const selector of ["blockquote p > a", "blockquote p > code"]) {
+    await expect(markdown.locator(selector).first()).toHaveAttribute("data-quoted", "true");
     expect(await look(selector)).toEqual({
       inheritsColor: true,
       inheritsLineHeight: true,
       fontStyle: "italic",
     });
   }
+  await expect(markdown.locator(".openui-markdown-renderer > p > a").first()).not.toHaveAttribute(
+    "data-quoted",
+  );
+});
+
+// The quoted state is an attribute, so it works without style queries (Firefox included) and a
+// consumer overrides it with the same state, as for any other.
+for (const layer of ["", "openui"])
+  for (const position of ["before", "after"] as const)
+    test(`quoted links and code take consumer CSS ${position} the library (${layer || "default"})`, async ({
+      page,
+    }) => {
+      const css = [".openui-markdown-renderer-link", ".openui-markdown-renderer-code"]
+        .map((part) => `${part}[data-quoted] { color: rgb(1, 2, 3); line-height: 31px; }`)
+        .join("\n");
+      const params = new URLSearchParams({ layer });
+      if (position === "before") params.set("css", css);
+      await page.goto(`/markdown.html?${params}`);
+      if (position === "after") await page.addStyleTag({ content: css });
+      for (const selector of ["blockquote p > a", "blockquote p > code"]) {
+        const part = page.getByTestId("markdown").locator(selector).first();
+        await expect(part).toHaveCSS("color", "rgb(1, 2, 3)");
+        await expect(part).toHaveCSS("line-height", "31px");
+      }
+    });
+
+test('listLeadIn="spaced" spaces a paragraph from the list after it', async ({ page }) => {
+  await page.goto("/markdown.html");
+  const [flush, spaced] = await page
+    .getByTestId("lead-in")
+    .locator(".openui-markdown-renderer")
+    .all();
+  await expect(flush!).not.toHaveClass(/--list-lead-in-/);
+  await expect(flush!.locator("p")).toHaveCSS("margin-bottom", "0px");
+  await expect(spaced!).toHaveClass(/\bopenui-markdown-renderer--list-lead-in-spaced\b/);
+  await expect(spaced!.locator("p")).toHaveCSS("margin-bottom", "8px");
 });

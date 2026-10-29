@@ -14,7 +14,6 @@ export const textContentWrapperStyles = (css: StyleCss) => ({
     display: flex;
     flex-direction: column;
     gap: var(--openui-space-xl, 24px);
-    --_openui-markdown-renderer-paragraph-before-list-margin: 8px;
     --_openui-text-content-wrapper-math-display: inline;
     --_openui-text-content-wrapper-math-margin: 0px;
     &[data-mode="dark"] {

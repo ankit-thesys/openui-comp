@@ -6,6 +6,7 @@ import { forwardRef, type CSSProperties, type ReactNode } from "react";
 import { useStyles } from "../../styles/useStyles";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
 import { toCssUrl } from "../_shared/utils/safeUrl";
+import { TagSurfaceContext } from "../Tag/TagSurface";
 import { names, visualCardStyles } from "./card.styles";
 
 export interface VisualCardBlockItem {
@@ -53,7 +54,9 @@ export const VisualCard = forwardRef<HTMLDivElement, VisualCardProps>((props, re
       onKeyDown={clickable && onClick ? cardKeyDownHandler(onClick) : undefined}
     >
       <div className={clsx(names.top, styles.top)}>
-        <div className={clsx(names.tag, styles.tag)}>{tag ?? null}</div>
+        <div className={clsx(names.tag, styles.tag)}>
+          <TagSurfaceContext.Provider value="image">{tag ?? null}</TagSurfaceContext.Provider>
+        </div>
         {clickable && (
           <div className={clsx(names.action, styles.action)} aria-hidden="true">
             <ChevronRight size={16} className={clsx(names.actionIcon, styles.actionIcon)} />

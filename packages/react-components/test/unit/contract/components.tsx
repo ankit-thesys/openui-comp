@@ -228,12 +228,14 @@ const tones = ["neutral", "info", "warning", "success", "danger"] as const;
 const wrapperText =
   "# Heading\n\nParagraph before a list\n\n- First\n- Second\n\n[Link](https://example.com) and `code`";
 const inlineNames = () => composedNames(<InlineMarkdownRenderer content="Text" />);
-const tagElements = () =>
-  (["sm", "md", "lg"] as const).flatMap((size) =>
+const tagElements = () => [
+  ...(["sm", "md", "lg"] as const).flatMap((size) =>
     tones.map((variant) => (
       <Tag key={`${size}-${variant}`} text="Label" size={size} variant={variant} icon={<svg />} />
     )),
-  );
+  ),
+  <Tag key="surface-image" text="Label" variant="info" surface="image" />,
+];
 const iconTagElements = () =>
   (["xs", "s", "m", "l", "xl"] as const).flatMap((size) =>
     [...tones, "inverted" as const].map((variant) => (
@@ -241,26 +243,37 @@ const iconTagElements = () =>
     )),
   );
 const textBlockElements = () =>
-  textVariants.flatMap((variant) =>
-    (["xs", "sm", "md", "lg"] as const).flatMap((size) =>
-      (["text", "number", "textOnly"] as const).flatMap((type) =>
-        (["left", "center", "right"] as const).map((align, index) => (
-          <TextBlockView
-            key={`${variant}-${size}-${type}-${align}`}
-            primary="Primary"
-            secondary="Secondary"
-            tertiary="Tertiary"
-            variant={variant}
-            size={size}
-            type={type}
-            align={align}
-            secondaryTone={index === 0 ? undefined : index === 1 ? "positive" : "negative"}
-            secondaryMaxLines={index === 0 ? undefined : 2}
-          />
-        )),
+  textVariants
+    .flatMap((variant) =>
+      (["xs", "sm", "md", "lg"] as const).flatMap((size) =>
+        (["text", "number", "textOnly"] as const).flatMap((type) =>
+          (["left", "center", "right"] as const).map((align, index) => (
+            <TextBlockView
+              key={`${variant}-${size}-${type}-${align}`}
+              primary="Primary"
+              secondary="Secondary"
+              tertiary="Tertiary"
+              variant={variant}
+              size={size}
+              type={type}
+              align={align}
+              secondaryTone={index === 0 ? undefined : index === 1 ? "positive" : "negative"}
+              secondaryMaxLines={index === 0 ? undefined : 2}
+            />
+          )),
+        ),
       ),
-    ),
-  );
+    )
+    .concat(
+      <TextBlockView
+        key="fit"
+        primary="Primary"
+        secondary="Secondary"
+        overflow="truncate"
+        width="fill"
+      />,
+      <TextBlockView key="wrap" primary="Primary" overflow="wrap" />,
+    );
 
 // #100 exercises the internal layout only through the public card blocks.
 const cardLabel = <span style={{ font: "14px/21px sans-serif" }}>Card content</span>;
@@ -323,6 +336,15 @@ const imageTextElements = () => [
       />
     )),
   ),
+  <ImageText
+    key="fit"
+    src={source.faviconUrl}
+    title="Title"
+    subtitle="Subtitle"
+    overflow="truncate"
+    width="fill"
+  />,
+  <ImageText key="wrap" src={source.faviconUrl} title="Title" overflow="wrap" />,
 ];
 
 export const migratedComponents: MigratedComponent[] = [
@@ -1150,12 +1172,34 @@ export const migratedComponents: MigratedComponent[] = [
             ),
           ),
         ),
+        composedNames(
+          <TextBlockView
+            primary="Title"
+            secondary="Subtitle"
+            variant="text-subtext"
+            size="xs"
+            overflow="truncate"
+            width="fill"
+          />,
+        ),
+        composedNames(
+          <TextBlockView primary="Title" variant="text-subtext" size="xs" overflow="wrap" />,
+        ),
         inlineNames(),
       ];
     },
     clientOnly: ["openui-icon-tag-icon"],
     elements: () => [
       <IconText key="default" icon={{ name: "star" }} title="Title" />,
+      <IconText
+        key="fit"
+        icon={{ name: "star" }}
+        title="Title"
+        subtitle="Subtitle"
+        overflow="truncate"
+        width="fill"
+      />,
+      <IconText key="wrap" icon={{ name: "star" }} title="Title" overflow="wrap" />,
       ...(["horizontal", "vertical"] as const).flatMap((layout) =>
         [...tones, "inverted" as const, "filled" as const, "soft" as const].flatMap((iconVariant) =>
           [false, true].map((bold) => (
@@ -1200,6 +1244,7 @@ export const migratedComponents: MigratedComponent[] = [
           composedNames(
             <MarkDownRenderer
               variant={variant}
+              listLeadIn="spaced"
               textMarkdown={wrapperText}
               options={{ remarkPlugins: [remarkGfm] }}
             />,
@@ -1283,9 +1328,13 @@ export const migratedComponents: MigratedComponent[] = [
       return [
         ...namesOf("InlineMarkdownRenderer"),
         composedNames(<MarkDownRenderer textMarkdown={inlineContent} />),
+        composedNames(<MarkDownRenderer textMarkdown={inlineContent} typography="inherit" />),
       ];
     },
-    elements: () => [<InlineMarkdownRenderer key="inline" content={inlineContent} />],
+    elements: () => [
+      <InlineMarkdownRenderer key="inline" content={inlineContent} />,
+      <InlineMarkdownRenderer key="inherit" content={inlineContent} typography="inherit" />,
+    ],
   },
   {
     folder: "TooltipWrapper",
@@ -1494,8 +1543,8 @@ export const migratedComponents: MigratedComponent[] = [
         ),
       ];
     },
-    elements: () =>
-      ["clear", "card", "sunk"].map((variant) => (
+    elements: () => [
+      ...["clear", "card", "sunk"].map((variant) => (
         <MarkDownRenderer
           key={variant}
           variant={variant as "clear"}
@@ -1503,6 +1552,14 @@ export const migratedComponents: MigratedComponent[] = [
           options={{ remarkPlugins: [remarkGfm], urlTransform: (url) => url }}
         />
       )),
+      <MarkDownRenderer
+        key="inherit-spaced"
+        typography="inherit"
+        listLeadIn="spaced"
+        textMarkdown={markdown}
+        options={{ remarkPlugins: [remarkGfm], urlTransform: (url) => url }}
+      />,
+    ],
   },
 
   {

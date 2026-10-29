@@ -6,7 +6,7 @@
 // Each component runs in its own `<folder>.contract.test.tsx` file. Vitest gives every file a fresh
 // module graph, so Goober's cache starts empty and a component's CSS is not already registered by
 // another component that renders it (MarkDownRenderer renders IconButton inside code blocks).
-import { MarkDownRenderer, ThemeProvider } from "@openuidev/react-components";
+import { ThemeProvider } from "@openuidev/react-components";
 import type { ReactElement } from "react";
 import { renderToString } from "react-dom/server";
 import { describe, expect, it } from "vitest";
@@ -35,12 +35,13 @@ export function describeContract(folder: string, component?: MigratedComponent) 
     );
     // MarkDownRenderer's prose rules weigh its root's generated class plus a tag. A family that
     // composes it carries them, so they are credited to it by the generated classes it puts on its
-    // own root in each mode. Rendered after both collections, so nothing here reaches `css`.
+    // own root in each mode, across every look its contract entry renders. Rendered after both
+    // collections, so nothing here reaches `css`.
+    const markdownLooks = migratedComponents
+      .find((component) => component.folder === "MarkDownRenderer")!
+      .elements();
     const proseRootsWith = (wrap: (element: ReactElement) => ReactElement) =>
-      generatedClassesOn(
-        renderToString(wrap(<MarkDownRenderer textMarkdown="Prose" />)),
-        "openui-markdown-renderer",
-      );
+      generatedClassesOn(renderToString(wrap(<>{markdownLooks}</>)), "openui-markdown-renderer");
     const proseRoots = {
       "": proseRootsWith((element) => element),
       openui: proseRootsWith((element) => (

@@ -26,7 +26,6 @@ export const iconTagStyles = (css: StyleCss) => ({
     height: var(--_openui-icon-tag-icon-size);
   `,
   root: css`
-    margin-top: var(--_openui-icon-tag-margin-top, 0px);
     display: inline-flex;
     align-items: center;
     justify-content: center;

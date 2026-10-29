@@ -25,8 +25,6 @@ export const compositeCardStyles = (css: StyleCss) => ({
     border-radius: var(--openui-radius-3xl, 16px);
     box-sizing: border-box;
     background: var(--openui-sunk-light, oklch(0.097 0 0 / 0.02));
-
-    --_openui-composite-card-inline: 1;
   `,
   wrapper: css`
     height: 100%;

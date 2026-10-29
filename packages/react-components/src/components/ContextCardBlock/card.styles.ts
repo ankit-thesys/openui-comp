@@ -37,9 +37,6 @@ export const contextCardStyles = (css: StyleCss) => ({
     --_openui-context-card-overlay-content: initial;
     --_openui-context-card-vertical-position: initial;
     --_openui-context-card-vertical-z-index: initial;
-    --_openui-card-tag-background: initial;
-    --_openui-card-tag-color: initial;
-    --_openui-card-tag-backdrop: initial;
 
     display: flex;
     align-items: flex-start;
@@ -80,9 +77,6 @@ export const contextCardStyles = (css: StyleCss) => ({
       --_openui-context-card-overlay-content: "";
       --_openui-context-card-vertical-position: relative;
       --_openui-context-card-vertical-z-index: 2;
-      --_openui-card-tag-background: rgba(0, 0, 0, 0.4);
-      --_openui-card-tag-color: var(--openui-text-white, oklch(1 0 89.876 / 1));
-      --_openui-card-tag-backdrop: blur(2px);
     }
     &::before {
       content: var(--_openui-context-card-overlay-content, none);

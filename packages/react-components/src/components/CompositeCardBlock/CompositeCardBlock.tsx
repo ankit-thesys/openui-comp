@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { forwardRef, type ReactNode } from "react";
 import { useStyles } from "../../styles/useStyles";
+import { InlineTypographyContext } from "../InlineMarkdownRenderer/InlineTypography";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
 import { compositeCardStyles, names } from "./card.styles";
 
@@ -46,18 +47,21 @@ export const CompositeCard = forwardRef<HTMLDivElement, CompositeCardProps>((pro
         onClick={clickable ? onClick : undefined}
         onKeyDown={clickable && onClick ? cardKeyDownHandler(onClick) : undefined}
       >
-        {header && <div className={clsx(names.header, styles.header)}>{header}</div>}
+        {/* Inline markdown in the card keeps the surrounding text's typography. */}
+        <InlineTypographyContext.Provider value="inherit">
+          {header && <div className={clsx(names.header, styles.header)}>{header}</div>}
 
-        {bodyItems.length > 0 && <div className={clsx(names.body, styles.body)}>{bodyItems}</div>}
+          {bodyItems.length > 0 && <div className={clsx(names.body, styles.body)}>{bodyItems}</div>}
 
-        {hasFooter && (
-          <div className={clsx(names.footer, styles.footer)}>
-            <div className={clsx(names.footerContent, styles.footerContent)}>
-              {footer?.price ?? null}
-              {footer?.button ?? null}
+          {hasFooter && (
+            <div className={clsx(names.footer, styles.footer)}>
+              <div className={clsx(names.footerContent, styles.footerContent)}>
+                {footer?.price ?? null}
+                {footer?.button ?? null}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </InlineTypographyContext.Provider>
       </div>
     </div>
   );

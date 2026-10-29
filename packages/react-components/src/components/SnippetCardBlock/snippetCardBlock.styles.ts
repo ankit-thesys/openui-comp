@@ -60,12 +60,6 @@ export const snippetCardBlockStyles = (css: StyleCss) => ({
     align-items: center;
     min-width: 0;
     flex: 1;
-    --_openui-snippet-card-text-width: 100%;
-    --_openui-snippet-card-min-width: 0px;
-    --_openui-snippet-card-overflow: hidden;
-    --_openui-snippet-card-white-space: nowrap;
-    --_openui-snippet-card-text-overflow: ellipsis;
-    --_openui-snippet-card-text-max-width: 100%;
     :where(&) {
       > * {
         min-width: 0;
@@ -83,14 +77,6 @@ export const snippetCardBlockStyles = (css: StyleCss) => ({
     font: var(--openui-text-numbers-lg-heavy, 560 18px/1.5 "Inter", sans-serif);
     letter-spacing: var(--openui-text-numbers-lg-heavy-letter-spacing, -0.01em);
     font-variation-settings: var(--openui-font-variation-medium, "wght" 560);
-    --_openui-snippet-card-text-width: auto;
-    --_openui-snippet-card-min-width: 0px;
-    --_openui-snippet-card-overflow: hidden;
-    --_openui-snippet-card-white-space: nowrap;
-    --_openui-snippet-card-text-overflow: ellipsis;
-    --_openui-snippet-card-text-max-width: 100%;
-    --_openui-snippet-card-align: flex-end;
-    --_openui-snippet-card-text-align: right;
   `,
   rhsContent: css`
     display: flex;

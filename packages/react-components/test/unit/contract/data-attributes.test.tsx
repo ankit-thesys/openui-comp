@@ -26,6 +26,7 @@ import {
   ImageGallery,
   LineChart,
   ListItem,
+  MarkDownRenderer,
   MetricIndicatorInline,
   MiniLineChart,
   OptionCards,
@@ -101,6 +102,30 @@ describe("derived data attributes", () => {
     expect(
       valuesOf(<Callout title="Title" duration={3000} />, "openui-callout", "data-autodismiss"),
     ).toEqual(["true"]);
+  });
+
+  it("MarkDownRenderer: data-quoted on links and inline code inside a blockquote", () => {
+    const quoted =
+      "Outside [link](https://example.com) and `code`\n\n> Inside [link](https://example.com) and `code`";
+    for (const part of ["openui-markdown-renderer-link", "openui-markdown-renderer-code"]) {
+      expect(valuesOf(<MarkDownRenderer textMarkdown={quoted} />, part, "data-quoted")).toEqual([
+        undefined,
+        "true",
+      ]);
+      // A caller's own blockquote renderer keeps the state for what it holds.
+      expect(
+        valuesOf(
+          <MarkDownRenderer
+            textMarkdown={quoted}
+            options={{
+              components: { blockquote: ({ children }) => <aside>{children}</aside> },
+            }}
+          />,
+          part,
+          "data-quoted",
+        ),
+      ).toEqual([undefined, "true"]);
+    }
   });
 
   it("ContextCardBlock: data-background-image on the card when bgImageSrc is set", () => {
