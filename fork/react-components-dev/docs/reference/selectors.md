@@ -6,7 +6,7 @@ Every class below is a public override target: one class, so a consumer rule on 
 library's rule (add the same state, such as `:hover` or `[data-state=active]`, to restyle a state).
 A root is always present and a part whenever its element renders; a modifier is present when the
 prop has that value, including its default. Every component follows this convention; the states
-each family's library rules use are listed in the [package README](../../README.md#stable-selectors).
+each family's library rules use are listed in the [package README](../../../../packages/react-components/README.md#stable-selectors).
 
 A shared internal is a class one module family owns and other families render: the shared
 `.openui-border-box` base, the `.openui-skeleton-pulse` animation and the `openui-chart-*` chart

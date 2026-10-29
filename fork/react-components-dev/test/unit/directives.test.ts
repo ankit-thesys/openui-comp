@@ -1,15 +1,15 @@
 /**
  * Built-output seam: every component must retain its client boundary in ESM and CJS.
- * Run from this package: `pnpm build && pnpm test test/unit/directives.test.ts`.
+ * Build the library, then run `pnpm test test/unit/directives.test.ts` here.
  * Every component is checked. The exclusions below are non-component TSX helpers;
  * update them only if another such helper is added, never to exempt a component.
  */
+import { library } from "#paths";
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
-import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 
-const componentsDir = fileURLToPath(new URL("../../dist/components/", import.meta.url));
+const componentsDir = library("dist/components/");
 const nonComponentHelpers = new Set([
   "Calendar/utils/helperFn",
   "Calendar/utils/styles",

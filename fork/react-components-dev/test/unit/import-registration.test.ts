@@ -3,12 +3,13 @@
 // public entry happens not to evaluate is covered too. The token defaults (Q29) only run with a
 // document; the browser half of this check is test/browser/import-registration.spec.ts.
 // Run after build: pnpm exec vitest run test/unit/import-registration.test.ts.
+import { library } from "#paths";
 import { readdirSync } from "node:fs";
 import { join } from "node:path";
-import { fileURLToPath, pathToFileURL } from "node:url";
+import { pathToFileURL } from "node:url";
 import { expect, it } from "vitest";
 
-const dist = fileURLToPath(new URL("../../dist/", import.meta.url));
+const dist = library("dist/");
 const modules = (dir: string): string[] =>
   readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const path = join(dir, entry.name);

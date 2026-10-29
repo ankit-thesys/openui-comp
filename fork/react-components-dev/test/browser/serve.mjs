@@ -1,4 +1,5 @@
 // Static server for the browser tests: the fixture page plus bundles from build-fixtures.ts.
+import { reactUiRoot } from "#paths";
 import { readFile } from "node:fs/promises";
 import { createServer } from "node:http";
 
@@ -6,7 +7,7 @@ const port = Number(process.env.PORT ?? 5370);
 const fixtures = new URL("./.fixtures/", import.meta.url);
 const stylesheets = new URL("./fixtures/", import.meta.url);
 // The stylesheet the react-ui benches load, from the workspace's built @openuidev/react-ui.
-const reactUiCss = new URL("../../../react-ui/dist/components/index.css", import.meta.url);
+const reactUiCss = new URL("dist/components/index.css", reactUiRoot);
 const text = (value) => value.replaceAll("<", "");
 // Query parameters build the static <head>, all loaded before the fixture's script:
 // `?recipe=<layer order>` starts it with the layer-mode recipe, a layer statement then an empty

@@ -3,15 +3,15 @@
 // server-rendered inline style, the built package's client code, as a quoted `setProperty` name,
 // or the charts' part-variable helper), and each belongs to the component that uses it.
 // Charts are fixed separately and keep their own keyframe names for now.
+import { library } from "#paths";
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { fileURLToPath } from "node:url";
 import { expect, it } from "vitest";
 import { readStableNames } from "../../../scripts/selector-reference.mjs";
 import { blocksIn, namesIn, renderAndCollect } from "./collect";
 import { migratedComponents } from "./components";
 
-const dist = fileURLToPath(new URL("../../../dist/", import.meta.url));
+const dist = library("dist/");
 const clientCode = (readdirSync(dist, { recursive: true }) as string[])
   .filter((file) => /\.m?js$/.test(file))
   .map((file) => readFileSync(join(dist, file), "utf8"))
@@ -78,7 +78,7 @@ it("sets every private variable that a rule reads", () => {
 // `--_openui-image-block-*`. A primitive that needs a look from the component around it takes a
 // public prop instead. A file belongs to the nearest folder at or above it whose subtree holds
 // style modules, such as a chart's `parts/`.
-const src = fileURLToPath(new URL("../../../src/", import.meta.url));
+const src = library("src/");
 const sourceFiles = (readdirSync(src, { recursive: true }) as string[])
   .map((file) => file.split(/[\\/]/).join("/"))
   .filter((file) => /\.tsx?$/.test(file));

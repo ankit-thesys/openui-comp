@@ -35,16 +35,8 @@
   "scripts": {
     "build": "tsdown",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
-    "test:browser": "playwright test",
-    "docs:selectors": "node scripts/selector-reference.mjs",
-    "test:screenshots": "OPENUI_SCREENSHOTS=1 playwright test screenshots",
-    "test:parity:baseline": "node test/browser/parity/extract-baseline.mjs && OPENUI_PARITY_CAPTURE=1 playwright test --grep \"matches the #72\"",
     "lint:check": "eslint ./src",
-    "lint:fix": "eslint ./src --fix",
-    "format:check": "prettier --check ./src ./test",
-    "format:fix": "prettier --write ./src ./test",
-    "ci": "pnpm run typecheck && tsc -p tsconfig.test.json && pnpm run test && pnpm run lint:check && pnpm run format:check"
+    "lint:fix": "eslint ./src --fix"
   },
   "peerDependencies": {
     "react": "^19.0.0",
@@ -98,9 +90,7 @@
     "@types/d3-scale": "^4.0.9",
     "@types/d3-selection": "^3.0.11",
     "@types/d3-shape": "^3.1.8",
-    "zustand": "^4.5.5",
-    "@playwright/test": "~1.56.1",
-    "vitest": "^4.1.0"
+    "zustand": "^4.5.5"
   },
   "repository": {
     "type": "git",

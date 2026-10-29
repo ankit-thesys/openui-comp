@@ -1,12 +1,12 @@
 // Only the styling infrastructure imports Goober. Components get `css` from `useStyles`, so their
 // rules register at render, honour `cssLayer` and stay under the contract checks; a direct import
 // could register CSS on a path no contract element renders (ADR 0001, Q2 and Q27).
+import { library } from "#paths";
 import { readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
-import { fileURLToPath } from "node:url";
 import { expect, it } from "vitest";
 
-const packageRoot = fileURLToPath(new URL("../../", import.meta.url));
+const packageRoot = library();
 const sourceFiles = (dir: string): string[] =>
   readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const path = join(dir, entry.name);

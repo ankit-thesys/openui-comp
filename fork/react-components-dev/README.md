@@ -1,17 +1,108 @@
-# react-components tests
+# @openuidev/react-components-dev
 
-Tests exercise the **built** package through its public exports only, the way a consumer uses it. Build first:
+Fork-only tooling for `@openuidev/react-components`: its unit and browser tests, benches, parity
+baselines, the selector reference generator, and the styling ADR, specs and glossary. The library
+in `packages/react-components` holds only what ships (its source, build config and README); this
+private workspace package is never published, and `fork/make-upstream-branch.sh` strips it, with
+the other paths in `fork/upstream-exclude.txt`, from branches meant for upstream.
+
+How it reaches the library:
+
+- It depends on `"@openuidev/react-components": "workspace:*"`, so tests import the **built**
+  package through its public exports only, the way a consumer does.
+- Guards that read files outside this package (the library's `src/` and `dist/`, and the
+  workspace's built `@openuidev/react-ui`) take their paths from `paths.mjs`, imported as
+  `#paths`. Nothing else reaches out with `../../`.
+- Fixture bundles alias `openui-under-test` to the built library and `react-ui-under-test` to the
+  built react-ui. The #72 parity source extracted under `test/browser/.baseline/` resolves its
+  packages from the library, so this package needs none of the library's dependencies.
+- `test/unit/package-boundary.test.ts` fails if `packages/react-components` holds anything
+  outside its allowlist or a published file mentions `fork/`.
+
+Build the library first, then run every script from this package (or with
+`pnpm --filter @openuidev/react-components-dev <script>`):
 
 ```bash
 pnpm --filter @openuidev/react-components build
+pnpm --filter @openuidev/react-components-dev ci
 ```
+
+`ci` runs the library's typecheck and lint, this package's typecheck, the unit tests, and
+Prettier over the library's `src` and these tests.
+
+## Library development
+
+Copied from the library README's Development section, which moves here.
+
+```sh
+pnpm --filter @openuidev/react-components run build
+pnpm --filter @openuidev/react-components-dev run ci
+```
+
+ESM/CJS builds include matching declarations and source maps. Goober and React
+remain external dependencies. Build inputs contain no old SCSS or generated CSS.
+
+### Authoring styles
+
+Converted components follow the [styling contract](../../packages/react-components/README.md#styling-and-overrides). A
+style module exports a `names` constant with its stable classes, the single source
+for the markup and the generated reference, and a factory that receives Goober's
+`css` and returns plain class maps. Components read them with the internal
+`useStyles` hook, which registers the rules on first render:
+
+```ts
+// example.styles.ts
+export const names = {
+  root: "openui-example",
+  label: "openui-example-label",
+  size: { small: "openui-example--size-small", medium: "openui-example--size-medium" },
+} as const;
+
+export const exampleStyles = (css: StyleCss) => ({
+  root: css`
+    display: flex;
+    &:disabled {
+      cursor: not-allowed;
+    }
+  `,
+  size: { small: css`padding: 4px;`, medium: css`padding: 8px;` },
+  label: css`font-weight: 500;`,
+});
+
+// Example.tsx
+const styles = useStyles(exampleStyles);
+<div className={clsx(styles.root, styles.size[size], names.root, names.size[size], className)} />;
+```
+
+Each rule is one class plus at most one state. A parent's prop that changes a
+part's value travels through a private `--_openui-<component>-*` variable the
+part reads, not a descendant selector. After changing `names`, run
+`pnpm docs:selectors` to regenerate the reference. The unit tests enforce the
+selector budget and the naming grammar for every component, and that no module
+registers CSS or adds a class to `<html>` on import; see the sections below.
+
+Keep selector specificity, declaration order, token fallbacks and keyframe timing
+when editing styles. Use CSS units explicitly: Goober does not add `px` to numeric
+object values. Class-name maps are ordinary objects containing canonical target strings;
+they are not CSS declaration objects.
+
+The following retain their existing non-template contracts:
+
+- Native `style` forwarding and computed chart geometry/animation values are
+  per-instance React styles.
+- ThemeProvider serializes scoped theme variables through its existing lifecycle.
+- Syntax-highlighter theme maps use the third-party component's object API.
+- KaTeX keeps its official vendor CSS and font assets.
+
+These exceptions do not justify new static Goober declaration objects, custom
+serializers or styling APIs.
 
 ## Unit tests (Node, vitest)
 
 `test/unit/**/*.test.{ts,tsx}` import `@openuidev/react-components` and server-render components.
 
 ```bash
-pnpm --filter @openuidev/react-components test
+pnpm --filter @openuidev/react-components-dev test
 ```
 
 ## Browser tests (Chromium, Playwright)
@@ -25,8 +116,8 @@ pnpm --filter @openuidev/react-components test
 Install Chromium once, then run:
 
 ```bash
-pnpm --filter @openuidev/react-components exec playwright install chromium
-pnpm --filter @openuidev/react-components test:browser
+pnpm --filter @openuidev/react-components-dev exec playwright install chromium
+pnpm --filter @openuidev/react-components-dev test:browser
 ```
 
 To add a browser test, add a fixture that imports `openui-under-test` (aliased to the built package), add it to `fixtures` in `build-fixtures.ts`, and open `/<name>.html` from the spec. Query parameters build the static `<head>`, all loaded before the fixture script:
@@ -106,7 +197,7 @@ override and Tailwind cases.
   `scripts/selector-reference.mjs` generates from the built `names`. Regenerate it after a build:
 
 ```bash
-pnpm --filter @openuidev/react-components docs:selectors
+pnpm --filter @openuidev/react-components-dev docs:selectors
 ```
 
 ### Contract coverage and import-time registration
@@ -151,7 +242,7 @@ To add a component: write `fixtures/parity-<component>.tsx`, add it to `fixtures
 baseline (this extracts the #72 source into `test/browser/.baseline/`, gitignored):
 
 ```bash
-pnpm --filter @openuidev/react-components test:parity:baseline
+pnpm --filter @openuidev/react-components-dev test:parity:baseline
 ```
 
 Commit the new baseline file. Recapture only when adding cases, never to absorb a regression.
@@ -261,7 +352,8 @@ the working examples. Keep the change inside the ticket's component scope.
    Root modifiers pass cross-axis/part values via private `--_openui-*` variables. Keep state
    rules ordered to preserve precedence, as in the pilot. Only MarkDownRenderer opts into
    the amended prose budget. Retain the documented `!important` exceptions.
-5. Go green for that behaviour, rebuild and run its single contract file and `pnpm typecheck`.
+5. Go green for that behaviour, rebuild and run its single contract file and the library's
+   `pnpm typecheck`.
    Repeat one behaviour at a time. Add a `parity-<component>.tsx` fixture importing
    `openui-under-test`, register it in `build-fixtures.ts`, and add a spec titled
    `"<Component> matches the #72 computed styles"` calling `checkParity(page, "<component>")`.
@@ -281,7 +373,7 @@ the working examples. Keep the change inside the ticket's component scope.
 8. After building, run `pnpm docs:selectors` and check in the generated reference. Additive entries in shared
    files must preserve other tickets' work. Shared helper migrations use the focused
    contracts above instead of claiming an entire family is flat.
-9. From this package, run `pnpm build && pnpm test && pnpm run ci` from a clean build, then
+9. From a clean library build, run `pnpm test && pnpm run ci` in this package, then
    run Chromium's `pnpm test:browser` (including parity and override specs). Review the diff
    against the ticket and ADR, fix findings, and report any blocked checks or intentional
    differences. Leave commits, pushes and PRs to the ticket's authorized delivery flow.
@@ -293,7 +385,7 @@ the working examples. Keep the change inside the ticket's component scope.
 `OPENUI_SCREENSHOTS=1`, so CI never runs it:
 
 ```bash
-pnpm --filter @openuidev/react-components test:screenshots
+pnpm --filter @openuidev/react-components-dev test:screenshots
 ```
 
 It finds fixtures by their `fixtures/parity-*.tsx` file name, so a new component's parity fixture
@@ -303,8 +395,8 @@ background. Components are not restyled; parity, not the screenshots, is the gat
 
 ## CI
 
-- `pnpm run ci` (typecheck of `src` and tests, unit tests, lint of `src`, format) needs the build too, because tests import the built package; in CI it runs in the shared `build-js.yml` step after all packages are built.
-- Browser tests run in the separate `react-components-browser` job in `build-js.yml`, which builds this package and `@openuidev/react-ui` (for the react-ui benches) with their workspace dependencies, installs Chromium and runs `test:browser`. Locally, build react-ui too: `pnpm --filter "@openuidev/react-ui..." build`.
+- `pnpm run ci` here (the library's typecheck and lint, this package's typecheck, unit tests, format) needs the library build too, because tests import the built package; in CI it runs in the shared `build-js.yml` step after all packages are built.
+- Browser tests run in the separate `react-components-browser` job in `build-js.yml`, which builds the library and `@openuidev/react-ui` (for the react-ui benches) with their workspace dependencies, installs Chromium and runs this package's `test:browser`. Locally, build react-ui too: `pnpm --filter "@openuidev/react-ui..." build`.
 
 ## Citations and sources rollout (#95)
 

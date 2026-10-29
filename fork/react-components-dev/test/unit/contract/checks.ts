@@ -1,5 +1,5 @@
 // The styling contract as code: which library selectors and stable class names are allowed.
-// See test/README.md, "Styling contract".
+// See this package's README.md, "Styling contract".
 
 const AT_RULES_WITH_RULES = /^@(media|container|supports)\b/;
 

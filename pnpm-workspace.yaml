@@ -1,5 +1,6 @@
 packages:
   - "packages/*"
+  - "fork/*"
   - "docs/"
   - "!templates/**"
 

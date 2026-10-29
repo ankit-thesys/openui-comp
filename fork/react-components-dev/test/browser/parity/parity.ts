@@ -1,5 +1,5 @@
 // Computed-style parity: snapshots every `[data-parity-case]` block of a fixture in each state and
-// compares it with a baseline captured from the #72 source (see test/README.md, "Parity").
+// compares it with a baseline captured from the #72 source (see this package's README.md, "Parity").
 import { expect, type Page } from "@playwright/test";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";

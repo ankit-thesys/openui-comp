@@ -3,15 +3,15 @@
 // module is covered by an entry's own names, and every entry has its own contract test file, so it
 // is checked in a fresh module graph (see defineContract.tsx). Classes an entry lists only because
 // it renders another component (`dependencyN` keys) never count as coverage.
+import { library } from "#paths";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
-import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { readStableNames } from "../../../scripts/selector-reference.mjs";
 import { namesIn } from "./collect";
 import { migratedComponents, otherChartContracts, sharedStyleContracts } from "./components";
 
-const packageRoot = fileURLToPath(new URL("../../../", import.meta.url));
+const packageRoot = library();
 const sourceFiles = (dir: string): string[] =>
   readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const path = join(dir, entry.name);

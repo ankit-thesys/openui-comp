@@ -1,17 +1,20 @@
 // Bundles each fixture app against the built package, the way a consumer's bundler would.
 // Runs once as Playwright's global setup; `serve.mjs` serves the output.
+import { library, reactUi } from "#paths";
 import { execFileSync } from "node:child_process";
 import { existsSync, rmSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { build } from "tsdown";
+import { build, type TsdownPlugin } from "tsdown";
 
 const here = (path: string) => fileURLToPath(new URL(path, import.meta.url));
 const fixturesOut = here("./.fixtures/");
-const baselineEntry = here("./.baseline/src/index.ts");
-const reactUi = here("../../../react-ui/dist/index.mjs");
+const baselineSource = here("./.baseline/src/");
+const baselineEntry = `${baselineSource}index.ts`;
+const reactUiEntry = reactUi("dist/index.mjs");
 
-// Fixtures import the package under test as "openui-under-test". Parity fixtures also get a
-// "-baseline" bundle against the #72 source, which `parity/extract-baseline.mjs` extracts.
+// Fixtures import the package under test as "openui-under-test", and the react-ui benches import
+// react-ui as "react-ui-under-test". Parity fixtures also get a "-baseline" bundle against the #72
+// source, which `parity/extract-baseline.mjs` extracts.
 const fixtures = [
   "card-blocks",
   "parity-card-block-layout",
@@ -159,6 +162,16 @@ const selectorReferencePlugin = (platform: "browser" | "node", stableNames: unkn
       : null,
 });
 
+// The #72 source extracted under .baseline has no node_modules of its own, and this package does not
+// depend on the library's dependencies: resolve its packages as the library's own source would.
+const baselineDependencies: TsdownPlugin = {
+  name: "baseline-dependencies",
+  resolveId(id, importer) {
+    if (!importer?.startsWith(baselineSource) || /^[.\0/]/.test(id)) return null;
+    return this.resolve(id, library("src/index.ts"), { skipSelf: true });
+  },
+};
+
 const stableNames = async () => {
   const { readStableNames } = (await import(selectorReference)) as {
     readStableNames: () => Promise<unknown>;
@@ -185,20 +198,24 @@ const bundle = async (
     dts: false,
     clean: false,
     logLevel: "warn",
-    alias: { "openui-under-test": packageUnderTest },
+    alias: { "openui-under-test": packageUnderTest, "react-ui-under-test": reactUiEntry },
     define: {
       "process.env.NODE_ENV": JSON.stringify("production"),
       __PARITY_BASELINE__: String(baseline),
     },
     deps: { alwaysBundle: [/.*/], onlyBundle: false },
-    plugins: [skipStylesheets, selectorReferencePlugin(platform, await stableNames())],
+    plugins: [
+      skipStylesheets,
+      baselineDependencies,
+      selectorReferencePlugin(platform, await stableNames()),
+    ],
   });
 
 export default async function buildFixtures() {
   rmSync(fixturesOut, { recursive: true, force: true });
   await bundle(entries(fixtures), "@openuidev/react-components", false);
   // The react-ui benches compare against the workspace's built @openuidev/react-ui.
-  if (!existsSync(reactUi))
+  if (!existsSync(reactUiEntry))
     throw new Error("Build @openuidev/react-ui first: pnpm --filter @openuidev/react-ui... build");
   await bundle(entries(["bench-react-ui"]), "@openuidev/react-components", false);
   await bundle(

@@ -1,13 +1,13 @@
 // Generates docs/reference/selectors.md from the `names` constant each component's style module
-// exports (its stable classes). Reads the built package: run `pnpm build` first.
+// exports (its stable classes). Reads the built library: build it first.
 //   pnpm docs:selectors        write the reference
 // test/unit/contract/reference.test.ts fails when the committed file drifts from this output.
 import { readdirSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
+import { libraryRoot } from "#paths";
 
-const packageRoot = new URL("../", import.meta.url);
-const components = new URL("dist/components/", packageRoot);
-const output = new URL("docs/reference/selectors.md", packageRoot);
+const components = new URL("dist/components/", libraryRoot);
+const output = new URL("../docs/reference/selectors.md", import.meta.url);
 
 /**
  * Stable names of every built style module that exports `names`, in path order. `component` is the
@@ -98,7 +98,7 @@ export function renderSelectorReference(entries) {
     "library's rule (add the same state, such as `:hover` or `[data-state=active]`, to restyle a state).",
     "A root is always present and a part whenever its element renders; a modifier is present when the",
     "prop has that value, including its default. Every component follows this convention; the states",
-    "each family's library rules use are listed in the [package README](../../README.md#stable-selectors).",
+    "each family's library rules use are listed in the [package README](../../../../packages/react-components/README.md#stable-selectors).",
     "",
     "A shared internal is a class one module family owns and other families render: the shared",
     "`.openui-border-box` base, the `.openui-skeleton-pulse` animation and the `openui-chart-*` chart",

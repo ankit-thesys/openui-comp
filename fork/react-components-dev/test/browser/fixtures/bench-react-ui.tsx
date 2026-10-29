@@ -1,6 +1,6 @@
 // The bench app against the workspace's built @openuidev/react-ui, the package being replaced.
-// Imported by path: react-ui is not a dependency of this package.
-import * as m from "../../../../react-ui/dist/index.mjs";
+// build-fixtures.ts aliases "react-ui-under-test" to its built entry: react-ui is not a dependency.
+import * as m from "react-ui-under-test";
 import { hydrateBench } from "./bench-hydrate";
 
 hydrateBench(m);

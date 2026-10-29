@@ -2,7 +2,7 @@
 // by build-fixtures.ts, because Playwright compiles JSX in spec files for component testing.
 import * as reactComponents from "openui-under-test";
 import { renderToString } from "react-dom/server";
-import * as reactUi from "../../../../react-ui/dist/index.mjs";
+import * as reactUi from "react-ui-under-test";
 import { makeApp, type Mode } from "./bench-app";
 
 export type Package = "react-components" | "react-ui";
