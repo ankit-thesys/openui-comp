@@ -430,7 +430,7 @@ in its slots is a public prop on the primitive, which emits a modifier class:
 | --- | --- | --- | --- |
 | Tag | `surface="image"` | `.openui-tag--surface-image` | Translucent dark fill, white text and a backdrop blur, in place of the variant's colours |
 | TextBlock (TextBlockView), IconText, ImageText | `overflow="truncate"` | `.openui-{text-block,icon-text,image-text}--overflow-truncate` | One line per text, ending in an ellipsis; the block can shrink in a flex row |
-| TextBlock (TextBlockView), IconText, ImageText | `overflow="wrap"` | `.openui-{text-block,icon-text,image-text}--overflow-wrap` | The default wrapping look, passed to opt out of a slot's truncation; no rule of its own |
+| TextBlock (TextBlockView), IconText, ImageText | `overflow="wrap"` | `.openui-{text-block,icon-text,image-text}--overflow-wrap` | The default wrapping look, always emitted unless the text truncates; pass it to opt out of a slot's truncation; no rule of its own |
 | TextBlock (TextBlockView), IconText, ImageText | `width="fill"` | `.openui-{text-block,icon-text,image-text}--width-fill` | As wide as its container |
 | InlineMarkdownRenderer | `typography="inherit"` | `.openui-inline-markdown-renderer--typography-inherit` | Passes `typography="inherit"` to its markdown renderer |
 | MarkDownRenderer | `typography="inherit"` | `.openui-markdown-renderer--typography-inherit`, and `.openui-markdown-renderer-code--typography-inherit` on inline code | Bold and italic text take the surrounding typography at medium weight; inline code is set at the small code size |

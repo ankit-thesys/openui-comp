@@ -48,7 +48,7 @@ export const ImageText = forwardRef<HTMLDivElement, ImageTextProps>(
   ) => {
     // A card slot supplies the fit the caller leaves out.
     const slot = useContext(TextFitContext);
-    const overflow = ownOverflow ?? slot.overflow;
+    const overflow = ownOverflow ?? slot.overflow ?? "wrap";
     const width = ownWidth ?? slot.width;
     const styles = useStyles(imageTextStyles);
     const altText = alt ?? title;

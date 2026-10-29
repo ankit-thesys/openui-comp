@@ -64,7 +64,9 @@ describe("SnippetCardBlock slots", () => {
 
   it("leave text outside a card on the primitives' own defaults", () => {
     const classes = [...stableClassesIn(renderToString(text()))];
-    expect(classes.filter((name) => /--(overflow|width)-/.test(name))).toEqual([]);
+    expect(classes.filter((name) => /--(overflow|width)-/.test(name))).toEqual([
+      "openui-text-block--overflow-wrap",
+    ]);
     expect(classes).toContain("openui-text-block--align-left");
   });
 });
