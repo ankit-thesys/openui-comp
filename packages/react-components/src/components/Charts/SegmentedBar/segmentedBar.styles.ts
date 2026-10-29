@@ -48,7 +48,6 @@ export const segmentedBarStyles = (css: StyleCss) => {
       width: 100%;
       box-sizing: border-box;
       height: 20px;
-      font-family: inherit;
       background-color: var(--openui-background, oklch(0.97 0 89.876 / 1));
       border-radius: var(--openui-radius-s, 6px);
       overflow: hidden;

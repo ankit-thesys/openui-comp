@@ -23,25 +23,16 @@ export async function openMigrated(
   layer = "",
 ) {
   const path = `/migrated-${component.folder}.html`;
-  // SegmentedBar deliberately inherits the page's font. Give the chart bench explicit page
-  // typography so Preflight's html font/line-height reset does not change that input. Use body
-  // so portalled chart parts inherit the same typography as the elements inside #root. Load
-  // the page rule after head CSS: Tailwind 3 also declares body { line-height: inherit }.
-  const typography = component.folder === "Charts" ? "font: 16px/normal serif;" : "";
-  // These properties are page-owned in #72 and in the flat build. Hold their layout inputs
-  // constant so percentage loader offsets and auto grid tracks compare library styling,
-  // rather than Tailwind's box-sizing reset or its removal of the inline-image baseline gap.
+  // ImageGallery's images are page-owned in #72 and in the flat build. Hold that layout input
+  // constant so auto grid tracks compare library styling rather than Tailwind's removal of the
+  // inline-image baseline gap.
   const mediaPageDefaults =
-    component.folder === "ImageBlock"
-      ? "*, ::before, ::after { box-sizing: border-box; }"
-      : component.folder === "ImageGallery"
-        ? "img { display: block; vertical-align: middle; }"
-        : "";
+    component.folder === "ImageGallery" ? "img { display: block; vertical-align: middle; }" : "";
   const body =
     // Normalize page-owned typography, margins and native button currentColor.
     // Body typography follows Tailwind so its inherited line-height cannot reset this input;
     // zero-specificity button color still lets library and consumer rules win.
-    `<!doctype html><html><head><meta charset="utf-8"><style>:where(button) { color: inherit; } ${mediaPageDefaults}</style>${head}<style>body { margin: 0; ${typography} }</style>` +
+    `<!doctype html><html><head><meta charset="utf-8"><style>:where(button) { color: inherit; } ${mediaPageDefaults}</style>${head}<style>body { margin: 0; }</style>` +
     `</head><body><div id="root"></div><script type="module" src="/elements.js"></script></body></html>`;
   await page.route(`**${path}?*`, (route) => route.fulfill({ contentType: "text/html", body }));
   if (component.folder === "ImageBlock") await page.route("**/media-pending.svg", () => {});

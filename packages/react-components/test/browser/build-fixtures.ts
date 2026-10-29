@@ -223,7 +223,7 @@ export default async function buildFixtures() {
       execFileSync("node", [here("./parity/extract-baseline.mjs")], { stdio: "inherit" });
     } catch (error) {
       throw new Error(
-        "Extract the #72 parity baseline first (needs full git history): " +
+        "Extract the #72 parity baseline first (needs the flat-styles-parity-baseline tag): " +
           "node test/browser/parity/extract-baseline.mjs",
         { cause: error },
       );
