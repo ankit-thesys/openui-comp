@@ -87,10 +87,14 @@ override and Tailwind cases.
   `getComponentStyles()` sheet), and checks:
   - every selector is one generated class, optionally with one state, a sibling pair
     (`.go1 + .go1`) or a zero-weight `:where(.go1) <type selectors>` rule, and no rule is layered;
-  - components that set `prose: true` in `components.tsx` (MarkDownRenderer only) may also use
-    prose rules: `.go1` and a combinator, then at most two compounds of tags or `*`, with at most
-    one structural pseudo-class (tag-only `:has()` or `:where()` included) and one pseudo-element,
-    such as `.go1 p`, `.go1 li :last-child` or `.go1 blockquote > *:first-child::before`;
+  - MarkDownRenderer (the only entry with `prose: true` in `components.tsx`) may also use prose
+    rules: `.go1` and a combinator, then at most two compounds of tags or `*`, with at most one
+    structural pseudo-class (tag-only `:has()` or `:where()` included) and one pseudo-element,
+    such as `.go1 p`, `.go1 li :last-child` or `.go1 blockquote > *:first-child::before`. A
+    family that composes MarkDownRenderer carries those rules, so the checker credits a prose
+    rule to MarkDownRenderer when its `.go1` is one MarkDownRenderer puts on its own root
+    (`defineContract.tsx` renders it alone to find them). Any other module's class-plus-tag rule
+    fails, even one whose class it passes onto MarkDownRenderer's root;
   - the same elements rendered under `<ThemeProvider cssLayer="openui">` put every rule in
     `@layer openui` (no unlayered rule, no other or nested layer), within the same budget and
     with the same selector shapes;
@@ -131,7 +135,7 @@ selector in the case's `data-parity-parts` JSON (for parts the component renders
 in light and dark. Cases may set `data-parity-target` to hover/press an owned part and
 `data-parity-setup-click` to enter a runtime state before measuring it (CodeBlock
 freezes its copied-state reset timer in the spec). It compares them with `parity/baselines/<component>.json`, captured from the
-source at #72's head (`5e09b37c`). A case's id names its props, so a component with renamed props
+source at #72's head (`5e09b37c`, tagged `flat-styles-parity-baseline`). A case's id names its props, so a component with renamed props
 renders the same cases from both sources: `__PARITY_BASELINE__` is `true` in the baseline bundle.
 
 Pass design changes that are meant to differ to `checkParity(page, name, intentional)` as
@@ -258,7 +262,7 @@ the working examples. Keep the change inside the ticket's component scope.
    `"<Component> matches the #72 computed styles"` calling `checkParity(page, "<component>")`.
    Cover prop combinations and parts in light/dark at rest, hover and press. Use
    `__PARITY_BASELINE__` only to translate renamed props/classes for the #72 bundle.
-6. Capture the computed-style baseline from **#72 at `5e09b37c`**, using
+6. Capture the computed-style baseline from **#72 at `5e09b37c`** (the `flat-styles-parity-baseline` tag), using
    `pnpm test:parity:baseline`; commit its generated `parity/baselines/<component>.json`.
    Never hand-write JSON or recapture to hide a regression. List any intentional visual
    differences explicitly in `checkParity` and explain why. If Chromium is unavailable,
@@ -301,8 +305,8 @@ background. Components are not restyled; parity, not the screenshots, is the gat
 
 The contract list includes InlineMarkdownRenderer, Citation (including CitationItem and portal
 parts), Sources (including ListedSources and ListedSourceItem), and SourceFaviconImage.
-InlineMarkdownRenderer opts into the existing prose grammar only because it composes the pilot's
-MarkDownRenderer; its own reset is a flat class on `openui-inline-markdown-renderer-content`.
+InlineMarkdownRenderer's prose rules are its composed MarkDownRenderer's, credited to it by the
+checker; its own reset is a flat class on `openui-inline-markdown-renderer-content`.
 Citation's scrollbar track/thumb are single pseudo-elements under the same selector budget.
 
 `citations-sources.spec.ts` uses `citations-sources.tsx` to cover every owned stable class in both
@@ -342,8 +346,8 @@ benches). No baseline JSON is authored by hand.
 
 The eleven new contract families are TextBlock (public TextBlockView), TextCallout, Callout,
 TextContent, TextContentWrapper, InlineHeader, IconText, IconTag, Tag, TagBlock and Separator.
-They join the common override and Tailwind benches. The inline owners opt into the prose
-checker only for their composed MarkDownRenderer; their owned rules keep the flat budget.
+They join the common override and Tailwind benches. The checker credits the prose rules of the
+inline owners' composed MarkDownRenderer to it; their owned rules keep the flat budget.
 IconTag's lazy SVG is client-only in SSR and the browser bench waits for it explicitly.
 TagBlock still registers the shared border-box factory; the shared helper's contract collects
 only the generated rule shared by its three public roots now that TagBlock also registers layout.
