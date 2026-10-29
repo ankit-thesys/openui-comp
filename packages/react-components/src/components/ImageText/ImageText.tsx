@@ -1,15 +1,11 @@
 "use client";
 
 import clsx from "clsx";
-import { forwardRef } from "react";
-import { TextBlockView } from "../TextBlock";
-import {
-  contentClass,
-  imageClass,
-  imageContainerClass,
-  layoutClasses,
-  rootClass,
-} from "./imageText.styles";
+import { forwardRef, useContext } from "react";
+import { useStyles } from "../../styles/useStyles";
+import { TextBlockView, type TextBlockOverflow, type TextBlockWidth } from "../TextBlock";
+import { TextFitContext } from "../TextBlock/TextFit";
+import { imageTextStyles, names } from "./imageText.styles";
 
 export type ImageTextLayout = "horizontal" | "vertical";
 
@@ -22,15 +18,39 @@ export interface ImageTextProps {
   layout?: ImageTextLayout;
   /** Square image size in px. Defaults to 40 for horizontal layout. */
   imageSize?: number;
+  /**
+   * `"truncate"` keeps the title and subtitle to one line each, ending in an ellipsis, and lets the
+   * component shrink in a flex row. SnippetCardBlock sets it for its slots; pass `"wrap"` there to
+   * wrap anyway. Omitted elsewhere, the text wraps.
+   */
+  overflow?: TextBlockOverflow;
+  /** `"fill"` makes the component as wide as its container. Omit it to size to the content. */
+  width?: TextBlockWidth;
   className?: string;
 }
 
 /** A small square image beside (or above) a title with an optional subtitle. */
 export const ImageText = forwardRef<HTMLDivElement, ImageTextProps>(
   (
-    { title, subtitle, src, alt, bold = false, layout = "horizontal", imageSize, className },
+    {
+      title,
+      subtitle,
+      src,
+      alt,
+      bold = false,
+      layout = "horizontal",
+      imageSize,
+      overflow: ownOverflow,
+      width: ownWidth,
+      className,
+    },
     ref,
   ) => {
+    // A card slot supplies the fit the caller leaves out.
+    const slot = useContext(TextFitContext);
+    const overflow = ownOverflow ?? slot.overflow ?? "wrap";
+    const width = ownWidth ?? slot.width;
+    const styles = useStyles(imageTextStyles);
     const altText = alt ?? title;
     const size = imageSize ?? (layout === "horizontal" ? 40 : undefined);
 
@@ -38,27 +58,33 @@ export const ImageText = forwardRef<HTMLDivElement, ImageTextProps>(
       <div
         ref={ref}
         className={clsx(
-          rootClass,
-          layoutClasses[layout],
-          "openui-image-text",
-          `openui-image-text--${layout}`,
+          styles.root,
+          names.root,
+          styles.layout[layout],
+          names.layout[layout],
+          bold && names.bold.true,
+          overflow && [styles.overflow[overflow], names.overflow[overflow]],
+          width && [styles.width[width], names.width[width]],
           className,
         )}
       >
         <div
-          className={clsx(imageContainerClass, "openui-image-text__image-container")}
-          style={size ? { width: size, height: size } : undefined}
+          className={clsx(styles.imageContainer, names.imageContainer)}
+          style={
+            size ? ({ "--_openui-image-text-size": `${size}px` } as React.CSSProperties) : undefined
+          }
         >
-          <img className={clsx(imageClass, "openui-image-text__image")} src={src} alt={altText} />
+          <img className={clsx(styles.image, names.image)} src={src} alt={altText} />
         </div>
-        <div className={clsx(contentClass, "openui-image-text__content")}>
+        <div className={clsx(styles.content, names.content)}>
           <TextBlockView
             variant={bold ? "highlight-text-number-subtext" : "text-subtext"}
             primary={title}
             secondary={subtitle}
             type="text"
             size={layout === "horizontal" ? "xs" : "sm"}
-            align="left"
+            overflow={overflow}
+            width={width}
           />
         </div>
       </div>

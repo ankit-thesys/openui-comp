@@ -2,11 +2,21 @@
 
 import clsx from "clsx";
 import { CheckCheck, Copy } from "lucide-react";
-import { useState } from "react";
+import { useState, type ComponentProps } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus";
+import { useStyles } from "../../styles/useStyles";
 import { IconButton } from "../IconButton";
-import { wrapperClass } from "./codeBlock.styles";
+import { codeBlockCopyButtonStyles, codeBlockStyles, names } from "./codeBlock.styles";
+
+// The default frame is owned CSS so the stable class can override it. Keep code/token
+// styles in the vendor API; explicit themes and replacement classes retain that API in full.
+const defaultTokenTheme = { ...vscDarkPlus, 'pre[class*="language-"]': {} };
+
+function CopyButton({ className, ...props }: ComponentProps<"button">) {
+  const styles = useStyles(codeBlockCopyButtonStyles);
+  return <button {...props} className={clsx(styles.root, names.copyButton, className)} />;
+}
 
 export interface CodeBlockProps {
   /** Added to the wrapper, next to its own classes. */
@@ -30,7 +40,9 @@ export const CodeBlock = ({
   className,
   syntaxHighlighterClassName,
 }: CodeBlockProps) => {
+  const styles = useStyles(codeBlockStyles);
   const [copied, setCopied] = useState(false);
+  const useDefaultFrame = theme == null && syntaxHighlighterClassName == null;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(codeString);
@@ -39,22 +51,30 @@ export const CodeBlock = ({
   };
 
   return (
-    <div className={clsx(wrapperClass, "openui-code-block-wrapper", className)}>
+    <div className={clsx(styles.root, names.root, className)}>
       <IconButton
         onClick={handleCopy}
         variant="secondary"
         size={"small"}
-        className={clsx("openui-code-block-copy-button", {
-          "openui-code-block-copy-button-copied": copied,
-        })}
+        asChild
+        data-state={copied ? "copied" : "idle"}
         icon={copied ? <CheckCheck /> : <Copy />}
         aria-label={copied ? "Copied to clipboard" : "Copy code"}
-      />
+      >
+        <CopyButton />
+      </IconButton>
       <SyntaxHighlighter
-        style={theme ?? vscDarkPlus}
+        style={theme ?? (useDefaultFrame ? defaultTokenTheme : vscDarkPlus)}
         language={language}
         PreTag="div"
-        className={syntaxHighlighterClassName ?? "openui-code-block-syntax-highlighter"}
+        className={
+          syntaxHighlighterClassName ??
+          clsx(
+            useDefaultFrame && styles.defaultFrame,
+            styles.syntaxHighlighter,
+            names.syntaxHighlighter,
+          )
+        }
       >
         {codeString}
       </SyntaxHighlighter>

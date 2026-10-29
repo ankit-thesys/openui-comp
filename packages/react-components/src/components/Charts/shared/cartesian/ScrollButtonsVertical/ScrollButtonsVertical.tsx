@@ -3,9 +3,9 @@
 import clsx from "clsx";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import React from "react";
+import { useStyles } from "../../../../../styles/useStyles";
 import { IconButton } from "../../../../IconButton";
-import { CHART_CLASS_PREFIX } from "../../../utils/constants";
-import { rootClass } from "./scrollButtonsVertical.styles";
+import { names, scrollButtonsVerticalStyles } from "./scrollButtonsVertical.styles";
 
 interface ScrollButtonsVerticalProps {
   canScrollUp: boolean;
@@ -16,22 +16,16 @@ interface ScrollButtonsVerticalProps {
 
 export const ScrollButtonsVertical = React.memo(
   ({ canScrollUp, canScrollDown, onScrollUp, onScrollDown }: ScrollButtonsVerticalProps) => {
+    const styles = useStyles(scrollButtonsVerticalStyles);
     if (!canScrollUp && !canScrollDown) {
       return null;
     }
 
     return (
-      <div
-        className={clsx(rootClass, `${CHART_CLASS_PREFIX}-chart-vertical-scroll-buttons-container`)}
-      >
+      <div className={clsx(styles.root, names.root)}>
         <IconButton
-          className={clsx(
-            `${CHART_CLASS_PREFIX}-chart-vertical-scroll-button ${CHART_CLASS_PREFIX}-chart-vertical-scroll-button--up`,
-            {
-              [`${CHART_CLASS_PREFIX}-chart-vertical-scroll-button--disabled`]: !canScrollUp,
-            },
-          )}
-          icon={<ChevronUp />}
+          className={clsx(styles.button, names.button, names.up)}
+          icon={<ChevronUp className={names.icon} />}
           variant="secondary"
           onClick={onScrollUp}
           size="extra-small"
@@ -40,13 +34,8 @@ export const ScrollButtonsVertical = React.memo(
         />
 
         <IconButton
-          className={clsx(
-            `${CHART_CLASS_PREFIX}-chart-vertical-scroll-button ${CHART_CLASS_PREFIX}-chart-vertical-scroll-button--down`,
-            {
-              [`${CHART_CLASS_PREFIX}-chart-vertical-scroll-button--disabled`]: !canScrollDown,
-            },
-          )}
-          icon={<ChevronDown />}
+          className={clsx(styles.button, names.button, names.down)}
+          icon={<ChevronDown className={names.icon} />}
           variant="secondary"
           size="extra-small"
           onClick={onScrollDown}

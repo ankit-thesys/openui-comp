@@ -20,6 +20,46 @@ describe("selector reference", () => {
     );
   });
 
+  it("documents IconText's boolean modifier as a prop", async () => {
+    const reference = renderSelectorReference(await readStableNames());
+    expect(reference).toContain("| `.openui-icon-text--bold` | Modifier | `bold={true}` |");
+  });
+
+  it("documents inherited Select sizes and boolean modifiers with their public prop names", async () => {
+    const reference = renderSelectorReference(await readStableNames());
+    expect(reference).toContain('| `.openui-select-content--size-md` | Modifier | `size="md"` |');
+    expect(reference).toContain(
+      "| `.openui-select-item--show-tick` | Modifier | `showTick={true}` |",
+    );
+  });
+
+  it("marks shared internals, which keep the name of the module family that owns them", async () => {
+    const reference = renderSelectorReference(await readStableNames());
+    expect(reference).toContain("| `.openui-border-box` | Root, shared internal | Always |");
+    expect(reference).toContain("| `.openui-skeleton-pulse` | Root, shared internal | Always |");
+    expect(reference).toContain(
+      "| `.openui-chart-tooltip-portal` | Part (`portal`), shared internal |",
+    );
+    expect(reference).toContain("| `.openui-chart-empty` | Part (`empty`), shared internal |");
+    expect(reference).toContain(
+      "| `.openui-chart-with-stacked-legend` | Part (`layout`), shared internal |",
+    );
+    expect(reference).toContain("| `.openui-stacked-legend` | Root | Always |");
+  });
+
+  it("never repeats a segment in a stable class", async () => {
+    const stutters = (await readStableNames())
+      .flatMap(({ names }) => Object.values(names))
+      .flatMap((value) => (typeof value === "string" ? [value] : Object.values(value)))
+      .filter((name) =>
+        name
+          .split("--")[0]!
+          .split("-")
+          .some((segment, i, segments) => segment === segments[i + 1]),
+      );
+    expect(stutters).toEqual([]);
+  });
+
   it("matches the committed reference (run `pnpm docs:selectors` after changing names)", async () => {
     expect(committed()).toBe(renderSelectorReference(await readStableNames()));
   });

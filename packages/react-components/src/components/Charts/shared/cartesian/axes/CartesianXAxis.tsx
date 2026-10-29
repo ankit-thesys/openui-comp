@@ -14,6 +14,9 @@ interface CartesianXAxisProps {
   mode: "scroll" | "fit";
   scale: CartesianXAxisScale;
   classPrefix: string;
+  classes?: Partial<Record<"xAxis" | "group" | "hitTarget" | "tickLine", string>>;
+  tickClassName?: string;
+  angledTickClassName?: string;
   tickVariant: XAxisTickVariant;
   /**
    * Width of one category group, for point-scale charts (area/line). Band-scale
@@ -46,6 +49,9 @@ export const CartesianXAxis: React.FC<CartesianXAxisProps> = ({
   mode,
   scale,
   classPrefix,
+  classes,
+  tickClassName,
+  angledTickClassName,
   tickVariant,
   widthOfGroup,
   labelHeight,
@@ -65,6 +71,9 @@ export const CartesianXAxis: React.FC<CartesianXAxisProps> = ({
       labelInterval={labelInterval}
       maxLines={maxLines}
       classPrefix={classPrefix}
+      classes={classes}
+      tickClassName={tickClassName}
+      angledTickClassName={angledTickClassName}
     />
   ) : (
     <CondensedXAxis
@@ -77,5 +86,8 @@ export const CartesianXAxis: React.FC<CartesianXAxisProps> = ({
       chartWidth={chartWidth}
       yAxisWidth={yAxisWidth}
       classPrefix={classPrefix}
+      classes={classes}
+      tickClassName={tickClassName}
+      angledTickClassName={angledTickClassName}
     />
   );

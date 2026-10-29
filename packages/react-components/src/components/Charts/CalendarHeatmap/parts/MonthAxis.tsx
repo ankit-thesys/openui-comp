@@ -1,5 +1,8 @@
 "use client";
 
+import clsx from "clsx";
+import { useStyles } from "../../../../styles/useStyles";
+import { calendarHeatmapStyles, names } from "../calendarHeatmap.styles";
 interface MonthAxisProps {
   /** One short-month label per month, anchored to its first-of-month column. */
   labels: Array<{ col: number; label: string }>;
@@ -9,7 +12,6 @@ interface MonthAxisProps {
   xOffsets: number[];
   /** Baseline y for every month label (inside the reserved top gutter). */
   y: number;
-  classPrefix: string;
 }
 
 /**
@@ -18,15 +20,16 @@ interface MonthAxisProps {
  * the grid's left edge, so `col * pitchX` (plus its separator-gutter offset)
  * lines each label up with its column.
  */
-export function MonthAxis({ labels, pitchX, xOffsets, y, classPrefix }: MonthAxisProps) {
+export function MonthAxis({ labels, pitchX, xOffsets, y }: MonthAxisProps) {
+  const styles = useStyles(calendarHeatmapStyles);
   return (
-    <g>
+    <g className={names.group}>
       {labels.map(({ col, label }) => (
         <text
           key={col}
           x={col * pitchX + (xOffsets[col] ?? 0)}
           y={y}
-          className={`${classPrefix}-month-label`}
+          className={clsx(styles.monthLabel, names.monthLabel)}
         >
           {label}
         </text>

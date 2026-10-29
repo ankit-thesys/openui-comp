@@ -2,8 +2,9 @@
 
 import clsx from "clsx";
 import { forwardRef } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { TextBlockView } from "../TextBlock";
-import { imageClass, imageWrapClass, rootClass } from "./imageTextLarge.styles";
+import { imageTextLargeStyles, names } from "./imageTextLarge.styles";
 
 export interface ImageTextLargeProps {
   title: string;
@@ -16,18 +17,15 @@ export interface ImageTextLargeProps {
 /** A full-width banner image above a bold title with an optional subtitle. */
 export const ImageTextLarge = forwardRef<HTMLDivElement, ImageTextLargeProps>(
   ({ title, subtitle, src, alt, className }, ref) => {
+    const styles = useStyles(imageTextLargeStyles);
     const altText = alt ?? title;
 
     return (
-      <div ref={ref} className={clsx(rootClass, "openui-image-text-large", className)}>
-        <div className={clsx(imageWrapClass, "openui-image-text-large__image-wrap")}>
-          <img
-            className={clsx(imageClass, "openui-image-text-large__image")}
-            src={src}
-            alt={altText}
-          />
+      <div ref={ref} className={clsx(styles.root, names.root, className)}>
+        <div className={clsx(styles.imageWrap, names.imageWrap)}>
+          <img className={clsx(styles.image, names.image)} src={src} alt={altText} />
         </div>
-        <div className="openui-image-text-large__content">
+        <div className={names.content}>
           <TextBlockView
             variant="highlight-text"
             primary={title}

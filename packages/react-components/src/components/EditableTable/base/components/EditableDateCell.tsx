@@ -2,11 +2,12 @@
 
 import clsx from "clsx";
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useStyles } from "../../../../styles/useStyles";
 import { DatePicker } from "../../../DatePicker";
 import { useEditableCellKeyboard } from "../hooks/useEditableCellKeyboard";
 import { CellOutline } from "./CellOutline";
 import type { CellRendererProps, EditableTableMeta } from "./CellTypes";
-import { cellClass } from "./editableCell.styles";
+import { names as cellNames, editableCellStyles } from "./editableCell.styles";
 
 /** Table cells store dates as ISO strings; parse them back for the picker. */
 function toDate(value: unknown): Date | undefined {
@@ -30,6 +31,7 @@ export const EditableDateCell: React.FC<CellRendererProps> = (props) => {
     table,
   } = props;
 
+  const cellStyles = useStyles(editableCellStyles);
   const [editDate, setEditDate] = useState<Date | undefined>(toDate(value));
   const cellRef = useRef<HTMLDivElement>(null);
   const updateTableData = (table.options.meta as EditableTableMeta | undefined)?.updateData;
@@ -110,11 +112,11 @@ export const EditableDateCell: React.FC<CellRendererProps> = (props) => {
   return (
     <div
       ref={cellRef}
-      className={clsx(cellClass, "openui-editable-table-cell-base")}
+      className={clsx(cellStyles.cell, cellNames.cell)}
       onClickCapture={handleClick}
       onKeyDown={handleKeyDownWithPicker}
       tabIndex={0}
-      style={{ outline: "none" }}
+      data-state={isEditing ? "editing" : isSelected ? "selected" : "idle"}
     >
       <CellOutline isSelected={isSelected} isEditing={isEditing} />
       <DatePicker

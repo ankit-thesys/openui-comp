@@ -2,8 +2,9 @@
 
 import clsx from "clsx";
 import { forwardRef } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { InlineMarkdownRenderer } from "../InlineMarkdownRenderer";
-import { rootClass } from "./entityList.styles";
+import { entityListStyles, names } from "./entityList.styles";
 
 export interface EntityListRow {
   left: string;
@@ -26,22 +27,19 @@ export interface EntityListProps {
 type RowType = "header" | "body" | "footer";
 
 function EntityListRowView({ row, rowType }: { row: EntityListRow; rowType: RowType }) {
+  const styles = useStyles(entityListStyles);
   const rightVariant = row.rightVariant ?? "text";
   return (
-    <div className={clsx("openui-entity-list__row", `openui-entity-list__row--${rowType}`)}>
-      <span
-        className={clsx(
-          "openui-entity-list__cell-left",
-          `openui-entity-list__cell-left--${rowType}`,
-        )}
-      >
+    <div className={clsx(styles.row, names.row, styles.rowType[rowType], names.rowType[rowType])}>
+      <span className={clsx(styles.cellLeft, names.cellLeft)}>
         <InlineMarkdownRenderer content={row.left} />
       </span>
       <span
         className={clsx(
-          "openui-entity-list__cell-right",
-          `openui-entity-list__cell-right--${rightVariant}`,
-          `openui-entity-list__cell-right--${rowType}`,
+          styles.cellRight,
+          names.cellRight,
+          styles.rightVariant[rightVariant],
+          names.rightVariant[rightVariant],
         )}
       >
         <InlineMarkdownRenderer content={row.right} />
@@ -53,12 +51,13 @@ function EntityListRowView({ row, rowType }: { row: EntityListRow; rowType: RowT
 /** A two-column key/value list with optional header and footer rows. */
 export const EntityList = forwardRef<HTMLDivElement, EntityListProps>(
   ({ rows = [], size = "default", header, footer, className }, ref) => {
+    const styles = useStyles(entityListStyles);
     const showHeaderFooter = size === "default";
 
     return (
       <div
         ref={ref}
-        className={clsx(rootClass, "openui-entity-list", `openui-entity-list--${size}`, className)}
+        className={clsx(styles.root, names.root, styles.size[size], names.size[size], className)}
       >
         {showHeaderFooter && header && <EntityListRowView row={header} rowType="header" />}
         {rows.map((row, index) => (

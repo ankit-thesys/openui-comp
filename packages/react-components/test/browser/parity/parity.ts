@@ -45,19 +45,37 @@ const PROPERTIES = [
 
 /** Captures blocks and parts of one case element, after any running transition has finished. */
 const measure = (root: Element, properties: string[]) => {
+  // A fixture may add domain-specific properties (for example SVG strokes and animation timing).
+  properties = [
+    ...properties,
+    ...(JSON.parse(root.getAttribute("data-parity-properties") ?? "[]") as string[]),
+  ];
   const out: Record<string, string> = {};
   const record = (el: Element, prefix: string) => {
-    el.getAnimations().forEach((animation) => animation.finish());
     const style = getComputedStyle(el);
-    for (const property of properties)
-      out[`${prefix}${property}`] = style.getPropertyValue(property);
+    for (const property of properties) {
+      // Local SVG paint URLs identify the same gradient in current/baseline pages despite their
+      // different fixture filenames. Compare the fragment, retaining external paint-server URLs.
+      const value = style.getPropertyValue(property);
+      out[`${prefix}${property}`] = value.replace(
+        /url\(["']?([^"'()]*)["']?\)/g,
+        (match, url: string) => {
+          const resolved = new URL(url, location.href);
+          return resolved.origin === location.origin &&
+            resolved.pathname === location.pathname &&
+            resolved.hash
+            ? `url("${resolved.hash}")`
+            : match;
+        },
+      );
+    }
     const box = el.getBoundingClientRect();
     out[`${prefix}width`] = box.width.toFixed(2);
     out[`${prefix}height`] = box.height.toFixed(2);
   };
-  record(root, "");
+  const parts: Array<[Element, string]> = [[root, ""]];
   root.querySelectorAll("[data-parity-part]").forEach((part) => {
-    record(part, `${part.getAttribute("data-parity-part")}.`);
+    parts.push([part, `${part.getAttribute("data-parity-part")}.`]);
   });
   // Parts the component renders itself, named by selector in the case's `data-parity-parts`
   // JSON ({ "<part name>": "<selector within the case>" }); a part that is absent is skipped.
@@ -66,15 +84,67 @@ const measure = (root: Element, properties: string[]) => {
     string
   >;
   for (const [name, selector] of Object.entries(named)) {
-    const part = root.querySelector(selector);
-    if (part) record(part, `${name}.`);
+    // Portal siblings (Modal's overlay, for example) live outside the case's content root.
+    const part = selector.startsWith("document:")
+      ? document.querySelector(selector.slice("document:".length))
+      : root.querySelector(selector);
+    if (part) parts.push([part, `${name}.`]);
   }
+  // Portals live outside the case root. A fixture may explicitly name their public DOM parts.
+  const globalParts = JSON.parse(root.getAttribute("data-parity-global-parts") ?? "{}") as Record<
+    string,
+    string
+  >;
+  for (const [name, selector] of Object.entries(globalParts)) {
+    const part = document.querySelector(selector);
+    if (part) parts.push([part, `${name}.`]);
+  }
+  // SVG group bounds include transformed descendants. Settle every observed subtree before
+  // reading any geometry, including animated children that are not themselves named parts.
+  // Global parts (portals) need the same treatment even though they live outside the case.
+  const animations = new Set(parts.flatMap(([part]) => part.getAnimations({ subtree: true })));
+  animations.forEach((animation) => {
+    // Infinite skeleton pulses cannot finish (the Web Animations API throws). Compare the
+    // same first frame in #72 and the current build; the pulse spec checks progression.
+    if (animation.effect?.getTiming().iterations === Infinity) {
+      animation.pause();
+      animation.currentTime = 0;
+    } else animation.finish();
+  });
+  for (const [part, prefix] of parts) record(part, prefix);
   return out;
 };
 
 /** Snapshots every case of `fixture` in `mode`, at rest and under hover and press. */
-export async function snapshot(page: Page, fixture: string, mode: Mode): Promise<Snapshot> {
-  await page.goto(`/${fixture}.html?mode=${mode}`);
+export interface ParityOptions {
+  /** Each scenario gets a fresh page, so modal portals cannot interfere with other cases. */
+  scenarios?: readonly string[];
+  prepare?: (page: Page, scenario: string) => Promise<void>;
+  /** Runs before every observation, including interaction-only chart portal parts. */
+  prepareCase?: (page: Page, id: string) => Promise<void>;
+}
+
+export async function snapshot(
+  page: Page,
+  fixture: string,
+  mode: Mode,
+  scenarioOrPrepareCase: string | ParityOptions["prepareCase"] = "",
+  prepareOrExtraProperties?: ParityOptions["prepare"] | readonly string[],
+  prepareCase?: ParityOptions["prepareCase"],
+  extraProperties: readonly string[] = [],
+): Promise<Snapshot> {
+  const scenario = typeof scenarioOrPrepareCase === "string" ? scenarioOrPrepareCase : "";
+  const prepareObservation =
+    typeof scenarioOrPrepareCase === "function" ? scenarioOrPrepareCase : prepareCase;
+  await page.goto(`/${fixture}.html?${new URLSearchParams({ mode, scenario })}`, {
+    waitUntil: fixture.startsWith("parity-image-block") ? "domcontentloaded" : "load",
+  });
+  const prepare =
+    typeof prepareOrExtraProperties === "function" ? prepareOrExtraProperties : undefined;
+  const properties = Array.isArray(prepareOrExtraProperties)
+    ? prepareOrExtraProperties
+    : extraProperties;
+  await prepare?.(page, scenario);
   const cases = page.locator("[data-parity-case]");
   await expect(cases.first()).toBeVisible();
   const ids = await cases.evaluateAll((els) =>
@@ -83,13 +153,24 @@ export async function snapshot(page: Page, fixture: string, mode: Mode): Promise
   const result: Snapshot = {};
   for (const id of ids) {
     const el = page.locator(`[data-parity-case="${id}"]`);
-    const take = (state: State) =>
-      el.evaluate(measure, PROPERTIES).then((values) => {
-        result[`${mode} ${id} ${state}`] = values;
-      });
+    // A case may exercise an owned part instead of the outer block, and optionally
+    // enter a runtime state first (CodeBlock's copy button). Specs freeze its reset timer.
+    const setupClick = await el.getAttribute("data-parity-setup-click");
+    if (setupClick) await el.locator(setupClick).click();
+    const targetSelector =
+      (await el.getAttribute("data-parity-hover-target")) ??
+      (await el.getAttribute("data-parity-target"));
+    const target = targetSelector ? el.locator(targetSelector).first() : el;
+    const take = async (state: State) => {
+      await prepareObservation?.(page, id);
+      result[`${mode} ${scenario ? `${scenario} ` : ""}${id} ${state}`] = await el.evaluate(
+        measure,
+        [...PROPERTIES, ...properties],
+      );
+    };
     await page.mouse.move(0, 0);
     await take("rest");
-    await el.hover();
+    await target.hover();
     await take("hover");
     await page.mouse.down();
     await take("active");
@@ -110,13 +191,32 @@ export async function checkParity(
   page: Page,
   name: string,
   intentional: readonly string[] = [],
+  optionsOrPrepareCase: ParityOptions | ParityOptions["prepareCase"] = {},
+  extraProperties: readonly string[] = [],
 ): Promise<void> {
+  const options: ParityOptions =
+    typeof optionsOrPrepareCase === "function"
+      ? { prepareCase: optionsOrPrepareCase }
+      : optionsOrPrepareCase;
   const capture = !!process.env["OPENUI_PARITY_CAPTURE"];
   const fixture = `parity-${name}${capture ? "-baseline" : ""}`;
-  const current: Snapshot = {
-    ...(await snapshot(page, fixture, "light")),
-    ...(await snapshot(page, fixture, "dark")),
-  };
+  const current: Snapshot = {};
+  for (const mode of ["light", "dark"] as const) {
+    for (const scenario of options.scenarios ?? [""]) {
+      Object.assign(
+        current,
+        await snapshot(
+          page,
+          fixture,
+          mode,
+          scenario,
+          options.prepare,
+          options.prepareCase,
+          extraProperties,
+        ),
+      );
+    }
+  }
   if (capture) {
     mkdirSync(fileURLToPath(new URL("./baselines/", import.meta.url)), { recursive: true });
     // One snapshot per line keeps recapture diffs readable per case.

@@ -2,6 +2,7 @@
 
 import type { ScaleLinear, ScalePoint } from "d3-scale";
 import React, { useCallback, useId, useRef } from "react";
+import { partVariables } from "../../utils/partVariable";
 import { FadeFollower, springPresets, useSeededAim, useSpring } from "../core/spring";
 
 // Crosshair line + dots share springPresets.crosshair so they move as one;
@@ -18,6 +19,20 @@ interface LineDotCrosshairProps {
   chartHeight: number;
   getYValue: (row: Record<string, string | number>, key: string, seriesIndex: number) => number;
   classPrefix: string;
+  classes?: Partial<
+    Record<
+      | "crosshairLine"
+      | "activeDotOuter"
+      | "activeDotInner"
+      | "group"
+      | "defs"
+      | "clip"
+      | "clipRect"
+      | "highlight"
+      | "crosshair",
+      string
+    >
+  >;
   /** Render the vertical crosshair line. Default true. */
   crosshair?: boolean;
   /** Render the traveling highlight segment. Default true. */
@@ -45,6 +60,7 @@ export const LineDotCrosshair: React.FC<LineDotCrosshairProps> = ({
   chartHeight,
   getYValue,
   classPrefix,
+  classes,
   crosshair = true,
   highlight = true,
   activeDots = true,
@@ -71,7 +87,7 @@ export const LineDotCrosshair: React.FC<LineDotCrosshairProps> = ({
   const x = row ? (xScale(String(row[categoryKey])) ?? 0) : 0;
 
   return (
-    <g ref={groupRef} className={`${classPrefix}-crosshair`}>
+    <g ref={groupRef} className={classes?.crosshair ?? `${classPrefix}-crosshair`}>
       {/* Rendered first → sits under the crosshair line + dots. */}
       {highlight && (
         <HighlightLayer
@@ -83,12 +99,19 @@ export const LineDotCrosshair: React.FC<LineDotCrosshairProps> = ({
           dataKeys={dataKeys}
           colors={colors}
           chartHeight={chartHeight}
+          classes={classes}
           getPath={getLinePath}
         />
       )}
       {crosshair && (
-        <FadeFollower x={x} visible={visible}>
-          <line className={`${classPrefix}-crosshair-line`} x1={0} x2={0} y1={0} y2={chartHeight} />
+        <FadeFollower className={classes?.group} x={x} visible={visible}>
+          <line
+            className={classes?.crosshairLine ?? `${classPrefix}-crosshair-line`}
+            x1={0}
+            x2={0}
+            y1={0}
+            y2={chartHeight}
+          />
         </FadeFollower>
       )}
       {activeDots &&
@@ -100,6 +123,7 @@ export const LineDotCrosshair: React.FC<LineDotCrosshairProps> = ({
             visible={visible}
             color={colors[key] ?? "#000"}
             classPrefix={classPrefix}
+            classes={classes}
             getPath={() => getLinePath(seriesIndex)}
           />
         ))}
@@ -143,6 +167,7 @@ function ActiveDot({
   visible,
   color,
   classPrefix,
+  classes,
   getPath,
 }: {
   targetX: number;
@@ -150,6 +175,20 @@ function ActiveDot({
   visible: boolean;
   color: string;
   classPrefix: string;
+  classes?: Partial<
+    Record<
+      | "crosshairLine"
+      | "activeDotOuter"
+      | "activeDotInner"
+      | "group"
+      | "defs"
+      | "clip"
+      | "clipRect"
+      | "highlight"
+      | "crosshair",
+      string
+    >
+  >;
   getPath: () => SVGPathElement | null;
 }) {
   const gRef = useRef<SVGGElement>(null);
@@ -184,9 +223,27 @@ function ActiveDot({
   });
 
   return (
-    <g ref={gRef} style={{ opacity: visible ? 1 : 0, transition: "opacity 0.12s ease" }}>
-      <circle cx={0} cy={0} r={4} className={`${classPrefix}-active-dot-outer`} />
-      <circle cx={0} cy={0} r={2} fill={color} className={`${classPrefix}-active-dot-inner`} />
+    <g
+      className={classes?.group}
+      ref={gRef}
+      style={partVariables(classes?.group, {
+        opacity: visible ? 1 : 0,
+        transition: "opacity 0.12s ease",
+      })}
+    >
+      <circle
+        cx={0}
+        cy={0}
+        r={4}
+        className={classes?.activeDotOuter ?? `${classPrefix}-active-dot-outer`}
+      />
+      <circle
+        cx={0}
+        cy={0}
+        r={2}
+        fill={color}
+        className={classes?.activeDotInner ?? `${classPrefix}-active-dot-inner`}
+      />
     </g>
   );
 }
@@ -207,7 +264,9 @@ function HighlightLayer({
   colors,
   chartHeight,
   getPath,
+  classes,
 }: {
+  classes?: Partial<Record<"group" | "defs" | "clip" | "clipRect" | "highlight", string>>;
   hoveredIndex: number | null;
   visible: boolean;
   data: Array<Record<string, string | number>>;
@@ -252,15 +311,23 @@ function HighlightLayer({
   });
 
   return (
-    <g aria-hidden="true" style={{ opacity: visible ? 1 : 0, transition: "opacity 0.15s ease" }}>
-      <defs>
-        <clipPath id={clipId}>
+    <g
+      className={classes?.group}
+      aria-hidden="true"
+      style={partVariables(classes?.group, {
+        opacity: visible ? 1 : 0,
+        transition: "opacity 0.15s ease",
+      })}
+    >
+      <defs className={classes?.defs}>
+        <clipPath className={classes?.clip} id={clipId}>
           {/* x + width set imperatively by the springs; width 0 until active. */}
-          <rect ref={rectRef} y={0} height={chartHeight} />
+          <rect className={classes?.clipRect} ref={rectRef} y={0} height={chartHeight} />
         </clipPath>
       </defs>
       {dataKeys.map((key, i) => (
         <path
+          className={classes?.highlight}
           key={key}
           // d set imperatively from the real line; no React `d` prop to fight it.
           ref={(el) => {

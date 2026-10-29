@@ -1,6 +1,7 @@
 // Bundles each fixture app against the built package, the way a consumer's bundler would.
 // Runs once as Playwright's global setup; `serve.mjs` serves the output.
-import { existsSync, rmSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import { existsSync, rmSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { build } from "tsdown";
 
@@ -10,9 +11,42 @@ const baselineEntry = here("./.baseline/src/index.ts");
 const reactUi = here("../../../react-ui/dist/index.mjs");
 
 // Fixtures import the package under test as "openui-under-test". Parity fixtures also get a
-// "-baseline" bundle against the #72 source once `parity/extract-baseline.mjs` has run.
+// "-baseline" bundle against the #72 source, which `parity/extract-baseline.mjs` extracts.
 const fixtures = [
+  "card-blocks",
+  "parity-card-block-layout",
+  "parity-composite-card-block",
+  "parity-context-card-block",
+  "parity-visual-card-block",
+  "parity-overview-card-block",
+  "parity-snippet-card-block",
+  "parity-option-cards",
+  "parity-image-gallery-mobile",
+  "parity-image-gallery-modal-mobile",
+  "parity-carousel-mobile",
+  "media",
+  "parity-image",
+  "parity-image-block",
+  "parity-image-text",
+  "parity-image-text-large",
+  "parity-image-gallery",
+  "parity-image-gallery-modal",
+  "parity-carousel",
+
+  "text-blocks",
+  "parity-text-block",
+  "parity-text-callout",
+  "parity-callout",
+  "parity-text-content",
+  "parity-text-content-wrapper",
+  "parity-inline-header",
+  "parity-icon-text",
+  "parity-icon-tag",
+  "parity-tag",
+  "parity-tag-block",
+  "parity-separator",
   "smoke",
+  "import-registration",
   "button",
   "layers",
   "elements",
@@ -24,6 +58,78 @@ const fixtures = [
   "parity-markdown",
   "tabs",
   "parity-tabs",
+  "lists-tables",
+  "parity-list-item",
+  "parity-list-block",
+  "parity-entity-list",
+  "parity-metric-indicator",
+  "parity-table",
+  "parity-scrollable-table",
+  "parity-editable-table",
+  "parity-editable-table-selected",
+  "parity-editable-table-editing",
+  "parity-editable-table-select",
+  "citations-sources",
+  "parity-inline-markdown",
+  "parity-citation",
+  "parity-citation-tooltip",
+  "parity-sources",
+  "parity-source-favicon-image",
+  "shared-base",
+  "parity-shared-base",
+  "parity-skeleton-pulse",
+  "parity-card",
+  "parity-card-header",
+  "parity-steps",
+  "parity-accordion",
+  "parity-section-block",
+  "parity-modal-sm",
+  "parity-modal-md",
+  "parity-modal-lg",
+  "parity-tooltip-wrapper",
+  "disclosure",
+  "form-controls",
+  "parity-input",
+  "parity-text-area",
+  "parity-label",
+  "parity-hint",
+  "parity-form-control",
+  "parity-buttons",
+  "choice-controls",
+  "parity-check-box",
+  "parity-radio",
+  "parity-switch",
+  "parity-toggle",
+  "parity-chips",
+  "select-calendar",
+  "slider",
+  "parity-slider",
+  "parity-slider-block",
+  "parity-select",
+  "parity-calendar",
+  "parity-date-picker",
+  "loading-code",
+  "parity-skeleton",
+  "parity-dot-matrix-loader",
+  "parity-code-block",
+  "cartesian-charts",
+  "parity-area-chart",
+  "parity-bar-chart",
+  "parity-horizontal-bar-chart",
+  "parity-line-chart",
+  "parity-scatter-chart",
+  "other-charts",
+  "parity-pie-chart",
+  "parity-radar-chart",
+  "parity-radial-chart",
+  "parity-funnel-chart",
+  "parity-heatmap-chart",
+  "parity-calendar-heatmap",
+  "parity-segmented-bar",
+  "chart-foundations",
+  "parity-chart-foundations",
+  "parity-mini-charts",
+  "parity-chart-tooltip",
 ];
 const parityFixtures = fixtures.filter((name) => name.startsWith("parity-"));
 
@@ -101,7 +207,27 @@ export default async function buildFixtures() {
     false,
     "node",
   );
-  if (existsSync(baselineEntry)) {
-    await bundle(entries(parityFixtures, "-baseline"), baselineEntry, true);
+  // Render the four SSR documents during setup. Importing these large generated server
+  // bundles inside a test makes Playwright transform them in each cold worker, consuming
+  // the hydration/interaction timeout before a page can even open.
+  const { serverPage } = (await import(
+    new URL("./.fixtures/server/bench-server.mjs", import.meta.url).href
+  )) as typeof import("./fixtures/bench-server");
+  for (const pkg of ["react-components", "react-ui"] as const)
+    for (const mode of ["light", "dark"] as const)
+      writeFileSync(here(`./.fixtures/server/bench-${pkg}-${mode}.html`), serverPage(pkg, mode));
+  // Specs such as card-blocks.parity-details compare live against the "-baseline" pages, so
+  // extract the #72 source when a fresh checkout has none.
+  if (!existsSync(baselineEntry)) {
+    try {
+      execFileSync("node", [here("./parity/extract-baseline.mjs")], { stdio: "inherit" });
+    } catch (error) {
+      throw new Error(
+        "Extract the #72 parity baseline first (needs the flat-styles-parity-baseline tag): " +
+          "node test/browser/parity/extract-baseline.mjs",
+        { cause: error },
+      );
+    }
   }
+  await bundle(entries(parityFixtures, "-baseline"), baselineEntry, true);
 }

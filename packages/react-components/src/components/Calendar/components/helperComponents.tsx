@@ -1,38 +1,55 @@
 "use client";
 
-import * as SelectPrimitive from "@radix-ui/react-select";
 import clsx from "clsx";
 import debounce from "lodash-es/debounce.js";
-import { DetailedHTMLProps, forwardRef, SelectHTMLAttributes, useEffect, useState } from "react";
+import { DetailedHTMLProps, SelectHTMLAttributes, useEffect, useState } from "react";
 import { ClassNames, CustomComponents, DropdownOption } from "react-day-picker";
-import { Select, SelectItem, SelectTrigger, SelectValue } from "../../Select";
-import { contentClass, viewportClass } from "../../Select/select.styles";
+import { useStyles } from "../../../styles/useStyles";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  type SelectContentProps,
+  type SelectItemProps,
+  type SelectTriggerProps,
+} from "../../Select";
+import { calendarDropdownStyles, names } from "../calendar.styles";
 import { getMonthName, getMonthNumber } from "../utils/helperFn";
 
-// this component is overriding the default SelectContent component to allow for a container prop we do not wish to give to the user
-const SelectContent = forwardRef<
-  React.ComponentRef<typeof SelectPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content> & {
-    container?: HTMLDivElement | null;
-    viewportClassName?: string;
-  }
->(({ className, children, position = "popper", viewportClassName, container, ...props }, ref) => (
-  <SelectPrimitive.Portal container={container || document.body}>
-    <SelectPrimitive.Content
-      ref={ref}
-      className={clsx(contentClass, "openui-select-content", className)}
-      position={position}
+const CalendarSelectTrigger = ({ className, ...props }: SelectTriggerProps) => {
+  const styles = useStyles(calendarDropdownStyles);
+  return (
+    <SelectTrigger
       {...props}
-    >
-      <SelectPrimitive.Viewport
-        className={clsx(viewportClass, "openui-select-viewport", viewportClassName)}
-        data-position={position}
-      >
-        {children}
-      </SelectPrimitive.Viewport>
-    </SelectPrimitive.Content>
-  </SelectPrimitive.Portal>
-));
+      className={clsx(styles.selectTrigger, names.selectTrigger, className)}
+    />
+  );
+};
+const CalendarSelectContent = ({
+  kind,
+  ...props
+}: SelectContentProps & { kind: "months" | "years" }) => {
+  const styles = useStyles(calendarDropdownStyles);
+  return (
+    <SelectContent
+      {...props}
+      className={clsx(
+        kind === "months"
+          ? [styles.selectContentMonths, names.selectContentMonths]
+          : [styles.selectContentYears, names.selectContentYears],
+      )}
+      viewportClassName={
+        kind === "years" ? clsx(styles.selectViewport, names.selectViewport) : undefined
+      }
+    />
+  );
+};
+const CalendarSelectItem = (props: SelectItemProps) => {
+  const styles = useStyles(calendarDropdownStyles);
+  return <SelectItem {...props} className={clsx(styles.selectItem, names.selectItem)} />;
+};
 
 export const MonthsDropdown = (
   props: {
@@ -93,12 +110,12 @@ export const MonthsDropdown = (
       key={key}
       aria-label={ariaLabel}
     >
-      <SelectTrigger className={clsx("openui-calendar-select-trigger", className)}>
+      <CalendarSelectTrigger className={className} aria-label={ariaLabel}>
         <SelectValue placeholder={"Select a month"} />
-      </SelectTrigger>
-      <SelectContent
+      </CalendarSelectTrigger>
+      <CalendarSelectContent
         container={container}
-        className="openui-calendar-select-content-months"
+        kind="months"
         sideOffset={4}
         alignOffset={0}
         style={{
@@ -115,7 +132,7 @@ export const MonthsDropdown = (
             {option.label}
           </SelectItem>
         ))}
-      </SelectContent>
+      </CalendarSelectContent>
     </Select>
   );
 };
@@ -130,7 +147,6 @@ export const YearsDropdown = (
     "children"
   > & {
       container?: HTMLDivElement | null;
-      botType: "mobile" | "fullscreen" | "tray" | "copilot";
     },
 ) => {
   const {
@@ -142,7 +158,6 @@ export const YearsDropdown = (
     key,
     "aria-label": ariaLabel,
     container,
-    botType,
   } = props;
 
   const [containerHeight, setContainerHeight] = useState(0);
@@ -179,16 +194,13 @@ export const YearsDropdown = (
       key={key}
       aria-label={ariaLabel}
     >
-      <SelectTrigger className={clsx("openui-calendar-select-trigger", className)}>
+      <CalendarSelectTrigger className={className} aria-label={ariaLabel}>
         <SelectValue placeholder={"Select a month"} />
-      </SelectTrigger>
-      <SelectContent
+      </CalendarSelectTrigger>
+      <CalendarSelectContent
         container={container}
-        className="openui-calendar-select-content-years"
-        viewportClassName={clsx(
-          "openui-calendar-select-viewport",
-          botType === "mobile" && "openui-calendar-select-viewport-mobile",
-        )}
+        kind="years"
+
         sideOffset={4}
         alignOffset={-75}
         style={{
@@ -197,17 +209,16 @@ export const YearsDropdown = (
         }}
       >
         {options?.map((option) => (
-          <SelectItem
+          <CalendarSelectItem
             key={option.value}
             value={String(option.value)}
             disabled={option.disabled}
             showTick={false}
-            className="openui-calendar-select-item"
           >
             {option.label}
-          </SelectItem>
+          </CalendarSelectItem>
         ))}
-      </SelectContent>
+      </CalendarSelectContent>
     </Select>
   );
 };

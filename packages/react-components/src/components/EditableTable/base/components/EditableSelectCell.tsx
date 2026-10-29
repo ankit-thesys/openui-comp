@@ -1,13 +1,16 @@
 "use client";
 
+import * as SelectPrimitive from "@radix-ui/react-select";
 import clsx from "clsx";
+import { Check, ChevronDown } from "lucide-react";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../../Select";
+import { useStyles } from "../../../../styles/useStyles";
+import { useTheme } from "../../../ThemeProvider";
 import { useEditableCellKeyboard } from "../hooks/useEditableCellKeyboard";
 import { CellOutline } from "./CellOutline";
 import type { CellRendererProps, EditableColumnMeta, EditableTableMeta } from "./CellTypes";
-import { cellClass } from "./editableCell.styles";
-import { triggerClass } from "./editableSelectCell.styles";
+import { names as cellNames, editableCellStyles } from "./editableCell.styles";
+import { editableSelectCellStyles, names } from "./editableSelectCell.styles";
 
 export const EditableSelectCell: React.FC<CellRendererProps> = (props) => {
   const {
@@ -23,6 +26,9 @@ export const EditableSelectCell: React.FC<CellRendererProps> = (props) => {
     table,
   } = props;
 
+  const styles = useStyles(editableSelectCellStyles);
+  const { portalThemeClassName } = useTheme();
+  const cellStyles = useStyles(editableCellStyles);
   const [editValue, setEditValue] = useState<string>((value as string) || "");
   const cellRef = useRef<HTMLDivElement>(null);
 
@@ -110,34 +116,54 @@ export const EditableSelectCell: React.FC<CellRendererProps> = (props) => {
   return (
     <div
       ref={cellRef}
-      className={clsx(cellClass, "openui-editable-table-cell-base")}
+      className={clsx(cellStyles.cell, cellNames.cell)}
       onClick={handleClick}
       onKeyDown={handleKeyDownWithSelect}
       tabIndex={0}
-      style={{ outline: "none" }}
+      data-state={isEditing ? "editing" : isSelected ? "selected" : "idle"}
     >
       <CellOutline isSelected={isSelected} isEditing={isEditing} />
-      <Select
+      <SelectPrimitive.Root
         value={editValue}
         onValueChange={handleValueChange}
         open={isEditing}
         onOpenChange={handleOpenChange}
       >
-        <SelectTrigger className={clsx(triggerClass, "openui-editable-table-select-trigger")}>
-          <SelectValue placeholder="Select an option" />
-        </SelectTrigger>
-        <SelectContent>
-          {options.map((option) => (
-            <SelectItem
-              key={option.value}
-              value={option.value}
-              className="openui-editable-table-select-item"
-            >
-              {option.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+        <SelectPrimitive.Trigger className={clsx(styles.trigger, names.trigger)}>
+          <span className={names.value}>
+            <SelectPrimitive.Value placeholder="Select an option" />
+          </span>
+          <SelectPrimitive.Icon asChild>
+            <ChevronDown className={clsx(styles.icon, names.icon)} />
+          </SelectPrimitive.Icon>
+        </SelectPrimitive.Trigger>
+        <SelectPrimitive.Portal>
+          <SelectPrimitive.Content
+            className={clsx(styles.content, names.content, portalThemeClassName)}
+            position="popper"
+            sideOffset={2}
+          >
+            <SelectPrimitive.Viewport className={clsx(styles.viewport, names.viewport)}>
+              {options.map((option) => (
+                <SelectPrimitive.Item
+                  key={option.value}
+                  value={option.value}
+                  className={clsx(styles.item, names.item)}
+                >
+                  <span className={clsx(styles.checkWrapper, names.checkWrapper)}>
+                    <SelectPrimitive.ItemIndicator className={names.indicator}>
+                      <Check className={clsx(styles.checkIcon, names.checkIcon)} />
+                    </SelectPrimitive.ItemIndicator>
+                  </span>
+                  <span className={names.itemText}>
+                    <SelectPrimitive.ItemText>{option.label}</SelectPrimitive.ItemText>
+                  </span>
+                </SelectPrimitive.Item>
+              ))}
+            </SelectPrimitive.Viewport>
+          </SelectPrimitive.Content>
+        </SelectPrimitive.Portal>
+      </SelectPrimitive.Root>
     </div>
   );
 };

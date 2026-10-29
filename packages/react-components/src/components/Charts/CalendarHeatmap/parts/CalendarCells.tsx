@@ -1,16 +1,20 @@
 "use client";
 
+import clsx from "clsx";
+import type { CSSProperties } from "react";
 import React, { useCallback } from "react";
-
+import { useStyles } from "../../../../styles/useStyles";
 import type { CalendarLeveledCell } from "../../hooks/cartesian/useCalendarHeatmapOrchestrator";
 import { entranceProps } from "../../utils/entranceUtils";
+import { calendarHeatmapStyles, names } from "../calendarHeatmap.styles";
 import { cellStaggerDelayMs } from "./staggerSeed";
 
 const CELL_RADIUS = 2;
 
 interface CalendarCellsProps {
   cells: CalendarLeveledCell[];
-  classPrefix: string;
+  /** Legend-hovered level only: hovering a cell highlights its swatch without dimming the grid. */
+  highlightedLevel: number | null;
   pitchX: number;
   pitchY: number;
   cellW: number;
@@ -38,7 +42,7 @@ function resolveRowOpacity(row: number, rowOpacity: number | number[] | undefine
 /**
  * The cell grid: one `<rect>` per non-ghost calendar day. Fill comes from the
  * per-level `levelFills` entry — a level CSS var
- * (`--<prefix>-calendar-heatmap-level-N`) or a `url(#pattern)` when that level
+ * (`--_openui-calendar-heatmap-cell-level-N-fill`) or a `url(#pattern)` when that level
  * sets one — so a level can be restyled without re-rendering; the entrance is an
  * opacity fade with a deterministic per-cell delay. Each cell x also picks up
  * its column's separator-gutter offset. Hover highlight is pure CSS (`:hover`
@@ -48,7 +52,7 @@ function resolveRowOpacity(row: number, rowOpacity: number | number[] | undefine
  */
 export function CalendarCells({
   cells,
-  classPrefix,
+  highlightedLevel,
   pitchX,
   pitchY,
   cellW,
@@ -63,6 +67,7 @@ export function CalendarCells({
   onCellMouseLeave,
   onClick,
 }: CalendarCellsProps) {
+  const styles = useStyles(calendarHeatmapStyles);
   const handleClick = useCallback(
     (cell: CalendarLeveledCell) => {
       onClick?.(cell.date, cell.value);
@@ -71,39 +76,37 @@ export function CalendarCells({
   );
 
   return (
-    <g>
+    <g className={names.group}>
       {cells.map((cell) => {
         const { className: animatedClass, animationDelay } = entranceProps(
           animate,
-          `${classPrefix}-cell--animated`,
+          clsx(styles.cellIsAnimationActive, names.cellIsAnimationActive),
           cellStaggerDelayMs(cell.col, cell.row, animationDuration),
         );
-        const modifiers = [
-          animatedClass,
-          // Static per-level marker so the container can dim non-matching cells
-          // via CSS on level-hover (no per-cell JS style churn).
-          `${classPrefix}-cell--level-${cell.level}`,
-          cell.ghost ? `${classPrefix}-cell--ghost` : "",
-        ]
-          .filter(Boolean)
-          .join(" ");
         const opacity = resolveRowOpacity(cell.row, rowOpacity);
 
         return (
           <rect
             key={`${cell.col}-${cell.row}`}
-            className={`${classPrefix}-cell${modifiers ? ` ${modifiers}` : ""}`}
+            className={clsx(styles.cell, names.cell, animatedClass)}
+            data-level={cell.level}
+            data-ghost={cell.ghost ? "" : undefined}
+            data-dimmed={
+              highlightedLevel !== null && highlightedLevel !== cell.level ? "" : undefined
+            }
             x={cell.col * pitchX + gap / 2 + (xOffsets[cell.col] ?? 0)}
             y={cell.row * pitchY + gap / 2}
             width={cellW}
             height={cellH}
             rx={CELL_RADIUS}
             fillOpacity={opacity !== 1 ? opacity : undefined}
-            style={{
-              fill: levelFills[cell.level],
-              animationDelay,
-              cursor: onClick ? "pointer" : undefined,
-            }}
+            style={
+              {
+                "--_openui-calendar-heatmap-cell-fill": levelFills[cell.level],
+                "--_openui-calendar-heatmap-cell-animation-delay": animationDelay,
+                "--_openui-calendar-heatmap-cell-cursor": onClick ? "pointer" : undefined,
+              } as CSSProperties
+            }
             onMouseMove={(event) => onCellMouseMove(event, cell)}
             onMouseLeave={onCellMouseLeave}
             onClick={() => handleClick(cell)}

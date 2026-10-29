@@ -1,25 +1,14 @@
 "use client";
 
 import clsx from "clsx";
-import { CSSProperties, forwardRef, ReactNode } from "react";
-import { iconClass, rootClass, sizeClasses, textClass, variantClasses } from "./tag.styles";
+import { CSSProperties, forwardRef, ReactNode, useContext } from "react";
+import { useStyles } from "../../styles/useStyles";
+import { names, tagStyles } from "./tag.styles";
+import { TagSurfaceContext } from "./TagSurface";
 
 export type TagSize = "sm" | "md" | "lg";
 export type TagVariant = "neutral" | "info" | "success" | "warning" | "danger";
-
-const sizeMap: Record<TagSize, string> = {
-  sm: "openui-tag-sm",
-  md: "openui-tag-md",
-  lg: "openui-tag-lg",
-};
-
-const variantMap: Record<TagVariant, string> = {
-  neutral: "openui-tag-neutral",
-  info: "openui-tag-info",
-  success: "openui-tag-success",
-  warning: "openui-tag-warning",
-  danger: "openui-tag-danger",
-};
+export type TagSurface = "image";
 
 export interface TagProps {
   className?: string;
@@ -28,27 +17,39 @@ export interface TagProps {
   text: ReactNode;
   size?: TagSize;
   variant?: TagVariant;
+  /**
+   * `"image"` for a Tag laid over a photo: a translucent dark fill, white text and a backdrop blur
+   * in place of the variant's colours. Context and Visual cards set it for the Tags in their image
+   * slot; omit it for the variant's own look.
+   */
+  surface?: TagSurface;
 }
 
 export const Tag = forwardRef<HTMLDivElement, TagProps>((props, ref) => {
   const { className, styles, icon, text, size = "md", variant = "neutral", ...rest } = props;
+  const { surface: ownSurface, ...attributes } = rest;
+  // A card's tag slot supplies the surface when the caller leaves it out.
+  const slotSurface = useContext(TagSurfaceContext);
+  const surface = ownSurface ?? slotSurface;
+  const css = useStyles(tagStyles);
   return (
     <div
       ref={ref}
       className={clsx(
-        rootClass,
-        "openui-tag",
-        sizeClasses[size],
-        sizeMap[size],
-        variantClasses[variant],
-        variantMap[variant],
+        css.root,
+        names.root,
+        css.size[size],
+        names.size[size],
+        css.variant[variant],
+        names.variant[variant],
+        surface && [css.surface[surface], names.surface[surface]],
         className,
       )}
       style={styles}
-      {...rest}
+      {...attributes}
     >
-      {icon && <span className={clsx(iconClass, "openui-tag-icon")}>{icon}</span>}
-      <span className={clsx(textClass, "openui-tag-text")}>{text}</span>
+      {icon && <span className={clsx(css.icon, names.icon)}>{icon}</span>}
+      <span className={clsx(css.text, names.text)}>{text}</span>
     </div>
   );
 });

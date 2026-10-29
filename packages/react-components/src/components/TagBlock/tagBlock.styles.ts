@@ -1,17 +1,14 @@
-import { css } from "goober";
-export const blockClass = "openui-tag-block-root";
+import type { StyleCss } from "../../styles/useStyles";
 
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-tag-block-root {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--openui-space-s, 8px);
-      max-width: 100%;
-    }
-  }
-`;
+export const names = {
+  root: "openui-tag-block",
+} as const;
 
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
+export const tagBlockStyles = (css: StyleCss) => ({
+  root: css`
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--openui-space-s, 8px);
+    max-width: 100%;
+  `,
+});

@@ -2,16 +2,17 @@
 
 import clsx from "clsx";
 import React from "react";
-import { emptyClass } from "../chartBase.styles";
+import { useStyles } from "../../../../styles/useStyles";
+import { chartBaseStyles, names } from "../chartBase.styles";
 
 import { MeasureFontScopeContext } from "../../hooks/core/measureFontScope";
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
 import { LabelTooltipProvider } from "./LabelTooltip/LabelTooltip";
 
 interface ChartShellProps {
   containerRef: React.Ref<HTMLDivElement>;
-  /** e.g. `${CHART_CLASS_PREFIX}-pie-chart` → the persistent div gets `${classPrefix}-container`. */
-  classPrefix: string;
+  /** Legacy chart prefix for its container alias. Migrated charts pass their root via className. */
+  classPrefix?: string;
+  flat?: boolean;
   /** The consumer's passthrough `className`. */
   className?: string;
   style: React.CSSProperties;
@@ -47,39 +48,43 @@ interface ChartShellProps {
 export const ChartShell: React.FC<ChartShellProps> = ({
   containerRef,
   classPrefix,
+  flat = false,
   className,
   style,
   isEmpty,
   exportData,
   children,
-}) => (
-  <LabelTooltipProvider>
-    {/* Measurement-font scope: children measuring text (axis label sheets,
+}) => {
+  const styles = useStyles(chartBaseStyles);
+  return (
+    <LabelTooltipProvider>
+      {/* Measurement-font scope: children measuring text (axis label sheets,
         legend) resolve the tick font from THIS container's computed style —
         the render channel — rather than the JS theme context. Callback refs
         can't be dereferenced, so they get no scope (theme fallback applies);
         every in-repo chart passes a useRef object. */}
-    <MeasureFontScopeContext.Provider
-      value={typeof containerRef === "object" ? containerRef : null}
-    >
-      <div
-        ref={containerRef}
-        className={clsx(
-          `${classPrefix}-container`,
-          isEmpty && emptyClass,
-          isEmpty && `${CHART_CLASS_PREFIX}-chart-empty`,
-          className,
-        )}
-        style={style}
-        // PPTX-exporter contract attribute — not derived from the class prefix.
-        data-openui-chart={exportData}
+      <MeasureFontScopeContext.Provider
+        value={typeof containerRef === "object" ? containerRef : null}
       >
-        {isEmpty ? (
-          <span className={`${CHART_CLASS_PREFIX}-chart-empty-text`}>No data available</span>
-        ) : (
-          children()
-        )}
-      </div>
-    </MeasureFontScopeContext.Provider>
-  </LabelTooltipProvider>
-);
+        <div
+          ref={containerRef}
+          className={clsx(
+            !flat && classPrefix && `${classPrefix}-container`,
+            isEmpty && styles.empty,
+            isEmpty && names.empty,
+            className,
+          )}
+          style={style}
+          // PPTX-exporter contract attribute — not derived from the class prefix.
+          data-openui-chart={exportData}
+        >
+          {isEmpty ? (
+            <span className={clsx(styles.emptyText, names.emptyText)}>No data available</span>
+          ) : (
+            children()
+          )}
+        </div>
+      </MeasureFontScopeContext.Provider>
+    </LabelTooltipProvider>
+  );
+};

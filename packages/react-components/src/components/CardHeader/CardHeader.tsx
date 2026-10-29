@@ -1,13 +1,11 @@
 "use client";
 
 import clsx from "clsx";
-import { css } from "goober";
 import { cloneElement, CSSProperties, forwardRef, ReactElement, ReactNode } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { ButtonProps } from "../Button";
 import { IconButtonProps } from "../IconButton";
-import { cardHeaderStyles } from "./cardHeader.styles";
-
-const componentClass = "openui-card-header-root";
+import { cardHeaderStyles, names } from "./cardHeader.styles";
 
 export interface CardHeaderProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
   icon?: ReactNode;
@@ -20,40 +18,29 @@ export interface CardHeaderProps extends Omit<React.HTMLAttributes<HTMLDivElemen
 }
 
 export const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>((props, ref) => {
-  const { icon, title, subtitle, actions, className, styles, ...rest } = props;
+  const { icon, title, subtitle, actions, className, styles: inlineStyles, ...rest } = props;
+  const styles = useStyles(cardHeaderStyles);
   return (
     <div
       ref={ref}
-      className={clsx(componentClass, "openui-header", className)}
-      style={styles}
+      className={clsx(styles.root, names.root, className)}
+      style={inlineStyles}
       {...rest}
     >
-      <div className="openui-header-top">
-        <div className="openui-header-top-left">
-          {icon && <span className="openui-header-top-left-icon">{icon}</span>}
+      <div className={clsx(styles.top, names.top)}>
+        <div className={clsx(styles.topLeft, names.topLeft)}>
+          {icon && <span className={clsx(styles.topLeftIcon, names.topLeftIcon)}>{icon}</span>}
           {title}
         </div>
-        <div className="openui-header-top-right">
+        <div className={clsx(styles.topRight, names.topRight)}>
           {Array.isArray(actions)
             ? actions.map((action, index) => cloneElement(action, { key: index }))
             : actions}
         </div>
       </div>
-      {subtitle && <div className="openui-header-bottom">{subtitle}</div>}
+      {subtitle && <div className={clsx(styles.bottom, names.bottom)}>{subtitle}</div>}
     </div>
   );
 });
 
 CardHeader.displayName = "CardHeader";
-
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-card-header-root {
-      ${cardHeaderStyles}
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}

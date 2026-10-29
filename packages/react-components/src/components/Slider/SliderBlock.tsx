@@ -1,28 +1,20 @@
 "use client";
 
 import clsx from "clsx";
-import { css } from "goober";
 import debounce from "lodash-es/debounce.js";
 import { AlertCircle } from "lucide-react";
 import { ChangeEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { Input } from "../Input";
+import { inputStyles } from "../Input/input.styles";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../Select";
 import { Slider, SliderProps } from "./Slider";
-import { sliderBlockStyles } from "./sliderBlock.styles";
-
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-slider-block-root {
-      ${sliderBlockStyles}
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
-
-const componentClass = "openui-slider-block-root";
+import {
+  names,
+  sliderBlockInputStyles,
+  sliderBlockSelectStyles,
+  sliderBlockStyles,
+} from "./sliderBlock.styles";
 
 export interface SliderBlockProps extends Omit<SliderProps, "value" | "defaultValue"> {
   label: string;
@@ -42,6 +34,11 @@ const ValueInput = ({
   error: string | undefined;
   disabled?: boolean;
 }) => {
+  // Input has no compound root in which to register composed styles. Register its factory
+  // first; Input reuses that render-time registration. No private variables are shared.
+  useStyles(inputStyles);
+  const inputCss = useStyles(sliderBlockInputStyles);
+  const styles = useStyles(sliderBlockStyles);
   const [inputValue, setInputValue] = useState<string | number>(value);
   const [isFocused, setIsFocused] = useState(false);
 
@@ -52,7 +49,7 @@ const ValueInput = ({
   }, [value, isFocused]);
 
   return (
-    <div className="openui-slider-block__validated-input">
+    <div className={clsx(styles.validatedInput, names.validatedInput)}>
       <Input
         type="text"
         value={inputValue}
@@ -64,9 +61,8 @@ const ValueInput = ({
             onChange(Number(newValue));
           }
         }}
-        className={clsx("openui-slider-block__input", {
-          "openui-slider-block__input-error": error,
-        })}
+        className={clsx(inputCss.input, names.input)}
+        hasError={Boolean(error)}
         disabled={disabled}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
@@ -75,11 +71,21 @@ const ValueInput = ({
   );
 };
 
+// Select registers its defaults before rendering this part.
+const BlockSelectTrigger = () => {
+  const styles = useStyles(sliderBlockSelectStyles);
+  return (
+    <SelectTrigger className={clsx(styles.trigger, names.selectTrigger)}>
+      <SelectValue />
+    </SelectTrigger>
+  );
+};
+
 export const SliderBlock = (props: SliderBlockProps) => {
   const {
     label,
     name,
-    variant,
+    variant = "continuous",
     min = 0,
     max = 100,
     step,
@@ -89,6 +95,7 @@ export const SliderBlock = (props: SliderBlockProps) => {
     ...sliderProps
   } = props;
 
+  const styles = useStyles(sliderBlockStyles);
   const [value, setValue] = useState(defaultValue ?? [min]);
 
   const { min: minError, max: maxError } = useMemo(() => {
@@ -107,8 +114,8 @@ export const SliderBlock = (props: SliderBlockProps) => {
     return error;
   }, [value, min, max]);
 
-  const onValueCommitRef = useRef((sliderProps as any)?.onValueCommit);
-  onValueCommitRef.current = (sliderProps as any).onValueCommit;
+  const onValueCommitRef = useRef(sliderProps.onValueCommit);
+  onValueCommitRef.current = sliderProps.onValueCommit;
 
   const debouncedOnValueCommit = useMemo(
     () =>
@@ -151,8 +158,8 @@ export const SliderBlock = (props: SliderBlockProps) => {
         (_, i) => min + i * effectiveStep,
       );
       return isRange ? (
-        <div className="openui-slider-block__controls is-range">
-          <div className="openui-slider-block__validated-select-container">
+        <div className={clsx(styles.controls, names.controls)} data-range="">
+          <div className={clsx(styles.controlContainer, names.selectContainer)}>
             <Select
               value={String(value[0])}
               disabled={disabled}
@@ -160,9 +167,7 @@ export const SliderBlock = (props: SliderBlockProps) => {
                 setValueAndCommit([Number(val), value[1] ?? max].sort((a, b) => a - b))
               }
             >
-              <SelectTrigger>
-                <SelectValue />
-              </SelectTrigger>
+              <BlockSelectTrigger />
               <SelectContent>
                 {allOptions
                   .filter((o) => o < (value[1] ?? max))
@@ -173,7 +178,7 @@ export const SliderBlock = (props: SliderBlockProps) => {
                   ))}
               </SelectContent>
             </Select>
-            <div className="openui-slider-block__separator" />
+            <div className={clsx(styles.separator, names.separator)} />
             <Select
               value={String(value[1])}
               disabled={disabled}
@@ -181,9 +186,7 @@ export const SliderBlock = (props: SliderBlockProps) => {
                 setValueAndCommit([value[0] ?? min, Number(val)].sort((a, b) => a - b))
               }
             >
-              <SelectTrigger>
-                <SelectValue />
-              </SelectTrigger>
+              <BlockSelectTrigger />
               <SelectContent>
                 {allOptions
                   .filter((o) => o > (value[0] ?? min))
@@ -197,15 +200,13 @@ export const SliderBlock = (props: SliderBlockProps) => {
           </div>
         </div>
       ) : (
-        <div className="openui-slider-block__controls is-single">
+        <div className={clsx(styles.controls, names.controls)}>
           <Select
             value={String(value[0])}
             disabled={disabled}
             onValueChange={(val) => setValueAndCommit([Number(val)])}
           >
-            <SelectTrigger>
-              <SelectValue />
-            </SelectTrigger>
+            <BlockSelectTrigger />
             <SelectContent>
               {allOptions.map((o) => (
                 <SelectItem key={o} value={String(o)}>
@@ -218,15 +219,15 @@ export const SliderBlock = (props: SliderBlockProps) => {
       );
     } else {
       return isRange ? (
-        <div className="openui-slider-block__controls openui-slider-block__controls--inputs is-range">
-          <div className="openui-slider-block__validated-input-container">
+        <div className={clsx(styles.controls, names.controls)} data-range="">
+          <div className={clsx(styles.controlContainer, names.inputContainer)}>
             <ValueInput
               value={value[0] ?? min}
               onChange={(newMin) => setValueAndCommit([newMin, value[1] ?? max])}
               error={minError}
               disabled={disabled}
             />
-            <div className="openui-slider-block__separator" />
+            <div className={clsx(styles.separator, names.separator)} />
             <ValueInput
               value={value[1] ?? max}
               onChange={(newMax) => setValueAndCommit([value[0] ?? min, newMax])}
@@ -235,13 +236,13 @@ export const SliderBlock = (props: SliderBlockProps) => {
             />
           </div>
           {(minError || maxError) && (
-            <div className="openui-slider-block__error-message">
-              <AlertCircle size={14} /> {minError || maxError}
+            <div className={clsx(styles.error, names.error)}>
+              <AlertCircle size={14} className={names.errorIcon} /> {minError || maxError}
             </div>
           )}
         </div>
       ) : (
-        <div className="openui-slider-block__controls openui-slider-block__controls--inputs is-single">
+        <div className={clsx(styles.controls, names.controls)}>
           <ValueInput
             value={value[0] ?? min}
             onChange={(newVal) => setValueAndCommit([newVal])}
@@ -249,8 +250,8 @@ export const SliderBlock = (props: SliderBlockProps) => {
             disabled={disabled}
           />
           {minError && (
-            <div className="openui-slider-block__error-message">
-              <AlertCircle size={14} />
+            <div className={clsx(styles.error, names.error)}>
+              <AlertCircle size={14} className={names.errorIcon} />
               {minError}
             </div>
           )}
@@ -269,22 +270,19 @@ export const SliderBlock = (props: SliderBlockProps) => {
     maxError,
     disabled,
     setValueAndCommit,
+    styles,
   ]);
 
   const hasError =
     !isStreaming && !isDiscrete && (isRange ? Boolean(minError || maxError) : Boolean(minError));
 
   return (
-    <div className={clsx(componentClass, "openui-slider-block")}>
-      <div
-        className={clsx("openui-slider-block__header", {
-          "openui-slider-block__header--with-error": hasError,
-        })}
-      >
-        <span className="openui-slider-block__label">{label}</span>
+    <div className={clsx(styles.root, names.root, names.variant[variant])}>
+      <div className={clsx(styles.header, names.header)} data-invalid={hasError || undefined}>
+        <span className={clsx(styles.label, names.label)}>{label}</span>
         {controlElements}
       </div>
-      <div className="openui-slider-block__content">
+      <div className={clsx(styles.content, names.content)}>
         <Slider
           {...sliderProps}
           value={value}

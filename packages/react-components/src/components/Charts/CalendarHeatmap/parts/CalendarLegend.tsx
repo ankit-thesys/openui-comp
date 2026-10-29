@@ -1,6 +1,10 @@
 "use client";
 
+import clsx from "clsx";
+import type { CSSProperties } from "react";
 import { forwardRef } from "react";
+import { useStyles } from "../../../../styles/useStyles";
+import { calendarHeatmapStyles, names } from "../calendarHeatmap.styles";
 import type { CalendarLevelStyle } from "../types";
 import { calendarPatternId } from "./CalendarPatternDefs";
 
@@ -25,7 +29,6 @@ interface CalendarLegendProps {
   /** Hover a level → drives the grid dim + swatch highlight. */
   onLevelEnter: (level: number) => void;
   onLevelLeave: () => void;
-  classPrefix: string;
 }
 
 const LEVELS = [0, 1, 2, 3, 4] as const;
@@ -36,23 +39,23 @@ function LegendSwatch({
   color,
   pattern,
   patternBaseId,
-  classPrefix,
 }: {
   level: number;
   color: string;
   pattern: boolean;
   patternBaseId: string;
-  classPrefix: string;
 }) {
+  const styles = useStyles(calendarHeatmapStyles);
   if (pattern) {
     return (
       <svg
-        className={`${classPrefix}-legend-swatch`}
+        className={clsx(styles.legendSwatch, names.legendSwatch)}
         width={SWATCH_SIZE}
         height={SWATCH_SIZE}
         aria-hidden="true"
       >
         <rect
+          className={names.swatchTile}
           width={SWATCH_SIZE}
           height={SWATCH_SIZE}
           rx={SWATCH_RADIUS}
@@ -63,8 +66,10 @@ function LegendSwatch({
   }
   return (
     <span
-      className={`${classPrefix}-legend-swatch`}
-      style={{ backgroundColor: color }}
+      className={clsx(styles.legendSwatch, names.legendSwatch)}
+      style={
+        { "--_openui-calendar-heatmap-legend-swatch-background-color": color } as CSSProperties
+      }
       aria-hidden="true"
     />
   );
@@ -89,10 +94,10 @@ export const CalendarLegend = forwardRef<HTMLDivElement, CalendarLegendProps>(
       highlightedLevel,
       onLevelEnter,
       onLevelLeave,
-      classPrefix,
     },
     ref,
   ) {
+    const styles = useStyles(calendarHeatmapStyles);
     const isDimming = highlightedLevel !== null;
     const swatchOpacity = (level: number) =>
       isDimming && highlightedLevel !== level ? INACTIVE_OPACITY : 1;
@@ -102,36 +107,44 @@ export const CalendarLegend = forwardRef<HTMLDivElement, CalendarLegendProps>(
       .join(", ");
 
     return (
-      <div ref={ref} className={`${classPrefix}-legend`}>
-        <span className={`${classPrefix}-legend-label`}>{labels.less}</span>
+      <div ref={ref} className={clsx(styles.legend, names.legend)}>
+        <span className={clsx(styles.legendLabel, names.legendLabel)}>{labels.less}</span>
 
         {variant === "gradient" ? (
           <div
-            className={`${classPrefix}-legend-gradient`}
-            style={{
-              background: `linear-gradient(to right, ${gradientStops})`,
-            }}
+            className={clsx(styles.legendGradient, names.legendGradient)}
+            style={
+              {
+                "--_openui-calendar-heatmap-legend-gradient-background": `linear-gradient(to right, ${gradientStops})`,
+              } as CSSProperties
+            }
           >
             {LEVELS.map((level) => (
               <span
                 key={level}
-                className={`${classPrefix}-legend-gradient-hit`}
-                style={{
-                  left: `${(level / LEVELS.length) * 100}%`,
-                  width: `${(1 / LEVELS.length) * 100}%`,
-                }}
+                className={clsx(styles.legendGradientHit, names.legendGradientHit)}
+                style={
+                  {
+                    "--_openui-calendar-heatmap-legend-gradient-hit-left": `${(level / LEVELS.length) * 100}%`,
+                    "--_openui-calendar-heatmap-legend-gradient-hit-width": `${(1 / LEVELS.length) * 100}%`,
+                  } as CSSProperties
+                }
                 onPointerEnter={() => onLevelEnter(level)}
                 onPointerLeave={onLevelLeave}
               />
             ))}
           </div>
         ) : (
-          <div className={`${classPrefix}-legend-swatches`}>
+          <div className={clsx(styles.legendSwatches, names.legendSwatches)}>
             {LEVELS.map((level) => (
               <span
                 key={level}
-                className={`${classPrefix}-legend-swatch-slot`}
-                style={{ opacity: swatchOpacity(level) }}
+                className={clsx(styles.legendSwatchSlot, names.legendSwatchSlot)}
+                style={
+                  {
+                    "--_openui-calendar-heatmap-legend-swatch-slot-opacity": swatchOpacity(level),
+                  } as CSSProperties
+                }
                 onPointerEnter={() => onLevelEnter(level)}
                 onPointerLeave={onLevelLeave}
               >
@@ -140,14 +153,13 @@ export const CalendarLegend = forwardRef<HTMLDivElement, CalendarLegendProps>(
                   color={levelColors[level] ?? "#000000"}
                   pattern={Boolean(levelStyles[level]?.pattern)}
                   patternBaseId={patternBaseId}
-                  classPrefix={classPrefix}
                 />
               </span>
             ))}
           </div>
         )}
 
-        <span className={`${classPrefix}-legend-label`}>{labels.more}</span>
+        <span className={clsx(styles.legendLabel, names.legendLabel)}>{labels.more}</span>
       </div>
     );
   },

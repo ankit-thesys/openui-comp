@@ -3,10 +3,12 @@ import { createRoot } from "react-dom/client";
 import remarkGfm from "remark-gfm";
 import { markdown } from "../../fixtures/markdown";
 
-const customTypography = new URLSearchParams(location.search).has("custom-font");
+const params = new URLSearchParams(location.search);
+const customTypography = params.has("custom-font");
 createRoot(document.getElementById("root")!).render(
   <ThemeProvider
     lightTheme={customTypography ? { textBodyDefault: "400 18px/2 Arial" } : undefined}
+    cssLayer={params.get("layer") || undefined}
   >
     <div data-testid="markdown">
       <MarkDownRenderer
@@ -31,6 +33,10 @@ createRoot(document.getElementById("root")!).render(
           },
         }}
       />
+    </div>
+    <div data-testid="lead-in">
+      <MarkDownRenderer textMarkdown={"Flush lead-in\n\n- One"} />
+      <MarkDownRenderer listLeadIn="spaced" textMarkdown={"Spaced lead-in\n\n- One"} />
     </div>
     <span data-testid="inline">
       <InlineMarkdownRenderer content="Inline **markdown**" />

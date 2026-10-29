@@ -11,18 +11,14 @@ const heavy = `
   font-variation-settings: var(--openui-font-variation-medium, "wght" 560);
 `;
 // Links and inline code are parts, styled on their own class so unlayered element resets (such
-// as Tailwind 3's preflight `a` and `code` rules) cannot override them. Inside a blockquote they
-// inherit colour, line-height and font-style like the quote's other text: the blockquote prose
-// rule sets this flag and the parts read it through a container style query. Browsers without
-// style queries on custom properties (Firefox) keep the parts' own look inside quotes.
-const quoted = "--_openui-markdown-renderer-quoted";
+// as Tailwind 3's preflight `a` and `code` rules) cannot override them. Inside a blockquote the
+// renderer marks them `data-quoted`, and they inherit colour, line-height and font-style like the
+// quote's other text.
 const inheritWhenQuoted = `
-  @container style(${quoted}: 1) {
-    & {
-      color: inherit;
-      line-height: inherit;
-      font-style: inherit;
-    }
+  &[data-quoted] {
+    color: inherit;
+    line-height: inherit;
+    font-style: inherit;
   }
 `;
 // Prose inside a quote takes the quote's look, as #72's `.root blockquote *` did, at the same
@@ -62,6 +58,15 @@ export const names = {
     clear: "openui-markdown-renderer--variant-clear",
     card: "openui-markdown-renderer--variant-card",
     sunk: "openui-markdown-renderer--variant-sunk",
+  },
+  typography: {
+    inherit: "openui-markdown-renderer--typography-inherit",
+  },
+  listLeadIn: {
+    spaced: "openui-markdown-renderer--list-lead-in-spaced",
+  },
+  codeTypography: {
+    inherit: "openui-markdown-renderer-code--typography-inherit",
   },
 } as const;
 
@@ -156,6 +161,13 @@ export const markdownStyles = (css: StyleCss) => ({
         &:has(+ p) {
           margin-bottom: 18px;
         }
+        /* MarkDownRenderer's listLeadIn="spaced" spaces a paragraph from the list after it. */
+        &:has(+ ol) {
+          margin-bottom: var(--_openui-markdown-renderer-paragraph-before-list-margin, 0px);
+        }
+        &:has(+ ul) {
+          margin-bottom: var(--_openui-markdown-renderer-paragraph-before-list-margin, 0px);
+        }
       }
       & strong {
         color: ${primary};
@@ -215,7 +227,6 @@ export const markdownStyles = (css: StyleCss) => ({
         padding-left: 16px;
         quotes: "“" "”" "‘" "’";
         line-height: 1.625;
-        ${quoted}: 1;
       }
       & blockquote strong {
         ${heavy}
@@ -243,4 +254,47 @@ export const markdownStyles = (css: StyleCss) => ({
       }
     }
   `,
+  // `typography="inherit"`: emphasis takes the surrounding text's typography at medium weight, as
+  // in a CompositeCard's inline markdown. After the root, so it wins over the root's emphasis.
+  typography: {
+    inherit: css`
+      & strong {
+        font: inherit;
+        letter-spacing: inherit;
+        font-weight: var(--openui-font-weight-medium, 560);
+        font-variation-settings: var(--openui-font-variation-medium, "wght" 560);
+      }
+      & em {
+        font: inherit;
+        letter-spacing: inherit;
+        font-style: italic;
+      }
+      & strong em {
+        font-weight: var(--openui-font-weight-medium, 560);
+        font-variation-settings: var(--openui-font-variation-medium, "wght" 560);
+        font-style: italic;
+      }
+      & em strong {
+        font-style: italic;
+      }
+    `,
+  },
+  listLeadIn: {
+    spaced: css`
+      --_openui-markdown-renderer-paragraph-before-list-margin: 8px;
+    `,
+  },
+  // Inline code at the small code size, on the code part itself: the font shorthand resets
+  // line-height, which no variable can hand back to the theme token. After the part, and its quoted
+  // state, so it wins over both.
+  codeTypography: {
+    inherit: css`
+      font: var(--openui-text-code-sm, 400 12px/1.5 "SFMono-Regular", Menlo, monospace);
+      letter-spacing: var(--openui-text-code-sm-letter-spacing, 0);
+      line-height: 1;
+      &[data-quoted] {
+        line-height: 1;
+      }
+    `,
+  },
 });

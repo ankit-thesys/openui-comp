@@ -1,12 +1,14 @@
 "use client";
 
+import clsx from "clsx";
 import type { ScaleLinear } from "d3-scale";
-
+import type { CSSProperties } from "react";
+import { useStyles } from "../../../../styles/useStyles";
 import { FadeFollower } from "../../shared/core/spring";
 import type { ChartData } from "../../types";
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
 import { entranceProps } from "../../utils/entranceUtils";
 import { radarAxisAngle } from "../../utils/polarUtils";
+import { names, radarChartStyles } from "../radarChart.styles";
 
 interface RadarSeriesProps<T extends ChartData> {
   data: T;
@@ -49,6 +51,7 @@ export function RadarSeries<T extends ChartData>({
   hoveredIndex,
   animate,
 }: RadarSeriesProps<T>) {
+  const styles = useStyles(radarChartStyles);
   const series = dataKeys.map((key) => ({
     key,
     color: colorMap[key] ?? "#000",
@@ -56,30 +59,43 @@ export function RadarSeries<T extends ChartData>({
   }));
 
   return (
-    <g className={`${CHART_CLASS_PREFIX}-radar-chart-series`}>
+    <g className={names.series}>
       {series.map(({ key, color, vertices }, seriesIdx) => {
         const points = vertices.map((v) => `${v.x},${v.y}`).join(" ");
 
         const { className: animationClass, animationDelay } = entranceProps(
           animate,
-          `${CHART_CLASS_PREFIX}-radar-chart-polygon--animated`,
+          clsx(styles.polygonIsAnimationActive, names.polygonIsAnimationActive),
           seriesIdx * 80,
         );
 
         return (
-          <g key={key}>
+          <g className={names.group} key={key}>
             <polygon
               points={points}
               fill={color}
               fillOpacity={fillOpacity}
-              className={`${CHART_CLASS_PREFIX}-radar-chart-polygon-area ${animationClass}`}
-              style={{ animationDelay }}
+              className={clsx(styles.polygonArea, names.polygonArea, names.polygon, animationClass)}
+              style={
+                {
+                  "--_openui-radar-chart-polygon-animation-delay": animationDelay,
+                } as CSSProperties
+              }
             />
             <polygon
               points={points}
-              className={`${CHART_CLASS_PREFIX}-radar-chart-polygon-stroke ${animationClass}`}
+              className={clsx(
+                styles.polygonStroke,
+                names.polygonStroke,
+                names.polygon,
+                animationClass,
+              )}
               stroke={color}
-              style={{ animationDelay }}
+              style={
+                {
+                  "--_openui-radar-chart-polygon-animation-delay": animationDelay,
+                } as CSSProperties
+              }
             />
             {showDots &&
               vertices.map((v, i) => {
@@ -94,8 +110,8 @@ export function RadarSeries<T extends ChartData>({
                     cy={v.y}
                     r={r}
                     fill={color}
-                    className={`${CHART_CLASS_PREFIX}-radar-chart-dot`}
-                    style={{ opacity }}
+                    className={clsx(styles.dot, names.dot)}
+                    style={{ "--_openui-radar-chart-dot-opacity": opacity } as CSSProperties}
                   />
                 );
               })}
@@ -107,16 +123,16 @@ export function RadarSeries<T extends ChartData>({
           mounted, glide from axis to axis and fade in and out. Vertex dots, when
           on, show the hover themselves. */}
       {!showDots && (
-        <g className={`${CHART_CLASS_PREFIX}-radar-chart-active-dots`}>
+        <g className={clsx(styles.activeDots, names.activeDots)}>
           {series.map(({ key, color, vertices }) => {
             const v = hoveredIndex !== null ? vertices[hoveredIndex] : undefined;
             return (
               <FadeFollower key={key} x={v?.x ?? 0} y={v?.y ?? 0} visible={v !== undefined}>
-                <circle r={4} className={`${CHART_CLASS_PREFIX}-radar-chart-active-dot-outer`} />
+                <circle r={4} className={clsx(styles.activeDotOuter, names.activeDotOuter)} />
                 <circle
                   r={2}
                   fill={color}
-                  className={`${CHART_CLASS_PREFIX}-radar-chart-active-dot-inner`}
+                  className={clsx(styles.activeDotInner, names.activeDotInner)}
                 />
               </FadeFollower>
             );

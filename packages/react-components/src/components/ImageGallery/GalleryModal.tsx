@@ -4,22 +4,10 @@ import clsx from "clsx";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { useStyles } from "../../styles/useStyles";
 import { IconButton } from "../IconButton";
 import { useTheme } from "../ThemeProvider";
-import {
-  activeThumbnailClass,
-  buttonContainerClass,
-  carouselClass,
-  carouselContainerClass,
-  contentClass,
-  headerClass,
-  headingClass,
-  leftButtonClass,
-  mainClass,
-  modalClass,
-  rightButtonClass,
-  thumbnailClass,
-} from "./galleryModal.styles";
+import { galleryModalStyles, names } from "./galleryModal.styles";
 import { ImageItem } from "./ImageGallery";
 
 export interface GalleryModalProps {
@@ -35,6 +23,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
   setSelectedImageIndex,
   onClose,
 }) => {
+  const styles = useStyles(galleryModalStyles);
   const [scrollButtons, setScrollButtons] = useState({ showLeft: false, showRight: false });
   const carouselRef = useRef<HTMLDivElement>(null);
   const modalContentRef = useRef<HTMLDivElement>(null);
@@ -126,69 +115,60 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
   );
 
   return createPortal(
-    <div className={clsx(modalClass, "openui-gallery__modal", portalThemeClassName)}>
+    <div className={clsx(styles.modal, names.modal, portalThemeClassName)}>
       <div
-        className={clsx(contentClass, "openui-gallery__modal-content")}
+        className={clsx(styles.content, names.content)}
         ref={modalContentRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="openui-gallery-modal-heading"
       >
-        <div className={clsx(headerClass, "openui-gallery__modal-header")}>
-          <span
-            id="openui-gallery-modal-heading"
-            className={clsx(headingClass, "openui-gallery__modal-heading")}
-          >
+        <div className={clsx(styles.header, names.header)}>
+          <span id="openui-gallery-modal-heading" className={clsx(styles.heading, names.heading)}>
             All Photos
           </span>
           <IconButton
             size="small"
             variant="secondary"
-            icon={<X />}
+            className={names.close}
+            icon={<X className={names.icon} />}
             onClick={onClose}
             aria-label="Close gallery"
           />
         </div>
-        <div className={clsx(mainClass, "openui-gallery__modal-main")}>
+        <div className={clsx(styles.main, names.main)}>
           <img
+            className={clsx(styles.mainImage, names.mainImage)}
             src={images[selectedImageIndex]?.src}
             alt={images[selectedImageIndex]?.alt || `Gallery image ${selectedImageIndex + 1}`}
           />
         </div>
-        <div className={clsx(carouselContainerClass, "openui-gallery__modal-carousel-container")}>
+        <div className={clsx(styles.carouselContainer, names.carouselContainer)}>
           {scrollButtons.showLeft && (
             <div
               className={clsx(
-                buttonContainerClass,
-                "openui-gallery__modal-carousel-button-container",
-                leftButtonClass,
-                "openui-gallery__modal-carousel-button-container-left",
+                styles.buttonContainer,
+                names.buttonContainer,
+                styles.leftButton,
+                names.leftButton,
               )}
             >
               <IconButton
-                className={clsx(
-                  "openui-gallery__carousel-button",
-                  "openui-gallery__carousel-button--left",
-                )}
+                className={names.scrollLeft}
                 onClick={() => scroll("left")}
                 aria-label="Scroll images left"
-                icon={<ChevronLeft />}
+                icon={<ChevronLeft className={names.icon} />}
                 variant="secondary"
                 size="extra-small"
               />
             </div>
           )}
 
-          <div className={clsx(carouselClass, "openui-gallery__modal-carousel")} ref={carouselRef}>
+          <div className={clsx(styles.carousel, names.carousel)} ref={carouselRef}>
             {images.map((image, index) => (
               <div
                 key={index}
-                className={clsx(
-                  thumbnailClass,
-                  "openui-gallery__modal-thumbnail",
-                  index === selectedImageIndex && activeThumbnailClass,
-                  index === selectedImageIndex && "openui-gallery__modal-thumbnail--active",
-                )}
+                className={clsx(styles.thumbnail, names.thumbnail)}
                 role="button"
                 tabIndex={0}
                 aria-label={image.alt || `Gallery image ${index + 1}`}
@@ -201,7 +181,12 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
                   }
                 }}
               >
-                <img src={image.src} alt="" aria-hidden="true" />
+                <img
+                  className={clsx(styles.thumbnailImage, names.thumbnailImage)}
+                  src={image.src}
+                  alt=""
+                  aria-hidden="true"
+                />
               </div>
             ))}
           </div>
@@ -209,20 +194,17 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
           {scrollButtons.showRight && (
             <div
               className={clsx(
-                buttonContainerClass,
-                "openui-gallery__modal-carousel-button-container",
-                rightButtonClass,
-                "openui-gallery__modal-carousel-button-container-right",
+                styles.buttonContainer,
+                names.buttonContainer,
+                styles.rightButton,
+                names.rightButton,
               )}
             >
               <IconButton
-                className={clsx(
-                  "openui-gallery__carousel-button",
-                  "openui-gallery__carousel-button--right",
-                )}
+                className={names.scrollRight}
                 onClick={() => scroll("right")}
                 aria-label="Scroll images right"
-                icon={<ChevronRight />}
+                icon={<ChevronRight className={names.icon} />}
                 variant="secondary"
                 size="extra-small"
               />

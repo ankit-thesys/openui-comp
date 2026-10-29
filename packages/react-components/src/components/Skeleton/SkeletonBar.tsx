@@ -1,9 +1,10 @@
 "use client";
 
 import clsx from "clsx";
-import { css } from "goober";
-import { barStyles } from "./skeleton.styles";
-const componentClass = "openui-skeleton-bar-root";
+import type { CSSProperties } from "react";
+import { useStyles } from "../../styles/useStyles";
+import { names, skeletonBarStyles } from "./skeleton.styles";
+import { names as pulseNames, skeletonPulseStyles } from "./skeletonPulse";
 interface SkeletonBarProps {
   height: string;
   width: string;
@@ -11,26 +12,18 @@ interface SkeletonBarProps {
 }
 
 export function SkeletonBar({ height, width, borderRadius }: SkeletonBarProps) {
+  const styles = useStyles(skeletonBarStyles);
+  const pulse = useStyles(skeletonPulseStyles);
   return (
     <div
-      className={clsx(componentClass, "openui-skeleton-bar")}
-      style={{
-        height,
-        width,
-        ...(borderRadius ? { borderRadius } : {}),
-      }}
+      className={clsx(styles.root, names.bar, pulse.root, pulseNames.root)}
+      style={
+        {
+          "--_openui-skeleton-bar-height": height,
+          "--_openui-skeleton-bar-width": width,
+          ...(borderRadius ? { "--_openui-skeleton-bar-border-radius": borderRadius } : {}),
+        } as CSSProperties
+      }
     />
   );
-}
-
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-skeleton-bar-root {
-      ${barStyles}
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
 }

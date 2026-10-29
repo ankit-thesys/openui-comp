@@ -3,9 +3,11 @@
 import clsx from "clsx";
 import { ChevronRight } from "lucide-react";
 import { forwardRef, type CSSProperties, type ReactNode } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
 import { toCssUrl } from "../_shared/utils/safeUrl";
-import { clickableClass, rootClass } from "./card.styles";
+import { TagSurfaceContext } from "../Tag/TagSurface";
+import { names, visualCardStyles } from "./card.styles";
 
 export interface VisualCardBlockItem {
   id?: string;
@@ -27,21 +29,21 @@ export interface VisualCardProps {
 
 /** A photo-first card: background image with gradient, a tag on top and a body panel at the bottom. */
 export const VisualCard = forwardRef<HTMLDivElement, VisualCardProps>((props, ref) => {
+  const styles = useStyles(visualCardStyles);
   const { item, clickable = false, onClick, className } = props;
   const { tag, body, bgImageSrc, bgImageAlt } = item;
   const backgroundImage = toCssUrl(bgImageSrc);
   const cardImageStyle = backgroundImage
-    ? ({ "--openui-visual-card-image": backgroundImage } as CSSProperties)
+    ? ({ "--_openui-visual-card-image": backgroundImage } as CSSProperties)
     : undefined;
 
   return (
     <div
       ref={ref}
       className={clsx(
-        "openui-visual-first-card",
-        rootClass,
-        clickable && clickableClass,
-        clickable ? "openui-visual-first-card--clickable" : "openui-visual-first-card--static",
+        names.card,
+        styles.card,
+        clickable && [names.clickable.true, styles.clickable.true],
         className,
       )}
       style={cardImageStyle}
@@ -51,15 +53,17 @@ export const VisualCard = forwardRef<HTMLDivElement, VisualCardProps>((props, re
       onClick={clickable ? onClick : undefined}
       onKeyDown={clickable && onClick ? cardKeyDownHandler(onClick) : undefined}
     >
-      <div className="openui-visual-first-card__top">
-        <div className="openui-visual-first-card__tag">{tag ?? null}</div>
+      <div className={clsx(names.top, styles.top)}>
+        <div className={clsx(names.tag, styles.tag)}>
+          <TagSurfaceContext.Provider value="image">{tag ?? null}</TagSurfaceContext.Provider>
+        </div>
         {clickable && (
-          <div className="openui-visual-first-card__action" aria-hidden="true">
-            <ChevronRight size={16} />
+          <div className={clsx(names.action, styles.action)} aria-hidden="true">
+            <ChevronRight size={16} className={clsx(names.actionIcon, styles.actionIcon)} />
           </div>
         )}
       </div>
-      {body ? <div className="openui-visual-first-card__bottom">{body}</div> : null}
+      {body ? <div className={clsx(names.bottom, styles.bottom)}>{body}</div> : null}
     </div>
   );
 });
@@ -93,7 +97,7 @@ export const VisualCardBlock = forwardRef<HTMLDivElement, VisualCardBlockProps>(
       responsive={responsive}
       maxPerRow={3}
       gap={gap}
-      className={className}
+      className={clsx(names.root, className)}
       itemKey={(item, index) => item.id ?? `visual-card-${index}`}
       renderItem={(item, index) => (
         <VisualCard item={item} clickable={clickable} onClick={() => onItemClick?.(index)} />

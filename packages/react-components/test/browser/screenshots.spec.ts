@@ -50,7 +50,12 @@ test.describe("review screenshots", () => {
         await page.addStyleTag({ content: REVIEW_LAYOUT });
         // Let transitions settle so idle cases are captured in their resting state.
         await page.evaluate(() =>
-          document.getAnimations().forEach((animation) => animation.finish()),
+          document.getAnimations().forEach((animation) => {
+            if (animation.effect?.getTiming().iterations === Infinity) {
+              animation.pause();
+              animation.currentTime = 0;
+            } else animation.finish();
+          }),
         );
         await page.screenshot({ path, fullPage: true });
 

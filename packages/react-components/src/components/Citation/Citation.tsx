@@ -3,11 +3,12 @@
 import * as Tooltip from "@radix-ui/react-tooltip";
 import clsx from "clsx";
 import { Key, memo } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { usePinnableTooltip } from "../_shared/hooks/usePinnableTooltip";
 import { IconWrapper } from "../_shared/icons";
 import { SourceWithFavicon } from "../Sources/SourceContext";
 import { useTheme } from "../ThemeProvider";
-import { containerClass, tooltipClass, tooltipContentClass, triggerClass } from "./citation.styles";
+import { citationStyles, names } from "./citation.styles";
 import { CitationItem } from "./CitationItem";
 
 export interface CitationProps {
@@ -16,6 +17,7 @@ export interface CitationProps {
 }
 
 const MultiCitation = memo((props: CitationProps) => {
+  const styles = useStyles(citationStyles);
   const { sources } = props;
   const { portalThemeClassName } = useTheme();
 
@@ -30,19 +32,19 @@ const MultiCitation = memo((props: CitationProps) => {
   } = usePinnableTooltip();
 
   return (
-    <span className={clsx(containerClass, "openui-citation-container")}>
+    <span className={clsx(styles.container, names.container)}>
       <Tooltip.Provider>
         <Tooltip.Root open={isOpen}>
           <Tooltip.Trigger asChild>
             <button
               type="button"
-              className={clsx(triggerClass, "openui-citation")}
+              className={clsx(styles.root, names.root)}
               aria-label="Citations"
               onClick={handleTriggerClick}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <IconWrapper name="globe" size={12} />
+              <IconWrapper name="globe" size={12} className={clsx(styles.icon, names.icon)} />
             </button>
           </Tooltip.Trigger>
           <Tooltip.Portal>
@@ -51,13 +53,13 @@ const MultiCitation = memo((props: CitationProps) => {
               align="start"
               sideOffset={4}
               alignOffset={-8}
-              className={clsx(tooltipClass, "openui-citation-tooltip", portalThemeClassName)}
+              className={clsx(styles.tooltip, names.tooltip, portalThemeClassName)}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               onClick={handleContentClick}
-              onPointerDownOutside={getPointerDownOutsideHandler(".openui-citation")}
+              onPointerDownOutside={getPointerDownOutsideHandler(`.${names.root}`)}
             >
-              <div className={clsx(tooltipContentClass, "openui-citation-tooltip__content")}>
+              <div className={clsx(styles.tooltipContent, names.tooltipContent)}>
                 {sources.map((itemProps, index: number) => {
                   const { key: _key, ...rest } = itemProps as SourceWithFavicon & {
                     key?: Key;

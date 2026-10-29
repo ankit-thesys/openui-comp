@@ -86,9 +86,10 @@ const splitList = (list: string) => {
 
 const GENERATED = String.raw`\.go\d+`;
 const STATE = [
-  String.raw`:(?:hover|focus-visible|active|disabled|first-child|last-child|checked|placeholder-shown|focus-within)`,
+  String.raw`:(?:hover|focus|focus-visible|active|disabled|first-child|last-child|checked|placeholder-shown|focus-within)`,
   String.raw`\[(?:data|aria)-[a-z-]+(?:=(?:"[^"]*"|'[^']*'|[\w-]+))?\]`,
-  String.raw`::(?:before|after|placeholder|-webkit-scrollbar)`,
+  String.raw`::(?:before|after|placeholder|-webkit-scrollbar(?:-track|-thumb)?|-webkit-(?:inner|outer)-spin-button)`,
+  String.raw`:nth-child\(even\)`,
 ].join("|");
 
 const ONE_CLASS = new RegExp(`^${GENERATED}$`);
@@ -107,6 +108,12 @@ export interface SelectorOptions {
    * as Tailwind 3's preflight cannot outweigh it. Only MarkDownRenderer opts in.
    */
   prose?: boolean;
+  /**
+   * The generated classes MarkDownRenderer puts on its root. A family that composes it carries
+   * its prose rules, so a prose rule starting with one of these is MarkDownRenderer's and allowed;
+   * a class-plus-tag rule from any other module still fails.
+   */
+  proseRoots?: ReadonlySet<string>;
 }
 
 // A prose rule: `.goN`, a combinator, then at most two compounds of type selectors or `*`, joined
@@ -144,8 +151,9 @@ export function selectorViolation(selector: string, options: SelectorOptions = {
   if (ONE_CLASS.test(compact) || CLASS_AND_STATE.test(compact) || SIBLINGS.test(compact)) {
     return null;
   }
-  if (options.prose && PROSE.test(compact) && proseViolation(compact) === null) return null;
-  if (options.prose && PROSE.test(compact)) return proseViolation(compact);
+  const root = compact.match(/^\.(go\d+)/)?.[1];
+  const prose = options.prose || (root !== undefined && options.proseRoots?.has(root));
+  if (prose && PROSE.test(compact)) return proseViolation(compact);
   const zeroWeight = compact.match(ZERO_WEIGHT);
   if (zeroWeight) {
     const rest = zeroWeight[1]!;

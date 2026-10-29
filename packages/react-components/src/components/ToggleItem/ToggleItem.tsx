@@ -2,23 +2,9 @@
 
 import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
 import clsx from "clsx";
-import { css } from "goober";
 import { ReactNode } from "react";
-import { componentStyles } from "./styles";
-
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-toggle-item-root {
-      ${componentStyles}
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
-
-const componentClass = "openui-toggle-item-root";
+import { useStyles } from "../../styles/useStyles";
+import { names, toggleItemStyles } from "./toggleItem.styles";
 
 export interface ToggleItemProps extends ToggleGroupPrimitive.ToggleGroupItemProps {
   children: ReactNode;
@@ -26,11 +12,9 @@ export interface ToggleItemProps extends ToggleGroupPrimitive.ToggleGroupItemPro
 }
 
 export const ToggleItem = ({ className, children, ...props }: ToggleItemProps) => {
+  const styles = useStyles(toggleItemStyles);
   return (
-    <ToggleGroupPrimitive.Item
-      className={clsx(componentClass, "openui-toggle-item", className)}
-      {...props}
-    >
+    <ToggleGroupPrimitive.Item className={clsx(styles.root, names.root, className)} {...props}>
       {children}
     </ToggleGroupPrimitive.Item>
   );

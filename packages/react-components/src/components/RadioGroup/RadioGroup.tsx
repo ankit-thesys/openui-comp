@@ -2,24 +2,10 @@
 
 import * as Radio from "@radix-ui/react-radio-group";
 import clsx from "clsx";
-import { css } from "goober";
 import { CSSProperties, forwardRef, ReactElement } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { RadioItemProps } from "../RadioItem";
-import { componentStyles } from "./styles";
-
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-radio-group-root {
-      ${componentStyles}
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
-
-const componentClass = "openui-radio-group-root";
+import { names, radioGroupStyles } from "./radioGroup.styles";
 
 type RadioGroupVariant = "clear" | "card" | "sunk";
 interface RadioGroupProps extends Radio.RadioGroupProps {
@@ -29,18 +15,19 @@ interface RadioGroupProps extends Radio.RadioGroupProps {
   style?: CSSProperties;
 }
 
-const variants: Record<RadioGroupVariant, string> = {
-  clear: "openui-radio-group-clear",
-  card: "openui-radio-group-card",
-  sunk: "openui-radio-group-sunk",
-};
-
 const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>((props, ref) => {
   const { children, className, style, variant = "clear", ...rest } = props;
+  const styles = useStyles(radioGroupStyles);
   return (
     <Radio.Root
       ref={ref}
-      className={clsx(componentClass, "openui-radio-group", variants[variant], className)}
+      className={clsx(
+        styles.root,
+        names.root,
+        styles.variant[variant],
+        names.variant[variant],
+        className,
+      )}
       style={style}
       {...rest}
     >

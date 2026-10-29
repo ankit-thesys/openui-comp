@@ -2,7 +2,8 @@
 
 import clsx from "clsx";
 import { forwardRef } from "react";
-import { rootClass } from "./metricIndicator.styles";
+import { useStyles } from "../../styles/useStyles";
+import { metricIndicatorStyles, names } from "./metricIndicator.styles";
 
 export interface MetricIndicatorTrend {
   direction: "up" | "down";
@@ -30,41 +31,47 @@ interface MetricIndicatorBaseProps extends MetricIndicatorWithStrikethroughProps
 
 const MetricIndicatorBase = forwardRef<HTMLDivElement, MetricIndicatorBaseProps>(
   ({ value, subtext, previousValue, trend, variant, className }, ref) => {
+    const styles = useStyles(metricIndicatorStyles);
     const isPositive = trend?.direction === "up";
     const isInline = variant === "inline";
 
     return (
       <div
+        data-subtext={!!subtext || undefined}
         ref={ref}
         className={clsx(
-          rootClass,
-          "openui-metric-indicator",
-          `openui-metric-indicator--variant-${variant}`,
-          subtext && "openui-metric-indicator--has-subtext",
+          styles.root,
+          names.root,
+          styles.variant[variant],
+          names.variant[variant],
           className,
         )}
       >
-        <div className="openui-metric-indicator__row">
-          <div className="openui-metric-indicator__main-value">{value}</div>
+        <div className={clsx(styles.row, names.row)}>
+          <div className={clsx(styles.mainValue, names.mainValue)}>{value}</div>
           {!isInline && previousValue && (
-            <div className="openui-metric-indicator__previous-value">{previousValue}</div>
+            <div className={clsx(styles.previousValue, names.previousValue)}>{previousValue}</div>
           )}
           {trend && (
             <div
               className={clsx(
-                "openui-metric-indicator__trend",
-                isPositive
-                  ? "openui-metric-indicator__trend--success"
-                  : "openui-metric-indicator__trend--danger",
+                styles.trend,
+                names.trend,
+                styles.direction[trend.direction],
+                names.direction[trend.direction],
               )}
             >
               {isPositive ? "+" : "-"}
               {trend.value}%
             </div>
           )}
-          {isInline && subtext && <div className="openui-metric-indicator__subtext">{subtext}</div>}
+          {isInline && subtext && (
+            <div className={clsx(styles.subtext, names.subtext)}>{subtext}</div>
+          )}
         </div>
-        {!isInline && subtext && <div className="openui-metric-indicator__subtext">{subtext}</div>}
+        {!isInline && subtext && (
+          <div className={clsx(styles.subtext, names.subtext)}>{subtext}</div>
+        )}
       </div>
     );
   },

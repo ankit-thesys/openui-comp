@@ -85,6 +85,11 @@ describe("ruleViolation", () => {
 describe("selectorViolation", () => {
   it.each([
     ".go123",
+    ".go1:focus",
+    ".go1:nth-child(even)",
+    ".go1::-webkit-inner-spin-button",
+    ".go1::-webkit-outer-spin-button",
+
     ".go1:hover",
     ".go1:disabled",
     ".go1:focus-visible",
@@ -94,6 +99,8 @@ describe("selectorViolation", () => {
     ".go1[aria-selected=true]",
     ".go1::before",
     ".go1::-webkit-scrollbar",
+    ".go1::-webkit-scrollbar-track",
+    ".go1::-webkit-scrollbar-thumb",
     ".go1+.go1",
     ".go1 + .go1",
     ":where(.go1) svg",
@@ -108,7 +115,11 @@ describe("selectorViolation", () => {
     [".go1 .go2", "descendant class"],
     [".go1:hover:not(:disabled)", "state chain"],
     [".go1:hover::before", "state plus pseudo-element"],
-    [".go1:focus", "state outside the list"],
+    [".go1::-webkit-scrollbar-thumb:hover", "scrollbar pseudo-element plus state"],
+    [".go1:visited", "state outside the list"],
+    [".go1:nth-child(even of .extra)", "class inside a structural state"],
+    [".go1:nth-child(even):hover", "two states"],
+    [".go1::-webkit-inner-spin-button:hover", "pseudo-element plus state"],
     ["[data-x] .go1", "attribute ancestor"],
     [".openui-button", "stable class in library CSS"],
     ["button", "bare type selector"],
@@ -160,6 +171,26 @@ describe("selectorViolation with prose rules (MarkDownRenderer only)", () => {
     [".go1:hover p", "a state on the root"],
   ])("rejects %s (%s)", (selector) => {
     expect(selectorViolation(selector, prose)).toEqual(expect.any(String));
+  });
+});
+
+describe("selectorViolation with prose credited to MarkDownRenderer", () => {
+  const composed = { proseRoots: new Set(["go1"]) };
+
+  it.each([".go1 p", ".go1 li :last-child", ".go1 > *:last-child"])(
+    "accepts %s when go1 is MarkDownRenderer's root class",
+    (selector) => {
+      expect(selectorViolation(selector, composed)).toBeNull();
+    },
+  );
+
+  it.each([
+    [".go2 p", "another module's class plus a tag"],
+    [".go2 > *:last-child", "another module's class plus a structural tag"],
+    [".go1 .go2", "a class after MarkDownRenderer's root"],
+    [".go1 li ul li", "three compounds after MarkDownRenderer's root"],
+  ])("rejects %s (%s)", (selector) => {
+    expect(selectorViolation(selector, composed)).toEqual(expect.any(String));
   });
 });
 

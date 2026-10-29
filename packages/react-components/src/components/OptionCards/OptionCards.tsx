@@ -2,9 +2,10 @@
 
 import clsx from "clsx";
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { InlineMarkdownRenderer } from "../InlineMarkdownRenderer";
 import { getRowConfiguration } from "../_shared/cards/smallCardBlockUtils";
-import { rootClass } from "./optionCards.styles";
+import { names, optionCardsStyles } from "./optionCards.styles";
 
 export type OptionCardsSelectionType = "single" | "multiple";
 
@@ -32,6 +33,7 @@ export interface OptionCardsProps extends Omit<HTMLAttributes<HTMLDivElement>, "
 }
 
 const OptionCards = forwardRef<HTMLDivElement, OptionCardsProps>((props, ref) => {
+  const styles = useStyles(optionCardsStyles);
   const {
     items,
     selected = [],
@@ -50,17 +52,11 @@ const OptionCards = forwardRef<HTMLDivElement, OptionCardsProps>((props, ref) =>
   return (
     <div
       ref={ref}
-      className={clsx(rootClass, "openui-option-cards", className)}
+      className={clsx(styles.root, names.root, className)}
       role={type === "single" ? "radiogroup" : "group"}
       {...rest}
     >
-      <div
-        className={clsx(
-          "openui-option-cards__grid",
-          "openui-option-cards__grid--responsive",
-          renderableItems.length % 2 === 1 && "openui-option-cards__grid--odd-count",
-        )}
-      >
+      <div className={clsx(names.grid, styles.grid)}>
         {rowConfiguration.map((itemsInRow, rowIndex) => {
           const rowItems = renderableItems.slice(cardIndex, cardIndex + itemsInRow);
           cardIndex += itemsInRow;
@@ -68,48 +64,54 @@ const OptionCards = forwardRef<HTMLDivElement, OptionCardsProps>((props, ref) =>
           return (
             <div
               key={`option-cards-row-${rowIndex}`}
-              className={clsx(
-                "openui-option-cards__row",
-                `openui-option-cards__row--${itemsInRow}`,
-              )}
+              className={clsx(names.row, styles.row)}
+              data-columns={itemsInRow}
             >
-              {rowItems.map((item) => {
+              {rowItems.map((item, columnIndex) => {
                 const isSelected = selected.includes(item.value);
                 const isDisabled = disabled || item.disabled === true;
                 const hasTopContent = item.topContent != null;
                 const topVariant = item.topContentVariant ?? "icon";
 
                 return (
-                  <div key={item.value} className="openui-option-cards__item">
+                  <div
+                    key={item.value}
+                    className={clsx(names.item, styles.item)}
+                    data-span={
+                      renderableItems.length % 2 === 1 &&
+                      rowIndex === rowConfiguration.length - 1 &&
+                      columnIndex === rowItems.length - 1
+                        ? "full"
+                        : undefined
+                    }
+                  >
                     <button
                       type="button"
                       role={type === "single" ? "radio" : "checkbox"}
                       aria-checked={isSelected}
                       disabled={isDisabled}
-                      className={clsx(
-                        "openui-option-card",
-                        isSelected && "openui-option-card--selected",
-                        isDisabled && "openui-option-card--disabled",
-                      )}
+                      className={clsx(names.card, styles.card)}
                       onClick={() => onToggle?.(item.value)}
                     >
-                      <div className="openui-option-card__content">
+                      <div className={clsx(names.content, styles.content)}>
                         {hasTopContent ? (
                           <div
                             className={clsx(
-                              "openui-option-card__top",
-                              `openui-option-card__top--${topVariant}`,
+                              names.top,
+                              styles.top,
+                              names.topContentVariant[topVariant],
+                              styles.topContentVariant[topVariant],
                             )}
                           >
                             {item.topContent}
                           </div>
                         ) : null}
-                        <div className="openui-option-card__text">
-                          <div className="openui-option-card__title">
+                        <div className={clsx(names.text, styles.text)}>
+                          <div className={clsx(names.title, styles.title)}>
                             <InlineMarkdownRenderer content={item.title} />
                           </div>
                           {item.subtitle ? (
-                            <div className="openui-option-card__subtitle">
+                            <div className={clsx(names.subtitle, styles.subtitle)}>
                               <InlineMarkdownRenderer content={item.subtitle} />
                             </div>
                           ) : null}
