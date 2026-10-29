@@ -19,7 +19,10 @@ overview = SmallCard(IconText(Icon("dollar-sign"), "neutral"), [MetricIndicator(
 row2 = CardRow([tableCard])
 tableCard = LargeCard([tableHeader, table])
 tableHeader = DashboardCardHeader("Top Products")
-table = Table([Col("Product"), Col("Units", "number"), Col("Revenue", "number")], [["Widget Pro", 842, "$12,400"], ["Widget Lite", 1205, "$9,800"]])`;
+table = Table([productCol, unitsCol, revenueCol])
+productCol = Col("Product", ["Widget Pro", "Widget Lite"])
+unitsCol = Col("Units", [842, 1205], "number")
+revenueCol = Col("Revenue", ["$12,400", "$9,800"], "number")`;
 
 const FILTERED_DASHBOARD_EXAMPLE = `root = Dashboard([header, section])
 header = DashboardHeader("Usage Analytics")
@@ -56,7 +59,7 @@ export const openuiDashboardAdditionalRules: string[] = [
   "SmallCard has three forms: SmallCard(title, metric, trend?) for KPIs; SmallCard(IconText(...), [MetricIndicator(...)]) for icon cards; SmallCard(lhs, rhs) for snippet rows.",
   "MediumCard and LargeCard accept DashboardCardHeader, charts, Table, and MetricIndicator as children.",
   "Use DashboardCardHeader for card-level titles. Use titleType 'number' for KPI-first cards.",
-  "Use OverviewCardBlock for KPI metric grids with flat props: OverviewCardItem(title, subtitle?, icon?, imageSrc?, value?, valueSubtext?, trend?).",
+  'Use OverviewCardBlock for KPI metric grids with flat props: OverviewCardItem(title, subtitle?, icon?, imageSrc?, imageAlt?, value?, valueSubtext?, trend?). Arguments are positional, so pass "" for imageSrc and imageAlt when using an icon.',
   "Use Table with Col children for tabular data. Set Col type to 'number' for right-aligned numeric columns.",
   "Use FilterBar with FilterSelect/FilterMultiSelect for interactive filters.",
   "Use realistic, professional placeholder data.",
