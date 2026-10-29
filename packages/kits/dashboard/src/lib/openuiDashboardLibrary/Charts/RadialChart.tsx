@@ -2,9 +2,11 @@
 
 import { CHART_CLASS_PREFIX, RadialChart } from "@openuidev/react-components";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
+import clsx from "clsx";
 import { type CSSProperties } from "react";
 import { z } from "zod/v4";
 import { DASHBOARD_CHART_PALETTE } from "./chartPalette";
+import { radialChartClass } from "./charts.styles";
 import { buildSliceData, DASHBOARD_CHART_HEIGHT } from "./helpers";
 export const radialChartPropsSchema = z.object({
   labels: z.array(z.string()),
@@ -31,7 +33,7 @@ function RadialChartRenderer({ props }: ComponentRenderProps<RadialChartProps>) 
         categoryKey="category"
         dataKey="value"
         customPalette={DASHBOARD_CHART_PALETTE}
-        className={`${CHART_CLASS_PREFIX}-dashboard-radial-chart`}
+        className={clsx(radialChartClass, `${CHART_CLASS_PREFIX}-dashboard-radial-chart`)}
         isAnimationActive={false}
         height="fit-content"
         maxChartSize={DASHBOARD_CHART_HEIGHT}

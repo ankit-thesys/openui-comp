@@ -16,6 +16,7 @@ import React from "react";
 import { z } from "zod/v4";
 import { asArray } from "../helpers";
 import { ColSchema } from "./schema";
+import { tableWrapperClass } from "./table.styles";
 export { ColSchema } from "./schema";
 
 const DEFAULT_PAGE_SIZE = 10;
@@ -64,7 +65,7 @@ export const Table = defineComponent({
     const visibleRowCount = endRow - startRow;
 
     return (
-      <div>
+      <div className={tableWrapperClass}>
         <OpenUITable>
           <OpenUITableHeader>
             <OpenUITableRow>

@@ -2,9 +2,11 @@
 
 import { CHART_CLASS_PREFIX, RadarChart } from "@openuidev/react-components";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
+import clsx from "clsx";
 import { type CSSProperties } from "react";
 import { z } from "zod/v4";
 import { DASHBOARD_CHART_PALETTE } from "./chartPalette";
+import { radarChartClass } from "./charts.styles";
 import { SeriesComponent } from "./dataComponents";
 import { buildChartData, DASHBOARD_CHART_HEIGHT } from "./helpers";
 export const radarChartPropsSchema = z.object({
@@ -26,7 +28,10 @@ function RadarChartRenderer({ props }: ComponentRenderProps<RadarChartProps>) {
   };
 
   return (
-    <div className={`${CHART_CLASS_PREFIX}-dashboard-radar-chart`} style={style}>
+    <div
+      className={clsx(radarChartClass, `${CHART_CLASS_PREFIX}-dashboard-radar-chart`)}
+      style={style}
+    >
       <RadarChart
         data={data}
         categoryKey="category"

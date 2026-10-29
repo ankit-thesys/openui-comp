@@ -7,9 +7,11 @@ import {
   StackedLegend,
 } from "@openuidev/react-components";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
+import clsx from "clsx";
 import { useId, type CSSProperties } from "react";
 import { z } from "zod/v4";
 import { DASHBOARD_CHART_PALETTE } from "./chartPalette";
+import { pieChartClass } from "./charts.styles";
 import { DASHBOARD_CHART_HEIGHT, buildSliceData } from "./helpers";
 export const pieChartPropsSchema = z.object({
   labels: z.array(z.string()),
@@ -78,7 +80,7 @@ function PieChartRenderer({ props }: ComponentRenderProps<PieChartProps>) {
   );
 
   return (
-    <div className={`${CHART_CLASS_PREFIX}-dashboard-pie-chart`} style={style}>
+    <div className={clsx(pieChartClass, `${CHART_CLASS_PREFIX}-dashboard-pie-chart`)} style={style}>
       {isStacked ? (
         <LegendStoreProvider legendKey={uid}>
           {chart}

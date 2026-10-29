@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { Fragment, type ReactElement } from "react";
 import { TextBlockView } from "../../../components/TextBlockView";
 import { C1_CLASS_PREFIX } from "../../../shared/classPrefix";
+import { dashboardCardHeaderClass } from "./dashboardCardHeader.styles";
 import { dashboardCardHeaderPropsSchema, type DashboardCardHeaderProps } from "./schema";
 function DashboardCardHeaderRenderer({
   props,
@@ -15,6 +16,7 @@ function DashboardCardHeaderRenderer({
   return (
     <div
       className={clsx(
+        dashboardCardHeaderClass,
         `${C1_CLASS_PREFIX}-dashboard-card-header`,
         !props.subtitle && `${C1_CLASS_PREFIX}-dashboard-card-header--title-only`,
       )}

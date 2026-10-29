@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { C1_CLASS_PREFIX } from "../../../shared/classPrefix";
 import { PieChartComponent } from "../Charts/PieChart";
 import { LargeCardComponent } from "../LargeCard";
+import { cardRowClass } from "./cardRow.styles";
 import { cardRowPropsSchema, type CardRowProps } from "./schema";
 type CardKind = "small" | "medium" | "large";
 type CardRowVariant = "empty" | "small" | "medium" | "medium-large" | "large";
@@ -111,6 +112,7 @@ function CardRowRenderer({ props, renderNode }: ComponentRenderProps<CardRowProp
   return (
     <div
       className={clsx(
+        cardRowClass,
         `${C1_CLASS_PREFIX}-card-row`,
         `${C1_CLASS_PREFIX}-card-row--align-${props.align ?? "stretch"}`,
         variant && variant !== "empty" && `${C1_CLASS_PREFIX}-card-row--type-${variant}`,

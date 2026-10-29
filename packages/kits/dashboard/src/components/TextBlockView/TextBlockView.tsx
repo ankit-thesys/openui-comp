@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { C1_CLASS_PREFIX } from "../../shared/classPrefix";
+import { textBlockClass } from "./textBlock.styles";
 
 /**
  * Standalone props. `openuiDashboardLibrary/TextBlock/schema.ts` holds the zod
@@ -45,6 +46,7 @@ export function TextBlockView(props: TextBlockProps) {
   return (
     <div
       className={clsx(
+        textBlockClass,
         `${C1_CLASS_PREFIX}-dashboard-text-block`,
         `${C1_CLASS_PREFIX}-dashboard-text-block--${props.variant}`,
         `${C1_CLASS_PREFIX}-dashboard-text-block--size-${props.size}`,

@@ -4,6 +4,7 @@ import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lan
 import clsx from "clsx";
 import { Fragment, type ReactElement } from "react";
 import { C1_CLASS_PREFIX } from "../../../shared/classPrefix";
+import { dashboardHeaderClass } from "./dashboardHeader.styles";
 import { dashboardHeaderPropsSchema, type DashboardHeaderProps } from "./schema";
 function DashboardHeaderRenderer({
   props,
@@ -12,7 +13,7 @@ function DashboardHeaderRenderer({
   const controls = props.controls;
 
   return (
-    <header className={`${C1_CLASS_PREFIX}-dashboard-header`}>
+    <header className={clsx(dashboardHeaderClass, `${C1_CLASS_PREFIX}-dashboard-header`)}>
       <div className={`${C1_CLASS_PREFIX}-dashboard-header__content`}>
         <div className={`${C1_CLASS_PREFIX}-dashboard-header__title`}>{props.title}</div>
         {props.subtitle ? (

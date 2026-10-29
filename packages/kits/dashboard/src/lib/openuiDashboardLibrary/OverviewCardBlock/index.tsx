@@ -11,6 +11,7 @@ import { z } from "zod/v4";
 import { TextBlockView } from "../../../components/TextBlockView";
 import { C1_CLASS_PREFIX } from "../../../shared/classPrefix";
 import { getRowConfiguration, useCarouselMask } from "../smallCardUtils";
+import { imageTextClass, overviewCardClass, smallCardBlockClass } from "./overviewCardBlock.styles";
 import { overviewCardItemPropsSchema } from "./schema";
 export const OverviewCardItemComponent = defineComponent({
   name: "OverviewCardItem",
@@ -50,7 +51,13 @@ function OverviewCardTopContent({ item }: { item: OverviewCardItem }) {
   if (!hasVisual) return textBlock;
 
   return (
-    <div className={`${C1_CLASS_PREFIX}-image-text ${C1_CLASS_PREFIX}-image-text--horizontal`}>
+    <div
+      className={clsx(
+        imageTextClass,
+        `${C1_CLASS_PREFIX}-image-text`,
+        `${C1_CLASS_PREFIX}-image-text--horizontal`,
+      )}
+    >
       <div
         className={clsx(
           `${C1_CLASS_PREFIX}-image-text__image-container`,
@@ -100,7 +107,7 @@ function OverviewCardBlockRenderer({ props }: ComponentRenderProps<OverviewCardB
             : `${C1_CLASS_PREFIX}-small-card-block__item`
         }
       >
-        <div className={`${C1_CLASS_PREFIX}-overview-card`}>
+        <div className={clsx(overviewCardClass, `${C1_CLASS_PREFIX}-overview-card`)}>
           <div className={`${C1_CLASS_PREFIX}-overview-card__vertical`}>
             <div className={`${C1_CLASS_PREFIX}-overview-card__top-row`}>
               <div
@@ -131,6 +138,7 @@ function OverviewCardBlockRenderer({ props }: ComponentRenderProps<OverviewCardB
   return (
     <div
       className={clsx(
+        smallCardBlockClass,
         `${C1_CLASS_PREFIX}-small-card-block`,
         `${C1_CLASS_PREFIX}-small-card-block--overview-card`,
         `${C1_CLASS_PREFIX}-small-card-block--${finalLayout}`,

@@ -1,8 +1,10 @@
 "use client";
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
+import clsx from "clsx";
 import { DashboardThemeProvider } from "../../../components/DashboardThemeProvider";
 import { C1_CLASS_PREFIX } from "../../../shared/classPrefix";
+import { dashboardClass } from "./dashboard.styles";
 import { dashboardPropsSchema, type DashboardProps } from "./schema";
 function DashboardRenderer({ props, renderNode }: ComponentRenderProps<DashboardProps>) {
   // DashboardThemeProvider owns the `-dashboard-theme` scope class (on a
@@ -10,7 +12,9 @@ function DashboardRenderer({ props, renderNode }: ComponentRenderProps<Dashboard
   // `-dashboard` layout class it always had.
   return (
     <DashboardThemeProvider>
-      <div className={`${C1_CLASS_PREFIX}-dashboard`}>{renderNode(props.children)}</div>
+      <div className={clsx(dashboardClass, `${C1_CLASS_PREFIX}-dashboard`)}>
+        {renderNode(props.children)}
+      </div>
     </DashboardThemeProvider>
   );
 }

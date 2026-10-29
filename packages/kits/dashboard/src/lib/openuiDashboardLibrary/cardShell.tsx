@@ -10,6 +10,7 @@ import { C1_CLASS_PREFIX } from "../../shared/classPrefix";
 import { ButtonComponent } from "./Button";
 import { ButtonGroupComponent } from "./ButtonGroup";
 import { CalloutComponent } from "./Callout";
+import { shellCardClass } from "./cardShell.styles";
 import { AreaChartComponent } from "./Charts/AreaChart";
 import { BarChartComponent } from "./Charts/BarChart";
 import { HorizontalBarChartComponent } from "./Charts/HorizontalBarChart";
@@ -199,6 +200,7 @@ export function AppCardRenderer({
       width="full"
       variant="card"
       className={clsx(
+        shellCardClass,
         `${C1_CLASS_PREFIX}-shell-card`,
         `${C1_CLASS_PREFIX}-shell-card--${size}`,
         isStreaming && `${C1_CLASS_PREFIX}-shell-card--streaming`,

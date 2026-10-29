@@ -3,6 +3,7 @@
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
 import clsx from "clsx";
 import { C1_CLASS_PREFIX } from "../../../shared/classPrefix";
+import { metricIndicatorClass } from "./metricIndicator.styles";
 import { metricIndicatorPropsSchema, type MetricIndicatorProps } from "./schema";
 function MetricIndicatorRenderer({ props }: ComponentRenderProps<MetricIndicatorProps>) {
   const isPositive = props.trend?.direction === "up";
@@ -10,6 +11,7 @@ function MetricIndicatorRenderer({ props }: ComponentRenderProps<MetricIndicator
   return (
     <div
       className={clsx(
+        metricIndicatorClass,
         `${C1_CLASS_PREFIX}-dashboard-metric-indicator`,
         props.subtext && `${C1_CLASS_PREFIX}-dashboard-metric-indicator--has-subtext`,
       )}

@@ -13,6 +13,7 @@ import clsx from "clsx";
 import { ChevronDown } from "lucide-react";
 import React, { useCallback, useMemo } from "react";
 import { C1_CLASS_PREFIX } from "../../../shared/classPrefix";
+import { filterSelectClass, multiSelectClass, singleSelectClass } from "./filterSelect.styles";
 import {
   type FilterMultiSelectProps,
   filterMultiSelectPropsSchema,
@@ -70,11 +71,14 @@ function FilterSelectRenderer({ props }: ComponentRenderProps<FilterSelectProps>
   useClickOutside(dropdownRef, closeDropdown);
 
   return (
-    <div className={`${C1_CLASS_PREFIX}-filter-select`}>
+    <div className={clsx(filterSelectClass, `${C1_CLASS_PREFIX}-filter-select`)}>
       {props.label && (
         <label className={`${C1_CLASS_PREFIX}-filter-select__label`}>{props.label}</label>
       )}
-      <div className={`${C1_CLASS_PREFIX}-filter-single-select`} ref={dropdownRef}>
+      <div
+        className={clsx(singleSelectClass, `${C1_CLASS_PREFIX}-filter-single-select`)}
+        ref={dropdownRef}
+      >
         <button
           type="button"
           className={clsx(
@@ -169,11 +173,20 @@ function FilterMultiSelectRenderer({ props }: ComponentRenderProps<FilterMultiSe
   }, [selectedValues, items]);
 
   return (
-    <div className={`${C1_CLASS_PREFIX}-filter-select ${C1_CLASS_PREFIX}-filter-select--multi`}>
+    <div
+      className={clsx(
+        filterSelectClass,
+        `${C1_CLASS_PREFIX}-filter-select`,
+        `${C1_CLASS_PREFIX}-filter-select--multi`,
+      )}
+    >
       {props.label && (
         <label className={`${C1_CLASS_PREFIX}-filter-select__label`}>{props.label}</label>
       )}
-      <div className={`${C1_CLASS_PREFIX}-filter-multi-select`} ref={dropdownRef}>
+      <div
+        className={clsx(multiSelectClass, `${C1_CLASS_PREFIX}-filter-multi-select`)}
+        ref={dropdownRef}
+      >
         <button
           type="button"
           className={clsx(

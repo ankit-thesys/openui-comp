@@ -6,8 +6,10 @@ import clsx from "clsx";
 import { TextBlockView } from "../../../components/TextBlockView";
 import { C1_CLASS_PREFIX } from "../../../shared/classPrefix";
 import { type IconTagProps } from "../IconTag/schema";
+import { shellCardClass } from "../cardShell.styles";
 import { toIconProps } from "../iconProps";
 import { smallCardPropsSchema, type SmallCardProps } from "./schema";
+import { smallCardClass, smallCardSnippetClass } from "./smallCard.styles";
 type SnippetLhs = {
   title: string;
   subtitle?: string;
@@ -56,7 +58,13 @@ function SmallCardTitleMetricContent({
   const isNegative = trendObj?.direction === "down";
 
   return (
-    <div className={`${C1_CLASS_PREFIX}-small-card ${C1_CLASS_PREFIX}-small-card--title-metric`}>
+    <div
+      className={clsx(
+        smallCardClass,
+        `${C1_CLASS_PREFIX}-small-card`,
+        `${C1_CLASS_PREFIX}-small-card--title-metric`,
+      )}
+    >
       <div className={`${C1_CLASS_PREFIX}-small-card__title`}>{title}</div>
       <div className={`${C1_CLASS_PREFIX}-small-card__metric-row`}>
         <div className={`${C1_CLASS_PREFIX}-small-card__metric`}>{metric}</div>
@@ -84,6 +92,7 @@ function SmallCardSnippetContent({ lhs, rhs }: { lhs: SnippetLhs; rhs: SnippetRh
   return (
     <div
       className={clsx(
+        smallCardSnippetClass,
         `${C1_CLASS_PREFIX}-small-card-snippet`,
         `${C1_CLASS_PREFIX}-small-card-snippet--static`,
       )}
@@ -147,7 +156,11 @@ function SmallCardRenderer({ props, renderNode }: ComponentRenderProps<SmallCard
       <Card
         width="full"
         variant="card"
-        className={`${C1_CLASS_PREFIX}-shell-card ${C1_CLASS_PREFIX}-shell-card--small`}
+        className={clsx(
+          shellCardClass,
+          `${C1_CLASS_PREFIX}-shell-card`,
+          `${C1_CLASS_PREFIX}-shell-card--small`,
+        )}
       >
         <SmallCardTitleMetricContent
           title={props.top as string}
@@ -163,7 +176,12 @@ function SmallCardRenderer({ props, renderNode }: ComponentRenderProps<SmallCard
       <Card
         width="full"
         variant="card"
-        className={`${C1_CLASS_PREFIX}-shell-card ${C1_CLASS_PREFIX}-shell-card--small ${C1_CLASS_PREFIX}-shell-card--small-snippet`}
+        className={clsx(
+          shellCardClass,
+          `${C1_CLASS_PREFIX}-shell-card`,
+          `${C1_CLASS_PREFIX}-shell-card--small`,
+          `${C1_CLASS_PREFIX}-shell-card--small-snippet`,
+        )}
       >
         <SmallCardSnippetContent lhs={snippetLhs} rhs={snippetRhs} />
       </Card>
@@ -174,9 +192,13 @@ function SmallCardRenderer({ props, renderNode }: ComponentRenderProps<SmallCard
     <Card
       width="full"
       variant="card"
-      className={`${C1_CLASS_PREFIX}-shell-card ${C1_CLASS_PREFIX}-shell-card--small`}
+      className={clsx(
+        shellCardClass,
+        `${C1_CLASS_PREFIX}-shell-card`,
+        `${C1_CLASS_PREFIX}-shell-card--small`,
+      )}
     >
-      <div className={`${C1_CLASS_PREFIX}-small-card`}>
+      <div className={clsx(smallCardClass, `${C1_CLASS_PREFIX}-small-card`)}>
         <div
           className={`${C1_CLASS_PREFIX}-small-card__slot ${C1_CLASS_PREFIX}-small-card__slot--top`}
         >

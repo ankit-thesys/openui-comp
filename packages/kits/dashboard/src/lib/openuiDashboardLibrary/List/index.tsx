@@ -7,7 +7,9 @@ import {
   ListItem as OpenUIListItem,
 } from "@openuidev/react-components";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
+import clsx from "clsx";
 import { C1_CLASS_PREFIX } from "../../../shared/classPrefix";
+import { listClass, listSmallClass } from "./list.styles";
 import { listPropsSchema, type ListItemType, type ListProps, type ListRenderProps } from "./schema";
 export { ListItemComponent } from "./schema";
 
@@ -52,7 +54,14 @@ function ListRenderer({ props }: ComponentRenderProps<ListProps>) {
   const listHasSubtitle = items.some((item) => !!item.props.subtitle);
 
   return (
-    <div className={`${C1_CLASS_PREFIX}-dashboard-list ${C1_CLASS_PREFIX}-dashboard-list--${size}`}>
+    <div
+      className={clsx(
+        listClass,
+        size === "small" && listSmallClass,
+        `${C1_CLASS_PREFIX}-dashboard-list`,
+        `${C1_CLASS_PREFIX}-dashboard-list--${size}`,
+      )}
+    >
       {(props.heading || props.description) && (
         <div>
           {props.heading && <strong>{props.heading}</strong>}
