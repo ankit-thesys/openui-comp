@@ -117,7 +117,10 @@ covered by an entry's own names. Names an entry lists only because it renders an
 registered; `import-registration.spec.ts` imports the whole public package in Chromium and fails
 if `#_goober` holds anything but the token defaults' `:where(.goN:root)` rule in
 `@layer openui-defaults`, or `<html>` has any class but that rule's marker (ADR 0001, Q29). Both
-then render something, so the checks cannot pass on a dead sheet.
+then render something, so the checks cannot pass on a dead sheet. `goober-imports.test.ts` fails
+if any source module other than `styles/defaults.ts`, `styles/useStyles.ts` and
+`utils/componentStyles.ts` imports Goober: components get `css` only from `useStyles`, so even a
+code path no contract element renders cannot register CSS on its own.
 
 ## Parity with #72
 
