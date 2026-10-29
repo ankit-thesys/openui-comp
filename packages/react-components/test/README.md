@@ -201,3 +201,57 @@ state's pinned tooltip cannot cover another case. No intentional visual
 differences are allowed. Capture the baselines with `pnpm test:parity:baseline` in an environment
 that can run Chromium, then run the parity specs and `citations-sources.spec.ts` (and the common
 benches). No baseline JSON is authored by hand.
+
+## Lists and tables rollout (#99)
+
+The contract list includes ListItem, ListBlock, EntityList, Table (including ScrollableTable),
+EditableTable (including cell outlines, the select portal and changes bar), and the MetricIndicator
+family. Each has its own Node contract file. `lists-tables.test.tsx` checks defaults and public SSR
+markup. The checker additionally accepts single `:focus`, `:nth-child(even)` and WebKit input
+spin-button pseudo-elements. Tests reject chains and `nth-child(... of .class)`; the selector
+budget is unchanged.
+
+`lists-tables.spec.ts` uses `lists-tables.tsx` for every owned stable class in both load orders and
+both layer modes, real cell editing/saving, selected/editing outlines, open/checked/highlighted
+select states, hover/focus inheritance, scrolling and rewriting html classes. Hidden URL warnings
+and zero-height outlines are checked by stable class. Portal readiness waits for a visible option;
+portal parts are queried across the document, outside `#root`. The common override and Tailwind
+benches also pick up these families from the contract list. The shared readiness helper waits for
+measured overflow and opens the EditableTable select portal; input overrides enter text editing
+instead. The comparisons include portal parts outside `#root`. The grid
+pins #72's content-box sizing so preflight cannot change its column or cell geometry. Radix inserts
+a style sibling before the select viewport, which receives only bottom corner rounding in #72.
+Their ordinary buttons are library
+components, and native text examples carry explicit typography.
+
+The ordinary Tailwind matrix removes button `type` attributes in both runs, including those
+Radix supplies, so every declared property compares unchanged. The separate typed-button cases
+retain the open select and portal. Tailwind 3.3 clears only backgrounds declared by a matching
+single-class base rule; matching class-plus-state backgrounds must keep their exact plain color.
+The typed comparison checks each button in document order, including composed buttons, rather
+than collapsing their colors into a set. Cases without a painted base background skip only the
+dedicated 3.3 reset assertion.
+
+EditableTable owns its select's Radix markup and copies the effective #72 defaults. This keeps
+unmigrated Select rules from outranking layered cell styles. Radix intentionally ignores className
+on Value and ItemText; owned spans around those primitives supply the stable parts without
+changing the effective typography or the text projected into the trigger. Column geometry is
+carried in a private CSS variable; ordinary width declarations can override it. DatePicker remains
+a composed dependency outside this rollout; its cell uses the same flat outline and base styles.
+
+Capture these new #72 parity names (each has a matching `parity-<name>.tsx` fixture and spec):
+`list-item`, `list-block`, `entity-list`, `metric-indicator`, `table`, `scrollable-table`,
+`editable-table`, `editable-table-selected`, `editable-table-editing`, `editable-table-select`.
+The state fixtures pin a real selected cell, input or select portal before exposing one body case;
+portal snapshots run against a visible checked option and close only after the final measurement.
+Run the pilot's existing `markdown.parity.spec.ts` too: its tables must still match #72. No
+intentional visual differences are listed. Baselines must be captured with Chromium using
+`pnpm test:parity:baseline`; none are authored by hand.
+
+The shared SSR bench documents are rendered during fixture setup for both packages and both
+modes. Specs read those documents and hydrate the same app; importing the large generated server
+bundle in a cold worker previously exhausted the test timeout before navigation. The hydration,
+Select interaction and react-ui comparisons retain their complete assertions.
+
+The #99 audit found no class references in other react-components callers or in the checked-out
+chat-kit/assistant packages to rename. Public props are unchanged.

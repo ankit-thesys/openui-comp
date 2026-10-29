@@ -2,7 +2,8 @@
 
 import clsx from "clsx";
 import React, { CSSProperties, ReactNode } from "react";
-import { rootClass } from "./listItem.styles";
+import { useStyles } from "../../styles/useStyles";
+import { listItemStyles, names } from "./listItem.styles";
 
 export type ListItemVariant = "icon" | "image" | "number";
 export type ListItemSize = "default" | "small";
@@ -41,53 +42,64 @@ const ListItem = React.forwardRef<HTMLDivElement, ListItemProps>((props, ref) =>
     ...rest
   } = props;
 
+  const styles = useStyles(listItemStyles);
   const hasAction = !!onClick;
 
   return (
     <div
       ref={ref}
       className={clsx(
-        rootClass,
-        "openui-list-item-wrapper",
-        size === "small" && "openui-list-item-wrapper--small",
-        hasAction && "openui-list-item-wrapper-with-action",
+        styles.root,
+        names.root,
+        styles.size[size],
+        names.size[size],
+        names.variant[variant],
+        listHasSubtitle && styles.listHasSubtitle,
+        listHasSubtitle && names.listHasSubtitle,
         className,
       )}
+      data-action={hasAction}
       style={style}
       {...rest}
     >
       <div
-        className={clsx("openui-list-item", hasAction && "openui-list-item-clickable")}
+        className={clsx(styles.item, names.item)}
+        data-action={hasAction}
+        data-subtitle={!!subtitle}
         onClick={onClick}
         role={hasAction ? "button" : undefined}
         tabIndex={hasAction ? 0 : undefined}
       >
-        <div
-          className={clsx(
-            "openui-list-item-indicator",
-            !listHasSubtitle && "openui-list-item-indicator-no-subtitle",
-            hasAction && "openui-list-item-indicator-clickable",
-          )}
-        >
+        <div className={clsx(styles.indicator, names.indicator)}>
           {variant === "number" && (
-            <div className="openui-list-item-indicator-number">{index + 1}</div>
+            <div className={clsx(styles.indicatorNumber, names.indicatorNumber)}>{index + 1}</div>
           )}
           {variant === "icon" && icon}
           {variant === "image" && image && (image.src || image.alt) && (
-            <div className="openui-list-item-indicator-image">
-              <img src={image.src} alt={image.alt} width={40} height={40} />
+            <div className={clsx(styles.indicatorImage, names.indicatorImage)}>
+              <img
+                className={clsx(styles.image, names.image)}
+                src={image.src}
+                alt={image.alt}
+                width={40}
+                height={40}
+              />
             </div>
           )}
         </div>
-        <div className="openui-list-item-content-wrapper">
-          <div className="openui-list-item-content">
-            {title && <div className="openui-list-item-title">{title}</div>}
-            {subtitle && <div className="openui-list-item-subtitle">{subtitle}</div>}
+        <div className={clsx(styles.contentWrapper, names.contentWrapper)}>
+          <div className={clsx(styles.content, names.content)}>
+            {title && <div className={clsx(styles.title, names.title)}>{title}</div>}
+            {subtitle && <div className={clsx(styles.subtitle, names.subtitle)}>{subtitle}</div>}
           </div>
           {hasAction && (actionIcon || actionLabel) && (
-            <div className="openui-list-item-action">
-              {actionLabel && <div className="openui-list-item-action-label">{actionLabel}</div>}
-              {actionIcon && <div className="openui-list-item-action-icon">{actionIcon}</div>}
+            <div className={clsx(styles.action, names.action)}>
+              {actionLabel && (
+                <div className={clsx(styles.actionLabel, names.actionLabel)}>{actionLabel}</div>
+              )}
+              {actionIcon && (
+                <div className={clsx(styles.actionIcon, names.actionIcon)}>{actionIcon}</div>
+              )}
             </div>
           )}
         </div>

@@ -86,9 +86,10 @@ const splitList = (list: string) => {
 
 const GENERATED = String.raw`\.go\d+`;
 const STATE = [
-  String.raw`:(?:hover|focus-visible|active|disabled|first-child|last-child|checked|placeholder-shown|focus-within)`,
+  String.raw`:(?:hover|focus|focus-visible|active|disabled|first-child|last-child|checked|placeholder-shown|focus-within)`,
   String.raw`\[(?:data|aria)-[a-z-]+(?:=(?:"[^"]*"|'[^']*'|[\w-]+))?\]`,
-  String.raw`::(?:before|after|placeholder|-webkit-scrollbar(?:-track|-thumb)?)`,
+  String.raw`::(?:before|after|placeholder|-webkit-scrollbar(?:-track|-thumb)?|-webkit-(?:inner|outer)-spin-button)`,
+  String.raw`:nth-child\(even\)`,
 ].join("|");
 
 const ONE_CLASS = new RegExp(`^${GENERATED}$`);

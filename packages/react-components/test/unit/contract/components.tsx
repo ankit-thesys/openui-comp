@@ -8,16 +8,25 @@ import {
   Citation,
   CitationItem,
   CodeBlock,
+  EditableTable,
+  EditableTableChangesBar,
+  EntityList,
   IconButton,
   InlineMarkdownRenderer,
+  ListBlock,
   ListedSourceItem,
   ListedSources,
+  ListItem,
   MarkDownRenderer,
+  MetricIndicatorInline,
+  MetricIndicatorWithStrikethrough,
+  ScrollableTable,
   SourceFaviconImage,
   Sources,
   Table,
   TableBody,
   TableCell,
+  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -86,6 +95,200 @@ const source = {
 const inlineContent = "**Inline** [link](https://example.com) and `code` [1]";
 
 export const migratedComponents: MigratedComponent[] = [
+  {
+    folder: "ListItem",
+    names: namesOf("ListItem"),
+    elements: () =>
+      (["number", "icon", "image"] as const).flatMap((variant) =>
+        (["default", "small"] as const).flatMap((size) =>
+          [false, true].flatMap((listHasSubtitle) =>
+            [false, true].map((action) => (
+              <ListItem
+                key={`${variant}/${size}/${listHasSubtitle}/${action}`}
+                variant={variant}
+                size={size}
+                listHasSubtitle={listHasSubtitle}
+                title="First"
+                subtitle={listHasSubtitle ? "Details" : undefined}
+                icon={<svg width="16" height="16" />}
+                image={{ src: source.faviconUrl, alt: "Item" }}
+                onClick={action ? () => {} : undefined}
+                actionLabel="View"
+                actionIcon={<svg width="16" height="16" />}
+              />
+            )),
+          ),
+        ),
+      ),
+  },
+  {
+    folder: "ListBlock",
+    names: [...namesOf("ListBlock"), ...namesOf("ListItem")],
+    elements: () =>
+      (["number", "icon", "image"] as const).flatMap((variant) =>
+        (["default", "small"] as const).map((size) => (
+          <ListBlock key={`${variant}/${size}`} variant={variant} size={size}>
+            <ListItem
+              title="First"
+              subtitle="Details"
+              icon={<svg />}
+              image={{ src: source.faviconUrl, alt: "Item" }}
+              onClick={() => {}}
+              actionLabel="View"
+              actionIcon={<svg />}
+            />
+            <ListItem
+              title="Second"
+              icon={<svg />}
+              image={{ src: source.faviconUrl, alt: "Item" }}
+            />
+          </ListBlock>
+        )),
+      ),
+  },
+  {
+    folder: "EntityList",
+    prose: true,
+    get names() {
+      return [
+        ...namesOf("EntityList"),
+        composedNames(<InlineMarkdownRenderer content="**Name**" />),
+      ];
+    },
+    elements: () =>
+      (["default", "small"] as const).flatMap((size) =>
+        (["text", "number"] as const).map((rightVariant) => (
+          <EntityList
+            key={`${size}/${rightVariant}`}
+            size={size}
+            header={{ left: "Key", right: "Value", rightVariant }}
+            rows={[
+              { left: "**Name**", right: "42", rightVariant },
+              { left: "Next", right: "43", rightVariant },
+            ]}
+            footer={{ left: "Total", right: "85", rightVariant }}
+          />
+        )),
+      ),
+  },
+  {
+    folder: "MetricIndicator",
+    names: namesOf("MetricIndicator"),
+    elements: () =>
+      [MetricIndicatorInline, MetricIndicatorWithStrikethrough].flatMap((Component) =>
+        (["up", "down"] as const).flatMap((direction) =>
+          [false, true].map((subtext) => (
+            <Component
+              key={`${Component.displayName}/${direction}/${subtext}`}
+              value="42"
+              previousValue="45"
+              subtext={subtext ? "Sales" : undefined}
+              trend={{ direction, value: 5 }}
+            />
+          )),
+        ),
+      ),
+  },
+  {
+    folder: "Table",
+    get names() {
+      return [
+        ...namesOf("Table"),
+        composedNames(<IconButton icon={<svg />} size="small" variant="secondary" />),
+      ];
+    },
+    clientOnly: ["openui-scrollable-table-control", "openui-scrollable-table-icon"],
+    elements: () => [
+      ...(["left", "center", "right"] as const).map((align) => (
+        <Table key={align}>
+          <TableHeader>
+            <TableRow>
+              <TableHead align={align} icon={<svg width="16" height="16" />}>
+                Head
+              </TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell align={align}>Cell</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell align={align}>Next</TableCell>
+            </TableRow>
+          </TableBody>
+          <TableFooter>
+            <TableRow>
+              <TableCell align={align}>Footer</TableCell>
+            </TableRow>
+          </TableFooter>
+        </Table>
+      )),
+      <ScrollableTable key="overflow" containerStyle={{ maxWidth: 240 }}>
+        <TableHeader>
+          <TableRow>
+            {Array.from({ length: 8 }, (_, i) => (
+              <TableHead key={i}>Column {i + 1}</TableHead>
+            ))}
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            {Array.from({ length: 8 }, (_, i) => (
+              <TableCell key={i}>Cell {i + 1}</TableCell>
+            ))}
+          </TableRow>
+        </TableBody>
+      </ScrollableTable>,
+      // SSR renders no measured controls; render the public dependency for name coverage too.
+      <IconButton key="control" icon={<svg />} size="small" variant="secondary" />,
+    ],
+  },
+  {
+    folder: "EditableTable",
+    get names() {
+      return [
+        ...namesOf("EditableTable"),
+        composedNames(<EditableTableChangesBar changedCellCount={2} />),
+      ];
+    },
+    clientOnly: [
+      "openui-editable-table-scroll-control",
+      "openui-editable-table-cell-input",
+      "openui-editable-table-select-content",
+      "openui-editable-table-select-viewport",
+      "openui-editable-table-select-item",
+      "openui-editable-table-select-check-wrapper",
+      "openui-editable-table-select-check-icon",
+      "openui-editable-table-select-item-text",
+      "openui-editable-table-select-indicator",
+    ],
+    elements: () => [
+      <div key="table" style={{ width: 240 }}>
+        <EditableTable
+          columns={[
+            { key: "name", header: "Name", type: "text" },
+            { key: "amount", header: "Amount", type: "number" },
+            { key: "url", header: "URL", type: "url" },
+            {
+              key: "status",
+              header: "Status",
+              type: "select",
+              options: [
+                { value: "ready", label: "Ready" },
+                { value: "pending", label: "Pending" },
+              ],
+            },
+          ]}
+          data={[
+            { id: "1", name: "Ada", amount: 42, url: "https://example.com", status: "ready" },
+            { id: "2", name: "Grace", amount: 43, url: "not a url", status: "pending" },
+          ]}
+        />
+      </div>,
+      <EditableTableChangesBar key="changes" changedCellCount={2} />,
+    ],
+  },
+
   {
     folder: "SourceFaviconImage",
     names: namesOf("SourceFaviconImage"),

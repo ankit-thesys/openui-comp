@@ -85,6 +85,11 @@ describe("ruleViolation", () => {
 describe("selectorViolation", () => {
   it.each([
     ".go123",
+    ".go1:focus",
+    ".go1:nth-child(even)",
+    ".go1::-webkit-inner-spin-button",
+    ".go1::-webkit-outer-spin-button",
+
     ".go1:hover",
     ".go1:disabled",
     ".go1:focus-visible",
@@ -111,7 +116,10 @@ describe("selectorViolation", () => {
     [".go1:hover:not(:disabled)", "state chain"],
     [".go1:hover::before", "state plus pseudo-element"],
     [".go1::-webkit-scrollbar-thumb:hover", "scrollbar pseudo-element plus state"],
-    [".go1:focus", "state outside the list"],
+    [".go1:visited", "state outside the list"],
+    [".go1:nth-child(even of .extra)", "class inside a structural state"],
+    [".go1:nth-child(even):hover", "two states"],
+    [".go1::-webkit-inner-spin-button:hover", "pseudo-element plus state"],
     ["[data-x] .go1", "attribute ancestor"],
     [".openui-button", "stable class in library CSS"],
     ["button", "bare type selector"],

@@ -22,6 +22,7 @@ import {
   Type,
 } from "lucide-react";
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { Button } from "../Button";
 import { IconButton } from "../IconButton";
 import { getCellRenderer } from "./base/components/cellRegistry";
@@ -31,17 +32,7 @@ import type {
   EditableColumnMeta,
   EditableTableMeta,
 } from "./base/components/CellTypes";
-import {
-  changesButtonsClass,
-  changesClass,
-  changesCountClass,
-  controlClass,
-  headerClass,
-  headerIconClass,
-  scrollClass,
-  tableClass,
-  wrapperClass,
-} from "./editableTable.styles";
+import { editableTableStyles, names } from "./editableTable.styles";
 
 export type { EditableCellType } from "./base/components/CellTypes";
 
@@ -116,15 +107,15 @@ const CellRenderer = (info: CellRendererProps) => {
 const headerIcon = (type: EditableCellType) => {
   switch (type) {
     case "url":
-      return <Link size={16} />;
+      return <Link className={names.icon} size={16} />;
     case "date-single":
-      return <CalendarDays size={16} />;
+      return <CalendarDays className={names.icon} size={16} />;
     case "select":
-      return <List size={16} />;
+      return <List className={names.icon} size={16} />;
     case "text":
     case "number":
     default:
-      return <Type size={16} />;
+      return <Type className={names.icon} size={16} />;
   }
 };
 
@@ -137,6 +128,7 @@ const PORTAL_CELL_TYPES: EditableCellType[] = ["date-single", "select"];
  */
 export const EditableTable = React.forwardRef<HTMLDivElement, EditableTableProps>(
   ({ data, columns, onDataChange, className }, ref) => {
+    const styles = useStyles(editableTableStyles);
     const [selectedPosition, setSelectedPosition] = useState<CellPosition | null>(null);
     const [editingPosition, setEditingPosition] = useState<
       (CellPosition & { cellType: EditableCellType }) | null
@@ -373,20 +365,13 @@ export const EditableTable = React.forwardRef<HTMLDivElement, EditableTableProps
     }, [columnLefts]);
 
     return (
-      <div
-        className={clsx(wrapperClass, "openui-editable-table-wrapper", className)}
-        ref={tableRef}
-        tabIndex={0}
-      >
+      <div className={clsx(styles.root, names.root, className)} ref={tableRef} tabIndex={0}>
         {isScrollable && (
           <>
             <div
-              className={clsx(
-                controlClass,
-                "openui-editable-table-scroll-control",
-                "openui-editable-table-scroll-control--left",
-                !canScrollLeft && "openui-editable-table-scroll-control--disabled",
-              )}
+              className={clsx(styles.control, names.control)}
+              data-side="left"
+              data-disabled={!canScrollLeft}
             >
               <IconButton
                 aria-label="Scroll left"
@@ -394,16 +379,13 @@ export const EditableTable = React.forwardRef<HTMLDivElement, EditableTableProps
                 variant="secondary"
                 onClick={scrollToPrevColumn}
                 disabled={!canScrollLeft}
-                icon={<ChevronLeft size={16} />}
+                icon={<ChevronLeft className={names.icon} size={16} />}
               />
             </div>
             <div
-              className={clsx(
-                controlClass,
-                "openui-editable-table-scroll-control",
-                "openui-editable-table-scroll-control--right",
-                !canScrollRight && "openui-editable-table-scroll-control--disabled",
-              )}
+              className={clsx(styles.control, names.control)}
+              data-side="right"
+              data-disabled={!canScrollRight}
             >
               <IconButton
                 aria-label="Scroll right"
@@ -411,29 +393,31 @@ export const EditableTable = React.forwardRef<HTMLDivElement, EditableTableProps
                 variant="secondary"
                 onClick={scrollToNextColumn}
                 disabled={!canScrollRight}
-                icon={<ChevronRight size={16} />}
+                icon={<ChevronRight className={names.icon} size={16} />}
               />
             </div>
           </>
         )}
-        <div
-          className={clsx(scrollClass, "openui-editable-table-scroll-container")}
-          ref={scrollContainerRef}
-        >
-          <table
-            className={clsx(tableClass, "openui-editable-table-table")}
-            style={{ width: isScrollable ? "max-content" : "100%" }}
-          >
-            <thead>
+        <div className={clsx(styles.scroll, names.scroll)} ref={scrollContainerRef}>
+          <table className={clsx(styles.table, names.table)} data-scrollable={isScrollable}>
+            <thead className={names.tableHeader}>
               {table.getHeaderGroups().map((headerGroup) => (
-                <tr key={headerGroup.id}>
+                <tr key={headerGroup.id} className={names.headerRow}>
                   {headerGroup.headers.map((header) => (
-                    <th key={header.id} style={{ width: header.getSize() }}>
-                      <div className={clsx(headerClass, "openui-editable-table-header-container")}>
+                    <th
+                      key={header.id}
+                      className={clsx(styles.head, names.head)}
+                      style={
+                        {
+                          "--_openui-editable-table-column-width": `${header.getSize()}px`,
+                        } as React.CSSProperties
+                      }
+                    >
+                      <div className={clsx(styles.header, names.header)}>
                         {header.isPlaceholder
                           ? null
                           : flexRender(header.column.columnDef.header, header.getContext())}
-                        <div className={clsx(headerIconClass, "openui-editable-table-header-icon")}>
+                        <div className={clsx(styles.headerIcon, names.headerIcon)}>
                           {headerIconForColumn(header.column)}
                         </div>
                       </div>
@@ -442,11 +426,19 @@ export const EditableTable = React.forwardRef<HTMLDivElement, EditableTableProps
                 </tr>
               ))}
             </thead>
-            <tbody>
+            <tbody className={names.tableBody}>
               {table.getRowModel().rows.map((row) => (
-                <tr key={row.id}>
+                <tr key={row.id} className={clsx(styles.row, names.row)}>
                   {row.getVisibleCells().map((cell) => (
-                    <td key={cell.id} style={{ width: cell.column.getSize() }}>
+                    <td
+                      key={cell.id}
+                      className={clsx(styles.cell, names.cell)}
+                      style={
+                        {
+                          "--_openui-editable-table-column-width": `${cell.column.getSize()}px`,
+                        } as React.CSSProperties
+                      }
+                    >
                       {flexRender(CellRenderer, {
                         ...cell.getContext(),
                         columns,
@@ -493,22 +485,28 @@ export const EditableTableChangesBar = ({
   saveLabel = "Save Changes",
   className,
 }: EditableTableChangesBarProps) => {
+  const styles = useStyles(editableTableStyles);
   if (changedCellCount <= 0) return null;
   return (
-    <div className={clsx(changesClass, "openui-editable-table-changes-container", className)}>
-      <div className={clsx(changesCountClass, "openui-editable-table-changes-count")}>
+    <div className={clsx(styles.changes, names.changes, className)}>
+      <div className={clsx(styles.changesCount, names.changesCount)}>
         {changedCellCount} changes made
       </div>
-      <div className={clsx(changesButtonsClass, "openui-editable-table-changes-buttons")}>
+      <div className={clsx(styles.changesButtons, names.changesButtons)}>
         <Button
           onClick={onReset}
           variant="secondary"
           size="small"
-          iconLeft={<RotateCcw size={16} />}
+          iconLeft={<RotateCcw className={names.icon} size={16} />}
         >
           {resetLabel}
         </Button>
-        <Button onClick={onSave} variant="primary" size="small" iconLeft={<Check size={16} />}>
+        <Button
+          onClick={onSave}
+          variant="primary"
+          size="small"
+          iconLeft={<Check className={names.icon} size={16} />}
+        >
           {saveLabel}
         </Button>
       </div>
