@@ -101,8 +101,10 @@ Some components describe a derived condition (one the component works out from i
 or layout) with a data attribute of their own. These attributes are public API, like the stable
 classes: combine one with its element's class to restyle that case, such as
 `.openui-callout[data-autodismiss] { animation: none; }`. A boolean attribute is absent when false,
-never `="false"`. Each one is pinned by `test/unit/contract/data-attributes.test.tsx` (the scroll
-buttons' `data-side` by `test/browser/lists-tables.spec.ts`).
+never `="false"`. Each one is pinned by `test/unit/contract/data-attributes.test.tsx`, or by a
+browser spec where it needs layout, events or a portal (the test file lists which). Attributes that
+third-party primitives set (Radix, react-day-picker) and the chart root's `data-openui-chart`
+export marker are not part of this list.
 
 | Component | Element | Attribute and values | Present when |
 | --- | --- | --- | --- |
@@ -118,6 +120,35 @@ buttons' `data-side` by `test/browser/lists-tables.spec.ts`).
 | Table (ScrollableTable), EditableTable | `.openui-scrollable-table-control`, `.openui-editable-table-scroll-control` | `data-side="left"` or `"right"` | Always on a scroll button; the buttons render while the table overflows |
 | AreaChart, BarChart, LineChart | `.openui-{area,bar,line}-chart-svg` | `data-overflow="visible"` | On the chart's only SVG when it fits, and on the fixed Y-axis SVG when it scrolls |
 | Chart legends, mini charts | `.openui-default-legend-item`, `.openui-stacked-legend-item`, `.openui-mini-{line,area,bar}-chart` | `data-clickable=""` | The item or chart responds to clicks: cartesian legend items always, others when a click handler is set |
+| Table (ScrollableTable), EditableTable | `.openui-scrollable-table`, `.openui-editable-table-grid` | `data-scrollable="true"` | The table is wider than its container |
+| OptionCards | `.openui-option-cards-row` | `data-columns="1"`, `"2"` or `"3"` | Always: the number of cards in that row |
+| OptionCards | `.openui-option-cards-item` | `data-span="full"` | The last card when the count is odd |
+| Card blocks (Composite, Context, Overview, Snippet, Visual) | `.openui-card-block-layout` | `data-card-type="CompositeCard"`, `"ContextCard"`, `"OverviewCard"`, `"SnippetCard"` or `"VisualCard"` | Always: the block's card type |
+| Card blocks | `.openui-card-block-layout` | `data-layout="grid"` or `"carousel"` | Always: the `layout` prop |
+| Card blocks | `.openui-card-block-layout` | `data-count="<n>"` | Always: the number of items |
+| Card blocks | `.openui-card-block-layout-row` | `data-columns="1"` or `"2"` | Always in the grid layout: the number of cards in that row |
+| Card blocks | `.openui-card-block-layout-item`, `.openui-card-block-layout-carousel-item` | `data-span="full"` | The last card when the count is odd |
+| Card blocks, Carousel | `.openui-card-block-layout-carousel`, `.openui-carousel-content` | `data-mask="none"`, `"left"`, `"right"` or `"both"` | Always: the edges with more content to scroll to |
+| ImageGallery | `.openui-image-gallery-image` | `data-position="1"`, `"2"`, … | Always: the tile's position, from 1 |
+| Image | `.openui-image` | `data-error="true"` | The image failed to load |
+| ImageBlock | `.openui-image-block`, `.openui-image-block-image` | `data-error="true"` | The image failed to load |
+| ImageBlock | `.openui-image-block`, `.openui-image-block-image` | `data-breakpoint="mobile"`, `"tablet"` or `"desktop"` | Always: from the block's width (under 480px, under 800px, wider); `mobile` until measured |
+| ImageBlock | `.openui-image-block` | `data-loading="true"` | The image is still loading |
+| BarChart, HorizontalBarChart | `.openui-{bar,horizontal-bar}-chart-bar`, `-internal-line` | `data-negative=""` | The bar's value is negative |
+| AreaChart, BarChart, LineChart, ScatterChart | `.openui-{area,bar,line,scatter}-chart-grid-line` | `data-zero=""` | The grid line at zero, when the axis spans negative values |
+| Chart tooltip | `.openui-chart-tooltip-portal` | `data-positioned=""` | The tooltip has been positioned |
+| Chart tooltip | `.openui-chart-tooltip-content-item`, `-content-indicator`, `-content-value-wrapper` | `data-layout="two-items"` or `"multiple"` | Always: `two-items` for one or two items, `multiple` for more |
+| Chart tooltip | `.openui-chart-tooltip-content-item-separator` inside an item | `data-last=""` | The last item's separator |
+| HeatmapChart | `.openui-heatmap-chart-cell` | `data-empty=""` | The cell has no value |
+| CalendarHeatmap | `.openui-calendar-heatmap-cell` | `data-level="0"` to `"4"` | Always: the day's contribution level |
+| CalendarHeatmap | `.openui-calendar-heatmap-cell` | `data-ghost=""` | The day is outside the displayed range (padding) |
+| CalendarHeatmap | `.openui-calendar-heatmap-cell` | `data-dimmed=""` | A level is hovered (a cell or the legend) and this cell has another level |
+| Slider | `.openui-slider-range` | `data-at-min=""` | A single-value slider sits at `min` |
+| Calendar | `.openui-calendar-day` | `data-today-unselected="true"` | The day is today and not selected |
+| Select | `.openui-select-viewport` | `data-position="item-aligned"` or `"popper"` | Always: the content's `position` |
+| DatePicker | `.openui-date-picker-trigger` | `data-placeholder="true"` | No date (or no complete range) is selected |
+| Hint, SliderBlock | `.openui-hint`, `.openui-slider-block-header` | `data-invalid="true"` | The field has an error (FormControl `hasError`, or an out-of-range SliderBlock value) |
+| TextContentWrapper | `.openui-text-content-wrapper` | `data-mode="light"` or `"dark"` | Always: the theme mode |
 
 ### The override guarantee
 
@@ -1093,4 +1124,4 @@ These classes and attributes changed after earlier betas shipped them.
 | `.openui-editable-table-table`, `-table-header`, `-table-body` | `.openui-editable-table-grid`, `-grid-header`, `-grid-body` |
 | `.openui-chart-with-stacked-legend-legend` | `.openui-chart-with-stacked-legend-panel` |
 | `.openui-calendar-day[data-selection="single"]` in `mode="multiple"` | `[data-selection="multiple"]`; match `[data-selection]` for both modes |
-| ListItem `data-action="false"`, `data-subtitle="false"`; MetricIndicator `data-subtext="false"`; ContextCardBlock `data-background-image="false"` | Absent when false |
+| ListItem `data-action="false"`, `data-subtitle="false"`; MetricIndicator `data-subtext="false"`; ContextCardBlock `data-background-image="false"`; Table and EditableTable `data-scrollable="false"` | Absent when false |

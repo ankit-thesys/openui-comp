@@ -199,10 +199,18 @@ test("lists and tables retain computed styles after html classes are rewritten",
   expect(await snapshot()).toEqual(before);
 });
 
-// Derived data attribute (README "Derived data attributes"): each overflowing table's scroll
-// buttons carry data-side, left then right for each table.
-test("table scroll buttons carry data-side", async ({ page }) => {
+// Derived data attributes (README "Derived data attributes"): each overflowing table's scroll
+// buttons carry data-side, left then right for each table; an overflowing table carries
+// data-scrollable="true", and other tables leave it off.
+test("table scroll buttons carry data-side and tables data-scrollable", async ({ page }) => {
   await open(page);
+  for (const table of [".openui-scrollable-table", ".openui-editable-table-grid"]) {
+    await expect(page.locator(`${table}[data-scrollable="true"]`).first()).toBeAttached();
+    const values = await page
+      .locator(table)
+      .evaluateAll((elements) => elements.map((el) => el.getAttribute("data-scrollable")));
+    expect(values.filter((value) => value !== "true" && value !== null)).toEqual([]);
+  }
   for (const control of [
     ".openui-scrollable-table-control",
     ".openui-editable-table-scroll-control",

@@ -399,7 +399,10 @@ export const EditableTable = React.forwardRef<HTMLDivElement, EditableTableProps
           </>
         )}
         <div className={clsx(styles.scroll, names.scroll)} ref={scrollContainerRef}>
-          <table className={clsx(styles.table, names.table)} data-scrollable={isScrollable}>
+          <table
+            className={clsx(styles.table, names.table)}
+            data-scrollable={isScrollable || undefined}
+          >
             <thead className={names.tableHeader}>
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr key={headerGroup.id} className={names.headerRow}>

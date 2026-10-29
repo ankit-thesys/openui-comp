@@ -130,7 +130,7 @@ const ScrollableTable = React.forwardRef<HTMLTableElement, ScrollableTableProps>
           )}
           containerStyle={containerStyle}
           className={clsx(styles.root, names.root, className)}
-          data-scrollable={isScrollable}
+          data-scrollable={isScrollable || undefined}
           {...tableProps}
         >
           {children}

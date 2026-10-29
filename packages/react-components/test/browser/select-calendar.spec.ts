@@ -228,6 +228,7 @@ for (const layer of ["", "openui"])
         await expect(viewport).toHaveCSS("position", "static");
         await expect(viewport).toHaveCSS("flex", "0 0 auto");
         await expect(viewport).toHaveCSS("overflow", "visible");
+        await expect(viewport).toHaveAttribute("data-position", position);
         await expect(page.locator(".openui-select-value")).toHaveAttribute(
           "data-value-root-ref",
           "true",
