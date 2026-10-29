@@ -1,3 +1,5 @@
+"use client";
+
 import { SegmentedBar } from "./SegmentedBar";
 import type { SegmentedBarData, SegmentedBarProps } from "./types";
 

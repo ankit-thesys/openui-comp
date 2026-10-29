@@ -1,10 +1,14 @@
+"use client";
+
+import clsx from "clsx";
 import type { ScaleBand, ScaleLinear } from "d3-scale";
 import { scaleBand } from "d3-scale";
 import React, { useMemo } from "react";
+import { useStyles } from "../../../../styles/useStyles";
 import type { StackedData } from "../../hooks";
 import { roundedBarPath } from "../../shared/cartesian/roundedBarPath";
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
 import { entranceProps } from "../../utils/entranceUtils";
+import { barChartStyles, names } from "../barChart.styles";
 import type { BarChartVariant } from "../types";
 import { verticalBarRadii } from "./verticalBarRadii";
 
@@ -55,6 +59,7 @@ export const BarSeries: React.FC<BarSeriesProps> = ({
   internalLineWidth = 1,
   isAnimationActive,
 }) => {
+  const styles = useStyles(barChartStyles);
   const bandwidth = xScale.bandwidth();
 
   const innerScale = useMemo(() => {
@@ -95,11 +100,11 @@ export const BarSeries: React.FC<BarSeriesProps> = ({
     });
 
     return (
-      <g className={`${CHART_CLASS_PREFIX}-bar-chart-bars`}>
+      <g className={names.bars}>
         {stackedData.map((series, seriesIndex) => {
           const color = colors[series.key] ?? "#000";
           return (
-            <g key={series.key}>
+            <g className={names.group} key={series.key}>
               {(series as unknown as [number, number][]).map((point, i) => {
                 const category = String(data[i]![categoryKey]);
                 const bandX = xScale(category) ?? 0;
@@ -117,17 +122,20 @@ export const BarSeries: React.FC<BarSeriesProps> = ({
                 const rounded = isNegative
                   ? seriesIndex === lastNegativeSeries[i]
                   : seriesIndex === lastPositiveSeries[i];
-                const { className: animatedClass, animationDelay } = entranceProps(
+                const { animationDelay } = entranceProps(
                   isAnimationActive,
-                  `${CHART_CLASS_PREFIX}-bar-chart-bar--animated`,
+                  names.barAnimated.true,
                   i * 30,
                 );
-                const animatedSuffix = animatedClass ? ` ${animatedClass}` : "";
 
                 return (
-                  <g key={i}>
+                  <g className={names.group} key={i}>
                     <path
-                      className={`${CHART_CLASS_PREFIX}-bar-chart-bar${isNegative ? ` ${CHART_CLASS_PREFIX}-bar-chart-bar--negative` : ""}${animatedSuffix}`}
+                      data-negative={isNegative ? "" : undefined}
+                      className={clsx(
+                        names.bar,
+                        isAnimationActive && [styles.barAnimated, names.barAnimated.true],
+                      )}
                       d={roundedBarPath(
                         barX,
                         barY,
@@ -136,11 +144,25 @@ export const BarSeries: React.FC<BarSeriesProps> = ({
                         verticalBarRadii(barRadius, isNegative, rounded),
                       )}
                       fill={color}
-                      style={animationDelay ? { animationDelay } : undefined}
+                      style={
+                        animationDelay
+                          ? ({
+                              "--_openui-bar-chart-mark-delay": animationDelay,
+                            } as React.CSSProperties)
+                          : undefined
+                      }
                     />
                     {internalLine && barHeight >= MIN_BAR_HEIGHT_FOR_LINE && barWidth >= 3 && (
                       <line
-                        className={`${CHART_CLASS_PREFIX}-bar-chart-internal-line${isNegative ? ` ${CHART_CLASS_PREFIX}-bar-chart-bar--negative` : ""}${animatedSuffix}`}
+                        data-negative={isNegative ? "" : undefined}
+                        className={clsx(
+                          styles.internalLine,
+                          names.internalLine,
+                          isAnimationActive && [
+                            styles.internalLineAnimated,
+                            names.internalLineAnimated.true,
+                          ],
+                        )}
                         x1={barX + barWidth / 2}
                         y1={barY + LINE_PADDING}
                         x2={barX + barWidth / 2}
@@ -148,7 +170,13 @@ export const BarSeries: React.FC<BarSeriesProps> = ({
                         stroke={internalLineColor}
                         strokeWidth={internalLineWidth}
                         strokeLinecap="round"
-                        style={animationDelay ? { animationDelay } : undefined}
+                        style={
+                          animationDelay
+                            ? ({
+                                "--_openui-bar-chart-mark-delay": animationDelay,
+                              } as React.CSSProperties)
+                            : undefined
+                        }
                       />
                     )}
                   </g>
@@ -163,18 +191,13 @@ export const BarSeries: React.FC<BarSeriesProps> = ({
 
   // Grouped variant
   return (
-    <g className={`${CHART_CLASS_PREFIX}-bar-chart-bars`}>
+    <g className={names.bars}>
       {data.map((row, i) => {
         const category = String(row[categoryKey]);
         const groupX = xScale(category) ?? 0;
-        const { className: animatedClass, animationDelay } = entranceProps(
-          isAnimationActive,
-          `${CHART_CLASS_PREFIX}-bar-chart-bar--animated`,
-          i * 30,
-        );
-        const animatedSuffix = animatedClass ? ` ${animatedClass}` : "";
+        const { animationDelay } = entranceProps(isAnimationActive, names.barAnimated.true, i * 30);
         return (
-          <g key={category}>
+          <g className={names.group} key={category}>
             {dataKeys.map((key) => {
               const value = Number(row[key]) || 0;
               const innerBandX = innerScale?.(key) ?? 0;
@@ -190,9 +213,13 @@ export const BarSeries: React.FC<BarSeriesProps> = ({
               const color = colors[key] ?? "#000";
 
               return (
-                <g key={key}>
+                <g className={names.group} key={key}>
                   <path
-                    className={`${CHART_CLASS_PREFIX}-bar-chart-bar${isNegative ? ` ${CHART_CLASS_PREFIX}-bar-chart-bar--negative` : ""}${animatedSuffix}`}
+                    data-negative={isNegative ? "" : undefined}
+                    className={clsx(
+                      names.bar,
+                      isAnimationActive && [styles.barAnimated, names.barAnimated.true],
+                    )}
                     d={roundedBarPath(
                       barX,
                       barY,
@@ -201,11 +228,25 @@ export const BarSeries: React.FC<BarSeriesProps> = ({
                       verticalBarRadii(barRadius, isNegative, true),
                     )}
                     fill={color}
-                    style={animationDelay ? { animationDelay } : undefined}
+                    style={
+                      animationDelay
+                        ? ({
+                            "--_openui-bar-chart-mark-delay": animationDelay,
+                          } as React.CSSProperties)
+                        : undefined
+                    }
                   />
                   {internalLine && barHeight >= MIN_BAR_HEIGHT_FOR_LINE && barWidth >= 3 && (
                     <line
-                      className={`${CHART_CLASS_PREFIX}-bar-chart-internal-line${isNegative ? ` ${CHART_CLASS_PREFIX}-bar-chart-bar--negative` : ""}${animatedSuffix}`}
+                      data-negative={isNegative ? "" : undefined}
+                      className={clsx(
+                        styles.internalLine,
+                        names.internalLine,
+                        isAnimationActive && [
+                          styles.internalLineAnimated,
+                          names.internalLineAnimated.true,
+                        ],
+                      )}
                       x1={barX + barWidth / 2}
                       y1={barY + LINE_PADDING}
                       x2={barX + barWidth / 2}
@@ -213,7 +254,13 @@ export const BarSeries: React.FC<BarSeriesProps> = ({
                       stroke={internalLineColor}
                       strokeWidth={internalLineWidth}
                       strokeLinecap="round"
-                      style={animationDelay ? { animationDelay } : undefined}
+                      style={
+                        animationDelay
+                          ? ({
+                              "--_openui-bar-chart-mark-delay": animationDelay,
+                            } as React.CSSProperties)
+                          : undefined
+                      }
                     />
                   )}
                 </g>

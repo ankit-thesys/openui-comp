@@ -1,13 +1,12 @@
+"use client";
+
 import clsx from "clsx";
-import { css } from "goober";
 import { CSSProperties, forwardRef, HTMLAttributes, ReactElement } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { ButtonProps } from "../Button";
 import { IconButtonProps } from "../IconButton";
-import { buttonsStyles } from "./buttons.styles";
-
-const componentClass = css`
-  ${buttonsStyles}
-`;
+import { names as baseNames, baseStyles } from "../SharedBase/base.styles";
+import { buttonsStyles, names } from "./buttons.styles";
 
 type ButtonsVariant = "vertical" | "horizontal";
 
@@ -19,17 +18,22 @@ export interface ButtonsProps extends HTMLAttributes<HTMLDivElement> {
   style?: CSSProperties;
 }
 
-const variantMap: Record<ButtonsVariant, string> = {
-  vertical: "openui-buttons-vertical",
-  horizontal: "openui-buttons-horizontal",
-};
-
 export const Buttons = forwardRef<HTMLDivElement, ButtonsProps>((props, ref) => {
   const { className, style, variant = "horizontal", children, ...rest } = props;
+  const styles = useStyles(buttonsStyles);
+  const base = useStyles(baseStyles);
   return (
     <div
       ref={ref}
-      className={clsx(componentClass, "openui-buttons", variantMap[variant], className)}
+      className={clsx(
+        styles.root,
+        styles.variant[variant],
+        names.root,
+        names.variant[variant],
+        base.root,
+        baseNames.root,
+        className,
+      )}
       style={style}
       {...rest}
     >

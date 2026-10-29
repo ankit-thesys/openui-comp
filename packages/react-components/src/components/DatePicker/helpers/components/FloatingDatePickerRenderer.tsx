@@ -1,21 +1,20 @@
+"use client";
+
 import { autoUpdate, flip, offset, useFloating } from "@floating-ui/react-dom";
 import clsx from "clsx";
-import { css } from "goober";
 import { ChevronDown } from "lucide-react";
 import { forwardRef, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useMultipleRefs } from "../../../../hooks/useMultipleRefs";
+import { useStyles } from "../../../../styles/useStyles";
 import { useTheme } from "../../../ThemeProvider";
-import { datePickerStyles } from "../../datePicker.styles";
+import { datePickerStyles, names } from "../../datePicker.styles";
 import { useDatePicker } from "../context/DatePickerContext";
 import { formatDateRange, formatSingleDate } from "../utils/helperFn";
 import { DatepickerRenderer } from "./DatePickerRenderer";
 
-const componentClass = css`
-  ${datePickerStyles}
-`;
-
 const FloatingDateInput = () => {
+  const styles = useStyles(datePickerStyles);
   const { mode, selectedDate, selectedRange, isOpen, setIsOpen } = useDatePicker();
   const hasSelectedDate =
     mode === "single"
@@ -24,30 +23,25 @@ const FloatingDateInput = () => {
 
   return (
     <div
-      className={clsx("openui-date-picker-renderer-floating-input-container", {
-        "openui-date-picker-renderer-floating-input-container-open": isOpen,
-        "openui-date-picker-renderer-floating-input-container-not-open": !isOpen,
-        "openui-date-picker-renderer-floating-input-container-has-no-selected-date":
-          !hasSelectedDate,
-      })}
+      className={clsx(styles.trigger, names.trigger)}
+      data-state={isOpen ? "open" : "closed"}
+      data-placeholder={!hasSelectedDate || undefined}
       onClick={(e) => {
         e.stopPropagation();
         setIsOpen(!isOpen);
       }}
     >
-      <span className="openui-date-picker-renderer-floating-input-container-text">
+      <span className={clsx(styles.text, names.text)}>
         {mode === "single" ? formatSingleDate(selectedDate) : formatDateRange(selectedRange)}
       </span>
-      <ChevronDown
-        size={16}
-        className={clsx({ "openui-date-picker-renderer-floating-input-container-icon": isOpen })}
-      />
+      <ChevronDown size={16} className={clsx(styles.icon, names.icon)} />
     </div>
   );
 };
 
 const FloatingDatePicker = forwardRef<HTMLDivElement>((_, ref) => {
   const { isOpen } = useDatePicker();
+  const styles = useStyles(datePickerStyles);
   const menuPositionDivRef = useRef<HTMLDivElement>(null);
   const { portalThemeClassName } = useTheme();
 
@@ -64,27 +58,20 @@ const FloatingDatePicker = forwardRef<HTMLDivElement>((_, ref) => {
   const menuPositionDivRefs = useMultipleRefs(setReference, menuPositionDivRef);
   const floatingRef = useMultipleRefs(setFloating, ref);
 
-  if (!isOpen) {
+  if (!isOpen || typeof document === "undefined") {
     return null;
   }
 
   return (
     <>
-      <div
-        ref={menuPositionDivRefs}
-        className={clsx("openui-date-picker-renderer-floating-reference")}
-      />
+      <div ref={menuPositionDivRefs} className={clsx(styles.reference, names.reference)} />
       {createPortal(
         <div
           ref={floatingRef}
-          style={{ ...floatingStyles, width: "fit-content" }}
-          className={clsx(
-            componentClass,
-            "openui-date-picker-renderer-floating-content",
-            portalThemeClassName,
-          )}
+          style={floatingStyles}
+          className={clsx(styles.content, names.content, portalThemeClassName)}
         >
-          <div className="openui-date-picker-renderer-floating-menu">
+          <div className={clsx(styles.menu, names.menu)}>
             <DatepickerRenderer />
           </div>
         </div>,
@@ -101,7 +88,8 @@ export const FloatingDatePickerRenderer = ({
   className?: string;
   style?: React.CSSProperties;
 }) => {
-  const { isOpen, setIsOpen } = useDatePicker();
+  const { isOpen, setIsOpen, mode } = useDatePicker();
+  const styles = useStyles(datePickerStyles);
   const menuRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -128,7 +116,7 @@ export const FloatingDatePickerRenderer = ({
   return (
     <div
       ref={containerRef}
-      className={clsx(componentClass, "openui-date-picker-renderer-floating-container", className)}
+      className={clsx(styles.root, names.root, names.mode[mode], className)}
       style={style}
     >
       <FloatingDateInput />

@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import { ClipDefs } from "../../shared/cartesian/ClipDefs";
+import { names } from "../areaChart.styles";
 
 const GRADIENT_TOP_OPACITY = 0.6;
 const GRADIENT_BOTTOM_OPACITY = 0;
@@ -25,8 +28,14 @@ export const GradientDefs: React.FC<GradientDefsProps> = ({
   negativeKeys,
 }) => {
   return (
-    <defs>
-      <ClipDefs chartId={chartId} chartWidth={chartWidth} chartHeight={chartHeight} />
+    <defs className={names.defs}>
+      <ClipDefs
+        className={names.clip}
+        rectClassName={names.clipRect}
+        chartId={chartId}
+        chartWidth={chartWidth}
+        chartHeight={chartHeight}
+      />
       {dataKeys.map((key) => {
         const transformedKey = transformedKeys[key];
         const color = colors[key] ?? "#000";
@@ -35,6 +44,7 @@ export const GradientDefs: React.FC<GradientDefsProps> = ({
         const flip = negativeKeys?.has(key) ?? false;
         return (
           <linearGradient
+            className={names.gradient}
             key={key}
             id={`grad-${chartId}-${transformedKey}`}
             x1="0"
@@ -42,8 +52,18 @@ export const GradientDefs: React.FC<GradientDefsProps> = ({
             x2="0"
             y2={flip ? "0" : "1"}
           >
-            <stop offset="5%" stopColor={color} stopOpacity={GRADIENT_TOP_OPACITY} />
-            <stop offset="95%" stopColor={color} stopOpacity={GRADIENT_BOTTOM_OPACITY} />
+            <stop
+              className={names.stop}
+              offset="5%"
+              stopColor={color}
+              stopOpacity={GRADIENT_TOP_OPACITY}
+            />
+            <stop
+              className={names.stop}
+              offset="95%"
+              stopColor={color}
+              stopOpacity={GRADIENT_BOTTOM_OPACITY}
+            />
           </linearGradient>
         );
       })}

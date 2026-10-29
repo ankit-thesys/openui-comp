@@ -1,7 +1,9 @@
-import * as AspectRatio from "@radix-ui/react-aspect-ratio";
+"use client";
+
 import clsx from "clsx";
 import React, { forwardRef, useState } from "react";
-import { errorClass, fillClass, fitClass, imageClass } from "./image.styles";
+import { useStyles } from "../../styles/useStyles";
+import { imageStyles, names } from "./image.styles";
 
 type AspectRatioType = "1:1" | "3:2" | "3:4" | "4:3" | "16:9";
 type ScaleType = "fit" | "fill";
@@ -15,32 +17,16 @@ export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   scale?: ScaleType;
 }
 
-const aspectRatioMap: Record<AspectRatioType, number> = {
-  "1:1": 1,
-  "3:2": 3 / 2,
-  "3:4": 3 / 4,
-  "4:3": 4 / 3,
-  "16:9": 16 / 9,
-};
-
-const scaleMap: Record<ScaleType, string> = {
-  fit: "openui-image-fit",
-  fill: "openui-image-fill",
-};
-
 export const Image = forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
   const { src, alt, styles, className, aspectRatio = "3:2", scale = "fill", ...rest } = props;
   const [hasError, setHasError] = useState<boolean>(false);
 
+  const sheet = useStyles(imageStyles);
   const imageClasses = clsx(
-    imageClass,
-    { fit: fitClass, fill: fillClass }[scale],
-    hasError && errorClass,
-    "openui-image",
-    {
-      [`${scaleMap[scale]}`]: scale,
-      "openui-image--error": hasError,
-    },
+    sheet.root,
+    names.root,
+    sheet.scale[scale],
+    names.scale[scale],
     className,
   );
 
@@ -50,6 +36,7 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
       src={src}
       alt={alt}
       className={imageClasses}
+      data-error={hasError || undefined}
       style={styles}
       onLoad={() => setHasError(false)}
       onError={() => setHasError(true)}
@@ -57,7 +44,19 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
     />
   );
 
-  return <AspectRatio.Root ratio={aspectRatioMap[aspectRatio]}>{image}</AspectRatio.Root>;
+  return (
+    <div
+      className={clsx(
+        sheet.aspect,
+        names.aspect,
+        sheet.aspectRatio[aspectRatio],
+        names.aspectRatio[aspectRatio],
+      )}
+      data-radix-aspect-ratio-wrapper=""
+    >
+      <div className={clsx(sheet.viewport, names.viewport)}>{image}</div>
+    </div>
+  );
 });
 
 Image.displayName = "Image";

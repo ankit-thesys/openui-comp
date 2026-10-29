@@ -1,12 +1,10 @@
+"use client";
+
 import * as SliderPrimitive from "@radix-ui/react-slider";
 import clsx from "clsx";
-import { css } from "goober";
-import { forwardRef, ReactNode, useMemo, useState } from "react";
-import { sliderStyles } from "./slider.styles";
-
-const componentClass = css`
-  ${sliderStyles}
-`;
+import { forwardRef, ReactNode, useState } from "react";
+import { useStyles } from "../../styles/useStyles";
+import { names, sliderStyles } from "./slider.styles";
 
 const formatNumber = (num: number | undefined): string => {
   if (num === undefined) {
@@ -44,7 +42,7 @@ export interface SliderProps extends Omit<
 export const Slider = forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>, SliderProps>(
   (
     {
-      variant,
+      variant = "continuous",
       min,
       max,
       step,
@@ -60,6 +58,7 @@ export const Slider = forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>
     },
     ref,
   ) => {
+    const styles = useStyles(sliderStyles);
     // used to show the correct value on thumb
     const [internalValue, setInternalValue] = useState(
       defaultValue && defaultValue.length > 0 ? defaultValue : [min],
@@ -70,40 +69,16 @@ export const Slider = forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>
 
     const isRange = valueToShow && valueToShow.length > 1;
 
-    const thumbs = useMemo(() => {
-      const thumbClass = "openui-slider-thumb-handle";
-      const valueIndicatorClass = "openui-slider-thumb-value";
-
-      if (isRange) {
-        return (
-          <>
-            {valueToShow?.map((v, i) => (
-              <SliderPrimitive.Thumb key={i} className="openui-slider-thumb">
-                <div className={thumbClass}>
-                  <div className="openui-slider-thumb-handle-inner">
-                    <div className="openui-slider-thumb-handle-inner-dot" />
-                  </div>
-                  {!disabled && <div className={valueIndicatorClass}>{formatNumber(v)}</div>}
-                </div>
-              </SliderPrimitive.Thumb>
-            ))}
-          </>
-        );
-      }
-
-      return (
-        <SliderPrimitive.Thumb className="openui-slider-thumb">
-          <div className={thumbClass}>
-            <div className="openui-slider-thumb-handle-inner">
-              <div className="openui-slider-thumb-handle-inner-dot" />
-            </div>
-            {!disabled && (
-              <div className={valueIndicatorClass}>{formatNumber(valueToShow?.[0])}</div>
-            )}
+    const thumbs = (isRange ? valueToShow : [valueToShow[0]]).map((v, i) => (
+      <SliderPrimitive.Thumb key={i} className={clsx(styles.thumb, names.thumb)}>
+        <div className={clsx(styles.handle, names.handle)}>
+          <div className={clsx(styles.handleInner, names.handleInner)}>
+            <div className={clsx(styles.handleDot, names.handleDot)} />
           </div>
-        </SliderPrimitive.Thumb>
-      );
-    }, [disabled, valueToShow, isRange]);
+          {!disabled && <div className={clsx(styles.value, names.value)}>{formatNumber(v)}</div>}
+        </div>
+      </SliderPrimitive.Thumb>
+    ));
 
     const renderDots = () => {
       if (variant === "discrete" && step) {
@@ -120,9 +95,8 @@ export const Slider = forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>
           return (
             <div
               key={value}
-              className={clsx("openui-slider-dots-dot", {
-                "openui-slider-dots-dot--active": isActive,
-              })}
+              className={clsx(styles.mark, names.mark)}
+              data-state={isActive ? "active" : "inactive"}
               style={{ left: `${position}%` }}
             />
           );
@@ -132,17 +106,15 @@ export const Slider = forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>
     };
 
     return (
-      <div className={clsx(componentClass, "openui-slider-wrapper")}>
-        {leftContent && <div className="openui-slider-left-content">{leftContent}</div>}
-        <div className="openui-slider-container-wrapper">
-          <div className="openui-slider-container">
+      <div className={clsx(styles.wrapper, names.wrapper)}>
+        {leftContent && (
+          <div className={clsx(styles.leftContent, names.leftContent)}>{leftContent}</div>
+        )}
+        <div className={clsx(styles.containerWrapper, names.containerWrapper)}>
+          <div className={clsx(styles.container, names.container)}>
             <SliderPrimitive.Root
               ref={ref}
-              className={clsx(
-                "openui-slider-root",
-                { "openui-slider--disabled": disabled },
-                className,
-              )}
+              className={clsx(styles.root, names.root, names.variant[variant], className)}
               {...props}
               min={min}
               max={max}
@@ -159,23 +131,24 @@ export const Slider = forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>
               key={variant}
               style={style}
             >
-              <SliderPrimitive.Track className="openui-slider-track">
+              <SliderPrimitive.Track className={clsx(styles.track, names.track)}>
                 <SliderPrimitive.Range
-                  className={clsx("openui-slider-range", {
-                    "openui-slider-range--at-min": !isRange && valueToShow?.[0] === min,
-                  })}
+                  className={clsx(styles.range, names.range)}
+                  data-at-min={!isRange && valueToShow?.[0] === min ? "" : undefined}
                 />
                 {variant === "discrete" && renderDots()}
               </SliderPrimitive.Track>
               {thumbs}
             </SliderPrimitive.Root>
           </div>
-          <div className="openui-slider-labels">
-            <span>{formatNumber(min)}</span>
-            <span>{formatNumber(max)}</span>
+          <div className={clsx(styles.labels, names.labels)}>
+            <span className={names.label}>{formatNumber(min)}</span>
+            <span className={names.label}>{formatNumber(max)}</span>
           </div>
         </div>
-        {rightContent && <div className="openui-slider-right-content">{rightContent}</div>}
+        {rightContent && (
+          <div className={clsx(styles.leftContent, names.rightContent)}>{rightContent}</div>
+        )}
       </div>
     );
   },

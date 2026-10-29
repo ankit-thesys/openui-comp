@@ -1,3 +1,5 @@
+"use client";
+
 import type { ScaleLinear } from "d3-scale";
 import React from "react";
 
@@ -8,6 +10,7 @@ interface VerticalGridProps {
   chartWidth: number;
   chartHeight: number;
   className?: string;
+  lineClassName?: string;
   minTickSpacing?: number;
 }
 
@@ -16,6 +19,7 @@ export const VerticalGrid: React.FC<VerticalGridProps> = ({
   chartWidth,
   chartHeight,
   className,
+  lineClassName,
   minTickSpacing = DEFAULT_MIN_TICK_SPACING,
 }) => {
   const tickCount = Math.max(2, Math.floor(chartWidth / minTickSpacing));
@@ -24,7 +28,14 @@ export const VerticalGrid: React.FC<VerticalGridProps> = ({
   return (
     <g className={className}>
       {ticks.map((t) => (
-        <line key={t} x1={xScale(t)} x2={xScale(t)} y1={0} y2={chartHeight} />
+        <line
+          className={lineClassName}
+          key={t}
+          x1={xScale(t)}
+          x2={xScale(t)}
+          y1={0}
+          y2={chartHeight}
+        />
       ))}
     </g>
   );

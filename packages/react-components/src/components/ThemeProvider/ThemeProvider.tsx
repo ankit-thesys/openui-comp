@@ -1,4 +1,7 @@
+"use client";
+
 import React, { createContext, useContext, useId, useInsertionEffect, useMemo } from "react";
+import { CssLayerContext } from "../../styles/useStyles";
 import { defaultDarkTheme, defaultLightTheme } from "./defaultTheme";
 import { Theme, ThemeMode } from "./types";
 import { KNOWN_THEME_KEYS, themeToCssVars } from "./utils";
@@ -35,6 +38,14 @@ export type ThemeProps = {
    * @default "body"
    */
   cssSelector?: string;
+  /**
+   * Cascade layer for component styles, e.g. `"openui"`, so that unlayered app CSS and later
+   * layers such as Tailwind's `utilities` override them. The library declares no layer order:
+   * put a `@layer` statement naming this layer, then `<style id="_goober"> </style>`, first in
+   * `<head>`. Nested providers inherit it unless they set their own.
+   * @default unlayered, or the parent provider's layer
+   */
+  cssLayer?: string;
 };
 
 type ThemeContextType = {
@@ -105,6 +116,9 @@ function warnOnce(key: string, message: string) {
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
+// A layer name, or a dotted path of them such as `app.openui`, as `@layer` accepts.
+const LAYER_NAME = /^-?[a-zA-Z_][\w-]*(\.-?[a-zA-Z_][\w-]*)*$/;
+
 function cssSafeId(id: string): string {
   return id.replace(/[^a-zA-Z0-9-_]/g, "");
 }
@@ -152,9 +166,14 @@ export const ThemeProvider = ({
   darkTheme,
   theme: deprecatedTheme,
   cssSelector = "body",
+  cssLayer,
 }: ThemeProps) => {
   const id = cssSafeId(useId());
   const parent = useContext(InternalContext);
+  const parentLayer = useContext(CssLayerContext);
+  // A name `@layer` would reject is ignored, so rules are not silently dropped.
+  const validLayer = cssLayer !== undefined && LAYER_NAME.test(cssLayer) ? cssLayer : undefined;
+  const layer = validLayer ?? parentLayer;
   const isNested = parent != null;
   const mode = modeProp ?? parent?.mode ?? "light";
   const effectiveCssSelector = cssSelector || "body";
@@ -179,6 +198,13 @@ export const ThemeProvider = ({
       warnOnce(
         "deprecated-theme",
         '[OpenUI] The "theme" prop on ThemeProvider is deprecated. Use "lightTheme" instead.',
+      );
+    }
+
+    if (cssLayer !== undefined && validLayer === undefined) {
+      warnOnce(
+        `invalid-css-layer:${cssLayer}`,
+        `[OpenUI] ThemeProvider cssLayer "${cssLayer}" is not a cascade layer name. It is ignored.`,
       );
     }
 
@@ -250,13 +276,15 @@ export const ThemeProvider = ({
   return (
     <InternalContext.Provider value={internalValue}>
       <ThemeContext.Provider value={contextValue}>
-        {useAutoScope ? (
-          <div className={scopedClassName} style={{ display: "contents" }}>
-            {children}
-          </div>
-        ) : (
-          children
-        )}
+        <CssLayerContext.Provider value={layer}>
+          {useAutoScope ? (
+            <div className={scopedClassName} style={{ display: "contents" }}>
+              {children}
+            </div>
+          ) : (
+            children
+          )}
+        </CssLayerContext.Provider>
       </ThemeContext.Provider>
     </InternalContext.Provider>
   );

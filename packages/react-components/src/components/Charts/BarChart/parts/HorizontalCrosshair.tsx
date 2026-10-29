@@ -1,7 +1,11 @@
+"use client";
+
 import React from "react";
 
+import clsx from "clsx";
+import { useStyles } from "../../../../styles/useStyles";
 import { FadeFollower } from "../../shared/core/spring";
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
+import { horizontalBarChartStyles, names } from "../horizontalBarChart.styles";
 
 interface HorizontalCrosshairProps {
   /** Hovered category row index, or `null` when nothing is hovered. */
@@ -36,13 +40,14 @@ export const HorizontalCrosshair: React.FC<HorizontalCrosshairProps> = ({
   groupHeight,
   chartWidth,
 }) => {
+  const styles = useStyles(horizontalBarChartStyles);
   const visible = hoveredIndex !== null && hoveredIndex >= 0 && hoveredIndex < rowOffsets.length;
   const y = visible ? (rowOffsets[hoveredIndex] ?? 0) : 0;
 
   return (
-    <FadeFollower x={0} y={y} visible={visible}>
+    <FadeFollower className={clsx(styles.group, names.group)} x={0} y={y} visible={visible}>
       <rect
-        className={`${CHART_CLASS_PREFIX}-horizontal-bar-chart-crosshair`}
+        className={clsx(styles.crosshair, names.crosshair)}
         x={0}
         y={0}
         width={Math.max(0, chartWidth)}

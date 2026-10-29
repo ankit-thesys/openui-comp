@@ -1,5 +1,9 @@
+"use client";
+
+import clsx from "clsx";
 import { area, line } from "d3-shape";
 import { useId } from "react";
+import { useStyles } from "../../../styles/useStyles";
 import { useEffectiveAnimation } from "../hooks/core/useEffectiveAnimation";
 import { MiniChartFrame } from "../shared/mini/MiniChartFrame";
 import {
@@ -8,11 +12,9 @@ import {
   miniCurves,
   miniLineGeometry,
 } from "../shared/mini/miniChartUtils";
-import { CHART_CLASS_PREFIX } from "../utils/constants";
 import { useChartPalette } from "../utils/paletteUtils";
+import { miniAreaChartStyles, names } from "./miniAreaChart.styles";
 import type { MiniAreaChartProps } from "./types";
-
-const CLASS = `${CHART_CLASS_PREFIX}-mini-area-chart`;
 
 /**
  * A compact, axis-free area sparkline: the most recent values that fit, one series, a gradient fill under a 1.5px
@@ -30,18 +32,30 @@ export function MiniAreaChart({
   areaColor,
   useGradient = true,
 }: MiniAreaChartProps) {
+  const styles = useStyles(miniAreaChartStyles);
   const animate = useEffectiveAnimation(isAnimationActive);
   const [color = ""] = useChartPalette({
     customPalette: customPalette ?? (areaColor ? [areaColor] : undefined),
     themePaletteName: "areaChartPalette",
     dataLength: 1,
   });
-  const gradientId = `${CLASS}-gradient-${useId().replace(/:/g, "")}`;
+  const gradientId = `${names.gradient}-${useId().replace(/:/g, "")}`;
   const curve = miniCurves[variant] ?? miniCurves.natural;
-  const animated = animate ? ` ${CHART_CLASS_PREFIX}-mini-chart-mark--animated` : "";
+  const animated = animate && styles.animated;
 
   return (
-    <MiniChartFrame chart="area" size={size} className={className} onClick={onAreaClick}>
+    <MiniChartFrame
+      chart="area"
+      size={size}
+      className={clsx(
+        styles.root,
+        names.root,
+        isAnimationActive && names.isAnimationActive.true,
+        className,
+      )}
+      svgClassName={clsx(styles.svg, names.svg)}
+      onClick={onAreaClick}
+    >
       {(width, height) => {
         const { points, x, y } = miniLineGeometry(data, width, height);
         const areaD =
@@ -58,21 +72,33 @@ export function MiniAreaChart({
         return (
           <>
             {useGradient && (
-              <defs>
-                <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor={color} stopOpacity={0.6} />
-                  <stop offset="95%" stopColor={color} stopOpacity={0} />
+              <defs className={names.defs}>
+                <linearGradient
+                  className={names.gradient}
+                  id={gradientId}
+                  x1="0"
+                  y1="0"
+                  x2="0"
+                  y2="1"
+                >
+                  <stop
+                    className={names.stopStart}
+                    offset="5%"
+                    stopColor={color}
+                    stopOpacity={0.6}
+                  />
+                  <stop className={names.stopEnd} offset="95%" stopColor={color} stopOpacity={0} />
                 </linearGradient>
               </defs>
             )}
             <path
-              className={`${CLASS}-area${animated}`}
+              className={clsx(names.area, animated)}
               d={areaD}
               fill={useGradient ? `url(#${gradientId})` : color}
               fillOpacity={useGradient ? 1 : opacity}
             />
             <path
-              className={`${CLASS}-line${animated}`}
+              className={clsx(names.line, animated)}
               d={lineD}
               fill="none"
               stroke={color}
@@ -81,7 +107,7 @@ export function MiniAreaChart({
             {/* A single value has no area to draw: it's marked with a dot. */}
             {points.length === 1 && (
               <circle
-                className={`${CLASS}-point${animated}`}
+                className={clsx(names.point, animated)}
                 cx={x(0)}
                 cy={y(points[0]!.value)}
                 r={MINI_POINT_RADIUS}

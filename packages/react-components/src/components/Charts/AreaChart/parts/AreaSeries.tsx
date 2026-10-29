@@ -1,6 +1,10 @@
+"use client";
+
+import clsx from "clsx";
 import type { ScaleLinear, ScalePoint } from "d3-scale";
 import type { CurveFactory } from "d3-shape";
 import React, { useMemo, useRef } from "react";
+import { useStyles } from "../../../../styles/useStyles";
 import type { StackedData } from "../../hooks";
 import { AnimatedPath } from "../../shared/cartesian/AnimatedPath";
 import {
@@ -10,7 +14,7 @@ import {
   seriesCurve,
 } from "../../shared/cartesian/seriesGeometry";
 import { springPresets, useDataMorph, useIsomorphicLayoutEffect } from "../../shared/core/spring";
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
+import { areaChartStyles, names } from "../areaChart.styles";
 import { AreaChartVariant } from "../types";
 
 interface AreaSeriesProps {
@@ -84,7 +88,7 @@ export const AreaSeries: React.FC<AreaSeriesProps> = ({
   }, [data, dataKeys, xScale, yScale, stackedData, categoryKey, curve]);
 
   return (
-    <g className={`${CHART_CLASS_PREFIX}-area-chart-areas`}>
+    <g className={names.areas}>
       {seriesGeom.map(({ key, values, areaPath, linePath }) => (
         <AreaSeriesItem
           key={key}
@@ -124,6 +128,7 @@ function AreaSeriesItem({
   gradientId: string;
   isAnimationActive?: boolean;
 }) {
+  const styles = useStyles(areaChartStyles);
   const areaRef = useRef<SVGPathElement | null>(null);
   const lineRef = useRef<SVGPathElement | null>(null);
   const curveRef = useRef(curve);
@@ -141,17 +146,22 @@ function AreaSeriesItem({
   }, [values, isAnimationActive, aim]);
 
   return (
-    <g>
+    <g className={names.group}>
       <path
         ref={areaRef}
-        className={`${CHART_CLASS_PREFIX}-area-chart-area-path${isAnimationActive ? ` ${CHART_CLASS_PREFIX}-area-chart-area-path--animated` : ""}`}
+        className={clsx(
+          styles.areaPath,
+          names.areaPath,
+          isAnimationActive && [styles.areaPathAnimated, names.areaPathAnimated.true],
+        )}
         d={areaPath}
         fill={`url(#${gradientId})`}
       />
       <AnimatedPath
         d={linePath}
         color={color}
-        className={`${CHART_CLASS_PREFIX}-area-chart-area-line`}
+        className={clsx(styles.areaLine, names.areaLine)}
+        animatedClassName={clsx(styles.areaLineAnimated, names.areaLineAnimated.true)}
         isAnimationActive={isAnimationActive}
         pathRef={lineRef}
       />

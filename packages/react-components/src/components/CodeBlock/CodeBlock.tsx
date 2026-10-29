@@ -1,12 +1,31 @@
+"use client";
+
 import clsx from "clsx";
 import { CheckCheck, Copy } from "lucide-react";
-import { useState } from "react";
+import { useState, type ComponentProps } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus";
+import { useStyles } from "../../styles/useStyles";
 import { IconButton } from "../IconButton";
-import { wrapperClass } from "./codeBlock.styles";
+import { codeBlockCopyButtonStyles, codeBlockStyles, names } from "./codeBlock.styles";
+
+// The default frame is owned CSS so the stable class can override it. Keep code/token
+// styles in the vendor API; explicit themes and replacement classes retain that API in full.
+const defaultTokenTheme = { ...vscDarkPlus, 'pre[class*="language-"]': {} };
+
+function CopyButton({ className, ...props }: ComponentProps<"button">) {
+  const styles = useStyles(codeBlockCopyButtonStyles);
+  return <button {...props} className={clsx(styles.root, names.copyButton, className)} />;
+}
 
 export interface CodeBlockProps {
+  /** Added to the wrapper, next to its own classes. */
+  className?: string;
+  /**
+   * Replaces the highlighter's `openui-code-block-syntax-highlighter` class, and with it the
+   * library's highlighter rules, when a parent owns those styles.
+   */
+  syntaxHighlighterClassName?: string;
   language: string;
   codeString: string;
   theme?: {
@@ -14,8 +33,16 @@ export interface CodeBlockProps {
   };
 }
 
-export const CodeBlock = ({ language, codeString, theme }: CodeBlockProps) => {
+export const CodeBlock = ({
+  language,
+  codeString,
+  theme,
+  className,
+  syntaxHighlighterClassName,
+}: CodeBlockProps) => {
+  const styles = useStyles(codeBlockStyles);
   const [copied, setCopied] = useState(false);
+  const useDefaultFrame = theme == null && syntaxHighlighterClassName == null;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(codeString);
@@ -24,22 +51,30 @@ export const CodeBlock = ({ language, codeString, theme }: CodeBlockProps) => {
   };
 
   return (
-    <div className={clsx(wrapperClass, "openui-code-block-wrapper")}>
+    <div className={clsx(styles.root, names.root, className)}>
       <IconButton
         onClick={handleCopy}
         variant="secondary"
         size={"small"}
-        className={clsx("openui-code-block-copy-button", {
-          "openui-code-block-copy-button-copied": copied,
-        })}
+        asChild
+        data-state={copied ? "copied" : "idle"}
         icon={copied ? <CheckCheck /> : <Copy />}
         aria-label={copied ? "Copied to clipboard" : "Copy code"}
-      />
+      >
+        <CopyButton />
+      </IconButton>
       <SyntaxHighlighter
-        style={theme ?? vscDarkPlus}
+        style={theme ?? (useDefaultFrame ? defaultTokenTheme : vscDarkPlus)}
         language={language}
         PreTag="div"
-        className="openui-code-block-syntax-highlighter"
+        className={
+          syntaxHighlighterClassName ??
+          clsx(
+            useDefaultFrame && styles.defaultFrame,
+            styles.syntaxHighlighter,
+            names.syntaxHighlighter,
+          )
+        }
       >
         {codeString}
       </SyntaxHighlighter>

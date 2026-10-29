@@ -1,17 +1,29 @@
+"use client";
+
 import clsx from "clsx";
-import { memo, ReactNode } from "react";
+import { memo, ReactNode, useContext } from "react";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
+import { useStyles } from "../../styles/useStyles";
 import { remarkCitations } from "../_shared/remark/remarkCitations";
 import { TextContentCitation } from "../Citation";
 import { MarkDownRenderer } from "../MarkDownRenderer";
-import { useTheme } from "../ThemeProvider";
-import { rootClass } from "./inlineMarkdown.styles";
+import { markdownStyles } from "../MarkDownRenderer/markdown.styles";
+import { inlineMarkdownStyles, names } from "./inlineMarkdown.styles";
+import { InlineTypographyContext } from "./InlineTypography";
 
 const Fragment = ({ children }: { children?: ReactNode }) => children;
 
+export type InlineMarkdownTypography = "inherit";
+
 export interface InlineMarkdownRendererProps {
   content: string;
+  /**
+   * `"inherit"` gives bold and italic text the surrounding text's typography, at medium weight, and
+   * sets inline code at the small code size. CompositeCard sets it for the markdown in its slots;
+   * omit it for the markdown renderer's own emphasis.
+   */
+  typography?: InlineMarkdownTypography;
   className?: string;
 }
 
@@ -21,8 +33,14 @@ export interface InlineMarkdownRendererProps {
  * output stays inline.
  */
 export const InlineMarkdownRenderer = memo(
-  ({ content, className }: InlineMarkdownRendererProps) => {
-    const { mode } = useTheme();
+  ({ content, typography: ownTypography, className }: InlineMarkdownRendererProps) => {
+    // A card supplies the typography the caller leaves out.
+    const cardTypography = useContext(InlineTypographyContext);
+    const typography = ownTypography ?? cardTypography;
+    // Register the composed renderer first so the flat content reset follows its root rule,
+    // even when inline markdown is the first markdown rendered on the page.
+    useStyles(markdownStyles);
+    const styles = useStyles(inlineMarkdownStyles);
 
     if (!content) {
       return null;
@@ -30,11 +48,16 @@ export const InlineMarkdownRenderer = memo(
 
     return (
       <span
-        className={clsx(rootClass, "openui-inline-markdown-renderer", className, {
-          "openui-inline-markdown-renderer--dark": mode === "dark",
-        })}
+        className={clsx(
+          styles.root,
+          names.root,
+          typography && names.typography[typography],
+          className,
+        )}
       >
         <MarkDownRenderer
+          className={clsx(styles.content, names.content)}
+          typography={typography}
           textMarkdown={content}
           options={{
             remarkPlugins: [

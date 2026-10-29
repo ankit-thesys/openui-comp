@@ -1,11 +1,9 @@
-import clsx from "clsx";
-import { css } from "goober";
-import React from "react";
-import { cardStyles } from "./card.styles";
+"use client";
 
-const componentClass = css`
-  ${cardStyles}
-`;
+import clsx from "clsx";
+import React from "react";
+import { useStyles } from "../../styles/useStyles";
+import { cardStyles, names } from "./card.styles";
 
 type CardVariant = "clear" | "card" | "sunk";
 type CardWidth = "standard" | "full";
@@ -15,29 +13,21 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   width?: CardWidth;
 }
 
-const variantMap: Record<CardVariant, string> = {
-  clear: "openui-card-clear",
-  card: "openui-card-card",
-  sunk: "openui-card-sunk",
-};
-
-const widthMap: Record<CardWidth, string> = {
-  standard: "openui-card-standard",
-  full: "openui-card-full",
-};
-
 export const Card = React.forwardRef<HTMLDivElement, CardProps>((props, ref) => {
   const { className, children, variant = "card", width = "standard", ...rest } = props;
 
+  const styles = useStyles(cardStyles);
   return (
     <div
       ref={ref}
       className={clsx(
-        componentClass,
-        "openui-card",
+        styles.root,
+        names.root,
         className,
-        variantMap[variant],
-        widthMap[width],
+        styles.variant[variant],
+        names.variant[variant],
+        styles.width[width],
+        names.width[width],
       )}
       {...rest}
     >

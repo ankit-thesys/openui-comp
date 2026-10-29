@@ -1,7 +1,10 @@
+"use client";
+
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import { useRef } from "react";
-import { rootClass } from "../horizontalBarChart.styles";
+import { useStyles } from "../../../../styles/useStyles";
+import { horizontalBarChartStyles, names } from "../horizontalBarChart.styles";
 
 import { useHorizontalBarChartOrchestrator } from "../../hooks/cartesian/useHorizontalBarChartOrchestrator";
 import { useExportChartData } from "../../hooks/core/useExportChartData";
@@ -11,13 +14,10 @@ import { VerticalGrid } from "../../shared/cartesian/VerticalGrid";
 import { ChartShell } from "../../shared/core/ChartShell";
 import { DefaultLegend } from "../../shared/core/DefaultLegend/DefaultLegend";
 import { ChartTooltip } from "../../shared/core/PortalTooltip/ChartTooltip";
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
 import type { BarChartData, BarChartProps } from "../types";
 import { X_AXIS_HEIGHT } from "./horizontalBarGeometry";
 import { HorizontalBarSeries } from "./HorizontalBarSeries";
 import { HorizontalCrosshair } from "./HorizontalCrosshair";
-
-const CLASS_PREFIX = `${CHART_CLASS_PREFIX}-horizontal-bar-chart`;
 
 /**
  * The HORIZONTAL BarChart shell — the integration layer that assembles the
@@ -57,6 +57,7 @@ const CLASS_PREFIX = `${CHART_CLASS_PREFIX}-horizontal-bar-chart`;
  * defensive belt-and-suspenders for a direct empty render.
  */
 export function HorizontalBarChartImpl<T extends BarChartData>(props: BarChartProps<T>) {
+  const styles = useStyles(horizontalBarChartStyles);
   const {
     data,
     categoryKey,
@@ -120,9 +121,15 @@ export function HorizontalBarChartImpl<T extends BarChartData>(props: BarChartPr
 
   return (
     <ChartShell
+      flat
       containerRef={shellContainerRef}
-      classPrefix={CLASS_PREFIX}
-      className={clsx(rootClass, className)}
+      classPrefix={names.root}
+      className={clsx(
+        styles.root,
+        names.root,
+        names.variant[props.variant ?? "grouped"],
+        className,
+      )}
       style={containerStyle as CSSProperties}
       isEmpty={isEmpty}
       exportData={exportData}
@@ -130,16 +137,17 @@ export function HorizontalBarChartImpl<T extends BarChartData>(props: BarChartPr
       {() => (
         <>
           <div
-            className={`${CLASS_PREFIX}-container-inner-wrapper`}
+            className={clsx(styles.containerInnerWrapper, names.containerInnerWrapper)}
             style={{ height: chartHeight }}
           >
-            <div ref={containerRef} className={`${CLASS_PREFIX}-container-inner`}>
+            <div ref={containerRef} className={clsx(styles.containerInner, names.containerInner)}>
               <div
                 ref={scrollBodyRef}
-                className={`${CLASS_PREFIX}-main-container`}
+                className={clsx(styles.mainContainer, names.mainContainer)}
                 onScroll={scroll.onScroll}
               >
                 <svg
+                  className={names.svg}
                   width="100%"
                   height={svgHeight}
                   role="img"
@@ -149,10 +157,11 @@ export function HorizontalBarChartImpl<T extends BarChartData>(props: BarChartPr
                 >
                   {grid && (
                     <VerticalGrid
+                      lineClassName={clsx(styles.gridLine, names.gridLine)}
                       xScale={valueScale}
                       chartWidth={chartWidth}
                       chartHeight={svgHeight}
-                      className={`${CLASS_PREFIX}-grid-vertical`}
+                      className={names.gridVertical}
                     />
                   )}
 
@@ -174,19 +183,18 @@ export function HorizontalBarChartImpl<T extends BarChartData>(props: BarChartPr
                     hoveredCategory={hover.hoveredCategory}
                     isAnimationActive={isAnimationActive}
                     isPrinting={isPrinting}
-                    classPrefix={CLASS_PREFIX}
                   />
                 </svg>
               </div>
 
-              <div className={`${CLASS_PREFIX}-x-axis-container`}>
-                <svg width="100%" height={X_AXIS_HEIGHT}>
+              <div className={clsx(styles.xAxisContainer, names.xAxisContainer)}>
+                <svg className={names.svg} width="100%" height={X_AXIS_HEIGHT}>
                   <NumericXAxis
                     scale={valueScale}
                     chartWidth={chartWidth}
                     height={X_AXIS_HEIGHT}
-                    className={`${CLASS_PREFIX}-x-axis`}
-                    tickClassName={`${CLASS_PREFIX}-x-tick`}
+                    className={names.xAxis}
+                    tickClassName={clsx(styles.xTick, names.xTick)}
                     edgeAlign
                   />
                 </svg>

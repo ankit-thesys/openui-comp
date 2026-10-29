@@ -1,7 +1,11 @@
+"use client";
+
+import clsx from "clsx";
 import type { ScaleBand } from "d3-scale";
 import React from "react";
+import { useStyles } from "../../../../styles/useStyles";
 import { FadeFollower } from "../../shared/core/spring";
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
+import { barChartStyles, names } from "../barChart.styles";
 
 interface CrosshairProps {
   hoveredIndex: number | null;
@@ -25,15 +29,16 @@ export const Crosshair: React.FC<CrosshairProps> = ({
   categoryKey,
   chartHeight,
 }) => {
+  const styles = useStyles(barChartStyles);
   const visible = hoveredIndex !== null && hoveredIndex >= 0 && hoveredIndex < data.length;
   const row = visible ? data[hoveredIndex]! : undefined;
   const x = row ? (xScale(String(row[categoryKey])) ?? 0) : 0;
   const width = xScale.bandwidth();
 
   return (
-    <FadeFollower x={x} visible={visible}>
+    <FadeFollower className={clsx(styles.group, names.group)} x={x} visible={visible}>
       <rect
-        className={`${CHART_CLASS_PREFIX}-bar-chart-hover-highlight`}
+        className={clsx(styles.hoverHighlight, names.hoverHighlight)}
         x={0}
         y={0}
         width={width}

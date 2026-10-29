@@ -1,7 +1,10 @@
+"use client";
+
 import clsx from "clsx";
 import { forwardRef } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { IconWrapper, type IconProps } from "../_shared/icons";
-import { rootClass, sizeClasses, variantClasses } from "./iconTag.styles";
+import { iconTagStyles, names } from "./iconTag.styles";
 
 export type IconTagSize = "xs" | "s" | "m" | "l" | "xl";
 export type IconTagVariant = "neutral" | "info" | "success" | "warning" | "danger" | "inverted";
@@ -16,6 +19,7 @@ export interface IconTagProps {
 /** Small icon badge used inside card primitives. */
 export const IconTag = forwardRef<HTMLDivElement, IconTagProps>(
   ({ icon, size = "m", variant = "neutral", className }, ref) => {
+    const styles = useStyles(iconTagStyles);
     if (!icon?.name) {
       return null;
     }
@@ -24,16 +28,20 @@ export const IconTag = forwardRef<HTMLDivElement, IconTagProps>(
       <div
         ref={ref}
         className={clsx(
-          rootClass,
-          sizeClasses[size],
-          variantClasses[variant],
-          "openui-icon-tag",
-          `openui-icon-tag--${size}`,
-          `openui-icon-tag--${variant}`,
+          styles.root,
+          names.root,
+          styles.size[size],
+          names.size[size],
+          styles.variant[variant],
+          names.variant[variant],
           className,
         )}
       >
-        <IconWrapper name={icon.name} category={icon.category} />
+        <IconWrapper
+          className={clsx(styles.icon, names.icon)}
+          name={icon.name}
+          category={icon.category}
+        />
       </div>
     );
   },

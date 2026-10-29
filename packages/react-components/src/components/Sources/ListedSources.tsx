@@ -1,15 +1,12 @@
+"use client";
+
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Key, memo, useCallback, useRef, useState } from "react";
-import { Carousel, CarouselContent, CarouselItem, CarouselRef } from "../Carousel";
+import { useStyles } from "../../styles/useStyles";
+import { Carousel, CarouselContent, CarouselRef } from "../Carousel";
 import { IconButton } from "../IconButton";
-import {
-  buttonsClass,
-  containerClass,
-  headerClass,
-  listClass,
-  titleClass,
-} from "./listedSources.styles";
+import { listedSourcesStyles, names } from "./listedSources.styles";
 import { SourceWithFavicon } from "./SourceContext";
 import { ListedSourceItem } from "./SourcesItem";
 
@@ -18,6 +15,7 @@ export interface ListedSourcesProps {
 }
 
 export const ListedSources = memo((props: ListedSourcesProps) => {
+  const styles = useStyles(listedSourcesStyles);
   const sources = props.sources ?? [];
 
   const ref = useRef<CarouselRef | null>(null);
@@ -37,11 +35,11 @@ export const ListedSources = memo((props: ListedSourcesProps) => {
   const hasOverflow = scroll.left || scroll.right;
 
   return (
-    <div className={clsx(listClass, "openui-listed-sources")}>
-      <div className={clsx(headerClass, "openui-listed-sources-header")}>
-        <span className={clsx(titleClass, "openui-listed-sources-header__title")}>Sources</span>
+    <div className={clsx(styles.root, names.root)}>
+      <div className={clsx(styles.header, names.header)}>
+        <span className={clsx(styles.title, names.title)}>Sources</span>
         {hasOverflow && (
-          <div className={clsx(buttonsClass, "openui-listed-sources-header__buttons")}>
+          <div className={clsx(styles.buttons, names.buttons)}>
             <IconButton
               variant="secondary"
               size="small"
@@ -72,14 +70,12 @@ export const ListedSources = memo((props: ListedSourcesProps) => {
               key?: Key;
             };
             return (
-              <CarouselItem
+              <div
                 key={item.url ?? index}
-                className={clsx(containerClass, "openui-listed-sources-item-container", {
-                  "openui-listed-sources-item-container--has-url": item.url,
-                })}
+                className={clsx(styles.container, names.container, item.url && styles.linked)}
               >
                 <ListedSourceItem {...rest} sourceId={index} />
-              </CarouselItem>
+              </div>
             );
           })}
         </CarouselContent>

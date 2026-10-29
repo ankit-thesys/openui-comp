@@ -1,12 +1,10 @@
-import clsx from "clsx";
-import { css } from "goober";
-import React from "react";
-import { useFormControlContext } from "../FormControl/context";
-import { inputStyles } from "./input.styles";
+"use client";
 
-const componentClass = css`
-  ${inputStyles}
-`;
+import clsx from "clsx";
+import React from "react";
+import { useStyles } from "../../styles/useStyles";
+import { useFormControlContext } from "../FormControl/context";
+import { inputStyles, names } from "./input.styles";
 
 export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   styles?: React.CSSProperties;
@@ -15,23 +13,17 @@ export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElem
   hasError?: boolean;
 }
 
-const sizes = {
-  small: "openui-input-small",
-  medium: "openui-input-medium",
-  large: "openui-input-large",
-} as const;
-
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, styles, size = "medium", hasError, ...props }, ref) => {
+    const css = useStyles(inputStyles);
     const ctx = useFormControlContext();
     const resolvedHasError = hasError ?? ctx?.hasError ?? false;
     return (
       <input
         autoComplete="off"
         ref={ref}
-        className={clsx(componentClass, "openui-input", sizes[size], className, {
-          "openui-input-error": resolvedHasError,
-        })}
+        className={clsx(css.root, css.size[size], names.root, names.size[size], className)}
+        aria-invalid={resolvedHasError || undefined}
         style={styles}
         {...props}
       />

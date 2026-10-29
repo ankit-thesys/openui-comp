@@ -1,11 +1,14 @@
+"use client";
+
 import clsx from "clsx";
+import type { CSSProperties } from "react";
 import { useId, useMemo } from "react";
+import { useStyles } from "../../../styles/useStyles";
 import { useEffectiveAnimation } from "../hooks";
 import { useCalendarHeatmapOrchestrator } from "../hooks/cartesian/useCalendarHeatmapOrchestrator";
 import { ChartShell } from "../shared/core/ChartShell";
 import { ChartTooltip } from "../shared/core/PortalTooltip/ChartTooltip";
-import { CHART_CLASS_PREFIX } from "../utils/constants";
-import { rootClass } from "./calendarHeatmap.styles";
+import { calendarHeatmapStyles, names } from "./calendarHeatmap.styles";
 import { CalendarCells } from "./parts/CalendarCells";
 import { CalendarLegend } from "./parts/CalendarLegend";
 import { CalendarPatternDefs, calendarPatternId } from "./parts/CalendarPatternDefs";
@@ -15,12 +18,11 @@ import { useDelayedHover } from "./parts/useDelayedHover";
 import { WeekdayAxis } from "./parts/WeekdayAxis";
 import type { CalendarHeatmapProps } from "./types";
 
-const CLASS_PREFIX = `${CHART_CLASS_PREFIX}-calendar-heatmap`;
-
 /** `` (q, year) => `Q1 2026` `` — the default quarter-label formatter. */
 const defaultQuarterLabel = (quarter: number, year: number) => `Q${quarter} ${year}`;
 
 export function CalendarHeatmap(props: CalendarHeatmapProps) {
+  const styles = useStyles(calendarHeatmapStyles);
   const {
     data,
     range,
@@ -107,7 +109,7 @@ export function CalendarHeatmap(props: CalendarHeatmapProps) {
       orch.levelStyles.map((style, level) =>
         style?.pattern
           ? `url(#${calendarPatternId(patternBaseId, level)})`
-          : `var(--${CLASS_PREFIX}-level-${level})`,
+          : `var(--_openui-calendar-heatmap-cell-level-${level}-fill)`,
       ),
     [orch.levelStyles, patternBaseId],
   );
@@ -137,18 +139,43 @@ export function CalendarHeatmap(props: CalendarHeatmapProps) {
   return (
     <ChartShell
       containerRef={orch.refs.containerRef}
-      classPrefix={CLASS_PREFIX}
-      className={clsx(rootClass, className)}
-      style={orch.style.containerStyle}
+      className={clsx(
+        styles.root,
+        names.root,
+        names.layout[layout],
+        names.legendVariant[legendVariant],
+        isAnimationActive && names.isAnimationActive.true,
+        className,
+      )}
+      style={
+        {
+          "--_openui-calendar-heatmap-root-width": orch.style.containerStyle["width"],
+          "--_openui-calendar-heatmap-root-height": orch.style.containerStyle["height"],
+          "--_openui-calendar-heatmap-cell-level-0-fill": orch.levelColors[0],
+          "--_openui-calendar-heatmap-cell-level-1-fill": orch.levelColors[1],
+          "--_openui-calendar-heatmap-cell-level-2-fill": orch.levelColors[2],
+          "--_openui-calendar-heatmap-cell-level-3-fill": orch.levelColors[3],
+          "--_openui-calendar-heatmap-cell-level-4-fill": orch.levelColors[4],
+        } as CSSProperties
+      }
       isEmpty={orch.isEmpty}
     >
       {() => (
         <>
-          <div className={`${CLASS_PREFIX}-plot`} style={{ position: "relative", width: svgWidth }}>
+          <div
+            className={clsx(styles.plot, names.plot)}
+            style={
+              {
+                "--_openui-calendar-heatmap-plot-position": "relative",
+                "--_openui-calendar-heatmap-plot-width": `${svgWidth}px`,
+              } as CSSProperties
+            }
+          >
             <svg
+              className={clsx(styles.svg, names.svg)}
               width={svgWidth}
               height={svgHeight}
-              style={{ overflow: "visible" }}
+              style={{ "--_openui-calendar-heatmap-svg-overflow": "visible" } as CSSProperties}
               role="img"
               aria-label="Calendar heatmap chart"
             >
@@ -159,40 +186,28 @@ export function CalendarHeatmap(props: CalendarHeatmapProps) {
               />
 
               {showMonthLabels && (
-                <g transform={`translate(${gutterLeft}, 0)`}>
+                <g className={names.group} transform={`translate(${gutterLeft}, 0)`}>
                   <MonthAxis
                     labels={orch.monthLabels}
                     pitchX={pitchX}
                     xOffsets={separators.offsets}
                     y={monthLabelY}
-                    classPrefix={CLASS_PREFIX}
                   />
                 </g>
               )}
 
-              <g transform={`translate(0, ${gutterTop})`}>
-                <WeekdayAxis
-                  ticks={orch.weekdayTicks}
-                  pitchY={pitchY}
-                  x={weekdayLabelX}
-                  classPrefix={CLASS_PREFIX}
-                />
+              <g className={names.group} transform={`translate(0, ${gutterTop})`}>
+                <WeekdayAxis ticks={orch.weekdayTicks} pitchY={pitchY} x={weekdayLabelX} />
               </g>
 
               <g
+                className={names.group}
                 transform={`translate(${gutterLeft}, ${gutterTop})`}
                 onMouseLeave={orch.hover.handleMouseLeave}
-                // Grid dim is LEGEND-hover scoped (bklit parity): hovering a
-                // cell only lights up its legend swatch, never re-shades the
-                // grid — so this reads `hoveredLevel`, not `highlightedLevel`.
-                {...{
-                  [`data-${CHART_CLASS_PREFIX}-highlight-level`]:
-                    orch.hover.hoveredLevel ?? undefined,
-                }}
               >
                 <CalendarCells
                   cells={orch.cells}
-                  classPrefix={CLASS_PREFIX}
+                  highlightedLevel={orch.hover.hoveredLevel}
                   pitchX={pitchX}
                   pitchY={pitchY}
                   cellW={cellW}
@@ -216,7 +231,6 @@ export function CalendarHeatmap(props: CalendarHeatmapProps) {
                   plotHeight={plotHeight}
                   stroke={columnSeparators?.stroke}
                   dashed={columnSeparators?.dashed}
-                  classPrefix={CLASS_PREFIX}
                 />
               </g>
             </svg>
@@ -227,7 +241,6 @@ export function CalendarHeatmap(props: CalendarHeatmapProps) {
               pitchX={pitchX}
               gutterLeft={gutterLeft}
               format={labelFormat}
-              classPrefix={CLASS_PREFIX}
             />
           </div>
 
@@ -245,7 +258,6 @@ export function CalendarHeatmap(props: CalendarHeatmapProps) {
               highlightedLevel={orch.hover.highlightedLevel}
               onLevelEnter={handleLevelEnter}
               onLevelLeave={handleLevelLeave}
-              classPrefix={CLASS_PREFIX}
             />
           )}
 

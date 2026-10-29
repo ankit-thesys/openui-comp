@@ -1,22 +1,16 @@
+"use client";
+
 import clsx from "clsx";
 import { Info, Link } from "lucide-react";
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useStyles } from "../../../../styles/useStyles";
 import { safeUrl } from "../../../_shared/utils/safeUrl";
 import { TooltipWrapper } from "../../../TooltipWrapper";
 import { useEditableCellKeyboard } from "../hooks/useEditableCellKeyboard";
 import { isValidUrl } from "../utils/utilsFn";
 import { CellOutline } from "./CellOutline";
 import type { CellRendererProps, EditableTableMeta } from "./CellTypes";
-import {
-  cellClass,
-  inputClass,
-  numberClass,
-  textClass,
-  urlClass,
-  urlContainerClass,
-  urlIconClass,
-  warningClass,
-} from "./editableCell.styles";
+import { names as cellNames, editableCellStyles } from "./editableCell.styles";
 
 export interface TextBaseEditableCellProps extends CellRendererProps {
   inputType: "text" | "number" | "url";
@@ -42,6 +36,7 @@ export const TextBaseEditableCell: React.FC<TextBaseEditableCellProps> = ({
   parseOnSave,
   renderDisplay,
 }) => {
+  const cellStyles = useStyles(editableCellStyles);
   const [editValue, setEditValue] = useState<string>(toDisplayString(value));
   const inputRef = useRef<HTMLInputElement>(null);
   const cellRef = useRef<HTMLDivElement>(null);
@@ -127,7 +122,7 @@ export const TextBaseEditableCell: React.FC<TextBaseEditableCellProps> = ({
           value={editValue}
           onChange={(e) => setEditValue(e.target.value)}
           onKeyDown={handleKeyDown}
-          className={clsx(inputClass, "openui-editable-table-cell-input")}
+          className={clsx(cellStyles.input, cellNames.input)}
         />
       );
     }
@@ -137,24 +132,21 @@ export const TextBaseEditableCell: React.FC<TextBaseEditableCellProps> = ({
       const safeHref = safeUrl(rawHref);
       const isValid = isValidUrl(rawHref) && safeHref !== undefined;
       return (
-        <div className={clsx(urlContainerClass, "openui-editable-table-display-url-container")}>
-          <Link
-            size={16}
-            className={clsx(urlIconClass, "openui-editable-table-display-url-icon")}
-          />
+        <div className={clsx(cellStyles.urlContainer, cellNames.urlContainer)}>
+          <Link size={16} className={clsx(cellStyles.urlIcon, cellNames.urlIcon)} />
           {safeHref ? (
             <a
               href={safeHref}
               target="_blank"
               rel="noopener noreferrer"
-              className={clsx(urlClass, "openui-editable-table-display-url")}
+              className={clsx(cellStyles.url, cellNames.url)}
               onClick={(e) => e.stopPropagation()}
             >
               {display}
             </a>
           ) : (
             <span
-              className={clsx(urlClass, "openui-editable-table-display-url")}
+              className={clsx(cellStyles.url, cellNames.url)}
               onClick={(e) => e.stopPropagation()}
             >
               {display}
@@ -162,11 +154,8 @@ export const TextBaseEditableCell: React.FC<TextBaseEditableCellProps> = ({
           )}
           {!isValid && (
             <TooltipWrapper tooltipContent="This might not be a valid URL" side="right">
-              <div>
-                <Info
-                  size={16}
-                  className={clsx(warningClass, "openui-editable-table-display-url-warning-icon")}
-                />
+              <div className={cellNames.warningContainer}>
+                <Info size={16} className={clsx(cellStyles.warning, cellNames.warning)} />
               </div>
             </TooltipWrapper>
           )}
@@ -175,10 +164,10 @@ export const TextBaseEditableCell: React.FC<TextBaseEditableCellProps> = ({
     }
     return (
       <span
-        className={clsx(inputType === "text" ? textClass : numberClass, {
-          "openui-editable-table-display-text": inputType === "text",
-          "openui-editable-table-display-number": inputType === "number",
-        })}
+        className={clsx(
+          inputType === "text" ? cellStyles.text : cellStyles.number,
+          inputType === "text" ? cellNames.text : cellNames.number,
+        )}
       >
         {display}
       </span>
@@ -188,12 +177,12 @@ export const TextBaseEditableCell: React.FC<TextBaseEditableCellProps> = ({
   return (
     <div
       ref={cellRef}
-      className={clsx(cellClass, "openui-editable-table-cell-base")}
+      className={clsx(cellStyles.cell, cellNames.cell)}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
       onBlur={handleContainerBlur}
       tabIndex={0}
-      style={{ outline: "none" }}
+      data-state={isEditing ? "editing" : isSelected ? "selected" : "idle"}
     >
       <CellOutline isSelected={isSelected} isEditing={isEditing} />
       {renderContent()}

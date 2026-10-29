@@ -1,14 +1,10 @@
+"use client";
+
 import clsx from "clsx";
 import React, { forwardRef, useRef, useState } from "react";
 import { useResponsiveContainer } from "../../hooks/useResponsiveContainer";
-import {
-  errorClass,
-  imageClass,
-  imageMobileClass,
-  loaderClass,
-  wrapperClass,
-  wrapperMobileClass,
-} from "./imageBlock.styles";
+import { useStyles } from "../../styles/useStyles";
+import { imageBlockStyles, names } from "./imageBlock.styles";
 
 export interface ImageBlockProps extends React.HTMLAttributes<HTMLDivElement> {
   src: string;
@@ -18,6 +14,7 @@ export interface ImageBlockProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const ImageBlock = forwardRef<HTMLDivElement, ImageBlockProps>(
   ({ src, alt, className, imageLoading, ...rest }, ref) => {
+    const styles = useStyles(imageBlockStyles);
     const [isImageLoading, setIsImageLoading] = useState<boolean>(imageLoading ?? true);
     const [hasError, setHasError] = useState<boolean>(false);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -33,35 +30,23 @@ export const ImageBlock = forwardRef<HTMLDivElement, ImageBlockProps>(
           if (typeof ref === "function") ref(node);
           else if (ref) (ref as React.MutableRefObject<HTMLDivElement | null>).current = node;
         }}
-        className={clsx(
-          wrapperClass,
-          isMobile && wrapperMobileClass,
-          hasError && errorClass,
-          "openui-image-block-wrapper",
-          {
-            "openui-image-block-wrapper--mobile": isMobile,
-            "openui-image-block-wrapper--error": hasError,
-          },
-          className,
-        )}
+        className={clsx(styles.root, names.root, className)}
+        data-breakpoint={isMobile ? "mobile" : breakpoint}
+        data-error={hasError || undefined}
+        data-loading={isImageLoading || undefined}
         style={
-          src && !hasError ? ({ "--bg-image": `url(${src})` } as React.CSSProperties) : undefined
+          src && !hasError
+            ? ({ "--_openui-image-block-background": `url(${src})` } as React.CSSProperties)
+            : undefined
         }
         {...rest}
       >
         <img
           src={src}
           alt={alt}
-          className={clsx(
-            imageClass,
-            isMobile && imageMobileClass,
-            hasError && errorClass,
-            "openui-image-block-image",
-            {
-              "openui-image-block-image--mobile": isMobile,
-              "openui-image-block-image--error": hasError,
-            },
-          )}
+          className={clsx(styles.image, names.image)}
+          data-breakpoint={isMobile ? "mobile" : breakpoint}
+          data-error={hasError || undefined}
           onLoad={() => {
             setIsImageLoading(false);
             setHasError(false);
@@ -71,7 +56,7 @@ export const ImageBlock = forwardRef<HTMLDivElement, ImageBlockProps>(
             setHasError(true);
           }}
         />
-        {isImageLoading && <div className={clsx(loaderClass, "openui-image-block-loader")} />}
+        {isImageLoading && <div className={clsx(styles.loader, names.loader)} />}
       </div>
     );
   },

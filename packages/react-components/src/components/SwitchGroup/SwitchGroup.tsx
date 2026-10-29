@@ -1,12 +1,10 @@
-import clsx from "clsx";
-import { css } from "goober";
-import { CSSProperties, forwardRef, ReactElement } from "react";
-import { SwitchItemProps } from "../SwitchItem";
-import { componentStyles } from "./styles";
+"use client";
 
-const componentClass = css`
-  ${componentStyles}
-`;
+import clsx from "clsx";
+import { CSSProperties, forwardRef, ReactElement } from "react";
+import { useStyles } from "../../styles/useStyles";
+import { SwitchItemProps } from "../SwitchItem";
+import { names, switchGroupStyles } from "./switchGroup.styles";
 
 type SwitchGroupVariant = "clear" | "card" | "sunk";
 export interface SwitchGroupProps {
@@ -16,18 +14,19 @@ export interface SwitchGroupProps {
   variant?: SwitchGroupVariant;
 }
 
-const variants: Record<SwitchGroupVariant, string> = {
-  clear: "openui-switch-group-clear",
-  card: "openui-switch-group-card",
-  sunk: "openui-switch-group-sunk",
-};
-
 const SwitchGroup = forwardRef<HTMLDivElement, SwitchGroupProps>((props, ref) => {
   const { children, className, style, variant = "clear" } = props;
+  const styles = useStyles(switchGroupStyles);
   return (
     <div
       ref={ref}
-      className={clsx(componentClass, "openui-switch-group", variants[variant], className)}
+      className={clsx(
+        styles.root,
+        names.root,
+        styles.variant[variant],
+        names.variant[variant],
+        className,
+      )}
       style={style}
     >
       {children}

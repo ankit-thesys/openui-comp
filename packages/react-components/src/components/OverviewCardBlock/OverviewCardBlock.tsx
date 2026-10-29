@@ -1,9 +1,12 @@
+"use client";
+
 import clsx from "clsx";
 import { ChevronRight } from "lucide-react";
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
 import { MetricIndicatorInline, type MetricIndicatorInlineProps } from "../MetricIndicator";
-import { rootClass } from "./overviewCardBlock.styles";
+import { names, overviewCardBlockStyles } from "./overviewCardBlock.styles";
 
 export type OverviewCardBlockLayout = "grid" | "carousel";
 
@@ -29,6 +32,7 @@ export interface OverviewCardBlockProps extends Omit<HTMLAttributes<HTMLDivEleme
 }
 
 const OverviewCardBlock = forwardRef<HTMLDivElement, OverviewCardBlockProps>((props, ref) => {
+  const styles = useStyles(overviewCardBlockStyles);
   const {
     items,
     layout = "grid",
@@ -53,35 +57,31 @@ const OverviewCardBlock = forwardRef<HTMLDivElement, OverviewCardBlockProps>((pr
       responsive={responsive}
       maxPerRow={3}
       gap={gap}
-      className={className}
+      className={clsx(names.root, className)}
       itemKey={(item, index) => item.id ?? `overview-card-${index}`}
       renderItem={(item, index) => (
         <div
           className={clsx(
-            rootClass,
-            "openui-overview-card",
-            isClickable && "openui-overview-card--clickable",
+            styles.card,
+            names.card,
+            isClickable && [styles.clickable.true, names.clickable.true],
           )}
           role={isClickable ? "button" : undefined}
           tabIndex={isClickable ? 0 : undefined}
           onClick={isClickable ? () => onItemClick?.(item, index) : undefined}
           onKeyDown={isClickable ? cardKeyDownHandler(() => onItemClick?.(item, index)) : undefined}
         >
-          <div className="openui-overview-card__vertical">
-            <div className="openui-overview-card__top-row">
-              {item.top != null && (
-                <div className="openui-overview-card__slot openui-overview-card__slot--top">
-                  {item.top}
-                </div>
-              )}
+          <div className={clsx(names.vertical, styles.vertical)}>
+            <div className={clsx(names.topRow, styles.topRow)}>
+              {item.top != null && <div className={clsx(names.top, styles.top)}>{item.top}</div>}
               {isClickable && (
-                <div className="openui-overview-card__chevron" aria-hidden="true">
-                  <ChevronRight size={14} />
+                <div className={clsx(names.chevron, styles.chevron)} aria-hidden="true">
+                  <ChevronRight size={14} className={clsx(names.chevronIcon, styles.chevronIcon)} />
                 </div>
               )}
             </div>
             {item.bottom && (
-              <div className="openui-overview-card__slot openui-overview-card__slot--bottom">
+              <div className={clsx(names.bottom, styles.bottom)}>
                 <MetricIndicatorInline {...item.bottom} />
               </div>
             )}

@@ -19,15 +19,25 @@
       }
     }
   },
-  "sideEffects": false,
+  "sideEffects": [
+    "./src/index.ts",
+    "./src/styles/defaults.ts",
+    "./dist/index.mjs",
+    "./dist/index.cjs",
+    "./dist/styles/defaults.mjs",
+    "./dist/styles/defaults.cjs"
+  ],
   "files": [
     "dist",
     "README.md",
-    "THIRD_PARTY_NOTICES.md"
+    "THIRD_PARTY_NOTICES.md",
+    "docs/reference/selectors.md"
   ],
   "scripts": {
     "build": "tsdown",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint:check": "eslint ./src",
+    "lint:fix": "eslint ./src --fix"
   },
   "peerDependencies": {
     "react": "^19.0.0",

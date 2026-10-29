@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import {
   forwardRef,
@@ -7,17 +9,18 @@ import {
   type KeyboardEvent,
   type ReactNode,
 } from "react";
-import { layoutClasses, scrollbarClass } from "./cardBlockLayout.styles";
+import { useStyles } from "../../../styles/useStyles";
+import { cardBlockLayoutStyles, names } from "./cardBlockLayout.styles";
 import { getRowConfiguration, useCarouselMask } from "./smallCardBlockUtils";
 
 export type CardBlockLayoutVariant = "grid" | "carousel";
 export type CardBlockSize = "small" | "medium";
 
 export interface CardBlockLayoutProps<T> extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
-  /** Picks the `openui-small-card-block` / `openui-medium-card-block` class family. */
+  /** Card sizing preset. */
   size: CardBlockSize;
-  /** Appended as `openui-<size>-card-block--<cardType>` and exposed as `data-card-type`. */
-  cardType: string;
+  /** Card family, exposed as `data-card-type`. */
+  cardType: keyof typeof names.cardType;
   items: T[];
   layout?: CardBlockLayoutVariant;
   responsive?: boolean;
@@ -34,6 +37,7 @@ function CardBlockLayoutInner<T>(
   props: CardBlockLayoutProps<T>,
   ref: ForwardedRef<HTMLDivElement>,
 ) {
+  const styles = useStyles(cardBlockLayoutStyles);
   const {
     size,
     cardType,
@@ -50,19 +54,24 @@ function CardBlockLayoutInner<T>(
   } = props;
   const { scrollRef, maskLeft, maskRight } = useCarouselMask();
   const safeItems = items ?? [];
-  const base = `openui-${size}-card-block`;
+
   const count = safeItems.length;
 
   const gapStyle = gap
     ? ({
-        [`--openui-${size}-card-gap`]: typeof gap === "number" ? `${gap}px` : gap,
+        "--_openui-card-block-layout-gap-input": typeof gap === "number" ? `${gap}px` : gap,
       } as CSSProperties)
     : undefined;
 
   const renderCell = (item: T, index: number) => (
     <div
       key={itemKey?.(item, index) ?? `${cardType}-${index}`}
-      className={layout === "carousel" ? `${base}__carousel-item` : `${base}__item`}
+      className={
+        layout === "carousel"
+          ? clsx(names.carouselItem, styles.carouselItem)
+          : clsx(names.item, styles.item)
+      }
+      data-span={count % 2 === 1 && index === count - 1 ? "full" : undefined}
     >
       {renderItem(item, index)}
     </div>
@@ -74,10 +83,15 @@ function CardBlockLayoutInner<T>(
     <div
       ref={ref}
       className={clsx(
-        layoutClasses[size],
-        base,
-        `${base}--${cardType}`,
-        `${base}--${layout}`,
+        names.root,
+        styles.root,
+        names.size[size],
+        styles.size[size],
+        names.layout[layout],
+        styles.layout[layout],
+        names.cardType[cardType],
+        styles.cardType[cardType],
+        responsive && [names.responsive.true, styles.responsive.true],
         className,
       )}
       data-card-type={cardType}
@@ -89,26 +103,15 @@ function CardBlockLayoutInner<T>(
       {layout === "carousel" ? (
         <div
           ref={scrollRef}
-          className={clsx(
-            scrollbarClass,
-            `${base}__carousel`,
-            responsive && `${base}__carousel--responsive`,
-            maskLeft && `${base}__carousel--mask-left`,
-            maskRight && `${base}__carousel--mask-right`,
-          )}
+          className={clsx(names.carousel, styles.carousel)}
+          data-mask={maskLeft ? (maskRight ? "both" : "left") : maskRight ? "right" : "none"}
         >
-          <div className={`${base}__carousel-track`}>
+          <div className={clsx(names.track, styles.track)}>
             {safeItems.map((item, index) => renderCell(item, index))}
           </div>
         </div>
       ) : (
-        <div
-          className={clsx(
-            `${base}__grid`,
-            responsive && `${base}__grid--responsive`,
-            responsive && count % 2 === 1 && `${base}__grid--odd-count`,
-          )}
-        >
+        <div className={clsx(names.grid, styles.grid)}>
           {getRowConfiguration(count, maxPerRow).map((itemsInRow, rowIndex) => {
             const currentRowStartIndex = rowStartIndex;
             rowStartIndex += itemsInRow;
@@ -116,7 +119,8 @@ function CardBlockLayoutInner<T>(
             return (
               <div
                 key={`${cardType}-row-${rowIndex}`}
-                className={clsx(`${base}__row`, `${base}__row--${itemsInRow}`)}
+                className={clsx(names.row, styles.row)}
+                data-columns={itemsInRow}
               >
                 {safeItems
                   .slice(currentRowStartIndex, currentRowStartIndex + itemsInRow)
