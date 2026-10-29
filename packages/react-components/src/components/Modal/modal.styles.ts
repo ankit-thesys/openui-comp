@@ -31,6 +31,9 @@ export const modalStyles = (css: StyleCss) => ({
     }
   `,
   content: css`
+    /* #72's content-box sizing, declared so a page's box-sizing reset (Tailwind's preflight, for
+       one) cannot change the geometry. */
+    box-sizing: content-box;
     position: fixed;
     top: 50%;
     left: 50%;

@@ -399,12 +399,10 @@ button-background bench measures declared library styles. The foldable fixture's
 body has explicit typography: its `fit-content` height must not vary with preflight's inherited
 line height. These fixture choices preserve all override and Tailwind assertions.
 
-The Modal fixture also pins caller-supplied body typography and sets the dialog's page-owned
-`box-sizing` to `border-box` with a zero-specificity rule in `elements.tsx`. Its
-`translate(-50%, -50%)` computes to a pixel matrix using the border box: preflight's box-sizing
-and inherited line-height resets otherwise change that matrix without overriding any Modal
-declaration. The bench still compares the computed transform and every other declared property.
-These inputs apply only to the benches; the #72 parity fixtures keep their original page inputs.
+The Modal fixture also pins caller-supplied body typography. Modal content declares #72's
+`box-sizing: content-box`, so preflight's box-sizing reset cannot change the pixel matrix its
+`translate(-50%, -50%)` computes from the border box. The bench compares the computed transform
+and every other declared property with no page input pinned for it.
 
 `disclosure.spec.ts` exercises open/closed overrides with mouse and keyboard, Modal and tooltip
 portal overrides before/after library CSS in both modes, all tooltip sides, lazy registration,
@@ -766,11 +764,12 @@ changed in this follow-up, so no recapture is needed. Rerun `bench.tailwind.spec
 The next browser run exposed actual style differences in all three Charts reset cases, rather
 than timeouts: Preflight's block SVG reset removed CalendarHeatmap's 4px inline baseline gap,
 and its page font reset changed the seven SegmentedBar tracks that declare `font-family: inherit`.
-CalendarHeatmap now explicitly preserves #72's `display: inline` and baseline alignment. The
-Charts bench supplies page typography (`16px/normal serif`) on `body`, including portals, since
-inherited typography is a page input. Every element, case and property comparison remains in
-place. No parity fixtures or baselines changed; rerun the Tailwind and override benches,
-`calendar-heatmap.parity.spec.ts`, and then the full browser suite. No recapture is required.
+CalendarHeatmap now explicitly preserves #72's `display: inline` and baseline alignment, and its
+root declares the chart label typography, so the page font cannot resize that gap. SegmentedBar's
+track no longer declares the no-op `font-family: inherit`; it draws no text. The Charts bench
+therefore supplies no page typography. `calendar-heatmap.parity.spec.ts` lists the four inherited
+font properties of the non-label parts as intentional: they now inherit the label font instead
+of the page's Times 16px/normal, with every box unchanged. No baselines changed.
 
 ## Media rollout (#97)
 
@@ -790,10 +789,10 @@ remain open: these pages use domcontentloaded readiness, then wait for visible s
 The common benches pause infinite loader animations at time zero before measuring them.
 They open the six-image gallery's portal and scroll both gallery and Carousel tracks to expose
 both controls. Portal parts outside #root participate in every override and Tailwind comparison.
-The ImageBlock bench fixes the page's box-sizing to border-box, and the ImageGallery bench fixes
-page-owned img display/vertical-align to block/middle in both runs: Tailwind's resets otherwise
-change percentage loader offsets and auto grid track sizes through properties the library leaves
-to the page. All computed-value assertions remain intact. The full media override matrix loads
+ImageBlock's root, image and loader declare #72's `box-sizing: content-box`, so Tailwind's reset
+cannot change the percentage loader offset. The ImageGallery bench fixes page-owned img
+display/vertical-align to block/middle in both runs: Tailwind's resets otherwise change auto grid
+track sizes through properties the library leaves to the page. All computed-value assertions remain intact. The full media override matrix loads
 consumer CSS through a routed stylesheet before the bundle, avoiding oversized query URLs.
 The portal budget test sets its middle scroll offset instantly, then selects the fully visible
 Photo 2 thumbnail and checks both its resting and hovered opacity. Hovering the clipped first

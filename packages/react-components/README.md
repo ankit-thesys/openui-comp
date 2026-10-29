@@ -188,21 +188,10 @@ prose too, since its rules outweigh the preflight's element selectors. Tailwind
 transparent }` clears button backgrounds. Tailwind 3 emits its preflight unlayered, so it beats layered rules:
 use layer mode with Tailwind 4, not Tailwind 3.
 
-Every Tailwind preflight also sets `*, ::before, ::after { box-sizing: border-box }`. Like #72, a
-few components leave `box-sizing` to the page, so with that reset their declared sizes include
-padding and border, which changes their geometry:
-
-- Modal content: the `--size-{sm,md,lg}` widths (400, 560 and 720px) include the 1px border, so
-  the panel is 2px narrower and its header and body 2px narrower inside it.
-- VisualCard (`.openui-visual-card`): the 280px height includes the 1px border, so the card is 2px
-  shorter.
-- OverviewCard (`.openui-overview-card-block-card`): the full width includes its 10px padding and
-  1px border, so the card fits its container instead of overflowing it by 22px, and its content is
-  22px narrower.
-- ImageBlock (`.openui-image-block`): the 240px height includes its 16px vertical padding, so the
-  block is 32px shorter; its 24px loader includes the 3px border and shrinks from 30px to 24px.
-
-Set `box-sizing` on those classes to keep either geometry.
+Every Tailwind preflight also sets `*, ::before, ::after { box-sizing: border-box }`. Modal
+content, VisualCard, OverviewCard's card and ImageBlock (root, image and loader) declare #72's
+`box-sizing: content-box`, so that reset leaves their geometry unchanged. CalendarHeatmap declares
+its own typography, so preflight's font and line-height resets cannot change its height.
 
 ## Automatic styles
 
