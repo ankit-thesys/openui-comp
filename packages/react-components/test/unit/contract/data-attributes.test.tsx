@@ -285,6 +285,10 @@ describe("derived data attributes", () => {
       "2",
       "1",
     ]);
+    const context = (count: number) => (
+      <ContextCardBlock items={Array.from({ length: count }, (_, i) => ({ title: `T${i}` }))} />
+    );
+    expect(valuesOf(context(3), "openui-card-block-layout-row", "data-columns")).toEqual(["3"]);
     expect(valuesOf(composite(3), "openui-card-block-layout-item", "data-span")).toEqual([
       undefined,
       undefined,

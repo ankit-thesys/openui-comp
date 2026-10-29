@@ -103,8 +103,9 @@ classes: combine one with its element's class to restyle that case, such as
 `.openui-callout[data-autodismiss] { animation: none; }`. A boolean attribute is absent when false,
 never `="false"`. Each one is pinned by `test/unit/contract/data-attributes.test.tsx`, or by a
 browser spec where it needs layout, events or a portal (the test file lists which). Attributes that
-third-party primitives set (Radix, react-day-picker) and the chart root's `data-openui-chart`
-export marker are not part of this list.
+third-party primitives set (Radix, react-day-picker), the chart root's `data-openui-chart` export
+marker, the `data-source-id` identifier, and the citation input attributes `data-component-type`
+and `data-citation-indices` are not part of this list.
 
 | Component | Element | Attribute and values | Present when |
 | --- | --- | --- | --- |
@@ -126,7 +127,7 @@ export marker are not part of this list.
 | Card blocks (Composite, Context, Overview, Snippet, Visual) | `.openui-card-block-layout` | `data-card-type="CompositeCard"`, `"ContextCard"`, `"OverviewCard"`, `"SnippetCard"` or `"VisualCard"` | Always: the block's card type |
 | Card blocks | `.openui-card-block-layout` | `data-layout="grid"` or `"carousel"` | Always: the `layout` prop |
 | Card blocks | `.openui-card-block-layout` | `data-count="<n>"` | Always: the number of items |
-| Card blocks | `.openui-card-block-layout-row` | `data-columns="1"` or `"2"` | Always in the grid layout: the number of cards in that row |
+| Card blocks | `.openui-card-block-layout-row` | `data-columns="1"`, `"2"` or `"3"` | Always in the grid layout: the number of cards in that row (up to 2 for Composite and Snippet, up to 3 for Context, Overview and Visual) |
 | Card blocks | `.openui-card-block-layout-item`, `.openui-card-block-layout-carousel-item` | `data-span="full"` | The last card when the count is odd |
 | Card blocks, Carousel | `.openui-card-block-layout-carousel`, `.openui-carousel-content` | `data-mask="none"`, `"left"`, `"right"` or `"both"` | Always: the edges with more content to scroll to |
 | ImageGallery | `.openui-image-gallery-image` | `data-position="1"`, `"2"`, … | Always: the tile's position, from 1 |
