@@ -160,3 +160,44 @@ background. Components are not restyled; parity, not the screenshots, is the gat
 
 - `pnpm run ci` (typecheck of `src` and tests, unit tests, lint of `src`, format) needs the build too, because tests import the built package; in CI it runs in the shared `build-js.yml` step after all packages are built.
 - Browser tests run in the separate `react-components-browser` job in `build-js.yml`, which builds this package and `@openuidev/react-ui` (for the react-ui benches) with their workspace dependencies, installs Chromium and runs `test:browser`. Locally, build react-ui too: `pnpm --filter "@openuidev/react-ui..." build`.
+
+## Citations and sources rollout (#95)
+
+The contract list includes InlineMarkdownRenderer, Citation (including CitationItem and portal
+parts), Sources (including ListedSources and ListedSourceItem), and SourceFaviconImage.
+InlineMarkdownRenderer opts into the existing prose grammar only because it composes the pilot's
+MarkDownRenderer; its own reset is a flat class on `openui-inline-markdown-renderer-content`.
+Citation's scrollbar track/thumb are single pseudo-elements under the same selector budget.
+
+`citations-sources.spec.ts` uses `citations-sources.tsx` to cover every owned stable class in both
+load orders and layer modes, citation hover/press/open, all five inline callers, the overflowing
+source carousel, favicon fallback/recovery, and rewriting the html classes. The shared override
+bench explicitly preserves the listed-source container's important background exception while
+checking all its other properties normally. Sources owns the card element and its styles so the
+unmigrated CarouselItem cannot outrank them in layer mode; a browser regression compares default
+and hover styles across modes. Carousel itself remains on the allowlist. The Tailwind bench
+checks that inline content inherits caller typography instead of pinning the page-owned font
+that Tailwind changes; link/code typography keeps its existing coverage.
+
+The common benches pin Citation's real tooltip and include portal elements outside `#root`.
+Its icon and portal parts must render; they are not overflow-dependent skips. The favicon
+fixtures use a local data image, and the fallback bench waits for its lazy globe. Tailwind 3.3's
+documented typed-button background reset is an explicit expected value in the general matrix
+as well as the dedicated reset test; every other declared property still compares unchanged.
+The bench page sets `button { color: inherit; }` in both runs. CitationItem leaves its root
+text color to the page, so preflight legitimately changes a native button's color inside the
+tooltip (and the implicit `currentColor` from `border: none`). Giving both runs the same
+page-owned default preserves the full computed-style comparison, including border widths,
+styles and colors, without changing component CSS or the #72 parity fixtures.
+The focused Citation override includes a 40px width and height so its padding and border leave
+room for the icon. Inline caller coverage also pins TextBlock's hidden tertiary row; the inline
+root uses the span's default display so caller visibility rules retain control.
+
+The five new #72 parity names are `inline-markdown`, `citation`, `citation-tooltip`, `sources`, and
+`source-favicon-image`. Their `parity-<name>.tsx` fixtures wait for images and lazy globe icons;
+`citation-tooltip` pins a real portal before exposing its parity case. Citation's item cases
+target their actual buttons via `data-parity-target`, and its trigger runs last so the pressed
+state's pinned tooltip cannot cover another case. No intentional visual
+differences are allowed. Capture the baselines with `pnpm test:parity:baseline` in an environment
+that can run Chromium, then run the parity specs and `citations-sources.spec.ts` (and the common
+benches). No baseline JSON is authored by hand.

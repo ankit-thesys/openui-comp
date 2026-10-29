@@ -4,11 +4,12 @@ import clsx from "clsx";
 import { memo, ReactNode } from "react";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
+import { useStyles } from "../../styles/useStyles";
 import { remarkCitations } from "../_shared/remark/remarkCitations";
 import { TextContentCitation } from "../Citation";
 import { MarkDownRenderer } from "../MarkDownRenderer";
-import { useTheme } from "../ThemeProvider";
-import { rootClass } from "./inlineMarkdown.styles";
+import { markdownStyles } from "../MarkDownRenderer/markdown.styles";
+import { inlineMarkdownStyles, names } from "./inlineMarkdown.styles";
 
 const Fragment = ({ children }: { children?: ReactNode }) => children;
 
@@ -24,19 +25,19 @@ export interface InlineMarkdownRendererProps {
  */
 export const InlineMarkdownRenderer = memo(
   ({ content, className }: InlineMarkdownRendererProps) => {
-    const { mode } = useTheme();
+    // Register the composed renderer first so the flat content reset follows its root rule,
+    // even when inline markdown is the first markdown rendered on the page.
+    useStyles(markdownStyles);
+    const styles = useStyles(inlineMarkdownStyles);
 
     if (!content) {
       return null;
     }
 
     return (
-      <span
-        className={clsx(rootClass, "openui-inline-markdown-renderer", className, {
-          "openui-inline-markdown-renderer--dark": mode === "dark",
-        })}
-      >
+      <span className={clsx(styles.root, names.root, className)}>
         <MarkDownRenderer
+          className={clsx(styles.content, names.content)}
           textMarkdown={content}
           options={{
             remarkPlugins: [

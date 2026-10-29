@@ -2,9 +2,19 @@
 // combination through public exports. Add a component here when it leaves the allowlist.
 import {
   Button,
+  CardSourceProvider,
+  Carousel,
+  CarouselContent,
+  Citation,
+  CitationItem,
   CodeBlock,
   IconButton,
+  InlineMarkdownRenderer,
+  ListedSourceItem,
+  ListedSources,
   MarkDownRenderer,
+  SourceFaviconImage,
+  Sources,
   Table,
   TableBody,
   TableCell,
@@ -34,7 +44,7 @@ export interface MigratedComponent {
   clientOnly?: string[];
   /**
    * Allows prose rules (`.goN p`, the root's generated class then tags only) for content the
-   * component generates without classes. Only MarkDownRenderer opts in.
+   * component generates without classes. MarkDownRenderer and the inline renderer composing it opt in.
    */
   prose?: boolean;
 }
@@ -55,7 +65,95 @@ const product = <T,>(...lists: T[][]): T[][] =>
     [[]],
   );
 
+// Composed components keep their own names plus their dependencies' public rendered classes.
+// Read only after CSS collection, so this never registers a dependency before the contract render.
+const composedNames = (element: ReactElement): StableNames =>
+  Object.fromEntries(
+    [...stableClassesIn(renderToString(element))].map((name, index) => [
+      `dependency${index}`,
+      name,
+    ]),
+  );
+
+const source = {
+  title: "A source",
+  sourceName: "Example",
+  // A real local image keeps the browser benches deterministic, including inside portals.
+  faviconUrl:
+    'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="32" height="32"%3E%3Crect width="32" height="32" fill="%236286ab"/%3E%3C/svg%3E',
+  url: "https://example.com",
+};
+const inlineContent = "**Inline** [link](https://example.com) and `code` [1]";
+
 export const migratedComponents: MigratedComponent[] = [
+  {
+    folder: "SourceFaviconImage",
+    names: namesOf("SourceFaviconImage"),
+    elements: () => [
+      <SourceFaviconImage
+        key="image"
+        {...source}
+        url={source.faviconUrl}
+        alt="Example"
+        width={24}
+        height={24}
+      />,
+      <SourceFaviconImage key="fallback" url="" alt="Example" width={20} height={20} />,
+    ],
+  },
+  {
+    folder: "Citation",
+    get names() {
+      return [...namesOf("Citation"), ...namesOf("SourceFaviconImage")];
+    },
+    clientOnly: [
+      "openui-citation-icon",
+      "openui-citation-tooltip",
+      "openui-citation-tooltip-content",
+    ],
+    elements: () => [
+      <Citation key="citation" sources={[source]} />,
+      ...[source.url, undefined, "", " "].map((url, index) => (
+        <CitationItem key={index} {...source} url={url} />
+      )),
+    ],
+  },
+  {
+    folder: "Sources",
+    get names() {
+      return [
+        ...namesOf("Sources"),
+        ...namesOf("SourceFaviconImage"),
+        composedNames(
+          <Carousel variant="sunk">
+            <CarouselContent />
+          </Carousel>,
+        ),
+      ];
+    },
+    clientOnly: ["openui-sources-buttons"],
+    elements: () => [
+      <ListedSources key="list" sources={[source, { ...source, url: undefined }]} />,
+      <CardSourceProvider key="context" sources={[source]}>
+        <Sources />
+      </CardSourceProvider>,
+      ...[source.url, undefined, "", " "].map((url, index) => (
+        <ListedSourceItem key={index} {...source} url={url} sourceId={index} />
+      )),
+    ],
+  },
+  {
+    folder: "InlineMarkdownRenderer",
+    // The composed MarkDownRenderer emits the pilot's accepted prose rules.
+    prose: true,
+    get names() {
+      return [
+        ...namesOf("InlineMarkdownRenderer"),
+        composedNames(<MarkDownRenderer textMarkdown={inlineContent} />),
+      ];
+    },
+    elements: () => [<InlineMarkdownRenderer key="inline" content={inlineContent} />],
+  },
   {
     folder: "MarkDownRenderer",
     prose: true,

@@ -1,37 +1,23 @@
-import { css } from "goober";
-import { names as markdownNames } from "../MarkDownRenderer/markdown.styles";
-export const rootClass = "openui-inline-markdown-renderer-inline-markdown-root";
+import type { StyleCss } from "../../styles/useStyles";
 
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-inline-markdown-renderer-inline-markdown-root {
-      display: inline;
-      text-align: inherit;
-      & .${markdownNames.root} {
-        all: unset;
-        display: inline;
-        color: inherit;
-        font: inherit;
-        letter-spacing: inherit;
-        text-align: inherit;
-      }
-      & p,
-      & .${markdownNames.root} p {
-        display: inline;
-        margin: 0;
-        padding: 0;
-        text-align: inherit;
-      }
-      & > * {
-        display: inline;
-        margin: 0;
-        padding: 0;
-        text-align: inherit;
-      }
-    }
-  }
-`;
+export const names = {
+  root: "openui-inline-markdown-renderer",
+  content: "openui-inline-markdown-renderer-content",
+} as const;
 
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}
+export const inlineMarkdownStyles = (css: StyleCss) => ({
+  // The span is inline by default; leave display to callers such as TextBlock's hidden row.
+  root: css`
+    text-align: inherit;
+  `,
+  content: css`
+    all: unset;
+    display: inline;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-align: inherit;
+    margin: 0;
+    padding: 0;
+  `,
+});

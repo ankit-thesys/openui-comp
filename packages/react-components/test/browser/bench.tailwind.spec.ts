@@ -30,7 +30,7 @@ const snapshot = (page: Page, component: MigratedComponent) =>
     };
     return Object.fromEntries(
       classes.flatMap((className) =>
-        [...document.querySelectorAll(`#root .${className}`)].map((el, i) => {
+        [...document.querySelectorAll(`.${className}`)].map((el, i) => {
           el.getAnimations().forEach((animation) => animation.finish());
           // Later matching rules win, as in the cascade (all library rules weigh the same here).
           const declared = new Map<string, string>();
@@ -41,14 +41,27 @@ const snapshot = (page: Page, component: MigratedComponent) =>
           return [
             `${className} #${i}`,
             Object.fromEntries(
-              [...declared].sort().map(([property, value]) => [
-                property,
-                // A percentage size resolves against layout the page owns (a reset's table
-                // border-collapse changes the pixels), so compare the declaration itself.
-                value.includes("%") && /(^|-)(width|height)$/.test(property)
-                  ? `declared ${value}`
-                  : style.getPropertyValue(property),
-              ]),
+              [...declared].sort().map(([property, value]) => {
+                // #95's inline reset deliberately inherits caller typography. Verify that
+                // relationship, not the page-owned font Tailwind changes on html/body.
+                if (
+                  className === "openui-inline-markdown-renderer-content" &&
+                  value.trim() === "inherit"
+                ) {
+                  const parent = getComputedStyle(el.parentElement!);
+                  if (style.getPropertyValue(property) !== parent.getPropertyValue(property))
+                    throw new Error(`Inline markdown no longer inherits ${property}`);
+                  return [property, "inherits from parent"];
+                }
+                return [
+                  property,
+                  // A percentage size resolves against layout the page owns (a reset's table
+                  // border-collapse changes the pixels), so compare the declaration itself.
+                  value.includes("%") && /(^|-)(width|height)$/.test(property)
+                    ? `declared ${value}`
+                    : style.getPropertyValue(property),
+                ];
+              }),
             ),
           ];
         }),
@@ -67,8 +80,27 @@ for (const component of migrated) {
         await openMigrated(page, component);
         const plain = await snapshot(page, component);
         expect(Object.keys(plain).length).toBeGreaterThan(0);
+        const expected = structuredClone(plain);
+        // Citation already renders type="button". Apply the documented 3.3 exception to
+        // exactly those elements; all their other declared properties must still match.
+        // The dedicated typed-button test below also pins this reset independently.
+        if (version === "33") {
+          const typedButtons = await page.evaluate(
+            (classes) =>
+              classes.flatMap((className) =>
+                [...document.querySelectorAll(`.${className}`)].flatMap((el, i) =>
+                  el.matches('button[type="button"]') ? [`${className} #${i}`] : [],
+                ),
+              ),
+            component.stableClasses,
+          );
+          for (const key of typedButtons) {
+            if (expected[key]?.["background-color"] !== undefined)
+              expected[key]!["background-color"] = "rgba(0, 0, 0, 0)";
+          }
+        }
         await openMigrated(page, component, tailwind(version));
-        expect(await snapshot(page, component)).toEqual(plain);
+        expect(await snapshot(page, component)).toEqual(expected);
       });
     }
 
@@ -78,12 +110,12 @@ for (const component of migrated) {
     const typedBackgrounds = async (page: Page, head = "") => {
       await openMigrated(page, component, head);
       await page.evaluate(() => {
-        for (const button of document.querySelectorAll("#root button"))
+        for (const button of document.querySelectorAll("button"))
           button.setAttribute("type", "button");
       });
       // Buttons transition their background; read the end value.
       return page.evaluate(() =>
-        [...document.querySelectorAll("#root button")].map((button) => {
+        [...document.querySelectorAll("button")].map((button) => {
           button.getAnimations().forEach((animation) => animation.finish());
           return getComputedStyle(button).backgroundColor;
         }),

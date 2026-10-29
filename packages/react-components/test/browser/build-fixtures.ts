@@ -24,6 +24,12 @@ const fixtures = [
   "parity-markdown",
   "tabs",
   "parity-tabs",
+  "citations-sources",
+  "parity-inline-markdown",
+  "parity-citation",
+  "parity-citation-tooltip",
+  "parity-sources",
+  "parity-source-favicon-image",
 ];
 const parityFixtures = fixtures.filter((name) => name.startsWith("parity-"));
 

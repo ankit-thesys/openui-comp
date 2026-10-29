@@ -23,6 +23,26 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-button--tone-default` | Modifier | `tone="default"` |
 | `.openui-button--tone-destructive` | Modifier | `tone="destructive"` |
 
+## Citation
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-citation-container` | Part (`container`) | On that part, whenever it renders |
+| `.openui-citation` | Root | Always |
+| `.openui-citation-icon` | Part (`icon`) | On that part, whenever it renders |
+| `.openui-citation-tooltip` | Part (`tooltip`) | On that part, whenever it renders |
+| `.openui-citation-tooltip-content` | Part (`tooltipContent`) | On that part, whenever it renders |
+
+## Citation (CitationItem)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-citation-item` | Root | Always |
+| `.openui-citation-item-logo` | Part (`logo`) | On that part, whenever it renders |
+| `.openui-citation-item-content` | Part (`content`) | On that part, whenever it renders |
+| `.openui-citation-item-title` | Part (`title`) | On that part, whenever it renders |
+| `.openui-citation-item-source` | Part (`source`) | On that part, whenever it renders |
+
 ## IconButton
 
 | Stable class | Kind | Present when |
@@ -43,6 +63,13 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-icon-button--tone-default` | Modifier | `tone="default"` |
 | `.openui-icon-button--tone-destructive` | Modifier | `tone="destructive"` |
 
+## InlineMarkdownRenderer
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-inline-markdown-renderer` | Root | Always |
+| `.openui-inline-markdown-renderer-content` | Part (`content`) | On that part, whenever it renders |
+
 ## MarkDownRenderer
 
 | Stable class | Kind | Present when |
@@ -56,6 +83,32 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-markdown-renderer--variant-clear` | Modifier | `variant="clear"` |
 | `.openui-markdown-renderer--variant-card` | Modifier | `variant="card"` |
 | `.openui-markdown-renderer--variant-sunk` | Modifier | `variant="sunk"` |
+
+## SourceFaviconImage
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-source-favicon-image` | Root | Always |
+
+## Sources (ListedSources)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-sources` | Root | Always |
+| `.openui-sources-header` | Part (`header`) | On that part, whenever it renders |
+| `.openui-sources-title` | Part (`title`) | On that part, whenever it renders |
+| `.openui-sources-buttons` | Part (`buttons`) | On that part, whenever it renders |
+| `.openui-sources-item-container` | Part (`container`) | On that part, whenever it renders |
+
+## Sources (SourcesItem)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-sources-item` | Root | Always |
+| `.openui-sources-item-header` | Part (`header`) | On that part, whenever it renders |
+| `.openui-sources-item-name` | Part (`name`) | On that part, whenever it renders |
+| `.openui-sources-item-title` | Part (`title`) | On that part, whenever it renders |
+| `.openui-sources-item-logo` | Part (`logo`) | On that part, whenever it renders |
 
 ## Tabs
 
