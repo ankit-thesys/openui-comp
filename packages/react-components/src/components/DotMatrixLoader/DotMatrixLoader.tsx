@@ -1,11 +1,9 @@
 "use client";
 
 import clsx from "clsx";
-import { css } from "goober";
 import { useEffect, useRef, type CSSProperties } from "react";
-import { loaderStyles } from "./dotMatrixLoader.styles";
-
-const componentClass = "openui-dot-matrix-loader-root";
+import { useStyles } from "../../styles/useStyles";
+import { dotMatrixLoaderStyles, names } from "./dotMatrixLoader.styles";
 
 /** Time for each trail to complete one revolution of its ring. */
 const REVOLUTION_MS = 1400;
@@ -57,6 +55,7 @@ export const DotMatrixLoader = ({
   size?: number;
   variant?: DotMatrixLoaderVariant;
 }) => {
+  const styles = useStyles(dotMatrixLoaderStyles);
   const dotsRef = useRef<Map<string, HTMLSpanElement>>(new Map());
   const isCompact = variant === "compact";
   const gridSize = isCompact ? 4 : 5;
@@ -66,7 +65,7 @@ export const DotMatrixLoader = ({
   useEffect(() => {
     const dots = dotsRef.current;
     dots.forEach((dot) => {
-      dot.style.opacity = String(MIN_OPACITY);
+      dot.style.setProperty("--_openui-dot-matrix-loader-dot-opacity", String(MIN_OPACITY));
     });
 
     const paintRing = (ring: readonly (readonly [number, number])[], head: number) => {
@@ -84,7 +83,10 @@ export const DotMatrixLoader = ({
         const leadProgress = forwardDistance < 1 ? 1 - forwardDistance : 0;
         const leadIntensity = leadProgress * leadProgress * (3 - 2 * leadProgress);
         const intensity = Math.max(trailIntensity, leadIntensity);
-        dot.style.opacity = String(MIN_OPACITY + (1 - MIN_OPACITY) * intensity);
+        dot.style.setProperty(
+          "--_openui-dot-matrix-loader-dot-opacity",
+          String(MIN_OPACITY + (1 - MIN_OPACITY) * intensity),
+        );
       }
     };
 
@@ -106,7 +108,7 @@ export const DotMatrixLoader = ({
       dots.push(
         <span
           key={key}
-          className="openui-dot-matrix-loader__dot"
+          className={clsx(styles.dot, names.dot)}
           ref={(el) => {
             if (el) dotsRef.current.set(key, el);
             else dotsRef.current.delete(key);
@@ -118,14 +120,14 @@ export const DotMatrixLoader = ({
 
   return (
     <div
-      className={clsx(componentClass, "openui-dot-matrix-loader", className)}
+      className={clsx(styles.root, names.root, names.variant[variant], className)}
       role="status"
       aria-live="polite"
       aria-label="Loading"
       style={
         {
-          "--openui-dot-matrix-loader-grid-size": gridSize,
-          "--openui-dot-matrix-loader-size": `${resolvedSize}px`,
+          "--_openui-dot-matrix-loader-grid-size": gridSize,
+          "--_openui-dot-matrix-loader-size": `${resolvedSize}px`,
         } as CSSProperties
       }
     >
@@ -133,15 +135,3 @@ export const DotMatrixLoader = ({
     </div>
   );
 };
-
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-dot-matrix-loader-root {
-      ${loaderStyles}
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
-}

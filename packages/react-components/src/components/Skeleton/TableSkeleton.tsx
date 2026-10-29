@@ -1,21 +1,22 @@
 "use client";
 
 import clsx from "clsx";
-import { css } from "goober";
+import type { CSSProperties } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { SkeletonBar } from "./SkeletonBar";
-import { tableStyles } from "./tableSkeleton.styles";
-const componentClass = "openui-skeleton-table-skeleton-root";
+import { names, tableSkeletonStyles } from "./tableSkeleton.styles";
 export function TableSkeleton({ rows = 5, columns = 4 }: { rows?: number; columns?: number }) {
+  const styles = useStyles(tableSkeletonStyles);
   return (
-    <div className={clsx(componentClass, "openui-skeleton-table")}>
+    <div className={clsx(styles.root, names.root)}>
       <div
-        className="openui-skeleton-table-row"
-        style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
+        className={clsx(styles.row, names.row)}
+        style={{ "--_openui-table-skeleton-columns": columns } as CSSProperties}
       >
         {Array.from({ length: columns }, (_, i) => (
           <div
             key={`h-${i}`}
-            className={clsx("openui-skeleton-table-cell", "openui-skeleton-table-cell-short")}
+            className={clsx(styles.cell, styles.headerCell, names.cell, names.headerCell)}
           >
             <SkeletonBar height="14px" width="100%" />
           </div>
@@ -24,11 +25,11 @@ export function TableSkeleton({ rows = 5, columns = 4 }: { rows?: number; column
       {Array.from({ length: rows }, (_, ri) => (
         <div
           key={`r-${ri}`}
-          className="openui-skeleton-table-row"
-          style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
+          className={clsx(styles.row, names.row)}
+          style={{ "--_openui-table-skeleton-columns": columns } as CSSProperties}
         >
           {Array.from({ length: columns }, (_, ci) => (
-            <div key={`c-${ri}-${ci}`} className="openui-skeleton-table-cell">
+            <div key={`c-${ri}-${ci}`} className={clsx(styles.cell, names.cell)}>
               <SkeletonBar height="14px" width={`${50 + ((ri * 7 + ci * 13) % 40)}%`} />
             </div>
           ))}
@@ -36,16 +37,4 @@ export function TableSkeleton({ rows = 5, columns = 4 }: { rows?: number; column
       ))}
     </div>
   );
-}
-
-const stylesheetScope = css`
-  :where(&:root) {
-    .openui-skeleton-table-skeleton-root {
-      ${tableStyles}
-    }
-  }
-`;
-
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add(stylesheetScope);
 }

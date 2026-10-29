@@ -90,13 +90,19 @@ export async function snapshot(page: Page, fixture: string, mode: Mode): Promise
   const result: Snapshot = {};
   for (const id of ids) {
     const el = page.locator(`[data-parity-case="${id}"]`);
+    // A case may exercise an owned part instead of the outer block, and optionally
+    // enter a runtime state first (CodeBlock's copy button). Specs freeze its reset timer.
+    const setupClick = await el.getAttribute("data-parity-setup-click");
+    if (setupClick) await el.locator(setupClick).click();
+    const targetSelector = await el.getAttribute("data-parity-target");
+    const target = targetSelector ? el.locator(targetSelector) : el;
     const take = (state: State) =>
       el.evaluate(measure, PROPERTIES).then((values) => {
         result[`${mode} ${id} ${state}`] = values;
       });
     await page.mouse.move(0, 0);
     await take("rest");
-    await el.hover();
+    await target.hover();
     await take("hover");
     await page.mouse.down();
     await take("active");

@@ -23,6 +23,23 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-button--tone-default` | Modifier | `tone="default"` |
 | `.openui-button--tone-destructive` | Modifier | `tone="destructive"` |
 
+## CodeBlock
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-code-block` | Root | Always |
+| `.openui-code-block-copy-button` | Part (`copyButton`) | On that part, whenever it renders |
+| `.openui-code-block-syntax-highlighter` | Part (`syntaxHighlighter`) | On that part, whenever it renders |
+
+## DotMatrixLoader
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-dot-matrix-loader` | Root | Always |
+| `.openui-dot-matrix-loader-dot` | Part (`dot`) | On that part, whenever it renders |
+| `.openui-dot-matrix-loader--variant-default` | Modifier | `variant="default"` |
+| `.openui-dot-matrix-loader--variant-compact` | Modifier | `variant="compact"` |
+
 ## IconButton
 
 | Stable class | Kind | Present when |
@@ -56,6 +73,37 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-markdown-renderer--variant-clear` | Modifier | `variant="clear"` |
 | `.openui-markdown-renderer--variant-card` | Modifier | `variant="card"` |
 | `.openui-markdown-renderer--variant-sunk` | Modifier | `variant="sunk"` |
+
+## Skeleton (PieChartSkeleton)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-pie-chart-skeleton` | Root | Always |
+| `.openui-pie-chart-skeleton-container` | Part (`container`) | On that part, whenever it renders |
+| `.openui-pie-chart-skeleton-shape` | Part (`shape`) | On that part, whenever it renders |
+| `.openui-pie-chart-skeleton-legend` | Part (`legend`) | On that part, whenever it renders |
+| `.openui-pie-chart-skeleton-legend-item` | Part (`legendItem`) | On that part, whenever it renders |
+| `.openui-pie-chart-skeleton-legend-dot` | Part (`legendDot`) | On that part, whenever it renders |
+| `.openui-pie-chart-skeleton--variant-pie` | Modifier | `variant="pie"` |
+| `.openui-pie-chart-skeleton--variant-donut` | Modifier | `variant="donut"` |
+| `.openui-pie-chart-skeleton--appearance-circular` | Modifier | `appearance="circular"` |
+| `.openui-pie-chart-skeleton--appearance-semi-circular` | Modifier | `appearance="semiCircular"` |
+
+## Skeleton
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-skeleton` | Root | Always |
+| `.openui-skeleton-bar` | Part (`bar`) | On that part, whenever it renders |
+
+## Skeleton (TableSkeleton)
+
+| Stable class | Kind | Present when |
+| --- | --- | --- |
+| `.openui-table-skeleton` | Root | Always |
+| `.openui-table-skeleton-row` | Part (`row`) | On that part, whenever it renders |
+| `.openui-table-skeleton-cell` | Part (`cell`) | On that part, whenever it renders |
+| `.openui-table-skeleton-header-cell` | Part (`headerCell`) | On that part, whenever it renders |
 
 ## Tabs
 

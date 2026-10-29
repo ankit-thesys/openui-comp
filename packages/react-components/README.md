@@ -343,7 +343,7 @@ The private document guard contributes no specificity.
 | Callout | `.openui-callout-root`, `.openui-callout-title-styled`, `.openui-callout-description-styled`, `.openui-callout-variant-info`, `.openui-callout-variant-danger`, `.openui-callout-variant-warning`, `.openui-callout-variant-success`, `.openui-callout-variant-neutral`, `.openui-callout-dismiss` |
 | TextCallout | `.openui-text-callout-root`, `.openui-text-callout-variant-neutral`, `.openui-text-callout-variant-info`, `.openui-text-callout-variant-warning`, `.openui-text-callout-variant-success`, `.openui-text-callout-variant-danger`, `.openui-text-callout-content-styled`, `.openui-text-callout-title`, `.openui-text-callout-description` |
 | MetricIndicator | `.openui-metric-indicator-root` |
-| CodeBlock | `.openui-code-block-root` |
+| CodeBlock | `.openui-code-block`, `.openui-code-block-copy-button`, `.openui-code-block-syntax-highlighter` (flat; see the generated reference) |
 | InlineMarkdownRenderer | `.openui-inline-markdown-renderer-inline-markdown-root` |
 | ImageBlock | `.openui-image-block-wrapper-styled`, `.openui-image-block-wrapper-mobile`, `.openui-image-block-error`, `.openui-image-block-image-styled`, `.openui-image-block-image-mobile`, `.openui-image-block-loader-styled` |
 | ImageText | `.openui-image-text-root`, `.openui-image-text-image-container`, `.openui-image-text-image`, `.openui-image-text-layout-vertical`, `.openui-image-text-layout-horizontal`, `.openui-image-text-content` |
@@ -355,8 +355,8 @@ The private document guard contributes no specificity.
 | CardHeader | `.openui-card-header-root` |
 | Buttons | `.openui-buttons-root` |
 | TagBlock | `.openui-tag-block-root` |
-| DotMatrixLoader | `.openui-dot-matrix-loader-root` |
-| Skeleton | `.openui-skeleton-pie-chart-skeleton-root`, `.openui-skeleton-root`, `.openui-skeleton-bar-root`, `.openui-skeleton-table-skeleton-root` |
+| DotMatrixLoader | `.openui-dot-matrix-loader`, `.openui-dot-matrix-loader-dot`, `--variant-{default,compact}` (flat) |
+| Skeleton family | `.openui-skeleton`, `.openui-skeleton-bar`, `.openui-pie-chart-skeleton`, `.openui-table-skeleton` and their parts (flat; see the generated reference) |
 | Sources | `.openui-sources-listed-sources-list`, `.openui-sources-listed-sources-header`, `.openui-sources-listed-sources-title`, `.openui-sources-listed-sources-buttons`, `.openui-sources-listed-sources-container`, `.openui-sources-item-item`, `.openui-sources-item-header`, `.openui-sources-item-name`, `.openui-sources-item-title`, `.openui-sources-item-logo` |
 | SnippetCardBlock | `.openui-snippet-card-block-root` |
 | ContextCardBlock | `.openui-context-card-block-card-image`, `.openui-context-card-block-card-root` |
@@ -377,11 +377,26 @@ The private document guard contributes no specificity.
 
 CodeBlock accepts two class props:
 
-- `className` is added to the wrapper (`.openui-code-block-root`), next to its own classes.
+- `className` is added to the wrapper (`.openui-code-block`), next to its own classes.
 - `syntaxHighlighterClassName` replaces the class on the third-party highlighter element. It
   defaults to `openui-code-block-syntax-highlighter`, whose rules (including its `!important`
   margin) apply only while that default is kept; pass your own class to style the highlighter
   yourself. MarkDownRenderer uses this to own its code blocks' spacing.
+The Skeleton family, DotMatrixLoader and CodeBlock follow the flat override contract in
+both default and layer mode. Their complete parts and modifiers are in the
+[generated reference](docs/reference/selectors.md). Skeleton dimensions, pie shape sizes,
+table columns and loader dimensions are passed through private `--_openui-*` variables,
+so ordinary class rules can override the resulting properties. DotMatrixLoader's trail
+also uses a private opacity variable; its dot class can override opacity while it runs.
+CodeBlock reveals its copy button on root hover; copied state is
+`.openui-code-block-copy-button[data-state="copied"]`. Its existing highlighter
+`margin: 0 !important` remains a contract exception.
+The default highlighter frame's theme values are flat CSS, so its colour, background
+and padding can be overridden on `.openui-code-block-syntax-highlighter`.
+Token output and explicitly supplied `theme` maps retain the third-party inline style
+API. Replacing `syntaxHighlighterClassName` (including with `""`) opts out of the
+default frame rules and retains the third-party theme styles, as before.
+
 Sources retains its existing important width (180px), transparent background
 and hover background on listed-source items. Ordinary background overrides do
 not beat those declarations, even when the same element also has Carousel's
@@ -700,6 +715,18 @@ Renamed stable classes and props, per component converted to the flat convention
 | MarkDownRenderer | Shared `.openui-table` / `.openui-table-container` | Also carry `.openui-markdown-renderer-table` / `.openui-markdown-renderer-table-container` |
 | Shared border-box (#90) | `.openui-border-box` on Buttons, FormControl and TagBlock | Unchanged; registered at render, flat and layer-aware. No prop renames. |
 | Shared Skeleton pulse (#90) | Animation on bars, pie shapes and legend dots | Also carry `.openui-skeleton-pulse`; animation and keyframes register at render. Existing classes and props are unchanged. |
+| Skeleton (#101) | `.openui-skeleton-stack` | `.openui-skeleton`; props unchanged |
+| SkeletonBar (#101) | `.openui-skeleton-bar` | Unchanged; still rendered through public Skeleton family components, not separately exported |
+| PieChartSkeleton (#101) | `.openui-skeleton-pie-chart-wrapper` | `.openui-pie-chart-skeleton` |
+| PieChartSkeleton (#101) | `.openui-skeleton-pie-chart-{container,shape,legend,legend-item,legend-dot}` | `.openui-pie-chart-skeleton-{container,shape,legend,legend-item,legend-dot}` |
+| PieChartSkeleton (#101) | `.openui-skeleton-pie-chart-{donut,semi,semi-donut}` | Root `.openui-pie-chart-skeleton--variant-{pie,donut}` and `--appearance-{circular,semi-circular}`; defaults emitted, `variant` and `appearance` props unchanged |
+| TableSkeleton (#101) | `.openui-skeleton-table`, `.openui-skeleton-table-{row,cell}` | `.openui-table-skeleton`, `.openui-table-skeleton-{row,cell}` |
+| TableSkeleton (#101) | `.openui-skeleton-table-cell-short` | `.openui-table-skeleton-header-cell`; props unchanged |
+| DotMatrixLoader (#101) | `.openui-dot-matrix-loader`, `.openui-dot-matrix-loader__dot` | Root unchanged, part becomes `.openui-dot-matrix-loader-dot`; root always emits `--variant-{default,compact}`; props unchanged |
+| DotMatrixLoader (#101) | `--openui-dot-matrix-loader-{size,grid-size}` | Private `--_openui-dot-matrix-loader-*` variables; override width/height/grid on the stable class or use `size`/`variant` props |
+| CodeBlock (#101) | `.openui-code-block-wrapper` | `.openui-code-block`; additive `className` behavior unchanged, including inside markdown |
+| CodeBlock (#101) | `.openui-code-block-copy-button-copied` | `.openui-code-block-copy-button[data-state="copied"]`; idle uses `data-state="idle"` |
+| CodeBlock (#101) | `.openui-code-block-syntax-highlighter` | Unchanged; `syntaxHighlighterClassName` still replaces the default class and all its rules; `""` opts out too |
 
 Pre-release `@openuidev/react-components` betas also emitted internal carrier classes that
 react-ui never had. They are gone; use the class on the right instead:
@@ -712,6 +739,12 @@ react-ui never had. They are gone; use the class on the right instead:
 | `.openui-tabs-container` | `.openui-tabs-list-container` |
 | `.openui-tabs-list-styled`, `.openui-tabs-trigger-styled`, `.openui-tabs-content-styled` | `.openui-tabs-list`, `.openui-tabs-trigger`, `.openui-tabs-content` |
 | `.openui-mark-down-renderer-markdown-{root,code,link}` | `.openui-markdown-renderer`, `-code`, `-link` |
+| `.openui-skeleton-root` | `.openui-skeleton` |
+| `.openui-skeleton-bar-root` | `.openui-skeleton-bar` |
+| `.openui-skeleton-pie-chart-skeleton-root` | `.openui-pie-chart-skeleton` |
+| `.openui-skeleton-table-skeleton-root` | `.openui-table-skeleton` |
+| `.openui-dot-matrix-loader-root` | `.openui-dot-matrix-loader` |
+| `.openui-code-block-root` | `.openui-code-block` |
 
 ## Beta import migration
 
