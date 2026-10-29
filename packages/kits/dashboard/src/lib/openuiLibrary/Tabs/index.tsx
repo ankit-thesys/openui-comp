@@ -38,6 +38,13 @@ export const TabsRenderer = ({ props, renderNode }: TabsRenderProps) => {
     }
   }, [items.length, activeTab]);
 
+  // Deliberately dependency-array-free: it must compare every tab's content
+  // size against the previous render to spot the one currently streaming in,
+  // and auto-focus it until the user picks a tab themselves. eslint's
+  // exhaustive-deps warning here is expected. It cannot loop — `candidate` is
+  // only set when a tab's content GREW since the last render, `prevContentSizes`
+  // is refreshed each pass, and the setState is guarded by `!== activeTab`, so a
+  // steady render sets nothing.
   React.useEffect(() => {
     if (userHasInteracted.current) return;
 

@@ -33,7 +33,16 @@
   ],
   "scripts": {
     "build": "tsdown",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint:check": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
+    "format:check": "prettier --check ./src",
+    "format:fix": "prettier --write ./src",
+    "check:publint": "publint",
+    "check:attw": "attw --pack . --ignore-rules no-resolution",
+    "prepare": "pnpm run build",
+    "prepublishOnly": "pnpm run check:publint && pnpm run check:attw",
+    "ci": "pnpm run lint:check && pnpm run format:check && pnpm run typecheck"
   },
   "dependencies": {
     "lucide-react": "^0.562.0"
@@ -54,5 +63,28 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "zod": "catalog:"
+  },
+  "keywords": [
+    "openui",
+    "dashboard",
+    "generative-ui",
+    "ai",
+    "component-library",
+    "openui-lang",
+    "charts",
+    "llm"
+  ],
+  "homepage": "https://openui.com",
+  "author": "engineering@thesys.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesysdev/openui.git",
+    "directory": "packages/kits/dashboard"
+  },
+  "bugs": {
+    "url": "https://github.com/thesysdev/openui/issues"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
   }
 }

@@ -27,7 +27,16 @@
   ],
   "scripts": {
     "build": "tsdown",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint:check": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
+    "format:check": "prettier --check ./src",
+    "format:fix": "prettier --write ./src",
+    "check:publint": "publint",
+    "check:attw": "attw --pack . --ignore-rules no-resolution",
+    "prepare": "pnpm run build",
+    "prepublishOnly": "pnpm run check:publint && pnpm run check:attw",
+    "ci": "pnpm run lint:check && pnpm run format:check && pnpm run typecheck"
   },
   "peerDependencies": {
     "react": "^19.0.0",
@@ -90,5 +99,22 @@
   },
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
+  },
+  "keywords": [
+    "openui",
+    "react",
+    "components",
+    "generative-ui",
+    "ai",
+    "design-system",
+    "charts",
+    "forms",
+    "tables",
+    "theming"
+  ],
+  "homepage": "https://openui.com",
+  "author": "engineering@thesys.dev",
+  "bugs": {
+    "url": "https://github.com/thesysdev/openui/issues"
   }
 }

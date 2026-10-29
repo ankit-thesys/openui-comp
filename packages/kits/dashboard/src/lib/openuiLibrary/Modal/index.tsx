@@ -1,7 +1,7 @@
 "use client";
 
-import { defineComponent, useStateField } from "@openuidev/react-lang";
 import { Modal as OpenUIModal } from "@openuidev/react-components";
+import { defineComponent, useStateField } from "@openuidev/react-lang";
 import { ModalSchema } from "./schema";
 
 export { ModalSchema } from "./schema";
