@@ -14,6 +14,7 @@ const allowed = [
   /^tsdown\.config\.ts$/,
   /^tsconfig\.json$/,
   /^README\.md$/,
+  /^docs\/reference\/selectors\.md$/,
   /^LICENSE$/,
   /^THIRD_PARTY_NOTICES\.md$/,
   /^eslint\.config\.[cm]?js$/,

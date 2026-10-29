@@ -32,8 +32,6 @@ Prettier over the library's `src` and these tests.
 
 ## Library development
 
-Copied from the library README's Development section, which moves here.
-
 ```sh
 pnpm --filter @openuidev/react-components run build
 pnpm --filter @openuidev/react-components-dev run ci
@@ -76,8 +74,8 @@ const styles = useStyles(exampleStyles);
 
 Each rule is one class plus at most one state. A parent's prop that changes a
 part's value travels through a private `--_openui-<component>-*` variable the
-part reads, not a descendant selector. After changing `names`, run
-`pnpm docs:selectors` to regenerate the reference. The unit tests enforce the
+part reads, not a descendant selector. After changing `names`, rebuild the library and run
+`pnpm docs:selectors` here to regenerate the reference. The unit tests enforce the
 selector budget and the naming grammar for every component, and that no module
 registers CSS or adds a class to `<html>` on import; see the sections below.
 
@@ -193,7 +191,8 @@ override and Tailwind cases.
     to a documented root or part, and the rendered classes equal the component's `names`.
 - `checks.ts` holds the selector, layer and class grammar; `checks.test.ts` feeds it deliberately
   broken selectors, layered rules and names so a passing contract test means something.
-- `reference.test.ts` fails when `docs/reference/selectors.md` differs from what
+- `reference.test.ts` fails when the library's `docs/reference/selectors.md` (public, it ships
+  upstream) differs from what
   `scripts/selector-reference.mjs` generates from the built `names`. Regenerate it after a build:
 
 ```bash

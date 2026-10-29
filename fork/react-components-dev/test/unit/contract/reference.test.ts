@@ -1,11 +1,11 @@
-// Guards the generated selector reference: the committed docs/reference/selectors.md must be
+// Guards the generated selector reference: the library's committed docs/reference/selectors.md must be
 // exactly what the generator produces from the built components' stable names.
+import { library } from "#paths";
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { readStableNames, renderSelectorReference } from "../../../scripts/selector-reference.mjs";
 
-const committed = () =>
-  readFileSync(new URL("../../../docs/reference/selectors.md", import.meta.url), "utf8");
+const committed = () => readFileSync(library("docs/reference/selectors.md"), "utf8");
 
 describe("selector reference", () => {
   it("documents Button from its stable names", async () => {
