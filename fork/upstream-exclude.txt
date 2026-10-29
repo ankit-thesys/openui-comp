@@ -11,3 +11,4 @@ docs/adr/
 .workspace/
 .claude/
 pnpm-workspace.yaml|  - "fork/*"
+pnpm-workspace.yaml|  - "fork/examples/*"
