@@ -71,7 +71,7 @@ export const TextBlockView = forwardRef<HTMLDivElement, TextBlockViewProps>(
     // A card slot supplies the fit the caller leaves out.
     const slot = useContext(TextFitContext);
     const align = ownAlign ?? slot.align ?? "left";
-    const overflow = ownOverflow ?? slot.overflow;
+    const overflow = ownOverflow ?? slot.overflow ?? "wrap";
     const width = ownWidth ?? slot.width;
     const styles = useStyles(textBlockStyles);
     const secondaryClassName = clsx(
