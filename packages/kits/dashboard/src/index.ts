@@ -1,9 +1,10 @@
+"use client";
+
 /**
- * Root entry: the dashboard shell primitives a consumer places directly.
+ * Root entry: the standalone React components a consumer places directly.
  *
- * Everything else is emitted by the model through the library in
+ * Everything the model emits goes through the library in
  * `@openuidev/dashboard-kit/lib`.
  */
-export { CardRowComponent } from "./lib/dashboard/components/CardRow";
-export { DashboardComponent } from "./lib/dashboard/components/Dashboard";
-export { SectionComponent } from "./lib/dashboard/components/Section";
+export * from "./components/DashboardThemeProvider";
+export * from "./components/TextBlockView";

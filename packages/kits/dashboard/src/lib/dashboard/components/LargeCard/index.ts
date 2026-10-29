@@ -1,1 +1,0 @@
-export { LargeCardComponent } from "./LargeCard";

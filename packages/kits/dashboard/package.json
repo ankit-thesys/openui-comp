@@ -39,7 +39,7 @@
   ],
   "scripts": {
     "build": "tsdown && pnpm run build:scss",
-    "build:scss": "sass src/lib/dashboard/styles.scss dist/styles.css --style compressed --no-source-map",
+    "build:scss": "sass src/lib/openuiDashboardLibrary/styles.scss dist/styles.css --style compressed --no-source-map",
     "typecheck": "tsc --noEmit",
     "lint:check": "eslint ./src",
     "lint:fix": "eslint ./src --fix",

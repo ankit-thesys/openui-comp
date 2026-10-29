@@ -1,1 +1,0 @@
-export { MediumCardComponent } from "./MediumCard";
