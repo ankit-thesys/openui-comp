@@ -99,7 +99,8 @@ export function renderSelectorReference(entries) {
     "Every class below is a public override target: one class, so a consumer rule on it wins over the",
     "library's rule (add the same state, such as `:hover` or `[data-state=active]`, to restyle a state).",
     "A root is always present and a part whenever its element renders; a modifier is present when the",
-    "prop has that value, including its default. Components not listed have not moved to this convention yet.",
+    "prop has that value, including its default. Every component follows this convention; the states",
+    "each family's library rules use are listed in the [package README](../../README.md#stable-selectors).",
     "",
     ...sections.flatMap((section) => [section, ""]),
   ].join("\n");

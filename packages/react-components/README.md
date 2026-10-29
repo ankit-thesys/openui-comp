@@ -131,7 +131,7 @@ rule in a named cascade layer loses to the unlayered library rules.
   last child. These declarations are exceptions to ordinary consumer overrides. The never-matching
   first-child `margin-top: 0 !important` rule has been removed (the copy button precedes the
   highlighter).
-- The listed sources view, standalone CodeBlock and SliderBlock also retain their existing
+- Standalone CodeBlock and SliderBlock also retain their existing
   `!important` declarations. Syntax-highlighter theme maps and token output keep their third-party
   inline styles; use the code-block root class to restyle the block around that output.
 - SliderBlock retains `border-color: … !important` on
@@ -240,12 +240,43 @@ has not been certified.
 
 ### Stable selectors
 
-Every component follows the [styling contract](#styling-and-overrides); its roots, parts,
-modifiers and the runtime states it carries are in the generated
-[stable class reference](docs/reference/selectors.md), which replaces the hand-written lists
-earlier betas kept here. The package's `test/flat-allowlist.json` is empty. Chart-specific
+Every component follows the [styling contract](#styling-and-overrides); its roots, parts and
+modifiers are in the generated [stable class reference](docs/reference/selectors.md), which
+replaces the hand-written lists earlier betas kept here. The states its library rules use are
+listed below and, for form and choice controls, under [Control selectors](#control-selectors). The package's `test/flat-allowlist.json` is empty. Chart-specific
 notes are in the Charts section below; renamed classes are in the
 [migration table](#migration-from-openuidevreact-ui-styling).
+
+| Family | States and attributes the library rules use |
+| --- | --- |
+| Accordion | `:focus-within`, `[data-state="open"]`, `[data-state="closed"]` |
+| Button, IconButton | `:hover`, `:active`, `:disabled` |
+| Calendar | `:hover`, `:focus-visible`, `:focus-within`, `:disabled`, `[data-disabled]`, `[data-highlighted]`, `[data-state="open"]`, `[data-selection="single"]`, `[data-range-start]`, `[data-range-middle]`, `[data-range-end]`, `[data-today-unselected]` |
+| Callout | `[data-autodismiss]` |
+| Carousel, card block layouts | `[data-mask="left"/"right"/"both"]`; layouts also `[data-columns="1"/"2"/"3"]`, `[data-span="full"]` |
+| Cartesian charts (Area, Bar, HorizontalBar, Line, Scatter) | `[data-zero]` (grid line), `[data-negative]` (bar), `[data-overflow="visible"]` |
+| CalendarHeatmap, HeatmapChart | `:hover`; CalendarHeatmap `[data-dimmed]`, `[data-ghost]`; HeatmapChart `[data-empty]` |
+| Chart legends and tooltip | DefaultLegend `[data-clickable]`, `[data-state="expanded"/"collapsed"]`; StackedLegend `:hover`, `[data-clickable]`, `[data-orientation]`, `[data-state="active"]`; tooltip `[data-layout="multiple"/"two-items"]`, `[data-last]`, `[data-positioned]`; mini charts `[data-clickable]`; scroll buttons `:disabled` |
+| Citation | `:hover`, `:active`, `:focus-visible`, `[data-side]`, `[data-state="delayed-open"/"instant-open"]` |
+| CodeBlock | `:hover`, `:active`, `[data-state="copied"]` |
+| Card blocks (Composite, Context, Overview, Snippet, Visual) | `:hover`, `:focus-visible`; ContextCardBlock `[data-background-image="true"]` |
+| DatePicker | `:hover`, `:disabled`, `[data-state="open"]`, `[data-placeholder="true"]` |
+| EditableTable | cells `:hover`, `[data-state="selected"/"editing"]`; select `:hover`, `:focus`, `:disabled`, `[data-disabled]`, `[data-highlighted]`, `[data-placeholder]`, `[data-state="open"/"checked"]`; scrolling `[data-scrollable="true"]`, `[data-side]`, `[data-disabled="true"]` |
+| Image, ImageBlock | `[data-error]`; ImageBlock `[data-breakpoint="mobile"]` |
+| ImageGallery | `:hover`, `[data-layout]`, `[data-position]`; modal thumbnails `[aria-pressed="true"]` |
+| ListItem | `:hover`, `:focus`, `[data-action="true"]`, `[data-subtitle="true"]` |
+| MarkDownRenderer, Sources, Modal | `:hover` |
+| MetricIndicator | `[data-subtext="true"]` |
+| OptionCards | `:hover`, `:focus-visible`, `:disabled`, `[aria-checked="true"]`, `[data-columns]`, `[data-span="full"]` |
+| SectionBlock (FoldableSection) | `[data-state="open"]`, `[data-state="closed"]` |
+| Select | `:hover`, `:focus-within`, `:disabled`, `[data-disabled]`, `[data-highlighted]`, `[data-placeholder]`, `[data-state="open"/"checked"]` |
+| Separator | `[data-orientation="horizontal"/"vertical"]` |
+| Slider, SliderBlock | Slider `:hover`, `[data-disabled]`, `[data-at-min]`, `[data-state="active"]` (marks); SliderBlock `[data-invalid="true"]`, `[data-range]` |
+| Table | `[data-scrollable="true"]`, `[data-side]`, `[data-disabled="true"]` |
+| Tabs | `:hover`, `[data-state="active"]` |
+| TextBlock | `[data-clamped]` |
+| TextContentWrapper | `[data-mode="dark"]` |
+| TooltipWrapper | `[data-side]`, `[data-state="delayed-open"]` |
 
 A rule on a stable class, with the same state where the library uses one, overrides the library
 in either load order. Existing props, inline styles and theme APIs remain the primary
@@ -272,9 +303,13 @@ are attributes the elements already carry:
 - Input and TextArea: `:focus-within`, `:disabled`, `[aria-invalid="true"]` and `::placeholder`;
   Input sizes are `--size-{small,medium,large}` modifiers.
 - Label: `[aria-disabled="true"]`; the required asterisk is the `-required-asterisk` part.
-- Checkbox and Radio items: Radix `[data-state]` and `:disabled`; Switch items: Radix
-  `[data-state]` and `[data-disabled]`.
-- Toggle items: Radix `[data-state="on"]` / `[data-state="off"]`; Chips items: `[aria-selected]`.
+- Hint: `[data-invalid="true"]`.
+- Checkbox items: `:hover`, `:disabled` and Radix `[data-state="checked"]`; Radio items: `:hover`,
+  `:disabled`, Radix `[data-state]` and `[data-state="checked"]`; Switch items: `:hover`,
+  `:disabled`, `[data-disabled]` and Radix `[data-state="checked"]`.
+- Toggle items: `:hover`, `:disabled` and Radix `[data-state="on"]`; Chips items: `:hover`,
+  `:disabled`, `:focus-visible` and `[aria-selected="true"]` (every chip carries `aria-selected`,
+  so match `"true"`, not the bare attribute).
 
 FormControl's error context still reaches Input, TextArea and Hint. For example,
 `.openui-input { border-width: 2px; }` overrides Input's base border width regardless
@@ -970,8 +1005,8 @@ Callout, which is unchanged. Chat-kit's ModelSwitcher styles (`modelSwitcher.sty
 `chat-kit-tone`, `dashboard-kit`, `chat-kit-separate`, `standalone-chat-kit` and
 `nested-kit-discovery`) select `.openui-tag.openui-tag-sm` and `.openui-tag-text` on this
 package's Tag. `.openui-tag` and `.openui-tag-text` are unchanged, but `.openui-tag-sm` is now
-`.openui-tag--size-sm`, so that rule stops matching until the kit is updated; `react-chat-kit`
-has the same names in test fixtures. No chat-kit files were changed.
+`.openui-tag--size-sm`, so that rule stops matching until the kit is updated; `react-chat-kit`'s captured test results
+(`__tests__/results/*/baseline.css`) also contain those names. No chat-kit files were changed.
 
 The #97 media migration changes no prop names; Carousel buttons now forward consumer
 `className`, `style` and ref to the actual button. No internal callers outside these families,
