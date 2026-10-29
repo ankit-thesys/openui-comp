@@ -2,7 +2,10 @@
 
 import clsx from "clsx";
 import { useCallback, useMemo } from "react";
-import { emptyClass } from "../shared/chartBase.styles";
+import { useStyles } from "../../../styles/useStyles";
+import { drawLineStyles } from "../shared/animations/drawLine.styles";
+import { fadeAppearStyles } from "../shared/animations/fadeAppear.styles";
+import { names as baseNames, chartBaseStyles } from "../shared/chartBase.styles";
 import { rootClass } from "./areaChart.styles";
 
 import {
@@ -30,17 +33,19 @@ import type { AreaChartData, AreaChartProps } from "./types";
  * otherwise break the Rules of Hooks).
  */
 export function AreaChart<T extends AreaChartData>(props: AreaChartProps<T>) {
+  const baseStyles = useStyles(chartBaseStyles);
   if (!props.data || props.data.length === 0) {
     return (
       <div
         className={clsx(
           rootClass,
-          emptyClass,
-          `${CHART_CLASS_PREFIX}-area-chart-container ${CHART_CLASS_PREFIX}-chart-empty`,
+          baseStyles.empty,
+          baseNames.empty,
+          `${CHART_CLASS_PREFIX}-area-chart-container`,
           props.className,
         )}
       >
-        <span className={`${CHART_CLASS_PREFIX}-chart-empty-text`}>No data available</span>
+        <span className={clsx(baseStyles.emptyText, baseNames.emptyText)}>No data available</span>
       </div>
     );
   }
@@ -77,6 +82,8 @@ function AreaChartImpl<T extends AreaChartData>({
   activeDots = true,
   yTickCount,
 }: AreaChartProps<T>) {
+  useStyles(drawLineStyles);
+  useStyles(fadeAppearStyles);
   const animate = useEffectiveAnimation(isAnimationActive);
   const mode = condensed ? "fit" : "scroll";
 
