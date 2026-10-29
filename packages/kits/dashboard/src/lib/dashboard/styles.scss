@@ -1,0 +1,31 @@
+// Dashboard barrel — every leaf .scss under dashboard/ is @use'd here.
+
+// Shared
+@use "./components/shared/dashboardTheme";
+@use "./components/shared/cardShell";
+
+// Overview card primitives
+@use "./components/OverviewCardBlock/smallCardBlock";
+@use "./components/OverviewCardBlock/imageText";
+@use "./components/OverviewCardBlock/overviewCardBlock";
+
+// Kept primitives
+@use "./components/TextBlock/TextBlock";
+@use "./components/Table/table";
+
+// Dashboard components
+@use "./components/MetricIndicator/metricIndicator";
+@use "./components/DashboardCardHeader/dashboardCardHeader";
+@use "./components/DashboardHeader/dashboardHeader";
+@use "./components/Section/section";
+@use "./components/CardRow/cardRow";
+@use "./components/FilterBar/filterBar";
+@use "./components/FilterSelect/filterSelect";
+@use "./components/List/List";
+// into c1's unlayered dist/styles.css via build-styles' nodePackageImporter
+// and the visualization package's ./styles.scss export. Sass @use loads each
+// canonical URL exactly ONCE across the whole compilation, so this does NOT
+// double-emit even though chat/styles.scss also @use's it — it just makes the
+// dashboard barrel self-sufficient.
+@use "./components/DashboardCharts/dashboardCharts";
+@use "./components/DashboardCharts/PieChart/dashboardPieChart";

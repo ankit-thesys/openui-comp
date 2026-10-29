@@ -1,0 +1,26 @@
+@use "../../../_chartPrefix" as chartBrand;
+
+// Dashboard chart sizing overrides for visualization DOM wrappers.
+.#{chartBrand.$prefix}-dashboard-radar-chart {
+  width: 100%;
+  min-width: 0;
+}
+
+// Reserve the fixed chart box on the SVG cell (was the react-ui
+// `.openui-radar-chart-container` cell). `overflow: visible` keeps grid rings /
+// axis labels that extend past the square from being clipped.
+.#{chartBrand.$prefix}-dashboard-radar-chart .#{chartBrand.$prefix}-radar-chart-svg-wrapper {
+  height: var(--#{chartBrand.$prefix}-dashboard-chart-height, 296px);
+  min-height: var(--#{chartBrand.$prefix}-dashboard-chart-height, 296px);
+  overflow: visible;
+}
+
+.#{chartBrand.$prefix}-dashboard-radial-chart.#{chartBrand.$prefix}-radial-chart-container {
+  overflow: visible;
+}
+
+.#{chartBrand.$prefix}-dashboard-radial-chart .#{chartBrand.$prefix}-radial-chart-svg-wrapper {
+  height: var(--#{chartBrand.$prefix}-dashboard-chart-height, 296px);
+  min-height: var(--#{chartBrand.$prefix}-dashboard-chart-height, 296px);
+  overflow: visible;
+}

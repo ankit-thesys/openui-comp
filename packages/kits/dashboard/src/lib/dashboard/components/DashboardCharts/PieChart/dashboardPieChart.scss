@@ -1,0 +1,18 @@
+@use "../../../../_chartPrefix" as chartBrand;
+
+// Dashboard PieChart sizing overrides for visualization wrappers.
+.#{chartBrand.$prefix}-dashboard-pie-chart {
+  container-type: inline-size;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
+
+// Reserve the fixed chart box on viz's square SVG cell (was react-ui's
+// `.openui-pie-chart-container` cell). `overflow: visible` keeps a semiCircular
+// pie / donut label from being clipped by the square bound.
+.#{chartBrand.$prefix}-dashboard-pie-chart .#{chartBrand.$prefix}-pie-chart-svg-wrapper {
+  height: var(--#{chartBrand.$prefix}-dashboard-pie-chart-height, 296px);
+  min-height: var(--#{chartBrand.$prefix}-dashboard-pie-chart-height, 296px);
+  overflow: visible;
+}

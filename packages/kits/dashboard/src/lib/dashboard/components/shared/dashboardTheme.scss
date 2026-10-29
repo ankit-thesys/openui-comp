@@ -1,0 +1,18 @@
+@use "../../../shared/cssUtils" as cssUtils;
+@use "../../../_prefix.scss" as brand;
+
+// The dashboard token scope (`.#{brand.$prefix}-dashboard-theme`) used to be
+// authored here as ~100 static CSS custom properties. It now lives in
+// TypeScript — `dashboard/theme/defaultThemes.ts` (openui token overrides) and
+// `DashboardThemeProvider.tsx` (dashboard-private compound font tokens) — so
+// dashboard matches the presentation/report provider convention and consumers
+// can override tokens through `lightTheme` / `darkTheme` props.
+//
+// Values moved verbatim; only the authoring layer changed. What remains here is
+// the dashboard root's LAYOUT, which is not a theme concern.
+
+.#{brand.$prefix}-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: cssUtils.$space-l;
+}

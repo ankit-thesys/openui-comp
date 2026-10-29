@@ -1,0 +1,5 @@
+// Class prefix used by the charts in @openuidev/react-components.
+// genui-sdk read this from @openuidev/visualization, which is not part of this
+// repo; the charts here come from react-components instead, so the prefix is
+// openui's. Mirrors CHART_CLASS_PREFIX on the TS side.
+$prefix: openui;
