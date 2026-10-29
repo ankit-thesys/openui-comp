@@ -57,22 +57,20 @@ export const funnelChartStyles = (css: StyleCss) => {
       transition:
         d 0.3s ease,
         fill-opacity 0.2s ease;
-      &[data-motion="spring"] {
-        transform-box: fill-box;
-        transform-origin: center;
-        transform: scaleX(
-            calc(
-              1 + (var(--_openui-funnel-chart-ring-scale, 1) - 1) *
-                var(--_openui-funnel-chart-ring-x, 0)
-            )
+      transform-box: fill-box;
+      transform-origin: center;
+      transform: scaleX(
+          calc(
+            1 + (var(--_openui-funnel-chart-ring-scale, 1) - 1) *
+              var(--_openui-funnel-chart-ring-x, 0)
           )
-          scaleY(
-            calc(
-              1 + (var(--_openui-funnel-chart-ring-scale, 1) - 1) *
-                var(--_openui-funnel-chart-ring-y, 0)
-            )
-          );
-      }
+        )
+        scaleY(
+          calc(
+            1 + (var(--_openui-funnel-chart-ring-scale, 1) - 1) *
+              var(--_openui-funnel-chart-ring-y, 0)
+          )
+        );
       @media print {
         transition: none;
       }

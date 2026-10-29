@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { useRef } from "react";
 
+import { partVariable } from "../../utils/partVariable";
 import { useIsomorphicLayoutEffect } from "../core/spring";
 
 interface AnimatedPathProps {
@@ -23,8 +24,8 @@ interface AnimatedPathProps {
 /**
  * A series line that can draw itself on. The stroke-dash draw-on keyframe
  * (`${CHART_CLASS_PREFIX}-draw-line`, chartBase.scss) needs the path's length in the
- * `--_openui-chart-path-length` CSS var; it is measured in a LAYOUT effect — a plain
- * useEffect ran after paint, so `stroke-dasharray: var(--_openui-chart-path-length)` was
+ * part's `--_openui-<component>-<part>-path-length` CSS var (see partVariable); it is measured
+ * in a LAYOUT effect — a plain useEffect ran after paint, so `stroke-dasharray: var(…)` was
  * invalid-at-computed-value-time for one frame, fell back to `none`, and the
  * fully-drawn line flashed before the draw-on started.
  */
@@ -40,11 +41,12 @@ export function AnimatedPath({
   const ref = pathRef ?? internalRef;
 
   useIsomorphicLayoutEffect(() => {
-    if (isAnimationActive && ref.current) {
+    const variable = partVariable(className, "path-length");
+    if (isAnimationActive && ref.current && variable) {
       const length = ref.current.getTotalLength();
-      ref.current.style.setProperty("--_openui-chart-path-length", String(length));
+      ref.current.style.setProperty(variable, String(length));
     }
-  }, [d, isAnimationActive]);
+  }, [d, isAnimationActive, className]);
 
   return (
     <path

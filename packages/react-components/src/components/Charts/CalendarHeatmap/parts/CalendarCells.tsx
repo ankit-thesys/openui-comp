@@ -42,7 +42,7 @@ function resolveRowOpacity(row: number, rowOpacity: number | number[] | undefine
 /**
  * The cell grid: one `<rect>` per non-ghost calendar day. Fill comes from the
  * per-level `levelFills` entry — a level CSS var
- * (`--<prefix>-calendar-heatmap-level-N`) or a `url(#pattern)` when that level
+ * (`--_openui-calendar-heatmap-cell-level-N-fill`) or a `url(#pattern)` when that level
  * sets one — so a level can be restyled without re-rendering; the entrance is an
  * opacity fade with a deterministic per-cell delay. Each cell x also picks up
  * its column's separator-gutter offset. Hover highlight is pure CSS (`:hover`

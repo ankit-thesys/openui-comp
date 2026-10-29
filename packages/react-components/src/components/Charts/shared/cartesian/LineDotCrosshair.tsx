@@ -2,6 +2,7 @@
 
 import type { ScaleLinear, ScalePoint } from "d3-scale";
 import React, { useCallback, useId, useRef } from "react";
+import { partVariables } from "../../utils/partVariable";
 import { FadeFollower, springPresets, useSeededAim, useSpring } from "../core/spring";
 
 // Crosshair line + dots share springPresets.crosshair so they move as one;
@@ -225,12 +226,10 @@ function ActiveDot({
     <g
       className={classes?.group}
       ref={gRef}
-      style={
-        {
-          "--_openui-chart-group-opacity": visible ? 1 : 0,
-          "--_openui-chart-group-transition": "opacity 0.12s ease",
-        } as React.CSSProperties
-      }
+      style={partVariables(classes?.group, {
+        opacity: visible ? 1 : 0,
+        transition: "opacity 0.12s ease",
+      })}
     >
       <circle
         cx={0}
@@ -315,12 +314,10 @@ function HighlightLayer({
     <g
       className={classes?.group}
       aria-hidden="true"
-      style={
-        {
-          "--_openui-chart-group-opacity": visible ? 1 : 0,
-          "--_openui-chart-group-transition": "opacity 0.15s ease",
-        } as React.CSSProperties
-      }
+      style={partVariables(classes?.group, {
+        opacity: visible ? 1 : 0,
+        transition: "opacity 0.15s ease",
+      })}
     >
       <defs className={classes?.defs}>
         <clipPath className={classes?.clip} id={clipId}>

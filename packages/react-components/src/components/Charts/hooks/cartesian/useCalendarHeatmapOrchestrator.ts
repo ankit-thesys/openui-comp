@@ -293,7 +293,7 @@ export function useCalendarHeatmapOrchestrator({
   const containerStyle = useMemo<CSSProperties>(() => {
     const vars: Record<string, string> = {};
     for (let level = 0; level < LEVEL_COUNT; level++) {
-      vars[`--_openui-calendar-heatmap-level-${level}`] = levelColors[level] ?? "#000000";
+      vars[`--_openui-calendar-heatmap-cell-level-${level}-fill`] = levelColors[level] ?? "#000000";
     }
     return {
       ...buildContainerStyle({}, width, height),

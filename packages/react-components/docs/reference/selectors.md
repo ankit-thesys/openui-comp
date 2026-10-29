@@ -192,6 +192,10 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-area-chart-gradient` | Part (`gradient`) | On that part, whenever it renders |
 | `.openui-area-chart-stop` | Part (`stop`) | On that part, whenever it renders |
 | `.openui-area-chart-highlight` | Part (`highlight`) | On that part, whenever it renders |
+| `.openui-area-chart--variant-linear` | Modifier | `variant="linear"` |
+| `.openui-area-chart--variant-natural` | Modifier | `variant="natural"` |
+| `.openui-area-chart--variant-step` | Modifier | `variant="step"` |
+| `.openui-area-chart--stacked` | Modifier | `stacked={true}` |
 | `.openui-area-chart-area-path--is-animation-active` | Modifier | `isAnimationActive={true}` |
 | `.openui-area-chart-area-line--is-animation-active` | Modifier | `isAnimationActive={true}` |
 
@@ -221,6 +225,8 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-bar-chart-defs` | Part (`defs`) | On that part, whenever it renders |
 | `.openui-bar-chart-clip` | Part (`clip`) | On that part, whenever it renders |
 | `.openui-bar-chart-clip-rect` | Part (`clipRect`) | On that part, whenever it renders |
+| `.openui-bar-chart--variant-grouped` | Modifier | `variant="grouped"` |
+| `.openui-bar-chart--variant-stacked` | Modifier | `variant="stacked"` |
 | `.openui-bar-chart-bar--is-animation-active` | Modifier | `isAnimationActive={true}` |
 | `.openui-bar-chart-internal-line--is-animation-active` | Modifier | `isAnimationActive={true}` |
 
@@ -246,6 +252,8 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-horizontal-bar-chart-svg` | Part (`svg`) | On that part, whenever it renders |
 | `.openui-horizontal-bar-chart-group` | Part (`group`) | On that part, whenever it renders |
 | `.openui-horizontal-bar-chart-label-container` | Part (`labelContainer`) | On that part, whenever it renders |
+| `.openui-horizontal-bar-chart--variant-grouped` | Modifier | `variant="grouped"` |
+| `.openui-horizontal-bar-chart--variant-stacked` | Modifier | `variant="stacked"` |
 | `.openui-horizontal-bar-chart-bar--is-animation-active` | Modifier | `isAnimationActive={true}` |
 | `.openui-horizontal-bar-chart-internal-line--is-animation-active` | Modifier | `isAnimationActive={true}` |
 
@@ -364,6 +372,9 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-line-chart-clip` | Part (`clip`) | On that part, whenever it renders |
 | `.openui-line-chart-clip-rect` | Part (`clipRect`) | On that part, whenever it renders |
 | `.openui-line-chart-highlight` | Part (`highlight`) | On that part, whenever it renders |
+| `.openui-line-chart--variant-linear` | Modifier | `variant="linear"` |
+| `.openui-line-chart--variant-natural` | Modifier | `variant="natural"` |
+| `.openui-line-chart--variant-step` | Modifier | `variant="step"` |
 | `.openui-line-chart-line--is-animation-active` | Modifier | `isAnimationActive={true}` |
 
 ## Charts/MiniAreaChart
@@ -493,7 +504,6 @@ prop has that value, including its default. Components not listed have not moved
 | `.openui-segmented-bar-track` | Part (`track`) | On that part, whenever it renders |
 | `.openui-segmented-bar-segment` | Part (`segment`) | On that part, whenever it renders |
 | `.openui-segmented-bar-segment-line` | Part (`segmentLine`) | On that part, whenever it renders |
-| `.openui-segmented-bar-segment--is-animation-active` | Part (`segmentIsAnimationActive`) | On that part, whenever it renders |
 | `.openui-segmented-bar-stacked-legend` | Part (`stackedLegend`) | On that part, whenever it renders |
 | `.openui-segmented-bar-legend-wrapper` | Part (`legendWrapper`) | On that part, whenever it renders |
 | `.openui-segmented-bar-default-legend` | Part (`defaultLegend`) | On that part, whenever it renders |

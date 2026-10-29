@@ -109,7 +109,7 @@ export function CalendarHeatmap(props: CalendarHeatmapProps) {
       orch.levelStyles.map((style, level) =>
         style?.pattern
           ? `url(#${calendarPatternId(patternBaseId, level)})`
-          : `var(--_openui-calendar-heatmap-level-${level})`,
+          : `var(--_openui-calendar-heatmap-cell-level-${level}-fill)`,
       ),
     [orch.levelStyles, patternBaseId],
   );
@@ -151,11 +151,11 @@ export function CalendarHeatmap(props: CalendarHeatmapProps) {
         {
           "--_openui-calendar-heatmap-root-width": orch.style.containerStyle["width"],
           "--_openui-calendar-heatmap-root-height": orch.style.containerStyle["height"],
-          "--_openui-calendar-heatmap-level-0": orch.levelColors[0],
-          "--_openui-calendar-heatmap-level-1": orch.levelColors[1],
-          "--_openui-calendar-heatmap-level-2": orch.levelColors[2],
-          "--_openui-calendar-heatmap-level-3": orch.levelColors[3],
-          "--_openui-calendar-heatmap-level-4": orch.levelColors[4],
+          "--_openui-calendar-heatmap-cell-level-0-fill": orch.levelColors[0],
+          "--_openui-calendar-heatmap-cell-level-1-fill": orch.levelColors[1],
+          "--_openui-calendar-heatmap-cell-level-2-fill": orch.levelColors[2],
+          "--_openui-calendar-heatmap-cell-level-3-fill": orch.levelColors[3],
+          "--_openui-calendar-heatmap-cell-level-4-fill": orch.levelColors[4],
         } as CSSProperties
       }
       isEmpty={orch.isEmpty}

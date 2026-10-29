@@ -923,7 +923,7 @@ Renamed stable classes and props, per component converted to the flat convention
 | Default legend | `.openui-chart-legend-container`, `.openui-chart-legend--bottom` | `.openui-default-legend` (bottom padding is part of its base style) |
 | Default legend | `.openui-chart-legend` | `.openui-default-legend-list` |
 | Default legend | `.openui-chart-legend-{axis-label-container,axis-label,axis-label-text,item,item-indicator,item-label,item-label-container,item-percentage,toggle-button,toggle-button-icon}` | `.openui-default-legend-{…}` (same part suffix) |
-| Default legend | SVG directly inside a legend item | Wrapped in `.openui-default-legend-item-icon`; SVG remains foreign icon content |
+| Default legend | SVG directly inside a legend item | Intentional markup difference: wrapped in a new `<span class="openui-default-legend-item-icon">`, which takes the icon's size and colour; SVG remains foreign icon content |
 | Default legend | `.openui-chart-legend--{collapsed,expanded}` | `.openui-default-legend-list[data-state="collapsed" or "expanded"]` |
 | Stacked legend | `.openui-stacked-legend-container` | `.openui-stacked-legend` |
 | Stacked legend | `.openui-stacked-legend` (list) | `.openui-stacked-legend-list` |
@@ -948,13 +948,15 @@ Renamed stable classes and props, per component converted to the flat convention
 | Cartesian charts (#103) | Existing axis, series, tick, crosshair, category-label and frame part classes | Unchanged; each rendered SVG/group/hit target, grid line, tick span, clip and gradient also has its own documented stable class |
 | Cartesian entrances (#103) | `.openui-{area,line}-chart-{area-path,area-line,line}--animated`, `.openui-{bar,horizontal-bar}-chart-bar--animated`, `.openui-scatter-chart-dot--animated` | Corresponding drawing part's `--is-animation-active` modifier; emitted only while `isAnimationActive` is true and not printing. Bar internal lines have their own `-internal-line--is-animation-active` modifier. |
 | Cartesian negative values (#103) | `.openui-{bar,horizontal-bar}-chart-bar--negative` | `[data-negative]` on the bar or internal line; add the same attribute to a stable-class override for that state |
+| Cartesian appearance (#103) | `variant` (and AreaChart `stacked`) without a class | Root `.openui-{line,area}-chart--variant-{linear,natural,step}` and `.openui-{bar,horizontal-bar}-chart--variant-{grouped,stacked}`, defaults always emitted; AreaChart also emits `--stacked` when true (its default). Props unchanged |
 | Cartesian zero baseline (#103) | `.openui-grid-zero-line` | `.openui-{area,bar,line,scatter}-chart-grid-line[data-zero]`; other grid lines carry the same part class without the state |
 | PieChart, RadarChart, RadialChart, FunnelChart, HeatmapChart, CalendarHeatmap | `.openui-<chart>-container` | `.openui-<chart>`; owned drawing elements also have stable part classes |
 | SegmentedBar / SingleStackedBar | `.openui-segmented-bar-container`, `-container--gap` | `.openui-segmented-bar`; gap comes from `--legend` and `--legend-variant-{default,stacked}` |
 | SegmentedBar / SingleStackedBar | `.openui-segmented-bar` (track) | `.openui-segmented-bar-track` |
-| Other charts | `-slice--animated`, `-polygon--animated`, `-bar--animated`, `-stage--animated`, `-cell--animated`, `-cell-label--animated`, `-segment--animated` | Same block with `--is-animation-active`; the chart root also emits `--is-animation-active` only when the prop is true |
+| SegmentedBar / SingleStackedBar | `-segment--animated` | Root `.openui-segmented-bar--is-animation-active` (emitted when the prop is true); the segments' width transition follows it through a private variable |
+| Other charts | `-slice--animated`, `-polygon--animated`, `-bar--animated`, `-stage--animated`, `-cell--animated`, `-cell-label--animated` | Same block with `--is-animation-active`; the chart root also emits `--is-animation-active` only when the prop is true |
 | Other charts | Appearance axes previously implicit in markup/geometry | Root modifiers for Pie `variant`/`appearance`, Radar `variant`/`gridShape`, Radial `variant`, Funnel `orientation`/`edges`, Heatmap `rampMode`, Calendar `layout`/`legendVariant`, SegmentedBar `legendVariant`; defaults always emit their modifier and names use kebab-case |
-| FunnelChart | `-ring--springy`, `-ring--bloom-{x,y}` | `.openui-funnel-chart-ring[data-motion="spring"]`; the root's `--orientation-{horizontal,vertical}` sets the private transform axis |
+| FunnelChart | `-ring--springy`, `-ring--bloom-{x,y}` | `.openui-funnel-chart-ring` base style: the hover bloom is a private scale variable, and the root's `--orientation-{horizontal,vertical}` sets its axis, so a single-class `transform` override wins |
 | HeatmapChart | `.openui-heatmap-chart-cell--empty` | `.openui-heatmap-chart-cell[data-empty]` |
 | HeatmapChart | `.openui-heatmap-chart-color-scale-ramp--diverging` | `.openui-heatmap-chart-color-scale-ramp--ramp-mode-diverging`; sequential mode emits `--ramp-mode-sequential` |
 | CalendarHeatmap | `.openui-calendar-heatmap-cell--level-N`, `--ghost`; ancestor `data-openui-highlight-level` dimming | `.openui-calendar-heatmap-cell[data-level="N"]`, `[data-ghost]`, `[data-dimmed]` on the affected cell |

@@ -400,7 +400,6 @@ function FunnelRing({ d, color, fillOpacity, hovered, ringIndex, totalRings }: F
     <path
       ref={ref}
       className={clsx(styles.ring, names.ring)}
-      data-motion="spring"
       d={d}
       fill={color}
       fillOpacity={fillOpacity}

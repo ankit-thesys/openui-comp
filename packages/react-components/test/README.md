@@ -615,7 +615,10 @@ public charts, including every stable class loaded before/after library CSS and 
 
 New browser fixtures: `chart-foundations`, `parity-chart-foundations`, `parity-mini-charts`,
 `parity-chart-tooltip`; `foundation-cases.tsx` shares the public consumer cases. Parity names are
-`chart-foundations`, `mini-charts`, `chart-tooltip`, with no intentional visual differences.
+`chart-foundations`, `mini-charts`, `chart-tooltip`. Intentional differences: DefaultLegend wraps a
+custom item icon in a new `.openui-default-legend-item-icon` span (a markup change; the SVG inside
+keeps #72's computed styles), and mini-chart fade-ins use the stable keyframes name
+`openui-chart-fade-appear` instead of Goober's generated `go…` name, with an identical body.
 The parity helper accepts an optional fourth `prepareCase(page, id)` callback for interaction-only
 parts, run before each observation. Its options object also accepts `prepareCase` alongside
 `scenarios` and the page-level `prepare` callback, preserving fresh-page scenario setup. A fixture's `data-parity-global-parts` JSON names portal parts

@@ -15,6 +15,11 @@ import { svgTickLabel } from "../shared/chartTypography";
 
 export const names = {
   root: "openui-line-chart",
+  variant: {
+    linear: "openui-line-chart--variant-linear",
+    natural: "openui-line-chart--variant-natural",
+    step: "openui-line-chart--variant-step",
+  },
   containerInner: "openui-line-chart-container-inner",
   yAxisContainer: "openui-line-chart-y-axis-container",
   mainContainer: "openui-line-chart-main-container",
@@ -50,8 +55,8 @@ export const lineChartStyles = (css: StyleCss) => ({
     }
   `,
   group: css`
-    opacity: var(--_openui-chart-group-opacity, 1);
-    transition: var(--_openui-chart-group-transition, all 0s ease 0s);
+    opacity: var(--_openui-line-chart-group-opacity, 1);
+    transition: var(--_openui-line-chart-group-transition, all 0s ease 0s);
   `,
   root: css`
     ${cartesianContainer}
@@ -98,8 +103,8 @@ export const lineChartStyles = (css: StyleCss) => ({
   `,
   lineAnimated: css`
     @media (prefers-reduced-motion: no-preference) {
-      stroke-dasharray: var(--_openui-chart-path-length);
-      stroke-dashoffset: var(--_openui-chart-path-length);
+      stroke-dasharray: var(--_openui-line-chart-line-path-length);
+      stroke-dashoffset: var(--_openui-line-chart-line-path-length);
       animation: ${drawLineAnimation} 1s ease-out forwards;
     }
   `,

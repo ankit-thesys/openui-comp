@@ -11,6 +11,10 @@ import { svgTickLabel } from "../shared/chartTypography";
 
 export const names = {
   root: "openui-bar-chart",
+  variant: {
+    grouped: "openui-bar-chart--variant-grouped",
+    stacked: "openui-bar-chart--variant-stacked",
+  },
   containerInner: "openui-bar-chart-container-inner",
   yAxisContainer: "openui-bar-chart-y-axis-container",
   mainContainer: "openui-bar-chart-main-container",
@@ -49,8 +53,8 @@ export const barChartStyles = (css: StyleCss) => ({
     }
   `,
   group: css`
-    opacity: var(--_openui-chart-group-opacity, 1);
-    transition: var(--_openui-chart-group-transition, all 0s ease 0s);
+    opacity: var(--_openui-bar-chart-group-opacity, 1);
+    transition: var(--_openui-bar-chart-group-transition, all 0s ease 0s);
   `,
   root: css`
     ${cartesianContainer}

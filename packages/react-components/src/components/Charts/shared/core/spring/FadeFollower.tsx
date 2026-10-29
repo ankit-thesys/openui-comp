@@ -2,6 +2,7 @@
 
 import React from "react";
 
+import { partVariables } from "../../../utils/partVariable";
 import { springPresets } from "./presets";
 import type { SpringConfig } from "./spring";
 import { useSeededAim } from "./useSeededAim";
@@ -53,10 +54,10 @@ export function FadeFollower({
       ref={follow.bind}
       style={
         className
-          ? ({
-              "--_openui-chart-group-opacity": visible ? 1 : 0,
-              "--_openui-chart-group-transition": `opacity ${fadeMs}ms ease`,
-            } as React.CSSProperties)
+          ? partVariables(className, {
+              opacity: visible ? 1 : 0,
+              transition: `opacity ${fadeMs}ms ease`,
+            })
           : {
               opacity: visible ? 1 : 0,
               transition: `opacity ${fadeMs}ms ease`,

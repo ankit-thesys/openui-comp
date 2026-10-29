@@ -4,6 +4,10 @@ import { svgTickLabel, svgTickTypography } from "../shared/chartTypography";
 
 export const names = {
   root: "openui-horizontal-bar-chart",
+  variant: {
+    grouped: "openui-horizontal-bar-chart--variant-grouped",
+    stacked: "openui-horizontal-bar-chart--variant-stacked",
+  },
   containerInnerWrapper: "openui-horizontal-bar-chart-container-inner-wrapper",
   containerInner: "openui-horizontal-bar-chart-container-inner",
   mainContainer: "openui-horizontal-bar-chart-main-container",
@@ -35,8 +39,8 @@ export const horizontalBarChartStyles = (css: StyleCss) => ({
     pointer-events: none;
   `,
   group: css`
-    opacity: var(--_openui-chart-group-opacity, 1);
-    transition: var(--_openui-chart-group-transition, all 0s ease 0s);
+    opacity: var(--_openui-horizontal-bar-chart-group-opacity, 1);
+    transition: var(--_openui-horizontal-bar-chart-group-transition, all 0s ease 0s);
   `,
   root: css`
     position: relative;
