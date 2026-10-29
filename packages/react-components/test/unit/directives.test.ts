@@ -1,7 +1,7 @@
 /**
  * Built-output seam: every component must retain its client boundary in ESM and CJS.
  * Run from this package: `pnpm build && pnpm test test/unit/directives.test.ts`.
- * No migration allowlist applies. The exclusions below are non-component TSX helpers;
+ * Every component is checked. The exclusions below are non-component TSX helpers;
  * update them only if another such helper is added, never to exempt a component.
  */
 import { readFileSync, readdirSync } from "node:fs";

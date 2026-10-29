@@ -32,8 +32,7 @@ export const listedSourcesStyles = (css: StyleCss) => ({
     justify-content: center;
     gap: var(--openui-space-s, 8px);
   `,
-  // This is the Sources-owned card, not a CarouselItem: an unmigrated CarouselItem's
-  // unlayered declarations would beat the source card when cssLayer is enabled.
+  // This is the Sources-owned card, not a CarouselItem, so only Sources' own rules style it.
   container: css`
     box-sizing: border-box;
     scroll-snap-align: start;

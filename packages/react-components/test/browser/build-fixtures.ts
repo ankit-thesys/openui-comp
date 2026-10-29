@@ -46,6 +46,7 @@ const fixtures = [
   "parity-tag-block",
   "parity-separator",
   "smoke",
+  "import-registration",
   "button",
   "layers",
   "elements",

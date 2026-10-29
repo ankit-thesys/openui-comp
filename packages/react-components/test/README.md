@@ -105,17 +105,19 @@ override and Tailwind cases.
 pnpm --filter @openuidev/react-components docs:selectors
 ```
 
-### Migration allowlist
+### Contract coverage and import-time registration
 
-`test/flat-allowlist.json` lists the source modules still on the old styling: they import Goober
-themselves and register CSS on import. `allowlist.test.ts` fails if a module that imports Goober is
-missing from it, if a listed module no longer imports Goober (or no longer exists), or if a
-component that exports `names` is missing from `components.tsx`. `src/styles/defaults.ts` (theme
-token defaults), `src/styles/useStyles.ts` and `src/utils/componentStyles.ts` are exempt.
+Every component is on the contract; there is no migration allowlist. `contract/coverage.test.ts`
+fails if a component folder that calls `useStyles` or exports `names` has no entry in
+`components.tsx` (or a shared style contract), or if a built names-exporting style module is not
+covered by an entry's own names. Names an entry lists only because it renders another component
+(`dependencyN` keys) never count as coverage.
 
-When you convert a component: remove its modules from the allowlist, add it to `components.tsx`
-and add a one-line `<Folder>.contract.test.tsx`,
-regenerate the reference, and add a parity spec. The list must be empty before a stable release.
+`import-registration.test.ts` imports every built ESM module in Node and fails if any CSS was
+registered; `import-registration.spec.ts` imports the whole public package in Chromium and fails
+if `#_goober` holds anything but the token defaults' `:where(.goN:root)` rule in
+`@layer openui-defaults`, or `<html>` has any class but that rule's marker (ADR 0001, Q29). Both
+then render something, so the checks cannot pass on a dead sheet.
 
 ## Parity with #72
 
@@ -219,11 +221,11 @@ classes. The focused browser spec checks frame colour, background and all four
 padding overrides in both load orders and layer modes. The generic override and
 Tailwind benches also cover the frame; their assertions remain unchanged.
 
-### Migrate a component checklist
+### Adding a component
 
 Follow ADR 0001 **including its Amendments**, the package glossary and the pilot spec on
 `origin/claude/flat-styles-spec-grill`. Button, IconButton, Tabs and MarkDownRenderer are
-the working examples. Keep the change inside the rollout ticket's family scope.
+the working examples. Keep the change inside the ticket's component scope.
 
 1. Inventory the public roots, owned parts, appearance props and runtime states. Read the
    existing styles and callers, including chat-kit references (report kit references; do not
@@ -238,7 +240,7 @@ the working examples. Keep the change inside the rollout ticket's family scope.
 3. Export a plain `names` const from each style module and a `componentStyles(css: StyleCss)`
    factory returning root, part and axis entries. Call `useStyles(factory)` inside the component
    render and join generated and stable classes with `clsx`, as Button does. Register nothing
-   at import and remove the module's `<html>` marker. Reuse the shared border-box and pulse
+   at import and add no class to `<html>`. Reuse the shared border-box and pulse
    factories at render when applicable; do not copy or eagerly register them.
 4. Use roots `openui-<component>`, parts `openui-<component>-<part>` and modifiers
    `--<kebab-case-prop>-<kebab-case-value>`. Emit default modifiers, and boolean modifiers only
@@ -264,8 +266,7 @@ the working examples. Keep the change inside the rollout ticket's family scope.
    runtime states, portal/measurement-only parts, layer mode and `<html class>` replacement
    as needed; the generic bench does not replace these. Typecheck browser tests even when
    Chromium cannot run.
-8. Remove only the converted modules from `test/flat-allowlist.json`. After building, run
-   `pnpm docs:selectors` and check in the generated reference. Additive entries in shared
+8. After building, run `pnpm docs:selectors` and check in the generated reference. Additive entries in shared
    files must preserve other tickets' work. Shared helper migrations use the focused
    contracts above instead of claiming an entire family is flat.
 9. From this package, run `pnpm build && pnpm test && pnpm run ci` from a clean build, then
@@ -305,9 +306,9 @@ Citation's scrollbar track/thumb are single pseudo-elements under the same selec
 load orders and layer modes, citation hover/press/open, all five inline callers, the overflowing
 source carousel, favicon fallback/recovery, and rewriting the html classes. The shared override
 bench explicitly preserves the listed-source container's important background exception while
-checking all its other properties normally. Sources owns the card element and its styles so the
-unmigrated CarouselItem cannot outrank them in layer mode; a browser regression compares default
-and hover styles across modes. Carousel itself remains on the allowlist. The Tailwind bench
+checking all its other properties normally. Sources owns the card element and its styles, so no
+CarouselItem rule styles it in either mode; a browser regression compares default and hover
+styles across modes. The Tailwind bench
 checks that inline content inherits caller typography instead of pinning the page-owned font
 that Tailwind changes; link/code typography keeps its existing coverage.
 
@@ -467,8 +468,8 @@ The typed comparison checks each button in document order, including composed bu
 than collapsing their colors into a set. Cases without a painted base background skip only the
 dedicated 3.3 reset assertion.
 
-EditableTable owns its select's Radix markup and copies the effective #72 defaults. This keeps
-unmigrated Select rules from outranking layered cell styles. Radix intentionally ignores className
+EditableTable owns its select's Radix markup and copies the effective #72 defaults, so the cells
+are styled as table cells rather than by the Select family. Radix intentionally ignores className
 on Value and ItemText; owned spans around those primitives supply the stable parts without
 changing the effective typography or the text projected into the trigger. Column geometry is
 carried in a private CSS variable; ordinary width declarations can override it. DatePicker remains
@@ -606,9 +607,9 @@ worktree, or in `packages/kits` on `origin/codex/chat-kit-separate` and
 ## Ticket #102: chart foundations
 
 `Charts.contract.test.tsx` renders public LineChart, BarChart, HorizontalBarChart, PieChart,
-StackedLegend and all three mini charts. Chart-specific frames remain allowlisted; the contract
-accounts for their composed names separately, as markdown does for Table and CodeBlock. The nine
-shared modules are no longer allowlisted. Browser-only portal and measured header parts are listed
+StackedLegend and all three mini charts. Chart-specific frames have their own contract entries;
+this contract accounts for their composed names separately, as markdown does for Table and
+CodeBlock. Browser-only portal and measured header parts are listed
 as `clientOnly`; `chart-foundations.spec.ts` checks their grammar, layers and overrides through the
 public charts, including every stable class loaded before/after library CSS and in layer mode.
 `chart-animations.test.tsx` guards deferred keyframe registration through the built public package.
@@ -643,9 +644,8 @@ The #102 browser follow-up preserves #72's active-row swatch scale (1.3 at rest,
 hovered or pressed). The scroll interaction test locates disabled controls by stable class because
 their intentional `visibility: hidden` removes them from role queries; it checks native disabled
 state and visibility before scrolling, after scrolling, and after returning. The HTML-class rewrite
-test checks the foundations' styles, including minimum widths for mini charts and the tooltip.
-For DefaultLegend it checks its declared gap instead of an undeclared minimum width: removing
-the still-allowlisted parent chart's flex layout changes the browser's resolution of `auto`.
+test checks the foundations' styles, including minimum widths for mini charts, the tooltip and
+DefaultLegend (plus its gap): with every chart frame flat, the rewrite changes no layout.
 These fixes do not change parity fixtures or require baseline recapture.
 
 ## Ticket #103: cartesian charts
@@ -654,7 +654,7 @@ These fixes do not change parity fixtures or require baseline recapture.
 checks each public family independently. The contract list supports nested chart families;
 `Charts` continues to cover the shared foundations and mini charts. The migrated browser benches
 use each entry's own documented names, excluding composed dependencies, so one chart's fixture
-never claims another chart's parts. The five chart style modules are off the allowlist.
+never claims another chart's parts.
 
 `cartesian-charts.test.tsx` checks render-time registration, layers, data states, empty horizontal
 frames, stable classes on owned SVG output and overridable dynamic appearance. Existing built-dist
@@ -703,8 +703,8 @@ labels and the truncated radar label hitbox are marked `clientOnly`.
 
 `other-chart-modifiers.test.tsx` pins default modifiers; `other-chart-overrides.test.tsx` guards
 against inline appearance declarations defeating consumer CSS. It retains #102's documented
-exception for the shared StackedLegend frame's JavaScript width. The seven converted style
-modules are removed from the allowlist; regenerate the reference after building.
+exception for the shared StackedLegend frame's JavaScript width. Regenerate the reference after
+building.
 
 `other-charts.spec.ts` checks every stable class before/after library CSS and in layer mode,
 including SVG fill, the diverging notch pseudo-element, runtime cell states, render-time

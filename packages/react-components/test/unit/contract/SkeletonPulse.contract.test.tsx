@@ -1,6 +1,5 @@
 // Shared pulse (#90), through public Skeleton users; the family is flat since #101.
 // Run after build: pnpm test test/unit/contract/SkeletonPulse.contract.test.tsx
-// src/components/Skeleton/skeletonPulse.ts leaves the allowlist when this contract passes.
 import {
   getComponentStyles,
   PieChartSkeleton,

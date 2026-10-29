@@ -1,4 +1,4 @@
-// Shared opt-ins only: the families' owned layout rules are still allowlisted (#91/#96/#101).
+// Shared opt-ins only; the families' own layout rules are covered by their own specs.
 import {
   Buttons,
   FormControl,

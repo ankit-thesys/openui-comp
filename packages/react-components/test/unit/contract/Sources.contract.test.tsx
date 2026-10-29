@@ -1,6 +1,6 @@
 // Public built-package contract: SSR classes, selector budget and opt-in layer.
-// Layered source cards must not also carry an unmigrated CarouselItem rule, whose unlayered
-// padding, radius and border would outrank the source card's own layer.
+// Layered source cards must not also carry a CarouselItem rule: the card owns its padding, radius
+// and border, so only the source card's own rules may style it.
 import { ListedSources, ThemeProvider } from "@openuidev/react-components";
 import { renderToString } from "react-dom/server";
 import { expect, it } from "vitest";

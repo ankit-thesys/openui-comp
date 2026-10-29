@@ -1,4 +1,4 @@
-// #90: shared box sizing on every user, without changing their still-allowlisted layout.
+// #90: shared box sizing on every user, without changing their own layout.
 // Bundled against both the current public package and #72. No intentional differences.
 import { Buttons, FormControl, TagBlock, ThemeProvider } from "openui-under-test";
 import { createRoot } from "react-dom/client";

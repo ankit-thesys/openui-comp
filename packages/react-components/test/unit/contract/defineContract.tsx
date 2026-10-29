@@ -25,11 +25,6 @@ export function describeContract(folder: string, component?: MigratedComponent) 
         </ThemeProvider>
       )),
     );
-    // The rollout's allowlist still owns any explicitly excluded dependency classes.
-    const stable = (markup: string) =>
-      new Set(
-        [...stableClassesIn(markup)].filter((name) => !entry.unmigratedClasses?.includes(name)),
-      );
     const violationsIn = (sheet: string, layer: string) =>
       rulesOf(sheet)
         .map((rule) => [rule, ruleViolation(rule, layer, { prose: entry.prose })] as const)
@@ -46,7 +41,7 @@ export function describeContract(folder: string, component?: MigratedComponent) 
 
     it("renders only stable classes that follow the naming grammar", () => {
       const blocks = blocksIn(entry.names);
-      const violations = [...stable(html)]
+      const violations = [...stableClassesIn(html)]
         .map((name) => [name, classViolation(name, blocks)] as const)
         .filter(([, reason]) => reason !== null)
         .map(([name, reason]) => `${name}: ${reason}`);
@@ -55,7 +50,7 @@ export function describeContract(folder: string, component?: MigratedComponent) 
 
     it("renders exactly its documented stable classes", () => {
       const serverRendered = [...namesIn(entry.names)].filter((name) => !clientOnly.includes(name));
-      expect([...stable(html)].sort()).toEqual(serverRendered.sort());
+      expect([...stableClassesIn(html)].sort()).toEqual(serverRendered.sort());
     });
 
     it("puts every rule in the openui layer in layer mode, within the same budget", () => {
@@ -68,7 +63,7 @@ export function describeContract(folder: string, component?: MigratedComponent) 
       expect(selectorsOf(layered.css).map(generic).sort()).toEqual(
         selectorsOf(css).map(generic).sort(),
       );
-      expect([...stable(layered.html)].sort()).toEqual([...stable(html)].sort());
+      expect([...stableClassesIn(layered.html)].sort()).toEqual([...stableClassesIn(html)].sort());
     });
   });
 }

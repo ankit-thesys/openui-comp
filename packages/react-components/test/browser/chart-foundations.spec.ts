@@ -243,8 +243,7 @@ test("rewriting html classes preserves foundation styles including the portal", 
   await expect(page.locator(".openui-default-legend").first()).toBeVisible();
   await expect(page.locator(".openui-mini-line-chart").first()).toBeVisible();
   const sample = async () => {
-    // Rewriting html removes the unmigrated LineChart frame's scoped layout. Reflow can move
-    // it out from under the pointer and close its tooltip; reopen through the public chart.
+    // Open the tooltip through the public chart before each sample.
     await page
       .getByTestId("tooltip-chart")
       .getByRole("img", { name: "Line chart", exact: true })
@@ -256,10 +255,9 @@ test("rewriting html classes preserves foundation styles including the portal", 
       .evaluateAll((els) =>
         els.map((el) => {
           const style = getComputedStyle(el);
-          // Only check properties the foundation owns. DefaultLegend has no min-width:
-          // its auto value resolves differently once its unmigrated parent loses display:flex.
+          // Only check properties the foundation owns.
           const properties = el.classList.contains("openui-default-legend")
-            ? ["display", "padding-top", "font-size", "gap", "background-color"]
+            ? ["display", "padding-top", "font-size", "min-width", "gap", "background-color"]
             : ["display", "padding-top", "font-size", "min-width", "background-color"];
           return Object.fromEntries(
             properties.map((property) => [property, style.getPropertyValue(property)]),
