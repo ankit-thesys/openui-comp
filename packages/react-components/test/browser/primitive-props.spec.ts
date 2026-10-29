@@ -25,8 +25,8 @@ test("photo cards give the Tags in their image slot the image surface", async ({
     await expect(tag).toHaveCSS("background-color", "rgba(0, 0, 0, 0.4)");
     await expect(tag).toHaveCSS("backdrop-filter", "blur(2px)");
   }
-  // A context card without a photo leaves its Tag on the variant's own surface.
-  const plain = page.locator('.openui-context-card[data-background-image="false"] .openui-tag');
+  // A context card without a photo (no data-background-image) leaves its Tag on its own surface.
+  const plain = page.locator(".openui-context-card:not([data-background-image]) .openui-tag");
   await expect(plain.first()).toBeVisible();
   for (const tag of await plain.all()) {
     await expect(tag).not.toHaveClass(/--surface-/);

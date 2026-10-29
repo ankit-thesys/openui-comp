@@ -106,6 +106,6 @@ describe("CompositeCard and inline markdown", () => {
       )[0],
     ).toContain("openui-markdown-renderer-code--typography-inherit");
     const [outside] = classesOf(inline, "openui-inline-markdown-renderer");
-    expect(outside.filter((name) => name.includes("--typography-"))).toEqual([]);
+    expect(outside!.filter((name) => name.includes("--typography-"))).toEqual([]);
   });
 });
