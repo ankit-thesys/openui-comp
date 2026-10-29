@@ -53,7 +53,7 @@ export const contentClass = css`
 `;
 
 export const rowClass = css`
-  & .openui-tag.openui-tag-sm {
+  & .openui-tag.openui-tag--size-sm {
     height: 18px;
     padding: 0 var(--openui-space-s, 8px);
     border-radius: var(--openui-radius-full, 9999px);
