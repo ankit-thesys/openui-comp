@@ -1,12 +1,9 @@
-import { css } from "goober";
+"use client";
+
+import clsx from "clsx";
 import React, { createContext, useContext } from "react";
-import { stepItemStyles, stepsStyles } from "./steps.styles";
-const componentClass = css`
-  ${stepsStyles}
-`;
-const itemClass = css`
-  ${stepItemStyles}
-`;
+import { useStyles } from "../../styles/useStyles";
+import { names, stepsStyles } from "./steps.styles";
 
 export interface StepsItemProps {
   title: React.ReactNode;
@@ -21,9 +18,10 @@ export interface StepsProps {
 const StepNumberContext = createContext<number>(0);
 
 export const Steps: React.FC<StepsProps> = ({ children }) => {
+  const styles = useStyles(stepsStyles);
   return (
-    <div className={`${componentClass} openui-steps-container`}>
-      <div className="openui-steps">
+    <div className={clsx(styles.root, names.root)}>
+      <div className={clsx(styles.list, names.list)}>
         {React.Children.map(children, (child, index) => (
           <StepNumberContext.Provider value={index + 1}>{child}</StepNumberContext.Provider>
         ))}
@@ -35,19 +33,20 @@ export const Steps: React.FC<StepsProps> = ({ children }) => {
 export const StepsItem: React.FC<StepsItemProps> = ({ title, details, number }) => {
   const stepNumber = useContext(StepNumberContext);
 
+  const styles = useStyles(stepsStyles);
   return (
-    <div className={`${itemClass} openui-step-item`}>
-      <div className="openui-step-connector">
-        <div className="openui-step-number">
-          <div className="openui-step-number-inner">
+    <div className={clsx(styles.item, names.item)}>
+      <div className={clsx(styles.connector, names.connector)}>
+        <div className={clsx(styles.number, names.number)}>
+          <div className={clsx(styles.numberInner, names.numberInner)}>
             {Number.isInteger(number) ? number : stepNumber}
           </div>
         </div>
-        <div className="openui-connector-line" />
+        <div className={clsx(styles.connectorLine, names.connectorLine)} />
       </div>
-      <div className="openui-step-content">
-        <span className="openui-step-title">{title}</span>
-        <div className="openui-step-details">{details}</div>
+      <div className={clsx(styles.content, names.content)}>
+        <span className={clsx(styles.title, names.title)}>{title}</span>
+        <div className={clsx(styles.details, names.details)}>{details}</div>
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { createContext, useContext, useEffect, useMemo, useRef } from "react";
 import { useShallow } from "zustand/react/shallow";
 import { createLegendStore } from "./legendStore";

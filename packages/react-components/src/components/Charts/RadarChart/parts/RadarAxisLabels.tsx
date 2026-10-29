@@ -1,9 +1,13 @@
+"use client";
+
+import clsx from "clsx";
+import { useStyles } from "../../../../styles/useStyles";
 import { useCanvasContextForLabelSize } from "../../hooks/core/useCanvasContextForLabelSize";
 import { LabelTooltip } from "../../shared/core/LabelTooltip/LabelTooltip";
 import type { ChartData } from "../../types";
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
 import { parseLineHeight, truncateToWidth, wrapLabelLines } from "../../utils/labelWrap";
 import { MIN_RADAR_LABEL_BUDGET, radarLabelLayout } from "../../utils/radarLabelLayout";
+import { names, radarChartStyles } from "../radarChart.styles";
 
 interface RadarAxisLabelsProps<T extends ChartData> {
   data: T;
@@ -43,11 +47,12 @@ export function RadarAxisLabels<T extends ChartData>({
   chartSize,
   containerWidth,
 }: RadarAxisLabelsProps<T>) {
+  const styles = useStyles(radarChartStyles);
   const ctx = useCanvasContextForLabelSize();
   const lineHeight = parseLineHeight(ctx.font);
 
   return (
-    <g className={`${CHART_CLASS_PREFIX}-radar-chart-axis-labels`}>
+    <g className={names.axisLabels}>
       {data.map((row, i) => {
         const label = String(row[catKey]);
         const layout = radarLabelLayout(i, numAxes, {
@@ -80,11 +85,16 @@ export function RadarAxisLabels<T extends ChartData>({
             y={layout.y}
             textAnchor={layout.hAlign}
             dominantBaseline={BASELINE[layout.vAlign]}
-            className={`${CHART_CLASS_PREFIX}-radar-chart-axis-label`}
+            className={clsx(styles.axisLabel, names.axisLabel)}
             aria-label={truncated ? label : undefined}
           >
             {lines.map((line, li) => (
-              <tspan key={li} x={layout.x} dy={li === 0 ? firstDy : lineHeight}>
+              <tspan
+                className={names.textLine}
+                key={li}
+                x={layout.x}
+                dy={li === 0 ? firstDy : lineHeight}
+              >
                 {line}
               </tspan>
             ))}
@@ -92,7 +102,11 @@ export function RadarAxisLabels<T extends ChartData>({
         );
 
         if (!truncated) {
-          return <g key={`${label}-${i}`}>{text}</g>;
+          return (
+            <g className={names.group} key={`${label}-${i}`}>
+              {text}
+            </g>
+          );
         }
 
         const blockWidth = Math.max(...lines.map((line) => ctx.measureText(line).width));
@@ -112,8 +126,9 @@ export function RadarAxisLabels<T extends ChartData>({
 
         return (
           <LabelTooltip key={`${label}-${i}`} content={label} disabled={false}>
-            <g onMouseMove={stop} onTouchMove={stop}>
+            <g className={names.group} onMouseMove={stop} onTouchMove={stop}>
               <rect
+                className={names.hitbox}
                 x={rectX}
                 y={rectY}
                 width={blockWidth}

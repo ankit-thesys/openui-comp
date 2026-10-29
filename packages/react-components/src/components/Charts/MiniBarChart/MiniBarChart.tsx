@@ -1,13 +1,16 @@
+"use client";
+
+import clsx from "clsx";
+import { useStyles } from "../../../styles/useStyles";
 import { useTheme } from "../../ThemeProvider";
 import { useEffectiveAnimation } from "../hooks/core/useEffectiveAnimation";
 import { roundedBarPath } from "../shared/cartesian/roundedBarPath";
 import { MiniChartFrame } from "../shared/mini/MiniChartFrame";
 import { MINI_BAR_WIDTH, miniBarGeometry } from "../shared/mini/miniChartUtils";
-import { CHART_CLASS_PREFIX } from "../utils/constants";
 import { useChartPalette } from "../utils/paletteUtils";
+import { miniBarChartStyles, names } from "./miniBarChart.styles";
 import type { MiniBarChartProps } from "./types";
 
-const CLASS = `${CHART_CLASS_PREFIX}-mini-bar-chart`;
 // The thin line down each bar's middle, inset from both ends — shown only on
 // bars tall enough to hold it.
 const INNER_LINE_INSET = 6;
@@ -27,6 +30,7 @@ export function MiniBarChart({
   className,
   barColor,
 }: MiniBarChartProps) {
+  const styles = useStyles(miniBarChartStyles);
   const animate = useEffectiveAnimation(isAnimationActive);
   const [color = ""] = useChartPalette({
     customPalette: customPalette ?? (barColor ? [barColor] : undefined),
@@ -35,16 +39,27 @@ export function MiniBarChart({
   });
   const { mode } = useTheme();
   const innerLineColor = mode === "light" ? "rgba(255, 255, 255, 0.3)" : "rgba(0, 0, 0, 0.3)";
-  const animated = animate ? ` ${CHART_CLASS_PREFIX}-mini-chart-mark--animated` : "";
+  const animated = animate && styles.animated;
 
   return (
-    <MiniChartFrame chart="bar" size={size} className={className} onClick={onBarsClick}>
+    <MiniChartFrame
+      chart="bar"
+      size={size}
+      className={clsx(
+        styles.root,
+        names.root,
+        isAnimationActive && names.isAnimationActive.true,
+        className,
+      )}
+      svgClassName={clsx(styles.svg, names.svg)}
+      onClick={onBarsClick}
+    >
       {(width, height) =>
         miniBarGeometry(data, width, height).map((bar, i) =>
           bar.height > 0 ? (
-            <g key={i} className={`${CLASS}-bar-group${animated}`}>
+            <g key={i} className={clsx(names.barGroup, animated)}>
               <path
-                className={`${CLASS}-bar`}
+                className={names.bar}
                 d={roundedBarPath(
                   bar.x,
                   bar.y,
@@ -56,7 +71,7 @@ export function MiniBarChart({
               />
               {bar.height >= INNER_LINE_MIN_HEIGHT && (
                 <line
-                  className={`${CLASS}-inner-line`}
+                  className={names.innerLine}
                   x1={bar.x + MINI_BAR_WIDTH / 2}
                   y1={bar.y + INNER_LINE_INSET}
                   x2={bar.x + MINI_BAR_WIDTH / 2}

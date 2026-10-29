@@ -1,3 +1,9 @@
+"use client";
+
+import clsx from "clsx";
+import type { CSSProperties } from "react";
+import { useStyles } from "../../../../styles/useStyles";
+import { calendarHeatmapStyles, names } from "../calendarHeatmap.styles";
 import type { CalendarSeparatorLabel } from "./separatorLayout";
 
 interface CalendarSeparatorsProps {
@@ -17,7 +23,6 @@ interface CalendarSeparatorsProps {
   stroke?: string;
   /** Dashed vs. solid rule. */
   dashed?: boolean;
-  classPrefix: string;
 }
 
 /**
@@ -36,22 +41,27 @@ export function CalendarSeparators({
   plotHeight,
   stroke,
   dashed,
-  classPrefix,
 }: CalendarSeparatorsProps) {
+  const styles = useStyles(calendarHeatmapStyles);
   return (
-    <g>
+    <g className={names.group}>
       {columns.map((col) => {
         const x = col * pitchX + (offsets[col] ?? 0) - (spacing > 0 ? spacing / 2 : gap / 2);
         return (
           <line
             key={col}
-            className={`${classPrefix}-separator`}
+            className={clsx(styles.separator, names.separator)}
             x1={x}
             x2={x}
             y1={0}
             y2={plotHeight}
             // Inline style: a presentation attribute would lose to the class rule.
-            style={stroke ? { stroke } : undefined}
+            style={
+              {
+                "--_openui-calendar-heatmap-separator-stroke": (stroke ? { stroke } : undefined)
+                  ?.stroke,
+              } as CSSProperties
+            }
             strokeDasharray={dashed ? "4,4" : undefined}
           />
         );
@@ -71,7 +81,6 @@ interface CalendarSeparatorLabelsProps {
   gutterLeft: number;
   /** Formats the `Q{n} {year}` label text. */
   format: (quarter: number, year: number) => string;
-  classPrefix: string;
 }
 
 /**
@@ -86,19 +95,21 @@ export function CalendarSeparatorLabels({
   pitchX,
   gutterLeft,
   format,
-  classPrefix,
 }: CalendarSeparatorLabelsProps) {
+  const styles = useStyles(calendarHeatmapStyles);
   return (
     <>
       {labels.map(({ col, quarter, year }) => (
         <span
           key={col}
-          className={`${classPrefix}-quarter-label`}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: gutterLeft + col * pitchX + (offsets[col] ?? 0),
-          }}
+          className={clsx(styles.quarterLabel, names.quarterLabel)}
+          style={
+            {
+              "--_openui-calendar-heatmap-quarter-label-position": "absolute",
+              "--_openui-calendar-heatmap-quarter-label-top": "0px",
+              "--_openui-calendar-heatmap-quarter-label-left": `${gutterLeft + col * pitchX + (offsets[col] ?? 0)}px`,
+            } as CSSProperties
+          }
         >
           {format(quarter, year)}
         </span>

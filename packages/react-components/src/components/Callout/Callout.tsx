@@ -1,12 +1,9 @@
+"use client";
+
 import clsx from "clsx";
 import React from "react";
-import {
-  descriptionClass,
-  dismissClass,
-  rootClass,
-  titleClass,
-  variantClasses,
-} from "./callout.styles";
+import { useStyles } from "../../styles/useStyles";
+import { calloutStyles, names } from "./callout.styles";
 
 type CalloutVariant = "info" | "danger" | "warning" | "success" | "neutral";
 
@@ -18,39 +15,31 @@ export interface CalloutProps extends Omit<React.HTMLAttributes<HTMLDivElement>,
   duration?: number;
 }
 
-const variantMap: Record<CalloutVariant, string> = {
-  info: "openui-callout-info",
-  danger: "openui-callout-danger",
-  warning: "openui-callout-warning",
-  success: "openui-callout-success",
-  neutral: "openui-callout-neutral",
-};
-
 export const Callout = React.forwardRef<HTMLDivElement, CalloutProps>((props, ref) => {
+  const styles = useStyles(calloutStyles);
   const { className, variant = "neutral", title, description, duration, style, ...rest } = props;
 
   const dismissStyle = duration
-    ? ({ ...style, "--callout-duration": `${duration}ms` } as React.CSSProperties)
+    ? ({ ...style, "--_openui-callout-duration": `${duration}ms` } as React.CSSProperties)
     : style;
 
   return (
     <div
       ref={ref}
       className={clsx(
-        rootClass,
-        "openui-callout",
-        variantClasses[variant],
-        variantMap[variant],
-        duration && dismissClass,
-        duration && "openui-callout-autodismiss",
+        styles.root,
+        names.root,
+        styles.variant[variant],
+        names.variant[variant],
         className,
       )}
+      data-autodismiss={duration ? "true" : undefined}
       style={dismissStyle}
       {...rest}
     >
-      {title && <span className={clsx(titleClass, "openui-callout-title")}>{title}</span>}
+      {title && <span className={clsx(styles.title, names.title)}>{title}</span>}
       {description && (
-        <span className={clsx(descriptionClass, "openui-callout-description")}>{description}</span>
+        <span className={clsx(styles.description, names.description)}>{description}</span>
       )}
     </div>
   );

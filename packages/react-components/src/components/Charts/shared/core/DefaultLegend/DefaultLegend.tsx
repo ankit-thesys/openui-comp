@@ -1,10 +1,12 @@
+"use client";
+
 import clsx from "clsx";
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import React, { memo, useCallback, useState } from "react";
+import { useStyles } from "../../../../../styles/useStyles";
 import { Button } from "../../../../Button";
 import { type LegendItem } from "../../../types";
-import { CHART_CLASS_PREFIX } from "../../../utils/constants";
-import { rootClass } from "./defaultLegend.styles";
+import { defaultLegendStyles, names } from "./defaultLegend.styles";
 import { useDefaultLegend } from "./hooks/useDefaultLegend";
 
 interface DefaultLegendProps {
@@ -37,6 +39,7 @@ const DefaultLegend = memo(
       },
       ref,
     ) => {
+      const styles = useStyles(defaultLegendStyles);
       const [buttonWidth, setButtonWidth] = useState(0);
       const { displayItems, hasMoreItems, toggleButtonText } = useDefaultLegend({
         items,
@@ -63,29 +66,21 @@ const DefaultLegend = memo(
       const showToggleButton = hasMoreItems;
 
       return (
-        <div
-          ref={ref}
-          className={clsx(
-            rootClass,
-            `${CHART_CLASS_PREFIX}-chart-legend-container ${CHART_CLASS_PREFIX}-chart-legend--bottom`,
-            className,
-          )}
-          style={style}
-        >
+        <div ref={ref} className={clsx(styles.root, names.root, className)} style={style}>
           {(xAxisLabel || yAxisLabel) && (
-            <div className={`${CHART_CLASS_PREFIX}-chart-legend-axis-label-container`}>
+            <div className={clsx(styles.axisLabelContainer, names.axisLabelContainer)}>
               {xAxisLabel && (
-                <span className={`${CHART_CLASS_PREFIX}-chart-legend-axis-label`}>
+                <span className={clsx(styles.axisLabel, names.axisLabel)}>
                   X-Axis:{" "}
-                  <span className={`${CHART_CLASS_PREFIX}-chart-legend-axis-label-text`}>
+                  <span className={clsx(styles.axisLabelText, names.axisLabelText)}>
                     {xAxisLabel}
                   </span>
                 </span>
               )}
               {yAxisLabel && (
-                <span className={`${CHART_CLASS_PREFIX}-chart-legend-axis-label`}>
+                <span className={clsx(styles.axisLabel, names.axisLabel)}>
                   Y-Axis:{" "}
-                  <span className={`${CHART_CLASS_PREFIX}-chart-legend-axis-label-text`}>
+                  <span className={clsx(styles.axisLabelText, names.axisLabelText)}>
                     {yAxisLabel}
                   </span>
                 </span>
@@ -93,37 +88,41 @@ const DefaultLegend = memo(
             </div>
           )}
           <div
-            className={clsx(`${CHART_CLASS_PREFIX}-chart-legend`, {
-              [`${CHART_CLASS_PREFIX}-chart-legend--expanded`]: isExpanded,
-              [`${CHART_CLASS_PREFIX}-chart-legend--collapsed`]: !isExpanded && showToggleButton,
-            })}
+            className={clsx(styles.list, names.list)}
+            data-state={isExpanded ? "expanded" : showToggleButton ? "collapsed" : undefined}
           >
             {displayItems.map((item) => {
               const isHidden = hiddenSeries?.has(item.key);
               return (
                 <div
                   key={item.key}
-                  className={`${CHART_CLASS_PREFIX}-chart-legend-item`}
-                  style={{
-                    cursor: onItemClick ? "pointer" : undefined,
-                    opacity: isHidden ? 0.3 : 1,
-                  }}
+                  className={clsx(styles.item, names.item)}
+                  data-clickable={onItemClick ? "" : undefined}
+                  style={
+                    {
+                      "--_openui-default-legend-item-opacity": isHidden ? 0.3 : 1,
+                    } as React.CSSProperties
+                  }
                   onClick={onItemClick ? () => onItemClick(item.key) : undefined}
                 >
                   {item.icon ? (
-                    <item.icon />
+                    <span className={clsx(styles.icon, names.icon)}>
+                      <item.icon />
+                    </span>
                   ) : (
                     <div
-                      className={`${CHART_CLASS_PREFIX}-chart-legend-item-indicator`}
-                      style={{ backgroundColor: item.color }}
+                      className={clsx(styles.indicator, names.indicator)}
+                      style={
+                        {
+                          "--_openui-default-legend-indicator-color": item.color,
+                        } as React.CSSProperties
+                      }
                     />
                   )}
-                  <div className={`${CHART_CLASS_PREFIX}-chart-legend-item-label-container`}>
-                    <span className={`${CHART_CLASS_PREFIX}-chart-legend-item-label`}>
-                      {item.label}
-                    </span>
+                  <div className={clsx(styles.labelContainer, names.labelContainer)}>
+                    <span className={clsx(styles.label, names.label)}>{item.label}</span>
                     {item.percentage !== undefined && (
-                      <span className={`${CHART_CLASS_PREFIX}-chart-legend-item-percentage`}>
+                      <span className={clsx(styles.percentage, names.percentage)}>
                         {item.percentage.toFixed(1)}%
                       </span>
                     )}
@@ -137,17 +136,13 @@ const DefaultLegend = memo(
                 variant="tertiary"
                 size="small"
                 ref={buttonRef}
-                className={`${CHART_CLASS_PREFIX}-chart-legend-toggle-button`}
+                className={clsx(styles.toggleButton, names.toggleButton)}
                 onClick={handleToggleExpanded}
                 iconRight={
                   isExpanded ? (
-                    <ChevronUpIcon
-                      className={`${CHART_CLASS_PREFIX}-chart-legend-toggle-button-icon`}
-                    />
+                    <ChevronUpIcon className={clsx(styles.toggleIcon, names.toggleIcon)} />
                   ) : (
-                    <ChevronDownIcon
-                      className={`${CHART_CLASS_PREFIX}-chart-legend-toggle-button-icon`}
-                    />
+                    <ChevronDownIcon className={clsx(styles.toggleIcon, names.toggleIcon)} />
                   )
                 }
               >

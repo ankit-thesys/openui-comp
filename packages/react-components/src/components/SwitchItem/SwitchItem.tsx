@@ -1,12 +1,10 @@
+"use client";
+
 import * as Switch from "@radix-ui/react-switch";
 import clsx from "clsx";
-import { css } from "goober";
 import { CSSProperties, forwardRef, ReactNode, useId } from "react";
-import { componentStyles } from "./styles";
-
-const componentClass = css`
-  ${componentStyles}
-`;
+import { useStyles } from "../../styles/useStyles";
+import { names, switchItemStyles } from "./switchItem.styles";
 
 interface SwitchItemProps {
   label?: ReactNode;
@@ -25,26 +23,29 @@ interface SwitchItemProps {
 const SwitchItem = forwardRef<HTMLButtonElement, SwitchItemProps>((props, ref) => {
   const { label, description, onChange, className, disabled, required, ...rest } = props;
   const id = useId();
+  const styles = useStyles(switchItemStyles);
   return (
-    <div className={clsx(componentClass, "openui-switch-item-container")}>
+    <div className={clsx(styles.container, names.container)}>
       <Switch.Root
         ref={ref}
         onCheckedChange={onChange}
         id={id}
-        className={clsx("openui-switch-item-root", className)}
+        className={clsx(styles.root, names.root, className)}
         disabled={disabled}
         required={required}
         {...rest}
       >
-        <Switch.Thumb className="openui-switch-item-thumb" />
+        <Switch.Thumb className={clsx(styles.thumb, names.thumb)} />
       </Switch.Root>
-      <div className="openui-switch-item-content">
+      <div className={names.content}>
         {label && (
-          <label htmlFor={id} className="openui-switch-item-label">
+          <label htmlFor={id} className={clsx(styles.label, names.label)}>
             {label}
           </label>
         )}
-        {description && <p className="openui-switch-item-description">{description}</p>}
+        {description && (
+          <p className={clsx(styles.description, names.description)}>{description}</p>
+        )}
       </div>
     </div>
   );

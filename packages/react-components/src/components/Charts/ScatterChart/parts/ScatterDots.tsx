@@ -1,9 +1,13 @@
+"use client";
+
 import type { ScaleLinear } from "d3-scale";
 import React from "react";
 
+import clsx from "clsx";
+import { useStyles } from "../../../../styles/useStyles";
 import type { VisibleDataset } from "../../hooks/cartesian/useScatterChartOrchestrator";
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
 import { entranceProps } from "../../utils/entranceUtils";
+import { names, scatterChartStyles } from "../scatterChart.styles";
 import type { HoveredScatterPoint } from "../types";
 
 interface ScatterDotsProps {
@@ -26,15 +30,16 @@ export const ScatterDots: React.FC<ScatterDotsProps> = ({
   hoveredPoint,
   animate,
 }) => {
+  const styles = useStyles(scatterChartStyles);
   return (
-    <g className={`${CHART_CLASS_PREFIX}-scatter-chart-dots`}>
+    <g className={names.dots}>
       {datasets.map(({ dataset: ds, originalIndex }) => {
         const color = colorMap[ds.name] ?? "#000";
         const isHoveredDataset = hoveredPoint?.datasetName === ds.name;
         const hasHover = hoveredPoint !== null;
 
         return (
-          <g key={ds.name}>
+          <g className={names.group} key={ds.name}>
             {ds.data.map((pt, ptIdx) => {
               const isHoveredDot = isHoveredDataset && hoveredPoint?.pointIndex === ptIdx;
 
@@ -45,9 +50,9 @@ export const ScatterDots: React.FC<ScatterDotsProps> = ({
               // flash). Both sub-properties together ≡ opacity for a dot.
               const dim = hasHover && !isHoveredDataset ? 0.3 : 1;
 
-              const { className, animationDelay } = entranceProps(
+              const { animationDelay } = entranceProps(
                 animate,
-                `${CHART_CLASS_PREFIX}-scatter-chart-dot--animated`,
+                names.dotAnimated.true,
                 originalIndex * 80,
               );
 
@@ -58,12 +63,17 @@ export const ScatterDots: React.FC<ScatterDotsProps> = ({
                   cy={yScale(pt.y)}
                   r={r}
                   fill={color}
-                  className={`${CHART_CLASS_PREFIX}-scatter-chart-dot ${className}`}
-                  style={{
-                    fillOpacity: dim,
-                    strokeOpacity: dim,
-                    animationDelay,
-                  }}
+                  className={clsx(
+                    styles.dot,
+                    names.dot,
+                    animate && [styles.dotAnimated, names.dotAnimated.true],
+                  )}
+                  style={
+                    {
+                      "--_openui-scatter-chart-dot-opacity": dim,
+                      "--_openui-scatter-chart-dot-delay": animationDelay,
+                    } as React.CSSProperties
+                  }
                 />
               );
             })}

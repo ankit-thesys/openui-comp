@@ -1,18 +1,21 @@
-import clsx from "clsx";
-import { useCallback, useMemo } from "react";
-import { rootClass } from "./radarChart.styles";
+"use client";
 
+import clsx from "clsx";
+import type { CSSProperties } from "react";
+import { useCallback, useMemo } from "react";
+import { useStyles } from "../../../styles/useStyles";
 import { useEffectiveAnimation, useRadarChartOrchestrator } from "../hooks";
 import { ChartShell } from "../shared/core/ChartShell";
 import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
 import { ChartTooltip } from "../shared/core/PortalTooltip/ChartTooltip";
-import { CHART_CLASS_PREFIX } from "../utils/constants";
 import { RadarAxisLabels } from "./parts/RadarAxisLabels";
 import { RadarGrid } from "./parts/RadarGrid";
 import { RadarSeries } from "./parts/RadarSeries";
+import { names, radarChartStyles } from "./radarChart.styles";
 import type { RadarChartData, RadarChartProps } from "./types";
 
 export function RadarChart<T extends RadarChartData>(props: RadarChartProps<T>) {
+  const styles = useStyles(radarChartStyles);
   const {
     data,
     categoryKey,
@@ -77,15 +80,27 @@ export function RadarChart<T extends RadarChartData>(props: RadarChartProps<T>) 
   return (
     <ChartShell
       containerRef={orch.refs.containerRef}
-      classPrefix={`${CHART_CLASS_PREFIX}-radar-chart`}
-      className={clsx(rootClass, className)}
-      style={orch.style.containerStyle}
+      className={clsx(
+        styles.root,
+        names.root,
+        names.variant[variant],
+        names.gridShape[gridShape],
+        isAnimationActive && names.isAnimationActive.true,
+        className,
+      )}
+      style={
+        {
+          "--_openui-radar-chart-root-width": orch.style.containerStyle["width"],
+          "--_openui-radar-chart-root-height": orch.style.containerStyle["height"],
+        } as CSSProperties
+      }
       isEmpty={orch.isEmpty}
     >
       {() => (
         <>
-          <div className={`${CHART_CLASS_PREFIX}-radar-chart-svg-wrapper`}>
+          <div className={clsx(styles.svgWrapper, names.svgWrapper)}>
             <svg
+              className={clsx(styles.svg, names.svg)}
               width={orch.dimensions.svgWidth}
               height={orch.dimensions.svgHeight}
               viewBox={`0 0 ${orch.dimensions.svgWidth} ${orch.dimensions.svgHeight}`}
@@ -93,6 +108,7 @@ export function RadarChart<T extends RadarChartData>(props: RadarChartProps<T>) 
               aria-label="Radar chart"
             >
               <g
+                className={names.group}
                 transform={`translate(${orch.dimensions.centerX}, ${orch.dimensions.centerY})`}
                 onMouseMove={mouseHandlers.handleMouseMove}
                 onMouseLeave={mouseHandlers.handleMouseLeave}

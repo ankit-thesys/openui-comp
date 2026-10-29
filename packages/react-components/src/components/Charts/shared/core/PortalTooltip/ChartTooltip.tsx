@@ -1,11 +1,13 @@
+"use client";
+
 import { flip, offset, type Placement, shift, useFloating } from "@floating-ui/react-dom";
 import clsx from "clsx";
 import React, { memo, useCallback, useLayoutEffect, useMemo, useRef } from "react";
 import { createPortal } from "react-dom";
+import { useStyles } from "../../../../../styles/useStyles";
 import { useTheme } from "../../../../ThemeProvider";
-import { CHART_CLASS_PREFIX } from "../../../utils/constants";
 import { springPresets, useTranslate } from "../spring";
-import { portalClass, tooltipClass } from "./portalTooltip.styles";
+import { names, portalTooltipStyles } from "./portalTooltip.styles";
 import { tooltipNumberFormatter } from "./utils";
 
 export interface TooltipItem {
@@ -36,6 +38,7 @@ function ChartTooltipRender({
   className,
   placement = "right-start",
 }: ChartTooltipProps) {
+  const styles = useStyles(portalTooltipStyles);
   const { portalThemeClassName } = useTheme();
 
   const virtualEl = useMemo(
@@ -99,67 +102,51 @@ function ChartTooltipRender({
   return createPortal(
     <div
       ref={setFloatingRef}
-      className={clsx(portalClass, `${CHART_CLASS_PREFIX}-portal-tooltip`, portalThemeClassName)}
-      // position/top/left from Floating UI; transform is spring-driven; fade in
-      // once positioned so it never flashes at the origin.
-      style={{
-        position: strategy,
-        top: 0,
-        left: 0,
-        opacity: isPositioned ? 1 : 0,
-        transition: "opacity 0.12s ease",
-      }}
+      className={clsx(styles.portal, names.portal, portalThemeClassName)}
+      // The spring writes the positioning transform; appearance remains class-overridable.
+      data-positioned={isPositioned ? "" : undefined}
+      style={{ "--_openui-chart-tooltip-position": strategy } as React.CSSProperties}
     >
-      <div className={clsx(tooltipClass, `${CHART_CLASS_PREFIX}-chart-tooltip`, className)}>
-        <div className={`${CHART_CLASS_PREFIX}-chart-tooltip-label`}>{label}</div>
-        <div className={`${CHART_CLASS_PREFIX}-chart-tooltip-content-item-separator`} />
-        <div className={`${CHART_CLASS_PREFIX}-chart-tooltip-content`}>
+      <div className={clsx(styles.root, names.root, className)}>
+        <div className={clsx(styles.label, names.label)}>{label}</div>
+        <div className={clsx(styles.separator, names.separator)} />
+        <div className={clsx(styles.content, names.content)}>
           {displayItems.map((item, index) => (
             <div
               key={`${item.name}-${index}`}
-              className={clsx(
-                `${CHART_CLASS_PREFIX}-chart-tooltip-content-item`,
-                !isTwoItemsLayout && `${CHART_CLASS_PREFIX}-chart-tooltip-content-item--dot`,
-              )}
+              className={clsx(styles.item, names.item)}
+              data-layout={isTwoItemsLayout ? "two-items" : "multiple"}
             >
               <div
-                className={clsx(
-                  `${CHART_CLASS_PREFIX}-chart-tooltip-content-indicator`,
-                  `${CHART_CLASS_PREFIX}-chart-tooltip-content-indicator--dot`,
-                  isTwoItemsLayout &&
-                    `${CHART_CLASS_PREFIX}-chart-tooltip-content-indicator--two-items`,
-                )}
+                className={clsx(styles.indicator, names.indicator)}
+                data-layout={isTwoItemsLayout ? "two-items" : "multiple"}
                 style={
                   {
-                    "--color-bg": item.color,
-                    "--color-border": item.color,
+                    "--_openui-chart-tooltip-indicator-color": item.color,
                   } as React.CSSProperties
                 }
               />
               <div
-                className={clsx(
-                  `${CHART_CLASS_PREFIX}-chart-tooltip-content-value-wrapper`,
-                  isTwoItemsLayout &&
-                    `${CHART_CLASS_PREFIX}-chart-tooltip-content-value-wrapper--vertical`,
-                  `${CHART_CLASS_PREFIX}-chart-tooltip-content-value-wrapper--standard`,
-                )}
+                className={clsx(styles.valueWrapper, names.valueWrapper)}
+                data-layout={isTwoItemsLayout ? "two-items" : "multiple"}
               >
-                <div className={`${CHART_CLASS_PREFIX}-chart-tooltip-content-label`}>
-                  <span>{item.name}</span>
+                <div className={clsx(styles.contentLabel, names.contentLabel)}>
+                  <span className={clsx(styles.labelText, names.labelText)}>{item.name}</span>
                 </div>
-                <span className={`${CHART_CLASS_PREFIX}-chart-tooltip-content-value`}>
+                <span className={clsx(styles.value, names.value)}>
                   {typeof item.value === "number" ? tooltipNumberFormatter(item.value) : item.value}
                 </span>
               </div>
-              <div className={`${CHART_CLASS_PREFIX}-chart-tooltip-content-item-separator`} />
+              <div
+                className={clsx(styles.separator, names.separator)}
+                data-last={index === displayItems.length - 1 ? "" : undefined}
+              />
             </div>
           ))}
         </div>
+        {isGreaterThanTen && <div className={clsx(styles.separator, names.separator)} />}
         {isGreaterThanTen && (
-          <div className={`${CHART_CLASS_PREFIX}-chart-tooltip-content-item-separator`} />
-        )}
-        {isGreaterThanTen && (
-          <div className={`${CHART_CLASS_PREFIX}-chart-tooltip-content-view-more`}>
+          <div className={clsx(styles.viewMore, names.viewMore)}>
             Click to view all {remainingItems}
           </div>
         )}

@@ -1,13 +1,26 @@
-export const buttonsStyles = `
-  display: flex;
-  width: 100%;
-  gap: var(--openui-space-m, 12px);
-  box-sizing: border-box;
-  &.openui-buttons-horizontal {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  &.openui-buttons-vertical {
-    flex-direction: column;
-  }
-`;
+import type { StyleCss } from "../../styles/useStyles";
+
+export const names = {
+  root: "openui-buttons",
+  variant: {
+    horizontal: "openui-buttons--variant-horizontal",
+    vertical: "openui-buttons--variant-vertical",
+  },
+} as const;
+
+export const buttonsStyles = (css: StyleCss) => ({
+  root: css`
+    display: flex;
+    width: 100%;
+    gap: var(--openui-space-m, 12px);
+  `,
+  variant: {
+    horizontal: css`
+      flex-direction: row;
+      flex-wrap: wrap;
+    `,
+    vertical: css`
+      flex-direction: column;
+    `,
+  },
+});

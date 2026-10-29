@@ -1,11 +1,10 @@
-import { css } from "goober";
-import React from "react";
-import { Separator } from "../Separator";
-import { sectionStyles } from "./sectionV2.styles";
+"use client";
 
-const componentClass = css`
-  ${sectionStyles}
-`;
+import clsx from "clsx";
+import React from "react";
+import { useStyles } from "../../styles/useStyles";
+import { Separator } from "../Separator";
+import { names, sectionStyles } from "./sectionV2.styles";
 
 interface SectionV2Props {
   trigger: string;
@@ -13,14 +12,15 @@ interface SectionV2Props {
 }
 
 export const SectionV2 = ({ trigger, children }: SectionV2Props) => {
+  const styles = useStyles(sectionStyles);
   return (
-    <div className={`${componentClass} openui-section-v2`}>
-      <div className="openui-section-v2-wrapper">
+    <div className={clsx(styles.root, names.root)}>
+      <div className={clsx(styles.wrapper, names.wrapper)}>
         <Separator orientation="horizontal" />
-        <div className="openui-section-v2-header">
-          <div className="openui-section-v2-header-trigger">{trigger}</div>
+        <div className={clsx(styles.header, names.header)}>
+          <div className={clsx(styles.headerTrigger, names.headerTrigger)}>{trigger}</div>
         </div>
-        <div className="openui-section-v2-content">{children}</div>
+        <div className={clsx(styles.content, names.content)}>{children}</div>
       </div>
     </div>
   );

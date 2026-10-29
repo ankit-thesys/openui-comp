@@ -1,5 +1,8 @@
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
+"use client";
 
+import clsx from "clsx";
+import { useStyles } from "../../../../styles/useStyles";
+import { names, radialChartStyles } from "../radialChart.styles";
 interface RadialGridProps {
   maxRadius: number;
   minRadius: number;
@@ -15,10 +18,11 @@ export function RadialGrid({
   startAngle,
   endAngle,
 }: RadialGridProps) {
+  const styles = useStyles(radialChartStyles);
   const isSemiCircular = endAngle - startAngle < 2 * Math.PI;
 
   return (
-    <g className={`${CHART_CLASS_PREFIX}-radial-chart-grid`}>
+    <g className={names.grid}>
       {Array.from({ length: gridLevels }, (_, i) => {
         const fraction = (i + 1) / gridLevels;
         const r = minRadius + (maxRadius - minRadius) * fraction;
@@ -36,7 +40,7 @@ export function RadialGrid({
               key={i}
               d={`M ${x1} ${y1} A ${r} ${r} 0 ${largeArcFlag} 1 ${x2} ${y2}`}
               fill="none"
-              className={`${CHART_CLASS_PREFIX}-radial-chart-grid-circle`}
+              className={clsx(styles.gridCircle, names.gridCircle)}
             />
           );
         }
@@ -48,7 +52,7 @@ export function RadialGrid({
             cy={0}
             r={r}
             fill="none"
-            className={`${CHART_CLASS_PREFIX}-radial-chart-grid-circle`}
+            className={clsx(styles.gridCircle, names.gridCircle)}
           />
         );
       })}

@@ -1,12 +1,10 @@
+"use client";
+
 import * as Radio from "@radix-ui/react-radio-group";
 import clsx from "clsx";
-import { css } from "goober";
 import { CSSProperties, forwardRef, ReactNode, useId } from "react";
-import { componentStyles } from "./styles";
-
-const componentClass = css`
-  ${componentStyles}
-`;
+import { useStyles } from "../../styles/useStyles";
+import { names, radioItemStyles } from "./radioItem.styles";
 
 export interface RadioItemProps {
   label?: ReactNode;
@@ -21,12 +19,13 @@ export interface RadioItemProps {
 const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>((props, ref) => {
   const { label, description, className, style, disabled, required, value } = props;
   const id = useId();
+  const styles = useStyles(radioItemStyles);
   return (
-    <label htmlFor={id} className={clsx(componentClass, "openui-radio-item-container")}>
+    <label htmlFor={id} className={clsx(styles.container, names.container)}>
       <Radio.Item
         ref={ref}
         id={id}
-        className={clsx("openui-radio-item-root", className)}
+        className={clsx(styles.root, names.root, className)}
         value={value}
         disabled={disabled}
         required={required}
@@ -37,32 +36,34 @@ const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>((props, ref) => 
           height={16}
           fill="none"
           viewBox="0 0 16 16"
-          className="openui-radio-item-svg"
+          className={clsx(styles.svg, names.svg)}
         >
           <path // This is the circle that is filled between the border and the circle
             fill="currentColor"
             d="M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8Z"
-            className="openui-radio-item-svg-path"
+            className={clsx(styles.path, names.path)}
           />
           <path // This is the border
             stroke="currentColor"
             d="M1.5 8a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0Z"
-            className="openui-radio-item-svg-border"
+            className={clsx(styles.border, names.border)}
           />
           <path // This is the inner circle
             fill="currentColor"
             d="M4 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"
-            className="openui-radio-item-svg-inner"
+            className={clsx(styles.inner, names.inner)}
           />
         </svg>
       </Radio.Item>
-      <div className="openui-radio-item-content">
+      <div className={clsx(styles.content, names.content)}>
         {label && (
-          <label htmlFor={id} className="openui-radio-item-label">
+          <label htmlFor={id} className={clsx(styles.label, names.label)}>
             {label}
           </label>
         )}
-        {description && <p className="openui-radio-item-description">{description}</p>}
+        {description && (
+          <p className={clsx(styles.description, names.description)}>{description}</p>
+        )}
       </div>
     </label>
   );

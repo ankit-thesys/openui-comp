@@ -1,4 +1,4 @@
-import { css } from "goober";
+import type { StyleCss } from "../../../styles/useStyles";
 import { drawLineAnimation } from "../shared/animations/drawLine.styles";
 import {
   activeDotInner,
@@ -13,48 +13,99 @@ import {
 } from "../shared/chartBaseDeclarations";
 import { svgTickLabel } from "../shared/chartTypography";
 
-export const rootClass = css`
-  ${cartesianContainer}
-  & :where(.openui-line-chart-container-inner) {
+export const names = {
+  root: "openui-line-chart",
+  variant: {
+    linear: "openui-line-chart--variant-linear",
+    natural: "openui-line-chart--variant-natural",
+    step: "openui-line-chart--variant-step",
+  },
+  containerInner: "openui-line-chart-container-inner",
+  yAxisContainer: "openui-line-chart-y-axis-container",
+  mainContainer: "openui-line-chart-main-container",
+  grid: "openui-line-chart-grid",
+  gridLine: "openui-line-chart-grid-line",
+  yAxis: "openui-line-chart-y-axis",
+  yTick: "openui-line-chart-y-tick",
+  xAxis: "openui-line-chart-x-axis",
+  xTick: "openui-line-chart-x-tick",
+  xTickAngled: "openui-line-chart-x-tick-angled",
+  crosshair: "openui-line-chart-crosshair",
+  crosshairLine: "openui-line-chart-crosshair-line",
+  activeDotOuter: "openui-line-chart-active-dot-outer",
+  activeDotInner: "openui-line-chart-active-dot-inner",
+  lines: "openui-line-chart-lines",
+  dot: "openui-line-chart-dot",
+  line: "openui-line-chart-line",
+  lineAnimated: { true: "openui-line-chart-line--is-animation-active" },
+  svg: "openui-line-chart-svg",
+  group: "openui-line-chart-group",
+  hitTarget: "openui-line-chart-hit-target",
+  tickLine: "openui-line-chart-tick-line",
+  defs: "openui-line-chart-defs",
+  clip: "openui-line-chart-clip",
+  clipRect: "openui-line-chart-clip-rect",
+  highlight: "openui-line-chart-highlight",
+} as const;
+
+export const lineChartStyles = (css: StyleCss) => ({
+  svg: css`
+    &[data-overflow="visible"] {
+      overflow: visible;
+    }
+  `,
+  group: css`
+    opacity: var(--_openui-line-chart-group-opacity, 1);
+    transition: var(--_openui-line-chart-group-transition, all 0s ease 0s);
+  `,
+  root: css`
+    ${cartesianContainer}
+  `,
+  containerInner: css`
     ${cartesianContainerInner}
-  }
-  & :where(.openui-line-chart-y-axis-container) {
+  `,
+  yAxisContainer: css`
     ${cartesianYAxisContainer}
-  }
-  & :where(.openui-line-chart-main-container) {
+  `,
+  mainContainer: css`
     ${cartesianMainContainer}
-  }
-  & line:where(.openui-line-chart-grid line) {
-    ${gridLine}
-  }
-  & line.openui-grid-zero-line:where(.openui-line-chart-grid line) {
-    ${zeroGridLine}
-  }
-  & :where(.openui-line-chart-y-tick, .openui-line-chart-x-tick, .openui-line-chart-x-tick-angled) {
+  `,
+  gridLine: css`
+    ${gridLine} &[data-zero] {
+      ${zeroGridLine}
+    }
+  `,
+  yTick: css`
     ${svgTickLabel}
-  }
-  & :where(.openui-line-chart-crosshair-line) {
+  `,
+  xTick: css`
+    ${svgTickLabel}
+  `,
+  xTickAngled: css`
+    ${svgTickLabel}
+  `,
+  crosshairLine: css`
     ${crosshairLine}
-  }
-  & :where(.openui-line-chart-active-dot-outer) {
+  `,
+  activeDotOuter: css`
     ${activeDotOuter}
-  }
-  & :where(.openui-line-chart-active-dot-inner) {
+  `,
+  activeDotInner: css`
     ${activeDotInner}
-  }
-  & :where(.openui-line-chart-line) {
-    fill: none;
-    stroke-width: 2;
-  }
-  & :where(.openui-line-chart-dot) {
+  `,
+  dot: css`
     stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
     stroke-width: 1;
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    & :where(.openui-line-chart-line--animated) {
-      stroke-dasharray: var(--path-length);
-      stroke-dashoffset: var(--path-length);
+  `,
+  line: css`
+    fill: none;
+    stroke-width: 2;
+  `,
+  lineAnimated: css`
+    @media (prefers-reduced-motion: no-preference) {
+      stroke-dasharray: var(--_openui-line-chart-line-path-length);
+      stroke-dashoffset: var(--_openui-line-chart-line-path-length);
       animation: ${drawLineAnimation} 1s ease-out forwards;
     }
-  }
-`;
+  `,
+});

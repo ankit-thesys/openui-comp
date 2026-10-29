@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { DateRange } from "react-day-picker";
 import { useLayoutContext } from "../../context/LayoutContext";

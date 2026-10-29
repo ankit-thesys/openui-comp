@@ -1,13 +1,11 @@
+"use client";
+
 import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
 import clsx from "clsx";
-import { css } from "goober";
 import { ReactElement } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { ToggleItemProps } from "../ToggleItem";
-import { componentStyles } from "./styles";
-
-const componentClass = css`
-  ${componentStyles}
-`;
+import { names, toggleGroupStyles } from "./toggleGroup.styles";
 
 type RadixToggleGroupProps =
   ToggleGroupPrimitive.ToggleGroupSingleProps | ToggleGroupPrimitive.ToggleGroupMultipleProps;
@@ -18,11 +16,9 @@ export type ToggleGroupProps = RadixToggleGroupProps & {
 };
 
 export const ToggleGroup = ({ children, className, ...props }: ToggleGroupProps) => {
+  const styles = useStyles(toggleGroupStyles);
   return (
-    <ToggleGroupPrimitive.Root
-      className={clsx(componentClass, "openui-toggle-group", className)}
-      {...props}
-    >
+    <ToggleGroupPrimitive.Root className={clsx(styles.root, names.root, className)} {...props}>
       {children}
     </ToggleGroupPrimitive.Root>
   );

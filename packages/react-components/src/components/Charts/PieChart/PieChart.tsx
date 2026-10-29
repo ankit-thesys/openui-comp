@@ -1,8 +1,10 @@
+"use client";
+
 import clsx from "clsx";
 import { arc, pie, type PieArcDatum } from "d3-shape";
+import type { CSSProperties } from "react";
 import { useMemo } from "react";
-import { rootClass } from "./pieChart.styles";
-
+import { useStyles } from "../../../styles/useStyles";
 import {
   type CategoricalSlice,
   useCategoricalChartOrchestrator,
@@ -14,8 +16,8 @@ import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
 import { useResolvedLegendKey } from "../shared/core/legend/LegendStoreProvider";
 import { ChartTooltip } from "../shared/core/PortalTooltip/ChartTooltip";
 import { ChartWithStackedLegend } from "../shared/core/StackedLegend/ChartWithStackedLegend";
-import { CHART_CLASS_PREFIX } from "../utils/constants";
 import { PieSlices } from "./parts/PieSlices";
+import { names, pieChartStyles } from "./pieChart.styles";
 import type { PieChartData, PieChartProps } from "./types";
 
 // The donut is the Recharts two-ring design: a thin band in the slice colors
@@ -47,6 +49,7 @@ export function PieChart<T extends PieChartData>(props: PieChartProps<T>) {
 }
 
 function PieChartImpl<T extends PieChartData>(props: PieChartProps<T>) {
+  const styles = useStyles(pieChartStyles);
   const {
     data,
     categoryKey,
@@ -156,23 +159,38 @@ function PieChartImpl<T extends PieChartData>(props: PieChartProps<T>) {
   return (
     <ChartShell
       containerRef={orch.refs.containerRef}
-      classPrefix={`${CHART_CLASS_PREFIX}-pie-chart`}
-      className={clsx(rootClass, className)}
-      style={orch.style.containerStyle}
+      className={clsx(
+        styles.root,
+        names.root,
+        names.variant[variant],
+        names.appearance[appearance],
+        isAnimationActive && names.isAnimationActive.true,
+        className,
+      )}
+      style={
+        {
+          "--_openui-pie-chart-root-width": orch.style.containerStyle["width"],
+          "--_openui-pie-chart-root-height": orch.style.containerStyle["height"],
+        } as CSSProperties
+      }
       isEmpty={orch.isEmpty}
       exportData={exportData}
     >
       {() => (
         <>
-          <div className={`${CHART_CLASS_PREFIX}-pie-chart-svg-wrapper`}>
+          <div className={clsx(styles.svgWrapper, names.svgWrapper)}>
             <svg
+              className={names.svg}
               width={orch.dimensions.svgWidth}
               height={orch.dimensions.svgHeight}
               viewBox={`0 0 ${orch.dimensions.svgWidth} ${orch.dimensions.svgHeight}`}
               role="img"
               aria-label="Pie chart"
             >
-              <g transform={`translate(${orch.dimensions.centerX}, ${orch.dimensions.centerY})`}>
+              <g
+                className={clsx(styles.group, names.group)}
+                transform={`translate(${orch.dimensions.centerX}, ${orch.dimensions.centerY})`}
+              >
                 <PieSlices
                   arcs={arcs}
                   arcGenerator={arcGenerator}

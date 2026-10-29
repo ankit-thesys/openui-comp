@@ -1,10 +1,13 @@
-import React, { useMemo, useRef } from "react";
+"use client";
 
+import clsx from "clsx";
+import type { CSSProperties } from "react";
+import React, { useMemo, useRef } from "react";
+import { useStyles } from "../../../../styles/useStyles";
 import type { FunnelStage } from "../../hooks/cartesian/useFunnelChartOrchestrator";
 import { useCanvasContextForLabelSize } from "../../hooks/core/useCanvasContextForLabelSize";
 import { useIndexedClickHandler } from "../../hooks/core/useIndexedClickHandler";
 import { useIsomorphicLayoutEffect, useSpring } from "../../shared/core/spring";
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
 import { entranceProps } from "../../utils/entranceUtils";
 import {
   MAX_LABEL_LINES,
@@ -13,6 +16,7 @@ import {
   wrapLabelLines,
 } from "../../utils/labelWrap";
 import { numberTickFormatter } from "../../utils/styleUtils";
+import { funnelChartStyles, names } from "../funnelChart.styles";
 import {
   formatFunnelPercentage,
   funnelHaloRamp,
@@ -22,7 +26,6 @@ import {
   type FunnelOrientation,
 } from "./funnelGeometry";
 
-const CLASS = `${CHART_CLASS_PREFIX}-funnel-chart`;
 // Non-hovered stages dim to this fill-opacity multiplier.
 const DIM = 0.4;
 // Below this cell size (px on the stacking axis) the in-cell value/percentage
@@ -104,6 +107,7 @@ export function FunnelStages<T>({
   onMouseLeave,
   onClick,
 }: FunnelStagesProps<T>) {
+  const styles = useStyles(funnelChartStyles);
   const ctx = useCanvasContextForLabelSize();
 
   const handleClick = useIndexedClickHandler(rows, onClick);
@@ -127,7 +131,7 @@ export function FunnelStages<T>({
   const isAngled = horiz && labelAngle !== 0;
 
   return (
-    <g>
+    <g className={names.group}>
       {stages.map((stage, i) => {
         const offset = (mainSize + gap) * i;
         const transform = horiz ? `translate(${offset}, 0)` : `translate(0, ${offset})`;
@@ -178,19 +182,21 @@ export function FunnelStages<T>({
 
         const { className: stageAnimatedClass, animationDelay } = entranceProps(
           animate,
-          `${CLASS}-stage--animated`,
+          clsx(styles.stageIsAnimationActive, names.stageIsAnimationActive),
           i * 60,
         );
 
         return (
-          <g key={stage.key} transform={transform}>
+          <g className={names.group} key={stage.key} transform={transform}>
             <g
-              className={`${CLASS}-stage${stageAnimatedClass ? ` ${stageAnimatedClass}` : ""}`}
-              style={{
-                animationDelay,
-                filter: isHovered ? "brightness(1.08)" : undefined,
-                pointerEvents: "none",
-              }}
+              className={clsx(styles.stage, names.stage, stageAnimatedClass)}
+              style={
+                {
+                  "--_openui-funnel-chart-stage-animation-delay": animationDelay,
+                  "--_openui-funnel-chart-stage-filter": isHovered ? "brightness(1.08)" : undefined,
+                  "--_openui-funnel-chart-stage-pointer-events": "none",
+                } as CSSProperties
+              }
             >
               {ringPaths.map((d, ri) =>
                 // Print/static: inert paths, no springs (the bklit-style hover
@@ -200,7 +206,7 @@ export function FunnelStages<T>({
                 staticRender ? (
                   <path
                     key={ri}
-                    className={`${CLASS}-ring`}
+                    className={clsx(styles.ring, names.ring)}
                     d={d}
                     fill={stage.color}
                     fillOpacity={rings[ri]!.ringOpacity * dimFactor}
@@ -214,7 +220,6 @@ export function FunnelStages<T>({
                     hovered={isHovered}
                     ringIndex={ri}
                     totalRings={rings.length}
-                    horizontal={horiz}
                   />
                 ),
               )}
@@ -224,15 +229,17 @@ export function FunnelStages<T>({
                 the tooltip still gives exact values). */}
             {showInCell && (
               <g
-                className={`${CLASS}-readouts`}
-                style={{
-                  pointerEvents: "none",
-                  opacity: dimFactor === DIM ? 0.55 : 1,
-                }}
+                className={clsx(styles.readouts, names.readouts)}
+                style={
+                  {
+                    "--_openui-funnel-chart-readouts-pointer-events": "none",
+                    "--_openui-funnel-chart-readouts-opacity": dimFactor === DIM ? 0.55 : 1,
+                  } as CSSProperties
+                }
               >
                 {valueShown && (
                   <text
-                    className={`${CLASS}-value`}
+                    className={clsx(styles.value, names.value)}
                     x={valueX}
                     y={valueY}
                     textAnchor={horiz ? "middle" : "start"}
@@ -244,7 +251,7 @@ export function FunnelStages<T>({
                 {pctShown && (
                   <>
                     <rect
-                      className={`${CLASS}-pct-pill`}
+                      className={clsx(styles.pctPill, names.pctPill)}
                       x={pctX - pillW / 2}
                       y={pctY - 10}
                       width={pillW}
@@ -252,7 +259,7 @@ export function FunnelStages<T>({
                       rx={10}
                     />
                     <text
-                      className={`${CLASS}-pct`}
+                      className={clsx(styles.pct, names.pct)}
                       x={pctX}
                       y={pctY}
                       textAnchor="middle"
@@ -268,15 +275,17 @@ export function FunnelStages<T>({
             {/* Stage label in the reserved axis band — always shown. */}
             {showLabels && (
               <g
-                className={`${CLASS}-labels`}
-                style={{
-                  pointerEvents: "none",
-                  opacity: dimFactor === DIM ? 0.55 : 1,
-                }}
+                className={clsx(styles.labels, names.labels)}
+                style={
+                  {
+                    "--_openui-funnel-chart-labels-pointer-events": "none",
+                    "--_openui-funnel-chart-labels-opacity": dimFactor === DIM ? 0.55 : 1,
+                  } as CSSProperties
+                }
               >
                 {horiz ? (
                   <text
-                    className={`${CLASS}-label`}
+                    className={clsx(styles.label, names.label)}
                     x={labelX}
                     y={labelY}
                     textAnchor={isAngled ? "end" : "middle"}
@@ -287,14 +296,19 @@ export function FunnelStages<T>({
                   </text>
                 ) : (
                   <text
-                    className={`${CLASS}-label`}
+                    className={clsx(styles.label, names.label)}
                     x={labelX}
                     y={labelY - ((labelLines!.length - 1) * lineHeight) / 2}
                     textAnchor="start"
                     dominantBaseline="central"
                   >
                     {labelLines!.map((line, li) => (
-                      <tspan key={li} x={labelX} dy={li === 0 ? 0 : lineHeight}>
+                      <tspan
+                        className={names.textLine}
+                        key={li}
+                        x={labelX}
+                        dy={li === 0 ? 0 : lineHeight}
+                      >
                         {line}
                       </tspan>
                     ))}
@@ -309,15 +323,18 @@ export function FunnelStages<T>({
                 `visiblePainted`. Dropped in print. */}
             {!staticRender && (
               <rect
+                className={clsx(styles.hitbox, names.hitbox)}
                 x={0}
                 y={0}
                 width={horiz ? mainSize : W}
                 height={horiz ? H : mainSize}
                 fill="transparent"
-                style={{
-                  pointerEvents: "all",
-                  cursor: onClick ? "pointer" : undefined,
-                }}
+                style={
+                  {
+                    "--_openui-funnel-chart-hitbox-pointer-events": "all",
+                    "--_openui-funnel-chart-hitbox-cursor": onClick ? "pointer" : undefined,
+                  } as CSSProperties
+                }
                 onMouseMove={(e) => onMouseMove(e, i)}
                 onMouseLeave={onMouseLeave}
                 onClick={() => handleClick(i)}
@@ -337,7 +354,6 @@ interface FunnelRingProps {
   hovered: boolean;
   ringIndex: number;
   totalRings: number;
-  horizontal: boolean;
 }
 
 /**
@@ -347,23 +363,16 @@ interface FunnelRingProps {
  * through the halo on hover; a lone ring (layers=1) blooms as the core.
  *
  * The spring drives a CSS variable (the scale MAGNITUDE) off the render path;
- * the AXIS lives in CSS, picked by the orientation class (--bloom-y scales
- * height, --bloom-x scales width). Keeping the axis in CSS — rather than
+ * the AXIS lives in CSS, picked by the root orientation modifier
+ * through private x/y flags. Keeping the axis in CSS — rather than
  * baking scaleX/scaleY into the written string — means an orientation flip
  * (which React applies via the class) can never strand a stale axis on an
  * at-rest ring. The origin is the ring's own centre (transform-box: fill-box).
  * Rest IS home (scale 1), so there's no seeded jump — the first hover is the
  * bloom. Mounted only off the print path (FunnelStages branches on static).
  */
-function FunnelRing({
-  d,
-  color,
-  fillOpacity,
-  hovered,
-  ringIndex,
-  totalRings,
-  horizontal,
-}: FunnelRingProps) {
+function FunnelRing({ d, color, fillOpacity, hovered, ringIndex, totalRings }: FunnelRingProps) {
+  const styles = useStyles(funnelChartStyles);
   const ref = useRef<SVGPathElement>(null);
   // Inner rings bloom more (the solid core most); a lone ring is the core. The
   // 0.12 headroom matches the 0.44 cross-axis factor (segments span 0.88 of
@@ -379,7 +388,7 @@ function FunnelRing({
   const spring = useSpring(
     config,
     (s) => {
-      ref.current?.style.setProperty("--funnel-ring-scale", String(s));
+      ref.current?.style.setProperty("--_openui-funnel-chart-ring-scale", String(s));
     },
     1,
   );
@@ -390,9 +399,7 @@ function FunnelRing({
   return (
     <path
       ref={ref}
-      className={`${CLASS}-ring ${CLASS}-ring--springy ${
-        horizontal ? `${CLASS}-ring--bloom-y` : `${CLASS}-ring--bloom-x`
-      }`}
+      className={clsx(styles.ring, names.ring)}
       d={d}
       fill={color}
       fillOpacity={fillOpacity}

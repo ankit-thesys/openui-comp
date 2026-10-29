@@ -1,15 +1,15 @@
+"use client";
+
 import clsx from "clsx";
 import { type ReactNode, useId, useRef } from "react";
+import { useStyles } from "../../../../../styles/useStyles";
 import { useContainerSize } from "../../../hooks/core/useContainerSize";
-import { CHART_CLASS_PREFIX } from "../../../utils/constants";
 import { LegendStoreProvider } from "../legend/LegendStoreProvider";
 import { StackedLegend } from "./StackedLegend";
-import { layoutClass } from "./stackedLegend.styles";
+import { names, stackedLegendStyles } from "./stackedLegend.styles";
 
 /** Width from which the chart and its stacked legend sit side by side. */
 export const STACKED_LEGEND_ROW_BREAKPOINT = 400;
-
-const CLASS = `${CHART_CLASS_PREFIX}-chart-with-stacked-legend`;
 
 const toCssSize = (value: number | string | undefined) =>
   typeof value === "number" ? `${value}px` : value;
@@ -33,6 +33,7 @@ export function ChartWithStackedLegend({
   height?: number | string;
   className?: string;
 }) {
+  const styles = useStyles(stackedLegendStyles);
   const legendKey = useId();
   const ref = useRef<HTMLDivElement>(null);
   const { width: layoutWidth } = useContainerSize(ref, width);
@@ -42,16 +43,12 @@ export function ChartWithStackedLegend({
     <LegendStoreProvider legendKey={legendKey}>
       <div
         ref={ref}
-        className={clsx(
-          layoutClass,
-          CLASS,
-          isRow ? `${CLASS}--row` : `${CLASS}--column`,
-          className,
-        )}
+        className={clsx(styles.layout, names.layout, className)}
+        data-orientation={isRow ? "horizontal" : "vertical"}
         style={{ width: toCssSize(width), height: toCssSize(height) }}
       >
-        <div className={`${CLASS}__chart`}>{children}</div>
-        <div className={`${CLASS}__legend`}>
+        <div className={clsx(styles.chart, names.chart)}>{children}</div>
+        <div className={clsx(styles.legend, names.legend)}>
           {/* Side by side the list scrolls; stacked, the width drives show-more.
               Rows show each item's share. */}
           <StackedLegend format="percentage" containerWidth={isRow ? undefined : layoutWidth} />

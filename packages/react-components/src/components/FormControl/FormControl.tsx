@@ -1,12 +1,11 @@
-import clsx from "clsx";
-import { css } from "goober";
-import React, { forwardRef, useMemo } from "react";
-import { FormControlProvider } from "./context";
-import { formControlStyles } from "./formControl.styles";
-const componentClass = css`
-  ${formControlStyles}
-`;
+"use client";
 
+import clsx from "clsx";
+import React, { forwardRef, useMemo } from "react";
+import { names as baseNames, baseStyles } from "../../styles/base";
+import { useStyles } from "../../styles/useStyles";
+import { FormControlProvider } from "./context";
+import { formControlStyles, names } from "./formControl.styles";
 export interface FormControlProps {
   children: React.ReactNode;
   className?: string;
@@ -16,9 +15,15 @@ export interface FormControlProps {
 
 const FormControl = forwardRef<HTMLDivElement, FormControlProps>((props, ref) => {
   const { children, className, style, hasError = false } = props;
+  const styles = useStyles(formControlStyles);
+  const base = useStyles(baseStyles);
   const formControlContextValue = useMemo(() => ({ hasError }), [hasError]);
   return (
-    <div ref={ref} className={clsx(componentClass, "openui-form-control", className)} style={style}>
+    <div
+      ref={ref}
+      className={clsx(styles.root, names.root, base.root, baseNames.root, className)}
+      style={style}
+    >
       <FormControlProvider value={formControlContextValue}>{children}</FormControlProvider>
     </div>
   );

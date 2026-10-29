@@ -1,3 +1,5 @@
+"use client";
+
 import type { ScaleLinear } from "d3-scale";
 import React from "react";
 
@@ -8,6 +10,7 @@ interface GridProps {
   chartWidth: number;
   chartHeight: number;
   className?: string;
+  lineClassName?: string;
   /**
    * Optional y-tick-count hint. When provided it wins (floored at 2) over the
    * height-derived default. MUST match the value passed to the sibling `YAxis`
@@ -21,6 +24,7 @@ export const Grid: React.FC<GridProps> = ({
   chartWidth,
   chartHeight,
   className,
+  lineClassName,
   tickCount: tickCountOverride,
 }) => {
   const tickCount = resolveTickCount(chartHeight, tickCountOverride);
@@ -36,8 +40,10 @@ export const Grid: React.FC<GridProps> = ({
         <line
           key={tick}
           className={
-            spansNegative && tick === 0 ? `${CHART_CLASS_PREFIX}-grid-zero-line` : undefined
+            lineClassName ??
+            (spansNegative && tick === 0 ? `${CHART_CLASS_PREFIX}-grid-zero-line` : undefined)
           }
+          data-zero={lineClassName && spansNegative && tick === 0 ? "" : undefined}
           x1={0}
           x2={chartWidth}
           y1={yScale(tick)}

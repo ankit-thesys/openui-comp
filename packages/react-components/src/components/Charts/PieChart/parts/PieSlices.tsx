@@ -1,18 +1,21 @@
+"use client";
+
 import clsx from "clsx";
 import type { Arc, PieArcDatum } from "d3-shape";
+import type { CSSProperties } from "react";
 import React from "react";
+import { useStyles } from "../../../../styles/useStyles";
 import type { CategoricalSlice } from "../../hooks";
 import { useIndexedClickHandler } from "../../hooks/core/useIndexedClickHandler";
 import { springPresets, useIsomorphicLayoutEffect, useTranslate } from "../../shared/core/spring";
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
 import { entranceProps } from "../../utils/entranceUtils";
 import { getSliceStyle, POLAR_HOVER_TRANSITION } from "../../utils/polarUtils";
+import { names, pieChartStyles } from "../pieChart.styles";
 
 // How far the hovered wedge pops out along its radial bisector (px).
 const PIE_HOVER_OFFSET = 8;
 
 // The donut's track wedges take their sunk fill from the stylesheet.
-const TRACK_CLASS = `${CHART_CLASS_PREFIX}-pie-chart-track`;
 
 // Outward direction of a slice. d3 angles start at 12 o'clock and increase clockwise,
 // so the radial bisector points to (sin(mid), -cos(mid)).
@@ -57,16 +60,18 @@ export function PieSlices<T>({
   onMouseLeave,
   onClick,
 }: PieSlicesProps<T>) {
+  const styles = useStyles(pieChartStyles);
   const handleClick = useIndexedClickHandler(data, onClick);
 
   return (
-    <g>
+    <g className={clsx(styles.group, names.group)}>
       {arcs.map((arc, i) => {
         const slice = slices[i];
         if (!slice) return null;
         const pathD = arcGenerator(arc);
         if (!pathD) return null;
         const trackD = trackArcGenerator?.(arc) ?? undefined;
+        const sliceStyle = getSliceStyle(i, hoveredIndex);
 
         // Print: inert paths (the donut adds its track), handlers on them, no
         // hitbox, no spring.
@@ -77,18 +82,26 @@ export function PieSlices<T>({
         if (staticRender) {
           const staticProps = {
             style: {
-              ...getSliceStyle(i, hoveredIndex),
-              cursor: onClick ? "pointer" : undefined,
-              transition: POLAR_HOVER_TRANSITION,
-            },
+              "--_openui-pie-chart-slice-fill-opacity": sliceStyle.fillOpacity,
+              "--_openui-pie-chart-slice-filter": sliceStyle.filter,
+              "--_openui-pie-chart-slice-cursor": onClick ? "pointer" : undefined,
+              "--_openui-pie-chart-slice-transition": POLAR_HOVER_TRANSITION,
+            } as CSSProperties,
             onMouseMove: (e: React.MouseEvent) => onMouseMove(e, i),
             onMouseLeave,
             onClick: () => handleClick(i),
           };
           return (
             <React.Fragment key={slice.label}>
-              {trackD && <path d={trackD} className={TRACK_CLASS} {...staticProps} />}
-              <path d={pathD} fill={slice.color} {...staticProps} />
+              {trackD && (
+                <path d={trackD} className={clsx(styles.track, names.track)} {...staticProps} />
+              )}
+              <path
+                className={clsx(styles.slice, names.slice)}
+                d={pathD}
+                fill={slice.color}
+                {...staticProps}
+              />
             </React.Fragment>
           );
         }
@@ -100,7 +113,7 @@ export function PieSlices<T>({
             trackD={trackD}
             hitD={hitArcGenerator?.(arc) ?? pathD}
             color={slice.color}
-            sliceStyle={getSliceStyle(i, hoveredIndex)}
+            sliceStyle={sliceStyle}
             hovered={hoveredIndex === i}
             offset={sliceOffset(arc.startAngle, arc.endAngle, PIE_HOVER_OFFSET)}
             entrance={entrance}
@@ -158,6 +171,7 @@ function Slice({
   onMouseLeave,
   onClick,
 }: SliceProps) {
+  const styles = useStyles(pieChartStyles);
   const follow = useTranslate(springPresets.popOut);
 
   // Glide to the offset when hovered, always glide home otherwise (rest IS home, so no
@@ -173,41 +187,62 @@ function Slice({
 
   const { className: entranceClass, animationDelay: entranceDelay } = entranceProps(
     entrance,
-    `${CHART_CLASS_PREFIX}-pie-chart-slice--animated`,
+    clsx(styles.sliceIsAnimationActive, names.sliceIsAnimationActive),
     animationDelay,
   );
 
   return (
-    <g>
+    <g className={clsx(styles.group, names.group)}>
       {/* Invisible hitbox: base geometry, owns the pointer, never moves. fill MUST stay
           `transparent` (a painted region) — `none` would make the interior non-painted
           and silently kill hover under the default `visiblePainted`. */}
       <path
+        className={clsx(styles.hitbox, names.hitbox)}
         d={hitD}
         fill="transparent"
-        style={{
-          pointerEvents: "all",
-          cursor: clickable ? "pointer" : undefined,
-        }}
+        style={
+          {
+            "--_openui-pie-chart-hitbox-pointer-events": "all",
+            "--_openui-pie-chart-hitbox-cursor": clickable ? "pointer" : undefined,
+          } as CSSProperties
+        }
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
         onClick={onClick}
       />
       {/* Visible wedge: spring-translated; pointer-events:none on the wrapper falls
           through to the hitbox so hover stays anchored to the un-popped footprint. */}
-      <g ref={follow.bind} style={{ pointerEvents: "none" }}>
+      <g
+        className={clsx(styles.group, names.group)}
+        ref={follow.bind}
+        style={{ "--_openui-pie-chart-group-pointer-events": "none" } as CSSProperties}
+      >
         {trackD && (
           <path
             d={trackD}
-            className={clsx(TRACK_CLASS, entranceClass)}
-            style={{ ...baseStyle, animationDelay: entranceDelay }}
+            className={clsx(styles.track, names.track, entranceClass)}
+            style={
+              {
+                "--_openui-pie-chart-slice-fill-opacity": baseStyle.fillOpacity,
+                "--_openui-pie-chart-slice-filter": baseStyle.filter,
+                "--_openui-pie-chart-slice-transition": baseStyle.transition,
+                "--_openui-pie-chart-slice-animation-delay": entranceDelay,
+              } as CSSProperties
+            }
           />
         )}
         <path
           d={pathD}
           fill={color}
-          className={entranceClass || undefined}
-          style={{ ...baseStyle, animationDelay: entranceDelay }}
+          className={clsx(styles.slice, names.slice, entranceClass)}
+          style={
+            {
+              "--_openui-pie-chart-slice-fill-opacity": baseStyle.fillOpacity,
+              "--_openui-pie-chart-slice-filter": baseStyle.filter,
+              "--_openui-pie-chart-slice-transition": baseStyle.transition,
+              "--_openui-pie-chart-slice-animation-delay": entranceDelay,
+            } as CSSProperties
+          }
         />
       </g>
     </g>

@@ -1,9 +1,11 @@
+"use client";
+
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React from "react";
+import { useStyles } from "../../../../../styles/useStyles";
 import { IconButton } from "../../../../IconButton";
-import { CHART_CLASS_PREFIX } from "../../../utils/constants";
-import { rootClass } from "./scrollButtonsHorizontal.styles";
+import { names, scrollButtonsHorizontalStyles } from "./scrollButtonsHorizontal.styles";
 
 interface ScrollButtonsHorizontalProps {
   dataWidth: number;
@@ -23,41 +25,29 @@ export const ScrollButtonsHorizontal = React.memo(
     onScrollLeft,
     onScrollRight,
   }: ScrollButtonsHorizontalProps) => {
+    const styles = useStyles(scrollButtonsHorizontalStyles);
     if (dataWidth <= effectiveWidth) {
       return null;
     }
 
     return (
-      <div
-        className={clsx(
-          rootClass,
-          `${CHART_CLASS_PREFIX}-chart-horizontal-scroll-buttons-container`,
-        )}
-      >
+      <div className={clsx(styles.root, names.root)}>
         <IconButton
-          className={clsx(
-            `${CHART_CLASS_PREFIX}-chart-horizontal-scroll-button ${CHART_CLASS_PREFIX}-chart-horizontal-scroll-button--left`,
-            {
-              [`${CHART_CLASS_PREFIX}-chart-horizontal-scroll-button--disabled`]: !canScrollLeft,
-            },
-          )}
-          icon={<ChevronLeft />}
+          className={clsx(styles.button, styles.left, names.button, names.left)}
+          icon={<ChevronLeft className={names.icon} />}
           variant="secondary"
+          aria-label="Scroll left"
           onClick={onScrollLeft}
           size="2-extra-small"
           disabled={!canScrollLeft}
         />
 
         <IconButton
-          className={clsx(
-            `${CHART_CLASS_PREFIX}-chart-horizontal-scroll-button ${CHART_CLASS_PREFIX}-chart-horizontal-scroll-button--right`,
-            {
-              [`${CHART_CLASS_PREFIX}-chart-horizontal-scroll-button--disabled`]: !canScrollRight,
-            },
-          )}
-          icon={<ChevronRight />}
+          className={clsx(styles.button, styles.right, names.button, names.right)}
+          icon={<ChevronRight className={names.icon} />}
           variant="secondary"
           size="2-extra-small"
+          aria-label="Scroll right"
           onClick={onScrollRight}
           disabled={!canScrollRight}
         />

@@ -1,42 +1,26 @@
-import clsx from "clsx";
-import { css } from "goober";
-import { forwardRef, ReactNode } from "react";
-import { buttonStyles } from "./button.styles";
+"use client";
 
-const componentClass = css`
-  ${buttonStyles}
-`;
+import clsx from "clsx";
+import { forwardRef, ReactNode } from "react";
+import { useStyles } from "../../styles/useStyles";
+import { buttonStyles, names } from "./button.styles";
 
 type ButtonVariant = "primary" | "secondary" | "tertiary";
 type ButtonSize = "extra-small" | "small" | "medium" | "large";
-type ButtonType = "normal" | "destructive";
+type ButtonTone = "default" | "destructive";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   size?: ButtonSize;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
-  buttonType?: ButtonType;
+  /** What the action means to the user; `destructive` colours it as a dangerous action. */
+  tone?: ButtonTone;
 }
 
-const normalVariantMap: Record<ButtonVariant, string> = {
-  primary: "openui-button-base-primary",
-  secondary: "openui-button-base-secondary",
-  tertiary: "openui-button-base-tertiary",
-};
-
-const destructiveVariantMap: Record<ButtonVariant, string> = {
-  primary: "openui-button-base-destructive-primary",
-  secondary: "openui-button-base-destructive-secondary",
-  tertiary: "openui-button-base-destructive-tertiary",
-};
-
-const sizeMap: Record<ButtonSize, string> = {
-  "extra-small": "openui-button-base-extra-small",
-  small: "openui-button-base-small",
-  medium: "openui-button-base-medium",
-  large: "openui-button-base-large",
-};
+// Values React renders as nothing get no icon part, as before the part existed.
+const isRendered = (node: ReactNode) =>
+  node !== undefined && node !== null && node !== false && node !== "";
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -47,27 +31,33 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       iconLeft,
       iconRight,
       className,
-      buttonType = "normal",
+      tone = "default",
       ...props
     },
     ref,
   ) => {
-    const variantMap = buttonType === "destructive" ? destructiveVariantMap : normalVariantMap;
+    const styles = useStyles(buttonStyles);
+    const icon = (node: ReactNode) =>
+      isRendered(node) ? <span className={clsx(styles.icon, names.icon)}>{node}</span> : null;
     return (
       <button
         ref={ref}
         className={clsx(
-          componentClass,
-          "openui-button-base",
-          variantMap[variant],
-          sizeMap[size],
+          styles.root,
+          styles.variant[variant],
+          styles.size[size],
+          styles.tone[tone],
+          names.root,
+          names.variant[variant],
+          names.size[size],
+          names.tone[tone],
           className,
         )}
         {...props}
       >
-        {iconLeft}
+        {icon(iconLeft)}
         {children}
-        {iconRight}
+        {icon(iconRight)}
       </button>
     );
   },

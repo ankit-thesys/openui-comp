@@ -1,15 +1,19 @@
-import type { ScaleBand, ScaleQuantize } from "d3-scale";
-import React, { useCallback } from "react";
+"use client";
 
+import clsx from "clsx";
+import type { ScaleBand, ScaleQuantize } from "d3-scale";
+import type { CSSProperties } from "react";
+import React, { useCallback } from "react";
+import { useStyles } from "../../../../styles/useStyles";
 import type { HoveredHeatmapCell } from "../../hooks/cartesian/useHeatmapChartOrchestrator";
 import { heatmapCellValue } from "../../hooks/cartesian/useHeatmapChartOrchestrator";
 import { useCanvasContextForLabelSize } from "../../hooks/core/useCanvasContextForLabelSize";
 import { useHydrated } from "../../hooks/core/useHydrated";
 import { getColorLuminance, LUMINANCE_TEXT_PIVOT } from "../../utils/colorLuminance";
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
 import { entranceProps } from "../../utils/entranceUtils";
 import { parseLineHeight } from "../../utils/labelWrap";
 import { numberTickFormatter } from "../../utils/styleUtils";
+import { heatmapChartStyles, names } from "../heatmapChart.styles";
 
 // Entrance stagger: a left-to-right column wave, capped so wide (streamed)
 // datasets don't push late columns into seconds of delay.
@@ -74,6 +78,7 @@ export function HeatmapCells<T extends Record<string, string | number>>({
   onCellMouseLeave,
   onClick,
 }: HeatmapCellsProps<T>) {
+  const styles = useStyles(heatmapChartStyles);
   const hydrated = useHydrated();
   const context = useCanvasContextForLabelSize();
 
@@ -116,10 +121,18 @@ export function HeatmapCells<T extends Record<string, string | number>>({
         y={y + cellHeight / 2}
         textAnchor="middle"
         dominantBaseline="central"
-        className={`${CHART_CLASS_PREFIX}-heatmap-chart-cell-label${
-          animate ? ` ${CHART_CLASS_PREFIX}-heatmap-chart-cell-label--animated` : ""
-        }`}
-        style={{ fill, animationDelay }}
+        className={clsx(
+          styles.cellLabel,
+          names.cellLabel,
+          animate && styles.cellLabelIsAnimationActive,
+          animate && names.cellLabelIsAnimationActive,
+        )}
+        style={
+          {
+            "--_openui-heatmap-chart-cell-label-fill": fill,
+            "--_openui-heatmap-chart-cell-label-animation-delay": animationDelay,
+          } as CSSProperties
+        }
       >
         {text}
       </text>
@@ -127,13 +140,13 @@ export function HeatmapCells<T extends Record<string, string | number>>({
   };
 
   return (
-    <g>
+    <g className={names.group}>
       {data.map((row, columnIndex) => {
         const columnLabel = String(row[catKey]);
         const x = (xScale(columnLabel) ?? 0) + gapX / 2;
         const { className: cellAnimatedClass, animationDelay } = entranceProps(
           animate,
-          `${CHART_CLASS_PREFIX}-heatmap-chart-cell--animated`,
+          clsx(styles.cellIsAnimationActive, names.cellIsAnimationActive),
           Math.min(columnIndex * STAGGER_MS, STAGGER_CAP_MS),
         );
 
@@ -142,32 +155,30 @@ export function HeatmapCells<T extends Record<string, string | number>>({
           // reconciles by identity instead of remounting every later column
           // (which would replay entrances). Matches BarSeries' grouped shape.
           // Keys come pre-deduplicated — LLMs re-emit duplicate labels.
-          <g key={columnKeys[columnIndex] ?? columnIndex}>
+          <g className={names.group} key={columnKeys[columnIndex] ?? columnIndex}>
             {visibleRowKeys.map((rowKey) => {
               const y = (yScale(rowKey) ?? 0) + gapY / 2;
               const value = heatmapCellValue(row[rowKey]);
 
-              const modifiers = [
-                value === null ? `${CHART_CLASS_PREFIX}-heatmap-chart-cell--empty` : "",
-                cellAnimatedClass,
-              ]
-                .filter(Boolean)
-                .join(" ");
+              const modifiers = [cellAnimatedClass].filter(Boolean).join(" ");
 
               return (
                 <React.Fragment key={rowKey}>
                   <rect
-                    className={`${CHART_CLASS_PREFIX}-heatmap-chart-cell ${modifiers}`.trim()}
+                    className={clsx(styles.cell, names.cell, modifiers)}
+                    data-empty={value === null ? "" : undefined}
                     x={x}
                     y={y}
                     width={cellWidth}
                     height={cellHeight}
                     rx={cellRadius}
                     fill={value === null ? undefined : colorScale(value)}
-                    style={{
-                      animationDelay,
-                      cursor: onClick ? "pointer" : undefined,
-                    }}
+                    style={
+                      {
+                        "--_openui-heatmap-chart-cell-animation-delay": animationDelay,
+                        "--_openui-heatmap-chart-cell-cursor": onClick ? "pointer" : undefined,
+                      } as CSSProperties
+                    }
                     onMouseMove={(event) =>
                       onCellMouseMove(event, {
                         rowKey,

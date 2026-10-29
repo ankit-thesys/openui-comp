@@ -1,5 +1,9 @@
-import { CHART_CLASS_PREFIX } from "../../utils/constants";
+"use client";
+
+import clsx from "clsx";
+import { useStyles } from "../../../../styles/useStyles";
 import { radarAxisAngle } from "../../utils/polarUtils";
+import { names, radarChartStyles } from "../radarChart.styles";
 
 interface RadarGridProps {
   maxRadius: number;
@@ -16,10 +20,11 @@ function buildPolygonPoints(radius: number, numAxes: number): string {
 }
 
 export function RadarGrid({ maxRadius, gridLevels, gridShape, numAxes }: RadarGridProps) {
+  const styles = useStyles(radarChartStyles);
   const levels = Array.from({ length: gridLevels }, (_, i) => ((i + 1) / gridLevels) * maxRadius);
 
   return (
-    <g className={`${CHART_CLASS_PREFIX}-radar-chart-grid`}>
+    <g className={names.grid}>
       {levels.map((r) =>
         gridShape === "circle" ? (
           <circle
@@ -27,14 +32,14 @@ export function RadarGrid({ maxRadius, gridLevels, gridShape, numAxes }: RadarGr
             cx={0}
             cy={0}
             r={r}
-            className={`${CHART_CLASS_PREFIX}-radar-chart-grid-ring`}
+            className={clsx(styles.gridRing, names.gridRing)}
             fill="none"
           />
         ) : (
           <polygon
             key={r}
             points={buildPolygonPoints(r, numAxes)}
-            className={`${CHART_CLASS_PREFIX}-radar-chart-grid-ring`}
+            className={clsx(styles.gridRing, names.gridRing)}
             fill="none"
           />
         ),
@@ -48,7 +53,7 @@ export function RadarGrid({ maxRadius, gridLevels, gridShape, numAxes }: RadarGr
             y1={0}
             x2={maxRadius * Math.cos(angle)}
             y2={maxRadius * Math.sin(angle)}
-            className={`${CHART_CLASS_PREFIX}-radar-chart-grid-spoke`}
+            className={clsx(styles.gridSpoke, names.gridSpoke)}
           />
         );
       })}

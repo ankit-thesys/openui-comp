@@ -1,47 +1,30 @@
+"use client";
+
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import clsx from "clsx";
-import { css } from "goober";
 import { ChevronRight } from "lucide-react";
 import React, { forwardRef } from "react";
+import { useStyles } from "../../styles/useStyles";
 import { IconButton } from "../IconButton";
 import { Separator } from "../Separator";
-import {
-  contentStyles,
-  headerStyles,
-  itemStyles,
-  rootStyles,
-  triggerStyles,
-} from "./foldableSection.styles";
-
-const rootClass = css`
-  ${rootStyles}
-`;
-const itemClass = css`
-  ${itemStyles}
-`;
-const headerClass = css`
-  ${headerStyles}
-`;
-const triggerClass = css`
-  ${triggerStyles}
-`;
-const contentClass = css`
-  ${contentStyles}
-`;
+import { foldableSectionStyles, names } from "./foldableSection.styles";
 
 export type FoldableSectionRootProps = AccordionPrimitive.AccordionMultipleProps;
 
 export const FoldableSectionRoot = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Root>,
   FoldableSectionRootProps
->(({ className, style, ...props }, ref) => (
-  <AccordionPrimitive.Root
-    ref={ref}
-    className={clsx(rootClass, "openui-foldable-section-root", className)}
-    style={style}
-    {...props}
-  />
-));
+>(({ className, style, ...props }, ref) => {
+  const styles = useStyles(foldableSectionStyles);
+  return (
+    <AccordionPrimitive.Root
+      ref={ref}
+      className={clsx(styles.root, names.root, className)}
+      style={style}
+      {...props}
+    />
+  );
+});
 FoldableSectionRoot.displayName = "FoldableSectionRoot";
 
 export interface FoldableSectionItemProps extends React.ComponentPropsWithoutRef<
@@ -55,15 +38,18 @@ export interface FoldableSectionItemProps extends React.ComponentPropsWithoutRef
 export const FoldableSectionItem = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Item>,
   FoldableSectionItemProps
->(({ className, style, value, ...props }, ref) => (
-  <AccordionPrimitive.Item
-    ref={ref}
-    className={clsx(itemClass, "openui-foldable-section-item", className)}
-    style={style}
-    value={value}
-    {...props}
-  />
-));
+>(({ className, style, value, ...props }, ref) => {
+  const styles = useStyles(foldableSectionStyles);
+  return (
+    <AccordionPrimitive.Item
+      ref={ref}
+      className={clsx(styles.item, names.item, className)}
+      style={style}
+      value={value}
+      {...props}
+    />
+  );
+});
 FoldableSectionItem.displayName = "FoldableSectionItem";
 
 export interface FoldableSectionTriggerProps extends React.ComponentPropsWithoutRef<
@@ -77,34 +63,49 @@ export interface FoldableSectionTriggerProps extends React.ComponentPropsWithout
 export const FoldableSectionTrigger = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Trigger>,
   FoldableSectionTriggerProps
->(({ className, style, text, ...props }, ref) => (
-  <AccordionPrimitive.Header className={clsx(headerClass, "openui-foldable-section-header")}>
-    <AccordionPrimitive.Trigger
-      ref={ref}
-      className={clsx(triggerClass, "openui-foldable-section-trigger", className)}
-      style={style}
-      {...props}
-    >
-      <div className="openui-foldable-section-trigger-content-wrapper">
-        <Separator className="openui-foldable-section-trigger-content-separator" />
-        <div className="openui-foldable-section-trigger-content-icon-button-wrapper">
-          <IconButton
-            asChild
-            icon={
-              <ChevronRight className="openui-foldable-section-trigger-content-icon-button-icon" />
-            }
-            size="3-extra-small"
-            variant="secondary"
-            className="openui-foldable-section-trigger-content-icon-button"
+>(({ className, style, text, ...props }, ref) => {
+  const styles = useStyles(foldableSectionStyles);
+  return (
+    <AccordionPrimitive.Header className={clsx(styles.header, names.header)}>
+      <AccordionPrimitive.Trigger
+        ref={ref}
+        className={clsx(styles.trigger, names.trigger, className)}
+        style={style}
+        {...props}
+      >
+        <div className={clsx(styles.triggerContentWrapper, names.triggerContentWrapper)}>
+          <Separator
+            className={clsx(styles.triggerContentSeparator, names.triggerContentSeparator)}
+          />
+          <div
+            className={clsx(
+              styles.triggerContentIconButtonWrapper,
+              names.triggerContentIconButtonWrapper,
+            )}
           >
-            <span aria-hidden="true" />
-          </IconButton>
-          <div className="openui-foldable-section-trigger-content-text">{text}</div>
+            <IconButton
+              asChild
+              icon={
+                <ChevronRight
+                  className={clsx(
+                    styles.triggerContentIconButtonIcon,
+                    names.triggerContentIconButtonIcon,
+                  )}
+                />
+              }
+              size="3-extra-small"
+              variant="secondary"
+              className={clsx(styles.triggerContentIconButton, names.triggerContentIconButton)}
+            >
+              <span aria-hidden="true" />
+            </IconButton>
+            <div className={clsx(styles.triggerContentText, names.triggerContentText)}>{text}</div>
+          </div>
         </div>
-      </div>
-    </AccordionPrimitive.Trigger>
-  </AccordionPrimitive.Header>
-));
+      </AccordionPrimitive.Trigger>
+    </AccordionPrimitive.Header>
+  );
+});
 FoldableSectionTrigger.displayName = "FoldableSectionTrigger";
 
 export interface FoldableSectionContentProps extends React.ComponentPropsWithoutRef<
@@ -118,14 +119,17 @@ export interface FoldableSectionContentProps extends React.ComponentPropsWithout
 export const FoldableSectionContent = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Content>,
   FoldableSectionContentProps
->(({ className, style, children, ...props }, ref) => (
-  <AccordionPrimitive.Content
-    ref={ref}
-    className={clsx(contentClass, "openui-foldable-section-content", className)}
-    style={style}
-    {...props}
-  >
-    {children}
-  </AccordionPrimitive.Content>
-));
+>(({ className, style, children, ...props }, ref) => {
+  const styles = useStyles(foldableSectionStyles);
+  return (
+    <AccordionPrimitive.Content
+      ref={ref}
+      className={clsx(styles.content, names.content, className)}
+      style={style}
+      {...props}
+    >
+      {children}
+    </AccordionPrimitive.Content>
+  );
+});
 FoldableSectionContent.displayName = "FoldableSectionContent";

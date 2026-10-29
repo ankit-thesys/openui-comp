@@ -1,4 +1,8 @@
+"use client";
+
+import clsx from "clsx";
 import { line } from "d3-shape";
+import { useStyles } from "../../../styles/useStyles";
 import { useEffectiveAnimation } from "../hooks/core/useEffectiveAnimation";
 import { MiniChartFrame } from "../shared/mini/MiniChartFrame";
 import {
@@ -7,11 +11,9 @@ import {
   miniCurves,
   miniLineGeometry,
 } from "../shared/mini/miniChartUtils";
-import { CHART_CLASS_PREFIX } from "../utils/constants";
 import { useChartPalette } from "../utils/paletteUtils";
+import { miniLineChartStyles, names } from "./miniLineChart.styles";
 import type { MiniLineChartProps } from "./types";
-
-const CLASS = `${CHART_CLASS_PREFIX}-mini-line-chart`;
 
 /**
  * A compact, axis-free line sparkline: the most recent values that fit, one series, no dots.
@@ -27,6 +29,7 @@ export function MiniLineChart({
   className,
   lineColor,
 }: MiniLineChartProps) {
+  const styles = useStyles(miniLineChartStyles);
   const animate = useEffectiveAnimation(isAnimationActive);
   const [color = ""] = useChartPalette({
     customPalette: customPalette ?? (lineColor ? [lineColor] : undefined),
@@ -34,10 +37,21 @@ export function MiniLineChart({
     dataLength: 1,
   });
   const curve = miniCurves[variant] ?? miniCurves.natural;
-  const animated = animate ? ` ${CHART_CLASS_PREFIX}-mini-chart-mark--animated` : "";
+  const animated = animate && styles.animated;
 
   return (
-    <MiniChartFrame chart="line" size={size} className={className} onClick={onLineClick}>
+    <MiniChartFrame
+      chart="line"
+      size={size}
+      className={clsx(
+        styles.root,
+        names.root,
+        isAnimationActive && names.isAnimationActive.true,
+        className,
+      )}
+      svgClassName={clsx(styles.svg, names.svg)}
+      onClick={onLineClick}
+    >
       {(width, height) => {
         const { points, x, y } = miniLineGeometry(data, width, height);
         const lineD =
@@ -50,7 +64,7 @@ export function MiniLineChart({
         return (
           <>
             <path
-              className={`${CLASS}-line${animated}`}
+              className={clsx(names.line, animated)}
               d={lineD}
               fill="none"
               stroke={color}
@@ -58,7 +72,7 @@ export function MiniLineChart({
             />
             {single && (
               <circle
-                className={`${CLASS}-point${animated}`}
+                className={clsx(names.point, styles.point, animated)}
                 cx={x(0)}
                 cy={y(single.value)}
                 r={MINI_POINT_RADIUS}
