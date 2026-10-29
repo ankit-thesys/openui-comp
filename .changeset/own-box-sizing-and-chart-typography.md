@@ -1,5 +1,5 @@
 ---
-"@openuidev/react-components": patch
+"@openuidev/react-components": minor
 ---
 
 Modal content, VisualCard, OverviewCard's card and ImageBlock (root, image and loader) declare
