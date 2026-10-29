@@ -68,7 +68,7 @@ export const openuiDashboardComponentGroups: ComponentGroup[] = [
       'Use DashboardCardHeader as the first child inside MediumCard or LargeCard when the card needs title/subtext plus optional compact controls. If a card has a clear leading KPI or score, prefer making that value the DashboardCardHeader title with titleType "number" and use the subtitle for the label; use titleType "text" for descriptive card titles.',
       "Do not use FilterBar, Image, ImageGallery, Separator, CodeBlock, or Form inside MediumCard or LargeCard.",
       "Do not use PieChart, donut charts, RadialChart, or RadarChart inside LargeCard.",
-      'When a CardRow contains three MediumCards and a MediumCard uses a PieChart or donut chart, always pass appearance "semiCircular" as the fifth PieChart argument.',
+      'When a CardRow contains three MediumCards and a MediumCard uses a PieChart or donut chart, always pass appearance "semiCircular" as the sixth PieChart argument, after height.',
       "Inside LargeCard, use vertical BarChart for categorical comparisons. Do not use HorizontalBarChart in LargeCard unless the user explicitly asks for horizontal bars or the category labels are too long to read on a vertical axis.",
       "MediumCard and LargeCard accept a second positional collapsed boolean. Use MediumCard(children, true) only for dense cards with multiple body blocks, long text or markdown, or large tables. Use LargeCard(children, true) only for dense large cards in a mixed MediumCard + LargeCard row; never collapse LargeCard in large-only rows.",
       "SmallCard supports three compact forms: overview card with icon, overview card, and snippet card.",
