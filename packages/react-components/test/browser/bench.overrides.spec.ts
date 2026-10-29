@@ -32,11 +32,7 @@ const computedAll = (page: Page, className: string) =>
           } else animation.finish();
         });
         const style = getComputedStyle(el);
-        return {
-          values: Object.fromEntries(properties.map((p) => [p, style.getPropertyValue(p)])),
-          // ADR Q12: SliderBlock retains its existing important error border.
-          importantBorder: el.matches('.openui-slider-block-input[data-invalid="true"]'),
-        };
+        return Object.fromEntries(properties.map((p) => [p, style.getPropertyValue(p)]));
       }),
     Object.keys(OVERRIDE),
   );
@@ -93,13 +89,7 @@ for (const component of migrated) {
           className === "openui-sources-item-container"
             ? { ...OVERRIDE, "background-color": "rgba(0, 0, 0, 0)" }
             : OVERRIDE;
-        for (const { values, importantBorder } of styles) {
-          if (importantBorder) {
-            const { "border-top-color": _exception, ...ordinary } = values;
-            const { "border-top-color": _expectedException, ...ordinaryExpected } = expected;
-            expect(ordinary).toEqual(ordinaryExpected);
-          } else expect(values).toEqual(expected);
-        }
+        for (const values of styles) expect(values).toEqual(expected);
         if (component.folder === "Callout") {
           const animations = await page
             .locator(`.${className}`)

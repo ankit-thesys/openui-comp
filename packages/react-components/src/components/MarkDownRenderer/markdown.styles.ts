@@ -74,7 +74,7 @@ export const markdownStyles = (css: StyleCss) => ({
     color: ${primary};
     ${body}
     ${inheritWhenQuoted}
-    @container style(--_openui-inline-markdown-renderer-composite: 1) {
+    @container style(--_openui-inline-markdown-renderer-root-composite-typography: 1) {
       & {
         font: var(--openui-text-code-sm, 400 12px/1.5 "SFMono-Regular", Menlo, monospace);
         letter-spacing: var(--openui-text-code-sm-letter-spacing, 0);
@@ -258,7 +258,7 @@ export const markdownStyles = (css: StyleCss) => ({
     }
 
     /* CompositeCard's inline emphasis preserves the surrounding public text typography. */
-    @container style(--_openui-inline-markdown-renderer-composite: 1) {
+    @container style(--_openui-inline-markdown-renderer-root-composite-typography: 1) {
       & strong {
         font: inherit;
         letter-spacing: inherit;

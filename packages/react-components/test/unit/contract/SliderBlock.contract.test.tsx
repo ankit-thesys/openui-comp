@@ -9,6 +9,9 @@ it("exposes SliderBlock input and error parts through public Input states", () =
   );
   expect(html).toContain("openui-slider-block-input");
   expect(html).toContain('data-invalid="true"');
+  expect(html).toMatch(
+    /<input[^>]*aria-invalid="true"[^>]*openui-slider-block-input|<input[^>]*openui-slider-block-input[^>]*aria-invalid="true"/,
+  );
   expect(html).not.toContain("is-range");
   expect(getComponentStyles().length).toBeGreaterThan(before.length);
 });

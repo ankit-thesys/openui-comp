@@ -91,8 +91,22 @@ export const sliderStyles = (css: StyleCss) => ({
       background-color: transparent;
     }
   `,
+  // The thumb owns its states, one class plus one state each: they declare its outline and drive
+  // the value's opacity. The handle's inner part keeps its own hover fill, as in #72, so hovering
+  // the tooltip does not tint it.
   thumb: css`
     outline: none;
+    --_openui-slider-thumb-value-opacity: 0;
+    &:hover {
+      outline: none;
+      --_openui-slider-thumb-value-opacity: 1;
+    }
+    &:focus-visible {
+      outline: none;
+    }
+    &[data-disabled] {
+      outline: none;
+    }
   `,
   handle: css`
     display: block;
@@ -107,10 +121,6 @@ export const sliderStyles = (css: StyleCss) => ({
       0 1px 3px -2px oklch(0 0 0 / 0.02),
       0 2px 5px -2px oklch(0 0 0 / 0.04)
     );
-    --_openui-slider-thumb-value-opacity: 0;
-    &:hover {
-      --_openui-slider-thumb-value-opacity: 1;
-    }
   `,
   handleInner: css`
     display: flex;

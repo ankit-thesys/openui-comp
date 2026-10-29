@@ -40,9 +40,9 @@ export const entityListStyles = (css: StyleCss) => ({
     max-width: 50%;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    font: var(--_openui-entity-list-left-font);
-    letter-spacing: var(--_openui-entity-list-left-letter-spacing);
-    font-variation-settings: var(--_openui-entity-list-left-font-variation-settings);
+    font: var(--_openui-entity-list-cell-left-font);
+    letter-spacing: var(--_openui-entity-list-cell-left-letter-spacing);
+    font-variation-settings: var(--_openui-entity-list-cell-left-font-variation-settings);
     color: var(--_openui-entity-list-cell-color, inherit);
   `,
   cellRight: css`
@@ -59,16 +59,16 @@ export const entityListStyles = (css: StyleCss) => ({
   `,
   size: {
     default: css`
-      --_openui-entity-list-left-font: var(
+      --_openui-entity-list-cell-left-font: var(
         --openui-text-body-default,
         400 16px/1.5 "Inter",
         sans-serif
       );
-      --_openui-entity-list-left-letter-spacing: var(
+      --_openui-entity-list-cell-left-letter-spacing: var(
         --openui-text-body-default-letter-spacing,
         -0.01em
       );
-      --_openui-entity-list-left-font-variation-settings: var(
+      --_openui-entity-list-cell-left-font-variation-settings: var(
         --openui-font-variation-regular,
         "wght" 440
       );
@@ -100,9 +100,16 @@ export const entityListStyles = (css: StyleCss) => ({
       );
     `,
     small: css`
-      --_openui-entity-list-left-font: var(--openui-text-body-sm, 400 14px/1.5 "Inter", sans-serif);
-      --_openui-entity-list-left-letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);
-      --_openui-entity-list-left-font-variation-settings: var(
+      --_openui-entity-list-cell-left-font: var(
+        --openui-text-body-sm,
+        400 14px/1.5 "Inter",
+        sans-serif
+      );
+      --_openui-entity-list-cell-left-letter-spacing: var(
+        --openui-text-body-sm-letter-spacing,
+        -0.01em
+      );
+      --_openui-entity-list-cell-left-font-variation-settings: var(
         --openui-font-variation-regular,
         "wght" 440
       );

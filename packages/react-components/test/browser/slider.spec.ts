@@ -11,6 +11,24 @@ const open = async (page: Page, params: URLSearchParams) => {
   await expect(page.locator(".openui-slider-thumb").first()).toBeVisible();
 };
 
+// The outline style that the library's `.<thumb class><suffix>` rule declares, or null if none.
+const libraryOutline = (page: Page, suffix: string) =>
+  page.evaluate((suffix) => {
+    const thumb = document.querySelector(".openui-slider-thumb")!;
+    const generated = [...thumb.classList].filter((name) => /^go\d+$/.test(name));
+    const selectors = new Set(generated.map((name) => `.${name}${suffix}`));
+    let outline: string | null = null;
+    const visit = (rules: CSSRuleList) => {
+      for (const rule of rules) {
+        if (rule instanceof CSSStyleRule && selectors.has(rule.selectorText.replace(/"/g, "")))
+          outline = rule.style.getPropertyValue("outline-style") || outline;
+        else if (rule instanceof CSSGroupingRule) visit(rule.cssRules);
+      }
+    };
+    visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
+    return outline;
+  }, suffix);
+
 for (const layer of ["", "openui"]) {
   for (const position of ["before", "after"]) {
     for (const state of ["hover", "focus-visible", "disabled"] as const) {
@@ -18,7 +36,7 @@ for (const layer of ["", "openui"]) {
         page,
       }) => {
         const suffix = state === "disabled" ? "[data-disabled]" : `:${state}`;
-        const css = `.openui-slider-thumb${suffix} { outline: 3px solid rgb(1, 2, 3); background-color: rgb(4, 5, 6); }`;
+        const css = `.openui-slider-thumb${suffix} { outline: 3px solid rgb(1, 2, 3); }`;
         const params = new URLSearchParams({
           layer,
           ...(state === "disabled" ? { disabled: "1" } : {}),
@@ -30,8 +48,11 @@ for (const layer of ["", "openui"]) {
         if (state === "hover") await thumb.hover();
         if (state === "focus-visible") await page.keyboard.press("Tab");
         if (state === "focus-visible") await expect(thumb).toBeFocused();
+        // The library styles this state on the thumb's own class, so the override competes with it.
+        expect(await libraryOutline(page, suffix)).toBe("none");
+        await expect(thumb).toHaveCSS("outline-style", "solid");
+        await expect(thumb).toHaveCSS("outline-width", "3px");
         await expect(thumb).toHaveCSS("outline-color", "rgb(1, 2, 3)");
-        await expect(thumb).toHaveCSS("background-color", "rgb(4, 5, 6)");
       });
     }
 
@@ -87,22 +108,46 @@ test("SliderBlock composes Input sizing, validation and slider updates", async (
   await expect(inputs.first()).toHaveCSS("height", "36px");
   await expect(inputs.first()).toHaveCSS("padding-left", "8px");
   await inputs.first().fill("-1");
-  await expect(inputs.first()).toHaveAttribute("data-invalid", "true");
+  await expect(inputs.first()).toHaveAttribute("aria-invalid", "true");
   await expect(page.locator(".openui-slider-block-header")).toHaveAttribute("data-invalid", "true");
   await expect(page.locator(".openui-slider-block-error-message")).toContainText(
     "between 0 and 100",
   );
-  const border = await read(inputs.first(), "border-top-color");
-  await page.addStyleTag({
-    content:
-      ".openui-slider-block-input[data-invalid=true] { border-color: rgb(1, 2, 3); background-color: rgb(4, 5, 6); }",
-  });
-  expect(await read(inputs.first(), "border-top-color")).toBe(border); // documented !important exception
-  await expect(inputs.first()).toHaveCSS("background-color", "rgb(4, 5, 6)");
   await inputs.first().fill("50");
+  await expect(inputs.first()).not.toHaveAttribute("aria-invalid");
   await expect(page.locator(".openui-slider-block-error-message")).toHaveCount(0);
   await expect(page.getByRole("slider").first()).toHaveAttribute("aria-valuenow", "50");
 });
+
+// SliderBlock's error input uses Input's public invalid state, so Input's state override reaches
+// it, as does the SliderBlock part's, focused or not.
+for (const layer of ["", "openui"]) {
+  for (const position of ["before", "after"]) {
+    for (const selector of [
+      '.openui-input[aria-invalid="true"]',
+      '.openui-slider-block-input[aria-invalid="true"]',
+    ]) {
+      test(`SliderBlock invalid input takes ${selector} ${position} the library (${layer || "default"})`, async ({
+        page,
+      }) => {
+        const css = `${selector} { border-color: rgb(1, 2, 3); box-shadow: rgb(4, 5, 6) 0px 0px 0px 1px; }`;
+        const params = new URLSearchParams("block&range");
+        params.set("layer", layer);
+        if (position === "before") params.set("css", css);
+        await open(page, params);
+        if (position === "after") await page.addStyleTag({ content: css });
+        const input = page.locator(".openui-slider-block-input").first();
+        await input.fill("-1");
+        await expect(input).toHaveAttribute("aria-invalid", "true");
+        expect(await read(input, "border-top-color")).toBe("rgb(1, 2, 3)");
+        expect(await read(input, "box-shadow")).toBe("rgb(4, 5, 6) 0px 0px 0px 1px");
+        await input.blur();
+        expect(await read(input, "border-top-color")).toBe("rgb(1, 2, 3)");
+        expect(await read(input, "box-shadow")).toBe("rgb(4, 5, 6) 0px 0px 0px 1px");
+      });
+    }
+  }
+}
 
 test("SliderBlock Select keeps its public parts and updates through a portal", async ({ page }) => {
   await open(page, new URLSearchParams("block&discrete&range"));

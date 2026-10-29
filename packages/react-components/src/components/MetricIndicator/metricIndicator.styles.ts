@@ -53,7 +53,7 @@ export const metricIndicatorStyles = (css: StyleCss) => ({
     font: var(--openui-text-body-sm, 400 14px/1.5 "Inter", sans-serif);
     letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);
     font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
-    margin-top: var(--_openui-metric-indicator-subtext-margin, 0);
+    margin-top: 0;
   `,
   trend: css`
     font: var(--openui-text-numbers-sm, 400 14px/1.5 "Inter", sans-serif);
