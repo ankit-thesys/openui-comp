@@ -22,6 +22,7 @@ Multi-context, one context per package: root `GLOSSARY-MAP.md` points to `packag
 | Decision (ADR) for one package                              | `packages/<pkg>/docs/adr/NNNN-<slug>.md`                                                         |
 | Spec or ticket breakdown for one package                    | `packages/<pkg>/docs/specs/<slug>.md` (also published to the issue tracker when a skill says so) |
 | Glossary terms                                              | `packages/<pkg>/GLOSSARY.md`, listed in `GLOSSARY-MAP.md`                                        |
+| Generated reference (never hand-edit; regenerate)           | `packages/<pkg>/docs/reference/<slug>.md`                                                        |
 | Agent and skill configuration                               | `docs/agents/`                                                                                   |
 | Scratch notes, lab output, drafts not meant to be committed | `.workspace/` (gitignored)                                                                       |
 
