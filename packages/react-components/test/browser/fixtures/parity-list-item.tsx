@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { Icon, image, mode, useReady } from "./lists-tables-parity-shared";
 declare const __PARITY_BASELINE__: boolean;
 const parts = JSON.stringify({
-  item: __PARITY_BASELINE__ ? ".openui-list-item" : ".openui-list-item-item",
+  item: __PARITY_BASELINE__ ? ".openui-list-item" : ".openui-list-item-row",
   ...Object.fromEntries(
     [
       "indicator",
@@ -33,7 +33,7 @@ function Fixture() {
                 data-case={`${size}/${variant}/subtitle-${subtitle}/action-${action}`}
                 data-parity-parts={parts}
                 data-parity-target={
-                  __PARITY_BASELINE__ ? ".openui-list-item" : ".openui-list-item-item"
+                  __PARITY_BASELINE__ ? ".openui-list-item" : ".openui-list-item-row"
                 }
                 size={size}
                 variant={variant}

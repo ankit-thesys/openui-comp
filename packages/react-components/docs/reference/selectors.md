@@ -8,6 +8,11 @@ A root is always present and a part whenever its element renders; a modifier is 
 prop has that value, including its default. Every component follows this convention; the states
 each family's library rules use are listed in the [package README](../../README.md#stable-selectors).
 
+A shared internal is a class one module family owns and other families render: the shared
+`.openui-border-box` base, the `.openui-skeleton-pulse` animation and the `openui-chart-*` chart
+foundations. It keeps the owning family's name, so it is not prefixed by the component that
+renders it, and it is a public override target like any other class.
+
 ## _shared/cards
 
 | Stable class | Kind | Present when |
@@ -537,10 +542,10 @@ each family's library rules use are listed in the [package README](../../README.
 
 | Stable class | Kind | Present when |
 | --- | --- | --- |
-| `.openui-chart-empty` | Part (`empty`) | On that part, whenever it renders |
-| `.openui-chart-empty-text` | Part (`emptyText`) | On that part, whenever it renders |
-| `.openui-chart-y-axis-label` | Part (`yAxisLabel`) | On that part, whenever it renders |
-| `.openui-chart-x-axis-label` | Part (`xAxisLabel`) | On that part, whenever it renders |
+| `.openui-chart-empty` | Part (`empty`), shared internal | On that part, whenever it renders |
+| `.openui-chart-empty-text` | Part (`emptyText`), shared internal | On that part, whenever it renders |
+| `.openui-chart-y-axis-label` | Part (`yAxisLabel`), shared internal | On that part, whenever it renders |
+| `.openui-chart-x-axis-label` | Part (`xAxisLabel`), shared internal | On that part, whenever it renders |
 
 ## Charts/shared/core/DefaultLegend
 
@@ -564,18 +569,18 @@ each family's library rules use are listed in the [package README](../../README.
 
 | Stable class | Kind | Present when |
 | --- | --- | --- |
-| `.openui-chart-tooltip` | Root | Always |
-| `.openui-chart-tooltip-portal` | Part (`portal`) | On that part, whenever it renders |
-| `.openui-chart-tooltip-label` | Part (`label`) | On that part, whenever it renders |
-| `.openui-chart-tooltip-content` | Part (`content`) | On that part, whenever it renders |
-| `.openui-chart-tooltip-content-item` | Part (`item`) | On that part, whenever it renders |
-| `.openui-chart-tooltip-content-indicator` | Part (`indicator`) | On that part, whenever it renders |
-| `.openui-chart-tooltip-content-value-wrapper` | Part (`valueWrapper`) | On that part, whenever it renders |
-| `.openui-chart-tooltip-content-label` | Part (`contentLabel`) | On that part, whenever it renders |
-| `.openui-chart-tooltip-content-value` | Part (`value`) | On that part, whenever it renders |
-| `.openui-chart-tooltip-content-item-separator` | Part (`separator`) | On that part, whenever it renders |
-| `.openui-chart-tooltip-content-view-more` | Part (`viewMore`) | On that part, whenever it renders |
-| `.openui-chart-tooltip-label-text` | Part (`labelText`) | On that part, whenever it renders |
+| `.openui-chart-tooltip` | Root, shared internal | Always |
+| `.openui-chart-tooltip-portal` | Part (`portal`), shared internal | On that part, whenever it renders |
+| `.openui-chart-tooltip-label` | Part (`label`), shared internal | On that part, whenever it renders |
+| `.openui-chart-tooltip-content` | Part (`content`), shared internal | On that part, whenever it renders |
+| `.openui-chart-tooltip-content-item` | Part (`item`), shared internal | On that part, whenever it renders |
+| `.openui-chart-tooltip-content-indicator` | Part (`indicator`), shared internal | On that part, whenever it renders |
+| `.openui-chart-tooltip-content-value-wrapper` | Part (`valueWrapper`), shared internal | On that part, whenever it renders |
+| `.openui-chart-tooltip-content-label` | Part (`contentLabel`), shared internal | On that part, whenever it renders |
+| `.openui-chart-tooltip-content-value` | Part (`value`), shared internal | On that part, whenever it renders |
+| `.openui-chart-tooltip-content-item-separator` | Part (`separator`), shared internal | On that part, whenever it renders |
+| `.openui-chart-tooltip-content-view-more` | Part (`viewMore`), shared internal | On that part, whenever it renders |
+| `.openui-chart-tooltip-label-text` | Part (`labelText`), shared internal | On that part, whenever it renders |
 
 ## Charts/shared/core/StackedLegend
 
@@ -595,9 +600,9 @@ each family's library rules use are listed in the [package README](../../README.
 | `.openui-stacked-legend-item-value` | Part (`value`) | On that part, whenever it renders |
 | `.openui-stacked-legend-show-more-button` | Part (`showMore`) | On that part, whenever it renders |
 | `.openui-stacked-legend-separator` | Part (`separator`) | On that part, whenever it renders |
-| `.openui-chart-with-stacked-legend` | Part (`layout`) | On that part, whenever it renders |
-| `.openui-chart-with-stacked-legend-chart` | Part (`chart`) | On that part, whenever it renders |
-| `.openui-chart-with-stacked-legend-legend` | Part (`legend`) | On that part, whenever it renders |
+| `.openui-chart-with-stacked-legend` | Part (`layout`), shared internal | On that part, whenever it renders |
+| `.openui-chart-with-stacked-legend-chart` | Part (`chart`), shared internal | On that part, whenever it renders |
+| `.openui-chart-with-stacked-legend-panel` | Part (`legend`), shared internal | On that part, whenever it renders |
 
 ## CheckBoxGroup
 
@@ -758,7 +763,7 @@ each family's library rules use are listed in the [package README](../../README.
 | --- | --- | --- |
 | `.openui-editable-table-scroll-container` | Part (`scroll`) | On that part, whenever it renders |
 | `.openui-editable-table-scroll-control` | Part (`control`) | On that part, whenever it renders |
-| `.openui-editable-table-table` | Part (`table`) | On that part, whenever it renders |
+| `.openui-editable-table-grid` | Part (`table`) | On that part, whenever it renders |
 | `.openui-editable-table-header-container` | Part (`header`) | On that part, whenever it renders |
 | `.openui-editable-table-header-icon` | Part (`headerIcon`) | On that part, whenever it renders |
 | `.openui-editable-table-changes-container` | Part (`changes`) | On that part, whenever it renders |
@@ -768,8 +773,8 @@ each family's library rules use are listed in the [package README](../../README.
 | `.openui-editable-table-head` | Part (`head`) | On that part, whenever it renders |
 | `.openui-editable-table-row` | Part (`row`) | On that part, whenever it renders |
 | `.openui-editable-table-cell` | Part (`cell`) | On that part, whenever it renders |
-| `.openui-editable-table-table-header` | Part (`tableHeader`) | On that part, whenever it renders |
-| `.openui-editable-table-table-body` | Part (`tableBody`) | On that part, whenever it renders |
+| `.openui-editable-table-grid-header` | Part (`tableHeader`) | On that part, whenever it renders |
+| `.openui-editable-table-grid-body` | Part (`tableBody`) | On that part, whenever it renders |
 | `.openui-editable-table-header-row` | Part (`headerRow`) | On that part, whenever it renders |
 | `.openui-editable-table-icon` | Part (`icon`) | On that part, whenever it renders |
 
@@ -799,7 +804,7 @@ each family's library rules use are listed in the [package README](../../README.
 
 | Stable class | Kind | Present when |
 | --- | --- | --- |
-| `.openui-form-control-hint` | Root | Always |
+| `.openui-hint` | Root | Always |
 
 ## IconButton
 
@@ -980,7 +985,7 @@ each family's library rules use are listed in the [package README](../../README.
 | Stable class | Kind | Present when |
 | --- | --- | --- |
 | `.openui-list-item` | Root | Always |
-| `.openui-list-item-item` | Part (`item`) | On that part, whenever it renders |
+| `.openui-list-item-row` | Part (`item`) | On that part, whenever it renders |
 | `.openui-list-item-indicator` | Part (`indicator`) | On that part, whenever it renders |
 | `.openui-list-item-indicator-number` | Part (`indicatorNumber`) | On that part, whenever it renders |
 | `.openui-list-item-indicator-image` | Part (`indicatorImage`) | On that part, whenever it renders |
@@ -1522,10 +1527,10 @@ each family's library rules use are listed in the [package README](../../README.
 
 | Stable class | Kind | Present when |
 | --- | --- | --- |
-| `.openui-border-box` | Root | Always |
+| `.openui-border-box` | Root, shared internal | Always |
 
 ## SkeletonPulse
 
 | Stable class | Kind | Present when |
 | --- | --- | --- |
-| `.openui-skeleton-pulse` | Root | Always |
+| `.openui-skeleton-pulse` | Root, shared internal | Always |

@@ -47,6 +47,12 @@ export async function readStableNames() {
 }
 
 const code = (text) => `\`${text}\``;
+// Shared internals (ADR Q19): classes one module family owns and other families render. They keep
+// the owning family's name (the shared base, the skeleton pulse and the `openui-chart-*` family).
+const sharedInternal = (name) =>
+  name === "openui-border-box" ||
+  name === "openui-skeleton-pulse" ||
+  name.startsWith("openui-chart-");
 const prop = (axis, value, name) => {
   const modifier = name.split("--")[1];
   if (value === "true") {
@@ -72,8 +78,9 @@ export function renderSelectorReference(entries) {
     const rows = [];
     for (const [key, value] of Object.entries(names)) {
       if (typeof value === "string") {
+        const kind = key === "root" ? "Root" : `Part (${code(key)})`;
         rows.push(
-          `| ${code(`.${value}`)} | ${key === "root" ? "Root" : `Part (${code(key)})`} | ${key === "root" ? "Always" : "On that part, whenever it renders"} |`,
+          `| ${code(`.${value}`)} | ${sharedInternal(value) ? `${kind}, shared internal` : kind} | ${key === "root" ? "Always" : "On that part, whenever it renders"} |`,
         );
       }
     }
@@ -101,6 +108,11 @@ export function renderSelectorReference(entries) {
     "A root is always present and a part whenever its element renders; a modifier is present when the",
     "prop has that value, including its default. Every component follows this convention; the states",
     "each family's library rules use are listed in the [package README](../../README.md#stable-selectors).",
+    "",
+    "A shared internal is a class one module family owns and other families render: the shared",
+    "`.openui-border-box` base, the `.openui-skeleton-pulse` animation and the `openui-chart-*` chart",
+    "foundations. It keeps the owning family's name, so it is not prefixed by the component that",
+    "renders it, and it is a public override target like any other class.",
     "",
     ...sections.flatMap((section) => [section, ""]),
   ].join("\n");

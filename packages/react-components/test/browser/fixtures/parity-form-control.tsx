@@ -6,7 +6,7 @@ declare const __PARITY_BASELINE__: boolean;
 const mode = new URLSearchParams(location.search).get("mode") === "dark" ? "dark" : "light";
 const parts = JSON.stringify({
   root: ".openui-form-control",
-  hint: __PARITY_BASELINE__ ? ".openui-hint" : ".openui-form-control-hint",
+  hint: ".openui-hint",
   label: ".openui-label",
   asterisk: ".openui-label-required-asterisk",
   input: ".openui-input",

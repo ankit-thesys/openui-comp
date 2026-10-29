@@ -8,7 +8,7 @@ export function renderEditableParity(state: PinnedState) {
   const parts = {
     root: __PARITY_BASELINE__ ? ".openui-editable-table-wrapper" : ".openui-editable-table",
     scroll: ".openui-editable-table-scroll-container",
-    table: ".openui-editable-table-table",
+    table: ".openui-editable-table-grid",
     header: "thead",
     head: "th",
     headerContainer: ".openui-editable-table-header-container",
