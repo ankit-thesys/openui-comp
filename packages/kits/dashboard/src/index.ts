@@ -1,7 +1,9 @@
-"use client";
-
-// The dashboard kit defines no React components of its own: its rendering
-// vocabulary comes entirely from @openuidev/react-components. What it does own
-// is `Stack`, the library's root layout primitive, which is declared here rather
-// than in the shared core because only the dashboard library uses it.
-export { Stack, StackSchema } from "./lib/openuiLibrary/Stack";
+/**
+ * Root entry: the dashboard shell primitives a consumer places directly.
+ *
+ * Everything else is emitted by the model through the library in
+ * `@openuidev/dashboard-kit/lib`.
+ */
+export { CardRowComponent } from "./lib/dashboard/components/CardRow";
+export { DashboardComponent } from "./lib/dashboard/components/Dashboard";
+export { SectionComponent } from "./lib/dashboard/components/Section";

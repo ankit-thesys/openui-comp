@@ -1,0 +1,37 @@
+"use client";
+
+import { BarChart } from "@openuidev/react-components";
+import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
+import { DASHBOARD_CHART_PALETTE } from "../../shared/chartPalette";
+import {
+  buildChartData,
+  DASHBOARD_CHART_HEIGHT,
+  getCondensedCartesianChartHeight,
+} from "../chartHelpers";
+import { barChartPropsSchema, type BarChartProps } from "./schema";
+
+function BarChartRenderer({ props }: ComponentRenderProps<BarChartProps>) {
+  const data = buildChartData(props.labels, props.series);
+  if (!data.length) return null;
+
+  return (
+    <BarChart
+      data={data}
+      categoryKey="category"
+      customPalette={DASHBOARD_CHART_PALETTE}
+      variant={props.variant}
+      xAxisLabel={props.xLabel}
+      yAxisLabel={props.yLabel}
+      isAnimationActive={false}
+      condensed
+      height={getCondensedCartesianChartHeight(DASHBOARD_CHART_HEIGHT)}
+    />
+  );
+}
+
+export const BarChartComponent = defineComponent({
+  name: "BarChart",
+  props: barChartPropsSchema,
+  description: "Vertical bars; use for comparing values across categories with one or more series.",
+  component: BarChartRenderer,
+});
