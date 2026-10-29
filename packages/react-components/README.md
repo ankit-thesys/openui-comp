@@ -269,7 +269,7 @@ notes are in the Charts section below; renamed classes are in the
 | SectionBlock (FoldableSection) | `[data-state="open"]`, `[data-state="closed"]` |
 | Select | `:hover`, `:focus-within`, `:disabled`, `[data-disabled]`, `[data-highlighted]`, `[data-placeholder]`, `[data-state="open"/"checked"]` |
 | Separator | `[data-orientation="horizontal"/"vertical"]` |
-| Slider, SliderBlock | Slider `:hover`, `[data-disabled]`, `[data-at-min]`, `[data-state="active"]` (marks); SliderBlock `[data-invalid="true"]`, `[data-range]` |
+| Slider, SliderBlock | Slider root `[data-disabled]`; range `[data-at-min]`; thumb `:hover`, `:focus-visible`, `[data-disabled]`; handle inner `:hover`; marks `[data-state="active"]`. SliderBlock header `[data-invalid="true"]`; controls `[data-range]`; input `[aria-invalid="true"]`, `:focus-within` |
 | Table | `[data-scrollable="true"]`, `[data-side]`, `[data-disabled="true"]` |
 | Tabs | `:hover`, `[data-state="active"]` |
 | TextBlock | `[data-clamped]` |
@@ -1008,7 +1008,8 @@ Callout, which is unchanged. Chat-kit's ModelSwitcher styles (`modelSwitcher.sty
 `chat-kit-tone`, `dashboard-kit`, `chat-kit-separate`, `standalone-chat-kit` and
 `nested-kit-discovery`) select `.openui-tag.openui-tag-sm` and `.openui-tag-text` on this
 package's Tag. `.openui-tag` and `.openui-tag-text` are unchanged, but `.openui-tag-sm` is now
-`.openui-tag--size-sm`, so that rule stops matching until the kit is updated; `react-chat-kit`'s captured test results
+`.openui-tag--size-sm`, so that rule stops matching until the kit is updated. `react-chat-kit`
+has the same rule in its own `ModelSwitcher/modelSwitcher.styles.ts`, and its captured test results
 (`__tests__/results/*/baseline.css`) also contain those names. No chat-kit files were changed.
 
 The #97 media migration changes no prop names; Carousel buttons now forward consumer
