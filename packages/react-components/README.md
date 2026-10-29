@@ -95,6 +95,62 @@ to a stable class to restyle it:
 }
 ```
 
+### Derived data attributes
+
+Some components describe a derived condition (one the component works out from its props, data
+or layout) with a data attribute of their own. These attributes are public API, like the stable
+classes: combine one with its element's class to restyle that case, such as
+`.openui-callout[data-autodismiss] { animation: none; }`. A boolean attribute is absent when false,
+never `="false"`. Each one is pinned by `test/unit/contract/data-attributes.test.tsx`, or by a
+browser spec where it needs layout, events or a portal (the test file lists which). Attributes that
+third-party primitives set (Radix, react-day-picker), the chart root's `data-openui-chart` export
+marker, the `data-source-id` identifier, and the citation input attributes `data-component-type`
+and `data-citation-indices` are not part of this list.
+
+| Component | Element | Attribute and values | Present when |
+| --- | --- | --- | --- |
+| ListItem | `.openui-list-item`, `.openui-list-item-row` | `data-action="true"` | `onClick` is set |
+| ListItem | `.openui-list-item-row` | `data-subtitle="true"` | `subtitle` is set |
+| MetricIndicator | `.openui-metric-indicator` | `data-subtext="true"` | `subtext` is set |
+| Callout | `.openui-callout` | `data-autodismiss="true"` | `duration` is set |
+| ContextCardBlock | `.openui-context-card` | `data-background-image="true"` | the item has `bgImageSrc` |
+| ImageGallery | `.openui-image-gallery` | `data-layout="single"`, `"double"`, `"triple"`, `"quad"` or `"default"` | Always: 1, 2, 3, 4, or 5 and more images |
+| TextBlock | `.openui-text-block-secondary` | `data-clamped="true"` | `secondaryMaxLines` is set |
+| SliderBlock | `.openui-slider-block-controls` | `data-range=""` | the value has two ends (a range slider) |
+| Calendar | `.openui-calendar-day` | `data-selection="single"` or `"multiple"` (the `mode`) | the day is selected in `single` or `multiple` mode; range days use `[data-range-start]`, `[data-range-middle]` and `[data-range-end]` |
+| Table (ScrollableTable), EditableTable | `.openui-scrollable-table-control`, `.openui-editable-table-scroll-control` | `data-side="left"` or `"right"` | Always on a scroll button; the buttons render while the table overflows |
+| AreaChart, BarChart, LineChart | `.openui-{area,bar,line}-chart-svg` | `data-overflow="visible"` | On the chart's only SVG when it fits, and on the fixed Y-axis SVG when it scrolls |
+| Chart legends, mini charts | `.openui-default-legend-item`, `.openui-stacked-legend-item`, `.openui-mini-{line,area,bar}-chart` | `data-clickable=""` | The item or chart responds to clicks: cartesian legend items always, others when a click handler is set |
+| Table (ScrollableTable), EditableTable | `.openui-scrollable-table`, `.openui-editable-table-grid` | `data-scrollable="true"` | The table is wider than its container |
+| OptionCards | `.openui-option-cards-row` | `data-columns="1"`, `"2"` or `"3"` | Always: the number of cards in that row |
+| OptionCards | `.openui-option-cards-item` | `data-span="full"` | The last card when the count is odd |
+| Card blocks (Composite, Context, Overview, Snippet, Visual) | `.openui-card-block-layout` | `data-card-type="CompositeCard"`, `"ContextCard"`, `"OverviewCard"`, `"SnippetCard"` or `"VisualCard"` | Always: the block's card type |
+| Card blocks | `.openui-card-block-layout` | `data-layout="grid"` or `"carousel"` | Always: the `layout` prop |
+| Card blocks | `.openui-card-block-layout` | `data-count="<n>"` | Always: the number of items |
+| Card blocks | `.openui-card-block-layout-row` | `data-columns="1"`, `"2"` or `"3"` | Always in the grid layout: the number of cards in that row (up to 2 for Composite and Snippet, up to 3 for Context, Overview and Visual) |
+| Card blocks | `.openui-card-block-layout-item`, `.openui-card-block-layout-carousel-item` | `data-span="full"` | The last card when the count is odd |
+| Card blocks, Carousel | `.openui-card-block-layout-carousel`, `.openui-carousel-content` | `data-mask="none"`, `"left"`, `"right"` or `"both"` | Always: the edges with more content to scroll to |
+| ImageGallery | `.openui-image-gallery-image` | `data-position="1"`, `"2"`, … | Always: the tile's position, from 1 |
+| Image | `.openui-image` | `data-error="true"` | The image failed to load |
+| ImageBlock | `.openui-image-block`, `.openui-image-block-image` | `data-error="true"` | The image failed to load |
+| ImageBlock | `.openui-image-block`, `.openui-image-block-image` | `data-breakpoint="mobile"`, `"tablet"` or `"desktop"` | Always: from the block's width (under 480px, under 800px, wider); `mobile` until measured |
+| ImageBlock | `.openui-image-block` | `data-loading="true"` | The image is still loading |
+| BarChart, HorizontalBarChart | `.openui-{bar,horizontal-bar}-chart-bar`, `-internal-line` | `data-negative=""` | The bar's value is negative |
+| AreaChart, BarChart, LineChart, ScatterChart | `.openui-{area,bar,line,scatter}-chart-grid-line` | `data-zero=""` | The grid line at zero, when the axis spans negative values |
+| Chart tooltip | `.openui-chart-tooltip-portal` | `data-positioned=""` | The tooltip has been positioned |
+| Chart tooltip | `.openui-chart-tooltip-content-item`, `-content-indicator`, `-content-value-wrapper` | `data-layout="two-items"` or `"multiple"` | Always: `two-items` for one or two items, `multiple` for more |
+| Chart tooltip | `.openui-chart-tooltip-content-item-separator` inside an item | `data-last=""` | The last item's separator |
+| HeatmapChart | `.openui-heatmap-chart-cell` | `data-empty=""` | The cell has no value |
+| CalendarHeatmap | `.openui-calendar-heatmap-cell` | `data-level="0"` to `"4"` | Always: the day's contribution level |
+| CalendarHeatmap | `.openui-calendar-heatmap-cell` | `data-ghost=""` | The day is outside the displayed range (padding) |
+| CalendarHeatmap | `.openui-calendar-heatmap-cell` | `data-dimmed=""` | A level is hovered (a cell or the legend) and this cell has another level |
+| Slider | `.openui-slider-range` | `data-at-min=""` | A single-value slider sits at `min` |
+| Calendar | `.openui-calendar-day` | `data-today-unselected="true"` | The day is today and not selected |
+| Select | `.openui-select-viewport` | `data-position="item-aligned"` or `"popper"` | Always: the content's `position` |
+| DatePicker | `.openui-date-picker-trigger` | `data-placeholder="true"` | No date (or no complete range) is selected |
+| Hint, SliderBlock | `.openui-hint`, `.openui-slider-block-header` | `data-invalid="true"` | The field has an error (FormControl `hasError`, or an out-of-range SliderBlock value) |
+| TextContentWrapper | `.openui-text-content-wrapper` | `data-mode="light"` or `"dark"` | Always: the theme mode |
+
 ### The override guarantee
 
 Library rules for these components weigh one generated class, plus at most one state. Content the
@@ -249,7 +305,7 @@ notes are in the Charts section below; renamed classes are in the
 | --- | --- |
 | Accordion | `:focus-within`, `[data-state="open"]`, `[data-state="closed"]` |
 | Button, IconButton | `:hover`, `:active`, `:disabled` |
-| Calendar | `:hover`, `:focus-visible`, `:focus-within`, `:disabled`, `[data-disabled]`, `[data-highlighted]`, `[data-state="open"]`, `[data-selection="single"]`, `[data-range-start]`, `[data-range-middle]`, `[data-range-end]`, `[data-today-unselected]` |
+| Calendar | `:hover`, `:focus-visible`, `:focus-within`, `:disabled`, `[data-disabled]`, `[data-highlighted]`, `[data-state="open"]`, `[data-selection]`, `[data-range-start]`, `[data-range-middle]`, `[data-range-end]`, `[data-today-unselected]` |
 | Callout | `[data-autodismiss]` |
 | Carousel, card block layouts | `[data-mask="left"/"right"/"both"]`; layouts also `[data-columns="1"/"2"/"3"]`, `[data-span="full"]` |
 | Cartesian charts (Area, Bar, HorizontalBar, Line, Scatter) | `[data-zero]` (grid line), `[data-negative]` (bar), `[data-overflow="visible"]` |
@@ -349,7 +405,7 @@ theme.
 .openui-select-label {
   font-size: 14px;
 }
-.openui-calendar-day[data-selection="single"] {
+.openui-calendar-day[data-selection] {
   background: navy;
 }
 .openui-date-picker-content {
@@ -769,10 +825,10 @@ Renamed stable classes and props, per component converted to the flat convention
 | OptionCards                        | `.openui-option-cards-root`, `__{grid,row,item}`, `.openui-option-card`, `__{content,top,text,title,subtitle}`                              | `.openui-option-cards`, `.openui-option-cards-{grid,row,item,card,content,top,text,title,subtitle}`                                                                                                                         |
 | OptionCards                        | `.openui-option-card__top--{icon,image}`                                                                                                    | `.openui-option-cards-top--top-content-variant-{icon,image}` (`item.topContentVariant`, default `icon` emitted)                                                                                                             |
 | OptionCards                        | `--selected`, `--disabled`, `__row--{1,2,3}`, `__grid--{responsive,odd-count}`                                                              | Selection `[aria-checked]`, native `:disabled`; row `[data-columns]`, last spanning item `[data-span="full"]`; responsive grid is always enabled                                                                            |
-| ListItem                           | `.openui-list-item-wrapper` (root), `.openui-list-item` (inner item)                                                                        | `.openui-list-item` (consumer root), `.openui-list-item-item` (inner part)                                                                                                                                                  |
+| ListItem                           | `.openui-list-item-wrapper` (root), `.openui-list-item` (inner item)                                                                        | `.openui-list-item` (consumer root), `.openui-list-item-row` (inner part)                                                                                                                                                   |
 | ListItem                           | `.openui-list-item-wrapper--small`                                                                                                          | `.openui-list-item--size-small`; default emits `--size-default`                                                                                                                                                             |
 | ListItem                           | No indicator variant class                                                                                                                  | `.openui-list-item--variant-{number,icon,image}`; default emits `--variant-number`                                                                                                                                          |
-| ListItem                           | `-wrapper-with-action`, `-clickable`, `-indicator-clickable`, `-indicator-no-subtitle`                                                      | Derived markers removed; root and item use `[data-action="true"]`, item uses `[data-subtitle="true"]`; `listHasSubtitle` emits `.openui-list-item--list-has-subtitle` only when true                                        |
+| ListItem                           | `-wrapper-with-action`, `-clickable`, `-indicator-clickable`, `-indicator-no-subtitle`                                                      | Derived markers removed; root and row use `[data-action="true"]`, row uses `[data-subtitle="true"]` (absent when false); `listHasSubtitle` emits `.openui-list-item--list-has-subtitle` only when true                                        |
 | ListItem                           | Existing indicator, content, title, subtitle and action parts                                                                               | Unchanged; the owned image also carries `.openui-list-item-image`                                                                                                                                                           |
 | ListBlock                          | `.openui-list-block--small`                                                                                                                 | `.openui-list-block--size-small`; default emits `--size-default`; variant always emits `--variant-{number,icon,image}`                                                                                                      |
 | EntityList                         | `.openui-entity-list--{default,small}`                                                                                                      | `.openui-entity-list--size-{default,small}`                                                                                                                                                                                 |
@@ -786,14 +842,14 @@ Renamed stable classes and props, per component converted to the flat convention
 | EditableTable                      | `.openui-editable-table-wrapper`                                                                                                            | `.openui-editable-table`                                                                                                                                                                                                    |
 | EditableTable                      | `-scroll-control--{left,right,disabled}`                                                                                                    | `.openui-editable-table-scroll-control[data-side="left"/"right"]`, `[data-disabled="true"]`                                                                                                                                 |
 | EditableTable                      | `-cell-outline-{top,bottom,left,right}-{selected,editing}`                                                                                  | `.openui-editable-table-cell-outline-{top,bottom,left,right}[data-state="selected"/"editing"]`; idle emits `[data-state="idle"]`; cell-base exposes the same state                                                          |
-| EditableTable                      | Unclassed table sections, rows, heads and cells                                                                                             | `-table-header`, `-table-body`, `-header-row`, `-row`, `-head`, `-cell`; column widths are private variables read by CSS so consumer width wins                                                                             |
+| EditableTable                      | Unclassed table sections, rows, heads and cells                                                                                             | `-grid` (the table), `-grid-header`, `-grid-body`, `-header-row`, `-row`, `-head`, `-cell`; column widths are private variables read by CSS so consumer width wins                                                        |
 | EditableTable                      | Select dependency classes inside cells                                                                                                      | Owned `.openui-editable-table-select-{trigger,value,icon,content,viewport,item,item-text,check-wrapper,indicator,check-icon}` parts; Radix `[data-state]` and `[data-highlighted]` states remain; portals inherit the theme |
 | EditableTable                      | Existing display, input, header, scroll and changes-bar parts                                                                               | Unchanged; URL warning wrapper also carries `-display-url-warning`; supplied icons carry `-icon`                                                                                                                            |
 | MetricIndicator family             | `.openui-metric-indicator__{row,main-value,previous-value,subtext,trend}`                                                                   | `.openui-metric-indicator-{row,main-value,previous-value,subtext,trend}`                                                                                                                                                    |
 | MetricIndicator family             | `__trend--{success,danger}`, `--has-subtext`                                                                                                | `.openui-metric-indicator-trend--direction-{up,down}`, root `[data-subtext="true"]`; `--variant-{inline,with-strikethrough}` remains                                                                                        |
 | FormControl | `.openui-form-control` | Unchanged; now the only family root class (plus the shared `.openui-border-box` opt-in). |
-| Hint | `.openui-hint` | `.openui-form-control-hint` (FormControl family member; also works standalone). |
-| Hint | `.openui-hint-error` | `.openui-form-control-hint[data-invalid="true"]` |
+| Hint | `.openui-hint` | Unchanged; Hint is exported on its own, so it keeps its own name inside FormControl too. |
+| Hint | `.openui-hint-error` | `.openui-hint[data-invalid="true"]` |
 | Input | `.openui-input` | Unchanged; now the only root class. |
 | Input | `.openui-input-{small,medium,large}` | `.openui-input--size-{small,medium,large}`; default `medium` always emitted. |
 | Input | `.openui-input-error` | `.openui-input[aria-invalid="true"]` |
@@ -829,7 +885,7 @@ Renamed stable classes and props, per component converted to the flat convention
 | Calendar | `.openui-calendar-container`, `.openui-calendar-root` | `.openui-calendar` (outer root receiving `className`/ref), `.openui-calendar-content` (DayPicker part). |
 | Calendar | `.openui-calendar-{nav,dropdowns}-{mobile,fullscreen,tray,copilot}` | `.openui-calendar-{nav,dropdowns}`; `.openui-calendar--layout-{mobile,fullscreen,tray,copilot}` on the root records LayoutContextProvider's `layout`, including default `fullscreen`. |
 | Calendar | `.openui-calendar-{single,range}-day`, `.openui-calendar-{single,range}-day-button` | `.openui-calendar-day`, `.openui-calendar-day-button` |
-| Calendar | `.openui-calendar-single-day-selected`, `.openui-calendar-range-{start,middle,end}`, `.openui-calendar-today`, `.openui-calendar-disabled` | States on `.openui-calendar-day`: `[data-selection="single"]`, `[data-range-start]`, `[data-range-middle]`, `[data-range-end]`, `[data-today-unselected]`, `[data-disabled]`. Existing DayPicker ARIA/data attributes remain. |
+| Calendar | `.openui-calendar-single-day-selected`, `.openui-calendar-range-{start,middle,end}`, `.openui-calendar-today`, `.openui-calendar-disabled` | States on `.openui-calendar-day`: `[data-selection="single" or "multiple"]` (the `mode`), `[data-range-start]`, `[data-range-middle]`, `[data-range-end]`, `[data-today-unselected]`, `[data-disabled]`. Existing DayPicker ARIA/data attributes remain. |
 | Calendar | `.openui-calendar-select-viewport-mobile` | Removed unused hook (the old Calendar never supplied its helper's `botType`); years retain the existing three-column grid in every layout. |
 | Calendar | Other existing parts and props | Unchanged. Previously unnamed DayPicker months/weeks/week/caption-label/week-number/week-number-header structures now carry matching `.openui-calendar-*` part classes. Consumer `components` maps retain their existing replacement behavior; the day-state adapter wraps either default or custom Day renderers. |
 | Calendar | `--openui-calendar-day-size`, `--openui-calendar-cell-radius` | Private `--_openui-calendar-day-size`, `--_openui-calendar-cell-radius`; use stable classes to override geometry. |
@@ -874,7 +930,7 @@ Renamed stable classes and props, per component converted to the flat convention
 | Stacked legend | `.openui-stacked-legend__item--active` | `.openui-stacked-legend-item[data-state="active"]` |
 | Stacked legend | Header, scroll-button, show-more-button and separator parts | Unchanged |
 | Stacked chart layout | `.openui-chart-with-stacked-legend` | Unchanged |
-| Stacked chart layout | `.openui-chart-with-stacked-legend__{chart,legend}` | `.openui-chart-with-stacked-legend-{chart,legend}` |
+| Stacked chart layout | `.openui-chart-with-stacked-legend__{chart,legend}` | `.openui-chart-with-stacked-legend-{chart,panel}` |
 | Stacked chart layout | `.openui-chart-with-stacked-legend--{row,column}` | `.openui-chart-with-stacked-legend[data-orientation="horizontal" or "vertical"]` |
 | Chart tooltip | `.openui-portal-tooltip` | `.openui-chart-tooltip-portal` |
 | Chart tooltip | `.openui-chart-tooltip` and its rendered `-label`, `-content*` parts | Unchanged; label text now also has `.openui-chart-tooltip-label-text` |
@@ -967,7 +1023,7 @@ react-ui never had. They are gone; use the class on the right instead:
 | `.openui-calendar-container-root` | `.openui-calendar` |
 | `.openui-date-picker-style-root` | `.openui-date-picker` / `.openui-date-picker-content` |
 | `.openui-form-control-root` | `.openui-form-control` |
-| `.openui-hint-root` | `.openui-form-control-hint` |
+| `.openui-hint-root` | `.openui-hint` |
 | `.openui-input-root` | `.openui-input` |
 | `.openui-textarea-root` | `.openui-text-area` |
 | `.openui-label-root` | `.openui-label` |
@@ -1057,3 +1113,16 @@ is no compatibility alias. Component names, root-only exports, public types and
 customization APIs are preserved. The existing `@openuidev/react-ui` package stays
 unchanged. Historical validation artifact names remain valid for their recorded
 baselines.
+
+### Names changed during the beta
+
+These classes and attributes changed after earlier betas shipped them.
+
+| Earlier beta | Now |
+| --- | --- |
+| `.openui-form-control-hint` | `.openui-hint`, inside FormControl and standalone |
+| `.openui-list-item-item` | `.openui-list-item-row` |
+| `.openui-editable-table-table`, `-table-header`, `-table-body` | `.openui-editable-table-grid`, `-grid-header`, `-grid-body` |
+| `.openui-chart-with-stacked-legend-legend` | `.openui-chart-with-stacked-legend-panel` |
+| `.openui-calendar-day[data-selection="single"]` in `mode="multiple"` | `[data-selection="multiple"]`; match `[data-selection]` for both modes |
+| ListItem `data-action="false"`, `data-subtitle="false"`; MetricIndicator `data-subtext="false"`; ContextCardBlock `data-background-image="false"`; Table and EditableTable `data-scrollable="false"` | Absent when false |

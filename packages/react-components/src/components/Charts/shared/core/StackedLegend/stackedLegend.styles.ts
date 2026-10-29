@@ -19,7 +19,7 @@ export const names = {
   separator: "openui-stacked-legend-separator",
   layout: "openui-chart-with-stacked-legend",
   chart: "openui-chart-with-stacked-legend-chart",
-  legend: "openui-chart-with-stacked-legend-legend",
+  legend: "openui-chart-with-stacked-legend-panel",
 } as const;
 
 export const stackedLegendStyles = (css: StyleCss) => {
@@ -173,10 +173,10 @@ export const stackedLegendStyles = (css: StyleCss) => {
         flex-direction: row;
         min-height: 296px;
         --_openui-stacked-legend-chart-flex: 1;
-        --_openui-stacked-legend-legend-flex: 1;
-        --_openui-stacked-legend-legend-min-width: 0;
-        --_openui-stacked-legend-legend-height: 296px;
-        --_openui-stacked-legend-legend-align: center;
+        --_openui-stacked-legend-panel-flex: 1;
+        --_openui-stacked-legend-panel-min-width: 0;
+        --_openui-stacked-legend-panel-height: 296px;
+        --_openui-stacked-legend-panel-align: center;
         --_openui-stacked-legend-root-justify-content: center;
         --_openui-stacked-legend-list-height: auto;
         --_openui-stacked-legend-list-max-height: 100%;
@@ -191,10 +191,10 @@ export const stackedLegendStyles = (css: StyleCss) => {
       display: flex;
       justify-content: center;
       width: 100%;
-      flex: var(--_openui-stacked-legend-legend-flex, 0 1 auto);
-      min-width: var(--_openui-stacked-legend-legend-min-width, auto);
-      height: var(--_openui-stacked-legend-legend-height, auto);
-      align-items: var(--_openui-stacked-legend-legend-align, flex-start);
+      flex: var(--_openui-stacked-legend-panel-flex, 0 1 auto);
+      min-width: var(--_openui-stacked-legend-panel-min-width, auto);
+      height: var(--_openui-stacked-legend-panel-height, auto);
+      align-items: var(--_openui-stacked-legend-panel-align, flex-start);
     `,
   };
 };

@@ -136,7 +136,7 @@ export const calendarStyles = (css: StyleCss) => ({
     &[data-disabled] {
       color: var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2));
     }
-    &[data-selection="single"] {
+    &[data-selection] {
       background: var(--openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1));
       color: var(--openui-text-accent-primary, oklch(0.994 0 89.876 / 1));
       border-radius: var(--_openui-calendar-cell-radius);

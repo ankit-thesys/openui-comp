@@ -1,6 +1,6 @@
 import type { StyleCss } from "../../../styles/useStyles";
 
-export const names = { root: "openui-form-control-hint" } as const;
+export const names = { root: "openui-hint" } as const;
 
 export const hintStyles = (css: StyleCss) => ({
   root: css`

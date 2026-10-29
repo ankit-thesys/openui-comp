@@ -2,7 +2,7 @@ import type { StyleCss } from "../../styles/useStyles";
 
 export const names = {
   root: "openui-list-item",
-  item: "openui-list-item-item",
+  item: "openui-list-item-row",
   indicator: "openui-list-item-indicator",
   indicatorNumber: "openui-list-item-indicator-number",
   indicatorImage: "openui-list-item-indicator-image",
@@ -53,7 +53,7 @@ export const listItemStyles = (css: StyleCss) => ({
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: var(--_openui-list-item-item-gap);
+    gap: var(--_openui-list-item-row-gap);
     &[data-subtitle="true"] {
       align-items: flex-start;
     }
@@ -117,14 +117,14 @@ export const listItemStyles = (css: StyleCss) => ({
   `,
   title: css`
     color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
-    font: var(--_openui-list-item-item-font);
-    letter-spacing: var(--_openui-list-item-item-letter-spacing);
+    font: var(--_openui-list-item-row-font);
+    letter-spacing: var(--_openui-list-item-row-letter-spacing);
     font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
   `,
   subtitle: css`
     color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
-    font: var(--_openui-list-item-item-font);
-    letter-spacing: var(--_openui-list-item-item-letter-spacing);
+    font: var(--_openui-list-item-row-font);
+    letter-spacing: var(--_openui-list-item-row-letter-spacing);
     font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
   `,
   action: css`
@@ -140,8 +140,8 @@ export const listItemStyles = (css: StyleCss) => ({
       --_openui-list-item-action-color,
       var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))
     );
-    font: var(--_openui-list-item-item-font);
-    letter-spacing: var(--_openui-list-item-item-letter-spacing);
+    font: var(--_openui-list-item-row-font);
+    letter-spacing: var(--_openui-list-item-row-letter-spacing);
     font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
   `,
   actionIcon: css`
@@ -149,8 +149,8 @@ export const listItemStyles = (css: StyleCss) => ({
       --_openui-list-item-action-color,
       var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))
     );
-    font: var(--_openui-list-item-item-font);
-    letter-spacing: var(--_openui-list-item-item-letter-spacing);
+    font: var(--_openui-list-item-row-font);
+    letter-spacing: var(--_openui-list-item-row-letter-spacing);
     font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
   `,
   image: css`
@@ -167,15 +167,15 @@ export const listItemStyles = (css: StyleCss) => ({
   size: {
     default: css`
       --_openui-list-item-gap: var(--openui-space-m, 12px);
-      --_openui-list-item-item-gap: var(--openui-space-m, 12px);
+      --_openui-list-item-row-gap: var(--openui-space-m, 12px);
       --_openui-list-item-indicator-compact-size: 24px;
       --_openui-list-item-indicator-full-size: 40px;
-      --_openui-list-item-item-font: var(
+      --_openui-list-item-row-font: var(
         --openui-text-body-default,
         400 16px/1.5 "Inter",
         sans-serif
       );
-      --_openui-list-item-item-letter-spacing: var(
+      --_openui-list-item-row-letter-spacing: var(
         --openui-text-body-default-letter-spacing,
         -0.01em
       );
@@ -188,11 +188,11 @@ export const listItemStyles = (css: StyleCss) => ({
     `,
     small: css`
       --_openui-list-item-gap: var(--openui-space-s, 8px);
-      --_openui-list-item-item-gap: var(--openui-space-s-m, 10px);
+      --_openui-list-item-row-gap: var(--openui-space-s-m, 10px);
       --_openui-list-item-indicator-compact-size: 20px;
       --_openui-list-item-indicator-full-size: 36px;
-      --_openui-list-item-item-font: var(--openui-text-body-sm, 400 14px/1.5 "Inter", sans-serif);
-      --_openui-list-item-item-letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);
+      --_openui-list-item-row-font: var(--openui-text-body-sm, 400 14px/1.5 "Inter", sans-serif);
+      --_openui-list-item-row-letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);
       --_openui-list-item-number-font: var(
         --openui-text-numbers-sm,
         400 14px/1.5 "Inter",

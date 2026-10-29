@@ -24,7 +24,7 @@ const CalendarDay = ({ modifiers, ...props }: DayProps) => {
       modifiers={modifiers}
       data-today-unselected={(modifiers["today"] && !modifiers["selected"]) || undefined}
       data-selection={
-        (mode === "single" || mode === "multiple") && modifiers["selected"] ? "single" : undefined
+        (mode === "single" || mode === "multiple") && modifiers["selected"] ? mode : undefined
       }
       data-range-start={modifiers["range_start"] || undefined}
       data-range-middle={modifiers["range_middle"] || undefined}
