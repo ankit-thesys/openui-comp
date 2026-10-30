@@ -116,40 +116,53 @@ function serverRules(text: string): string {
   return text;
 }
 
+const isSheet = (node: Node | null) => node instanceof HTMLStyleElement && node.id === SHEET_ID;
+
+// Whether a mutation adds a registry tag, or changes one's text.
+function touchesSheet(record: MutationRecord): boolean {
+  if (isSheet(record.target) || isSheet(record.target.parentNode)) return true;
+  for (const node of record.addedNodes)
+    if (isSheet(node) || (node instanceof Element && node.querySelector(`style#${SHEET_ID}`)))
+      return true;
+  return false;
+}
+
+// An empty first tag, or one holding part of the start marker, is complete once anything is
+// parsed after it, so until then every mutation may be what settles it.
+function awaitingParser(): boolean {
+  const tag = document.getElementById(SHEET_ID);
+  return !!tag && !(tag.textContent ?? "").startsWith(STREAM_START);
+}
+
 // A server-rendered sheet, or one another copy of the module wrote, already holds rules. Start
 // from them, so Goober's `indexOf` dedupe skips those rules and no write drops them.
 function seed() {
   if (seeded || !inBrowser()) return;
   seeded = true;
   adopt();
+  if (streamedSheets().length > 1) scheduleWrite();
+  // Only the parser adds registry tags, so once it has finished nothing more can arrive.
+  if (document.readyState !== "loading") return;
   // Streaming may continue after this module loads. Watch the whole document because later
   // flushes can arrive in the body, and a parser can add a style's text after adding the element.
   const observer = new MutationObserver((records) => {
-    if (
-      // Until the first tag is adopted, any parsed node may be what completes it.
-      !adopted ||
-      records.some(
-        (record) =>
-          (record.target instanceof Element && record.target.matches(`style#${SHEET_ID}`)) ||
-          (record.target.parentElement?.matches(`style#${SHEET_ID}`) ?? false) ||
-          [...record.addedNodes].some(
-            (node) =>
-              node instanceof Element &&
-              (node.matches(`style#${SHEET_ID}`) || node.querySelector(`style#${SHEET_ID}`)),
-          ),
-      )
-    )
-      scheduleWrite();
+    if ((!adopted && awaitingParser()) || records.some(touchesSheet)) scheduleWrite();
   });
   observer.observe(document.documentElement, {
     childList: true,
     characterData: true,
     subtree: true,
   });
-  // An empty first tag waits for the parser; the end of loading settles it.
-  if (document.readyState === "loading")
-    document.addEventListener("readystatechange", () => scheduleWrite(), { once: true });
-  if (streamedSheets().length > 1) scheduleWrite();
+  // The end of parsing settles an empty first tag and merges the last streamed tags; after that
+  // the observer would only see the app's own DOM changes, such as every streamed chat token.
+  document.addEventListener(
+    "readystatechange",
+    () => {
+      observer.disconnect();
+      scheduleWrite();
+    },
+    { once: true },
+  );
 }
 
 function sheetTag(): HTMLElement {

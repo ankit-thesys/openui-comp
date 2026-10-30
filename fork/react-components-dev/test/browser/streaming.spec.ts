@@ -107,6 +107,14 @@ for (const layer of [undefined, "openui"]) {
     expect(await page.locator("style#openui-styles").textContent()).toBe(partial);
 
     expect((await request.get(`/streaming-complete?response=${response}`)).ok()).toBe(true);
+    // The rest of the tag's text is the only sign it is complete (Chromium appends it to the
+    // existing text node): the store takes it in and rewrites the tag while the document loads.
+    await page.waitForFunction(
+      () => !document.getElementById("openui-styles")!.textContent!.startsWith("/*openui-stream*/"),
+      undefined,
+      { polling: 50, timeout: 5000 },
+    );
+    expect(await page.evaluate(() => document.readyState)).toBe("loading");
     expect((await request.get(`/streaming-release?response=${response}`)).ok()).toBe(true);
     await expect(page.locator("#root")).toHaveAttribute("data-hydrated", "true");
     await expect(page.getByTestId("late")).toBeVisible();
@@ -184,5 +192,155 @@ for (const layer of [undefined, "openui"]) {
     await expect(page.getByTestId("late")).toHaveCSS("padding", "19px");
     await expect(page.locator("style#openui-styles")).toHaveCount(1);
     expect(errors).toEqual([]);
+  });
+}
+
+// An empty first tag that is the last thing parsed may still receive its text, so client rules
+// wait. Ordinary markup parsed after it settles it: the rules must join it then, while the
+// document is still loading, not when loading ends or the next registry tag arrives.
+for (const layer of [undefined, "openui"]) {
+  test(`streaming ${layer ?? "unlayered"}, an empty first tag settles when markup follows it`, async ({
+    page,
+    request,
+  }) => {
+    const errors: string[] = [];
+    page.on("pageerror", (error) => errors.push(error.message));
+    const navigation = await page.goto(`/streaming.html?layer=${layer ?? ""}&reserveLast=true`, {
+      waitUntil: "commit",
+    });
+    const response = navigation!.headers()["x-streaming-response"]!;
+    await page.waitForFunction(() => !!(window as FixtureWindow).streamingFixture, undefined, {
+      polling: 50,
+    });
+    await page.evaluate(
+      (response) => (window as FixtureWindow).streamingFixture!.registerLate(response),
+      response,
+    );
+    await page.evaluate(() => new Promise<void>((resolve) => setTimeout(resolve, 50)));
+    expect(await page.locator("style#openui-styles").textContent()).toBe("");
+
+    expect((await request.get(`/streaming-complete?response=${response}`)).ok()).toBe(true);
+    await page.waitForFunction(
+      () => !!document.querySelector('meta[name="openui-streaming-settle"]'),
+      undefined,
+      {
+        polling: 50,
+      },
+    );
+    await page.waitForFunction(
+      () => !!document.getElementById("openui-styles")!.textContent,
+      undefined,
+      { polling: 50, timeout: 5000 },
+    );
+    const settled = await page.evaluate(() => ({
+      readyState: document.readyState,
+      tags: document.querySelectorAll("style#openui-styles").length,
+      text: document.getElementById("openui-styles")!.textContent!,
+      stored: (window as FixtureWindow).streamingFixture!.getComponentStyles(),
+    }));
+    expect(settled.readyState).toBe("loading");
+    expect(settled.tags).toBe(1);
+    expect(settled.text).toBe(settled.stored);
+    expect(settled.text.split("@layer ").length - 1).toBe(layer ? 1 : 0);
+
+    expect((await request.get(`/streaming-complete?response=${response}`)).ok()).toBe(true);
+    expect((await request.get(`/streaming-release?response=${response}`)).ok()).toBe(true);
+    await expect(page.locator("#root")).toHaveAttribute("data-hydrated", "true");
+    await expect(page.getByTestId("late")).toHaveCSS("padding", "19px");
+    await expect(page.getByTestId("late")).toHaveCSS("background-color", "rgb(4, 5, 6)");
+    await expect(page.locator("style#openui-styles")).toHaveCount(1);
+    expect(errors).toEqual([]);
+  });
+}
+
+// Counts the callbacks of every MutationObserver that watches the whole document, as the store's
+// does, from before the library loads.
+function countDocumentObservers() {
+  const watch = { created: 0, disconnected: 0, callbacks: 0 };
+  (window as Window & { documentObservers?: typeof watch }).documentObservers = watch;
+  const watching = new WeakSet<MutationObserver>();
+  const Native = window.MutationObserver;
+  window.MutationObserver = class extends Native {
+    constructor(callback: MutationCallback) {
+      super((records, observer) => {
+        if (watching.has(observer)) watch.callbacks++;
+        callback(records, observer);
+      });
+    }
+    override observe(target: Node, options?: MutationObserverInit) {
+      // Text changes anywhere in the document: Playwright's own observers watch less.
+      if (target === document.documentElement && options?.subtree && options.characterData)
+        if (!watching.has(this)) watching.add(this) && watch.created++;
+      super.observe(target, options);
+    }
+    override disconnect() {
+      if (watching.has(this)) watch.disconnected++;
+      super.disconnect();
+    }
+  };
+}
+type ObserverWindow = FixtureWindow & {
+  documentObservers?: { created: number; disconnected: number; callbacks: number };
+};
+
+// A chat UI changes the DOM for every streamed token. The store watches for streamed tags only
+// while the parser can still add one; after that, DOM changes must not reach its callback.
+for (const layer of [undefined, "openui"]) {
+  test(`streaming ${layer ?? "unlayered"}, the store stops watching the document once it has loaded`, async ({
+    page,
+    request,
+  }) => {
+    await page.addInitScript(countDocumentObservers);
+    await page.goto(`/streaming.html?layer=${layer ?? ""}&adoptEarly=true`, {
+      waitUntil: "commit",
+    });
+    await page.waitForFunction(() => !!(window as FixtureWindow).streamingFixture);
+    const response = await page.locator("#root").getAttribute("data-response");
+    expect(await page.evaluate(() => (window as ObserverWindow).documentObservers!.created)).toBe(
+      1,
+    );
+    expect((await request.get(`/streaming-release?response=${response}`)).ok()).toBe(true);
+    expect((await request.get(`/streaming-complete?response=${response}`)).ok()).toBe(true);
+    await expect(page.locator("#root")).toHaveAttribute("data-hydrated", "true");
+    await page.waitForFunction(() => document.readyState === "complete");
+    await expect(page.getByTestId("late")).toHaveCSS("padding", "19px");
+    await expect(page.locator("style#openui-styles")).toHaveCount(1);
+
+    const after = await page.evaluate(async () => {
+      const watch = (window as ObserverWindow).documentObservers!;
+      const before = watch.callbacks;
+      const message = document.body.appendChild(document.createElement("p"));
+      const text = message.appendChild(document.createTextNode(""));
+      for (let token = 0; token < 2000; token++) {
+        if (token % 2) text.data += " token";
+        else message.appendChild(document.createElement("span")).textContent = String(token);
+        // Each token lands in its own microtask checkpoint, as separate stream chunks would.
+        await Promise.resolve();
+      }
+      const tag = document.getElementById("openui-styles")!;
+      return {
+        callbacks: watch.callbacks - before,
+        disconnected: watch.disconnected,
+        current:
+          tag.textContent === (window as FixtureWindow).streamingFixture!.getComponentStyles(),
+      };
+    });
+    expect(after).toEqual({ callbacks: 0, disconnected: 1, current: true });
+  });
+
+  test(`streaming ${layer ?? "unlayered"}, a library loaded after parsing never watches the document`, async ({
+    page,
+    request,
+  }) => {
+    await page.addInitScript(countDocumentObservers);
+    await page.goto(`/streaming.html?layer=${layer ?? ""}`, { waitUntil: "commit" });
+    const response = await page.locator("#root").getAttribute("data-response");
+    expect((await request.get(`/streaming-release?response=${response}`)).ok()).toBe(true);
+    await expect(page.locator("#root")).toHaveAttribute("data-hydrated", "true");
+    await expect(page.getByTestId("late")).toHaveCSS("padding", "19px");
+    await expect(page.locator("style#openui-styles")).toHaveCount(1);
+    expect(await page.evaluate(() => (window as ObserverWindow).documentObservers!.created)).toBe(
+      0,
+    );
   });
 }

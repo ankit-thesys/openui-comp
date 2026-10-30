@@ -15,8 +15,10 @@ export function releaseStream(response: string) {
 }
 
 export function completeStyle(response: string) {
-  completions.get(response)?.();
+  // Removed before the call, so a completion can set the next one.
+  const complete = completions.get(response);
   completions.delete(response);
+  complete?.();
 }
 
 /** The first registry flush a response sent, so a spec can check that none of its rules is lost. */
@@ -27,12 +29,16 @@ export function firstSheet(response: string) {
 // `splitFirst` sends the first registry tag in two writes, with an async script ahead of it in
 // <head>, so the library can load while that tag's text is still incomplete. `reserve` puts the
 // head recipe's empty `openui-styles` tag first, so every registry tag is a later one.
+// `reserveLast` sends that empty tag last, after an async script, and holds the stream: the library
+// loads while the tag may still receive text. The next write is ordinary markup that settles it,
+// and the one after that the registry's first flush.
 export function streamPage(
   res: ServerResponse,
   layer?: string,
   adoptEarly = false,
   splitFirst = false,
   reserve = false,
+  reserveLast = false,
 ) {
   configureStyles({ layer });
   const registry = createStyleRegistry();
@@ -69,8 +75,21 @@ export function streamPage(
         `<!doctype html><html><head>` +
           (layer ? `<style>@layer openui,app;</style>` : "") +
           (reserve ? `<style id="openui-styles"></style>` : "") +
-          (splitFirst ? `<script type="module" async src="/streaming.js"></script>` : ""),
+          (splitFirst || reserveLast
+            ? `<script type="module" async src="/streaming.js"></script>`
+            : "") +
+          (reserveLast ? `<style id="openui-styles"></style>` : ""),
       );
+      if (reserveLast) {
+        completions.set(response, () => {
+          res.write(`<meta name="openui-streaming-settle">`);
+          completions.set(response, () => {
+            res.write(first + rest);
+            stream();
+          });
+        });
+        return;
+      }
       if (splitFirst) {
         // Cut the first tag's text in the middle of a rule; the rest waits for /streaming-complete.
         const cut = Math.floor(first.length / 2);
