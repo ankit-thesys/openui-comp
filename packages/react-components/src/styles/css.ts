@@ -1,6 +1,7 @@
 import { css as gooberCss } from "goober";
 
 const SHEET_ID = "openui-styles";
+const STREAM_END = "/*openui-stream-end*/";
 
 let rules = "";
 // Rules this module copy registered since its last write, in registration order.
@@ -22,7 +23,38 @@ const wrapped = (text: string) => (layer && text ? `@layer ${layer}{${text}}` : 
 // rules go even when a server boundary stubs `document`.
 const inBrowser = () => typeof window === "object";
 
-const sheetText = (tag: Element) => (tag.textContent ?? "").trim();
+const sheetText = (tag: Element) => {
+  const text = (tag.textContent ?? "").trim();
+  return text.endsWith(STREAM_END) ? text.slice(0, -STREAM_END.length).trim() : text;
+};
+const streamedSheets = () => document.querySelectorAll<HTMLStyleElement>(`style#${SHEET_ID}`);
+
+// Split only between complete top-level rules. A css call can emit a base rule, states, media
+// queries and keyframes together; the server and client may have registered overlapping groups.
+function ruleBlocks(text: string): string[] {
+  const blocks: string[] = [];
+  let start = 0;
+  let depth = 0;
+  let quote = "";
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i];
+    if (quote) {
+      if (char === "\\") i++;
+      else if (char === quote) quote = "";
+    } else if (char === "/" && text[i + 1] === "*") {
+      const end = text.indexOf("*/", i + 2);
+      i = end < 0 ? text.length : end + 1;
+    } else if (char === "\\") i++;
+    else if (char === '"' || char === "'") quote = char;
+    else if (char === "{") depth++;
+    else if ((char === "}" && --depth === 0) || (char === ";" && depth === 0)) {
+      blocks.push(text.slice(start, i + 1));
+      start = i + 1;
+    }
+  }
+  if (start < text.length) blocks.push(text.slice(start));
+  return blocks;
+}
 
 // A sheet written in layer mode, by the server or another module copy, is one `@layer <name>{…}`
 // around all its rules. Seeding and merging work on the rules inside, so the next write wraps
@@ -53,6 +85,29 @@ function seed() {
   seeded = true;
   const tag = document.getElementById(SHEET_ID);
   if (tag) rules = serverRules(sheetText(tag)) + rules;
+  // Streaming may continue after this module loads. Watch the whole document because later
+  // flushes can arrive in the body, and a parser can add a style's text after adding the element.
+  const observer = new MutationObserver((records) => {
+    if (
+      records.some(
+        (record) =>
+          (record.target instanceof Element && record.target.matches(`style#${SHEET_ID}`)) ||
+          (record.target.parentElement?.matches(`style#${SHEET_ID}`) ?? false) ||
+          [...record.addedNodes].some(
+            (node) =>
+              node instanceof Element &&
+              (node.matches(`style#${SHEET_ID}`) || node.querySelector(`style#${SHEET_ID}`)),
+          ),
+      )
+    )
+      scheduleWrite();
+  });
+  observer.observe(document.documentElement, {
+    childList: true,
+    characterData: true,
+    subtree: true,
+  });
+  if (streamedSheets().length > 1) scheduleWrite();
 }
 
 function sheetTag(): HTMLElement {
@@ -84,15 +139,27 @@ function scheduleWrite() {
  */
 export function flushComponentStyles() {
   scheduled = false;
-  if (!inBrowser() || (!pending.length && !relayer)) return;
+  if (!inBrowser()) return;
+  seed();
+  const tags = [...streamedSheets()];
+  const complete = tags.filter(
+    (tag, index) => index > 0 && (tag.textContent ?? "").trim().endsWith(STREAM_END),
+  );
+  if (!pending.length && !relayer && !complete.length) return;
   const tag = sheetTag();
-  // Another module copy may have written since; append only what the sheet lacks.
-  let text = serverRules(sheetText(tag));
-  for (const rule of pending) if (!text.includes(rule)) text += rule;
+  // Keep the first sheet's position ahead of app CSS. Later streamed tags and other module
+  // copies join it, with each complete rule present once even if hydration registered it first.
+  const merged = new Set(ruleBlocks(serverRules(sheetText(tag))));
+  for (const later of complete) {
+    for (const rule of ruleBlocks(serverRules(sheetText(later)))) merged.add(rule);
+  }
+  for (const group of pending) for (const rule of ruleBlocks(group)) merged.add(rule);
+  const text = [...merged].join("");
   pending = [];
   relayer = false;
   rules = text;
-  tag.textContent = wrapped(text);
+  if (tag.textContent !== wrapped(text)) tag.textContent = wrapped(text);
+  for (const later of complete) later.remove();
 }
 
 const sink = {
@@ -151,3 +218,25 @@ export const getComponentStyles = (): string => {
   seed();
   return wrapped(rules) || " ";
 };
+
+export type StyleRegistry = {
+  /** New layer-wrapped rules plus a completion comment; empty if nothing new after a flush. */
+  flush(): string;
+};
+
+/** Create once per server response. Collection never drains the cumulative component sheet. */
+export function createStyleRegistry(): StyleRegistry {
+  let emitted = 0;
+  let first = true;
+  return {
+    flush() {
+      const text = rules.slice(emitted);
+      emitted = rules.length;
+      const result = wrapped(text) || (first ? " " : "");
+      first = false;
+      // Transport can split even a style tag across chunks. The browser must not remove it
+      // before its entire CSS payload arrives, so preserve this comment when inlining a flush.
+      return result ? result + STREAM_END : "";
+    },
+  };
+}

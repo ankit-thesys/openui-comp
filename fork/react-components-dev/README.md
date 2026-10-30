@@ -134,6 +134,13 @@ To add a browser test, add a fixture that imports `openui-under-test` (aliased t
 
 `fixtures/tailwind33.css`, `tailwind34.css` and `tailwind4.css` are unmodified Tailwind 3.3.7, 3.4.17 and 4.1.11 CLI output (`@tailwind base/components/utilities` for 3, `@import "tailwindcss"` for 4) with `bg-red-500` as the only source (plus `!bg-red-500` for 4), checked in so the tests need no Tailwind dependency. Regenerate them the same way if the tests need more utilities.
 
+`streaming.spec.ts` uses a real `renderToPipeableStream` response served by `serve.mjs`.
+The test releases a Suspense boundary only after observing the first flush. It checks adoption
+before and after the late flush, hydration, unique rules, late component styles, and unlayered
+app override precedence. Run `pnpm exec playwright test streaming.spec.ts sheet.spec.ts ssr.spec.ts`.
+`test/unit/style-registry.test.tsx` checks the public per-response flush API against the built
+package, including independent response cursors and layer-wrapped late keyframes.
+
 ## Benches
 
 `bench.*.spec.ts` are the acceptance benches from the earlier out-of-repo harness, plus the lab's

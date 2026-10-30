@@ -40,6 +40,23 @@ const serve = async (res, directory, file, type) => {
 
 createServer(async (req, res) => {
   const { pathname, searchParams } = new URL(req.url, "http://localhost");
+  if (["/streaming.html", "/streaming-release", "/streaming-complete"].includes(pathname)) {
+    const { streamPage, releaseStream, completeStyle } =
+      await import("./.fixtures/server/streaming-server.mjs");
+    if (pathname === "/streaming-complete") {
+      completeStyle(searchParams.get("response"));
+      return res.writeHead(204).end();
+    }
+    if (pathname === "/streaming-release") {
+      releaseStream(searchParams.get("response"));
+      return res.writeHead(204).end();
+    }
+    return streamPage(
+      res,
+      searchParams.get("layer") === "openui" ? "openui" : undefined,
+      searchParams.get("adoptEarly") === "true",
+    );
+  }
   // Only bare names are served, so requests cannot reach outside the fixture directories.
   const html = pathname.match(/^\/([\w-]+)\.html$/);
   if (html)
