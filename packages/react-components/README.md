@@ -219,8 +219,11 @@ configureStyles({ layer: "openui" });
 This replaces the beta's provider-level layer option. Call it once in the app entry, before
 rendering. Every component rule and public `css` or `keyframes` call joins the layer, including
 rules registered at import time before the call: the layer wraps rules when they are written to
-the page, not when they register. Server-rendered apps pass the layer to `<ComponentStyles>`
-instead (see [Server-rendered styles](#server-rendered-styles)); the browser reads it from that
+the page, not when they register. Import-time rules are written at the first microtask
+checkpoint, so if a module with top-level `await` is imported ahead of the call, they are written
+unlayered; call it from a module that the entry imports first. Server-rendered apps pass the
+layer to `<ComponentStyles>` instead (see [Server-rendered styles](#server-rendered-styles)); the
+browser reads it from that
 sheet, so they need no `configureStyles` call. ThemeProvider only controls theme tokens;
 components outside a provider and inside nested providers use the same component sheet.
 
