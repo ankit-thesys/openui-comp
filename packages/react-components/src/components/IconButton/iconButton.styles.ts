@@ -48,7 +48,7 @@ const radiusS = `var(--openui-radius-s, 6px)`;
  * (root, then variant, size, shape, tone), so keep each body specific to IconButton: Goober gives
  * an identical body registered earlier elsewhere that earlier class and position.
  */
-export const iconButtonStyles = /*#__PURE__*/ {
+export const iconButtonStyles = {
   root: css`
     box-sizing: border-box;
     display: flex;

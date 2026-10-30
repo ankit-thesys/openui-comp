@@ -8,7 +8,7 @@ export const names = {
   container: "openui-sources-item-container",
 } as const;
 
-export const listedSourcesStyles = /*#__PURE__*/ {
+export const listedSourcesStyles = {
   root: css`
     display: flex;
     flex-direction: column;

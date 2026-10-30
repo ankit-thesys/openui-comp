@@ -29,7 +29,7 @@ const smallText = `
   font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
 `;
 
-export const sliderStyles = /*#__PURE__*/ {
+export const sliderStyles = {
   wrapper: css`
     display: flex;
     align-items: center;

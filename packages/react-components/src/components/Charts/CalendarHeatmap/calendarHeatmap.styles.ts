@@ -40,7 +40,7 @@ export const names = {
 } as const;
 
 // Register entrance keyframes before the rules that reference them, on import.
-export const calendarHeatmapStyles = /*#__PURE__*/ (() => {
+export const calendarHeatmapStyles = (() => {
   css`
     @keyframes openui-calendar-heatmap-appear {
       from {

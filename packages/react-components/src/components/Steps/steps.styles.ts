@@ -12,7 +12,7 @@ export const names = {
   title: "openui-steps-title",
   details: "openui-steps-details",
 } as const;
-export const stepsStyles = /*#__PURE__*/ {
+export const stepsStyles = {
   root: css`
     min-width: 280px;
     width: 100%;

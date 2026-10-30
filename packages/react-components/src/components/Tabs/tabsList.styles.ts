@@ -61,7 +61,7 @@ const scrollButtonContainer = `
 
 // The scroll buttons are IconButtons, whose own root rules already set the display, alignment and
 // cursor these parts used to repeat, so the parts carry no rules of their own.
-export const tabsListStyles = /*#__PURE__*/ {
+export const tabsListStyles = {
   root: css`
     width: 100%;
     box-sizing: border-box;

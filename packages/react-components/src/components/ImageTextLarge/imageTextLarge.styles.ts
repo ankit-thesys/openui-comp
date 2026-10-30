@@ -6,7 +6,7 @@ export const names = {
   image: "openui-image-text-large-image",
   content: "openui-image-text-large-content",
 } as const;
-export const imageTextLargeStyles = /*#__PURE__*/ {
+export const imageTextLargeStyles = {
   root: css`
     display: flex;
     width: 100%;

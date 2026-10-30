@@ -34,7 +34,7 @@ export const names = {
   },
 } as const;
 
-export const heatmapChartStyles = /*#__PURE__*/ (() => {
+export const heatmapChartStyles = (() => {
   return {
     root: css`
       ${centeredContainer}

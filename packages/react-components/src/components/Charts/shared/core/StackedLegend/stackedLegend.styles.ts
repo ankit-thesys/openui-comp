@@ -27,7 +27,7 @@ export const names = {
   legend: "openui-chart-with-stacked-legend-panel",
 } as const;
 
-export const stackedLegendStyles = /*#__PURE__*/ (() => {
+export const stackedLegendStyles = (() => {
   // Keep composed controls before these equal-weight part rules.
   void buttonStyles;
   return {

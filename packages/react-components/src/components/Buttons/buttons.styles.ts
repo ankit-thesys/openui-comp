@@ -8,7 +8,7 @@ export const names = {
   },
 } as const;
 
-export const buttonsStyles = /*#__PURE__*/ {
+export const buttonsStyles = {
   root: css`
     display: flex;
     width: 100%;

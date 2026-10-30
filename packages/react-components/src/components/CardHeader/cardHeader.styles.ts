@@ -8,7 +8,7 @@ export const names = {
   topRight: "openui-card-header-top-right",
   bottom: "openui-card-header-bottom",
 } as const;
-export const cardHeaderStyles = /*#__PURE__*/ {
+export const cardHeaderStyles = {
   root: css`
     display: flex;
     flex-direction: column;

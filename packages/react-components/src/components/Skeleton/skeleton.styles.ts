@@ -5,7 +5,7 @@ export const names = {
   bar: "openui-skeleton-bar",
 } as const;
 
-export const skeletonStyles = /*#__PURE__*/ {
+export const skeletonStyles = {
   root: css`
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@ export const skeletonStyles = /*#__PURE__*/ {
   `,
 };
 
-export const skeletonBarStyles = /*#__PURE__*/ {
+export const skeletonBarStyles = {
   root: css`
     background-color: var(--openui-elevated, oklch(0.097 0 0 / 0.08));
     border-radius: var(--_openui-skeleton-bar-border-radius, var(--openui-radius-s, 6px));

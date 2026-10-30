@@ -6,7 +6,7 @@ export const names = {
   description: "openui-inline-header-description",
 } as const;
 
-export const inlineHeaderStyles = /*#__PURE__*/ {
+export const inlineHeaderStyles = {
   root: css`
     display: flex;
     flex-direction: column;

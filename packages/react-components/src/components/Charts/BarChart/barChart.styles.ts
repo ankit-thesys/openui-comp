@@ -47,7 +47,7 @@ const animated = `@media (prefers-reduced-motion: no-preference) {
  animation: openui-bar-chart-grow 0.6s ease-out var(--_openui-bar-chart-mark-delay, 0s) both;
  &[data-negative] { transform-origin: center top; }
 }`;
-export const barChartStyles = /*#__PURE__*/ {
+export const barChartStyles = {
   svg: css`
     &[data-overflow="visible"] {
       overflow: visible;

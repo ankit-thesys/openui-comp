@@ -28,7 +28,7 @@ export const names = {
   },
 } as const;
 
-export const cardBlockLayoutStyles = /*#__PURE__*/ {
+export const cardBlockLayoutStyles = {
   root: css`
     width: 100%;
     container-type: inline-size;

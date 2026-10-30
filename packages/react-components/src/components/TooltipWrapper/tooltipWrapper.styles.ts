@@ -11,7 +11,7 @@ export const names = {
   text: "openui-tooltip-wrapper-text",
   root: "openui-tooltip-wrapper",
 } as const;
-export const tooltipWrapperStyles = /*#__PURE__*/ {
+export const tooltipWrapperStyles = {
   body: css`
     display: flex;
     flex-direction: column;

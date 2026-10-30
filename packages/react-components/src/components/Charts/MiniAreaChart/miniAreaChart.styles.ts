@@ -13,4 +13,4 @@ export const names = {
   isAnimationActive: { true: "openui-mini-area-chart--is-animation-active" },
 } as const;
 
-export const miniAreaChartStyles = /*#__PURE__*/ miniChartStyles;
+export const miniAreaChartStyles = miniChartStyles;

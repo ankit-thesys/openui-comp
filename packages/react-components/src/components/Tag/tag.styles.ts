@@ -21,7 +21,7 @@ export const names = {
   },
 } as const;
 
-export const tagStyles = /*#__PURE__*/ {
+export const tagStyles = {
   root: css`
     box-sizing: border-box;
     display: flex;

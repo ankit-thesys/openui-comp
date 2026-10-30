@@ -13,7 +13,7 @@ export const names = {
   },
 } as const;
 
-export const snippetCardBlockStyles = /*#__PURE__*/ {
+export const snippetCardBlockStyles = {
   card: css`
     display: flex;
     align-items: center;

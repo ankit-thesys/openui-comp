@@ -25,7 +25,7 @@ export const names = {
     soft: "openui-icon-text--icon-variant-soft",
   },
 } as const;
-export const iconTextStyles = /*#__PURE__*/ {
+export const iconTextStyles = {
   root: css`
     display: flex;
     gap: var(--openui-space-m, 12px);

@@ -46,7 +46,7 @@ export const names = {
 
 // Sizes supply typography choices; variants and type select them through private variables.
 // Heading shorthands reset font variation to normal, matching the original font declarations.
-export const textBlockStyles = /*#__PURE__*/ {
+export const textBlockStyles = {
   root: css`
     display: flex;
     flex-direction: column;

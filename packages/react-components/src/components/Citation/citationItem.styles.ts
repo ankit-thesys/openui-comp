@@ -8,7 +8,7 @@ export const names = {
   source: "openui-citation-item-source",
 } as const;
 
-export const citationItemStyles = /*#__PURE__*/ {
+export const citationItemStyles = {
   root: css`
     display: flex;
     align-items: center;

@@ -58,7 +58,7 @@ const small = `
   font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
 `;
 
-export const calendarStyles = /*#__PURE__*/ {
+export const calendarStyles = {
   content: css`
     --_openui-calendar-day-size: calc(var(--openui-space-2xl, 36px) + var(--openui-space-2xs, 4px));
     --_openui-calendar-cell-radius: var(--openui-radius-m, 8px);
@@ -234,7 +234,7 @@ const dropdown = `
 `;
 
 // Register after Select so these owned classes compose on top of its public parts.
-export const calendarDropdownStyles = /*#__PURE__*/ {
+export const calendarDropdownStyles = {
   selectTrigger: css`
     ${label}
     min-height: calc(var(--openui-space-l, 18px) + var(--openui-space-s, 8px));

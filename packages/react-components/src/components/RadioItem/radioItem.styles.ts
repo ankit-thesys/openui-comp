@@ -20,7 +20,7 @@ export const names = {
 
 // Goober merges repeated :disabled blocks at their first occurrence, before :hover. Reset
 // hover's input as well so a disabled unchecked radio keeps its foreground fill.
-export const radioItemStyles = /*#__PURE__*/ {
+export const radioItemStyles = {
   root: css`
     box-sizing: border-box;
     flex-shrink: 0;

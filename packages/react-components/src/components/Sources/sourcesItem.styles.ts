@@ -8,7 +8,7 @@ export const names = {
   logo: "openui-sources-item-logo",
 } as const;
 
-export const sourcesItemStyles = /*#__PURE__*/ {
+export const sourcesItemStyles = {
   root: css`
     display: flex;
     flex-direction: column;

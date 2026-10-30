@@ -9,7 +9,7 @@ export const names = {
   },
 } as const;
 
-export const dotMatrixLoaderStyles = /*#__PURE__*/ {
+export const dotMatrixLoaderStyles = {
   root: css`
     display: grid;
     grid-template-columns: repeat(var(--_openui-dot-matrix-loader-grid-size), 1fr);

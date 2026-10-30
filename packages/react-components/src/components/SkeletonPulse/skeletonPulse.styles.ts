@@ -4,7 +4,7 @@ export const names = { root: "openui-skeleton-pulse" } as const;
 
 // Register the animation and its keyframes together on import, in the animated part's layer.
 // The keyframe name is private.
-export const skeletonPulseStyles = /*#__PURE__*/ {
+export const skeletonPulseStyles = {
   root: css`
     animation: _openui-skeleton-pulse 1.2s ease-in-out infinite;
     @keyframes _openui-skeleton-pulse {

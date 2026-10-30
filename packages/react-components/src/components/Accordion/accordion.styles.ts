@@ -21,7 +21,7 @@ export const names = {
     sunk: "openui-accordion--variant-sunk",
   },
 } as const;
-export const accordionStyles = /*#__PURE__*/ {
+export const accordionStyles = {
   root: css`
     box-sizing: border-box;
     border-radius: var(--openui-radius-2xl, 14px);

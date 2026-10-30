@@ -9,7 +9,7 @@ export const names = {
   },
 } as const;
 
-export const radioGroupStyles = /*#__PURE__*/ {
+export const radioGroupStyles = {
   root: css`
     box-sizing: border-box;
     display: flex;

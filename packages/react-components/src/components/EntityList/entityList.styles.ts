@@ -16,7 +16,7 @@ export const names = {
     number: "openui-entity-list-cell-right--right-variant-number",
   },
 } as const;
-export const entityListStyles = /*#__PURE__*/ {
+export const entityListStyles = {
   root: css`
     display: flex;
     flex-direction: column;

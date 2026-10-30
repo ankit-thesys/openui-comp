@@ -13,7 +13,7 @@ export const names = {
     "16:9": "openui-image-aspect--aspect-ratio-16-9",
   },
 } as const;
-export const imageStyles = /*#__PURE__*/ {
+export const imageStyles = {
   root: css`
     display: flex;
     box-sizing: border-box;

@@ -11,7 +11,7 @@ export const names = {
     right: "openui-table-head--align-right",
   },
 } as const;
-export const tableHeadStyles = /*#__PURE__*/ {
+export const tableHeadStyles = {
   root: css`
     padding-top: var(--openui-space-m, 12px);
     padding-bottom: var(--openui-space-m, 12px);

@@ -23,7 +23,7 @@ export const names = {
   listHasSubtitle: "openui-list-item--list-has-subtitle",
 } as const;
 
-export const listItemStyles = /*#__PURE__*/ {
+export const listItemStyles = {
   root: css`
     display: flex;
     flex-direction: column;

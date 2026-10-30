@@ -19,7 +19,7 @@ export const names = {
 
 const elevated = "var(--openui-elevated-strong, oklch(0.097 0 0 / 0.16))";
 
-export const pieChartSkeletonStyles = /*#__PURE__*/ {
+export const pieChartSkeletonStyles = {
   root: css`
     display: flex;
     align-items: center;

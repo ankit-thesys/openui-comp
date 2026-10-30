@@ -26,7 +26,7 @@ export const names = {
   separator: "openui-slider-block-separator",
 } as const;
 
-export const sliderBlockStyles = /*#__PURE__*/ {
+export const sliderBlockStyles = {
   root: css`
     width: 100%;
   `,
@@ -94,7 +94,7 @@ export const sliderBlockStyles = /*#__PURE__*/ {
 // Registered after the composed Input defaults, so a single owned class wins the tie. The error
 // state is Input's own `[aria-invalid]`, so Input's state overrides reach it. As in react-ui it keeps
 // the danger border even when disabled, draws no danger ring, and keeps the focus ring.
-export const sliderBlockInputStyles = /*#__PURE__*/ {
+export const sliderBlockInputStyles = {
   input: css`
     height: 36px;
     width: var(--_openui-slider-block-input-width, 80px);
@@ -112,7 +112,7 @@ export const sliderBlockInputStyles = /*#__PURE__*/ {
 };
 
 // Registered after Select's defaults, as Calendar does.
-export const sliderBlockSelectStyles = /*#__PURE__*/ {
+export const sliderBlockSelectStyles = {
   trigger: css`
     height: 36px;
     width: var(--_openui-slider-block-select-width, 100px);

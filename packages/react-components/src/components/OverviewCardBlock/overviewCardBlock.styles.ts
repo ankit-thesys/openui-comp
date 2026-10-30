@@ -14,7 +14,7 @@ export const names = {
   },
 } as const;
 
-export const overviewCardBlockStyles = /*#__PURE__*/ {
+export const overviewCardBlockStyles = {
   card: css`
     /* react-ui's content-box sizing, declared so a page's box-sizing reset (Tailwind's preflight, for
        one) cannot change the geometry. */

@@ -57,7 +57,7 @@ export const names = {
   size: { small: "openui-example--size-small", medium: "openui-example--size-medium" },
 } as const;
 
-export const exampleStyles = /*#__PURE__*/ {
+export const exampleStyles = {
   root: css`
     display: flex;
     &:disabled {
@@ -394,7 +394,7 @@ the working examples. Keep the change inside the ticket's component scope.
    every prop that changes classes, defaults included, and all parts. Record genuinely
    browser-only parts in `clientOnly`. Start with one failing behaviour through public
    server rendering of the **built** package; never import style internals in tests.
-3. Import `css` from the internal styling module and export a `/*#__PURE__*/` module-level
+3. Import `css` from the internal styling module and export a module-level
    object containing root, part and axis entries. Join its generated classes with the stable
    classes using `clsx`, as Button does. Reuse the shared border-box and pulse objects when
    applicable. Preserve dependency registration order with value imports and add no class
