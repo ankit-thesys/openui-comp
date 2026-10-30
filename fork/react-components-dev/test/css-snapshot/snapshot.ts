@@ -1,5 +1,6 @@
 import { indexOutsideStrings, matchingBrace } from "../unit/contract/checks";
 import { cssFor } from "../unit/contract/collect";
+import { expectedWithIntentionalChanges } from "./intentional-changes";
 import type { Provenance } from "./order";
 
 export interface Collection {
@@ -251,5 +252,11 @@ function conflictingOrder(order: string[], rules: Snapshot["rules"]): string[] {
 /** `comparable` for every sample of a recorded file, so baselines compare without re-recording. */
 export const comparableAll = <T extends Snapshot | LayerSnapshot>(
   samples: Record<string, T>,
+  component?: string,
 ): Record<string, T> =>
-  Object.fromEntries(Object.entries(samples).map(([key, sample]) => [key, comparable(sample)]));
+  Object.fromEntries(
+    Object.entries(samples).map(([key, sample]) => [
+      key,
+      expectedWithIntentionalChanges(component ?? key, comparable(sample)),
+    ]),
+  );

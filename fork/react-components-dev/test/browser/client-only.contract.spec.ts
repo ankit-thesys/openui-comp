@@ -145,7 +145,7 @@ for (const component of clientOnlyContracts) {
       expect(
         snapshots,
         `${component.folder}: client-only CSS/markup changed; baseline must be recorded before migration`,
-      ).toEqual(comparableAll(JSON.parse(readFileSync(baseline, "utf8"))));
+      ).toEqual(comparableAll(JSON.parse(readFileSync(baseline, "utf8")), component.folder));
     }
   });
 }

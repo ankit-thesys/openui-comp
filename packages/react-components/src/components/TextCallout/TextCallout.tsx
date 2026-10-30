@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React from "react";
-import { useStyles } from "../../styles/useStyles";
 import { names, textCalloutStyles } from "./textCallout.styles";
 
 type TextCalloutVariant = "neutral" | "info" | "warning" | "success" | "danger";
@@ -14,7 +13,7 @@ export interface TextCalloutProps extends Omit<React.HTMLAttributes<HTMLDivEleme
 }
 
 export const TextCallout = React.forwardRef<HTMLDivElement, TextCalloutProps>((props, ref) => {
-  const styles = useStyles(textCalloutStyles);
+  const styles = textCalloutStyles;
   const { className, variant = "neutral", title, description, ...rest } = props;
 
   return (
