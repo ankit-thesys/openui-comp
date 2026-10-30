@@ -87,6 +87,19 @@ That grammar is why this library is smaller than a general component set — 48
 components and a ~18,000-character system prompt — while producing dashboards
 rather than a vertical stack of cards.
 
+## Tests
+
+```bash
+pnpm test                               # library, prompt and style rules
+pnpm exec playwright install chromium   # once
+pnpm test:browser                       # rendering, computed styles, layout and clicks
+pnpm test:update                        # accept an intended change, then review the diff
+```
+
+Run them from `packages/kits/dashboard`, after building `@openuidev/react-components` and
+`@openuidev/react-lang`. `pnpm test` also runs in this package's `ci` script. The browser tests
+don't run in CI yet.
+
 ## Provenance
 
 The library is ported from genui-sdk's `packages/c1/src/dashboard`, with its

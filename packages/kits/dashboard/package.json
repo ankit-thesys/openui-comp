@@ -34,6 +34,9 @@
   "scripts": {
     "build": "tsdown",
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:browser": "vitest run --config vitest.browser.config.ts",
+    "test:update": "vitest run -u && vitest run -u --config vitest.browser.config.ts",
     "lint:check": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "format:check": "prettier --check ./src",
@@ -42,7 +45,7 @@
     "check:attw": "attw --pack . --ignore-rules no-resolution",
     "prepare": "pnpm run build",
     "prepublishOnly": "pnpm run check:publint && pnpm run check:attw",
-    "ci": "pnpm run lint:check && pnpm run format:check && pnpm run typecheck"
+    "ci": "pnpm run lint:check && pnpm run format:check && pnpm run typecheck && pnpm run test"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -63,8 +66,11 @@
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
+    "@vitest/browser-playwright": "^4.0.18",
+    "playwright": "^1.56.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "vitest": "^4.0.18",
     "zod": "catalog:"
   },
   "keywords": [
