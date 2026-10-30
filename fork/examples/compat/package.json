@@ -4,6 +4,7 @@
   "type": "module",
   "packageManager": "pnpm@10.33.0",
   "scripts": {
+    "check-theme": "node scripts/check-theme.mjs",
     "install-library": "node scripts/install-library.mjs",
     "smoke": "node scripts/run.mjs"
   }

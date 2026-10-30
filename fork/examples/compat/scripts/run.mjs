@@ -4,6 +4,7 @@ import { readFile } from "node:fs/promises";
 import { createServer } from "node:net";
 import { join } from "node:path";
 import { setTimeout as delay } from "node:timers/promises";
+import { checkTheme } from "./check-theme.mjs";
 import { compatDir, ports, run, selectApps } from "./common.mjs";
 import { installLibrary } from "./install-library.mjs";
 
@@ -138,6 +139,7 @@ try {
   const apps = selectApps(name);
   let rows;
   try {
+    await checkTheme();
     await installLibrary(apps);
     rows = (
       await Promise.all(apps.map((app) => runApp(app, mode, args.includes("--list-tests"))))
