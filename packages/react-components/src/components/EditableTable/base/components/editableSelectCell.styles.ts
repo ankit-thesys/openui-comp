@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../../../styles/useStyles";
+import { css } from "../../../../styles/css";
+
 // This cell owns its Radix parts, styled as table cells rather than as the Select family.
 export const names = {
   trigger: "openui-editable-table-select-trigger",
@@ -12,7 +13,7 @@ export const names = {
   value: "openui-editable-table-select-value",
   indicator: "openui-editable-table-select-indicator",
 } as const;
-export const editableSelectCellStyles = (css: StyleCss) => ({
+export const editableSelectCellStyles = /*#__PURE__*/ {
   trigger: css`
     font: var(--openui-text-body-sm, 400 14px/1.5 "Inter", sans-serif);
     letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);
@@ -147,4 +148,4 @@ export const editableSelectCellStyles = (css: StyleCss) => ({
     height: 16px;
     width: 16px;
   `,
-});
+};

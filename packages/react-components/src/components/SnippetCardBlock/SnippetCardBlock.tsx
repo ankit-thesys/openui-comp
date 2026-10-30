@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import { ChevronRight } from "lucide-react";
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
 import { TextFitContext } from "../TextBlock/TextFit";
 import { TooltipWrapper } from "../TooltipWrapper";
@@ -47,7 +46,7 @@ const TEXT_BLOCK_HEADING_SELECTOR = ".openui-text-block-primary";
 const TEXT_BLOCK_CONTENT_SELECTOR = ".openui-text-block-secondary";
 
 const SnippetCardBlock = forwardRef<HTMLDivElement, SnippetCardBlockProps>((props, ref) => {
-  const styles = useStyles(snippetCardBlockStyles);
+  const styles = snippetCardBlockStyles;
   const {
     items,
     responsive = true,

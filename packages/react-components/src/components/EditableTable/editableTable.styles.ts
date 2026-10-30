@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   scroll: "openui-editable-table-scroll-container",
   control: "openui-editable-table-scroll-control",
@@ -17,7 +18,7 @@ export const names = {
   headerRow: "openui-editable-table-header-row",
   icon: "openui-editable-table-icon",
 } as const;
-export const editableTableStyles = (css: StyleCss) => ({
+export const editableTableStyles = /*#__PURE__*/ {
   scroll: css`
     overflow: auto;
     scrollbar-width: none;
@@ -133,4 +134,4 @@ export const editableTableStyles = (css: StyleCss) => ({
       border-right: 0;
     }
   `,
-});
+};

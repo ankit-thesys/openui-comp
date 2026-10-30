@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-table-head",
   label: "openui-table-head-label",
@@ -10,7 +11,7 @@ export const names = {
     right: "openui-table-head--align-right",
   },
 } as const;
-export const tableHeadStyles = (css: StyleCss) => ({
+export const tableHeadStyles = /*#__PURE__*/ {
   root: css`
     padding-top: var(--openui-space-m, 12px);
     padding-bottom: var(--openui-space-m, 12px);
@@ -59,4 +60,4 @@ export const tableHeadStyles = (css: StyleCss) => ({
       --_openui-table-head-label-justify: flex-end;
     `,
   },
-});
+};

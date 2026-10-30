@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-entity-list",
   row: "openui-entity-list-row",
@@ -15,7 +16,7 @@ export const names = {
     number: "openui-entity-list-cell-right--right-variant-number",
   },
 } as const;
-export const entityListStyles = (css: StyleCss) => ({
+export const entityListStyles = /*#__PURE__*/ {
   root: css`
     display: flex;
     flex-direction: column;
@@ -198,4 +199,4 @@ export const entityListStyles = (css: StyleCss) => ({
       );
     `,
   },
-});
+};

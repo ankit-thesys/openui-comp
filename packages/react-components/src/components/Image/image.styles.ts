@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-image",
   aspect: "openui-image-aspect",
@@ -12,7 +13,7 @@ export const names = {
     "16:9": "openui-image-aspect--aspect-ratio-16-9",
   },
 } as const;
-export const imageStyles = (css: StyleCss) => ({
+export const imageStyles = /*#__PURE__*/ {
   root: css`
     display: flex;
     box-sizing: border-box;
@@ -64,4 +65,4 @@ export const imageStyles = (css: StyleCss) => ({
       --_openui-image-aspect-padding: 56.25%;
     `,
   },
-});
+};
