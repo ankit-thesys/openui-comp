@@ -1,10 +1,13 @@
 # Hook-free CSS consistency (#129)
 
-`server.json` and `order-server.md` were recorded on 2026-10-30 from the pre-migration
-build on top of #128. They are fork-only artifacts. The unit suite compares every server
-contract entry, including the focused chart contracts, with the recorded markup and rules.
-SharedBase and SkeletonPulse are included through their public consumers. Each failure names
-the component and shows the changed declarations/markup in Vitest's expected/received diff.
+`server.json`, `server-layer.json`, `browser-*.json` and `order-*.md` were recorded on
+2026-10-30 from the pre-migration build: the hook-free integration branch at 48632080 plus this
+check (#129), with no migration change in `packages/react-components`. They are fork-only
+artifacts. The unit suite compares every server contract entry, including the focused chart
+contracts, with the recorded markup and rules, unlayered (`css-snapshot.test.tsx`) and in the
+`openui` cascade layer (`css-snapshot-layer.test.tsx`). SharedBase and SkeletonPulse are included
+through their public consumers. Each failure names the component and shows the changed
+declarations, rule order or markup element in Vitest's expected/received diff.
 
 After building, the complete comparison and fresh order reports use one command:
 
@@ -19,33 +22,42 @@ server portion locally; the server comparison also runs in the ordinary unit sui
 Fresh reports are `order-*.current.md` (ignored); committed `order-*.md` are the starting point.
 No baseline is rewritten by a comparison, including Vitest's `-u` option.
 
-## Browser capture required before the migration
+## Recording
 
-Chromium cannot launch in the implementation sandbox. Consequently the committed capture here
-is the server portion only. **The client baseline and client order reports are still missing.**
-The orchestrator must run this on the same pre-migration build before committing #129:
+The browser baselines and browser order reports were captured with the server ones, on the same
+pre-migration build (above). Record only on a pre-migration build, never to accept a change:
 
 ```sh
+pnpm --filter @openuidev/react-components build
 pnpm --dir fork/react-components-dev css:record
 pnpm --dir fork/react-components-dev css:check
 ```
 
-Commit the generated `browser-*.json` and `order-browser-*.md` alongside the server artifacts.
 The browser spec uses its own existing collection: real portals, popovers, editors and measured
 controls, reopened for mutually exclusive states, with every declared client-only class required.
-It records only unlayered samples because layer placement is deliberately excluded from this
-consistency check; the original contract assertions still run both modes. A missing browser
-baseline fails comparison; there is no automatic update or fallback to server-only coverage.
-Do not record again to accept a migration regression. `css:record --server-only` is available for
-recording the initial server portion in this sandbox; it cannot substitute for the browser run.
+A missing baseline fails comparison; there is no automatic update or fallback to server-only
+coverage. `css:check --server-only` runs the server portion without Chromium.
 
 ## Representation and limits
 
 Markup retains the generated class slots, replacing each hash by a stable-class anchor and a
 slot number in first-markup-occurrence order. Distinct classes and shared class relationships
-remain distinct. Rules are indexed by those stable anchors and keep selectors, condition wrappers,
-declaration order, duplicates, values, importance and referenced keyframes. Only `@layer` wrappers
-are ignored. Generated animation names use linked aliases. Opaque React instance IDs and their
+remain distinct. Markup is stored split before each tag, so a diff shows the changed element.
+Rules are indexed by those stable anchors and keep selectors, condition wrappers, declaration
+order, duplicates, values, importance and referenced keyframes.
+
+`order` lists, for each element and each style module giving it more than one generated class,
+those classes in sheet order. Equal-weight rules resolve by that order, and ADR 0002 keeps it
+within a module (root, then variant, size, tone). Order across modules becomes import order by
+design, so it is left to the order report.
+
+Each rule records its cascade layer (`layer`), not the `@layer` blocks that express it: one block
+per rule today or one around the whole sheet after #131 record the same. Layer-mode samples
+(`server-layer.json`, and the `openui/…` keys in `browser-*.json`) keep rules and order but not
+markup, because the API that turns the layer on changes with #131 while the declarations of each
+rule and their layer must not. `css-snapshot-layer.test.tsx` also fails, naming the rule, when a
+component rule sits outside the `openui` layer. It runs in its own file, so its module graph is
+its own. Generated animation names use linked aliases. Opaque React instance IDs and their
 references are normalized; other attributes, inline styles, content and classes remain exact.
 The server and browser use a fixed October 2026 clock and UTC timezone for date-driven fixtures.
 Rules are selected with the contract's `cssFor` collector, not by slicing newly registered CSS.
@@ -58,7 +70,15 @@ into an isolated Goober target to identify the actual calling module, including 
 it also handles plain class-map exports. This metadata scan is not the source of snapshot CSS:
 all compared CSS comes from the public `getComponentStyles()`. Stable targets disambiguate
 identical rules whose Goober hash is shared across modules. Missing provenance is an error.
+Goober registers a shared hash once, so the rule takes the sheet position of the first module
+that registers it; later modules reuse that class and position. The provenance scan also
+compiles each rule as layer mode does today, so layer-mode classes have provenance too.
 Neither the scan nor its imports enters shipped code.
+
+`css:check` compares each fresh report with the committed `order-*.md` by collision row
+(component, element, module pair and shared properties; occurrence indexes are ignored because
+they move with markup). A new row fails the check and is printed with `+`; a row that disappeared
+is printed as fine.
 
 The report groups identical elements with every occurrence index, lists applicable modules,
 and lists literal property names shared by each pair. It conservatively includes possible states,
@@ -69,8 +89,15 @@ by modules are included too. Review the report together with browser parity for 
 
 ## Sensitivity proof
 
-Changed just Button's `transition: all 0.12s ease` to `transition: all 0.13s ease`, rebuilt,
-and ran `pnpm --dir fork/react-components-dev test test/unit/css-snapshot.test.tsx`.
-It failed on Button and its seven public compositions (8 failed, 72 passed). The per-component
-diff showed exactly `transition:all 0.12s ease` → `transition:all 0.13s ease`, despite the changed
-Goober hash. The deliberate source edit was then reverted and the library rebuilt.
+Each change below was made alone in `packages/react-components/src`, the library rebuilt and
+`pnpm css:check` run on port 5581, then the change was reverted and the library rebuilt. Every one
+failed with a diff on the changed line.
+
+| Change                                                                        | What failed                                                                                                                        |
+| ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Button root `cursor: pointer` → `default`                                     | 16 server tests (unlayered and layer), 4 browser components: `"cursor:pointer"` → `"cursor:default"`                               |
+| Button's `root` css call moved after `tone` (same rules, root registers last) | 16 server tests, 4 browser components: `order` `openui-button#0 < #1 < #2 < #3` → `#1 < #2 < #3 < #0`                              |
+| TooltipWrapper `z-index: 9999` → `9998` (client-only part)                    | the TooltipWrapper browser comparison: `"z-index:9999"` → `"z-index:9998"`                                                         |
+| Layer mode only: Button root's `cursor` changed inside the layer block        | 50 layer-mode server tests and the browser layer samples; unlayered tests pass                                                     |
+| Layer mode only: Button root's rule registered outside the layer              | 28 server tests, including "every rule sits in the openui layer" naming the rule `(layer: none)`                                   |
+| StackedLegend's separator also sets `background-color`, which Separator sets  | the declaration diffs, and the order comparison printing the new collision row for `order-server.md` and `order-browser-Charts.md` |

@@ -1,7 +1,13 @@
 import { expect, test, type Page } from "@playwright/test";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { readStableNames } from "../../scripts/selector-reference.mjs";
-import { snapshot, type Collection, type Snapshot } from "../css-snapshot/snapshot";
+import { styleProvenance } from "../../scripts/style-provenance.mjs";
+import {
+  snapshot,
+  type Collection,
+  type LayerSnapshot,
+  type Snapshot,
+} from "../css-snapshot/snapshot";
 import { classViolation, ruleViolation, rulesOf, selectorsOf } from "../unit/contract/checks";
 import {
   blocksIn,
@@ -18,6 +24,8 @@ test.use({ timezoneId: "UTC" });
 const names = (await readStableNames()).map(({ names }) => names);
 const documented = namesIn(names);
 const blocks = blocksIn(names);
+// Layer-mode classes hash differently today, so both scans give them provenance.
+const provenance = { ...(await styleProvenance()), ...(await styleProvenance("openui")) };
 
 // Lazily mounted content (markdown, code blocks) can still be rendering when a fixture opens, so
 // wait until the markup stops changing; otherwise the two modes can collect different rule sets.
@@ -53,7 +61,7 @@ for (const component of clientOnlyContracts) {
     test.setTimeout(120_000);
     await page.clock.install({ time: new Date("2026-10-15T12:00:00Z") });
     const shapes: string[][] = [];
-    const snapshots: Record<string, Snapshot> = {};
+    const snapshots: Record<string, Snapshot | LayerSnapshot> = {};
     const collections: Record<string, Collection> = {};
     const file = `browser-${component.folder.replaceAll("/", "_")}.json`;
     const baseline = new URL(`../css-snapshot/${file}`, import.meta.url);
@@ -77,14 +85,17 @@ for (const component of clientOnlyContracts) {
         if (component.folder === "Modal") await expect(page.getByRole("dialog")).toHaveCount(3);
         const { html, sheet, proseMarkup } = await collect(page);
         const css = cssFor(html, sheet);
-        if (!layer) {
-          const key = target || "initial";
-          const collection = {
-            html: html.replace(/\sopenui-theme-portal-[^"\s]+/g, ""),
-            sheet,
-          };
+        const key = target || "initial";
+        const collection = {
+          html: html.replace(/\sopenui-theme-portal-[^"\s]+/g, ""),
+          sheet,
+        };
+        const { markup, ...rest } = snapshot(collection, provenance);
+        // Layer samples keep rules and order only; see LayerSnapshot.
+        if (layer) snapshots[`${layer}/${key}`] = rest;
+        else {
           collections[`${component.folder}/${key}`] = collection;
-          snapshots[key] = snapshot(collection);
+          snapshots[key] = { markup, ...rest };
         }
         expect(selectorsOf(css).length).toBeGreaterThan(0);
         const proseRoots = generatedClassesOn(proseMarkup, "openui-markdown-renderer");
@@ -121,6 +132,12 @@ for (const component of clientOnlyContracts) {
           .sort(),
       );
     }
+    // Hand the raw collections to the order report before comparing, so it runs on a failure too.
+    const capture = process.env["OPENUI_CSS_CAPTURE"];
+    if (capture) {
+      mkdirSync(capture, { recursive: true });
+      writeFileSync(`${capture}/${file}`, JSON.stringify(collections));
+    }
     expect(shapes[1]).toEqual(shapes[0]);
     if (record) writeFileSync(baseline, JSON.stringify(snapshots, null, 2) + "\n");
     else {
@@ -128,11 +145,6 @@ for (const component of clientOnlyContracts) {
         snapshots,
         `${component.folder}: client-only CSS/markup changed; baseline must be recorded before migration`,
       ).toEqual(JSON.parse(readFileSync(baseline, "utf8")));
-    }
-    const capture = process.env["OPENUI_CSS_CAPTURE"];
-    if (capture) {
-      mkdirSync(capture, { recursive: true });
-      writeFileSync(`${capture}/${file}`, JSON.stringify(collections));
     }
   });
 }

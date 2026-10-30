@@ -6,7 +6,13 @@ import { readdirSync } from "node:fs";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 
-export async function styleProvenance() {
+// With `layer`, rules compile as useStyles compiles them in that cascade layer today (each rule in
+// its own `@layer` block), so layer-mode hashes have provenance too. Callers merge both scans: an
+// app-wide layer that keeps the unlayered hashes is then still covered.
+const joined = (strings, values) =>
+  strings.reduce((out, string, i) => out + string + (values[i] ?? ""), "");
+
+export async function styleProvenance(layer) {
   const require = createRequire(new URL("package.json", libraryRoot));
   const { css } = require("goober");
   const compile = css.bind({ target: { data: "" } });
@@ -29,7 +35,9 @@ export async function styleProvenance() {
         const exports = await import(url.href);
         const touched = new Map();
         const tag = (strings, ...values) => {
-          const name = compile(strings, ...values);
+          const name = layer
+            ? compile(`@layer ${layer}{&{${joined(strings, values)}}}`)
+            : compile(strings, ...values);
           const caller = new Error().stack
             ?.split("\n")
             .find((line) => line.includes(".styles.mjs:"));

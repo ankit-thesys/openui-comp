@@ -1,6 +1,207 @@
 {
   "initial": {
-    "markup": "<span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\"></span><div id=\"root\" data-aria-hidden=\"true\" aria-hidden=\"true\"><button role=\"combobox\" aria-expanded=\"true\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"open\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\" aria-controls=\"radix-react-id-0\" data-radix-popper-side=\"bottom\" data-radix-popper-align=\"start\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button></div><script type=\"module\" src=\"/elements.js\"></script><div data-radix-popper-content-wrapper=\"\" dir=\"ltr\" style=\"position: fixed; left: 0px; top: 0px; transform: translate(10px, 40px); min-width: max-content; --radix-popper-transform-origin: 0% 0px; z-index: 99999; --radix-popper-available-width: 1260px; --radix-popper-available-height: 670px; --radix-popper-anchor-width: 77.765625px; --radix-popper-anchor-height: 36px;\"><div data-side=\"bottom\" data-align=\"start\" role=\"listbox\" id=\"radix-react-id-0\" data-state=\"open\" dir=\"ltr\" class=\"openui-select-content#0 openui-select-content openui-select-content#1 openui-select-content--size-md openui-select-content#2 openui-select-content--position-popper\" tabindex=\"-1\" style=\"--radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;\"><style>[data-radix-select-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-select-viewport]::-webkit-scrollbar{display:none}</style><div data-radix-select-viewport=\"\" role=\"presentation\" class=\"openui-select-viewport#0 openui-select-viewport\" data-position=\"popper\"><div role=\"group\" aria-labelledby=\"radix-react-id-1\" class=\"openui-select-group#0 openui-select-group\"><div id=\"radix-react-id-1\" class=\"openui-select-label#0 openui-select-label\">Group</div><div role=\"option\" aria-labelledby=\"radix-react-id-2\" aria-selected=\"true\" data-state=\"checked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item openui-select-item#1 openui-select-item--show-tick\" data-radix-collection-item=\"\" data-highlighted=\"\"><span class=\"openui-select-item-check-wrapper#0 openui-select-item-check-wrapper\"><span aria-hidden=\"true\" class=\"openui-select-item-indicator\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check openui-select-item-check-icon#0 openui-select-item-check-icon\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg></span></span><span class=\"openui-select-item-text\" id=\"radix-react-id-2\">One</span><span class=\"openui-select-item-text-value\">Detail</span></div><div role=\"option\" aria-labelledby=\"radix-react-id-3\" aria-selected=\"false\" data-state=\"unchecked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item\" data-radix-collection-item=\"\"><span class=\"openui-select-item-text\" id=\"radix-react-id-3\">Two</span></div><div aria-hidden=\"true\" class=\"openui-select-separator#0 openui-select-separator\"></div></div></div></div></div><span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\"></span>",
+    "markup": [
+      "<span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\">",
+      "</span>",
+      "<div id=\"root\" data-aria-hidden=\"true\" aria-hidden=\"true\">",
+      "<button role=\"combobox\" aria-expanded=\"true\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"open\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\" aria-controls=\"radix-react-id-0\" data-radix-popper-side=\"bottom\" data-radix-popper-align=\"start\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "<script type=\"module\" src=\"/elements.js\">",
+      "</script>",
+      "<div data-radix-popper-content-wrapper=\"\" dir=\"ltr\" style=\"position: fixed; left: 0px; top: 0px; transform: translate(10px, 40px); min-width: max-content; --radix-popper-transform-origin: 0% 0px; z-index: 99999; --radix-popper-available-width: 1260px; --radix-popper-available-height: 670px; --radix-popper-anchor-width: 77.765625px; --radix-popper-anchor-height: 36px;\">",
+      "<div data-side=\"bottom\" data-align=\"start\" role=\"listbox\" id=\"radix-react-id-0\" data-state=\"open\" dir=\"ltr\" class=\"openui-select-content#0 openui-select-content openui-select-content#1 openui-select-content--size-md openui-select-content#2 openui-select-content--position-popper\" tabindex=\"-1\" style=\"--radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;\">",
+      "<style>[data-radix-select-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-select-viewport]::-webkit-scrollbar{display:none}",
+      "</style>",
+      "<div data-radix-select-viewport=\"\" role=\"presentation\" class=\"openui-select-viewport#0 openui-select-viewport\" data-position=\"popper\">",
+      "<div role=\"group\" aria-labelledby=\"radix-react-id-1\" class=\"openui-select-group#0 openui-select-group\">",
+      "<div id=\"radix-react-id-1\" class=\"openui-select-label#0 openui-select-label\">Group",
+      "</div>",
+      "<div role=\"option\" aria-labelledby=\"radix-react-id-2\" aria-selected=\"true\" data-state=\"checked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item openui-select-item#1 openui-select-item--show-tick\" data-radix-collection-item=\"\" data-highlighted=\"\">",
+      "<span class=\"openui-select-item-check-wrapper#0 openui-select-item-check-wrapper\">",
+      "<span aria-hidden=\"true\" class=\"openui-select-item-indicator\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check openui-select-item-check-icon#0 openui-select-item-check-icon\" aria-hidden=\"true\">",
+      "<path d=\"M20 6 9 17l-5-5\">",
+      "</path>",
+      "</svg>",
+      "</span>",
+      "</span>",
+      "<span class=\"openui-select-item-text\" id=\"radix-react-id-2\">One",
+      "</span>",
+      "<span class=\"openui-select-item-text-value\">Detail",
+      "</span>",
+      "</div>",
+      "<div role=\"option\" aria-labelledby=\"radix-react-id-3\" aria-selected=\"false\" data-state=\"unchecked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item\" data-radix-collection-item=\"\">",
+      "<span class=\"openui-select-item-text\" id=\"radix-react-id-3\">Two",
+      "</span>",
+      "</div>",
+      "<div aria-hidden=\"true\" class=\"openui-select-separator#0 openui-select-separator\">",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\">",
+      "</span>"
+    ],
     "rules": {
       "@keyframes": [
         {
@@ -300,10 +501,218 @@
           ]
         }
       ]
-    }
+    },
+    "order": [
+      "Select/select.styles.mjs: openui-select-content#0 < openui-select-content#2 < openui-select-content#1",
+      "Select/select.styles.mjs: openui-select-item#0 < openui-select-item#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#2",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#3"
+    ]
   },
   "openui-select-content--position-item-aligned": {
-    "markup": "<span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\"></span><div id=\"root\" data-aria-hidden=\"true\" aria-hidden=\"true\"><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"true\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"open\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\" aria-controls=\"radix-react-id-0\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button></div><script type=\"module\" src=\"/elements.js\"></script><div style=\"display: flex; flex-direction: column; position: fixed; min-width: 80.9656px; left: 128.331px; top: 0px; height: 85px; margin: 10px 0px; min-height: 111px; max-height: 700px; z-index: 99999;\"><div role=\"listbox\" id=\"radix-react-id-0\" data-state=\"open\" dir=\"ltr\" class=\"openui-select-content#0 openui-select-content openui-select-content#1 openui-select-content--size-md openui-select-content#2 openui-select-content--position-item-aligned\" tabindex=\"-1\" style=\"pointer-events: auto;\"><style>[data-radix-select-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-select-viewport]::-webkit-scrollbar{display:none}</style><div data-radix-select-viewport=\"\" role=\"presentation\" class=\"openui-select-viewport#0 openui-select-viewport\" data-position=\"item-aligned\"><div role=\"group\" aria-labelledby=\"radix-react-id-1\" class=\"openui-select-group#0 openui-select-group\"><div id=\"radix-react-id-1\" class=\"openui-select-label#0 openui-select-label\">Group</div><div role=\"option\" aria-labelledby=\"radix-react-id-2\" aria-selected=\"true\" data-state=\"checked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item openui-select-item#1 openui-select-item--show-tick\" data-radix-collection-item=\"\" data-highlighted=\"\"><span class=\"openui-select-item-check-wrapper#0 openui-select-item-check-wrapper\"><span aria-hidden=\"true\" class=\"openui-select-item-indicator\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check openui-select-item-check-icon#0 openui-select-item-check-icon\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg></span></span><span class=\"openui-select-item-text\" id=\"radix-react-id-2\">One</span><span class=\"openui-select-item-text-value\">Detail</span></div><div role=\"option\" aria-labelledby=\"radix-react-id-3\" aria-selected=\"false\" data-state=\"unchecked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item\" data-radix-collection-item=\"\"><span class=\"openui-select-item-text\" id=\"radix-react-id-3\">Two</span></div><div aria-hidden=\"true\" class=\"openui-select-separator#0 openui-select-separator\"></div></div></div></div></div><span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\"></span>",
+    "markup": [
+      "<span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\">",
+      "</span>",
+      "<div id=\"root\" data-aria-hidden=\"true\" aria-hidden=\"true\">",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"true\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"open\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\" aria-controls=\"radix-react-id-0\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "<script type=\"module\" src=\"/elements.js\">",
+      "</script>",
+      "<div style=\"display: flex; flex-direction: column; position: fixed; min-width: 80.9656px; left: 128.331px; top: 0px; height: 85px; margin: 10px 0px; min-height: 111px; max-height: 700px; z-index: 99999;\">",
+      "<div role=\"listbox\" id=\"radix-react-id-0\" data-state=\"open\" dir=\"ltr\" class=\"openui-select-content#0 openui-select-content openui-select-content#1 openui-select-content--size-md openui-select-content#2 openui-select-content--position-item-aligned\" tabindex=\"-1\" style=\"pointer-events: auto;\">",
+      "<style>[data-radix-select-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-select-viewport]::-webkit-scrollbar{display:none}",
+      "</style>",
+      "<div data-radix-select-viewport=\"\" role=\"presentation\" class=\"openui-select-viewport#0 openui-select-viewport\" data-position=\"item-aligned\">",
+      "<div role=\"group\" aria-labelledby=\"radix-react-id-1\" class=\"openui-select-group#0 openui-select-group\">",
+      "<div id=\"radix-react-id-1\" class=\"openui-select-label#0 openui-select-label\">Group",
+      "</div>",
+      "<div role=\"option\" aria-labelledby=\"radix-react-id-2\" aria-selected=\"true\" data-state=\"checked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item openui-select-item#1 openui-select-item--show-tick\" data-radix-collection-item=\"\" data-highlighted=\"\">",
+      "<span class=\"openui-select-item-check-wrapper#0 openui-select-item-check-wrapper\">",
+      "<span aria-hidden=\"true\" class=\"openui-select-item-indicator\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check openui-select-item-check-icon#0 openui-select-item-check-icon\" aria-hidden=\"true\">",
+      "<path d=\"M20 6 9 17l-5-5\">",
+      "</path>",
+      "</svg>",
+      "</span>",
+      "</span>",
+      "<span class=\"openui-select-item-text\" id=\"radix-react-id-2\">One",
+      "</span>",
+      "<span class=\"openui-select-item-text-value\">Detail",
+      "</span>",
+      "</div>",
+      "<div role=\"option\" aria-labelledby=\"radix-react-id-3\" aria-selected=\"false\" data-state=\"unchecked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item\" data-radix-collection-item=\"\">",
+      "<span class=\"openui-select-item-text\" id=\"radix-react-id-3\">Two",
+      "</span>",
+      "</div>",
+      "<div aria-hidden=\"true\" class=\"openui-select-separator#0 openui-select-separator\">",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\">",
+      "</span>"
+    ],
     "rules": {
       "@keyframes": [
         {
@@ -603,10 +1012,218 @@
           ]
         }
       ]
-    }
+    },
+    "order": [
+      "Select/select.styles.mjs: openui-select-content#0 < openui-select-content#2 < openui-select-content#1",
+      "Select/select.styles.mjs: openui-select-item#0 < openui-select-item#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#2",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#3"
+    ]
   },
   "openui-select-content--size-sm": {
-    "markup": "<span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\"></span><div id=\"root\" data-aria-hidden=\"true\" aria-hidden=\"true\"><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"true\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"open\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"popper\" aria-controls=\"radix-react-id-0\" data-radix-popper-side=\"bottom\" data-radix-popper-align=\"start\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button></div><script type=\"module\" src=\"/elements.js\"></script><div data-radix-popper-content-wrapper=\"\" dir=\"ltr\" style=\"position: fixed; left: 0px; top: 0px; transform: translate(263px, 39px); min-width: max-content; --radix-popper-transform-origin: 0% 0px; z-index: 99999; --radix-popper-available-width: 1260px; --radix-popper-available-height: 671.5px; --radix-popper-anchor-width: 68.046875px; --radix-popper-anchor-height: 32px;\"><div data-side=\"bottom\" data-align=\"start\" role=\"listbox\" id=\"radix-react-id-0\" data-state=\"open\" dir=\"ltr\" class=\"openui-select-content#0 openui-select-content openui-select-content#1 openui-select-content--size-sm openui-select-content#2 openui-select-content--position-popper\" tabindex=\"-1\" style=\"--radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;\"><style>[data-radix-select-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-select-viewport]::-webkit-scrollbar{display:none}</style><div data-radix-select-viewport=\"\" role=\"presentation\" class=\"openui-select-viewport#0 openui-select-viewport\" data-position=\"popper\"><div role=\"group\" aria-labelledby=\"radix-react-id-1\" class=\"openui-select-group#0 openui-select-group\"><div id=\"radix-react-id-1\" class=\"openui-select-label#0 openui-select-label\">Group</div><div role=\"option\" aria-labelledby=\"radix-react-id-2\" aria-selected=\"true\" data-state=\"checked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item openui-select-item#1 openui-select-item--show-tick\" data-radix-collection-item=\"\" data-highlighted=\"\"><span class=\"openui-select-item-check-wrapper#0 openui-select-item-check-wrapper\"><span aria-hidden=\"true\" class=\"openui-select-item-indicator\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check openui-select-item-check-icon#0 openui-select-item-check-icon\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg></span></span><span class=\"openui-select-item-text\" id=\"radix-react-id-2\">One</span><span class=\"openui-select-item-text-value\">Detail</span></div><div role=\"option\" aria-labelledby=\"radix-react-id-3\" aria-selected=\"false\" data-state=\"unchecked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item\" data-radix-collection-item=\"\"><span class=\"openui-select-item-text\" id=\"radix-react-id-3\">Two</span></div><div aria-hidden=\"true\" class=\"openui-select-separator#0 openui-select-separator\"></div></div></div></div></div><span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\"></span>",
+    "markup": [
+      "<span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\">",
+      "</span>",
+      "<div id=\"root\" data-aria-hidden=\"true\" aria-hidden=\"true\">",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"true\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"open\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"popper\" aria-controls=\"radix-react-id-0\" data-radix-popper-side=\"bottom\" data-radix-popper-align=\"start\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "<script type=\"module\" src=\"/elements.js\">",
+      "</script>",
+      "<div data-radix-popper-content-wrapper=\"\" dir=\"ltr\" style=\"position: fixed; left: 0px; top: 0px; transform: translate(263px, 39px); min-width: max-content; --radix-popper-transform-origin: 0% 0px; z-index: 99999; --radix-popper-available-width: 1260px; --radix-popper-available-height: 671.5px; --radix-popper-anchor-width: 68.046875px; --radix-popper-anchor-height: 32px;\">",
+      "<div data-side=\"bottom\" data-align=\"start\" role=\"listbox\" id=\"radix-react-id-0\" data-state=\"open\" dir=\"ltr\" class=\"openui-select-content#0 openui-select-content openui-select-content#1 openui-select-content--size-sm openui-select-content#2 openui-select-content--position-popper\" tabindex=\"-1\" style=\"--radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;\">",
+      "<style>[data-radix-select-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-select-viewport]::-webkit-scrollbar{display:none}",
+      "</style>",
+      "<div data-radix-select-viewport=\"\" role=\"presentation\" class=\"openui-select-viewport#0 openui-select-viewport\" data-position=\"popper\">",
+      "<div role=\"group\" aria-labelledby=\"radix-react-id-1\" class=\"openui-select-group#0 openui-select-group\">",
+      "<div id=\"radix-react-id-1\" class=\"openui-select-label#0 openui-select-label\">Group",
+      "</div>",
+      "<div role=\"option\" aria-labelledby=\"radix-react-id-2\" aria-selected=\"true\" data-state=\"checked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item openui-select-item#1 openui-select-item--show-tick\" data-radix-collection-item=\"\" data-highlighted=\"\">",
+      "<span class=\"openui-select-item-check-wrapper#0 openui-select-item-check-wrapper\">",
+      "<span aria-hidden=\"true\" class=\"openui-select-item-indicator\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check openui-select-item-check-icon#0 openui-select-item-check-icon\" aria-hidden=\"true\">",
+      "<path d=\"M20 6 9 17l-5-5\">",
+      "</path>",
+      "</svg>",
+      "</span>",
+      "</span>",
+      "<span class=\"openui-select-item-text\" id=\"radix-react-id-2\">One",
+      "</span>",
+      "<span class=\"openui-select-item-text-value\">Detail",
+      "</span>",
+      "</div>",
+      "<div role=\"option\" aria-labelledby=\"radix-react-id-3\" aria-selected=\"false\" data-state=\"unchecked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item\" data-radix-collection-item=\"\">",
+      "<span class=\"openui-select-item-text\" id=\"radix-react-id-3\">Two",
+      "</span>",
+      "</div>",
+      "<div aria-hidden=\"true\" class=\"openui-select-separator#0 openui-select-separator\">",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\">",
+      "</span>"
+    ],
     "rules": {
       "@keyframes": [
         {
@@ -906,10 +1523,218 @@
           ]
         }
       ]
-    }
+    },
+    "order": [
+      "Select/select.styles.mjs: openui-select-content#0 < openui-select-content#2 < openui-select-content#1",
+      "Select/select.styles.mjs: openui-select-item#0 < openui-select-item#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#2",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#3"
+    ]
   },
   "openui-select-content--size-lg": {
-    "markup": "<span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\"></span><div id=\"root\" data-aria-hidden=\"true\" aria-hidden=\"true\"><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"true\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"open\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"popper\" aria-controls=\"radix-react-id-0\" data-radix-popper-side=\"bottom\" data-radix-popper-align=\"start\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">One</span></span></span></button></div><script type=\"module\" src=\"/elements.js\"></script><div data-radix-popper-content-wrapper=\"\" dir=\"ltr\" style=\"position: fixed; left: 0px; top: 0px; transform: translate(750px, 42px); min-width: max-content; --radix-popper-transform-origin: 0% 0px; z-index: 99999; --radix-popper-available-width: 1260px; --radix-popper-available-height: 668px; --radix-popper-anchor-width: 79.765625px; --radix-popper-anchor-height: 40px;\"><div data-side=\"bottom\" data-align=\"start\" role=\"listbox\" id=\"radix-react-id-0\" data-state=\"open\" dir=\"ltr\" class=\"openui-select-content#0 openui-select-content openui-select-content#1 openui-select-content--size-lg openui-select-content#2 openui-select-content--position-popper\" tabindex=\"-1\" style=\"--radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;\"><style>[data-radix-select-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-select-viewport]::-webkit-scrollbar{display:none}</style><div data-radix-select-viewport=\"\" role=\"presentation\" class=\"openui-select-viewport#0 openui-select-viewport\" data-position=\"popper\"><div role=\"group\" aria-labelledby=\"radix-react-id-1\" class=\"openui-select-group#0 openui-select-group\"><div id=\"radix-react-id-1\" class=\"openui-select-label#0 openui-select-label\">Group</div><div role=\"option\" aria-labelledby=\"radix-react-id-2\" aria-selected=\"true\" data-state=\"checked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item openui-select-item#1 openui-select-item--show-tick\" data-radix-collection-item=\"\" data-highlighted=\"\"><span class=\"openui-select-item-check-wrapper#0 openui-select-item-check-wrapper\"><span aria-hidden=\"true\" class=\"openui-select-item-indicator\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check openui-select-item-check-icon#0 openui-select-item-check-icon\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg></span></span><span class=\"openui-select-item-text\" id=\"radix-react-id-2\">One</span><span class=\"openui-select-item-text-value\">Detail</span></div><div role=\"option\" aria-labelledby=\"radix-react-id-3\" aria-selected=\"false\" data-state=\"unchecked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item\" data-radix-collection-item=\"\"><span class=\"openui-select-item-text\" id=\"radix-react-id-3\">Two</span></div><div aria-hidden=\"true\" class=\"openui-select-separator#0 openui-select-separator\"></div></div></div></div></div><span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\"></span>",
+    "markup": [
+      "<span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\">",
+      "</span>",
+      "<div id=\"root\" data-aria-hidden=\"true\" aria-hidden=\"true\">",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#2 openui-select-trigger--size-sm openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#1 openui-select-trigger--size-md openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"true\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"open\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"popper\" aria-controls=\"radix-react-id-0\" data-radix-popper-side=\"bottom\" data-radix-popper-align=\"start\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"popper\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "<button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger#0 openui-select-trigger openui-select-trigger#3 openui-select-trigger--size-lg openui-select-trigger--hide-dropdown-icon\" data-bench-position=\"item-aligned\">",
+      "<span class=\"openui-select-value\">",
+      "<span style=\"pointer-events: none;\">",
+      "<span class=\"openui-select-item-text\">One",
+      "</span>",
+      "</span>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "<script type=\"module\" src=\"/elements.js\">",
+      "</script>",
+      "<div data-radix-popper-content-wrapper=\"\" dir=\"ltr\" style=\"position: fixed; left: 0px; top: 0px; transform: translate(750px, 42px); min-width: max-content; --radix-popper-transform-origin: 0% 0px; z-index: 99999; --radix-popper-available-width: 1260px; --radix-popper-available-height: 668px; --radix-popper-anchor-width: 79.765625px; --radix-popper-anchor-height: 40px;\">",
+      "<div data-side=\"bottom\" data-align=\"start\" role=\"listbox\" id=\"radix-react-id-0\" data-state=\"open\" dir=\"ltr\" class=\"openui-select-content#0 openui-select-content openui-select-content#1 openui-select-content--size-lg openui-select-content#2 openui-select-content--position-popper\" tabindex=\"-1\" style=\"--radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;\">",
+      "<style>[data-radix-select-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-select-viewport]::-webkit-scrollbar{display:none}",
+      "</style>",
+      "<div data-radix-select-viewport=\"\" role=\"presentation\" class=\"openui-select-viewport#0 openui-select-viewport\" data-position=\"popper\">",
+      "<div role=\"group\" aria-labelledby=\"radix-react-id-1\" class=\"openui-select-group#0 openui-select-group\">",
+      "<div id=\"radix-react-id-1\" class=\"openui-select-label#0 openui-select-label\">Group",
+      "</div>",
+      "<div role=\"option\" aria-labelledby=\"radix-react-id-2\" aria-selected=\"true\" data-state=\"checked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item openui-select-item#1 openui-select-item--show-tick\" data-radix-collection-item=\"\" data-highlighted=\"\">",
+      "<span class=\"openui-select-item-check-wrapper#0 openui-select-item-check-wrapper\">",
+      "<span aria-hidden=\"true\" class=\"openui-select-item-indicator\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check openui-select-item-check-icon#0 openui-select-item-check-icon\" aria-hidden=\"true\">",
+      "<path d=\"M20 6 9 17l-5-5\">",
+      "</path>",
+      "</svg>",
+      "</span>",
+      "</span>",
+      "<span class=\"openui-select-item-text\" id=\"radix-react-id-2\">One",
+      "</span>",
+      "<span class=\"openui-select-item-text-value\">Detail",
+      "</span>",
+      "</div>",
+      "<div role=\"option\" aria-labelledby=\"radix-react-id-3\" aria-selected=\"false\" data-state=\"unchecked\" tabindex=\"-1\" class=\"openui-select-item#0 openui-select-item\" data-radix-collection-item=\"\">",
+      "<span class=\"openui-select-item-text\" id=\"radix-react-id-3\">Two",
+      "</span>",
+      "</div>",
+      "<div aria-hidden=\"true\" class=\"openui-select-separator#0 openui-select-separator\">",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\">",
+      "</span>"
+    ],
     "rules": {
       "@keyframes": [
         {
@@ -1209,6 +2034,1357 @@
           ]
         }
       ]
-    }
+    },
+    "order": [
+      "Select/select.styles.mjs: openui-select-content#0 < openui-select-content#2 < openui-select-content#1",
+      "Select/select.styles.mjs: openui-select-item#0 < openui-select-item#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#2",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#3"
+    ]
+  },
+  "openui/initial": {
+    "rules": {
+      "@keyframes": [
+        {
+          "selector": "@keyframes _openui-select-show",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:scale(0.95)",
+            "}to{opacity:1",
+            "transform:scale(1)",
+            "}"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-content#0": [
+        {
+          "selector": ".openui-select-content#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "position:relative",
+            "display:flex",
+            "flex-direction:column",
+            "outline:none",
+            "z-index:99999",
+            "max-height:var(--_openui-select-content-max-height)",
+            "min-width:var(--radix-select-trigger-width)",
+            "overflow:hidden",
+            "border:none",
+            "border-radius:var(--openui-radius-2xl, 14px)",
+            "background-color:color-mix( in oklch, var(--openui-foreground, oklch(0.994 0 89.876 / 1)), var(--openui-text-white, oklch(1 0 89.876 / 1)) 6% )",
+            "box-shadow:0 0 0 1px color-mix( in oklch, var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)) 6%, transparent ), 0 4px 12px -2px oklch(0 0 0 / 0.05), 0 16px 32px -8px oklch(0 0 0 / 0.08)",
+            "padding:0",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "transform-origin:top center",
+            "animation:_openui-select-show 0.18s ease-out forwards"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-content#1": [
+        {
+          "selector": ".openui-select-content#1",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-content-font:var( --openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif )",
+            "--_openui-select-content-letter-spacing:var( --openui-text-body-default-letter-spacing, -0.01em )",
+            "--_openui-select-label-font-size:12px",
+            "--_openui-select-label-line-height:12px"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-content#2": [
+        {
+          "selector": ".openui-select-content#2",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-viewport-width:100%",
+            "--_openui-select-content-max-height:372px"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-group#0": [
+        {
+          "selector": ".openui-select-group#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-direction:column",
+            "gap:var(--openui-space-3xs, 2px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item-check-icon#0": [
+        {
+          "selector": ".openui-select-item-check-icon#0",
+          "conditions": [],
+          "declarations": ["height:16px", "width:16px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item-check-wrapper#0": [
+        {
+          "selector": ".openui-select-item-check-wrapper#0",
+          "conditions": [],
+          "declarations": ["position:absolute", "right:8px", "height:14px", "width:14px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item#0": [
+        {
+          "selector": ".openui-select-item#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "position:relative",
+            "display:flex",
+            "cursor:default",
+            "user-select:none",
+            "align-items:center",
+            "justify-content:space-between",
+            "font:var(--_openui-select-content-font, var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif))",
+            "letter-spacing:var(--_openui-select-content-letter-spacing, var(--openui-text-body-default-letter-spacing, -0.01em))",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "height:32px",
+            "padding:0 var(--openui-space-m-l, 16px)",
+            "border-radius:0",
+            "outline:none",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0:focus-within",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0[data-highlighted]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0[data-state=\"checked\"]",
+          "conditions": [],
+          "declarations": ["background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0[data-disabled]",
+          "conditions": [],
+          "declarations": ["pointer-events:none", "opacity:0.5"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item#1": [
+        {
+          "selector": ".openui-select-item#1",
+          "conditions": [],
+          "declarations": ["padding-right:var(--openui-space-xl, 24px)"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-label#0": [
+        {
+          "selector": ".openui-select-label#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "font:var(--_openui-select-content-font, var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif))",
+            "letter-spacing:var(--_openui-select-content-letter-spacing, var(--openui-text-body-default-letter-spacing, -0.01em))",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-m-l, 16px) var(--openui-space-2xs, 4px)",
+            "color:color-mix( in oklch, var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)) 60%, transparent )",
+            "font-size:var(--_openui-select-label-font-size, 12px)",
+            "line-height:var(--_openui-select-label-line-height, 12px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-separator#0": [
+        {
+          "selector": ".openui-select-separator#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "margin:var(--openui-space-2xs, 4px) 0",
+            "height:1px",
+            "border-top:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger-icon#0": [
+        {
+          "selector": ".openui-select-trigger-icon#0",
+          "conditions": [],
+          "declarations": [
+            "height:16px",
+            "width:16px",
+            "transition:transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+            "transform:var(--_openui-select-trigger-icon-transform, none)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#0": [
+        {
+          "selector": ".openui-select-trigger#0",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-trigger-icon-transform:none",
+            "--_openui-select-trigger-hover-color:initial",
+            "box-sizing:border-box",
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "outline:none",
+            "display:inline-flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "gap:var(--openui-space-s, 8px)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ":where(.openui-select-trigger#0) svg",
+          "conditions": [],
+          "declarations": [
+            "transition:transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+            "transform:var(--_openui-select-trigger-icon-transform, none)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0:hover",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-trigger-hover-color:var( --openui-text-neutral-primary, oklch(0.097 0 0 / 1) )",
+            "background:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0[data-state=\"open\"]",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-trigger-icon-transform:rotate(180deg)",
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var( --_openui-select-trigger-hover-color, var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2)) )",
+            "border-color:var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "cursor:not-allowed"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0[data-placeholder]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#1": [
+        {
+          "selector": ".openui-select-trigger#1",
+          "conditions": [],
+          "declarations": [
+            "padding:calc(var(--openui-space-xs, 6px) - 1px) calc(var(--openui-space-m, 12px) - 1px)",
+            "border-radius:var(--openui-radius-m, 8px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#2": [
+        {
+          "selector": ".openui-select-trigger#2",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "padding:calc(var(--openui-space-xs, 6px) - 1.5px) var(--openui-space-s, 8px)",
+            "border-radius:calc(var(--openui-radius-s, 6px) + 1px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#3": [
+        {
+          "selector": ".openui-select-trigger#3",
+          "conditions": [],
+          "declarations": [
+            "padding:calc(var(--openui-space-s, 8px) - 1px) var(--openui-space-m, 12px)",
+            "border-radius:var(--openui-radius-l, 10px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-viewport#0": [
+        {
+          "selector": ".openui-select-viewport#0",
+          "conditions": [],
+          "declarations": [
+            "position:relative",
+            "flex:1",
+            "overflow:hidden auto",
+            "box-sizing:border-box",
+            "padding:var(--openui-space-2xs, 4px) 0",
+            "border-bottom-left-radius:calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px))",
+            "border-bottom-right-radius:calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px))",
+            "width:var(--_openui-select-viewport-width, auto)"
+          ],
+          "layer": "openui"
+        }
+      ]
+    },
+    "order": [
+      "Select/select.styles.mjs: openui-select-content#0 < openui-select-content#2 < openui-select-content#1",
+      "Select/select.styles.mjs: openui-select-item#0 < openui-select-item#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#2",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#3"
+    ]
+  },
+  "openui/openui-select-content--position-item-aligned": {
+    "rules": {
+      "@keyframes": [
+        {
+          "selector": "@keyframes _openui-select-show",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:scale(0.95)",
+            "}to{opacity:1",
+            "transform:scale(1)",
+            "}"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-content#0": [
+        {
+          "selector": ".openui-select-content#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "position:relative",
+            "display:flex",
+            "flex-direction:column",
+            "outline:none",
+            "z-index:99999",
+            "max-height:var(--_openui-select-content-max-height)",
+            "min-width:var(--radix-select-trigger-width)",
+            "overflow:hidden",
+            "border:none",
+            "border-radius:var(--openui-radius-2xl, 14px)",
+            "background-color:color-mix( in oklch, var(--openui-foreground, oklch(0.994 0 89.876 / 1)), var(--openui-text-white, oklch(1 0 89.876 / 1)) 6% )",
+            "box-shadow:0 0 0 1px color-mix( in oklch, var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)) 6%, transparent ), 0 4px 12px -2px oklch(0 0 0 / 0.05), 0 16px 32px -8px oklch(0 0 0 / 0.08)",
+            "padding:0",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "transform-origin:top center",
+            "animation:_openui-select-show 0.18s ease-out forwards"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-content#1": [
+        {
+          "selector": ".openui-select-content#1",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-content-font:var( --openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif )",
+            "--_openui-select-content-letter-spacing:var( --openui-text-body-default-letter-spacing, -0.01em )",
+            "--_openui-select-label-font-size:12px",
+            "--_openui-select-label-line-height:12px"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-content#2": [
+        {
+          "selector": ".openui-select-content#2",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-viewport-width:auto",
+            "--_openui-select-content-max-height:100%"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-group#0": [
+        {
+          "selector": ".openui-select-group#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-direction:column",
+            "gap:var(--openui-space-3xs, 2px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item-check-icon#0": [
+        {
+          "selector": ".openui-select-item-check-icon#0",
+          "conditions": [],
+          "declarations": ["height:16px", "width:16px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item-check-wrapper#0": [
+        {
+          "selector": ".openui-select-item-check-wrapper#0",
+          "conditions": [],
+          "declarations": ["position:absolute", "right:8px", "height:14px", "width:14px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item#0": [
+        {
+          "selector": ".openui-select-item#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "position:relative",
+            "display:flex",
+            "cursor:default",
+            "user-select:none",
+            "align-items:center",
+            "justify-content:space-between",
+            "font:var(--_openui-select-content-font, var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif))",
+            "letter-spacing:var(--_openui-select-content-letter-spacing, var(--openui-text-body-default-letter-spacing, -0.01em))",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "height:32px",
+            "padding:0 var(--openui-space-m-l, 16px)",
+            "border-radius:0",
+            "outline:none",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0:focus-within",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0[data-highlighted]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0[data-state=\"checked\"]",
+          "conditions": [],
+          "declarations": ["background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0[data-disabled]",
+          "conditions": [],
+          "declarations": ["pointer-events:none", "opacity:0.5"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item#1": [
+        {
+          "selector": ".openui-select-item#1",
+          "conditions": [],
+          "declarations": ["padding-right:var(--openui-space-xl, 24px)"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-label#0": [
+        {
+          "selector": ".openui-select-label#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "font:var(--_openui-select-content-font, var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif))",
+            "letter-spacing:var(--_openui-select-content-letter-spacing, var(--openui-text-body-default-letter-spacing, -0.01em))",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-m-l, 16px) var(--openui-space-2xs, 4px)",
+            "color:color-mix( in oklch, var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)) 60%, transparent )",
+            "font-size:var(--_openui-select-label-font-size, 12px)",
+            "line-height:var(--_openui-select-label-line-height, 12px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-separator#0": [
+        {
+          "selector": ".openui-select-separator#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "margin:var(--openui-space-2xs, 4px) 0",
+            "height:1px",
+            "border-top:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger-icon#0": [
+        {
+          "selector": ".openui-select-trigger-icon#0",
+          "conditions": [],
+          "declarations": [
+            "height:16px",
+            "width:16px",
+            "transition:transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+            "transform:var(--_openui-select-trigger-icon-transform, none)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#0": [
+        {
+          "selector": ".openui-select-trigger#0",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-trigger-icon-transform:none",
+            "--_openui-select-trigger-hover-color:initial",
+            "box-sizing:border-box",
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "outline:none",
+            "display:inline-flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "gap:var(--openui-space-s, 8px)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ":where(.openui-select-trigger#0) svg",
+          "conditions": [],
+          "declarations": [
+            "transition:transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+            "transform:var(--_openui-select-trigger-icon-transform, none)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0:hover",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-trigger-hover-color:var( --openui-text-neutral-primary, oklch(0.097 0 0 / 1) )",
+            "background:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0[data-state=\"open\"]",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-trigger-icon-transform:rotate(180deg)",
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var( --_openui-select-trigger-hover-color, var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2)) )",
+            "border-color:var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "cursor:not-allowed"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0[data-placeholder]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#1": [
+        {
+          "selector": ".openui-select-trigger#1",
+          "conditions": [],
+          "declarations": [
+            "padding:calc(var(--openui-space-xs, 6px) - 1px) calc(var(--openui-space-m, 12px) - 1px)",
+            "border-radius:var(--openui-radius-m, 8px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#2": [
+        {
+          "selector": ".openui-select-trigger#2",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "padding:calc(var(--openui-space-xs, 6px) - 1.5px) var(--openui-space-s, 8px)",
+            "border-radius:calc(var(--openui-radius-s, 6px) + 1px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#3": [
+        {
+          "selector": ".openui-select-trigger#3",
+          "conditions": [],
+          "declarations": [
+            "padding:calc(var(--openui-space-s, 8px) - 1px) var(--openui-space-m, 12px)",
+            "border-radius:var(--openui-radius-l, 10px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-viewport#0": [
+        {
+          "selector": ".openui-select-viewport#0",
+          "conditions": [],
+          "declarations": [
+            "position:relative",
+            "flex:1",
+            "overflow:hidden auto",
+            "box-sizing:border-box",
+            "padding:var(--openui-space-2xs, 4px) 0",
+            "border-bottom-left-radius:calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px))",
+            "border-bottom-right-radius:calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px))",
+            "width:var(--_openui-select-viewport-width, auto)"
+          ],
+          "layer": "openui"
+        }
+      ]
+    },
+    "order": [
+      "Select/select.styles.mjs: openui-select-content#0 < openui-select-content#2 < openui-select-content#1",
+      "Select/select.styles.mjs: openui-select-item#0 < openui-select-item#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#2",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#3"
+    ]
+  },
+  "openui/openui-select-content--size-sm": {
+    "rules": {
+      "@keyframes": [
+        {
+          "selector": "@keyframes _openui-select-show",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:scale(0.95)",
+            "}to{opacity:1",
+            "transform:scale(1)",
+            "}"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-content#0": [
+        {
+          "selector": ".openui-select-content#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "position:relative",
+            "display:flex",
+            "flex-direction:column",
+            "outline:none",
+            "z-index:99999",
+            "max-height:var(--_openui-select-content-max-height)",
+            "min-width:var(--radix-select-trigger-width)",
+            "overflow:hidden",
+            "border:none",
+            "border-radius:var(--openui-radius-2xl, 14px)",
+            "background-color:color-mix( in oklch, var(--openui-foreground, oklch(0.994 0 89.876 / 1)), var(--openui-text-white, oklch(1 0 89.876 / 1)) 6% )",
+            "box-shadow:0 0 0 1px color-mix( in oklch, var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)) 6%, transparent ), 0 4px 12px -2px oklch(0 0 0 / 0.05), 0 16px 32px -8px oklch(0 0 0 / 0.08)",
+            "padding:0",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "transform-origin:top center",
+            "animation:_openui-select-show 0.18s ease-out forwards"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-content#1": [
+        {
+          "selector": ".openui-select-content#1",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-content-font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "--_openui-select-content-letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "--_openui-select-label-font-size:14px",
+            "--_openui-select-label-line-height:1.5"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-content#2": [
+        {
+          "selector": ".openui-select-content#2",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-viewport-width:100%",
+            "--_openui-select-content-max-height:372px"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-group#0": [
+        {
+          "selector": ".openui-select-group#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-direction:column",
+            "gap:var(--openui-space-3xs, 2px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item-check-icon#0": [
+        {
+          "selector": ".openui-select-item-check-icon#0",
+          "conditions": [],
+          "declarations": ["height:16px", "width:16px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item-check-wrapper#0": [
+        {
+          "selector": ".openui-select-item-check-wrapper#0",
+          "conditions": [],
+          "declarations": ["position:absolute", "right:8px", "height:14px", "width:14px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item#0": [
+        {
+          "selector": ".openui-select-item#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "position:relative",
+            "display:flex",
+            "cursor:default",
+            "user-select:none",
+            "align-items:center",
+            "justify-content:space-between",
+            "font:var(--_openui-select-content-font, var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif))",
+            "letter-spacing:var(--_openui-select-content-letter-spacing, var(--openui-text-body-default-letter-spacing, -0.01em))",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "height:32px",
+            "padding:0 var(--openui-space-m-l, 16px)",
+            "border-radius:0",
+            "outline:none",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0:focus-within",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0[data-highlighted]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0[data-state=\"checked\"]",
+          "conditions": [],
+          "declarations": ["background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0[data-disabled]",
+          "conditions": [],
+          "declarations": ["pointer-events:none", "opacity:0.5"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item#1": [
+        {
+          "selector": ".openui-select-item#1",
+          "conditions": [],
+          "declarations": ["padding-right:var(--openui-space-xl, 24px)"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-label#0": [
+        {
+          "selector": ".openui-select-label#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "font:var(--_openui-select-content-font, var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif))",
+            "letter-spacing:var(--_openui-select-content-letter-spacing, var(--openui-text-body-default-letter-spacing, -0.01em))",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-m-l, 16px) var(--openui-space-2xs, 4px)",
+            "color:color-mix( in oklch, var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)) 60%, transparent )",
+            "font-size:var(--_openui-select-label-font-size, 12px)",
+            "line-height:var(--_openui-select-label-line-height, 12px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-separator#0": [
+        {
+          "selector": ".openui-select-separator#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "margin:var(--openui-space-2xs, 4px) 0",
+            "height:1px",
+            "border-top:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger-icon#0": [
+        {
+          "selector": ".openui-select-trigger-icon#0",
+          "conditions": [],
+          "declarations": [
+            "height:16px",
+            "width:16px",
+            "transition:transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+            "transform:var(--_openui-select-trigger-icon-transform, none)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#0": [
+        {
+          "selector": ".openui-select-trigger#0",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-trigger-icon-transform:none",
+            "--_openui-select-trigger-hover-color:initial",
+            "box-sizing:border-box",
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "outline:none",
+            "display:inline-flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "gap:var(--openui-space-s, 8px)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ":where(.openui-select-trigger#0) svg",
+          "conditions": [],
+          "declarations": [
+            "transition:transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+            "transform:var(--_openui-select-trigger-icon-transform, none)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0:hover",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-trigger-hover-color:var( --openui-text-neutral-primary, oklch(0.097 0 0 / 1) )",
+            "background:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0[data-state=\"open\"]",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-trigger-icon-transform:rotate(180deg)",
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var( --_openui-select-trigger-hover-color, var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2)) )",
+            "border-color:var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "cursor:not-allowed"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0[data-placeholder]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#1": [
+        {
+          "selector": ".openui-select-trigger#1",
+          "conditions": [],
+          "declarations": [
+            "padding:calc(var(--openui-space-xs, 6px) - 1px) calc(var(--openui-space-m, 12px) - 1px)",
+            "border-radius:var(--openui-radius-m, 8px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#2": [
+        {
+          "selector": ".openui-select-trigger#2",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "padding:calc(var(--openui-space-xs, 6px) - 1.5px) var(--openui-space-s, 8px)",
+            "border-radius:calc(var(--openui-radius-s, 6px) + 1px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#3": [
+        {
+          "selector": ".openui-select-trigger#3",
+          "conditions": [],
+          "declarations": [
+            "padding:calc(var(--openui-space-s, 8px) - 1px) var(--openui-space-m, 12px)",
+            "border-radius:var(--openui-radius-l, 10px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-viewport#0": [
+        {
+          "selector": ".openui-select-viewport#0",
+          "conditions": [],
+          "declarations": [
+            "position:relative",
+            "flex:1",
+            "overflow:hidden auto",
+            "box-sizing:border-box",
+            "padding:var(--openui-space-2xs, 4px) 0",
+            "border-bottom-left-radius:calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px))",
+            "border-bottom-right-radius:calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px))",
+            "width:var(--_openui-select-viewport-width, auto)"
+          ],
+          "layer": "openui"
+        }
+      ]
+    },
+    "order": [
+      "Select/select.styles.mjs: openui-select-content#0 < openui-select-content#2 < openui-select-content#1",
+      "Select/select.styles.mjs: openui-select-item#0 < openui-select-item#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#2",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#3"
+    ]
+  },
+  "openui/openui-select-content--size-lg": {
+    "rules": {
+      "@keyframes": [
+        {
+          "selector": "@keyframes _openui-select-show",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:scale(0.95)",
+            "}to{opacity:1",
+            "transform:scale(1)",
+            "}"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-content#0": [
+        {
+          "selector": ".openui-select-content#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "position:relative",
+            "display:flex",
+            "flex-direction:column",
+            "outline:none",
+            "z-index:99999",
+            "max-height:var(--_openui-select-content-max-height)",
+            "min-width:var(--radix-select-trigger-width)",
+            "overflow:hidden",
+            "border:none",
+            "border-radius:var(--openui-radius-2xl, 14px)",
+            "background-color:color-mix( in oklch, var(--openui-foreground, oklch(0.994 0 89.876 / 1)), var(--openui-text-white, oklch(1 0 89.876 / 1)) 6% )",
+            "box-shadow:0 0 0 1px color-mix( in oklch, var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)) 6%, transparent ), 0 4px 12px -2px oklch(0 0 0 / 0.05), 0 16px 32px -8px oklch(0 0 0 / 0.08)",
+            "padding:0",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "transform-origin:top center",
+            "animation:_openui-select-show 0.18s ease-out forwards"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-content#1": [
+        {
+          "selector": ".openui-select-content#1",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-content-font:var( --openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif )",
+            "--_openui-select-content-letter-spacing:var( --openui-text-body-default-letter-spacing, -0.01em )",
+            "--_openui-select-label-font-size:12px",
+            "--_openui-select-label-line-height:12px"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-content#2": [
+        {
+          "selector": ".openui-select-content#2",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-viewport-width:100%",
+            "--_openui-select-content-max-height:372px"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-group#0": [
+        {
+          "selector": ".openui-select-group#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-direction:column",
+            "gap:var(--openui-space-3xs, 2px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item-check-icon#0": [
+        {
+          "selector": ".openui-select-item-check-icon#0",
+          "conditions": [],
+          "declarations": ["height:16px", "width:16px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item-check-wrapper#0": [
+        {
+          "selector": ".openui-select-item-check-wrapper#0",
+          "conditions": [],
+          "declarations": ["position:absolute", "right:8px", "height:14px", "width:14px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item#0": [
+        {
+          "selector": ".openui-select-item#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "position:relative",
+            "display:flex",
+            "cursor:default",
+            "user-select:none",
+            "align-items:center",
+            "justify-content:space-between",
+            "font:var(--_openui-select-content-font, var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif))",
+            "letter-spacing:var(--_openui-select-content-letter-spacing, var(--openui-text-body-default-letter-spacing, -0.01em))",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "height:32px",
+            "padding:0 var(--openui-space-m-l, 16px)",
+            "border-radius:0",
+            "outline:none",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0:focus-within",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0[data-highlighted]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0[data-state=\"checked\"]",
+          "conditions": [],
+          "declarations": ["background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-item#0[data-disabled]",
+          "conditions": [],
+          "declarations": ["pointer-events:none", "opacity:0.5"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-item#1": [
+        {
+          "selector": ".openui-select-item#1",
+          "conditions": [],
+          "declarations": ["padding-right:var(--openui-space-xl, 24px)"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-label#0": [
+        {
+          "selector": ".openui-select-label#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "font:var(--_openui-select-content-font, var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif))",
+            "letter-spacing:var(--_openui-select-content-letter-spacing, var(--openui-text-body-default-letter-spacing, -0.01em))",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-m-l, 16px) var(--openui-space-2xs, 4px)",
+            "color:color-mix( in oklch, var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)) 60%, transparent )",
+            "font-size:var(--_openui-select-label-font-size, 12px)",
+            "line-height:var(--_openui-select-label-line-height, 12px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-separator#0": [
+        {
+          "selector": ".openui-select-separator#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "margin:var(--openui-space-2xs, 4px) 0",
+            "height:1px",
+            "border-top:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger-icon#0": [
+        {
+          "selector": ".openui-select-trigger-icon#0",
+          "conditions": [],
+          "declarations": [
+            "height:16px",
+            "width:16px",
+            "transition:transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+            "transform:var(--_openui-select-trigger-icon-transform, none)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#0": [
+        {
+          "selector": ".openui-select-trigger#0",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-trigger-icon-transform:none",
+            "--_openui-select-trigger-hover-color:initial",
+            "box-sizing:border-box",
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "outline:none",
+            "display:inline-flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "gap:var(--openui-space-s, 8px)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ":where(.openui-select-trigger#0) svg",
+          "conditions": [],
+          "declarations": [
+            "transition:transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+            "transform:var(--_openui-select-trigger-icon-transform, none)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0:hover",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-trigger-hover-color:var( --openui-text-neutral-primary, oklch(0.097 0 0 / 1) )",
+            "background:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0[data-state=\"open\"]",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-trigger-icon-transform:rotate(180deg)",
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var( --_openui-select-trigger-hover-color, var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2)) )",
+            "border-color:var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "cursor:not-allowed"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-select-trigger#0[data-placeholder]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#1": [
+        {
+          "selector": ".openui-select-trigger#1",
+          "conditions": [],
+          "declarations": [
+            "padding:calc(var(--openui-space-xs, 6px) - 1px) calc(var(--openui-space-m, 12px) - 1px)",
+            "border-radius:var(--openui-radius-m, 8px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#2": [
+        {
+          "selector": ".openui-select-trigger#2",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "padding:calc(var(--openui-space-xs, 6px) - 1.5px) var(--openui-space-s, 8px)",
+            "border-radius:calc(var(--openui-radius-s, 6px) + 1px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-trigger#3": [
+        {
+          "selector": ".openui-select-trigger#3",
+          "conditions": [],
+          "declarations": [
+            "padding:calc(var(--openui-space-s, 8px) - 1px) var(--openui-space-m, 12px)",
+            "border-radius:var(--openui-radius-l, 10px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-select-viewport#0": [
+        {
+          "selector": ".openui-select-viewport#0",
+          "conditions": [],
+          "declarations": [
+            "position:relative",
+            "flex:1",
+            "overflow:hidden auto",
+            "box-sizing:border-box",
+            "padding:var(--openui-space-2xs, 4px) 0",
+            "border-bottom-left-radius:calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px))",
+            "border-bottom-right-radius:calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px))",
+            "width:var(--_openui-select-viewport-width, auto)"
+          ],
+          "layer": "openui"
+        }
+      ]
+    },
+    "order": [
+      "Select/select.styles.mjs: openui-select-content#0 < openui-select-content#2 < openui-select-content#1",
+      "Select/select.styles.mjs: openui-select-item#0 < openui-select-item#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#1",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#2",
+      "Select/select.styles.mjs: openui-select-trigger#0 < openui-select-trigger#3"
+    ]
   }
 }
