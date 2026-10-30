@@ -45,8 +45,8 @@ test("places its sheet after the token defaults and keeps host Goober separate",
   expect(result.text).not.toContain("openui-defaults");
   expect(result.host).toBeNull();
   expect(result.defaults).toContain("@layer openui-defaults");
-  expect(result.markers).toHaveLength(1);
-  expect(result.defaults).toContain(`:where(.${result.markers[0]}:root)`);
+  expect(result.markers).toEqual([]);
+  expect(result.defaults).toContain(":where(:root){");
 });
 
 test("adopts an existing sheet in place without touching the host sheet", async ({ page }) => {

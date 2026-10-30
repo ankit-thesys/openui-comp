@@ -21,6 +21,5 @@ const importsGoober = (file: string) =>
 it("imports Goober only in the styling infrastructure", () => {
   expect(sourceFiles(join(packageRoot, "src")).filter(importsGoober).sort()).toEqual([
     "src/styles/css.ts", // component rule store and public styling API
-    "src/styles/defaults.ts", // theme token defaults on <html> (ADR 0001, Q29)
   ]);
 });

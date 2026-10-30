@@ -51,6 +51,7 @@ const fixtures = [
   "parity-separator",
   "smoke",
   "ssr-hydrate",
+  "document-hydrate",
   "streaming",
   "sheet",
   "import-registration",
