@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { migratedComponents } from "../../unit/contract/components";
 
+export { getComponentStyles } from "@openuidev/react-components";
+
 const params = new URLSearchParams(location.search);
 const folder = params.get("component");
 // `?layer=<name>` renders the same elements in layer mode (`<ThemeProvider cssLayer>`).

@@ -6,10 +6,18 @@
 import { library } from "#paths";
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { expect, it } from "vitest";
+import type { ReactNode } from "react";
+import { expect, it, vi } from "vitest";
 import { readStableNames } from "../../../scripts/selector-reference.mjs";
 import { blocksIn, namesIn, renderAndCollect } from "./collect";
 import { migratedComponents } from "./components";
+import { renderWithPortals, withPortalTarget } from "./portal";
+
+// React's server renderer cannot render portals; keep their children inline at the DOM boundary.
+vi.mock("react-dom", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("react-dom")>()),
+  createPortal: (children: ReactNode) => children,
+}));
 
 const dist = library("dist/");
 const clientCode = (readdirSync(dist, { recursive: true }) as string[])
@@ -18,11 +26,19 @@ const clientCode = (readdirSync(dist, { recursive: true }) as string[])
   .join("\n");
 
 // One render of every migrated component, so variables set by a wrapping component count too.
-const rendered = migratedComponents.map((component) => ({
-  folder: component.folder,
-  ...renderAndCollect(component.elements()),
-}));
+const rendered = migratedComponents.map((component) => {
+  const portal = component.folder === "Modal";
+  const elements = portal ? withPortalTarget(() => component.elements()) : component.elements();
+  return {
+    folder: component.folder,
+    ...renderAndCollect(elements, portal ? renderWithPortals : undefined),
+  };
+});
 const everything = rendered.map(({ css, html }) => css + html).join("\n");
+
+it("collects CSS for every component whose private names it audits", () => {
+  expect(rendered.filter(({ css }) => !css.trim()).map(({ folder }) => folder)).toEqual([]);
+});
 
 it("names every non-chart keyframe with the private _openui- prefix", () => {
   const publicKeyframes = rendered

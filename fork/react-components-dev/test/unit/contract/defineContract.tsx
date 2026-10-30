@@ -3,9 +3,8 @@
 // match its documented stable names exactly. Under `<ThemeProvider cssLayer="openui">` every rule
 // sits in that layer with the same shapes, and nothing else changes.
 //
-// Each component runs in its own `<folder>.contract.test.tsx` file. Vitest gives every file a fresh
-// module graph, so Goober's cache starts empty and a component's CSS is not already registered by
-// another component that renders it (MarkDownRenderer renders IconButton inside code blocks).
+// Each component runs in its own `<folder>.contract.test.tsx` file. Collection uses the classes in
+// its rendered markup, so prior registration by another component cannot hide its rules.
 import { ThemeProvider } from "@openuidev/react-components";
 import type { ReactElement } from "react";
 import { renderToString } from "react-dom/server";
@@ -20,18 +19,23 @@ import {
 } from "./collect";
 import { migratedComponents, type MigratedComponent } from "./components";
 
-export function describeContract(folder: string, component?: MigratedComponent) {
+export function describeContract(
+  folder: string,
+  component?: MigratedComponent,
+  render = renderToString,
+) {
   const entry = component ?? migratedComponents.find((component) => component.folder === folder);
   if (!entry) throw new Error(`${folder} is not in test/unit/contract/components.tsx.`);
   const { elements, clientOnly = [] } = entry;
   describe(folder, () => {
-    const { html, css } = renderAndCollect(elements());
+    const { html, css } = renderAndCollect(elements(), render);
     const layered = renderAndCollect(
       elements().map((element, key) => (
         <ThemeProvider key={key} cssLayer="openui">
           {element}
         </ThemeProvider>
       )),
+      render,
     );
     // MarkDownRenderer's prose rules weigh its root's generated class plus a tag. A family that
     // composes it carries them, so they are credited to it by the generated classes it puts on its

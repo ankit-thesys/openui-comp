@@ -62,3 +62,17 @@ it("keeps the animation and keyframes together in the provider's layer", () => {
   ).toEqual([]);
   expect(html.match(/openui-skeleton-pulse/g)).toHaveLength(6);
 });
+
+it("collects previously registered animations together with their keyframes in layer mode", () => {
+  const elements = [
+    <ThemeProvider cssLayer="openui">
+      <Skeleton />
+    </ThemeProvider>,
+  ];
+  renderAndCollect(elements);
+  const { css } = renderAndCollect(elements);
+
+  expect(css).toMatch(/animation:[\w-]+ 1\.2s ease-in-out infinite/);
+  expect(css).toMatch(pulseFrames);
+  expect(css).toContain("@layer openui{");
+});

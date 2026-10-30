@@ -169,11 +169,10 @@ override and Tailwind cases.
 
 - `components.tsx` lists every migrated component with elements covering every value of every
   prop that changes its classes. Each component has its own `<Folder>.contract.test.tsx`, which calls
-  `describeContract(folder)` from `defineContract.tsx`. One file per component gives each a fresh
-  module graph, so a component's CSS is never already registered by another that renders it.
+  `describeContract(folder)` from `defineContract.tsx`. One file per component keeps failures local.
   `coverage.test.ts` fails if an entry has no file. The contract test server-renders the entry through public exports,
-  collects the CSS registered while rendering (`collect.ts`: what the render added to the public
-  `getComponentStyles()` sheet), and checks:
+  selects rules from the full public `getComponentStyles()` sheet by the generated classes in its
+  markup (`collect.ts`), and checks:
   - every selector is one generated class, optionally with one state, a sibling pair
     (`.go1 + .go1`) or a zero-weight `:where(.go1) <type selectors>` rule, and no rule is layered;
   - MarkDownRenderer (the only entry with `prose: true` in `components.tsx`) may also use prose
@@ -189,6 +188,15 @@ override and Tailwind cases.
     with the same selector shapes;
   - every rendered `openui-*` class matches `openui-<block>[--<prop>-<value>]`, a modifier attaches
     to a documented root or part, and the rendered classes equal the component's `names`.
+- Collection retains whole selectors, including compounds and descendants that the budget must
+  reject, and preserves `@media`, `@container`, `@supports` and `@layer` wrappers. It includes only
+  keyframes named by the selected rules' animation declarations. `collect.test.tsx` checks the
+  collector itself and repeat rendering after rules are already registered.
+- Modal renders only a portal, so its Node contract uses `portal.ts` to keep the portal's children
+  inline at the React DOM boundary. A temporary document target enables its public fixture; it is
+  restored before reading the server sheet. The provider's private portal-theme marker is excluded
+  from stable-class checks. `private-names.test.tsx` uses the same adapter; `modal.contract.spec.ts`
+  checks the real browser portal's selectors, layers and stable names without the adapter.
 - `checks.ts` holds the selector, layer and class grammar; `checks.test.ts` feeds it deliberately
   broken selectors, layered rules and names so a passing contract test means something.
 - `reference.test.ts` fails when the library's `docs/reference/selectors.md` (public, it ships
@@ -257,8 +265,8 @@ are factories registered
 by their users through `useStyles`, with no import-time registration or `<html>` marker.
 Their `names` appear as SharedBase and SkeletonPulse in the generated reference.
 `sharedStyleContracts` in `components.tsx` records these helpers separately; their focused
-`SharedBase.contract.test.tsx` and `SkeletonPulse.contract.test.tsx` collect only the CSS
-added by rendering public components. `sharedBaseConsumers` lists the three border-box users.
+`SharedBase.contract.test.tsx` and `SkeletonPulse.contract.test.tsx` select CSS by the generated
+classes rendered by public components. `sharedBaseConsumers` lists the three border-box users.
 The border-box callers' owned styles are migrated by #91 and #96, and the Skeleton
 family is fully migrated by #101. These families are covered by `migratedComponents`.
 

@@ -43,7 +43,7 @@ function rulesIn(css: string, layer: string): Rule[] {
 export const selectorsOf = (css: string): string[] => rulesOf(css).map((rule) => rule.selector);
 
 /** Index of the first of `chars` at or after `from`, skipping quoted strings; -1 if none. */
-const indexOutsideStrings = (css: string, from: number, chars: string) => {
+export const indexOutsideStrings = (css: string, from: number, chars: string) => {
   let quote = "";
   for (let i = from; i < css.length; i++) {
     const char = css[i]!;
@@ -57,7 +57,7 @@ const indexOutsideStrings = (css: string, from: number, chars: string) => {
 };
 
 /** Index of the `}` closing the block opened at `open`, skipping quoted strings. */
-const matchingBrace = (css: string, open: number) => {
+export const matchingBrace = (css: string, open: number) => {
   let depth = 1;
   let i = open;
   while (depth > 0) {
