@@ -93,7 +93,7 @@ async function runApp(app, requestedMode, listTests) {
       await run("pnpm", ["run", "build"], cwd, env);
       row.stage = "start";
       await assertFree(ports[app]);
-      child = spawn("pnpm", ["run", "start", "--port", String(ports[app])], {
+      child = spawn("pnpm", ["--silent", "run", "start", "--port", String(ports[app])], {
         cwd,
         env: { ...process.env, ...env },
         stdio: "inherit",
