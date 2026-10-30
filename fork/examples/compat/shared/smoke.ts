@@ -83,11 +83,13 @@ export async function smoke(page: Page, expect: Expect, options: SmokeOptions): 
           for (const rule of rules) {
             if (rule instanceof CSSLayerBlockRule) {
               walk(rule.cssRules, [layer, rule.name].filter(Boolean).join("."), context);
-            } else if ("cssRules" in rule && !(rule instanceof CSSKeyframesRule)) {
+            } else if (rule instanceof CSSGroupingRule) {
+              // Style rules expose `cssRules` too (CSS nesting) but are not grouping rules; they
+              // and keyframes count as whole rules below, nested children included in cssText.
               // Media/supports/container rules affect meaning. Layer wrappers do not affect
               // duplicate identity, so split append batches and server/browser tags compare alike.
               const header = rule.cssText.slice(0, rule.cssText.indexOf("{"));
-              walk((rule as CSSGroupingRule).cssRules, layer, [...context, header]);
+              walk(rule.cssRules, layer, [...context, header]);
             } else {
               ruleCount++;
               const identity = JSON.stringify([context, rule.cssText]);
