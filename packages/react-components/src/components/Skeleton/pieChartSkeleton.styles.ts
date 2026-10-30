@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-pie-chart-skeleton",
@@ -19,7 +19,7 @@ export const names = {
 
 const elevated = "var(--openui-elevated-strong, oklch(0.097 0 0 / 0.16))";
 
-export const pieChartSkeletonStyles = (css: StyleCss) => ({
+export const pieChartSkeletonStyles = /*#__PURE__*/ {
   root: css`
     display: flex;
     align-items: center;
@@ -82,4 +82,4 @@ export const pieChartSkeletonStyles = (css: StyleCss) => ({
     background-color: ${elevated};
     flex-shrink: 0;
   `,
-});
+};

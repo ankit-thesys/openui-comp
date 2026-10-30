@@ -19,11 +19,12 @@ const pulseFrames =
   /@keyframes [\w-]+\{0%\{opacity:0\.3;\}50%\{opacity:0\.85;\}100%\{opacity:0\.3;\}\}/;
 const importedCss = getComponentStyles();
 
-it("does not register the pulse keyframes or animation at import", () => {
-  expect(importedCss).not.toMatch(pulseFrames);
+it("registers the pulse keyframes and animation on import", () => {
+  expect(importedCss).toMatch(pulseFrames);
+  expect(importedCss).toMatch(/animation:[\w-]+ 1\.2s ease-in-out infinite/);
 });
 
-it("registers the pulse and its flat animation rule when Skeleton users render", () => {
+it("reuses the imported pulse and its flat animation rule when Skeleton users render", () => {
   const { html, css } = renderAndCollect([
     <Skeleton />,
     <TableSkeleton rows={1} columns={1} />,
@@ -37,6 +38,8 @@ it("registers the pulse and its flat animation rule when Skeleton users render",
       .filter(Boolean),
   ).toEqual([]);
   const animationClass = css.match(/\.(go\d+)\{animation:/)![1]!;
+  expect(importedCss).toContain(`.${animationClass}{animation:`);
+  expect(getComponentStyles()).toBe(importedCss);
   // One bar, a table's two bars, and the pie's shape, legend dot and legend bar.
   expect(html.match(new RegExp(`\\b${animationClass}\\b`, "g"))).toHaveLength(6);
   expect(html.match(/openui-skeleton-pulse/g)).toHaveLength(6);

@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-icon-tag",
@@ -20,7 +20,7 @@ export const names = {
   },
 } as const;
 
-export const iconTagStyles = (css: StyleCss) => ({
+export const iconTagStyles = /*#__PURE__*/ {
   icon: css`
     width: var(--_openui-icon-tag-icon-size);
     height: var(--_openui-icon-tag-icon-size);
@@ -90,4 +90,4 @@ export const iconTagStyles = (css: StyleCss) => ({
       color: var(--openui-background, oklch(0.97 0 89.876 / 1));
     `,
   },
-});
+};

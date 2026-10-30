@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-radio-group",
@@ -9,7 +9,7 @@ export const names = {
   },
 } as const;
 
-export const radioGroupStyles = (css: StyleCss) => ({
+export const radioGroupStyles = /*#__PURE__*/ {
   root: css`
     box-sizing: border-box;
     display: flex;
@@ -34,4 +34,4 @@ export const radioGroupStyles = (css: StyleCss) => ({
       padding: var(--openui-space-m, 12px);
     `,
   },
-});
+};

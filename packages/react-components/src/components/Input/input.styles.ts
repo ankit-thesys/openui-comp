@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-input",
@@ -11,7 +11,7 @@ export const names = {
 
 // Focus precedes invalid, then disabled: each state needs only one attribute or pseudo-class.
 // Hover previously restated the resting border, so it needs no separate rule.
-export const inputStyles = (css: StyleCss) => ({
+export const inputStyles = /*#__PURE__*/ {
   root: css`
     font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
     letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);
@@ -59,4 +59,4 @@ export const inputStyles = (css: StyleCss) => ({
       padding: calc(var(--openui-space-s, 8px) - 1px) var(--openui-space-m, 12px);
     `,
   },
-});
+};

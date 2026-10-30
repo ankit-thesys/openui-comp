@@ -26,12 +26,14 @@ function App() {
           <AccordionContent forceMount>Accordion body</AccordionContent>
         </AccordionItem>
       </Accordion>
-      <FoldableSectionRoot type="multiple">
-        <FoldableSectionItem value="one">
-          <FoldableSectionTrigger text="Foldable" />
-          <FoldableSectionContent forceMount>Foldable body</FoldableSectionContent>
-        </FoldableSectionItem>
-      </FoldableSectionRoot>
+      {!params.has("primitives") && (
+        <FoldableSectionRoot type="multiple">
+          <FoldableSectionItem value="one">
+            <FoldableSectionTrigger text="Foldable" />
+            <FoldableSectionContent forceMount>Foldable body</FoldableSectionContent>
+          </FoldableSectionItem>
+        </FoldableSectionRoot>
+      )}
       <button onClick={() => setOpen(true)}>Open modal</button>
       <Modal title="Modal title" open={open} onOpenChange={setOpen}>
         Modal body

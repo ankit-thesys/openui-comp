@@ -5,7 +5,6 @@ import React, { createContext, forwardRef, useContext, useRef } from "react";
 import { Day, DayPicker, type DayProps } from "react-day-picker";
 import { useLayoutContext } from "../../context/LayoutContext";
 import { useMultipleRefs } from "../../hooks/useMultipleRefs";
-import { useStyles } from "../../styles/useStyles";
 import { calendarStyles, names } from "./calendar.styles";
 import { CalendarDefaultsContext } from "./CalendarDefaultsContext";
 import { MonthsDropdown, YearsDropdown } from "./components/helperComponents";
@@ -36,7 +35,7 @@ const CalendarDay = ({ modifiers, ...props }: DayProps) => {
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 export const Calendar = forwardRef<HTMLDivElement, CalendarProps>(
   ({ className, classNames, ...props }, ref) => {
-    const styles = useStyles(calendarStyles);
+    const styles = calendarStyles;
     const { layout } = useLayoutContext();
     const mergeDefaults = useContext(CalendarDefaultsContext);
     const containerRef = useRef<HTMLDivElement>(null);

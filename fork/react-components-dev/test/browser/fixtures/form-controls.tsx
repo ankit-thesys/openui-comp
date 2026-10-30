@@ -1,4 +1,4 @@
-// Public package fixture for #91 overrides, state transitions, layers and lazy registration.
+// Public package fixture for #91 overrides, state transitions, layers and lazy mounting.
 import {
   Buttons,
   configureStyles,

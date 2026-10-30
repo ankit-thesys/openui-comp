@@ -3,7 +3,6 @@
 import * as Switch from "@radix-ui/react-switch";
 import clsx from "clsx";
 import { CSSProperties, forwardRef, ReactNode, useId } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { names, switchItemStyles } from "./switchItem.styles";
 
 interface SwitchItemProps {
@@ -23,7 +22,7 @@ interface SwitchItemProps {
 const SwitchItem = forwardRef<HTMLButtonElement, SwitchItemProps>((props, ref) => {
   const { label, description, onChange, className, disabled, required, ...rest } = props;
   const id = useId();
-  const styles = useStyles(switchItemStyles);
+  const styles = switchItemStyles;
   return (
     <div className={clsx(styles.container, names.container)}>
       <Switch.Root
