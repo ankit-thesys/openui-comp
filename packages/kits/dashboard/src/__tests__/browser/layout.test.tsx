@@ -1,8 +1,8 @@
 import { afterEach, describe, expect, it } from "vitest";
-import { page } from "vitest/browser";
-import { CardRow, ShellCard, type CardRowType } from "../..";
+import { page, userEvent } from "vitest/browser";
+import { CardRow, FilterBar, ShellCard, type CardRowType } from "../..";
 import { cases } from "../helpers/cases";
-import { box, cleanup, renderNode, renderProgram, settle } from "../helpers/render";
+import { box, cleanup, renderCase, renderNode, renderProgram, settle } from "../helpers/render";
 
 afterEach(async () => {
   cleanup();
@@ -81,10 +81,6 @@ describe("CardRow", () => {
 });
 
 describe("no sideways scroll", () => {
-  // FilterBar never wraps, as in genui-sdk, so three 180px filters run off a 400px page. Remove
-  // this entry when it's fixed.
-  const known: Record<number, string[]> = { 400: ["filters"] };
-
   it.each([1400, 984, 700, 400])("at %dpx", async (width) => {
     await page.viewport(width, 900);
     const overflowing: string[] = [];
@@ -94,7 +90,59 @@ describe("no sideways scroll", () => {
       if (document.documentElement.scrollWidth > innerWidth) overflowing.push(id);
       cleanup();
     }
-    expect(overflowing).toEqual(known[width] ?? []);
+    expect(overflowing).toEqual([]);
+  });
+});
+
+describe("FilterBar", () => {
+  const filter = (name: string) => (
+    <div key={name} data-filter={name} style={{ width: 180 }}>
+      {name}
+    </div>
+  );
+
+  async function bar(width: number) {
+    await page.viewport(width, 900);
+    const container = await renderNode(
+      <FilterBar rightChildren={[filter("right")]}>{["a", "b", "c"].map(filter)}</FilterBar>,
+    );
+    await settle();
+    const root = box(container.querySelector(".openui-dashboard-filter-bar")!);
+    const filters = [...container.querySelectorAll("[data-filter]")].map(box);
+    return { root, filters, tops: new Set(filters.map((item) => Math.round(item.top))) };
+  }
+
+  it("keeps everything on one line when it fits", async () => {
+    const { tops, filters, root } = await bar(1400);
+    expect(tops.size).toBe(1);
+    expect(Math.round(filters.at(-1)!.right)).toBe(Math.round(root.right));
+  });
+
+  it("moves the right side to its own line, still at the right, when it doesn't fit", async () => {
+    const { filters, root } = await bar(700);
+    const right = filters.pop()!;
+    expect(new Set(filters.map((item) => item.top)).size).toBe(1);
+    expect(right.top).toBeGreaterThan(filters[0]!.bottom);
+    expect(Math.round(right.right)).toBe(Math.round(root.right));
+  });
+
+  it("wraps its filters inside a narrow page", async () => {
+    const { tops, filters, root } = await bar(400);
+    expect(tops.size).toBeGreaterThan(2);
+    for (const item of filters) expect(item.right).toBeLessThanOrEqual(root.right);
+    expect(document.documentElement.scrollWidth).toBeLessThanOrEqual(innerWidth);
+  });
+
+  it.each([
+    ".openui-dashboard-filter-select-trigger--single",
+    ".openui-dashboard-filter-select-trigger--multi",
+  ])("opens %s without sideways scroll at 400px", async (trigger) => {
+    await page.viewport(400, 900);
+    const container = await renderCase("filters");
+    await userEvent.click(container.querySelector<HTMLElement>(trigger)!);
+    await settle(50);
+    expect(container.querySelector(".openui-dashboard-filter-select-popover")).not.toBeNull();
+    expect(document.documentElement.scrollWidth).toBeLessThanOrEqual(innerWidth);
   });
 });
 
