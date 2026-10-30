@@ -232,8 +232,8 @@ are ignored with a development warning; a dotted name such as `app.openui` is va
 type is exported as `ConfigureStylesOptions`.
 
 Changing the layer after rules reached the page, or after `getComponentStyles()` returned rules
-on the server, warns in development. Setting the same layer again does not warn. Production
-logs nothing. A late call affects future browser writes; it cannot re-wrap existing page rules.
+on the server, warns in development. Setting the same layer again does not warn, nor does
+setting the layer the server sheet uses. Production logs nothing. A late call affects future browser writes; it cannot re-wrap existing page rules.
 
 The library declares no layer order. In a browser-only app, put the order and an empty library
 sheet first in `<head>`, before any stylesheet, in this order:

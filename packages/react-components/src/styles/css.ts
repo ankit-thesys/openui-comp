@@ -13,6 +13,9 @@ let rules = "";
 // How much of `rules` is already on the page.
 let written = 0;
 let emitted = false;
+// The layer of the rules last emitted: written in the browser, read from a server sheet, or
+// returned by getComponentStyles on the server, whose `layer` option leaves `layer` unchanged.
+let emittedLayer: string | undefined;
 let seeded = false;
 let scheduled = false;
 let layer: string | undefined;
@@ -31,9 +34,13 @@ function seed() {
   for (const tag of document.querySelectorAll(SERVER_SHEET)) {
     const text = tag.textContent ?? "";
     rules += text;
-    emitted ||= text.trim().length > 0;
-    // A layered server sheet names its layer; rules the browser adds go in the same one.
-    layer ??= /^@layer ([^\s{]+)\{/.exec(text)?.[1];
+    if (!text.trim()) continue;
+    // A layered server sheet names its layer; rules the browser adds go in the same one. A
+    // hand-written tag may start with whitespace before it.
+    const named = /^@layer ([^\s{]+)\{/.exec(text.trimStart())?.[1];
+    layer ??= named;
+    emitted = true;
+    emittedLayer = named;
   }
   written = rules.length;
 }
@@ -56,6 +63,7 @@ function write() {
   if (nonce && tag.nonce !== nonce) tag.nonce = nonce;
   tag.append(wrap(fresh));
   emitted = true;
+  emittedLayer = layer;
 }
 
 const sink = {
@@ -96,10 +104,20 @@ export type ConfigureStylesOptions = {
   layer?: string;
 };
 
+// Bundlers replace `process.env.NODE_ENV` but leave `process` undefined, so a `typeof process`
+// check would silence browser builds. An unbundled browser or a CDN ESM build has no `process`.
+function development(): boolean {
+  try {
+    return process.env["NODE_ENV"] !== "production";
+  } catch {
+    return false;
+  }
+}
+
 /** Sets the cascade layer for component rules. Call it once in the app entry, before rendering. */
 export function configureStyles(options: ConfigureStylesOptions): void {
   if (options.layer !== undefined && !LAYER_NAME.test(options.layer)) {
-    if (process.env["NODE_ENV"] !== "production") {
+    if (development()) {
       console.warn(
         `[OpenUI] configureStyles layer "${options.layer}" is not a cascade layer name. It is ignored.`,
       );
@@ -107,7 +125,7 @@ export function configureStyles(options: ConfigureStylesOptions): void {
     return;
   }
   seed();
-  if (options.layer !== layer && emitted && process.env["NODE_ENV"] !== "production") {
+  if (emitted && options.layer !== layer && options.layer !== emittedLayer && development()) {
     console.warn(
       "[OpenUI] configureStyles was called after component rules were written. " +
         "Existing page rules cannot be re-layered. Configure once in the app entry, before rendering.",
@@ -122,6 +140,9 @@ export function configureStyles(options: ConfigureStylesOptions): void {
  */
 export const getComponentStyles = (options: ConfigureStylesOptions = {}): string => {
   seed();
-  if (!inBrowser() && rules.trim()) emitted = true;
+  if (!inBrowser() && rules.trim()) {
+    emitted = true;
+    emittedLayer = options.layer ?? layer;
+  }
   return wrap(rules, options.layer ?? layer) || " ";
 };
