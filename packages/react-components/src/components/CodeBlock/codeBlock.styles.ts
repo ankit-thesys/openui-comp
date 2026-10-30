@@ -1,6 +1,10 @@
 import { css } from "../../styles/css";
 import { iconButtonStyles } from "../IconButton/iconButton.styles";
 
+// IconButton registers on import. Reading its map keeps that value import, so its rules come
+// first and the copy button rules below win equal-weight ties.
+Object.values(iconButtonStyles);
+
 export const names = {
   root: "openui-code-block",
   copyButton: "openui-code-block-copy-button",
@@ -49,13 +53,10 @@ export const codeBlockStyles = /*#__PURE__*/ {
 // Register after IconButton so positioning and the opacity-only transition win base ties.
 // react-ui used the normal hover/pressed background even while copied; order those states after
 // copied without chaining selectors.
-// IconButton is converted in a separate batch; eagerly register its factory until then.
-export const codeBlockCopyButtonStyles = /*#__PURE__*/ ((base: unknown) => {
-  if (typeof base === "function") base(css);
-  return {
-    // Preserve the original template bytes across the registration boundary.
-    // prettier-ignore
-    root: css`
+export const codeBlockCopyButtonStyles = /*#__PURE__*/ {
+  // Keeps the template bytes it had as a factory.
+  // prettier-ignore
+  root: css`
     position: absolute;
     right: 0.5rem;
     top: 0.5rem;
@@ -72,5 +73,4 @@ export const codeBlockCopyButtonStyles = /*#__PURE__*/ ((base: unknown) => {
       background-color: var(--openui-highlight, oklch(0.097 0 0 / 0.04));
     }
   `,
-  };
-})(iconButtonStyles);
+};
