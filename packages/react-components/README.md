@@ -181,7 +181,9 @@ Load order: the token defaults' `@layer openui-defaults;` declaration and their 
 in `<head>`, then the component sheet, then your CSS. If you place `<style id="openui-styles">`
 yourself, the library appends its rules to it where it is; keep it before your stylesheets. The
 library only ever appends to its sheet, never rewrites it. The sheet gets `window.__nonce__` as
-its CSP nonce when one is set.
+its CSP nonce when one is set. The token-default tags carry React's `data-precedence` marker, so when
+React hydrates a server-rendered `<head>` (React Router, TanStack Start, Next) it skips them
+rather than matching your own `<style>` against them, and the library adds nothing to `<html>`.
 
 Your rule has to match the library's shape: a resting-state rule does not restyle `:hover`, and a
 rule in a named cascade layer loses to the unlayered library rules.

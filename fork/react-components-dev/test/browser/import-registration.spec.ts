@@ -1,4 +1,5 @@
-// Import-time rules belong to the component store. Only token defaults may mark <html>.
+// Import-time rules belong to the component store. Nothing marks <html>: the token defaults apply
+// to :root itself, so a server-rendered document hydrates without an attribute mismatch.
 import { expect, test, type Page } from "@playwright/test";
 
 const observe = (page: Page) =>
@@ -11,9 +12,7 @@ const observe = (page: Page) =>
     ].map((rule) => rule.cssText),
   }));
 
-test("importing every component leaves host Goober and html alone beyond token defaults", async ({
-  page,
-}) => {
+test("importing every component leaves host Goober and html alone", async ({ page }) => {
   await page.goto("/import-registration.html");
   await page.waitForFunction(
     () => typeof (window as Window & { renderButton?: unknown }).renderButton === "function",
@@ -24,13 +23,9 @@ test("importing every component leaves host Goober and html alone beyond token d
   const imported = await observe(page);
   expect(imported.componentSheet).toMatch(/\.go\d+\{/);
   expect(imported.host).toBeNull();
-  expect(imported.html).toHaveLength(1);
-  const [marker] = imported.html;
-  expect(marker).toMatch(/^go\d+$/);
+  expect(imported.html).toEqual([]);
   expect(imported.rules).toHaveLength(1);
-  expect(imported.rules[0]).toMatch(
-    new RegExp(`^@layer openui-defaults \\{\\s*:where\\(\\.${marker}:root\\) \\{`),
-  );
+  expect(imported.rules[0]).toMatch(/^@layer openui-defaults \{\s*:where\(:root\) \{/);
 
   // The component sheet is live, and rendering leaves the defaults and <html> alone.
   await page.evaluate(() => (window as Window & { renderButton?: () => void }).renderButton!());

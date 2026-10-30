@@ -151,7 +151,7 @@ test("form styles register on import, leave html unmarked, and survive html repl
   expect(
     await page.evaluate(() => document.getElementById("openui-styles")?.textContent ?? ""),
   ).toBe(before.sheet);
-  expect(await page.locator("html").getAttribute("class")).toEqual(before.html);
+  expect(await page.evaluate(() => document.documentElement.className)).toEqual(before.html);
   const observations = await Promise.all(
     targets.map(([, selector]) =>
       computed(page.locator(selector), ["display", "color", "padding-top", "border-top-color"]),
