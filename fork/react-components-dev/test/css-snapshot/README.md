@@ -75,7 +75,14 @@ markup, because the API that turns the layer on changes with #131 while the decl
 rule and their layer must not. `css-snapshot-layer.test.tsx` also fails, naming the rule, when a
 component rule sits outside the `openui` layer. It runs in its own file, so its module graph is
 its own. Generated animation names use linked aliases. Opaque React instance IDs and their
-references are normalized; other attributes, inline styles, content and classes remain exact.
+references are normalized; other attributes, inline styles, content and classes remain exact,
+with one exception for sizes measured at runtime. The Calendar's month and year dropdowns
+(`openui-calendar-select-content-months` and `-years`) set `max-height`, `min-height` and
+`min-width` inline from a ResizeObserver debounced by 100 ms, so a browser capture can land before
+or after it. On elements carrying one of those two stable classes only, numeric `px` values of
+those three properties are dropped from the inline style before comparing, on both sides; the
+baselines keep them as recorded. Any other change on those elements (another attribute, another
+inline declaration, a non-px value) still fails, as `css-snapshot-measured.test.ts` checks.
 The server and browser use a fixed October 2026 clock and UTC timezone for date-driven fixtures.
 Rules are selected with the contract's `cssFor` collector, not by slicing newly registered CSS.
 Client markup supplies the parts absent from server markup, including when registration moves
