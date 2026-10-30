@@ -10,7 +10,7 @@
     "test:smoke": "playwright test"
   },
   "dependencies": {
-    "@openuidev/react-components": "file:../.pack/openui-react-components-920c2b9fa185a84f.tgz",
+    "@openuidev/react-components": "file:../.pack/openui-react-components.tgz",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "zod": "4.6.7",
