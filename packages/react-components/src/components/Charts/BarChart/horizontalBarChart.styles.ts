@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
+
 import { gridLine } from "../shared/chartBaseDeclarations";
 import { svgTickLabel, svgTickTypography } from "../shared/chartTypography";
 
@@ -34,7 +35,7 @@ const animated = `@media (prefers-reduced-motion: no-preference) {
  animation: openui-horizontal-bar-chart-grow 0.6s ease-out var(--_openui-horizontal-bar-chart-mark-delay, 0s) both;
  &[data-negative] { transform-origin: right center; }
 }`;
-export const horizontalBarChartStyles = (css: StyleCss) => ({
+export const horizontalBarChartStyles = /*#__PURE__*/ {
   labelContainer: css`
     pointer-events: none;
   `,
@@ -121,4 +122,4 @@ export const horizontalBarChartStyles = (css: StyleCss) => ({
     opacity: 0.04;
     pointer-events: none;
   `,
-});
+};

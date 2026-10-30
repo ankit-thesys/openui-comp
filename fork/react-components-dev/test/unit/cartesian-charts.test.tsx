@@ -20,8 +20,9 @@ const data = [
   { month: "Feb", sales: 20 },
 ];
 
-it("AreaChart registers its frame and mark styles when rendered, in the requested layer", () => {
+it("AreaChart exposes its imported frame and mark styles in the requested layer", () => {
   configureStyles({ layer: "cartesian-area" });
+  const imported = getComponentStyles();
   const html = renderToString(
     <ThemeProvider>
       <AreaChart data={data} categoryKey="month" isAnimationActive />
@@ -30,11 +31,13 @@ it("AreaChart registers its frame and mark styles when rendered, in the requeste
   expect(html).toMatch(/class="[^"]*\bopenui-area-chart(?:\s|")/);
   expect(html).not.toContain("openui-area-chart-root");
   expect(html).toContain("openui-area-chart-area-path--is-animation-active");
-  expect(getComponentStyles()).toMatch(/^@layer cartesian-area\{/);
+  expect(getComponentStyles()).toBe(imported);
+  expect(imported).toMatch(/^@layer cartesian-area\{/);
 });
 
 it("LineChart exposes layered frame, line and dot override targets", () => {
   configureStyles({ layer: "cartesian-line" });
+  const imported = getComponentStyles();
   const html = renderToString(
     <ThemeProvider>
       <LineChart showDots data={data} categoryKey="month" isAnimationActive />
@@ -43,11 +46,13 @@ it("LineChart exposes layered frame, line and dot override targets", () => {
   expect(html).not.toContain("openui-line-chart-root");
   expect(html).toContain("openui-line-chart-line--is-animation-active");
   expect(html).toMatch(/class="go\d+ openui-line-chart-dot"/);
-  expect(getComponentStyles()).toMatch(/^@layer cartesian-line\{/);
+  expect(getComponentStyles()).toBe(imported);
+  expect(imported).toMatch(/^@layer cartesian-line\{/);
 });
 
 it("BarChart renders data states separately from its animation prop", () => {
   configureStyles({ layer: "cartesian-bar" });
+  const imported = getComponentStyles();
   const html = renderToString(
     <ThemeProvider>
       <BarChart data={data} categoryKey="month" isAnimationActive />
@@ -58,11 +63,13 @@ it("BarChart renders data states separately from its animation prop", () => {
   expect(html).toContain('data-negative=""');
   expect(html).toContain('data-zero=""');
   expect(html).not.toContain("--negative");
-  expect(getComponentStyles()).toMatch(/^@layer cartesian-bar\{/);
+  expect(getComponentStyles()).toBe(imported);
+  expect(imported).toMatch(/^@layer cartesian-bar\{/);
 });
 
 it("HorizontalBarChart has its own flat frame and animation targets, including when empty", () => {
   configureStyles({ layer: "cartesian-horizontal" });
+  const imported = getComponentStyles();
   const html = renderToString(
     <ThemeProvider>
       <HorizontalBarChart data={data} categoryKey="month" isAnimationActive />
@@ -71,7 +78,8 @@ it("HorizontalBarChart has its own flat frame and animation targets, including w
   expect(html).not.toContain("openui-horizontal-bar-chart-root");
   expect(html).toContain("openui-horizontal-bar-chart-bar--is-animation-active");
   expect(html).toContain('data-negative=""');
-  expect(getComponentStyles()).toMatch(/^@layer cartesian-horizontal\{/);
+  expect(getComponentStyles()).toBe(imported);
+  expect(imported).toMatch(/^@layer cartesian-horizontal\{/);
   const empty = renderToString(<HorizontalBarChart data={[]} categoryKey="month" />);
   expect(empty).toMatch(/class="[^"]*openui-horizontal-bar-chart(?: |")/);
   expect(empty).not.toContain("openui-bar-chart");
@@ -79,6 +87,7 @@ it("HorizontalBarChart has its own flat frame and animation targets, including w
 
 it("ScatterChart registers dot and numeric-axis styles in the configured layer", () => {
   configureStyles({ layer: "cartesian-scatter" });
+  const imported = getComponentStyles();
   const html = renderToString(
     <ThemeProvider>
       <ScatterChart
@@ -98,7 +107,8 @@ it("ScatterChart registers dot and numeric-axis styles in the configured layer",
   expect(html).not.toContain("openui-scatter-chart-root");
   expect(html).toContain("openui-scatter-chart-dot--is-animation-active");
   expect(html).toMatch(/class="go\d+ openui-scatter-chart-x-tick"/);
-  expect(getComponentStyles()).toMatch(/^@layer cartesian-scatter\{/);
+  expect(getComponentStyles()).toBe(imported);
+  expect(imported).toMatch(/^@layer cartesian-scatter\{/);
 });
 
 it("gives every owned SVG element a stable class for consumer overrides", () => {

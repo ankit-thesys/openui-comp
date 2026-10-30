@@ -4,7 +4,6 @@ import clsx from "clsx";
 import type { ScaleLinear, ScalePoint } from "d3-scale";
 import type { CurveFactory } from "d3-shape";
 import React, { useMemo, useRef } from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import { AnimatedPath } from "../../shared/cartesian/AnimatedPath";
 import { buildLineD, LINE_STRIDE, seriesCurve } from "../../shared/cartesian/seriesGeometry";
 import { springPresets, useDataMorph, useIsomorphicLayoutEffect } from "../../shared/core/spring";
@@ -98,7 +97,7 @@ function LineSeriesItem({
   dotRadius: number;
   isAnimationActive?: boolean;
 }) {
-  const styles = useStyles(lineChartStyles);
+  const styles = lineChartStyles;
   const pathRef = useRef<SVGPathElement | null>(null);
   const dotsRef = useRef<SVGGElement | null>(null);
   const curveRef = useRef(curve);

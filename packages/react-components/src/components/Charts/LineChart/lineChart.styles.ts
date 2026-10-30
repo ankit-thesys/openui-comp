@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
+
 import { drawLineAnimation } from "../shared/animations/drawLine.styles";
 import {
   activeDotInner,
@@ -48,7 +49,7 @@ export const names = {
   highlight: "openui-line-chart-highlight",
 } as const;
 
-export const lineChartStyles = (css: StyleCss) => ({
+export const lineChartStyles = /*#__PURE__*/ {
   svg: css`
     &[data-overflow="visible"] {
       overflow: visible;
@@ -108,4 +109,4 @@ export const lineChartStyles = (css: StyleCss) => ({
       animation: ${drawLineAnimation} 1s ease-out forwards;
     }
   `,
-});
+};

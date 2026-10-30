@@ -2,8 +2,6 @@
 
 import clsx from "clsx";
 import { useCallback } from "react";
-import { useStyles } from "../../../styles/useStyles";
-import { drawLineStyles } from "../shared/animations/drawLine.styles";
 import { names as baseNames, chartBaseStyles } from "../shared/chartBase.styles";
 import { lineChartStyles, names } from "./lineChart.styles";
 
@@ -31,8 +29,8 @@ import type { LineChartData, LineChartProps } from "./types";
  * otherwise break the Rules of Hooks).
  */
 export function LineChart<T extends LineChartData>(props: LineChartProps<T>) {
-  const styles = useStyles(lineChartStyles);
-  const baseStyles = useStyles(chartBaseStyles);
+  const styles = lineChartStyles;
+  const baseStyles = chartBaseStyles;
   if (!props.data || props.data.length === 0) {
     return (
       <div
@@ -79,8 +77,7 @@ function LineChartImpl<T extends LineChartData>({
   activeDots = true,
   yTickCount,
 }: LineChartProps<T>) {
-  const styles = useStyles(lineChartStyles);
-  useStyles(drawLineStyles);
+  const styles = lineChartStyles;
   const animate = useEffectiveAnimation(isAnimationActive);
   const mode = condensed ? "fit" : "scroll";
 

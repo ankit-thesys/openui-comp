@@ -12,12 +12,20 @@ const data = ["Jan", "Feb"].map((month, i) => ({
     Array.from({ length: count }, (_, j) => [j === 0 ? "sales" : `series${j}`, 12 + i + j]),
   ),
 }));
-createRoot(document.getElementById("root")!).render(
-  <ThemeProvider mode={params.get("mode") === "dark" ? "dark" : "light"}>
-    <div data-testid="tooltip-chart" style={{ width: 480 }}>
-      <LineChart data={data} categoryKey="month" width={480} height={260} legend={false} />
-    </div>
-    <ChartFoundationCases />
-    <MiniChartCases />
-  </ThemeProvider>,
-);
+const mount = () =>
+  createRoot(document.getElementById("root")!).render(
+    <ThemeProvider mode={params.get("mode") === "dark" ? "dark" : "light"}>
+      {!params.has("lazy") && (
+        <>
+          <div data-testid="tooltip-chart" style={{ width: 480 }}>
+            <LineChart data={data} categoryKey="month" width={480} height={260} legend={false} />
+          </div>
+          <ChartFoundationCases />
+        </>
+      )}
+      <MiniChartCases />
+    </ThemeProvider>,
+  );
+
+(window as Window & { mountMiniCharts?: () => void }).mountMiniCharts = mount;
+if (!params.has("lazy")) mount();

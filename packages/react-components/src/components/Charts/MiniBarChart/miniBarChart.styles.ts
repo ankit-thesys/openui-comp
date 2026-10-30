@@ -1,4 +1,3 @@
-import type { StyleCss } from "../../../styles/useStyles";
 import { miniChartStyles } from "../shared/mini/miniChart.styles";
 
 export const names = {
@@ -10,4 +9,4 @@ export const names = {
   isAnimationActive: { true: "openui-mini-bar-chart--is-animation-active" },
 } as const;
 
-export const miniBarChartStyles = (css: StyleCss) => miniChartStyles(css);
+export const miniBarChartStyles = /*#__PURE__*/ miniChartStyles;
