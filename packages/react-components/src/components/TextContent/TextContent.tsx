@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { CSSProperties, ReactNode } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { names, textContentStyles } from "./textContent.styles";
 
 export type TextContentVariant = "clear" | "card" | "sunk";
@@ -17,7 +16,7 @@ export interface TextContentProps {
 const TextContent = (props: TextContentProps) => {
   const { children, variant = "sunk", className, style } = props;
 
-  const css = useStyles(textContentStyles);
+  const css = textContentStyles;
   return (
     <div
       className={clsx(
