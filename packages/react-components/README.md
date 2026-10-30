@@ -595,7 +595,10 @@ Keep the `openui-styles` id on **every** flush's style tag. The browser adopts t
 place, merges later streamed tags into it, and removes those later tags, including tags that
 arrived before hydration. The merge deduplicates complete rules against client registrations
 and strips each server layer wrapper before applying the configured layer once. This also
-works when streaming continues after the browser has loaded the library.
+works when streaming continues after the browser has loaded the library: the library watches
+the document for registry tags only while it is still being parsed, merges the last of them when
+parsing ends, and then stops watching, so later DOM updates, such as streamed chat tokens, never
+reach it. A library loaded after parsing never watches the document.
 
 Once the browser adopts the streamed rules, all of them occupy the first sheet's position, so
 app stylesheets after that first tag keep winning equal-weight ties in unlayered mode. Before
