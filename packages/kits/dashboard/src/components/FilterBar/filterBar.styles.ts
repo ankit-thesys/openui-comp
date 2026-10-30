@@ -15,7 +15,7 @@ export const styles = {
   root: css`
     --_openui-dashboard-filter-bar-gap: var(--openui-space-s, 8px);
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: flex-end;
     gap: ${GAP};
     width: 100%;
@@ -49,7 +49,7 @@ export const styles = {
   /* `& > *`: the filters in a side are the caller's, so they can't take a class from here. */
   side: css`
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: flex-end;
     gap: ${GAP};
     min-width: 0;
