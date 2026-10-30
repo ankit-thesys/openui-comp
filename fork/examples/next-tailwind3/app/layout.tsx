@@ -1,7 +1,6 @@
+import { ComponentStyles } from "@openuidev/react-components/styles";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import "./globals.css";
-import StyleRegistry from "./style-registry";
 
 export const metadata: Metadata = {
   title: "Common Ground — A good place to do your own thing",
@@ -12,7 +11,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <StyleRegistry>{children}</StyleRegistry>
+        <ComponentStyles />
+        {children}
       </body>
     </html>
   );

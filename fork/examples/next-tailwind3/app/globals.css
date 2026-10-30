@@ -102,39 +102,39 @@ a:hover {
   z-index: 10;
   background: var(--paper);
 }
-/* Next streams the component CSS after this sheet, so each override adds `body` to
-   outweigh the component's own rule. No !important needed. */
-body .openui-button {
+/* The component sheet comes before this one (page.tsx imports it), so stable-class overrides
+   of equal weight win. No !important needed. */
+.openui-button {
   border-radius: 6px;
   padding-inline: 24px;
 }
-body .openui-tag {
+.openui-tag {
   width: fit-content;
 }
-body .openui-card {
+.openui-card {
   gap: 14px;
 }
-body .openui-tabs-trigger[data-state="active"] {
+.openui-tabs-trigger[data-state="active"] {
   color: #174ec4;
   background: #d4e3fa;
 }
-body .openui-tabs-indicator {
+.openui-tabs-indicator {
   background: #174ec4;
   height: 3px;
 }
-body .openui-table-head {
+.openui-table-head {
   background: var(--panel);
 }
-body .openui-table-container {
+.openui-table-container {
   border: 1px solid var(--line);
   border-radius: 8px;
 }
-body .openui-accordion-trigger[data-state="open"] {
+.openui-accordion-trigger[data-state="open"] {
   background: var(--panel);
 }
-body .openui-input,
-body .openui-text-area,
-body .openui-select-trigger {
+.openui-input,
+.openui-text-area,
+.openui-select-trigger {
   border-radius: 6px;
 }
 @media (max-width: 767px) {

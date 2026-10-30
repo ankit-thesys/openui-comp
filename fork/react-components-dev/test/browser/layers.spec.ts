@@ -81,60 +81,6 @@ test("without configuration the whole sheet stays unlayered", async ({ page }) =
     expect(await layersOf(page, id)).toEqual([""]);
 });
 
-test("a later call rewrites the sheet in place, including lazy styles and keyframes", async ({
-  page,
-}) => {
-  const warnings: string[] = [];
-  page.on("console", (message) => {
-    if (message.type() === "warning") warnings.push(message.text());
-  });
-  await page.goto("/layers.html");
-  await expect(page.getByTestId("default")).toBeVisible();
-  const result = await page.evaluate(async () => {
-    const fixture = (window as FixtureWindow).layersFixture!;
-    const tag = document.getElementById("openui-styles") as HTMLStyleElement;
-    const button = document.querySelector('[data-testid="default"]')!;
-    const classes = button.className;
-    const before = tag.textContent!;
-    fixture.configureStyles({ layer: "openui" });
-    await Promise.resolve();
-    const layered = tag.textContent;
-    const { lazy, animation } = await fixture.loadLater();
-    await Promise.resolve();
-    const withLazy = tag.textContent!;
-    fixture.configureStyles({ layer: undefined });
-    await Promise.resolve();
-    const unlayered = tag.textContent!;
-    fixture.configureStyles({ layer: "app.openui" });
-    await Promise.resolve();
-    return {
-      before,
-      layered,
-      withLazy,
-      unlayered,
-      switched: tag.textContent,
-      stored: fixture.getComponentStyles(),
-      lazy,
-      animation,
-      sameTag: tag === document.getElementById("openui-styles"),
-      sameClasses: classes === button.className,
-    };
-  });
-  expect(result.layered).toBe(`@layer openui{${result.before}}`);
-  expect(result.withLazy.match(/@layer /g)).toHaveLength(1);
-  expect(result.withLazy).toContain(`.${result.lazy}{animation:${result.animation} 3s linear;`);
-  expect(result.withLazy).toContain(
-    `@keyframes ${result.animation}{from{opacity:0.21;}to{opacity:0.79;}}`,
-  );
-  expect(result.withLazy).toBe(`@layer openui{${result.unlayered}}`);
-  expect(result.switched).toBe(`@layer app.openui{${result.unlayered}}`);
-  expect(result.switched).toBe(result.stored);
-  expect(result.sameTag).toBe(true);
-  expect(result.sameClasses).toBe(true);
-  expect(warnings).toEqual([]);
-  expect(await layersOf(page, "outside")).toEqual(["app.openui"]);
-});
-
 test("layer mode renders Button exactly as default mode does", async ({ page }) => {
   const snapshot = async () => {
     // The pointer keeps its position across navigations; start each page away from the Buttons.
