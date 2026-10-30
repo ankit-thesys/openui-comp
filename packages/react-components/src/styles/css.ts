@@ -112,7 +112,7 @@ export type ConfigureStylesOptions = {
 /** Sets the layer for the whole component sheet, including rules already registered. */
 export function configureStyles(options: ConfigureStylesOptions): void {
   if (options.layer !== undefined && !LAYER_NAME.test(options.layer)) {
-    if (process.env["NODE_ENV"] !== "production") {
+    if (typeof process !== "undefined" && process.env?.["NODE_ENV"] !== "production") {
       console.warn(
         `[OpenUI] configureStyles layer "${options.layer}" is not a cascade layer name. It is ignored.`,
       );
