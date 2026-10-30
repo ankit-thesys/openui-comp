@@ -885,9 +885,9 @@ exception for the shared StackedLegend frame's JavaScript width. Regenerate the 
 building.
 
 `other-charts.spec.ts` checks every stable class before/after library CSS and in layer mode,
-including SVG fill, the diverging notch pseudo-element, runtime cell states, render-time
-registration and HTML-class rewrites. Its fixture is `other-charts`; `?chart=<Component>` selects
-one chart and `?layer=1` enables layer mode. The parity fixtures and names are:
+including SVG fill, the diverging notch pseudo-element, runtime cell states, import-time
+registration with no sheet changes on mount, and HTML-class rewrites. Its fixture is `other-charts`;
+`?chart=<Component>` selects one chart and `?layer=1` enables layer mode. The parity fixtures and names are:
 
 - `parity-pie-chart` / `pie-chart`
 - `parity-radar-chart` / `radar-chart`

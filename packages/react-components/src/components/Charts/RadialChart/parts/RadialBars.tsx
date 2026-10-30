@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { arc } from "d3-shape";
 import type { CSSProperties } from "react";
 import React, { useMemo } from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import type { CategoricalSlice } from "../../hooks";
 import { useIndexedClickHandler } from "../../hooks/core/useIndexedClickHandler";
 import { entranceProps } from "../../utils/entranceUtils";
@@ -45,7 +44,7 @@ export function RadialBars<T>({
   onMouseLeave,
   onClick,
 }: RadialBarsProps<T>) {
-  const styles = useStyles(radialChartStyles);
+  const styles = radialChartStyles;
   const handleClick = useIndexedClickHandler(data, onClick);
 
   const totalSweep = endAngle - startAngle;

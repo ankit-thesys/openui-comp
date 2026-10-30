@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
 
 /** Stable override targets for FunnelChart. */
 export const names = {
@@ -29,8 +29,8 @@ export const names = {
   },
 } as const;
 
-// Register the entrance keyframes with the component, never on import.
-export const funnelChartStyles = (css: StyleCss) => {
+// Register entrance keyframes before the rules that reference them, on import.
+export const funnelChartStyles = /*#__PURE__*/ (() => {
   css`
     @keyframes openui-funnel-chart-appear {
       from {
@@ -143,4 +143,4 @@ export const funnelChartStyles = (css: StyleCss) => {
       cursor: var(--_openui-funnel-chart-hitbox-cursor, unset);
     `,
   };
-};
+})();

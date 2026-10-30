@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import type { ScaleLinear } from "d3-scale";
 import type { CSSProperties } from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import { FadeFollower } from "../../shared/core/spring";
 import type { ChartData } from "../../types";
 import { entranceProps } from "../../utils/entranceUtils";
@@ -51,7 +50,7 @@ export function RadarSeries<T extends ChartData>({
   hoveredIndex,
   animate,
 }: RadarSeriesProps<T>) {
-  const styles = useStyles(radarChartStyles);
+  const styles = radarChartStyles;
   const series = dataKeys.map((key) => ({
     key,
     color: colorMap[key] ?? "#000",

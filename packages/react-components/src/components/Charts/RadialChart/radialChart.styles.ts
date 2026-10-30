@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
+
 import { fadeAppearAnimation } from "../shared/animations/fadeAppear.styles";
 import { centeredContainer, centeredSvgWrapper } from "../shared/chartBaseDeclarations";
 
@@ -21,7 +22,7 @@ export const names = {
   },
 } as const;
 
-export const radialChartStyles = (css: StyleCss) => {
+export const radialChartStyles = /*#__PURE__*/ (() => {
   return {
     root: css`
       ${centeredContainer}
@@ -51,4 +52,4 @@ export const radialChartStyles = (css: StyleCss) => {
       transition: var(--_openui-radial-chart-bar-transition, unset);
     `,
   };
-};
+})();

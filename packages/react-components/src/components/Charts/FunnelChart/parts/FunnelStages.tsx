@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import React, { useMemo, useRef } from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import type { FunnelStage } from "../../hooks/cartesian/useFunnelChartOrchestrator";
 import { useCanvasContextForLabelSize } from "../../hooks/core/useCanvasContextForLabelSize";
 import { useIndexedClickHandler } from "../../hooks/core/useIndexedClickHandler";
@@ -107,7 +106,7 @@ export function FunnelStages<T>({
   onMouseLeave,
   onClick,
 }: FunnelStagesProps<T>) {
-  const styles = useStyles(funnelChartStyles);
+  const styles = funnelChartStyles;
   const ctx = useCanvasContextForLabelSize();
 
   const handleClick = useIndexedClickHandler(rows, onClick);
@@ -372,7 +371,7 @@ interface FunnelRingProps {
  * bloom. Mounted only off the print path (FunnelStages branches on static).
  */
 function FunnelRing({ d, color, fillOpacity, hovered, ringIndex, totalRings }: FunnelRingProps) {
-  const styles = useStyles(funnelChartStyles);
+  const styles = funnelChartStyles;
   const ref = useRef<SVGPathElement>(null);
   // Inner rings bloom more (the solid core most); a lone ring is the core. The
   // 0.12 headroom matches the 0.44 cross-axis factor (segments span 0.88 of
