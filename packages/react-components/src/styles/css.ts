@@ -1,4 +1,5 @@
 import { css as gooberCss } from "goober";
+import * as React from "react";
 
 const SHEET_ID = "openui-styles";
 // A registry flush is `STREAM_START…STREAM_END`, so the browser can tell a tag whose text is still
@@ -164,18 +165,31 @@ function sheetTag(): HTMLElement {
   return tag;
 }
 
+// React 19 installs its cache dispatcher for the entire render, including lazy initializers
+// before a hook dispatcher is active. It restores it before commit. If the internal shape ever
+// changes, fall back to synchronous writes so layout measurements remain correct.
+const reactInternals = (
+  React as typeof React & {
+    __CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE?: { A: unknown };
+  }
+).__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+
 function scheduleWrite() {
-  if (!inBrowser() || scheduled) return;
+  if (!inBrowser()) return;
+  if (reactInternals?.A !== null) {
+    flushComponentStyles();
+    return;
+  }
+  if (scheduled) return;
   scheduled = true;
   queueMicrotask(flushComponentStyles);
 }
 
 /**
- * Writes the rules registered since the last write to the page's sheet, in one write. Internal:
- * besides the microtask, React commits call it before layout effects, so code that measures
- * during a commit sees the rules its own render registered.
+ * Writes pending rules to the page's sheet. Import-time registrations batch in a microtask;
+ * registrations during React rendering flush synchronously, before any layout measurement.
  */
-export function flushComponentStyles() {
+function flushComponentStyles() {
   scheduled = false;
   if (!inBrowser()) return;
   seed();

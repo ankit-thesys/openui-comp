@@ -165,7 +165,7 @@ export function snapshot({ html, sheet }: Collection, provenance: Provenance): S
 //
 // An exact duplicate of an earlier record is dropped, keeping the first, as Goober's own dedupe
 // does in a browser sheet. The pre-#130 server sheet repeated a rule that a shared or composed
-// factory registered again after getComponentStyles() had drained Goober's sheet with extractCss;
+// style registered again after collection had drained the old server sheet;
 // browser sheets never held such a copy, and the store since #130 does not either.
 export function comparable<T extends Snapshot | LayerSnapshot>(sample: T): T {
   const rules = Object.fromEntries(
