@@ -191,6 +191,7 @@ const bundle = async (
   packageUnderTest: string,
   baseline: boolean,
   platform: "browser" | "node" = "browser",
+  environment = "production",
 ) =>
   build({
     config: false,
@@ -210,7 +211,7 @@ const bundle = async (
         .replace("goober.cjs", "goober.modern.js"),
     },
     define: {
-      "process.env.NODE_ENV": JSON.stringify("production"),
+      "process.env.NODE_ENV": JSON.stringify(environment),
       __PARITY_BASELINE__: String(baseline),
     },
     deps: { alwaysBundle: [/.*/], onlyBundle: false },
@@ -224,6 +225,13 @@ const bundle = async (
 export default async function buildFixtures() {
   rmSync(fixturesOut, { recursive: true, force: true });
   await bundle(entries(fixtures), "@openuidev/react-components", false);
+  await bundle(
+    entries(["layers"], "-development"),
+    "@openuidev/react-components",
+    false,
+    "browser",
+    "development",
+  );
   // The react-ui benches compare against the workspace's built @openuidev/react-ui.
   if (!existsSync(reactUiEntry))
     throw new Error("Build @openuidev/react-ui first: pnpm --filter @openuidev/react-ui... build");

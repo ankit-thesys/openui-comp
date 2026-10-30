@@ -14,6 +14,7 @@
     "test:parity:baseline": "node test/browser/parity/extract-baseline.mjs && OPENUI_PARITY_CAPTURE=1 playwright test --grep \"matches the #72\"",
     "test:screenshots": "OPENUI_SCREENSHOTS=1 playwright test screenshots",
     "docs:selectors": "node scripts/selector-reference.mjs",
+    "styles:entry": "node scripts/styles-entry.mjs",
     "format:check": "prettier --check ../../packages/react-components/src ./test",
     "format:fix": "prettier --write ../../packages/react-components/src ./test",
     "ci": "pnpm --filter @openuidev/react-components run typecheck && pnpm --filter @openuidev/react-components run lint:check && tsc -p tsconfig.test.json && pnpm run test && pnpm run format:check",

@@ -59,7 +59,7 @@ it("switches the whole sheet to unlayered and back without changing any classes 
     configureStyles({ layer: "app.components" });
     expect(getComponentStyles()).toBe(`@layer app.components{${unlayered}}`);
     expect(registerImported()).toBe(imported);
-    expect(warn).not.toHaveBeenCalled();
+    expect(warn).toHaveBeenCalledTimes(3);
   } finally {
     warn.mockRestore();
   }

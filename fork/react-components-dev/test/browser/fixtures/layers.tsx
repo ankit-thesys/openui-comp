@@ -11,6 +11,7 @@ configureStyles({ layer });
 
 export const layersFixture = {
   configureStyles,
+  css,
   getComponentStyles,
   imported,
 };

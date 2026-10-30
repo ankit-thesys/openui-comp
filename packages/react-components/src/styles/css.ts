@@ -12,6 +12,7 @@ const LAYER_NAME = /^-?[a-zA-Z_][\w-]*(\.-?[a-zA-Z_][\w-]*)*$/;
 let rules = "";
 // How much of `rules` is already on the page.
 let written = 0;
+let emitted = false;
 let seeded = false;
 let scheduled = false;
 let layer: string | undefined;
@@ -30,6 +31,7 @@ function seed() {
   for (const tag of document.querySelectorAll(SERVER_SHEET)) {
     const text = tag.textContent ?? "";
     rules += text;
+    emitted ||= text.trim().length > 0;
     // A layered server sheet names its layer; rules the browser adds go in the same one.
     layer ??= /^@layer ([^\s{]+)\{/.exec(text)?.[1];
   }
@@ -53,6 +55,7 @@ function write() {
   const nonce = (window as Window & { __nonce__?: string }).__nonce__;
   if (nonce && tag.nonce !== nonce) tag.nonce = nonce;
   tag.append(wrap(fresh));
+  emitted = true;
 }
 
 const sink = {
@@ -96,21 +99,29 @@ export type ConfigureStylesOptions = {
 /** Sets the cascade layer for component rules. Call it once in the app entry, before rendering. */
 export function configureStyles(options: ConfigureStylesOptions): void {
   if (options.layer !== undefined && !LAYER_NAME.test(options.layer)) {
-    if (typeof process !== "undefined" && process.env?.["NODE_ENV"] !== "production") {
+    if (process.env["NODE_ENV"] !== "production") {
       console.warn(
         `[OpenUI] configureStyles layer "${options.layer}" is not a cascade layer name. It is ignored.`,
       );
     }
     return;
   }
+  seed();
+  if (options.layer !== layer && emitted && process.env["NODE_ENV"] !== "production") {
+    console.warn(
+      "[OpenUI] configureStyles was called after component rules were written. " +
+        "Existing page rules cannot be re-layered. Configure once in the app entry, before rendering.",
+    );
+  }
   layer = options.layer;
 }
 
 /**
  * Every component rule registered so far, for `<style data-openui-styles>` in server HTML.
- * Pass the layer to wrap them in, and the same name as `data-layer` so browser rules match.
+ * Pass the layer to wrap them in; the browser reads its name from the `@layer x{` prefix.
  */
 export const getComponentStyles = (options: ConfigureStylesOptions = {}): string => {
   seed();
+  if (!inBrowser() && rules.trim()) emitted = true;
   return wrap(rules, options.layer ?? layer) || " ";
 };

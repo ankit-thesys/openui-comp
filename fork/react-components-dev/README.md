@@ -96,14 +96,13 @@ are referenced only indirectly. A type-only import is erased and cannot establis
 For example, a composed input's style module imports the primitive's style object before
 registering its own overrides. Reuse the imported object when applying those classes.
 
-Every registration applies at once: its rules are inserted into the live CSSOM (inside the
-layer block in layer mode), each parsed on its own. The sheet text, which the store and server
-adoption rely on, is rewritten once per microtask with the same rules in the same order. So code
-that measures before that write, such as the first layout effect of a component whose module a
-lazy initializer evaluated during render, already sees the styles, without reading React's
-internals and without re-parsing the whole sheet per rule. `lazy-sheet.spec.ts` checks the
-first-layout geometry, the animation and its keyframes in the applied CSSOM, in both layer modes,
-for a lazily evaluated module and for rules created in a component render.
+Rules append to the browser sheet once per microtask. Rules registered during render, including
+a module first evaluated during that render, apply after that task; a layout effect in the same
+task can measure an unstyled element. Keep every `css` and `keyframes` call at module top level
+and import style modules before rendering. `test/unit/module-styles.test.ts` guards the source.
+After adding or removing a style module, run `pnpm styles:entry` to regenerate the sorted
+`@openuidev/react-components/styles` entry. `styles-entry.test.tsx` rejects missing or stale
+imports. The full server sheet is available before rendering or streaming starts.
 
 The following retain their existing non-template contracts:
 

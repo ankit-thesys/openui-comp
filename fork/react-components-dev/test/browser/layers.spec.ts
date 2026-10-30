@@ -4,6 +4,58 @@ import type { layersFixture } from "./fixtures/layers";
 
 type FixtureWindow = Window & { layersFixture?: typeof layersFixture };
 
+test("an empty reserved sheet does not cause a late-configuration warning", async ({ page }) => {
+  const warnings: string[] = [];
+  page.on("console", (message) => {
+    if (message.type() === "warning" && message.text().includes("[OpenUI]"))
+      warnings.push(message.text());
+  });
+  await page.route("**/layers-reserved.html?*", (route) =>
+    route.fulfill({
+      contentType: "text/html",
+      body: `<!doctype html><html><head><style id="openui-styles">\n </style></head>
+        <body><div id="root"></div><script type="module" src="/layers-development.js"></script></body></html>`,
+    }),
+  );
+  await page.goto("/layers-reserved.html?layer=openui");
+  await expect(page.getByTestId("default")).toBeVisible();
+  expect(warnings).toEqual([]);
+  await expect(page.locator("style#openui-styles")).toContainText("@layer openui{");
+});
+
+for (const environment of ["development", "production"]) {
+  test(`late configuration warns only in development: ${environment}`, async ({ page }) => {
+    const warnings: string[] = [];
+    page.on("console", (message) => {
+      if (message.type() === "warning" && message.text().includes("[OpenUI]"))
+        warnings.push(message.text());
+    });
+    const fixture = environment === "development" ? "layers-development" : "layers";
+    await page.goto(`/${fixture}.html?layer=openui`);
+    await expect(page.getByTestId("default")).toBeVisible();
+    const sheet = page.locator("style#openui-styles");
+    const before = await sheet.textContent();
+
+    await page.evaluate(() => {
+      (window as FixtureWindow).layersFixture!.configureStyles({ layer: "openui" });
+    });
+    expect(warnings).toEqual([]);
+    await page.evaluate(() => {
+      (window as FixtureWindow).layersFixture!.configureStyles({ layer: "later" });
+    });
+    expect(warnings).toEqual(
+      environment === "development"
+        ? [expect.stringContaining("configureStyles was called after component rules were written")]
+        : [],
+    );
+    expect(await sheet.textContent()).toBe(before);
+    const name = await page.evaluate(
+      () => (window as FixtureWindow).layersFixture!.css`color: rgb(71, 83, 97);`,
+    );
+    await expect(sheet).toHaveText(`${before}@layer later{.${name}{color:rgb(71, 83, 97);}}`);
+  });
+}
+
 const OVERRIDE = {
   color: "rgb(1, 2, 3)",
   "background-color": "rgb(4, 5, 6)",
