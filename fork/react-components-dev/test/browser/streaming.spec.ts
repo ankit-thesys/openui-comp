@@ -47,7 +47,8 @@ for (const layer of [undefined, "openui"]) {
         const rules: string[] = [];
         function collect(list: CSSRuleList, context = "") {
           for (const rule of list) {
-            if ("cssRules" in rule)
+            // Chromium's CSSStyleRule has cssRules too (CSS nesting); a style rule is a leaf here.
+            if ("cssRules" in rule && !(rule instanceof CSSStyleRule))
               collect((rule as CSSGroupingRule).cssRules, context + rule.cssText.split("{")[0]);
             else rules.push(context + rule.cssText);
           }

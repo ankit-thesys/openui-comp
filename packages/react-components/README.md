@@ -595,11 +595,14 @@ arrived before hydration. The merge deduplicates complete rules against client r
 and strips each server layer wrapper before applying the configured layer once. This also
 works when streaming continues after the browser has loaded the library.
 
-Reserve the first sheet before app stylesheets, just as in the non-streaming recipe. Once the
-browser adopts the streamed rules, all of them occupy that original position, so equal-weight
-app overrides after the first sheet keep winning in unlayered mode. Before JavaScript runs,
-late tags occupy their streamed positions; use layer mode if overrides must also win during
-that interval. Configure the same app-wide layer on server and client, and keep it fixed for
+Once the browser adopts the streamed rules, all of them occupy the first sheet's position, so
+app stylesheets after that first tag keep winning equal-weight ties in unlayered mode. Before
+JavaScript runs, late tags occupy their streamed positions. Next.js inserts the first tag at the
+end of `<head>`, after the app's stylesheets, so there unlayered component rules outrank
+equal-weight app CSS from the first paint on: use layer mode with Next.js (with the layer-order
+tag first in the root layout's `<head>`), so unlayered app CSS and Tailwind's `utilities` win
+wherever the sheet lands. In a renderer that writes `<head>` itself, inline the first flush
+before the app's stylesheets, as in the non-streaming recipe. Configure the same app-wide layer on server and client, and keep it fixed for
 the response. Theme defaults remain separate. For other React streaming integrations, call
 `registry.flush()` before each HTML insertion and insert a tag only when the result is nonempty.
 
