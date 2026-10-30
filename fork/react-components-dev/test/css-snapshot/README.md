@@ -44,7 +44,10 @@ Markup retains the generated class slots, replacing each hash by a stable-class 
 slot number in first-markup-occurrence order. Distinct classes and shared class relationships
 remain distinct. Markup is stored split before each tag, so a diff shows the changed element.
 Rules are indexed by those stable anchors and keep selectors, condition wrappers, declaration
-order, duplicates, values, importance and referenced keyframes.
+order, duplicates, values, importance and referenced keyframes. Named keyframes from every module
+share one `@keyframes` entry and compare sorted by name (stably, so duplicates of one name keep
+their order): their sheet order across modules is registration order, which becomes import order,
+and keyframes with different names never compete.
 
 `order` lists, for each element and each style module giving it more than one generated class,
 those classes in sheet order. Equal-weight rules resolve by that order, and ADR 0002 keeps it

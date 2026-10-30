@@ -149,9 +149,29 @@ export function snapshot({ html, sheet }: Collection, provenance: Provenance): S
       return ids.get(id)!;
     })
     .split(/(?=<)/);
-  return {
+  return comparable({
     markup,
     rules: Object.fromEntries(Object.entries(rules).sort(([a], [b]) => a.localeCompare(b))),
     order: [...order].sort(),
-  };
+  });
 }
+
+// Named keyframes share one "@keyframes" key across modules, in sheet order. Keyframes with
+// different names never compete, and their relative order is registration order across modules,
+// which the migration turns into import order (the recorded Charts samples already differ between
+// server and browser). Compare them by name; the sort is stable, so duplicates of one name keep
+// their order, where the last one wins.
+export function comparable<T extends Snapshot | LayerSnapshot>(sample: T): T {
+  const keyframes = sample.rules["@keyframes"];
+  if (!keyframes) return sample;
+  const sorted = [...keyframes].sort((a, b) =>
+    a.selector < b.selector ? -1 : a.selector > b.selector ? 1 : 0,
+  );
+  return { ...sample, rules: { ...sample.rules, "@keyframes": sorted } };
+}
+
+/** `comparable` for every sample of a recorded file, so baselines compare without re-recording. */
+export const comparableAll = <T extends Snapshot | LayerSnapshot>(
+  samples: Record<string, T>,
+): Record<string, T> =>
+  Object.fromEntries(Object.entries(samples).map(([key, sample]) => [key, comparable(sample)]));

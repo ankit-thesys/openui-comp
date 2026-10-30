@@ -3,6 +3,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { readStableNames } from "../../scripts/selector-reference.mjs";
 import { styleProvenance } from "../../scripts/style-provenance.mjs";
 import {
+  comparableAll,
   snapshot,
   type Collection,
   type LayerSnapshot,
@@ -144,7 +145,7 @@ for (const component of clientOnlyContracts) {
       expect(
         snapshots,
         `${component.folder}: client-only CSS/markup changed; baseline must be recorded before migration`,
-      ).toEqual(JSON.parse(readFileSync(baseline, "utf8")));
+      ).toEqual(comparableAll(JSON.parse(readFileSync(baseline, "utf8"))));
     }
   });
 }

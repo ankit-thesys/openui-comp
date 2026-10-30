@@ -7,7 +7,13 @@ import { styleProvenance } from "../../scripts/style-provenance.mjs";
 import { migratedComponents, otherChartContracts } from "../unit/contract/components";
 import { inLayer } from "../unit/contract/defineContract";
 import { renderWithPortals, withPortalTarget } from "../unit/contract/portal";
-import { snapshot, type Collection, type LayerSnapshot, type Snapshot } from "./snapshot";
+import {
+  comparableAll,
+  snapshot,
+  type Collection,
+  type LayerSnapshot,
+  type Snapshot,
+} from "./snapshot";
 
 /**
  * Compares every server contract render with `file`, or records it under OPENUI_CSS_RECORD=1.
@@ -32,7 +38,7 @@ export async function compareServerSnapshots(file: string, layer?: string) {
   const current: Record<string, Snapshot | LayerSnapshot> = {};
   const expected: Record<string, Snapshot | LayerSnapshot> = record
     ? {}
-    : JSON.parse(readFileSync(path, "utf8"));
+    : comparableAll(JSON.parse(readFileSync(path, "utf8")));
   const wrap = (element: ReactElement, key: number) =>
     layer ? inLayer(element, layer, key) : element;
 
