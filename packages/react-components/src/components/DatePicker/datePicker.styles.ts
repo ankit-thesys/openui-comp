@@ -1,5 +1,3 @@
-"use client";
-
 import { css } from "../../styles/css";
 import { calendarStyles } from "../Calendar/calendar.styles";
 
