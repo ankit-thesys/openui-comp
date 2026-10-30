@@ -4,8 +4,7 @@ import { CheckBoxItem } from "@openuidev/react-components";
 import clsx from "clsx";
 import { ChevronDown } from "lucide-react";
 import { useCallback, useEffect, useRef, useState, type RefObject } from "react";
-import { C1_CLASS_PREFIX } from "../../shared/classPrefix";
-import { filterSelectClass, multiSelectClass, singleSelectClass } from "./filterSelect.styles";
+import { names, styles } from "./filterSelect.styles";
 
 export interface FilterOption {
   value: string;
@@ -53,40 +52,36 @@ export function FilterSelect({
   useClickOutside(dropdownRef, closeDropdown);
 
   return (
-    <div className={clsx(filterSelectClass, `${C1_CLASS_PREFIX}-filter-select`)}>
-      {label && <label className={`${C1_CLASS_PREFIX}-filter-select__label`}>{label}</label>}
-      <div
-        className={clsx(singleSelectClass, `${C1_CLASS_PREFIX}-filter-single-select`)}
-        ref={dropdownRef}
-      >
+    <div className={clsx(styles.root, names.root)}>
+      {label && <label className={clsx(styles.label, names.label)}>{label}</label>}
+      <div className={clsx(styles.control, names.control)} ref={dropdownRef}>
         <button
           type="button"
-          className={clsx(
-            `${C1_CLASS_PREFIX}-filter-single-select__trigger`,
-            !selectedItem && `${C1_CLASS_PREFIX}-filter-single-select__trigger--empty`,
-          )}
+          data-empty={!selectedItem || undefined}
+          className={clsx(styles.trigger, names.trigger, styles.triggerSingle, names.triggerSingle)}
           disabled={disabled}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((c) => !c)}
         >
-          <span className={`${C1_CLASS_PREFIX}-filter-single-select__value`}>{summary}</span>
+          <span className={clsx(styles.value, names.value)}>{summary}</span>
           <ChevronDown
-            className={clsx(
-              `${C1_CLASS_PREFIX}-filter-single-select__chevron`,
-              isOpen && `${C1_CLASS_PREFIX}-filter-single-select__chevron--open`,
-            )}
+            data-open={isOpen || undefined}
+            className={clsx(styles.chevron, names.chevron)}
             size={14}
           />
         </button>
         {isOpen ? (
-          <div className={`${C1_CLASS_PREFIX}-filter-single-select__content`} role="radiogroup">
+          <div
+            className={clsx(styles.popover, names.popover, styles.radioPopover, names.radioPopover)}
+            role="radiogroup"
+          >
             {options.map((item) => (
               <label
                 key={item.value}
-                className={`${C1_CLASS_PREFIX}-filter-single-select__radio-option`}
+                className={clsx(styles.option, names.option, styles.radioOption, names.radioOption)}
               >
                 <input
-                  className={`${C1_CLASS_PREFIX}-filter-single-select__radio-input`}
+                  className={clsx(styles.radioInput, names.radioInput)}
                   type="radio"
                   name={name}
                   value={item.value}
@@ -97,10 +92,7 @@ export function FilterSelect({
                     setIsOpen(false);
                   }}
                 />
-                <span className={`${C1_CLASS_PREFIX}-filter-single-select__radio-control`} />
-                <span className={`${C1_CLASS_PREFIX}-filter-single-select__radio-label`}>
-                  {item.label}
-                </span>
+                <span className={clsx(styles.radioLabel, names.radioLabel)}>{item.label}</span>
               </label>
             ))}
           </div>
@@ -141,62 +133,43 @@ export function FilterMultiSelect({
     onValuesChange(values.includes(value) ? values.filter((v) => v !== value) : [...values, value]);
 
   return (
-    <div
-      className={clsx(
-        filterSelectClass,
-        `${C1_CLASS_PREFIX}-filter-select`,
-        `${C1_CLASS_PREFIX}-filter-select--multi`,
-      )}
-    >
-      {label && <label className={`${C1_CLASS_PREFIX}-filter-select__label`}>{label}</label>}
-      <div
-        className={clsx(multiSelectClass, `${C1_CLASS_PREFIX}-filter-multi-select`)}
-        ref={dropdownRef}
-      >
+    <div className={clsx(styles.root, names.root)}>
+      {label && <label className={clsx(styles.label, names.label)}>{label}</label>}
+      <div className={clsx(styles.control, names.control)} ref={dropdownRef}>
         <button
           type="button"
-          className={clsx(
-            `${C1_CLASS_PREFIX}-filter-multi-select__trigger`,
-            !values.length && `${C1_CLASS_PREFIX}-filter-multi-select__trigger--empty`,
-          )}
+          data-empty={!values.length || undefined}
+          className={clsx(styles.trigger, names.trigger, styles.triggerMulti, names.triggerMulti)}
           onClick={() => setIsOpen(!isOpen)}
           disabled={disabled}
           aria-expanded={isOpen}
         >
           {summary ? (
-            <span className={`${C1_CLASS_PREFIX}-filter-multi-select__summary`}>
-              <span className={`${C1_CLASS_PREFIX}-filter-multi-select__summary-text`}>
-                {summary}
-              </span>
-              <span className={`${C1_CLASS_PREFIX}-filter-multi-select__count`}>
-                {values.length}
-              </span>
+            <span className={clsx(styles.summary, names.summary)}>
+              <span className={clsx(styles.summaryText, names.summaryText)}>{summary}</span>
+              <span className={clsx(styles.count, names.count)}>{values.length}</span>
             </span>
           ) : (
-            <span className={`${C1_CLASS_PREFIX}-filter-multi-select__placeholder`}>
-              {placeholder ?? "Select..."}
-            </span>
+            <span className={names.placeholder}>{placeholder ?? "Select..."}</span>
           )}
           <ChevronDown
-            className={clsx(
-              `${C1_CLASS_PREFIX}-filter-multi-select__chevron`,
-              isOpen && `${C1_CLASS_PREFIX}-filter-multi-select__chevron--open`,
-            )}
+            data-open={isOpen || undefined}
+            className={clsx(styles.chevron, names.chevron)}
             size={14}
           />
         </button>
         {isOpen && (
-          <div className={`${C1_CLASS_PREFIX}-filter-multi-select__dropdown`}>
-            <div className={`${C1_CLASS_PREFIX}-filter-multi-select__options`}>
+          <div
+            className={clsx(
+              styles.popover,
+              names.popover,
+              styles.checkboxPopover,
+              names.checkboxPopover,
+            )}
+          >
+            <div className={clsx(styles.options, names.options)}>
               {options.map((option) => (
-                <div
-                  key={option.value}
-                  className={clsx(
-                    `${C1_CLASS_PREFIX}-filter-multi-select__option`,
-                    values.includes(option.value) &&
-                      `${C1_CLASS_PREFIX}-filter-multi-select__option--selected`,
-                  )}
-                >
+                <div key={option.value} className={clsx(styles.option, names.option)}>
                   <CheckBoxItem
                     name={option.value}
                     label={option.label}

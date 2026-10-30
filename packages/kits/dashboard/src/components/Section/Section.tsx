@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import type { ReactNode } from "react";
-import { C1_CLASS_PREFIX } from "../../shared/classPrefix";
-import { sectionClass } from "./section.styles";
+import { names, styles } from "./section.styles";
 
 export interface SectionProps {
   filterBar?: ReactNode;
@@ -10,9 +9,9 @@ export interface SectionProps {
 
 export function Section({ filterBar, children }: SectionProps) {
   return (
-    <section className={clsx(sectionClass, `${C1_CLASS_PREFIX}-section`)}>
-      {filterBar ? <div className={`${C1_CLASS_PREFIX}-section__filter`}>{filterBar}</div> : null}
-      <div className={`${C1_CLASS_PREFIX}-section__rows`}>{children}</div>
+    <section className={clsx(styles.root, names.root)}>
+      {filterBar ? <div className={clsx(styles.filter, names.filter)}>{filterBar}</div> : null}
+      <div className={clsx(styles.rows, names.rows)}>{children}</div>
     </section>
   );
 }

@@ -36,6 +36,20 @@ Then render a model's response with `Renderer` from `@openuidev/react-lang`:
   `Section`, `CardRow` and `DashboardThemeProvider`.
 - Components style themselves with goober, so there is no stylesheet to import.
 
+## Styling
+
+Styles follow the same flat contract as `@openuidev/react-components`:
+
+- Every element has one generated class and one stable class. Each `<name>.styles.ts`
+  exports them as `names` and `styles`, and all stable classes start with
+  `openui-dashboard-`, so a plain class in your stylesheet can target and override them.
+- Variants set private `--_openui-dashboard-*` variables that the parts read. States are
+  attributes such as `data-collapsed`, `data-empty` and `aria-expanded`.
+- Every `--openui-*` token has a fallback, so components still render without a provider.
+- The kit only keeps what react-components doesn't already style. Where it has to change a
+  react-components element, it uses a wrapper class plus that element's stable class, such
+  as `& .openui-date-picker-trigger`.
+
 ## The library
 
 Root component is `Dashboard`. 48 components in 6 groups:
@@ -82,5 +96,5 @@ onto `@openuidev/react-components`. Two deliberate changes:
 - `Table` and `Col` are real component definitions rather than a string lookup
   into the legacy `openuiLibrary` registry, so they are no longer typed
   `DefinedComponent | undefined` and the kit does not depend on the old library.
-- The Sass is self-contained: `cssUtils` is vendored and the chart class prefix
-  is defined locally, since `@openuidev/visualization` is not part of this repo.
+- The Sass is gone: styles are rewritten flat in goober, and the `c1-` class prefix
+  is now `openui-dashboard-`.

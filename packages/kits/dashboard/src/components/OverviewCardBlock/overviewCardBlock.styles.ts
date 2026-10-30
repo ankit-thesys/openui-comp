@@ -1,12 +1,15 @@
 import { css } from "goober";
 
+export const names = { root: "openui-dashboard-overview-card-block" } as const;
+
 /**
- * react-components' card sets width: 100% with padding and a border on a
- * content-box, so it overflows its grid cell by padding + border. Drop this once
- * react-components fixes it.
+ * react-components' card declares content-box with width: 100%, padding and a border, so it
+ * overflows its grid cell by padding + border. Drop this once react-components fixes it.
  */
-export const overviewCardBlockClass = css`
-  & .openui-overview-card {
-    box-sizing: border-box;
-  }
-`;
+export const styles = {
+  root: css`
+    & .openui-overview-card-block-card {
+      box-sizing: border-box;
+    }
+  `,
+};

@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { Children, type ReactNode } from "react";
-import { C1_CLASS_PREFIX } from "../../shared/classPrefix";
-import { dashboardHeaderClass } from "./dashboardHeader.styles";
+import { names, styles } from "./dashboardHeader.styles";
 
 export interface DashboardHeaderProps {
   title: string;
@@ -10,25 +9,14 @@ export interface DashboardHeaderProps {
 }
 
 export function DashboardHeader({ title, subtitle, controls }: DashboardHeaderProps) {
-  const controlCount = Children.count(controls);
-
   return (
-    <header className={clsx(dashboardHeaderClass, `${C1_CLASS_PREFIX}-dashboard-header`)}>
-      <div className={`${C1_CLASS_PREFIX}-dashboard-header__content`}>
-        <div className={`${C1_CLASS_PREFIX}-dashboard-header__title`}>{title}</div>
-        {subtitle ? (
-          <div className={`${C1_CLASS_PREFIX}-dashboard-header__subtitle`}>{subtitle}</div>
-        ) : null}
+    <header className={clsx(styles.root, names.root)}>
+      <div className={clsx(styles.content, names.content)}>
+        <div className={clsx(styles.title, names.title)}>{title}</div>
+        {subtitle ? <div className={clsx(styles.subtitle, names.subtitle)}>{subtitle}</div> : null}
       </div>
-      {controlCount ? (
-        <div
-          className={clsx(
-            `${C1_CLASS_PREFIX}-dashboard-header__controls`,
-            controlCount > 1 && `${C1_CLASS_PREFIX}-dashboard-header__controls--grouped`,
-          )}
-        >
-          {controls}
-        </div>
+      {Children.count(controls) ? (
+        <div className={clsx(styles.controls, names.controls)}>{controls}</div>
       ) : null}
     </header>
   );

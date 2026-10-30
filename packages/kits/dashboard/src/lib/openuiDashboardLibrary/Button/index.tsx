@@ -31,7 +31,7 @@ function ButtonRenderer({ props }: ComponentRenderProps<ButtonProps>) {
     <Button
       variant={variant}
       size={props.size ?? "medium"}
-      buttonType={props.type ?? "normal"}
+      tone={props.type === "destructive" ? "destructive" : "default"}
       disabled={isStreaming}
       onClick={handleClick}
     >

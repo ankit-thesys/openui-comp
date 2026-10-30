@@ -4,8 +4,7 @@ import { Button, Card } from "@openuidev/react-components";
 import clsx from "clsx";
 import { Maximize2, Minimize2 } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { C1_CLASS_PREFIX } from "../../shared/classPrefix";
-import { shellCardClass } from "./shellCard.styles";
+import { names, styles } from "./shellCard.styles";
 
 export type ShellCardSize = "small" | "medium" | "large";
 
@@ -91,29 +90,26 @@ export function ShellCard({
     <Card
       width="full"
       variant="card"
-      className={clsx(
-        shellCardClass,
-        `${C1_CLASS_PREFIX}-shell-card`,
-        `${C1_CLASS_PREFIX}-shell-card--${size}`,
-        streaming && `${C1_CLASS_PREFIX}-shell-card--streaming`,
-        collapsed && `${C1_CLASS_PREFIX}-shell-card--collapse-requested`,
-        collapsed && `${C1_CLASS_PREFIX}-shell-card--collapsed`,
-      )}
+      data-streaming={streaming || undefined}
+      data-collapsed={collapsed || undefined}
+      className={clsx(styles.root, names.root, styles.size[size], names.size[size])}
     >
-      <div className={`${C1_CLASS_PREFIX}-shell-card__content-wrap`}>
-        <div ref={contentRef} className={`${C1_CLASS_PREFIX}-shell-card__content`}>
+      <div
+        data-collapsed={collapsed || undefined}
+        className={clsx(styles.contentWrap, names.contentWrap)}
+      >
+        <div ref={contentRef} className={clsx(styles.content, names.content)}>
           {children}
         </div>
         {showCollapseControl && (
-          <div className={`${C1_CLASS_PREFIX}-shell-card__collapse-fade`} aria-hidden="true" />
+          <div className={clsx(styles.collapseFade, names.collapseFade)} aria-hidden="true" />
         )}
       </div>
       {showCollapseControl && (
-        <div className={`${C1_CLASS_PREFIX}-shell-card__collapse-control`}>
+        <div className={clsx(styles.collapseControl, names.collapseControl)}>
           <Button
             variant="secondary"
             size="small"
-            buttonType="normal"
             iconLeft={<Maximize2 size={14} />}
             onClick={() => setIsModalOpen(true)}
           >
@@ -123,32 +119,31 @@ export function ShellCard({
       )}
       {isModalOpen && (
         <div
-          className={`${C1_CLASS_PREFIX}-shell-card-modal`}
+          className={clsx(styles.modal, names.modal)}
           role="dialog"
           aria-modal="true"
           aria-label={modalTitle}
         >
           <button
             type="button"
-            className={`${C1_CLASS_PREFIX}-shell-card-modal__overlay`}
+            className={clsx(styles.modalOverlay, names.modalOverlay)}
             aria-label="Minimize expanded card"
             onClick={() => setIsModalOpen(false)}
           />
-          <div className={`${C1_CLASS_PREFIX}-shell-card-modal__frame`}>
-            <div className={`${C1_CLASS_PREFIX}-shell-card-modal__minimize`}>
+          <div className={clsx(styles.modalFrame, names.modalFrame)}>
+            <div className={clsx(styles.modalMinimize, names.modalMinimize)}>
               <Button
                 variant="secondary"
                 size="small"
-                buttonType="normal"
                 iconLeft={<Minimize2 size={14} />}
                 onClick={() => setIsModalOpen(false)}
               >
                 Minimize
               </Button>
             </div>
-            <div className={`${C1_CLASS_PREFIX}-shell-card-modal__content`}>
-              <div className={`${C1_CLASS_PREFIX}-shell-card-modal__body`}>
-                <div className={`${C1_CLASS_PREFIX}-shell-card__content`}>{children}</div>
+            <div className={clsx(styles.modalContent, names.modalContent)}>
+              <div className={clsx(styles.modalBody, names.modalBody)}>
+                <div className={clsx(styles.content, names.content)}>{children}</div>
               </div>
             </div>
           </div>

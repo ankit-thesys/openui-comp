@@ -4,7 +4,8 @@ import {
   ImageText,
   TextBlockView,
 } from "@openuidev/react-components";
-import { overviewCardBlockClass } from "./overviewCardBlock.styles";
+import clsx from "clsx";
+import { names, styles } from "./overviewCardBlock.styles";
 
 export interface OverviewCardItem {
   id?: string;
@@ -45,7 +46,7 @@ function cardTop({ title, subtitle, icon, imageSrc, imageAlt }: OverviewCardItem
 export function OverviewCardBlock({ items, layout, responsive, gap }: OverviewCardBlockProps) {
   return (
     <BaseOverviewCardBlock
-      className={overviewCardBlockClass}
+      className={clsx(styles.root, names.root)}
       layout={layout}
       responsive={responsive}
       gap={gap}

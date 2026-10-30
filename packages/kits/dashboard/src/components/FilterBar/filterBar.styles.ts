@@ -1,71 +1,69 @@
 import { css } from "goober";
-import { C1_CLASS_PREFIX as P } from "../../shared/classPrefix";
 import { typography } from "../../shared/typography";
 
-export const filterBarClass = css`
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: flex-end;
-  gap: var(--openui-space-s);
-  width: 100%;
-  min-width: 0;
-  overflow: visible;
+export const names = {
+  root: "openui-dashboard-filter-bar",
+  compact: "openui-dashboard-filter-bar--compact",
+  side: "openui-dashboard-filter-bar-side",
+  left: "openui-dashboard-filter-bar-side--left",
+  right: "openui-dashboard-filter-bar-side--right",
+} as const;
 
-  &.${P}-filter-bar--compact {
-    gap: var(--openui-space-xs);
-  }
+const GAP = "var(--_openui-dashboard-filter-bar-gap)";
 
-  & .${P}-filter-bar__side {
+export const styles = {
+  root: css`
+    --_openui-dashboard-filter-bar-gap: var(--openui-space-s, 8px);
     display: flex;
     flex-wrap: nowrap;
     align-items: flex-end;
-    gap: var(--openui-space-s);
+    gap: ${GAP};
+    width: 100%;
     min-width: 0;
     overflow: visible;
-  }
-
-  & .${P}-filter-bar__side > * {
-    flex: 0 0 auto;
-  }
-
-  & .openui-date-picker-renderer-floating-container {
-    width: 180px;
-    align-self: flex-end;
-  }
-
-  & .openui-date-picker-renderer-floating-input-container {
-    height: 32px;
-    padding: 0 var(--openui-space-s);
-    border-color: var(--openui-border-interactive);
-    border-radius: var(--openui-radius-m);
-    background: var(--openui-foreground);
-    box-shadow: none;
-    ${typography("label", "small")}
-  }
-
-  & .openui-date-picker-renderer-floating-input-container-text {
-    font: inherit;
-    letter-spacing: inherit;
-  }
-
-  & .openui-date-picker-renderer-floating-input-container-has-no-selected-date {
-    color: var(--openui-text-neutral-secondary);
-  }
-
-  & .${P}-filter-bar__side--left {
+    /* Overrides of react-components' DatePicker: a wrapper class plus its stable classes. */
+    & .openui-date-picker {
+      width: 180px;
+      align-self: flex-end;
+    }
+    & .openui-date-picker-trigger {
+      height: 32px;
+      padding: 0 var(--openui-space-s, 8px);
+      border-color: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));
+      border-radius: var(--openui-radius-m, 8px);
+      background: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
+      box-shadow: none;
+      ${typography("label", "small")}
+    }
+    & .openui-date-picker-trigger[data-placeholder] {
+      color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
+    }
+    & .openui-date-picker-text {
+      font: inherit;
+      letter-spacing: inherit;
+    }
+  `,
+  compact: css`
+    --_openui-dashboard-filter-bar-gap: var(--openui-space-xs, 6px);
+  `,
+  /* `& > *`: the filters in a side are the caller's, so they can't take a class from here. */
+  side: css`
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    gap: ${GAP};
+    min-width: 0;
+    overflow: visible;
+    & > * {
+      flex: 0 0 auto;
+    }
+  `,
+  left: css`
     flex: 1 1 auto;
-  }
-
-  & .${P}-filter-bar__side--right {
+  `,
+  right: css`
     flex: 0 0 auto;
     justify-content: flex-end;
     margin-left: auto;
-  }
-
-  &.${P}-filter-bar--compact
-    .${P}-filter-bar__side,
-    &.${P}-filter-bar--compact
-    .${P}-filter-bar__actions {
-    gap: var(--openui-space-xs);
-  }
-`;
+  `,
+};

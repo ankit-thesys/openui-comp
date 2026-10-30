@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import type { ReactNode } from "react";
-import { C1_CLASS_PREFIX } from "../../shared/classPrefix";
-import { cardRowClass } from "./cardRow.styles";
+import { names, styles } from "./cardRow.styles";
 
 export type CardRowType = "small" | "medium" | "medium-large" | "large";
 
@@ -17,12 +16,13 @@ export interface CardRowProps {
 export function CardRow({ align = "stretch", type, count, children }: CardRowProps) {
   return (
     <div
+      data-count={count}
       className={clsx(
-        cardRowClass,
-        `${C1_CLASS_PREFIX}-card-row`,
-        `${C1_CLASS_PREFIX}-card-row--align-${align}`,
-        type && `${C1_CLASS_PREFIX}-card-row--type-${type}`,
-        `${C1_CLASS_PREFIX}-card-row--count-${count}`,
+        styles.root,
+        names.root,
+        styles.align[align],
+        names.align[align],
+        type && [styles.type[type], names.type[type]],
       )}
     >
       {children}

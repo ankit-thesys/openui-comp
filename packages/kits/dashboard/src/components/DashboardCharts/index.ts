@@ -1,1 +1,1 @@
-export { pieChartClass, radarChartClass, radialChartClass } from "./charts.styles";
+export { CHART_HEIGHT_VAR, names, styles } from "./charts.styles";

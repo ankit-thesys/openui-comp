@@ -10,9 +10,10 @@ import {
   TableRow,
   TableSkeleton,
 } from "@openuidev/react-components";
+import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, type ReactNode } from "react";
-import { tableWrapperClass } from "./table.styles";
+import { names, styles } from "./table.styles";
 
 const DEFAULT_PAGE_SIZE = 10;
 
@@ -43,7 +44,7 @@ export function Table({ columns, loading }: TableProps) {
   const endRow = Math.min(startRow + DEFAULT_PAGE_SIZE, rowCount);
 
   return (
-    <div className={tableWrapperClass}>
+    <div className={clsx(styles.root, names.root)}>
       <ScrollableTable>
         <TableHeader>
           <TableRow>

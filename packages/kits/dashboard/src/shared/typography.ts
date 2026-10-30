@@ -4,74 +4,45 @@
  *   ${typography("body", "small")}
  *
  * `font` is a shorthand, so it RESETS `font-variation-settings`. The axis is
- * emitted after the shorthand, never before.
+ * emitted after the shorthand, never before. Fallbacks are react-components' light defaults.
  */
 
-/** [token suffix, Inter "wght" axis] — a null axis means the weight is fixed. */
+const FONT = `"Inter", sans-serif`;
+const TRACKING = "-0.01em";
+const REGULAR = ["regular", `"wght" 440`] as const;
+const MEDIUM = ["medium", `"wght" 560`] as const;
+
+/** [token suffix, default font, default tracking, Inter "wght" axis] — no axis means a fixed weight. */
 const OPENUI_SCALE = {
   body: {
-    default: ["body-default", "regular"],
-    heavy: ["body-default-heavy", "medium"],
-    small: ["body-sm", "regular"],
-    "small-heavy": ["body-sm-heavy", "medium"],
-    large: ["body-lg", "regular"],
-    "large-heavy": ["body-lg-heavy", "medium"],
-    link: ["body-default", "regular"],
-    medium: ["body-default", "regular"],
+    default: ["body-default", `400 16px/1.5 ${FONT}`, TRACKING, REGULAR],
+    small: ["body-sm", `400 14px/1.5 ${FONT}`, TRACKING, REGULAR],
+    "large-heavy": ["body-lg-heavy", `560 18px/1.5 ${FONT}`, TRACKING, MEDIUM],
   },
   label: {
-    default: ["label-default", "regular"],
-    heavy: ["label-default-heavy", "medium"],
-    large: ["label-lg", "regular"],
-    "large-heavy": ["label-lg-heavy", "medium"],
-    medium: ["label-default", "regular"],
-    "medium-heavy": ["label-default-heavy", "medium"],
-    small: ["label-sm", "regular"],
-    "small-heavy": ["label-sm-heavy", "medium"],
-    "extra-small": ["label-xs", "regular"],
-    "extra-small-heavy": ["label-xs-heavy", "medium"],
+    small: ["label-sm", `400 14px/1.25 ${FONT}`, TRACKING, REGULAR],
+    "extra-small": ["label-xs", `400 12px/1.25 ${FONT}`, TRACKING, REGULAR],
   },
   heading: {
-    xl: ["heading-xl", null],
-    large: ["heading-lg", null],
-    medium: ["heading-md", null],
-    small: ["heading-sm", null],
-    "extra-small": ["heading-xs", null],
+    large: ["heading-lg", `600 28px/1.1 ${FONT}`, "-0.1px", null],
   },
   number: {
-    large: ["numbers-lg", "regular"],
-    "large-heavy": ["numbers-lg-heavy", "medium"],
-    heavy: ["numbers-default-heavy", "medium"],
-    default: ["numbers-default", "regular"],
-    small: ["numbers-sm", "regular"],
-    "small-heavy": ["numbers-sm-heavy", "medium"],
-    "extra-small": ["numbers-xs", "regular"],
-    "extra-small-heavy": ["numbers-xs-heavy", "medium"],
-    heading: ["numbers-heading-lg", null],
-    "heading-small": ["numbers-heading-sm", null],
-    "heading-medium": ["numbers-heading-md", null],
-    title: ["numbers-heading-lg", null],
-    "title-medium": ["numbers-heading-md", null],
-    "heading-large": ["numbers-heading-lg", null],
-    "heading-xl": ["numbers-heading-xl", null],
+    default: ["numbers-default", `400 16px/1.5 ${FONT}`, TRACKING, REGULAR],
+    small: ["numbers-sm", `400 14px/1.5 ${FONT}`, TRACKING, REGULAR],
+    "heading-medium": ["numbers-heading-md", `600 24px/1.1 ${FONT}`, TRACKING, null],
   },
-  code: {
-    default: ["code-default", null],
-    heavy: ["code-default-heavy", null],
-    small: ["code-sm", null],
-    "small-heavy": ["code-sm-heavy", null],
-  },
-} as const satisfies Record<string, Record<string, readonly [string, "regular" | "medium" | null]>>;
+} as const;
 
 type Scale = typeof OPENUI_SCALE;
+type Entry = readonly [string, string, string, readonly [string, string] | null];
 
 /** openui's shorthand type scale — `font`, `letter-spacing` and the weight axis. */
 export function typography<R extends keyof Scale>(role: R, variant: keyof Scale[R]): string {
-  const [token, axis] = OPENUI_SCALE[role][variant] as readonly [string, string | null];
+  const [token, font, tracking, axis] = OPENUI_SCALE[role][variant] as Entry;
   return [
-    `font: var(--openui-text-${token});`,
-    `letter-spacing: var(--openui-text-${token}-letter-spacing);`,
-    axis ? `font-variation-settings: var(--openui-font-variation-${axis});` : "",
+    `font: var(--openui-text-${token}, ${font});`,
+    `letter-spacing: var(--openui-text-${token}-letter-spacing, ${tracking});`,
+    axis ? `font-variation-settings: var(--openui-font-variation-${axis[0]}, ${axis[1]});` : "",
   ]
     .filter(Boolean)
     .join("\n  ");

@@ -1,9 +1,8 @@
 import { Card, IconTag, TextBlockView } from "@openuidev/react-components";
 import clsx from "clsx";
 import type { ComponentProps, ReactNode } from "react";
-import { C1_CLASS_PREFIX } from "../../shared/classPrefix";
-import { shellCardClass } from "../ShellCard/shellCard.styles";
-import { smallCardClass, smallCardSnippetClass } from "./smallCard.styles";
+import { names as shellNames, styles as shellStyles } from "../ShellCard/shellCard.styles";
+import { names, styles } from "./smallCard.styles";
 
 type IconTagProps = ComponentProps<typeof IconTag>;
 
@@ -13,10 +12,11 @@ function SmallCardFrame({ snippet, children }: { snippet?: boolean; children: Re
       width="full"
       variant="card"
       className={clsx(
-        shellCardClass,
-        `${C1_CLASS_PREFIX}-shell-card`,
-        `${C1_CLASS_PREFIX}-shell-card--small`,
-        snippet && `${C1_CLASS_PREFIX}-shell-card--small-snippet`,
+        shellStyles.root,
+        shellNames.root,
+        shellStyles.size.small,
+        shellNames.size.small,
+        snippet && [shellStyles.snippet, shellNames.snippet],
       )}
     >
       {children}
@@ -37,22 +37,17 @@ export function SmallCardMetric({ title, metric, trend }: SmallCardMetricProps) 
 
   return (
     <SmallCardFrame>
-      <div
-        className={clsx(
-          smallCardClass,
-          `${C1_CLASS_PREFIX}-small-card`,
-          `${C1_CLASS_PREFIX}-small-card--title-metric`,
-        )}
-      >
-        <div className={`${C1_CLASS_PREFIX}-small-card__title`}>{title}</div>
-        <div className={`${C1_CLASS_PREFIX}-small-card__metric-row`}>
-          <div className={`${C1_CLASS_PREFIX}-small-card__metric`}>{metric}</div>
+      <div className={clsx(styles.root, names.root)}>
+        <div className={clsx(styles.title, names.title)}>{title}</div>
+        <div className={clsx(styles.metricRow, names.metricRow)}>
+          <div className={clsx(styles.metric, names.metric)}>{metric}</div>
           {trend?.value !== undefined && (
             <div
               className={clsx(
-                `${C1_CLASS_PREFIX}-small-card__trend`,
-                isPositive && `${C1_CLASS_PREFIX}-small-card__trend--success`,
-                isNegative && `${C1_CLASS_PREFIX}-small-card__trend--danger`,
+                styles.trend,
+                names.trend,
+                isPositive && [styles.direction.up, names.direction.up],
+                isNegative && [styles.direction.down, names.direction.down],
               )}
             >
               {isPositive ? "+" : isNegative ? "-" : ""}
@@ -88,25 +83,22 @@ export function SmallCardSnippet({ lhs, rhs }: SmallCardSnippetProps) {
 
   return (
     <SmallCardFrame snippet>
-      <div
-        className={clsx(
-          smallCardSnippetClass,
-          `${C1_CLASS_PREFIX}-small-card-snippet`,
-          `${C1_CLASS_PREFIX}-small-card-snippet--static`,
-        )}
-      >
-        <div className={`${C1_CLASS_PREFIX}-small-card-snippet__lhs`}>
+      <div className={clsx(styles.snippet, names.snippet)}>
+        <div className={clsx(styles.lhs, names.lhs)}>
           {lhs.icon ? (
             <IconTag icon={lhs.icon} variant={lhs.iconVariant ?? "neutral"} size="l" />
           ) : lhs.imageSrc ? (
             <img
-              className={`${C1_CLASS_PREFIX}-small-card-snippet__image`}
+              className={clsx(styles.image, names.image)}
               src={lhs.imageSrc}
               alt={lhs.imageAlt ?? lhs.title}
             />
           ) : null}
-          <div className={`${C1_CLASS_PREFIX}-small-card-snippet__lhs-content`}>
+          <div className={clsx(styles.lhsContent, names.lhsContent)}>
             <TextBlockView
+              className={clsx(styles.snippetText, names.snippetText)}
+              overflow="truncate"
+              width="fill"
               variant="text-subtext"
               primary={lhs.title}
               secondary={lhs.subtitle}
@@ -116,9 +108,14 @@ export function SmallCardSnippet({ lhs, rhs }: SmallCardSnippetProps) {
             />
           </div>
         </div>
-        <div className={`${C1_CLASS_PREFIX}-small-card-snippet__rhs`}>
-          <div className={`${C1_CLASS_PREFIX}-small-card-snippet__rhs-content`}>
+        <div className={clsx(styles.rhs, names.rhs)}>
+          <div className={clsx(styles.rhsContent, names.rhsContent)}>
             <TextBlockView
+              className={clsx(
+                isMetric ? styles.snippetMetricText : styles.snippetText,
+                names.snippetText,
+              )}
+              overflow="truncate"
               variant={isMetric ? "highlight-text-number-subtext" : "text-subtext"}
               primary={rhs.value}
               secondary={rhs.subtext}
@@ -149,17 +146,9 @@ export interface SmallCardSlotsProps {
 export function SmallCardSlots({ top, bottom }: SmallCardSlotsProps) {
   return (
     <SmallCardFrame>
-      <div className={clsx(smallCardClass, `${C1_CLASS_PREFIX}-small-card`)}>
-        <div
-          className={`${C1_CLASS_PREFIX}-small-card__slot ${C1_CLASS_PREFIX}-small-card__slot--top`}
-        >
-          {top}
-        </div>
-        <div
-          className={`${C1_CLASS_PREFIX}-small-card__slot ${C1_CLASS_PREFIX}-small-card__slot--bottom`}
-        >
-          {bottom}
-        </div>
+      <div className={clsx(styles.root, names.root)}>
+        <div className={clsx(styles.slotTop, names.slotTop)}>{top}</div>
+        <div className={clsx(styles.slotBottom, names.slotBottom)}>{bottom}</div>
       </div>
     </SmallCardFrame>
   );

@@ -1,6 +1,5 @@
 import { ThemeProvider, useTheme, type Theme, type ThemeMode } from "@openuidev/react-components";
 import { useMemo, type FC, type ReactNode } from "react";
-import { C1_CLASS_PREFIX } from "../../shared/classPrefix";
 import { defaultDashboardDarkTheme, defaultDashboardLightTheme } from "./defaultThemes";
 export interface DashboardThemeProviderProps {
   children: ReactNode;
@@ -15,7 +14,7 @@ export interface DashboardThemeProviderProps {
 /**
  * Themes the Dashboard surface. Mirrors `ReportThemeProvider` — dashboards
  * render at one scale throughout, so a single `ThemeProvider` scoped to
- * `.${C1_CLASS_PREFIX}-dashboard-theme` is enough (no shell/canvas split like
+ * `.openui-dashboard-theme` is enough (no shell/canvas split like
  * Presentation needs).
  *
  * The openui token overrides in `defaultThemes.ts` give the dashboard its denser
@@ -41,12 +40,12 @@ export const DashboardThemeProvider: FC<DashboardThemeProviderProps> = ({
   );
 
   return (
-    <div className={`${C1_CLASS_PREFIX}-dashboard-theme`} style={{ display: "contents" }}>
+    <div className="openui-dashboard-theme" style={{ display: "contents" }}>
       <ThemeProvider
         mode={mode}
         lightTheme={mergedLight}
         darkTheme={mergedDark}
-        cssSelector={`.${C1_CLASS_PREFIX}-dashboard-theme`}
+        cssSelector=".openui-dashboard-theme"
       >
         {children}
       </ThemeProvider>

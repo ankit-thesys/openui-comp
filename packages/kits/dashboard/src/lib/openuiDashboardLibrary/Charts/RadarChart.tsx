@@ -1,11 +1,11 @@
 "use client";
 
-import { CHART_CLASS_PREFIX, RadarChart } from "@openuidev/react-components";
+import { RadarChart } from "@openuidev/react-components";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
 import clsx from "clsx";
 import { type CSSProperties } from "react";
 import { z } from "zod/v4";
-import { radarChartClass } from "../../../components/DashboardCharts";
+import { CHART_HEIGHT_VAR, names, styles } from "../../../components/DashboardCharts";
 import { DASHBOARD_CHART_PALETTE } from "./chartPalette";
 import { SeriesComponent } from "./dataComponents";
 import { buildChartData, DASHBOARD_CHART_HEIGHT } from "./helpers";
@@ -16,22 +16,15 @@ export const radarChartPropsSchema = z.object({
 
 export type RadarChartProps = z.infer<typeof radarChartPropsSchema>;
 
-type DashboardChartHeightStyle = CSSProperties & {
-  [key in `--${typeof CHART_CLASS_PREFIX}-dashboard-chart-height`]?: string;
-};
-
 function RadarChartRenderer({ props }: ComponentRenderProps<RadarChartProps>) {
   const data = buildChartData(props.labels, props.series);
   if (!data.length) return null;
-  const style: DashboardChartHeightStyle = {
-    [`--${CHART_CLASS_PREFIX}-dashboard-chart-height`]: `${DASHBOARD_CHART_HEIGHT}px`,
-  };
+  const style = {
+    [CHART_HEIGHT_VAR]: `${DASHBOARD_CHART_HEIGHT}px`,
+  } as CSSProperties;
 
   return (
-    <div
-      className={clsx(radarChartClass, `${CHART_CLASS_PREFIX}-dashboard-radar-chart`)}
-      style={style}
-    >
+    <div className={clsx(styles.radar, names.radar)} style={style}>
       <RadarChart
         data={data}
         categoryKey="category"

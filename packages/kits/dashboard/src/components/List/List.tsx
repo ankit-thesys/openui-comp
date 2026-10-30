@@ -5,8 +5,7 @@ import {
   ListBlock,
 } from "@openuidev/react-components";
 import clsx from "clsx";
-import { C1_CLASS_PREFIX } from "../../shared/classPrefix";
-import { listClass } from "./list.styles";
+import { names, styles } from "./list.styles";
 
 export interface ListEntry {
   title: string;
@@ -23,7 +22,7 @@ export interface ListProps {
 
 export function List({ items, variant = "number", heading, description }: ListProps) {
   return (
-    <div className={clsx(listClass, `${C1_CLASS_PREFIX}-dashboard-list`)}>
+    <div className={clsx(styles.root, names.root)}>
       {(heading || description) && (
         <div>
           {heading && <strong>{heading}</strong>}

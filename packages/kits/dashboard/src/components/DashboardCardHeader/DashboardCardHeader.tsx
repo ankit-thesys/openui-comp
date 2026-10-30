@@ -1,8 +1,7 @@
 import { TextBlockView } from "@openuidev/react-components";
 import clsx from "clsx";
 import { Children, type ReactNode } from "react";
-import { C1_CLASS_PREFIX } from "../../shared/classPrefix";
-import { dashboardCardHeaderClass } from "./dashboardCardHeader.styles";
+import { names, styles } from "./dashboardCardHeader.styles";
 
 export interface DashboardCardHeaderProps {
   title: string;
@@ -17,19 +16,15 @@ export function DashboardCardHeader({
   titleType = "text",
   controls,
 }: DashboardCardHeaderProps) {
-  const controlCount = Children.count(controls);
-
   return (
-    <div
-      className={clsx(
-        dashboardCardHeaderClass,
-        `${C1_CLASS_PREFIX}-dashboard-card-header`,
-        !subtitle && `${C1_CLASS_PREFIX}-dashboard-card-header--title-only`,
-      )}
-    >
-      <div className={`${C1_CLASS_PREFIX}-dashboard-card-header__main`}>
-        <div className={`${C1_CLASS_PREFIX}-dashboard-card-header__content`}>
+    <div className={clsx(styles.root, names.root)}>
+      <div className={clsx(styles.main, names.main)}>
+        <div className={clsx(styles.content, names.content)}>
           <TextBlockView
+            className={clsx(
+              titleType === "number" ? styles.numberTitle : styles.textTitle,
+              names.title,
+            )}
             variant={titleType === "number" ? "number-title-text" : "title-text"}
             primary={title}
             secondary={subtitle}
@@ -39,15 +34,8 @@ export function DashboardCardHeader({
           />
         </div>
       </div>
-      {controlCount ? (
-        <div
-          className={clsx(
-            `${C1_CLASS_PREFIX}-dashboard-card-header__controls`,
-            controlCount > 1 && `${C1_CLASS_PREFIX}-dashboard-card-header__controls--grouped`,
-          )}
-        >
-          {controls}
-        </div>
+      {Children.count(controls) ? (
+        <div className={clsx(styles.controls, names.controls)}>{controls}</div>
       ) : null}
     </div>
   );

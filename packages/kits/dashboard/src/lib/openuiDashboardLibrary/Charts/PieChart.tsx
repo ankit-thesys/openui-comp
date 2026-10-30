@@ -1,16 +1,11 @@
 "use client";
 
-import {
-  CHART_CLASS_PREFIX,
-  LegendStoreProvider,
-  PieChart,
-  StackedLegend,
-} from "@openuidev/react-components";
+import { LegendStoreProvider, PieChart, StackedLegend } from "@openuidev/react-components";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
 import clsx from "clsx";
 import { useId, type CSSProperties } from "react";
 import { z } from "zod/v4";
-import { pieChartClass } from "../../../components/DashboardCharts";
+import { CHART_HEIGHT_VAR, names, styles } from "../../../components/DashboardCharts";
 import { DASHBOARD_CHART_PALETTE } from "./chartPalette";
 import { DASHBOARD_CHART_HEIGHT, buildSliceData } from "./helpers";
 export const pieChartPropsSchema = z.object({
@@ -25,10 +20,6 @@ export const pieChartPropsSchema = z.object({
 export type PieChartProps = z.infer<typeof pieChartPropsSchema>;
 
 const MIN_DASHBOARD_CHART_HEIGHT = 160;
-type DashboardPieChartHeightStyle = CSSProperties & {
-  [key in `--${typeof CHART_CLASS_PREFIX}-dashboard-pie-chart-height`]?: string;
-};
-
 // Cap the stacked legend's share of the fixed pie box so a long category list
 // can't crowd out the chart. StackedLegend has its own overflow scroll
 // affordance (see StackedLegendView), so a bounded max-height simply hands it
@@ -59,9 +50,9 @@ function PieChartRenderer({ props }: ComponentRenderProps<PieChartProps>) {
   if (!data.length) return null;
 
   const chartHeight = getDashboardChartHeight(props.height);
-  const style: DashboardPieChartHeightStyle = {
-    [`--${CHART_CLASS_PREFIX}-dashboard-pie-chart-height`]: `${chartHeight}px`,
-  };
+  const style = {
+    [CHART_HEIGHT_VAR]: `${chartHeight}px`,
+  } as CSSProperties;
 
   const isStacked = props.legendVariant === "stacked";
 
@@ -80,7 +71,7 @@ function PieChartRenderer({ props }: ComponentRenderProps<PieChartProps>) {
   );
 
   return (
-    <div className={clsx(pieChartClass, `${CHART_CLASS_PREFIX}-dashboard-pie-chart`)} style={style}>
+    <div className={clsx(styles.pie, names.pie)} style={style}>
       {isStacked ? (
         <LegendStoreProvider legendKey={uid}>
           {chart}

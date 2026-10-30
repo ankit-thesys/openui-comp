@@ -1,25 +1,29 @@
 import { css } from "goober";
-import { C1_CLASS_PREFIX as P } from "../../shared/classPrefix";
 
-export const sectionClass = css`
-  display: flex;
-  flex-direction: column;
-  gap: var(--openui-space-xl);
-  width: 100%;
+export const names = {
+  root: "openui-dashboard-section",
+  filter: "openui-dashboard-section-filter",
+  rows: "openui-dashboard-section-rows",
+} as const;
 
-  & .${P}-section__filter, & .${P}-section__rows {
+export const styles = {
+  root: css`
+    display: flex;
+    flex-direction: column;
+    gap: var(--openui-space-xl, 24px);
+    width: 100%;
+  `,
+  filter: css`
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto var(--openui-space-s, 8px);
+  `,
+  rows: css`
+    display: flex;
+    flex-direction: column;
+    gap: var(--openui-space-xl, 24px);
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-  }
-
-  & .${P}-section__filter {
-    margin-bottom: var(--openui-space-s);
-  }
-
-  & .${P}-section__rows {
-    display: flex;
-    flex-direction: column;
-    gap: var(--openui-space-xl);
-  }
-`;
+  `,
+};

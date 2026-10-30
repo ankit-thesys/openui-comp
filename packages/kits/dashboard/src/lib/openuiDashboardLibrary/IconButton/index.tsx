@@ -20,7 +20,7 @@ function IconButtonRenderer({ props }: ComponentRenderProps<IconButtonProps>) {
       aria-label={props.label}
       icon={<IconWrapper name={props.icon} category={props.category} />}
       variant={props.variant ?? "secondary"}
-      appearance={props.type === "destructive" ? "destructive" : "normal"}
+      tone={props.type === "destructive" ? "destructive" : "default"}
       size={props.size ?? "small"}
       shape={props.shape ?? "square"}
       disabled={isStreaming}

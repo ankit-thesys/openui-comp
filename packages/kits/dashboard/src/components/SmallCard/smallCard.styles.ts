@@ -1,159 +1,147 @@
 import { css } from "goober";
-import { C1_CLASS_PREFIX as P } from "../../shared/classPrefix";
 import { typography } from "../../shared/typography";
 
-/** The title / metric / trend body of a SmallCard. */
-export const smallCardClass = css`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: var(--openui-space-xl);
-  min-width: 0;
+export const names = {
+  root: "openui-dashboard-small-card",
+  slotTop: "openui-dashboard-small-card-slot-top",
+  slotBottom: "openui-dashboard-small-card-slot-bottom",
+  title: "openui-dashboard-small-card-title",
+  metricRow: "openui-dashboard-small-card-metric-row",
+  metric: "openui-dashboard-small-card-metric",
+  trend: "openui-dashboard-small-card-trend",
+  direction: {
+    up: "openui-dashboard-small-card-trend--direction-up",
+    down: "openui-dashboard-small-card-trend--direction-down",
+  },
+  snippet: "openui-dashboard-small-card-snippet",
+  lhs: "openui-dashboard-small-card-snippet-lhs",
+  image: "openui-dashboard-small-card-snippet-image",
+  lhsContent: "openui-dashboard-small-card-snippet-lhs-content",
+  rhs: "openui-dashboard-small-card-snippet-rhs",
+  rhsContent: "openui-dashboard-small-card-snippet-rhs-content",
+  snippetText: "openui-dashboard-small-card-snippet-text",
+} as const;
 
-  & .${P}-small-card__slot {
-    min-width: 0;
-  }
-
-  & .${P}-small-card__slot--top {
-    display: flex;
-    align-items: flex-start;
-  }
-
-  & .${P}-small-card__slot--bottom {
-    display: flex;
-    flex-direction: column;
-    gap: var(--openui-space-2xs);
-  }
-
-  &.${P}-small-card--title-metric {
-    gap: var(--openui-space-xl);
-  }
-
-  & .${P}-small-card__title {
-    color: var(--openui-text-neutral-primary);
-    ${typography("body", "default")}
-  }
-
-  & .${P}-small-card__metric-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: var(--openui-space-xs);
-    min-width: 0;
-  }
-
-  & .${P}-small-card__metric {
-    color: var(--openui-text-neutral-primary);
-    ${typography("number", "heading-medium")}
-  }
-
-  & .${P}-small-card__trend {
-    color: var(--openui-text-neutral-secondary);
-    ${typography("number", "small")}
-  }
-
-  & .${P}-small-card__trend--success {
-    color: var(--openui-text-success-primary);
-  }
-
-  & .${P}-small-card__trend--danger {
-    color: var(--openui-text-danger-primary);
+const snippetSecondary = `
+  & .openui-text-block-secondary {
+    ${typography("body", "small")}
   }
 `;
 
-/** The compact left/right record form of a SmallCard. */
-export const smallCardSnippetClass = css`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--openui-space-m);
-  width: 100%;
-  min-width: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow: hidden;
-
-  & .${P}-small-card-snippet__lhs {
+export const styles = {
+  root: css`
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--openui-space-xl, 24px);
+    min-width: 0;
+  `,
+  slotTop: css`
+    display: flex;
+    align-items: flex-start;
+    min-width: 0;
+  `,
+  slotBottom: css`
+    display: flex;
+    flex-direction: column;
+    gap: var(--openui-space-2xs, 4px);
+    min-width: 0;
+  `,
+  title: css`
+    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+    ${typography("body", "default")}
+  `,
+  metricRow: css`
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--openui-space-xs, 6px);
+    min-width: 0;
+  `,
+  metric: css`
+    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+    ${typography("number", "heading-medium")}
+  `,
+  trend: css`
+    color: var(
+      --_openui-dashboard-small-card-trend-color,
+      var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))
+    );
+    ${typography("number", "small")}
+  `,
+  direction: {
+    up: css`
+      --_openui-dashboard-small-card-trend-color: var(
+        --openui-text-success-primary,
+        oklch(0.448 0.108 151.328 / 1)
+      );
+    `,
+    down: css`
+      --_openui-dashboard-small-card-trend-color: var(
+        --openui-text-danger-primary,
+        oklch(0.505 0.19 27.518 / 1)
+      );
+    `,
+  },
+  snippet: css`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--openui-space-m, 12px);
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  `,
+  lhs: css`
     display: flex;
     align-items: center;
     flex: 1;
-    gap: var(--openui-space-m);
+    gap: var(--openui-space-m, 12px);
     min-width: 0;
-  }
-
-  & .${P}-small-card-snippet__image {
+  `,
+  image: css`
     width: 36px;
     height: 36px;
     flex-shrink: 0;
-    border-radius: var(--openui-radius-m);
+    border-radius: var(--openui-radius-m, 8px);
     object-fit: cover;
-  }
-
-  & .${P}-small-card-snippet__lhs-content {
+  `,
+  lhsContent: css`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
     min-width: 0;
-  }
-
-  & .${P}-small-card-snippet__rhs {
+    overflow: hidden;
+  `,
+  rhs: css`
     display: flex;
     flex-shrink: 1;
     align-items: center;
     justify-content: flex-end;
     min-width: 0;
-    margin-left: var(--openui-space-m);
-    color: var(--openui-text-neutral-primary);
-  }
-
-  & .${P}-small-card-snippet__rhs-content {
+    margin-left: var(--openui-space-m, 12px);
+    color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
+  `,
+  rhsContent: css`
     display: flex;
     justify-content: flex-end;
-    min-width: 0;
-    max-width: 100%;
-  }
-
-  & .${P}-small-card-snippet__lhs > *,
-  & .${P}-small-card-snippet__rhs-content, & .${P}-small-card-snippet__rhs-content > *,
-  & .${P}-small-card-snippet__lhs-content, & .${P}-small-card-snippet__rhs .openui-text-block {
-    min-width: 0;
-  }
-
-  & .${P}-small-card-snippet__lhs-content, & .${P}-small-card-snippet__rhs-content {
     width: 100%;
-    overflow: hidden;
-  }
-
-  & .${P}-small-card-snippet__rhs .openui-text-block {
-    align-items: flex-end;
-    width: auto;
+    min-width: 0;
     max-width: 100%;
     overflow: hidden;
-    text-align: right;
-  }
-
-  & .${P}-small-card-snippet__lhs .openui-text-block__primary,
-  & .${P}-small-card-snippet__lhs .openui-text-block__secondary,
-  & .${P}-small-card-snippet__rhs .openui-text-block__primary,
-  & .${P}-small-card-snippet__rhs .openui-text-block__secondary {
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  /* Snippet text is smaller and bolder than react-components' md size. */
-  & .openui-text-block--size-md.openui-text-block--text-subtext .openui-text-block__secondary,
-  &
-    .openui-text-block--size-md.openui-text-block--highlight-text-number-subtext
-    .openui-text-block__secondary {
-    ${typography("body", "small")}
-  }
-
-  &
-    .openui-text-block--size-md.openui-text-block--highlight-text-number-subtext
-    .openui-text-block__primary {
-    font: 700 14px/1.5 var(--openui-font-body);
-  }
-`;
+  `,
+  /* Overrides of react-components' TextBlockView: a wrapper class plus its stable classes. */
+  snippetText: css`
+    ${snippetSecondary}
+  `,
+  snippetMetricText: css`
+    ${snippetSecondary}
+    & .openui-text-block-primary {
+      font: 700 14px/1.5 var(--openui-font-body, "Inter", sans-serif);
+    }
+  `,
+};

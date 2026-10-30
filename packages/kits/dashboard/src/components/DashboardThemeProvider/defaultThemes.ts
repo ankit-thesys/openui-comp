@@ -1,5 +1,4 @@
 import { defaultDarkTheme, defaultLightTheme, type Theme } from "@openuidev/react-components";
-import { C1_CLASS_PREFIX } from "../../shared/classPrefix";
 /**
  * Dashboard-scale tokens — the openui typography surface retuned for dense
  * dashboard cards. Dashboards render tighter than openui's body-scale
@@ -9,7 +8,7 @@ import { C1_CLASS_PREFIX } from "../../shared/classPrefix";
  * openui's defaults for those, and colours must keep following the ambient
  * light/dark theme.
  *
- * The five family tokens keep their `--${C1_CLASS_PREFIX}-dashboard-font-*`
+ * The five family tokens keep their `--openui-dashboard-font-*`
  * escape hatch so a consumer can swap a typeface with plain CSS, without
  * reaching for the `lightTheme`/`darkTheme` props.
  *
@@ -19,11 +18,11 @@ import { C1_CLASS_PREFIX } from "../../shared/classPrefix";
  */
 const dashboardScaleTokens: Partial<Theme> = {
   // Typography families
-  fontBody: `var(--${C1_CLASS_PREFIX}-dashboard-font-body, 'Inter', sans-serif)`,
-  fontCode: `var(--${C1_CLASS_PREFIX}-dashboard-font-code, 'SFMono-Regular', Menlo, monospace)`,
-  fontHeading: `var(--${C1_CLASS_PREFIX}-dashboard-font-heading, 'Inter', sans-serif)`,
-  fontLabel: `var(--${C1_CLASS_PREFIX}-dashboard-font-label, 'Inter', sans-serif)`,
-  fontNumbers: `var(--${C1_CLASS_PREFIX}-dashboard-font-numbers, 'Inter', sans-serif)`,
+  fontBody: `var(--openui-dashboard-font-body, 'Inter', sans-serif)`,
+  fontCode: `var(--openui-dashboard-font-code, 'SFMono-Regular', Menlo, monospace)`,
+  fontHeading: `var(--openui-dashboard-font-heading, 'Inter', sans-serif)`,
+  fontLabel: `var(--openui-dashboard-font-label, 'Inter', sans-serif)`,
+  fontNumbers: `var(--openui-dashboard-font-numbers, 'Inter', sans-serif)`,
 
   // Typography base scale
   fontSize2xs: "9px",
