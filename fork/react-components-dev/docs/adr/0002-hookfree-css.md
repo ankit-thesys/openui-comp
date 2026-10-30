@@ -87,7 +87,7 @@ const card = css`
 ### 4. The component library owns its sheet
 
 - Goober writes through a custom target into our own store, never into `#_goober`.
-- In the browser the store is rendered as `<style id="openui-styles">`. If the page already has that tag (the head recipe, or a server-rendered sheet), the component library adopts it in place; otherwise it prepends one to `<head>`.
+- In the browser the store is rendered as `<style id="openui-styles">`. If the page already has that tag (the head recipe, or a server-rendered sheet), the component library adopts it in place and keeps its rules (the store starts from its text, so nothing the server sent is lost or duplicated); otherwise it inserts one after the theme defaults, or prepends one to `<head>` when there are none. The tag gets `window.__nonce__` when set.
 - A host app's Goober `glob`, `createGlobalStyles` or `extractCss` can no longer touch our rules, and our rules no longer appear in the host's `extractCss` output.
 - `getComponentStyles()` returns the store's text, wrapped in the layer when one is configured. It stays cumulative and never returns an empty string.
 - Theme token defaults (Q29: `:root` variables in `@layer openui-defaults`) move to their own tag, so `openui-defaults` is never nested inside `@layer openui`.
@@ -163,7 +163,7 @@ Its rules join the same store and the same layer as ours, whatever its import or
 - **The server sheet holds every imported component's rules**, not only the ones that rendered. This is a superset, which is harmless for correctness and usually small, because apps import what they render.
 - **Registration order across modules is import order**, not render order. Rules from different modules that style the same element with equal weight can resolve differently than today. The contract checks (one class, one state) keep such collisions rare; the migration must check for them.
 - **We depend on a Goober internal** (the target shape), guarded by the exact pin and a test.
-- A component that measures itself in `useLayoutEffect` in the same task as a lazy module's first registration sees the styles one microtask later. Not observed; to watch.
+- **Writes must land before layout effects.** During the migration, rules registered at render reached the sheet one microtask after React's commit, so components that measure in layout effects (EditableTable, Select, citations, HorizontalBarChart) measured unstyled. Pending rules are flushed in an insertion effect. Once every rule registers at import this mostly disappears, but a component module first evaluated during render (a lazy chunk resolving mid-render) can still hit the gap; the contract ticket keeps a flush for that case and tests it.
 
 ## Alternatives considered
 
