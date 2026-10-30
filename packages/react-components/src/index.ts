@@ -2,11 +2,13 @@ import "./styles/defaults";
 
 export {
   configureStyles,
+  createStyleRegistry,
   css,
   keyframes,
   type ConfigureStylesOptions,
   type Css,
   type Keyframes,
+  type StyleRegistry,
 } from "./styles/css";
 
 export { IconWrapper, type IconWrapperProps } from "./components/_shared/icons";
