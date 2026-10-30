@@ -230,3 +230,13 @@ Generated builds, dependencies and browser artifacts are ignored.
 - `tests/smoke.spec.ts`
 - `tsconfig.json`
 - `vite.config.ts`
+
+## Resolution (fork review)
+
+- Library bug 1 is fixed in its own commit, c0119dca: `createStyleTag` gives every style tag
+  the library writes the nonce before insertion. A fork browser test under a real nonce-only
+  policy covers it; it failed with the same five `style-src-elem` violations first.
+- The style attributes are not a library regression: production react-ui renders them too, and
+  four come from Radix. They are pinned exactly as a known limitation in `tests/smoke.spec.ts`.
+- Library finding 2 (no server theme tokens) is documented behaviour and also matches production
+  react-ui; `dark-mode` pins it as a known limitation.
