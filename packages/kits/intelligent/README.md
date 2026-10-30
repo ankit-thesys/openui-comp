@@ -215,4 +215,6 @@ for the other kits.
 ```sh
 pnpm --filter @openuidev/intelligent-kit run build
 pnpm --filter @openuidev/intelligent-kit run typecheck
+pnpm --filter @openuidev/intelligent-kit run test:parity  # the kit against the real app; see src/__tests__/parity
+pnpm --filter @openuidev/intelligent-kit run gallery      # every program, live
 ```
