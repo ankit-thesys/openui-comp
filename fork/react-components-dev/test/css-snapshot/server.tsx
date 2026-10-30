@@ -1,11 +1,9 @@
-import { getComponentStyles } from "@openuidev/react-components";
+import { configureStyles, getComponentStyles } from "@openuidev/react-components";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import type { ReactElement } from "react";
 import { renderToString } from "react-dom/server";
 import { afterAll, expect, it, vi } from "vitest";
 import { styleProvenance } from "../../scripts/style-provenance.mjs";
 import { migratedComponents, otherChartContracts } from "../unit/contract/components";
-import { inLayer } from "../unit/contract/defineContract";
 import { renderWithPortals, withPortalTarget } from "../unit/contract/portal";
 import {
   comparableAll,
@@ -17,14 +15,17 @@ import {
 
 /**
  * Compares every server contract render with `file`, or records it under OPENUI_CSS_RECORD=1.
- * `layer` wraps each element in that cascade layer and keeps rules and order only (LayerSnapshot);
+ * `layer` configures that app-wide cascade layer for the file (each snapshot file has its own module
+ * graph) and keeps rules and order only (LayerSnapshot);
  * without it the snapshot keeps markup too and the raw collections feed the order report.
  */
 export async function compareServerSnapshots(file: string, layer?: string) {
   vi.useFakeTimers({ toFake: ["Date"] });
   vi.setSystemTime(new Date("2026-10-15T12:00:00Z"));
   vi.stubEnv("TZ", "UTC");
+  if (layer) configureStyles({ layer });
   afterAll(() => {
+    if (layer) configureStyles({ layer: undefined });
     vi.useRealTimers();
     vi.unstubAllEnvs();
   });
@@ -39,18 +40,15 @@ export async function compareServerSnapshots(file: string, layer?: string) {
   const expected: Record<string, Snapshot | LayerSnapshot> = record
     ? {}
     : comparableAll(JSON.parse(readFileSync(path, "utf8")));
-  const wrap = (element: ReactElement, key: number) =>
-    layer ? inLayer(element, layer, key) : element;
 
   // Render every contract, including the focused chart contracts. SharedBase and SkeletonPulse
   // are exercised by their public consumers in this same list, as in their focused contracts.
   for (const component of [...migratedComponents, ...otherChartContracts]) {
     const render = component.folder === "Modal" ? renderWithPortals : renderToString;
-    const elements = (
+    const elements =
       component.folder === "Modal"
         ? withPortalTarget(() => component.elements())
-        : component.elements()
-    ).map(wrap);
+        : component.elements();
     const html = elements.map((element) => render(element)).join("");
     collections[component.folder] = { html, sheet: getComponentStyles() };
     const { markup, ...rest } = snapshot(collections[component.folder]!, provenance);

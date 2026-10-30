@@ -19,13 +19,6 @@ import {
 } from "./collect";
 import { migratedComponents, type MigratedComponent } from "./components";
 
-/** `element` in the cascade layer `layer`, as the contract renders layer mode. */
-export const inLayer = (element: ReactElement, layer: string, key?: number) => (
-  <ThemeProvider key={key} cssLayer={layer}>
-    {element}
-  </ThemeProvider>
-);
-
 export function describeContract(
   folder: string,
   component?: MigratedComponent,
