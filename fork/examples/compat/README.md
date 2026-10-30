@@ -35,8 +35,11 @@ pnpm --dir fork/examples/compat smoke vite-spa --mode=unlayered
 pnpm --dir fork/examples/compat smoke vite-spa --list-tests
 ```
 
-The runner prints a table with app, mode, port, PASS/FAIL and the last stage. Any failed stage
-returns a nonzero exit status. Apps run concurrently on separate ports; each app's modes run
+The runner needs no TTY and no `CI` variable. It prints a table with app, mode, port, PASS/FAIL
+and the last stage, and exits 0 only when every row passes; any failed stage exits 1, and an
+interrupt exits 130 (SIGINT) or 143 (SIGTERM). Before installing it checks that
+`shared/default-theme.json` still equals the parity baselines (`pnpm --dir fork/examples/compat
+check-theme` runs that check alone). Apps run concurrently on separate ports; each app's modes run
 sequentially because they share its build output and port. It refuses occupied ports, waits for
 an HTTP success response, and terminates the production server's entire process group after
 success, failure or an interrupt. The runner uses POSIX process groups (macOS/Linux).
@@ -65,29 +68,48 @@ the harness package has no dependencies and needs no install. Do not add compat 
 the root workspace, its lockfile, or `packages/react-components`.
 
 `scripts/install-library.mjs` builds `@openuidev/react-components`, runs `pnpm pack`, and puts
-the archive in the ignored `.pack/` directory. It rewrites each selected app's dependency to
-`file:../.pack/openui-react-components-<content-hash>.tgz` and installs it. The content hash
-prevents a changed library from reusing a cached resolution for an older tarball. Paths in the
-manifest and lockfile stay relative. A fresh checkout must run this installer to recreate the
-ignored tarball before a direct app install; the runner does this automatically. The installer
-may update the app lockfile when library content changes. Library sources are never aliased or
-linked into the app. Do not run two installers concurrently against the same checkout.
+the archive at the ignored `.pack/openui-react-components.tgz`. Every app depends on
+`"@openuidev/react-components": "file:../.pack/openui-react-components.tgz"`; the installer never
+rewrites manifests. It installs with `--no-frozen-lockfile`, because pnpm records the tarball's
+integrity in the lockfile and that changes with every library build; a frozen install would keep
+the old library without an error. Third-party resolutions stay reproducible:
+
+- The installer compares the lockfile pnpm wrote with the committed one, ignoring only the
+  library tarball's `integrity`. Any other difference (a new or changed third-party version, a
+  changed library dependency) fails the install and names the first differing line.
+- It then restores the committed lockfile byte for byte, also after a failed install, so a run
+  leaves `git status` clean.
+- To accept a real change, run `install-library <app> --update-lockfile` and commit that
+  app's lockfile. A new app creates its first lockfile the same way.
+
+Lockfiles stay in pnpm's own format; do not run Prettier on them, or the comparison fails.
+The install passes `confirm-modules-purge=false`, so pnpm can recreate an app's `node_modules`
+(for example after a pnpm or store change) without a TTY. A fresh checkout recreates the ignored
+tarball through this installer; the runner does this automatically. Library sources are never
+aliased or linked into the app. Do not run two installers concurrently against the same checkout.
 
 Versions are exact in each app. The initial Vite fixture pins React/React DOM 19.3.1 and Vite
 8.3.5 from the registry's stable dist-tags ([React releases](https://react.dev/versions),
 [Vite releases](https://vite.dev/releases)), and Playwright 1.56.1 to match
 `fork/react-components-dev`. Zustand stays in the library's supported 4.x peer range.
 
-## Port table
+## Ports
 
-`ports.json` is the only allocation table. Both the runner and each Playwright config read it.
+Each app declares its port in its own `package.json`, as `"compat": { "port": 5700 }`, and its
+Vite and Playwright configs read it from there. There is no shared table to edit, so apps added
+in parallel do not conflict. The runner finds apps by that field, and rejects a port outside
+5700-5799 or one declared twice. Each Tier 1 ticket has its own range; pick ports in yours:
 
-| App        | Port | Modes                  |
-| ---------- | ---- | ---------------------- |
-| `vite-spa` | 5700 | `unlayered`, `layered` |
+| Ticket | Apps                                     | Ports     |
+| ------ | ---------------------------------------- | --------- |
+| #164   | `vite-spa` (5700)                        | 5700-5709 |
+| #165   | Next.js App Router and Pages Router      | 5710-5719 |
+| #166   | React Router 7 and TanStack Start        | 5720-5729 |
+| #167   | Vite SPA and Vite SSR                    | 5730-5739 |
+| #168   | coexisting CSS approaches                | 5740-5749 |
+| #169   | CSP nonce, libraries on top, strict mode | 5750-5759 |
 
-Allocate the next unused integer, starting at 5700. Do not add per-app port environment defaults
-or silently fall back to another port. The runner validates unique allocations.
+Do not add port environment defaults or silently fall back to another port.
 
 ## Smoke contract
 
@@ -117,7 +139,8 @@ console errors, hydration messages and uncaught errors. It checks:
 file and case key. It uses Card's `clear/standard` case (explicit nonzero radius/padding), the
 medium primary Button, default Input and closed default Select, title Tabs and a nonanimated
 linear mini chart. No browser-dependent font metrics, screenshots or generated class hashes
-are compared. Update this record only after reviewing intentional changes in those references.
+are compared. Update this record only after reviewing intentional changes in those references;
+`check-theme`, which the runner calls first, fails when a value no longer equals its baseline.
 
 All checks default on. `SmokeOptions.assertions` can disable individual `console`, `styles`,
 `sheets`, `duplicates`, `override`, or `layer` checks when a framework ticket explains why.
@@ -127,11 +150,19 @@ override toggle. Passing custom samples replaces the built-in chart drawing chec
 
 ## Add an app
 
+Apps for different tickets are built in parallel. An app touches only its own directory: its
+port lives in its manifest, and the runner discovers it. Change `shared/smoke.ts`,
+`shared/default-theme.json` or `scripts/` in a separate commit that every app's smoke run
+covers, never as part of an app's own change.
+
 1. Create `fork/examples/compat/<name>/` with its own private `package.json`,
    `pnpm-workspace.yaml` (`packages: []`) and lockfile. Pin exact dependencies, including the
-   same Playwright version. Do not use workspace protocols, source aliases or library symlinks.
-2. Add its name and unused port to `ports.json`. Import that table in its Playwright config.
-   Bind production to `127.0.0.1`; reject occupied ports.
+   same Playwright version, and depend on the library as
+   `"@openuidev/react-components": "file:../.pack/openui-react-components.tgz"`. Do not use
+   workspace protocols, source aliases or library symlinks.
+2. Declare `"compat": { "port": <n> }` in its `package.json`, from your ticket's range (see
+   [Ports](#ports)), and read it from that manifest in its Playwright and framework configs.
+   Bind production to `127.0.0.1`; reject occupied ports. Touch no other app or shared file.
 3. Provide `build`, `start` and `test:smoke` scripts. `build` must typecheck app and spec;
    `start --port <number>` must serve the production build. Read `OPENUI_COMPAT_MODE` at build
    time. By default the runner tests both modes; a limited app can declare
@@ -150,7 +181,7 @@ override toggle. Passing custom samples replaces the built-in chart drawing chec
    to that app's own installation and include `../shared/*.ts`. Keep runtime imports of
    `@playwright/test` unmapped so Playwright's ESM export resolves normally in the
    app. Configure no automatic browser/server startup during `--list`.
-7. Run `install-library <name>`, commit only that app's relative manifest/lockfile changes, and
+7. Run `install-library <name> --update-lockfile`, commit only that app's manifest and lockfile, and
    verify build, typecheck and test listing. Run `smoke <name>` on the orchestrator for real
    Chromium checks in both modes. Add the allocation and any justified check exceptions here.
 
