@@ -13,5 +13,3 @@ const fadeAppearClass = /*#__PURE__*/ css`
 `;
 
 export const fadeAppearAnimation = fadeAppearClass && "openui-chart-fade-appear";
-// Temporary adapter for RadialChart until its conversion batch.
-export const fadeAppearStyles = (_css?: unknown) => fadeAppearClass;

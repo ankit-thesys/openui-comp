@@ -118,6 +118,3 @@ export const defaultLegendClasses = /*#__PURE__*/ (() => {
     `,
   };
 })();
-
-// Temporary adapter for SegmentedBar until its conversion batch.
-export const defaultLegendStyles = (_css?: unknown) => defaultLegendClasses;
