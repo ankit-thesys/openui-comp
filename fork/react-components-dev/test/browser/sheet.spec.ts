@@ -10,14 +10,24 @@ const ready = async (page: Page) => {
   await page.waitForFunction(() => !!(window as FixtureWindow).sheetFixture);
 };
 
-test("prepends its sheet and keeps defaults and host Goober separate", async ({ page }) => {
+test("places its sheet after the token defaults and keeps host Goober separate", async ({
+  page,
+}) => {
   await page.goto("/sheet.html?css=.consumer{color:red}");
   await ready(page);
   const result = await page.evaluate(() => {
     const { imported, animation, getComponentStyles } = (window as FixtureWindow).sheetFixture!;
     const sheet = document.getElementById("openui-styles")!;
+    const head = [...document.head.children];
+    const order = head.findIndex((el) => el.hasAttribute("data-openui-layer-order"));
     return {
-      first: document.head.firstElementChild === sheet,
+      // The layer-order tag first, then the defaults, then component rules, then app CSS.
+      sequence: [
+        order,
+        head.indexOf(document.getElementById("openui-defaults")!),
+        head.indexOf(sheet),
+      ],
+      beforeConsumer: head.indexOf(sheet) < head.indexOf(document.getElementById("consumer")!),
       text: sheet.textContent,
       stored: getComponentStyles(),
       imported,
@@ -27,7 +37,8 @@ test("prepends its sheet and keeps defaults and host Goober separate", async ({ 
       markers: [...document.documentElement.classList],
     };
   });
-  expect(result.first).toBe(true);
+  expect(result.sequence).toEqual([0, 1, 2]);
+  expect(result.beforeConsumer).toBe(true);
   expect(result.text).toBe(result.stored);
   expect(result.text).toContain(`.${result.imported}{`);
   expect(result.text).toContain(`@keyframes ${result.animation}{`);
@@ -143,4 +154,89 @@ test("host Goober global replacement and extraction leave component rules alone"
   expect(result.extracted).not.toContain(result.imported);
   expect(result.extracted).not.toContain(result.animation);
   expect(result.extracted).not.toContain("openui-defaults");
+});
+
+// Serves `head` as the page's static <head>, before the sheet fixture's bundle loads.
+const openWithHead = async (page: Page, head: string, name = "sheet-head") => {
+  await page.route(`**/${name}.html`, (route) =>
+    route.fulfill({
+      contentType: "text/html",
+      body: `<!doctype html><html><head>${head}</head><body><script type="module" src="/sheet.js"></script></body></html>`,
+    }),
+  );
+  await page.goto(`/${name}.html`);
+  await ready(page);
+};
+
+test("keeps a server-rendered sheet's rules when the client registers its own", async ({
+  page,
+}) => {
+  const server = ".go1{color:red;}.go2{color:blue;}";
+  await openWithHead(page, `<style id="openui-styles">${server}</style>`);
+  const result = await page.evaluate(async () => {
+    const fixture = (window as FixtureWindow).sheetFixture!;
+    const added = fixture.css`--sheet-after-adoption: 1;`;
+    await Promise.resolve();
+    const text = document.getElementById("openui-styles")!.textContent!;
+    return { text, added, stored: fixture.getComponentStyles() };
+  });
+  expect(result.text.startsWith(server)).toBe(true);
+  expect(result.text).toContain(`.${result.added}{`);
+  expect(result.text).toBe(result.stored);
+  // A server rule the client registers again is not written twice.
+  expect(result.text.split(".go1{").length - 1).toBe(1);
+});
+
+test("two copies of the module on one page keep each other's rules", async ({ page }) => {
+  await page.goto("/sheet.html");
+  await ready(page);
+  const result = await page.evaluate(async () => {
+    const first = (window as FixtureWindow).sheetFixture!;
+    // The fixture imports the package from a shared chunk; a query string loads a second copy,
+    // with its own store and its own Goober, as an ESM and a CJS build on one page would.
+    const source = await (await fetch("/sheet.js")).text();
+    const [, specifiers, chunk] = source.match(/^import \{([^}]*)\} from "\.\/([\w-]+\.js)"/)!;
+    const exported = (local: string) =>
+      specifiers!.match(new RegExp(`(\\w+) as ${local.replace("$", "\\$")}\\b`))![1]!;
+    const copy = (await import(/* @vite-ignore */ `/${chunk}?second-copy`)) as Record<
+      string,
+      (...args: unknown[]) => string
+    >;
+    const secondCss = copy[exported("css$1")]!;
+    const secondStyles = copy[exported("getComponentStyles")]!;
+    const fromFirst = first.css`--sheet-first-copy: 1;`;
+    const fromSecond = secondCss(["--sheet-second-copy: 2;"] as unknown as TemplateStringsArray);
+    await Promise.resolve();
+    await Promise.resolve();
+    const later = first.css`--sheet-first-copy-later: 3;`;
+    await Promise.resolve();
+    return {
+      text: document.getElementById("openui-styles")!.textContent!,
+      fromFirst,
+      fromSecond,
+      later,
+      imported: first.imported,
+      count: document.querySelectorAll("#openui-styles").length,
+      secondStored: secondStyles(),
+    };
+  });
+  expect(result.count).toBe(1);
+  for (const name of [result.imported, result.fromFirst, result.fromSecond, result.later])
+    expect(result.text).toContain(`.${name}{`);
+  expect(result.secondStored).toContain(`.${result.fromSecond}{`);
+});
+
+test("gives its sheet the page's CSP nonce, created or adopted", async ({ page }) => {
+  await openWithHead(page, `<script>window.__nonce__ = "sheet-nonce";</script>`, "sheet-nonce");
+  expect(await page.evaluate(() => document.getElementById("openui-styles")!.nonce)).toBe(
+    "sheet-nonce",
+  );
+  await openWithHead(
+    page,
+    `<script>window.__nonce__ = "adopted-nonce";</script><style id="openui-styles"></style>`,
+    "sheet-adopted-nonce",
+  );
+  expect(await page.evaluate(() => document.getElementById("openui-styles")!.nonce)).toBe(
+    "adopted-nonce",
+  );
 });

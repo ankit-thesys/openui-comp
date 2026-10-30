@@ -171,15 +171,17 @@ code inherit the quote's colour, line-height and italic style like its other tex
 `MarkDownRenderer` defaults to `variant="clear"` and always emits its variant modifier.
 A rule of yours on a stable class, with the same state where you need one, therefore wins:
 
-- whether your CSS loads before or after the library, because the library's `<style id="openui-styles">`
-  is placed first in `<head>`, ahead of app stylesheets;
+- whether your CSS loads before or after the library, because the library's
+  `<style id="openui-styles">` is placed at the start of `<head>`, ahead of app stylesheets;
 - after `<html class>` is rewritten, for example by a theme script, because nothing depends on a
   class on `<html>`;
 - with no `!important` and no wrapper selector.
 
-Load order: the library prepends its component sheet ahead of app CSS. Theme token defaults
-keep a separate tag and `openui-defaults` layer. If you place `<style id="openui-styles">` yourself, the library reuses it
-where it is; keep it before your stylesheets.
+Load order: the token defaults' `@layer openui-defaults;` declaration and their own tag come first
+in `<head>`, then the component sheet, then your CSS. If you place `<style id="openui-styles">`
+yourself, the library reuses it where it is and keeps the rules already in it, such as a
+server-rendered sheet; keep it before your stylesheets. The sheet gets `window.__nonce__` as its
+CSP nonce when one is set.
 
 Your rule has to match the library's shape: a resting-state rule does not restyle `:hover`, and a
 rule in a named cascade layer loses to the unlayered library rules.

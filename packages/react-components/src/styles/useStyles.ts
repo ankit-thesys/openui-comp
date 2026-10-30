@@ -1,7 +1,7 @@
 "use client";
 
-import { createContext, useContext } from "react";
-import { css } from "./css";
+import { createContext, useContext, useInsertionEffect } from "react";
+import { css, flushComponentStyles } from "./css";
 
 /** The `css` tag handed to style factories: Goober's, or one wrapping each rule in a layer. */
 export type StyleCss = (strings: TemplateStringsArray, ...values: (string | number)[]) => string;
@@ -39,5 +39,9 @@ const stylesFor = <T>(factory: StyleFactory<T>, layer: string | undefined): T =>
  * names are not part of the public API.
  */
 export function useStyles<T>(factory: StyleFactory<T>): T {
+  // Rules registered while rendering would otherwise reach the sheet a microtask after the
+  // commit, so a layout effect that measures (column widths, positions) would see none of them
+  // and transitions would start from unstyled values. Insertion effects run before those.
+  useInsertionEffect(flushComponentStyles);
   return stylesFor(factory, useContext(CssLayerContext) || undefined);
 }

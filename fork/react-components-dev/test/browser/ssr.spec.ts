@@ -1,7 +1,7 @@
 // Server-rendered first paint in Chromium: a page built the way the README documents (render, then
 // collect with getComponentStyles(), then put the sheet first in <head>) is styled before any
 // JavaScript runs, a later consumer stylesheet still overrides it, and the client adopts the sheet.
-import { Button, getComponentStyles } from "@openuidev/react-components";
+import { Button, getComponentStyles, Tag } from "@openuidev/react-components";
 import { expect, test, type Page } from "@playwright/test";
 import { createElement, Fragment } from "react";
 import { renderToString } from "react-dom/server";
@@ -97,6 +97,31 @@ test("the client adopts the server sheet instead of adding a second one", async 
   expect(errors).toEqual([]);
   expect(await page.locator("style#openui-styles").count()).toBe(1);
   expect((await computed(page, "default"))["background-color"]).not.toBe("rgba(0, 0, 0, 0)");
+});
+
+test("rules for server-only components survive the client's first sheet write", async ({
+  page,
+}) => {
+  // Rendered on the server only: the client fixture renders Buttons, never a Tag.
+  const tag = renderToString(createElement(Tag, { text: "Server only" }));
+  const tagClasses = [...tag.matchAll(/\b(go\d+)\b/g)].map(([, name]) => name!);
+  const body = `<div id="server-only">${tag}</div><script type="module" src="/button.js"></script>`;
+  await openServerPage(page, serverPage("", body));
+  // The client's Button icon part registers rules the server sheet lacks, so it writes.
+  await expect(page.getByTestId("custom").locator("svg")).toBeAttached();
+  await page.evaluate(() => new Promise((resolve) => setTimeout(resolve)));
+
+  const { text, buttonClasses, tagDisplay } = await page.evaluate(() => ({
+    text: document.getElementById("openui-styles")!.textContent!,
+    buttonClasses: [...document.querySelector("[data-testid=default]")!.classList],
+    tagDisplay: getComputedStyle(document.querySelector("#server-only > *")!).display,
+  }));
+  const occurrences = (name: string) => text.split(`.${name}{`).length - 1;
+  expect(tagClasses.length).toBeGreaterThan(0);
+  expect(tagClasses.map(occurrences)).toEqual(tagClasses.map(() => 1));
+  const buttonRoots = buttonClasses.filter((name) => /^go\d+$/.test(name));
+  expect(buttonRoots.map(occurrences)).toEqual(buttonRoots.map(() => 1));
+  expect(tagDisplay).not.toBe("inline");
 });
 
 test("an empty library sheet tag left by the host still works on the client", async ({ page }) => {
