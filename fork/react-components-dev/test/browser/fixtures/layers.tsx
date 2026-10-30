@@ -13,7 +13,6 @@ export const layersFixture = {
   configureStyles,
   getComponentStyles,
   imported,
-  loadLater: () => import("./layers-lazy"),
 };
 (window as Window & { layersFixture?: typeof layersFixture }).layersFixture = layersFixture;
 

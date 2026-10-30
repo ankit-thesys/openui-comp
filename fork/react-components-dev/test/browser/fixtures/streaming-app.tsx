@@ -1,9 +1,8 @@
 import { Button, css, Tag } from "openui-under-test";
 import { Suspense, useEffect } from "react";
 
-// A fresh rule for each response, even when the server already cached Tag's styles.
-export const lateStyles = (response: string) => css`
-  --streaming-response: ${response};
+// Module level, like every component style: registered at import, so it is in the server sheet.
+const late = css`
   padding: 19px;
   border-top-style: solid;
   background-color: rgb(91, 103, 117);
@@ -13,6 +12,12 @@ export const lateStyles = (response: string) => css`
   @media (min-width: 1px) {
     border-top-width: 7px;
   }
+`;
+
+// A rule the server never saw: registered in the browser only, after hydration.
+export const lateStyles = (response: string) => css`
+  --streaming-response: ${response};
+  outline-style: dotted;
 `;
 
 export function StreamingApp({
@@ -27,9 +32,8 @@ export function StreamingApp({
   useEffect(() => hydrated?.(), [hydrated]);
   function Late() {
     wait?.();
-    const name = lateStyles(response);
     return (
-      <div className={`${name} streaming-late`} data-testid="late">
+      <div className={`${late} streaming-late`} data-testid="late">
         <Tag text="Late component" />
       </div>
     );

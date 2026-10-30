@@ -157,12 +157,13 @@ To add a browser test, add a fixture that imports `openui-under-test` (aliased t
 
 `fixtures/tailwind33.css`, `tailwind34.css` and `tailwind4.css` are unmodified Tailwind 3.3.7, 3.4.17 and 4.1.11 CLI output (`@tailwind base/components/utilities` for 3, `@import "tailwindcss"` for 4) with `bg-red-500` as the only source (plus `!bg-red-500` for 4), checked in so the tests need no Tailwind dependency. Regenerate them the same way if the tests need more utilities.
 
-`streaming.spec.ts` uses a real `renderToPipeableStream` response served by `serve.mjs`.
-The test releases a Suspense boundary only after observing the first flush. It checks adoption
-before and after the late flush, hydration, unique rules, late component styles, and unlayered
-app override precedence. Run `pnpm exec playwright test streaming.spec.ts sheet.spec.ts ssr.spec.ts`.
-`test/unit/style-registry.test.tsx` checks the public per-response flush API against the built
-package, including independent response cursors and layer-wrapped late keyframes.
+`streaming.spec.ts` uses a real `renderToPipeableStream` response served by `serve.mjs`, with
+the whole component sheet in the shell's `<head>`. It checks that a late Suspense boundary is
+styled before hydration, that an equal-weight app rule wins, that hydration writes nothing the
+server sent, and that a browser-only rule lands in its own tag in the same layer. Run
+`pnpm exec playwright test streaming.spec.ts sheet.spec.ts ssr.spec.ts`.
+`test/unit/styles-entry.test.tsx` checks that `@openuidev/react-components/styles` imports every
+style module and holds every class a rendered component uses.
 
 ## Benches
 

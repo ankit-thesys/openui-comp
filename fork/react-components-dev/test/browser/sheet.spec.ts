@@ -226,52 +226,6 @@ test("two copies of the module on one page keep each other's rules", async ({ pa
   expect(result.secondStored).toContain(`.${result.fromSecond}{`);
 });
 
-test("two copies in layer mode share one wrapper and write each rule once", async ({ page }) => {
-  await page.goto("/sheet.html");
-  await ready(page);
-  const result = await page.evaluate(async () => {
-    const first = (window as FixtureWindow).sheetFixture!;
-    const source = await (await fetch("/sheet.js")).text();
-    const [, specifiers, chunk] = source.match(/^import \{([^}]*)\} from "\.\/([\w-]+\.js)"/)!;
-    // A specifier is `name` or `name as local`; return the chunk's export name for `local`.
-    const exported = (local: string) =>
-      specifiers!
-        .split(",")
-        .map((specifier) => specifier.trim().split(/\s+as\s+/))
-        .find((parts) => parts.at(-1) === local)![0]!;
-    const copy = (await import(/* @vite-ignore */ `/${chunk}?second-copy-layer`)) as Record<
-      string,
-      (...args: unknown[]) => string
-    >;
-    const secondCss = copy[exported("css$1")]!;
-    const secondConfigure = copy[exported("configureStyles")]!;
-    // Each copy wraps the sheet it writes, and reads back the other's wrapped writes.
-    first.configureStyles({ layer: "openui" });
-    secondConfigure({ layer: "openui" });
-    const names = [first.imported, first.animation];
-    names.push(first.css`--layer-first-copy: 1;`);
-    await Promise.resolve();
-    names.push(secondCss(["--layer-second-copy: 2;"] as unknown as TemplateStringsArray));
-    await Promise.resolve();
-    names.push(first.css`--layer-first-copy-later: 3;`);
-    names.push(secondCss(["--layer-second-copy-later: 4;"] as unknown as TemplateStringsArray));
-    await new Promise((resolve) => setTimeout(resolve));
-    return {
-      text: document.getElementById("openui-styles")!.textContent!,
-      count: document.querySelectorAll("#openui-styles").length,
-      names,
-    };
-  });
-  expect(result.count).toBe(1);
-  expect(result.text.startsWith("@layer openui{")).toBe(true);
-  expect(result.text.endsWith("}")).toBe(true);
-  expect(result.text).not.toContain("@layer openui{@layer openui{");
-  expect(result.text.split("@layer ").length - 1).toBe(1);
-  // Class rules are `.name{`; the keyframes rule is `@keyframes name{`.
-  const once = (name: string) => result.text.split(new RegExp(`[.\\s]${name}\\{`)).length - 1;
-  expect(result.names.map(once)).toEqual(result.names.map(() => 1));
-});
-
 test("gives its sheet the page's CSP nonce, created or adopted", async ({ page }) => {
   await openWithHead(page, `<script>window.__nonce__ = "sheet-nonce";</script>`, "sheet-nonce");
   expect(await page.evaluate(() => document.getElementById("openui-styles")!.nonce)).toBe(
