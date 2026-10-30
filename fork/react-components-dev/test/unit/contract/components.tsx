@@ -111,7 +111,7 @@ import {
   VisualCard,
   VisualCardBlock,
 } from "@openuidev/react-components";
-import type { ReactElement } from "react";
+import { cloneElement, type ReactElement } from "react";
 import { renderToString } from "react-dom/server";
 import remarkGfm from "remark-gfm";
 import { readStableNames, type StableNames } from "../../../scripts/selector-reference.mjs";
@@ -1519,7 +1519,22 @@ export const migratedComponents: MigratedComponent[] = [
           Object.fromEntries(dependencies.map((name, i) => [`dependency${i}`, name])),
         ];
       },
-      elements: () => cartesianChartElements(family),
+      // Angled ticks need labels wider than their slot; a narrow condensed chart forces that in
+      // any font, where the 400px fixtures depend on the label font's metrics.
+      elements: (open) => [
+        ...cartesianChartElements(family),
+        ...(open
+          ? cartesianChartElements(family)
+              .filter((element) => (element.props as { condensed?: boolean }).condensed)
+              .slice(0, 1)
+              .map((element) =>
+                cloneElement(element as ReactElement<{ width?: number }>, {
+                  key: "narrow",
+                  width: 180,
+                }),
+              )
+          : []),
+      ],
       clientOnly: ["AreaChart", "BarChart", "LineChart"].includes(family)
         ? [
             `openui-${family.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`).slice(1)}-x-tick-angled`,

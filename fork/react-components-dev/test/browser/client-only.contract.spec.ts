@@ -15,7 +15,21 @@ const names = (await readStableNames()).map(({ names }) => names);
 const documented = namesIn(names);
 const blocks = blocksIn(names);
 
+// Lazily mounted content (markdown, code blocks) can still be rendering when a fixture opens, so
+// wait until the markup stops changing; otherwise the two modes can collect different rule sets.
+async function settled(page: Page) {
+  let previous = "";
+  for (let reads = 0; reads < 50; reads++) {
+    const html = await page.evaluate(() => document.body.innerHTML);
+    if (html === previous) return;
+    previous = html;
+    await page.waitForTimeout(100);
+  }
+  throw new Error("The fixture's markup never settled.");
+}
+
 async function collect(page: Page) {
+  await settled(page);
   return page.evaluate(async () => {
     const path = "/elements.js";
     const { getComponentStyles, proseMarkup } = (await import(path)) as {
