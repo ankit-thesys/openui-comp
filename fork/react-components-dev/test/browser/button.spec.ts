@@ -72,7 +72,7 @@ test("Button stays styled when <html class> is rewritten", async ({ page }) => {
   expect(await computed(page, "default")).toEqual(before);
 });
 
-test("the token layer is declared first and the library sheet precedes app CSS", async ({
+test("the token layer is declared first, then the defaults, then the library sheet, before app CSS", async ({
   page,
 }) => {
   await page.goto(`/button.html?css=${encodeURIComponent(".app { color: red; }")}`);
@@ -83,7 +83,7 @@ test("the token layer is declared first and the library sheet precedes app CSS",
         style.id || (style.hasAttribute("data-openui-layer-order") ? "layer-order" : "other"),
     ),
   );
-  expect(head.slice(0, 3)).toEqual(["openui-styles", "layer-order", "openui-defaults"]);
+  expect(head.slice(0, 3)).toEqual(["layer-order", "openui-defaults", "openui-styles"]);
   expect(head.indexOf("consumer")).toBeGreaterThan(head.indexOf("openui-styles"));
   const firstRule = await page.evaluate(
     () =>
