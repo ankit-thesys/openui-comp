@@ -1,8 +1,8 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = { root: "openui-toggle-item" } as const;
 
-export const toggleItemStyles = (css: StyleCss) => ({
+export const toggleItemStyles = /*#__PURE__*/ {
   root: css`
     box-sizing: border-box;
     font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
@@ -55,4 +55,4 @@ export const toggleItemStyles = (css: StyleCss) => ({
       opacity: var(--_openui-toggle-item-disabled-opacity, 1);
     }
   `,
-});
+};

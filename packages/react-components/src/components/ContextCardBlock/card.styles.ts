@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   card: "openui-context-card",
@@ -25,7 +25,7 @@ export const names = {
   },
 } as const;
 
-export const contextCardStyles = (css: StyleCss) => ({
+export const contextCardStyles = /*#__PURE__*/ {
   card: css`
     --_openui-context-card-image: initial;
     --_openui-context-card-background: initial;
@@ -218,4 +218,4 @@ export const contextCardStyles = (css: StyleCss) => ({
     width: 16px;
     height: 16px;
   `,
-});
+};

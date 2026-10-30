@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React from "react";
-import { useStyles } from "../../styles/useStyles";
 import { CheckBoxItemProps } from "../CheckBoxItem";
 import { checkBoxGroupStyles, names } from "./checkBoxGroup.styles";
 
@@ -17,7 +16,7 @@ interface CheckBoxGroupProps {
 
 const CheckBoxGroup = React.forwardRef<HTMLDivElement, CheckBoxGroupProps>((props, ref) => {
   const { children, className, style, variant = "clear" } = props;
-  const styles = useStyles(checkBoxGroupStyles);
+  const styles = checkBoxGroupStyles;
   return (
     <div
       ref={ref}

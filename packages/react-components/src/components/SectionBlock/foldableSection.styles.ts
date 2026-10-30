@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-foldable-section",
   item: "openui-foldable-section-item",
@@ -12,7 +13,7 @@ export const names = {
   trigger: "openui-foldable-section-trigger",
   content: "openui-foldable-section-content",
 } as const;
-export const foldableSectionStyles = (css: StyleCss) => ({
+export const foldableSectionStyles = /*#__PURE__*/ {
   root: css`
     display: flex;
     flex-direction: column;
@@ -95,4 +96,4 @@ export const foldableSectionStyles = (css: StyleCss) => ({
       height: 0;
     }
   `,
-});
+};

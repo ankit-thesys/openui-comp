@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-table-skeleton",
@@ -7,7 +7,7 @@ export const names = {
   headerCell: "openui-table-skeleton-header-cell",
 } as const;
 
-export const tableSkeletonStyles = (css: StyleCss) => ({
+export const tableSkeletonStyles = /*#__PURE__*/ {
   root: css`
     padding: var(--openui-space-s, 8px) 0;
   `,
@@ -27,4 +27,4 @@ export const tableSkeletonStyles = (css: StyleCss) => ({
   headerCell: css`
     width: 60%;
   `,
-});
+};

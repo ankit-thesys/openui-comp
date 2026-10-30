@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import { Info, Link } from "lucide-react";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import { safeUrl } from "../../../_shared/utils/safeUrl";
 import { TooltipWrapper } from "../../../TooltipWrapper";
 import { useEditableCellKeyboard } from "../hooks/useEditableCellKeyboard";
@@ -36,7 +35,7 @@ export const TextBaseEditableCell: React.FC<TextBaseEditableCellProps> = ({
   parseOnSave,
   renderDisplay,
 }) => {
-  const cellStyles = useStyles(editableCellStyles);
+  const cellStyles = editableCellStyles;
   const [editValue, setEditValue] = useState<string>(toDisplayString(value));
   const inputRef = useRef<HTMLInputElement>(null);
   const cellRef = useRef<HTMLDivElement>(null);

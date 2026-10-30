@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-image-text",
   imageContainer: "openui-image-text-image-container",
@@ -15,7 +16,7 @@ export const names = {
   },
   width: { fill: "openui-image-text--width-fill" },
 } as const;
-export const imageTextStyles = (css: StyleCss) => ({
+export const imageTextStyles = /*#__PURE__*/ {
   root: css`
     display: flex;
     gap: var(--openui-space-m, 12px);
@@ -73,4 +74,4 @@ export const imageTextStyles = (css: StyleCss) => ({
       width: 100%;
     `,
   },
-});
+};

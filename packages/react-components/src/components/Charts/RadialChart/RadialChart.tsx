@@ -3,13 +3,11 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import { useMemo } from "react";
-import { useStyles } from "../../../styles/useStyles";
 import {
   useCategoricalChartOrchestrator,
   useEffectiveAnimation,
   useExportChartData,
 } from "../hooks";
-import { fadeAppearStyles } from "../shared/animations/fadeAppear.styles";
 import { ChartShell } from "../shared/core/ChartShell";
 import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
 import { useResolvedLegendKey } from "../shared/core/legend/LegendStoreProvider";
@@ -42,7 +40,7 @@ export function RadialChart<T extends RadialChartData>(props: RadialChartProps<T
 }
 
 function RadialChartImpl<T extends RadialChartData>(props: RadialChartProps<T>) {
-  const styles = useStyles(radialChartStyles);
+  const styles = radialChartStyles;
   const {
     data,
     categoryKey,
@@ -83,7 +81,6 @@ function RadialChartImpl<T extends RadialChartData>(props: RadialChartProps<T>) 
     legendKey,
   });
 
-  useStyles(fadeAppearStyles);
   const animate = useEffectiveAnimation(isAnimationActive);
 
   // Radial-specific geometry

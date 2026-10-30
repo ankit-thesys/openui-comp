@@ -1,11 +1,11 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-label",
   requiredAsterisk: "openui-label-required-asterisk",
 } as const;
 
-export const labelStyles = (css: StyleCss) => ({
+export const labelStyles = /*#__PURE__*/ {
   root: css`
     box-sizing: border-box;
     font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
@@ -20,4 +20,4 @@ export const labelStyles = (css: StyleCss) => ({
   requiredAsterisk: css`
     margin-left: var(--openui-space-3xs, 2px);
   `,
-});
+};

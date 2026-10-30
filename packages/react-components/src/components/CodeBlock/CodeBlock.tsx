@@ -5,7 +5,6 @@ import { CheckCheck, Copy } from "lucide-react";
 import { useState, type ComponentProps } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus";
-import { useStyles } from "../../styles/useStyles";
 import { IconButton } from "../IconButton";
 import { codeBlockCopyButtonStyles, codeBlockStyles, names } from "./codeBlock.styles";
 
@@ -14,7 +13,7 @@ import { codeBlockCopyButtonStyles, codeBlockStyles, names } from "./codeBlock.s
 const defaultTokenTheme = { ...vscDarkPlus, 'pre[class*="language-"]': {} };
 
 function CopyButton({ className, ...props }: ComponentProps<"button">) {
-  const styles = useStyles(codeBlockCopyButtonStyles);
+  const styles = codeBlockCopyButtonStyles;
   return <button {...props} className={clsx(styles.root, names.copyButton, className)} />;
 }
 
@@ -40,7 +39,7 @@ export const CodeBlock = ({
   className,
   syntaxHighlighterClassName,
 }: CodeBlockProps) => {
-  const styles = useStyles(codeBlockStyles);
+  const styles = codeBlockStyles;
   const [copied, setCopied] = useState(false);
   const useDefaultFrame = theme == null && syntaxHighlighterClassName == null;
 

@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
+
 import { fadeAppearAnimation } from "../shared/animations/fadeAppear.styles";
 import { centeredContainer } from "../shared/chartBaseDeclarations";
 import { svgTickLabel } from "../shared/chartTypography";
@@ -33,7 +34,7 @@ export const names = {
   },
 } as const;
 
-export const heatmapChartStyles = (css: StyleCss) => {
+export const heatmapChartStyles = /*#__PURE__*/ (() => {
   return {
     root: css`
       ${centeredContainer}
@@ -132,4 +133,4 @@ export const heatmapChartStyles = (css: StyleCss) => {
       overflow: var(--_openui-heatmap-chart-svg-overflow, unset);
     `,
   };
-};
+})();

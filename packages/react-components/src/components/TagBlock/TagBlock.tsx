@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { CSSProperties, forwardRef, ReactElement } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { names as baseNames, baseStyles } from "../SharedBase/base.styles";
 import { Tag } from "../Tag";
 import { names, tagBlockStyles } from "./tagBlock.styles";
@@ -14,8 +13,8 @@ export interface TagBlockProps {
 }
 
 export const TagBlock = forwardRef<HTMLDivElement, TagBlockProps>((props, ref) => {
-  const css = useStyles(tagBlockStyles);
-  const base = useStyles(baseStyles);
+  const css = tagBlockStyles;
+  const base = baseStyles;
   return (
     <div
       ref={ref}

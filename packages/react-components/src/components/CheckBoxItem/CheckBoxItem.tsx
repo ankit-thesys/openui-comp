@@ -3,7 +3,6 @@
 import * as Checkbox from "@radix-ui/react-checkbox";
 import clsx from "clsx";
 import { CSSProperties, forwardRef, ReactNode, useId } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { checkBoxItemStyles, names } from "./checkBoxItem.styles";
 
 export interface CheckBoxItemProps {
@@ -23,7 +22,7 @@ export interface CheckBoxItemProps {
 const CheckBoxItem = forwardRef<HTMLButtonElement, CheckBoxItemProps>((props, ref) => {
   const { label, description, onChange, className, disabled, required, ...rest } = props;
   const id = useId();
-  const styles = useStyles(checkBoxItemStyles);
+  const styles = checkBoxItemStyles;
   return (
     <label htmlFor={id} className={clsx(styles.container, names.container)}>
       <Checkbox.Root

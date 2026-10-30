@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 /** TabsContent's stable classes. */
 export const names = {
@@ -6,7 +6,7 @@ export const names = {
   inner: "openui-tabs-content-inner",
 } as const;
 
-export const tabsContentStyles = (css: StyleCss) => ({
+export const tabsContentStyles = /*#__PURE__*/ {
   root: css`
     box-sizing: border-box;
     padding: var(--openui-space-3xs, 2px) 0;
@@ -21,4 +21,4 @@ export const tabsContentStyles = (css: StyleCss) => ({
     flex-direction: column;
     gap: var(--openui-space-l, 18px);
   `,
-});
+};

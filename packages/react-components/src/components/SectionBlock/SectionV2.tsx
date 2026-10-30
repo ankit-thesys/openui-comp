@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React from "react";
-import { useStyles } from "../../styles/useStyles";
 import { Separator } from "../Separator";
 import { names, sectionStyles } from "./sectionV2.styles";
 
@@ -12,7 +11,7 @@ interface SectionV2Props {
 }
 
 export const SectionV2 = ({ trigger, children }: SectionV2Props) => {
-  const styles = useStyles(sectionStyles);
+  const styles = sectionStyles;
   return (
     <div className={clsx(styles.root, names.root)}>
       <div className={clsx(styles.wrapper, names.wrapper)}>

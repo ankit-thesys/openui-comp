@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 const body = `
   font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
   letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);
@@ -14,7 +15,7 @@ export const names = {
   content: "openui-switch-item-content",
 } as const;
 
-export const switchItemStyles = (css: StyleCss) => ({
+export const switchItemStyles = /*#__PURE__*/ {
   root: css`
     position: relative;
     display: inline-block;
@@ -95,4 +96,4 @@ export const switchItemStyles = (css: StyleCss) => ({
     ${body}
     color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
   `,
-});
+};

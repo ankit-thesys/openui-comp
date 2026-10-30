@@ -1,6 +1,11 @@
-import type { StyleCss } from "../../../../../styles/useStyles";
+import { css } from "../../../../../styles/css";
+
 import { buttonStyles } from "../../../../Button/button.styles";
 import { iconButtonStyles } from "../../../../IconButton/iconButton.styles";
+
+// IconButton registers on import. Reading its map keeps that value import, so its rules come
+// before these equal-weight part rules, which register when this module is imported.
+Object.values(iconButtonStyles);
 
 export const names = {
   root: "openui-stacked-legend",
@@ -22,10 +27,9 @@ export const names = {
   legend: "openui-chart-with-stacked-legend-panel",
 } as const;
 
-export const stackedLegendStyles = (css: StyleCss) => {
-  // Register composed controls first so these equal-weight part rules also win on first render.
-  buttonStyles(css);
-  iconButtonStyles(css);
+export const stackedLegendStyles = /*#__PURE__*/ (() => {
+  // Keep composed controls before these equal-weight part rules.
+  void buttonStyles;
   return {
     root: css`
       position: relative;
@@ -197,4 +201,4 @@ export const stackedLegendStyles = (css: StyleCss) => {
       align-items: var(--_openui-stacked-legend-panel-align, flex-start);
     `,
   };
-};
+})();

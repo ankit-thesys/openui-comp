@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-metric-indicator",
   row: "openui-metric-indicator-row",
@@ -15,7 +16,7 @@ export const names = {
     down: "openui-metric-indicator-trend--direction-down",
   },
 } as const;
-export const metricIndicatorStyles = (css: StyleCss) => ({
+export const metricIndicatorStyles = /*#__PURE__*/ {
   root: css`
     display: flex;
     flex-direction: column;
@@ -81,4 +82,4 @@ export const metricIndicatorStyles = (css: StyleCss) => ({
       color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));
     `,
   },
-});
+};

@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../../../styles/useStyles";
+import { css } from "../../../../styles/css";
+
 export const names = {
   cell: "openui-editable-table-cell-base",
   input: "openui-editable-table-cell-input",
@@ -14,7 +15,7 @@ export const names = {
   left: "openui-editable-table-cell-outline-left",
   right: "openui-editable-table-cell-outline-right",
 } as const;
-export const editableCellStyles = (css: StyleCss) => ({
+export const editableCellStyles = /*#__PURE__*/ {
   cell: css`
     box-sizing: content-box;
     position: relative;
@@ -147,4 +148,4 @@ export const editableCellStyles = (css: StyleCss) => ({
   right: css`
     right: 0;
   `,
-});
+};

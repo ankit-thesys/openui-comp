@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
+
 import {
   activeDotInner,
   activeDotOuter,
@@ -42,8 +43,8 @@ export const names = {
   },
 } as const;
 
-// Register the entrance keyframes with the component, never on import.
-export const radarChartStyles = (css: StyleCss) => {
+// Register entrance keyframes before the rules that reference them, on import.
+export const radarChartStyles = /*#__PURE__*/ (() => {
   css`
     @keyframes openui-radar-chart-appear {
       from {
@@ -114,4 +115,4 @@ export const radarChartStyles = (css: StyleCss) => {
       }
     `,
   };
-};
+})();

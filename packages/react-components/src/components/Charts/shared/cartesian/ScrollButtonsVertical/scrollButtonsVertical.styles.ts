@@ -1,5 +1,10 @@
-import type { StyleCss } from "../../../../../styles/useStyles";
+import { css } from "../../../../../styles/css";
+
 import { iconButtonStyles } from "../../../../IconButton/iconButton.styles";
+
+// IconButton registers on import. Reading its map keeps that value import, so its rules come
+// before these equal-weight part rules, which register when this module is imported.
+Object.values(iconButtonStyles);
 
 export const names = {
   root: "openui-scroll-buttons-vertical",
@@ -9,9 +14,7 @@ export const names = {
   down: "openui-scroll-buttons-vertical-down",
 } as const;
 
-export const scrollButtonsVerticalStyles = (css: StyleCss) => {
-  // Register composed controls first so these equal-weight part rules also win on first render.
-  iconButtonStyles(css);
+export const scrollButtonsVerticalStyles = /*#__PURE__*/ (() => {
   return {
     root: css`
       display: flex;
@@ -33,4 +36,4 @@ export const scrollButtonsVerticalStyles = (css: StyleCss) => {
       }
     `,
   };
-};
+})();

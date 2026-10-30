@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 /** IconButton's stable classes: the public override targets. */
 export const names = {
@@ -48,7 +48,7 @@ const radiusS = `var(--openui-radius-s, 6px)`;
  * (root, then variant, size, shape, tone), so keep each body specific to IconButton: Goober gives
  * an identical body registered earlier elsewhere that earlier class and position.
  */
-export const iconButtonStyles = (css: StyleCss) => ({
+export const iconButtonStyles = /*#__PURE__*/ {
   root: css`
     box-sizing: border-box;
     display: flex;
@@ -257,4 +257,4 @@ export const iconButtonStyles = (css: StyleCss) => ({
     width: var(--_openui-icon-button-icon-size);
     height: var(--_openui-icon-button-icon-size);
   `,
-});
+};
