@@ -270,7 +270,11 @@ document.addEventListener("securitypolicyviolation", (event) =>
   const result = await page.evaluate(() => ({
     violations: (window as CspWindow).violations,
     tags: [...document.querySelectorAll("style")].map((tag) => ({
-      tag: tag.id || [...tag.attributes].map((attribute) => attribute.name).join(" "),
+      // By id or marker attribute; other attributes such as data-precedence may join them.
+      tag:
+        tag.id ||
+        ["data-openui-layer-order", "data-openui-theme"].find((name) => tag.hasAttribute(name)) ||
+        [...tag.attributes].map((attribute) => attribute.name).join(" "),
       nonce: tag.nonce,
       applied: !!tag.sheet,
     })),
