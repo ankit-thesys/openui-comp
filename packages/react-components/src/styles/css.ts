@@ -106,9 +106,10 @@ export type ConfigureStylesOptions = {
 
 // Bundlers replace `process.env.NODE_ENV` but leave `process` undefined, so a `typeof process`
 // check would silence browser builds. An unbundled browser or a CDN ESM build has no `process`.
+// Keep the dot form: Vite's dev server does not replace `process.env["NODE_ENV"]`.
 function development(): boolean {
   try {
-    return process.env["NODE_ENV"] !== "production";
+    return process.env.NODE_ENV !== "production";
   } catch {
     return false;
   }

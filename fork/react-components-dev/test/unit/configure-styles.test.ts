@@ -1,3 +1,5 @@
+import { library } from "#paths";
+import { readFileSync } from "node:fs";
 import { afterEach, expect, it, vi } from "vitest";
 
 afterEach(() => {
@@ -75,4 +77,14 @@ it("never throws without a process global", async () => {
   }).not.toThrow();
   vi.unstubAllGlobals();
   expect(warn).not.toHaveBeenCalled();
+});
+
+// Vite's dev server replaces only the dot form in a package it serves unbundled, such as a linked
+// workspace package; `process.env["NODE_ENV"]` stays, `process` is undefined, and nothing warns.
+it("ships the development check in the dot form bundlers replace", () => {
+  for (const file of ["dist/styles/css.mjs", "dist/styles/css.cjs"]) {
+    const built = readFileSync(library(file), "utf8");
+    expect(built).toContain("process.env.NODE_ENV");
+    expect(built).not.toMatch(/process\.env\[/);
+  }
 });
