@@ -6,6 +6,6 @@
     "allowImportingTsExtensions": true,
     "rootDir": "."
   },
-  "include": ["src/__tests__/**/*", "src/components/Icon/lucide-dynamic.d.ts", "vitest.parity.config.ts"],
+  "include": ["src/__tests__/**/*", "src/components/Icon/lucide-dynamic.d.ts", "vitest.parity.config.ts", "vitest.config.ts", "vitest.browser.config.ts"],
   "exclude": ["dist", "node_modules", "src/__tests__/parity/harness/target.source.ts"]
 }
