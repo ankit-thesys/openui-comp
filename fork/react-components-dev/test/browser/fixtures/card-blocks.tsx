@@ -1,6 +1,7 @@
 import {
   Button,
   CompositeCard,
+  configureStyles,
   ContextCard,
   OptionCards,
   OverviewCardBlock,
@@ -13,12 +14,13 @@ import { useState } from "react";
 import { createRoot } from "react-dom/client";
 import { CardCases, type CardFamily } from "./card-blocks-cases";
 const params = new URLSearchParams(location.search);
+configureStyles({ layer: params.get("layer") || undefined });
 function App() {
   const [selected, setSelected] = useState<string[]>([]);
   const [activated, setActivated] = useState(0);
   const activate = () => setActivated((value) => value + 1);
   return (
-    <ThemeProvider cssLayer={params.get("layer") || undefined}>
+    <ThemeProvider>
       <div data-activation-count={activated} style={{ font: "14px/21px sans-serif" }}>
         <CompositeCard item={{ header: "Composite" }} clickable onClick={activate} />
         <ContextCard item={{ title: "Context", body: "Body" }} clickable onClick={activate} />

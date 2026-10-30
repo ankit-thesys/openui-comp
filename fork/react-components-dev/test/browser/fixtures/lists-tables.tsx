@@ -1,5 +1,5 @@
 // Public-package fixture for #99: variants, measured scroll controls and real editing portals.
-import { Button, EditableTable, ThemeProvider } from "openui-under-test";
+import { Button, configureStyles, EditableTable, ThemeProvider } from "openui-under-test";
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
 import { migratedComponents } from "../../unit/contract/components";
@@ -13,6 +13,7 @@ const folders = [
   "MetricIndicator",
 ];
 const params = new URLSearchParams(location.search);
+configureStyles({ layer: params.get("layer") ?? undefined });
 function EditingExample() {
   const [data, setData] = useState([
     {
@@ -53,10 +54,7 @@ function EditingExample() {
   );
 }
 createRoot(document.getElementById("root")!).render(
-  <ThemeProvider
-    cssLayer={params.get("layer") ?? undefined}
-    mode={params.get("mode") === "dark" ? "dark" : "light"}
-  >
+  <ThemeProvider mode={params.get("mode") === "dark" ? "dark" : "light"}>
     {migratedComponents
       .filter((entry) => folders.includes(entry.folder))
       .map((entry) => (

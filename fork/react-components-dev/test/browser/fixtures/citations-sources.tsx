@@ -3,6 +3,7 @@ import {
   CardSourceContext,
   Citation,
   CitationItem,
+  configureStyles,
   InlineMarkdownRenderer,
   ListedSourceItem,
   ListedSources,
@@ -15,13 +16,11 @@ import { createRoot } from "react-dom/client";
 import { favicon, InlineExamples, inlineText, source, sources } from "./citations-sources-shared";
 
 const params = new URLSearchParams(location.search);
+configureStyles({ layer: params.get("layer") ?? undefined });
 function Fixture() {
   const [url, setUrl] = useState("/missing-favicon.svg");
   return (
-    <ThemeProvider
-      mode={params.get("mode") === "dark" ? "dark" : "light"}
-      cssLayer={params.get("layer") ?? undefined}
-    >
+    <ThemeProvider mode={params.get("mode") === "dark" ? "dark" : "light"}>
       <CardSourceContext.Provider value={[source]}>
         <section data-testid="inline">
           <InlineMarkdownRenderer content={inlineText} />

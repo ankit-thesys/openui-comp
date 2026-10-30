@@ -1,6 +1,7 @@
 // Shared opt-ins only; the families' own layout rules are covered by their own specs.
 import {
   Buttons,
+  configureStyles,
   FormControl,
   PieChartSkeleton,
   Skeleton,
@@ -11,12 +12,10 @@ import {
 import { createRoot } from "react-dom/client";
 
 const params = new URLSearchParams(location.search);
+configureStyles({ layer: params.get("layer") ?? undefined });
 const mount = () =>
   createRoot(document.getElementById("root")!).render(
-    <ThemeProvider
-      cssLayer={params.get("layer") ?? undefined}
-      mode={params.get("mode") === "dark" ? "dark" : "light"}
-    >
+    <ThemeProvider mode={params.get("mode") === "dark" ? "dark" : "light"}>
       <Buttons>
         <span data-testid="buttons-child">Action</span>
       </Buttons>

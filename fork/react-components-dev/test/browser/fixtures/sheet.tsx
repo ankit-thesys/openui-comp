@@ -1,5 +1,5 @@
 import { extractCss, glob } from "goober-under-test";
-import { css, getComponentStyles, keyframes } from "openui-under-test";
+import { configureStyles, css, getComponentStyles, keyframes } from "openui-under-test";
 
 const animation = keyframes`from { opacity: 0.12; } to { opacity: 0.88; }`;
 const imported = css`
@@ -8,6 +8,7 @@ const imported = css`
 `;
 
 export const sheetFixture = {
+  configureStyles,
   css,
   keyframes,
   getComponentStyles,

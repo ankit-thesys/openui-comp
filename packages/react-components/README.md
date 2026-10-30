@@ -210,16 +210,24 @@ rule in a named cascade layer loses to the unlayered library rules.
 Component rules are unlayered by default. Apps that order their CSS with cascade
 layers, such as Tailwind 4, can put them in a layer instead:
 
-```tsx
-<ThemeProvider cssLayer="openui">{/* application */}</ThemeProvider>
+```ts
+import { configureStyles } from "@openuidev/react-components";
+
+configureStyles({ layer: "openui" });
 ```
 
-Rules of components under the provider then sit in `@layer openui`, so any
-unlayered app CSS beats them, whatever its specificity or load order, and so do
-layers ordered after `openui`. Nested providers inherit `cssLayer` and can set
-their own. A value that is not a layer name (or a dotted path such as
-`app.openui`) is ignored, with a development warning. Components outside any provider stay unlayered. Each layer gets its own generated classes, so a component rendered both
-in and out of a layer registers its rules twice.
+This replaces the beta's provider-level layer option. Call it once in the app entry,
+including on the server when server rendering. Every component rule and public `css` or
+`keyframes` call joins the same layer, including rules registered before configuration and
+in lazy modules. Import order does not matter. ThemeProvider only controls theme tokens;
+components outside a provider and inside nested providers use the same component sheet.
+
+The whole sheet sits in `@layer openui`, so any unlayered app CSS beats it, whatever its
+specificity or load order, as do layers ordered after `openui`. A later call rewrites the
+whole sheet without changing class names or duplicating rules. Call
+`configureStyles({ layer: undefined })` to return to unlayered mode. Invalid names are ignored
+with a development warning; a dotted name such as `app.openui` is valid. The options type is
+exported as `ConfigureStylesOptions`.
 
 The library declares no layer order. Put the order and an empty library sheet
 first in `<head>`, before any stylesheet, in this order:
@@ -241,7 +249,7 @@ library sheet comes before the app's CSS, so `openui` ranks first: below
 Tailwind's `base`, whose preflight then clears Button's background, padding and
 radius.
 
-Without `cssLayer`, Tailwind 4 utilities lose to the unlayered component rules on
+Without a configured layer, Tailwind 4 utilities lose to the unlayered component rules on
 the same element. Use the important modifier (`!bg-red-500`, or `bg-red-500!`) or
 target the stable class instead. In this default mode, Tailwind 3.4 and 4
 preflights leave every element that carries a stable class styled, and markdown
@@ -334,7 +342,7 @@ described under [Primitive props for cards](#primitive-props-for-cards). Old ali
 carrying only an old class name do not receive the new component styles.
 
 The shared `openui-border-box` helper opts in only Buttons, FormControl and
-TagBlock roots. Its flat rule registers when a user renders, honours `cssLayer`, and
+TagBlock roots. Its flat rule registers when a user renders, honours the app-wide layer, and
 survives replacement of `<html class>`. A single consumer class can override its box sizing. It does not style
 descendants.
 
@@ -502,8 +510,9 @@ export const PriceCard = () => <div className={card}>Price</div>;
 ```
 
 Browser sheet writes are batched into one microtask. `getComponentStyles()` includes newly
-registered rules immediately. The temporary `ThemeProvider cssLayer` option applies to component
-factories; public `css` and `keyframes` calls currently register unlayered rules.
+registered rules immediately. `configureStyles({ layer: "openui" })` applies to these rules
+and animations too, even when they registered before configuration. A library built on top
+can use these exports without depending on Goober or the app's choice of layer.
 
 ### Server-rendered styles
 
@@ -511,7 +520,8 @@ On the server, component styles live in the library's own cumulative rule store.
 and `keyframes` calls register immediately; components still using style factories register on
 first render. A server **renders first, then collects** the CSS with
 `getComponentStyles()`, and inlines it as the **first** element of `<head>`, ahead of the app's own
-stylesheets:
+stylesheets. In layer mode, put the layer-order tag before this sheet, as in the two-tag
+recipe above, and configure the same layer on server and client:
 
 ```tsx
 import { getComponentStyles } from "@openuidev/react-components";
@@ -532,7 +542,8 @@ const page = `<!doctype html>
 - The page is styled before JavaScript runs, and app CSS after the sheet overrides converted
   components' equal-weight rules.
 - Keep the `openui-styles` id: the browser adopts that element instead of injecting a second sheet.
-- Inline the returned string as is.
+- Inline the returned string as is; it already includes the configured layer wrapper. Theme
+  defaults stay in their separate `openui-defaults` tag and layer.
 - Every call returns the full sheet collected so far, so concurrent requests cannot take each
   other's rules. The sheet is cumulative for the life of the process: a response may carry rules
   for components another request rendered, which is harmless.
@@ -542,10 +553,36 @@ const page = `<!doctype html>
   the components' built-in light values; `mode="dark"`, `lightTheme` and `darkTheme` apply once
   client JavaScript runs. Host `:root { --openui-… }` declarations in the app's own CSS apply from
   the first paint.
-- **Streaming SSR is not supported yet.** With `renderToPipeableStream`, Next.js App Router or
-  other streaming renderers, `<head>` is sent before most components render, so their styles are
-  missing from the first paint. Those components are unstyled until client JavaScript renders
-  them, then styled normally; nothing breaks.
+
+For Next.js App Router, collect the sheet through `useServerInsertedHTML` in a client registry
+component wrapping the application:
+
+```tsx
+"use client";
+
+import { configureStyles, getComponentStyles } from "@openuidev/react-components";
+import { useServerInsertedHTML } from "next/navigation";
+import type { ReactNode } from "react";
+
+// Omit this call for unlayered styles. In layer mode, also put the layer-order tag first
+// in the root layout's <head>, before any stylesheet.
+configureStyles({ layer: "openui" });
+
+export function StyleRegistry({ children }: { children: ReactNode }) {
+  useServerInsertedHTML(() => (
+    <style id="openui-styles" dangerouslySetInnerHTML={{ __html: getComponentStyles() }} />
+  ));
+  return children;
+}
+```
+
+Keep the `openui-styles` id so the browser adopts the server tag; in layer mode it keeps the
+server's single `@layer` block and adds later rules inside it. Next.js calls the callback on
+every flush, and the sheet is cumulative, so each flush inserts another `openui-styles` tag with
+all rules registered so far; the browser adopts the first and the later copies repeat its rules.
+Use layer mode with streaming: tags streamed after the app's CSS would otherwise outrank it on
+equal-weight rules, while in a layer they stay below unlayered app CSS and later layers such as
+Tailwind's `utilities`.
 
 ### Math styles and fonts
 

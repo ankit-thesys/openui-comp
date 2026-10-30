@@ -3,6 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  configureStyles,
   FoldableSectionContent,
   FoldableSectionItem,
   FoldableSectionRoot,
@@ -14,13 +15,11 @@ import {
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
 const params = new URLSearchParams(location.search);
+configureStyles({ layer: params.get("layer") ?? undefined });
 function App() {
   const [open, setOpen] = useState(false);
   return (
-    <ThemeProvider
-      mode={params.get("mode") === "dark" ? "dark" : "light"}
-      cssLayer={params.get("layer") ?? undefined}
-    >
+    <ThemeProvider mode={params.get("mode") === "dark" ? "dark" : "light"}>
       <Accordion type="single" collapsible>
         <AccordionItem value="one">
           <AccordionTrigger text="Accordion" />

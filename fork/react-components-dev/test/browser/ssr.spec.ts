@@ -1,7 +1,13 @@
 // Server-rendered first paint in Chromium: a page built the way the README documents (render, then
 // collect with getComponentStyles(), then put the sheet first in <head>) is styled before any
 // JavaScript runs, a later consumer stylesheet still overrides it, and the client adopts the sheet.
-import { Button, getComponentStyles, Tag } from "@openuidev/react-components";
+import {
+  Button,
+  configureStyles,
+  getComponentStyles,
+  Separator,
+  Tag,
+} from "@openuidev/react-components";
 import { expect, test, type Page } from "@playwright/test";
 import { createElement, Fragment } from "react";
 import { renderToString } from "react-dom/server";
@@ -137,3 +143,67 @@ test("an empty library sheet tag left by the host still works on the client", as
   expect(errors).toEqual([]);
   expect((await computed(page, "default"))["background-color"]).not.toBe("rgba(0, 0, 0, 0)");
 });
+
+// The app-wide layer across hydration (configureStyles on server and client): the client seeds from
+// the server's one wrapped sheet, so writes wrap it once more instead of nesting, and a rule that
+// registers only after hydration, or only on the server, ends up in the sheet exactly once.
+for (const layer of ["openui", undefined]) {
+  test(`hydration keeps one ${layer ? `${layer} layer` : "unlayered sheet"} with late and server-only rules`, async ({
+    page,
+  }) => {
+    const errors: string[] = [];
+    page.on("pageerror", (error) => errors.push(error.message));
+    page.on("console", (message) => {
+      if (message.type() === "error") errors.push(message.text());
+    });
+    configureStyles({ layer });
+    let body: string;
+    let serverOnlyClasses: string[];
+    try {
+      // Rendered on the server only, outside the hydrated root.
+      const serverOnly = renderToString(createElement(Separator));
+      serverOnlyClasses = [...serverOnly.matchAll(/\b(go\d+)\b/g)].map(([, name]) => name!);
+      // The page itself has no query string, so the layer reaches the client fixture as markup.
+      body = serverPage(
+        "",
+        `<div data-testid="server-only">${serverOnly}</div>` +
+          (layer ? `<div id="ssr-layer" data-layer="${layer}" hidden></div>` : "") +
+          `<script type="module" src="/ssr-hydrate.js"></script>`,
+      );
+    } finally {
+      configureStyles({ layer: undefined });
+    }
+    if (layer) expect(body).toContain(`<style id="openui-styles">@layer ${layer}{`);
+
+    await openServerPage(page, body);
+    await expect(page.getByTestId("late").locator("*").first()).toBeVisible();
+    await page.evaluate(() => new Promise((resolve) => setTimeout(resolve)));
+
+    const { text, sheets, lateClasses, lateDisplay, serverOnlyHeight } = await page.evaluate(() => {
+      const late = document.querySelector("[data-testid=late] > *")!;
+      return {
+        text: document.getElementById("openui-styles")!.textContent!,
+        sheets: document.querySelectorAll("style#openui-styles").length,
+        lateClasses: [...late.classList].filter((name) => /^go\d+$/.test(name)),
+        lateDisplay: getComputedStyle(late).display,
+        serverOnlyHeight: getComputedStyle(document.querySelector("[data-testid=server-only] > *")!)
+          .height,
+      };
+    });
+    const occurrences = (name: string) => text.split(`.${name}{`).length - 1;
+    expect(errors).toEqual([]);
+    expect(sheets).toBe(1);
+    if (layer) {
+      expect(text.startsWith(`@layer ${layer}{`)).toBe(true);
+      expect(text.endsWith("}")).toBe(true);
+    } else expect(text.startsWith("@layer")).toBe(false);
+    expect(text).not.toContain("@layer openui{@layer openui{");
+    expect(text.split("@layer ").length - 1).toBe(layer ? 1 : 0);
+    expect(lateClasses.length).toBeGreaterThan(0);
+    expect(lateClasses.map(occurrences)).toEqual(lateClasses.map(() => 1));
+    expect(lateDisplay).not.toBe("inline");
+    expect(serverOnlyClasses.length).toBeGreaterThan(0);
+    expect(serverOnlyClasses.map(occurrences)).toEqual(serverOnlyClasses.map(() => 1));
+    expect(serverOnlyHeight).toBe("1px");
+  });
+}

@@ -7,6 +7,16 @@ let rules = "";
 let pending: string[] = [];
 let scheduled = false;
 let seeded = false;
+// The app-wide cascade layer (configureStyles). It wraps the sheet when it is written, so rules
+// registered before configureStyles, at import time, end up in the layer too.
+let layer: string | undefined;
+// configureStyles changed the layer, so the sheet needs rewriting even with no new rule.
+let relayer = false;
+
+// A layer name, or a dotted path of them such as `app.openui`, as `@layer` accepts.
+const LAYER_NAME = /^-?[a-zA-Z_][\w-]*(\.-?[a-zA-Z_][\w-]*)*$/;
+
+const wrapped = (text: string) => (layer && text ? `@layer ${layer}{${text}}` : text);
 
 // Goober 2.1.19 also tells the browser from the server by `window`, so both sides agree on where
 // rules go even when a server boundary stubs `document`.
@@ -14,13 +24,35 @@ const inBrowser = () => typeof window === "object";
 
 const sheetText = (tag: Element) => (tag.textContent ?? "").trim();
 
+// A sheet written in layer mode, by the server or another module copy, is one `@layer <name>{…}`
+// around all its rules. Seeding and merging work on the rules inside, so the next write wraps
+// them once instead of nesting a second layer. Anything else, including a sheet whose first
+// block closes before its end, is returned unchanged.
+function serverRules(text: string): string {
+  const open = /^@layer\s+[^\s{};,]+\s*\{/.exec(text);
+  if (!open) return text;
+  let depth = 0;
+  let quote = "";
+  for (let i = open[0].length - 1; i < text.length; i++) {
+    const char = text[i];
+    if (quote) {
+      if (char === "\\") i++;
+      else if (char === quote) quote = "";
+    } else if (char === '"' || char === "'") quote = char;
+    else if (char === "{") depth++;
+    else if (char === "}" && --depth === 0)
+      return i === text.length - 1 ? text.slice(open[0].length, i) : text;
+  }
+  return text;
+}
+
 // A server-rendered sheet, or one another copy of the module wrote, already holds rules. Start
 // from them, so Goober's `indexOf` dedupe skips those rules and no write drops them.
 function seed() {
   if (seeded || !inBrowser()) return;
   seeded = true;
   const tag = document.getElementById(SHEET_ID);
-  if (tag) rules = sheetText(tag) + rules;
+  if (tag) rules = serverRules(sheetText(tag)) + rules;
 }
 
 function sheetTag(): HTMLElement {
@@ -52,14 +84,15 @@ function scheduleWrite() {
  */
 export function flushComponentStyles() {
   scheduled = false;
-  if (!inBrowser() || !pending.length) return;
+  if (!inBrowser() || (!pending.length && !relayer)) return;
   const tag = sheetTag();
   // Another module copy may have written since; append only what the sheet lacks.
-  let text = sheetText(tag);
+  let text = serverRules(sheetText(tag));
   for (const rule of pending) if (!text.includes(rule)) text += rule;
   pending = [];
+  relayer = false;
   rules = text;
-  tag.textContent = text;
+  tag.textContent = wrapped(text);
 }
 
 const sink = {
@@ -93,8 +126,28 @@ export const css: Css = gooberCss.bind({ target });
 // Goober's exported keyframes is already bound, so rebinding it would discard our target.
 export const keyframes: Keyframes = gooberCss.bind({ target, k: 1 });
 
+export type ConfigureStylesOptions = {
+  /** App-wide cascade layer, or undefined for unlayered component rules. */
+  layer?: string;
+};
+
+/** Sets the layer for the whole component sheet, including rules already registered. */
+export function configureStyles(options: ConfigureStylesOptions): void {
+  if (options.layer !== undefined && !LAYER_NAME.test(options.layer)) {
+    if (typeof process !== "undefined" && process.env?.["NODE_ENV"] !== "production") {
+      console.warn(
+        `[OpenUI] configureStyles layer "${options.layer}" is not a cascade layer name. It is ignored.`,
+      );
+    }
+    return;
+  }
+  layer = options.layer;
+  relayer = true;
+  scheduleWrite();
+}
+
 /** Returns every component rule registered so far, ready for <style id="openui-styles">. */
 export const getComponentStyles = (): string => {
   seed();
-  return rules || " ";
+  return wrapped(rules) || " ";
 };
