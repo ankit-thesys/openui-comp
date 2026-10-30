@@ -44,7 +44,7 @@ const layersOf = (page: Page, testId: string) =>
         else if (rule instanceof CSSGroupingRule) visit(rule.cssRules, layer);
       }
     };
-    visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules, "");
+    visit((document.getElementById("openui-styles") as HTMLStyleElement).sheet!.cssRules, "");
     return [...found].sort();
   });
 

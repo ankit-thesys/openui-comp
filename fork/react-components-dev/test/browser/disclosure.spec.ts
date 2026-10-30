@@ -143,7 +143,7 @@ for (const component of migrated.filter((entry) =>
         await openMigrated(page, component, head, name, true, "openui");
         if (order === "after") await page.addStyleTag({ content: css });
         expect(
-          await page.evaluate(() => document.getElementById("_goober")!.textContent),
+          await page.evaluate(() => document.getElementById("openui-styles")!.textContent),
         ).toContain("@layer openui");
         const values = await page.locator(`.${name}`).evaluateAll(
           (elements, properties) =>
@@ -166,7 +166,7 @@ test("disclosure styles register at render without adding html markers", async (
   await page.waitForFunction(() => "mountFixture" in window);
   const before = await page.evaluate(() => ({
     html: document.documentElement.className,
-    css: document.getElementById("_goober")!.textContent ?? "",
+    css: document.getElementById("openui-styles")?.textContent ?? "",
   }));
   expect(before.css).not.toContain("_openui-accordion-down");
   expect(before.css).not.toContain("_openui-modal-fade-in");

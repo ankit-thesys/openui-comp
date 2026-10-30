@@ -4,6 +4,7 @@
     "noEmit": true,
     "rootDir": ".",
     "paths": {
+      "goober-under-test": ["../../packages/react-components/node_modules/goober/goober.d.ts"],
       "openui-under-test": ["../../packages/react-components/dist/index.d.mts"],
       "react-ui-under-test": ["../../packages/react-ui/dist/index.d.mts"]
     }

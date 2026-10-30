@@ -137,7 +137,7 @@ const libraryRulesOn = (page: Page, className: string) =>
         } else if (rule instanceof CSSGroupingRule) visit(rule.cssRules);
       }
     };
-    visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
+    visit((document.getElementById("openui-styles") as HTMLStyleElement).sheet!.cssRules);
     return { states: [...states], properties: [...properties].sort() };
   });
 // The computed form of each sentinel, read from a probe of the same tag outside any component.
@@ -222,7 +222,7 @@ for (const chart of otherCharts) {
               (name) => name === prefix || name.startsWith(`${prefix}-`),
             ),
           ),
-          css: document.getElementById("_goober")!.textContent!,
+          css: document.getElementById("openui-styles")!.textContent!,
         };
       }, prefix);
       const generated = new Set(observation.generated);
@@ -252,7 +252,7 @@ for (const chart of otherCharts) {
     );
     const before = await page.evaluate(() => ({
       html: document.documentElement.className,
-      css: document.getElementById("_goober")?.textContent ?? "",
+      css: document.getElementById("openui-styles")?.textContent ?? "",
     }));
     await page.evaluate(() =>
       (window as Window & { mountOtherCharts?: () => void }).mountOtherCharts!(),

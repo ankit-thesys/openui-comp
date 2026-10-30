@@ -83,9 +83,13 @@ test("the token layer is declared first and the library sheet precedes app CSS",
         style.id || (style.hasAttribute("data-openui-layer-order") ? "layer-order" : "other"),
     ),
   );
-  expect(head.slice(0, 2)).toEqual(["layer-order", "_goober"]);
-  expect(head.indexOf("consumer")).toBeGreaterThan(head.indexOf("_goober"));
-  const firstRule = await page.evaluate(() => document.styleSheets[0]!.cssRules[0]!.cssText);
+  expect(head.slice(0, 3)).toEqual(["openui-styles", "layer-order", "openui-defaults"]);
+  expect(head.indexOf("consumer")).toBeGreaterThan(head.indexOf("openui-styles"));
+  const firstRule = await page.evaluate(
+    () =>
+      (document.querySelector("[data-openui-layer-order]") as HTMLStyleElement).sheet!.cssRules[0]!
+        .cssText,
+  );
   expect(firstRule).toBe("@layer openui-defaults;");
 });
 
@@ -95,7 +99,7 @@ test("Button registers its styles when it renders, not on import, and marks no <
   await page.goto("/button.html?lazy=1");
   await page.waitForFunction(() => typeof (window as FixtureWindow).mountFixture === "function");
   const beforeMount = await page.evaluate(() => ({
-    sheet: document.getElementById("_goober")?.textContent ?? "",
+    sheet: document.getElementById("openui-styles")?.textContent ?? "",
     html: [...document.documentElement.classList],
   }));
 

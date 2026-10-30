@@ -3,6 +3,7 @@
 import { library, reactUi } from "#paths";
 import { execFileSync } from "node:child_process";
 import { existsSync, rmSync, writeFileSync } from "node:fs";
+import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import { build, type TsdownPlugin } from "tsdown";
 
@@ -49,6 +50,7 @@ const fixtures = [
   "parity-tag-block",
   "parity-separator",
   "smoke",
+  "sheet",
   "import-registration",
   "button",
   "layers",
@@ -198,7 +200,13 @@ const bundle = async (
     dts: false,
     clean: false,
     logLevel: "warn",
-    alias: { "openui-under-test": packageUnderTest, "react-ui-under-test": reactUiEntry },
+    alias: {
+      "openui-under-test": packageUnderTest,
+      "react-ui-under-test": reactUiEntry,
+      "goober-under-test": createRequire(library("package.json"))
+        .resolve("goober")
+        .replace("goober.cjs", "goober.modern.js"),
+    },
     define: {
       "process.env.NODE_ENV": JSON.stringify("production"),
       __PARITY_BASELINE__: String(baseline),

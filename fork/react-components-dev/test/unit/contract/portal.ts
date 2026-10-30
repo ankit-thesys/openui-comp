@@ -4,6 +4,8 @@ import { vi } from "vitest";
 
 export function withPortalTarget<T>(run: () => T): T {
   vi.stubGlobal("document", { body: {} });
+  // This server boundary supplies a portal destination, not a browser sheet or event loop.
+  vi.stubGlobal("queueMicrotask", () => {});
   try {
     return run();
   } finally {

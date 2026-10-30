@@ -28,7 +28,6 @@
   "fork/react-components-dev/test/unit/contract/checks.ts",
   "fork/react-components-dev/test/unit/contract/components.tsx",
   "fork/react-components-dev/test/unit/contract/defineContract.tsx",
-  "fork/react-components-dev/test/unit/goober-imports.test.ts",
   "fork/react-components-dev/test/unit/layers.test.tsx",
   "packages/react-components/README.md",
   "packages/react-components/src/components/Accordion/Accordion.tsx",

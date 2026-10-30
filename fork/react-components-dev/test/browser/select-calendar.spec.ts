@@ -171,7 +171,7 @@ for (const family of ["select", "calendar", "date-picker"]) {
     await page.goto(`/select-calendar.html?family=${family}&lazy=1&open=1`);
     await page.waitForFunction(() => typeof window.mountFixture === "function");
     const before = await page.evaluate(() => ({
-      sheet: document.getElementById("_goober")!.textContent!,
+      sheet: document.getElementById("openui-styles")?.textContent ?? "",
       html: document.documentElement.className,
     }));
     await page.evaluate(() => window.mountFixture());

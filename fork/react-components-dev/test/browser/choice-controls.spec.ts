@@ -134,7 +134,8 @@ for (const layer of [false, true]) {
     page,
   }) => {
     await page.goto(`/choice-controls.html?${query}lazy=1`);
-    const css = () => page.locator("#_goober").textContent();
+    const css = () =>
+      page.evaluate(() => document.getElementById("openui-styles")?.textContent ?? "");
     expect(await css()).not.toContain("--_openui-radio-item");
     expect(await css()).not.toContain("--_openui-chips-item");
     await page.evaluate(() => window.mountFixture());

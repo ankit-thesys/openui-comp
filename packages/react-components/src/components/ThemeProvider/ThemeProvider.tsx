@@ -41,7 +41,7 @@ export type ThemeProps = {
   /**
    * Cascade layer for component styles, e.g. `"openui"`, so that unlayered app CSS and later
    * layers such as Tailwind's `utilities` override them. The library declares no layer order:
-   * put a `@layer` statement naming this layer, then `<style id="_goober"> </style>`, first in
+   * put a `@layer` statement naming this layer, then `<style id="openui-styles"></style>`, first in
    * `<head>`. Nested providers inherit it unless they set their own.
    * @default unlayered, or the parent provider's layer
    */

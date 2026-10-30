@@ -313,9 +313,9 @@ for (const layer of [false, true])
     page,
   }) => {
     await open(page, "image-gallery-modal", layer);
-    const before = (await page.locator("#_goober").textContent()) ?? "";
+    const before = (await page.locator("#openui-styles").textContent()) ?? "";
     await portal(page);
-    const after = (await page.locator("#_goober").textContent()) ?? "";
+    const after = (await page.locator("#openui-styles").textContent()) ?? "";
     const { rulesOf, ruleViolation } = await import("../unit/contract/checks");
     const previous = new Set(rulesOf(before).map((rule) => rule.selector));
     const added = rulesOf(after).filter((rule) => !previous.has(rule.selector));

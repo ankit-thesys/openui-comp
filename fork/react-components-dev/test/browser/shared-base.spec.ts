@@ -5,7 +5,9 @@ import { expect, test } from "@playwright/test";
 test("shared styles register at render and survive an html class rewrite", async ({ page }) => {
   await page.goto("/shared-base.html?lazy=1");
   await page.waitForFunction(() => typeof window.mountFixture === "function");
-  const imported = await page.locator("#_goober").textContent();
+  const imported = await page.evaluate(
+    () => document.getElementById("openui-styles")?.textContent ?? "",
+  );
   expect(imported).not.toContain(".openui-border-box");
   expect(imported).not.toMatch(/@keyframes [\w-]+\{0%\{opacity:0\.3;/);
   await page.evaluate(() => window.mountFixture());

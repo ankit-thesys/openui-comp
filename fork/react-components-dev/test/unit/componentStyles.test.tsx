@@ -46,7 +46,7 @@ describe("getComponentStyles", () => {
   });
 
   it("never returns an empty string, so the browser can adopt the <style> it is inlined into", () => {
-    // Goober writes into the first text node of an existing #_goober; an empty element has none.
+    // Every response includes an adoptable openui-styles tag, even before rules register.
     expect(getComponentStyles().length).toBeGreaterThan(0);
   });
 });

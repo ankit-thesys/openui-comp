@@ -182,7 +182,7 @@ test("card styles register lazily and survive html class replacement", async ({ 
   await page.waitForFunction(() => "mountFixture" in window);
   const before = await page.evaluate(() => ({
     html: document.documentElement.className,
-    css: document.getElementById("_goober")?.textContent ?? "",
+    css: document.getElementById("openui-styles")?.textContent ?? "",
   }));
   expect(before.css).not.toContain("--_openui-context-card-background");
   expect(before.css).not.toContain("--_openui-card-block-layout-gap");

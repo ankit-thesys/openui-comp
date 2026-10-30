@@ -25,7 +25,7 @@ const serverPage = (headAfterSheet = "", script = "") => {
   );
   return (
     `<!doctype html><html><head><meta charset="utf-8">` +
-    `<style id="_goober">${getComponentStyles()}</style>${headAfterSheet}</head>` +
+    `<style id="openui-styles">${getComponentStyles()}</style>${headAfterSheet}</head>` +
     `<body><div id="root">${html}</div>${script}</body></html>`
   );
 };
@@ -95,7 +95,7 @@ test("the client adopts the server sheet instead of adding a second one", async 
   await expect(page.locator("#root > button")).toHaveCount(3);
 
   expect(errors).toEqual([]);
-  expect(await page.locator("style#_goober").count()).toBe(1);
+  expect(await page.locator("style#openui-styles").count()).toBe(1);
   expect((await computed(page, "default"))["background-color"]).not.toBe("rgba(0, 0, 0, 0)");
 });
 
@@ -103,8 +103,8 @@ test("an empty library sheet tag left by the host still works on the client", as
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   const empty = serverPage("", `<script type="module" src="/button.js"></script>`).replace(
-    /<style id="_goober">[\s\S]*?<\/style>/,
-    `<style id="_goober"></style>`,
+    /<style id="openui-styles">[\s\S]*?<\/style>/,
+    `<style id="openui-styles"></style>`,
   );
 
   await openServerPage(page, empty);

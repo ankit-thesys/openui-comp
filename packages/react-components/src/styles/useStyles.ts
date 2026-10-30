@@ -1,7 +1,7 @@
 "use client";
 
-import { css } from "goober";
 import { createContext, useContext } from "react";
+import { css } from "./css";
 
 /** The `css` tag handed to style factories: Goober's, or one wrapping each rule in a layer. */
 export type StyleCss = (strings: TemplateStringsArray, ...values: (string | number)[]) => string;

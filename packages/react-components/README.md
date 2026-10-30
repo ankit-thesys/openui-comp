@@ -171,14 +171,14 @@ code inherit the quote's colour, line-height and italic style like its other tex
 `MarkDownRenderer` defaults to `variant="clear"` and always emits its variant modifier.
 A rule of yours on a stable class, with the same state where you need one, therefore wins:
 
-- whether your CSS loads before or after the library, because the library's `<style id="_goober">`
+- whether your CSS loads before or after the library, because the library's `<style id="openui-styles">`
   is placed first in `<head>`, ahead of app stylesheets;
 - after `<html class>` is rewritten, for example by a theme script, because nothing depends on a
   class on `<html>`;
 - with no `!important` and no wrapper selector.
 
-Load order: the token defaults' `@layer openui-defaults;` declaration comes first in `<head>`, then
-the library sheet, then your CSS. If you place `<style id="_goober">` yourself, the library reuses it
+Load order: the library prepends its component sheet ahead of app CSS. Theme token defaults
+keep a separate tag and `openui-defaults` layer. If you place `<style id="openui-styles">` yourself, the library reuses it
 where it is; keep it before your stylesheets.
 
 Your rule has to match the library's shape: a resting-state rule does not restyle `:hover`, and a
@@ -226,10 +226,10 @@ first in `<head>`, before any stylesheet, in this order:
 <style>
   @layer theme, base, openui, components, utilities;
 </style>
-<style id="_goober"></style>
+<style id="openui-styles"></style>
 ```
 
-The library writes its rules into that `#_goober` tag instead of creating its
+The library writes its rules into that `#openui-styles` tag instead of creating its
 own. With this recipe, Tailwind 4 utilities such as `bg-red-500` beat
 Button, and Tailwind's preflight in `base` does not reset it.
 
@@ -484,10 +484,30 @@ are converted independently of vendor syntax theme objects and official KaTeX
 CSS and fonts. Existing per-instance inline geometry and colors, ThemeProvider
 serialization and animation behavior retain their contracts.
 
+### Writing styles in code built on top
+
+`css` and `keyframes` return class-name strings and register in the same `openui-styles` sheet
+as the components. They work at module level without a hook or provider. Their types are exported
+as `Css` and `Keyframes`.
+
+```tsx
+import { css, keyframes } from "@openuidev/react-components";
+
+const pop = keyframes`from { opacity: 0; } to { opacity: 1; }`;
+const card = css`padding: 16px; animation: ${pop} 120ms ease-out;`;
+
+export const PriceCard = () => <div className={card}>Price</div>;
+```
+
+Browser sheet writes are batched into one microtask. `getComponentStyles()` includes newly
+registered rules immediately. The temporary `ThemeProvider cssLayer` option applies to component
+factories; public `css` and `keyframes` calls currently register unlayered rules.
+
 ### Server-rendered styles
 
-On the server, component styles live in Goober's in-memory sheet. Converted components register
-their rules the first time they render, so a server **renders first, then collects** the CSS with
+On the server, component styles live in the library's own cumulative rule store. Public `css`
+and `keyframes` calls register immediately; components still using style factories register on
+first render. A server **renders first, then collects** the CSS with
 `getComponentStyles()`, and inlines it as the **first** element of `<head>`, ahead of the app's own
 stylesheets:
 
@@ -500,7 +520,7 @@ const css = getComponentStyles(); // 2. collect, after rendering
 const page = `<!doctype html>
 <html>
   <head>
-    <style id="_goober">${css}</style>
+    <style id="openui-styles">${css}</style>
     <link rel="stylesheet" href="/app.css" />
   </head>
   <body><div id="root">${html}</div></body>
@@ -509,14 +529,13 @@ const page = `<!doctype html>
 
 - The page is styled before JavaScript runs, and app CSS after the sheet overrides converted
   components' equal-weight rules.
-- Keep the `_goober` id: the browser adopts that element instead of injecting a second sheet.
+- Keep the `openui-styles` id: the browser adopts that element instead of injecting a second sheet.
 - Inline the returned string as is.
 - Every call returns the full sheet collected so far, so concurrent requests cannot take each
   other's rules. The sheet is cumulative for the life of the process: a response may carry rules
   for components another request rendered, which is harmless.
-- Do not call Goober's own `extractCss` from the same Goober instance: it empties the sheet before
-  `getComponentStyles()` can collect it. Rules the application registers with that instance are
-  included.
+- A host app's Goober `glob` and `extractCss` calls leave this sheet alone. Host Goober rules
+  are not included; rules registered through the library's public `css` and `keyframes` are.
 - ThemeProvider writes its theme variables in the browser, so a server-rendered first paint uses
   the components' built-in light values; `mode="dark"`, `lightTheme` and `darkTheme` apply once
   client JavaScript runs. Host `:root { --openui-… }` declarations in the app's own CSS apply from

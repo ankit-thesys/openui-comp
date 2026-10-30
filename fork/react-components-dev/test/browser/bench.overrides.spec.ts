@@ -55,7 +55,7 @@ const statesOn = (page: Page, className: string) =>
         } else if (rule instanceof CSSGroupingRule) visit(rule.cssRules);
       }
     };
-    visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
+    visit((document.getElementById("openui-styles") as HTMLStyleElement).sheet!.cssRules);
     return [...states];
   }, className);
 

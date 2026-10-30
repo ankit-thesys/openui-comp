@@ -136,7 +136,7 @@ test("form styles register at render, leave html unmarked, and survive html repl
   await page.goto("/form-controls.html?lazy=1");
   await page.waitForFunction(() => typeof window.mountFixture === "function");
   const before = await page.evaluate(() => ({
-    sheet: document.getElementById("_goober")!.textContent,
+    sheet: document.getElementById("openui-styles")?.textContent ?? "",
     html: document.documentElement.className,
   }));
   await page.evaluate(() => window.mountFixture());

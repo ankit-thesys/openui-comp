@@ -1,10 +1,9 @@
-// No module registers CSS or marks <html> when it is imported: styles register when a component
-// renders (ADR 0001, Q27). Imports every built ESM module, not just the entry, so a module the
-// public entry happens not to evaluate is covered too. The token defaults (Q29) only run with a
-// document; the browser half of this check is test/browser/import-registration.spec.ts.
+// Imports may register component rules in their own store (ADR 0002). The host sheet stays
+// untouched; the browser half also checks the token defaults and <html> marker.
 // Run after build: pnpm exec vitest run test/unit/import-registration.test.ts.
 import { library } from "#paths";
 import { readdirSync } from "node:fs";
+import { createRequire } from "node:module";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { expect, it } from "vitest";
@@ -17,10 +16,15 @@ const modules = (dir: string): string[] =>
     return entry.name.endsWith(".mjs") ? [path] : [];
   });
 
-it("imports every built module without registering any CSS", async () => {
+it("imports every built module without registering CSS in the host Goober sheet", async () => {
   const files = modules(dist);
   expect(files.length).toBeGreaterThan(100);
   for (const file of files) await import(pathToFileURL(file).href);
   const { getComponentStyles } = await import(pathToFileURL(join(dist, "index.mjs")).href);
-  expect(getComponentStyles().trim()).toBe("");
+  expect(getComponentStyles().length).toBeGreaterThan(0);
+  const require = createRequire(library("package.json"));
+  const host = await import(
+    pathToFileURL(require.resolve("goober").replace("goober.cjs", "goober.modern.js")).href
+  );
+  expect(host.extractCss().trim()).toBe("");
 }, 60_000);

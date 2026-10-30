@@ -76,8 +76,8 @@ Each rule is one class plus at most one state. A parent's prop that changes a
 part's value travels through a private `--_openui-<component>-*` variable the
 part reads, not a descendant selector. After changing `names`, rebuild the library and run
 `pnpm docs:selectors` here to regenerate the reference. The unit tests enforce the
-selector budget and the naming grammar for every component, and that no module
-registers CSS or adds a class to `<html>` on import; see the sections below.
+selector budget and the naming grammar for every component, and that imports never
+write to the host Goober sheet or mark `<html>` beyond theme defaults; see the sections below.
 
 Keep selector specificity, declaration order, token fallbacks and keyframe timing
 when editing styles. Use CSS units explicitly: Goober does not add `px` to numeric
@@ -122,7 +122,7 @@ To add a browser test, add a fixture that imports `openui-under-test` (aliased t
 
 - `?css=<text>` adds a consumer stylesheet.
 - `?sheet=<name>` links `fixtures/<name>.css`.
-- `?recipe=<layer order>` starts `<head>` with the layer-mode recipe: `<style>@layer <layer order>;</style><style id="_goober"> </style>`.
+- `?recipe=<layer order>` starts `<head>` with the layer-mode recipe: `<style>@layer <layer order>;</style><style id="openui-styles"></style>`.
 
 `fixtures/tailwind33.css`, `tailwind34.css` and `tailwind4.css` are unmodified Tailwind 3.3.7, 3.4.17 and 4.1.11 CLI output (`@tailwind base/components/utilities` for 3, `@import "tailwindcss"` for 4) with `bg-red-500` as the only source (plus `!bg-red-500` for 4), checked in so the tests need no Tailwind dependency. Regenerate them the same way if the tests need more utilities.
 
@@ -224,14 +224,14 @@ fails if a component folder that calls `useStyles` or exports `names` has no ent
 covered by an entry's own names. Names an entry lists only because it renders another component
 (`dependencyN` keys) never count as coverage.
 
-`import-registration.test.ts` imports every built ESM module in Node and fails if any CSS was
-registered; `import-registration.spec.ts` imports the whole public package in Chromium and fails
-if `#_goober` holds anything but the token defaults' `:where(.goN:root)` rule in
-`@layer openui-defaults`, or `<html>` has any class but that rule's marker (ADR 0001, Q29). Both
-then render something, so the checks cannot pass on a dead sheet. `goober-imports.test.ts` fails
-if any source module other than `styles/defaults.ts`, `styles/useStyles.ts` and
-`utils/componentStyles.ts` imports Goober: components get `css` only from `useStyles`, so even a
-code path no contract element renders cannot register CSS on its own.
+`import-registration.test.ts` imports every built ESM module in Node and permits registration in
+the component store while checking that host Goober stays empty. `import-registration.spec.ts`
+checks that imports leave host Goober untouched and add only the token-default marker to `<html>`.
+Defaults live in `openui-defaults`; component rules live in `openui-styles` (ADR 0002).
+The browser test then renders a Button and checks that the component sheet is live.
+`goober-imports.test.ts` permits only `styles/defaults.ts` and `styles/css.ts` to import Goober.
+`css.test.tsx` covers public styling exports, the exact engine pin and server host isolation;
+`sheet.spec.ts` covers browser target routing, adoption, batching and host isolation.
 `contract/private-names.test.tsx` fails if a component's source reads or sets a `--_openui-*`
 variable that does not start with one of its own roots or parts (ADR 0001, Q14), or if any source
 uses an `@container style()` query, which Firefox does not support. A primitive that needs a look

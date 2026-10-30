@@ -20,7 +20,7 @@ const page = (name, params) => {
   return (
     `<!doctype html><html><head><meta charset="utf-8">` +
     (recipe
-      ? `<style id="recipe">@layer ${text(recipe)};</style><style id="_goober"> </style>`
+      ? `<style id="recipe">@layer ${text(recipe)};</style><style id="openui-styles"> </style>`
       : "") +
     `<title>${name}</title>` +
     (css ? `<style id="consumer">${text(css)}</style>` : "") +

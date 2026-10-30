@@ -7,7 +7,9 @@ for (const layer of ["", "openui"]) {
   }) => {
     await page.goto(`/loading-code.html?lazy=1&layer=${layer}`);
     await page.waitForFunction(() => typeof window.mountFixture === "function");
-    const imported = await page.locator("#_goober").textContent();
+    const imported = await page.evaluate(
+      () => document.getElementById("openui-styles")?.textContent ?? "",
+    );
     expect(imported).not.toContain("--_openui-code-block-copy-button-opacity");
     expect(imported).not.toContain("--_openui-pie-chart-skeleton-shape-radius");
     expect(imported).not.toContain("--_openui-dot-matrix-loader-size");

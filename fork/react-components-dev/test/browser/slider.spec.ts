@@ -25,7 +25,7 @@ const libraryOutline = (page: Page, suffix: string) =>
         else if (rule instanceof CSSGroupingRule) visit(rule.cssRules);
       }
     };
-    visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
+    visit((document.getElementById("openui-styles") as HTMLStyleElement).sheet!.cssRules);
     return outline;
   }, suffix);
 
@@ -180,7 +180,7 @@ for (const block of [false, true]) {
     await page.goto(`/slider.html?lazy=1${block ? "&block=1" : ""}`);
     await page.waitForFunction(() => typeof window.mountFixture === "function");
     const before = await page.evaluate(() => ({
-      css: document.getElementById("_goober")!.textContent!,
+      css: document.getElementById("openui-styles")?.textContent ?? "",
       html: document.documentElement.className,
     }));
     await page.evaluate(() => window.mountFixture());

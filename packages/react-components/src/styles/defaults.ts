@@ -9,22 +9,17 @@ if (typeof document !== "undefined") {
   order.textContent = "@layer openui-defaults;";
   document.head.prepend(order);
 
-  // Put Goober's sheet right after it, ahead of app CSS, so equal-weight app rules win. Goober
-  // would otherwise append it to <head> on this module's first `css` call below. A sheet that
-  // already exists, such as one a host placed itself, is left where it is.
-  const existing = document.getElementById("_goober");
-  if (!existing) {
-    const sheet = document.createElement("style");
-    sheet.id = "_goober";
-    sheet.textContent = " "; // Goober writes rules into this text node.
+  // Token defaults have their own target, separate from component rules and the host's Goober.
+  let sheet = document.getElementById("openui-defaults");
+  if (!sheet) {
+    sheet = document.createElement("style");
+    sheet.id = "openui-defaults";
     order.after(sheet);
-  } else if (!existing.firstChild) {
-    // Goober writes into the first text node and crashes on an empty tag.
-    existing.textContent = " ";
   }
+  if (!sheet.firstChild) sheet.textContent = " ";
 
-  // Normal css registration avoids glob's replacement of host global styles.
-  const rootClass = css`
+  const defaultsCss = css.bind({ target: { querySelector: () => sheet } });
+  const rootClass = defaultsCss`
     @layer openui-defaults {
       :where(&:root) {
         ${themeToCssVars({ ...defaultLightTheme })}
