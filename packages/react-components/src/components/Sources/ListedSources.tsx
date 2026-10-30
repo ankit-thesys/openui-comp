@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Key, memo, useCallback, useRef, useState } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { Carousel, CarouselContent, CarouselRef } from "../Carousel";
 import { IconButton } from "../IconButton";
 import { listedSourcesStyles, names } from "./listedSources.styles";
@@ -15,7 +14,7 @@ export interface ListedSourcesProps {
 }
 
 export const ListedSources = memo((props: ListedSourcesProps) => {
-  const styles = useStyles(listedSourcesStyles);
+  const styles = listedSourcesStyles;
   const sources = props.sources ?? [];
 
   const ref = useRef<CarouselRef | null>(null);

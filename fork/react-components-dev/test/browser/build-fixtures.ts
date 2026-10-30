@@ -51,6 +51,7 @@ const fixtures = [
   "parity-separator",
   "smoke",
   "ssr-hydrate",
+  "streaming",
   "sheet",
   "import-registration",
   "button",
@@ -228,7 +229,7 @@ export default async function buildFixtures() {
     throw new Error("Build @openuidev/react-ui first: pnpm --filter @openuidev/react-ui... build");
   await bundle(entries(["bench-react-ui"]), "@openuidev/react-components", false);
   await bundle(
-    entries(["bench-server", "migrated-server"]),
+    entries(["bench-server", "migrated-server", "streaming-server"]),
     "@openuidev/react-components",
     false,
     "node",

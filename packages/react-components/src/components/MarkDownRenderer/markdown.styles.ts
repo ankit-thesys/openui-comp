@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 const primary = "var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))";
 const body = `
   font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
@@ -70,7 +71,7 @@ export const names = {
   },
 } as const;
 
-export const markdownStyles = (css: StyleCss) => ({
+export const markdownStyles = /*#__PURE__*/ {
   code: css`
     border-radius: 4px;
     padding: 2px 4px;
@@ -297,4 +298,4 @@ export const markdownStyles = (css: StyleCss) => ({
       }
     `,
   },
-});
+};

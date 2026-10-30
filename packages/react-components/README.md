@@ -560,29 +560,52 @@ component wrapping the application:
 ```tsx
 "use client";
 
-import { configureStyles, getComponentStyles } from "@openuidev/react-components";
+import { configureStyles, createStyleRegistry } from "@openuidev/react-components";
 import { useServerInsertedHTML } from "next/navigation";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 // Omit this call for unlayered styles. In layer mode, also put the layer-order tag first
 // in the root layout's <head>, before any stylesheet.
 configureStyles({ layer: "openui" });
 
 export function StyleRegistry({ children }: { children: ReactNode }) {
-  useServerInsertedHTML(() => (
-    <style id="openui-styles" dangerouslySetInnerHTML={{ __html: getComponentStyles() }} />
-  ));
+  const [registry] = useState(createStyleRegistry);
+  useServerInsertedHTML(() => {
+    const css = registry.flush();
+    return css ? <style id="openui-styles" dangerouslySetInnerHTML={{ __html: css }} /> : null;
+  });
   return children;
 }
 ```
 
-Keep the `openui-styles` id so the browser adopts the server tag; in layer mode it keeps the
-server's single `@layer` block and adds later rules inside it. Next.js calls the callback on
-every flush, and the sheet is cumulative, so each flush inserts another `openui-styles` tag with
-all rules registered so far; the browser adopts the first and the later copies repeat its rules.
-Use layer mode with streaming: tags streamed after the app's CSS would otherwise outrank it on
-equal-weight rules, while in a layer they stay below unlayered app CSS and later layers such as
-Tailwind's `utilities`.
+`createStyleRegistry()` returns a `StyleRegistry` with a `flush(): string` method. Create one
+registry per response (in React, keep it in state as above), never at module scope. Its first
+flush includes every rule registered so far, including cached/import-time styles; subsequent
+flushes return only newly registered rules, wrapped in the layer configured at flush time.
+A flush with nothing new returns `""`; the first flush always reserves the sheet, even if the
+store is empty. Every nonempty result starts with a harmless `/*openui-stream*/` comment and
+ends with `/*openui-stream-end*/`. Inline the result unchanged: the browser uses those markers to
+wait for the full payload when the network splits a style tag across chunks, the first tag
+included, before it reads, rewrites or removes that tag. `getComponentStyles()` remains cumulative and
+neither API drains the shared store. Concurrent responses keep independent flush positions;
+each may include a harmless superset of another response's rules.
+
+Keep the `openui-styles` id on **every** flush's style tag. The browser adopts the first tag in
+place, merges later streamed tags into it, and removes those later tags, including tags that
+arrived before hydration. The merge deduplicates complete rules against client registrations
+and strips each server layer wrapper before applying the configured layer once. This also
+works when streaming continues after the browser has loaded the library.
+
+Once the browser adopts the streamed rules, all of them occupy the first sheet's position, so
+app stylesheets after that first tag keep winning equal-weight ties in unlayered mode. Before
+JavaScript runs, late tags occupy their streamed positions. Next.js inserts the first tag at the
+end of `<head>`, after the app's stylesheets, so there unlayered component rules outrank
+equal-weight app CSS from the first paint on: use layer mode with Next.js (with the layer-order
+tag first in the root layout's `<head>`), so unlayered app CSS and Tailwind's `utilities` win
+wherever the sheet lands. In a renderer that writes `<head>` itself, inline the first flush
+before the app's stylesheets, as in the non-streaming recipe. Configure the same app-wide layer on server and client, and keep it fixed for
+the response. Theme defaults remain separate. For other React streaming integrations, call
+`registry.flush()` before each HTML insertion and insert a tag only when the result is nonempty.
 
 ### Math styles and fonts
 
@@ -716,8 +739,9 @@ performance.
 
 React/ReactDOM 19 are required. Zod 3.25+ or 4 and Zustand 4.5.5+ remain peer
 dependencies. Non-streaming server rendering is supported with `getComponentStyles()` (see
-[Server-rendered styles](#server-rendered-styles)). **Streaming SSR is deferred, and hydration is
-not supported yet.** Client-side OpenUI response streaming is a separate capability.
+[Server-rendered styles](#server-rendered-styles)). Streaming SSR and hydration use the per-response
+`createStyleRegistry()` pattern above.
+Client-side OpenUI response streaming is a separate capability.
 
 These behaviors carry over from `@openuidev/react-ui`:
 
