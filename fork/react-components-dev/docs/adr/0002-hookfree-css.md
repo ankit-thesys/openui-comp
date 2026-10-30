@@ -239,7 +239,7 @@ place. No observer watches later DOM changes.
 | Vite or another browser-only app, plain CSS / Tailwind 3 | Import components normally. No layer configuration. The library prepends its sheet after token defaults, ahead of app CSS; an empty `#openui-styles` can reserve its position. |
 | Browser-only app, Tailwind 4 | Put the layer-order statement first in head, then an empty `#openui-styles`. Call `configureStyles({ layer: "openui" })` once in the entry before the first browser write. |
 | Next.js App Router / React Server Components, Tailwind 4 | Render `<ComponentStyles layer="openui" />` once in the root layout. Start global CSS with `@layer theme, base, openui, components, utilities;` before importing Tailwind. The browser reads the layer from the server sheet; no registry or client configure call. |
-| Next.js App Router, unlayered / Tailwind 3 | Render `<ComponentStyles />` in the root layout. Import global CSS from a page or nested layout so Next places it after the component sheet; root-layout CSS imports would precede it and lose equal-weight ties. This order trick is pinned by the Tailwind 3 compatibility example's Playwright check. |
+| Next.js App Router, unlayered / Tailwind 3 | Render `<ComponentStyles />` in the root layout. Import global CSS from a page or nested layout so Next places it after the component sheet; root-layout CSS imports would precede it and lose equal-weight ties. This order trick is to be pinned by the Tailwind 3 compatibility example's Playwright check (#162, Tier 1); nothing on this branch checks it yet. |
 | Next.js Pages Router, React Router / Remix SSR, Gatsby or another renderer with document-head control | Import the `/styles` collector and inline its full result once before app stylesheets, before streaming begins. Pass `{ layer: "openui" }` for layer mode and put the order statement before the sheet. No incremental flush or per-response registry. |
 | A component library built on our public `css` | Ship its own `/styles` entry importing all of its style modules, retaining them through bundling, then call our `getComponentStyles()`. Apps inline that shared sheet, which includes both libraries' rules. |
 
@@ -263,8 +263,8 @@ place. No observer watches later DOM changes.
 - **Late configuration now warns.** This replaces the original “no warning” decision.
   Changing the layer after rules were written to the page, or returned by `getComponentStyles`
   on the server, logs `console.warn` in development. Existing page rules cannot be re-wrapped;
-  only future appends use the new layer. Setting the same layer again is silent, and production
-  logs nothing. Invalid names still warn only in development. There are no server-sheet or
+  only future appends use the new layer. Setting the same layer again is silent, as is setting
+  the layer a server sheet was read or returned in, and production logs nothing. Invalid names still warn only in development. There are no server-sheet or
   layer-order warnings; those setups are documented.
 - **UTF-8 server text.** Serve server HTML and its inline sheet as UTF-8. Goober deduplicates
   against exact text; an encoding change can corrupt non-ASCII CSS and cause duplicate rules.
