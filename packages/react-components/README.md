@@ -180,10 +180,13 @@ A rule of yours on a stable class, with the same state where you need one, there
 Load order: the token defaults' `@layer openui-defaults;` declaration and their own tag come first
 in `<head>`, then the component sheet, then your CSS. If you place `<style id="openui-styles">`
 yourself, the library appends its rules to it where it is; keep it before your stylesheets. The
-library only ever appends to its sheet, never rewrites it. The sheet gets `window.__nonce__` as
-its CSP nonce when one is set. The token-default tags carry React's `data-precedence` marker, so when
-React hydrates a server-rendered `<head>` (React Router, TanStack Start, Next) it skips them
-rather than matching your own `<style>` against them, and the library adds nothing to `<html>`.
+library only ever appends to its sheet, never rewrites it. When `window.__nonce__` is set before
+the library loads, every style tag it creates carries it as its CSP nonce from the start: the
+layer-order tag, the token defaults, the component sheet and ThemeProvider's theme tag. A
+`<style id="openui-styles">` you place yourself gets it too. The token-default tags carry React's
+`data-precedence` marker, so when React hydrates a server-rendered `<head>` (React Router,
+TanStack Start, Next) it skips them rather than matching your own `<style>` against them, and the
+library adds nothing to `<html>`.
 
 Your rule has to match the library's shape: a resting-state rule does not restyle `:hover`, and a
 rule in a named cascade layer loses to the unlayered library rules.
@@ -621,6 +624,11 @@ const page = `<!doctype html>
   library runs its own copy of Goober, so a host prefixer never rewrites component rules. Host
   Goober rules are not included; rules registered through the library's public `css` and `keyframes` at
   module level are.
+- Server-rendered markup holds `style` attributes: Radix primitives' (Select, Tabs) and sizing
+  props such as MiniLineChart's. A nonce never covers attributes, so a `style-src 'nonce-…'`
+  policy blocks them while the HTML is parsed, and React does not re-apply them on hydration
+  (MiniLineChart then renders at its intrinsic size). Under a strict policy, add
+  `style-src-attr 'unsafe-inline'`. Pass the nonce to the inline server sheet yourself.
 - ThemeProvider writes its theme variables in the browser, so a server-rendered first paint uses
   the components' built-in light values; `mode="dark"`, `lightTheme` and `darkTheme` apply once
   client JavaScript runs. Host `:root { --openui-… }` declarations in the app's own CSS apply from

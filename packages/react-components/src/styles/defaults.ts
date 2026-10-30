@@ -1,5 +1,6 @@
 import { defaultLightTheme } from "../components/ThemeProvider/defaultTheme";
 import { themeToCssVars } from "../components/ThemeProvider/utils";
+import { createStyleTag } from "./styleTag";
 
 if (typeof document !== "undefined") {
   // These tags go first in <head>, before React hydrates a server-rendered document (React Router,
@@ -9,7 +10,7 @@ if (typeof document !== "undefined") {
   const precedence = "openui-defaults";
 
   // Establish the defaults layer before host layers, regardless of import order.
-  const order = document.createElement("style");
+  const order = createStyleTag();
   order.setAttribute("data-openui-layer-order", "");
   order.setAttribute("data-precedence", precedence);
   order.textContent = "@layer openui-defaults;";
@@ -20,7 +21,7 @@ if (typeof document !== "undefined") {
   // server-rendered document would report as a hydration mismatch.
   let sheet = document.getElementById("openui-defaults");
   if (!sheet) {
-    sheet = document.createElement("style");
+    sheet = createStyleTag();
     sheet.id = "openui-defaults";
     order.after(sheet);
   }

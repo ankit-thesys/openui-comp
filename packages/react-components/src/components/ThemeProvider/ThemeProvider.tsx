@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useId, useInsertionEffect, useMemo } from "react";
+import { createStyleTag } from "../../styles/styleTag";
 import { defaultDarkTheme, defaultLightTheme } from "./defaultTheme";
 import { Theme, ThemeMode } from "./types";
 import { KNOWN_THEME_KEYS, themeToCssVars } from "./utils";
@@ -239,7 +240,7 @@ export const ThemeProvider = ({
 
   // Preserve the existing unlayered theme variables and portal selectors.
   useInsertionEffect(() => {
-    const style = document.createElement("style");
+    const style = createStyleTag();
     style.setAttribute("data-openui-theme", id);
     style.textContent = `${styleSelector}, .${portalClassName} { ${cssVarsString} }`;
     document.head.appendChild(style);

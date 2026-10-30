@@ -157,15 +157,21 @@ test("host Goober global replacement and extraction leave component rules alone"
 });
 
 // Serves `head` as the page's static <head>, before the sheet fixture's bundle loads.
-const openWithHead = async (page: Page, head: string, name = "sheet-head") => {
+const openWithHead = async (
+  page: Page,
+  head: string,
+  name = "sheet-head",
+  { headers = {}, script = "sheet" }: { headers?: Record<string, string>; script?: string } = {},
+) => {
   await page.route(`**/${name}.html`, (route) =>
     route.fulfill({
       contentType: "text/html",
-      body: `<!doctype html><html><head>${head}</head><body><script type="module" src="/sheet.js"></script></body></html>`,
+      headers,
+      body: `<!doctype html><html><head>${head}</head><body><script type="module" src="/${script}.js"></script></body></html>`,
     }),
   );
   await page.goto(`/${name}.html`);
-  await ready(page);
+  if (script === "sheet") await ready(page);
 };
 
 test("keeps a server-rendered sheet's rules when the client registers its own", async ({
@@ -240,4 +246,43 @@ test("gives its sheet the page's CSP nonce, created or adopted", async ({ page }
   expect(await page.evaluate(() => document.getElementById("openui-styles")!.nonce)).toBe(
     "adopted-nonce",
   );
+});
+
+// Under a nonce-only style-src, a style tag without the nonce is blocked for good, and one that
+// gets it only after insertion still reports a violation. Every tag the library writes, token
+// defaults and ThemeProvider included, must carry the nonce when it enters the document.
+test("writes every style tag with the CSP nonce under a nonce-only policy", async ({ page }) => {
+  await openWithHead(
+    page,
+    `<script>window.__nonce__ = "csp-nonce"; window.violations = [];
+document.addEventListener("securitypolicyviolation", (event) =>
+  window.violations.push(event.effectiveDirective + " " + event.sourceFile + ":" + event.lineNumber));</script>`,
+    "sheet-csp",
+    { headers: { "content-security-policy": "style-src 'nonce-csp-nonce'" }, script: "sheet-csp" },
+  );
+  type CspWindow = Window & {
+    sheetCspFixture?: { render(mode: "light" | "dark"): void };
+    violations?: string[];
+  };
+  await page.waitForFunction(() => !!(window as CspWindow).sheetCspFixture);
+  await page.evaluate(() => (window as CspWindow).sheetCspFixture!.render("dark"));
+  await expect(page.locator("i")).toHaveCSS("color", "rgb(7, 8, 9)");
+  const result = await page.evaluate(() => ({
+    violations: (window as CspWindow).violations,
+    tags: [...document.querySelectorAll("style")].map((tag) => ({
+      tag: tag.id || [...tag.attributes].map((attribute) => attribute.name).join(" "),
+      nonce: tag.nonce,
+      applied: !!tag.sheet,
+    })),
+    token: getComputedStyle(document.body).getPropertyValue("--openui-background").trim(),
+  }));
+  expect(result.violations).toEqual([]);
+  expect(result.tags.filter(({ nonce, applied }) => nonce !== "csp-nonce" || !applied)).toEqual([]);
+  expect(result.tags.map(({ tag }) => tag)).toEqual([
+    "data-openui-layer-order",
+    "openui-defaults",
+    "openui-styles",
+    "data-openui-theme",
+  ]);
+  expect(result.token).not.toBe("");
 });

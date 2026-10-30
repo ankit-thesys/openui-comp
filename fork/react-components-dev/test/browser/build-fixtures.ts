@@ -54,6 +54,7 @@ const fixtures = [
   "document-hydrate",
   "streaming",
   "sheet",
+  "sheet-csp",
   "import-registration",
   "button",
   "layers",
