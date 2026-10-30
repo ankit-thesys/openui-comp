@@ -1,0 +1,3846 @@
+{
+  "initial": {
+    "markup": [
+      "<span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\">",
+      "</span>",
+      "<div id=\"root\" data-aria-hidden=\"true\" aria-hidden=\"true\">",
+      "<div style=\"width: 240px;\">",
+      "<div class=\"openui-editable-table#0 openui-editable-table\" tabindex=\"0\">",
+      "<div class=\"openui-editable-table-scroll-control#0 openui-editable-table-scroll-control\" data-side=\"left\" data-disabled=\"false\">",
+      "<button class=\"openui-icon-button#0 openui-icon-button#1 openui-icon-button#2 openui-icon-button#3 openui-icon-button#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default\" aria-label=\"Scroll left\">",
+      "<span class=\"openui-icon-button-icon#0 openui-icon-button-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-left openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"m15 18-6-6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "<div class=\"openui-editable-table-scroll-control#0 openui-editable-table-scroll-control\" data-side=\"right\" data-disabled=\"true\">",
+      "<button class=\"openui-icon-button#0 openui-icon-button#1 openui-icon-button#2 openui-icon-button#3 openui-icon-button#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default\" aria-label=\"Scroll right\" disabled=\"\">",
+      "<span class=\"openui-icon-button-icon#0 openui-icon-button-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-right openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"m9 18 6-6-6-6\">",
+      "</path>",
+      "</svg>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "<div class=\"openui-editable-table-scroll-container#0 openui-editable-table-scroll-container\">",
+      "<table class=\"openui-editable-table-grid#0 openui-editable-table-grid\" data-scrollable=\"true\">",
+      "<thead class=\"openui-editable-table-grid-header\">",
+      "<tr class=\"openui-editable-table-header-row\">",
+      "<th class=\"openui-editable-table-head#0 openui-editable-table-head\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-header-container#0 openui-editable-table-header-container\">Name",
+      "<div class=\"openui-editable-table-header-icon#0 openui-editable-table-header-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-type openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"M12 4v16\">",
+      "</path>",
+      "<path d=\"M4 7V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2\">",
+      "</path>",
+      "<path d=\"M9 20h6\">",
+      "</path>",
+      "</svg>",
+      "</div>",
+      "</div>",
+      "</th>",
+      "<th class=\"openui-editable-table-head#0 openui-editable-table-head\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-header-container#0 openui-editable-table-header-container\">Amount",
+      "<div class=\"openui-editable-table-header-icon#0 openui-editable-table-header-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-type openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"M12 4v16\">",
+      "</path>",
+      "<path d=\"M4 7V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2\">",
+      "</path>",
+      "<path d=\"M9 20h6\">",
+      "</path>",
+      "</svg>",
+      "</div>",
+      "</div>",
+      "</th>",
+      "<th class=\"openui-editable-table-head#0 openui-editable-table-head\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-header-container#0 openui-editable-table-header-container\">URL",
+      "<div class=\"openui-editable-table-header-icon#0 openui-editable-table-header-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-link openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\">",
+      "</path>",
+      "<path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\">",
+      "</path>",
+      "</svg>",
+      "</div>",
+      "</div>",
+      "</th>",
+      "<th class=\"openui-editable-table-head#0 openui-editable-table-head\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-header-container#0 openui-editable-table-header-container\">Status",
+      "<div class=\"openui-editable-table-header-icon#0 openui-editable-table-header-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-list openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"M3 5h.01\">",
+      "</path>",
+      "<path d=\"M3 12h.01\">",
+      "</path>",
+      "<path d=\"M3 19h.01\">",
+      "</path>",
+      "<path d=\"M8 5h13\">",
+      "</path>",
+      "<path d=\"M8 12h13\">",
+      "</path>",
+      "<path d=\"M8 19h13\">",
+      "</path>",
+      "</svg>",
+      "</div>",
+      "</div>",
+      "</th>",
+      "</tr>",
+      "</thead>",
+      "<tbody class=\"openui-editable-table-grid-body\">",
+      "<tr class=\"openui-editable-table-row#0 openui-editable-table-row\">",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"idle\">",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<span class=\"openui-editable-table-display-text#0 openui-editable-table-display-text\">Ada",
+      "</span>",
+      "</div>",
+      "</td>",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"idle\">",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<span class=\"openui-editable-table-display-number#0 openui-editable-table-display-number\">42",
+      "</span>",
+      "</div>",
+      "</td>",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"idle\">",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<div class=\"openui-editable-table-display-url-container#0 openui-editable-table-display-url-container\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-link openui-editable-table-display-url-icon#0 openui-editable-table-display-url-icon\" aria-hidden=\"true\">",
+      "<path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\">",
+      "</path>",
+      "<path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\">",
+      "</path>",
+      "</svg>",
+      "<a href=\"https://example.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"openui-editable-table-display-url#0 openui-editable-table-display-url\">https://example.com",
+      "</a>",
+      "</div>",
+      "</div>",
+      "</td>",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"editing\">",
+      "<div data-state=\"editing\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"editing\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"editing\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"editing\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<button type=\"button\" role=\"combobox\" aria-expanded=\"true\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"open\" class=\"openui-editable-table-select-trigger#0 openui-editable-table-select-trigger\" aria-controls=\"radix-react-id-0\" data-radix-popper-side=\"bottom\" data-radix-popper-align=\"start\">",
+      "<span class=\"openui-editable-table-select-value\">",
+      "<span style=\"pointer-events: none;\">Ready",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-editable-table-select-icon#0 openui-editable-table-select-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "</div>",
+      "</td>",
+      "</tr>",
+      "<tr class=\"openui-editable-table-row#0 openui-editable-table-row\">",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"idle\">",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<span class=\"openui-editable-table-display-text#0 openui-editable-table-display-text\">Grace",
+      "</span>",
+      "</div>",
+      "</td>",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"idle\">",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<span class=\"openui-editable-table-display-number#0 openui-editable-table-display-number\">43",
+      "</span>",
+      "</div>",
+      "</td>",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"idle\">",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<div class=\"openui-editable-table-display-url-container#0 openui-editable-table-display-url-container\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-link openui-editable-table-display-url-icon#0 openui-editable-table-display-url-icon\" aria-hidden=\"true\">",
+      "<path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\">",
+      "</path>",
+      "<path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\">",
+      "</path>",
+      "</svg>",
+      "<a href=\"not a url\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"openui-editable-table-display-url#0 openui-editable-table-display-url\">not a url",
+      "</a>",
+      "<div class=\"openui-editable-table-display-url-warning\" data-state=\"closed\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-info openui-editable-table-display-url-warning-icon#0 openui-editable-table-display-url-warning-icon\" aria-hidden=\"true\">",
+      "<circle cx=\"12\" cy=\"12\" r=\"10\">",
+      "</circle>",
+      "<path d=\"M12 16v-4\">",
+      "</path>",
+      "<path d=\"M12 8h.01\">",
+      "</path>",
+      "</svg>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</td>",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"idle\">",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<button type=\"button\" role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-editable-table-select-trigger#0 openui-editable-table-select-trigger\">",
+      "<span class=\"openui-editable-table-select-value\">",
+      "<span style=\"pointer-events: none;\">Pending",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-editable-table-select-icon#0 openui-editable-table-select-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "</div>",
+      "</td>",
+      "</tr>",
+      "</tbody>",
+      "</table>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-editable-table-changes-container#0 openui-editable-table-changes-container\">",
+      "<div class=\"openui-editable-table-changes-count#0 openui-editable-table-changes-count\">2 changes made",
+      "</div>",
+      "<div class=\"openui-editable-table-changes-buttons#0 openui-editable-table-changes-buttons\">",
+      "<button class=\"openui-button#0 openui-button#1 openui-button#2 openui-button#3 openui-button openui-button--variant-secondary openui-button--size-small openui-button--tone-default\">",
+      "<span class=\"openui-button-icon#0 openui-button-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-rotate-ccw openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\">",
+      "</path>",
+      "<path d=\"M3 3v5h5\">",
+      "</path>",
+      "</svg>",
+      "</span>Reset",
+      "</button>",
+      "<button class=\"openui-button#0 openui-button#4 openui-button#2 openui-button#3 openui-button openui-button--variant-primary openui-button--size-small openui-button--tone-default\">",
+      "<span class=\"openui-button-icon#0 openui-button-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"M20 6 9 17l-5-5\">",
+      "</path>",
+      "</svg>",
+      "</span>Save Changes",
+      "</button>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<script type=\"module\" src=\"/elements.js\">",
+      "</script>",
+      "<div data-radix-popper-content-wrapper=\"\" dir=\"ltr\" style=\"position: fixed; left: 0px; top: 0px; transform: translate(83px, 100px); min-width: max-content; --radix-popper-transform-origin: 0% 0px; z-index: 99999; --radix-popper-available-width: 1260px; --radix-popper-available-height: 610px; --radix-popper-anchor-width: 144px; --radix-popper-anchor-height: 33px;\">",
+      "<div data-side=\"bottom\" data-align=\"start\" role=\"listbox\" id=\"radix-react-id-0\" data-state=\"open\" dir=\"ltr\" class=\"openui-editable-table-select-content#0 openui-editable-table-select-content\" tabindex=\"-1\" style=\"box-sizing: border-box; display: flex; flex-direction: column; outline: none; --radix-select-content-transform-origin: var(--radix-popper-transform-origin); --radix-select-content-available-width: var(--radix-popper-available-width); --radix-select-content-available-height: var(--radix-popper-available-height); --radix-select-trigger-width: var(--radix-popper-anchor-width); --radix-select-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;\">",
+      "<style>[data-radix-select-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-select-viewport]::-webkit-scrollbar{display:none}",
+      "</style>",
+      "<div data-radix-select-viewport=\"\" role=\"presentation\" class=\"openui-editable-table-select-viewport#0 openui-editable-table-select-viewport\" style=\"position: relative; flex: 1 1 0%; overflow: hidden auto;\">",
+      "<div role=\"option\" aria-labelledby=\"radix-react-id-1\" aria-selected=\"true\" data-state=\"checked\" tabindex=\"-1\" class=\"openui-editable-table-select-item#0 openui-editable-table-select-item\" data-radix-collection-item=\"\" data-highlighted=\"\">",
+      "<span class=\"openui-editable-table-select-check-wrapper#0 openui-editable-table-select-check-wrapper\">",
+      "<span aria-hidden=\"true\" class=\"openui-editable-table-select-indicator\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check openui-editable-table-select-check-icon#0 openui-editable-table-select-check-icon\" aria-hidden=\"true\">",
+      "<path d=\"M20 6 9 17l-5-5\">",
+      "</path>",
+      "</svg>",
+      "</span>",
+      "</span>",
+      "<span class=\"openui-editable-table-select-item-text\">",
+      "<span id=\"radix-react-id-1\">Ready",
+      "</span>",
+      "</span>",
+      "</div>",
+      "<div role=\"option\" aria-labelledby=\"radix-react-id-2\" aria-selected=\"false\" data-state=\"unchecked\" tabindex=\"-1\" class=\"openui-editable-table-select-item#0 openui-editable-table-select-item\" data-radix-collection-item=\"\">",
+      "<span class=\"openui-editable-table-select-check-wrapper#0 openui-editable-table-select-check-wrapper\">",
+      "</span>",
+      "<span class=\"openui-editable-table-select-item-text\">",
+      "<span id=\"radix-react-id-2\">Pending",
+      "</span>",
+      "</span>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<span data-radix-focus-guard=\"\" tabindex=\"0\" data-aria-hidden=\"true\" aria-hidden=\"true\" style=\"outline: none; opacity: 0; position: fixed; pointer-events: none;\">",
+      "</span>"
+    ],
+    "rules": {
+      "@keyframes": [
+        {
+          "selector": "@keyframes _openui-editable-table-select-show",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:scale(0.95)",
+            "}to{opacity:1",
+            "transform:scale(1)",
+            "}"
+          ]
+        }
+      ],
+      "openui-button-icon#0": [
+        {
+          "selector": ".openui-button-icon#0",
+          "conditions": [],
+          "declarations": ["display:inline-flex"]
+        }
+      ],
+      "openui-button#0": [
+        {
+          "selector": ".openui-button#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "font:var(--openui-text-label-default, 400 16px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "border-radius:var(--openui-radius-l, 10px)",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "display:flex",
+            "gap:var(--openui-space-xs, 6px)",
+            "align-items:center"
+          ]
+        },
+        {
+          "selector": ":where(.openui-button#0) svg",
+          "conditions": [],
+          "declarations": ["height:1em", "width:1em"]
+        }
+      ],
+      "openui-button#1": [
+        {
+          "selector": ".openui-button#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-secondary-bg)",
+            "color:var(--_openui-button-secondary-fg)",
+            "border-color:var(--_openui-button-secondary-border)",
+            "box-shadow:var(--_openui-button-secondary-shadow)"
+          ]
+        },
+        {
+          "selector": ".openui-button#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-secondary-hover-bg)",
+            "box-shadow:none"
+          ]
+        },
+        {
+          "selector": ".openui-button#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-button-secondary-active-bg)"]
+        },
+        {
+          "selector": ".openui-button#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-secondary-disabled-bg)",
+            "color:var(--_openui-button-secondary-disabled-fg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ]
+        }
+      ],
+      "openui-button#2": [
+        {
+          "selector": ".openui-button#2",
+          "conditions": [],
+          "declarations": [
+            "border-radius:calc(var(--openui-radius-s, 6px) + 1px)",
+            "padding:calc(var(--openui-space-s, 8px) - 1.75px) var(--openui-space-s-m, 10px)",
+            "font:var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        }
+      ],
+      "openui-button#3": [
+        {
+          "selector": ".openui-button#3",
+          "conditions": [],
+          "declarations": [
+            "--_openui-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-button-primary-fg:var(--openui-text-accent-primary, oklch(0.994 0 89.876 / 1))",
+            "--_openui-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-button-secondary-bg:transparent",
+            "--_openui-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-secondary-disabled-bg:transparent",
+            "--_openui-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ]
+        }
+      ],
+      "openui-button#4": [
+        {
+          "selector": ".openui-button#4",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-bg)",
+            "color:var(--_openui-button-primary-fg)",
+            "border-color:var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08))",
+            "box-shadow:var(--_openui-button-primary-shadow)"
+          ]
+        },
+        {
+          "selector": ".openui-button#4:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-hover-bg)",
+            "box-shadow:none"
+          ]
+        },
+        {
+          "selector": ".openui-button#4:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-button-primary-active-bg)"]
+        },
+        {
+          "selector": ".openui-button#4:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-disabled-bg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ]
+        }
+      ],
+      "openui-editable-table-cell-base#0": [
+        {
+          "selector": ".openui-editable-table-cell-base#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:content-box",
+            "position:relative",
+            "width:100%",
+            "height:100%",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-m, 12px)",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "outline:none"
+          ]
+        }
+      ],
+      "openui-editable-table-cell-outline-bottom#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-bottom#0",
+          "conditions": [],
+          "declarations": ["bottom:0"]
+        }
+      ],
+      "openui-editable-table-cell-outline-left#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-left#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "top:0",
+            "width:0px",
+            "height:100%",
+            "background-color:var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1))"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-left#0[data-state=\"selected\"]",
+          "conditions": [],
+          "declarations": ["width:1px"]
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-left#0[data-state=\"editing\"]",
+          "conditions": [],
+          "declarations": ["width:1.5px"]
+        }
+      ],
+      "openui-editable-table-cell-outline-left#1": [
+        {
+          "selector": ".openui-editable-table-cell-outline-left#1",
+          "conditions": [],
+          "declarations": ["left:0"]
+        }
+      ],
+      "openui-editable-table-cell-outline-right#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-right#0",
+          "conditions": [],
+          "declarations": ["right:0"]
+        }
+      ],
+      "openui-editable-table-cell-outline-top#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-top#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "left:0",
+            "width:100%",
+            "height:0px",
+            "background-color:var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1))"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-top#0[data-state=\"selected\"]",
+          "conditions": [],
+          "declarations": ["height:1px"]
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-top#0[data-state=\"editing\"]",
+          "conditions": [],
+          "declarations": ["height:1.5px"]
+        }
+      ],
+      "openui-editable-table-cell-outline-top#1": [
+        {
+          "selector": ".openui-editable-table-cell-outline-top#1",
+          "conditions": [],
+          "declarations": ["top:0"]
+        }
+      ],
+      "openui-editable-table-cell#0": [
+        {
+          "selector": ".openui-editable-table-cell#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:content-box",
+            "height:48px",
+            "padding:0",
+            "border-right:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "vertical-align:middle",
+            "white-space:nowrap",
+            "width:var(--_openui-editable-table-column-width)"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-cell#0:last-child",
+          "conditions": [],
+          "declarations": ["border-right:0"]
+        }
+      ],
+      "openui-editable-table-changes-buttons#0": [
+        {
+          "selector": ".openui-editable-table-changes-buttons#0",
+          "conditions": [],
+          "declarations": ["display:flex", "flex-direction:row", "gap:var(--openui-space-s, 8px)"]
+        }
+      ],
+      "openui-editable-table-changes-container#0": [
+        {
+          "selector": ".openui-editable-table-changes-container#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-direction:row",
+            "gap:var(--openui-space-s, 8px)",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-s, 8px) var(--openui-space-s, 8px) var(--openui-space-m, 12px)",
+            "justify-content:space-between",
+            "align-items:center",
+            "background-color:var(--openui-elevated, oklch(0.097 0 0 / 0.08))",
+            "border-radius:var(--openui-radius-xl, 12px)",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "box-shadow:var( --openui-shadow-s, 0 1px 3px -2px oklch(0 0 0 / 0.02), 0 2px 5px -2px oklch(0 0 0 / 0.04) )"
+          ]
+        }
+      ],
+      "openui-editable-table-changes-count#0": [
+        {
+          "selector": ".openui-editable-table-changes-count#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        }
+      ],
+      "openui-editable-table-display-number#0": [
+        {
+          "selector": ".openui-editable-table-display-number#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "width:calc(100% - var(--openui-space-m, 12px) * 2)",
+            "left:var(--openui-space-m, 12px)",
+            "top:50%",
+            "transform:translateY(-50%)",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "text-align:right",
+            "font:var(--openui-text-numbers-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-numbers-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        }
+      ],
+      "openui-editable-table-display-text#0": [
+        {
+          "selector": ".openui-editable-table-display-text#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "width:calc(100% - var(--openui-space-m, 12px) * 2)",
+            "left:var(--openui-space-m, 12px)",
+            "top:50%",
+            "transform:translateY(-50%)",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        }
+      ],
+      "openui-editable-table-display-url-container#0": [
+        {
+          "selector": ".openui-editable-table-display-url-container#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "gap:var(--openui-space-s, 8px)",
+            "position:absolute",
+            "width:calc(100% - var(--openui-space-m, 12px) * 2)",
+            "left:var(--openui-space-m, 12px)",
+            "top:50%",
+            "transform:translateY(-50%)"
+          ]
+        }
+      ],
+      "openui-editable-table-display-url-icon#0": [
+        {
+          "selector": ".openui-editable-table-display-url-icon#0",
+          "conditions": [],
+          "declarations": [
+            "flex-shrink:0",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"
+          ]
+        }
+      ],
+      "openui-editable-table-display-url-warning-icon#0": [
+        {
+          "selector": ".openui-editable-table-display-url-warning-icon#0",
+          "conditions": [],
+          "declarations": [
+            "flex-shrink:0",
+            "color:var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1))",
+            "display:none"
+          ]
+        }
+      ],
+      "openui-editable-table-display-url#0": [
+        {
+          "selector": ".openui-editable-table-display-url#0",
+          "conditions": [],
+          "declarations": [
+            "display:block",
+            "flex:1 1 auto",
+            "min-width:0",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-display-url#0:hover",
+          "conditions": [],
+          "declarations": ["text-decoration:underline"]
+        }
+      ],
+      "openui-editable-table-grid#0": [
+        {
+          "selector": ".openui-editable-table-grid#0",
+          "conditions": [],
+          "declarations": ["border-collapse:collapse", "width:100%"]
+        },
+        {
+          "selector": ".openui-editable-table-grid#0[data-scrollable=\"true\"]",
+          "conditions": [],
+          "declarations": ["width:max-content"]
+        }
+      ],
+      "openui-editable-table-head#0": [
+        {
+          "selector": ".openui-editable-table-head#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:content-box",
+            "text-align:left",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-m, 12px)",
+            "border-right:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "height:48px",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "width:var(--_openui-editable-table-column-width)"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-head#0:last-child",
+          "conditions": [],
+          "declarations": ["border-right:0"]
+        }
+      ],
+      "openui-editable-table-header-container#0": [
+        {
+          "selector": ".openui-editable-table-header-container#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "gap:var(--openui-space-s, 8px)"
+          ]
+        }
+      ],
+      "openui-editable-table-header-icon#0": [
+        {
+          "selector": ".openui-editable-table-header-icon#0",
+          "conditions": [],
+          "declarations": ["flex-shrink:0"]
+        }
+      ],
+      "openui-editable-table-row#0": [
+        {
+          "selector": ".openui-editable-table-row#0",
+          "conditions": [],
+          "declarations": [
+            "border-bottom:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-row#0:last-child",
+          "conditions": [],
+          "declarations": ["border-bottom:0"]
+        }
+      ],
+      "openui-editable-table-scroll-container#0": [
+        {
+          "selector": ".openui-editable-table-scroll-container#0",
+          "conditions": [],
+          "declarations": ["overflow:auto", "scrollbar-width:none", "ms-overflow-style:none"]
+        },
+        {
+          "selector": ".openui-editable-table-scroll-container#0::-webkit-scrollbar",
+          "conditions": [],
+          "declarations": ["display:none"]
+        }
+      ],
+      "openui-editable-table-scroll-control#0": [
+        {
+          "selector": ".openui-editable-table-scroll-control#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "top:var(--openui-space-s, 8px)",
+            "z-index:1",
+            "width:fit-content",
+            "height:fit-content",
+            "border-radius:var(--openui-radius-s, 6px)",
+            "background-color:var(--openui-elevated, oklch(0.097 0 0 / 0.08))",
+            "cursor:pointer"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-scroll-control#0[data-side=\"left\"]",
+          "conditions": [],
+          "declarations": ["left:var(--openui-space-s, 8px)"]
+        },
+        {
+          "selector": ".openui-editable-table-scroll-control#0[data-side=\"right\"]",
+          "conditions": [],
+          "declarations": ["right:var(--openui-space-s, 8px)"]
+        },
+        {
+          "selector": ".openui-editable-table-scroll-control#0[data-disabled=\"true\"]",
+          "conditions": [],
+          "declarations": ["cursor:not-allowed", "display:none"]
+        }
+      ],
+      "openui-editable-table-select-check-icon#0": [
+        {
+          "selector": ".openui-editable-table-select-check-icon#0",
+          "conditions": [],
+          "declarations": ["height:16px", "width:16px"]
+        }
+      ],
+      "openui-editable-table-select-check-wrapper#0": [
+        {
+          "selector": ".openui-editable-table-select-check-wrapper#0",
+          "conditions": [],
+          "declarations": ["position:absolute", "right:8px", "height:14px", "width:14px"]
+        }
+      ],
+      "openui-editable-table-select-content#0": [
+        {
+          "selector": ".openui-editable-table-select-content#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "position:relative",
+            "z-index:99999",
+            "max-height:372px",
+            "min-width:var(--radix-select-trigger-width)",
+            "overflow:hidden",
+            "border:none",
+            "border-radius:var(--openui-radius-2xl, 14px)",
+            "background-color:color-mix( in oklch, var(--openui-foreground, oklch(0.994 0 89.876 / 1)), var(--openui-text-white, oklch(1 0 89.876 / 1)) 6% )",
+            "box-shadow:0 0 0 1px color-mix( in oklch, var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)) 6%, transparent ), 0 4px 12px -2px oklch(0 0 0 / 0.05), 0 16px 32px -8px oklch(0 0 0 / 0.08)",
+            "padding:0",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "transform-origin:top center",
+            "animation:_openui-editable-table-select-show 0.18s ease-out forwards"
+          ]
+        }
+      ],
+      "openui-editable-table-select-icon#0": [
+        {
+          "selector": ".openui-editable-table-select-icon#0",
+          "conditions": [],
+          "declarations": [
+            "height:16px",
+            "width:16px",
+            "transition:transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+            "transform:rotate(var(--_openui-editable-table-select-icon-rotation, 0deg))"
+          ]
+        }
+      ],
+      "openui-editable-table-select-item#0": [
+        {
+          "selector": ".openui-editable-table-select-item#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "box-sizing:border-box",
+            "position:relative",
+            "display:flex",
+            "cursor:default",
+            "user-select:none",
+            "align-items:center",
+            "justify-content:space-between",
+            "height:32px",
+            "padding:0 var(--openui-space-xl, 24px) 0 var(--openui-space-m-l, 16px)",
+            "border-radius:0",
+            "outline:none",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-select-item#0:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-select-item#0:focus",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-select-item#0[data-highlighted]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"]
+        },
+        {
+          "selector": ".openui-editable-table-select-item#0[data-state=\"checked\"]",
+          "conditions": [],
+          "declarations": ["background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))"]
+        },
+        {
+          "selector": ".openui-editable-table-select-item#0[data-disabled]",
+          "conditions": [],
+          "declarations": ["pointer-events:none", "opacity:0.5"]
+        }
+      ],
+      "openui-editable-table-select-trigger#0": [
+        {
+          "selector": ".openui-editable-table-select-trigger#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "width:100%",
+            "box-sizing:border-box",
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "outline:none",
+            "display:inline-flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "gap:var(--openui-space-s, 8px)",
+            "padding:calc(var(--openui-space-xs, 6px) - 1px) calc(var(--openui-space-m, 12px) - 1px)",
+            "border-radius:var(--openui-radius-m, 8px)"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0[data-placeholder]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"]
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0:hover",
+          "conditions": [],
+          "declarations": [
+            "background:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0[data-state=\"open\"]",
+          "conditions": [],
+          "declarations": [
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-editable-table-select-icon-rotation:180deg"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "border-color:var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "cursor:not-allowed",
+            "--_openui-editable-table-select-icon-rotation:0deg"
+          ]
+        }
+      ],
+      "openui-editable-table-select-viewport#0": [
+        {
+          "selector": ".openui-editable-table-select-viewport#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "padding:var(--openui-space-2xs, 4px) 0",
+            "width:100%",
+            "border-bottom-left-radius:calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px))",
+            "border-bottom-right-radius:calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px))"
+          ]
+        }
+      ],
+      "openui-editable-table#0": [
+        {
+          "selector": ".openui-editable-table#0",
+          "conditions": [],
+          "declarations": [
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "border-radius:var(--openui-radius-xl, 12px) var(--openui-radius-xl, 12px) 0 0",
+            "overflow:hidden",
+            "position:relative"
+          ]
+        }
+      ],
+      "openui-icon-button-icon#0": [
+        {
+          "selector": ".openui-icon-button-icon#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:var(--_openui-icon-button-icon-size)",
+            "height:var(--_openui-icon-button-icon-size)"
+          ]
+        }
+      ],
+      "openui-icon-button#0": [
+        {
+          "selector": ".openui-icon-button#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "padding:0",
+            "flex-shrink:0"
+          ]
+        }
+      ],
+      "openui-icon-button#1": [
+        {
+          "selector": ".openui-icon-button#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-bg)",
+            "color:var(--_openui-icon-button-secondary-fg)",
+            "border-color:var(--_openui-icon-button-secondary-border)",
+            "box-shadow:var(--_openui-icon-button-secondary-shadow)"
+          ]
+        },
+        {
+          "selector": ".openui-icon-button#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-hover-bg)",
+            "box-shadow:none"
+          ]
+        },
+        {
+          "selector": ".openui-icon-button#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-icon-button-secondary-active-bg)"]
+        },
+        {
+          "selector": ".openui-icon-button#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-disabled-bg)",
+            "color:var(--_openui-icon-button-secondary-disabled-fg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ]
+        }
+      ],
+      "openui-icon-button#2": [
+        {
+          "selector": ".openui-icon-button#2",
+          "conditions": [],
+          "declarations": [
+            "width:32px",
+            "height:32px",
+            "--_openui-icon-button-icon-size:16px",
+            "--_openui-icon-button-square-radius:calc(var(--openui-radius-s, 6px) + 1px)"
+          ]
+        }
+      ],
+      "openui-icon-button#3": [
+        {
+          "selector": ".openui-icon-button#3",
+          "conditions": [],
+          "declarations": ["border-radius:var(--_openui-icon-button-square-radius)"]
+        }
+      ],
+      "openui-icon-button#4": [
+        {
+          "selector": ".openui-icon-button#4",
+          "conditions": [],
+          "declarations": [
+            "--_openui-icon-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-fg:var( --openui-text-accent-primary, oklch(0.994 0 89.876 / 1) )",
+            "--_openui-icon-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-icon-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-icon-button-secondary-bg:transparent",
+            "--_openui-icon-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-disabled-bg:transparent",
+            "--_openui-icon-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ]
+        }
+      ]
+    },
+    "order": [
+      "Button/button.styles.mjs: openui-button#0 < openui-button#1 < openui-button#2 < openui-button#3",
+      "Button/button.styles.mjs: openui-button#0 < openui-button#4 < openui-button#2 < openui-button#3",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-left#0 < openui-editable-table-cell-outline-left#1",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-left#0 < openui-editable-table-cell-outline-right#0",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-top#0 < openui-editable-table-cell-outline-bottom#0",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-top#0 < openui-editable-table-cell-outline-top#1",
+      "IconButton/iconButton.styles.mjs: openui-icon-button#0 < openui-icon-button#1 < openui-icon-button#2 < openui-icon-button#3 < openui-icon-button#4"
+    ]
+  },
+  "openui-editable-table-cell-input": {
+    "markup": [
+      "<div id=\"root\">",
+      "<div style=\"width: 240px;\">",
+      "<div class=\"openui-editable-table#0 openui-editable-table\" tabindex=\"0\">",
+      "<div class=\"openui-editable-table-scroll-control#0 openui-editable-table-scroll-control\" data-side=\"left\" data-disabled=\"true\">",
+      "<button class=\"openui-icon-button#0 openui-icon-button#1 openui-icon-button#2 openui-icon-button#3 openui-icon-button#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default\" aria-label=\"Scroll left\" disabled=\"\">",
+      "<span class=\"openui-icon-button-icon#0 openui-icon-button-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-left openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"m15 18-6-6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "<div class=\"openui-editable-table-scroll-control#0 openui-editable-table-scroll-control\" data-side=\"right\" data-disabled=\"false\">",
+      "<button class=\"openui-icon-button#0 openui-icon-button#1 openui-icon-button#2 openui-icon-button#3 openui-icon-button#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default\" aria-label=\"Scroll right\">",
+      "<span class=\"openui-icon-button-icon#0 openui-icon-button-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-right openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"m9 18 6-6-6-6\">",
+      "</path>",
+      "</svg>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "<div class=\"openui-editable-table-scroll-container#0 openui-editable-table-scroll-container\">",
+      "<table class=\"openui-editable-table-grid#0 openui-editable-table-grid\" data-scrollable=\"true\">",
+      "<thead class=\"openui-editable-table-grid-header\">",
+      "<tr class=\"openui-editable-table-header-row\">",
+      "<th class=\"openui-editable-table-head#0 openui-editable-table-head\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-header-container#0 openui-editable-table-header-container\">Name",
+      "<div class=\"openui-editable-table-header-icon#0 openui-editable-table-header-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-type openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"M12 4v16\">",
+      "</path>",
+      "<path d=\"M4 7V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2\">",
+      "</path>",
+      "<path d=\"M9 20h6\">",
+      "</path>",
+      "</svg>",
+      "</div>",
+      "</div>",
+      "</th>",
+      "<th class=\"openui-editable-table-head#0 openui-editable-table-head\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-header-container#0 openui-editable-table-header-container\">Amount",
+      "<div class=\"openui-editable-table-header-icon#0 openui-editable-table-header-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-type openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"M12 4v16\">",
+      "</path>",
+      "<path d=\"M4 7V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2\">",
+      "</path>",
+      "<path d=\"M9 20h6\">",
+      "</path>",
+      "</svg>",
+      "</div>",
+      "</div>",
+      "</th>",
+      "<th class=\"openui-editable-table-head#0 openui-editable-table-head\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-header-container#0 openui-editable-table-header-container\">URL",
+      "<div class=\"openui-editable-table-header-icon#0 openui-editable-table-header-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-link openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\">",
+      "</path>",
+      "<path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\">",
+      "</path>",
+      "</svg>",
+      "</div>",
+      "</div>",
+      "</th>",
+      "<th class=\"openui-editable-table-head#0 openui-editable-table-head\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-header-container#0 openui-editable-table-header-container\">Status",
+      "<div class=\"openui-editable-table-header-icon#0 openui-editable-table-header-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-list openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"M3 5h.01\">",
+      "</path>",
+      "<path d=\"M3 12h.01\">",
+      "</path>",
+      "<path d=\"M3 19h.01\">",
+      "</path>",
+      "<path d=\"M8 5h13\">",
+      "</path>",
+      "<path d=\"M8 12h13\">",
+      "</path>",
+      "<path d=\"M8 19h13\">",
+      "</path>",
+      "</svg>",
+      "</div>",
+      "</div>",
+      "</th>",
+      "</tr>",
+      "</thead>",
+      "<tbody class=\"openui-editable-table-grid-body\">",
+      "<tr class=\"openui-editable-table-row#0 openui-editable-table-row\">",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"editing\">",
+      "<div data-state=\"editing\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"editing\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"editing\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"editing\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<input class=\"openui-editable-table-cell-input#0 openui-editable-table-cell-input\" type=\"text\" value=\"Ada\">",
+      "</div>",
+      "</td>",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"idle\">",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<span class=\"openui-editable-table-display-number#0 openui-editable-table-display-number\">42",
+      "</span>",
+      "</div>",
+      "</td>",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"idle\">",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<div class=\"openui-editable-table-display-url-container#0 openui-editable-table-display-url-container\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-link openui-editable-table-display-url-icon#0 openui-editable-table-display-url-icon\" aria-hidden=\"true\">",
+      "<path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\">",
+      "</path>",
+      "<path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\">",
+      "</path>",
+      "</svg>",
+      "<a href=\"https://example.com\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"openui-editable-table-display-url#0 openui-editable-table-display-url\">https://example.com",
+      "</a>",
+      "</div>",
+      "</div>",
+      "</td>",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"idle\">",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<button type=\"button\" role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-editable-table-select-trigger#0 openui-editable-table-select-trigger\">",
+      "<span class=\"openui-editable-table-select-value\">",
+      "<span style=\"pointer-events: none;\">Ready",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-editable-table-select-icon#0 openui-editable-table-select-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "</div>",
+      "</td>",
+      "</tr>",
+      "<tr class=\"openui-editable-table-row#0 openui-editable-table-row\">",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"idle\">",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<span class=\"openui-editable-table-display-text#0 openui-editable-table-display-text\">Grace",
+      "</span>",
+      "</div>",
+      "</td>",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"idle\">",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<span class=\"openui-editable-table-display-number#0 openui-editable-table-display-number\">43",
+      "</span>",
+      "</div>",
+      "</td>",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"idle\">",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<div class=\"openui-editable-table-display-url-container#0 openui-editable-table-display-url-container\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-link openui-editable-table-display-url-icon#0 openui-editable-table-display-url-icon\" aria-hidden=\"true\">",
+      "<path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\">",
+      "</path>",
+      "<path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\">",
+      "</path>",
+      "</svg>",
+      "<a href=\"not a url\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"openui-editable-table-display-url#0 openui-editable-table-display-url\">not a url",
+      "</a>",
+      "<div class=\"openui-editable-table-display-url-warning\" data-state=\"closed\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-info openui-editable-table-display-url-warning-icon#0 openui-editable-table-display-url-warning-icon\" aria-hidden=\"true\">",
+      "<circle cx=\"12\" cy=\"12\" r=\"10\">",
+      "</circle>",
+      "<path d=\"M12 16v-4\">",
+      "</path>",
+      "<path d=\"M12 8h.01\">",
+      "</path>",
+      "</svg>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</td>",
+      "<td class=\"openui-editable-table-cell#0 openui-editable-table-cell\" style=\"--_openui-editable-table-column-width: 120px;\">",
+      "<div class=\"openui-editable-table-cell-base#0 openui-editable-table-cell-base\" tabindex=\"0\" data-state=\"idle\">",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-top#1 openui-editable-table-cell-outline-top\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-top#0 openui-editable-table-cell-outline-bottom#0 openui-editable-table-cell-outline-bottom\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-left#1 openui-editable-table-cell-outline-left\">",
+      "</div>",
+      "<div data-state=\"idle\" class=\"openui-editable-table-cell-outline-left#0 openui-editable-table-cell-outline-right#0 openui-editable-table-cell-outline-right\">",
+      "</div>",
+      "<button type=\"button\" role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-editable-table-select-trigger#0 openui-editable-table-select-trigger\">",
+      "<span class=\"openui-editable-table-select-value\">",
+      "<span style=\"pointer-events: none;\">Pending",
+      "</span>",
+      "</span>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-editable-table-select-icon#0 openui-editable-table-select-icon\" aria-hidden=\"true\">",
+      "<path d=\"m6 9 6 6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "</div>",
+      "</td>",
+      "</tr>",
+      "</tbody>",
+      "</table>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-editable-table-changes-container#0 openui-editable-table-changes-container\">",
+      "<div class=\"openui-editable-table-changes-count#0 openui-editable-table-changes-count\">2 changes made",
+      "</div>",
+      "<div class=\"openui-editable-table-changes-buttons#0 openui-editable-table-changes-buttons\">",
+      "<button class=\"openui-button#0 openui-button#1 openui-button#2 openui-button#3 openui-button openui-button--variant-secondary openui-button--size-small openui-button--tone-default\">",
+      "<span class=\"openui-button-icon#0 openui-button-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-rotate-ccw openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\">",
+      "</path>",
+      "<path d=\"M3 3v5h5\">",
+      "</path>",
+      "</svg>",
+      "</span>Reset",
+      "</button>",
+      "<button class=\"openui-button#0 openui-button#4 openui-button#2 openui-button#3 openui-button openui-button--variant-primary openui-button--size-small openui-button--tone-default\">",
+      "<span class=\"openui-button-icon#0 openui-button-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check openui-editable-table-icon\" aria-hidden=\"true\">",
+      "<path d=\"M20 6 9 17l-5-5\">",
+      "</path>",
+      "</svg>",
+      "</span>Save Changes",
+      "</button>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<script type=\"module\" src=\"/elements.js\">",
+      "</script>"
+    ],
+    "rules": {
+      "openui-button-icon#0": [
+        {
+          "selector": ".openui-button-icon#0",
+          "conditions": [],
+          "declarations": ["display:inline-flex"]
+        }
+      ],
+      "openui-button#0": [
+        {
+          "selector": ".openui-button#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "font:var(--openui-text-label-default, 400 16px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "border-radius:var(--openui-radius-l, 10px)",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "display:flex",
+            "gap:var(--openui-space-xs, 6px)",
+            "align-items:center"
+          ]
+        },
+        {
+          "selector": ":where(.openui-button#0) svg",
+          "conditions": [],
+          "declarations": ["height:1em", "width:1em"]
+        }
+      ],
+      "openui-button#1": [
+        {
+          "selector": ".openui-button#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-secondary-bg)",
+            "color:var(--_openui-button-secondary-fg)",
+            "border-color:var(--_openui-button-secondary-border)",
+            "box-shadow:var(--_openui-button-secondary-shadow)"
+          ]
+        },
+        {
+          "selector": ".openui-button#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-secondary-hover-bg)",
+            "box-shadow:none"
+          ]
+        },
+        {
+          "selector": ".openui-button#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-button-secondary-active-bg)"]
+        },
+        {
+          "selector": ".openui-button#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-secondary-disabled-bg)",
+            "color:var(--_openui-button-secondary-disabled-fg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ]
+        }
+      ],
+      "openui-button#2": [
+        {
+          "selector": ".openui-button#2",
+          "conditions": [],
+          "declarations": [
+            "border-radius:calc(var(--openui-radius-s, 6px) + 1px)",
+            "padding:calc(var(--openui-space-s, 8px) - 1.75px) var(--openui-space-s-m, 10px)",
+            "font:var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        }
+      ],
+      "openui-button#3": [
+        {
+          "selector": ".openui-button#3",
+          "conditions": [],
+          "declarations": [
+            "--_openui-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-button-primary-fg:var(--openui-text-accent-primary, oklch(0.994 0 89.876 / 1))",
+            "--_openui-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-button-secondary-bg:transparent",
+            "--_openui-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-secondary-disabled-bg:transparent",
+            "--_openui-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ]
+        }
+      ],
+      "openui-button#4": [
+        {
+          "selector": ".openui-button#4",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-bg)",
+            "color:var(--_openui-button-primary-fg)",
+            "border-color:var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08))",
+            "box-shadow:var(--_openui-button-primary-shadow)"
+          ]
+        },
+        {
+          "selector": ".openui-button#4:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-hover-bg)",
+            "box-shadow:none"
+          ]
+        },
+        {
+          "selector": ".openui-button#4:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-button-primary-active-bg)"]
+        },
+        {
+          "selector": ".openui-button#4:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-disabled-bg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ]
+        }
+      ],
+      "openui-editable-table-cell-base#0": [
+        {
+          "selector": ".openui-editable-table-cell-base#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:content-box",
+            "position:relative",
+            "width:100%",
+            "height:100%",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-m, 12px)",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "outline:none"
+          ]
+        }
+      ],
+      "openui-editable-table-cell-input#0": [
+        {
+          "selector": ".openui-editable-table-cell-input#0",
+          "conditions": [],
+          "declarations": [
+            "height:100%",
+            "width:100%",
+            "padding:0",
+            "background-color:transparent",
+            "outline:none",
+            "appearance:textfield"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-cell-input#0::-webkit-inner-spin-button, .openui-editable-table-cell-input#0::-webkit-outer-spin-button",
+          "conditions": [],
+          "declarations": ["appearance:none"]
+        }
+      ],
+      "openui-editable-table-cell-outline-bottom#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-bottom#0",
+          "conditions": [],
+          "declarations": ["bottom:0"]
+        }
+      ],
+      "openui-editable-table-cell-outline-left#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-left#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "top:0",
+            "width:0px",
+            "height:100%",
+            "background-color:var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1))"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-left#0[data-state=\"selected\"]",
+          "conditions": [],
+          "declarations": ["width:1px"]
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-left#0[data-state=\"editing\"]",
+          "conditions": [],
+          "declarations": ["width:1.5px"]
+        }
+      ],
+      "openui-editable-table-cell-outline-left#1": [
+        {
+          "selector": ".openui-editable-table-cell-outline-left#1",
+          "conditions": [],
+          "declarations": ["left:0"]
+        }
+      ],
+      "openui-editable-table-cell-outline-right#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-right#0",
+          "conditions": [],
+          "declarations": ["right:0"]
+        }
+      ],
+      "openui-editable-table-cell-outline-top#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-top#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "left:0",
+            "width:100%",
+            "height:0px",
+            "background-color:var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1))"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-top#0[data-state=\"selected\"]",
+          "conditions": [],
+          "declarations": ["height:1px"]
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-top#0[data-state=\"editing\"]",
+          "conditions": [],
+          "declarations": ["height:1.5px"]
+        }
+      ],
+      "openui-editable-table-cell-outline-top#1": [
+        {
+          "selector": ".openui-editable-table-cell-outline-top#1",
+          "conditions": [],
+          "declarations": ["top:0"]
+        }
+      ],
+      "openui-editable-table-cell#0": [
+        {
+          "selector": ".openui-editable-table-cell#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:content-box",
+            "height:48px",
+            "padding:0",
+            "border-right:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "vertical-align:middle",
+            "white-space:nowrap",
+            "width:var(--_openui-editable-table-column-width)"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-cell#0:last-child",
+          "conditions": [],
+          "declarations": ["border-right:0"]
+        }
+      ],
+      "openui-editable-table-changes-buttons#0": [
+        {
+          "selector": ".openui-editable-table-changes-buttons#0",
+          "conditions": [],
+          "declarations": ["display:flex", "flex-direction:row", "gap:var(--openui-space-s, 8px)"]
+        }
+      ],
+      "openui-editable-table-changes-container#0": [
+        {
+          "selector": ".openui-editable-table-changes-container#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-direction:row",
+            "gap:var(--openui-space-s, 8px)",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-s, 8px) var(--openui-space-s, 8px) var(--openui-space-m, 12px)",
+            "justify-content:space-between",
+            "align-items:center",
+            "background-color:var(--openui-elevated, oklch(0.097 0 0 / 0.08))",
+            "border-radius:var(--openui-radius-xl, 12px)",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "box-shadow:var( --openui-shadow-s, 0 1px 3px -2px oklch(0 0 0 / 0.02), 0 2px 5px -2px oklch(0 0 0 / 0.04) )"
+          ]
+        }
+      ],
+      "openui-editable-table-changes-count#0": [
+        {
+          "selector": ".openui-editable-table-changes-count#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        }
+      ],
+      "openui-editable-table-display-number#0": [
+        {
+          "selector": ".openui-editable-table-display-number#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "width:calc(100% - var(--openui-space-m, 12px) * 2)",
+            "left:var(--openui-space-m, 12px)",
+            "top:50%",
+            "transform:translateY(-50%)",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "text-align:right",
+            "font:var(--openui-text-numbers-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-numbers-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        }
+      ],
+      "openui-editable-table-display-text#0": [
+        {
+          "selector": ".openui-editable-table-display-text#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "width:calc(100% - var(--openui-space-m, 12px) * 2)",
+            "left:var(--openui-space-m, 12px)",
+            "top:50%",
+            "transform:translateY(-50%)",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        }
+      ],
+      "openui-editable-table-display-url-container#0": [
+        {
+          "selector": ".openui-editable-table-display-url-container#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "gap:var(--openui-space-s, 8px)",
+            "position:absolute",
+            "width:calc(100% - var(--openui-space-m, 12px) * 2)",
+            "left:var(--openui-space-m, 12px)",
+            "top:50%",
+            "transform:translateY(-50%)"
+          ]
+        }
+      ],
+      "openui-editable-table-display-url-icon#0": [
+        {
+          "selector": ".openui-editable-table-display-url-icon#0",
+          "conditions": [],
+          "declarations": [
+            "flex-shrink:0",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"
+          ]
+        }
+      ],
+      "openui-editable-table-display-url-warning-icon#0": [
+        {
+          "selector": ".openui-editable-table-display-url-warning-icon#0",
+          "conditions": [],
+          "declarations": [
+            "flex-shrink:0",
+            "color:var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1))",
+            "display:none"
+          ]
+        }
+      ],
+      "openui-editable-table-display-url#0": [
+        {
+          "selector": ".openui-editable-table-display-url#0",
+          "conditions": [],
+          "declarations": [
+            "display:block",
+            "flex:1 1 auto",
+            "min-width:0",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-display-url#0:hover",
+          "conditions": [],
+          "declarations": ["text-decoration:underline"]
+        }
+      ],
+      "openui-editable-table-grid#0": [
+        {
+          "selector": ".openui-editable-table-grid#0",
+          "conditions": [],
+          "declarations": ["border-collapse:collapse", "width:100%"]
+        },
+        {
+          "selector": ".openui-editable-table-grid#0[data-scrollable=\"true\"]",
+          "conditions": [],
+          "declarations": ["width:max-content"]
+        }
+      ],
+      "openui-editable-table-head#0": [
+        {
+          "selector": ".openui-editable-table-head#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:content-box",
+            "text-align:left",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-m, 12px)",
+            "border-right:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "height:48px",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "width:var(--_openui-editable-table-column-width)"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-head#0:last-child",
+          "conditions": [],
+          "declarations": ["border-right:0"]
+        }
+      ],
+      "openui-editable-table-header-container#0": [
+        {
+          "selector": ".openui-editable-table-header-container#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "gap:var(--openui-space-s, 8px)"
+          ]
+        }
+      ],
+      "openui-editable-table-header-icon#0": [
+        {
+          "selector": ".openui-editable-table-header-icon#0",
+          "conditions": [],
+          "declarations": ["flex-shrink:0"]
+        }
+      ],
+      "openui-editable-table-row#0": [
+        {
+          "selector": ".openui-editable-table-row#0",
+          "conditions": [],
+          "declarations": [
+            "border-bottom:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-row#0:last-child",
+          "conditions": [],
+          "declarations": ["border-bottom:0"]
+        }
+      ],
+      "openui-editable-table-scroll-container#0": [
+        {
+          "selector": ".openui-editable-table-scroll-container#0",
+          "conditions": [],
+          "declarations": ["overflow:auto", "scrollbar-width:none", "ms-overflow-style:none"]
+        },
+        {
+          "selector": ".openui-editable-table-scroll-container#0::-webkit-scrollbar",
+          "conditions": [],
+          "declarations": ["display:none"]
+        }
+      ],
+      "openui-editable-table-scroll-control#0": [
+        {
+          "selector": ".openui-editable-table-scroll-control#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "top:var(--openui-space-s, 8px)",
+            "z-index:1",
+            "width:fit-content",
+            "height:fit-content",
+            "border-radius:var(--openui-radius-s, 6px)",
+            "background-color:var(--openui-elevated, oklch(0.097 0 0 / 0.08))",
+            "cursor:pointer"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-scroll-control#0[data-side=\"left\"]",
+          "conditions": [],
+          "declarations": ["left:var(--openui-space-s, 8px)"]
+        },
+        {
+          "selector": ".openui-editable-table-scroll-control#0[data-side=\"right\"]",
+          "conditions": [],
+          "declarations": ["right:var(--openui-space-s, 8px)"]
+        },
+        {
+          "selector": ".openui-editable-table-scroll-control#0[data-disabled=\"true\"]",
+          "conditions": [],
+          "declarations": ["cursor:not-allowed", "display:none"]
+        }
+      ],
+      "openui-editable-table-select-icon#0": [
+        {
+          "selector": ".openui-editable-table-select-icon#0",
+          "conditions": [],
+          "declarations": [
+            "height:16px",
+            "width:16px",
+            "transition:transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+            "transform:rotate(var(--_openui-editable-table-select-icon-rotation, 0deg))"
+          ]
+        }
+      ],
+      "openui-editable-table-select-trigger#0": [
+        {
+          "selector": ".openui-editable-table-select-trigger#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "width:100%",
+            "box-sizing:border-box",
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "outline:none",
+            "display:inline-flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "gap:var(--openui-space-s, 8px)",
+            "padding:calc(var(--openui-space-xs, 6px) - 1px) calc(var(--openui-space-m, 12px) - 1px)",
+            "border-radius:var(--openui-radius-m, 8px)"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0[data-placeholder]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"]
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0:hover",
+          "conditions": [],
+          "declarations": [
+            "background:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0[data-state=\"open\"]",
+          "conditions": [],
+          "declarations": [
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-editable-table-select-icon-rotation:180deg"
+          ]
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "border-color:var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "cursor:not-allowed",
+            "--_openui-editable-table-select-icon-rotation:0deg"
+          ]
+        }
+      ],
+      "openui-editable-table#0": [
+        {
+          "selector": ".openui-editable-table#0",
+          "conditions": [],
+          "declarations": [
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "border-radius:var(--openui-radius-xl, 12px) var(--openui-radius-xl, 12px) 0 0",
+            "overflow:hidden",
+            "position:relative"
+          ]
+        }
+      ],
+      "openui-icon-button-icon#0": [
+        {
+          "selector": ".openui-icon-button-icon#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:var(--_openui-icon-button-icon-size)",
+            "height:var(--_openui-icon-button-icon-size)"
+          ]
+        }
+      ],
+      "openui-icon-button#0": [
+        {
+          "selector": ".openui-icon-button#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "padding:0",
+            "flex-shrink:0"
+          ]
+        }
+      ],
+      "openui-icon-button#1": [
+        {
+          "selector": ".openui-icon-button#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-bg)",
+            "color:var(--_openui-icon-button-secondary-fg)",
+            "border-color:var(--_openui-icon-button-secondary-border)",
+            "box-shadow:var(--_openui-icon-button-secondary-shadow)"
+          ]
+        },
+        {
+          "selector": ".openui-icon-button#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-hover-bg)",
+            "box-shadow:none"
+          ]
+        },
+        {
+          "selector": ".openui-icon-button#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-icon-button-secondary-active-bg)"]
+        },
+        {
+          "selector": ".openui-icon-button#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-disabled-bg)",
+            "color:var(--_openui-icon-button-secondary-disabled-fg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ]
+        }
+      ],
+      "openui-icon-button#2": [
+        {
+          "selector": ".openui-icon-button#2",
+          "conditions": [],
+          "declarations": [
+            "width:32px",
+            "height:32px",
+            "--_openui-icon-button-icon-size:16px",
+            "--_openui-icon-button-square-radius:calc(var(--openui-radius-s, 6px) + 1px)"
+          ]
+        }
+      ],
+      "openui-icon-button#3": [
+        {
+          "selector": ".openui-icon-button#3",
+          "conditions": [],
+          "declarations": ["border-radius:var(--_openui-icon-button-square-radius)"]
+        }
+      ],
+      "openui-icon-button#4": [
+        {
+          "selector": ".openui-icon-button#4",
+          "conditions": [],
+          "declarations": [
+            "--_openui-icon-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-fg:var( --openui-text-accent-primary, oklch(0.994 0 89.876 / 1) )",
+            "--_openui-icon-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-icon-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-icon-button-secondary-bg:transparent",
+            "--_openui-icon-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-disabled-bg:transparent",
+            "--_openui-icon-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ]
+        }
+      ]
+    },
+    "order": [
+      "Button/button.styles.mjs: openui-button#0 < openui-button#1 < openui-button#2 < openui-button#3",
+      "Button/button.styles.mjs: openui-button#0 < openui-button#4 < openui-button#2 < openui-button#3",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-left#0 < openui-editable-table-cell-outline-left#1",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-left#0 < openui-editable-table-cell-outline-right#0",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-top#0 < openui-editable-table-cell-outline-bottom#0",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-top#0 < openui-editable-table-cell-outline-top#1",
+      "IconButton/iconButton.styles.mjs: openui-icon-button#0 < openui-icon-button#1 < openui-icon-button#2 < openui-icon-button#3 < openui-icon-button#4"
+    ]
+  },
+  "openui/initial": {
+    "rules": {
+      "@keyframes": [
+        {
+          "selector": "@keyframes _openui-editable-table-select-show",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:scale(0.95)",
+            "}to{opacity:1",
+            "transform:scale(1)",
+            "}"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-button-icon#0": [
+        {
+          "selector": ".openui-button-icon#0",
+          "conditions": [],
+          "declarations": ["display:inline-flex"],
+          "layer": "openui"
+        }
+      ],
+      "openui-button#0": [
+        {
+          "selector": ".openui-button#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "font:var(--openui-text-label-default, 400 16px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "border-radius:var(--openui-radius-l, 10px)",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "display:flex",
+            "gap:var(--openui-space-xs, 6px)",
+            "align-items:center"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ":where(.openui-button#0) svg",
+          "conditions": [],
+          "declarations": ["height:1em", "width:1em"],
+          "layer": "openui"
+        }
+      ],
+      "openui-button#1": [
+        {
+          "selector": ".openui-button#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-secondary-bg)",
+            "color:var(--_openui-button-secondary-fg)",
+            "border-color:var(--_openui-button-secondary-border)",
+            "box-shadow:var(--_openui-button-secondary-shadow)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-button#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-secondary-hover-bg)",
+            "box-shadow:none"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-button#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-button-secondary-active-bg)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-button#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-secondary-disabled-bg)",
+            "color:var(--_openui-button-secondary-disabled-fg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-button#2": [
+        {
+          "selector": ".openui-button#2",
+          "conditions": [],
+          "declarations": [
+            "border-radius:calc(var(--openui-radius-s, 6px) + 1px)",
+            "padding:calc(var(--openui-space-s, 8px) - 1.75px) var(--openui-space-s-m, 10px)",
+            "font:var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-button#3": [
+        {
+          "selector": ".openui-button#3",
+          "conditions": [],
+          "declarations": [
+            "--_openui-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-button-primary-fg:var(--openui-text-accent-primary, oklch(0.994 0 89.876 / 1))",
+            "--_openui-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-button-secondary-bg:transparent",
+            "--_openui-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-secondary-disabled-bg:transparent",
+            "--_openui-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-button#4": [
+        {
+          "selector": ".openui-button#4",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-bg)",
+            "color:var(--_openui-button-primary-fg)",
+            "border-color:var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08))",
+            "box-shadow:var(--_openui-button-primary-shadow)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-button#4:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-hover-bg)",
+            "box-shadow:none"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-button#4:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-button-primary-active-bg)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-button#4:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-disabled-bg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell-base#0": [
+        {
+          "selector": ".openui-editable-table-cell-base#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:content-box",
+            "position:relative",
+            "width:100%",
+            "height:100%",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-m, 12px)",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "outline:none"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell-outline-bottom#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-bottom#0",
+          "conditions": [],
+          "declarations": ["bottom:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell-outline-left#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-left#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "top:0",
+            "width:0px",
+            "height:100%",
+            "background-color:var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-left#0[data-state=\"selected\"]",
+          "conditions": [],
+          "declarations": ["width:1px"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-left#0[data-state=\"editing\"]",
+          "conditions": [],
+          "declarations": ["width:1.5px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell-outline-left#1": [
+        {
+          "selector": ".openui-editable-table-cell-outline-left#1",
+          "conditions": [],
+          "declarations": ["left:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell-outline-right#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-right#0",
+          "conditions": [],
+          "declarations": ["right:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell-outline-top#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-top#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "left:0",
+            "width:100%",
+            "height:0px",
+            "background-color:var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-top#0[data-state=\"selected\"]",
+          "conditions": [],
+          "declarations": ["height:1px"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-top#0[data-state=\"editing\"]",
+          "conditions": [],
+          "declarations": ["height:1.5px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell-outline-top#1": [
+        {
+          "selector": ".openui-editable-table-cell-outline-top#1",
+          "conditions": [],
+          "declarations": ["top:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell#0": [
+        {
+          "selector": ".openui-editable-table-cell#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:content-box",
+            "height:48px",
+            "padding:0",
+            "border-right:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "vertical-align:middle",
+            "white-space:nowrap",
+            "width:var(--_openui-editable-table-column-width)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-cell#0:last-child",
+          "conditions": [],
+          "declarations": ["border-right:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-changes-buttons#0": [
+        {
+          "selector": ".openui-editable-table-changes-buttons#0",
+          "conditions": [],
+          "declarations": ["display:flex", "flex-direction:row", "gap:var(--openui-space-s, 8px)"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-changes-container#0": [
+        {
+          "selector": ".openui-editable-table-changes-container#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-direction:row",
+            "gap:var(--openui-space-s, 8px)",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-s, 8px) var(--openui-space-s, 8px) var(--openui-space-m, 12px)",
+            "justify-content:space-between",
+            "align-items:center",
+            "background-color:var(--openui-elevated, oklch(0.097 0 0 / 0.08))",
+            "border-radius:var(--openui-radius-xl, 12px)",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "box-shadow:var( --openui-shadow-s, 0 1px 3px -2px oklch(0 0 0 / 0.02), 0 2px 5px -2px oklch(0 0 0 / 0.04) )"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-changes-count#0": [
+        {
+          "selector": ".openui-editable-table-changes-count#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-display-number#0": [
+        {
+          "selector": ".openui-editable-table-display-number#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "width:calc(100% - var(--openui-space-m, 12px) * 2)",
+            "left:var(--openui-space-m, 12px)",
+            "top:50%",
+            "transform:translateY(-50%)",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "text-align:right",
+            "font:var(--openui-text-numbers-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-numbers-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-display-text#0": [
+        {
+          "selector": ".openui-editable-table-display-text#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "width:calc(100% - var(--openui-space-m, 12px) * 2)",
+            "left:var(--openui-space-m, 12px)",
+            "top:50%",
+            "transform:translateY(-50%)",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-display-url-container#0": [
+        {
+          "selector": ".openui-editable-table-display-url-container#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "gap:var(--openui-space-s, 8px)",
+            "position:absolute",
+            "width:calc(100% - var(--openui-space-m, 12px) * 2)",
+            "left:var(--openui-space-m, 12px)",
+            "top:50%",
+            "transform:translateY(-50%)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-display-url-icon#0": [
+        {
+          "selector": ".openui-editable-table-display-url-icon#0",
+          "conditions": [],
+          "declarations": [
+            "flex-shrink:0",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-display-url-warning-icon#0": [
+        {
+          "selector": ".openui-editable-table-display-url-warning-icon#0",
+          "conditions": [],
+          "declarations": [
+            "flex-shrink:0",
+            "color:var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1))",
+            "display:none"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-display-url#0": [
+        {
+          "selector": ".openui-editable-table-display-url#0",
+          "conditions": [],
+          "declarations": [
+            "display:block",
+            "flex:1 1 auto",
+            "min-width:0",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-display-url#0:hover",
+          "conditions": [],
+          "declarations": ["text-decoration:underline"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-grid#0": [
+        {
+          "selector": ".openui-editable-table-grid#0",
+          "conditions": [],
+          "declarations": ["border-collapse:collapse", "width:100%"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-grid#0[data-scrollable=\"true\"]",
+          "conditions": [],
+          "declarations": ["width:max-content"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-head#0": [
+        {
+          "selector": ".openui-editable-table-head#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:content-box",
+            "text-align:left",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-m, 12px)",
+            "border-right:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "height:48px",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "width:var(--_openui-editable-table-column-width)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-head#0:last-child",
+          "conditions": [],
+          "declarations": ["border-right:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-header-container#0": [
+        {
+          "selector": ".openui-editable-table-header-container#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "gap:var(--openui-space-s, 8px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-header-icon#0": [
+        {
+          "selector": ".openui-editable-table-header-icon#0",
+          "conditions": [],
+          "declarations": ["flex-shrink:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-row#0": [
+        {
+          "selector": ".openui-editable-table-row#0",
+          "conditions": [],
+          "declarations": [
+            "border-bottom:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-row#0:last-child",
+          "conditions": [],
+          "declarations": ["border-bottom:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-scroll-container#0": [
+        {
+          "selector": ".openui-editable-table-scroll-container#0",
+          "conditions": [],
+          "declarations": ["overflow:auto", "scrollbar-width:none", "ms-overflow-style:none"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-scroll-container#0::-webkit-scrollbar",
+          "conditions": [],
+          "declarations": ["display:none"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-scroll-control#0": [
+        {
+          "selector": ".openui-editable-table-scroll-control#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "top:var(--openui-space-s, 8px)",
+            "z-index:1",
+            "width:fit-content",
+            "height:fit-content",
+            "border-radius:var(--openui-radius-s, 6px)",
+            "background-color:var(--openui-elevated, oklch(0.097 0 0 / 0.08))",
+            "cursor:pointer"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-scroll-control#0[data-side=\"left\"]",
+          "conditions": [],
+          "declarations": ["left:var(--openui-space-s, 8px)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-scroll-control#0[data-side=\"right\"]",
+          "conditions": [],
+          "declarations": ["right:var(--openui-space-s, 8px)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-scroll-control#0[data-disabled=\"true\"]",
+          "conditions": [],
+          "declarations": ["cursor:not-allowed", "display:none"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-select-check-icon#0": [
+        {
+          "selector": ".openui-editable-table-select-check-icon#0",
+          "conditions": [],
+          "declarations": ["height:16px", "width:16px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-select-check-wrapper#0": [
+        {
+          "selector": ".openui-editable-table-select-check-wrapper#0",
+          "conditions": [],
+          "declarations": ["position:absolute", "right:8px", "height:14px", "width:14px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-select-content#0": [
+        {
+          "selector": ".openui-editable-table-select-content#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "position:relative",
+            "z-index:99999",
+            "max-height:372px",
+            "min-width:var(--radix-select-trigger-width)",
+            "overflow:hidden",
+            "border:none",
+            "border-radius:var(--openui-radius-2xl, 14px)",
+            "background-color:color-mix( in oklch, var(--openui-foreground, oklch(0.994 0 89.876 / 1)), var(--openui-text-white, oklch(1 0 89.876 / 1)) 6% )",
+            "box-shadow:0 0 0 1px color-mix( in oklch, var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1)) 6%, transparent ), 0 4px 12px -2px oklch(0 0 0 / 0.05), 0 16px 32px -8px oklch(0 0 0 / 0.08)",
+            "padding:0",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "transform-origin:top center",
+            "animation:_openui-editable-table-select-show 0.18s ease-out forwards"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-select-icon#0": [
+        {
+          "selector": ".openui-editable-table-select-icon#0",
+          "conditions": [],
+          "declarations": [
+            "height:16px",
+            "width:16px",
+            "transition:transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+            "transform:rotate(var(--_openui-editable-table-select-icon-rotation, 0deg))"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-select-item#0": [
+        {
+          "selector": ".openui-editable-table-select-item#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "box-sizing:border-box",
+            "position:relative",
+            "display:flex",
+            "cursor:default",
+            "user-select:none",
+            "align-items:center",
+            "justify-content:space-between",
+            "height:32px",
+            "padding:0 var(--openui-space-xl, 24px) 0 var(--openui-space-m-l, 16px)",
+            "border-radius:0",
+            "outline:none",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-select-item#0:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-select-item#0:focus",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-select-item#0[data-highlighted]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-select-item#0[data-state=\"checked\"]",
+          "conditions": [],
+          "declarations": ["background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-select-item#0[data-disabled]",
+          "conditions": [],
+          "declarations": ["pointer-events:none", "opacity:0.5"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-select-trigger#0": [
+        {
+          "selector": ".openui-editable-table-select-trigger#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "width:100%",
+            "box-sizing:border-box",
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "outline:none",
+            "display:inline-flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "gap:var(--openui-space-s, 8px)",
+            "padding:calc(var(--openui-space-xs, 6px) - 1px) calc(var(--openui-space-m, 12px) - 1px)",
+            "border-radius:var(--openui-radius-m, 8px)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0[data-placeholder]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0:hover",
+          "conditions": [],
+          "declarations": [
+            "background:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0[data-state=\"open\"]",
+          "conditions": [],
+          "declarations": [
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-editable-table-select-icon-rotation:180deg"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "border-color:var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "cursor:not-allowed",
+            "--_openui-editable-table-select-icon-rotation:0deg"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-select-viewport#0": [
+        {
+          "selector": ".openui-editable-table-select-viewport#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "padding:var(--openui-space-2xs, 4px) 0",
+            "width:100%",
+            "border-bottom-left-radius:calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px))",
+            "border-bottom-right-radius:calc(var(--openui-radius-2xl, 14px) - var(--openui-space-2xs, 4px))"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table#0": [
+        {
+          "selector": ".openui-editable-table#0",
+          "conditions": [],
+          "declarations": [
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "border-radius:var(--openui-radius-xl, 12px) var(--openui-radius-xl, 12px) 0 0",
+            "overflow:hidden",
+            "position:relative"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button-icon#0": [
+        {
+          "selector": ".openui-icon-button-icon#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:var(--_openui-icon-button-icon-size)",
+            "height:var(--_openui-icon-button-icon-size)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button#0": [
+        {
+          "selector": ".openui-icon-button#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "padding:0",
+            "flex-shrink:0"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button#1": [
+        {
+          "selector": ".openui-icon-button#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-bg)",
+            "color:var(--_openui-icon-button-secondary-fg)",
+            "border-color:var(--_openui-icon-button-secondary-border)",
+            "box-shadow:var(--_openui-icon-button-secondary-shadow)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-icon-button#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-hover-bg)",
+            "box-shadow:none"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-icon-button#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-icon-button-secondary-active-bg)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-icon-button#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-disabled-bg)",
+            "color:var(--_openui-icon-button-secondary-disabled-fg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button#2": [
+        {
+          "selector": ".openui-icon-button#2",
+          "conditions": [],
+          "declarations": [
+            "width:32px",
+            "height:32px",
+            "--_openui-icon-button-icon-size:16px",
+            "--_openui-icon-button-square-radius:calc(var(--openui-radius-s, 6px) + 1px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button#3": [
+        {
+          "selector": ".openui-icon-button#3",
+          "conditions": [],
+          "declarations": ["border-radius:var(--_openui-icon-button-square-radius)"],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button#4": [
+        {
+          "selector": ".openui-icon-button#4",
+          "conditions": [],
+          "declarations": [
+            "--_openui-icon-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-fg:var( --openui-text-accent-primary, oklch(0.994 0 89.876 / 1) )",
+            "--_openui-icon-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-icon-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-icon-button-secondary-bg:transparent",
+            "--_openui-icon-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-disabled-bg:transparent",
+            "--_openui-icon-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ],
+          "layer": "openui"
+        }
+      ]
+    },
+    "order": [
+      "Button/button.styles.mjs: openui-button#0 < openui-button#1 < openui-button#2 < openui-button#3",
+      "Button/button.styles.mjs: openui-button#0 < openui-button#4 < openui-button#2 < openui-button#3",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-left#0 < openui-editable-table-cell-outline-left#1",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-left#0 < openui-editable-table-cell-outline-right#0",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-top#0 < openui-editable-table-cell-outline-bottom#0",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-top#0 < openui-editable-table-cell-outline-top#1",
+      "IconButton/iconButton.styles.mjs: openui-icon-button#0 < openui-icon-button#1 < openui-icon-button#2 < openui-icon-button#3 < openui-icon-button#4"
+    ]
+  },
+  "openui/openui-editable-table-cell-input": {
+    "rules": {
+      "openui-button-icon#0": [
+        {
+          "selector": ".openui-button-icon#0",
+          "conditions": [],
+          "declarations": ["display:inline-flex"],
+          "layer": "openui"
+        }
+      ],
+      "openui-button#0": [
+        {
+          "selector": ".openui-button#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "font:var(--openui-text-label-default, 400 16px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "border-radius:var(--openui-radius-l, 10px)",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "display:flex",
+            "gap:var(--openui-space-xs, 6px)",
+            "align-items:center"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ":where(.openui-button#0) svg",
+          "conditions": [],
+          "declarations": ["height:1em", "width:1em"],
+          "layer": "openui"
+        }
+      ],
+      "openui-button#1": [
+        {
+          "selector": ".openui-button#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-secondary-bg)",
+            "color:var(--_openui-button-secondary-fg)",
+            "border-color:var(--_openui-button-secondary-border)",
+            "box-shadow:var(--_openui-button-secondary-shadow)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-button#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-secondary-hover-bg)",
+            "box-shadow:none"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-button#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-button-secondary-active-bg)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-button#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-secondary-disabled-bg)",
+            "color:var(--_openui-button-secondary-disabled-fg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-button#2": [
+        {
+          "selector": ".openui-button#2",
+          "conditions": [],
+          "declarations": [
+            "border-radius:calc(var(--openui-radius-s, 6px) + 1px)",
+            "padding:calc(var(--openui-space-s, 8px) - 1.75px) var(--openui-space-s-m, 10px)",
+            "font:var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-button#3": [
+        {
+          "selector": ".openui-button#3",
+          "conditions": [],
+          "declarations": [
+            "--_openui-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-button-primary-fg:var(--openui-text-accent-primary, oklch(0.994 0 89.876 / 1))",
+            "--_openui-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-button-secondary-bg:transparent",
+            "--_openui-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-secondary-disabled-bg:transparent",
+            "--_openui-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-button#4": [
+        {
+          "selector": ".openui-button#4",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-bg)",
+            "color:var(--_openui-button-primary-fg)",
+            "border-color:var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08))",
+            "box-shadow:var(--_openui-button-primary-shadow)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-button#4:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-hover-bg)",
+            "box-shadow:none"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-button#4:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-button-primary-active-bg)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-button#4:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-disabled-bg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell-base#0": [
+        {
+          "selector": ".openui-editable-table-cell-base#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:content-box",
+            "position:relative",
+            "width:100%",
+            "height:100%",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-m, 12px)",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "outline:none"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell-input#0": [
+        {
+          "selector": ".openui-editable-table-cell-input#0",
+          "conditions": [],
+          "declarations": [
+            "height:100%",
+            "width:100%",
+            "padding:0",
+            "background-color:transparent",
+            "outline:none",
+            "appearance:textfield"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-cell-input#0::-webkit-inner-spin-button, .openui-editable-table-cell-input#0::-webkit-outer-spin-button",
+          "conditions": [],
+          "declarations": ["appearance:none"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell-outline-bottom#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-bottom#0",
+          "conditions": [],
+          "declarations": ["bottom:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell-outline-left#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-left#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "top:0",
+            "width:0px",
+            "height:100%",
+            "background-color:var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-left#0[data-state=\"selected\"]",
+          "conditions": [],
+          "declarations": ["width:1px"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-left#0[data-state=\"editing\"]",
+          "conditions": [],
+          "declarations": ["width:1.5px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell-outline-left#1": [
+        {
+          "selector": ".openui-editable-table-cell-outline-left#1",
+          "conditions": [],
+          "declarations": ["left:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell-outline-right#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-right#0",
+          "conditions": [],
+          "declarations": ["right:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell-outline-top#0": [
+        {
+          "selector": ".openui-editable-table-cell-outline-top#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "left:0",
+            "width:100%",
+            "height:0px",
+            "background-color:var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-top#0[data-state=\"selected\"]",
+          "conditions": [],
+          "declarations": ["height:1px"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-cell-outline-top#0[data-state=\"editing\"]",
+          "conditions": [],
+          "declarations": ["height:1.5px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell-outline-top#1": [
+        {
+          "selector": ".openui-editable-table-cell-outline-top#1",
+          "conditions": [],
+          "declarations": ["top:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-cell#0": [
+        {
+          "selector": ".openui-editable-table-cell#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:content-box",
+            "height:48px",
+            "padding:0",
+            "border-right:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "vertical-align:middle",
+            "white-space:nowrap",
+            "width:var(--_openui-editable-table-column-width)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-cell#0:last-child",
+          "conditions": [],
+          "declarations": ["border-right:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-changes-buttons#0": [
+        {
+          "selector": ".openui-editable-table-changes-buttons#0",
+          "conditions": [],
+          "declarations": ["display:flex", "flex-direction:row", "gap:var(--openui-space-s, 8px)"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-changes-container#0": [
+        {
+          "selector": ".openui-editable-table-changes-container#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-direction:row",
+            "gap:var(--openui-space-s, 8px)",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-s, 8px) var(--openui-space-s, 8px) var(--openui-space-m, 12px)",
+            "justify-content:space-between",
+            "align-items:center",
+            "background-color:var(--openui-elevated, oklch(0.097 0 0 / 0.08))",
+            "border-radius:var(--openui-radius-xl, 12px)",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "box-shadow:var( --openui-shadow-s, 0 1px 3px -2px oklch(0 0 0 / 0.02), 0 2px 5px -2px oklch(0 0 0 / 0.04) )"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-changes-count#0": [
+        {
+          "selector": ".openui-editable-table-changes-count#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-display-number#0": [
+        {
+          "selector": ".openui-editable-table-display-number#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "width:calc(100% - var(--openui-space-m, 12px) * 2)",
+            "left:var(--openui-space-m, 12px)",
+            "top:50%",
+            "transform:translateY(-50%)",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "text-align:right",
+            "font:var(--openui-text-numbers-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-numbers-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-display-text#0": [
+        {
+          "selector": ".openui-editable-table-display-text#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "width:calc(100% - var(--openui-space-m, 12px) * 2)",
+            "left:var(--openui-space-m, 12px)",
+            "top:50%",
+            "transform:translateY(-50%)",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-display-url-container#0": [
+        {
+          "selector": ".openui-editable-table-display-url-container#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "gap:var(--openui-space-s, 8px)",
+            "position:absolute",
+            "width:calc(100% - var(--openui-space-m, 12px) * 2)",
+            "left:var(--openui-space-m, 12px)",
+            "top:50%",
+            "transform:translateY(-50%)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-display-url-icon#0": [
+        {
+          "selector": ".openui-editable-table-display-url-icon#0",
+          "conditions": [],
+          "declarations": [
+            "flex-shrink:0",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-display-url-warning-icon#0": [
+        {
+          "selector": ".openui-editable-table-display-url-warning-icon#0",
+          "conditions": [],
+          "declarations": [
+            "flex-shrink:0",
+            "color:var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1))",
+            "display:none"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-display-url#0": [
+        {
+          "selector": ".openui-editable-table-display-url#0",
+          "conditions": [],
+          "declarations": [
+            "display:block",
+            "flex:1 1 auto",
+            "min-width:0",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-display-url#0:hover",
+          "conditions": [],
+          "declarations": ["text-decoration:underline"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-grid#0": [
+        {
+          "selector": ".openui-editable-table-grid#0",
+          "conditions": [],
+          "declarations": ["border-collapse:collapse", "width:100%"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-grid#0[data-scrollable=\"true\"]",
+          "conditions": [],
+          "declarations": ["width:max-content"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-head#0": [
+        {
+          "selector": ".openui-editable-table-head#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:content-box",
+            "text-align:left",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-m, 12px)",
+            "border-right:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "height:48px",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "white-space:nowrap",
+            "width:var(--_openui-editable-table-column-width)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-head#0:last-child",
+          "conditions": [],
+          "declarations": ["border-right:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-header-container#0": [
+        {
+          "selector": ".openui-editable-table-header-container#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "gap:var(--openui-space-s, 8px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-header-icon#0": [
+        {
+          "selector": ".openui-editable-table-header-icon#0",
+          "conditions": [],
+          "declarations": ["flex-shrink:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-row#0": [
+        {
+          "selector": ".openui-editable-table-row#0",
+          "conditions": [],
+          "declarations": [
+            "border-bottom:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-row#0:last-child",
+          "conditions": [],
+          "declarations": ["border-bottom:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-scroll-container#0": [
+        {
+          "selector": ".openui-editable-table-scroll-container#0",
+          "conditions": [],
+          "declarations": ["overflow:auto", "scrollbar-width:none", "ms-overflow-style:none"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-scroll-container#0::-webkit-scrollbar",
+          "conditions": [],
+          "declarations": ["display:none"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-scroll-control#0": [
+        {
+          "selector": ".openui-editable-table-scroll-control#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "top:var(--openui-space-s, 8px)",
+            "z-index:1",
+            "width:fit-content",
+            "height:fit-content",
+            "border-radius:var(--openui-radius-s, 6px)",
+            "background-color:var(--openui-elevated, oklch(0.097 0 0 / 0.08))",
+            "cursor:pointer"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-scroll-control#0[data-side=\"left\"]",
+          "conditions": [],
+          "declarations": ["left:var(--openui-space-s, 8px)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-scroll-control#0[data-side=\"right\"]",
+          "conditions": [],
+          "declarations": ["right:var(--openui-space-s, 8px)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-scroll-control#0[data-disabled=\"true\"]",
+          "conditions": [],
+          "declarations": ["cursor:not-allowed", "display:none"],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-select-icon#0": [
+        {
+          "selector": ".openui-editable-table-select-icon#0",
+          "conditions": [],
+          "declarations": [
+            "height:16px",
+            "width:16px",
+            "transition:transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+            "transform:rotate(var(--_openui-editable-table-select-icon-rotation, 0deg))"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table-select-trigger#0": [
+        {
+          "selector": ".openui-editable-table-select-trigger#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "width:100%",
+            "box-sizing:border-box",
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "outline:none",
+            "display:inline-flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "gap:var(--openui-space-s, 8px)",
+            "padding:calc(var(--openui-space-xs, 6px) - 1px) calc(var(--openui-space-m, 12px) - 1px)",
+            "border-radius:var(--openui-radius-m, 8px)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0[data-placeholder]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0:hover",
+          "conditions": [],
+          "declarations": [
+            "background:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0[data-state=\"open\"]",
+          "conditions": [],
+          "declarations": [
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-editable-table-select-icon-rotation:180deg"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-editable-table-select-trigger#0:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "border-color:var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "cursor:not-allowed",
+            "--_openui-editable-table-select-icon-rotation:0deg"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-editable-table#0": [
+        {
+          "selector": ".openui-editable-table#0",
+          "conditions": [],
+          "declarations": [
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "border-radius:var(--openui-radius-xl, 12px) var(--openui-radius-xl, 12px) 0 0",
+            "overflow:hidden",
+            "position:relative"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button-icon#0": [
+        {
+          "selector": ".openui-icon-button-icon#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:var(--_openui-icon-button-icon-size)",
+            "height:var(--_openui-icon-button-icon-size)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button#0": [
+        {
+          "selector": ".openui-icon-button#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "padding:0",
+            "flex-shrink:0"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button#1": [
+        {
+          "selector": ".openui-icon-button#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-bg)",
+            "color:var(--_openui-icon-button-secondary-fg)",
+            "border-color:var(--_openui-icon-button-secondary-border)",
+            "box-shadow:var(--_openui-icon-button-secondary-shadow)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-icon-button#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-hover-bg)",
+            "box-shadow:none"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-icon-button#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-icon-button-secondary-active-bg)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-icon-button#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-disabled-bg)",
+            "color:var(--_openui-icon-button-secondary-disabled-fg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button#2": [
+        {
+          "selector": ".openui-icon-button#2",
+          "conditions": [],
+          "declarations": [
+            "width:32px",
+            "height:32px",
+            "--_openui-icon-button-icon-size:16px",
+            "--_openui-icon-button-square-radius:calc(var(--openui-radius-s, 6px) + 1px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button#3": [
+        {
+          "selector": ".openui-icon-button#3",
+          "conditions": [],
+          "declarations": ["border-radius:var(--_openui-icon-button-square-radius)"],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button#4": [
+        {
+          "selector": ".openui-icon-button#4",
+          "conditions": [],
+          "declarations": [
+            "--_openui-icon-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-fg:var( --openui-text-accent-primary, oklch(0.994 0 89.876 / 1) )",
+            "--_openui-icon-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-icon-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-icon-button-secondary-bg:transparent",
+            "--_openui-icon-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-disabled-bg:transparent",
+            "--_openui-icon-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ],
+          "layer": "openui"
+        }
+      ]
+    },
+    "order": [
+      "Button/button.styles.mjs: openui-button#0 < openui-button#1 < openui-button#2 < openui-button#3",
+      "Button/button.styles.mjs: openui-button#0 < openui-button#4 < openui-button#2 < openui-button#3",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-left#0 < openui-editable-table-cell-outline-left#1",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-left#0 < openui-editable-table-cell-outline-right#0",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-top#0 < openui-editable-table-cell-outline-bottom#0",
+      "EditableTable/base/components/editableCell.styles.mjs: openui-editable-table-cell-outline-top#0 < openui-editable-table-cell-outline-top#1",
+      "IconButton/iconButton.styles.mjs: openui-icon-button#0 < openui-icon-button#1 < openui-icon-button#2 < openui-icon-button#3 < openui-icon-button#4"
+    ]
+  }
+}

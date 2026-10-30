@@ -1,0 +1,707 @@
+{
+  "initial": {
+    "markup": [
+      "<div id=\"root\">",
+      "<span class=\"openui-citation-container#0 openui-citation-container\">",
+      "<button type=\"button\" class=\"openui-citation#0 openui-citation\" aria-label=\"Citations\" data-state=\"instant-open\" aria-describedby=\"radix-react-id-0\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-globe openui-citation-icon#0 openui-citation-icon\" aria-hidden=\"true\">",
+      "<circle cx=\"12\" cy=\"12\" r=\"10\">",
+      "</circle>",
+      "<path d=\"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20\">",
+      "</path>",
+      "<path d=\"M2 12h20\">",
+      "</path>",
+      "</svg>",
+      "</button>",
+      "</span>",
+      "<button class=\"openui-citation-item#0 openui-citation-item openui-citation-item#1\" type=\"button\">",
+      "<div class=\"openui-citation-item-logo#0 openui-citation-item-logo\">",
+      "<img alt=\"Example\" height=\"24\" width=\"24\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-citation-item-content#0 openui-citation-item-content\">",
+      "<div class=\"openui-citation-item-title#0 openui-citation-item-title\">A source",
+      "</div>",
+      "<div class=\"openui-citation-item-source#0 openui-citation-item-source\">Example",
+      "</div>",
+      "</div>",
+      "</button>",
+      "<button class=\"openui-citation-item#0 openui-citation-item\" type=\"button\">",
+      "<div class=\"openui-citation-item-logo#0 openui-citation-item-logo\">",
+      "<img alt=\"Example\" height=\"24\" width=\"24\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-citation-item-content#0 openui-citation-item-content\">",
+      "<div class=\"openui-citation-item-title#0 openui-citation-item-title\">A source",
+      "</div>",
+      "<div class=\"openui-citation-item-source#0 openui-citation-item-source\">Example",
+      "</div>",
+      "</div>",
+      "</button>",
+      "<button class=\"openui-citation-item#0 openui-citation-item\" type=\"button\">",
+      "<div class=\"openui-citation-item-logo#0 openui-citation-item-logo\">",
+      "<img alt=\"Example\" height=\"24\" width=\"24\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-citation-item-content#0 openui-citation-item-content\">",
+      "<div class=\"openui-citation-item-title#0 openui-citation-item-title\">A source",
+      "</div>",
+      "<div class=\"openui-citation-item-source#0 openui-citation-item-source\">Example",
+      "</div>",
+      "</div>",
+      "</button>",
+      "<button class=\"openui-citation-item#0 openui-citation-item\" type=\"button\">",
+      "<div class=\"openui-citation-item-logo#0 openui-citation-item-logo\">",
+      "<img alt=\"Example\" height=\"24\" width=\"24\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-citation-item-content#0 openui-citation-item-content\">",
+      "<div class=\"openui-citation-item-title#0 openui-citation-item-title\">A source",
+      "</div>",
+      "<div class=\"openui-citation-item-source#0 openui-citation-item-source\">Example",
+      "</div>",
+      "</div>",
+      "</button>",
+      "</div>",
+      "<script type=\"module\" src=\"/elements.js\">",
+      "</script>",
+      "<div data-radix-popper-content-wrapper=\"\" style=\"position: fixed; left: 0px; top: 0px; transform: translate(0px, 24px); min-width: max-content; --radix-popper-transform-origin: 0% 0px; z-index: 1000; --radix-popper-available-width: 1280px; --radix-popper-available-height: 696px; --radix-popper-anchor-width: 20px; --radix-popper-anchor-height: 20px;\">",
+      "<div data-side=\"bottom\" data-align=\"start\" data-state=\"instant-open\" class=\"openui-citation-tooltip#0 openui-citation-tooltip\" style=\"--radix-tooltip-content-transform-origin: var(--radix-popper-transform-origin); --radix-tooltip-content-available-width: var(--radix-popper-available-width); --radix-tooltip-content-available-height: var(--radix-popper-available-height); --radix-tooltip-trigger-width: var(--radix-popper-anchor-width); --radix-tooltip-trigger-height: var(--radix-popper-anchor-height);\">",
+      "<div class=\"openui-citation-tooltip-content#0 openui-citation-tooltip-content\">",
+      "<button class=\"openui-citation-item#0 openui-citation-item openui-citation-item#1\" type=\"button\">",
+      "<div class=\"openui-citation-item-logo#0 openui-citation-item-logo\">",
+      "<img alt=\"Example\" height=\"24\" width=\"24\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-citation-item-content#0 openui-citation-item-content\">",
+      "<div class=\"openui-citation-item-title#0 openui-citation-item-title\">A source",
+      "</div>",
+      "<div class=\"openui-citation-item-source#0 openui-citation-item-source\">Example",
+      "</div>",
+      "</div>",
+      "</button>",
+      "</div>",
+      "<span id=\"radix-react-id-0\" role=\"tooltip\" style=\"position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; overflow-wrap: normal;\">",
+      "<div class=\"openui-citation-tooltip-content#0 openui-citation-tooltip-content\">",
+      "<button class=\"openui-citation-item#0 openui-citation-item openui-citation-item#1\" type=\"button\">",
+      "<div class=\"openui-citation-item-logo#0 openui-citation-item-logo\">",
+      "<img alt=\"Example\" height=\"24\" width=\"24\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-citation-item-content#0 openui-citation-item-content\">",
+      "<div class=\"openui-citation-item-title#0 openui-citation-item-title\">A source",
+      "</div>",
+      "<div class=\"openui-citation-item-source#0 openui-citation-item-source\">Example",
+      "</div>",
+      "</div>",
+      "</button>",
+      "</div>",
+      "</span>",
+      "</div>",
+      "</div>"
+    ],
+    "rules": {
+      "@keyframes": [
+        {
+          "selector": "@keyframes --_openui-citation-down",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:translateY(-2px)",
+            "}to{opacity:1",
+            "transform:translateY(0)",
+            "}"
+          ]
+        },
+        {
+          "selector": "@keyframes --_openui-citation-up",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:translateY(2px)",
+            "}to{opacity:1",
+            "transform:translateY(0)",
+            "}"
+          ]
+        },
+        {
+          "selector": "@keyframes --_openui-citation-left",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:translateX(2px)",
+            "}to{opacity:1",
+            "transform:translateX(0)",
+            "}"
+          ]
+        },
+        {
+          "selector": "@keyframes --_openui-citation-right",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:translateX(-2px)",
+            "}to{opacity:1",
+            "transform:translateX(0)",
+            "}"
+          ]
+        }
+      ],
+      "openui-citation-container#0": [
+        {
+          "selector": ".openui-citation-container#0",
+          "conditions": [],
+          "declarations": ["position:relative", "display:inline-flex"]
+        }
+      ],
+      "openui-citation-icon#0": [
+        {
+          "selector": ".openui-citation-icon#0",
+          "conditions": [],
+          "declarations": ["color:var(--_openui-citation-icon-color)"]
+        }
+      ],
+      "openui-citation-item-content#0": [
+        {
+          "selector": ".openui-citation-item-content#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-grow:1",
+            "align-items:baseline",
+            "gap:var(--openui-space-s, 8px)",
+            "min-width:0"
+          ]
+        }
+      ],
+      "openui-citation-item-logo#0": [
+        {
+          "selector": ".openui-citation-item-logo#0",
+          "conditions": [],
+          "declarations": [
+            "flex-shrink:0",
+            "width:24px",
+            "height:24px",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "border-radius:var(--openui-radius-s, 6px)",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",
+            "overflow:hidden"
+          ]
+        }
+      ],
+      "openui-citation-item-source#0": [
+        {
+          "selector": ".openui-citation-item-source#0",
+          "conditions": [],
+          "declarations": [
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",
+            "white-space:nowrap",
+            "overflow:hidden",
+            "text-overflow:ellipsis"
+          ]
+        }
+      ],
+      "openui-citation-item-title#0": [
+        {
+          "selector": ".openui-citation-item-title#0",
+          "conditions": [],
+          "declarations": [
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "white-space:nowrap",
+            "overflow:hidden",
+            "text-overflow:ellipsis"
+          ]
+        }
+      ],
+      "openui-citation-item#0": [
+        {
+          "selector": ".openui-citation-item#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "gap:var(--openui-space-s, 8px)",
+            "border:none",
+            "padding:var(--openui-space-xs, 6px) var(--openui-space-s, 8px) var(--openui-space-xs, 6px) var(--openui-space-xs, 6px)",
+            "border-radius:var(--openui-radius-m, 8px)",
+            "background-color:transparent",
+            "transition:background-color 0.2s ease-in-out",
+            "text-align:left",
+            "width:100%",
+            "max-width:348px",
+            "font:var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        },
+        {
+          "selector": ".openui-citation-item#0",
+          "conditions": ["@media (max-width: 800px)"],
+          "declarations": ["max-width:320px"]
+        },
+        {
+          "selector": ".openui-citation-item#0:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-citation-item-hover-background, transparent)"
+          ]
+        }
+      ],
+      "openui-citation-item#1": [
+        {
+          "selector": ".openui-citation-item#1",
+          "conditions": [],
+          "declarations": [
+            "cursor:pointer",
+            "--_openui-citation-item-hover-background:var(--openui-sunk, oklch(0.097 0 0 / 0.04))"
+          ]
+        }
+      ],
+      "openui-citation-tooltip-content#0": [
+        {
+          "selector": ".openui-citation-tooltip-content#0",
+          "conditions": [],
+          "declarations": [
+            "padding:var(--openui-space-xs, 6px)",
+            "display:flex",
+            "flex-direction:column",
+            "gap:var(--openui-space-2xs, 4px)",
+            "overflow-y:auto",
+            "max-height:min(50vh)",
+            "scrollbar-width:thin",
+            "scrollbar-color:var(--openui-border-default, oklch(0.097 0 0 / 0.06)) transparent"
+          ]
+        },
+        {
+          "selector": ".openui-citation-tooltip-content#0::-webkit-scrollbar",
+          "conditions": [],
+          "declarations": ["width:6px"]
+        },
+        {
+          "selector": ".openui-citation-tooltip-content#0::-webkit-scrollbar-track",
+          "conditions": [],
+          "declarations": ["background:transparent"]
+        },
+        {
+          "selector": ".openui-citation-tooltip-content#0::-webkit-scrollbar-thumb",
+          "conditions": [],
+          "declarations": [
+            "background:var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "border-radius:var(--openui-radius-full, 9999px)"
+          ]
+        }
+      ],
+      "openui-citation-tooltip#0": [
+        {
+          "selector": ".openui-citation-tooltip#0",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-foreground, oklch(0.994 0 89.876 / 1))",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "border-radius:var(--openui-radius-xl, 12px)",
+            "box-shadow:var( --openui-shadow-s, 0 1px 3px -2px oklch(0 0 0 / 0.02), 0 2px 5px -2px oklch(0 0 0 / 0.04) )",
+            "white-space:nowrap",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "z-index:1000",
+            "pointer-events:all",
+            "overflow:hidden"
+          ]
+        },
+        {
+          "selector": ".openui-citation-tooltip#0[data-side=\"top\"]",
+          "conditions": [],
+          "declarations": ["--_openui-citation-tooltip-animation:--_openui-citation-down"]
+        },
+        {
+          "selector": ".openui-citation-tooltip#0[data-side=\"bottom\"]",
+          "conditions": [],
+          "declarations": ["--_openui-citation-tooltip-animation:--_openui-citation-up"]
+        },
+        {
+          "selector": ".openui-citation-tooltip#0[data-side=\"right\"]",
+          "conditions": [],
+          "declarations": ["--_openui-citation-tooltip-animation:--_openui-citation-left"]
+        },
+        {
+          "selector": ".openui-citation-tooltip#0[data-side=\"left\"]",
+          "conditions": [],
+          "declarations": ["--_openui-citation-tooltip-animation:--_openui-citation-right"]
+        },
+        {
+          "selector": ".openui-citation-tooltip#0[data-state=\"delayed-open\"]",
+          "conditions": [],
+          "declarations": ["animation:var(--_openui-citation-tooltip-animation) 0.2s ease-in-out"]
+        }
+      ],
+      "openui-citation#0": [
+        {
+          "selector": ".openui-citation#0",
+          "conditions": [],
+          "declarations": [
+            "height:20px",
+            "width:20px",
+            "flex-shrink:0",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "padding:var(--openui-space-3xs, 2px)",
+            "background-color:var(--openui-highlight-strong, oklch(0.097 0 0 / 0.08))",
+            "margin-left:var(--openui-space-3xs, 2px)",
+            "border:none",
+            "border-radius:var(--openui-radius-xs, 4px)",
+            "cursor:pointer",
+            "transition:all 0.2s ease-in-out",
+            "--_openui-citation-icon-color:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))"
+          ]
+        },
+        {
+          "selector": ".openui-citation#0:hover, .openui-citation#0[data-state=\"delayed-open\"], .openui-citation#0[data-state=\"instant-open\"]",
+          "conditions": [],
+          "declarations": [
+            "--_openui-citation-icon-color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ]
+        },
+        {
+          "selector": ".openui-citation#0:active",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight-strong, oklch(0.097 0 0 / 0.08))"
+          ]
+        },
+        {
+          "selector": ".openui-citation#0:focus-visible",
+          "conditions": [],
+          "declarations": [
+            "outline:2px solid var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "outline-offset:2px"
+          ]
+        }
+      ],
+      "openui-source-favicon-image#0": [
+        {
+          "selector": ".openui-source-favicon-image#0",
+          "conditions": [],
+          "declarations": ["object-fit:cover", "display:flex"]
+        }
+      ]
+    },
+    "order": ["Citation/citationItem.styles.mjs: openui-citation-item#0 < openui-citation-item#1"]
+  },
+  "openui/initial": {
+    "rules": {
+      "@keyframes": [
+        {
+          "selector": "@keyframes --_openui-citation-down",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:translateY(-2px)",
+            "}to{opacity:1",
+            "transform:translateY(0)",
+            "}"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": "@keyframes --_openui-citation-up",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:translateY(2px)",
+            "}to{opacity:1",
+            "transform:translateY(0)",
+            "}"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": "@keyframes --_openui-citation-left",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:translateX(2px)",
+            "}to{opacity:1",
+            "transform:translateX(0)",
+            "}"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": "@keyframes --_openui-citation-right",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:translateX(-2px)",
+            "}to{opacity:1",
+            "transform:translateX(0)",
+            "}"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-citation-container#0": [
+        {
+          "selector": ".openui-citation-container#0",
+          "conditions": [],
+          "declarations": ["position:relative", "display:inline-flex"],
+          "layer": "openui"
+        }
+      ],
+      "openui-citation-icon#0": [
+        {
+          "selector": ".openui-citation-icon#0",
+          "conditions": [],
+          "declarations": ["color:var(--_openui-citation-icon-color)"],
+          "layer": "openui"
+        }
+      ],
+      "openui-citation-item-content#0": [
+        {
+          "selector": ".openui-citation-item-content#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-grow:1",
+            "align-items:baseline",
+            "gap:var(--openui-space-s, 8px)",
+            "min-width:0"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-citation-item-logo#0": [
+        {
+          "selector": ".openui-citation-item-logo#0",
+          "conditions": [],
+          "declarations": [
+            "flex-shrink:0",
+            "width:24px",
+            "height:24px",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "border-radius:var(--openui-radius-s, 6px)",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",
+            "overflow:hidden"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-citation-item-source#0": [
+        {
+          "selector": ".openui-citation-item-source#0",
+          "conditions": [],
+          "declarations": [
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",
+            "white-space:nowrap",
+            "overflow:hidden",
+            "text-overflow:ellipsis"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-citation-item-title#0": [
+        {
+          "selector": ".openui-citation-item-title#0",
+          "conditions": [],
+          "declarations": [
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "white-space:nowrap",
+            "overflow:hidden",
+            "text-overflow:ellipsis"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-citation-item#0": [
+        {
+          "selector": ".openui-citation-item#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "gap:var(--openui-space-s, 8px)",
+            "border:none",
+            "padding:var(--openui-space-xs, 6px) var(--openui-space-s, 8px) var(--openui-space-xs, 6px) var(--openui-space-xs, 6px)",
+            "border-radius:var(--openui-radius-m, 8px)",
+            "background-color:transparent",
+            "transition:background-color 0.2s ease-in-out",
+            "text-align:left",
+            "width:100%",
+            "max-width:348px",
+            "font:var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-citation-item#0",
+          "conditions": ["@media (max-width: 800px)"],
+          "declarations": ["max-width:320px"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-citation-item#0:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-citation-item-hover-background, transparent)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-citation-item#1": [
+        {
+          "selector": ".openui-citation-item#1",
+          "conditions": [],
+          "declarations": [
+            "cursor:pointer",
+            "--_openui-citation-item-hover-background:var(--openui-sunk, oklch(0.097 0 0 / 0.04))"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-citation-tooltip-content#0": [
+        {
+          "selector": ".openui-citation-tooltip-content#0",
+          "conditions": [],
+          "declarations": [
+            "padding:var(--openui-space-xs, 6px)",
+            "display:flex",
+            "flex-direction:column",
+            "gap:var(--openui-space-2xs, 4px)",
+            "overflow-y:auto",
+            "max-height:min(50vh)",
+            "scrollbar-width:thin",
+            "scrollbar-color:var(--openui-border-default, oklch(0.097 0 0 / 0.06)) transparent"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-citation-tooltip-content#0::-webkit-scrollbar",
+          "conditions": [],
+          "declarations": ["width:6px"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-citation-tooltip-content#0::-webkit-scrollbar-track",
+          "conditions": [],
+          "declarations": ["background:transparent"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-citation-tooltip-content#0::-webkit-scrollbar-thumb",
+          "conditions": [],
+          "declarations": [
+            "background:var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "border-radius:var(--openui-radius-full, 9999px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-citation-tooltip#0": [
+        {
+          "selector": ".openui-citation-tooltip#0",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-foreground, oklch(0.994 0 89.876 / 1))",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "border-radius:var(--openui-radius-xl, 12px)",
+            "box-shadow:var( --openui-shadow-s, 0 1px 3px -2px oklch(0 0 0 / 0.02), 0 2px 5px -2px oklch(0 0 0 / 0.04) )",
+            "white-space:nowrap",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "z-index:1000",
+            "pointer-events:all",
+            "overflow:hidden"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-citation-tooltip#0[data-side=\"top\"]",
+          "conditions": [],
+          "declarations": ["--_openui-citation-tooltip-animation:--_openui-citation-down"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-citation-tooltip#0[data-side=\"bottom\"]",
+          "conditions": [],
+          "declarations": ["--_openui-citation-tooltip-animation:--_openui-citation-up"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-citation-tooltip#0[data-side=\"right\"]",
+          "conditions": [],
+          "declarations": ["--_openui-citation-tooltip-animation:--_openui-citation-left"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-citation-tooltip#0[data-side=\"left\"]",
+          "conditions": [],
+          "declarations": ["--_openui-citation-tooltip-animation:--_openui-citation-right"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-citation-tooltip#0[data-state=\"delayed-open\"]",
+          "conditions": [],
+          "declarations": ["animation:var(--_openui-citation-tooltip-animation) 0.2s ease-in-out"],
+          "layer": "openui"
+        }
+      ],
+      "openui-citation#0": [
+        {
+          "selector": ".openui-citation#0",
+          "conditions": [],
+          "declarations": [
+            "height:20px",
+            "width:20px",
+            "flex-shrink:0",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "padding:var(--openui-space-3xs, 2px)",
+            "background-color:var(--openui-highlight-strong, oklch(0.097 0 0 / 0.08))",
+            "margin-left:var(--openui-space-3xs, 2px)",
+            "border:none",
+            "border-radius:var(--openui-radius-xs, 4px)",
+            "cursor:pointer",
+            "transition:all 0.2s ease-in-out",
+            "--_openui-citation-icon-color:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-citation#0:hover, .openui-citation#0[data-state=\"delayed-open\"], .openui-citation#0[data-state=\"instant-open\"]",
+          "conditions": [],
+          "declarations": [
+            "--_openui-citation-icon-color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-citation#0:active",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight-strong, oklch(0.097 0 0 / 0.08))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-citation#0:focus-visible",
+          "conditions": [],
+          "declarations": [
+            "outline:2px solid var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "outline-offset:2px"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-source-favicon-image#0": [
+        {
+          "selector": ".openui-source-favicon-image#0",
+          "conditions": [],
+          "declarations": ["object-fit:cover", "display:flex"],
+          "layer": "openui"
+        }
+      ]
+    },
+    "order": ["Citation/citationItem.styles.mjs: openui-citation-item#0 < openui-citation-item#1"]
+  }
+}
