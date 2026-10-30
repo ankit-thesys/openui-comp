@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { forwardRef, useContext } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { InlineMarkdownRenderer } from "../InlineMarkdownRenderer";
 import { names, textBlockStyles } from "./textBlock.styles";
 import { TextFitContext } from "./TextFit";
@@ -73,7 +72,7 @@ export const TextBlockView = forwardRef<HTMLDivElement, TextBlockViewProps>(
     const align = ownAlign ?? slot.align ?? "left";
     const overflow = ownOverflow ?? slot.overflow ?? "wrap";
     const width = ownWidth ?? slot.width;
-    const styles = useStyles(textBlockStyles);
+    const styles = textBlockStyles;
     const secondaryClassName = clsx(
       styles.secondary,
       names.secondary,

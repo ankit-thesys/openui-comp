@@ -3,6 +3,10 @@ import { css } from "../../../../../styles/css";
 import { buttonStyles } from "../../../../Button/button.styles";
 import { iconButtonStyles } from "../../../../IconButton/iconButton.styles";
 
+// IconButton registers on import. Reading its map keeps that value import, so its rules come
+// before these equal-weight part rules, which register when this module is imported.
+Object.values(iconButtonStyles);
+
 export const names = {
   root: "openui-stacked-legend",
   header: "openui-stacked-legend-header",
@@ -26,7 +30,6 @@ export const names = {
 export const stackedLegendStyles = /*#__PURE__*/ (() => {
   // Keep composed controls before these equal-weight part rules.
   void buttonStyles;
-  iconButtonStyles(css);
   return {
     root: css`
       position: relative;

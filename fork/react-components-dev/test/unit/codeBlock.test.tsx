@@ -57,11 +57,14 @@ describe("CodeBlock class props", () => {
   });
 });
 
-it("registers CodeBlock's flat copy-button state rules at render time", () => {
-  // Other tests may render it first, so inspect import-time inactivity before this file's tests.
-  expect(importedCss).not.toContain("--_openui-code-block-copy-button-opacity");
+it("registers CodeBlock's flat copy-button state rules on import, with no render-time additions", () => {
+  expect(importedCss).toContain("--_openui-code-block-copy-button-opacity");
   const html = renderToString(<CodeBlock language="text" codeString="x" />);
   expect(html).toContain('data-state="idle"');
   expect(html).not.toContain("openui-code-block-root");
-  expect(getComponentStyles()).toMatch(/\[data-state="?copied"?\]/);
+  const generated = [...html.matchAll(/\bgo\d+\b/g)].map(([name]) => name);
+  expect(generated.length).toBeGreaterThan(0);
+  for (const name of generated) expect(importedCss).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+  expect(importedCss).toMatch(/\[data-state="?copied"?\]/);
+  expect(getComponentStyles()).toBe(importedCss);
 });

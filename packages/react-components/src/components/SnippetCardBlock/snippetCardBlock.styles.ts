@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-snippet-card-block",
@@ -13,7 +13,7 @@ export const names = {
   },
 } as const;
 
-export const snippetCardBlockStyles = (css: StyleCss) => ({
+export const snippetCardBlockStyles = /*#__PURE__*/ {
   card: css`
     display: flex;
     align-items: center;
@@ -101,4 +101,4 @@ export const snippetCardBlockStyles = (css: StyleCss) => ({
     width: 14px;
     height: 14px;
   `,
-});
+};

@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 /** TabsList's stable classes. The tablist is the root: it receives `className`, `style` and `ref`. */
 export const names = {
@@ -61,7 +61,7 @@ const scrollButtonContainer = `
 
 // The scroll buttons are IconButtons, whose own root rules already set the display, alignment and
 // cursor these parts used to repeat, so the parts carry no rules of their own.
-export const tabsListStyles = (css: StyleCss) => ({
+export const tabsListStyles = /*#__PURE__*/ {
   root: css`
     width: 100%;
     box-sizing: border-box;
@@ -180,4 +180,4 @@ export const tabsListStyles = (css: StyleCss) => ({
       })}
     `,
   },
-});
+};

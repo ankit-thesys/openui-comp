@@ -1,11 +1,12 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-image-text-large",
   imageWrap: "openui-image-text-large-image-wrap",
   image: "openui-image-text-large-image",
   content: "openui-image-text-large-content",
 } as const;
-export const imageTextLargeStyles = (css: StyleCss) => ({
+export const imageTextLargeStyles = /*#__PURE__*/ {
   root: css`
     display: flex;
     width: 100%;
@@ -30,4 +31,4 @@ export const imageTextLargeStyles = (css: StyleCss) => ({
     max-height: 180px;
     object-fit: cover;
   `,
-});
+};

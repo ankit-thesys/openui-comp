@@ -1,6 +1,6 @@
 "use client";
 
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 const small = `
   font: var(--openui-text-body-sm, 400 14px/1.5 "Inter", sans-serif);
@@ -46,7 +46,7 @@ const contentText = `
   font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
 `;
 
-export const selectStyles = (css: StyleCss) => ({
+export const selectStyles = /*#__PURE__*/ {
   trigger: css`
     --_openui-select-trigger-icon-transform: none;
     --_openui-select-trigger-hover-color: initial;
@@ -282,4 +282,4 @@ export const selectStyles = (css: StyleCss) => ({
     height: 1px;
     border-top: 1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06));
   `,
-});
+};

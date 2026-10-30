@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-card",
   variant: {
@@ -8,7 +9,7 @@ export const names = {
   },
   width: { standard: "openui-card--width-standard", full: "openui-card--width-full" },
 } as const;
-export const cardStyles = (css: StyleCss) => ({
+export const cardStyles = /*#__PURE__*/ {
   root: css`
     display: flex;
     flex-direction: column;
@@ -50,4 +51,4 @@ export const cardStyles = (css: StyleCss) => ({
       width: 100%;
     `,
   },
-});
+};

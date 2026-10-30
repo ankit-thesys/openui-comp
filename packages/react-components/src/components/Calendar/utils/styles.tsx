@@ -5,9 +5,7 @@ import type { ClassNames } from "react-day-picker";
 import { calendarStyles, names } from "../calendar.styles";
 
 // DayPicker's selection/flag class slots are empty: states live on the day part's attributes.
-export const getDayPickerStyles = (
-  styles: ReturnType<typeof calendarStyles>,
-): Partial<ClassNames> => ({
+export const getDayPickerStyles = (styles: typeof calendarStyles): Partial<ClassNames> => ({
   root: clsx(styles.content, names.content),
   months: names.months,
   nav: clsx(styles.nav, names.nav),

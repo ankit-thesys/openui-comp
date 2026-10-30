@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-check-box-group",
@@ -9,7 +9,7 @@ export const names = {
   },
 } as const;
 
-export const checkBoxGroupStyles = (css: StyleCss) => ({
+export const checkBoxGroupStyles = /*#__PURE__*/ {
   root: css`
     box-sizing: border-box;
     display: flex;
@@ -34,4 +34,4 @@ export const checkBoxGroupStyles = (css: StyleCss) => ({
       padding: var(--openui-space-m, 12px);
     `,
   },
-});
+};

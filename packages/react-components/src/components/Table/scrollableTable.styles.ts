@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-scrollable-table",
   wrapper: "openui-scrollable-table-wrapper",
@@ -6,7 +7,7 @@ export const names = {
   control: "openui-scrollable-table-control",
   icon: "openui-scrollable-table-icon",
 } as const;
-export const scrollableTableStyles = (css: StyleCss) => ({
+export const scrollableTableStyles = /*#__PURE__*/ {
   root: css`
     width: 100%;
     &[data-scrollable="true"] {
@@ -44,4 +45,4 @@ export const scrollableTableStyles = (css: StyleCss) => ({
       display: none;
     }
   `,
-});
+};

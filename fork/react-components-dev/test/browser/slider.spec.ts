@@ -174,7 +174,7 @@ test("SliderBlock suppresses streaming controls and discrete marks", async ({ pa
 });
 
 for (const block of [false, true]) {
-  test(`Slider${block ? "Block" : ""} registers only on render and survives an html class rewrite`, async ({
+  test(`Slider${block ? "Block" : ""} registers on import and survives an html class rewrite`, async ({
     page,
   }) => {
     await page.goto(`/slider.html?lazy=1${block ? "&block=1" : ""}`);
@@ -193,7 +193,10 @@ for (const block of [false, true]) {
         ),
       ]);
     expect(generated.length).toBeGreaterThan(0);
-    for (const name of generated) expect(before.css).not.toMatch(new RegExp(`\\.${name}(?![0-9])`));
+    for (const name of generated) expect(before.css).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+    expect(
+      await page.evaluate(() => document.getElementById("openui-styles")?.textContent ?? ""),
+    ).toBe(before.css);
     expect(await page.evaluate(() => document.documentElement.className)).toBe(before.html);
     const part = page.locator(".openui-slider-container");
     const bg = await read(part, "background-color");

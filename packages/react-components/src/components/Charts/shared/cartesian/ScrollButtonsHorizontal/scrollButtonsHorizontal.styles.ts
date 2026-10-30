@@ -2,6 +2,10 @@ import { css } from "../../../../../styles/css";
 
 import { iconButtonStyles } from "../../../../IconButton/iconButton.styles";
 
+// IconButton registers on import. Reading its map keeps that value import, so its rules come
+// before these equal-weight part rules, which register when this module is imported.
+Object.values(iconButtonStyles);
+
 export const names = {
   root: "openui-scroll-buttons-horizontal",
   button: "openui-scroll-buttons-horizontal-button",
@@ -11,8 +15,6 @@ export const names = {
 } as const;
 
 export const scrollButtonsHorizontalStyles = /*#__PURE__*/ (() => {
-  // Register composed controls first so these equal-weight part rules also win on first render.
-  iconButtonStyles(css);
   return {
     root: css`
       position: relative;

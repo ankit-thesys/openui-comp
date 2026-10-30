@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   leftContent: "openui-slider-left-content",
@@ -29,7 +29,7 @@ const smallText = `
   font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
 `;
 
-export const sliderStyles = (css: StyleCss) => ({
+export const sliderStyles = /*#__PURE__*/ {
   wrapper: css`
     display: flex;
     align-items: center;
@@ -182,4 +182,4 @@ export const sliderStyles = (css: StyleCss) => ({
     ${smallText}
     padding: 0 var(--openui-space-2xs, 4px);
   `,
-});
+};

@@ -22,6 +22,20 @@ server portion locally; the server comparison also runs in the ordinary unit sui
 Fresh reports are `order-*.current.md` (ignored); committed `order-*.md` are the starting point.
 No baseline is rewritten by a comparison, including Vitest's `-u` option.
 
+## Intentional changes
+
+`intentional-changes.ts` is the explicit component-and-alias list of approved differences. The
+comparison applies each exact change to expected data in memory; it never edits a baseline or
+filters out current rules. Every unlisted declaration, markup element and order pair still fails.
+
+Ticket #134 approves two TextBlock order reversals: `openui-text-block-secondary#0` (positive)
+and `openui-text-block-secondary#1` (negative) now follow the base secondary rule
+`openui-inline-markdown-renderer+openui-text-block-secondary#0`. These tone bodies were identical
+to rules in Tag, IconTag, CodeBlock, TextCallout and MetricIndicator, so Goober gave them the first
+registrant's position. Component-specific comments now keep the tone after the base colour,
+deterministically honoring the tone prop. No declarations or markup change. Both server modes
+and the browser comparison use this list; the raw order report remains unchanged.
+
 ## Recording
 
 The browser baselines and browser order reports were captured with the server ones, on the same

@@ -3,7 +3,6 @@
 import * as SliderPrimitive from "@radix-ui/react-slider";
 import clsx from "clsx";
 import { forwardRef, ReactNode, useState } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { names, sliderStyles } from "./slider.styles";
 
 const formatNumber = (num: number | undefined): string => {
@@ -58,7 +57,7 @@ export const Slider = forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>
     },
     ref,
   ) => {
-    const styles = useStyles(sliderStyles);
+    const styles = sliderStyles;
     // used to show the correct value on thumb
     const [internalValue, setInternalValue] = useState(
       defaultValue && defaultValue.length > 0 ? defaultValue : [min],

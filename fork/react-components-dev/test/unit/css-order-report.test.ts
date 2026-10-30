@@ -22,4 +22,7 @@ it.skipIf(!capture)(
       );
     }
   },
+  // Every snapshot collection is parsed here; under a loaded machine that took 8s, past the 5s
+  // default, while it normally takes under a second.
+  60_000,
 );

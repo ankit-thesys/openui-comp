@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-card-header",
   top: "openui-card-header-top",
@@ -7,7 +8,7 @@ export const names = {
   topRight: "openui-card-header-top-right",
   bottom: "openui-card-header-bottom",
 } as const;
-export const cardHeaderStyles = (css: StyleCss) => ({
+export const cardHeaderStyles = /*#__PURE__*/ {
   root: css`
     display: flex;
     flex-direction: column;
@@ -49,4 +50,4 @@ export const cardHeaderStyles = (css: StyleCss) => ({
     letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);
     font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
   `,
-});
+};

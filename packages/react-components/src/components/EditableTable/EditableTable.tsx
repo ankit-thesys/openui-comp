@@ -22,7 +22,6 @@ import {
   Type,
 } from "lucide-react";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { Button } from "../Button";
 import { IconButton } from "../IconButton";
 import { getCellRenderer } from "./base/components/cellRegistry";
@@ -128,7 +127,7 @@ const PORTAL_CELL_TYPES: EditableCellType[] = ["date-single", "select"];
  */
 export const EditableTable = React.forwardRef<HTMLDivElement, EditableTableProps>(
   ({ data, columns, onDataChange, className }, ref) => {
-    const styles = useStyles(editableTableStyles);
+    const styles = editableTableStyles;
     const [selectedPosition, setSelectedPosition] = useState<CellPosition | null>(null);
     const [editingPosition, setEditingPosition] = useState<
       (CellPosition & { cellType: EditableCellType }) | null
@@ -488,7 +487,7 @@ export const EditableTableChangesBar = ({
   saveLabel = "Save Changes",
   className,
 }: EditableTableChangesBarProps) => {
-  const styles = useStyles(editableTableStyles);
+  const styles = editableTableStyles;
   if (changedCellCount <= 0) return null;
   return (
     <div className={clsx(styles.changes, names.changes, className)}>

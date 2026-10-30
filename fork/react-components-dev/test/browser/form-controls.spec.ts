@@ -1,5 +1,5 @@
 // #91: consumer rules win on every stable class, with the same state, before/after in both modes.
-// Also guards native focus/disabled/invalid precedence, context updates and import-time inactivity.
+// Also guards native focus/disabled/invalid precedence, context updates and import-time registration.
 import { expect, test, type Locator } from "@playwright/test";
 
 const override = {
@@ -130,7 +130,7 @@ for (const mode of ["light", "dark"]) {
   });
 }
 
-test("form styles register at render, leave html unmarked, and survive html replacement", async ({
+test("form styles register on import, leave html unmarked, and survive html replacement", async ({
   page,
 }) => {
   await page.goto("/form-controls.html?lazy=1");
@@ -147,7 +147,10 @@ test("form styles register at render, leave html unmarked, and survive html repl
       ...new Set(els.flatMap((el) => [...el.classList].filter((name) => /^go\d+$/.test(name)))),
     ]);
   expect(generated.length).toBeGreaterThan(0);
-  for (const name of generated) expect(before.sheet).not.toMatch(new RegExp(`\\.${name}(?![0-9])`));
+  for (const name of generated) expect(before.sheet).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+  expect(
+    await page.evaluate(() => document.getElementById("openui-styles")?.textContent ?? ""),
+  ).toBe(before.sheet);
   expect(await page.locator("html").getAttribute("class")).toEqual(before.html);
   const observations = await Promise.all(
     targets.map(([, selector]) =>

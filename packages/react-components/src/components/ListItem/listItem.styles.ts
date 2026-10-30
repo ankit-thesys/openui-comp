@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-list-item",
@@ -23,7 +23,7 @@ export const names = {
   listHasSubtitle: "openui-list-item--list-has-subtitle",
 } as const;
 
-export const listItemStyles = (css: StyleCss) => ({
+export const listItemStyles = /*#__PURE__*/ {
   root: css`
     display: flex;
     flex-direction: column;
@@ -201,4 +201,4 @@ export const listItemStyles = (css: StyleCss) => ({
       --_openui-list-item-number-spacing: var(--openui-text-numbers-sm-letter-spacing, -0.01em);
     `,
   },
-});
+};

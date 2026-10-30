@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   container: "openui-citation-container",
@@ -8,7 +8,7 @@ export const names = {
   tooltipContent: "openui-citation-tooltip-content",
 } as const;
 
-export const citationStyles = (css: StyleCss) => ({
+export const citationStyles = /*#__PURE__*/ {
   container: css`
     position: relative;
     display: inline-flex;
@@ -135,4 +135,4 @@ export const citationStyles = (css: StyleCss) => ({
   icon: css`
     color: var(--_openui-citation-icon-color);
   `,
-});
+};

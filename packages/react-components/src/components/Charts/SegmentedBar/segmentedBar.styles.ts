@@ -3,6 +3,11 @@ import { css } from "../../../styles/css";
 import { separatorStyles } from "../../Separator/separator.styles";
 import { defaultLegendClasses } from "../shared/core/DefaultLegend/defaultLegend.styles";
 
+// DefaultLegend and Separator register on import. Reading their maps keeps those value imports,
+// so their rules come first and this chart's legend padding rule follows DefaultLegend's root.
+Object.values(defaultLegendClasses);
+Object.values(separatorStyles);
+
 /** Stable override targets for SegmentedBar. */
 export const names = {
   root: "openui-segmented-bar",
@@ -23,10 +28,6 @@ export const names = {
 } as const;
 
 export const segmentedBarStyles = /*#__PURE__*/ (() => {
-  // The value dependency keeps DefaultLegend's root before this chart's legend padding rule.
-  void defaultLegendClasses;
-  // Register the composed separator on import while it still uses a factory.
-  separatorStyles(css);
   return {
     root: css`
       display: flex;
