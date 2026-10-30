@@ -1,4 +1,5 @@
 import { css } from "goober";
+import { metricOverrides } from "../MetricIndicator/metricIndicator.styles";
 
 export const names = { root: "openui-dashboard-overview-card-block" } as const;
 
@@ -11,5 +12,6 @@ export const styles = {
     & .openui-overview-card-block-card {
       box-sizing: border-box;
     }
+    ${metricOverrides}
   `,
 };
