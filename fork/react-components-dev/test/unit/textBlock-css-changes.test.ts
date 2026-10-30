@@ -38,3 +38,9 @@ it("expects only the approved TextBlock tone reversals, retaining declarations, 
 it("does not authorize the same aliases in another component", () => {
   expect(expectedWithIntentionalChanges("IconText", baseline)).toBe(baseline);
 });
+
+it("fails when a listed reversal matches no baseline entry, so a stale excuse cannot linger", () => {
+  expect(() =>
+    expectedWithIntentionalChanges("TextBlock", { ...baseline, order: [baseline.order[2]!] }),
+  ).toThrow(/match no baseline order entry/);
+});

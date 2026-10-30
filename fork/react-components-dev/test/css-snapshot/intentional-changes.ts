@@ -25,11 +25,20 @@ export function expectedWithIntentionalChanges<T extends Snapshot | LayerSnapsho
   expected: T,
 ): T {
   if (component !== "TextBlock") return expected;
+  const applied = new Set<string>();
   const order = expected.order.map((entry) => {
     for (const [alias, { module, base }] of Object.entries(intentionalChanges.TextBlock)) {
-      if (entry === `${module}: ${alias} < ${base}`) return `${module}: ${base} < ${alias}`;
+      if (entry === `${module}: ${alias} < ${base}`) {
+        applied.add(alias);
+        return `${module}: ${base} < ${alias}`;
+      }
     }
     return entry;
   });
+  // An entry that matches nothing in the baseline is stale: it would excuse nothing today and
+  // could start excusing a different change later. Fail instead of passing silently.
+  const stale = Object.keys(intentionalChanges.TextBlock).filter((alias) => !applied.has(alias));
+  if (stale.length)
+    throw new Error(`Intentional TextBlock changes match no baseline order entry: ${stale}`);
   return { ...expected, order: order.sort() };
 }
