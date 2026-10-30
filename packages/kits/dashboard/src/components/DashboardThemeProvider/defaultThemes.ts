@@ -1,20 +1,11 @@
-import { defaultDarkTheme, defaultLightTheme, type Theme } from "@openuidev/react-components";
+import { type Theme } from "@openuidev/react-components";
 /**
- * Dashboard-scale tokens — the openui typography surface retuned for dense
- * dashboard cards. Dashboards render tighter than openui's body-scale
- * defaults (13/14px vs 16px), so every typography token is rescaled here.
+ * Only the tokens the dashboard changes: the typography, retuned for dense cards (13/14px rather
+ * than openui's 16px). `ThemeProvider` merges these over its own default theme, so colours, spacing
+ * and radii come from there and keep following the light or dark mode.
  *
- * Spacing, radii and colours are deliberately NOT overridden: dashboards use
- * openui's defaults for those, and colours must keep following the ambient
- * light/dark theme.
- *
- * The five family tokens keep their `--openui-dashboard-font-*`
- * escape hatch so a consumer can swap a typeface with plain CSS, without
- * reaching for the `lightTheme`/`darkTheme` props.
- *
- * Moved verbatim from the old `dashboardTheme.scss` token block — values are
- * unchanged, only the authoring layer moved (SCSS -> Theme object) so the
- * dashboard matches presentation/report's provider convention.
+ * The five family tokens keep their `--openui-dashboard-font-*` escape hatch so a consumer can
+ * swap a typeface with plain CSS, without reaching for the `lightTheme`/`darkTheme` props.
  */
 const dashboardScaleTokens: Partial<Theme> = {
   // Typography families
@@ -35,18 +26,8 @@ const dashboardScaleTokens: Partial<Theme> = {
   fontSize3xl: "24px",
   fontSize4xl: "28px",
   fontSize5xl: "32px",
-  fontWeightRegular: "400",
   fontWeightMedium: "500",
-  fontWeightBold: "600",
-  fontWeightHeavy: "700",
-  lineHeightBody: "1.5",
-  lineHeightHeading: "1.25",
-  lineHeightHeadingLarge: "1.1",
-  lineHeightLabel: "1.25",
-  lineHeightCode: "1.5",
   letterSpacingNormal: "0",
-  letterSpacingTight: "-0.1px",
-  letterSpacingTighter: "-0.2px",
 
   // Body typography
   textBodyXs: "400 11px/1.5 var(--openui-font-body)",
@@ -74,9 +55,7 @@ const dashboardScaleTokens: Partial<Theme> = {
   textHeadingMd: "600 24px/1.1 var(--openui-font-heading)",
   textHeadingMdLetterSpacing: "0",
   textHeadingLg: "600 28px/1.1 var(--openui-font-heading)",
-  textHeadingLgLetterSpacing: "-0.1px",
   textHeadingXl: "700 32px/1.1 var(--openui-font-heading)",
-  textHeadingXlLetterSpacing: "-0.1px",
 
   // Label typography
   textLabelXs: "400 11px/1.25 var(--openui-font-label)",
@@ -124,21 +103,11 @@ const dashboardScaleTokens: Partial<Theme> = {
 
   // Code typography
   textCodeSm: "400 12px/1.5 var(--openui-font-code)",
-  textCodeSmLetterSpacing: "0",
   textCodeSmHeavy: "700 12px/1.5 var(--openui-font-code)",
-  textCodeSmHeavyLetterSpacing: "0",
   textCodeDefault: "400 14px/1.5 var(--openui-font-code)",
-  textCodeDefaultLetterSpacing: "0",
   textCodeDefaultHeavy: "700 14px/1.5 var(--openui-font-code)",
-  textCodeDefaultHeavyLetterSpacing: "0",
 };
 
-export const defaultDashboardLightTheme: Theme = {
-  ...defaultLightTheme,
-  ...dashboardScaleTokens,
-};
+export const defaultDashboardLightTheme: Theme = dashboardScaleTokens;
 
-export const defaultDashboardDarkTheme: Theme = {
-  ...defaultDarkTheme,
-  ...dashboardScaleTokens,
-};
+export const defaultDashboardDarkTheme: Theme = dashboardScaleTokens;
