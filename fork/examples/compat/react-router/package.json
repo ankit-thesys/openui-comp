@@ -1,0 +1,36 @@
+{
+  "name": "@openui-compat/react-router",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "build": "react-router typegen && tsc --noEmit && react-router build",
+    "start": "NODE_ENV=production node scripts/serve.mjs",
+    "typecheck": "react-router typegen && tsc --noEmit",
+    "test:smoke": "playwright test"
+  },
+  "dependencies": {
+    "@openuidev/react-components": "file:../.pack/openui-react-components.tgz",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "zod": "4.6.7",
+    "zustand": "4.5.7",
+    "express": "5.3.0",
+    "react-router": "7.18.5",
+    "@react-router/node": "7.18.5",
+    "@react-router/express": "7.18.5",
+    "isbot": "5.2.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "@types/node": "22.20.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "6.0.3",
+    "vite": "8.3.5",
+    "@react-router/dev": "7.18.5"
+  },
+  "compat": {
+    "port": 5720
+  }
+}
