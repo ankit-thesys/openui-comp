@@ -186,13 +186,47 @@ export function comparable<T extends Snapshot | LayerSnapshot>(sample: T): T {
   return { ...sample, rules, order: conflictingOrder(sample.order, rules) };
 }
 
-// The property a declaration sets, widened so that anything that could reset it compares equal:
-// `padding-top` and `padding`, `-webkit-mask` and `mask`, `min-width` and `min-height`. A custom
-// property only meets itself.
-const propertyFamily = (declaration: string) => {
-  const name = declaration.slice(0, declaration.indexOf(":")).trim().toLowerCase();
-  return name.startsWith("--") ? name : name.replace(/^-(webkit|moz|ms)-/, "").split("-")[0]!;
+// The property families a declaration sets, widened so that anything that could reset it shares
+// one: `padding-top` and `padding`, `-webkit-mask` and `mask`, `min-width` and `min-height`. The
+// first name segment covers most shorthands; SHORTHAND_FAMILIES adds the ones whose longhands are
+// named differently (`inset` and `top`, `font` and `line-height`, `place-items` and `align-items`,
+// physical and logical sizes). `all` meets every property except custom ones, which only meet
+// themselves.
+const SHORTHAND_FAMILIES: Record<string, string[]> = {
+  inset: ["inset"],
+  top: ["inset"],
+  right: ["inset"],
+  bottom: ["inset"],
+  left: ["inset"],
+  font: ["line"],
+  place: ["align", "justify"],
+  gap: ["gap"],
+  "row-gap": ["gap"],
+  "column-gap": ["gap"],
+  "grid-gap": ["gap"],
+  "grid-row-gap": ["gap"],
+  "grid-column-gap": ["gap"],
+  columns: ["column"],
+  width: ["size"],
+  height: ["size"],
+  "inline-size": ["size"],
+  "block-size": ["size"],
+  "word-wrap": ["overflow"],
+  "white-space": ["text"],
 };
+const ALL = "*";
+const propertyFamilies = (declaration: string): string[] => {
+  const name = declaration.slice(0, declaration.indexOf(":")).trim().toLowerCase();
+  if (name.startsWith("--")) return [name];
+  if (name === "all") return [ALL];
+  const unprefixed = name.replace(/^-(webkit|moz|ms)-/, "");
+  const first = unprefixed.split("-")[0]!;
+  return [first, ...(SHORTHAND_FAMILIES[unprefixed] ?? SHORTHAND_FAMILIES[first] ?? [])];
+};
+const overlaps = (a: Set<string>, b: Set<string>) =>
+  [...b].some((family) => a.has(family)) ||
+  (a.has(ALL) && [...b].some((family) => !family.startsWith("--"))) ||
+  (b.has(ALL) && [...a].some((family) => !family.startsWith("--")));
 
 // Sheet order between two classes from one module only decides a value where both set the same
 // property. A module's rule can move ahead of its siblings without any declaration changing: Goober
@@ -200,7 +234,7 @@ const propertyFamily = (declaration: string) => {
 // module that imports first registers the same body, it sits there. Keep the pairs that can compete.
 function conflictingOrder(order: string[], rules: Snapshot["rules"]): string[] {
   const families = (alias: string) =>
-    new Set((rules[alias] ?? []).flatMap((rule) => rule.declarations.map(propertyFamily)));
+    new Set((rules[alias] ?? []).flatMap((rule) => rule.declarations.flatMap(propertyFamilies)));
   const pairs = new Set<string>();
   for (const entry of order) {
     const separator = entry.lastIndexOf(": ");
@@ -209,8 +243,7 @@ function conflictingOrder(order: string[], rules: Snapshot["rules"]): string[] {
     aliases.forEach((first, i) => {
       const before = families(first);
       for (const second of aliases.slice(i + 1))
-        if ([...families(second)].some((family) => before.has(family)))
-          pairs.add(`${module}: ${first} < ${second}`);
+        if (overlaps(before, families(second))) pairs.add(`${module}: ${first} < ${second}`);
     });
   }
   return [...pairs].sort();
