@@ -184,7 +184,7 @@ override and Tailwind cases.
     rule to MarkDownRenderer when its `.go1` is one MarkDownRenderer puts on its own root
     (`defineContract.tsx` renders it alone to find them). Any other module's class-plus-tag rule
     fails, even one whose class it passes onto MarkDownRenderer's root;
-  - the same elements rendered under `<ThemeProvider cssLayer="openui">` put every rule in
+  - the same elements rendered after `configureStyles({ layer: "openui" })` put every rule in
     `@layer openui` (no unlayered rule, no other or nested layer), within the same budget and
     with the same selector shapes;
   - every rendered `openui-*` class matches `openui-<block>[--<prop>-<value>]`, a modifier attaches

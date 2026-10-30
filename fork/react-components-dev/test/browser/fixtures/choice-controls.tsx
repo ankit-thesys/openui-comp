@@ -2,6 +2,7 @@ import {
   CheckBoxGroup,
   CheckBoxItem,
   Chips,
+  configureStyles,
   RadioGroup,
   RadioItem,
   SwitchGroup,
@@ -14,6 +15,7 @@ import { useState } from "react";
 import { createRoot } from "react-dom/client";
 
 const params = new URLSearchParams(location.search);
+configureStyles({ layer: params.has("layer") ? "openui" : undefined });
 const disabled = params.has("disabled");
 const Icon = () => (
   <svg width="24" height="24">
@@ -28,7 +30,7 @@ function Choices() {
   const [toggle, setToggle] = useState("a");
   const [selected, setSelected] = useState(["a"]);
   return (
-    <ThemeProvider cssLayer={params.has("layer") ? "openui" : undefined}>
+    <ThemeProvider>
       <section data-testid="check-box">
         <CheckBoxGroup variant="card" className="consumer-group">
           <CheckBoxItem

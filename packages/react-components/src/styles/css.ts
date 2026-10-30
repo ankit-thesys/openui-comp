@@ -7,6 +7,16 @@ let rules = "";
 let pending: string[] = [];
 let scheduled = false;
 let seeded = false;
+// The app-wide cascade layer (configureStyles). It wraps the sheet when it is written, so rules
+// registered before configureStyles, at import time, end up in the layer too.
+let layer: string | undefined;
+// configureStyles changed the layer, so the sheet needs rewriting even with no new rule.
+let relayer = false;
+
+// A layer name, or a dotted path of them such as `app.openui`, as `@layer` accepts.
+const LAYER_NAME = /^-?[a-zA-Z_][\w-]*(\.-?[a-zA-Z_][\w-]*)*$/;
+
+const wrapped = (text: string) => (layer && text ? `@layer ${layer}{${text}}` : text);
 
 // Goober 2.1.19 also tells the browser from the server by `window`, so both sides agree on where
 // rules go even when a server boundary stubs `document`.
@@ -52,14 +62,15 @@ function scheduleWrite() {
  */
 export function flushComponentStyles() {
   scheduled = false;
-  if (!inBrowser() || !pending.length) return;
+  if (!inBrowser() || (!pending.length && !relayer)) return;
   const tag = sheetTag();
   // Another module copy may have written since; append only what the sheet lacks.
   let text = sheetText(tag);
   for (const rule of pending) if (!text.includes(rule)) text += rule;
   pending = [];
+  relayer = false;
   rules = text;
-  tag.textContent = text;
+  tag.textContent = wrapped(text);
 }
 
 const sink = {
@@ -93,8 +104,28 @@ export const css: Css = gooberCss.bind({ target });
 // Goober's exported keyframes is already bound, so rebinding it would discard our target.
 export const keyframes: Keyframes = gooberCss.bind({ target, k: 1 });
 
+export type ConfigureStylesOptions = {
+  /** App-wide cascade layer, or undefined for unlayered component rules. */
+  layer?: string;
+};
+
+/** Sets the layer for the whole component sheet, including rules already registered. */
+export function configureStyles(options: ConfigureStylesOptions): void {
+  if (options.layer !== undefined && !LAYER_NAME.test(options.layer)) {
+    if (process.env["NODE_ENV"] !== "production") {
+      console.warn(
+        `[OpenUI] configureStyles layer "${options.layer}" is not a cascade layer name. It is ignored.`,
+      );
+    }
+    return;
+  }
+  layer = options.layer;
+  relayer = true;
+  scheduleWrite();
+}
+
 /** Returns every component rule registered so far, ready for <style id="openui-styles">. */
 export const getComponentStyles = (): string => {
   seed();
-  return rules || " ";
+  return wrapped(rules) || " ";
 };

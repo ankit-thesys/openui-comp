@@ -1,16 +1,19 @@
 // Shared pulse (#90), through public Skeleton users; the family is flat since #101.
 // Run after build: pnpm test test/unit/contract/SkeletonPulse.contract.test.tsx
 import {
+  configureStyles,
   getComponentStyles,
   PieChartSkeleton,
   Skeleton,
   TableSkeleton,
   ThemeProvider,
 } from "@openuidev/react-components";
-import { expect, it } from "vitest";
-import { classViolation, rulesOf, ruleViolation } from "./checks";
+import { afterEach, expect, it } from "vitest";
+import { classViolation, matchingBrace, rulesOf, ruleViolation } from "./checks";
 import { blocksIn, namesIn, renderAndCollect, stableClassesIn } from "./collect";
 import { sharedStyleContracts } from "./components";
+
+afterEach(() => configureStyles({ layer: undefined }));
 
 const pulseFrames =
   /@keyframes [\w-]+\{0%\{opacity:0\.3;\}50%\{opacity:0\.85;\}100%\{opacity:0\.3;\}\}/;
@@ -43,18 +46,20 @@ it("registers the pulse and its flat animation rule when Skeleton users render",
   expect(emitted.map((name) => classViolation(name, blocksIn(documented)))).toEqual([null]);
 });
 
-it("keeps the animation and keyframes together in the provider's layer", () => {
+it("keeps the animation and keyframes together in the app-wide layer", () => {
+  configureStyles({ layer: "openui" });
   const { html, css } = renderAndCollect([
-    <ThemeProvider cssLayer="openui">
+    <ThemeProvider>
       <Skeleton />
       <TableSkeleton rows={1} columns={1} />
       <PieChartSkeleton legendItems={1} />
     </ThemeProvider>,
   ]);
   expect(css).toMatch(pulseFrames);
-  expect(css).toMatch(/@layer openui\{\.go\d+\{animation:/);
+  expect(css).toMatch(/^@layer openui\{/);
+  expect(css.match(/@layer /g)).toHaveLength(1);
   expect(css).toMatch(/\}@keyframes [\w-]+\{/);
-  expect(css).toMatch(/100%\{opacity:0\.3;\}\}\}/);
+  expect(matchingBrace(css, css.indexOf("{"))).toBe(css.length - 1);
   expect(
     rulesOf(css)
       .map((rule) => ruleViolation(rule, "openui"))
@@ -64,8 +69,9 @@ it("keeps the animation and keyframes together in the provider's layer", () => {
 });
 
 it("collects previously registered animations together with their keyframes in layer mode", () => {
+  configureStyles({ layer: "openui" });
   const elements = [
-    <ThemeProvider cssLayer="openui">
+    <ThemeProvider>
       <Skeleton />
     </ThemeProvider>,
   ];

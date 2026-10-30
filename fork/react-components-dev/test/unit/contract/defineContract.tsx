@@ -1,17 +1,17 @@
 // Guards the styling contract for one migrated component, at the Node seam: rendered through
 // public exports, its CSS stays within the selector budget and its classes follow the grammar and
-// match its documented stable names exactly. Under `<ThemeProvider cssLayer="openui">` every rule
+// match its documented stable names exactly. With `configureStyles({ layer: "openui" })` every rule
 // sits in that layer with the same shapes, and nothing else changes.
 //
 // Each component runs in its own `<folder>.contract.test.tsx` file. Collection uses the classes in
 // its rendered markup, so prior registration by another component cannot hide its rules.
-import { ThemeProvider } from "@openuidev/react-components";
-import type { ReactElement } from "react";
+import { configureStyles, getComponentStyles, ThemeProvider } from "@openuidev/react-components";
 import { renderToString } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import { classViolation, ruleViolation, rulesOf, selectorsOf } from "./checks";
+import { classViolation, rulesOf, ruleViolation, selectorsOf } from "./checks";
 import {
   blocksIn,
+  cssFor,
   generatedClassesOn,
   namesIn,
   renderAndCollect,
@@ -28,15 +28,23 @@ export function describeContract(
   if (!entry) throw new Error(`${folder} is not in test/unit/contract/components.tsx.`);
   const { elements, clientOnly = [] } = entry;
   describe(folder, () => {
+    configureStyles({ layer: "openui" });
+    const beforeLayered = getComponentStyles();
+    configureStyles({ layer: undefined });
     const { html, css } = renderAndCollect(elements(), render);
-    const layered = renderAndCollect(
-      elements().map((element, key) => (
-        <ThemeProvider key={key} cssLayer="openui">
-          {element}
-        </ThemeProvider>
-      )),
-      render,
-    );
+    configureStyles({ layer: "openui" });
+    let layered: ReturnType<typeof renderAndCollect>;
+    try {
+      layered = renderAndCollect(
+        elements().map((element, key) => <ThemeProvider key={key}>{element}</ThemeProvider>),
+        render,
+      );
+      // Retain the first render's client-only registration delta in both modes. The factory
+      // cache is now shared, so the second render does not register those rules again.
+      layered.css = cssFor(layered.html, getComponentStyles(), beforeLayered);
+    } finally {
+      configureStyles({ layer: undefined });
+    }
     // MarkDownRenderer's prose rules weigh its root's generated class plus a tag. A family that
     // composes it carries them, so they are credited to it by the generated classes it puts on its
     // own root in each mode, across every look its contract entry renders. Rendered after both
@@ -44,22 +52,14 @@ export function describeContract(
     const markdownLooks = migratedComponents
       .find((component) => component.folder === "MarkDownRenderer")!
       .elements();
-    const proseRootsWith = (wrap: (element: ReactElement) => ReactElement) =>
-      generatedClassesOn(renderToString(wrap(<>{markdownLooks}</>)), "openui-markdown-renderer");
-    const proseRoots = {
-      "": proseRootsWith((element) => element),
-      openui: proseRootsWith((element) => (
-        <ThemeProvider cssLayer="openui">{element}</ThemeProvider>
-      )),
-    };
+    const proseRoots = generatedClassesOn(
+      renderToString(<>{markdownLooks}</>),
+      "openui-markdown-renderer",
+    );
     const violationsIn = (sheet: string, layer: "" | "openui") =>
       rulesOf(sheet)
         .map(
-          (rule) =>
-            [
-              rule,
-              ruleViolation(rule, layer, { prose: entry.prose, proseRoots: proseRoots[layer] }),
-            ] as const,
+          (rule) => [rule, ruleViolation(rule, layer, { prose: entry.prose, proseRoots })] as const,
         )
         .filter(([, reason]) => reason !== null)
         .map(([rule, reason]) => `${rule.selector}: ${reason}`);
@@ -92,10 +92,7 @@ export function describeContract(
     });
 
     it("keeps the same selector shapes and stable classes in layer mode", () => {
-      const generic = (selector: string) => selector.replace(/\bgo\d+\b/g, "go");
-      expect(selectorsOf(layered.css).map(generic).sort()).toEqual(
-        selectorsOf(css).map(generic).sort(),
-      );
+      expect(selectorsOf(layered.css).sort()).toEqual(selectorsOf(css).sort());
       expect([...stableClassesIn(layered.html)].sort()).toEqual([...stableClassesIn(html)].sort());
     });
   });
