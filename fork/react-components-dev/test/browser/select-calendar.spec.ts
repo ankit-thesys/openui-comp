@@ -197,7 +197,7 @@ for (const family of ["select", "calendar", "date-picker"]) {
     expect(
       await page.evaluate(() => document.getElementById("openui-styles")?.textContent ?? ""),
     ).toBe(before.sheet);
-    expect(await page.locator("html").getAttribute("class")).toEqual(before.html);
+    expect(await page.evaluate(() => document.documentElement.className)).toEqual(before.html);
     const observations = await Promise.all(selectors.map((selector) => computed(page, selector)));
     await page.evaluate(() => {
       document.documentElement.className = "consumer-html";
