@@ -243,7 +243,9 @@ for (const chart of otherCharts) {
       );
     });
   }
-  test(`${chart} registers only on render and needs no html marker`, async ({ page }) => {
+  test(`${chart} registers ${chart === "HeatmapChart" ? "on import" : "only on render"} and needs no html marker`, async ({
+    page,
+  }) => {
     await page.goto(url(chart, "lazy=1"));
     await page.waitForFunction(
       () =>
@@ -263,7 +265,20 @@ for (const chart of otherCharts) {
       [...element.classList].filter((name) => /^go\d+$/.test(name)),
     );
     expect(generated.length).toBeGreaterThan(0);
-    for (const name of generated) expect(before.css).not.toContain(`.${name}{`);
+    if (chart === "HeatmapChart") {
+      const owned = await page
+        .locator('[class*="openui-heatmap-chart"]')
+        .evaluateAll((elements) =>
+          elements.flatMap((element) =>
+            [...element.classList].filter((name) => /^go\d+$/.test(name)),
+          ),
+        );
+      for (const name of owned) expect(before.css).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+      expect(await page.locator("#openui-styles").textContent()).toBe(before.css);
+      for (const name of owned) expect(before.html.split(/\s+/)).not.toContain(name);
+    } else {
+      for (const name of generated) expect(before.css).not.toContain(`.${name}{`);
+    }
     expect(await page.evaluate(() => document.documentElement.className)).toBe(before.html);
     const read = () =>
       root.evaluate((element) => {

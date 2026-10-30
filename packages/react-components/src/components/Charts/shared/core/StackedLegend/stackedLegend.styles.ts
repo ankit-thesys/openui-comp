@@ -1,5 +1,6 @@
-import type { StyleCss } from "../../../../../styles/useStyles";
-import "../../../../Button/button.styles";
+import { css } from "../../../../../styles/css";
+
+import { buttonStyles } from "../../../../Button/button.styles";
 import { iconButtonStyles } from "../../../../IconButton/iconButton.styles";
 
 export const names = {
@@ -22,8 +23,9 @@ export const names = {
   legend: "openui-chart-with-stacked-legend-panel",
 } as const;
 
-export const stackedLegendStyles = (css: StyleCss) => {
-  // Button registers on import; register IconButton before these equal-weight part rules too.
+export const stackedLegendStyles = /*#__PURE__*/ (() => {
+  // Keep composed controls before these equal-weight part rules.
+  void buttonStyles;
   iconButtonStyles(css);
   return {
     root: css`
@@ -196,4 +198,4 @@ export const stackedLegendStyles = (css: StyleCss) => {
       align-items: var(--_openui-stacked-legend-panel-align, flex-start);
     `,
   };
-};
+})();

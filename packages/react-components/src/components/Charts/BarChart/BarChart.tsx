@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { useCallback } from "react";
-import { useStyles } from "../../../styles/useStyles";
 import { names as baseNames, chartBaseStyles } from "../shared/chartBase.styles";
 import { barChartStyles, names } from "./barChart.styles";
 import { names as horizontalNames } from "./horizontalBarChart.styles";
@@ -34,8 +33,8 @@ import type { BarChartData, BarChartProps } from "./types";
  * otherwise break the Rules of Hooks).
  */
 export function BarChart<T extends BarChartData>(props: BarChartProps<T>) {
-  const styles = useStyles(barChartStyles);
-  const baseStyles = useStyles(chartBaseStyles);
+  const styles = barChartStyles;
+  const baseStyles = chartBaseStyles;
   if (!props.data || props.data.length === 0) {
     return (
       <div
@@ -87,7 +86,7 @@ function BarChartImpl<T extends BarChartData>({
   onClick,
   yTickCount,
 }: BarChartProps<T>) {
-  const styles = useStyles(barChartStyles);
+  const styles = barChartStyles;
   const animate = useEffectiveAnimation(isAnimationActive);
   const mode = condensed ? "fit" : "scroll";
 

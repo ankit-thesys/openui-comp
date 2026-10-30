@@ -1,8 +1,8 @@
-import type { StyleCss } from "../../../../styles/useStyles";
-import { fadeAppearAnimation, fadeAppearStyles } from "../animations/fadeAppear.styles";
+import { css } from "../../../../styles/css";
 
-export const miniChartStyles = (css: StyleCss) => {
-  fadeAppearStyles(css);
+import { fadeAppearAnimation } from "../animations/fadeAppear.styles";
+
+export const miniChartStyles = /*#__PURE__*/ (() => {
   return {
     root: css`
       position: relative;
@@ -26,4 +26,4 @@ export const miniChartStyles = (css: StyleCss) => {
       }
     `,
   };
-};
+})();

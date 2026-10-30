@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
 
 export const names = {
   empty: "openui-chart-empty",
@@ -13,7 +13,7 @@ const label = `
   font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
   color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
 `;
-export const chartBaseStyles = (css: StyleCss) => ({
+export const chartBaseStyles = /*#__PURE__*/ {
   empty: css`
     display: flex;
     align-items: center;
@@ -32,4 +32,4 @@ export const chartBaseStyles = (css: StyleCss) => ({
   xAxisLabel: css`
     ${label} text-align: center;
   `,
-});
+};

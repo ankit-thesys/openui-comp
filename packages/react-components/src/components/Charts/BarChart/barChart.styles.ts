@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
+
 import {
   cartesianContainer,
   cartesianContainerInner,
@@ -46,7 +47,7 @@ const animated = `@media (prefers-reduced-motion: no-preference) {
  animation: openui-bar-chart-grow 0.6s ease-out var(--_openui-bar-chart-mark-delay, 0s) both;
  &[data-negative] { transform-origin: center top; }
 }`;
-export const barChartStyles = (css: StyleCss) => ({
+export const barChartStyles = /*#__PURE__*/ {
   svg: css`
     &[data-overflow="visible"] {
       overflow: visible;
@@ -106,4 +107,4 @@ export const barChartStyles = (css: StyleCss) => ({
     opacity: 0.04;
     pointer-events: none;
   `,
-});
+};

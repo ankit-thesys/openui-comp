@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../../../../styles/useStyles";
+import { css } from "../../../../../styles/css";
+
 import { iconButtonStyles } from "../../../../IconButton/iconButton.styles";
 
 export const names = {
@@ -9,7 +10,7 @@ export const names = {
   right: "openui-scroll-buttons-horizontal-right",
 } as const;
 
-export const scrollButtonsHorizontalStyles = (css: StyleCss) => {
+export const scrollButtonsHorizontalStyles = /*#__PURE__*/ (() => {
   // Register composed controls first so these equal-weight part rules also win on first render.
   iconButtonStyles(css);
   return {
@@ -36,4 +37,4 @@ export const scrollButtonsHorizontalStyles = (css: StyleCss) => {
       right: 0px;
     `,
   };
-};
+})();

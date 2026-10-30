@@ -1,5 +1,6 @@
-import type { StyleCss } from "../../../../../styles/useStyles";
-import "../../../../Button/button.styles";
+import { css } from "../../../../../styles/css";
+
+import { buttonStyles } from "../../../../Button/button.styles";
 
 export const names = {
   root: "openui-default-legend",
@@ -17,8 +18,9 @@ export const names = {
   icon: "openui-default-legend-item-icon",
 } as const;
 
-export const defaultLegendStyles = (css: StyleCss) => {
-  // Button registers on import, before these equal-weight part rules.
+export const defaultLegendClasses = /*#__PURE__*/ (() => {
+  // Keep Button before these equal-weight part rules.
+  void buttonStyles;
   return {
     root: css`
       display: flex;
@@ -115,4 +117,7 @@ export const defaultLegendStyles = (css: StyleCss) => {
       }
     `,
   };
-};
+})();
+
+// Temporary adapter for SegmentedBar until its conversion batch.
+export const defaultLegendStyles = (_css?: unknown) => defaultLegendClasses;

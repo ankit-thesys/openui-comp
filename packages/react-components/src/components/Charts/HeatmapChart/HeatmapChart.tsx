@@ -2,10 +2,8 @@
 
 import clsx from "clsx";
 import type { CSSProperties } from "react";
-import { useStyles } from "../../../styles/useStyles";
 import { useEffectiveAnimation } from "../hooks";
 import { useHeatmapChartOrchestrator } from "../hooks/cartesian/useHeatmapChartOrchestrator";
-import { fadeAppearStyles } from "../shared/animations/fadeAppear.styles";
 import { XAxis } from "../shared/cartesian/axes/XAxis";
 import { ChartShell } from "../shared/core/ChartShell";
 import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
@@ -20,7 +18,7 @@ import type { HeatmapChartData, HeatmapChartProps } from "./types";
 const CLASS_PREFIX = `${CHART_CLASS_PREFIX}-heatmap-chart`;
 
 export function HeatmapChart<T extends HeatmapChartData>(props: HeatmapChartProps<T>) {
-  const styles = useStyles(heatmapChartStyles);
+  const styles = heatmapChartStyles;
   const {
     data,
     categoryKey,
@@ -56,7 +54,6 @@ export function HeatmapChart<T extends HeatmapChartData>(props: HeatmapChartProp
     fitLegendInHeight,
   });
 
-  useStyles(fadeAppearStyles);
   const animate = useEffectiveAnimation(isAnimationActive);
 
   const {

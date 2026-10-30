@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import { useRef } from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import { horizontalBarChartStyles, names } from "../horizontalBarChart.styles";
 
 import { useHorizontalBarChartOrchestrator } from "../../hooks/cartesian/useHorizontalBarChartOrchestrator";
@@ -57,7 +56,7 @@ import { HorizontalCrosshair } from "./HorizontalCrosshair";
  * defensive belt-and-suspenders for a direct empty render.
  */
 export function HorizontalBarChartImpl<T extends BarChartData>(props: BarChartProps<T>) {
-  const styles = useStyles(horizontalBarChartStyles);
+  const styles = horizontalBarChartStyles;
   const {
     data,
     categoryKey,

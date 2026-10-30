@@ -22,7 +22,8 @@ it("renders the shared empty chart styling during server rendering", async () =>
   const html = renderToString(<LineChart data={[]} categoryKey="month" />);
   expect(html).toMatch(/class="[^"]*\bopenui-chart-empty(?: |")/);
   expect(html).not.toContain("openui-chart-empty-root");
-  expect(getComponentStyles().slice(before.length)).toContain("min-height:200px");
+  expect(before).toContain("min-height:200px");
+  expect(getComponentStyles()).toBe(before);
 });
 
 it("exposes flat default legend parts through a public line chart", async () => {
@@ -40,9 +41,8 @@ it("exposes flat default legend parts through a public line chart", async () => 
   );
   expect(html).toContain("openui-default-legend-item-label");
   expect(html).not.toContain("openui-chart-default-legend-root");
-  expect(getComponentStyles().slice(before.length)).toMatch(
-    /padding-top:var\(--openui-space-m,\s*12px\)/,
-  );
+  expect(before).toMatch(/padding-top:var\(--openui-space-m,\s*12px\)/);
+  expect(getComponentStyles()).toBe(before);
 });
 
 it("exposes the stacked legend active state without a state class", async () => {
@@ -57,7 +57,8 @@ it("exposes the stacked legend active state without a state class", async () => 
   expect(html).toMatch(/class="[^"]*\bopenui-stacked-legend-item(?: |")/);
   expect(html).toContain('data-state="active"');
   expect(html).not.toContain("__item--active");
-  expect(getComponentStyles().slice(before.length)).toContain('[data-state="active"]');
+  expect(before).toContain('[data-state="active"]');
+  expect(getComponentStyles()).toBe(before);
 });
 
 it("exposes horizontal overflow controls with native disabled state", async () => {
