@@ -5,7 +5,8 @@
 import { LineChart, ThemeProvider } from "@openuidev/react-components";
 import { useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import { migratedComponents } from "../../unit/contract/components";
+import { renderToString } from "react-dom/server";
+import { migratedComponents, otherChartContracts } from "../../unit/contract/components";
 
 export { getComponentStyles } from "@openuidev/react-components";
 
@@ -13,9 +14,23 @@ const params = new URLSearchParams(location.search);
 const folder = params.get("component");
 // `?layer=<name>` renders the same elements in layer mode (`<ThemeProvider cssLayer>`).
 const layer = params.get("layer");
-const component = migratedComponents.find((entry) => entry.folder === folder);
+const component = [...migratedComponents, ...otherChartContracts].find(
+  (entry) => entry.folder === folder,
+);
 if (!component) throw new Error(`No migrated component ${folder}`);
-const elements = component.elements();
+const elements = component.elements(params.has("contract"));
+const markdownLooks = params.has("contract")
+  ? migratedComponents.find((entry) => entry.folder === "MarkDownRenderer")!.elements()
+  : [];
+export const proseMarkup = params.has("contract")
+  ? renderToString(
+      layer ? (
+        <ThemeProvider cssLayer={layer}>{markdownLooks}</ThemeProvider>
+      ) : (
+        <>{markdownLooks}</>
+      ),
+    )
+  : "";
 function Fixture() {
   useEffect(() => {
     document.querySelector<HTMLButtonElement>("[data-tooltip-trigger]")?.focus();

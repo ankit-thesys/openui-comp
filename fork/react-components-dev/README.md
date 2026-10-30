@@ -172,7 +172,8 @@ override and Tailwind cases.
   `describeContract(folder)` from `defineContract.tsx`. One file per component keeps failures local.
   `coverage.test.ts` fails if an entry has no file. The contract test server-renders the entry through public exports,
   selects rules from the full public `getComponentStyles()` sheet by the generated classes in its
-  markup (`collect.ts`), and checks:
+  markup (`collect.ts`), unions them with rules registered during the render to retain coverage of
+  client-only parts until registration moves to import time, and checks:
   - every selector is one generated class, optionally with one state, a sibling pair
     (`.go1 + .go1`) or a zero-weight `:where(.go1) <type selectors>` rule, and no rule is layered;
   - MarkDownRenderer (the only entry with `prose: true` in `components.tsx`) may also use prose
@@ -190,13 +191,21 @@ override and Tailwind cases.
     to a documented root or part, and the rendered classes equal the component's `names`.
 - Collection retains whole selectors, including compounds and descendants that the budget must
   reject, and preserves `@media`, `@container`, `@supports` and `@layer` wrappers. It includes only
-  keyframes named by the selected rules' animation declarations. `collect.test.tsx` checks the
+  keyframes named by the selected rules' animation declarations (including state-dependent CSS
+  variables), plus newly registered keyframes. Every referenced animation name must resolve to a
+  selected keyframe; CSS-wide keywords and `none` are ignored. `collect.test.tsx` checks the
   collector itself and repeat rendering after rules are already registered.
 - Modal renders only a portal, so its Node contract uses `portal.ts` to keep the portal's children
   inline at the React DOM boundary. A temporary document target enables its public fixture; it is
   restored before reading the server sheet. The provider's private portal-theme marker is excluded
-  from stable-class checks. `private-names.test.tsx` uses the same adapter; `modal.contract.spec.ts`
-  checks the real browser portal's selectors, layers and stable names without the adapter.
+  from stable-class checks. `private-names.test.tsx` uses the same adapter.
+- `client-only.contract.spec.ts` derives its component list from every contract entry with
+  `clientOnly` parts, including focused chart entries. It opens their real portals, popovers,
+  editors and overflow controls in both modes, selects CSS from `getComponentStyles()` by live
+  document markup, and checks the same selector, layer, stable-name and private-name rules.
+  Every declared client-only class must appear across its samples; no missing part is skipped.
+  The `elements` fixture's contract flag also supplies math and overflowing Sources, Tabs and
+  StackedLegend cases. This coverage remains when the render delta becomes empty.
 - `checks.ts` holds the selector, layer and class grammar; `checks.test.ts` feeds it deliberately
   broken selectors, layered rules and names so a passing contract test means something.
 - `reference.test.ts` fails when the library's `docs/reference/selectors.md` (public, it ships

@@ -116,7 +116,7 @@ import { renderToString } from "react-dom/server";
 import remarkGfm from "remark-gfm";
 import { readStableNames, type StableNames } from "../../../scripts/selector-reference.mjs";
 import { cartesianChartElements } from "../../fixtures/cartesian-charts";
-import { chartFoundationElements } from "../../fixtures/chart-foundations";
+import { chartFoundationElements, foundationItems } from "../../fixtures/chart-foundations";
 import { markdown } from "../../fixtures/markdown";
 import { chartSlug, otherChartCases, otherCharts } from "../../fixtures/other-charts";
 import { stableClassesIn } from "./collect";
@@ -126,8 +126,8 @@ export interface MigratedComponent {
   folder: string;
   /** Its style modules' stable-class constants, the single source of the reference. */
   names: StableNames[];
-  /** Elements covering every value of every prop that changes its classes. */
-  elements: () => ReactElement[];
+  /** Elements covering every prop that changes classes; `open` also exposes client-only parts. */
+  elements: (open?: boolean) => ReactElement[];
   /** Stable classes that only render in the browser, such as parts shown after measuring. */
   clientOnly?: string[];
   /**
@@ -381,11 +381,21 @@ export const migratedComponents: MigratedComponent[] = [
         Object.fromEntries(dependencies.map((name, i) => [`dependency${i}`, name])),
       ];
     },
-    elements: () => [
+    elements: (open) => [
       ...chartFoundationElements(),
       ...otherCharts.flatMap((chart) =>
         otherChartCases(PublicCharts, chart).map(({ element }) => element),
       ),
+      ...(open
+        ? [
+            <PublicCharts.StackedLegend
+              key="scrollable"
+              items={foundationItems}
+              layout="scrollable"
+              style={{ height: 160 }}
+            />,
+          ]
+        : []),
     ],
     clientOnly: [
       "openui-radar-chart-hitbox",
@@ -1249,8 +1259,11 @@ export const migratedComponents: MigratedComponent[] = [
       ];
     },
     clientOnly: ["openui-text-content-wrapper-math"],
-    elements: () => [
-      <TextContentWrapper key="default" textMarkdown={wrapperText} />,
+    elements: (open) => [
+      <TextContentWrapper
+        key="default"
+        textMarkdown={open ? `${wrapperText}\n\n$$x^2$$` : wrapperText}
+      />,
       ...(["clear", "card", "sunk"] as const).map((variant) => (
         <TextContentWrapper
           key={variant}
@@ -1308,8 +1321,19 @@ export const migratedComponents: MigratedComponent[] = [
       ];
     },
     clientOnly: ["openui-sources-buttons"],
-    elements: () => [
-      <ListedSources key="list" sources={[source, { ...source, url: undefined }]} />,
+    elements: (open) => [
+      open ? (
+        <div key="list" style={{ width: 240 }}>
+          <ListedSources
+            sources={Array.from({ length: 8 }, (_, i) => ({
+              ...source,
+              url: `${source.url}/${i}`,
+            }))}
+          />
+        </div>
+      ) : (
+        <ListedSources key="list" sources={[source, { ...source, url: undefined }]} />
+      ),
       <CardSourceProvider key="context" sources={[source]}>
         <Sources />
       </CardSourceProvider>,
@@ -1611,10 +1635,10 @@ export const migratedComponents: MigratedComponent[] = [
       "openui-tabs-scroll-left",
       "openui-tabs-scroll-right",
     ],
-    elements: () =>
+    elements: (open) =>
       (["title", "iconTitle", "iconTitleSubtext", "imageTitle", "imageTitleSubtext"] as const).map(
         (variant) => (
-          <Tabs key={variant} defaultValue="first">
+          <Tabs key={variant} defaultValue="first" style={open ? { width: 180 } : undefined}>
             <TabsList variant={variant}>
               <TabsTrigger
                 value="first"
@@ -1624,6 +1648,10 @@ export const migratedComponents: MigratedComponent[] = [
                 image="image.png"
               />
               <TabsTrigger value="second" text="Activity" />
+              {open &&
+                Array.from({ length: 8 }, (_, i) => (
+                  <TabsTrigger key={i} value={`extra-${i}`} text={`Section ${i + 1}`} />
+                ))}
             </TabsList>
             <TabsContent value="first">Panel</TabsContent>
           </Tabs>

@@ -12,18 +12,13 @@ import { readStableNames } from "../../../scripts/selector-reference.mjs";
 import { blocksIn, namesIn, renderAndCollect } from "./collect";
 import { migratedComponents } from "./components";
 import { renderWithPortals, withPortalTarget } from "./portal";
+import { helperProperties, publicKeyframesIn, unsetPrivateVariables } from "./privateNames";
 
 // React's server renderer cannot render portals; keep their children inline at the DOM boundary.
 vi.mock("react-dom", async (importOriginal) => ({
   ...(await importOriginal<typeof import("react-dom")>()),
   createPortal: (children: ReactNode) => children,
 }));
-
-const dist = library("dist/");
-const clientCode = (readdirSync(dist, { recursive: true }) as string[])
-  .filter((file) => /\.m?js$/.test(file))
-  .map((file) => readFileSync(join(dist, file), "utf8"))
-  .join("\n");
 
 // One render of every migrated component, so variables set by a wrapping component count too.
 const rendered = migratedComponents.map((component) => {
@@ -43,47 +38,19 @@ it("collects CSS for every component whose private names it audits", () => {
 it("names every non-chart keyframe with the private _openui- prefix", () => {
   const publicKeyframes = rendered
     .filter(({ folder }) => !folder.startsWith("Charts"))
-    .flatMap(({ folder, css }) =>
-      [...css.matchAll(/@keyframes\s+([\w-]+)/g)]
-        .map((match) => match[1]!)
-        .filter((name) => !/^(--)?_openui-/.test(name))
-        .map((name) => `${folder}: ${name}`),
-    );
+    .flatMap(({ folder, css }) => publicKeyframesIn(css).map((name) => `${folder}: ${name}`));
   expect(publicKeyframes).toEqual([]);
 });
 
-// Shared chart parts set `--_<stable part class>-<property>` through `partVariable(className,
-// "<property>")` or `partVariables(className, { <property>: … })`, so dist holds only the
-// property. Accept a variable when it is a stable class plus a property the helper is called with.
-const helperProperties = new Set([
-  ...[...clientCode.matchAll(/\bpartVariable\([^,()]+,\s*"([\w-]+)"\)/g)].map((m) => m[1]!),
-  ...[...clientCode.matchAll(/\bpartVariables\([^,()]+,\s*\{([^}]*)\}/g)].flatMap(([, body]) =>
-    [...body!.matchAll(/(?:^|,)\s*"?([a-z][\w-]*)"?\s*:/g)].map((m) => m[1]!),
-  ),
-]);
 const stableClasses = namesIn((await readStableNames()).map(({ names }) => names));
-const setByHelper = (name: string) =>
-  [...helperProperties].some((property) => {
-    const suffix = `-${property}`;
-    return (
-      name.endsWith(suffix) &&
-      name.startsWith("--_") &&
-      stableClasses.has(name.slice(3, -suffix.length))
-    );
-  });
 
 it("recognises the part-variable helper's properties", () => {
   expect([...helperProperties].sort()).toEqual(["opacity", "path-length", "transition"]);
 });
 
 it("sets every private variable that a rule reads", () => {
-  const declared = new Set([...everything.matchAll(/(--_openui-[\w-]+)\s*:/g)].map((m) => m[1]));
   const unset = rendered.flatMap(({ folder, css }) =>
-    [...new Set([...css.matchAll(/var\((--_openui-[\w-]+)/g)].map((match) => match[1]!))]
-      .filter(
-        (name) => !declared.has(name) && !clientCode.includes(`"${name}"`) && !setByHelper(name),
-      )
-      .map((name) => `${folder}: ${name}`),
+    unsetPrivateVariables(css, everything, stableClasses).map((name) => `${folder}: ${name}`),
   );
   expect(unset).toEqual([]);
 });
