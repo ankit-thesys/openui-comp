@@ -203,7 +203,10 @@ Prototype on branch [`prototype/hookfree-css`](https://github.com/ankit-thesys/o
 Accepted 2026-10-31. [#162](https://github.com/ankit-thesys/openui-comp/issues/162)'s
 Decisions replace the conflicting parts above and in the original spec; implementation is
 tracked in [#163](https://github.com/ankit-thesys/openui-comp/issues/163).
-The public override contract and Goober 2.1.19 pin are unchanged.
+The public override contract and Goober 2.1.19 pin are unchanged. The build bundles a private
+copy of that Goober: its `setup` prefixer and compiled-rule cache are module-global, so a host
+app whose `goober` import resolved to the same module could rewrite component rules (#168).
+The `goober` dependency remains for the published `Css` type.
 
 The whole-sheet layer rewrite made streaming complicated. It forced stream markers to tell
 when a server tag was complete, a document observer to find subsequent tags, merging and

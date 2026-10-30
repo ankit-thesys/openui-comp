@@ -11,7 +11,12 @@ export default defineConfig({
   outDir: "dist",
   clean: true,
   deps: {
-    // Theme data is bundled so typed extensionless entries need no Node directory resolution.
-    alwaysBundle: [/^react-syntax-highlighter\/dist\/cjs\/styles\/prism(?:\/|$)/],
+    alwaysBundle: [
+      // Theme data is bundled so typed extensionless entries need no Node directory resolution.
+      /^react-syntax-highlighter\/dist\/cjs\/styles\/prism(?:\/|$)/,
+      // Goober keeps its prefixer (`setup`) and compiled-rule cache in module scope. A private
+      // copy keeps a host app's Goober, whatever it sets up, away from component rules.
+      /^goober$/,
+    ],
   },
 });

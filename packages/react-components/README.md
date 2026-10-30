@@ -617,8 +617,9 @@ const page = `<!doctype html>
 - The sheet holds every component's rules (about 211 KB, 28 KB gzipped), not only the ones the
   page renders. Browser-only apps keep per-component tree-shaking.
 - Serve the page as UTF-8. The browser recognises the server's rules by their exact text.
-- A host app's Goober `glob` and `extractCss` calls leave this sheet alone. Host Goober rules
-  are not included; rules registered through the library's public `css` and `keyframes` at
+- A host app's Goober `setup`, `glob` and `extractCss` calls leave this sheet alone: the
+  library runs its own copy of Goober, so a host prefixer never rewrites component rules. Host
+  Goober rules are not included; rules registered through the library's public `css` and `keyframes` at
   module level are.
 - ThemeProvider writes its theme variables in the browser, so a server-rendered first paint uses
   the components' built-in light values; `mode="dark"`, `lightTheme` and `darkTheme` apply once
@@ -778,8 +779,9 @@ These behaviors carry over from `@openuidev/react-ui`:
 pnpm --filter @openuidev/react-components run build
 ```
 
-ESM/CJS builds include matching declarations and source maps. Goober and React
-remain external dependencies.
+ESM/CJS builds include matching declarations and source maps. React remains an external
+dependency. Goober 2.1.19 is bundled as a private copy, so a host app's Goober setup and rule
+cache never reach component rules; the `goober` dependency only supplies the `css` types.
 
 ## Migration from `@openuidev/react-ui` styling
 
