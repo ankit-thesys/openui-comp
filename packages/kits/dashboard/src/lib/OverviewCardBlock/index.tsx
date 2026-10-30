@@ -1,7 +1,7 @@
 "use client";
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { OverviewCardBlock } from "../../../components/OverviewCardBlock";
+import { OverviewCardBlock } from "../../components/OverviewCardBlock";
 import { overviewCardBlockPropsSchema, type OverviewCardBlockProps } from "./schema";
 export { OverviewCardItemComponent } from "./schema";
 

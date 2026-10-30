@@ -1,7 +1,7 @@
 "use client";
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { FilterBar } from "../../../components/FilterBar";
+import { FilterBar } from "../../components/FilterBar";
 import { filterBarPropsSchema, type FilterBarProps } from "./schema";
 
 function FilterBarRenderer({ props, renderNode }: ComponentRenderProps<FilterBarProps>) {

@@ -2,7 +2,7 @@
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
 import { Fragment, type ReactElement } from "react";
-import { DashboardCardHeader } from "../../../components/DashboardCardHeader";
+import { DashboardCardHeader } from "../../components/DashboardCardHeader";
 import { dashboardCardHeaderPropsSchema, type DashboardCardHeaderProps } from "./schema";
 
 function DashboardCardHeaderRenderer({

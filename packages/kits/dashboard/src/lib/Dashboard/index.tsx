@@ -1,7 +1,7 @@
 "use client";
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { Dashboard } from "../../../components/Dashboard";
+import { Dashboard } from "../../components/Dashboard";
 import { dashboardPropsSchema, type DashboardProps } from "./schema";
 
 function DashboardRenderer({ props, renderNode }: ComponentRenderProps<DashboardProps>) {

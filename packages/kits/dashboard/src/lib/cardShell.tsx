@@ -2,7 +2,7 @@
 
 import { type ComponentRenderProps, useIsStreaming } from "@openuidev/react-lang";
 import { z } from "zod/v4";
-import { ShellCard, type ShellCardSize } from "../../components/ShellCard";
+import { ShellCard, type ShellCardSize } from "../components/ShellCard";
 import { ButtonComponent } from "./Button";
 import { ButtonGroupComponent } from "./ButtonGroup";
 import { CalloutComponent } from "./Callout";

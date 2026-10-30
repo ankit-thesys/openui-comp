@@ -5,7 +5,7 @@ import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lan
 import clsx from "clsx";
 import { useId, type CSSProperties } from "react";
 import { z } from "zod/v4";
-import { CHART_HEIGHT_VAR, names, styles } from "../../../components/DashboardCharts";
+import { CHART_HEIGHT_VAR, names, styles } from "../../components/DashboardCharts";
 import { DASHBOARD_CHART_PALETTE } from "./chartPalette";
 import { DASHBOARD_CHART_HEIGHT, buildSliceData } from "./helpers";
 export const pieChartPropsSchema = z.object({

@@ -1,7 +1,7 @@
 "use client";
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { MetricIndicator } from "../../../components/MetricIndicator";
+import { MetricIndicator } from "../../components/MetricIndicator";
 import { metricIndicatorPropsSchema, type MetricIndicatorProps } from "./schema";
 
 function MetricIndicatorRenderer({ props }: ComponentRenderProps<MetricIndicatorProps>) {

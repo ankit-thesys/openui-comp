@@ -8,11 +8,7 @@ import {
   useSetFieldValue,
   useStateField,
 } from "@openuidev/react-lang";
-import {
-  FilterMultiSelect,
-  type FilterOption,
-  FilterSelect,
-} from "../../../components/FilterSelect";
+import { FilterMultiSelect, type FilterOption, FilterSelect } from "../../components/FilterSelect";
 import {
   type FilterMultiSelectProps,
   filterMultiSelectPropsSchema,

@@ -2,7 +2,7 @@
 
 import { defineComponent, useIsQueryLoading } from "@openuidev/react-lang";
 import { z } from "zod/v4";
-import { Table as DashboardTable } from "../../../components/Table";
+import { Table as DashboardTable } from "../../components/Table";
 import { asArray } from "../helpers";
 import { ColSchema } from "./schema";
 

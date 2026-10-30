@@ -3,7 +3,7 @@
 import { IconTag } from "@openuidev/react-components";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
 import { type ComponentProps } from "react";
-import { SmallCardMetric, SmallCardSlots, SmallCardSnippet } from "../../../components/SmallCard";
+import { SmallCardMetric, SmallCardSlots, SmallCardSnippet } from "../../components/SmallCard";
 import { toIconProps } from "../iconProps";
 import { smallCardPropsSchema, type SmallCardProps } from "./schema";
 

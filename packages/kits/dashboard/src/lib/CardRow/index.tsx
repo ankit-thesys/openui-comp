@@ -1,7 +1,7 @@
 "use client";
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { CardRow } from "../../../components/CardRow";
+import { CardRow } from "../../components/CardRow";
 import { PieChartComponent } from "../Charts/PieChart";
 import { LargeCardComponent } from "../LargeCard";
 import { cardRowPropsSchema, type CardRowProps } from "./schema";

@@ -1,7 +1,7 @@
 "use client";
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { List } from "../../../components/List";
+import { List } from "../../components/List";
 import { listPropsSchema, type ListProps } from "./schema";
 export { ListItemComponent } from "./schema";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { Section } from "../../../components/Section";
+import { Section } from "../../components/Section";
 import { sectionPropsSchema, type SectionProps } from "./schema";
 
 function SectionRenderer({ props, renderNode }: ComponentRenderProps<SectionProps>) {
