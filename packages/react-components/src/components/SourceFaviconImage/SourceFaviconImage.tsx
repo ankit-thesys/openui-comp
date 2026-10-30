@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { memo, useEffect, useRef, useState } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { IconWrapper } from "../_shared/icons";
 import { names, sourceFaviconImageStyles } from "./sourceFaviconImage.styles";
 
@@ -18,7 +17,7 @@ export interface SourceFaviconImageProps {
  * 16x16 placeholder when it has nothing better, which is treated as a miss.
  */
 export const SourceFaviconImage = memo(({ height, width, url, alt }: SourceFaviconImageProps) => {
-  const styles = useStyles(sourceFaviconImageStyles);
+  const styles = sourceFaviconImageStyles;
   const ref = useRef<HTMLImageElement>(null);
   const [imageError, setImageError] = useState(false);
 

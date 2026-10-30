@@ -1,7 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import { useStyles } from "../../styles/useStyles";
 import { InlineMarkdownRenderer } from "../InlineMarkdownRenderer";
 import { inlineHeaderStyles, names } from "./inlineHeader.styles";
 
@@ -12,7 +11,7 @@ export interface InlineHeaderProps {
 }
 
 export const InlineHeader = ({ heading, description, className }: InlineHeaderProps) => {
-  const css = useStyles(inlineHeaderStyles);
+  const css = inlineHeaderStyles;
   if (!heading && !description) return null;
 
   return (

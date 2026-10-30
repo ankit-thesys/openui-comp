@@ -12,7 +12,6 @@ import {
 import ReactMarkdown, { Components, type Options } from "react-markdown";
 import oneLight from "react-syntax-highlighter/dist/cjs/styles/prism/one-light";
 import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus";
-import { useStyles } from "../../styles/useStyles";
 import { CodeBlock } from "../CodeBlock";
 import {
   Table,
@@ -89,7 +88,7 @@ export interface MarkDownRendererProps {
 
 export const MarkDownRenderer = memo((props: MarkDownRendererProps) => {
   const { variant = "clear", typography, listLeadIn } = props;
-  const styles = useStyles(markdownStyles);
+  const styles = markdownStyles;
   const { mode } = useTheme();
   const theme = mode === "dark" ? vscDarkPlus : oneLight;
   const components: Components = {

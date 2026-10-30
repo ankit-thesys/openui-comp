@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-sources-item",
@@ -8,7 +8,7 @@ export const names = {
   logo: "openui-sources-item-logo",
 } as const;
 
-export const sourcesItemStyles = (css: StyleCss) => ({
+export const sourcesItemStyles = /*#__PURE__*/ {
   root: css`
     display: flex;
     flex-direction: column;
@@ -18,6 +18,7 @@ export const sourcesItemStyles = (css: StyleCss) => ({
     height: 100%;
   `,
   linked: css`
+    /* Sources linked item: do not share Calendar's cursor-only rule position. */
     cursor: pointer;
   `,
   header: css`
@@ -49,4 +50,4 @@ export const sourcesItemStyles = (css: StyleCss) => ({
     box-sizing: border-box;
     overflow: hidden;
   `,
-});
+};

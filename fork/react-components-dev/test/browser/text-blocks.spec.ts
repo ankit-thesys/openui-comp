@@ -218,3 +218,29 @@ for (const family of textFamilies) {
     });
   }
 }
+
+for (const mode of ["light", "dark"]) {
+  for (const layer of ["", "openui"]) {
+    test(`TextBlock secondary tones win over the base colour (${mode}, ${layer || "default"})`, async ({
+      page,
+    }) => {
+      await open(page, "text-block", layer, "", mode);
+      await page.addStyleTag({
+        content: `.openui-text-block {
+          --openui-text-neutral-secondary: rgb(1, 2, 3);
+          --openui-text-success-primary: rgb(4, 5, 6);
+          --openui-text-danger-primary: rgb(7, 8, 9);
+        }`,
+      });
+      for (const [tone, color] of [
+        ["positive", "rgb(4, 5, 6)"],
+        ["negative", "rgb(7, 8, 9)"],
+      ]) {
+        const secondary = page.locator(`.openui-text-block-secondary--secondary-tone-${tone}`);
+        expect(await secondary.count()).toBe(3);
+        for (const element of await secondary.all())
+          await expect(element).toHaveCSS("color", color!);
+      }
+    });
+  }
+}
