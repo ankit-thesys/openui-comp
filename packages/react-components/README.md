@@ -218,14 +218,13 @@ configureStyles({ layer: "openui" });
 
 This replaces the beta's provider-level layer option. Call it once in the app entry, before
 rendering. Every component rule and public `css` or `keyframes` call joins the layer, including
-rules registered at import time before the call: the layer wraps rules when they are written to
-the page, not when they register. Import-time rules are written at the first microtask
-checkpoint, so if a module with top-level `await` is imported ahead of the call, they are written
-unlayered; call it from a module that the entry imports first. Server-rendered apps pass the
-layer to `<ComponentStyles>` instead (see [Server-rendered styles](#server-rendered-styles)); the
-browser reads it from that
-sheet, so they need no `configureStyles` call. ThemeProvider only controls theme tokens;
-components outside a provider and inside nested providers use the same component sheet.
+rules registered at import time before the call: the layer wraps rules when they are written to the
+page, not when they register. Import-time rules are written at the first microtask checkpoint, so if
+a module with top-level `await` is imported ahead of the call, they are written unlayered; call it
+from a module that the entry imports first. Server-rendered apps pass the layer to
+`<ComponentStyles>` instead (see [Server-rendered styles](#server-rendered-styles)); the browser
+reads it from that sheet, so they need no `configureStyles` call. ThemeProvider only controls theme
+tokens; components outside a provider and inside nested providers use the same component sheet.
 
 Component rules sit in `@layer openui`, so any unlayered app CSS beats them, whatever its
 specificity or load order, as do layers ordered after `openui`. Each write is its own
@@ -234,9 +233,11 @@ the layer they were written with, so configure the layer before anything renders
 are ignored with a development warning; a dotted name such as `app.openui` is valid. The options
 type is exported as `ConfigureStylesOptions`.
 
-Changing the layer after rules reached the page, or after `getComponentStyles()` returned rules
-on the server, warns in development. Setting the same layer again does not warn, nor does
-setting the layer the server sheet uses. Production logs nothing. A late call affects future browser writes; it cannot re-wrap existing page rules.
+Changing the layer after rules reached the page, or after `getComponentStyles()` returned rules on
+the server, warns in development. Setting the same layer again does not warn, nor does setting the
+layer the server sheet uses. Production logs nothing, and neither does a browser build loaded
+without a bundler, which has no `process.env.NODE_ENV` to read. A late call affects future browser
+writes; it cannot re-wrap existing page rules.
 
 The library declares no layer order. In a browser-only app, put the order and an empty library
 sheet first in `<head>`, before any stylesheet, in this order:
