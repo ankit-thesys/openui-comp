@@ -1,6 +1,10 @@
 "use client";
 
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+import { calendarStyles } from "../Calendar/calendar.styles";
+
+// Retain a value dependency on Calendar's defaults before registering the owned content rules.
+Object.values(calendarStyles);
 
 export const names = {
   root: "openui-date-picker",
@@ -15,7 +19,7 @@ export const names = {
   mode: { single: "openui-date-picker--mode-single", range: "openui-date-picker--mode-range" },
 } as const;
 
-export const datePickerStyles = (css: StyleCss) => ({
+export const datePickerStyles = /*#__PURE__*/ {
   root: css`
     position: relative;
   `,
@@ -107,11 +111,11 @@ export const datePickerStyles = (css: StyleCss) => ({
     width: 100%;
     height: 100%;
   `,
-});
+};
 
-export const datePickerCalendarStyles = (css: StyleCss) => ({
+export const datePickerCalendarStyles = /*#__PURE__*/ {
   content: css`
     border: none;
     border-radius: 0;
   `,
-});
+};

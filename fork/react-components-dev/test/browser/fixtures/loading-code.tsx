@@ -39,19 +39,23 @@ const mount = () =>
           <DotMatrixLoader variant="compact" size={40} />
         </>
       )}
-      <CodeBlock language="javascript" codeString="const answer = 42;" className="app-code" />
-      <CodeBlock
-        language="text"
-        codeString="Custom highlighter"
-        className="app-code-custom"
-        syntaxHighlighterClassName="app-highlighter"
-      />
-      <CodeBlock
-        language="text"
-        codeString="Empty highlighter class"
-        className="app-code-empty"
-        syntaxHighlighterClassName=""
-      />
+      {!params.has("loading-only") && (
+        <>
+          <CodeBlock language="javascript" codeString="const answer = 42;" className="app-code" />
+          <CodeBlock
+            language="text"
+            codeString="Custom highlighter"
+            className="app-code-custom"
+            syntaxHighlighterClassName="app-highlighter"
+          />
+          <CodeBlock
+            language="text"
+            codeString="Empty highlighter class"
+            className="app-code-empty"
+            syntaxHighlighterClassName=""
+          />
+        </>
+      )}
     </ThemeProvider>,
   );
 if (params.has("lazy")) window.mountFixture = mount;

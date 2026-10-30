@@ -1,8 +1,8 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
 
 export const names = { root: "openui-hint" } as const;
 
-export const hintStyles = (css: StyleCss) => ({
+export const hintStyles = /*#__PURE__*/ {
   root: css`
     box-sizing: border-box;
     font: var(--openui-text-body-sm, 400 14px/1.5 "Inter", sans-serif);
@@ -16,4 +16,4 @@ export const hintStyles = (css: StyleCss) => ({
       color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));
     }
   `,
-});
+};

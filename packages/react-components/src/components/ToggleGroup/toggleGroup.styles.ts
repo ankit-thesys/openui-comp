@@ -1,8 +1,8 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = { root: "openui-toggle-group" } as const;
 
-export const toggleGroupStyles = (css: StyleCss) => ({
+export const toggleGroupStyles = /*#__PURE__*/ {
   root: css`
     display: flex;
     width: 100%;
@@ -11,4 +11,4 @@ export const toggleGroupStyles = (css: StyleCss) => ({
     flex-direction: row;
     flex-wrap: wrap;
   `,
-});
+};

@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { useEffect, useRef, type CSSProperties } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { dotMatrixLoaderStyles, names } from "./dotMatrixLoader.styles";
 
 /** Time for each trail to complete one revolution of its ring. */
@@ -55,7 +54,7 @@ export const DotMatrixLoader = ({
   size?: number;
   variant?: DotMatrixLoaderVariant;
 }) => {
-  const styles = useStyles(dotMatrixLoaderStyles);
+  const styles = dotMatrixLoaderStyles;
   const dotsRef = useRef<Map<string, HTMLSpanElement>>(new Map());
   const isCompact = variant === "compact";
   const gridSize = isCompact ? 4 : 5;

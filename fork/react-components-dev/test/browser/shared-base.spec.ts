@@ -10,7 +10,7 @@ test("shared border-box registers at import and survives an html class rewrite",
   const imported = await page.evaluate(
     () => document.getElementById("openui-styles")?.textContent ?? "",
   );
-  expect(imported).not.toMatch(/@keyframes [\w-]+\{0%\{opacity:0\.3;/);
+  expect(imported).toMatch(/@keyframes [\w-]+\{0%\{opacity:0\.3;/);
   await page.evaluate(() => window.mountFixture());
   await expect(page.locator(".openui-border-box")).toHaveCount(3);
   await expect(page.locator(".openui-skeleton-pulse")).toHaveCount(18);
@@ -22,6 +22,13 @@ test("shared border-box registers at import and survives an html class rewrite",
   );
   expect(shared).toHaveLength(1);
   expect(imported).toContain(`.${shared[0]}{box-sizing:border-box;}`);
+  const pulse = await page
+    .locator(".openui-skeleton-pulse")
+    .evaluateAll((elements) =>
+      elements.flatMap((el) => [...el.classList].filter((name) => /^go\d+$/.test(name))),
+    );
+  expect(pulse.length).toBeGreaterThan(0);
+  for (const name of pulse) expect(imported).toMatch(new RegExp(`\\.${name}(?![0-9])`));
   await page.evaluate(() => {
     document.documentElement.className = "consumer-html";
   });

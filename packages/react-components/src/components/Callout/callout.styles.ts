@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-callout",
@@ -13,7 +13,7 @@ export const names = {
   },
 } as const;
 
-export const calloutStyles = (css: StyleCss) => ({
+export const calloutStyles = /*#__PURE__*/ {
   root: css`
     @keyframes _openui-callout-fadeout {
       0% {
@@ -93,4 +93,4 @@ export const calloutStyles = (css: StyleCss) => ({
       );
     `,
   },
-});
+};

@@ -2,6 +2,10 @@ import type { StyleCss } from "../../../../../styles/useStyles";
 import "../../../../Button/button.styles";
 import { iconButtonStyles } from "../../../../IconButton/iconButton.styles";
 
+// IconButton registers on import. Reading its map keeps that value import, so its rules come
+// before these equal-weight part rules, which still register when the chart first renders.
+Object.values(iconButtonStyles);
+
 export const names = {
   root: "openui-stacked-legend",
   header: "openui-stacked-legend-header",
@@ -23,8 +27,6 @@ export const names = {
 } as const;
 
 export const stackedLegendStyles = (css: StyleCss) => {
-  // Button registers on import; register IconButton before these equal-weight part rules too.
-  iconButtonStyles(css);
   return {
     root: css`
       position: relative;

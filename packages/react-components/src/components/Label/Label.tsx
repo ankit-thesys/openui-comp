@@ -3,7 +3,6 @@
 import * as LabelPrimitive from "@radix-ui/react-label";
 import clsx from "clsx";
 import React, { forwardRef } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { labelStyles, names } from "./label.styles";
 
 export interface LabelProps extends React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> {
@@ -16,7 +15,7 @@ export interface LabelProps extends React.ComponentPropsWithoutRef<typeof LabelP
 
 const Label = forwardRef<HTMLLabelElement, LabelProps>(
   ({ children, className, style, disabled, required, ...props }, ref) => {
-    const styles = useStyles(labelStyles);
+    const styles = labelStyles;
     return (
       <LabelPrimitive.Root
         ref={ref}

@@ -1,4 +1,4 @@
-// #93: one family per page, including portal nodes outside #root and lazy render registration.
+// #93: one family per page, including portal nodes outside #root and lazy mounting.
 import {
   Calendar,
   configureStyles,

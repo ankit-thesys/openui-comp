@@ -1,4 +1,4 @@
-import { Button, getComponentStyles, Input, TooltipWrapper } from "@openuidev/react-components";
+import { Button, css, getComponentStyles, TooltipWrapper } from "@openuidev/react-components";
 import { renderToString } from "react-dom/server";
 import { expect, it } from "vitest";
 import { rulesOf, ruleViolation, selectorsOf } from "./checks";
@@ -27,23 +27,33 @@ it("excludes rules registered by unrelated renders from the component's collecti
   const elements = [<Button>Send</Button>];
   const first = renderAndCollect(elements);
   const registered = getComponentStyles();
-  renderToString(<Input />);
+  // Consumer rules may still register during render after library rules move to import time.
+  const Other = () => (
+    <div
+      className={css`
+        color: rgb(1, 2, 3);
+      `}
+    />
+  );
+  renderToString(<Other />);
 
   expect(getComponentStyles()).not.toBe(registered);
   expect(renderAndCollect(elements).css).toBe(first.css);
 });
 
-it("also checks rules registered for parts absent from server markup", () => {
-  const { html, css } = renderAndCollect([
+it("keeps imported tooltip portal rules available for client markup collection", () => {
+  const imported = getComponentStyles();
+  const { html } = renderAndCollect([
     <TooltipWrapper tooltipContent="Details">
       <button>Help</button>
     </TooltipWrapper>,
   ]);
 
   expect(html).not.toContain("openui-tooltip-wrapper");
-  expect(css).toContain("animation-name:var(--_openui-tooltip-wrapper-animation)");
+  expect(getComponentStyles()).toBe(imported);
+  expect(imported).toContain("animation-name:var(--_openui-tooltip-wrapper-animation)");
   for (const direction of ["up", "down", "left", "right"])
-    expect(css).toContain(`@keyframes _openui-tooltip-${direction}{`);
+    expect(imported).toContain(`@keyframes _openui-tooltip-${direction}{`);
 });
 
 it("keeps selected rules inside their original conditional and layer wrappers", () => {
