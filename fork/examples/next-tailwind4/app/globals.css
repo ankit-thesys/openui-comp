@@ -1,5 +1,6 @@
-/* Next loads this sheet before the component styles, so it declares the layer order:
-   OpenUI's rules rank below Tailwind's utilities and above its preflight. */
+/* Next hoists this sheet's <link> to the top of <head>, so this is the first declaration of the
+   layer order (layout.tsx repeats it): OpenUI's rules rank below Tailwind's utilities and above
+   its preflight. */
 @layer theme, base, openui, components, utilities;
 
 @import "tailwindcss";

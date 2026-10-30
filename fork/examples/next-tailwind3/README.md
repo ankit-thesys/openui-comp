@@ -16,18 +16,18 @@ for `tsc --noEmit`.
 
 ## Styling
 
-The app uses the library's default **unlayered** mode. Do not set `cssLayer` with
-Tailwind 3: its preflight is unlayered and would beat layered component rules.
+The app uses the library's default **unlayered** mode. Do not call
+`configureStyles({ layer })` with Tailwind 3: its preflight is unlayered and would beat layered component rules.
 `ThemeProvider mode` controls the light/dark switch.
 
 ## Server rendering and override weight
 
-`app/style-registry.tsx` collects the component CSS while Next renders the page
-(`getComponentStyles()` through `useServerInsertedHTML`) and writes it into a
-`<style id="_goober">` tag, which the browser adopts. The page is styled before
-JavaScript runs.
+`app/style-registry.tsx` keeps one `createStyleRegistry()` per response and inlines each
+`registry.flush()` through `useServerInsertedHTML` into a `<style id="openui-styles">` tag:
+the first holds every rule so far, later ones only the new rules. The page is styled before
+JavaScript runs, and the browser merges the tags so each rule appears once after hydration.
 
-Next places that tag after the app stylesheet, so a component rule beats an
+Next places these tags after the app stylesheet, so a component rule beats an
 app rule of equal weight. Two settings give the app's CSS one extra element of
 weight, without `!important`:
 

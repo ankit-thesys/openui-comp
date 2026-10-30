@@ -52,7 +52,7 @@ export default function Page() {
   const [sent, setSent] = useState(false);
   const [format, setFormat] = useState("interview");
   return (
-    <ThemeProvider mode={dark ? "dark" : "light"} cssLayer="openui">
+    <ThemeProvider mode={dark ? "dark" : "light"}>
       <div className="studio min-h-screen" data-mode={dark ? "dark" : "light"}>
         <a className="skip" href="#main">
           Skip to content

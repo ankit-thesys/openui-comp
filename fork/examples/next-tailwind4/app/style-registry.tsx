@@ -1,28 +1,24 @@
 "use client";
 
-import { getComponentStyles } from "@openuidev/react-components";
+import { configureStyles, createStyleRegistry } from "@openuidev/react-components";
 import { useServerInsertedHTML } from "next/navigation";
-import { useRef, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
+
+// One app-wide cascade layer, on the server and in the browser (this module runs in both).
+configureStyles({ layer: "openui" });
 
 /**
- * Streams the component CSS collected during server rendering into the HTML.
- * The first flush writes the `_goober` tag the browser adopts; later flushes add
- * only the rules registered since. Sheet order does not matter here: the rules sit
- * in `@layer openui`, and globals.css declares the layer order first.
+ * Streams the component CSS collected during server rendering into the HTML: one registry per
+ * response, each flush holding only the rules registered since the last one. Every tag keeps the
+ * `openui-styles` id; the browser adopts the first, merges the later ones into it and removes
+ * them, so each rule ends up in the sheet once. The rules sit in `@layer openui`,
+ * so where Next places these tags does not matter: the layout's head declares the layer order.
  */
 export default function StyleRegistry({ children }: { children: ReactNode }) {
-  const sent = useRef("");
+  const [registry] = useState(createStyleRegistry);
   useServerInsertedHTML(() => {
-    const sheet = getComponentStyles();
-    const first = sent.current === "";
-    const css = sheet.startsWith(sent.current) ? sheet.slice(sent.current.length) : sheet;
-    sent.current = sheet;
-    if (!css) return null;
-    return first ? (
-      <style id="_goober" dangerouslySetInnerHTML={{ __html: css }} />
-    ) : (
-      <style dangerouslySetInnerHTML={{ __html: css }} />
-    );
+    const css = registry.flush();
+    return css ? <style id="openui-styles" dangerouslySetInnerHTML={{ __html: css }} /> : null;
   });
   return children;
 }
