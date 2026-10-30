@@ -1,0 +1,12 @@
+.compat-main {
+  display: grid;
+  gap: 24px;
+  max-width: 640px;
+  padding: 32px;
+}
+/* Print is an app-owned override toggle, enabled only after the default-theme checks. */
+@media print {
+  .openui-button {
+    background-color: rgb(1, 2, 3);
+  }
+}
