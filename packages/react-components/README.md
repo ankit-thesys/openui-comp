@@ -576,7 +576,8 @@ export function StyleRegistry({ children }: { children: ReactNode }) {
 }
 ```
 
-Keep the `openui-styles` id so the browser adopts the server tag. Next.js calls the callback on
+Keep the `openui-styles` id so the browser adopts the server tag; in layer mode it keeps the
+server's single `@layer` block and adds later rules inside it. Next.js calls the callback on
 every flush, and the sheet is cumulative, so each flush inserts another `openui-styles` tag with
 all rules registered so far; the browser adopts the first and the later copies repeat its rules.
 Use layer mode with streaming: tags streamed after the app's CSS would otherwise outrank it on

@@ -24,13 +24,35 @@ const inBrowser = () => typeof window === "object";
 
 const sheetText = (tag: Element) => (tag.textContent ?? "").trim();
 
+// A sheet written in layer mode, by the server or another module copy, is one `@layer <name>{…}`
+// around all its rules. Seeding and merging work on the rules inside, so the next write wraps
+// them once instead of nesting a second layer. Anything else, including a sheet whose first
+// block closes before its end, is returned unchanged.
+function serverRules(text: string): string {
+  const open = /^@layer\s+[^\s{};,]+\s*\{/.exec(text);
+  if (!open) return text;
+  let depth = 0;
+  let quote = "";
+  for (let i = open[0].length - 1; i < text.length; i++) {
+    const char = text[i];
+    if (quote) {
+      if (char === "\\") i++;
+      else if (char === quote) quote = "";
+    } else if (char === '"' || char === "'") quote = char;
+    else if (char === "{") depth++;
+    else if (char === "}" && --depth === 0)
+      return i === text.length - 1 ? text.slice(open[0].length, i) : text;
+  }
+  return text;
+}
+
 // A server-rendered sheet, or one another copy of the module wrote, already holds rules. Start
 // from them, so Goober's `indexOf` dedupe skips those rules and no write drops them.
 function seed() {
   if (seeded || !inBrowser()) return;
   seeded = true;
   const tag = document.getElementById(SHEET_ID);
-  if (tag) rules = sheetText(tag) + rules;
+  if (tag) rules = serverRules(sheetText(tag)) + rules;
 }
 
 function sheetTag(): HTMLElement {
@@ -65,7 +87,7 @@ export function flushComponentStyles() {
   if (!inBrowser() || (!pending.length && !relayer)) return;
   const tag = sheetTag();
   // Another module copy may have written since; append only what the sheet lacks.
-  let text = sheetText(tag);
+  let text = serverRules(sheetText(tag));
   for (const rule of pending) if (!text.includes(rule)) text += rule;
   pending = [];
   relayer = false;

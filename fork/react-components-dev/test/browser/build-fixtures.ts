@@ -50,6 +50,7 @@ const fixtures = [
   "parity-tag-block",
   "parity-separator",
   "smoke",
+  "ssr-hydrate",
   "sheet",
   "import-registration",
   "button",
