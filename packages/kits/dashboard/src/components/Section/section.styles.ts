@@ -1,5 +1,5 @@
 import { css } from "goober";
-import { C1_CLASS_PREFIX as P } from "../../../shared/classPrefix";
+import { C1_CLASS_PREFIX as P } from "../../shared/classPrefix";
 
 export const sectionClass = css`
   display: flex;
@@ -7,7 +7,7 @@ export const sectionClass = css`
   gap: var(--openui-space-xl);
   width: 100%;
 
-  & .${P}-section__header, & .${P}-section__filter, & .${P}-section__rows {
+  & .${P}-section__filter, & .${P}-section__rows {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
@@ -21,9 +21,5 @@ export const sectionClass = css`
     display: flex;
     flex-direction: column;
     gap: var(--openui-space-xl);
-  }
-
-  & .${P}-section__rows--without-header {
-    margin-top: 0;
   }
 `;

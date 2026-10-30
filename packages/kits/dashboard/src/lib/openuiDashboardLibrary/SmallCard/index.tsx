@@ -1,15 +1,12 @@
 "use client";
 
-import { Card, IconTag } from "@openuidev/react-components";
+import { IconTag } from "@openuidev/react-components";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import clsx from "clsx";
-import { TextBlockView } from "../../../components/TextBlockView";
-import { C1_CLASS_PREFIX } from "../../../shared/classPrefix";
-import { type IconTagProps } from "../IconTag/schema";
-import { shellCardClass } from "../cardShell.styles";
+import { type ComponentProps } from "react";
+import { SmallCardMetric, SmallCardSlots, SmallCardSnippet } from "../../../components/SmallCard";
 import { toIconProps } from "../iconProps";
 import { smallCardPropsSchema, type SmallCardProps } from "./schema";
-import { smallCardClass, smallCardSnippetClass } from "./smallCard.styles";
+
 type SnippetLhs = {
   title: string;
   subtitle?: string;
@@ -44,174 +41,35 @@ function isSnippetRhs(value: unknown): value is SnippetRhs {
   );
 }
 
-function SmallCardTitleMetricContent({
-  title,
-  metric,
-  trend,
-}: {
-  title: string;
-  metric: string;
-  trend?: { direction?: string; value?: number } | string;
-}) {
-  const trendObj = typeof trend === "object" && trend !== null ? trend : undefined;
-  const isPositive = trendObj?.direction === "up";
-  const isNegative = trendObj?.direction === "down";
-
-  return (
-    <div
-      className={clsx(
-        smallCardClass,
-        `${C1_CLASS_PREFIX}-small-card`,
-        `${C1_CLASS_PREFIX}-small-card--title-metric`,
-      )}
-    >
-      <div className={`${C1_CLASS_PREFIX}-small-card__title`}>{title}</div>
-      <div className={`${C1_CLASS_PREFIX}-small-card__metric-row`}>
-        <div className={`${C1_CLASS_PREFIX}-small-card__metric`}>{metric}</div>
-        {trendObj?.value !== undefined && (
-          <div
-            className={clsx(
-              `${C1_CLASS_PREFIX}-small-card__trend`,
-              isPositive && `${C1_CLASS_PREFIX}-small-card__trend--success`,
-              isNegative && `${C1_CLASS_PREFIX}-small-card__trend--danger`,
-            )}
-          >
-            {isPositive ? "+" : isNegative ? "-" : ""}
-            {trendObj.value}%
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
-function SmallCardSnippetContent({ lhs, rhs }: { lhs: SnippetLhs; rhs: SnippetRhs }) {
-  const rhsBlockVariant =
-    rhs.subtextVariant === "metric" ? "highlight-text-number-subtext" : "text-subtext";
-
-  return (
-    <div
-      className={clsx(
-        smallCardSnippetClass,
-        `${C1_CLASS_PREFIX}-small-card-snippet`,
-        `${C1_CLASS_PREFIX}-small-card-snippet--static`,
-      )}
-    >
-      <div className={`${C1_CLASS_PREFIX}-small-card-snippet__lhs`}>
-        {toIconProps(lhs["icon"]) ? (
-          <IconTag
-            icon={toIconProps(lhs["icon"])!}
-            variant={(lhs.iconVariant ?? "neutral") as IconTagProps["variant"]}
-            size="l"
-          />
-        ) : lhs.imageSrc ? (
-          <img
-            className={`${C1_CLASS_PREFIX}-small-card-snippet__image`}
-            src={lhs.imageSrc}
-            alt={lhs.imageAlt ?? lhs.title}
-          />
-        ) : null}
-        <div className={`${C1_CLASS_PREFIX}-small-card-snippet__lhs-content`}>
-          <TextBlockView
-            variant="text-subtext"
-            primary={lhs.title}
-            secondary={lhs.subtitle}
-            type="text"
-            size="md"
-            align="left"
-          />
-        </div>
-      </div>
-      <div className={`${C1_CLASS_PREFIX}-small-card-snippet__rhs`}>
-        <div className={`${C1_CLASS_PREFIX}-small-card-snippet__rhs-content`}>
-          <TextBlockView
-            variant={rhsBlockVariant}
-            primary={rhs.value}
-            secondary={rhs.subtext}
-            type={(rhs.variant as "text" | "number" | "textOnly" | undefined) ?? "text"}
-            size="md"
-            align="right"
-            secondaryTone={
-              rhs.subtextVariant === "metric" && rhs.subtext?.startsWith("+")
-                ? "positive"
-                : rhs.subtextVariant === "metric" && rhs.subtext?.startsWith("-")
-                  ? "negative"
-                  : undefined
-            }
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function SmallCardRenderer({ props, renderNode }: ComponentRenderProps<SmallCardProps>) {
-  const isTitleMetricCard = typeof props.top === "string" && typeof props.bottom === "string";
-  const snippetLhs = isSnippetLhs(props.top) ? props.top : undefined;
-  const isSnippetCard = snippetLhs !== undefined && isSnippetRhs(props.bottom);
-  const snippetRhs = isSnippetRhs(props.bottom) ? props.bottom : undefined;
-
-  if (isTitleMetricCard) {
+  if (typeof props.top === "string" && typeof props.bottom === "string") {
     return (
-      <Card
-        width="full"
-        variant="card"
-        className={clsx(
-          shellCardClass,
-          `${C1_CLASS_PREFIX}-shell-card`,
-          `${C1_CLASS_PREFIX}-shell-card--small`,
-        )}
-      >
-        <SmallCardTitleMetricContent
-          title={props.top as string}
-          metric={props.bottom as string}
-          trend={props.trend}
-        />
-      </Card>
+      <SmallCardMetric
+        title={props.top}
+        metric={props.bottom}
+        trend={typeof props.trend === "object" && props.trend !== null ? props.trend : undefined}
+      />
     );
   }
 
-  if (isSnippetCard && snippetRhs) {
+  if (isSnippetLhs(props.top) && isSnippetRhs(props.bottom)) {
+    const { icon, iconVariant, ...lhs } = props.top;
     return (
-      <Card
-        width="full"
-        variant="card"
-        className={clsx(
-          shellCardClass,
-          `${C1_CLASS_PREFIX}-shell-card`,
-          `${C1_CLASS_PREFIX}-shell-card--small`,
-          `${C1_CLASS_PREFIX}-shell-card--small-snippet`,
-        )}
-      >
-        <SmallCardSnippetContent lhs={snippetLhs} rhs={snippetRhs} />
-      </Card>
+      <SmallCardSnippet
+        lhs={{
+          ...lhs,
+          icon: toIconProps(icon) ?? undefined,
+          iconVariant: iconVariant as ComponentProps<typeof IconTag>["variant"],
+        }}
+        rhs={{
+          ...props.bottom,
+          variant: props.bottom.variant as "text" | "number" | "textOnly" | undefined,
+        }}
+      />
     );
   }
 
-  return (
-    <Card
-      width="full"
-      variant="card"
-      className={clsx(
-        shellCardClass,
-        `${C1_CLASS_PREFIX}-shell-card`,
-        `${C1_CLASS_PREFIX}-shell-card--small`,
-      )}
-    >
-      <div className={clsx(smallCardClass, `${C1_CLASS_PREFIX}-small-card`)}>
-        <div
-          className={`${C1_CLASS_PREFIX}-small-card__slot ${C1_CLASS_PREFIX}-small-card__slot--top`}
-        >
-          {renderNode(props.top)}
-        </div>
-        <div
-          className={`${C1_CLASS_PREFIX}-small-card__slot ${C1_CLASS_PREFIX}-small-card__slot--bottom`}
-        >
-          {renderNode(props.bottom ?? [])}
-        </div>
-      </div>
-    </Card>
-  );
+  return <SmallCardSlots top={renderNode(props.top)} bottom={renderNode(props.bottom ?? [])} />;
 }
 
 export const SmallCardComponent = defineComponent({

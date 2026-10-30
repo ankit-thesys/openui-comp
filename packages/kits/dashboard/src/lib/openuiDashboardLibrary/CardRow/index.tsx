@@ -1,11 +1,9 @@
 "use client";
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import clsx from "clsx";
-import { C1_CLASS_PREFIX } from "../../../shared/classPrefix";
+import { CardRow } from "../../../components/CardRow";
 import { PieChartComponent } from "../Charts/PieChart";
 import { LargeCardComponent } from "../LargeCard";
-import { cardRowClass } from "./cardRow.styles";
 import { cardRowPropsSchema, type CardRowProps } from "./schema";
 type CardKind = "small" | "medium" | "large";
 type CardRowVariant = "empty" | "small" | "medium" | "medium-large" | "large";
@@ -110,17 +108,13 @@ function CardRowRenderer({ props, renderNode }: ComponentRenderProps<CardRowProp
   const children = normalizeThreeMediumCardRow(collapseNormalizedChildren);
 
   return (
-    <div
-      className={clsx(
-        cardRowClass,
-        `${C1_CLASS_PREFIX}-card-row`,
-        `${C1_CLASS_PREFIX}-card-row--align-${props.align ?? "stretch"}`,
-        variant && variant !== "empty" && `${C1_CLASS_PREFIX}-card-row--type-${variant}`,
-        `${C1_CLASS_PREFIX}-card-row--count-${props.children.length}`,
-      )}
+    <CardRow
+      align={props.align ?? "stretch"}
+      type={variant && variant !== "empty" ? variant : undefined}
+      count={props.children.length}
     >
       {renderNode(children)}
-    </div>
+    </CardRow>
   );
 }
 

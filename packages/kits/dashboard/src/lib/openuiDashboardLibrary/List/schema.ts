@@ -22,5 +22,3 @@ export const listPropsSchema = z.object({
 });
 
 export type ListProps = z.infer<typeof listPropsSchema>;
-export type ListRenderProps = ListProps & { size?: "default" | "small" };
-export type ListItemType = ListProps["items"][number];

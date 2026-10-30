@@ -1,5 +1,5 @@
 import { css } from "goober";
-import { C1_CLASS_PREFIX as P } from "../../../shared/classPrefix";
+import { C1_CLASS_PREFIX as P } from "../../shared/classPrefix";
 
 const GAP = `var(--${P}-card-row-gap)`;
 

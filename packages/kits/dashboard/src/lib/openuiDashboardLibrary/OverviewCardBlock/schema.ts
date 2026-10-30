@@ -1,4 +1,6 @@
+import { defineComponent } from "@openuidev/react-lang";
 import { z } from "zod/v4";
+
 export const overviewCardTrendSchema = z.object({
   direction: z.enum(["up", "down"]),
   value: z.number(),
@@ -17,3 +19,19 @@ export const overviewCardItemPropsSchema = z.object({
 });
 
 export type OverviewCardItemProps = z.infer<typeof overviewCardItemPropsSchema>;
+
+export const OverviewCardItemComponent = defineComponent({
+  name: "OverviewCardItem",
+  props: overviewCardItemPropsSchema,
+  description: "",
+  component: () => null,
+});
+
+export const overviewCardBlockPropsSchema = z.object({
+  items: z.array(OverviewCardItemComponent.ref).min(2),
+  layout: z.enum(["grid", "carousel"]).default("grid"),
+  responsive: z.boolean().default(true),
+  gap: z.union([z.number(), z.string()]).optional(),
+});
+
+export type OverviewCardBlockProps = z.infer<typeof overviewCardBlockPropsSchema>;

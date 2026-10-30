@@ -5,8 +5,8 @@ import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lan
 import clsx from "clsx";
 import { type CSSProperties } from "react";
 import { z } from "zod/v4";
+import { radarChartClass } from "../../../components/DashboardCharts";
 import { DASHBOARD_CHART_PALETTE } from "./chartPalette";
-import { radarChartClass } from "./charts.styles";
 import { SeriesComponent } from "./dataComponents";
 import { buildChartData, DASHBOARD_CHART_HEIGHT } from "./helpers";
 export const radarChartPropsSchema = z.object({

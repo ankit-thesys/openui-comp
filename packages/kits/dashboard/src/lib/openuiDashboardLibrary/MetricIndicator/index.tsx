@@ -1,46 +1,11 @@
 "use client";
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import clsx from "clsx";
-import { C1_CLASS_PREFIX } from "../../../shared/classPrefix";
-import { metricIndicatorClass } from "./metricIndicator.styles";
+import { MetricIndicator } from "../../../components/MetricIndicator";
 import { metricIndicatorPropsSchema, type MetricIndicatorProps } from "./schema";
-function MetricIndicatorRenderer({ props }: ComponentRenderProps<MetricIndicatorProps>) {
-  const isPositive = props.trend?.direction === "up";
 
-  return (
-    <div
-      className={clsx(
-        metricIndicatorClass,
-        `${C1_CLASS_PREFIX}-dashboard-metric-indicator`,
-        props.subtext && `${C1_CLASS_PREFIX}-dashboard-metric-indicator--has-subtext`,
-      )}
-    >
-      <div className={`${C1_CLASS_PREFIX}-dashboard-metric-indicator__row`}>
-        <div className={`${C1_CLASS_PREFIX}-dashboard-metric-indicator__main-value`}>
-          {props.value}
-        </div>
-        {props.trend && Number.isFinite(props.trend.value) ? (
-          <div
-            className={clsx(
-              `${C1_CLASS_PREFIX}-dashboard-metric-indicator__trend`,
-              isPositive
-                ? `${C1_CLASS_PREFIX}-dashboard-metric-indicator__trend--success`
-                : `${C1_CLASS_PREFIX}-dashboard-metric-indicator__trend--danger`,
-            )}
-          >
-            {isPositive ? "+" : "-"}
-            {props.trend.value}%
-          </div>
-        ) : null}
-      </div>
-      {props.subtext ? (
-        <div className={`${C1_CLASS_PREFIX}-dashboard-metric-indicator__subtext`}>
-          {props.subtext}
-        </div>
-      ) : null}
-    </div>
-  );
+function MetricIndicatorRenderer({ props }: ComponentRenderProps<MetricIndicatorProps>) {
+  return <MetricIndicator value={props.value} subtext={props.subtext} trend={props.trend} />;
 }
 
 export const MetricIndicatorComponent = defineComponent({

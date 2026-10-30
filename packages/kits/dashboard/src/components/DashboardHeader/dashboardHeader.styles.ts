@@ -1,6 +1,6 @@
 import { css } from "goober";
-import { C1_CLASS_PREFIX as P } from "../../../shared/classPrefix";
-import { typography } from "../../../shared/typography";
+import { C1_CLASS_PREFIX as P } from "../../shared/classPrefix";
+import { typography } from "../../shared/typography";
 
 export const dashboardHeaderClass = css`
   display: flex;

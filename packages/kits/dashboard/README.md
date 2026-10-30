@@ -17,22 +17,24 @@ pnpm add @openuidev/dashboard-kit@0.0.0-beta.0 @openuidev/react-components@0.0.0
 ## Usage
 
 ```ts
-import { openuiLibrary, openuiPromptOptions } from "@openuidev/dashboard-kit/lib";
-import "@openuidev/dashboard-kit/styles.css";
+import {
+  openuiDashboardLibrary,
+  openuiDashboardPromptOptions,
+} from "@openuidev/dashboard-kit/lib";
 
-const systemPrompt = openuiLibrary.prompt(openuiPromptOptions);
+const systemPrompt = openuiDashboardLibrary.prompt(openuiDashboardPromptOptions);
 ```
 
 Then render a model's response with `Renderer` from `@openuidev/react-lang`:
 
 ```tsx
-<Renderer response={program} library={openuiLibrary} />
+<Renderer response={program} library={openuiDashboardLibrary} />
 ```
 
 - `/lib` exports the five AI-integration values plus `dashboardComponents`.
-- `./styles.css` is the compiled stylesheet; import it once.
-- The root entrypoint exports the shell primitives (`DashboardComponent`,
-  `SectionComponent`, `CardRowComponent`).
+- The root entrypoint exports the standalone React components, such as `Dashboard`,
+  `Section`, `CardRow` and `DashboardThemeProvider`.
+- Components style themselves with goober, so there is no stylesheet to import.
 
 ## The library
 

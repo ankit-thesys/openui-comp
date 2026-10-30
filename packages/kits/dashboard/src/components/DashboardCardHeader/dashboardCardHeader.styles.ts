@@ -1,6 +1,6 @@
 import { css } from "goober";
-import { C1_CLASS_PREFIX as P } from "../../../shared/classPrefix";
-import { typography } from "../../../shared/typography";
+import { C1_CLASS_PREFIX as P } from "../../shared/classPrefix";
+import { typography } from "../../shared/typography";
 
 export const dashboardCardHeaderClass = css`
   display: flex;
@@ -25,34 +25,34 @@ export const dashboardCardHeaderClass = css`
     min-width: 0;
   }
 
-  & .${P}-dashboard-card-header__content .${P}-dashboard-text-block {
+  & .${P}-dashboard-card-header__content .openui-text-block {
     gap: var(--openui-space-3xs);
   }
 
   &
     .${P}-dashboard-card-header__content
-    .${P}-dashboard-text-block--title-text
-    .${P}-dashboard-text-block__primary {
+    .openui-text-block--title-text
+    .openui-text-block__primary {
     color: var(--openui-text-neutral-primary);
     ${typography("body", "large-heavy")}
   }
 
   &
     .${P}-dashboard-card-header__content
-    .${P}-dashboard-text-block--number-title-text
-    .${P}-dashboard-text-block__primary {
+    .openui-text-block--number-title-text
+    .openui-text-block__primary {
     color: var(--openui-text-neutral-primary);
     ${typography("number", "heading-medium")}
   }
 
   &
     .${P}-dashboard-card-header__content
-    .${P}-dashboard-text-block--size-xs.${P}-dashboard-text-block--title-text
-    .${P}-dashboard-text-block__secondary,
-    &
+    .openui-text-block--size-xs.openui-text-block--title-text
+    .openui-text-block__secondary,
+  &
     .${P}-dashboard-card-header__content
-    .${P}-dashboard-text-block--size-xs.${P}-dashboard-text-block--number-title-text
-    .${P}-dashboard-text-block__secondary {
+    .openui-text-block--size-xs.openui-text-block--number-title-text
+    .openui-text-block__secondary {
     color: var(--openui-text-neutral-secondary);
     ${typography("body", "default")}
   }

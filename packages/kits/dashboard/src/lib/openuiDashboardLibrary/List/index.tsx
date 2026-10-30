@@ -1,84 +1,22 @@
 "use client";
 
-import {
-  IconWrapper,
-  InlineMarkdownRenderer,
-  ListBlock,
-  ListItem as OpenUIListItem,
-} from "@openuidev/react-components";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import clsx from "clsx";
-import { C1_CLASS_PREFIX } from "../../../shared/classPrefix";
-import { listClass, listSmallClass } from "./list.styles";
-import { listPropsSchema, type ListItemType, type ListProps, type ListRenderProps } from "./schema";
+import { List } from "../../../components/List";
+import { listPropsSchema, type ListProps } from "./schema";
 export { ListItemComponent } from "./schema";
 
-function ListItemRenderer({
-  item,
-  variant = "number",
-  index = 0,
-  listHasSubtitle,
-}: {
-  item: ListItemType;
-  variant?: string;
-  index?: number;
-  listHasSubtitle?: boolean;
-}) {
-  const p = item.props;
-
-  return (
-    <OpenUIListItem
-      variant={variant as "icon" | "number"}
-      index={index}
-      listHasSubtitle={listHasSubtitle}
-      title={<InlineMarkdownRenderer content={p.title} />}
-      subtitle={p.subtitle ? <InlineMarkdownRenderer content={p.subtitle} /> : undefined}
-      icon={
-        variant === "icon" ? (
-          <IconWrapper
-            name={p.icon?.props.name ?? "circle-dot"}
-            category={p.icon?.props.category}
-            size={16}
-          />
-        ) : undefined
-      }
-    />
-  );
-}
-
 function ListRenderer({ props }: ComponentRenderProps<ListProps>) {
-  const items = props.items ?? [];
-  const variant = props.variant ?? "number";
-  const size = (props as ListRenderProps).size ?? "default";
-
-  const listHasSubtitle = items.some((item) => !!item.props.subtitle);
-
   return (
-    <div
-      className={clsx(
-        listClass,
-        size === "small" && listSmallClass,
-        `${C1_CLASS_PREFIX}-dashboard-list`,
-        `${C1_CLASS_PREFIX}-dashboard-list--${size}`,
-      )}
-    >
-      {(props.heading || props.description) && (
-        <div>
-          {props.heading && <strong>{props.heading}</strong>}
-          {props.description && <span>{props.description}</span>}
-        </div>
-      )}
-      <ListBlock variant={variant}>
-        {items.map((item, index) => (
-          <ListItemRenderer
-            key={index}
-            item={item}
-            variant={variant}
-            listHasSubtitle={listHasSubtitle}
-          />
-        ))}
-      </ListBlock>
-    </div>
+    <List
+      variant={props.variant ?? "number"}
+      heading={props.heading}
+      description={props.description}
+      items={(props.items ?? []).map(({ props: item }) => ({
+        title: item.title,
+        subtitle: item.subtitle,
+        icon: item.icon?.props,
+      }))}
+    />
   );
 }
 

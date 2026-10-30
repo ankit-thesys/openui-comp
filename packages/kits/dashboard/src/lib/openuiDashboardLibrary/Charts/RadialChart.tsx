@@ -5,8 +5,8 @@ import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lan
 import clsx from "clsx";
 import { type CSSProperties } from "react";
 import { z } from "zod/v4";
+import { radialChartClass } from "../../../components/DashboardCharts";
 import { DASHBOARD_CHART_PALETTE } from "./chartPalette";
-import { radialChartClass } from "./charts.styles";
 import { buildSliceData, DASHBOARD_CHART_HEIGHT } from "./helpers";
 export const radialChartPropsSchema = z.object({
   labels: z.array(z.string()),

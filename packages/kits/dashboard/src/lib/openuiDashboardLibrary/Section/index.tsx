@@ -1,20 +1,16 @@
 "use client";
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import clsx from "clsx";
-import { C1_CLASS_PREFIX } from "../../../shared/classPrefix";
+import { Section } from "../../../components/Section";
 import { sectionPropsSchema, type SectionProps } from "./schema";
-import { sectionClass } from "./section.styles";
+
 function SectionRenderer({ props, renderNode }: ComponentRenderProps<SectionProps>) {
   const filterBar = props["filterBar"];
 
   return (
-    <section className={clsx(sectionClass, `${C1_CLASS_PREFIX}-section`)}>
-      {filterBar ? (
-        <div className={`${C1_CLASS_PREFIX}-section__filter`}>{renderNode(filterBar)}</div>
-      ) : null}
-      <div className={`${C1_CLASS_PREFIX}-section__rows`}>{renderNode(props.rows)}</div>
-    </section>
+    <Section filterBar={filterBar ? renderNode(filterBar) : undefined}>
+      {renderNode(props.rows)}
+    </Section>
   );
 }
 

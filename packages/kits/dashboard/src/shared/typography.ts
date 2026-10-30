@@ -1,12 +1,10 @@
 /**
- * The two Sass typography mixins, as functions that return CSS declarations
- * for a goober template.
+ * openui's type scale as CSS declarations for a goober template:
  *
- *   ${typography("body", "small")}        // openui's shorthand scale
- *   ${dashboardTypography("metric", "lg") // the dashboard-only gap
+ *   ${typography("body", "small")}
  *
- * `font` is a shorthand, so it RESETS `font-variation-settings`. Both helpers
- * emit the axis after the shorthand, never before.
+ * `font` is a shorthand, so it RESETS `font-variation-settings`. The axis is
+ * emitted after the shorthand, never before.
  */
 
 /** [token suffix, Inter "wght" axis] — a null axis means the weight is fixed. */
@@ -77,29 +75,4 @@ export function typography<R extends keyof Scale>(role: R, variant: keyof Scale[
   ]
     .filter(Boolean)
     .join("\n  ");
-}
-
-/**
- * Dashboard-private roles, for the combinations openui's scale cannot express:
- * its `-heavy` tier stops at weight 500 while dashboard cards need 600/700.
- * Reach for `typography()` whenever openui already covers the combination.
- *
- * The values live in `DashboardThemeProvider`, not here, so they stay themeable
- * at runtime. Deliberately no `letter-spacing` companion: every dashboard
- * letter-spacing token is 0 and the rules these replace set none, so pairing one
- * in would newly force `0` over an inherited `normal`.
- */
-const DASHBOARD_SCALE = {
-  metric: { default: "metric", sm: "metric-sm", lg: "metric-lg" },
-  highlight: { default: "highlight" },
-  "table-header": { default: "table-header" },
-} as const satisfies Record<string, Record<string, string>>;
-
-type DashboardScale = typeof DASHBOARD_SCALE;
-
-export function dashboardTypography<R extends keyof DashboardScale>(
-  role: R,
-  variant: keyof DashboardScale[R] = "default" as keyof DashboardScale[R],
-): string {
-  return `font: var(--c1-dashboard-font-${DASHBOARD_SCALE[role][variant] as string});`;
 }

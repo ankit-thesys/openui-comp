@@ -1,6 +1,6 @@
 import { css } from "goober";
-import { C1_CLASS_PREFIX as P } from "../../../shared/classPrefix";
-import { typography } from "../../../shared/typography";
+import { C1_CLASS_PREFIX as P } from "../../shared/classPrefix";
+import { typography } from "../../shared/typography";
 
 /** The title / metric / trend body of a SmallCard. */
 export const smallCardClass = css`
@@ -116,11 +116,7 @@ export const smallCardSnippetClass = css`
 
   & .${P}-small-card-snippet__lhs > *,
   & .${P}-small-card-snippet__rhs-content, & .${P}-small-card-snippet__rhs-content > *,
-  &
-    .${P}-small-card-snippet__lhs-content,
-    &
-    .${P}-small-card-snippet__rhs
-    .${P}-dashboard-text-block {
+  & .${P}-small-card-snippet__lhs-content, & .${P}-small-card-snippet__rhs .openui-text-block {
     min-width: 0;
   }
 
@@ -129,7 +125,7 @@ export const smallCardSnippetClass = css`
     overflow: hidden;
   }
 
-  & .${P}-small-card-snippet__rhs .${P}-dashboard-text-block {
+  & .${P}-small-card-snippet__rhs .openui-text-block {
     align-items: flex-end;
     width: auto;
     max-width: 100%;
@@ -137,21 +133,27 @@ export const smallCardSnippetClass = css`
     text-align: right;
   }
 
-  &
-    .${P}-small-card-snippet__lhs
-    .${P}-dashboard-text-block__primary,
-    &
-    .${P}-small-card-snippet__lhs
-    .${P}-dashboard-text-block__secondary,
-    &
-    .${P}-small-card-snippet__rhs
-    .${P}-dashboard-text-block__primary,
-    &
-    .${P}-small-card-snippet__rhs
-    .${P}-dashboard-text-block__secondary {
+  & .${P}-small-card-snippet__lhs .openui-text-block__primary,
+  & .${P}-small-card-snippet__lhs .openui-text-block__secondary,
+  & .${P}-small-card-snippet__rhs .openui-text-block__primary,
+  & .${P}-small-card-snippet__rhs .openui-text-block__secondary {
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+
+  /* Snippet text is smaller and bolder than react-components' md size. */
+  & .openui-text-block--size-md.openui-text-block--text-subtext .openui-text-block__secondary,
+  &
+    .openui-text-block--size-md.openui-text-block--highlight-text-number-subtext
+    .openui-text-block__secondary {
+    ${typography("body", "small")}
+  }
+
+  &
+    .openui-text-block--size-md.openui-text-block--highlight-text-number-subtext
+    .openui-text-block__primary {
+    font: 700 14px/1.5 var(--openui-font-body);
   }
 `;

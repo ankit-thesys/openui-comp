@@ -10,8 +10,8 @@ import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lan
 import clsx from "clsx";
 import { useId, type CSSProperties } from "react";
 import { z } from "zod/v4";
+import { pieChartClass } from "../../../components/DashboardCharts";
 import { DASHBOARD_CHART_PALETTE } from "./chartPalette";
-import { pieChartClass } from "./charts.styles";
 import { DASHBOARD_CHART_HEIGHT, buildSliceData } from "./helpers";
 export const pieChartPropsSchema = z.object({
   labels: z.array(z.string()),

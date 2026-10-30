@@ -1,7 +1,7 @@
 import { css } from "goober";
-import { C1_CLASS_PREFIX as P } from "../../../shared/classPrefix";
-import { typography } from "../../../shared/typography";
-import { DROPDOWN } from "../../../shared/zIndex";
+import { C1_CLASS_PREFIX as P } from "../../shared/classPrefix";
+import { typography } from "../../shared/typography";
+import { DROPDOWN } from "../../shared/zIndex";
 
 const SINGLE = `${P}-filter-single-select`;
 const MULTI = `${P}-filter-multi-select`;
