@@ -1,5 +1,4 @@
 import { css as gooberCss } from "goober";
-import * as React from "react";
 
 const SHEET_ID = "openui-styles";
 // A registry flush is `STREAM_START…STREAM_END`, so the browser can tell a tag whose text is still
@@ -11,6 +10,10 @@ let rules = "";
 // Rules this module copy registered since its last write, in registration order.
 let pending: string[] = [];
 let scheduled = false;
+// How many pending groups are already in the live CSSOM, ahead of the batched text write.
+let live = 0;
+// The live CSSOM holds inserted rules, so the next write must replace them even if the text matches.
+let inserted = false;
 let seeded = false;
 // The first tag's rules are in `rules`. Waits while that tag is still streaming in.
 let adopted = false;
@@ -165,29 +168,46 @@ function sheetTag(): HTMLElement {
   return tag;
 }
 
-// React 19 installs its cache dispatcher for the entire render, including lazy initializers
-// before a hook dispatcher is active. It restores it before commit. If the internal shape ever
-// changes, fall back to synchronous writes so layout measurements remain correct.
-const reactInternals = (
-  React as typeof React & {
-    __CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE?: { A: unknown };
-  }
-).__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
-
 function scheduleWrite() {
-  if (!inBrowser()) return;
-  if (reactInternals?.A !== null) {
-    flushComponentStyles();
-    return;
-  }
-  if (scheduled) return;
+  if (!inBrowser() || scheduled) return;
   scheduled = true;
   queueMicrotask(flushComponentStyles);
 }
 
+// A registration applies at once: its rules go into the live CSSOM, each parsed on its own, so
+// code that measures before the batched text write (a layout effect of a component whose module
+// was first evaluated during render, or any synchronous read) already sees them. Rewriting the
+// whole text per rule would re-parse the sheet each time. The microtask write then replaces the
+// text, and with it these inserted rules, with the same rules in the same order.
+function applyLive() {
+  if (live === pending.length || !adopt()) return;
+  const sheet = (sheetTag() as HTMLStyleElement).sheet;
+  if (!sheet) return;
+  let target: CSSStyleSheet | CSSLayerBlockRule = sheet;
+  if (layer) {
+    const last = sheet.cssRules[sheet.cssRules.length - 1];
+    target =
+      last instanceof CSSLayerBlockRule && last.name === layer
+        ? last
+        : (sheet.cssRules[
+            sheet.insertRule(`@layer ${layer}{}`, sheet.cssRules.length)
+          ] as CSSLayerBlockRule);
+  }
+  for (const group of pending.slice(live))
+    for (const rule of ruleBlocks(group)) {
+      try {
+        target.insertRule(rule, target.cssRules.length);
+      } catch {
+        // A rule this browser cannot parse; the text write still carries it, as Goober's would.
+      }
+    }
+  live = pending.length;
+  inserted = true;
+}
+
 /**
- * Writes pending rules to the page's sheet. Import-time registrations batch in a microtask;
- * registrations during React rendering flush synchronously, before any layout measurement.
+ * Writes pending rules to the page's sheet text, batched in a microtask. They already apply
+ * through the live CSSOM (applyLive), so this keeps the text, the source of truth, in step.
  */
 function flushComponentStyles() {
   scheduled = false;
@@ -211,9 +231,11 @@ function flushComponentStyles() {
   for (const group of pending) for (const rule of ruleBlocks(group)) merged.add(rule);
   const text = [...merged].join("");
   pending = [];
+  live = 0;
   relayer = false;
   rules = text;
-  if (tag.textContent !== wrapped(text)) tag.textContent = wrapped(text);
+  if (inserted || tag.textContent !== wrapped(text)) tag.textContent = wrapped(text);
+  inserted = false;
   for (const later of complete) later.remove();
 }
 
@@ -226,6 +248,7 @@ const sink = {
     seed();
     if (inBrowser()) pending.push(next.startsWith(rules) ? next.slice(rules.length) : next);
     rules = next;
+    if (inBrowser()) applyLive();
     scheduleWrite();
   },
 };

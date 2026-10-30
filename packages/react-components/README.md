@@ -509,8 +509,8 @@ const card = css`padding: 16px; animation: ${pop} 120ms ease-out;`;
 export const PriceCard = () => <div className={card}>Price</div>;
 ```
 
-Browser sheet writes are batched into one microtask. Rules registered while React renders
-flush synchronously so layout effects see their styles. `getComponentStyles()` includes newly
+Every rule applies as soon as it registers, so a layout effect that measures sees it, even for
+a module first evaluated during a render. The sheet's text is rewritten once per microtask. `getComponentStyles()` includes newly
 registered rules immediately. `configureStyles({ layer: "openui" })` applies to these rules
 and animations too, even when they registered before configuration. A library built on top
 can use these exports without depending on Goober or the app's choice of layer.

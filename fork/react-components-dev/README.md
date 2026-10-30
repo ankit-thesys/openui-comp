@@ -96,10 +96,14 @@ are referenced only indirectly. A type-only import is erased and cannot establis
 For example, a composed input's style module imports the primitive's style object before
 registering its own overrides. Reuse the imported object when applying those classes.
 
-The browser batches ordinary import-time registrations into a microtask. Registrations made
-while React renders, including a module evaluated by a lazy initializer, flush synchronously
-so the first layout effect sees the styles. `lazy-sheet.spec.ts` records first-layout geometry
-and animation styles in both layer modes; it also covers rules created in a component render.
+Every registration applies at once: its rules are inserted into the live CSSOM (inside the
+layer block in layer mode), each parsed on its own. The sheet text, which the store and server
+adoption rely on, is rewritten once per microtask with the same rules in the same order. So code
+that measures before that write, such as the first layout effect of a component whose module a
+lazy initializer evaluated during render, already sees the styles, without reading React's
+internals and without re-parsing the whole sheet per rule. `lazy-sheet.spec.ts` checks the
+first-layout geometry, the animation and its keyframes in the applied CSSOM, in both layer modes,
+for a lazily evaluated module and for rules created in a component render.
 
 The following retain their existing non-template contracts:
 

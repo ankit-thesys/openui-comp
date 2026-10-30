@@ -23,15 +23,27 @@ function evaluateModule() {
       useLayoutEffect(() => {
         const element = ref.current!;
         const bounds = element.getBoundingClientRect();
-        const sheet = document.getElementById("openui-styles")?.textContent ?? "";
+        // What the browser applies now, not the sheet text: the text write may still be pending.
+        const applied: CSSRule[] = [];
+        const walk = (list: CSSRuleList, inLayer: boolean) => {
+          for (const rule of list) {
+            if (rule instanceof CSSLayerBlockRule) walk(rule.cssRules, rule.name === "openui");
+            else applied.push(Object.assign(rule, { inLayer }));
+          }
+        };
+        const sheet = (document.getElementById("openui-styles") as HTMLStyleElement | null)?.sheet;
+        if (sheet) walk(sheet.cssRules, false);
+        const keyframes = applied.find(
+          (rule) => rule instanceof CSSKeyframesRule && rule.name === animation,
+        ) as (CSSRule & { inLayer?: boolean }) | undefined;
         element.dataset["firstLayout"] = JSON.stringify({
           width: bounds.width,
           height: bounds.height,
           padding: getComputedStyle(element).padding,
           animation: getComputedStyle(element).animationName,
           expectedAnimation: animation,
-          keyframesWritten: sheet.includes(`@keyframes ${animation}{`),
-          layered: sheet.startsWith("@layer openui{"),
+          keyframesWritten: !!keyframes,
+          layered: !!keyframes?.inLayer,
         });
       }, []);
       return <div ref={ref} className={root} data-testid="measured" />;
