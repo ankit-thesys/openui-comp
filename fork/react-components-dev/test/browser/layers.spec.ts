@@ -20,7 +20,36 @@ test("an empty reserved sheet does not cause a late-configuration warning", asyn
   await page.goto("/layers-reserved.html?layer=openui");
   await expect(page.getByTestId("default")).toBeVisible();
   expect(warnings).toEqual([]);
-  await expect(page.locator("style#openui-styles")).toContainText("@layer openui{");
+  // Playwright's text assertions skip <style> content, so read textContent.
+  await expect
+    .poll(() => page.locator("style#openui-styles").textContent())
+    .toContain("@layer openui{");
+});
+
+// A hand-written server sheet may start on its own line. The browser still reads its layer, so the
+// same layer configured in the app entry is no change and appended rules join that layer.
+test("an indented layered server sheet keeps its layer without a warning", async ({ page }) => {
+  const warnings: string[] = [];
+  page.on("console", (message) => {
+    if (message.type() === "warning" && message.text().includes("[OpenUI]"))
+      warnings.push(message.text());
+  });
+  await page.route("**/layers-indented.html?*", (route) =>
+    route.fulfill({
+      contentType: "text/html",
+      body: `<!doctype html><html><head><style data-openui-styles>
+        @layer openui{.server-only{color:rgb(1, 2, 3)}}
+      </style></head>
+        <body><div id="root"></div><script type="module" src="/layers-development.js"></script></body></html>`,
+    }),
+  );
+  await page.goto("/layers-indented.html?layer=openui");
+  await expect(page.getByTestId("default")).toBeVisible();
+  expect(warnings).toEqual([]);
+  // Playwright's text assertions skip <style> content, so read textContent.
+  await expect
+    .poll(() => page.locator("style#openui-styles").textContent())
+    .toContain("@layer openui{");
 });
 
 for (const environment of ["development", "production"]) {
@@ -52,7 +81,9 @@ for (const environment of ["development", "production"]) {
     const name = await page.evaluate(
       () => (window as FixtureWindow).layersFixture!.css`color: rgb(71, 83, 97);`,
     );
-    await expect(sheet).toHaveText(`${before}@layer later{.${name}{color:rgb(71, 83, 97);}}`);
+    await expect
+      .poll(() => sheet.textContent())
+      .toBe(`${before}@layer later{.${name}{color:rgb(71, 83, 97);}}`);
   });
 }
 
