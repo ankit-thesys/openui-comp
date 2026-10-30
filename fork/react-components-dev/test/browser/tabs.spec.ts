@@ -67,7 +67,7 @@ const read = (locator: Locator, properties: string[]) =>
   }, properties);
 
 const PROPERTIES = ["color", "background-color", "padding", "border-color", "border-radius"];
-const withCss = (css: string) => `/tabs.html?css=${encodeURIComponent(css)}`;
+const withCss = (text: string) => `/tabs.html?css=${encodeURIComponent(text)}`;
 
 for (const [className, find] of TARGETS) {
   test(`.${className} overrides the library when loaded before it`, async ({ page }) => {

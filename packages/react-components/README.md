@@ -509,7 +509,8 @@ const card = css`padding: 16px; animation: ${pop} 120ms ease-out;`;
 export const PriceCard = () => <div className={card}>Price</div>;
 ```
 
-Browser sheet writes are batched into one microtask. `getComponentStyles()` includes newly
+Every rule applies as soon as it registers, so a layout effect that measures sees it, even for
+a module first evaluated during a render. The sheet's text is rewritten once per microtask. `getComponentStyles()` includes newly
 registered rules immediately. `configureStyles({ layer: "openui" })` applies to these rules
 and animations too, even when they registered before configuration. A library built on top
 can use these exports without depending on Goober or the app's choice of layer.
@@ -517,8 +518,8 @@ can use these exports without depending on Goober or the app's choice of layer.
 ### Server-rendered styles
 
 On the server, component styles live in the library's own cumulative rule store. Public `css`
-and `keyframes` calls register immediately; components still using style factories register on
-first render. A server **renders first, then collects** the CSS with
+and `keyframes` calls register immediately, including every imported component
+module's styles. A server **renders first, then collects** the CSS with
 `getComponentStyles()`, and inlines it as the **first** element of `<head>`, ahead of the app's own
 stylesheets. In layer mode, put the layer-order tag before this sheet, as in the two-tag
 recipe above, and configure the same layer on server and client:
@@ -527,7 +528,7 @@ recipe above, and configure the same layer on server and client:
 import { getComponentStyles } from "@openuidev/react-components";
 import { renderToString } from "react-dom/server";
 
-const html = renderToString(<App />); // 1. render: registers the styles this page uses
+const html = renderToString(<App />); // 1. render, including any lazily evaluated styles
 const css = getComponentStyles(); // 2. collect, after rendering
 const page = `<!doctype html>
 <html>

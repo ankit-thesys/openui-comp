@@ -162,7 +162,7 @@ const product = <T,>(...lists: T[][]): T[][] =>
   );
 
 // Composed components keep their own names plus their dependencies' public rendered classes.
-// Read only after CSS collection, so remaining factories are first called by the contract render.
+// Read after CSS collection to keep dependency discovery separate from each contract sample.
 const composedNames = (element: ReactElement): StableNames =>
   Object.fromEntries(
     [...stableClassesIn(renderToString(element))].map((name, index) => [

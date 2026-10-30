@@ -6,6 +6,7 @@
 import { library } from "#paths";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
+import ts from "typescript";
 import { describe, expect, it } from "vitest";
 import { readStableNames } from "../../../scripts/selector-reference.mjs";
 import { namesIn } from "./collect";
@@ -20,6 +21,20 @@ const sourceFiles = (dir: string): string[] =>
   });
 const files = sourceFiles(join(packageRoot, "src"));
 const read = (file: string) => readFileSync(join(packageRoot, file), "utf8");
+
+const registersStyles = (file: string): boolean => {
+  const source = ts.createSourceFile(file, read(file), ts.ScriptTarget.Latest, true);
+  const visit = (node: ts.Node): boolean => {
+    const tag = ts.isTaggedTemplateExpression(node)
+      ? node.tag
+      : ts.isCallExpression(node)
+        ? node.expression
+        : undefined;
+    if (tag && ts.isIdentifier(tag) && ["css", "keyframes"].includes(tag.text)) return true;
+    return ts.forEachChild(node, visit) ?? false;
+  };
+  return visit(source);
+};
 
 describe("contract coverage", () => {
   it("gives every migrated component its own contract test file", () => {
@@ -68,7 +83,7 @@ describe("contract coverage", () => {
     );
     const styled = new Set(
       files
-        .filter((file) => file.startsWith("src/components/") && /\buseStyles\(/.test(read(file)))
+        .filter((file) => file.startsWith("src/components/") && registersStyles(file))
         .map((file) => file.split("/")[2]),
     );
     expect([...styled].filter((folder) => !entries.has(folder))).toEqual([]);

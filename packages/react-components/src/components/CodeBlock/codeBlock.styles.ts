@@ -54,7 +54,7 @@ export const codeBlockStyles = /*#__PURE__*/ {
 // react-ui used the normal hover/pressed background even while copied; order those states after
 // copied without chaining selectors.
 export const codeBlockCopyButtonStyles = /*#__PURE__*/ {
-  // Keeps the template bytes it had as a factory.
+  // Preserve template bytes so registration order stays unchanged.
   // prettier-ignore
   root: css`
     position: absolute;

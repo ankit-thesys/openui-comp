@@ -53,6 +53,7 @@ const fixtures = [
   "ssr-hydrate",
   "streaming",
   "sheet",
+  "lazy-sheet",
   "import-registration",
   "button",
   "layers",

@@ -6,9 +6,8 @@ import { readdirSync } from "node:fs";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 
-// With `layer`, rules compile as useStyles compiles them in that cascade layer today (each rule in
-// its own `@layer` block), so layer-mode hashes have provenance too. Callers merge both scans: an
-// app-wide layer that keeps the unlayered hashes is then still covered.
+// With `layer`, compile each rule in its own layer block to identify hashes in the historical
+// snapshot. Callers merge both scans so current unlayered hashes are covered too.
 const joined = (strings, values) =>
   strings.reduce((out, string, i) => out + string + (values[i] ?? ""), "");
 

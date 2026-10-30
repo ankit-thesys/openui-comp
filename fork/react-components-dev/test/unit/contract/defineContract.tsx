@@ -39,8 +39,7 @@ export function describeContract(
         elements().map((element, key) => <ThemeProvider key={key}>{element}</ThemeProvider>),
         render,
       );
-      // Retain the first render's client-only registration delta in both modes. The factory
-      // cache is now shared, so the second render does not register those rules again.
+      // Select the same imported rules in both modes, including any registration during render.
       layered.css = cssFor(layered.html, getComponentStyles(), beforeLayered);
     } finally {
       configureStyles({ layer: undefined });
