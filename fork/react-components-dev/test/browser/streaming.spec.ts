@@ -107,6 +107,14 @@ for (const layer of [undefined, "openui"]) {
     expect(await page.locator("style#openui-styles").textContent()).toBe(partial);
 
     expect((await request.get(`/streaming-complete?response=${response}`)).ok()).toBe(true);
+    // The rest of the tag's text is the only sign it is complete (Chromium appends it to the
+    // existing text node): the store takes it in and rewrites the tag while the document loads.
+    await page.waitForFunction(
+      () => !document.getElementById("openui-styles")!.textContent!.startsWith("/*openui-stream*/"),
+      undefined,
+      { polling: 50, timeout: 5000 },
+    );
+    expect(await page.evaluate(() => document.readyState)).toBe("loading");
     expect((await request.get(`/streaming-release?response=${response}`)).ok()).toBe(true);
     await expect(page.locator("#root")).toHaveAttribute("data-hydrated", "true");
     await expect(page.getByTestId("late")).toBeVisible();
@@ -182,6 +190,64 @@ for (const layer of [undefined, "openui"]) {
     expect((await request.get(`/streaming-complete?response=${response}`)).ok()).toBe(true);
     await expect(page.locator("#root")).toHaveAttribute("data-hydrated", "true");
     await expect(page.getByTestId("late")).toHaveCSS("padding", "19px");
+    await expect(page.locator("style#openui-styles")).toHaveCount(1);
+    expect(errors).toEqual([]);
+  });
+}
+
+// An empty first tag that is the last thing parsed may still receive its text, so client rules
+// wait. Ordinary markup parsed after it settles it: the rules must join it then, while the
+// document is still loading, not when loading ends or the next registry tag arrives.
+for (const layer of [undefined, "openui"]) {
+  test(`streaming ${layer ?? "unlayered"}, an empty first tag settles when markup follows it`, async ({
+    page,
+    request,
+  }) => {
+    const errors: string[] = [];
+    page.on("pageerror", (error) => errors.push(error.message));
+    const navigation = await page.goto(`/streaming.html?layer=${layer ?? ""}&reserveLast=true`, {
+      waitUntil: "commit",
+    });
+    const response = navigation!.headers()["x-streaming-response"]!;
+    await page.waitForFunction(() => !!(window as FixtureWindow).streamingFixture, undefined, {
+      polling: 50,
+    });
+    await page.evaluate(
+      (response) => (window as FixtureWindow).streamingFixture!.registerLate(response),
+      response,
+    );
+    await page.evaluate(() => new Promise<void>((resolve) => setTimeout(resolve, 50)));
+    expect(await page.locator("style#openui-styles").textContent()).toBe("");
+
+    expect((await request.get(`/streaming-complete?response=${response}`)).ok()).toBe(true);
+    await page.waitForFunction(
+      () => !!document.querySelector('meta[name="openui-streaming-settle"]'),
+      undefined,
+      {
+        polling: 50,
+      },
+    );
+    await page.waitForFunction(
+      () => !!document.getElementById("openui-styles")!.textContent,
+      undefined,
+      { polling: 50, timeout: 5000 },
+    );
+    const settled = await page.evaluate(() => ({
+      readyState: document.readyState,
+      tags: document.querySelectorAll("style#openui-styles").length,
+      text: document.getElementById("openui-styles")!.textContent!,
+      stored: (window as FixtureWindow).streamingFixture!.getComponentStyles(),
+    }));
+    expect(settled.readyState).toBe("loading");
+    expect(settled.tags).toBe(1);
+    expect(settled.text).toBe(settled.stored);
+    expect(settled.text.split("@layer ").length - 1).toBe(layer ? 1 : 0);
+
+    expect((await request.get(`/streaming-complete?response=${response}`)).ok()).toBe(true);
+    expect((await request.get(`/streaming-release?response=${response}`)).ok()).toBe(true);
+    await expect(page.locator("#root")).toHaveAttribute("data-hydrated", "true");
+    await expect(page.getByTestId("late")).toHaveCSS("padding", "19px");
+    await expect(page.getByTestId("late")).toHaveCSS("background-color", "rgb(4, 5, 6)");
     await expect(page.locator("style#openui-styles")).toHaveCount(1);
     expect(errors).toEqual([]);
   });

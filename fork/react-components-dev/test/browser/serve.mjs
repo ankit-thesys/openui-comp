@@ -65,6 +65,7 @@ createServer(async (req, res) => {
       searchParams.get("adoptEarly") === "true",
       searchParams.get("splitFirst") === "true",
       searchParams.get("reserve") === "true",
+      searchParams.get("reserveLast") === "true",
     );
   }
   // Only bare names are served, so requests cannot reach outside the fixture directories.
