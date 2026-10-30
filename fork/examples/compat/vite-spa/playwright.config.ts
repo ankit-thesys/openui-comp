@@ -1,5 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
-import ports from "../ports.json" with { type: "json" };
+import manifest from "./package.json" with { type: "json" };
 
 export default defineConfig({
   testDir: "./tests",
@@ -8,7 +8,7 @@ export default defineConfig({
   workers: 1,
   reporter: "list",
   use: {
-    baseURL: `http://127.0.0.1:${ports["vite-spa"]}`,
+    baseURL: `http://127.0.0.1:${manifest.compat.port}`,
     trace: "retain-on-failure",
   },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
