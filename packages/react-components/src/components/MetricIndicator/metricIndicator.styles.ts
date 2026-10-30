@@ -16,7 +16,7 @@ export const names = {
     down: "openui-metric-indicator-trend--direction-down",
   },
 } as const;
-export const metricIndicatorStyles = /*#__PURE__*/ {
+export const metricIndicatorStyles = {
   root: css`
     display: flex;
     flex-direction: column;

@@ -8,7 +8,7 @@ export const names = {
   tooltipContent: "openui-citation-tooltip-content",
 } as const;
 
-export const citationStyles = /*#__PURE__*/ {
+export const citationStyles = {
   container: css`
     position: relative;
     display: inline-flex;

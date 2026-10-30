@@ -16,7 +16,7 @@ export const names = {
   },
   width: { fill: "openui-image-text--width-fill" },
 } as const;
-export const imageTextStyles = /*#__PURE__*/ {
+export const imageTextStyles = {
   root: css`
     display: flex;
     gap: var(--openui-space-m, 12px);

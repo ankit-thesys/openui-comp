@@ -7,7 +7,7 @@ export const names = {
   headerCell: "openui-table-skeleton-header-cell",
 } as const;
 
-export const tableSkeletonStyles = /*#__PURE__*/ {
+export const tableSkeletonStyles = {
   root: css`
     padding: var(--openui-space-s, 8px) 0;
   `,

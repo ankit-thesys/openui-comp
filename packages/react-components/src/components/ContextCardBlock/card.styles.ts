@@ -25,7 +25,7 @@ export const names = {
   },
 } as const;
 
-export const contextCardStyles = /*#__PURE__*/ {
+export const contextCardStyles = {
   card: css`
     --_openui-context-card-image: initial;
     --_openui-context-card-background: initial;

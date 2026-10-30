@@ -5,7 +5,7 @@ export const names = {
   requiredAsterisk: "openui-label-required-asterisk",
 } as const;
 
-export const labelStyles = /*#__PURE__*/ {
+export const labelStyles = {
   root: css`
     box-sizing: border-box;
     font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);

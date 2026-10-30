@@ -17,7 +17,7 @@ export const names = {
   check: "openui-check-box-item-check",
 } as const;
 
-export const checkBoxItemStyles = /*#__PURE__*/ {
+export const checkBoxItemStyles = {
   root: css`
     display: inline-flex;
     flex-shrink: 0;

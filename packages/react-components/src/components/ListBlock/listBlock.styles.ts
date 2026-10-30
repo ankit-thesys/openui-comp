@@ -9,7 +9,7 @@ export const names = {
     image: "openui-list-block--variant-image",
   },
 } as const;
-export const listBlockStyles = /*#__PURE__*/ {
+export const listBlockStyles = {
   root: css`
     box-sizing: border-box;
     display: flex;

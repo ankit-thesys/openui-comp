@@ -15,7 +15,7 @@ export const names = {
   labelText: "openui-chart-tooltip-label-text",
 } as const;
 
-export const portalTooltipStyles = /*#__PURE__*/ {
+export const portalTooltipStyles = {
   portal: css`
     pointer-events: none;
     z-index: 1000;

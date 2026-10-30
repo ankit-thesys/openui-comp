@@ -2,7 +2,7 @@ import { css } from "../../../styles/css";
 
 export const names = { root: "openui-hint" } as const;
 
-export const hintStyles = /*#__PURE__*/ {
+export const hintStyles = {
   root: css`
     box-sizing: border-box;
     font: var(--openui-text-body-sm, 400 14px/1.5 "Inter", sans-serif);

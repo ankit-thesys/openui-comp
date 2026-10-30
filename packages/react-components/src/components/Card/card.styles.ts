@@ -9,7 +9,7 @@ export const names = {
   },
   width: { standard: "openui-card--width-standard", full: "openui-card--width-full" },
 } as const;
-export const cardStyles = /*#__PURE__*/ {
+export const cardStyles = {
   root: css`
     display: flex;
     flex-direction: column;

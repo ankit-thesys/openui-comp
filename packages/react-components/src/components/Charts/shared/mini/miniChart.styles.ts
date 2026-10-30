@@ -2,7 +2,7 @@ import { css } from "../../../../styles/css";
 
 import { fadeAppearAnimation } from "../animations/fadeAppear.styles";
 
-export const miniChartStyles = /*#__PURE__*/ (() => {
+export const miniChartStyles = (() => {
   return {
     root: css`
       position: relative;

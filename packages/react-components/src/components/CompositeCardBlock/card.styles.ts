@@ -13,7 +13,7 @@ export const names = {
   },
 } as const;
 
-export const compositeCardStyles = /*#__PURE__*/ {
+export const compositeCardStyles = {
   card: css`
     display: flex;
     flex-direction: column;

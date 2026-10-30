@@ -14,7 +14,7 @@ export const names = {
   },
 } as const;
 
-export const textCalloutStyles = /*#__PURE__*/ {
+export const textCalloutStyles = {
   root: css`
     width: 100%;
     display: flex;

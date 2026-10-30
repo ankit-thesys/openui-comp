@@ -19,7 +19,7 @@ export const names = {
   mode: { single: "openui-date-picker--mode-single", range: "openui-date-picker--mode-range" },
 } as const;
 
-export const datePickerStyles = /*#__PURE__*/ {
+export const datePickerStyles = {
   root: css`
     position: relative;
   `,
@@ -113,7 +113,7 @@ export const datePickerStyles = /*#__PURE__*/ {
   `,
 };
 
-export const datePickerCalendarStyles = /*#__PURE__*/ {
+export const datePickerCalendarStyles = {
   content: css`
     border: none;
     border-radius: 0;

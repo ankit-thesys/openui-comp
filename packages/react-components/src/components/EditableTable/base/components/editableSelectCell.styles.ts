@@ -13,7 +13,7 @@ export const names = {
   value: "openui-editable-table-select-value",
   indicator: "openui-editable-table-select-indicator",
 } as const;
-export const editableSelectCellStyles = /*#__PURE__*/ {
+export const editableSelectCellStyles = {
   trigger: css`
     font: var(--openui-text-body-sm, 400 14px/1.5 "Inter", sans-serif);
     letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);

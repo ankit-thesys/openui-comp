@@ -71,7 +71,7 @@ export const names = {
   },
 } as const;
 
-export const markdownStyles = /*#__PURE__*/ {
+export const markdownStyles = {
   code: css`
     border-radius: 4px;
     padding: 2px 4px;

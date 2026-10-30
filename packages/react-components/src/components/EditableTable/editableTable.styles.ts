@@ -18,7 +18,7 @@ export const names = {
   headerRow: "openui-editable-table-header-row",
   icon: "openui-editable-table-icon",
 } as const;
-export const editableTableStyles = /*#__PURE__*/ {
+export const editableTableStyles = {
   scroll: css`
     overflow: auto;
     scrollbar-width: none;

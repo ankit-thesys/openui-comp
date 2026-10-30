@@ -9,7 +9,7 @@ export const names = {
   },
 } as const;
 
-export const textContentStyles = /*#__PURE__*/ {
+export const textContentStyles = {
   root: css`
     box-sizing: border-box;
     color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));

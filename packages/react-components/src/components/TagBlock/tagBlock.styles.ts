@@ -4,7 +4,7 @@ export const names = {
   root: "openui-tag-block",
 } as const;
 
-export const tagBlockStyles = /*#__PURE__*/ {
+export const tagBlockStyles = {
   root: css`
     display: flex;
     flex-wrap: wrap;

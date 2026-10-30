@@ -8,4 +8,4 @@ export const names = {
   isAnimationActive: { true: "openui-mini-line-chart--is-animation-active" },
 } as const;
 
-export const miniLineChartStyles = /*#__PURE__*/ miniChartStyles;
+export const miniLineChartStyles = miniChartStyles;

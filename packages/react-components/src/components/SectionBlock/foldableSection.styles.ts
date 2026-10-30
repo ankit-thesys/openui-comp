@@ -13,7 +13,7 @@ export const names = {
   trigger: "openui-foldable-section-trigger",
   content: "openui-foldable-section-content",
 } as const;
-export const foldableSectionStyles = /*#__PURE__*/ {
+export const foldableSectionStyles = {
   root: css`
     display: flex;
     flex-direction: column;

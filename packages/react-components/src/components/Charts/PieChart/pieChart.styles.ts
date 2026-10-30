@@ -26,7 +26,7 @@ export const names = {
 } as const;
 
 // Register entrance keyframes before the rules that reference them, on import.
-export const pieChartStyles = /*#__PURE__*/ (() => {
+export const pieChartStyles = (() => {
   css`
     @keyframes openui-pie-chart-appear {
       from {

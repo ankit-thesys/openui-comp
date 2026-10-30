@@ -25,7 +25,7 @@ const ellipsis = `
  * TabsList variant sets; the fallbacks are the `title` look. `[data-state="active"]` comes after
  * `:hover` and restates everything hover changes, so the active trigger ignores hover.
  */
-export const tabsTriggerStyles = /*#__PURE__*/ {
+export const tabsTriggerStyles = {
   root: css`
     cursor: pointer;
     display: flex;

@@ -49,7 +49,7 @@ export const names = {
   highlight: "openui-line-chart-highlight",
 } as const;
 
-export const lineChartStyles = /*#__PURE__*/ {
+export const lineChartStyles = {
   svg: css`
     &[data-overflow="visible"] {
       overflow: visible;

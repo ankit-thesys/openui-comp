@@ -46,7 +46,7 @@ const borderDanger = `var(--openui-border-danger, oklch(0.577 0.215 27.325 / 0.0
  * registration order (root, then variant, size, tone), so keep each body specific to Button:
  * Goober gives an identical body registered earlier elsewhere that earlier class and position.
  */
-export const buttonStyles = /*#__PURE__*/ {
+export const buttonStyles = {
   root: css`
     box-sizing: border-box;
     font: var(--openui-text-label-default, 400 16px/1.25 "Inter", sans-serif);

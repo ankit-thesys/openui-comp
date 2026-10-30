@@ -5,7 +5,7 @@ export const names = {
   image: "openui-image-block-image",
   loader: "openui-image-block-loader",
 } as const;
-export const imageBlockStyles = /*#__PURE__*/ {
+export const imageBlockStyles = {
   root: css`
     /* react-ui's content-box sizing, declared so a page's box-sizing reset (Tailwind's preflight, for
        one) cannot change the geometry. */

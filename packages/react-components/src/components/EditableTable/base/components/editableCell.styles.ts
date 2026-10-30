@@ -15,7 +15,7 @@ export const names = {
   left: "openui-editable-table-cell-outline-left",
   right: "openui-editable-table-cell-outline-right",
 } as const;
-export const editableCellStyles = /*#__PURE__*/ {
+export const editableCellStyles = {
   cell: css`
     box-sizing: content-box;
     position: relative;

@@ -10,7 +10,7 @@ export const names = {
 
 // `clear` is the only variant and is always applied: its rules live in each part's base styles, so
 // `names.variant.clear` only marks the look for consumers and has no rules of its own.
-export const tabsStyles = /*#__PURE__*/ {
+export const tabsStyles = {
   root: css`
     box-sizing: border-box;
     display: flex;

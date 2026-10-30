@@ -35,7 +35,7 @@ const animated = `@media (prefers-reduced-motion: no-preference) {
  animation: openui-horizontal-bar-chart-grow 0.6s ease-out var(--_openui-horizontal-bar-chart-mark-delay, 0s) both;
  &[data-negative] { transform-origin: right center; }
 }`;
-export const horizontalBarChartStyles = /*#__PURE__*/ {
+export const horizontalBarChartStyles = {
   labelContainer: css`
     pointer-events: none;
   `,

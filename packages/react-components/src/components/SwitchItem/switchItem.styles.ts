@@ -15,7 +15,7 @@ export const names = {
   content: "openui-switch-item-content",
 } as const;
 
-export const switchItemStyles = /*#__PURE__*/ {
+export const switchItemStyles = {
   root: css`
     position: relative;
     display: inline-block;

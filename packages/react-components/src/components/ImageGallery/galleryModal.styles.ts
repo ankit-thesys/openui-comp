@@ -19,7 +19,7 @@ export const names = {
   scrollRight: "openui-image-gallery-modal-scroll-right",
   icon: "openui-image-gallery-modal-icon",
 } as const;
-export const galleryModalStyles = /*#__PURE__*/ {
+export const galleryModalStyles = {
   modal: css`
     position: fixed;
     top: 0;
