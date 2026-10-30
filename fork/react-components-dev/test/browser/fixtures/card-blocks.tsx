@@ -1,5 +1,7 @@
 import {
   Button,
+  Card,
+  CardHeader,
   CompositeCard,
   configureStyles,
   ContextCard,
@@ -15,6 +17,22 @@ import { createRoot } from "react-dom/client";
 import { CardCases, type CardFamily } from "./card-blocks-cases";
 const params = new URLSearchParams(location.search);
 configureStyles({ layer: params.get("layer") || undefined });
+// Isolate this batch's styles from composed components that still register during rendering.
+function Registration() {
+  return (
+    <>
+      <Card>
+        <CardHeader title="Title" subtitle="Subtitle" icon={<span>Icon</span>} />
+      </Card>
+      <CompositeCard item={{ header: "Composite", body: ["Body"], footer: { price: "42" } }} />
+      <ContextCard item={{ title: "Context" }} clickable />
+      <VisualCard item={{ body: "Visual" }} clickable />
+      <OverviewCardBlock items={[{ top: "Overview" }]} clickable />
+      <SnippetCardBlock items={[{ lhs: null }]} clickable />
+      <OptionCards items={[]} />
+    </>
+  );
+}
 function App() {
   const [selected, setSelected] = useState<string[]>([]);
   const [activated, setActivated] = useState(0);
@@ -58,5 +76,7 @@ function App() {
   );
 }
 (window as Window & { mountFixture: () => void }).mountFixture = () =>
-  createRoot(document.getElementById("root")!).render(<App />);
+  createRoot(document.getElementById("root")!).render(
+    params.has("registration") ? <Registration /> : <App />,
+  );
 if (!params.has("lazy")) (window as Window & { mountFixture: () => void }).mountFixture();

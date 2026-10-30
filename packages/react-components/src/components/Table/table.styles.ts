@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   container: "openui-table-container",
   root: "openui-table",
@@ -7,7 +8,7 @@ export const names = {
   header: "openui-table-header",
   body: "openui-table-body",
 } as const;
-export const tableStyles = (css: StyleCss) => ({
+export const tableStyles = /*#__PURE__*/ {
   container: css`
     position: relative;
     width: 100%;
@@ -36,4 +37,4 @@ export const tableStyles = (css: StyleCss) => ({
       border-bottom: 0;
     }
   `,
-});
+};

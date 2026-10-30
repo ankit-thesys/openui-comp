@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-option-cards",
@@ -17,7 +17,7 @@ export const names = {
   },
 } as const;
 
-export const optionCardsStyles = (css: StyleCss) => ({
+export const optionCardsStyles = /*#__PURE__*/ {
   root: css`
     width: 100%;
     container-type: inline-size;
@@ -179,4 +179,4 @@ export const optionCardsStyles = (css: StyleCss) => ({
     letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);
     font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
   `,
-});
+};

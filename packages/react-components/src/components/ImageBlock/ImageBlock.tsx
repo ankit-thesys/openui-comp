@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import React, { forwardRef, useRef, useState } from "react";
 import { useResponsiveContainer } from "../../hooks/useResponsiveContainer";
-import { useStyles } from "../../styles/useStyles";
 import { imageBlockStyles, names } from "./imageBlock.styles";
 
 export interface ImageBlockProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -14,7 +13,7 @@ export interface ImageBlockProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const ImageBlock = forwardRef<HTMLDivElement, ImageBlockProps>(
   ({ src, alt, className, imageLoading, ...rest }, ref) => {
-    const styles = useStyles(imageBlockStyles);
+    const styles = imageBlockStyles;
     const [isImageLoading, setIsImageLoading] = useState<boolean>(imageLoading ?? true);
     const [hasError, setHasError] = useState<boolean>(false);
     const containerRef = useRef<HTMLDivElement>(null);

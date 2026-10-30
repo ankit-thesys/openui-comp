@@ -4,7 +4,6 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import clsx from "clsx";
 import { ChevronRight } from "lucide-react";
 import React, { forwardRef } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { IconButton } from "../IconButton";
 import { Separator } from "../Separator";
 import { foldableSectionStyles, names } from "./foldableSection.styles";
@@ -15,7 +14,7 @@ export const FoldableSectionRoot = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Root>,
   FoldableSectionRootProps
 >(({ className, style, ...props }, ref) => {
-  const styles = useStyles(foldableSectionStyles);
+  const styles = foldableSectionStyles;
   return (
     <AccordionPrimitive.Root
       ref={ref}
@@ -39,7 +38,7 @@ export const FoldableSectionItem = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Item>,
   FoldableSectionItemProps
 >(({ className, style, value, ...props }, ref) => {
-  const styles = useStyles(foldableSectionStyles);
+  const styles = foldableSectionStyles;
   return (
     <AccordionPrimitive.Item
       ref={ref}
@@ -64,7 +63,7 @@ export const FoldableSectionTrigger = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Trigger>,
   FoldableSectionTriggerProps
 >(({ className, style, text, ...props }, ref) => {
-  const styles = useStyles(foldableSectionStyles);
+  const styles = foldableSectionStyles;
   return (
     <AccordionPrimitive.Header className={clsx(styles.header, names.header)}>
       <AccordionPrimitive.Trigger
@@ -120,7 +119,7 @@ export const FoldableSectionContent = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Content>,
   FoldableSectionContentProps
 >(({ className, style, children, ...props }, ref) => {
-  const styles = useStyles(foldableSectionStyles);
+  const styles = foldableSectionStyles;
   return (
     <AccordionPrimitive.Content
       ref={ref}
