@@ -67,6 +67,16 @@ Root component is `Dashboard`. 48 components in 6 groups:
 helpers and are described through the chart signatures rather than their own
 group.
 
+## Filters
+
+The prompt teaches the model to bind each `FilterSelect` to a `$variable` and read values from it,
+such as `data[$region].revenue`, so filters change the dashboard with no backend. Those values are
+written by the model, so they are placeholders. For live data, give the model your own tools so it
+can pass `$region` to `Query`. The kit can't supply those.
+
+Without tools, the model uses `FilterSelect` even when asked for a date picker or several ticked
+options, because written values can't follow them.
+
 ## What makes it a dashboard library
 
 The component list matters less than the **layout grammar** the groups carry as
@@ -84,8 +94,21 @@ The component list matters less than the **layout grammar** the groups carry as
   `Separator`, `CodeBlock` or `Form` inside `MediumCard` or `LargeCard`.
 
 That grammar is why this library is smaller than a general component set — 48
-components and a ~18,000-character system prompt — while producing dashboards
+components and a ~20,000-character system prompt — while producing dashboards
 rather than a vertical stack of cards.
+
+## Tests
+
+```bash
+pnpm test                               # library, prompt and style rules
+pnpm exec playwright install chromium   # once
+pnpm test:browser                       # rendering, computed styles, layout and clicks
+pnpm test:update                        # accept an intended change, then review the diff
+```
+
+Run them from `packages/kits/dashboard`, after building `@openuidev/react-components` and
+`@openuidev/react-lang`. `pnpm test` also runs in this package's `ci` script. The browser tests
+don't run in CI yet.
 
 ## Provenance
 
