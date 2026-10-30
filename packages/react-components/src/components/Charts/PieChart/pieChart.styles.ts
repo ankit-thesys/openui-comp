@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
+
 import { centeredContainer, centeredSvgWrapper } from "../shared/chartBaseDeclarations";
 
 /** Stable override targets for PieChart. */
@@ -24,8 +25,8 @@ export const names = {
   },
 } as const;
 
-// Register the entrance keyframes with the component, never on import.
-export const pieChartStyles = (css: StyleCss) => {
+// Register entrance keyframes before the rules that reference them, on import.
+export const pieChartStyles = /*#__PURE__*/ (() => {
   css`
     @keyframes openui-pie-chart-appear {
       from {
@@ -78,4 +79,4 @@ export const pieChartStyles = (css: StyleCss) => {
       cursor: var(--_openui-pie-chart-slice-cursor, unset);
     `,
   };
-};
+})();

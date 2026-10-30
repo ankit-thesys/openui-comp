@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
 
 /** Stable override targets for CalendarHeatmap. */
 export const names = {
@@ -39,8 +39,8 @@ export const names = {
   },
 } as const;
 
-// Register the entrance keyframes with the component, never on import.
-export const calendarHeatmapStyles = (css: StyleCss) => {
+// Register entrance keyframes before the rules that reference them, on import.
+export const calendarHeatmapStyles = /*#__PURE__*/ (() => {
   css`
     @keyframes openui-calendar-heatmap-appear {
       from {
@@ -190,4 +190,4 @@ export const calendarHeatmapStyles = (css: StyleCss) => {
       overflow: var(--_openui-calendar-heatmap-svg-overflow, unset);
     `,
   };
-};
+})();

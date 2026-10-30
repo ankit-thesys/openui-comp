@@ -1,5 +1,12 @@
-import type { StyleCss } from "../../../styles/useStyles";
-import { defaultLegendStyles } from "../shared/core/DefaultLegend/defaultLegend.styles";
+import { css } from "../../../styles/css";
+
+import { separatorStyles } from "../../Separator/separator.styles";
+import { defaultLegendClasses } from "../shared/core/DefaultLegend/defaultLegend.styles";
+
+// DefaultLegend and Separator register on import. Reading their maps keeps those value imports,
+// so their rules come first and this chart's legend padding rule follows DefaultLegend's root.
+Object.values(defaultLegendClasses);
+Object.values(separatorStyles);
 
 /** Stable override targets for SegmentedBar. */
 export const names = {
@@ -20,9 +27,7 @@ export const names = {
   },
 } as const;
 
-export const segmentedBarStyles = (css: StyleCss) => {
-  // The chart's legend padding rule must follow the composed legend's root rule.
-  defaultLegendStyles(css);
+export const segmentedBarStyles = /*#__PURE__*/ (() => {
   return {
     root: css`
       display: flex;
@@ -117,4 +122,4 @@ export const segmentedBarStyles = (css: StyleCss) => {
       padding-top: var(--_openui-segmented-bar-default-legend-padding-top, unset);
     `,
   };
-};
+})();

@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import { forwardRef } from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import { calendarHeatmapStyles, names } from "../calendarHeatmap.styles";
 import type { CalendarLevelStyle } from "../types";
 import { calendarPatternId } from "./CalendarPatternDefs";
@@ -45,7 +44,7 @@ function LegendSwatch({
   pattern: boolean;
   patternBaseId: string;
 }) {
-  const styles = useStyles(calendarHeatmapStyles);
+  const styles = calendarHeatmapStyles;
   if (pattern) {
     return (
       <svg
@@ -97,7 +96,7 @@ export const CalendarLegend = forwardRef<HTMLDivElement, CalendarLegendProps>(
     },
     ref,
   ) {
-    const styles = useStyles(calendarHeatmapStyles);
+    const styles = calendarHeatmapStyles;
     const isDimming = highlightedLevel !== null;
     const swatchOpacity = (level: number) =>
       isDimming && highlightedLevel !== level ? INACTIVE_OPACITY : 1;
