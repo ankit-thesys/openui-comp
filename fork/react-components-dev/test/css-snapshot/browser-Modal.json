@@ -1,0 +1,160 @@
+{
+  "initial": {
+    "markup": "<div id=\"root\"></div><script type=\"module\" src=\"/elements.js\"></script><div class=\"openui-modal#0 openui-modal openui-modal#1 openui-modal--size-sm\"><div class=\"openui-modal-overlay#0 openui-modal-overlay\"></div><div class=\"openui-modal-content#0 openui-modal-content\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"openui-modal-title\" tabindex=\"-1\"><div class=\"openui-modal-header#0 openui-modal-header\"><h2 id=\"openui-modal-title\" class=\"openui-modal-title#0 openui-modal-title\">Title</h2><button class=\"openui-modal-close#0 openui-modal-close\" aria-label=\"Close\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-x openui-modal-close-icon#0 openui-modal-close-icon\" aria-hidden=\"true\"><path d=\"M18 6 6 18\"></path><path d=\"m6 6 12 12\"></path></svg></button></div><div class=\"openui-modal-body#0 openui-modal-body\"><div style=\"font: 16px serif;\">Body</div></div></div></div><div class=\"openui-modal#0 openui-modal openui-modal#2 openui-modal--size-md\"><div class=\"openui-modal-overlay#0 openui-modal-overlay\"></div><div class=\"openui-modal-content#0 openui-modal-content\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"openui-modal-title\" tabindex=\"-1\"><div class=\"openui-modal-header#0 openui-modal-header\"><h2 id=\"openui-modal-title\" class=\"openui-modal-title#0 openui-modal-title\">Title</h2><button class=\"openui-modal-close#0 openui-modal-close\" aria-label=\"Close\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-x openui-modal-close-icon#0 openui-modal-close-icon\" aria-hidden=\"true\"><path d=\"M18 6 6 18\"></path><path d=\"m6 6 12 12\"></path></svg></button></div><div class=\"openui-modal-body#0 openui-modal-body\"><div style=\"font: 16px serif;\">Body</div></div></div></div><div class=\"openui-modal#0 openui-modal openui-modal#3 openui-modal--size-lg\"><div class=\"openui-modal-overlay#0 openui-modal-overlay\"></div><div class=\"openui-modal-content#0 openui-modal-content\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"openui-modal-title\" tabindex=\"-1\"><div class=\"openui-modal-header#0 openui-modal-header\"><h2 id=\"openui-modal-title\" class=\"openui-modal-title#0 openui-modal-title\">Title</h2><button class=\"openui-modal-close#0 openui-modal-close\" aria-label=\"Close\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-x openui-modal-close-icon#0 openui-modal-close-icon\" aria-hidden=\"true\"><path d=\"M18 6 6 18\"></path><path d=\"m6 6 12 12\"></path></svg></button></div><div class=\"openui-modal-body#0 openui-modal-body\"><div style=\"font: 16px serif;\">Body</div></div></div></div>",
+    "rules": {
+      "@keyframes": [
+        {
+          "selector": "@keyframes _openui-modal-fade-in",
+          "conditions": [],
+          "declarations": ["from{opacity:0", "}to{opacity:1", "}"]
+        },
+        {
+          "selector": "@keyframes _openui-modal-slide-in",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:translate(-50%, -48%)",
+            "}to{opacity:1",
+            "transform:translate(-50%, -50%)",
+            "}"
+          ]
+        }
+      ],
+      "openui-modal-body#0": [
+        {
+          "selector": ".openui-modal-body#0",
+          "conditions": [],
+          "declarations": [
+            "padding:var(--openui-space-m, 12px)",
+            "overflow-y:auto",
+            "flex:1",
+            "display:flex",
+            "flex-direction:column",
+            "gap:var(--openui-space-m, 12px)"
+          ]
+        }
+      ],
+      "openui-modal-close-icon#0": [
+        {
+          "selector": ".openui-modal-close-icon#0",
+          "conditions": [],
+          "declarations": ["width:18px", "height:18px"]
+        }
+      ],
+      "openui-modal-close#0": [
+        {
+          "selector": ".openui-modal-close#0",
+          "conditions": [],
+          "declarations": [
+            "all:unset",
+            "cursor:pointer",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:28px",
+            "height:28px",
+            "border-radius:6px",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"
+          ]
+        },
+        {
+          "selector": ".openui-modal-close#0:hover",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"]
+        }
+      ],
+      "openui-modal-content#0": [
+        {
+          "selector": ".openui-modal-content#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:content-box",
+            "position:fixed",
+            "top:50%",
+            "left:50%",
+            "transform:translate(-50%, -50%)",
+            "z-index:10000",
+            "background:var(--openui-foreground, oklch(0.994 0 89.876 / 1))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "border-radius:12px",
+            "box-shadow:0 16px 48px rgba(0, 0, 0, 0.2)",
+            "display:flex",
+            "flex-direction:column",
+            "max-height:85vh",
+            "animation:_openui-modal-slide-in 0.15s ease-out",
+            "outline:none",
+            "width:var(--_openui-modal-content-width)",
+            "max-width:90vw"
+          ]
+        }
+      ],
+      "openui-modal-header#0": [
+        {
+          "selector": ".openui-modal-header#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "padding:var(--openui-space-m, 12px)",
+            "border-bottom:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))"
+          ]
+        }
+      ],
+      "openui-modal-overlay#0": [
+        {
+          "selector": ".openui-modal-overlay#0",
+          "conditions": [],
+          "declarations": [
+            "position:fixed",
+            "inset:0",
+            "background:var(--openui-overlay, oklch(0 0 0 / 0.4))",
+            "z-index:9999",
+            "animation:_openui-modal-fade-in 0.15s ease-out"
+          ]
+        }
+      ],
+      "openui-modal-title#0": [
+        {
+          "selector": ".openui-modal-title#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-default-heavy, 560 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-heavy-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-medium, \"wght\" 560)",
+            "margin:0"
+          ]
+        }
+      ],
+      "openui-modal#0": [
+        {
+          "selector": ".openui-modal#0",
+          "conditions": [],
+          "declarations": ["position:relative", "z-index:9999"]
+        }
+      ],
+      "openui-modal#1": [
+        {
+          "selector": ".openui-modal#1",
+          "conditions": [],
+          "declarations": ["--_openui-modal-content-width:400px"]
+        }
+      ],
+      "openui-modal#2": [
+        {
+          "selector": ".openui-modal#2",
+          "conditions": [],
+          "declarations": ["--_openui-modal-content-width:560px"]
+        }
+      ],
+      "openui-modal#3": [
+        {
+          "selector": ".openui-modal#3",
+          "conditions": [],
+          "declarations": ["--_openui-modal-content-width:720px"]
+        }
+      ]
+    }
+  }
+}

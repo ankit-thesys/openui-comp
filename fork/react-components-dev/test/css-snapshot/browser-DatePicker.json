@@ -1,0 +1,508 @@
+{
+  "initial": {
+    "markup": "<div id=\"root\"><div class=\"openui-date-picker#0 openui-date-picker openui-date-picker--mode-single\"><div class=\"openui-date-picker-trigger#0 openui-date-picker-trigger\" data-state=\"open\" data-placeholder=\"true\"><span class=\"openui-date-picker-text#0 openui-date-picker-text\">Select a date</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-date-picker-icon#0 openui-date-picker-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></div><div class=\"openui-date-picker-reference#0 openui-date-picker-reference\"></div></div><div class=\"openui-date-picker#0 openui-date-picker openui-date-picker--mode-single\"><div class=\"openui-date-picker-trigger#0 openui-date-picker-trigger\" data-state=\"closed\"><span class=\"openui-date-picker-text#0 openui-date-picker-text\">Oct 15, 2026</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-date-picker-icon#0 openui-date-picker-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></div></div><div class=\"openui-date-picker#0 openui-date-picker openui-date-picker--mode-range\"><div class=\"openui-date-picker-trigger#0 openui-date-picker-trigger\" data-state=\"closed\"><span class=\"openui-date-picker-text#0 openui-date-picker-text\">Oct 15, 2026 - Oct 18, 2026</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-date-picker-icon#0 openui-date-picker-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></div></div></div><script type=\"module\" src=\"/elements.js\"></script><div class=\"openui-date-picker-content#0 openui-date-picker-content\" style=\"position: absolute; left: 0px; top: 0px; transform: translate(0px, 47px);\"><div class=\"openui-date-picker-menu#0 openui-date-picker-menu\"><div class=\"openui-date-picker-calendar#0 openui-date-picker-calendar\"><div class=\"openui-calendar openui-calendar#0 openui-calendar--layout-fullscreen\"><div lang=\"en-US\" data-mode=\"single\" class=\"openui-calendar-content+openui-date-picker-calendar-content#0 openui-calendar-content openui-calendar-content+openui-date-picker-calendar-content#1 openui-date-picker-calendar-content\"><div class=\"openui-calendar-months\"><nav class=\"openui-calendar-nav#0 openui-calendar-nav\" aria-label=\"Navigation bar\"><button class=\"openui-calendar-button-previous#0 openui-calendar-button-previous\" aria-label=\"Go to the Previous Month\"><svg class=\"openui-calendar-chevron#0 openui-calendar-chevron\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><polygon points=\"16 18.112 9.81111111 12 16 5.87733333 14.0888889 4 6 12 14.0888889 20\"></polygon></svg></button><button class=\"openui-calendar-button-previous#0 openui-calendar-button-next\" aria-label=\"Go to the Next Month\"><svg class=\"openui-calendar-chevron#0 openui-calendar-chevron\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><polygon points=\"8 18.112 14.18888889 12 8 5.87733333 9.91111111 4 18 12 9.91111111 20\"></polygon></svg></button></nav><div class=\"openui-calendar-month#0 openui-calendar-month\"><div class=\"openui-calendar-month-caption#0 openui-calendar-month-caption\"><div class=\"openui-calendar-dropdowns#0 openui-calendar-dropdowns\"><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#0 openui-select-trigger openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#1 openui-select-trigger--size-md openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#2 openui-calendar-select-trigger openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#3 openui-calendar-months-dropdown\" aria-label=\"Choose the Month\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">October</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"none\" dir=\"ltr\" data-state=\"closed\" class=\"openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#0 openui-select-trigger openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#1 openui-select-trigger--size-md openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#2 openui-calendar-select-trigger openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#3 openui-calendar-years-dropdown\" aria-label=\"Choose the Year\"><span class=\"openui-select-value\"><span style=\"pointer-events: none;\"><span class=\"openui-select-item-text\">2026</span></span></span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down openui-select-trigger-icon#0 openui-select-trigger-icon\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><span role=\"status\" aria-live=\"polite\" style=\"border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; overflow-wrap: normal;\">October 2026</span></div></div><table role=\"grid\" aria-multiselectable=\"false\" aria-label=\"October 2026\" class=\"openui-calendar-month-grid#0 openui-calendar-month-grid\"><thead aria-hidden=\"true\"><tr class=\"openui-calendar-month#0 openui-calendar-weekdays\"><th aria-label=\"Sunday\" class=\"openui-calendar-weekday#0 openui-calendar-weekday\" scope=\"col\">Su</th><th aria-label=\"Monday\" class=\"openui-calendar-weekday#0 openui-calendar-weekday\" scope=\"col\">Mo</th><th aria-label=\"Tuesday\" class=\"openui-calendar-weekday#0 openui-calendar-weekday\" scope=\"col\">Tu</th><th aria-label=\"Wednesday\" class=\"openui-calendar-weekday#0 openui-calendar-weekday\" scope=\"col\">We</th><th aria-label=\"Thursday\" class=\"openui-calendar-weekday#0 openui-calendar-weekday\" scope=\"col\">Th</th><th aria-label=\"Friday\" class=\"openui-calendar-weekday#0 openui-calendar-weekday\" scope=\"col\">Fr</th><th aria-label=\"Saturday\" class=\"openui-calendar-weekday#0 openui-calendar-weekday\" scope=\"col\">Sa</th></tr></thead><tbody class=\"openui-calendar-weeks\"><tr class=\"openui-calendar-week\"><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-09-27\" data-month=\"2026-09\" data-hidden=\"true\" data-outside=\"true\"></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-09-28\" data-month=\"2026-09\" data-hidden=\"true\" data-outside=\"true\"></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-09-29\" data-month=\"2026-09\" data-hidden=\"true\" data-outside=\"true\"></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-09-30\" data-month=\"2026-09\" data-hidden=\"true\" data-outside=\"true\"></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-01\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Thursday, October 1st, 2026\">1</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-02\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Friday, October 2nd, 2026\">2</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-03\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Saturday, October 3rd, 2026\">3</button></td></tr><tr class=\"openui-calendar-week\"><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-04\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Sunday, October 4th, 2026\">4</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-05\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Monday, October 5th, 2026\">5</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-06\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Tuesday, October 6th, 2026\">6</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-07\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Wednesday, October 7th, 2026\">7</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-08\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Thursday, October 8th, 2026\">8</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-09\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Friday, October 9th, 2026\">9</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-10\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Saturday, October 10th, 2026\">10</button></td></tr><tr class=\"openui-calendar-week\"><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-11\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Sunday, October 11th, 2026\">11</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-12\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Monday, October 12th, 2026\">12</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-13\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Tuesday, October 13th, 2026\">13</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-14\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Wednesday, October 14th, 2026\">14</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-15\" data-today=\"true\" data-today-unselected=\"true\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"0\" aria-label=\"Today, Thursday, October 15th, 2026\">15</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-16\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Friday, October 16th, 2026\">16</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-17\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Saturday, October 17th, 2026\">17</button></td></tr><tr class=\"openui-calendar-week\"><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-18\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Sunday, October 18th, 2026\">18</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-19\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Monday, October 19th, 2026\">19</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-20\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Tuesday, October 20th, 2026\">20</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-21\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Wednesday, October 21st, 2026\">21</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-22\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Thursday, October 22nd, 2026\">22</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-23\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Friday, October 23rd, 2026\">23</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-24\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Saturday, October 24th, 2026\">24</button></td></tr><tr class=\"openui-calendar-week\"><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-25\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Sunday, October 25th, 2026\">25</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-26\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Monday, October 26th, 2026\">26</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-27\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Tuesday, October 27th, 2026\">27</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-28\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Wednesday, October 28th, 2026\">28</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-29\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Thursday, October 29th, 2026\">29</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-30\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Friday, October 30th, 2026\">30</button></td><td class=\"openui-calendar-day#0 openui-calendar-day\" role=\"gridcell\" data-day=\"2026-10-31\"><button class=\"openui-calendar-day-button#0 openui-calendar-day-button\" tabindex=\"-1\" aria-label=\"Saturday, October 31st, 2026\">31</button></td></tr></tbody></table></div></div></div></div></div></div></div>",
+    "rules": {
+      "@keyframes": [
+        {
+          "selector": "@keyframes _openui-date-picker-show",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:scale(0.95)",
+            "}to{opacity:1",
+            "transform:scale(1)",
+            "}"
+          ]
+        }
+      ],
+      "openui-calendar-button-previous#0": [
+        {
+          "selector": ".openui-calendar-button-previous#0",
+          "conditions": [],
+          "declarations": ["display:none"]
+        }
+      ],
+      "openui-calendar-chevron#0": [
+        {
+          "selector": ".openui-calendar-chevron#0",
+          "conditions": [],
+          "declarations": [
+            "fill:var(--openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1))"
+          ]
+        }
+      ],
+      "openui-calendar-content+openui-date-picker-calendar-content#0": [
+        {
+          "selector": ".openui-calendar-content+openui-date-picker-calendar-content#0",
+          "conditions": [],
+          "declarations": [
+            "--_openui-calendar-day-size:calc(var(--openui-space-2xl, 36px) + var(--openui-space-2xs, 4px))",
+            "--_openui-calendar-cell-radius:var(--openui-radius-m, 8px)",
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "width:fit-content",
+            "max-width:100%",
+            "box-sizing:border-box",
+            "padding:var(--openui-space-l, 18px)",
+            "border:1px solid var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "border-radius:var(--openui-radius-3xl, 16px)",
+            "background-color:var(--openui-foreground, oklch(0.994 0 89.876 / 1))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ]
+        }
+      ],
+      "openui-calendar-content+openui-date-picker-calendar-content#1": [
+        {
+          "selector": ".openui-calendar-content+openui-date-picker-calendar-content#1",
+          "conditions": [],
+          "declarations": ["border:none", "border-radius:0"]
+        }
+      ],
+      "openui-calendar-day-button#0": [
+        {
+          "selector": ".openui-calendar-day-button#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-label-default, 400 16px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "width:100%",
+            "height:100%",
+            "margin:0",
+            "padding:0",
+            "border:1px solid transparent",
+            "border-radius:var(--_openui-calendar-cell-radius)",
+            "background:transparent",
+            "color:inherit",
+            "cursor:pointer",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "transition:background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease"
+          ]
+        },
+        {
+          "selector": ".openui-calendar-day-button#0:focus-within",
+          "conditions": [],
+          "declarations": ["outline:none"]
+        },
+        {
+          "selector": ".openui-calendar-day-button#0:focus-visible",
+          "conditions": [],
+          "declarations": [
+            "outline:2px solid var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08))",
+            "outline-offset:var(--openui-space-3xs, 2px)"
+          ]
+        },
+        {
+          "selector": ".openui-calendar-day-button#0:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))"
+          ]
+        },
+        {
+          "selector": ".openui-calendar-day-button#0:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:transparent",
+            "cursor:not-allowed",
+            "color:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))"
+          ]
+        }
+      ],
+      "openui-calendar-day#0": [
+        {
+          "selector": ".openui-calendar-day#0",
+          "conditions": [],
+          "declarations": [
+            "width:var(--_openui-calendar-day-size)",
+            "height:var(--_openui-calendar-day-size)",
+            "min-width:var(--_openui-calendar-day-size)",
+            "min-height:var(--_openui-calendar-day-size)",
+            "padding:0",
+            "vertical-align:middle"
+          ]
+        },
+        {
+          "selector": ".openui-calendar-day#0[data-today-unselected]",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-sunk, oklch(0.097 0 0 / 0.04))",
+            "border-radius:var(--_openui-calendar-cell-radius)"
+          ]
+        },
+        {
+          "selector": ".openui-calendar-day#0[data-disabled]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))"]
+        },
+        {
+          "selector": ".openui-calendar-day#0[data-selection]",
+          "conditions": [],
+          "declarations": [
+            "background:var(--openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1))",
+            "color:var(--openui-text-accent-primary, oklch(0.994 0 89.876 / 1))",
+            "border-radius:var(--_openui-calendar-cell-radius)"
+          ]
+        },
+        {
+          "selector": ".openui-calendar-day#0[data-range-start]",
+          "conditions": [],
+          "declarations": [
+            "background:var(--openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1))",
+            "color:var(--openui-text-accent-primary, oklch(0.994 0 89.876 / 1))",
+            "border-top-left-radius:var(--_openui-calendar-cell-radius)",
+            "border-bottom-left-radius:var(--_openui-calendar-cell-radius)"
+          ]
+        },
+        {
+          "selector": ".openui-calendar-day#0[data-range-middle]",
+          "conditions": [],
+          "declarations": ["background:var(--openui-highlight, oklch(0.097 0 0 / 0.04))"]
+        },
+        {
+          "selector": ".openui-calendar-day#0[data-range-end]",
+          "conditions": [],
+          "declarations": [
+            "background:var(--openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1))",
+            "color:var(--openui-text-accent-primary, oklch(0.994 0 89.876 / 1))",
+            "border-top-right-radius:var(--_openui-calendar-cell-radius)",
+            "border-bottom-right-radius:var(--_openui-calendar-cell-radius)"
+          ]
+        }
+      ],
+      "openui-calendar-dropdowns#0": [
+        {
+          "selector": ".openui-calendar-dropdowns#0",
+          "conditions": [],
+          "declarations": ["gap:var(--_openui-calendar-dropdowns-gap)"]
+        }
+      ],
+      "openui-calendar-month-caption#0": [
+        {
+          "selector": ".openui-calendar-month-caption#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "display:flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "gap:var(--openui-space-s, 8px)",
+            "height:auto",
+            "margin-bottom:var(--openui-space-s, 8px)",
+            "font-weight:inherit",
+            "font-size:inherit"
+          ]
+        }
+      ],
+      "openui-calendar-month-grid#0": [
+        {
+          "selector": ".openui-calendar-month-grid#0",
+          "conditions": [],
+          "declarations": ["width:auto", "table-layout:auto", "border-collapse:collapse"]
+        }
+      ],
+      "openui-calendar-month#0": [
+        {
+          "selector": ".openui-calendar-month#0",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"]
+        }
+      ],
+      "openui-calendar-nav#0": [
+        {
+          "selector": ".openui-calendar-nav#0",
+          "conditions": [],
+          "declarations": ["gap:var(--_openui-calendar-nav-gap)"]
+        }
+      ],
+      "openui-calendar-weekday#0": [
+        {
+          "selector": ".openui-calendar-weekday#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",
+            "width:var(--_openui-calendar-day-size)",
+            "height:var(--_openui-calendar-day-size)",
+            "padding:0",
+            "text-transform:none",
+            "text-align:center",
+            "vertical-align:middle"
+          ]
+        }
+      ],
+      "openui-calendar#0": [
+        {
+          "selector": ".openui-calendar#0",
+          "conditions": [],
+          "declarations": [
+            "--_openui-calendar-nav-gap:var(--openui-space-m, 12px)",
+            "--_openui-calendar-dropdowns-gap:var(--openui-space-s, 8px)"
+          ]
+        }
+      ],
+      "openui-date-picker-calendar#0": [
+        {
+          "selector": ".openui-date-picker-calendar#0",
+          "conditions": [],
+          "declarations": ["width:100%", "height:100%"]
+        }
+      ],
+      "openui-date-picker-content#0": [
+        {
+          "selector": ".openui-date-picker-content#0",
+          "conditions": [],
+          "declarations": ["z-index:50", "width:fit-content"]
+        }
+      ],
+      "openui-date-picker-icon#0": [
+        {
+          "selector": ".openui-date-picker-icon#0",
+          "conditions": [],
+          "declarations": [
+            "transition:transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+            "transform:var(--_openui-date-picker-icon-transform, none)"
+          ]
+        }
+      ],
+      "openui-date-picker-menu#0": [
+        {
+          "selector": ".openui-date-picker-menu#0",
+          "conditions": [],
+          "declarations": [
+            "background:var(--openui-foreground, oklch(0.994 0 89.876 / 1))",
+            "border-radius:var(--openui-radius-2xl, 14px)",
+            "box-shadow:var( --openui-shadow-s, 0 1px 3px -2px oklch(0 0 0 / 0.02), 0 2px 5px -2px oklch(0 0 0 / 0.04) )",
+            "border:1px solid var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "overflow:hidden",
+            "transform-origin:top center",
+            "animation:_openui-date-picker-show 0.18s ease-out forwards"
+          ]
+        }
+      ],
+      "openui-date-picker-reference#0": [
+        {
+          "selector": ".openui-date-picker-reference#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "left:0",
+            "top:0",
+            "width:100%",
+            "height:100%",
+            "pointer-events:none"
+          ]
+        }
+      ],
+      "openui-date-picker-text#0": [
+        {
+          "selector": ".openui-date-picker-text#0",
+          "conditions": [],
+          "declarations": ["overflow:hidden", "text-overflow:ellipsis", "white-space:nowrap"]
+        }
+      ],
+      "openui-date-picker-trigger#0": [
+        {
+          "selector": ".openui-date-picker-trigger#0",
+          "conditions": [],
+          "declarations": [
+            "--_openui-date-picker-icon-transform:none",
+            "box-sizing:border-box",
+            "display:flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "border-radius:var(--openui-radius-m, 8px)",
+            "background:var(--openui-sunk, oklch(0.097 0 0 / 0.04))",
+            "padding:var(--openui-space-s, 8px) var(--openui-space-m, 12px)",
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "cursor:pointer",
+            "box-shadow:var( --openui-shadow-s, 0 1px 3px -2px oklch(0 0 0 / 0.02), 0 2px 5px -2px oklch(0 0 0 / 0.04) )",
+            "width:100%"
+          ]
+        },
+        {
+          "selector": ".openui-date-picker-trigger#0:hover",
+          "conditions": [],
+          "declarations": [
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "background-color:var(--openui-sunk, oklch(0.097 0 0 / 0.04))"
+          ]
+        },
+        {
+          "selector": ".openui-date-picker-trigger#0[data-state=\"open\"]",
+          "conditions": [],
+          "declarations": [
+            "--_openui-date-picker-icon-transform:rotate(180deg)",
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "background-color:var(--openui-sunk, oklch(0.097 0 0 / 0.04))"
+          ]
+        },
+        {
+          "selector": ".openui-date-picker-trigger#0[data-placeholder=\"true\"]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"]
+        },
+        {
+          "selector": ".openui-date-picker-trigger#0:disabled",
+          "conditions": [],
+          "declarations": [
+            "color:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "cursor:not-allowed"
+          ]
+        }
+      ],
+      "openui-date-picker#0": [
+        {
+          "selector": ".openui-date-picker#0",
+          "conditions": [],
+          "declarations": ["position:relative"]
+        }
+      ],
+      "openui-select-trigger-icon#0": [
+        {
+          "selector": ".openui-select-trigger-icon#0",
+          "conditions": [],
+          "declarations": [
+            "height:16px",
+            "width:16px",
+            "transition:transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+            "transform:var(--_openui-select-trigger-icon-transform, none)"
+          ]
+        }
+      ],
+      "openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#0": [
+        {
+          "selector": ".openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#0",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-trigger-icon-transform:none",
+            "--_openui-select-trigger-hover-color:initial",
+            "box-sizing:border-box",
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "outline:none",
+            "display:inline-flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "gap:var(--openui-space-s, 8px)"
+          ]
+        },
+        {
+          "selector": ":where(.openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#0) svg",
+          "conditions": [],
+          "declarations": [
+            "transition:transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+            "transform:var(--_openui-select-trigger-icon-transform, none)"
+          ]
+        },
+        {
+          "selector": ".openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#0:hover",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-trigger-hover-color:var( --openui-text-neutral-primary, oklch(0.097 0 0 / 1) )",
+            "background:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))"
+          ]
+        },
+        {
+          "selector": ".openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#0[data-state=\"open\"]",
+          "conditions": [],
+          "declarations": [
+            "--_openui-select-trigger-icon-transform:rotate(180deg)",
+            "border-color:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "background-color:var(--openui-highlight, oklch(0.097 0 0 / 0.04))"
+          ]
+        },
+        {
+          "selector": ".openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#0:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))",
+            "color:var( --_openui-select-trigger-hover-color, var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2)) )",
+            "border-color:var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "cursor:not-allowed"
+          ]
+        },
+        {
+          "selector": ".openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#0[data-placeholder]",
+          "conditions": [],
+          "declarations": ["color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"]
+        }
+      ],
+      "openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#1": [
+        {
+          "selector": ".openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#1",
+          "conditions": [],
+          "declarations": [
+            "padding:calc(var(--openui-space-xs, 6px) - 1px) calc(var(--openui-space-m, 12px) - 1px)",
+            "border-radius:var(--openui-radius-m, 8px)"
+          ]
+        }
+      ],
+      "openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#2": [
+        {
+          "selector": ".openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#2",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-label-default, 400 16px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "min-height:calc(var(--openui-space-l, 18px) + var(--openui-space-s, 8px))",
+            "padding:var(--openui-space-xs, 6px) var(--openui-space-s, 8px)",
+            "border:1px solid transparent",
+            "border-radius:var(--openui-radius-s, 6px)",
+            "background-color:transparent",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "gap:var(--openui-space-2xs, 4px)"
+          ]
+        },
+        {
+          "selector": ".openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#2:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))"
+          ]
+        },
+        {
+          "selector": ".openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#2:focus-visible",
+          "conditions": [],
+          "declarations": ["outline-offset:var(--openui-space-3xs, 2px)"]
+        },
+        {
+          "selector": ".openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#2[data-state=\"open\"]",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))"
+          ]
+        },
+        {
+          "selector": ".openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#2:disabled",
+          "conditions": [],
+          "declarations": ["cursor:pointer"]
+        }
+      ],
+      "openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#3": [
+        {
+          "selector": ".openui-select-trigger+openui-calendar-select-trigger+openui-calendar-months-dropdown#3",
+          "conditions": [],
+          "declarations": ["cursor:pointer"]
+        }
+      ]
+    }
+  }
+}

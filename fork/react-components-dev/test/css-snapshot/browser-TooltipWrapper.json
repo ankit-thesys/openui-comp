@@ -1,0 +1,231 @@
+{
+  "initial": {
+    "markup": "<div id=\"root\"><button class=\"openui-button#0 openui-button#1 openui-button#2 openui-button#3 openui-button openui-button--variant-primary openui-button--size-medium openui-button--tone-default\" data-tooltip-trigger=\"true\" data-state=\"instant-open\" aria-describedby=\"radix-react-id-0\">Show tooltip</button></div><script type=\"module\" src=\"/elements.js\"></script><div data-radix-popper-content-wrapper=\"\" style=\"position: fixed; left: 0px; top: 0px; transform: translate(0px, 41px); min-width: max-content; --radix-popper-transform-origin: 0% 0px; z-index: 9999; --radix-popper-available-width: 1280px; --radix-popper-available-height: 679px; --radix-popper-anchor-width: 107.25px; --radix-popper-anchor-height: 36px;\"><div data-side=\"bottom\" data-align=\"start\" data-state=\"instant-open\" class=\"openui-tooltip-wrapper#0 openui-tooltip-wrapper\" style=\"--radix-tooltip-content-transform-origin: var(--radix-popper-transform-origin); --radix-tooltip-content-available-width: var(--radix-popper-available-width); --radix-tooltip-content-available-height: var(--radix-popper-available-height); --radix-tooltip-trigger-width: var(--radix-popper-anchor-width); --radix-tooltip-trigger-height: var(--radix-popper-anchor-height);\"><div class=\"openui-tooltip-wrapper-body#0 openui-tooltip-wrapper-body\"><span class=\"openui-tooltip-wrapper-heading#0 openui-tooltip-wrapper-heading\">Heading</span><span class=\"openui-tooltip-wrapper-text#0 openui-tooltip-wrapper-text\">Content</span></div><span id=\"radix-react-id-0\" role=\"tooltip\" style=\"position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; overflow-wrap: normal;\"><div class=\"openui-tooltip-wrapper-body#0 openui-tooltip-wrapper-body\"><span class=\"openui-tooltip-wrapper-heading#0 openui-tooltip-wrapper-heading\">Heading</span><span class=\"openui-tooltip-wrapper-text#0 openui-tooltip-wrapper-text\">Content</span></div></span></div></div>",
+    "rules": {
+      "@keyframes": [
+        {
+          "selector": "@keyframes _openui-tooltip-down",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:translateY(-2px)",
+            "}to{opacity:1",
+            "transform:translateY(0)",
+            "}"
+          ]
+        },
+        {
+          "selector": "@keyframes _openui-tooltip-left",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:translateX(2px)",
+            "}to{opacity:1",
+            "transform:translateX(0)",
+            "}"
+          ]
+        },
+        {
+          "selector": "@keyframes _openui-tooltip-up",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:translateY(2px)",
+            "}to{opacity:1",
+            "transform:translateY(0)",
+            "}"
+          ]
+        },
+        {
+          "selector": "@keyframes _openui-tooltip-right",
+          "conditions": [],
+          "declarations": [
+            "from{opacity:0",
+            "transform:translateX(-2px)",
+            "}to{opacity:1",
+            "transform:translateX(0)",
+            "}"
+          ]
+        }
+      ],
+      "openui-button#0": [
+        {
+          "selector": ".openui-button#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "font:var(--openui-text-label-default, 400 16px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "border-radius:var(--openui-radius-l, 10px)",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "display:flex",
+            "gap:var(--openui-space-xs, 6px)",
+            "align-items:center"
+          ]
+        },
+        {
+          "selector": ":where(.openui-button#0) svg",
+          "conditions": [],
+          "declarations": ["height:1em", "width:1em"]
+        }
+      ],
+      "openui-button#1": [
+        {
+          "selector": ".openui-button#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-bg)",
+            "color:var(--_openui-button-primary-fg)",
+            "border-color:var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08))",
+            "box-shadow:var(--_openui-button-primary-shadow)"
+          ]
+        },
+        {
+          "selector": ".openui-button#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-hover-bg)",
+            "box-shadow:none"
+          ]
+        },
+        {
+          "selector": ".openui-button#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-button-primary-active-bg)"]
+        },
+        {
+          "selector": ".openui-button#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-disabled-bg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ]
+        }
+      ],
+      "openui-button#2": [
+        {
+          "selector": ".openui-button#2",
+          "conditions": [],
+          "declarations": [
+            "padding:calc(var(--openui-space-s, 8px) - 1px) var(--openui-space-s-m, 10px)",
+            "border-radius:var(--openui-radius-m, 8px)"
+          ]
+        }
+      ],
+      "openui-button#3": [
+        {
+          "selector": ".openui-button#3",
+          "conditions": [],
+          "declarations": [
+            "--_openui-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-button-primary-fg:var(--openui-text-accent-primary, oklch(0.994 0 89.876 / 1))",
+            "--_openui-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-button-secondary-bg:transparent",
+            "--_openui-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-secondary-disabled-bg:transparent",
+            "--_openui-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ]
+        }
+      ],
+      "openui-tooltip-wrapper-body#0": [
+        {
+          "selector": ".openui-tooltip-wrapper-body#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-direction:column",
+            "gap:var(--openui-space-2xs, 4px)",
+            "width:100%",
+            "max-width:248px"
+          ]
+        }
+      ],
+      "openui-tooltip-wrapper-heading#0": [
+        {
+          "selector": ".openui-tooltip-wrapper-heading#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "width:100%"
+          ]
+        }
+      ],
+      "openui-tooltip-wrapper-text#0": [
+        {
+          "selector": ".openui-tooltip-wrapper-text#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",
+            "width:100%"
+          ]
+        }
+      ],
+      "openui-tooltip-wrapper#0": [
+        {
+          "selector": ".openui-tooltip-wrapper#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "background-color:var(--openui-elevated, oklch(0.097 0 0 / 0.08))",
+            "padding:var(--openui-space-xs, 6px) var(--openui-space-s, 8px)",
+            "outline:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "z-index:9999",
+            "border-radius:var(--openui-radius-s, 6px)",
+            "user-select:none",
+            "animation-duration:400ms",
+            "animation-timing-function:cubic-bezier(0.16, 1, 0.3, 1)",
+            "will-change:transform, opacity"
+          ]
+        },
+        {
+          "selector": ".openui-tooltip-wrapper#0[data-state=\"delayed-open\"]",
+          "conditions": [],
+          "declarations": ["animation-name:var(--_openui-tooltip-wrapper-animation)"]
+        },
+        {
+          "selector": ".openui-tooltip-wrapper#0[data-side=\"top\"]",
+          "conditions": [],
+          "declarations": ["--_openui-tooltip-wrapper-animation:_openui-tooltip-down"]
+        },
+        {
+          "selector": ".openui-tooltip-wrapper#0[data-side=\"right\"]",
+          "conditions": [],
+          "declarations": ["--_openui-tooltip-wrapper-animation:_openui-tooltip-left"]
+        },
+        {
+          "selector": ".openui-tooltip-wrapper#0[data-side=\"bottom\"]",
+          "conditions": [],
+          "declarations": ["--_openui-tooltip-wrapper-animation:_openui-tooltip-up"]
+        },
+        {
+          "selector": ".openui-tooltip-wrapper#0[data-side=\"left\"]",
+          "conditions": [],
+          "declarations": ["--_openui-tooltip-wrapper-animation:_openui-tooltip-right"]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,354 @@
+{
+  "initial": {
+    "markup": "<div id=\"root\"><div style=\"width: 240px;\"><div class=\"openui-sources#0 openui-sources\"><div class=\"openui-sources-header#0 openui-sources-header\"><span class=\"openui-sources-title#0 openui-sources-title\">Sources</span><div class=\"openui-sources-buttons#0 openui-sources-buttons\"><button class=\"openui-icon-button#0 openui-icon-button#1 openui-icon-button#2 openui-icon-button#3 openui-icon-button#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default\" disabled=\"\"><span class=\"openui-icon-button-icon#0 openui-icon-button-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-left\" aria-hidden=\"true\"><path d=\"m15 18-6-6 6-6\"></path></svg></span></button><button class=\"openui-icon-button#0 openui-icon-button#1 openui-icon-button#2 openui-icon-button#3 openui-icon-button#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default\"><span class=\"openui-icon-button-icon#0 openui-icon-button-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-right\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"></path></svg></span></button></div></div><div class=\"openui-carousel#0 openui-carousel openui-carousel#1 openui-carousel--variant-sunk\"><div class=\"openui-carousel-content#0 openui-carousel-content\" data-mask=\"right\"><div class=\"openui-sources-item-container#0 openui-sources-item-container openui-sources-item-container#1\"><div class=\"openui-sources-item#0 openui-sources-item openui-sources-item#1\" role=\"button\" tabindex=\"0\" data-source-id=\"0\"><div class=\"openui-sources-item-header#0 openui-sources-item-header\"><div class=\"openui-sources-item-logo#0 openui-sources-item-logo\"><img alt=\"Example\" height=\"20\" width=\"20\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\"></div><span class=\"openui-sources-item-name#0 openui-sources-item-name\">Example</span></div><div class=\"openui-sources-item-title#0 openui-sources-item-title\">A source</div></div></div><div class=\"openui-sources-item-container#0 openui-sources-item-container openui-sources-item-container#1\"><div class=\"openui-sources-item#0 openui-sources-item openui-sources-item#1\" role=\"button\" tabindex=\"0\" data-source-id=\"1\"><div class=\"openui-sources-item-header#0 openui-sources-item-header\"><div class=\"openui-sources-item-logo#0 openui-sources-item-logo\"><img alt=\"Example\" height=\"20\" width=\"20\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\"></div><span class=\"openui-sources-item-name#0 openui-sources-item-name\">Example</span></div><div class=\"openui-sources-item-title#0 openui-sources-item-title\">A source</div></div></div><div class=\"openui-sources-item-container#0 openui-sources-item-container openui-sources-item-container#1\"><div class=\"openui-sources-item#0 openui-sources-item openui-sources-item#1\" role=\"button\" tabindex=\"0\" data-source-id=\"2\"><div class=\"openui-sources-item-header#0 openui-sources-item-header\"><div class=\"openui-sources-item-logo#0 openui-sources-item-logo\"><img alt=\"Example\" height=\"20\" width=\"20\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\"></div><span class=\"openui-sources-item-name#0 openui-sources-item-name\">Example</span></div><div class=\"openui-sources-item-title#0 openui-sources-item-title\">A source</div></div></div><div class=\"openui-sources-item-container#0 openui-sources-item-container openui-sources-item-container#1\"><div class=\"openui-sources-item#0 openui-sources-item openui-sources-item#1\" role=\"button\" tabindex=\"0\" data-source-id=\"3\"><div class=\"openui-sources-item-header#0 openui-sources-item-header\"><div class=\"openui-sources-item-logo#0 openui-sources-item-logo\"><img alt=\"Example\" height=\"20\" width=\"20\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\"></div><span class=\"openui-sources-item-name#0 openui-sources-item-name\">Example</span></div><div class=\"openui-sources-item-title#0 openui-sources-item-title\">A source</div></div></div><div class=\"openui-sources-item-container#0 openui-sources-item-container openui-sources-item-container#1\"><div class=\"openui-sources-item#0 openui-sources-item openui-sources-item#1\" role=\"button\" tabindex=\"0\" data-source-id=\"4\"><div class=\"openui-sources-item-header#0 openui-sources-item-header\"><div class=\"openui-sources-item-logo#0 openui-sources-item-logo\"><img alt=\"Example\" height=\"20\" width=\"20\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\"></div><span class=\"openui-sources-item-name#0 openui-sources-item-name\">Example</span></div><div class=\"openui-sources-item-title#0 openui-sources-item-title\">A source</div></div></div><div class=\"openui-sources-item-container#0 openui-sources-item-container openui-sources-item-container#1\"><div class=\"openui-sources-item#0 openui-sources-item openui-sources-item#1\" role=\"button\" tabindex=\"0\" data-source-id=\"5\"><div class=\"openui-sources-item-header#0 openui-sources-item-header\"><div class=\"openui-sources-item-logo#0 openui-sources-item-logo\"><img alt=\"Example\" height=\"20\" width=\"20\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\"></div><span class=\"openui-sources-item-name#0 openui-sources-item-name\">Example</span></div><div class=\"openui-sources-item-title#0 openui-sources-item-title\">A source</div></div></div><div class=\"openui-sources-item-container#0 openui-sources-item-container openui-sources-item-container#1\"><div class=\"openui-sources-item#0 openui-sources-item openui-sources-item#1\" role=\"button\" tabindex=\"0\" data-source-id=\"6\"><div class=\"openui-sources-item-header#0 openui-sources-item-header\"><div class=\"openui-sources-item-logo#0 openui-sources-item-logo\"><img alt=\"Example\" height=\"20\" width=\"20\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\"></div><span class=\"openui-sources-item-name#0 openui-sources-item-name\">Example</span></div><div class=\"openui-sources-item-title#0 openui-sources-item-title\">A source</div></div></div><div class=\"openui-sources-item-container#0 openui-sources-item-container openui-sources-item-container#1\"><div class=\"openui-sources-item#0 openui-sources-item openui-sources-item#1\" role=\"button\" tabindex=\"0\" data-source-id=\"7\"><div class=\"openui-sources-item-header#0 openui-sources-item-header\"><div class=\"openui-sources-item-logo#0 openui-sources-item-logo\"><img alt=\"Example\" height=\"20\" width=\"20\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\"></div><span class=\"openui-sources-item-name#0 openui-sources-item-name\">Example</span></div><div class=\"openui-sources-item-title#0 openui-sources-item-title\">A source</div></div></div></div></div></div></div><div class=\"openui-sources#0 openui-sources\"><div class=\"openui-sources-header#0 openui-sources-header\"><span class=\"openui-sources-title#0 openui-sources-title\">Sources</span></div><div class=\"openui-carousel#0 openui-carousel openui-carousel#1 openui-carousel--variant-sunk\"><div class=\"openui-carousel-content#0 openui-carousel-content\" data-mask=\"none\"><div class=\"openui-sources-item-container#0 openui-sources-item-container openui-sources-item-container#1\"><div class=\"openui-sources-item#0 openui-sources-item openui-sources-item#1\" role=\"button\" tabindex=\"0\" data-source-id=\"0\"><div class=\"openui-sources-item-header#0 openui-sources-item-header\"><div class=\"openui-sources-item-logo#0 openui-sources-item-logo\"><img alt=\"Example\" height=\"20\" width=\"20\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"https://www.google.com/s2/favicons?sz=128&amp;domain=example.com\"></div><span class=\"openui-sources-item-name#0 openui-sources-item-name\">Example</span></div><div class=\"openui-sources-item-title#0 openui-sources-item-title\">A source</div></div></div></div></div></div><div class=\"openui-sources-item#0 openui-sources-item openui-sources-item#1\" role=\"button\" tabindex=\"0\" data-source-id=\"0\"><div class=\"openui-sources-item-header#0 openui-sources-item-header\"><div class=\"openui-sources-item-logo#0 openui-sources-item-logo\"><img alt=\"Example\" height=\"20\" width=\"20\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\"></div><span class=\"openui-sources-item-name#0 openui-sources-item-name\">Example</span></div><div class=\"openui-sources-item-title#0 openui-sources-item-title\">A source</div></div><div class=\"openui-sources-item#0 openui-sources-item\" role=\"button\" tabindex=\"0\" data-source-id=\"1\"><div class=\"openui-sources-item-header#0 openui-sources-item-header\"><div class=\"openui-sources-item-logo#0 openui-sources-item-logo\"><img alt=\"Example\" height=\"20\" width=\"20\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\"></div><span class=\"openui-sources-item-name#0 openui-sources-item-name\">Example</span></div><div class=\"openui-sources-item-title#0 openui-sources-item-title\">A source</div></div><div class=\"openui-sources-item#0 openui-sources-item\" role=\"button\" tabindex=\"0\" data-source-id=\"2\"><div class=\"openui-sources-item-header#0 openui-sources-item-header\"><div class=\"openui-sources-item-logo#0 openui-sources-item-logo\"><img alt=\"Example\" height=\"20\" width=\"20\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\"></div><span class=\"openui-sources-item-name#0 openui-sources-item-name\">Example</span></div><div class=\"openui-sources-item-title#0 openui-sources-item-title\">A source</div></div><div class=\"openui-sources-item#0 openui-sources-item\" role=\"button\" tabindex=\"0\" data-source-id=\"3\"><div class=\"openui-sources-item-header#0 openui-sources-item-header\"><div class=\"openui-sources-item-logo#0 openui-sources-item-logo\"><img alt=\"Example\" height=\"20\" width=\"20\" class=\"openui-source-favicon-image#0 openui-source-favicon-image\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\"></div><span class=\"openui-sources-item-name#0 openui-sources-item-name\">Example</span></div><div class=\"openui-sources-item-title#0 openui-sources-item-title\">A source</div></div></div><script type=\"module\" src=\"/elements.js\"></script>",
+    "rules": {
+      "openui-carousel-content#0": [
+        {
+          "selector": ".openui-carousel-content#0",
+          "conditions": [],
+          "declarations": [
+            "position:relative",
+            "display:flex",
+            "flex-direction:row",
+            "gap:var(--openui-space-m, 12px)",
+            "overflow-x:auto",
+            "scroll-snap-type:x mandatory",
+            "ms-overflow-x:hidden",
+            "scrollbar-width:none"
+          ]
+        },
+        {
+          "selector": ".openui-carousel-content#0[data-mask=\"both\"]",
+          "conditions": [],
+          "declarations": [
+            "mask-image:linear-gradient( to right, transparent, black 40px, black calc(100% - 40px), transparent )",
+            "-webkit-mask-image:linear-gradient( to right, transparent, black 40px, black calc(100% - 40px), transparent )"
+          ]
+        },
+        {
+          "selector": ".openui-carousel-content#0[data-mask=\"left\"]",
+          "conditions": [],
+          "declarations": [
+            "mask-image:linear-gradient(to right, transparent, black 40px, black)",
+            "-webkit-mask-image:linear-gradient(to right, transparent, black 40px, black)"
+          ]
+        },
+        {
+          "selector": ".openui-carousel-content#0[data-mask=\"right\"]",
+          "conditions": [],
+          "declarations": [
+            "mask-image:linear-gradient(to left, transparent, black 40px, black)",
+            "-webkit-mask-image:linear-gradient(to left, transparent, black 40px, black)"
+          ]
+        },
+        {
+          "selector": ".openui-carousel-content#0::-webkit-scrollbar",
+          "conditions": [],
+          "declarations": ["display:none"]
+        },
+        {
+          "selector": ":where(.openui-carousel-content#0) > *",
+          "conditions": [],
+          "declarations": ["box-sizing:border-box", "scroll-snap-align:start"]
+        }
+      ],
+      "openui-carousel#0": [
+        {
+          "selector": ".openui-carousel#0",
+          "conditions": [],
+          "declarations": ["position:relative", "display:flex"]
+        }
+      ],
+      "openui-carousel#1": [
+        {
+          "selector": ".openui-carousel#1",
+          "conditions": [],
+          "declarations": [
+            "--_openui-carousel-item-background:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))"
+          ]
+        }
+      ],
+      "openui-icon-button-icon#0": [
+        {
+          "selector": ".openui-icon-button-icon#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:var(--_openui-icon-button-icon-size)",
+            "height:var(--_openui-icon-button-icon-size)"
+          ]
+        }
+      ],
+      "openui-icon-button#0": [
+        {
+          "selector": ".openui-icon-button#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "padding:0",
+            "flex-shrink:0"
+          ]
+        }
+      ],
+      "openui-icon-button#1": [
+        {
+          "selector": ".openui-icon-button#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-bg)",
+            "color:var(--_openui-icon-button-secondary-fg)",
+            "border-color:var(--_openui-icon-button-secondary-border)",
+            "box-shadow:var(--_openui-icon-button-secondary-shadow)"
+          ]
+        },
+        {
+          "selector": ".openui-icon-button#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-hover-bg)",
+            "box-shadow:none"
+          ]
+        },
+        {
+          "selector": ".openui-icon-button#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-icon-button-secondary-active-bg)"]
+        },
+        {
+          "selector": ".openui-icon-button#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-disabled-bg)",
+            "color:var(--_openui-icon-button-secondary-disabled-fg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ]
+        }
+      ],
+      "openui-icon-button#2": [
+        {
+          "selector": ".openui-icon-button#2",
+          "conditions": [],
+          "declarations": [
+            "width:32px",
+            "height:32px",
+            "--_openui-icon-button-icon-size:16px",
+            "--_openui-icon-button-square-radius:calc(var(--openui-radius-s, 6px) + 1px)"
+          ]
+        }
+      ],
+      "openui-icon-button#3": [
+        {
+          "selector": ".openui-icon-button#3",
+          "conditions": [],
+          "declarations": ["border-radius:var(--_openui-icon-button-square-radius)"]
+        }
+      ],
+      "openui-icon-button#4": [
+        {
+          "selector": ".openui-icon-button#4",
+          "conditions": [],
+          "declarations": [
+            "--_openui-icon-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-fg:var( --openui-text-accent-primary, oklch(0.994 0 89.876 / 1) )",
+            "--_openui-icon-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-icon-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-icon-button-secondary-bg:transparent",
+            "--_openui-icon-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-disabled-bg:transparent",
+            "--_openui-icon-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ]
+        }
+      ],
+      "openui-source-favicon-image#0": [
+        {
+          "selector": ".openui-source-favicon-image#0",
+          "conditions": [],
+          "declarations": ["object-fit:cover", "display:flex"]
+        }
+      ],
+      "openui-sources-buttons#0": [
+        {
+          "selector": ".openui-sources-buttons#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "gap:var(--openui-space-s, 8px)"
+          ]
+        }
+      ],
+      "openui-sources-header#0": [
+        {
+          "selector": ".openui-sources-header#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "gap:var(--openui-space-s, 8px)"
+          ]
+        }
+      ],
+      "openui-sources-item-container#0": [
+        {
+          "selector": ".openui-sources-item-container#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "scroll-snap-align:start",
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "display:flex",
+            "flex-direction:column",
+            "gap:var(--openui-space-m, 12px)",
+            "flex-shrink:0",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "width:180px !important",
+            "padding:var(--openui-space-000, 0)",
+            "border-radius:var(--openui-radius-l, 10px)",
+            "overflow:hidden",
+            "background-color:transparent !important"
+          ]
+        },
+        {
+          "selector": ".openui-sources-item-container#0:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-sources-item-hover-background, transparent) !important",
+            "border-color:var( --_openui-sources-item-hover-border, var(--openui-border-default, oklch(0.097 0 0 / 0.06)) )"
+          ]
+        }
+      ],
+      "openui-sources-item-container#1": [
+        {
+          "selector": ".openui-sources-item-container#1",
+          "conditions": [],
+          "declarations": [
+            "--_openui-sources-item-hover-background:var( --openui-highlight-subtle, oklch(0.097 0 0 / 0.02) )",
+            "--_openui-sources-item-hover-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))"
+          ]
+        }
+      ],
+      "openui-sources-item-header#0": [
+        {
+          "selector": ".openui-sources-item-header#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:flex-start",
+            "gap:var(--openui-space-s, 8px)"
+          ]
+        }
+      ],
+      "openui-sources-item-logo#0": [
+        {
+          "selector": ".openui-sources-item-logo#0",
+          "conditions": [],
+          "declarations": [
+            "flex-shrink:0",
+            "width:20px",
+            "height:20px",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "border-radius:var(--openui-radius-s, 6px)",
+            "box-sizing:border-box",
+            "overflow:hidden"
+          ]
+        }
+      ],
+      "openui-sources-item-name#0": [
+        {
+          "selector": ".openui-sources-item-name#0",
+          "conditions": [],
+          "declarations": [
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "font:var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        }
+      ],
+      "openui-sources-item-title#0": [
+        {
+          "selector": ".openui-sources-item-title#0",
+          "conditions": [],
+          "declarations": [
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        }
+      ],
+      "openui-sources-item#0": [
+        {
+          "selector": ".openui-sources-item#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-direction:column",
+            "align-items:flex-start",
+            "gap:var(--openui-space-2xs, 4px)",
+            "padding:var(--openui-space-s, 8px)",
+            "height:100%"
+          ]
+        }
+      ],
+      "openui-sources-item#1": [
+        {
+          "selector": ".openui-sources-item#1",
+          "conditions": [],
+          "declarations": ["cursor:pointer"]
+        }
+      ],
+      "openui-sources-title#0": [
+        {
+          "selector": ".openui-sources-title#0",
+          "conditions": [],
+          "declarations": [
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",
+            "font:var(--openui-text-label-default-heavy, 560 16px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-default-heavy-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-medium, \"wght\" 560)"
+          ]
+        }
+      ],
+      "openui-sources#0": [
+        {
+          "selector": ".openui-sources#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-direction:column",
+            "gap:var(--openui-space-m, 12px)"
+          ]
+        }
+      ]
+    }
+  }
+}

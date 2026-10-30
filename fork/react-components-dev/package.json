@@ -16,7 +16,9 @@
     "docs:selectors": "node scripts/selector-reference.mjs",
     "format:check": "prettier --check ../../packages/react-components/src ./test",
     "format:fix": "prettier --write ../../packages/react-components/src ./test",
-    "ci": "pnpm --filter @openuidev/react-components run typecheck && pnpm --filter @openuidev/react-components run lint:check && tsc -p tsconfig.test.json && pnpm run test && pnpm run format:check"
+    "ci": "pnpm --filter @openuidev/react-components run typecheck && pnpm --filter @openuidev/react-components run lint:check && tsc -p tsconfig.test.json && pnpm run test && pnpm run format:check",
+    "css:check": "node scripts/css-snapshot.mjs",
+    "css:record": "node scripts/css-snapshot.mjs --record"
   },
   "devDependencies": {
     "@openuidev/react-components": "workspace:*",

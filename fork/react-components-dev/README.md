@@ -103,6 +103,14 @@ serializers or styling APIs.
 pnpm --filter @openuidev/react-components-dev test
 ```
 
+## Hook-free CSS before/after check (#129)
+
+The unit suite compares the current public SSR markup and declarations with the pre-migration
+capture in `test/css-snapshot/server.json`. Generated names are normalized to stable-class anchors.
+Run `pnpm css:check` after a build for the server and browser client-only comparisons plus fresh
+cross-module order reports. See [capture instructions and coverage](test/css-snapshot/README.md),
+including the required orchestrator browser capture before the first migration batch.
+
 ## Browser tests (Chromium, Playwright)
 
 `test/browser/*.spec.ts` load fixture apps in Chromium and assert what the page shows.

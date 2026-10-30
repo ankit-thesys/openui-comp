@@ -1,0 +1,359 @@
+{
+  "initial": {
+    "markup": "<div id=\"root\"><div class=\"openui-table-container#0 openui-table-container\"><table class=\"openui-table#0 openui-table\"><thead class=\"openui-table-header\"><tr class=\"openui-table-row#0 openui-table-row\"><th class=\"openui-table-head#0 openui-table-head openui-table-head#1 openui-table-head--align-left\"><div class=\"openui-table-head-content#0 openui-table-head-content\"><div class=\"openui-table-head-icon#0 openui-table-head-icon\"><svg width=\"16\" height=\"16\"></svg></div><div class=\"openui-table-head-label#0 openui-table-head-label\">Head</div></div></th></tr></thead><tbody class=\"openui-table-body\"><tr class=\"openui-table-row#0 openui-table-row\"><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#1 openui-table-cell--align-left\">Cell</td></tr><tr class=\"openui-table-row#0 openui-table-row\"><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#1 openui-table-cell--align-left\">Next</td></tr></tbody><tfoot class=\"openui-table-footer#0 openui-table-footer\"><tr class=\"openui-table-row#0 openui-table-row\"><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#1 openui-table-cell--align-left\">Footer</td></tr></tfoot></table></div><div class=\"openui-table-container#0 openui-table-container\"><table class=\"openui-table#0 openui-table\"><thead class=\"openui-table-header\"><tr class=\"openui-table-row#0 openui-table-row\"><th class=\"openui-table-head#0 openui-table-head openui-table-head#2 openui-table-head--align-center\"><div class=\"openui-table-head-content#0 openui-table-head-content\"><div class=\"openui-table-head-icon#0 openui-table-head-icon\"><svg width=\"16\" height=\"16\"></svg></div><div class=\"openui-table-head-label#0 openui-table-head-label\">Head</div></div></th></tr></thead><tbody class=\"openui-table-body\"><tr class=\"openui-table-row#0 openui-table-row\"><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#2 openui-table-cell--align-center\">Cell</td></tr><tr class=\"openui-table-row#0 openui-table-row\"><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#2 openui-table-cell--align-center\">Next</td></tr></tbody><tfoot class=\"openui-table-footer#0 openui-table-footer\"><tr class=\"openui-table-row#0 openui-table-row\"><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#2 openui-table-cell--align-center\">Footer</td></tr></tfoot></table></div><div class=\"openui-table-container#0 openui-table-container\"><table class=\"openui-table#0 openui-table\"><thead class=\"openui-table-header\"><tr class=\"openui-table-row#0 openui-table-row\"><th class=\"openui-table-head#0 openui-table-head openui-table-head#3 openui-table-head--align-right\"><div class=\"openui-table-head-content#0 openui-table-head-content\"><div class=\"openui-table-head-icon#0 openui-table-head-icon\"><svg width=\"16\" height=\"16\"></svg></div><div class=\"openui-table-head-label#0 openui-table-head-label\">Head</div></div></th></tr></thead><tbody class=\"openui-table-body\"><tr class=\"openui-table-row#0 openui-table-row\"><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#3 openui-table-cell--align-right\">Cell</td></tr><tr class=\"openui-table-row#0 openui-table-row\"><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#3 openui-table-cell--align-right\">Next</td></tr></tbody><tfoot class=\"openui-table-footer#0 openui-table-footer\"><tr class=\"openui-table-row#0 openui-table-row\"><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#3 openui-table-cell--align-right\">Footer</td></tr></tfoot></table></div><div class=\"openui-scrollable-table-wrapper#0 openui-scrollable-table-wrapper\" tabindex=\"0\"><div class=\"openui-scrollable-table-control#0 openui-scrollable-table-control\" data-side=\"left\" data-disabled=\"true\"><button class=\"openui-icon-button#0 openui-icon-button#1 openui-icon-button#2 openui-icon-button#3 openui-icon-button#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default\" aria-label=\"Scroll left\" disabled=\"\"><span class=\"openui-icon-button-icon#0 openui-icon-button-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-left openui-scrollable-table-icon\" aria-hidden=\"true\"><path d=\"m15 18-6-6 6-6\"></path></svg></span></button></div><div class=\"openui-scrollable-table-control#0 openui-scrollable-table-control\" data-side=\"right\" data-disabled=\"false\"><button class=\"openui-icon-button#0 openui-icon-button#1 openui-icon-button#2 openui-icon-button#3 openui-icon-button#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default\" aria-label=\"Scroll right\"><span class=\"openui-icon-button-icon#0 openui-icon-button-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-right openui-scrollable-table-icon\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"></path></svg></span></button></div><div class=\"openui-table-container#0 openui-table-container openui-table-container+openui-scrollable-table-scroll-container#0 openui-scrollable-table-scroll-container\" style=\"max-width: 240px;\"><table class=\"openui-table#0 openui-table openui-table+openui-scrollable-table#0 openui-scrollable-table\" data-scrollable=\"true\"><thead class=\"openui-table-header\"><tr class=\"openui-table-row#0 openui-table-row\"><th class=\"openui-table-head#0 openui-table-head openui-table-head--align-left\"><div class=\"openui-table-head-content#0 openui-table-head-content\"><div class=\"openui-table-head-label#0 openui-table-head-label\">Column 1</div></div></th><th class=\"openui-table-head#0 openui-table-head openui-table-head--align-left\"><div class=\"openui-table-head-content#0 openui-table-head-content\"><div class=\"openui-table-head-label#0 openui-table-head-label\">Column 2</div></div></th><th class=\"openui-table-head#0 openui-table-head openui-table-head--align-left\"><div class=\"openui-table-head-content#0 openui-table-head-content\"><div class=\"openui-table-head-label#0 openui-table-head-label\">Column 3</div></div></th><th class=\"openui-table-head#0 openui-table-head openui-table-head--align-left\"><div class=\"openui-table-head-content#0 openui-table-head-content\"><div class=\"openui-table-head-label#0 openui-table-head-label\">Column 4</div></div></th><th class=\"openui-table-head#0 openui-table-head openui-table-head--align-left\"><div class=\"openui-table-head-content#0 openui-table-head-content\"><div class=\"openui-table-head-label#0 openui-table-head-label\">Column 5</div></div></th><th class=\"openui-table-head#0 openui-table-head openui-table-head--align-left\"><div class=\"openui-table-head-content#0 openui-table-head-content\"><div class=\"openui-table-head-label#0 openui-table-head-label\">Column 6</div></div></th><th class=\"openui-table-head#0 openui-table-head openui-table-head--align-left\"><div class=\"openui-table-head-content#0 openui-table-head-content\"><div class=\"openui-table-head-label#0 openui-table-head-label\">Column 7</div></div></th><th class=\"openui-table-head#0 openui-table-head openui-table-head--align-left\"><div class=\"openui-table-head-content#0 openui-table-head-content\"><div class=\"openui-table-head-label#0 openui-table-head-label\">Column 8</div></div></th></tr></thead><tbody class=\"openui-table-body\"><tr class=\"openui-table-row#0 openui-table-row\"><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#1 openui-table-cell--align-left\">Cell 1</td><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#1 openui-table-cell--align-left\">Cell 2</td><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#1 openui-table-cell--align-left\">Cell 3</td><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#1 openui-table-cell--align-left\">Cell 4</td><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#1 openui-table-cell--align-left\">Cell 5</td><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#1 openui-table-cell--align-left\">Cell 6</td><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#1 openui-table-cell--align-left\">Cell 7</td><td class=\"openui-table-cell#0 openui-table-cell openui-table-cell#1 openui-table-cell--align-left\">Cell 8</td></tr></tbody></table></div></div><button class=\"openui-icon-button#0 openui-icon-button#1 openui-icon-button#2 openui-icon-button#3 openui-icon-button#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default\"><span class=\"openui-icon-button-icon#0 openui-icon-button-icon\"><svg></svg></span></button></div><script type=\"module\" src=\"/elements.js\"></script>",
+    "rules": {
+      "openui-icon-button-icon#0": [
+        {
+          "selector": ".openui-icon-button-icon#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:var(--_openui-icon-button-icon-size)",
+            "height:var(--_openui-icon-button-icon-size)"
+          ]
+        }
+      ],
+      "openui-icon-button#0": [
+        {
+          "selector": ".openui-icon-button#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "padding:0",
+            "flex-shrink:0"
+          ]
+        }
+      ],
+      "openui-icon-button#1": [
+        {
+          "selector": ".openui-icon-button#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-bg)",
+            "color:var(--_openui-icon-button-secondary-fg)",
+            "border-color:var(--_openui-icon-button-secondary-border)",
+            "box-shadow:var(--_openui-icon-button-secondary-shadow)"
+          ]
+        },
+        {
+          "selector": ".openui-icon-button#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-hover-bg)",
+            "box-shadow:none"
+          ]
+        },
+        {
+          "selector": ".openui-icon-button#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-icon-button-secondary-active-bg)"]
+        },
+        {
+          "selector": ".openui-icon-button#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-disabled-bg)",
+            "color:var(--_openui-icon-button-secondary-disabled-fg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ]
+        }
+      ],
+      "openui-icon-button#2": [
+        {
+          "selector": ".openui-icon-button#2",
+          "conditions": [],
+          "declarations": [
+            "width:32px",
+            "height:32px",
+            "--_openui-icon-button-icon-size:16px",
+            "--_openui-icon-button-square-radius:calc(var(--openui-radius-s, 6px) + 1px)"
+          ]
+        }
+      ],
+      "openui-icon-button#3": [
+        {
+          "selector": ".openui-icon-button#3",
+          "conditions": [],
+          "declarations": ["border-radius:var(--_openui-icon-button-square-radius)"]
+        }
+      ],
+      "openui-icon-button#4": [
+        {
+          "selector": ".openui-icon-button#4",
+          "conditions": [],
+          "declarations": [
+            "--_openui-icon-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-fg:var( --openui-text-accent-primary, oklch(0.994 0 89.876 / 1) )",
+            "--_openui-icon-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-icon-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-icon-button-secondary-bg:transparent",
+            "--_openui-icon-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-disabled-bg:transparent",
+            "--_openui-icon-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ]
+        }
+      ],
+      "openui-scrollable-table-control#0": [
+        {
+          "selector": ".openui-scrollable-table-control#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "top:var(--openui-space-s, 8px)",
+            "z-index:2",
+            "width:fit-content",
+            "height:fit-content",
+            "border-radius:var(--openui-radius-s, 6px)",
+            "background-color:var(--openui-foreground, oklch(0.994 0 89.876 / 1))"
+          ]
+        },
+        {
+          "selector": ".openui-scrollable-table-control#0[data-side=\"left\"]",
+          "conditions": [],
+          "declarations": ["left:var(--openui-space-s, 8px)"]
+        },
+        {
+          "selector": ".openui-scrollable-table-control#0[data-side=\"right\"]",
+          "conditions": [],
+          "declarations": ["right:var(--openui-space-s, 8px)"]
+        },
+        {
+          "selector": ".openui-scrollable-table-control#0[data-disabled=\"true\"]",
+          "conditions": [],
+          "declarations": ["display:none"]
+        }
+      ],
+      "openui-scrollable-table-wrapper#0": [
+        {
+          "selector": ".openui-scrollable-table-wrapper#0",
+          "conditions": [],
+          "declarations": ["position:relative", "width:100%", "outline:none"]
+        }
+      ],
+      "openui-table-cell#0": [
+        {
+          "selector": ".openui-table-cell#0",
+          "conditions": [],
+          "declarations": [
+            "padding-top:var(--openui-space-m, 12px)",
+            "padding-bottom:var(--openui-space-m, 12px)",
+            "padding-left:var(--openui-space-m, 12px)",
+            "padding-right:var(--openui-space-m, 12px)",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "white-space:nowrap"
+          ]
+        }
+      ],
+      "openui-table-cell#1": [
+        {
+          "selector": ".openui-table-cell#1",
+          "conditions": [],
+          "declarations": ["text-align:left", "justify-content:flex-start"]
+        }
+      ],
+      "openui-table-cell#2": [
+        {
+          "selector": ".openui-table-cell#2",
+          "conditions": [],
+          "declarations": ["text-align:center", "justify-content:center"]
+        }
+      ],
+      "openui-table-cell#3": [
+        {
+          "selector": ".openui-table-cell#3",
+          "conditions": [],
+          "declarations": ["text-align:right", "justify-content:flex-end"]
+        }
+      ],
+      "openui-table-container#0": [
+        {
+          "selector": ".openui-table-container#0",
+          "conditions": [],
+          "declarations": [
+            "position:relative",
+            "width:100%",
+            "overflow:auto",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "border-radius:var(--openui-radius-2xl, 14px)"
+          ]
+        }
+      ],
+      "openui-table-container+openui-scrollable-table-scroll-container#0": [
+        {
+          "selector": ".openui-table-container+openui-scrollable-table-scroll-container#0",
+          "conditions": [],
+          "declarations": ["overflow:auto", "scrollbar-width:none", "ms-overflow-style:none"]
+        },
+        {
+          "selector": ".openui-table-container+openui-scrollable-table-scroll-container#0::-webkit-scrollbar",
+          "conditions": [],
+          "declarations": ["display:none"]
+        }
+      ],
+      "openui-table-footer#0": [
+        {
+          "selector": ".openui-table-footer#0",
+          "conditions": [],
+          "declarations": [
+            "border-top:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))"
+          ]
+        }
+      ],
+      "openui-table-head-content#0": [
+        {
+          "selector": ".openui-table-head-content#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "gap:var(--openui-space-2xs, 4px)",
+            "text-align:var(--_openui-table-head-align, inherit)",
+            "justify-content:var(--_openui-table-head-justify, normal)"
+          ]
+        }
+      ],
+      "openui-table-head-icon#0": [
+        {
+          "selector": ".openui-table-head-icon#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))"
+          ]
+        }
+      ],
+      "openui-table-head-label#0": [
+        {
+          "selector": ".openui-table-head-label#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",
+            "display:inline-flex",
+            "flex-grow:1",
+            "justify-content:var(--_openui-table-head-label-justify, left)"
+          ]
+        }
+      ],
+      "openui-table-head#0": [
+        {
+          "selector": ".openui-table-head#0",
+          "conditions": [],
+          "declarations": [
+            "padding-top:var(--openui-space-m, 12px)",
+            "padding-bottom:var(--openui-space-m, 12px)",
+            "padding-left:var(--openui-space-m, 12px)",
+            "padding-right:var(--openui-space-m, 12px)",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "border-bottom:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))"
+          ]
+        }
+      ],
+      "openui-table-head#1": [
+        {
+          "selector": ".openui-table-head#1",
+          "conditions": [],
+          "declarations": [
+            "--_openui-table-head-align:left",
+            "--_openui-table-head-justify:flex-start",
+            "--_openui-table-head-label-justify:left"
+          ]
+        }
+      ],
+      "openui-table-head#2": [
+        {
+          "selector": ".openui-table-head#2",
+          "conditions": [],
+          "declarations": [
+            "--_openui-table-head-align:center",
+            "--_openui-table-head-justify:center",
+            "--_openui-table-head-label-justify:center"
+          ]
+        }
+      ],
+      "openui-table-head#3": [
+        {
+          "selector": ".openui-table-head#3",
+          "conditions": [],
+          "declarations": [
+            "--_openui-table-head-align:right",
+            "--_openui-table-head-justify:flex-end",
+            "--_openui-table-head-label-justify:flex-end"
+          ]
+        }
+      ],
+      "openui-table-row#0": [
+        {
+          "selector": ".openui-table-row#0",
+          "conditions": [],
+          "declarations": [
+            "border-bottom:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))"
+          ]
+        },
+        {
+          "selector": ".openui-table-row#0:nth-child(even)",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))"
+          ]
+        },
+        {
+          "selector": ".openui-table-row#0:last-child",
+          "conditions": [],
+          "declarations": ["border-bottom:0"]
+        }
+      ],
+      "openui-table#0": [
+        {
+          "selector": ".openui-table#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-sm, 400 14px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "width:100%",
+            "caption-side:bottom",
+            "border-collapse:collapse"
+          ]
+        }
+      ],
+      "openui-table+openui-scrollable-table#0": [
+        {
+          "selector": ".openui-table+openui-scrollable-table#0",
+          "conditions": [],
+          "declarations": ["width:100%"]
+        },
+        {
+          "selector": ".openui-table+openui-scrollable-table#0[data-scrollable=\"true\"]",
+          "conditions": [],
+          "declarations": ["width:max-content"]
+        }
+      ]
+    }
+  }
+}

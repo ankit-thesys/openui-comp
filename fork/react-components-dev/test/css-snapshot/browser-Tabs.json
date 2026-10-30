@@ -1,0 +1,478 @@
+{
+  "initial": {
+    "markup": "<div id=\"root\"><div dir=\"ltr\" data-orientation=\"horizontal\" class=\"openui-tabs#0 openui-tabs openui-tabs--variant-clear\" style=\"width: 180px;\"><div class=\"openui-tabs-list-container#0 openui-tabs-list-container\"><div class=\"openui-tabs-scroll-button-container-left#0 openui-tabs-scroll-button-container-left\"><button class=\"openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#0 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#1 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#2 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#3 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-tabs-scroll-button openui-tabs-scroll-left\" aria-label=\"Scroll tabs left\"><span class=\"openui-icon-button-icon#0 openui-icon-button-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-left\" aria-hidden=\"true\"><path d=\"m15 18-6-6 6-6\"></path></svg></span></button></div><div role=\"tablist\" aria-orientation=\"horizontal\" class=\"openui-tabs-list#0 openui-tabs-list#1 openui-tabs-list openui-tabs-list--variant-title\" tabindex=\"0\" data-orientation=\"horizontal\" style=\"outline: none;\"><button type=\"button\" role=\"tab\" aria-selected=\"true\" aria-controls=\"radix-react-id-0-content-first\" data-state=\"active\" id=\"radix-react-id-0-trigger-first\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-image#0 openui-tabs-trigger-image\"><img class=\"openui-tabs-trigger-img#0 openui-tabs-trigger-img\" alt=\"\" src=\"image.png\"></span><span class=\"openui-tabs-trigger-icon#0 openui-tabs-trigger-icon\"><svg></svg></span><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Overview</span><span class=\"openui-tabs-trigger-subtext#0 openui-tabs-trigger-subtext\">Details</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-0-content-second\" data-state=\"inactive\" id=\"radix-react-id-0-trigger-second\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Activity</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-0-content-extra-0\" data-state=\"inactive\" id=\"radix-react-id-0-trigger-extra-0\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 1</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-0-content-extra-1\" data-state=\"inactive\" id=\"radix-react-id-0-trigger-extra-1\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 2</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-0-content-extra-2\" data-state=\"inactive\" id=\"radix-react-id-0-trigger-extra-2\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 3</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-0-content-extra-3\" data-state=\"inactive\" id=\"radix-react-id-0-trigger-extra-3\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 4</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-0-content-extra-4\" data-state=\"inactive\" id=\"radix-react-id-0-trigger-extra-4\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 5</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-0-content-extra-5\" data-state=\"inactive\" id=\"radix-react-id-0-trigger-extra-5\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 6</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-0-content-extra-6\" data-state=\"inactive\" id=\"radix-react-id-0-trigger-extra-6\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 7</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-0-content-extra-7\" data-state=\"inactive\" id=\"radix-react-id-0-trigger-extra-7\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 8</span></span></button></div><div class=\"openui-tabs-indicator#0 openui-tabs-indicator\" style=\"transition: none; width: 129px; transform: translateX(-342px); opacity: 1;\"></div><div class=\"openui-tabs-scroll-button-container-right#0 openui-tabs-scroll-button-container-right\"><button class=\"openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#0 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#1 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#2 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#3 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-tabs-scroll-button openui-tabs-scroll-right\" aria-label=\"Scroll tabs right\"><span class=\"openui-icon-button-icon#0 openui-icon-button-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-right\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"></path></svg></span></button></div></div><div data-state=\"active\" data-orientation=\"horizontal\" role=\"tabpanel\" aria-labelledby=\"radix-react-id-0-trigger-first\" id=\"radix-react-id-0-content-first\" tabindex=\"0\" class=\"openui-tabs-content#0 openui-tabs-content\" style=\"animation-duration: 0s;\"><div class=\"openui-tabs-content-inner#0 openui-tabs-content-inner\">Panel</div></div></div><div dir=\"ltr\" data-orientation=\"horizontal\" class=\"openui-tabs#0 openui-tabs openui-tabs--variant-clear\" style=\"width: 180px;\"><div class=\"openui-tabs-list-container#0 openui-tabs-list-container\"><div class=\"openui-tabs-scroll-button-container-left#0 openui-tabs-scroll-button-container-left\"><button class=\"openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#0 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#1 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#2 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#3 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-tabs-scroll-button openui-tabs-scroll-left\" aria-label=\"Scroll tabs left\"><span class=\"openui-icon-button-icon#0 openui-icon-button-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-left\" aria-hidden=\"true\"><path d=\"m15 18-6-6 6-6\"></path></svg></span></button></div><div role=\"tablist\" aria-orientation=\"horizontal\" class=\"openui-tabs-list#0 openui-tabs-list#2 openui-tabs-list openui-tabs-list--variant-icon-title\" tabindex=\"0\" data-orientation=\"horizontal\" style=\"outline: none;\"><button type=\"button\" role=\"tab\" aria-selected=\"true\" aria-controls=\"radix-react-id-1-content-first\" data-state=\"active\" id=\"radix-react-id-1-trigger-first\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-image#0 openui-tabs-trigger-image\"><img class=\"openui-tabs-trigger-img#0 openui-tabs-trigger-img\" alt=\"\" src=\"image.png\"></span><span class=\"openui-tabs-trigger-icon#0 openui-tabs-trigger-icon\"><svg></svg></span><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Overview</span><span class=\"openui-tabs-trigger-subtext#0 openui-tabs-trigger-subtext\">Details</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-1-content-second\" data-state=\"inactive\" id=\"radix-react-id-1-trigger-second\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Activity</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-1-content-extra-0\" data-state=\"inactive\" id=\"radix-react-id-1-trigger-extra-0\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 1</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-1-content-extra-1\" data-state=\"inactive\" id=\"radix-react-id-1-trigger-extra-1\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 2</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-1-content-extra-2\" data-state=\"inactive\" id=\"radix-react-id-1-trigger-extra-2\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 3</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-1-content-extra-3\" data-state=\"inactive\" id=\"radix-react-id-1-trigger-extra-3\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 4</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-1-content-extra-4\" data-state=\"inactive\" id=\"radix-react-id-1-trigger-extra-4\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 5</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-1-content-extra-5\" data-state=\"inactive\" id=\"radix-react-id-1-trigger-extra-5\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 6</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-1-content-extra-6\" data-state=\"inactive\" id=\"radix-react-id-1-trigger-extra-6\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 7</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-1-content-extra-7\" data-state=\"inactive\" id=\"radix-react-id-1-trigger-extra-7\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 8</span></span></button></div><div class=\"openui-tabs-indicator#0 openui-tabs-indicator\" style=\"transition: none; width: 129px; transform: translateX(-342px); opacity: 1;\"></div><div class=\"openui-tabs-scroll-button-container-right#0 openui-tabs-scroll-button-container-right\"><button class=\"openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#0 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#1 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#2 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#3 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-tabs-scroll-button openui-tabs-scroll-right\" aria-label=\"Scroll tabs right\"><span class=\"openui-icon-button-icon#0 openui-icon-button-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-right\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"></path></svg></span></button></div></div><div data-state=\"active\" data-orientation=\"horizontal\" role=\"tabpanel\" aria-labelledby=\"radix-react-id-1-trigger-first\" id=\"radix-react-id-1-content-first\" tabindex=\"0\" class=\"openui-tabs-content#0 openui-tabs-content\" style=\"animation-duration: 0s;\"><div class=\"openui-tabs-content-inner#0 openui-tabs-content-inner\">Panel</div></div></div><div dir=\"ltr\" data-orientation=\"horizontal\" class=\"openui-tabs#0 openui-tabs openui-tabs--variant-clear\" style=\"width: 180px;\"><div class=\"openui-tabs-list-container#0 openui-tabs-list-container\"><div class=\"openui-tabs-scroll-button-container-left#0 openui-tabs-scroll-button-container-left\"><button class=\"openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#0 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#1 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#2 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#3 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-tabs-scroll-button openui-tabs-scroll-left\" aria-label=\"Scroll tabs left\"><span class=\"openui-icon-button-icon#0 openui-icon-button-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-left\" aria-hidden=\"true\"><path d=\"m15 18-6-6 6-6\"></path></svg></span></button></div><div role=\"tablist\" aria-orientation=\"horizontal\" class=\"openui-tabs-list#0 openui-tabs-list#3 openui-tabs-list openui-tabs-list--variant-icon-title-subtext\" tabindex=\"0\" data-orientation=\"horizontal\" style=\"outline: none;\"><button type=\"button\" role=\"tab\" aria-selected=\"true\" aria-controls=\"radix-react-id-2-content-first\" data-state=\"active\" id=\"radix-react-id-2-trigger-first\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-image#0 openui-tabs-trigger-image\"><img class=\"openui-tabs-trigger-img#0 openui-tabs-trigger-img\" alt=\"\" src=\"image.png\"></span><span class=\"openui-tabs-trigger-icon#0 openui-tabs-trigger-icon\"><svg></svg></span><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Overview</span><span class=\"openui-tabs-trigger-subtext#0 openui-tabs-trigger-subtext\">Details</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-2-content-second\" data-state=\"inactive\" id=\"radix-react-id-2-trigger-second\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Activity</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-2-content-extra-0\" data-state=\"inactive\" id=\"radix-react-id-2-trigger-extra-0\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 1</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-2-content-extra-1\" data-state=\"inactive\" id=\"radix-react-id-2-trigger-extra-1\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 2</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-2-content-extra-2\" data-state=\"inactive\" id=\"radix-react-id-2-trigger-extra-2\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 3</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-2-content-extra-3\" data-state=\"inactive\" id=\"radix-react-id-2-trigger-extra-3\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 4</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-2-content-extra-4\" data-state=\"inactive\" id=\"radix-react-id-2-trigger-extra-4\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 5</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-2-content-extra-5\" data-state=\"inactive\" id=\"radix-react-id-2-trigger-extra-5\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 6</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-2-content-extra-6\" data-state=\"inactive\" id=\"radix-react-id-2-trigger-extra-6\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 7</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-2-content-extra-7\" data-state=\"inactive\" id=\"radix-react-id-2-trigger-extra-7\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 8</span></span></button></div><div class=\"openui-tabs-indicator#0 openui-tabs-indicator\" style=\"transition: none; width: 141px; transform: translateX(-348px); opacity: 1;\"></div><div class=\"openui-tabs-scroll-button-container-right#0 openui-tabs-scroll-button-container-right\"><button class=\"openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#0 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#1 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#2 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#3 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-tabs-scroll-button openui-tabs-scroll-right\" aria-label=\"Scroll tabs right\"><span class=\"openui-icon-button-icon#0 openui-icon-button-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-right\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"></path></svg></span></button></div></div><div data-state=\"active\" data-orientation=\"horizontal\" role=\"tabpanel\" aria-labelledby=\"radix-react-id-2-trigger-first\" id=\"radix-react-id-2-content-first\" tabindex=\"0\" class=\"openui-tabs-content#0 openui-tabs-content\" style=\"animation-duration: 0s;\"><div class=\"openui-tabs-content-inner#0 openui-tabs-content-inner\">Panel</div></div></div><div dir=\"ltr\" data-orientation=\"horizontal\" class=\"openui-tabs#0 openui-tabs openui-tabs--variant-clear\" style=\"width: 180px;\"><div class=\"openui-tabs-list-container#0 openui-tabs-list-container\"><div class=\"openui-tabs-scroll-button-container-left#0 openui-tabs-scroll-button-container-left\"><button class=\"openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#0 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#1 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#2 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#3 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-tabs-scroll-button openui-tabs-scroll-left\" aria-label=\"Scroll tabs left\"><span class=\"openui-icon-button-icon#0 openui-icon-button-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-left\" aria-hidden=\"true\"><path d=\"m15 18-6-6 6-6\"></path></svg></span></button></div><div role=\"tablist\" aria-orientation=\"horizontal\" class=\"openui-tabs-list#0 openui-tabs-list#4 openui-tabs-list openui-tabs-list--variant-image-title\" tabindex=\"0\" data-orientation=\"horizontal\" style=\"outline: none;\"><button type=\"button\" role=\"tab\" aria-selected=\"true\" aria-controls=\"radix-react-id-3-content-first\" data-state=\"active\" id=\"radix-react-id-3-trigger-first\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-image#0 openui-tabs-trigger-image\"><img class=\"openui-tabs-trigger-img#0 openui-tabs-trigger-img\" alt=\"\" src=\"image.png\"></span><span class=\"openui-tabs-trigger-icon#0 openui-tabs-trigger-icon\"><svg></svg></span><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Overview</span><span class=\"openui-tabs-trigger-subtext#0 openui-tabs-trigger-subtext\">Details</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-3-content-second\" data-state=\"inactive\" id=\"radix-react-id-3-trigger-second\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Activity</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-3-content-extra-0\" data-state=\"inactive\" id=\"radix-react-id-3-trigger-extra-0\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 1</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-3-content-extra-1\" data-state=\"inactive\" id=\"radix-react-id-3-trigger-extra-1\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 2</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-3-content-extra-2\" data-state=\"inactive\" id=\"radix-react-id-3-trigger-extra-2\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 3</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-3-content-extra-3\" data-state=\"inactive\" id=\"radix-react-id-3-trigger-extra-3\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 4</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-3-content-extra-4\" data-state=\"inactive\" id=\"radix-react-id-3-trigger-extra-4\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 5</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-3-content-extra-5\" data-state=\"inactive\" id=\"radix-react-id-3-trigger-extra-5\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 6</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-3-content-extra-6\" data-state=\"inactive\" id=\"radix-react-id-3-trigger-extra-6\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 7</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-3-content-extra-7\" data-state=\"inactive\" id=\"radix-react-id-3-trigger-extra-7\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 8</span></span></button></div><div class=\"openui-tabs-indicator#0 openui-tabs-indicator\" style=\"transition: none; width: 129px; transform: translateX(-342px); opacity: 1;\"></div><div class=\"openui-tabs-scroll-button-container-right#0 openui-tabs-scroll-button-container-right\"><button class=\"openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#0 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#1 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#2 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#3 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-tabs-scroll-button openui-tabs-scroll-right\" aria-label=\"Scroll tabs right\"><span class=\"openui-icon-button-icon#0 openui-icon-button-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-right\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"></path></svg></span></button></div></div><div data-state=\"active\" data-orientation=\"horizontal\" role=\"tabpanel\" aria-labelledby=\"radix-react-id-3-trigger-first\" id=\"radix-react-id-3-content-first\" tabindex=\"0\" class=\"openui-tabs-content#0 openui-tabs-content\" style=\"animation-duration: 0s;\"><div class=\"openui-tabs-content-inner#0 openui-tabs-content-inner\">Panel</div></div></div><div dir=\"ltr\" data-orientation=\"horizontal\" class=\"openui-tabs#0 openui-tabs openui-tabs--variant-clear\" style=\"width: 180px;\"><div class=\"openui-tabs-list-container#0 openui-tabs-list-container\"><div class=\"openui-tabs-scroll-button-container-left#0 openui-tabs-scroll-button-container-left\"><button class=\"openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#0 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#1 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#2 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#3 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-tabs-scroll-button openui-tabs-scroll-left\" aria-label=\"Scroll tabs left\"><span class=\"openui-icon-button-icon#0 openui-icon-button-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-left\" aria-hidden=\"true\"><path d=\"m15 18-6-6 6-6\"></path></svg></span></button></div><div role=\"tablist\" aria-orientation=\"horizontal\" class=\"openui-tabs-list#0 openui-tabs-list#5 openui-tabs-list openui-tabs-list--variant-image-title-subtext\" tabindex=\"0\" data-orientation=\"horizontal\" style=\"outline: none;\"><button type=\"button\" role=\"tab\" aria-selected=\"true\" aria-controls=\"radix-react-id-4-content-first\" data-state=\"active\" id=\"radix-react-id-4-trigger-first\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-image#0 openui-tabs-trigger-image\"><img class=\"openui-tabs-trigger-img#0 openui-tabs-trigger-img\" alt=\"\" src=\"image.png\"></span><span class=\"openui-tabs-trigger-icon#0 openui-tabs-trigger-icon\"><svg></svg></span><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Overview</span><span class=\"openui-tabs-trigger-subtext#0 openui-tabs-trigger-subtext\">Details</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-4-content-second\" data-state=\"inactive\" id=\"radix-react-id-4-trigger-second\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Activity</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-4-content-extra-0\" data-state=\"inactive\" id=\"radix-react-id-4-trigger-extra-0\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 1</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-4-content-extra-1\" data-state=\"inactive\" id=\"radix-react-id-4-trigger-extra-1\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 2</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-4-content-extra-2\" data-state=\"inactive\" id=\"radix-react-id-4-trigger-extra-2\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 3</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-4-content-extra-3\" data-state=\"inactive\" id=\"radix-react-id-4-trigger-extra-3\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 4</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-4-content-extra-4\" data-state=\"inactive\" id=\"radix-react-id-4-trigger-extra-4\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 5</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-4-content-extra-5\" data-state=\"inactive\" id=\"radix-react-id-4-trigger-extra-5\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 6</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-4-content-extra-6\" data-state=\"inactive\" id=\"radix-react-id-4-trigger-extra-6\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 7</span></span></button><button type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"radix-react-id-4-content-extra-7\" data-state=\"inactive\" id=\"radix-react-id-4-trigger-extra-7\" class=\"openui-tabs-trigger#0 openui-tabs-trigger\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\"><span class=\"openui-tabs-trigger-content#0 openui-tabs-trigger-content\"><span class=\"openui-tabs-trigger-text#0 openui-tabs-trigger-text\">Section 8</span></span></button></div><div class=\"openui-tabs-indicator#0 openui-tabs-indicator\" style=\"transition: none; width: 141px; transform: translateX(-348px); opacity: 1;\"></div><div class=\"openui-tabs-scroll-button-container-right#0 openui-tabs-scroll-button-container-right\"><button class=\"openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#0 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#1 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#2 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#3 openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-tabs-scroll-button openui-tabs-scroll-right\" aria-label=\"Scroll tabs right\"><span class=\"openui-icon-button-icon#0 openui-icon-button-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-right\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"></path></svg></span></button></div></div><div data-state=\"active\" data-orientation=\"horizontal\" role=\"tabpanel\" aria-labelledby=\"radix-react-id-4-trigger-first\" id=\"radix-react-id-4-content-first\" tabindex=\"0\" class=\"openui-tabs-content#0 openui-tabs-content\" style=\"animation-duration: 0s;\"><div class=\"openui-tabs-content-inner#0 openui-tabs-content-inner\">Panel</div></div></div></div><script type=\"module\" src=\"/elements.js\"></script>",
+    "rules": {
+      "openui-icon-button-icon#0": [
+        {
+          "selector": ".openui-icon-button-icon#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:var(--_openui-icon-button-icon-size)",
+            "height:var(--_openui-icon-button-icon-size)"
+          ]
+        }
+      ],
+      "openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#0": [
+        {
+          "selector": ".openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "padding:0",
+            "flex-shrink:0"
+          ]
+        }
+      ],
+      "openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#1": [
+        {
+          "selector": ".openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-bg)",
+            "color:var(--_openui-icon-button-secondary-fg)",
+            "border-color:var(--_openui-icon-button-secondary-border)",
+            "box-shadow:var(--_openui-icon-button-secondary-shadow)"
+          ]
+        },
+        {
+          "selector": ".openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-hover-bg)",
+            "box-shadow:none"
+          ]
+        },
+        {
+          "selector": ".openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-icon-button-secondary-active-bg)"]
+        },
+        {
+          "selector": ".openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-disabled-bg)",
+            "color:var(--_openui-icon-button-secondary-disabled-fg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ]
+        }
+      ],
+      "openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#2": [
+        {
+          "selector": ".openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#2",
+          "conditions": [],
+          "declarations": [
+            "width:32px",
+            "height:32px",
+            "--_openui-icon-button-icon-size:16px",
+            "--_openui-icon-button-square-radius:calc(var(--openui-radius-s, 6px) + 1px)"
+          ]
+        }
+      ],
+      "openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#3": [
+        {
+          "selector": ".openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#3",
+          "conditions": [],
+          "declarations": ["border-radius:var(--_openui-icon-button-square-radius)"]
+        }
+      ],
+      "openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#4": [
+        {
+          "selector": ".openui-icon-button+openui-tabs-scroll-button+openui-tabs-scroll-left#4",
+          "conditions": [],
+          "declarations": [
+            "--_openui-icon-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-fg:var( --openui-text-accent-primary, oklch(0.994 0 89.876 / 1) )",
+            "--_openui-icon-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-icon-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-icon-button-secondary-bg:transparent",
+            "--_openui-icon-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-disabled-bg:transparent",
+            "--_openui-icon-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ]
+        }
+      ],
+      "openui-tabs-content-inner#0": [
+        {
+          "selector": ".openui-tabs-content-inner#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-direction:column",
+            "gap:var(--openui-space-l, 18px)"
+          ]
+        }
+      ],
+      "openui-tabs-content#0": [
+        {
+          "selector": ".openui-tabs-content#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "padding:var(--openui-space-3xs, 2px) 0",
+            "border:transparent",
+            "border-radius:var(--openui-radius-m, 8px)",
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        }
+      ],
+      "openui-tabs-indicator#0": [
+        {
+          "selector": ".openui-tabs-indicator#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "bottom:0",
+            "left:0",
+            "height:1.5px",
+            "width:0",
+            "opacity:0",
+            "background-color:var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1))",
+            "pointer-events:none",
+            "z-index:1"
+          ]
+        }
+      ],
+      "openui-tabs-list-container#0": [
+        {
+          "selector": ".openui-tabs-list-container#0",
+          "conditions": [],
+          "declarations": [
+            "position:relative",
+            "display:flex",
+            "align-items:center",
+            "overflow:hidden"
+          ]
+        },
+        {
+          "selector": ".openui-tabs-list-container#0::after",
+          "conditions": [],
+          "declarations": [
+            "content:\"\"",
+            "position:absolute",
+            "bottom:0",
+            "height:1px",
+            "left:0",
+            "right:0",
+            "border-bottom:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "pointer-events:none"
+          ]
+        }
+      ],
+      "openui-tabs-list#0": [
+        {
+          "selector": ".openui-tabs-list#0",
+          "conditions": [],
+          "declarations": [
+            "width:100%",
+            "box-sizing:border-box",
+            "display:flex",
+            "gap:var(--openui-space-l, 18px)",
+            "flex-direction:row",
+            "padding:0",
+            "border-radius:0",
+            "background:none",
+            "flex:1",
+            "position:relative",
+            "overflow-x:auto",
+            "scrollbar-width:none",
+            "scroll-behavior:smooth"
+          ]
+        },
+        {
+          "selector": ".openui-tabs-list#0::-webkit-scrollbar",
+          "conditions": [],
+          "declarations": ["display:none"]
+        }
+      ],
+      "openui-tabs-list#1": [
+        {
+          "selector": ".openui-tabs-list#1",
+          "conditions": [],
+          "declarations": [
+            "--_openui-tabs-trigger-padding:var(--openui-space-s, 8px) 0",
+            "--_openui-tabs-trigger-align:center",
+            "--_openui-tabs-trigger-content-align:center",
+            "--_openui-tabs-trigger-icon-size:24px",
+            "--_openui-tabs-trigger-icon-radius:0",
+            "--_openui-tabs-trigger-icon-svg-size:14px",
+            "--_openui-tabs-trigger-image-size:24px",
+            "--_openui-tabs-trigger-image-radius:0"
+          ]
+        }
+      ],
+      "openui-tabs-list#2": [
+        {
+          "selector": ".openui-tabs-list#2",
+          "conditions": [],
+          "declarations": [
+            "--_openui-tabs-trigger-padding:var(--openui-space-s, 8px) 0",
+            "--_openui-tabs-trigger-align:center",
+            "--_openui-tabs-trigger-content-align:flex-start",
+            "--_openui-tabs-trigger-icon-size:24px",
+            "--_openui-tabs-trigger-icon-radius:var(--openui-radius-s, 6px)",
+            "--_openui-tabs-trigger-icon-svg-size:14px",
+            "--_openui-tabs-trigger-image-size:24px",
+            "--_openui-tabs-trigger-image-radius:0"
+          ]
+        }
+      ],
+      "openui-tabs-list#3": [
+        {
+          "selector": ".openui-tabs-list#3",
+          "conditions": [],
+          "declarations": [
+            "--_openui-tabs-trigger-padding:var(--openui-space-m, 12px) 0",
+            "--_openui-tabs-trigger-align:flex-start",
+            "--_openui-tabs-trigger-content-align:flex-start",
+            "--_openui-tabs-trigger-icon-size:36px",
+            "--_openui-tabs-trigger-icon-radius:var(--openui-radius-m, 8px)",
+            "--_openui-tabs-trigger-icon-svg-size:16px",
+            "--_openui-tabs-trigger-image-size:24px",
+            "--_openui-tabs-trigger-image-radius:0"
+          ]
+        }
+      ],
+      "openui-tabs-list#4": [
+        {
+          "selector": ".openui-tabs-list#4",
+          "conditions": [],
+          "declarations": [
+            "--_openui-tabs-trigger-padding:var(--openui-space-s, 8px) 0",
+            "--_openui-tabs-trigger-align:center",
+            "--_openui-tabs-trigger-content-align:flex-start",
+            "--_openui-tabs-trigger-icon-size:24px",
+            "--_openui-tabs-trigger-icon-radius:var(--openui-radius-s, 6px)",
+            "--_openui-tabs-trigger-icon-svg-size:14px",
+            "--_openui-tabs-trigger-image-size:24px",
+            "--_openui-tabs-trigger-image-radius:var(--openui-radius-s, 6px)"
+          ]
+        }
+      ],
+      "openui-tabs-list#5": [
+        {
+          "selector": ".openui-tabs-list#5",
+          "conditions": [],
+          "declarations": [
+            "--_openui-tabs-trigger-padding:var(--openui-space-m, 12px) 0",
+            "--_openui-tabs-trigger-align:flex-start",
+            "--_openui-tabs-trigger-content-align:flex-start",
+            "--_openui-tabs-trigger-icon-size:24px",
+            "--_openui-tabs-trigger-icon-radius:0",
+            "--_openui-tabs-trigger-icon-svg-size:14px",
+            "--_openui-tabs-trigger-image-size:36px",
+            "--_openui-tabs-trigger-image-radius:var(--openui-radius-m, 8px)"
+          ]
+        }
+      ],
+      "openui-tabs-scroll-button-container-left#0": [
+        {
+          "selector": ".openui-tabs-scroll-button-container-left#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "height:100%",
+            "z-index:1",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "background-color:var(--openui-foreground, oklch(0.994 0 89.876 / 1))",
+            "left:0",
+            "padding:0 4px 0 0"
+          ]
+        }
+      ],
+      "openui-tabs-scroll-button-container-right#0": [
+        {
+          "selector": ".openui-tabs-scroll-button-container-right#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "height:100%",
+            "z-index:1",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "background-color:var(--openui-foreground, oklch(0.994 0 89.876 / 1))",
+            "right:0",
+            "padding:0 0 0 4px"
+          ]
+        }
+      ],
+      "openui-tabs-trigger-content#0": [
+        {
+          "selector": ".openui-tabs-trigger-content#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-direction:column",
+            "align-items:var(--_openui-tabs-trigger-content-align, center)",
+            "gap:var(--openui-space-3xs, 2px)",
+            "min-width:0"
+          ]
+        }
+      ],
+      "openui-tabs-trigger-icon#0": [
+        {
+          "selector": ".openui-tabs-trigger-icon#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:var(--_openui-tabs-trigger-icon-size, 24px)",
+            "height:var(--_openui-tabs-trigger-icon-size, 24px)",
+            "border-radius:var(--_openui-tabs-trigger-icon-radius, 0)",
+            "flex-shrink:0",
+            "background:var(--openui-sunk, oklch(0.097 0 0 / 0.04))"
+          ]
+        },
+        {
+          "selector": ":where(.openui-tabs-trigger-icon#0) svg",
+          "conditions": [],
+          "declarations": [
+            "width:var(--_openui-tabs-trigger-icon-svg-size, 14px)",
+            "height:var(--_openui-tabs-trigger-icon-svg-size, 14px)"
+          ]
+        }
+      ],
+      "openui-tabs-trigger-image#0": [
+        {
+          "selector": ".openui-tabs-trigger-image#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:var(--_openui-tabs-trigger-image-size, 24px)",
+            "height:var(--_openui-tabs-trigger-image-size, 24px)",
+            "border-radius:var(--_openui-tabs-trigger-image-radius, 0)",
+            "overflow:hidden",
+            "flex-shrink:0"
+          ]
+        }
+      ],
+      "openui-tabs-trigger-img#0": [
+        {
+          "selector": ".openui-tabs-trigger-img#0",
+          "conditions": [],
+          "declarations": ["width:100%", "height:100%", "object-fit:cover"]
+        }
+      ],
+      "openui-tabs-trigger-subtext#0": [
+        {
+          "selector": ".openui-tabs-trigger-subtext#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-label-xs, 400 12px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-xs-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",
+            "white-space:nowrap",
+            "overflow:hidden",
+            "text-overflow:ellipsis",
+            "max-width:232px"
+          ]
+        }
+      ],
+      "openui-tabs-trigger-text#0": [
+        {
+          "selector": ".openui-tabs-trigger-text#0",
+          "conditions": [],
+          "declarations": [
+            "width:auto",
+            "max-width:232px",
+            "white-space:nowrap",
+            "overflow:hidden",
+            "text-overflow:ellipsis"
+          ]
+        }
+      ],
+      "openui-tabs-trigger#0": [
+        {
+          "selector": ".openui-tabs-trigger#0",
+          "conditions": [],
+          "declarations": [
+            "cursor:pointer",
+            "display:flex",
+            "flex-direction:row",
+            "align-items:var(--_openui-tabs-trigger-align, center)",
+            "justify-content:center",
+            "gap:var(--openui-space-s, 8px)",
+            "box-sizing:border-box",
+            "padding:var(--_openui-tabs-trigger-padding, var(--openui-space-s, 8px) 0)",
+            "border:0px",
+            "border-radius:var(--openui-radius-none, 0px)",
+            "min-width:0",
+            "width:auto",
+            "flex-shrink:0",
+            "background-color:transparent",
+            "color:var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6))",
+            "font:var(--openui-text-label-default, 400 16px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        },
+        {
+          "selector": ".openui-tabs-trigger#0:hover",
+          "conditions": [],
+          "declarations": [
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "border:0px",
+            "background-color:transparent",
+            "box-shadow:var( --openui-shadow-s, 0 1px 3px -2px oklch(0 0 0 / 0.02), 0 2px 5px -2px oklch(0 0 0 / 0.04) )"
+          ]
+        },
+        {
+          "selector": ".openui-tabs-trigger#0[data-state=\"active\"]",
+          "conditions": [],
+          "declarations": [
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "border:0px",
+            "background-color:transparent",
+            "box-shadow:none",
+            "font:var(--openui-text-label-default-heavy, 560 16px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-default-heavy-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-medium, \"wght\" 560)"
+          ]
+        }
+      ],
+      "openui-tabs#0": [
+        {
+          "selector": ".openui-tabs#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "display:flex",
+            "flex-direction:column",
+            "gap:var(--openui-space-l, 18px)"
+          ]
+        }
+      ]
+    }
+  }
+}
