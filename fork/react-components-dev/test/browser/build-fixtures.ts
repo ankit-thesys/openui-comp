@@ -228,7 +228,7 @@ export default async function buildFixtures() {
   rmSync(fixturesOut, { recursive: true, force: true });
   await bundle(entries(fixtures), "@openuidev/react-components", false);
   await bundle(
-    entries(["layers"], "-development"),
+    entries(["layers", "document-hydrate-dev"], "-development"),
     "@openuidev/react-components",
     false,
     "browser",

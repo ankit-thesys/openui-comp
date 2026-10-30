@@ -40,3 +40,37 @@ for (const layer of [undefined, "openui"]) {
     await expect(page.getByTestId("default")).not.toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
   });
 }
+
+// `next dev` hydrates <html> with React's development build, which reports any attribute React did
+// not render: a class the token defaults once added to <html> showed up there as "A tree hydrated
+// but some attributes of the server rendered HTML didn't match" with `className="go…"`. The
+// production document above cannot see that report.
+test("a document hydrated by React's development build reports no mismatch", async ({ page }) => {
+  const errors: string[] = [];
+  page.on("console", (message) => {
+    if (message.type() === "error" || /hydrat|did not match/i.test(message.text()))
+      errors.push(message.text());
+  });
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.route("**/document-dev.html", (route) =>
+    route.fulfill({
+      contentType: "text/html",
+      body: `<!doctype html><html lang="en"><head><script type="module" src="/document-hydrate-dev-development.js"></script></head><body><main id="app">Document</main></body></html>`,
+    }),
+  );
+  await page.goto("/document-dev.html");
+  await page.waitForFunction(() => (window as Window & { hydrated?: boolean }).hydrated);
+  // Hydration mismatches are reported after the commit.
+  await page.evaluate(() => new Promise((resolve) => setTimeout(resolve, 100)));
+  const result = await page.evaluate(() => ({
+    loaded: (window as Window & { packageLoaded?: boolean }).packageLoaded,
+    html: document.documentElement.getAttributeNames(),
+    token: getComputedStyle(document.documentElement)
+      .getPropertyValue("--openui-text-neutral-primary")
+      .trim(),
+  }));
+  expect(result.loaded).toBe(true);
+  expect(errors).toEqual([]);
+  expect(result.html).toEqual(["lang"]);
+  expect(result.token).not.toBe("");
+});
