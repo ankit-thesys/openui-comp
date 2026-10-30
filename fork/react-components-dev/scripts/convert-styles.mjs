@@ -43,10 +43,31 @@ const converted = new Map();
 const imports = new Map();
 const registrationImports = new Set();
 const reports = new Set();
-const report = (node, message) => {
+// Not failures: places a person should read, because the edit relies on import order now.
+const reviews = new Set();
+const located = (node, message) => {
   const file = node.getSourceFile();
   const { line } = file.getLineAndCharacterOfPosition(node.getStart());
-  reports.add(`${relative(root, file.fileName)}:${line + 1}: ${message}`);
+  return `${relative(root, file.fileName)}:${line + 1}: ${message}`;
+};
+const report = (node, message) => reports.add(located(node, message));
+// Whether `name` is read as a value or type anywhere in `text`, not as a property name.
+const references = (fileName, text, name) => {
+  let found = false;
+  each(ts.createSourceFile(fileName, text, ts.ScriptTarget.Latest, true), (node) => {
+    if (found || !ts.isIdentifier(node) || node.text !== name) return;
+    const parent = node.parent;
+    if (
+      (ts.isPropertyAccessExpression(parent) && parent.name === node) ||
+      ((ts.isPropertyAssignment(parent) || ts.isPropertySignature(parent)) &&
+        parent.name === node) ||
+      ts.isImportSpecifier(parent) ||
+      ts.isImportClause(parent)
+    )
+      return;
+    found = true;
+  });
+  return found;
 };
 const edit = (file, start, end, text) => {
   const changes = edits.get(file) ?? [];
@@ -202,6 +223,18 @@ do {
 for (const path of files) {
   const file = program.getSourceFile(path);
   each(file, (node) => {
+    // `ReturnType<typeof styles>` of a factory that is now the object itself.
+    if (
+      ts.isTypeReferenceNode(node) &&
+      ts.isIdentifier(node.typeName) &&
+      node.typeName.text === "ReturnType" &&
+      node.typeArguments?.length === 1 &&
+      ts.isTypeQueryNode(node.typeArguments[0]) &&
+      converted.get(symbolOf(node.typeArguments[0].exprName))?.kind === "constant"
+    ) {
+      replace(node, node.typeArguments[0].getText(file));
+      return;
+    }
     if (!ts.isCallExpression(node)) return;
     const declaration = checker.getSymbolAtLocation(node.expression)?.declarations?.[0];
     const isHook =
@@ -232,6 +265,12 @@ for (const path of files) {
         return;
       }
       if (ts.isExpressionStatement(node.parent)) {
+        reviews.add(
+          located(
+            node,
+            `registration call ${node.expression.getText(file)}(css) removed; it now registers on import, so check the order and any comment about it`,
+          ),
+        );
         replace(node.parent, "");
         const imported = checker.getSymbolAtLocation(node.expression)?.declarations?.[0];
         if (imported && ts.isImportSpecifier(imported))
@@ -245,6 +284,8 @@ for (const path of files) {
 }
 
 let changed = 0;
+// The text each changed file has after conversion, written or not, so a dry run checks it too.
+const outputs = new Map();
 for (const [file, changes] of edits) {
   let text = file.text;
   let boundary = text.length + 1;
@@ -304,13 +345,16 @@ for (const [file, changes] of edits) {
   }
   for (const { start, end, replacement } of cleanups.reverse())
     text = text.slice(0, start) + replacement + text.slice(end);
-  const needed = imports.get(file);
-  if (needed?.size) {
+  // A factory that only forwarded `css` to a converted helper no longer reads it.
+  const needed = [...(imports.get(file) ?? [])].filter((name) =>
+    references(file.fileName, text, name),
+  );
+  if (needed.length) {
     let specifier = relative(dirname(file.fileName), library("src/styles/css"))
       .split(sep)
       .join("/");
     if (!specifier.startsWith(".")) specifier = "./" + specifier;
-    const declaration = `import { ${[...needed].map((name) => (name === "css" ? name : `css as ${name}`)).join(", ")} } from "${specifier}";\n\n`;
+    const declaration = `import { ${needed.map((name) => (name === "css" ? name : `css as ${name}`)).join(", ")} } from "${specifier}";\n\n`;
     const parsed = ts.createSourceFile(file.fileName, text, ts.ScriptTarget.Latest, true);
     const firstImport = parsed.statements.find(ts.isImportDeclaration);
     const directives = parsed.statements.filter(
@@ -325,20 +369,41 @@ for (const [file, changes] of edits) {
     plugins: [],
   });
   if (text === file.text) continue;
+  outputs.set(file.fileName, text);
   if (!dryRun) writeFileSync(file.fileName, text);
   console.log(`${dryRun ? "Would convert" : "Converted"}: ${relative(root, file.fileName)}`);
   changed++;
 }
+const textOf = (path) => outputs.get(path) ?? readFileSync(path, "utf8");
 for (const path of files.filter((path) =>
   selected.some((dir) => path === dir || path.startsWith(dir + sep)),
 )) {
-  const text = readFileSync(path, "utf8");
-  if (!dryRun && /\b(useStyles|StyleCss|StyleFactory)\b/.test(text))
+  if (/\b(useStyles|StyleCss|StyleFactory)\b/.test(textOf(path)))
     reports.add(`${relative(root, path)}: old API remains (including comments); review by hand`);
 }
+// A factory outside the selection that only passed `css` on to a converted helper keeps a `css`
+// parameter it no longer reads (lint fails): convert its folder in the same run.
+for (const path of outputs.keys()) {
+  const parsed = ts.createSourceFile(path, textOf(path), ts.ScriptTarget.Latest, true);
+  each(parsed, (node) => {
+    if (!(ts.isArrowFunction(node) || ts.isFunctionDeclaration(node)) || !node.body) return;
+    for (const param of node.parameters) {
+      if (!ts.isIdentifier(param.name) || param.type?.getText(parsed) !== "StyleCss") continue;
+      if (!references(path, node.body.getText(parsed), param.name.text)) {
+        const { line } = parsed.getLineAndCharacterOfPosition(node.getStart(parsed));
+        reports.add(
+          `${relative(root, path)}:${line + 1}: factory no longer reads its ${param.name.text} parameter (it forwarded it to a converted helper); add ${relative(root, dirname(path))} to this run`,
+        );
+      }
+    }
+  });
+}
 console.log(`${changed} file(s) ${dryRun ? "would change" : "changed"}.`);
+if (reviews.size) console.log(`Review by hand:\n${[...reviews].join("\n")}`);
 console.log(
   reports.size
     ? `Could not fully convert:\n${[...reports].join("\n")}`
     : "No unsupported conversions.",
 );
+// A batch must not pass while anything above still needs a person.
+if (reports.size) process.exitCode = 1;

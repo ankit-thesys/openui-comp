@@ -93,7 +93,9 @@ test("the token layer is declared first, then the defaults, then the library she
   expect(firstRule).toBe("@layer openui-defaults;");
 });
 
-test("Button registers its styles when it renders, not on import, and marks no <html> class", async ({
+// Button's style module is module-level since #132 (ADR 0002): its rules register on import, and
+// rendering adds none.
+test("Button registers its styles on import, not when it renders, and marks no <html> class", async ({
   page,
 }) => {
   await page.goto("/button.html?lazy=1");
@@ -113,10 +115,14 @@ test("Button registers its styles when it renders, not on import, and marks no <
     ].flatMap((el) => [...el.classList].filter((name) => /^go\d+$/.test(name))),
   );
   const html = await page.evaluate(() => [...document.documentElement.classList]);
+  const afterMount = await page.evaluate(
+    () => document.getElementById("openui-styles")?.textContent ?? "",
+  );
 
   expect(generated.length).toBeGreaterThan(0);
   for (const name of generated)
-    expect(beforeMount.sheet).not.toMatch(new RegExp(`\\.${name}(?![0-9])`));
+    expect(beforeMount.sheet).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+  expect(afterMount).toBe(beforeMount.sheet);
   expect(html).toEqual(beforeMount.html);
   for (const name of generated) expect(html).not.toContain(name);
 });

@@ -182,7 +182,37 @@ export function comparable<T extends Snapshot | LayerSnapshot>(sample: T): T {
       ];
     }),
   );
-  return { ...sample, rules };
+  return { ...sample, rules, order: conflictingOrder(sample.order, rules) };
+}
+
+// The property a declaration sets, widened so that anything that could reset it compares equal:
+// `padding-top` and `padding`, `-webkit-mask` and `mask`, `min-width` and `min-height`. A custom
+// property only meets itself.
+const propertyFamily = (declaration: string) => {
+  const name = declaration.slice(0, declaration.indexOf(":")).trim().toLowerCase();
+  return name.startsWith("--") ? name : name.replace(/^-(webkit|moz|ms)-/, "").split("-")[0]!;
+};
+
+// Sheet order between two classes from one module only decides a value where both set the same
+// property. A module's rule can move ahead of its siblings without any declaration changing: Goober
+// keeps the first position of an identical body (`width: 100%`, `cursor: pointer`), so once another
+// module that imports first registers the same body, it sits there. Keep the pairs that can compete.
+function conflictingOrder(order: string[], rules: Snapshot["rules"]): string[] {
+  const families = (alias: string) =>
+    new Set((rules[alias] ?? []).flatMap((rule) => rule.declarations.map(propertyFamily)));
+  const pairs = new Set<string>();
+  for (const entry of order) {
+    const separator = entry.lastIndexOf(": ");
+    const module = entry.slice(0, separator);
+    const aliases = entry.slice(separator + 2).split(" < ");
+    aliases.forEach((first, i) => {
+      const before = families(first);
+      for (const second of aliases.slice(i + 1))
+        if ([...families(second)].some((family) => before.has(family)))
+          pairs.add(`${module}: ${first} < ${second}`);
+    });
+  }
+  return [...pairs].sort();
 }
 
 /** `comparable` for every sample of a recorded file, so baselines compare without re-recording. */
