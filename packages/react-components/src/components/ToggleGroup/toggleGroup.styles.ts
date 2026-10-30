@@ -2,7 +2,7 @@ import { css } from "../../styles/css";
 
 export const names = { root: "openui-toggle-group" } as const;
 
-export const toggleGroupStyles = /*#__PURE__*/ {
+export const toggleGroupStyles = {
   root: css`
     display: flex;
     width: 100%;

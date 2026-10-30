@@ -66,13 +66,13 @@ const card = css`
 ```
 
 - Both return plain class-name strings and work anywhere: module level, inside a component, in another package.
-- Style modules define their classes at module level and mark each constant `/*#__PURE__*/`, so a bundler can drop the styles of components the app never imports:
+- Style modules define their classes at module level. A bundler drops the styles of components the app never imports because `package.json` `sideEffects` lists only the entry and the theme defaults; a `/*#__PURE__*/` mark would not help, since bundlers honour it only on calls and the `css` calls inside a style object do register rules (#139 measured a Button-only Vite bundle at 221 kB with `sideEffects`, 2.7 MB without):
 
   ```ts
   // button.styles.ts
   import { css } from "../../styles/css";
 
-  export const buttonStyles = /*#__PURE__*/ {
+  export const buttonStyles = {
     root: css`…`,
     variant: { primary: css`…`, secondary: css`…` },
   };

@@ -14,7 +14,7 @@ export const names = {
   down: "openui-scroll-buttons-vertical-down",
 } as const;
 
-export const scrollButtonsVerticalStyles = /*#__PURE__*/ (() => {
+export const scrollButtonsVerticalStyles = (() => {
   return {
     root: css`
       display: flex;

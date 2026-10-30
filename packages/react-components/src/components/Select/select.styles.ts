@@ -46,7 +46,7 @@ const contentText = `
   font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
 `;
 
-export const selectStyles = /*#__PURE__*/ {
+export const selectStyles = {
   trigger: css`
     --_openui-select-trigger-icon-transform: none;
     --_openui-select-trigger-hover-color: initial;

@@ -17,7 +17,7 @@ export const names = {
   },
 } as const;
 
-export const optionCardsStyles = /*#__PURE__*/ {
+export const optionCardsStyles = {
   root: css`
     width: 100%;
     container-type: inline-size;

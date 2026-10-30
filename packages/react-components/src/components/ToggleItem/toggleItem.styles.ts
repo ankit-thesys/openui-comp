@@ -2,7 +2,7 @@ import { css } from "../../styles/css";
 
 export const names = { root: "openui-toggle-item" } as const;
 
-export const toggleItemStyles = /*#__PURE__*/ {
+export const toggleItemStyles = {
   root: css`
     box-sizing: border-box;
     font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);

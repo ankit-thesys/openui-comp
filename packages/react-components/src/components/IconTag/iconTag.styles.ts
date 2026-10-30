@@ -20,7 +20,7 @@ export const names = {
   },
 } as const;
 
-export const iconTagStyles = /*#__PURE__*/ {
+export const iconTagStyles = {
   icon: css`
     width: var(--_openui-icon-tag-icon-size);
     height: var(--_openui-icon-tag-icon-size);

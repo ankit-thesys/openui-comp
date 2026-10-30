@@ -9,7 +9,7 @@ export const names = {
   },
 } as const;
 
-export const checkBoxGroupStyles = /*#__PURE__*/ {
+export const checkBoxGroupStyles = {
   root: css`
     box-sizing: border-box;
     display: flex;

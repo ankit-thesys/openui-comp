@@ -44,7 +44,7 @@ export const names = {
 } as const;
 
 // Register entrance keyframes before the rules that reference them, on import.
-export const radarChartStyles = /*#__PURE__*/ (() => {
+export const radarChartStyles = (() => {
   css`
     @keyframes openui-radar-chart-appear {
       from {

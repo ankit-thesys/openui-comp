@@ -9,7 +9,7 @@ export const names = {
   },
 } as const;
 
-export const switchGroupStyles = /*#__PURE__*/ {
+export const switchGroupStyles = {
   root: css`
     box-sizing: border-box;
     display: flex;

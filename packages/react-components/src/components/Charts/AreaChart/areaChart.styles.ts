@@ -54,7 +54,7 @@ export const names = {
   highlight: "openui-area-chart-highlight",
 } as const;
 
-export const areaChartStyles = /*#__PURE__*/ {
+export const areaChartStyles = {
   svg: css`
     &[data-overflow="visible"] {
       overflow: visible;

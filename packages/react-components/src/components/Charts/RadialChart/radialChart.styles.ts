@@ -22,7 +22,7 @@ export const names = {
   },
 } as const;
 
-export const radialChartStyles = /*#__PURE__*/ (() => {
+export const radialChartStyles = (() => {
   return {
     root: css`
       ${centeredContainer}

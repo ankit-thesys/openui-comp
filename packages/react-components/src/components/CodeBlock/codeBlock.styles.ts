@@ -11,7 +11,7 @@ export const names = {
   syntaxHighlighter: "openui-code-block-syntax-highlighter",
 } as const;
 
-export const codeBlockStyles = /*#__PURE__*/ {
+export const codeBlockStyles = {
   root: css`
     position: relative;
     --_openui-code-block-copy-button-opacity: 0;
@@ -53,7 +53,7 @@ export const codeBlockStyles = /*#__PURE__*/ {
 // Register after IconButton so positioning and the opacity-only transition win base ties.
 // react-ui used the normal hover/pressed background even while copied; order those states after
 // copied without chaining selectors.
-export const codeBlockCopyButtonStyles = /*#__PURE__*/ {
+export const codeBlockCopyButtonStyles = {
   // Preserve template bytes so registration order stays unchanged.
   // prettier-ignore
   root: css`

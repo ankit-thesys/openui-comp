@@ -7,7 +7,7 @@ export const names = {
   headerTrigger: "openui-section-v2-header-trigger",
   content: "openui-section-v2-content",
 } as const;
-export const sectionStyles = /*#__PURE__*/ {
+export const sectionStyles = {
   root: css`
     display: flex;
     flex-direction: column;

@@ -10,7 +10,7 @@ export const names = {
     sunk: "openui-text-content-wrapper--variant-sunk",
   },
 } as const;
-export const textContentWrapperStyles = /*#__PURE__*/ {
+export const textContentWrapperStyles = {
   root: css`
     display: flex;
     flex-direction: column;

@@ -8,7 +8,7 @@ export const names = {
   header: "openui-table-header",
   body: "openui-table-body",
 } as const;
-export const tableStyles = /*#__PURE__*/ {
+export const tableStyles = {
   container: css`
     position: relative;
     width: 100%;

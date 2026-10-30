@@ -6,7 +6,7 @@ export const names = {
   inner: "openui-tabs-content-inner",
 } as const;
 
-export const tabsContentStyles = /*#__PURE__*/ {
+export const tabsContentStyles = {
   root: css`
     box-sizing: border-box;
     padding: var(--openui-space-3xs, 2px) 0;

@@ -7,7 +7,7 @@ export const names = {
   text: "openui-chips-item-text",
 } as const;
 
-export const chipsStyles = /*#__PURE__*/ {
+export const chipsStyles = {
   root: css`
     display: flex;
     flex-wrap: wrap;

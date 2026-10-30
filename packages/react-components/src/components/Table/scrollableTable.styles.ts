@@ -7,7 +7,7 @@ export const names = {
   control: "openui-scrollable-table-control",
   icon: "openui-scrollable-table-icon",
 } as const;
-export const scrollableTableStyles = /*#__PURE__*/ {
+export const scrollableTableStyles = {
   root: css`
     width: 100%;
     &[data-scrollable="true"] {

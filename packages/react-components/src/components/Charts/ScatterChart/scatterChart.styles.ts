@@ -20,7 +20,7 @@ export const names = {
   hitTarget: "openui-scatter-chart-hit-target",
 } as const;
 
-export const scatterChartStyles = /*#__PURE__*/ {
+export const scatterChartStyles = {
   svg: css`
     overflow: visible;
   `,

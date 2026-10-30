@@ -13,7 +13,7 @@ export const names = {
   },
 } as const;
 
-export const visualCardStyles = /*#__PURE__*/ {
+export const visualCardStyles = {
   card: css`
     /* react-ui's content-box sizing, declared so a page's box-sizing reset (Tailwind's preflight, for
        one) cannot change the geometry. */

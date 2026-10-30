@@ -14,7 +14,7 @@ export const names = {
   noSnap: { true: "openui-carousel--no-snap" },
   showButtons: { true: "openui-carousel--show-buttons" },
 } as const;
-export const carouselStyles = /*#__PURE__*/ {
+export const carouselStyles = {
   root: css`
     position: relative;
     display: flex;

@@ -18,7 +18,7 @@ export const names = {
   icon: "openui-default-legend-item-icon",
 } as const;
 
-export const defaultLegendClasses = /*#__PURE__*/ (() => {
+export const defaultLegendClasses = (() => {
   // Keep Button before these equal-weight part rules.
   void buttonStyles;
   return {

@@ -13,7 +13,7 @@ const label = `
   font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
   color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
 `;
-export const chartBaseStyles = /*#__PURE__*/ {
+export const chartBaseStyles = {
   empty: css`
     display: flex;
     align-items: center;

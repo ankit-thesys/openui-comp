@@ -11,7 +11,7 @@ export const names = {
   closeIcon: "openui-modal-close-icon",
   size: { sm: "openui-modal--size-sm", md: "openui-modal--size-md", lg: "openui-modal--size-lg" },
 } as const;
-export const modalStyles = /*#__PURE__*/ {
+export const modalStyles = {
   root: css`
     position: relative;
     z-index: 9999;

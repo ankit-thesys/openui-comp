@@ -7,7 +7,7 @@ export const names = {
   img: "openui-image-gallery-img",
   showAll: "openui-image-gallery-show-all",
 } as const;
-export const imageGalleryStyles = /*#__PURE__*/ {
+export const imageGalleryStyles = {
   root: css`
     display: flex;
     flex-direction: column;

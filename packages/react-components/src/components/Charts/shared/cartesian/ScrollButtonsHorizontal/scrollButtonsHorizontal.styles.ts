@@ -14,7 +14,7 @@ export const names = {
   right: "openui-scroll-buttons-horizontal-right",
 } as const;
 
-export const scrollButtonsHorizontalStyles = /*#__PURE__*/ (() => {
+export const scrollButtonsHorizontalStyles = (() => {
   return {
     root: css`
       position: relative;

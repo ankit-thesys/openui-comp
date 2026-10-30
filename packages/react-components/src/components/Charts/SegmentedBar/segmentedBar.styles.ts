@@ -27,7 +27,7 @@ export const names = {
   },
 } as const;
 
-export const segmentedBarStyles = /*#__PURE__*/ (() => {
+export const segmentedBarStyles = (() => {
   return {
     root: css`
       display: flex;

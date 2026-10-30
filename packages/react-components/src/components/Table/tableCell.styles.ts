@@ -8,7 +8,7 @@ export const names = {
     right: "openui-table-cell--align-right",
   },
 } as const;
-export const tableCellStyles = /*#__PURE__*/ {
+export const tableCellStyles = {
   root: css`
     padding-top: var(--openui-space-m, 12px);
     padding-bottom: var(--openui-space-m, 12px);

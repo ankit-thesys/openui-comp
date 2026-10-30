@@ -13,7 +13,7 @@ export const names = {
   },
 } as const;
 
-export const calloutStyles = /*#__PURE__*/ {
+export const calloutStyles = {
   root: css`
     @keyframes _openui-callout-fadeout {
       0% {
