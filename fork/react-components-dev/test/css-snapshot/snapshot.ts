@@ -161,13 +161,28 @@ export function snapshot({ html, sheet }: Collection, provenance: Provenance): S
 // which the migration turns into import order (the recorded Charts samples already differ between
 // server and browser). Compare them by name; the sort is stable, so duplicates of one name keep
 // their order, where the last one wins.
+//
+// An exact duplicate of an earlier record is dropped, keeping the first, as Goober's own dedupe
+// does in a browser sheet. The pre-#130 server sheet repeated a rule that a shared or composed
+// factory registered again after getComponentStyles() had drained Goober's sheet with extractCss;
+// browser sheets never held such a copy, and the store since #130 does not either.
 export function comparable<T extends Snapshot | LayerSnapshot>(sample: T): T {
-  const keyframes = sample.rules["@keyframes"];
-  if (!keyframes) return sample;
-  const sorted = [...keyframes].sort((a, b) =>
-    a.selector < b.selector ? -1 : a.selector > b.selector ? 1 : 0,
+  const rules = Object.fromEntries(
+    Object.entries(sample.rules).map(([key, list]) => {
+      const seen = new Set<string>();
+      const unique = list.filter((rule) => {
+        const id = JSON.stringify(rule);
+        return !seen.has(id) && !!seen.add(id);
+      });
+      return [
+        key,
+        key === "@keyframes"
+          ? unique.sort((a, b) => (a.selector < b.selector ? -1 : a.selector > b.selector ? 1 : 0))
+          : unique,
+      ];
+    }),
   );
-  return { ...sample, rules: { ...sample.rules, "@keyframes": sorted } };
+  return { ...sample, rules };
 }
 
 /** `comparable` for every sample of a recorded file, so baselines compare without re-recording. */
