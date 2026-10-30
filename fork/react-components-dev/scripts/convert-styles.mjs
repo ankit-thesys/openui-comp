@@ -5,6 +5,7 @@ import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { dirname, relative, resolve, sep } from "node:path";
 import prettier from "prettier";
 import ts from "typescript";
+import { sharedCssBodies } from "./shared-css-bodies.mjs";
 
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
@@ -398,8 +399,28 @@ for (const path of outputs.keys()) {
     }
   });
 }
+// Bodies a module converted in this run shares byte for byte with another module: once both
+// register on import, the first importer's position applies to both classes. Not a failure on its
+// own (css:check fails when it reorders overlapping properties), but each is worth a look.
+const shared = sharedCssBodies(
+  files.map((path) => ({ path, text: textOf(path) })),
+  new Set(
+    [...outputs.keys()].filter((path) =>
+      selected.some((dir) => path === dir || path.startsWith(dir + sep)),
+    ),
+  ),
+);
 console.log(`${changed} file(s) ${dryRun ? "would change" : "changed"}.`);
 if (reviews.size) console.log(`Review by hand:\n${[...reviews].join("\n")}`);
+if (shared.length)
+  console.log(
+    `css bodies shared with another module (Goober gives both classes one position; make the body component-specific, for example with a comment naming the component, if the order of its properties matters):\n${shared
+      .map(
+        ({ path, line, others }) =>
+          `${relative(root, path)}:${line} = ${others.map((other) => `${relative(root, other.path)}:${other.line}`).join(", ")}`,
+      )
+      .join("\n")}`,
+  );
 console.log(
   reports.size
     ? `Could not fully convert:\n${[...reports].join("\n")}`
