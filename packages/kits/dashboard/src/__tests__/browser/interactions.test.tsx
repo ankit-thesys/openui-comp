@@ -46,6 +46,26 @@ describe("FilterSelect", () => {
   });
 });
 
+describe("a filter connected to values", () => {
+  it("changes the card and charts the prompt's example connects it to", async () => {
+    const container = await renderCase("example-3");
+    expect(byText(container, "4,500")).toBeTruthy();
+    const bars = () =>
+      [...container.querySelectorAll("svg path, svg rect")].map((el) => el.outerHTML);
+    await settle(800);
+    const before = bars();
+
+    await userEvent.click(one(container, ".openui-dashboard-filter-select-trigger--single"));
+    await settle(300);
+    await userEvent.click(byText(container, "EMEA"));
+    await settle(800);
+
+    expect(byText(container, "1,800")).toBeTruthy();
+    expect(container.textContent).not.toContain("4,500");
+    expect(bars()).not.toEqual(before);
+  });
+});
+
 describe("FilterMultiSelect", () => {
   it("ticks options, counts them and stays open", async () => {
     const container = await renderCase("filters");
