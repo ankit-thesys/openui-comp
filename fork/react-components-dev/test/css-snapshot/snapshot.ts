@@ -183,7 +183,31 @@ export function comparable<T extends Snapshot | LayerSnapshot>(sample: T): T {
       ];
     }),
   );
-  return { ...sample, rules, order: conflictingOrder(sample.order, rules) };
+  const measured =
+    "markup" in sample ? { markup: withoutMeasuredSizes(sample.markup as string[]) } : {};
+  return { ...sample, ...measured, rules, order: conflictingOrder(sample.order, rules) };
+}
+
+// Inline sizes a component measures at runtime are layout state, not CSS: the Calendar's month and
+// year dropdowns size themselves from a ResizeObserver debounced by 100 ms (containerHeight - 45,
+// and the months list's containerWidth), so a capture can land before or after it. Only those two
+// parts, and only numeric px values of these three properties, are dropped; every other attribute,
+// class and inline declaration on them still compares.
+const MEASURED_PARTS = [
+  "openui-calendar-select-content-months",
+  "openui-calendar-select-content-years",
+];
+const MEASURED_SIZE = /\s?(?:max-height|min-height|min-width):\s*-?[\d.]+px;/g;
+
+export function withoutMeasuredSizes(markup: string[]): string[] {
+  return markup.map((element) => {
+    const classes = element.match(/^<[\w-]+\b[^>]*?\sclass="([^"]*)"/)?.[1]?.split(/\s+/) ?? [];
+    if (!MEASURED_PARTS.some((part) => classes.includes(part))) return element;
+    return element.replace(/\sstyle="([^"]*)"/, (_, style: string) => {
+      const rest = style.replace(MEASURED_SIZE, "").trim();
+      return rest ? ` style="${rest}"` : "";
+    });
+  });
 }
 
 // The property families a declaration sets, widened so that anything that could reset it shares
