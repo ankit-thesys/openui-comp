@@ -196,13 +196,14 @@ test("two copies of the module on one page keep each other's rules", async ({ pa
     // with its own store and its own Goober, as an ESM and a CJS build on one page would.
     const source = await (await fetch("/sheet.js")).text();
     const [, specifiers, chunk] = source.match(/^import \{([^}]*)\} from "\.\/([\w-]+\.js)"/)!;
+    // The bundler may suffix a local name that collides with another import, as `css$1`.
     const exported = (local: string) =>
-      specifiers!.match(new RegExp(`(\\w+) as ${local.replace("$", "\\$")}\\b`))![1]!;
+      specifiers!.match(new RegExp(`(\\w+) as ${local}(?:\\$\\d+)?(?=[\\s,]|$)`))![1]!;
     const copy = (await import(/* @vite-ignore */ `/${chunk}?second-copy`)) as Record<
       string,
       (...args: unknown[]) => string
     >;
-    const secondCss = copy[exported("css$1")]!;
+    const secondCss = copy[exported("css")]!;
     const secondStyles = copy[exported("getComponentStyles")]!;
     const fromFirst = first.css`--sheet-first-copy: 1;`;
     const fromSecond = secondCss(["--sheet-second-copy: 2;"] as unknown as TemplateStringsArray);
