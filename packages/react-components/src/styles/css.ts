@@ -1,4 +1,5 @@
 import { css as gooberCss } from "goober";
+import { createStyleTag } from "./styleTag";
 
 // The browser's sheet. It is only ever appended to, never rewritten.
 const SHEET_ID = "openui-styles";
@@ -52,7 +53,7 @@ function write() {
   if (!fresh) return;
   let tag = document.getElementById(SHEET_ID);
   if (!tag) {
-    tag = document.createElement("style");
+    tag = createStyleTag();
     tag.id = SHEET_ID;
     // After the server sheet or the token defaults; otherwise first in <head>, ahead of app CSS.
     const anchor = [...document.querySelectorAll(`${SERVER_SHEET}, #openui-defaults`)].pop();
