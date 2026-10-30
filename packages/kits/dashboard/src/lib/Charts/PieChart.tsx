@@ -2,10 +2,8 @@
 
 import { LegendStoreProvider, PieChart, StackedLegend } from "@openuidev/react-components";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import clsx from "clsx";
-import { useId, type CSSProperties } from "react";
+import { useId } from "react";
 import { z } from "zod/v4";
-import { CHART_HEIGHT_VAR, names, styles } from "../../components/DashboardCharts";
 import { DASHBOARD_CHART_PALETTE } from "./chartPalette";
 import { DASHBOARD_CHART_HEIGHT, buildSliceData } from "./helpers";
 export const pieChartPropsSchema = z.object({
@@ -20,7 +18,7 @@ export const pieChartPropsSchema = z.object({
 export type PieChartProps = z.infer<typeof pieChartPropsSchema>;
 
 const MIN_DASHBOARD_CHART_HEIGHT = 160;
-// Cap the stacked legend's share of the fixed pie box so a long category list
+// Cap the stacked legend's height so a long category list
 // can't crowd out the chart. StackedLegend has its own overflow scroll
 // affordance (see StackedLegendView), so a bounded max-height simply hands it
 // its built-in scroll gate rather than growing unbounded — matching the report
@@ -50,9 +48,6 @@ function PieChartRenderer({ props }: ComponentRenderProps<PieChartProps>) {
   if (!data.length) return null;
 
   const chartHeight = getDashboardChartHeight(props.height);
-  const style = {
-    [CHART_HEIGHT_VAR]: `${chartHeight}px`,
-  } as CSSProperties;
 
   const isStacked = props.legendVariant === "stacked";
 
@@ -70,16 +65,14 @@ function PieChartRenderer({ props }: ComponentRenderProps<PieChartProps>) {
     />
   );
 
+  if (!isStacked) return chart;
+
   return (
-    <div className={clsx(styles.pie, names.pie)} style={style}>
-      {isStacked ? (
-        <LegendStoreProvider legendKey={uid}>
-          {chart}
-          <StackedLegend style={{ maxHeight: STACKED_LEGEND_MAX_HEIGHT, overflowY: "auto" }} />
-        </LegendStoreProvider>
-      ) : (
-        chart
-      )}
+    <div>
+      <LegendStoreProvider legendKey={uid}>
+        {chart}
+        <StackedLegend style={{ maxHeight: STACKED_LEGEND_MAX_HEIGHT, overflowY: "auto" }} />
+      </LegendStoreProvider>
     </div>
   );
 }
