@@ -34,14 +34,22 @@ const sheetText = (tag: Element) => {
   return text.endsWith(STREAM_END) ? text.slice(0, -STREAM_END.length).trim() : text;
 };
 
-// A registry tag the parser has not finished: its start marker (or a piece of it) without the end
-// marker. An empty tag counts while the document is still loading, since its text may be next.
-// A tag without the start marker, a host's reserved sheet or a cumulative one, is complete.
+// The parser only appends at the end of the document, so a tag with anything after it is closed.
+function lastParsed(tag: Element): boolean {
+  let node: Node = document.documentElement;
+  while (node.lastChild) node = node.lastChild;
+  return node === tag || tag.contains(node);
+}
+
+// A registry tag the parser has not finished: its start marker without the end marker. An empty
+// tag, or one holding part of the start marker, may still be receiving its text only while it is
+// the last thing parsed; a host's reserved sheet with markup after it is complete, so client
+// rules are not held back until the document finishes loading.
 function streaming(tag: Element): boolean {
   const text = tag.textContent ?? "";
   if (text.startsWith(STREAM_START)) return !text.trimEnd().endsWith(STREAM_END);
-  if (!text) return document.readyState === "loading";
-  return STREAM_START.startsWith(text);
+  if (document.readyState !== "loading" || !lastParsed(tag)) return false;
+  return !text || STREAM_START.startsWith(text);
 }
 
 // Takes the first tag's rules into the store once its text is complete.
@@ -114,6 +122,8 @@ function seed() {
   // flushes can arrive in the body, and a parser can add a style's text after adding the element.
   const observer = new MutationObserver((records) => {
     if (
+      // Until the first tag is adopted, any parsed node may be what completes it.
+      !adopted ||
       records.some(
         (record) =>
           (record.target instanceof Element && record.target.matches(`style#${SHEET_ID}`)) ||

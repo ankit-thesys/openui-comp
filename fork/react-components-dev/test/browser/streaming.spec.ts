@@ -148,3 +148,41 @@ for (const layer of [undefined, "openui"]) {
     expect(errors).toEqual([]);
   });
 }
+
+for (const layer of [undefined, "openui"]) {
+  test(`streaming ${layer ?? "unlayered"}, into a reserved empty sheet while the document loads`, async ({
+    page,
+    request,
+  }) => {
+    const errors: string[] = [];
+    page.on("pageerror", (error) => errors.push(error.message));
+    const navigation = await page.goto(
+      `/streaming.html?layer=${layer ?? ""}&adoptEarly=true&reserve=true`,
+      { waitUntil: "commit" },
+    );
+    const response = navigation!.headers()["x-streaming-response"]!;
+    await page.waitForFunction(() => !!(window as FixtureWindow).streamingFixture);
+    // The Suspense boundary holds the stream open, so the document is still loading. The reserved
+    // tag is complete (the parser is past it), so the first registry tag and client rules join it
+    // now rather than when loading ends.
+    await page.evaluate(() => (window as FixtureWindow).streamingFixture!.registerLate());
+    await page.evaluate(() => new Promise<void>((resolve) => setTimeout(resolve, 50)));
+    const loading = await page.evaluate(() => ({
+      readyState: document.readyState,
+      tags: document.querySelectorAll("style#openui-styles").length,
+      text: document.getElementById("openui-styles")!.textContent!,
+      stored: (window as FixtureWindow).streamingFixture!.getComponentStyles(),
+    }));
+    expect(loading.readyState).toBe("loading");
+    expect(loading.tags).toBe(1);
+    expect(loading.text.trim().length).toBeGreaterThan(0);
+    expect(loading.text).toBe(loading.stored);
+
+    expect((await request.get(`/streaming-release?response=${response}`)).ok()).toBe(true);
+    expect((await request.get(`/streaming-complete?response=${response}`)).ok()).toBe(true);
+    await expect(page.locator("#root")).toHaveAttribute("data-hydrated", "true");
+    await expect(page.getByTestId("late")).toHaveCSS("padding", "19px");
+    await expect(page.locator("style#openui-styles")).toHaveCount(1);
+    expect(errors).toEqual([]);
+  });
+}

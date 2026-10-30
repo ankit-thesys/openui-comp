@@ -25,12 +25,14 @@ export function firstSheet(response: string) {
 }
 
 // `splitFirst` sends the first registry tag in two writes, with an async script ahead of it in
-// <head>, so the library can load while that tag's text is still incomplete.
+// <head>, so the library can load while that tag's text is still incomplete. `reserve` puts the
+// head recipe's empty `openui-styles` tag first, so every registry tag is a later one.
 export function streamPage(
   res: ServerResponse,
   layer?: string,
   adoptEarly = false,
   splitFirst = false,
+  reserve = false,
 ) {
   configureStyles({ layer });
   const registry = createStyleRegistry();
@@ -66,6 +68,7 @@ export function streamPage(
       res.write(
         `<!doctype html><html><head>` +
           (layer ? `<style>@layer openui,app;</style>` : "") +
+          (reserve ? `<style id="openui-styles"></style>` : "") +
           (splitFirst ? `<script type="module" async src="/streaming.js"></script>` : ""),
       );
       if (splitFirst) {

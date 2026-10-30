@@ -64,6 +64,7 @@ createServer(async (req, res) => {
       searchParams.get("layer") === "openui" ? "openui" : undefined,
       searchParams.get("adoptEarly") === "true",
       searchParams.get("splitFirst") === "true",
+      searchParams.get("reserve") === "true",
     );
   }
   // Only bare names are served, so requests cannot reach outside the fixture directories.
