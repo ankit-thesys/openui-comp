@@ -12,7 +12,7 @@ import { expect, it } from "vitest";
 
 it("marks a complete streaming payload so a partially received style tag is never consumed", () => {
   const registry = createStyleRegistry();
-  expect(registry.flush()).toBe(`${getComponentStyles()}/*openui-stream-end*/`);
+  expect(registry.flush()).toBe(`/*openui-stream*/${getComponentStyles()}/*openui-stream-end*/`);
   expect(registry.flush()).toBe("");
 });
 
@@ -24,7 +24,7 @@ it("flushes only rules not yet emitted for this response without draining the fu
   renderToString(<div className={early}>Early</div>);
   const first = registry.flush();
   const cumulative = getComponentStyles();
-  expect(first).toBe(`${cumulative}/*openui-stream-end*/`);
+  expect(first).toBe(`/*openui-stream*/${cumulative}/*openui-stream-end*/`);
   expect(first).toContain(`.${early}{color:rgb(41, 53, 67);}`);
   expect(registry.flush()).toBe("");
 
@@ -32,7 +32,7 @@ it("flushes only rules not yet emitted for this response without draining the fu
     padding: 147px;
   `;
   renderToString(<div className={late}>Late</div>);
-  expect(registry.flush()).toBe(`.${late}{padding:147px;}/*openui-stream-end*/`);
+  expect(registry.flush()).toBe(`/*openui-stream*/.${late}{padding:147px;}/*openui-stream-end*/`);
   expect(registry.flush()).toBe("");
   expect(getComponentStyles()).toContain(cumulative);
   expect(getComponentStyles()).toContain(`.${late}{padding:147px;}`);
@@ -54,12 +54,14 @@ it("keeps interleaved responses independent, including rules cached before eithe
   const late = css`
     margin: 147px;
   `;
-  const delta = `.${late}{margin:147px;}/*openui-stream-end*/`;
+  const delta = `/*openui-stream*/.${late}{margin:147px;}/*openui-stream-end*/`;
   expect(a.flush()).toBe(delta);
   expect(b.flush()).toBe(delta);
   expect(a.flush()).toBe("");
   expect(b.flush()).toBe("");
-  expect(createStyleRegistry().flush()).toBe(`${getComponentStyles()}/*openui-stream-end*/`);
+  expect(createStyleRegistry().flush()).toBe(
+    `/*openui-stream*/${getComponentStyles()}/*openui-stream-end*/`,
+  );
 });
 
 it("wraps each delta, including late keyframes, in the layer configured at flush time", () => {
@@ -73,7 +75,7 @@ it("wraps each delta, including late keyframes, in the layer configured at flush
   try {
     const delta = registry.flush();
     expect(delta).toBe(
-      `@layer app.openui{@keyframes ${animation}{from{opacity:0.147;}to{opacity:0.741;}}.${name}{animation:${animation} 147ms linear;}}/*openui-stream-end*/`,
+      `/*openui-stream*/@layer app.openui{@keyframes ${animation}{from{opacity:0.147;}to{opacity:0.741;}}.${name}{animation:${animation} 147ms linear;}}/*openui-stream-end*/`,
     );
     expect(registry.flush()).toBe("");
     expect(getComponentStyles()).toContain(

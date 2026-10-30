@@ -1,6 +1,9 @@
 import { css as gooberCss } from "goober";
 
 const SHEET_ID = "openui-styles";
+// A registry flush is `STREAM_START…STREAM_END`, so the browser can tell a tag whose text is still
+// arriving (split across network chunks) from a complete one, the first tag included.
+const STREAM_START = "/*openui-stream*/";
 const STREAM_END = "/*openui-stream-end*/";
 
 let rules = "";
@@ -8,6 +11,8 @@ let rules = "";
 let pending: string[] = [];
 let scheduled = false;
 let seeded = false;
+// The first tag's rules are in `rules`. Waits while that tag is still streaming in.
+let adopted = false;
 // The app-wide cascade layer (configureStyles). It wraps the sheet when it is written, so rules
 // registered before configureStyles, at import time, end up in the layer too.
 let layer: string | undefined;
@@ -24,9 +29,30 @@ const wrapped = (text: string) => (layer && text ? `@layer ${layer}{${text}}` : 
 const inBrowser = () => typeof window === "object";
 
 const sheetText = (tag: Element) => {
-  const text = (tag.textContent ?? "").trim();
+  let text = (tag.textContent ?? "").trim();
+  if (text.startsWith(STREAM_START)) text = text.slice(STREAM_START.length);
   return text.endsWith(STREAM_END) ? text.slice(0, -STREAM_END.length).trim() : text;
 };
+
+// A registry tag the parser has not finished: its start marker (or a piece of it) without the end
+// marker. An empty tag counts while the document is still loading, since its text may be next.
+// A tag without the start marker, a host's reserved sheet or a cumulative one, is complete.
+function streaming(tag: Element): boolean {
+  const text = tag.textContent ?? "";
+  if (text.startsWith(STREAM_START)) return !text.trimEnd().endsWith(STREAM_END);
+  if (!text) return document.readyState === "loading";
+  return STREAM_START.startsWith(text);
+}
+
+// Takes the first tag's rules into the store once its text is complete.
+function adopt(): boolean {
+  if (adopted) return true;
+  const tag = document.getElementById(SHEET_ID);
+  if (tag && streaming(tag)) return false;
+  adopted = true;
+  if (tag) rules = serverRules(sheetText(tag)) + rules;
+  return true;
+}
 const streamedSheets = () => document.querySelectorAll<HTMLStyleElement>(`style#${SHEET_ID}`);
 
 // Split only between complete top-level rules. A css call can emit a base rule, states, media
@@ -83,8 +109,7 @@ function serverRules(text: string): string {
 function seed() {
   if (seeded || !inBrowser()) return;
   seeded = true;
-  const tag = document.getElementById(SHEET_ID);
-  if (tag) rules = serverRules(sheetText(tag)) + rules;
+  adopt();
   // Streaming may continue after this module loads. Watch the whole document because later
   // flushes can arrive in the body, and a parser can add a style's text after adding the element.
   const observer = new MutationObserver((records) => {
@@ -107,6 +132,9 @@ function seed() {
     characterData: true,
     subtree: true,
   });
+  // An empty first tag waits for the parser; the end of loading settles it.
+  if (document.readyState === "loading")
+    document.addEventListener("readystatechange", () => scheduleWrite(), { once: true });
   if (streamedSheets().length > 1) scheduleWrite();
 }
 
@@ -141,6 +169,9 @@ export function flushComponentStyles() {
   scheduled = false;
   if (!inBrowser()) return;
   seed();
+  // Never touch the first tag mid-parse: replacing its text would put the rest of the payload
+  // after ours. Pending rules wait; the observer reschedules as the text arrives.
+  if (!adopt()) return;
   const tags = [...streamedSheets()];
   const complete = tags.filter(
     (tag, index) => index > 0 && (tag.textContent ?? "").trim().endsWith(STREAM_END),
@@ -220,7 +251,7 @@ export const getComponentStyles = (): string => {
 };
 
 export type StyleRegistry = {
-  /** New layer-wrapped rules plus a completion comment; empty if nothing new after a flush. */
+  /** New layer-wrapped rules between start and end comments; empty if nothing new after a flush. */
   flush(): string;
 };
 
@@ -234,9 +265,9 @@ export function createStyleRegistry(): StyleRegistry {
       emitted = rules.length;
       const result = wrapped(text) || (first ? " " : "");
       first = false;
-      // Transport can split even a style tag across chunks. The browser must not remove it
-      // before its entire CSS payload arrives, so preserve this comment when inlining a flush.
-      return result ? result + STREAM_END : "";
+      // Transport can split even a style tag across chunks. The browser must not read, rewrite or
+      // remove it before its entire CSS payload arrives, so keep both comments when inlining.
+      return result ? STREAM_START + result + STREAM_END : "";
     },
   };
 }

@@ -7,8 +7,9 @@ getComponentStyles();
 
 export const streamingFixture = {
   getComponentStyles,
-  registerLate() {
-    return lateStyles(document.getElementById("root")!.dataset["response"]!);
+  // `response` for a spec that registers before #root is parsed.
+  registerLate(response = document.getElementById("root")!.dataset["response"]!) {
+    return lateStyles(response);
   },
   hydrate() {
     const root = document.getElementById("root")!;

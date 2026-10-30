@@ -583,9 +583,10 @@ registry per response (in React, keep it in state as above), never at module sco
 flush includes every rule registered so far, including cached/import-time styles; subsequent
 flushes return only newly registered rules, wrapped in the layer configured at flush time.
 A flush with nothing new returns `""`; the first flush always reserves the sheet, even if the
-store is empty. Every nonempty result ends with a harmless `/*openui-stream-end*/` completion
-comment. Inline the result unchanged: the browser uses that marker to wait for the full payload
-when the network splits a style tag across chunks. `getComponentStyles()` remains cumulative and
+store is empty. Every nonempty result starts with a harmless `/*openui-stream*/` comment and
+ends with `/*openui-stream-end*/`. Inline the result unchanged: the browser uses those markers to
+wait for the full payload when the network splits a style tag across chunks, the first tag
+included, before it reads, rewrites or removes that tag. `getComponentStyles()` remains cumulative and
 neither API drains the shared store. Concurrent responses keep independent flush positions;
 each may include a harmless superset of another response's rules.
 
