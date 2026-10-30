@@ -131,7 +131,7 @@ Recorded from the review of the full rollout ([#89](https://github.com/ankit-the
 - **Q8 prose, attribution.** The prose rule shape stays opted in for MarkDownRenderer only. Components that compose MarkDownRenderer carry its prose rules, and the checker attributes those rules to MarkDownRenderer instead of opting each composer in.
 - **Tailwind preflight, owned by components.** A component whose layout depends on `box-sizing` or on inherited typography declares it itself. The Tailwind bench pins neither, so it measures preflight's real effect.
 
-Proposed after the hook-free `css` prototype (branch `prototype/hookfree-css`, `fork/prototypes/hookfree-css/`) (2026-10-30). Status: accepted by the maintainer, not yet implemented.
+Accepted after the hook-free `css` prototype (2026-10-30), detailed in [ADR 0002](0002-hookfree-css.md), which supersedes Q27, Q33 and Q34. Not yet implemented.
 
 - **Q27 and Q33, one layer for the whole app.** `configureStyles({ layer })` sets the cascade layer once for the app, replacing `<ThemeProvider cssLayer>`; there are no per-subtree layers and no doubled class sets. The layer is applied when the sheet is written, not when a rule registers: class names never depend on it, so `css` calls made at import time, before `configureStyles`, still end up in the layer, and a later call rewrites the sheet. Breaking for the beta.
 - **Q34 and Q15, `css` and `keyframes` are public.** They return plain class-name strings. Style modules define their classes at module level, marked `/*#__PURE__*/`; `useStyles`, the factories and the per-layer cache go away. Rules now register at import, not first render, so the server sheet holds every imported component's rules.
