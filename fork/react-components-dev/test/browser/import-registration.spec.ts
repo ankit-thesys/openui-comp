@@ -22,6 +22,7 @@ test("importing every component leaves host Goober and html alone beyond token d
     await page.evaluate(() => (window as Window & { exportCount?: number }).exportCount),
   ).toBeGreaterThan(100);
   const imported = await observe(page);
+  expect(imported.componentSheet).toMatch(/\.go\d+\{/);
   expect(imported.host).toBeNull();
   expect(imported.html).toHaveLength(1);
   const [marker] = imported.html;
@@ -35,6 +36,11 @@ test("importing every component leaves host Goober and html alone beyond token d
   await page.evaluate(() => (window as Window & { renderButton?: () => void }).renderButton!());
   await expect(page.locator(".openui-button")).toBeVisible();
   const rendered = await observe(page);
+  const classes = (await page.locator(".openui-button").getAttribute("class"))!
+    .split(" ")
+    .filter((name) => /^go\d+$/.test(name));
+  expect(classes.length).toBeGreaterThan(0);
+  for (const name of classes) expect(imported.componentSheet).toContain(`.${name}{`);
   expect(rendered.componentSheet).toMatch(/\.go\d+\{/);
   expect(rendered.rules).toEqual(imported.rules);
   expect(rendered.host).toBeNull();

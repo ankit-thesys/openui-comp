@@ -1,5 +1,5 @@
 import type { StyleCss } from "../../../../../styles/useStyles";
-import { buttonStyles } from "../../../../Button/button.styles";
+import "../../../../Button/button.styles";
 
 export const names = {
   root: "openui-default-legend",
@@ -18,8 +18,7 @@ export const names = {
 } as const;
 
 export const defaultLegendStyles = (css: StyleCss) => {
-  // Register composed controls first so these equal-weight part rules also win on first render.
-  buttonStyles(css);
+  // Button registers on import, before these equal-weight part rules.
   return {
     root: css`
       display: flex;

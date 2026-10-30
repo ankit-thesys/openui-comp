@@ -1,5 +1,5 @@
 import type { StyleCss } from "../../../../../styles/useStyles";
-import { buttonStyles } from "../../../../Button/button.styles";
+import "../../../../Button/button.styles";
 import { iconButtonStyles } from "../../../../IconButton/iconButton.styles";
 
 export const names = {
@@ -23,8 +23,7 @@ export const names = {
 } as const;
 
 export const stackedLegendStyles = (css: StyleCss) => {
-  // Register composed controls first so these equal-weight part rules also win on first render.
-  buttonStyles(css);
+  // Button registers on import; register IconButton before these equal-weight part rules too.
   iconButtonStyles(css);
   return {
     root: css`

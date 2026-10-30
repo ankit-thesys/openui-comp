@@ -11,11 +11,14 @@ afterEach(() => configureStyles({ layer: undefined }));
 
 const importedCss = getComponentStyles();
 
-it("does not register the shared rule at import", () => {
-  expect(importedCss).not.toContain(".openui-border-box");
+it("registers the shared border-box rule before its consumers render", () => {
+  const { html } = renderAndCollect(sharedBaseConsumers.map(({ element }) => element));
+  const rules = sharedRules(html, importedCss);
+  expect(rules).toHaveLength(1);
+  expect(importedCss).toContain(`${rules[0]!.selector}{box-sizing:border-box;}`);
 });
 
-it("registers a flat border-box rule on the three opted-in roots when they render", () => {
+it("applies the flat border-box rule to the three opted-in roots", () => {
   const { html, css } = renderAndCollect(sharedBaseConsumers.map(({ element }) => element));
   expect(css).toContain("box-sizing:border-box");
   const rules = sharedRules(html, css);

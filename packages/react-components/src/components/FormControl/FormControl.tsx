@@ -16,7 +16,7 @@ export interface FormControlProps {
 const FormControl = forwardRef<HTMLDivElement, FormControlProps>((props, ref) => {
   const { children, className, style, hasError = false } = props;
   const styles = useStyles(formControlStyles);
-  const base = useStyles(baseStyles);
+  const base = baseStyles;
   const formControlContextValue = useMemo(() => ({ hasError }), [hasError]);
   return (
     <div

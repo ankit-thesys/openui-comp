@@ -148,8 +148,8 @@ const namesOf = (folder: string) => {
   return names;
 };
 
-// Shared factories other families register through useStyles. Their focused contracts inspect only
-// the CSS registered by rendering those public components.
+// Shared styles used by other families. Their focused contracts select the rules carried by
+// those public components, whether they registered at import or during rendering.
 export const sharedStyleContracts = [
   { folder: "SharedBase", names: namesOf("SharedBase") },
   { folder: "SkeletonPulse", names: namesOf("SkeletonPulse") },
@@ -162,7 +162,7 @@ const product = <T,>(...lists: T[][]): T[][] =>
   );
 
 // Composed components keep their own names plus their dependencies' public rendered classes.
-// Read only after CSS collection, so this never registers a dependency before the contract render.
+// Read only after CSS collection, so remaining factories are first called by the contract render.
 const composedNames = (element: ReactElement): StableNames =>
   Object.fromEntries(
     [...stableClassesIn(renderToString(element))].map((name, index) => [

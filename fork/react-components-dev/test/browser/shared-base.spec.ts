@@ -1,18 +1,27 @@
-// #90: shared border-box and pulse survive <html> rewrites, register at render, honour layers,
+// Shared border-box and pulse survive <html> rewrites, honour layers,
 // and remain overridable by one stable class before/after the library.
 import { expect, test } from "@playwright/test";
 
-test("shared styles register at render and survive an html class rewrite", async ({ page }) => {
+test("shared border-box registers at import and survives an html class rewrite", async ({
+  page,
+}) => {
   await page.goto("/shared-base.html?lazy=1");
   await page.waitForFunction(() => typeof window.mountFixture === "function");
   const imported = await page.evaluate(
     () => document.getElementById("openui-styles")?.textContent ?? "",
   );
-  expect(imported).not.toContain(".openui-border-box");
   expect(imported).not.toMatch(/@keyframes [\w-]+\{0%\{opacity:0\.3;/);
   await page.evaluate(() => window.mountFixture());
   await expect(page.locator(".openui-border-box")).toHaveCount(3);
   await expect(page.locator(".openui-skeleton-pulse")).toHaveCount(18);
+  const roots = await page
+    .locator(".openui-border-box")
+    .evaluateAll((elements) => elements.map((element) => [...element.classList]));
+  const shared = roots[0]!.filter(
+    (name) => /^go\d+$/.test(name) && roots.every((classes) => classes.includes(name)),
+  );
+  expect(shared).toHaveLength(1);
+  expect(imported).toContain(`.${shared[0]}{box-sizing:border-box;}`);
   await page.evaluate(() => {
     document.documentElement.className = "consumer-html";
   });

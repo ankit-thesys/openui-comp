@@ -2,11 +2,8 @@
   "fork/react-components-dev/README.md",
   "fork/react-components-dev/test/browser/tabs.spec.ts",
   "fork/react-components-dev/test/unit/contract/checks.ts",
-  "fork/react-components-dev/test/unit/contract/components.tsx",
   "packages/react-components/src/components/Accordion/Accordion.tsx",
   "packages/react-components/src/components/Accordion/accordion.styles.ts",
-  "packages/react-components/src/components/Button/Button.tsx",
-  "packages/react-components/src/components/Button/button.styles.ts",
   "packages/react-components/src/components/Buttons/Buttons.tsx",
   "packages/react-components/src/components/Buttons/buttons.styles.ts",
   "packages/react-components/src/components/Calendar/Calendar.tsx",
@@ -176,7 +173,6 @@
   "packages/react-components/src/components/Select/select.styles.ts",
   "packages/react-components/src/components/Separator/Separator.tsx",
   "packages/react-components/src/components/Separator/separator.styles.ts",
-  "packages/react-components/src/components/SharedBase/base.styles.ts",
   "packages/react-components/src/components/Skeleton/PieChartSkeleton.tsx",
   "packages/react-components/src/components/Skeleton/Skeleton.tsx",
   "packages/react-components/src/components/Skeleton/SkeletonBar.tsx",
@@ -236,7 +232,5 @@
   "packages/react-components/src/components/TooltipWrapper/tooltipWrapper.styles.ts",
   "packages/react-components/src/components/VisualCardBlock/VisualCardBlock.tsx",
   "packages/react-components/src/components/VisualCardBlock/card.styles.ts",
-  "packages/react-components/src/components/_shared/cards/CardBlockLayout.tsx",
-  "packages/react-components/src/components/_shared/cards/cardBlockLayout.styles.ts",
   "packages/react-components/src/styles/useStyles.ts"
 ]

@@ -15,7 +15,7 @@ export interface TagBlockProps {
 
 export const TagBlock = forwardRef<HTMLDivElement, TagBlockProps>((props, ref) => {
   const css = useStyles(tagBlockStyles);
-  const base = useStyles(baseStyles);
+  const base = baseStyles;
   return (
     <div
       ref={ref}

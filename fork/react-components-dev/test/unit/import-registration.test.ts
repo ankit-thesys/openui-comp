@@ -21,7 +21,7 @@ it("imports every built module without registering CSS in the host Goober sheet"
   expect(files.length).toBeGreaterThan(100);
   for (const file of files) await import(pathToFileURL(file).href);
   const { getComponentStyles } = await import(pathToFileURL(join(dist, "index.mjs")).href);
-  expect(getComponentStyles().length).toBeGreaterThan(0);
+  expect(getComponentStyles()).toMatch(/\.go\d+\{/);
   const require = createRequire(library("package.json"));
   const host = await import(
     pathToFileURL(require.resolve("goober").replace("goober.cjs", "goober.modern.js")).href

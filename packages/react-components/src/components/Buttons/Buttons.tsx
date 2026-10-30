@@ -21,7 +21,7 @@ export interface ButtonsProps extends HTMLAttributes<HTMLDivElement> {
 export const Buttons = forwardRef<HTMLDivElement, ButtonsProps>((props, ref) => {
   const { className, style, variant = "horizontal", children, ...rest } = props;
   const styles = useStyles(buttonsStyles);
-  const base = useStyles(baseStyles);
+  const base = baseStyles;
   return (
     <div
       ref={ref}

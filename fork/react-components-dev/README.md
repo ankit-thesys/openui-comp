@@ -30,6 +30,50 @@ pnpm --filter @openuidev/react-components-dev ci
 `ci` runs the library's typecheck and lint, this package's typecheck, the unit tests, and
 Prettier over the library's `src` and these tests.
 
+### Hook-free conversion batches (#132–#137)
+
+After the styling infrastructure expansion, run the one-off converter from this package.
+Arguments are files or folders relative to the library's `src/`; folders are recursive:
+
+```bash
+# Preview a batch without writing files.
+node scripts/convert-styles.mjs --dry-run components/Button components/SharedBase components/_shared
+node scripts/convert-styles.mjs components/Button components/SharedBase components/_shared
+# Later batches pass their own folders, for example:
+node scripts/convert-styles.mjs components/Input components/TextArea
+```
+
+The script imports `css` from the library's styling module, replaces factories with
+`/*#__PURE__*/` module constants, and rewrites their callers throughout the library, including
+callers outside the selected folders. It preserves property order and CSS call order. Block
+bodies use an immediately invoked function to preserve local declarations and registration
+order; helpers returning factories and helpers accepting a `css` parameter are supported too.
+Registration-only calls become imports so their dependency order survives. Unused styling
+imports are removed, and component `"use client"` directives stay first. Running the same batch
+again must print `0 file(s) changed.`
+
+Review its `Could not fully convert` output: unusual signatures and old API comments need hand
+fixes. The script deliberately leaves the ratchet list alone. Remove only converted files from
+`test/old-styling-api.json`; a consumer still calling another factory stays listed. Review the
+diff for template text, registration order and stale import-time assertions before validating:
+
+```bash
+pnpm --filter @openuidev/react-components build
+pnpm run ci
+pnpm css:check
+pnpm docs:selectors
+pnpm exec playwright test --list
+```
+
+The selector reference must stay unchanged. `css:check` compares server, layer and client-only
+CSS plus registration order against the pre-migration capture. Without Chromium, run
+`pnpm exec vitest run test/unit/css-snapshot.test.tsx test/unit/css-snapshot-layer.test.tsx`
+and `node scripts/css-snapshot.mjs --server-only`, then leave the full `css:check` to the
+orchestrator. Run only the batch's browser parity specs. For this tracer those are
+`button.parity.spec.ts`, `shared-base.parity.spec.ts` and `card-block-layout.parity.spec.ts`;
+also run `import-registration.spec.ts` and `shared-base.spec.ts` for their updated import checks.
+Do not record new CSS or parity baselines to make a conversion pass.
+
 ## Library development
 
 ```sh
@@ -42,21 +86,22 @@ remain external dependencies. Build inputs contain no old SCSS or generated CSS.
 
 ### Authoring styles
 
-Converted components follow the [styling contract](../../packages/react-components/README.md#styling-and-overrides). A
-style module exports a `names` constant with its stable classes, the single source
-for the markup and the generated reference, and a factory that receives Goober's
-`css` and returns plain class maps. Components read them with the internal
-`useStyles` hook, which registers the rules on first render:
+Components follow the [styling contract](../../packages/react-components/README.md#styling-and-overrides).
+A style module exports a `names` constant with its stable classes, the single source for the
+markup and the generated reference, and a module-level class map built with the imported `css`.
+Rules register on import. Remaining `useStyles` factories coexist until their conversion batch:
 
 ```ts
 // example.styles.ts
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-example",
   label: "openui-example-label",
   size: { small: "openui-example--size-small", medium: "openui-example--size-medium" },
 } as const;
 
-export const exampleStyles = (css: StyleCss) => ({
+export const exampleStyles = /*#__PURE__*/ {
   root: css`
     display: flex;
     &:disabled {
@@ -65,10 +110,10 @@ export const exampleStyles = (css: StyleCss) => ({
   `,
   size: { small: css`padding: 4px;`, medium: css`padding: 8px;` },
   label: css`font-weight: 500;`,
-});
+};
 
 // Example.tsx
-const styles = useStyles(exampleStyles);
+const styles = exampleStyles;
 <div className={clsx(styles.root, styles.size[size], names.root, names.size[size], className)} />;
 ```
 
@@ -277,9 +322,9 @@ Playwright's setup also bundles every parity fixture against the #72 source, ext
 
 ### Shared helpers (#90)
 
-`src/components/SharedBase/base.styles.ts` and `src/components/SkeletonPulse/skeletonPulse.styles.ts`
-are factories registered
-by their users through `useStyles`, with no import-time registration or `<html>` marker.
+`src/components/SharedBase/base.styles.ts` registers its module-level border-box rule on import.
+`src/components/SkeletonPulse/skeletonPulse.styles.ts` remains a factory registered by its users
+through `useStyles` until its migration batch. Neither adds an `<html>` marker.
 Their `names` appear as SharedBase and SkeletonPulse in the generated reference.
 `sharedStyleContracts` in `components.tsx` records these helpers separately; their focused
 `SharedBase.contract.test.tsx` and `SkeletonPulse.contract.test.tsx` select CSS by the generated
@@ -288,7 +333,7 @@ The border-box callers' owned styles are migrated by #91 and #96, and the Skelet
 family is fully migrated by #101. These families are covered by `migratedComponents`.
 
 `shared-base.spec.ts` covers both stable helper classes before/after the library, in default
-and layer mode, import-time inactivity, an `<html class>` rewrite, root-only box sizing and
+and layer mode, import-time border-box registration, an `<html class>` rewrite, root-only box sizing and
 actual pulse progression. `shared-base.parity.spec.ts` and `skeleton-pulse.parity.spec.ts`
 use the `parity-shared-base` and `parity-skeleton-pulse` fixtures. Capture the new
 `shared-base.json` and `skeleton-pulse.json` baselines from #72 with the command above.
