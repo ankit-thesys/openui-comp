@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Button",
+    "selector": ".openui-button",
+    "source": "button.json: light primary/medium/default rest",
+    "styles": {
+      "background-color": "oklch(0.546 0.215 262.881)",
+      "border-top-left-radius": "8px",
+      "padding-top": "7px",
+      "padding-right": "10px",
+      "padding-bottom": "7px",
+      "padding-left": "10px",
+      "font-size": "16px"
+    }
+  },
+  {
+    "name": "Card",
+    "selector": ".openui-card",
+    "source": "card.json: light clear/standard rest",
+    "styles": {
+      "background-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "16px",
+      "padding-top": "0px",
+      "padding-right": "18px",
+      "padding-bottom": "0px",
+      "padding-left": "18px",
+      "font-size": "16px"
+    }
+  },
+  {
+    "name": "TextInput (Input)",
+    "selector": ".openui-input",
+    "source": "input.json: light default rest",
+    "styles": {
+      "background-color": "oklch(0.097 0 0 / 0.02)",
+      "border-top-left-radius": "8px",
+      "padding-top": "5px",
+      "padding-right": "11px",
+      "padding-bottom": "5px",
+      "padding-left": "11px",
+      "font-size": "16px"
+    }
+  },
+  {
+    "name": "Select trigger",
+    "selector": ".openui-select-trigger",
+    "source": "select.json: light closed default/false/false/false rest",
+    "styles": {
+      "background-color": "oklch(0.097 0 0 / 0.02)",
+      "border-top-left-radius": "8px",
+      "padding-top": "5px",
+      "padding-right": "11px",
+      "padding-bottom": "5px",
+      "padding-left": "11px",
+      "font-size": "16px"
+    }
+  },
+  {
+    "name": "Tabs",
+    "selector": ".openui-tabs",
+    "source": "tabs.json: light title/tabs rest",
+    "styles": {
+      "background-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "0px",
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "font-size": "16px"
+    }
+  },
+  {
+    "name": "Tabs active trigger",
+    "selector": ".openui-tabs-trigger[data-state=\"active\"]",
+    "source": "tabs.json: light title/trigger-active rest",
+    "styles": {
+      "background-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "0px",
+      "padding-top": "8px",
+      "padding-right": "0px",
+      "padding-bottom": "8px",
+      "padding-left": "0px",
+      "font-size": "16px"
+    }
+  },
+  {
+    "name": "MiniLineChart",
+    "selector": ".openui-mini-line-chart",
+    "source": "mini-charts.json: light line/linear/false/false rest (root part)",
+    "styles": {
+      "background-color": "rgba(0, 0, 0, 0)",
+      "border-top-left-radius": "0px",
+      "padding-top": "0px",
+      "padding-right": "0px",
+      "padding-bottom": "0px",
+      "padding-left": "0px",
+      "font-size": "16px",
+      "position": "relative",
+      "aspect-ratio": "1 / 1",
+      "min-width": "100px",
+      "min-height": "100px"
+    }
+  }
+]
