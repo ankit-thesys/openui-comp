@@ -1,5 +1,8 @@
 // Public-package fixture for #99: variants, measured scroll controls and real editing portals.
-import { Button, configureStyles, EditableTable, ThemeProvider } from "openui-under-test";
+// Configuration comes first, ahead of the contract list's top-level await.
+import "./configure-layer";
+
+import { Button, EditableTable, ThemeProvider } from "openui-under-test";
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
 import { migratedComponents } from "../../unit/contract/components";
@@ -13,7 +16,6 @@ const folders = [
   "MetricIndicator",
 ];
 const params = new URLSearchParams(location.search);
-configureStyles({ layer: params.get("layer") ?? undefined });
 function EditingExample() {
   const [data, setData] = useState([
     {
