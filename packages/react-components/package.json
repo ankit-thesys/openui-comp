@@ -39,8 +39,7 @@
   ],
   "files": [
     "dist",
-    "README.md",
-    "docs/reference/selectors.md"
+    "README.md"
   ],
   "scripts": {
     "build": "tsdown",

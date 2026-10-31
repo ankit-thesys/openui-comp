@@ -49,27 +49,32 @@ loads.
 
 ```text
 packages/react-components/
-├── src/
-│   ├── index.ts               # the public entry: every export
-│   ├── styles.ts              # the /styles entry for server rendering (generated)
-│   ├── ComponentStyles.tsx    # renders the full sheet for server HTML
-│   ├── components/            # one folder per component
-│   │   ├── Charts/            # area, bar, line, pie, radar and other charts
-│   │   ├── ThemeProvider/     # themes and token variables
-│   │   └── _shared/           # parts shared by cards, Markdown and icons
-│   ├── styles/                # the component sheet (css.ts), style tags and token defaults
-│   ├── context/               # layout and print context
-│   ├── hooks/                 # shared React hooks
-│   └── utils/                 # class name and preference helpers
-└── docs/
-    └── reference/
-        └── selectors.md       # generated list of every stable class and data attribute
+└── src/
+    ├── index.ts               # the public entry: every export
+    ├── styles.ts              # the /styles entry for server rendering (generated)
+    ├── ComponentStyles.tsx    # renders the full sheet for server HTML
+    ├── components/            # one folder per component
+    │   ├── Charts/            # area, bar, line, pie, radar and other charts
+    │   ├── ThemeProvider/     # themes and token variables
+    │   └── _shared/           # parts shared by cards, Markdown and icons
+    ├── styles/                # the component sheet (css.ts), style tags and token defaults
+    ├── context/               # layout and print context
+    ├── hooks/                 # shared React hooks
+    └── utils/                 # class name and preference helpers
 ```
 
 ## Stable selectors
 
-Each component exposes stable `openui-*` classes and data attributes for overrides. The full
-list is in [docs/reference/selectors.md](docs/reference/selectors.md).
+Each component exposes stable `openui-*` classes and data attributes for overrides:
+
+```css
+.openui-callout--variant-warning {
+  border-left: 4px solid #f59e0b;
+}
+.openui-tabs-trigger[data-state="active"] {
+  color: #7c3aed;
+}
+```
 
 ## Development
 
