@@ -14,26 +14,24 @@ export const names = {
   down: "openui-scroll-buttons-vertical-down",
 } as const;
 
-export const scrollButtonsVerticalStyles = (() => {
-  return {
-    root: css`
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      width: 36px;
-      height: calc(100% - 44px);
-      flex-shrink: 0;
-      padding-left: var(--openui-space-2xs, 4px);
-    `,
-    button: css`
-      pointer-events: auto;
-      background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
-      &:disabled {
-        visibility: hidden;
-        cursor: not-allowed;
-        transition: visibility 0.1s linear;
-      }
-    `,
-  };
-})();
+export const scrollButtonsVerticalStyles = {
+  root: css`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 36px;
+    height: calc(100% - 44px);
+    flex-shrink: 0;
+    padding-left: var(--openui-space-2xs, 4px);
+  `,
+  button: css`
+    pointer-events: auto;
+    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
+    &:disabled {
+      visibility: hidden;
+      cursor: not-allowed;
+      transition: visibility 0.1s linear;
+    }
+  `,
+};

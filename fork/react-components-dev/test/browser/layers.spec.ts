@@ -4,6 +4,89 @@ import type { layersFixture } from "./fixtures/layers";
 
 type FixtureWindow = Window & { layersFixture?: typeof layersFixture };
 
+test("an empty reserved sheet does not cause a late-configuration warning", async ({ page }) => {
+  const warnings: string[] = [];
+  page.on("console", (message) => {
+    if (message.type() === "warning" && message.text().includes("[OpenUI]"))
+      warnings.push(message.text());
+  });
+  await page.route("**/layers-reserved.html?*", (route) =>
+    route.fulfill({
+      contentType: "text/html",
+      body: `<!doctype html><html><head><style id="openui-styles">\n </style></head>
+        <body><div id="root"></div><script type="module" src="/layers-development.js"></script></body></html>`,
+    }),
+  );
+  await page.goto("/layers-reserved.html?layer=openui");
+  await expect(page.getByTestId("default")).toBeVisible();
+  expect(warnings).toEqual([]);
+  // Playwright's text assertions skip <style> content, so read textContent.
+  await expect
+    .poll(() => page.locator("style#openui-styles").textContent())
+    .toContain("@layer openui{");
+});
+
+// A hand-written server sheet may start on its own line. The browser still reads its layer, so the
+// same layer configured in the app entry is no change and appended rules join that layer.
+test("an indented layered server sheet keeps its layer without a warning", async ({ page }) => {
+  const warnings: string[] = [];
+  page.on("console", (message) => {
+    if (message.type() === "warning" && message.text().includes("[OpenUI]"))
+      warnings.push(message.text());
+  });
+  await page.route("**/layers-indented.html?*", (route) =>
+    route.fulfill({
+      contentType: "text/html",
+      body: `<!doctype html><html><head><style data-openui-styles>
+        @layer openui{.server-only{color:rgb(1, 2, 3)}}
+      </style></head>
+        <body><div id="root"></div><script type="module" src="/layers-development.js"></script></body></html>`,
+    }),
+  );
+  await page.goto("/layers-indented.html?layer=openui");
+  await expect(page.getByTestId("default")).toBeVisible();
+  expect(warnings).toEqual([]);
+  // Playwright's text assertions skip <style> content, so read textContent.
+  await expect
+    .poll(() => page.locator("style#openui-styles").textContent())
+    .toContain("@layer openui{");
+});
+
+for (const environment of ["development", "production"]) {
+  test(`late configuration warns only in development: ${environment}`, async ({ page }) => {
+    const warnings: string[] = [];
+    page.on("console", (message) => {
+      if (message.type() === "warning" && message.text().includes("[OpenUI]"))
+        warnings.push(message.text());
+    });
+    const fixture = environment === "development" ? "layers-development" : "layers";
+    await page.goto(`/${fixture}.html?layer=openui`);
+    await expect(page.getByTestId("default")).toBeVisible();
+    const sheet = page.locator("style#openui-styles");
+    const before = await sheet.textContent();
+
+    await page.evaluate(() => {
+      (window as FixtureWindow).layersFixture!.configureStyles({ layer: "openui" });
+    });
+    expect(warnings).toEqual([]);
+    await page.evaluate(() => {
+      (window as FixtureWindow).layersFixture!.configureStyles({ layer: "later" });
+    });
+    expect(warnings).toEqual(
+      environment === "development"
+        ? [expect.stringContaining("configureStyles was called after component rules were written")]
+        : [],
+    );
+    expect(await sheet.textContent()).toBe(before);
+    const name = await page.evaluate(
+      () => (window as FixtureWindow).layersFixture!.css`color: rgb(71, 83, 97);`,
+    );
+    await expect
+      .poll(() => sheet.textContent())
+      .toBe(`${before}@layer later{.${name}{color:rgb(71, 83, 97);}}`);
+  });
+}
+
 const OVERRIDE = {
   color: "rgb(1, 2, 3)",
   "background-color": "rgb(4, 5, 6)",
@@ -79,60 +162,6 @@ test("without configuration the whole sheet stays unlayered", async ({ page }) =
   await page.goto("/layers.html");
   for (const id of ["default", "outside", "inherited", "nested", "imported"])
     expect(await layersOf(page, id)).toEqual([""]);
-});
-
-test("a later call rewrites the sheet in place, including lazy styles and keyframes", async ({
-  page,
-}) => {
-  const warnings: string[] = [];
-  page.on("console", (message) => {
-    if (message.type() === "warning") warnings.push(message.text());
-  });
-  await page.goto("/layers.html");
-  await expect(page.getByTestId("default")).toBeVisible();
-  const result = await page.evaluate(async () => {
-    const fixture = (window as FixtureWindow).layersFixture!;
-    const tag = document.getElementById("openui-styles") as HTMLStyleElement;
-    const button = document.querySelector('[data-testid="default"]')!;
-    const classes = button.className;
-    const before = tag.textContent!;
-    fixture.configureStyles({ layer: "openui" });
-    await Promise.resolve();
-    const layered = tag.textContent;
-    const { lazy, animation } = await fixture.loadLater();
-    await Promise.resolve();
-    const withLazy = tag.textContent!;
-    fixture.configureStyles({ layer: undefined });
-    await Promise.resolve();
-    const unlayered = tag.textContent!;
-    fixture.configureStyles({ layer: "app.openui" });
-    await Promise.resolve();
-    return {
-      before,
-      layered,
-      withLazy,
-      unlayered,
-      switched: tag.textContent,
-      stored: fixture.getComponentStyles(),
-      lazy,
-      animation,
-      sameTag: tag === document.getElementById("openui-styles"),
-      sameClasses: classes === button.className,
-    };
-  });
-  expect(result.layered).toBe(`@layer openui{${result.before}}`);
-  expect(result.withLazy.match(/@layer /g)).toHaveLength(1);
-  expect(result.withLazy).toContain(`.${result.lazy}{animation:${result.animation} 3s linear;`);
-  expect(result.withLazy).toContain(
-    `@keyframes ${result.animation}{from{opacity:0.21;}to{opacity:0.79;}}`,
-  );
-  expect(result.withLazy).toBe(`@layer openui{${result.unlayered}}`);
-  expect(result.switched).toBe(`@layer app.openui{${result.unlayered}}`);
-  expect(result.switched).toBe(result.stored);
-  expect(result.sameTag).toBe(true);
-  expect(result.sameClasses).toBe(true);
-  expect(warnings).toEqual([]);
-  expect(await layersOf(page, "outside")).toEqual(["app.openui"]);
 });
 
 test("layer mode renders Button exactly as default mode does", async ({ page }) => {

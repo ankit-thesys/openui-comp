@@ -1,20 +1,20 @@
 // Client-renders one migrated component of the contract test (test/unit/contract/components.tsx),
 // `?component=<folder>`, straight from that list, the way a client-only app renders it: its
 // elements keep every prop as written, functions and plugin objects included, and its styles
-// register at render.
-import { configureStyles, LineChart, ThemeProvider } from "@openuidev/react-components";
+// register at render. Configuration comes first, ahead of the contract list's top-level await.
+import "./configure-layer";
+
+import { LineChart, ThemeProvider } from "@openuidev/react-components";
 import { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { renderToString } from "react-dom/server";
 import { migratedComponents, otherChartContracts } from "../../unit/contract/components";
+import { layer } from "./configure-layer";
 
 export { getComponentStyles } from "@openuidev/react-components";
 
 const params = new URLSearchParams(location.search);
 const folder = params.get("component");
-// `?layer=<name>` configures the app-wide component sheet.
-const layer = params.get("layer") ?? undefined;
-configureStyles({ layer });
 const component = [...migratedComponents, ...otherChartContracts].find(
   (entry) => entry.folder === folder,
 );

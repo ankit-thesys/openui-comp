@@ -11,7 +11,9 @@ export const names = {
 } as const;
 
 // The value dependency keeps the composed renderer before this reset, including when bundled.
-export const inlineMarkdownStyles = ((_markdown: typeof markdownStyles) => ({
+Object.values(markdownStyles);
+
+export const inlineMarkdownStyles = {
   // The span is inline by default; leave display to callers such as TextBlock's hidden row.
   root: css`
     text-align: inherit;
@@ -26,4 +28,4 @@ export const inlineMarkdownStyles = ((_markdown: typeof markdownStyles) => ({
     margin: 0;
     padding: 0;
   `,
-}))(markdownStyles);
+};

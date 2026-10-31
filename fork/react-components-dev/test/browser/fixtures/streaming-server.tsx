@@ -1,47 +1,19 @@
 import type { ServerResponse } from "node:http";
 import { Writable } from "node:stream";
-import { configureStyles, createStyleRegistry } from "openui-under-test";
+import { getComponentStyles } from "openui-under-test";
 import { renderToPipeableStream } from "react-dom/server";
 import { StreamingApp } from "./streaming-app";
 
 const releases = new Map<string, () => void>();
-const completions = new Map<string, () => void>();
-// Kept after the response closes: the spec reads it once the page has finished loading.
-const firstSheets = new Map<string, string>();
 let serial = 0;
 
 export function releaseStream(response: string) {
   releases.get(response)?.();
 }
 
-export function completeStyle(response: string) {
-  // Removed before the call, so a completion can set the next one.
-  const complete = completions.get(response);
-  completions.delete(response);
-  complete?.();
-}
-
-/** The first registry flush a response sent, so a spec can check that none of its rules is lost. */
-export function firstSheet(response: string) {
-  return firstSheets.get(response) ?? "";
-}
-
-// `splitFirst` sends the first registry tag in two writes, with an async script ahead of it in
-// <head>, so the library can load while that tag's text is still incomplete. `reserve` puts the
-// head recipe's empty `openui-styles` tag first, so every registry tag is a later one.
-// `reserveLast` sends that empty tag last, after an async script, and holds the stream: the library
-// loads while the tag may still receive text. The next write is ordinary markup that settles it,
-// and the one after that the registry's first flush.
-export function streamPage(
-  res: ServerResponse,
-  layer?: string,
-  adoptEarly = false,
-  splitFirst = false,
-  reserve = false,
-  reserveLast = false,
-) {
-  configureStyles({ layer });
-  const registry = createStyleRegistry();
+// The whole component sheet goes in the shell's <head>, once. Later flushes carry markup only:
+// style modules register at import, so the sheet is complete before anything renders.
+export function streamPage(res: ServerResponse, layer?: string) {
   const response = String(++serial);
   let resolved = false;
   const gate = new Promise<void>((resolve) => {
@@ -54,91 +26,37 @@ export function streamPage(
   const wait = () => {
     if (!resolved) throw gate;
   };
-  const insertStyles = () => {
-    const text = registry.flush();
-    return text ? `<style id="openui-styles">${text}</style>` : "";
-  };
   const { pipe, abort } = renderToPipeableStream(<StreamingApp response={response} wait={wait} />, {
     onShellReady() {
       res.writeHead(200, { "content-type": "text/html", "x-streaming-response": response });
-      const first = insertStyles();
-      firstSheets.set(
-        response,
-        first.slice('<style id="openui-styles">'.length, -"</style>".length),
-      );
-      const rest =
-        `<style id="consumer">.streaming-late{background-color:rgb(4,5,6)}</style>` +
-        `</head><body>` +
-        (adoptEarly ? `<script type="module" async src="/streaming.js"></script>` : "") +
-        `<div id="root" data-response="${response}" data-layer="${layer ?? ""}">`;
       res.write(
-        `<!doctype html><html><head>` +
+        `<!doctype html><html><head><meta charset="utf-8">` +
           (layer ? `<style>@layer openui,app;</style>` : "") +
-          (reserve ? `<style id="openui-styles"></style>` : "") +
-          (splitFirst || reserveLast
-            ? `<script type="module" async src="/streaming.js"></script>`
-            : "") +
-          (reserveLast ? `<style id="openui-styles"></style>` : ""),
+          `<style data-openui-styles data-layer="${layer ?? ""}">${getComponentStyles({ layer })}</style>` +
+          `<style id="consumer">.streaming-late{background-color:rgb(4,5,6)}</style>` +
+          `</head><body><div id="root" data-response="${response}">`,
       );
-      if (reserveLast) {
-        completions.set(response, () => {
-          res.write(`<meta name="openui-streaming-settle">`);
-          completions.set(response, () => {
-            res.write(first + rest);
-            stream();
-          });
-        });
-        return;
-      }
-      if (splitFirst) {
-        // Cut the first tag's text in the middle of a rule; the rest waits for /streaming-complete.
-        const cut = Math.floor(first.length / 2);
-        res.write(first.slice(0, cut));
-        completions.set(response, () => {
-          res.write(first.slice(cut) + rest);
-          stream();
-        });
-        return;
-      }
-      res.write(first + rest);
-      stream();
+      pipe(
+        new Writable({
+          write(chunk, _encoding, callback) {
+            res.write(chunk);
+            callback();
+          },
+          final(callback) {
+            res.end(
+              `</div><script type="module">import { streamingFixture } from "/streaming.js"; streamingFixture.hydrate();</script></body></html>`,
+            );
+            callback();
+          },
+        }),
+      );
     },
     onError(error) {
       console.error(error);
     },
   });
-  function stream() {
-    pipe(
-      new Writable({
-        write(chunk, _encoding, callback) {
-          // The registry runs for each React flush, before that flush's markup reaches the page.
-          const styles = insertStyles();
-          if (adoptEarly && resolved && styles) {
-            // Deliberately split the opening tag from its text across separate HTTP writes.
-            res.write('<style id="openui-styles">');
-            completions.set(response, () => {
-              res.write(styles.slice('<style id="openui-styles">'.length));
-              res.write(chunk);
-              callback();
-            });
-            return;
-          }
-          res.write(styles);
-          res.write(chunk);
-          callback();
-        },
-        final(callback) {
-          res.end(
-            `</div><script type="module">import { streamingFixture } from "/streaming.js"; streamingFixture.hydrate();</script></body></html>`,
-          );
-          callback();
-        },
-      }),
-    );
-  }
   res.on("close", () => {
     releases.delete(response);
-    completions.delete(response);
     abort();
   });
 }

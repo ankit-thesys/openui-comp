@@ -1,5 +1,3 @@
-"use client";
-
 import { css } from "../../styles/css";
 import { selectStyles } from "../Select/select.styles";
 
