@@ -1,6 +1,9 @@
 packages:
   - "packages/*"
   - "fork/*"
+  - "fork/examples/*"
+  # Compat apps are standalone, with their own lockfiles (fork/examples/compat/README.md).
+  - "!fork/examples/compat"
   - "docs/"
   - "!templates/**"
 
