@@ -183,7 +183,10 @@ yourself, the library appends its rules to it where it is; keep it before your s
 library only ever appends to its sheet, never rewrites it. When `window.__nonce__` is set before
 the library loads, every style tag it creates carries it as its CSP nonce from the start: the
 layer-order tag, the token defaults, the component sheet and ThemeProvider's theme tag. A
-`<style id="openui-styles">` you place yourself gets it too. The token-default tags carry React's
+`<style id="openui-styles">` you place yourself gets it too. Set it in an inline `<script>` ahead
+of the app's scripts, or in a module imported before the library: imports run before the body of
+the module that imports them, and the token-default tags are created when the library is
+imported, so a nonce set later leaves them blocked. The token-default tags carry React's
 `data-precedence` marker, so when React hydrates a server-rendered `<head>` (React Router,
 TanStack Start, Next) it skips them rather than matching your own `<style>` against them, and the
 library adds nothing to `<html>`.
@@ -281,8 +284,8 @@ its own typography, so preflight's font and line-height resets cannot change its
 ## Automatic styles
 
 Owned component styles use stock Goober and do not require a CSS import, setup
-command or styling build plugin. Components register their styles the first time
-they render. The build
+command or styling build plugin. Components register their styles when their
+modules are imported, before anything renders. The build
 preserves modules and marks unused modules removable by the consumer's bundler.
 A bundler may combine several retained components in a shared lazy chunk; their
 styles can register together when that chunk evaluates. This is not a guarantee
@@ -620,10 +623,10 @@ const page = `<!doctype html>
 - The sheet holds every component's rules (about 211 KB, 28 KB gzipped), not only the ones the
   page renders. Browser-only apps keep per-component tree-shaking.
 - Serve the page as UTF-8. The browser recognises the server's rules by their exact text.
-- A host app's Goober `setup`, `glob` and `extractCss` calls leave this sheet alone: the
-  library runs its own copy of Goober, so a host prefixer never rewrites component rules. Host
-  Goober rules are not included; rules registered through the library's public `css` and `keyframes` at
-  module level are.
+- A host app's Goober `setup`, `glob` and `extractCss` calls leave this sheet alone: the library
+  runs its own copy of Goober, so a host prefixer never rewrites component rules. Host Goober rules
+  are not included; rules registered through the library's public `css` and `keyframes` at module
+  level are.
 - Server-rendered markup holds `style` attributes: Radix primitives' (Select, Tabs) and sizing
   props such as MiniLineChart's. A nonce never covers attributes, so a `style-src 'nonce-…'`
   policy blocks them while the HTML is parsed, and React does not re-apply them on hydration

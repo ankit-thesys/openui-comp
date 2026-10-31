@@ -220,6 +220,16 @@ gets its own `@layer x{…}` wrapper when configured; blocks with the same name 
 It never rewrites old rules. The markers, observer, merging, parser, `applyLive`, registries and
 `createStyleRegistry` are removed. Theme defaults retain their separate tag and layer.
 
+The defaults' layer-order tag and `#openui-defaults` carry `data-precedence="openui-defaults"`.
+They are prepended to `<head>` when the library is imported, before React hydrates a
+server-rendered document; React's head hydration skips `style[data-precedence]`, so it never
+matches an app's own `<style>` against them, and a document re-render keeps every `<style>`. The
+defaults rule is `:where(:root)` in `@layer openui-defaults`, the same zero specificity and layer
+as the former `:where(.class:root)`, so no class is added to `<html>`. Every style tag the
+library creates (the layer-order tag, the defaults, the component sheet and ThemeProvider's
+theme tag) carries `window.__nonce__` before it enters the document; the nonce must be set
+before the library is imported, because the defaults tags are created at import.
+
 `@openuidev/react-components/styles` eagerly imports every style module. Its
 `getComponentStyles({ layer? })` returns the full cumulative sheet before rendering, so a server
 inlines it once in the shell's head and does nothing as Suspense content streams. The entry
