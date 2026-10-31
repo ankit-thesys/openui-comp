@@ -17,8 +17,8 @@ serve that bundle on the same port, and `typecheck` for `tsc --noEmit`.
 
 `ThemeProvider mode` controls light and dark themes. Component styles stay in
 their default unlayered mode; no Tailwind or CSS processing plugin is needed.
-`index.html` reserves an empty `<style id="openui-styles">` first in `<head>`; the
-library writes its rules there, so the app stylesheet loads after it and wins ties.
+The library puts its sheet first in `<head>`, so the app stylesheet comes after it and
+wins ties. Nothing needs to be set up.
 
 Overrides are in `src/styles.css`: `--openui-*` variables scoped to `.fieldwork`
 customize the palette, while stable classes such as `.openui-button` and

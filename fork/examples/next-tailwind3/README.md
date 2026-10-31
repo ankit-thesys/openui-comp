@@ -20,22 +20,17 @@ The app uses the library's default **unlayered** mode. Do not call
 `configureStyles({ layer })` with Tailwind 3: its preflight is unlayered and would beat layered component rules.
 `ThemeProvider mode` controls the light/dark switch.
 
-## Server rendering and override weight
+## Server rendering and override order
 
-`app/style-registry.tsx` keeps one `createStyleRegistry()` per response and inlines each
-`registry.flush()` through `useServerInsertedHTML` into a `<style id="openui-styles">` tag:
-the first holds every rule so far, later ones only the new rules. The page is styled before
-JavaScript runs, and the browser merges the tags so each rule appears once after hydration.
+`app/layout.tsx` renders `<ComponentStyles />` once: the whole component sheet as one `<style>`
+in `<head>`, so the page is styled before JavaScript runs. On hydration the browser reads that
+tag and writes nothing it already has.
 
-Next places these tags after the app stylesheet, so a component rule beats an
-app rule of equal weight. Two settings give the app's CSS one extra element of
-weight, without `!important`:
-
-- `tailwind.config.ts` sets `important: "body"`, so utilities compile to
-  `body .bg-emerald-700` and beat the component styles; the hero button shows it.
-- The stable-class overrides at the end of `app/globals.css` start with `body`,
-  for example `body .openui-button` and
-  `body .openui-tabs-trigger[data-state="active"]`.
+`app/page.tsx`, not the root layout, imports `globals.css`. Next then places the app stylesheet
+after the component sheet, so equal-weight app rules win with no extra weight and no
+`!important`: Tailwind utilities such as the hero button's `bg-emerald-700`, and the
+stable-class overrides at the end of `globals.css`, such as `.openui-button` and
+`.openui-tabs-trigger[data-state="active"]`.
 
 The visit form validates locally and displays a confirmation. It never sends
 personal details or makes a real booking.
