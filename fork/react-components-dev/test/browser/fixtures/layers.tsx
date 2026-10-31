@@ -1,14 +1,29 @@
-// Buttons in and out of layer mode for the cssLayer spec.
-// `?layer=<name>` sets the outer provider's cssLayer; without it the provider has none.
-import { Button, ThemeProvider } from "openui-under-test";
+// One app-wide layer, including rules registered before configuration and in a lazy module.
+import { Button, configureStyles, css, getComponentStyles, ThemeProvider } from "openui-under-test";
 import { createRoot } from "react-dom/client";
 
+const imported = css`
+  color: rgb(21, 43, 65);
+`;
 const layer = new URLSearchParams(location.search).get("layer") ?? undefined;
+
+configureStyles({ layer });
+
+export const layersFixture = {
+  configureStyles,
+  css,
+  getComponentStyles,
+  imported,
+};
+(window as Window & { layersFixture?: typeof layersFixture }).layersFixture = layersFixture;
 
 createRoot(document.getElementById("root")!).render(
   <>
+    <div data-testid="imported" className={imported}>
+      Import-time rule
+    </div>
     <Button data-testid="outside">Outside</Button>
-    <ThemeProvider cssLayer={layer}>
+    <ThemeProvider>
       <Button data-testid="default">Default</Button>
       <Button
         data-testid="icon"
@@ -35,8 +50,8 @@ createRoot(document.getElementById("root")!).render(
       <ThemeProvider>
         <Button data-testid="inherited">Inherited</Button>
       </ThemeProvider>
-      <ThemeProvider cssLayer="nested">
-        <Button data-testid="overridden">Overridden</Button>
+      <ThemeProvider>
+        <Button data-testid="nested">Nested</Button>
       </ThemeProvider>
     </ThemeProvider>
   </>,

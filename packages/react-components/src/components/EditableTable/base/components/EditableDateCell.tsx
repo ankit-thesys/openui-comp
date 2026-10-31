@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import { DatePicker } from "../../../DatePicker";
 import { useEditableCellKeyboard } from "../hooks/useEditableCellKeyboard";
 import { CellOutline } from "./CellOutline";
@@ -31,7 +30,7 @@ export const EditableDateCell: React.FC<CellRendererProps> = (props) => {
     table,
   } = props;
 
-  const cellStyles = useStyles(editableCellStyles);
+  const cellStyles = editableCellStyles;
   const [editDate, setEditDate] = useState<Date | undefined>(toDate(value));
   const cellRef = useRef<HTMLDivElement>(null);
   const updateTableData = (table.options.meta as EditableTableMeta | undefined)?.updateData;

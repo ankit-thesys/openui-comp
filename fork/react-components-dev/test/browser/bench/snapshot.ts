@@ -31,7 +31,7 @@ export function snapshotDeclaredStyles(classes: string[]) {
       } else if (rule instanceof CSSGroupingRule) visit(rule.cssRules);
     }
   };
-  visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
+  visit((document.getElementById("openui-styles") as HTMLStyleElement).sheet!.cssRules);
   // Batch writes before reading styles. getAnimations()/finish() per mark repeatedly forces
   // animation/style updates across the entire large chart page.
   document.getAnimations().forEach((animation) => {

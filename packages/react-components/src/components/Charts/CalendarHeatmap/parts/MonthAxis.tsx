@@ -1,7 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import { useStyles } from "../../../../styles/useStyles";
 import { calendarHeatmapStyles, names } from "../calendarHeatmap.styles";
 interface MonthAxisProps {
   /** One short-month label per month, anchored to its first-of-month column. */
@@ -21,7 +20,7 @@ interface MonthAxisProps {
  * lines each label up with its column.
  */
 export function MonthAxis({ labels, pitchX, xOffsets, y }: MonthAxisProps) {
-  const styles = useStyles(calendarHeatmapStyles);
+  const styles = calendarHeatmapStyles;
   return (
     <g className={names.group}>
       {labels.map(({ col, label }) => (

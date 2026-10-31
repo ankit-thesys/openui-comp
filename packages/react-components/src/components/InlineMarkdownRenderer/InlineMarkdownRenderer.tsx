@@ -4,11 +4,9 @@ import clsx from "clsx";
 import { memo, ReactNode, useContext } from "react";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
-import { useStyles } from "../../styles/useStyles";
 import { remarkCitations } from "../_shared/remark/remarkCitations";
 import { TextContentCitation } from "../Citation";
 import { MarkDownRenderer } from "../MarkDownRenderer";
-import { markdownStyles } from "../MarkDownRenderer/markdown.styles";
 import { inlineMarkdownStyles, names } from "./inlineMarkdown.styles";
 import { InlineTypographyContext } from "./InlineTypography";
 
@@ -37,10 +35,7 @@ export const InlineMarkdownRenderer = memo(
     // A card supplies the typography the caller leaves out.
     const cardTypography = useContext(InlineTypographyContext);
     const typography = ownTypography ?? cardTypography;
-    // Register the composed renderer first so the flat content reset follows its root rule,
-    // even when inline markdown is the first markdown rendered on the page.
-    useStyles(markdownStyles);
-    const styles = useStyles(inlineMarkdownStyles);
+    const styles = inlineMarkdownStyles;
 
     if (!content) {
       return null;

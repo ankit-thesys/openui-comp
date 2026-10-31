@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 const body = `
   font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
   letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);
@@ -19,7 +20,7 @@ export const names = {
 
 // Goober merges repeated :disabled blocks at their first occurrence, before :hover. Reset
 // hover's input as well so a disabled unchecked radio keeps its foreground fill.
-export const radioItemStyles = (css: StyleCss) => ({
+export const radioItemStyles = {
   root: css`
     box-sizing: border-box;
     flex-shrink: 0;
@@ -109,4 +110,4 @@ export const radioItemStyles = (css: StyleCss) => ({
   inner: css`
     fill: var(--_openui-radio-item-inner);
   `,
-});
+};

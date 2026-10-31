@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import { area, line } from "d3-shape";
 import { useId } from "react";
-import { useStyles } from "../../../styles/useStyles";
 import { useEffectiveAnimation } from "../hooks/core/useEffectiveAnimation";
 import { MiniChartFrame } from "../shared/mini/MiniChartFrame";
 import {
@@ -32,7 +31,7 @@ export function MiniAreaChart({
   areaColor,
   useGradient = true,
 }: MiniAreaChartProps) {
-  const styles = useStyles(miniAreaChartStyles);
+  const styles = miniAreaChartStyles;
   const animate = useEffectiveAnimation(isAnimationActive);
   const [color = ""] = useChartPalette({
     customPalette: customPalette ?? (areaColor ? [areaColor] : undefined),

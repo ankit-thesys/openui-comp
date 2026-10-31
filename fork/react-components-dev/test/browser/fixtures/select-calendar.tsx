@@ -1,6 +1,7 @@
-// #93: one family per page, including portal nodes outside #root and lazy render registration.
+// #93: one family per page, including portal nodes outside #root and lazy mounting.
 import {
   Calendar,
+  configureStyles,
   DatePicker,
   LayoutContextProvider,
   Select,
@@ -16,15 +17,13 @@ import {
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
 const params = new URLSearchParams(location.search);
+configureStyles({ layer: params.get("layer") || undefined });
 function Fixture() {
   const [value, setValue] = useState(params.has("placeholder") ? "" : "one");
   const [open, setOpen] = useState(params.has("open"));
   const family = params.get("family") || "select";
   return (
-    <ThemeProvider
-      cssLayer={params.get("layer") || undefined}
-      mode={params.get("mode") === "dark" ? "dark" : "light"}
-    >
+    <ThemeProvider mode={params.get("mode") === "dark" ? "dark" : "light"}>
       <LayoutContextProvider layout={(params.get("layout") || "fullscreen") as "mobile"}>
         {family === "select" ? (
           <Select

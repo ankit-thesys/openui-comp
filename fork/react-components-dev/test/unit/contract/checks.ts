@@ -12,7 +12,9 @@ export interface Rule {
 
 /** Every style rule in `css`, including rules inside @media, @container, @supports and @layer
  * blocks. @keyframes and other at-rules are skipped. */
-export const rulesOf = (css: string): Rule[] => rulesIn(css, "");
+export function rulesOf(css: string): Rule[] {
+  return rulesIn(css, "");
+}
 
 function rulesIn(css: string, layer: string): Rule[] {
   const rules: Rule[] = [];
@@ -40,10 +42,12 @@ function rulesIn(css: string, layer: string): Rule[] {
 }
 
 /** Top-level selectors of every style rule in `css`; see {@link rulesOf}. */
-export const selectorsOf = (css: string): string[] => rulesOf(css).map((rule) => rule.selector);
+export function selectorsOf(css: string): string[] {
+  return rulesOf(css).map((rule) => rule.selector);
+}
 
 /** Index of the first of `chars` at or after `from`, skipping quoted strings; -1 if none. */
-const indexOutsideStrings = (css: string, from: number, chars: string) => {
+export function indexOutsideStrings(css: string, from: number, chars: string) {
   let quote = "";
   for (let i = from; i < css.length; i++) {
     const char = css[i]!;
@@ -54,10 +58,10 @@ const indexOutsideStrings = (css: string, from: number, chars: string) => {
     else if (chars.includes(char)) return i;
   }
   return -1;
-};
+}
 
 /** Index of the `}` closing the block opened at `open`, skipping quoted strings. */
-const matchingBrace = (css: string, open: number) => {
+export function matchingBrace(css: string, open: number) {
   let depth = 1;
   let i = open;
   while (depth > 0) {
@@ -66,7 +70,7 @@ const matchingBrace = (css: string, open: number) => {
     depth += css[i] === "{" ? 1 : -1;
   }
   return i;
-};
+}
 
 const splitList = (list: string) => {
   const parts: string[] = [];

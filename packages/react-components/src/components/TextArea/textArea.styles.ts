@@ -1,9 +1,9 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = { root: "openui-text-area" } as const;
 
 // Invalid wins over focus's border; disabled wins over both. The focus ring is unchanged.
-export const textAreaStyles = (css: StyleCss) => ({
+export const textAreaStyles = {
   root: css`
     font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
     letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);
@@ -40,4 +40,4 @@ export const textAreaStyles = (css: StyleCss) => ({
       color: var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2));
     }
   `,
-});
+};

@@ -12,7 +12,7 @@ const setups = {
     namespace: reactComponents,
     bundle: "bench",
     // README "Server-rendered styles": render first, then collect, then the sheet first in <head>.
-    head: () => `<style id="_goober">${reactComponents.getComponentStyles()}</style>`,
+    head: () => `<style id="openui-styles">${reactComponents.getComponentStyles()}</style>`,
   },
   "react-ui": {
     namespace: reactUi,

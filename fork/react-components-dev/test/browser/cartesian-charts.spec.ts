@@ -46,7 +46,7 @@ const statesOn = (page: Page, className: string) =>
         } else if (rule instanceof CSSGroupingRule) visit(rule.cssRules);
       }
     };
-    visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
+    visit((document.getElementById("openui-styles") as HTMLStyleElement).sheet!.cssRules);
     return [...states];
   });
 
@@ -87,7 +87,7 @@ for (const layer of [false, true])
         classes: [...document.querySelectorAll("[class]")]
           .filter((element) => targets.some((target) => element.classList.contains(target)))
           .flatMap((element) => [...element.classList].filter((name) => /^go\d+$/.test(name))),
-        css: document.getElementById("_goober")!.textContent!,
+        css: document.getElementById("openui-styles")!.textContent!,
       }),
       targets,
     );
@@ -203,3 +203,39 @@ for (const media of ["reduce", "print"] as const)
     if (media === "print") await expect(check).toPass({ timeout: 5_000 });
     else await check();
   });
+
+for (const [fixture, mount] of [
+  ["cartesian-charts", "mountCartesianCharts"],
+  ["chart-foundations", "mountMiniCharts"],
+] as const) {
+  test(`${fixture} registers all generated styles before mount without an html marker`, async ({
+    page,
+  }) => {
+    await page.goto(`/${fixture}.html?lazy=1`);
+    await page.waitForFunction(
+      (name) => typeof (window as unknown as Record<string, unknown>)[name] === "function",
+      mount,
+    );
+    const before = await page.evaluate(() => ({
+      sheet: document.getElementById("openui-styles")?.textContent ?? "",
+      html: document.documentElement.className,
+    }));
+    await page.evaluate(
+      (name) => (window as unknown as Record<string, () => void>)[name]!(),
+      mount,
+    );
+    await expect(page.locator("#root svg").first()).toBeAttached();
+    const generated = await page
+      .locator("#root [class]")
+      .evaluateAll((elements) =>
+        elements.flatMap((element) =>
+          [...element.classList].filter((name) => /^go\d+$/.test(name)),
+        ),
+      );
+    expect(generated.length).toBeGreaterThan(0);
+    for (const name of generated) expect(before.sheet).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+    expect(await page.locator("#openui-styles").textContent()).toBe(before.sheet);
+    expect(await page.evaluate(() => document.documentElement.className)).toBe(before.html);
+    for (const name of generated) expect(before.html.split(/\s+/)).not.toContain(name);
+  });
+}

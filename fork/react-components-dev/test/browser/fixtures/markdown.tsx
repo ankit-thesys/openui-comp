@@ -1,14 +1,19 @@
-import { InlineMarkdownRenderer, MarkDownRenderer, ThemeProvider } from "openui-under-test";
+import {
+  configureStyles,
+  InlineMarkdownRenderer,
+  MarkDownRenderer,
+  ThemeProvider,
+} from "openui-under-test";
 import { createRoot } from "react-dom/client";
 import remarkGfm from "remark-gfm";
 import { markdown } from "../../fixtures/markdown";
 
 const params = new URLSearchParams(location.search);
+configureStyles({ layer: params.get("layer") || undefined });
 const customTypography = params.has("custom-font");
 createRoot(document.getElementById("root")!).render(
   <ThemeProvider
     lightTheme={customTypography ? { textBodyDefault: "400 18px/2 Arial" } : undefined}
-    cssLayer={params.get("layer") || undefined}
   >
     <div data-testid="markdown">
       <MarkDownRenderer

@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-dot-matrix-loader",
@@ -9,7 +9,7 @@ export const names = {
   },
 } as const;
 
-export const dotMatrixLoaderStyles = (css: StyleCss) => ({
+export const dotMatrixLoaderStyles = {
   root: css`
     display: grid;
     grid-template-columns: repeat(var(--_openui-dot-matrix-loader-grid-size), 1fr);
@@ -25,4 +25,4 @@ export const dotMatrixLoaderStyles = (css: StyleCss) => ({
     background-color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
     opacity: var(--_openui-dot-matrix-loader-dot-opacity, 0.14);
   `,
-});
+};

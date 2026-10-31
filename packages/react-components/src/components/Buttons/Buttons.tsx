@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { CSSProperties, forwardRef, HTMLAttributes, ReactElement } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { ButtonProps } from "../Button";
 import { IconButtonProps } from "../IconButton";
 import { names as baseNames, baseStyles } from "../SharedBase/base.styles";
@@ -20,8 +19,8 @@ export interface ButtonsProps extends HTMLAttributes<HTMLDivElement> {
 
 export const Buttons = forwardRef<HTMLDivElement, ButtonsProps>((props, ref) => {
   const { className, style, variant = "horizontal", children, ...rest } = props;
-  const styles = useStyles(buttonsStyles);
-  const base = useStyles(baseStyles);
+  const styles = buttonsStyles;
+  const base = baseStyles;
   return (
     <div
       ref={ref}

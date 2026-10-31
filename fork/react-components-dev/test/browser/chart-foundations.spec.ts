@@ -81,7 +81,7 @@ const statesOn = (page: Page, className: string) =>
         } else if (rule instanceof CSSGroupingRule) visit(rule.cssRules);
       }
     };
-    visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
+    visit((document.getElementById("openui-styles") as HTMLStyleElement).sheet!.cssRules);
     return [...states];
   });
 
@@ -125,7 +125,7 @@ for (const layer of [false, true]) {
         stable: elements.flatMap((el) =>
           [...el.classList].filter((name) => name.startsWith("openui-chart-tooltip")),
         ),
-        css: document.getElementById("_goober")!.textContent!,
+        css: document.getElementById("openui-styles")!.textContent!,
       };
     });
     const generated = new Set(observation.generated);

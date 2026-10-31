@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import type { CSSProperties } from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import { calendarHeatmapStyles, names } from "../calendarHeatmap.styles";
 import type { CalendarSeparatorLabel } from "./separatorLayout";
 
@@ -42,7 +41,7 @@ export function CalendarSeparators({
   stroke,
   dashed,
 }: CalendarSeparatorsProps) {
-  const styles = useStyles(calendarHeatmapStyles);
+  const styles = calendarHeatmapStyles;
   return (
     <g className={names.group}>
       {columns.map((col) => {
@@ -96,7 +95,7 @@ export function CalendarSeparatorLabels({
   gutterLeft,
   format,
 }: CalendarSeparatorLabelsProps) {
-  const styles = useStyles(calendarHeatmapStyles);
+  const styles = calendarHeatmapStyles;
   return (
     <>
       {labels.map(({ col, quarter, year }) => (

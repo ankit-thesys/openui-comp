@@ -1,10 +1,11 @@
 // One family per page, with lazy mounting for the import-time registration check.
-import { Slider, SliderBlock, ThemeProvider } from "openui-under-test";
+import { configureStyles, Slider, SliderBlock, ThemeProvider } from "openui-under-test";
 import { createRoot } from "react-dom/client";
 const params = new URLSearchParams(location.search);
+configureStyles({ layer: params.get("layer") || undefined });
 const mount = () =>
   createRoot(document.getElementById("root")!).render(
-    <ThemeProvider cssLayer={params.get("layer") || undefined}>
+    <ThemeProvider>
       <div style={{ width: 420, padding: "48px 20px" }}>
         {params.has("block") ? (
           <SliderBlock

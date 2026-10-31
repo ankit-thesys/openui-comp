@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { forwardRef } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { TextBlockView } from "../TextBlock";
 import { imageTextLargeStyles, names } from "./imageTextLarge.styles";
 
@@ -17,7 +16,7 @@ export interface ImageTextLargeProps {
 /** A full-width banner image above a bold title with an optional subtitle. */
 export const ImageTextLarge = forwardRef<HTMLDivElement, ImageTextLargeProps>(
   ({ title, subtitle, src, alt, className }, ref) => {
-    const styles = useStyles(imageTextLargeStyles);
+    const styles = imageTextLargeStyles;
     const altText = alt ?? title;
 
     return (

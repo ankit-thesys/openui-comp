@@ -13,7 +13,12 @@ it("exposes SliderBlock input and error parts through public Input states", () =
     /<input[^>]*aria-invalid="true"[^>]*openui-slider-block-input|<input[^>]*openui-slider-block-input[^>]*aria-invalid="true"/,
   );
   expect(html).not.toContain("is-range");
-  expect(getComponentStyles().length).toBeGreaterThan(before.length);
+  const generated = [...html.matchAll(/class="([^"]*)"/g)]
+    .flatMap((match) => match[1]!.split(" "))
+    .filter((name) => /^go\d+$/.test(name));
+  expect(generated.length).toBeGreaterThan(0);
+  for (const name of generated) expect(before).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+  expect(getComponentStyles()).toBe(before);
 });
 
 it("records SliderBlock's requested variant while streaming suppresses its discrete controls", () => {

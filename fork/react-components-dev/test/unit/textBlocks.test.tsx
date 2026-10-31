@@ -1,6 +1,23 @@
-import { Tag } from "@openuidev/react-components";
+import { getComponentStyles, Tag, TextBlockView } from "@openuidev/react-components";
 import { renderToString } from "react-dom/server";
 import { expect, it } from "vitest";
+import { classLists, declarationRules } from "../css-snapshot/snapshot";
+
+it.each([
+  ["positive", "var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1))"],
+  ["negative", "var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1))"],
+] as const)("TextBlock's %s secondary tone follows its base colour", (secondaryTone, color) => {
+  const html = renderToString(
+    <TextBlockView primary="Title" secondary="Details" secondaryTone={secondaryTone} />,
+  );
+  const secondary = classLists(html).find(({ classes }) =>
+    classes.includes("openui-text-block-secondary"),
+  )!;
+  const colors = declarationRules(getComponentStyles())
+    .filter(({ selector }) => secondary.classes.some((name) => selector === `.${name}`))
+    .flatMap(({ declarations }) => declarations.filter((value) => value.startsWith("color:")));
+  expect(colors.at(-1)).toBe(`color:${color}`);
+});
 
 it("Tag emits default size and variant modifiers", () => {
   const html = renderToString(<Tag text="Label" />);

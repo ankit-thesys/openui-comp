@@ -27,7 +27,9 @@ const scanned = (dir: string): string[] =>
   readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const path = join(dir, entry.name);
     if (entry.isDirectory()) {
-      return ["node_modules", "dist", "test-results", "playwright-report"].includes(entry.name)
+      return ["node_modules", "dist", "test-results", "playwright-report", ".fixtures"].includes(
+        entry.name,
+      )
         ? []
         : scanned(path);
     }

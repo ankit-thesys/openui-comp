@@ -4,7 +4,6 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import clsx from "clsx";
 import { ChevronDownIcon } from "lucide-react";
 import React, { forwardRef } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { accordionStyles, names } from "./accordion.styles";
 
 type AccordionVariant = "clear" | "card" | "sunk";
@@ -19,7 +18,7 @@ export const Accordion = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Root>,
   AccordionProps
 >(({ className, style, variant = "clear", ...props }, ref) => {
-  const styles = useStyles(accordionStyles);
+  const styles = accordionStyles;
   return (
     <AccordionPrimitive.Root
       ref={ref}
@@ -48,7 +47,7 @@ export const AccordionItem = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Item>,
   AccordionItemProps
 >(({ className, style, value, ...props }, ref) => {
-  const styles = useStyles(accordionStyles);
+  const styles = accordionStyles;
   return (
     <AccordionPrimitive.Item
       ref={ref}
@@ -72,7 +71,7 @@ export const AccordionTrigger = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Trigger>,
   AccordionTriggerProps
 >(({ className, style, text, icon, ...props }, ref) => {
-  const styles = useStyles(accordionStyles);
+  const styles = accordionStyles;
   return (
     <AccordionPrimitive.Header className={clsx(styles.header, names.header)}>
       <AccordionPrimitive.Trigger
@@ -106,7 +105,7 @@ export const AccordionContent = forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Content>,
   AccordionContentProps
 >(({ className, style, children, ...props }, ref) => {
-  const styles = useStyles(accordionStyles);
+  const styles = accordionStyles;
   return (
     <AccordionPrimitive.Content
       ref={ref}

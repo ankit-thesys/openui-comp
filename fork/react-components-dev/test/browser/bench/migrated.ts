@@ -3,12 +3,12 @@
 import { expect, type Page } from "@playwright/test";
 
 // Built by build-fixtures.ts (Playwright's global setup) before any spec runs.
-const { migrated } = (await import(
+const { migrated, clientOnlyContracts } = (await import(
   new URL("../.fixtures/server/migrated-server.mjs", import.meta.url).href
 )) as typeof import("../fixtures/migrated-server");
 
 export type MigratedComponent = (typeof migrated)[number];
-export { migrated };
+export { clientOnlyContracts, migrated };
 
 /**
  * Opens a page rendering `component`, with `head` (consumer CSS, say) before the bundle, in
@@ -21,6 +21,7 @@ export async function openMigrated(
   targetClass = "",
   openPortals = true,
   layer = "",
+  contract = false,
 ) {
   const path = `/migrated-${component.folder}.html`;
   // ImageGallery's images are page-owned in #72 and in the flat build. Hold that layout input
@@ -37,7 +38,7 @@ export async function openMigrated(
   await page.route(`**${path}?*`, (route) => route.fulfill({ contentType: "text/html", body }));
   if (component.folder === "ImageBlock") await page.route("**/media-pending.svg", () => {});
   await page.goto(
-    `${path}?${new URLSearchParams({ component: component.folder, ...(layer ? { layer } : {}) })}`,
+    `${path}?${new URLSearchParams({ component: component.folder, ...(layer ? { layer } : {}), ...(contract ? { contract: "1" } : {}) })}`,
     {
       waitUntil: component.folder === "ImageBlock" ? "domcontentloaded" : "load",
     },

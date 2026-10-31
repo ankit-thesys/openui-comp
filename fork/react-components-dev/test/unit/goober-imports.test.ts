@@ -1,6 +1,4 @@
-// Only the styling infrastructure imports Goober. Components get `css` from `useStyles`, so their
-// rules register at render, honour `cssLayer` and stay under the contract checks; a direct import
-// could register CSS on a path no contract element renders (ADR 0001, Q2 and Q27).
+// Only the styling infrastructure may import Goober (ADR 0002).
 import { library } from "#paths";
 import { readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
@@ -22,8 +20,6 @@ const importsGoober = (file: string) =>
 
 it("imports Goober only in the styling infrastructure", () => {
   expect(sourceFiles(join(packageRoot, "src")).filter(importsGoober).sort()).toEqual([
-    "src/styles/defaults.ts", // theme token defaults on <html> (ADR 0001, Q29)
-    "src/styles/useStyles.ts", // hands Goober's css to components at render
-    "src/utils/componentStyles.ts", // getComponentStyles(): reads the sheet, registers nothing
+    "src/styles/css.ts", // component rule store and public styling API
   ]);
 });

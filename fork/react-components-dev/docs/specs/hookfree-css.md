@@ -107,7 +107,7 @@ const sheetText = () => (layer ? `@layer ${layer}{${rules}}` : rules) || " ";
 
 **Theme defaults.** The token defaults keep their layer-order tag and `<html>` marker. They write into their own tag, never into `openui-styles`, so `openui-defaults` doesn't nest inside the app's layer.
 
-**Style modules.** Each `*.styles.ts` drops its factory and exports module-level objects built with the imported `css`, marked `/*#__PURE__*/`. Key order and the order of `css` calls stay exactly as in the factory, so equal-weight ordering within a module is preserved. Components read the object directly instead of calling `useStyles`. Shared helpers that produced factories become plain style objects too, which the 2026 split already started.
+**Style modules.** Each `*.styles.ts` drops its factory and exports module-level objects built with the imported `css`; tree-shaking relies on `package.json` `sideEffects`. Key order and the order of `css` calls stay exactly as in the factory, so equal-weight ordering within a module is preserved. Components read the object directly instead of calling `useStyles`. Shared helpers that produced factories become plain style objects too, which the 2026 split already started.
 
 **Sequencing (expand, migrate, contract).** The old and new forms coexist until the last batch:
 
@@ -117,7 +117,7 @@ const sheetText = () => (layer ? `@layer ${layer}{${rules}}` : rules) || " ";
 4. **Contract.** `useStyles`, the shim, the factory types and `CssLayerContext` are deleted. The guard's list is empty, so its final assertion runs. The fork README's authoring guide is rewritten for module-level styles.
 5. **Final consistency check.** See Testing Decisions.
 
-**Codemod.** A one-off fork-only script turns `export const xStyles = (css: StyleCss) => ({…})` into a `/*#__PURE__*/` module-level object. It replaces `useStyles(xStyles)` with `xStyles` and fixes imports. It's run per batch, and batches commit its output plus hand fixes for irregular modules. It's deleted in the contract ticket.
+**Codemod.** A one-off fork-only script turns `export const xStyles = (css: StyleCss) => ({…})` into a module-level object. It replaces `useStyles(xStyles)` with `xStyles` and fixes imports. It's run per batch, and batches commit its output plus hand fixes for irregular modules. It's deleted in the contract ticket.
 
 **Docs.**
 

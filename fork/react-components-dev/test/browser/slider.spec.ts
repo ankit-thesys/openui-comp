@@ -25,7 +25,7 @@ const libraryOutline = (page: Page, suffix: string) =>
         else if (rule instanceof CSSGroupingRule) visit(rule.cssRules);
       }
     };
-    visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
+    visit((document.getElementById("openui-styles") as HTMLStyleElement).sheet!.cssRules);
     return outline;
   }, suffix);
 
@@ -174,13 +174,13 @@ test("SliderBlock suppresses streaming controls and discrete marks", async ({ pa
 });
 
 for (const block of [false, true]) {
-  test(`Slider${block ? "Block" : ""} registers only on render and survives an html class rewrite`, async ({
+  test(`Slider${block ? "Block" : ""} registers on import and survives an html class rewrite`, async ({
     page,
   }) => {
     await page.goto(`/slider.html?lazy=1${block ? "&block=1" : ""}`);
     await page.waitForFunction(() => typeof window.mountFixture === "function");
     const before = await page.evaluate(() => ({
-      css: document.getElementById("_goober")!.textContent!,
+      css: document.getElementById("openui-styles")?.textContent ?? "",
       html: document.documentElement.className,
     }));
     await page.evaluate(() => window.mountFixture());
@@ -193,7 +193,10 @@ for (const block of [false, true]) {
         ),
       ]);
     expect(generated.length).toBeGreaterThan(0);
-    for (const name of generated) expect(before.css).not.toMatch(new RegExp(`\\.${name}(?![0-9])`));
+    for (const name of generated) expect(before.css).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+    expect(
+      await page.evaluate(() => document.getElementById("openui-styles")?.textContent ?? ""),
+    ).toBe(before.css);
     expect(await page.evaluate(() => document.documentElement.className)).toBe(before.html);
     const part = page.locator(".openui-slider-container");
     const bg = await read(part, "background-color");

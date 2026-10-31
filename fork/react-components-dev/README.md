@@ -42,21 +42,22 @@ remain external dependencies. Build inputs contain no old SCSS or generated CSS.
 
 ### Authoring styles
 
-Converted components follow the [styling contract](../../packages/react-components/README.md#styling-and-overrides). A
-style module exports a `names` constant with its stable classes, the single source
-for the markup and the generated reference, and a factory that receives Goober's
-`css` and returns plain class maps. Components read them with the internal
-`useStyles` hook, which registers the rules on first render:
+Components follow the [styling contract](../../packages/react-components/README.md#styling-and-overrides).
+A style module exports a `names` constant with its stable classes, the single source for the
+markup and the generated reference, and a module-level class map built with the imported `css`.
+Rules register when the module is imported:
 
 ```ts
 // example.styles.ts
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-example",
   label: "openui-example-label",
   size: { small: "openui-example--size-small", medium: "openui-example--size-medium" },
 } as const;
 
-export const exampleStyles = (css: StyleCss) => ({
+export const exampleStyles = {
   root: css`
     display: flex;
     &:disabled {
@@ -65,10 +66,10 @@ export const exampleStyles = (css: StyleCss) => ({
   `,
   size: { small: css`padding: 4px;`, medium: css`padding: 8px;` },
   label: css`font-weight: 500;`,
-});
+};
 
 // Example.tsx
-const styles = useStyles(exampleStyles);
+const styles = exampleStyles;
 <div className={clsx(styles.root, styles.size[size], names.root, names.size[size], className)} />;
 ```
 
@@ -76,13 +77,32 @@ Each rule is one class plus at most one state. A parent's prop that changes a
 part's value travels through a private `--_openui-<component>-*` variable the
 part reads, not a descendant selector. After changing `names`, rebuild the library and run
 `pnpm docs:selectors` here to regenerate the reference. The unit tests enforce the
-selector budget and the naming grammar for every component, and that no module
-registers CSS or adds a class to `<html>` on import; see the sections below.
+selector budget and the naming grammar for every component, and that imports never
+write to the host Goober sheet or mark `<html>` beyond theme defaults; see the sections below.
 
 Keep selector specificity, declaration order, token fallbacks and keyframe timing
 when editing styles. Use CSS units explicitly: Goober does not add `px` to numeric
 object values. Class-name maps are ordinary objects containing canonical target strings;
 they are not CSS declaration objects.
+
+Goober deduplicates byte-identical template bodies, even across modules. If two rules can set
+an overlapping property on the same element and their order matters, give each body a unique
+component/part comment. This keeps a shared body from registering ahead of its module's other
+rules just because another module imported it first. Keep the `css` calls in their intended
+cascade order within each object.
+
+Use value imports for registration dependencies, including composed primitives whose classes
+are referenced only indirectly. A type-only import is erased and cannot establish style order.
+For example, a composed input's style module imports the primitive's style object before
+registering its own overrides. Reuse the imported object when applying those classes.
+
+Rules append to the browser sheet once per microtask. Rules registered during render, including
+a module first evaluated during that render, apply after that task; a layout effect in the same
+task can measure an unstyled element. Keep every `css` and `keyframes` call at module top level
+and import style modules before rendering. `test/unit/module-styles.test.ts` guards the source.
+After adding or removing a style module, run `pnpm styles:entry` to regenerate the sorted
+`@openuidev/react-components/styles` entry. `styles-entry.test.tsx` rejects missing or stale
+imports. The full server sheet is available before rendering or streaming starts.
 
 The following retain their existing non-template contracts:
 
@@ -103,6 +123,16 @@ serializers or styling APIs.
 pnpm --filter @openuidev/react-components-dev test
 ```
 
+## Hook-free CSS before/after check (#129)
+
+The unit suite compares the current public SSR markup, declarations and per-module rule order,
+unlayered and in the `openui` layer, with the pre-migration capture in `test/css-snapshot/`.
+Generated names are normalized to stable-class anchors. Run `pnpm css:check` after a build for the
+server and browser client-only comparisons plus fresh cross-module order reports, which fail on a
+new collision. Without Chromium, run `node scripts/css-snapshot.mjs --server-only` and leave
+the browser half and full browser suite to the orchestrator. The selector reference must stay
+unchanged; never recapture CSS or parity baselines to absorb a regression. See [coverage and recording](test/css-snapshot/README.md).
+
 ## Browser tests (Chromium, Playwright)
 
 `test/browser/*.spec.ts` load fixture apps in Chromium and assert what the page shows.
@@ -122,9 +152,17 @@ To add a browser test, add a fixture that imports `openui-under-test` (aliased t
 
 - `?css=<text>` adds a consumer stylesheet.
 - `?sheet=<name>` links `fixtures/<name>.css`.
-- `?recipe=<layer order>` starts `<head>` with the layer-mode recipe: `<style>@layer <layer order>;</style><style id="_goober"> </style>`.
+- `?recipe=<layer order>` starts `<head>` with the layer-mode recipe: `<style>@layer <layer order>;</style><style id="openui-styles"></style>`.
 
 `fixtures/tailwind33.css`, `tailwind34.css` and `tailwind4.css` are unmodified Tailwind 3.3.7, 3.4.17 and 4.1.11 CLI output (`@tailwind base/components/utilities` for 3, `@import "tailwindcss"` for 4) with `bg-red-500` as the only source (plus `!bg-red-500` for 4), checked in so the tests need no Tailwind dependency. Regenerate them the same way if the tests need more utilities.
+
+`streaming.spec.ts` uses a real `renderToPipeableStream` response served by `serve.mjs`, with
+the whole component sheet in the shell's `<head>`. It checks that a late Suspense boundary is
+styled before hydration, that an equal-weight app rule wins, that hydration writes nothing the
+server sent, and that a browser-only rule lands in its own tag in the same layer. Run
+`pnpm exec playwright test streaming.spec.ts sheet.spec.ts ssr.spec.ts`.
+`test/unit/styles-entry.test.tsx` checks that `@openuidev/react-components/styles` imports every
+style module and holds every class a rendered component uses.
 
 ## Benches
 
@@ -169,11 +207,11 @@ override and Tailwind cases.
 
 - `components.tsx` lists every migrated component with elements covering every value of every
   prop that changes its classes. Each component has its own `<Folder>.contract.test.tsx`, which calls
-  `describeContract(folder)` from `defineContract.tsx`. One file per component gives each a fresh
-  module graph, so a component's CSS is never already registered by another that renders it.
+  `describeContract(folder)` from `defineContract.tsx`. One file per component keeps failures local.
   `coverage.test.ts` fails if an entry has no file. The contract test server-renders the entry through public exports,
-  collects the CSS registered while rendering (`collect.ts`: what the render added to the public
-  `getComponentStyles()` sheet), and checks:
+  selects rules from the full public `getComponentStyles()` sheet by the generated classes in its
+  markup (`collect.ts`), unions them with rules registered during the render to retain coverage of
+  client-only parts until registration moves to import time, and checks:
   - every selector is one generated class, optionally with one state, a sibling pair
     (`.go1 + .go1`) or a zero-weight `:where(.go1) <type selectors>` rule, and no rule is layered;
   - MarkDownRenderer (the only entry with `prose: true` in `components.tsx`) may also use prose
@@ -184,11 +222,28 @@ override and Tailwind cases.
     rule to MarkDownRenderer when its `.go1` is one MarkDownRenderer puts on its own root
     (`defineContract.tsx` renders it alone to find them). Any other module's class-plus-tag rule
     fails, even one whose class it passes onto MarkDownRenderer's root;
-  - the same elements rendered under `<ThemeProvider cssLayer="openui">` put every rule in
+  - the same elements rendered after `configureStyles({ layer: "openui" })` put every rule in
     `@layer openui` (no unlayered rule, no other or nested layer), within the same budget and
     with the same selector shapes;
   - every rendered `openui-*` class matches `openui-<block>[--<prop>-<value>]`, a modifier attaches
     to a documented root or part, and the rendered classes equal the component's `names`.
+- Collection retains whole selectors, including compounds and descendants that the budget must
+  reject, and preserves `@media`, `@container`, `@supports` and `@layer` wrappers. It includes only
+  keyframes named by the selected rules' animation declarations (including state-dependent CSS
+  variables), plus newly registered keyframes. Every referenced animation name must resolve to a
+  selected keyframe; CSS-wide keywords and `none` are ignored. `collect.test.tsx` checks the
+  collector itself and repeat rendering after rules are already registered.
+- Modal renders only a portal, so its Node contract uses `portal.ts` to keep the portal's children
+  inline at the React DOM boundary. A temporary document target enables its public fixture; it is
+  restored before reading the server sheet. The provider's private portal-theme marker is excluded
+  from stable-class checks. `private-names.test.tsx` uses the same adapter.
+- `client-only.contract.spec.ts` derives its component list from every contract entry with
+  `clientOnly` parts, including focused chart entries. It opens their real portals, popovers,
+  editors and overflow controls in both modes, selects CSS from `getComponentStyles()` by live
+  document markup, and checks the same selector, layer, stable-name and private-name rules.
+  Every declared client-only class must appear across its samples; no missing part is skipped.
+  The `elements` fixture's contract flag also supplies math and overflowing Sources, Tabs and
+  StackedLegend cases. This coverage remains when the render delta becomes empty.
 - `checks.ts` holds the selector, layer and class grammar; `checks.test.ts` feeds it deliberately
   broken selectors, layered rules and names so a passing contract test means something.
 - `reference.test.ts` fails when the library's `docs/reference/selectors.md` (public, it ships
@@ -202,19 +257,19 @@ pnpm --filter @openuidev/react-components-dev docs:selectors
 ### Contract coverage and import-time registration
 
 Every component is on the contract; there is no migration allowlist. `contract/coverage.test.ts`
-fails if a component folder that calls `useStyles` or exports `names` has no entry in
+fails if a component folder that registers `css`/`keyframes` or exports `names` has no entry in
 `components.tsx` (or a shared style contract), or if a built names-exporting style module is not
 covered by an entry's own names. Names an entry lists only because it renders another component
 (`dependencyN` keys) never count as coverage.
 
-`import-registration.test.ts` imports every built ESM module in Node and fails if any CSS was
-registered; `import-registration.spec.ts` imports the whole public package in Chromium and fails
-if `#_goober` holds anything but the token defaults' `:where(.goN:root)` rule in
-`@layer openui-defaults`, or `<html>` has any class but that rule's marker (ADR 0001, Q29). Both
-then render something, so the checks cannot pass on a dead sheet. `goober-imports.test.ts` fails
-if any source module other than `styles/defaults.ts`, `styles/useStyles.ts` and
-`utils/componentStyles.ts` imports Goober: components get `css` only from `useStyles`, so even a
-code path no contract element renders cannot register CSS on its own.
+`import-registration.test.ts` imports every built ESM module in Node and permits registration in
+the component store while checking that host Goober stays empty. `import-registration.spec.ts`
+checks that imports leave host Goober untouched and add only the token-default marker to `<html>`.
+Defaults live in `openui-defaults`; component rules live in `openui-styles` (ADR 0002).
+The browser test then renders a Button and checks that the component sheet is live.
+`goober-imports.test.ts` permits only `styles/defaults.ts` and `styles/css.ts` to import Goober.
+`css.test.tsx` covers public styling exports, the exact engine pin and server host isolation;
+`sheet.spec.ts` covers browser target routing, adoption, batching and host isolation.
 `contract/private-names.test.tsx` fails if a component's source reads or sets a `--_openui-*`
 variable that does not start with one of its own roots or parts (ADR 0001, Q14), or if any source
 uses an `@container style()` query, which Firefox does not support. A primitive that needs a look
@@ -252,18 +307,18 @@ Playwright's setup also bundles every parity fixture against the #72 source, ext
 
 ### Shared helpers (#90)
 
-`src/components/SharedBase/base.styles.ts` and `src/components/SkeletonPulse/skeletonPulse.styles.ts`
-are factories registered
-by their users through `useStyles`, with no import-time registration or `<html>` marker.
+`src/components/SharedBase/base.styles.ts` registers its module-level border-box rule on import.
+`src/components/SkeletonPulse/skeletonPulse.styles.ts` registers its module-level pulse rules and
+keyframes on import too. Neither adds an `<html>` marker.
 Their `names` appear as SharedBase and SkeletonPulse in the generated reference.
 `sharedStyleContracts` in `components.tsx` records these helpers separately; their focused
-`SharedBase.contract.test.tsx` and `SkeletonPulse.contract.test.tsx` collect only the CSS
-added by rendering public components. `sharedBaseConsumers` lists the three border-box users.
+`SharedBase.contract.test.tsx` and `SkeletonPulse.contract.test.tsx` select CSS by the generated
+classes rendered by public components. `sharedBaseConsumers` lists the three border-box users.
 The border-box callers' owned styles are migrated by #91 and #96, and the Skeleton
 family is fully migrated by #101. These families are covered by `migratedComponents`.
 
 `shared-base.spec.ts` covers both stable helper classes before/after the library, in default
-and layer mode, import-time inactivity, an `<html class>` rewrite, root-only box sizing and
+and layer mode, import-time border-box registration, an `<html class>` rewrite, root-only box sizing and
 actual pulse progression. `shared-base.parity.spec.ts` and `skeleton-pulse.parity.spec.ts`
 use the `parity-shared-base` and `parity-skeleton-pulse` fixtures. Capture the new
 `shared-base.json` and `skeleton-pulse.json` baselines from #72 with the command above.
@@ -325,8 +380,8 @@ Tailwind benches also cover the frame; their assertions remain unchanged.
 
 ### Adding a component
 
-Follow ADR 0001 **including its Amendments**, the package glossary and the pilot spec on
-`origin/claude/flat-styles-spec-grill`. Button, IconButton, Tabs and MarkDownRenderer are
+Follow [ADR 0002](docs/adr/0002-hookfree-css.md), ADR 0001 **including its Amendments**,
+and the package glossary. Button, IconButton, Tabs and MarkDownRenderer are
 the working examples. Keep the change inside the ticket's component scope.
 
 1. Inventory the public roots, owned parts, appearance props and runtime states. Read the
@@ -338,12 +393,12 @@ the working examples. Keep the change inside the ticket's component scope.
    `<Folder>.contract.test.tsx` calling `describeContract("<Folder>")`. Cover every value of
    every prop that changes classes, defaults included, and all parts. Record genuinely
    browser-only parts in `clientOnly`. Start with one failing behaviour through public
-   server rendering of the **built** package; never import factories or `useStyles` in tests.
-3. Export a plain `names` const from each style module and a `componentStyles(css: StyleCss)`
-   factory returning root, part and axis entries. Call `useStyles(factory)` inside the component
-   render and join generated and stable classes with `clsx`, as Button does. Register nothing
-   at import and add no class to `<html>`. Reuse the shared border-box and pulse
-   factories at render when applicable; do not copy or eagerly register them.
+   server rendering of the **built** package; never import style internals in tests.
+3. Import `css` from the internal styling module and export a module-level
+   object containing root, part and axis entries. Join its generated classes with the stable
+   classes using `clsx`, as Button does. Reuse the shared border-box and pulse objects when
+   applicable. Preserve dependency registration order with value imports and add no class
+   to `<html>`. Follow the authoring guide above when declaration order matters.
 4. Use roots `openui-<component>`, parts `openui-<component>-<part>` and modifiers
    `--<kebab-case-prop>-<kebab-case-value>`. Emit default modifiers, and boolean modifiers only
    when true. Put states on native attributes/pseudo-classes or Radix attributes. Keep each
@@ -445,7 +500,7 @@ TextContent, TextContentWrapper, InlineHeader, IconText, IconTag, Tag, TagBlock 
 They join the common override and Tailwind benches. The checker credits the prose rules of the
 inline owners' composed MarkDownRenderer to it; their owned rules keep the flat budget.
 IconTag's lazy SVG is client-only in SSR and the browser bench waits for it explicitly.
-TagBlock still registers the shared border-box factory; the shared helper's contract collects
+TagBlock imports the shared border-box rule; the shared helper's contract collects
 only the generated rule shared by its three public roots now that TagBlock also registers layout.
 
 `text-blocks.spec.ts`, using `text-blocks.tsx` and `text-blocks-cases.tsx`, checks every owned
@@ -484,8 +539,8 @@ the reference generator displays it as `bold={true}` rather than a part or strin
 
 `Accordion`, `SectionBlock` (SectionV2 and FoldableSection), `Steps`, `Card`, `CardHeader`,
 `Modal` and `TooltipWrapper` now join the contract and override benches. Modal and tooltip
-classes are marked `clientOnly` because Node cannot render their portals; their factories
-still register during Node rendering in both layer modes. The `elements` fixture opens Modal
+classes are marked `clientOnly` because Node cannot render their portals; their rules
+register on import in both layer modes. The `elements` fixture opens Modal
 in the browser and focuses the tooltip trigger. The shared benches query the whole isolated
 fixture document so they include portal content and Radix's accessible copies.
 
@@ -659,7 +714,7 @@ private context preserving the caption defaults for that internal use. Public Ca
 Only Floating UI position/transform and Calendar dropdown measurements remain inline;
 static colour/background/padding defaults are CSS. Radix's static Content display/outline/
 box-sizing/item-aligned max-height and Viewport position/flex/overflow defaults move from inline styles into the flat
-factory, with focused overrides verifying those properties. The SelectValue ref lands on its
+rules, with focused overrides verifying those properties. The SelectValue ref lands on its
 owned styling root. Calendar's state adapter also wraps consumer Day components that forward
 their cell props, including incomplete ranges without a selected fill.
 
@@ -686,7 +741,7 @@ backgrounds. Both results are asserted; Tailwind 3.4 and 4.1 preserve both group
 `slider.spec.ts` and `fixtures/slider.tsx` cover thumb hover/focus/disabled overrides before
 and after library CSS in both modes, active marks/minimum range/tooltip overrides, embedded
 Input/Select sizing and interactions, portal selection, streaming, import-time inactivity
-and `<html class>` replacement. Input defaults register through their shared internal factory
+and `<html class>` replacement. Input defaults register through their shared module-level object
 before SliderBlock's composed input rules; Select defaults register at its public root before
 the owned trigger renders. No public Input/Select variables or legacy names are shared.
 
@@ -808,9 +863,9 @@ exception for the shared StackedLegend frame's JavaScript width. Regenerate the 
 building.
 
 `other-charts.spec.ts` checks every stable class before/after library CSS and in layer mode,
-including SVG fill, the diverging notch pseudo-element, runtime cell states, render-time
-registration and HTML-class rewrites. Its fixture is `other-charts`; `?chart=<Component>` selects
-one chart and `?layer=1` enables layer mode. The parity fixtures and names are:
+including SVG fill, the diverging notch pseudo-element, runtime cell states, import-time
+registration with no sheet changes on mount, and HTML-class rewrites. Its fixture is `other-charts`;
+`?chart=<Component>` selects one chart and `?layer=1` enables layer mode. The parity fixtures and names are:
 
 - `parity-pie-chart` / `pie-chart`
 - `parity-radar-chart` / `radar-chart`
@@ -871,7 +926,7 @@ of the page's Times 16px/normal, with every box unchanged. No baselines changed.
 
 Image, ImageBlock, ImageText, ImageTextLarge, ImageGallery (including GalleryModal) and Carousel
 join the contract list, override and Tailwind benches. All seven owned style modules register
-through useStyles at render. Image's two aspect wrapper parts preserve Radix's geometry with CSS
+on import. Image's two aspect wrapper parts preserve Radix's geometry with CSS
 instead of inline defaults. ImageText retains TextBlock's size/variant typography; its numeric
 image size is a private inline variable consumed by CSS.
 ImageBlock uses data-breakpoint, data-loading and data-error; Carousel uses a single data-mask;

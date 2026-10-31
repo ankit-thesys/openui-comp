@@ -4,7 +4,6 @@ import clsx from "clsx";
 import type { Arc, PieArcDatum } from "d3-shape";
 import type { CSSProperties } from "react";
 import React from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import type { CategoricalSlice } from "../../hooks";
 import { useIndexedClickHandler } from "../../hooks/core/useIndexedClickHandler";
 import { springPresets, useIsomorphicLayoutEffect, useTranslate } from "../../shared/core/spring";
@@ -60,7 +59,7 @@ export function PieSlices<T>({
   onMouseLeave,
   onClick,
 }: PieSlicesProps<T>) {
-  const styles = useStyles(pieChartStyles);
+  const styles = pieChartStyles;
   const handleClick = useIndexedClickHandler(data, onClick);
 
   return (
@@ -171,7 +170,7 @@ function Slice({
   onMouseLeave,
   onClick,
 }: SliceProps) {
-  const styles = useStyles(pieChartStyles);
+  const styles = pieChartStyles;
   const follow = useTranslate(springPresets.popOut);
 
   // Glide to the offset when hovered, always glide home otherwise (rest IS home, so no

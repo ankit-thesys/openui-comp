@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 /** TabsTrigger's stable classes. Active and inactive are `[data-state]` states, not classes. */
 export const names = {
@@ -25,7 +25,7 @@ const ellipsis = `
  * TabsList variant sets; the fallbacks are the `title` look. `[data-state="active"]` comes after
  * `:hover` and restates everything hover changes, so the active trigger ignores hover.
  */
-export const tabsTriggerStyles = (css: StyleCss) => ({
+export const tabsTriggerStyles = {
   root: css`
     cursor: pointer;
     display: flex;
@@ -116,4 +116,4 @@ export const tabsTriggerStyles = (css: StyleCss) => ({
     ${ellipsis}
     max-width: 232px;
   `,
-});
+};

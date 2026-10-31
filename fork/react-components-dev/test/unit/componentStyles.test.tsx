@@ -1,5 +1,5 @@
 // Node seam: getComponentStyles() gives every server response the CSS its markup uses.
-// Styles register while components render, so a server renders first and collects afterwards.
+// Styles register on import or during rendering, so a server renders first and collects afterwards.
 // Ported from #73's node --test file.
 import { Button, getComponentStyles, ThemeProvider } from "@openuidev/react-components";
 import { renderToString } from "react-dom/server";
@@ -46,7 +46,7 @@ describe("getComponentStyles", () => {
   });
 
   it("never returns an empty string, so the browser can adopt the <style> it is inlined into", () => {
-    // Goober writes into the first text node of an existing #_goober; an empty element has none.
+    // Every response includes an adoptable openui-styles tag, even before rules register.
     expect(getComponentStyles().length).toBeGreaterThan(0);
   });
 });

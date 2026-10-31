@@ -3,24 +3,31 @@
 // soon as it joins the contract list. The `elements` fixture renders the same list client-side.
 // Bundled for Node by build-fixtures.ts, like bench-server.tsx.
 import { namesIn } from "../../unit/contract/collect";
-import { migratedComponents } from "../../unit/contract/components";
+import {
+  migratedComponents,
+  otherChartContracts,
+  type MigratedComponent,
+} from "../../unit/contract/components";
 
 // A component's own stable classes: the `names` of its style modules, as the reference reads them.
 // Name groups made only of `dependency*` keys belong to composed components, which have contract
 // entries of their own, so they are left out.
 // Use the contract's exact names rather than every nested style module: Charts/shared and
 // individual cartesian families share a parent folder but render different public compositions.
-const ownClasses = (folder: string) => [
+const ownClasses = ({ names }: MigratedComponent) => [
   ...namesIn(
-    migratedComponents
-      .find((entry) => entry.folder === folder)!
-      .names.filter((names) => !Object.keys(names).every((key) => key.startsWith("dependency"))),
+    names.filter((names) => !Object.keys(names).every((key) => key.startsWith("dependency"))),
   ),
 ];
 
-export const migrated = migratedComponents.map(({ folder, clientOnly = [] }) => ({
-  folder,
-  stableClasses: ownClasses(folder),
+const details = (entry: MigratedComponent) => ({
+  folder: entry.folder,
+  chart: entry.folder.startsWith("Charts") || otherChartContracts.includes(entry),
+  stableClasses: ownClasses(entry),
   /** Classes that render only after the browser measures, such as Tabs' scroll buttons. */
-  clientOnly,
-}));
+  clientOnly: entry.clientOnly ?? [],
+});
+export const migrated = migratedComponents.map(details);
+export const clientOnlyContracts = [...migratedComponents, ...otherChartContracts]
+  .filter((entry) => entry.clientOnly?.length)
+  .map(details);

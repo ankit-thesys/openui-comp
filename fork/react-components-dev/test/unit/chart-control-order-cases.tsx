@@ -5,10 +5,13 @@ import {
   IconButton,
   LineChart,
   ThemeProvider,
+  configureStyles,
   getComponentStyles,
 } from "@openuidev/react-components";
 import { renderToString } from "react-dom/server";
-import { expect, it } from "vitest";
+import { afterEach, expect, it } from "vitest";
+
+afterEach(() => configureStyles({ layer: undefined }));
 
 const data = Array.from({ length: 25 }, (_, i) => ({
   month: `Month ${i}`,
@@ -25,15 +28,16 @@ const declarationsOn = (html: string, stable: string, sheet: string) => {
 export function describeChartControlOrder(preload: boolean) {
   for (const layer of [undefined, "openui"]) {
     it(`preserves chart-specific control declarations in ${layer ?? "default"} mode`, () => {
+      configureStyles({ layer });
       if (preload)
         renderToString(
-          <ThemeProvider cssLayer={layer}>
+          <ThemeProvider>
             <Button size="small">Primer</Button>
             <IconButton icon={<svg />} />
           </ThemeProvider>,
         );
       const html = renderToString(
-        <ThemeProvider cssLayer={layer}>
+        <ThemeProvider>
           <LineChart data={data} categoryKey="month" width={240} height={260} />
         </ThemeProvider>,
       );

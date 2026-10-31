@@ -72,7 +72,7 @@ test("Button stays styled when <html class> is rewritten", async ({ page }) => {
   expect(await computed(page, "default")).toEqual(before);
 });
 
-test("the token layer is declared first and the library sheet precedes app CSS", async ({
+test("the token layer is declared first, then the defaults, then the library sheet, before app CSS", async ({
   page,
 }) => {
   await page.goto(`/button.html?css=${encodeURIComponent(".app { color: red; }")}`);
@@ -83,19 +83,25 @@ test("the token layer is declared first and the library sheet precedes app CSS",
         style.id || (style.hasAttribute("data-openui-layer-order") ? "layer-order" : "other"),
     ),
   );
-  expect(head.slice(0, 2)).toEqual(["layer-order", "_goober"]);
-  expect(head.indexOf("consumer")).toBeGreaterThan(head.indexOf("_goober"));
-  const firstRule = await page.evaluate(() => document.styleSheets[0]!.cssRules[0]!.cssText);
+  expect(head.slice(0, 3)).toEqual(["layer-order", "openui-defaults", "openui-styles"]);
+  expect(head.indexOf("consumer")).toBeGreaterThan(head.indexOf("openui-styles"));
+  const firstRule = await page.evaluate(
+    () =>
+      (document.querySelector("[data-openui-layer-order]") as HTMLStyleElement).sheet!.cssRules[0]!
+        .cssText,
+  );
   expect(firstRule).toBe("@layer openui-defaults;");
 });
 
-test("Button registers its styles when it renders, not on import, and marks no <html> class", async ({
+// Button's style module is module-level since #132 (ADR 0002): its rules register on import, and
+// rendering adds none.
+test("Button registers its styles on import, not when it renders, and marks no <html> class", async ({
   page,
 }) => {
   await page.goto("/button.html?lazy=1");
   await page.waitForFunction(() => typeof (window as FixtureWindow).mountFixture === "function");
   const beforeMount = await page.evaluate(() => ({
-    sheet: document.getElementById("_goober")?.textContent ?? "",
+    sheet: document.getElementById("openui-styles")?.textContent ?? "",
     html: [...document.documentElement.classList],
   }));
 
@@ -109,10 +115,14 @@ test("Button registers its styles when it renders, not on import, and marks no <
     ].flatMap((el) => [...el.classList].filter((name) => /^go\d+$/.test(name))),
   );
   const html = await page.evaluate(() => [...document.documentElement.classList]);
+  const afterMount = await page.evaluate(
+    () => document.getElementById("openui-styles")?.textContent ?? "",
+  );
 
   expect(generated.length).toBeGreaterThan(0);
   for (const name of generated)
-    expect(beforeMount.sheet).not.toMatch(new RegExp(`\\.${name}(?![0-9])`));
+    expect(beforeMount.sheet).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+  expect(afterMount).toBe(beforeMount.sheet);
   expect(html).toEqual(beforeMount.html);
   for (const name of generated) expect(html).not.toContain(name);
 });

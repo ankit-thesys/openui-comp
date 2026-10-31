@@ -20,7 +20,7 @@ const page = (name, params) => {
   return (
     `<!doctype html><html><head><meta charset="utf-8">` +
     (recipe
-      ? `<style id="recipe">@layer ${text(recipe)};</style><style id="_goober"> </style>`
+      ? `<style id="recipe">@layer ${text(recipe)};</style><style id="openui-styles"> </style>`
       : "") +
     `<title>${name}</title>` +
     (css ? `<style id="consumer">${text(css)}</style>` : "") +
@@ -40,6 +40,14 @@ const serve = async (res, directory, file, type) => {
 
 createServer(async (req, res) => {
   const { pathname, searchParams } = new URL(req.url, "http://localhost");
+  if (["/streaming.html", "/streaming-release"].includes(pathname)) {
+    const { streamPage, releaseStream } = await import("./.fixtures/server/streaming-server.mjs");
+    if (pathname === "/streaming-release") {
+      releaseStream(searchParams.get("response"));
+      return res.writeHead(204).end();
+    }
+    return streamPage(res, searchParams.get("layer") === "openui" ? "openui" : undefined);
+  }
   // Only bare names are served, so requests cannot reach outside the fixture directories.
   const html = pathname.match(/^\/([\w-]+)\.html$/);
   if (html)

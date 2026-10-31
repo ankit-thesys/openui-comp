@@ -1,4 +1,7 @@
 // Public-package fixture for #99: variants, measured scroll controls and real editing portals.
+// Configuration comes first, ahead of the contract list's top-level await.
+import "./configure-layer";
+
 import { Button, EditableTable, ThemeProvider } from "openui-under-test";
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
@@ -53,10 +56,7 @@ function EditingExample() {
   );
 }
 createRoot(document.getElementById("root")!).render(
-  <ThemeProvider
-    cssLayer={params.get("layer") ?? undefined}
-    mode={params.get("mode") === "dark" ? "dark" : "light"}
-  >
+  <ThemeProvider mode={params.get("mode") === "dark" ? "dark" : "light"}>
     {migratedComponents
       .filter((entry) => folders.includes(entry.folder))
       .map((entry) => (

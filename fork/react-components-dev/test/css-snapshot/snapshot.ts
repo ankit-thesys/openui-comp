@@ -1,0 +1,286 @@
+import { indexOutsideStrings, matchingBrace } from "../unit/contract/checks";
+import { cssFor } from "../unit/contract/collect";
+import { expectedWithIntentionalChanges } from "./intentional-changes";
+import type { Provenance } from "./order";
+
+export interface Collection {
+  html: string;
+  sheet: string;
+}
+
+export interface DeclarationRule {
+  selector: string;
+  conditions: string[];
+  declarations: string[];
+  /** The cascade layer around the rule, however many wrappers express it. Absent when unlayered. */
+  layer?: string;
+}
+
+export interface Snapshot {
+  /** Normalized markup split before each tag, so a diff lands on the changed element. */
+  markup: string[];
+  rules: Record<string, DeclarationRule[]>;
+  /** Per element and style module, its generated rules in sheet (registration) order. */
+  order: string[];
+}
+
+// Layer-mode samples keep only the rules and their order: the layer API around the markup changes
+// with the app-wide layer (#131), while each rule's declarations and its layer must not.
+export type LayerSnapshot = Omit<Snapshot, "markup">;
+
+export function declarationRules(
+  css: string,
+  conditions: string[] = [],
+  layer?: string,
+): DeclarationRule[] {
+  const rules: DeclarationRule[] = [];
+  let start = 0;
+  while (start < css.length) {
+    const open = indexOutsideStrings(css, start, "{;");
+    if (open === -1) break;
+    if (css[open] === ";") {
+      start = open + 1;
+      continue;
+    }
+    const close = matchingBrace(css, open);
+    const selector = css.slice(start, open).trim();
+    const body = css.slice(open + 1, close);
+    if (selector.startsWith("@layer")) {
+      // Record the layer, not its wrappers: one per rule or one around the sheet is the same.
+      const name = selector.slice("@layer".length).trim();
+      rules.push(...declarationRules(body, conditions, layer ? `${layer}.${name}` : name));
+    } else if (/^@(media|supports|container)\b/.test(selector)) {
+      rules.push(...declarationRules(body, [...conditions, selector], layer));
+    } else {
+      const declarations: string[] = [];
+      let from = 0;
+      while (from < body.length) {
+        const end = indexOutsideStrings(body, from, ";");
+        const declaration = body.slice(from, end === -1 ? body.length : end).trim();
+        if (declaration) declarations.push(declaration);
+        if (end === -1) break;
+        from = end + 1;
+      }
+      rules.push({ selector, conditions, declarations, ...(layer ? { layer } : {}) });
+    }
+    start = close + 1;
+  }
+  return rules;
+}
+
+export function classLists(html: string) {
+  return [...html.matchAll(/<([\w-]+)\b[^>]*?\sclass="([^"]*)"[^>]*>/g)].map((match) => ({
+    tag: match[1]!,
+    classes: match[2]!.split(/\s+/).filter(Boolean),
+  }));
+}
+
+// Names are anchored to stable markup and class slots, never to the declaration's hash. Keeping
+// distinct slots (rather than replacing every hash with "go") preserves selector relationships.
+export function snapshot({ html, sheet }: Collection, provenance: Provenance): Snapshot {
+  const aliases = new Map<string, string>();
+  const counts = new Map<string, number>();
+  for (const { classes } of classLists(html)) {
+    const stable = classes.filter((name) => name.startsWith("openui-") && !name.includes("--"));
+    const anchor = stable.join("+");
+    for (const name of classes.filter((name) => /^go\d+$/.test(name))) {
+      if (aliases.has(name)) continue;
+      if (!anchor) throw new Error(`Generated class ${name} has no stable class in its markup.`);
+      const slot = counts.get(anchor) ?? 0;
+      aliases.set(name, `${anchor}#${slot}`);
+      counts.set(anchor, slot + 1);
+    }
+  }
+  const css = cssFor(html, sheet);
+  for (const [, name] of css.matchAll(/@(?:-webkit-)?keyframes\s+(go\d+)\b/g)) {
+    if (!aliases.has(name!)) aliases.set(name!, `keyframe#${aliases.size}`);
+  }
+  const normalize = (value: string) =>
+    value.replace(/\bgo\d+\b/g, (name) => {
+      const alias = aliases.get(name);
+      if (!alias) throw new Error(`Unmapped generated name ${name}.`);
+      return alias;
+    });
+  // Equal-weight rules on one element resolve by sheet order, which the keyed rules below lose.
+  // Within one style module that order must survive the migration (ADR 0002); across modules it
+  // becomes import order, so cross-module pairs are left to the order report.
+  const position = new Map<string, number>();
+  declarationRules(css).forEach(({ selector }, index) => {
+    for (const [, name] of selector.matchAll(/\.(go\d+)\b/g))
+      if (!position.has(name!)) position.set(name!, index);
+  });
+  const order = new Set<string>();
+  for (const { classes } of classLists(html)) {
+    const byModule = new Map<string, string[]>();
+    for (const name of classes.filter((name) => /^go\d+$/.test(name))) {
+      const modules = (provenance[name] ?? [])
+        .filter(({ stableClasses }) => stableClasses.some((stable) => classes.includes(stable)))
+        .map(({ module }) => module);
+      // A class the provenance scan cannot place still gets an order entry, so the comparison
+      // shows the change rather than stopping here.
+      if (!modules.length) modules.push("(unattributed)");
+      for (const module of modules) byModule.set(module, [...(byModule.get(module) ?? []), name]);
+    }
+    for (const [module, names] of byModule)
+      if (names.length > 1)
+        order.add(
+          `${module}: ${names
+            .sort((a, b) => (position.get(a) ?? Infinity) - (position.get(b) ?? Infinity))
+            .map((name) => aliases.get(name))
+            .join(" < ")}`,
+        );
+  }
+  const rules: Snapshot["rules"] = {};
+  for (const rule of declarationRules(css)) {
+    const owner = rule.selector.match(/\.(go\d+)\b/)?.[1];
+    const key = owner ? aliases.get(owner)! : "@keyframes";
+    (rules[key] ??= []).push({
+      selector: normalize(rule.selector),
+      conditions: rule.conditions,
+      declarations: rule.declarations.map(normalize),
+      ...(rule.layer ? { layer: rule.layer } : {}),
+    });
+  }
+  // React's opaque instance IDs differ between independent roots and browser navigations. Keep
+  // references linked while normalizing their allocation counters; all other markup stays exact.
+  const ids = new Map<string, string>();
+  const markup = normalize(html)
+    .replace(/(?:_R_[\w-]*_|_r_[\w-]*_|:r[\w-]+:)/g, (id) => {
+      if (!ids.has(id)) ids.set(id, `react-id-${ids.size}`);
+      return ids.get(id)!;
+    })
+    .split(/(?=<)/);
+  return comparable({
+    markup,
+    rules: Object.fromEntries(Object.entries(rules).sort(([a], [b]) => a.localeCompare(b))),
+    order: [...order].sort(),
+  });
+}
+
+// Named keyframes share one "@keyframes" key across modules, in sheet order. Keyframes with
+// different names never compete, and their relative order is registration order across modules,
+// which the migration turns into import order (the recorded Charts samples already differ between
+// server and browser). Compare them by name; the sort is stable, so duplicates of one name keep
+// their order, where the last one wins.
+//
+// An exact duplicate of an earlier record is dropped, keeping the first, as Goober's own dedupe
+// does in a browser sheet. The pre-#130 server sheet repeated a rule that a shared or composed
+// style registered again after collection had drained the old server sheet;
+// browser sheets never held such a copy, and the store since #130 does not either.
+export function comparable<T extends Snapshot | LayerSnapshot>(sample: T): T {
+  const rules = Object.fromEntries(
+    Object.entries(sample.rules).map(([key, list]) => {
+      const seen = new Set<string>();
+      const unique = list.filter((rule) => {
+        const id = JSON.stringify(rule);
+        return !seen.has(id) && !!seen.add(id);
+      });
+      return [
+        key,
+        key === "@keyframes"
+          ? unique.sort((a, b) => (a.selector < b.selector ? -1 : a.selector > b.selector ? 1 : 0))
+          : unique,
+      ];
+    }),
+  );
+  const measured =
+    "markup" in sample ? { markup: withoutMeasuredSizes(sample.markup as string[]) } : {};
+  return { ...sample, ...measured, rules, order: conflictingOrder(sample.order, rules) };
+}
+
+// Inline sizes a component measures at runtime are layout state, not CSS: the Calendar's month and
+// year dropdowns size themselves from a ResizeObserver debounced by 100 ms (containerHeight - 45,
+// and the months list's containerWidth), so a capture can land before or after it. Only those two
+// parts, and only numeric px values of these three properties, are dropped; every other attribute,
+// class and inline declaration on them still compares.
+const MEASURED_PARTS = [
+  "openui-calendar-select-content-months",
+  "openui-calendar-select-content-years",
+];
+const MEASURED_SIZE = /\s?(?:max-height|min-height|min-width):\s*-?[\d.]+px;/g;
+
+export function withoutMeasuredSizes(markup: string[]): string[] {
+  return markup.map((element) => {
+    const classes = element.match(/^<[\w-]+\b[^>]*?\sclass="([^"]*)"/)?.[1]?.split(/\s+/) ?? [];
+    if (!MEASURED_PARTS.some((part) => classes.includes(part))) return element;
+    return element.replace(/\sstyle="([^"]*)"/, (_, style: string) => {
+      const rest = style.replace(MEASURED_SIZE, "").trim();
+      return rest ? ` style="${rest}"` : "";
+    });
+  });
+}
+
+// The property families a declaration sets, widened so that anything that could reset it shares
+// one: `padding-top` and `padding`, `-webkit-mask` and `mask`, `min-width` and `min-height`. The
+// first name segment covers most shorthands; SHORTHAND_FAMILIES adds the ones whose longhands are
+// named differently (`inset` and `top`, `font` and `line-height`, `place-items` and `align-items`,
+// physical and logical sizes). `all` meets every property except custom ones, which only meet
+// themselves.
+const SHORTHAND_FAMILIES: Record<string, string[]> = {
+  inset: ["inset"],
+  top: ["inset"],
+  right: ["inset"],
+  bottom: ["inset"],
+  left: ["inset"],
+  font: ["line"],
+  place: ["align", "justify"],
+  gap: ["gap"],
+  "row-gap": ["gap"],
+  "column-gap": ["gap"],
+  "grid-gap": ["gap"],
+  "grid-row-gap": ["gap"],
+  "grid-column-gap": ["gap"],
+  columns: ["column"],
+  width: ["size"],
+  height: ["size"],
+  "inline-size": ["size"],
+  "block-size": ["size"],
+  "word-wrap": ["overflow"],
+  "white-space": ["text"],
+};
+const ALL = "*";
+const propertyFamilies = (declaration: string): string[] => {
+  const name = declaration.slice(0, declaration.indexOf(":")).trim().toLowerCase();
+  if (name.startsWith("--")) return [name];
+  if (name === "all") return [ALL];
+  const unprefixed = name.replace(/^-(webkit|moz|ms)-/, "");
+  const first = unprefixed.split("-")[0]!;
+  return [first, ...(SHORTHAND_FAMILIES[unprefixed] ?? SHORTHAND_FAMILIES[first] ?? [])];
+};
+const overlaps = (a: Set<string>, b: Set<string>) =>
+  [...b].some((family) => a.has(family)) ||
+  (a.has(ALL) && [...b].some((family) => !family.startsWith("--"))) ||
+  (b.has(ALL) && [...a].some((family) => !family.startsWith("--")));
+
+// Sheet order between two classes from one module only decides a value where both set the same
+// property. A module's rule can move ahead of its siblings without any declaration changing: Goober
+// keeps the first position of an identical body (`width: 100%`, `cursor: pointer`), so once another
+// module that imports first registers the same body, it sits there. Keep the pairs that can compete.
+function conflictingOrder(order: string[], rules: Snapshot["rules"]): string[] {
+  const families = (alias: string) =>
+    new Set((rules[alias] ?? []).flatMap((rule) => rule.declarations.flatMap(propertyFamilies)));
+  const pairs = new Set<string>();
+  for (const entry of order) {
+    const separator = entry.lastIndexOf(": ");
+    const module = entry.slice(0, separator);
+    const aliases = entry.slice(separator + 2).split(" < ");
+    aliases.forEach((first, i) => {
+      const before = families(first);
+      for (const second of aliases.slice(i + 1))
+        if (overlaps(before, families(second))) pairs.add(`${module}: ${first} < ${second}`);
+    });
+  }
+  return [...pairs].sort();
+}
+
+/** `comparable` for every sample of a recorded file, so baselines compare without re-recording. */
+export const comparableAll = <T extends Snapshot | LayerSnapshot>(
+  samples: Record<string, T>,
+  component?: string,
+): Record<string, T> =>
+  Object.fromEntries(
+    Object.entries(samples).map(([key, sample]) => [
+      key,
+      expectedWithIntentionalChanges(component ?? key, comparable(sample)),
+    ]),
+  );

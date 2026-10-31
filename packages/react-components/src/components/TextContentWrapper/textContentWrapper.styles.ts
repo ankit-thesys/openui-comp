@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-text-content-wrapper",
   markdown: "openui-text-content-wrapper-markdown",
@@ -9,7 +10,7 @@ export const names = {
     sunk: "openui-text-content-wrapper--variant-sunk",
   },
 } as const;
-export const textContentWrapperStyles = (css: StyleCss) => ({
+export const textContentWrapperStyles = {
   root: css`
     display: flex;
     flex-direction: column;
@@ -25,4 +26,4 @@ export const textContentWrapperStyles = (css: StyleCss) => ({
     display: var(--_openui-text-content-wrapper-math-display);
     margin-top: var(--_openui-text-content-wrapper-math-margin);
   `,
-});
+};

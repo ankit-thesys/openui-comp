@@ -309,18 +309,24 @@ for (const family of [
       });
 
 for (const layer of [false, true])
-  test(`portal emitted CSS keeps the selector and layer budget, layer=${layer}`, async ({
-    page,
-  }) => {
+  test(`portal CSS keeps the selector and layer budget, layer=${layer}`, async ({ page }) => {
     await open(page, "image-gallery-modal", layer);
-    const before = (await page.locator("#_goober").textContent()) ?? "";
     await portal(page);
-    const after = (await page.locator("#_goober").textContent()) ?? "";
+    // Rules register on import since the hook-free migration (ADR 0002), so opening the portal
+    // adds none. Check the rules its markup uses instead, selected by class from the full sheet.
+    const { html, sheet } = await page.evaluate(() => ({
+      html: [...document.body.children]
+        .filter((el) => el.matches('[role="dialog"]') || el.querySelector('[role="dialog"]'))
+        .map((el) => el.outerHTML)
+        .join(""),
+      sheet: document.getElementById("openui-styles")?.textContent ?? "",
+    }));
     const { rulesOf, ruleViolation } = await import("../unit/contract/checks");
-    const previous = new Set(rulesOf(before).map((rule) => rule.selector));
-    const added = rulesOf(after).filter((rule) => !previous.has(rule.selector));
-    expect(added.length).toBeGreaterThan(0);
-    expect(added.map((rule) => ruleViolation(rule, layer ? "openui" : "")).filter(Boolean)).toEqual(
+    const { cssFor } = await import("../unit/contract/collect");
+    expect(html).toContain("openui-image-gallery-modal");
+    const used = rulesOf(cssFor(html, sheet));
+    expect(used.length).toBeGreaterThan(0);
+    expect(used.map((rule) => ruleViolation(rule, layer ? "openui" : "")).filter(Boolean)).toEqual(
       [],
     );
     // Photo 1 is clipped at this offset; hovering it scrolls the track again and

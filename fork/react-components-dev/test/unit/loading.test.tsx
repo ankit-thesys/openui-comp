@@ -9,12 +9,13 @@ import {
 import { renderToString } from "react-dom/server";
 import { expect, it } from "vitest";
 
-it("registers Skeleton's flat layout and bar styles when rendered", () => {
+it("registers Skeleton's flat layout and bar styles on import", () => {
   const before = getComponentStyles();
   const html = renderToString(<Skeleton count={2} className="app-loading" />);
   expect(html).toMatch(/class="[^"]*\bopenui-skeleton\b[^\"]*app-loading/);
   expect(html).not.toContain("openui-skeleton-root");
-  const css = getComponentStyles().slice(before.length);
+  expect(getComponentStyles()).toBe(before);
+  const css = before;
   expect(css).toContain("flex-direction:column");
   expect(css).toContain("background-color:var(--openui-elevated,");
 });
@@ -34,7 +35,8 @@ it("renders TableSkeleton's root and owned row, cell and header-cell parts", () 
   const html = renderToString(<TableSkeleton rows={2} columns={2} />);
   expect(html).toContain("openui-table-skeleton-header-cell");
   expect(html).not.toContain("openui-skeleton-table");
-  expect(getComponentStyles().slice(before.length)).toContain(":last-child{border-bottom:0;");
+  expect(getComponentStyles()).toBe(before);
+  expect(before).toContain(":last-child{border-bottom:0;");
 });
 
 it("emits DotMatrixLoader's default and compact modifiers and flat dot parts", () => {
@@ -46,5 +48,6 @@ it("emits DotMatrixLoader's default and compact modifiers and flat dot parts", (
   const compact = renderToString(<DotMatrixLoader variant="compact" size={40} />);
   expect(compact).toContain("openui-dot-matrix-loader--variant-compact");
   expect(compact.match(/openui-dot-matrix-loader-dot/g)).toHaveLength(16);
-  expect(getComponentStyles().slice(before.length)).toContain("aspect-ratio:1;");
+  expect(getComponentStyles()).toBe(before);
+  expect(before).toContain("aspect-ratio:1;");
 });

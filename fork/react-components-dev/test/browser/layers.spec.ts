@@ -1,7 +1,91 @@
-// Layer mode in Chromium: `<ThemeProvider cssLayer>` puts the library's component rules in that
-// cascade layer, so unlayered consumer CSS and Tailwind 4 utilities win, while components outside
-// any provider, or under one without cssLayer, keep the default unlayered rules.
+// The app-wide sheet wrapper controls the cascade for every component and public style.
 import { expect, test, type Page } from "@playwright/test";
+import type { layersFixture } from "./fixtures/layers";
+
+type FixtureWindow = Window & { layersFixture?: typeof layersFixture };
+
+test("an empty reserved sheet does not cause a late-configuration warning", async ({ page }) => {
+  const warnings: string[] = [];
+  page.on("console", (message) => {
+    if (message.type() === "warning" && message.text().includes("[OpenUI]"))
+      warnings.push(message.text());
+  });
+  await page.route("**/layers-reserved.html?*", (route) =>
+    route.fulfill({
+      contentType: "text/html",
+      body: `<!doctype html><html><head><style id="openui-styles">\n </style></head>
+        <body><div id="root"></div><script type="module" src="/layers-development.js"></script></body></html>`,
+    }),
+  );
+  await page.goto("/layers-reserved.html?layer=openui");
+  await expect(page.getByTestId("default")).toBeVisible();
+  expect(warnings).toEqual([]);
+  // Playwright's text assertions skip <style> content, so read textContent.
+  await expect
+    .poll(() => page.locator("style#openui-styles").textContent())
+    .toContain("@layer openui{");
+});
+
+// A hand-written server sheet may start on its own line. The browser still reads its layer, so the
+// same layer configured in the app entry is no change and appended rules join that layer.
+test("an indented layered server sheet keeps its layer without a warning", async ({ page }) => {
+  const warnings: string[] = [];
+  page.on("console", (message) => {
+    if (message.type() === "warning" && message.text().includes("[OpenUI]"))
+      warnings.push(message.text());
+  });
+  await page.route("**/layers-indented.html?*", (route) =>
+    route.fulfill({
+      contentType: "text/html",
+      body: `<!doctype html><html><head><style data-openui-styles>
+        @layer openui{.server-only{color:rgb(1, 2, 3)}}
+      </style></head>
+        <body><div id="root"></div><script type="module" src="/layers-development.js"></script></body></html>`,
+    }),
+  );
+  await page.goto("/layers-indented.html?layer=openui");
+  await expect(page.getByTestId("default")).toBeVisible();
+  expect(warnings).toEqual([]);
+  // Playwright's text assertions skip <style> content, so read textContent.
+  await expect
+    .poll(() => page.locator("style#openui-styles").textContent())
+    .toContain("@layer openui{");
+});
+
+for (const environment of ["development", "production"]) {
+  test(`late configuration warns only in development: ${environment}`, async ({ page }) => {
+    const warnings: string[] = [];
+    page.on("console", (message) => {
+      if (message.type() === "warning" && message.text().includes("[OpenUI]"))
+        warnings.push(message.text());
+    });
+    const fixture = environment === "development" ? "layers-development" : "layers";
+    await page.goto(`/${fixture}.html?layer=openui`);
+    await expect(page.getByTestId("default")).toBeVisible();
+    const sheet = page.locator("style#openui-styles");
+    const before = await sheet.textContent();
+
+    await page.evaluate(() => {
+      (window as FixtureWindow).layersFixture!.configureStyles({ layer: "openui" });
+    });
+    expect(warnings).toEqual([]);
+    await page.evaluate(() => {
+      (window as FixtureWindow).layersFixture!.configureStyles({ layer: "later" });
+    });
+    expect(warnings).toEqual(
+      environment === "development"
+        ? [expect.stringContaining("configureStyles was called after component rules were written")]
+        : [],
+    );
+    expect(await sheet.textContent()).toBe(before);
+    const name = await page.evaluate(
+      () => (window as FixtureWindow).layersFixture!.css`color: rgb(71, 83, 97);`,
+    );
+    await expect
+      .poll(() => sheet.textContent())
+      .toBe(`${before}@layer later{.${name}{color:rgb(71, 83, 97);}}`);
+  });
+}
 
 const OVERRIDE = {
   color: "rgb(1, 2, 3)",
@@ -44,28 +128,40 @@ const layersOf = (page: Page, testId: string) =>
         else if (rule instanceof CSSGroupingRule) visit(rule.cssRules, layer);
       }
     };
-    visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules, "");
+    visit((document.getElementById("openui-styles") as HTMLStyleElement).sheet!.cssRules, "");
     return [...found].sort();
   });
 
-test("Button's rules sit in the provider's cssLayer; Buttons outside any provider stay unlayered", async ({
+test("one sheet wrapper includes import-time styles and every provider subtree", async ({
   page,
 }) => {
   await page.goto("/layers.html?layer=openui");
-  expect(await layersOf(page, "default")).toEqual(["openui"]);
-  expect(await layersOf(page, "outside")).toEqual([""]);
+  for (const id of ["default", "outside", "inherited", "nested", "imported"])
+    expect(await layersOf(page, id)).toEqual(["openui"]);
+  const result = await page.evaluate(() => {
+    const tag = document.getElementById("openui-styles") as HTMLStyleElement;
+    const rules = tag.sheet!.cssRules;
+    return {
+      count: rules.length,
+      layer: rules[0] instanceof CSSLayerBlockRule ? rules[0].name : null,
+      wrapperCount: tag.textContent!.match(/@layer /g)?.length,
+      dataLayer: tag.hasAttribute("data-layer"),
+      classes: ["default", "outside", "inherited", "nested"].map(
+        (id) => document.querySelector(`[data-testid="${id}"]`)!.className,
+      ),
+    };
+  });
+  expect(result.count).toBe(1);
+  expect(result.layer).toBe("openui");
+  expect(result.wrapperCount).toBe(1);
+  expect(result.dataLayer).toBe(false);
+  expect(new Set(result.classes).size).toBe(1);
 });
 
-test("nested providers inherit the cssLayer and can set their own", async ({ page }) => {
-  await page.goto("/layers.html?layer=openui");
-  expect(await layersOf(page, "inherited")).toEqual(["openui"]);
-  expect(await layersOf(page, "overridden")).toEqual(["nested"]);
-});
-
-test("a provider without cssLayer leaves Button unlayered", async ({ page }) => {
+test("without configuration the whole sheet stays unlayered", async ({ page }) => {
   await page.goto("/layers.html");
-  expect(await layersOf(page, "default")).toEqual([""]);
-  expect(await layersOf(page, "inherited")).toEqual([""]);
+  for (const id of ["default", "outside", "inherited", "nested", "imported"])
+    expect(await layersOf(page, id)).toEqual([""]);
 });
 
 test("layer mode renders Button exactly as default mode does", async ({ page }) => {
@@ -108,7 +204,9 @@ for (const position of ["before", "after"] as const) {
   });
 }
 
-test("without cssLayer the same consumer CSS loses to Button's heavier rules", async ({ page }) => {
+test("without a configured layer the same consumer CSS loses to Button's heavier rules", async ({
+  page,
+}) => {
   await page.goto(`/layers.html?css=${encodeURIComponent(consumerCss)}`);
   expect((await computed(page, "default"))["background-color"]).not.toBe(
     OVERRIDE["background-color"],
@@ -144,7 +242,9 @@ test("the layer statement only in the app's CSS lets Tailwind's base wipe Button
   });
 });
 
-test("without cssLayer, Tailwind 4 utilities need `!` to beat Button", async ({ page }) => {
+test("without a configured layer, Tailwind 4 utilities need `!` to beat Button", async ({
+  page,
+}) => {
   await page.goto("/layers.html");
   const styled = await computed(page, "default");
 

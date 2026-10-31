@@ -1,6 +1,7 @@
-// Public package fixture for #91 overrides, state transitions, layers and lazy registration.
+// Public package fixture for #91 overrides, state transitions, layers and lazy mounting.
 import {
   Buttons,
+  configureStyles,
   FormControl,
   Hint,
   Input,
@@ -12,6 +13,7 @@ import { useState } from "react";
 import { createRoot } from "react-dom/client";
 
 const params = new URLSearchParams(location.search);
+configureStyles({ layer: params.get("layer") || undefined });
 function Fields() {
   const [hasError, setHasError] = useState(true);
   return (
@@ -53,10 +55,7 @@ function Fields() {
 }
 const mount = () =>
   createRoot(document.getElementById("root")!).render(
-    <ThemeProvider
-      cssLayer={params.get("layer") || undefined}
-      mode={params.get("mode") === "dark" ? "dark" : "light"}
-    >
+    <ThemeProvider mode={params.get("mode") === "dark" ? "dark" : "light"}>
       <Fields />
     </ThemeProvider>,
   );

@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
 
 export const names = {
   root: "openui-card-block-layout",
@@ -28,7 +28,7 @@ export const names = {
   },
 } as const;
 
-export const cardBlockLayoutStyles = (css: StyleCss) => ({
+export const cardBlockLayoutStyles = {
   root: css`
     width: 100%;
     container-type: inline-size;
@@ -192,4 +192,4 @@ export const cardBlockLayoutStyles = (css: StyleCss) => ({
       width: var(--_openui-card-block-layout-mobile-width);
     }
   `,
-});
+};

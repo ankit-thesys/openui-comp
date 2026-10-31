@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-overview-card-block",
@@ -14,7 +14,7 @@ export const names = {
   },
 } as const;
 
-export const overviewCardBlockStyles = (css: StyleCss) => ({
+export const overviewCardBlockStyles = {
   card: css`
     /* react-ui's content-box sizing, declared so a page's box-sizing reset (Tailwind's preflight, for
        one) cannot change the geometry. */
@@ -103,4 +103,4 @@ export const overviewCardBlockStyles = (css: StyleCss) => ({
     width: 14px;
     height: 14px;
   `,
-});
+};

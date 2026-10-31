@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-inline-header",
@@ -6,7 +6,7 @@ export const names = {
   description: "openui-inline-header-description",
 } as const;
 
-export const inlineHeaderStyles = (css: StyleCss) => ({
+export const inlineHeaderStyles = {
   root: css`
     display: flex;
     flex-direction: column;
@@ -28,4 +28,4 @@ export const inlineHeaderStyles = (css: StyleCss) => ({
     letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);
     font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
   `,
-});
+};

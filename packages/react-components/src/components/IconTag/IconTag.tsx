@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { forwardRef } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { IconWrapper, type IconProps } from "../_shared/icons";
 import { iconTagStyles, names } from "./iconTag.styles";
 
@@ -19,7 +18,7 @@ export interface IconTagProps {
 /** Small icon badge used inside card primitives. */
 export const IconTag = forwardRef<HTMLDivElement, IconTagProps>(
   ({ icon, size = "m", variant = "neutral", className }, ref) => {
-    const styles = useStyles(iconTagStyles);
+    const styles = iconTagStyles;
     if (!icon?.name) {
       return null;
     }

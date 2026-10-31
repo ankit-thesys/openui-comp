@@ -130,17 +130,30 @@ for (const layer of [false, true]) {
     });
   }
 
-  test(`choice factories register at render and survive an html class rewrite, layer=${layer}`, async ({
+  test(`choice styles register on import and survive an html class rewrite, layer=${layer}`, async ({
     page,
   }) => {
     await page.goto(`/choice-controls.html?${query}lazy=1`);
-    const css = () => page.locator("#_goober").textContent();
-    expect(await css()).not.toContain("--_openui-radio-item");
-    expect(await css()).not.toContain("--_openui-chips-item");
+    await page.waitForFunction(() => typeof window.mountFixture === "function");
+    const css = () =>
+      page.evaluate(() => document.getElementById("openui-styles")?.textContent ?? "");
+    const imported = await css();
+    const html = await page.evaluate(() => document.documentElement.className);
+    expect(imported).toContain("--_openui-radio-item");
+    expect(imported).toContain("--_openui-chips-item");
     await page.evaluate(() => window.mountFixture());
     await expect(page.locator(".openui-radio-item")).toHaveCount(2);
     expect(await css()).toContain("--_openui-radio-item");
     expect(await css()).toContain("--_openui-chips-item");
+    const generated = await page
+      .locator("#root [class]")
+      .evaluateAll((elements) =>
+        elements.flatMap((el) => [...el.classList].filter((name) => /^go\d+$/.test(name))),
+      );
+    expect(generated.length).toBeGreaterThan(0);
+    for (const name of generated) expect(imported).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+    expect(await css()).toBe(imported);
+    expect(await page.evaluate(() => document.documentElement.className)).toBe(html);
     const measurements = () =>
       Promise.all(
         controls.map(({ root }) => computed(page.locator(`.${root}`).first(), "background-color")),

@@ -1,13 +1,13 @@
-// The built public package must defer chart keyframes until render. No style internals imported.
+// The built public package registers chart keyframes on import. No style internals imported.
 // Run after build: pnpm exec vitest run test/unit/chart-animations.test.tsx.
 import { getComponentStyles, LineChart, MiniLineChart } from "@openuidev/react-components";
 import { renderToString } from "react-dom/server";
 import { expect, it } from "vitest";
 
-it("registers chart entrance keyframes during rendering, never import", () => {
+it("registers chart entrance keyframes on import and leaves the sheet unchanged by rendering", () => {
   const imported = getComponentStyles();
-  expect(imported).not.toMatch(/@keyframes[^{}]*\{\s*to\s*\{\s*stroke-dashoffset:0/);
-  expect(imported).not.toContain("@keyframes openui-chart-fade-appear");
+  expect(imported).toMatch(/@keyframes[^{}]*\{\s*to\s*\{\s*stroke-dashoffset:0/);
+  expect(imported).toContain("@keyframes openui-chart-fade-appear");
   renderToString(
     <LineChart
       data={[{ month: "Jan", sales: 12 }]}
@@ -20,4 +20,5 @@ it("registers chart entrance keyframes during rendering, never import", () => {
   renderToString(<MiniLineChart data={[1, 2]} size={120} isAnimationActive />);
   expect(getComponentStyles()).toContain("@keyframes openui-chart-draw-line");
   expect(getComponentStyles()).toContain("@keyframes openui-chart-fade-appear");
+  expect(getComponentStyles()).toBe(imported);
 });

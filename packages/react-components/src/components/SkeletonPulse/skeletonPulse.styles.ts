@@ -1,10 +1,10 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = { root: "openui-skeleton-pulse" } as const;
 
-// Keep the animation and its keyframes together: no registration until an animated part
-// renders, in the same cascade layer as that part. The keyframe name is private.
-export const skeletonPulseStyles = (css: StyleCss) => ({
+// Register the animation and its keyframes together on import, in the animated part's layer.
+// The keyframe name is private.
+export const skeletonPulseStyles = {
   root: css`
     animation: _openui-skeleton-pulse 1.2s ease-in-out infinite;
     @keyframes _openui-skeleton-pulse {
@@ -19,4 +19,4 @@ export const skeletonPulseStyles = (css: StyleCss) => ({
       }
     }
   `,
-});
+};

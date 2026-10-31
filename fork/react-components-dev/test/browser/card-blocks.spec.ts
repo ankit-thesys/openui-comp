@@ -177,17 +177,27 @@ test("card keyboard activation and option disabled/selected precedence", async (
   await expect(one).toHaveAttribute("aria-checked", "false");
 });
 
-test("card styles register lazily and survive html class replacement", async ({ page }) => {
-  await page.goto("/card-blocks.html?lazy=1");
+test("card styles register on import and survive html class replacement", async ({ page }) => {
+  await page.goto("/card-blocks.html?lazy=1&registration=1");
   await page.waitForFunction(() => "mountFixture" in window);
   const before = await page.evaluate(() => ({
     html: document.documentElement.className,
-    css: document.getElementById("_goober")?.textContent ?? "",
+    css: document.getElementById("openui-styles")?.textContent ?? "",
   }));
-  expect(before.css).not.toContain("--_openui-context-card-background");
-  expect(before.css).not.toContain("--_openui-card-block-layout-gap");
+  expect(before.css).toContain("--_openui-context-card-background");
+  expect(before.css).toContain("--_openui-card-block-layout-gap");
   await page.evaluate(() => (window as Window & { mountFixture: () => void }).mountFixture());
   await expect(page.locator(".openui-context-card").first()).toBeVisible();
+  const generated = await page
+    .locator("#root [class]")
+    .evaluateAll((elements) =>
+      elements.flatMap((el) => [...el.classList].filter((name) => /^go\d+$/.test(name))),
+    );
+  expect(generated.length).toBeGreaterThan(0);
+  for (const name of generated) expect(before.css).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+  expect(
+    await page.evaluate(() => document.getElementById("openui-styles")?.textContent ?? ""),
+  ).toBe(before.css);
   expect(await page.evaluate(() => document.documentElement.className)).toBe(before.html);
   const card = page.locator(".openui-context-card").first();
   const padding = await card.evaluate((el) => getComputedStyle(el).padding);

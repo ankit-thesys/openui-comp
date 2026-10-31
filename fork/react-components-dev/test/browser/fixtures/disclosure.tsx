@@ -3,6 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  configureStyles,
   FoldableSectionContent,
   FoldableSectionItem,
   FoldableSectionRoot,
@@ -14,25 +15,25 @@ import {
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
 const params = new URLSearchParams(location.search);
+configureStyles({ layer: params.get("layer") ?? undefined });
 function App() {
   const [open, setOpen] = useState(false);
   return (
-    <ThemeProvider
-      mode={params.get("mode") === "dark" ? "dark" : "light"}
-      cssLayer={params.get("layer") ?? undefined}
-    >
+    <ThemeProvider mode={params.get("mode") === "dark" ? "dark" : "light"}>
       <Accordion type="single" collapsible>
         <AccordionItem value="one">
           <AccordionTrigger text="Accordion" />
           <AccordionContent forceMount>Accordion body</AccordionContent>
         </AccordionItem>
       </Accordion>
-      <FoldableSectionRoot type="multiple">
-        <FoldableSectionItem value="one">
-          <FoldableSectionTrigger text="Foldable" />
-          <FoldableSectionContent forceMount>Foldable body</FoldableSectionContent>
-        </FoldableSectionItem>
-      </FoldableSectionRoot>
+      {!params.has("primitives") && (
+        <FoldableSectionRoot type="multiple">
+          <FoldableSectionItem value="one">
+            <FoldableSectionTrigger text="Foldable" />
+            <FoldableSectionContent forceMount>Foldable body</FoldableSectionContent>
+          </FoldableSectionItem>
+        </FoldableSectionRoot>
+      )}
       <button onClick={() => setOpen(true)}>Open modal</button>
       <Modal title="Modal title" open={open} onOpenChange={setOpen}>
         Modal body

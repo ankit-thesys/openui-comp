@@ -2,16 +2,73 @@
 import { expect, test } from "@playwright/test";
 
 for (const layer of ["", "openui"]) {
-  test(`loading and code register at render and survive html rewrites (${layer || "default"})`, async ({
+  test(`mounting loading primitives leaves their imported sheet unchanged (${layer || "default"})`, async ({
+    page,
+  }) => {
+    await page.goto(`/loading-code.html?lazy=1&loading-only=1&layer=${layer}`);
+    await page.waitForFunction(() => typeof window.mountFixture === "function");
+    const imported = await page.evaluate(() => ({
+      sheet: document.getElementById("openui-styles")?.textContent ?? "",
+      html: document.documentElement.className,
+    }));
+    await page.evaluate(() => window.mountFixture());
+    await expect(page.locator(".app-skeleton")).toBeVisible();
+    const generated = await page
+      .locator("#root [class]")
+      .evaluateAll((elements) =>
+        elements.flatMap((el) => [...el.classList].filter((name) => /^go\d+$/.test(name))),
+      );
+    expect(generated.length).toBeGreaterThan(0);
+    for (const name of generated) expect(imported.sheet).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+    expect(
+      await page.evaluate(() => ({
+        sheet: document.getElementById("openui-styles")?.textContent ?? "",
+        html: document.documentElement.className,
+      })),
+    ).toEqual(imported);
+  });
+
+  test(`CodeBlock registers on import with no mount additions or html marker (${layer || "default"})`, async ({
+    page,
+  }) => {
+    await page.goto(`/loading-code.html?lazy=1&codeOnly=1&layer=${layer}`);
+    await page.waitForFunction(() => typeof window.mountFixture === "function");
+    const before = await page.evaluate(() => ({
+      sheet: document.getElementById("openui-styles")?.textContent ?? "",
+      html: [...document.documentElement.classList],
+    }));
+    await page.evaluate(() => window.mountFixture());
+    await expect(page.locator(".app-code .openui-code-block-copy-button")).toBeAttached();
+    const generated = await page
+      .locator("#root [class]")
+      .evaluateAll((elements) =>
+        elements.flatMap((element) =>
+          [...element.classList].filter((name) => /^go\d+$/.test(name)),
+        ),
+      );
+    expect(generated.length).toBeGreaterThan(0);
+    for (const name of generated) expect(before.sheet).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+    expect(
+      await page.evaluate(() => document.getElementById("openui-styles")?.textContent ?? ""),
+    ).toBe(before.sheet);
+    const html = await page.evaluate(() => [...document.documentElement.classList]);
+    expect(html).toEqual(before.html);
+    for (const name of generated) expect(html).not.toContain(name);
+  });
+
+  test(`loading and code register on import, and both survive html rewrites (${layer || "default"})`, async ({
     page,
   }) => {
     await page.goto(`/loading-code.html?lazy=1&layer=${layer}`);
     await page.waitForFunction(() => typeof window.mountFixture === "function");
-    const imported = await page.locator("#_goober").textContent();
-    expect(imported).not.toContain("--_openui-code-block-copy-button-opacity");
-    expect(imported).not.toContain("--_openui-pie-chart-skeleton-shape-radius");
-    expect(imported).not.toContain("--_openui-dot-matrix-loader-size");
-    expect(imported).not.toContain("--_openui-skeleton-bar-height");
+    const imported = await page.evaluate(
+      () => document.getElementById("openui-styles")?.textContent ?? "",
+    );
+    expect(imported).toContain("--_openui-code-block-copy-button-opacity");
+    expect(imported).toContain("--_openui-pie-chart-skeleton-shape-radius");
+    expect(imported).toContain("--_openui-dot-matrix-loader-size");
+    expect(imported).toContain("--_openui-skeleton-bar-height");
+    const html = await page.evaluate(() => document.documentElement.className);
     await page.evaluate(() => window.mountFixture());
     await expect(page.locator(".app-skeleton")).toHaveCSS("display", "flex");
     const selectors = [
@@ -36,6 +93,19 @@ for (const layer of ["", "openui"]) {
           ];
         }),
       );
+    const generated = await page
+      .locator(
+        '[class*="openui-skeleton"], [class*="openui-table-skeleton"], [class*="openui-pie-chart-skeleton"], [class*="openui-dot-matrix-loader"]',
+      )
+      .evaluateAll((elements) =>
+        elements.flatMap((el) => [...el.classList].filter((name) => /^go\d+$/.test(name))),
+      );
+    expect(generated.length).toBeGreaterThan(0);
+    for (const name of generated) expect(imported).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+    expect(await page.evaluate(() => document.documentElement.className)).toBe(html);
+    expect(
+      await page.evaluate(() => document.getElementById("openui-styles")?.textContent ?? ""),
+    ).toContain("--_openui-code-block-copy-button-opacity");
     const before = await measure();
     await page.evaluate(() => {
       document.documentElement.className = "consumer-html";

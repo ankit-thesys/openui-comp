@@ -3,6 +3,7 @@
 import { library, reactUi } from "#paths";
 import { execFileSync } from "node:child_process";
 import { existsSync, rmSync, writeFileSync } from "node:fs";
+import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import { build, type TsdownPlugin } from "tsdown";
 
@@ -49,6 +50,11 @@ const fixtures = [
   "parity-tag-block",
   "parity-separator",
   "smoke",
+  "ssr-hydrate",
+  "document-hydrate",
+  "streaming",
+  "sheet",
+  "sheet-csp",
   "import-registration",
   "button",
   "layers",
@@ -187,6 +193,7 @@ const bundle = async (
   packageUnderTest: string,
   baseline: boolean,
   platform: "browser" | "node" = "browser",
+  environment = "production",
 ) =>
   build({
     config: false,
@@ -198,9 +205,15 @@ const bundle = async (
     dts: false,
     clean: false,
     logLevel: "warn",
-    alias: { "openui-under-test": packageUnderTest, "react-ui-under-test": reactUiEntry },
+    alias: {
+      "openui-under-test": packageUnderTest,
+      "react-ui-under-test": reactUiEntry,
+      "goober-under-test": createRequire(library("package.json"))
+        .resolve("goober")
+        .replace("goober.cjs", "goober.modern.js"),
+    },
     define: {
-      "process.env.NODE_ENV": JSON.stringify("production"),
+      "process.env.NODE_ENV": JSON.stringify(environment),
       __PARITY_BASELINE__: String(baseline),
     },
     deps: { alwaysBundle: [/.*/], onlyBundle: false },
@@ -214,12 +227,19 @@ const bundle = async (
 export default async function buildFixtures() {
   rmSync(fixturesOut, { recursive: true, force: true });
   await bundle(entries(fixtures), "@openuidev/react-components", false);
+  await bundle(
+    entries(["layers", "document-hydrate-dev"], "-development"),
+    "@openuidev/react-components",
+    false,
+    "browser",
+    "development",
+  );
   // The react-ui benches compare against the workspace's built @openuidev/react-ui.
   if (!existsSync(reactUiEntry))
     throw new Error("Build @openuidev/react-ui first: pnpm --filter @openuidev/react-ui... build");
   await bundle(entries(["bench-react-ui"]), "@openuidev/react-components", false);
   await bundle(
-    entries(["bench-server", "migrated-server"]),
+    entries(["bench-server", "migrated-server", "streaming-server"]),
     "@openuidev/react-components",
     false,
     "node",

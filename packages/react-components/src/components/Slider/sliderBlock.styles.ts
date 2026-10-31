@@ -1,4 +1,10 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+import { inputStyles } from "../Input/input.styles";
+import { selectStyles } from "../Select/select.styles";
+
+// Reading the maps retains value imports, registering composed defaults before owned overrides.
+Object.values(inputStyles);
+Object.values(selectStyles);
 
 export const names = {
   root: "openui-slider-block",
@@ -20,7 +26,7 @@ export const names = {
   separator: "openui-slider-block-separator",
 } as const;
 
-export const sliderBlockStyles = (css: StyleCss) => ({
+export const sliderBlockStyles = {
   root: css`
     width: 100%;
   `,
@@ -83,12 +89,12 @@ export const sliderBlockStyles = (css: StyleCss) => ({
     background-color: var(--openui-text-neutral-secondary, oklch(0.097 0 0 / 0.6));
     flex-shrink: 0;
   `,
-});
+};
 
 // Registered after the composed Input defaults, so a single owned class wins the tie. The error
 // state is Input's own `[aria-invalid]`, so Input's state overrides reach it. As in react-ui it keeps
 // the danger border even when disabled, draws no danger ring, and keeps the focus ring.
-export const sliderBlockInputStyles = (css: StyleCss) => ({
+export const sliderBlockInputStyles = {
   input: css`
     height: 36px;
     width: var(--_openui-slider-block-input-width, 80px);
@@ -103,12 +109,12 @@ export const sliderBlockInputStyles = (css: StyleCss) => ({
       box-shadow: 0 0 0 2.5px var(--openui-border-default, oklch(0.097 0 0 / 0.06));
     }
   `,
-});
+};
 
-// Registered inside public Select, after its defaults, as Calendar does.
-export const sliderBlockSelectStyles = (css: StyleCss) => ({
+// Registered after Select's defaults, as Calendar does.
+export const sliderBlockSelectStyles = {
   trigger: css`
     height: 36px;
     width: var(--_openui-slider-block-select-width, 100px);
   `,
-});
+};

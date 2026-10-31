@@ -3,7 +3,6 @@
 import React from "react";
 
 import clsx from "clsx";
-import { useStyles } from "../../../../styles/useStyles";
 import { FadeFollower } from "../../shared/core/spring";
 import { horizontalBarChartStyles, names } from "../horizontalBarChart.styles";
 
@@ -40,7 +39,7 @@ export const HorizontalCrosshair: React.FC<HorizontalCrosshairProps> = ({
   groupHeight,
   chartWidth,
 }) => {
-  const styles = useStyles(horizontalBarChartStyles);
+  const styles = horizontalBarChartStyles;
   const visible = hoveredIndex !== null && hoveredIndex >= 0 && hoveredIndex < rowOffsets.length;
   const y = visible ? (rowOffsets[hoveredIndex] ?? 0) : 0;
 

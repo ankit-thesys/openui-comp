@@ -143,7 +143,7 @@ for (const component of migrated.filter((entry) =>
         await openMigrated(page, component, head, name, true, "openui");
         if (order === "after") await page.addStyleTag({ content: css });
         expect(
-          await page.evaluate(() => document.getElementById("_goober")!.textContent),
+          await page.evaluate(() => document.getElementById("openui-styles")!.textContent),
         ).toContain("@layer openui");
         const values = await page.locator(`.${name}`).evaluateAll(
           (elements, properties) =>
@@ -161,17 +161,39 @@ for (const component of migrated.filter((entry) =>
   }
 }
 
-test("disclosure styles register at render without adding html markers", async ({ page }) => {
-  await page.goto("/disclosure.html?lazy=1");
+test("disclosure styles register on import without adding html markers", async ({ page }) => {
+  await page.goto("/disclosure.html?lazy=1&primitives=1");
   await page.waitForFunction(() => "mountFixture" in window);
   const before = await page.evaluate(() => ({
     html: document.documentElement.className,
-    css: document.getElementById("_goober")!.textContent ?? "",
+    css: document.getElementById("openui-styles")?.textContent ?? "",
   }));
-  expect(before.css).not.toContain("_openui-accordion-down");
-  expect(before.css).not.toContain("_openui-modal-fade-in");
+  expect(before.css).toContain("_openui-accordion-down");
+  expect(before.css).toContain("_openui-modal-fade-in");
   await page.evaluate(() => (window as Window & { mountFixture: () => void }).mountFixture());
   await expect(page.locator(".openui-accordion-trigger")).toBeVisible();
+  await page.getByRole("button", { name: "Open modal", exact: true }).click();
+  await expect(page.locator(".openui-modal-content")).toBeVisible();
+  const modalClasses = await page
+    .locator('[class*="openui-modal"]')
+    .evaluateAll((elements) =>
+      elements.flatMap((el) => [...el.classList].filter((name) => /^go\d+$/.test(name))),
+    );
+  expect(modalClasses.length).toBeGreaterThan(0);
+  await page.keyboard.press("Escape");
+  await page.getByRole("button", { name: "Show tooltip", exact: true }).focus();
+  await expect(page.locator(".openui-tooltip-wrapper").first()).toBeVisible();
+  const generated = await page
+    .locator('[class*="openui-"]')
+    .evaluateAll((elements) =>
+      elements.flatMap((el) => [...el.classList].filter((name) => /^go\d+$/.test(name))),
+    );
+  expect(generated.length).toBeGreaterThan(0);
+  for (const name of [...modalClasses, ...generated])
+    expect(before.css).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+  expect(
+    await page.evaluate(() => document.getElementById("openui-styles")?.textContent ?? ""),
+  ).toBe(before.css);
   expect(await page.evaluate(() => document.documentElement.className)).toBe(before.html);
   const trigger = page.locator(".openui-accordion-trigger");
   const padding = await trigger.evaluate((el) => getComputedStyle(el).padding);

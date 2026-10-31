@@ -4,7 +4,6 @@ import type { ScaleLinear } from "d3-scale";
 import React from "react";
 
 import clsx from "clsx";
-import { useStyles } from "../../../../styles/useStyles";
 import type { VisibleDataset } from "../../hooks/cartesian/useScatterChartOrchestrator";
 import { entranceProps } from "../../utils/entranceUtils";
 import { names, scatterChartStyles } from "../scatterChart.styles";
@@ -30,7 +29,7 @@ export const ScatterDots: React.FC<ScatterDotsProps> = ({
   hoveredPoint,
   animate,
 }) => {
-  const styles = useStyles(scatterChartStyles);
+  const styles = scatterChartStyles;
   return (
     <g className={names.dots}>
       {datasets.map(({ dataset: ds, originalIndex }) => {

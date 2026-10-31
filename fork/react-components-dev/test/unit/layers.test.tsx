@@ -1,52 +1,108 @@
-// Node seam: ThemeProvider's cssLayer changes only Button's generated classes, never its stable
-// classes, and a provider without it leaves Button's markup unchanged.
-import { Button, ThemeProvider } from "@openuidev/react-components";
+// Public built-package seam: configuration wraps the whole sheet, independent of registration.
+import {
+  Button,
+  configureStyles,
+  css,
+  getComponentStyles,
+  keyframes,
+  ThemeProvider,
+  type ConfigureStylesOptions,
+} from "@openuidev/react-components";
 import { renderToString } from "react-dom/server";
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, expect, it, vi } from "vitest";
+import { rulesOf } from "./contract/checks";
 
-const classesOf = (html: string) => html.match(/<button[^>]*class="([^"]*)"/)![1]!.split(" ");
-const generated = (classes: string[]) => classes.filter((name) => /^go\d+$/.test(name));
-const stable = (classes: string[]) => classes.filter((name) => name.startsWith("openui-"));
+const registerImported = () => css`
+  color: rgb(21, 43, 65);
+`;
+const imported = registerImported();
 
-describe("ThemeProvider cssLayer", () => {
-  it("leaves Button's classes unchanged without cssLayer", () => {
-    const outside = classesOf(renderToString(<Button tone="destructive">Delete</Button>));
-    const inside = classesOf(
-      renderToString(
-        <ThemeProvider>
-          <Button tone="destructive">Delete</Button>
-        </ThemeProvider>,
-      ),
-    );
-    expect(inside).toEqual(outside);
-  });
+afterEach(() => configureStyles({ layer: undefined }));
 
-  it("gives Button other generated classes in a layer, with the same stable classes", () => {
-    const unlayered = classesOf(renderToString(<Button>Save</Button>));
-    const layered = classesOf(
-      renderToString(
-        <ThemeProvider cssLayer="openui">
-          <Button>Save</Button>
-        </ThemeProvider>,
-      ),
-    );
-    expect(stable(layered)).toEqual(stable(unlayered));
-    expect(generated(layered)).toHaveLength(generated(unlayered).length);
-    for (const name of generated(layered)) expect(generated(unlayered)).not.toContain(name);
-  });
+it("wraps rules registered before configuration in one app-wide layer", () => {
+  expect(getComponentStyles()).toContain(`.${imported}{color:rgb(21, 43, 65);}`);
+  configureStyles({ layer: "openui" });
+  const sheet = getComponentStyles();
+  expect(sheet).toMatch(/^@layer openui\{/);
+  expect(sheet.match(/@layer /g)).toHaveLength(1);
+  expect(sheet).toContain(`.${imported}{color:rgb(21, 43, 65);}`);
+  expect(sheet.endsWith("}}")).toBe(true);
+});
 
-  it("ignores a cssLayer that is not a layer name, with a warning", () => {
-    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
-    const unlayered = classesOf(renderToString(<Button>Save</Button>));
-    for (const cssLayer of ["open ui", "openui{", ""]) {
-      const html = renderToString(
-        <ThemeProvider cssLayer={cssLayer}>
-          <Button>Save</Button>
-        </ThemeProvider>,
-      );
-      expect(classesOf(html)).toEqual(unlayered);
+it("ignores invalid layer names with a development warning, preserving the configured sheet", () => {
+  const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+  try {
+    configureStyles({ layer: "app.openui" });
+    const sheet = getComponentStyles();
+    expect(sheet).toMatch(/^@layer app\.openui\{/);
+    for (const layer of ["open ui", "openui{", "", "a,b", "1openui"]) {
+      configureStyles({ layer });
+      expect(getComponentStyles()).toBe(sheet);
+      expect(warn).toHaveBeenCalledWith(expect.stringContaining(`layer "${layer}"`));
     }
-    expect(warn).toHaveBeenCalledWith(expect.stringContaining('cssLayer "open ui"'));
+  } finally {
     warn.mockRestore();
-  });
+  }
+});
+
+it("switches the whole sheet to unlayered and back without changing any classes or rules", () => {
+  const html = renderToString(<Button>Save</Button>);
+  const unlayered = getComponentStyles();
+  const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+  try {
+    const options: ConfigureStylesOptions = { layer: "openui" };
+    configureStyles(options);
+    expect(getComponentStyles()).toBe(`@layer openui{${unlayered}}`);
+    expect(renderToString(<Button>Save</Button>)).toBe(html);
+    configureStyles({ layer: undefined });
+    expect(getComponentStyles()).toBe(unlayered);
+    configureStyles({ layer: "app.components" });
+    expect(getComponentStyles()).toBe(`@layer app.components{${unlayered}}`);
+    expect(registerImported()).toBe(imported);
+    expect(warn).toHaveBeenCalledTimes(3);
+  } finally {
+    warn.mockRestore();
+  }
+});
+
+it("puts later rules and keyframes in the same wrapper, outside and inside nested providers", () => {
+  configureStyles({ layer: "openui" });
+  const animation = keyframes`from { opacity: 0.21; } to { opacity: 0.79; }`;
+  const lazy = css`
+    animation: ${animation} 3s linear;
+  `;
+  const outside = renderToString(<Button>Save</Button>);
+  const nested = renderToString(
+    <ThemeProvider>
+      <ThemeProvider>
+        <Button>Save</Button>
+      </ThemeProvider>
+    </ThemeProvider>,
+  );
+  expect(nested).toContain(outside);
+  const sheet = getComponentStyles();
+  expect(sheet.match(/@layer /g)).toHaveLength(1);
+  expect(sheet).toContain(`.${lazy}{animation:${animation} 3s linear;}`);
+  expect(sheet).toContain(`@keyframes ${animation}{from{opacity:0.21;}to{opacity:0.79;}}`);
+  expect(rulesOf(sheet).length).toBeGreaterThan(0);
+  expect(rulesOf(sheet).every((rule) => rule.layer === "openui")).toBe(true);
+  expect(sheet).not.toContain("openui-defaults");
+});
+
+it("leaves the default sheet unlayered for an invalid name and suppresses warnings in production", () => {
+  const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+  const sheet = getComponentStyles();
+  try {
+    configureStyles({ layer: "invalid layer" });
+    expect(getComponentStyles()).toBe(sheet);
+    expect(warn).toHaveBeenCalledOnce();
+    warn.mockClear();
+    vi.stubEnv("NODE_ENV", "production");
+    configureStyles({ layer: "invalid layer" });
+    expect(getComponentStyles()).toBe(sheet);
+    expect(warn).not.toHaveBeenCalled();
+  } finally {
+    vi.unstubAllEnvs();
+    warn.mockRestore();
+  }
 });

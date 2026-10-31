@@ -42,7 +42,7 @@ const buttonBackgrounds = (page: Page) =>
         } else if (rule instanceof CSSGroupingRule) visit(rule.cssRules);
       }
     };
-    visit((document.getElementById("_goober") as HTMLStyleElement).sheet!.cssRules);
+    visit((document.getElementById("openui-styles") as HTMLStyleElement).sheet!.cssRules);
     return [...document.querySelectorAll("button")].flatMap((button) => {
       button.getAnimations().forEach((animation) => {
         if (animation.effect?.getTiming().iterations === Infinity) {

@@ -3,14 +3,13 @@
 import clsx from "clsx";
 import { forwardRef } from "react";
 import type { RootProps } from "react-day-picker";
-import { useStyles } from "../../../../styles/useStyles";
 import { Calendar } from "../../../Calendar";
 import { CalendarDefaultsContext } from "../../../Calendar/CalendarDefaultsContext";
 import { datePickerCalendarStyles, datePickerStyles, names } from "../../datePicker.styles";
 import { useDatePicker } from "../context/DatePickerContext";
 
 const CalendarRoot = ({ rootRef, className, ...props }: RootProps) => {
-  const styles = useStyles(datePickerCalendarStyles);
+  const styles = datePickerCalendarStyles;
   return (
     <div
       {...props}
@@ -24,7 +23,7 @@ const DatepickerRenderer = forwardRef<
   HTMLDivElement,
   { className?: string; style?: React.CSSProperties }
 >(({ className, style }, ref) => {
-  const styles = useStyles(datePickerStyles);
+  const styles = datePickerStyles;
   const { selectedDate, selectedRange, mode, setSelectedDate, setSelectedRange } = useDatePicker();
   return (
     <div ref={ref} className={clsx(styles.calendar, names.calendar, className)} style={style}>

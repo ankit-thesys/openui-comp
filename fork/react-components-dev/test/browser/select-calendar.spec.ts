@@ -165,13 +165,13 @@ for (const layer of ["", "openui"])
   }
 
 for (const family of ["select", "calendar", "date-picker"]) {
-  test(`${family} registers lazily and survives html class replacement including portals`, async ({
+  test(`${family} registers on import and survives html class replacement including portals`, async ({
     page,
   }) => {
     await page.goto(`/select-calendar.html?family=${family}&lazy=1&open=1`);
     await page.waitForFunction(() => typeof window.mountFixture === "function");
     const before = await page.evaluate(() => ({
-      sheet: document.getElementById("_goober")!.textContent!,
+      sheet: document.getElementById("openui-styles")?.textContent ?? "",
       html: document.documentElement.className,
     }));
     await page.evaluate(() => window.mountFixture());
@@ -193,8 +193,11 @@ for (const family of ["select", "calendar", "date-picker"]) {
         els.flatMap((el) => [...el.classList].filter((name) => /^go\d+$/.test(name))),
       );
     expect(classes.length).toBeGreaterThan(0);
-    for (const name of classes) expect(before.sheet).not.toMatch(new RegExp(`\\.${name}(?![0-9])`));
-    expect(await page.locator("html").getAttribute("class")).toEqual(before.html);
+    for (const name of classes) expect(before.sheet).toMatch(new RegExp(`\\.${name}(?![0-9])`));
+    expect(
+      await page.evaluate(() => document.getElementById("openui-styles")?.textContent ?? ""),
+    ).toBe(before.sheet);
+    expect(await page.evaluate(() => document.documentElement.className)).toEqual(before.html);
     const observations = await Promise.all(selectors.map((selector) => computed(page, selector)));
     await page.evaluate(() => {
       document.documentElement.className = "consumer-html";
