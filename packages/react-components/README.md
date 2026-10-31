@@ -179,9 +179,17 @@ A rule of yours on a stable class, with the same state where you need one, there
 
 Load order: the token defaults' `@layer openui-defaults;` declaration and their own tag come first
 in `<head>`, then the component sheet, then your CSS. If you place `<style id="openui-styles">`
-yourself, the library reuses it where it is and keeps the rules already in it, such as a
-server-rendered sheet; keep it before your stylesheets. The sheet gets `window.__nonce__` as its
-CSP nonce when one is set.
+yourself, the library appends its rules to it where it is; keep it before your stylesheets. The
+library only ever appends to its sheet, never rewrites it. When `window.__nonce__` is set before
+the library loads, every style tag it creates carries it as its CSP nonce from the start: the
+layer-order tag, the token defaults, the component sheet and ThemeProvider's theme tag. A
+`<style id="openui-styles">` you place yourself gets it too. Set it in an inline `<script>` ahead
+of the app's scripts, or in a module imported before the library: imports run before the body of
+the module that imports them, and the token-default tags are created when the library is
+imported, so a nonce set later leaves them blocked. The token-default tags carry React's
+`data-precedence` marker, so when React hydrates a server-rendered `<head>` (React Router,
+TanStack Start, Next) it skips them rather than matching your own `<style>` against them, and the
+library adds nothing to `<html>`.
 
 Your rule has to match the library's shape: a resting-state rule does not restyle `:hover`, and a
 rule in a named cascade layer loses to the unlayered library rules.
@@ -216,21 +224,31 @@ import { configureStyles } from "@openuidev/react-components";
 configureStyles({ layer: "openui" });
 ```
 
-This replaces the beta's provider-level layer option. Call it once in the app entry,
-including on the server when server rendering. Every component rule and public `css` or
-`keyframes` call joins the same layer, including rules registered before configuration and
-in lazy modules. Import order does not matter. ThemeProvider only controls theme tokens;
-components outside a provider and inside nested providers use the same component sheet.
+This replaces the beta's provider-level layer option. Call it once in the app entry, before
+rendering. Every component rule and public `css` or `keyframes` call joins the layer, including
+rules registered at import time before the call: the layer wraps rules when they are written to the
+page, not when they register. Import-time rules are written at the first microtask checkpoint, so if
+a module with top-level `await` is imported ahead of the call, they are written unlayered; call it
+from a module that the entry imports first. Server-rendered apps pass the layer to
+`<ComponentStyles>` instead (see [Server-rendered styles](#server-rendered-styles)); the browser
+reads it from that sheet, so they need no `configureStyles` call. ThemeProvider only controls theme
+tokens; components outside a provider and inside nested providers use the same component sheet.
 
-The whole sheet sits in `@layer openui`, so any unlayered app CSS beats it, whatever its
-specificity or load order, as do layers ordered after `openui`. A later call rewrites the
-whole sheet without changing class names or duplicating rules. Call
-`configureStyles({ layer: undefined })` to return to unlayered mode. Invalid names are ignored
-with a development warning; a dotted name such as `app.openui` is valid. The options type is
-exported as `ConfigureStylesOptions`.
+Component rules sit in `@layer openui`, so any unlayered app CSS beats them, whatever its
+specificity or load order, as do layers ordered after `openui`. Each write is its own
+`@layer openui{…}` block; blocks with the same name form one layer. Rules already written keep
+the layer they were written with, so configure the layer before anything renders. Invalid names
+are ignored with a development warning; a dotted name such as `app.openui` is valid. The options
+type is exported as `ConfigureStylesOptions`.
 
-The library declares no layer order. Put the order and an empty library sheet
-first in `<head>`, before any stylesheet, in this order:
+Changing the layer after rules reached the page, or after `getComponentStyles()` returned rules on
+the server, warns in development. Setting the same layer again does not warn, nor does setting the
+layer the server sheet uses. Production logs nothing, and neither does a browser build loaded
+without a bundler, which has no `process.env.NODE_ENV` to read. A late call affects future browser
+writes; it cannot re-wrap existing page rules.
+
+The library declares no layer order. In a browser-only app, put the order and an empty library
+sheet first in `<head>`, before any stylesheet, in this order:
 
 ```html
 <style>
@@ -266,8 +284,8 @@ its own typography, so preflight's font and line-height resets cannot change its
 ## Automatic styles
 
 Owned component styles use stock Goober and do not require a CSS import, setup
-command or styling build plugin. Components register their styles the first time
-they render. The build
+command or styling build plugin. Components register their styles when their
+modules are imported, before anything renders. The build
 preserves modules and marks unused modules removable by the consumer's bundler.
 A bundler may combine several retained components in a shared lazy chunk; their
 styles can register together when that chunk evaluates. This is not a guarantee
@@ -504,112 +522,120 @@ as `Css` and `Keyframes`.
 import { css, keyframes } from "@openuidev/react-components";
 
 const pop = keyframes`from { opacity: 0; } to { opacity: 1; }`;
-const card = css`padding: 16px; animation: ${pop} 120ms ease-out;`;
+const card = css`
+  padding: 16px;
+  animation: ${pop} 120ms ease-out;
+`;
 
 export const PriceCard = () => <div className={card}>Price</div>;
 ```
 
-Every rule applies as soon as it registers, so a layout effect that measures sees it, even for
-a module first evaluated during a render. The sheet's text is rewritten once per microtask. `getComponentStyles()` includes newly
-registered rules immediately. `configureStyles({ layer: "openui" })` applies to these rules
-and animations too, even when they registered before configuration. A library built on top
-can use these exports without depending on Goober or the app's choice of layer.
+Define styles at module level and import them before rendering. New rules are appended to the
+sheet once per microtask. A rule first registered during a render, including a module first
+evaluated during that render, applies after that task. A layout effect in the same task can
+therefore measure an unstyled element. `getComponentStyles()` includes newly registered rules
+immediately. `configureStyles({ layer: "openui" })` applies to these rules and animations too,
+provided configuration precedes the browser write. A library built on top can use these exports
+without depending on Goober or the app's choice of layer.
+
+For server rendering, that library ships its own `/styles` entry. It imports every one of its
+style modules, then calls our `getComponentStyles()` to return the shared sheet, including both
+libraries' rules:
+
+```ts
+// @acme/cards/styles.ts
+import "./priceCard.styles";
+import "./priceBadge.styles";
+import {
+  getComponentStyles as collect,
+  type ConfigureStylesOptions,
+} from "@openuidev/react-components/styles";
+
+export const getComponentStyles = (options?: ConfigureStylesOptions) => collect(options);
+```
+
+Keep those style imports when bundling: declare the style modules as side effects in your
+package metadata, or retain value references to their exports. The app imports the collector
+from `@acme/cards/styles` and inlines its result once in `<head>`, before its own CSS, using the
+server-rendering pattern below. This makes all rules available before streaming starts.
 
 ### Server-rendered styles
 
-On the server, component styles live in the library's own cumulative rule store. Public `css`
-and `keyframes` calls register immediately, including every imported component
-module's styles. A server **renders first, then collects** the CSS with
-`getComponentStyles()`, and inlines it as the **first** element of `<head>`, ahead of the app's own
-stylesheets. In layer mode, put the layer-order tag before this sheet, as in the two-tag
-recipe above, and configure the same layer on server and client:
+Every component's styles register when its module is imported, so the whole component sheet is
+known before anything renders. `@openuidev/react-components/styles` imports every style module
+and gives you that sheet in one call: no collecting after rendering, no per-response registry,
+and nothing to do while a response streams.
+
+Next.js App Router (or any React Server Components app): render `<ComponentStyles>` once in the
+root layout.
 
 ```tsx
-import { getComponentStyles } from "@openuidev/react-components";
+// app/layout.tsx
+import { ComponentStyles } from "@openuidev/react-components/styles";
+import "./globals.css";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body>
+        <ComponentStyles layer="openui" /> {/* omit `layer` for unlayered rules */}
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
+React hoists it into `<head>` as one `<style>`. It is a client component, so the sheet is sent in
+the HTML only, not in the Server Components payload. Streamed Suspense content is styled on
+arrival, because its rules were in the shell. On hydration the browser seeds its rule store
+from that tag and writes nothing it already has; rules the server never saw, such as a lazily
+imported module of a library built on top, are appended to a separate `#openui-styles` tag in the
+same layer.
+
+- **Layer mode (Tailwind 4):** start `globals.css` with the order,
+  `@layer theme, base, openui, components, utilities;`, then `@import "tailwindcss";`. Utilities
+  and unlayered app CSS win wherever the sheet lands.
+- **Unlayered (plain CSS, Tailwind 3):** Next puts stylesheets imported by the root layout ahead
+  of `<ComponentStyles>`, so equal-weight component rules would win. Import your global CSS from a
+  page or a nested layout instead; Next then places it after the component sheet, and
+  stable-class overrides and Tailwind 3 utilities win without extra weight.
+
+Any other server renderer: put the sheet first in `<head>`, ahead of the app's stylesheets.
+
+```tsx
+import { getComponentStyles } from "@openuidev/react-components/styles";
 import { renderToString } from "react-dom/server";
 
-const html = renderToString(<App />); // 1. render, including any lazily evaluated styles
-const css = getComponentStyles(); // 2. collect, after rendering
 const page = `<!doctype html>
 <html>
   <head>
-    <style id="openui-styles">${css}</style>
+    <meta charset="utf-8" />
+    <style id="openui-styles">${getComponentStyles()}</style>
     <link rel="stylesheet" href="/app.css" />
   </head>
-  <body><div id="root">${html}</div></body>
+  <body><div id="root">${renderToString(<App />)}</div></body>
 </html>`;
 ```
 
-- The page is styled before JavaScript runs, and app CSS after the sheet overrides converted
-  components' equal-weight rules.
-- Keep the `openui-styles` id: the browser adopts that element instead of injecting a second sheet.
-- Inline the returned string as is; it already includes the configured layer wrapper. Theme
-  defaults stay in their separate `openui-defaults` tag and layer.
-- Every call returns the full sheet collected so far, so concurrent requests cannot take each
-  other's rules. The sheet is cumulative for the life of the process: a response may carry rules
-  for components another request rendered, which is harmless.
-- A host app's Goober `glob` and `extractCss` calls leave this sheet alone. Host Goober rules
-  are not included; rules registered through the library's public `css` and `keyframes` are.
+- `getComponentStyles({ layer })` wraps the sheet in that layer; the browser reads the layer back
+  from the sheet. In layer mode, put the layer-order tag before it.
+- The sheet holds every component's rules (about 211 KB, 28 KB gzipped), not only the ones the
+  page renders. Browser-only apps keep per-component tree-shaking.
+- Serve the page as UTF-8. The browser recognises the server's rules by their exact text.
+- A host app's Goober `setup`, `glob` and `extractCss` calls leave this sheet alone: the library
+  runs its own copy of Goober, so a host prefixer never rewrites component rules. Host Goober rules
+  are not included; rules registered through the library's public `css` and `keyframes` at module
+  level are.
+- Server-rendered markup holds `style` attributes: Radix primitives' (Select, Tabs) and sizing
+  props such as MiniLineChart's. A nonce never covers attributes, so a `style-src 'nonce-…'`
+  policy blocks them while the HTML is parsed, and React does not re-apply them on hydration
+  (MiniLineChart then renders at its intrinsic size). Under a strict policy, add
+  `style-src-attr 'unsafe-inline'`. Pass the nonce to the inline server sheet yourself.
 - ThemeProvider writes its theme variables in the browser, so a server-rendered first paint uses
   the components' built-in light values; `mode="dark"`, `lightTheme` and `darkTheme` apply once
   client JavaScript runs. Host `:root { --openui-… }` declarations in the app's own CSS apply from
   the first paint.
-
-For Next.js App Router, collect the sheet through `useServerInsertedHTML` in a client registry
-component wrapping the application:
-
-```tsx
-"use client";
-
-import { configureStyles, createStyleRegistry } from "@openuidev/react-components";
-import { useServerInsertedHTML } from "next/navigation";
-import { useState, type ReactNode } from "react";
-
-// Omit this call for unlayered styles. In layer mode, also put the layer-order tag first
-// in the root layout's <head>, before any stylesheet.
-configureStyles({ layer: "openui" });
-
-export function StyleRegistry({ children }: { children: ReactNode }) {
-  const [registry] = useState(createStyleRegistry);
-  useServerInsertedHTML(() => {
-    const css = registry.flush();
-    return css ? <style id="openui-styles" dangerouslySetInnerHTML={{ __html: css }} /> : null;
-  });
-  return children;
-}
-```
-
-`createStyleRegistry()` returns a `StyleRegistry` with a `flush(): string` method. Create one
-registry per response (in React, keep it in state as above), never at module scope. Its first
-flush includes every rule registered so far, including cached/import-time styles; subsequent
-flushes return only newly registered rules, wrapped in the layer configured at flush time.
-A flush with nothing new returns `""`; the first flush always reserves the sheet, even if the
-store is empty. Every nonempty result starts with a harmless `/*openui-stream*/` comment and
-ends with `/*openui-stream-end*/`. Inline the result unchanged: the browser uses those markers to
-wait for the full payload when the network splits a style tag across chunks, the first tag
-included, before it reads, rewrites or removes that tag. `getComponentStyles()` remains cumulative and
-neither API drains the shared store. Concurrent responses keep independent flush positions;
-each may include a harmless superset of another response's rules.
-
-Keep the `openui-styles` id on **every** flush's style tag. The browser adopts the first tag in
-place, merges later streamed tags into it, and removes those later tags, including tags that
-arrived before hydration. The merge deduplicates complete rules against client registrations
-and strips each server layer wrapper before applying the configured layer once. This also
-works when streaming continues after the browser has loaded the library: the library watches
-the document for registry tags only while it is still being parsed, merges the last of them when
-parsing ends, and then stops watching, so later DOM updates, such as streamed chat tokens, never
-reach it. A library loaded after parsing never watches the document.
-
-Once the browser adopts the streamed rules, all of them occupy the first sheet's position, so
-app stylesheets after that first tag keep winning equal-weight ties in unlayered mode. Before
-JavaScript runs, late tags occupy their streamed positions. Next.js inserts the first tag at the
-end of `<head>`, after the app's stylesheets, so there unlayered component rules outrank
-equal-weight app CSS from the first paint on: use layer mode with Next.js (with the layer-order
-tag first in the root layout's `<head>`), so unlayered app CSS and Tailwind's `utilities` win
-wherever the sheet lands. In a renderer that writes `<head>` itself, inline the first flush
-before the app's stylesheets, as in the non-streaming recipe. Configure the same app-wide layer on server and client, and keep it fixed for
-the response. Theme defaults remain separate. For other React streaming integrations, call
-`registry.flush()` before each HTML insertion and insert a tag only when the result is nonempty.
 
 ### Math styles and fonts
 
@@ -742,9 +768,9 @@ performance.
 ## Support boundary and inherited behavior
 
 React/ReactDOM 19 are required. Zod 3.25+ or 4 and Zustand 4.5.5+ remain peer
-dependencies. Non-streaming server rendering is supported with `getComponentStyles()` (see
-[Server-rendered styles](#server-rendered-styles)). Streaming SSR and hydration use the per-response
-`createStyleRegistry()` pattern above.
+dependencies. Server rendering, streaming included, is supported with `<ComponentStyles>` or
+`getComponentStyles()` from `@openuidev/react-components/styles` (see
+[Server-rendered styles](#server-rendered-styles)).
 Client-side OpenUI response streaming is a separate capability.
 
 These behaviors carry over from `@openuidev/react-ui`:
@@ -764,8 +790,9 @@ These behaviors carry over from `@openuidev/react-ui`:
 pnpm --filter @openuidev/react-components run build
 ```
 
-ESM/CJS builds include matching declarations and source maps. Goober and React
-remain external dependencies.
+ESM/CJS builds include matching declarations and source maps. React remains an external
+dependency. Goober 2.1.19 is bundled as a private copy, so a host app's Goober setup and rule
+cache never reach component rules; the `goober` dependency only supplies the `css` types.
 
 ## Migration from `@openuidev/react-ui` styling
 
@@ -1049,4 +1076,3 @@ Chart props are unchanged. Data colors, dimming, entrance delays and draw-line l
 width/height, SVG coordinates, path lengths, mini-chart frames, explicit `StackedLegend style`
 values and spring positioning remain geometry set by JavaScript. `SingleStackedBar` remains the
 `SegmentedBar` alias.
-

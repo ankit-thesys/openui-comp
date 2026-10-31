@@ -14,29 +14,27 @@ export const names = {
   right: "openui-scroll-buttons-horizontal-right",
 } as const;
 
-export const scrollButtonsHorizontalStyles = (() => {
-  return {
-    root: css`
-      position: relative;
-    `,
-    button: css`
-      position: absolute;
-      background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
-      &:disabled {
-        visibility: hidden;
-        cursor: not-allowed;
-        transition: visibility 0.1s linear;
-      }
-    `,
-    left: css`
-      top: -23px;
-      transform: translateY(-50%);
-      left: 20px;
-    `,
-    right: css`
-      top: -23px;
-      transform: translateY(-50%);
-      right: 0px;
-    `,
-  };
-})();
+export const scrollButtonsHorizontalStyles = {
+  root: css`
+    position: relative;
+  `,
+  button: css`
+    position: absolute;
+    background-color: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
+    &:disabled {
+      visibility: hidden;
+      cursor: not-allowed;
+      transition: visibility 0.1s linear;
+    }
+  `,
+  left: css`
+    top: -23px;
+    transform: translateY(-50%);
+    left: 20px;
+  `,
+  right: css`
+    top: -23px;
+    transform: translateY(-50%);
+    right: 0px;
+  `,
+};
