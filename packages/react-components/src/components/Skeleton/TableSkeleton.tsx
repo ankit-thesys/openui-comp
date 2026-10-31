@@ -2,11 +2,10 @@
 
 import clsx from "clsx";
 import type { CSSProperties } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { SkeletonBar } from "./SkeletonBar";
 import { names, tableSkeletonStyles } from "./tableSkeleton.styles";
 export function TableSkeleton({ rows = 5, columns = 4 }: { rows?: number; columns?: number }) {
-  const styles = useStyles(tableSkeletonStyles);
+  const styles = tableSkeletonStyles;
   return (
     <div className={clsx(styles.root, names.root)}>
       <div

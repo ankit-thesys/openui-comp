@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React, { CSSProperties, ReactNode } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { listItemStyles, names } from "./listItem.styles";
 
 export type ListItemVariant = "icon" | "image" | "number";
@@ -42,7 +41,7 @@ const ListItem = React.forwardRef<HTMLDivElement, ListItemProps>((props, ref) =>
     ...rest
   } = props;
 
-  const styles = useStyles(listItemStyles);
+  const styles = listItemStyles;
   const hasAction = !!onClick;
 
   return (

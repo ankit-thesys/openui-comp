@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-text-callout",
@@ -14,7 +14,7 @@ export const names = {
   },
 } as const;
 
-export const textCalloutStyles = (css: StyleCss) => ({
+export const textCalloutStyles = {
   root: css`
     width: 100%;
     display: flex;
@@ -60,4 +60,4 @@ export const textCalloutStyles = (css: StyleCss) => ({
       color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));
     `,
   },
-});
+};

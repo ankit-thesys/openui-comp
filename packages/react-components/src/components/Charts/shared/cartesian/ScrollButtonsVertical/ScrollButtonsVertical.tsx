@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import React from "react";
-import { useStyles } from "../../../../../styles/useStyles";
 import { IconButton } from "../../../../IconButton";
 import { names, scrollButtonsVerticalStyles } from "./scrollButtonsVertical.styles";
 
@@ -16,7 +15,7 @@ interface ScrollButtonsVerticalProps {
 
 export const ScrollButtonsVertical = React.memo(
   ({ canScrollUp, canScrollDown, onScrollUp, onScrollDown }: ScrollButtonsVerticalProps) => {
-    const styles = useStyles(scrollButtonsVerticalStyles);
+    const styles = scrollButtonsVerticalStyles;
     if (!canScrollUp && !canScrollDown) {
       return null;
     }

@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React, { useCallback, useMemo, useState } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { Button } from "../Button";
 import { GalleryModal } from "./GalleryModal";
 import { imageGalleryStyles, names } from "./imageGallery.styles";
@@ -34,7 +33,7 @@ const getLayout = (imageCount: number) => {
 };
 
 export const ImageGallery: React.FC<OpenUIGalleryProps> = ({ images }) => {
-  const styles = useStyles(imageGalleryStyles);
+  const styles = imageGalleryStyles;
   const [showAll, setShowAll] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 

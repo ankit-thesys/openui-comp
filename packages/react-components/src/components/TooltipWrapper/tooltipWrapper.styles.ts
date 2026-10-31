@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 const smallBody = `
   font: var(--openui-text-body-sm, 400 14px/1.5 "Inter", sans-serif);
   letter-spacing: var(--openui-text-body-sm-letter-spacing, -0.01em);
@@ -10,7 +11,7 @@ export const names = {
   text: "openui-tooltip-wrapper-text",
   root: "openui-tooltip-wrapper",
 } as const;
-export const tooltipWrapperStyles = (css: StyleCss) => ({
+export const tooltipWrapperStyles = {
   body: css`
     display: flex;
     flex-direction: column;
@@ -95,4 +96,4 @@ export const tooltipWrapperStyles = (css: StyleCss) => ({
       }
     }
   `,
-});
+};

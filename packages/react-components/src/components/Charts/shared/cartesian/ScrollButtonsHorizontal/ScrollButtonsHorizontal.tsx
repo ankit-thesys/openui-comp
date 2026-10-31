@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React from "react";
-import { useStyles } from "../../../../../styles/useStyles";
 import { IconButton } from "../../../../IconButton";
 import { names, scrollButtonsHorizontalStyles } from "./scrollButtonsHorizontal.styles";
 
@@ -25,7 +24,7 @@ export const ScrollButtonsHorizontal = React.memo(
     onScrollLeft,
     onScrollRight,
   }: ScrollButtonsHorizontalProps) => {
-    const styles = useStyles(scrollButtonsHorizontalStyles);
+    const styles = scrollButtonsHorizontalStyles;
     if (dataWidth <= effectiveWidth) {
       return null;
     }

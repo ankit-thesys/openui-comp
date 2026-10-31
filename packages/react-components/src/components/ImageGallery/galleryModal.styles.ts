@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   modal: "openui-image-gallery-modal",
   content: "openui-image-gallery-modal-content",
@@ -18,7 +19,7 @@ export const names = {
   scrollRight: "openui-image-gallery-modal-scroll-right",
   icon: "openui-image-gallery-modal-icon",
 } as const;
-export const galleryModalStyles = (css: StyleCss) => ({
+export const galleryModalStyles = {
   modal: css`
     position: fixed;
     top: 0;
@@ -153,4 +154,4 @@ export const galleryModalStyles = (css: StyleCss) => ({
     height: 100%;
     object-fit: cover;
   `,
-});
+};

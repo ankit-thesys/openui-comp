@@ -4,7 +4,6 @@ import { flip, offset, type Placement, shift, useFloating } from "@floating-ui/r
 import clsx from "clsx";
 import React, { memo, useCallback, useLayoutEffect, useMemo, useRef } from "react";
 import { createPortal } from "react-dom";
-import { useStyles } from "../../../../../styles/useStyles";
 import { useTheme } from "../../../../ThemeProvider";
 import { springPresets, useTranslate } from "../spring";
 import { names, portalTooltipStyles } from "./portalTooltip.styles";
@@ -38,7 +37,7 @@ function ChartTooltipRender({
   className,
   placement = "right-start",
 }: ChartTooltipProps) {
-  const styles = useStyles(portalTooltipStyles);
+  const styles = portalTooltipStyles;
   const { portalThemeClassName } = useTheme();
 
   const virtualEl = useMemo(

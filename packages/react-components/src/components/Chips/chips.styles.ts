@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-chips",
@@ -7,7 +7,7 @@ export const names = {
   text: "openui-chips-item-text",
 } as const;
 
-export const chipsStyles = (css: StyleCss) => ({
+export const chipsStyles = {
   root: css`
     display: flex;
     flex-wrap: wrap;
@@ -72,4 +72,4 @@ export const chipsStyles = (css: StyleCss) => ({
     white-space: nowrap;
     text-overflow: ellipsis;
   `,
-});
+};

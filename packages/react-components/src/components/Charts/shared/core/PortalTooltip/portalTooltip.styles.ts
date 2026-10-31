@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../../../../styles/useStyles";
+import { css } from "../../../../../styles/css";
 
 export const names = {
   root: "openui-chart-tooltip",
@@ -15,7 +15,7 @@ export const names = {
   labelText: "openui-chart-tooltip-label-text",
 } as const;
 
-export const portalTooltipStyles = (css: StyleCss) => ({
+export const portalTooltipStyles = {
   portal: css`
     pointer-events: none;
     z-index: 1000;
@@ -143,4 +143,4 @@ export const portalTooltipStyles = (css: StyleCss) => ({
     overflow-wrap: break-word;
     word-break: break-word;
   `,
-});
+};

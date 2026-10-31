@@ -1,10 +1,11 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-image-block",
   image: "openui-image-block-image",
   loader: "openui-image-block-loader",
 } as const;
-export const imageBlockStyles = (css: StyleCss) => ({
+export const imageBlockStyles = {
   root: css`
     /* react-ui's content-box sizing, declared so a page's box-sizing reset (Tailwind's preflight, for
        one) cannot change the geometry. */
@@ -84,4 +85,4 @@ export const imageBlockStyles = (css: StyleCss) => ({
     border-top-color: rgb(37, 99, 235);
     z-index: 2;
   `,
-});
+};

@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { forwardRef, ReactNode } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { buttonStyles, names } from "./button.styles";
 
 type ButtonVariant = "primary" | "secondary" | "tertiary";
@@ -36,7 +35,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref,
   ) => {
-    const styles = useStyles(buttonStyles);
+    const styles = buttonStyles;
     const icon = (node: ReactNode) =>
       isRendered(node) ? <span className={clsx(styles.icon, names.icon)}>{node}</span> : null;
     return (

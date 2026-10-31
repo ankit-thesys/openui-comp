@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React from "react";
-import { useStyles } from "../../styles/useStyles";
 import { calloutStyles, names } from "./callout.styles";
 
 type CalloutVariant = "info" | "danger" | "warning" | "success" | "neutral";
@@ -16,7 +15,7 @@ export interface CalloutProps extends Omit<React.HTMLAttributes<HTMLDivElement>,
 }
 
 export const Callout = React.forwardRef<HTMLDivElement, CalloutProps>((props, ref) => {
-  const styles = useStyles(calloutStyles);
+  const styles = calloutStyles;
   const { className, variant = "neutral", title, description, duration, style, ...rest } = props;
 
   const dismissStyle = duration

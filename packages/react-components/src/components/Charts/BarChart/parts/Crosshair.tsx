@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import type { ScaleBand } from "d3-scale";
 import React from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import { FadeFollower } from "../../shared/core/spring";
 import { barChartStyles, names } from "../barChart.styles";
 
@@ -29,7 +28,7 @@ export const Crosshair: React.FC<CrosshairProps> = ({
   categoryKey,
   chartHeight,
 }) => {
-  const styles = useStyles(barChartStyles);
+  const styles = barChartStyles;
   const visible = hoveredIndex !== null && hoveredIndex >= 0 && hoveredIndex < data.length;
   const row = visible ? data[hoveredIndex]! : undefined;
   const x = row ? (xScale(String(row[categoryKey])) ?? 0) : 0;

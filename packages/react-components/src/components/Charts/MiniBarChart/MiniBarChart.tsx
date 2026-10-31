@@ -1,7 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import { useStyles } from "../../../styles/useStyles";
 import { useTheme } from "../../ThemeProvider";
 import { useEffectiveAnimation } from "../hooks/core/useEffectiveAnimation";
 import { roundedBarPath } from "../shared/cartesian/roundedBarPath";
@@ -30,7 +29,7 @@ export function MiniBarChart({
   className,
   barColor,
 }: MiniBarChartProps) {
-  const styles = useStyles(miniBarChartStyles);
+  const styles = miniBarChartStyles;
   const animate = useEffectiveAnimation(isAnimationActive);
   const [color = ""] = useChartPalette({
     customPalette: customPalette ?? (barColor ? [barColor] : undefined),

@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React, { createContext, useContext } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { names, stepsStyles } from "./steps.styles";
 
 export interface StepsItemProps {
@@ -18,7 +17,7 @@ export interface StepsProps {
 const StepNumberContext = createContext<number>(0);
 
 export const Steps: React.FC<StepsProps> = ({ children }) => {
-  const styles = useStyles(stepsStyles);
+  const styles = stepsStyles;
   return (
     <div className={clsx(styles.root, names.root)}>
       <div className={clsx(styles.list, names.list)}>
@@ -33,7 +32,7 @@ export const Steps: React.FC<StepsProps> = ({ children }) => {
 export const StepsItem: React.FC<StepsItemProps> = ({ title, details, number }) => {
   const stepNumber = useContext(StepNumberContext);
 
-  const styles = useStyles(stepsStyles);
+  const styles = stepsStyles;
   return (
     <div className={clsx(styles.item, names.item)}>
       <div className={clsx(styles.connector, names.connector)}>

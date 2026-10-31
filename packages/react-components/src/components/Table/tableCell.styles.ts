@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-table-cell",
   align: {
@@ -7,7 +8,7 @@ export const names = {
     right: "openui-table-cell--align-right",
   },
 } as const;
-export const tableCellStyles = (css: StyleCss) => ({
+export const tableCellStyles = {
   root: css`
     padding-top: var(--openui-space-m, 12px);
     padding-bottom: var(--openui-space-m, 12px);
@@ -31,4 +32,4 @@ export const tableCellStyles = (css: StyleCss) => ({
       justify-content: flex-end;
     `,
   },
-});
+};

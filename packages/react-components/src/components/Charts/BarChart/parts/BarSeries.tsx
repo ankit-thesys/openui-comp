@@ -4,7 +4,6 @@ import clsx from "clsx";
 import type { ScaleBand, ScaleLinear } from "d3-scale";
 import { scaleBand } from "d3-scale";
 import React, { useMemo } from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import type { StackedData } from "../../hooks";
 import { roundedBarPath } from "../../shared/cartesian/roundedBarPath";
 import { entranceProps } from "../../utils/entranceUtils";
@@ -59,7 +58,7 @@ export const BarSeries: React.FC<BarSeriesProps> = ({
   internalLineWidth = 1,
   isAnimationActive,
 }) => {
-  const styles = useStyles(barChartStyles);
+  const styles = barChartStyles;
   const bandwidth = xScale.bandwidth();
 
   const innerScale = useMemo(() => {

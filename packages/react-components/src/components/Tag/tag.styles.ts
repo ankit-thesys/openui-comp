@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-tag",
@@ -21,7 +21,7 @@ export const names = {
   },
 } as const;
 
-export const tagStyles = (css: StyleCss) => ({
+export const tagStyles = {
   root: css`
     box-sizing: border-box;
     display: flex;
@@ -99,4 +99,4 @@ export const tagStyles = (css: StyleCss) => ({
       -webkit-backdrop-filter: blur(2px);
     `,
   },
-});
+};

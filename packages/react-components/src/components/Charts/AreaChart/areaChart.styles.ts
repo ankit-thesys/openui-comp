@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
+
 import { drawLineAnimation } from "../shared/animations/drawLine.styles";
 import { fadeAppearAnimation } from "../shared/animations/fadeAppear.styles";
 import {
@@ -53,7 +54,7 @@ export const names = {
   highlight: "openui-area-chart-highlight",
 } as const;
 
-export const areaChartStyles = (css: StyleCss) => ({
+export const areaChartStyles = {
   svg: css`
     &[data-overflow="visible"] {
       overflow: visible;
@@ -118,4 +119,4 @@ export const areaChartStyles = (css: StyleCss) => ({
       animation: ${fadeAppearAnimation} 0.6s ease-out 0.4s forwards;
     }
   `,
-});
+};

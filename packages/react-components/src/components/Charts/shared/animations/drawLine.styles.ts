@@ -1,11 +1,12 @@
-import type { StyleCss } from "../../../../styles/useStyles";
+import { css } from "../../../../styles/css";
 
-// The name is inert on import; register the keyframes through useStyles at render time.
-export const drawLineAnimation = "openui-chart-draw-line";
-export const drawLineStyles = (css: StyleCss) => css`
+// The stable animation name and its keyframes are available on import.
+export const drawLineStyles = css`
   @keyframes openui-chart-draw-line {
     to {
       stroke-dashoffset: 0;
     }
   }
 `;
+
+export const drawLineAnimation = drawLineStyles && "openui-chart-draw-line";

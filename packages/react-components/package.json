@@ -1,6 +1,6 @@
 {
   "name": "@openuidev/react-components",
-  "version": "0.0.0-beta.0",
+  "version": "0.0.1",
   "description": "Reusable OpenUI React components and themes",
   "license": "MIT",
   "type": "module",
@@ -17,6 +17,16 @@
         "types": "./dist/index.d.cts",
         "default": "./dist/index.cjs"
       }
+    },
+    "./styles": {
+      "import": {
+        "types": "./dist/styles.d.mts",
+        "default": "./dist/styles.mjs"
+      },
+      "require": {
+        "types": "./dist/styles.d.cts",
+        "default": "./dist/styles.cjs"
+      }
     }
   },
   "sideEffects": [
@@ -29,8 +39,7 @@
   ],
   "files": [
     "dist",
-    "README.md",
-    "docs/reference/selectors.md"
+    "README.md"
   ],
   "scripts": {
     "build": "tsdown",

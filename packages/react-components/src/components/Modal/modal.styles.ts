@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-modal",
   overlay: "openui-modal-overlay",
@@ -10,7 +11,7 @@ export const names = {
   closeIcon: "openui-modal-close-icon",
   size: { sm: "openui-modal--size-sm", md: "openui-modal--size-md", lg: "openui-modal--size-lg" },
 } as const;
-export const modalStyles = (css: StyleCss) => ({
+export const modalStyles = {
   root: css`
     position: relative;
     z-index: 9999;
@@ -112,4 +113,4 @@ export const modalStyles = (css: StyleCss) => ({
       --_openui-modal-content-width: 720px;
     `,
   },
-});
+};
