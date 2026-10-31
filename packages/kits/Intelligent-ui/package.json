@@ -1,0 +1,84 @@
+{
+  "name": "@openuidev/intelligent-kit",
+  "version": "0.0.0-beta.0",
+  "description": "OpenUI Intelligent UI component library: primitives a model arranges itself, with maps, drawing and generic @functions",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./lib": {
+      "import": {
+        "types": "./dist/lib/index.d.mts",
+        "default": "./dist/lib/index.mjs"
+      },
+      "require": {
+        "types": "./dist/lib/index.d.cts",
+        "default": "./dist/lib/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "typesVersions": {
+    "*": {
+      "lib": [
+        "dist/lib/index.d.cts"
+      ]
+    }
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "goober": "2.1.19",
+    "katex": "^0.16.44",
+    "lucide-react": "^0.562.0",
+    "maplibre-gl": "^6.13.0"
+  },
+  "peerDependencies": {
+    "@openuidev/lang-core": ">=1.0.0 <2.0.0",
+    "@openuidev/react-components": "0.0.0-beta.0",
+    "@openuidev/react-lang": ">=1.0.1 <2.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^3.25.76 || ^4.0.0"
+  },
+  "devDependencies": {
+    "@openuidev/lang-core": "workspace:^",
+    "@openuidev/react-components": "workspace:^",
+    "@openuidev/react-lang": "workspace:^",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "catalog:"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesysdev/openui.git",
+    "directory": "packages/kits/Intelligent-ui"
+  }
+}
