@@ -215,4 +215,8 @@ for the other kits.
 ```sh
 pnpm --filter @openuidev/intelligent-kit run build
 pnpm --filter @openuidev/intelligent-kit run typecheck
+pnpm --filter @openuidev/intelligent-kit run test          # fast: the library, the prompt, the style rules
+pnpm --filter @openuidev/intelligent-kit run test:browser  # rendering, styles, layout and clicks in Chromium
+pnpm --filter @openuidev/intelligent-kit run test:parity  # the kit against the real app; see src/__tests__/parity
+pnpm --filter @openuidev/intelligent-kit run gallery      # every program, live
 ```
