@@ -63,13 +63,12 @@ describe("the source", () => {
     expect(offenders(sourceFiles, /\.openui-button-base/)).toEqual([]);
   });
 
-  it("ships one stylesheet of its own, for the theme", () => {
-    const sheets = sourceFiles.filter((path) => path.endsWith(".css")).map(short);
-    expect(sheets).toEqual(["shared/theme.css"]);
+  it("ships no stylesheet of its own", () => {
+    expect(sourceFiles.filter((path) => path.endsWith(".css")).map(short)).toEqual([]);
   });
 
-  it("imports that stylesheet where a single definition still gets it", () => {
-    expect(read(join(src, "shared/tokens.ts"))).toContain('import "./theme.css"');
+  it("imports the theme where a single definition still gets it", () => {
+    expect(read(join(src, "shared/tokens.ts"))).toContain('import "./theme"');
   });
 
   it("uses !important only in the photo row", () => {
@@ -78,7 +77,7 @@ describe("the source", () => {
 });
 
 describe("the theme", () => {
-  const theme = read(join(src, "shared/theme.css"));
+  const theme = read(join(src, "shared/theme.ts"));
 
   it("sets dark neutrals at zero weight, so a host's rule still wins", () => {
     expect(theme).toMatch(/:where\(\[data-theme="dark"\], :root\[data-openui-theme="dark"\]\)/);
@@ -118,8 +117,8 @@ describe("package.json", () => {
     expect(Object.keys(pkg.exports)).toEqual([".", "./lib"]);
   });
 
-  it("keeps stylesheet imports through tree-shaking", () => {
-    expect(pkg.sideEffects).toEqual(["**/*.css"]);
+  it("keeps the theme through tree-shaking", () => {
+    expect(pkg.sideEffects).toEqual(["**/shared/theme.*"]);
   });
 
   it("pins goober, because the styles depend on how it compiles selectors", () => {
