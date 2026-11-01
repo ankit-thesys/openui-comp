@@ -40,7 +40,7 @@ const server = createServer(async (req, res) => {
     }
     const nonce = randomBytes(18).toString("base64");
     const theme = url.searchParams.get("theme") === "light" ? "light" : "light";
-    const { sheet, html } = render(theme);
+    const { sheet, html } = await render(theme, nonce);
     const headers = { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" };
     headers["Content-Security-Policy"] =
       `style-src 'nonce-${nonce}'; script-src 'self' 'nonce-${nonce}'; object-src 'none'; base-uri 'none'`;
