@@ -18,12 +18,11 @@ if (typeof document !== "undefined" && !servedDefaults()) {
   // TanStack Start, Next). React hydrates <head> by position and would match the app's own first
   // <style> against them, failing on the text; it skips styles marked `data-precedence`, its own
   // hoisted-sheet marker, and keeps them when it re-renders the document.
-  const precedence = DEFAULTS_PRECEDENCE;
 
   // Establish the defaults layer before host layers, regardless of import order.
   const order = createStyleTag();
   order.setAttribute("data-openui-layer-order", "");
-  order.setAttribute("data-precedence", precedence);
+  order.setAttribute("data-precedence", DEFAULTS_PRECEDENCE);
   order.textContent = "@layer openui-defaults;";
   document.head.prepend(order);
 
@@ -36,7 +35,7 @@ if (typeof document !== "undefined" && !servedDefaults()) {
     sheet.id = "openui-defaults";
     order.after(sheet);
   }
-  sheet.setAttribute("data-precedence", precedence);
+  sheet.setAttribute("data-precedence", DEFAULTS_PRECEDENCE);
   const rule = `@layer openui-defaults{:where(:root){${themeToCssVars({ ...defaultLightTheme })}}}`;
   if (!(sheet.textContent ?? "").includes(rule)) sheet.append(rule);
 }

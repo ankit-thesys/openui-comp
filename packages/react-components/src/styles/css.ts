@@ -14,36 +14,37 @@ const LAYER_NAME = /^-?[a-zA-Z_][\w-]*(\.-?[a-zA-Z_][\w-]*)*$/;
 type Store = {
   // Every rule Goober has registered, unlayered.
   rules: string;
-  // Each generated class's own rule text, and which of those classes are keyframes.
-  classes: Record<string, string>;
-  keyframes: Record<string, true>;
-  // Classes in registration order, and how many of them the browser has written or skipped.
-  order: string[];
+  // How much of `rules` is already on the page. An older copy of this module writes from here.
   written: number;
-  // Classes a server render already put on the page, read once from React's hoisted tags.
-  served: Record<string, true> | undefined;
   emitted: boolean;
   // The layer of the rules last written to the page.
   emittedLayer: string | undefined;
   scheduled: boolean;
   layer: string | undefined;
+  // Each generated class's own rule text, and which of those classes are keyframes.
+  classes: Record<string, string>;
+  keyframes: Record<string, true>;
+  // Classes in registration order, and how many of them the browser has written or skipped.
+  order: string[];
+  considered: number;
 };
 
 // One store per page, shared by every copy of this module (an ESM and a CJS build, or two
-// versions). Each copy's Goober then finds rules another copy registered and skips them.
+// versions). Each copy's Goober then finds rules another copy registered and skips them. A store
+// an older copy created lacks the per-class records, so they are added to it.
 const STORE = Symbol.for("@openuidev/react-components/styles");
-const store: Store = ((globalThis as { [STORE]?: Store })[STORE] ??= {
+const store = ((globalThis as { [STORE]?: Partial<Store> })[STORE] ??= {
   rules: "",
-  classes: {},
-  keyframes: {},
-  order: [],
   written: 0,
-  served: undefined,
   emitted: false,
   emittedLayer: undefined,
   scheduled: false,
   layer: undefined,
-});
+}) as Store;
+store.classes ??= {};
+store.keyframes ??= {};
+store.order ??= [];
+store.considered ??= 0;
 
 // Goober 2.1.19 also tells the browser from the server by `window`.
 const inBrowser = () => typeof window === "object";
@@ -52,26 +53,28 @@ const inBrowser = () => typeof window === "object";
 const wrap = (text: string, name = store.layer) =>
   name && text ? `@layer ${name}{${text}}` : text;
 
-// React's hoisted component-rule tags from a server render, e.g. data-href="go1 go2".
-const SERVED = `style[data-precedence="${PRECEDENCE}"][data-href]`;
+// React's hoisted tags from a server render, e.g. <style data-precedence="openui" data-href="go1 go2">.
+const hoistedTags = (precedence: string) => `style[data-precedence="${precedence}"][data-href]`;
 
-function served(): Record<string, true> {
-  if (store.served) return store.served;
+// Classes the server put on the page. Read on every write: Suspense boundaries stream more tags.
+function servedClasses(): Record<string, true> {
   const found: Record<string, true> = {};
-  document.querySelectorAll(SERVED).forEach((tag) => {
+  document.querySelectorAll(hoistedTags(PRECEDENCE)).forEach((tag) => {
     for (const name of tag.getAttribute("data-href")!.split(" ")) found[name] = true;
   });
-  return (store.served = found);
+  return found;
 }
 
 function write() {
   store.scheduled = false;
-  const skip = served();
+  const served = servedClasses();
   let fresh = "";
-  for (; store.written < store.order.length; store.written++) {
-    const name = store.order[store.written]!;
-    if (!skip[name]) fresh += store.classes[name];
+  for (; store.considered < store.order.length; store.considered++) {
+    const name = store.order[store.considered]!;
+    if (!served[name]) fresh += store.classes[name];
   }
+  // Every registered rule is now written or served, so an older copy has nothing left to write.
+  store.written = store.rules.length;
   if (!fresh) return;
   let tag = document.getElementById(SHEET_ID);
   if (!tag) {
@@ -79,7 +82,7 @@ function write() {
     tag.id = SHEET_ID;
     tag.setAttribute("data-precedence", PRECEDENCE);
     // After the server's component rules, else the token defaults, else first in <head>.
-    const tags = document.querySelectorAll(SERVED);
+    const tags = document.querySelectorAll(hoistedTags(PRECEDENCE));
     const anchor =
       tags[tags.length - 1] ??
       document.getElementById("openui-defaults") ??
@@ -94,14 +97,16 @@ function write() {
   store.emittedLayer = store.layer;
 }
 
-// Before hydration, the server's tags move to the start of <head>, ahead of app CSS: React places
-// them after app stylesheets it has already seen, and inside the container when it renders one
-// rather than the whole document. React's hydration skips tags marked data-precedence.
+// Before hydration, the server's tags move to the start of <head>, in their order, ahead of app
+// CSS: React places them after app stylesheets it has already seen, and inside the container when
+// it renders one rather than the whole document. React's hydration skips tags marked
+// data-precedence.
 if (typeof document !== "undefined") {
-  const first = document.head.firstChild;
+  const moved = document.createDocumentFragment();
   document
-    .querySelectorAll(`style[data-precedence="${DEFAULTS_PRECEDENCE}"][data-href], ${SERVED}`)
-    .forEach((tag) => document.head.insertBefore(tag, first));
+    .querySelectorAll(`${hoistedTags(DEFAULTS_PRECEDENCE)}, ${hoistedTags(PRECEDENCE)}`)
+    .forEach((tag) => moved.append(tag));
+  document.head.prepend(moved);
 }
 
 const sink = {
