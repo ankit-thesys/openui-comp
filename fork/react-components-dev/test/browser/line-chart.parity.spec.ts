@@ -1,0 +1,8 @@
+// No intentional visual differences. Capture from #72 with test:parity:baseline.
+import { test } from "@playwright/test";
+import { settleCartesianChart } from "./parity/cartesian-chart-motion";
+import { checkParity } from "./parity/parity";
+test("LineChart matches the #72 computed styles", async ({ page }) => {
+  test.setTimeout(240_000);
+  await checkParity(page, "line-chart", [], settleCartesianChart);
+});

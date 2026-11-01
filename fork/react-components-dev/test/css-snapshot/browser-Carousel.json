@@ -1,0 +1,712 @@
+{
+  "initial": {
+    "markup": [
+      "<div id=\"root\">",
+      "<div class=\"openui-carousel#0 openui-carousel openui-carousel#1 openui-carousel--variant-card openui-carousel--show-buttons\">",
+      "<div class=\"openui-carousel-content#0 openui-carousel-content\" data-mask=\"none\">",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-carousel#0 openui-carousel openui-carousel#1 openui-carousel--variant-card\" style=\"width: 320px;\">",
+      "<div class=\"openui-carousel-content#0 openui-carousel-content\" data-mask=\"right\">",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 1",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 2",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 3",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-carousel#0 openui-carousel openui-carousel#1 openui-carousel--variant-card openui-carousel--show-buttons\" style=\"width: 320px;\">",
+      "<div class=\"openui-carousel-content#0 openui-carousel-content\" data-mask=\"both\">",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 1",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 2",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 3",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-carousel-button+openui-carousel-button-left#0 openui-carousel-button openui-carousel-button+openui-carousel-button-left#1 openui-carousel-button-left\">",
+      "<button class=\"openui-icon-button+openui-carousel-previous#0 openui-icon-button+openui-carousel-previous#1 openui-icon-button+openui-carousel-previous#2 openui-icon-button+openui-carousel-previous#3 openui-icon-button+openui-carousel-previous#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-carousel-previous\" aria-label=\"Previous card\">",
+      "<span class=\"openui-icon-button-icon#0 openui-icon-button-icon\">",
+      "<svg>",
+      "</svg>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "<div class=\"openui-carousel-button+openui-carousel-button-left#0 openui-carousel-button openui-carousel-button+openui-carousel-button-right#0 openui-carousel-button-right\">",
+      "<button class=\"openui-icon-button+openui-carousel-previous#0 openui-icon-button+openui-carousel-previous#1 openui-icon-button+openui-carousel-previous#2 openui-icon-button+openui-carousel-previous#3 openui-icon-button+openui-carousel-previous#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-carousel-next\" aria-label=\"Next card\">",
+      "<span class=\"openui-icon-button-icon#0 openui-icon-button-icon\">",
+      "<svg>",
+      "</svg>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-carousel#0 openui-carousel openui-carousel#1 openui-carousel--variant-card openui-carousel--no-snap\" style=\"width: 320px;\">",
+      "<div class=\"openui-carousel-content#0 openui-carousel-content\" data-mask=\"right\">",
+      "<div class=\"openui-carousel-content-wrapper#0 openui-carousel-content-wrapper\">",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 1",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 2",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 3",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-carousel#0 openui-carousel openui-carousel#1 openui-carousel--variant-card openui-carousel--no-snap openui-carousel--show-buttons\" style=\"width: 320px;\">",
+      "<div class=\"openui-carousel-content#0 openui-carousel-content\" data-mask=\"both\">",
+      "<div class=\"openui-carousel-content-wrapper#0 openui-carousel-content-wrapper\">",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 1",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 2",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 3",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-carousel-button+openui-carousel-button-left#0 openui-carousel-button openui-carousel-button+openui-carousel-button-left#1 openui-carousel-button-left\">",
+      "<button class=\"openui-icon-button+openui-carousel-previous#0 openui-icon-button+openui-carousel-previous#1 openui-icon-button+openui-carousel-previous#2 openui-icon-button+openui-carousel-previous#3 openui-icon-button+openui-carousel-previous#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-carousel-previous\" aria-label=\"Previous card\">",
+      "<span class=\"openui-icon-button-icon#0 openui-icon-button-icon\">",
+      "<svg>",
+      "</svg>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "<div class=\"openui-carousel-button+openui-carousel-button-left#0 openui-carousel-button openui-carousel-button+openui-carousel-button-right#0 openui-carousel-button-right\">",
+      "<button class=\"openui-icon-button+openui-carousel-previous#0 openui-icon-button+openui-carousel-previous#1 openui-icon-button+openui-carousel-previous#2 openui-icon-button+openui-carousel-previous#3 openui-icon-button+openui-carousel-previous#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-carousel-next\" aria-label=\"Next card\">",
+      "<span class=\"openui-icon-button-icon#0 openui-icon-button-icon\">",
+      "<svg>",
+      "</svg>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-carousel#0 openui-carousel openui-carousel#2 openui-carousel--variant-sunk\" style=\"width: 320px;\">",
+      "<div class=\"openui-carousel-content#0 openui-carousel-content\" data-mask=\"right\">",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 1",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 2",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 3",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-carousel#0 openui-carousel openui-carousel#2 openui-carousel--variant-sunk openui-carousel--show-buttons\" style=\"width: 320px;\">",
+      "<div class=\"openui-carousel-content#0 openui-carousel-content\" data-mask=\"both\">",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 1",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 2",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 3",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-carousel-button+openui-carousel-button-left#0 openui-carousel-button openui-carousel-button+openui-carousel-button-left#1 openui-carousel-button-left\">",
+      "<button class=\"openui-icon-button+openui-carousel-previous#0 openui-icon-button+openui-carousel-previous#1 openui-icon-button+openui-carousel-previous#2 openui-icon-button+openui-carousel-previous#3 openui-icon-button+openui-carousel-previous#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-carousel-previous\" aria-label=\"Previous card\">",
+      "<span class=\"openui-icon-button-icon#0 openui-icon-button-icon\">",
+      "<svg>",
+      "</svg>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "<div class=\"openui-carousel-button+openui-carousel-button-left#0 openui-carousel-button openui-carousel-button+openui-carousel-button-right#0 openui-carousel-button-right\">",
+      "<button class=\"openui-icon-button+openui-carousel-previous#0 openui-icon-button+openui-carousel-previous#1 openui-icon-button+openui-carousel-previous#2 openui-icon-button+openui-carousel-previous#3 openui-icon-button+openui-carousel-previous#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-carousel-next\" aria-label=\"Next card\">",
+      "<span class=\"openui-icon-button-icon#0 openui-icon-button-icon\">",
+      "<svg>",
+      "</svg>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-carousel#0 openui-carousel openui-carousel#2 openui-carousel--variant-sunk openui-carousel--no-snap\" style=\"width: 320px;\">",
+      "<div class=\"openui-carousel-content#0 openui-carousel-content\" data-mask=\"right\">",
+      "<div class=\"openui-carousel-content-wrapper#0 openui-carousel-content-wrapper\">",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 1",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 2",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 3",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-carousel#0 openui-carousel openui-carousel#2 openui-carousel--variant-sunk openui-carousel--no-snap openui-carousel--show-buttons\" style=\"width: 320px;\">",
+      "<div class=\"openui-carousel-content#0 openui-carousel-content\" data-mask=\"both\">",
+      "<div class=\"openui-carousel-content-wrapper#0 openui-carousel-content-wrapper\">",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 1",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 2",
+      "</div>",
+      "<div class=\"openui-carousel-item#0 openui-carousel-item\">Card 3",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-carousel-button+openui-carousel-button-left#0 openui-carousel-button openui-carousel-button+openui-carousel-button-left#1 openui-carousel-button-left\">",
+      "<button class=\"openui-icon-button+openui-carousel-previous#0 openui-icon-button+openui-carousel-previous#1 openui-icon-button+openui-carousel-previous#2 openui-icon-button+openui-carousel-previous#3 openui-icon-button+openui-carousel-previous#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-carousel-previous\" aria-label=\"Previous card\">",
+      "<span class=\"openui-icon-button-icon#0 openui-icon-button-icon\">",
+      "<svg>",
+      "</svg>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "<div class=\"openui-carousel-button+openui-carousel-button-left#0 openui-carousel-button openui-carousel-button+openui-carousel-button-right#0 openui-carousel-button-right\">",
+      "<button class=\"openui-icon-button+openui-carousel-previous#0 openui-icon-button+openui-carousel-previous#1 openui-icon-button+openui-carousel-previous#2 openui-icon-button+openui-carousel-previous#3 openui-icon-button+openui-carousel-previous#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-carousel-next\" aria-label=\"Next card\">",
+      "<span class=\"openui-icon-button-icon#0 openui-icon-button-icon\">",
+      "<svg>",
+      "</svg>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<script type=\"module\" src=\"/elements.js\">",
+      "</script>"
+    ],
+    "rules": {
+      "openui-carousel-button+openui-carousel-button-left#0": [
+        {
+          "selector": ".openui-carousel-button+openui-carousel-button-left#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "top:50%",
+            "z-index:10",
+            "transform:translateY(-50%)",
+            "background:var(--openui-foreground, oklch(0.994 0 89.876 / 1))",
+            "border-radius:var(--openui-radius-s, 6px)",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center"
+          ]
+        }
+      ],
+      "openui-carousel-button+openui-carousel-button-left#1": [
+        {
+          "selector": ".openui-carousel-button+openui-carousel-button-left#1",
+          "conditions": [],
+          "declarations": ["left:-12px"]
+        }
+      ],
+      "openui-carousel-button+openui-carousel-button-right#0": [
+        {
+          "selector": ".openui-carousel-button+openui-carousel-button-right#0",
+          "conditions": [],
+          "declarations": ["right:-12px"]
+        }
+      ],
+      "openui-carousel-content-wrapper#0": [
+        {
+          "selector": ".openui-carousel-content-wrapper#0",
+          "conditions": [],
+          "declarations": ["display:flex", "gap:var(--openui-space-m, 12px)"]
+        }
+      ],
+      "openui-carousel-content#0": [
+        {
+          "selector": ".openui-carousel-content#0",
+          "conditions": [],
+          "declarations": [
+            "position:relative",
+            "display:flex",
+            "flex-direction:row",
+            "gap:var(--openui-space-m, 12px)",
+            "overflow-x:auto",
+            "scroll-snap-type:x mandatory",
+            "ms-overflow-x:hidden",
+            "scrollbar-width:none"
+          ]
+        },
+        {
+          "selector": ".openui-carousel-content#0[data-mask=\"both\"]",
+          "conditions": [],
+          "declarations": [
+            "mask-image:linear-gradient( to right, transparent, black 40px, black calc(100% - 40px), transparent )",
+            "-webkit-mask-image:linear-gradient( to right, transparent, black 40px, black calc(100% - 40px), transparent )"
+          ]
+        },
+        {
+          "selector": ".openui-carousel-content#0[data-mask=\"left\"]",
+          "conditions": [],
+          "declarations": [
+            "mask-image:linear-gradient(to right, transparent, black 40px, black)",
+            "-webkit-mask-image:linear-gradient(to right, transparent, black 40px, black)"
+          ]
+        },
+        {
+          "selector": ".openui-carousel-content#0[data-mask=\"right\"]",
+          "conditions": [],
+          "declarations": [
+            "mask-image:linear-gradient(to left, transparent, black 40px, black)",
+            "-webkit-mask-image:linear-gradient(to left, transparent, black 40px, black)"
+          ]
+        },
+        {
+          "selector": ".openui-carousel-content#0::-webkit-scrollbar",
+          "conditions": [],
+          "declarations": ["display:none"]
+        },
+        {
+          "selector": ":where(.openui-carousel-content#0) > *",
+          "conditions": [],
+          "declarations": ["box-sizing:border-box", "scroll-snap-align:start"]
+        }
+      ],
+      "openui-carousel-item#0": [
+        {
+          "selector": ".openui-carousel-item#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "display:flex",
+            "flex-direction:column",
+            "gap:var(--openui-space-m, 12px)",
+            "width:280px",
+            "flex-shrink:0",
+            "border-radius:var(--openui-radius-2xl, 14px)",
+            "background-color:var( --_openui-carousel-item-background, var(--openui-foreground, oklch(0.994 0 89.876 / 1)) )",
+            "padding:var(--openui-space-m, 12px)",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))"
+          ]
+        },
+        {
+          "selector": ".openui-carousel-item#0",
+          "conditions": ["@media (max-width: 400px)"],
+          "declarations": ["width:248px", "flex-shrink:0"]
+        }
+      ],
+      "openui-carousel#0": [
+        {
+          "selector": ".openui-carousel#0",
+          "conditions": [],
+          "declarations": ["position:relative", "display:flex"]
+        }
+      ],
+      "openui-carousel#1": [
+        {
+          "selector": ".openui-carousel#1",
+          "conditions": [],
+          "declarations": [
+            "--_openui-carousel-item-background:var(--openui-foreground, oklch(0.994 0 89.876 / 1))"
+          ]
+        }
+      ],
+      "openui-carousel#2": [
+        {
+          "selector": ".openui-carousel#2",
+          "conditions": [],
+          "declarations": [
+            "--_openui-carousel-item-background:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))"
+          ]
+        }
+      ],
+      "openui-icon-button-icon#0": [
+        {
+          "selector": ".openui-icon-button-icon#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:var(--_openui-icon-button-icon-size)",
+            "height:var(--_openui-icon-button-icon-size)"
+          ]
+        }
+      ],
+      "openui-icon-button+openui-carousel-previous#0": [
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "padding:0",
+            "flex-shrink:0"
+          ]
+        }
+      ],
+      "openui-icon-button+openui-carousel-previous#1": [
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-bg)",
+            "color:var(--_openui-icon-button-secondary-fg)",
+            "border-color:var(--_openui-icon-button-secondary-border)",
+            "box-shadow:var(--_openui-icon-button-secondary-shadow)"
+          ]
+        },
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-hover-bg)",
+            "box-shadow:none"
+          ]
+        },
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-icon-button-secondary-active-bg)"]
+        },
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-disabled-bg)",
+            "color:var(--_openui-icon-button-secondary-disabled-fg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ]
+        }
+      ],
+      "openui-icon-button+openui-carousel-previous#2": [
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#2",
+          "conditions": [],
+          "declarations": [
+            "width:32px",
+            "height:32px",
+            "--_openui-icon-button-icon-size:16px",
+            "--_openui-icon-button-square-radius:calc(var(--openui-radius-s, 6px) + 1px)"
+          ]
+        }
+      ],
+      "openui-icon-button+openui-carousel-previous#3": [
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#3",
+          "conditions": [],
+          "declarations": ["border-radius:var(--_openui-icon-button-square-radius)"]
+        }
+      ],
+      "openui-icon-button+openui-carousel-previous#4": [
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#4",
+          "conditions": [],
+          "declarations": [
+            "--_openui-icon-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-fg:var( --openui-text-accent-primary, oklch(0.994 0 89.876 / 1) )",
+            "--_openui-icon-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-icon-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-icon-button-secondary-bg:transparent",
+            "--_openui-icon-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-disabled-bg:transparent",
+            "--_openui-icon-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ]
+        }
+      ]
+    },
+    "order": [
+      "Carousel/carousel.styles.mjs: openui-carousel#0 < openui-carousel#1",
+      "Carousel/carousel.styles.mjs: openui-carousel#0 < openui-carousel#2",
+      "Carousel/carousel.styles.mjs: openui-carousel-button+openui-carousel-button-left#0 < openui-carousel-button+openui-carousel-button-left#1",
+      "Carousel/carousel.styles.mjs: openui-carousel-button+openui-carousel-button-left#0 < openui-carousel-button+openui-carousel-button-right#0",
+      "IconButton/iconButton.styles.mjs: openui-icon-button+openui-carousel-previous#0 < openui-icon-button+openui-carousel-previous#1 < openui-icon-button+openui-carousel-previous#2 < openui-icon-button+openui-carousel-previous#3 < openui-icon-button+openui-carousel-previous#4"
+    ]
+  },
+  "openui/initial": {
+    "rules": {
+      "openui-carousel-button+openui-carousel-button-left#0": [
+        {
+          "selector": ".openui-carousel-button+openui-carousel-button-left#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "top:50%",
+            "z-index:10",
+            "transform:translateY(-50%)",
+            "background:var(--openui-foreground, oklch(0.994 0 89.876 / 1))",
+            "border-radius:var(--openui-radius-s, 6px)",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-carousel-button+openui-carousel-button-left#1": [
+        {
+          "selector": ".openui-carousel-button+openui-carousel-button-left#1",
+          "conditions": [],
+          "declarations": ["left:-12px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-carousel-button+openui-carousel-button-right#0": [
+        {
+          "selector": ".openui-carousel-button+openui-carousel-button-right#0",
+          "conditions": [],
+          "declarations": ["right:-12px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-carousel-content-wrapper#0": [
+        {
+          "selector": ".openui-carousel-content-wrapper#0",
+          "conditions": [],
+          "declarations": ["display:flex", "gap:var(--openui-space-m, 12px)"],
+          "layer": "openui"
+        }
+      ],
+      "openui-carousel-content#0": [
+        {
+          "selector": ".openui-carousel-content#0",
+          "conditions": [],
+          "declarations": [
+            "position:relative",
+            "display:flex",
+            "flex-direction:row",
+            "gap:var(--openui-space-m, 12px)",
+            "overflow-x:auto",
+            "scroll-snap-type:x mandatory",
+            "ms-overflow-x:hidden",
+            "scrollbar-width:none"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-carousel-content#0[data-mask=\"both\"]",
+          "conditions": [],
+          "declarations": [
+            "mask-image:linear-gradient( to right, transparent, black 40px, black calc(100% - 40px), transparent )",
+            "-webkit-mask-image:linear-gradient( to right, transparent, black 40px, black calc(100% - 40px), transparent )"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-carousel-content#0[data-mask=\"left\"]",
+          "conditions": [],
+          "declarations": [
+            "mask-image:linear-gradient(to right, transparent, black 40px, black)",
+            "-webkit-mask-image:linear-gradient(to right, transparent, black 40px, black)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-carousel-content#0[data-mask=\"right\"]",
+          "conditions": [],
+          "declarations": [
+            "mask-image:linear-gradient(to left, transparent, black 40px, black)",
+            "-webkit-mask-image:linear-gradient(to left, transparent, black 40px, black)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-carousel-content#0::-webkit-scrollbar",
+          "conditions": [],
+          "declarations": ["display:none"],
+          "layer": "openui"
+        },
+        {
+          "selector": ":where(.openui-carousel-content#0) > *",
+          "conditions": [],
+          "declarations": ["box-sizing:border-box", "scroll-snap-align:start"],
+          "layer": "openui"
+        }
+      ],
+      "openui-carousel-item#0": [
+        {
+          "selector": ".openui-carousel-item#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-body-default, 400 16px/1.5 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-body-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "display:flex",
+            "flex-direction:column",
+            "gap:var(--openui-space-m, 12px)",
+            "width:280px",
+            "flex-shrink:0",
+            "border-radius:var(--openui-radius-2xl, 14px)",
+            "background-color:var( --_openui-carousel-item-background, var(--openui-foreground, oklch(0.994 0 89.876 / 1)) )",
+            "padding:var(--openui-space-m, 12px)",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-carousel-item#0",
+          "conditions": ["@media (max-width: 400px)"],
+          "declarations": ["width:248px", "flex-shrink:0"],
+          "layer": "openui"
+        }
+      ],
+      "openui-carousel#0": [
+        {
+          "selector": ".openui-carousel#0",
+          "conditions": [],
+          "declarations": ["position:relative", "display:flex"],
+          "layer": "openui"
+        }
+      ],
+      "openui-carousel#1": [
+        {
+          "selector": ".openui-carousel#1",
+          "conditions": [],
+          "declarations": [
+            "--_openui-carousel-item-background:var(--openui-foreground, oklch(0.994 0 89.876 / 1))"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-carousel#2": [
+        {
+          "selector": ".openui-carousel#2",
+          "conditions": [],
+          "declarations": [
+            "--_openui-carousel-item-background:var(--openui-highlight-subtle, oklch(0.097 0 0 / 0.02))"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button-icon#0": [
+        {
+          "selector": ".openui-icon-button-icon#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:var(--_openui-icon-button-icon-size)",
+            "height:var(--_openui-icon-button-icon-size)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button+openui-carousel-previous#0": [
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "padding:0",
+            "flex-shrink:0"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button+openui-carousel-previous#1": [
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-bg)",
+            "color:var(--_openui-icon-button-secondary-fg)",
+            "border-color:var(--_openui-icon-button-secondary-border)",
+            "box-shadow:var(--_openui-icon-button-secondary-shadow)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-hover-bg)",
+            "box-shadow:none"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-icon-button-secondary-active-bg)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-disabled-bg)",
+            "color:var(--_openui-icon-button-secondary-disabled-fg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button+openui-carousel-previous#2": [
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#2",
+          "conditions": [],
+          "declarations": [
+            "width:32px",
+            "height:32px",
+            "--_openui-icon-button-icon-size:16px",
+            "--_openui-icon-button-square-radius:calc(var(--openui-radius-s, 6px) + 1px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button+openui-carousel-previous#3": [
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#3",
+          "conditions": [],
+          "declarations": ["border-radius:var(--_openui-icon-button-square-radius)"],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button+openui-carousel-previous#4": [
+        {
+          "selector": ".openui-icon-button+openui-carousel-previous#4",
+          "conditions": [],
+          "declarations": [
+            "--_openui-icon-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-fg:var( --openui-text-accent-primary, oklch(0.994 0 89.876 / 1) )",
+            "--_openui-icon-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-icon-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-icon-button-secondary-bg:transparent",
+            "--_openui-icon-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-disabled-bg:transparent",
+            "--_openui-icon-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ],
+          "layer": "openui"
+        }
+      ]
+    },
+    "order": [
+      "Carousel/carousel.styles.mjs: openui-carousel#0 < openui-carousel#1",
+      "Carousel/carousel.styles.mjs: openui-carousel#0 < openui-carousel#2",
+      "Carousel/carousel.styles.mjs: openui-carousel-button+openui-carousel-button-left#0 < openui-carousel-button+openui-carousel-button-left#1",
+      "Carousel/carousel.styles.mjs: openui-carousel-button+openui-carousel-button-left#0 < openui-carousel-button+openui-carousel-button-right#0",
+      "IconButton/iconButton.styles.mjs: openui-icon-button+openui-carousel-previous#0 < openui-icon-button+openui-carousel-previous#1 < openui-icon-button+openui-carousel-previous#2 < openui-icon-button+openui-carousel-previous#3 < openui-icon-button+openui-carousel-previous#4"
+    ]
+  }
+}

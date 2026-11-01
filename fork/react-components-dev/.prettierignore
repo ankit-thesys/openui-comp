@@ -1,0 +1,4 @@
+# Generated parity baselines (test:parity:baseline).
+test/browser/parity/baselines/
+# Unmodified Tailwind CLI output, kept byte for byte.
+test/browser/fixtures/tailwind*.css
