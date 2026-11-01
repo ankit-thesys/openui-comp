@@ -1,0 +1,29 @@
+{
+  "name": "@openuidev/example-next-tailwind4",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1 --port 5612",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1 --port 5612",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@openuidev/react-components": "workspace:*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^4.0.0",
+    "zustand": "^4.5.5",
+    "next": "16.4.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.3",
+    "tailwindcss": "^4.1.0",
+    "postcss": "^8.5.10",
+    "@tailwindcss/postcss": "^4.1.0"
+  }
+}

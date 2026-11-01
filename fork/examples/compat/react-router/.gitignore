@@ -1,0 +1,8 @@
+node_modules/
+build/
+dist/
+.react-router/
+.tanstack/
+test-results/
+playwright-report/
+*.tsbuildinfo

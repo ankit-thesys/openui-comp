@@ -1,0 +1,12 @@
+.compat-main {
+  display: grid;
+  gap: 24px;
+  max-width: 640px;
+  padding: 32px;
+}
+
+.theme-probe {
+  background-color: var(--openui-text-neutral-primary);
+  width: 120px;
+  height: 32px;
+}

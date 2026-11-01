@@ -1,0 +1,1429 @@
+{
+  "initial": {
+    "markup": [
+      "<div id=\"root\">",
+      "<div class=\"openui-image-gallery#0 openui-image-gallery\" data-layout=\"single\">",
+      "<div class=\"openui-image-gallery-grid#0 openui-image-gallery-grid\">",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"1\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 1\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-image-gallery#0 openui-image-gallery\" data-layout=\"double\">",
+      "<div class=\"openui-image-gallery-grid#0 openui-image-gallery-grid\">",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"1\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 1\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"2\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 2\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-image-gallery#0 openui-image-gallery\" data-layout=\"triple\">",
+      "<div class=\"openui-image-gallery-grid#0 openui-image-gallery-grid\">",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"1\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 1\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"2\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 2\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"3\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 3\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-image-gallery#0 openui-image-gallery\" data-layout=\"quad\">",
+      "<div class=\"openui-image-gallery-grid#0 openui-image-gallery-grid\">",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"1\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 1\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"2\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 2\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"3\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 3\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"4\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 4\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-image-gallery#0 openui-image-gallery\" data-layout=\"default\">",
+      "<div class=\"openui-image-gallery-grid#0 openui-image-gallery-grid\">",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"1\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 1\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"2\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 2\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"3\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 3\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"4\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 4\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"5\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 5\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-image-gallery#0 openui-image-gallery\" data-layout=\"default\">",
+      "<div class=\"openui-image-gallery-grid#0 openui-image-gallery-grid\">",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"1\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 1\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"2\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 2\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"3\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 3\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"4\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 4\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-image#0 openui-image-gallery-image\" data-position=\"5\">",
+      "<img class=\"openui-image-gallery-img#0 openui-image-gallery-img\" alt=\"Photo 5\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-show-all#0 openui-image-gallery-show-all\">",
+      "<button class=\"openui-button#0 openui-button#1 openui-button#2 openui-button#3 openui-button openui-button--variant-primary openui-button--size-small openui-button--tone-default\">Show All",
+      "</button>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "<script type=\"module\" src=\"/elements.js\">",
+      "</script>",
+      "<div class=\"openui-image-gallery-modal#0 openui-image-gallery-modal\">",
+      "<div class=\"openui-image-gallery-modal-content#0 openui-image-gallery-modal-content\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"openui-gallery-modal-heading\">",
+      "<div class=\"openui-image-gallery-modal-header#0 openui-image-gallery-modal-header\">",
+      "<span id=\"openui-gallery-modal-heading\" class=\"openui-image-gallery-modal-heading#0 openui-image-gallery-modal-heading\">All Photos",
+      "</span>",
+      "<button class=\"openui-icon-button+openui-image-gallery-modal-close#0 openui-icon-button+openui-image-gallery-modal-close#1 openui-icon-button+openui-image-gallery-modal-close#2 openui-icon-button+openui-image-gallery-modal-close#3 openui-icon-button+openui-image-gallery-modal-close#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-small openui-icon-button--shape-square openui-icon-button--tone-default openui-image-gallery-modal-close\" aria-label=\"Close gallery\">",
+      "<span class=\"openui-icon-button-icon#0 openui-icon-button-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-x openui-image-gallery-modal-icon\" aria-hidden=\"true\">",
+      "<path d=\"M18 6 6 18\">",
+      "</path>",
+      "<path d=\"m6 6 12 12\">",
+      "</path>",
+      "</svg>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "<div class=\"openui-image-gallery-modal-main#0 openui-image-gallery-modal-main\">",
+      "<img class=\"openui-image-gallery-modal-main-image#0 openui-image-gallery-modal-main-image\" alt=\"Photo 1\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-modal-carousel-container#0 openui-image-gallery-modal-carousel-container\">",
+      "<div class=\"openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#0 openui-image-gallery-modal-button-container openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#1 openui-image-gallery-modal-left-button\">",
+      "<button class=\"openui-icon-button+openui-image-gallery-modal-close#0 openui-icon-button+openui-image-gallery-modal-close#1 openui-icon-button+openui-image-gallery-modal-scroll-left#0 openui-icon-button+openui-image-gallery-modal-close#3 openui-icon-button+openui-image-gallery-modal-close#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-extra-small openui-icon-button--shape-square openui-icon-button--tone-default openui-image-gallery-modal-scroll-left\" aria-label=\"Scroll images left\">",
+      "<span class=\"openui-icon-button-icon#0 openui-icon-button-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-left openui-image-gallery-modal-icon\" aria-hidden=\"true\">",
+      "<path d=\"m15 18-6-6 6-6\">",
+      "</path>",
+      "</svg>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "<div class=\"openui-image-gallery-modal-carousel#0 openui-image-gallery-modal-carousel\">",
+      "<div class=\"openui-image-gallery-modal-thumbnail#0 openui-image-gallery-modal-thumbnail\" role=\"button\" tabindex=\"0\" aria-label=\"Photo 1\" aria-pressed=\"true\">",
+      "<img class=\"openui-image-gallery-modal-thumbnail-image#0 openui-image-gallery-modal-thumbnail-image\" alt=\"\" aria-hidden=\"true\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-modal-thumbnail#0 openui-image-gallery-modal-thumbnail\" role=\"button\" tabindex=\"0\" aria-label=\"Photo 2\" aria-pressed=\"false\">",
+      "<img class=\"openui-image-gallery-modal-thumbnail-image#0 openui-image-gallery-modal-thumbnail-image\" alt=\"\" aria-hidden=\"true\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-modal-thumbnail#0 openui-image-gallery-modal-thumbnail\" role=\"button\" tabindex=\"0\" aria-label=\"Photo 3\" aria-pressed=\"false\">",
+      "<img class=\"openui-image-gallery-modal-thumbnail-image#0 openui-image-gallery-modal-thumbnail-image\" alt=\"\" aria-hidden=\"true\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-modal-thumbnail#0 openui-image-gallery-modal-thumbnail\" role=\"button\" tabindex=\"0\" aria-label=\"Photo 4\" aria-pressed=\"false\">",
+      "<img class=\"openui-image-gallery-modal-thumbnail-image#0 openui-image-gallery-modal-thumbnail-image\" alt=\"\" aria-hidden=\"true\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-modal-thumbnail#0 openui-image-gallery-modal-thumbnail\" role=\"button\" tabindex=\"0\" aria-label=\"Photo 5\" aria-pressed=\"false\">",
+      "<img class=\"openui-image-gallery-modal-thumbnail-image#0 openui-image-gallery-modal-thumbnail-image\" alt=\"\" aria-hidden=\"true\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "<div class=\"openui-image-gallery-modal-thumbnail#0 openui-image-gallery-modal-thumbnail\" role=\"button\" tabindex=\"0\" aria-label=\"Photo 6\" aria-pressed=\"false\">",
+      "<img class=\"openui-image-gallery-modal-thumbnail-image#0 openui-image-gallery-modal-thumbnail-image\" alt=\"\" aria-hidden=\"true\" src=\"data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot;%3E%3Crect width=&quot;32&quot; height=&quot;32&quot; fill=&quot;%236286ab&quot;/%3E%3C/svg%3E\">",
+      "</div>",
+      "</div>",
+      "<div class=\"openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#0 openui-image-gallery-modal-button-container openui-image-gallery-modal-button-container+openui-image-gallery-modal-right-button#0 openui-image-gallery-modal-right-button\">",
+      "<button class=\"openui-icon-button+openui-image-gallery-modal-close#0 openui-icon-button+openui-image-gallery-modal-close#1 openui-icon-button+openui-image-gallery-modal-scroll-left#0 openui-icon-button+openui-image-gallery-modal-close#3 openui-icon-button+openui-image-gallery-modal-close#4 openui-icon-button openui-icon-button--variant-secondary openui-icon-button--size-extra-small openui-icon-button--shape-square openui-icon-button--tone-default openui-image-gallery-modal-scroll-right\" aria-label=\"Scroll images right\">",
+      "<span class=\"openui-icon-button-icon#0 openui-icon-button-icon\">",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-right openui-image-gallery-modal-icon\" aria-hidden=\"true\">",
+      "<path d=\"m9 18 6-6-6-6\">",
+      "</path>",
+      "</svg>",
+      "</span>",
+      "</button>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</div>"
+    ],
+    "rules": {
+      "@keyframes": [
+        {
+          "selector": "@keyframes _openui-image-gallery-fade-in",
+          "conditions": [],
+          "declarations": ["from{opacity:0", "}to{opacity:1", "}"]
+        }
+      ],
+      "openui-button#0": [
+        {
+          "selector": ".openui-button#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "font:var(--openui-text-label-default, 400 16px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "border-radius:var(--openui-radius-l, 10px)",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "display:flex",
+            "gap:var(--openui-space-xs, 6px)",
+            "align-items:center"
+          ]
+        },
+        {
+          "selector": ":where(.openui-button#0) svg",
+          "conditions": [],
+          "declarations": ["height:1em", "width:1em"]
+        }
+      ],
+      "openui-button#1": [
+        {
+          "selector": ".openui-button#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-bg)",
+            "color:var(--_openui-button-primary-fg)",
+            "border-color:var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08))",
+            "box-shadow:var(--_openui-button-primary-shadow)"
+          ]
+        },
+        {
+          "selector": ".openui-button#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-hover-bg)",
+            "box-shadow:none"
+          ]
+        },
+        {
+          "selector": ".openui-button#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-button-primary-active-bg)"]
+        },
+        {
+          "selector": ".openui-button#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-disabled-bg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ]
+        }
+      ],
+      "openui-button#2": [
+        {
+          "selector": ".openui-button#2",
+          "conditions": [],
+          "declarations": [
+            "border-radius:calc(var(--openui-radius-s, 6px) + 1px)",
+            "padding:calc(var(--openui-space-s, 8px) - 1.75px) var(--openui-space-s-m, 10px)",
+            "font:var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ]
+        }
+      ],
+      "openui-button#3": [
+        {
+          "selector": ".openui-button#3",
+          "conditions": [],
+          "declarations": [
+            "--_openui-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-button-primary-fg:var(--openui-text-accent-primary, oklch(0.994 0 89.876 / 1))",
+            "--_openui-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-button-secondary-bg:transparent",
+            "--_openui-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-secondary-disabled-bg:transparent",
+            "--_openui-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ]
+        }
+      ],
+      "openui-icon-button-icon#0": [
+        {
+          "selector": ".openui-icon-button-icon#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:var(--_openui-icon-button-icon-size)",
+            "height:var(--_openui-icon-button-icon-size)"
+          ]
+        }
+      ],
+      "openui-icon-button+openui-image-gallery-modal-close#0": [
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "padding:0",
+            "flex-shrink:0"
+          ]
+        }
+      ],
+      "openui-icon-button+openui-image-gallery-modal-close#1": [
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-bg)",
+            "color:var(--_openui-icon-button-secondary-fg)",
+            "border-color:var(--_openui-icon-button-secondary-border)",
+            "box-shadow:var(--_openui-icon-button-secondary-shadow)"
+          ]
+        },
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-hover-bg)",
+            "box-shadow:none"
+          ]
+        },
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-icon-button-secondary-active-bg)"]
+        },
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-disabled-bg)",
+            "color:var(--_openui-icon-button-secondary-disabled-fg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ]
+        }
+      ],
+      "openui-icon-button+openui-image-gallery-modal-close#2": [
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#2",
+          "conditions": [],
+          "declarations": [
+            "width:32px",
+            "height:32px",
+            "--_openui-icon-button-icon-size:16px",
+            "--_openui-icon-button-square-radius:calc(var(--openui-radius-s, 6px) + 1px)"
+          ]
+        }
+      ],
+      "openui-icon-button+openui-image-gallery-modal-close#3": [
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#3",
+          "conditions": [],
+          "declarations": ["border-radius:var(--_openui-icon-button-square-radius)"]
+        }
+      ],
+      "openui-icon-button+openui-image-gallery-modal-close#4": [
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#4",
+          "conditions": [],
+          "declarations": [
+            "--_openui-icon-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-fg:var( --openui-text-accent-primary, oklch(0.994 0 89.876 / 1) )",
+            "--_openui-icon-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-icon-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-icon-button-secondary-bg:transparent",
+            "--_openui-icon-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-disabled-bg:transparent",
+            "--_openui-icon-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ]
+        }
+      ],
+      "openui-icon-button+openui-image-gallery-modal-scroll-left#0": [
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-scroll-left#0",
+          "conditions": [],
+          "declarations": [
+            "width:28px",
+            "height:28px",
+            "--_openui-icon-button-icon-size:14px",
+            "--_openui-icon-button-square-radius:var(--openui-radius-s, 6px)"
+          ]
+        }
+      ],
+      "openui-image-gallery-grid#0": [
+        {
+          "selector": ".openui-image-gallery-grid#0",
+          "conditions": [],
+          "declarations": [
+            "display:grid",
+            "width:100%",
+            "max-height:376px",
+            "grid-gap:var(--openui-space-s, 8px)",
+            "grid-template-columns:var(--_openui-image-gallery-columns)",
+            "grid-template-rows:var(--_openui-image-gallery-rows, none)",
+            "grid-template-areas:var(--_openui-image-gallery-areas, none)"
+          ]
+        }
+      ],
+      "openui-image-gallery-image#0": [
+        {
+          "selector": ".openui-image-gallery-image#0",
+          "conditions": [],
+          "declarations": ["position:relative", "overflow:hidden"]
+        },
+        {
+          "selector": ".openui-image-gallery-image#0[data-position=\"1\"]",
+          "conditions": [],
+          "declarations": ["grid-area:var(--_openui-image-gallery-area-1, auto)"]
+        },
+        {
+          "selector": ".openui-image-gallery-image#0[data-position=\"2\"]",
+          "conditions": [],
+          "declarations": ["grid-area:var(--_openui-image-gallery-area-2, auto)"]
+        },
+        {
+          "selector": ".openui-image-gallery-image#0[data-position=\"3\"]",
+          "conditions": [],
+          "declarations": ["grid-area:var(--_openui-image-gallery-area-3, auto)"]
+        },
+        {
+          "selector": ".openui-image-gallery-image#0[data-position=\"4\"]",
+          "conditions": [],
+          "declarations": ["grid-area:var(--_openui-image-gallery-area-4, auto)"]
+        },
+        {
+          "selector": ".openui-image-gallery-image#0[data-position=\"5\"]",
+          "conditions": [],
+          "declarations": ["grid-area:var(--_openui-image-gallery-area-5, auto)"]
+        }
+      ],
+      "openui-image-gallery-img#0": [
+        {
+          "selector": ".openui-image-gallery-img#0",
+          "conditions": [],
+          "declarations": [
+            "width:100%",
+            "height:100%",
+            "object-fit:cover",
+            "transition:transform 0.3s ease"
+          ]
+        },
+        {
+          "selector": ".openui-image-gallery-img#0:hover",
+          "conditions": [],
+          "declarations": ["transform:scale(1.05)"]
+        }
+      ],
+      "openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#0": [
+        {
+          "selector": ".openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "top:50%",
+            "transform:translateY(-50%)",
+            "z-index:1",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "background-color:var(--openui-foreground, oklch(0.994 0 89.876 / 1))",
+            "border-radius:var(--openui-radius-xs, 4px)",
+            "overflow:hidden"
+          ]
+        }
+      ],
+      "openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#1": [
+        {
+          "selector": ".openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#1",
+          "conditions": [],
+          "declarations": ["left:24px"]
+        }
+      ],
+      "openui-image-gallery-modal-button-container+openui-image-gallery-modal-right-button#0": [
+        {
+          "selector": ".openui-image-gallery-modal-button-container+openui-image-gallery-modal-right-button#0",
+          "conditions": [],
+          "declarations": ["right:24px"]
+        }
+      ],
+      "openui-image-gallery-modal-carousel-container#0": [
+        {
+          "selector": ".openui-image-gallery-modal-carousel-container#0",
+          "conditions": [],
+          "declarations": [
+            "position:relative",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:100%"
+          ]
+        }
+      ],
+      "openui-image-gallery-modal-carousel#0": [
+        {
+          "selector": ".openui-image-gallery-modal-carousel#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "gap:var(--openui-space-s, 8px)",
+            "overflow-x:auto",
+            "scroll-behavior:smooth",
+            "scrollbar-width:none",
+            "padding-left:var(--openui-space-xl, 24px)",
+            "padding-right:var(--openui-space-xl, 24px)"
+          ]
+        },
+        {
+          "selector": ".openui-image-gallery-modal-carousel#0::-webkit-scrollbar",
+          "conditions": [],
+          "declarations": ["display:none"]
+        }
+      ],
+      "openui-image-gallery-modal-content#0": [
+        {
+          "selector": ".openui-image-gallery-modal-content#0",
+          "conditions": [],
+          "declarations": [
+            "width:calc(100% - 80px)",
+            "height:calc(100% - 80px)",
+            "max-width:720px",
+            "max-height:640px",
+            "overflow:hidden",
+            "display:flex",
+            "flex-direction:column",
+            "box-sizing:border-box",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "background-color:var(--openui-foreground, oklch(0.994 0 89.876 / 1))",
+            "border-radius:var(--openui-radius-xl, 12px)",
+            "gap:var(--openui-space-xl, 24px)",
+            "padding-top:var(--openui-space-xl, 24px)",
+            "padding-bottom:var(--openui-space-xl, 24px)"
+          ]
+        },
+        {
+          "selector": ".openui-image-gallery-modal-content#0",
+          "conditions": ["@media (max-width: 768px)"],
+          "declarations": [
+            "width:100%",
+            "height:100%",
+            "border-radius:0",
+            "max-height:none",
+            "max-width:none"
+          ]
+        }
+      ],
+      "openui-image-gallery-modal-header#0": [
+        {
+          "selector": ".openui-image-gallery-modal-header#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "padding-left:var(--openui-space-xl, 24px)",
+            "padding-right:var(--openui-space-xl, 24px)"
+          ]
+        }
+      ],
+      "openui-image-gallery-modal-heading#0": [
+        {
+          "selector": ".openui-image-gallery-modal-heading#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-heading-xs, 600 16px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-heading-xs-letter-spacing, -0.01em)",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ]
+        }
+      ],
+      "openui-image-gallery-modal-main-image#0": [
+        {
+          "selector": ".openui-image-gallery-modal-main-image#0",
+          "conditions": [],
+          "declarations": [
+            "max-width:100%",
+            "max-height:100%",
+            "object-fit:contain",
+            "border-radius:var(--openui-radius-s, 6px)"
+          ]
+        }
+      ],
+      "openui-image-gallery-modal-main#0": [
+        {
+          "selector": ".openui-image-gallery-modal-main#0",
+          "conditions": [],
+          "declarations": [
+            "flex:1",
+            "min-height:0",
+            "display:flex",
+            "justify-content:center",
+            "align-items:center",
+            "padding-left:var(--openui-space-xl, 24px)",
+            "padding-right:var(--openui-space-xl, 24px)"
+          ]
+        }
+      ],
+      "openui-image-gallery-modal-thumbnail-image#0": [
+        {
+          "selector": ".openui-image-gallery-modal-thumbnail-image#0",
+          "conditions": [],
+          "declarations": ["width:100%", "height:100%", "object-fit:cover"]
+        }
+      ],
+      "openui-image-gallery-modal-thumbnail#0": [
+        {
+          "selector": ".openui-image-gallery-modal-thumbnail#0",
+          "conditions": [],
+          "declarations": [
+            "flex:1",
+            "height:116px",
+            "min-width:174px",
+            "cursor:pointer",
+            "opacity:0.6",
+            "border-radius:var(--openui-radius-s, 6px)",
+            "border:1px solid transparent",
+            "overflow:hidden",
+            "transition:opacity 0.2s ease",
+            "box-sizing:border-box"
+          ]
+        },
+        {
+          "selector": ".openui-image-gallery-modal-thumbnail#0[aria-pressed=\"true\"]",
+          "conditions": [],
+          "declarations": [
+            "opacity:1",
+            "border-color:var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1))",
+            "border-radius:var(--openui-radius-s, 6px)"
+          ]
+        },
+        {
+          "selector": ".openui-image-gallery-modal-thumbnail#0:hover",
+          "conditions": [],
+          "declarations": ["opacity:0.8"]
+        }
+      ],
+      "openui-image-gallery-modal#0": [
+        {
+          "selector": ".openui-image-gallery-modal#0",
+          "conditions": [],
+          "declarations": [
+            "position:fixed",
+            "top:0",
+            "left:0",
+            "width:100%",
+            "height:100%",
+            "display:flex",
+            "justify-content:center",
+            "align-items:center",
+            "z-index:1000",
+            "animation:_openui-image-gallery-fade-in 0.3s ease",
+            "backdrop-filter:blur(3px)",
+            "background-color:var(--openui-overlay, oklch(0 0 0 / 0.4))"
+          ]
+        }
+      ],
+      "openui-image-gallery-show-all#0": [
+        {
+          "selector": ".openui-image-gallery-show-all#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "position:absolute",
+            "bottom:5px",
+            "right:5px"
+          ]
+        }
+      ],
+      "openui-image-gallery#0": [
+        {
+          "selector": ".openui-image-gallery#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-direction:column",
+            "width:100%",
+            "overflow:hidden",
+            "position:relative",
+            "border-radius:var(--openui-radius-m, 8px)"
+          ]
+        },
+        {
+          "selector": ".openui-image-gallery#0[data-layout=\"single\"]",
+          "conditions": [],
+          "declarations": ["--_openui-image-gallery-columns:1fr"]
+        },
+        {
+          "selector": ".openui-image-gallery#0[data-layout=\"double\"]",
+          "conditions": [],
+          "declarations": ["--_openui-image-gallery-columns:repeat(2, 1fr)"]
+        },
+        {
+          "selector": ".openui-image-gallery#0[data-layout=\"triple\"]",
+          "conditions": [],
+          "declarations": [
+            "--_openui-image-gallery-columns:1fr 1fr",
+            "--_openui-image-gallery-rows:1fr 1fr",
+            "--_openui-image-gallery-area-1:1 / auto / -1"
+          ]
+        },
+        {
+          "selector": ".openui-image-gallery#0[data-layout=\"triple\"]",
+          "conditions": ["@media (max-width: 768px)"],
+          "declarations": [
+            "--_openui-image-gallery-columns:repeat(2, 1fr)",
+            "--_openui-image-gallery-rows:repeat(2, 1fr)",
+            "--_openui-image-gallery-areas:\"img1 img1\" \"img2 img3\"",
+            "--_openui-image-gallery-area-1:img1",
+            "--_openui-image-gallery-area-2:img2",
+            "--_openui-image-gallery-area-3:img3"
+          ]
+        },
+        {
+          "selector": ".openui-image-gallery#0[data-layout=\"quad\"]",
+          "conditions": [],
+          "declarations": [
+            "--_openui-image-gallery-columns:repeat(4, 1fr)",
+            "--_openui-image-gallery-rows:repeat(2, 1fr)",
+            "--_openui-image-gallery-areas:\"img1 img1 img2 img2\" \"img1 img1 img3 img4\"",
+            "--_openui-image-gallery-area-1:img1",
+            "--_openui-image-gallery-area-2:img2",
+            "--_openui-image-gallery-area-3:img3",
+            "--_openui-image-gallery-area-4:img4"
+          ]
+        },
+        {
+          "selector": ".openui-image-gallery#0[data-layout=\"default\"]",
+          "conditions": [],
+          "declarations": [
+            "--_openui-image-gallery-columns:2fr 1fr 1fr",
+            "--_openui-image-gallery-rows:1fr 1fr",
+            "--_openui-image-gallery-area-1:1 / auto / -1"
+          ]
+        },
+        {
+          "selector": ".openui-image-gallery#0[data-layout=\"default\"]",
+          "conditions": ["@media (max-width: 768px)"],
+          "declarations": [
+            "--_openui-image-gallery-columns:repeat(6, 1fr)",
+            "--_openui-image-gallery-rows:repeat(2, 1fr)",
+            "--_openui-image-gallery-areas:\"img1 img1 img1 img2 img2 img2\" \"img3 img3 img4 img4 img5 img5\"",
+            "--_openui-image-gallery-area-1:img1",
+            "--_openui-image-gallery-area-2:img2",
+            "--_openui-image-gallery-area-3:img3",
+            "--_openui-image-gallery-area-4:img4",
+            "--_openui-image-gallery-area-5:img5"
+          ]
+        }
+      ]
+    },
+    "order": [
+      "Button/button.styles.mjs: openui-button#0 < openui-button#1 < openui-button#2 < openui-button#3",
+      "IconButton/iconButton.styles.mjs: openui-icon-button+openui-image-gallery-modal-close#0 < openui-icon-button+openui-image-gallery-modal-close#1 < openui-icon-button+openui-image-gallery-modal-close#2 < openui-icon-button+openui-image-gallery-modal-close#3 < openui-icon-button+openui-image-gallery-modal-close#4",
+      "IconButton/iconButton.styles.mjs: openui-icon-button+openui-image-gallery-modal-close#0 < openui-icon-button+openui-image-gallery-modal-close#1 < openui-icon-button+openui-image-gallery-modal-scroll-left#0 < openui-icon-button+openui-image-gallery-modal-close#3 < openui-icon-button+openui-image-gallery-modal-close#4",
+      "ImageGallery/galleryModal.styles.mjs: openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#0 < openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#1",
+      "ImageGallery/galleryModal.styles.mjs: openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#0 < openui-image-gallery-modal-button-container+openui-image-gallery-modal-right-button#0"
+    ]
+  },
+  "openui/initial": {
+    "rules": {
+      "@keyframes": [
+        {
+          "selector": "@keyframes _openui-image-gallery-fade-in",
+          "conditions": [],
+          "declarations": ["from{opacity:0", "}to{opacity:1", "}"],
+          "layer": "openui"
+        }
+      ],
+      "openui-button#0": [
+        {
+          "selector": ".openui-button#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "font:var(--openui-text-label-default, 400 16px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-default-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)",
+            "border-radius:var(--openui-radius-l, 10px)",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "display:flex",
+            "gap:var(--openui-space-xs, 6px)",
+            "align-items:center"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ":where(.openui-button#0) svg",
+          "conditions": [],
+          "declarations": ["height:1em", "width:1em"],
+          "layer": "openui"
+        }
+      ],
+      "openui-button#1": [
+        {
+          "selector": ".openui-button#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-bg)",
+            "color:var(--_openui-button-primary-fg)",
+            "border-color:var(--openui-border-accent, oklch(0.546 0.215 262.881 / 0.08))",
+            "box-shadow:var(--_openui-button-primary-shadow)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-button#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-hover-bg)",
+            "box-shadow:none"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-button#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-button-primary-active-bg)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-button#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-button-primary-disabled-bg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-button#2": [
+        {
+          "selector": ".openui-button#2",
+          "conditions": [],
+          "declarations": [
+            "border-radius:calc(var(--openui-radius-s, 6px) + 1px)",
+            "padding:calc(var(--openui-space-s, 8px) - 1.75px) var(--openui-space-s-m, 10px)",
+            "font:var(--openui-text-label-sm, 400 14px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-label-sm-letter-spacing, -0.01em)",
+            "font-variation-settings:var(--openui-font-variation-regular, \"wght\" 440)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-button#3": [
+        {
+          "selector": ".openui-button#3",
+          "conditions": [],
+          "declarations": [
+            "--_openui-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-button-primary-fg:var(--openui-text-accent-primary, oklch(0.994 0 89.876 / 1))",
+            "--_openui-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-button-secondary-bg:transparent",
+            "--_openui-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-secondary-disabled-bg:transparent",
+            "--_openui-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button-icon#0": [
+        {
+          "selector": ".openui-icon-button-icon#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:var(--_openui-icon-button-icon-size)",
+            "height:var(--_openui-icon-button-icon-size)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button+openui-image-gallery-modal-close#0": [
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#0",
+          "conditions": [],
+          "declarations": [
+            "box-sizing:border-box",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "border:1px solid transparent",
+            "cursor:pointer",
+            "transition:all 0.12s ease",
+            "padding:0",
+            "flex-shrink:0"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button+openui-image-gallery-modal-close#1": [
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#1",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-bg)",
+            "color:var(--_openui-icon-button-secondary-fg)",
+            "border-color:var(--_openui-icon-button-secondary-border)",
+            "box-shadow:var(--_openui-icon-button-secondary-shadow)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#1:hover",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-hover-bg)",
+            "box-shadow:none"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#1:active",
+          "conditions": [],
+          "declarations": ["background-color:var(--_openui-icon-button-secondary-active-bg)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#1:disabled",
+          "conditions": [],
+          "declarations": [
+            "background-color:var(--_openui-icon-button-secondary-disabled-bg)",
+            "color:var(--_openui-icon-button-secondary-disabled-fg)",
+            "box-shadow:none",
+            "cursor:not-allowed"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button+openui-image-gallery-modal-close#2": [
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#2",
+          "conditions": [],
+          "declarations": [
+            "width:32px",
+            "height:32px",
+            "--_openui-icon-button-icon-size:16px",
+            "--_openui-icon-button-square-radius:calc(var(--openui-radius-s, 6px) + 1px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button+openui-image-gallery-modal-close#3": [
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#3",
+          "conditions": [],
+          "declarations": ["border-radius:var(--_openui-icon-button-square-radius)"],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button+openui-image-gallery-modal-close#4": [
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-close#4",
+          "conditions": [],
+          "declarations": [
+            "--_openui-icon-button-primary-bg:var( --openui-interactive-accent-default, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-fg:var( --openui-text-accent-primary, oklch(0.994 0 89.876 / 1) )",
+            "--_openui-icon-button-primary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-primary-hover-bg:var( --openui-interactive-accent-hover, oklch(0.546 0.215 262.881 / 0.8) )",
+            "--_openui-icon-button-primary-active-bg:var( --openui-interactive-accent-pressed, oklch(0.546 0.215 262.881 / 1) )",
+            "--_openui-icon-button-primary-disabled-bg:var( --openui-interactive-accent-disabled, oklch(0.546 0.215 262.881 / 0.4) )",
+            "--_openui-icon-button-secondary-bg:transparent",
+            "--_openui-icon-button-secondary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-secondary-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-secondary-shadow:var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05))",
+            "--_openui-icon-button-secondary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-secondary-disabled-bg:transparent",
+            "--_openui-icon-button-secondary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-fg:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))",
+            "--_openui-icon-button-tertiary-hover-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-bg:var(--openui-highlight, oklch(0.097 0 0 / 0.04))",
+            "--_openui-icon-button-tertiary-active-border:var(--openui-border-interactive, oklch(0.097 0 0 / 0.12))",
+            "--_openui-icon-button-tertiary-disabled-fg:var(--openui-text-neutral-tertiary, oklch(0.097 0 0 / 0.2))",
+            "--_openui-icon-button-tertiary-disabled-border:var( --openui-border-default, oklch(0.097 0 0 / 0.06) )"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-icon-button+openui-image-gallery-modal-scroll-left#0": [
+        {
+          "selector": ".openui-icon-button+openui-image-gallery-modal-scroll-left#0",
+          "conditions": [],
+          "declarations": [
+            "width:28px",
+            "height:28px",
+            "--_openui-icon-button-icon-size:14px",
+            "--_openui-icon-button-square-radius:var(--openui-radius-s, 6px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-grid#0": [
+        {
+          "selector": ".openui-image-gallery-grid#0",
+          "conditions": [],
+          "declarations": [
+            "display:grid",
+            "width:100%",
+            "max-height:376px",
+            "grid-gap:var(--openui-space-s, 8px)",
+            "grid-template-columns:var(--_openui-image-gallery-columns)",
+            "grid-template-rows:var(--_openui-image-gallery-rows, none)",
+            "grid-template-areas:var(--_openui-image-gallery-areas, none)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-image#0": [
+        {
+          "selector": ".openui-image-gallery-image#0",
+          "conditions": [],
+          "declarations": ["position:relative", "overflow:hidden"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery-image#0[data-position=\"1\"]",
+          "conditions": [],
+          "declarations": ["grid-area:var(--_openui-image-gallery-area-1, auto)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery-image#0[data-position=\"2\"]",
+          "conditions": [],
+          "declarations": ["grid-area:var(--_openui-image-gallery-area-2, auto)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery-image#0[data-position=\"3\"]",
+          "conditions": [],
+          "declarations": ["grid-area:var(--_openui-image-gallery-area-3, auto)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery-image#0[data-position=\"4\"]",
+          "conditions": [],
+          "declarations": ["grid-area:var(--_openui-image-gallery-area-4, auto)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery-image#0[data-position=\"5\"]",
+          "conditions": [],
+          "declarations": ["grid-area:var(--_openui-image-gallery-area-5, auto)"],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-img#0": [
+        {
+          "selector": ".openui-image-gallery-img#0",
+          "conditions": [],
+          "declarations": [
+            "width:100%",
+            "height:100%",
+            "object-fit:cover",
+            "transition:transform 0.3s ease"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery-img#0:hover",
+          "conditions": [],
+          "declarations": ["transform:scale(1.05)"],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#0": [
+        {
+          "selector": ".openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#0",
+          "conditions": [],
+          "declarations": [
+            "position:absolute",
+            "top:50%",
+            "transform:translateY(-50%)",
+            "z-index:1",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "background-color:var(--openui-foreground, oklch(0.994 0 89.876 / 1))",
+            "border-radius:var(--openui-radius-xs, 4px)",
+            "overflow:hidden"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#1": [
+        {
+          "selector": ".openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#1",
+          "conditions": [],
+          "declarations": ["left:24px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-modal-button-container+openui-image-gallery-modal-right-button#0": [
+        {
+          "selector": ".openui-image-gallery-modal-button-container+openui-image-gallery-modal-right-button#0",
+          "conditions": [],
+          "declarations": ["right:24px"],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-modal-carousel-container#0": [
+        {
+          "selector": ".openui-image-gallery-modal-carousel-container#0",
+          "conditions": [],
+          "declarations": [
+            "position:relative",
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "width:100%"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-modal-carousel#0": [
+        {
+          "selector": ".openui-image-gallery-modal-carousel#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "gap:var(--openui-space-s, 8px)",
+            "overflow-x:auto",
+            "scroll-behavior:smooth",
+            "scrollbar-width:none",
+            "padding-left:var(--openui-space-xl, 24px)",
+            "padding-right:var(--openui-space-xl, 24px)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery-modal-carousel#0::-webkit-scrollbar",
+          "conditions": [],
+          "declarations": ["display:none"],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-modal-content#0": [
+        {
+          "selector": ".openui-image-gallery-modal-content#0",
+          "conditions": [],
+          "declarations": [
+            "width:calc(100% - 80px)",
+            "height:calc(100% - 80px)",
+            "max-width:720px",
+            "max-height:640px",
+            "overflow:hidden",
+            "display:flex",
+            "flex-direction:column",
+            "box-sizing:border-box",
+            "border:1px solid var(--openui-border-default, oklch(0.097 0 0 / 0.06))",
+            "background-color:var(--openui-foreground, oklch(0.994 0 89.876 / 1))",
+            "border-radius:var(--openui-radius-xl, 12px)",
+            "gap:var(--openui-space-xl, 24px)",
+            "padding-top:var(--openui-space-xl, 24px)",
+            "padding-bottom:var(--openui-space-xl, 24px)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery-modal-content#0",
+          "conditions": ["@media (max-width: 768px)"],
+          "declarations": [
+            "width:100%",
+            "height:100%",
+            "border-radius:0",
+            "max-height:none",
+            "max-width:none"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-modal-header#0": [
+        {
+          "selector": ".openui-image-gallery-modal-header#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:space-between",
+            "padding-left:var(--openui-space-xl, 24px)",
+            "padding-right:var(--openui-space-xl, 24px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-modal-heading#0": [
+        {
+          "selector": ".openui-image-gallery-modal-heading#0",
+          "conditions": [],
+          "declarations": [
+            "font:var(--openui-text-heading-xs, 600 16px/1.25 \"Inter\", sans-serif)",
+            "letter-spacing:var(--openui-text-heading-xs-letter-spacing, -0.01em)",
+            "color:var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1))"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-modal-main-image#0": [
+        {
+          "selector": ".openui-image-gallery-modal-main-image#0",
+          "conditions": [],
+          "declarations": [
+            "max-width:100%",
+            "max-height:100%",
+            "object-fit:contain",
+            "border-radius:var(--openui-radius-s, 6px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-modal-main#0": [
+        {
+          "selector": ".openui-image-gallery-modal-main#0",
+          "conditions": [],
+          "declarations": [
+            "flex:1",
+            "min-height:0",
+            "display:flex",
+            "justify-content:center",
+            "align-items:center",
+            "padding-left:var(--openui-space-xl, 24px)",
+            "padding-right:var(--openui-space-xl, 24px)"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-modal-thumbnail-image#0": [
+        {
+          "selector": ".openui-image-gallery-modal-thumbnail-image#0",
+          "conditions": [],
+          "declarations": ["width:100%", "height:100%", "object-fit:cover"],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-modal-thumbnail#0": [
+        {
+          "selector": ".openui-image-gallery-modal-thumbnail#0",
+          "conditions": [],
+          "declarations": [
+            "flex:1",
+            "height:116px",
+            "min-width:174px",
+            "cursor:pointer",
+            "opacity:0.6",
+            "border-radius:var(--openui-radius-s, 6px)",
+            "border:1px solid transparent",
+            "overflow:hidden",
+            "transition:opacity 0.2s ease",
+            "box-sizing:border-box"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery-modal-thumbnail#0[aria-pressed=\"true\"]",
+          "conditions": [],
+          "declarations": [
+            "opacity:1",
+            "border-color:var(--openui-border-interactive-selected, oklch(0.097 0 0 / 1))",
+            "border-radius:var(--openui-radius-s, 6px)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery-modal-thumbnail#0:hover",
+          "conditions": [],
+          "declarations": ["opacity:0.8"],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-modal#0": [
+        {
+          "selector": ".openui-image-gallery-modal#0",
+          "conditions": [],
+          "declarations": [
+            "position:fixed",
+            "top:0",
+            "left:0",
+            "width:100%",
+            "height:100%",
+            "display:flex",
+            "justify-content:center",
+            "align-items:center",
+            "z-index:1000",
+            "animation:_openui-image-gallery-fade-in 0.3s ease",
+            "backdrop-filter:blur(3px)",
+            "background-color:var(--openui-overlay, oklch(0 0 0 / 0.4))"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery-show-all#0": [
+        {
+          "selector": ".openui-image-gallery-show-all#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "align-items:center",
+            "justify-content:center",
+            "position:absolute",
+            "bottom:5px",
+            "right:5px"
+          ],
+          "layer": "openui"
+        }
+      ],
+      "openui-image-gallery#0": [
+        {
+          "selector": ".openui-image-gallery#0",
+          "conditions": [],
+          "declarations": [
+            "display:flex",
+            "flex-direction:column",
+            "width:100%",
+            "overflow:hidden",
+            "position:relative",
+            "border-radius:var(--openui-radius-m, 8px)"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery#0[data-layout=\"single\"]",
+          "conditions": [],
+          "declarations": ["--_openui-image-gallery-columns:1fr"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery#0[data-layout=\"double\"]",
+          "conditions": [],
+          "declarations": ["--_openui-image-gallery-columns:repeat(2, 1fr)"],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery#0[data-layout=\"triple\"]",
+          "conditions": [],
+          "declarations": [
+            "--_openui-image-gallery-columns:1fr 1fr",
+            "--_openui-image-gallery-rows:1fr 1fr",
+            "--_openui-image-gallery-area-1:1 / auto / -1"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery#0[data-layout=\"triple\"]",
+          "conditions": ["@media (max-width: 768px)"],
+          "declarations": [
+            "--_openui-image-gallery-columns:repeat(2, 1fr)",
+            "--_openui-image-gallery-rows:repeat(2, 1fr)",
+            "--_openui-image-gallery-areas:\"img1 img1\" \"img2 img3\"",
+            "--_openui-image-gallery-area-1:img1",
+            "--_openui-image-gallery-area-2:img2",
+            "--_openui-image-gallery-area-3:img3"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery#0[data-layout=\"quad\"]",
+          "conditions": [],
+          "declarations": [
+            "--_openui-image-gallery-columns:repeat(4, 1fr)",
+            "--_openui-image-gallery-rows:repeat(2, 1fr)",
+            "--_openui-image-gallery-areas:\"img1 img1 img2 img2\" \"img1 img1 img3 img4\"",
+            "--_openui-image-gallery-area-1:img1",
+            "--_openui-image-gallery-area-2:img2",
+            "--_openui-image-gallery-area-3:img3",
+            "--_openui-image-gallery-area-4:img4"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery#0[data-layout=\"default\"]",
+          "conditions": [],
+          "declarations": [
+            "--_openui-image-gallery-columns:2fr 1fr 1fr",
+            "--_openui-image-gallery-rows:1fr 1fr",
+            "--_openui-image-gallery-area-1:1 / auto / -1"
+          ],
+          "layer": "openui"
+        },
+        {
+          "selector": ".openui-image-gallery#0[data-layout=\"default\"]",
+          "conditions": ["@media (max-width: 768px)"],
+          "declarations": [
+            "--_openui-image-gallery-columns:repeat(6, 1fr)",
+            "--_openui-image-gallery-rows:repeat(2, 1fr)",
+            "--_openui-image-gallery-areas:\"img1 img1 img1 img2 img2 img2\" \"img3 img3 img4 img4 img5 img5\"",
+            "--_openui-image-gallery-area-1:img1",
+            "--_openui-image-gallery-area-2:img2",
+            "--_openui-image-gallery-area-3:img3",
+            "--_openui-image-gallery-area-4:img4",
+            "--_openui-image-gallery-area-5:img5"
+          ],
+          "layer": "openui"
+        }
+      ]
+    },
+    "order": [
+      "Button/button.styles.mjs: openui-button#0 < openui-button#1 < openui-button#2 < openui-button#3",
+      "IconButton/iconButton.styles.mjs: openui-icon-button+openui-image-gallery-modal-close#0 < openui-icon-button+openui-image-gallery-modal-close#1 < openui-icon-button+openui-image-gallery-modal-close#2 < openui-icon-button+openui-image-gallery-modal-close#3 < openui-icon-button+openui-image-gallery-modal-close#4",
+      "IconButton/iconButton.styles.mjs: openui-icon-button+openui-image-gallery-modal-close#0 < openui-icon-button+openui-image-gallery-modal-close#1 < openui-icon-button+openui-image-gallery-modal-scroll-left#0 < openui-icon-button+openui-image-gallery-modal-close#3 < openui-icon-button+openui-image-gallery-modal-close#4",
+      "ImageGallery/galleryModal.styles.mjs: openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#0 < openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#1",
+      "ImageGallery/galleryModal.styles.mjs: openui-image-gallery-modal-button-container+openui-image-gallery-modal-left-button#0 < openui-image-gallery-modal-button-container+openui-image-gallery-modal-right-button#0"
+    ]
+  }
+}

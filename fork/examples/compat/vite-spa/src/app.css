@@ -1,0 +1,6 @@
+.compat-main {
+  display: grid;
+  gap: 24px;
+  max-width: 640px;
+  padding: 32px;
+}
