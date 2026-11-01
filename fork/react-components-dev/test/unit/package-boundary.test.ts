@@ -15,6 +15,8 @@ const allowed = [
   /^tsconfig\.json$/,
   /^README\.md$/,
   /^docs\/reference\/selectors\.md$/,
+  // Fork-only package decisions and specs; make-upstream-branch.sh strips them.
+  /^docs\/(adr|specs)\//,
   /^LICENSE$/,
   /^THIRD_PARTY_NOTICES\.md$/,
   /^eslint\.config\.[cm]?js$/,

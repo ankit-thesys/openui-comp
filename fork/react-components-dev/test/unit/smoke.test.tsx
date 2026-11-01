@@ -3,10 +3,11 @@
 import { Button } from "@openuidev/react-components";
 import { renderToString } from "react-dom/server";
 import { describe, expect, it } from "vitest";
+import { withoutServedRules } from "../support/markup";
 
 describe("built package in Node", () => {
   it("server-renders a Button with its stable class", () => {
-    const html = renderToString(<Button>Save</Button>);
+    const html = withoutServedRules(renderToString(<Button>Save</Button>));
 
     expect(html).toMatch(/^<button[^>]*class="[^"]*\bopenui-button\b/);
     expect(html).toContain(">Save</button>");

@@ -10,6 +10,7 @@ import {
 } from "@openuidev/react-components";
 import { renderToString } from "react-dom/server";
 import { afterEach, expect, it, vi } from "vitest";
+import { withoutServedRules } from "../support/markup";
 import { rulesOf } from "./contract/checks";
 
 const registerImported = () => css`
@@ -46,14 +47,14 @@ it("ignores invalid layer names with a development warning, preserving the confi
 });
 
 it("switches the whole sheet to unlayered and back without changing any classes or rules", () => {
-  const html = renderToString(<Button>Save</Button>);
+  const html = withoutServedRules(renderToString(<Button>Save</Button>));
   const unlayered = getComponentStyles();
   const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
   try {
     const options: ConfigureStylesOptions = { layer: "openui" };
     configureStyles(options);
     expect(getComponentStyles()).toBe(`@layer openui{${unlayered}}`);
-    expect(renderToString(<Button>Save</Button>)).toBe(html);
+    expect(withoutServedRules(renderToString(<Button>Save</Button>))).toBe(html);
     configureStyles({ layer: undefined });
     expect(getComponentStyles()).toBe(unlayered);
     configureStyles({ layer: "app.components" });
@@ -72,13 +73,15 @@ it("puts later rules and keyframes in the same wrapper, outside and inside neste
   const lazy = css`
     animation: ${animation} 3s linear;
   `;
-  const outside = renderToString(<Button>Save</Button>);
-  const nested = renderToString(
-    <ThemeProvider>
+  const outside = withoutServedRules(renderToString(<Button>Save</Button>));
+  const nested = withoutServedRules(
+    renderToString(
       <ThemeProvider>
-        <Button>Save</Button>
-      </ThemeProvider>
-    </ThemeProvider>,
+        <ThemeProvider>
+          <Button>Save</Button>
+        </ThemeProvider>
+      </ThemeProvider>,
+    ),
   );
   expect(nested).toContain(outside);
   const sheet = getComponentStyles();

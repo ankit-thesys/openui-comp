@@ -2,12 +2,23 @@ import { defaultLightTheme } from "../components/ThemeProvider/defaultTheme";
 import { themeToCssVars } from "../components/ThemeProvider/utils";
 import { createStyleTag } from "./styleTag";
 
-if (typeof document !== "undefined") {
+// The token defaults as one rule, which server renders send in their own hoisted tag.
+export const DEFAULTS_HREF = "openui-defaults";
+export const DEFAULTS_PRECEDENCE = "openui-defaults";
+export const DEFAULTS_RULE = `@layer openui-defaults;@layer openui-defaults{:where(:root){${themeToCssVars({ ...defaultLightTheme })}}}`;
+
+// A server render already sent the defaults, in the hoisted tag React wrote.
+const servedDefaults = () =>
+  document.querySelector(
+    `style[data-precedence="${DEFAULTS_PRECEDENCE}"][data-href~="${DEFAULTS_HREF}"]`,
+  );
+
+if (typeof document !== "undefined" && !servedDefaults()) {
   // These tags go first in <head>, before React hydrates a server-rendered document (React Router,
   // TanStack Start, Next). React hydrates <head> by position and would match the app's own first
   // <style> against them, failing on the text; it skips styles marked `data-precedence`, its own
   // hoisted-sheet marker, and keeps them when it re-renders the document.
-  const precedence = "openui-defaults";
+  const precedence = DEFAULTS_PRECEDENCE;
 
   // Establish the defaults layer before host layers, regardless of import order.
   const order = createStyleTag();

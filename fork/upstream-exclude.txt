@@ -7,6 +7,8 @@ CLAUDE.md
 GLOSSARY-MAP.md
 docs/agents/
 docs/adr/
+packages/react-components/docs/adr/
+packages/react-components/docs/specs/
 .github/workflows/build-js.yml
 .workspace/
 .claude/

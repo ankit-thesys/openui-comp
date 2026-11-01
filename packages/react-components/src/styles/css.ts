@@ -1,16 +1,27 @@
 import { css as gooberCss } from "goober";
+import { createElement, type ReactNode } from "react";
+import { DEFAULTS_HREF, DEFAULTS_PRECEDENCE, DEFAULTS_RULE } from "./defaults";
 import { createStyleTag } from "./styleTag";
 
 // The browser's sheet. It is only ever appended to, never rewritten.
 const SHEET_ID = "openui-styles";
+// The precedence of component rules in React's hoisted tags, and the marker React's head hydration
+// skips; the browser sheet carries it too.
+const PRECEDENCE = "openui";
 // A layer name, or a dotted path of them such as `app.openui`, as `@layer` accepts.
 const LAYER_NAME = /^-?[a-zA-Z_][\w-]*(\.-?[a-zA-Z_][\w-]*)*$/;
 
 type Store = {
   // Every rule Goober has registered, unlayered.
   rules: string;
-  // How much of `rules` is already on the page.
+  // Each generated class's own rule text, and which of those classes are keyframes.
+  classes: Record<string, string>;
+  keyframes: Record<string, true>;
+  // Classes in registration order, and how many of them the browser has written or skipped.
+  order: string[];
   written: number;
+  // Classes a server render already put on the page, read once from React's hoisted tags.
+  served: Record<string, true> | undefined;
   emitted: boolean;
   // The layer of the rules last written to the page.
   emittedLayer: string | undefined;
@@ -23,7 +34,11 @@ type Store = {
 const STORE = Symbol.for("@openuidev/react-components/styles");
 const store: Store = ((globalThis as { [STORE]?: Store })[STORE] ??= {
   rules: "",
+  classes: {},
+  keyframes: {},
+  order: [],
   written: 0,
+  served: undefined,
   emitted: false,
   emittedLayer: undefined,
   scheduled: false,
@@ -37,17 +52,38 @@ const inBrowser = () => typeof window === "object";
 const wrap = (text: string, name = store.layer) =>
   name && text ? `@layer ${name}{${text}}` : text;
 
+// React's hoisted component-rule tags from a server render, e.g. data-href="go1 go2".
+const SERVED = `style[data-precedence="${PRECEDENCE}"][data-href]`;
+
+function served(): Record<string, true> {
+  if (store.served) return store.served;
+  const found: Record<string, true> = {};
+  document.querySelectorAll(SERVED).forEach((tag) => {
+    for (const name of tag.getAttribute("data-href")!.split(" ")) found[name] = true;
+  });
+  return (store.served = found);
+}
+
 function write() {
   store.scheduled = false;
-  const fresh = store.rules.slice(store.written);
-  store.written = store.rules.length;
+  const skip = served();
+  let fresh = "";
+  for (; store.written < store.order.length; store.written++) {
+    const name = store.order[store.written]!;
+    if (!skip[name]) fresh += store.classes[name];
+  }
   if (!fresh) return;
   let tag = document.getElementById(SHEET_ID);
   if (!tag) {
     tag = createStyleTag();
     tag.id = SHEET_ID;
-    // After the token defaults; otherwise first in <head>, ahead of app CSS.
-    const anchor = document.getElementById("openui-defaults");
+    tag.setAttribute("data-precedence", PRECEDENCE);
+    // After the server's component rules, else the token defaults, else first in <head>.
+    const tags = document.querySelectorAll(SERVED);
+    const anchor =
+      tags[tags.length - 1] ??
+      document.getElementById("openui-defaults") ??
+      document.querySelector(`style[data-precedence="${DEFAULTS_PRECEDENCE}"]`);
     if (anchor) anchor.after(tag);
     else document.head.prepend(tag);
   }
@@ -56,6 +92,16 @@ function write() {
   tag.append(wrap(fresh));
   store.emitted = true;
   store.emittedLayer = store.layer;
+}
+
+// Before hydration, the server's tags move to the start of <head>, ahead of app CSS: React places
+// them after app stylesheets it has already seen, and inside the container when it renders one
+// rather than the whole document. React's hydration skips tags marked data-precedence.
+if (typeof document !== "undefined") {
+  const first = document.head.firstChild;
+  document
+    .querySelectorAll(`style[data-precedence="${DEFAULTS_PRECEDENCE}"][data-href], ${SERVED}`)
+    .forEach((tag) => document.head.insertBefore(tag, first));
 }
 
 const sink = {
@@ -85,9 +131,51 @@ const target = {
 export type Css = typeof gooberCss;
 export type Keyframes = typeof gooberCss;
 
-export const css: Css = gooberCss.bind({ target });
+// Records the rule text each new class adds. Goober appends a class's rules in one write; a class
+// another copy of this module registered adds nothing and keeps that copy's record.
+function recording(bound: Css, keyframe: boolean): Css {
+  return ((...args: Parameters<Css>) => {
+    const before = store.rules.length;
+    const name = bound(...args);
+    if (!(name in store.classes)) {
+      store.classes[name] = store.rules.slice(before);
+      if (keyframe) store.keyframes[name] = true;
+      store.order.push(name);
+    }
+    return name;
+  }) as Css;
+}
+
+export const css: Css = recording(gooberCss.bind({ target }), false);
 // Goober's exported keyframes is already bound, so rebinding it would discard our target.
-export const keyframes: Keyframes = gooberCss.bind({ target, k: 1 });
+export const keyframes: Keyframes = recording(gooberCss.bind({ target, k: 1 }), true);
+
+const hoisted = (href: string, precedence: string, text: string) =>
+  createElement("style", { key: href, href, precedence }, text);
+
+/**
+ * The rules of the generated classes in `classNames`, for server renders. Pass an element's final
+ * class string; stable and app classes are ignored. On the server, React hoists the tags into
+ * <head>, writes each class once per page and merges a flush's tags into one. Renders nothing in
+ * browsers, where the component sheet has every imported rule.
+ */
+export function styleRules(...classNames: Array<string | false | null | undefined>): ReactNode {
+  if (inBrowser()) return null;
+  const names: string[] = [];
+  const add = (name: string) => {
+    if (!store.classes[name] || names.includes(name)) return;
+    names.push(name);
+    // Keyframes a rule animates with travel with it.
+    for (const used of store.classes[name].match(/go\d+/g) ?? [])
+      if (store.keyframes[used]) add(used);
+  };
+  for (const className of classNames) if (className) className.split(" ").forEach(add);
+  if (!names.length) return null;
+  return [
+    hoisted(DEFAULTS_HREF, DEFAULTS_PRECEDENCE, DEFAULTS_RULE),
+    ...names.map((name) => hoisted(name, PRECEDENCE, wrap(store.classes[name]!))),
+  ];
+}
 
 export type ConfigureStylesOptions = {
   /** App-wide cascade layer, or undefined for unlayered component rules. */

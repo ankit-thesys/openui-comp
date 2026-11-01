@@ -1,9 +1,10 @@
 import { configureStyles } from "@openuidev/react-components";
-import { getComponentStyles } from "../support/sheet";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { renderToString } from "react-dom/server";
 import { afterAll, expect, it, vi } from "vitest";
 import { styleProvenance } from "../../scripts/style-provenance.mjs";
+import { withoutServedRules } from "../support/markup";
+import { getComponentStyles } from "../support/sheet";
 import { migratedComponents, otherChartContracts } from "../unit/contract/components";
 import { renderWithPortals, withPortalTarget } from "../unit/contract/portal";
 import {
@@ -50,7 +51,7 @@ export async function compareServerSnapshots(file: string, layer?: string) {
       component.folder === "Modal"
         ? withPortalTarget(() => component.elements())
         : component.elements();
-    const html = elements.map((element) => render(element)).join("");
+    const html = elements.map((element) => withoutServedRules(render(element))).join("");
     collections[component.folder] = { html, sheet: getComponentStyles() };
     const { markup, ...rest } = snapshot(collections[component.folder]!, provenance);
     current[component.folder] = layer ? rest : { markup, ...rest };

@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { forwardRef, ReactNode } from "react";
+import { styleRules } from "../../styles/css";
 import { buttonStyles, names } from "./button.styles";
 
 type ButtonVariant = "primary" | "secondary" | "tertiary";
@@ -36,28 +37,34 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     const styles = buttonStyles;
+    const iconClass = clsx(styles.icon, names.icon);
     const icon = (node: ReactNode) =>
-      isRendered(node) ? <span className={clsx(styles.icon, names.icon)}>{node}</span> : null;
+      isRendered(node) ? (
+        <>
+          <span className={iconClass}>{node}</span>
+          {styleRules(iconClass)}
+        </>
+      ) : null;
+    const rootClass = clsx(
+      styles.root,
+      styles.variant[variant],
+      styles.size[size],
+      styles.tone[tone],
+      names.root,
+      names.variant[variant],
+      names.size[size],
+      names.tone[tone],
+      className,
+    );
     return (
-      <button
-        ref={ref}
-        className={clsx(
-          styles.root,
-          styles.variant[variant],
-          styles.size[size],
-          styles.tone[tone],
-          names.root,
-          names.variant[variant],
-          names.size[size],
-          names.tone[tone],
-          className,
-        )}
-        {...props}
-      >
-        {icon(iconLeft)}
-        {children}
-        {icon(iconRight)}
-      </button>
+      <>
+        <button ref={ref} className={rootClass} {...props}>
+          {icon(iconLeft)}
+          {children}
+          {icon(iconRight)}
+        </button>
+        {styleRules(rootClass)}
+      </>
     );
   },
 );
