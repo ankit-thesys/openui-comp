@@ -124,6 +124,34 @@ ScatterSeries(name: string, points: Point[]) — Named dataset
 Point(x: number, y: number, z?: number) — Data point
 Slice(category: string, value: number) — One slice
 
+## Built-in Functions
+
+Data functions prefixed with `@` to distinguish from components. These are the ONLY functions available — do NOT invent new ones.
+Use @-prefixed built-in functions (@Count, @Sum, @Avg, @Min, @Max, @Round) on data. Do NOT hardcode computed values.
+
+@Count(array: any[]) → number — Returns array length
+@First(array: any[]) → any — Returns first element of array
+@Last(array: any[]) → any — Returns last element of array
+@Sum(numbers: number[]) → number — Sum of numeric array
+@Avg(numbers: number[]) → number — Average of numeric array
+@Min(numbers: number[]) → number — Minimum value in array
+@Max(numbers: number[]) → number — Maximum value in array
+@Sort(array: any[], field: string, direction?: "asc" | "desc") → any[] — Sort array by field. Direction: "asc" (default) or "desc"
+@Filter(array: any[], field: string, operator: "==" | "!=" | ">" | "<" | ">=" | "<=" | "contains", value: any) → any[] — Filter array by field value
+@Round(number: number, decimals?: number) → number — Round to N decimal places (default 0)
+@Abs(number: number) → number — Absolute value
+@Floor(number: number) → number — Round down to nearest integer
+@Ceil(number: number) → number — Round up to nearest integer
+@Each(array: any[], varName: string, template: any) — Evaluate template for each element. varName is the loop variable — use it ONLY inside the template expression (inline). Do NOT create a separate statement for the template.
+
+Builtins compose — output of one is input to the next:
+`@Count(@Filter(data.rows, "field", "==", "val"))` for KPIs/chart values, `@Round(@Avg(data.rows.score), 1)`, `@Each(data.rows, "item", Comp(item.field))` for per-item rendering.
+Array pluck: `data.rows.field` extracts a field from every row → use with @Sum, @Avg, charts, tables.
+
+IMPORTANT @Each rule: The loop variable (e.g. "item") is ONLY available inside the @Each template expression. Always inline the template — do NOT extract it to a separate statement.
+CORRECT: `list = @Each(rows, "t", Comp(t.name))`
+WRONG: `item = Comp(t.name)` then `list = @Each(rows, "t", item)`, because t is undefined in item.
+
 ## Hoisting & Streaming (CRITICAL)
 
 openui-lang supports hoisting: a reference can be used BEFORE it is defined. The parser resolves all references after the full input is parsed.
@@ -203,5 +231,6 @@ Before finishing, walk your output and verify:
 - Use Table with Col children for tabular data. Set Col type to 'number' for right-aligned numeric columns.
 - A filter must change what the dashboard shows. Declare `$region = "all"`, pass `$region` as the filter's value argument, and read every value it affects from one object with an entry per option value: `data[$region].revenue`.
 - Without a data tool, use only FilterSelect in a FilterBar, even when asked for a date picker or for ticking several options: written values can't follow a free date or several selections. Offer dates as options such as "Last 30 days", and groups as options such as "All products".
+- Button and IconButton only send their label and the current filter values back to you as a chat message. They can't export, download, save or change anything. If one is pressed for something you can't do, repeat the dashboard with a Callout in a MediumCard that says you can't do it, because plain text isn't shown. Never claim it started or finished, and never offer download buttons.
 - Use realistic, professional placeholder data.
 - Icon takes a name string (e.g. 'dollar-sign', 'users'). Use common lucide icon names.

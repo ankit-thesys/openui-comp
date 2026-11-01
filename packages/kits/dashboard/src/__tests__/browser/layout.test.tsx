@@ -11,16 +11,18 @@ afterEach(async () => {
 
 type Size = "small" | "medium" | "large";
 
-async function row(width: number, type: CardRowType, sizes: Size[]) {
+async function row(width: number, type: CardRowType, sizes: Size[], column?: number) {
   await page.viewport(width, 900);
   const container = await renderNode(
-    <CardRow type={type} count={sizes.length}>
-      {sizes.map((size, i) => (
-        <ShellCard key={i} size={size}>
-          {size}
-        </ShellCard>
-      ))}
-    </CardRow>,
+    <div style={{ width: column }}>
+      <CardRow type={type} count={sizes.length}>
+        {sizes.map((size, i) => (
+          <ShellCard key={i} size={size}>
+            {size}
+          </ShellCard>
+        ))}
+      </CardRow>
+    </div>,
   );
   await settle();
   const root = container.querySelector(".openui-dashboard-card-row")!;
@@ -63,6 +65,15 @@ describe("CardRow", () => {
     expect(result.lines).toEqual([...lines]);
   });
 
+  it.each([
+    ["4 small", "small", ["small", "small", "small", "small"], [2, 2]],
+    ["3 small", "small", ["small", "small", "small"], [3]],
+    ["2 medium", "medium", ["medium", "medium"], [2]],
+  ] as const)("follows a 728px chat column on a wide screen: %s", async (_, type, sizes, lines) => {
+    const result = await row(1400, type, [...sizes], 728);
+    expect(result.lines).toEqual([...lines]);
+  });
+
   it("gives a large card more room than a medium card", async () => {
     const { widths } = await row(1400, "medium-large", ["medium", "large"]);
     expect(widths[1]!).toBeGreaterThan(widths[0]!);
@@ -73,8 +84,8 @@ describe("CardRow", () => {
     ["medium", ["medium", "medium"]],
     ["medium-large", ["medium", "large"]],
     ["large", ["large"]],
-  ] as const)("stacks %s cards at 700px", async (type, sizes) => {
-    const { rootWidth, widths, lines } = await row(700, type, [...sizes]);
+  ] as const)("stacks %s cards at 500px", async (type, sizes) => {
+    const { rootWidth, widths, lines } = await row(500, type, [...sizes]);
     expect(lines.every((count) => count === 1)).toBe(true);
     for (const width of widths) expect(width).toBe(rootWidth);
   });

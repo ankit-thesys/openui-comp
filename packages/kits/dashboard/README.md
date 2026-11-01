@@ -16,14 +16,23 @@ pnpm add @openuidev/dashboard-kit@0.0.0-beta.0 @openuidev/react-components@0.0.0
 
 ## Usage
 
-```ts
-import {
-  openuiDashboardLibrary,
-  openuiDashboardPromptOptions,
-} from "@openuidev/dashboard-kit/lib";
+Build the system prompt ahead of time with the CLI. Don't call
+`openuiDashboardLibrary.prompt()` in a Next.js API route: `/lib` includes the React
+components, and they crash in a server route with `createContext is not a function`.
 
-const systemPrompt = openuiDashboardLibrary.prompt(openuiDashboardPromptOptions);
+```ts
+// src/lib/dashboard-library.ts
+export {
+  openuiDashboardLibrary as library,
+  openuiDashboardPromptOptions as promptOptions,
+} from "@openuidev/dashboard-kit/lib";
 ```
+
+```bash
+npx @openuidev/cli generate src/lib/dashboard-library.ts --out src/generated/system-prompt.txt
+```
+
+Read that file in your route and send it as the system message.
 
 Then render a model's response with `Renderer` from `@openuidev/react-lang`:
 
@@ -35,6 +44,18 @@ Then render a model's response with `Renderer` from `@openuidev/react-lang`:
 - The root entrypoint exports the standalone React components, such as `Dashboard`,
   `Section`, `CardRow` and `DashboardThemeProvider`.
 - Components style themselves with goober, so there is no stylesheet to import.
+
+### Dark mode
+
+The dashboard takes its mode from a `ThemeProvider` in `@openuidev/react-components`. The
+`theme` you give `AgentInterface` belongs to `@openuidev/react-ui` and doesn't reach it, so wrap
+the chat as well:
+
+```tsx
+<ThemeProvider mode={mode}>
+  <AgentInterface theme={{ mode }} {...props} />
+</ThemeProvider>
+```
 
 ## Styling
 
@@ -54,14 +75,14 @@ Styles follow the same flat contract as `@openuidev/react-components`:
 
 Root component is `Dashboard`. 48 components in 6 groups:
 
-| Group | Components |
-|---|---|
-| Dashboard Layout | `Dashboard`, `DashboardHeader`, `Section`, `FilterBar`, `FilterSelect`, `FilterMultiSelect`, `DatePicker`, `CardRow`, `IconButton` |
-| Shell Cards | `SmallCard`, `MediumCard`, `LargeCard`, `DashboardCardHeader`, `IconTag`, `IconText`, `TextBlock`, `List`, `ListItem`, `EntityList`, `Callout`, `Button`, `ButtonGroup`, `Select`, `SelectItem`, `ImageBlock`, `Tag`, `TagBlock`, `TextContent`, `MarkDownRenderer`, `TextCallout` |
-| Metrics | `MetricIndicator`, `OverviewCardItem`, `OverviewCardBlock` |
-| Charts | `LineChart`, `BarChart`, `AreaChart`, `HorizontalBarChart`, `RadarChart`, `ScatterChart`, `RadialChart`, `PieChart` |
-| Data Display | `Table`, `Col` |
-| Primitives | `Icon`, `IconTag`, `IconText`, `TextBlock` |
+| Group            | Components                                                                                                                                                                                                                                                                         |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Dashboard Layout | `Dashboard`, `DashboardHeader`, `Section`, `FilterBar`, `FilterSelect`, `FilterMultiSelect`, `DatePicker`, `CardRow`, `IconButton`                                                                                                                                                 |
+| Shell Cards      | `SmallCard`, `MediumCard`, `LargeCard`, `DashboardCardHeader`, `IconTag`, `IconText`, `TextBlock`, `List`, `ListItem`, `EntityList`, `Callout`, `Button`, `ButtonGroup`, `Select`, `SelectItem`, `ImageBlock`, `Tag`, `TagBlock`, `TextContent`, `MarkDownRenderer`, `TextCallout` |
+| Metrics          | `MetricIndicator`, `OverviewCardItem`, `OverviewCardBlock`                                                                                                                                                                                                                         |
+| Charts           | `LineChart`, `BarChart`, `AreaChart`, `HorizontalBarChart`, `RadarChart`, `ScatterChart`, `RadialChart`, `PieChart`                                                                                                                                                                |
+| Data Display     | `Table`, `Col`                                                                                                                                                                                                                                                                     |
+| Primitives       | `Icon`, `IconTag`, `IconText`, `TextBlock`                                                                                                                                                                                                                                         |
 
 `Series`, `ScatterSeries`, `Point` and `Slice` are registered as chart data
 helpers and are described through the chart signatures rather than their own
@@ -94,7 +115,7 @@ The component list matters less than the **layout grammar** the groups carry as
   `Separator`, `CodeBlock` or `Form` inside `MediumCard` or `LargeCard`.
 
 That grammar is why this library is smaller than a general component set — 48
-components and a ~20,000-character system prompt — while producing dashboards
+components and a ~22,000-character system prompt — while producing dashboards
 rather than a vertical stack of cards.
 
 ## Tests

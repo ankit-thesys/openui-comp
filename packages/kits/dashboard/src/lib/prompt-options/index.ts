@@ -66,6 +66,7 @@ export const openuiDashboardAdditionalRules: string[] = [
   "Use Table with Col children for tabular data. Set Col type to 'number' for right-aligned numeric columns.",
   'A filter must change what the dashboard shows. Declare `$region = "all"`, pass `$region` as the filter\'s value argument, and read every value it affects from one object with an entry per option value: `data[$region].revenue`.',
   'Without a data tool, use only FilterSelect in a FilterBar, even when asked for a date picker or for ticking several options: written values can\'t follow a free date or several selections. Offer dates as options such as "Last 30 days", and groups as options such as "All products".',
+  "Button and IconButton only send their label and the current filter values back to you as a chat message. They can't export, download, save or change anything. If one is pressed for something you can't do, repeat the dashboard with a Callout in a MediumCard that says you can't do it, because plain text isn't shown. Never claim it started or finished, and never offer download buttons.",
   "Use realistic, professional placeholder data.",
   "Icon takes a name string (e.g. 'dollar-sign', 'users'). Use common lucide icon names.",
 ];
@@ -75,5 +76,4 @@ export const openuiDashboardPromptOptions: PromptOptions = {
   examples: openuiDashboardExamples,
   additionalRules: openuiDashboardAdditionalRules,
   bindings: true,
-  builtinFunctions: false,
 };

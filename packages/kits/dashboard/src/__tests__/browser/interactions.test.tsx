@@ -1,6 +1,15 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { userEvent } from "vitest/browser";
-import { box, byText, cleanup, one, renderCase, settle, style } from "../helpers/render";
+import {
+  box,
+  byText,
+  cleanup,
+  one,
+  renderCase,
+  renderProgram,
+  settle,
+  style,
+} from "../helpers/render";
 
 afterEach(cleanup);
 
@@ -35,6 +44,25 @@ describe("FilterSelect", () => {
     expect(style(checked).backgroundImage).toContain("radial-gradient");
   });
 
+  it("closes on Escape and returns focus to its trigger", async () => {
+    const container = await renderCase("filters");
+    const trigger = one(container, ".openui-dashboard-filter-select-trigger--single");
+    await userEvent.click(trigger);
+    await settle();
+    expect(container.querySelector(POPOVER)).not.toBeNull();
+    await userEvent.keyboard("{Escape}");
+    await settle();
+    expect(container.querySelector(POPOVER)).toBeNull();
+    expect(document.activeElement).toBe(trigger);
+  });
+
+  it("is named by its label", async () => {
+    const container = await renderCase("filters");
+    const trigger = one(container, ".openui-dashboard-filter-select-trigger--single");
+    const [labelId] = trigger.getAttribute("aria-labelledby")!.split(" ");
+    expect(document.getElementById(labelId!)!.textContent).toBe("Region");
+  });
+
   it("closes on a click outside", async () => {
     const container = await renderCase("filters");
     await userEvent.click(one(container, ".openui-dashboard-filter-select-trigger--single"));
@@ -63,6 +91,49 @@ describe("a filter connected to values", () => {
     expect(byText(container, "1,800")).toBeTruthy();
     expect(container.textContent).not.toContain("4,500");
     expect(bars()).not.toEqual(before);
+  });
+});
+
+describe("values from the model", () => {
+  it("a DatePicker updates its $variable", async () => {
+    const container = await renderProgram(`root = Dashboard([section])
+$day = "2026-10-15"
+section = Section([row], bar)
+bar = FilterBar([picker])
+picker = DatePicker("window", "single", null, $day)
+row = CardRow([card])
+card = SmallCard("Picked", "day " + $day)`);
+    expect(one(container, ".openui-date-picker-trigger").textContent).toContain("Oct 15");
+
+    await userEvent.click(one(container, ".openui-date-picker-trigger"));
+    await settle(300);
+    const day = [...document.querySelectorAll("button")].find(
+      (button) => button.textContent?.trim() === "20",
+    );
+    await userEvent.click(day!);
+    await settle(300);
+    expect(container.textContent).toMatch(/day \d{4}-\d{2}-20/);
+  });
+
+  it("a SmallCard shows a number as its metric", async () => {
+    const container = await renderProgram(`root = Dashboard([section])
+section = Section([row])
+row = CardRow([card])
+card = SmallCard("Events", 4500)`);
+    expect(one(container, ".openui-dashboard-small-card-metric").textContent).toBe("4500");
+  });
+
+  it("a number column aligns right", async () => {
+    const container = await renderProgram(`root = Dashboard([section])
+section = Section([row])
+row = CardRow([card])
+card = LargeCard([table])
+table = Table([Col("Name", ["Ann"]), Col("Amount", [1200], "number")])`);
+    const [nameCell, amountCell] = [...container.querySelectorAll("td")];
+    expect(style(nameCell!).textAlign).toBe("left");
+    expect(style(amountCell!).textAlign).toBe("right");
+    const [, amountHead] = [...container.querySelectorAll("th")];
+    expect(amountHead!.className).toContain("right");
   });
 });
 
