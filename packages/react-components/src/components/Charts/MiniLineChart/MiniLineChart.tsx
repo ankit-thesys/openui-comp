@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { line } from "d3-shape";
+import { styleRules } from "../../../styles/css";
 import { useEffectiveAnimation } from "../hooks/core/useEffectiveAnimation";
 import { MiniChartFrame } from "../shared/mini/MiniChartFrame";
 import {
@@ -39,49 +40,52 @@ export function MiniLineChart({
   const animated = animate && styles.animated;
 
   return (
-    <MiniChartFrame
-      chart="line"
-      size={size}
-      className={clsx(
-        styles.root,
-        names.root,
-        isAnimationActive && names.isAnimationActive.true,
-        className,
-      )}
-      svgClassName={clsx(styles.svg, names.svg)}
-      onClick={onLineClick}
-    >
-      {(width, height) => {
-        const { points, x, y } = miniLineGeometry(data, width, height);
-        const lineD =
-          line<MiniChartPoint>()
-            .x((_, i) => x(i))
-            .y((p) => y(p.value))
-            .curve(curve)(points) ?? "";
-        // A single value has no line to draw: it's marked with a dot.
-        const single = points.length === 1 ? points[0] : undefined;
-        return (
-          <>
-            <path
-              className={clsx(names.line, animated)}
-              d={lineD}
-              fill="none"
-              stroke={color}
-              strokeWidth={strokeWidth}
-            />
-            {single && (
-              <circle
-                className={clsx(names.point, styles.point, animated)}
-                cx={x(0)}
-                cy={y(single.value)}
-                r={MINI_POINT_RADIUS}
+    <>
+      {styleRules(miniLineChartStyles)}
+      <MiniChartFrame
+        chart="line"
+        size={size}
+        className={clsx(
+          styles.root,
+          names.root,
+          isAnimationActive && names.isAnimationActive.true,
+          className,
+        )}
+        svgClassName={clsx(styles.svg, names.svg)}
+        onClick={onLineClick}
+      >
+        {(width, height) => {
+          const { points, x, y } = miniLineGeometry(data, width, height);
+          const lineD =
+            line<MiniChartPoint>()
+              .x((_, i) => x(i))
+              .y((p) => y(p.value))
+              .curve(curve)(points) ?? "";
+          // A single value has no line to draw: it's marked with a dot.
+          const single = points.length === 1 ? points[0] : undefined;
+          return (
+            <>
+              <path
+                className={clsx(names.line, animated)}
+                d={lineD}
+                fill="none"
                 stroke={color}
                 strokeWidth={strokeWidth}
               />
-            )}
-          </>
-        );
-      }}
-    </MiniChartFrame>
+              {single && (
+                <circle
+                  className={clsx(names.point, styles.point, animated)}
+                  cx={x(0)}
+                  cy={y(single.value)}
+                  r={MINI_POINT_RADIUS}
+                  stroke={color}
+                  strokeWidth={strokeWidth}
+                />
+              )}
+            </>
+          );
+        }}
+      </MiniChartFrame>
+    </>
   );
 }

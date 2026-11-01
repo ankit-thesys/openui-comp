@@ -4,6 +4,7 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import clsx from "clsx";
 import { Check, ChevronDown } from "lucide-react";
 import React, { createContext, forwardRef, useContext, useEffect, useMemo, useState } from "react";
+import { styleRules } from "../../styles/css";
 import { useTheme } from "../ThemeProvider";
 import { names, selectStyles } from "./select.styles";
 
@@ -28,9 +29,12 @@ export const Select = ({ size = "md", ...props }: SelectProps) => {
     [currentSize],
   );
   return (
-    <SelectSizeContext.Provider value={contextValue}>
-      <SelectPrimitive.Root {...props} />
-    </SelectSizeContext.Provider>
+    <>
+      {styleRules(selectStyles)}
+      <SelectSizeContext.Provider value={contextValue}>
+        <SelectPrimitive.Root {...props} />
+      </SelectSizeContext.Provider>
+    </>
   );
 };
 
@@ -43,11 +47,14 @@ export const SelectGroup = forwardRef<
 >(({ className, ...props }, ref) => {
   const styles = selectStyles;
   return (
-    <SelectPrimitive.Group
-      ref={ref}
-      className={clsx(styles.group, names.group, className)}
-      {...props}
-    />
+    <>
+      {styleRules(selectStyles)}
+      <SelectPrimitive.Group
+        ref={ref}
+        className={clsx(styles.group, names.group, className)}
+        {...props}
+      />
+    </>
   );
 });
 
@@ -79,25 +86,28 @@ export const SelectTrigger = forwardRef<
     if (sizeContext && sizeContext.size !== resolvedSize) sizeContext.setSize(resolvedSize);
   }, [resolvedSize, sizeContext]);
   return (
-    <SelectPrimitive.Trigger
-      ref={ref}
-      className={clsx(
-        styles.trigger,
-        names.trigger,
-        styles.size[resolvedSize],
-        names.size[resolvedSize],
-        hideDropdownIcon && names.hideDropdownIcon.true,
-        className,
-      )}
-      {...props}
-    >
-      {children}
-      {!hideDropdownIcon && (
-        <SelectPrimitive.Icon asChild>
-          <ChevronDown className={clsx(styles.triggerIcon, names.triggerIcon)} />
-        </SelectPrimitive.Icon>
-      )}
-    </SelectPrimitive.Trigger>
+    <>
+      {styleRules(selectStyles)}
+      <SelectPrimitive.Trigger
+        ref={ref}
+        className={clsx(
+          styles.trigger,
+          names.trigger,
+          styles.size[resolvedSize],
+          names.size[resolvedSize],
+          hideDropdownIcon && names.hideDropdownIcon.true,
+          className,
+        )}
+        {...props}
+      >
+        {children}
+        {!hideDropdownIcon && (
+          <SelectPrimitive.Icon asChild>
+            <ChevronDown className={clsx(styles.triggerIcon, names.triggerIcon)} />
+          </SelectPrimitive.Icon>
+        )}
+      </SelectPrimitive.Trigger>
+    </>
   );
 });
 
@@ -130,41 +140,44 @@ export const SelectContent = forwardRef<
     const { portalThemeClassName } = useTheme();
     const size = useSelectSizeContext()?.size ?? "md";
     return (
-      <SelectPrimitive.Portal container={container}>
-        <SelectPrimitive.Content
-          ref={ref}
-          className={clsx(
-            styles.content,
-            names.content,
-            styles.contentSize[size],
-            names.contentSize[size],
-            styles.position[position],
-            names.position[position],
-            className,
-            portalThemeClassName,
-          )}
-          position={position}
-          sideOffset={sideOffset}
-          // Radix sets these static defaults inline. Keep them in the flat CSS instead.
-          style={{
-            display: undefined,
-            flexDirection: undefined,
-            outline: undefined,
-            boxSizing: undefined,
-            maxHeight: undefined,
-            ...style,
-          }}
-          {...props}
-        >
-          <SelectPrimitive.Viewport
-            className={clsx(styles.viewport, names.viewport, viewportClassName)}
-            data-position={position}
-            style={{ position: undefined, flex: undefined, overflow: undefined }}
+      <>
+        {styleRules(selectStyles)}
+        <SelectPrimitive.Portal container={container}>
+          <SelectPrimitive.Content
+            ref={ref}
+            className={clsx(
+              styles.content,
+              names.content,
+              styles.contentSize[size],
+              names.contentSize[size],
+              styles.position[position],
+              names.position[position],
+              className,
+              portalThemeClassName,
+            )}
+            position={position}
+            sideOffset={sideOffset}
+            // Radix sets these static defaults inline. Keep them in the flat CSS instead.
+            style={{
+              display: undefined,
+              flexDirection: undefined,
+              outline: undefined,
+              boxSizing: undefined,
+              maxHeight: undefined,
+              ...style,
+            }}
+            {...props}
           >
-            {children}
-          </SelectPrimitive.Viewport>
-        </SelectPrimitive.Content>
-      </SelectPrimitive.Portal>
+            <SelectPrimitive.Viewport
+              className={clsx(styles.viewport, names.viewport, viewportClassName)}
+              data-position={position}
+              style={{ position: undefined, flex: undefined, overflow: undefined }}
+            >
+              {children}
+            </SelectPrimitive.Viewport>
+          </SelectPrimitive.Content>
+        </SelectPrimitive.Portal>
+      </>
     );
   },
 );
@@ -178,11 +191,14 @@ export const SelectLabel = forwardRef<
 >(({ className, ...props }, ref) => {
   const styles = selectStyles;
   return (
-    <SelectPrimitive.Label
-      ref={ref}
-      className={clsx(styles.label, names.label, className)}
-      {...props}
-    />
+    <>
+      {styleRules(selectStyles)}
+      <SelectPrimitive.Label
+        ref={ref}
+        className={clsx(styles.label, names.label, className)}
+        {...props}
+      />
+    </>
   );
 });
 
@@ -197,28 +213,31 @@ export const SelectItem = forwardRef<
 >(({ className, children, showTick = true, textValue, ...props }, ref) => {
   const styles = selectStyles;
   return (
-    <SelectPrimitive.Item
-      ref={ref}
-      className={clsx(
-        styles.item,
-        names.item,
-        showTick && [styles.showTick, names.showTick.true],
-        className,
-      )}
-      {...props}
-    >
-      {showTick && (
-        <span className={clsx(styles.checkWrapper, names.checkWrapper)}>
-          <SelectPrimitive.ItemIndicator className={names.indicator}>
-            <Check className={clsx(styles.checkIcon, names.checkIcon)} />
-          </SelectPrimitive.ItemIndicator>
-        </span>
-      )}
-      <SelectPrimitive.ItemText asChild>
-        <span className={names.itemText}>{children}</span>
-      </SelectPrimitive.ItemText>
-      {textValue && <span className={names.textValue}>{textValue}</span>}
-    </SelectPrimitive.Item>
+    <>
+      {styleRules(selectStyles)}
+      <SelectPrimitive.Item
+        ref={ref}
+        className={clsx(
+          styles.item,
+          names.item,
+          showTick && [styles.showTick, names.showTick.true],
+          className,
+        )}
+        {...props}
+      >
+        {showTick && (
+          <span className={clsx(styles.checkWrapper, names.checkWrapper)}>
+            <SelectPrimitive.ItemIndicator className={names.indicator}>
+              <Check className={clsx(styles.checkIcon, names.checkIcon)} />
+            </SelectPrimitive.ItemIndicator>
+          </span>
+        )}
+        <SelectPrimitive.ItemText asChild>
+          <span className={names.itemText}>{children}</span>
+        </SelectPrimitive.ItemText>
+        {textValue && <span className={names.textValue}>{textValue}</span>}
+      </SelectPrimitive.Item>
+    </>
   );
 });
 
@@ -231,10 +250,13 @@ export const SelectSeparator = forwardRef<
 >(({ className, ...props }, ref) => {
   const styles = selectStyles;
   return (
-    <SelectPrimitive.Separator
-      ref={ref}
-      className={clsx(styles.separator, names.separator, className)}
-      {...props}
-    />
+    <>
+      {styleRules(selectStyles)}
+      <SelectPrimitive.Separator
+        ref={ref}
+        className={clsx(styles.separator, names.separator, className)}
+        {...props}
+      />
+    </>
   );
 });

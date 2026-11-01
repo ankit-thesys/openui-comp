@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import React from "react";
+import { styleRules } from "../../styles/css";
 import { cardStyles, names } from "./card.styles";
 
 type CardVariant = "clear" | "card" | "sunk";
@@ -17,21 +18,24 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>((props, ref) => 
 
   const styles = cardStyles;
   return (
-    <div
-      ref={ref}
-      className={clsx(
-        styles.root,
-        names.root,
-        className,
-        styles.variant[variant],
-        names.variant[variant],
-        styles.width[width],
-        names.width[width],
-      )}
-      {...rest}
-    >
-      {children}
-    </div>
+    <>
+      {styleRules(cardStyles)}
+      <div
+        ref={ref}
+        className={clsx(
+          styles.root,
+          names.root,
+          className,
+          styles.variant[variant],
+          names.variant[variant],
+          styles.width[width],
+          names.width[width],
+        )}
+        {...rest}
+      >
+        {children}
+      </div>
+    </>
   );
 });
 

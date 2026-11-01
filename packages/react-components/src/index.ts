@@ -7,6 +7,8 @@ export {
   type ConfigureStylesOptions,
   type Css,
   type Keyframes,
+  styleRules,
+  OpenUIStyles,
 } from "./styles/css";
 
 export { IconWrapper, type IconWrapperProps } from "./components/_shared/icons";

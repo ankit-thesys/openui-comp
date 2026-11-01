@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { forwardRef, ReactNode } from "react";
+import { styleRules } from "../../styles/css";
 import { buttonStyles, names } from "./button.styles";
 
 type ButtonVariant = "primary" | "secondary" | "tertiary";
@@ -39,25 +40,28 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const icon = (node: ReactNode) =>
       isRendered(node) ? <span className={clsx(styles.icon, names.icon)}>{node}</span> : null;
     return (
-      <button
-        ref={ref}
-        className={clsx(
-          styles.root,
-          styles.variant[variant],
-          styles.size[size],
-          styles.tone[tone],
-          names.root,
-          names.variant[variant],
-          names.size[size],
-          names.tone[tone],
-          className,
-        )}
-        {...props}
-      >
-        {icon(iconLeft)}
-        {children}
-        {icon(iconRight)}
-      </button>
+      <>
+        {styleRules(buttonStyles)}
+        <button
+          ref={ref}
+          className={clsx(
+            styles.root,
+            styles.variant[variant],
+            styles.size[size],
+            styles.tone[tone],
+            names.root,
+            names.variant[variant],
+            names.size[size],
+            names.tone[tone],
+            className,
+          )}
+          {...props}
+        >
+          {icon(iconLeft)}
+          {children}
+          {icon(iconRight)}
+        </button>
+      </>
     );
   },
 );
