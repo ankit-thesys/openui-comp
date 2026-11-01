@@ -66,6 +66,12 @@ function servedClasses(): Record<string, true> {
 }
 
 function write() {
+  // A server-rendered page that is still streaming may yet send Suspense boundaries' tags, so the
+  // browser writes once the document is complete and skips their classes too.
+  if (document.readyState === "loading" && document.querySelector(hoistedTags(PRECEDENCE))) {
+    document.addEventListener("DOMContentLoaded", write, { once: true });
+    return;
+  }
   store.scheduled = false;
   const served = servedClasses();
   let fresh = "";
