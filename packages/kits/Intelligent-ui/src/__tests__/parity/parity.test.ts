@@ -110,10 +110,12 @@ describe("the library", () => {
     }
   });
 
-  it("differs from the source's spec only by the Form validation the kit adds", () => {
+  it("differs from the source's spec only by the Form validation and the drawing slots the kit adds", () => {
     const differences = compareSpec(read<unknown>("source-spec.json"), kit.spec).filter(
       ({ path: at }) =>
         !/\/(Input|TextArea|Select|Checkbox|RadioGroup|DatePicker)\/(signature|properties\/rules)$/.test(at) &&
+        // Svg and G list the shapes they hold, where the source takes any component.
+        !/\/(Svg|G)\/(signature|properties\/children(\/.*)?)$/.test(at) &&
         !/\/Form\/description$/.test(at) &&
         at !== "/componentGroups",
     );
