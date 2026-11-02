@@ -465,9 +465,6 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      goober:
-        specifier: 2.1.19
-        version: 2.1.19(csstype@3.2.3)
       katex:
         specifier: ^0.16.44
         version: 0.16.47
