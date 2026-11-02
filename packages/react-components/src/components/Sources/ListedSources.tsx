@@ -2,7 +2,8 @@
 
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Key, memo, useCallback, useRef, useState } from "react";
+import { Fragment, Key, memo, useCallback, useRef, useState } from "react";
+import { styleRules } from "../../styles/css";
 import { Carousel, CarouselContent, CarouselRef } from "../Carousel";
 import { IconButton } from "../IconButton";
 import { listedSourcesStyles, names } from "./listedSources.styles";
@@ -33,53 +34,69 @@ export const ListedSources = memo((props: ListedSourcesProps) => {
   // Show buttons only if there's overflow (can scroll left or right)
   const hasOverflow = scroll.left || scroll.right;
 
+  const rootClass = clsx(styles.root, names.root);
+  const headerClass = clsx(styles.header, names.header);
+  const titleClass = clsx(styles.title, names.title);
   return (
-    <div className={clsx(styles.root, names.root)}>
-      <div className={clsx(styles.header, names.header)}>
-        <span className={clsx(styles.title, names.title)}>Sources</span>
-        {hasOverflow && (
-          <div className={clsx(styles.buttons, names.buttons)}>
-            <IconButton
-              variant="secondary"
-              size="small"
-              onClick={() => ref.current?.scroll("left")}
-              disabled={!scroll.left}
-              icon={<ChevronLeft />}
-            />
-            <IconButton
-              variant="secondary"
-              size="small"
-              onClick={() => ref.current?.scroll("right")}
-              disabled={!scroll.right}
-              icon={<ChevronRight />}
-            />
-          </div>
-        )}
-      </div>
-      <Carousel
-        variant="sunk"
-        ref={ref}
-        showButtons={false}
-        onScrollLeftEnabled={handleScrollLeftEnabled}
-        onScrollRightEnabled={handleScrollRightEnabled}
-      >
-        <CarouselContent>
-          {sources.map((item: SourceWithFavicon, index: number) => {
-            const { key: _key, ...rest } = item as SourceWithFavicon & {
-              key?: Key;
-            };
-            return (
-              <div
-                key={item.url ?? index}
-                className={clsx(styles.container, names.container, item.url && styles.linked)}
-              >
-                <ListedSourceItem {...rest} sourceId={index} />
+    <>
+      <div className={rootClass}>
+        <div className={headerClass}>
+          <span className={titleClass}>Sources</span>
+          {styleRules(titleClass)}
+          {hasOverflow && (
+            <>
+              <div className={clsx(styles.buttons, names.buttons)}>
+                <IconButton
+                  variant="secondary"
+                  size="small"
+                  onClick={() => ref.current?.scroll("left")}
+                  disabled={!scroll.left}
+                  icon={<ChevronLeft />}
+                />
+                <IconButton
+                  variant="secondary"
+                  size="small"
+                  onClick={() => ref.current?.scroll("right")}
+                  disabled={!scroll.right}
+                  icon={<ChevronRight />}
+                />
               </div>
-            );
-          })}
-        </CarouselContent>
-      </Carousel>
-    </div>
+              {styleRules(clsx(styles.buttons, names.buttons))}
+            </>
+          )}
+        </div>
+        {styleRules(headerClass)}
+        <Carousel
+          variant="sunk"
+          ref={ref}
+          showButtons={false}
+          onScrollLeftEnabled={handleScrollLeftEnabled}
+          onScrollRightEnabled={handleScrollRightEnabled}
+        >
+          <CarouselContent>
+            {sources.map((item: SourceWithFavicon, index: number) => {
+              const { key: _key, ...rest } = item as SourceWithFavicon & {
+                key?: Key;
+              };
+              const containerClass = clsx(
+                styles.container,
+                names.container,
+                item.url && styles.linked,
+              );
+              return (
+                <Fragment key={item.url ?? index}>
+                  <div className={containerClass}>
+                    <ListedSourceItem {...rest} sourceId={index} />
+                  </div>
+                  {styleRules(containerClass)}
+                </Fragment>
+              );
+            })}
+          </CarouselContent>
+        </Carousel>
+      </div>
+      {styleRules(rootClass)}
+    </>
   );
 });
 

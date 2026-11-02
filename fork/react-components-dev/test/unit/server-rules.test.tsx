@@ -25,6 +25,23 @@ const wired = new Set([
   "DatePicker",
   "FormControl",
   "Label",
+  // Batch 4: media and everything else (#184). ImageText and ImageTextLarge compose batch 2's
+  // TextBlock; Modal renders nothing on the server.
+  "Buttons",
+  "Calendar",
+  "Carousel",
+  "Chips",
+  "Citation",
+  "CodeBlock",
+  "DotMatrixLoader",
+  "IconButton",
+  "Image",
+  "ImageBlock",
+  "ImageGallery",
+  "Skeleton",
+  "SourceFaviconImage",
+  "Sources",
+  "TooltipWrapper",
 ]);
 const unwired = new Set(
   migratedComponents.map((component) => component.folder).filter((folder) => !wired.has(folder)),

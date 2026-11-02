@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import React, { forwardRef, useState } from "react";
+import { styleRules } from "../../styles/css";
 import { imageStyles, names } from "./image.styles";
 
 type AspectRatioType = "1:1" | "3:2" | "3:4" | "4:3" | "16:9";
@@ -30,31 +31,37 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
   );
 
   const image = (
-    <img
-      ref={ref}
-      src={src}
-      alt={alt}
-      className={imageClasses}
-      data-error={hasError || undefined}
-      style={styles}
-      onLoad={() => setHasError(false)}
-      onError={() => setHasError(true)}
-      {...rest}
-    />
+    <>
+      <img
+        ref={ref}
+        src={src}
+        alt={alt}
+        className={imageClasses}
+        data-error={hasError || undefined}
+        style={styles}
+        onLoad={() => setHasError(false)}
+        onError={() => setHasError(true)}
+        {...rest}
+      />
+      {styleRules(imageClasses)}
+    </>
   );
 
+  const aspectClass = clsx(
+    sheet.aspect,
+    names.aspect,
+    sheet.aspectRatio[aspectRatio],
+    names.aspectRatio[aspectRatio],
+  );
+  const viewportClass = clsx(sheet.viewport, names.viewport);
   return (
-    <div
-      className={clsx(
-        sheet.aspect,
-        names.aspect,
-        sheet.aspectRatio[aspectRatio],
-        names.aspectRatio[aspectRatio],
-      )}
-      data-radix-aspect-ratio-wrapper=""
-    >
-      <div className={clsx(sheet.viewport, names.viewport)}>{image}</div>
-    </div>
+    <>
+      <div className={aspectClass} data-radix-aspect-ratio-wrapper="">
+        <div className={viewportClass}>{image}</div>
+        {styleRules(viewportClass)}
+      </div>
+      {styleRules(aspectClass)}
+    </>
   );
 });
 

@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { memo } from "react";
+import { styleRules } from "../../styles/css";
 import { SourceFaviconImage } from "../SourceFaviconImage";
 import { openSourceInNewTab, SourceWithFavicon } from "../Sources/SourceContext";
 import { citationItemStyles, names } from "./citationItem.styles";
@@ -18,20 +19,28 @@ export const CitationItem = memo((props: CitationItemProps) => {
     onClick?.();
   };
   const hasUrl = url && url.trim() !== "";
+  const rootClass = clsx(styles.root, names.root, hasUrl && styles.linked);
+  const logoClass = clsx(styles.logo, names.logo);
+  const contentClass = clsx(styles.content, names.content);
+  const titleClass = clsx(styles.title, names.title);
+  const sourceClass = clsx(styles.source, names.source);
   return (
-    <button
-      className={clsx(styles.root, names.root, hasUrl && styles.linked)}
-      onClick={handleClick}
-      type="button"
-    >
-      <div className={clsx(styles.logo, names.logo)}>
-        <SourceFaviconImage url={faviconUrl} alt={sourceName} width={24} height={24} />
-      </div>
-      <div className={clsx(styles.content, names.content)}>
-        <div className={clsx(styles.title, names.title)}>{title}</div>
-        <div className={clsx(styles.source, names.source)}>{sourceName}</div>
-      </div>
-    </button>
+    <>
+      <button className={rootClass} onClick={handleClick} type="button">
+        <div className={logoClass}>
+          <SourceFaviconImage url={faviconUrl} alt={sourceName} width={24} height={24} />
+        </div>
+        {styleRules(logoClass)}
+        <div className={contentClass}>
+          <div className={titleClass}>{title}</div>
+          {styleRules(titleClass)}
+          <div className={sourceClass}>{sourceName}</div>
+          {styleRules(sourceClass)}
+        </div>
+        {styleRules(contentClass)}
+      </button>
+      {styleRules(rootClass)}
+    </>
   );
 });
 

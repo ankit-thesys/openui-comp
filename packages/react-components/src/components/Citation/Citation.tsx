@@ -3,6 +3,7 @@
 import * as Tooltip from "@radix-ui/react-tooltip";
 import clsx from "clsx";
 import { Key, memo } from "react";
+import { styleRules } from "../../styles/css";
 import { usePinnableTooltip } from "../_shared/hooks/usePinnableTooltip";
 import { IconWrapper } from "../_shared/icons";
 import { SourceWithFavicon } from "../Sources/SourceContext";
@@ -30,47 +31,53 @@ const MultiCitation = memo((props: CitationProps) => {
     getPointerDownOutsideHandler,
   } = usePinnableTooltip();
 
+  const containerClass = clsx(styles.container, names.container);
+  const rootClass = clsx(styles.root, names.root);
   return (
-    <span className={clsx(styles.container, names.container)}>
-      <Tooltip.Provider>
-        <Tooltip.Root open={isOpen}>
-          <Tooltip.Trigger asChild>
-            <button
-              type="button"
-              className={clsx(styles.root, names.root)}
-              aria-label="Citations"
-              onClick={handleTriggerClick}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <IconWrapper name="globe" size={12} className={clsx(styles.icon, names.icon)} />
-            </button>
-          </Tooltip.Trigger>
-          <Tooltip.Portal>
-            <Tooltip.Content
-              side="bottom"
-              align="start"
-              sideOffset={4}
-              alignOffset={-8}
-              className={clsx(styles.tooltip, names.tooltip, portalThemeClassName)}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              onClick={handleContentClick}
-              onPointerDownOutside={getPointerDownOutsideHandler(`.${names.root}`)}
-            >
-              <div className={clsx(styles.tooltipContent, names.tooltipContent)}>
-                {sources.map((itemProps, index: number) => {
-                  const { key: _key, ...rest } = itemProps as SourceWithFavicon & {
-                    key?: Key;
-                  };
-                  return <CitationItem key={index} {...rest} onClick={closeTooltip} />;
-                })}
-              </div>
-            </Tooltip.Content>
-          </Tooltip.Portal>
-        </Tooltip.Root>
-      </Tooltip.Provider>
-    </span>
+    <>
+      <span className={containerClass}>
+        <Tooltip.Provider>
+          <Tooltip.Root open={isOpen}>
+            <Tooltip.Trigger asChild>
+              <button
+                type="button"
+                className={rootClass}
+                aria-label="Citations"
+                onClick={handleTriggerClick}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <IconWrapper name="globe" size={12} className={clsx(styles.icon, names.icon)} />
+              </button>
+            </Tooltip.Trigger>
+            {styleRules(rootClass)}
+            <Tooltip.Portal>
+              <Tooltip.Content
+                side="bottom"
+                align="start"
+                sideOffset={4}
+                alignOffset={-8}
+                className={clsx(styles.tooltip, names.tooltip, portalThemeClassName)}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onClick={handleContentClick}
+                onPointerDownOutside={getPointerDownOutsideHandler(`.${names.root}`)}
+              >
+                <div className={clsx(styles.tooltipContent, names.tooltipContent)}>
+                  {sources.map((itemProps, index: number) => {
+                    const { key: _key, ...rest } = itemProps as SourceWithFavicon & {
+                      key?: Key;
+                    };
+                    return <CitationItem key={index} {...rest} onClick={closeTooltip} />;
+                  })}
+                </div>
+              </Tooltip.Content>
+            </Tooltip.Portal>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+      </span>
+      {styleRules(containerClass)}
+    </>
   );
 });
 

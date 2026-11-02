@@ -3,6 +3,7 @@
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import clsx from "clsx";
 import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
+import { styleRules } from "../../styles/css";
 import { iconButtonStyles, names } from "./iconButton.styles";
 
 type IconButtonVariant = "primary" | "secondary" | "tertiary";
@@ -43,27 +44,32 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props,
 
   const Comp = asChild ? Slot : "button";
 
+  const rootClass = clsx(
+    styles.root,
+    styles.variant[variant],
+    styles.size[size],
+    styles.shape[shape],
+    styles.tone[tone],
+    names.root,
+    names.variant[variant],
+    names.size[size],
+    names.shape[shape],
+    names.tone[tone],
+    className,
+  );
   return (
-    <Comp
-      ref={ref}
-      className={clsx(
-        styles.root,
-        styles.variant[variant],
-        styles.size[size],
-        styles.shape[shape],
-        styles.tone[tone],
-        names.root,
-        names.variant[variant],
-        names.size[size],
-        names.shape[shape],
-        names.tone[tone],
-        className,
-      )}
-      {...rest}
-    >
-      <Slottable>{children}</Slottable>
-      {icon && <span className={clsx(styles.icon, names.icon)}>{icon}</span>}
-    </Comp>
+    <>
+      <Comp ref={ref} className={rootClass} {...rest}>
+        <Slottable>{children}</Slottable>
+        {icon && (
+          <>
+            <span className={clsx(styles.icon, names.icon)}>{icon}</span>
+            {styleRules(clsx(styles.icon, names.icon))}
+          </>
+        )}
+      </Comp>
+      {styleRules(rootClass)}
+    </>
   );
 });
 

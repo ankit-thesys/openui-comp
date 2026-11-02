@@ -4,6 +4,7 @@ import clsx from "clsx";
 import debounce from "lodash-es/debounce.js";
 import { DetailedHTMLProps, SelectHTMLAttributes, useEffect, useState } from "react";
 import { ClassNames, CustomComponents, DropdownOption } from "react-day-picker";
+import { styleRules } from "../../../styles/css";
 import {
   Select,
   SelectContent,
@@ -19,11 +20,12 @@ import { getMonthName, getMonthNumber } from "../utils/helperFn";
 
 const CalendarSelectTrigger = ({ className, ...props }: SelectTriggerProps) => {
   const styles = calendarDropdownStyles;
+  const selectTriggerClass = clsx(styles.selectTrigger, names.selectTrigger, className);
   return (
-    <SelectTrigger
-      {...props}
-      className={clsx(styles.selectTrigger, names.selectTrigger, className)}
-    />
+    <>
+      <SelectTrigger {...props} className={selectTriggerClass} />
+      {styleRules(selectTriggerClass)}
+    </>
   );
 };
 const CalendarSelectContent = ({
@@ -31,14 +33,15 @@ const CalendarSelectContent = ({
   ...props
 }: SelectContentProps & { kind: "months" | "years" }) => {
   const styles = calendarDropdownStyles;
+  const selectContentMonthsClass = clsx(
+    kind === "months"
+      ? [styles.selectContentMonths, names.selectContentMonths]
+      : [styles.selectContentYears, names.selectContentYears],
+  );
   return (
     <SelectContent
       {...props}
-      className={clsx(
-        kind === "months"
-          ? [styles.selectContentMonths, names.selectContentMonths]
-          : [styles.selectContentYears, names.selectContentYears],
-      )}
+      className={selectContentMonthsClass}
       viewportClassName={
         kind === "years" ? clsx(styles.selectViewport, names.selectViewport) : undefined
       }
@@ -47,7 +50,8 @@ const CalendarSelectContent = ({
 };
 const CalendarSelectItem = (props: SelectItemProps) => {
   const styles = calendarDropdownStyles;
-  return <SelectItem {...props} className={clsx(styles.selectItem, names.selectItem)} />;
+  const selectItemClass = clsx(styles.selectItem, names.selectItem);
+  return <SelectItem {...props} className={selectItemClass} />;
 };
 
 export const MonthsDropdown = (

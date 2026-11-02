@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import type { ClassNames } from "react-day-picker";
+import type { ClassNames, DayPickerProps } from "react-day-picker";
 import { calendarStyles, names } from "../calendar.styles";
 
 // DayPicker's selection/flag class slots are empty: states live on the day part's attributes.
@@ -38,3 +38,38 @@ export const getDayPickerStyles = (styles: typeof calendarStyles): Partial<Class
   outside: "",
   focused: "",
 });
+
+/**
+ * The classes of the DayPicker parts these props render, for server-rendered rules. The
+ * codemod cannot see them: DayPicker puts each on its own element.
+ */
+export const renderedDayPickerClasses = (
+  classes: Partial<ClassNames>,
+  props: Pick<
+    DayPickerProps,
+    "captionLayout" | "footer" | "showWeekNumber" | "hideNavigation" | "hideWeekdays"
+  >,
+): Array<string | undefined> => {
+  const dropdown = props.captionLayout?.startsWith("dropdown") ?? false;
+  return [
+    classes.root,
+    classes.month,
+    classes.month_caption,
+    classes.month_grid,
+    classes.day,
+    classes.day_button,
+    ...(props.hideNavigation
+      ? []
+      : [classes.nav, classes.button_previous, classes.button_next, classes.chevron]),
+    ...(props.hideWeekdays ? [] : [classes.weekdays, classes.weekday]),
+    ...(dropdown ? [classes.dropdowns, classes.chevron] : []),
+    ...(props.captionLayout === "dropdown" || props.captionLayout === "dropdown-months"
+      ? [classes.months_dropdown]
+      : []),
+    ...(props.captionLayout === "dropdown" || props.captionLayout === "dropdown-years"
+      ? [classes.years_dropdown]
+      : []),
+    ...(props.footer ? [classes.footer] : []),
+    ...(props.showWeekNumber ? [classes.week_number, classes.week_number_header] : []),
+  ];
+};

@@ -16,7 +16,8 @@
 // - React renders `<style>` in place inside SVG, so for an SVG element or its descendants the call
 //   goes after the outermost `<svg>`; a Radix `asChild` parent or `Slot` takes one element child,
 //   so the call goes after that parent.
-// - Elements in a portal (`*.Portal`, `createPortal`) never render on the server: no call.
+// - Elements in a portal (`*.Portal`, `createPortal`) never render on the server: no call. Nor do
+//   components that render only after an effect, such as `IconWrapper`.
 import { execFileSync } from "node:child_process";
 import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join, relative, resolve } from "node:path";
@@ -139,7 +140,19 @@ function svgRoot(node) {
 
 // A Radix `asChild` parent or a `Slot` needs exactly one element child.
 const slots = (node) =>
-  isElement(node) && (attribute(node, "asChild") !== undefined || /^(.*\.)?Slot$/.test(tagOf(node)));
+  isElement(node) &&
+  (attribute(node, "asChild") !== undefined || /^(.*\.)?Slot$/.test(tagOf(node)));
+
+// Components whose class never reaches server markup: they render nothing until an effect runs,
+// or only inside a portal another file opens (Select's content and its parts).
+const CLIENT_ONLY = new Set([
+  "IconWrapper",
+  "SelectContent",
+  "SelectGroup",
+  "SelectItem",
+  "SelectLabel",
+  "SelectSeparator",
+]);
 
 // Portal content never renders on the server, so the browser sheet alone styles it.
 function inPortal(node) {
@@ -200,7 +213,12 @@ function unwired(source) {
         className?.initializer && ts.isJsxExpression(className.initializer)
           ? className.initializer.expression
           : undefined;
-      if (expression && references(expression, names) && !inPortal(node)) {
+      if (
+        expression &&
+        references(expression, names) &&
+        !inPortal(node) &&
+        !CLIENT_ONLY.has(tagOf(node))
+      ) {
         const target = insertionTarget(node);
         const orphanSvg = !svgRoot(node) && SVG_ONLY.has(tagOf(node));
         if (orphanSvg)
@@ -361,10 +379,13 @@ function ensureImports(file, text) {
     if (!path.startsWith(".")) path = `./${path}`;
     add(`import { styleRules } from "${path}";`);
   }
-  if (/<Fragment key=/.test(next) && !/\bFragment\b[^;]*from "react"/.test(next)) {
+  if (/<Fragment key=/.test(next) && !/import \{[^}]*\bFragment\b[^}]*\} from "react"/.test(next)) {
+    // A value import: `Fragment` added to `import type { … }` would be a type only.
     const react = parse(file, next).statements.find(
       (statement) =>
-        ts.isImportDeclaration(statement) && statement.moduleSpecifier.getText() === '"react"',
+        ts.isImportDeclaration(statement) &&
+        statement.moduleSpecifier.getText() === '"react"' &&
+        !statement.importClause?.isTypeOnly,
     );
     const named = react?.importClause?.namedBindings;
     if (named && ts.isNamedImports(named)) {
