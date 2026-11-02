@@ -31,6 +31,8 @@ type Store = {
   // Classes in registration order, and how many of them the browser has written or skipped.
   order: string[];
   considered: number;
+  // Classes the browser sheet holds.
+  browserClasses: string[];
 };
 
 // One store per page, shared by every copy of this module (an ESM and a CJS build, or two
@@ -49,6 +51,7 @@ store.classes ??= {};
 store.keyframes ??= {};
 store.order ??= [];
 store.considered ??= 0;
+store.browserClasses ??= [];
 store.configured ??= false;
 
 // Goober 2.1.19 also tells the browser from the server by `window`.
@@ -82,19 +85,16 @@ function adoptServerLayers() {
 }
 
 function write() {
-  // A server-rendered page that is still streaming may yet send Suspense boundaries' tags, so the
-  // browser writes once the document is complete and skips their classes too.
-  if (document.readyState === "loading" && document.querySelector(hoistedTags(PRECEDENCE))) {
-    document.addEventListener("DOMContentLoaded", write, { once: true });
-    return;
-  }
   store.scheduled = false;
   if (!store.configured) adoptServerLayers();
   const served = servedClasses();
   let fresh = "";
   for (; store.considered < store.order.length; store.considered++) {
     const name = store.order[store.considered]!;
-    if (!served[name]) fresh += store.classes[name];
+    if (!served[name]) {
+      fresh += store.classes[name];
+      store.browserClasses.push(name);
+    }
   }
   // Every registered rule is now written or served, so an older copy has nothing left to write.
   store.written = store.rules.length;
@@ -120,6 +120,23 @@ function write() {
   tag.append(wrap(fresh));
   store.emitted = true;
   store.emittedLayer = store.layer;
+  // A server-rendered page still streaming may yet send Suspense boundaries' tags with classes
+  // written here; once it is complete, the sheet drops them.
+  if (document.readyState === "loading" && document.querySelector(hoistedTags(PRECEDENCE)))
+    document.addEventListener("DOMContentLoaded", dropServedClasses, { once: true });
+}
+
+// Rewrites the browser sheet without the classes the server has since sent. The sheet is otherwise
+// only appended to; this runs at most once per write made while the page streamed.
+function dropServedClasses() {
+  const tag = document.getElementById(SHEET_ID);
+  const served = servedClasses();
+  const kept = store.browserClasses.filter((name) => !served[name]);
+  if (!tag || kept.length === store.browserClasses.length) return;
+  store.browserClasses = kept;
+  tag.textContent =
+    (store.layerOrder ? `@layer ${store.layerOrder};` : "") +
+    wrap(kept.map((name) => store.classes[name]).join(""), store.emittedLayer);
 }
 
 // Before hydration, the server's tags move to the start of <head>, in their order, ahead of app
