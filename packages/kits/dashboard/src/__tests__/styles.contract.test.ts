@@ -4,12 +4,12 @@ import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { beforeAll, describe, expect, it, vi } from "vitest";
 
-/** Every rule the kit passes to goober, with interpolations filled in. */
+/** Every rule the kit passes to react-components' css, with interpolations filled in. */
 const kitRules = vi.hoisted(() => [] as string[]);
-vi.mock("goober", async (importOriginal) => {
-  const goober = await importOriginal<typeof import("goober")>();
+vi.mock("@openuidev/react-components", async (importOriginal) => {
+  const reactComponents = await importOriginal<typeof import("@openuidev/react-components")>();
   return {
-    ...goober,
+    ...reactComponents,
     css: (strings: TemplateStringsArray, ...values: unknown[]) => {
       kitRules.push(String.raw({ raw: strings }, ...values));
       return "kit-class";
@@ -96,9 +96,9 @@ describe("style files", () => {
   });
 
   it("share no rule text with react-components", () => {
-    // Goober reuses a class when two rules have the same text. A kit rule registers at import, so
-    // it would move the matching react-components rule ahead of the rules it should beat. That
-    // once turned TextBlock's green positive tone grey.
+    // The kit and react-components share one sheet, which reuses a class when two rules have the
+    // same text. A kit rule registers at import, so it would move the matching react-components
+    // rule ahead of the rules it should beat. That once turned TextBlock's green positive tone grey.
     const dist = join(here, "../../node_modules/@openuidev/react-components/dist/components");
     const reactComponentsRules = new Set(
       walk(dist, (path) => path.endsWith(".styles.mjs")).flatMap((path) =>

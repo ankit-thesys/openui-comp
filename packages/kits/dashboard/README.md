@@ -8,11 +8,11 @@ Rendering comes from `@openuidev/react-components`, which is a required peer.
 ## Install
 
 ```sh
-pnpm add @openuidev/dashboard-kit@0.0.0-beta.0 @openuidev/react-components@0.0.0-beta.0
+pnpm add @openuidev/dashboard-kit@0.0.0-beta.0 @openuidev/react-components@0.0.1
 ```
 
 `@openuidev/react-components`, `@openuidev/react-lang`, `react`, `react-dom` and
-`zod` are peer dependencies.
+`zod` are peer dependencies. `@openuidev/react-components` also needs `zustand`.
 
 ## Usage
 
@@ -43,7 +43,9 @@ Then render a model's response with `Renderer` from `@openuidev/react-lang`:
 - `/lib` exports the five AI-integration values plus `dashboardComponents`.
 - The root entrypoint exports the standalone React components, such as `Dashboard`,
   `Section`, `CardRow` and `DashboardThemeProvider`.
-- Components style themselves with goober, so there is no stylesheet to import.
+- Components style themselves through react-components' `css`, so there is no stylesheet to
+  import. Their rules go into the same `<style id="openui-styles">` tag as react-components',
+  after them, and follow `configureStyles({ layer })` if you set one.
 
 ### Dark mode
 
@@ -127,9 +129,9 @@ pnpm test:browser                       # rendering, computed styles, layout and
 pnpm test:update                        # accept an intended change, then review the diff
 ```
 
-Run them from `packages/kits/dashboard`, after building `@openuidev/react-components` and
-`@openuidev/react-lang`. `pnpm test` also runs in this package's `ci` script. The browser tests
-don't run in CI yet.
+Run them from `packages/kits/dashboard`, after building `@openuidev/react-lang`. They use the
+published `@openuidev/react-components`. `pnpm test` also runs in this package's `ci` script. The
+browser tests don't run in CI yet.
 
 ## Provenance
 
@@ -140,5 +142,5 @@ onto `@openuidev/react-components`. Two deliberate changes:
 - `Table` and `Col` are real component definitions rather than a string lookup
   into the legacy `openuiLibrary` registry, so they are no longer typed
   `DefinedComponent | undefined` and the kit does not depend on the old library.
-- The Sass is gone: styles are rewritten flat in goober, and the `c1-` class prefix
+- The Sass is gone: styles are rewritten flat with react-components' `css`, and the `c1-` class prefix
   is now `openui-dashboard-`.
