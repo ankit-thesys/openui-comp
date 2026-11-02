@@ -12,6 +12,7 @@ import {
 } from "@openuidev/react-components";
 import { renderToString } from "react-dom/server";
 import { afterEach, expect, it } from "vitest";
+import { withoutServedRules } from "../support/markup";
 
 afterEach(() => configureStyles({ layer: undefined }));
 
@@ -171,7 +172,7 @@ it("keeps dynamic mark appearance overridable rather than assigning inline CSS p
       isAnimationActive
     />,
   ]
-    .map((element) => renderToString(element))
+    .map((element) => withoutServedRules(renderToString(element)))
     .join("");
   expect(
     html.match(

@@ -23,6 +23,7 @@ import { BarSeries } from "./parts/BarSeries";
 import { Crosshair } from "./parts/Crosshair";
 import { HorizontalBarChartImpl } from "./parts/HorizontalBarChartImpl";
 
+import { moduleClasses, styleRules } from "../../../styles/css";
 import { CHART_CLASS_PREFIX } from "../utils/constants";
 import type { BarChartData, BarChartProps } from "./types";
 
@@ -36,21 +37,25 @@ export function BarChart<T extends BarChartData>(props: BarChartProps<T>) {
   const styles = barChartStyles;
   const baseStyles = chartBaseStyles;
   if (!props.data || props.data.length === 0) {
+    const rootClass = clsx(
+      styles.root,
+      props.orientation === "horizontal" ? horizontalNames.root : names.root,
+      (props.orientation === "horizontal" ? horizontalNames : names).variant[
+        props.variant ?? "grouped"
+      ],
+      baseStyles.empty,
+      baseNames.empty,
+      props.className,
+    );
+    const emptyTextClass = clsx(baseStyles.emptyText, baseNames.emptyText);
     return (
-      <div
-        className={clsx(
-          styles.root,
-          props.orientation === "horizontal" ? horizontalNames.root : names.root,
-          (props.orientation === "horizontal" ? horizontalNames : names).variant[
-            props.variant ?? "grouped"
-          ],
-          baseStyles.empty,
-          baseNames.empty,
-          props.className,
-        )}
-      >
-        <span className={clsx(baseStyles.emptyText, baseNames.emptyText)}>No data available</span>
-      </div>
+      <>
+        <div className={rootClass}>
+          <span className={emptyTextClass}>No data available</span>
+          {styleRules(emptyTextClass)}
+        </div>
+        {styleRules(rootClass)}
+      </>
     );
   }
   if (props.orientation === "horizontal") {
@@ -135,87 +140,90 @@ function BarChartImpl<T extends BarChartData>({
   });
 
   return (
-    <CartesianChartLayout
-      classes={{
-        ...names,
-        svg: clsx(styles.svg, names.svg),
-        group: clsx(styles.group, names.group),
-        containerInner: clsx(styles.containerInner, names.containerInner),
-        yAxisContainer: clsx(styles.yAxisContainer, names.yAxisContainer),
-        mainContainer: clsx(styles.mainContainer, names.mainContainer),
-        yTick: clsx(styles.yTick, names.yTick),
-        gridLine: clsx(styles.gridLine, names.gridLine),
-      }}
-      orch={orch}
-      yScale={yScale}
-      mouseHandlers={mouseHandlers}
-      classPrefix="bar-chart"
-      chartType="bar"
-      exportData={exportData}
-      ariaLabel="Bar chart"
-      showYAxis={showYAxis}
-      grid={grid}
-      showLegend={showLegend}
-      xAxisLabel={xAxisLabel}
-      yAxisLabel={yAxisLabel}
-      yTickCount={yTickCount}
-      className={clsx(styles.root, names.root, names.variant[variant], className)}
-      defs={
-        <defs className={names.defs}>
-          <ClipDefs
-            className={names.clip}
-            rectClassName={names.clipRect}
-            chartId={orch.identity.chartId}
+    <>
+      <CartesianChartLayout
+        classes={{
+          ...names,
+          svg: clsx(styles.svg, names.svg),
+          group: clsx(styles.group, names.group),
+          containerInner: clsx(styles.containerInner, names.containerInner),
+          yAxisContainer: clsx(styles.yAxisContainer, names.yAxisContainer),
+          mainContainer: clsx(styles.mainContainer, names.mainContainer),
+          yTick: clsx(styles.yTick, names.yTick),
+          gridLine: clsx(styles.gridLine, names.gridLine),
+        }}
+        orch={orch}
+        yScale={yScale}
+        mouseHandlers={mouseHandlers}
+        classPrefix="bar-chart"
+        chartType="bar"
+        exportData={exportData}
+        ariaLabel="Bar chart"
+        showYAxis={showYAxis}
+        grid={grid}
+        showLegend={showLegend}
+        xAxisLabel={xAxisLabel}
+        yAxisLabel={yAxisLabel}
+        yTickCount={yTickCount}
+        className={clsx(styles.root, names.root, names.variant[variant], className)}
+        defs={
+          <defs className={names.defs}>
+            <ClipDefs
+              className={names.clip}
+              rectClassName={names.clipRect}
+              chartId={orch.identity.chartId}
+              chartWidth={orch.dimensions.chartAreaWidth}
+              chartHeight={orch.dimensions.chartInnerHeight}
+            />
+          </defs>
+        }
+        series={
+          <>
+            <Crosshair
+              hoveredIndex={orch.hover.hoveredIndex}
+              xScale={xScale}
+              data={data}
+              categoryKey={orch.data.catKey}
+              chartHeight={orch.dimensions.chartInnerHeight}
+            />
+            <BarSeries
+              data={data}
+              dataKeys={orch.data.dataKeys}
+              xScale={xScale}
+              yScale={yScale}
+              variant={variant}
+              stackedData={stackedData}
+              categoryKey={orch.data.catKey}
+              colors={orch.data.colorMap}
+              barRadius={barRadius}
+              maxBarWidth={maxBarWidth}
+              internalLine={internalLine}
+              internalLineColor={internalLineColor}
+              internalLineWidth={internalLineWidth}
+              isAnimationActive={animate}
+            />
+          </>
+        }
+        xAxis={
+          <CartesianXAxis
+            mode={mode}
+            scale={xScale}
+            classPrefix={`${CHART_CLASS_PREFIX}-bar-chart`}
+            classes={names}
+            tickClassName={clsx(styles.xTick, names.xTick)}
+            angledTickClassName={clsx(styles.xTickAngled, names.xTickAngled)}
+            tickVariant={orch.dimensions.tickVariant}
+            labelHeight={orch.xAxis.xAxisHeight}
+            labelWidth={orch.xAxis.labelWidth}
+            maxLines={orch.xAxis.maxLines}
+            labelInterval={orch.dimensions.labelInterval}
+            angle={orch.xAxis.angle}
             chartWidth={orch.dimensions.chartAreaWidth}
-            chartHeight={orch.dimensions.chartInnerHeight}
+            yAxisWidth={orch.dimensions.effectiveYAxisWidth}
           />
-        </defs>
-      }
-      series={
-        <>
-          <Crosshair
-            hoveredIndex={orch.hover.hoveredIndex}
-            xScale={xScale}
-            data={data}
-            categoryKey={orch.data.catKey}
-            chartHeight={orch.dimensions.chartInnerHeight}
-          />
-          <BarSeries
-            data={data}
-            dataKeys={orch.data.dataKeys}
-            xScale={xScale}
-            yScale={yScale}
-            variant={variant}
-            stackedData={stackedData}
-            categoryKey={orch.data.catKey}
-            colors={orch.data.colorMap}
-            barRadius={barRadius}
-            maxBarWidth={maxBarWidth}
-            internalLine={internalLine}
-            internalLineColor={internalLineColor}
-            internalLineWidth={internalLineWidth}
-            isAnimationActive={animate}
-          />
-        </>
-      }
-      xAxis={
-        <CartesianXAxis
-          mode={mode}
-          scale={xScale}
-          classPrefix={`${CHART_CLASS_PREFIX}-bar-chart`}
-          classes={names}
-          tickClassName={clsx(styles.xTick, names.xTick)}
-          angledTickClassName={clsx(styles.xTickAngled, names.xTickAngled)}
-          tickVariant={orch.dimensions.tickVariant}
-          labelHeight={orch.xAxis.xAxisHeight}
-          labelWidth={orch.xAxis.labelWidth}
-          maxLines={orch.xAxis.maxLines}
-          labelInterval={orch.dimensions.labelInterval}
-          angle={orch.xAxis.angle}
-          chartWidth={orch.dimensions.chartAreaWidth}
-          yAxisWidth={orch.dimensions.effectiveYAxisWidth}
-        />
-      }
-    />
+        }
+      />
+      {styleRules(moduleClasses(barChartStyles, chartBaseStyles))}
+    </>
   );
 }

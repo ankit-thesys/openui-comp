@@ -2,7 +2,8 @@
 
 import clsx from "clsx";
 import type { CSSProperties } from "react";
-import React from "react";
+import React, { Fragment } from "react";
+import { styleRules } from "../../../../styles/css";
 import { numberTickFormatter } from "../../utils/styleUtils";
 import { heatmapChartStyles, names } from "../heatmapChart.styles";
 
@@ -36,38 +37,45 @@ interface HeatmapColorScaleProps {
 export const HeatmapColorScale = React.forwardRef<HTMLDivElement, HeatmapColorScaleProps>(
   ({ buckets, domainMin, domainMax, diverging }, ref) => {
     const styles = heatmapChartStyles;
+    const colorScaleClass = clsx(styles.colorScale, names.colorScale);
+    const colorScaleLabelClass = clsx(styles.colorScaleLabel, names.colorScaleLabel);
+    const colorScaleRampClass = clsx(
+      styles.colorScaleRamp,
+      names.colorScaleRamp,
+      diverging && styles.colorScaleRampRampModeDiverging,
+      diverging ? names.colorScaleRampRampModeDiverging : names.colorScaleRampRampModeSequential,
+    );
+    const colorScaleLabelClass2 = clsx(styles.colorScaleLabel, names.colorScaleLabel);
     return (
-      <div ref={ref} className={clsx(styles.colorScale, names.colorScale)}>
-        <span className={clsx(styles.colorScaleLabel, names.colorScaleLabel)}>
-          {numberTickFormatter(domainMin)}
-        </span>
-        <div
-          className={clsx(
-            styles.colorScaleRamp,
-            names.colorScaleRamp,
-            diverging && styles.colorScaleRampRampModeDiverging,
-            diverging
-              ? names.colorScaleRampRampModeDiverging
-              : names.colorScaleRampRampModeSequential,
-          )}
-        >
-          {buckets.map((bucket, index) => (
-            <span
-              key={index}
-              className={clsx(styles.colorScaleBucket, names.colorScaleBucket)}
-              style={
-                {
-                  "--_openui-heatmap-chart-color-scale-bucket-background-color": bucket.color,
-                } as CSSProperties
-              }
-              title={`${numberTickFormatter(bucket.lo)} – ${numberTickFormatter(bucket.hi)}`}
-            />
-          ))}
+      <>
+        <div ref={ref} className={colorScaleClass}>
+          <span className={colorScaleLabelClass}>{numberTickFormatter(domainMin)}</span>
+          {styleRules(colorScaleLabelClass)}
+          <div className={colorScaleRampClass}>
+            {buckets.map((bucket, index) => {
+              const colorScaleBucketClass = clsx(styles.colorScaleBucket, names.colorScaleBucket);
+              return (
+                <Fragment key={index}>
+                  <span
+                    className={colorScaleBucketClass}
+                    style={
+                      {
+                        "--_openui-heatmap-chart-color-scale-bucket-background-color": bucket.color,
+                      } as CSSProperties
+                    }
+                    title={`${numberTickFormatter(bucket.lo)} – ${numberTickFormatter(bucket.hi)}`}
+                  />
+                  {styleRules(colorScaleBucketClass)}
+                </Fragment>
+              );
+            })}
+          </div>
+          {styleRules(colorScaleRampClass)}
+          <span className={colorScaleLabelClass2}>{numberTickFormatter(domainMax)}</span>
+          {styleRules(colorScaleLabelClass2)}
         </div>
-        <span className={clsx(styles.colorScaleLabel, names.colorScaleLabel)}>
-          {numberTickFormatter(domainMax)}
-        </span>
-      </div>
+        {styleRules(colorScaleClass)}
+      </>
     );
   },
 );

@@ -1,9 +1,11 @@
 "use client";
 
 import clsx from "clsx";
+import { moduleClasses, styleRules } from "../../../styles/css";
 import { useTheme } from "../../ThemeProvider";
 import { useEffectiveAnimation } from "../hooks/core/useEffectiveAnimation";
 import { roundedBarPath } from "../shared/cartesian/roundedBarPath";
+import { miniChartStyles } from "../shared/mini/miniChart.styles";
 import { MiniChartFrame } from "../shared/mini/MiniChartFrame";
 import { MINI_BAR_WIDTH, miniBarGeometry } from "../shared/mini/miniChartUtils";
 import { useChartPalette } from "../utils/paletteUtils";
@@ -41,49 +43,52 @@ export function MiniBarChart({
   const animated = animate && styles.animated;
 
   return (
-    <MiniChartFrame
-      chart="bar"
-      size={size}
-      className={clsx(
-        styles.root,
-        names.root,
-        isAnimationActive && names.isAnimationActive.true,
-        className,
-      )}
-      svgClassName={clsx(styles.svg, names.svg)}
-      onClick={onBarsClick}
-    >
-      {(width, height) =>
-        miniBarGeometry(data, width, height).map((bar, i) =>
-          bar.height > 0 ? (
-            <g key={i} className={clsx(names.barGroup, animated)}>
-              <path
-                className={names.bar}
-                d={roundedBarPath(
-                  bar.x,
-                  bar.y,
-                  MINI_BAR_WIDTH,
-                  bar.height,
-                  bar.negative ? [0, 0, radius, radius] : [radius, radius, 0, 0],
-                )}
-                fill={color}
-              />
-              {bar.height >= INNER_LINE_MIN_HEIGHT && (
-                <line
-                  className={names.innerLine}
-                  x1={bar.x + MINI_BAR_WIDTH / 2}
-                  y1={bar.y + INNER_LINE_INSET}
-                  x2={bar.x + MINI_BAR_WIDTH / 2}
-                  y2={bar.y + bar.height - INNER_LINE_INSET}
-                  stroke={innerLineColor}
-                  strokeWidth={1}
-                  strokeLinecap="round"
+    <>
+      <MiniChartFrame
+        chart="bar"
+        size={size}
+        className={clsx(
+          styles.root,
+          names.root,
+          isAnimationActive && names.isAnimationActive.true,
+          className,
+        )}
+        svgClassName={clsx(styles.svg, names.svg)}
+        onClick={onBarsClick}
+      >
+        {(width, height) =>
+          miniBarGeometry(data, width, height).map((bar, i) =>
+            bar.height > 0 ? (
+              <g key={i} className={clsx(names.barGroup, animated)}>
+                <path
+                  className={names.bar}
+                  d={roundedBarPath(
+                    bar.x,
+                    bar.y,
+                    MINI_BAR_WIDTH,
+                    bar.height,
+                    bar.negative ? [0, 0, radius, radius] : [radius, radius, 0, 0],
+                  )}
+                  fill={color}
                 />
-              )}
-            </g>
-          ) : null,
-        )
-      }
-    </MiniChartFrame>
+                {bar.height >= INNER_LINE_MIN_HEIGHT && (
+                  <line
+                    className={names.innerLine}
+                    x1={bar.x + MINI_BAR_WIDTH / 2}
+                    y1={bar.y + INNER_LINE_INSET}
+                    x2={bar.x + MINI_BAR_WIDTH / 2}
+                    y2={bar.y + bar.height - INNER_LINE_INSET}
+                    stroke={innerLineColor}
+                    strokeWidth={1}
+                    strokeLinecap="round"
+                  />
+                )}
+              </g>
+            ) : null,
+          )
+        }
+      </MiniChartFrame>
+      {styleRules(moduleClasses(miniBarChartStyles, miniChartStyles))}
+    </>
   );
 }

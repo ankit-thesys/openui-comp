@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React from "react";
+import { styleRules } from "../../../../../styles/css";
 import { IconButton } from "../../../../IconButton";
 import { names, scrollButtonsHorizontalStyles } from "./scrollButtonsHorizontal.styles";
 
@@ -29,28 +30,36 @@ export const ScrollButtonsHorizontal = React.memo(
       return null;
     }
 
+    const rootClass = clsx(styles.root, names.root);
+    const buttonClass = clsx(styles.button, styles.left, names.button, names.left);
+    const buttonClass2 = clsx(styles.button, styles.right, names.button, names.right);
     return (
-      <div className={clsx(styles.root, names.root)}>
-        <IconButton
-          className={clsx(styles.button, styles.left, names.button, names.left)}
-          icon={<ChevronLeft className={names.icon} />}
-          variant="secondary"
-          aria-label="Scroll left"
-          onClick={onScrollLeft}
-          size="2-extra-small"
-          disabled={!canScrollLeft}
-        />
+      <>
+        <div className={rootClass}>
+          <IconButton
+            className={buttonClass}
+            icon={<ChevronLeft className={names.icon} />}
+            variant="secondary"
+            aria-label="Scroll left"
+            onClick={onScrollLeft}
+            size="2-extra-small"
+            disabled={!canScrollLeft}
+          />
+          {styleRules(buttonClass)}
 
-        <IconButton
-          className={clsx(styles.button, styles.right, names.button, names.right)}
-          icon={<ChevronRight className={names.icon} />}
-          variant="secondary"
-          size="2-extra-small"
-          aria-label="Scroll right"
-          onClick={onScrollRight}
-          disabled={!canScrollRight}
-        />
-      </div>
+          <IconButton
+            className={buttonClass2}
+            icon={<ChevronRight className={names.icon} />}
+            variant="secondary"
+            size="2-extra-small"
+            aria-label="Scroll right"
+            onClick={onScrollRight}
+            disabled={!canScrollRight}
+          />
+          {styleRules(buttonClass2)}
+        </div>
+        {styleRules(rootClass)}
+      </>
     );
   },
 );

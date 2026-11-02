@@ -5,6 +5,7 @@ import React from "react";
 import { useTheme } from "../../../ThemeProvider";
 import { horizontalBarChartStyles, names } from "../horizontalBarChart.styles";
 
+import { styleRules } from "../../../../styles/css";
 import type { HorizontalBarRow } from "../../hooks/cartesian/useHorizontalBarChartOrchestrator";
 import { roundedBarPath } from "../../shared/cartesian/roundedBarPath";
 import { entranceProps } from "../../utils/entranceUtils";
@@ -92,6 +93,7 @@ export const HorizontalBarSeries: React.FC<HorizontalBarSeriesProps> = React.mem
               } as React.CSSProperties)
             : undefined;
 
+          const categoryLabelClass = clsx(styles.categoryLabel, names.categoryLabel);
           return (
             <g key={row.key} className={names.row}>
               {/* Category label, once per row, above the bar group. A
@@ -107,9 +109,8 @@ export const HorizontalBarSeries: React.FC<HorizontalBarSeriesProps> = React.mem
 
                 xmlns="http://www.w3.org/1999/xhtml"
               >
-                <div className={clsx(styles.categoryLabel, names.categoryLabel)}>
-                  {row.category}
-                </div>
+                <div className={categoryLabelClass}>{row.category}</div>
+                {styleRules(categoryLabelClass)}
               </foreignObject>
 
               {row.bars.map((bar) => (

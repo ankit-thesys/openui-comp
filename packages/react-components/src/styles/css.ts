@@ -200,6 +200,23 @@ export const keyframes: Keyframes = recording(gooberCss.bind({ target, k: 1 }), 
 const hoisted = (href: string, precedence: string, text: string) =>
   createElement("style", { key: href, href, precedence }, text);
 
+type StyleModule = string | { readonly [key: string]: StyleModule };
+
+/**
+ * Every class in style modules (nested variant maps included), as one class string for styleRules.
+ * For SVG parts only: React renders <style> in place inside <svg>, so a chart's HTML root serves
+ * the whole style modules its SVG subtree uses.
+ */
+export function moduleClasses(...modules: StyleModule[]): string {
+  const names: string[] = [];
+  const walk = (module: StyleModule) => {
+    if (typeof module === "string") names.push(module);
+    else for (const key in module) walk(module[key]!);
+  };
+  modules.forEach(walk);
+  return names.join(" ");
+}
+
 /**
  * The rules of the generated classes in `classNames`, for server renders. Pass an element's final
  * class string; stable and app classes are ignored. On the server, React hoists the tags into
